@@ -20,7 +20,10 @@ Pirmas bandymas su šiandienos compatibility date nepasileido: įdiegtas workerd
 - [ ] Provider API pritaikyti `observability.redact_query_string=true`, išlaikant logs / traces / sampling. Wrangler4.92 schema šio lauko neturi, todėl jis nėra kandidato konfigūracijoje.
 - [ ] Gavus konkretų per-action patvirtinimą, pridėti Meta reviewer callback ir įdiegti app secret. Tikrinti tikrą OAuth naujoje saugykloje.
 - [ ] Hosted reviewer paskyros / seed / visas scenarijus / ekrano įrodymai; tik tada pakeisti anketos URL ir ilgalaikės prieigos tekstą.
-- [ ] Verified business, Allowed usage, faktinė Data handling anketa ir galutinis pateikimas.
+- [x] Abu `email` / `public_profile` Allowed usage sutikimai su konkrečiu savininko patvirtinimu išsaugoti; abiejų žingsnių readback PASS.
+- [x] Savininko pateikti Data handling faktai išsaugoti: MB Pinet, Lithuania, nacionalinio saugumo užklausos per 12 mėn. — No, galiojančios užklausų procedūros — None of the above.
+- [x] Savininko patvirtintas buvusio `animateme.co` portfelio naudojimas; portfelis `900173107610943` pervadintas į MB Pinet ir readback PASS.
+- [ ] Susieti Madbeauty su MB Pinet portfeliu, užbaigti įmonės patvirtinimą, tiekėjų deklaraciją ir galutinį pateikimą.
 
 ## Duomenų tvarkymo techninis juodraštis
 
@@ -39,10 +42,18 @@ Graph `/me` prašo tik `id,email`; Facebook draugų sąrašo, vardo ir nuotrauko
 
 Production OTP paštas siunčiamas vartotojo patvirtintu adresu, o trial / šis paketas naudoja tik `example.com` capture. Pašto tiekėjo faktinį Meta-sourced adreso gavimą ir processing / remote-access geografiją reikia pagrįsti prieš anketos deklaraciją; [Hostinger DPA](https://www.hostinger.com/uk/legal/dpa) nėra mūsų pašto regionų priėmimas.
 
-## Trūkstami savininko atsakymai
+## 2026-10-11 Savininko atsakymai ir verslo portfelis
 
-1. Kuris MB Pinet Meta Business portfelis yra tinkamas, ar jį dar reikia sukurti.
-2. Konkretus abiejų `email` / `public_profile` Allowed usage „I agree …“ sutikimų patvirtinimas; ankstesnė konkreti užklausa tebėra pending.
-3. Duomenų valdytojo šalis, nacionalinio saugumo užklausų istorija per 12 mėn. ir tikrai galiojančios teisėtumo patikros / ginčijimo / minimalaus atskleidimo / registravimo procedūros. Nežinomi checkbox nepažymėti.
+Savininkas patvirtino abu Allowed usage sutikimus ir MB Pinet / Lithuania / užklausų nebuvimo bei procedūrų nebuvimo faktus. Abu konkretūs Save atlikti ir abiejų leidimų Edit / užbaigimo būsena perskaityta. Šių sutikimų pakartotinai neprašyti. Tai nėra Meta leidimų patvirtinimas ar programėlės publikavimas. Data handling tiekėjų sąrašas vis dar tuščias; processing / remote-access šalys dar nepriimtos.
+
+Naujo portfelio kūrimą Meta užblokavo paskyros kūrimo limitu. Patikrinti trys prieinami portfeliai; jų juridiniai rekvizitai tušti, visi Unverified. `animateme.co` turėjo 0 verslo objektų. Savininkas konkrečiai autorizavo jo naudojimą MB Pinet / Madbeauty. Portfelio `900173107610943` pavadinimas išsaugotas kaip **MB Pinet**, abiejose Meta sąsajose perskaitytas. Kitų portfelių duomenys nekeisti, portfeliai nešalinti.
+
+Business details forma paruošta su MB Pinet / Lithuania / https://madbeauty.lt/, tačiau **neišsaugota**: privalomi oficialus adresas, miestas, regionas, pašto kodas ir įmonės telefono numeris nežinomi. Savininko prašyta pateikti tikrus rekvizitus. Portfelis tebėra Unverified. Tax ID neprirašytas.
+
+Madbeauty Verification dialoge pasirinktas MB Pinet ir Connect įjungtas, tačiau **nepaspaustas**. Programėlės valdymo perdavimas portfeliui yra konkretus saugumo prieigos pakeitimas; savininkui pateikta action-time užklausa App ID1827877621543839 / business ID900173107610943. Atsakymo laukiama; ankstesnis portfelio naudojimo patvirtinimas nepervadinamas šio veiksmo įrodymu.
+
+Vietiniai įrodymai `cloudflare/output/community-20261011/`: `meta-allowed-usage-confirmed.jpg`, `meta-business-creation-limit.jpg`, `meta-mb-pinet-connect-ready.jpg`, `meta-mb-pinet-details-draft.jpg`. Ekrano failai nėra Git ar viešo paketo dalis.
+
+Kiti veiksmai: gavus konkretų Connect patvirtinimą atlikti susiejimą ir readback; gavus tikrus įmonės rekvizitus tęsti verification. Tiekėjų šalių ir ilgalaikės peržiūros aplinkos darbas lieka atskiras. Galutinis Submit dar neatliktas.
 
 Viešas Facebook ir pagrindinio domeno bendruomenė išjungti; C3–C4 grupės / renginiai lieka kitu etapu. Šis paruošimas nekeičia esamo bandymo galiojimo ar priimtų gyvų versijų.

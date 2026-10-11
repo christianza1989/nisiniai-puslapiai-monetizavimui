@@ -1,6 +1,10 @@
+## 2026-10-11 — Meta sutikimai ir MB Pinet portfelis
+
+Abu email/public_profile Allowed usage sutikimai savininko patvirtinti, išsaugoti ir perskaityti Meta; Data handling MB Pinet/Lithuania/national-security No/procedures None išsaugoti pagal jo faktus. Naujo portfelio kūrimą blokavo paskyros limitas. Savininko skirtas animateme.co(0assets), ID900173107610943, pervadintas į MB Pinet; readback PASS. Įmonės rekvizitų forma neišsaugota, trūksta oficialaus adreso ir telefono. App→portfolio Connect paruoštas, nepaspaustas, laukiama konkretaus valdymo perdavimo patvirtinimo. Verified business / tiekėjų processing ir remote-access šalys / hosted reviewer / final submission dar nepriimti. [Aktualus planas](community-20261011/META_REVIEW.md), [kvitas](community-20261011/RECEIPT.json). Viešas FB ir main community išjungti, runtime09f767e9/8e4da6de bei trialexpiry nekeisti.
+
 ## 2026-10-11 — Meta peržiūros vietinis paruošimas
 
-Paruoštas atskiros peržiūros aplinkos paketas ir native OTP / bendruomenės / restart / expiry priėmimas. [META_REVIEW.md](community-20261011/META_REVIEW.md) atskiria vietinį kandidatą nuo neįdiegto hostname ir nebaigtų Meta vartų. Main09f767e9 / trial8e4da6de bei pradinis trialexpiry nekeisti. Viešas FB / canonical community išjungti; savininko faktai ir konkretūs sutikimai dar reikalingi.
+Paruoštas atskiros peržiūros aplinkos paketas ir native OTP / bendruomenės / restart / expiry priėmimas. [META_REVIEW.md](community-20261011/META_REVIEW.md) atskiria vietinį kandidatą nuo neįdiegto hostname ir nebaigtų Meta vartų. Main09f767e9 / trial8e4da6de bei pradinis trialexpiry nekeisti. Viešas FB / canonical community išjungti; šiame ankstesniame checkpointe savininko faktai ir sutikimai dar buvo reikalingi, aktualus jų rezultatas aukščiau.
 
 ## 2026-10-11 — Tikras Facebook savininko bandymas priimtas
 

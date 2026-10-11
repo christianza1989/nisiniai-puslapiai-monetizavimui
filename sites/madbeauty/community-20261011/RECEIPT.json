@@ -118,15 +118,49 @@
     "metaReview": {
       "submissionId": "1827877654877169",
       "state": "Not submitted",
-      "verification": "Verified business portfolio required; available three existing portfolios are unverified and belong to other projects",
-      "pendingOwnerFact": "Which Meta business portfolio belongs to MB Pinet",
+      "updatedAt": "2026-10-11T06:07:31.000Z",
+      "verification": "Owner-authorized empty animateme.co portfolio 900173107610943 renamed to MB Pinet; Unverified. App ownership Connect prepared but not submitted; official business details incomplete",
+      "pendingOwnerFact": "Official registered MB Pinet name/address/region/postal code and business phone; specific app-to-portfolio Connect confirmation",
       "instructionDraft": "Website test instructions saved with trial expiry disclosure; permanent reviewer access not claimed",
-      "allowedUsage": "email/public_profile agreement text inspected; specific owner confirmation requested, not accepted yet",
-      "dataHandling": "Processors Yes selected (Cloudflare receives Meta ID, email, tokens during exchange and app secret); processor countries, controller and public-authority facts incomplete; owner facts requested",
+      "allowedUsage": "Both email and public_profile specific owner-approved agreements saved; both completion/Edit states read back. This does not mean Meta permissions approved",
+      "allowedUsageAccepted": {
+        "email": true,
+        "public_profile": true,
+        "ownerActionTimeConfirmation": true,
+        "savedAndReadBack": true,
+        "screenshot": "cloudflare/output/community-20261011/meta-allowed-usage-confirmed.jpg"
+      },
+      "dataHandling": "Owner facts saved/read back: MB Pinet / Lithuania / No national-security requests in prior 12 months / None of the above procedures. Processors Yes selected; processor names and processing/remote-access countries remain incomplete",
+      "controllerFacts": {
+        "source": "Explicit human reply in this chat",
+        "name": "MB Pinet",
+        "country": "Lithuania",
+        "nationalSecurityRequestsInPrior12Months": "No",
+        "publicAuthorityRequestProcedures": "None of the above",
+        "savedAndReadBack": true,
+        "processorListCompleted": false
+      },
+      "businessPortfolio": {
+        "id": "900173107610943",
+        "previousName": "animateme.co",
+        "name": "MB Pinet",
+        "initialAssets": 0,
+        "reuseExplicitlyAuthorizedByOwner": true,
+        "renameSavedAndReadBack": true,
+        "verificationState": "Unverified",
+        "appConnected": false,
+        "connectState": "READY_OWNER_ACTION_TIME_CONFIRMATION_REQUESTED",
+        "businessDetailsState": "UNSAVED_DRAFT_REQUIRED_ADDRESS_AND_PHONE_MISSING",
+        "newPortfolioCreation": "Meta account creation quota prevented creation; no new portfolio created or existing portfolio deleted",
+        "screenshots": [
+          "cloudflare/output/community-20261011/meta-business-creation-limit.jpg",
+          "cloudflare/output/community-20261011/meta-mb-pinet-connect-ready.jpg",
+          "cloudflare/output/community-20261011/meta-mb-pinet-details-draft.jpg"
+        ]
+      },
       "pending": [
-        "Verified MB Pinet business portfolio",
-        "Owner action-time confirmation for both Allowed usage agreements",
-        "Controller country, national-security requests history and actual procedures",
+        "Specific app-to-portfolio Connect action-time confirmation",
+        "Official MB Pinet legal details and verified business portfolio",
         "Provider processing/remote-access country declaration",
         "Review environment available throughout review; trial expiry unchanged",
         "External account acceptance after Meta approval/publishing"

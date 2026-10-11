@@ -1,0 +1,14 @@
+// Public synthetic fixture only. No configured credentials or external transport.
+import {openStore} from '../backend/store.mjs';
+import {createNativeRecipientCapture} from './native-recipient-adapter.mjs';
+import {RETENTION_POLICY} from '../backend/retention-policy.mjs';
+export const epoch=Date.parse('2026-10-10T01:00:00Z'),ref='I'.repeat(32);
+export const scope={business_id:'business-test',site_id:'madbeauty',environment_id:'capture-native',environment_class:'test'};
+export const configuration={scope,adapterId:'madbeauty-native',sourceRelease:'native-privacy-capture-v1',recipientKeyId:'recipient-test-v1',recipientSecret:Uint8Array.from({length:32},(_,i)=>i+1),transportKeyId:'transport-test-v1',transportSecret:Uint8Array.from({length:32},(_,i)=>i+41),transportPermissions:['recipient-challenge','verify-recipient','retire-recipient','resolve','events'],captureOnly:true};
+export async function captureFixture(filename=':memory:',extra={}){let now=epoch;const store=openStore({filename,secret:'public-synthetic-privacy-capture-key-32',clock:()=>now});store.retentionPolicyVersion=RETENTION_POLICY.version;const adapter=await createNativeRecipientCapture({store,...configuration,...extra});return {store,adapter,clock:()=>now,advance:ms=>now+=ms,close:()=>store.close()};}
+export function login(f,email='owner@example.test',invitationRef=ref){const s=f.adapter.auth.session(null),c=f.adapter.startInvitation(s,{invitationRef,email,ip:'fixture'});return f.adapter.verifyInvitation(s,{challengeId:c.challengeId,code:f.store.capture(c.challengeId).code,ip:'fixture'});}
+export const challengeReceipt=(f,id,invitationRef=ref)=>({recipient_contract_version:'0.1.0',scope,adapter_id:configuration.adapterId,invitation_ref:invitationRef,request_id:id,state:'issued',external_sent:false,challenge:{challenge_nonce:'C'.repeat(32),recipient_key_id:configuration.recipientKeyId,address_rule:'madbeauty-email-v1-js-trim-lower',issued_at:new Date(f.clock()).toISOString(),expires_at:new Date(f.clock()+300000).toISOString()}});
+export const boundReceipt=(f,id,invitationRef=ref)=>({recipient_contract_version:'0.1.0',scope,adapter_id:configuration.adapterId,invitation_ref:invitationRef,request_id:id,state:'recipient_bound',bound_at:new Date(f.clock()).toISOString(),external_sent:false});
+export const privacyReceipt=(f,id,state='recipient_retired',invitationRef=ref)=>({retirement_contract_version:'0.1.0',scope,adapter_id:configuration.adapterId,invitation_ref:invitationRef,request_id:id,state,retired_at:new Date(f.clock()).toISOString(),external_sent:false});
+export const eraseInput=user=>({confirmEmail:user.email,policyVersion:RETENTION_POLICY.version});
+export async function proof(f,user,invitationRef=ref){const id=await f.adapter.prepare(invitationRef,user.id);f.adapter.acceptReceipt(id,challengeReceipt(f,id,invitationRef));const proofId=await f.adapter.prepare(invitationRef,user.id);return {id:proofId,packet:await f.adapter.packet(proofId)};}

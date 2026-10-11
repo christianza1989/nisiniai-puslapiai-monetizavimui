@@ -1,6 +1,7 @@
 import {isCityId} from '../prototype/cities.mjs';
 import {MadbeautyPlatform} from './platform-object.mjs';
 import {MadbeautyOrganizationStaging} from './organization-object.mjs';
+import {MadbeautyCommunity} from './community-object.mjs';
 import {contentProjection,contact,escape} from './content.mjs';
 import template from '../prototype/public/app.html';
 import {renderFooter} from '../prototype/public/footer.mjs';
@@ -16,12 +17,13 @@ import {catalogueCityDestination,catalogueRoute,renderCataloguePage,renderHomeSe
 import {directoryRoute,directoryRows,directoryDescription,directorySchema,renderDirectory} from '../prototype/public/provider-directory.mjs';
 import {profileMetadata,renderPublicProfile} from '../prototype/public/profile-seo.mjs';
 import {sharingHtml} from '../prototype/public/sharing.mjs';
-export {MadbeautyPlatform,MadbeautyOrganizationStaging};
-const assetPaths=new Set(assets);
+export {MadbeautyPlatform,MadbeautyOrganizationStaging,MadbeautyCommunity};
+const assetPaths=new Set([...assets,'/community-ui.mjs']);
 const headers={"X-Content-Type-Options":"nosniff","Referrer-Policy":"strict-origin-when-cross-origin","Content-Security-Policy":"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-src https://www.openstreetmap.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"};
 headers['X-Madbeauty-Content-SHA256']=release.packageSha256;
 const json=(data,status=200)=>Response.json(data,{status,headers:{...headers,'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});
 function matchRoute(path){
+ if(/^\/bendruomene(?:\/(sekami|idejos|drauges|zinutes|nustatymai))?$/.test(path))return {id:'community',label:'Grožio bendruomenė',route:path,params:{}};
  for(const screen of inventory.screens.filter(s=>s.route)){
   const names=[],pattern=screen.route.replace(/:([a-z]+)/g,(_,name)=>{names.push(name);return '([a-z0-9_-]+)';}),match=path.match(new RegExp('^'+pattern+'$'));
   if(match)return {...screen,params:Object.fromEntries(names.map((name,i)=>[name,match[i+1]]))};
@@ -38,13 +40,13 @@ export default {
   if(url.pathname.startsWith('/api/madbeauty/')){
    const forwarded=new Headers(request.headers);forwarded.set('x-madbeauty-client-ip',request.headers.get('cf-connecting-ip')||'local');
    const response=await object.fetch(new Request(request,{headers:forwarded}));
-   const result=new Response(response.body,response);for(const [k,v]of Object.entries(headers))result.headers.set(k,v);if(!preview&&!request.headers.has('cookie')&&url.pathname.startsWith('/api/madbeauty/media/')&&result.status===200&&result.headers.get('content-type')?.startsWith('image/'))result.headers.delete('X-Robots-Tag');return result;
+   const result=new Response(response.body,response);for(const [k,v]of Object.entries(headers))if(k!=='Referrer-Policy'||!result.headers.has(k))result.headers.set(k,v);if(!preview&&!request.headers.has('cookie')&&url.pathname.startsWith('/api/madbeauty/media/')&&result.status===200&&result.headers.get('content-type')?.startsWith('image/'))result.headers.delete('X-Robots-Tag');return result;
   }
   if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405,headers});
   const path=url.pathname,needsCatalogue=(!path.includes('.')&&!/^\/(meistrui|paskyra|registracija|operatorius)(\/|$)/.test(path))||path==='/content.json'||path==='/content-targets.json'||path==='/paslaugos'||path.startsWith('/paslaugos/')||['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(path)||path.startsWith('/gidai/')||path.startsWith('/autoriai/');
   const offers=needsCatalogue?await object.catalog({}):[],registry=createContentTargetRegistry({offers,deployed:!preview}),content=contentProjection(Date.now(),registry);
   let assetPath;try{assetPath=decodeURIComponent(path);}catch{return new Response('Not found',{status:404,headers});}
-  if(path==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'production',enabled:false,privatePrototype:false,apiAvailable:true,contact,retentionPolicy});
+  if(path==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'production',enabled:false,privatePrototype:false,apiAvailable:true,communityEnabled:env.COMMUNITY_ENABLED==='true',contact,retentionPolicy});
   if(path==='/screen-registry.json')return json(inventory.screens.map(({id,route,label,surface})=>({id,route,label,surface})));
   if(path==='/providers.json')return json({profiles:(await object.publicProfiles()).filter(p=>p?.approved&&!p.isDemo&&!String(p.id).startsWith('demo-'))});
   if(path==='/content.json')return json({siteId:'madbeauty',pages:content.dto,operatorName:contact.operatorName});

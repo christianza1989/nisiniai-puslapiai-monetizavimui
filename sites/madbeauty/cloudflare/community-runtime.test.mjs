@@ -1,0 +1,38 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {core,pinCore} from '../release-20261010/pinned-core.mjs';
+const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js'))),{Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
+const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[pinCore]});
+test('Native separate community atoms: privacy, relationships, requests, durable conversation and revoked access',async()=>{
+ const origin='https://madbeauty.test',storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-community-native-')),mails=[];
+ const start=()=>new Miniflare({modules:true,script:bundle.outputFiles[0].text,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true},COMMUNITY:{className:'MadbeautyCommunity',useSQLite:true}},durableObjectsPersist:storage,bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',COMMUNITY_ENABLED:'true',SESSION_SECRET:'local-test-only-secret-no-production-access'},serviceBindings:{ASSETS:()=>new Response('Not found',{status:404}),MAIL_TRANSPORT:async r=>{mails.push(await r.json());return new Response('Accepted');}}});
+ let mf=start();
+ const browser=()=>{let cookie='',csrf='';const send=async(p,body,extra={})=>{const r=await mf.dispatchFetch(origin+'/api/madbeauty/'+p,{method:body===undefined?'GET':'POST',headers:{Cookie:cookie,...body===undefined?{}:{Origin:origin,'Content-Type':'application/json','X-CSRF-Token':csrf},...extra},...body===undefined?{}:{body:JSON.stringify(body)}});cookie=r.headers.get('set-cookie')?.split(';')[0]||cookie;const v=await r.json();csrf=v.csrf||csrf;return {status:r.status,...v};};return {send,community:(method,input={})=>send('community',{method,input}),async login(email){await send('session');const c=await send('auth/start',{email}),code=mails.at(-1).text.match(/\b\d{6}\b/)[0];const u=await send('auth/verify',{challengeId:c.challengeId,code});assert.equal(u.status,200);return u.user;}};};
+ try{
+  const a=browser(),b=browser(),c=browser();await a.login('community-a@example.com');await b.login('community-b@example.com');await c.login('community-c@example.com');
+  const A=(await a.community('session')).result.actor,B=(await b.community('session')).result.actor,C=(await c.community('session')).result.actor;
+  for(const [user,name] of [[a,'Testinė Austėja'],[b,'Testinė Toma'],[c,'Testinė Ieva']])assert.equal((await user.community('settings',{version:0,name,city:'Vilnius',discoverable:true,messagePolicy:'requests'})).status,200);
+  assert.equal((await a.send('community',{method:'publish',input:{}},{'X-CSRF-Token':'forged'})).status,403);
+  const pub=await a.community('publish',{text:'Violetinis manikiūras',audience:'public',operation:'native-post-one'});assert.equal(pub.status,200,JSON.stringify(pub));const id=pub.result.id;
+  assert.equal((await a.community('publish',{text:'Replay',operation:'native-post-one'})).result.id,id);
+  assert.equal((await b.community('feed')).result.posts[0].text,'Violetinis manikiūras');
+  assert.equal((await b.community('edit',{id,version:1,text:'Forged owner',audience:'public',author:A})).status,404);
+  const comment={author:A,id,text:'Graži idėja!',operation:'native-comment'};const added=await b.community('comment',comment);assert.equal((await b.community('comment',comment)).result.id,added.result.id);
+  assert.equal((await b.community('like',{author:A,id,liked:true})).result.likes,1);assert.equal((await b.community('like',{author:A,id,liked:true})).result.likes,1);
+  const privatePost=(await a.community('publish',{text:'Tik draugėms',audience:'friends',operation:'native-friends-post'})).result;
+  assert.equal((await b.community('get',{author:A,id:privatePost.id})).status,404);
+  const requested=await b.community('friendship',{target:A,action:'request',version:0});assert.equal(requested.status,200,JSON.stringify(requested));assert.equal(requested.result.state,'pending');assert.equal((await b.community('friendship',{target:A,action:'accept',version:1})).status,409);
+  assert.equal((await a.community('friendship',{target:B,action:'accept',version:1})).result.state,'accepted');assert.equal((await b.community('get',{author:A,id:privatePost.id})).status,200);assert.equal((await c.community('get',{author:A,id:privatePost.id})).status,404);
+  assert.equal((await b.community('request',{target:A})).result.state,'accepted');const message=(await b.community('send',{target:A,text:'Labas, noriu aptarti idėją.',operation:'native-message'})).result;
+  assert.equal((await b.community('send',{target:A,text:'Replay',operation:'native-message'})).result.id,message.id);
+  assert.equal((await c.community('conversation',{target:A})).result.messages.length,0);
+  await mf.dispose();mf=start();assert.equal((await a.community('feed')).result.posts.find(p=>p.id===id).comments.length,1);assert.equal((await a.community('conversation',{target:B})).result.messages[0].id,message.id);
+  const req=await c.community('request',{target:A});assert.equal(req.result.state,'pending');await c.community('send',{target:A,text:'Pokalbio užklausa',operation:'request-intro'});assert.equal((await c.community('send',{target:A,text:'Nepriimtas antras',operation:'request-second'})).status,403);assert.equal((await a.community('respond',{target:C,accept:false,version:1})).result.state,'declined');assert.equal((await c.community('send',{target:A,text:'Rejected',operation:'after-decline'})).status,403);
+  assert.equal((await a.community('block',{target:B,blocked:true})).status,200);assert.equal((await b.community('conversation',{target:A})).status,404);assert.equal((await b.community('get',{author:A,id})).status,404);assert.equal((await b.community('comment',{author:A,id,text:'After block',operation:'blocked-comment'})).status,404);
+  await b.send('logout',{});assert.equal((await b.community('session')).status,401);
+ }finally{await mf.dispose();}
+});

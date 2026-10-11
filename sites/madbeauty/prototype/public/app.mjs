@@ -1,4 +1,5 @@
 import {invitationAction} from './profile-invite.mjs';
+import {communityView,communityAction,communityForm,bindCommunity} from './community-ui.mjs';
 import {renderFooter} from './footer.mjs';
 import {profileMetadata,moduleSchema} from './profile-seo.mjs';
 import {directorySchema,directoryDescription} from './provider-directory.mjs';
@@ -61,13 +62,13 @@ function fragmentTarget(){if(!location.hash||location.hash.includes('='))return 
 async function navigate(url,{replace=false,preserve=false}={}){if($('#dialog').open)closeDialog();history[replace?'replaceState':'pushState']({},'',url);await render();if(!preserve){const target=fragmentTarget();if(target)target.scrollIntoView({behavior:'instant'});else window.scrollTo({top:0,behavior:'instant'});$('#main').focus({preventScroll:true});}}
 function chrome(){
   $('#demo-bar').innerHTML=boot.privatePrototype?btn('demo-controls',icon('settings'),'aria-label="Peržiūros nustatymai"','preview-toggle'):'';
-  $('#header').innerHTML=`<a class="brand" href="/" aria-label="Madbeauty pradžia">madbeauty<span>.</span></a><nav class="nav" aria-label="Pagrindinė navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a></nav><div class="row"><a href="/paskyra" class="button outline header-account" aria-label="${state.session.role==='guest'?'Prisijungti':'Paskyra'}">${icon('person')}<span>${state.session.role==='guest'?'Prisijungti':'Paskyra'}</span></a>${btn('mobile-menu',icon('list'),'aria-label="Atidaryti meniu" aria-expanded="false"','close menu-button')}</div><nav class="mobile-menu" aria-label="Mobilioji navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a><a href="/pagalba">Pagalba</a></nav>`;
+  $('#header').innerHTML=`<a class="brand" href="/" aria-label="Madbeauty pradžia">madbeauty<span>.</span></a><nav class="nav" aria-label="Pagrindinė navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a>${boot.communityEnabled?'<a href="/bendruomene">Bendruomenė</a>':''}</nav><div class="row"><a href="/paskyra" class="button outline header-account" aria-label="${state.session.role==='guest'?'Prisijungti':'Paskyra'}">${icon('person')}<span>${state.session.role==='guest'?'Prisijungti':'Paskyra'}</span></a>${btn('mobile-menu',icon('list'),'aria-label="Atidaryti meniu" aria-expanded="false"','close menu-button')}</div><nav class="mobile-menu" aria-label="Mobilioji navigacija"><a href="/paslaugos">Paslaugos</a><a href="/kaip-veikia">Kaip veikia</a><a href="/gidai">Grožio idėjos</a><a href="/meistrams">Meistrams</a>${boot.communityEnabled?'<a href="/bendruomene">Bendruomenė</a>':''}<a href="/pagalba">Pagalba</a></nav>`;
   $('#footer').innerHTML=renderFooter(boot.contact);
 }
 let renderId=0,renderedViewKey='';
 async function render(){
   renderedViewKey=viewKey();
-  const id=++renderId;clearInterval(ctx.holdTimer);ctx.candidates.clear();ctx.currentProfile=null;ctx.directory=null;chrome();let path=decodeURIComponent(location.pathname).replace(/\/+$/,'')||'/';ctx.path=path;
+  const id=++renderId;clearInterval(ctx.holdTimer);clearInterval(ctx.communityTimer);ctx.candidates.clear();ctx.currentProfile=null;ctx.directory=null;chrome();let path=decodeURIComponent(location.pathname).replace(/\/+$/,'')||'/';ctx.path=path;
   const cityForm=$('#catalogue-city'),chosenCity=cityForm?.querySelector('[name="miestas"]')?.value,chosenService=cityForm?.querySelector('[name="paslauga"]')?.value;
   if(activeNode(chosenService)&&isCityId(chosenCity))ctx.catalogueCityChoice={serviceId:activeNode(chosenService).id,cityId:chosenCity};
   $('#main').setAttribute('aria-busy','true');$('#main').innerHTML='<div class="container skeleton-page" role="status"><div class="skeleton" style="width:60%;height:36px" aria-hidden="true"></div><p style="margin-top:24px">Įkeliama…</p></div>';
@@ -81,7 +82,7 @@ async function render(){
     await Promise.all(jobs);
     if(ctx.adapter.mode==='real'){
       const s=ctx.realAdapter.session;
-      if(reconcileAccountState(state,s.user)){clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.erasureReceiptToken=null;ctx.authChallenge=null;}
+      if(reconcileAccountState(state,s.user)){ctx.communityOrganization=null;ctx.communitySession=null;ctx.communityConversation=null;ctx.communityPostOperation=null;ctx.communityMessageOperation=null;ctx.communityInteractionOperation=null;clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.erasureReceiptToken=null;ctx.authChallenge=null;}
       if(restoredWorkspaceAccount!==(s.user?.id||null)){
         restoredWorkspaceAccount=s.user?.id||null;state.session.organizationId=null;
         if(s.user)try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':real-workspace'));if(saved?.accountId===s.user.id&&s.organizations.some(o=>o.id===saved.organizationId))state.session.organizationId=saved.organizationId;}catch{}
@@ -93,6 +94,7 @@ async function render(){
     if(location.hash.startsWith('#paslauga=')||location.hash.includes('miestas=')){state.search={...state.search,...readSearch()};}
     if(/^\/paslaugos\/[^/]+\//.test(path)){state.search.paslauga=path.split('/')[2];state.search.miestas=path.split('/')[3];}
     if(ctx.adapter.mode==='off')html=`<div class="container off-state">${empty('Paslaugos laikinai nepasiekiamos','Pabandykite dar kartą po kelių minučių.',btn('reload-view','Bandyti dar kartą'))}</div>`;
+    else if(path.startsWith('/bendruomene'))html=await communityView(ctx,path);
     else if(path.startsWith('/registracija'))html=await bookingView(ctx,path);
     else if(path.startsWith('/paskyra')||path.startsWith('/meistrui')||path.startsWith('/operatorius'))html=await workspaceView(ctx,path);
     else html=await publicView(ctx,path);
@@ -106,6 +108,7 @@ async function render(){
   alignWorkspaceNavigation();
   const onboardingSteps=$('#main nav[aria-label="Pradžios etapai"],#main nav[aria-label="Vizito žingsniai"]'),currentStep=onboardingSteps?.querySelector('.accent,.active');if(onboardingSteps&&currentStep&&matchMedia('(max-width:760px)').matches)onboardingSteps.scrollLeft=Math.max(0,currentStep.offsetLeft-onboardingSteps.offsetLeft-(onboardingSteps.clientWidth-currentStep.offsetWidth)/2);
   const conversationList=$('#main .conversation-list'),selectedConversation=conversationList?.querySelector('.active');if(conversationList&&selectedConversation)conversationList.scrollTop=Math.max(0,selectedConversation.offsetTop-conversationList.offsetTop-(conversationList.clientHeight-selectedConversation.offsetHeight)/2);
+  bindCommunity(ctx);
   document.body.classList.toggle('workspace-page',/^\/(meistrui|operatorius|paskyra)/.test(path));
   if(recovered){restoreServerMetadata(document,recovered);saveUI();return;}
   const h1=$('#main h1')?.textContent||'Madbeauty',profileMeta=ctx.currentProfile?profileMetadata(ctx.currentProfile):null;document.title=(profileMeta?.title||h1)+' · Madbeauty';
@@ -128,6 +131,7 @@ async function beginBooking(id,candidate=null,practitionerId=null){
   const user=ctx.realAdapter.session?.user;state.booking={serviceId:id,practitionerId:candidate?.practitionerId||practitionerId||s.practitionerId,addons:[],candidate,contact:{name:ctx.adapter.mode==='real'?(user?.name||''):'Pavyzdžio klientė',email:ctx.adapter.mode==='real'?(user?.email||''):'demo-guest@example.com'},idempotencyKey:'confirm-'+crypto.randomUUID(),result:null};saveUI();await navigate('/registracija/paslauga');
 }
 async function commonAction(action,b){
+  if(await communityAction(ctx,action,b))return true;
   if(await waitlistAction(ctx,action,b))return true;
   if(!boot.privatePrototype&&['demo-controls','reset-demo','enable-demo'].includes(action))return true;
   const id=b.dataset.id;
@@ -184,6 +188,7 @@ async function commonForm(form,fd){
   if(form.id==='services-directory-search'){const q=String(fd.get('q')||'').trim().slice(0,80);await navigate('/paslaugos'+(q?'?'+new URLSearchParams({q}):'')+'#kategorijos');return true;}
   if(form.id==='catalogue-picker'){const destination=cataloguePickerDestination(fd.get('paslauga'),fd.get('miestas')||'');if(!destination)throw userError('Pasirink paslaugą ir miestą iš sąrašo.');await navigate(destination,{preserve:true});return true;}
   if(form.id==='catalogue-city'){const node=activeNode(fd.get('paslauga')),city=fd.get('miestas');if(!node||!isCityId(city))throw userError('Pasirink paslaugą ir miestą.');const destination=catalogueCityDestination('/paslaugos/'+node.id,city,await ctx.adapter.catalog({}));await navigate(destination);return true;}
+  if(await communityForm(ctx,form,fd))return true;
   if(await accountForm(ctx,form,fd))return true;
   if(['home-search','results-search'].includes(form.id)){const t=[{id:'all',label:'Visos paslaugos'},...(ctx.catalogueNodes||ctx.taxonomy)].find(t=>t.id===fd.get('paslauga')||t.label.toLocaleLowerCase('lt')===String(fd.get('paslauga')).toLocaleLowerCase('lt'));if(!t||!isCityId(fd.get('miestas')))throw userError('Pasirinkite paslaugą ir miestą iš sąrašo.');const [nuo,iki]=String(fd.get('intervalas')).split(',');state.search={...state.search,paslauga:t.id,miestas:fd.get('miestas'),diena:Number(fd.get('diena')),nuo,iki};await navigate('/paieska'+searchHash(state.search));return true;}
   if(form.id==='filters'){state.search={...state.search,...Object.fromEntries(fd)};await navigate(ctx.path+searchHash(state.search));return true;}

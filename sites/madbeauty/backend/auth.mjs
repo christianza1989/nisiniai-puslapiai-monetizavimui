@@ -2,7 +2,7 @@ import {randomBytes,randomInt,timingSafeEqual} from 'node:crypto';
 import {randomId,reject} from './primitives.mjs';
 import {createRetention} from './retention.mjs';
 const equal=(a,b)=>{const x=Buffer.from(String(a)),y=Buffer.from(String(b));return x.length===y.length&&timingSafeEqual(x,y);};
-export function createAuth(store){
+export function createAuth(store,{onVerifiedEmail}={}){
   const {db,siteId,clock}=store;
   const retention=createRetention(store);
   const session=(token,{create=true}={})=>{
@@ -41,6 +41,8 @@ export function createAuth(store){
       db.prepare('UPDATE email_challenges SET consumed=1 WHERE id=?').run(c.id);
       let u=db.prepare('SELECT id,email,name,operator FROM accounts WHERE site_id=? AND email=?').get(siteId,c.email);
       if(!u){u={id:randomId('account'),email:c.email,name:'',operator:0};db.prepare('INSERT INTO accounts(id,site_id,email,name,created_at) VALUES(?,?,?,?,?)').run(u.id,siteId,u.email,u.name,clock());}
+      // Provider linking is part of the email transaction, never an email-name auto-merge.
+      if(onVerifiedEmail)onVerifiedEmail(s,u);
       // Imported or administrator-created accounts need the same client identity as new sign-ins.
       if(store.ensureClient)store.ensureClient(u.id);
       else if(!(store.recordById?store.recordById('clients',u.id):store.read().clients.find(x=>x.id===u.id))){const d=store.read();d.clients.push({id:u.id,accountId:u.id,name:u.name,email:u.email,version:1});store.write(d);}
@@ -52,6 +54,15 @@ export function createAuth(store){
     if(result.error)reject('INVALID_CODE','Kodas neteisingas arba nebegalioja. Gaukite naują kodą.',400);
     return result;
   };
+  const signIn=(s,accountId)=>store.transaction(()=>{
+    let u=db.prepare('SELECT id,email,name,operator FROM accounts WHERE id=? AND site_id=?').get(accountId,siteId);
+    if(!u||retention.blocked(u.id))reject('UNAUTHENTICATED','Paskyra nepasiekiama.',401);
+    if(store.ensureClient)store.ensureClient(u.id);
+    if(store.onVerifiedAccount)u=store.onVerifiedAccount(u);
+    db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);
+    const fresh=session(null);db.prepare('UPDATE sessions SET account_id=? WHERE token_hash=? AND site_id=?').run(u.id,fresh.token_hash,siteId);fresh.account_id=u.id;
+    return {session:fresh,user:{...u,verifiedAt:clock()}};
+  });
   const logout=s=>{db.prepare('DELETE FROM sessions WHERE token_hash=? AND site_id=?').run(s.token_hash,siteId);return session(null);};
-  return {session,account,requireAccount,csrf,start,verify,logout};
+  return {session,account,requireAccount,csrf,start,verify,signIn,logout};
 }

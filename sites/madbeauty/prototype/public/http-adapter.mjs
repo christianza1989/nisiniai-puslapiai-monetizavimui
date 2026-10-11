@@ -15,6 +15,9 @@ export function createHttpAdapter(){
   async function rpc(method,input={}){const previousUser=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();if(previousUser&&previousUser!==session.user?.id&&!readMethods.has(method))throw Object.assign(Error('Paskyros sesija pasikeitė. Prisijunk iš naujo ir patikrink veiksmą prieš jį kartodamas.'),{code:'SESSION_CHANGED',status:409});return(await request('rpc',{method,input,siteId:'madbeauty'})).result;}
   adapter.refreshSession=()=>{if(!refreshPending)refreshPending=request('session').then(value=>{session=value;adapter.clock=session.clock;adapter.session=session;return session;}).finally(()=>{refreshPending=null;});return refreshPending;};
   adapter.authStart=async email=>request('auth/start',{email});
+  adapter.community=async(method,input={},organizationId=null)=>{const user=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();if(user&&user!==session?.user?.id)throw Object.assign(Error('Paskyra pasikeitė. Prisijunk iš naujo.'),{code:'SESSION_CHANGED'});return (await request('community',{method,input,organizationId})).result;};
+  adapter.facebookStart=async(input={})=>{if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();return request('auth/facebook/start',input);};
+  adapter.facebookUnlink=async()=>{const result=await request('auth/facebook/unlink',{});await adapter.refreshSession();return result;};
   adapter.authVerify=async(challengeId,code)=>{session=await request('auth/verify',{challengeId,code});adapter.clock=session.clock;adapter.session=session;return session;};
   adapter.logout=async()=>{session=await request('logout',{});adapter.session=session;return session;};
   adapter.demoIdentities=async()=>({organizations:session?.organizations||[],clients:session?.user?[{id:session.user.id,name:session.user.name||session.user.email}]:[]});

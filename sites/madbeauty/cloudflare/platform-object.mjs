@@ -5,6 +5,8 @@ import {createMedia} from './media.mjs';
 import {createSqlMediaBucket} from './media-bucket.mjs';
 import {createPlatform} from '../backend/platform.mjs';
 import {createAuth} from '../backend/auth.mjs';
+import {createFacebookAuth} from '../backend/facebook-auth.mjs';
+import {createCommunityApi} from '../backend/community-api.mjs';
 import {createOrganizationHandoff} from '../backend/organization-handoff.mjs';
 import {createOrganizationCommit} from '../backend/organization-authority.mjs';
 import {createOrganizationDirectory} from '../backend/organization-directory.mjs';
@@ -24,6 +26,7 @@ export class MadbeautyPlatform extends DurableObject{
  async fetch(request){
   const origin=this.env.APP_ORIGIN;
   if(new URL(request.url).origin!==origin)return new Response('Not found',{status:404});
+  if(new URL(request.url).pathname==='/api/madbeauty/community')return createCommunityApi(this.store,{origin,enabled:this.env.COMMUNITY_ENABLED==='true',getObject:this.env.COMMUNITY?name=>this.env.COMMUNITY.get(this.env.COMMUNITY.idFromName(name)):undefined,dispatch:this.directory().dispatch}).handle(request);
   if(new URL(request.url).pathname==='/api/madbeauty/recovery-status'){
    if(request.method!=='GET')return new Response('Method not allowed',{status:405});
    const token=(request.headers.get('cookie')||'').split(';').map(s=>s.trim()).find(s=>s.startsWith('__Host-madbeauty_sid='))?.slice('__Host-madbeauty_sid='.length),auth=createAuth(this.store);
@@ -32,7 +35,7 @@ export class MadbeautyPlatform extends DurableObject{
   }
   if(request.method==='POST'&&new URL(request.url).pathname==='/api/madbeauty/auth/start'&&!this.env.MAIL_TRANSPORT&&!this.env.MAIL_RELAY_URL&&(!this.env.LEAD_SMTP_USER||!this.env.LEAD_SMTP_PASSWORD))return Response.json({error:{code:'MAIL_UNAVAILABLE',message:'Prisijungimas laikinai nepasiekiamas. Rašykite info@pinet.lt.'}},{status:503,headers:{'Cache-Control':'no-store'}});
   const directory=this.directory(),media={...this.media,uploadMedia:(user,input)=>directory.uploadMedia(user,input,{transformMedia:this.media.transformMedia,uploadSource:account=>this.media.uploadSource(this.store,account,input)}),readMedia:(store,file,user,platform)=>directory.readMedia(file,user,()=>this.media.readMedia(store,file,user,platform))};
-  const response=await fetchApi(request,this.store,{origin,media,ip:request.headers.get('x-madbeauty-client-ip')||'unknown',dispatch:directory.dispatch});
+  const response=await fetchApi(request,this.store,{origin,media,ip:request.headers.get('x-madbeauty-client-ip')||'unknown',dispatch:directory.dispatch,facebook:{enabled:this.env.FACEBOOK_LOGIN_ENABLED==='true',appId:this.env.FACEBOOK_APP_ID||'',appSecret:this.env.FACEBOOK_APP_SECRET||'',graphVersion:this.env.FACEBOOK_GRAPH_VERSION||'v26.0'}});
   if(request.method==='POST'){
    await this.schedule();
    if(new URL(request.url).pathname==='/api/madbeauty/auth/start'&&response.ok){
@@ -92,6 +95,7 @@ export class MadbeautyPlatform extends DurableObject{
  async alarm(){const directory=this.directory();try{await directory.runRetention();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();}finally{await this.schedule();}}
  expire(){
   const now=this.store.clock(),db=this.store.db;
+  createFacebookAuth(this.store,{origin:this.env.APP_ORIGIN}).cleanup();
   db.prepare("UPDATE mail_outbox SET state='expired',payload='{}',lease_until=0 WHERE type='login-code' AND state IN ('pending','sending','failed') AND challenge_id IN (SELECT id FROM email_challenges WHERE consumed=1 OR expires_at<=?)").run(now);
   db.prepare('DELETE FROM sessions WHERE expires_at<? OR touched_at<?').run(now,now-1800000);
   db.prepare('DELETE FROM rate_limits WHERE expires_at<?').run(now);

@@ -1,11 +1,12 @@
 import {createAuth} from './auth.mjs';
+import {createFacebookAuth} from './facebook-auth.mjs';
 import {createPlatform} from './platform.mjs';
 import {ApiError,reject} from './primitives.mjs';
 import {requireCapability} from './permissions.mjs';
 import {publicRpcMethods as publicMethods,rpcMethods as methods,invokePlatform} from './rpc-contract.mjs';
-export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=false,media,dispatch}={}){
+export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=false,media,dispatch,facebook:facebookConfig}={}){
   const {prepareMedia,readMedia}=media;
-  const auth=createAuth(store),platform=createPlatform(store),cookieName=secure?'__Host-madbeauty_sid':'madbeauty_sid';
+  const facebook=createFacebookAuth(store,{...facebookConfig,origin}),auth=createAuth(store,{onVerifiedEmail:facebook.completeEmail}),platform=createPlatform(store),cookieName=secure?'__Host-madbeauty_sid':'madbeauty_sid';
   const call=dispatch||((method,user,input)=>invokePlatform(platform,method,user,input));
   const cookie=s=>`${cookieName}=${s.token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=28800${secure?'; Secure':''}`;
   const cookies=req=>Object.fromEntries(String(req.headers.cookie||'').split(';').map(x=>x.trim().split('=')));
@@ -17,13 +18,25 @@ export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=fa
     try{
       if(req.headers.host!==new URL(origin).host)reject('ORIGIN','Netinkamas origin.',403);
       const pathname=new URL(req.url,origin).pathname;
+      if(pathname==='/api/madbeauty/auth/facebook/deletion-status'&&req.method==='GET'){send(res,200,facebook.deletionStatus(new URL(req.url,origin).searchParams.get('code')));return true;}
+      if(['/api/madbeauty/auth/facebook/deletion','/api/madbeauty/auth/facebook/deauthorize'].includes(pathname)&&req.method==='POST'){
+        if(!String(req.headers['content-type']||'').startsWith('application/x-www-form-urlencoded'))reject('INVALID_INPUT','Netinkama užklausa.');
+        store.limit('facebook-signed-ip:'+(req.socket.remoteAddress||'unknown'),30,600);
+        let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>20000)reject('PAYLOAD_TOO_LARGE','Per didelė užklausa.',413);}
+        const result=facebook.providerDeletion(new URLSearchParams(text).get('signed_request'));
+        send(res,200,pathname.endsWith('/deletion')?result:{success:true});return true;
+      }
       if(!['GET','POST'].includes(req.method))reject('METHOD','Metodas neleidžiamas.',405);
-      if(req.method==='GET'&&!['/api/madbeauty/session','/api/madbeauty/customer-data','/api/madbeauty/organization-report.csv','/api/madbeauty/offer-prices.csv'].includes(pathname)&&!pathname.startsWith('/api/madbeauty/media/'))reject('NOT_FOUND','Puslapis nerastas.',404);
+      if(req.method==='GET'&&!['/api/madbeauty/session','/api/madbeauty/customer-data','/api/madbeauty/organization-report.csv','/api/madbeauty/offer-prices.csv','/api/madbeauty/auth/facebook/callback'].includes(pathname)&&!pathname.startsWith('/api/madbeauty/media/'))reject('NOT_FOUND','Puslapis nerastas.',404);
       const upload=pathname==='/api/madbeauty/upload';
       if(req.method==='POST'&&(req.headers.origin!==origin||!upload&&!String(req.headers['content-type']||'').startsWith('application/json')))reject('ORIGIN','Užklausa neleidžiama.',403);
       let s=auth.session(cookies(req)[cookieName],{create:false});
       if(!s&&pathname==='/api/madbeauty/session'){store.limit('session-ip:'+(req.socket.remoteAddress||'unknown'),60,60);s=auth.session(null);}
       responseSession=s;
+      if(req.method==='GET'&&pathname==='/api/madbeauty/auth/facebook/callback'){
+        let result;try{result=await facebook.acceptCallback(s,Object.fromEntries(new URL(req.url,origin).searchParams),auth);}catch{result={redirect:'/paskyra?facebook=failed'};}
+        res.writeHead(303,{'Location':result.redirect,'Cache-Control':'no-store','Referrer-Policy':'no-referrer','X-Robots-Tag':'noindex, nofollow',...(result.session?.token?{'Set-Cookie':cookie(result.session)}:{})});res.end('');return true;
+      }
       if(!s&&req.method==='POST')reject('CSRF','Sesija pasikeitė. Prisijunkite iš naujo.',403);
       if(req.method==='GET'&&pathname==='/api/madbeauty/offer-prices.csv'){
         if(req.headers['sec-fetch-site']==='cross-site'||req.headers.origin&&req.headers.origin!==origin)reject('ORIGIN','Užklausa neleidžiama.',403);
@@ -41,14 +54,16 @@ export function createApiHandler(store,{origin='http://127.0.0.1:8788',secure=fa
         res.writeHead(200,{'Content-Type':'application/json; charset=utf-8','Content-Disposition':'attachment; filename="madbeauty-mano-duomenys.json"','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow','Referrer-Policy':'no-referrer'});res.end(JSON.stringify(result,null,2));return true;
       }
       if(req.method==='GET'&&pathname.startsWith('/api/madbeauty/media/')){const bytes=await readMedia(store,pathname.split('/').at(-1),auth.account(s),platform);res.writeHead(200,{'Content-Type':'image/webp','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'});res.end(bytes);return true;}
-      if(req.method==='GET'){send(res,200,{...await call('session',auth.account(s),{}),csrf:s.csrf,clock:platform.clock()},s);return true;}
+      if(req.method==='GET'){send(res,200,{...await call('session',auth.account(s),{}),csrf:s.csrf,clock:platform.clock(),facebook:facebook.status(s)},s);return true;}
       auth.csrf(s,req.headers['x-csrf-token']);
       if(upload){if(req.headers['x-asset-rights-confirmed']!=='true')reject('INVALID_INPUT','Patvirtinkite vaizdo viešinimo teisę.');const user=auth.requireAccount(s),organizationId=String(req.headers['x-organization-id']||'');requireCapability(await call('workspace',user,{role:'professional',organizationId}),'profile');store.limit('media-account:'+user.id,24,3600);let size=0,chunks=[];for await(const chunk of req){size+=chunk.length;if(size>12*1024*1024)reject('PAYLOAD_TOO_LARGE','Vaizdas viršija12 MB.',413);chunks.push(chunk);}const metadata={organizationId,idempotencyKey:String(req.headers['x-asset-operation']||''),rightsConfirmedAt:new Date(store.clock()).toISOString(),rightsConfirmedBy:user.id,alt:decodeURIComponent(String(req.headers['x-asset-alt']||'')),rights:decodeURIComponent(String(req.headers['x-asset-rights']||'')),usage:String(req.headers['x-asset-usage']||''),mime:String(req.headers['content-type']||''),bytes:Buffer.concat(chunks)};const uploadSource=async()=>{const a=await prepareMedia(store,metadata);try{return platform.attachMedia(user,a);}catch(error){await media.discardMedia?.(a);throw error;}};const result=media.uploadMedia?await media.uploadMedia(user,metadata,uploadSource):await uploadSource();send(res,200,{result},s);return true;}
       const input=await body(req),ip=req.socket.remoteAddress||'unknown';
       store.limit('api-ip:'+ip,300,60);
       if(input.siteId&&input.siteId!==store.siteId)reject('SITE_SCOPE','Kitos svetainės užklausa neleidžiama.',403);
+      if(pathname==='/api/madbeauty/auth/facebook/start'){send(res,200,facebook.start(s,input,auth.account(s)),s);return true;}
+      if(pathname==='/api/madbeauty/auth/facebook/unlink'){send(res,200,facebook.unlink(s,auth.requireAccount(s)),s);return true;}
       if(pathname==='/api/madbeauty/auth/start'){send(res,200,auth.start(s,input.email,ip),s);return true;}
-      if(pathname==='/api/madbeauty/auth/verify'){const result=auth.verify(s,input.challengeId,input.code,ip);responseSession=result.session;send(res,200,{...await call('session',result.user,{}),csrf:result.session.csrf,clock:platform.clock()},result.session);return true;}
+      if(pathname==='/api/madbeauty/auth/verify'){const result=auth.verify(s,input.challengeId,input.code,ip);responseSession=result.session;send(res,200,{...await call('session',result.user,{}),csrf:result.session.csrf,clock:platform.clock(),facebook:facebook.status(result.session)},result.session);return true;}
       if(pathname==='/api/madbeauty/logout'){const fresh=auth.logout(s);responseSession=fresh;send(res,200,{...await call('session',null,{}),csrf:fresh.csrf,clock:platform.clock()},fresh);return true;}
       if(pathname!=='/api/madbeauty/rpc'||!methods.has(input.method))reject('NOT_FOUND','Operacija nerasta.',404);
       const user=publicMethods.has(input.method)?auth.account(s):auth.requireAccount(s),v=input.input||{};

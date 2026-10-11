@@ -53,5 +53,31 @@
     "operational DB/API migration",
     "main merge",
     "live X activation"
-  ]
+  ],
+  "latest_correction": {
+    "source_sha": "4e2d0a9127105c18b86846ffc7f192de3158c910",
+    "result": "PASS",
+    "set": "A2",
+    "command": "XBOT_QA_FROZEN=1 uv run pytest tests/test_xbot_bridge.py -q --tb=short",
+    "cases": 34,
+    "seconds": 497.56,
+    "started": "2026-10-11T21:57:00.685Z",
+    "finished": "2026-10-11T22:05:26.434Z",
+    "git_verifier": "actual clean HEAD, post-run clean status separately captured",
+    "model": "fake only; two explicitly seeded SQL-clock accounting cases",
+    "migration_and_shared_api_config_dependency_delta": "none since d3aa",
+    "customer_agents_regression": "historical unchanged set B at d3aa; not rerun/not summed",
+    "private_artifact_sha256": {
+      "frozen-2.log": "c86f8470e66addbd8112a15ccd9a47ec17299adf0f017c55853356732bbe97fd",
+      "frozen-2-meta.json": "f21b5729a8a2a9c37d5750a159d77c83a0aa3a20ccfbc7e8369be29ffc1da67c",
+      "frozen-2-wrapper.log": "657485be3490afdbb37abb784b4aa385e710b822e1eed874c896df40149231d8",
+      "post-frozen-2-source.json": "efe3e9f91b7eb71abe8155a784373d035b8cb98f5629bc130016d948fc89b910",
+      "lockwait-original-fail.log": "cf4f435a739bf924b19e2743d1e57e8044cf59fdc2a95eb90876d7db22785840",
+      "reviewer-original-fails.log": "ebed4a09324695fdea85faf55cf62301fe566f8e23296743b52f770ea252e7c9",
+      "session-original-fail.log": "9b0bb891538a868d962f6077e2b2f68efa7f4f6201d259da50dfd96eb8c103f1",
+      "reviewer-fix-dev-1.log": "5e92e03a162fb489c3a8103280a7a87c33225aae289e49e47a0b1ba2f6787c81",
+      "clock-dispatch-fix-dev-1.log": "cb0a64c8fe9a3b99b50e8b2636c877d83ad93229ef62fc5c68fe7c05f104191a",
+      "correction-staged-safety.json": "5520732c08fd03d31d9233d1d93cadd870cbfedd62c1e87d68cdcf7b8daab278"
+    }
+  }
 }

@@ -15,7 +15,7 @@ Vietinis Xbot ir atskiras sintetinio PostgreSQL prijungimo paketas užbaigti per
 | Verslomatika modulio DTO / schema / adapteris | Įgyvendinta, nekintama per-verslo tapatybė, DB aplinkos pin ir revokacija testuotos |
 | Modelio apskaita po atmetimo/klaidos/cancel | Nepriklausomi usage kvitai, lifetime sumos; nežinomi žetonai ir piniginė kaina neišgalvojami |
 | Maintained core auth / source resolver / dashboardo API laidai | Actual izoliuotas PG resolver, atskiras worker grant, ticket ir galutinis CAS su saugiu HTTP kvitu priimti sintetiniam keliui; BFF/portal/operational adoption dar neatlikta |
-| Awaited module ir Service current-core bibliotekos sąsaja | Ankstesnė87 injected QA išsaugota; papildomas tikras PG/maintained V2 source kelias patikrintas25 naujais testais. Canonical module admission/activation lieka false, kalibravimas UNVERIFIED |
+| Awaited module ir Service current-core bibliotekos sąsaja | Ankstesnė87 injected QA išsaugota; papildomas tikras PG/maintained V2 source kelias patikrintas34 naujais testais po atskiros peržiūros pataisų. Canonical module admission/activation lieka false, kalibravimas UNVERIFIED |
 | Bendro projekto ir nišos kalibravimas | Atidėtas kitam savininko numatytam etapui |
 | Gyva kampanija, recurring runtime, post/media/reply/DM priėmimas | OFF; nauji kanalai išjungti, ribos 0 |
 | CRM CaseSource / pardavimo atribucija | Neprijungta; vietinis inbound klasifikavimas nesukuria kliento |

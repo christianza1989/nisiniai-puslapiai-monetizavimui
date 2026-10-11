@@ -14,7 +14,7 @@
   const clamp = (value, limit) => Math.max(-limit, Math.min(limit, value));
   const step = () => Math.max(1, Math.min(225, stage.clientWidth < 600 ? stage.clientWidth * .87 : stage.clientWidth * .17));
   let position = 0, target = 0, index = 0;
-  let timer, wheelTimer, frame = 0, lastFrame = 0, announceOnSettle = false;
+  let timer, wheelTimer, frame = 0, lastFrame = 0, autoFrame = 0, autoTime = 0, announceOnSettle = false;
   let userPaused = false, hovered = false, focused = false, inView = false;
   let drag = null, wheeling = false;
 
@@ -35,13 +35,36 @@
       card.setAttribute('aria-hidden', String(slot !== index));
     });
     current.textContent = String(index + 1).padStart(2, '0');
-    stage.setAttribute('aria-label', 'Review ' + (index + 1) + ' of ' + total + '. Drag, scroll, or use Left and Right arrow keys to explore.');
+    stage.setAttribute('aria-label', 'Review ' + (index + 1) + ' of ' + total + '. Drag, swipe horizontally, or use Left and Right arrow keys to explore.');
+  }
+  function stopAuto() {
+    clearTimeout(timer);
+    cancelAnimationFrame(autoFrame); autoFrame = 0; autoTime = 0;
+  }
+  function blockedReason() {
+    return total < 2 ? 'single-review' : userPaused ? 'paused' : motion.matches ? 'reduced-motion' :
+      hovered ? 'hover' : focused ? 'keyboard-focus' : !inView ? 'offscreen' : document.hidden ? 'hidden' :
+      drag || wheeling || frame ? 'interacting' : '';
+  }
+  function autoTick(now) {
+    const reason = blockedReason();
+    if (reason) { stopAuto(); root.dataset.rotation = reason; return; }
+    const dt = Math.min(64, autoTime ? now - autoTime : 0); autoTime = now;
+    // One card in about eight seconds, with no jump or long idle interval.
+    position = target = mod(position + dt / 8000);
+    render();
+    autoFrame = requestAnimationFrame(autoTick);
   }
   function schedule() {
-    clearTimeout(timer);
-    if (total < 2 || userPaused || motion.matches || hovered || focused || !inView || document.hidden || drag || wheeling || frame) return;
-    const words = cards[index].querySelector('blockquote').textContent.trim().split(/\s+/).length;
-    timer = setTimeout(() => moveTo(Math.round(position) + 1, false), Math.min(10500, Math.max(6500, words * 220 + 1800)));
+    stopAuto();
+    const reason = blockedReason();
+    root.dataset.rotation = reason || 'waiting';
+    if (reason) return;
+    timer = setTimeout(() => {
+      if (blockedReason()) return;
+      root.dataset.rotation = 'running';
+      autoFrame = requestAnimationFrame(autoTick);
+    }, 700);
   }
   function settled() {
     // Normalize the coordinate without jumping visibly at the loop seam.
@@ -67,7 +90,7 @@
     cancelAnimationFrame(frame); frame = 0; lastFrame = 0;
   }
   function moveTo(next, announce = true) {
-    clearTimeout(timer);
+    stopAuto(); root.dataset.rotation = 'interacting';
     target = next; announceOnSettle = announce;
     root.classList.add('rv-moving');
     if (motion.matches) { stopAnimation(); position = target; settled(); }
@@ -105,11 +128,12 @@
     if (event.key === 'Home') { event.preventDefault(); select(position - mod(position)); }
     if (event.key === 'End') { event.preventDefault(); select(position - mod(position) + total - 1); }
   });
-  // Deltas describe distance, not a one-card command. Trackpads supply momentum;
-  // accumulate their events without adding a second artificial fling.
+  // Keep ordinary vertical wheel scrolling native. Only an intentional horizontal
+  // trackpad gesture or Shift-wheel controls the carousel, proportional to distance.
   stage.addEventListener('wheel', event => {
     if (event.ctrlKey || event.metaKey || drag || !event.cancelable || total < 2) return;
-    const raw = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+    if (!event.shiftKey && Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+    const raw = event.shiftKey && !event.deltaX ? event.deltaY : event.deltaX;
     const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? stage.clientWidth : 1;
     const delta = clamp(raw * unit, step() * 6);
     if (!delta) return;
@@ -121,11 +145,11 @@
   root.addEventListener('pointerdown', () => { focused = false; schedule(); }, true);
   stage.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0 || event.target.closest('a, button')) return;
-    endWheel(); stopAnimation(); target = position;
+    endWheel(); stopAuto(); stopAnimation(); target = position;
     drag = { id: event.pointerId, x: event.clientX, y: event.clientY, start: position,
       lastX: event.clientX, lastTime: performance.now(), velocity: 0, axis: null,
       slot: cards.indexOf(event.target.closest('.rv-card')) };
-    clearTimeout(timer); stage.setPointerCapture(event.pointerId);
+    root.dataset.rotation = 'interacting'; stage.setPointerCapture(event.pointerId);
   });
   stage.addEventListener('pointermove', event => {
     if (!drag || drag.id !== event.pointerId) return;
@@ -168,17 +192,17 @@
   root.addEventListener('focusin', event => { focused = event.target.matches(':focus-visible'); schedule(); });
   root.addEventListener('focusout', event => { focused = root.contains(event.relatedTarget) && event.relatedTarget.matches(':focus-visible'); schedule(); });
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) { endWheel(); stopAnimation(); position = target = Math.round(position); settled(); }
+    if (document.hidden) { endWheel(); stopAuto(); stopAnimation(); target = position; settled(); }
     else schedule();
   });
   motion.addEventListener('change', () => {
-    if (motion.matches) { endWheel(); stopAnimation(); position = target = Math.round(position); settled(); }
+    if (motion.matches) { endWheel(); stopAuto(); stopAnimation(); position = target = Math.round(position); settled(); }
     updatePause();
   });
   new ResizeObserver(render).observe(stage);
   new IntersectionObserver(entries => {
-    inView = entries[0].isIntersecting;
-    if (!inView) { endWheel(); stopAnimation(); position = target = Math.round(position); settled(); }
+    inView = entries[0].isIntersecting && entries[0].intersectionRatio >= .2;
+    if (!inView) { endWheel(); stopAuto(); stopAnimation(); target = position; settled(); }
     else schedule();
   }, { threshold: .2 }).observe(stage);
   root.classList.add('rv-ready'); render(); updatePause();

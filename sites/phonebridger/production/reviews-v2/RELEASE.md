@@ -30,3 +30,13 @@ Rollback is application rollback to the previous Worker version, preserving data
 
 productionSource is invoked only for HTML/JS in the incumbent build. CSS interaction overlays must be consumed explicitly by the build; adding a CSS branch inside productionSource alone has no effect. An artifact diff caught this before publication. Keep the prototype frozen and override only explicit reviewed asset paths.
 
+
+## Follow-up: continuous auto motion and native vertical wheel
+
+Human reported autoplay still appeared inactive and requested no incidental mouse scrolling. Supersedes the discrete reading interval above: autoplay now moves continuously at one card per eight seconds, starting/resuming after 700ms. Hover freezes the reading stage immediately; leaving resumes, and pointer clicks cannot leave a persistent focus hold. Keyboard focus, explicit pause, hidden/offscreen state and reduced-motion preference still pause. Hidden/offscreen stops preserve fractional position. data-rotation exposes the current pause reason for diagnosis; autoplay stays silent in the live region.
+
+Ordinary vertical wheel remains native page scrolling. Only horizontal trackpad or deliberate Shift-wheel rotates proportionally. Slow/fast drag and touch flings remain proportional, with native vertical touch/pinch preserved.
+
+Local and canonical acceptance PASS: visible autoplay within two seconds, immediate hover hold and leave recovery, keyboard hold/exit, Play with retained focus, pointer focus recovery, offscreen, reduced motion/exit, silent autoplay; ordinary real wheel scrolls page without rotating, pixel/line/page horizontal deltas and Shift-wheel handled, Ctrl-wheel untouched, loop and cancellation verified. Canonical weak/strong horizontal wheel 1/4, slow/fast mouse drag 2/4, slow/fast browser-emulated touch 1/3. Zero canonical browser errors. Separate wall-clock canonical browser check measured 58.47px movement over 2.2s, then no movement during 800ms hover hold. Desktop/mobile captures reviewed. Physical phone testing is not claimed.
+
+Artifact diff: only assets/reviews-v1/section.js changed. Routes, release metadata except generatedAt, content, approved installers, CSS, Worker bindings/vars/cron preserved. Current published Worker 1ed6fa86-661a-49b4-9dec-7fb05e7a84e8; previous/rollback target 6f8c9fbf-e07d-4918-9b80-e9ecc0533743. Canonical JS bytes match SHA256 4bc9f2209e1dedfe66b24a80da62f80a075f7ce65456224b9b472033b603f098.

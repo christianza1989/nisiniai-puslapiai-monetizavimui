@@ -1,0 +1,27 @@
+{
+  "category": "code",
+  "summary": "Actual privacy request about unknown own-platform publication/deletion cannot use irrelevant public provenance or leave marketing stop implicit after a blocked reply",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue_lab.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_dialogue.py",
+    "agent-business-core/acquisition-plan/CALIBRATION.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/niche-client-acquisition/references/output.md",
+    "SKILLS/catalog.json"
+  ],
+  "evidence": [
+    "Actual source3e28 baseline copy-source-reply-20261010-a a03 first clinician query received correct qualification/guarantee refusal; second incoming explicitly refused onboarding and asked own-platform publication/removal status",
+    "Actual prepare_reply returned privacy_reply with no evidence/offer refs and exact inbound request quote; strict reply_blocks refused unsupported_reply/privacy_reply_must_be_source_only; lab report INCOMPLETE/ValueError and original dialogue preserved",
+    "Current public service fact does not establish current platform publication or completed deletion. Relaxing source-only review or inserting an unrelated evidence ref would fabricate provenance",
+    "Need typed no-outbound operator handoff with exact inbound quote and marketing suppression, recorded as required not executed; normal inboundCase adoption remains a separate owner dependency"
+  ],
+  "rollback": "Scoped revert privacy_handoff decision/lab handling and its applicable instructions if incompatible; keep first incomplete report and all original receipts. Fail closed for ungrounded privacy responses and do not fabricate actual Case handoff or deletion",
+  "id": "upgrade-f889ae30-1429-46d6-85a4-8d62b92332c2",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+  "createdAt": "2026-10-10T05:59:58.185Z"
+}

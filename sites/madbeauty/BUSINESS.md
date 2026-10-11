@@ -1,5 +1,7 @@
 # madbeauty.lt — aktuali verslo ir vykdymo apimtis
 
+2026-10-10 savininko patikslinimas: Madbeauty apims visas grožio paslaugas; ankstesnis nagų paslaugų / manikiūro fokuso aprašas pasenęs ir nebėra dabartinė kategorijų riba. Teikėjų pritraukimo planas taikomas visoms platformos grožio kategorijoms, paiešką ir rezultatus skaidant pagal konkrečią paslaugą bei vietovę. Tikslų aktualų kategorijų sąrašą imti iš platformos katalogo; šis komercinės apimties patikslinimas pats nepatvirtina hosted funkcijų priėmimo. [Naujas pilotas](ACQUISITION_PILOT_PLAN.md), [įrankiai](TOOLS.md). Žemiau išsaugoti ankstesni būsenos ir tyrimo įrašai.
+
 2026-10-06. Savininkas po pradinio frontend etapo autorizavo pilną vietinį email-only backend ir provider→client registraciją. Pagal PLATFORM_BUILD_CONTRACT istorinis „backend vėliau“ nėra dabartinis draudimas. Vietinis veikiantis kalendorius/booking yra įgyvendintas, tačiau nemokamo piloto pajamų hipotezė, reali pasiūla ir ekonomika lieka neįrodyti. Dabartinė apimtis/priėmimas: IMPLEMENTATION_STATUS.md, SCREEN_STATUS.json, PHASE-1-AUDIT.md. Tikras launch neįvyko; private fixture nėra verslo paklausa. Toliau išlaikytas pirminis tyrimas ir nežinomybės.
 
 ## Istoriniai įrašai (ankstesnė apimtis; ne dabartinis priėmimas)

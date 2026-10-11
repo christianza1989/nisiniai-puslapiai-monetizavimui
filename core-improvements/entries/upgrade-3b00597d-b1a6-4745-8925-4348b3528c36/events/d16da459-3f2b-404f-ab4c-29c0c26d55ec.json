@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Versioned interface package only. Initial import-order FAIL and duplicate body test-fixture TypeError fixed without weakening assertions. No mounted route, DB replay ledger or hosted/live pipeline claim.",
+  "checks": [
+    {
+      "command": "uv run --locked python -m unittest discover -s offline_tests -p test_acquisition*.py -q",
+      "result": "PASS",
+      "evidence": "42 tests, including 11 new interface/security scenarios"
+    },
+    {
+      "command": "node --test ../contracts/acquisition-v1/auth.test.mjs",
+      "result": "PASS",
+      "evidence": "3 tests; Python vector matches Node/Web Crypto; body/path/key/time/Unicode tamper rejected"
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_contracts.py --check",
+      "result": "PASS",
+      "evidence": "Canonical schema and synthetic raw-byte vector exact"
+    },
+    {
+      "command": "uv run --locked ruff check own interface/auth/export/test Python paths",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    }
+  ],
+  "eventId": "d16da459-3f2b-404f-ab4c-29c0c26d55ec",
+  "sequence": 2,
+  "at": "2026-10-09T23:40:29.335Z"
+}

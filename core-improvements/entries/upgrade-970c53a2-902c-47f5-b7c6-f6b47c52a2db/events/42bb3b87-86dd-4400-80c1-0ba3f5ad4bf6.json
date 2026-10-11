@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "uv run --locked python -m unittest discover -s offline_tests -p 'test_acquisition*.py' -q",
+      "result": "PASS",
+      "evidence": "50/50 after separate pending-draft repair; first49newproof and original42 retained"
+    },
+    {
+      "command": "node --test agent-business-core/contracts/recipient-binding-v1/recipient-binding.test.mjs agent-business-core/contracts/acquisition-v1/auth.test.mjs",
+      "result": "PASS",
+      "evidence": "6/6;3PythonJS canonical byte/MAC vectors, registered scope and invalid-input separation"
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_recipient_contracts.py --check; uv run --locked python scripts/acquisition_contracts.py --check",
+      "result": "PASS",
+      "evidence": "Recipient0ef2273cf5b0ab6530862cffed1bb3fc8e3caa8d32a3a8da59e4e60dddea5ae4; existing0.1.1bytes unchanged"
+    },
+    {
+      "command": "scoped Ruff6changed Python files and isolated skill-creator validation",
+      "result": "PASS",
+      "evidence": "Ruff allchecks; skillvalid;6MD/42localtargets/0missing and exactsinglecatalog hash"
+    }
+  ],
+  "note": "Separate recipient0.1.0 strict shapes/registered permissions/native-JS and Python MAC completed locally. Actual50acquisition regressions,6WebCrypto checks, both schema exact checks and scoped Ruff PASS.3shared vectors match native candidate; no raw proof-body email/implicitPython normalization/provider inference. No mounted HTTP/storage/key/native/hosted adoption claimed.",
+  "eventId": "42bb3b87-86dd-4400-80c1-0ba3f5ad4bf6",
+  "sequence": 2,
+  "at": "2026-10-10T01:37:40.030Z"
+}

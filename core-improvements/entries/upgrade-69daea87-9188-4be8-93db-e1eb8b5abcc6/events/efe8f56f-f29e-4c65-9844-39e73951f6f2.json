@@ -1,0 +1,19 @@
+{
+  "note": "After adding exact full-string URL matching, targeted checker suite9/9PASS. Public suffix slash/query/fragment/newline cases all fail closed; earlier21combined PASS retained, not claimed repeated.11changed guidance local targets checked with0missing.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "Final9/9,0FAIL/skip; malformed companion URL4variants including finalnewline, actualmanifest Git diff regression"
+    },
+    {
+      "command": "changed canonical guidance local-target check",
+      "result": "PASS",
+      "evidence": "4Markdown documents/11local targets/0missing"
+    }
+  ],
+  "eventId": "efe8f56f-f29e-4c65-9844-39e73951f6f2",
+  "sequence": 3,
+  "at": "2026-10-10T01:13:51.642Z"
+}

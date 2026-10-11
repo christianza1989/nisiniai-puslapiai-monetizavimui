@@ -1,0 +1,19 @@
+{
+  "note": "Supplement exact executed command for independent reproduction; previous event retained its generic human-readable command label. Actual successful lock/ZoneInfo execution already completed in this turn; no repeated model/runtime acceptance inferred.",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "uv lock --check",
+      "evidence": "Actual108packages graph consistency check, dependency source unchanged"
+    },
+    {
+      "result": "PASS",
+      "command": "uv run --locked python -c 'from zoneinfo import ZoneInfo; import tzdata; zone = ZoneInfo(\"Europe/Vilnius\"); assert zone.key == \"Europe/Vilnius\"; print(\"Timezone import PASS; tzdata=\" + tzdata.__version__)'",
+      "evidence": "Actual Europe/Vilnius assertion and tzdata2026.5 output in this turn"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "9f83786c-a282-453e-a482-4e9576a8b271",
+  "sequence": 3,
+  "at": "2026-10-10T01:12:41.125Z"
+}

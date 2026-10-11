@@ -1,0 +1,18 @@
+{
+  "category": "workflow",
+  "summary": "Keep the canonical current acquisition projection and single-snapshot PostgreSQL regression in the isolated CI lane",
+  "rollback": "Scoped revert these two CI commands; preserve the original capture acceptance job and all immutable receipts",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "siteId": "core",
+  "paths": [
+    ".github/workflows/agent-workflow.yml"
+  ],
+  "evidence": [
+    "Five actual PostgreSQL projection tests passed on 2026-10-10, including concurrent committed stop and historical ACK after erasure",
+    "Existing acquisition-capture CI runs ledger/offline/schema checks but does not run the new projection tests/schema; reservation6093102682"
+  ],
+  "id": "upgrade-b8a1f529-2b60-4d1e-ad72-980ab4ec818b",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "86b05d770ba9d0e5df34dba6fa252624d9a22523",
+  "createdAt": "2026-10-10T03:02:37.983Z"
+}

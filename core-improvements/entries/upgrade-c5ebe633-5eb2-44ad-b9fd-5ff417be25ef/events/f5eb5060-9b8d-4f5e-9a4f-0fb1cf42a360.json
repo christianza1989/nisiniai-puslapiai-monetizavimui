@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Actual independent full I2 migrations through0011 plus acquisition DDL reproduced original grant/startup failure and exclusion-only insufficiency. Owned module repair and exact final formatted preview bootstrap passed. Normal reserved bootstrap/0012/mount/portal adoption remain pending; no foreign source changed, no external send. First failures and prior native data/receipts preserved; owned containers stopped and retained.",
+  "checks": [
+    {
+      "command": "i2_acquisition_bootstrap_review.py baseline/exclusion-only/proposal/partial against separate15541 composite",
+      "result": "PASS",
+      "evidence": "QA and receipt ACQUISITION_I2_BOOTSTRAP_*_2026-10-10; baseline/exclusion blocking reproduced; final proposal164c7692/partial7ca3b6f9;11 control grants and forcedRLS unchanged; no0012/normal mount acceptance"
+    },
+    {
+      "command": "pytest acceptance_tests/test_acquisition_ledger.py acceptance_tests/test_acquisition_projection.py -q --confcutdir=acceptance_tests with explicit15439 fixture",
+      "result": "PASS",
+      "evidence": "19actualPg/HTTP PASS; targeted new regression1PASS; real scoped runtime DELETE SQLSTATE42501, signed original response exact replay, twice module grant repair"
+    },
+    {
+      "command": "pytest offline_tests -q -k acquisition and all4 acquisition schema check scripts",
+      "result": "PASS",
+      "evidence": "50tests/25subtests; four exact schema checks, projection d21b8eac unchanged"
+    },
+    {
+      "command": "scoped Ruff, skill quick_validate, catalog hash and git diff --check",
+      "result": "PASS",
+      "evidence": "Final owned helper/harness/setup/tests and proposed bootstrap Ruff PASS; skill valid; only acquisition catalog hash07b9ac55 changed; no schema edits"
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --phase handoff --companion core-experience-public-20261010",
+      "result": "PASS",
+      "evidence": "04:41UTC fetched main in bothHEAD; no missing commits, own changes preserved"
+    }
+  ],
+  "eventId": "f5eb5060-9b8d-4f5e-9a4f-0fb1cf42a360",
+  "sequence": 2,
+  "at": "2026-10-10T04:41:25.495Z"
+}

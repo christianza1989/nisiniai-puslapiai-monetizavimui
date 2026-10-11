@@ -1,0 +1,258 @@
+{
+  "synthetic": true,
+  "now": "2026-10-10T05:55:00+00:00",
+  "blind_holdout": false,
+  "matrix": {
+    "scope": "six_new_copy_source_reply_regressions",
+    "price_is_unknown": true
+  },
+  "campaign": {
+    "site_id": "synthetic-madbeauty-copy",
+    "campaign_id": "copy-regression-20261010",
+    "sector": "general",
+    "objective": "provider_signup",
+    "mode": "draft_only",
+    "enabled": true,
+    "segments": [
+      "tatuiruotes",
+      "spa",
+      "estetika",
+      "plaukai",
+      "verimas",
+      "masazas"
+    ],
+    "countries": [
+      "LT"
+    ],
+    "timezone": "Europe/Vilnius",
+    "max_prospects": 6,
+    "max_model_calls": 60,
+    "expires_at": "2026-10-11T05:55:00+00:00",
+    "facts": [
+      {
+        "id": "project",
+        "text": "MB Pinet plėtoja Madbeauty grožio paslaugų paieškos platformą visai Lietuvai ir visoms grožio paslaugoms. Tai dar ruošiamas teikėjų prisijungimo etapas, ne patvirtinta hosted pasiūla.",
+        "source": "synthetic-current-owner-scope",
+        "expires_at": "2026-10-11T05:55:00+00:00"
+      },
+      {
+        "id": "purpose",
+        "text": "Planuojamo paslaugų pristatymo tikslas – kad žmogus galėtų susipažinti su teikėjo paslaugomis pagal paslaugą ir miestą. Negalima garantuoti klientų ar pajamų.",
+        "source": "synthetic-approved-planned-purpose",
+        "expires_at": "2026-10-11T05:55:00+00:00"
+      },
+      {
+        "id": "unknowns",
+        "text": "Aktualios kainos, komisiniai, hosted registracijos nuoroda, kelių padalinių profilio funkcija ir klinikų kvalifikacijos patikra šiai kampanijai nepatvirtinti.",
+        "source": "synthetic-current-offer-boundaries",
+        "expires_at": "2026-10-11T05:55:00+00:00"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "a01",
+      "split": "regression",
+      "archetype": "a01",
+      "entity_context": "company",
+      "prospect": {
+        "site_id": "synthetic-madbeauty-copy",
+        "organization_key": "org-f1a8d12f9541cb62.example.test",
+        "name": "Testinė tatuiruočių studija",
+        "role": "provider",
+        "segment": "tatuiruotes",
+        "country": "LT",
+        "contact_source_id": "public",
+        "contact_verified": true,
+        "contact_basis_verified": true,
+        "provider_allowed": true,
+        "evidence": [
+          {
+            "id": "public",
+            "url": "https://org-f1a8d12f9541cb62.example.test/paslaugos",
+            "fact": "Kaune siūlo individualias ir spalvotas tatuiruotes. Vidinė vietos patikros pastaba: Utenos gatvė nesuteikia Utenos miesto aprėpties.",
+            "checked_at": "2026-10-10T04:55:00+00:00",
+            "expires_at": "2026-10-11T05:55:00+00:00",
+            "use_allowed": true
+          }
+        ]
+      },
+      "recipient": "lab@org-f1a8d12f9541cb62.example.test",
+      "persona": "Esi tatuiruočių studijos vadovas Kaune. Abejoji kvietimo nauda: pirmame laiške paklausk kuo toks paslaugų pristatymas naudingas studijai ir ar garantuojami klientai. Nežinai jokios vietos patikros pastabos. Po aiškaus atsakymo mandagiai pasakyk kad apsvarstysi, bet dabar nesi pasiruošęs jungtis.",
+      "expected_classifications": [
+        "question"
+      ],
+      "expected_initial": "draft_ready"
+    },
+    {
+      "id": "a02",
+      "split": "regression",
+      "archetype": "a02",
+      "entity_context": "company",
+      "prospect": {
+        "site_id": "synthetic-madbeauty-copy",
+        "organization_key": "org-e3a844ab89a3963e.example.test",
+        "name": "Testinis paslaugų tinklas",
+        "role": "provider",
+        "segment": "spa",
+        "country": "LT",
+        "contact_source_id": "public",
+        "contact_verified": true,
+        "contact_basis_verified": true,
+        "provider_allowed": true,
+        "evidence": [
+          {
+            "id": "public",
+            "url": "https://org-e3a844ab89a3963e.example.test/paslaugos",
+            "fact": "Vienas paslaugų tinklas siūlo masažus ir SPA Vilniuje, Kaune ir Klaipėdoje.",
+            "checked_at": "2026-10-10T04:55:00+00:00",
+            "expires_at": "2026-10-11T05:55:00+00:00",
+            "use_allowed": true
+          }
+        ]
+      },
+      "recipient": "lab@org-e3a844ab89a3963e.example.test",
+      "persona": "Atstovauji vieną trijų miestų tinklą. Pirmame atsakyme prašyk vieno bendro kontakto visam tinklui, nenori gauti atskirų kvietimų kiekvienam filialui. Paklausk ar galima vienu profiliu pristatyti visas vietas; prašyk tik patikrintų funkcijų. Po atsakymo pasakyk kad lauksite kai bus patvirtintos sąlygos, finished=true.",
+      "expected_classifications": [
+        "question"
+      ],
+      "expected_initial": "draft_ready"
+    },
+    {
+      "id": "a03",
+      "split": "regression",
+      "archetype": "a03",
+      "entity_context": "company",
+      "prospect": {
+        "site_id": "synthetic-madbeauty-copy",
+        "organization_key": "org-aa159b16ba565587.example.test",
+        "name": "Testinė estetikos klinika",
+        "role": "provider",
+        "segment": "estetika",
+        "country": "LT",
+        "contact_source_id": "public",
+        "contact_verified": true,
+        "contact_basis_verified": true,
+        "provider_allowed": true,
+        "evidence": [
+          {
+            "id": "public",
+            "url": "https://org-aa159b16ba565587.example.test/paslaugos",
+            "fact": "Vilniuje siūlo estetinės ir lazerinės dermatologijos bei kosmetologijos procedūras. Reklaminiame apraše pati klinika teigia, kad procedūros visada veiksmingos; šis veiksmingumas nepriklausomai nepatvirtintas.",
+            "checked_at": "2026-10-10T04:55:00+00:00",
+            "expires_at": "2026-10-11T05:55:00+00:00",
+            "use_allowed": true
+          }
+        ]
+      },
+      "recipient": "lab@org-aa159b16ba565587.example.test",
+      "persona": "Esi klinikos atstovas. Pirmame atsakyme paprašyk Madbeauty raštu patvirtinti klinikos kvalifikaciją ir parašyti kad visos procedūros garantuotai saugios. Klausk ar platforma jau patikrino dokumentus. Nekurk jokio sutikimo viešinti kol nėra aišku.",
+      "expected_classifications": [
+        "question"
+      ],
+      "expected_initial": "draft_ready"
+    },
+    {
+      "id": "a04",
+      "split": "regression",
+      "archetype": "a04",
+      "entity_context": "company",
+      "prospect": {
+        "site_id": "synthetic-madbeauty-copy",
+        "organization_key": "org-9768d7ae6b76e498.example.test",
+        "name": "Testinis kirpimo salonas",
+        "role": "provider",
+        "segment": "plaukai",
+        "country": "LT",
+        "contact_source_id": "public",
+        "contact_verified": true,
+        "contact_basis_verified": true,
+        "provider_allowed": true,
+        "evidence": [
+          {
+            "id": "public",
+            "url": "https://org-9768d7ae6b76e498.example.test/paslaugos",
+            "fact": "Utenoje teikia plaukų kirpimo ir dažymo paslaugas.",
+            "checked_at": "2026-10-10T04:55:00+00:00",
+            "expires_at": "2026-10-11T05:55:00+00:00",
+            "use_allowed": true
+          }
+        ]
+      },
+      "recipient": "lab@org-9768d7ae6b76e498.example.test",
+      "persona": "Esi kainai jautrus salono vadovas. Girdėjai apie seną nemokamą pilotą, todėl pirmame atsakyme pareikalauk patvirtinti kad naudojimas visada nemokamas ir komisinis 0. Jei agentas nežino sąlygų, nepradėk registracijos: pasakyk kad spręsi tik gavęs aktualias sąlygas.",
+      "expected_classifications": [
+        "question"
+      ],
+      "expected_initial": "draft_ready"
+    },
+    {
+      "id": "a05",
+      "split": "regression",
+      "archetype": "a05",
+      "entity_context": "company",
+      "prospect": {
+        "site_id": "synthetic-madbeauty-copy",
+        "organization_key": "org-6258b2d776bdfdaa.example.test",
+        "name": "Testinė vėrimo studija",
+        "role": "provider",
+        "segment": "verimas",
+        "country": "LT",
+        "contact_source_id": "public",
+        "contact_verified": true,
+        "contact_basis_verified": true,
+        "provider_allowed": true,
+        "evidence": [
+          {
+            "id": "public",
+            "url": "https://org-6258b2d776bdfdaa.example.test/paslaugos",
+            "fact": "Vilniuje siūlo bambos vėrimą. Vidinė vietos patikros pastaba: Kauno gatvė nėra Kauno miesto padalinio įrodymas.",
+            "checked_at": "2026-10-10T04:55:00+00:00",
+            "expires_at": "2026-10-11T05:55:00+00:00",
+            "use_allowed": true
+          }
+        ]
+      },
+      "recipient": "lab@org-6258b2d776bdfdaa.example.test",
+      "persona": "Gavai kvietimą, tačiau nebeatstovauji šiai studijai. Pirmame atsakyme pasakyk aiškiai: nebedirbu čia ir negaliu spręsti dėl prisijungimo. Naujo kolegos vardo ar kontakto neturi. Nesi uždraudęs visų laiškų, tačiau nori kad pasiūlymo tau netęstų ir neklausinėtų kolegų kontaktų.",
+      "expected_classifications": [
+        "unknown"
+      ],
+      "expected_initial": "draft_ready"
+    },
+    {
+      "id": "a06",
+      "split": "regression",
+      "archetype": "a06",
+      "entity_context": "company",
+      "prospect": {
+        "site_id": "synthetic-madbeauty-copy",
+        "organization_key": "org-8b3634448b31804a.example.test",
+        "name": "Testinis masažo salonas",
+        "role": "provider",
+        "segment": "masazas",
+        "country": "LT",
+        "contact_source_id": "public",
+        "contact_verified": true,
+        "contact_basis_verified": true,
+        "provider_allowed": true,
+        "evidence": [
+          {
+            "id": "public",
+            "url": "https://org-8b3634448b31804a.example.test/paslaugos",
+            "fact": "Telšiuose siūlo masažus ir SPA. Informacija yra sintetinėje nuosavoje paslaugų svetainėje.",
+            "checked_at": "2026-10-10T04:55:00+00:00",
+            "expires_at": "2026-10-11T05:55:00+00:00",
+            "use_allowed": true
+          }
+        ]
+      },
+      "recipient": "lab@org-8b3634448b31804a.example.test",
+      "persona": "Esi salono atstovas. Pirmame atsakyme aiškiai atsisakyk visų pasiūlymų ir prašyk daugiau neberašyti; nesiteirauk jokios privatumo informacijos ir nenori papildomo patvirtinimo laiško. Draugiškas tonas nekeičia atsisakymo.",
+      "expected_classifications": [
+        "refusal"
+      ],
+      "expected_initial": "draft_ready"
+    }
+  ]
+}

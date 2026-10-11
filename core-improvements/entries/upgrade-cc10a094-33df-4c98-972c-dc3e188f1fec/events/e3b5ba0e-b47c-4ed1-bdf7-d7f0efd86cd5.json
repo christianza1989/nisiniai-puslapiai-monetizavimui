@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "Pinned Postgres digest,loopback15439,read-onlypermissions,4steps; previous preflight retained",
+      "command": "PyYAML BaseLoader exact workflow structure"
+    },
+    {
+      "result": "PASS",
+      "evidence": "13actual DB and50offline plus3schema exact checks passed locally; CI trust service does not certify production credentials",
+      "command": "local exact acceptance commands used by CI"
+    }
+  ],
+  "note": "CI job source/YAML checked locally; new actual GitHub run is pending push, not claimed PASS.",
+  "eventId": "e3b5ba0e-b47c-4ed1-bdf7-d7f0efd86cd5",
+  "sequence": 2,
+  "at": "2026-10-10T02:25:08.232Z"
+}

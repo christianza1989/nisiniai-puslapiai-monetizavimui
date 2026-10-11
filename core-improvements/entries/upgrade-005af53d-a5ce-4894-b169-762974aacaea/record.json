@@ -1,0 +1,33 @@
+{
+  "siteId": "core",
+  "summary": "All core agents need a mandatory experience-to-repair loop; existing builder-only optional routing and fixture-only CI do not check a real shared patch's journal/check coverage.",
+  "category": "workflow",
+  "evidence": [
+    "AGENTS.md and SKILLS/PROJECT_CONTRACT.md at cb410ac97e5eaab5896378b4ded240d79064693f describe builder repairs as optional.",
+    ".github/workflows/agent-workflow.yml at cb410ac runs quarantine fixtures but has no changed-shared-source journal coverage check.",
+    "2026-10-10 baseline node --test scripts/core-upgrade.test.mjs scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs: 12 PASS; this verifies existing primitives, not actual PR provenance/adoption.",
+    "Owner explicitly required all core agents to repair canonical code/rules/skills from observed incompatibilities, not only Madbeauty builders."
+  ],
+  "paths": [
+    "CORE_IMPROVEMENT.md",
+    "AGENTS.md",
+    "START_HERE.md",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "core-improvements/README.md",
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "scripts/install-agent-git-bootstrap.mjs",
+    "scripts/install-agent-git-bootstrap.test.mjs",
+    ".github/workflows/agent-workflow.yml",
+    "docs/CORE_EXPERIENCE_LOOP_QA_2026-10-10.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this loop/checker/routing change; retain immutable finding/check events and do not change foreign runtime, journal history or main.",
+  "id": "upgrade-005af53d-a5ce-4894-b169-762974aacaea",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "cb410ac97e5eaab5896378b4ded240d79064693f",
+  "createdAt": "2026-10-10T00:12:06.032Z"
+}

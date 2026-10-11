@@ -1,0 +1,49 @@
+{
+  "status": "local-verified",
+  "note": "Actual free discovery provider ignored documented excluded domains. Owned local URL guard now excludes independently without granting source fit/read/send rights; canonical skill/ref/catalog updated. Private LT source batch has15manual review drafts but engine/model/contact/job0; normal owner adoption/portal/daily execution remains open.",
+  "checks": [
+    {
+      "command": "uv run --locked --python 3.13.15 pytest offline_tests/test_acquisition_discovery_urls.py -q",
+      "result": "PASS",
+      "evidence": "20new tests: provider ignored domains/subdomains/lookalikes, IDNA, unsafe secret redaction, duplicates, no inferred city/fit/read permission, bounded invalid policy"
+    },
+    {
+      "command": "uv run --locked --python 3.13.15 pytest offline_tests -q -k acquisition",
+      "result": "PASS",
+      "evidence": "70passed/25subtests; previous50 preserved; no external model or network operation in guard"
+    },
+    {
+      "command": "uv run --locked --python 3.13.15 ruff check src/pinet_core/acquisition/discovery_urls.py offline_tests/test_acquisition_discovery_urls.py",
+      "result": "PASS",
+      "evidence": "Scoped source/test Ruff passed after actual20test run"
+    },
+    {
+      "command": "Actual controlled Treg response URL-only review_discovery_urls check",
+      "result": "PASS",
+      "evidence": "Call903a58517ea84da1be43ca0534b79bfa status200/USD0;3excluded,7primary_read_required,0qualified,allread_allowedfalse; redacted receipt/guardSHA13e7a9e0f3fc855793b02aebbf8d1f32a94085192eaa6cbcfeacfa29270177cb"
+    },
+    {
+      "command": "Actual21original public URL retrievals, strict Prospect validation and disabled prepare/NoModel sentinel",
+      "result": "PASS",
+      "evidence": "17readable/4unavailable;15candidate imports/15manual review drafts,allprepareblocked/modelcalls0/engine draft_ready0/contacts0/accounts0/jobs0/external_sentfalse; private candidateSHA00785ef150a55a3e4db2da4902f2ffea1e47e1b2192fa9ce501aae5b684d8367; firstcp1252wrapperFAIL retained"
+    },
+    {
+      "command": "Four acquisition/binding/retirement/projection scripts --check",
+      "result": "PASS",
+      "evidence": "All4exactschema/vector checks05:09UTC unchanged; no new localPg run claimed"
+    },
+    {
+      "command": "skill-creator quick_validate.py SKILLS/niche-client-acquisition; tmp/lt-discovery-doc-check.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Validskill/34local links/catalogentrySHAa4484c6447c642eaaf2ec2057182faf028b65b2299da7dba33e2b2707cba20c4/cleanwhitespace"
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --phase handoff --companion C:/Users/Lenovo/Documents/Nisiniai_puslapiai/core-experience-public-20261010",
+      "result": "PASS",
+      "evidence": "05:09UTC freshactualprivate/publicmain inHEAD,0missing,onlyownscopedchanges; no other owner comment after6093989788 at05:07UTCread"
+    }
+  ],
+  "eventId": "2ab3941b-7739-4b2a-ba1a-b2c64ea2b953",
+  "sequence": 2,
+  "at": "2026-10-10T05:10:27.169Z"
+}

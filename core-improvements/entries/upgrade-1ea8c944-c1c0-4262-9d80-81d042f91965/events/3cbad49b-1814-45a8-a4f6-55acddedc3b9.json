@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "13actualPostgreSQL/ASGI groups after terminal-stale/fingerprint fix; docs/ACQUISITION_DURABLE_CAPTURE_QA_2026-10-10.md",
+      "command": "uv run --locked pytest acceptance_tests/test_acquisition_ledger.py -q --tb=short"
+    },
+    {
+      "result": "PASS",
+      "evidence": "PR68 snapshot1ceba762; proof44a228ede0; pgdump9995764c; nativePrivacyOutboxAdopted=false explicitly retained",
+      "command": "actual native OTP TCP capture/restart/retirement/restore probes"
+    },
+    {
+      "result": "PASS",
+      "evidence": "Exact retirementdfbc193b,recipient0ef2273c/acquisition35b0 pinned;5docs36targets;final native replay after erasure preserves source retired",
+      "command": "50offlineacquisition/6WebCrypto/schemaexact/scopedRuff/skill structure"
+    }
+  ],
+  "note": "Capture-only foundation verified. Normal API/0012/native atomic privacy-lifecycle outbox/portal adoption remain pending. First infrastructure/harness and terminal-stale failures preserved in QA; no real outbound/model/deploy.",
+  "eventId": "3cbad49b-1814-45a8-a4f6-55acddedc3b9",
+  "sequence": 2,
+  "at": "2026-10-10T02:25:04.715Z"
+}

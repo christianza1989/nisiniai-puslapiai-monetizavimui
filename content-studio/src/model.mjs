@@ -292,9 +292,10 @@ export async function createSite(input) {
     return site;
   });
 }
-export async function editSite(id, input) {
+export async function editSite(id, input, expected = null) {
   return locked(async () => {
     const site = await getSite(id);
+    assertExpectedSite(site, expected);
     if (input.canonicalHost && normalizedHost(input.canonicalHost) !== site.canonicalHost) throw new Error('Pirminio domeno keitimui sukurkite naują svetainės įrašą.');
     for (const key of ['name', 'offer', 'audience', 'facts']) if (key in input) site[key] = plain(input[key], key === 'facts' ? 12000 : 1000);
     if(site.schemaVersion===2&&'operatorName'in input)site.operatorName=losslessString(input.operatorName,300);
@@ -388,6 +389,9 @@ export async function mergePlan(siteId, proposals, months = 0) {
     await writeJson(siteFile(siteId), site);
     return { added, total: site.pages.length };
   });
+}
+function assertExpectedSite(site, expected) {
+  if (expected && expected.expectedSiteHash !== studioContextHash(site)) throw Object.assign(new Error('Pasikeitė svetainės kontekstas; perskaitykite dabartinę versiją.'), { code: 'workflow_context_stale' });
 }
 export const studioContextHash = site => createHash('sha256').update(stable(site), 'utf8').digest('hex');
 export async function editPage(siteId, pageId, input, expected = null) {
@@ -514,9 +518,10 @@ const selectedPages = (site, ids) => {
   if (!Array.isArray(ids) || !ids.length || ids.length > 200 || new Set(ids).size !== ids.length) throw new Error('Reikia 1–200 unikalių šios svetainės puslapių ID.');
   return ids.map(id => { const page = site.pages.find(p => p.id === id && p.siteId === site.id && p.status !== 'revoked'); if (!page) throw new Error('Puslapis nepriklauso šiai svetainei arba atšauktas.'); return page; });
 };
-export async function finalizeInternalLinks(siteId, pageIds) {
+export async function finalizeInternalLinks(siteId, pageIds, expected = null) {
   return locked(async () => {
-    const site = await getSite(siteId), pages = selectedPages(site, pageIds);
+    const site = await getSite(siteId); assertExpectedSite(site, expected);
+    const pages = selectedPages(site, pageIds);
     let changed = 0;
     for (const page of pages) {
       const links = draftLinks(site, page);
@@ -526,18 +531,20 @@ export async function finalizeInternalLinks(siteId, pageIds) {
     return { siteId, changed, next: 'Review unchanged drafts before batch approval; approved snapshots were not edited.' };
   });
 }
-export async function recordEditorialReview(siteId, pageId, input) {
+export async function recordEditorialReview(siteId, pageId, input, expected = null) {
   return locked(async () => {
-    const site = await getSite(siteId), [page] = selectedPages(site, [pageId]);
+    const site = await getSite(siteId); assertExpectedSite(site, expected);
+    const [page] = selectedPages(site, [pageId]);
     page.editorialReview = editorialReview(site, page, revisionHash(page), input);
     await writeJson(siteFile(siteId), site);
     return page.editorialReview;
   });
 }
 export async function getContentWorkflow(siteId) { return workflowOverview(await getSite(siteId), revisionHash); }
-export async function approveReviewedBatch(siteId, pageIds, actorId) {
+export async function approveReviewedBatch(siteId, pageIds, actorId, expected = null) {
   return locked(async () => {
-    const site = await getSite(siteId), pages = selectedPages(site, pageIds), ids = new Set(pageIds);
+    const site = await getSite(siteId); assertExpectedSite(site, expected);
+    const pages = selectedPages(site, pageIds), ids = new Set(pageIds);
     for (const page of pages) {
       const ready = pageReadiness(site, page, revisionHash(page), ids);
       if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
@@ -550,8 +557,10 @@ export async function approveReviewedBatch(siteId, pageIds, actorId) {
     return { siteId, approved: pageIds, deployment: 'not-performed' };
   });
 }
-export async function releaseContent(siteId) {
-  const site = await getSite(siteId), approved = site.pages.filter(p => p.publishedRevision);
+export async function releaseContent(siteId, expected = null) {
+  return locked(async () => {
+  const site = await getSite(siteId); assertExpectedSite(site, expected);
+  const approved = site.pages.filter(p => p.publishedRevision);
   assertReviewedSnapshot(site);
   const result = await exportSiteSnapshot(site, path.join(OUTPUT, 'releases', siteId, randomUUID()));
   const bytes = await readFile(result.path);
@@ -566,6 +575,7 @@ export async function releaseContent(siteId) {
   const manifestPath = path.join(path.dirname(result.path), 'release-manifest.json');
   await writeJson(manifestPath, manifest);
   return { ...result, manifestPath, packageSha256: manifest.packageSha256, state: manifest.state };
+  });
 }
 function assertReviewedSnapshot(site) {
   const approved = site.pages.filter(p => p.publishedRevision);
@@ -654,13 +664,13 @@ export async function saveAsset(siteId, asset, bytes) {
 }
 // Default for all new image imports, including agents and the studio GUI.
 // saveAsset above remains a low-level legacy adapter for already-optimized bytes.
-export async function saveResponsiveAsset(siteId, input, bytes) {
+export async function saveResponsiveAsset(siteId, input, bytes, expected = null) {
   await getSite(siteId);
   const alt=plain(input.alt,300),rights=plain(input.rights,300);
   if(!alt||!rights)throw new Error('Vaizdui reikia alt teksto ir naudojimo teisių.');
   const optimized=await optimizeRaster(bytes,input.mime);
   return locked(async()=>{
-    const site=await getSite(siteId),groupId=randomUUID();
+    const site=await getSite(siteId);assertExpectedSite(site,expected);const groupId=randomUUID();
     const mediaDir=path.join(MEDIA_DIR,siteId),sourceDir=path.join(DATA,'media-originals',siteId);
     await mkdir(mediaDir,{recursive:true});await mkdir(sourceDir,{recursive:true});
     const ext={'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[input.mime];

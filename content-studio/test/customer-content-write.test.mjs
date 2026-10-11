@@ -126,6 +126,17 @@ test('repeated prepare keeps the exact creator prompt and meaningful research co
   assert.deepEqual(data.pageData, first.pageData);
 });
 
+test('shared context extraction preserves writer instructions/schema while workflow accepts an unplanned home', async t => {
+  const fixture=await sandbox(t),prepared=fixture.prepare();
+  const home=(await fixture.read()).pages.find(p=>p.type==='home');
+  assert.equal(fixture.call({command:'prepare',pageId:home.id}).value.code,'writer_planning_brief_required');
+  const workflow=spawnSync(process.execPath,[path.resolve(import.meta.dirname,'../scripts/customer-content-workflow.mjs')],{
+    input:JSON.stringify({...fixture.base,command:'status',pageId:home.id}),encoding:'utf8',windowsHide:true});
+  assert.equal(workflow.status,0,workflow.stderr);assert.equal(JSON.parse(workflow.stdout).state,'current');
+  assert.deepEqual(fixture.prepare().outputSchema,prepared.outputSchema);
+  assert.equal(fixture.prepare().instructions,prepared.instructions);
+});
+
 test('prepare exposes the whole real brief, candidate sources and unknown facts without mutating intake', async t => {
   const fixture = await sandbox(t), before = await readFile(fixture.filename), prepared = fixture.prepare();
   assert.equal(prepared.state, 'prepared'); assert.deepEqual(prepared.pageData.planningBrief, fixture.input.draft.content_plan[0]);

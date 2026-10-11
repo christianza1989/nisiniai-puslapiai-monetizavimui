@@ -1,13 +1,13 @@
 // Server-only prepare/apply bridge. It never invokes a model, verifies evidence or publishes.
 import { createHash } from 'node:crypto';
-import { lstat, readFile, realpath } from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
-import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import path from 'node:path';
 import { stableV2, normalizeV2Blocks, inlineNodes, bodyPlainText } from '../src/content-package-v2.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from '../src/editorial-skill.mjs';
 import { workflowOverview } from '../src/content-workflow.mjs';
 import { researchContext } from '../src/seo-research.mjs';
+import { loadCustomerContentContext } from './customer-content-context.mjs';
 
 const VERSION = 'customer-content-write.v1';
 const sha = value => createHash('sha256').update(value).digest('hex');
@@ -58,63 +58,9 @@ businessProposal ir sourceCandidates yra hipotezės bei nepatikrinti kandidatai.
 Vidinės rich nuorodos naudoja tik pateiktus tikrus tos pačios svetainės pageId. Išorinė rich nuoroda galima tik į existingVerifiedExternalUrls. Kandidato URL nėra perskaityto šaltinio įrodymas. Naujos commerce nuorodos neleidžiamos. Image blokas gali naudoti tik jau priskirtą page.media assetId; promptas nėra vaizdas.
 Neįrašyk atliktos šaltinių, vaizdų, redakcinės, SEO/GEO ar publikavimo patikros, kurios neatlikai. Nekelk publikavimo, approval, release ar deployment laukų. Po rašymo atskirai perskaityk visą tekstą, pataisyk kalbą ir išsaugok faktinę prasmę. Ši saviredakcija nesukuria bendro workflow review ar PASS.`;
 
-async function bytes(file, limit) {
-  const stat = await lstat(file);
-  if (!stat.isFile() || stat.isSymbolicLink() || stat.size > limit) fail('writer_unsafe_artifact');
-  return readFile(file);
-}
-async function noLinks(root, target) {
-  const relative = path.relative(root, target);
-  if (relative.startsWith('..') || path.isAbsolute(relative)) fail('writer_path_outside_artifacts');
-  let cursor = root;
-  for (const segment of ['', ...relative.split(path.sep).filter(Boolean)]) {
-    if (segment) cursor = path.join(cursor, segment);
-    const stat = await lstat(cursor);
-    if (stat.isSymbolicLink() || !stat.isDirectory()) fail('writer_unsafe_artifact');
-  }
-}
 async function loadContext(input) {
-  if (!object(input) || !['prepare', 'validate', 'apply'].includes(input.command)
-      || !/^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(input.creationId)
-      || !Number.isSafeInteger(input.acceptedRevision) || input.acceptedRevision < 1 || !hash(input.sourceHash)
-      || !/^page-[a-f0-9]{24}$/.test(input.pageId) || !boundedText(input.canonicalHost, 1, 253)) fail('writer_invalid_identity');
-  for (const key of ['artifactsRoot', 'dataDir', 'outputDir']) {
-    if (typeof input[key] !== 'string' || !path.isAbsolute(input[key])) fail('writer_absolute_paths_required');
-  }
-  const root = path.resolve(input.artifactsRoot);
-  if (path.basename(root) !== 'artifacts' || path.basename(path.dirname(root)) !== 'runtime') fail('writer_runtime_artifacts_required');
-  const directory = path.join(root, 'customer-content', input.creationId, 'revision-' + input.acceptedRevision);
-  const data = path.join(directory, 'data'), output = path.join(directory, 'output');
-  if (path.resolve(input.dataDir) !== data || path.resolve(input.outputDir) !== output) fail('writer_revision_directory_mismatch');
-  await noLinks(root, path.join(data, 'sites')); await noLinks(root, output);
-  if (await realpath(root) !== root) fail('writer_artifacts_alias');
-  try { await lstat(path.join(directory, '.intake.lock')); fail('writer_intake_busy'); }
-  catch (error) { if (error.code !== 'ENOENT') throw error; }
-  const manifestBytes = await bytes(path.join(directory, 'intake-manifest.json'), 1000000);
-  const manifest = JSON.parse(manifestBytes.toString('utf8'));
-  const siteId = 'creation-' + input.creationId.replaceAll('-', '');
-  if (manifest.version !== 'customer-content-intake.v1' || manifest.state !== 'private-draft-imported'
-      || manifest.creationId !== input.creationId || manifest.acceptedRevision !== input.acceptedRevision
-      || manifest.sourceHash !== input.sourceHash || manifest.siteId !== siteId || manifest.canonicalHost !== input.canonicalHost
-      || manifest.fullF1 !== 'UNVERIFIED' || manifest.launch !== 'UNVERIFIED' || manifest.deployment !== 'not-performed') fail('writer_intake_binding_mismatch');
-  const original = await bytes(path.join(directory, 'source-draft.json'), 200000);
-  const contextBytes = await bytes(path.join(directory, 'intake-context.json'), 300000);
-  if (sha(original) !== input.sourceHash || sha(contextBytes) !== manifest.requestHash) fail('writer_original_hash_mismatch');
-  const intake = JSON.parse(contextBytes.toString('utf8')), proposal = JSON.parse(original.toString('utf8'));
-  if (intake.creationId !== input.creationId || intake.acceptedRevision !== input.acceptedRevision
-      || intake.sourceHash !== input.sourceHash || intake.siteId !== siteId || intake.canonicalHost !== input.canonicalHost
-      || intake.version !== manifest.version || intake.importerHash !== manifest.importerHash
-      || intake.dataDir !== data || intake.outputDir !== output) fail('writer_intake_binding_mismatch');
-  const mapping = manifest.pageMappings?.find(item => item.pageId === input.pageId);
-  if (!mapping || mapping.pageId !== 'page-' + sha(mapping.path).slice(0, 24)) fail('writer_page_not_in_intake');
-  await bytes(path.join(data, 'sites', siteId + '.json'), 2000000);
-  process.env.STUDIO_DATA_DIR = data; process.env.STUDIO_OUTPUT_DIR = output;
-  const model = await import('../src/model.mjs');
-  if (model.DATA !== data || model.OUTPUT !== output) fail('writer_studio_context_conflict');
-  const site = await model.getSite(siteId);
-  const page = site.pages.find(item => item.id === input.pageId && item.siteId === siteId && item.status !== 'revoked');
-  if (site.id !== siteId || site.canonicalHost !== input.canonicalHost || site.schemaVersion !== 2 || site.contentWorkflowVersion !== 1
-      || !page || page.contentVersion !== 2 || (page.type === 'home' ? '/' : '/' + page.slug + '/') !== mapping.path) fail('writer_page_binding_mismatch');
+  if (!object(input) || !['prepare', 'validate', 'apply'].includes(input.command)) fail('writer_invalid_identity');
+  const { site, page, model, proposal, intake, manifest, manifestBytes, mapping, siteId } = await loadCustomerContentContext(input, { requirePage: true, intakePageOnly: true });
   if (!page.planningBrief) fail('writer_planning_brief_required');
   const brief = model.normalizePlanningBrief(page.planningBrief);
   if (brief.path !== mapping.path) fail('writer_page_binding_mismatch');

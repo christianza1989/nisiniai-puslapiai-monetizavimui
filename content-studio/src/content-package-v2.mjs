@@ -41,6 +41,10 @@ function assertSchema(value,rule,label='package') {
     }
   }
 }
+export function validateV2Editorial(editorial) {
+  assertSchema(editorial, schema.$defs.editorial, 'editorial');
+  return structuredClone(editorial);
+}
 export function v2RevisionPayload(page){
   const {id,siteId,contentVersion,type,slug,title,description,intent,body,publishAt,media,links,editorial,siteSnapshot}=page;
   return {id,siteId,contentVersion,type,slug,title,description,intent,body,publishAt,media,links,externalLinks:(page.externalLinks||[]).map(({url,label,reason})=>({url,label,reason})),editorial,siteSnapshot};

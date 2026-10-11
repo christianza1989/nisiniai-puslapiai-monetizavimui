@@ -34,6 +34,22 @@ async function regularBytes(file) {
 }
 async function load(file) { return JSON.parse((await regularBytes(file)).toString('utf8')); }
 
+
+// Native editorial intent for known proposal routes, never inferred business facts.
+function proposalPageType(page) {
+  const types = new Set(['home','service','product','guide','faq','location','article','index','author','policy','about','contact']);
+  if (page.type !== undefined) {
+    if (!types.has(page.type) || (page.type === 'home') !== (page.path === '/')) fail('invalid_server_page_type');
+    return page.type;
+  }
+  if (page.path === '/') return 'home';
+  if (['/kontaktai/','/contact/','/contacts/'].includes(page.path)) return 'contact';
+  if (['/apie/','/about/'].includes(page.path)) return 'about';
+  if (['/gidai/','/guides/'].includes(page.path)) return 'index';
+  if (['/privatumas/','/privatumo-politika/','/privacy/','/privacy-policy/'].includes(page.path)) return 'policy';
+  return 'guide';
+}
+
 function validate(input) {
   if (!object(input) || !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(input.creationId)
       || !Number.isSafeInteger(input.acceptedRevision) || input.acceptedRevision < 1
@@ -49,6 +65,7 @@ function validate(input) {
     if (!object(page) || !pagePath(page.path) || (index === 0) !== (page.path === '/') || paths.has(page.path)
         || !text(page.title, 160) || !text(page.navigation_label, 50) || !text(page.meta_description, 220)
         || !text(page.intent, 300) || !Array.isArray(page.sections) || page.sections.length < 2 || page.sections.length > 7) fail('invalid_server_page');
+    proposalPageType(page);
     paths.add(page.path);
     for (const section of page.sections) {
       if (!object(section) || !text(section.heading, 160) || !text(section.body, 1800) || !Array.isArray(section.items)
@@ -163,7 +180,7 @@ export async function intakeCreationDraft(input) {
       const item = plan.byPath.get(page.path);
       const body = page.sections.flatMap(section => [{ type: 'heading', level: 2, text: section.heading },
         { type: 'paragraph', text: section.body }, ...(section.items.length ? [{ type: 'list', items: section.items }] : [])]);
-      await model.addPage(siteId, { id: pageId(page.path), type: page.path === '/' ? 'home' : 'guide', slug: page.path.slice(1, -1),
+      await model.addPage(siteId, { id: pageId(page.path), type: proposalPageType(page), slug: page.path.slice(1, -1),
         title: page.title, description: page.meta_description, intent: page.intent, body: normalizeV2Blocks(body), publishAt: importedAt,
         ...(item ? { planningBrief: item, sourceQueries: item.source_queries, reason: item.reason, cluster: item.primary_topic } : {}) });
       pageMappings.push({ path: page.path, pageId: pageId(page.path), origin: 'draft' });

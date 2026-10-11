@@ -21,7 +21,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from pinet_core.acquisition import normal
 from pinet_core.acquisition.identity import CODEC, canonical_recipient
 from pinet_core.acquisition.interfaces import Invitation, Scope
-from pinet_core.acquisition.ledger import apply_scope
+from pinet_core.acquisition.ledger import apply_scope, scope_values
 from pinet_core.acquisition.normal_config import ROOT
 from pinet_core.acquisition.recipient_binding import ADDRESS_RULE, recipient_digest
 from pinet_core.acquisition.transport_auth import WEBHOOK_PERMISSIONS, sign_request
@@ -189,6 +189,46 @@ async def report(lane, suffix=""):
         f"/operator/v2/businesses/{lane.ids['business']}/acquisition" + suffix,
         headers={"Authorization": "Bearer " + lane.token},
     )
+
+
+async def bind_recipient(lane):
+    original = await post(lane, "recipient-challenge", request(lane))
+    assert original.status_code == 200
+    challenge = original.json()["challenge"]
+    proof = {
+        **request(lane),
+        "challenge_nonce": challenge["challenge_nonce"],
+        "recipient_key_id": lane.recipient_key.key_id,
+        "address_rule": ADDRESS_RULE,
+        "recipient_digest": recipient_digest(
+            lane.recipient_key,
+            lane.invitation.invitation_ref,
+            challenge["challenge_nonce"],
+            "owner@example.test",
+        ),
+        "native_account_ref": "native-owner",
+        "native_verified_at": datetime.now(UTC).isoformat(),
+        "source_release": "synthetic-native-v1",
+    }
+    accepted = await post(lane, "verify-recipient", proof)
+    assert accepted.status_code == 200, accepted.text
+    return proof, accepted
+
+
+def event(lane, kind, revision, **fields):
+    return {
+        "contract_version": "0.1.1",
+        "event_id": str(uuid4()),
+        "scope": lane.scope.model_dump(),
+        "adapter_id": lane.adapter,
+        "invitation_ref": lane.invitation.invitation_ref,
+        "provider_ref": "provider-" + lane.ids["business"],
+        "source_revision": revision,
+        "source_release": "synthetic-native-v1",
+        "occurred_at": datetime.now(UTC).isoformat(),
+        "kind": kind,
+        **fields,
+    }
 
 
 @pytest.mark.asyncio
@@ -421,3 +461,126 @@ async def test_runtime_cannot_write_module_authorization_or_receipts(lane):
             text("SELECT acquisition_pin_module(:b,:e,:s,:a)"),
             {"b": str(uuid4()), "e": lane.scope.environment_id, "s": lane.scope.site_id, "a": lane.adapter},
         )
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("deadline,expected", [("module", 409), ("invitation", 410)])
+async def test_first_provider_final_clock_after_provider_advisory_wait(lane, deadline, expected):
+    await bind_recipient(lane)
+    value = event(lane, "signup_started", 1)
+    async with lane.admin.connect() as lock:
+        transaction = await lock.begin()
+        await lane.runtime.ledger._lock(
+            lock, ["provider", scope_values(lane.scope, lane.adapter), value["provider_ref"]]
+        )
+        if deadline == "module":
+            await mutate(
+                lane,
+                "UPDATE acquisition_modules SET expires_at=clock_timestamp()+interval '1 second' WHERE business_id=:business AND environment_id=:e",
+            )
+        else:
+            await mutate(
+                lane,
+                "UPDATE acquisition_invitations SET expires_at=clock_timestamp()+interval '1 second' WHERE business_id=:business AND environment_id=:e",
+            )
+        pending = asyncio.create_task(post(lane, "events", value))
+        await asyncio.sleep(1.2)
+        assert not pending.done(), "first attribution must wait on the provider barrier"
+        await transaction.commit()
+        response = await pending
+    assert response.status_code == expected
+
+
+@pytest.mark.asyncio
+async def test_withdrawal_retirement_survive_stop_expiry_and_approver_revoke(lane):
+    proof, proof_ack = await bind_recipient(lane)
+    active = event(
+        lane,
+        "profile_active",
+        1,
+        profile_ref="native-profile",
+        eligibility_revision="approved-v1",
+        operator_approved=True,
+    )
+    assert (await post(lane, "events", active)).json()["profile_active"] is True
+    await lane.runtime.ledger.stop(lane.scope, lane.adapter, lane.invitation.campaign_id)
+    await mutate(
+        lane,
+        "UPDATE acquisition_modules SET enabled=false,expires_at=clock_timestamp()-interval '1 second',approved_at=clock_timestamp()-interval '1 minute',source_revision=repeat('b',40) WHERE business_id=:business AND environment_id=:e",
+    )
+    await mutate(
+        lane, "UPDATE control_memberships SET enabled=false WHERE id=:membership AND environment_id=:e"
+    )
+    withdrawal = event(lane, "profile_deactivated", 2, profile_ref="native-profile")
+    response = await post(lane, "events", withdrawal)
+    assert response.status_code == 200 and response.json()["profile_active"] is False
+    retirement = {
+        "retirement_contract_version": "0.1.0",
+        "scope": lane.scope.model_dump(),
+        "adapter_id": lane.adapter,
+        "invitation_ref": lane.invitation.invitation_ref,
+        "request_id": str(uuid4()),
+        "native_account_ref": "native-owner",
+        "occurred_at": datetime.now(UTC).isoformat(),
+        "source_release": "synthetic-native-v1",
+        "reason": "account_erasure",
+    }
+    erased = await post(lane, "retire-recipient", retirement)
+    assert erased.status_code == 200 and erased.json()["state"] == "recipient_retired"
+    assert erased.json()["external_sent"] is False
+    assert (await post(lane, "retire-recipient", retirement)).content == erased.content
+    assert (await post(lane, "verify-recipient", proof)).content == proof_ack.content
+    assert (await post(lane, "events", active)).json()[
+        "profile_active"
+    ] is True  # Historic ACK, not current state.
+    async with lane.admin.connect() as tx:
+        row = (
+            await tx.execute(
+                text(
+                    "SELECT canonical_recipient,native_account_ref,retired_at,conversion->>'profile_active' FROM acquisition_invitations WHERE business_id=:b AND environment_id=:e"
+                ),
+                {"b": lane.ids["business"], "e": lane.scope.environment_id},
+            )
+        ).one()
+        assert tuple(row[:2]) == (None, None) and row[2] is not None and row[3] == "false"
+        assert (
+            await tx.scalar(
+                text(
+                    "SELECT count(*) FROM acquisition_receipts WHERE business_id=:b AND environment_id=:e AND operation='verify-recipient'"
+                ),
+                {"b": lane.ids["business"], "e": lane.scope.environment_id},
+            )
+            == 1
+        )
+
+
+@pytest.mark.asyncio
+async def test_foreign_callback_scope_is_not_authority(lane):
+    value = request(lane)
+    value["scope"] = {**value["scope"], "business_id": str(uuid4())}
+    denied = await post(lane, "recipient-challenge", value)
+    assert denied.status_code == 401
+    assert (await report(lane)).json()["data"]["counts"]["committed_commands"] == 0
+
+
+@pytest.mark.asyncio
+async def test_legacy_disabled_fresh_hook_retains_expiry_error_precedence(lane):
+    await mutate(
+        lane,
+        "UPDATE acquisition_invitations SET issued_at=clock_timestamp()-interval '2 minutes',expires_at=clock_timestamp()-interval '1 minute' WHERE business_id=:business AND environment_id=:e",
+    )
+    lane.runtime.ledger.fresh_authorize = (
+        None  # Explicit compatibility lane, never a normal runtime configuration.
+    )
+    invalid = {
+        **request(lane),
+        "challenge_nonce": "a" * 32,
+        "recipient_key_id": lane.recipient_key.key_id,
+        "address_rule": ADDRESS_RULE,
+        "recipient_digest": "v1=" + "b" * 64,
+        "native_account_ref": "native-owner",
+        "native_verified_at": datetime.now(UTC).isoformat(),
+        "source_release": "synthetic-native-v1",
+    }
+    response = await post(lane, "verify-recipient", invalid)
+    assert response.status_code == 410 and response.json()["detail"] == "invitation_expired"

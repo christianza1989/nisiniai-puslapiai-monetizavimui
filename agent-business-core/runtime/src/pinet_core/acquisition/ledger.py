@@ -178,6 +178,7 @@ class AcquisitionLedger:
                                                 **challenge.model_dump()))
                 result = RecipientChallengeReceipt(**common, state=state, challenge=challenge)
             elif operation == 'verify-recipient':
+                self._available(invite, campaign, now)
                 challenge = await self._challenge(tx, values, invite, value)
                 if self.fresh_authorize is not None:
                     now = await self.fresh_authorize(tx, operation, value)
@@ -261,6 +262,7 @@ class AcquisitionLedger:
         if not invite.bound_at:
             raise LedgerError(409, 'verified_recipient_required')
         if not invite.provider_ref:
+            self._available(invite, campaign, now)
             # One actual provider can belong to only one invite in this registered scope.
             await self._lock(tx, ['provider', values, event.provider_ref])
             other = await tx.scalar(select(AcquisitionInvitation).where(

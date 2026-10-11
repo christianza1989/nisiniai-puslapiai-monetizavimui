@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "First frozen377-source QA stopped at original private-request shape regression:1failed169passed6.46s, original receiptSHAdab57dda57a7e608a55f443cfb0047517fd8db5c5e29ec052cb9332ee47cf3dc/logSHA56cd37b603a44cb6f1e90edcc9ec785cc51027ba47b380d7bb81412cfbe320ab retained; source unchanged/providers0/operationalDB untouched/no PG stages entered. Preserve original four-field Request instead of loosening its test; explicit ScoredRequest parsed only when score_competence key present, strict bool, default path and hashes unchanged. Also corrected new privacy test to call existing public status rather than internal tx,row history; no production history change. Exact canonical legacy score schema/instruction/tencheck hashes frozen from c23a76f; new future evaluator source versions intentionally differ.",
+  "eventId": "4037b54d-4ae9-4e89-98ce-42c29a0cd133",
+  "sequence": 2,
+  "at": "2026-10-11T18:33:25.225Z"
+}

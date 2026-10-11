@@ -8,9 +8,10 @@ from fastapi import HTTPException
 from pydantic import Field
 from sqlalchemy import select
 
-from .. import evaluation_contract, jobs, local_semantics, policy, quality_guards
+from .. import competence, evaluation_contract, jobs, local_semantics, policy, quality_guards
 from .. import service as core
 from ..config import settings
+from ..contracts import Quality
 from ..control.routes import ControlError
 from ..creation.service import digest
 from ..customer_text import service as chat
@@ -30,6 +31,16 @@ class Request(Strict):
     episode: lab.Episode
 
 
+class ScoredRequest(Request):
+    score_competence: bool = Field(default=True, strict=True)
+
+
+def parse_request(value):
+    # Preserve the original four-field Request and its strict capabilities boundary.
+    schema = ScoredRequest if isinstance(value, dict) and "score_competence" in value else Request
+    return schema.model_validate(value)
+
+
 @dataclass(frozen=True)
 class Dispatch:
     task: dict
@@ -39,6 +50,7 @@ class Dispatch:
     evaluator_sha256: str
     model_profile: dict
     protection_sha256: str | None = None
+    score_competence: bool = False
 
 
 async def input_data(tx, row):
@@ -73,6 +85,7 @@ def current_job(job, dispatch):
         and job.payload.get("input_sha256") == digest(dispatch.data)
         and job.payload.get("evaluator_sha256") == dispatch.evaluator_sha256
         and job.payload.get("model_profile") == dispatch.model_profile
+        and job.payload.get("competence_contract") == (competence.VERSION if dispatch.score_competence else None)
         and job.payload.get("protected_case_sha256") == dispatch.protection_sha256)
 
 
@@ -89,6 +102,9 @@ async def prepare(request):
     frozen = request.episode.model_dump(mode="json")
     material = {"version": VERSION, "conversation_id": str(request.conversation_id),
         "request_id": str(request.request_id), "episode": frozen}
+    scored = isinstance(request, ScoredRequest) and request.score_competence
+    score_material = {"competence_contract": competence.VERSION} if scored else {}
+    material.update(score_material)
     async with chat.authority(request.bearer, frozen["creation_id"], calibration=frozen) as (
             tx, session, creation, identity, business, binding):
         row = await chat.locked(tx, str(request.conversation_id), binding)
@@ -115,7 +131,7 @@ async def prepare(request):
             payload={"dispatch": VERSION, "request_id": str(request.request_id), "fingerprint": fingerprint,
                 "binding_sha256": digest(binding), "input_sha256": digest(data),
                 "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile,
-                **proof_material})
+                **proof_material, **score_material})
         tx.add(job)
         await tx.flush()
         await core.add_event(tx, row, "quality-request:" + str(request.request_id), "quality_request",
@@ -123,7 +139,8 @@ async def prepare(request):
         await chat.final_authority(tx, session, creation, identity, binding)
         task = {"id": job.id, "conversation_id": row.id, "kind": "quality", "generation": 1,
             "owner": job.owner, "attempts": 1, "business_id": business.id, "environment_id": row.environment_id}
-        dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile, protection_sha256)
+        dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile,
+                            protection_sha256, scored)
         last_time(session, row)
         if not current_job(job, dispatch):
             raise ControlError(409, "quality_authorization_changed")
@@ -239,11 +256,20 @@ class AccountedLab:
     def __init__(self, token, dispatch):
         self.token, self.dispatch = token, dispatch
         self.calls, self.usage, self.timeout_recoveries = 0, [], []
+        self.scores = None
 
     async def ask(self, schema, instruction, data):
         # Existing Quality plus its optional independent attribution: no retry.
         if self.calls >= 2:
             raise RunnerError("call_limit")
+        scored = self.dispatch.score_competence and self.calls == 0 and issubclass(schema, Quality)
+        if self.dispatch.score_competence and self.calls == 0 and not scored:
+            raise RunnerError("competence_quality_required")
+        if scored:
+            schema = competence.combined(schema)
+            instruction += ('\nReturn the independent Quality assessment in quality and the existing '
+                'competence assessment in scores. Neither output grants calibration or activation.\n'
+                + competence.customer_instruction())
         prompt, wire = evaluator.material(schema, instruction, data)
         number = self.calls + 1
         await reserve_call(self.token, self.dispatch, number, prompt, wire)
@@ -262,6 +288,9 @@ class AccountedLab:
             raise RunnerError(failure, usage)
         if not await authorized(self.token, self.dispatch):
             raise RunnerError("authorization_revoked", usage)
+        if scored:
+            self.scores = competence.report(result.scores)
+            return result.quality
         return result
 
 
@@ -287,7 +316,12 @@ async def run(request):
     if not isinstance(dispatch, Dispatch):
         return dispatch
     try:
-        result = await local_semantics.evaluate("quality", dispatch.data, AccountedLab(request.bearer, dispatch))
+        accounted = AccountedLab(request.bearer, dispatch)
+        result = await local_semantics.evaluate("quality", dispatch.data, accounted)
+        if dispatch.score_competence:
+            if accounted.scores is None:
+                raise RunnerError("competence_scores_missing")
+            result["competence"] = accounted.scores
         return await finish(request.bearer, dispatch, result)
     except asyncio.CancelledError:
         await asyncio.shield(fail(dispatch, "request_interrupted"))

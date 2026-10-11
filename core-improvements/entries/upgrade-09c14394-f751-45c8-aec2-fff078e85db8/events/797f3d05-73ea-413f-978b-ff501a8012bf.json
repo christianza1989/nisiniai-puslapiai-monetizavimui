@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Second frozen377-source QA:170offlinePASS4.57s then3failed6passed new restrictedPG87.55s, original receiptSHA4fc1de4fed7748f8a6f0c31b600860298e1fbe18168f2d133f70dcd885c7f833/logSHA7866507ace88e86e74042283579301aa051815e95c21e6547f2d295e1ea7a43e preserved; all sources exact/providers0/opDB untouched. All three failed only at new final history privacy witness after actual Quality+Scores/replay/conflict/row-preservation assertions: public service takes string IDs while fixture passed parsed UUIDs. Convert test IDs to strings; no production code, criteria, old tests or authority changes. Existing review/protection PG stages had not entered.",
+  "eventId": "797f3d05-73ea-413f-978b-ff501a8012bf",
+  "sequence": 3,
+  "at": "2026-10-11T18:36:21.639Z"
+}

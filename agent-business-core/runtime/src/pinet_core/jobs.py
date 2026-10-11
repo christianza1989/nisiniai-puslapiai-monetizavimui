@@ -208,13 +208,16 @@ async def complete_in_transaction(tx, business_id, task, result):
         Conversation.business_id == business_id, Conversation.environment_id == settings().environment))
     if not convo or job.conversation_id != convo.id:
         raise ValueError("conversation_unavailable")
+    allow_tuning = True
     if convo.payload.get("transport") == customer_transport:
+        from .customer_agents.protection import tuning_allowed
         from .customer_agents.quality import current_source, parent
         if task["kind"] != "quality" or result.get("release_hash") != parent(convo):
             raise ValueError("customer_quality_parent_conflict")
         # Policy/index before artifact flush and its Conversation FK lock:
         # disable/revoke use that same ordering, including their row lock.
         await current_source(tx, convo)
+        allow_tuning = await tuning_allowed(tx, convo)
     existing = await tx.scalar(select(Artifact).where(Artifact.conversation_id == task["conversation_id"],
                                                       Artifact.kind == task["kind"]))
     if not existing:
@@ -222,7 +225,7 @@ async def complete_in_transaction(tx, business_id, task, result):
         common = {"business_id": business_id, "environment_id": settings().environment,
                   "conversation_id": task["conversation_id"]}
         tx.add(Artifact(id=artifact_id, **common, kind=task["kind"], payload=result))
-        if task["kind"] == "quality" and result.get("root_cause", "unknown") != "unknown" and result.get("issues"):
+        if allow_tuning and task["kind"] == "quality" and result.get("root_cause", "unknown") != "unknown" and result.get("issues"):
             issue_id = new_id()
             tx.add(Artifact(id=issue_id, **common, kind=f"calibration_issue:{issue_id}",
                 payload={"quality_ref": artifact_id, "root_cause": result["root_cause"],

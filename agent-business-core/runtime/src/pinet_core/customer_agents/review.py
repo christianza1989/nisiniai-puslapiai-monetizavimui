@@ -17,7 +17,7 @@ from ..customer_text import service as chat
 from ..db import db
 from ..models import Artifact, Contact, Conversation, Event, Job, new_id, utcnow
 from ..tasks.codex_transport import RunnerError
-from . import evaluator, lab, quality
+from . import evaluator, lab, protection, quality
 from .wire import Strict
 
 VERSION = "customer-quality-dispatch.v1"
@@ -38,6 +38,7 @@ class Dispatch:
     fingerprint: str
     evaluator_sha256: str
     model_profile: dict
+    protection_sha256: str | None = None
 
 
 async def input_data(tx, row):
@@ -71,7 +72,8 @@ def current_job(job, dispatch):
         and job.payload.get("binding_sha256") == digest(dispatch.binding)
         and job.payload.get("input_sha256") == digest(dispatch.data)
         and job.payload.get("evaluator_sha256") == dispatch.evaluator_sha256
-        and job.payload.get("model_profile") == dispatch.model_profile)
+        and job.payload.get("model_profile") == dispatch.model_profile
+        and job.payload.get("protected_case_sha256") == dispatch.protection_sha256)
 
 
 def last_time(session, row):
@@ -85,11 +87,14 @@ async def prepare(request):
     lab.guard()
     model_profile = evaluator.profile()  # validated before DB/paid reservation
     frozen = request.episode.model_dump(mode="json")
-    fingerprint = digest({"version": VERSION, "conversation_id": str(request.conversation_id),
-        "request_id": str(request.request_id), "episode": frozen})
+    material = {"version": VERSION, "conversation_id": str(request.conversation_id),
+        "request_id": str(request.request_id), "episode": frozen}
     async with chat.authority(request.bearer, frozen["creation_id"], calibration=frozen) as (
             tx, session, creation, identity, business, binding):
         row = await chat.locked(tx, str(request.conversation_id), binding)
+        protection_sha256 = await protection.review_proof(tx, row)
+        proof_material = {"protected_case_sha256": protection_sha256} if protection_sha256 is not None else {}
+        fingerprint = digest({**material, **proof_material})
         job = await tx.scalar(select(Job).where(Job.conversation_id == row.id, Job.kind == "quality",
             Job.business_id == business.id, Job.environment_id == settings().environment).with_for_update())
         if job:
@@ -109,7 +114,8 @@ async def prepare(request):
             owner=new_id(), lease_until=utcnow() + timedelta(seconds=2 * settings().chat_runner_seconds + 20),
             payload={"dispatch": VERSION, "request_id": str(request.request_id), "fingerprint": fingerprint,
                 "binding_sha256": digest(binding), "input_sha256": digest(data),
-                "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile})
+                "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile,
+                **proof_material})
         tx.add(job)
         await tx.flush()
         await core.add_event(tx, row, "quality-request:" + str(request.request_id), "quality_request",
@@ -117,7 +123,7 @@ async def prepare(request):
         await chat.final_authority(tx, session, creation, identity, binding)
         task = {"id": job.id, "conversation_id": row.id, "kind": "quality", "generation": 1,
             "owner": job.owner, "attempts": 1, "business_id": business.id, "environment_id": row.environment_id}
-        dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile)
+        dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile, protection_sha256)
         last_time(session, row)
         if not current_job(job, dispatch):
             raise ControlError(409, "quality_authorization_changed")
@@ -130,6 +136,7 @@ async def observe(tx, row, dispatch):
             or job.environment_id != row.environment_id or job.conversation_id != row.id
             or evaluation_contract.fingerprint() != dispatch.evaluator_sha256
             or evaluator.profile() != dispatch.model_profile
+            or await protection.review_proof(tx, row) != dispatch.protection_sha256
             or digest(await input_data(tx, row)) != digest(dispatch.data)):
         raise ControlError(409, "quality_authorization_changed")
     return job
@@ -166,7 +173,8 @@ async def reserve_call(token, dispatch, number, prompt, wire):
             "job_id": job.id, "number": number, "model": evaluator.MODEL, "fingerprint": dispatch.fingerprint,
             "model_profile": dispatch.model_profile,
             "binding_sha256": digest(binding), "input_sha256": digest(dispatch.data),
-            "evaluator_sha256": dispatch.evaluator_sha256, **evaluator.hashes(prompt, wire)})
+            "evaluator_sha256": dispatch.evaluator_sha256, **evaluator.hashes(prompt, wire),
+            **({"protected_case_sha256": dispatch.protection_sha256} if dispatch.protection_sha256 is not None else {})})
         await chat.final_authority(tx, session, creation, identity, current)
         last_time(session, row)
         if not current_job(job, dispatch):

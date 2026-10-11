@@ -15,6 +15,7 @@ from ..customer_text import service as chat
 from ..customer_text.wire import Start, Turn
 from . import service as agents
 from .models import Agent
+from .protection import Reference
 from .wire import Digest, Revision, Source, Specification, Strict
 
 
@@ -47,6 +48,7 @@ class Request(Strict):
     expected_revision: Revision
     request_id: UUID
     messages: list[str] = Field(min_length=1, max_length=8)
+    protected_case: Reference | None = None
 
 
 def guard():
@@ -120,7 +122,7 @@ def profile_matches(calibration, admission):
         raise ControlError(409, "conversation_task_not_current")
 
 
-async def episode(token, frozen, messages, request_id):
+async def episode(token, frozen, messages, request_id, *, protected_case=None):
     """One explicit synthetic script; durable dispatch reconciles exact replies."""
     messages = [Turn(request_id=UUID(int=1), base_need_revision=0, message=m).message for m in messages]
     if not 1 <= len(messages) <= 8:
@@ -128,8 +130,11 @@ async def episode(token, frozen, messages, request_id):
     request_id = UUID(str(request_id))
     value = Episode(**Snapshot.model_validate(frozen).model_dump(), episode_id=request_id,
                     script_sha256=digest(messages)).model_dump(mode="json")
+    from . import protection
+    proof = protection.freeze(protected_case, frozen, messages) if protected_case is not None else None
     created = await chat.start(token, value["creation_id"], Start(request_id=request_id,
-        admission_id=value["admission_id"], notice_version="customer-text.local.v1", consent=True), calibration=value)
+        admission_id=value["admission_id"], notice_version="customer-text.local.v1", consent=True),
+        calibration=value, protection=proof)
     turns, current = [], created
     for number, message in enumerate(messages):
         key = str(uuid5(request_id, "step:" + str(number)))

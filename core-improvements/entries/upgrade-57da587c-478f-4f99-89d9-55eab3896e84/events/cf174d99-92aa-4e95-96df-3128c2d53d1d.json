@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Final frozen source QA150offlinePASS8.44s/logSHA48386198b2bebb7e30b6af0a8c878847f4dacee26484479453aebb2e148f12e5 and11protectedPGPASS182.36s/logSHA6cd202fbcdec49d7a87d3884f8cce4d9da46a3a3820c6e5da0e7ae227dddf9bb; ordinary1FAIL4PASS87.13s/logSHA05fd9efdf295078b9e6aaa38433b7c643fe32fa32a6358169e1a6f06bbf175fd preserved. Receipt9cd498b1931c8b76f42dc0852ad08f064cea92f4214e9c3d2b58fbeb3468c328 confirms119source/87protected inputs exact/provider-channel0/operationalDB untouched. No-source-edit witness reproduced the same FAIL with all10 unique Event ID/payload maps equal, original transcripts unchanged, canonical sequences unique and unordered fixture SELECT output; diagnostic212fc0885e7edac9ed515ce7d60195fd641d30cff814cce35650cb3ee5a9c483/log8aafe099290e56222c63723fff282a21918e161b8c2c7af922b5a042b8ef7976. Scope supplement issue77/comment6111524252 reserves only test_customer_review.py replay witness; explicit canonical sequence sorting now compares same retained immutable rows. No production/evaluator/controller/corpus/criteria/history modification. Focused final ordinary retest pending; original FAILs retained. Independent review found no furtherP0-P2 in final production delta; source review is not QA or actual model acceptance.",
+  "eventId": "cf174d99-92aa-4e95-96df-3128c2d53d1d",
+  "sequence": 5,
+  "at": "2026-10-11T17:09:09.865Z"
+}

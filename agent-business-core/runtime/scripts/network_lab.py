@@ -285,7 +285,8 @@ async def customer_task(args):
             with args.customer_task_receipt.open('x', encoding='utf-8') as output:
                 frozen = await customer_lab.snapshot(request.bearer, str(request.creation_id),
                     str(request.agent_id), request.expected_revision)
-                result = await customer_lab.episode(request.bearer, frozen, request.messages, request.request_id)
+                options = {"protected_case": request.protected_case} if request.protected_case is not None else {}
+                result = await customer_lab.episode(request.bearer, frozen, request.messages, request.request_id, **options)
                 json.dump(result, output, indent=2, ensure_ascii=False)
         finally:
             await db.engine.dispose()

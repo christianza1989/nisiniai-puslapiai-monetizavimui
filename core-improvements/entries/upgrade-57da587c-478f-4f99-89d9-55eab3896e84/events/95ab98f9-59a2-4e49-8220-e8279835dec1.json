@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original frozen QA149offlinePASS9.26s/logSHA9d278d792637faeb3cca8f708fd12342019238287db5eb61fc1cdf82f74d4b62; new restrictedPG2FAIL6PASS118.39s/logSHA7d84067d11a9b672a9df96a3761d6c2bec1a1ada4cdf71bceb18e890965c05c9. ReceiptSHAd52d5fa7cad607fd4d38e9bcf3565dc55220dd16188fb67f0504131561e4ee4f/source+protected exact/provider-channel0/operationalDB untouched; later planned suites did not run after failure. Private proof key leaked in otherwise allowed provider_attempt history; shared event projection now removes only private marker hash, raw authoritative DB receipt retained. Independent source review also identified duplicate train/holdout scripts and dropping protection on a new UUID. Both reproduced before production fix: duplicate1FAIL3.53s/logSHA72fe120a8e98b387d30600e7c6b15385f8f7a5c71fbd17bf4103d6d8dae25472, unbound1FAIL17.74s/logSHA18302e32dd3fe2d0ec25332415bebd00b7f98b107f4e55570f97979e34235329, reproduction receiptSHA6ec6961b2cab14e6eed4865b2cc67ea57096e17bc4bb413d11bdaffcb1f41b4d/source exact. Fixed before reservation via original script commitments, same-parent corpus pin and cross-split digest rejection; unbound tuning/static denied after existing protected task commitment. No original results, old DTO/hash/controller/corpus/criteria changed. Corrected full frozen QA next; actual protected models not yet run.",
+  "eventId": "95ab98f9-59a2-4e49-8220-e8279835dec1",
+  "sequence": 3,
+  "at": "2026-10-11T16:42:42.404Z"
+}

@@ -72,6 +72,7 @@ async def test_actual_existing_quality_lifecycle_and_exact_replay_have_no_extra_
     c, calls = configured, []
     rq = await request(c, monkeypatch)
     before, old = await stored(c, str(rq.conversation_id))
+    old = sorted(old, key=lambda event: event.sequence)
     original = deepcopy((before.payload, [(e.id, e.payload) for e in old]))
     provider(monkeypatch, c, calls)
     monkeypatch.setattr(settings(), "learning_enabled", True)
@@ -88,6 +89,7 @@ async def test_actual_existing_quality_lifecycle_and_exact_replay_have_no_extra_
     snapshot = deepcopy([(e.id, e.payload) for e in events])
     assert await review.run(rq) == result and len(calls) == 1
     after, retained = await stored(c, str(rq.conversation_id))
+    retained = sorted(retained, key=lambda event: event.sequence)
     assert before.payload == after.payload
     assert original[1] == [(e.id, e.payload) for e in retained if not e.kind.startswith("quality_")]
     assert snapshot == [(e.id, e.payload) for e in retained]

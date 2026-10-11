@@ -30,6 +30,11 @@ from ..tasks.codex_transport import RunnerError
 from ..text_tools import core_arguments
 from . import adapter
 
+# Match the existing HTTP TextEvent wire. Private Quality/protection receipts
+# remain available through their dedicated evidence adapter, never this DTO.
+TEXT_EVENTS = ("created", "client_transcript", "tool", "provider_attempt", "provider_usage",
+    "customer_text_result", "finalized")
+
 
 def guard(*, execution=True):
     cfg = settings()
@@ -258,7 +263,7 @@ async def events(token, creation_id, conversation_id, *, limit=100, cursor=None)
     async with historical_authority(token, creation_id, conversation_id) as (tx, row):
         session = await customer_session(tx, token)
         creation_id, conversation_id = row.payload["customer_text_binding"]["creation_id"], row.id
-        statement = select(Event).where(Event.conversation_id == row.id)
+        statement = select(Event).where(Event.conversation_id == row.id, Event.kind.in_(TEXT_EVENTS))
         expires = int(utcnow().timestamp()) + 300
         if cursor:
             after, expires = open_cursor(cursor, session, creation_id + ":" + conversation_id,
@@ -269,7 +274,7 @@ async def events(token, creation_id, conversation_id, *, limit=100, cursor=None)
             statement = statement.where(Event.sequence < anchor.sequence)
         rows = list(await tx.scalars(statement.order_by(Event.sequence.desc()).limit(limit + 1)))
         return {"creation_id": creation_id, "conversation_id": conversation_id,
-            "events": [{"event_id": item.id, "sequence": item.sequence, "kind": item.kind, "data": item.payload}
+            "events": [{"event_id": item.id, "sequence": item.sequence, "kind": item.kind, "data": event_data(item)}
                 for item in reversed(rows[:limit])], "has_more": len(rows) > limit,
             "next_cursor": history_cursor(session, creation_id, "events", rows[limit - 1].id,
                 conversation_id=conversation_id, expires=expires) if len(rows) > limit else None,
@@ -300,10 +305,16 @@ async def locked(tx, conversation_id, binding):
 
 
 async def history(tx, row):
-    values = list(await tx.scalars(select(Event).where(Event.conversation_id == row.id)
+    values = list(await tx.scalars(select(Event).where(Event.conversation_id == row.id, Event.kind.in_(TEXT_EVENTS))
         .order_by(Event.sequence.desc()).limit(101)))
-    return [{"event_id": item.id, "sequence": item.sequence, "kind": item.kind, "data": item.payload}
+    return [{"event_id": item.id, "sequence": item.sequence, "kind": item.kind, "data": event_data(item)}
         for item in reversed(values[:100])], len(values) > 100
+
+
+def event_data(event):
+    # Keep authoritative attempt provenance in DB; private case identity is not
+    # part of ordinary customer history, context or the existing TextEvent wire.
+    return {key: value for key, value in event.payload.items() if key != "protected_case_sha256"}
 
 
 async def view(tx, row):
@@ -315,20 +326,31 @@ async def view(tx, row):
         "calibration_status": "UNVERIFIED"}
 
 
-async def start(token, creation_id, value, *, calibration=None):
+async def start(token, creation_id, value, *, calibration=None, protection=None):
     if not adapter.runner_ready() or not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "runner_unavailable")
     async with authority(token, creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
         if str(value.admission_id) != binding["admission_id"]:
             raise ControlError(409, "profile_admission_conflict")
-        fingerprint = digest({"request": value.model_dump(mode="json"), "binding": binding})
+        from ..customer_agents import protection as protected
+        proof = protected.with_parent(protection, binding) if protection is not None else None
+        material = {"request": value.model_dump(mode="json"), "binding": binding}
+        if proof is not None:
+            material["protected_case_sha256"] = digest(proof)
+        fingerprint = digest(material)
         old = await tx.scalar(select(Conversation).where(
             Conversation.payload["customer_text_start_key"].astext == str(value.request_id)).with_for_update())
         if old:
             if old.payload["start_fingerprint"] != fingerprint:
                 raise ControlError(409, "idempotency_conflict")
             row = await locked(tx, old.id, binding)
+            if await protected.observe(tx, row) != proof:
+                raise ControlError(409, "idempotency_conflict")
         else:
+            if proof is not None:
+                await protected.prior_cases(tx, business.id, settings().environment, proof)
+            elif not await protected.unbound_allowed(tx, business.id, settings().environment, binding):
+                raise ControlError(409, "protected_case_binding_required")
             cid, case_id = new_id(), new_id()
             scoped = {"business_id": business.id, "environment_id": settings().environment}
             tx.add(Case(id=case_id, **scoped, payload={"source": adapter.VERSION, "test": True}))
@@ -345,6 +367,10 @@ async def start(token, creation_id, value, *, calibration=None):
             await tx.flush()
             await core.add_event(tx, row, "start", "created", {"transport": adapter.VERSION,
                 "admission_id": binding["admission_id"], "source_revision": settings().control_source_revision})
+            if proof is not None:
+                row.payload = {**row.payload, "protected_case": proof}
+                await core.add_event(tx, row, protected.EVENT_KEY, protected.VERSION,
+                    {"proof": proof, "sha256": digest(proof)})
         result = await view(tx, row)
         await final_authority(tx, session, creation, identity, binding)
         return result
@@ -390,6 +416,7 @@ class Dispatch:
     event_id: str
     context: dict
     binding: dict
+    protection_sha256: str | None = None
 
 
 async def result_event(tx, row, key):
@@ -399,6 +426,10 @@ async def result_event(tx, row, key):
 async def prepare(token, creation_id, conversation_id, value, *, calibration=None):
     async with authority(token, creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
         row = await locked(tx, conversation_id, binding)
+        from ..customer_agents import protection
+        await protection.turn(tx, row, value)
+        proof = await protection.observe(tx, row)
+        proof_material = {"protected_case_sha256": digest(proof)} if proof is not None else {}
         request = str(value.request_id)
         fingerprint = digest(value.model_dump(mode="json"))
         reserved = await tx.scalar(select(Event).where(Event.conversation_id == row.id,
@@ -444,10 +475,11 @@ async def prepare(token, creation_id, conversation_id, value, *, calibration=Non
             "binding_sha256": digest(binding),
             "prompt_sha256": hashlib.sha256(input_text.encode("utf-8")).hexdigest(),
             "schema_sha256": hashlib.sha256(schema_text.encode("utf-8")).hexdigest()}
+        attempt.update(proof_material)
         await core.add_event(tx, row, "attempt:" + request, "provider_attempt", attempt)
         await final_authority(tx, session, creation, identity, binding)
         return Dispatch(business.id, settings().environment, row.id, creation.id, request, row.owner,
-            row.epoch, row.need_revision, event.id, context, binding)
+            row.epoch, row.need_revision, event.id, context, binding, proof_material.get("protected_case_sha256"))
 
 
 def live(row, dispatch):
@@ -462,11 +494,20 @@ async def authorized(token, dispatch):
             return False
         async with authority(token, dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
             row = await locked(tx, dispatch.conversation_id, binding)
-            result = binding == dispatch.binding and live(row, dispatch)
+            result = binding == dispatch.binding and live(row, dispatch) and await protected_current(tx, row, dispatch)
             await final_authority(tx, session, creation, identity, binding)
             return result
-    except (ControlError, HTTPException):
+    except (ControlError, HTTPException, ValueError):
         return False
+
+
+async def protected_current(tx, row, dispatch):
+    from .. import evaluation_contract
+    from ..customer_agents import protection
+
+    proof = await protection.observe(tx, row)
+    return (digest(proof) if proof is not None else None) == dispatch.protection_sha256 and (
+        proof is None or proof["evaluator_sha256"] == evaluation_contract.fingerprint())
 
 
 def usage_receipt(value):
@@ -495,7 +536,7 @@ async def settle(dispatch, usage, failure):
 async def finish(token, dispatch, output, failure):
     async with authority(token, dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
         row = await locked(tx, dispatch.conversation_id, binding)
-        if binding != dispatch.binding or not live(row, dispatch):
+        if binding != dispatch.binding or not live(row, dispatch) or not await protected_current(tx, row, dispatch):
             raise ControlError(409, "stale_text_attempt")
         payload = {"request_id": dispatch.request_id, "status": "failed" if failure else "succeeded",
             "failure_code": failure, "provider_replayed": False}

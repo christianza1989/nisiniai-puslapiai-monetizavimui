@@ -58,7 +58,11 @@ def parent(row):
     # Behavior/source identity is stable across client scripts and logins. The
     # full Session/episode binding remains independently frozen for execution.
     # Never backfill old payloads or substitute a current Config/Profile.
-    frozen = retained(row).model_dump(mode="json")
+    return parent_binding(retained(row))
+
+
+def parent_binding(binding):
+    frozen = Binding.model_validate(binding).model_dump(mode="json")
     material = {key: frozen[key] for key in ("creation_id", "environment_id", "registration_id",
         "registration_fingerprint", "admission_id", "admission_fingerprint", "profile", "adapter", "model")}
     task = frozen["task_calibration"]

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Second frozen QA completed150offline8.40s/SHA c195bd977f503cdd001a875d0604d79a8e01cba11b471b8dd627e6834797e50e;9protectedPG125.69s/SHA d2cc9d49bf12c01315818c2e4654020e5df551dd8ed2309984e0d31d249e9710;24existingQualityReviewPG300.47s/SHA942c5120f81662da9e625ab60518687ffb47cdc654d30c74a775731af8130520;14historyPG129.98s/SHA1de19d2365d545c18938d3b8765c886bf545424eb5bdfcd44c6df6a256c2ab2d;15existingCalibrationControllerPG15.76s/SHAdd94026ca65c7951e71e356b3c48372508e4121460f525b58e18dffffce6dd3b; receiptSHAe80ac4c42be72db26e520c504e1b1ff5c4d41da60958e7e10ac82ab89cf7410b source+protected exact/providers-channels0/operationalDB untouched. It did not close review's mutable marker discovery P2. Both no-ref and same-ref newUUID after marker removal were reproduced before production fix:2FAIL31.78s/logSHA9aa2bc8830f4c14267e533bbd915cfc92e3f4a9d6a39aac7509826e834dab0b3; receiptSHA4cfe0b13866d303871b68dc4e08c5949874652b6975be1b4f530a5563873930f/source exact/providers0. Commitment discovery now joins original scoped EVENT_KEY/VERSION proof parent/script and validates original retained marker/event; malformed/missing marker cannot disappear from lookup and cannot permit unbound tuning. No Event/history overwrite. Final affected QA and read-only review follow.",
+  "eventId": "83616a06-3581-4152-acad-b13d185b04ac",
+  "sequence": 4,
+  "at": "2026-10-11T16:56:05.419Z"
+}

@@ -11,9 +11,9 @@
 - [x] Grįžimo į Madbeauty grafiko patvirtinimas.
 - [x] Izoliuotas tikras SQLite/Workers bandymas, perkrovimas ir lygiagretaus perjungimo/laikymo lenktynė.
 - [x] Regresijos: backend 88, frontend 28; vietinis tikros naršyklės pasirinkimas, klaidos, perkrovimas, grįžimas, profilis ir 390 px vaizdas.
-- [ ] Tiksliai išleidžiamo main artefakto bandymas.
-- [ ] Main ir bandymas nuoseklus saugomas išleidimas bei gyvos patikros.
-- [ ] Galutinė vizualinė peržiūra, dizaino palyginimas su esama sistema ir išleidimo kvitas.
+- [x] Tiksliai išleidžiamo main artefakto bandymas.
+- [x] Main ir bandymas nuoseklus saugomas išleidimas bei gyvos patikros.
+- [x] Galutinė vizualinė peržiūra, dizaino palyginimas su esama sistema ir išleidimo kvitas.
 
 ## Ribos
 

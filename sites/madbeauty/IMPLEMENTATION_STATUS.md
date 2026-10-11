@@ -1,3 +1,9 @@
+## 2026-10-11 — Vienas salono rezervavimo būdas gyvai
+
+Main 87e6c536-aa20-4f9c-a052-62ab21f9526c, trial 283f9d36-88a3-44ba-87f0-dbf25e3e0f65, source 9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63. Madbeauty arba Treatwell pasirinkimas registracijoje ir savininko darbo vietoje: external išjungia native laikus/hold/booking/waitlist/schedule, rodo sąžiningą outbound CTA; esami native salonai lieka native. Exact compiled main rezervavimo/restart/race bei community/media, exact trial fixtures/community ir native/hosted100/139 PASS. Actual trial create/external/reload/return native/revert external PASS, privatus nepaskelbtas sintetinis salonas.40solo+5publicsalons/reviews/expiry/mail/namespaces/content129/core566 išsaugoti. Main C0–C2 jau buvo aktyvinta d0416bb5 ir lieka aktyvi; FBmainfalse. [Kvitas](booking-channel-20261011/RECEIPT.md), [checkbox](booking-channel-20261011/ROADMAP.md).
+
+Tai rezervavimo kanalo inkremento užbaigimas, ne Treatwell API sinchronizacija, realus išorinis vizitas ar visos platformos/paklausos priėmimas. Facebook verification savininkas atidėjo, reviewer Chrome konkretus blokavimas lieka UNVERIFIED; grupės/events/conferences planuoti. Žemiau checkpointų teiginiai apie maincommunityfalse priklauso ankstesniems leidimams.
+
 ## 2026-10-11 — Po plano apmokėjimo paslauga atkurta, optimizacijos gyvai
 
 Savininkas pats apmokėjo planą. Iki to klasifikuotas actual Cloudflare Durable Objects free rows-read quota ir root/session500 visuose3domenuose; po atsakymo jų root/session200 ir platesnis priėmimas PASS. Finansinio veiksmo agentas neatliko; billing connector read atsisakė prieigos, teisės nedidintos. [Incidentas](community-20261011/QUOTA_INCIDENT.md).

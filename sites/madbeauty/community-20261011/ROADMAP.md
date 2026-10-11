@@ -2,17 +2,23 @@
 
 Atnaujinta 2026-10-11. Aktyvi apimtis: pradėti nuo Facebook, įgyvendinti C0–C2 ir padaryti viską išbandoma. Grupės ir renginiai suplanuoti, jų realizacija šiame lange neužsakyta. Checkbox pažymimas tik su konkrečiu rezultatu ir įrodymu; parašytas kodas savaime nėra priėmimas.
 
+## Aktualus checkpoint
+
+Aktualu 2026-10-11T08:39:35.673Z: main 87e6c536-aa20-4f9c-a052-62ab21f9526c, trial 283f9d36-88a3-44ba-87f0-dbf25e3e0f65, runtime source 9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63. Bendruomenė C0–C2 abiejuose aktyvi; main Facebook išjungtas, Meta patvirtinimas savininko atidėtas. Vieno rezervavimo būdo inkrementas gyvai priimtas, native/hosted100/139 ir actual trial salono create/switch/reload. Reviewer cd397c44 nekeistas. [Rezervavimo kvitas](../booking-channel-20261011/RECEIPT.md). Žemiau ankstesni leidimai ir jų browser proofai yra istorija, ne naujo leidimo pilnas pakartojimas.
+
+Likusių žemiau nepažymėtų plataus bendruomenės browser/viewport vartų nelaikyti vien testų suma užbaigtais. Telefono/SMS ir reviewer Chrome diagnostika atidėta kartu su Facebook patvirtinimu; dabartinis savininko rezervavimo inkrementas užbaigtas.
+
 ## Kur tęsti po konteksto praradimo
 
 Checkout: `madbeauty-service-picker-20261010`, šaka `ai/madbeauty-service-picker-20261010`, PR88. Plano commit `c8f7d1e`; šis dokumentas gali turėti naujesnius dar necommitintus checkpointus. Pirmiausia `git status`, tada šis failas ir jo naujausias checkpoint. Kitų failų pakeitimų nenurašyti ar reset'inti.
 
-Dabartinis žingsnis: **C0–C2 ir tikras savininko Facebook bandymas priimti; viešas Meta paleidimas laukia peržiūros**. Savininkas pats užbaigė pradinį Facebook prisijungimą. Chrome paskyroje patvirtintas susiejimas, actual Meta pakartotinis login, atsiejimas su Facebook sesijos panaikinimu, naujas OAuth → trial OTP → relink į tą pačią demo-client-0 paskyrą. Visi8 ankstesni vizitų ID išliko. Galutinis susiejimas ir prisijungimas atkurti. [Kvitas](RECEIPT.json).
+Dabartinis žingsnis: **C0–C2 main/trial aktyvūs; vieno rezervavimo būdo inkrementas priimtas gyvai**. Tikras savininko Facebook login išsaugo savo ankstesnio trial leidimo įrodymus. Viešas Facebook paleidimas ir Meta verification atidėti savininko; pradiniai sutikimai priimti, jų kartoti nereikia. [Aktualus kvitas](RECEIPT.json).
 
-Meta programėlė1827877621543839 vis dar Unpublished. App Review nauji prašymai email/public_profile yra Not submitted; konkretus submission1827877654877169 turi Verification, App settings, Allowed usage, Data handling ir Reviewer instructions žingsnius, Submit for review disabled. Pagrindinio domeno community/publicFBlogin tebėra išjungti. Pradinis owner-consent klausimas nebelaukia atsakymo.
+Meta programėlė1827877621543839 vis dar Unpublished. App Review nauji prašymai email/public_profile yra Not submitted; konkretus submission1827877654877169 turi Verification, App settings, Allowed usage, Data handling ir Reviewer instructions žingsnius, Submit for review disabled. Pagrindinio domeno bendruomenė jau aktyvi; public Facebook login išjungtas. Pradinis owner-consent klausimas nebelaukia atsakymo.
 
-Kitas veiksmas: išaiškinti Chrome reviewer OTP / ERR_BLOCKED_BY_CLIENT problemą ir užbaigti tiekėjų faktinę geografiją. Meta telefono patvirtinimą savininkas aiškiai atidėjo, SMS / CAPTCHA nekartoti. Susiejimas / pateikti rekvizitai / abu sutikimai jau turi readback; jų nekartoti. Reviewer OAuth ir galutinis Submit dar nepriimti; [aktualus planas](META_REVIEW.md).
+Tolimesnis Facebook veiksmas tik savininkui grįžus prie verification: faktinė tiekėjų geografija, Chrome reviewer konkretus login blokavimas ir galutinis Meta Submit. Telefono/SMS/CAPTCHA nekartoti; rekvizitų ir sutikimų readback išlikęs. Rezervavimo kanalo pakeitimas neapeina šių ribų. [Meta planas](META_REVIEW.md).
 
-Gyvas pagrindas: main `90760306-9aec-4af0-a675-9ed747442915`, trial `f608921e-f68a-4faa-9b13-66aa15c29e4d`, abiejų source `1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9`; reviewer `cd397c44-6eb8-4e2f-8d2c-e3ad954371fd`, source `eb30a67b0fcd6993b896f14f48f37ede372b4835`. Skaitymų ir auth pataisos įdiegtos. Po savininko plano apmokėjimo visi trys domenai ir sesijos API atsako200. [Aktualus kvitas](RECEIPT.md), [limito incidentas](QUOTA_INCIDENT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
+Gyvas pagrindas: main `87e6c536-aa20-4f9c-a052-62ab21f9526c`, trial `283f9d36-88a3-44ba-87f0-dbf25e3e0f65`, runtime source `9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63`; reviewer `cd397c44-6eb8-4e2f-8d2c-e3ad954371fd` nekeistas. Main/trial bendruomenė true, mainFBfalse/trialFBtrue. Native/hosted main100, trial139; prior full community browser scenarios retain their earlier versions. Trialexpiry `2026-10-16T21:10:47.982Z`,40solo+5publicsalons/11–21reviews išsaugoti; naujas rezervavimo bandymo salonas privatus ir nepatvirtintas, jokių dummy canonical. [Aktualus kvitas](RECEIPT.md), [rezervavimo inkrementas](../booking-channel-20261011/RECEIPT.md).
 
 ## Užbaigtas pasiruošimas
 

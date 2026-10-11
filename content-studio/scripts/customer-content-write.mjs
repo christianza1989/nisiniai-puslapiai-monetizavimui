@@ -18,7 +18,20 @@ const hash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 const boundedText = (value, minimum, maximum) => typeof value === 'string' && value.trim().length >= minimum && value.length <= maximum;
 const native = JSON.parse(readFileSync(new URL('../schemas/content-package.v2.schema.json', import.meta.url), 'utf8'));
 
-// Native block/inline/target definitions are reused verbatim, never a second public schema.
+// The provider supports nested anyOf, not native oneOf. Required singleton tags
+// make these branches disjoint, so this transport projection preserves their set.
+// The canonical native validator below remains authoritative for actual writes.
+function nativeUnion(name, tag, allowed = null) {
+  const branches = native.$defs[name].oneOf.filter(branch => !allowed || allowed.includes(branch.properties[tag].const));
+  const tags = branches.map(branch => branch.properties[tag]?.const);
+  if (tags.some(value => typeof value !== 'string') || new Set(tags).size !== branches.length
+      || branches.some(branch => !branch.required.includes(tag))) fail('writer_native_union_invalid');
+  return { anyOf: structuredClone(branches) };
+}
+const target = nativeUnion('target', 'kind', ['page', 'external']);
+// uri is outside the provider's supported formats. Preserve the native HTTPS
+// pattern/lengths; normalizeV2Blocks and verified-URL admission still validate it.
+delete target.anyOf.find(branch => branch.properties.kind.const === 'external').properties.url.format;
 export const writerOutputSchema = {
   type: 'object', additionalProperties: false, required: ['title', 'description', 'intent', 'body', 'factChecks'],
   properties: {
@@ -28,8 +41,7 @@ export const writerOutputSchema = {
     body: { type: 'array', minItems: 1, maxItems: 300, items: { $ref: '#/$defs/block' } },
     factChecks: { type: 'array', maxItems: 30, items: { type: 'string', minLength: 1, maxLength: 600 } },
   },
-  $defs: { block: native.$defs.block, inline: native.$defs.inline,
-    target: { oneOf: native.$defs.target.oneOf.filter(branch => ['page', 'external'].includes(branch.properties.kind.const)) } },
+  $defs: { block: nativeUnion('block', 'type'), inline: nativeUnion('inline', 'type'), target },
 };
 const task = `Parenk pilną naudingą šio puslapio juodraštį svetainės kalba pagal jo konkretų klausimą ir visą planningBrief.
 Grąžink tik pateiktos native V2 JSON schemos title, description, intent, body ir factChecks. Leidžiami tik tikros V2 schemos blokai; neatkurk V1 blocks formato, HTML, JS ar tariamų įrankių.

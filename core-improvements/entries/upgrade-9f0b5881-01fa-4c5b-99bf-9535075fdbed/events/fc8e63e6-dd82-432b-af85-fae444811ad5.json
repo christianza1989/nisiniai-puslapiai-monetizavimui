@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root source window reserved before writes; API8860 stopped and provider idle. Derive transport schema from maintained native tagged definitions: nested anyOf, preserve all branches/required fields/bounds, drop only unsupported URI format while retaining HTTPS pattern. Node native validation, real page/asset/verified external IDs, source/context/content CAS and all factual/publication gates unchanged. No role model/CLI/HTTP/SQL/cap/language-mode changes.",
+  "eventId": "fc8e63e6-dd82-432b-af85-fae444811ad5",
+  "sequence": 2,
+  "at": "2026-10-11T01:21:37.319Z"
+}

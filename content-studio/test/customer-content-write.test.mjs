@@ -5,12 +5,48 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 import { spawnSync } from 'node:child_process';
-import { stableV2 } from '../src/content-package-v2.mjs';
+import { stableV2, normalizeV2Blocks } from '../src/content-package-v2.mjs';
+import { writerOutputSchema } from '../scripts/customer-content-write.mjs';
 
 const digest = value => createHash('sha256').update(stableV2(value)).digest('hex');
 const intakeScript = path.resolve(import.meta.dirname, '../scripts/customer-creation-intake.mjs');
 const writerScript = path.resolve(import.meta.dirname, '../scripts/customer-content-write.mjs');
 const modelUrl = new URL('../src/model.mjs', import.meta.url).href;
+
+test('provider GUIDE schema preserves disjoint native blocks and targets in supported strict format', async () => {
+  const native = JSON.parse(await readFile(new URL('../schemas/content-package.v2.schema.json', import.meta.url), 'utf8'));
+  const sourceBefore = stableV2(native);
+  for (const [name, tag] of [['block', 'type'], ['inline', 'type'], ['target', 'kind']]) {
+    const branches = native.$defs[name].oneOf.filter(branch => name !== 'target' || ['page', 'external'].includes(branch.properties.kind.const));
+    // Distinct required singleton tags prove oneOf -> anyOf keeps the same valid set.
+    assert.equal(new Set(branches.map(branch => branch.properties[tag].const)).size, branches.length);
+    assert.ok(branches.every(branch => branch.required.includes(tag)));
+    const expected = structuredClone(branches);
+    if (name === 'target') delete expected.find(branch => branch.properties.kind.const === 'external').properties.url.format;
+    assert.deepEqual(writerOutputSchema.$defs[name], { anyOf: expected });
+  }
+  const walk = node => {
+    if (!node || typeof node !== 'object') return;
+    assert.equal('oneOf' in node, false);
+    if (node.type === 'object') {
+      assert.equal(node.additionalProperties, false);
+      assert.deepEqual(new Set(node.required), new Set(Object.keys(node.properties)));
+    }
+    if ('format' in node) assert.ok(['date-time', 'time', 'date', 'duration', 'email', 'hostname', 'ipv4', 'ipv6', 'uuid'].includes(node.format));
+    for (const value of Object.values(node)) if (Array.isArray(value)) value.forEach(walk); else walk(value);
+  };
+  walk(writerOutputSchema);
+  assert.equal(writerOutputSchema.type, 'object'); assert.equal('anyOf' in writerOutputSchema, false);
+  assert.equal(stableV2(native), sourceBefore);
+  const text = { type: 'text', text: 'Sintetinis pavyzdys' };
+  const blocks = [{ type: 'paragraph', text: text.text }, { type: 'heading', level: 2, text: text.text },
+    { type: 'list', items: [text.text] }, { type: 'image', assetId: 'known-asset' },
+    { type: 'richParagraph', content: [text, { type: 'link', text: 'Kitas puslapis', target: { kind: 'page', pageId: 'known-page' } }] },
+    { type: 'richHeading', level: 3, content: [text] },
+    { type: 'richList', ordered: true, items: [[{ type: 'link', text: 'Šaltinis', target: { kind: 'external', url: 'https://example.invalid/source' } }]] }];
+  assert.deepEqual(normalizeV2Blocks(blocks), blocks);
+  assert.throws(() => normalizeV2Blocks([{ type: 'richParagraph', content: [{ type: 'link', text: 'Netinkamas adresas', target: { kind: 'external', url: 'http://example.invalid/source' } }] }]));
+});
 function brief(pathname, parent = '') {
   return { path: pathname, title: 'Praktinės komandos užduoties pasirinkimas', intent: 'Padėti komandai pasirinkti konkrečią pasikartojančią darbo užduotį.',
     head_query: 'Kaip pasirinkti komandos mokymosi užduotį', audience_problem: 'Komanda nežino, kurią pasikartojančią darbo užduotį verta išbandyti pirmiausia.',
@@ -83,6 +119,7 @@ test('prepare exposes the whole real brief, candidate sources and unknown facts 
   assert.deepEqual(prepared.pageData.sourceCandidates, ['https://example.org/candidate']); assert.deepEqual(prepared.pageData.existingVerifiedExternalUrls, []);
   assert.ok(prepared.instructions.includes('language-quality.md')); assert.ok(prepared.instructions.includes('planningBrief'));
   assert.equal(prepared.instructionMetadata.mode, 'draft'); assert.ok(prepared.workflow.pages.every(page => page.state === 'blocked'));
+  assert.deepEqual(prepared.outputSchema, writerOutputSchema);
   assert.deepEqual(await readFile(fixture.filename), before); assert.equal(prepared.fullF1, 'UNVERIFIED'); assert.equal(prepared.launch, 'UNVERIFIED');
 });
 

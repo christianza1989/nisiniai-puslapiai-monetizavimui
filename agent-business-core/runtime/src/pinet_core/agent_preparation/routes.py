@@ -5,6 +5,7 @@ from ..control.routes import ControlError, SafeRoute, authenticated
 from ..control.routes import envelope as core_envelope
 from ..creation.routes import owned
 from ..customer.service import customer_guard
+from ..customer_profile.service import pin_registration
 from .service import projection
 from .v2_service import projection as projection_v2
 
@@ -37,7 +38,9 @@ async def readiness_v2(creation_id: str, request: Request,
     if any(key != "accepted_revision" for key, _ in pairs) or len(pairs) > 1:
         raise ControlError(400, "invalid_request")
     tx, session = context
+    registration_identity = await pin_registration(tx, creation_id)
     creation = await owned(tx, session, creation_id, lock=True)
-    value = core_envelope(request, await projection_v2(tx, session, creation, accepted_revision))
+    value = core_envelope(request, await projection_v2(tx, session, creation, accepted_revision,
+        registration_identity=registration_identity))
     value["contract_version"] = "agent-preparation.v2"
     return value

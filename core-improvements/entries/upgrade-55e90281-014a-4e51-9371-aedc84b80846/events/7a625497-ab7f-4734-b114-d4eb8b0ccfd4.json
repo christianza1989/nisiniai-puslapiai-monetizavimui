@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "commit": "62c88d310289e11910d6109166cddf9b3c92e8b2",
+  "checks": [
+    {
+      "command": "node --test --test-name-pattern='v2 validator/hash/schema copies match' content-studio/test/content-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "1 PASS 0.36s after own module normalization to existing eol=lf; exact full module matches parent-owned public export SHA25610c00b2304d01bc599c9eda25cee056623f896ffc95df719f7125d410422fa24. Native schema/publication/hash validators unchanged."
+    },
+    {
+      "command": "node --check content-studio/scripts/customer-content-workflow.mjs; node scripts/repository-safety.mjs --staged; git diff --cached --check; node scripts/git-freshness.mjs --phase handoff --companion C:/Users/lenovo/.codex/worktrees/verslomatika-public-evidence/dovanos-memorycasting",
+      "result": "PASS",
+      "evidence": "Functional exact9source/test blobs181900B, safety no findings; fetch both private7af6/publicec8 PASS2026-10-11T02:34:26Z."
+    }
+  ],
+  "note": "Additive export only. Parent separately reserved public scope6104605840 and wrote identical helper; own private module now uses canonical LF and exact mirror test passes. Original full-suite mirror failures preserved; no schema/hash/validation semantics changed, public source remains parent-owned and unmerged. This is source adapter evidence, not actual customer media/review/source or publication acceptance.",
+  "eventId": "7a625497-ab7f-4734-b114-d4eb8b0ccfd4",
+  "sequence": 3,
+  "at": "2026-10-11T02:36:57.728Z"
+}

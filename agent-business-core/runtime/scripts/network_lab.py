@@ -225,8 +225,12 @@ def parse_args(argv=None):
     target.add_argument('--site', choices=sorted(agent_instructions.SITES))
     target.add_argument('--customer-task-input', type=Path,
         help='Private exact saved-task episode request; execution witness, not learning admission.')
+    target.add_argument('--customer-quality-input', type=Path,
+        help='Private exact configured episode Quality request through the existing evaluator.')
     parser.add_argument('--customer-task-receipt', type=Path,
         help='New private episode receipt under runtime artifacts; no quality/promotion claim.')
+    parser.add_argument('--customer-quality-receipt', type=Path,
+        help='New private Quality receipt; no protected calibration or activation claim.')
     parser.add_argument('--jev-mode', choices=['off', 'on'], default='off')
     parser.add_argument('--corpus-dir', type=Path, default=ROOT / 'evals/network')
     parser.add_argument('--phase', choices=['baseline', 'candidate', 'blind', 'evaluation'], default='baseline')
@@ -244,14 +248,21 @@ def parse_args(argv=None):
     parser.add_argument('--pin-release-file', type=Path)
     parser.add_argument('--knowledge-file', type=Path)
     args = parser.parse_args(argv)
-    if args.customer_task_input:
+    if args.customer_quality_input:
+        if not args.customer_quality_receipt:
+            parser.error('--customer-quality-receipt is required for customer Quality')
+        defaults = parser.parse_args(['--customer-quality-input', 'input', '--customer-quality-receipt', 'receipt'])
+        if any(value != getattr(defaults, key) for key, value in vars(args).items()
+                if key not in {'customer_quality_input', 'customer_quality_receipt'}):
+            parser.error('customer Quality mode cannot enable legacy evaluation or learning options')
+    elif args.customer_task_input:
         if not args.customer_task_receipt:
             parser.error('--customer-task-receipt is required for a customer task')
         defaults = parser.parse_args(['--customer-task-input', 'input', '--customer-task-receipt', 'receipt'])
         if any(value != getattr(defaults, key) for key, value in vars(args).items()
                 if key not in {'customer_task_input', 'customer_task_receipt'}):
             parser.error('customer task mode cannot enable legacy evaluation or learning options')
-    elif not args.run_id or args.customer_task_receipt:
+    elif not args.run_id or args.customer_task_receipt or args.customer_quality_receipt:
         parser.error('static site mode requires --run-id and cannot use a customer task receipt')
     return args
 
@@ -285,8 +296,34 @@ async def customer_task(args):
         'module_admission': 'not_admitted', 'activation': 'not_performed'}))
 
 
+async def customer_quality(args):
+    """Same entrypoint and Quality lifecycle; no legacy setup/cleanup or implicit calls."""
+    from customer_profile_admin import read_request
+
+    from pinet_core.customer_agents import review
+
+    try:
+        try:
+            private_root = (ROOT / 'artifacts').resolve()
+            for path in (args.customer_quality_input, args.customer_quality_receipt):
+                if path.is_symlink() or not path.resolve().is_relative_to(private_root):
+                    raise ValueError('private_quality_paths_required')
+            request = review.Request.model_validate(read_request(args.customer_quality_input))
+            with args.customer_quality_receipt.open('x', encoding='utf-8') as output:
+                result = await review.run(request)
+                json.dump(result, output, indent=2, ensure_ascii=False)
+        finally:
+            await db.engine.dispose()
+    except Exception:
+        raise SystemExit('Local independent Quality failed; inspect durable usage and current task/source authority.') from None
+    print(json.dumps(result))
+
+
 async def main(argv=None):
     args = parse_args(argv)
+    if args.customer_quality_input:
+        await customer_quality(args)
+        return
     if args.customer_task_input:
         await customer_task(args)
         return

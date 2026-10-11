@@ -30,6 +30,10 @@ async def claim_job(business_id, owner, kind=None):
             or_(and_(Job.state.in_(["queued", "retry_scheduled"]), Job.run_after <= utcnow()),
                 and_(Job.state == "running", Job.lease_until < utcnow()))
         )
+        # Private customer Quality attempts are owned explicitly, never retried
+        # or recovered by the generic worker after their authority expires.
+        query = query.where(or_(Job.payload["dispatch"].astext.is_(None),
+            Job.payload["dispatch"].astext != "customer-quality-dispatch.v1"))
         if kind:
             query = query.where(Job.kind == kind)
         job = await tx.scalar(query.order_by(Job.created_at).with_for_update(skip_locked=True).limit(1))
@@ -193,60 +197,65 @@ async def complete_artifact(business_id, task, result):
     if task['kind'] == 'quality':
         result = quality_guards.reconcile(result, await load_input(business_id, task['conversation_id']))
     async with db.transaction(business_id, settings().environment) as tx:
-        job = await fenced_job(tx, task)
-        from .customer_text.adapter import VERSION as customer_transport
-        convo = await tx.scalar(select(Conversation).where(Conversation.id == task["conversation_id"],
-            Conversation.business_id == business_id, Conversation.environment_id == settings().environment))
-        if not convo or job.conversation_id != convo.id:
-            raise ValueError("conversation_unavailable")
-        if convo.payload.get("transport") == customer_transport:
-            from .customer_agents.quality import current_source, parent
-            if task["kind"] != "quality" or result.get("release_hash") != parent(convo):
-                raise ValueError("customer_quality_parent_conflict")
-            # Policy/index before artifact flush and its Conversation FK lock:
-            # disable/revoke use that same ordering, including their row lock.
-            await current_source(tx, convo)
-        existing = await tx.scalar(select(Artifact).where(Artifact.conversation_id == task["conversation_id"],
-                                                          Artifact.kind == task["kind"]))
-        if not existing:
-            artifact_id = new_id()
-            common = {"business_id": business_id, "environment_id": settings().environment,
-                      "conversation_id": task["conversation_id"]}
-            tx.add(Artifact(id=artifact_id, **common, kind=task["kind"], payload=result))
-            if task["kind"] == "quality" and result.get("root_cause", "unknown") != "unknown" and result.get("issues"):
-                issue_id = new_id()
-                tx.add(Artifact(id=issue_id, **common, kind=f"calibration_issue:{issue_id}",
-                    payload={"quality_ref": artifact_id, "root_cause": result["root_cause"],
-                             "evidence_refs": result["evidence_event_ids"], "state": "open"}))
-                hint = result.get("improvement_hint", "")
-                if (result["root_cause"] == "communication" and result.get("suggested_scope") and
-                        10 <= len(hint) <= 1000):
-                    candidate_id = new_id()
-                    tx.add(Artifact(id=candidate_id, **common, kind=f"candidate:{candidate_id}", payload={
-                        "parent_hash": result["release_hash"], "scope": result["suggested_scope"],
-                        "instruction": hint, "hash": digest(hint), "issue_ref": issue_id,
-                        "state": "proposed", "protected_evaluation_required": True, "activated": False}))
-                    await tx.flush()
-                    admitted = await calibration.static_check(tx, candidate_id)
-                    if settings().learning_enabled and admitted['status'] == 'PASS':
-                        from .learning_controller import environment_allowed
-                        from .onboarding import learning_admitted
-                        if (environment_allowed(settings().environment)
-                                and await learning_admitted(tx, business_id)):
-                            tx.add(Job(**common, kind='learning', payload={'candidate_id': candidate_id}))
-                elif result["root_cause"] == "knowledge":
-                    review_id = new_id()
-                    tx.add(Artifact(id=review_id, **common, kind=f"content_review:{review_id}",
-                        payload={"quality_ref": artifact_id, "evidence_refs": result["evidence_event_ids"],
-                                 "state": "awaiting_editorial_review", "publishes_content": False}))
-        if convo.payload.get("transport") == customer_transport:
-            # Last source/TTL observation is inside the acceptance transaction.
-            # Existing history is not repaired, renewed or granted execution here.
-            await fenced_job(tx, task)
-            await current_source(tx, convo)
-            if job.lease_until <= utcnow():
-                raise RuntimeError("stale_job_lease")
-        job.state = "succeeded"
+        await complete_in_transaction(tx, business_id, task, result)
+
+
+async def complete_in_transaction(tx, business_id, task, result):
+    """Existing lifecycle inside an already scoped and authorized transaction."""
+    job = await fenced_job(tx, task)
+    from .customer_text.adapter import VERSION as customer_transport
+    convo = await tx.scalar(select(Conversation).where(Conversation.id == task["conversation_id"],
+        Conversation.business_id == business_id, Conversation.environment_id == settings().environment))
+    if not convo or job.conversation_id != convo.id:
+        raise ValueError("conversation_unavailable")
+    if convo.payload.get("transport") == customer_transport:
+        from .customer_agents.quality import current_source, parent
+        if task["kind"] != "quality" or result.get("release_hash") != parent(convo):
+            raise ValueError("customer_quality_parent_conflict")
+        # Policy/index before artifact flush and its Conversation FK lock:
+        # disable/revoke use that same ordering, including their row lock.
+        await current_source(tx, convo)
+    existing = await tx.scalar(select(Artifact).where(Artifact.conversation_id == task["conversation_id"],
+                                                      Artifact.kind == task["kind"]))
+    if not existing:
+        artifact_id = new_id()
+        common = {"business_id": business_id, "environment_id": settings().environment,
+                  "conversation_id": task["conversation_id"]}
+        tx.add(Artifact(id=artifact_id, **common, kind=task["kind"], payload=result))
+        if task["kind"] == "quality" and result.get("root_cause", "unknown") != "unknown" and result.get("issues"):
+            issue_id = new_id()
+            tx.add(Artifact(id=issue_id, **common, kind=f"calibration_issue:{issue_id}",
+                payload={"quality_ref": artifact_id, "root_cause": result["root_cause"],
+                         "evidence_refs": result["evidence_event_ids"], "state": "open"}))
+            hint = result.get("improvement_hint", "")
+            if (result["root_cause"] == "communication" and result.get("suggested_scope") and
+                    10 <= len(hint) <= 1000):
+                candidate_id = new_id()
+                tx.add(Artifact(id=candidate_id, **common, kind=f"candidate:{candidate_id}", payload={
+                    "parent_hash": result["release_hash"], "scope": result["suggested_scope"],
+                    "instruction": hint, "hash": digest(hint), "issue_ref": issue_id,
+                    "state": "proposed", "protected_evaluation_required": True, "activated": False}))
+                await tx.flush()
+                admitted = await calibration.static_check(tx, candidate_id)
+                if settings().learning_enabled and admitted['status'] == 'PASS':
+                    from .learning_controller import environment_allowed
+                    from .onboarding import learning_admitted
+                    if (environment_allowed(settings().environment)
+                            and await learning_admitted(tx, business_id)):
+                        tx.add(Job(**common, kind='learning', payload={'candidate_id': candidate_id}))
+            elif result["root_cause"] == "knowledge":
+                review_id = new_id()
+                tx.add(Artifact(id=review_id, **common, kind=f"content_review:{review_id}",
+                    payload={"quality_ref": artifact_id, "evidence_refs": result["evidence_event_ids"],
+                             "state": "awaiting_editorial_review", "publishes_content": False}))
+    if convo.payload.get("transport") == customer_transport:
+        # Last source/TTL observation is inside the acceptance transaction.
+        # Existing history is not repaired, renewed or granted execution here.
+        await fenced_job(tx, task)
+        await current_source(tx, convo)
+        if job.lease_until <= utcnow():
+            raise RuntimeError("stale_job_lease")
+    job.state = "succeeded"
 
 
 async def prepare_followup(business_id, task, data):

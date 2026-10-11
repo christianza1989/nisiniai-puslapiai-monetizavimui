@@ -7,6 +7,7 @@ import {
   canonical,
   digest,
   validateStore,
+  customerSnapshot,
 } from './validation.mjs';
 export class CommerceService {
   constructor(db, { now = () => Date.now() } = {}) {
@@ -67,7 +68,8 @@ export class CommerceService {
     const ids = new Set();
     for (const p of products) {
       requireValue(
-        identifier(p.sku) &&
+        p &&
+          identifier(p.sku) &&
           !ids.has(p.sku) &&
           typeof p.title === 'string' &&
           p.title.length > 0 &&
@@ -187,7 +189,12 @@ export class CommerceService {
       currency: market.currency,
       policyVersion: market.policyVersion,
       lines: priced,
-      delivery: { id: delivery.id, amount: delivery.amount, label: delivery.label },
+      delivery: {
+        id: delivery.id,
+        amount: delivery.amount,
+        label: delivery.label,
+        kind: delivery.kind || 'door',
+      },
       amount,
     };
   }
@@ -202,7 +209,27 @@ export class CommerceService {
         (typeof clientToken === 'string' && /^[a-zA-Z0-9_-]{32,128}$/.test(clientToken)),
       'invalid_order_token',
     );
-    await this.store(id, environment);
+    const config = await this.store(id, environment);
+    const existing = await this.one(
+      'SELECT * FROM orders WHERE store_id=? AND request_key=?',
+      id,
+      key,
+    );
+    const priorSnapshot = existing ? JSON.parse(existing.snapshot_json) : null;
+    const method =
+      priorSnapshot?.delivery.id === input.deliveryId
+        ? {
+            ...priorSnapshot.delivery,
+            lockers: priorSnapshot.customer?.locker ? [priorSnapshot.customer.locker] : [],
+          }
+        : config.markets
+            .find((m) => m.country === input.country && m.currency === input.currency)
+            ?.delivery.find((d) => d.id === input.deliveryId);
+    let customer;
+    if (input.customer !== undefined || (!existing && config.requireCustomer === true)) {
+      requireValue(method, 'delivery_not_enabled');
+      customer = customerSnapshot(input.customer, input.country, method);
+    }
     const clientHash = clientToken === undefined ? null : await digest(clientToken);
     const requestHash = await digest(
       canonical({
@@ -211,18 +238,27 @@ export class CommerceService {
         currency: input.currency,
         deliveryId: input.deliveryId,
         accessHash: clientHash,
+        ...(customer
+          ? {
+              customer: customer.locker
+                ? {
+                    ...customer,
+                    locker: { id: customer.locker.id, country: customer.locker.country },
+                  }
+                : customer,
+            }
+          : {}),
       }),
-    );
-    const existing = await this.one(
-      'SELECT * FROM orders WHERE store_id=? AND request_key=?',
-      id,
-      key,
     );
     if (existing) {
       requireValue(existing.request_hash === requestHash, 'idempotency_conflict', 409);
       return { order: this.view(existing), replayed: true };
     }
     const snapshot = await this.quote(id, environment, input);
+    if (customer) {
+      snapshot.schemaVersion = 2;
+      snapshot.customer = customer;
+    }
     const orderId = crypto.randomUUID(),
       token = clientToken ?? crypto.randomUUID() + crypto.randomUUID(),
       at = this.now();
@@ -491,6 +527,11 @@ export class CommerceService {
     requireValue(adapter.supportsIdempotentCreate === true, 'carrier_idempotency_required', 503);
     const order = await this.getOrder(store, environment, id);
     requireValue(
+      adapter.requiresCustomer === false || order.snapshot.customer,
+      'shipment_customer_missing',
+      409,
+    );
+    requireValue(
       order.payment_state === 'paid' &&
         order.stock_state === 'allocated' &&
         ['ready', 'labelled'].includes(order.fulfillment_state),
@@ -574,6 +615,19 @@ export class CommerceService {
         ...this.event(store, 'RefundConfirmed', id, { providerId, amount, currency }),
       ]);
     } catch (error) {
+      const concurrent = await this.one(
+        'SELECT * FROM refunds WHERE store_id=? AND provider_id=?',
+        store,
+        providerId,
+      );
+      if (concurrent) {
+        requireValue(
+          concurrent.order_id === id && concurrent.amount === amount,
+          'refund_conflict',
+          409,
+        );
+        return { replayed: true };
+      }
       if (String(error.message).includes('refund_invalid'))
         throw new CommerceError('refund_invalid', 409);
       throw error;

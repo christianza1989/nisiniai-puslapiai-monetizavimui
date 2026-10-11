@@ -25,9 +25,11 @@ M1–M4 yra pirmo serverinio paketo apimtis; M5–M9 ir svetainės/agentų etapa
 
 ## Artimiausia darbų eilė
 
-1. Užsakymo kontaktų/adreso ir pristatymo pasirinkimo snapshot, likučių korekcijos/partijos ir viešo katalogo projekcija. Pakuočių sujungimą tikrinti pagal realų pakavimą.
-2. Documents/numbering, pasirašyti refund įvykiai, finansinių source dedup ir Stripe/payout/banko reconciliation; tai neužkuria AI agento anksčiau nei savininko numatyta seka.
-3. M5 identity/membership adapteris, užsakymų/pakavimo/etiketės/išimčių ekranai ir browser priėmimas. Lygiagrečiai pasirinkto carrier API adapteris su realių prisijungimų vartais.
+2026-10-12 paketas 0.2 įgyvendina kontaktų/adreso ir serverio locker snapshot, likučių korekcijas su istorija, TEST dokumentų numeraciją, signed refund inbox ir vietinį orders/stock/documents operatoriaus ekraną.30 Node testų, native D1 ir tikra naršyklė patikrinti; visas M1–M5 dar nepriimtas. [Aktuali būsenų lentelė](IMPLEMENTATION_STATUS.md) skiria įgyvendintą kelią nuo realios integracijos.
+
+1. Komponentų/BOM/partijų modelis ir pakuočių sujungimas pagal realų pakavimą; įgyvendintų kontaktų, likučių korekcijų ir katalogo kelių nedubliuoti.
+2. Finansinių source import/dedup ir Stripe/payout/banko reconciliation, patvirtinta dokumentų/tax politika bei disputes/refund action gateway. Tai neužkuria AI agento anksčiau nei savininko numatyta seka.
+3. M5 production identity/membership binding, Worker UI assets, labels/tracking/batch/išimčių ekranai. Lygiagrečiai pasirinkto carrier API adapteris su realių prisijungimų vartais; esami vietiniai orders/stock/documents ekranai tęsiami per tą patį backend.
 4. M6 partnerio/kainyno/quote/reorder domenas. M7 pasirengimas ir realūs patikros kvitai; tik po jų priimamas operacinis modulis.
 5. S1/S2 svetainė, nuotraukos ir turinys, tada A1–A3 agentai. Nauja rinkos aktyvacija turi atskirą mokėjimo/siuntimo/saugos/kalbos/mokesčių patikrą.
 
@@ -41,3 +43,5 @@ Kiekvienam dinamiškam ekranui numatyti loading/empty/error/conflict/stale/succe
 ## SEO/GEO ir core
 Viešo runtime pritaikymas per companion repo, su tuo pačiu siteId ir dabartiniais SEO/media/mail/content kontraktais. Neperkelti užsakymų į turinio paketą. Produktų projekcija turi atskirą price/stock eligibility; redakcinis approval nepatvirtina mokesčio ar stock.
 
+
+2026-10-12 tęsiant įgyvendintas 0.3 vietinis komponentų/surinkimo, finansinių source import/reconcile ir B2B partnerio/kainyno/MOQ/casepack/quote/accept/reorder pagrindas. Operatorius šiuos duomenis mato per Medžiagos/Sutikrinimas/Didmena ekranus. 39 Node ir native D1 įrodymai; originalių finansinių failų adapteriai, pilnas M5/M6, realūs teikėjai ir visas roadmap neužbaigti. Ankstesnė artimiausia darbų eilė lieka istorinis 0.2 taškas; pradėti nuo aktualios IMPLEMENTATION_STATUS lentelės, o ne kartoti baigtus domenus.

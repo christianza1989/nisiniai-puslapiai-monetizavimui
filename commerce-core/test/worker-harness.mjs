@@ -29,7 +29,14 @@ export default {
       environment: 'sandbox',
       paymentAdapters,
       shippingAdapters: { store_a: carrier, store_b: carrier },
-      operatorAuthorize: async (req, store) => req.headers.get('x-fixture-operator') === store.id,
+      operatorAuthorize: async (req, store) =>
+        req.headers.get('x-fixture-operator') === store.id
+          ? {
+              id: 'fixture_operator',
+              storeId: store.id,
+              permissions: ['read', 'stock', 'document', 'pack', 'ship', 'finance', 'wholesale'],
+            }
+          : false,
     })(request);
   },
 };

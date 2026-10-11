@@ -66,6 +66,7 @@ export class StripeCheckoutAdapter {
         cancel_url: config.checkout.cancelUrl,
         expires_at: Math.floor(order.expires_at / 1000),
         integration_identifier: 'pinet-commerce-' + suffix,
+        ...(order.snapshot.customer ? { customer_email: order.snapshot.customer.email } : {}),
         // Dynamic payment methods: configured in Dashboard. automatic_tax requires separate validated admission.
       },
       { idempotencyKey: 'checkout-' + order.store_id + '-' + order.id },
@@ -89,6 +90,21 @@ export class StripeCheckoutAdapter {
       'stripe_environment_mismatch',
       403,
     );
+    if (['refund.created', 'refund.updated', 'refund.failed'].includes(event.type)) {
+      const refund = event.data.object;
+      requireValue(typeof refund.payment_intent === 'string', 'stripe_refund_payment_missing');
+      return {
+        kind: 'refund',
+        id: event.id,
+        environment: this.environment,
+        accountRef: this.accountRef,
+        providerId: refund.id,
+        paymentId: refund.payment_intent,
+        status: refund.status,
+        amount: refund.amount,
+        currency: refund.currency?.toUpperCase(),
+      };
+    }
     if (
       !['checkout.session.completed', 'checkout.session.async_payment_succeeded'].includes(
         event.type,

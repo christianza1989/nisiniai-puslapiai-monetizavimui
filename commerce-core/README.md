@@ -15,9 +15,22 @@ npm run verify
 npm run dev
 ```
 
-Vietinis API: `http://127.0.0.1:8795/api/catalog`. Duomenys saugomi ignoruojamame `runtime/local.sqlite`; jame yra tik aiškiai atskirti testiniai duomenys. Stripe, vežėjas ir operatoriaus prieiga vietiniame dev serveryje neprijungti. Atskiras `npm run dev:worker` reikalauja vietinės D1 migracijos ir testinio katalogo; greičiausias atkuriamas D1 bandymas — `npm run test:worker`.
+Vietinis administravimas: `http://127.0.0.1:8795/admin`, API: `http://127.0.0.1:8795/api/catalog`. Serveris klausosi tik 127.0.0.1 ir atmeta kitą Host. Duomenys saugomi ignoruojamame `runtime/local.sqlite`. Vietinis katalogas testinis; Stripe ir vežėjas neprijungti. Operatorius prisijungia su atskirai terminale išduotu žetonu; production core identity lieka kitas integracijos vartas.
 
-`verify` patikrina formatą, 20 domeno/HTTP testų, atskirą workerd/D1 integracijos kelią ir Wrangler dry-run build. Testai nesikreipia į Stripe ar vežėjo realų API. `build:worker` nieko neišleidžia į Cloudflare. Miniflare 5 alpha yra užfiksuota vietinio testavimo priklausomybė; production patikra lieka atskiras vartas.
+Kitame terminale, tame pačiame modulio kataloge:
+
+```sh
+npm run operator:token
+npm run demo:seed
+```
+
+Žetoną įvesti administravimo prisijungime. Jis galioja 8 valandas ir suteikia tik vienos parduotuvės teises; serveryje saugomas hash, naršyklėje — tik atmintyje. `demo:seed` yra pasirinktinis, pakartojamas vietinių testinių užsakymų, medžiagų, finansinių šaltinių ir didmenos partnerio kūrimas; jis atmeta kitą aplinką ar įmonę. Dokumentai turi TEST seriją ir nėra patvirtinti apskaitos dokumentai. [Dizainas](DESIGN.md), [ekrano apimtis](docs/ADMIN_SURFACE.md).
+
+Atskiras `npm run dev:worker` reikalauja vietinės D1 migracijos ir testinio katalogo; greičiausias atkuriamas D1 bandymas — `npm run test:worker`. UI serviravimas dabar tik Node dev adapteryje; Worker assets ir production identity dar neaktyvūs.
+
+`verify` patikrina formatą, 39 domeno/HTTP testus, atskirą workerd/D1 integracijos kelią ir Wrangler dry-run build. Testai nesikreipia į Stripe ar vežėjo realų API. `build:worker` nieko neišleidžia į Cloudflare. Miniflare 5 alpha yra užfiksuota vietinio testavimo priklausomybė; production patikra lieka atskiras vartas.
+
+Node adapteris taiko numeruotas migracijas transakcijomis; bendras `applyMigrations` naudojamas native D1 bandyme. Taikytos SQL migracijos tikrinamos pagal SHA256 ir neturi būti perrašomos. Senas 0001 duomenų failas priimamas be istorijos ar likučių ištrynimo.
 
 Viešame runtime naudoti `src/worker.mjs`, o ne `test/worker-harness.mjs`. Testinis įėjimas turi dirbtinį checkout/vežėją/operatorių ir niekada neturi būti diegiamas. Production aplinką dabartinis Worker atmeta.
 

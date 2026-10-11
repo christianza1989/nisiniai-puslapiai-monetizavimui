@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Prekybos valdymas</title>
+    <link rel="stylesheet" href="/admin.css" />
+    <script type="module" src="/admin.mjs"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Pereiti prie turinio</a>
+    <header class="masthead">
+      <strong>Prekybos valdymas</strong><span class="environment">Vietinė bandomoji aplinka</span>
+    </header>
+    <main id="main" tabindex="-1">
+      <section id="login" class="login">
+        <h1>Prisijungti prie administravimo</h1>
+        <p>
+          Vietinis operatoriaus žetonas suteikia prieigą prie vienos parduotuvės. Jis galioja 8
+          valandas.
+        </p>
+        <form id="login-form">
+          <label for="token">Operatoriaus žetonas</label>
+          <input
+            id="token"
+            name="token"
+            type="password"
+            required
+            minlength="32"
+            maxlength="128"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <p class="hint">
+            Žetoną išduokite modulio terminale: <code>npm run operator:token</code>.
+          </p>
+          <button type="submit" class="primary">Prisijungti</button>
+        </form>
+      </section>
+      <div id="workspace" class="workspace" hidden>
+        <aside class="navigation">
+          <p id="store-name" class="store-name"></p>
+          <nav aria-label="Administravimo skyriai">
+            <button type="button" data-view="orders" aria-pressed="true">Užsakymai</button>
+            <button type="button" data-view="stock" aria-pressed="false">Likučiai</button>
+            <button type="button" data-view="documents" aria-pressed="false">Dokumentai</button>
+            <button type="button" data-view="components" aria-pressed="false">Medžiagos</button>
+            <button type="button" data-view="financials" aria-pressed="false">Sutikrinimas</button>
+            <button type="button" data-view="wholesale" aria-pressed="false">Didmena</button>
+          </nav>
+          <button type="button" id="logout" class="quiet">Atsijungti</button>
+        </aside>
+        <section class="content" aria-labelledby="view-title">
+          <div class="section-head">
+            <h1 id="view-title">Užsakymai</h1>
+            <button type="button" id="refresh">Atnaujinti</button>
+          </div>
+          <p id="summary" class="summary"></p>
+          <p class="notice">
+            Tai testiniai duomenys. Tikri mokėjimai ir siuntų registravimas neaktyvūs. Dokumentai
+            skirti vietiniam modulio patikrinimui.
+          </p>
+          <div id="content"></div>
+        </section>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>

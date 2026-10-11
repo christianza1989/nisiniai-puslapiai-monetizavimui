@@ -23,6 +23,23 @@
 | C17 | remote admission/backup/mail/bank/carrier | UNVERIFIED; šis paketas neprovisionina ir neįjungia realių paskyrų |
 | C18 | UI desktop/mobile/keyboard/200% | NOT IMPLEMENTED šiame pakete; M5/S1 browser priėmimas vėliau |
 
+## 2026-10-12 papildymas: paketas 0.2
+
+Istorinė lentelė viršuje aprašo pirmą paketą. Dabartinis visas rinkinys:30/30 Node PASS, native workerd/D1 PASS, build dry-run PASS, audit: 0. [Išsamus naujo paketo kvitas](CONTINUATION_2026_10_12.md) ir [aktualūs likę vartai](IMPLEMENTATION_STATUS.md).
+
+| ID | Dabartinis papildomas bandymas | Būsena / ribos |
+|---|---|---|
+| C19 | kontaktų/country/phone/postal ir locker guards | PASS Node; serverio selection kopija ir request conflict, realus adreso/paštomato API UNVERIFIED |
+| C20 | stock korekcija/replay/stale/operator/reservation race | PASS Node ir native D1; baigti SKU, komponentų/BOM nėra |
+| C21 | sale/credit/packing numeracija/concurrent issue/immutable/rollback | PASS Node ir native D1; tik TEST dokumentai, tikras apskaitos formatas/teisinė politika UNVERIFIED |
+| C22 | signed refund/out-of-order/pending/failed/conflict/crash | PASS tikras SDK Node ir workerd; jokių Stripe API write, disputes ir realus refund vykdymas UNVERIFIED |
+| C23 | ordered migration/legacy adoption/hash/failure | PASS Node, native D1 migruoja tris dabartinius SQL failus; remote migracija UNVERIFIED |
+| C24 | operator id/store/grant/expiry ir private read | PASS Node ir workerd test principal, vietinis scoped CLI adapteris; bendras production identity UNVERIFIED |
+| C25 | orders keyset/same timestamp | PASS 5 įrašai, kiekvienas vieną kartą; private API palaiko before+beforeId |
+| C18-current | actual UI desktop/mobile/keyboard/text resizing/spacing/persistence | PASS bounded Node/IAB orders/detail/pack/stock/documents kelias; body 16→32px ir tarpai faktiškai pritaikyti. Browser zoom/screen-reader/full WCAG ir production UI UNVERIFIED |
+
+Tekstų ir dizaino peržiūra atlikta nuosekliai vieno agento; ne nepriklausomas auditas. Source callbacks/operator fixtures nepakeičia realios paslaugų prieigos. Nauji priėmimo įrodymai neperrašo senų įrašų ar production admission.
+
 ## Atkūrimas ir ankstesni nesėkmingi bandymai
 
 npm ci --ignore-scripts ir npm run verify, vykdant iš commerce-core/. Test fixtures saugomi test/, runtime DB ir bundler outputs ignoruojami. Test harness neįeina į deploy įėjimą.
@@ -31,3 +48,20 @@ Pradinis Wrangler 4.92.0 audit turėjo 6 priklausomybių pažeidžiamumus; tik n
 
 CI ir source review tikrinami GitHub atskirai. Node24 lokalus adapteris nepakeičia esamo core runtime, o Node22 ar kito PC priėmimas šiame pakete neteigtas.
 
+
+## 2026-10-12 tęsinys: paketas 0.3
+
+Visas dabartinis rinkinys: 39 Node testai, native workerd/D1 ir dry-run build. 0.2 lentelė aukščiau išlieka ankstesnio paketo kvitas; dabartinės migracijos 0001–0005.
+
+| ID | Bandymas | Būsena / ribos |
+|---|---|---|
+| C26 | shared component assembly/FEFO/unit/shortage/race/rollback/replay/store | PASS Node ir native D1; operatorius realiame IAB surinko testinį rinkinį. Tikras Memo BOM nepatvirtintas |
+| C27 | financial import/dedup/hash/atomicity/signs/immutability | PASS Node/native D1; normalizuotas fixture, realus Stripe balance/bank originalų adapteris UNVERIFIED |
+| C28 | payment/refund/transfer reconciliation/duplicate source and target | PASS Node/native D1; nekeičia payment state ar journal iš importo; posting/tax/period close UNVERIFIED |
+| C29 | private wholesale price/MOQ/casepack/snapshot/expiry/approval/order race/reorder | PASS Node/native D1; realus IAB quote→order→reorder. Production atmeta; partnerio portalas/credit/proforma ir mokėjimo prieiga UNVERIFIED |
+| C30 | nauji Medžiagos/Sutikrinimas/Didmena ekranai | actual IAB desktop/mobile ir keyboard kelias; 16→32px/tarpai dev-only QA. Kainyno/partnerio kūrimo ir approval formos realiai išsaugotos; esamų duomenų keitimas ir portalas dar nėra |
+| C31 | partnerio prekybos CAS/replay/istorija ir revocation acceptance race | PASS Node: dvi stale versijos, viena sėkmė; sustabdymas tarp read ir batch atšaukia order/stock/audit. Native D1 approval replay/stale/immutability/paused quote ir istorinis acceptance replay PASS |
+
+Native D1 pirmas didmenos testas gavo stock_unavailable: anksčiau šiame runner buvo tik vienas šeimos rinkinys ir komponentų race galėjo atiduoti medžiagą porai. Didmenos fixture papildytas per tą patį audited stock adjustment; neigiamas stock guard testas paliktas. Naršyklės bandymas atskleidė du konkuruojančius asinchroninius renderius ir pasikartojančius valdiklius. Reload dabar laukia render, dinaminis skyrius turi atskirą DOM parent; realus pakartotinis quote/accept/reorder matė vieną formą ir vieną užsakymą.
+
+Galutinis dry-run: 82.05 KiB / gzip 16.73 KiB; nuotolinio deploy nebuvo. Impeccable detektorius po dokumentuotos paletės ir realaus šrifto inventoriaus sutikrinimo grąžino `[]`; ankstesnės advisory ir jų sprendimas išsaugoti tęsinio kvite. Mobilus 390px vaizdas ir visos naujos didmenos formos turi 335px clientWidth=scrollWidth, bendras scrollWidth375; tas pats išlieka su 32px tekstu ir nustatytais tarpais. Native select siaurame vaizde trumpina ilgą pasirinktą kainyno žymenį; visas žymuo matomas kainynų lentelėje. Tikras browser zoom ir visas WCAG auditas neatlikti.

@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Continuation adds locally verified operations and UI, shared material lots/assembly, immutable source reconciliation and wholesale forms/versioned approval. Full module remains open on roadmap. Owner-supplied6 GSC URLs and confirmed memorycasting.lt landing reference are migration plans, not deployed routes. Only own commerce-core/site documents changed. Existing companion checkout is foreign/dirty and behind its main; no companion code was imported or edited. Core-only freshness gate passed at current main7af6b964. No live Stripe/carrier, production resources, DNS, outreach, tax submission, storefront or agents activated.",
+  "checks": [
+    {
+      "command": "commerce-core npm run verify",
+      "result": "PASS",
+      "evidence": "39/39 Node24 tests, native workerd/D1 all5 migrations, operator isolation, signed refund, atomic documents, component race, financial dedup/reconcile, wholesale acceptance and approval. Dry-run82.05KiB/gzip16.73; no deployment."
+    },
+    {
+      "command": "git write-tree/archive scoped commerce-core; npm ci --ignore-scripts; npm run verify in clean restored staged source",
+      "result": "PASS",
+      "evidence": "Staged tree90478d470fd8ffb73f91de76cb6ba544fec46b6d restored without runtime or credentials.36packages installed/audited37,39tests/nativeD1/format/dry-run PASS. This is a Git blob restore, not a fresh clone of the whole shared system."
+    },
+    {
+      "command": "Actual IAB local operator UI actions and desktop/mobile/text-spacing review",
+      "result": "PASS",
+      "evidence": "Persistent pack/doc/stock, raw-lot assembly, finance match, quote/accept/reorder, price-list and unapproved partner forms, approve/pause/resume.5orders survived restart.1440/390 and prior320, new forms335px clientWidth=scrollWidth at390 and32px text. Console warnings/errors empty. Screenshots private tmp/ui-review. Real zoom/screenreader/fullWCAG unverified."
+    },
+    {
+      "command": "impeccable detect public --json; npm audit --audit-level=high",
+      "result": "PASS",
+      "evidence": "Final detector [] after normative palette/font inventory correction; audit0 vulnerabilities. Earlier advisory/overflow/render/native fixture failures retained in acceptance."
+    },
+    {
+      "command": "node commerce-core/tmp/check-docs.mjs",
+      "result": "PASS",
+      "evidence": "15owned Markdown documents and35local links exist. GSC and landing URL JSON inventories distinguish observed source from undeployed future routes."
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --repo . --phase handoff",
+      "result": "PASS",
+      "evidence": "Fetched core main7af6b9641012a30c5f95eac38a66daeff8f8cb39 is in HEAD;0missing commits; no source rewrite. Companion activation is outside this package."
+    }
+  ],
+  "eventId": "1a2ca290-eb57-4e27-9c67-dc421df13941",
+  "sequence": 6,
+  "at": "2026-10-11T22:28:19.110Z"
+}

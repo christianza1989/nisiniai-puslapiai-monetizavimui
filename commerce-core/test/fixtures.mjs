@@ -85,6 +85,7 @@ export function fixtureCarrier() {
   let loseResponse = false;
   return {
     supportsIdempotentCreate: true,
+    requiresCustomer: false,
     records,
     get calls() {
       return calls;

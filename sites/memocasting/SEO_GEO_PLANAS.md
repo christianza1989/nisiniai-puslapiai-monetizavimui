@@ -1,4 +1,8 @@
 # Memocasting: pilnas apibrėžtos nišos temų ir URL žemėlapis
+2026-10-12 adresų korekcija: savininko GSC nuorodų inventorius turi viršenybę prieš planuotą naują LT slug. Poros rinkinio canonical `/products/liejimo-rinkinys-porai`, instrukcijos `/pages/instrukcija`; jų turinio kopijų naujais /lt/ adresais nekurti. [Visų šešių senų adresų atkūrimo sutartis](MIGRACIJA.md).
+
+Savininko patvirtintas senas landing page memorycasting.lt: [homepage briefas ir papildomų URL atranka](HOMEPAGE_BRIEF.md). Šeimos produkto `/products/seimos-rinkinys-1` taip pat išsaugomas patikrinus eksportą; kitas `/products/seimos-rinkinys` kol kas nežymimas tuo pačiu produktu.
+
 2026-10-11. Planuojami URL nėra viešos nuorodos ar runtime ID. Pagrindinis domenas ir shop siteId dar nepasirinkti. Toliau /lt/ keliai yra siūloma struktūra, ne nurodymas pakeisti žinomą gerą Shopify URL.
 
 ## Ribos ir paklausos pagrindas

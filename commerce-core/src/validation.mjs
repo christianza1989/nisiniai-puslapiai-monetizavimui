@@ -43,6 +43,61 @@ export function normalizeCart(lines) {
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([sku, quantity]) => ({ sku, quantity }));
 }
+const text = (value, min, max) =>
+  typeof value === 'string' &&
+  value.trim().length >= min &&
+  value.trim().length <= max &&
+  !/[\x00-\x1f\x7f]/.test(value);
+export function customerSnapshot(input, country, delivery) {
+  requireValue(input && typeof input === 'object' && !Array.isArray(input), 'customer_required');
+  requireValue(text(input.name, 2, 120), 'invalid_customer_name');
+  requireValue(
+    text(input.email, 3, 254) && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email.trim()),
+    'invalid_customer_email',
+  );
+  requireValue(
+    typeof input.phone === 'string' && /^\+[1-9][0-9]{6,14}$/.test(input.phone),
+    'invalid_customer_phone',
+  );
+  const address = input.address;
+  requireValue(
+    address &&
+      address.country === country &&
+      text(address.line1, 2, 150) &&
+      text(address.city, 1, 100) &&
+      text(address.postalCode, 2, 20) &&
+      (address.line2 === undefined || text(address.line2, 0, 150)),
+    'invalid_delivery_address',
+  );
+  const patterns = {
+    LT: /^(?:LT-)?\d{5}$/,
+    PL: /^\d{2}-\d{3}$/,
+    LV: /^(?:LV-)?\d{4}$/,
+    EE: /^\d{5}$/,
+  };
+  requireValue(
+    !patterns[country] || patterns[country].test(address.postalCode.trim()),
+    'invalid_postal_code',
+  );
+  const result = {
+    name: input.name.trim(),
+    email: input.email.trim(),
+    phone: input.phone,
+    address: {
+      country,
+      line1: address.line1.trim(),
+      line2: address.line2?.trim() || '',
+      city: address.city.trim(),
+      postalCode: address.postalCode.trim(),
+    },
+  };
+  if (delivery.kind === 'locker') {
+    const locker = delivery.lockers?.find((l) => l.id === input.lockerId && l.country === country);
+    requireValue(locker, 'locker_not_enabled');
+    result.locker = { id: locker.id, label: locker.label, country: locker.country };
+  } else requireValue(input.lockerId === undefined, 'locker_not_enabled');
+  return result;
+}
 export function validateStore(store) {
   requireValue(identifier(store?.id) && identifier(store.legalEntityId), 'invalid_store');
   requireValue(['sandbox', 'production'].includes(store.environment), 'invalid_environment');
@@ -58,6 +113,7 @@ export function validateStore(store) {
       store.markets.length > 0 &&
       store.markets.every(
         (m) =>
+          m &&
           /^[A-Z]{2}$/.test(m.country) &&
           /^[A-Z]{3}$/.test(m.currency) &&
           identifier(m.policyVersion) &&
@@ -65,10 +121,20 @@ export function validateStore(store) {
           m.delivery.length > 0 &&
           m.delivery.every(
             (d) =>
+              d &&
               identifier(d.id) &&
               integer(d.amount) &&
               typeof d.label === 'string' &&
-              d.label.length > 0,
+              d.label.length > 0 &&
+              (d.kind === undefined || ['door', 'locker'].includes(d.kind)) &&
+              (d.kind !== 'locker' ||
+                (Array.isArray(d.lockers) &&
+                  d.lockers.length > 0 &&
+                  d.lockers.every(
+                    (l) =>
+                      l && identifier(l.id) && l.country === m.country && text(l.label, 1, 200),
+                  ) &&
+                  new Set(d.lockers.map((l) => l.id)).size === d.lockers.length)),
           ) &&
           new Set(m.delivery.map((d) => d.id)).size === m.delivery.length,
       ),
@@ -84,7 +150,9 @@ export function validateStore(store) {
   );
   if (store.environment === 'production')
     requireValue(
-      store.testOnly !== true && store.productionAdmission?.approved === true,
+      store.testOnly !== true &&
+        store.productionAdmission?.approved === true &&
+        store.requireCustomer === true,
       'production_not_admitted',
       403,
     );

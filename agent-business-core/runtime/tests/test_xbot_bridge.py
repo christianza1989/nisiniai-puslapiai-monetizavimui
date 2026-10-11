@@ -104,7 +104,9 @@ async def revoke(c, opened):
         await admin.revoke_local(tx, admission_id=opened["admission_id"])
 
 
-def fake_agent(calls, *, callback=None, fail=False, unknown=False, approved=True):
+def fake_agent(
+    calls, *, callback=None, fail=False, unknown=False, approved=True, fact_indices=None, draft_text=None
+):
     load()
     from xbot.agent import Agent, Draft, Review
 
@@ -125,7 +127,9 @@ def fake_agent(calls, *, callback=None, fail=False, unknown=False, approved=True
                 raise RuntimeError("synthetic_model_failure")
             if schema is Draft:
                 return Draft(
-                    text="Capacity and commercial price remain unconfirmed.", media_brief="", fact_indices=[0]
+                    text=draft_text or "Capacity and commercial price remain unconfirmed.",
+                    media_brief="",
+                    fact_indices=[0] if fact_indices is None else fact_indices,
                 )
             assert schema is Review
             return Review(
@@ -554,3 +558,254 @@ async def test_maintained_actual_codex_runner_cannot_be_used_by_synthetic_mandat
     result = await worker.run_local(token, ticket, tmp_path, agent_factory=Agent)
     assert result["state"] == "rejected" and result["started_calls"] == 0
     assert result["known_model_usage"] == {} and result["usage_status"] == "unknown"
+
+
+async def test_ticket_lock_wait_cannot_accept_expired_worker_with_still_valid_lease(
+    bridge, tmp_path, monkeypatch
+):
+    c, calls = bridge, []
+    opened = await grant(c, seconds=60)
+    token = opened["worker_token"]
+    ticket = await service.enqueue(token, str(uuid4()))
+    holder = AsyncSession(c["admin"])
+    entered, final_gate = asyncio.Event(), asyncio.Event()
+    original = service.source_guard
+
+    async def observed():
+        await original()
+        if entered.is_set():
+            final_gate.set()
+
+    monkeypatch.setattr(service, "source_guard", observed)
+
+    async def before_accept():
+        await holder.begin()
+        await holder.execute(
+            text("SELECT id FROM control_xbot_tickets WHERE id=:id FOR UPDATE"), {"id": ticket}
+        )
+        entered.set()
+
+    task = asyncio.create_task(
+        worker.run_local(
+            token, ticket, tmp_path, agent_factory=fake_agent(calls), before_accept=before_accept
+        )
+    )
+    try:
+        await asyncio.wait_for(final_gate.wait(), 25)
+
+        async def blocked():
+            for _ in range(100):
+                async with AsyncSession(c["admin"]) as tx:
+                    waiting = await tx.scalar(
+                        text("""SELECT count(*) FROM pg_stat_activity
+                        WHERE datname=current_database() AND wait_event_type='Lock'
+                        AND query LIKE 'SELECT * FROM control_xbot_tickets%'""")
+                    )
+                if waiting:
+                    return
+                await asyncio.sleep(0.03)
+            raise AssertionError("Actual ticket lock wait was not observed")
+
+        await asyncio.wait_for(blocked(), 5)
+        late = utcnow() + timedelta(seconds=65)
+        async with AsyncSession(c["admin"]) as tx:
+            lease = await tx.scalar(
+                text("SELECT lease_until FROM control_xbot_tickets WHERE id=:id"), {"id": ticket}
+            )
+        assert late < lease, "The ticket lease must remain valid in this worker-expiry regression"
+        monkeypatch.setattr(service, "utcnow", lambda: late)
+        await holder.commit()
+        result = await asyncio.wait_for(task, 20)
+        assert calls == ["Draft", "Review"]
+        assert result["state"] == "quarantined", result
+        assert result["known_model_usage"] == {"input_tokens": 14, "output_tokens": 6}
+    finally:
+        await holder.close()
+        if not task.done():
+            task.cancel()
+            await asyncio.gather(task, return_exceptions=True)
+
+
+@pytest.mark.parametrize("bad_output", ["fact_indices", "foreign_url"])
+async def test_approved_but_invalid_private_draft_is_not_pg_accepted(bridge, tmp_path, bad_output):
+    calls = []
+    opened = await grant(bridge)
+    token = opened["worker_token"]
+    ticket = await service.enqueue(token, str(uuid4()))
+    changes = (
+        {"fact_indices": [999]}
+        if bad_output == "fact_indices"
+        else {"draft_text": "See https://foreign.example.invalid/offer"}
+    )
+    result = await worker.run_local(token, ticket, tmp_path, agent_factory=fake_agent(calls, **changes))
+    assert calls == ["Draft", "Review"]
+    assert result["state"] != "accepted", result
+    assert result["known_model_usage"] == {"input_tokens": 14, "output_tokens": 6}
+    assert result["usage_status"] == "known"
+
+
+async def test_authorizing_session_expiry_during_slot_wait_does_not_issue_worker(bridge, monkeypatch):
+    from pinet_core.creation import service as creation_service
+
+    c = bridge
+    holder = AsyncSession(c["admin"])
+    await holder.begin()
+    site_id = await holder.scalar(
+        text("SELECT site_id FROM businesses WHERE id=:b"), {"b": c["saved"]["business_id"]}
+    )
+    await holder.execute(
+        text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
+        {"k": "xbot-slot:" + c["environment"] + ":" + site_id},
+    )
+    task = asyncio.create_task(grant(c))
+    try:
+        for _ in range(400):
+            async with AsyncSession(c["admin"]) as tx:
+                waiting = await tx.scalar(
+                    text("""SELECT count(*) FROM pg_stat_activity
+                    WHERE datname=current_database() AND wait_event_type='Lock'
+                    AND query LIKE 'SELECT pg_advisory_xact_lock(hashtextextended%'""")
+                )
+            if waiting:
+                break
+            await asyncio.sleep(0.03)
+        else:
+            raise AssertionError("Actual site slot lock wait was not observed")
+        async with AsyncSession(c["admin"]) as tx:
+            session = await tx.get(Session, c["request"]["authorizing_session_id"])
+            late = session.expires_at + timedelta(seconds=1)
+        monkeypatch.setattr(creation_service, "utcnow", lambda: late)
+        await holder.commit()
+        with pytest.raises(ControlError) as error:
+            await asyncio.wait_for(task, 20)
+        assert error.value.code == "unauthenticated"
+        async with AsyncSession(c["admin"]) as tx:
+            for table in ("workers", "admissions", "slots"):
+                assert (
+                    await tx.scalar(
+                        text(f"SELECT count(*) FROM control_xbot_{table} WHERE environment_id=:e"),
+                        {"e": c["environment"]},
+                    )
+                    == 0
+                )
+    finally:
+        await holder.close()
+        if not task.done():
+            task.cancel()
+            await asyncio.gather(task, return_exceptions=True)
+
+
+@pytest.mark.parametrize("operation", ["begin_call", "complete"])
+async def test_database_clock_fences_expired_lease_even_with_stale_application_clock(
+    bridge, monkeypatch, operation
+):
+    c = bridge
+    opened = await grant(c)
+    token = opened["worker_token"]
+    ticket_id = await service.enqueue(token, str(uuid4()))
+
+    # Seed a reserved receipt at the allowed queued->reserved transition. Never
+    # rewrite an immutable reserved lease or disable the maintained PG trigger.
+    now, job_id = utcnow(), str(uuid4())
+    usage = {"input_tokens": 14, "output_tokens": 6} if operation == "complete" else {}
+    async with AsyncSession(c["admin"]) as tx, tx.begin():
+        await tx.execute(
+            text("""UPDATE control_xbot_tickets SET state='reserved',epoch=epoch+1,
+            lease_until=:expiry,job_id=:job,usage=CAST(:usage AS jsonb),usage_status=:status,
+            started_calls=:calls,finished_calls=:calls WHERE id=:id"""),
+            {
+                "id": ticket_id,
+                "expiry": now - timedelta(seconds=1),
+                "job": job_id,
+                "usage": __import__("json").dumps(usage),
+                "status": "known" if usage else "unknown",
+                "calls": 2 if usage else 0,
+            },
+        )
+    monkeypatch.setattr(service, "utcnow", lambda: now - timedelta(seconds=10))
+    async with service.worker_scope(token) as (tx, _, _):
+        ticket = await service.one(tx, "tickets", ticket_id)
+
+    if operation == "begin_call":
+        with pytest.raises(ControlError) as error:
+            await service.begin_call(token, ticket)
+        assert error.value.code == "xbot_dispatch_deadline_expired"
+        async with service.worker_scope(token) as (tx, _, _):
+            saved = await service.one(tx, "tickets", ticket_id)
+            assert saved["started_calls"] == 0 and saved["state"] == "reserved"
+    else:
+        result = await service.complete(
+            token,
+            ticket,
+            job_id=job_id,
+            proposal_sha256="e" * 64,
+            usage=usage,
+            usage_status="known",
+            accepted=True,
+        )
+        assert result["state"] == "quarantined" and result["reason"] == "xbot_acceptance_deadline_expired"
+        assert result["known_model_usage"] == {"input_tokens": 14, "output_tokens": 6}
+
+
+@pytest.mark.parametrize("operation", ["claim", "bind_job", "begin_call"])
+async def test_dispatch_ticket_lock_wait_rechecks_worker_deadline(bridge, monkeypatch, operation):
+    c = bridge
+    opened = await grant(c, seconds=60)
+    token = opened["worker_token"]
+    ticket_id = await service.enqueue(token, str(uuid4()))
+    ticket = None
+    if operation != "claim":
+        ticket, _ = await service.claim(token, ticket_id)
+    if operation == "begin_call":
+        await service.bind_job(token, ticket, str(uuid4()))
+    holder = AsyncSession(c["admin"])
+    await holder.begin()
+    await holder.execute(
+        text("SELECT id FROM control_xbot_tickets WHERE id=:id FOR UPDATE"), {"id": ticket_id}
+    )
+    first_gate, original = asyncio.Event(), service.source_guard
+
+    async def observed():
+        await original()
+        first_gate.set()
+
+    monkeypatch.setattr(service, "source_guard", observed)
+    action = (
+        service.claim(token, ticket_id)
+        if operation == "claim"
+        else service.bind_job(token, ticket, str(uuid4()))
+        if operation == "bind_job"
+        else service.begin_call(token, ticket)
+    )
+    task = asyncio.create_task(action)
+    try:
+        await asyncio.wait_for(first_gate.wait(), 25)
+        for _ in range(100):
+            async with AsyncSession(c["admin"]) as tx:
+                waiting = await tx.scalar(
+                    text("""SELECT count(*) FROM pg_stat_activity
+                    WHERE datname=current_database() AND wait_event_type='Lock'
+                    AND query LIKE 'SELECT * FROM control_xbot_tickets%'""")
+                )
+            if waiting:
+                break
+            await asyncio.sleep(0.03)
+        else:
+            raise AssertionError("Actual dispatch ticket lock wait was not observed")
+        late = utcnow() + timedelta(seconds=65)
+        if ticket:
+            assert late < ticket["lease_until"]
+        monkeypatch.setattr(service, "utcnow", lambda: late)
+        await holder.commit()
+        with pytest.raises(ControlError) as error:
+            await asyncio.wait_for(task, 20)
+        assert error.value.code in {"xbot_worker_revoked", "xbot_binding_expired_or_changed"}
+        async with service.worker_scope(token) as (tx, _, _):
+            saved = await service.one(tx, "tickets", ticket_id)
+            assert saved["started_calls"] == 0
+            assert saved["state"] == ("queued" if operation == "claim" else "reserved")
+    finally:
+        await holder.close()
+        if not task.done():
+            task.cancel()
+            await asyncio.gather(task, return_exceptions=True)

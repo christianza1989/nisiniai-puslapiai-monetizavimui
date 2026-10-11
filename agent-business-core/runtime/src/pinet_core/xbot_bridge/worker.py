@@ -24,6 +24,7 @@ async def run_local(token, ticket_id, directory, *, agent_factory, before_accept
     from xbot.agent import Agent
     from xbot.codex import CodexRunner
     from xbot.config import Config
+    from xbot.contracts import validate_text
     from xbot.service import Service
     from xbot.store import Conflict, Store
 
@@ -115,9 +116,20 @@ async def run_local(token, ticket_id, directory, *, agent_factory, before_accept
         else "unknown"
     )
     proposal = proposals[0]["payload"] if proposals else {"state": result["state"]}
+    # A retained draft record can precede the library's output validation or
+    # survive a blocked job. Independent model approval is not acceptance.
     acceptable = bool(
-        proposals and proposal["review"]["approved"] and not proposal["review"]["unsupported_claims"]
+        result["state"] == "completed"
+        and proposals
+        and proposal["review"]["approved"]
+        and not proposal["review"]["unsupported_claims"]
+        and all(type(i) is int and 0 <= i < len(public["facts"]) for i in proposal["draft"]["fact_indices"])
     )
+    if acceptable:
+        try:
+            validate_text(proposal["draft"]["text"], public["allowed_urls"])
+        except ValueError:
+            acceptable = False
     if before_accept:
         await before_accept()
     return await service.complete(

@@ -9,7 +9,7 @@ from sqlalchemy import select, text
 
 from ..config import settings
 from ..control.routes import ControlError, token_hash
-from ..creation.service import digest
+from ..creation.service import current_actor, digest
 from ..creation_registration import admin as registrations
 from ..creation_registration.locks import lifetime
 from ..customer_agents import service as agents
@@ -180,7 +180,28 @@ async def open_local(tx, *, agent_id, authorizing_session_id, proof, mandate, se
         {**values, "id": worker_id, "ad": admission_id, "g": generation, "h": token_hash(secret)},
     )
     await tx.execute(text("SELECT set_config('pinet.control_user',:u,true)"), {"u": agent.user_id})
-    await service.current(tx, await service.one(tx, "admissions", admission_id))
+    admitted = await service.one(tx, "admissions", admission_id)
+    await service.current(tx, admitted)
+    # The independent worker is issued by a still-current login, even if the
+    # slot/source locks waited beyond that login's original fixed deadline.
+    await current_actor(tx, session, creation.portfolio_id, lock=True)
+    valid = await tx.scalar(
+        text(
+            "SELECT "
+            + service.DEADLINE_SQL
+            + """ AND EXISTS (
+        SELECT 1 FROM control_sessions WHERE id=:session AND user_id=:owner
+          AND environment_id=:environment AND revoked_at IS NULL AND expires_at>clock_timestamp())"""
+        ),
+        {
+            **service.deadline_params(admitted, {"id": worker_id}),
+            "session": session.id,
+            "owner": agent.user_id,
+            "environment": agent.environment_id,
+        },
+    )
+    if not valid or admitted["expires_at"] <= utcnow():
+        raise ControlError(401, "xbot_issuance_deadline_expired")
     return {
         "worker_token": secret,
         "worker_id": worker_id,

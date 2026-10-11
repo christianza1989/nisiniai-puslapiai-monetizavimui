@@ -294,6 +294,25 @@ async def resolve(token, authority, permission):
     return binding
 
 
+# Canonical rows are pinned by current(); clock time still advances during SQL
+# waits. Every dispatch/acceptance mutation also fences expiry in the database.
+DEADLINE_SQL = """EXISTS (
+    SELECT 1 FROM control_xbot_admissions a JOIN control_xbot_workers w ON w.admission_id=a.id
+    JOIN knowledge_states k ON k.business_id=a.business_id AND k.environment_id=a.environment_id
+    WHERE a.id=:deadline_admission AND w.id=:deadline_worker AND w.revoked_at IS NULL
+      AND clock_timestamp()<a.expires_at AND clock_timestamp()<w.expires_at
+      AND EXTRACT(EPOCH FROM clock_timestamp())<(a.material->'binding'->>'expires_at')::double precision
+      AND clock_timestamp()<k.refreshed_at+make_interval(secs=>CAST(:deadline_ttl AS double precision)))"""
+
+
+def deadline_params(admission, worker):
+    return {
+        "deadline_admission": admission["id"],
+        "deadline_worker": worker["id"],
+        "deadline_ttl": settings().knowledge_ttl_seconds,
+    }
+
+
 async def enqueue(token, request_id):
     key = str(UUID(str(request_id)))
     async with worker_scope(token) as (tx, worker, admission):
@@ -302,6 +321,7 @@ async def enqueue(token, request_id):
             text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
             {"k": "xbot-ticket:" + worker["id"] + ":" + key},
         )
+        await current(tx, admission, worker=worker)
         old = (
             await tx.execute(
                 text("SELECT id FROM control_xbot_tickets WHERE worker_id=:w AND request_id=:r"),
@@ -343,13 +363,23 @@ async def claim(token, ticket_id):
                 # No blind model retry after a lost process/response; retain reservation.
                 raise ControlError(409, "xbot_ticket_already_reserved")
             return ticket, False
+        # Repeat the actual source and expiry checks after a blocking ticket lock.
+        await current(tx, admission, worker=worker)
         now = utcnow()
-        await tx.execute(
+        changed = await tx.execute(
             text(
-                "UPDATE control_xbot_tickets SET state='reserved',epoch=epoch+1,lease_until=:l,updated_at=:n WHERE id=:id"
+                "UPDATE control_xbot_tickets SET state='reserved',epoch=epoch+1,lease_until=:l,updated_at=:n WHERE id=:id AND "
+                + DEADLINE_SQL
             ),
-            {"id": ticket_id, "l": now + timedelta(seconds=120), "n": now},
+            {
+                "id": ticket_id,
+                "l": now + timedelta(seconds=120),
+                "n": now,
+                **deadline_params(admission, worker),
+            },
         )
+        if changed.rowcount != 1:
+            raise ControlError(409, "xbot_dispatch_deadline_expired")
         return await one(tx, "tickets", ticket_id), True
 
 
@@ -378,13 +408,19 @@ async def bind_job(token, ticket, job_id):
     async with worker_scope(token) as (tx, worker, admission):
         await current(tx, admission, worker=worker)
         row = await one(tx, "tickets", ticket["id"], lock=True)
+        await current(tx, admission, worker=worker)
         ticket_fence(row, ticket, worker)
         if row["job_id"] is not None and row["job_id"] != job_id:
             raise ControlError(409, "xbot_job_conflict")
-        await tx.execute(
-            text("UPDATE control_xbot_tickets SET job_id=:j,updated_at=:n WHERE id=:id"),
-            {"id": row["id"], "j": job_id, "n": utcnow()},
+        changed = await tx.execute(
+            text(
+                "UPDATE control_xbot_tickets SET job_id=:j,updated_at=:n WHERE id=:id AND lease_until>clock_timestamp() AND "
+                + DEADLINE_SQL
+            ),
+            {"id": row["id"], "j": job_id, "n": utcnow(), **deadline_params(admission, worker)},
         )
+        if changed.rowcount != 1:
+            raise ControlError(409, "xbot_dispatch_deadline_expired")
 
 
 def ticket_fence(row, ticket, worker):
@@ -403,15 +439,19 @@ async def begin_call(token, ticket):
     async with worker_scope(token) as (tx, worker, admission):
         await current(tx, admission, worker=worker)
         row = await one(tx, "tickets", ticket["id"], lock=True)
+        await current(tx, admission, worker=worker)
         ticket_fence(row, ticket, worker)
         if not row["job_id"] or row["started_calls"] != row["finished_calls"] or row["started_calls"] >= 2:
             raise ControlError(409, "xbot_model_call_limit")
-        await tx.execute(
+        changed = await tx.execute(
             text(
-                "UPDATE control_xbot_tickets SET started_calls=started_calls+1,usage_status=CASE WHEN usage<>'{}'::jsonb THEN 'partial' ELSE 'unknown' END,updated_at=:n WHERE id=:id"
+                "UPDATE control_xbot_tickets SET started_calls=started_calls+1,usage_status=CASE WHEN usage<>'{}'::jsonb THEN 'partial' ELSE 'unknown' END,updated_at=:n WHERE id=:id AND lease_until>clock_timestamp() AND "
+                + DEADLINE_SQL
             ),
-            {"id": row["id"], "n": utcnow()},
+            {"id": row["id"], "n": utcnow(), **deadline_params(admission, worker)},
         )
+        if changed.rowcount != 1:
+            raise ControlError(409, "xbot_dispatch_deadline_expired")
 
 
 def usage_valid(usage):
@@ -498,6 +538,13 @@ async def complete(token, ticket, *, job_id, proposal_sha256, usage, accepted, u
             return safe_receipt(saved)
         if saved["state"] != "reserved" or saved["job_id"] != job_id:
             raise ControlError(409, "xbot_ticket_fence_expired")
+        if state != "quarantined":
+            try:
+                await current(tx, admission, worker=worker)
+            except ControlError as error:
+                reason, state = error.code, "quarantined"
+            except (HTTPException, ValidationError, ValueError, KeyError):
+                reason, state = "xbot_source_unavailable", "quarantined"
         if (
             saved["epoch"] != ticket["epoch"]
             or saved["generation"] != worker["generation"]
@@ -511,8 +558,18 @@ async def complete(token, ticket, *, job_id, proposal_sha256, usage, accepted, u
         ):
             state, reason = "quarantined", "xbot_usage_unverified"
         await tx.execute(
-            text("""UPDATE control_xbot_tickets SET state=:s,reason=:r,job_id=:j,
-          proposal_sha256=:h,usage=CAST(:u AS JSONB),usage_status=:us,updated_at=:n WHERE id=:id"""),
+            text(
+                """WITH deadline AS MATERIALIZED (SELECT """
+                + DEADLINE_SQL
+                + """ AND lease_until>clock_timestamp() AS valid FROM control_xbot_tickets WHERE id=:id)
+          UPDATE control_xbot_tickets SET
+          state=CASE WHEN :s IN ('accepted','rejected') AND NOT deadline.valid
+            THEN 'quarantined' ELSE :s END,
+          reason=CASE WHEN :s IN ('accepted','rejected') AND NOT deadline.valid
+            THEN 'xbot_acceptance_deadline_expired' ELSE :r END,job_id=:j,
+          proposal_sha256=:h,usage=CAST(:u AS JSONB),usage_status=:us,updated_at=:n
+          FROM deadline WHERE id=:id"""
+            ),
             {
                 "id": saved["id"],
                 "s": state,
@@ -522,6 +579,7 @@ async def complete(token, ticket, *, job_id, proposal_sha256, usage, accepted, u
                 "u": json.dumps(usage),
                 "us": usage_status,
                 "n": utcnow(),
+                **deadline_params(admission, worker),
             },
         )
         return safe_receipt(await one(tx, "tickets", saved["id"]))

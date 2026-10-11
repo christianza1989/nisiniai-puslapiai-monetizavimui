@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Public-core guidance allows optional upgrades without the required all-role experience loop; route every core agent to canonical repair/verification/delivery/adoption.",
+  "category": "rules",
+  "evidence": [
+    "Public AGENTS.md and docs/CORE_UPGRADES.md at d0fd6b7d296303bfcaafadc4071945e675a72b96 use optional wording and do not state the all-role repair duty.",
+    "Public scope issue23 reserves exactly two guidance files; canonical rules/journal remain in the private companion."
+  ],
+  "paths": [
+    "AGENTS.md",
+    "docs/CORE_UPGRADES.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/23",
+  "rollback": "Scoped revert of the two public documentation paths; no renderer/runtime/package/customer changes. Keep the canonical companion finding and delivery history.",
+  "id": "upgrade-0c444ea6-41d5-4c92-b894-4c007bb6be73",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "cb410ac97e5eaab5896378b4ded240d79064693f",
+  "createdAt": "2026-10-10T00:23:12.828Z"
+}

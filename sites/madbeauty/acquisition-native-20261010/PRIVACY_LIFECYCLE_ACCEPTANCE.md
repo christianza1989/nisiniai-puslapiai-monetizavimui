@@ -1,0 +1,50 @@
+# Native privacy and lifecycle capture component — 2026-10-10
+
+Implementation source: `2e4d1ea874326f6862e2f45d98a48fdf3463a267`, draft [PR68](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/68). This is isolated component acceptance. Root's independent immutable-snapshot HTTP acceptance, normal API mounting, hosted CI, production key installation, backup/handoff adoption and full pipeline acceptance remain separate. The deployed services page Worker `fd24248a-9e0b-4bf5-9eb4-c5c4ee1f6131` is unchanged.
+
+Reservations preceded edits: issue66 [native directory](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6092753197), [optional native retention hook](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6092825718), [legacy native eligibility repair](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6092974941). No shared source, control/task registry, root migration, SMTP or runtime key change.
+
+## Exact shared contracts
+
+The original seven immutable blobs and `contracts.lock.json` remain byte-identical to source `682cb28abf7eff888c3c27177c265ca383c6c5aa`. Recipient0.1.0 schema SHA256 `0ef2273cf5b0ab6530862cffed1bb3fc8e3caa8d32a3a8da59e4e60dddea5ae4`; acquisition0.1.1 schema `35b0a87cbda836464beaff4a53acc80403ce3a97c50d02098fb23a443fff9034`.
+
+Separate retirement0.1.0 adopts exactly two blobs from `d78789f58b9b53f30812517dfd78218fc2c51987`, using `retirement-contracts.lock.json`. Schema SHA256 `dfbc193ba8ad331d57e41a2511563c7d94fedf812a38b4f09ae8c17bd6a83448`. `npm run check:contracts` verifies all9 files against their exact original Git blobs. No schema or original receipt was rewritten.
+
+Own locked Ajv is8.20.0, with strict generated-schema validation and explicit `$data:false`, no coercion/default insertion/unknown-field removal. `npm audit --json`:0 vulnerabilities. The [Ajv advisory](https://github.com/advisories/GHSA-2g4f-4pwh-qvx6) previously affected the pinned older dependency; the prior validator did not enable the advisory's `$data:true` prerequisite.
+
+## Native privacy
+
+The real synchronous native retention transaction stages encrypted retirement intent before scrubbing identity, and removes actual account candidate/challenge/request links in the same commit. Failure rolls back identity, tombstone, cleanup and outbox together. Direct `begin`, trusted internal `apply` and inactivity closure all enter this hook; policy, fresh-authentication, professional/operator, accepted30day notice, backup and existing target/freeze guards are preserved. A repeated capture factory replaces its own ephemeral handler. Prepared proof evidence from another context survives signer reload independently; that scope's configured grant must sign delivery.
+
+The exact lost-ACK proof is preserved inside an AES-GCM-encrypted payload, without raw email. A challenge-only configured candidate can use the canonical shared codec bytes to prepare its final recipient MAC synchronously before identity removal. Without a proof or known binding, local candidate data is discarded without manufacturing a retirement.
+
+Delivery requires a committed native erasure tombstone and the explicit `retire-recipient` grant. Raw bytes/request UUID stay fixed; retry gets a fresh transport timestamp/signature. A30second lease,15second bounded exchange and10attempt exponential backoff prevent concurrent/stale sender overwrites. Permanent errors retain encrypted intent for diagnosis; no UUID regeneration or conflict bypass. An accepted strict, correlated receipt removes the payload. Only accepted minimal receipts can be swept after the approved24calendar-month receipt window. This capture component does not install a scheduler or redefine root's production retention policy.
+
+## Actual native lifecycle
+
+`adapter.lifecycle` wraps the actual native platform API with an outer synchronous transaction. A stable native organization ID becomes provider/profile identity only after a stored actual intended-recipient ACK, an available canonical resolution, and organization creation within the original invitation expiry. Extra organizations or expired/stopped/unproved references retain ordinary native signup without new attribution. Resolution expiry cannot change and observed stopped/expired state cannot reactivate from an older available response. All103 maintained city IDs map to native city names.
+
+One persistent provider counter advances across every event kind. Native mutation, counter and immutable event bytes commit together. Actual stored operator privilege and native membership/capabilities determine review rights; caller-supplied operator flags do not. The actual approved profile revision and current public eligible services determine activation, including active staff/resources/locations, taxonomy and dated qualifications. Qualification evidence contributes to the eligibility revision. Pending/returned newer drafts preserve the approved publication. Withdrawal and trusted reconciliation of time expiry emit deactivation. Historical core ACKs never overwrite native current eligibility. Frozen local writers cannot mutate or emit; destination-owned acquisition outbox handoff is not accepted by this component.
+
+Native lifecycle delivery is ordered per provider and uses durable leases, fixed bytes, strict event receipts, bounded response/time/retry handling and visible permanent failures. `account_deleted` is queued only by actual native erasure, never by a guessed provider ID. The ordinary professional/customer-erasure gate still rejects409. Terminal behavior was separately tested through the existing trusted internal target/restore maintenance function on disposable storage; this does not expose or authorize a new public professional-account deletion flow.
+
+## Verification and first failures
+
+- Adapter suite38/38: original16 retained,12 new Node privacy tests,8 new Node lifecycle tests,2 new compiled Workers tests;2 existing erasure cases extended, zero removed.
+- Native backend suite154/154, including5 existing retention tests and2 new legacy staff/resource eligibility regressions.
+- Compiled capture SHA256 `26522a9ce074ddc218f3811eafc694826f84e7900c8c0538e8ff85026e1f037c`. Four actual workerd/SQLite tests include disposal/recreation and fixed-body retry. The installed runtime requires compatibilityDate2026-05-22; the historical unsupported later-date failure remains in the original acceptance.
+- One non-failing RPC-stub-disposal warning persists in the new compiled lifecycle harness. It was not suppressed and is not treated as hosted/runtime production acceptance. Its cause is not established. JSON-only harness DTOs and a primitive fixture-role response did not remove it; no production code was changed to hide the warning.
+- The legacy single-assignment eligibility regression first failed0/2 (`1 !== 0`) after actual staff/resource deactivation because the native helper checked only modern staffOptions. The site-owned repair applies the existing native staff/location and resource/location predicates to legacy assignments; corrected2/2 and full154/154 pass. Existing qualification policy is unchanged.
+- Initial lifecycle suite3/5: the fixture tried the prohibited direct edit of a modern published variant and used an incorrect numeric taxonomy version. Corrected to actual `archiveOffer` and actual maintained taxonomy version; no native business gate was weakened. An initial concurrent-send fixture relied on setImmediate before WebCrypto completed; an explicit exchange-start barrier replaced that assumption. Final8/8.
+- Initial old adapter suite9/10 after new erasure cleanup expected a missing-account rejection and retained pending row; its existing case now asserts actual pending/request removal and atomic retirement intent. The compiled erasure case was extended similarly. The old source/receipt and first failed expectation remain historical.
+
+## Actual local core exercise and limits
+
+Root explicitly provided a fresh, isolated capture-only host on loopback8851 and PostgreSQL15439, using root functional source `d78789f58b9b53f30812517dfd78218fc2c51987`. Two separate temporary invitations were consumed once; both now remain consumed and must not be revived. Keys, fixture references, DBs, OTPs and drivers remain private/ignored.
+
+On development source before the final immutable commit, actual native OTP→signed HTTP→core→PostgreSQL passed:
+
+- Privacy: recipient binding200 with ACK deliberately lost at native; real native erasure committed with pending count0; retirement200 with ACK deliberately lost; native SQLite reopened; identical retirement bytes replayed to the original receipt; final `recipient_retired`, native encrypted payloadNULL, external_sent=false.
+- Lifecycle: actual native organization, published service and stored operator review; revisions1–6; core active sequence `[false,false,false,true,true,false]`, including pending revision preserving current active publication and actual offer withdrawal; lost first-event ACK/native SQLite restart/fixed-byte replay; signed changed-body replay409; original expiry unchanged; ordinary professional erasure still409; external_sent=false.
+
+These development exercises are useful integration evidence, **not exact-source immutable HTTP acceptance**. Root was sent the pushed source2e4d1ea, exact locks and APIs for an independent exported-source driver using fresh invitations. Its result must have a separate receipt. Root normal API/0012 adoption, generic tasks0011, full portal metrics, hosted CI and main merge remain independently owned/pending. No provider/customer production data, actual SMTP, production Worker import, key installation, deployment, daily runner or acquisition backup/restore handoff is accepted here. Existing native30day backup policy is preserved; adding these new private tables to a future production backup/handoff needs explicit destination-owned acceptance.

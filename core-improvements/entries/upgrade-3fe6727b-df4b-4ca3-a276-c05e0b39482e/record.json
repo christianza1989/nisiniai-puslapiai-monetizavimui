@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Adopt PR59 acquisition into the normal scoped core: migration and immutable grants, authenticated shared projection, durable generic tasks and correspondence/stop/hold/privacy handoff",
+  "category": "code",
+  "evidence": [
+    "PR59 source6dcb726a7ecdef898d25eda6b090dec6cbcd81e9; receiving importac740ace038ff5a4738f80dae167eaeb57a818e8",
+    "Actual handoff docs/ACQUISITION_CORE_ADOPTION_HANDOFF_2026-10-11.md and reproduced original bootstrap broadening in docs/ACQUISITION_I2_BOOTSTRAP_QA_2026-10-10.md",
+    "Owned import QA78offline33subtests/4schemas/JS PASS receiptd30db29a; isolated original package was not normal adoption"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition",
+    "agent-business-core/runtime/migrations/versions/0025_acquisition_core.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/tasks",
+    "agent-business-core/runtime/scripts/acquisition_worker.py",
+    "agent-business-core/runtime/tests/test_acquisition_adoption.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_adoption.py",
+    "agent-business-core/contracts/acquisition-adoption-v1"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of normal adapter after held workers; preserve immutable capture/correspondence and operational history. No destructive populated downgrade, no rewrite of earlier package/calibration.",
+  "id": "upgrade-3fe6727b-df4b-4ca3-a276-c05e0b39482e",
+  "branch": "codex/madbeauty-acquisition-adoption-20261012",
+  "baseSha": "ac740ace038ff5a4738f80dae167eaeb57a818e8",
+  "createdAt": "2026-10-11T22:04:52.070Z"
+}

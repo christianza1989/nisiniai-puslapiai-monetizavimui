@@ -1,0 +1,44 @@
+{
+  "status": "local-verified",
+  "note": "All20 exact final letters personally read and rewritten; 24 actual CLI copy checks retain 2 original-note FAIL and 1 revised unsupported-function FAIL, final20/20 content PASS. Original packages/expiry unchanged. This is copy acceptance only, campaign_ready0/external_sentfalse.",
+  "checks": [
+    {
+      "command": "tmp/finalize-copy-packet-20261010.py + personal exact copy audit",
+      "result": "PASS",
+      "evidence": "20 exact body/hash matches; final packet75e228fc999b880f12440d13070f0edf2b7fe41111652bf2021759e945fdab5b; original private full failure history retained. docs/ACQUISITION_COPY_REVIEW_QA_2026-10-10.md / docs/ACQUISITION_COPY_REVIEW_RECEIPT_2026-10-10.json"
+    },
+    {
+      "command": "acquisition_dialogue_lab.py final-D six declared cases + tmp/audit-final-dialogue-copy-20261010.py",
+      "result": "PASS",
+      "evidence": "Actual final-D6/6/40CLI calls; all runtime snapshots match; root read all6 conversations, 11 .eml decoded subjects/bodies match, all .test/external_sentfalse. docs/ACQUISITION_COPY_REVIEW_QA_2026-10-10.md / docs/ACQUISITION_COPY_REVIEW_RECEIPT_2026-10-10.json"
+    },
+    {
+      "command": "uv run --locked pytest offline_tests -q -k acquisition",
+      "result": "PASS",
+      "evidence": "Actual latest run 78 passed/33 subtests after final instructions; includes 8 new typed handoff/stop/conditional hold regressions."
+    },
+    {
+      "command": "uv run --locked ruff check src/pinet_core/acquisition/dialogue.py src/pinet_core/acquisition/dialogue_lab.py offline_tests/test_acquisition_dialogue.py",
+      "result": "PASS",
+      "evidence": "Actual owned source/test scoped lint passed."
+    },
+    {
+      "command": "uv run --locked python scripts/acquisition_contracts.py --check",
+      "result": "PASS",
+      "evidence": "All four external schema/vector exact checks passed; contract hashes unchanged."
+    },
+    {
+      "command": "uv run --no-project python -X utf8 tmp/lt-discovery-doc-check.py",
+      "result": "PASS",
+      "evidence": "53 actual local links and catalog acquisition entrySHA c00811a2a2a41a00b284f5e698152f1a8bbba3b9e4b596892710f828f62df625 match."
+    },
+    {
+      "command": "skill-creator/scripts/quick_validate.py SKILLS/niche-client-acquisition",
+      "result": "PASS",
+      "evidence": "Actual skill validator passed; canonical instructions changed with code, archived fingerprints untouched."
+    }
+  ],
+  "eventId": "72fde064-f1c2-4223-9eef-247c3ad839c7",
+  "sequence": 2,
+  "at": "2026-10-10T06:35:37.539Z"
+}

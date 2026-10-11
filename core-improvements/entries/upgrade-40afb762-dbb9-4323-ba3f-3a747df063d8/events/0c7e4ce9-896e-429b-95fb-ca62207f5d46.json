@@ -1,0 +1,7 @@
+{
+  "note": "Independent source review of first booking patch exposed same-taxonomy second-variant substitution and inactive first-staff default. Reproduced before repair: originalFAILde7a2f96301d2e4b11f0df542b26f083fe5ac46ddae51e8811a0bce29f55c8f4 and f00910f3640236e86721fddd85889800f629f371e651f89c3e05bcb842d5d0e4. Exact variant-only staffOptions and projected default now fixed; explicit stale candidate/selection requires reselection. No source/history erasure.",
+  "status": "fixing",
+  "eventId": "0c7e4ce9-896e-429b-95fb-ca62207f5d46",
+  "sequence": 4,
+  "at": "2026-10-11T23:42:14.147Z"
+}

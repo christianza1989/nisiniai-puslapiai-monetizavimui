@@ -6,6 +6,10 @@ import os
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import create_async_engine
 
+from pinet_core.acquisition.ledger_schema import TABLES as ACQUISITION_TABLES
+from pinet_core.acquisition.ledger_schema import runtime_grants_sql
+from pinet_core.acquisition.module_schema import TABLE as ACQUISITION_MODULE_TABLE
+from pinet_core.acquisition.module_schema import grants_sql as acquisition_module_grants_sql
 from pinet_core.config import settings
 from pinet_core.models import Business, new_id
 
@@ -29,9 +33,22 @@ async def main():
                                   "NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE"))
         await tx.execute(text("GRANT USAGE ON SCHEMA public TO pinet_runtime"))
         if not args.role_only:
-            # Control tables have their own least-privilege migration grants; never broaden them here.
+            # Repair prior broadening, rather than merely excluding future grants.
+            known = set(await tx.scalars(text("SELECT tablename FROM pg_tables WHERE schemaname='public'")))
+            acquisition = known.intersection(ACQUISITION_TABLES)
+            if acquisition and acquisition != set(ACQUISITION_TABLES):
+                raise RuntimeError("Partial acquisition schema; bootstrap grants refused")
+            if acquisition:
+                for statement in runtime_grants_sql():
+                    await tx.execute(text(statement))
+            if ACQUISITION_MODULE_TABLE in known:
+                if acquisition != set(ACQUISITION_TABLES):
+                    raise RuntimeError("Partial acquisition schema; bootstrap grants refused")
+                for statement in acquisition_module_grants_sql():
+                    await tx.execute(text(statement))
+            # Module-owned tables retain their least-privilege migration grants.
             tables = (await tx.execute(text("SELECT tablename FROM pg_tables WHERE schemaname='public' "
-                                           "AND tablename NOT LIKE 'control_%'"))).scalars()
+                                           "AND tablename NOT LIKE 'control_%' AND tablename NOT LIKE 'acquisition_%'"))).scalars()
             for table in tables:
                 quoted = engine.dialect.identifier_preparer.quote(table)
                 await tx.execute(text(f"GRANT SELECT,INSERT,UPDATE,DELETE ON {quoted} TO pinet_runtime"))

@@ -1,0 +1,23 @@
+{
+  "paths": [
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "CORE_IMPROVEMENT.md",
+    "core-improvements/README.md",
+    "docs/CORE_EXPERIENCE_LOOP_QA_2026-10-10.md"
+  ],
+  "category": "workflow",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "summary": "Shared dependency manifests escape upgrade provenance and noncanonical public issue URLs can be classified as private coverage",
+  "rollback": "Scoped checker/guidance revert; preserve first failures and immutable journal. No dependency manifest/runtime/foreign journal or active job changes.",
+  "evidence": [
+    "Independent portal source review of cd9ce882/implementation20fc699 reported these two P2 gaps in issue66#issuecomment-6091841117",
+    "Actual pre-repair node --test scripts/core-upgrade-check.test.mjs on2b08bccea42076f22528be180585e7d5ad22d023 plus regression additions:7PASS/2FAIL; both returnedPASS whereBLOCKED was required",
+    "Malformed public URL ending slash reproduced private coverage; shared root/studio/runtime manifest changes were absent from required paths"
+  ],
+  "siteId": "core",
+  "id": "upgrade-69daea87-9188-4be8-93db-e1eb8b5abcc6",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "2b08bccea42076f22528be180585e7d5ad22d023",
+  "createdAt": "2026-10-10T00:59:45.610Z"
+}

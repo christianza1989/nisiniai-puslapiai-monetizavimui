@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Normal capture foundation only at clean functionalc56c737. Full daily/correspondence/privacyCase/native/director/portal/process restart/targetPC/public adoption stays OPEN and work continues; defaultOFF/operational source25d unchanged. Original expiry/revoke/secret failures and fixture/harness selection errors preserved. All new QA uses owned fresh loopback15438 test DB/example.test/external_sentfalse, providerschannels0. Reviewed PR59 and corrected PR98 source imports preserved; no main merge.",
+  "checks": [
+    {
+      "command": "Owned actual full0001-to0025 bootstrap/rollback/pg_dump-restore/partial-schema rehearsal at51e164a; migration/bootstrap byte-unchanged atc56c737",
+      "result": "PASS",
+      "evidence": "private SHA d9e1354e53afd77096f4fbf2933209d627563c81bd1e7514f9344c5a856c3454; every operational row and control privileges preserved"
+    },
+    {
+      "command": "Frozen c56c737 pytest tests/test_acquisition_adoption.py on actual restricted-role PostgreSQL",
+      "result": "PASS",
+      "evidence": "22PASS26.81s; private receiptSHA dbed9fe80a2af3f76bb99bc0d07b4d9f9460cc3f7d09bb3602d3fa049a522023; immutable replay/foreign scope/all approving row barriers/final expiry/withdrawal after stop-expiry-revoke"
+    },
+    {
+      "command": "Frozen c56c737 six acquisition offline test files and Node auth.test/recipient-binding.test",
+      "result": "PASS",
+      "evidence": "82PASS36subtests6.29s and6NodePASS; private corrected selectionSHA be57da9d361da2fd49d8c00f963ffefb6c106ee2bfd151475bc90cbd9f94fc61; original subsetPASS61752422 not counted as full selection"
+    },
+    {
+      "command": "Four exact acquisition/recipient/retirement/projection schema checks; scoped Ruff check/format; exact staged safety/diff",
+      "result": "PASS",
+      "evidence": "Schema receipt61752422 logs1955e92/aae0f970/c7fae40f/8e63ca92; scoped clean6format/lint and exact4staged51742B safety0 at c56c737"
+    }
+  ],
+  "eventId": "0296442c-727b-4e66-bfcc-8ecacb346ced",
+  "sequence": 4,
+  "at": "2026-10-11T22:45:19.882Z"
+}

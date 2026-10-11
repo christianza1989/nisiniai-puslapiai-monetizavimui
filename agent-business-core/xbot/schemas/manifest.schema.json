@@ -1,0 +1,96 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "xbot.v1",
+      "default": "xbot.v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "module_id": {
+      "const": "xbot",
+      "default": "xbot",
+      "title": "Module Id",
+      "type": "string"
+    },
+    "version": {
+      "const": "0.2.0",
+      "default": "0.2.0",
+      "title": "Version",
+      "type": "string"
+    },
+    "panels": {
+      "default": [
+        "overview",
+        "queue",
+        "research",
+        "budget",
+        "evidence"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "Panels",
+      "type": "array"
+    },
+    "local_capabilities": {
+      "default": [
+        "plan",
+        "draft",
+        "review",
+        "schedule",
+        "qualify",
+        "summary",
+        "media-import"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "Local Capabilities",
+      "type": "array"
+    },
+    "channel_capabilities": {
+      "default": [
+        "research",
+        "mentions",
+        "metrics",
+        "post",
+        "thread",
+        "media",
+        "reply",
+        "dm"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "Channel Capabilities",
+      "type": "array"
+    },
+    "default_enabled": {
+      "const": false,
+      "default": false,
+      "title": "Default Enabled",
+      "type": "boolean"
+    },
+    "grants_live_authority": {
+      "const": false,
+      "default": false,
+      "title": "Grants Live Authority",
+      "type": "boolean"
+    },
+    "auth_owner": {
+      "const": "pinet-core",
+      "default": "pinet-core",
+      "title": "Auth Owner",
+      "type": "string"
+    },
+    "crm_owner": {
+      "const": "pinet-core",
+      "default": "pinet-core",
+      "title": "Crm Owner",
+      "type": "string"
+    }
+  },
+  "title": "Manifest",
+  "type": "object"
+}

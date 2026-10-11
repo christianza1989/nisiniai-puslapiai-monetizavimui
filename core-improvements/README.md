@@ -1,5 +1,7 @@
 # Autonominių core patobulinimų žurnalas ir karantinas
 
+Visiems su core dirbantiems agentams taikomas [privalomas patirties ciklas](../CORE_IMPROVEMENT.md#privalomas-visų-core-agentų-patirties-ciklas). Prieš push `node scripts/core-upgrade-check.mjs` tikrina committed shared diff, exact file / real directory scope ir naują local-verified PASS įvykį. CI tą patį tikrina PR base/head. Naujam tęsimui pridėti įvykius, neperrašyti bendroje bazėje esančio record/event. Checker netikrina pataisos semantikos ar kito adapterio adoption; tai lieka actual priėmimo dalis. Vienas įrašas neturi tyliai apimti nesusijusių pataisų.
+
 Kanoninis procesas: [CORE_IMPROVEMENT](../CORE_IMPROVEMENT.md). Kiekvienam įgyvendinamam shared patobulinimui atskiras `entries/upgrade-<UUID>/record.json` ir nekintami `events/*.json`; naujas įvykis nurodo tikrą patikrą / PR / source / adoption. Kiekvienas agentas valdo savo įrašą. Suvestinė šiame procese generuojama iš įrašų, todėl skirtingi PC nekonkuruoja dėl vieno rankinio statusų failo.
 
 `node scripts/core-upgrade.mjs list` pateikia bendrą suvestinę. Tai vietinės Git kopijos įrašai; fresh fetch būtinas norint teigti, kad skaitomas aktualus main. CLI rašymo komandos pačios fetch / tikrina current main protėvį ir savo šaką; susijusio companion bei scopes patikra pagal bendrą Git workflow lieka agento pareiga. Eksportuotas helper API testų fixtures nefetchina ir nėra agentų darbo entrypoint.
@@ -23,6 +25,8 @@ Prieš taisymą reserve issue / WORKSTREAMS, skaityti naujausią šaltinį. Savo
 ```
 
 `node scripts/core-upgrade.mjs record --input <input.json>` grąžina ID. Kategorijos rules / skills / prompt / code / cleanup / workflow. Sanitizuoti evidence; klientų pokalbių, asmens kontaktų, raw duomenų ir credentials nekopijuoti į įrašą. Laukai yra agento teiginiai, jų semantikos helperis neįrodo.
+
+Committed-diff checker reikalauja canonical `https://github.com/christianza1989/<vienas-iš-dviejų-core-repo>/issues/<id>` arba `/pull/<id>` be papildomo slash/query/fragment. Valid public issue nepadengia private failo tuo pačiu vardu. Core root, content-studio ir runtime dependency manifests / locks taip pat turi patekti į tikslų upgrade scope ir prasmingą patikrą. Jei senas record jų neįvardijo, pridėti naują teisingą papildantį įrašą, neperrašyti istorijos. Tai dvi actual peer review pamokos, ne deklaracija, kad visi ankstesni PR jau perpatikrinti.
 
 `node scripts/core-upgrade.mjs event --id <ID> --input <event.json>` prideda įvykį. Statusai finding / fixing / local-verified / pr / merged / adopted. local-verified reikalauja `checks: [{command, result:"PASS", evidence}]`; ankstesnį FAIL palikti fixing įvykio note / atskirame kvite. PR ir vėlesniems įvykiams reikalingas tikras GitHub PR URL; merged/adopted ir tikslus40hex commit. Helperis nepatvirtina GitHub būsenos: prieš įrašant patikrinti faktinį merge, o adoption turi įvardyti konkretų checkout / adapterį ir bandymą. Nebūtinas „adopted“ visiems PC.
 

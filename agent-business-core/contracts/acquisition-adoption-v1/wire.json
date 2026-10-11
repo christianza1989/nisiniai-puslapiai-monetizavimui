@@ -1,0 +1,21 @@
+{
+  "normal_capture_version": "acquisition-normal-capture.v1",
+  "method": "GET",
+  "path": "/operator/v2/businesses/{business_id}/acquisition",
+  "request": {
+    "business_id": "uuid",
+    "query": false,
+    "body_scope": false,
+    "principal": "existing_server_authenticated_opaque_session",
+    "role": "current_enabled_owner_membership_and_business_grant",
+    "permission": "acquisition.read"
+  },
+  "response_envelope": "portfolio.v1",
+  "response_data_schema": "../acquisition-projection-v1/schemas.json#/schemas/CaptureLedgerSnapshot",
+  "internal_read": "pinet_core.acquisition.normal.read_snapshot",
+  "source_scope": "server_registered_test_only",
+  "external_sent": false,
+  "full_pipeline_accepted": false,
+  "director_model_tool_mounted": false,
+  "ordinary_portal_accepted": false
+}

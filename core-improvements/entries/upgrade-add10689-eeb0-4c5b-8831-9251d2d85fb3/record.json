@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/runtime/pyproject.toml",
+    "agent-business-core/runtime/uv.lock"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "category": "workflow",
+  "summary": "Expanded shared-manifest gate exposes missing historical provenance for the Windows tzdata dependency repair",
+  "evidence": [
+    "Repaired manifest classifier against actual2b08bccea42076f22528be180585e7d5ad22d023:BLOCKED38shared paths with pyproject.toml and uv.lock uncovered,0malformed journal errors",
+    "docs/OUTBOUND_ACQUISITION_QA_2026-10-09.md preserves first5Windows ZoneInfo failures and original minimal tzdata/lock repair before actual model work",
+    "This is a truthful retrospective exact-scope supplement, not a new historical model run or dependency change"
+  ],
+  "rollback": "Preserve retrospective evidence and old records; dependency revert is a separate scoped source decision. No live runtime or old receipts changed.",
+  "id": "upgrade-add10689-eeb0-4c5b-8831-9251d2d85fb3",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "2b08bccea42076f22528be180585e7d5ad22d023",
+  "createdAt": "2026-10-10T01:11:26.824Z"
+}

@@ -5,7 +5,7 @@ import { initialize, ROOT, getSite, listSites, listCalendar, createSite, editSit
 import { enqueue } from './generator.mjs';
 import { listNetworkLinks } from './model.mjs';
 import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
-import { imageSrcSet, visibleImageCredit } from '../../../dovanos-memorycasting/lib/niche-media.mjs';
+import { imageSrcSet, responsiveImageVariants, visibleImageCredit } from '../../../dovanos-memorycasting/lib/niche-media.mjs';
 
 const PORT = Number(process.env.STUDIO_PORT || 4317);
 const PUBLIC = path.join(ROOT, 'public');
@@ -25,7 +25,10 @@ const readBody = request => new Promise((resolve, reject) => {
 });
 function preview(site, page) {
   const status = page.publishedRevision && Date.parse(page.publishedRevision.publishAt) <= Date.now() ? 'Publikavimo data atėjo; viešą domeną reikia tikrinti atskirai. Čia rodoma redaguojama studijos kopija' : page.publishedRevision ? 'Patvirtinta, bet dar neskelbiama' : 'Tik privatus juodraštis — viešoje svetainėje nerodomas';
-  const hero = page.media.find(item => !page.body.some(block => block.type === 'image' && block.assetId === item.id));
+  const bodyImages = page.body.filter(block => block.type === 'image')
+    .flatMap(block => page.media.find(asset => asset.id === block.assetId) ?? []);
+  const hero = page.media.find(asset => !bodyImages.some(inline => inline.id === asset.id || responsiveImageVariants([asset], inline).length > 0));
+  let inlinePriority = !hero;
   const localMedia=page.media.map(asset=>({...asset,src:`/api/media/${encodeURIComponent(site.id)}/${encodeURIComponent(path.basename(asset.src))}`}));
   const imageHtml=(asset,eager=false)=>{const local=localMedia.find(a=>a.id===asset.id);return `<img src="${safe(local.src)}" srcset="${safe(imageSrcSet(localMedia,local))}" sizes="(max-width: 828px) calc(100vw - 48px), 780px" width="${asset.width}" height="${asset.height}" alt="${safe(asset.alt)}" loading="${eager?'eager':'lazy'}" ${eager?'fetchpriority="high"':''}>`;};
   const credit=hero&&visibleImageCredit(hero);
@@ -49,7 +52,9 @@ function preview(site, page) {
     if (block.type === 'list') return `<ul>${block.items.map(item => `<li>${safe(item)}</li>`).join('')}</ul>`;
     if (block.type === 'image') {
       const asset = page.media.find(item => item.id === block.assetId);
-      return asset ? imageHtml(asset) : '';
+      if (!asset) return '';
+      const eager = inlinePriority; inlinePriority = false;
+      return imageHtml(asset, eager);
     }
     return '';
   }).join('');

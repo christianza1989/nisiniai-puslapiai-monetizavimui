@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Native presentation regression, accepted double-slash commerce boundary and external/network/Gift compatibility pass. Original failures retained. Clean companion5924a2eb built in a NEW isolated output with exact original customer package286aee89;45 current-release HTTP requests PASS, actual CUA prose click stayed on8898 and reached GUIDE2, existing V1 SEO smoke7pages PASS. Canonical projection/intake/approval/release untouched; before-window/mobile/language/fullF1/launch remain unverified or unaccepted.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "Final63PASS2592.3493ms; output/native-prose-links-final.private.log; original0PASS1FAIL commerce regression retained."
+    },
+    {
+      "command": "Scoped ESLint and independent corrected source review",
+      "result": "PASS",
+      "evidence": "Three TS/TSX source files checked; existing creation_review final no actionableP0-P2; exact staged5blobs26668B repository-safety PASS."
+    },
+    {
+      "command": "Exact-source isolated customer import/build/current-release HTTP",
+      "result": "PASS",
+      "evidence": "Source5924a2eb, package286aee89,9pages15WebP;45requests receiptSHAee8ecc1c46a55f8944317115cf1125fc8b4acc088a4be52fce635d0a3721ae0e; old output preserved."
+    },
+    {
+      "command": "npm run test:seo-smoke on owned5924a2eb Worker8898",
+      "result": "PASS",
+      "evidence": "Actual greitossvetaines7-page SEO/host/isolation/404 smoke; ignored customer-native-links-seo-smoke.private.log."
+    },
+    {
+      "command": "CUA actual native GUIDE3 prose link to GUIDE2",
+      "result": "PASS",
+      "evidence": "127.0.0.1:8898 retained; DOM proves both same-origin prosehref relative and independent NIST source absolute; one loaded guide image."
+    }
+  ],
+  "eventId": "2e5b5670-2448-4e35-874e-21307a8c30d9",
+  "sequence": 3,
+  "at": "2026-10-11T04:49:43.106Z"
+}

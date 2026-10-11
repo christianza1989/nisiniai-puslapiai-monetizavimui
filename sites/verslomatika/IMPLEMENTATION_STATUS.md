@@ -1,5 +1,19 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current local work — 2026-10-11
+
+Overall platform OPEN. The owner paused language corrections and language-only blocking; language remains UNVERIFIED and Gemini is deferred. PostgreSQL/Docker/local-only mode remains in force; no current-PC public exposure, DNS or deployment.
+
+Clean source47fe6f7 was adopted with row-preserving0020 migration. The actual third GUIDE job89572776 succeeded with Luna creator and Sol critic/coordinator, three actual role calls. Whole-candidate review found no remaining substantive preparation-accounting defect after the client's correction. Earlier failed jobs and charged histories remain unchanged.
+
+The actual revision2 native trial now has nine editorially reviewed/approved pages, three responsive guide illustration families, a real MB Pinet organization profile and local-preview privacy information. Root support-page/metadata/link/source/editorial interventions are explicit; this is not an autonomous first-result benchmark. Canonical immutable release562ce2c8 contains nine pages and15WebP files, packageSHA286aee89b87862e14b0573f4779aa0f270293e88c8cf6a3c4d277801f619cdb7. Imported into an isolated public2751779 output, built and served only at loopback8897;45 actual current-release HTTP requests PASS. The planned before-date window was missed and is UNVERIFIED; no full F1, mobile, launch, delivery, custom brand or demand PASS follows.
+
+Next bounded preview repair: upgrade0a2abc98 removes duplicate responsive-family hero images in studio; upgrade92731126 keeps already eligible same-origin prose links on the local reader route while canonical SEO/LLM URLs stay unchanged. Original defects and test failures are retained. Actual affected reader/preview confirmation follows clean source commits. Then continue current customer registration, admitted V2 source/profile, channel/calibration and portable target-PC work. Concrete implemented/observed states remain separate from pending source/activation and actual launch.
+
+Typography scope for this image/link repair: retain current words, fonts, sizes, line height and composition; confirm the affected GUIDE desktop image/reading path after restart. Unsupported actual mobile/enlargement remain UNVERIFIED and do not halt other executable work.
+
+## Historical checkpoints (retained with their original scope)
+
 CURRENT SOURCE CHECKPOINT — Native GUIDE role-model source acceptance: initial85 offline PASS0.74s; final affected wire/role/continuation87PASS0.48s; isolated restricted PostgreSQL/native Node31PASS225.98s before wire coherence follow-up, final affected native6PASS49.18s, existing BUSINESS populated-Sol downgrade regression1PASS6.76s on head0020. Empty downgrade/reupgrade/bootstrap PASS; frozen source unchanged, provider0, operational DB untouched. Scoped Ruff/diff and independent whole-source/delta reviews noP0-P2. Native AttemptView schema and Pydantic rejectSolcreator/unknownmodels, retain historicalLunareviewers and currentSolreviewers. Initial6test-only dispatch assertions, importorder and laterUTC-alias lint failure retained and corrected; no acceptance gate weakened. Clean source adoption and ordinary customer UI/provider effectiveness follow separately; third914 accepted body still has editorial doublecount defect, later248/ac514 candidates remain unaccepted. Language paused/UNVERIFIED, Gemini deferred, overall platform OPEN. OwnedAPI8860/operator18861 held and noactiveproviderjob; next clean0020 adoption plus pairedportalcontract, new UI GUIDE3 run, then dependency/media/editorial/release/native customer render and registration/profile/source/channel calibration.
 
 

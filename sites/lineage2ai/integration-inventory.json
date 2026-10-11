@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "kind": "integration-assessment-inventory",
+  "checkedOn": "2026-10-11",
+  "state": "assessed-not-registered-not-implemented-not-deployed",
+  "proposedSiteId": "lineage2ai",
+  "canonicalHost": "lineage2ai.com",
+  "sourceLanguage": "en",
+  "publicContactObserved": "hello@lineage2ai.com",
+  "contactInboxVerified": false,
+  "repositories": {
+    "core": { "repository": "christianza1989/nisiniai-puslapiai-monetizavimui", "sha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39", "freshnessGate": "PASS_FRESH_BASE" },
+    "publicCore": { "repository": "christianza1989/niche-public-core", "sha": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937", "freshnessGate": "PASS_FRESH_BASE" },
+    "target": { "repository": "christianza1989/Lineage2ai.com", "sha": "d7d1311e72a6e47988041fca5eff87d1b1ad1fea", "branchObserved": "main" }
+  },
+  "snapshot": {
+    "sourceGeneratedAt": "2026-10-07T06:37:17.911Z",
+    "liveGeneratedAt": "2026-10-03T18:41:37.53Z",
+    "deployedCommitVerified": false,
+    "liveArticleCount": 6,
+    "liveTranslationCount": 0,
+    "futureSourceArticleCount": 0,
+    "liveRegistryExposesSourceMarkdownOrRevealAt": false
+  },
+  "publicArticles": [
+    { "articleId": "what-is-an-agentic-npc", "canonicalPath": "/glossary/agentic-npc/", "publishedAt": "2026-08-28T12:00:00+03:00", "language": "en" },
+    { "articleId": "server-authoritative-ai-agents", "canonicalPath": "/architecture/server-authoritative-ai/", "publishedAt": "2026-08-28T12:05:00+03:00", "language": "en" },
+    { "articleId": "offline-vs-online-ai-calibration", "canonicalPath": "/ai-systems/calibration/offline-vs-online-calibration/", "publishedAt": "2026-08-29T11:45:00+03:00", "language": "en" },
+    { "articleId": "dlss-5-lineage-ii-high-five", "canonicalPath": "/case-studies/dlss-5-lineage-ii-high-five/", "publishedAt": "2026-09-06T07:00:00Z", "language": "en" },
+    { "articleId": "planner-binder-executor-ai-agents", "canonicalPath": "/ai-systems/agentic-architecture/planner-binder-executor/", "publishedAt": "2026-09-18T11:10:00Z", "language": "en" },
+    { "articleId": "deterministic-gates-vs-ai-judges", "canonicalPath": "/ai-systems/evaluation/deterministic-gates-vs-ai-judges/", "publishedAt": "2026-09-22T17:15:00+03:00", "language": "en" }
+  ],
+  "checks": {
+    "targetRuntimeVisibility": { "command": "node --experimental-strip-types --test topical_blog/tests/runtime-visibility.test.mjs", "passed": 2, "failed": 0, "scope": "existing unit fixtures; not hosted boundary acceptance" },
+    "coreExternalBundle": { "command": "node --test content-studio/test/external-content-export.test.mjs", "passed": 3, "failed": 0, "scope": "existing other-site release fixture; not target adapter acceptance" },
+    "anonymousHttp": [
+      { "path": "/ai-research", "status": 200, "cacheControl": "no-store, must-revalidate, no-cache, max-age=0, private", "vercelCache": "MISS" },
+      { "path": "/topical-blog/index.json", "status": 200, "cacheControl": "public, must-revalidate, max-age=0", "vercelCache": "MISS", "bodySha256": "d9d287edaf662cf3da3f606f45ea23b84222d3a36d4e16ab85ff4f9f9ad3521c" },
+      { "path": "/sitemap.xml", "status": 200 },
+      { "path": "/llms.txt", "status": 200 },
+      { "path": "/topical-blog/markdown/what-is-an-agentic-npc.md", "status": 200 },
+      { "path": "/contact", "status": 200 },
+      { "path": "/news/feed.json", "status": 200, "cacheControl": "public, max-age=300, s-maxage=900, stale-while-revalidate=86400", "vercelCache": "HIT" }
+    ],
+    "githubWorkflowCount": 0,
+    "targetFullBuildRun": false,
+    "hostedFutureBoundaryTestRun": false,
+    "gameplayOrPaymentTestRun": false,
+    "newCalendarPrepared": false
+  },
+  "integrationGaps": [
+    "Studio locale registration is currently fixed to lt-LT.",
+    "V2 plan/draft/autopilot is explicitly disabled in current main.",
+    "Target has no common-core external bundle importer or projection adapter.",
+    "Legacy and common-core URL authority needs an explicit migration map.",
+    "News and launcher feeds use a separate static publication path.",
+    "Contact/operator exception and exact hosted deployment require separate verification."
+  ]
+}

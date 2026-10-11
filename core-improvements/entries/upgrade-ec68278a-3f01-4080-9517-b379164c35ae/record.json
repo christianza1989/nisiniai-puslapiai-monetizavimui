@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Admin BYPASSRLS knowledge current lookup lacks explicit business/environment predicates and second-business preparation replaces the first source",
+  "category": "code",
+  "evidence": [
+    "Two actual isolated accepted/provisioned businesses; original4FAIL25.47s review baseline SHAaa14f83a7f50f2e1a0c5c43b58dd9253e91daec056a9bd06911264da54866b0e includes exact first knowledge payload mismatch; provider/channel0",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6109035118"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/knowledge.py",
+    "agent-business-core/runtime/tests/test_customer_source_maintain.py",
+    "docs/CUSTOMER_SOURCE_MAINTENANCE.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped knowledge current predicate revert; preserve original failed evidence and all source/Profile records.",
+  "id": "upgrade-ec68278a-3f01-4080-9517-b379164c35ae",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "a61ebabd57eb48f6151636a972f8ed2862274923",
+  "createdAt": "2026-10-11T12:31:12.399Z"
+}

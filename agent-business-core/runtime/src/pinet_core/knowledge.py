@@ -29,7 +29,11 @@ def validate(item, data: Knowledge):
 
 
 async def current(tx):
-    return await tx.scalar(select(KnowledgeState))
+    # Admin transfers can bypass RLS. Transaction context is an explicit row
+    # predicate too; an unset/foreign context cannot select another business.
+    return await tx.scalar(select(KnowledgeState).where(
+        KnowledgeState.business_id == text("current_setting('pinet.business',true)"),
+        KnowledgeState.environment_id == text("current_setting('pinet.environment',true)")))
 
 
 async def reference_v2(tx, item, reference: KnowledgeReferenceV2):

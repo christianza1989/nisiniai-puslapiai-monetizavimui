@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original identical-reimport1FAIL8.49s SHAed1dd54c; actual4reviewFAIL25.47s SHAaa14f83a7; finalSession1FAIL10.40s SHA0252c49f and disposal1FAIL1.51s SHA8b3d46fc preserved. Intermediate20FAIL and5FAIL fixture branches retained/corrected. Exclusive-policy-first, explicit business/env knowledge lookup, historical proof separation and final source/Session/TTL revalidation implemented. Postcommit disposal remains committed receipt failure; no history/model/channel reset.",
+  "eventId": "4658c350-011f-4fc9-a88e-3d5689667328",
+  "sequence": 2,
+  "at": "2026-10-11T12:49:41.320Z"
+}

@@ -83,8 +83,15 @@ async def source(tx, business, expected=None):
             knowledge_hash=state.payload.get("hash"), deployment_id=value.get("deployment_id"))
     await knowledge.reference_v2(tx, business, expected)
     receipt = IndexReceipt.model_validate(state.payload.get("index_receipt"))
-    if receipt.refreshed_at.tzinfo is None or receipt.refreshed_at != state.refreshed_at:
+    if receipt.refreshed_at.tzinfo is None:
         raise HTTPException(409, "knowledge_index_receipt_conflict")
+    if receipt.refreshed_at != state.refreshed_at:
+        from .maintenance import current_refresh
+        if not await current_refresh(tx, business, state, digest(state.payload["index_receipt"])):
+            raise HTTPException(409, "knowledge_index_receipt_conflict")
+        # Proof lookup can wait past TTL. Repeat the canonical unchanged
+        # reference/time check after that wait; reads never renew freshness.
+        await knowledge.reference_v2(tx, business, expected)
     return expected, digest(state.payload["index_receipt"])
 
 

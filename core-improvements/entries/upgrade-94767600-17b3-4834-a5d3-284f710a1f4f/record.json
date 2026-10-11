@@ -1,0 +1,30 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Customer V2 numeric scores do not bind pre-turn expected need checkpoints to actual receipts; typed checks cannot yet establish correction chronology",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "Original immutable six-case corpus retains scripts/splits but no expected states; existing network_lab ten criteria can be reused without new scorer or historical relabel"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/typed_checks.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/protection.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/src/pinet_core/competence.py",
+    "agent-business-core/runtime/scripts/network_lab.py",
+    "agent-business-core/runtime/offline_tests/test_customer_typed_checks.py",
+    "agent-business-core/runtime/tests/test_customer_typed_checks.py",
+    "agent-business-core/runtime/offline_tests/test_customer_competence.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/AGENT-CALIBRATION-2026-10-11.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6113696609",
+  "rollback": "Scoped revert opt-in private typed manifest/report adapter; retain old proofs, source reports, all original FAIL/usage/history; no DB or activation rollback",
+  "id": "upgrade-94767600-17b3-4834-a5d3-284f710a1f4f",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "33642383cd6bd945b3eede487c3ba90b1cd87006",
+  "createdAt": "2026-10-11T21:01:50.779Z"
+}

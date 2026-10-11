@@ -33,9 +33,16 @@ def test_existing_scores_instruction_and_all_ten_typed_criteria_are_exact():
     new_class = ast.parse(inspect.getsource(competence.Scores)).body[0]
     assert hashlib.sha256(ast.dump(new_class).encode()).hexdigest() == CLASS_SHA
     assert hashlib.sha256(competence.INSTRUCTION.encode()).hexdigest() == INSTRUCTION_SHA
+    shared = ast.parse(inspect.getsource(competence.network_checks))
+    expression = next(n.value for n in ast.walk(shared) if isinstance(n, ast.Return))
+    assert hashlib.sha256(ast.dump(expression).encode()).hexdigest() == CHECKS_SHA
+    assert len(expression.keys) == 10
     current = ast.parse((ROOT / "scripts/network_lab.py").read_text(encoding="utf-8"))
-    assert hashlib.sha256(ast.dump(checks(current)).encode()).hexdigest() == CHECKS_SHA
-    assert len(checks(current).keys) == 10
+    call = checks(current)
+    assert isinstance(call, ast.Call) and isinstance(call.func, ast.Name)
+    assert call.func.id == "network_checks"
+    assert any(isinstance(n, ast.ImportFrom) and n.module == "pinet_core.competence"
+        and any(a.name == "network_checks" for a in n.names) for n in current.body)
 
 
 def test_original_four_field_request_retained_and_explicit_scores_are_strict():

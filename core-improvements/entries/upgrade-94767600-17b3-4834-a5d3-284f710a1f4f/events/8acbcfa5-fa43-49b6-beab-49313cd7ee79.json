@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual correction at25d ended INCOMPLETE/AssertionError: binding version overwrote typed report version. Original paid failure45ab2454 and all3known settlements retained. Existing test assertion reproduced1FAIL log98345d5d; issue77#6114172003. One-line metadata repair only; no report rewrite/retry or criteria change.",
+  "eventId": "8acbcfa5-fa43-49b6-beab-49313cd7ee79",
+  "sequence": 5,
+  "at": "2026-10-11T21:55:58.714Z"
+}

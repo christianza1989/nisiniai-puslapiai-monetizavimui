@@ -73,7 +73,7 @@ def freeze(reference, snapshot, messages):
     manifest = json.loads(raw.decode("utf-8"))
     frozen = Snapshot.model_validate(snapshot).model_dump(mode="json")
     cases = manifest.get("cases")
-    if (manifest.get("contract") != "private_customer_archetype_baseline.v1"
+    if (manifest.get("contract") not in {"private_customer_archetype_baseline.v1", "private_customer_archetype_baseline.v2"}
             or manifest.get("snapshot") != frozen or manifest.get("snapshot_sha256") != digest(frozen)
             or manifest.get("source_revision") != frozen["execution_source_revision"]
             or manifest.get("evaluator_sha256") != evaluation_contract.fingerprint()
@@ -105,6 +105,11 @@ def freeze(reference, snapshot, messages):
     if (counts["train"] < 1 or counts["holdout"] < 3 or manifest.get("split") != counts
             or selected is None or selected["messages"] != messages):
         raise ControlError(409, "protected_case_conflict")
+    if manifest["contract"] == "private_customer_archetype_baseline.v2":
+        from . import typed_checks
+        typed_checks.plan(manifest)  # Existing proof commits these bytes BEFORE first turn.
+    elif "typed_expectations" in manifest:
+        raise ControlError(409, "typed_expectations_precommit_required")
     return {"version": VERSION, "manifest_sha256": ref.manifest_sha256,
         "corpus_sha256": manifest["corpus_sha256"], "case_id": ref.case_id, "split": selected["split"],
         "script_sha256": digest(messages), "message_sha256": [digest(m) for m in messages],

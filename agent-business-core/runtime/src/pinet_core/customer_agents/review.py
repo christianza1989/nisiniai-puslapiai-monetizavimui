@@ -18,7 +18,7 @@ from ..customer_text import service as chat
 from ..db import db
 from ..models import Artifact, Contact, Conversation, Event, Job, new_id, utcnow
 from ..tasks.codex_transport import RunnerError
-from . import evaluator, lab, protection, quality
+from . import evaluator, lab, protection, quality, typed_checks
 from .wire import Strict
 
 VERSION = "customer-quality-dispatch.v1"
@@ -35,9 +35,14 @@ class ScoredRequest(Request):
     score_competence: bool = Field(default=True, strict=True)
 
 
+class TypedRequest(ScoredRequest):
+    typed_expectations: protection.Reference
+
+
 def parse_request(value):
     # Preserve the original four-field Request and its strict capabilities boundary.
-    schema = ScoredRequest if isinstance(value, dict) and "score_competence" in value else Request
+    schema = (TypedRequest if isinstance(value, dict) and "typed_expectations" in value else
+              ScoredRequest if isinstance(value, dict) and "score_competence" in value else Request)
     return schema.model_validate(value)
 
 
@@ -51,6 +56,7 @@ class Dispatch:
     model_profile: dict
     protection_sha256: str | None = None
     score_competence: bool = False
+    typed: dict | None = None
 
 
 async def input_data(tx, row):
@@ -72,7 +78,8 @@ def receipt(job):
     return {"scope": "operator_local_customer_quality", "job_id": job.id,
         "conversation_id": job.conversation_id, "status": job.state,
         "model": evaluator.MODEL, "failure_code": job.payload.get("failure_code"),
-        "calibration_status": "UNVERIFIED", "module_admission": "not_admitted", "activation": "not_performed"}
+        "calibration_status": "UNVERIFIED", "module_admission": "not_admitted", "activation": "not_performed",
+        **({"typed_report": job.payload["typed_report"]} if "typed_report" in job.payload else {})}
 
 
 def current_job(job, dispatch):
@@ -86,7 +93,8 @@ def current_job(job, dispatch):
         and job.payload.get("evaluator_sha256") == dispatch.evaluator_sha256
         and job.payload.get("model_profile") == dispatch.model_profile
         and job.payload.get("competence_contract") == (competence.VERSION if dispatch.score_competence else None)
-        and job.payload.get("protected_case_sha256") == dispatch.protection_sha256)
+        and job.payload.get("protected_case_sha256") == dispatch.protection_sha256
+        and job.payload.get("typed_binding_sha256") == (digest(dispatch.typed) if dispatch.typed is not None else None))
 
 
 def last_time(session, row):
@@ -103,14 +111,22 @@ async def prepare(request):
     material = {"version": VERSION, "conversation_id": str(request.conversation_id),
         "request_id": str(request.request_id), "episode": frozen}
     scored = isinstance(request, ScoredRequest) and request.score_competence
+    if isinstance(request, TypedRequest) and not scored:
+        raise ControlError(409, "typed_competence_required")
     score_material = {"competence_contract": competence.VERSION} if scored else {}
     material.update(score_material)
     async with chat.authority(request.bearer, frozen["creation_id"], calibration=frozen) as (
             tx, session, creation, identity, business, binding):
         row = await chat.locked(tx, str(request.conversation_id), binding)
         protection_sha256 = await protection.review_proof(tx, row)
+        typed = None
+        if isinstance(request, TypedRequest):
+            typed = {"reference": request.typed_expectations.model_dump(mode="json"),
+                     "binding": typed_checks.bound(request.typed_expectations, await protection.observe(tx, row)),
+                     "observed": await typed_checks.capture(tx, row)}
+        typed_material = {"typed_binding_sha256": digest(typed)} if typed is not None else {}
         proof_material = {"protected_case_sha256": protection_sha256} if protection_sha256 is not None else {}
-        fingerprint = digest({**material, **proof_material})
+        fingerprint = digest({**material, **proof_material, **typed_material})
         job = await tx.scalar(select(Job).where(Job.conversation_id == row.id, Job.kind == "quality",
             Job.business_id == business.id, Job.environment_id == settings().environment).with_for_update())
         if job:
@@ -131,7 +147,7 @@ async def prepare(request):
             payload={"dispatch": VERSION, "request_id": str(request.request_id), "fingerprint": fingerprint,
                 "binding_sha256": digest(binding), "input_sha256": digest(data),
                 "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile,
-                **proof_material, **score_material})
+                **proof_material, **score_material, **typed_material})
         tx.add(job)
         await tx.flush()
         await core.add_event(tx, row, "quality-request:" + str(request.request_id), "quality_request",
@@ -140,7 +156,7 @@ async def prepare(request):
         task = {"id": job.id, "conversation_id": row.id, "kind": "quality", "generation": 1,
             "owner": job.owner, "attempts": 1, "business_id": business.id, "environment_id": row.environment_id}
         dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile,
-                            protection_sha256, scored)
+                            protection_sha256, scored, typed)
         last_time(session, row)
         if not current_job(job, dispatch):
             raise ControlError(409, "quality_authorization_changed")
@@ -156,6 +172,12 @@ async def observe(tx, row, dispatch):
             or await protection.review_proof(tx, row) != dispatch.protection_sha256
             or digest(await input_data(tx, row)) != digest(dispatch.data)):
         raise ControlError(409, "quality_authorization_changed")
+    if dispatch.typed is not None:
+        current = {"reference": dispatch.typed["reference"],
+                   "binding": typed_checks.bound(dispatch.typed["reference"], await protection.observe(tx, row)),
+                   "observed": await typed_checks.capture(tx, row)}
+        if current != dispatch.typed:
+            raise ControlError(409, "typed_receipts_changed")
     return job
 
 
@@ -302,8 +324,16 @@ async def finish(token, dispatch, result):
         if current != binding:
             raise ControlError(409, "quality_authorization_changed")
         job = await observe(tx, row, dispatch)
-        await jobs.complete_in_transaction(tx, row.business_id, dispatch.task,
-            quality_guards.reconcile(result, dispatch.data))
+        reconciled = quality_guards.reconcile(result, dispatch.data)
+        if dispatch.typed is not None:
+            await typed_checks.accounted(tx, row, dispatch, reconciled)
+            report = typed_checks.evaluate(dispatch.typed["binding"], dispatch.typed["observed"], reconciled)
+            reconciled = {**reconciled, "typed_checks": report}
+        await jobs.complete_in_transaction(tx, row.business_id, dispatch.task, reconciled)
+        if dispatch.typed is not None:
+            job.payload = {**job.payload, "typed_report": {"state": report["state"],
+                "sha256": digest(report), "evaluation_plan_sha256": report["evaluation_plan_sha256"],
+                "purpose": report["purpose"]}}
         await chat.final_authority(tx, session, creation, identity, current)
         last_time(session, row)
         if job.lease_until <= utcnow():

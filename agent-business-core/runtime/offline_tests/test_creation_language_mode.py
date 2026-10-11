@@ -38,6 +38,20 @@ def test_default_and_nonlocal_modes_keep_language_gate(paused, monkeypatch):
     assert language_mode.mode() == "required"
 
 
+def test_paused_creator_profiles_do_not_load_or_demand_language_self_edit(paused, monkeypatch):
+    from pinet_core.creation import language_patch
+    for flags in ({}, {"structure_repair": True}, {"language_repair": True}):
+        value, _ = adapter.instructions(**flags)
+        assert language_patch.LANGUAGE_REFERENCE not in value
+        assert "Do full language self-edit" not in value
+        assert "self-edit the Lithuanian prose" not in value
+        assert "Nepriklausoma galutinio juodraščio kalbos" not in value
+        assert language_mode.PAUSED_POLICY in value
+    monkeypatch.setattr(paused, "creation_language_review_enabled", True)
+    required, _ = adapter.instructions()
+    assert "Do full language self-edit" in required and language_patch.LANGUAGE_REFERENCE in required
+
+
 def test_private_receipt_requires_explicit_mode_and_never_claims_pass(paused, draft, monkeypatch):
     value = renderer.normalize_creator(planned(draft))
     value["assumptions"][0] = FOREIGN

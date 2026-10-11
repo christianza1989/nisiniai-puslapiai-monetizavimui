@@ -9,12 +9,14 @@ import json
 import re
 import unicodedata
 from copy import deepcopy
+from functools import lru_cache
 from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict, Field
 
 from ..tasks.codex_transport import RunnerError
-from .renderer import normalize_creator
+from . import language_mode
+from .renderer import CreatorDraft, normalize_creator
 from .review import CriticReview, canonical_sha256
 
 ROOT = Path(__file__).resolve().parents[5]
@@ -70,6 +72,12 @@ class Patch(BaseModel):
 
 def instructions():
     """Compact canonical prose-repair profile and its exact loaded SHA-256."""
+    if language_mode.mode() == "paused_local_pilot":
+        value = POLICY.replace(
+            "Nepriklausoma galutinio juodraščio kalbos, kritiko ir koordinatoriaus patikra dar lieka privaloma.",
+            "Nepriklausoma galutinio juodraščio struktūros, turinio, kritiko ir koordinatoriaus patikra lieka privaloma.")
+        value = language_mode.policy(value)
+        return value, hashlib.sha256(value.encode("utf-8")).hexdigest()
     try:
         raw = (ROOT / LANGUAGE_REFERENCE).read_bytes()
         if not raw.strip() or len(raw) > 20000:
@@ -78,6 +86,41 @@ def instructions():
     except (OSError, UnicodeError):
         raise RunnerError("instructions_unavailable") from None
     return value, hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+@lru_cache(maxsize=1)
+def _creator_schema():
+    return CreatorDraft.model_json_schema()
+
+
+def _value_constraints(reference):
+    """Derive exact string bounds from the maintained creator model, never a customer limit."""
+    if not isinstance(reference, str) or not reference.startswith("draft:/"):
+        raise ValueError("Exact draft pointer required")
+    path = reference[7:]
+    if not PROSE_PATH.fullmatch(path):
+        raise ValueError("Only supported prose leaves can be changed")
+    schema = _creator_schema()
+    node = schema
+    for key in path.split("/"):
+        while "$ref" in node:
+            node = schema["$defs"][node["$ref"].removeprefix("#/$defs/")]
+        if node.get("type") == "array" and re.fullmatch(r"0|[1-9][0-9]*", key):
+            node = node["items"]
+        else:
+            node = node["properties"][key]
+    if node.get("type") != "string":
+        raise ValueError("String leaf required")
+    minimum, maximum = max(1, node.get("minLength", 1)), min(MAX_VALUE, node.get("maxLength", MAX_VALUE))
+    # These two existing model validators constrain list string items; Pydantic's
+    # generated JSON schema cannot express their hand-written per-item bounds.
+    if re.fullmatch(r"(?:(?:confirmed_facts|assumptions|open_questions|remaining_gates)|"
+                   r"business/(?:alternatives|execution_steps|expansion_criteria)|"
+                   r"pages/[0-9]+/sections/[0-9]+/items)/[0-9]+", path):
+        maximum = min(maximum, 800)
+    elif re.fullmatch(r"content_plan/[0-9]+/outline/[0-9]+", path):
+        maximum = min(maximum, 500)
+    return {"type": "string", "minLength": minimum, "maxLength": maximum}
 
 
 def _leaf(candidate, reference):
@@ -152,6 +195,7 @@ def context(candidate, verified_critic):
                 parent, key, value = _leaf(normalized, reference)
                 found = True
                 target = targets.setdefault(reference, {"field": reference, "value": value,
+                    "value_constraints": _value_constraints(reference),
                     "semantic_context": _siblings(parent, key), "corrections": []})
                 target["corrections"].append({"finding_id": finding.id, "explanation": finding.explanation,
                                              "correction": finding.correction})
@@ -185,14 +229,21 @@ def output_schema(bound_context):
                 or any(not isinstance(ref, str) or not ref.startswith("draft:/")
                        or not PROSE_PATH.fullmatch(ref[7:]) for ref in refs)):
             raise ValueError("Invalid patch context")
+        groups = {}
+        for reference in refs:
+            limits = _value_constraints(reference)
+            key = (limits["minLength"], limits["maxLength"])
+            groups.setdefault(key, {"limits": limits, "refs": []})["refs"].append(reference)
+        branches = [{"type": "object", "additionalProperties": False, "required": ["field", "value"],
+            "properties": {"field": {"type": "string", "enum": group["refs"]},
+                           "value": group["limits"]}} for group in groups.values()]
+        items = branches[0] if len(branches) == 1 else {"anyOf": branches}
         return {"type": "object", "additionalProperties": False,
             "required": ["candidate_sha256", "critic_sha256", "edits"],
             "properties": {"candidate_sha256": {"type": "string", "const": digest},
                 "critic_sha256": {"type": "string", "const": critic_digest},
                 "edits": {"type": "array", "minItems": len(refs), "maxItems": len(refs),
-                    "items": {"type": "object", "additionalProperties": False, "required": ["field", "value"],
-                        "properties": {"field": {"type": "string", "enum": refs},
-                                       "value": {"type": "string", "minLength": 1, "maxLength": MAX_VALUE}}}}}}
+                    "items": items}}}
     except (ValueError, TypeError, KeyError):
         raise RunnerError("output_invalid") from None
 

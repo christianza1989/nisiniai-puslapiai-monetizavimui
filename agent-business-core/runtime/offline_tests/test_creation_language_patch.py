@@ -310,6 +310,58 @@ def test_only_supported_final_field_bounds_can_pass_and_old_unrelated_prose_is_u
     assert candidate["research"][6]["finding"].startswith("Osa ")
 
 
+def test_actual_pilot_topic_patch_provider_schema_rejects_150_character_value(candidate):
+    refs = ["draft:/content_plan/0/primary_topic", "draft:/business/interest_test"]
+    verified = critic(candidate, refs)
+    bound = language_patch.context(candidate, verified)
+    schema = language_patch.output_schema(bound)
+    items = schema["properties"]["edits"]["items"]
+    branches = items.get("anyOf", [items])
+    topic = next(branch for branch in branches
+                 if refs[0] in branch["properties"]["field"]["enum"])
+    interest = next(branch for branch in branches
+                    if refs[1] in branch["properties"]["field"]["enum"])
+    assert topic["properties"]["value"]["minLength"] == 5
+    assert topic["properties"]["value"]["maxLength"] == 120 < 150
+    assert interest["properties"]["value"]["maxLength"] == 1000
+    assert bound["targets"][0]["value_constraints"] == topic["properties"]["value"]
+    original = deepcopy(candidate)
+    values = {refs[0]: "Vienos administracinės užduoties pasirinkimas ir saugus rezultato patikrinimas.",
+              refs[1]: candidate["business"]["interest_test"]}
+    changed = language_patch.apply(candidate, verified, response(bound, values))
+    changed["content_plan"][0]["primary_topic"] = original["content_plan"][0]["primary_topic"]
+    assert changed == candidate == original
+
+
+@pytest.mark.parametrize(("reference", "maximum"), [
+    ("draft:/pages/0/navigation_label", 50), ("draft:/pages/0/sections/0/body", 1800),
+    (FIELD, 700), ("draft:/business/offer", 1500), ("draft:/assumptions/0", 800),
+    ("draft:/business/execution_steps/0", 800),
+    ("draft:/content_plan/0/outline/0", 500), ("draft:/assistant_reply", 2500),
+])
+def test_exact_provider_target_limits_follow_existing_leaf_contract(candidate, reference, maximum):
+    bound = language_patch.context(candidate, critic(candidate, (reference,)))
+    value_schema = language_patch.output_schema(bound)["properties"]["edits"]["items"]["properties"]["value"]
+    assert value_schema["maxLength"] == maximum
+    assert bound["targets"][0]["value_constraints"] == value_schema
+
+
+@pytest.mark.parametrize("reference", ["draft:/business/alternatives/0", "draft:/business/execution_steps/0",
+    "draft:/business/expansion_criteria/0", "draft:/pages/0/sections/0/items/0"])
+def test_existing_prose_list_validator_800_bound_is_advertised_and_preserved(candidate, reference):
+    candidate = deepcopy(candidate)
+    candidate["pages"][0]["sections"][0]["items"] = ["Tikra bandymo sąlyga, kurią reikia išsaugoti."]
+    original = deepcopy(candidate)
+    verified = critic(candidate, (reference,))
+    bound = language_patch.context(candidate, verified)
+    limits = language_patch.output_schema(bound)["properties"]["edits"]["items"]["properties"]["value"]
+    assert limits["maxLength"] == 800
+    invalid = response(bound, {reference: "a" * 801})
+    with pytest.raises(RunnerError, match="output_invalid"):
+        language_patch.apply(candidate, verified, invalid)
+    assert candidate == original
+
+
 def test_nine_mandatory_fields_are_exact_and_omission_is_rejected(candidate):
     original = deepcopy(candidate)
     value = critic(candidate)

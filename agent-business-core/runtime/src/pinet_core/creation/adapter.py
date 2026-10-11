@@ -102,9 +102,15 @@ def instructions(*, structure_repair=False, language_repair=False):
         raise RunnerError("review_invalid")
     if language_repair:
         value, _ = language_patch.instructions()
-        value = language_mode.policy(value)
+        if language_mode.mode() == "required":
+            value = language_mode.policy(value)
         return value, hashlib.sha256(value.encode()).hexdigest()
     fragments = [POLICY]
+    paused = language_mode.mode() == "paused_local_pilot"
+    if paused:
+        start = POLICY.index("Do full language self-edit")
+        end = POLICY.index("claim is not proof of correctness.") + len("claim is not proof of correctness.")
+        fragments[0] = POLICY[:start] + "Write Lithuanian prose; language review is paused in this private pilot. " + POLICY[end:]
     if structure_repair:
         fragments.append("This is the final bounded structural correction round of the SAME private task. "
             "Use structural_feedback and current_draft to repair the exact graph errors; preserve valid business "
@@ -114,7 +120,12 @@ def instructions(*, structure_repair=False, language_repair=False):
             "and coordinator still follow; all final schema/graph/language/publication gates remain required. "
             "Canonical business/planner instructions were already loaded in this job's initial source-bound attempt; "
             "the exact repair profile below covers graph, intake, language and honest evidence boundaries.")
+        if paused:
+            fragments[-1] = fragments[-1].replace("self-edit the Lithuanian prose", "preserve the substantive prose").replace(
+                "schema/graph/language/publication", "schema/graph/publication")
     for relative in REPAIR_INSTRUCTION_FILES if structure_repair else INSTRUCTION_FILES:
+        if paused and relative == language_patch.LANGUAGE_REFERENCE:
+            continue
         path = ROOT / relative
         try:
             raw = path.read_bytes()

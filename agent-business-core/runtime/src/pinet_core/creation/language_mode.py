@@ -14,6 +14,9 @@ taisymo ciklų nevykdyk. Kalbos kokybė lieka UNVERIFIED; nerodyk PASS ir nekurk
 Jei schemoje yra language_review, įrašyk, kad kalbos peržiūra šiame bandyme neatlikta.
 Turinio prasmę, atsakymą į kliento klausimą, verslo logiką, faktus, prielaidas, prieštaravimus,
 nepagrįstus pažadus, struktūrą ir visas kitas faktines bei publikavimo patikras išsaugok.
+Jei context_projection.omitted_fields tuščias, originalaus teksto automatinė patikra niekuo nepakeitė.
+Kalbų mišinio nevadink techniniu vietaženkliu ir nereikalauk jo perrašyti kaip content pataisos.
+Tikras prasmės trūkumas lieka turinio radiniu, bet pagrįsk jį konkrečia originalaus teksto prasme.
 """
 
 

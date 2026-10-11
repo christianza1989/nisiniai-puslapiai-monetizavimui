@@ -4,6 +4,7 @@ No HTTP customer endpoint accepts these authorities. Resolver must reobserve the
 current grant/registration/profile/knowledge under core's lock order on each call.
 """
 
+import inspect
 import time
 from dataclasses import dataclass
 from typing import Literal
@@ -111,15 +112,21 @@ class Snapshot(Strict):
 
 
 class ModuleAdapter:
+    """Synchronous standalone adapter; maintained async core uses AsyncModuleAdapter."""
+
     def __init__(self, service, resolver):
         self.service, self.store, self.resolver = service, service.store, resolver
         self.service.context_validator = self.check_profile
+        self.service.async_context_validator = None
 
     def bind(self, authority, public_profile, expected_revision):
         """Backend supplies a current approved public projection, never customer intake."""
         if "xbot.configure" not in authority.capabilities:
             raise Conflict("module_scope_forbidden")
         fresh = Binding.model_validate(self.resolver(authority))
+        return self._bind(authority, public_profile, expected_revision, fresh)
+
+    def _bind(self, authority, public_profile, expected_revision, fresh):
         if (fresh.organization_id, fresh.business_id, fresh.environment_id, fresh.site_id) != (
             authority.organization_id,
             authority.business_id,
@@ -161,6 +168,11 @@ class ModuleAdapter:
             stored.organization_id, stored.business_id, stored.environment_id, stored.site_id, frozenset()
         )
         fresh = Binding.model_validate(self.resolver(authority))
+        self.validate_profile(profile, fresh)
+
+    @staticmethod
+    def validate_profile(profile, fresh):
+        stored = Binding.model_validate(profile["source_binding"])
         if fresh != stored or not fresh.profile_current or not fresh.module_admitted or fresh.expires_at <= time.time():
             raise Conflict("core_source_or_admission_changed")
         if (profile["business_id"], profile["environment_id"], profile["site_id"]) != (
@@ -193,6 +205,10 @@ class ModuleAdapter:
             self.check_profile(p)
         except (ValueError, KeyError):
             blockers.append("core_source_or_admission_changed")
+        return self._snapshot(authority, current, blockers)
+
+    def _snapshot(self, authority, current, blockers):
+        p = current["profile"]
         if not self.service.config.codex_enabled:
             blockers.append("codex_generation_disabled")
         jobs = self.store.jobs(authority.site_id)
@@ -263,7 +279,10 @@ class ModuleAdapter:
 
     def command(self, authority, command):
         command = Command.model_validate(command)
-        current = self.scoped(authority, "xbot.control")
+        self.scoped(authority, "xbot.control")
+        return self._command(authority, command, self.check_profile)
+
+    def _command(self, authority, command, validate_profile):
         key = command.request_id
         request_hash = fingerprint(
             {
@@ -292,7 +311,7 @@ class ModuleAdapter:
             if current["revision"] != command.expected_revision:
                 raise Conflict("policy_revision_conflict")
             if command.action == "enable":
-                self.check_profile(current["profile"])
+                validate_profile(current["profile"])
                 if not self.service.config.codex_enabled:
                     raise Conflict("codex_generation_disabled")
                 if any(
@@ -328,6 +347,74 @@ class ModuleAdapter:
                 authority.site_id, "module_command", key, {"request_hash": request_hash, "result": result}, tx
             )
             return result
+
+
+class AsyncModuleAdapter(ModuleAdapter):
+    """Awaited server resolver(authority, permission) -> fresh Binding.
+
+    The resolver owns current session/worker grants, Registration/Profile/V2 and
+    module admission. It must finish/release core transactions before returning;
+    no authority or ProfileView is cached here between operations.
+    """
+
+    def __init__(self, service, resolver):
+        self.service, self.store, self.resolver = service, service.store, resolver
+        self.service.context_validator = None
+        self.service.async_context_validator = self.check_profile
+
+    async def resolve(self, authority, permission):
+        try:
+            result = self.resolver(authority, permission)
+            if not inspect.isawaitable(result):
+                raise Conflict("async_core_resolver_required")
+            fresh = Binding.model_validate(await result)
+        except Exception:
+            # Backend errors must not reveal raw PG/session/provider data.
+            raise Conflict("core_authority_or_source_unavailable") from None
+        if (fresh.organization_id, fresh.business_id, fresh.environment_id, fresh.site_id) != (
+            authority.organization_id,
+            authority.business_id,
+            authority.environment_id,
+            authority.site_id,
+        ):
+            raise Conflict("module_scope_forbidden")
+        return fresh
+
+    async def bind(self, authority, public_profile, expected_revision):
+        if "xbot.configure" not in authority.capabilities:
+            raise Conflict("module_scope_forbidden")
+        fresh = await self.resolve(authority, "xbot.configure")
+        return self._bind(authority, public_profile, expected_revision, fresh)
+
+    async def check_profile(self, profile):
+        stored = Binding.model_validate(profile["source_binding"])
+        authority = Authority(
+            stored.organization_id, stored.business_id, stored.environment_id, stored.site_id, frozenset()
+        )
+        fresh = await self.resolve(authority, "xbot.execute")
+        self.validate_profile(profile, fresh)
+
+    async def snapshot(self, authority):
+        current = self.scoped(authority)
+        fresh = await self.resolve(authority, "xbot.read")
+        if self.scoped(authority) != current:
+            raise Conflict("context_changed_during_resolution")
+        blockers = []
+        try:
+            self.validate_profile(current["profile"], fresh)
+        except Conflict:
+            # Authority was freshly accepted; changed source is visible as blocked.
+            blockers.append("core_source_or_admission_changed")
+        return self._snapshot(authority, current, blockers)
+
+    async def command(self, authority, command):
+        command = Command.model_validate(command)
+        current = self.scoped(authority, "xbot.control")
+        fresh = await self.resolve(authority, "xbot.control")
+        if command.action == "enable":
+            self.validate_profile(current["profile"], fresh)
+        # No awaits/PG callbacks inside the atomic local command transaction.
+        return self._command(authority, command, lambda profile: self.validate_profile(profile, fresh))
 
 
 def export_schemas(directory):

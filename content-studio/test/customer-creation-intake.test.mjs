@@ -55,6 +55,29 @@ function update(input) {
   input.dataDir = path.join(base, 'data'); input.outputDir = path.join(base, 'output');
 }
 
+test('native proposal contact/about/index types retain exact URLs without inheriting guide image or author gates', async t => {
+  const { input, call, sitePath } = await sandbox(t);
+  const template = input.draft.pages[1];
+  input.draft.pages = [input.draft.pages[0], ...['/kontaktai/','/apie/','/gidai/'].map(path => ({...structuredClone(template),path})),
+    {...structuredClone(template),path:'/taisykles/',type:'policy'}];
+  update(input);
+  assert.equal(call().status,0);
+  const site = JSON.parse(await readFile(sitePath()));
+  assert.deepEqual(site.pages.map(p=>p.type),['home','contact','about','index','policy']);
+  assert.deepEqual(site.pages.map(p=>p.slug),['','kontaktai','apie','gidai','taisykles']);
+  assert.ok(site.pages.every(p=>p.approval===null && p.publishedRevision===null));
+  assert.equal(site.contact.email,'');assert.equal(site.operatorName,'');
+});
+
+test('unknown or misplaced explicit native proposal types fail before original intake artifacts are created', async t => {
+  const { input, call } = await sandbox(t);
+  for(const type of ['made-up','home']) {
+    input.draft.pages[1].type=type;update(input);
+    assert.equal(call().value.code,'invalid_server_page_type');
+    await assert.rejects(readFile(path.join(input.dataDir,'sites','creation-'+input.creationId.replaceAll('-','')+'.json')),/ENOENT/);
+  }
+});
+
 test('canonical intake keeps exact V2 text and exposes actual shared blockers without seeds or approval', async t => {
   const { input, call, sitePath } = await sandbox(t);
   input.draft.pages[1].sections[0].items = ['Ž'.repeat(800)]; update(input);

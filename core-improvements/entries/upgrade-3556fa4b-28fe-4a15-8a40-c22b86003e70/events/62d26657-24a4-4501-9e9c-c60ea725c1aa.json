@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Original failing regressions and prior whole-suite revoke test-only expectation retained. Source checks distinguish exact private continuation from provider effectiveness; no operational DB/provider during source validation.",
+  "checks": [
+    {
+      "command": "Focused native continuation/review pytest",
+      "result": "PASS",
+      "evidence": "84PASS0.53s including every identity/5binding/3instruction/rawmode/tuple/hash/receipt and oversized envelope guard. Initial5 native testFAIL came from accidentally inherited operational paused env; rerun explicit required baseline plus own paused fixtures passed; no .env change."
+    },
+    {
+      "command": "node --test content-studio/test/customer-content-write.test.mjs",
+      "result": "PASS",
+      "evidence": "14PASS16.58s; original repeatedprepare0PASS1FAIL retained. Timestamp-free evaluated meaningful snapshot, real CAS/research/source/public history guards remain."
+    },
+    {
+      "command": "artifacts/run_guide_continuation_pg.private.py --new-only",
+      "result": "PASS",
+      "evidence": "10PASS15deselected77.94s in distinct empty restricted QA database, migration/bootstrap/sourcefreeze PASS; operational DB untouched/provider0. Earlier full23PASS1wrong revoke expectation FAIL156.89s retained/corrected test-only; all15existing cases passed."
+    },
+    {
+      "command": "Scoped Ruff",
+      "result": "PASS",
+      "evidence": "All five modified native Python source/test files pass; independent corrected functional review required before commit."
+    }
+  ],
+  "eventId": "62d26657-24a4-4501-9e9c-c60ea725c1aa",
+  "sequence": 4,
+  "at": "2026-10-11T01:55:48.262Z"
+}

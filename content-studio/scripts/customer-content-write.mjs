@@ -120,10 +120,13 @@ async function loadContext(input) {
   if (brief.path !== mapping.path) fail('writer_page_binding_mismatch');
   const skill = await loadEditorialSkill('draft');
   const research = researchContext(site);
-  skill.researchSnapshots.set(`${site.id}:${site.canonicalHost}:${site.locale}`, research);
   // Assessment time is volatile; exact evidence bytes and actual usable/stale
   // states are context. A changed research snapshot requires fresh preparation.
   const { assessedAt, ...researchSnapshot } = research;
+  // The prompt and its exact creator hash use the same meaningful snapshot.
+  // Every prepare still evaluates freshness; wall-clock assessment metadata
+  // must not invalidate otherwise identical retained content feedback.
+  skill.researchSnapshots.set(`${site.id}:${site.canonicalHost}:${site.locale}`, researchSnapshot);
   const researchSnapshotHash = digest(researchSnapshot);
   const instructionHash = sha(skill.instructions + '\n' + task + '\n' + stableV2(writerOutputSchema));
   const expectedRevisionHash = model.revisionHash(page), expectedPlanningHash = model.planningContextHash(page), expectedSiteHash = model.studioContextHash(site);

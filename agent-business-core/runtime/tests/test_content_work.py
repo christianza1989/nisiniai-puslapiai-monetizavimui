@@ -113,6 +113,190 @@ def roles(revise_first=False):
     return role
 
 
+async def failed_guide(c, f, *, large_second=False):
+    response, _ = await enqueue(c, f)
+    assert response.status_code == 202
+    jid = response.json()["data"]["job_id"]
+    base = roles(True)
+    async def revise(context, authorized, *, role, seconds):
+        value, receipt = await base(context, authorized, role=role, seconds=seconds)
+        if role == "creator" and large_second and context.get("critic_feedback"):
+            value["body"] = [{"type": "paragraph", "text": "a" * 11900} for _ in range(16)]
+        if role == "critic" and value["round_number"] == 2:
+            value["verdict"] = "revise"
+            value["findings"] = [{"id": "f_2", "severity": "required", "area": "content",
+                "explanation": "Trūksta aiškios galutinės bandymo pasirinkimo taisyklės.",
+                "correction": "Nurodykite, kada bandyti ir kada pirmiausia išspręsti nežinomus faktus.",
+                "evidence_refs": ["draft:/body/0/text" if large_second else "draft:/body/0/content/0/text"]}]
+        return value, receipt
+    assert await worker.execute_once(role_runner=revise)
+    old = (await c["client"].get(f["path"] + "/" + jid, headers=f["auth"])).json()["data"]
+    assert old["status"] == "failed" and old["failure_code"] == "review_limit"
+    assert len(old["attempts"]) == 6 and old["output_sha256"] is None
+    return old
+
+
+async def test_retry_continues_final_failed_candidate_with_fresh_review_and_immutable_history(creation, monkeypatch):
+    c = creation
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
+    monkeypatch.setattr(settings(), "creation_daily_limit", 0)
+    monkeypatch.setattr(settings(), "creation_global_daily_limit", 0)
+    f = await prepared(c)
+    original = f["site_file"].read_bytes()
+    old = await failed_guide(c, f)
+    assert f["site_file"].read_bytes() == original
+    prior = {key: [e["data"][key] for e in old["events"] if e["data"].get(key)][-1]
+             for key in ("candidate", "critic", "coordinator")}
+    # Only the historical source commit changes. The current binding, prompts,
+    # actual Node page data and source authority remain exact and fresh.
+    monkeypatch.setattr(settings(), "control_source_revision", "d" * 40)
+    response, _ = await enqueue(c, f)
+    assert response.status_code == 202
+    jid = response.json()["data"]["job_id"]
+    calls = []
+    base = roles()
+    async def fresh(context, authorized, *, role, seconds):
+        calls.append(role)
+        if role == "creator":
+            assert context["previous_candidate"] == prior["candidate"]
+            assert context["critic_feedback"] == {key: prior[key] for key in ("critic", "coordinator")}
+        else:
+            assert context["review"]["round_number"] == 1
+            assert context["review"]["draft_sha256"] != prior["critic"]["draft_sha256"]
+        value, receipt = await base(context, authorized, role=role, seconds=seconds)
+        if role == "creator":
+            value = json.loads(json.dumps(context["previous_candidate"]))
+            value["body"].append({"type": "richParagraph", "content": [{"type": "text", "text":
+                "Bandykite tik kai aiški užduotis, žinomi faktai ir paskirtas žmogus rezultatui patvirtinti; kitu atveju pirmiausia išspręskite spragas."}]})
+        return value, receipt
+    assert await worker.execute_once(role_runner=fresh)
+    value = (await c["client"].get(f["path"] + "/" + jid, headers=f["auth"])).json()["data"]
+    assert value["status"] == "succeeded" and calls == ["creator", "critic", "coordinator"]
+    assert len(value["attempts"]) == 3 and all(a["source_revision"] == "d" * 40 for a in value["attempts"])
+    candidate = next(e["data"]["candidate"] for e in value["events"] if e["data"].get("candidate"))
+    assert candidate["body"][:len(prior["candidate"]["body"])] == prior["candidate"]["body"]
+    assert canonical_sha256(candidate) == value["output_sha256"]
+    page = next(p for p in json.loads(f["site_file"].read_bytes())["pages"] if p["id"] == f["page_id"])
+    assert page["body"] == candidate["body"] and page["approval"] is None and page["publishedRevision"] is None
+    assert (await c["client"].get(f["path"] + "/" + old["job_id"], headers=f["auth"])).json()["data"] == old
+    async with scope(user=f["me"]["user_id"]) as tx:
+        assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), {
+            "e": c["environment"], "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}) == 10
+
+
+@pytest.mark.parametrize("latest", ["cancelled", "provider_error"])
+async def test_retry_never_searches_past_latest_same_target_job(creation, monkeypatch, latest):
+    from pinet_core.tasks.codex_transport import RunnerError
+    c = creation
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
+    monkeypatch.setattr(settings(), "creation_daily_limit", 0)
+    f = await prepared(c)
+    old = await failed_guide(c, f)
+    response, _ = await enqueue(c, f)
+    middle = response.json()["data"]["job_id"]
+    if latest == "cancelled":
+        assert (await c["client"].post(f["path"] + "/" + middle + "/cancel", headers=f["auth"])).status_code == 200
+    else:
+        async def fail(context, authorized, **kwargs):
+            assert await authorized()
+            raise RunnerError("provider_error")
+        assert await worker.execute_once(role_runner=fail)
+    response, _ = await enqueue(c, f)
+    jid = response.json()["data"]["job_id"]
+    base = roles()
+    async def fresh(context, authorized, **kwargs):
+        if kwargs["role"] == "creator":
+            assert context["previous_candidate"] is None and context["critic_feedback"] is None
+        return await base(context, authorized, **kwargs)
+    assert await worker.execute_once(role_runner=fresh)
+    result = (await c["client"].get(f["path"] + "/" + jid, headers=f["auth"])).json()["data"]
+    assert result["status"] == "succeeded" and len(result["attempts"]) == 3
+    assert (await c["client"].get(f["path"] + "/" + old["job_id"], headers=f["auth"])).json()["data"] == old
+
+
+async def test_retry_large_retained_candidate_uses_fresh_generation_without_extra_reservation(creation, monkeypatch):
+    c = creation
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
+    monkeypatch.setattr(settings(), "creation_daily_limit", 0)
+    f = await prepared(c)
+    old = await failed_guide(c, f, large_second=True)
+    response, _ = await enqueue(c, f)
+    jid = response.json()["data"]["job_id"]
+    base, calls = roles(), []
+    async def fresh(context, authorized, **kwargs):
+        calls.append(kwargs["role"])
+        if kwargs["role"] == "creator":
+            assert context["previous_candidate"] is None and context["critic_feedback"] is None
+        return await base(context, authorized, **kwargs)
+    assert await worker.execute_once(role_runner=fresh)
+    result = (await c["client"].get(f["path"] + "/" + jid, headers=f["auth"])).json()["data"]
+    assert result["status"] == "succeeded" and calls == ["creator", "critic", "coordinator"]
+    assert len(result["attempts"]) == 3
+    assert (await c["client"].get(f["path"] + "/" + old["job_id"], headers=f["auth"])).json()["data"] == old
+    async with scope(user=f["me"]["user_id"]) as tx:
+        assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"), {
+            "e": c["environment"], "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}) == 10
+
+
+@pytest.mark.parametrize("fence", ["cancel_before_reserve", "cancel", "revoke", "source", "deadline", "revision"])
+async def test_continued_feedback_never_bypasses_current_authority_or_reservation(creation, monkeypatch, fence):
+    from pinet_core.content_work import continuation
+    from pinet_core.creation.models import Creation
+    c = creation
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
+    monkeypatch.setattr(settings(), "creation_daily_limit", 0)
+    f = await prepared(c)
+    original = f["site_file"].read_bytes()
+    await failed_guide(c, f)
+    response, _ = await enqueue(c, f)
+    jid = response.json()["data"]["job_id"]
+    if fence == "cancel_before_reserve":
+        original_load = continuation.load
+        async def after_seed(tx, job, prepared):
+            result = await original_load(tx, job, prepared)
+            assert result[0] is not None
+            # Exercise the narrow boundary before any new reservation without
+            # making an HTTP cancel wait on this same transaction's row locks.
+            job.status = "cancelled"
+            job.lease_until = None
+            job.finished_at = utcnow()
+            return result
+        monkeypatch.setattr(continuation, "load", after_seed)
+    calls = []
+    async def fenced(context, authorized, *, role, seconds):
+        calls.append(role)
+        assert role == "creator" and await authorized() and context["previous_candidate"]
+        if fence == "cancel":
+            assert (await c["client"].post(f["path"] + "/" + jid + "/cancel", headers=f["auth"])).status_code == 200
+        elif fence == "source":
+            monkeypatch.setattr(settings(), "control_source_revision", "d" * 40)
+        else:
+            async with AsyncSession(c["admin"]) as tx, tx.begin():
+                if fence == "revoke":
+                    await tx.execute(update(Membership).where(Membership.user_id == f["me"]["user_id"]).values(enabled=False))
+                elif fence == "deadline":
+                    await tx.execute(update(GuideJob).where(GuideJob.id == jid).values(deadline_at=utcnow()-timedelta(seconds=1)))
+                elif fence == "revision":
+                    await tx.execute(update(Creation).where(Creation.id == f["creation_id"]).values(current_revision=2))
+        return native(), {}
+    assert await worker.execute_once(role_runner=fenced)
+    assert f["site_file"].read_bytes() == original
+    assert calls == ([] if fence == "cancel_before_reserve" else ["creator"])
+    async with AsyncSession(c["admin"]) as tx:
+        job = await tx.get(GuideJob, jid)
+        # After committed revocation RLS hides the job from the worker; it
+        # cannot mutate that owner's terminal state. The reservation/lease
+        # remain while provider supervision and the private write stop.
+        expected = "running" if fence == "revoke" else "cancelled" if fence.startswith("cancel") else "failed"
+        assert job.status == expected
+        assert len(list(await tx.scalars(select(GuideAttempt).where(GuideAttempt.job_id == jid)))) == len(calls)
+    async with scope() as tx:
+        assert await tx.scalar(text("SELECT control_creation_attempt_count(:e,:s)"), {
+            "e": c["environment"], "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}) == 7 + len(calls)
+    if fence == "revoke":
+        assert (await c["client"].get(f["path"], headers=f["auth"])).status_code == 404
+
+
 async def test_paused_language_native_write_and_live_projection_remain_honest(creation, monkeypatch):
     monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
     f = await prepared(creation)

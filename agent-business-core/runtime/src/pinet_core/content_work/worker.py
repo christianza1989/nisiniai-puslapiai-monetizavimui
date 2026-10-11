@@ -12,7 +12,7 @@ from ..creation.service import ACTIVE, binding
 from ..creation.team import usage_view
 from ..models import new_id, utcnow
 from ..tasks.codex_transport import RunnerError
-from . import adapter, review, service, studio
+from . import adapter, continuation, review, service, studio
 from .models import GuideAttempt
 
 ROLE_SUMMARIES = {"creator": "Kūrėjas rengia pasirinkto gido tekstą pagal tikrą planavimo briefą.",
@@ -133,7 +133,9 @@ async def run(claimed, role_runner, writer):
     prepared = await writer(claimed["target"], "prepare", authorized, seconds=remaining(claimed))
     if any(prepared.get(key) != claimed["binding"][key] for key in studio.BINDING_KEYS):
         raise RunnerError("writer_context_stale")
-    previous, feedback = None, None
+    async with scope(user=claimed["user_id"]) as tx:
+        _, job = await current(tx, claimed)
+        previous, feedback = await continuation.load(tx, job, prepared)
     for round_number in (1, 2):
         output, receipts, critic = None, None, None
         repair_creator = False

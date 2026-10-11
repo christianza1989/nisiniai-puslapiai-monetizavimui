@@ -116,6 +116,16 @@ function richOutput(target) {
     factChecks: ['Mokytojas ir mokamo vykdymo sąlygos dar nepatvirtinti; tekste jų nežadame.'] };
 }
 
+test('repeated prepare keeps the exact creator prompt and meaningful research context stable', async t => {
+  const fixture = await sandbox(t), first = fixture.prepare(), second = fixture.prepare();
+  for (const key of ['expectedRevisionHash', 'expectedPlanningHash', 'expectedContextHash', 'instructionHash', 'researchSnapshotHash'])
+    assert.equal(second[key], first[key]);
+  assert.equal(digest(second.instructions), digest(first.instructions));
+  const data = JSON.parse(first.instructions.split('matching the supplied output schema.\n')[1]);
+  assert.equal('assessedAt' in data.siteData.seoResearch, false);
+  assert.deepEqual(data.pageData, first.pageData);
+});
+
 test('prepare exposes the whole real brief, candidate sources and unknown facts without mutating intake', async t => {
   const fixture = await sandbox(t), before = await readFile(fixture.filename), prepared = fixture.prepare();
   assert.equal(prepared.state, 'prepared'); assert.deepEqual(prepared.pageData.planningBrief, fixture.input.draft.content_plan[0]);

@@ -10,6 +10,12 @@ from ..tasks.codex_transport import RunnerError, execute
 from . import review
 
 ADAPTER = "codex-native-guide-team.v1"
+MAX_PROMPT_BYTES = 262144
+
+
+def creator_prompt(prepared, previous=None, feedback=None):
+    return language_mode.policy(prepared["instructions"]) + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
+        "critic_feedback": feedback, "previous_candidate": previous}, ensure_ascii=False)
 
 
 def instruction_hash(role, prepared):
@@ -25,14 +31,12 @@ async def run_role(context, authorized, *, role, seconds):
     if context["expected_instruction_hash"] != expected:
         raise RunnerError("instructions_changed")
     if role == "creator":
-        prompt = language_mode.policy(prepared["instructions"]) + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
-            "critic_feedback": context.get("critic_feedback"), "previous_candidate": context.get("previous_candidate")},
-            ensure_ascii=False)
+        prompt = creator_prompt(prepared, context.get("previous_candidate"), context.get("critic_feedback"))
         schema = prepared["outputSchema"]
     else:
         prompt = review.policy(role) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context["review"], ensure_ascii=False)
         schema = review.output_schema(role, context["review"])
-    if len(prompt.encode()) > 262144:
+    if len(prompt.encode()) > MAX_PROMPT_BYTES:
         raise RunnerError("context_limit")
     folder = workspace / ("guide-" + role + "-" + str(uuid4()))
     folder.mkdir()

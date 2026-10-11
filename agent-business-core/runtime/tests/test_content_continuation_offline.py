@@ -45,7 +45,7 @@ def history(monkeypatch):
         "full_f1_status": "UNVERIFIED", "launch_status": "UNVERIFIED"}
     owned = {key: identity[key] for key in (*continuation.IDENTITY[:4], "creation_id")}
     attempts = [Row(id=role, job_id=prior.id, sequence=i+4, role=role, round_number=2, stage="content",
-                    model="gpt-6-luna", run_id=prior.run_id, source_revision=prior.source_revision,
+                    model=adapter.role_model(role), run_id=prior.run_id, source_revision=prior.source_revision,
                     instruction_hash=adapter.instruction_hash(role, prepared), **owned)
                 for i, role in enumerate(continuation.ROLES)]
     payloads = [{"candidate": output, "checks": receipts}, {"critic": report}, {"coordinator": decision}]
@@ -63,6 +63,14 @@ def test_exact_retained_feedback_is_only_projected_input_even_when_source_commit
     expected = adapter.creator_policy(history[4]) + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
         "critic_feedback": feedback, "previous_candidate": previous}, ensure_ascii=False)
     assert adapter.creator_prompt(history[4], previous, feedback) == expected
+
+
+@pytest.mark.parametrize('role', ['critic', 'coordinator'])
+def test_historical_luna_reviews_do_not_seed_current_sol_roles(history, role):
+    # Keep the real old model label; do not relabel history to force reuse.
+    attempt = next(item for item in history[2] if item.role == role)
+    attempt.model = 'gpt-6-luna'
+    assert continuation.seed(*history) == (None, None)
 
 
 @pytest.mark.parametrize("role", ["creator", "critic"])

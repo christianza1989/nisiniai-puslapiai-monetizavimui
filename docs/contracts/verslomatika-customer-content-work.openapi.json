@@ -3,7 +3,7 @@
   "info": {
     "title": "Private native V2 GUIDE work",
     "version": "0.1.0",
-    "description": "Authenticated own current accepted creation revision and actual page planningBrief. Separate bounded native V2 GUIDE jobs, immutable exact candidate/critic/coordinator attempts and events; live job state, not an intake snapshot or live publication certificate. Two rounds, six actual calls and 300-second maximum including prepare/validate/apply; no automatic job retry. Same shared provider mutex and charged customer/global daily attempt budget including old creation attempts. Read-only fixed CLI roles cannot verify sources, media, approve or release; accepted text only writes a private canonical studio draft with current content/planning/site CAS. No raw trace/private filesystem path. source_verification/media_verification/approval remain not_performed and fullF1/launch UNVERIFIED. EventPayload.language_review_mode defaults to required for history. Explicit paused_local_pilot permits same-output language_quality UNVERIFIED/observed=false for private write only; all other FAIL, exact candidate/critic/coordinator identities and current native CAS remain enforced. No language certification. Legacy creation.v1/content.v1 wire bytes unchanged; team sidecar adds the same explicit mode."
+    "description": "Authenticated own current accepted creation revision and actual page planningBrief. Separate bounded native V2 GUIDE jobs, immutable exact candidate/critic/coordinator attempts and events; live job state, not an intake snapshot or live publication certificate. Two rounds, six actual calls and 300-second maximum including prepare/validate/apply; no automatic job retry. Same shared provider mutex and charged customer/global daily attempt budget including old creation attempts. Read-only fixed CLI roles use the fixed Luna creator and Sol critic/coordinator execution profiles; historical Luna reviews remain readable. Migration0020 is required before any new queue/claim/reservation, and exact execution profiles are bound into role hashes and continuation. Roles cannot verify sources, media, approve or release; accepted text only writes a private canonical studio draft with current content/planning/site CAS. No raw trace/private filesystem path. source_verification/media_verification/approval remain not_performed and fullF1/launch UNVERIFIED. EventPayload.language_review_mode defaults to required for history. Explicit paused_local_pilot permits same-output language_quality UNVERIFIED/observed=false for private write only; all other FAIL, exact candidate/critic/coordinator identities and current native CAS remain enforced. No language certification. Legacy creation.v1/content.v1 wire bytes unchanged; team sidecar adds the same explicit mode."
   },
   "paths": {
     "/customer/v2/creations/{creation_id}/content-work": {
@@ -504,6 +504,24 @@
       },
       "AttemptView": {
         "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "role": {
+                  "const": "creator"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "model": {
+                  "const": "gpt-6-luna"
+                }
+              }
+            }
+          }
+        ],
         "properties": {
           "attempt_id": {
             "format": "uuid",
@@ -547,7 +565,10 @@
             "type": "string"
           },
           "model": {
-            "const": "gpt-6-luna",
+            "enum": [
+              "gpt-6-luna",
+              "gpt-6.1-sol"
+            ],
             "title": "Model",
             "type": "string"
           },

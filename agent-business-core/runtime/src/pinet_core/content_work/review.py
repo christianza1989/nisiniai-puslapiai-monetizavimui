@@ -25,6 +25,9 @@ CRITIC_CALIBRATION = """Prieš privalomą radinį perskaityk visą dabartinį ka
 likusį materialų prieštaravimą ar trūkumą ir tikrus jį pagrindžiančius allowed_finding_refs laukus.
 Lygiavertis aiškus paaiškinimas tinkamas: nereikalauk kartoti jau išspręstos pastabos vien kitais
 žodžiais. Nauji tikri faktų, apimties, formulės ar nuorodų trūkumai vis tiek privalomai taisomi.
+Vertinamas dabartinis draft, o planningBrief yra užduoties kontekstas. Nekelk privalomo radinio
+už seną plano formuluotę, kuri dabartiniame tekste jau patikslinta. Patikrink, ką iš tikrųjų sako
+kiekvienas cituojamas dabartinio draft laukas; antraštė nepagrindžia joje nesančio teiginio.
 Kiekviena checks patikra turi tik vieną pateiktą tos pačios kind kvito ID, be dubliavimo; statusą
 perkelk tiksliai iš to kvito. Modelio vertinimas nepaverčia UNVERIFIED į PASS.
 """

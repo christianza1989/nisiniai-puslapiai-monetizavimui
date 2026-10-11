@@ -1,0 +1,35 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Native GUIDE Luna reviews require absent or already corrected defects; calibrate fixed Sol review roles through the maintained transport with source and history fences.",
+  "category": "code",
+  "evidence": [
+    "Clean143292f native critic referred to a heading as a remaining time-accounting defect; full current candidate already reconciles both methods. Independent review confirms wrong participant normalization and stale planningBrief confusion. Original private outputs retained; no output promotion."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/worker.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/continuation.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/wire.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/routes.py",
+    "agent-business-core/runtime/scripts/customer_content_work_worker.py",
+    "agent-business-core/runtime/scripts/customer_content_work_contract.py",
+    "agent-business-core/runtime/migrations/versions/0020_native_review_model.py",
+    "agent-business-core/runtime/tests/test_native_guide_roles.py",
+    "agent-business-core/runtime/tests/test_native_guide_roles_pg.py",
+    "agent-business-core/runtime/tests/test_content_continuation_offline.py",
+    "agent-business-core/runtime/tests/test_creation_review_model.py",
+    "docs/contracts/verslomatika-customer-content-work.openapi.json",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6105199742",
+  "rollback": "Scoped source revert;0020 downgrade fails closed if immutable Sol GUIDE history exists; no history rewrite. Clean owned API source repin required.",
+  "id": "upgrade-9bb87c04-c695-47e4-b668-12c9322b1966",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "143292ff3b93aa3911a5430f15848f2e59819cfc",
+  "createdAt": "2026-10-11T03:55:33.407Z"
+}

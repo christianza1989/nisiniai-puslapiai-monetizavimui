@@ -28,7 +28,10 @@ async def claim():
     except ControlError:
         return None
     cfg = settings()
+    execution_hash = adapter.execution_hash()
     async with scope() as tx:
+        if not await service.review_schema_ready(tx):
+            raise RunnerError("runner_unavailable")
         await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                          {"k": "content-work-claim:" + cfg.environment})
         rows = (await tx.execute(text("SELECT * FROM control_content_work_candidates(:e)"),
@@ -53,6 +56,7 @@ async def claim():
                 job.deadline_at = utcnow() + timedelta(seconds=min(300, cfg.creation_runner_seconds))
                 job.lease_until = service.lease(job)
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
+                    "execution_hash": execution_hash,
                     "target": SimpleNamespace(creation_id=creation.id, accepted_revision=job.accepted_revision,
                         page_id=job.page_id, source_hash=job.source_hash, canonical_host=creation.canonical_host),
                     "binding": dict(job.binding), "deadline_at": job.deadline_at}
@@ -89,13 +93,17 @@ async def heartbeat(claimed):
 async def reserve(claimed, role, round_number, prepared):
     async with scope(user=claimed["user_id"]) as tx:
         _, job = await current(tx, claimed)
+        if adapter.execution_hash() != claimed["execution_hash"]:
+            raise RunnerError("instructions_changed")
+        if not await service.review_schema_ready(tx):
+            raise RunnerError("runner_unavailable")
         await service.quota(tx)
         sequence = (await tx.scalar(select(func.max(GuideAttempt.sequence)).where(GuideAttempt.job_id == job.id)) or 0) + 1
         if sequence > 6 or round_number not in (1, 2) or role not in ROLE_SUMMARIES:
             raise RunnerError("review_limit")
         attempt = GuideAttempt(id=new_id(), creation_id=job.creation_id, job_id=job.id, run_id=job.run_id,
             sequence=sequence, role=role, round_number=round_number, stage="content", source_revision=job.source_revision,
-            instruction_hash=adapter.instruction_hash(role, prepared), model="gpt-6-luna", **binding(job))
+            instruction_hash=adapter.instruction_hash(role, prepared), model=adapter.role_model(role), **binding(job))
         tx.add(attempt)
         await tx.flush()
         await service.event(tx, job, "reserved", ROLE_SUMMARIES[role], attempt=attempt)
@@ -149,6 +157,7 @@ async def run(claimed, role_runner, writer):
                 raise RunnerError(error.code) from None
             receipt = {}
             context = {"prepared": prepared, "expected_instruction_hash": attempt.instruction_hash,
+                "expected_model": attempt.model,
                 "previous_candidate": previous, "critic_feedback": feedback}
             if role != "creator":
                 context["review"] = review.context(output, round_number, receipts, prepared, critic)

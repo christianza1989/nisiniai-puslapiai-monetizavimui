@@ -47,6 +47,8 @@ async def start(creation_id: str, value: StartGuide, request: Request,
             raise ControlError(409, "idempotency_conflict")
         return envelope(request, await service.projection(tx, prior))
     service.enabled()
+    if not await service.review_schema_ready(tx):
+        raise ControlError(503, "content_work_unavailable")
     revision = await service.current_revision(tx, creation, value.accepted_revision)
     active = await tx.scalar(select(GuideJob).where(GuideJob.creation_id == creation.id, GuideJob.status.in_(ACTIVE))
                              .with_for_update())

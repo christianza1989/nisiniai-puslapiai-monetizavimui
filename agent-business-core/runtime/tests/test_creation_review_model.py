@@ -124,7 +124,7 @@ async def test_populated_sol_history_blocks_downgrade_without_row_changes(creati
     assert proc.returncode != 0 and b"control_creation_attempts_model_check" in output
     assert await snapshot(c) == before
     async with AsyncSession(c["admin"]) as tx:
-        assert await tx.scalar(text("SELECT version_num FROM alembic_version")) == "0019_creation_job_history"
+        assert await tx.scalar(text("SELECT version_num FROM alembic_version")) == "0020_native_review_model"
     assert (await team_read(c, auth, row["creation_id"]))["current_revision"] == 1
 
 

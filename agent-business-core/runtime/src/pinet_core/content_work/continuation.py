@@ -23,7 +23,7 @@ def seed(job, prior, attempts, events, prepared):
             return None, None
         final = attempts[-3:]
         if (len(final) != 3 or tuple(a.role for a in final) != ROLES
-                or any(a.round_number != 2 or a.stage != "content" or a.model != "gpt-6-luna" or a.run_id != prior.run_id
+                or any(a.round_number != 2 or a.stage != "content" or a.model != adapter.role_model(a.role) or a.run_id != prior.run_id
                        or a.source_revision != prior.source_revision or a.job_id != prior.id
                        or any(getattr(a, key) != getattr(prior, key) for key in (*BINDING[1:], "creation_id"))
                        or a.instruction_hash != adapter.instruction_hash(a.role, prepared) for a in final)

@@ -36,6 +36,14 @@ async def authority(tx, job, creation=None):
         and creation.status not in ACTIVE and creation.canonical_host)
 
 
+async def review_schema_ready(tx):
+    return bool(await tx.scalar(text("""SELECT count(*)=1 FROM pg_constraint
+      WHERE conrelid='control_content_work_attempts'::regclass AND contype='c' AND convalidated
+        AND conname='control_content_work_attempts_review_model_check'"""))) and not bool(await tx.scalar(text("""
+      SELECT count(*) FROM pg_constraint WHERE conrelid='control_content_work_attempts'::regclass
+        AND conname='control_content_work_attempts_model_check'""")))
+
+
 async def locked(tx, job_id, user_id):
     await tx.scalar(select(User).where(User.id == user_id).with_for_update())
     old = await tx.get(GuideJob, job_id)

@@ -337,3 +337,8 @@ A new manual email cannot be invented by an organization target, and a transport
 ## 2026-10-08 — globals must not read sealed copies
 
 Existing globals were intentionally fail-closed during initial routing.1e4f9fc now keeps bookmark and taxonomy writers central while checking current target eligibility and aggregating current SQL counts. Source taxonomy needed a narrow patch view to avoid triggering whole-org reminder writes against a sealed calendar; large-history and post-write rollback tests accepted. Per-org deterministic catalogue conversion permits uncertain retry without distributed transaction claims. First favorite lookup used an incorrect nested profile shape; retained500 and corrected flat-id rerun document the actual failure.210tests/actual Workers/browser accepted bounded scope, no shared module changed.
+
+
+## 2026-10-11 community acceptance lessons
+
+Actual browser exposed HTMLFormElement.id shadowing by hidden input name=id. Submission routing now uses getAttribute(id), regression covers comment/save/edit and uncertain reply intent retention. Native successful IMAGES emulation alone missed absent deployed binding: trial actual upload503, then add IMAGES, require exact config binding and actual native+hosted uploads before acceptance. New OAuth URL secrets motivate scoped Cloudflare query redaction with readback (Wrangler4.92 lacks schema support; provider API patch needed). These are demonstrated Madbeauty gaps, not a claim that other sites are repaired. Shared runtime files were not changed.

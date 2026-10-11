@@ -6,11 +6,13 @@ Atnaujinta 2026-10-11. Aktyvi apimtis: pradėti nuo Facebook, įgyvendinti C0–
 
 Checkout: `madbeauty-service-picker-20261010`, šaka `ai/madbeauty-service-picker-20261010`, PR88. Plano commit `c8f7d1e`; šis dokumentas gali turėti naujesnius dar necommitintus checkpointus. Pirmiausia `git status`, tada šis failas ir jo naujausias checkpoint. Kitų failų pakeitimų nenurašyti ar reset'inti.
 
-Dabartinis žingsnis: **C0–C2 vietinis priėmimas ir izoliuoto trial leidimo paruošimas**. Meta programėlė 1827877621543839: ikona išsaugota, Basic / callback / email nustatyti, būsena Unpublished. App Review ir savininko realus Facebook OAuth kelias dar nepriimti. Credentials ignoruojami, Workers dar neįdiegti. Bendruomenės srautas, albumai, komentarai, draugystės, privataus ir salono pokalbio API, nuotraukos, moderavimo eilė ir kartojamas šalinimas parašyti; native bandymai ir du vietiniai browser langai priimti savo apimtyje. Tai dar nėra hosted priėmimas.
+Dabartinis žingsnis: **C0–C2 bandomoji bendruomenė gyvai; Facebook savininko sutikimas laukiamas**. Meta programėlė1827877621543839, Basic/callback/email/ikona išsaugoti, Unpublished. App Secret įdiegtas kaip Workers secret abiem hostams, jo vertė nepateikta source/artifacts/screenshots. Trial Facebook mygtukas pasiekė tikrą Meta leidimo langą, ContinueasChristian nepaspaustas be atskiro savininko sutikimo. Pagrindinis domenas turi FBprivacy/deletion/deauthorization sutartis, bet publicFBlogin ir bendruomenė ten išjungti.
 
-Kitas veiksmas: commitinti patikrintą runtime, surinkti frozen129/core566 leidimą ir tikrinti tikslų artifact. Pirma trial su bendruomene įjungta; canonical Facebook lieka išjungtas iki tikro Meta priėmimo. Jokių dummy canonical, grupės ir renginiai lieka C3–C4.
+OAuth state galioja5min.; gavus vėlesnį sutikimą pirmiausia iš naujo pradėti trial Facebook mygtuko kelią, kad sena consent kortelė negrąžintų expired state.
 
-Gyvas pagrindas: runtime `e2d9f8c8ccb9653c70f0b1d376b6ba7dd405de61`, main `96af1b12-52cc-48cb-820e-1580f4b7c860`, trial `2292c0bd-b302-40cc-8d7c-e1eb9de0b033`. Šių ID nekeisti kaip dokumentinio progreso. Trial galioja iki `2026-10-16T21:10:47.982Z`, turi 40 solo ir 5 viešus salonus; jokių dummy canonical. Ankstesni įrodymai: [auth kvitas](../auth-social-20261011/RECEIPT.md).
+Kitas veiksmas: gavus konkrečios Facebook paskyros sutikimą, užbaigti admin OAuth → trialOTPfirstlink → logout/relogin → unlink. Tada tikrinti faktinius Meta App Review / business verification / external public activation reikalavimus. Savininkas jau gali bandyti C0–C2 per /bandymo-paskyros → /bendruomene. Pagrindinio domeno community activation ir WebSocket hibernation dar nepriimti; grupės ir renginiai C3–C4 tik planuoti.
+
+Gyvas pagrindas: runtime `d539271295c04fe9523795b6b3abd9c40e992c20`, main `776ac16c-c67b-41bb-8630-3145509fe57c`, trial `5d2173cb-fff3-4902-83b9-021b56f61889`. [Aktualus kvitas](RECEIPT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
 
 ## Užbaigtas pasiruošimas
 
@@ -24,32 +26,32 @@ Gyvas pagrindas: runtime `e2d9f8c8ccb9653c70f0b1d376b6ba7dd405de61`, main `96af1
 
 ## Facebook pirmas etapas
 
-- [ ] F0 Paruošti programėlę Meta, jos tikrus domenus ir callback sutartį; fiksuoti App ID / režimą / leidimus be secret.
-- [ ] F1 Įgyvendinti vienkartinį session-bound OAuth state, code exchange ir tokeno app / subject / expiry tikrinimą.
-- [ ] F2 Atominė Facebook tapatybė, pirmas email kodas ir aiškus esamos paskyros susiejimas; jokio automatinio merge.
-- [ ] F3 Paskyros susiejimas / atsiejimas, deauthorization ir signed deletion callback.
-- [ ] F4 Tikras login mygtukas ir grįžimas į pradėtą kelią; neįjungti viešai be veikiančios konfigūracijos.
-- [ ] F5 Vietiniai + native replay / expiry / wrong app / concurrency / role / restart testai.
+- [x] F0 Paruošti programėlę Meta, jos tikrus domenus ir callback sutartį; fiksuoti App ID / režimą / leidimus be secret.
+- [x] F1 Įgyvendinti vienkartinį session-bound OAuth state, code exchange ir tokeno app / subject / expiry tikrinimą.
+- [x] F2 Atominė Facebook tapatybė, pirmas email kodas ir aiškus esamos paskyros susiejimas; jokio automatinio merge.
+- [x] F3 Paskyros susiejimas / atsiejimas, deauthorization ir signed deletion callback.
+- [x] F4 Tikras login mygtukas ir grįžimas į pradėtą kelią; neįjungti viešai be veikiančios konfigūracijos.
+- [x] F5 Vietiniai + native replay / expiry / wrong app / concurrency / role / restart testai.
 - [ ] F6 Tikras Meta vartotojo login bandymas; administratoriaus ir išorinio vartotojo prieigą vertinti atskirai.
 
 ## C0 Pagrindas
 
-- [ ] C0-01 Esamos tapatybės, aktoriaus ir auditorijos serverio sutartys.
-- [ ] C0-02 Atskira community saugykla, pridedanti migracija ir native restart kelias.
-- [ ] C0-03 Srauto / composer / pokalbio desktop ir mobile dizainas; grupių / renginių maketai vėlesnei apimčiai.
-- [ ] C0-04 Skundų, blokavimo, limitų ir audituojamų sprendimų pagrindas prieš viešą UGC.
+- [x] C0-01 Esamos tapatybės, aktoriaus ir auditorijos serverio sutartys.
+- [x] C0-02 Atskira community saugykla, pridedanti migracija ir native restart kelias.
+- [x] C0-03 Srauto / composer / pokalbio desktop ir mobile dizainas; grupių / renginių maketai vėlesnei apimčiai.
+- [x] C0-04 Skundų, blokavimo, limitų ir audituojamų sprendimų pagrindas prieš viešą UGC.
 
 ## C1 Srautas
 
-- [ ] C1-01 Įrašai, auditorija, redagavimas / šalinimas ir saugi vaizdų medija.
-- [ ] C1-02 Atrask / Sekami, miesto / paslaugos filtrai, stabilus pagination ir tikra paslaugos nuoroda.
-- [ ] C1-03 Patiktukai, komentarai / atsakymai ir privatūs idėjų albumai.
+- [x] C1-01 Įrašai, auditorija, redagavimas / šalinimas ir saugi vaizdų medija.
+- [x] C1-02 Atrask / Sekami, miesto / paslaugos filtrai, stabilus pagination ir tikra paslaugos nuoroda.
+- [x] C1-03 Patiktukai, komentarai / atsakymai ir privatūs idėjų albumai.
 
 ## C2 Draugystės ir žinutės
 
-- [ ] C2-01 Draugystės prašymai, priėmimas / atsiėmimas / nutraukimas ir blokavimo viršenybė.
-- [ ] C2-02 Žinučių užklausos, patvarūs asmeniniai / salono pokalbiai, atskiros vizito teisės.
-- [ ] C2-03 Realaus laiko atnaujinimas, reconnect / logout / revocation ir privatūs nuotraukų priedai.
+- [x] C2-01 Draugystės prašymai, priėmimas / atsiėmimas / nutraukimas ir blokavimo viršenybė.
+- [x] C2-02 Žinučių užklausos, patvarūs asmeniniai / salono pokalbiai, atskiros vizito teisės.
+- [x] C2-03 5s automatinis atnaujinimas, reconnect / logout / revocation ir privatūs nuotraukų priedai.
 
 ## Priėmimas prieš etapų aktyvinimą
 
@@ -101,3 +103,7 @@ Savininkas atsakė „Įkelsiu ikoną pats“. Galutinis PNG taip pat nukopijuot
 Uncommitted paketui pridėtos optimized WebP SQL dalys, audience-bound HTTP read/upload, orphan24h / 12 kalendorinių mėnesių cleanup, asmens šalinimo journal / retry, realių organizacijos darbuotojų inbox, moderation audit, actual paslaugos ir esamos darbų galerijos ryšys bei trial90narių/45įrašų idempotent seed. Šalinimas neduoda prieigos ištrintai paskyrai ir sutvarko jos komentarus / reakcijas / albumų nuorodas; native visos paskyros removal testas PASS. Moderatoriaus eilė nerodo privačių pokalbių. Du vietiniai browser langai: nuotrauka, komentaras/redagavimas, patiktukas, named albumas, sekimas, accepted friendship, tekstas + privatus foto-only priedas ir 5s atnaujinimas be reload. Restart išsaugojo turinį.
 
 Rasta reali HTMLFormElement.id shadowing klaida dėl hidden name=id. Pataisyta getAttribute ir prasmingas regressijos testas: comment/save/edit bei neaiškaus post atsakymo operacijos ir upload intent išsaugojimas PASS. Naujos 21 backend/media/native patikros PASS; po papildomų UI, operatoriaus ir native FB patikrų 23/23 bei7/7 PASS (persidengiančių testų nesumuoti). Trial native45publicprofiles ir90communityactors tęstinis sąrašas, actualservice/gallery,11–21reviews/books tikslus before/after ir restart PASS. Actual390/768/1440DOM nėra horizontalaus dokumento overflow; ekranų vaizdinį priėmimą dar papildyti hosted. Pokalbio atnaujinimas yra5s poll su hidden pause/backoff; WebSocket hibernation dar neįdiegta. Meta ikona savininko įkelta ir agento Save Changes patvirtinta, screenshot meta-icon-saved.png. Cloudflare401 išspręstas oficialiu Wrangler4.92 whoami token refresh; trial before lease2292c0bd gautas, jokios deployed mutacijos šiame checkpointe.
+
+### 2026-10-11 hosted checkpoint
+
+Trial5d2173cb-fff3-4902-83b9-021b56f61889 su IMAGES/COMMUNITY, canonical776ac16c-c67b-41bb-8630-3145509fe57c su COMMUNITYdisabled ir FBlogin disabled/callback configured. Runtime d539271. [RECEIPT.md](RECEIPT.md) ir JSON nurodo source/hash/native/public/live19/browser bei incidentus. Meta consent actualChrome atviras, savininkui konkretus ContinueasChristian leidimas pateiktas, dar negautas. CheckboxF0–F5 reiškia configured/native įgyvendinimą, ne publicFacebookOAuth. C0–C2 patikros nurodytam ribotam trial ir5s polling; main bendruomenė dar neaktyvinta, WShibernation vėlesnė transporto plėtra. Grupės/events/conferences C3–C4 neįgyvendinti. Kelias bandymui /bandymo-paskyros → /bendruomene. Trial data protected QA/content/mail/expiry išsaugoti.

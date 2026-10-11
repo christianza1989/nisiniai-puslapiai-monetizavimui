@@ -28,7 +28,7 @@ if(phase==='build'){
  const release=await json(path.join(repo,'sites/madbeauty/cloudflare/output/content-release-receipt.json'));assert.equal(release.packageSha256,'e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953');assert.equal(release.approvedPages.length,129);
  let config,entry,plugins=[pinCore],mediaProof=[];
  if(kind==='main'){
-  config=await json(path.join(repo,'sites/madbeauty/cloudflare/wrangler.production.json'));entry=path.join(repo,'sites/madbeauty/cloudflare/worker.mjs');
+  config=await json(path.join(repo,'sites/madbeauty/cloudflare/wrangler.production.json'));config.vars=Object.fromEntries(baseline.bindings.filter(b=>b.type==='plain_text').map(b=>[b.name,b.text]));assert.equal(config.vars.APP_ORIGIN,'https://madbeauty.lt');assert.equal(config.vars.RELEASE_MODE,'production');const bindingNames=new Set(['PLATFORM','ORGANIZATION_STAGING','COMMUNITY','ASSETS','IMAGES','FACEBOOK_APP_SECRET']);assert.ok(baseline.bindings.every(b=>['plain_text','secret_text'].includes(b.type)||bindingNames.has(b.name)),'Unmodelled canonical binding');entry=path.join(repo,'sites/madbeauty/cloudflare/worker.mjs');
   await cp(path.join(repo,'sites/madbeauty/cloudflare/output/assets-release'),path.join(dir,'assets'),{recursive:true});
  }else{
   const vars=Object.fromEntries(baseline.bindings.filter(b=>b.type==='plain_text').map(b=>[b.name,b.text]));assert.equal(vars.TRIAL_EXPIRES_AT,'2026-10-16T21:10:47.982Z');

@@ -27,3 +27,9 @@ Ruff's initial unused/redefined fixture imports and one format-check failure wer
 ## Scope of acceptance
 
 Local PG plumbing/rights/source gate acceptance is PENDING final clean run below. Calibration, actual customer/model fit, canonical module admission/live activation, portal/BFF UI, target-PC adoption, operational migration/deployment, provider/live X actions and commercial demand remain UNVERIFIED/not performed. Fake-token usage does not establish real model cost or profit. No owner/customer secrets or raw model prose are included in this receipt.
+
+## Final frozen result — 2026-10-11 UTC / 2026-10-12 Europe/Vilnius
+
+Exact source d3aa5ab484c4d9995bb52877d26f5e1e7fcb6085, clean before both suites; the runtime is unchanged after them (post-B Git status was not separately captured before own documentation edits). A:25PASS/365.01s with actual Git/source checks and fake models only. B:25PASS/189.72s with unchanged root fixture/source adapters. All planned sets executed; Ruff and format PASS, both maintained APIs expose only strict GET receipt; Windows Europe/Vilnius IANA PASS. Exact-staged20files and full candidate3366files safety PASS;84file dependency-stack local-credential exclusion PASS. Sanitized commands/times/private artifact hashes in QA-PG-BRIDGE.json; original raw receipts remain ignored locally.
+
+Local isolated module plumbing/rights/source acceptance: PASS. No operational root source/DB/API, main merge, portal/BFF UI, actual calibration/model/provider or live X adoption was performed. Subsequent receipt/navigation/journal edits are documentation-only; their Git HEAD is a delivery version, not a claim that canonical profiles were admitted against that new HEAD. Re-admission/current-source QA on the target integration commit remains root adoption work.

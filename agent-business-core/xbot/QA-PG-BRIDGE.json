@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "source_sha": "d3aa5ab484c4d9995bb52877d26f5e1e7fcb6085",
+  "companion_sha": "5924a2eb858cf45e736bc5e79a2f07cfbbc39af2",
+  "postgres": "17",
+  "runtime_role": "NOSUPERUSER/NOBYPASSRLS",
+  "qa_scope": "own isolated PostgreSQL15439",
+  "sets": [
+    {
+      "id": "A",
+      "command": "uv run pytest tests/test_xbot_bridge.py -q --tb=short",
+      "git_verifier": "actual clean HEAD",
+      "model": "fake only",
+      "result": "PASS",
+      "cases": 25,
+      "seconds": 365.01,
+      "started": "2026-10-11T21:25:55.142Z",
+      "finished": "2026-10-11T21:32:09.397Z"
+    },
+    {
+      "id": "B",
+      "command": "uv run pytest tests/test_customer_agents.py -q --tb=short",
+      "git_verifier": "existing root fixture injection",
+      "model": "existing fake adapters",
+      "result": "PASS",
+      "cases": 25,
+      "seconds": 189.72,
+      "started": "2026-10-11T21:32:50.445Z",
+      "finished": "2026-10-11T21:36:07.967Z"
+    }
+  ],
+  "checks": {
+    "ruff": "PASS",
+    "format": "PASS",
+    "api_schema": "strict GET-only on maintained api/control_api",
+    "windows_iana": "Europe/Vilnius PASS",
+    "source_staged_safety": "20files PASS",
+    "full_candidate_safety": "3366files PASS",
+    "stack_credential_exclusion": "84files PASS"
+  },
+  "private_artifact_sha256": {
+    "frozen-1.log": "99442129c9a564881663689e427e8d61200d1c60f0041be76468eafebc87771c",
+    "root-agents-regression-1.log": "4abdaaca2c5ea8724fd0855aac45e9dade74229fd27c2d988c393d54d31a9450",
+    "source-staged-safety.json": "998ecb31607ac062bfb865f89d35d2c96de253968bf0823e24f9dadd0167d0cf",
+    "frozen-candidate-safety.json": "f91d864e370498abd147e86b98b62e960251f37136ceca2fc96bbdb46d628cd7",
+    "stack-secret-exclusion.json": "5f99de046c924c93b883cc180603d205c33e803bbe504ff053499093dd3ad1a5"
+  },
+  "not_performed": [
+    "actual new model/provider calls",
+    "customer calibration",
+    "canonical module admission",
+    "portal/BFF UI adoption",
+    "operational DB/API migration",
+    "main merge",
+    "live X activation"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Owned customers cannot see existing numeric competence receipts; ordinary test-runs projection omits all five measured dimensions",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evidence.py",
+    "Actual source453 six-case13knowncall cohort and dfb9bef correction3knowncalls retain private Scores while old safe test-runs contains only Quality outcome/count; no new scorer required",
+    "docs/CUSTOMER_AGENT_LAB.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evidence.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/score_evidence.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/contract.py",
+    "agent-business-core/runtime/offline_tests/test_customer_score_evidence.py",
+    "agent-business-core/runtime/tests/test_customer_score_evidence.py",
+    "docs/contracts/verslomatika-customer-agents.openapi.json",
+    "docs/CUSTOMER_AGENTS.md",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/AGENT-CALIBRATION-2026-10-11.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6113245380",
+  "rollback": "Scoped revert additive read-only score endpoint/DTO only; retain all original model judgments/history/accounting/FAIL and old test-runs contract",
+  "id": "upgrade-1008cda4-c49c-4cd4-a554-2eee0d040398",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "dfb9bef7979c89fd315446bd97cf048e96f4a769",
+  "createdAt": "2026-10-11T20:13:08.366Z"
+}

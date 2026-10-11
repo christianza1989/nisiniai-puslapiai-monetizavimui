@@ -855,6 +855,159 @@
           }
         ]
       }
+    },
+    "/customer/v2/creations/{creation_id}/agents/{agent_id}/score-evidence": {
+      "get": {
+        "summary": "Score Evidence",
+        "operationId": "listCustomerAgentScoreEvidence",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Agent Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "revision",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2147483647,
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Revision"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScoreEvidenceEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -940,6 +1093,114 @@
           "updated_at"
         ],
         "title": "Agent"
+      },
+      "CompetenceEvidence": {
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "not_requested",
+              "UNVERIFIED",
+              "competent",
+              "needs_review"
+            ],
+            "title": "State"
+          },
+          "contract": {
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "network-competence.v1"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contract"
+          },
+          "criterion_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Criterion Sha256"
+          },
+          "threshold": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "const": 4
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold"
+          },
+          "scores": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NumericScores"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "critical_issues_count": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Critical Issues Count"
+          },
+          "language_quality": {
+            "type": "string",
+            "const": "UNVERIFIED",
+            "title": "Language Quality"
+          },
+          "typed_checks": {
+            "type": "string",
+            "const": "UNVERIFIED",
+            "title": "Typed Checks"
+          },
+          "protected_comparison": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Protected Comparison"
+          },
+          "module_admission": {
+            "type": "string",
+            "const": "not_admitted",
+            "title": "Module Admission"
+          },
+          "activation": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Activation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "state",
+          "language_quality",
+          "typed_checks",
+          "protected_comparison",
+          "module_admission",
+          "activation"
+        ],
+        "title": "CompetenceEvidence"
       },
       "Config": {
         "properties": {
@@ -1298,6 +1559,50 @@
         ],
         "title": "ListingEnvelope"
       },
+      "NumericScores": {
+        "properties": {
+          "relevance": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 0.0,
+            "title": "Relevance"
+          },
+          "factual_accuracy": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 0.0,
+            "title": "Factual Accuracy"
+          },
+          "listening": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 0.0,
+            "title": "Listening"
+          },
+          "useful_next_step": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 0.0,
+            "title": "Useful Next Step"
+          },
+          "email_quality": {
+            "type": "integer",
+            "maximum": 5.0,
+            "minimum": 0.0,
+            "title": "Email Quality"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "relevance",
+          "factual_accuracy",
+          "listening",
+          "useful_next_step",
+          "email_quality"
+        ],
+        "title": "NumericScores"
+      },
       "PurposeCapability": {
         "properties": {
           "purpose": {
@@ -1642,6 +1947,255 @@
           "data"
         ],
         "title": "SavedEnvelope"
+      },
+      "ScoreEvidenceEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agents.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ScoreEvidenceRuns"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "ScoreEvidenceEnvelope"
+      },
+      "ScoreEvidenceRun": {
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversation Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "need_revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Need Revision"
+          },
+          "config_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Config Revision"
+          },
+          "config_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Config Sha256"
+          },
+          "current_configuration": {
+            "type": "boolean",
+            "title": "Current Configuration"
+          },
+          "profile_admission_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Profile Admission Id"
+          },
+          "profile_fingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Profile Fingerprint"
+          },
+          "profile_revoked": {
+            "type": "boolean",
+            "title": "Profile Revoked"
+          },
+          "execution_source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Execution Source Revision"
+          },
+          "execution_source_current": {
+            "type": "boolean",
+            "title": "Execution Source Current"
+          },
+          "script_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Script Sha256"
+          },
+          "customer_turns": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Customer Turns"
+          },
+          "succeeded_turns": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Succeeded Turns"
+          },
+          "script_complete": {
+            "type": "boolean",
+            "title": "Script Complete"
+          },
+          "events_truncated": {
+            "type": "boolean",
+            "title": "Events Truncated"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/TestUsage"
+          },
+          "quality": {
+            "$ref": "#/components/schemas/TestQuality"
+          },
+          "competence": {
+            "$ref": "#/components/schemas/CompetenceEvidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "conversation_id",
+          "created_at",
+          "need_revision",
+          "config_revision",
+          "config_sha256",
+          "current_configuration",
+          "profile_admission_id",
+          "profile_fingerprint",
+          "profile_revoked",
+          "execution_source_revision",
+          "execution_source_current",
+          "script_sha256",
+          "customer_turns",
+          "succeeded_turns",
+          "script_complete",
+          "events_truncated",
+          "usage",
+          "quality",
+          "competence"
+        ],
+        "title": "ScoreEvidenceRun"
+      },
+      "ScoreEvidenceRuns": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "agent_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Agent Id"
+          },
+          "revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Revision"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ScoreEvidenceRun"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "title": "Items"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "scope": {
+            "type": "string",
+            "const": "operator_local_task_calibration",
+            "title": "Scope"
+          },
+          "evidence_only": {
+            "type": "boolean",
+            "const": true,
+            "title": "Evidence Only"
+          },
+          "calibration_status": {
+            "type": "string",
+            "const": "UNVERIFIED",
+            "title": "Calibration Status"
+          },
+          "module_admission": {
+            "type": "string",
+            "const": "not_admitted",
+            "title": "Module Admission"
+          },
+          "activation": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Activation"
+          },
+          "provider_execution": {
+            "type": "boolean",
+            "const": false,
+            "title": "Provider Execution"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "agent_id",
+          "revision",
+          "items",
+          "has_more",
+          "scope",
+          "evidence_only",
+          "calibration_status",
+          "module_admission",
+          "activation",
+          "provider_execution"
+        ],
+        "title": "ScoreEvidenceRuns"
       },
       "Specification": {
         "properties": {

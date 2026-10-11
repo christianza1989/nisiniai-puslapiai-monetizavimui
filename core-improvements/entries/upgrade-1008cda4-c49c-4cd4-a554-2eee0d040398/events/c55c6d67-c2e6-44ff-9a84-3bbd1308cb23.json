@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Exact Git staging normalizes CRLF wire. Earlier worktree announcement15a370150a94a993ce3384a1e742b0153fc15fcec047d7b6ff5a78d2f52a6255/73890bytes retained; final immutable canonical Git-LF wire5e299d6b9b3f12c9fc9ec11f2af5f2de66e67e82360b10827d8cb0eba368c3b6/71169bytes, receipt57d8bbcc34e32801e024f109a913118a63212fb5691ab25ee3165f26c2054d2d. Parsed contract/current document and all old5paths/24components/security remain exact; runtime source/test bytes unchanged and final265offline/11newPG still valid. Only latest own source statements corrected before delivery, historical private/events unchanged. Extra trailing documentation blank removed. No provider/DB/channel/criterion/admission changes.",
+  "checks": [
+    {
+      "command": "normalize_score_wire_git.private.py + exact parsed canonical comparison",
+      "result": "PASS",
+      "evidence": "Git-LF5e299d6b/71169B/witness57d8bbcc; original private announcement retained, no semantic mutation"
+    }
+  ],
+  "eventId": "c55c6d67-c2e6-44ff-9a84-3bbd1308cb23",
+  "sequence": 5,
+  "at": "2026-10-11T20:35:34.374Z"
+}

@@ -23,6 +23,7 @@ def document():
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions"): "listCustomerAgentDraftRevisions",
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions/{revision}"): "getCustomerAgentDraftRevision",
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/test-runs"): "listCustomerAgentTestEvidence",
+        ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/score-evidence"): "listCustomerAgentScoreEvidence",
     }
     for path, methods in value["paths"].items():
         for method, operation in methods.items():

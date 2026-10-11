@@ -114,7 +114,7 @@ def settled_attempts(job, attempts, settled):
     return True
 
 
-async def item(tx, row, agent, config, registry):
+async def item(tx, row, agent, config, registry, *, scores=False):
     try:
         frozen = quality.retained(row)
         task = frozen.task_calibration
@@ -153,7 +153,7 @@ async def item(tx, row, agent, config, registry):
     artifacts = list(await tx.scalars(select(Artifact).where(Artifact.conversation_id == row.id,
         Artifact.business_id == row.business_id, Artifact.environment_id == row.environment_id, Artifact.kind == "quality").limit(2)))
     accounting = usage(events, truncated=truncated)
-    return {"conversation_id": row.id, "created_at": row.created_at, "need_revision": row.need_revision,
+    result = {"conversation_id": row.id, "created_at": row.created_at, "need_revision": row.need_revision,
         "config_revision": config.revision, "config_sha256": config.config_sha256,
         "current_configuration": config.revision == agent.current_revision,
         "profile_admission_id": admitted.id, "profile_fingerprint": admitted.fingerprint,
@@ -163,9 +163,13 @@ async def item(tx, row, agent, config, registry):
         "script_complete": complete, "events_truncated": truncated,
         "usage": accounting,
         "quality": judgment(row, frozen, events, jobs, artifacts, truncated)}
+    if scores:
+        from . import score_evidence
+        result["competence"] = score_evidence.projection(events, jobs, artifacts, result["quality"], truncated)
+    return result
 
 
-async def listing(token, creation_id, agent_id, *, revision=None, limit=20, cursor=None):
+async def listing(token, creation_id, agent_id, *, revision=None, limit=20, cursor=None, scores=False):
     agents.page_options(limit, cursor)
     if revision is not None and (type(revision) is not int or not 1 <= revision <= 2147483647):
         raise ControlError(400, "invalid_request")
@@ -188,17 +192,19 @@ async def listing(token, creation_id, agent_id, *, revision=None, limit=20, curs
             Conversation.payload["customer_text_binding"]["task_calibration"]["config_revision_id"].astext == config.id)
         expires = int(utcnow().timestamp()) + 300
         if cursor:
-            after, expires = open_cursor(cursor, session, scope_id, "customer-agents.test-runs")
+            after, expires = open_cursor(cursor, session, scope_id,
+                "customer-agents.score-evidence" if scores else "customer-agents.test-runs")
             anchor = await tx.scalar(statement.where(Conversation.id == after))
             if not anchor:
                 raise ControlError(409, "agent_cursor_unavailable")
             statement = statement.where(or_(Conversation.created_at < anchor.created_at,
                 (Conversation.created_at == anchor.created_at) & (Conversation.id < anchor.id)))
         rows = list(await tx.scalars(statement.order_by(Conversation.created_at.desc(), Conversation.id.desc()).limit(limit + 1)))
-        items = [await item(tx, row, agent, config, registry) for row in rows[:limit]]
+        items = [await item(tx, row, agent, config, registry, scores=scores) for row in rows[:limit]]
         return {"creation_id": creation.id, "agent_id": agent.id, "revision": revision, "items": items,
             "has_more": len(rows) > limit,
-            "next_cursor": agents.cursor_value(session, scope_id, "test-runs", rows[limit - 1].id, expires)
+            "next_cursor": agents.cursor_value(session, scope_id,
+                "score-evidence" if scores else "test-runs", rows[limit - 1].id, expires)
                 if len(rows) > limit else None, "scope": "operator_local_task_calibration",
             "evidence_only": True, "calibration_status": "UNVERIFIED", "module_admission": "not_admitted",
             "activation": "not_performed", "provider_execution": False}

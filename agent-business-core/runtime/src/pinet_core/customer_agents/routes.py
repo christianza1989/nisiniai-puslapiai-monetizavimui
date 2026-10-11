@@ -14,6 +14,7 @@ from .wire import (
     Revise,
     RevisionsEnvelope,
     SavedEnvelope,
+    ScoreEvidenceEnvelope,
     TestRunsEnvelope,
 )
 
@@ -74,3 +75,11 @@ async def test_runs(creation_id: str, agent_id: str, request: Request,
         cursor: str | None = Query(None, min_length=1, max_length=2048)):
     return envelope(request, await evidence.listing(token(request), creation_id, agent_id,
         revision=revision, limit=limit, cursor=cursor))
+
+
+@router.get("/{creation_id}/agents/{agent_id}/score-evidence", response_model=ScoreEvidenceEnvelope, response_model_exclude_none=True)
+async def score_evidence(creation_id: str, agent_id: str, request: Request,
+        revision: int | None = Query(None, ge=1, le=2147483647), limit: int = Query(20, ge=1, le=50),
+        cursor: str | None = Query(None, min_length=1, max_length=2048)):
+    return envelope(request, await evidence.listing(token(request), creation_id, agent_id,
+        revision=revision, limit=limit, cursor=cursor, scores=True))

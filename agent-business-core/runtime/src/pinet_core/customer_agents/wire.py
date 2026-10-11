@@ -228,6 +228,53 @@ class TestRunsEnvelope(Envelope):
     data: TestRuns
 
 
+Score = Annotated[int, Field(strict=True, ge=0, le=5)]
+
+
+class NumericScores(Strict):
+    relevance: Score
+    factual_accuracy: Score
+    listening: Score
+    useful_next_step: Score
+    email_quality: Score
+
+
+class CompetenceEvidence(Strict):
+    state: Literal["not_requested", "UNVERIFIED", "competent", "needs_review"]
+    contract: Literal["network-competence.v1"] | None = None
+    criterion_sha256: Digest | None = None
+    threshold: Literal[4] | None = None
+    scores: NumericScores | None = None
+    critical_issues_count: Count | None = None
+    language_quality: Literal["UNVERIFIED"]
+    typed_checks: Literal["UNVERIFIED"]
+    protected_comparison: Literal["not_performed"]
+    module_admission: Literal["not_admitted"]
+    activation: Literal["not_performed"]
+
+    @model_validator(mode="after")
+    def measured_fields(self):
+        values = (self.contract, self.criterion_sha256, self.threshold, self.scores, self.critical_issues_count)
+        if self.state in {"competent", "needs_review"}:
+            if any(value is None for value in values):
+                raise ValueError("measured_score_receipts_required")
+        elif any(value is not None for value in values):
+            raise ValueError("unverified_scores_not_exposed")
+        return self
+
+
+class ScoreEvidenceRun(TestRun):
+    competence: CompetenceEvidence
+
+
+class ScoreEvidenceRuns(TestRuns):
+    items: list[ScoreEvidenceRun] = Field(max_length=50)
+
+
+class ScoreEvidenceEnvelope(Envelope):
+    data: ScoreEvidenceRuns
+
+
 class ConfigEnvelope(Envelope):
     data: Config
 

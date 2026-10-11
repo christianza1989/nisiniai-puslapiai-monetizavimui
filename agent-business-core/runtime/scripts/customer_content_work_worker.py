@@ -7,6 +7,7 @@ from sqlalchemy import text
 
 from pinet_core.content_work import service
 from pinet_core.content_work.worker import execute_once, loop
+from pinet_core.creation import language_mode
 from pinet_core.creation.adapter import available
 from pinet_core.db import db
 
@@ -24,7 +25,7 @@ async def main(action):
                 "'control_content_work_candidates(varchar)','EXECUTE')")):
                 raise ValueError("content_work_schema_not_ready")
         print({"adapter": "codex-native-guide-team.v1", "provider_calls": 0, "rounds": 2, "calls": 6,
-               "maximum_seconds": 300, "approval": "not_performed"})
+               "maximum_seconds": 300, "approval": "not_performed", "language_review_mode": language_mode.mode()})
         if action == "once":
             await execute_once()
         elif action == "worker":

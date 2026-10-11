@@ -3,6 +3,7 @@ import hashlib
 import json
 from uuid import uuid4
 
+from ..creation import language_mode
 from ..creation.adapter import Trace, arguments, available
 from ..tasks.codex import child_environment
 from ..tasks.codex_transport import RunnerError, execute
@@ -14,7 +15,7 @@ ADAPTER = "codex-native-guide-team.v1"
 def instruction_hash(role, prepared):
     base = prepared["instructionHash"]
     return hashlib.sha256((ADAPTER + ":" + base + ":" +
-        (prepared["instructions"] if role == "creator" else review.policy(role))).encode()).hexdigest()
+        (language_mode.policy(prepared["instructions"]) if role == "creator" else review.policy(role))).encode()).hexdigest()
 
 
 async def run_role(context, authorized, *, role, seconds):
@@ -24,7 +25,7 @@ async def run_role(context, authorized, *, role, seconds):
     if context["expected_instruction_hash"] != expected:
         raise RunnerError("instructions_changed")
     if role == "creator":
-        prompt = prepared["instructions"] + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
+        prompt = language_mode.policy(prepared["instructions"]) + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
             "critic_feedback": context.get("critic_feedback"), "previous_candidate": context.get("previous_candidate")},
             ensure_ascii=False)
         schema = prepared["outputSchema"]

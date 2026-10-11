@@ -1,0 +1,40 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Owner explicitly pauses language correction and blocking during local development; persist honest UNVERIFIED language receipts across business and native GUIDE paths.",
+  "category": "workflow",
+  "evidence": [
+    "Direct user steering: kolkas atjungiam tos kalbos klaidu taisymus; later Gemini content writer requested, not yet integrated.",
+    "Actual d906 review_limit54charged/noaccepted; genuine language FAIL and full-reroll history preserved. Capacity source e7c7fe17 clean checkpoint does not suspend checks."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/.env.example",
+    "agent-business-core/runtime/src/pinet_core/creation/language_mode.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_mode.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/worker.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py",
+    "agent-business-core/runtime/scripts/customer_creation_worker.py",
+    "agent-business-core/runtime/scripts/customer_content_work_worker.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "agent-business-core/runtime/tests/test_content_work.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Restore PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true and clean source pin. Persisted paused-mode receipts remain UNVERIFIED and original failed/history/call accounting stays intact; never rewrite old fingerprints or claim language/public launch acceptance.",
+  "id": "upgrade-30501f80-b365-4085-b533-f4fd42b88db2",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "e7c7fe17a39f42c965a134c16b5621a335e4ee45",
+  "createdAt": "2026-10-10T23:45:36.865Z"
+}

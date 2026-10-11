@@ -6,7 +6,7 @@ from sqlalchemy import func, select, text
 from ..config import settings
 from ..control.routes import scope
 from ..models import new_id, utcnow
-from . import adapter, language_patch, renderer
+from . import adapter, language_mode, language_patch, renderer
 from .models import Attempt, Job, Revision, TeamEvent
 from .service import authority, binding, daily_limit_reached
 from .team_wire import AttemptView, EventData, TeamEventView, TeamView, TokenUsage
@@ -92,8 +92,9 @@ def observed_checks(draft):
     from .review import CHECK_KINDS, draft_sha256
     digest = draft_sha256(draft)
     try:
-        language = renderer.language_screening(draft)
-        status, summary = "PASS", "Automatinė patikra neaptiko akivaizdaus kalbų maišymosi; redakcinė kokybė vertinama atskirai."
+        language = language_mode.draft_observation(draft)
+        status, summary = ("UNVERIFIED", language_mode.PAUSED_SUMMARY) if language_mode.mode() == "paused_local_pilot" else (
+            "PASS", "Automatinė patikra neaptiko akivaizdaus kalbų maišymosi; redakcinė kokybė vertinama atskirai.")
     except adapter.RunnerError as error:
         if error.code != "language_quality_failed":
             raise
@@ -101,7 +102,7 @@ def observed_checks(draft):
         status, summary = "FAIL", "Automatinė patikra aptiko kalbų maišymąsi; tokia versija negali būti priimta."
     checks = [{"id": "r_" + kind, "draft_sha256": digest, "kind": kind,
                "status": status if kind == "language_quality" else "UNVERIFIED",
-               "observed": kind == "language_quality", "summary": summary if kind == "language_quality"
+               "observed": kind == "language_quality" and status != "UNVERIFIED", "summary": summary if kind == "language_quality"
                else "Šio etapo faktinė patikra dar neatlikta; agento teiginys jos nepatvirtina."} for kind in CHECK_KINDS]
     return checks, language
 
@@ -143,13 +144,14 @@ async def run(claimed, still_authorized, role_runner=None):
             value = normalize_role(value)
             if monotonic() >= deadline:
                 raise adapter.RunnerError("run_timeout")
-            payload = {"usage": usage_view(receipt), "web_search_count": receipt.get("web_search_count"),
+            payload = {"language_review_mode": language_mode.mode(), "usage": usage_view(receipt), "web_search_count": receipt.get("web_search_count"),
                        "cost_microusd": None}
             if role == "creator":
                 checks, _ = observed_checks(value)
                 payload.update(candidate_sha256=draft_sha256(value), checks=checks)
                 summary = ("Kūrėjas pateikė verslo pasiūlymą ir svetainės juodraštį. Toliau jį vertins kritikas."
-                    if checks[0]["status"] == "PASS" else "Kūrėjo versijoje aptiktas kalbų maišymasis; kritikas turės nurodyti pataisas.")
+                    if checks[0]["status"] == "PASS" else language_mode.PAUSED_SUMMARY
+                    if checks[0]["status"] == "UNVERIFIED" else "Kūrėjo versijoje aptiktas kalbų maišymasis; kritikas turės nurodyti pataisas.")
             else:
                 payload.update(candidate_sha256=value["draft_sha256"], decision=value.get("verdict", value.get("decision")))
                 summary = value["summary"]
@@ -222,9 +224,9 @@ async def run(claimed, still_authorized, role_runner=None):
         decision, _ = await call("coordinator", round_number, {**review_context, "critic": critic},
             lambda value: normalize_coordinator(value, draft=candidate, critic=critic, expected_stage="private_draft", expected_round=round_number, receipts=checks))
         if decision["decision"] == "accept_draft":
-            renderer.language_screening(candidate)  # A real hard gate cannot be overruled by any role.
+            language_mode.draft_observation(candidate)
             return candidate, {"adapter_revision": TEAM_ADAPTER, "model": "gpt-6-luna", "attempts": receipts,
-                "language_screening": language, "critic": critic, "coordinator": decision,
+                "language_screening": language, "language_review_mode": language_mode.mode(), "critic": critic, "coordinator": decision,
                 "instruction_hash": adapter.team_instruction_hash(), "deadline_monotonic": deadline,
                 "web_search_count": sum(r.get("web_search_count", 0) for r in receipts)}
         if decision["decision"] == "blocked":
@@ -250,7 +252,8 @@ async def projection(tx, creation):
         stage=by_attempt[e.attempt_id].stage, state=e.state, summary=e.summary, created_at=e.created_at, data=e.payload) for e in events]
     reviewed = bool(revision and any(str(e.job_id) == revision.job_id and e.role == "coordinator" and e.state == "succeeded"
         and e.data.decision == "accept_draft" and e.data.candidate_sha256 == revision.material_hash
-        and any(c.kind == "language_quality" and c.status == "PASS" and c.observed and c.draft_sha256 == revision.material_hash
+        and all(c.status != "FAIL" for c in e.data.checks)
+        and any(language_mode.receipt_satisfies(c.model_dump(), mode=e.data.language_review_mode, digest=revision.material_hash)
                 for c in e.data.checks) for e in timeline))
     return TeamView(creation_id=creation.id, status="needs_review" if creation.failure_code in NEEDS_REVIEW else creation.status,
         scope="private_business_and_website_draft", current_revision=creation.current_revision or None,

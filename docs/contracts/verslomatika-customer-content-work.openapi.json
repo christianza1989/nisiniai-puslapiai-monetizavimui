@@ -3,7 +3,7 @@
   "info": {
     "title": "Private native V2 GUIDE work",
     "version": "0.1.0",
-    "description": "Authenticated own current accepted creation revision and actual page planningBrief. Separate bounded native V2 GUIDE jobs, immutable exact candidate/critic/coordinator attempts and events; live job state, not an intake snapshot or live publication certificate. Two rounds, six actual calls and 300-second maximum including prepare/validate/apply; no automatic job retry. Same shared provider mutex and charged customer/global daily attempt budget including old creation attempts. Read-only fixed CLI roles cannot verify sources, media, approve or release; accepted text only writes a private canonical studio draft with current content/planning/site CAS. No raw trace/private filesystem path. source_verification/media_verification/approval remain not_performed and fullF1/launch UNVERIFIED. Legacy creation.v1/team.v1/content.v1 wire bytes unchanged."
+    "description": "Authenticated own current accepted creation revision and actual page planningBrief. Separate bounded native V2 GUIDE jobs, immutable exact candidate/critic/coordinator attempts and events; live job state, not an intake snapshot or live publication certificate. Two rounds, six actual calls and 300-second maximum including prepare/validate/apply; no automatic job retry. Same shared provider mutex and charged customer/global daily attempt budget including old creation attempts. Read-only fixed CLI roles cannot verify sources, media, approve or release; accepted text only writes a private canonical studio draft with current content/planning/site CAS. No raw trace/private filesystem path. source_verification/media_verification/approval remain not_performed and fullF1/launch UNVERIFIED. EventPayload.language_review_mode defaults to required for history. Explicit paused_local_pilot permits same-output language_quality UNVERIFIED/observed=false for private write only; all other FAIL, exact candidate/critic/coordinator identities and current native CAS remain enforced. No language certification. Legacy creation.v1/content.v1 wire bytes unchanged; team sidecar adds the same explicit mode."
   },
   "paths": {
     "/customer/v2/creations/{creation_id}/content-work": {
@@ -794,6 +794,15 @@
       "EventPayload": {
         "additionalProperties": false,
         "properties": {
+          "language_review_mode": {
+            "default": "required",
+            "enum": [
+              "required",
+              "paused_local_pilot"
+            ],
+            "title": "Language Review Mode",
+            "type": "string"
+          },
           "output_sha256": {
             "anyOf": [
               {

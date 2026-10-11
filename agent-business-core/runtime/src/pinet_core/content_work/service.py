@@ -6,6 +6,7 @@ from sqlalchemy import func, select, text
 from ..config import settings
 from ..control.models import Session, User
 from ..control.routes import ControlError
+from ..creation import language_mode
 from ..creation.models import Creation, Revision
 from ..creation.review import canonical_sha256
 from ..creation.service import ACTIVE, binding, current_actor, daily_limit_reached
@@ -131,7 +132,8 @@ async def _projection(tx, job):
                 or decisions[-1]["draft_sha256"] != result.get("outputHash")
                 or decisions[-1]["decision"] != "accept_draft"
                 or any(check["status"] == "FAIL" for check in candidates[-1]["checks"])
-                or not any(check["kind"] == "language_quality" and check["status"] == "PASS" and check["observed"]
+                or not any(language_mode.receipt_satisfies(check,
+                           mode=candidates[-1].get("language_review_mode", "required"), digest=result.get("outputHash"))
                            for check in candidates[-1]["checks"])):
             raise ControlError(503, "invalid_content_source")
         page = next((p for p in result.get("workflow", {}).get("pages", []) if p.get("pageId") == job.page_id), None)

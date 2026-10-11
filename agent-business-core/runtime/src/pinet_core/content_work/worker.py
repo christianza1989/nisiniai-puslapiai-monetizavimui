@@ -7,6 +7,7 @@ from sqlalchemy import func, select, text
 
 from ..config import settings
 from ..control.routes import ControlError, scope
+from ..creation import language_mode
 from ..creation.service import ACTIVE, binding
 from ..creation.team import usage_view
 from ..models import new_id, utcnow
@@ -151,7 +152,7 @@ async def run(claimed, role_runner, writer):
                 context["review"] = review.context(output, round_number, receipts, prepared, critic)
             try:
                 value, receipt = await role_runner(context, authorized, role=role, seconds=remaining(claimed))
-                payload = {"usage": usage_view(receipt), "trace_sha256": receipt.get("trace_sha256")}
+                payload = {"language_review_mode": language_mode.mode(), "usage": usage_view(receipt), "trace_sha256": receipt.get("trace_sha256")}
                 if role == "creator":
                     validated = await writer(claimed["target"], "validate", authorized,
                         seconds=remaining(claimed), prepared=prepared, output=value)
@@ -186,7 +187,7 @@ async def run(claimed, role_runner, writer):
         if repair_creator:
             continue
         if decision["decision"] == "accept_draft":
-            if receipts[0]["status"] != "PASS":
+            if not language_mode.receipt_satisfies(receipts[0], mode=language_mode.mode(), digest=review.shared.canonical_sha256(output)):
                 raise RunnerError("language_quality_failed")
             await apply(claimed, prepared, output, writer)
             return

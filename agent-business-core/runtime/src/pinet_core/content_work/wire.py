@@ -44,6 +44,7 @@ class AttemptView(Strict):
 
 
 class EventPayload(Strict):
+    language_review_mode: Literal["required", "paused_local_pilot"] = "required"
     output_sha256: Digest | None = None
     candidate: NativeOutput | None = None
     checks: list[EvidenceReceipt] | None = Field(default=None, min_length=9, max_length=9)

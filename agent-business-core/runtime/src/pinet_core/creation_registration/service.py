@@ -7,8 +7,8 @@ from sqlalchemy import select
 from ..config import settings
 from ..control.models import BusinessGrant
 from ..control.routes import ControlError
-from ..creation import studio, team
-from ..creation.models import Job, Revision
+from ..creation import language_mode, studio, team
+from ..creation.models import Job, Revision, TeamEvent
 from ..creation.service import ACTIVE, binding, current_actor, digest
 from ..customer.service import host
 from ..models import Business, utcnow
@@ -47,9 +47,19 @@ async def accepted_proof(tx, creation):
             and event["role"] == "coordinator" and event["state"] == "succeeded"
             and event["data"]["decision"] == "accept_draft"
             and event["data"]["candidate_sha256"] == revision.material_hash
-            and any(c["kind"] == "language_quality" and c["status"] == "PASS" and c["observed"]
-                    and c["draft_sha256"] == revision.material_hash for c in event["data"]["checks"])]
+            and all(c["status"] != "FAIL" for c in event["data"]["checks"])
+            and any(language_mode.receipt_satisfies(c,
+                    mode=event["data"].get("language_review_mode", "required"), digest=revision.material_hash)
+                    for c in event["data"]["checks"])]
         event = events[-1]
+        original_event = await tx.get(TeamEvent, event["event_id"])
+        if not original_event or original_event.job_id != job.id:
+            raise ValueError("Missing immutable coordinator")
+        # Previous proofs hashed the normalized sidecar data. Preserve every old
+        # default, omitting only the new mode when it was absent from stored history.
+        coordinator_data = dict(event["data"])
+        if "language_review_mode" not in original_event.payload:
+            coordinator_data.pop("language_review_mode", None)
         observed = await studio.projection(tx, creation)
         if observed["state"] != "private_draft_imported":
             raise ControlError(409, "private_intake_missing")
@@ -65,7 +75,7 @@ async def accepted_proof(tx, creation):
         return {"revision_id": revision.id, "accepted_revision": revision.sequence,
             "candidate_sha256": revision.material_hash, "accepted_source_revision": revision.source_revision,
             "site_id": identity, "canonical_host": creation.canonical_host,
-            "coordinator_event_id": event["event_id"], "coordinator_sha256": digest(event["data"]),
+            "coordinator_event_id": event["event_id"], "coordinator_sha256": digest(coordinator_data),
             "intake_sha256": digest(intake), "intake_request_sha256": intake["requestHash"],
             "intake_importer_sha256": intake["importerHash"], "intake_site_file_sha256": intake["siteFileHash"]}
     except (ValueError, TypeError, KeyError, AttributeError, IndexError):

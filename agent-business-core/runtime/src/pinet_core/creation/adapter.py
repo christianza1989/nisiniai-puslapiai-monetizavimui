@@ -10,7 +10,7 @@ from ..tasks.codex import arguments as consult_arguments
 from ..tasks.codex import check_trace_event, child_environment
 from ..tasks.codex import parse_trace as consult_trace
 from ..tasks.codex_transport import RunnerError, execute
-from . import language_patch
+from . import language_mode, language_patch
 from .renderer import CreatorDraft, normalize, normalize_creator, structural_repair_context
 
 ROOT = Path(__file__).resolve().parents[5]
@@ -101,7 +101,9 @@ def instructions(*, structure_repair=False, language_repair=False):
     if structure_repair and language_repair:
         raise RunnerError("review_invalid")
     if language_repair:
-        return language_patch.instructions()
+        value, _ = language_patch.instructions()
+        value = language_mode.policy(value)
+        return value, hashlib.sha256(value.encode()).hexdigest()
     fragments = [POLICY]
     if structure_repair:
         fragments.append("This is the final bounded structural correction round of the SAME private task. "
@@ -122,7 +124,7 @@ def instructions(*, structure_repair=False, language_repair=False):
         if not raw.strip() or len(raw) > 40000:
             raise RunnerError("instructions_unavailable")
         fragments.append(relative + "\n" + content)
-    value = "\n\n".join(fragments)
+    value = language_mode.policy("\n\n".join(fragments))
     return value, hashlib.sha256(value.encode()).hexdigest()
 
 

@@ -8,7 +8,8 @@ from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from ..tasks.codex_transport import RunnerError
-from .renderer import Draft, screen_language
+from . import language_mode
+from .renderer import Draft
 
 Stage = Literal[
     "private_draft", "discovery", "research", "business", "drafting", "content_plan", "content", "design",
@@ -254,7 +255,7 @@ def _normalize_critic(value, draft, stage, round_number, receipts):
         raise ValueError("A known failed observation prevents draft acceptance")
     names = [draft["business_name"], *[item["title"] for item in draft["research"]],
              *[item["tool"] for item in draft["tools"]]]
-    screen_language([report.summary, *[text for item in report.findings
+    language_mode.screen([report.summary, *[text for item in report.findings
                     for text in (item.explanation, item.correction)],
                      *[item.summary for item in report.checks]], names=names)
     return report
@@ -286,7 +287,7 @@ def normalize_coordinator(value, *, draft, critic, expected_stage, expected_roun
         validated = Draft.model_validate(draft)
         names = [validated.business_name, *[item.title for item in validated.research],
                  *[item.tool for item in validated.tools]]
-        screen_language([decision.summary, *decision.next_actions], names=names)
+        language_mode.screen([decision.summary, *decision.next_actions], names=names)
         return decision.model_dump(mode="json")
     except (ValueError, TypeError, KeyError, IndexError):
         raise RunnerError("review_invalid") from None
@@ -390,6 +391,8 @@ def coordinator_actions(verified_critic):
         "demand": "Atskirai vertinti tikras tinkamas klientų užklausas ir vykdymo ekonomiką.",
     }
     choices = [finding.correction for finding in review.findings if finding.severity != "suggestion"]
+    if language_mode.mode() == "paused_local_pilot":
+        actions["language_quality"] = "Kalbos kokybę patikrinti vėliau; bandomajame etape jos taisymas laikinai išjungtas."
     choices.extend(actions[check.kind] for check in review.checks if check.status in ("FAIL", "UNVERIFIED"))
     return list(dict.fromkeys(choices)) or ["Tęsti faktines patikras prieš rengiant viešą leidimą."]
 
@@ -398,12 +401,12 @@ def role_instruction_hash(role):
     policies = {"critic": CRITIC_POLICY, "coordinator": COORDINATOR_POLICY}
     if role not in policies:
         raise RunnerError("review_invalid")
-    return hashlib.sha256(policies[role].encode("utf-8")).hexdigest()
+    return hashlib.sha256(language_mode.policy(policies[role]).encode("utf-8")).hexdigest()
 
 
 def business_role_instruction_hash(role):
     if role == "critic":
-        return hashlib.sha256(BUSINESS_CRITIC_POLICY.encode("utf-8")).hexdigest()
+        return hashlib.sha256(language_mode.policy(BUSINESS_CRITIC_POLICY).encode("utf-8")).hexdigest()
     return role_instruction_hash(role)
 
 
@@ -427,7 +430,7 @@ def _review_projection(normalized):
             return [project(child, pointer + "/" + str(i), prose) for i, child in enumerate(item)]
         if prose and isinstance(item, str):
             try:
-                screen_language([item], names)
+                language_mode.screen([item], names)
             except RunnerError as error:
                 if error.code != "language_quality_failed":
                     raise
@@ -466,7 +469,8 @@ def critic_prompt(*, draft, stage, round_number, receipts=()):
         context["finding_reference_table"] = [
             {"index": index, "reference": reference}
             for index, reference in enumerate(context.pop("allowed_finding_refs"))]
-        return BUSINESS_CRITIC_POLICY + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
+        context["language_review_mode"] = language_mode.mode()
+        return language_mode.policy(BUSINESS_CRITIC_POLICY) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
     except (ValueError, TypeError, KeyError, IndexError):
         raise RunnerError("review_invalid") from None
 
@@ -477,7 +481,8 @@ def coordinator_prompt(*, draft, critic, stage, round_number, receipts=()):
         review = _normalize_critic(critic, draft, stage, round_number, receipts).model_dump(mode="json")
         context.update(critic=review, critic_sha256=canonical_sha256(review),
                        allowed_next_actions=coordinator_actions(review))
-        return COORDINATOR_POLICY + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
+        context["language_review_mode"] = language_mode.mode()
+        return language_mode.policy(COORDINATOR_POLICY) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
     except (ValueError, TypeError, KeyError, IndexError):
         raise RunnerError("review_invalid") from None
 
@@ -503,6 +508,7 @@ def output_schema(role, context):
     bound = _prompt_context(context["draft"], context["stage"], context["round_number"], context["receipts"])
     schema = BusinessCriticOutput.model_json_schema() if role == "critic" else model_output_schema(role)
     if role == "critic":
+        language_mode.constrain_findings(schema, "BusinessFinding")
         finding = schema["$defs"]["BusinessFinding"]["properties"]
         finding["evidence_ref_indices"]["items"]["maximum"] = len(bound["allowed_finding_refs"]) - 1
     elif role == "coordinator":

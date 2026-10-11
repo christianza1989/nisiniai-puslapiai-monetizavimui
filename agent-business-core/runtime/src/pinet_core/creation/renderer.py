@@ -292,6 +292,7 @@ def structural_repair_context(value):
 
 
 def _context_projection(draft):
+    from . import language_mode
     names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
     omitted = []
 
@@ -314,7 +315,7 @@ def _context_projection(draft):
             if (".source_queries[" in path or path.endswith((".business_name", ".title", ".tool", ".path", ".url", ".accent", ".composition", ".phase", ".layout"))):
                 return item
             try:
-                screen_language([item], names)
+                language_mode.screen([item], names)
             except RunnerError:
                 omitted.append(path)
                 return None

@@ -5,6 +5,7 @@ from uuid import UUID
 
 from pydantic import Field, model_validator
 
+from .language_mode import LanguageReviewMode
 from .wire import Strict
 
 Role = Literal["creator", "critic", "coordinator"]
@@ -37,6 +38,7 @@ class TokenUsage(Strict):
 
 
 class EventData(Strict):
+    language_review_mode: LanguageReviewMode = "required"
     candidate_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     critic_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     decision: Literal["accept_draft", "revise", "blocked"] | None = None

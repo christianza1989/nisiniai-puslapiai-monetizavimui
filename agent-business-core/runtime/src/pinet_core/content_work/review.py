@@ -4,8 +4,9 @@ import re
 
 from pydantic import TypeAdapter
 
+from ..creation import language_mode
 from ..creation import review as shared
-from ..creation.renderer import screen_language
+from ..creation.language_mode import screen as screen_language
 from ..tasks.codex_transport import RunnerError
 from .wire import NativeOutput
 
@@ -85,15 +86,16 @@ def observations(output):
     _, _, _, prose = projection(output)
     try:
         screen_language(prose)
-        language = "PASS"
+        language = "UNVERIFIED" if language_mode.mode() == "paused_local_pilot" else "PASS"
     except RunnerError as error:
         if error.code != "language_quality_failed":
             raise
         language = "FAIL"
     return [{"id": "r_" + kind, "draft_sha256": digest, "kind": kind,
         "status": language if kind == "language_quality" else "UNVERIFIED",
-        "observed": kind == "language_quality",
-        "summary": ("Automatinė viso gido teksto kalbos patikra; prasminę kokybę vertina kritikas."
+        "observed": kind == "language_quality" and language != "UNVERIFIED",
+        "summary": ((language_mode.PAUSED_SUMMARY if language == "UNVERIFIED" else
+                     "Automatinė viso gido teksto kalbos patikra; prasminę kokybę vertina kritikas.")
                     if kind == "language_quality" else "Šios gido versijos faktinė patikra dar neatlikta.")}
         for kind in shared.CHECK_KINDS]
 
@@ -150,6 +152,7 @@ def context(output, round_number, receipts, prepared, critic_value=None):
     observed = shared._receipts(receipts, digest)
     projected, references, omitted, _ = projection(output)
     value = {"draft": projected, "draft_sha256": digest, "original_draft_sha256": digest,
+        "language_review_mode": language_mode.mode(),
         "stage": "content", "round_number": round_number,
         "context_projection": {"scope": "partial_model_input", "original_preserved": True, "omitted_fields": omitted},
         "allowed_finding_refs": [*references, *["receipt:" + key for key in observed]],
@@ -163,12 +166,13 @@ def context(output, round_number, receipts, prepared, critic_value=None):
 
 
 def policy(role):
-    return {"critic": shared.CRITIC_POLICY, "coordinator": shared.COORDINATOR_POLICY}[role] + "\n" + POLICY
+    return language_mode.policy({"critic": shared.CRITIC_POLICY, "coordinator": shared.COORDINATOR_POLICY}[role] + "\n" + POLICY)
 
 
 def output_schema(role, value):
     if role == "critic":
         schema = shared.model_output_schema("critic")
+        language_mode.constrain_findings(schema, "Finding")
         schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = value["allowed_finding_refs"]
     else:
         schema = shared.model_output_schema("coordinator")

@@ -18,7 +18,11 @@ def contract():
         "No raw reasoning/trace; exact candidate-bound review and observed check receipts. "
         "Two rounds/six calls/overall deadline per job, each call charged before dispatch. "
         "draft_ready is private reviewed draft only; fullF1 and launch remain UNVERIFIED. "
-        "needs_review is a sidecar projection; existing creation.v1 remains unchanged.")
+        "needs_review is a sidecar projection; existing creation.v1 remains unchanged. "
+        "EventData.language_review_mode defaults to required for historical events. Only explicit paused_local_pilot "
+        "with same-candidate language_quality UNVERIFIED/observed=false may satisfy private acceptance instead of "
+        "observed language PASS. No check may be FAIL. This is no language/public editorial certification; "
+        "private coordinator decision and original source/instruction identity remain required.")
     return value
 
 

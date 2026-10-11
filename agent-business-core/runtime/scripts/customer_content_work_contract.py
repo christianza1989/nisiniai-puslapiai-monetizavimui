@@ -46,7 +46,10 @@ def contract():
         "roles cannot verify sources, media, approve or release; accepted text only writes a private canonical "
         "studio draft with current content/planning/site CAS. No raw trace/private filesystem path. "
         "source_verification/media_verification/approval remain not_performed and fullF1/launch UNVERIFIED. "
-        "Legacy creation.v1/team.v1/content.v1 wire bytes unchanged.")
+        "EventPayload.language_review_mode defaults to required for history. Explicit paused_local_pilot permits "
+        "same-output language_quality UNVERIFIED/observed=false for private write only; all other FAIL, exact "
+        "candidate/critic/coordinator identities and current native CAS remain enforced. No language certification. "
+        "Legacy creation.v1/content.v1 wire bytes unchanged; team sidecar adds the same explicit mode.")
     for key, schema in schemas.items():
         if key.endswith("Envelope"):
             schema["properties"]["source_revision"]["pattern"] = "^[a-f0-9]{40}$"

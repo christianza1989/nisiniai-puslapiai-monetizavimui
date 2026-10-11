@@ -73,6 +73,32 @@ async def team_read(c, auth, cid):
     return response.json()["data"]
 
 
+async def test_paused_language_accepts_private_candidate_and_persists_explicit_mode(creation, monkeypatch):
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
+    _, auth, me = await verified(creation)
+    row, _ = await start(creation, auth, me)
+    calls = []
+    assert await worker.execute_once(role_runner=runner(calls, first_bad=True))
+    view = await team_read(creation, auth, row["creation_id"])
+    assert calls == ["creator", "critic", "coordinator"]
+    assert view["status"] == "draft_ready" and view["current_revision"] == 1
+    assert view["accepted_candidate_sha256"] == view["events"][-1]["data"]["candidate_sha256"]
+    for event in view["events"]:
+        if event["state"] == "succeeded":
+            assert event["data"]["language_review_mode"] == "paused_local_pilot"
+            language = event["data"]["checks"][0]
+            assert language["kind"] == "language_quality" and language["status"] == "UNVERIFIED"
+            assert language["observed"] is False
+    async with scope(user=me["user_id"]) as tx:
+        revision = await tx.scalar(select(Revision).where(Revision.creation_id == row["creation_id"]))
+        job = await tx.scalar(select(Job).where(Job.creation_id == row["creation_id"]))
+        assert revision.payload["assistant_reply"].startswith("Ennen julkistamista")
+        assert job.usage["language_screening"]["status"] == "UNVERIFIED"
+    # A later re-enabled process must read the historical exception without changing it into PASS.
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", True)
+    assert await team_read(creation, auth, row["creation_id"]) == view
+
+
 @pytest.mark.parametrize("first_bad,expected_calls", [(False, 3), (True, 6)])
 async def test_actual_role_receipts_and_language_correction_accept_exact_candidate(creation, first_bad, expected_calls):
     c = creation

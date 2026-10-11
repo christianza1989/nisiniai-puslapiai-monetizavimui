@@ -120,7 +120,9 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None):
             from .team import run
             result, receipt = await run(claimed, authorized, role_runner)
         result = renderer.normalize(result)
-        receipt["language_screening"] = renderer.language_screening(result)
+        from . import language_mode
+        receipt["language_screening"] = language_mode.draft_observation(result)
+        receipt["language_review_mode"] = language_mode.mode()
         if intake_runner or runner is None and role_runner is None:
             from .studio import import_draft
             from .team import monotonic
@@ -164,7 +166,9 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None):
             await fail(tx, creation, job, failure)
             return True
         creation.stage = "validation"
-        await event(tx, creation, job, "Patikrinta juodraščio struktūra ir kalbų maišymasis; ruošiami peržiūros failai. Pilnas redakcinis priėmimas dar neatliktas.")
+        await event(tx, creation, job, ("Patikrinta juodraščio struktūra; kalbos patikra laikinai išjungta. Ruošiami peržiūros failai."
+            if receipt.get("language_review_mode") == "paused_local_pilot" else
+            "Patikrinta juodraščio struktūra ir kalbų maišymasis; ruošiami peržiūros failai. Pilnas redakcinis priėmimas dar neatliktas."))
         sequence = creation.current_revision + 1
         revision = Revision(id=new_id(), creation_id=creation.id, job_id=job.id, sequence=sequence, payload=result,
             material_hash=digest(result), source_revision=job.source_revision, **binding(creation))

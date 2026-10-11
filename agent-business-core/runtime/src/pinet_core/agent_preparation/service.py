@@ -100,7 +100,7 @@ def checks_for(*, creation, revision, team_review, intake, mapping, runtime, now
     add("accepted_revision", "PASS" if accepted and not busy else "FAIL", "current_database",
         "accepted_revision_current" if accepted and not busy else "creation_revision_pending" if busy
         else "private_revision_unreviewed" if exists else "accepted_revision_missing",
-        "AI komanda priėmė tikslų dabartinį privatų juodraštį su faktine kalbos patikra."
+        "AI komanda priėmė tikslų dabartinį privatų juodraštį; kalbos tikrinimo būsena išsaugota komandos kvite."
         if accepted and not busy else "Dabartinis privatus juodraštis dar neturi užbaigto tikslaus AI komandos priėmimo.")
     if exists:
         same = revision.source_revision == settings().control_source_revision

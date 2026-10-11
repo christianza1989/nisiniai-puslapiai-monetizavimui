@@ -6,6 +6,7 @@ from control_portable import preflight, source_check
 from sqlalchemy import text
 
 from pinet_core.config import settings
+from pinet_core.creation import language_mode
 from pinet_core.creation.adapter import available, role_model, team_instruction_hash
 from pinet_core.creation.team import review_schema_ready
 from pinet_core.creation.worker import execute_once, loop
@@ -36,7 +37,7 @@ async def main(action):
         print({"source_revision": cfg.control_source_revision, "instruction_hash": digest, "model": "gpt-6-luna",
                "role_models": {role: role_model(role) for role in ("creator", "critic", "coordinator")},
                "web_search_enabled": cfg.creation_web_search_enabled, "global_daily_limit": cfg.creation_global_daily_limit,
-               "provider_calls": 0, "mode": "local"})
+               "provider_calls": 0, "mode": "local", "language_review_mode": language_mode.mode()})
         if action == "once":
             await execute_once()
         elif action == "worker":

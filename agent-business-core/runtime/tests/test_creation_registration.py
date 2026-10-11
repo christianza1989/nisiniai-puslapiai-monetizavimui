@@ -15,8 +15,8 @@ from test_customer_public import customers, logged, verified  # noqa: F401
 from pinet_core.config import settings
 from pinet_core.control.models import BusinessGrant, Membership, Session, User
 from pinet_core.control.routes import ControlError, scope, token_hash
-from pinet_core.creation import studio, worker
-from pinet_core.creation.models import Attempt, Job, Revision
+from pinet_core.creation import studio, team, worker
+from pinet_core.creation.models import Attempt, Job, Revision, TeamEvent
 from pinet_core.creation_registration import admin, service
 from pinet_core.creation_registration.models import Registration
 from pinet_core.customer.models import Account
@@ -107,8 +107,10 @@ async def test_missing_registration_is_private_readonly_and_bounded(registration
     assert await counts(c) == before
 
 
-async def test_exact_provision_new_session_replay_preserves_history_and_all_activation_gates(registration, monkeypatch):
+@pytest.mark.parametrize("paused_language", [False, True])
+async def test_exact_provision_new_session_replay_preserves_history_and_all_activation_gates(registration, monkeypatch, paused_language):
     c = registration
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", not paused_language)
     request, value, auth, me = await accepted(c)
     before = await counts(c)
     # Referenced accepted source is immutable historical identity, not the new running code SHA.
@@ -141,6 +143,39 @@ async def test_exact_provision_new_session_replay_preserves_history_and_all_acti
         assert await tx.scalar(select(KnowledgeState.id).where(KnowledgeState.business_id == first["business_id"])) is None
         assert await tx.scalar(select(BusinessPolicy.id).where(BusinessPolicy.business_id == first["business_id"])) is None
     assert await counts(c) == after
+
+
+async def test_historical_absent_mode_keeps_original_normalized_coordinator_proof(registration, monkeypatch):
+    current_event_data = team.EventData
+    class HistoricalEventData(team.EventData):
+        def model_dump(self, *args, **kwargs):
+            value = super().model_dump(*args, **kwargs)
+            value.pop("language_review_mode", None)
+            value.pop("findings", None)
+            value.pop("failure_code", None)
+            return value
+
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", True)
+    monkeypatch.setattr(team, "EventData", HistoricalEventData)
+    request, _, auth, me = await accepted(registration)
+    async with scope(user=me["user_id"]) as tx:
+        event = await tx.scalar(select(TeamEvent).where(TeamEvent.creation_id == request["creation_id"],
+            TeamEvent.state == "succeeded").order_by(TeamEvent.sequence.desc()))
+        assert "language_review_mode" not in event.payload
+        # Exactly the previous normalized EventData fields, before the new additive key.
+        normalized = current_event_data.model_validate(event.payload).model_dump(mode="json")
+        normalized.pop("language_review_mode")
+        original_hash = service.digest(normalized)
+        assert original_hash != service.digest(event.payload)
+    first = await provision(registration, request)
+    async with AsyncSession(registration["admin"]) as tx:
+        saved = await tx.get(Registration, first["registration_id"])
+        assert saved.coordinator_sha256 == original_hash
+        fingerprint = saved.fingerprint
+    assert (await read(registration, request, auth)).json()["data"]["binding_current"]
+    assert (await provision(registration, request))["replayed"]
+    async with AsyncSession(registration["admin"]) as tx:
+        assert (await tx.get(Registration, first["registration_id"])).fingerprint == fingerprint
 
 
 @pytest.mark.parametrize("changes", [{"accepted_revision": 2}, {"candidate_sha256": "f" * 64},

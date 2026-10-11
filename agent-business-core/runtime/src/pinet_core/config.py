@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     creation_runner_seconds: int = 180
     creation_workspace: str = ""
     creation_web_search_enabled: bool = False
+    creation_language_review_enabled: bool = True
     chat_enabled: bool = False
     chat_operator_user_id: str = ""
     chat_daily_limit: int = 20

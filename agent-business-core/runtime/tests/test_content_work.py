@@ -113,6 +113,42 @@ def roles(revise_first=False):
     return role
 
 
+async def test_paused_language_native_write_and_live_projection_remain_honest(creation, monkeypatch):
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
+    f = await prepared(creation)
+    response, _ = await enqueue(creation, f)
+    assert response.status_code == 202
+    jid = response.json()["data"]["job_id"]
+    base = roles()
+    foreign = "Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto."
+    calls = []
+
+    async def paused_role(context, authorized, *, role, seconds):
+        calls.append(role)
+        value, receipt = await base(context, authorized, role=role, seconds=seconds)
+        if role == "creator":
+            value["body"][0]["content"][0]["text"] = foreign
+        return value, receipt
+
+    assert await worker.execute_once(role_runner=paused_role)
+    assert calls == ["creator", "critic", "coordinator"]
+    read = await creation["client"].get(f["path"] + "/" + jid, headers=f["auth"])
+    assert read.status_code == 200, read.text
+    value = read.json()["data"]
+    assert value["status"] == "succeeded" and value["approval"] == "not_performed"
+    event = next(e for e in value["events"] if e["data"].get("candidate"))
+    assert event["data"]["language_review_mode"] == "paused_local_pilot"
+    assert event["data"]["checks"][0]["status"] == "UNVERIFIED"
+    assert event["data"]["checks"][0]["observed"] is False
+    site = json.loads(f["site_file"].read_bytes())
+    page = next(p for p in site["pages"] if p["id"] == f["page_id"])
+    assert page["body"][0]["content"][0]["text"] == foreign
+    assert page["approval"] is None and page["publishedRevision"] is None
+    monkeypatch.setattr(settings(), "creation_language_review_enabled", True)
+    reread = await creation["client"].get(f["path"] + "/" + jid, headers=f["auth"])
+    assert reread.status_code == 200 and reread.json()["data"] == value
+
+
 @pytest.mark.parametrize("daily_limits", [(10, 20), (0, 0), (100, 1000)])
 async def test_actual_native_guide_two_rounds_live_projection_and_immutable_history(creation, monkeypatch, daily_limits):
     c = creation

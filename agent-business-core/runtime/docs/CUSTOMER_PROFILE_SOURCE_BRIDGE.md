@@ -12,6 +12,20 @@ V2 paketo SHA, siteId ir canonicalHost turi tiksliai sutapti su priimta vietinio
 
 ## Aiškios operacijos
 
+Kai operatorius aiškiai priima ir dabartinį V2 šaltinį, ir agento profilį, naudoti bendrą atominę komandą:
+
+```powershell
+.venv/Scripts/python.exe scripts/customer_agent_prepare.py --input artifacts/customer-agent-prepare.private.json --receipt artifacts/customer-agent-prepared.private.json
+```
+
+Įvestis turi visus žemiau aprašytos source sync tapatybės laukus, privalomą strict boolean `admit_source=true` ir tikslų `execution_source_revision`. Komanda pati perduoda gautą `knowledge_ref` ir registracijos ID į bendrą Profile admission; nereikia kopijuoti jų tarp dviejų atskirų įvesčių. Privati įvestis ribojama4096B, o kvitas ir statuso failas turi būti nauji. Aktuali švari vykdymo kopija ir jos pin tikrinami prieš operaciją, po projekcijos/perkėlimo ir po profilio priėmimo. Vietinis privilegijuotas vaidmuo, galiojanti dabartinio savininko sesija, Registration/Grant/accepted proof ir tikslus patvirtintas public preview vis tiek tikrinami esamais helpers.
+
+Visas source/index/Profile priėmimas vyksta vienoje DB transakcijoje. Profilio, šaltinio arba parengto kvito klaida prieš commit atšaukia visus šios operacijos pakeitimus; ankstesnė istorija išlieka. Nekintamas `prepared` kvitas išsaugomas prieš commit, atskiras `.status.json` gauna `committed` ir jo SHA256 po commit. Nepavykus committed žymai būtina tikrinti faktinį DB ir parengtą kvitą; automatinio kartojimo nėra. Kvite lieka tikri Profile ir index fingerprint, terminali stdout suvestinė nerodo tapatybių, šaltinio tekstų ar sesijų.
+
+Tai aiškus vietinio operatoriaus veiksmas. Kliento GET, login, istorijos pasirinkimas ar agento modelis jo nekviečia; komanda nekeičia TTL, neaktyvuoja sesijos, provider, SMTP, balso ar acquisition. Pasibaigus šaltiniui reikia naujo sąmoningo paruošimo su faktine dabartine projekcija. Abu žemiau esantys atskiri source/Profile įrankiai išlieka tinkami jų siaurai operacijai.
+
+Git patikra ir kvito fsync neužšaldo laikrodžio. Po paskutinės Git patikros ir po abiejų prepared įrašų, prieš transakcijos commit, kartojama canonical exact Profile admission patikra. Ji pakartotinai tikrina dabartinę sesiją, Registration/Grant ir tikslų source/index receipt/TTL, privalo grąžinti tą patį admission ID ir fingerprint, neįrašo antro priėmimo ir neperrašo kvito. Jei galiojimas pasibaigė, DB transakcija atšaukiama; likęs prepared kvitas be committed žymos nėra sėkmės įrodymas.
+
 `scripts/customer_knowledge_sync.py` įvestis turi esamo `creation_registration.wire.Provision` tapatybę: creation_id, accepted_revision, candidate_sha256, accepted_source_revision, authorizing_session_id. Papildomi laukai: public_core, public_source_revision, sandbox, package_sha256 ir neprivalomas griežtas boolean admit_source (numatyta false).
 
 ```powershell

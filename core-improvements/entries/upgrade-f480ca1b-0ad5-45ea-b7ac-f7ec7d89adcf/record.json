@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Maintained operator source transfer and Profile admission are separate commits and require manual exact knowledge-ref copying; a rejected Profile may leave the newly refreshed source admitted.",
+  "category": "code",
+  "evidence": [
+    "Source32c42cb customer_knowledge_sync.py commits source/index separately; customer_profile_admin.py then admits Profile in another transaction. Actual old expired Profile capability409 is preserved and remains correct; this upgrade addresses explicit operator orchestration, not expiry semantics."
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/customer_agent_prepare.py",
+    "agent-business-core/runtime/tests/test_customer_agent_prepare.py",
+    "agent-business-core/runtime/docs/CUSTOMER_PROFILE_SOURCE_BRIDGE.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6107637058",
+  "rollback": "Scoped revert new explicit atomic CLI/tests/docs only, preserve original separate source/Profile APIs and all old operational rows/receipts/fingerprints; no migration.",
+  "id": "upgrade-f480ca1b-0ad5-45ea-b7ac-f7ec7d89adcf",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "32c42cb04a6a2f0ce61958421f90b50ad3a78216",
+  "createdAt": "2026-10-11T09:35:17.890Z"
+}

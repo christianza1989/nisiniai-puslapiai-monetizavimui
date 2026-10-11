@@ -1,8 +1,103 @@
 {
   "schemaVersion": 1,
-  "at": "2026-10-11T01:32:16.309Z",
+  "at": "2026-10-11T01:39:21.398Z",
   "state": "C0_C2_TRIAL_HOSTED_ACCEPTED_FACEBOOK_OWNER_CONSENT_PENDING",
   "editions": {
+    "main": {
+      "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+      "version": "09f767e9-9bba-4ddb-96bc-3feaac299535",
+      "artifactSha256": "189e8c2b297ca001eadded8731a813c8e2671325320dba6c1697f67a9058c20d",
+      "previousVersion": "776ac16c-c67b-41bb-8630-3145509fe57c",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": false,
+      "facebookEnabled": false,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+        },
+        {
+          "name": "ORGANIZATION_STAGING",
+          "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+        }
+      ],
+      "nativeChecks": 84,
+      "hostedChecks": 84,
+      "queryRedaction": true
+    },
+    "trial": {
+      "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+      "version": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+      "artifactSha256": "f6a477fc9b348da2340899f3f81205cb7e4ca7e42acceabc9b9d46cdf4a8190d",
+      "previousVersion": "5d2173cb-fff3-4902-83b9-021b56f61889",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": true,
+      "facebookEnabled": true,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+        }
+      ],
+      "nativeChecks": 130,
+      "hostedChecks": 130,
+      "queryRedaction": true
+    }
+  },
+  "communityLive": {
+    "state": "PASS",
+    "at": "2026-10-11T01:26:42.116Z",
+    "checks": 19,
+    "version": "5d2173cb-fff3-4902-83b9-021b56f61889",
+    "artifactSha256": "4587dd4ab6ba163f08f1e147102fa7a0f71e4e413d5583c89a6d961a20b91ed2",
+    "seed": {
+      "providers": 45,
+      "members": 90
+    },
+    "photos": true,
+    "albums": true,
+    "comments": true,
+    "friends": true,
+    "salon": true,
+    "moderation": true,
+    "logout": true,
+    "providerProjectionPreserved": true,
+    "carriedForward": {
+      "fromSource": "d539271295c04fe9523795b6b3abd9c40e992c20",
+      "toSource": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+      "reason": "Only app.css photo alignment, deployment query-redaction enforcement and release documentation changed; community runtime and API source unchanged. Exact compiled trial community/native and hosted public checks repeated. The 19 hosted mutation operations remain evidence of their original version, not relabelled as new operations."
+    }
+  },
+  "trialExpiry": "2026-10-16T21:10:47.982Z",
+  "publicProfiles": {
+    "solo": 40,
+    "salons": 5,
+    "reviews": "11–21 labelled synthetic reviews per existing profile"
+  },
+  "facebook": {
+    "appId": "1827877621543839",
+    "status": "Unpublished",
+    "iconSaved": true,
+    "realOwnerConsent": "pending",
+    "publicExternalLogin": "pending App Review"
+  },
+  "limitations": [
+    "5-second visible-tab polling with retry backoff; WebSocket transport deferred",
+    "Trial feed limited to 200 discoverable authors, city filtering available",
+    "Canonical community remains disabled during isolated acceptance",
+    "Groups, events and conferences are planned C3–C4"
+  ],
+  "previousAcceptedEditions": {
     "main": {
       "sourceCommit": "d539271295c04fe9523795b6b3abd9c40e992c20",
       "version": "776ac16c-c67b-41bb-8630-3145509fe57c",
@@ -54,42 +149,14 @@
       "queryRedaction": true
     }
   },
-  "communityLive": {
+  "finalBrowser": {
     "state": "PASS",
-    "at": "2026-10-11T01:26:42.116Z",
-    "checks": 19,
-    "version": "5d2173cb-fff3-4902-83b9-021b56f61889",
-    "artifactSha256": "4587dd4ab6ba163f08f1e147102fa7a0f71e4e413d5583c89a6d961a20b91ed2",
-    "seed": {
-      "providers": 45,
-      "members": 90
-    },
-    "photos": true,
-    "albums": true,
-    "comments": true,
-    "friends": true,
-    "salon": true,
-    "moderation": true,
-    "logout": true,
-    "providerProjectionPreserved": true
-  },
-  "trialExpiry": "2026-10-16T21:10:47.982Z",
-  "publicProfiles": {
-    "solo": 40,
-    "salons": 5,
-    "reviews": "11–21 labelled synthetic reviews per existing profile"
-  },
-  "facebook": {
-    "appId": "1827877621543839",
-    "status": "Unpublished",
-    "iconSaved": true,
-    "realOwnerConsent": "pending",
-    "publicExternalLogin": "pending App Review"
-  },
-  "limitations": [
-    "5-second visible-tab polling with retry backoff; WebSocket transport deferred",
-    "Trial feed limited to 200 discoverable authors, city filtering available",
-    "Canonical community remains disabled during isolated acceptance",
-    "Groups, events and conferences are planned C3–C4"
-  ]
+    "at": "2026-10-11T01:39:21.398Z",
+    "trialVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+    "screenshot": "cloudflare/output/community-20261011/trial-chat-desktop-final.jpg",
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "privatePhotoLoaded": true,
+    "ownPhotoAlignedRight": true
+  }
 }

@@ -12,7 +12,7 @@ OAuth state galioja5min.; gavus vėlesnį sutikimą pirmiausia iš naujo pradėt
 
 Kitas veiksmas: gavus konkrečios Facebook paskyros sutikimą, užbaigti admin OAuth → trialOTPfirstlink → logout/relogin → unlink. Tada tikrinti faktinius Meta App Review / business verification / external public activation reikalavimus. Savininkas jau gali bandyti C0–C2 per /bandymo-paskyros → /bendruomene. Pagrindinio domeno community activation ir WebSocket hibernation dar nepriimti; grupės ir renginiai C3–C4 tik planuoti.
 
-Gyvas pagrindas: runtime `d539271295c04fe9523795b6b3abd9c40e992c20`, main `776ac16c-c67b-41bb-8630-3145509fe57c`, trial `5d2173cb-fff3-4902-83b9-021b56f61889`. [Aktualus kvitas](RECEIPT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
+Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f767e9-9bba-4ddb-96bc-3feaac299535`, trial `8e4da6de-9e07-4c4b-8f37-b42bd4474a30`. [Aktualus kvitas](RECEIPT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
 
 ## Užbaigtas pasiruošimas
 

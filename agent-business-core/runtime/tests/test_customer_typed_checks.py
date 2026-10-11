@@ -107,6 +107,7 @@ async def test_actual_v2_checkpoints_private_report_and_exact_replay(configured,
     events, artifacts, job = await rows(c, str(rq.conversation_id))
     artifact = next(a for a in artifacts if a.kind == "quality")
     report = artifact.payload["typed_checks"]
+    assert report["version"] == typed_checks.REPORT
     assert response["status"] == "succeeded" and response["typed_report"]["state"] == "PASS", report["checks"]
     assert all(report["checks"].values()) and len(report["checks"]) == 10
     assert len(report["checkpoints"]) == len(text_calls) == 2

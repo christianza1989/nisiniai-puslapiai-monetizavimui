@@ -221,6 +221,7 @@ def test_correction_is_checked_at_each_reply_boundary_not_only_final_state():
     )
     actual = observations()
     report = typed_checks.evaluate(binding, actual, result())
+    assert report["version"] == typed_checks.REPORT
     assert report["state"] == "PASS" and len(report["checks"]) == 10
     assert report["module_admission"] == "not_admitted" and report["purpose"] == "diagnostic_seen_regression"
     assert "100" not in str(report) and "50" not in str(report)

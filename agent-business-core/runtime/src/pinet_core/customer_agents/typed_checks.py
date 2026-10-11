@@ -370,7 +370,7 @@ def evaluate(binding, observed, result):
     checks["corrected_need_saved"] = checks["corrected_need_saved"] and all(a["passed"] for a in assertions)
     return {
         "version": REPORT,
-        **{k: v for k, v in binding.items() if k != "case"},
+        **{k: v for k, v in binding.items() if k not in {"case", "version"}},
         "state": "PASS" if all(checks.values()) else "FAIL",
         "checks": checks,
         "checkpoints": assertions,

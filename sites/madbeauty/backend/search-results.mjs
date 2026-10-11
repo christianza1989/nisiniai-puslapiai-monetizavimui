@@ -5,7 +5,7 @@ export function matchingQuotes(s,filters={}){
 // Group only the approved, currently matching service projection; never raw provider state.
 export function groupSearchRows(rows,filters={}){
  const salons=new Map(),professionals=new Map();
- const make=(s,type,id,name)=>({id,entityType:type,organizationId:s.organizationId,locationId:s.locationId,kind:s.kind,name,organizationName:s.organizationName,city:s.city,location:s.location,distanceKm:s.distanceKm??null,avatarImageId:s.avatarImageId,media:s.media||[],reviewSummary:s.reviewSummary||null,services:[],slots:[]});
+ const make=(s,type,id,name)=>({id,entityType:type,organizationId:s.organizationId,locationId:s.locationId,kind:s.kind,name,organizationName:s.organizationName,bookingProvider:s.bookingProvider,bookingUrl:s.bookingUrl,city:s.city,location:s.location,distanceKm:s.distanceKm??null,avatarImageId:s.avatarImageId,media:s.media||[],reviewSummary:s.reviewSummary||null,services:[],slots:[]});
  const add=(group,s,quote,slots)=>{if(!group.services.some(x=>x.id===s.id))group.services.push({id:s.id,label:s.label,priceMinor:quote.priceMinor,durationMin:quote.durationMin,bookingMode:s.bookingMode||'instant',needsOptions:s.availability?.state==='needs-options'});for(const c of slots)if(!group.slots.some(x=>x.id===c.id))group.slots.push(c);};
  for(const s of rows){
   const slots=s.availability?.slots||[];
@@ -13,7 +13,7 @@ export function groupSearchRows(rows,filters={}){
   for(const quote of s.staffOptions||[{practitionerId:s.practitionerId,name:s.practitionerName,priceMinor:s.priceMinor,durationMin:s.durationMin}]){
    if(filters.practitionerId&&quote.practitionerId!==filters.practitionerId||filters.maxPrice!=null&&quote.priceMinor>filters.maxPrice)continue;
    if(filters.name&&!normalizeSearch(quote.name+' '+s.label+' '+s.organizationName).includes(normalizeSearch(filters.name)))continue;
-   const own=slots.filter(c=>c.practitionerId===quote.practitionerId);if(!filters.anyTime&&(!s.bookingMode||s.bookingMode==='instant')&&s.availability?.state!=='needs-options'&&!own.length)continue;
+   const own=slots.filter(c=>c.practitionerId===quote.practitionerId);if(s.bookingProvider!=='treatwell'&&!filters.anyTime&&(!s.bookingMode||s.bookingMode==='instant')&&s.availability?.state!=='needs-options'&&!own.length)continue;
    const key=s.organizationId+'|'+quote.practitionerId+'|'+s.locationId;if(!professionals.has(key))professionals.set(key,{...make(s,'professional',key,quote.name),practitionerId:quote.practitionerId});add(professionals.get(key),s,quote,own);
   }
  }

@@ -1,3 +1,4 @@
+import {requireNativeCalendar} from './booking-channel.mjs';
 import {randomId,reject} from './primitives.mjs';
 import {availability,dayOffsetForDate,option,find} from './availability.mjs';
 import {serviceEligible} from './catalogue-state.mjs';
@@ -8,6 +9,7 @@ function candidates(d,w,now){try{return availability(d,{providerServiceId:w.prov
 const same=(a,b)=>key(a)===key(b);
 export function validateWaitlist(d,input,now){
  const s=find(d,'services',input.providerServiceId),o=find(d,'organizations',s.organizationId);
+ requireNativeCalendar(o);
  if(!o.approved||s.organizationId!==input.organizationId||!s.active||!serviceEligible(d,s,now))reject('NOT_FOUND','Paslauga nepasiekiama.',404);
  if(typeof input.dateKey!=='string')reject('INVALID_INPUT','Pasirinkite laukimo datą.');
  const offset=dayOffsetForDate(input,now),{from,to}=input;

@@ -18,7 +18,7 @@ import {directoryRoute,directoryRows,directoryDescription,directorySchema,render
 import {profileMetadata,renderPublicProfile} from '../prototype/public/profile-seo.mjs';
 import {sharingHtml} from '../prototype/public/sharing.mjs';
 export {MadbeautyPlatform,MadbeautyOrganizationStaging,MadbeautyCommunity};
-const assetPaths=new Set([...assets,'/community-ui.mjs']);
+const assetPaths=new Set([...assets,'/community-ui.mjs','/booking-channel-model.mjs','/booking-channel-ui.mjs']);
 const headers={"X-Content-Type-Options":"nosniff","Referrer-Policy":"strict-origin-when-cross-origin","Content-Security-Policy":"default-src 'self'; connect-src 'self'; img-src 'self' blob:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; frame-src https://www.openstreetmap.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"};
 headers['X-Madbeauty-Content-SHA256']=release.packageSha256;
 const json=(data,status=200)=>Response.json(data,{status,headers:{...headers,'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});

@@ -43,3 +43,17 @@ Madbeauty taksonomija lieka mūsų: kategorija → subkategorija → procedūra.
 ## Pasiūlymas salonams
 
 „Pristatyk savo darbus ir leisk klientams tave atrasti Madbeauty. Rezervacijas priimk jau naudojamoje sistemoje.“ Tai siūloma pozicionavimo kryptis po nuorodos režimo įgyvendinimo, ne šiandien publikuojamas funkcijos pažadas. Srauto ar rezervacijų augimo negarantuojame; pirmam pilotui atskirai matuojame profilio peržiūras, nuorodos paspaudimus ir salono patvirtintus užbaigtus vizitus.
+
+## Pirmųjų tikrų meistrų ir klientų bandymas
+
+Savininko iškelta rizika pagrįsta: antras kalendorius nesuteikia pakankamos priežasties prisijungti. Treatwell integracijos negalima laikyti starto sąlyga, kol nėra suteiktos prieigos. „Visi salonai jau Treatwell“ ir „niekas neprisijungs“ šiuo tyrimu nėra patvirtintos rinkos dalies ar paklausos išvados.
+
+Pradinis segmentas – savarankiški meistrai, kurie dar neturi jiems tinkamos rezervavimo sistemos. Jiems Madbeauty kalendorius gali būti vienintelė sistema; savo rezervavimo nuorodą gali platinti jau turimiems klientams. Esami Treatwell salonai – atskiras papildomo matomumo segmentas, iš pradžių naudojantis išorinę salono nuorodą. Nekviečiame pažeisti jų sutarties ar perkelti svetimų klientų bazės.
+
+- [ ] Patvirtinti vieno miesto ir vienos paslaugų srities pradžios segmentą pagal tikrus meistrų pokalbius; Vilnius / nagai yra galima piloto hipotezė, ne išmatuotas laimintis segmentas.
+- [ ] Pirmiems tikriems dalyviams atlikti profilis → tikros paslaugos/kainos/trukmės → grafikas → rezervavimo nuoroda → tikro kliento vizitas kelią. Demo 40+5 lieka bandymo aplinkoje.
+- [ ] Atskirai išbandyti jau kitą sistemą naudojančio salono išorinį kelią, jo nekeičiamą grafiką ir faktinį klientų sutikimą / fotografijų teises.
+- [ ] Užfiksuoti pradinį aktyvių meistrų skaičių, realią siūlomų laikų pasiūlą, pirmą užbaigtą rezervaciją, pakartotinį naudojimą ir meistro darbo sąnaudas. Profilio peržiūra, like, demo vizitas ir nuorodos paspaudimas nėra užbaigtas tikras vizitas.
+- [ ] Tik gavus tikrus naudojimo / vizitų įrodymus plėsti miestus, paslaugų sritis ir įsigijimo biudžetą. Prieš reklamos išlaidas būtinas konkretus atskiras biudžetas; šiame darbe nieko nenupirkta ir potencialiems salonams nerašyta.
+
+Galima papildoma vertė – darbų atradimas, vietinis bendruomenės srautas, sekimas, idėjų albumai ir patogus kvietimas per nuorodą. Šios funkcijos yra produkto priemonės, ne garantuotas lankytojų ar pajamų šaltinis. Grupių / renginių plėtra neturi pakeisti pagrindinės hipotezės patikrinimo su tikrais klientais.

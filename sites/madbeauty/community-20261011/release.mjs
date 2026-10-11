@@ -6,6 +6,7 @@ import {execFileSync,spawn} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
 import {core,coreSource,pinCore} from '../release-20261010/pinned-core.mjs';
 export const repo=path.resolve(import.meta.dirname,'../../..'),out=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011');
+const browserOverlay=["http-adapter.mjs","account-ui.mjs","auth-entry.mjs","app.css","workspace-ui.mjs","public-views.mjs","profile-service-menu.mjs","search-results-ui.mjs","profile-seo.mjs","booking-ui.mjs","visit-sequence-ui.mjs","form-state.mjs","booking-channel-model.mjs","booking-channel-ui.mjs"];
 const phase=process.argv[2],kind=process.argv[3]||'main',index={main:0,trial:2,review:3}[kind];
 const activateCommunity=process.argv[4]==='--activate-community';assert.ok(!process.argv[4]||activateCommunity);assert.ok(!activateCommunity||kind==='main'&&phase==='build','Community activation is an explicit canonical build choice');
 assert.ok(['before','build','secret','deploy','after'].includes(phase));assert.ok(['main','trial','review'].includes(kind));assert.ok(phase!=='secret'||kind!=='review','Reviewer Facebook remains disabled');
@@ -27,7 +28,7 @@ if(phase==='before'){
  const archive=path.join(dir,'previous',expected);await mkdir(archive,{recursive:true});
  for(const e of await readdir(dir,{withFileTypes:true}))if(e.isFile())await copyFile(path.join(dir,e.name),path.join(archive,e.name));
  await mkdir(path.join(archive,'browser-modules'),{recursive:true});
- for(const f of ['http-adapter.mjs','account-ui.mjs','auth-entry.mjs'])await copyFile(path.join(dir,'assets',f),path.join(archive,'browser-modules',f));
+ for(const f of browserOverlay)await copyFile(path.join(dir,'assets',f),path.join(archive,'browser-modules',f)).catch(e=>{if(e.code!=='ENOENT')throw e;});
  await writeFile(path.join(dir,'before.private.json'),JSON.stringify({at:new Date().toISOString(),records},null,2));console.log(JSON.stringify({state:'BEFORE_CAPTURED',kind,version:expected}));
 }
 if(phase==='build'){
@@ -61,9 +62,10 @@ if(phase==='build'){
   await writeFile(path.join(dir,'trial-assets.json'),JSON.stringify([...paths].sort()));
   plugins=[{name:'trial-build-inputs',setup(b){b.onResolve({filter:/\.\/output\/trial-(assets|media)\.json$/},a=>({path:path.join(dir,path.basename(a.path))}));}},pinCore];entry=path.join(repo,'sites/madbeauty/trial-20261010/worker.mjs');
  }
- // These committed modules are a narrow auth increment after the accepted static
- // asset edition. All media/content remain from that exact frozen edition.
- const authAssets=[];for(const f of ['http-adapter.mjs','account-ui.mjs','auth-entry.mjs']){const target=path.join(dir,'assets',f),previousSha256=hash(await readFile(target)),bytes=await readFile(path.join(repo,'sites/madbeauty/prototype/public',f));await copyFile(path.join(repo,'sites/madbeauty/prototype/public',f),target);authAssets.push({file:f,previousSha256,sha256:hash(bytes)});}
+ // Explicit committed authentication and booking-channel overlay.
+ // All media/content remain from the accepted frozen edition.
+ const authAssets=[];for(const f of browserOverlay){const target=path.join(dir,'assets',f),previousSha256=await readFile(target).then(hash).catch(e=>{if(e.code!=='ENOENT')throw e;return null;}),bytes=await readFile(path.join(repo,'sites/madbeauty/prototype/public',f));await copyFile(path.join(repo,'sites/madbeauty/prototype/public',f),target);authAssets.push({file:f,previousSha256,sha256:hash(bytes)});}
+ if(kind==='trial'){const file=path.join(dir,'trial-assets.json'),paths=new Set(await json(file));for(const f of browserOverlay)paths.add('/'+f);await writeFile(file,JSON.stringify([...paths].sort()));}
  assert.equal(config.compatibility_date,baseline.compatibility_date);assert.deepEqual(config.compatibility_flags,baseline.compatibility_flags);for(const b of baseline.bindings.filter(b=>b.type==='plain_text'))assert.equal(config.vars[b.name],b.text);
  if(kind!=='review'){config.durable_objects.bindings.push({name:'COMMUNITY',class_name:'MadbeautyCommunity'});config.migrations.push({tag:kind==='trial'?'trial-v2-community':'v3-community',new_sqlite_classes:['MadbeautyCommunity']});config.vars={...config.vars,FACEBOOK_APP_ID:'1827877621543839',FACEBOOK_GRAPH_VERSION:'v26.0',FACEBOOK_LOGIN_ENABLED:kind==='trial'?'true':'false',COMMUNITY_ENABLED:kind==='trial'||activateCommunity?'true':baseline.bindings.find(b=>b.name==='COMMUNITY_ENABLED')?.text||'false'};}
  config.main='worker.mjs';config.no_bundle=true;config.keep_vars=true;delete config.$schema;config.assets.directory='./assets';config.observability=baseline.observability;
@@ -71,7 +73,7 @@ if(phase==='build'){
  if(kind==='main')for(const marker of ['ACCEPTANCE_KEY','HostedSource','qa_mail_captures','NATIVE_CONTENT_CLOCK'])assert.ok(!bundle.outputFiles[0].text.includes(marker));
  const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:repo,encoding:'utf8'}).trim();clean(sourceCommit);
  await writeFile(path.join(dir,'worker.mjs'),bytes);await writeFile(path.join(dir,'wrangler.json'),JSON.stringify(config,null,2));
- await writeFile(path.join(dir,'manifest.json'),JSON.stringify({kind,sourceCommit,coreSource,artifactSha256:hash(bytes),packageSha256:release.packageSha256,pages:129,assets:kind==='main'?release.assets:(await json(path.join(dir,'trial-assets.json'))).length,expiresAt:config.vars.TRIAL_EXPIRES_AT||null,mediaProof,authAssets,previousVersion:before.records[index].deployments.deployments[0].versions[0].version_id},null,2));console.log(JSON.stringify({state:'BUILT',kind,sourceCommit,artifactSha256:hash(bytes)}));
+ await writeFile(path.join(dir,'manifest.json'),JSON.stringify({kind,sourceCommit,coreSource,artifactSha256:hash(bytes),packageSha256:release.packageSha256,pages:129,assets:kind==='main'?release.assets+2:(await json(path.join(dir,'trial-assets.json'))).length,expiresAt:config.vars.TRIAL_EXPIRES_AT||null,mediaProof,authAssets,previousVersion:before.records[index].deployments.deployments[0].versions[0].version_id},null,2));console.log(JSON.stringify({state:'BUILT',kind,sourceCommit,artifactSha256:hash(bytes)}));
 }
 if(phase==='secret'){
  const before=await json(path.join(dir,'before.private.json'));assert.deepEqual(await provider(),before.records,'Secret installation lease changed');
@@ -82,11 +84,12 @@ if(phase==='secret'){
 }
 if(phase==='deploy'){
  const manifest=await json(path.join(dir,'manifest.json')),proof=await json(path.join(dir,'native.json'));assert.equal(proof.state,'PASS');assert.equal(proof.artifactSha256,manifest.artifactSha256);assert.equal(hash(await readFile(path.join(dir,'worker.mjs'))),manifest.artifactSha256);clean(manifest.sourceCommit);
+ if(kind==='main'||kind==='trial'){const booking=await json(path.join(out,'main/booking-channel-native.json'));assert.equal(booking.state,'PASS');assert.equal(booking.sourceCommit,manifest.sourceCommit);assert.equal(booking.exactCompiledArtifact,true);if(kind==='main')assert.equal(booking.artifactSha256,manifest.artifactSha256);}
  if(kind==='trial'){const social=await json(path.join(dir,'community-native.json'));assert.equal(social.state,'PASS');assert.equal(social.artifactSha256,manifest.artifactSha256);}
  if(kind==='main'&&(await json(path.join(dir,'wrangler.json'))).vars.COMMUNITY_ENABLED==='true'){const social=await json(path.join(dir,'community-native.json'));assert.equal(social.state,'PASS');assert.equal(social.artifactSha256,manifest.artifactSha256);assert.equal(social.productionConfiguration,true);assert.equal(social.fixtureSeedDenied,true);assert.equal(social.facebookDisabled,true);}
  if(kind==='review'){const boundaries=await json(path.join(dir,'review-boundaries.json'));assert.equal(boundaries.state,'PASS');assert.equal(boundaries.artifactSha256,manifest.artifactSha256);}
  const before=await json(path.join(dir,'before.private.json'));assert.deepEqual(await provider(),before.records,'Deployment lease changed');
- const child=spawn(process.execPath,[path.join(core,'node_modules/wrangler/bin/wrangler.js'),'deploy','--config',path.join(dir,'wrangler.json'),'--keep-vars','--message','Madbeauty Facebook integration and isolated trial community C0-C2; preserve existing identities, bookings, mail and expiry'],{cwd:repo,stdio:['ignore','pipe','pipe']});let output='';child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>output+=b);const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});await writeFile(path.join(dir,'deploy.txt'),output);assert.equal(code,0,'Inspect deploy log before retrying');
+ const child=spawn(process.execPath,[path.join(core,'node_modules/wrangler/bin/wrangler.js'),'deploy','--config',path.join(dir,'wrangler.json'),'--keep-vars','--message','Madbeauty single booking channel: native calendar or Treatwell salon link; preserve identities, bookings, mail and expiry'],{cwd:repo,stdio:['ignore','pipe','pipe']});let output='';child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>output+=b);const code=await new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});await writeFile(path.join(dir,'deploy.txt'),output);assert.equal(code,0,'Inspect deploy log before retrying');
  const version=output.match(/Current Version ID: ([a-f0-9-]{36})/)?.[1];assert.ok(version);await writeFile(path.join(dir,'deployment.json'),JSON.stringify({at:new Date().toISOString(),state:'DEPLOYED_ACCEPTANCE_PENDING',version,...manifest},null,2));execFileSync(process.execPath,[path.join(repo,'sites/madbeauty/community-20261011/redact.mjs'),kind],{cwd:repo,stdio:'inherit'});console.log(JSON.stringify({state:'DEPLOYED_ACCEPTANCE_PENDING',kind,version}));
 }
 if(phase==='after'){

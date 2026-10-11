@@ -1,3 +1,5 @@
+import {bookingChannel} from './booking-channel-model.mjs';
+import {externalBookingLink} from './booking-channel-ui.mjs';
 import {phaseList} from './phase-fields.mjs';
 import {esc,link,btn,money,time,date,field,select,minute,empty,crumbs,userError} from './ui.mjs';
 import {accountEntry} from './account-ui.mjs';
@@ -10,7 +12,7 @@ async function clearTime(ctx){const b=ctx.state.booking;if(b.hold)await ctx.adap
 export async function visitSequenceView(ctx,path){
  const b=ctx.state.booking,stage=path.split('/')[2];
  if(stage==='rezultatas'&&b.result&&ctx.realAdapter.session?.user){const d=await ctx.adapter.workspace({role:'customer'}),result=d.bookings.find(x=>x.id===b.result.id);if(!result)return recovery('Vizitas nepasiekiamas','Atidaryk savo vizitų sąrašą.','/paskyra/vizitai');b.result=result;return page(`<h1 class="page-title">${result.status==='confirmed'?'Visas vizitas patvirtintas':'Vizito būsena'}</h1><p>Visos ${result.segments.length} paslaugos išsaugotos vienu vizitu.</p>${segmentList(result.segments)}<p>${date(result.startAt)} · ${time(result.startAt)}–${time(result.endAt)} · ${money(result.priceMinor)}</p><p>${esc(result.serviceSnapshot.location?.publicAddress||'')} · ${esc(result.serviceSnapshot.location?.city||'')}</p>${btn('view-booking','Atidaryti vizitą',`data-id="${esc(result.id)}"`,'button accent')}`);}
- const {first,services,profile}=await selection(ctx)||{};if(!first)return recovery('Paslauga nepasiekiama','Pasirink kitą paslaugą.','/paieska');
+ const {first,services,profile}=await selection(ctx)||{};if(!first)return recovery('Paslauga nepasiekiama','Pasirink kitą paslaugą.','/paieska');if(!bookingChannel(first).nativeCalendarEnabled)return page(`<h1>Rezervuoti per Treatwell</h1><p>Šio salono laiką ir viso vizito paslaugas pasirinksi Treatwell puslapyje.</p>${externalBookingLink(first)}`);
  if(b.result&&stage!=='rezultatas')return recovery('Vizitas jau patvirtintas','Jo detales rasi paskyroje.','/paskyra/vizitai/'+b.result.id);
  if(['duomenys','perziura','rezultatas'].includes(stage)&&!ctx.realAdapter.session?.user){ctx.state.afterAuth=path;return accountEntry(ctx,path);}
  const picked=b.items.map(i=>({...i,service:services.find(s=>s.id===i.providerServiceId)}));if(picked.some(i=>!i.service))return recovery('Paslaugų pasirinkimas pasikeitė','Peržiūrėk visą vizito seką.','/registracija/paslauga');

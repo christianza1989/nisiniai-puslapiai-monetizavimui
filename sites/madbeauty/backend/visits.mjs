@@ -1,3 +1,4 @@
+import {requireNativeCalendar} from './booking-channel.mjs';
 import {availability,find,option,dayOffsetForDate} from './availability.mjs';
 import {plus,visitSegments} from './occupancy.mjs';
 import {publicLocation} from './locations-state.mjs';
@@ -23,13 +24,14 @@ export function visitAvailability(d,input,now,hash,opts={}){
   const id='visit|'+hash(JSON.stringify(segments.map(s=>[s.id,s.practitionerId,s.resourceId,s.serviceVersion,s.scheduleVersion,s.locationVersion,s.priceMinor,s.durationMin])));
   slots.push({kind:'visit-sequence',id,items:keyShape(items),segments,organizationId:first.organizationId,locationId:first.locationId,providerServiceId:first.id,practitionerId:candidate.practitionerId,resourceId:candidate.resourceId,startAt:candidate.startAt,endAt,occupiedStart:candidate.occupiedStart,occupiedEnd:segments.at(-1).occupiedEnd,priceMinor,durationMin,procedureMin:segments.reduce((n,s)=>n+s.durationMin,0),from,to,dateKey:candidate.dateKey,dayOffset,snapshotAt:candidate.snapshotAt});
  }
- return {source:'madbeauty-server',asOf:starts.asOf,expiresAt:starts.expiresAt,state:slots.length?'current':'no-slots',slots};
+ return {source:'madbeauty-server',asOf:starts.asOf,expiresAt:starts.expiresAt,state:starts.state==='external'?'external':slots.length?'current':'no-slots',slots};
 }
 
 export function requireWholeVisit(access,b){if(access.practitionerId&&visitSegments(b).some(s=>s.practitionerId!==access.practitionerId))reject('FORBIDDEN','Visą kelių meistrų vizitą gali keisti klientas arba veiklos administratorius.',403);}
 export function createVisitApi({store,mutate,publicRead,calendarRead,scope,ownBooking,event,outbox,clock}){
  const choose=(d,candidate,opts={})=>{
   if(candidate?.kind!=='visit-sequence'||!Number.isFinite(Date.parse(candidate.snapshotAt))||Date.parse(candidate.snapshotAt)+300000<store.clock())reject('STALE_AVAILABILITY','Pasirinkimas paseno. Atnaujinkite viso vizito laikus.',409);
+  requireNativeCalendar(find(d,'organizations',find(d,'services',candidate.items?.[0]?.providerServiceId).organizationId));
   const a=visitAvailability(d,{items:candidate.items,dateKey:candidate.dateKey,dayOffset:candidate.dayOffset,from:candidate.from,to:candidate.to,startAt:candidate.startAt},store.clock(),store.hash,opts),c=a.slots.find(c=>c.id===candidate.id&&c.priceMinor===candidate.priceMinor&&c.endAt===candidate.endAt&&c.durationMin===candidate.durationMin);
   if(!c)reject('SLOT_CONFLICT','Vienas iš vizito segmentų pasikeitė. Pasirinkite kitą viso vizito laiką.',409);return c;
  };

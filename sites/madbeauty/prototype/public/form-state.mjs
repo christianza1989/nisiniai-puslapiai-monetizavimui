@@ -53,6 +53,7 @@ export function syncConditionalFields(form){
  for(const field of form.querySelectorAll('[data-required-if]')){
   const [name,value]=field.dataset.requiredIf.split(':');
   field.required=form.elements.namedItem(name)?.value===value;
+  if(field.name==='bookingUrl'&&name==='bookingProvider')field.disabled=!field.required;
   if(!field.required)clearFieldError(field);
  }
 }

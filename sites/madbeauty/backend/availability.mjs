@@ -1,3 +1,4 @@
+import {bookingChannel} from './booking-channel.mjs';
 import {publicLocation,locationSchedule,staffAtLocation,resourceAtLocation,bookingPlace} from './locations-state.mjs';
 import {localInstant,makeClock,visitFits} from '../prototype/demo-model.mjs';
 import {reject} from './primitives.mjs';
@@ -28,6 +29,7 @@ export function availability(d,input,now,{ignoreBookingId=null,ignoreHoldId=null
   const dayOffset=dayOffsetForDate(input,now);
   if(!Number.isInteger(dayOffset)||dayOffset<0||dayOffset>30||!Number.isInteger(from)||!Number.isInteger(to)||from<0||to>1439||from>=to)reject('INVALID_INPUT','Pasirinkite datą per30 dienų ir tinkamas valandas.');
   const clock=makeClock(new Date(now).toISOString()),s=selectedService||find(d,'services',providerServiceId);
+  const channel=bookingChannel(find(d,'organizations',s.organizationId));if(!channel.nativeCalendarEnabled)return {...channel,state:'external',slots:[],source:'treatwell-link',asOf:new Date(now).toISOString()};
   if(s.staffOptions&&!selectedService){
     const staff=s.staffOptions.filter(x=>!input.practitionerId||x.practitionerId===input.practitionerId);
     if(input.practitionerId&&!staff.length)reject('INVALID_INPUT','Šis meistras neatlieka pasirinkto varianto.');

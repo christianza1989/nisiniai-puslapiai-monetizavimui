@@ -1,3 +1,5 @@
+import {bookingChannel} from './booking-channel-model.mjs';
+import {externalBookingLink} from './booking-channel-ui.mjs';
 import {phaseList} from './phase-fields.mjs';
 import {esc,icon,link,btn,money,time,date,field,select,hhmm,minute,empty,crumbs,errorHTML,userError} from './ui.mjs';
 import {accountEntry} from './account-ui.mjs';
@@ -10,6 +12,7 @@ export function bookingSummary(ctx,s,calc){const b=ctx.state.booking;return`<asi
 export async function bookingView(ctx,path){
   if(ctx.state.booking?.sequence)return visitSequenceView(ctx,path);
   const b=ctx.state.booking,s=await selected(ctx);if(!b||!s)return`<div class="page container">${emptyPage('Pirmiausia pasirink paslaugą','Pasirink paslaugą, priedus ir meistrą.',link('/paieska','Rasti paslaugą'))}</div>`;
+  if(!bookingChannel(s).nativeCalendarEnabled)return `<div class="page container"><h1>Rezervuoti per Treatwell</h1><p>${esc(s.organizationName)} rezervacijas priima Treatwell. Laiką ir galutinę kainą patikrinsi ten.</p>${externalBookingLink(s)}</div>`;
   const stage=path.split('/')[2];
   if(b.result&&stage!=='rezultatas')return`<div class="page container">${emptyPage('Šis vizitas jau patvirtintas','Jo laiką arba būseną keisk savo paskyroje.',link('/paskyra/vizitai/'+b.result.id,'Atidaryti vizitą')+' '+btn('begin-booking','Planuoti kitą vizitą',`data-id="${s.id}"`,'button outline'))}</div>`;
   if(ctx.adapter.mode==='real'&&['duomenys','perziura','rezultatas'].includes(stage)&&!ctx.realAdapter.session?.user){ctx.state.afterAuth=path;return accountEntry(ctx,path);}

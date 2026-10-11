@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original restricted-PG missing-route baseline returned405/MethodNotAllowed:1FAIL8.08s, frozen source unchanged, provider/channel0/operational DB untouched; logSHA50ee9bd267136bb1e05a2d0e34cfdf8c76fd940daf0df62a68ae5b1b63de36ee. Initial new-test import I001/F811 then unused Event F401 and final import ordering I001 are preserved tool outputs, corrected before QA. New additive readonly list+event pagination reuse signed current-session scoped cursor helpers; source/module/current owner/Grant/history binding remain independent of expired paid Profile/runner. Existing operations/schema definitions/models/instructions/SQL/history untouched; bounded metadata no private content. Frozen wholetext/newhistory and offline canonical/entrypoint checks follow.",
+  "eventId": "1180f0e4-fea3-42b4-baf3-ed024f1602c8",
+  "sequence": 2,
+  "at": "2026-10-11T09:14:43.504Z"
+}

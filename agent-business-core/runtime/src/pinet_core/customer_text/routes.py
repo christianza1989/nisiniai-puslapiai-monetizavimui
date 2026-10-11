@@ -1,12 +1,12 @@
 """Additive local-only routes; no auth dependency holds a DB transaction during a call."""
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 
 from ..control.routes import SafeRoute
 from ..control.routes import envelope as core_envelope
 from ..customer.service import customer_guard
 from . import service
-from .wire import CapabilityEnvelope, Envelope, Error, Start, Turn
+from .wire import CapabilityEnvelope, Envelope, Error, EventsEnvelope, SessionsEnvelope, Start, Turn
 
 
 class TextRoute(SafeRoute):
@@ -51,6 +51,18 @@ async def capability(creation_id: str, request: Request):
 @router.post("/{creation_id}/text-sessions", response_model=Envelope, response_model_exclude_none=True)
 async def start(creation_id: str, value: Start, request: Request):
     return envelope(request, await service.start(token(request), creation_id, value))
+
+
+@router.get("/{creation_id}/text-sessions", response_model=SessionsEnvelope, response_model_exclude_none=True)
+async def sessions(creation_id: str, request: Request, limit: int = Query(20, ge=1, le=50),
+        cursor: str | None = Query(None, min_length=1, max_length=2048)):
+    return envelope(request, await service.sessions(token(request), creation_id, limit=limit, cursor=cursor))
+
+
+@router.get("/{creation_id}/text-sessions/{conversation_id}/events", response_model=EventsEnvelope, response_model_exclude_none=True)
+async def events(creation_id: str, conversation_id: str, request: Request, limit: int = Query(100, ge=1, le=100),
+        cursor: str | None = Query(None, min_length=1, max_length=2048)):
+    return envelope(request, await service.events(token(request), creation_id, conversation_id, limit=limit, cursor=cursor))
 
 
 @router.get("/{creation_id}/text-sessions/{conversation_id}", response_model=Envelope, response_model_exclude_none=True)

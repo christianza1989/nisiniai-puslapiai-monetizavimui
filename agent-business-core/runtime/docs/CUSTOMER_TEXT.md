@@ -16,17 +16,21 @@ Esamas agent-profile.v1 išlieka tik stebėjimas su LiteralFalse vykdymo teisėm
 
 ## HTTP sutartis
 
-Kanoninė [OpenAPI](../../../docs/contracts/verslomatika-customer-text.openapi.json) išvedama iš tikro router/DTO per `customer_text.contract.document()`. Tie patys penki keliai montuojami pilnoje api ir portabiliame minimaliame control_api. Hosted režimas šiam vartotojui lieka uždarytas.
+Kanoninė [OpenAPI](../../../docs/contracts/verslomatika-customer-text.openapi.json) išvedama iš tikro router/DTO per `customer_text.contract.document()`. Tie patys šeši URL keliai ir septyni veiksmai montuojami pilnoje api ir portabiliame minimaliame control_api. Hosted režimas šiam vartotojui lieka uždarytas.
 
 | Kelias po `/customer/v2/creations/{creation_id}` | Veiksmas |
 | --- | --- |
 | GET `/text-capability` | Dabartinės vietinio vartotojo teisės, tikslus admission_id, consent notice ir penki need laukai; be rezervacijos, kvietimo ar TTL renewal |
+| GET `/text-sessions` | Dabartinio savininko šio verslo išsaugotų pokalbių metaduomenys; limit numatytai20,1..50; next_cursor ir tikras has_more, naujausi pirmi |
 | POST `/text-sessions` | UUID request_id, tikslus admission_id, notice_version=customer-text.local.v1 ir strict consent=true; patvarus Case/Conversation; modelio dar nekviečia |
 | GET `/text-sessions/{conversation_id}` | Dabartinio savininko išsaugota originalaus binding istorija ir poreikis; iki100 paskutinių įvykių, tikras history_truncated; execution TTL neatnaujinamas |
+| GET `/text-sessions/{conversation_id}/events` | Senesni išsaugoti įvykiai; limit numatytai100,1..100; puslapio įvykiai chronologiškai, kitas cursor veda į ankstesnį puslapį |
 | POST `/text-sessions/{conversation_id}/turns` | UUID request_id, exact base_need_revision ir1..4000 prasmingų Unicode ženklų; viena patvari rezervacija ir daugiausia vienas provider dispatch |
 | POST `/text-sessions/{conversation_id}/end` | Finalizuoti ir panaikinti aktyvų vykdymo owner/epoch; nėra postcall darbų ar kanalų siuntimo |
 
-Sėkmės envelope yra customer-text.v1 su exact running source, observation time ir bounded typed SessionView/Capability. Klaidos turi code/message/request_id, private/no-store, be žinių ar privilegijuotų exception details. Transportas iki64KiB priima ir4000 astral ženklų JSON escape formą; semantinė4000 riba lieka. Naršyklė naudoja tik to paties origin BFF ir serverio sesiją; global worker/operator raktas nėra kliento prisijungimas.
+Sėkmės envelope yra customer-text.v1 su exact running source, observation time ir bounded typed SessionView/Capability/SessionsPage/EventsPage. Klaidos turi code/message/request_id, private/no-store, be žinių ar privilegijuotų exception details. Transportas iki64KiB priima ir4000 astral ženklų JSON escape formą; semantinė4000 riba lieka. Naršyklė naudoja tik to paties origin BFF ir serverio sesiją; global worker/operator raktas nėra kliento prisijungimas.
+
+Pokalbių sąrašas grąžina tik conversation_id, created_at, state ir need_revision. Puslapiavimas naudoja pasirašytą iki2048 ženklų cursor, galiojantį300s ir susietą su dabartine login Session, savininku, Creation, aplinka bei paskirtimi; įvykių cursor papildomai susietas su pokalbiu. Prisijungus iš naujo reikia pradėti naują sąrašo užklausą. Cursor nėra teisė skaityti: kiekvienas puslapis pakartotinai tikrina aktualų savininką ir originalią istorijos tapatybę. Netaisyklingas ar svetimas cursor atmetamas400, pasenęs —409 snapshot_expired. Sąrašai neišsaugo įvykių, neatnaujina Profile/TTL ir nekviečia provider; abu veiksmai veikia ir išjungus mokamą runner. Ankstesnių penkių veiksmų ir jų DTO sutartis išlieka nepakitusi.
 
 ## Vienas kvietimas ir rezultato priėmimas
 

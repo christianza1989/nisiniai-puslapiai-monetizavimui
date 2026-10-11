@@ -109,11 +109,20 @@ def test_canonical_text_contract_exactly_matches_actual_definitions():
     root = Path(__file__).resolve().parents[3]
     expected = json.loads((root / "docs/contracts/verslomatika-customer-text.openapi.json").read_text(encoding="utf-8"))
     assert expected == contract.document()
-    assert len(expected["paths"]) == 5
+    assert len(expected["paths"]) == 6
+    assert sum(len(methods) for methods in expected["paths"].values()) == 7
     for methods in expected["paths"].values():
         for operation in methods.values():
             assert operation["security"] == [{"CoreSession": []}]
             assert "422" not in operation["responses"]
+
+
+@pytest.mark.parametrize("limit,cursor", [(0, None), (51, None), (True, None), ("20", None),
+    (20, ""), (20, "x" * 2049), (20, 1)])
+def test_history_service_options_bound_direct_calls_before_any_authority(limit, cursor):
+    with pytest.raises(ControlError) as denied:
+        service.history_options(limit, cursor, 50)
+    assert denied.value.status == 400 and denied.value.code == "invalid_request"
 
 
 def test_new_text_flags_are_default_off_and_do_not_depend_on_owner_queue(monkeypatch):

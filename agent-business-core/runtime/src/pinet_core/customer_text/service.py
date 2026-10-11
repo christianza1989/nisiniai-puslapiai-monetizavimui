@@ -7,14 +7,14 @@ from dataclasses import dataclass
 from datetime import timedelta
 
 from fastapi import HTTPException
-from sqlalchemy import select, text
+from sqlalchemy import or_, select, text
 
 from .. import knowledge, policy
 from .. import service as core
 from ..config import settings
 from ..contracts import KnowledgeQuery, NeedPatch
 from ..control.models import BusinessGrant, Session
-from ..control.routes import ControlError, identifier, scope, token_hash
+from ..control.routes import ControlError, identifier, open_cursor, scope, seal_cursor, token_hash
 from ..creation.routes import owned
 from ..creation.service import binding as owner_binding
 from ..creation.service import current_actor, digest
@@ -108,6 +108,10 @@ async def historical_identity(tx, session, creation, row, frozen):
             or frozen["environment_id"] != registry.environment_id
             or frozen["creation_id"] != creation.id or frozen["user_id"] != session.user_id):
         raise ControlError(404, "not_found")
+    await historical_business(tx, session, creation, registry)
+
+
+async def historical_business(tx, session, creation, registry):
     pair = (await tx.execute(select(BusinessGrant, Business).join(Business, Business.id == BusinessGrant.business_id)
         .where(BusinessGrant.id == registry.grant_id, BusinessGrant.enabled,
             BusinessGrant.business_id == registry.business_id, BusinessGrant.portfolio_id == creation.portfolio_id,
@@ -117,6 +121,18 @@ async def historical_identity(tx, session, creation, row, frozen):
     if not pair or (pair[1].site_id, pair[1].canonical_host) != (registry.site_id, registry.canonical_host):
         raise ControlError(404, "not_found")
     await current_actor(tx, session, creation.portfolio_id)
+
+
+def retained_binding(row, creation_id, session):
+    frozen = row.payload.get("customer_text_binding") if row else None
+    if (not row or row.payload.get("transport") != adapter.VERSION
+            or not isinstance(frozen, dict) or frozen.get("creation_id") != creation_id
+            or frozen.get("user_id") != session.user_id or frozen.get("environment_id") != settings().environment
+            or frozen.get("adapter") != adapter.VERSION or frozen.get("model") != adapter.MODEL
+            or not all(key in frozen for key in ("registration_id", "registration_fingerprint",
+                "admission_id", "admission_fingerprint", "profile"))):
+        raise ControlError(404, "not_found")
+    return frozen
 
 
 @asynccontextmanager
@@ -134,14 +150,7 @@ async def historical_authority(token, creation_id, conversation_id):
         # RLS-visible server registration supplies the business, never a browser scope.
         await tx.execute(text("SELECT set_config('pinet.business', :b, true)"), {"b": candidate.business_id})
         preliminary = await tx.get(Conversation, conversation_id)
-        frozen = preliminary.payload.get("customer_text_binding") if preliminary else None
-        if (not preliminary or preliminary.payload.get("transport") != adapter.VERSION
-                or not isinstance(frozen, dict) or frozen.get("creation_id") != creation_id
-                or frozen.get("user_id") != session.user_id or frozen.get("environment_id") != settings().environment
-                or frozen.get("adapter") != adapter.VERSION or frozen.get("model") != adapter.MODEL
-                or not all(key in frozen for key in ("registration_id", "registration_fingerprint",
-                    "admission_id", "admission_fingerprint", "profile"))):
-            raise ControlError(404, "not_found")
+        frozen = retained_binding(preliminary, creation_id, session)
         registry = await tx.get(Registration, frozen["registration_id"])
         if not registry or registry.creation_id != creation_id or registry.business_id != candidate.business_id:
             raise ControlError(404, "not_found")
@@ -157,6 +166,106 @@ async def historical_authority(token, creation_id, conversation_id):
         await historical_identity(tx, session, creation, row, frozen)
         if not await asyncio.to_thread(adapter.source_current):
             raise ControlError(503, "source_unavailable")
+
+
+def history_cursor(session, creation_id, kind, after, *, conversation_id=None, expires=None):
+    scope_id = creation_id if conversation_id is None else creation_id + ":" + conversation_id
+    return seal_cursor({"binding": [session.user_id, session.id, scope_id, settings().environment],
+        "snapshot": "customer-text.history." + kind,
+        "after": after, "expires": expires or int(utcnow().timestamp()) + 300})
+
+
+def history_options(limit, cursor, maximum):
+    if (type(limit) is not int or not 1 <= limit <= maximum
+            or (cursor is not None and (not isinstance(cursor, str) or not 1 <= len(cursor) <= 2048))):
+        raise ControlError(400, "invalid_request")
+
+
+async def sessions(token, creation_id, *, limit=20, cursor=None):
+    """Bounded metadata discovery, independently of paid Profile/TTL/runner readiness."""
+    history_options(limit, cursor, 50)
+    guard(execution=False)
+    if not await asyncio.to_thread(adapter.source_current):
+        raise ControlError(503, "source_unavailable")
+    async with scope(token=token_hash(token)) as tx:
+        session = await customer_session(tx, token)
+        creation_id = identifier(creation_id)
+        candidate = await profiles.registry_row(tx, creation_id)
+        if candidate and digest(registrations.stored_material(candidate)) != candidate.fingerprint:
+            raise ControlError(404, "not_found")
+        if candidate:
+            await tx.execute(text("SELECT set_config('pinet.business', :b, true)"), {"b": candidate.business_id})
+        statement = select(Conversation).where(
+            Conversation.environment_id == settings().environment,
+            Conversation.payload["transport"].astext == adapter.VERSION,
+            Conversation.payload["customer_text_binding"]["creation_id"].astext == creation_id,
+            Conversation.payload["customer_text_binding"]["user_id"].astext == session.user_id)
+        expires = int(utcnow().timestamp()) + 300
+        if cursor:
+            after, expires = open_cursor(cursor, session, creation_id, "customer-text.history.sessions")
+            anchor = await tx.scalar(statement.where(Conversation.id == after))
+            if not anchor:
+                raise ControlError(409, "history_cursor_unavailable")
+            statement = statement.where(or_(Conversation.created_at < anchor.created_at,
+                (Conversation.created_at == anchor.created_at) & (Conversation.id < anchor.id)))
+        rows = list(await tx.scalars(statement.order_by(Conversation.created_at.desc(), Conversation.id.desc()).limit(limit + 1)))
+        frozen = [retained_binding(row, creation_id, session) for row in rows]
+        registry_ids = {identifier(item["registration_id"]) for item in frozen}
+        if candidate:
+            registry_ids.add(candidate.id)
+        # Acquire every known historical lifetime before actor/Creation locks.
+        for registry_id in sorted(registry_ids):
+            await lifetime(tx, settings().environment, registry_id)
+        creation = await owned(tx, session, creation_id, lock=True)
+        if candidate:
+            await historical_business(tx, session, creation, candidate)
+        elif rows:
+            raise ControlError(404, "not_found")
+        for row, binding in zip(rows, frozen, strict=True):
+            if row.business_id != candidate.business_id:
+                raise ControlError(404, "not_found")
+            await historical_identity(tx, session, creation, row, binding)
+        # Observe mutable state and retained identity again after the last awaited lock/read.
+        for row, binding in zip(rows, frozen, strict=True):
+            await tx.refresh(row)
+            if row.payload.get("customer_text_binding") != binding:
+                raise ControlError(404, "not_found")
+            await historical_identity(tx, session, creation, row, binding)
+        await current_actor(tx, session, creation.portfolio_id)
+        if candidate:
+            await historical_business(tx, session, creation, candidate)
+        if not await asyncio.to_thread(adapter.source_current):
+            raise ControlError(503, "source_unavailable")
+        return {"creation_id": creation_id, "sessions": [{"conversation_id": row.id,
+            "created_at": row.created_at, "state": row.state, "need_revision": row.need_revision}
+            for row in rows[:limit]], "has_more": len(rows) > limit,
+            "next_cursor": history_cursor(session, creation_id, "sessions", rows[limit - 1].id,
+                expires=expires) if len(rows) > limit else None,
+            "transport": adapter.VERSION, "scope": "local_authenticated_test"}
+
+
+async def events(token, creation_id, conversation_id, *, limit=100, cursor=None):
+    """Traverse retained events in chronological pages; never renew or dispatch."""
+    history_options(limit, cursor, 100)
+    async with historical_authority(token, creation_id, conversation_id) as (tx, row):
+        session = await customer_session(tx, token)
+        creation_id, conversation_id = row.payload["customer_text_binding"]["creation_id"], row.id
+        statement = select(Event).where(Event.conversation_id == row.id)
+        expires = int(utcnow().timestamp()) + 300
+        if cursor:
+            after, expires = open_cursor(cursor, session, creation_id + ":" + conversation_id,
+                "customer-text.history.events")
+            anchor = await tx.scalar(statement.where(Event.id == after))
+            if not anchor:
+                raise ControlError(409, "history_cursor_unavailable")
+            statement = statement.where(Event.sequence < anchor.sequence)
+        rows = list(await tx.scalars(statement.order_by(Event.sequence.desc()).limit(limit + 1)))
+        return {"creation_id": creation_id, "conversation_id": conversation_id,
+            "events": [{"event_id": item.id, "sequence": item.sequence, "kind": item.kind, "data": item.payload}
+                for item in reversed(rows[:limit])], "has_more": len(rows) > limit,
+            "next_cursor": history_cursor(session, creation_id, "events", rows[limit - 1].id,
+                conversation_id=conversation_id, expires=expires) if len(rows) > limit else None,
+            "transport": adapter.VERSION, "scope": "local_authenticated_test"}
 
 
 async def final_authority(tx, session, creation, identity, expected):

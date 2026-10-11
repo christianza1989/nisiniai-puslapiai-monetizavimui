@@ -1,0 +1,28 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Retained customer text history cannot be discovered without a known UUID, and the latest100 window has no earlier-event traversal.",
+  "category": "code",
+  "evidence": [
+    "Source a3a201e5ce149b6fad1d5dd9da7209c087b92cea customer_text/routes.py exposes five operations; service.history limits101/returns100 with history_truncated but no paging route; actual retained same-owner history already observed separately."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/contract.py",
+    "agent-business-core/runtime/tests/test_customer_text_history.py",
+    "agent-business-core/runtime/offline_tests/test_customer_text.py",
+    "docs/contracts/verslomatika-customer-text.openapi.json",
+    "agent-business-core/runtime/docs/CUSTOMER_TEXT.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6107411761",
+  "rollback": "Scoped revert additive list/older-event routes and matching canonical schema; preserve all existing history/usage/Profile source and original failures; rollback only between clean-pinned jobs.",
+  "id": "upgrade-4037440e-b8a9-4af6-b78c-c1699970f339",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "a3a201e5ce149b6fad1d5dd9da7209c087b92cea",
+  "createdAt": "2026-10-11T09:06:13.357Z"
+}

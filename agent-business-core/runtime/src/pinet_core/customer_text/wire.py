@@ -117,6 +117,43 @@ class CapabilityEnvelope(Envelope):
     data: Capability
 
 
+Cursor = Annotated[str, Field(min_length=1, max_length=2048)]
+
+
+class SessionSummary(Strict):
+    conversation_id: UUID
+    created_at: datetime
+    state: Literal["created", "finalized"]
+    need_revision: Revision
+
+
+class SessionsPage(Strict):
+    creation_id: UUID
+    sessions: Annotated[list[SessionSummary], Field(max_length=50)]
+    has_more: bool
+    next_cursor: Cursor | None = None
+    transport: Literal["customer-text.v1"]
+    scope: Literal["local_authenticated_test"]
+
+
+class EventsPage(Strict):
+    creation_id: UUID
+    conversation_id: UUID
+    events: Annotated[list[TextEvent], Field(max_length=100)]
+    has_more: bool
+    next_cursor: Cursor | None = None
+    transport: Literal["customer-text.v1"]
+    scope: Literal["local_authenticated_test"]
+
+
+class SessionsEnvelope(Envelope):
+    data: SessionsPage
+
+
+class EventsEnvelope(Envelope):
+    data: EventsPage
+
+
 class Error(Strict):
     code: str
     message: str

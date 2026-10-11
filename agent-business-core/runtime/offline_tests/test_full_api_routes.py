@@ -14,10 +14,11 @@ def test_full_api_mounts_maintained_customer_completion_routes():
 
 
 def test_both_entrypoints_mount_typed_customer_text_without_removing_existing_routes():
-    expected = {(r.path, frozenset(r.methods or ())) for r in text_router.routes if hasattr(r, "methods")}
+    expected = {(r.path, method) for r in text_router.routes if hasattr(r, "methods")
+        for method in r.methods or ()}
     for application in (app, portable_app):
-        actual = {(path, frozenset(method.upper() for method in value))
-            for path, value in application.openapi()["paths"].items()}
+        actual = {(path, method.upper())
+            for path, value in application.openapi()["paths"].items() for method in value}
         assert expected and expected <= actual
         for route in text_router.routes:
             if hasattr(route, "response_model"):

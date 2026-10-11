@@ -18,6 +18,8 @@ def document():
     operations = {
         ("get", "/customer/v2/creations/{creation_id}/text-capability"): "getCustomerTextCapability",
         ("post", "/customer/v2/creations/{creation_id}/text-sessions"): "startCustomerText",
+        ("get", "/customer/v2/creations/{creation_id}/text-sessions"): "listCustomerTextSessions",
+        ("get", "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/events"): "listCustomerTextEvents",
         ("get", "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}"): "getCustomerText",
         ("post", "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/turns"): "postCustomerTextTurn",
         ("post", "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/end"): "endCustomerText",

@@ -204,6 +204,264 @@
             "CoreSession": []
           }
         ]
+      },
+      "get": {
+        "summary": "Sessions",
+        "operationId": "listCustomerTextSessions",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}/events": {
+      "get": {
+        "summary": "Events",
+        "operationId": "listCustomerTextEvents",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "conversation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Conversation Id",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 2048
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
       }
     },
     "/customer/v2/creations/{creation_id}/text-sessions/{conversation_id}": {
@@ -743,6 +1001,112 @@
         ],
         "title": "Error"
       },
+      "EventsEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/EventsPage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "EventsEnvelope"
+      },
+      "EventsPage": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "conversation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversation Id"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/TextEvent"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Events"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "transport": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Transport"
+          },
+          "scope": {
+            "type": "string",
+            "const": "local_authenticated_test",
+            "title": "Scope"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "conversation_id",
+          "events",
+          "has_more",
+          "transport",
+          "scope"
+        ],
+        "title": "EventsPage"
+      },
       "NeedValue": {
         "properties": {
           "value": {
@@ -781,6 +1145,43 @@
           "evidence"
         ],
         "title": "NeedValue"
+      },
+      "SessionSummary": {
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversation Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "created",
+              "finalized"
+            ],
+            "title": "State"
+          },
+          "need_revision": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Need Revision"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "conversation_id",
+          "created_at",
+          "state",
+          "need_revision"
+        ],
+        "title": "SessionSummary"
       },
       "SessionView": {
         "properties": {
@@ -889,6 +1290,106 @@
           "calibration_status"
         ],
         "title": "SessionView"
+      },
+      "SessionsEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SessionsPage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "SessionsEnvelope"
+      },
+      "SessionsPage": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "sessions": {
+            "items": {
+              "$ref": "#/components/schemas/SessionSummary"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "title": "Sessions"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2048,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          },
+          "transport": {
+            "type": "string",
+            "const": "customer-text.v1",
+            "title": "Transport"
+          },
+          "scope": {
+            "type": "string",
+            "const": "local_authenticated_test",
+            "title": "Scope"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "sessions",
+          "has_more",
+          "transport",
+          "scope"
+        ],
+        "title": "SessionsPage"
       },
       "Start": {
         "properties": {

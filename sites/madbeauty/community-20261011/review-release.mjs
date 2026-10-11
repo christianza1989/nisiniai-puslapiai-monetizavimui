@@ -36,8 +36,14 @@ async function protectedSnapshot(){
 async function freeHost(){
  const domains=await api(workers+'domains');assert.ok(!domains.some(d=>d.hostname===hostname),'Review hostname already assigned');
  const zones=await api('zones?name=madbeauty.lt&account.id='+account);assert.equal(zones.length,1);assert.equal(zones[0].status,'active');
- const dns=await api('zones/'+zones[0].id+'/dns_records?name='+hostname);assert.equal(dns.length,0,'Review hostname has existing DNS');
- return {zoneId:zones[0].id,hostname,dns,domains};
+ // Wrangler OAuth can read Workers/zones but lacks DNS Read. Use a fresh scoped
+ // readback from the already-authorized Cloudflare connector; never widen OAuth.
+ const proof=await json('dns-preflight.private.json');
+ assert.equal(proof.source,'Cloudflare connector GET /zones/{zone_id}/dns_records');
+ assert.equal(proof.account,account);assert.equal(proof.zoneId,zones[0].id);assert.equal(proof.hostname,hostname);
+ assert.equal(proof.status,200);assert.deepEqual(proof.records,[]);
+ const age=Date.now()-Date.parse(proof.at);assert.ok(age>=0&&age<=120_000,'Refresh scoped DNS readback before this phase');
+ return {zoneId:zones[0].id,hostname,dns:proof.records,domains};
 }
 async function cli(args,input,label){
  const child=spawn(process.execPath,[path.join(core,'node_modules/wrangler/bin/wrangler.js'),...args,'--config',path.join(dir,'wrangler.json')],{cwd:repo,stdio:['pipe','pipe','pipe']});let log='';

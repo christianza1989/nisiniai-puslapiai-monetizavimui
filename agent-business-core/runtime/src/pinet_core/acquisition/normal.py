@@ -68,6 +68,12 @@ async def authorize_fresh_command(tx, operation, value):
         return now
     if not module.enabled or "acquisition.capture" not in module.permissions:
         raise LedgerError(409, "acquisition_module_stopped")
+    authority = await tx.scalar(
+        text("SELECT acquisition_pin_authority(:b,:e,:s,:a)"),
+        {"b": scope.business_id, "e": scope.environment_id, "s": scope.site_id, "a": value.adapter_id},
+    )
+    if not authority:
+        raise LedgerError(403, "acquisition_module_denied")
     await tx.execute(
         text("SELECT set_config('pinet.control_user',:u,true)"), {"u": module.approved_by_user_id}
     )
@@ -78,6 +84,8 @@ async def authorize_fresh_command(tx, operation, value):
         raise LedgerError(403, "acquisition_module_denied") from None
     if not user or not user.enabled or grant.organization_id != module.organization_id:
         raise LedgerError(403, "acquisition_module_denied")
+    # Any identity barrier/grant read above may wait; expiry uses the final DB clock.
+    now = await tx.scalar(text("SELECT clock_timestamp()"))
     if module.expires_at <= now or module.approved_at > now:
         raise LedgerError(409, "acquisition_approval_expired")
     if module.source_revision != settings().control_source_revision:

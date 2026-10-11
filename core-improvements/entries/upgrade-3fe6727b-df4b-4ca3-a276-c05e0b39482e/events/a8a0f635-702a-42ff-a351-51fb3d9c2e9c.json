@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Foundation QA: full 0001-to-0025/repeated bootstrap/empty rollback/populated refusal/actual pg_dump restore/atomic partial-schema refusal PASS e6ae5cd4 at3ce; new normal HTTP initial 13PASS/1 actual expiry FAIL c724699a, identity barrier original FAIL22c21554, safe configuration original FAIL529791fd preserved. Address reviewed P2 with exact approving User/Membership/Grant read barriers and fresh clock after proof/provider waits; sanitize registration parser errors. Four offline registration cases now PASS28d4f5f0. Source freeze before new fresh full-chain rehearsal; no operational adoption/daily/correspondence/privacy/native/portal acceptance.",
+  "eventId": "a8a0f635-702a-42ff-a351-51fb3d9c2e9c",
+  "sequence": 3,
+  "at": "2026-10-11T22:31:26.850Z"
+}

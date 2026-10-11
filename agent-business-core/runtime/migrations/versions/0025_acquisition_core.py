@@ -26,6 +26,7 @@ def downgrade():
     # Preserve captured correspondence/evidence. Only a truly empty rehearsal can roll back.
     if any(connection.scalar(text(f"SELECT EXISTS(SELECT 1 FROM {table} LIMIT 1)")) for table in tables):
         raise RuntimeError("Populated acquisition downgrade refused; preserve capture history")
+    op.execute("DROP FUNCTION acquisition_pin_authority(VARCHAR,VARCHAR,VARCHAR,VARCHAR)")
     op.execute("DROP FUNCTION acquisition_pin_module(VARCHAR,VARCHAR,VARCHAR,VARCHAR)")
     for table in tables:
         op.execute(f"DROP TABLE {table}")

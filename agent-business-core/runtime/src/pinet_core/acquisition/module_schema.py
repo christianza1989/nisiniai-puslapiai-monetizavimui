@@ -26,6 +26,27 @@ PIN_FUNCTION = """CREATE FUNCTION acquisition_pin_module(b VARCHAR,e VARCHAR,s V
  RETURN FOUND;
  END $$"""
 
+AUTHORITY_FUNCTION = """CREATE FUNCTION acquisition_pin_authority(b VARCHAR,e VARCHAR,s VARCHAR,a VARCHAR)
+ RETURNS BOOLEAN LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,public AS $$
+ DECLARE approving VARCHAR; organization VARCHAR;
+ BEGIN
+ IF NOT public.acquisition_pin_module(b,e,s,a) THEN RETURN FALSE; END IF;
+ SELECT m.approved_by_user_id,m.organization_id INTO approving,organization
+ FROM public.acquisition_modules m WHERE m.business_id=b AND m.environment_id=e
+ AND m.site_id=s AND m.adapter_id=a;
+ IF NOT FOUND THEN RETURN FALSE; END IF;
+ -- Lock only the exact registered approving principal, owner membership and business grant.
+ -- No UPDATE privilege is added to the application role and no identity is returned.
+ PERFORM 1 FROM public.control_users u WHERE u.id=approving AND u.environment_id=e AND u.enabled FOR SHARE;
+ IF NOT FOUND THEN RETURN FALSE; END IF;
+ PERFORM 1 FROM public.control_memberships m WHERE m.user_id=approving AND m.environment_id=e
+ AND m.organization_id=organization AND m.role='owner' AND m.enabled FOR SHARE;
+ IF NOT FOUND THEN RETURN FALSE; END IF;
+ PERFORM 1 FROM public.control_business_grants g WHERE g.business_id=b AND g.environment_id=e
+ AND g.organization_id=organization AND g.enabled FOR SHARE;
+ RETURN FOUND;
+ END $$"""
+
 
 def grants_sql():
     return [
@@ -33,6 +54,8 @@ def grants_sql():
         f"GRANT SELECT ON {TABLE} TO pinet_runtime",
         "REVOKE ALL ON FUNCTION acquisition_pin_module(VARCHAR,VARCHAR,VARCHAR,VARCHAR) FROM PUBLIC",
         "GRANT EXECUTE ON FUNCTION acquisition_pin_module(VARCHAR,VARCHAR,VARCHAR,VARCHAR) TO pinet_runtime",
+        "REVOKE ALL ON FUNCTION acquisition_pin_authority(VARCHAR,VARCHAR,VARCHAR,VARCHAR) FROM PUBLIC",
+        "GRANT EXECUTE ON FUNCTION acquisition_pin_authority(VARCHAR,VARCHAR,VARCHAR,VARCHAR) TO pinet_runtime",
     ]
 
 
@@ -54,5 +77,6 @@ def isolation_sql():
         f"ALTER TABLE {TABLE} FORCE ROW LEVEL SECURITY",
         f"CREATE POLICY acquisition_module_scope ON {TABLE} FOR SELECT USING (({owner}) OR ({native}))",
         PIN_FUNCTION,
+        AUTHORITY_FUNCTION,
         *grants_sql(),
     ]

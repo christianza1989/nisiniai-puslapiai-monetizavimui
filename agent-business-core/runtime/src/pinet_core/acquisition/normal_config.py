@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from typing import Literal
 
-from pydantic import Field, SecretStr, field_validator, model_validator
+from pydantic import Field, SecretStr, ValidationError, field_validator, model_validator
 from sqlalchemy.engine import make_url
 
 from .interfaces import NoExternalSend, OpaqueId, Scope, Wire
@@ -92,7 +92,12 @@ def read_registration(cfg):
     ):
         raise ValueError("private_capture_registration_required")
     raw = path.read_bytes()
-    registration = Registration.model_validate_json(raw)
+    try:
+        registration = Registration.model_validate_json(raw)
+    except ValidationError:
+        # Pydantic raw input diagnostics can include server registration keys.
+        # Keep them out of ordinary startup exceptions and their exception chain.
+        raise ValueError("invalid_capture_registration") from None
     if any(e.scope.environment_id != cfg.environment for e in registration.entries):
         raise ValueError("capture_environment_mismatch")
     return registration, hashlib.sha256(raw).hexdigest()

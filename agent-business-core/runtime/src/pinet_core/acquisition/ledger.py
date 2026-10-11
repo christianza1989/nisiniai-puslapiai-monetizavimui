@@ -178,8 +178,10 @@ class AcquisitionLedger:
                                                 **challenge.model_dump()))
                 result = RecipientChallengeReceipt(**common, state=state, challenge=challenge)
             elif operation == 'verify-recipient':
-                self._available(invite, campaign, now)
                 challenge = await self._challenge(tx, values, invite, value)
+                if self.fresh_authorize is not None:
+                    now = await self.fresh_authorize(tx, operation, value)
+                self._available(invite, campaign, now)
                 if challenge.consumed_at or invite.bound_at:
                     raise LedgerError(409, 'recipient_already_bound_or_nonce_consumed')
                 if challenge.expires_at <= now:
@@ -202,6 +204,8 @@ class AcquisitionLedger:
                     # Privacy callback remains valid after marketing pause/expiry.
                     # Authoritative challenge + exact intended-address MAC is still mandatory.
                     await self._challenge(tx, values, invite, value.recipient_proof)
+                    if self.fresh_authorize is not None:
+                        now = await self.fresh_authorize(tx, operation, value)
                     retires = self._matches(invite, value.recipient_proof)
                 else:
                     raise LedgerError(409, 'unbound_retirement_requires_prepared_proof')
@@ -256,10 +260,7 @@ class AcquisitionLedger:
             raise LedgerError(409, 'recipient_retired')
         if not invite.bound_at:
             raise LedgerError(409, 'verified_recipient_required')
-        if event.occurred_at > now:
-            raise LedgerError(422, 'native_event_time_invalid')
         if not invite.provider_ref:
-            self._available(invite, campaign, now)
             # One actual provider can belong to only one invite in this registered scope.
             await self._lock(tx, ['provider', values, event.provider_ref])
             other = await tx.scalar(select(AcquisitionInvitation).where(
@@ -273,6 +274,12 @@ class AcquisitionLedger:
             AcquisitionReceipt.source_revision == event.source_revision))
         if revision:
             raise LedgerError(409, 'native_revision_reuse')
+        if self.fresh_authorize is not None:
+            now = await self.fresh_authorize(tx, 'events', event)
+        if event.occurred_at > now:
+            raise LedgerError(422, 'native_event_time_invalid')
+        if not invite.provider_ref:
+            self._available(invite, campaign, now)
         current = Conversion.model_validate_json(json.dumps(invite.conversion)) if invite.conversion else None
         try:
             conversion, state = project_conversion(current, event)

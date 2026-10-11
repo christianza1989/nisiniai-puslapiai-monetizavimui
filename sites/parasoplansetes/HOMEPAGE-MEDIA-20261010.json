@@ -1,0 +1,516 @@
+{
+  "createdAt": "2026-10-09T23:30:38.705Z",
+  "approval": "Owner approved photographic comp and authorized implementation; asked to exceed its finish.",
+  "originalPackageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "homeRevisionHash": "12f85d70738d1a53185380d005f089f675a10a086b29fbd4bbcda643ed3b33f4",
+  "unchangedNonHomePages": 18,
+  "bodyAndBusinessFactsUnchanged": true,
+  "policy": "responsive-webp-v1",
+  "privateOriginals": "Ignored isolated studio-data/media-originals; full prompts stay out of the public package.",
+  "assets": [
+    {
+      "role": "hero",
+      "referenceBox": [
+        0,
+        39,
+        724,
+        419
+      ],
+      "sourceSha256": "4561d88d37f59d7c03da91659dff0073edd648d3a7e0657d103f4e0aaeac54ee",
+      "source": 1811202,
+      "assetId": "54fcfd3a-d7d4-4d4a-b9a9-950193521d9e",
+      "groupId": "b399fd31-f8b2-465b-b4b3-6078482df66b",
+      "prompt": "Extract and recreate ONLY the large reception photograph in the top hero of the approved webpage reference. Preserve the exact natural warm daylight, light oak counter, indoor plants, smiling brown-haired female administrator in navy blazer at center-right, male visitor on far right signing on a black landscape electronic signature pad. Wide landscape photographic composition 2:1, premium editorial commercial photography, full-resolution crisp detail. Frame their hands and small black signature pad visibly in lower-right. Reserve the left 40 percent as bright, uncluttered office wall/light with subtle reception context so live HTML headline can sit there. REMOVE ALL webpage headings, buttons, icons, navigation, workflow overlay, placards, printed wall lettering and any signage or readable words. No text, no logos, no watermarks. Only the clean photograph, no UI. Preserve believable human hands, one stylus held naturally, realistic signature-pad proportions; no invented device branding or readable document data. Match the approved reference scene faithfully, improve photographic finish, do not make a different scene.",
+      "variants": [
+        {
+          "id": "54fcfd3a-d7d4-4d4a-b9a9-950193521d9e",
+          "src": "/content-assets/parasoplansetes/54fcfd3a-d7d4-4d4a-b9a9-950193521d9e.webp",
+          "width": 1600,
+          "height": 800,
+          "bytes": 52888,
+          "sha256": "f39719506b1c97e7bfbfe2ab4e492e227ec0de7343c191de0cf495d8ef1830ac"
+        },
+        {
+          "id": "c792722b-bb1b-4673-94a1-42f80ef72ece",
+          "src": "/content-assets/parasoplansetes/c792722b-bb1b-4673-94a1-42f80ef72ece.webp",
+          "width": 1200,
+          "height": 600,
+          "bytes": 36358,
+          "sha256": "d0d423e85c21a82a9e4b324d3cae27756f084218bc4a9ae5d056af84e5343456"
+        },
+        {
+          "id": "a34eb07b-f89f-4243-b9a4-98e469c6cc1f",
+          "src": "/content-assets/parasoplansetes/a34eb07b-f89f-4243-b9a4-98e469c6cc1f.webp",
+          "width": 800,
+          "height": 400,
+          "bytes": 21416,
+          "sha256": "2bbbba5a16578a02f7fa674de774643250379db54954958384ab0226bb55abc1"
+        },
+        {
+          "id": "8916f966-b657-42af-bcd5-6e113dab6dc2",
+          "src": "/content-assets/parasoplansetes/8916f966-b657-42af-bcd5-6e113dab6dc2.webp",
+          "width": 640,
+          "height": 320,
+          "bytes": 15858,
+          "sha256": "51325f9add768ceb06ba8f255534ccd72bfca4667e14aa54a23755dc42e6e9e8"
+        },
+        {
+          "id": "05a573c8-765d-40e6-8d54-538a4b46d649",
+          "src": "/content-assets/parasoplansetes/05a573c8-765d-40e6-8d54-538a4b46d649.webp",
+          "width": 360,
+          "height": 180,
+          "bytes": 7294,
+          "sha256": "f8de5185df4a3d73a61943ff73b3f96b381ae02268abe706f90d8779f37cc7ae"
+        }
+      ]
+    },
+    {
+      "role": "customer-desk",
+      "referenceBox": [
+        18,
+        539,
+        227,
+        221
+      ],
+      "sourceSha256": "ae9134cb184ec51bb384f90bf4d0f72ae64f79113af554201412309f99f7da62",
+      "source": 1807670,
+      "assetId": "5f3c7f9b-99ba-417b-9880-a7067d9d9a01",
+      "groupId": "81ea0803-9de5-4521-8059-d547c7c2d198",
+      "prompt": "Recreate only this customer-service photograph as a clean high-resolution square photo. Preserve the smiling brown-haired woman in cream blazer behind a light oak reception desk, a female customer seen from behind on right, customer signing with a stylus on a small black landscape electronic signature pad on the counter. Preserve warm daylight, plants, professional contemporary European office, candid editorial commercial photography. Improve natural hands and photographic detail. No headings, captions, UI, text, logos or watermarks. Exact reference scene and color grade, not a new concept.",
+      "variants": [
+        {
+          "id": "5f3c7f9b-99ba-417b-9880-a7067d9d9a01",
+          "src": "/content-assets/parasoplansetes/5f3c7f9b-99ba-417b-9880-a7067d9d9a01.webp",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 53470,
+          "sha256": "7bf20b908f062b1e3fd96bf9877704a97b74a8c438b809f274f1dd9ff09fda50"
+        },
+        {
+          "id": "71c4ef0b-d6b2-475c-a187-87231a17bf9b",
+          "src": "/content-assets/parasoplansetes/71c4ef0b-d6b2-475c-a187-87231a17bf9b.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 50586,
+          "sha256": "d03012c68695bad99917c4a3c4a53fadb2e023110571bf781f86a47024ec0e1a"
+        },
+        {
+          "id": "f2f2115e-f6ac-477e-872a-3521a40fe0af",
+          "src": "/content-assets/parasoplansetes/f2f2115e-f6ac-477e-872a-3521a40fe0af.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 31930,
+          "sha256": "7b7c9a43b97d621b1862ba6a24c320cb77657e239f2ac7abf626a55abeb28dea"
+        },
+        {
+          "id": "8e3b0a0d-8868-4792-ab7e-d2b5d810269b",
+          "src": "/content-assets/parasoplansetes/8e3b0a0d-8868-4792-ab7e-d2b5d810269b.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 24710,
+          "sha256": "08e1f4d26d71f0246c2bea6628e266814683bea1bcb1a9241d86d0b1a625cedb"
+        },
+        {
+          "id": "a45a5333-d7a7-4137-9f73-380295beccbc",
+          "src": "/content-assets/parasoplansetes/a45a5333-d7a7-4137-9f73-380295beccbc.webp",
+          "width": 360,
+          "height": 360,
+          "bytes": 12734,
+          "sha256": "de40241cbea0c91b734dcf12564156ca7da8657590c5890b597d33b0b723fa0f"
+        }
+      ]
+    },
+    {
+      "role": "reception-desk",
+      "referenceBox": [
+        250,
+        539,
+        224,
+        221
+      ],
+      "sourceSha256": "f2439e67e0db6bc20ea550804a857017911532cc1d3ac14ff5740dc77d19853f",
+      "source": 1828448,
+      "assetId": "2b7a74f8-a79a-418a-8ad6-3fb9e2eda065",
+      "groupId": "079c8081-f2e9-4d6c-a66e-806af7dddb0d",
+      "prompt": "Recreate only this reception photograph as a clean high-resolution square photo. Preserve the smiling brown-haired reception professional in modest light-blue scrubs, blonde visitor in white seen from behind at right, light oak desk and a small black landscape electronic signature pad being used with stylus. Bright neutral contemporary clinic-like reception, warm daylight, natural plants, candid editorial commercial photography. No patient data, no hospital brands, no medical procedure, no claims of certification. Improve natural hands and detail. No headings, captions, UI, text, logos or watermarks. Faithful to reference composition and warm color grade.",
+      "variants": [
+        {
+          "id": "2b7a74f8-a79a-418a-8ad6-3fb9e2eda065",
+          "src": "/content-assets/parasoplansetes/2b7a74f8-a79a-418a-8ad6-3fb9e2eda065.webp",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 49600,
+          "sha256": "f24aa8053d366e7ed999b33fa6cbb5c5fe4cce8a1b542ba838c640f61cbb3b62"
+        },
+        {
+          "id": "1ef5d28f-ce6f-45f5-b49a-c4ebd8e4d83d",
+          "src": "/content-assets/parasoplansetes/1ef5d28f-ce6f-45f5-b49a-c4ebd8e4d83d.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 46610,
+          "sha256": "6cfbc50e2ecad3d81d1a5a2c770faa525d89131c77d6ae32a2af7688d4e0c2f4"
+        },
+        {
+          "id": "46ebc266-d162-4556-9d3e-3eb091a7f444",
+          "src": "/content-assets/parasoplansetes/46ebc266-d162-4556-9d3e-3eb091a7f444.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 28192,
+          "sha256": "8803c3c4a2c8ae96d8dc7ba66dac3e0a6b34f6d6e1ba6fe12eefd19169a2fdea"
+        },
+        {
+          "id": "0bf4c739-fda9-46b2-882b-fe75794535f4",
+          "src": "/content-assets/parasoplansetes/0bf4c739-fda9-46b2-882b-fe75794535f4.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 21476,
+          "sha256": "85a8bd343c0cb7b038c87ee732439c9b0939344a9513fb979d04b08770c455db"
+        },
+        {
+          "id": "cba11719-9851-4208-94f3-288fda316c40",
+          "src": "/content-assets/parasoplansetes/cba11719-9851-4208-94f3-288fda316c40.webp",
+          "width": 360,
+          "height": 360,
+          "bytes": 10606,
+          "sha256": "f54100ba5cb65c37978f4d9837b84729a2e4f3512bec94a0b584206a1be5459f"
+        }
+      ]
+    },
+    {
+      "role": "business-desk",
+      "referenceBox": [
+        478,
+        539,
+        228,
+        221
+      ],
+      "sourceSha256": "796ba48dda979f5b9e85415b2fc3de8e3d309b7d3d69a804c56fdbe210abada2",
+      "source": 2022834,
+      "assetId": "d515eeee-2392-49b9-a27a-f3eb364854be",
+      "groupId": "c7edf407-6698-4c73-a128-7770c10184be",
+      "prompt": "Recreate only this business-office photograph as a clean high-resolution square photo. Preserve the middle-aged man with salt-and-pepper hair, short beard and glasses, navy suit and blue shirt, leaning over a light oak desk to sign on a small black landscape signature pad using a stylus. Another professional seen from behind on far right. Modern bright European office with plants, warm daylight, premium candid commercial photography, clear pad and natural hands. No headings, captions, UI, readable text, branding or watermarks. Exact scene and warm reference grade, not a new concept.",
+      "variants": [
+        {
+          "id": "d515eeee-2392-49b9-a27a-f3eb364854be",
+          "src": "/content-assets/parasoplansetes/d515eeee-2392-49b9-a27a-f3eb364854be.webp",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 64842,
+          "sha256": "bf581dc92273441fa494b94e3db47a97bfe86cdba855b156c559a1d8a2231ad3"
+        },
+        {
+          "id": "6832fb3b-4c6d-41e4-b4ab-c4ba5615e06c",
+          "src": "/content-assets/parasoplansetes/6832fb3b-4c6d-41e4-b4ab-c4ba5615e06c.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 60376,
+          "sha256": "4e75efee39e05b4becb7cd7be4c11cbd0e1974299ad605043cd9a282be75484f"
+        },
+        {
+          "id": "1179f015-6e15-46e5-a38c-6ea677973a3b",
+          "src": "/content-assets/parasoplansetes/1179f015-6e15-46e5-a38c-6ea677973a3b.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 36866,
+          "sha256": "3d9a89c089b06b9b7814338f3fec5e4c6096ef376d9db370511b8f401c5bfdb7"
+        },
+        {
+          "id": "c60fa171-8016-484f-b118-6c36727db07b",
+          "src": "/content-assets/parasoplansetes/c60fa171-8016-484f-b118-6c36727db07b.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 28614,
+          "sha256": "5d39cd9a08b67c4d6c21ade603ff572516532f01037bf264a84d8b72edb7f661"
+        },
+        {
+          "id": "ea2b3e1d-8b05-42be-a49c-4b3f38344b99",
+          "src": "/content-assets/parasoplansetes/ea2b3e1d-8b05-42be-a49c-4b3f38344b99.webp",
+          "width": 360,
+          "height": 360,
+          "bytes": 14104,
+          "sha256": "541e0c6f42d320bc7cc272ca21deca02aed31fffe46979ba575de9c5d5581e71"
+        }
+      ]
+    },
+    {
+      "role": "process",
+      "referenceBox": [
+        359,
+        1088,
+        365,
+        363
+      ],
+      "sourceSha256": "844fc01187791e977b7d22e8d1388b39df8febd379436f0d2c1b39bb176cbbc6",
+      "source": 1879697,
+      "assetId": "d965c16e-0140-4dbf-bc2a-924f91850308",
+      "groupId": "aec7730c-5571-46ab-b3ca-991fcc67dd01",
+      "prompt": "Extract and recreate only the close-up signature-pad photograph from the right half of the navy process section of the reference. Clean high-resolution square photograph. Black landscape electronic signature pad lower center-right on light oak desk, a person's natural hand holding one stylus and drawing a generic signature, slightly blurred computer monitor with an unreadable document at top-right, leafy indoor plant on left. Warm natural daylight, premium editorial detail, realistic black device proportions. Remove the printed acrylic placard entirely and all readable lettering. No text, no website UI, no logos, no watermarks, no readable personal data. Keep this precise reference composition and photographic character.",
+      "variants": [
+        {
+          "id": "d965c16e-0140-4dbf-bc2a-924f91850308",
+          "src": "/content-assets/parasoplansetes/d965c16e-0140-4dbf-bc2a-924f91850308.webp",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 58930,
+          "sha256": "75a9ce2e5c79e543d7b1fa85eec587e3171d26fd78ac7e52e8c1616ba51d9a6d"
+        },
+        {
+          "id": "a0f9317e-6afe-499d-89dd-a05eb1408dbb",
+          "src": "/content-assets/parasoplansetes/a0f9317e-6afe-499d-89dd-a05eb1408dbb.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 54758,
+          "sha256": "39eee6608cca71ae128f2cd47799f45474d860b4ec15368c77889f971a35e8c9"
+        },
+        {
+          "id": "5d9f31f1-0d92-49ee-869f-992e7d32b0be",
+          "src": "/content-assets/parasoplansetes/5d9f31f1-0d92-49ee-869f-992e7d32b0be.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 33170,
+          "sha256": "5c960faf13ec569512658e7952ba7fca8e8cd00c65a34cb5943b00daacc7cb0d"
+        },
+        {
+          "id": "37999a4d-f8ed-43d4-82fe-c8d85cd1ec16",
+          "src": "/content-assets/parasoplansetes/37999a4d-f8ed-43d4-82fe-c8d85cd1ec16.webp",
+          "width": 640,
+          "height": 640,
+          "bytes": 25302,
+          "sha256": "b13bdc0219833a461c88b47885ff59f5251304630d1c6105cce81a1e87257d60"
+        },
+        {
+          "id": "86f06f03-80bb-41e4-abba-3c05479a2c2d",
+          "src": "/content-assets/parasoplansetes/86f06f03-80bb-41e4-abba-3c05479a2c2d.webp",
+          "width": 360,
+          "height": 360,
+          "bytes": 12886,
+          "sha256": "9771487e0afa0cefc0b7f889358cd2379854478277843415f591bae0f80a3b58"
+        }
+      ]
+    },
+    {
+      "role": "guide-device",
+      "referenceBox": [
+        33,
+        1540,
+        157,
+        93
+      ],
+      "sourceSha256": "110952d94ea4c7adcfa176d559f69cfe439c5ad2a9d09d2234f9a38367d7ca1e",
+      "source": 1800560,
+      "assetId": "114da68a-33a3-444b-9219-007d2d928eaf",
+      "groupId": "e22bf76b-325b-4ad4-a5af-a7c59527575a",
+      "prompt": "Recreate only this editorial thumbnail as a clean high-resolution landscape photograph, aspect ratio 16:10. Close-up of two natural hands holding a small black landscape signature pad over a light oak desk, one stylus, an abstract unreadable document and blue signature on its screen. Warm daylight, understated contemporary office, shallow background depth, physically believable device with no brand labels. Faithful to reference scene and warm grade. No captions, headings, UI outside the photographed device, logos, readable text, personal data or watermarks.",
+      "variants": [
+        {
+          "id": "114da68a-33a3-444b-9219-007d2d928eaf",
+          "src": "/content-assets/parasoplansetes/114da68a-33a3-444b-9219-007d2d928eaf.webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 47508,
+          "sha256": "fbab4fb1ebd6bf51078c6cdce209c8714ca53f0dfc48483caa2263b4c31067f7"
+        },
+        {
+          "id": "d46b0dcb-4cb0-4494-8f51-5359b503ee22",
+          "src": "/content-assets/parasoplansetes/d46b0dcb-4cb0-4494-8f51-5359b503ee22.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 33736,
+          "sha256": "9d27e6720d125bbf8818a5e29ea6ab742655b90d952f3c26826f904296940380"
+        },
+        {
+          "id": "c9e79d6d-1725-4405-8471-6b2dfe634068",
+          "src": "/content-assets/parasoplansetes/c9e79d6d-1725-4405-8471-6b2dfe634068.webp",
+          "width": 800,
+          "height": 500,
+          "bytes": 20890,
+          "sha256": "ef06e055c6792db2c9d0079bad11f4861b5d20ad0ca84039245fd3aa3b84ab00"
+        },
+        {
+          "id": "53abf9bc-e4f0-484d-bf38-96a362baffc3",
+          "src": "/content-assets/parasoplansetes/53abf9bc-e4f0-484d-bf38-96a362baffc3.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 15594,
+          "sha256": "293f2d5b9f7bc9018f0fc9a09391969dd4205c211c7bd711ff9028bf299e77e1"
+        },
+        {
+          "id": "738bb211-75ab-451c-9677-fbafed23e61f",
+          "src": "/content-assets/parasoplansetes/738bb211-75ab-451c-9677-fbafed23e61f.webp",
+          "width": 360,
+          "height": 225,
+          "bytes": 7730,
+          "sha256": "6f76d93233acaf5a3c0023e0d51e0966e8d267f0163f344b7ab547dff988e059"
+        }
+      ]
+    },
+    {
+      "role": "guide-pdf",
+      "referenceBox": [
+        201,
+        1540,
+        157,
+        93
+      ],
+      "sourceSha256": "1a19a4422f4c36beffd177cc3e5ae3a292e48891b9b32c908ea8036256044323",
+      "source": 1861038,
+      "assetId": "0b49b474-354b-48c3-a3b4-b4c8c932fe9b",
+      "groupId": "05547c0e-2aab-4367-a04f-470418b2acff",
+      "prompt": "Recreate only this editorial thumbnail as a clean high-resolution landscape photograph, aspect ratio 16:10. A modern laptop on a light oak desk, a person's hands on its keyboard, screen showing an abstract white document with a simple small red PDF document icon and blue generic signature, all text unreadable. Plant on left, warm soft daylight, quiet modern office, photographic not illustrated. Faithful to reference composition. No headings, captions, webpage UI, legible words, brand names, personal data or watermarks.",
+      "variants": [
+        {
+          "id": "0b49b474-354b-48c3-a3b4-b4c8c932fe9b",
+          "src": "/content-assets/parasoplansetes/0b49b474-354b-48c3-a3b4-b4c8c932fe9b.webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 68894,
+          "sha256": "6c810f3ad124935a6f183f5c62ddd6dada0c7b95cbdcdab6921e711117830d9b"
+        },
+        {
+          "id": "1772a48f-2e8f-4e0e-8292-ca858daef5fd",
+          "src": "/content-assets/parasoplansetes/1772a48f-2e8f-4e0e-8292-ca858daef5fd.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 48832,
+          "sha256": "25c258f1b1b77134b54d0bfd1608efb811a68845147a5dd2e9b1f7f9d9211ecf"
+        },
+        {
+          "id": "fe1a0e25-a24e-488b-9932-042d4d9a09fa",
+          "src": "/content-assets/parasoplansetes/fe1a0e25-a24e-488b-9932-042d4d9a09fa.webp",
+          "width": 800,
+          "height": 500,
+          "bytes": 29806,
+          "sha256": "4cca39198552a8b2b4660018ed027665bacbbe8561bd5b0f3536e8a103b9fb03"
+        },
+        {
+          "id": "869bbefc-ddf8-487c-a730-342b7fe59572",
+          "src": "/content-assets/parasoplansetes/869bbefc-ddf8-487c-a730-342b7fe59572.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 22416,
+          "sha256": "045939d643d6d9330db269901fb6319a1d06be67bd2011cac0cf617098fb3e6f"
+        },
+        {
+          "id": "fc407766-2987-42ef-9e86-da890c825564",
+          "src": "/content-assets/parasoplansetes/fc407766-2987-42ef-9e86-da890c825564.webp",
+          "width": 360,
+          "height": 225,
+          "bytes": 10864,
+          "sha256": "84d24315ffaa9cbabd8d1e8b47b786db6c90289035907b031a0d05f90faa67de"
+        }
+      ]
+    },
+    {
+      "role": "guide-integration",
+      "referenceBox": [
+        368,
+        1540,
+        155,
+        93
+      ],
+      "sourceSha256": "9ff52d47e65f4a364a5106e107c3f9032d17e2d76e40c0d6aeee673288b88768",
+      "source": 1824367,
+      "assetId": "51ebc947-ab6b-4749-a30c-f0e4bea5b3c4",
+      "groupId": "a29ed8d3-a639-48e2-b743-edac4db0c5c0",
+      "prompt": "Recreate only this editorial thumbnail as a clean high-resolution landscape photograph, aspect ratio 16:10. Two physically rendered small interlocking gears, one blue and one white, standing on a light oak desk in a softly blurred sunlit modern office with a green plant. Calm tactile premium still life, realistic soft shadows, faithful to the reference composition and color grade. This is a symbolic integration illustration photographed as objects, no claims. No text, headings, captions, UI, logos or watermarks.",
+      "variants": [
+        {
+          "id": "51ebc947-ab6b-4749-a30c-f0e4bea5b3c4",
+          "src": "/content-assets/parasoplansetes/51ebc947-ab6b-4749-a30c-f0e4bea5b3c4.webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 42252,
+          "sha256": "46e904cd25c405b62d620086d811d4e27039647073987b22677b45333b4d1981"
+        },
+        {
+          "id": "01a821a9-b2ca-4942-8c5f-4e9697a43d7c",
+          "src": "/content-assets/parasoplansetes/01a821a9-b2ca-4942-8c5f-4e9697a43d7c.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 27896,
+          "sha256": "271152a078a69c251536f36685fb9ddcba7b2190e07621cb753774955f5e7a16"
+        },
+        {
+          "id": "639713c2-598c-4ae1-b40a-a62ce8998dcc",
+          "src": "/content-assets/parasoplansetes/639713c2-598c-4ae1-b40a-a62ce8998dcc.webp",
+          "width": 800,
+          "height": 500,
+          "bytes": 15938,
+          "sha256": "5cffc3bfa7b1838c2fd13394ba600aa656556d00a766e7e84d5530525c3b70af"
+        },
+        {
+          "id": "878d77bf-f912-4246-9c79-ce7ec6e61433",
+          "src": "/content-assets/parasoplansetes/878d77bf-f912-4246-9c79-ce7ec6e61433.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 12180,
+          "sha256": "bb74fdbbf8f0cdc6240949158341ccedde2fb79f2aae5cb63b5edc938e8fdf9e"
+        },
+        {
+          "id": "ab7e450d-908b-4a3c-b626-32d5620c94f6",
+          "src": "/content-assets/parasoplansetes/ab7e450d-908b-4a3c-b626-32d5620c94f6.webp",
+          "width": 360,
+          "height": 225,
+          "bytes": 5970,
+          "sha256": "9b64bba3bde02022edef4b5f05227fec683a930a117345f3b34b5cef2c6212c4"
+        }
+      ]
+    },
+    {
+      "role": "guide-terminal",
+      "referenceBox": [
+        534,
+        1540,
+        156,
+        93
+      ],
+      "sourceSha256": "d2fdca0e12327ba5df5139a59bdcf118847a8a7f4ea587123c4eb8490ce6df46",
+      "source": 2510865,
+      "assetId": "d64df8c3-0867-4392-852d-458f0e381077",
+      "groupId": "f9da7e13-aadf-4edd-9c70-f7007633bdc6",
+      "prompt": "Recreate only this editorial thumbnail as a clean high-resolution landscape photograph, aspect ratio 16:10. Symmetric modern data-center corridor with black server racks on both sides, subdued blue indicator lights, a business IT professional seen from behind walking at the distant center, neutral white overhead illumination. Photorealistic premium editorial photograph, faithful to the reference. No readable identifiers, brand names, UI, headings, captions, text or watermarks.",
+      "variants": [
+        {
+          "id": "d64df8c3-0867-4392-852d-458f0e381077",
+          "src": "/content-assets/parasoplansetes/d64df8c3-0867-4392-852d-458f0e381077.webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 137370,
+          "sha256": "b23f9c129721b7afdc65bef15b16d9e883e175e6134685b2a0754c12a1388c77"
+        },
+        {
+          "id": "22cca75c-0664-41a6-a967-13e8bddae0d3",
+          "src": "/content-assets/parasoplansetes/22cca75c-0664-41a6-a967-13e8bddae0d3.webp",
+          "width": 1200,
+          "height": 751,
+          "bytes": 92440,
+          "sha256": "8013ccf460fc1a2ba8e66c1895b18e2b12bc339b76bafa9ec5c2e33246a7e38e"
+        },
+        {
+          "id": "c5524c6e-8bc0-4d71-a02e-6e66a1830a56",
+          "src": "/content-assets/parasoplansetes/c5524c6e-8bc0-4d71-a02e-6e66a1830a56.webp",
+          "width": 800,
+          "height": 500,
+          "bytes": 47134,
+          "sha256": "179cfa851649d27969584b193eb5d96f25e00a09c221321edf3f44a5a2c03f0a"
+        },
+        {
+          "id": "6567823a-dcec-48a3-ae35-ad8818ddbfcd",
+          "src": "/content-assets/parasoplansetes/6567823a-dcec-48a3-ae35-ad8818ddbfcd.webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 32460,
+          "sha256": "3e962101d8988a000a51395dec15db91f779683c0c2373907b91d4e61b9ab6f8"
+        },
+        {
+          "id": "12e1ff85-9f9d-4c2b-ad93-d0c4bbc0e20f",
+          "src": "/content-assets/parasoplansetes/12e1ff85-9f9d-4c2b-ad93-d0c4bbc0e20f.webp",
+          "width": 360,
+          "height": 225,
+          "bytes": 12638,
+          "sha256": "4c964ac70c2668583794e0f6e89ef006748735f9127b6b8c43f3e358442d3ce7"
+        }
+      ]
+    }
+  ]
+}

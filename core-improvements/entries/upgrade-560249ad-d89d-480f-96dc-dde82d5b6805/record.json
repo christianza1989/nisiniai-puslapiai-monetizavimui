@@ -1,0 +1,20 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/89",
+  "rollback": "Revert scoped Xbot delivery; preserve private DB and credentials, keep module disabled.",
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/xbot/xbot/module.py",
+    "agent-business-core/xbot/xbot/service.py",
+    "agent-business-core/xbot/xbot/codex.py"
+  ],
+  "evidence": [
+    "agent-business-core/xbot/QA-2026-10-11.md",
+    "agent-business-core/xbot/tests/test_finish.py"
+  ],
+  "summary": "Historical Xbot uses an incompatible CodexLab constructor, auto-authorizes probe budgets, loses draft provenance, and lacks maintained platform scope/status contracts.",
+  "category": "code",
+  "id": "upgrade-560249ad-d89d-480f-96dc-dde82d5b6805",
+  "branch": "codex/xbot-finish-20261011",
+  "baseSha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+  "createdAt": "2026-10-11T06:14:01.848Z"
+}

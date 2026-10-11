@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/92",
+  "note": "Source-only async dependency pushed in stackedPR92 afterPR90, attached and sent for independent platform read-only review.87local tests and exact staged15files/freshness PASS. Actual PG/BFF/admission/customer/dashboard/calibration/live/main adoption remains separate; root source32b2/ba891 read-only.",
+  "commit": "8533b9cc02d389592d5f33f1ce1792b167dc10d1",
+  "eventId": "e55e41db-0609-4bb8-ae4b-5821e7cbd789",
+  "sequence": 6,
+  "at": "2026-10-11T08:27:39.532Z"
+}

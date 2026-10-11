@@ -1,0 +1,380 @@
+{
+  "$defs": {
+    "Binding": {
+      "additionalProperties": false,
+      "properties": {
+        "organization_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Organization Id",
+          "type": "string"
+        },
+        "business_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Business Id",
+          "type": "string"
+        },
+        "environment_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Environment Id",
+          "type": "string"
+        },
+        "site_id": {
+          "pattern": "^[a-z][a-z0-9-]{1,63}$",
+          "title": "Site Id",
+          "type": "string"
+        },
+        "registration_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Registration Id",
+          "type": "string"
+        },
+        "admission_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Admission Id",
+          "type": "string"
+        },
+        "accepted_revision": {
+          "minimum": 1,
+          "title": "Accepted Revision",
+          "type": "integer"
+        },
+        "candidate_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Candidate Sha256",
+          "type": "string"
+        },
+        "accepted_source_revision": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Accepted Source Revision",
+          "type": "string"
+        },
+        "execution_source_revision": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Execution Source Revision",
+          "type": "string"
+        },
+        "instruction_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Instruction Sha256",
+          "type": "string"
+        },
+        "knowledge_ref": {
+          "$ref": "#/$defs/KnowledgeRef"
+        },
+        "index_receipt_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Index Receipt Sha256",
+          "type": "string"
+        },
+        "facts_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Facts Sha256",
+          "type": "string"
+        },
+        "expires_at": {
+          "exclusiveMinimum": 0,
+          "title": "Expires At",
+          "type": "number"
+        },
+        "profile_current": {
+          "title": "Profile Current",
+          "type": "boolean"
+        },
+        "module_admitted": {
+          "title": "Module Admitted",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "organization_id",
+        "business_id",
+        "environment_id",
+        "site_id",
+        "registration_id",
+        "admission_id",
+        "accepted_revision",
+        "candidate_sha256",
+        "accepted_source_revision",
+        "execution_source_revision",
+        "instruction_sha256",
+        "knowledge_ref",
+        "index_receipt_sha256",
+        "facts_sha256",
+        "expires_at",
+        "profile_current",
+        "module_admitted"
+      ],
+      "title": "Binding",
+      "type": "object"
+    },
+    "KnowledgeRef": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "knowledge_revision": {
+          "minimum": 1,
+          "title": "Knowledge Revision",
+          "type": "integer"
+        },
+        "knowledge_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Knowledge Hash",
+          "type": "string"
+        },
+        "deployment_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Deployment Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "knowledge_revision",
+        "knowledge_hash",
+        "deployment_id"
+      ],
+      "title": "KnowledgeRef",
+      "type": "object"
+    },
+    "Usage": {
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "const": "USD",
+          "default": "USD",
+          "title": "Currency",
+          "type": "string"
+        },
+        "actual_micro": {
+          "minimum": 0,
+          "title": "Actual Micro",
+          "type": "integer"
+        },
+        "held_micro": {
+          "minimum": 0,
+          "title": "Held Micro",
+          "type": "integer"
+        },
+        "unknown_receipts": {
+          "minimum": 0,
+          "title": "Unknown Receipts",
+          "type": "integer"
+        },
+        "provider_attempts": {
+          "minimum": 0,
+          "title": "Provider Attempts",
+          "type": "integer"
+        },
+        "model_attempts_reserved": {
+          "minimum": 0,
+          "title": "Model Attempts Reserved",
+          "type": "integer"
+        },
+        "period": {
+          "const": "store_lifetime",
+          "default": "store_lifetime",
+          "title": "Period",
+          "type": "string"
+        },
+        "model_known_usage_receipts": {
+          "minimum": 0,
+          "title": "Model Known Usage Receipts",
+          "type": "integer"
+        },
+        "model_unknown_usage_receipts": {
+          "minimum": 0,
+          "title": "Model Unknown Usage Receipts",
+          "type": "integer"
+        },
+        "model_reserved_calls_without_known_usage": {
+          "minimum": 0,
+          "title": "Model Reserved Calls Without Known Usage",
+          "type": "integer"
+        },
+        "model_token_usage": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Model Token Usage",
+          "type": "object"
+        },
+        "model_cost_verified": {
+          "const": false,
+          "default": false,
+          "title": "Model Cost Verified",
+          "type": "boolean"
+        },
+        "daily_cap_micro": {
+          "minimum": 0,
+          "title": "Daily Cap Micro",
+          "type": "integer"
+        },
+        "monthly_cap_micro": {
+          "minimum": 0,
+          "title": "Monthly Cap Micro",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "actual_micro",
+        "held_micro",
+        "unknown_receipts",
+        "provider_attempts",
+        "model_attempts_reserved",
+        "model_known_usage_receipts",
+        "model_unknown_usage_receipts",
+        "model_reserved_calls_without_known_usage",
+        "model_token_usage",
+        "daily_cap_micro",
+        "monthly_cap_micro"
+      ],
+      "title": "Usage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "xbot.v1",
+      "default": "xbot.v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "module_id": {
+      "const": "xbot",
+      "default": "xbot",
+      "title": "Module Id",
+      "type": "string"
+    },
+    "business_id": {
+      "title": "Business Id",
+      "type": "string"
+    },
+    "environment_id": {
+      "title": "Environment Id",
+      "type": "string"
+    },
+    "site_id": {
+      "title": "Site Id",
+      "type": "string"
+    },
+    "revision": {
+      "title": "Revision",
+      "type": "integer"
+    },
+    "observed_at": {
+      "title": "Observed At",
+      "type": "number"
+    },
+    "state": {
+      "enum": [
+        "disabled",
+        "paused",
+        "ready",
+        "running",
+        "blocked"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "blockers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Blockers",
+      "type": "array"
+    },
+    "queue_counts": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Queue Counts",
+      "type": "object"
+    },
+    "current_operation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Current Operation"
+    },
+    "research_count": {
+      "title": "Research Count",
+      "type": "integer"
+    },
+    "research_latest_at": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Research Latest At"
+    },
+    "research_sources": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Research Sources",
+      "type": "array"
+    },
+    "usage": {
+      "$ref": "#/$defs/Usage"
+    },
+    "evidence": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Binding"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "credential_ref": {
+      "title": "Credential Ref",
+      "type": "string"
+    },
+    "channel_activation": {
+      "const": "not_performed_by_module_command",
+      "default": "not_performed_by_module_command",
+      "title": "Channel Activation",
+      "type": "string"
+    }
+  },
+  "required": [
+    "business_id",
+    "environment_id",
+    "site_id",
+    "revision",
+    "observed_at",
+    "state",
+    "blockers",
+    "queue_counts",
+    "current_operation",
+    "research_count",
+    "research_latest_at",
+    "research_sources",
+    "usage",
+    "evidence",
+    "credential_ref"
+  ],
+  "title": "Snapshot",
+  "type": "object"
+}

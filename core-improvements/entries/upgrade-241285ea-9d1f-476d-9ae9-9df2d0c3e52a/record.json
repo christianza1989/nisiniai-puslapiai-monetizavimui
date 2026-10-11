@@ -1,0 +1,23 @@
+{
+  "paths": [
+    "agent-business-core/xbot/xbot/module.py",
+    "agent-business-core/xbot/xbot/service.py",
+    "agent-business-core/xbot/tests/test_async_core.py",
+    "agent-business-core/xbot/PLATFORM_CONTRACT.md",
+    "agent-business-core/xbot/RUNBOOK.md",
+    "agent-business-core/xbot/IMPLEMENTATION_STATUS.md"
+  ],
+  "rollback": "Revert only async slice; retain sync standalone and PR90 immutable scope/usage receipts; keep platform module/live flags off.",
+  "summary": "PR90 synchronous module/context resolver cannot genuinely await maintained current-core authority and source before/after model/provider execution.",
+  "evidence": [
+    "agent-business-core/xbot/QA-ASYNC-CORE.md",
+    "agent-business-core/xbot/tests/test_async_core.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/91",
+  "siteId": "core",
+  "category": "code",
+  "id": "upgrade-241285ea-9d1f-476d-9ae9-9df2d0c3e52a",
+  "branch": "codex/xbot-async-core-20261011",
+  "baseSha": "4c7fc375338ae3b538a0001226d66da8d11a3e96",
+  "createdAt": "2026-10-11T08:10:45.552Z"
+}

@@ -1,0 +1,14 @@
+{
+  "note": "55pytestPASS/11.68s and actual synthetic two-call Service/CLI/persisted draft+review+usage receipts PASS; unknown model currency remains unverified; no live/paid X or platform wiring.",
+  "checks": [
+    {
+      "evidence": "agent-business-core/xbot/QA-REVIEW-FOLLOWUP.md",
+      "command": "uv run pytest -q; Ruff format/check; node --check public/app.js; schema export; actual tests/probe_codex.py",
+      "result": "PASS"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "6d7c1a33-24c2-4ebc-b3a0-a0e8367893eb",
+  "sequence": 3,
+  "at": "2026-10-11T07:12:21.397Z"
+}

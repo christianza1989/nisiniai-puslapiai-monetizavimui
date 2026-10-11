@@ -8,7 +8,7 @@ Peržiūrėtas platformos PR80 source `2a63e9211f1054151cd461bb41055352bff8c4ee`
 
 Actual maintained auth: control.models.Organization → Membership (user/org/environment/enabled) → Portfolio → BusinessGrant (business/org/portfolio/environment/enabled). Customer bearer naudoja **control.models.Session / control_sessions**, ne neegzistuojantį customer UserSession. Customer Account/ActionToken/Intake ir verified-owner tikrinimas lieka platformos atsakomybė. Canonical lock order: registration lifetime prieš actor.
 
-Platformos customer_profile pin_registration → owned → projection valdo current registration/admission/source. Nepernaudoti statinio seno PROFILES rinkinio ir nekonvertuoti V1 į tariamą V2. knowledge.reference_v2 / resolve_v2 ir knowledge_index begin/batch/commit/revoke yra maintained žinių kelias.
+Platformos customer_profile pin_registration → owned → projection valdo current registration/admission/source. Nepernaudoti statinio seno PROFILES rinkinio ir nekonvertuoti V1 į tariamą V2. Aktualūs helperiai yra knowledge.reference_v2, knowledge.resolve/projection, knowledge_index.locked/begin/batch/commit ir knowledge.revoke. Atskirų knowledge.resolve_v2 ar knowledge_index.revoke funkcijų patikrintame root nėra.
 
 ## Adapteris ir DTO
 
@@ -55,3 +55,5 @@ Service taip pat iš naujo tikrina source po price, transporto, media ir reconci
 Modulio SQLite transakcija nelaikoma per resolverio ar provider await. Resolveris turi užbaigti savo core transakciją ir paleisti jos užraktus prieš grąžindamas Binding. Vienos paskyros patvarus lease lieka koordinatoriaus serializavimo priemonė. Bibliotekos patikros neįrodo atominio PG ir SQLite priėmimo: tikras adapteris turi išspręsti lifecycle/commit koordinaciją bei ištestuoti revokaciją su savo serveriu.
 
 Read-only dependency patikrinta exact root `32b2dda8d9b8dde6847a98299ae8345fec276d4e`, vėliau clean `ba891b1aaebcc65d72b5248eaaf59e6bf82822a7` (PR80). Atrinktų Registration/Profile source/auth funkcijų delta tarp jų nėra; ba891 pakeičia tik Profile sequence history ribą ir jos priėmimą. Root WIP neimportuotas. [QA-ASYNC-CORE](QA-ASYNC-CORE.md) įrodo injektuotą bibliotekos kelią; actual PG/server admission/dashboard/calibration lieka nepriimti.
+
+Naujas customer-agents.v1 root `a61ebabd57eb48f6151636a972f8ed2862274923` prideda Agent ir immutable Config juodraščius, bet ne X modulio vykdymo admission. [CUSTOMER_AGENTS_HANDOFF](CUSTOMER_AGENTS_HANDOFF.md) aprašo exact agent/config/calibration susiejimą, prižiūrimų funkcijų pernaudojimą, vieno modulio per site ribą ir dar neįgyvendintą PG↔SQLite priėmimo koordinaciją. Konfigūracijos išsaugojimas, purpose customer_research ar bendras Profile current=true nėra xbot.execute teisė.

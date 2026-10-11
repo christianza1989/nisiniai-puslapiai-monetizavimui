@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Scopes6103769064/6103774878/6103780419 reserve record plus team_wire.py/new offline test/canonical team contract. Independent review identified global team300/oldest-window and acceptedrevision20 prerequisite; implemented before tests. First PG54PASS2FAIL212.86s only test nestederror.code; initial unused testvariable RuffFAIL corrected. Original logs retained; operational DB/provider untouched.",
+  "eventId": "9aaddab2-e769-4ca2-a59e-dbc8782e4ee7",
+  "sequence": 2,
+  "at": "2026-10-11T00:41:12.575Z"
+}

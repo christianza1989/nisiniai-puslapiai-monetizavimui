@@ -9,7 +9,7 @@ from ..control.routes import scope
 from ..models import new_id, utcnow
 from . import adapter, renderer
 from .models import Artifact, Creation, Job, Revision
-from .service import ACTIVE, authority, binding, digest, event, fail, lease_deadline
+from .service import ACTIVE, authority, binding, digest, event, fail, job_history_schema_ready, lease_deadline
 
 
 async def locked(tx, job_id, user_id):
@@ -30,7 +30,8 @@ async def context_for(tx, creation, job):
     projection = None
     if prior:
         prior, projection = renderer.context_projection(prior)
-    jobs = list(await tx.scalars(select(Job).where(Job.creation_id == creation.id).order_by(Job.sequence).limit(20)))
+    jobs = list(reversed(list(await tx.scalars(select(Job).where(Job.creation_id == creation.id)
+                                             .order_by(Job.sequence.desc()).limit(20)))))
     history = [{"role": "user", "content": j.message, "base_revision": j.base_revision} for j in jobs]
     recommendations = []
     try:
@@ -54,6 +55,8 @@ async def claim(*, team_enabled=True):
     if not cfg.creation_enabled or not cfg.creation_runner_enabled or cfg.control_mode != "local":
         return None
     async with scope() as discovery:
+        if not await job_history_schema_ready(discovery):
+            raise adapter.RunnerError("runner_unavailable")
         await discovery.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                                 {"k": "creation-worker:" + cfg.environment})
         candidates = (await discovery.execute(text("SELECT * FROM control_creation_candidates(:e)"), {"e": cfg.environment})).mappings().all()

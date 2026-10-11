@@ -77,7 +77,7 @@ class AttemptView(Strict):
 
 class TeamEventView(Strict):
     event_id: UUID
-    sequence: int = Field(ge=1, le=300)
+    sequence: int = Field(ge=1)
     job_id: UUID
     attempt_id: UUID
     role: Role

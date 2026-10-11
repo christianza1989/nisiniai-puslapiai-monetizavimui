@@ -1,5 +1,8 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+2026-10-11 upgrade5b6755be source checkpoint: actual retry at20 retained jobs was disabled; no extra POST/provider occurred. Optional0-disabled lifetime job cap,0019 global job/event history, current-proof-preserving latest windows and schema-before-charge checks are locally verified.17focused offline/321related offline and54PG plus corrected5newPG checks; two test-format failures retained, final functional review/Ruff/diff PASS. Clean operational migration and matching portal team-contract adoption precede one normal UI trial. No accepted NEW business/intake/GUIDE, Gemini integration or full platform completion is claimed. [Evidence](../../docs/VERSLOMATIKA_CREATION_REVIEW.md).
+
+
 2026-10-11 latest actual UI job4351e27b / clean3805200: creator, critic and coordinator round1 succeeded with explicit paused language UNVERIFIED; exact patch round2 failed primary_topic150>120.4 charged calls today and previous-day54 are retained; accepted revision/intake/artifact/GUIDE remain absent. Upgrade3232f8fb now aligns provider repair bounds with canonical schema and removes conflicting paused language instructions. Final321 offline PASS/7optional CLI SKIP14.91s plus independent review/Ruff/diff PASS; actual clean adoption/new customer trial is next. Full platform OPEN; Gemini remains a later change. [Evidence](../../docs/VERSLOMATIKA_CREATION_REVIEW.md).
 
 

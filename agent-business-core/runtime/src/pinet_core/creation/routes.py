@@ -156,7 +156,8 @@ async def cancel(creation_id: str, request: Request, context=Depends(authenticat
 async def events(creation_id: str, request: Request, context=Depends(authenticated, scope="function")):
     tx, session = context
     row = await owned(tx, session, creation_id)
-    items = await tx.scalars(select(Event).where(Event.creation_id == row.id).order_by(Event.sequence).limit(200))
+    items = reversed(list(await tx.scalars(select(Event).where(Event.creation_id == row.id)
+                                          .order_by(Event.sequence.desc()).limit(200))))
     return envelope(request, {"items": [event_view(v) for v in items]})
 
 
@@ -164,7 +165,8 @@ async def events(creation_id: str, request: Request, context=Depends(authenticat
 async def messages(creation_id: str, request: Request, context=Depends(authenticated, scope="function")):
     tx, session = context
     row = await owned(tx, session, creation_id)
-    jobs = list(await tx.scalars(select(Job).where(Job.creation_id == row.id).order_by(Job.sequence).limit(20)))
+    jobs = list(reversed(list(await tx.scalars(select(Job).where(Job.creation_id == row.id)
+                                             .order_by(Job.sequence.desc()).limit(20)))))
     revisions = {r.job_id: r for r in await tx.scalars(select(Revision).where(Revision.creation_id == row.id))}
     items = []
     for job in jobs:

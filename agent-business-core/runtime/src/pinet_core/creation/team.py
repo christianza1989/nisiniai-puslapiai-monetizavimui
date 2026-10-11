@@ -8,7 +8,7 @@ from ..control.routes import scope
 from ..models import new_id, utcnow
 from . import adapter, language_mode, language_patch, renderer
 from .models import Attempt, Job, Revision, TeamEvent
-from .service import authority, binding, daily_limit_reached
+from .service import authority, binding, daily_limit_reached, job_history_schema_ready
 from .team_wire import AttemptView, EventData, TeamEventView, TeamView, TokenUsage
 
 TEAM_ADAPTER = "codex-business-team.v1"
@@ -53,7 +53,7 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
             raise adapter.RunnerError("authorization_revoked")
         if adapter.team_instruction_hash() != job.instruction_hash:
             raise adapter.RunnerError("instructions_changed")
-        if not await review_schema_ready(tx):
+        if not await review_schema_ready(tx) or not await job_history_schema_ready(tx):
             raise adapter.RunnerError("runner_unavailable")
         await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                          {"k": "creation-admission:" + settings().environment})
@@ -235,10 +235,17 @@ async def run(claimed, still_authorized, role_runner=None):
 
 
 async def projection(tx, creation):
-    attempts = list(await tx.scalars(select(Attempt).where(Attempt.creation_id == creation.id).order_by(Attempt.created_at, Attempt.id).limit(120)))
-    events = list(await tx.scalars(select(TeamEvent).where(TeamEvent.creation_id == creation.id).order_by(TeamEvent.sequence).limit(300)))
-    jobs = list(await tx.scalars(select(Job).where(Job.creation_id == creation.id).order_by(Job.sequence)))
     revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id, Revision.sequence == creation.current_revision))
+    jobs = list(reversed(list(await tx.scalars(select(Job).where(Job.creation_id == creation.id)
+                                             .order_by(Job.sequence.desc()).limit(20)))))
+    if revision and revision.job_id not in {j.id for j in jobs}:
+        accepted_job = await tx.get(Job, revision.job_id)
+        jobs = [accepted_job, *jobs[1:]]
+    job_ids = [j.id for j in jobs]
+    attempts = list(await tx.scalars(select(Attempt).where(Attempt.creation_id == creation.id, Attempt.job_id.in_(job_ids))
+                                    .order_by(Attempt.created_at, Attempt.id)))
+    events = list(await tx.scalars(select(TeamEvent).where(TeamEvent.creation_id == creation.id, TeamEvent.job_id.in_(job_ids))
+                                  .order_by(TeamEvent.sequence)))
     by_attempt, job_by_id = {a.id: a for a in attempts}, {j.id: j for j in jobs}
     views = []
     for attempt in attempts:

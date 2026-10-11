@@ -36,6 +36,23 @@ def daily_limit_reached(own, total):
             or (cfg.creation_global_daily_limit > 0 and total >= cfg.creation_global_daily_limit))
 
 
+def job_limit_reached(count):
+    limit = settings().creation_job_limit
+    return limit > 0 and count >= limit
+
+
+async def job_history_schema_ready(tx):
+    return bool(await tx.scalar(text("""WITH expected(table_name,column_name) AS (VALUES
+      ('control_creations','job_sequence'),('control_creations','event_sequence'),
+      ('control_creation_jobs','sequence'),('control_creation_events','sequence'),
+      ('control_creation_team_events','sequence'))
+      SELECT count(*)=5 AND bool_and(c.contype='c' AND c.convalidated) FROM expected e
+      JOIN pg_constraint c ON c.conrelid=to_regclass(e.table_name)
+        AND c.conname=e.table_name||'_'||e.column_name||'_history_check'
+      WHERE NOT EXISTS(SELECT 1 FROM pg_constraint old WHERE old.conrelid=c.conrelid
+        AND old.conname=e.table_name||'_'||e.column_name||'_check')""")))
+
+
 async def current_actor(tx, session, portfolio_id=None, *, lock=False):
     statement = select(User).where(User.id == session.user_id)
     if lock:
@@ -86,8 +103,10 @@ async def event(tx, creation, job, message):
 
 
 async def queue(tx, creation, session, message, key, fingerprint):
-    if creation.job_sequence >= 20:
+    if job_limit_reached(creation.job_sequence) or creation.current_revision >= 20:
         raise ControlError(409, "creation_revision_limit")
+    if not await job_history_schema_ready(tx):
+        raise ControlError(503, "creation_unavailable")
     await quota(tx, session.user_id)
     creation.job_sequence += 1
     job = Job(id=new_id(), creation_id=creation.id, session_id=session.id, sequence=creation.job_sequence,
@@ -141,7 +160,8 @@ def view(row):
         canonical_host=row.canonical_host, status=row.status, stage=row.stage, current_revision=row.current_revision or None,
         active_job_id=row.active_job_id, failure_code=row.failure_code, created_at=row.created_at, updated_at=row.updated_at,
         source_revision=row.source_revision, latest_summary=row.latest_summary,
-        capabilities={"can_revise": bool(cfg.creation_enabled and cfg.creation_runner_enabled and row.status not in ACTIVE and row.job_sequence < 20),
+        capabilities={"can_revise": bool(cfg.creation_enabled and cfg.creation_runner_enabled and row.status not in ACTIVE
+                                        and not job_limit_reached(row.job_sequence) and row.current_revision < 20),
                       "can_cancel": row.status in ACTIVE}).model_dump(mode="json")
 
 

@@ -1,5 +1,8 @@
 # Verslomatika kūrimas ir testavimas kitame PC
 
+2026-10-11 upgrade5b6755be: run maintained migrations through0019_creation_job_history before customer worker dispatch. PINET_CREATION_JOB_LIMIT defaults0/disabled; positive ceilings are optional. It preserves durable job/event rows and current accepted proof in bounded latest windows. Accepted revision20 and native GUIDE20-job bounds remain separate; per-job execution bounds stay. Worker check reports job_limit and rejects old0018 before a charged attempt. Canonical team global event sequence drops its old300 upper bound; use matching reviewed portal contract. Source17offline/321relatedoffline and isolated54PG plus corrected5newPG checks pass as detailed in [review evidence](VERSLOMATIKA_CREATION_REVIEW.md). Actual target-PC adoption remains UNVERIFIED.
+
+
 2026-10-11 upgrade3232f8fb fixes actual local exact-patch schema mismatch: each field now advertises canonical CreatorDraft bounds, including120-character topics and800/500 list items. Paused pilot instruction conflicts are removed only in paused mode. Final321 offline PASS/7optional CLI SKIP14.91s, scoped Ruff/diff and independent review PASS. Required-mode hashes and HTTP/DB contracts are unchanged. Actual new trial, updated source bundle and target-PC acceptance remain separate; see [current review evidence](VERSLOMATIKA_CREATION_REVIEW.md).
 
 

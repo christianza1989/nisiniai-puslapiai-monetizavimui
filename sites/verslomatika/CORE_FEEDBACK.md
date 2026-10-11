@@ -1,5 +1,8 @@
 # Verslomatika integration feedback
 
+2026-10-11 upgrade5b6755be fixes actual disabled retry at20 historical jobs after07bb58c adoption. Optional0-disabled lifetime job cap and0019 durable global counters retain all history; bounded newest projections keep current feedback and old accepted proof. Missing schema and accepted revision20 fail before dispatch. Native GUIDE cap separate.17offline/321relatedoffline checks and54PG plus corrected5newPG checks, independent functional review/Ruff/diff PASS; original2 test-format FAIL retained. [Evidence](../../docs/VERSLOMATIKA_CREATION_REVIEW.md); clean migration/paired contract/new trial pending, full platform OPEN.
+
+
 2026-10-11 upgrade3232f8fb: actual clean3805200 job4351e27b failed on patch primary_topic150>120 after three successful roles. Provider schema2500 differed from canonical validator; canonical per-target bounds and accurate paused-mode instructions are now covered by321 offline PASS/7optional CLI SKIP14.91s and independent corrected review. Initial9 FAIL and review-discovered missing800 list caps are preserved. No accepted business/intake/artifact/GUIDE yet. [Exact failure and source checks](../../docs/VERSLOMATIKA_CREATION_REVIEW.md); overall platform OPEN.
 
 

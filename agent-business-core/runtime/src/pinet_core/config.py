@@ -31,6 +31,7 @@ class Settings(BaseSettings):
     # Zero disables the operator's daily ceiling; all attempts are still recorded.
     creation_daily_limit: int = Field(default=0, ge=0)
     creation_global_daily_limit: int = Field(default=0, ge=0)
+    creation_job_limit: int = Field(default=0, ge=0)
     creation_runner_seconds: int = 180
     creation_workspace: str = ""
     creation_web_search_enabled: bool = False

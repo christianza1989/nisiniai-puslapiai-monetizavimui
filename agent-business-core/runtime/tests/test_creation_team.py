@@ -73,6 +73,72 @@ async def team_read(c, auth, cid):
     return response.json()["data"]
 
 
+async def test_latest_job_window_preserves_old_accepted_proof_and_large_counters(creation, monkeypatch):
+    from pinet_core.creation.service import binding
+    c = creation
+    for field in ('creation_daily_limit', 'creation_global_daily_limit', 'creation_job_limit'):
+        monkeypatch.setattr(settings(), field, 0)
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    calls = []
+    assert await worker.execute_once(role_runner=runner(calls))
+    cid = row['creation_id']
+    original = await team_read(c, auth, cid)
+    async with scope(user=me['user_id']) as tx:
+        from pinet_core.creation.models import Creation
+        current = await tx.get(Creation, cid)
+        first_job = await tx.scalar(select(Job).where(Job.creation_id == cid))
+        common = binding(current)
+        for sequence in range(2, 24):
+            job = Job(id=str(uuid4()), creation_id=cid, session_id=first_job.session_id, sequence=sequence,
+                base_revision=1, message=f'Sintetinis išsaugotas bandymas {sequence}.', idempotency_key=str(uuid4()),
+                fingerprint='a'*64, source_revision=settings().control_source_revision, status='cancelled', **common)
+            tx.add(job)
+            await tx.flush()
+            for slot in range(1, 7):
+                attempt = Attempt(id=str(uuid4()), creation_id=cid, job_id=job.id, run_id=str(uuid4()), sequence=slot,
+                    role='creator', round_number=1, stage='private_draft', source_revision=settings().control_source_revision,
+                    instruction_hash='b'*64, model='gpt-6-luna', **common)
+                tx.add(attempt)
+                await tx.flush()
+                for state in ('reserved', 'failed'):
+                    tx.add(TeamEvent(creation_id=cid, job_id=job.id, attempt_id=attempt.id,
+                        sequence=300+(sequence-2)*12+(slot-1)*2+(1 if state=='reserved' else 2), state=state,
+                        summary='Sintetinis agento istorijos bandymas.', payload={'failure_code':'output_invalid'}
+                        if state=='failed' else {}, **common))
+        current.job_sequence, current.status, current.stage = 23, 'cancelled', 'cancelled'
+    value = await team_read(c, auth, cid)
+    assert value['accepted_candidate_sha256'] == original['accepted_candidate_sha256']
+    assert value['latest_job_id'] == job.id and value['events'][-1]['sequence'] == 564
+    assert len(value['attempts']) == 117 and len(value['events']) == 234
+    assert all(e['attempt_id'] in {a['attempt_id'] for a in value['attempts']} for e in value['events'])
+    assert any(e['job_id'] == first_job.id and e['data']['decision']=='accept_draft' for e in value['events'])
+
+
+async def test_missing_history_schema_blocks_claim_and_role_before_charge(creation, monkeypatch):
+    from pinet_core.creation import service
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    claimed = await worker.claim()
+    async def missing(_tx):
+        return False
+    monkeypatch.setattr(team, 'job_history_schema_ready', missing)
+    monkeypatch.setattr(worker, 'job_history_schema_ready', missing)
+    monkeypatch.setattr(service, 'job_history_schema_ready', missing)
+    with pytest.raises(adapter.RunnerError, match='runner_unavailable'):
+        await worker.claim()
+    with pytest.raises(adapter.RunnerError, match='runner_unavailable'):
+        await team.reserve(claimed, 'creator', 1)
+    async with scope(user=me['user_id']) as tx:
+        assert not list(await tx.scalars(select(Attempt).where(Attempt.creation_id == row['creation_id'])))
+    path = '/customer/v2/creations/'+row['creation_id']
+    assert (await c['client'].post(path+'/cancel', headers=auth)).status_code == 200
+    response = await c['client'].post(path+'/revisions', json={'base_revision':0,
+        'message':'Sintetinis bandymas be reikiamos schemos.', 'idempotency_key':str(uuid4())}, headers=auth)
+    assert response.status_code == 503
+
+
 async def test_paused_language_accepts_private_candidate_and_persists_explicit_mode(creation, monkeypatch):
     monkeypatch.setattr(settings(), "creation_language_review_enabled", False)
     _, auth, me = await verified(creation)

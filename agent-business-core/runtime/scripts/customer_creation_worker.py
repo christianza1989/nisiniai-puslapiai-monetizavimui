@@ -8,6 +8,7 @@ from sqlalchemy import text
 from pinet_core.config import settings
 from pinet_core.creation import language_mode
 from pinet_core.creation.adapter import available, role_model, team_instruction_hash
+from pinet_core.creation.service import job_history_schema_ready
 from pinet_core.creation.team import review_schema_ready
 from pinet_core.creation.worker import execute_once, loop
 from pinet_core.db import db
@@ -21,7 +22,7 @@ async def main(action):
             raise ValueError("creation_disabled")
         available()
         async with db.registry() as tx:
-            if not await review_schema_ready(tx):
+            if not await review_schema_ready(tx) or not await job_history_schema_ready(tx):
                 raise ValueError('creation_review_schema_not_ready')
             count = await tx.scalar(text("SELECT count(*) FROM pg_class WHERE relnamespace='public'::regnamespace "
                 "AND relname IN ('control_creations','control_creation_jobs','control_creation_revisions',"
@@ -37,6 +38,7 @@ async def main(action):
         print({"source_revision": cfg.control_source_revision, "instruction_hash": digest, "model": "gpt-6-luna",
                "role_models": {role: role_model(role) for role in ("creator", "critic", "coordinator")},
                "web_search_enabled": cfg.creation_web_search_enabled, "global_daily_limit": cfg.creation_global_daily_limit,
+               "job_limit": cfg.creation_job_limit,
                "provider_calls": 0, "mode": "local", "language_review_mode": language_mode.mode()})
         if action == "once":
             await execute_once()

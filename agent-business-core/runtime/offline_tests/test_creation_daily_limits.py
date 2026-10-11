@@ -38,3 +38,15 @@ def test_creation_and_guide_accept_same_ceiling_configuration(monkeypatch, limit
 def test_negative_daily_ceiling_is_invalid(field):
     with pytest.raises(ValidationError):
         Settings(_env_file=None, **{field: -1})
+
+
+@pytest.mark.parametrize("limit,count,blocked", [(0, 20, False), (0, 1000, False), (20, 19, False), (20, 20, True)])
+def test_optional_lifetime_job_limit(monkeypatch, limit, count, blocked):
+    monkeypatch.setattr(settings(), "creation_job_limit", limit)
+    assert service.job_limit_reached(count) is blocked
+
+
+def test_lifetime_job_limit_defaults_disabled_and_rejects_negative():
+    assert Settings(_env_file=None).creation_job_limit == 0
+    with pytest.raises(ValidationError):
+        Settings(_env_file=None, creation_job_limit=-1)

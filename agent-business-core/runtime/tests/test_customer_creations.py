@@ -287,3 +287,73 @@ async def test_output_invalid_does_not_leave_active_job(creation, monkeypatch):
     assert await worker.execute_once(result)
     read = (await c['client'].get('/customer/v2/creations/'+item['creation_id'], headers=auth)).json()['data']
     assert read['status'] == 'failed' and read['failure_code'] == 'output_invalid' and read['active_job_id'] is None
+
+
+async def test_twenty_first_job_retains_history_and_latest_feedback(creation, monkeypatch):
+    c = creation
+    for field in ('creation_daily_limit', 'creation_global_daily_limit', 'creation_job_limit'):
+        monkeypatch.setattr(settings(), field, 0)
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    path = '/customer/v2/creations/' + row['creation_id']
+    for sequence in range(1, 22):
+        assert (await c['client'].post(path+'/cancel', headers=auth)).status_code == 200
+        if sequence == 21:
+            break
+        body = {'base_revision': 0, 'message': f'Sintetinio bandymo patikslinimas {sequence+1}.', 'idempotency_key': str(uuid4())}
+        response = await c['client'].post(path+'/revisions', json=body, headers=auth)
+        assert response.status_code == 202, response.text
+        assert (await c['client'].post(path+'/revisions', json=body, headers=auth)).status_code == 202
+    messages = (await c['client'].get(path+'/messages', headers=auth)).json()['data']['items']
+    assert len(messages) == 20 and messages[-1]['content'].endswith('21.')
+    async with scope(user=me['user_id']) as tx:
+        row = await tx.get(Creation, row['creation_id'])
+        jobs = list(await tx.scalars(select(Job).where(Job.creation_id == row.id).order_by(Job.sequence)))
+        assert row.job_sequence == 21 and [j.sequence for j in jobs] == list(range(1, 22))
+        context = await worker.context_for(tx, row, jobs[-1])
+        assert len(context['history']) == 20 and context['history'][-1]['content'] == jobs[-1].message
+        assert await tx.scalar(text("SELECT control_creation_own_attempt_count(:e,:s)"),
+            {'e': c['environment'], 's': utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}) == 0
+    # The global event window retains the newest event even after200 stored rows.
+    async with AsyncSession(c['admin']) as tx, tx.begin():
+        from pinet_core.creation.models import Event
+        await tx.execute(update(Creation).where(Creation.id == row.id).values(event_sequence=200))
+        for sequence in range(43, 201):
+            tx.add(Event(creation_id=row.id, job_id=jobs[-1].id, sequence=sequence, status='cancelled', stage='cancelled',
+                message='Sintetinis išsaugotos istorijos įvykis.', user_id=row.user_id, organization_id=row.organization_id,
+                portfolio_id=row.portfolio_id, environment_id=row.environment_id))
+    response = await c['client'].post(path+'/revisions', json={**body, 'idempotency_key': str(uuid4())}, headers=auth)
+    assert response.status_code == 202
+    events = (await c['client'].get(path+'/events', headers=auth)).json()['data']['items']
+    assert len(events) == 200 and events[0]['sequence'] == 2 and events[-1]['sequence'] == 201
+    # The first exact0019 rollback DDL validates existing rows and fails atomically.
+    with pytest.raises(DBAPIError):
+        async with AsyncSession(c['admin']) as tx, tx.begin():
+            await tx.execute(text('ALTER TABLE control_creations ADD CONSTRAINT control_creations_job_sequence_check CHECK(job_sequence BETWEEN 0 AND 20)'))
+    async with AsyncSession(c['admin']) as tx:
+        assert not await tx.scalar(text("SELECT count(*) FROM pg_constraint WHERE conname='control_creations_job_sequence_check'"))
+    assert (await c['client'].get(path+'/events', headers=auth)).json()['data']['items'] == events
+
+
+@pytest.mark.parametrize('barrier', ['configured_job_limit', 'accepted_revision_limit'])
+async def test_job_and_accepted_revision_bounds_reject_before_queue(creation, monkeypatch, barrier):
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    path = '/customer/v2/creations/' + row['creation_id']
+    assert (await c['client'].post(path+'/cancel', headers=auth)).status_code == 200
+    if barrier == 'configured_job_limit':
+        monkeypatch.setattr(settings(), 'creation_job_limit', 1)
+        base_revision = 0
+    else:
+        async with AsyncSession(c['admin']) as tx, tx.begin():
+            await tx.execute(update(Creation).where(Creation.id == row['creation_id']).values(current_revision=20))
+        base_revision = 20
+    before = (await c['client'].get(path, headers=auth)).json()['data']
+    assert before['capabilities']['can_revise'] is False
+    response = await c['client'].post(path+'/revisions', json={'base_revision': base_revision,
+        'message': 'Sintetinė pataisa prieš ribų patikrą.', 'idempotency_key': str(uuid4())}, headers=auth)
+    assert response.status_code == 409 and response.json()['code'] == 'creation_revision_limit'
+    assert (await c['client'].get(path, headers=auth)).json()['data'] == before
+    async with scope(user=me['user_id']) as tx:
+        assert len(list(await tx.scalars(select(Job).where(Job.creation_id == row['creation_id'])))) == 1

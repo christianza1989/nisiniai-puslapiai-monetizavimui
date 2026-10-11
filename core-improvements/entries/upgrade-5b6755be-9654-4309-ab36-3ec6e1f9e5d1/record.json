@@ -1,0 +1,32 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Owner-removed artificial test ceilings still leave hardcoded lifetime20-job/DB counter bound that disables actual UI retry; retain history and make optional job cap0-disabled with canonical schema migration and bounded newest context.",
+  "category": "code",
+  "evidence": [
+    "Actual clean07bb58c nine GETs succeeded, failed creation05c7097b has20 retained jobs and capabilities.can_revise=false; ordinary UI textarea/button disabled, no retry POST/provider.",
+    "service.py hardcodes queue>=20/view<20;0013 DB job/event upper checks and oldest20 context/messages would omit next feedback."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/scripts/customer_creation_worker.py",
+    "agent-business-core/runtime/migrations/versions/0019_creation_job_history.py",
+    "agent-business-core/runtime/offline_tests/test_creation_daily_limits.py",
+    "agent-business-core/runtime/tests/test_customer_creations.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103769064",
+  "rollback": "Optional positive cap can be restored without deleting history;0019 downgrade restores old constraints atomically only if all rows fit. Do not reset counters/rewrite historic jobs or receipts. Accepted revision bounds/per-job6calls2rounds300s/auth/CAS/RLS/idempotency/native/publication unchanged. Operational migration only after isolated tests and clean source, with all table hashes/counts preserved.",
+  "id": "upgrade-5b6755be-9654-4309-ab36-3ec6e1f9e5d1",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "07bb58c35e650fe0fda3128b0028d1f971fc25f7",
+  "createdAt": "2026-10-11T00:30:45.245Z"
+}

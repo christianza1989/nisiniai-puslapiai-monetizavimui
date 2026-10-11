@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Scoped native dependency import a355a8a1fa015e7d2e8358a100c8f7644a0f1464; exact65 source paths from PR68ae09, nine original locked contract blobs,34Node and36existing backend PASS. Actual normal control_api/native/restrictedfull0025PG four fresh example.test lanes and real API/PostgreSQL restart/replay PASS6c6fffdc; source clean unchanged and operational rows unchanged/provider/channel0. Root compiled Workers not run; owner38/154 totals separate. Full daily/correspondence/privacyCase/portal/director/ordinaryUI/target/public adoption OPEN. No main/foreign/live/sourcepin changes.",
+  "checks": [
+    {
+      "command": "node native check-contracts; node --test four nonWorkers native files and three existing backend files",
+      "result": "PASS",
+      "evidence": "docs/ACQUISITION_NORMAL_NATIVE_QA_2026-10-12.md; receiptSHA25631625cdf6e7cda41e5f357cabc15d432fbf6f0ea44197d9bee2556442196cdf1"
+    },
+    {
+      "command": "Owned normal control_api TCP18868/native SQLite/restricted full0025PG15438 four prepare/replay lanes with real own API and PostgreSQL restart",
+      "result": "PASS",
+      "evidence": "docs/ACQUISITION_NORMAL_NATIVE_QA_2026-10-12.md; receiptSHA2566c6fffdc39a26c9c7b9aa3b9c11b70ffd23235ccdf4c98e04b3e90b220bf6654"
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged; git diff --cached --check",
+      "result": "PASS",
+      "evidence": "68 exact staged files/866427bytes, no findings; source-only not semantic or operational acceptance"
+    }
+  ],
+  "eventId": "50630a0f-8aea-4634-9e06-7e1ff272f5ee",
+  "sequence": 2,
+  "at": "2026-10-11T23:11:47.314Z"
+}

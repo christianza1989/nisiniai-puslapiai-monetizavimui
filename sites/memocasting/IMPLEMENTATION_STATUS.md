@@ -13,3 +13,5 @@ Tai siteId planavimo vardas, ne priimta public/runtime registry registracija. Pa
 2026-10-12 savininkas pateikė paieškos ir GSC nuorodų ekranus. [Šešių senų adresų atkūrimo planas](MIGRACIJA.md) ir [inventorius](legacy-urls.json) paruošti; poros produkto ir instrukcijos canonical lieka seni adresai. Tai planas, svetainė/DNS dar nepakeisti.
 
 Savininkas patvirtino savo memorycasting.lt landing page. [Homepage briefas](HOMEPAGE_BRIEF.md) ir papildomų senų adresų inventorius paruošti iš teksto bei tikros naršyklės peržiūros. Tai atspirties taškas būsimam dizainui; senas kainas, teiginius ir rekvizitus pakeis patvirtinti verslo duomenys.
+
+Savininko pasirinktas tarptautinis vardas **memorycasting.com**, orientuotas į lokalizuotą partnerystę ir vėlesnį agentų partnerių paieškos kelią. [Domenų/rinkų sprendimas](DOMENAI_IR_RINKOS.md), [partnerių svetainės planas](PARTNERIU_SVETAINE.md). Vardas patvirtintas, registracija ir veikiančio puslapio įrodymai dar nėra.

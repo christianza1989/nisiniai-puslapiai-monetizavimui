@@ -1,0 +1,29 @@
+{
+  "note": "40 local tests PASS and actual Service/queue/Codex CLI/persisted draft+review PASS. Eight operator panels reviewed desktop/mobile, import/review/cancel/logout/empty-create/blocked identity checked. Typed xbot.v1 adapter coordinated with platform owner; no actual platform wiring/calibration/live X authority claimed. Original failures retained in QA and fixing event.",
+  "checks": [
+    {
+      "command": "uv run pytest -q",
+      "evidence": "agent-business-core/xbot/QA-2026-10-11.md:40 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "uv run ruff format --check xbot tests; uv run ruff check xbot tests; node --check public/app.js",
+      "evidence": "agent-business-core/xbot/QA-2026-10-11.md",
+      "result": "PASS"
+    },
+    {
+      "command": "uv run python tests/probe_codex.py",
+      "evidence": "agent-business-core/xbot/QA-2026-10-11.md:actual CLI hashes and usage",
+      "result": "PASS"
+    },
+    {
+      "command": "Playwright actual loopback UI checks",
+      "evidence": "agent-business-core/xbot/QA-2026-10-11.md:actual role, URLs, viewports and workflows",
+      "result": "PASS"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "f44c3796-43fb-4351-9df6-cd3e1553bb42",
+  "sequence": 3,
+  "at": "2026-10-11T06:42:21.321Z"
+}

@@ -1,0 +1,20 @@
+{
+  "rollback": "Revert only follow-up commits, keep Xbot disabled and block platform wiring until identity/store admission accepted.",
+  "category": "code",
+  "siteId": "core",
+  "summary": "Platform review exposed atomic binding gaps: a site-keyed DB can be rebound to another org/business/environment, adopt unscoped prior work, or retain obsolete queued work.",
+  "evidence": [
+    "agent-business-core/xbot/QA-REVIEW-FOLLOWUP.md",
+    "agent-business-core/xbot/tests/test_finish.py"
+  ],
+  "paths": [
+    "agent-business-core/xbot/xbot/store.py",
+    "agent-business-core/xbot/xbot/module.py",
+    "agent-business-core/xbot/tests/test_finish.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/90",
+  "id": "upgrade-b4255255-d742-4306-987c-4dd0c98fe5f5",
+  "branch": "codex/xbot-finish-20261011",
+  "baseSha": "780bd36f1e39b19b6fb53129be228ea7483dfa19",
+  "createdAt": "2026-10-11T06:55:06.212Z"
+}

@@ -118,9 +118,9 @@
     "metaReview": {
       "submissionId": "1827877654877169",
       "state": "Not submitted",
-      "updatedAt": "2026-10-11T06:07:31.000Z",
-      "verification": "Owner-authorized empty animateme.co portfolio 900173107610943 renamed to MB Pinet; Unverified. App ownership Connect prepared but not submitted; official business details incomplete",
-      "pendingOwnerFact": "Official registered MB Pinet name/address/region/postal code and business phone; specific app-to-portfolio Connect confirmation",
+      "updatedAt": "2026-10-11T06:36:42.417Z",
+      "verification": "Connected business portfolio readback shows Memocasting, MB / 900173107610943 / Unverified / Remove. Agent Connect action not proved or repeated. Owner-provided business details saved/read back. Verification wizard paused at reCAPTCHA.",
+      "pendingOwnerFact": "Complete Meta verification reCAPTCHA; any later requested verification documents or contact code are not yet received",
       "instructionDraft": "Website test instructions saved with trial expiry disclosure; permanent reviewer access not claimed",
       "allowedUsage": "Both email and public_profile specific owner-approved agreements saved; both completion/Edit states read back. This does not mean Meta permissions approved",
       "allowedUsageAccepted": {
@@ -130,39 +130,47 @@
         "savedAndReadBack": true,
         "screenshot": "cloudflare/output/community-20261011/meta-allowed-usage-confirmed.jpg"
       },
-      "dataHandling": "Owner facts saved/read back: MB Pinet / Lithuania / No national-security requests in prior 12 months / None of the above procedures. Processors Yes selected; processor names and processing/remote-access countries remain incomplete",
+      "dataHandling": "Controller corrected to owner-provided Memocasting, MB and reopened readback PASS. Prior owner-provided Lithuania / national-security No / procedures None retained. Processors Yes; names and processing/remote-access countries still incomplete.",
       "controllerFacts": {
         "source": "Explicit human reply in this chat",
-        "name": "MB Pinet",
+        "name": "Memocasting, MB",
         "country": "Lithuania",
         "nationalSecurityRequestsInPrior12Months": "No",
         "publicAuthorityRequestProcedures": "None of the above",
         "savedAndReadBack": true,
-        "processorListCompleted": false
+        "processorListCompleted": false,
+        "nameCorrectionSavedAndReadBack": true
       },
       "businessPortfolio": {
         "id": "900173107610943",
         "previousName": "animateme.co",
-        "name": "MB Pinet",
+        "name": "Memocasting, MB",
         "initialAssets": 0,
         "reuseExplicitlyAuthorizedByOwner": true,
         "renameSavedAndReadBack": true,
         "verificationState": "Unverified",
-        "appConnected": false,
-        "connectState": "READY_OWNER_ACTION_TIME_CONFIRMATION_REQUESTED",
-        "businessDetailsState": "UNSAVED_DRAFT_REQUIRED_ADDRESS_AND_PHONE_MISSING",
+        "appConnected": true,
+        "connectState": "CONNECTED_READBACK_INITIATOR_UNVERIFIED",
+        "businessDetailsState": "OWNER_PROVIDED_DETAILS_SAVED_AND_READ_BACK",
         "newPortfolioCreation": "Meta account creation quota prevented creation; no new portfolio created or existing portfolio deleted",
         "screenshots": [
           "cloudflare/output/community-20261011/meta-business-creation-limit.jpg",
           "cloudflare/output/community-20261011/meta-mb-pinet-connect-ready.jpg",
-          "cloudflare/output/community-20261011/meta-mb-pinet-details-draft.jpg"
-        ]
+          "cloudflare/output/community-20261011/meta-mb-pinet-details-draft.jpg",
+          "cloudflare/output/community-20261011/meta-memocasting-details-saved.jpg",
+          "cloudflare/output/community-20261011/meta-controller-memocasting-saved.jpg",
+          "cloudflare/output/community-20261011/meta-verification-captcha.jpg"
+        ],
+        "intermediateName": "MB Pinet",
+        "registrationCode": "306026827",
+        "verificationWorkflow": "CAPTCHA_WAITING_OWNER",
+        "connectClickByAgentConfirmed": false
       },
       "pending": [
-        "Specific app-to-portfolio Connect action-time confirmation",
-        "Official MB Pinet legal details and verified business portfolio",
+        "Business verification reCAPTCHA / remaining verification steps",
         "Provider processing/remote-access country declaration",
-        "Review environment available throughout review; trial expiry unchanged",
+        "Review Chrome OTP login issue unresolved",
+        "Reviewer callback approval, new environment app secret and actual OAuth acceptance",
         "External account acceptance after Meta approval/publishing"
       ],
       "sources": [
@@ -172,8 +180,8 @@
       ]
     },
     "reviewCandidate": {
-      "state": "LOCAL_CANDIDATE_NOT_DEPLOYED",
-      "sourceCommit": "6f0791c8bb90003cb7919c6580bbd8a26e37ef5a",
+      "state": "DEPLOYED_HOSTED_PASS_BROWSER_PARTIAL_FACEBOOK_DISABLED",
+      "sourceCommit": "cd5e4d024514b058bc62515ca2acd4e6c0cbd313",
       "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
       "origin": "https://perziura.madbeauty.lt",
       "expiresAt": "2027-10-12T00:00:00.000Z",
@@ -183,14 +191,13 @@
       "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
       "compatibilityDate": "2026-05-22",
       "facebookEnabled": false,
-      "secretsCreated": false,
-      "remoteMutations": 0,
-      "queryRedaction": "Provider API settings required before Facebook activation; not a Wrangler 4.92 config field",
+      "secretsCreated": true,
+      "queryRedaction": true,
       "nativeAcceptance": {
         "state": "PASS",
         "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
-        "at": "2026-10-11T05:44:00.544Z",
-        "scope": "Local isolated review candidate only; no live deployment, provider credentials or actual Facebook OAuth",
+        "at": "2026-10-11T06:19:23.891Z",
+        "scope": "Isolated native review artifact, not actual Facebook OAuth",
         "scenarios": [
           "new origin only",
           "45 synthetic profiles",
@@ -205,10 +212,75 @@
       },
       "preparationSources": [
         "review-build.mjs",
-        "review-native.test.mjs"
+        "review-native.test.mjs",
+        "review-release.mjs"
       ],
-      "deploymentState": "NOT_DEPLOYED",
-      "instructions": "META_REVIEW.md"
+      "deploymentState": "DEPLOYED_BROWSER_PARTIAL",
+      "instructions": "META_REVIEW.md",
+      "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+      "sessionSecretCreated": true,
+      "facebookAppSecretInstalled": false,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "id": "5e656ebc90cc4fe9881363db7b288593"
+        },
+        {
+          "name": "PLATFORM",
+          "id": "70b71d4c3a584b579a007568d8c514ff"
+        }
+      ],
+      "protectedWorkersUnchanged": true,
+      "hostedAcceptance": {
+        "state": "PASS",
+        "kind": "review",
+        "checks": 130,
+        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+        "at": "2026-10-11T06:27:12.167Z",
+        "link": "https://verslomatika.lt",
+        "rel": null,
+        "trialRobotsPreserved": true
+      },
+      "communityAcceptance": {
+        "state": "PASS",
+        "at": "2026-10-11T06:28:27.424Z",
+        "checks": 19,
+        "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+        "seed": {
+          "providers": 45,
+          "members": 90
+        },
+        "photos": true,
+        "albums": true,
+        "comments": true,
+        "friends": true,
+        "salon": true,
+        "moderation": true,
+        "logout": true,
+        "providerProjectionPreserved": true
+      },
+      "browserAcceptance": {
+        "state": "PARTIAL",
+        "at": "2026-10-11T06:34:17.340Z",
+        "origin": "https://perziura.madbeauty.lt",
+        "iab": {
+          "ordinaryHttps": true,
+          "otp": true,
+          "profileSettings": true,
+          "feed": true,
+          "sessionSurvivesReload": true,
+          "screenshot": "community-iab.jpg"
+        },
+        "chrome": {
+          "otpReturnsToLogin": true,
+          "attempts": 2,
+          "apiDocumentNavigation": "ERR_BLOCKED_BY_CLIENT",
+          "cause": "UNVERIFIED",
+          "securitySettingsChanged": false
+        },
+        "facebook": false
+      }
     }
   },
   "limitations": [

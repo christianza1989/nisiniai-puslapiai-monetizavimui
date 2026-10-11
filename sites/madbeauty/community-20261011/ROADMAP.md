@@ -10,7 +10,7 @@ Dabartinis žingsnis: **C0–C2 ir tikras savininko Facebook bandymas priimti; v
 
 Meta programėlė1827877621543839 vis dar Unpublished. App Review nauji prašymai email/public_profile yra Not submitted; konkretus submission1827877654877169 turi Verification, App settings, Allowed usage, Data handling ir Reviewer instructions žingsnius, Submit for review disabled. Pagrindinio domeno community/publicFBlogin tebėra išjungti. Pradinis owner-consent klausimas nebelaukia atsakymo.
 
-Kitas veiksmas: savininkui patvirtinus konkretų Connect, susieti Madbeauty su MB Pinet portfeliu900173107610943 ir perskaityti rezultatą. Portfelio naudojimas ir pervadinimas jau patvirtinti bei atlikti; naujo kūrimą blokavo Meta limitas. Abu Allowed usage sutikimai ir savininko Data handling faktai išsaugoti — jų nebeklausti. Įmonės rekvizitų forma tik juodraštis, būtini oficialus adresas / regionas / pašto kodas ir telefonas. Tiekėjų šalys, verified business ir ilgaamžė hosted peržiūra nebaigti; [aktualus Meta planas](META_REVIEW.md). Išorinės paskyros priėmimas lieka atskiras nuo savininko/admin prisijungimo. Trial galiojimas nekeičiamas. C3–C4 neįgyvendinti.
+Kitas veiksmas: užbaigti Meta įmonės verification nuo reCAPTCHA, tiekėjų faktinę geografiją ir išaiškinti Chrome reviewer OTP problemą. Susiejimas / pateikti rekvizitai / abu sutikimai jau turi readback; jų nekartoti. Reviewer OAuth ir galutinis Submit dar nepriimti; [aktualus planas](META_REVIEW.md).
 
 Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f767e9-9bba-4ddb-96bc-3feaac299535`, trial `8e4da6de-9e07-4c4b-8f37-b42bd4474a30`. [Aktualus kvitas](RECEIPT.md). Trial originali galiojimo pabaiga `2026-10-16T21:10:47.982Z`,40solo+5salonai/11–21testiniųreviews išsaugoti; jokių dummy canonical. Ankstesnių leidimų istorija žemiau neperrašyta.
 
@@ -34,8 +34,11 @@ Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f76
 - [x] F5 Vietiniai + native replay / expiry / wrong app / concurrency / role / restart testai.
 - [x] F6a Tikras savininko/admin Meta login, logout/relogin, unlink ir OTP relink; aktualus RECEIPT.json.
 - [x] F6-review-a Abu Allowed usage sutikimai ir savininko Data handling faktai išsaugoti Meta; readback PASS.
-- [x] F6-review-b Savininko skirtas tuščias portfelis900173107610943 pervadintas į MB Pinet; readback PASS.
-- [ ] F6-review-c Madbeauty susiejimas su portfeliu ir verified business; Connect laukia konkretaus patvirtinimo, įmonės rekvizitai nepilni.
+- [x] F6-review-b Savininko skirtas portfelis900173107610943 pervadintas į Memocasting, MB; juridiniai rekvizitai ir controller vardas saved/readback PASS.
+- [x] F6-review-c Connected business portfolio grid / Remove readback; agento Connect paspaudimas neįrodytas, nekartoti.
+- [ ] F6-review-d Verified business: vedlys sustojo ties reCAPTCHA. Tiekėjų geografija, reviewer OAuth ir galutinis Submit dar nepriimti.
+- [x] F6-review-e Izoliuotas reviewer Worker / namespaces / session secret / query redaction / protected provider preservation, hosted130 / community19 ir IAB feed/reload PASS.
+- [ ] F6-review-f Chrome OTP grįžimo į login diagnostika; bendras browser priėmimas PARTIAL.
 - [ ] F6b Išorinis vartotojas po Meta peržiūros ir publikavimo; admin bandymas šio vartų nepakeičia.
 
 ## C0 Pagrindas
@@ -133,3 +136,8 @@ Paruošti review-build.mjs ir review-native.test.mjs; [planas ir duomenų srauta
 Abu konkretūs email/public_profile Allowed usage Save ir abiejų Edit readback PASS po savininko patvirtinimo. Data handling išsaugoti MB Pinet / Lithuania / No national-security requests per12m / None of the above procedures, pagal savininko faktus. Tiekėjų ir processing/remote-access šalių sąrašas nebaigtas; nekurti EU-only ar galiojančių procedūrų deklaracijos.
 
 Meta naujo Business kūrimą blokavo paskyros limitu.3prieinamų portfelių juridiniai rekvizitai tušti, visi Unverified. Savininkas patvirtino animateme.co(0assets) naudojimą MB Pinet / Madbeauty.900173107610943 pervadintas į MB Pinet, Business info ir App Verification pasirinkimo readback PASS. Kitų projektų nekeitėme / nešalinome. Business details MB Pinet/Lithuania/madbeauty.lt juodraštis neišsaugotas dėl privalomo adreso/regiono/pašto kodo/telefono; faktai paklausti. Connect pasirinktas / įjungtas, nepaspaustas: konkretus App1827877621543839→business900173107610943 valdymo perdavimas laukia action-time patvirtinimo. Įrodymai/meta planas ir RECEIPT.json aktualūs. Main/trial/QA/expiry/source runtime nekeisti; programėlė Unpublished, review Not submitted.
+
+
+### 2026-10-11 Memocasting rekvizitai ir reviewer deployment
+
+Savininko pataisyti Memocasting, MB rekvizitai išsaugoti ir readback PASS; kodas306026827, privatus telefonas tik Meta / vietiniuose įrodymuose. Data handling valdytojo vardas pataisytas ir reopened readback PASS. App Verification / submission grid jau rodo Connected business portfolio900173107610943 / Memocasting, MB / Unverified / Remove; agento Connect paspaudimas neįrodytas ir nekartotas. Verification vedlys Lithuania / Private Company / rekvizitai pradėtas; sustota ties reCAPTCHA, savininko handoff paklaustas. App vis dar Unpublished / Not submitted. Tiekėjų šalių deklaracija nebaigta. Perziura.madbeauty.lt įdiegta, version b46dfaab-ce7c-4407-a400-bc3ea57cff84 / source cd5e4d0 / artifact ea02b98a. Naujos PLATFORM ir COMMUNITY namespaces, naujas session secret, query redaction readback ir main/trial/QA išsaugojimas PASS. Native ribos/restart/expiry PASS; public hosted130 ir community19 scenarijų PASS; IAB OTP→profilis→feed→reload PASS. Chrome2OTP grįžo į login, priežastis UNVERIFIED, browser acceptance PARTIAL. FB išjungtas, review callback/appsecret/actualOAuth ir anketa dar neaktyvinti. Originalus trialexpiry ir main/trial runtime nepakitę.

@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Customer native content has no exact-intake-bound adapter to maintained source/media/editorial/link/approval/release workflow; non-home intake pages inherit incorrect guide type.",
+  "category": "workflow",
+  "evidence": [
+    "5062b0040a634065e1ef746e7428b5dd8c1a811c content_work/studio.py supports prepare/validate/apply only; model.mjs already maintains shared workflow.",
+    "customer-creation-intake.mjs imports every non-home page as guide including contact/about/index."
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-context.mjs",
+    "content-studio/scripts/customer-content-workflow.mjs",
+    "content-studio/scripts/customer-content-write.mjs",
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "content-studio/src/model.mjs",
+    "content-studio/test/customer-content-workflow.test.mjs",
+    "content-studio/test/customer-content-write.test.mjs",
+    "content-studio/test/customer-creation-intake.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104483272",
+  "rollback": "Revert only this scoped source commit; preserve existing private intake, approved snapshots, immutable release and actual failed receipts.",
+  "id": "upgrade-f08fdf9b-5946-469e-9e88-3171640ff1b7",
+  "branch": "codex/customer-content-workflow-20261011",
+  "baseSha": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "createdAt": "2026-10-11T02:11:26.334Z"
+}

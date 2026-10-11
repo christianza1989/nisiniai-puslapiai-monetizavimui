@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Only four-line validateV2Editorial export reuses existing assertSchema and native editorial definition; schema, revision hashes and publication validators unchanged. Workflow negative unknown native attributes/foreign authored scope/media tests and positive native metadata pass. Existing full-suite content-v2.test.mjs:19 mirror assertion remains FAIL against unchanged public ec8; no weakening or false full acceptance. Parent reserves a distinct public export source window/regression; this dependency remains open.",
+  "eventId": "c0ad9c12-b798-40ce-bab0-af34d5642235",
+  "sequence": 2,
+  "at": "2026-10-11T02:28:18.698Z"
+}

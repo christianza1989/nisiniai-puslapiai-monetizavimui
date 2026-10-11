@@ -5,17 +5,23 @@ import os from 'node:os';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {core,pinCore} from '../release-20261010/pinned-core.mjs';
+import {nativeMainRuntime} from '../community-20261011/native-main-runtime.mjs';
 const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js'))),{Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
 const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[pinCore]});
 test('Native separate community atoms: privacy, relationships, requests, durable conversation and revoked access',async()=>{
- const origin='https://madbeauty.test',storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-community-native-')),mails=[];
- const start=()=>new Miniflare({modules:true,script:bundle.outputFiles[0].text,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'MadbeautyPlatform',useSQLite:true},COMMUNITY:{className:'MadbeautyCommunity',useSQLite:true}},durableObjectsPersist:storage,bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',COMMUNITY_ENABLED:'true',RETENTION_POLICY_VERSION:'madbeauty-2026-10-10-v1',SESSION_SECRET:'local-test-only-secret-no-production-access'},serviceBindings:{ASSETS:()=>new Response('Not found',{status:404}),MAIL_TRANSPORT:async r=>{mails.push(await r.json());return new Response('Accepted');}}});
+ const runtime=await nativeMainRuntime(bundle.outputFiles[0].text,'https://madbeauty.test'),origin=runtime.origin,storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-community-native-')),mails=[];
+ const start=()=>new Miniflare({modules:true,script:runtime.script,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{...runtime.objects,PLATFORM:{className:'MadbeautyPlatform',useSQLite:true},COMMUNITY:{className:'MadbeautyCommunity',useSQLite:true}},durableObjectsPersist:storage,bindings:{APP_ORIGIN:origin,RELEASE_MODE:'preview',COMMUNITY_ENABLED:'true',RETENTION_POLICY_VERSION:'madbeauty-2026-10-10-v1',...runtime.vars,SESSION_SECRET:'local-test-only-secret-no-production-access'},serviceBindings:{ASSETS:()=>new Response('Not found',{status:404}),MAIL_TRANSPORT:async r=>{mails.push(await r.json());return new Response('Accepted');}}});
  let mf=start();
  const browser=()=>{let cookie='',csrf='';const send=async(p,body,extra={})=>{const r=await mf.dispatchFetch(origin+'/api/madbeauty/'+p,{method:body===undefined?'GET':'POST',headers:{Cookie:cookie,...body===undefined?{}:{Origin:origin,'Content-Type':'application/json','X-CSRF-Token':csrf},...extra},...body===undefined?{}:{body:JSON.stringify(body)}});cookie=r.headers.get('set-cookie')?.split(';')[0]||cookie;const v=await r.json();csrf=v.csrf||csrf;return {status:r.status,...v};};return {send,community:(method,input={})=>send('community',{method,input}),async login(email){await send('session');const c=await send('auth/start',{email}),code=mails.at(-1).text.match(/\b\d{6}\b/)[0];const u=await send('auth/verify',{challengeId:c.challengeId,code});assert.equal(u.status,200);return u.user;}};};
  try{
+  if(process.env.MADBEAUTY_COMMUNITY_MAIN_ARTIFACT){
+   assert.equal((await (await mf.dispatchFetch(origin+'/boot.json')).json()).communityEnabled,true);
+   const providers=await (await mf.dispatchFetch(origin+'/providers.json')).json();assert.equal(providers.profiles.length,0,'Canonical edition must not load trial providers');
+  }
   const a=browser(),b=browser(),c=browser();await a.login('community-a@example.com');await b.login('community-b@example.com');await c.login('community-c@example.com');
   const A=(await a.community('session')).result.actor,B=(await b.community('session')).result.actor,C=(await c.community('session')).result.actor;
   for(const [user,name] of [[a,'Testinė Austėja'],[b,'Testinė Toma'],[c,'Testinė Ieva']])assert.equal((await user.community('settings',{version:0,name,city:'Vilnius',discoverable:true,messagePolicy:'requests'})).status,200);
+  assert.equal((await a.community('seed')).status,403,'Fixture seeding is never available in the canonical runtime');
   assert.equal((await a.send('community',{method:'publish',input:{}},{'X-CSRF-Token':'forged'})).status,403);
   const pub=await a.community('publish',{text:'Violetinis manikiūras',audience:'public',operation:'native-post-one'});assert.equal(pub.status,200,JSON.stringify(pub));const id=pub.result.id;
   assert.equal((await a.community('publish',{text:'Replay',operation:'native-post-one'})).result.id,id);

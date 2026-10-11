@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Path, Query, Request
 from ..control.routes import SafeRoute
 from ..control.routes import envelope as core_envelope
 from ..customer.service import customer_guard
-from . import service
+from . import evidence, service
 from .wire import (
     ConfigEnvelope,
     Create,
@@ -14,6 +14,7 @@ from .wire import (
     Revise,
     RevisionsEnvelope,
     SavedEnvelope,
+    TestRunsEnvelope,
 )
 
 
@@ -65,3 +66,11 @@ async def revisions(creation_id: str, agent_id: str, request: Request, limit: in
 @router.get("/{creation_id}/agents/{agent_id}/revisions/{revision}", response_model=ConfigEnvelope, response_model_exclude_none=True)
 async def revision(creation_id: str, agent_id: str, request: Request, revision: int = Path(ge=1, le=2147483647)):
     return envelope(request, await service.revision(token(request), creation_id, agent_id, revision))
+
+
+@router.get("/{creation_id}/agents/{agent_id}/test-runs", response_model=TestRunsEnvelope, response_model_exclude_none=True)
+async def test_runs(creation_id: str, agent_id: str, request: Request,
+        revision: int | None = Query(None, ge=1, le=2147483647), limit: int = Query(20, ge=1, le=50),
+        cursor: str | None = Query(None, min_length=1, max_length=2048)):
+    return envelope(request, await evidence.listing(token(request), creation_id, agent_id,
+        revision=revision, limit=limit, cursor=cursor))

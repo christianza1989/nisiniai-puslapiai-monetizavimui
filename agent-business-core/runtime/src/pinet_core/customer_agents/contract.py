@@ -11,6 +11,8 @@ def document():
     value["info"]["description"] = (
         "Local-only current verified customer owner/grant and exact registered business. Data-only purpose/task "
         "configuration, immutable versions, UUID idempotency, optimistic conflict and bounded signed history. "
+        "Additive read-only test evidence reports retained exact Config/Profile/source and known usage, "
+        "never private transcripts or prompts; a historical judgment is not current calibration. "
         "A saved specification is not runtime/module admission. Calibration remains UNVERIFIED; all provider, "
         "calibration and channel activation capabilities are false. No model, tools, connector, mail or live channel.")
     operations = {
@@ -20,6 +22,7 @@ def document():
         ("post", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions"): "reviseCustomerAgentDraft",
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions"): "listCustomerAgentDraftRevisions",
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions/{revision}"): "getCustomerAgentDraftRevision",
+        ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/test-runs"): "listCustomerAgentTestEvidence",
     }
     for path, methods in value["paths"].items():
         for method, operation in methods.items():

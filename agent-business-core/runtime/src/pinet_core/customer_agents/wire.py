@@ -165,6 +165,69 @@ class RevisionsEnvelope(Envelope):
     data: Revisions
 
 
+Count = Annotated[int, Field(strict=True, ge=0)]
+
+
+class TestUsage(Strict):
+    attempts: Count
+    settled: Count
+    known_receipts: Count
+    complete: bool
+    input_tokens: Count | None = None
+    output_tokens: Count | None = None
+    cost_status: Literal["UNVERIFIED"]
+
+
+class TestQuality(Strict):
+    state: Literal["not_requested", "running", "failed", "succeeded", "UNVERIFIED"]
+    model: Literal["gpt-6.1-sol"]
+    applies_to_latest_transcript: bool
+    evaluator_sha256: Digest | None = None
+    outcome: Literal["helpful", "needs_review", "incomplete", "no_interaction"] | None = None
+    issues_count: Count | None = None
+    root_cause: Literal["communication", "knowledge", "tool", "transport", "transcription", "unknown"] | None = None
+
+
+class TestRun(Strict):
+    conversation_id: UUID
+    created_at: datetime
+    need_revision: Count
+    config_revision: Revision
+    config_sha256: Digest
+    current_configuration: bool
+    profile_admission_id: UUID
+    profile_fingerprint: Digest
+    profile_revoked: bool
+    execution_source_revision: Source
+    execution_source_current: bool
+    script_sha256: Digest
+    customer_turns: Count
+    succeeded_turns: Count
+    script_complete: bool
+    events_truncated: bool
+    usage: TestUsage
+    quality: TestQuality
+
+
+class TestRuns(Strict):
+    creation_id: UUID
+    agent_id: UUID
+    revision: Revision
+    items: list[TestRun] = Field(max_length=50)
+    has_more: bool
+    next_cursor: str | None = Field(default=None, max_length=2048)
+    scope: Literal["operator_local_task_calibration"]
+    evidence_only: Literal[True]
+    calibration_status: Literal["UNVERIFIED"]
+    module_admission: Literal["not_admitted"]
+    activation: Literal["not_performed"]
+    provider_execution: Literal[False]
+
+
+class TestRunsEnvelope(Envelope):
+    data: TestRuns
+
+
 class ConfigEnvelope(Envelope):
     data: Config
 

@@ -1,4 +1,5 @@
 """Exact retained native feedback fences; no DB, writer, provider or acceptance."""
+import hashlib
 import json
 from copy import deepcopy
 from types import SimpleNamespace as Row
@@ -59,9 +60,21 @@ def test_exact_retained_feedback_is_only_projected_input_even_when_source_commit
     assert previous == history[3][0].payload["candidate"]
     assert feedback == {"critic": history[3][1].payload["critic"], "coordinator": history[3][2].payload["coordinator"]}
     assert feedback["coordinator"]["decision"] == "revise"
-    expected = language_mode.policy(history[4]["instructions"]) + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
+    expected = adapter.creator_policy(history[4]) + "\nNEPATIKIMI_PATAISU_DUOMENYS_JSON\n" + json.dumps({
         "critic_feedback": feedback, "previous_candidate": previous}, ensure_ascii=False)
     assert adapter.creator_prompt(history[4], previous, feedback) == expected
+
+
+@pytest.mark.parametrize("role", ["creator", "critic"])
+def test_precalibration_instruction_hash_cannot_reuse_old_final_roles(history, role):
+    prepared = history[4]
+    old_policy = (language_mode.policy(prepared["instructions"]) if role == "creator" else
+                  language_mode.policy(review.shared.CRITIC_POLICY + "\n" + review.POLICY))
+    old_hash = hashlib.sha256((adapter.ADAPTER + ":" + prepared["instructionHash"] + ":" + old_policy).encode()).hexdigest()
+    attempt = next(item for item in history[2] if item.role == role)
+    assert attempt.instruction_hash != old_hash
+    attempt.instruction_hash = old_hash
+    assert continuation.seed(*history) == (None, None)
 
 
 @pytest.mark.parametrize("key", continuation.IDENTITY)

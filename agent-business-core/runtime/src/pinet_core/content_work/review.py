@@ -21,6 +21,14 @@ Naudok tik allowed_finding_refs; native JSONpointer body/0/content/0/text ir pan
 Nežinomi verslo faktai netampa tikrais vien todėl, kad pateikti hipotezėje. Įrankiai išjungti.
 """
 
+CRITIC_CALIBRATION = """Prieš privalomą radinį perskaityk visą dabartinį kandidatą. Nurodyk konkretų
+likusį materialų prieštaravimą ar trūkumą ir tikrus jį pagrindžiančius allowed_finding_refs laukus.
+Lygiavertis aiškus paaiškinimas tinkamas: nereikalauk kartoti jau išspręstos pastabos vien kitais
+žodžiais. Nauji tikri faktų, apimties, formulės ar nuorodų trūkumai vis tiek privalomai taisomi.
+Kiekviena checks patikra turi tik vieną pateiktą tos pačios kind kvito ID, be dubliavimo; statusą
+perkelk tiksliai iš to kvito. Modelio vertinimas nepaverčia UNVERIFIED į PASS.
+"""
+
 
 def candidate(value):
     try:
@@ -166,7 +174,8 @@ def context(output, round_number, receipts, prepared, critic_value=None):
 
 
 def policy(role):
-    return language_mode.policy({"critic": shared.CRITIC_POLICY, "coordinator": shared.COORDINATOR_POLICY}[role] + "\n" + POLICY)
+    base = {"critic": shared.CRITIC_POLICY, "coordinator": shared.COORDINATOR_POLICY}[role] + "\n" + POLICY
+    return language_mode.policy(base + ("\n" + CRITIC_CALIBRATION if role == "critic" else ""))
 
 
 def output_schema(role, value):
@@ -174,6 +183,9 @@ def output_schema(role, value):
         schema = shared.model_output_schema("critic")
         language_mode.constrain_findings(schema, "Finding")
         schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = value["allowed_finding_refs"]
+        refs = schema["$defs"]["ReviewCheck"]["properties"]["evidence_refs"]
+        refs.update(minItems=1, maxItems=1)
+        refs["items"]["enum"] = [receipt["id"] for receipt in value["receipts"]]
     else:
         schema = shared.model_output_schema("coordinator")
         schema["properties"]["critic_sha256"]["const"] = value["critic_sha256"]

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFile,writeFile,mkdir,cp,copyFile} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,cp,copyFile,readdir} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {execFileSync,spawn} from 'node:child_process';
@@ -13,7 +13,7 @@ const dir=path.join(out,kind),hash=b=>createHash('sha256').update(b).digest('hex
 async function provider(){
  const token=(await readFile('C:/Users/Lenovo/AppData/Roaming/xdg.config/.wrangler/config/default.toml','utf8')).match(/^oauth_token\s*=\s*"([^"]+)"/m)?.[1];assert.ok(token);
  const records=[];
- for(const name of ['madbeauty-platform-preview','madbeauty-ui-acceptance-20261009','madbeauty-temporary-test-20261010']){
+ for(const name of ['madbeauty-platform-preview','madbeauty-ui-acceptance-20261009','madbeauty-temporary-test-20261010','madbeauty-meta-review-20261011']){
   const get=async suffix=>{const r=await fetch('https://api.cloudflare.com/client/v4/accounts/d102163f74a45ab6d33bca786ce281ec/workers/'+suffix,{headers:{Authorization:'Bearer '+token}}),v=await r.json();assert.ok(v.success,'Provider status '+r.status);return v.result;};
   records.push({name,settings:await get('scripts/'+name+'/settings'),deployments:await get('scripts/'+name+'/deployments')});
  }return records;
@@ -21,6 +21,12 @@ async function provider(){
 const clean=commit=>assert.equal(execFileSync('git',['diff','--name-only',commit,'--','sites/madbeauty/prototype','sites/madbeauty/cloudflare','sites/madbeauty/content','sites/madbeauty/backend','sites/madbeauty/trial-20261010/worker.mjs'],{cwd:repo,encoding:'utf8'}).trim(),'','Runtime source must stay committed');
 if(phase==='before'){
  const records=await provider(),previousDeployment=await json(path.join(dir,'deployment.json')).catch(()=>null),expected=previousDeployment?.version||(kind==='main'?'96af1b12-52cc-48cb-820e-1580f4b7c860':'2292c0bd-b302-40cc-8d7c-e1eb9de0b033');assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
+ // Preserve the actual previous artifact and evidence before candidate preparation.
+ // Never rewrite a historical hosted proof as evidence for a new deployment.
+ const archive=path.join(dir,'previous',expected);await mkdir(archive,{recursive:true});
+ for(const e of await readdir(dir,{withFileTypes:true}))if(e.isFile())await copyFile(path.join(dir,e.name),path.join(archive,e.name));
+ await mkdir(path.join(archive,'browser-modules'),{recursive:true});
+ for(const f of ['http-adapter.mjs','account-ui.mjs','auth-entry.mjs'])await copyFile(path.join(dir,'assets',f),path.join(archive,'browser-modules',f));
  await writeFile(path.join(dir,'before.private.json'),JSON.stringify({at:new Date().toISOString(),records},null,2));console.log(JSON.stringify({state:'BEFORE_CAPTURED',kind,version:expected}));
 }
 if(phase==='build'){
@@ -44,6 +50,9 @@ if(phase==='build'){
   await writeFile(path.join(dir,'trial-assets.json'),JSON.stringify([...paths].sort()));
   plugins=[{name:'trial-build-inputs',setup(b){b.onResolve({filter:/\.\/output\/trial-(assets|media)\.json$/},a=>({path:path.join(dir,path.basename(a.path))}));}},pinCore];entry=path.join(repo,'sites/madbeauty/trial-20261010/worker.mjs');
  }
+ // These committed modules are a narrow auth increment after the accepted static
+ // asset edition. All media/content remain from that exact frozen edition.
+ const authAssets=[];for(const f of ['http-adapter.mjs','account-ui.mjs','auth-entry.mjs']){const target=path.join(dir,'assets',f),previousSha256=hash(await readFile(target)),bytes=await readFile(path.join(repo,'sites/madbeauty/prototype/public',f));await copyFile(path.join(repo,'sites/madbeauty/prototype/public',f),target);authAssets.push({file:f,previousSha256,sha256:hash(bytes)});}
  assert.equal(config.compatibility_date,baseline.compatibility_date);assert.deepEqual(config.compatibility_flags,baseline.compatibility_flags);for(const b of baseline.bindings.filter(b=>b.type==='plain_text'))assert.equal(config.vars[b.name],b.text);
  config.durable_objects.bindings.push({name:'COMMUNITY',class_name:'MadbeautyCommunity'});config.migrations.push({tag:kind==='trial'?'trial-v2-community':'v3-community',new_sqlite_classes:['MadbeautyCommunity']});config.vars={...config.vars,FACEBOOK_APP_ID:'1827877621543839',FACEBOOK_GRAPH_VERSION:'v26.0',FACEBOOK_LOGIN_ENABLED:kind==='trial'?'true':'false',COMMUNITY_ENABLED:kind==='trial'?'true':'false'};
  config.main='worker.mjs';config.no_bundle=true;config.keep_vars=true;delete config.$schema;config.assets.directory='./assets';config.observability=baseline.observability;
@@ -51,7 +60,7 @@ if(phase==='build'){
  if(kind==='main')for(const marker of ['ACCEPTANCE_KEY','HostedSource','qa_mail_captures','NATIVE_CONTENT_CLOCK'])assert.ok(!bundle.outputFiles[0].text.includes(marker));
  const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:repo,encoding:'utf8'}).trim();clean(sourceCommit);
  await writeFile(path.join(dir,'worker.mjs'),bytes);await writeFile(path.join(dir,'wrangler.json'),JSON.stringify(config,null,2));
- await writeFile(path.join(dir,'manifest.json'),JSON.stringify({kind,sourceCommit,coreSource,artifactSha256:hash(bytes),packageSha256:release.packageSha256,pages:129,assets:kind==='main'?release.assets:(await json(path.join(dir,'trial-assets.json'))).length,expiresAt:config.vars.TRIAL_EXPIRES_AT||null,mediaProof,previousVersion:before.records[index].deployments.deployments[0].versions[0].version_id},null,2));console.log(JSON.stringify({state:'BUILT',kind,sourceCommit,artifactSha256:hash(bytes)}));
+ await writeFile(path.join(dir,'manifest.json'),JSON.stringify({kind,sourceCommit,coreSource,artifactSha256:hash(bytes),packageSha256:release.packageSha256,pages:129,assets:kind==='main'?release.assets:(await json(path.join(dir,'trial-assets.json'))).length,expiresAt:config.vars.TRIAL_EXPIRES_AT||null,mediaProof,authAssets,previousVersion:before.records[index].deployments.deployments[0].versions[0].version_id},null,2));console.log(JSON.stringify({state:'BUILT',kind,sourceCommit,artifactSha256:hash(bytes)}));
 }
 if(phase==='secret'){
  const before=await json(path.join(dir,'before.private.json'));assert.deepEqual(await provider(),before.records,'Secret installation lease changed');

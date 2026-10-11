@@ -30,6 +30,14 @@
     $('[data-availability]').textContent=available?(catalog.mode==='test'?'Test checkout · No real payment':'Orders open'):catalog?.mode!=='disabled'&&offer?.available?'Selected finish unavailable - try the other finish':'Preparing for launch · Try the free beta today';
     $('[data-purchase-note]').textContent=available?(count&&catalog.shippingAmount===0?'Free shipping to destinations offered at Checkout. Import charges, if any, may be collected locally.':'One-time payment. Review your final total on secure Stripe Checkout before paying.'):'Orders are not open yet. Delivery, applicable taxes and final purchase terms will be confirmed before sales begin.';
     $('.pb-consent').hidden=!available;
+    // Only the isolated sandbox advertises creator codes in this release.
+    if(catalog?.creatorDiscounts&&!$('[data-creator-code]')){
+      const label=document.createElement('label');label.className='pb-purchase-note';label.textContent='Creator code (sandbox only, optional)';
+      const input=document.createElement('input');input.dataset.creatorCode='';input.maxLength=24;input.autocomplete='off';input.placeholder='Your creator code';input.style.cssText='display:block;width:100%;margin:8px 0;padding:12px;border:1px solid #30323b;border-radius:8px;background:#101114;color:#f7f7fa;text-transform:uppercase';
+      const previous=requestSelection?.split(':')[2];if(/^[A-Z0-9]{4,24}$/.test(previous||''))input.value=previous;
+      const note=document.createElement('small');note.textContent='Eligible codes are checked by the server. Review your final total at Checkout.';
+      label.append(input,note);$('.pb-consent').before(label);
+    }
     if(catalog?.mode==='test'){const input=$('[data-purchase-consent]');$('.pb-consent').replaceChildren(input,document.createTextNode(' I understand this is a sandbox simulation. No money, goods or licence will be supplied.'));}
     cta.firstChild.textContent=available?(catalog.mode==='test'?'Open test checkout ':'Buy now '):'Ask about this setup ';
     cta.dataset.enquiryUrl='/contact?topic=setup&holders='+count+'&finish='+finish;
@@ -48,10 +56,11 @@
     const {count,finish}=choice(),offer=catalog?.offers.find(o=>o.holders===count),available=offer?.available&&(!count||offer.finishes?.[finish]!==false);
     event.preventDefault();if(!available){location.assign(cta.dataset.enquiryUrl);return;}if(pending)return;
     if(!$('[data-purchase-consent]').checked){status.textContent=catalog.mode==='test'?'Confirm that you understand this is a test.':'Please read and accept the purchase terms before continuing.';$('[data-purchase-consent]').focus();return;}
-    const selection=count+':'+finish;if(!requestId||requestSelection!==selection){requestId=crypto.randomUUID();requestSelection=selection;try{sessionStorage.setItem('phonebridger.checkout.v1',JSON.stringify({id:requestId,selection}));}catch{}}
+    const creatorCode=catalog?.creatorDiscounts?$('[data-creator-code]')?.value.trim().toUpperCase():undefined;
+    const selection=count+':'+finish+(catalog?.creatorDiscounts?':'+creatorCode:'');if(!requestId||requestSelection!==selection){requestId=crypto.randomUUID();requestSelection=selection;try{sessionStorage.setItem('phonebridger.checkout.v1',JSON.stringify({id:requestId,selection}));}catch{}}
     pending=true;cta.disabled=true;cta.setAttribute('aria-disabled','true');status.textContent='Opening secure checkout…';
     try{
-      const response=await fetch('/api/shop/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({holders:count,finish,requestId,consent:true})});const result=await response.json();
+      const response=await fetch('/api/shop/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({holders:count,finish,requestId,consent:true,creatorCode})});const result=await response.json();
       if(response.status===401){try{saveChoice();}catch{}status.textContent='Sign in, then return to your saved setup.';location.href='/login?next=shop';return;}
       if(!response.ok){if(response.status===409){requestId=null;try{sessionStorage.removeItem('phonebridger.checkout.v1');}catch{}}throw Error(result.error||'Unable to open checkout.');}
       if(result.paid&&/^[a-f0-9]{32}$/.test(result.orderId)){location.assign('/checkout?order='+result.orderId);return;}

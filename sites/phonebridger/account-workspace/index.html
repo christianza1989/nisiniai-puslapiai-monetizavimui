@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="robots" content="noindex,nofollow,noarchive"><meta name="theme-color" content="#101114">
+ <title>Your workspace — PhoneBridger</title>
+ <link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml">
+ <link rel="preload" href="/assets/fonts/manrope-400.ttf" as="font" type="font/ttf" crossorigin>
+ <link rel="stylesheet" href="/assets/account-workspace/workspace.css">
+ <script src="/assets/account-workspace/workspace.js" defer></script>
+</head>
+<body>
+ <a class="skip" href="#main">Skip to content</a>
+ <div class="workspace">
+  <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+   <a class="brand" href="/"><img src="/assets/brand-mark.svg" width="30" height="30" alt="">PhoneBridger</a>
+   <div class="workspace-switch" data-switch></div>
+   <nav aria-label="Your workspace" data-nav></nav>
+   <div class="sidebar-bottom"><a href="/help">Setup &amp; help <span aria-hidden="true">↗</span></a><a href="/">Back to website <span aria-hidden="true">↗</span></a><button type="button" data-logout>Sign out</button></div>
+  </aside>
+  <div class="drawer-shade" data-close-menu hidden></div>
+  <div class="workspace-body">
+   <header class="topbar"><button class="icon-button mobile-menu" type="button" data-menu aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span aria-hidden="true">☰</span></button><div class="breadcrumb" data-breadcrumb>Account <span>/</span> Workspace</div><a class="top-help" href="/account/support">Need a hand?</a><a class="avatar" href="/account/settings" aria-label="Account settings" data-avatar>·</a></header>
+   <main id="main" tabindex="-1" aria-busy="true"><div class="loading" role="status"><span class="loading-dot"></span>Opening your workspace…</div></main>
+   <footer class="workspace-footer"><span>PhoneBridger · Windows + Android</span><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:hello@phonebridger.com">Contact</a></div></footer>
+  </div>
+ </div>
+ <div class="toast" role="status" aria-live="polite" data-toast hidden></div>
+</body>
+</html>

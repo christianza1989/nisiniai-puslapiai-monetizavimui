@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implemented restricted-PG synthetic-local worker/ticket/proposal acceptance and default-OFF typed receipt. Development18+6 tests PASS before final source freeze. Initial failures preserved: draft intake missing own companion; bootstrap nonglobal-table grants absent; Windows0IANA zones/tzdata missing; interim empty migration downgrade lacked new function (IF EXISTS repair). No root tests or canonical readiness weakened. Added approved2 dependency paths; global/source/calibration/portal/live/adoption remain distinct.",
+  "eventId": "589772cf-1a71-4499-b53f-186e00b46cb9",
+  "sequence": 2,
+  "at": "2026-10-11T21:22:05.870Z"
+}

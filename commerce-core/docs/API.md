@@ -16,12 +16,15 @@ Versija 0.4. Tai įgyvendinti endpointai, ne visas roadmap. Visos JSON išvestys
 | POST /api/operator/orders/:id/ship | verified operator + prijungtas siuntų adapteris | privatus etiketes nurodantis įrašas; ne viešas PDF |
 | GET /api/operator/overview | operator read | store, counts, orders, catalog, dokumentai, korekcijos, refund išimtys, operatoriaus grants, adapterių aktyvumas |
 | GET /api/operator/orders | operator read; optional before + beforeId | orders ir nextCursor; timestamp/ID keyset nepraleidžia vienu metu sukurtų užsakymų |
-| GET /api/operator/orders/:id | operator read | užsakymas, jo dokumentai, refunds ir siuntos įrašas |
+| GET /api/operator/orders/:id | operator read | užsakymas, dokumentai, refunds, refundCommands ir siuntos įrašas |
+| POST /api/operator/orders/:id/refund-commands | operator refund; id, amount centais, reason | sandbox/testOnly užduotis, atominė likusios sumos rezervacija; replay/conflict |
+| POST /api/operator/refund-commands/:id/execute | operator refund; prijungtas Stripe adapteris | vienas lease, esamo rezultato paieška, stabilaus key POST tik per23h; unknown/pending/review nėra patvirtintas refund |
+| POST /api/operator/refund-commands/:id/cancel | operator refund | tik planned užduotis be first_attempt/lease; istorija lieka, suma atlaisvinama; pradėta užduotis —409 |
 | POST /api/operator/stock-adjustments | operator stock; id, sku, delta, expectedAvailable, reason | patvari korekcija ir replay; stale ar neigiamas galutinis likutis — 409 |
 | POST /api/operator/orders/:id/documents | operator document; kind:sale/packing/credit, credit atveju refundId | nekintantis numeruotas testinis dokumentas; source replay grąžina tą patį ID |
 | GET /api/operator/documents/:id | operator read | tik tos parduotuvės dokumentas |
 
-Operatoriaus adapterio nebuvimas — 403. Adapteris grąžina `{id,storeId,permissions}`; handleris tikrina ID, host parduotuvę ir konkrečią read/stock/document/pack/ship/finance/wholesale teisę. Boolean arba kitos parduotuvės principal atmetamas. Actor ID imamas iš adapterio, ne request body. Vietinis dev turi CLI išduodamo hash/expiry žetono adapterį; production core identity dar neprijungtas. Atskiras workerd test entrypoint turi aiškiai testinį identity adapterį.
+Operatoriaus adapterio nebuvimas — 403. Adapteris grąžina `{id,storeId,permissions}`; handleris tikrina ID, host parduotuvę ir konkrečią read/stock/document/pack/ship/finance/wholesale/refund teisę. Boolean arba kitos parduotuvės principal atmetamas. Actor ID imamas iš adapterio, ne request body. Vietinis dev turi CLI išduodamo hash/expiry žetono adapterį; production core identity dar neprijungtas. Atskiras workerd test entrypoint turi aiškiai testinį identity adapterį.
 
 ## Kontaktai ir pristatymas
 

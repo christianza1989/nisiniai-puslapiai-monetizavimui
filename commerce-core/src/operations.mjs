@@ -111,14 +111,23 @@ export class CommerceOperations {
         ['pending', 'requires_action', 'succeeded', 'failed', 'canceled'].includes(event.status),
       'invalid_refund_event',
     );
-    const hash = await digest(canonical(event));
+    // Command metadata is only a lookup hint; keep the established money-fact
+    // fingerprint stable for events accepted before refund commands existed.
+    const { commandId: _commandId, ...moneyEvent } = event;
+    const hash = await digest(canonical(moneyEvent));
+    const compatibleHash = _commandId === undefined ? hash : await digest(canonical(event));
     const old = await s.one(
       'SELECT payload_hash FROM event_inbox WHERE store_id=? AND provider=? AND event_id=?',
       store,
       'stripe',
       event.id,
     );
-    if (old) requireValue(old.payload_hash === hash, 'provider_event_conflict', 409);
+    if (old)
+      requireValue(
+        [hash, compatibleHash].includes(old.payload_hash),
+        'provider_event_conflict',
+        409,
+      );
     else {
       try {
         await s.db.batch([
@@ -151,7 +160,11 @@ export class CommerceOperations {
           event.id,
         );
         if (!concurrent) throw error;
-        requireValue(concurrent.payload_hash === hash, 'provider_event_conflict', 409);
+        requireValue(
+          [hash, compatibleHash].includes(concurrent.payload_hash),
+          'provider_event_conflict',
+          409,
+        );
       }
     }
     await this.applyPendingRefunds(store, environment);

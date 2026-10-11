@@ -1,6 +1,8 @@
 # Prekybos modulio roadmap
 Aktualus [pavedimas](IMPLEMENTATION_STATUS.md). Nėra savaitinės turinio kvotos ar išgalvotų pristatymo datų. Etapo baigtis reiškia jo priėmimo įrodymą, ne visos platformos baigtį.
 
+Aktualus0.5paketas: patvarus sandbox refund gateway ir tikras atskiros laikinos Stripe aplinkos Checkout/partial/refund replay patikrinti. [Kvitas](CONTINUATION_2026_10_12_REFUNDS.md). Toliau — M3pakuotės/realios siuntimo paslaugos/PDF/tracking, po jų M5identity/admission ir M4disputes/finansinių šaltinių adapteriai. S1/S2 vykdomi atskiroje savininko sesijoje; visas roadmap ir produkcinis paleidimas dar nepriimti.
+
 | Etapas | Apimtis ir rezultatas | Priėmimas / priklausomybės |
 |---|---|---|
 | M0. Planas | Verslo modelis, reusable modulio ribos, duomenys, API, ekranai, plėtra, tests, rollback | Šis roadmap, architektūra, acceptance, Memocasting BUSINESS/TOOLS/SEO-GEO |

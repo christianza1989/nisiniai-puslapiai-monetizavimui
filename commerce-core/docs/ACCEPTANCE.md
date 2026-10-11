@@ -1,5 +1,7 @@
 # Priėmimo matrica
 
+Aktualus0.5tęsinys:53Node/nativeD1/7migracijos/dry-run ir atskiras tikras izoliuotas Stripe Checkout/signed webhook/partial refund/replay bandymas pagal [naują kvitą](CONTINUATION_2026_10_12_REFUNDS.md). Žemiau išlieka ankstesnių paketų istoriniai įrodymai.
+
 2026-10-11. Node 24.19.0 / Windows. npm test: **20/20 PASS**. npm run test:worker: **PASS atskirame workerd su native D1**. npm run build:worker: Wrangler dry-run PASS, jokio deployment. npm audit: 0 vulnerabilities patikros metu. Tai vietinio paketo įrodymai, ne viso marketplace ar realių tiekėjų priėmimas.
 
 | ID | Bandymas | Būsena / įrodymo ribos |

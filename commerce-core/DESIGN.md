@@ -115,3 +115,5 @@ Mygtuko minimalus aukštis 44px; pirminis veiksmas žalias su baltu tekstu. Inpu
 - Testinių dokumentų ir neaktyvių integracijų nepristatyti kaip veikiančios apskaitos ar siuntimo paslaugos.
 
 Naršyklės peržiūra ir dizaino aprašymas atlikti nuosekliai to paties agento; tai nėra nepriklausomas auditas. Faktinis teksto padidinimas nuo 16 iki 32px patikrintas kartu su skaitymo tarpais. Browser zoom ir pilna WCAG atitiktis neteigiami; tikslios ribos — docs/ACCEPTANCE.md.
+
+2026-10-12 grąžinimo kelio patikros apimtis: užsakymo detalėje pakartotinai naudojamos esamos h2/h3, hint, empty, table, stock-form, fields, actions ir input/button rolės. Naujos šriftų ar spalvų sistemos nereikia. Peržiūrėti ilgą vykdymo mygtuką, sumos/priežasties laukus, rezervuotos sumos paaiškinimą ir planned/unknown/pending/review/succeeded būsenas desktop bei mobile, 320px reflow ir32px tekstą su tarpų override; tikras naršyklės mastelis lieka atskiras įrodymas. Patikrinti laukų fokusą, paruošimą be providerio, išjungtą vykdymą ir tikro sandbox rezultato perskaitymą. Galutiniai įrodymai bus atskirame refund kvite.

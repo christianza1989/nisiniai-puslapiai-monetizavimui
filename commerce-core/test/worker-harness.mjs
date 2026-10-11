@@ -16,6 +16,14 @@ export default {
       id: 'cs_' + data.metadata.order_id.replaceAll('-', ''),
       url: 'https://checkout.stripe.test/fixture',
     });
+    client.refunds.list = async () => ({ data: [], has_more: false });
+    client.refunds.create = async (data) => ({
+      ...data,
+      id: 're_' + data.metadata.commerce_command_id.replaceAll('-', ''),
+      currency: 'eur',
+      status: 'succeeded',
+      livemode: false,
+    });
     const paymentAdapters = {};
     for (const store of ['store_a', 'store_b'])
       paymentAdapters[store] = new StripeCheckoutAdapter({
@@ -34,7 +42,16 @@ export default {
           ? {
               id: 'fixture_operator',
               storeId: store.id,
-              permissions: ['read', 'stock', 'document', 'pack', 'ship', 'finance', 'wholesale'],
+              permissions: [
+                'read',
+                'stock',
+                'document',
+                'pack',
+                'ship',
+                'finance',
+                'wholesale',
+                'refund',
+              ],
             }
           : false,
     })(request);

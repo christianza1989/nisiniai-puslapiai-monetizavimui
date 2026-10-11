@@ -537,6 +537,78 @@ try {
     { 'x-fixture-operator': 'store_a' },
   );
   assert.equal(privateFinancial.status, 200);
+  const refundHeaders = { 'x-fixture-operator': 'store_a' };
+  const prepared = await Promise.all(
+    ['one', 'two', 'three'].map((id) =>
+      dispatch(
+        'store-a.example',
+        '/api/operator/orders/' + result.order.id + '/refund-commands',
+        'POST',
+        { id: 'native_' + id, amount: 1000, reason: 'Native refund test' },
+        refundHeaders,
+      ),
+    ),
+  );
+  assert.deepEqual(prepared.map((r) => r.status).sort(), [200, 200, 409]);
+  const refundCommand = (await prepared.find((r) => r.status === 200).json()).command;
+  const executions = await Promise.all(
+    [1, 2].map(() =>
+      dispatch(
+        'store-a.example',
+        '/api/operator/refund-commands/' + refundCommand.id + '/execute',
+        'POST',
+        {},
+        refundHeaders,
+      ),
+    ),
+  );
+  assert.ok(executions.some((r) => r.status === 200));
+  assert.equal(
+    (
+      await service.one(
+        'SELECT state FROM refund_commands WHERE store_id=? AND id=?',
+        'store_a',
+        refundCommand.id,
+      )
+    ).state,
+    'succeeded',
+  );
+  assert.equal(
+    (await service.getOrder('store_a', 'sandbox', result.order.id)).refunded_amount,
+    2000,
+  );
+  const unsubmitted = (
+    await prepared
+      .filter((r) => r.status === 200)
+      .find((r) => r.bodyUsed === false)
+      .json()
+  ).command;
+  assert.equal(
+    (
+      await dispatch(
+        'store-a.example',
+        '/api/operator/refund-commands/' + unsubmitted.id + '/cancel',
+        'POST',
+        {},
+        refundHeaders,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await service.one(
+        'SELECT review_reason FROM refund_commands WHERE store_id=? AND id=?',
+        'store_a',
+        unsubmitted.id,
+      )
+    ).review_reason,
+    'canceled_before_submission',
+  );
+  await assert.rejects(
+    service.stmt('UPDATE refund_commands SET amount=1').run(),
+    /refund_command_immutable/,
+  );
 
   // Late-payment triggers are exercised against native D1, not the Node SQLite shim.
   let clock = Date.now();
@@ -558,7 +630,7 @@ try {
   await start('src/worker.mjs', { COMMERCE_ENV: 'production' });
   assert.equal((await dispatch('store-a.example', '/api/catalog')).status, 503);
   console.log(
-    'PASS workerd/native D1: ordered migrations, multi-SKU rollback, concurrent HTTP stock, store/token isolation, replay, restart persistence, signed Stripe async/refund/replay, operator gate, stock adjustments, concurrent immutable numbered sale/credit documents, shared-component assembly race, immutable financial imports/reconciliation, wholesale pricing and concurrent acceptance, fixture shipment, journal, outbox, expiry/late payment. No remote API calls.',
+    'PASS workerd/native D1: ordered migrations, multi-SKU rollback, concurrent HTTP stock, store/token isolation, replay, restart persistence, signed Stripe async/refund/replay, operator gate, stock adjustments, concurrent immutable numbered sale/credit documents, shared-component assembly race, immutable financial imports/reconciliation, wholesale pricing and concurrent acceptance, durable concurrent refund budgets/execution, fixture shipment, journal, outbox, expiry/late payment. No remote API calls.',
   );
 } finally {
   if (mf) await mf.dispose();

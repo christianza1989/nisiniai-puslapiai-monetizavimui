@@ -2,6 +2,7 @@ import { CommerceError, requireValue, identifier } from './validation.mjs';
 import { CommerceOperations } from './operations.mjs';
 import { Backoffice } from './backoffice.mjs';
 import { Wholesale } from './wholesale.mjs';
+import { RefundCommands } from './refunds.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -45,6 +46,7 @@ export function createHandler({
   const operations = new CommerceOperations(service);
   const backoffice = new Backoffice(service);
   const wholesale = new Wholesale(service);
+  const refunds = new RefundCommands(service);
   return async (request) => {
     try {
       const url = new URL(request.url);
@@ -158,6 +160,7 @@ export function createHandler({
             permissions: principal.permissions || [],
             integrations: {
               payments: Boolean(paymentAdapters[store.id]),
+              refunds: Boolean(paymentAdapters[store.id]?.createRefund),
               shipping: Boolean(shippingAdapters[store.id]),
             },
           });
@@ -187,6 +190,7 @@ export function createHandler({
           const order = await service.getOrder(store.id, environment, detail[1]);
           return json({
             order,
+            refundCommands: await refunds.list(store.id, environment, order.id),
             documents: await operations.listDocuments(store.id, environment, order.id),
             refunds: await service.rows(
               'SELECT * FROM refunds WHERE store_id=? AND order_id=?',
@@ -217,6 +221,43 @@ export function createHandler({
           await authorize('read');
           return json(await operations.getDocument(store.id, environment, document[1]));
         }
+        const prepareRefund = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/refund-commands$/,
+        );
+        if (prepareRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(
+            await refunds.prepare(
+              store.id,
+              environment,
+              prepareRefund[1],
+              await read(),
+              principal.id,
+            ),
+          );
+        }
+        const executeRefund = path.match(
+          /^\/api\/operator\/refund-commands\/([a-zA-Z0-9_-]+)\/execute$/,
+        );
+        if (executeRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(
+            await refunds.execute(
+              store.id,
+              environment,
+              executeRefund[1],
+              paymentAdapters[store.id],
+              principal.id,
+            ),
+          );
+        }
+        const cancelRefund = path.match(
+          /^\/api\/operator\/refund-commands\/([a-zA-Z0-9_-]+)\/cancel$/,
+        );
+        if (cancelRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(await refunds.cancel(store.id, environment, cancelRefund[1], principal.id));
+        }
       }
       if (request.method === 'GET' && path === '/api/catalog')
         return json(await service.catalog(store.id, environment));
@@ -245,9 +286,10 @@ export function createHandler({
           request.headers.get('stripe-signature'),
         );
         if (event) {
-          if (event.kind === 'refund')
+          if (event.kind === 'refund') {
             await operations.acceptRefundEvent(store.id, environment, event);
-          else {
+            await refunds.observe(store.id, environment, event);
+          } else {
             requireValue(event.storeId === store.id, 'stripe_store_mismatch', 403);
             await service.acceptPayment(store.id, environment, event);
             await operations.applyPendingRefunds(store.id, environment);

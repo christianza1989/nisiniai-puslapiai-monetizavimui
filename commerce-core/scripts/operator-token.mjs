@@ -17,7 +17,7 @@ records.push({
   id: 'local_' + crypto.randomUUID(),
   storeId,
   tokenHash: await digest(token),
-  permissions: ['read', 'stock', 'document', 'pack', 'ship', 'finance', 'wholesale'],
+  permissions: ['read', 'stock', 'document', 'pack', 'ship', 'finance', 'wholesale', 'refund'],
   expiresAt: Date.now() + 8 * 3600000,
 });
 writeFileSync(path, JSON.stringify(records, null, 2) + '\n', { mode: 0o600 });

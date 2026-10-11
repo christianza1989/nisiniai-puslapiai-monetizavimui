@@ -20,7 +20,7 @@ async function provider(){
 }
 const clean=commit=>assert.equal(execFileSync('git',['diff','--name-only',commit,'--','sites/madbeauty/prototype','sites/madbeauty/cloudflare','sites/madbeauty/content','sites/madbeauty/backend','sites/madbeauty/trial-20261010/worker.mjs'],{cwd:repo,encoding:'utf8'}).trim(),'','Runtime source must stay committed');
 if(phase==='before'){
- const records=await provider(),expected=kind==='main'?'96af1b12-52cc-48cb-820e-1580f4b7c860':'2292c0bd-b302-40cc-8d7c-e1eb9de0b033';assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
+ const records=await provider(),previousDeployment=await json(path.join(dir,'deployment.json')).catch(()=>null),expected=previousDeployment?.version||(kind==='main'?'96af1b12-52cc-48cb-820e-1580f4b7c860':'2292c0bd-b302-40cc-8d7c-e1eb9de0b033');assert.equal(records[index].deployments.deployments[0].versions[0].version_id,expected);
  await writeFile(path.join(dir,'before.private.json'),JSON.stringify({at:new Date().toISOString(),records},null,2));console.log(JSON.stringify({state:'BEFORE_CAPTURED',kind,version:expected}));
 }
 if(phase==='build'){
@@ -34,7 +34,7 @@ if(phase==='build'){
   const vars=Object.fromEntries(baseline.bindings.filter(b=>b.type==='plain_text').map(b=>[b.name,b.text]));assert.equal(vars.TRIAL_EXPIRES_AT,'2026-10-16T21:10:47.982Z');
   assert.equal(baseline.bindings.find(b=>b.name==='PLATFORM').namespace_id,'a07857f7b8414eb789f3ff639953ff1b');assert.ok(baseline.bindings.some(b=>b.name==='SESSION_SECRET'&&b.type==='secret_text'));
   config={name:before.records[index].name,account_id:'d102163f74a45ab6d33bca786ce281ec',compatibility_date:baseline.compatibility_date,compatibility_flags:baseline.compatibility_flags,workers_dev:false,preview_urls:false,routes:[{pattern:'bandymas.madbeauty.lt',custom_domain:true}],assets:{binding:'ASSETS',run_worker_first:true},durable_objects:{bindings:[{name:'PLATFORM',class_name:'TemporaryTestPlatform'}]},migrations:[{tag:'trial-v1',new_sqlite_classes:['TemporaryTestPlatform']}],vars};
-  if(baseline.bindings.some(b=>b.type==='images'))config.images={binding:baseline.bindings.find(b=>b.type==='images').name};
+  config.images={binding:baseline.bindings.find(b=>b.type==='images')?.name||'IMAGES'};
   const allowed=new Set(['plain_text','secret_text','assets','durable_object_namespace','images']);assert.ok(baseline.bindings.every(b=>allowed.has(b.type)),'Unmodelled trial binding');
   const publicRoot=path.join(repo,'sites/madbeauty/prototype/public'),appMedia=await json(path.join(publicRoot,'app-media.json')),categories=await json(path.join(publicRoot,'media.json'));
   await cp(path.join(repo,'sites/madbeauty/cloudflare/output/assets-release'),path.join(dir,'assets'),{recursive:true});

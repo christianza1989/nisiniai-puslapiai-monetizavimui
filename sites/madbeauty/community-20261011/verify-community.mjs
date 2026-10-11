@@ -4,6 +4,7 @@ import path from 'node:path';
 import {spawn} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const repo=path.resolve(import.meta.dirname,'../../..'),dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011/trial'),artifact=path.join(dir,'worker.mjs');
+const config=JSON.parse(await readFile(path.join(dir,'wrangler.json')));assert.equal(config.images?.binding,'IMAGES','Compiled trial must declare the native image pipeline binding');
 const manifest=JSON.parse(await readFile(path.join(dir,'manifest.json')));
 assert.equal(createHash('sha256').update(await readFile(artifact)).digest('hex'),manifest.artifactSha256);
 const child=spawn(process.execPath,['--test','sites/madbeauty/cloudflare/community-trial-runtime.test.mjs'],{cwd:repo,env:{...process.env,MADBEAUTY_COMMUNITY_ARTIFACT:artifact},stdio:['ignore','pipe','pipe']});let output='';child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>output+=b);

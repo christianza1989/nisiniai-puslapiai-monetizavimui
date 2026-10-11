@@ -8,15 +8,25 @@ export class MadbeautyCommunity extends DurableObject {
   this.store=communityState(db,fn=>ctx.storage.transactionSync(fn));
  }
  // Binding RPC only. The Worker never forwards browser identity or capabilities.
- call(kind,entity,principal,method,input={}){
+ async call(kind,entity,principal,method,input={}){
   try{
    const key=this.store.read('identity',{entity:null,kind:null});
    if(key.entity&& (key.entity!==entity||key.kind!==kind))throw new ApiError('FORBIDDEN','Kita saugyklos sritis.',403);
    if(!key.entity)this.store.transaction(()=>this.store.write('identity',{entity,kind},0));
    const engine=kind==='person'?createCommunityPerson(this.store,entity):kind==='conversation'?createCommunityConversation(this.store,entity.split('|')):null;
    if(!engine||typeof engine[method]!=='function')throw new ApiError('NOT_FOUND','Operacija nerasta.',404);
-   return {result:engine[method](principal,input)};
+   engine.cleanup();
+   const result=engine[method](principal,input);
+   if(['send','publish','registerMedia','edit','remove'].includes(method)&&await this.ctx.storage.getAlarm()===null)await this.ctx.storage.setAlarm(Date.now()+24*60*60*1000);
+   return {result};
   }catch(e){return {error:{code:e instanceof ApiError?e.code:'SERVER_ERROR',message:e instanceof ApiError?e.message:'Veiksmas nepavyko.',status:e instanceof ApiError?e.status:500}};}
+ }
+ async alarm(){
+  const {kind,entity}=this.store.read('identity',{entity:null,kind:null});
+  if(!entity)return;
+  const engine=kind==='person'?createCommunityPerson(this.store,entity):createCommunityConversation(this.store,entity.split('|'));
+  engine.cleanup();
+  await this.ctx.storage.setAlarm(Date.now()+24*60*60*1000);
  }
  fetch(){return new Response('Not found',{status:404});}
 }

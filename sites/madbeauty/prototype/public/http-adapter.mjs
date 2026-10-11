@@ -16,6 +16,19 @@ export function createHttpAdapter(){
   adapter.refreshSession=()=>{if(!refreshPending)refreshPending=request('session').then(value=>{session=value;adapter.clock=session.clock;adapter.session=session;return session;}).finally(()=>{refreshPending=null;});return refreshPending;};
   adapter.authStart=async email=>request('auth/start',{email});
   adapter.community=async(method,input={},organizationId=null)=>{const user=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();if(user&&user!==session?.user?.id)throw Object.assign(Error('Paskyra pasikeitė. Prisijunk iš naujo.'),{code:'SESSION_CHANGED'});return (await request('community',{method,input,organizationId})).result;};
+  adapter.communityUpload=async(file,{mode,target='',organizationId='',alt,rights})=>{
+   const user=session?.user?.id;if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();
+   if(!session?.user?.id||user&&user!==session.user.id)throw Object.assign(Error('Paskyra pasikeitė. Prisijunk iš naujo.'),{code:'SESSION_CHANGED',status:409});
+   if(!file?.size||file.size>6*1024*1024||!['image/jpeg','image/png','image/webp'].includes(file.type))throw Object.assign(Error('Pasirink JPG, PNG arba WebP nuotrauką iki 6 MB.'),{code:'INVALID_INPUT'});
+   const scope='community:'+mode+':'+organizationId+':'+target,fingerprint=await mediaUploadFingerprint(file,{organizationId:scope,usage:'gallery',alt,rights}),intent=uploads.reserve(session.user.id,scope+':'+fingerprint,fingerprint),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),60000);let response,value;
+   try{response=await fetch('/api/madbeauty/community-upload',{signal:controller.signal,method:'POST',credentials:'same-origin',headers:{'content-type':file.type,'x-csrf-token':session.csrf,'x-community-mode':mode,'x-community-target':target,'x-organization-id':organizationId,'x-asset-alt':encodeURIComponent(alt),'x-asset-rights':encodeURIComponent(rights),'x-asset-rights-confirmed':'true','x-asset-operation':intent.idempotencyKey},body:file});value=await response.json();if(!value||typeof value!=='object')throw Error('Invalid response');}
+   catch{throw Object.assign(Error('Nuotraukos įkėlimo atsakymas nepasiekiamas. Tą pačią nuotrauką galima bandyti įkelti dar kartą.'),{code:'NETWORK_ERROR'});}
+   finally{clearTimeout(timer);}
+   if(!response.ok)throw Object.assign(Error(value.error?.message||'Nuotraukos įkelti nepavyko.'),{code:value.error?.code,status:response.status});
+   if(!value.result?.id)throw Object.assign(Error('Nuotraukos įkėlimo rezultatas nepasiekiamas.'),{code:'NETWORK_ERROR'});
+   return {asset:value.result,intent};
+  };
+  adapter.completeCommunityUploads=entries=>entries.forEach(entry=>uploads.complete(entry.intent));
   adapter.facebookStart=async(input={})=>{if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();return request('auth/facebook/start',input);};
   adapter.facebookUnlink=async()=>{const result=await request('auth/facebook/unlink',{});await adapter.refreshSession();return result;};
   adapter.authVerify=async(challengeId,code)=>{session=await request('auth/verify',{challengeId,code});adapter.clock=session.clock;adapter.session=session;return session;};

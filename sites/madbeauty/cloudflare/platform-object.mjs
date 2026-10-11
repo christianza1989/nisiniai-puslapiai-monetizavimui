@@ -7,6 +7,8 @@ import {createPlatform} from '../backend/platform.mjs';
 import {createAuth} from '../backend/auth.mjs';
 import {createFacebookAuth} from '../backend/facebook-auth.mjs';
 import {createCommunityApi} from '../backend/community-api.mjs';
+import {createCommunityMediaApi} from '../backend/community-media-api.mjs';
+import {createCommunityLifecycle} from '../backend/community-lifecycle.mjs';
 import {createOrganizationHandoff} from '../backend/organization-handoff.mjs';
 import {createOrganizationCommit} from '../backend/organization-authority.mjs';
 import {createOrganizationDirectory} from '../backend/organization-directory.mjs';
@@ -21,12 +23,14 @@ import {sendHostingerMail} from '../../../../dovanos-memorycasting/lib/hostinger
 // Booking/state transactions never await network I/O. Split per organization before scale.
 export class MadbeautyPlatform extends DurableObject{
  constructor(ctx,env,storeOptions){super(ctx,env);this.store=openDurableStore(ctx,env.SESSION_SECRET,storeOptions);this.store.retentionPolicyVersion=env.RETENTION_POLICY_VERSION;this.mediaBucket=createSqlMediaBucket(this.store);this.media=createMedia({...env,MEDIA:this.mediaBucket});this.mailRunning=null;
+  if(env.COMMUNITY){const getObject=name=>env.COMMUNITY.get(env.COMMUNITY.idFromName(name));createCommunityApi(this.store,{getObject});this.communityLifecycle=createCommunityLifecycle(this.store,getObject);}
   this.store.onVerifiedAccount=user=>{if(env.OPERATOR_EMAIL&&user.email===env.OPERATOR_EMAIL){this.store.db.prepare('UPDATE accounts SET operator=1 WHERE id=? AND site_id=?').run(user.id,this.store.siteId);return {...user,operator:1};}return user;};
  }
  async fetch(request){
   const origin=this.env.APP_ORIGIN;
   if(new URL(request.url).origin!==origin)return new Response('Not found',{status:404});
-  if(new URL(request.url).pathname==='/api/madbeauty/community')return createCommunityApi(this.store,{origin,enabled:this.env.COMMUNITY_ENABLED==='true',getObject:this.env.COMMUNITY?name=>this.env.COMMUNITY.get(this.env.COMMUNITY.idFromName(name)):undefined,dispatch:this.directory().dispatch}).handle(request);
+  if(new URL(request.url).pathname==='/api/madbeauty/community')return createCommunityApi(this.store,{origin,enabled:this.env.COMMUNITY_ENABLED==='true',getObject:this.env.COMMUNITY?name=>this.env.COMMUNITY.get(this.env.COMMUNITY.idFromName(name)):undefined,dispatch:this.directory().dispatch,seed:typeof this.seedCommunity==='function'?()=>this.seedCommunity():undefined}).handle(request);
+  if(['/api/madbeauty/community-upload','/api/madbeauty/community-media'].includes(new URL(request.url).pathname))return createCommunityMediaApi(this.store,{origin,enabled:this.env.COMMUNITY_ENABLED==='true',getObject:this.env.COMMUNITY?name=>this.env.COMMUNITY.get(this.env.COMMUNITY.idFromName(name)):undefined,dispatch:this.directory().dispatch,transformMedia:this.media.transformMedia}).handle(request);
   if(new URL(request.url).pathname==='/api/madbeauty/recovery-status'){
    if(request.method!=='GET')return new Response('Method not allowed',{status:405});
    const token=(request.headers.get('cookie')||'').split(';').map(s=>s.trim()).find(s=>s.startsWith('__Host-madbeauty_sid='))?.slice('__Host-madbeauty_sid='.length),auth=createAuth(this.store);
@@ -37,6 +41,7 @@ export class MadbeautyPlatform extends DurableObject{
   const directory=this.directory(),media={...this.media,uploadMedia:(user,input)=>directory.uploadMedia(user,input,{transformMedia:this.media.transformMedia,uploadSource:account=>this.media.uploadSource(this.store,account,input)}),readMedia:(store,file,user,platform)=>directory.readMedia(file,user,()=>this.media.readMedia(store,file,user,platform))};
   const response=await fetchApi(request,this.store,{origin,media,ip:request.headers.get('x-madbeauty-client-ip')||'unknown',dispatch:directory.dispatch,facebook:{enabled:this.env.FACEBOOK_LOGIN_ENABLED==='true',appId:this.env.FACEBOOK_APP_ID||'',appSecret:this.env.FACEBOOK_APP_SECRET||'',graphVersion:this.env.FACEBOOK_GRAPH_VERSION||'v26.0'}});
   if(request.method==='POST'){
+   await this.flushCommunityErasures();
    await this.schedule();
    if(new URL(request.url).pathname==='/api/madbeauty/auth/start'&&response.ok){
     await this.drain();
@@ -48,6 +53,7 @@ export class MadbeautyPlatform extends DurableObject{
   return response;
  }
  directory(){return createOrganizationDirectory(this.store,{getTarget:this.env.ORGANIZATION_STAGING?name=>this.env.ORGANIZATION_STAGING.get(this.env.ORGANIZATION_STAGING.idFromName(name)):undefined});}
+ async flushCommunityErasures(){if(this.communityLifecycle)try{return await this.communityLifecycle.flush();}catch{console.warn('Community erasure retry pending');}}
  async catalog(input){return this.directory().dispatch('catalog',null,input);}
  async profile(id){return this.directory().dispatch('profile',null,{id});}
  async publicProfiles(){return this.directory().dispatch('publicProfiles',null,{});}
@@ -88,11 +94,12 @@ export class MadbeautyPlatform extends DurableObject{
   return decision.bookmark;
  }
  async schedule(){
+  if(this.communityLifecycle&&this.store.db.prepare('SELECT actor FROM community_erasure_jobs LIMIT 1').get()){await this.ctx.storage.setAlarm(Date.now()+1000);return;}
   const row=this.store.db.prepare("SELECT MIN(CASE WHEN state='sending' THEN lease_until ELSE next_attempt_at END) AS due FROM mail_outbox AS mail WHERE site_id=? AND state IN ('pending','sending') AND NOT EXISTS (SELECT 1 FROM organization_handoffs AS h WHERE h.site_id=mail.site_id AND h.organization_id=mail.organization_id AND h.state!='aborted')").get(this.store.siteId);
   const directory=this.directory(),due=Math.min(row?.due??Infinity,nextReminderAt(this.store)??Infinity,nextWaitlistAt(this.store)??Infinity,directory.nextControlAt()??Infinity,directory.nextClientAdmissionAt()??Infinity,directory.nextErasureAt()??Infinity,await directory.nextOrganizationMailAt()??Infinity);
   await this.ctx.storage.setAlarm(Math.max(Date.now()+1000,Number.isFinite(due)?due:Date.now()+86400000));
  }
- async alarm(){const directory=this.directory();try{await directory.runRetention();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();}finally{await this.schedule();}}
+ async alarm(){const directory=this.directory();try{await directory.runRetention();await this.flushCommunityErasures();await directory.flushClientAdmissions();await directory.flushCustomerControls();createPlatform(this.store).runAutomation();await this.drain();this.expire();}finally{await this.schedule();}}
  expire(){
   const now=this.store.clock(),db=this.store.db;
   createFacebookAuth(this.store,{origin:this.env.APP_ORIGIN}).cleanup();

@@ -1,3 +1,7 @@
+## 2026-10-11 — Facebook ir bendruomenės C0–C2 įgyvendinimas
+
+Aktyvi savininko užsakyta apimtis C0–C2. Vietinis srautas, named privatūs albumai, komentarai/atsakymai, meistrų sekimas, draugystės, personal/salon chat, optimized private photos, moderation ir erasure įgyvendinti. Native SQL restart / audience / salon role / retention / deletion / trial preservation patikros ir dviejų naršyklių pagrindinis kelias PASS. Hosted leidimas ir realus Meta OAuth dar PENDING. App1827877621543839 Basic/email/callback/ikona nustatyti, Unpublished; secret privatus. Dabartinis gyvas e2d9f8c/main96af1b12/trial2292c0bd nepakitęs. Aktuali checkbox eiga [ROADMAP](community-20261011/ROADMAP.md). Grupės, renginiai ir konferencijos lieka planuoti C3–C4. Žemiau išsaugota ankstesnių priėmimų istorija.
+
 ## 2026-10-11 — bendruomenės planas su grupėmis ir renginiais
 
 Savininkas paprašė pirmiausia pilno plano ir papildė jį vartotojų kuriamomis grupėmis, mokymais, konkursais bei konferencijomis. [PLAN](community-20261011/PLAN.md), [SURFACE](community-20261011/SURFACE.md) ir [BACKLOG](community-20261011/BACKLOG.json) aprašo visą C0–C5 kelią: įrašai / sekimas / komentarai, draugystės / asmeninės žinutės, grupės, renginiai su konferencijų programa ir dalyvių registracija, moderavimas / privatumas / priėmimas. Būsena **PLANNED**, bendruomenės funkcijos dar neįdiegtos; planas nėra testų PASS ar gyvo produkto priėmimas.

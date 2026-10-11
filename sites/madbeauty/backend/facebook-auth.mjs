@@ -1,3 +1,4 @@
+import {monthsBefore,RETENTION_POLICY} from './retention-policy.mjs';
 import {randomBytes,createHmac,timingSafeEqual} from 'node:crypto';
 import {reject} from './primitives.mjs';
 
@@ -22,7 +23,7 @@ export function createFacebookAuth(store,{origin,appId='',appSecret='',graphVers
  const configured=id(appId)&&typeof appSecret==='string'&&appSecret.length>=16&&/^v\d+\.\d+$/.test(graphVersion)&&new URL(origin).protocol==='https:',loginEnabled=configured&&enabled===true;
  const callback=origin+'/api/madbeauty/auth/facebook/callback';
  const ready=(login=true)=>{if(!(login?loginEnabled:configured))reject('FACEBOOK_UNAVAILABLE','Facebook prisijungimas dar neįjungtas. Tęsk el. paštu.',503);};
- const cleanup=()=>{db.prepare('DELETE FROM facebook_states WHERE site_id=? AND expires_at<?').run(siteId,clock()-86400000);db.prepare('DELETE FROM facebook_pending WHERE site_id=? AND expires_at<?').run(siteId,clock());};
+ const cleanup=()=>{db.prepare('DELETE FROM facebook_deletions WHERE site_id=? AND created_at<?').run(siteId,monthsBefore(clock(),RETENTION_POLICY.receiptMonths));db.prepare('DELETE FROM facebook_states WHERE site_id=? AND expires_at<?').run(siteId,clock()-86400000);db.prepare('DELETE FROM facebook_pending WHERE site_id=? AND expires_at<?').run(siteId,clock());};
  const status=s=>{
   const pending=s?db.prepare('SELECT email_hint,expires_at FROM facebook_pending WHERE site_id=? AND session_hash=? AND expires_at>?').get(siteId,s.token_hash,clock()):null;
   const linked=s?.account_id?!!db.prepare("SELECT account_id FROM auth_identities WHERE site_id=? AND provider='facebook' AND app_id=? AND account_id=?").get(siteId,appId,s.account_id):false;
@@ -119,6 +120,6 @@ export function createFacebookAuth(store,{origin,appId='',appSecret='',graphVers
   return {url:origin+'/api/madbeauty/auth/facebook/deletion-status?code='+code,confirmation_code:code};
  });
  const providerDeletion=raw=>removeProviderData(signedSubject(raw));
- const deletionStatus=code=>{if(!/^[A-Za-z0-9_-]{32}$/.test(String(code||''))||!db.prepare('SELECT code FROM facebook_deletions WHERE site_id=? AND code=?').get(siteId,code))reject('NOT_FOUND','Puslapis nerastas.',404);return {status:'deleted',message:'Facebook paskyros ryšys ir iš jo gauti prisijungimo duomenys pašalinti. Madbeauty paskyros šalinimas yra atskiras veiksmas.'};};
+ const deletionStatus=code=>{cleanup();if(!/^[A-Za-z0-9_-]{32}$/.test(String(code||''))||!db.prepare('SELECT code FROM facebook_deletions WHERE site_id=? AND code=?').get(siteId,code))reject('NOT_FOUND','Puslapis nerastas.',404);return {status:'deleted',message:'Facebook paskyros ryšys ir iš jo gauti prisijungimo duomenys pašalinti. Madbeauty paskyros šalinimas yra atskiras veiksmas.'};};
  return {status,start,completeEmail,acceptCallback,unlink,providerDeletion,deletionStatus,cleanup};
 }

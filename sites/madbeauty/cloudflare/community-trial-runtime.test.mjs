@@ -1,0 +1,28 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,mkdtemp} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {core,pinCore} from '../release-20261010/pinned-core.mjs';
+const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js'))),{Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js')));
+const site=path.resolve(import.meta.dirname,'..'),publicRoot=path.join(site,'prototype/public'),assets=JSON.parse(await readFile(path.join(import.meta.dirname,'output/asset-paths.json'))),appMedia=JSON.parse(await readFile(path.join(publicRoot,'app-media.json'))),categories=JSON.parse(await readFile(path.join(publicRoot,'media.json')));
+const bundle=await build({entryPoints:[path.join(site,'trial-20261010/worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[pinCore,{name:'native-trial-inputs',setup(b){b.onResolve({filter:/\.\/output\/trial-(assets|media)\.json$/},a=>({path:a.path,namespace:'trial'}));b.onLoad({filter:/.*/,namespace:'trial'},a=>({contents:JSON.stringify(a.path.includes('assets')?[...assets,...appMedia.assets.flatMap(a=>a.variants.map(v=>'/'+v.file))]:{assets:[...appMedia.assets,...categories.assets]}),loader:'json'}));}}]});
+test('Native trial community reuses all existing fictional identities, public galleries and services without resetting bookings or reviews',async()=>{
+ const origin='https://bandymas.madbeauty.lt',storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-community-trial-')),expires=new Date(Date.now()+86400000).toISOString();
+ const start=()=>new Miniflare({modules:true,script:bundle.outputFiles[0].text,compatibilityDate:'2026-05-22',compatibilityFlags:['nodejs_compat'],durableObjects:{PLATFORM:{className:'TemporaryTestPlatform',useSQLite:true},COMMUNITY:{className:'MadbeautyCommunity',useSQLite:true}},durableObjectsPersist:storage,bindings:{APP_ORIGIN:origin,RELEASE_MODE:'temporary-live-test',TRIAL_EXPIRES_AT:expires,COMMUNITY_ENABLED:'true',RETENTION_POLICY_VERSION:'madbeauty-2026-10-10-v1',SESSION_SECRET:'local-trial-test-no-production-access'},serviceBindings:{ASSETS:async r=>{try{return new Response(await readFile(path.join(publicRoot,new URL(r.url).pathname.slice(1))));}catch{return new Response('Not found',{status:404});}}}});
+ let mf=start();
+ const browser=()=>{let cookie='',csrf='';const send=async(route,body)=>{const r=await mf.dispatchFetch(origin+'/api/madbeauty/'+route,{method:body===undefined?'GET':'POST',headers:{Cookie:cookie,...body===undefined?{}:{Origin:origin,'Content-Type':'application/json','X-CSRF-Token':csrf}},...body===undefined?{}:{body:JSON.stringify(body)}});cookie=r.headers.get('set-cookie')?.split(';')[0]||cookie;const v=await r.json();csrf=v.csrf||csrf;return {status:r.status,...v};};return {send,community:(method,input={},organizationId=null)=>send('community',{method,input,organizationId}),async login(email){await send('session');const c=await send('auth/start',{email});assert.equal(c.status,200,JSON.stringify(c));assert.equal((await send('auth/verify',{challengeId:c.challengeId,code:c.testCode})).status,200);}};};
+ try{
+  const before=await (await mf.dispatchFetch(origin+'/providers.json')).json();assert.equal(before.profiles.length,45);
+  const operator=browser();await operator.login('trial-operator@example.com');let state;do{const r=await operator.community('seed');assert.equal(r.status,200,JSON.stringify(r));state=r.result;}while(!state.complete);assert.equal(state.processed,45);
+  assert.equal((await operator.community('seed')).result.complete,true);
+  const owner=browser();await owner.login('demo-provider-1@example.com');const session=(await owner.community('session')).result;assert.equal(session.isDemo,true);assert.ok(session.personalOrganizations.length);
+  const members=(await owner.community('people')).result;assert.equal(members.items.length,60);assert.ok(members.next);const more=(await owner.community('people',{after:members.next})).result;assert.equal(more.items.length,30);assert.equal(more.next,null);assert.equal(new Set([...members.items,...more.items].map(p=>p.actor)).size,90);
+  const feed=await owner.community('feed');assert.equal(feed.result.posts.length,24);assert.ok(feed.result.next);assert.ok(feed.result.posts.every(p=>p.isDemo&&p.providerServiceId&&p.galleryImage));
+  const p=feed.result.posts[0];assert.ok(p.serviceLabel);const image=await mf.dispatchFetch(origin+'/'+p.galleryImage.variants[0].file);assert.equal(image.status,200);assert.match(image.headers.get('x-robots-tag'),/noindex/);const bytes=Buffer.from(await image.arrayBuffer());assert.equal(bytes.toString('ascii',8,12),'WEBP');
+  assert.equal((await owner.community('publish',{text:'Negaliojanti svetima nuotrauka',galleryMediaId:p.galleryImage.id,operation:'foreign-gallery'})).status,404);
+  const after=await (await mf.dispatchFetch(origin+'/providers.json')).json();assert.deepEqual(after,before);
+  await mf.dispose();mf=start();assert.equal((await owner.community('feed')).result.posts.length,24);assert.equal((await operator.community('seed')).result.processed,45);
+ }finally{await mf.dispose();}
+});

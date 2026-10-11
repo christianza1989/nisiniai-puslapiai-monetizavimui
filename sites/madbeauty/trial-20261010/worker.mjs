@@ -2,6 +2,7 @@ import app,{MadbeautyPlatform,MadbeautyCommunity} from '../cloudflare/worker.mjs
 export {MadbeautyCommunity};
 import {initializeFixtureRuntime} from '../backend/fixture-runtime.mjs';
 import {initializeTrialReviews} from './trial-reviews.mjs';
+import {seedTrialCommunity} from './trial-community.mjs';
 import {escape} from '../cloudflare/content.mjs';
 import {RETENTION_POLICY,policyPublic} from '../backend/retention-policy.mjs';
 import trialAssets from './output/trial-assets.json';
@@ -60,6 +61,7 @@ export class TemporaryTestPlatform extends MadbeautyPlatform{
   }
  }
  trialProfiles(){return this.store.readCollections(['organizations']).organizations.map(o=>({id:o.id,name:o.name,kind:o.kind,city:o.city,isDemo:o.isDemo}));}
+ async seedCommunity(){if(expired(this.env))throw Error('Trial ended');return seedTrialCommunity(this);}
  trialCode(challengeId){return this.store.db.prepare('SELECT code FROM trial_login_codes WHERE id=? AND expires_at>?').get(challengeId.replaceAll('_','-'),Date.now())?.code||null;}
  async fetch(request){
   if(expired(this.env))return json({error:{code:'TRIAL_ENDED',message:'Laikinas bandymas baigtas.'}},410);
@@ -95,7 +97,7 @@ export default {async fetch(request,env){
  }
  if(url.pathname==='/robots.txt')return new Response('User-agent: *\nDisallow: /\n',{headers:{'Content-Type':'text/plain','X-Robots-Tag':'noindex'}});
  if(['/sitemap.xml','/llms.txt','/llms-full.txt','/content-targets.json'].includes(url.pathname))return deny();
- if(url.pathname==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'temporary-live-test',enabled:false,privatePrototype:false,apiAvailable:true,communityEnabled:env.COMMUNITY_ENABLED==='true',retentionPolicy:env.RETENTION_POLICY_VERSION===RETENTION_POLICY.version?policyPublic():null,temporaryTest:{profiles:40,expiresAt:env.TRIAL_EXPIRES_AT},contact:{operatorName:'MB Pinet',email:'info@pinet.lt'}});
+ if(url.pathname==='/boot.json')return json({siteId:'madbeauty',now:new Date().toISOString(),deployment:'temporary-live-test',enabled:false,privatePrototype:false,apiAvailable:true,communityEnabled:env.COMMUNITY_ENABLED==='true',facebookConfigured:!!env.FACEBOOK_APP_ID,retentionPolicy:env.RETENTION_POLICY_VERSION===RETENTION_POLICY.version?policyPublic():null,temporaryTest:{profiles:40,expiresAt:env.TRIAL_EXPIRES_AT},contact:{operatorName:'MB Pinet',email:'info@pinet.lt'}});
  if(url.pathname==='/providers.json')return ['GET','HEAD'].includes(request.method)?json({profiles:await source.publicProfiles()}):deny();
  if(url.pathname==='/bandymo-paskyros'){
   if(!['GET','HEAD'].includes(request.method))return deny();

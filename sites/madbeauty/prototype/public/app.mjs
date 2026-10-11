@@ -29,7 +29,7 @@ import {activeNode,CATALOGUE_ORIGIN} from '/content-targets.mjs';
 import {isCityId} from '/cities.mjs';
 const $=s=>document.querySelector(s),boot=await loadJson('/boot.json');
 const serverPage=captureServerPage(document,location.href,boot);
-setRetentionPolicy(boot.retentionPolicy);
+setRetentionPolicy(boot.retentionPolicy,{facebook:boot.facebookConfigured,community:boot.communityEnabled});
 
 const initial=()=>({enabled:boot.enabled,scenario:'happy',clock:boot.now,session:{role:'guest',organizationId:'demo-org-0',clientId:'demo-client-0'},search:{paslauga:'manikiuras',miestas:'vilnius',diena:1,nuo:'17:00',iki:'20:00',tipas:'',max:'',rikiuoti:'laikas',vaizdas:'sarasas',vardas:'',rezultatai:'paslaugos'},favorites:[],booking:null,calendarDay:0,calendarMode:'week',onboardingStep:0,onboarding:{},uploads:[]});
 let state=initial(),restoredWorkspaceAccount=null;
@@ -53,7 +53,7 @@ function saveUI(){try{
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(ctx.toastTimer);ctx.toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4500);}
 let dialogOpener=null;
 function openDialog(title,html,{restore=true}={}){if(!$('#dialog').open)dialogOpener=ctx.actionOpener?.isConnected?ctx.actionOpener:document.activeElement;$('#dialog').innerHTML=`<div class="dialog-head"><h2 id="dialog-title">${esc(title)}</h2>${btn('close-dialog',icon('close'),'aria-label="Uždaryti"','close')}</div><div class="dialog-body">${html}</div>`;if(restore)restoreDrafts(ctx,$('#dialog'));$('#header').classList.remove('is-hidden');if(!$('#dialog').open)$('#dialog').showModal();if(!$('#dialog').contains(document.activeElement))$('#dialog button')?.focus();}
-function closeDialog(){if($('#dialog').open)$('#dialog').close();$('#dialog').innerHTML='';dialogOpener?.focus?.();}
+function closeDialog(){if($('#dialog').open)$('#dialog').close();$('#dialog').innerHTML='';if(dialogOpener?.isConnected)dialogOpener.focus();else $('#main').focus({preventScroll:true});}
 $('#dialog').addEventListener('click',e=>{if(e.target===$('#dialog'))closeDialog();});
 $('#dialog').addEventListener('close',()=>{if(!$('#dialog').open){$('#dialog').innerHTML='';dialogOpener?.focus?.();}});
 $('#dialog').addEventListener('keydown',e=>{if(e.key!=='Tab')return;const items=[...$('#dialog').querySelectorAll('button:not([disabled]),a[href],input:not([disabled]):not([type="hidden"]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]')].filter(x=>x.getClientRects().length),first=items[0],last=items.at(-1);if(!first){e.preventDefault();return;}if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}});
@@ -82,7 +82,7 @@ async function render(){
     await Promise.all(jobs);
     if(ctx.adapter.mode==='real'){
       const s=ctx.realAdapter.session;
-      if(reconcileAccountState(state,s.user)){ctx.communityOrganization=null;ctx.communitySession=null;ctx.communityConversation=null;ctx.communityPostOperation=null;ctx.communityMessageOperation=null;ctx.communityInteractionOperation=null;clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.erasureReceiptToken=null;ctx.authChallenge=null;}
+      if(reconcileAccountState(state,s.user)){ctx.communityOrganization=null;ctx.communityInbox=null;ctx.communityFeed=null;ctx.communityPeoplePage=null;ctx.communityAlbum=null;ctx.communityCity=null;ctx.communityService=null;ctx.communitySession=null;ctx.communityConversation=null;ctx.communityPostOperation=null;ctx.communityMessageOperation=null;ctx.communityInteractionOperation=null;clearDrafts();closeDialog();ctx.workspace=null;ctx.editing=null;ctx.rebooking=null;ctx.erasureCase=null;ctx.privacyChallenge=null;ctx.erasureReceiptToken=null;ctx.authChallenge=null;}
       if(restoredWorkspaceAccount!==(s.user?.id||null)){
         restoredWorkspaceAccount=s.user?.id||null;state.session.organizationId=null;
         if(s.user)try{const saved=JSON.parse(localStorage.getItem(DEMO_NAMESPACE+':real-workspace'));if(saved?.accountId===s.user.id&&s.organizations.some(o=>o.id===saved.organizationId))state.session.organizationId=saved.organizationId;}catch{}

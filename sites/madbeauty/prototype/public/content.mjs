@@ -1,8 +1,8 @@
 import {contentCard,renderContentPage} from './content-render.mjs';
-import {trustPages as baseTrustPages,withRetentionPolicy} from './product-trust.mjs';
+import {trustPages as baseTrustPages,withRetentionPolicy,withSocialPolicy} from './product-trust.mjs';
 import {crumbs} from './ui.mjs';
 export let trustPages=baseTrustPages;
-export const setRetentionPolicy=policy=>{trustPages=withRetentionPolicy(baseTrustPages,policy);};
+export const setRetentionPolicy=(policy,social)=>{trustPages=withSocialPolicy(withRetentionPolicy(baseTrustPages,policy),social);};
 export let guides=[];
 let content={pages:[],operatorName:'MB Pinet'};
 export function setContentData(data){if(data.siteId!=='madbeauty')throw Error('Wrong content site');content=data;guides=data.pages.filter(p=>['guide','article'].includes(p.type)&&p.slug.startsWith('gidai/')).map(p=>({...p,slug:p.slug.replace(/^gidai\//,'')}));}

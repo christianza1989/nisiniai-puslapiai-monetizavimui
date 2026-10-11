@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Customer Quality discards real per-turn need.patch receipts and cannot distinguish original and corrected saved needs chronologically",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/quality.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "Actual source453 same six-case cohort: correction listening3/needs_review1; train receipt2b0811b6513783c6961188984158575344a066808ae6a6b7b55b1f8c20a0140d retained. Input chronology coverage repair does not establish semantic correction."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/quality.py",
+    "agent-business-core/runtime/src/pinet_core/quality_context.py",
+    "agent-business-core/runtime/offline_tests/test_customer_need_receipts.py",
+    "agent-business-core/runtime/tests/test_customer_need_receipts.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/AGENT-CALIBRATION-2026-10-11.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6112811095",
+  "rollback": "Scoped revert of private receipt projection only; preserve original FAIL, transcripts, fingerprints, candidates and usage",
+  "id": "upgrade-971c3711-fcd6-4115-a934-b301a9dc6c30",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "45345296a64ebdedb1309248b89cba17eeed4899",
+  "createdAt": "2026-10-11T19:29:01.178Z"
+}

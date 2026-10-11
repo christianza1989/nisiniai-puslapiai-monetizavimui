@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Retain original fixture FAIL D491 and first53PASS1FAIL970C (new test omitted row.state; corrected only owned fixture). Full frozen first QA203offlinePASS/becec239 but1PGFAIL3PASS2f52ce05, receiptcc7471e2a4f192cb3e198c922725b6e87dbc18b90ceb62ddc00d1341cc3873bc. Read-only reviewer identified actual P1: usage receipts never contain epoch, while new validator incorrectly required it and offline fixture invented it. Remove unsupported usage-epoch invariant; retain positive attempt epoch and exact request/run/model/chronology/revision/state checks. Match old actual settlement schema, no history/transport write. New PG negatives now prove positive baseline before own fixture corruption, preventing false guard positives. Source QA only, zero providers/channels/operational DB writes; actual correction3/5 remains preserved and unresolved.",
+  "eventId": "844e95aa-cb24-4b91-a2f4-fef678b5ddc8",
+  "sequence": 2,
+  "at": "2026-10-11T19:36:06.700Z"
+}

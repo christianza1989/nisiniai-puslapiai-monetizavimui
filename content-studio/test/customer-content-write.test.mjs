@@ -22,12 +22,17 @@ test('provider GUIDE schema preserves disjoint native blocks and targets in supp
     assert.equal(new Set(branches.map(branch => branch.properties[tag].const)).size, branches.length);
     assert.ok(branches.every(branch => branch.required.includes(tag)));
     const expected = structuredClone(branches);
+    for (const branch of expected) {
+      branch.properties[tag].type = 'string';
+      if (branch.properties.level) branch.properties.level.type = 'integer';
+    }
     if (name === 'target') delete expected.find(branch => branch.properties.kind.const === 'external').properties.url.format;
     assert.deepEqual(writerOutputSchema.$defs[name], { anyOf: expected });
   }
   const walk = node => {
     if (!node || typeof node !== 'object') return;
     assert.equal('oneOf' in node, false);
+    if ('const' in node || 'enum' in node) assert.ok(['string', 'integer'].includes(node.type));
     if (node.type === 'object') {
       assert.equal(node.additionalProperties, false);
       assert.deepEqual(new Set(node.required), new Set(Object.keys(node.properties)));

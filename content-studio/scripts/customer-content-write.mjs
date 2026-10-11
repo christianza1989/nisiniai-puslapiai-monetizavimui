@@ -26,7 +26,15 @@ function nativeUnion(name, tag, allowed = null) {
   const tags = branches.map(branch => branch.properties[tag]?.const);
   if (tags.some(value => typeof value !== 'string') || new Set(tags).size !== branches.length
       || branches.some(branch => !branch.required.includes(tag))) fail('writer_native_union_invalid');
-  return { anyOf: structuredClone(branches) };
+  const projected = structuredClone(branches);
+  for (const branch of projected) {
+    branch.properties[tag].type = 'string';
+    if (branch.properties.level) {
+      if (!branch.properties.level.enum?.every(Number.isInteger)) fail('writer_native_union_invalid');
+      branch.properties.level.type = 'integer';
+    }
+  }
+  return { anyOf: projected };
 }
 const target = nativeUnion('target', 'kind', ['page', 'external']);
 // uri is outside the provider's supported formats. Preserve the native HTTPS

@@ -4,6 +4,7 @@ import {sharedShell} from './shell.mjs';
 const kit=path.resolve(import.meta.dirname,'../shop-v2');
 export const shopAssetFiles=['shop.css','shop.js','shop-icons.svg','checkout.js','orders.js'];
 export const shellAssetFiles=['shell.css','shell.js','icons.svg','cards.svg'];
+export const reviewAssetFiles=['section.js','section.css'];
 export async function productionSource(file,input){
  if(file==='account/index.html')input=input.replace('</main>','<section class="account-panel pb-account-orders"><h2>Your orders</h2><p data-orders-status role="status">Loading your orders…</p><div data-orders-list></div></section></main>').replace('</head>','<link rel="stylesheet" href="/assets/shop-v2/shop.css"><script src="/assets/shop-v2/orders.js" defer></script></head>');
  if(!['shop/index.html','checkout/index.html'].includes(file))return file.endsWith('.html')?sharedShell(input):input;

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual normal stopped-module/native prepare and withdrawal bothPASS at clean37b. Original QA FAILd23232263d9a416aab963085d32b1da1f88c8500852aa6002b96fa5848ca7a52 was private harness wrong count-field names, corrected to maintained currently_attributed_providers/committed_commands. New fresh laneFAIL29bc4e02d2788c3559ababb66699f525616f625dcd47a14932be2384b6f96de9 after real PostgreSQL/API restart was Node SQLite null-prototype row vs JSON recovery object assertion, despite identical field values. Normalize driver row objects for exact saved field comparison, preserving raw bytes/status/ACK/history. Consumed lanes and module stop untouched. Actual full replay acceptance still pending.",
+  "eventId": "228f2620-ec5d-4ad4-b5e7-05a147ebaf80",
+  "sequence": 4,
+  "at": "2026-10-11T23:45:53.050Z"
+}

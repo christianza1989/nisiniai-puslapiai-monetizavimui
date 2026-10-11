@@ -45,12 +45,12 @@ try{
   assert.equal(l.current(state.provider).profile_active,true);
   l.execute('submitRevision',state.user,{scope:state.professional,name:'Pending after normal module admission ended',bio:state.org.bio});const blocked=l.status().at(-1);
   let attempted=0;assert.equal(await l.dispatch(blocked.event_id,async p=>{attempted++;const response=await exchange(p);assert.equal(response.status,lane.expected_block_status);return response;}),null);assert.equal(attempted,1);
-  const before=store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(blocked.event_id);assert.equal(before.state,'permanent');state.blocked=before;
+  const before={...store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(blocked.event_id)};assert.equal(before.state,'permanent');state.blocked=before;
   const offer=l.workspace(state.user,state.professional).offers[0];l.execute('archiveOffer',state.user,{id:offer.id,version:offer.version});const withdrawal=l.status().at(-1);assert.equal(JSON.parse((await l.packet(withdrawal.event_id)).body).kind,'profile_deactivated');
   assert.equal((await capture(withdrawal)).profile_active,false);assert.equal(l.current(state.provider).profile_active,false);
-  assert.deepEqual(store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(blocked.event_id),before);
+  assert.deepEqual({...store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(blocked.event_id)},before);
  }else{
-  assert.equal(l.current(state.provider).profile_active,false);assert.deepEqual(store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(state.blocked.event_id),state.blocked);
+  assert.equal(l.current(state.provider).profile_active,false);assert.deepEqual({...store.db.prepare('SELECT * FROM native_acquisition_events WHERE event_id=?').get(state.blocked.event_id)},state.blocked);
   for(const event of state.events){const path='/integrations/acquisition/v1/sites/madbeauty/events',headers=await signRequest({keyId:lane.transport_key_id,secret:Uint8Array.from(Buffer.from(lane.transport_secret_hex,'hex')),path,body:event.body,timestamp:Math.floor(Date.now()/1000)});const response=await exchange({path,headers,body:event.body});assert.equal(response.status,200);assert.equal(await response.text(),event.receipt);}
   for(const row of l.status().filter(x=>x.state==='accepted'))assert.equal(await l.dispatch(row.event_id,async()=>{throw Error('No accepted resend');}),null);
  }

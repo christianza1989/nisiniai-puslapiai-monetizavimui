@@ -166,7 +166,7 @@ async def test_actual_adapter_hydrates_provider_output_and_retains_paid_failure_
     if mode == "valid":
         full, evidence = await adapter.run_role(context(draft), authorized, role="critic", seconds=30)
         assert len(full["checks"]) == 9 and full["findings"] == report(draft)["findings"]
-        assert evidence["usage"] == usage and evidence["model"] == "gpt-6-luna"
+        assert evidence["usage"] == usage and evidence["model"] == "gpt-6.1-sol"
     else:
         with pytest.raises(RunnerError, match="review_invalid") as error:
             await adapter.run_role(context(draft), authorized, role="critic", seconds=30)

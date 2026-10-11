@@ -143,7 +143,7 @@ def role_model(role):
     """Server-owned execution choice; customer data cannot select a model."""
     if role not in {"creator", "critic", "coordinator"}:
         raise RunnerError("review_invalid")
-    return "gpt-6-luna"
+    return "gpt-6-luna" if role == "creator" else "gpt-6.1-sol"
 
 
 def review_model_catalogue():
@@ -172,7 +172,7 @@ def arguments(executable, workspace, schema, output, *, web, role="creator"):
     at = result.index('web_search="disabled"')
     result[at] = 'web_search="live"' if web else 'web_search="disabled"'
     # These two roles review one supplied draft and have no tools or research.
-    # Use the historical completed Luna profile; the fixed catalogue supplies metadata.
+    # Calibrate the indexed business reviews with Sol; the fixed catalogue supplies metadata.
     if role != "creator":
         at = result.index('model_reasoning_effort="medium"')
         result[at] = f'model_reasoning_effort="{profile["reasoning_effort"]}"'

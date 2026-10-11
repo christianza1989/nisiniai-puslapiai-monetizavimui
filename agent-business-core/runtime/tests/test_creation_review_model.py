@@ -40,18 +40,18 @@ async def test_mixed_model_history_and_disabled_ceiling_keep_exact_reservations(
     calls = []
     assert await worker.execute_once(role_runner=runner(calls))
     view = await team_read(c, auth, row["creation_id"])
-    assert [a["model"] for a in view["attempts"]] == ["gpt-6-luna"] * 3
+    assert [a["model"] for a in view["attempts"]] == ["gpt-6-luna", "gpt-6.1-sol", "gpt-6.1-sol"]
     async with scope(user=me["user_id"]) as tx:
         first = await tx.get(Attempt, str(view["attempts"][0]["attempt_id"]))
         legacy = {column.name: getattr(first, column.name) for column in Attempt.__table__.columns}
-        # Labelled synthetic historical Sol reservation, separate from new Luna dispatches.
-        legacy.update(id=str(uuid4()), sequence=4, role="critic", round_number=2, model="gpt-6.1-sol")
+        # Labelled synthetic historical Luna reservation, separate from new Sol reviews.
+        legacy.update(id=str(uuid4()), sequence=4, role="critic", round_number=2, model="gpt-6-luna")
         tx.add(Attempt(**legacy))
     original = await snapshot(c)
     mixed = await team_read(c, auth, row["creation_id"])
     by_id = {attempt["attempt_id"]: attempt for attempt in mixed["attempts"]}
     assert all(by_id[attempt["attempt_id"]] == attempt for attempt in view["attempts"])
-    assert by_id[legacy["id"]]["model"] == "gpt-6.1-sol"
+    assert by_id[legacy["id"]]["model"] == "gpt-6-luna"
     assert mixed["current_revision"] == 1
     for role, model in [("creator", "gpt-6.1-sol"), ("critic", "customer-selected")]:
         with pytest.raises(DBAPIError):
@@ -124,11 +124,11 @@ async def test_populated_sol_history_blocks_downgrade_without_row_changes(creati
     assert proc.returncode != 0 and b"control_creation_attempts_model_check" in output
     assert await snapshot(c) == before
     async with AsyncSession(c["admin"]) as tx:
-        assert await tx.scalar(text("SELECT version_num FROM alembic_version")) == "0018_creation_review_model"
+        assert await tx.scalar(text("SELECT version_num FROM alembic_version")) == "0019_creation_job_history"
     assert (await team_read(c, auth, row["creation_id"]))["current_revision"] == 1
 
 
-async def test_actual_0017_rejected_before_first_reservation(creation):
+async def test_actual_0017_rejected_before_queue_or_first_reservation(creation):
     from pinet_core.creation import team
     from pinet_core.db import db
 
@@ -140,17 +140,58 @@ async def test_actual_0017_rejected_before_first_reservation(creation):
         output, _ = await proc.communicate()
         Path("artifacts/qa-review-model-schema-" + str(uuid4()) + ".private.log").write_bytes(output)
         assert proc.returncode == 0
+    _, auth, me = await verified(c)
+    row, original_body = await start(c, auth, me)
+    claim = await worker.claim()
     await migrate("0017_customer_profile", "downgrade")
     try:
         async with db.registry() as tx:
             assert not await team.review_schema_ready(tx)
-        _, auth, me = await verified(c)
-        row, _ = await start(c, auth, me)
-        claim = await worker.claim()
         with pytest.raises(adapter.RunnerError, match="runner_unavailable"):
             await team.reserve(claim, "creator", 1)
         assert (await team_read(c, auth, row["creation_id"]))["attempts"] == []
+        response = await c["client"].post("/customer/v2/creations", headers=auth,
+            json={**original_body, "idempotency_key": str(uuid4())})
+        assert response.status_code == 503 and response.json()["code"] == "creation_unavailable"
+        async with AsyncSession(c["admin"]) as tx:
+            assert await tx.scalar(text("SELECT count(*) FROM control_creation_attempts WHERE environment_id=:e"),
+                {"e": c["environment"]}) == 0
     finally:
         await migrate("head", "upgrade")
     async with db.registry() as tx:
         assert await team.review_schema_ready(tx)
+
+
+@pytest.mark.parametrize("failed_role", [None, "critic", "coordinator"])
+async def test_actual_model_reservation_and_success_or_failure_receipt_agree(creation, failed_role):
+    c = creation
+    _, auth, me = await verified(c)
+    row, _ = await start(c, auth, me)
+    calls = []
+    base = runner(calls)
+
+    async def checked(context, authorized, *, role, seconds):
+        expected = "gpt-6-luna" if role == "creator" else "gpt-6.1-sol"
+        async with scope(user=me["user_id"]) as tx:
+            reserved = await tx.scalar(text("SELECT model FROM control_creation_attempts WHERE creation_id=:c "
+                "ORDER BY sequence DESC LIMIT 1"), {"c": row["creation_id"]})
+            assert reserved == expected
+        if role == failed_role:
+            raise adapter.RunnerError("provider_error", {"model": expected,
+                "usage": {"input_tokens": 7, "output_tokens": 2}, "web_search_count": 0})
+        value, receipt = await base(context, authorized, role=role, seconds=seconds)
+        return value, {**receipt, "model": expected}
+
+    assert await worker.execute_once(role_runner=checked)
+    view = await team_read(c, auth, row["creation_id"])
+    expected_models = ["gpt-6-luna", "gpt-6.1-sol"] + ([] if failed_role == "critic" else ["gpt-6.1-sol"])
+    assert [item["model"] for item in view["attempts"]] == expected_models
+    async with scope(user=me["user_id"]) as tx:
+        job = await tx.get(Job, row["active_job_id"])
+        assert [item["model"] for item in job.usage["attempts"]] == expected_models
+        assert job.status == ("failed" if failed_role else "succeeded")
+        if failed_role:
+            assert job.usage["attempts"][-1]["failure_code"] == "provider_error"
+            assert job.usage["attempts"][-1]["usage"] == {"input_tokens": 7, "output_tokens": 2}
+    assert view["current_revision"] == (None if failed_role else 1)
+    assert view["attempts"][-1]["state"] == ("failed" if failed_role else "succeeded")

@@ -168,7 +168,8 @@ def test_installed_cli_makes_one_loopback_request_without_internal_retry(tmp_pat
         (tmp_path / "request.private.json").write_text(json.dumps(requests), encoding="utf-8")
         events = [json.loads(line) for line in result.stdout.splitlines()]
         assert "Model metadata for" not in result.stdout
-        assert len(requests) == 1 and requests[0]["model"] == "gpt-6-luna"
+        assert len(requests) == 1 and requests[0]["model"] == (
+            "gpt-6-luna" if role == "creator" else "gpt-6.1-sol")
         assert requests[0]["reasoning"]["effort"] == "medium"
         assert requests[0]["text"]["verbosity"] == "low"
         assert "max_output_tokens" not in requests[0]

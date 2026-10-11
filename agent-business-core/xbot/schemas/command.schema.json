@@ -1,0 +1,36 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "xbot.v1",
+      "default": "xbot.v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request_id": {
+      "pattern": "^[a-zA-Z0-9_-]{16,100}$",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "expected_revision": {
+      "minimum": 1,
+      "title": "Expected Revision",
+      "type": "integer"
+    },
+    "action": {
+      "enum": [
+        "enable",
+        "pause"
+      ],
+      "title": "Action",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_id",
+    "expected_revision",
+    "action"
+  ],
+  "title": "Command",
+  "type": "object"
+}

@@ -5,7 +5,7 @@
 
 Niša: du rankų liejimo rinkiniai, porai ir šeimai, balti dažai kaip patvirtintas poros pasirinkimas; naudojimo, dovanojimo, priežiūros, pirkimo ir B2B klausimai. Kūdikių specialus rinkinys, kitų prekės ženklų katalogas, asmeninis liejimo salonas, papildomo alginato pardavimas ir individualios skulptūros nepatvirtinti — nekurti jų produktų puslapių. Naudojimo saugos klausimus galima aiškinti pagal patvirtintą tinkamumą, tačiau nekurti fiktyvaus baby katalogo.
 
-DataForSEO duomenys evidence/paid-research.json: pagrindinis LT produktas 170, PL 1 000 vidutinių paieškų/mėn.; PL instrukcija 70; LV/EE pagrindiniams rinkiniams įverčio nėra. Plačios proginės frazės vertinamos kaip gretimas ketinimas, ne produkto konversijos pažadas. Mažos/null apimties pagalbos puslapis gali būti labai naudingas pirkėjui ir mažinti broką.
+DataForSEO duomenys iš privataus 2026-10-11 tyrimo: pagrindinis LT produktas 170, PL 1 000 vidutinių paieškų/mėn.; PL instrukcija 70; LV/EE pagrindiniams rinkiniams įverčio nėra. Raw kvitas saugomas lokaliai outputs/memocasting-tyrimas-20261011/evidence/paid-research.json, jo šiame Git dokumente nėra. 0,3724 USD panaudota iš konkrečiai autorizuoto 1 USD. Plačios proginės frazės vertinamos kaip gretimas ketinimas, ne produkto konversijos pažadas. Mažos/null apimties pagalbos puslapis gali būti labai naudingas pirkėjui ir mažinti broką.
 
 Stebėti šaltiniai: [Luminary video](https://www.luminary.lt/video-instrukcija/), [CreativeDeco instrukcija](https://creativedeco.pl/blog/zestaw-do-odlewu-dloni-jak-uzywac/), [ForeverHands produktas](https://foreverhands.pl/products/zestaw-do-odlewu-dloni-para), [Loovuspood šeimos rinkinys](https://www.loovuspood.ee/toode/kogupere-kaejaljendi-valamise-komplekt/), [Google internacionalizacija](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites). Konkurento proporcijos nėra mūsų instrukcija.
 
@@ -27,12 +27,12 @@ Kiekviena eilutė nurodo atskirą skaitytojo darbą. „Skyrius“ reiškia, kad
 | U1 santykių skyrius | Kiek vandens, kokia temperatūra ir kiek maišyti? | Gamintojo ir bandymo pagrįsti kiekvieno SKU parametrai; V+B | Tik atitinkamo SKU instrukcija, ne bendras interneto receptas |
 | U1 papuošalų skyrius | Ar reikia nusiimti žiedus, laikrodį, apsaugoti nagus? | Mūsų medžiagos naudojimo/įstrigimo ribos; V+B | U2 ir saugos skyrius |
 | U4 /lt/gidai/dziovinimas-ir-isemimas | Kada išimti ir kada liejinys išdžiūvęs? | Skirti formos stingimą nuo gipso džiūvimo; mūsų aplinkos bandymo pavyzdys; V+B | U5; pagalba prireikus |
-| U5 /lt/gidai/liejinio-dazymas-ir-prieziura | Kaip dažyti, laikyti ir valyti liejinį? | Mūsų dažų suderinamumas, sluoksnis/sausumas, drėgmės ribos; V+B | P1 variantas; T3 pažeidimų skyrius |
+| U5 /lt/gidai/liejinio-dazymas-ir-prieziura | Kaip dažyti, laikyti ir valyti liejinį? | Mūsų dažų suderinamumas, sluoksnis/sausumas, drėgmės ribos; V+B | P1 variantas; T2 pažeidimų puslapis |
 | U1 saugos skyrius ir /lt/produkto-sauga | Kam produktas tinka ir kokios atsargumo priemonės? | Tiksli medžiagos klasifikacija, kontaktas su oda, vaikų priežiūra, atliekos; V | Naudojimas / kontaktas; ne sveikatos pažadas |
 | T1 /lt/pagalba | Ką daryti, jeigu liejinys nepavyko? | Diagnostinė lentelė: etapas→simptomas→tikėtina priežastis→patvirtintas veiksmas; V+B | U1; privati forma su užsakymu ir nuotrauka |
 | T1 burbuliukų skyrius | Kodėl atsirado skylutės ir kaip jų išvengti? | Tikro bandymo palyginimas, jokio universalaus taisymo recepto; B | U2/U3; pagalba |
 | T1 stingimo skyrius | Kodėl alginatas sukietėjo per greitai arba nesustingsta? | Galiojimas, laikymas, temperatūra ir santykiai pagal tiekėją; V+B | U1; partijos duomenys užklausai |
-| T2 /lt/gidai/suluzes-ranku-liejinys | Ar lūžusį pirštą/lėjinį įmanoma pataisyti? | Pažeidimo ribos, suderinami būdai, kada reikalingas naujas bandymas; V+B | T1; nepradėti nepatvirtinto remonto pardavimo |
+| T2 /lt/gidai/suluzes-ranku-liejinys | Ar lūžusį pirštą/liejinį įmanoma pataisyti? | Pažeidimo ribos, suderinami būdai, kada reikalingas naujas bandymas; V+B | T1; nepradėti nepatvirtinto remonto pardavimo |
 | T1 pakartojimo skyrius | Ar vieno rinkinio užtenka keliems bandymams? | Tikro vienkartinio medžiagų sunaudojimo atsakymas; S+V+B | Pagalba; „refill“ CTA tik atsiradus realiam SKU |
 | T1 naudotojo klaidos/defekto skyrius | Kada tai instrukcijos klaida, kada netinkama prekė? | Faktinė atvejo analizė ir teisės, ne automatinis kliento kaltinimas; T+K | /lt/grazinimas |
 | G1 /lt/dovanos | Kam rankų liejimo dovana tinka, o kam verta rinktis kitą idėją? | Apibrėžtas hub: bendra veikla, dalyvavimas, laikas ir vieta; S+B | G2–G5, P3 |

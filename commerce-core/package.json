@@ -1,0 +1,28 @@
+{
+  "name": "@pinet/commerce-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "dev": "node scripts/dev.mjs",
+    "dev:worker": "wrangler dev --local --port 8796",
+    "build:worker": "wrangler deploy --dry-run --outdir tmp/worker-build",
+    "test:worker": "node scripts/worker-smoke.mjs",
+    "format": "prettier --write src test scripts package.json wrangler.jsonc",
+    "check:format": "prettier --check src test scripts package.json wrangler.jsonc",
+    "verify": "npm run check:format && npm test && npm run test:worker && npm run build:worker"
+  },
+  "dependencies": {
+    "stripe": "23.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "miniflare": "5.20261006.1-alpha",
+    "prettier": "3.9.10",
+    "wrangler": "4.149.0"
+  }
+}

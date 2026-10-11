@@ -21,6 +21,18 @@ Aktualus [pavedimas](IMPLEMENTATION_STATUS.md). Nėra savaitinės turinio kvotos
 
 M1–M4 yra pirmo serverinio paketo apimtis; M5–M9 ir svetainės/agentų etapai nepavadinami baigtais iš to paketo tests sumos. Užbaigus pirmą paketą tęsiami įvykdomi darbai; konkrečios prieigos ir verslo faktai yra atskiri vartai.
 
+2026-10-11 pirmas serverinis paketas įgyvendintas ir lokaliai patikrintas: 20 Node testų bei atskiras workerd/D1 kelias. Tai M1 pagrindas, M2 SDK adapteris, M3 sutartis su fixture ir M4 žurnalo pagrindas; pilni M1–M4 etapai dar neužbaigti. [Tikslios ribos ir tolesni darbai](IMPLEMENTATION_STATUS.md).
+
+## Artimiausia darbų eilė
+
+1. Užsakymo kontaktų/adreso ir pristatymo pasirinkimo snapshot, likučių korekcijos/partijos ir viešo katalogo projekcija. Pakuočių sujungimą tikrinti pagal realų pakavimą.
+2. Documents/numbering, pasirašyti refund įvykiai, finansinių source dedup ir Stripe/payout/banko reconciliation; tai neužkuria AI agento anksčiau nei savininko numatyta seka.
+3. M5 identity/membership adapteris, užsakymų/pakavimo/etiketės/išimčių ekranai ir browser priėmimas. Lygiagrečiai pasirinkto carrier API adapteris su realių prisijungimų vartais.
+4. M6 partnerio/kainyno/quote/reorder domenas. M7 pasirengimas ir realūs patikros kvitai; tik po jų priimamas operacinis modulis.
+5. S1/S2 svetainė, nuotraukos ir turinys, tada A1–A3 agentai. Nauja rinkos aktyvacija turi atskirą mokėjimo/siuntimo/saugos/kalbos/mokesčių patikrą.
+
+Tai darbų seka, ne pažadas apie datas. Tęsiant pradėti nuo aktualaus main, šios būsenos ir nepriimto kelio; nekartoti jau įrodyto paketo kaip tariamai naujo darbo.
+
 ## Paviršių inventorius
 Storefront: produktų katalogas, produkto pasirinkimas, krepšelis/šalis/paštomatas, checkout, mokėjimo laukimas/pavyko/nepavyko, statusas, naudojimo/pagalbos, atsisakymo forma.
 Operatorius: užsakymų sąrašas ir detalė, stock/partijos, pakavimo eilė, labels batch, tracking išimtys, refunds, dokumentai, apskaitos suderinimas, B2B partneris/kainynas, automatizacijos žurnalas.

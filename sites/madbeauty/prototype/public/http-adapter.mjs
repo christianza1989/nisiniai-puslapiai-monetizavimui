@@ -31,7 +31,16 @@ export function createHttpAdapter(){
   adapter.completeCommunityUploads=entries=>entries.forEach(entry=>uploads.complete(entry.intent));
   adapter.facebookStart=async(input={})=>{if(refreshPending)await refreshPending;else if(!session)await adapter.refreshSession();return request('auth/facebook/start',input);};
   adapter.facebookUnlink=async()=>{const result=await request('auth/facebook/unlink',{});await adapter.refreshSession();return result;};
-  adapter.authVerify=async(challengeId,code)=>{session=await request('auth/verify',{challengeId,code});adapter.clock=session.clock;adapter.session=session;return session;};
+  adapter.authVerify=async(challengeId,code)=>{
+    if(refreshPending)await refreshPending;
+    const verified=await request('auth/verify',{challengeId,code});
+    session=verified;adapter.clock=session.clock;adapter.session=session;
+    let persisted;
+    try{persisted=await adapter.refreshSession();}
+    catch{session=null;adapter.session=null;throw Object.assign(Error('Kodas patvirtintas, bet prisijungimo sesijos patikrinti nepavyko. Patikrink ryšį ir pradėk prisijungimą iš naujo.'),{code:'AUTH_SESSION_UNCONFIRMED'});}
+    if(!verified.user?.id||persisted.user?.id!==verified.user.id)throw Object.assign(Error('Kodas patvirtintas, bet naršyklė neišsaugojo prisijungimo sesijos. Patikrink šios svetainės slapukų ir privatumo nustatymus, tada gauk naują kodą.'),{code:'AUTH_SESSION_NOT_PERSISTED'});
+    return persisted;
+  };
   adapter.logout=async()=>{session=await request('logout',{});adapter.session=session;return session;};
   adapter.demoIdentities=async()=>({organizations:session?.organizations||[],clients:session?.user?[{id:session.user.id,name:session.user.name||session.user.email}]:[]});
   adapter.taxonomy=()=>rpc('taxonomy');

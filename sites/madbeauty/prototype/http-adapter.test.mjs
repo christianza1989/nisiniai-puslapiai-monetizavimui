@@ -1,6 +1,26 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHttpAdapter} from './public/http-adapter.mjs';
+test('OTP success requires the same identity on a separate cookie-backed session read',async t=>{
+ const guest={user:null,csrf:'guest',clock:{}},verified={user:{id:'fixture-user'},organizations:[],csrf:'verified',clock:{}},calls=[];let loggedIn=false;
+ t.mock.method(globalThis,'fetch',async(url,options)=>{calls.push([url,options]);if(url.endsWith('/auth/verify')){loggedIn=true;return {ok:true,json:async()=>verified};}return {ok:true,json:async()=>loggedIn?verified:guest};});
+ const adapter=createHttpAdapter();await adapter.refreshSession();assert.equal((await adapter.authVerify('fixture-challenge','123456')).user.id,'fixture-user');assert.equal(calls.at(-1)[0],'/api/madbeauty/session');assert.equal(calls.at(-1)[1].credentials,'same-origin');assert.equal(calls.filter(([u])=>u.endsWith('/auth/verify')).length,1);
+});
+test('A rejected session cookie or unexpected identity never reports OTP login success',async t=>{
+ for(const user of [null,{id:'other-fixture-user'}]){
+  t.mock.method(globalThis,'fetch',async url=>({ok:true,json:async()=>({user:url.endsWith('/auth/verify')?{id:'fixture-user'}:user,csrf:'fixture',organizations:[],clock:{}})}));
+  const adapter=createHttpAdapter();await assert.rejects(adapter.authVerify('fixture-challenge','123456'),e=>e.code==='AUTH_SESSION_NOT_PERSISTED');assert.deepEqual(adapter.session.user,user);
+ }
+});
+test('Uncertain session read after an accepted OTP never replays verification or retains optimistic authentication',async t=>{
+ const calls=[];t.mock.method(globalThis,'fetch',async url=>{calls.push(url);if(url.endsWith('/session'))throw Error('Connection lost');return {ok:true,json:async()=>({user:{id:'fixture-user'},organizations:[],csrf:'fixture',clock:{}})};});
+ const adapter=createHttpAdapter();await assert.rejects(adapter.authVerify('fixture-challenge','123456'),e=>e.code==='AUTH_SESSION_UNCONFIRMED');assert.equal(adapter.session,null);assert.deepEqual(calls,['/api/madbeauty/auth/verify','/api/madbeauty/session']);
+});
+test('OTP verification waits for an older refresh before rotating the session',async t=>{
+ let resolveGuest;const calls=[];
+ t.mock.method(globalThis,'fetch',async url=>{calls.push(url);if(calls.length===1)return new Promise(resolve=>{resolveGuest=()=>resolve({ok:true,json:async()=>({user:null,csrf:'guest',clock:{}})});});return {ok:true,json:async()=>({user:{id:'fixture-user'},organizations:[],csrf:'fresh',clock:{}})};});
+ const adapter=createHttpAdapter(),refresh=adapter.refreshSession(),verify=adapter.authVerify('fixture-challenge','123456');await Promise.resolve();assert.deepEqual(calls,['/api/madbeauty/session']);resolveGuest();await refresh;await verify;assert.equal(adapter.session.user.id,'fixture-user');assert.deepEqual(calls,['/api/madbeauty/session','/api/madbeauty/auth/verify','/api/madbeauty/session']);
+});
 test('A failed upload sends the same operation header after adapter reload and starts a new intent only after a confirmed result',async t=>{
  const values=new Map(),keys=[],metadata={organizationId:'org',alt:'Test',rights:'Fixture',usage:'gallery'},file=new File([new Uint8Array([1,2,3])],'fixture.png',{type:'image/png'});let lost=true;
  for(const [name,value]of Object.entries({sessionStorage:{getItem:k=>values.get(k),setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)},location:{origin:'http://127.0.0.1:8843'}})){const original=Object.getOwnPropertyDescriptor(globalThis,name);Object.defineProperty(globalThis,name,{configurable:true,value});t.after(()=>{if(original)Object.defineProperty(globalThis,name,original);else delete globalThis[name];});}

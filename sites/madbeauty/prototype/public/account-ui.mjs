@@ -28,8 +28,13 @@ export async function accountAction(ctx,action){
   return false;
 }
 export async function accountForm(ctx,form,fd){
-  if(form.id==='email-start'){const c=await ctx.realAdapter.authStart(fd.get('email'));persistChallenge(ctx,{...c,email:String(fd.get('email')).trim()});ctx.toast(c.message);await ctx.render();return true;}
-  if(form.id==='email-verify'){const s=await ctx.realAdapter.authVerify(ctx.authChallenge.challengeId,fd.get('code')),target=ctx.authTarget||'/paskyra';persistChallenge(ctx,null);ctx.authTarget=null;ctx.state.afterAuth=null;ctx.state.session={role:'customer',clientId:s.user.id,organizationId:s.organizations[0]?.id||null};await ctx.navigate(target);return true;}
+  if(form.id==='email-start'){const c=await ctx.realAdapter.authStart(fd.get('email'));ctx.authNotice=null;persistChallenge(ctx,{...c,email:String(fd.get('email')).trim()});ctx.toast(c.message);await ctx.render();return true;}
+  if(form.id==='email-verify'){
+    let s;
+    try{s=await ctx.realAdapter.authVerify(ctx.authChallenge.challengeId,fd.get('code'));}
+    catch(e){if(!['AUTH_SESSION_UNCONFIRMED','AUTH_SESSION_NOT_PERSISTED'].includes(e.code))throw e;persistChallenge(ctx,null);ctx.authNotice=e.message;await ctx.render();return true;}
+    const target=ctx.authTarget||'/paskyra';persistChallenge(ctx,null);ctx.authNotice=null;ctx.authTarget=null;ctx.state.afterAuth=null;ctx.state.session={role:'customer',clientId:s.user.id,organizationId:s.organizations[0]?.id||null};await ctx.navigate(target);return true;
+  }
   if(form.id==='provider-create'){const o=await ctx.realAdapter.createOrganization(Object.fromEntries(fd));await ctx.realAdapter.refreshSession();ctx.state.session={role:'professional',organizationId:o.id,clientId:ctx.realAdapter.session.user.id};await ctx.navigate('/meistrui/paslaugos');return true;}
   return false;
 }

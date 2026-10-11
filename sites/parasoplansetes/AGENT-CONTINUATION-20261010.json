@@ -1,0 +1,155 @@
+{
+  "site_id": "parasoplansetes",
+  "canonical_host": "parasoplansetes.lt",
+  "at": "2026-10-09T23:25:56.653097+00:00",
+  "timezone": "Europe/Vilnius",
+  "scope": "Continue existing text-only agent, preserve work, restore existing preview, prospective local Codex calibration. Voice excluded by owner.",
+  "source": {
+    "core_main": "d4ea8bf7384b70c4ea62a344001e3f8158812c56",
+    "companion_main": "d0fd6b7d296303bfcaafadc4071945e675a72b96",
+    "runtime": "4cc7680713f295a237417ce1d878357575c3cefd",
+    "public": "4b960b2132f28fc2a4839c570f9df4d2533698f1"
+  },
+  "preview": {
+    "url": "https://parasoplansetes-preview.pinet-azprekyba.workers.dev",
+    "version": "38792c72-6be2-46ee-8498-5aa09b774c8d",
+    "http_checks": 62,
+    "http_pass": true,
+    "robots": "noindex,nofollow",
+    "core_origin": "temporary_PC_tunnel",
+    "permanent_launch": "UNVERIFIED",
+    "original_browser_handshake": "PASS",
+    "original_browser_contact_save": "PASS",
+    "original_page_navigation": "FAIL",
+    "post_fix_browser_handshake": "PASS",
+    "post_fix_navigation": "UNVERIFIED_CHROME_CONTROL_UNAVAILABLE",
+    "post_fix_model_reply": "UNVERIFIED",
+    "empty_owned_sessions": "operator_finalized_not_browser_end_proof"
+  },
+  "tests": {
+    "public_core": 66,
+    "checkpoint_regressions": 3,
+    "preview_adapter": 5,
+    "seo_public_pages": 19,
+    "typecheck": "PASS",
+    "build": "PASS",
+    "public_safety_findings": 0
+  },
+  "calibration": [
+    {
+      "name": "baseline",
+      "run": "parasoplansetes-c6-diagnostic-20261010",
+      "source_sha": "3d7997280bf6342ec1d69fdc30cf9870878b7d82",
+      "complete": true,
+      "all_checks_pass": true,
+      "clients": 2,
+      "cli_calls": 16,
+      "mean_10": 9.0,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "knowledge_hash": "b219fa0c8bb86c8c11fef6cbb255aed38894d3ed859376f4111f1d9c320bc44e",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_model_patch_hash": null,
+      "evaluation_contract_hash": "7f28f1d79bc7c65716abd22f123ce525ec134d70678c8e3ca61afdb74fec77ee",
+      "receipt_sha256": "b1bc64c0c8a9289e9f3015bec6899c2ba6e14bb4bb5c37a569b181ad03c22764",
+      "failures": [],
+      "decision": "incumbent_kept"
+    },
+    {
+      "name": "candidate1",
+      "run": "parasoplansetes-c6-candidate-20261010",
+      "source_sha": "3d7997280bf6342ec1d69fdc30cf9870878b7d82",
+      "complete": true,
+      "all_checks_pass": false,
+      "clients": 2,
+      "cli_calls": 16,
+      "mean_10": 8.8,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "knowledge_hash": "b219fa0c8bb86c8c11fef6cbb255aed38894d3ed859376f4111f1d9c320bc44e",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_model_patch_hash": "f9dc8622323ebdb617905c22376b5769d25d4d9d00d297056a66009817320b95",
+      "evaluation_contract_hash": "7f28f1d79bc7c65716abd22f123ce525ec134d70678c8e3ca61afdb74fec77ee",
+      "receipt_sha256": "09ca119882426ff7337eb7a43ff82d88919a1cdd8d7a99c294d04156f2523fcc",
+      "failures": [
+        {
+          "case": "urgent_correction_no_stock",
+          "checks": [
+            "corrected_need_saved"
+          ]
+        }
+      ],
+      "decision": "rejected_not_promoted"
+    },
+    {
+      "name": "candidate2",
+      "run": "parasoplansetes-c6-candidate2-20261010",
+      "source_sha": "3d7997280bf6342ec1d69fdc30cf9870878b7d82",
+      "complete": true,
+      "all_checks_pass": true,
+      "clients": 2,
+      "cli_calls": 16,
+      "mean_10": 8.8,
+      "instruction_hash": "d316f455dd6093c293118d7895c763f97a6da680d61654a4b080bfa0b610633e",
+      "knowledge_hash": "b219fa0c8bb86c8c11fef6cbb255aed38894d3ed859376f4111f1d9c320bc44e",
+      "corpus_hash": "cc050fccb9812e47c503db566d18ac7566d0c04386399e013a93f199e5d0bea7",
+      "candidate_model_patch_hash": "4fc432f0a29dd9a1df4f39869e2f03561a6a2a14098ae76adb2ffca73f6c5153",
+      "evaluation_contract_hash": "7f28f1d79bc7c65716abd22f123ce525ec134d70678c8e3ca61afdb74fec77ee",
+      "receipt_sha256": "8b1e827134d629d5166b594b87ffd7f4b375a31d795fa8be419c24c35117039f",
+      "failures": [],
+      "decision": "rejected_not_promoted"
+    }
+  ],
+  "calibration_cli_calls": 48,
+  "paid_model_calls_this_turn": 0,
+  "model_id": "unrecorded_by_codex_harness",
+  "quality_target": "NOT_COMPLETE_10_TARGET",
+  "previous_c5_mean_10": 9.2211,
+  "packaged_instructions_modified": false,
+  "active_release_changed": false,
+  "mail_preflight": {
+    "at": "2026-10-09T23:21:17.964348+00:00",
+    "smtp_authenticated": true,
+    "imap_authenticated": true,
+    "smtp_site_allowed": true,
+    "imap_site_allowed": true,
+    "owner_recipient_allowed": true,
+    "message_sent": false,
+    "inbox_content_read": false,
+    "model_calls": false,
+    "workers_started": false,
+    "voice": false
+  },
+  "mail_acceptance": "UNVERIFIED_CURRENT_OPENROUTER_SOURCE",
+  "reply_acceptance": "UNVERIFIED_CURRENT_OPENROUTER_SOURCE",
+  "budget": {
+    "status": "UNUSED_ALLOWANCE_LOCKED",
+    "held_microusd": 2026000,
+    "observed_microusd": 563488,
+    "unused_browser_allocation_microusd": 90000,
+    "policy_revision": 10,
+    "reservations": 48,
+    "new_paid_requests": 0,
+    "invoice_verified": false,
+    "workers_started": false,
+    "mail_sent": false,
+    "voice": false
+  },
+  "upgrade": "upgrade-4ac64a4e-7e85-4884-be82-98d488ce2de1",
+  "dependencies": [
+    "Reconnect Chrome control and run post-fix real page-navigation/model reply",
+    "Approve scope/cap for one current OpenRouter chat+analysis+independent mail review+quality+inbound reply round; existing unused USD0.09 is browser-only",
+    "Bound existing worker to current case or reconcile older queued work before starting it; do not enable blanket jobs",
+    "New owner reply to new verified mail, not reuse historical atsakyta",
+    "Permanent backend/tunnel/domain/DNS and reviewed PR merge/adoption"
+  ],
+  "planned_model_reservation_microusd": 230000,
+  "planned_cost_scope": "two chat turns80000 + analysis/review60000 + quality30000 + reply/review60000; no automatic retries; actual invoice unverified",
+  "historical_failures_preserved": [
+    "Invalid trailing-slash checker invocation",
+    "Four old framework chunk404s during deployment transition, stable final check passed",
+    "Initial browser navigation loss and resulting admission429",
+    "Chrome control interruption after corrected real session start",
+    "Candidate1 retained old quantity3 instead of corrected1",
+    "Candidate2 did not improve numeric score",
+    "Candidate2 first launcher wrong cwd failed before model calls, corrected without overwrite"
+  ]
+}

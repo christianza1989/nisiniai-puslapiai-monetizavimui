@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "category": "workflow",
+  "summary": "Receiving provenance for four reviewed Xbot bridge import/read-wire files omitted by inherited coverage declarations",
+  "evidence": [
+    "Reviewed source PR98/29ca43411ff0a7f525f6988828371622f02859e0 with actual functional4e2d0a; local merge3ce3c7c; no imported source changes",
+    "Receiving exact stacked coverage at81df630 BLOCKED84shared/4uncovered/errors0; original report retained acq-foundation-final-coverage.private.json",
+    "Owner34 actual restrictedPG synthetic tests PASS497.56s, independent root source review3P2 closed; root receives normal full0025 migration and own current-scope HTTP checks separately"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/library.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/routes.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/wire.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert receiving source import after held workers, preserve all operational/source evidence; no populated schema erasure, no rewriting inherited journals or weakening coverage gate.",
+  "id": "upgrade-612ec134-808d-4461-bb48-1d7c81245733",
+  "branch": "codex/madbeauty-acquisition-adoption-20261012",
+  "baseSha": "81df630f5902c046a2fbef31ba74446e18a7665f",
+  "createdAt": "2026-10-11T22:49:22.307Z"
+}

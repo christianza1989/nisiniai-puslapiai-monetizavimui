@@ -54,7 +54,9 @@ Gyvas pagrindas: runtime `ced9559130e41c3cede6288fa9e94308c689ffe8`, main `09f76
 - [x] C2-02 Žinučių užklausos, patvarūs asmeniniai / salono pokalbiai, atskiros vizito teisės.
 - [x] C2-03 5s automatinis atnaujinimas, reconnect / logout / revocation ir privatūs nuotraukų priedai.
 
-## Priėmimas prieš etapų aktyvinimą
+## Priėmimas prieš pagrindinio domeno aktyvinimą
+
+Žemiau esantys vartai skirti pagrindinio domeno aktyvinimui. Priimtas izoliuotas trial ir tikras savininko Facebook bandymas turi atskirus įrodymus RECEIPT.json; šie checkbox jų nepanaikina.
 
 - [ ] C0–C2 vietinio backend ir native Worker paritetas, jokių svetimos auditorijos / organizacijos duomenų.
 - [ ] Du tikri browser langai: įrašas → reakcija / komentaras → sekti → draugystė → pokalbis → refresh / reconnect.
@@ -118,3 +120,7 @@ Savininkas pranešė, kad pats prisijungė per Facebook. Actual Chrome account U
 Faktinė App Review submission1827877654877169 reikalauja patvirtinto verslo portfelio; turimi3kitų projektų portfeliai Unverified, MB Pinet savininko faktas paklaustas. Website platform prieš tai trūko, pridėtas Site URL https://madbeauty.lt/ ir Save Changes/readback PASS. Testing instructions for Web išsaugotos ir pakartotinai atidarius perskaitytos: actual trialOAuth/OTP/relogin/unlink ir no fees/no geo, aiškiai trialexpiry disclosed, nėra1year access claim. Reviewer target /paskyra trial yra tik juodraštis, ne ilgalaikės Meta peržiūros priėmimas. Programėlė Unpublished, Submit disabled, jokių bendrovių duomenų ar atitikties faktų neišgalvota.
 
 Aktualūs užlaikantys faktai: verified MB Pinet portfolio; atskiras email/public_profile Allowedusage sutikimas; controllercountry/national-security history/processes; provider processing/remoteaccess countries ir durablereview target. Savininkui3konkretūs klausimai pateikti. Datahandling nėra patvirtinta anketa, tik iš dalies technicaldraft. Main publicFB/community false, trialexpiry nekeistas. Gavus Allowedusage atsakymą nebekartoti patvirtinimo klausimo tai pačiai apimčiai, priimti abudu konkretūs Save.
+
+### 2026-10-11 Atskiros Meta peržiūros aplinkos vietinis kandidatas
+
+Paruošti review-build.mjs ir review-native.test.mjs; [planas ir duomenų srautai](META_REVIEW.md). Artifact ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188; native OTP, bendruomenės įrašas, SQLite restart, host ribos ir HTTP / DO expiry PASS. Tik vietinis paruošimas, perziura.madbeauty.lt dar neįdiegtas; review callback, secret, reviewer paskyros ir realus OAuth dar nepriimti. Esamo trial expiry ir gyvų versijų nekeista. Pirmas naujos compatibility date bandymas nepasileido, išlaikyta priimto runtime2026-05-22 data. Query redaction reikia provider API prieš FB aktyvinimą. Konkretūs savininko portfelio / faktų / sutartinių Allowed usage atsakymai tebėra reikalingi.

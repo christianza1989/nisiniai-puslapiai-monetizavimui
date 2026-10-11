@@ -1,3 +1,7 @@
+## 2026-10-11 — Meta peržiūros vietinis paruošimas
+
+Paruoštas atskiros peržiūros aplinkos paketas ir native OTP / bendruomenės / restart / expiry priėmimas. [META_REVIEW.md](community-20261011/META_REVIEW.md) atskiria vietinį kandidatą nuo neįdiegto hostname ir nebaigtų Meta vartų. Main09f767e9 / trial8e4da6de bei pradinis trialexpiry nekeisti. Viešas FB / canonical community išjungti; savininko faktai ir konkretūs sutikimai dar reikalingi.
+
 ## 2026-10-11 — Tikras Facebook savininko bandymas priimtas
 
 Actual Chrome savininko jau susieta demo-client-0 paskyra patikrinta per tikrą Meta pakartotinį login, unlink/session revocation ir fresh OAuth → OTP → relink.8 esami vizitų URL išliko, susiejimas/prisijungimas atkurti. Runtime ced9559/main09f767e9/trial8e4da6de nekeisti. [Kvitas](community-20261011/RECEIPT.json), [ROADMAP](community-20261011/ROADMAP.md). Owner-consent nebelaukia atsakymo. Meta App Review Not submitted ir Unpublished; išorinė prieiga bei maincommunity/publicFBactivation dar nepriimti. Kitas konkretus darbas – tikros peržiūros instrukcijos ir verification/data-handling faktai.

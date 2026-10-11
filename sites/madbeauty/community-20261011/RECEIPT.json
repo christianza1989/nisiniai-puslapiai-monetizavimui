@@ -136,6 +136,45 @@
         "https://www.cloudflare.com/privacypolicy/",
         "https://www.hostinger.com/uk/legal/dpa"
       ]
+    },
+    "reviewCandidate": {
+      "state": "LOCAL_CANDIDATE_NOT_DEPLOYED",
+      "sourceCommit": "6f0791c8bb90003cb7919c6580bbd8a26e37ef5a",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "origin": "https://perziura.madbeauty.lt",
+      "expiresAt": "2027-10-12T00:00:00.000Z",
+      "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+      "acceptedTrialArtifactSha256": "f6a477fc9b348da2340899f3f81205cb7e4ca7e42acceabc9b9d46cdf4a8190d",
+      "entrySourceSha256": "218962d620fc24949424d3f0fb1e70b64c7c65ecb0bff34e0f98cbb5eb14c743",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "compatibilityDate": "2026-05-22",
+      "facebookEnabled": false,
+      "secretsCreated": false,
+      "remoteMutations": 0,
+      "queryRedaction": "Provider API settings required before Facebook activation; not a Wrangler 4.92 config field",
+      "nativeAcceptance": {
+        "state": "PASS",
+        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+        "at": "2026-10-11T05:44:00.544Z",
+        "scope": "Local isolated review candidate only; no live deployment, provider credentials or actual Facebook OAuth",
+        "scenarios": [
+          "new origin only",
+          "45 synthetic profiles",
+          "noindex/no sitemap",
+          "real email denied",
+          "OTP session",
+          "community post",
+          "persisted session and community restart",
+          "handler and DO expiry",
+          "existing trial expiry preserved"
+        ]
+      },
+      "preparationSources": [
+        "review-build.mjs",
+        "review-native.test.mjs"
+      ],
+      "deploymentState": "NOT_DEPLOYED",
+      "instructions": "META_REVIEW.md"
     }
   },
   "limitations": [

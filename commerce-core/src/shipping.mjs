@@ -1,6 +1,7 @@
 import { requireValue, identifier, integer, canonical, digest } from './validation.mjs';
 import { planParcels } from './parcels.mjs';
 import { Backoffice } from './backoffice.mjs';
+import { requireOperation } from './admission.mjs';
 
 const text = (value, min, max) =>
   typeof value === 'string' &&
@@ -17,7 +18,7 @@ export class ShippingOperations {
   }
   async guard(store, env, actor) {
     const config = await this.s.store(store, env);
-    requireValue(env === 'sandbox' && config.testOnly === true, 'shipping_sandbox_required', 403);
+    requireOperation(config, env, 'shipping_not_admitted');
     if (actor !== undefined) requireValue(identifier(actor), 'operator_identity_required', 403);
     return config;
   }

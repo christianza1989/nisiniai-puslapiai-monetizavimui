@@ -7,6 +7,7 @@ import {
   digest,
 } from './validation.mjs';
 import { CommerceOperations } from './operations.mjs';
+import { requireOperation } from './admission.mjs';
 
 // Stripe retains v1 idempotency keys for at least 24 hours. Stop POST retries early;
 // a missing result after this window needs read-only reconciliation, never a new key.
@@ -37,11 +38,7 @@ export class RefundCommands {
   async prepare(store, environment, orderId, input, actor) {
     const s = this.s,
       config = await s.store(store, environment);
-    requireValue(
-      environment === 'sandbox' && config.testOnly === true,
-      'refund_execution_not_admitted',
-      403,
-    );
+    requireOperation(config, environment, 'refund_execution_not_admitted');
     requireValue(identifier(actor), 'operator_identity_required', 403);
     requireValue(
       identifier(input?.id) &&
@@ -125,11 +122,7 @@ export class RefundCommands {
   async cancel(store, environment, id, actor) {
     const s = this.s,
       config = await s.store(store, environment);
-    requireValue(
-      environment === 'sandbox' && config.testOnly === true,
-      'refund_execution_not_admitted',
-      403,
-    );
+    requireOperation(config, environment, 'refund_execution_not_admitted');
     requireValue(identifier(actor), 'operator_identity_required', 403);
     const current = await this.get(store, environment, id);
     if (current.state === 'failed' && current.review_reason === 'canceled_before_submission')
@@ -252,11 +245,7 @@ export class RefundCommands {
   async execute(store, environment, id, adapter, actor) {
     const s = this.s,
       config = await s.store(store, environment);
-    requireValue(
-      environment === 'sandbox' && config.testOnly === true,
-      'refund_execution_not_admitted',
-      403,
-    );
+    requireOperation(config, environment, 'refund_execution_not_admitted');
     requireValue(identifier(actor), 'operator_identity_required', 403);
     requireValue(
       adapter?.environment === environment &&

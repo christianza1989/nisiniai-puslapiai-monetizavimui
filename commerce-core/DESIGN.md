@@ -94,6 +94,13 @@ components:
 
 # Prekybos administravimo dizainas
 
+2026-10-12 privatūs failai: užsakymo detalėje esami h2, hint, empty, table,
+stock-form ir 44 px button/input vaidmenys. PDF įkėlimas ir atsisiuntimas
+naudoja esamą status/error ritmą, failo dydžio bei kontrolinės sumos klaidos
+rodomos tekstu. Patikrinti 1440/390/320 px, klaviatūros fokusą, įkėlimo
+pakartojimą ir atsisiuntimą su persistuojančiu užsakymu. Viešos svetainės
+dizainas šiame etape nekuriamas.
+
 ## Overview
 
 Darbo registras: svarbiausi yra įrašai, būsenos ir aiškus veiksmo rezultatas. Sistema skirta bendram commerce administravimui, o Memocasting vieša svetainė turės atskirą nišos identitetą. Dizaino sprendimą pagal deleguotą projekto teisę priėmė agentas.

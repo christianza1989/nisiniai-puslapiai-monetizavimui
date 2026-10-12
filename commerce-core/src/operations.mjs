@@ -6,6 +6,7 @@ import {
   canonical,
   digest,
 } from './validation.mjs';
+import { documentPolicy } from './admission.mjs';
 
 export class CommerceOperations {
   constructor(service) {
@@ -360,7 +361,7 @@ export class CommerceOperations {
   async issueDocument(store, environment, orderId, { kind, refundId } = {}, actorRef) {
     const s = this.s,
       config = await s.store(store, environment);
-    requireValue(environment === 'sandbox', 'document_production_not_configured', 503);
+    const policy = documentPolicy(config, environment);
     requireValue(identifier(actorRef), 'operator_identity_required', 403);
     requireValue(['sale', 'credit', 'packing'].includes(kind), 'invalid_document_kind');
     const order = await s.getOrder(store, environment, orderId);
@@ -404,12 +405,18 @@ export class CommerceOperations {
     const prior = await existing();
     if (prior) return { document: this.documentView(prior), replayed: true };
     const at = s.now(),
-      year = new Date(at).getUTCFullYear(),
-      series = { sale: 'TEST-S', credit: 'TEST-C', packing: 'TEST-P' }[kind],
+      year = Number(
+        new Intl.DateTimeFormat('en', { year: 'numeric', timeZone: policy.timeZone }).format(
+          new Date(at),
+        ),
+      ),
+      series = policy.series[kind],
       id = crypto.randomUUID();
     const payload = {
       schemaVersion: 1,
-      internalTestDocument: true,
+      internalTestDocument: policy.testOnly,
+      documentMode: policy.testOnly ? 'internal_test' : policy.mode,
+      timeZone: policy.timeZone,
       legalEntityId: order.snapshot.legalEntityId,
       legal: order.snapshot.legal,
       orderId,

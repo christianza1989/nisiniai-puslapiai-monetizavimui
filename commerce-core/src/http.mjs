@@ -4,6 +4,8 @@ import { Backoffice } from './backoffice.mjs';
 import { Wholesale } from './wholesale.mjs';
 import { RefundCommands } from './refunds.mjs';
 import { ShippingOperations } from './shipping.mjs';
+import { PrivateFiles, limitedBytes } from './private-storage.mjs';
+import { DocumentFiles } from './document-pdf.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -43,6 +45,8 @@ export function createHandler({
   paymentAdapters = {},
   shippingAdapters = {},
   shippingReadAdapters = {},
+  privateStorage,
+  loadDocumentFont,
   operatorAuthorize,
 }) {
   const operations = new CommerceOperations(service);
@@ -50,6 +54,57 @@ export function createHandler({
   const wholesale = new Wholesale(service);
   const refunds = new RefundCommands(service);
   const shipping = new ShippingOperations(service);
+  const files = new PrivateFiles(service, privateStorage);
+  const documentFiles = new DocumentFiles(service, privateStorage, loadDocumentFont);
+  const pdfResponse = (result) =>
+    new Response(result.bytes, {
+      headers: {
+        'content-type': 'application/pdf',
+        'content-disposition': 'attachment; filename="' + result.file.filename + '"',
+        'cache-control': 'no-store',
+        'x-robots-tag': 'noindex, nofollow',
+        'x-content-type-options': 'nosniff',
+        'content-security-policy': "sandbox; default-src 'none'",
+      },
+    });
+  const context = async (store) => {
+    const payment = paymentAdapters[store.id],
+      carrier = shippingAdapters[store.id];
+    const paymentConnected = Boolean(
+      payment &&
+      payment.environment === environment &&
+      payment.accountRef === store.paymentAccountRef,
+    );
+    const shippingConnected = Boolean(
+      carrier &&
+      carrier.environment === environment &&
+      carrier.accountRef === store.shippingAccountRef &&
+      carrier.supportsBooking === true,
+    );
+    const productionReady =
+      environment === 'production' &&
+      store.testOnly !== true &&
+      store.productionAdmission?.approved === true &&
+      store.documentPolicy?.approved === true &&
+      store.operationalAdmission?.approved === true &&
+      paymentConnected &&
+      shippingConnected &&
+      Boolean(privateStorage);
+    return {
+      storeId: store.id,
+      environment,
+      testOnly: store.testOnly === true,
+      legalName: store.legalSnapshot.name,
+      paymentConnected,
+      shippingConnected,
+      shippingQuotesConnected: Boolean(shippingReadAdapters[store.id]),
+      productionReady,
+      publishOffers: productionReady,
+      canCreateTestOrder: environment === 'sandbox' && store.testOnly === true,
+      fixtureCheckout:
+        environment === 'sandbox' && store.testOnly === true && payment?.fixture === true,
+    };
+  };
   return async (request) => {
     try {
       const url = new URL(request.url);
@@ -59,6 +114,8 @@ export function createHandler({
         requireValue(!origin || origin === url.origin, 'origin_forbidden', 403);
       }
       const path = url.pathname;
+      if (request.method === 'GET' && path === '/api/storefront-context')
+        return json(await context(store));
       const read = async () => {
         try {
           return JSON.parse(await boundedBody(request));
@@ -203,6 +260,7 @@ export function createHandler({
           const order = await service.getOrder(store.id, environment, detail[1]);
           return json({
             order,
+            files: await files.list(store.id, environment, order.id),
             shippingPreparation:
               environment === 'sandbox' && store.testOnly === true
                 ? await shipping.detail(store.id, environment, order.id)
@@ -233,10 +291,53 @@ export function createHandler({
             ),
           );
         }
-        const document = path.match(/^\/api\/operator\/documents\/([a-zA-Z0-9_-]+)$/);
-        if (document && request.method === 'GET') {
+        const document = path.match(/^\/api\/operator\/documents\/([a-zA-Z0-9_-]+)(?:\/(pdf))?$/);
+        const file = path.match(/^\/api\/operator\/files\/([a-zA-Z0-9_-]+)$/);
+        if (file && request.method === 'GET') {
           await authorize('read');
-          return json(await operations.getDocument(store.id, environment, document[1]));
+          const result = await files.get(store.id, environment, file[1]);
+          return new Response(result.bytes, {
+            headers: {
+              'content-type': 'application/pdf',
+              'content-disposition': 'attachment; filename="' + result.file.filename + '"',
+              'cache-control': 'no-store',
+              'x-robots-tag': 'noindex, nofollow',
+              'x-content-type-options': 'nosniff',
+              'content-security-policy': "sandbox; default-src 'none'",
+            },
+          });
+        }
+        const upload = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/files\/([a-zA-Z0-9_-]+)$/,
+        );
+        if (upload && request.method === 'POST') {
+          const actor = await authorize('document');
+          requireValue(
+            request.headers.get('content-type') === 'application/pdf',
+            'invalid_private_file',
+          );
+          return json(
+            await files.put(
+              store.id,
+              environment,
+              upload[1],
+              {
+                id: upload[2],
+                bytes: await limitedBytes(request.body),
+                filename: request.headers.get('x-file-name') || 'attachment.pdf',
+              },
+              actor.id,
+            ),
+          );
+        }
+        if (document && request.method === 'GET') {
+          const actor = await authorize('read');
+          const record = await operations.getDocument(store.id, environment, document[1]);
+          if (document[2]) {
+            const file = await documentFiles.ensure(store.id, environment, record, actor.id);
+            return pdfResponse(await files.get(store.id, environment, file.id));
+          }
+          return json(record);
         }
         const prepareRefund = path.match(
           /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/refund-commands$/,
@@ -312,6 +413,8 @@ export function createHandler({
       if (request.method === 'POST' && path === '/api/quote')
         return json(await service.quote(store.id, environment, await read()));
       if (request.method === 'POST' && path === '/api/orders') {
+        if (environment === 'production')
+          requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
         const token = request.headers.get('order-access-token');
         requireValue(
           typeof token === 'string' && /^[a-zA-Z0-9_-]{32,128}$/.test(token),
@@ -345,12 +448,61 @@ export function createHandler({
         }
         return json({ received: true });
       }
-      const match = path.match(/^\/api\/orders\/([a-zA-Z0-9_-]+)(?:\/(checkout|withdrawal))?$/);
+      const buyerPdf = path.match(/^\/api\/orders\/([a-zA-Z0-9_-]+)\/documents\/([a-zA-Z0-9_-]+)$/);
+      if (buyerPdf && request.method === 'GET') {
+        const token = request.headers.get('authorization')?.replace(/^Bearer /, '');
+        const order = await service.authorizeOrder(store.id, environment, buyerPdf[1], token);
+        const record = await operations.getDocument(store.id, environment, buyerPdf[2]);
+        requireValue(
+          record.order_id === order.id && ['sale', 'credit'].includes(record.kind),
+          'document_not_found',
+          404,
+        );
+        const file = await documentFiles.ensure(
+          store.id,
+          environment,
+          record,
+          'buyer_document_export',
+        );
+        return pdfResponse(await files.get(store.id, environment, file.id));
+      }
+      const match = path.match(
+        /^\/api\/orders\/([a-zA-Z0-9_-]+)(?:\/(checkout|withdrawal|receipt))?$/,
+      );
       if (match) {
         const token = request.headers.get('authorization')?.replace(/^Bearer /, '');
         const order = await service.authorizeOrder(store.id, environment, match[1], token);
         if (request.method === 'GET' && !match[2]) return json(order);
+        if (request.method === 'GET' && match[2] === 'receipt') {
+          const shipment = await service.one(
+            'SELECT state,tracking FROM shipments WHERE store_id=? AND order_id=?',
+            store.id,
+            order.id,
+          );
+          const documents = await operations.listDocuments(store.id, environment, order.id);
+          return json({
+            orderId: order.id,
+            paymentState: order.payment_state,
+            fulfillmentState: order.fulfillment_state,
+            shipment: shipment || null,
+            documents: documents.map((d) => ({
+              id: d.id,
+              kind: d.kind,
+              number: d.series + '-' + d.year + '-' + d.number,
+              testOnly: d.payload.internalTestDocument === true,
+            })),
+            withdrawalRequested: Boolean(
+              await service.one(
+                'SELECT order_id FROM withdrawals WHERE store_id=? AND order_id=?',
+                store.id,
+                order.id,
+              ),
+            ),
+          });
+        }
         if (request.method === 'POST' && match[2] === 'checkout') {
+          if (environment === 'production')
+            requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
           requireValue(paymentAdapters[store.id], 'stripe_not_connected', 503);
           return json(
             await service.checkout(store.id, environment, order.id, paymentAdapters[store.id]),

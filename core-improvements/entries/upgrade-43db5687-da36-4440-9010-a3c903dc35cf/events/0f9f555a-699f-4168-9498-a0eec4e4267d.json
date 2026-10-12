@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Per-page exact verified external URLs constrained in provider schema, base native schema and actual write guard unchanged. Original four-role paid candidate rejection and source witness retained; actual new model recovery pending. Global archive/installed-alias skill audit FAIL100 retained, no global skill PASS; canonical repo loader/reference behavior verified in relevant source suites.",
+  "checks": [
+    {
+      "command": "node --test customer-content-write customer-content-workflow network-links editorial-skill suites",
+      "result": "PASS",
+      "evidence": "38PASS0SKIP8f32898d17e90a8b5145323ea3a3a762161155d82b889f8d06e84546c57a4cda; exactURL/emptybranch/schemaisolation/fingerprint/stale-context source witnesseff451 retained"
+    },
+    {
+      "command": "pytest tests/test_native_guide_roles.py tests/test_native_guide_protocol.py -q",
+      "result": "PASS",
+      "evidence": "24PASS0e0bbc3cac0934d95d7baa3a804366277eddadd14bc132d353ff5eeb6414003d; existing budgets/models unchanged"
+    },
+    {
+      "command": "pytest maintained native worker repair/paused/stale-CAS cases",
+      "result": "PASS",
+      "evidence": "3PASSa1ff7b18c450107a2b647ba9a8ab650d70cebe1a13a13684583ac4450ea9425a; realrestrictedPG/Node fakecallbacks/provider0; docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md"
+    }
+  ],
+  "eventId": "0f9f555a-699f-4168-9498-a0eec4e4267d",
+  "sequence": 2,
+  "at": "2026-10-12T12:55:31.262Z"
+}

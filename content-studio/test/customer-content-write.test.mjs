@@ -116,6 +116,22 @@ function richOutput(target) {
     factChecks: ['Mokytojas ir mokamo vykdymo sąlygos dar nepatvirtinti; tekste jų nežadame.'] };
 }
 
+test('prepared external target schema admits exact verified URLs only and binds their bytes', async t => {
+  const fixture=await sandbox(t), empty=fixture.prepare();
+  assert.deepEqual(empty.outputSchema.$defs.target.anyOf.map(b=>b.properties.kind.const),['page']);
+  fixture.mutate(`await m.editPage(siteId,pageId,{externalLinks:[
+    {url:'https://www.example.org/checked/',label:'Checked synthetic source',reason:'Explicit synthetic fixture verification, not an actual source read.',verified:true},
+    {url:'https://example.org/candidate',label:'Unchecked candidate',reason:'Not independently verified.',verified:false}]});`);
+  const checked=fixture.prepare(), external=checked.outputSchema.$defs.target.anyOf.find(b=>b.properties.kind.const==='external');
+  assert.deepEqual(external.properties.url.enum,['https://www.example.org/checked/']);
+  assert.equal(external.properties.url.enum.includes('https://example.org/checked/'),false);
+  assert.equal(writerOutputSchema.$defs.target.anyOf.find(b=>b.properties.kind.const==='external').properties.url.enum,undefined);
+  fixture.mutate(`await m.editPage(siteId,pageId,{externalLinks:[{url:'https://www.example.org/next/',label:'Next checked source',reason:'Explicit synthetic fixture verification.',verified:true}]});`);
+  const next=fixture.prepare();assert.notEqual(next.instructionHash,checked.instructionHash);
+  assert.deepEqual(external.properties.url.enum,['https://www.example.org/checked/']);
+  assert.equal(fixture.apply(checked).value.code,'writer_context_stale');
+});
+
 test('repeated prepare keeps the exact creator prompt and meaningful research context stable', async t => {
   const fixture = await sandbox(t), first = fixture.prepare(), second = fixture.prepare();
   for (const key of ['expectedRevisionHash', 'expectedPlanningHash', 'expectedContextHash', 'instructionHash', 'researchSnapshotHash'])
@@ -145,7 +161,9 @@ test('prepare exposes the whole real brief, candidate sources and unknown facts 
   assert.deepEqual(prepared.pageData.sourceCandidates, ['https://example.org/candidate']); assert.deepEqual(prepared.pageData.existingVerifiedExternalUrls, []);
   assert.ok(prepared.instructions.includes('language-quality.md')); assert.ok(prepared.instructions.includes('planningBrief'));
   assert.equal(prepared.instructionMetadata.mode, 'draft'); assert.ok(prepared.workflow.pages.every(page => page.state === 'blocked'));
-  assert.deepEqual(prepared.outputSchema, writerOutputSchema);
+  const expectedSchema=structuredClone(writerOutputSchema);
+  expectedSchema.$defs.target.anyOf=expectedSchema.$defs.target.anyOf.filter(branch=>branch.properties.kind.const==='page');
+  assert.deepEqual(prepared.outputSchema, expectedSchema);
   assert.deepEqual(await readFile(fixture.filename), before); assert.equal(prepared.fullF1, 'UNVERIFIED'); assert.equal(prepared.launch, 'UNVERIFIED');
 });
 

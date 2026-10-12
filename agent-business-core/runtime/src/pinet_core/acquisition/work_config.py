@@ -150,6 +150,9 @@ async def start(app, database):
     if not cfg.acquisition_work_enabled:
         return
     registration, digest = read_registration(cfg)
+    if cfg.acquisition_tasks_enabled:
+        from .tasks import validate_storage
+        await validate_storage(database)
     async with database.registry() as tx:
         rows = (
             await tx.execute(

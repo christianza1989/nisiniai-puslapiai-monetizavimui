@@ -38,7 +38,7 @@ class Thread(OwnedTaskScope, Base):
 class Task(OwnedTaskScope, Base):
     __tablename__ = "control_tasks"
     thread_id: Mapped[str] = mapped_column(String)
-    session_id: Mapped[str] = mapped_column(String)
+    session_id: Mapped[str | None] = mapped_column(String, nullable=True)
     sequence: Mapped[int] = mapped_column(Integer)
     kind: Mapped[str] = mapped_column(String, default="chat.consult")
     status: Mapped[str] = mapped_column(String, default="queued")
@@ -52,7 +52,7 @@ class Task(OwnedTaskScope, Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
     event_sequence: Mapped[int] = mapped_column(Integer, default=0)
     source_revision: Mapped[str] = mapped_column(String)
-    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("user_id", "environment_id", "idempotency_key"),
+    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint(*BINDING, "kind", name="uq_control_task_kind_scope"), UniqueConstraint("user_id", "environment_id", "idempotency_key"),
                       UniqueConstraint("thread_id", "sequence"),
                       parent_binding("control_task_threads", "thread_id"),
                       ForeignKeyConstraint(["session_id"], ["control_sessions.id"]))

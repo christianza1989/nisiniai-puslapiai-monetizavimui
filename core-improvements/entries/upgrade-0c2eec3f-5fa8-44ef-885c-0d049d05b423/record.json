@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Actual typed capture is emitted through canonical chat.v1/operations.v1 literal chat DTO and strict consumer rejects it; keep legacy wire exact and add one typed Task read/control contract.",
+  "category": "code",
+  "evidence": [
+    "Private original FAIL3c2a76b892ded721a451cd0c5e2dbae26b9a9afb1bfb676ac3104f6887734f1a (legacy HTTP200 capture kind vs canonical chat DTO)",
+    "docs/contracts/verslomatika-chat.openapi.json",
+    "docs/contracts/verslomatika-operations.openapi.json"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/task_interfaces.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/task_routes.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/operations.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/routes.py",
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_tasks.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_tasks.py",
+    "agent-business-core/contracts/acquisition-tasks-v1/README.md",
+    "agent-business-core/contracts/acquisition-tasks-v1/wire.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert; preserve original schema blobs and historical Task/effect records; typed feature defaultOFF.",
+  "id": "upgrade-0c2eec3f-5fa8-44ef-885c-0d049d05b423",
+  "branch": "codex/acquisition-typed-capture-20261012",
+  "baseSha": "2819c5a1eb86e2141968888b646a87b69a2d409f",
+  "createdAt": "2026-10-12T01:06:06.343Z"
+}

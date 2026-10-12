@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original restricted-PG report FAIL6d76a7fdfaa61d5fb2a96ed0d50574d54e24b37cfd86ea3c1fb2f78a16e143e0 retained. Exact TaskRun.id plus TaskRun.task_id predicate; mismatch yields no execution receipt, original rows retained.",
+  "eventId": "a4201435-cf17-431c-8435-ca34ff5f5136",
+  "sequence": 2,
+  "at": "2026-10-12T01:24:22.187Z"
+}

@@ -54,6 +54,8 @@ async def read_thread(thread_id: str, request: Request, response: Response,
         raise ControlError(404, "not_found")
     await grant_for(tx, thread.business_id, session.user_id)
     tasks = list(await tx.scalars(select(Task).where(Task.thread_id == thread.id).order_by(Task.sequence)))
+    if any(task.kind != "chat.consult" for task in tasks):
+        raise ControlError(404, "not_found")
     return envelope(request, response, {"thread_id": thread.id, "business_id": thread.business_id,
                      "created_at": thread.created_at.isoformat(), "tasks": [task_view(t) for t in tasks]})
 

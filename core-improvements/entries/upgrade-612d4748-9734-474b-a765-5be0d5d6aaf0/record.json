@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Typed capture report used Task.run_id without TaskRun.task_id binding, attributing another Task's execution/accounting to the reported Task.",
+  "category": "code",
+  "evidence": [
+    "Reproduced original restricted PostgreSQL FAIL 6d76a7fdfaa61d5fb2a96ed0d50574d54e24b37cfd86ea3c1fb2f78a16e143e0; two synthetic same-owner tasks, actual normal HTTP report accepted mismatched run pointer.",
+    "Independent source reviewer identified missing TaskRun.task_id predicate; legacy operations report already applies it."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/task_routes.py",
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_tasks.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert with typed feature defaultOFF; preserve all Task/Run/history and original failing witness.",
+  "id": "upgrade-612d4748-9734-474b-a765-5be0d5d6aaf0",
+  "branch": "codex/acquisition-typed-capture-20261012",
+  "baseSha": "2819c5a1eb86e2141968888b646a87b69a2d409f",
+  "createdAt": "2026-10-12T01:23:00.130Z"
+}

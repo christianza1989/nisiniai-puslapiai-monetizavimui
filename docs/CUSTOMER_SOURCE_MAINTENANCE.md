@@ -33,3 +33,21 @@ Original baseline, intermediate harness failures, actual policy/index deadlock, 
 No browser session, model call, conversation event, accounting entry, agent configuration, channel activation or public deployment is created by this command. Calibration/language remain UNVERIFIED; language-only checks are paused by the owner's instruction. New execution source commits still require explicit Profile admission; historical Profile fingerprints are never rewritten to the new source.
 
 See [Profile contract](VERSLOMATIKA_CUSTOMER_PROFILE.md), [atomic preparation](VERSLOMATIKA_AGENT_PREPARATION.md), [customer task drafts](CUSTOMER_AGENTS.md) and [Git workflow](CODEX_GIT_WORKFLOW.md).
+
+## Explicit finite local supervision
+
+The optional `scripts/customer_source_monitor.py` wraps the same explicit operator command; it adds no customer endpoint, agent/controller, model, admission or login renewal. Start it only after current Source/Profile preparation and normal owner login. It does not run automatically when the dashboard opens.
+
+Run in the owned configured local runtime:
+
+```powershell
+uv run python scripts/customer_source_monitor.py --input <private-maintenance-request.json> --run-dir artifacts/<new-owned-run> --until <fixed-aware-UTC-deadline> --interval-seconds 60
+```
+
+Every iteration revalidates the entire unchanged approved projection and current owner/Session/Grant/Profile/execution identity through `customer_source_maintain.execute`. It retains the original Profile and uses that command's immutable SourceRefresh proof/CAS. With the current180-second TTL, the interval must be at most60seconds. No TTL is increased. A fixed operator deadline bounds the process, including an in-flight recheck; Session expiry, source change, facts/permissions drift or any exception stops the process without retry or fallback admission.
+
+A new ignored runtime/artifacts run directory stores one immutable manifest and numbered request/prepared/committed receipts. A same-run OS lock prevents concurrent monitors and releases after a crash; competing distinct runs remain protected by canonical source CAS. No credential, ID, raw source or exception detail is printed. Monitor requests, receipts and source snapshots stay out of Git/transfer kits.
+
+After inspecting the private run, explicit `--resume` requires the identical input, interval, TTL and original deadline. It only consumes checksum-valid committed receipts with matching Profile identity and strictly advancing freshness. It waits before a new request and never replays an old request or extends the deadline. Missing/prepared/corrupt receipt or uncertain commit means inspection is required; no automatic reconciliation, deletion, reset or second source admission occurs. A deadline that has already passed performs no database operation. An expired Session is never silently renewed by this adapter.
+
+This is operator supervision, not a deployed supervisor service or a self-service dashboard setup action. Operational acceptance requires a new current owner Session and explicit current-source admission; source tests alone do not prove ordinary UI/target-PC/public readiness. Existing calibration reports and protected cases are reused; this adapter does not calibrate an agent or make additional model calls.

@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current operator source supervision — 2026-10-12T13:35Z
+
+**Whole local platform OPEN; source packet verified, operational monitor pending.** [Finite monitor evidence](../../docs/CUSTOMER_SOURCE_MONITOR_QA_2026-10-12.md):34 offline and2 isolated real-PG checks PASS, providers0. One explicit local adapter reuses canonical complete-source maintenance, preserves the original Profile/receipt/TTL, records immutable iteration receipts, serializes each run, rejects uncertain restart/deadline changes and stops after current authority expiry. No duplicated calibration/agent/controller or customer write API.
+
+Owner-cost steering: no additional model trials until setup/UI/source-worker joins are ready. Original owner Session has naturally expired; normal login/current-source Profile preparation remain required. Own18870 API stopped for this source batch; DB/history preserved. Portal Xga already has readiness/Profile/chat/history UI, but both automatic launches were rejected; manual start/new BFF/ordinary authenticated browser acceptance remain pending. Automatic creation/content workers, self-service agent setup, remaining native guides/editorial/full SEO-GEO/acquisition/Xbot/target-PC/public remain OPEN. The sections below retain their original source and Session observations.
+
 ## Latest actual customer source/dialogue — 2026-10-12T12:10Z
 
 **Whole local platform OPEN.** [New exact source/dialogue evidence](../../docs/CUSTOMER_WINDOW_SOURCE_CHAT_QA_2026-10-12.md): same original customer/Session/accepted2 on source63759bc4/public5924 now has canonical registration/replay, reviewed three-page synthetic local-preview release and atomic Source/Profile admission. This foundation retains unknown training execution facts and excludes unapproved guides; it is not full F1 or a finished business. Existing explicit source maintenance preserved the original Profile/receipt through fresh complete rechecks and exact replay, without a timestamp bypass or another controller.

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Explicit source supervision reuses immutable canonical maintenance so a three-minute source TTL does not require repeated manual operator requests during a local conversation.",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_WINDOW_SOURCE_CHAT_QA_2026-10-12.md",
+    "docs/CUSTOMER_SOURCE_MAINTENANCE.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/customer_source_monitor.py",
+    "agent-business-core/runtime/offline_tests/test_customer_source_monitor.py",
+    "agent-business-core/runtime/tests/test_customer_source_maintain.py",
+    "docs/CUSTOMER_SOURCE_MAINTENANCE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of monitor adapter and its tests/runbook; existing explicit maintenance, original admissions and all immutable receipts remain available.",
+  "id": "upgrade-7cd3af5c-fd4f-4966-a71b-65f601308478",
+  "branch": "codex/customer-source-monitor-20261012",
+  "baseSha": "03a91e0d3cd1d1e0492fb2f40527b7bdcf65559a",
+  "createdAt": "2026-10-12T13:29:08.386Z"
+}

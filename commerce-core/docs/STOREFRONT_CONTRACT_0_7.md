@@ -43,6 +43,14 @@ clears prior consent. A fixed same-origin string remains supported for one
 shared legal document. Changing SDK bytes requires the site adapter's normal
 manifest regeneration and its actual integration test.
 
+0.10.3: productTitle applies to catalog labels and the saved-order screen.
+For the latter it receives a shallow copy of the immutable order line,
+including sku and title, and the interface language. Callers may present a
+native display title for that SKU; the original order snapshot, money and
+document titles are unchanged. This prevents the interface from switching
+back to the order market's language after creation or resume. The default
+callback falls back to the stored title when native titles are absent.
+
 `GET /api/orders/:order/receipt` requires the buyer bearer credential.
 `GET /api/orders/:order/documents/:document` exports only that order's sale
 or credit PDF. It never grants buyer access to operator attachments or

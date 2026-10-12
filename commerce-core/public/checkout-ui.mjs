@@ -241,7 +241,7 @@ export async function mountCheckout(
       element('p', {}, t[21] + ': ' + money(order.amount, order.currency)),
     );
     for (const line of order.snapshot.lines)
-      content.append(element('p', {}, line.title + ' × ' + line.quantity));
+      content.append(element('p', {}, productTitle({ ...line }, language) + ' × ' + line.quantity));
     const buttons = element('div', { class: 'actions' });
     const add = (label, task) => {
       const b = element('button', { type: 'button' }, label);

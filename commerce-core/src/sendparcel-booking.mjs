@@ -59,7 +59,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       ...(input.line2 ? { address2: input.line2 } : {}),
       ...(input.isCompany
         ? {
-            companyName: input.name,
+            companyName: input.companyName || input.name,
             ...(input.companyCode ? { companyEcode: input.companyCode } : {}),
           }
         : {}),

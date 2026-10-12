@@ -95,6 +95,10 @@ export function customerSnapshot(input, country, delivery) {
     requireValue(text(input.companyCode, 3, 40), 'invalid_customer_company');
     result.isCompany = true;
     result.companyCode = input.companyCode.trim();
+    if (input.contactName !== undefined) {
+      requireValue(text(input.contactName, 2, 120), 'invalid_customer_company');
+      result.contactName = input.contactName.trim();
+    }
     if (input.vatCode !== undefined) {
       requireValue(text(input.vatCode, 3, 40), 'invalid_customer_company');
       result.vatCode = input.vatCode.trim();

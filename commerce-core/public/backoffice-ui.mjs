@@ -569,11 +569,17 @@ export async function renderBackoffice(content, view, ctx) {
         const f = form(
           'Įrašyti partnerį',
           [
-            field('Įmonės pavadinimas', 'partnerName', {
+            field('Juridinis įmonės pavadinimas', 'partnerName', {
               required: true,
               minlength: 2,
-              maxlength: 160,
+              maxlength: 120,
             }),
+            field('Įmonės / verslo registracijos kodas', 'partnerCompanyCode', {
+              required: true,
+              minlength: 3,
+              maxlength: 40,
+            }),
+            field('PVM kodas, jei yra', 'partnerVatCode', { maxlength: 40 }),
             field(
               'Rinka',
               'partnerMarket',
@@ -584,7 +590,7 @@ export async function renderBackoffice(content, view, ctx) {
             field('Kontaktinio asmens vardas', 'partnerContact', {
               required: true,
               minlength: 2,
-              maxlength: 160,
+              maxlength: 120,
             }),
             field('El. paštas', 'partnerEmail', { type: 'email', required: true, maxlength: 254 }),
             field('Telefonas su šalies kodu', 'partnerPhone', {
@@ -607,7 +613,11 @@ export async function renderBackoffice(content, view, ctx) {
               currency: m.currency,
               approved: false,
               customer: {
-                name: v.partnerContact,
+                name: v.partnerName,
+                contactName: v.partnerContact,
+                isCompany: true,
+                companyCode: v.partnerCompanyCode,
+                ...(v.partnerVatCode ? { vatCode: v.partnerVatCode } : {}),
                 email: v.partnerEmail,
                 phone: v.partnerPhone,
                 address: {

@@ -4,7 +4,7 @@ import {spawnSync} from 'node:child_process';
 const args=process.argv.slice(2),staged=args.includes('--staged');
 const root=path.resolve(args.find(a=>!a.startsWith('--'))??'.');
 function git(argv,input){const r=spawnSync('git',argv,{cwd:root,encoding:null,input,maxBuffer:512*1024*1024});if(r.status!==0)throw new Error('git safety read failed');return r.stdout;}
-const names=git(staged?['diff','--cached','--name-only','--diff-filter=ACM','-z']:['ls-files','-c','-o','--exclude-standard','-z']).toString().split('\0').filter(Boolean);
+const names=git(staged?['diff','--cached','--name-only','--diff-filter=ACMR','-z']:['ls-files','-c','-o','--exclude-standard','-z']).toString().split('\0').filter(Boolean);
 const files=[...new Set(names)];
 const textExt=/\.(?:md|txt|json|jsonl|yaml|yml|toml|ini|cfg|conf|env|mjs|cjs|js|ts|tsx|jsx|py|ps1|cmd|sh|html|css|php|sql|csv|xml|svg)$/i;
 const sensitiveName=/(?:^|\/)(?:\.env(?:\..*)?|\.dev\.vars(?:\..*)?|[^/]*mail_login_and_password[^/]*|[^/]+\.(?:pem|key|db|sqlite3?))$/i;

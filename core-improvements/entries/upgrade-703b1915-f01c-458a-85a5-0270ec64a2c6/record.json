@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Exact staged safety omits Git renamed files and can report PASS with zero inspected source archive files",
+  "category": "workflow",
+  "evidence": [
+    "Actual3851file source-kit review rejected PASSfiles0; originalprivatefailureb48d5dcf3a1bce917e8cc1c22a0bfd8b56ec58d6091cee34b74a932d7c903e02 retained",
+    "Original unchanged/modified rename regressions4PASS2FAIL log8b8817969e035a0147e0325ebd8c33d5f9f9f0967310302cc23fdbaf2751071d; synthetic patterns only"
+  ],
+  "paths": [
+    "scripts/repository-safety.mjs",
+    "scripts/repository-safety.test.mjs",
+    "docs/GITHUB.md",
+    "docs/SOURCE_KIT_RENAME_SAFETY_QA_2026-10-12.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of staged-R inclusion/test/rule; keep all original failed archives, fixtures, operational histories and private receipts",
+  "id": "upgrade-703b1915-f01c-458a-85a5-0270ec64a2c6",
+  "branch": "codex/source-kit-rename-safety-20261012",
+  "baseSha": "f83af1a5541e1f61cffa7d35d42c5e887e98dab8",
+  "createdAt": "2026-10-12T16:45:37.229Z"
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Creation studio ignores maintained companion configuration in separated worktrees, preventing canonical content intake",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md",
+    "Original offline configuration regression: 3FAIL7PASS; retained private log SHA b47213788df1aa356513a34fbcaa8559666a14e4077023fc9e15548f76cd6479"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/offline_tests/test_creation_studio.py",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of companion-selection code, tests and configuration paragraph; preserve private operational DB, account, attempts and all original receipts",
+  "id": "upgrade-725e7afb-0e9e-4dd6-831b-84e5701d9d2f",
+  "branch": "codex/customer-creation-window-20261012",
+  "baseSha": "cd9e3274f7cd889da3ce82ccbb7fa09aa0c71e58",
+  "createdAt": "2026-10-12T05:11:59.798Z"
+}

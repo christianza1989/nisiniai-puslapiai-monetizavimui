@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Canonical deployment companion path repaired; original configuration and inherited-language-fixture failures retained. Actual customer model/intake/browser acceptance remains separate and OPEN.",
+  "checks": [
+    {
+      "command": "python artifacts/director-check.private.py customer-studio-repair offline_tests/test_creation_studio.py -q",
+      "result": "PASS",
+      "evidence": "17 focused configuration/process/authority cases; private log SHA97538e3d72eb5a06c53c5a4df9c6cd936cbb683d452892ca7e38e8bf5ee27ee3; docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md"
+    },
+    {
+      "command": "PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true python artifacts/director-check.private.py customer-studio-regression-explicit-default offline_tests/test_creation_studio.py offline_tests/test_creation_content_plan.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_adapter.py offline_tests/test_creation_language_mode.py -o addopts= --color=no -q",
+      "result": "PASS",
+      "evidence": "All planned five suites passed; private log SHAa244bef4b5297079d0388024f04588d93eedc501018175bab33670bdb28b7142; first inherited-local-profile failure5bd7fb67 retained; runtime language flag unchanged false"
+    }
+  ],
+  "eventId": "d960467b-fc29-45cd-a204-89dcb86b8d22",
+  "sequence": 3,
+  "at": "2026-10-12T05:15:31.062Z"
+}

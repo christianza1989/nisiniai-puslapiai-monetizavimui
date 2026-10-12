@@ -236,7 +236,7 @@ def available():
             or not 30 <= cfg.creation_runner_seconds <= 300 or len(cfg.chat_codex_sha256) != 64
             or hashlib.sha256(binary.read_bytes()).hexdigest() != cfg.chat_codex_sha256):
         raise RunnerError("runner_unavailable")
-    return binary, workspace
+    return binary, workspace.resolve()
 
 
 def _role_paths_fit(workspace):

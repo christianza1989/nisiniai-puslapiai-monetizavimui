@@ -42,6 +42,33 @@ def test_windows_preflight_covers_longest_role_and_failure_file(
         assert error.value.code == "runner_unavailable"
 
 
+def test_dispatched_workspace_is_the_same_resolved_path_that_preflight_checks(tmp_path, monkeypatch):
+    import hashlib
+    import sys
+    from pathlib import Path
+
+    from pinet_core.config import settings
+    from pinet_core.creation import adapter
+
+    runtime = tmp_path / "runtime"
+    artifacts = runtime / "artifacts"
+    (artifacts / "alias").mkdir(parents=True)
+    real = artifacts / "short"
+    real.mkdir()
+    supplied = artifacts / "alias/../short"
+    cfg = settings()
+    binary = Path(sys.executable).resolve()
+    for name, value in {"creation_runner_enabled": True, "chat_model": "gpt-6-luna",
+                        "chat_codex_executable": str(binary), "creation_workspace": str(supplied),
+                        "creation_runner_seconds": 300,
+                        "chat_codex_sha256": hashlib.sha256(binary.read_bytes()).hexdigest()}.items():
+        monkeypatch.setattr(cfg, name, value)
+    monkeypatch.setattr(adapter, "RUNTIME", runtime)
+    checked = []
+    monkeypatch.setattr(adapter, "_role_paths_fit", lambda path: checked.append(path) or True)
+    assert adapter.available()[1] == checked[0] == real.resolve()
+
+
 def test_actual_instruction_fingerprint_and_fixed_tool_policy():
     value, fingerprint = instructions()
     assert len(fingerprint) == 64 and 'language-quality.md' in value and 'business-validation.md' in value

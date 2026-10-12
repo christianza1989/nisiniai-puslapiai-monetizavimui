@@ -119,7 +119,9 @@ async def run(claimed, still_authorized, role_runner=None):
     from .review import critic_sha256, draft_sha256, normalize_coordinator, normalize_critic
     context = dict(claimed["context"])
     run_role = role_runner or adapter.run_role
-    deadline = monotonic() + settings().creation_runner_seconds
+    # The transport still caps each CLI call separately. Both fixed review rounds
+    # share this one deadline; no timer is reset or extra role/call admitted.
+    deadline = monotonic() + 2 * settings().creation_runner_seconds
     remaining_web = context["permitted_web_actions"]
     receipts, candidate, critic, repair = [], None, None, None
 
@@ -266,5 +268,5 @@ async def projection(tx, creation):
         scope="private_business_and_website_draft", current_revision=creation.current_revision or None,
         active_job_id=creation.active_job_id, latest_job_id=jobs[-1].id if jobs else None, creation_updated_at=creation.updated_at,
         accepted_candidate_sha256=revision.material_hash if reviewed else None, max_rounds=2, max_calls_per_job=6,
-        deadline_seconds=settings().creation_runner_seconds, full_f1_status="UNVERIFIED", launch_status="UNVERIFIED",
+        deadline_seconds=2 * settings().creation_runner_seconds, full_f1_status="UNVERIFIED", launch_status="UNVERIFIED",
         attempts=views, events=timeline).model_dump(mode="json")

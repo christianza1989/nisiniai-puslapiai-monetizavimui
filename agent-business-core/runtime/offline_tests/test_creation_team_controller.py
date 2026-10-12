@@ -16,6 +16,65 @@ from pinet_core.tasks.codex import Answer, child_environment
 from pinet_core.tasks.codex_transport import RunnerError, execute
 
 
+async def test_two_rounds_share_job_time_without_expanding_each_cli_timeout(monkeypatch):
+    from copy import deepcopy
+
+    from test_creation_content_plan import planned
+    from test_creation_review import decision, report
+    from test_creation_review import draft as draft_fixture
+
+    from pinet_core.config import settings
+    from pinet_core.creation import renderer, review, team
+
+    cfg = settings()
+    monkeypatch.setattr(cfg, "creation_runner_seconds", 30)
+    monkeypatch.setattr(cfg, "creation_language_review_enabled", False)
+    monkeypatch.setattr(cfg, "control_mode", "local")
+    monkeypatch.setattr(cfg, "environment", "test-team-time")
+    clock, calls = [0.0], []
+    monkeypatch.setattr(team, "monotonic", lambda: clock[0])
+    value = renderer.normalize_creator(planned(draft_fixture.__wrapped__()))
+
+    async def reserve(*args, **kwargs):
+        return "synthetic-attempt"
+
+    async def finish(*args):
+        pass
+
+    async def authorized():
+        return True
+
+    async def runner(data, authorized, *, role, seconds):
+        assert seconds > 0
+        clock[0] += 8  # Six bounded source-fake calls need48s, beyond one30s call.
+        calls.append(role)
+        if role == "creator":
+            if data.get("language_repair"):
+                bound = data["language_patch_context"]
+                result = {"candidate_sha256": bound["candidate_sha256"], "critic_sha256": bound["critic_sha256"],
+                          "edits": [{"field": target["field"], "value": target["value"] +
+                                     " Šiame puslapyje palyginami skirtingi mokymo būdai pagal komandos poreikį."}
+                                    for target in bound["targets"]]}
+            else:
+                result = deepcopy(value)
+        elif role == "critic":
+            result = report(data["draft"], "revise" if len(calls) < 4 else "accept_draft")
+            result["round_number"] = data["round_number"]
+            result["checks"] = [{"kind": r["kind"], "status": r["status"], "evidence_refs": [r["id"]],
+                                  "summary": r["summary"]} for r in data["receipts"]]
+        else:
+            result = decision(data["draft"], data["critic"])
+            result["round_number"] = data["round_number"]
+            result["next_actions"] = review.coordinator_actions(data["critic"])[:5]
+        return result, {"usage": {"input_tokens": 1, "output_tokens": 1}, "web_search_count": 0}
+
+    monkeypatch.setattr(team, "reserve", reserve)
+    monkeypatch.setattr(team, "finish", finish)
+    result, evidence = await team.run({"context": {"permitted_web_actions": 0}}, authorized, role_runner=runner)
+    assert result["business"] == value["business"] and calls == ["creator", "critic", "coordinator"] * 2
+    assert evidence["deadline_monotonic"] == 60 and len(evidence["attempts"]) == 6
+
+
 @pytest.mark.parametrize("mode", ["nonzero", "invalid_output", "timeout_after_usage"])
 async def test_failed_owned_process_preserves_terminal_usage(tmp_path, mode):
     output = tmp_path / "output.private.json"

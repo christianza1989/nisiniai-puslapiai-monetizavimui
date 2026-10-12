@@ -39,6 +39,8 @@ async def main(action):
                "role_models": {role: role_model(role) for role in ("creator", "critic", "coordinator")},
                "web_search_enabled": cfg.creation_web_search_enabled, "global_daily_limit": cfg.creation_global_daily_limit,
                "job_limit": cfg.creation_job_limit,
+               "shared_job_seconds": 2 * cfg.creation_runner_seconds,
+               "maximum_cli_seconds": cfg.creation_runner_seconds,
                "provider_calls": 0, "mode": "local", "language_review_mode": language_mode.mode()})
         if action == "once":
             await execute_once()

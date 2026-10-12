@@ -1,5 +1,15 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current owner priority and customer window — 2026-10-12T05:49Z
+
+**Whole local platform OPEN; full ordinary customer pipeline is not ready.** Latest human priority is a usable dashboard path they can test themselves. [Current new-customer evidence](../../docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md) preserves canonical signup/private-outbox verification/PASSWORD login/own Portfolio, fresh restricted schema0028 and unchanged original operational fingerprints. Coordinator's separate portal3023 uses its normal customer cookie; source/API/BFF and ordinary browser acceptance remain distinct.
+
+Two actual Jobs for the same synthetic mokymai-ai creation failed, with all original history/usage retained. First creator and critic succeeded but coordinator schema path exceeded the Windows limit (4eeda511); canonical configured-companion and all-role path preflight repairs passed. Next Job completed first creator/critic/coordinator and second creator, then second critic ran out of the shared300s budget (0c576011). Both still have no accepted revision/artifact/intake. Portal's44 normal HTTP/BFF/SSR responses observed these exact states; they do not prove a completed business or ordinary browser UI.
+
+Next executable action: clean source with one shared two-round deadline up to600s while each CLI remains capped300s, exact team.v1 constraint import/build in the existing portal, and one explicit new canonical revision of the SAME creation. Original failed Jobs are never resurrected. Reviewed workspace alias must be resolved consistently before dispatch. No new controller/auth, invocation quota, paid research budget or hidden calibration reset. Source/Profile preparation still requires an actual accepted V2 package; private generated text is not agent knowledge.
+
+Browser normal secure credential entry remains a specific tool/human-entry dependency. Language-only checks remain paused/UNVERIFIED, Gemini deferred. Docker/PostgreSQL/loopback only; SMTP/voice/live social/email/Supabase/tunnel/DNS/deploy/domain purchase held. Existing frozen253 API18868/3021 and operational25d/8860/18861/old3019 stay unchanged. Target-PC/public launch remains OPEN. Earlier entries below are immutable historical scope, not the current next action.
+
 ## Current local scope and next acceptance — 2026-10-12T04:25Z
 
 **Whole local platform OPEN; typed acquisition increment locally verified.** This is the same owner-authorized Verslomatika work, including the explicitly requested Madbeauty acquisition adoption. Historical entries below retain their original sources/results. [Current acquisition evidence and boundaries](../../docs/ACQUISITION_TYPED_TASKS_NORMAL_QA_2026-10-12.md) supersede the historical “next receive PR59” action, without changing any old calibration or FAIL.

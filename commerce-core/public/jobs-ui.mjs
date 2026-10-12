@@ -70,9 +70,55 @@ export async function renderJobs(content, ctx) {
   else
     content.append(
       table(
-        ['Pranešimas', 'Būsena', 'Paruošta'],
-        data.notifications.map((n) =>
-          node(
+        ['Pranešimas', 'Būsena', 'Paruošta', 'Veiksmas'],
+        data.notifications.map((n) => {
+          const preview = node('button', { type: 'button' }, 'Peržiūrėti');
+          preview.addEventListener('click', () =>
+            action(
+              preview,
+              async () => {
+                const result = await api('/api/operator/notifications/' + n.event_id);
+                const message = result.message;
+                const box = node(
+                  'section',
+                  {},
+                  node('h3', {}, message.subject),
+                  node('p', {}, 'Gavėjas: ' + message.to),
+                  node('pre', {}, message.text),
+                );
+                if (has('operate') && n.state !== 'accepted') {
+                  const send = node(
+                    'button',
+                    { type: 'button' },
+                    n.state === 'prepared'
+                      ? 'Perduoti patvirtintam transportui'
+                      : 'Sutikrinti rezultatą',
+                  );
+                  const resultText = node('p', { role: 'status' });
+                  send.addEventListener('click', () =>
+                    action(
+                      send,
+                      async () => {
+                        const r = await api(
+                          '/api/operator/notifications/' + n.event_id + '/execute',
+                          {},
+                        );
+                        resultText.textContent =
+                          r.state === 'accepted'
+                            ? 'Pašto transportas priėmė pranešimą.'
+                            : 'Rezultatas dar nežinomas. Reikia transporto patvirtinimo; pakartotinis siuntimas nevykdomas.';
+                      },
+                      'Pranešimo būsena patikrinta.',
+                    ),
+                  );
+                  box.append(send, resultText);
+                }
+                content.append(box);
+              },
+              'Pranešimo ruošinys atvertas.',
+            ),
+          );
+          return node(
             'tr',
             {},
             cell(n.kind, 'Pranešimas'),
@@ -87,8 +133,9 @@ export async function renderJobs(content, ctx) {
               'Būsena',
             ),
             cell(date(n.created_at), 'Paruošta'),
-          ),
-        ),
+            cell(preview, 'Veiksmas'),
+          );
+        }),
       ),
     );
   async function renderJobsAgain() {

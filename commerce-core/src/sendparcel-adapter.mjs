@@ -21,7 +21,7 @@ export class SendparcelAdapter {
     accessToken,
     baseUrl = STAGING,
     productionReadAdmission,
-    fetchImpl = fetch,
+    fetchImpl = (...args) => fetch(...args),
   }) {
     requireValue(
       (environment === 'sandbox' && baseUrl === STAGING) ||

@@ -452,6 +452,11 @@ dd {
     transition: none;
   }
 }
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+}
 @media print {
   .masthead,
   .navigation,

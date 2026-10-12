@@ -7,12 +7,26 @@ export function foundationStore(host, id = 'store_foundation') {
     hosts: [host],
     requireCustomer: true,
     shippingAccountRef: 'fixture_sendparcel',
+    dispatch: { country: 'LT', city: 'Vilnius', postalCode: '02211' },
+    notificationPolicy: {
+      approved: true,
+      from: 'fixture@example.test',
+      transportRef: 'fixture_core_mail',
+    },
     markets: ['LT', 'PL', 'LV', 'EE'].map((country) => ({
       country,
       currency: 'EUR',
       policyVersion: 'fixture_v1',
       delivery: [
         { id: 'fixture_door', amount: 799, label: 'TEST kurjeris', kind: 'door' },
+        {
+          id: 'fixture_dynamic',
+          amount: 0,
+          label: 'TEST kurjerio pasiūlymas',
+          kind: 'door',
+          pricing: 'carrier',
+          serviceIds: ['42'],
+        },
         {
           id: 'fixture_locker',
           amount: 499,

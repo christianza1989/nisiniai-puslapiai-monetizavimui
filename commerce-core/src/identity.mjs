@@ -3,6 +3,7 @@ import { digest, identifier, integer } from './validation.mjs';
 export const OPERATOR_GRANTS = [
   'read',
   'stock',
+  'catalog',
   'document',
   'pack',
   'ship',
@@ -15,7 +16,7 @@ export const OPERATOR_GRANTS = [
 const lifetime = 8 * 3600000;
 const bytes = (hex) => Uint8Array.from(hex.match(/../g), (v) => parseInt(v, 16));
 async function equalHash(candidate, expected) {
-  if (!/^[a-f0-9]{64}$/.test(expected || '')) return false;
+  if (typeof expected !== 'string' || !/^[a-f0-9]{64}$/.test(expected)) return false;
   const a = bytes(candidate),
     b = bytes(expected);
   if (typeof crypto.subtle.timingSafeEqual === 'function')

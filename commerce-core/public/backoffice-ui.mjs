@@ -1,4 +1,5 @@
 // All data comes from the private API. No demo-data fallback or HTML interpolation.
+import { renderFinanceIO } from './finance-io-ui.mjs';
 export async function renderBackoffice(content, view, ctx) {
   const { node: n, table, cell, api, action, has, money, date } = ctx;
   const hints = {
@@ -307,6 +308,7 @@ export async function renderBackoffice(content, view, ctx) {
     );
   }
   if (view === 'financials') {
+    renderFinanceIO(content, ctx);
     const labels = {
         payment: 'Mokėjimas',
         refund: 'Grąžinimas',

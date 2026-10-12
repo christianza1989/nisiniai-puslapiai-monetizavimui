@@ -1,4 +1,6 @@
 import { CommerceService } from './service.mjs';
+import { CoreMailBindingAdapter } from './notifications.mjs';
+import { PublicAbuseGuard } from './public-guard.mjs';
 import { createHandler } from './http.mjs';
 import { StripeCheckoutAdapter } from './stripe-adapter.mjs';
 import { SendparcelAdapter, SENDPARCEL_PRODUCTION } from './sendparcel-adapter.mjs';
@@ -38,7 +40,8 @@ export function runtimeOptions(env) {
   );
   const paymentAdapters = {},
     shippingAdapters = {},
-    shippingReadAdapters = {};
+    shippingReadAdapters = {},
+    notificationAdapters = {};
   for (const [storeId, connection] of Object.entries(connections)) {
     requireValue(
       /^[a-zA-Z0-9_-]{1,100}$/.test(storeId) && connection && typeof connection === 'object',
@@ -51,6 +54,13 @@ export function runtimeOptions(env) {
         accountRef: connection.stripe.accountRef,
         webhookSecret: connection.stripe.webhookSecret,
         environment,
+      });
+    if (connection.mail && env.COMMERCE_MAIL)
+      notificationAdapters[storeId] = new CoreMailBindingAdapter({
+        binding: env.COMMERCE_MAIL,
+        environment,
+        accountRef: connection.mail.transportRef,
+        sender: connection.mail.sender,
       });
     if (connection.sendparcel) {
       const carrierOptions = {
@@ -78,6 +88,15 @@ export function runtimeOptions(env) {
     paymentAdapters,
     shippingAdapters,
     shippingReadAdapters,
+    notificationAdapters,
+    publicAbuseGuard:
+      env.COMMERCE_ABUSE_SALT && env.COMMERCE_DB
+        ? (request, store, kind) =>
+            new PublicAbuseGuard(
+              new CommerceService(env.COMMERCE_DB),
+              env.COMMERCE_ABUSE_SALT,
+            ).allow(request, store, kind)
+        : undefined,
     operatorAuthorize: coreOperatorAuthorize(async () => parse(env.COMMERCE_CORE_GRANTS, [])),
     privateStorage: env.COMMERCE_FILES ? new R2PrivateStorage(env.COMMERCE_FILES) : undefined,
     loadDocumentFont: env.ASSETS
@@ -100,6 +119,9 @@ export const adminAssets = {
   '/private-files-ui.mjs': '/private-files-ui.mjs',
   '/shipment-commands-ui.mjs': '/shipment-commands-ui.mjs',
   '/jobs-ui.mjs': '/jobs-ui.mjs',
+  '/catalog-ui.mjs': '/catalog-ui.mjs',
+  '/finance-io-ui.mjs': '/finance-io-ui.mjs',
+  '/returns-ui.mjs': '/returns-ui.mjs',
   '/commerce': '/commerce.html',
   '/commerce-client.mjs': '/commerce-client.mjs',
   '/checkout-ui.mjs': '/checkout-ui.mjs',

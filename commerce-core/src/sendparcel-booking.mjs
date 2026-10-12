@@ -35,6 +35,8 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     return { ...super.allowedPaths(), '/rest-api/orders/creates': 'POST' };
   }
   async validateCost(payload) {
+    this.address(payload.sender);
+    this.address(payload.recipient);
     if (!this.admission.serviceIds.includes(payload.serviceId)) return false;
     const offers = await this.quote(payload);
     return offers.some(
@@ -64,7 +66,13 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     };
     if (input.locker) {
       const field = this.admission.lockerBindings?.[input.locker.courier];
-      requireValue(field && input.locker.providerId, 'carrier_locker_booking_not_admitted', 503);
+      requireValue(
+        field &&
+          this.admission.lockerVerificationFields?.[input.locker.courier] === field &&
+          input.locker.providerId,
+        'carrier_locker_booking_not_admitted',
+        503,
+      );
       result[field] = input.locker.providerId;
     }
     return result;
@@ -109,6 +117,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       city: a?.city,
       line1: a?.address1,
       line2: a?.address2 || '',
+      terminalId: a?.terminalid === undefined ? null : String(a.terminalid),
       postalCode: a?.postal_code,
       phone: a?.phone,
     });
@@ -134,13 +143,23 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       country: a.country,
       city: a.city,
       line1: a.line1,
+      line2: a.line2 || '',
       postalCode: a.postalCode.replace(/^(LT-|LV-)/, ''),
       phone: a.phone,
     });
     try {
+      let recipient = payload.recipient;
+      if (recipient.locker) {
+        const field = this.admission.lockerBindings?.[recipient.locker.courier];
+        if (this.admission.lockerVerificationFields?.[recipient.locker.courier] !== field)
+          return false;
+        if (field === 'terminalid' && fact.recipient.terminalId !== recipient.locker.providerId)
+          return false;
+        if (field === 'address2') recipient = { ...recipient, line2: recipient.locker.providerId };
+      }
       return (
         canonical(comparable(payload.sender)) === canonical(comparable(fact.sender)) &&
-        canonical(comparable(payload.recipient)) === canonical(comparable(fact.recipient)) &&
+        canonical(comparable(recipient)) === canonical(comparable(fact.recipient)) &&
         canonical(
           payload.parcels.map((p) => ({
             weightGrams: p.weightGrams,

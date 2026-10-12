@@ -3,6 +3,8 @@ import { renderShipping } from './shipping-ui.mjs';
 import { renderPrivateFiles } from './private-files-ui.mjs';
 import { renderShipmentCommands } from './shipment-commands-ui.mjs';
 import { renderJobs } from './jobs-ui.mjs';
+import { renderCatalog } from './catalog-ui.mjs';
+import { renderReturns } from './returns-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -21,6 +23,7 @@ const titles = {
   financials: 'Sutikrinimas',
   wholesale: 'Didmena',
   automation: 'Automatiniai darbai',
+  catalog: 'Prekės ir kainos',
 };
 const paymentNames = {
   pending: 'Laukia mokėjimo',
@@ -30,6 +33,8 @@ const paymentNames = {
   refunded: 'Suma grąžinta',
 };
 const fulfillmentNames = {
+  canceled: 'Atšaukta prieš išsiuntimą',
+  return_received: 'Grąžinimas gautas',
   pending: 'Laukia komplektavimo',
   ready: 'Sukomplektuota',
   labelled: 'Siunta užregistruota',
@@ -41,6 +46,23 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  return_quantity_conflict:
+    'Gautas kiekis viršija dar nepriimtą užsakymo kiekį. Atnaujinkite duomenis.',
+  invalid_return_receipt:
+    'Pasirinkite gautas prekes ir paskirtį. Grąžinant į parduodamą likutį būtina būklės bei galiojimo patikra.',
+  return_order_not_eligible: 'Šiam užsakymui fizinio grąžinimo dabar registruoti negalima.',
+  catalog_revision_conflict:
+    'Prekė jau pakeista arba veiksmo ID nesutampa. Atnaujinkite duomenis prieš kitą pakeitimą.',
+  invalid_product: 'Patikrinkite SKU, pavadinimą ir aktyvumo būseną.',
+  invalid_package: 'Aktyviai prekei įrašykite tikrą supakuotą svorį ir visus matmenis.',
+  invalid_prices: 'Įrašykite teigiamas pasirinktų šalių kainas.',
+  financial_csv_invalid:
+    'CSV turi būti taisyklingas, iki100 duomenų eilučių, su unikalia antrašte.',
+  financial_csv_mapping_invalid: 'Patikrinkite CSV stulpelių priskyrimą.',
+  financial_csv_value_invalid: 'Patikrinkite sumas su tašku ir tikras ISO datas su Z laiko zona.',
+  financial_provider_not_connected: 'Stripe finansinių šaltinių prieiga neprijungta.',
+  stripe_financial_type_requires_review:
+    'Šiame Stripe puslapyje yra operacijos rūšis, kuriai reikia atskiro apskaitos priskyrimo. Puslapis automatiškai neimportuotas.',
   shipment_sender_incomplete:
     'Registravimui reikia viso siuntėjo adreso, vardo ir kontaktų. Išsaugokite naują siuntėjo vietą ir pakuotės planą.',
   shipment_quote_stale: 'Kainų pasiūlymas senesnis nei 15 minučių. Gaukite naujus pasiūlymus.',
@@ -267,6 +289,10 @@ function render() {
   if (state.view === 'orders') renderOrders(content);
   if (state.view === 'stock') renderStock(content);
   if (state.view === 'documents') renderDocuments(content);
+  if (state.view === 'catalog')
+    renderCatalog(content, { node, table, cell, api, action, has, money }).catch(() =>
+      status('Nepavyko įkelti prekių.', 'error'),
+    );
   if (state.view === 'automation') {
     renderJobs(content, { node, table, cell, api, action, has, date }).catch(() =>
       status('Nepavyko įkelti automatinių darbų.', 'error'),
@@ -280,6 +306,7 @@ function render() {
       table,
       cell,
       api,
+      binary,
       action,
       has,
       money,
@@ -462,6 +489,29 @@ function renderOrder(content, detail) {
     );
   if (c?.locker) pairs.push(['Paštomatas', c.locker.label]);
   if (o.refunded_amount) pairs.push(['Grąžinta suma', money(o.refunded_amount, o.currency)]);
+  if (state.order.disputes?.length) {
+    content.append(
+      node('h3', {}, 'Stripe mokėjimo ginčo įvykiai'),
+      node(
+        'p',
+        { class: 'hint' },
+        'Tai mokėjimo teikėjo faktai. Pinigų grąžinimo, ginčo uždarymo ar likučio pakeitimo jie automatiškai neatlieka.',
+      ),
+      table(
+        ['Ginčas', 'Būsena', 'Suma', 'Įrodymų terminas'],
+        state.order.disputes.map((d) =>
+          node(
+            'tr',
+            {},
+            cell(d.disputeId, 'Ginčas'),
+            cell(d.status, 'Būsena'),
+            cell(money(d.amount, d.currency), 'Suma'),
+            cell(d.evidenceDueAt ? date(d.evidenceDueAt) : '—', 'Įrodymų terminas'),
+          ),
+        ),
+      ),
+    );
+  }
   content.append(
     node(
       'dl',
@@ -486,6 +536,37 @@ function renderOrder(content, detail) {
     ),
   );
   const actions = node('div', { class: 'actions' });
+  if (o.snapshot.wholesale && has('wholesale') && o.payment_state === 'pending') {
+    const checkout = node('button', { type: 'button' }, 'Paruošti didmenos mokėjimo nuorodą');
+    const linkBox = node('p', { role: 'status' });
+    checkout.addEventListener('click', () =>
+      action(
+        checkout,
+        async () => {
+          const session = await api('/api/operator/orders/' + o.id + '/wholesale-checkout', {});
+          const url = new URL(session.url, location.origin);
+          if (
+            !(url.protocol === 'https:' && url.hostname === 'checkout.stripe.com') &&
+            !(
+              state.data.environment === 'sandbox' &&
+              url.origin === location.origin &&
+              url.pathname.startsWith('/qa/checkout/')
+            )
+          )
+            throw Error('checkout_redirect_forbidden');
+          linkBox.replaceChildren(
+            node(
+              'a',
+              { href: url.href, target: '_blank', rel: 'noopener' },
+              'Atverti didmenos mokėjimą',
+            ),
+          );
+        },
+        'Mokėjimo nuoroda paruošta.',
+      ),
+    );
+    actions.append(checkout, linkBox);
+  }
   const pack = node(
     'button',
     {
@@ -607,6 +688,7 @@ function renderOrder(content, detail) {
       integrations: state.data.integrations,
     });
   renderRefunds(content, detail);
+  renderReturns(content, detail, { node, table, cell, api, action, has, reload, date });
   renderShipmentCommands(content, detail, {
     node,
     api,

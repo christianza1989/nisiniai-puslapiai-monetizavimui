@@ -20,6 +20,7 @@ records.push({
   permissions: [
     'read',
     'stock',
+    'catalog',
     'document',
     'pack',
     'ship',

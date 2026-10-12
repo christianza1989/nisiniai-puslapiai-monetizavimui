@@ -3,6 +3,7 @@ import { operationallyAdmitted } from './admission.mjs';
 import { CommerceOperations } from './operations.mjs';
 import { DocumentFiles } from './document-pdf.mjs';
 import { ShipmentCommands } from './shipment-commands.mjs';
+import { CustomerNotifications } from './notifications.mjs';
 const notifyKinds = [
   'OrderPlaced',
   'PaymentConfirmed',
@@ -229,6 +230,17 @@ export class CommerceJobs {
         store,
       ))
         await commands.execute(store, env, c.id, carrier, 'commerce_automation').catch(() => {});
+    }
+    if (
+      config.automationPolicy?.sendNotifications === true &&
+      config.notificationPolicy?.approved === true
+    ) {
+      const notifications = new CustomerNotifications(this.s, this.options.notificationAdapters);
+      for (const n of await this.s.rows(
+        "SELECT event_id FROM customer_notifications WHERE store_id=? AND state IN ('prepared','unknown','sending') ORDER BY created_at LIMIT 20",
+        store,
+      ))
+        await notifications.execute(store, env, n.event_id, 'commerce_automation').catch(() => {});
     }
     return { expired, events };
   }

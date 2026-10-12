@@ -91,10 +91,27 @@ export function customerSnapshot(input, country, delivery) {
       postalCode: address.postalCode.trim(),
     },
   };
+  if (input.isCompany === true) {
+    requireValue(text(input.companyCode, 3, 40), 'invalid_customer_company');
+    result.isCompany = true;
+    result.companyCode = input.companyCode.trim();
+    if (input.vatCode !== undefined) {
+      requireValue(text(input.vatCode, 3, 40), 'invalid_customer_company');
+      result.vatCode = input.vatCode.trim();
+    }
+  }
   if (delivery.kind === 'locker') {
     const locker = delivery.lockers?.find((l) => l.id === input.lockerId && l.country === country);
     requireValue(locker, 'locker_not_enabled');
     result.locker = { id: locker.id, label: locker.label, country: locker.country };
+    if (locker.courier !== undefined || locker.providerId !== undefined) {
+      requireValue(
+        identifier(locker.courier) && text(locker.providerId, 1, 100),
+        'locker_not_enabled',
+      );
+      result.locker.courier = locker.courier;
+      result.locker.providerId = locker.providerId;
+    }
   } else requireValue(input.lockerId === undefined, 'locker_not_enabled');
   return result;
 }

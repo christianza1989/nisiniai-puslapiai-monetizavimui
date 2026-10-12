@@ -112,6 +112,20 @@ const handler = createHandler({
       ? { [storeId]: stripe }
       : {},
   shippingAdapters: foundationAdapter ? { [storeId]: foundationAdapter } : {},
+  notificationAdapters: foundation
+    ? {
+        [storeId]: {
+          environment: 'sandbox',
+          accountRef: 'fixture_core_mail',
+          sender: 'fixture@example.test',
+          send: async (message) => ({
+            status: 'accepted',
+            reference: 'LOCAL-MAIL-FIXTURE-' + message.id,
+          }),
+          find: async () => ({ status: 'unknown' }),
+        },
+      }
+    : {},
   shippingReadAdapters: foundationAdapter
     ? { [storeId]: foundationAdapter }
     : shipping
@@ -142,6 +156,9 @@ const assets = {
   '/private-files-ui.mjs': ['private-files-ui.mjs', 'text/javascript; charset=utf-8'],
   '/shipment-commands-ui.mjs': ['shipment-commands-ui.mjs', 'text/javascript; charset=utf-8'],
   '/jobs-ui.mjs': ['jobs-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/catalog-ui.mjs': ['catalog-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/finance-io-ui.mjs': ['finance-io-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/returns-ui.mjs': ['returns-ui.mjs', 'text/javascript; charset=utf-8'],
   '/commerce': ['commerce.html', 'text/html; charset=utf-8'],
   '/commerce-client.mjs': ['commerce-client.mjs', 'text/javascript; charset=utf-8'],
   '/checkout-ui.mjs': ['checkout-ui.mjs', 'text/javascript; charset=utf-8'],

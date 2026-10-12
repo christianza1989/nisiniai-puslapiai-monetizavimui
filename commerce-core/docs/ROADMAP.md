@@ -1,5 +1,7 @@
 # Prekybos modulio roadmap
 
+Aktualus 0.9 vietinis pagrindas: [katalogas / pirkėjo pristatymas / finansai / grąžinimai / mail adapteris](CONTINUATION_0_9.md). 0.7 ir 0.8 įgyvendino Worker identity/assets/private PDF, patvarų siuntų POST/recovery/tracking, jobs/DLQ/Queue ir backup/restore. Žemiau esančios 0.2–0.6 pastraipos yra istorinių paketų eiga; jų senos spragos nepakeičia naujo kvito. Tikrų tiekėjų prijungimas ir production priėmimas atskiri.
+
 Aktualus 0.6 tęsinys: paruoštos pakuotės ir private cost quotes; [0.6 siuntų paruošimo kvitas](CONTINUATION_2026_10_12_SHIPPING.md). M3 realus kūrimas/PDF/tracking laukia tiekėjo prieigos ir protokolo patvirtinimo. M5 identity/Worker assets ir M4 finansinių šaltinių plėtra lieka nepriklausomi vietiniai darbai.
 Aktualus [pavedimas](IMPLEMENTATION_STATUS.md). Nėra savaitinės turinio kvotos ar išgalvotų pristatymo datų. Etapo baigtis reiškia jo priėmimo įrodymą, ne visos platformos baigtį.
 

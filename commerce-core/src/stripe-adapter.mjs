@@ -1,5 +1,5 @@
 import Stripe from 'stripe';
-import { requireValue, CommerceError } from './validation.mjs';
+import { requireValue, CommerceError, integer } from './validation.mjs';
 export class StripeCheckoutAdapter {
   constructor({ apiKey, webhookSecret, accountRef, environment, client }) {
     requireValue(
@@ -41,7 +41,112 @@ export class StripeCheckoutAdapter {
       commandId: refund.metadata?.commerce_command_id,
     };
   }
+  async verifyAccount() {
+    if (this.environment !== 'production') return { ready: true, id: this.accountRef };
+    requireValue(/^acct_[A-Za-z0-9]+$/.test(this.accountRef), 'stripe_account_not_verified', 503);
+    const account = await this.client.accounts.retrieveCurrent();
+    requireValue(
+      account.id === this.accountRef && account.charges_enabled === true,
+      'stripe_account_not_verified',
+      503,
+    );
+    return { ready: true, id: account.id };
+  }
+  async isReady() {
+    try {
+      return (await this.verifyAccount()).ready;
+    } catch {
+      return false;
+    }
+  }
+  async financialPage({ since, after } = {}) {
+    await this.verifyAccount();
+    requireValue(
+      (since === undefined || integer(since, 0, 9999999999)) &&
+        (after === undefined || /^txn_[A-Za-z0-9]+$/.test(after)),
+      'invalid_financial_cursor',
+    );
+    const page = await this.client.balanceTransactions.list({
+      limit: 40,
+      ...(since === undefined ? {} : { created: { gte: since } }),
+      ...(after ? { starting_after: after } : {}),
+    });
+    requireValue(
+      Array.isArray(page.data) && page.data.length <= 40 && typeof page.has_more === 'boolean',
+      'stripe_financial_response_invalid',
+      502,
+    );
+    const rows = [];
+    for (const bt of page.data) {
+      requireValue(
+        /^txn_[A-Za-z0-9]+$/.test(bt.id) &&
+          integer(bt.amount, -100000000, 100000000) &&
+          integer(bt.fee, 0, 100000000) &&
+          integer(bt.net, -100000000, 100000000) &&
+          bt.net === bt.amount - bt.fee &&
+          integer(bt.created, 1, 9999999999) &&
+          /^[a-z]{3}$/.test(bt.currency),
+        'stripe_financial_response_invalid',
+        502,
+      );
+      let kind, transactionRef;
+      if (
+        ['charge', 'payment'].includes(bt.type) &&
+        bt.amount > 0 &&
+        typeof bt.source === 'string' &&
+        bt.source.startsWith('ch_')
+      ) {
+        const charge = await this.client.charges.retrieve(bt.source);
+        requireValue(
+          charge.id === bt.source &&
+            charge.paid === true &&
+            charge.currency === bt.currency &&
+            typeof charge.payment_intent === 'string' &&
+            (charge.amount_captured === undefined || charge.amount_captured === bt.amount),
+          'stripe_financial_response_invalid',
+          502,
+        );
+        kind = 'payment';
+        transactionRef = charge.payment_intent;
+      } else if (bt.type === 'refund' && bt.amount < 0 && /^re_[A-Za-z0-9]+$/.test(bt.source)) {
+        kind = 'refund';
+        transactionRef = bt.source;
+      } else if (bt.type === 'payout' && bt.amount < 0 && /^po_[A-Za-z0-9]+$/.test(bt.source)) {
+        kind = 'payout';
+        transactionRef = bt.source;
+      } else if (bt.type === 'stripe_fee' && bt.amount < 0) {
+        kind = 'fee';
+        transactionRef = null;
+      } else throw new CommerceError('stripe_financial_type_requires_review', 409);
+      rows.push({
+        reference: bt.id,
+        kind,
+        currency: bt.currency.toUpperCase(),
+        amount: bt.amount,
+        transactionRef,
+        occurredAt: bt.created * 1000,
+      });
+      if (bt.fee > 0)
+        rows.push({
+          reference: bt.id + '_fee',
+          kind: 'fee',
+          currency: bt.currency.toUpperCase(),
+          amount: -bt.fee,
+          transactionRef: bt.id,
+          occurredAt: bt.created * 1000,
+        });
+    }
+    requireValue(!page.has_more || page.data.length > 0, 'stripe_financial_response_invalid', 502);
+    return {
+      environment: this.environment,
+      accountRef: this.accountRef,
+      rows,
+      next: page.has_more ? page.data.at(-1).id : null,
+      complete: !page.has_more,
+    };
+  }
   async createRefund(command) {
+    await this.verifyAccount();
     requireValue(
       command.environment === this.environment && command.account_ref === this.accountRef,
       'stripe_context_mismatch',
@@ -98,6 +203,7 @@ export class StripeCheckoutAdapter {
     return { complete: false, refund: null };
   }
   async createSession(order, config) {
+    await this.verifyAccount();
     requireValue(
       order.snapshot.environment === this.environment &&
         config.paymentAccountRef === this.accountRef,
@@ -174,6 +280,34 @@ export class StripeCheckoutAdapter {
       'stripe_environment_mismatch',
       403,
     );
+    if (
+      [
+        'charge.dispute.created',
+        'charge.dispute.updated',
+        'charge.dispute.closed',
+        'charge.dispute.funds_withdrawn',
+        'charge.dispute.funds_reinstated',
+      ].includes(event.type)
+    ) {
+      const dispute = event.data.object;
+      requireValue(typeof dispute.payment_intent === 'string', 'stripe_dispute_payment_missing');
+      return {
+        kind: 'dispute',
+        id: event.id,
+        environment: this.environment,
+        accountRef: this.accountRef,
+        disputeId: dispute.id,
+        paymentId: dispute.payment_intent,
+        amount: dispute.amount,
+        currency: dispute.currency?.toUpperCase(),
+        status: dispute.status,
+        reason: dispute.reason,
+        createdAt: event.created * 1000,
+        evidenceDueAt: dispute.evidence_details?.due_by
+          ? dispute.evidence_details.due_by * 1000
+          : null,
+      };
+    }
     if (['refund.created', 'refund.updated', 'refund.failed'].includes(event.type)) {
       const refund = event.data.object;
       requireValue(typeof refund.payment_intent === 'string', 'stripe_refund_payment_missing');

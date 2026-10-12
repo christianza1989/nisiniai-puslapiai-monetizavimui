@@ -9,6 +9,7 @@ import {
   validateStore,
   customerSnapshot,
 } from './validation.mjs';
+import { deliveryFingerprint } from './buyer-delivery.mjs';
 export class CommerceService {
   constructor(db, { now = () => Date.now() } = {}) {
     this.db = db;
@@ -148,38 +149,96 @@ export class CommerceService {
       return {
         sku: p.sku,
         title: p.title,
+        ...(p.titles ? { titles: p.titles } : {}),
+        ...(p.addonFor ? { addonFor: p.addonFor } : {}),
+        enabled: p.enabled !== false,
         prices: p.prices,
-        available: r.available,
+        available: p.enabled === false ? 0 : r.available,
         package: p.package,
       };
     });
   }
-  async quote(id, environment, input) {
+  async quote(id, environment, input, options = {}) {
     requireValue(input && typeof input === 'object' && !Array.isArray(input), 'invalid_payload');
     const store = await this.store(id, environment),
       lines = normalizeCart(input.lines);
     const market = store.markets.find(
       (m) => m.country === input.country && m.currency === input.currency,
     );
-    requireValue(market, 'market_not_enabled');
+    requireValue(market && market.checkoutEnabled !== false, 'market_not_enabled');
     const catalog = await this.catalog(id, environment);
     const priced = lines.map((line) => {
       const p = catalog.find((p) => p.sku === line.sku);
-      requireValue(p && integer(p.prices[market.country], 1), 'product_unavailable', 409);
+      requireValue(
+        p && p.enabled !== false && integer(p.prices[market.country], 1),
+        'product_unavailable',
+        409,
+      );
       return {
         ...line,
-        title: p.title,
+        title: p.titles?.[market.country] || p.title,
         unitAmount: p.prices[market.country],
         lineAmount: p.prices[market.country] * line.quantity,
         package: p.package,
       };
     });
+    for (const line of lines) {
+      const product = catalog.find((p) => p.sku === line.sku);
+      if (product.addonFor)
+        requireValue(
+          line.quantity <=
+            lines
+              .filter(
+                (l) =>
+                  product.addonFor.includes(l.sku) &&
+                  !catalog.find((p) => p.sku === l.sku)?.addonFor,
+              )
+              .reduce((n, l) => n + l.quantity, 0),
+          'addon_requires_kit',
+        );
+    }
     // Delivery selectors are authoritative configured methods; no arbitrary browser tariff.
     const delivery = market.delivery.find((d) => d.id === input.deliveryId);
-    requireValue(delivery && integer(delivery.amount, 0), 'delivery_not_enabled');
-    const amount = priced.reduce((a, l) => a + l.lineAmount, delivery.amount);
+    requireValue(
+      delivery && delivery.enabled !== false && integer(delivery.amount, 0),
+      'delivery_not_enabled',
+    );
+    let deliveryAmount = delivery.amount,
+      deliveryLabel = delivery.label,
+      providerServiceId;
+    if (delivery.pricing === 'carrier') {
+      if (options.draftDelivery === true) deliveryAmount = 0;
+      else {
+        requireValue(identifier(input.deliveryQuoteId), 'delivery_quote_required');
+        const row = await this.one(
+          'SELECT * FROM buyer_delivery_quotes WHERE store_id=? AND id=?',
+          id,
+          input.deliveryQuoteId,
+        );
+        requireValue(
+          row &&
+            row.environment === environment &&
+            row.expires_at > this.now() &&
+            row.request_hash === (await deliveryFingerprint(input)),
+          'delivery_quote_conflict',
+          409,
+        );
+        const q = JSON.parse(row.payload_json);
+        requireValue(
+          q.accountRef === store.shippingAccountRef &&
+            q.public.currency === market.currency &&
+            q.itemsHash === (await digest(canonical(priced))),
+          'delivery_quote_conflict',
+          409,
+        );
+        deliveryAmount = q.public.amount;
+        deliveryLabel = q.public.label;
+        providerServiceId = q.providerServiceId;
+      }
+    }
+    const amount = priced.reduce((a, l) => a + l.lineAmount, deliveryAmount);
     requireValue(integer(amount, 1), 'invalid_total');
-    return {
+    const quotedSnapshot = {
       schemaVersion: 1,
       storeId: id,
       environment,
@@ -191,12 +250,14 @@ export class CommerceService {
       lines: priced,
       delivery: {
         id: delivery.id,
-        amount: delivery.amount,
-        label: delivery.label,
+        amount: deliveryAmount,
+        label: deliveryLabel,
+        ...(providerServiceId ? { providerServiceId, quoteId: input.deliveryQuoteId } : {}),
         kind: delivery.kind || 'door',
       },
       amount,
     };
+    return { ...quotedSnapshot, quoteHash: await digest(canonical(quotedSnapshot)) };
   }
   async createOrder(id, environment, input, key, clientToken) {
     requireValue(input && typeof input === 'object' && !Array.isArray(input), 'invalid_payload');
@@ -216,6 +277,16 @@ export class CommerceService {
       key,
     );
     const priorSnapshot = existing ? JSON.parse(existing.snapshot_json) : null;
+    if (
+      (existing ? priorSnapshot.termsAcceptance !== undefined : config.requireTerms === true) ||
+      input.acceptedPolicyVersion !== undefined
+    ) {
+      const version =
+        priorSnapshot?.policyVersion ||
+        config.markets.find((m) => m.country === input.country && m.currency === input.currency)
+          ?.policyVersion;
+      requireValue(input.acceptedPolicyVersion === version, 'terms_acceptance_required');
+    }
     const method =
       priorSnapshot?.delivery.id === input.deliveryId
         ? {
@@ -237,7 +308,12 @@ export class CommerceService {
         country: input.country,
         currency: input.currency,
         deliveryId: input.deliveryId,
+        ...(input.deliveryQuoteId !== undefined ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
         accessHash: clientHash,
+        ...(input.quoteHash !== undefined ? { quoteHash: input.quoteHash } : {}),
+        ...(input.acceptedPolicyVersion !== undefined
+          ? { acceptedPolicyVersion: input.acceptedPolicyVersion }
+          : {}),
         ...(customer
           ? {
               customer: customer.locker
@@ -255,10 +331,17 @@ export class CommerceService {
       return { order: this.view(existing), replayed: true };
     }
     const snapshot = await this.quote(id, environment, input);
+    if (config.requireQuote === true || input.quoteHash !== undefined)
+      requireValue(input.quoteHash === snapshot.quoteHash, 'quote_price_changed', 409);
     if (customer) {
       snapshot.schemaVersion = 2;
       snapshot.customer = customer;
     }
+    if (input.acceptedPolicyVersion !== undefined)
+      snapshot.termsAcceptance = {
+        policyVersion: input.acceptedPolicyVersion,
+        acceptedAt: this.now(),
+      };
     const orderId = crypto.randomUUID(),
       token = clientToken ?? crypto.randomUUID() + crypto.randomUUID(),
       at = this.now();
@@ -426,6 +509,13 @@ export class CommerceService {
     );
     requireValue(identifier(event.id), 'invalid_payment_event');
     const hash = await digest(canonical(event));
+    const otherPaidOrder = await this.one(
+      'SELECT id FROM orders WHERE store_id=? AND payment_id=? AND id!=?',
+      store,
+      event.paymentId,
+      order.id,
+    );
+    requireValue(!otherPaidOrder, 'payment_conflict', 409);
     const prior = await this.one(
       "SELECT payload_hash FROM event_inbox WHERE store_id=? AND provider='stripe' AND event_id=?",
       store,
@@ -477,6 +567,12 @@ export class CommerceService {
         );
         if (done?.payload_hash === hash)
           return { replayed: true, order: await this.getOrder(store, environment, order.id) };
+        if (
+          String(error.message).includes(
+            'UNIQUE constraint failed: orders.store_id, orders.payment_id',
+          )
+        )
+          throw new CommerceError('payment_conflict', 409);
         throw error;
       }
       await this.db.batch([
@@ -503,7 +599,12 @@ export class CommerceService {
     requireValue(current.payment_id === event.paymentId, 'payment_conflict', 409);
     return { replayed: false, order: current };
   }
-  async markPacked(store, environment, id) {
+  async markPacked(store, environment, id, actorRef) {
+    requireValue(
+      environment === 'sandbox' || identifier(actorRef),
+      'operator_identity_required',
+      403,
+    );
     const order = await this.getOrder(store, environment, id);
     requireValue(
       order.payment_state === 'paid' &&
@@ -519,7 +620,7 @@ export class CommerceService {
         store,
         id,
       ),
-      ...this.event(store, 'PackingConfirmed', id),
+      ...this.event(store, 'PackingConfirmed', id, actorRef ? { actorRef } : {}),
     ]);
     return this.getOrder(store, environment, id);
   }

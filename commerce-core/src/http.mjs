@@ -9,6 +9,12 @@ import { DocumentFiles } from './document-pdf.mjs';
 import { ShipmentCommands } from './shipment-commands.mjs';
 import { CommerceJobs } from './jobs.mjs';
 import { documentPolicy } from './admission.mjs';
+import { FinanceIO } from './finance-io.mjs';
+import { CatalogOperations } from './catalog.mjs';
+import { BuyerDeliveryQuotes } from './buyer-delivery.mjs';
+import { ReturnOperations } from './returns.mjs';
+import { CustomerNotifications } from './notifications.mjs';
+import { PaymentDisputes } from './disputes.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -48,19 +54,32 @@ export function createHandler({
   paymentAdapters = {},
   shippingAdapters = {},
   shippingReadAdapters = {},
+  notificationAdapters = {},
+  publicAbuseGuard,
   privateStorage,
   loadDocumentFont,
   operatorAuthorize,
 }) {
   const operations = new CommerceOperations(service);
   const backoffice = new Backoffice(service);
-  const wholesale = new Wholesale(service);
+  const wholesale = new Wholesale(service, { shippingReadAdapters });
   const refunds = new RefundCommands(service);
   const shipping = new ShippingOperations(service);
   const files = new PrivateFiles(service, privateStorage);
   const documentFiles = new DocumentFiles(service, privateStorage, loadDocumentFont);
   const shipmentCommands = new ShipmentCommands(service, privateStorage);
-  const jobs = new CommerceJobs(service, { privateStorage, loadDocumentFont, shippingAdapters });
+  const jobs = new CommerceJobs(service, {
+    privateStorage,
+    loadDocumentFont,
+    shippingAdapters,
+    notificationAdapters,
+  });
+  const notifications = new CustomerNotifications(service, notificationAdapters);
+  const financeIO = new FinanceIO(service);
+  const catalogOperations = new CatalogOperations(service);
+  const buyerDeliveryQuotes = new BuyerDeliveryQuotes(service);
+  const returns = new ReturnOperations(service);
+  const disputes = new PaymentDisputes(service);
   const pdfResponse = (result) =>
     new Response(result.bytes, {
       headers: {
@@ -78,7 +97,8 @@ export function createHandler({
     const paymentConnected = Boolean(
       payment &&
       payment.environment === environment &&
-      payment.accountRef === store.paymentAccountRef,
+      payment.accountRef === store.paymentAccountRef &&
+      (typeof payment.isReady !== 'function' || (await payment.isReady()) === true),
     );
     const shippingConnected = Boolean(
       carrier &&
@@ -100,7 +120,22 @@ export function createHandler({
       store.operationalAdmission?.approved === true &&
       paymentConnected &&
       shippingConnected &&
-      Boolean(privateStorage);
+      Boolean(privateStorage) &&
+      Boolean(publicAbuseGuard);
+    const eligibleCountries = productionReady
+      ? store.markets
+          .filter(
+            (m) =>
+              m.checkoutEnabled !== false &&
+              m.delivery.some(
+                (d) =>
+                  d.enabled !== false &&
+                  (d.pricing !== 'carrier' ||
+                    shippingReadAdapters[store.id]?.accountRef === store.shippingAccountRef),
+              ),
+          )
+          .map((m) => m.country)
+      : [];
     return {
       schemaVersion: 1,
       storeId: store.id,
@@ -112,7 +147,8 @@ export function createHandler({
       documentReady,
       shippingQuotesConnected: Boolean(shippingReadAdapters[store.id]),
       productionReady,
-      publishOffers: productionReady,
+      publishOffers: productionReady && eligibleCountries.length > 0,
+      eligibleCountries,
       canCreateTestOrder: environment === 'sandbox' && store.testOnly === true,
       fixtureCheckout:
         environment === 'sandbox' && store.testOnly === true && payment?.fixture === true,
@@ -127,6 +163,24 @@ export function createHandler({
         requireValue(!origin || origin === url.origin, 'origin_forbidden', 403);
       }
       const path = url.pathname;
+      if (
+        request.method === 'POST' &&
+        ['/api/quote', '/api/delivery-quotes', '/api/orders'].includes(path)
+      ) {
+        requireValue(
+          environment !== 'production' || publicAbuseGuard,
+          'public_guard_not_configured',
+          503,
+        );
+        if (publicAbuseGuard)
+          await publicAbuseGuard(
+            request,
+            store,
+            { '/api/quote': 'quote', '/api/delivery-quotes': 'delivery', '/api/orders': 'order' }[
+              path
+            ],
+          );
+      }
       if (request.method === 'GET' && path === '/api/storefront-context')
         return json(await context(store));
       const read = async () => {
@@ -152,12 +206,102 @@ export function createHandler({
       };
       if (request.method === 'GET' && path === '/api/markets')
         return json(await operations.markets(store.id, environment));
+      if (request.method === 'POST' && path === '/api/delivery-quotes')
+        return json(
+          await buyerDeliveryQuotes.create(
+            store.id,
+            environment,
+            await read(),
+            shippingReadAdapters[store.id],
+          ),
+        );
       if (path.startsWith('/api/operator/')) {
+        const financialOriginal = path.match(
+          /^\/api\/operator\/financial-files\/([a-zA-Z0-9_-]+)$/,
+        );
+        if (financialOriginal && request.method === 'GET') {
+          await authorize('finance');
+          return json(await financeIO.original(store.id, environment, financialOriginal[1]));
+        }
+        const partnerCheckout = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/wholesale-checkout$/,
+        );
+        if (partnerCheckout && request.method === 'POST') {
+          const actor = await authorize('wholesale');
+          requireValue(
+            await service.one(
+              'SELECT order_id FROM wholesale_orders WHERE store_id=? AND order_id=?',
+              store.id,
+              partnerCheckout[1],
+            ),
+            'wholesale_order_required',
+            404,
+          );
+          if (environment === 'production')
+            requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
+          const adapter = paymentAdapters[store.id];
+          requireValue(
+            adapter &&
+              adapter.accountRef === store.paymentAccountRef &&
+              adapter.environment === environment,
+            'stripe_not_connected',
+            503,
+          );
+          const session = await service.checkout(
+            store.id,
+            environment,
+            partnerCheckout[1],
+            adapter,
+          );
+          await service.db.batch(
+            service.event(store.id, 'WholesaleCheckoutPrepared', partnerCheckout[1], {
+              actorRef: actor.id,
+            }),
+          );
+          return json(session);
+        }
+        const mailCommand = path.match(
+          /^\/api\/operator\/notifications\/([a-zA-Z0-9_-]+)(?:\/(execute))?$/,
+        );
+        if (mailCommand && request.method === 'GET') {
+          await authorize('read');
+          return json(await notifications.preview(store.id, environment, mailCommand[1]));
+        }
+        if (mailCommand?.[2] === 'execute' && request.method === 'POST') {
+          const actor = await authorize('operate');
+          return json(await notifications.execute(store.id, environment, mailCommand[1], actor.id));
+        }
+        const receiveReturn = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/return-receipts$/,
+        );
+        const unshipped = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/cancel-unshipped$/,
+        );
+        if (unshipped && request.method === 'POST') {
+          const actor = await authorize('stock');
+          return json(
+            await returns.cancelUnshipped(
+              store.id,
+              environment,
+              unshipped[1],
+              await read(),
+              actor.id,
+            ),
+          );
+        }
+        if (receiveReturn && request.method === 'POST') {
+          const actor = await authorize('stock');
+          return json(
+            await returns.receive(store.id, environment, receiveReturn[1], await read(), actor.id),
+          );
+        }
         const reads = {
           '/api/operator/components': () => backoffice.inventory(store.id, environment),
           '/api/operator/financials': () => backoffice.financials(store.id, environment),
           '/api/operator/wholesale': () => wholesale.overview(store.id, environment),
           '/api/operator/automation': () => jobs.overview(store.id, environment),
+          '/api/operator/catalog': () => catalogOperations.list(store.id, environment),
+          '/api/operator/disputes': () => disputes.list(store.id, environment),
         };
         if (request.method === 'GET' && reads[path]) {
           await authorize('read');
@@ -201,6 +345,25 @@ export function createHandler({
             'finance',
             (input, actor) => backoffice.importSources(store.id, environment, input, actor),
           ],
+          '/api/operator/financial-csv': [
+            'finance',
+            (input, actor) => financeIO.import(store.id, environment, input, actor),
+          ],
+          '/api/operator/financial-stripe': [
+            'finance',
+            (input, actor) =>
+              financeIO.importStripe(
+                store.id,
+                environment,
+                input,
+                paymentAdapters[store.id],
+                actor,
+              ),
+          ],
+          '/api/operator/catalog-revisions': [
+            'catalog',
+            (input, actor) => catalogOperations.revise(store.id, environment, input, actor),
+          ],
           '/api/operator/reconciliations': [
             'finance',
             (input, actor) => backoffice.reconcile(store.id, environment, input, actor),
@@ -230,6 +393,34 @@ export function createHandler({
         if (request.method === 'POST' && path === '/api/operator/automation/run') {
           await authorize('operate');
           return json(await jobs.scheduled(store.id, environment));
+        }
+        const financialExport = path.match(
+          /^\/api\/operator\/financial-exports\/(financials|documents|journals)$/,
+        );
+        if (financialExport && request.method === 'GET') {
+          await authorize('finance');
+          const result = await financeIO.export(
+            store.id,
+            environment,
+            financialExport[1],
+            url.searchParams.has('from') || url.searchParams.has('to')
+              ? {
+                  from: url.searchParams.has('from')
+                    ? Number(url.searchParams.get('from'))
+                    : undefined,
+                  to: url.searchParams.has('to') ? Number(url.searchParams.get('to')) : undefined,
+                }
+              : {},
+          );
+          return new Response(result.text, {
+            headers: {
+              'content-type': 'text/csv; charset=utf-8',
+              'content-disposition': 'attachment; filename="' + result.filename + '"',
+              'cache-control': 'no-store',
+              'x-robots-tag': 'noindex, nofollow',
+              'x-content-type-options': 'nosniff',
+            },
+          });
         }
         const retryJob = path.match(/^\/api\/operator\/automation\/([a-zA-Z0-9_-]+)\/retry$/);
         if (request.method === 'POST' && retryJob) {
@@ -292,6 +483,8 @@ export function createHandler({
                 ? await shipping.detail(store.id, environment, order.id)
                 : undefined,
             refundCommands: await refunds.list(store.id, environment, order.id),
+            returnReceipts: await returns.list(store.id, environment, order.id),
+            disputes: await disputes.list(store.id, environment, order.id),
             shipmentCommands: await shipmentCommands.list(store.id, environment, order.id),
             tracking: (
               await service.rows(
@@ -514,7 +707,9 @@ export function createHandler({
           request.headers.get('stripe-signature'),
         );
         if (event) {
-          if (event.kind === 'refund') {
+          if (event.kind === 'dispute') {
+            await disputes.accept(store.id, environment, event);
+          } else if (event.kind === 'refund') {
             await operations.acceptRefundEvent(store.id, environment, event);
             await refunds.observe(store.id, environment, event);
           } else {
@@ -597,9 +792,9 @@ export function createHandler({
       }
       const admin = path.match(/^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/(pack|ship)$/);
       if (request.method === 'POST' && admin) {
-        await authorize(admin[2]);
+        const actor = await authorize(admin[2]);
         if (admin[2] === 'pack')
-          return json(await service.markPacked(store.id, environment, admin[1]));
+          return json(await service.markPacked(store.id, environment, admin[1], actor.id));
         requireValue(shippingAdapters[store.id], 'shipping_not_connected', 503);
         return json(
           await service.registerShipment(

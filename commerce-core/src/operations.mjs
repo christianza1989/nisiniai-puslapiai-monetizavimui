@@ -20,7 +20,8 @@ export class CommerceOperations {
         country: m.country,
         currency: m.currency,
         policyVersion: m.policyVersion,
-        delivery: m.delivery,
+        checkoutEnabled: m.checkoutEnabled !== false,
+        delivery: m.checkoutEnabled === false ? [] : m.delivery.filter((d) => d.enabled !== false),
       })),
     };
   }

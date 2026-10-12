@@ -8,8 +8,13 @@ import {
   customerSnapshot,
 } from './validation.mjs';
 import { Backoffice } from './backoffice.mjs';
+import { BuyerDeliveryQuotes } from './buyer-delivery.mjs';
 const hash = (p) => digest(canonical(p));
 export class Wholesale extends Backoffice {
+  constructor(service, { shippingReadAdapters = {} } = {}) {
+    super(service);
+    this.shippingReadAdapters = shippingReadAdapters;
+  }
   async priceList(store, env, input, actor) {
     await this.guard(store, env, actor);
     requireValue(
@@ -120,6 +125,7 @@ export class Wholesale extends Backoffice {
         partnerId: input.partnerId,
         lines: input.lines,
         deliveryId: input.deliveryId,
+        ...(input.deliveryQuoteId ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
       },
       h = await hash(request);
     const old = await this.s.one(
@@ -145,12 +151,29 @@ export class Wholesale extends Backoffice {
     );
     requireValue(list?.currency === partner.currency, 'partner_price_list_mismatch');
     const prices = JSON.parse(list.definition_json).lines;
-    const snapshot = await this.s.quote(store, env, {
+    const customer = JSON.parse(partner.customer_json);
+    const quoteInput = {
       lines: input.lines,
       country: partner.country,
       currency: partner.currency,
       deliveryId: input.deliveryId,
-    });
+      customer,
+      ...(input.deliveryQuoteId ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
+    };
+    const config = await this.s.store(store, env),
+      method = config.markets
+        .find((m) => m.country === partner.country)
+        ?.delivery.find((d) => d.id === input.deliveryId);
+    if (method?.pricing === 'carrier' && !input.deliveryQuoteId) {
+      const rate = await new BuyerDeliveryQuotes(this.s).create(
+        store,
+        env,
+        { ...quoteInput, id: 'b2b_' + h },
+        this.shippingReadAdapters[store],
+      );
+      quoteInput.deliveryQuoteId = rate.id;
+    }
+    const snapshot = await this.s.quote(store, env, quoteInput);
     requireValue(snapshot.delivery.kind !== 'locker', 'wholesale_door_delivery_required');
     for (const l of snapshot.lines) {
       const p = prices.find((p) => p.sku === l.sku);
@@ -175,6 +198,8 @@ export class Wholesale extends Backoffice {
       priceListHash: list.payload_hash,
       paymentTerms: 'prepaid',
     };
+    delete snapshot.quoteHash;
+    snapshot.quoteHash = await hash(snapshot);
     const at = this.s.now();
     try {
       await this.s.db.batch([
@@ -337,6 +362,7 @@ export class Wholesale extends Backoffice {
         partnerId: row.partner_id,
         lines: snapshot.lines.map((l) => ({ sku: l.sku, quantity: l.quantity })),
         deliveryId: snapshot.delivery.id,
+        ...(input.deliveryQuoteId ? { deliveryQuoteId: input.deliveryQuoteId } : {}),
       },
       actor,
     );

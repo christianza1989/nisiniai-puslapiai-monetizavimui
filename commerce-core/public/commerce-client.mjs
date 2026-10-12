@@ -70,6 +70,9 @@ export class CommerceClient {
   quote(input) {
     return this.request('/api/quote', { body: input });
   }
+  deliveryQuote(input) {
+    return this.request('/api/delivery-quotes', { body: { ...input, id: crypto.randomUUID() } });
+  }
   persist() {
     // If tab storage is unavailable, stop before a mutation; a lost response
     // must remain retryable with exactly the same key and access credential.
@@ -123,7 +126,12 @@ export class CommerceClient {
         !this.attempt?.orderId &&
         ([400, 403, 422].includes(error.status) ||
           (error.status === 409 &&
-            ['stock_unavailable', 'product_unavailable'].includes(error.message)))
+            [
+              'stock_unavailable',
+              'product_unavailable',
+              'quote_price_changed',
+              'delivery_quote_conflict',
+            ].includes(error.message)))
       ) {
         this.storage.removeItem(this.key);
         this.attempt = undefined;

@@ -25,7 +25,9 @@ export function documentPolicy(config, environment) {
     p?.approved === true &&
       p.mode === 'invoice_non_vat' &&
       p.timeZone === 'Europe/Vilnius' &&
-      ['sale', 'credit', 'packing'].every((k) => identifier(p.series?.[k])) &&
+      ['sale', 'credit', 'packing'].every(
+        (k) => identifier(p.series?.[k]) && p.series[k].length <= 16,
+      ) &&
       new Set(Object.values(p.series)).size === 3 &&
       legal?.vatRegistered === false &&
       /^\d{9}$/.test(legal.companyCode) &&

@@ -69,8 +69,11 @@ export function renderPrivateFiles(content, detail, ctx) {
           .normalize('NFKD')
           .replace(/[\u0300-\u036f]/g, '')
           .replace(/[^A-Za-z0-9_.-]/g, '_')
-          .slice(0, 95);
+          .replace(/\.pdf$/i, '')
+          .slice(0, 90);
         if (!filename.toLowerCase().endsWith('.pdf')) filename += '.pdf';
+        else filename = filename.replace(/\.pdf$/i, '.pdf');
+        if (!/^[A-Za-z0-9_-]/.test(filename)) filename = 'file_' + filename;
         await binary('/api/operator/orders/' + detail.order.id + '/files/' + id, {
           method: 'POST',
           headers: { 'content-type': 'application/pdf', 'x-file-name': filename },

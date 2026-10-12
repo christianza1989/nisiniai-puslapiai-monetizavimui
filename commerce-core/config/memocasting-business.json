@@ -1,5 +1,6 @@
 {
   "schemaVersion": 1,
+  "amountUnit": "EUR_cents",
   "source": "Owner messages, 2026-10-12",
   "legal": {
     "name": "MB Memocasting",

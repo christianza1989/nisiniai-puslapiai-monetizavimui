@@ -13,6 +13,12 @@ import { Wholesale } from '../src/wholesale.mjs';
 import { ShippingOperations } from '../src/shipping.mjs';
 import { ShipmentCommands } from '../src/shipment-commands.mjs';
 import { R2PrivateStorage } from '../src/private-storage.mjs';
+import { CatalogOperations } from '../src/catalog.mjs';
+import { BuyerDeliveryQuotes } from '../src/buyer-delivery.mjs';
+import { ReturnOperations } from '../src/returns.mjs';
+import { PublicAbuseGuard } from '../src/public-guard.mjs';
+import { CustomerNotifications } from '../src/notifications.mjs';
+import { CommerceJobs } from '../src/jobs.mjs';
 import {
   foundationStore,
   foundationProducts,
@@ -48,6 +54,9 @@ const options = {
           'private-files-ui.mjs',
           'shipment-commands-ui.mjs',
           'jobs-ui.mjs',
+          'catalog-ui.mjs',
+          'finance-io-ui.mjs',
+          'returns-ui.mjs',
           'commerce.html',
           'commerce-client.mjs',
           'checkout-ui.mjs',
@@ -987,6 +996,99 @@ try {
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
   assert.ok(nativeJobs > 0, 'native Queue must actually dispatch the worker job consumer');
+  const newest = new CommerceService(db);
+  const nativeCatalog = new CatalogOperations(newest),
+    originalSku = (await nativeCatalog.list(nativeStore, 'sandbox')).find(
+      (p) => p.sku === 'couple',
+    );
+  await nativeCatalog.revise(
+    nativeStore,
+    'sandbox',
+    {
+      id: 'native_revision',
+      basisHash: originalSku.basisHash,
+      definition: { ...originalSku, enabled: true, title: 'TEST native revised kit' },
+    },
+    'fixture_operator',
+  );
+  assert.equal(
+    (await nativeCatalog.list(nativeStore, 'sandbox')).find((p) => p.sku === 'couple').title,
+    'TEST native revised kit',
+  );
+  const dynamicInput = {
+    country: 'LT',
+    currency: 'EUR',
+    deliveryId: 'fixture_dynamic',
+    lines: [{ sku: 'couple', quantity: 1 }],
+    customer: {
+      name: 'Fixture Buyer',
+      email: 'buyer@example.test',
+      phone: '+37060000000',
+      address: { country: 'LT', line1: 'Test g. 1', city: 'Vilnius', postalCode: '02211' },
+    },
+  };
+  const publicRate = await new BuyerDeliveryQuotes(newest).create(
+    nativeStore,
+    'sandbox',
+    { ...dynamicInput, id: 'native_buyer_rate' },
+    nativeCarrier,
+  );
+  assert.equal(
+    (
+      await newest.quote(nativeStore, 'sandbox', {
+        ...dynamicInput,
+        deliveryQuoteId: publicRate.id,
+      })
+    ).delivery.amount,
+    799,
+  );
+  const guard = new PublicAbuseGuard(newest, 'fixture_native_salt_12345678901234567890');
+  await guard.allow(
+    new Request('https://fixture.example', { headers: { 'cf-connecting-ip': '192.0.2.3' } }),
+    { id: nativeStore },
+    'quote',
+  );
+  const returned = await new ReturnOperations(newest).receive(
+    nativeStore,
+    'sandbox',
+    nativeOrder.id,
+    {
+      id: 'native_return',
+      reason: 'TEST inspected return',
+      lines: nativeOrder.snapshot.lines.map((l) => ({
+        sku: l.sku,
+        quantity: l.quantity,
+        disposition: 'resalable',
+        expiryChecked: true,
+      })),
+    },
+    'fixture_operator',
+  );
+  assert.ok(returned);
+  const mailEvent = await newest.one(
+    "SELECT * FROM outbox WHERE store_id=? AND aggregate_id=? AND kind='OrderPlaced'",
+    nativeStore,
+    nativeOrder.id,
+  );
+  await new CommerceJobs(newest).notification(nativeStore, 'sandbox', mailEvent);
+  let nativeMailCalls = 0;
+  const mail = new CustomerNotifications(newest, {
+    [nativeStore]: {
+      environment: 'sandbox',
+      accountRef: 'fixture_core_mail',
+      sender: 'fixture@example.test',
+      send: async () => {
+        nativeMailCalls++;
+        return { status: 'accepted', reference: 'LOCAL NATIVE MAIL ACCEPTANCE' };
+      },
+    },
+  });
+  assert.equal(
+    (await mail.execute(nativeStore, 'sandbox', mailEvent.id, 'fixture_operator')).state,
+    'accepted',
+  );
+  await mail.execute(nativeStore, 'sandbox', mailEvent.id, 'fixture_operator');
+  assert.equal(nativeMailCalls, 1);
   await mf.dispose();
   mf = undefined;
   await start('src/worker.mjs', { COMMERCE_ENV: 'production' });

@@ -95,3 +95,20 @@ POST /api/operator/lot-controls reikia serverio stock teisės. Body: id,lotId,ki
 Pakartotas tas pats id ir payload grąžina tą pačią kontrolę; pakeistas payload —409. Likutis ir versija tikrinami SQL transakcijoje; kiekio/neigiamos sumos/stale/būsenos konfliktas409. Kontrolė, pirminis priėmimas ir actor/reason istorija nekintantys. Surinkimas padidina partijos versiją, todėl sena inventorizacija negali perrašyti naujo sunaudojimo. Partijos išleidimas iš karantino nepakeičia expiresAt: expired vis tiek netinka. Surinkimo transakcijos triggeris dar kartą tikrina karantiną ir galiojimą pagal assembly timestamp; sustabdžius partiją tarp pasirinkimo ir batch gatavas SKU, lot lines ir audit visi rollback.
 
 UI skaičiuotą likutį paverčia delta nuo matyto serverio likučio.0korekcija atmetama; po konflikto reikia atnaujinto sąrašo ir naujo veiksmo. Kontrolė dar nėra platesnis laboratorinis kokybės/certification, supplier recalls ar naujas galiojimo datos keitimas.
+
+## Siuntų paruošimas — 0.6
+
+Visiems POST reikia operatoriaus ship teisės, serverio store, tos pačios Origin
+ir sandbox/testOnly. Actor nepriimamas iš body.
+
+- POST /api/operator/shipping-origins: id,country(LT),city,postalCode,isCompany(boolean),reason.
+- POST /api/operator/orders/:id/shipping-plans: id,originId,recipientIsCompany(boolean),mode(individual/measured). Measured papildomai parcels[{weightGrams,dimensionsMm[3],lines[{sku,quantity}]}],measurementNote. Turinys privalo tiksliai padengti apmokėtą/allocated order.
+- POST /api/operator/shipping-plans/:id/quotes: id. Serverio shippingReadAdapters parenka provider/account/environment. Tik EUR; provider kainos nepakeičia mokėjimo/pristatymo.
+- POST /api/operator/shipping-lockers: id,country,courier(dpd/posti/unisend/novaPost/omniva/venipak). Privatus immutable snapshot; ne viešo pristatymo allowlist atnaujinimas.
+- GET /api/operator/orders/:id papildomai shippingPreparation{origins(100),plans(30),quotes(30),bookingAvailable:false}. Reikia read teisės.
+
+Naujo įrašo/replay atsakymas: record,replayed. Turinio konfliktas409; nėra
+API prieigos503; netinkama būsena409. Same ID query replay nesiunčia dar vienos
+provider užklausos. Kitas ID reiškia naują kainos įvertinimą. Provider expiry
+šiuo protokolu nežinomas. PDF/tracking adapterio metodai dar neturi operatoriaus
+HTTP/saugyklos integracijos. [Kvitas](CONTINUATION_2026_10_12_SHIPPING.md).

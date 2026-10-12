@@ -5,12 +5,14 @@ import { NodeDatabase } from '../src/node-db.mjs';
 import { CommerceService } from '../src/service.mjs';
 import { createHandler } from '../src/http.mjs';
 import { localOperatorAuthorize } from '../src/local-identity.mjs';
-import { fixtureStore, fixtureProducts } from '../test/fixtures.mjs';
+import { fixtureStore, fixtureProducts, fixtureShippingRead } from '../test/fixtures.mjs';
 import { localStripeSandbox } from '../src/local-stripe.mjs';
+import { localShippingSandbox } from '../src/local-shipping.mjs';
 import { requireValue } from '../src/validation.mjs';
 const args = process.argv.slice(2),
   portIndex = args.indexOf('--port'),
-  stripeIndex = args.indexOf('--stripe-sandbox');
+  stripeIndex = args.indexOf('--stripe-sandbox'),
+  shippingIndex = args.indexOf('--shipping-sandbox');
 const port = portIndex < 0 ? 8795 : Number(args[portIndex + 1]);
 requireValue(
   Number.isSafeInteger(port) && port >= 1024 && port <= 65535,
@@ -18,6 +20,16 @@ requireValue(
 );
 const host = '127.0.0.1:' + port;
 const stripe = stripeIndex < 0 ? null : localStripeSandbox(args[stripeIndex + 1]);
+requireValue(
+  !(shippingIndex >= 0 && args.includes('--shipping-fixture')),
+  'shipping_configuration_conflict',
+);
+const shipping =
+  shippingIndex >= 0
+    ? localShippingSandbox(args[shippingIndex + 1])
+    : args.includes('--shipping-fixture')
+      ? fixtureShippingRead()
+      : null;
 const storeId = stripe ? 'store_stripe' : 'store_a';
 mkdirSync(new URL('../runtime/', import.meta.url), { recursive: true });
 const db = new NodeDatabase(
@@ -53,6 +65,7 @@ const handler = createHandler({
   service,
   environment: 'sandbox',
   paymentAdapters: stripe ? { [storeId]: stripe } : {},
+  shippingReadAdapters: shipping ? { [storeId]: shipping } : {},
   operatorAuthorize: localOperatorAuthorize(async () => {
     try {
       return JSON.parse(
@@ -69,6 +82,7 @@ const assets = {
   '/admin.css': ['admin.css', 'text/css; charset=utf-8'],
   '/admin.mjs': ['admin.mjs', 'text/javascript; charset=utf-8'],
   '/backoffice-ui.mjs': ['backoffice-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/shipping-ui.mjs': ['shipping-ui.mjs', 'text/javascript; charset=utf-8'],
 };
 createServer(async (req, res) => {
   if (req.headers.host !== host) {

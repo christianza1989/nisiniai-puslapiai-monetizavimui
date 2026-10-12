@@ -499,6 +499,85 @@ try {
     wholesale.accept('store_a', 'sandbox', 'quote_d1', actor),
   ]);
   assert.equal(new Set(accepted.map((r) => r.order.id)).size, 1);
+  await service.checkout('store_a', 'sandbox', accepted[0].order.id, {
+    createSession: async () => ({
+      id: 'cs_shipping_d1',
+      url: 'https://checkout.stripe.test/shipping',
+    }),
+  });
+  await service.acceptPayment(
+    'store_a',
+    'sandbox',
+    payment(
+      await service.getOrder('store_a', 'sandbox', accepted[0].order.id),
+      'store_a',
+      'evt_shipping_d1',
+    ),
+  );
+  const shippingHeaders = { 'x-fixture-operator': 'store_a' };
+  assert.equal(
+    (
+      await dispatch(
+        'store-a.example',
+        '/api/operator/shipping-origins',
+        'POST',
+        {
+          id: 'origin_d1',
+          country: 'LT',
+          city: 'Vilnius',
+          postalCode: '02211',
+          isCompany: true,
+          reason: 'Patvirtinta testinė vieta',
+        },
+        shippingHeaders,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await dispatch(
+        'store-a.example',
+        '/api/operator/orders/' + accepted[0].order.id + '/shipping-plans',
+        'POST',
+        { id: 'plan_d1', originId: 'origin_d1', mode: 'individual', recipientIsCompany: true },
+        shippingHeaders,
+      )
+    ).status,
+    200,
+  );
+  const shippingQuote = await dispatch(
+    'store-a.example',
+    '/api/operator/shipping-plans/plan_d1/quotes',
+    'POST',
+    { id: 'shipping_quote_d1' },
+    shippingHeaders,
+  );
+  assert.equal(shippingQuote.status, 200);
+  assert.equal((await shippingQuote.json()).record.payload.offers[0].amount, 799);
+  const shippingReplay = await dispatch(
+    'store-a.example',
+    '/api/operator/shipping-plans/plan_d1/quotes',
+    'POST',
+    { id: 'shipping_quote_d1' },
+    shippingHeaders,
+  );
+  assert.equal((await shippingReplay.json()).replayed, true);
+  await assert.rejects(
+    service.stmt('UPDATE shipping_quotes SET payload_json=?', '{}').run(),
+    /shipping_record_immutable/,
+  );
+  const shippingDetail = await dispatch(
+    'store-a.example',
+    '/api/operator/orders/' + accepted[0].order.id,
+    'GET',
+    undefined,
+    shippingHeaders,
+  );
+  assert.equal(
+    (await shippingDetail.json()).shippingPreparation.plans[0].payload.parcels.length,
+    2,
+  );
   const pause = { id: 'pause_d1', partnerId: 'partner', expectedVersion: 0, approved: false };
   await wholesale.approval('store_a', 'sandbox', pause, actor);
   assert.equal((await wholesale.approval('store_a', 'sandbox', pause, actor)).replayed, true);

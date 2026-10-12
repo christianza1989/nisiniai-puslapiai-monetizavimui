@@ -1,4 +1,5 @@
 import { renderBackoffice } from './backoffice-ui.mjs';
+import { renderShipping } from './shipping-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -36,6 +37,21 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  invalid_shipping_plan: 'Pasirinkite siuntėjo vietą ir patikrinkite gavėjo bei pakuotės duomenis.',
+  invalid_shipping_origin:
+    'Įrašykite miestą, penkių skaitmenų Lietuvos pašto kodą ir vietos patvirtinimo paaiškinimą.',
+  invalid_parcel_dimensions: 'Įrašykite teigiamą svorį ir visus tris tikrus dėžės matmenis.',
+  invalid_parcel_measurement: 'Įrašykite tikrus matavimus ir bent 3 simbolių jų paaiškinimą.',
+  shipping_plan_not_allowed:
+    'Pakuotės planui reikia apmokėto užsakymo su paskirtomis prekėmis. Atnaujinkite užsakymą.',
+  shipment_customer_missing:
+    'Užsakyme trūksta pristatymo adreso. Pirma išspręskite gavėjo duomenis.',
+  carrier_quotes_not_connected: 'Vežėjo kainų API neprijungta. Pakuotės planas išsaugotas.',
+  carrier_currency_not_supported:
+    'Šis kainų adapteris palaiko EUR. Reikia atskiros valiutos tvarkymo politikos.',
+  carrier_request_failed: 'Vežėjas nepriėmė užklausos. Patikrinkite bandymų prieigą.',
+  carrier_transport_failed: 'Vežėjas neatsakė. Pakartokite tą pačią kainų užklausą.',
+  carrier_offer_invalid: 'Vežėjo kainų duomenys neatitinka sutarties. Pasiūlymas neišsaugotas.',
   invalid_refund_command: 'Įrašykite teigiamą sumą ir bent 3 simbolių priežastį.',
   refund_budget_conflict:
     'Ši suma viršija likusią grąžintiną sumą. Atnaujinkite užsakymą ir patikrinkite jau paruoštas užduotis.',
@@ -529,6 +545,19 @@ function renderOrder(content, detail) {
   if (!detail.documents.length)
     content.append(node('p', { class: 'empty' }, 'Šiam užsakymui dar nesuformuota dokumentų.'));
   else content.append(documentTable(detail.documents));
+  if (detail.shippingPreparation)
+    renderShipping(content, detail, {
+      node,
+      table,
+      cell,
+      api,
+      action,
+      has,
+      money,
+      date,
+      reload,
+      integrations: state.data.integrations,
+    });
   renderRefunds(content, detail);
 }
 function renderRefunds(content, detail) {

@@ -4,6 +4,7 @@ import { CommerceService } from '../src/service.mjs';
 import { createHandler } from '../src/http.mjs';
 import { StripeCheckoutAdapter } from '../src/stripe-adapter.mjs';
 import { fixtureCarrier } from './fixtures.mjs';
+import { SendparcelAdapter } from '../src/sendparcel-adapter.mjs';
 
 const carrier = fixtureCarrier();
 export default {
@@ -37,6 +38,22 @@ export default {
       environment: 'sandbox',
       paymentAdapters,
       shippingAdapters: { store_a: carrier, store_b: carrier },
+      shippingReadAdapters: {
+        store_a: new SendparcelAdapter({
+          environment: 'sandbox',
+          accountRef: 'fixture_sendparcel',
+          accessToken: 'fixture.jwt.signature',
+          fetchImpl: async () =>
+            Response.json({
+              offers: [
+                {
+                  product: { id: 42, name: 'Fixture carrier', courier_name: 'Test' },
+                  total_price: { amount_in_cents: 799, currency: 'EUR' },
+                },
+              ],
+            }),
+        }),
+      },
       operatorAuthorize: async (req, store) =>
         req.headers.get('x-fixture-operator') === store.id
           ? {

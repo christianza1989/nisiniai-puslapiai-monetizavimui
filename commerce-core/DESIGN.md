@@ -68,6 +68,21 @@ spacing:
   small: "8px"
   medium: "16px"
   section: "24px"
+
+## Siuntų paruošimas, 2026-10-12
+
+Užsakymo detalėse išlaikoma esama Segoe UI teksto sistema ir formų ritmas.
+Nauji vaidmenys: siuntėjo vietos forma (miestas, pašto kodas, įmonės požymis),
+pakuotės pasirinkimas, tikrų matavimų laukai, išsaugoti pakuočių planai ir
+operatoriui skirti kainų pasiūlymai. Vienos bendros dėžės matavimai nekeičia
+SKU pakuotės duomenų. Kainų ir siuntos registravimo būsenos rodomos atskirai.
+
+Patikros planas: actual 1440/390/320 px; tuščias sąrašas, matavimų forma,
+netinkamo pašto kodo klaida, išsaugotas planas, neprijungto vežėjo būsena;
+klaviatūros fokusas, ilgi matavimo paaiškinimai, dvigubas tekstų mastelis ir
+spacing variantas. Naudoti esamus 16/15 px body/label vaidmenis; nepridėti
+smulkių veiksmui svarbių išimčių. Kainų sąrašas telefone persitvarko pagal
+esamą lentelių sistemą. Patikros rezultatai – tęsinio priėmimo dokumente.
   desktop: "32px"
 components:
   button-primary:

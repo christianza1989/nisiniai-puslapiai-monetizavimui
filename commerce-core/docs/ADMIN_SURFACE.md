@@ -27,3 +27,8 @@ Neišspręsta: realaus core identity binding, faktiniai vežėjo tarifai, sandbo
 0.3 toje pačioje sistemoje prideda Medžiagos (komponentas/partija/sudėtis/surinkimas), Sutikrinimas (finansinis source ir match), Didmena (kainyno versijos ir nepatvirtinto partnerio kūrimas, prekybos patvirtinimas/stabdymas, quote/accept/reorder) paviršius. Pasiūlymo prekės ir pristatymas parenkami iš partnerio kainyno bei serverio rinkos. Duomenys nėra naršyklės seed fallback. Esamo partnerio adreso ar kainyno priskyrimo redagavimas ir portalas dar neįgyvendinti.
 
 0.4 Medžiagos skyrius turi partijos būseną, suskaičiuoto likučio formą, karantino/grąžinimo pasirinkimą ir pakeitimų istoriją su operatoriumi/priežastimi. Pasenęs kiekis ar būsena atmetami serverio; po sėkmės fokusas grįžta į skyriaus heading. Tai tas pats Operate dizainas ir private API, ne kitas administravimo produktas.
+
+0.6 užsakymo detalėje prideda siuntėjo vietą, pakuotės planą ir private cost
+quotes per shipping-ui.mjs. Individualios dėžės arba viena bendra matuota dėžė,
+gavėjo įmonės požymis, serverio istorija ir provider admission matomi atskirai.
+Actual desktop/mobile/spacing patikros: [kvitas](CONTINUATION_2026_10_12_SHIPPING.md).

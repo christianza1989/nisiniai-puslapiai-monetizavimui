@@ -1,4 +1,6 @@
 # Prekybos modulio roadmap
+
+Aktualus 0.6 tęsinys: paruoštos pakuotės ir private cost quotes; [0.6 siuntų paruošimo kvitas](CONTINUATION_2026_10_12_SHIPPING.md). M3 realus kūrimas/PDF/tracking laukia tiekėjo prieigos ir protokolo patvirtinimo. M5 identity/Worker assets ir M4 finansinių šaltinių plėtra lieka nepriklausomi vietiniai darbai.
 Aktualus [pavedimas](IMPLEMENTATION_STATUS.md). Nėra savaitinės turinio kvotos ar išgalvotų pristatymo datų. Etapo baigtis reiškia jo priėmimo įrodymą, ne visos platformos baigtį.
 
 Aktualus0.5paketas: patvarus sandbox refund gateway ir tikras atskiros laikinos Stripe aplinkos Checkout/partial/refund replay patikrinti. [Kvitas](CONTINUATION_2026_10_12_REFUNDS.md). Toliau — M3pakuotės/realios siuntimo paslaugos/PDF/tracking, po jų M5identity/admission ir M4disputes/finansinių šaltinių adapteriai. S1/S2 vykdomi atskiroje savininko sesijoje; visas roadmap ir produkcinis paleidimas dar nepriimti.

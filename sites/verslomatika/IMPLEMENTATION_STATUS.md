@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current independent source/media preparation — 2026-10-12T07:29Z
+
+**Whole local platform OPEN.** [Current native evidence](../../docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md): clean01b classifier adoption succeeded diagnostically, but one new canonical GUIDE again failed actual coordinator capacity as model_unavailable. Original provider_error and all six accepted business artifacts remain. No repeated model or altered retry/model policy.
+
+Independent existing guarded media import produced15 actual WebP/three guide families from inspected original prior synthetic-pilot illustrations with provenance, receipt4696d09f. Normal retained-cookie portal completion reads media_count15/three file-present pages,109 completed receipt responses plus three separately retained initial harness calls. Owner-confirmed operator/contact and six actually retrieved narrow source entries are now maintained in site/five page metadata, receiptcb57558a; existing offer /mokymai/ classified service, stable ID/path. No raw research/model/customer data in Git, no approval or Source/Profile admission. Guide text and real rendered editorial/source release remain unfinished. Next executable maintained local preview/editorial package preparation before atomic Source/Profile; ordinary browser/target-PC/public and language remain distinct dependencies.
+
 ## Current native GUIDE path — 2026-10-12T07:05Z
 
 **Whole local platform OPEN; private business accepted2 is retained, first native GUIDE failed on actual coordinator model capacity.** [Native evidence and original FAIL](../../docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md): creator/critic succeeded, three Attempts/eight Events, no Page application/source/media/approval; all six business artifact versions unchanged. Normal retained-cookie portal projections match,104 completed receipt responses plus three separately preserved initial summary-harness calls. This does not admit a GUIDE or ordinary browser.

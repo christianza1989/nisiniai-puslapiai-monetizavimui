@@ -17,9 +17,20 @@ from .service import digest
 def configuration():
     node = shutil.which("node")
     script = ROOT / "content-studio/scripts/customer-creation-intake.mjs"
-    network = ROOT.parent / "dovanos-memorycasting/config/niche-network.json"
+    # Deployment-owned paths; never taken from a customer or model payload.
+    # Separate worktrees use the same configuration documented for the studio.
+    network_setting = os.environ.get("STUDIO_NETWORK_SETTINGS")
+    public_setting = os.environ.get("PINET_PUBLIC_CORE_PATH")
+    if (network_setting is not None and (not network_setting or not Path(network_setting).is_absolute())
+            or public_setting is not None and (not public_setting or not Path(public_setting).is_absolute())):
+        raise RunnerError("studio_unavailable")
+    public = (Path(public_setting) if public_setting is not None else
+              Path(network_setting).parent.parent if network_setting is not None else
+              ROOT.parent / "dovanos-memorycasting")
+    network = Path(network_setting) if network_setting is not None else public / "config/niche-network.json"
     artifacts = RUNTIME / "artifacts"
-    if not node or not script.is_file() or not network.is_file() or not artifacts.is_dir():
+    if (not node or not script.is_file() or not network.is_file() or not public.is_dir()
+            or network.resolve().parent.parent != public.resolve() or not artifacts.is_dir()):
         raise RunnerError("studio_unavailable")
     if artifacts.resolve() != artifacts.absolute():
         raise RunnerError("studio_unavailable")
@@ -27,7 +38,7 @@ def configuration():
     keys = {"PATH", "SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATHEXT", "COMSPEC"}
     environment = {key: value for key, value in os.environ.items() if key.upper() in keys}
     environment["STUDIO_NETWORK_SETTINGS"] = str(network.resolve())
-    environment["STUDIO_PUBLIC_CORE_DIR"] = str(network.resolve().parents[1])
+    environment["STUDIO_PUBLIC_CORE_DIR"] = str(public.resolve())
     return Path(node).resolve(), script, artifacts, environment
 
 

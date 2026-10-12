@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Windows all-role preflight regression fixed before any model; original actual failure and source witness preserved.62 scoped checks PASS, no skips. Real model recovery/ordinary UI remain OPEN. Short private workspace adoption is separate.",
+  "checks": [
+    {
+      "command": "PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true python artifacts/director-check.private.py windows-path-repair offline_tests/test_creation_adapter.py offline_tests/test_creation_review_model.py offline_tests/test_creation_language_mode.py offline_tests/test_creation_studio.py -q",
+      "result": "PASS",
+      "evidence": "62PASS0SKIP, private log SHA80b733e3344a79564a96035746af9abc6a6667df35774e19c9cd0711760d70a1; docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md"
+    },
+    {
+      "command": "ruff check src/pinet_core/creation/adapter.py src/pinet_core/creation/studio.py offline_tests/test_creation_adapter.py offline_tests/test_creation_studio.py",
+      "result": "PASS",
+      "evidence": "All checks passed; no unrelated file formatting or prompt/model changes"
+    }
+  ],
+  "eventId": "2e1c9c0f-5f82-4f4f-bb10-1d356d6797ba",
+  "sequence": 2,
+  "at": "2026-10-12T05:31:25.875Z"
+}

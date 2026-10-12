@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual existing customer creation worker and canonical studio intake passed accepted1; concrete customer criticism passed accepted2, old hashes/history retained. Source6c36 exact normal API/BFF, API-onlyrestart/replay66tables unchanged. Scope is private draft and corrected adapter/runtime adoption, not browser/fullsemantic/F1/public admission.",
+  "checks": [
+    {
+      "command": "clean6c36 canonical POST creations/revisions + existing scripts/customer_creation_worker.py once, actual local Codex and short-name normal GET artifact observations",
+      "result": "PASS",
+      "evidence": "Accepted1 six real roles/3artifacts/intake6pages/3briefs receipt0ddabfcbdc71500e8988bb02208bf9008ead3d7b9d69ec5fe731cb6be2075f70; concretefeedback accepted2 three realroles/6artifacts/old1hashunchanged2a2e7b6eeb4588ef3e4bdb5aa127a1462e432fdcf496095a9f3d5da9d866fc20; docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md"
+    },
+    {
+      "command": "python artifacts/customer-window-restart.private.py with exact ownAPI/currentstate + original feedback UUID replay",
+      "result": "PASS",
+      "evidence": "All66PGcomplete-row fingerprints unchanged, originalSession/accepted2/no newJoborModel, receipt400077ca9960b4af22c1ae66e42dbd84a6a69602b39810e23388057f43b9208d; originalprivateharnessfailures retained"
+    }
+  ],
+  "eventId": "4c84da31-b25a-4512-97f8-d15996b5ef29",
+  "sequence": 4,
+  "at": "2026-10-12T06:31:37.652Z"
+}

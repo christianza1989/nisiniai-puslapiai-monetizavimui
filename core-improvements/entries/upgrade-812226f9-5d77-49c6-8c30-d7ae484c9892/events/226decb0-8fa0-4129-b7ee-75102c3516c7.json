@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Shared two-round time fixed while per-CLI<=300s, strict same-field team600 schema, exact resolved workspace dispatch. Original actual timeout/alias witnesses and first patch-fixture FAIL retained; actual recovery/UI remains OPEN.",
+  "checks": [
+    {
+      "command": "PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true python artifacts/director-check.private.py team-time-final offline_tests/test_creation_team_controller.py offline_tests/test_creation_team_wire.py offline_tests/test_creation_adapter.py offline_tests/test_creation_language_mode.py offline_tests/test_creation_language_patch.py -q",
+      "result": "PASS",
+      "evidence": "Final planned source suites PASSd1ced92968e7b2182d4891b6f262b286f9e528e78c0b9b9481f812b34828a643; seven opt-in empty-home loopback CLI tests explicitly SKIP; docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md"
+    },
+    {
+      "command": "ruff check src/pinet_core/creation/team.py src/pinet_core/creation/team_wire.py src/pinet_core/creation/adapter.py scripts/customer_creation_worker.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_team_wire.py offline_tests/test_creation_adapter.py",
+      "result": "PASS",
+      "evidence": "All checks passed; first import-order finding retained and corrected in new fixture only"
+    }
+  ],
+  "eventId": "226decb0-8fa0-4129-b7ee-75102c3516c7",
+  "sequence": 2,
+  "at": "2026-10-12T05:49:55.269Z"
+}

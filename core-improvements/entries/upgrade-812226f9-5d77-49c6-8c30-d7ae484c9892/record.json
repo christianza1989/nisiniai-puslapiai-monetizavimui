@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "One CLI timeout used as whole two-round business-team deadline prevents real criticized draft from finishing independent review",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md",
+    "Actual same-creation Job run_timeout receipt0c576011ff6e6ddf55387ad4ae2c66e7f4b74427e6e2c65de355a2a2f3110ec4: second critic starts297s after successful first3roles/secondcreator, original shared300s cuts it off",
+    "Original combined3FAIL3ac3ef96446f6841edbe9c6321f542b1422e8f8fe4a177e831f855d1975752bc includes synthetic two-round clock/strict600wire/resolved-alias witnesses"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team_wire.py",
+    "agent-business-core/runtime/scripts/customer_creation_worker.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_wire.py",
+    "docs/contracts/verslomatika-customer-team.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of shared two-round time and exact600schema; retain failed Jobs/attempts/usage and coordinate older300 UI validator before runtime rollback",
+  "id": "upgrade-812226f9-5d77-49c6-8c30-d7ae484c9892",
+  "branch": "codex/customer-creation-window-20261012",
+  "baseSha": "cd6ce6300a5094745a499cb433c9d3dcdd4f5c4d",
+  "createdAt": "2026-10-12T05:44:21.614Z"
+}

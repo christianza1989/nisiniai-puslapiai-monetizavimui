@@ -100,7 +100,7 @@ class TeamView(Strict):
     accepted_candidate_sha256: str | None = Field(pattern=r"^[a-f0-9]{64}$")
     max_rounds: Literal[2]
     max_calls_per_job: Literal[6]
-    deadline_seconds: int = Field(ge=30, le=300)
+    deadline_seconds: int = Field(ge=30, le=600)
     full_f1_status: Literal["UNVERIFIED"]
     launch_status: Literal["UNVERIFIED"]
     attempts: list[AttemptView] = Field(max_length=120)

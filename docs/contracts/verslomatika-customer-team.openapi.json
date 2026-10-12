@@ -719,7 +719,7 @@
             "type": "integer"
           },
           "deadline_seconds": {
-            "maximum": 300,
+            "maximum": 600,
             "minimum": 30,
             "title": "Deadline Seconds",
             "type": "integer"

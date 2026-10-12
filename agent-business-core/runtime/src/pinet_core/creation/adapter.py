@@ -1,6 +1,7 @@
 """Fixed typed business-draft generation over bounded CLI; no arbitrary workspace or tools from customer text."""
 import hashlib
 import json
+import os
 from pathlib import Path
 from time import monotonic
 from uuid import uuid4
@@ -231,10 +232,21 @@ def available():
     if (not cfg.creation_runner_enabled or cfg.chat_model != "gpt-6-luna" or not binary.is_absolute()
             or not binary.is_file() or not workspace.is_absolute() or not workspace.is_dir()
             or not workspace.resolve().is_relative_to((RUNTIME / "artifacts").resolve())
+            or not _role_paths_fit(workspace.resolve())
             or not 30 <= cfg.creation_runner_seconds <= 300 or len(cfg.chat_codex_sha256) != 64
             or hashlib.sha256(binary.read_bytes()).hexdigest() != cfg.chat_codex_sha256):
         raise RunnerError("runner_unavailable")
-    return binary, workspace
+    return binary, workspace.resolve()
+
+
+def _role_paths_fit(workspace):
+    """Check every role's longest private leaf before paying for the first role."""
+    if os.name != "nt":
+        return True
+    longest = workspace / ("business-coordinator-" + "0" * 36) / "failure.private.json"
+    # This runner uses ordinary Windows file paths, including in its error writer.
+    # Count UTF-16 units and leave room for the terminator. Preserve old folders.
+    return len(str(longest).encode("utf-16-le")) // 2 < 260
 
 
 def role_instruction_hash(role, *, structure_repair=False, language_repair=False):

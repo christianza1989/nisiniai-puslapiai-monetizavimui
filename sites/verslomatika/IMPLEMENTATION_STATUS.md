@@ -1,6 +1,6 @@
 # Verslomatika customer accounts, public projects and dashboard
 
-## Current local scope and next acceptance — 2026-10-12T02:19Z
+## Current local scope and next acceptance — 2026-10-12T04:25Z
 
 **Whole local platform OPEN; typed acquisition increment locally verified.** This is the same owner-authorized Verslomatika work, including the explicitly requested Madbeauty acquisition adoption. Historical entries below retain their original sources/results. [Current acquisition evidence and boundaries](../../docs/ACQUISITION_TYPED_TASKS_NORMAL_QA_2026-10-12.md) supersede the historical “next receive PR59” action, without changing any old calibration or FAIL.
 
@@ -11,7 +11,7 @@ Owned API18868 now serves immutable253 source in ignored private runtime (237-fi
 | Remaining path | Current boundary | Next action |
 | --- | --- | --- |
 | Ordinary browser login and authenticated desktop/mobile dashboard | UNVERIFIED; no supported private credential-entry bridge in documented CUA. Normal3021 form is open; necessary owner entry requested by portal owner. HTTP CookieJar is separate. | After secure normal entry, inspect actual history/report/events/cancel states in the mutually coordinated UI window. Continue other executable source work while waiting. |
-| Director consultation over the same canonical acquisition rows | OPEN; only reader seams exist, current chat context has registration metadata. | Mount a bounded server-authorized read path with current Session/owner/grant/module purpose and provenance, then prove same committed data and revocation boundaries. |
+| Director consultation over the same canonical acquisition rows | Core increment verified at9af0ebb: immutable input/full-scope provenance, current Session/owner/module read fences and same canonical rows; one actual Luna consultation, normal API restart/replay/revoked-read403. Ordinary director UI and graded model quality remain OPEN. | Consume [director-read.v1 and evidence](../../docs/ACQUISITION_DIRECTOR_READ_QA_2026-10-12.md) through the same owner BFF; coordinate a new source-pinned UI window without changing frozen18868 or assuming actual ordinary login. |
 | Periodic discovery/qualification/research/draft/review/capture/accounting | OPEN; current captures use supplied synthetic preparation. | Reuse the existing task worker and acquisition/calibration producer; implement and prove actual provenance/current mandate/stop/expiry/replay instead of claiming automated research from injected copy. |
 | Full native→core→portal/director/worker journey | OPEN; native and capture receipts still have separate scopes. | Complete their actual normal linkage with new synthetic recipients and no external send. |
 | Diverse client business creation and protected agent calibration/content/media/editorial/SEO-GEO | OPEN; original model FAILs and known-case results retained. | Resume the next unresolved actual client path and repair observed core defects; source test sums do not constitute end-to-end acceptance. |

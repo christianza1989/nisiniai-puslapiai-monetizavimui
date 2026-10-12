@@ -60,8 +60,35 @@ was changed. Isolated six affected cases PASS15.31s SHA2a3e60cfbdf6913943d0ffbfc
 then full28PASS63.15s SHAb4a68246649975973f1fab246b0d3a3ffdbb898264be226d160fbedbaa4777c9
 with passive private clock diagnostics (no failure diagnostic emitted). The
 initial intermittent expiry cause remains UNVERIFIED; original log is retained.
-Frozen committed source regression and normal-process/actual-model evidence are
-pending the next preserved verification block; no claims inferred from test sums.
+## Frozen source and actual normal execution
+
+Functional source9af0ebb0cfe3be7866dafcf0cc83d8fbfda753d2 was clean throughout
+the following checks; dedicated full0028 DBpinet_acq_work_20261012041331,
+companion5924 unchanged. The reused setup helper's private metadata still says
+development_uncommitted=true; that helper label is historical, not the source
+proof. Actual Git clean/head checks and the receipts bind this committed source.
+
+| Acceptance | Evidence and practical boundary |
+| --- | --- |
+| Frozen restricted PostgreSQL regression | 33directorPASS90.32s SHA01d5da41ae91d35302995db9f3e0b344b2df623b2c2d978c40977fbef1388673;28typedPASS55.18s SHA80a3ad703cd329ab6196f5c8c32dd95ffa8fa57f3acd0b90f87576a1c24ddce3. No passive diagnostic plugin on this final run. Earlier27legacy/35offline remain their attributed development checks. |
+| Normal TCP password login, new common-worker process and one actual model consultation | PASS, receipt340fa9da48d35e10506307dde5d40aeaa1f3cf44134860fd49a1f5205a45ed35. Owned temporary API18869, real core password-login Session, actual gpt-6-luna/medium with CLI tools disabled and no auth/key copying. Immutable input SHAd74a26726f93778ca4c0f32e3db7bb1c5283e3840642ab18312fa5b9add4ef99. Succeeded;14776input/292output tokens, cached/reasoning/cache-write0, USD null. One actual consultation; acquisition preparation still supplied synthetic source QA. Raw answer/report/context stay private. |
+| Same canonical data, API restart/replay and current read revocation | Normal receipt above: work outbound_captured1 and exact canonical watermark; same Task/Run/result and row fingerprints after API restart/idempotent replay, no second model call; after removing correspondence-read purpose, old answer read403. New18869 process tree stopped by its owner; frozen18868 untouched. This is API login, not ordinary browser UI. |
+| Full0001→0028, empty rollback/re-upgrade, populated refusal, grants/startup repair/repeat, partial refusal and actual backup restore | PASS receiptcc8015754340e71321d32c25a9880f0d3f92c3c7e37d40f4f348952eac84460b. All restored canonical rows match; operational0023 table fingerprints unchanged. No global PostgreSQL restart in this block; earlier0027 restart evidence is separate. |
+| Model semantics, ordinary director UI, target-PC and public | UNVERIFIED/OPEN. Successful schema/usage/execution is not a graded answer, protected calibration admission, authenticated acquisition producer or complete client business. Private lexical indicators are not semantic PASS. Language remains UNVERIFIED. |
+
+Original chain helper FAILa07246d2bcc54890b8d33d354560a924c33e7dfc647282df9c6b3bea05e3c4e9
+is retained: populated downgrade was correctly refused, but its whole-DB
+fingerprint check overlapped other QA writes. It was repeated after all writers
+stopped. Original second helper FAIL07964d418e9e7e446469625bf307234ec8cd83e2333d2ffb36a881d2216d8636
+also remains: adding the deliberately malformed control_* table changed the
+control-table inventory itself, so the test baseline belonged after that insertion.
+Partial bootstrap did refuse as expected (private refusal logSHAb074812d).
+Only the private harness baseline moved; production guard/grants unchanged.
+Every earlier lane/log/backup and all original failed attempts remain preserved.
+
+Final source wires are unchanged except the additive director-read.v1 schema.
+Scoped exact-index safety and upgrade coverage PASS. Source integration is a
+reviewable stacked package on PR104, not a main merge or operational adoption.
 
 ## Holds and remaining acceptance
 

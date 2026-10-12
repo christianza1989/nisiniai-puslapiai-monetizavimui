@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Active accepted bounded source-facts interface; child branch codex/xbot-source-facts-20261012 from29ca keeps PR98 unchanged. Original longsourcePG1FAIL14.71s retained. Fixed synthetic legacy witness/queue fixture failures documented, all111librarydevPASS26.20s; own longsource grant1PASS and two groupPGPASS. No root/currentauthority/model/provider/adoption. Final frozen111L/38P registered.",
+  "eventId": "8c743e6d-57c5-4a28-8027-30642cda73b0",
+  "sequence": 2,
+  "at": "2026-10-12T14:22:16.165Z"
+}

@@ -7,6 +7,7 @@ from datetime import timedelta
 from uuid import uuid4
 
 import pytest
+import test_customer_profile as profile_fixture
 from sqlalchemy import delete, select, text, update
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -37,7 +38,7 @@ from pinet_core.xbot_bridge.library import load
 
 
 @pytest.fixture
-async def bridge(profile, monkeypatch):  # noqa: F811 - imported shared fixture
+async def bridge(profile, monkeypatch, request):  # noqa: F811 - imported shared fixture
     c = profile
     cfg = settings()
     monkeypatch.setattr(cfg, "customer_agents_enabled", True)
@@ -48,6 +49,8 @@ async def bridge(profile, monkeypatch):  # noqa: F811 - imported shared fixture
         # Development only. Final frozen pass uses the actual clean Git verifier.
         monkeypatch.setattr(service, "source_current", lambda: True)
         monkeypatch.setattr(agents, "source_current", lambda: True)
+    if getattr(request, "param", None) == "long-pages":
+        monkeypatch.setattr(profile_fixture, "public_source", long_public_source)
     request, saved, profile_request, value, auth, me = await prepared(c)
     admitted = await admit(c, profile_request)
     token = auth["Authorization"].split(" ")[1]
@@ -80,6 +83,80 @@ async def bridge(profile, monkeypatch):  # noqa: F811 - imported shared fixture
             await tx.execute(delete(CustomerAgent).where(CustomerAgent.environment_id == c["environment"]))
 
 
+async def long_public_source(c, saved, *, ready=True, deployment=None):
+    """Handwritten synthetic source through maintained V2; never root private source/authority."""
+    from pinet_core import knowledge_index as index
+    from pinet_core import onboarding, policy
+    from pinet_core.contracts import KnowledgeReferenceV2
+    from pinet_core.models import Business
+
+    async with AsyncSession(c["admin"]) as tx:
+        business = await tx.get(Business, saved["business_id"])
+    metadata = {
+        "site_id": business.site_id,
+        "canonical_host": business.canonical_host,
+        "operator": "Synthetic operator",
+        "contact_email": "synthetic-owner@example.com",
+        "deployment_id": deployment or uuid4().hex,
+        "generated_at": utcnow().isoformat(),
+    }
+    pages = []
+    for i, length in enumerate((4126, 1656, 3099)):
+        prefix = "Synthetic information. " * ((length // 23) + 1)
+        tail = " Capacity and commercial price remain unconfirmed."
+        pages.append(
+            {
+                "id": f"page-{i}",
+                "title": f"Synthetic source {i}",
+                "url": f"https://{business.canonical_host}/source-{i}/",
+                "text": prefix[: length - len(tail)] + tail,
+                "revision_hash": str(i + 1) * 64,
+                "projection_hash": str(i + 4) * 64,
+            }
+        )
+    transfer = uuid4().hex
+    async with db.transaction(business.id, c["environment"]) as tx:
+        state = await tx.scalar(select(KnowledgeState))
+        await policy.lock(tx, business.id, c["environment"], exclusive=True)
+        content_hash = index.content_hash(metadata, pages)
+        await index.begin(
+            tx,
+            business,
+            index.Begin(
+                schema_version=2,
+                transfer_id=transfer,
+                base_revision=state.revision if state else 0,
+                metadata=metadata,
+                page_count=3,
+                fragment_count=3,
+                content_hash=content_hash,
+            ),
+        )
+        await index.batch(
+            tx,
+            business,
+            index.Batch(
+                transfer_id=transfer,
+                fragments=[
+                    index.Fragment(ordinal=i, page_ordinal=i, part=0, parts=1, **page)
+                    for i, page in enumerate(pages)
+                ],
+            ),
+        )
+        await index.commit(tx, business, index.Commit(transfer_id=transfer, content_hash=content_hash))
+        await onboarding.update(
+            tx, business, onboarding.Readiness(source_ready=ready, learning_admitted=False)
+        )
+        state = await tx.scalar(select(KnowledgeState))
+        c["synthetic_long_pages"] = pages
+        return KnowledgeReferenceV2(
+            schema_version=2,
+            knowledge_revision=state.revision,
+            knowledge_hash=state.payload["hash"],
+            deployment_id=metadata["deployment_id"],
+        ).model_dump(mode="json")
+
+
 async def grant(c, **changes):
     proof = {
         "kind": "synthetic-plumbing",
@@ -105,7 +182,15 @@ async def revoke(c, opened):
 
 
 def fake_agent(
-    calls, *, callback=None, fail=False, unknown=False, approved=True, fact_indices=None, draft_text=None
+    calls,
+    *,
+    callback=None,
+    fail=False,
+    unknown=False,
+    approved=True,
+    fact_indices=None,
+    draft_text=None,
+    evidence_sink=None,
 ):
     load()
     from xbot.agent import Agent, Draft, Review
@@ -114,9 +199,11 @@ def fake_agent(
         def __init__(self):
             self.calls, self.usage, self.receipt_sink = 0, [], None
 
-        async def ask(self, schema, *_):
+        async def ask(self, schema, *args):
             self.calls += 1
             calls.append(schema.__name__)
+            if evidence_sink is not None:
+                evidence_sink.append((schema.__name__, args[-1]))
             usage = {} if unknown else {"input_tokens": 7, "output_tokens": 3}
             self.usage.append(usage)
             if self.receipt_sink:
@@ -809,3 +896,48 @@ async def test_dispatch_ticket_lock_wait_rechecks_worker_deadline(bridge, monkey
         if not task.done():
             task.cancel()
             await asyncio.gather(task, return_exceptions=True)
+
+
+@pytest.mark.parametrize("bridge", ["long-pages"], indirect=True)
+async def test_ordinary_complete_long_source_can_issue_local_worker(bridge):
+    opened = await grant(bridge)
+    assert opened["worker_id"] and not opened["live_module_admitted"]
+
+
+@pytest.mark.parametrize("bridge", ["long-pages"], indirect=True)
+@pytest.mark.parametrize("partial,approved", [(False, True), (True, True), (False, False)])
+async def test_long_source_full_group_pg_acceptance_and_replay(bridge, tmp_path, partial, approved):
+    load()
+    from xbot.source_facts import validate_manifest
+    from xbot.store import fingerprint
+
+    c, calls, seen = bridge, [], []
+    before = await history(c)
+    opened = await grant(c)
+    token = opened["worker_token"]
+    ticket_id = await service.enqueue(token, str(uuid4()))
+    async with service.worker_scope(token) as (tx, w, admitted):
+        binding = await service.current(tx, admitted, worker=w)
+        public = admitted["material"]["public_profile"]
+        manifest, texts = validate_manifest(public["facts"], public["source_fact_manifest"])
+        assert texts == [p["text"] for p in c["synthetic_long_pages"]]
+        assert len(public["facts"]) == 6 and [len(g.fact_indices) for g in manifest.groups] == [3, 1, 2]
+        assert binding.facts_sha256 == fingerprint(public["facts"])
+    result = await worker.run_local(
+        token,
+        ticket_id,
+        tmp_path,
+        agent_factory=fake_agent(
+            calls, fact_indices=[0] if partial else [0, 1, 2], evidence_sink=seen, approved=approved
+        ),
+    )
+    assert result["state"] == ("accepted" if not partial and approved else "rejected"), result
+    assert calls == ["Draft", "Review"] and len(seen) == 2
+    assert result["known_model_usage"] == {"input_tokens": 14, "output_tokens": 6}
+    for _, evidence in seen:
+        group = evidence["source_groups"][0]
+        assert "".join(evidence["facts"][i] for i in group["fact_indices"]) == texts[0]
+    assert seen[0][1]["source_fact_manifest"] == seen[1][1]["source_fact_manifest"]
+    assert await history(c) == before
+    replay = await worker.run_local(token, ticket_id, tmp_path, agent_factory=fake_agent(calls))
+    assert replay == result and len(calls) == 2

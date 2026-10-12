@@ -77,6 +77,67 @@ async def test_customer_can_save_agent_spec_and_reopen_by_server_id(text_custome
         assert reopened.json()["data"]["readiness"]["can_activate"] is False
 
 
+async def test_plan_linked_registered_business_cannot_skip_foundation(text_customer, monkeypatch):
+    # The maintained fixture has a real accepted revision, Registration and grant.
+    # Associate a synthetic discovery with it only in this isolated QA database,
+    # to exercise the registration-only bypass without invoking a model/builder.
+    from test_business_discovery import plan_roles
+
+    from pinet_core.business_discovery import service as discovery_service
+    from pinet_core.business_discovery import worker as discovery_worker
+    from pinet_core.business_discovery.models import BuildApproval
+    from pinet_core.business_discovery.wire import Start as DiscoveryStart
+    from pinet_core.control.routes import token_hash
+    from pinet_core.creation.models import Creation
+    from pinet_core.creation.service import binding, digest
+    from pinet_core.models import new_id
+
+    c = text_customer
+    monkeypatch.setattr(settings(), "business_discovery_enabled", True)
+    monkeypatch.setattr(settings(), "business_discovery_runner_enabled", True)
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://127.0.0.1:8855") as client:
+        old = await saved(client, c)
+        old_count = await counts(c)
+        cid = c["request"]["creation_id"]
+        async with AsyncSession(c["admin"]) as tx:
+            owner = (await tx.get(Creation, cid)).user_id
+        async with scope(user=owner) as tx:
+            creation = await tx.get(Creation, cid)
+            session = await tx.scalar(select(Session).where(Session.token_hash == token_hash(c["token"])))
+            row = await discovery_service.start(tx, session, DiscoveryStart(portfolio_id=creation.portfolio_id,
+                message="Padėkite išsiaiškinti naujo verslo idėją.", idempotency_key=uuid4()))
+            did = row.id
+        assert await discovery_worker.execute_once(discovery_id=did, role_runner=plan_roles)
+        async with scope(user=owner) as tx:
+            creation = await tx.get(Creation, cid)
+            session = await tx.scalar(select(Session).where(Session.token_hash == token_hash(c["token"])))
+            row = await discovery_service.owned(tx, session, did, lock=True)
+            report = await discovery_service.latest(tx, row)
+            key = str(uuid4())
+            tx.add(BuildApproval(id=new_id(), discovery_id=did, report_id=report.id,
+                report_revision=report.revision, report_sha256=report.material_hash, creation_id=cid,
+                session_id=session.id, idempotency_key=key,
+                fingerprint=digest({"discovery_id":did,"report_revision":report.revision,
+                                    "report_sha256":report.material_hash,"idempotency_key":key}),
+                **binding(creation)))
+            row.status, row.linked_creation_id = "build_started", cid
+        aid = old["agent"]["agent_id"]
+        for enabled in (True, False):
+            monkeypatch.setattr(settings(), "business_discovery_enabled", enabled)
+            rejected = await client.post(path(c), headers=c["auth"], json=create_value())
+            assert rejected.status_code == 409, rejected.text
+            assert rejected.json()["code"] == "website_foundation_not_ready"
+            revised = await client.post(path(c, "/" + aid + "/revisions"), headers=c["auth"], json={
+                "request_id":str(uuid4()),"expected_revision":1,"configuration":draft()})
+            assert revised.status_code == 409, revised.text
+            assert revised.json()["code"] == "website_foundation_not_ready"
+            historical = await client.get(path(c, "/" + aid), headers=c["auth"])
+            assert historical.status_code == 200, historical.text
+            assert historical.json()["data"]["configuration"] == old["configuration"]
+            assert (await client.get(path(c), headers=c["auth"])).status_code == 200
+            assert await counts(c) == old_count
+
+
 def create_value(**change):
     return {"request_id": str(uuid4()), "purpose": "customer_research", "configuration": draft(), **change}
 

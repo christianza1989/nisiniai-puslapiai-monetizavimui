@@ -10,6 +10,7 @@ from pydantic import ValidationError
 from pinet_core.business_discovery import adapter, service
 from pinet_core.business_discovery.wire import AREAS, Message, PlanReview, Reply, SourceEvidence, Start
 from pinet_core.config import settings
+from pinet_core.control.routes import ControlError
 from pinet_core.creation.service import digest
 from pinet_core.tasks.codex_transport import RunnerError
 
@@ -204,3 +205,33 @@ async def test_source_budget_includes_links_and_preserves_unread_work(monkeypatc
         return True
     result = await sources.collect("https://supplier.example.test/catalogue/", allowed)
     assert not result["complete"] and result["remaining_urls"] and not result["pages"]
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("linked", [False, True])
+async def test_new_build_requires_actual_foundation_while_legacy_is_not_migrated(monkeypatch, linked):
+    async def ready(_):
+        return True
+    monkeypatch.setattr(service, "schema_ready", ready)
+    creation = SimpleNamespace(id=str(uuid4()), user_id=str(uuid4()), organization_id=str(uuid4()),
+                               portfolio_id=str(uuid4()), environment_id="test-foundation")
+    class Tx:
+        async def scalar(self, _):
+            return SimpleNamespace(**vars(creation)) if linked else None
+    if linked:
+        with pytest.raises(ControlError) as error:
+            await service.require_agent_foundation(Tx(), creation)
+        assert error.value.status == 409 and error.value.code == "website_foundation_not_ready"
+    else:
+        await service.require_agent_foundation(Tx(), creation)
+
+
+@pytest.mark.asyncio
+async def test_discovery_missing_schema_cannot_fall_back_when_enabled(monkeypatch):
+    async def missing(_):
+        return False
+    monkeypatch.setattr(service, "schema_ready", missing)
+    monkeypatch.setattr(settings(), "business_discovery_enabled", True)
+    with pytest.raises(ControlError) as error:
+        await service.require_agent_foundation(None, None)
+    assert error.value.code == "discovery_unavailable"

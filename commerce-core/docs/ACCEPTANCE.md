@@ -1,5 +1,7 @@
 # Priėmimo matrica
 
+Aktualus0.5tęsinys:53Node/nativeD1/7migracijos/dry-run ir atskiras tikras izoliuotas Stripe Checkout/signed webhook/partial refund/replay bandymas pagal [naują kvitą](CONTINUATION_2026_10_12_REFUNDS.md). Žemiau išlieka ankstesnių paketų istoriniai įrodymai.
+
 2026-10-11. Node 24.19.0 / Windows. npm test: **20/20 PASS**. npm run test:worker: **PASS atskirame workerd su native D1**. npm run build:worker: Wrangler dry-run PASS, jokio deployment. npm audit: 0 vulnerabilities patikros metu. Tai vietinio paketo įrodymai, ne viso marketplace ar realių tiekėjų priėmimas.
 
 | ID | Bandymas | Būsena / įrodymo ribos |
@@ -65,3 +67,13 @@ Visas dabartinis rinkinys: 39 Node testai, native workerd/D1 ir dry-run build. 0
 Native D1 pirmas didmenos testas gavo stock_unavailable: anksčiau šiame runner buvo tik vienas šeimos rinkinys ir komponentų race galėjo atiduoti medžiagą porai. Didmenos fixture papildytas per tą patį audited stock adjustment; neigiamas stock guard testas paliktas. Naršyklės bandymas atskleidė du konkuruojančius asinchroninius renderius ir pasikartojančius valdiklius. Reload dabar laukia render, dinaminis skyrius turi atskirą DOM parent; realus pakartotinis quote/accept/reorder matė vieną formą ir vieną užsakymą.
 
 Galutinis dry-run: 82.05 KiB / gzip 16.73 KiB; nuotolinio deploy nebuvo. Impeccable detektorius po dokumentuotos paletės ir realaus šrifto inventoriaus sutikrinimo grąžino `[]`; ankstesnės advisory ir jų sprendimas išsaugoti tęsinio kvite. Mobilus 390px vaizdas ir visos naujos didmenos formos turi 335px clientWidth=scrollWidth, bendras scrollWidth375; tas pats išlieka su 32px tekstu ir nustatytais tarpais. Native select siaurame vaizde trumpina ilgą pasirinktą kainyno žymenį; visas žymuo matomas kainynų lentelėje. Tikras browser zoom ir visas WCAG auditas neatlikti.
+
+## Papildymas0.4 — partijos
+
+42/42Node, native workerd/D1 migracijos0001–0006, format ir dry-run84.08KiB/gzip17.00 PASS. [Faktinis kvitas](CONTINUATION_2026_10_12_LOTS.md). Ankstesni0.1–0.3kvitai yra istoriniai, jų counts neperrašyti.
+
+| ID | Bandymas | Ribos |
+|---|---|---|
+| C32 | lot receipt immutability, actor/reason audit, count/quarantine/release/replay/CAS/isolation | Node ir nativeD1 PASS. Recipe/release nepanaikina galiojimo |
+| C33 | karantinas tarp assembly read ir batch, visas rollback; stale po sunaudojimo | Node race PASS; native D1paused/resume/concurrent count/replay ir versijos PASS |
+| C34 | actual private lot-control UI, error/recovery, desktop/mobile/text spacing/restart | IAB veiksmai perskaityti iš serverio,390form/table335px beoverflow,32px/tarpai; pilnas WCAG ir production neįrodyti |

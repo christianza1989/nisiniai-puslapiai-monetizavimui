@@ -79,7 +79,7 @@ export async function renderBackoffice(content, view, ctx) {
       n('h2', {}, 'Partijos'),
       data.lots.length
         ? table(
-            ['Medžiaga', 'Partija', 'Laisvas kiekis', 'Galiojimas'],
+            ['Medžiaga', 'Partija', 'Laisvas kiekis', 'Galiojimas', 'Būsena'],
             data.lots.map((l) =>
               n(
                 'tr',
@@ -88,12 +88,73 @@ export async function renderBackoffice(content, view, ctx) {
                 cell(l.supplier_ref, 'Partija'),
                 cell(l.available, 'Laisvas kiekis'),
                 cell(l.expires_at ? date(l.expires_at) : 'Nenurodyta', 'Galiojimas'),
+                cell(
+                  l.quarantined
+                    ? 'Karantinas'
+                    : l.expires_at && l.expires_at <= Date.now()
+                      ? 'Pasibaigęs galiojimas'
+                      : 'Tinkama surinkti',
+                  'Būsena',
+                ),
               ),
             ),
           )
         : n('p', { class: 'empty' }, 'Gautų medžiagų partijų dar nėra.'),
     );
     if (has('stock')) {
+      if (data.lots.length) {
+        const f = form(
+          'Valdyti medžiagų partiją',
+          [
+            field(
+              'Partija',
+              'controlLot',
+              {},
+              data.lots.map((l) => ({
+                value: l.id,
+                label:
+                  l.supplier_ref +
+                  ' · ' +
+                  (components.find((c) => c.id === l.component_id)?.name ?? l.component_id),
+              })),
+            ),
+            field('Veiksmas', 'controlKind', {}, [
+              { value: 'adjust', label: 'Patikslinti likutį po inventorizacijos' },
+              { value: 'quarantine', label: 'Perkelti į karantiną' },
+              { value: 'release', label: 'Grąžinti iš karantino' },
+            ]),
+            field('Suskaičiuotas kiekis partijos matavimo vienetu', 'controlCount', {
+              type: 'number',
+              min: 0,
+              max: 100000000,
+              step: 1,
+              required: true,
+            }),
+            field('Priežastis', 'controlReason', { required: true, minlength: 3, maxlength: 160 }),
+          ],
+          'Išsaugoti partijos pakeitimą',
+          (v, id) => {
+            const lot = data.lots.find((l) => l.id === v.controlLot);
+            return api('/api/operator/lot-controls', {
+              id,
+              lotId: lot.id,
+              kind: v.controlKind,
+              delta: v.controlKind === 'adjust' ? Number(v.controlCount) - lot.available : 0,
+              expectedAvailable: lot.available,
+              expectedVersion: lot.control_version,
+              reason: v.controlReason,
+            });
+          },
+        );
+        const update = () => {
+          const lot = data.lots.find((l) => l.id === f.elements.controlLot.value);
+          f.elements.controlCount.value = lot.available;
+          f.elements.controlCount.disabled = f.elements.controlKind.value !== 'adjust';
+        };
+        f.elements.controlLot.addEventListener('change', update);
+        f.elements.controlKind.addEventListener('change', update);
+        update();
+      }
       form(
         'Įrašyti medžiagą',
         [
@@ -216,6 +277,33 @@ export async function renderBackoffice(content, view, ctx) {
             ),
           )
         : n('p', { class: 'empty' }, 'Rinkiniai dar nesurinkti.'),
+    );
+    content.append(
+      n('h2', {}, 'Partijų pakeitimai'),
+      data.lotControls.length
+        ? table(
+            ['Partija', 'Veiksmas', 'Kiekio pokytis', 'Priežastis', 'Operatorius', 'Laikas'],
+            data.lotControls.map((c) =>
+              n(
+                'tr',
+                {},
+                cell(data.lots.find((l) => l.id === c.lot_id)?.supplier_ref ?? c.lot_id, null),
+                cell(
+                  {
+                    adjust: 'Likutis patikslintas',
+                    quarantine: 'Perkelta į karantiną',
+                    release: 'Grąžinta iš karantino',
+                  }[c.kind],
+                  'Veiksmas',
+                ),
+                cell(c.delta, 'Kiekio pokytis'),
+                cell(c.reason, 'Priežastis'),
+                cell(c.actor_ref, 'Operatorius'),
+                cell(date(c.created_at), 'Laikas'),
+              ),
+            ),
+          )
+        : n('p', { class: 'empty' }, 'Partijų pakeitimų dar nėra.'),
     );
   }
   if (view === 'financials') {

@@ -5,7 +5,7 @@ import { CommerceService } from '../src/service.mjs';
 import { CommerceOperations } from '../src/operations.mjs';
 import { applyMigrations } from '../src/migrations.mjs';
 import { localOperatorAuthorize } from '../src/local-identity.mjs';
-import { digest } from '../src/validation.mjs';
+import { digest, canonical } from '../src/validation.mjs';
 import { createHandler } from '../src/http.mjs';
 import { readFileSync, readdirSync } from 'node:fs';
 import Stripe from 'stripe';
@@ -577,5 +577,46 @@ test('refund confirmation crash recovers from the same durable provider event wi
     ).processing_state,
     'applied',
   );
+  db.close();
+});
+test('command metadata does not invalidate established refund event fingerprints or weaken money conflicts', async () => {
+  const { db, service: s, operations: op } = await setup();
+  const order = await paid(s);
+  const event = {
+    kind: 'refund',
+    id: 'evt_legacy_command',
+    environment: 'sandbox',
+    accountRef: 'store_a_sandbox',
+    providerId: 're_legacy_command',
+    paymentId: order.payment_id,
+    amount: 100,
+    currency: 'EUR',
+    status: 'succeeded',
+  };
+  await op.acceptRefundEvent('store_a', 'sandbox', event);
+  const old = await s.one('SELECT payload_hash FROM event_inbox WHERE event_id=?', event.id);
+  assert.equal(
+    (await op.acceptRefundEvent('store_a', 'sandbox', { ...event, commandId: 'new_hint' }))
+      .replayed,
+    true,
+  );
+  assert.equal(
+    (await s.one('SELECT payload_hash FROM event_inbox WHERE event_id=?', event.id)).payload_hash,
+    old.payload_hash,
+  );
+  const prototype = { ...event, commandId: 'prototype_hint' };
+  await s
+    .stmt(
+      'UPDATE event_inbox SET payload_hash=? WHERE event_id=?',
+      await digest(canonical(prototype)),
+      event.id,
+    )
+    .run();
+  assert.equal((await op.acceptRefundEvent('store_a', 'sandbox', prototype)).replayed, true);
+  await assert.rejects(
+    op.acceptRefundEvent('store_a', 'sandbox', { ...prototype, amount: 200 }),
+    /provider_event_conflict/,
+  );
+  assert.equal((await s.getOrder('store_a', 'sandbox', order.id)).refunded_amount, 100);
   db.close();
 });

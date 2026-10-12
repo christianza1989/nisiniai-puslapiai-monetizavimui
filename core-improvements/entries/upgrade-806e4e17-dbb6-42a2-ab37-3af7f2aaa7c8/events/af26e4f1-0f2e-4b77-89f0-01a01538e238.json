@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "0.4 source312799d pushed to same draftPR96,42local tests/nativeD1/browser/restart/clean staged restore verified. Site/content ownership handed to active separate owner PR101 and companionPR31; their work is not this package acceptance. PR description rewritten around final source/remaining gates. Final-head CI read separately; no merge/deployment/adoption claimed.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "312799dcbeb2b0fb507c68f5c10c69732c85bc67",
+  "eventId": "af26e4f1-0f2e-4b77-89f0-01a01538e238",
+  "sequence": 10,
+  "at": "2026-10-11T22:59:43.697Z"
+}

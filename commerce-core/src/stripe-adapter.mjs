@@ -9,9 +9,93 @@ export class StripeCheckoutAdapter {
     this.environment = environment;
     this.accountRef = accountRef;
     this.webhookSecret = webhookSecret;
+    if (!client)
+      requireValue(
+        typeof apiKey === 'string' &&
+          (environment === 'sandbox'
+            ? /^(?:sk|rk|rkcs)_test_[A-Za-z0-9]+$/.test(apiKey)
+            : /^(?:sk|rk)_live_[A-Za-z0-9]+$/.test(apiKey)),
+        'stripe_key_environment_mismatch',
+        403,
+      );
     this.client =
       client ??
       new Stripe(apiKey, { httpClient: Stripe.createFetchHttpClient(), maxNetworkRetries: 2 });
+  }
+  refundFact(refund) {
+    // Refund objects do not have a livemode field. The mode comes from the
+    // admitted API key; webhook events are independently checked above it.
+    requireValue(
+      refund.livemode === undefined || refund.livemode === (this.environment === 'production'),
+      'stripe_environment_mismatch',
+      403,
+    );
+    return {
+      environment: this.environment,
+      accountRef: this.accountRef,
+      providerId: refund.id,
+      paymentId: refund.payment_intent,
+      amount: refund.amount,
+      currency: refund.currency?.toUpperCase(),
+      status: refund.status,
+      commandId: refund.metadata?.commerce_command_id,
+    };
+  }
+  async createRefund(command) {
+    requireValue(
+      command.environment === this.environment && command.account_ref === this.accountRef,
+      'stripe_context_mismatch',
+      403,
+    );
+    const refund = await this.client.refunds.create(
+      {
+        payment_intent: command.payment_id,
+        amount: command.amount,
+        reason: 'requested_by_customer',
+        metadata: {
+          commerce_command_id: command.id,
+          store_id: command.store_id,
+          environment: this.environment,
+        },
+      },
+      { idempotencyKey: 'refund-' + command.store_id + '-' + command.id },
+    );
+    return this.refundFact(refund);
+  }
+  async findRefund(command) {
+    requireValue(
+      command.environment === this.environment && command.account_ref === this.accountRef,
+      'stripe_context_mismatch',
+      403,
+    );
+    if (command.provider_id)
+      return {
+        complete: true,
+        refund: this.refundFact(await this.client.refunds.retrieve(command.provider_id)),
+      };
+    let after,
+      matches = [];
+    for (let page = 0; page < 10; page++) {
+      const result = await this.client.refunds.list({
+        payment_intent: command.payment_id,
+        limit: 100,
+        ...(after ? { starting_after: after } : {}),
+      });
+      matches.push(
+        ...result.data.filter(
+          (r) =>
+            r.metadata?.commerce_command_id === command.id &&
+            r.metadata?.store_id === command.store_id &&
+            r.metadata?.environment === this.environment,
+        ),
+      );
+      if (matches.length > 1) return { complete: false, refund: null };
+      if (!result.has_more)
+        return { complete: true, refund: matches.length ? this.refundFact(matches[0]) : null };
+      after = result.data.at(-1)?.id;
+      if (!after) break;
+    }
+    return { complete: false, refund: null };
   }
   async createSession(order, config) {
     requireValue(
@@ -103,6 +187,9 @@ export class StripeCheckoutAdapter {
         status: refund.status,
         amount: refund.amount,
         currency: refund.currency?.toUpperCase(),
+        ...(refund.metadata?.commerce_command_id
+          ? { commandId: refund.metadata.commerce_command_id }
+          : {}),
       };
     }
     if (

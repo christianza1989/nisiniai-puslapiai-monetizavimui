@@ -347,6 +347,65 @@ try {
   assert.equal(assemblies.filter((r) => r.status === 'fulfilled').length, 1);
   assert.equal((await back.inventory('store_a', 'sandbox')).assemblies.length, 1);
   assert.equal((await back.inventory('store_a', 'sandbox')).lots[0].available, 0);
+  const count = {
+    id: 'count_d1',
+    lotId: 'lot',
+    kind: 'adjust',
+    delta: 1,
+    expectedAvailable: 0,
+    expectedVersion: 1,
+    reason: 'Testinė native D1 inventorizacija',
+  };
+  await Promise.all([
+    back.controlLot('store_a', 'sandbox', count, actor),
+    back.controlLot('store_a', 'sandbox', count, actor),
+  ]);
+  const lotPause = {
+    id: 'lot_pause_d1',
+    lotId: 'lot',
+    kind: 'quarantine',
+    delta: 0,
+    expectedAvailable: 1,
+    expectedVersion: 2,
+    reason: 'Testinis native D1 karantinas',
+  };
+  await back.controlLot('store_a', 'sandbox', lotPause, actor);
+  await assert.rejects(
+    back.controlLot('store_a', 'sandbox', { ...lotPause, id: 'stale_lot_d1' }, actor),
+    /lot_state_conflict/,
+  );
+  await assert.rejects(
+    back.assemble(
+      'store_a',
+      'sandbox',
+      { id: 'paused_assembly_d1', recipeId: 'recipe_couple', quantity: 1 },
+      actor,
+    ),
+    /component_stock_conflict/,
+  );
+  assert.equal((await back.inventory('store_a', 'sandbox')).assemblies.length, 1);
+  await back.controlLot(
+    'store_a',
+    'sandbox',
+    {
+      ...lotPause,
+      id: 'lot_release_d1',
+      kind: 'release',
+      expectedVersion: 3,
+      reason: 'Baigta native D1 patikra',
+    },
+    actor,
+  );
+  await back.assemble(
+    'store_a',
+    'sandbox',
+    { id: 'released_assembly_d1', recipeId: 'recipe_couple', quantity: 1 },
+    actor,
+  );
+  const controlled = (await back.inventory('store_a', 'sandbox')).lots[0];
+  assert.equal(controlled.available, 0);
+  assert.equal(controlled.control_version, 5);
+  await assert.rejects(service.stmt('DELETE FROM lot_controls').run(), /lot_control_immutable/);
   const finance = {
     origin: 'test_stripe',
     rows: [
@@ -440,6 +499,85 @@ try {
     wholesale.accept('store_a', 'sandbox', 'quote_d1', actor),
   ]);
   assert.equal(new Set(accepted.map((r) => r.order.id)).size, 1);
+  await service.checkout('store_a', 'sandbox', accepted[0].order.id, {
+    createSession: async () => ({
+      id: 'cs_shipping_d1',
+      url: 'https://checkout.stripe.test/shipping',
+    }),
+  });
+  await service.acceptPayment(
+    'store_a',
+    'sandbox',
+    payment(
+      await service.getOrder('store_a', 'sandbox', accepted[0].order.id),
+      'store_a',
+      'evt_shipping_d1',
+    ),
+  );
+  const shippingHeaders = { 'x-fixture-operator': 'store_a' };
+  assert.equal(
+    (
+      await dispatch(
+        'store-a.example',
+        '/api/operator/shipping-origins',
+        'POST',
+        {
+          id: 'origin_d1',
+          country: 'LT',
+          city: 'Vilnius',
+          postalCode: '02211',
+          isCompany: true,
+          reason: 'Patvirtinta testinė vieta',
+        },
+        shippingHeaders,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await dispatch(
+        'store-a.example',
+        '/api/operator/orders/' + accepted[0].order.id + '/shipping-plans',
+        'POST',
+        { id: 'plan_d1', originId: 'origin_d1', mode: 'individual', recipientIsCompany: true },
+        shippingHeaders,
+      )
+    ).status,
+    200,
+  );
+  const shippingQuote = await dispatch(
+    'store-a.example',
+    '/api/operator/shipping-plans/plan_d1/quotes',
+    'POST',
+    { id: 'shipping_quote_d1' },
+    shippingHeaders,
+  );
+  assert.equal(shippingQuote.status, 200);
+  assert.equal((await shippingQuote.json()).record.payload.offers[0].amount, 799);
+  const shippingReplay = await dispatch(
+    'store-a.example',
+    '/api/operator/shipping-plans/plan_d1/quotes',
+    'POST',
+    { id: 'shipping_quote_d1' },
+    shippingHeaders,
+  );
+  assert.equal((await shippingReplay.json()).replayed, true);
+  await assert.rejects(
+    service.stmt('UPDATE shipping_quotes SET payload_json=?', '{}').run(),
+    /shipping_record_immutable/,
+  );
+  const shippingDetail = await dispatch(
+    'store-a.example',
+    '/api/operator/orders/' + accepted[0].order.id,
+    'GET',
+    undefined,
+    shippingHeaders,
+  );
+  assert.equal(
+    (await shippingDetail.json()).shippingPreparation.plans[0].payload.parcels.length,
+    2,
+  );
   const pause = { id: 'pause_d1', partnerId: 'partner', expectedVersion: 0, approved: false };
   await wholesale.approval('store_a', 'sandbox', pause, actor);
   assert.equal((await wholesale.approval('store_a', 'sandbox', pause, actor)).replayed, true);
@@ -478,6 +616,78 @@ try {
     { 'x-fixture-operator': 'store_a' },
   );
   assert.equal(privateFinancial.status, 200);
+  const refundHeaders = { 'x-fixture-operator': 'store_a' };
+  const prepared = await Promise.all(
+    ['one', 'two', 'three'].map((id) =>
+      dispatch(
+        'store-a.example',
+        '/api/operator/orders/' + result.order.id + '/refund-commands',
+        'POST',
+        { id: 'native_' + id, amount: 1000, reason: 'Native refund test' },
+        refundHeaders,
+      ),
+    ),
+  );
+  assert.deepEqual(prepared.map((r) => r.status).sort(), [200, 200, 409]);
+  const refundCommand = (await prepared.find((r) => r.status === 200).json()).command;
+  const executions = await Promise.all(
+    [1, 2].map(() =>
+      dispatch(
+        'store-a.example',
+        '/api/operator/refund-commands/' + refundCommand.id + '/execute',
+        'POST',
+        {},
+        refundHeaders,
+      ),
+    ),
+  );
+  assert.ok(executions.some((r) => r.status === 200));
+  assert.equal(
+    (
+      await service.one(
+        'SELECT state FROM refund_commands WHERE store_id=? AND id=?',
+        'store_a',
+        refundCommand.id,
+      )
+    ).state,
+    'succeeded',
+  );
+  assert.equal(
+    (await service.getOrder('store_a', 'sandbox', result.order.id)).refunded_amount,
+    2000,
+  );
+  const unsubmitted = (
+    await prepared
+      .filter((r) => r.status === 200)
+      .find((r) => r.bodyUsed === false)
+      .json()
+  ).command;
+  assert.equal(
+    (
+      await dispatch(
+        'store-a.example',
+        '/api/operator/refund-commands/' + unsubmitted.id + '/cancel',
+        'POST',
+        {},
+        refundHeaders,
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (
+      await service.one(
+        'SELECT review_reason FROM refund_commands WHERE store_id=? AND id=?',
+        'store_a',
+        unsubmitted.id,
+      )
+    ).review_reason,
+    'canceled_before_submission',
+  );
+  await assert.rejects(
+    service.stmt('UPDATE refund_commands SET amount=1').run(),
+    /refund_command_immutable/,
+  );
 
   // Late-payment triggers are exercised against native D1, not the Node SQLite shim.
   let clock = Date.now();
@@ -499,7 +709,7 @@ try {
   await start('src/worker.mjs', { COMMERCE_ENV: 'production' });
   assert.equal((await dispatch('store-a.example', '/api/catalog')).status, 503);
   console.log(
-    'PASS workerd/native D1: ordered migrations, multi-SKU rollback, concurrent HTTP stock, store/token isolation, replay, restart persistence, signed Stripe async/refund/replay, operator gate, stock adjustments, concurrent immutable numbered sale/credit documents, shared-component assembly race, immutable financial imports/reconciliation, wholesale pricing and concurrent acceptance, fixture shipment, journal, outbox, expiry/late payment. No remote API calls.',
+    'PASS workerd/native D1: ordered migrations, multi-SKU rollback, concurrent HTTP stock, store/token isolation, replay, restart persistence, signed Stripe async/refund/replay, operator gate, stock adjustments, concurrent immutable numbered sale/credit documents, shared-component assembly race, immutable financial imports/reconciliation, wholesale pricing and concurrent acceptance, durable concurrent refund budgets/execution, fixture shipment, journal, outbox, expiry/late payment. No remote API calls.',
   );
 } finally {
   if (mf) await mf.dispose();

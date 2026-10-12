@@ -1,3 +1,24 @@
+import { SendparcelAdapter } from '../src/sendparcel-adapter.mjs';
+
+export function fixtureShippingRead() {
+  const adapter = new SendparcelAdapter({
+    environment: 'sandbox',
+    accountRef: 'fixture_sendparcel',
+    accessToken: 'fixture.jwt.signature',
+    fetchImpl: async () =>
+      Response.json({
+        offers: [
+          {
+            product: { id: 42, name: 'TEST siuntimo paslauga', courier_name: 'Testinis vežėjas' },
+            total_price: { amount_in_cents: 799, currency: 'EUR' },
+            delivery: 'Testinis pasiūlymas; nėra tikro vežėjo tarifo',
+          },
+        ],
+      }),
+  });
+  adapter.provider = 'sendparcel_fixture';
+  return adapter;
+}
 export function fixtureStore(id = 'store_a') {
   return {
     id,

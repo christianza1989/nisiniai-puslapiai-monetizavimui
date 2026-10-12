@@ -35,3 +35,23 @@ Finansinis importas yra atskiras įrodymų registras. Nei sutampanti suma, nei �
 B2B pasiūlymas turi immutable partnerio, kainyno, kainų, delivery, įmonės ir contact snapshot. Accept atomiškai sukuria vieną įprastą order ir jo rezervacijas; kitos modulio dalys mato tą patį ID. Viešas retail quote kainyno nepriima. Partnerio portalas/prieigos, kelių siuntų pakavimas ir realus mokėjimo kvitas yra atskiri vartai.
 
 0005 prideda wholesale_partner_changes ir approval_version. Patvirtinimas/stabdymas su expectedVersion bei actor turi audituojamą nekintantį įrašą. Užsakymo įterpimo triggeris pakartotinai tikrina partnerio būseną toje pačioje D1 transakcijoje. Pirminės partnerio apibrėžties idempotent replay nesugrąžina ankstesnio approved flag; jau priimto pasiūlymo replay išsaugo istorinį order.
+
+## Medžiagų kontrolė 0.4
+
+0006 prideda component_lots quarantined/control_version ir nekintantį lot_controls audit. Version didėja tiek nuo operatoriaus kontrolės, tiek nuo kiekvieno surinkimo nurašymo. SQL CAS turi available+version ir galutinio likučio ribas; istorija ir atnaujinimas viena transakcija. Pirminio receipt laukų UPDATE atmetamas, receipt replay jų neperrašo. Papildomas BEFORE assembly_lots triggeris toje pačioje batch tikrina karantiną/galiojimą; dalinai pagaminto SKU nelieka.
+
+## Grąžinimo užduotys0.5
+
+0007refund_commands rezervuoja sumą kartu su nekintančia mokėjimo/paskyros/įmonės/valiutos/operatoriaus užduotimi. DB triggeris tikrina patvirtintas grąžintas ir dar rezervuotas sumas; retry nekeičia pradinio payload.60slease apsaugo kelių vykdytojų būseną, o tikras Stripe idempotency key — išorinį šalutinį veiksmą. Unknown ir pending sumos neatlaisvinamos. Prieš pakartojimą atliekama bounded provider paieška; po23h arba neužbaigus paieškos POST draudžiamas. Succeeded API ir signed webhook pereina bendrą finansinių faktų inbox/confirmRefund kelią. Confirm crash atsigauna su tuo pačiu provider ID. Command metadata tėra paieškos užuomina, ne sumos/paskyros įrodymas; ankstesni event hash kvitai išsaugomi.
+
+Vykdymas ir paruošimas dabar leidžiami tik sandbox/testOnly, su atskira refund teise. Test/live rakto režimas tikrinamas prieš SDK sukūrimą; laikinas agento raktas rkcs_test taip pat yra testinis. Refund objektas neturi livemode lauko; aplinką apibrėžia rakto režimas, o webhook tikrina event.livemode. Tikras bandymų API kvitas nepakeičia production admission ar MB mokėjimo metodų validacijos. Negautas API atsakymas nėra failed finansinis faktas. Atšaukti galima tik dar nepradėtą užduotį; verslo teisinis grąžinimo sprendimas/returndata ir disputes lieka atskiri domenai.
+
+## Siuntų paruošimas 0.6
+
+ShippingOperations → numeruota 0008 → origins/plans/quotes/locker snapshots.
+Domenas bendras, serverio store/actor grant ir sandbox/testOnly ribos privalomos.
+planParcels saugo tikrą turinį, individualius SKU paketus arba operatoriaus
+matavimus. SendparcelAdapter priima tik staging JWT read operacijas; quotes
+konfigūruojami shippingReadAdapters, booking — atskirai shippingAdapters.
+Kainos nekeičia apmokėto order snapshot. Fixture yra tik test/dev argumentas.
+[Protokolas, priėmimas ir likę vartai](CONTINUATION_2026_10_12_SHIPPING.md).

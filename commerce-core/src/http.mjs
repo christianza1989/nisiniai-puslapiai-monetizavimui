@@ -2,6 +2,8 @@ import { CommerceError, requireValue, identifier } from './validation.mjs';
 import { CommerceOperations } from './operations.mjs';
 import { Backoffice } from './backoffice.mjs';
 import { Wholesale } from './wholesale.mjs';
+import { RefundCommands } from './refunds.mjs';
+import { ShippingOperations } from './shipping.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -40,11 +42,14 @@ export function createHandler({
   environment,
   paymentAdapters = {},
   shippingAdapters = {},
+  shippingReadAdapters = {},
   operatorAuthorize,
 }) {
   const operations = new CommerceOperations(service);
   const backoffice = new Backoffice(service);
   const wholesale = new Wholesale(service);
+  const refunds = new RefundCommands(service);
+  const shipping = new ShippingOperations(service);
   return async (request) => {
     try {
       const url = new URL(request.url);
@@ -88,6 +93,19 @@ export function createHandler({
           return json(await reads[path]());
         }
         const writes = {
+          '/api/operator/shipping-origins': [
+            'ship',
+            (input, actor) => shipping.origin(store.id, environment, input, actor),
+          ],
+          '/api/operator/shipping-lockers': [
+            'ship',
+            (input, actor) =>
+              shipping.lockers(store.id, environment, input, shippingReadAdapters[store.id], actor),
+          ],
+          '/api/operator/lot-controls': [
+            'stock',
+            (input, actor) => backoffice.controlLot(store.id, environment, input, actor),
+          ],
           '/api/operator/wholesale-approvals': [
             'wholesale',
             (input, actor) => wholesale.approval(store.id, environment, input, actor),
@@ -154,7 +172,9 @@ export function createHandler({
             permissions: principal.permissions || [],
             integrations: {
               payments: Boolean(paymentAdapters[store.id]),
-              shipping: Boolean(shippingAdapters[store.id]),
+              refunds: Boolean(paymentAdapters[store.id]?.createRefund),
+              shipping: shippingAdapters[store.id]?.supportsIdempotentCreate === true,
+              shippingQuotes: Boolean(shippingReadAdapters[store.id]?.quote),
             },
           });
         }
@@ -183,6 +203,11 @@ export function createHandler({
           const order = await service.getOrder(store.id, environment, detail[1]);
           return json({
             order,
+            shippingPreparation:
+              environment === 'sandbox' && store.testOnly === true
+                ? await shipping.detail(store.id, environment, order.id)
+                : undefined,
+            refundCommands: await refunds.list(store.id, environment, order.id),
             documents: await operations.listDocuments(store.id, environment, order.id),
             refunds: await service.rows(
               'SELECT * FROM refunds WHERE store_id=? AND order_id=?',
@@ -213,6 +238,74 @@ export function createHandler({
           await authorize('read');
           return json(await operations.getDocument(store.id, environment, document[1]));
         }
+        const prepareRefund = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/refund-commands$/,
+        );
+        const prepareShipping = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/shipping-plans$/,
+        );
+        if (prepareShipping && request.method === 'POST') {
+          const principal = await authorize('ship');
+          return json(
+            await shipping.prepare(
+              store.id,
+              environment,
+              prepareShipping[1],
+              await read(),
+              principal.id,
+            ),
+          );
+        }
+        const quoteShipping = path.match(
+          /^\/api\/operator\/shipping-plans\/([a-zA-Z0-9_-]+)\/quotes$/,
+        );
+        if (quoteShipping && request.method === 'POST') {
+          const principal = await authorize('ship');
+          return json(
+            await shipping.quote(
+              store.id,
+              environment,
+              quoteShipping[1],
+              await read(),
+              shippingReadAdapters[store.id],
+              principal.id,
+            ),
+          );
+        }
+        if (prepareRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(
+            await refunds.prepare(
+              store.id,
+              environment,
+              prepareRefund[1],
+              await read(),
+              principal.id,
+            ),
+          );
+        }
+        const executeRefund = path.match(
+          /^\/api\/operator\/refund-commands\/([a-zA-Z0-9_-]+)\/execute$/,
+        );
+        if (executeRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(
+            await refunds.execute(
+              store.id,
+              environment,
+              executeRefund[1],
+              paymentAdapters[store.id],
+              principal.id,
+            ),
+          );
+        }
+        const cancelRefund = path.match(
+          /^\/api\/operator\/refund-commands\/([a-zA-Z0-9_-]+)\/cancel$/,
+        );
+        if (cancelRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(await refunds.cancel(store.id, environment, cancelRefund[1], principal.id));
+        }
       }
       if (request.method === 'GET' && path === '/api/catalog')
         return json(await service.catalog(store.id, environment));
@@ -241,9 +334,10 @@ export function createHandler({
           request.headers.get('stripe-signature'),
         );
         if (event) {
-          if (event.kind === 'refund')
+          if (event.kind === 'refund') {
             await operations.acceptRefundEvent(store.id, environment, event);
-          else {
+            await refunds.observe(store.id, environment, event);
+          } else {
             requireValue(event.storeId === store.id, 'stripe_store_mismatch', 403);
             await service.acceptPayment(store.id, environment, event);
             await operations.applyPendingRefunds(store.id, environment);

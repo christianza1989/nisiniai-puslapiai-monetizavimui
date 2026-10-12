@@ -1,6 +1,15 @@
 import { renderBackoffice } from './backoffice-ui.mjs';
+import { renderShipping } from './shipping-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
-const state = { token: '', data: null, view: 'orders', order: null, document: null, stock: null };
+const state = {
+  token: '',
+  data: null,
+  view: 'orders',
+  order: null,
+  document: null,
+  stock: null,
+  refundDraft: null,
+};
 const titles = {
   orders: 'Užsakymai',
   stock: 'Likučiai',
@@ -28,8 +37,38 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  invalid_shipping_plan: 'Pasirinkite siuntėjo vietą ir patikrinkite gavėjo bei pakuotės duomenis.',
+  invalid_shipping_origin:
+    'Įrašykite miestą, penkių skaitmenų Lietuvos pašto kodą ir vietos patvirtinimo paaiškinimą.',
+  invalid_parcel_dimensions: 'Įrašykite teigiamą svorį ir visus tris tikrus dėžės matmenis.',
+  invalid_parcel_measurement: 'Įrašykite tikrus matavimus ir bent 3 simbolių jų paaiškinimą.',
+  shipping_plan_not_allowed:
+    'Pakuotės planui reikia apmokėto užsakymo su paskirtomis prekėmis. Atnaujinkite užsakymą.',
+  shipment_customer_missing:
+    'Užsakyme trūksta pristatymo adreso. Pirma išspręskite gavėjo duomenis.',
+  carrier_quotes_not_connected: 'Vežėjo kainų API neprijungta. Pakuotės planas išsaugotas.',
+  carrier_currency_not_supported:
+    'Šis kainų adapteris palaiko EUR. Reikia atskiros valiutos tvarkymo politikos.',
+  carrier_request_failed: 'Vežėjas nepriėmė užklausos. Patikrinkite bandymų prieigą.',
+  carrier_transport_failed: 'Vežėjas neatsakė. Pakartokite tą pačią kainų užklausą.',
+  carrier_offer_invalid: 'Vežėjo kainų duomenys neatitinka sutarties. Pasiūlymas neišsaugotas.',
+  invalid_refund_command: 'Įrašykite teigiamą sumą ir bent 3 simbolių priežastį.',
+  refund_budget_conflict:
+    'Ši suma viršija likusią grąžintiną sumą. Atnaujinkite užsakymą ir patikrinkite jau paruoštas užduotis.',
+  refund_command_conflict:
+    'Ši užduotis jau išsaugota su kitais duomenimis. Atnaujinkite užsakymą prieš naują veiksmą.',
+  refund_execution_busy: 'Grąžinimas jau vykdomas. Palaukite ir atnaujinkite užsakymą.',
+  refund_cancel_conflict:
+    'Užduotis jau vykdyta arba jos būsena pasikeitė. Patikrinkite Stripe rezultatą; šios užduoties atšaukti nebegalima.',
+  refund_provider_not_connected: 'Stripe bandymų aplinka neprijungta. Paruošta užduotis išsaugota.',
+  refund_execution_not_admitted: 'Šioje aplinkoje grąžinimų vykdymas dar nepatvirtintas.',
+  refund_order_unpaid: 'Grąžinimą galima paruošti tik patvirtinus mokėjimą.',
+  lot_state_conflict:
+    'Partijos likutis arba būsena pasikeitė. Atnaujinkite sąrašą, patikrinkite kiekį ir pradėkite naują veiksmą.',
+  invalid_lot_control: 'Likučio korekcijai įrašykite kitą kiekį ir bent 3 simbolių priežastį.',
+  lot_not_found: 'Partija nerasta. Atnaujinkite partijų sąrašą.',
   component_stock_conflict:
-    'Nepakanka galiojančių medžiagų arba likutis pasikeitė. Atnaujinkite partijų sąrašą ir patikrinkite sudėtį.',
+    'Nepakanka tinkamų medžiagų arba likutis pasikeitė. Patikrinkite likučius, galiojimą ir karantino būseną.',
   invalid_recipe: 'Rinkinio sudėčiai pasirinkite bent vieną medžiagą ir įrašykite teigiamą kiekį.',
   financial_source_conflict:
     'Šaltinio ID jau įrašytas su kitais duomenimis. Originalas išsaugotas; patikrinkite šaltinį.',
@@ -131,6 +170,7 @@ async function action(button, task, message) {
 }
 async function reload() {
   state.data = await api('/api/operator/overview');
+  if (state.order) state.order = await api('/api/operator/orders/' + state.order.order.id);
   $('#store-name').textContent = state.data.legalName;
   const c = state.data.counts;
   $('#summary').textContent =
@@ -322,6 +362,7 @@ async function openOrder(id) {
   status('Įkeliamas užsakymas…', 'busy');
   try {
     state.order = await api('/api/operator/orders/' + id);
+    if (state.refundDraft?.orderId !== id) state.refundDraft = null;
     state.view = 'orders';
     render();
     status();
@@ -504,6 +545,212 @@ function renderOrder(content, detail) {
   if (!detail.documents.length)
     content.append(node('p', { class: 'empty' }, 'Šiam užsakymui dar nesuformuota dokumentų.'));
   else content.append(documentTable(detail.documents));
+  if (detail.shippingPreparation)
+    renderShipping(content, detail, {
+      node,
+      table,
+      cell,
+      api,
+      action,
+      has,
+      money,
+      date,
+      reload,
+      integrations: state.data.integrations,
+    });
+  renderRefunds(content, detail);
+}
+function renderRefunds(content, detail) {
+  const o = detail.order,
+    commands = detail.refundCommands || [];
+  const held = commands
+    .filter((c) => !c.accounted && c.state !== 'failed')
+    .reduce((sum, c) => sum + c.amount, 0);
+  const remaining = Math.max(0, o.amount - o.refunded_amount - held);
+  const names = {
+    planned: 'Paruošta',
+    submitting: 'Vykdoma',
+    unknown: 'Atsakymas negautas',
+    pending: 'Laukia Stripe',
+    succeeded: 'Grąžinta',
+    failed: 'Nepavyko',
+    review: 'Reikia patikros',
+  };
+  const reviews = {
+    provider_response_unknown: 'Stripe atsakymas negautas. Pakartojimas naudos tą pačią užduotį.',
+    provider_result_unknown:
+      'Rezultatas nepatvirtintas. Naujas grąžinimas nesiunčiamas; patikrinkite jį Stripe paskyroje.',
+    provider_search_incomplete:
+      'Stripe paieška neužbaigta. Patikrinkite rezultatą prieš kitą veiksmą.',
+    provider_facts_mismatch:
+      'Stripe mokėjimo, sumos arba valiutos duomenys nesutampa su užduotimi.',
+    provider_facts_conflict:
+      'Gauti prieštaringi Stripe grąžinimo duomenys. Reikia operatoriaus patikros.',
+    refund_confirmation_pending:
+      'Stripe rezultatas išsaugotas. Pakartokite patikrą vietiniam įrašui užbaigti.',
+    refund_budget_changed: 'Likusi grąžintina suma pasikeitė. Patikrinkite kitus grąžinimus.',
+  };
+  content.append(
+    node('h2', {}, 'Pinigų grąžinimas'),
+    node(
+      'p',
+      { class: 'hint' },
+      `Galima paruošti: ${money(remaining, o.currency)}. Jau paruoštų užduočių sumos rezervuotos.`,
+    ),
+  );
+  if (!commands.length)
+    content.append(node('p', { class: 'empty' }, 'Grąžinimo užduočių dar nėra.'));
+  else
+    content.append(
+      table(
+        ['Suma', 'Priežastis', 'Būsena', 'Veiksmas'],
+        commands.map((c) => {
+          const run = node(
+            'button',
+            {
+              type: 'button',
+              disabled:
+                !has('refund') ||
+                !state.data.integrations.refunds ||
+                ['succeeded', 'failed'].includes(c.state),
+            },
+            c.review_reason === 'canceled_before_submission'
+              ? 'Atšaukta prieš vykdymą'
+              : c.state === 'succeeded'
+                ? 'Grąžinta'
+                : c.state === 'failed'
+                  ? 'Grąžinimas nepavyko'
+                  : c.state === 'planned'
+                    ? 'Vykdyti bandomąjį grąžinimą'
+                    : ['unknown', 'submitting'].includes(c.state)
+                      ? 'Pakartoti tą pačią užduotį'
+                      : 'Patikrinti Stripe rezultatą',
+          );
+          run.addEventListener('click', () =>
+            action(
+              run,
+              async () => {
+                await api('/api/operator/refund-commands/' + c.id + '/execute', {});
+                await reload();
+                await openOrder(o.id);
+              },
+              'Grąžinimo būsena atnaujinta. Patikrinkite rezultatą lentelėje.',
+            ),
+          );
+          const actions = node('div', { class: 'actions' }, run);
+          if (c.state === 'planned' && !c.first_attempt_at) {
+            const cancel = node(
+              'button',
+              { type: 'button', disabled: !has('refund') },
+              'Atšaukti užduotį',
+            );
+            cancel.addEventListener('click', () =>
+              action(
+                cancel,
+                async () => {
+                  await api('/api/operator/refund-commands/' + c.id + '/cancel', {});
+                  await reload();
+                },
+                'Užduotis atšaukta. Stripe veiksmas neatliktas.',
+              ),
+            );
+            actions.append(cancel);
+          }
+          return node(
+            'tr',
+            {},
+            cell(money(c.amount, o.currency), 'Suma', 'money'),
+            cell(c.reason, 'Priežastis'),
+            cell(
+              node(
+                'div',
+                {},
+                c.review_reason === 'canceled_before_submission'
+                  ? 'Atšaukta'
+                  : names[c.state] || c.state,
+                reviews[c.review_reason]
+                  ? node('p', { class: 'hint' }, reviews[c.review_reason])
+                  : null,
+              ),
+              'Būsena',
+            ),
+            cell(actions, 'Veiksmas'),
+          );
+        }),
+      ),
+    );
+  if (!state.data.testOnly || state.data.environment !== 'sandbox') return;
+  content.append(
+    node(
+      'p',
+      { class: 'hint' },
+      state.data.integrations.refunds
+        ? 'Vykdomi tik bandomieji Stripe grąžinimai. Pinigai nepervedami.'
+        : 'Stripe bandymų aplinka neprijungta. Galite paruošti užduotį; vykdymas bus aktyvus prijungus ją.',
+    ),
+  );
+  if (!has('refund') || !['paid', 'partially_refunded'].includes(o.payment_state) || remaining < 1)
+    return;
+  const draft =
+    state.refundDraft || (state.refundDraft = { id: crypto.randomUUID(), orderId: o.id });
+  const amount = node('input', {
+    id: 'refund-amount',
+    name: 'amount',
+    type: 'number',
+    min: '0.01',
+    step: '0.01',
+    max: remaining / 100,
+    required: 'required',
+    value: draft.amount || '',
+  });
+  const reason = node('input', {
+    id: 'refund-reason',
+    name: 'reason',
+    type: 'text',
+    minlength: '3',
+    maxlength: '160',
+    required: 'required',
+    value: draft.reason || '',
+  });
+  amount.addEventListener('input', () => {
+    draft.amount = amount.value;
+  });
+  reason.addEventListener('input', () => {
+    draft.reason = reason.value;
+  });
+  const submit = node('button', { type: 'submit' }, 'Paruošti grąžinimo užduotį');
+  const form = node(
+    'form',
+    { class: 'stock-form' },
+    node('h3', {}, 'Nauja grąžinimo užduotis'),
+    node(
+      'div',
+      { class: 'fields' },
+      node('label', { for: 'refund-amount' }, 'Suma (' + o.currency + ')', amount),
+      node('label', { for: 'refund-reason' }, 'Priežastis', reason),
+    ),
+    node('div', { class: 'actions' }, submit),
+  );
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    action(
+      submit,
+      async () => {
+        const cents = Math.round(Number(amount.value) * 100);
+        if (!Number.isSafeInteger(cents) || cents < 1) throw new Error('invalid_refund_command');
+        await api('/api/operator/orders/' + o.id + '/refund-commands', {
+          id: draft.id,
+          amount: cents,
+          reason: reason.value,
+        });
+        state.refundDraft = null;
+        await reload();
+        await openOrder(o.id);
+      },
+      'Grąžinimo užduotis paruošta. Stripe veiksmas dar neatliktas.',
+    );
+  });
+  content.append(form);
 }
 function renderStock(content) {
   const rows = state.data.catalog;

@@ -4,6 +4,7 @@ import { CommerceService } from '../src/service.mjs';
 import { createHandler } from '../src/http.mjs';
 import { StripeCheckoutAdapter } from '../src/stripe-adapter.mjs';
 import { fixtureCarrier } from './fixtures.mjs';
+import { SendparcelAdapter } from '../src/sendparcel-adapter.mjs';
 
 const carrier = fixtureCarrier();
 export default {
@@ -15,6 +16,14 @@ export default {
     client.checkout.sessions.create = async (data) => ({
       id: 'cs_' + data.metadata.order_id.replaceAll('-', ''),
       url: 'https://checkout.stripe.test/fixture',
+    });
+    client.refunds.list = async () => ({ data: [], has_more: false });
+    client.refunds.create = async (data) => ({
+      ...data,
+      id: 're_' + data.metadata.commerce_command_id.replaceAll('-', ''),
+      currency: 'eur',
+      status: 'succeeded',
+      livemode: false,
     });
     const paymentAdapters = {};
     for (const store of ['store_a', 'store_b'])
@@ -29,12 +38,37 @@ export default {
       environment: 'sandbox',
       paymentAdapters,
       shippingAdapters: { store_a: carrier, store_b: carrier },
+      shippingReadAdapters: {
+        store_a: new SendparcelAdapter({
+          environment: 'sandbox',
+          accountRef: 'fixture_sendparcel',
+          accessToken: 'fixture.jwt.signature',
+          fetchImpl: async () =>
+            Response.json({
+              offers: [
+                {
+                  product: { id: 42, name: 'Fixture carrier', courier_name: 'Test' },
+                  total_price: { amount_in_cents: 799, currency: 'EUR' },
+                },
+              ],
+            }),
+        }),
+      },
       operatorAuthorize: async (req, store) =>
         req.headers.get('x-fixture-operator') === store.id
           ? {
               id: 'fixture_operator',
               storeId: store.id,
-              permissions: ['read', 'stock', 'document', 'pack', 'ship', 'finance', 'wholesale'],
+              permissions: [
+                'read',
+                'stock',
+                'document',
+                'pack',
+                'ship',
+                'finance',
+                'wholesale',
+                'refund',
+              ],
             }
           : false,
     })(request);

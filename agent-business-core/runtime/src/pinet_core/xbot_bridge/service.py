@@ -223,12 +223,17 @@ async def current(tx, admission, *, worker=None):
     projection = await knowledge.projection(tx)
     public = material["public_profile"]
     pages = sorted(projection["pages"], key=lambda p: p["id"]) if projection else []
-    facts = [p["text"] for p in pages]
-    if facts != public["facts"] or not 1 <= len(facts) <= 35 or any(len(f) > 1800 for f in facts):
+    from xbot.source_facts import project
+
+    source_facts = project(pages, canonical_host=business.canonical_host)
+    if source_facts["facts"] != public["facts"] or source_facts["source_fact_manifest"] != public.get(
+        "source_fact_manifest"
+    ):
         raise ControlError(409, "xbot_facts_changed")
     binding = lib.Binding.model_validate(material["binding"])
     if (
         binding.knowledge_ref.model_dump() != reference.model_dump()
+        or binding.source_fact_manifest_sha256 != source_facts["source_fact_manifest_sha256"]
         or binding.execution_source_revision != settings().control_source_revision
         or admission["expires_at"] <= utcnow()
         or binding.expires_at <= utcnow().timestamp()

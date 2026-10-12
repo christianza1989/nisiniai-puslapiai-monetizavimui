@@ -3,7 +3,9 @@ from datetime import datetime
 from typing import Literal
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_serializer, model_validator
+
+from .source_facts import SourceFactManifest, validate_manifest
 
 
 class Strict(BaseModel):
@@ -38,6 +40,7 @@ class Profile(Strict):
     max_reads_per_day: int = Field(default=4, ge=0, le=24)
     max_jobs_per_day: int = Field(default=20, ge=1, le=100)
     facts: list[str] = Field(default_factory=list, max_length=35)
+    source_fact_manifest: SourceFactManifest | None = None
     facts_source: str = Field(default="", max_length=600)
     facts_verified_at: float = 0
     queries: list[str] = Field(default_factory=list, max_length=6)
@@ -49,8 +52,19 @@ class Profile(Strict):
     auto_publish: bool = False
     experiment_id: str = ""
 
+    @model_serializer(mode="wrap")
+    def preserve_legacy_shape(self, handler):
+        result = handler(self)
+        if self.source_fact_manifest is None:
+            result.pop("source_fact_manifest", None)
+        return result
+
     @model_validator(mode="after")
     def coherent_policy(self):
+        if self.source_fact_manifest is not None:
+            from urllib.parse import urlsplit
+
+            validate_manifest(self.facts, self.source_fact_manifest, canonical_host=urlsplit(self.canonical).netloc)
         if self.start_hour >= self.end_hour or self.daily_cap_micro > self.monthly_cap_micro:
             raise ValueError("invalid_hours_or_budget")
         if self.auto_publish and (not self.brand_mandate or not self.facts or not self.facts_source):

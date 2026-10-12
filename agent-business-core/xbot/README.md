@@ -8,6 +8,7 @@ Vietinis vieno koordinatoriaus modulis: atskiri verslų faktai, dienos planas, C
 - [Aktuali būsena](IMPLEMENTATION_STATUS.md) ir [roadmap](ROADMAP.md)
 - [Verslomatika integracijos sutartis](PLATFORM_CONTRACT.md)
 - [Actual izoliuotas PostgreSQL prijungimas](PG_BRIDGE.md) ir [jo patikros](QA-PG-BRIDGE.md)
+- [Pilnų šaltinių dalijimas ir kilmė](SOURCE_FACTS.md) bei [atskira patikra](QA-SOURCE-FACTS.md)
 - [2026-10-11 patikros](QA-2026-10-11.md)
 - [Istorinės patikros](QA.md), [ankstesnė būsena](HISTORY-2026-10-07.md), [Treg setup istorija](TREG_SETUP.md)
 

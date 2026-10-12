@@ -76,6 +76,19 @@
           "title": "Facts Sha256",
           "type": "string"
         },
+        "source_fact_manifest_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Fact Manifest Sha256"
+        },
         "expires_at": {
           "exclusiveMinimum": 0,
           "title": "Expires At",

@@ -17,8 +17,8 @@
       <section id="login" class="login">
         <h1>Prisijungti prie administravimo</h1>
         <p>
-          Vietinis operatoriaus žetonas suteikia prieigą prie vienos parduotuvės. Jis galioja 8
-          valandas.
+          Operatoriaus prieiga siejama su parduotuve ir core teisėmis. Žetono galiojimą tikrina
+          serveris.
         </p>
         <form id="login-form">
           <label for="token">Operatoriaus žetonas</label>
@@ -48,6 +48,9 @@
             <button type="button" data-view="components" aria-pressed="false">Medžiagos</button>
             <button type="button" data-view="financials" aria-pressed="false">Sutikrinimas</button>
             <button type="button" data-view="wholesale" aria-pressed="false">Didmena</button>
+            <button type="button" data-view="automation" aria-pressed="false">
+              Automatiniai darbai
+            </button>
           </nav>
           <button type="button" id="logout" class="quiet">Atsijungti</button>
         </aside>

@@ -1,6 +1,8 @@
 import { renderBackoffice } from './backoffice-ui.mjs';
 import { renderShipping } from './shipping-ui.mjs';
 import { renderPrivateFiles } from './private-files-ui.mjs';
+import { renderShipmentCommands } from './shipment-commands-ui.mjs';
+import { renderJobs } from './jobs-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -18,6 +20,7 @@ const titles = {
   components: 'Medžiagos',
   financials: 'Sutikrinimas',
   wholesale: 'Didmena',
+  automation: 'Automatiniai darbai',
 };
 const paymentNames = {
   pending: 'Laukia mokėjimo',
@@ -38,6 +41,19 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  shipment_sender_incomplete:
+    'Registravimui reikia viso siuntėjo adreso, vardo ir kontaktų. Išsaugokite naują siuntėjo vietą ir pakuotės planą.',
+  shipment_quote_stale: 'Kainų pasiūlymas senesnis nei 15 minučių. Gaukite naujus pasiūlymus.',
+  shipment_price_changed:
+    'Vežėjo kaina pasikeitė arba neviršijimo sutartis nepatvirtinta. Registravimo užklausa neišsiųsta.',
+  shipment_reconciliation_required:
+    'Siunta jau galėjo būti užregistruota. Sutikrinkite jos ID vežėjo paskyroje.',
+  shipment_facts_mismatch:
+    'Vežėjo siuntos siuntėjas, gavėjas arba pakuotės nesutampa su paruoštu planu.',
+  shipment_command_conflict: 'Užsakymui jau paruošta kita siuntos užduotis. Atnaujinkite būseną.',
+  shipment_outcome_unknown:
+    'Vežėjo atsakymas negautas. Užduotis išsaugota; prieš kitą veiksmą sutikrinkite vežėjo paskyrą.',
+  shipment_execution_busy: 'Užduotis jau vykdoma. Palaukite ir atnaujinkite būseną.',
   file_too_large: 'Pasirinkite PDF failą iki 2 MB.',
   invalid_private_file: 'Failas turi būti PDF dokumentas iki 2 MB.',
   private_storage_missing: 'Privati failų saugykla neprijungta.',
@@ -194,6 +210,11 @@ async function reload() {
   state.data = await api('/api/operator/overview');
   if (state.order) state.order = await api('/api/operator/orders/' + state.order.order.id);
   $('#store-name').textContent = state.data.legalName;
+  $('.environment').textContent =
+    state.data.environment === 'sandbox' ? 'Bandomoji aplinka' : 'Parduotuvės administravimas';
+  $('.notice').textContent = state.data.testOnly
+    ? 'Tai testiniai duomenys. Tikros finansinės ir siuntimo operacijos nevykdomos.'
+    : 'Rodomos serverio patvirtintos užsakymų ir integracijų būsenos.';
   const c = state.data.counts;
   $('#summary').textContent =
     `Iš viso: ${c.total} · Laukia mokėjimo: ${c.pending} · Vykdomi: ${c.to_pack} · Trūksta prekių: ${c.exceptions}`;
@@ -246,6 +267,11 @@ function render() {
   if (state.view === 'orders') renderOrders(content);
   if (state.view === 'stock') renderStock(content);
   if (state.view === 'documents') renderDocuments(content);
+  if (state.view === 'automation') {
+    renderJobs(content, { node, table, cell, api, action, has, date }).catch(() =>
+      status('Nepavyko įkelti automatinių darbų.', 'error'),
+    );
+  }
   if (['components', 'financials', 'wholesale'].includes(state.view)) {
     const panel = node('div');
     content.append(panel);
@@ -581,6 +607,15 @@ function renderOrder(content, detail) {
       integrations: state.data.integrations,
     });
   renderRefunds(content, detail);
+  renderShipmentCommands(content, detail, {
+    node,
+    api,
+    action,
+    has,
+    money,
+    reload,
+    integrations: state.data.integrations,
+  });
   renderPrivateFiles(content, detail, { node, table, cell, action, has, binary, reload, date });
 }
 function renderRefunds(content, detail) {

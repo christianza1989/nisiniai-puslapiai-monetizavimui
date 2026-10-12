@@ -6,6 +6,9 @@ import { RefundCommands } from './refunds.mjs';
 import { ShippingOperations } from './shipping.mjs';
 import { PrivateFiles, limitedBytes } from './private-storage.mjs';
 import { DocumentFiles } from './document-pdf.mjs';
+import { ShipmentCommands } from './shipment-commands.mjs';
+import { CommerceJobs } from './jobs.mjs';
+import { documentPolicy } from './admission.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -56,6 +59,8 @@ export function createHandler({
   const shipping = new ShippingOperations(service);
   const files = new PrivateFiles(service, privateStorage);
   const documentFiles = new DocumentFiles(service, privateStorage, loadDocumentFont);
+  const shipmentCommands = new ShipmentCommands(service, privateStorage);
+  const jobs = new CommerceJobs(service, { privateStorage, loadDocumentFont, shippingAdapters });
   const pdfResponse = (result) =>
     new Response(result.bytes, {
       headers: {
@@ -81,22 +86,30 @@ export function createHandler({
       carrier.accountRef === store.shippingAccountRef &&
       carrier.supportsBooking === true,
     );
+    let documentReady = false;
+    try {
+      documentReady = Boolean(loadDocumentFont && documentPolicy(store, environment));
+    } catch {
+      /* Invalid private legal/tax policy must never publish an offer. */
+    }
     const productionReady =
       environment === 'production' &&
       store.testOnly !== true &&
       store.productionAdmission?.approved === true &&
-      store.documentPolicy?.approved === true &&
+      documentReady &&
       store.operationalAdmission?.approved === true &&
       paymentConnected &&
       shippingConnected &&
       Boolean(privateStorage);
     return {
+      schemaVersion: 1,
       storeId: store.id,
       environment,
       testOnly: store.testOnly === true,
       legalName: store.legalSnapshot.name,
       paymentConnected,
       shippingConnected,
+      documentReady,
       shippingQuotesConnected: Boolean(shippingReadAdapters[store.id]),
       productionReady,
       publishOffers: productionReady,
@@ -144,6 +157,7 @@ export function createHandler({
           '/api/operator/components': () => backoffice.inventory(store.id, environment),
           '/api/operator/financials': () => backoffice.financials(store.id, environment),
           '/api/operator/wholesale': () => wholesale.overview(store.id, environment),
+          '/api/operator/automation': () => jobs.overview(store.id, environment),
         };
         if (request.method === 'GET' && reads[path]) {
           await authorize('read');
@@ -213,6 +227,16 @@ export function createHandler({
             principal = await authorize(grant);
           return json(await run(await read(), principal.id));
         }
+        if (request.method === 'POST' && path === '/api/operator/automation/run') {
+          await authorize('operate');
+          return json(await jobs.scheduled(store.id, environment));
+        }
+        const retryJob = path.match(/^\/api\/operator\/automation\/([a-zA-Z0-9_-]+)\/retry$/);
+        if (request.method === 'POST' && retryJob) {
+          const actor = await authorize('operate');
+          await jobs.retry(store.id, environment, retryJob[1], actor.id);
+          return json({ queued: true });
+        }
         const wholesaleAccept = path.match(
           /^\/api\/operator\/wholesale-quotes\/([a-zA-Z0-9_-]+)\/accept$/,
         );
@@ -232,6 +256,7 @@ export function createHandler({
               refunds: Boolean(paymentAdapters[store.id]?.createRefund),
               shipping: shippingAdapters[store.id]?.supportsIdempotentCreate === true,
               shippingQuotes: Boolean(shippingReadAdapters[store.id]?.quote),
+              shippingBooking: shippingAdapters[store.id]?.supportsBooking === true,
             },
           });
         }
@@ -262,10 +287,19 @@ export function createHandler({
             order,
             files: await files.list(store.id, environment, order.id),
             shippingPreparation:
-              environment === 'sandbox' && store.testOnly === true
+              (environment === 'sandbox' && store.testOnly === true) ||
+              store.operationalAdmission?.approved === true
                 ? await shipping.detail(store.id, environment, order.id)
                 : undefined,
             refundCommands: await refunds.list(store.id, environment, order.id),
+            shipmentCommands: await shipmentCommands.list(store.id, environment, order.id),
+            tracking: (
+              await service.rows(
+                "SELECT o.payload_json FROM shipment_observations o JOIN shipment_commands c ON c.store_id=o.store_id AND c.id=o.command_id WHERE c.store_id=? AND c.order_id=? AND o.kind='tracking' ORDER BY o.received_at,o.id LIMIT 100",
+                store.id,
+                order.id,
+              )
+            ).map((r) => JSON.parse(r.payload_json)),
             documents: await operations.listDocuments(store.id, environment, order.id),
             refunds: await service.rows(
               'SELECT * FROM refunds WHERE store_id=? AND order_id=?',
@@ -342,6 +376,49 @@ export function createHandler({
         const prepareRefund = path.match(
           /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/refund-commands$/,
         );
+        const prepareShipment = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/shipment-commands$/,
+        );
+        if (prepareShipment && request.method === 'POST') {
+          const actor = await authorize('ship');
+          return json(
+            await shipmentCommands.prepare(
+              store.id,
+              environment,
+              prepareShipment[1],
+              await read(),
+              actor.id,
+            ),
+          );
+        }
+        const shipmentAction = path.match(
+          /^\/api\/operator\/shipment-commands\/([a-zA-Z0-9_-]+)\/(execute|reconcile|refresh|cancel)$/,
+        );
+        if (shipmentAction && request.method === 'POST') {
+          const actor = await authorize('ship'),
+            id = shipmentAction[1],
+            adapter = shippingAdapters[store.id];
+          if (shipmentAction[2] === 'execute')
+            return json(
+              await shipmentCommands.execute(store.id, environment, id, adapter, actor.id),
+            );
+          if (shipmentAction[2] === 'reconcile')
+            return json(
+              await shipmentCommands.reconcile(
+                store.id,
+                environment,
+                id,
+                await read(),
+                adapter,
+                actor.id,
+              ),
+            );
+          if (shipmentAction[2] === 'refresh')
+            return json(
+              await shipmentCommands.refresh(store.id, environment, id, adapter, actor.id),
+            );
+          return json(await shipmentCommands.cancel(store.id, environment, id, actor.id));
+        }
         const prepareShipping = path.match(
           /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/shipping-plans$/,
         );
@@ -485,6 +562,13 @@ export function createHandler({
             paymentState: order.payment_state,
             fulfillmentState: order.fulfillment_state,
             shipment: shipment || null,
+            tracking: (
+              await service.rows(
+                "SELECT o.payload_json FROM shipment_observations o JOIN shipment_commands c ON c.store_id=o.store_id AND c.id=o.command_id WHERE c.store_id=? AND c.order_id=? AND o.kind='tracking' ORDER BY o.received_at,o.id LIMIT 100",
+                store.id,
+                order.id,
+              )
+            ).map((r) => JSON.parse(r.payload_json)),
             documents: documents.map((d) => ({
               id: d.id,
               kind: d.kind,

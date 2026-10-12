@@ -90,6 +90,23 @@ export class ShippingOperations {
       isCompany: input.isCompany,
       reason: input.reason.trim(),
     };
+    if (input.name !== undefined) {
+      requireValue(
+        text(input.name, 2, 120) &&
+          text(input.line1, 2, 150) &&
+          /^\+[1-9][0-9]{6,14}$/.test(input.phone) &&
+          text(input.email, 3, 254) &&
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email),
+        'invalid_shipping_origin',
+      );
+      Object.assign(p, {
+        name: input.name.trim(),
+        line1: input.line1.trim(),
+        phone: input.phone,
+        email: input.email.trim(),
+        ...(input.companyCode ? { companyCode: input.companyCode } : {}),
+      });
+    }
     return this.insert(
       store,
       'shipping_origins',

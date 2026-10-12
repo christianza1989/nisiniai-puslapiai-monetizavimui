@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { mkdirSync, readFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { NodeDatabase } from '../src/node-db.mjs';
 import { CommerceService } from '../src/service.mjs';
@@ -10,6 +10,13 @@ import { localStripeSandbox } from '../src/local-stripe.mjs';
 import { localShippingSandbox } from '../src/local-shipping.mjs';
 import { NodePrivateStorage } from '../src/node-private-storage.mjs';
 import { requireValue } from '../src/validation.mjs';
+import {
+  foundationStore,
+  foundationProducts,
+  foundationPayment,
+  foundationCarrier,
+} from '../test/foundation-fixtures.mjs';
+import { CommerceJobs } from '../src/jobs.mjs';
 const args = process.argv.slice(2),
   portIndex = args.indexOf('--port'),
   stripeIndex = args.indexOf('--stripe-sandbox'),
@@ -20,6 +27,11 @@ requireValue(
   'invalid_development_port',
 );
 const host = '127.0.0.1:' + port;
+const foundation = args.includes('--foundation-fixture');
+requireValue(
+  !foundation || (stripeIndex < 0 && shippingIndex < 0 && !args.includes('--shipping-fixture')),
+  'fixture_configuration_conflict',
+);
 const stripe = stripeIndex < 0 ? null : localStripeSandbox(args[stripeIndex + 1]);
 requireValue(
   !(shippingIndex >= 0 && args.includes('--shipping-fixture')),
@@ -31,11 +43,18 @@ const shipping =
     : args.includes('--shipping-fixture')
       ? fixtureShippingRead()
       : null;
-const storeId = stripe ? 'store_stripe' : 'store_a';
+const storeId = foundation ? 'store_foundation' : stripe ? 'store_stripe' : 'store_a';
 mkdirSync(new URL('../runtime/', import.meta.url), { recursive: true });
 const db = new NodeDatabase(
   fileURLToPath(
-    new URL(stripe ? '../runtime/stripe-local.sqlite' : '../runtime/local.sqlite', import.meta.url),
+    new URL(
+      foundation
+        ? '../runtime/foundation-local.sqlite'
+        : stripe
+          ? '../runtime/stripe-local.sqlite'
+          : '../runtime/local.sqlite',
+      import.meta.url,
+    ),
   ),
 );
 db.migrate();
@@ -43,7 +62,7 @@ const service = new CommerceService(db);
 if (!(await service.one('SELECT id FROM stores WHERE id=?', storeId)))
   await service.provisionStore(
     {
-      ...fixtureStore(storeId),
+      ...(foundation ? foundationStore(host) : fixtureStore(storeId)),
       hosts: [host],
       ...(stripe
         ? {
@@ -55,18 +74,49 @@ if (!(await service.one('SELECT id FROM stores WHERE id=?', storeId)))
           }
         : {}),
     },
-    fixtureProducts(),
+    foundation ? foundationProducts() : fixtureProducts(),
   );
 const existing = await service.store(storeId, 'sandbox');
 requireValue(
   existing.hosts.includes(host) && (!stripe || existing.paymentAccountRef === stripe.accountRef),
   'stripe_local_store_context_changed',
 );
+const foundationAdapter = foundation
+  ? foundationCarrier({
+      load: async () => {
+        try {
+          return JSON.parse(
+            readFileSync(new URL('../runtime/foundation-carrier.json', import.meta.url), 'utf8'),
+          );
+        } catch (e) {
+          if (e.code === 'ENOENT') return {};
+          throw e;
+        }
+      },
+      save: async (ledger) =>
+        writeFileSync(
+          new URL('../runtime/foundation-carrier.json', import.meta.url),
+          JSON.stringify(ledger),
+          { mode: 0o600 },
+        ),
+      loadPdf: async () =>
+        new Uint8Array(readFileSync(new URL('../tmp/pdfs/sandbox-sale.pdf', import.meta.url))),
+    })
+  : null;
 const handler = createHandler({
   service,
   environment: 'sandbox',
-  paymentAdapters: stripe ? { [storeId]: stripe } : {},
-  shippingReadAdapters: shipping ? { [storeId]: shipping } : {},
+  paymentAdapters: foundation
+    ? { [storeId]: foundationPayment(host) }
+    : stripe
+      ? { [storeId]: stripe }
+      : {},
+  shippingAdapters: foundationAdapter ? { [storeId]: foundationAdapter } : {},
+  shippingReadAdapters: foundationAdapter
+    ? { [storeId]: foundationAdapter }
+    : shipping
+      ? { [storeId]: shipping }
+      : {},
   privateStorage: new NodePrivateStorage(
     fileURLToPath(new URL('../runtime/private-files', import.meta.url)),
   ),
@@ -90,6 +140,8 @@ const assets = {
   '/backoffice-ui.mjs': ['backoffice-ui.mjs', 'text/javascript; charset=utf-8'],
   '/shipping-ui.mjs': ['shipping-ui.mjs', 'text/javascript; charset=utf-8'],
   '/private-files-ui.mjs': ['private-files-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/shipment-commands-ui.mjs': ['shipment-commands-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/jobs-ui.mjs': ['jobs-ui.mjs', 'text/javascript; charset=utf-8'],
   '/commerce': ['commerce.html', 'text/html; charset=utf-8'],
   '/commerce-client.mjs': ['commerce-client.mjs', 'text/javascript; charset=utf-8'],
   '/checkout-ui.mjs': ['checkout-ui.mjs', 'text/javascript; charset=utf-8'],
@@ -102,7 +154,13 @@ createServer(async (req, res) => {
     res.end();
     return;
   }
-  const asset = assets[req.url];
+  const path = new URL(req.url, 'http://' + host).pathname;
+  const fixtureCheckout = foundation && /^\/qa\/checkout\/[a-zA-Z0-9_-]+$/.test(path);
+  const asset = fixtureCheckout
+    ? ['../test/fixture-checkout.html', 'text/html; charset=utf-8']
+    : foundation && path === '/fixture-checkout.mjs'
+      ? ['../test/fixture-checkout.mjs', 'text/javascript; charset=utf-8']
+      : assets[path];
   if (req.method === 'GET' && req.url === '/qa/payment-return') {
     res.writeHead(200, {
       'content-type': 'text/plain; charset=utf-8',
@@ -172,7 +230,52 @@ createServer(async (req, res) => {
     headers: req.headers,
     body: ['GET', 'HEAD'].includes(req.method) ? undefined : body,
   });
-  const response = await handler(request);
+  let response;
+  const fixturePayment = foundation && path.match(/^\/qa\/checkout\/([a-zA-Z0-9_-]+)\/pay$/);
+  if (fixturePayment && req.method === 'POST') {
+    try {
+      requireValue(
+        !request.headers.get('origin') || request.headers.get('origin') === 'http://' + host,
+        'origin_forbidden',
+        403,
+      );
+      const order = await service.authorizeOrder(
+        storeId,
+        'sandbox',
+        fixturePayment[1],
+        request.headers.get('authorization')?.replace(/^Bearer /, ''),
+      );
+      await service.acceptPayment(storeId, 'sandbox', {
+        id: 'evt_fixture_' + order.id.replaceAll('-', ''),
+        orderId: order.id,
+        environment: 'sandbox',
+        accountRef: storeId + '_sandbox',
+        sessionId: order.checkout_id,
+        paymentId: 'pi_fixture_' + order.id.replaceAll('-', ''),
+        currency: order.currency,
+        amount: order.amount,
+        paid: true,
+      });
+      await new CommerceJobs(service, {
+        privateStorage: new NodePrivateStorage(
+          fileURLToPath(new URL('../runtime/private-files', import.meta.url)),
+        ),
+        loadDocumentFont: async () =>
+          new Uint8Array(
+            readFileSync(new URL('../public/fonts/NotoSans-Regular.ttf', import.meta.url)),
+          ),
+      }).scheduled(storeId, 'sandbox');
+      response = Response.json(
+        { fixture: true, recorded: true },
+        { headers: { 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } },
+      );
+    } catch (error) {
+      response = Response.json(
+        { error: error.code || 'fixture_failed' },
+        { status: error.status || 500 },
+      );
+    }
+  } else response = await handler(request);
   res.writeHead(response.status, Object.fromEntries(response.headers));
   res.end(Buffer.from(await response.arrayBuffer()));
 }).listen(port, '127.0.0.1', () =>

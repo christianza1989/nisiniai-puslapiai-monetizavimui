@@ -94,6 +94,14 @@ components:
 
 # Prekybos administravimo dizainas
 
+2026-10-12 siuntos registravimo ir darbų vaidmenys: esami h2/h3, hint,
+empty, table, stock-form, actions ir 44px valdikliai. Pridėti pilno siuntėjo
+kontaktai, paruoštos/unknown/registered užduotys, sutikrinimo priežastis,
+privatūs dokumentai ir pranešimų ruošiniai. Nežinoma siuntos baigtis rodo
+sutikrinimo veiksmą, automatinio antro POST mygtuko nėra. Patikrinti faktinį
+komplektavimą → kainą → užduotį → registravimą → PDF/sekimą, job retry ir
+320/1440px reflow. Svetainės galutinis dizainas lieka atskiras etapas.
+
 2026-10-12 privatūs failai: užsakymo detalėje esami h2, hint, empty, table,
 stock-form ir 44 px button/input vaidmenys. PDF įkėlimas ir atsisiuntimas
 naudoja esamą status/error ritmą, failo dydžio bei kontrolinės sumos klaidos

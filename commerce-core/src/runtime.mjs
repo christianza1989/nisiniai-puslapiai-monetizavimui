@@ -1,7 +1,8 @@
 import { CommerceService } from './service.mjs';
 import { createHandler } from './http.mjs';
 import { StripeCheckoutAdapter } from './stripe-adapter.mjs';
-import { SendparcelAdapter } from './sendparcel-adapter.mjs';
+import { SendparcelAdapter, SENDPARCEL_PRODUCTION } from './sendparcel-adapter.mjs';
+import { SendparcelBookingAdapter } from './sendparcel-booking.mjs';
 import { coreOperatorAuthorize } from './identity.mjs';
 import { R2PrivateStorage, limitedBytes } from './private-storage.mjs';
 import { requireValue } from './validation.mjs';
@@ -36,6 +37,7 @@ export function runtimeOptions(env) {
     503,
   );
   const paymentAdapters = {},
+    shippingAdapters = {},
     shippingReadAdapters = {};
   for (const [storeId, connection] of Object.entries(connections)) {
     requireValue(
@@ -50,17 +52,31 @@ export function runtimeOptions(env) {
         webhookSecret: connection.stripe.webhookSecret,
         environment,
       });
-    if (connection.sendparcel)
-      shippingReadAdapters[storeId] = new SendparcelAdapter({
+    if (connection.sendparcel) {
+      const carrierOptions = {
         accountRef: connection.sendparcel.accountRef,
         apiPassword: connection.sendparcel.apiPassword,
         accessToken: connection.sendparcel.accessToken,
         environment,
-      });
+        ...(environment === 'production'
+          ? {
+              baseUrl: SENDPARCEL_PRODUCTION,
+              productionReadAdmission: connection.sendparcel.productionReadAdmission === true,
+            }
+          : {}),
+      };
+      shippingReadAdapters[storeId] = new SendparcelAdapter(carrierOptions);
+      if (connection.sendparcel.bookingAdmission?.approved === true)
+        shippingAdapters[storeId] = new SendparcelBookingAdapter({
+          ...carrierOptions,
+          bookingAdmission: connection.sendparcel.bookingAdmission,
+        });
+    }
   }
   return {
     environment,
     paymentAdapters,
+    shippingAdapters,
     shippingReadAdapters,
     operatorAuthorize: coreOperatorAuthorize(async () => parse(env.COMMERCE_CORE_GRANTS, [])),
     privateStorage: env.COMMERCE_FILES ? new R2PrivateStorage(env.COMMERCE_FILES) : undefined,
@@ -82,6 +98,8 @@ export const adminAssets = {
   '/backoffice-ui.mjs': '/backoffice-ui.mjs',
   '/shipping-ui.mjs': '/shipping-ui.mjs',
   '/private-files-ui.mjs': '/private-files-ui.mjs',
+  '/shipment-commands-ui.mjs': '/shipment-commands-ui.mjs',
+  '/jobs-ui.mjs': '/jobs-ui.mjs',
   '/commerce': '/commerce.html',
   '/commerce-client.mjs': '/commerce-client.mjs',
   '/checkout-ui.mjs': '/checkout-ui.mjs',

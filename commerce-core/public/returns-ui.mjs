@@ -40,7 +40,7 @@ export function renderReturns(content, detail, ctx) {
   if (!has('stock')) return;
   if (
     order.payment_state === 'refunded' &&
-    ['pending', 'ready'].includes(order.fulfillment_state)
+    ['pending', 'ready', 'stock_exception'].includes(order.fulfillment_state)
   ) {
     const checked = n('input', { type: 'checkbox', required: true }),
       reason = n('input', { required: true, minlength: '3', maxlength: '200' }),
@@ -54,7 +54,7 @@ export function renderReturns(content, detail, ctx) {
         'label',
         { class: 'check-field' },
         checked,
-        'Visos prekės tebėra sandėlyje, fiziškai patikrintos ir tinkamos parduoti',
+        'Patikrinau, kad siunta neužsakyta ir prekės tebėra sandėlyje. Galiojimo bei karantino ribos išlieka.',
       ),
       n('label', {}, 'Atšaukimo paaiškinimas', reason),
       submit,
@@ -71,7 +71,7 @@ export function renderReturns(content, detail, ctx) {
           });
           await reload();
         },
-        'Neišsiųstas užsakymas atšauktas, likutis grąžintas.',
+        'Neišsiųstas užsakymas atšauktas. Likutis sutikrintas pagal jo ankstesnę būseną.',
       );
     });
     content.append(form);
@@ -79,6 +79,17 @@ export function renderReturns(content, detail, ctx) {
   if (order.fulfillment_state !== 'labelled') return;
   const quantityInputs = order.snapshot.lines.map((l) => ({
     l,
+    lot: n(
+      'select',
+      {},
+      n('option', { value: '' }, 'Nepriskirta partija / ankstesnis nepartinis likutis'),
+      (detail.stockQuality?.allocations || [])
+        .filter(
+          (a) =>
+            a.sku === l.sku && a.generation === order.stock_generation && a.state === 'allocated',
+        )
+        .map((a) => n('option', { value: a.lot_id }, a.lot_id)),
+    ),
     input: n('input', { type: 'number', value: '0', min: '0', max: l.quantity, step: '1' }),
   }));
   const disposition = n(
@@ -95,7 +106,10 @@ export function renderReturns(content, detail, ctx) {
   const form = n(
     'form',
     { class: 'stock-form' },
-    quantityInputs.map(({ l, input }) => n('label', {}, l.title + ' gautas kiekis', input)),
+    quantityInputs.flatMap(({ l, input, lot }) => [
+      n('label', {}, l.title + ' gautas kiekis', input),
+      n('label', {}, l.title + ' faktinė grąžinto rinkinio partija', lot),
+    ]),
     n('label', {}, 'Prekių paskirtis', disposition),
     n(
       'label',
@@ -116,11 +130,12 @@ export function renderReturns(content, detail, ctx) {
           reason: reason.value,
           lines: quantityInputs
             .filter((q) => Number(q.input.value) > 0)
-            .map(({ l, input }) => ({
+            .map(({ l, input, lot }) => ({
               sku: l.sku,
               quantity: Number(input.value),
               disposition: disposition.value,
               expiryChecked: expiry.checked,
+              ...(lot.value ? { finishedLotId: lot.value } : {}),
             })),
         });
         await reload();

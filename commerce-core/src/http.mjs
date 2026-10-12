@@ -15,6 +15,7 @@ import { BuyerDeliveryQuotes } from './buyer-delivery.mjs';
 import { ReturnOperations } from './returns.mjs';
 import { CustomerNotifications } from './notifications.mjs';
 import { PaymentDisputes } from './disputes.mjs';
+import { FinishedStock } from './finished-stock.mjs';
 const json = (value, status = 200) =>
   Response.json(value, {
     status,
@@ -62,6 +63,7 @@ export function createHandler({
 }) {
   const operations = new CommerceOperations(service);
   const backoffice = new Backoffice(service);
+  const finishedStock = new FinishedStock(service);
   const wholesale = new Wholesale(service, { shippingReadAdapters });
   const refunds = new RefundCommands(service);
   const shipping = new ShippingOperations(service);
@@ -297,6 +299,7 @@ export function createHandler({
           );
         }
         const reads = {
+          '/api/operator/finished-stock': () => finishedStock.list(store.id, environment),
           '/api/operator/components': () => backoffice.inventory(store.id, environment),
           '/api/operator/financials': () => backoffice.financials(store.id, environment),
           '/api/operator/wholesale': () => wholesale.overview(store.id, environment),
@@ -309,6 +312,14 @@ export function createHandler({
           return json(await reads[path]());
         }
         const writes = {
+          '/api/operator/finished-lots': [
+            'stock',
+            (input, actor) => finishedStock.receive(store.id, environment, input, actor),
+          ],
+          '/api/operator/finished-controls': [
+            'stock',
+            (input, actor) => finishedStock.control(store.id, environment, input, actor),
+          ],
           '/api/operator/shipping-origins': [
             'ship',
             (input, actor) => shipping.origin(store.id, environment, input, actor),
@@ -477,6 +488,7 @@ export function createHandler({
           const order = await service.getOrder(store.id, environment, detail[1]);
           return json({
             order,
+            stockQuality: await finishedStock.order(store.id, environment, order.id),
             files: await files.list(store.id, environment, order.id),
             shippingPreparation:
               (environment === 'sandbox' && store.testOnly === true) ||
@@ -748,7 +760,7 @@ export function createHandler({
         if (request.method === 'GET' && !match[2]) return json(order);
         if (request.method === 'GET' && match[2] === 'receipt') {
           const shipment = await service.one(
-            'SELECT state,tracking FROM shipments WHERE store_id=? AND order_id=?',
+            "SELECT state,tracking FROM shipments WHERE store_id=? AND order_id=? AND (first_attempt_at IS NOT NULL OR state='registered')",
             store.id,
             order.id,
           );
@@ -757,6 +769,11 @@ export function createHandler({
             orderId: order.id,
             paymentState: order.payment_state,
             fulfillmentState: order.fulfillment_state,
+            fulfillmentBlocked:
+              !shipment &&
+              ['pending', 'ready', 'stock_exception'].includes(order.fulfillment_state) &&
+              (order.fulfillment_state === 'stock_exception' ||
+                (await finishedStock.order(store.id, environment, order.id)).blocked),
             shipment: shipment || null,
             tracking: (
               await service.rows(
@@ -815,6 +832,13 @@ export function createHandler({
       return json({ error: 'route_not_found' }, 404);
     } catch (error) {
       if (error instanceof CommerceError) return json({ error: error.code }, error.status);
+      const guarded = [
+        'stock_quality_hold',
+        'stock_policy_immutable',
+        'stock_tracking_transition_requires_empty',
+      ];
+      const code = guarded.find((code) => String(error.message).includes(code));
+      if (code) return json({ error: code }, 409);
       // Do not expose provider errors, SQL, webhook secrets or customer data.
       return json({ error: 'operation_failed' }, 500);
     }

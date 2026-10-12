@@ -19,7 +19,7 @@ export class ReturnOperations {
     );
     for (const receipt of receipts)
       receipt.lines = await this.s.rows(
-        'SELECT sku,quantity,disposition,expiry_checked FROM return_receipt_lines WHERE store_id=? AND receipt_id=? ORDER BY sku',
+        'SELECT sku,quantity,disposition,expiry_checked,finished_lot_id FROM return_receipt_lines WHERE store_id=? AND receipt_id=? ORDER BY sku',
         store,
         receipt.id,
       );
@@ -52,11 +52,16 @@ export class ReturnOperations {
             'invalid_return_receipt',
           );
           seen.add(l.sku);
+          requireValue(
+            l.finishedLotId === undefined || identifier(l.finishedLotId),
+            'invalid_return_receipt',
+          );
           return {
             sku: l.sku,
             quantity: l.quantity,
             disposition: l.disposition,
             expiryChecked: l.expiryChecked,
+            ...(l.finishedLotId ? { finishedLotId: l.finishedLotId } : {}),
           };
         })
         .sort((a, b) => a.sku.localeCompare(b.sku));
@@ -91,7 +96,7 @@ export class ReturnOperations {
         ),
         ...lines.map((l) =>
           this.s.stmt(
-            'INSERT INTO return_receipt_lines VALUES(?,?,?,?,?,?,?)',
+            'INSERT INTO return_receipt_lines(store_id,receipt_id,order_id,sku,quantity,disposition,expiry_checked,finished_lot_id) VALUES(?,?,?,?,?,?,?,?)',
             store,
             input.id,
             orderId,
@@ -99,6 +104,7 @@ export class ReturnOperations {
             l.quantity,
             l.disposition,
             l.expiryChecked ? 1 : 0,
+            l.finishedLotId ?? null,
           ),
         ),
         this.s.stmt(
@@ -123,6 +129,13 @@ export class ReturnOperations {
         throw new CommerceError('return_quantity_conflict', 409);
       if (String(error.message).includes('return_order_not_eligible'))
         throw new CommerceError('return_order_not_eligible', 409);
+      if (/returned_lot_(identity_required|not_eligible)/.test(String(error.message)))
+        throw new CommerceError(
+          String(error.message).includes('identity_required')
+            ? 'returned_lot_identity_required'
+            : 'returned_lot_not_eligible',
+          409,
+        );
       throw error;
     }
     return { replayed: false };

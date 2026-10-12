@@ -1,3 +1,4 @@
+import { FinishedStock } from './finished-stock.mjs';
 import {
   requireValue,
   identifier,
@@ -294,6 +295,7 @@ export class ShipmentCommands {
       409,
     );
     const order = await this.s.getOrder(store, env, command.order_id);
+    await new FinishedStock(this.s).requireOrder(store, env, order.id);
     requireValue(
       order.payment_state === 'paid' &&
         order.fulfillment_state === 'ready' &&
@@ -323,6 +325,7 @@ export class ShipmentCommands {
         'shipment_price_changed',
         409,
       );
+      await new FinishedStock(this.s).requireOrder(store, env, command.order_id);
       const marked = await this.s
         .stmt(
           "UPDATE shipment_commands SET first_attempt_at=COALESCE(first_attempt_at,?) WHERE store_id=? AND id=? AND lease_token=? AND lease_until>? AND EXISTS(SELECT 1 FROM orders WHERE store_id=? AND id=? AND payment_state='paid' AND stock_state='allocated' AND fulfillment_state='ready')",
@@ -345,13 +348,19 @@ export class ShipmentCommands {
       await this.s
         .stmt(
           "UPDATE shipment_commands SET state=CASE WHEN first_attempt_at IS NULL THEN 'planned' ELSE 'unknown' END,review_reason=?,lease_until=0 WHERE store_id=? AND id=? AND lease_token=?",
-          error.code || 'provider_outcome_unknown',
+          String(error.message).includes('stock_quality_hold')
+            ? 'stock_quality_hold'
+            : error instanceof CommerceError
+              ? error.code
+              : 'provider_outcome_unknown',
           store,
           id,
           lease,
         )
         .run();
       if (error instanceof CommerceError) throw error;
+      if (String(error.message).includes('stock_quality_hold'))
+        throw new CommerceError('stock_quality_hold', 409);
       throw new CommerceError('shipment_outcome_unknown', 503);
     }
   }

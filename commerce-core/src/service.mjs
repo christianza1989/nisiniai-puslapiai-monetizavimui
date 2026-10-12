@@ -10,6 +10,7 @@ import {
   customerSnapshot,
 } from './validation.mjs';
 import { deliveryFingerprint } from './buyer-delivery.mjs';
+import { FinishedStock } from './finished-stock.mjs';
 export class CommerceService {
   constructor(db, { now = () => Date.now() } = {}) {
     this.db = db;
@@ -79,6 +80,11 @@ export class CommerceService {
       );
       ids.add(p.sku);
       requireValue(
+        (p.lotTrackingRequired === undefined || typeof p.lotTrackingRequired === 'boolean') &&
+          (p.lotTrackingRequired !== true || p.stock === 0),
+        'invalid_stock_policy',
+      );
+      requireValue(
         p.prices && Object.values(p.prices).every((v) => integer(v, 1)),
         'invalid_prices',
       );
@@ -141,7 +147,9 @@ export class CommerceService {
     await this.store(id, environment);
     return (
       await this.rows(
-        'SELECT p.definition_json,i.available FROM products p JOIN inventory i ON i.store_id=p.store_id AND i.sku=p.sku WHERE p.store_id=?',
+        "SELECT p.definition_json,CASE WHEN EXISTS(SELECT 1 FROM finished_stock_holds h WHERE h.store_id=p.store_id AND h.sku=p.sku AND h.held=1) THEN 0 WHEN json_extract(p.definition_json,'$.lotTrackingRequired')=1 THEN COALESCE((SELECT SUM(f.available) FROM finished_lot_quality f WHERE f.store_id=p.store_id AND f.sku=p.sku AND f.blocked=0 AND (f.expires_at IS NULL OR f.expires_at>?)),0) ELSE i.available-COALESCE((SELECT SUM(f.available) FROM finished_lot_quality f WHERE f.store_id=p.store_id AND f.sku=p.sku AND (f.blocked=1 OR f.expires_at<=?)),0) END AS available FROM products p JOIN inventory i ON i.store_id=p.store_id AND i.sku=p.sku WHERE p.store_id=?",
+        this.now(),
+        this.now(),
         id,
       )
     ).map((r) => {
@@ -347,7 +355,7 @@ export class CommerceService {
     const accessHash = clientHash ?? (await digest(token));
     const statements = [
       this.stmt(
-        'INSERT INTO orders(store_id,id,request_key,request_hash,currency,amount,snapshot_json,access_hash,expires_at,created_at) VALUES(?,?,?,?,?,?,?,?,?,?)',
+        'INSERT INTO orders(store_id,id,request_key,request_hash,currency,amount,snapshot_json,access_hash,expires_at,created_at,stock_checked_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
         id,
         orderId,
         key,
@@ -357,6 +365,7 @@ export class CommerceService {
         JSON.stringify(snapshot),
         accessHash,
         at + 3600000,
+        at,
         at,
       ),
       ...snapshot.lines.map((l) =>
@@ -466,6 +475,7 @@ export class CommerceService {
       'checkout_window_elapsed',
       409,
     );
+    await new FinishedStock(this).requireOrder(store, environment, id);
     const session = await paymentAdapter.createSession(order, config);
     requireValue(
       identifier(session?.id) && typeof session.url === 'string',
@@ -537,8 +547,9 @@ export class CommerceService {
       return { replayed: true, order };
     }
     const update = this.stmt(
-      "UPDATE orders SET payment_state='paid',payment_id=?,stock_state='allocated' WHERE store_id=? AND id=? AND payment_state='pending'",
+      "UPDATE orders SET payment_state='paid',payment_id=?,stock_state='allocated',stock_checked_at=?,stock_generation=stock_generation+CASE WHEN stock_state='released' THEN 1 ELSE 0 END WHERE store_id=? AND id=? AND payment_state='pending'",
       event.paymentId,
+      this.now(),
       store,
       order.id,
     );
@@ -577,7 +588,7 @@ export class CommerceService {
       await this.db.batch([
         inbox,
         this.stmt(
-          "UPDATE orders SET payment_state='paid',payment_id=?,fulfillment_state='stock_exception' WHERE store_id=? AND id=? AND payment_state='pending'",
+          "UPDATE orders SET payment_state='paid',payment_id=?,stock_state='released',fulfillment_state='stock_exception' WHERE store_id=? AND id=? AND payment_state='pending'",
           event.paymentId,
           store,
           order.id,
@@ -612,10 +623,12 @@ export class CommerceService {
       'packing_not_allowed',
       409,
     );
+    await new FinishedStock(this).requireOrder(store, environment, id);
     if (order.fulfillment_state === 'ready') return order;
     await this.db.batch([
       this.stmt(
-        "UPDATE orders SET fulfillment_state='ready' WHERE store_id=? AND id=? AND fulfillment_state='pending'",
+        "UPDATE orders SET fulfillment_state='ready',stock_checked_at=? WHERE store_id=? AND id=? AND fulfillment_state='pending'",
+        this.now(),
         store,
         id,
       ),
@@ -651,13 +664,25 @@ export class CommerceService {
     const found = await adapter.find(reference);
     let result;
     try {
+      if (!found) {
+        await new FinishedStock(this).requireOrder(store, environment, id);
+        await this.stmt(
+          'UPDATE shipments SET first_attempt_at=COALESCE(first_attempt_at,?) WHERE store_id=? AND order_id=?',
+          this.now(),
+          store,
+          id,
+        ).run();
+      }
       result = found || (await adapter.create({ reference, order }));
     } catch (error) {
       await this.stmt(
-        "UPDATE shipments SET state='unknown' WHERE store_id=? AND order_id=?",
+        "UPDATE shipments SET state=CASE WHEN first_attempt_at IS NULL THEN 'creating' ELSE 'unknown' END WHERE store_id=? AND order_id=?",
         store,
         id,
       ).run();
+      if (error instanceof CommerceError && error.code === 'stock_quality_hold') throw error;
+      if (String(error.message).includes('stock_quality_hold'))
+        throw new CommerceError('stock_quality_hold', 409);
       throw new CommerceError('shipment_outcome_unknown', 503);
     }
     requireValue(result?.id && result?.label?.private === true, 'shipment_response_invalid', 502);

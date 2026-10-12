@@ -46,6 +46,31 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  finished_legacy_order_unresolved:
+    'Dar yra neišsiųstų senų užsakymų su nežinoma prekių kilme. Išspręskite juos prieš sutikrindami šios prekės likutį.',
+  stock_quality_hold:
+    'Užsakymo prekių kilmė, galiojimas arba karantinas neleidžia komplektuoti ar išsiųsti. Patikrinkite partijas.',
+  finished_stock_conflict:
+    'Fizinis likutis pasikeitė arba šis kiekis jau priskirtas partijoms. Atnaujinkite sąrašą.',
+  finished_state_conflict:
+    'Partijos kiekis arba būsena pasikeitė. Atnaujinkite sąrašą prieš naują veiksmą.',
+  finished_reconciliation_incomplete:
+    'Sutikrinimui reikia visą fizinį laisvą likutį priskirti patikrintoms partijoms.',
+  finished_expiry_confirmation_required:
+    'Įrašykite galiojimo datą arba aiškiai patvirtinkite, kad terminas nežinomas.',
+  finished_receipt_conflict: 'Šio veiksmo ID jau išsaugotas su kitais partijos duomenimis.',
+  finished_control_conflict: 'Šio veiksmo ID jau išsaugotas su kitais kontrolės duomenimis.',
+  invalid_finished_receipt:
+    'Patikrinkite partijos žymenį, kiekį, fizinį likutį ir būklės patvirtinimą.',
+  invalid_finished_control:
+    'Patikrinkite partijos pasirinkimą, kiekio korekciją ir patikros patvirtinimą.',
+  finished_quality_required: 'Patvirtinkite, kad prekės fiziškai patikrintos.',
+  returned_lot_identity_required: 'Grąžinamai prekei pasirinkite tikrą išsiųstą partiją.',
+  returned_lot_not_eligible:
+    'Šios partijos galiojimas, būklė arba kiekis neleidžia grąžinti jos į parduodamą likutį.',
+  stock_policy_immutable: 'Įjungtos partijų apskaitos išjungti negalima.',
+  stock_tracking_transition_requires_empty:
+    'Partijų apskaitą įjunkite tik sutikrinę laisvą likutį ir neišsiųstus užsakymus.',
   return_quantity_conflict:
     'Gautas kiekis viršija dar nepriimtą užsakymo kiekį. Atnaujinkite duomenis.',
   invalid_return_receipt:
@@ -578,6 +603,7 @@ function renderOrder(content, detail) {
         has('pack') &&
         o.payment_state === 'paid' &&
         o.stock_state === 'allocated' &&
+        !detail.stockQuality?.blocked &&
         o.fulfillment_state === 'pending'
       ),
     },
@@ -906,20 +932,21 @@ function renderStock(content) {
   );
   content.append(
     table(
-      ['Prekė', 'SKU', 'Laisvas likutis', 'Veiksmas'],
+      ['Prekė', 'SKU', 'Fizinis laisvas likutis', 'Galima parduoti', 'Veiksmas'],
       rows.map((p) =>
         node(
           'tr',
           {},
           cell(p.title),
           cell(p.sku, 'SKU'),
-          cell(p.available, 'Laisvas likutis'),
+          cell(p.available, 'Fizinis laisvas likutis'),
+          cell(p.sellableAvailable, 'Galima parduoti'),
           cell(
             node(
               'button',
               {
                 type: 'button',
-                disabled: !has('stock'),
+                disabled: !has('stock') || p.lotTrackingRequired,
                 'data-stock-sku': p.sku,
                 onclick: () => {
                   status();

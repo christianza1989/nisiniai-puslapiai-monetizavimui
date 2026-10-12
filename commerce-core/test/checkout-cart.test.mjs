@@ -52,6 +52,8 @@ class Element {
   }
 }
 const nodes = (root) => [root, ...root.children.filter((c) => c instanceof Element).flatMap(nodes)];
+const textContent = (root) =>
+  root.children.map((c) => (c instanceof Element ? textContent(c) : String(c))).join(' ');
 const field = (root, name) => nodes(root).find((n) => n.name === name);
 const button = (root, name) =>
   nodes(root).find((n) => n.tag === 'button' && n.children.includes(name));
@@ -115,6 +117,90 @@ async function withDom(run) {
     Object.assign(globalThis, previous);
   }
 }
+
+test('empty cart updates on 0 → 1 → 0 and only permits a same-origin catalogue link', () =>
+  withDom(async () => {
+    for (const catalogueUrl of ['/collections/all', 'https://foreign.example/shop']) {
+      const root = new Element('div');
+      await mountCheckout(root, { client: clientFixture(), catalogueUrl });
+      const empty = nodes(root).find(
+        (n) => n.tag === 'p' && n.children.includes('Krepšelis tuščias.'),
+      ).parentElement;
+      assert.equal(empty.hidden, false);
+      assert.equal(button(root, 'Patikrinti sumą').disabled, true);
+      assert.equal(
+        nodes(empty).filter((n) => n.tag === 'a').length,
+        catalogueUrl.startsWith('/') ? 1 : 0,
+      );
+      const quantity = field(root, 'couple');
+      quantity.value = '1';
+      await quantity.parentElement.parentElement.fire('input', quantity);
+      assert.equal(empty.hidden, true);
+      assert.equal(button(root, 'Patikrinti sumą').disabled, false);
+      quantity.value = '0';
+      await quantity.parentElement.parentElement.fire('input', quantity);
+      assert.equal(empty.hidden, false);
+      assert.equal(button(root, 'Patikrinti sumą').disabled, true);
+    }
+  }));
+
+test('saved receipt displays original delivery facts and explains expiry, disconnected payment and persistent withdrawal', () =>
+  withDom(async () => {
+    for (const stockState of ['reserved', 'released']) {
+      const client = clientFixture(),
+        root = new Element('div');
+      client.order.stock_state = stockState;
+      client.order.snapshot = {
+        ...client.order.snapshot,
+        country: 'LT',
+        delivery: { label: 'Original courier label' },
+        customer: {
+          name: 'TEST Buyer',
+          email: 'buyer@example.test',
+          phone: '+37060000001',
+          address: {
+            line1: 'TEST Street 2',
+            line2: 'Flat 3',
+            postalCode: '02211',
+            city: 'Vilnius',
+            country: 'LT',
+          },
+          locker: { label: 'TEST Locker' },
+        },
+      };
+      client.attempt = { orderId: client.order.id };
+      client.receipt = async () => ({
+        documents: [],
+        withdrawalRequested: true,
+        fulfillmentBlocked: true,
+      });
+      const original = JSON.stringify(client.order.snapshot);
+      await mountCheckout(root, { client });
+      const content = textContent(root);
+      for (const value of [
+        'TEST Buyer',
+        'buyer@example.test',
+        '+37060000001',
+        'TEST Street 2',
+        'Flat 3',
+        '02211',
+        'Vilnius',
+        'LT',
+        'Original courier label',
+        'TEST Locker',
+      ])
+        assert.ok(content.includes(value), value);
+      assert.ok(
+        content.includes(
+          stockState === 'released' ? 'Rezervacija pasibaigė' : 'Mokėjimas šiuo metu neįjungtas',
+        ),
+        content,
+      );
+      assert.ok(content.includes('Atsisakymo prašymas išsaugotas'), content);
+      assert.equal(JSON.stringify(client.order.snapshot), original);
+      if (stockState === 'released') assert.equal(button(root, 'Apmokėti'), undefined);
+    }
+  }));
 
 test('cart projection drops unknown/inactive/invalid quantities and PII, combines duplicates without truncating overflow', () => {
   assert.deepEqual(

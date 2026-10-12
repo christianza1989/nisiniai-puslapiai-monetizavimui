@@ -17,6 +17,10 @@ export function productDefinition(input, config) {
       typeof input.enabled === 'boolean',
     'invalid_product',
   );
+  requireValue(
+    input.lotTrackingRequired === undefined || typeof input.lotTrackingRequired === 'boolean',
+    'invalid_stock_policy',
+  );
   const countries = config.markets.map((m) => m.country);
   requireValue(
     input.prices &&
@@ -64,6 +68,9 @@ export function productDefinition(input, config) {
   return {
     sku: input.sku,
     title: input.title.trim(),
+    ...(input.lotTrackingRequired !== undefined
+      ? { lotTrackingRequired: input.lotTrackingRequired }
+      : {}),
     enabled: input.enabled,
     prices: input.prices,
     package: pack ? { weightGrams: pack.weightGrams, dimensionsMm: [...pack.dimensionsMm] } : null,

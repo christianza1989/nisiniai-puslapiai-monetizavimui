@@ -152,6 +152,7 @@ const assets = {
   '/admin.css': ['admin.css', 'text/css; charset=utf-8'],
   '/admin.mjs': ['admin.mjs', 'text/javascript; charset=utf-8'],
   '/backoffice-ui.mjs': ['backoffice-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/finished-stock-ui.mjs': ['finished-stock-ui.mjs', 'text/javascript; charset=utf-8'],
   '/shipping-ui.mjs': ['shipping-ui.mjs', 'text/javascript; charset=utf-8'],
   '/private-files-ui.mjs': ['private-files-ui.mjs', 'text/javascript; charset=utf-8'],
   '/shipment-commands-ui.mjs': ['shipment-commands-ui.mjs', 'text/javascript; charset=utf-8'],

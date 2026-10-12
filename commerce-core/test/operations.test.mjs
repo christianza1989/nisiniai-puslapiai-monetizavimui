@@ -272,7 +272,28 @@ test('ordered migrations adopt a legacy database, repeat without data loss and r
   db.db.exec(sources[0].source);
   const s = new CommerceService(db);
   await s.provisionStore(fixtureStore(), fixtureProducts());
-  const result = await s.createOrder('store_a', 'sandbox', cart(), key(1));
+  // Build genuine first-schema data without running current code against an
+  // intentionally unmigrated database.
+  const legacyId = crypto.randomUUID(),
+    legacyAt = Date.now();
+  db.db
+    .prepare(
+      'INSERT INTO orders(store_id,id,request_key,request_hash,currency,amount,snapshot_json,access_hash,expires_at,created_at) VALUES(?,?,?,?,?,?,?,?,?,?)',
+    )
+    .run(
+      'store_a',
+      legacyId,
+      key(1),
+      'legacy_request',
+      'EUR',
+      3200,
+      JSON.stringify({ country: 'LT', currency: 'EUR', lines: [{ sku: 'couple', quantity: 1 }] }),
+      'legacy_access',
+      legacyAt + 3600000,
+      legacyAt,
+    );
+  db.db.prepare('INSERT INTO order_lines VALUES(?,?,?,?)').run('store_a', legacyId, 'couple', 1);
+  const result = { order: { id: legacyId } };
   await applyMigrations(db, sources);
   db.migrate();
   await applyMigrations(db, sources);
@@ -338,6 +359,42 @@ test('local identity is store/grant/expiry bound; operator API has no unauthenti
   assert.equal(overview.orders[0].access_hash, undefined);
   const markets = await (await request('store-a.example', '/api/markets')).json();
   assert.equal(JSON.stringify(markets).includes(customer().email), false);
+  assert.equal(
+    (await request('store-a.example', '/api/operator/finished-stock', 'GET', undefined, false))
+      .status,
+    403,
+  );
+  assert.equal((await request('store-b.example', '/api/operator/finished-stock')).status, 403);
+  const lotInput = {
+    id: 'http_lot',
+    sku: 'couple',
+    mode: 'adopt',
+    quantity: 1,
+    expectedAvailable: 4,
+    supplierRef: 'TEST inspected batch',
+    reason: 'TEST original stock',
+    qualityChecked: true,
+    expiresAt: null,
+    quarantined: false,
+    actorRef: 'forged',
+  };
+  records[0].permissions = ['read'];
+  assert.equal(
+    (await request('store-a.example', '/api/operator/finished-lots', 'POST', lotInput)).status,
+    403,
+  );
+  records[0].permissions = ['read', 'stock', 'document'];
+  const lotResponse = await request(
+    'store-a.example',
+    '/api/operator/finished-lots',
+    'POST',
+    lotInput,
+  );
+  assert.equal(lotResponse.status, 200);
+  assert.equal((await lotResponse.json()).lot.actor_ref, actor);
+  const lots = await (await request('store-a.example', '/api/operator/finished-stock')).json();
+  assert.equal(lots.lots.length, 1);
+  assert.equal(lots.inventory.find((i) => i.sku === 'couple').available, 4);
   assert.equal(
     (await request('store-a.example', '/api/operator/orders/' + order.id + '/pack', 'POST', {}))
       .status,

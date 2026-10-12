@@ -313,7 +313,7 @@ export class Wholesale extends Backoffice {
     try {
       await this.s.db.batch([
         this.s.stmt(
-          'INSERT INTO orders(store_id,id,request_key,request_hash,currency,amount,snapshot_json,access_hash,expires_at,created_at) VALUES(?,?,?,?,?,?,?,?,?,?)',
+          'INSERT INTO orders(store_id,id,request_key,request_hash,currency,amount,snapshot_json,access_hash,expires_at,created_at,stock_checked_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
           store,
           id,
           requestKey,
@@ -323,6 +323,7 @@ export class Wholesale extends Backoffice {
           JSON.stringify(snapshot),
           accessHash,
           at + 3600000,
+          at,
           at,
         ),
         ...snapshot.lines.map((l) =>

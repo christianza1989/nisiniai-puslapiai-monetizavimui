@@ -70,13 +70,25 @@ export class CommerceOperations {
       store,
     );
     const page = await this.ordersPage(store, environment);
+    const inventory = await this.s.rows(
+      'SELECT i.sku,i.available,p.definition_json FROM inventory i JOIN products p ON p.store_id=i.store_id AND p.sku=i.sku WHERE i.store_id=?',
+      store,
+    );
+    const catalog = (await this.s.catalog(store, environment)).map((p) => ({
+      ...p,
+      sellableAvailable: p.available,
+      available: inventory.find((i) => i.sku === p.sku).available,
+      lotTrackingRequired:
+        JSON.parse(inventory.find((i) => i.sku === p.sku).definition_json).lotTrackingRequired ===
+        true,
+    }));
     return {
       storeId: store,
       environment,
       legalName: config.legalSnapshot.name,
       testOnly: config.testOnly === true,
       counts,
-      catalog: await this.s.catalog(store, environment),
+      catalog,
       orders: page.orders,
       nextOrderCursor: page.nextCursor,
       documents: await this.listDocuments(store, environment),

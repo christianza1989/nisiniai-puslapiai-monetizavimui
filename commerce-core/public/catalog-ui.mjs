@@ -42,7 +42,8 @@ export async function renderCatalog(content, ctx) {
   );
   const sku = n('input', { required: true, maxlength: '100', pattern: '[a-zA-Z0-9_-]+' }),
     title = n('input', { required: true, minlength: '2', maxlength: '200' }),
-    enabled = n('input', { type: 'checkbox' });
+    enabled = n('input', { type: 'checkbox' }),
+    tracking = n('input', { type: 'checkbox' });
   const weight = n('input', { type: 'number', min: '1', max: '100000', step: '1' }),
     dimensions = [0, 1, 2].map(() =>
       n('input', { type: 'number', min: '0.1', max: '300', step: '0.1' }),
@@ -61,6 +62,7 @@ export async function renderCatalog(content, ctx) {
     n('label', {}, 'SKU žymuo', sku),
     n('label', {}, 'Prekės pavadinimas', title),
     n('label', { class: 'check-field' }, enabled, 'Aktyvi prekyba'),
+    n('label', { class: 'check-field' }, tracking, 'Likutis tik iš apskaitomų rinkinių partijų'),
     prices.map(({ m, input }) => n('label', {}, m.country + ' kaina (' + m.currency + ')', input)),
     n('label', {}, 'Supakuotas svoris (g)', weight),
     dimensions.map((d, i) => n('label', {}, ['Ilgis (cm)', 'Plotis (cm)', 'Aukštis (cm)'][i], d)),
@@ -83,6 +85,8 @@ export async function renderCatalog(content, ctx) {
     sku.readOnly = Boolean(selected);
     title.value = selected?.title || '';
     enabled.checked = selected?.enabled !== false && Boolean(selected);
+    tracking.checked = selected?.lotTrackingRequired === true;
+    tracking.disabled = tracking.checked;
     weight.value = selected?.package?.weightGrams || '';
     dimensions.forEach((d, i) => {
       d.value = selected?.package?.dimensionsMm[i] / 10 || '';
@@ -102,6 +106,7 @@ export async function renderCatalog(content, ctx) {
           sku: sku.value,
           title: title.value,
           enabled: enabled.checked,
+          lotTrackingRequired: tracking.checked,
           prices: Object.fromEntries(
             prices
               .filter((p) => p.input.value)

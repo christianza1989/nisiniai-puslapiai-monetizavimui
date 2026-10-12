@@ -167,6 +167,37 @@ test('native useful rich content is applied losslessly and retains actual unreso
   assert.deepEqual(await Promise.all(originalNames.map(name => readFile(path.join(fixture.revisionDir, name)))), originals);
 });
 
+test('native visible text rejects legacy link control delimiters without writing or blocking ordinary language', async t => {
+  const fixture = await sandbox(t), prepared = fixture.prepare(), current = await readFile(fixture.filename);
+  const target = (await fixture.read()).pages.find(page => page.slug === 'pasiruosimas').id;
+  const marker = '\ue200page:' + target + '\ue201';
+  const original = richOutput();
+  const outputs = [
+    {...original, title: original.title + marker},
+    {...original, description: original.description + marker},
+    {...original, intent: original.intent + marker},
+    {...original, body: [{type:'paragraph',text:'Skaitykite '+marker+'.'}]},
+    {...original, body: [{type:'heading',level:2,text:'Gidas '+marker}]},
+    {...original, body: [{type:'list',items:['Gidas '+marker]}]},
+    {...original, body: [{type:'richParagraph',content:[{type:'text',text:marker}]}]},
+    {...original, body: [{type:'richParagraph',content:[{type:'link',text:marker,target:{kind:'page',pageId:target}}]}]},
+    {...original, body: [{type:'paragraph',text:'Neužbaigtas žymeklis \ue200page:'+target}]},
+  ];
+  for (const output of outputs) for (const command of ['validate','apply']) {
+    const result = fixture.call({command,expectedRevisionHash:prepared.expectedRevisionHash,
+      expectedPlanningHash:prepared.expectedPlanningHash,expectedContextHash:prepared.expectedContextHash,output});
+    assert.equal(result.status,1); assert.equal(result.value.code,'writer_output_invalid');
+    assert.deepEqual(await readFile(fixture.filename),current);
+  }
+  // Private factual notes are not public body; ordinary non-Latin prose is not a language gate.
+  const allowed = {...richOutput(target),factChecks:['Privati pastaba apie '+marker],
+    body:[...richOutput(target).body,{type:'paragraph',text:'Sintetinis tekstas: օրինակ, пример.'}]};
+  const result=fixture.call({command:'validate',expectedRevisionHash:prepared.expectedRevisionHash,
+    expectedPlanningHash:prepared.expectedPlanningHash,expectedContextHash:prepared.expectedContextHash,output:allowed});
+  assert.equal(result.status,0); assert.deepEqual(result.value.output,allowed);
+  assert.deepEqual(await readFile(fixture.filename),current);
+});
+
 test('validate returns exact normalized native candidate and never mutates any intake or site bytes', async t => {
   const fixture = await sandbox(t), prepared = fixture.prepare(), current = await readFile(fixture.filename);
   const names = ['intake-manifest.json', 'intake-context.json', 'source-draft.json'];

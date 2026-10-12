@@ -12,8 +12,9 @@ galutinis dizainas, našumas ir vėlesni agentai šiuo kvitu nepriimami.
   `be32c223b2e45168b52a5eeec2d111006fe98214`, [PR 96](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96).
 - Svetainės PUBLIC:
   `a82c6da55ff53df895a5c6600adba421b51fbe37`, [PR 31](https://github.com/christianza1989/niche-public-core/pull/31).
-- Svetainės CORE integravimo kodas:
-  `0f1d8324a6825b76c23bb8df8e85f58a04b4f8fe`, [PR 101](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101).
+- Svetainės CORE galutinis priėmimo commit:
+  `2c90a8f697e78aff9de401e5f20da3b8f7c7df47`, [PR 101](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101).
+  Kanoninio kodo merge išsaugotas `0f1d8324a6825b76c23bb8df8e85f58a04b4f8fe`.
 - Patvirtinto 88 puslapių paketo SHA256:
   `e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6`.
 - Caller manifest ir root failų baitai sutampa: checkout UI

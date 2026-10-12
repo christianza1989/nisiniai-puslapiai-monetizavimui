@@ -5,14 +5,36 @@ import hashlib
 import json
 import runpy
 from copy import deepcopy
+from types import SimpleNamespace
 
 import pytest
-from test_content_completion import source
 
 from pinet_core.content_completion.service import parse_media, parse_page
 from pinet_core.control.routes import ControlError
 from pinet_core.creation.adapter import ROOT
 from pinet_core.creation.review import canonical_sha256
+
+
+def source():
+    # Standalone synthetic reader input: offline collection must not depend on
+    # whether a PostgreSQL/test directory happened to be added to sys.path.
+    creation = SimpleNamespace(id="05c7097b-0c06-4831-b067-7f7aff7826f9", status="draft_ready", active_job_id=None)
+    proof = {"accepted_revision": 2, "candidate_sha256": "a" * 64, "accepted_source_revision": "b" * 40,
+             "site_id": "creation-05c7097b0c064831b0677f7aff7826f9", "canonical_host": "test.example.lt"}
+    item = {"pageId": "page-85b2000754b5eb53d4d460db", "title": "Privatus gidas",
+            "revisionHash": "c" * 64, "reviewCurrent": False, "hasApprovedRevision": False,
+            "state": "blocked", "blockers": ["Trūksta aktualios redakcinės peržiūros."],
+            "internalPlanned": 0, "internalAttached": 0}
+    detail = {**item, "type": "guide", "path": "/gidai/bandymas/", "planningHash": "d" * 64,
+              "factChecks": ["Paslaugos vykdymas dar nepatvirtintas."], "externalLinks": [],
+              "mediaCount": 0, "mediaFilesPresent": True, "reviewedAt": None, "reviewer": None,
+              "approvedRevisionHash": None}
+    node = {"version": "customer-content-workflow.v1", "state": "current", "creationId": creation.id,
+            "acceptedRevision": 2, "sourceHash": proof["candidate_sha256"], "siteId": proof["site_id"],
+            "canonicalHost": proof["canonical_host"], "release": "UNVERIFIED", "observedAt": "2026-10-11T02:00:00Z",
+            "expectedSiteHash": "e" * 64, "workflow": {"siteId": proof["site_id"], "canonicalHost": proof["canonical_host"],
+                "workflowVersion": 1, "deployment": "not-verified-by-studio", "pages": [item]}, "pages": [detail]}
+    return creation, proof, node
 
 
 def current():

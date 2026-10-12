@@ -243,6 +243,26 @@ async def approved_build_context(tx, creation):
             "plan": value["reply"]["plan"]}
 
 
+async def require_agent_foundation(tx, creation):
+    """New approved-plan builds cannot use Registration alone to bypass foundation.
+
+    The current build adapter only produces a private draft. Until a maintained
+    actual foundation proof exists, its authoritative state is UNVERIFIED. This
+    gate grants nothing, edits no history and does not migrate legacy businesses.
+    Disabling discovery does not let an already linked build bypass the gate.
+    """
+    if not await schema_ready(tx):
+        if settings().business_discovery_enabled:
+            raise ControlError(503, "discovery_unavailable")
+        return
+    approval = await tx.scalar(select(BuildApproval).where(BuildApproval.creation_id == creation.id))
+    if not approval:
+        return
+    if binding(approval) != binding(creation):
+        raise ControlError(503, "invalid_approved_plan")
+    raise ControlError(409, "website_foundation_not_ready")
+
+
 async def history(tx, row, offset, limit):
     jobs = list(await tx.scalars(select(DiscoveryJob).where(DiscoveryJob.discovery_id == row.id)
                                 .order_by(DiscoveryJob.sequence.desc()).offset(offset).limit(limit)))

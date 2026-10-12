@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "New linked discovery builds cannot bypass UNVERIFIED foundation via Registration-only customer-agent writes. Existing read/history and unlinked legacy preserved. Old-registration-only baseline201 reproduced through an isolated no-op seam; first detached-Session harness FAIL and mixed28PASS1FAIL retained, fixed new HTTP case1PASS. No operational migration, grant, session, model, new evaluator or corpus. Full foundation/controller/UI/calibration/target/public OPEN.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_business_discovery.py offline_tests/test_customer_agents.py (48PASS)",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DISCOVERY_FOUNDATION_GATE_QA_2026-10-13.md"
+    },
+    {
+      "command": "isolated PostgreSQL pytest tests/test_customer_agents.py::test_plan_linked_registered_business_cannot_skip_foundation (1PASS,7.44s; create/revise409/read200/no added Agent or Config)",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DISCOVERY_FOUNDATION_GATE_QA_2026-10-13.md"
+    },
+    {
+      "command": "ruff check src/pinet_core/business_discovery/service.py src/pinet_core/customer_agents/service.py offline_tests/test_business_discovery.py tests/test_customer_agents.py; git diff --check",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DISCOVERY_FOUNDATION_GATE_QA_2026-10-13.md"
+    }
+  ],
+  "eventId": "7874a57c-24eb-4805-9cc8-f6b182280270",
+  "sequence": 2,
+  "at": "2026-10-12T23:00:58.188Z"
+}

@@ -48,6 +48,14 @@ Source QA naudoja tik atskirą sintetinę PostgreSQL bazę ir provider0 callback
 
 ## Konkretūs likę darbai
 
+Naują discovery patvirtinimą turinčiam Creation vien Registration/grant
+neleidžia rašyti agentų aprašų. customer-agents.v1 create/revise tikrina
+serverinį require_agent_foundation ir grąžina409 website_foundation_not_ready,
+kol dabartinis statymo adapteris tebėra private draft / UNVERIFIED.
+Tai nėra įgyvendintas READY proof adapteris. Discovery funkcijos išjungimas
+jau sukurto BuildApproval vartų nepanaikina. Esamų aprašų GET/history išlieka;
+nepajungti ankstesni verslai šiame siaurame pataisyme nemigruojami.
+
 1. Clean source/contract handoff ir exact UI/BFF consumer; migration/adoption į išsaugotą owned DB, nauja įprasta savininko sesija, tikras minimalus / no-idea dialogue/report/approval UI.
 2. Tikras automatinis visų svetainės statymo etapų controller: katalogas/palyginimas/local inquiry, esamas turinys/media/editorial/renderer/SEO-GEO ir fail/replay/source/cancel vartai.
 3. Actual foundation proof; tada per-module Designer ir acquisition/customer-agent sąsajos bei esama kalibracija. Registracija ar private-draft PASS foundation nepakeičia.

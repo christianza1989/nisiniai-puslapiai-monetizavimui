@@ -89,3 +89,12 @@ rodo PL pasirinkimą, išvalytą checkbox ir neaktyvų submit 320 px pločiu:
 tmp/ui-review/terms-country-reset-320-102.png. Fixture naudoja bendrą
 taisyklių URL, todėl native svetainės revision → URL atitikties ši nuotrauka
 neįrodo; ji tikrinama svetainės sesijoje. Teisinis turinio priėmimas atskiras.
+
+## 0.10.3 išsaugoto užsakymo pavadinimai
+
+Actual svetainės LV bandymas atskleidė, kad išsaugoto užsakymo ekranas
+naudojo originalų line.title, nors formoje jau veikė productTitle callback.
+Tas pats callback dabar taikomas ir užsakymo peržiūroje, su sąsajos language
+ir line kopija. Originalus užsakymo / apskaitos snapshot bei sumos nekeičiami.
+Native pavadinimo atitiktį ir create / reload rezultatą tikrina svetainės
+sesija po naujo canonical SDK prijungimo; tai nėra PDF vertimo pakeitimas.

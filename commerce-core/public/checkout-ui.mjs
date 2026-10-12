@@ -159,9 +159,20 @@ const element = (tag, attrs = {}, ...children) => {
   el.append(...children.flat().filter((c) => c !== undefined && c !== null));
   return el;
 };
+export function resolveTermsLink(termsUrl, context, origin) {
+  try {
+    const value = typeof termsUrl === 'function' ? termsUrl(context) : termsUrl;
+    if (typeof value !== 'string' || !value.trim() || value.length > 2000) return null;
+    const url = new URL(value, origin);
+    if (url.origin !== origin || url.username || url.password) return null;
+    return url.pathname + url.search + url.hash;
+  } catch {
+    return null;
+  }
+}
 /**
  * @param {HTMLElement} root
- * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string,initialLines?:Array<{sku:string,quantity:number}>,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string}} options
+ * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),initialLines?:Array<{sku:string,quantity:number}>,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string}} options
  */
 export async function mountCheckout(
   root,
@@ -347,14 +358,31 @@ export async function mountCheckout(
     field('city', t[9], { required: true, maxlength: '100', autocomplete: 'address-level2' });
     field('postalCode', t[10], { required: true, maxlength: '20', autocomplete: 'postal-code' });
     const terms = field('terms', t[12], { type: 'checkbox', required: true });
-    const safeTerms = new URL(termsUrl, location.origin);
-    if (safeTerms.origin === location.origin)
-      form.append(element('a', { href: safeTerms.pathname }, t[12]));
+    const termsLink = element('a', {}, t[12]);
+    form.append(termsLink);
     const quoteButton = element('button', { type: 'button' }, t[13]),
       submit = element('button', { type: 'submit', disabled: true }, t[14]);
     const summary = element('p', { role: 'status' });
-    let quoted;
+    let quoted,
+      termsAvailable = false;
     const selected = () => markets.find((m) => m.country === marketSelect.value);
+    const refreshTerms = () => {
+      const market = selected();
+      const href =
+        market &&
+        resolveTermsLink(
+          termsUrl,
+          { country: market.country, language, policyVersion: market.policyVersion },
+          location.origin,
+        );
+      termsAvailable = Boolean(href);
+      terms.checked = false;
+      terms.disabled = !termsAvailable;
+      termsLink.hidden = !termsAvailable;
+      if (href) termsLink.setAttribute('href', href);
+      else termsLink.removeAttribute('href');
+      submit.disabled = true;
+    };
     const refreshLockers = () => {
       locker.replaceChildren();
       const method = selected()?.delivery.find((d) => d.id === delivery.value);
@@ -387,6 +415,7 @@ export async function mountCheckout(
           marketSelect.value
         ] || '.+';
       refreshLockers();
+      refreshTerms();
       if (!delivery.options.length) summary.textContent = t[31];
     };
     const input = () => ({
@@ -413,7 +442,7 @@ export async function mountCheckout(
     });
     form.addEventListener('input', (event) => {
       if (event.target === terms) {
-        submit.disabled = !(canOrder && quoted && terms.checked);
+        submit.disabled = !(canOrder && quoted && termsAvailable && terms.checked);
         return;
       }
       quoted = undefined;
@@ -434,13 +463,13 @@ export async function mountCheckout(
           ...(deliveryQuoteId ? { deliveryQuoteId } : {}),
         });
         summary.textContent = t[21] + ': ' + money(quoted.amount, quoted.currency);
-        submit.disabled = !canOrder || !terms.checked;
+        submit.disabled = !canOrder || !termsAvailable || !terms.checked;
         status.textContent = '';
       }),
     );
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (!quoted || !terms.checked || !form.reportValidity()) return;
+      if (!quoted || !termsAvailable || !terms.checked || !form.reportValidity()) return;
       await run(submit, async () => {
         const customer = {
           name: fields.name.value,
@@ -484,7 +513,7 @@ export async function mountCheckout(
         await orderView(order);
         status.textContent = t[27];
       });
-      submit.disabled = !(canOrder && quoted && terms.checked);
+      submit.disabled = !(canOrder && quoted && termsAvailable && terms.checked);
     });
     form.append(summary, element('div', { class: 'actions' }, quoteButton, submit));
     content.append(form);

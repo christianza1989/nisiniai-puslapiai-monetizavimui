@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Metadata-only current acceptance entry preserves exact historical status text, links immutable normal lifecycle evidence and separate57 peer-attributed normal HTTP vs88 fixture results. No ordinary browser/director/producer/whole-platform claim. Source253 API is immutable frozen-origin; original stop/restart/freeze witnesses verified. No repeat of previously passed functional suites needed for this documentation-only delta.",
+  "checks": [
+    {
+      "command": "agent-business-core/runtime/.venv/Scripts/python.exe agent-business-core/runtime/artifacts/acq-status-verify.private.py",
+      "result": "PASS",
+      "evidence": "Three original root receipt SHA pins exact;237source/148origins/63canonical tables, historical status entries exact,23 local links, original typed wire exact; no functional paths changed. Portal normal57responses attributed to issue66#6116518608/#6116596954, not independently claimed as browser/SQL QA."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Only documentation/navigation/workflow journal additions; prior source and every original FAIL unchanged."
+    }
+  ],
+  "eventId": "418f65bc-9a96-44dd-810e-49b8a85b659f",
+  "sequence": 3,
+  "at": "2026-10-12T02:24:09.640Z"
+}

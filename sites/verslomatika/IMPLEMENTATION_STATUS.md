@@ -1,5 +1,22 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current local scope and next acceptance — 2026-10-12T02:19Z
+
+**Whole local platform OPEN; typed acquisition increment locally verified.** This is the same owner-authorized Verslomatika work, including the explicitly requested Madbeauty acquisition adoption. Historical entries below retain their original sources/results. [Current acquisition evidence and boundaries](../../docs/ACQUISITION_TYPED_TASKS_NORMAL_QA_2026-10-12.md) supersede the historical “next receive PR59” action, without changing any old calibration or FAIL.
+
+Core functional166fdde682bb6c54fa5b523bd0df5d35f61f9f67 / served source253590f9f5f482c69e0d6c0b5dddf8f4535ea20b, stacked draft [PR104](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/104), companion5924 unchanged. Normal0025→0027 migration/grants, canonical correspondence/hold/stop/privacy Case and common typed Task/Run/Event capture have bounded source/actual PostgreSQL/process proofs. Joint portal3021 functionalce3db025/builddhbgO2TH2o_0_28cw1UJy completed57 actual normal BFF/SSR HTTP responses: login,24-task paging/report/events, one cancellation, stop and same-cookie reads after API restart/frozen-origin switch. Current QA state2 succeeded/1 cancelled/21 failed and correspondence2out/3in/1hold/1stop/1privacy persists; no model/provider/channel calls or external send.
+
+Owned API18868 now serves immutable253 source in ignored private runtime (237-file manifeste079f6fb; all148 loaded canonical module origins verified), so later source work does not silently change it. Same dedicated0027 QA DB/Module/Sessions/original dates/permissions; no renewal. This private runtime contains private configuration and is **not a source-only export**. Operational0023/source25d/API8860/studio18861 and old portal3019/helper61055 remain unchanged/held. No main merge or target-PC/public adoption.
+
+| Remaining path | Current boundary | Next action |
+| --- | --- | --- |
+| Ordinary browser login and authenticated desktop/mobile dashboard | UNVERIFIED; no supported private credential-entry bridge in documented CUA. Normal3021 form is open; necessary owner entry requested by portal owner. HTTP CookieJar is separate. | After secure normal entry, inspect actual history/report/events/cancel states in the mutually coordinated UI window. Continue other executable source work while waiting. |
+| Director consultation over the same canonical acquisition rows | OPEN; only reader seams exist, current chat context has registration metadata. | Mount a bounded server-authorized read path with current Session/owner/grant/module purpose and provenance, then prove same committed data and revocation boundaries. |
+| Periodic discovery/qualification/research/draft/review/capture/accounting | OPEN; current captures use supplied synthetic preparation. | Reuse the existing task worker and acquisition/calibration producer; implement and prove actual provenance/current mandate/stop/expiry/replay instead of claiming automated research from injected copy. |
+| Full native→core→portal/director/worker journey | OPEN; native and capture receipts still have separate scopes. | Complete their actual normal linkage with new synthetic recipients and no external send. |
+| Diverse client business creation and protected agent calibration/content/media/editorial/SEO-GEO | OPEN; original model FAILs and known-case results retained. | Resume the next unresolved actual client path and repair observed core defects; source test sums do not constitute end-to-end acceptance. |
+| Target-PC and public launch | OPEN, outside this PC's loopback acceptance. | Keep source-only transfer distinct from actual target runtime; live channels/DNS/deployment remain held. |
+
 ## Actual typed-report version repair — 2026-10-11T21:56Z
 
 The first actual typed correction run at clean source25d1376e5d1c3989c9aafe3cc3d54bdff4195413 ended INCOMPLETE/AssertionError after two Luna and one Sol calls, all three known usage settlements retained. Original receipt45ab24541233fabd7186d59d95b676249565f1ab79caa23ef320cc59e4b5d1ca and metadata adoptione7ccac8dfd1617ab6287b5774ca60b0319a0f953b880d384b59864b440351714 are unchanged. Independent Quality was helpful/issues0; five actual scores4/5/5/4/5 and critical0 were measured, but the private report version was malformed. The expectations binding dictionary included its own version and overwrote the report version. This is an actual format failure, not completed calibration, learning admission or activation.

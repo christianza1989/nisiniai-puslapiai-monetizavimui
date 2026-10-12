@@ -87,3 +87,7 @@ backup/restore and empty/populated rollback evidence are separate from pure
 schemas, source review and injected preparation. Actual discovery/research/model
 review and accounting, periodic scheduler, native signup link, ordinary portal/
 director UI, full local platform, target-PC and public launch remain OPEN.
+
+[Bounded normal source/process and portal BFF acceptance](../../../docs/ACQUISITION_TYPED_TASKS_NORMAL_QA_2026-10-12.md)
+records exact sources and separate receipts. Its normal HTTP/CookieJar result is
+not ordinary browser login, a mounted director tool or authenticated preparation.

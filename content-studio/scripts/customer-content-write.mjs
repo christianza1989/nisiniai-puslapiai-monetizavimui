@@ -51,6 +51,17 @@ export const writerOutputSchema = {
   },
   $defs: { block: nativeUnion('block', 'type'), inline: nativeUnion('inline', 'type'), target },
 };
+function scopedOutputSchema(page) {
+  const schema=structuredClone(writerOutputSchema);
+  const urls=[...new Set((page.externalLinks||[]).filter(item=>item.verified===true).map(item=>item.url))].sort();
+  schema.$defs.target.anyOf=schema.$defs.target.anyOf.filter(branch=>{
+    if(branch.properties.kind.const!=='external')return true;
+    if(!urls.length)return false;
+    branch.properties.url.enum=urls;
+    return true;
+  });
+  return schema;
+}
 const task = `Parenk pilną naudingą šio puslapio juodraštį svetainės kalba pagal jo konkretų klausimą ir visą planningBrief.
 Grąžink tik pateiktos native V2 JSON schemos title, description, intent, body ir factChecks. Leidžiami tik tikros V2 schemos blokai; neatkurk V1 blocks formato, HTML, JS ar tariamų įrankių.
 Pradėk aiškiu atsakymu, pateik konkrečius pasirinkimo kriterijus ar aiškiai pažymėtą pavyzdį, paaiškink ribas. Neišgalvok vykdymo, kainų, ekspertų, klientų, kontaktų, datų ar atsisiuntimų.
@@ -75,11 +86,12 @@ async function loadContext(input) {
   // must not invalidate otherwise identical retained content feedback.
   skill.researchSnapshots.set(`${site.id}:${site.canonicalHost}:${site.locale}`, researchSnapshot);
   const researchSnapshotHash = digest(researchSnapshot);
-  const instructionHash = sha(skill.instructions + '\n' + task + '\n' + stableV2(writerOutputSchema));
+  const outputSchema=scopedOutputSchema(page);
+  const instructionHash = sha(skill.instructions + '\n' + task + '\n' + stableV2(outputSchema));
   const expectedRevisionHash = model.revisionHash(page), expectedPlanningHash = model.planningContextHash(page), expectedSiteHash = model.studioContextHash(site);
   const expectedContextHash = digest({ manifestHash: sha(manifestBytes), siteId, pageId: page.id,
     expectedRevisionHash, expectedPlanningHash, expectedSiteHash, researchSnapshotHash, instructionHash });
-  return { model, site, page, brief, intake, proposal, manifest, skill, instructionHash,
+  return { model, site, page, brief, intake, proposal, manifest, skill, instructionHash, outputSchema,
     expectedRevisionHash, expectedPlanningHash, expectedSiteHash, expectedContextHash, researchSnapshotHash };
 }
 
@@ -136,7 +148,7 @@ export async function customerContentWrite(input) {
       existingVerifiedExternalUrls: (page.externalLinks || []).filter(item => item.verified).map(item => item.url),
       externalLinks: page.externalLinks, media: page.media, editorial: page.editorial, factChecks: page.factChecks,
       pillarPageId: page.pillarPageId, linkSuggestions: page.linkSuggestions, links: page.links };
-    return { ...binding, state: 'prepared', siteData, pageData, outputSchema: writerOutputSchema,
+    return { ...binding, state: 'prepared', siteData, pageData, outputSchema: context.outputSchema,
       instructions: buildEditorialPrompt(context.skill, { mode: 'draft', instruction: task, siteData, pageData }),
       instructionMetadata: context.skill.metadata, workflow: workflowOverview(site, model.revisionHash) };
   }

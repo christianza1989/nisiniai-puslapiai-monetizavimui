@@ -105,7 +105,13 @@ def ready(app):
 
 async def read_snapshot(app, database, *, business_id, user_id, session_id):
     """Only an authenticated identity and business UUID cross this internal boundary."""
-    registration = ready(app)
+    return await read_registered_snapshot(
+        ready(app), database, business_id=business_id, user_id=user_id, session_id=session_id
+    )
+
+
+async def read_registered_snapshot(registration, database, *, business_id, user_id, session_id):
+    """Source-fixed caller supplies a validated registration; identity is still rechecked."""
     cfg = settings()
     async with database.registry() as tx:
         await tx.execute(text("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ, READ ONLY"))

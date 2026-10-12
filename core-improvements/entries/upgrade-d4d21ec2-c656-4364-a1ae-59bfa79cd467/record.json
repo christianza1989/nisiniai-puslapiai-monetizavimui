@@ -1,0 +1,22 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Reuse held authority deadlines at the common worker final clock for chat and typed capture",
+  "category": "code",
+  "evidence": [
+    "Original owned PostgreSQL2FAIL30deselected15.06s SHA99c95988339a72b3484b9b20610ea44e30abebd05fe7c901628a00f9de0b5753: Session and available capture Module expired during the last worker clock wait, after director authority returned true.",
+    "Targeted correction2PASS30deselected14.66s SHA2b541aedca1383f110f2f2e9b9b46ae34084c782be69397711ae09ecaf62c4d2; no paid/provider/model/channel calls."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/director/read.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/tasks.py",
+    "agent-business-core/runtime/acceptance_tests/test_director_read.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert before adoption, director defaultOFF; preserve original failures and all Task/Run/Context/accounting history, never reset DB or blind retry.",
+  "id": "upgrade-d4d21ec2-c656-4364-a1ae-59bfa79cd467",
+  "branch": "codex/acquisition-director-read-20261012",
+  "baseSha": "26e09018458c92bf119a327751338af67f6f6264",
+  "createdAt": "2026-10-12T03:57:38.622Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual frozen clean9af0ebb0cfe3be7866dafcf0cc83d8fbfda753d2 verification. One actual gpt-6-luna/medium consultation succeeds after normal TCP password login;14776input/292output tokens, cached/reasoning/cache-write0, USDnull. Same Task/Run/result persists after API restart/replay; current read revocation403. Supplied synthetic acquisition preparation remains separate from real producer. Model semantic quality/language/ordinary browser UI/targetPC/public UNVERIFIED or OPEN. Chain original private harness FAILa07246d2 (overlapping QA writes) and07964d41 (inventory baseline before deliberate partial table) retained; no production predicate/grants weakened. Operational0023/source25d and frozen25318868/portal3021 held unchanged.",
+  "checks": [
+    {
+      "command": "frozen pytest acceptance_tests/test_director_read.py and test_acquisition_tasks.py on clean9af0ebb",
+      "result": "PASS",
+      "evidence": "33PASS90.32s SHA01d5da41ae91d35302995db9f3e0b344b2df623b2c2d978c40977fbef1388673;28PASS55.18s SHA80a3ad703cd329ab6196f5c8c32dd95ffa8fa57f3acd0b90f87576a1c24ddce3; full0028 fresh owned PG"
+    },
+    {
+      "command": "normal TCP/password-login/common-worker actual Codex/restart/replay/current-read revocation",
+      "result": "PASS",
+      "evidence": "Receipt340fa9da48d35e10506307dde5d40aeaa1f3cf44134860fd49a1f5205a45ed35; immutable inputd74a26726f93778ca4c0f32e3db7bb1c5283e3840642ab18312fa5b9add4ef99; model execution/mechanical evidence only; external_sent=false"
+    },
+    {
+      "command": "full0001->0028/empty rollback/re-upgrade/populated refusal/bootstrap repair+repeat/partial refusal/actual pg_dump restore",
+      "result": "PASS",
+      "evidence": "Receiptcc8015754340e71321d32c25a9880f0d3f92c3c7e37d40f4f348952eac84460b; all restored rows equal; operational0023 fingerprints unchanged; no global PG restart in this block"
+    }
+  ],
+  "eventId": "11a35b94-9ec7-46bd-bcb3-349dcb04c4d7",
+  "sequence": 5,
+  "at": "2026-10-12T04:28:37.457Z"
+}

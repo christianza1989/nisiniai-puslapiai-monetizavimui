@@ -308,6 +308,7 @@ class CaptureHandler:
         _, module = await available_target(tx, service, value)
         if module.approved_by_user_id != task.user_id or module.organization_id != task.organization_id:
             raise LedgerError(403, "acquisition_task_owner_denied")
+        tx.info.setdefault('acquisition_task_deadlines',{})[task.id]=module.expires_at
         return value
 
     async def authority(self, tx, task):
@@ -320,6 +321,10 @@ class CaptureHandler:
     async def context(self, tx, task):
         binding, _ = await self.binding(tx, task)
         return {"input_sha256": binding.input_sha256}
+
+    def deadline_valid(self,tx,task,now):
+        expiry=tx.info.get('acquisition_task_deadlines',{}).get(task.id)
+        return expiry is not None and expiry>now
 
     async def run(self, context, heartbeat, adapter=None):
         if not await heartbeat():
@@ -337,6 +342,8 @@ class CaptureHandler:
             # the first canonical Case/mail effect in the same task transaction.
             await self.assert_authority(transaction, task)
             now = await transaction.scalar(text("SELECT clock_timestamp()"))
+            if not self.deadline_valid(transaction,task,now):
+                raise LedgerError(409,'authorization_revoked')
             if task.status != "running" or not task.lease_until or task.lease_until <= now:
                 raise LedgerError(409, "worker_interrupted")
 

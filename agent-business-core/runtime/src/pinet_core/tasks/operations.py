@@ -1,4 +1,5 @@
 """Dashboard projections reuse the accepted task/session/grant authority."""
+
 import hashlib
 import json
 
@@ -45,11 +46,20 @@ def agent_view(user_id):
     else:
         reason = None
     # Configuration availability is distinct from a current worker/provider health proof.
-    return {"agent_id": AGENT_ID, "display_name": "Automatizavimo konsultantas", "kind": "chat.consult",
-            "description": "Verslo poreikių aptarimas ir automatizavimo plano pasiūlymai.",
-            "availability": "available" if reason is None else "unavailable", "unavailable_reason": reason,
-            "model": cfg.chat_model, "effort": "medium", "tools": [], "system_writes": False,
-            "worker_health": "unknown", "daily_task_limit": cfg.chat_daily_limit}
+    return {
+        "agent_id": AGENT_ID,
+        "display_name": "Automatizavimo konsultantas",
+        "kind": "chat.consult",
+        "description": "Verslo poreikių aptarimas ir automatizavimo plano pasiūlymai.",
+        "availability": "available" if reason is None else "unavailable",
+        "unavailable_reason": reason,
+        "model": cfg.chat_model,
+        "effort": "medium",
+        "tools": [],
+        "system_writes": False,
+        "worker_health": "unknown",
+        "daily_task_limit": cfg.chat_daily_limit,
+    }
 
 
 class TaskInput(BaseModel):
@@ -91,36 +101,77 @@ def cursor_binding(session, business_id, status):
 
 
 @router.get("/businesses/{business_id}/tasks")
-async def history(business_id: str, request: Request, response: Response, limit: int = Query(20, ge=1, le=50),
-                  cursor: str | None = Query(None, min_length=1, max_length=2048),
-                  status: str | None = Query(None, pattern=r"^(queued|running|succeeded|failed|cancelled)$"),
-                  context=Depends(authenticated, scope="function")):
+async def history(
+    business_id: str,
+    request: Request,
+    response: Response,
+    limit: int = Query(20, ge=1, le=50),
+    cursor: str | None = Query(None, min_length=1, max_length=2048),
+    status: str | None = Query(None, pattern=r"^(queued|running|succeeded|failed|cancelled)$"),
+    context=Depends(authenticated, scope="function"),
+):
     tx, session = context
     business_id = identifier(business_id)
     await grant_for(tx, business_id, session.user_id)
-    query = select(Task.id, Task.created_at).where(Task.business_id == business_id, Task.kind == "chat.consult")
+    query = select(Task.id, Task.created_at).where(
+        Task.business_id == business_id, Task.kind == "chat.consult"
+    )
     if status:
         query = query.where(Task.status == status)
     # The visible creation set binds each page; inserting a task requires an explicit reload.
     # Task status is live; the status-filter snapshot expires when membership in that set changes.
     rows = (await tx.execute(query.order_by(Task.created_at.desc(), Task.id.desc()))).all()
-    snapshot = hashlib.sha256(json.dumps([settings().control_source_revision,
-                             [[t.id, t.created_at.isoformat()] for t in rows]], separators=(",", ":")).encode()).hexdigest()
+    from ..director.read import visible_tasks
+
+    candidates = list(await tx.scalars(select(Task).where(Task.id.in_([row.id for row in rows]))))
+    visible = {task.id for task in await visible_tasks(tx, candidates)}
+    rows = [row for row in rows if row.id in visible]
+    snapshot = hashlib.sha256(
+        json.dumps(
+            [settings().control_source_revision, [[t.id, t.created_at.isoformat()] for t in rows]],
+            separators=(",", ":"),
+        ).encode()
+    ).hexdigest()
     expires = int(utcnow().timestamp()) + 300
     if cursor:
         after, expires = open_cursor(cursor, session, cursor_binding(session, business_id, status), snapshot)
         index = next((i for i, task in enumerate(rows) if task.id == after), None)
         if index is None:
             raise ControlError(409, "snapshot_expired")
-        rows = rows[index + 1:]
+        rows = rows[index + 1 :]
     page_ids = [row.id for row in rows[:limit]]
-    page = list(await tx.scalars(select(Task).where(Task.id.in_(page_ids))
-                                .order_by(Task.created_at.desc(), Task.id.desc())))
-    next_cursor = seal_cursor({"binding": [session.user_id, session.id,
-                  cursor_binding(session, business_id, status), settings().environment],
-                  "snapshot": snapshot, "after": page[-1].id, "expires": expires}) if len(rows) > limit else None
-    return envelope(request, response, {"business_id": business_id, "items": [task_view(t) for t in page],
-                    "next_cursor": next_cursor, "snapshot_id": snapshot})
+    page = list(
+        await tx.scalars(
+            select(Task).where(Task.id.in_(page_ids)).order_by(Task.created_at.desc(), Task.id.desc())
+        )
+    )
+    next_cursor = (
+        seal_cursor(
+            {
+                "binding": [
+                    session.user_id,
+                    session.id,
+                    cursor_binding(session, business_id, status),
+                    settings().environment,
+                ],
+                "snapshot": snapshot,
+                "after": page[-1].id,
+                "expires": expires,
+            }
+        )
+        if len(rows) > limit
+        else None
+    )
+    return envelope(
+        request,
+        response,
+        {
+            "business_id": business_id,
+            "items": [task_view(t) for t in page],
+            "next_cursor": next_cursor,
+            "snapshot_id": snapshot,
+        },
+    )
 
 
 @router.get("/businesses/{business_id}/overview")

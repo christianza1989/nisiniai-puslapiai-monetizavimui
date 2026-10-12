@@ -68,7 +68,18 @@ class TaskRun(OwnedTaskScope, Base):
     finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     usage: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
     cost_microusd: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    __table_args__ = (parent_binding("control_tasks", "task_id"),)
+    __table_args__ = (
+        parent_binding("control_tasks", "task_id"),
+        UniqueConstraint(
+            "id",
+            "task_id",
+            "business_id",
+            "organization_id",
+            "user_id",
+            "environment_id",
+            name="uq_control_run_task_scope",
+        ),
+    )
 
 
 class TaskEvent(OwnedTaskScope, Base):

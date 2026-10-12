@@ -75,7 +75,7 @@ def check_trace_event(event):
         raise RunnerError("tool_attempted")
     if kind == "error" or event.get("type") in {"error", "turn.failed"}:
         message = json.dumps(event).lower()
-        if "not supported" in message:
+        if "not supported" in message or "selected model is at capacity" in message:
             raise RunnerError("model_unavailable")
         # An incomplete output cannot become a valid candidate by reconnecting.
         # Generic top-level network reconnect notices may still recover normally.

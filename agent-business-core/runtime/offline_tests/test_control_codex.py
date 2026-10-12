@@ -53,6 +53,8 @@ def test_usage_unknown_and_model_failure_are_truthful():
 
 
 @pytest.mark.parametrize("event,code", [
+    ({"type": "error", "message": "Selected model is at capacity. Please try a different model."}, "model_unavailable"),
+    ({"type": "turn.failed", "error": {"message": "Selected model is at capacity. Please try a different model."}}, "model_unavailable"),
     ({"type": "item.completed", "item": {"type": "error", "message": "stream disconnected"}}, "provider_error"),
     ({"type": "item.completed", "item": {"type": "error", "message": "Model not supported"}}, "model_unavailable"),
     ({"type": "error", "message": "Reconnecting... reason: max_output_tokens"}, "provider_error"),

@@ -5,10 +5,14 @@ pavedimą. Našumas, galutinis viešos svetainės dizainas ir būsimų agentų k
 atidėti. Ankstesni acceptance failai yra istoriniai; jų senos NOT IMPLEMENTED
 eilutės nekeičia žemiau pateikto esamo source inventoriaus.
 
+0.12.1: **LOCAL_SHOP_CODE_VERIFIED; PRODUCTION_NOT_READY.** Exact SDK ir
+susietos svetainės native buyer / expiry / hold kelias patikrintas.
+[Aktualus susietas priėmimas ir tikrieji paleidimo vartai](LOCAL_SHOP_ACCEPTANCE_0_12_1.md).
+
 | Kelias | Dabartinis kodas ir konkretus įrodymas | Dar nepriimta |
 |---|---|---|
 | Katalogas / kainos / pakuotės / priedai | CAS versijos, tik serverio kainos, inactive nežinomų matmenų priedai; catalog / quote-acceptance / buyer-delivery tests ir native D1 | Tikras inventorius, priedų pakuotės, patvirtintos užsienio kainos |
-| Krepšelis / forma / quote / užsakymas | 0.11 hook tik SKU/kiekiai, create-clear, lost-response, nauji pasirinkimai po seno order, vėlyvo quote atmetimas ir input lock; svetainės actual Add / storage / reload / new-order patikra. 0.12 tuščias krepšelis, originalus pristatymas, rezervacijos ir mokėjimo paaiškinimas; papildomi unit scenarijai | Svetainės exact 0.12 SDK ir keturių kalbų actual patikra |
+| Krepšelis / forma / quote / užsakymas | Hook tik SKU/kiekiai, create-clear, lost-response, nauji pasirinkimai po seno order, vėlyvo quote atmetimas ir input lock; svetainės actual Add / storage / reload / new-order patikra. Exact 0.12.1 SDK, tuščias krepšelis, originalus pristatymas, expiry / unpaid ir karantinas keturiomis kalbomis | Tikra production prekyba ir tiekėjų prijungimas |
 | Kalbos / sąlygos | Keturių kalbų UI, country+approved revision terms resolver, reset; actual site LV reload ir LT UI/LV country su nepakeistu snapshot SHA. Exact SDK source | Teisinė turinio approval nėra production legal admission |
 | Mokėjimas / stock expiry / webhook | Stripe SDK Checkout / signed async inbox / account-amount-currency-session guards / unique PaymentIntent; Node+native; ankstesnis isolated real TEST32EUR ir refund replay | Nuolatinė MB Stripe paskyra, live/sandbox faktinės prieigos, HTTPS webhook ir tikras mažas patikros kvitas |
 | Medžiagos / surinkimas / likučiai | Komponentų ir rinkinių partijos, FEFO paskyrimas, paveldėtas galiojimas / karantinas, CAS kiekiai, saugi senų duomenų migracija; 116 Node ir native D1, operatoriaus partijos / karantino / panaikinimo patikra | Tikra fizinė inventorizacija ir tiekėjo galiojimo faktai |
@@ -50,6 +54,7 @@ aprašyti 0.9 prijungimo sutartyje. Tiekėjas patvirtino, kad atskiros vežėjo
 sutarties ir mėnesinių/API mokesčių nereikia; tai nepakeičia IT ir kainų
 bandymo. Jokių realių mokėjimų, siuntų, laiškų ar deployment ši patikra neįjungia.
 
-Visas shop dar nepažymėtas priimtu. Pagamintų rinkinių spraga pataisyta ir
-patikrinta; exact 0.12 PUBLIC integracijos aktualus kvitas dar turi būti
-užbaigtas. Testų suma nėra susietos svetainės priėmimo pakaitalas.
+Žinomos nepriklausomos vietinio shop kodo spragos užbaigtos. Exact 0.12.1
+PUBLIC integracijos actual kvitas patvirtina krepšelį, išsaugotą pristatymą,
+expired / unpaid, atsisakymo ir realiai traced karantino būsenas keturiomis
+kalbomis. Production ir visos svetainės auditas nėra šio priėmimo dalis.

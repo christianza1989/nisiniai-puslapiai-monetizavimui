@@ -42,7 +42,11 @@ def configuration():
     return Path(node).resolve(), script, artifacts, environment
 
 
-async def _execute(arguments, payload, environment, still_authorized, seconds):
+async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576):
+    # Only fixed server-owned media reads opt into the larger bounded payload.
+    # Model/intake/writer callers retain their existing one-MiB default.
+    if type(output_limit) is not int or not 1048576 <= output_limit <= 20 * 1048576:
+        raise RunnerError("studio_output_limit")
     async def bounded(stream, limit):
         chunks, size = [], 0
         while chunk := await stream.read(8192):
@@ -67,7 +71,7 @@ async def _execute(arguments, payload, environment, still_authorized, seconds):
         raise RunnerError("studio_unavailable") from None
     tasks = []
     try:
-        tasks = [asyncio.create_task(bounded(process.stdout, 1048576)),
+        tasks = [asyncio.create_task(bounded(process.stdout, output_limit)),
                  asyncio.create_task(bounded(process.stderr, 16384)), asyncio.create_task(monitor())]
         async with asyncio.timeout(seconds):
             process.stdin.write(json.dumps(payload, ensure_ascii=False).encode())

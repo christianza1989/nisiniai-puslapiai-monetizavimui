@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Current owned native document/media reader verified through maintained canonical Node and restricted PostgreSQL; existing completions stay separate from historical candidates. Original FAIL/collection and terminated synthetic lock harness retained; real existing-customer/BFF and ordinary browser not yet accepted.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-content-workflow.test.mjs content-studio/test/customer-content-intake.test.mjs content-studio/test/customer-content-write.test.mjs",
+      "result": "PASS",
+      "evidence": "27PASS e27fa551c8cfac62bf04311e9e1c6fde453282c6c67c0eede700a956667c616c; docs/CUSTOMER_CURRENT_PAGE_READ.md"
+    },
+    {
+      "command": "pytest offline_tests/test_content_page.py tests/test_content_completion.py offline_tests/test_creation_studio.py -q",
+      "result": "PASS",
+      "evidence": "60PASS0SKIP 199f701955786ef1c8109689487bcb6a74ebc4384a76e1ec71a64fa81edbebfe; exact regenerated contract equality/canonical union/private media allowlist"
+    },
+    {
+      "command": "pytest tests/test_content_page_pg.py tests/test_content_completion_pg.py -q and supplemental current-page natural-expiry replay",
+      "result": "PASS",
+      "evidence": "7PASS bfce81a920a305e888c2d21f12eb35beb7c515e88d5d692d6df4756a46f89a0e and 2PASS e39c7c8495c11b3781a4116112e8edaad58e79f9e534b4818722b9eae3cfa6a2; real restricted PG/Node fake roles provider0"
+    },
+    {
+      "command": "Scoped Ruff changed Python source/test/exporter",
+      "result": "PASS",
+      "evidence": "All checks passed; original diagnostics retained in docs/CUSTOMER_CURRENT_PAGE_READ.md"
+    }
+  ],
+  "eventId": "afbd9902-62ee-4e6d-85fe-8a142fe787de",
+  "sequence": 2,
+  "at": "2026-10-12T10:45:14.192Z"
+}

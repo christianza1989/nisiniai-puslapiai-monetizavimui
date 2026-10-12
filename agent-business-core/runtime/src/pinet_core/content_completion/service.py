@@ -1,4 +1,6 @@
 """Read-only exact accepted-intake binding, live studio state and final current ownership."""
+import base64
+import hashlib
 import json
 import re
 from uuid import UUID
@@ -11,9 +13,11 @@ from ..control.routes import ControlError
 from ..creation import language_mode, studio
 from ..creation.adapter import ROOT
 from ..creation.models import Creation
+from ..creation.review import canonical_sha256
 from ..creation.service import ACTIVE, current_actor
 from ..creation_registration.service import accepted_proof
 from ..tasks.codex_transport import RunnerError
+from .page_wire import Document, Media, PageView
 from .wire import CompletionView
 
 
@@ -69,16 +73,15 @@ def parse_node(value, creation, proof):
         raise ControlError(503, "invalid_content_completion_source") from None
 
 
-async def projection(tx, session, creation, requested_revision=None):
+async def read_current_node(tx, session, creation, requested_revision=None, *, command="status", page_id=None,
+                            asset_id=None, expected_revision=None):
     enabled()
     if requested_revision is not None and requested_revision != creation.current_revision:
         raise ControlError(409, "stale_revision")
     if not creation.current_revision:
-        return CompletionView.model_validate_json(json.dumps({"creation_id": creation.id, "accepted_revision": None,
-            "accepted_source_revision": None, "candidate_sha256": None, "site_id": None, "canonical_host": creation.canonical_host,
-            "state": "not_imported", "revision_pending": creation.status in ACTIVE or creation.active_job_id is not None,
-            "observed_at": None, "site_context_sha256": None, "language_review_mode": language_mode.mode(),
-            "permitted_actions": ["refresh"], "pages": []})).model_dump(mode="json")
+        raise ControlError(404, "content_page_not_found")
+    if command not in {"status", "read-page", "read-media"}:
+        raise ControlError(503, "content_completion_unavailable")
     proof = await accepted_proof(tx, creation)
     node, _, artifacts, environment = studio.configuration()
     script = ROOT / "content-studio/scripts/customer-content-workflow.mjs"
@@ -95,14 +98,80 @@ async def projection(tx, session, creation, requested_revision=None):
         return bool(user and current == revision and settings().control_source_revision == source_pin)
 
     directory = artifacts / "customer-content" / str(UUID(creation.id)) / f"revision-{revision}"
-    payload = {"command": "status", "creationId": creation.id, "acceptedRevision": revision,
+    payload = {"command": command, "creationId": creation.id, "acceptedRevision": revision,
         "sourceHash": proof["candidate_sha256"], "canonicalHost": proof["canonical_host"],
         "artifactsRoot": str(artifacts), "dataDir": str(directory / "data"), "outputDir": str(directory / "output")}
+    if page_id is not None:
+        payload["pageId"] = page_id
+    if command == "read-media":
+        payload.update(assetId=asset_id, expectedRevisionHash=expected_revision)
     try:
-        value = await studio._execute([node, script], payload, environment, authorized, 20)
+        kwargs = {"output_limit": 20 * 1048576} if command == "read-media" else {}
+        value = await studio._execute([node, script], payload, environment, authorized, 20, **kwargs)
     except RunnerError as error:
+        if error.code == "workflow_context_stale":
+            raise ControlError(409, "stale_page") from None
+        if error.code in {"writer_page_binding_mismatch", "workflow_unknown_asset"}:
+            raise ControlError(404, "content_page_not_found") from None
         raise ControlError(503, "content_completion_unavailable") from error
     # Final ownership/session/source read, after subprocess output.
     if not await authorized():
         raise ControlError(503, "content_completion_unavailable")
+    return proof, value
+
+
+async def projection(tx, session, creation, requested_revision=None):
+    enabled()
+    if requested_revision is not None and requested_revision != creation.current_revision:
+        raise ControlError(409, "stale_revision")
+    if not creation.current_revision:
+        return CompletionView.model_validate_json(json.dumps({"creation_id": creation.id, "accepted_revision": None,
+            "accepted_source_revision": None, "candidate_sha256": None, "site_id": None, "canonical_host": creation.canonical_host,
+            "state": "not_imported", "revision_pending": creation.status in ACTIVE or creation.active_job_id is not None,
+            "observed_at": None, "site_context_sha256": None, "language_review_mode": language_mode.mode(),
+            "permitted_actions": ["refresh"], "pages": []})).model_dump(mode="json")
+    proof, value = await read_current_node(tx, session, creation, requested_revision)
     return parse_node(value, creation, proof)
+
+
+def parse_page(value, creation, proof, page_id):
+    completion = parse_node(value, creation, proof)
+    try:
+        page = next(page for page in completion["pages"] if page["page_id"] == page_id)
+        document = Document.model_validate_json(json.dumps(value["pageDocument"]))
+        if value["pageDocumentHash"] != canonical_sha256(document.model_dump(mode="json")):
+            raise ValueError("read document integrity mismatch")
+        result = PageView.model_validate_json(json.dumps({"completion": completion, "page": page,
+            "document": document.model_dump(mode="json"), "document_sha256": canonical_sha256(document.model_dump(mode="json")),
+            "permitted_actions": ["refresh", "read_media"]}))
+        return result.model_dump(mode="json")
+    except (ValueError, TypeError, KeyError, StopIteration):
+        raise ControlError(503, "invalid_content_page_source") from None
+
+
+async def current_page(tx, session, creation, requested_revision, page_id):
+    proof, value = await read_current_node(tx, session, creation, requested_revision, command="read-page", page_id=page_id)
+    return parse_page(value, creation, proof, page_id)
+
+
+def parse_media(value, creation, proof, page_id, asset_id, expected_revision):
+    completion = parse_node(value, creation, proof)
+    try:
+        page = next(page for page in completion["pages"] if page["page_id"] == page_id)
+        item = value["mediaData"]
+        asset = Media.model_validate_json(json.dumps(item["asset"]))
+        if (item["pageId"] != page_id or item["revisionHash"] != expected_revision
+                or page["revision_sha256"] != expected_revision or asset.id != asset_id):
+            raise ValueError("media binding mismatch")
+        raw = base64.b64decode(item["base64"], validate=True)
+        if len(raw) != asset.bytes or hashlib.sha256(raw).hexdigest() != asset.sha256:
+            raise ValueError("media integrity mismatch")
+        return asset.mime, raw
+    except (ValueError, TypeError, KeyError, StopIteration):
+        raise ControlError(503, "invalid_content_media_source") from None
+
+
+async def current_media(tx, session, creation, requested_revision, page_id, asset_id, expected_revision):
+    proof, value = await read_current_node(tx, session, creation, requested_revision, command="read-media", page_id=page_id,
+        asset_id=asset_id, expected_revision=expected_revision)
+    return parse_media(value, creation, proof, page_id, asset_id, expected_revision)

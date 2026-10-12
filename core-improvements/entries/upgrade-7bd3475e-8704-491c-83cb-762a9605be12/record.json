@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Normal customer can read only historical native candidates and completion metadata, not the current saved page or attached image bytes",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_CURRENT_PAGE_READ.md",
+    "docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md",
+    "Original read command witness FAIL ad47db5b79846b1c979942f6304b5861e08505d0cfd4861317b359047055999e; real portal current body/media gap under issue66"
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-workflow.mjs",
+    "agent-business-core/runtime/src/pinet_core/content_completion/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_completion/routes.py",
+    "agent-business-core/runtime/src/pinet_core/content_completion/page_wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/scripts/customer_content_page_contract.py",
+    "docs/contracts/verslomatika-customer-content-page.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of current page/media routes, reader and server-owned binary allowance; preserve original customer, all DB rows, native/model traces and historical receipts. Coordinate removal of frontend consumer with portal owner.",
+  "id": "upgrade-7bd3475e-8704-491c-83cb-762a9605be12",
+  "branch": "codex/customer-current-page-read-20261012",
+  "baseSha": "fba97eae2a9f68883032eaff491345cdf92ffc88",
+  "createdAt": "2026-10-12T10:42:47.354Z"
+}

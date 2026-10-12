@@ -126,6 +126,20 @@ async def test_revocation_prevents_process_dispatch():
     assert error.value.code == "authorization_revoked"
 
 
+async def test_server_selected_media_stdout_allowance_retains_default_and_authority():
+    script = "import json;print(json.dumps({'value':'x'*1100000}))"
+    result = await _execute([sys.executable, "-c", script], {}, dict(os.environ), yes, 4, output_limit=2 * 1048576)
+    assert len(result["value"]) == 1100000
+    with pytest.raises(RunnerError, match="authorization_revoked"):
+        await _execute(["executable-does-not-exist"], {}, {}, no, 4, output_limit=20 * 1048576)
+
+
+@pytest.mark.parametrize("limit", [True, 0, 1048575, 20 * 1048576 + 1, "large"])
+async def test_media_stdout_allowance_is_fixed_server_bounded_before_dispatch(limit):
+    with pytest.raises(RunnerError, match="studio_output_limit"):
+        await _execute(["executable-does-not-exist"], {}, {}, yes, 4, output_limit=limit)
+
+
 async def test_no_customer_domain_does_not_invent_a_host_or_public_site():
     with pytest.raises(RunnerError) as error:
         await import_draft({}, creation_id="irrelevant", revision=1, canonical_host=None, still_authorized=yes)

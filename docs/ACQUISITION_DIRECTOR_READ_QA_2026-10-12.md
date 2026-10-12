@@ -88,7 +88,11 @@ Every earlier lane/log/backup and all original failed attempts remain preserved.
 
 Final source wires are unchanged except the additive director-read.v1 schema.
 Scoped exact-index safety and upgrade coverage PASS. Source integration is a
-reviewable stacked package on PR104, not a main merge or operational adoption.
+[stacked draftPR105](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/105)
+on PR104, not a main merge or operational adoption. Initial deliverybc3ed22914e982973f1399722286ce2ba36a61d9
+was pushed/remote verified; its exact [CI38204484655](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/actions/runs/38204484655)
+preflight/acquisition-capture jobs SUCCESS. Later PR-journal/release metadata does
+not change functional9af0ebb code, historical receipts or imply new execution.
 
 ## Holds and remaining acceptance
 

@@ -7,6 +7,41 @@ from pinet_core.creation.renderer import normalize, preview, screen_language
 from pinet_core.tasks.codex import RunnerError
 
 
+@pytest.mark.parametrize("workspace_chars,accepted", [(160, True), (185, False)])
+def test_windows_preflight_covers_longest_role_and_failure_file(
+        tmp_path_factory, monkeypatch, workspace_chars, accepted):
+    import hashlib
+    import sys
+    from pathlib import Path
+    from types import SimpleNamespace
+
+    from pinet_core.config import settings
+    from pinet_core.creation import adapter
+
+    runtime = tmp_path_factory.mktemp("rolepath")
+    base = runtime / "artifacts"
+    base.mkdir()
+    assert len(str(base)) < workspace_chars - 1
+    workspace = base / ("w" * (workspace_chars - len(str(base)) - 1))
+    workspace.mkdir()
+    binary = Path(sys.executable).resolve()
+    cfg = settings()
+    for name, value in {"creation_runner_enabled": True, "chat_model": "gpt-6-luna",
+                        "chat_codex_executable": str(binary), "creation_workspace": str(workspace),
+                        "creation_runner_seconds": 300,
+                        "chat_codex_sha256": hashlib.sha256(binary.read_bytes()).hexdigest()}.items():
+        monkeypatch.setattr(cfg, name, value)
+    monkeypatch.setattr(adapter, "RUNTIME", runtime)
+    # Module-local platform seam; do not change global os.name/pathlib behavior.
+    monkeypatch.setattr(adapter, "os", SimpleNamespace(name="nt"), raising=False)
+    if accepted:
+        assert adapter.available() == (binary, workspace)
+    else:
+        with pytest.raises(RunnerError) as error:
+            adapter.available()
+        assert error.value.code == "runner_unavailable"
+
+
 def test_actual_instruction_fingerprint_and_fixed_tool_policy():
     value, fingerprint = instructions()
     assert len(fingerprint) == 64 and 'language-quality.md' in value and 'business-validation.md' in value

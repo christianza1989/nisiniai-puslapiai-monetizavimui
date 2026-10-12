@@ -143,6 +143,22 @@ def test_cross_split_duplicate_script_cannot_be_frozen_as_unseen(tmp_path, monke
         protection.freeze(ref, snapshot, messages)
 
 
+@pytest.mark.parametrize("pair", [(0, 1), (3, 4), (0, 3)])
+@pytest.mark.parametrize("scheme", ["json-sorted-utf8-compact.v1", "json-sorted-utf8-spaced.v1"])
+def test_renamed_duplicate_script_does_not_inflate_protected_cases(tmp_path, monkeypatch, pair, scheme):
+    path, manifest, ref, snapshot, messages = fixture_manifest(tmp_path, monkeypatch)
+    original, duplicate = pair
+    manifest["cases"][duplicate]["messages"] = list(manifest["cases"][original]["messages"])
+    manifest["corpus_digest_scheme"] = scheme
+    manifest["corpus_sha256"] = protection.corpus_digest(manifest)
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    before = path.read_bytes()
+    ref["manifest_sha256"] = hashlib.sha256(before).hexdigest()
+    with pytest.raises(ControlError, match="protected_manifest_conflict"):
+        protection.freeze(ref, snapshot, messages)
+    assert path.read_bytes() == before
+
+
 def test_explicit_spaced_digest_preserves_existing_frozen_corpus(tmp_path, monkeypatch):
     path, manifest, ref, snapshot, messages = fixture_manifest(tmp_path, monkeypatch)
     manifest["cases"][4]["archetype"] = "Synthetic français"
@@ -155,6 +171,19 @@ def test_explicit_spaced_digest_preserves_existing_frozen_corpus(tmp_path, monke
     proof = protection.freeze(ref, snapshot, messages)
     assert proof["corpus_sha256"] == manifest["corpus_sha256"] != digest(manifest["cases"])
     assert proof["split"] == "holdout" and path.read_bytes() == before
+
+
+def test_distinct_dialogs_can_share_a_first_turn_without_normalization(tmp_path, monkeypatch):
+    path, manifest, ref, snapshot, _ = fixture_manifest(tmp_path, monkeypatch)
+    messages = ["Shared initial request", "First continuation"]
+    manifest["cases"][3]["messages"] = messages
+    manifest["cases"][4]["messages"] = [messages[0], "Different continuation"]
+    manifest["corpus_sha256"] = digest(manifest["cases"])
+    path.write_text(json.dumps(manifest), encoding="utf-8")
+    before = path.read_bytes()
+    ref["manifest_sha256"] = hashlib.sha256(before).hexdigest()
+    proof = protection.freeze(ref, snapshot, messages)
+    assert proof["script_sha256"] == digest(messages) and path.read_bytes() == before
 
 
 @pytest.mark.parametrize("scheme", ["unknown", "json-sorted-utf8-spaced.v1", None])

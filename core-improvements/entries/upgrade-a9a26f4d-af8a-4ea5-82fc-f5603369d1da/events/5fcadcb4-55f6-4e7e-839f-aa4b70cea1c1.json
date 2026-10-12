@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original exact-script duplication reproduced on a9: source-only FAIL00b72586 and4FAIL2PASS2dfa8f4f retained. Changed only membership of the existing script-hash map, no normalization or evaluator/corpus/controller/authority changes. Initial combined pytest collection76e28597 failed because offline and PG modules share a basename; run separately, and corrected one missing Event test import flagged by Ruff. No operational DB or provider execution; existing pending PG fixtures are isolated.",
+  "eventId": "5fcadcb4-55f6-4e7e-839f-aa4b70cea1c1",
+  "sequence": 2,
+  "at": "2026-10-12T16:12:11.614Z"
+}

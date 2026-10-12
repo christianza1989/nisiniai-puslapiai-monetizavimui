@@ -44,6 +44,8 @@ Corpus pradėk pagal esamą `evals/learning-v2/<siteId>.json` struktūrą, ne ko
 
 Dabartinis learning-v2 turi 7 unikalius atvejus: 3 train + 4 reserve holdout. Aptiktas šaltinio atvejis perklasifikuojamas train, lieka bent 3 nematyti holdout. Controller daro po 2 baseline ir candidate pakartojimus, iš viso 14 stebėjimų kiekvienai versijai. Tai actual šios versijos mechanizmas, ne universali pakankamos imties garantija. Plėsk korpusą pagal nišos riziką suderintu nauju evaluator / registry, išlaikant senų įrodymų kilmę.
 
+Kliento V2 apsaugotame manifeste kiekvienas visas dialogo scenarijus turi unikalų `messages` hash visame korpuse, įskaitant tą patį split. Pervadintas identiškas scenarijus nepadidina skirtingų train ar holdout atvejų skaičiaus; jį atmesti prieš pirmą provider kvietimą. Pakartojimai vykdymo plane lieka atskiri nuo korpuso atvejų. Skirtingi tęsiniai po bendros pirmos replikos yra skirtingi scenarijai; tekstų ar istorinių korpuso hash nenormalizuoti ir neperrašyti.
+
 ## 4. Tekstinis ratas ir Jev ON/OFF
 
 Pirmam fiksuotam ratui naudok esamą runner, unikalų run ID ir iš anksto pasirinktą ribą:

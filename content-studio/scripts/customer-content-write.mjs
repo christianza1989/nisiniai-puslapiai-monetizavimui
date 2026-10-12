@@ -56,6 +56,7 @@ Grąžink tik pateiktos native V2 JSON schemos title, description, intent, body 
 Pradėk aiškiu atsakymu, pateik konkrečius pasirinkimo kriterijus ar aiškiai pažymėtą pavyzdį, paaiškink ribas. Neišgalvok vykdymo, kainų, ekspertų, klientų, kontaktų, datų ar atsisiuntimų.
 businessProposal ir sourceCandidates yra hipotezės bei nepatikrinti kandidatai. verifiedFacts – tik atskirai pateikti verslo duomenys, o ne nepriklausomas išorinių teiginių įrodymas. Neišspręstą faktą praleisk tekste ir tiksliai nurodyk factChecks.
 Vidinės rich nuorodos naudoja tik pateiktus tikrus tos pačios svetainės pageId. Išorinė rich nuoroda galima tik į existingVerifiedExternalUrls. Kandidato URL nėra perskaityto šaltinio įrodymas. Naujos commerce nuorodos neleidžiamos. Image blokas gali naudoti tik jau priskirtą page.media assetId; promptas nėra vaizdas.
+Nuorodą rašyk kaip native inline objektą su type="link", skaitytojui skirtu text ir target={kind:"page",pageId:"tikras pateiktas ID"} richParagraph, richHeading arba richList turinyje. Į paprastą tekstą nedėk legacy nuorodų ar citavimo valdymo žymeklių; jie nėra native nuorodos ir nepavirs nuorodomis rendereryje.
 Neįrašyk atliktos šaltinių, vaizdų, redakcinės, SEO/GEO ar publikavimo patikros, kurios neatlikai. Nekelk publikavimo, approval, release ar deployment laukų. Po rašymo atskirai perskaityk visą tekstą, pataisyk kalbą ir išsaugok faktinę prasmę. Ši saviredakcija nesukuria bendro workflow review ar PASS.`;
 
 async function loadContext(input) {
@@ -90,6 +91,10 @@ function validateOutput(value, context) {
       || !Array.isArray(value.factChecks) || value.factChecks.length > 30 || value.factChecks.some(note => !boundedText(note, 1, 600))) fail('writer_output_invalid');
   let body;
   try { body = normalizeV2Blocks(value.body); } catch { fail('writer_output_invalid'); }
+  // Only native link nodes have target/dependency/publication semantics. Raw
+  // legacy/citation delimiters must not be accepted as visible plain prose.
+  if ([value.title, value.description, value.intent, stableV2(body)]
+      .some(text => /[\ue200\ue201]/u.test(text))) fail('writer_output_invalid');
   if (!bodyPlainText(body).trim()) fail('writer_output_invalid');
   const verified = new Set((page.externalLinks || []).filter(item => item.verified === true).map(item => item.url));
   for (const node of inlineNodes({ body })) {

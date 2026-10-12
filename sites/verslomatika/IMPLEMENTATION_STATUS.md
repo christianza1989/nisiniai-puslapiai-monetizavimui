@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current native link repair — 2026-10-12T08:21Z
+
+**Whole local platform OPEN.** [Current native evidence](../../docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md): maintained facts/source/media context produced one real three-role GUIDE/private Page write (cd07), preserving both capacity failures and all six business artifact versions. Portal exact terminal reads b645 bring completed receipts to112, plus three separately retained initial calls. Actual studio desktop/mobile inspection then found TWO legacy link tokens rendered literally in V2 prose: stored write is not structural-link/editorial readiness. Original Page8bce/trace/Job stay unchanged; language defects remain paused/UNVERIFIED.
+
+Reserved canonical writer/link-guidance fix now rejects those delimiters through the existing repairable validation path, retaining valid rich links and private notes without a language gate. Relevant35Node/24maintained-role/protocol/3PGworker source checks PASS, provider0. Supplemental old default/fixture failures and two wrong-QA-name pre-migration refusals are preserved and are not declared passed. No schema/model/threshold/retry/rights changes. Next clean scoped PR/adoption/new canonical same-page GUIDE, then real editorial/facts/links/release before Source/Profile and saved conversations. API41796 stopped after peer release; studio18872/e937 read-only, portal02ea/NRep and older lanes held. Ordinary portal browser/target-PC/public are separate OPEN dependencies.
+
 ## Current independent source/media preparation — 2026-10-12T07:29Z
 
 **Whole local platform OPEN.** [Current native evidence](../../docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md): clean01b classifier adoption succeeded diagnostically, but one new canonical GUIDE again failed actual coordinator capacity as model_unavailable. Original provider_error and all six accepted business artifacts remain. No repeated model or altered retry/model policy.

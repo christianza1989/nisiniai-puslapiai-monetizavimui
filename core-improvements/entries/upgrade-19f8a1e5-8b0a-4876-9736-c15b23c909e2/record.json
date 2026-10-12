@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Actual native GUIDE exposes legacy control tokens in visible V2 prose; native writer did not reject them and inherited link guidance was version-ambiguous",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md",
+    "Actual three-role native write receiptcd07a5bd3d1e551a090b4172a113ea976fee24a161c3222d2133838a0b178821; derived private page8bcec155 actual CUA tab9 preview shows two unrendered page markers",
+    "Original source witness1FAIL644ddb0c10e7a0ce48c5c9cce2947b8b77fcdb314d4000b8d32c82223244b174"
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-write.mjs",
+    "content-studio/test/customer-content-write.test.mjs",
+    "SKILLS/niche-content-planner/references/network-linking.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of native control-token rejection/instruction and version-specific guidance; preserve original succeeded write, both previous capacity failures, all artifacts/history/usage",
+  "id": "upgrade-19f8a1e5-8b0a-4876-9736-c15b23c909e2",
+  "branch": "codex/native-link-token-20261012",
+  "baseSha": "e9378a4316506e180b7064409a1d82d4a840aa23",
+  "createdAt": "2026-10-12T08:07:41.781Z"
+}

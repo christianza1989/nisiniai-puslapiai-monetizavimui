@@ -19,6 +19,8 @@ from . import (
 )
 from .acquisition.control_routes import router as acquisition_control_router
 from .acquisition.routes import acquisition_router
+from .acquisition.work_routes import owner_router as acquisition_work_owner_router
+from .acquisition.work_routes import router as acquisition_work_router
 from .agent_preparation.routes import router as agent_preparation_router
 from .config import settings
 from .content_completion.routes import router as content_completion_router
@@ -64,6 +66,8 @@ async def lifespan(app):
     routing.active = routing.Coordinator(settings())
     from .acquisition import normal as acquisition_normal
     await acquisition_normal.start(app, db)
+    from .acquisition import work_config as acquisition_work
+    await acquisition_work.start(app, db)
     try:
         yield
     finally:
@@ -77,6 +81,8 @@ app.include_router(facebook_router)
 app.include_router(control_router)
 app.include_router(acquisition_control_router)
 app.include_router(acquisition_router())
+app.include_router(acquisition_work_router)
+app.include_router(acquisition_work_owner_router)
 app.include_router(task_router)
 app.include_router(operations_router)
 app.include_router(customer_router)

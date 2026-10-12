@@ -31,3 +31,9 @@ Faktiškai peržiūrėti Akmenas c-desktop ir Auksarankiams studies-handyman c-d
 17pradinių puslapių tikras desktop/mobile DOM, naujų3gidų+indekso320/390/768/1440px metrikos be overflow. Peržiūrėti apdailos/džiovinimo/pagalbos teminiai bitmapai ir konkretūs mobilūs vaizdai. Faktinio200%zoom ir text-spacing override įrodymo nėra. Native screenshot kelias naudotas po CDPfullPage delsos; screenshot grąžinamų failų apimtis ir tool preview skyrėsi, todėl nekuriamas fiktyvus visas-state screenshot PASS.
 
 Lighthouse13.5.0: home90 ir apdailos gidas94performance, kitose kategorijose100. GidoCLS0,1101 susijęs su heading/font pasikeitimu, likęs matavimo apribojimas. Detector failų scan confirmation JSON[]; jis neatstoja pastraipų skaitymo ar WCAG. Tikrų prekių foto vietos tebėra aiškūs placeholderiai pagal savininko išimtį.
+
+## Aktualus kalbinių versijų tekstų patikros planas · 2026-10-12
+Dizaino krypties pasirinkimas savininko atidėtas. Šis etapas tikrina 88 puslapių įskaitomumą ir veikimą esamoje sistemoje, nepatvirtina galutinės tapatybės.
+- [x] FontTools faktiškai perskaitė penkių WOFF2 metaduomenis: Newsreader400 static; Source Sans3 tikra wght200–900 ašis. Abiejų Sans unicode šeimų junginys ir Newsreader turi visus LT/PL/LV/ET reikalingus tikrintus ženklus.
+- [ ] Deklaruoti tikrą Sans svorių diapazoną vienoje šeimoje; pašalinti dubliuotas svorių deklaracijas ir sintetinio logo kursyvo poreikį. Originalūs fontų baitai/licencijos nepakeičiami.
+- [ ] Dabartinis 320/390/768/1440 reflow, visos keturios kalbos, mygtukai/checkbox/formos, gids/autorius/datos/šaltiniai/footer. Atskirai tikra 200% zoom ir text-spacing patikra; bandymas nepaverčiamas PASS, jei mechanizmas neveikia.

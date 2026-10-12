@@ -80,7 +80,7 @@ export async function verifySiteCompletion(args){
   const expected=articleExpectations(pkg,pages,indexSlug,isLoopback(origin)),publicIds=new Set(pages.map(p=>p.id)),http=[],issues=[];
   if(pkg.siteId==='memocasting'){
     const {memoRoute,memoPath}=await import(pathToFileURL(path.join(core,'lib/memocasting-locales.mjs')));
-    for(const e of expected){const page=pages.find(p=>p.id===e.id),route=memoRoute(page);e.locale=route.locale;e.isArticleIndex=route.baseSlug===indexSlug;e.articleIndexUrl='https://'+pkg.canonicalHost+memoPath(route,indexSlug);}
+    for(const e of expected){const page=pages.find(p=>p.id===e.id),route=memoRoute(page);e.locale=route.locale;e.homeUrl='https://'+pkg.canonicalHost+memoPath(route);e.isArticleIndex=route.baseSlug===indexSlug;e.articleIndexUrl='https://'+pkg.canonicalHost+memoPath(route,indexSlug);}
   }
   if(!pages.some(p=>p.type==='home'))issues.push('NO_PUBLIC_HOME');
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');

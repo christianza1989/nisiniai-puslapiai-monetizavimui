@@ -1,3 +1,11 @@
+# Aktualus Memocasting pagrindas
+
+Aktualus 2026-10-12 leidinys: 88 puslapiai keturiomis kalbomis, 84 indeksuojami puslapiai, 24 gidai ir 172 WebP. Tikslus paketo SHA e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6; canonical commerce0.10.3 SHA17880fdcacbeff0fe16f2999be79c8ba188a1e04. Struktūros, turinio ir vietinio SEO/GEO patikros atliktos. Visos svetainės 85 kriterijų priėmimas dar NEPATVIRTINTAS: tikras200%didinimas ir reduced-motion režimo patikra nežinomi, realusSMTP/INBOX ir galutiniai teisiniai/operaciniai faktai nepateikti. Dizainas ir gyvi provideriai atidėti savininko. Tai neproduction-ready.
+
+Aktualūs įrodymai: [88 puslapių kvitas](NATIVE-FOUNDATION-RECEIPT.md), [prieinamumo patikra](ACCESSIBILITY-VERIFICATION.md), [dabartinis A–Z auditas](PHASE-1-AUDIT.md) ir SITE_COMPLETION.json. Žemiau palikta ankstesnių etapų istorija; jos paketų/kiekių/apribojimų negalima pateikti kaip dabartinės būsenos.
+
+---
+
 # Vietinės struktūros ir SEO/GEO priėmimas · 2026-10-12
 
 Užbaigta dabartinių patvirtintų puslapių vietinė struktūros/SEO/GEO apimtis. Visos svetainės dizaino, shopo operacijų ir produkcijos paleidimo priėmimas lieka atskiras. Kryptis ir atsakomybės suderintos su shopo sesija; tiksli sutartis `SEO_STRUCTURE_CONTRACT.md`.

@@ -1,0 +1,32 @@
+{
+  "state": "APPROVED_CONTENT_FOR_LOCAL_TEST_ONLY",
+  "packageSha256": "e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6",
+  "policies": [
+    {
+      "country": "LT",
+      "language": "lt",
+      "policyVersion": "c34b4ae65b138015c8459f30ccc719326e2f9fff056c464d8d732efca707bca8",
+      "url": "/naudojimo-salygos"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "policyVersion": "f5dba3371fd7b2057a90264064adf76ea0ef536fdf0d33d0f492ac51facec07e",
+      "url": "/pl/naudojimo-salygos"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "policyVersion": "cdc2ec1e9d36485c1d6159339e2cecbd603d23a7183618abe55c7e1c9cda3816",
+      "url": "/lv/naudojimo-salygos"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "policyVersion": "2942240cbd96735a3456e00df3cd496df2f9810f1b0c8a881207ec6bcbae52d6",
+      "url": "/et/naudojimo-salygos"
+    }
+  ],
+  "legalAdmission": false,
+  "productionActive": false
+}

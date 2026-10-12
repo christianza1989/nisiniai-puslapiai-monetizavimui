@@ -2,29 +2,30 @@
   "siteId": "memocasting",
   "canonicalHost": "memocasting.lt",
   "phase": 1,
-  "evaluatedAt": "2026-10-12T00:45:23.504Z",
+  "evaluatedAt": "2026-10-12T10:43:21.159Z",
   "evaluator": "memocasting-editorial-agent",
   "environment": {
-    "scope": "isolated local production build; no deployment",
+    "scope": "isolated built Worker and synthetic stores only; no deployment",
     "publicOrigin": "http://127.0.0.1:8817",
-    "canonicalReadOnlyTransport": "http://127.0.0.1:8820",
-    "commerce": "127.0.0.1:8797 dedicated SQLite; adapters off",
-    "browser": "Chrome CUA actual viewport; not physical-device certification"
+    "canonicalReadOnlyTransport": "http://127.0.0.1:8820 (Accept-Encoding preserved)",
+    "commerce": "127.0.0.1:8827 owned sandbox/testOnly SQLite; all providers OFF",
+    "browser": "CUA IAB original native text; Chrome zoom attempt unsupported"
   },
   "version": {
-    "packageSha256": "ddfcb27897b6da02e5c135dbb5f58360de40fea25ab1c84b30f6e892ac9d4d30",
+    "packageSha256": "e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6",
     "lighthouse": "13.5.0",
-    "publicTests": 57,
+    "publicTests": 75,
     "studioTests": 47,
-    "commerceTests": 39,
-    "sourceVersion": "Current local source bound by qa/render-seo.json per-file SHA256; Git heads recorded at handoff"
+    "commerceTests": 97,
+    "canonicalCommerce": "17880fdcacbeff0fe16f2999be79c8ba188a1e04",
+    "sourceVersion": "Current exact package/source bound by SITE_COMPLETION.json and paired Git handoff; current full immutable release04491c02-b38d-4e3a-8fff-8de2b53c407f"
   },
   "verdict": {
     "local": "NOT_ACCEPTED_FULL_GATE",
     "launch": "NOT_READY",
     "demand": "UNMEASURED",
     "visual": "OWNER_DEFERRED_DESIGN_PHASE",
-    "seoStructure": "LOCAL_SCOPE_VERIFIED_NOT_DEPLOYED"
+    "seoStructure": "CURRENT_88_PAGE_LOCAL_SCOPE_VERIFIED_NOT_DEPLOYED"
   },
   "checks": [
     {
@@ -34,9 +35,9 @@
       "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "A2",
@@ -45,9 +46,9 @@
       "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "A3",
@@ -65,9 +66,9 @@
       "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "B2",
@@ -76,9 +77,9 @@
       "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "B3",
@@ -96,9 +97,9 @@
       "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
       "status": "PASS",
       "evidence": [
-        "history/REPORT.md; history/ASSESSMENT.md"
+        "history/REPORT.md; history/ASSESSMENT.md; MIGRACIJA.md; current88page103HTTP receipt"
       ],
-      "notes": "100URL bounded inventory/2snapshot reads; incomplete period acknowledged; owner GSC URLs reconciled, three unknown SKUs404, no mass homepage redirects."
+      "notes": "Bounded100URL/2historical snapshots retained; unavailable periods disclosed. Owner sixGSC source jobs reconciled. Baby/refill addresses restored as reviewed informative pages without unconfirmed commerce; old family alias remains404. No mass homepage redirects or Google indexing claim."
     },
     {
       "id": "C2",
@@ -107,9 +108,9 @@
       "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
       "status": "PASS",
       "evidence": [
-        "history/REPORT.md; history/ASSESSMENT.md"
+        "history/REPORT.md; history/ASSESSMENT.md; MIGRACIJA.md; current88page103HTTP receipt"
       ],
-      "notes": "100URL bounded inventory/2snapshot reads; incomplete period acknowledged; owner GSC URLs reconciled, three unknown SKUs404, no mass homepage redirects."
+      "notes": "Bounded100URL/2historical snapshots retained; unavailable periods disclosed. Owner sixGSC source jobs reconciled. Baby/refill addresses restored as reviewed informative pages without unconfirmed commerce; old family alias remains404. No mass homepage redirects or Google indexing claim."
     },
     {
       "id": "C3",
@@ -138,9 +139,9 @@
       "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "D3",
@@ -149,9 +150,9 @@
       "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "E1",
@@ -171,9 +172,10 @@
       "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
       "status": "PASS",
       "evidence": [
-        "DESIGN.md; EDITORIAL-IMAGE-PROMPTS.json; EDINBURGH-RESEARCH.md; actual six viewed original images/30same-source WebP"
+        "DESIGN.md; OWNER-ASSETS.json; NATIVE-ASSETS.json; NATIVE-MEDIA.mjs; official172asset export",
+        "ACCESSIBILITY-VERIFICATION.md; actual inspected original owner/AI families; current native screenshots"
       ],
-      "notes": "Owner product photography exception explicit. No competitor assets or supposed real project photos. Final detector file scan returned empty JSON; not a full visual certification."
+      "notes": "Same previously inspected originals;33native descriptions/129variants imported through commonMEDIA_CORE. Owner photos illustrate appearance/optional extras; AI editorial illustrations are not customer projects or capacity/safety proof. Final visual direction deferred."
     },
     {
       "id": "E3",
@@ -182,9 +184,10 @@
       "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
       "status": "PASS",
       "evidence": [
-        "DESIGN.md; EDITORIAL-IMAGE-PROMPTS.json; EDINBURGH-RESEARCH.md; actual six viewed original images/30same-source WebP"
+        "DESIGN.md; OWNER-ASSETS.json; NATIVE-ASSETS.json; NATIVE-MEDIA.mjs; official172asset export",
+        "ACCESSIBILITY-VERIFICATION.md; actual inspected original owner/AI families; current native screenshots"
       ],
-      "notes": "Owner product photography exception explicit. No competitor assets or supposed real project photos. Final detector file scan returned empty JSON; not a full visual certification."
+      "notes": "Same previously inspected originals;33native descriptions/129variants imported through commonMEDIA_CORE. Owner photos illustrate appearance/optional extras; AI editorial illustrations are not customer projects or capacity/safety proof. Final visual direction deferred."
     },
     {
       "id": "F1",
@@ -193,9 +196,11 @@
       "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "F2",
@@ -204,9 +209,11 @@
       "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "F3",
@@ -215,9 +222,9 @@
       "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "G1",
@@ -226,9 +233,11 @@
       "criterion": "First screen identifies the topic, useful offer and honest next action.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "G2",
@@ -237,20 +246,24 @@
       "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "G3",
       "stage": "local",
       "gate": true,
       "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Local durable order/browser payment-error/reload/withdrawal tested; invalid-order correction and additional recovery edge states not fully accepted."
+        "NATIVE-FOUNDATION-RECEIPT.md; QA_NATIVE_HTTP13guards; QA_BUYER_DOCUMENT authorized identical PDF/noBearer403",
+        "qa/native-order-0103.private.json; native-validation.private.json; native-unavailable.private.json; actual browser LVcreate/reload/withdrawal/connection recovery",
+        "Companion QA_NATIVE_LEADS actual four400/four200; ownedD1query confirms one synthetic row per native sourcePath"
       ],
-      "notes": "Local durable order/browser payment-error/reload/withdrawal tested; invalid-order correction and additional recovery edge states not fully accepted."
+      "notes": "Local actual empty/error/correction/required/success/reload/recovery states exercised; country terms exact revision and reset verified. Optional providers fail closed; lost-reply/idempotency/stock/tenant regressions in canonical97Node/native suite. No actual payment, shipment, mail or statutory invoice acceptance."
     },
     {
       "id": "H1",
@@ -259,9 +272,9 @@
       "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "H2",
@@ -270,9 +283,9 @@
       "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "H3",
@@ -281,9 +294,9 @@
       "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "H4",
@@ -292,9 +305,11 @@
       "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "H5",
@@ -303,9 +318,10 @@
       "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "DESIGN.md; OWNER-ASSETS.json; NATIVE-ASSETS.json; NATIVE-MEDIA.mjs; official172asset export",
+        "ACCESSIBILITY-VERIFICATION.md; actual inspected original owner/AI families; current native screenshots"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Same previously inspected originals;33native descriptions/129variants imported through commonMEDIA_CORE. Owner photos illustrate appearance/optional extras; AI editorial illustrations are not customer projects or capacity/safety proof. Final visual direction deferred."
     },
     {
       "id": "I1",
@@ -314,9 +330,9 @@
       "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "I2",
@@ -325,9 +341,9 @@
       "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "I3",
@@ -336,10 +352,11 @@
       "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json",
-        "qa/render-seo.json: new exact package20pages/6articles/57requests0issues; QA_SEO33assertions; current GEO_READINESS.md"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "I4",
@@ -357,9 +374,9 @@
       "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "J2",
@@ -368,9 +385,9 @@
       "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "J3",
@@ -379,9 +396,10 @@
       "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
       "status": "PASS",
       "evidence": [
-        "GEO_READINESS.md: exact actual HTTP times/statuses and private preview; isolated official Studio copy lifecycle; public output/audits/memocasting-lifecycle-*.json"
+        "GEO_READINESS.md retained earlier official isolated Studio timed/due/correction/revocation/private-preview HTTP receipts",
+        "Current75public and47Studio tests include hash/time/revocation/host/projection and native equivalent/profile negatives; current267render and103SEOHTTP"
       ],
-      "notes": "Actual future/due/correction/revoked HTTP and gated media/discovery/related links checked. Original approved state restored. Local dev integration only; production remains unverified."
+      "notes": "Earlier timed/revoked HTTP is explicitly historical, not rewritten as an88-page run. The common eligibility predicate is unchanged; current native helpers consume its supplied projection and negative tests reject unavailable equivalents. Current release rendering is separately bound to e69b16f2."
     },
     {
       "id": "K1",
@@ -390,9 +408,11 @@
       "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "K2",
@@ -401,9 +421,11 @@
       "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "K3",
@@ -412,9 +434,11 @@
       "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "L1",
@@ -423,9 +447,11 @@
       "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "L2",
@@ -434,9 +460,11 @@
       "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "L3",
@@ -445,9 +473,9 @@
       "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "L4",
@@ -465,9 +493,11 @@
       "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "M2",
@@ -476,9 +506,10 @@
       "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
       "status": "PASS",
       "evidence": [
-        "GEO_READINESS.md: exact actual HTTP times/statuses and private preview; isolated official Studio copy lifecycle; public output/audits/memocasting-lifecycle-*.json"
+        "GEO_READINESS.md retained earlier official isolated Studio timed/due/correction/revocation/private-preview HTTP receipts",
+        "Current75public and47Studio tests include hash/time/revocation/host/projection and native equivalent/profile negatives; current267render and103SEOHTTP"
       ],
-      "notes": "Actual future/due/correction/revoked HTTP and gated media/discovery/related links checked. Original approved state restored. Local dev integration only; production remains unverified."
+      "notes": "Earlier timed/revoked HTTP is explicitly historical, not rewritten as an88-page run. The common eligibility predicate is unchanged; current native helpers consume its supplied projection and negative tests reject unavailable equivalents. Current release rendering is separately bound to e69b16f2."
     },
     {
       "id": "M3",
@@ -487,9 +518,11 @@
       "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "N1",
@@ -498,9 +531,10 @@
       "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "EDINBURGH-RESEARCH.md; NATIVE-HELPERS.mjs source labels/reasons; datedRC and owner evidence retained",
+        "Current native textual reviews and rendered source sections"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Primary sources are attributed within their actual scope. Edinburgh service/material/time claims are not Memo instructions; datedRC address is not asserted as current registered or dispatch address. No new external verification manufactured."
     },
     {
       "id": "N2",
@@ -509,9 +543,9 @@
       "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
       "status": "PASS",
       "evidence": [
-        "CONTENT-PLAN.json; shared projection tests; rendered HTML"
+        "CONTENT-PLAN.json; MARKET-INVENTORY.json; current source/related/inline-link projection tests"
       ],
-      "notes": "No owned cross-domain promotional links. Attribution is plain text; no unverified live network href. N4 is NA below because no active attribution href is published."
+      "notes": "Same-site IDs and appropriate native targets checked. No active owned cross-domain promotion; footer automation attribution is plain text. External primary citations are distinct."
     },
     {
       "id": "N3",
@@ -520,9 +554,11 @@
       "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "N4",
@@ -542,9 +578,11 @@
       "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "O2",
@@ -553,9 +591,11 @@
       "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "O3",
@@ -573,9 +613,11 @@
       "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "P2",
@@ -584,9 +626,10 @@
       "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
       "status": "PASS",
       "evidence": [
-        "GEO_READINESS.md: exact actual HTTP times/statuses and private preview; isolated official Studio copy lifecycle; public output/audits/memocasting-lifecycle-*.json"
+        "GEO_READINESS.md retained earlier official isolated Studio timed/due/correction/revocation/private-preview HTTP receipts",
+        "Current75public and47Studio tests include hash/time/revocation/host/projection and native equivalent/profile negatives; current267render and103SEOHTTP"
       ],
-      "notes": "Actual future/due/correction/revoked HTTP and gated media/discovery/related links checked. Original approved state restored. Local dev integration only; production remains unverified."
+      "notes": "Earlier timed/revoked HTTP is explicitly historical, not rewritten as an88-page run. The common eligibility predicate is unchanged; current native helpers consume its supplied projection and negative tests reject unavailable equivalents. Current release rendering is separately bound to e69b16f2."
     },
     {
       "id": "P3",
@@ -595,9 +638,11 @@
       "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
       "status": "PASS",
       "evidence": [
-        "npm run test:core:54PASS; content-studio npm test:47PASS; npm run build and npx tsc --noEmit PASS; all10niche SEO smoke PASS"
+        "Current75public/47Studio/97commerceNode; actual0.10.2nativeD1/R2/Queue/dryrun;0.10.3same backend with exact canonical SDK",
+        "All10tenantSEOsmoke;TypeScript/build; audit9Node/10Python regressions; own upgrade3417695d",
+        "NATIVE-FOUNDATION-RECEIPT.md"
       ],
-      "notes": "Minimal shared route-role/discovery/audit-proxy changes; no schema or core-commerce source changes. New package/import isolated."
+      "notes": "Scoped Memo content/adapters; unrelated package bytes preserved. Common inspector understands explicit locale home and still rejects wrong-market endpoints. No schema fork, standalone SDK exact source verification. Backend source matches parent immutable commit."
     },
     {
       "id": "Q1",
@@ -606,10 +651,11 @@
       "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json",
-        "qa/render-seo.json: new exact package20pages/6articles/57requests0issues; QA_SEO33assertions; current GEO_READINESS.md"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "Q2",
@@ -618,10 +664,11 @@
       "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json",
-        "qa/render-seo.json: new exact package20pages/6articles/57requests0issues; QA_SEO33assertions; current GEO_READINESS.md"
+        "NATIVE-FOUNDATION-RECEIPT.md; companion output/audits/memocasting-seo-readiness.json:103HTTP/88public/84indexable/24guides/internalReachable88",
+        "qa/render-native-0102-final.json:267HTTP/0issues; current SITE_COMPLETION.json repeats exact package/source rendering",
+        "ACCESSIBILITY-VERIFICATION.md; qa/native-reflow-final.private.json:264actual browser observations"
       ],
-      "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
+      "notes": "Current native routes/body/canonical/locale/reciprocal eligible-only alternates, author/profile/date/breadcrumb/schema/alt/captions/OG and sitemap/LLM checked. All88 reachable. Functional carts4 noindex; unknown paths and private closeup remain404. Browser and static inspection limits are separate."
     },
     {
       "id": "Q3",
@@ -630,20 +677,20 @@
       "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
       "status": "PASS",
       "evidence": [
-        "CONTENT.mjs; TECHNICAL-CONTENT.mjs; EDINBURGH-RESEARCH.md; private actual revision reviews; approved public package"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "Owner facts and qualified original content checked; no fake product photos/reviews or operational service promises."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "R1",
       "stage": "local",
       "gate": true,
       "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Labels/skip/landmarks present; complete keyboard journey not yet recorded."
+        "ACCESSIBILITY-VERIFICATION.md; native-keyboard-contact64steps; native-keyboard-families36surfaces720steps; native-keyboard-product-confirmation20steps"
       ],
-      "notes": "Labels/skip/landmarks present; complete keyboard journey not yet recorded."
+      "notes": "Actual Tab/Enter skip, main continuation, visible focus, native controls and labels/landmarks exercised across allfour locales and main families. Initial too-early productBODY step retained and confirmed again after visible form loading. No keyboard focus reaches hidden honeypot."
     },
     {
       "id": "R2",
@@ -652,9 +699,10 @@
       "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
       "status": "UNVERIFIED",
       "evidence": [
-        "Actual narrow reflow and CSS focus examined. Browser200%zoom control did not yield verifiable zoom; do not certify conformance."
+        "ACCESSIBILITY-VERIFICATION.md;264reflow observations;88simultaneous user text-spacing observations",
+        "qa/native-zoom-attempt.private.json:Chrome before/after1280px,DPR1.5,h1font61.44px"
       ],
-      "notes": "Actual narrow reflow and CSS focus examined. Browser200%zoom control did not yield verifiable zoom; do not certify conformance."
+      "notes": "Actual200%browser enlargement could not be established through supported key control. Narrow reflow, contrast/source styling and spacing are separate passed observations; no WCAG/zoom PASS inferred."
     },
     {
       "id": "R3",
@@ -663,20 +711,20 @@
       "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
       "status": "UNVERIFIED",
       "evidence": [
-        "Native form and payment error observed; full validation/reduced-motion state sequence not yet recorded."
+        "Actual native images/headings/required fields, typed validation and correction states; ACCESSIBILITY-VERIFICATION.md"
       ],
-      "notes": "Native form and payment error observed; full validation/reduced-motion state sequence not yet recorded."
+      "notes": "No essential motion in the implemented flow, but an actual prefers-reduced-motion=true switch is unavailable in the enabled browser capabilities. Default behavior/source rules do not manufacture an enabled-mode test."
     },
     {
       "id": "S1",
       "stage": "local",
       "gate": true,
       "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "17originalpages desktop/mobile metrics +4new/index pages at320/390/768/1440. Entire storefront tablet/narrow state matrix incomplete."
+        "ACCESSIBILITY-VERIFICATION.md; native-reflow-final264observations; native-screenshots36native390surfaces; actual before/afterET320 screenshots"
       ],
-      "notes": "17originalpages desktop/mobile metrics +4new/index pages at320/390/768/1440. Entire storefront tablet/narrow state matrix incomplete."
+      "notes": "All88 current pages320/768/1440 tested. ET long heading overflow repaired with wrapping; no text hidden or shrunk.390family screenshots captured; lazy image capture limitation disclosed and ET home actually scrolled. Browser viewport evidence is not a physical-device test."
     },
     {
       "id": "S2",
@@ -685,9 +733,10 @@
       "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
       "status": "UNVERIFIED",
       "evidence": [
-        "New guides byline/breadcrumb/TOC/source at narrow widths checked. Actual200%text enlargement/text-spacing override unavailable/unverified."
+        "ACCESSIBILITY-VERIFICATION.md;264reflow observations;88simultaneous user text-spacing observations",
+        "qa/native-zoom-attempt.private.json:Chrome before/after1280px,DPR1.5,h1font61.44px"
       ],
-      "notes": "New guides byline/breadcrumb/TOC/source at narrow widths checked. Actual200%text enlargement/text-spacing override unavailable/unverified."
+      "notes": "Actual200%browser enlargement could not be established through supported key control. Narrow reflow, contrast/source styling and spacing are separate passed observations; no WCAG/zoom PASS inferred."
     },
     {
       "id": "S3",
@@ -696,9 +745,9 @@
       "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
       "status": "PASS",
       "evidence": [
-        "qa/desktop-metrics.json; qa/mobile-metrics.json; qa/edinburgh-browser.json"
+        "ACCESSIBILITY-VERIFICATION.md; native-reflow-final264observations; native-screenshots36native390surfaces; actual before/afterET320 screenshots"
       ],
-      "notes": "Actual browser widths320/390/768/1440 for new guides. No physical device, synthesized touch or zoom conformance assertion."
+      "notes": "All88 current pages320/768/1440 tested. ET long heading overflow repaired with wrapping; no text hidden or shrunk.390family screenshots captured; lazy image capture limitation disclosed and ET home actually scrolled. Browser viewport evidence is not a physical-device test."
     },
     {
       "id": "T1",
@@ -707,9 +756,11 @@
       "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
       "status": "PASS",
       "evidence": [
-        "public output/audits/memocasting-home-lighthouse-final.json; memocasting-guide-lighthouse.json"
+        "Companion output/audits/memocasting-home-lighthouse-native-0103-compressed.json",
+        "Companion output/audits/memocasting-guide-pl-lighthouse-native-0103-compressed.json",
+        "NATIVE-FOUNDATION-RECEIPT.md preserves failed73/75 transport measurements"
       ],
-      "notes": "Lighthouse13.5.0 simulated mobile on real local production HTML/media. Home90 performance LCP3139ms CLS0.0024 TBT21ms; guide94 LCP2340ms CLS0.1101 TBT26ms. Guide font shift remains a measured limitation; scores are not field CWV or WCAG claims."
+      "notes": "Simulatedmobile home91/100/100/100,LCP3267ms/CLS0/TBT2.5;PLguide90/100/100/100,LCP3489ms/CLS0/TBT5. Both >=90. Earlier uncompressed audit transport droppedAccept-Encoding and sent190KB framework vs60KB compressed; privately corrected, no old failure hidden. Not fieldCWV."
     },
     {
       "id": "T2",
@@ -718,9 +769,11 @@
       "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
       "status": "PASS",
       "evidence": [
-        "public output/audits/memocasting-home-lighthouse-final.json; memocasting-guide-lighthouse.json"
+        "Companion output/audits/memocasting-home-lighthouse-native-0103-compressed.json",
+        "Companion output/audits/memocasting-guide-pl-lighthouse-native-0103-compressed.json",
+        "NATIVE-FOUNDATION-RECEIPT.md preserves failed73/75 transport measurements"
       ],
-      "notes": "Lighthouse13.5.0 simulated mobile on real local production HTML/media. Home90 performance LCP3139ms CLS0.0024 TBT21ms; guide94 LCP2340ms CLS0.1101 TBT26ms. Guide font shift remains a measured limitation; scores are not field CWV or WCAG claims."
+      "notes": "Simulatedmobile home91/100/100/100,LCP3267ms/CLS0/TBT2.5;PLguide90/100/100/100,LCP3489ms/CLS0/TBT5. Both >=90. Earlier uncompressed audit transport droppedAccept-Encoding and sent190KB framework vs60KB compressed; privately corrected, no old failure hidden. Not fieldCWV."
     },
     {
       "id": "T3",
@@ -738,9 +791,11 @@
       "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
       "status": "PASS",
       "evidence": [
-        "QA_HTTP.mjs:13actualassertions PASS plus transport observation; native browser checkout path and synthetic local form200; read-only isolated D1 count1"
+        "NATIVE-FOUNDATION-RECEIPT.md; QA_NATIVE_HTTP13guards; QA_BUYER_DOCUMENT authorized identical PDF/noBearer403",
+        "qa/native-order-0103.private.json; native-validation.private.json; native-unavailable.private.json; actual browser LVcreate/reload/withdrawal/connection recovery",
+        "Companion QA_NATIVE_LEADS actual four400/four200; ownedD1query confirms one synthetic row per native sourcePath"
       ],
-      "notes": "Server amount/idempotency/token/origin/size rejection, durable local order and inquiry checked. Test transport is local; SMTP/INBOX not claimed. Modest origin-rejected bodies now drained before error to preserve connection."
+      "notes": "Local actual empty/error/correction/required/success/reload/recovery states exercised; country terms exact revision and reset verified. Optional providers fail closed; lost-reply/idempotency/stock/tenant regressions in canonical97Node/native suite. No actual payment, shipment, mail or statutory invoice acceptance."
     },
     {
       "id": "U2",
@@ -778,22 +833,24 @@
       "stage": "local",
       "gate": true,
       "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Core analytics exclusion tests exist; per-site actual counter/privacy interaction not fully exercised."
+        "qa/measurement-disabled.private.json; current interest route explicit MemoOFF gate after bounded body drain",
+        "Approved four privacy pages, canonical client retention logic, private runtime config SMTP/voice/emailOFF; no collector in HTML"
       ],
-      "notes": "Core analytics exclusion tests exist; per-site actual counter/privacy interaction not fully exercised."
+      "notes": "This current local preview has no analytics collector/provider/visitor-cookie. Direct event submission503 and nextGET200 verified; no counter/demand activation claimed. Stored synthetic lead/order fields and client session limits match disclosed local scope; production processors/retention remain W2/W3 external gates."
     },
     {
       "id": "V2",
       "stage": "local",
       "gate": true,
       "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Public privacy describes local inputs and sessionStorage; full enabled-provider inventory acceptance pending."
+        "qa/measurement-disabled.private.json; current interest route explicit MemoOFF gate after bounded body drain",
+        "Approved four privacy pages, canonical client retention logic, private runtime config SMTP/voice/emailOFF; no collector in HTML"
       ],
-      "notes": "Public privacy describes local inputs and sessionStorage; full enabled-provider inventory acceptance pending."
+      "notes": "This current local preview has no analytics collector/provider/visitor-cookie. Direct event submission503 and nextGET200 verified; no counter/demand activation claimed. Stored synthetic lead/order fields and client session limits match disclosed local scope; production processors/retention remain W2/W3 external gates."
     },
     {
       "id": "V3",
@@ -842,9 +899,9 @@
       "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
       "status": "PASS",
       "evidence": [
-        "Memo contact/cart native consent; privacy page; local preview configuration"
+        "CONTENT.mjs; CONTENT-PL/LV/ET.mjs; NATIVE-HELPERS.mjs; current revision-bound private review88; official approved release04491c02 e69b16f2"
       ],
-      "notes": "No marketing/nonessential-cookie provider enabled; inquiry and checkout consent do not subscribe to marketing."
+      "notes": "Every native body/title/description read and self-edited; owner facts preserved. Foreign prices/supplier/safety/registered-address roles not invented. Test-only sale and operator identity disclosed; no fabricated expert, customer, offer or marketing consent."
     },
     {
       "id": "X1",
@@ -853,20 +910,23 @@
       "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
       "status": "PASS",
       "evidence": [
-        "Staged filename/content safety scan: private studio/QA/runtime/raw history/source research/original images/credentials absent; release validator20pages30assets; HTTP13token/tenant/origin assertions"
+        "Actual exact-staged-blobs CORE36files/public285files scans returned0findings; final handoff scan repeats changed documentation/journal too",
+        "SOURCE_SAFETY.md; actual git check-ignore private reviews/studio DB/runtime/source originals/QA screenshots"
       ],
-      "notes": "Only synthetic test addresses in QA source. No stored order token, real lead, secret or private review manifest committed. Runtime state remains ignored."
+      "notes": "Only approved public variants and synthetic QA source staged. Private reviews, original images, SQLite/customer access state and raw screenshots remain ignored. Pattern/secret matching is bounded evidence, not universal customer-data proof."
     },
     {
       "id": "X2",
       "stage": "local",
       "gate": false,
       "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Local adapter fails closed on productionhost; invalid request transport and recovery gaps recorded, not concealed."
+        "NATIVE-FOUNDATION-RECEIPT.md; QA_NATIVE_HTTP13guards; QA_BUYER_DOCUMENT authorized identical PDF/noBearer403",
+        "qa/native-order-0103.private.json; native-validation.private.json; native-unavailable.private.json; actual browser LVcreate/reload/withdrawal/connection recovery",
+        "Companion QA_NATIVE_LEADS actual four400/four200; ownedD1query confirms one synthetic row per native sourcePath"
       ],
-      "notes": "Local adapter fails closed on productionhost; invalid request transport and recovery gaps recorded, not concealed."
+      "notes": "Local actual empty/error/correction/required/success/reload/recovery states exercised; country terms exact revision and reset verified. Optional providers fail closed; lost-reply/idempotency/stock/tenant regressions in canonical97Node/native suite. No actual payment, shipment, mail or statutory invoice acceptance."
     },
     {
       "id": "X3",
@@ -884,9 +944,11 @@
       "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
       "status": "PASS",
       "evidence": [
-        "npm run test:core:54PASS; content-studio npm test:47PASS; npm run build and npx tsc --noEmit PASS; all10niche SEO smoke PASS"
+        "Current75public/47Studio/97commerceNode; actual0.10.2nativeD1/R2/Queue/dryrun;0.10.3same backend with exact canonical SDK",
+        "All10tenantSEOsmoke;TypeScript/build; audit9Node/10Python regressions; own upgrade3417695d",
+        "NATIVE-FOUNDATION-RECEIPT.md"
       ],
-      "notes": "Minimal shared route-role/discovery/audit-proxy changes; no schema or core-commerce source changes. New package/import isolated."
+      "notes": "Scoped Memo content/adapters; unrelated package bytes preserved. Common inspector understands explicit locale home and still rejects wrong-market endpoints. No schema fork, standalone SDK exact source verification. Backend source matches parent immutable commit."
     },
     {
       "id": "Y2",
@@ -895,31 +957,35 @@
       "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
       "status": "PASS",
       "evidence": [
-        "npm run test:core:54PASS; content-studio npm test:47PASS; npm run build and npx tsc --noEmit PASS; all10niche SEO smoke PASS"
+        "Current75public/47Studio/97commerceNode; actual0.10.2nativeD1/R2/Queue/dryrun;0.10.3same backend with exact canonical SDK",
+        "All10tenantSEOsmoke;TypeScript/build; audit9Node/10Python regressions; own upgrade3417695d",
+        "NATIVE-FOUNDATION-RECEIPT.md"
       ],
-      "notes": "Minimal shared route-role/discovery/audit-proxy changes; no schema or core-commerce source changes. New package/import isolated."
+      "notes": "Scoped Memo content/adapters; unrelated package bytes preserved. Common inspector understands explicit locale home and still rejects wrong-market endpoints. No schema fork, standalone SDK exact source verification. Backend source matches parent immutable commit."
     },
     {
       "id": "Y3",
       "stage": "local",
       "gate": true,
       "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Per-site workflow/journal added. No global historical instruction/catalog rewrite; full fresh-session acceptance pending."
+        "START_HERE.md and AGENTS canonical85audit workflow; WORKSTREAMS own reservation; currentFOUNDATION_STATUS.md; NATIVE-FOUNDATION-RECEIPT.md",
+        "CurrentPHASE-1-AUDIT/SITE_COMPLETION and accessibility/performance/HTTP receipts; own upgrade journals; Git draftPR101/31"
       ],
-      "notes": "Per-site workflow/journal added. No global historical instruction/catalog rewrite; full fresh-session acceptance pending."
+      "notes": "Fresh-session entrypoints and actual source/package/limits recorded. Historicalddfcb audit retained separately. Full gate stays NOT_ACCEPTED, launchNOT_READY and demandUNMEASURED; no10/10 from technical scores."
     },
     {
       "id": "Z1",
       "stage": "local",
       "gate": true,
       "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Source/package/tests/viewport evidence and limitations recorded; full screenshot/state/zoom matrix remains incomplete."
+        "START_HERE.md and AGENTS canonical85audit workflow; WORKSTREAMS own reservation; currentFOUNDATION_STATUS.md; NATIVE-FOUNDATION-RECEIPT.md",
+        "CurrentPHASE-1-AUDIT/SITE_COMPLETION and accessibility/performance/HTTP receipts; own upgrade journals; Git draftPR101/31"
       ],
-      "notes": "Source/package/tests/viewport evidence and limitations recorded; full screenshot/state/zoom matrix remains incomplete."
+      "notes": "Fresh-session entrypoints and actual source/package/limits recorded. Historicalddfcb audit retained separately. Full gate stays NOT_ACCEPTED, launchNOT_READY and demandUNMEASURED; no10/10 from technical scores."
     },
     {
       "id": "Z2",
@@ -928,9 +994,10 @@
       "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
       "status": "PASS",
       "evidence": [
-        "PHASE-1-AUDIT.json and scored report"
+        "START_HERE.md and AGENTS canonical85audit workflow; WORKSTREAMS own reservation; currentFOUNDATION_STATUS.md; NATIVE-FOUNDATION-RECEIPT.md",
+        "CurrentPHASE-1-AUDIT/SITE_COMPLETION and accessibility/performance/HTTP receipts; own upgrade journals; Git draftPR101/31"
       ],
-      "notes": "Unverified/failed criteria remain visible. No local-ready,10/10 or production-ready statement."
+      "notes": "Fresh-session entrypoints and actual source/package/limits recorded. Historicalddfcb audit retained separately. Full gate stays NOT_ACCEPTED, launchNOT_READY and demandUNMEASURED; no10/10 from technical scores."
     },
     {
       "id": "Z3",
@@ -941,5 +1008,9 @@
       "evidence": [],
       "notes": "Not deployed. Needs actual production evidence for this criterion; local bundle cannot substitute."
     }
-  ]
+  ],
+  "history": {
+    "priorReport": "PHASE-1-AUDIT.history-ddfcb.json",
+    "note": "Historical statuses and package were copied unchanged; current statuses use separately dated evidence."
+  }
 }

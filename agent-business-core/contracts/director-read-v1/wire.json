@@ -1,0 +1,858 @@
+{
+  "ContextEnvelope": {
+    "$defs": {
+      "CaptureLedgerSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "external_sent": {
+            "const": false,
+            "default": false,
+            "title": "External Sent",
+            "type": "boolean"
+          },
+          "projection_contract_version": {
+            "const": "0.1.0",
+            "default": "0.1.0",
+            "title": "Projection Contract Version",
+            "type": "string"
+          },
+          "metric_definition": {
+            "const": "acquisition-capture-ledger-v1",
+            "default": "acquisition-capture-ledger-v1",
+            "title": "Metric Definition",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope",
+            "allOf": [
+              {
+                "properties": {
+                  "environment_class": {
+                    "const": "test"
+                  }
+                }
+              }
+            ]
+          },
+          "adapter_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Adapter Id",
+            "type": "string"
+          },
+          "mode": {
+            "const": "capture_only",
+            "default": "capture_only",
+            "title": "Mode",
+            "type": "string"
+          },
+          "coverage": {
+            "const": "committed_core_ledger_only",
+            "default": "committed_core_ledger_only",
+            "title": "Coverage",
+            "type": "string"
+          },
+          "period_basis": {
+            "const": "current_and_all_time_ledger",
+            "default": "current_and_all_time_ledger",
+            "title": "Period Basis",
+            "type": "string"
+          },
+          "full_pipeline_accepted": {
+            "const": false,
+            "default": false,
+            "title": "Full Pipeline Accepted",
+            "type": "boolean"
+          },
+          "data_as_of": {
+            "format": "date-time",
+            "title": "Data As Of",
+            "type": "string"
+          },
+          "expiry_evaluated_at": {
+            "format": "date-time",
+            "title": "Expiry Evaluated At",
+            "type": "string"
+          },
+          "last_committed_receipt_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Committed Receipt At"
+          },
+          "missing_sources": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Sources",
+            "type": "array"
+          },
+          "counts": {
+            "$ref": "#/$defs/LedgerCounts"
+          },
+          "recent_committed_activity": {
+            "items": {
+              "$ref": "#/$defs/ReceiptActivity"
+            },
+            "title": "Recent Committed Activity",
+            "type": "array"
+          },
+          "activity_truncated": {
+            "title": "Activity Truncated",
+            "type": "boolean"
+          },
+          "content_sha256": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "adapter_id",
+          "data_as_of",
+          "expiry_evaluated_at",
+          "last_committed_receipt_at",
+          "missing_sources",
+          "counts",
+          "recent_committed_activity",
+          "activity_truncated",
+          "content_sha256"
+        ],
+        "title": "CaptureLedgerSnapshot",
+        "type": "object"
+      },
+      "CaptureTool": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "const": "acquisition.capture.read",
+            "title": "Name",
+            "type": "string"
+          },
+          "status": {
+            "const": "available",
+            "title": "Status",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/$defs/CaptureLedgerSnapshot"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "null"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "data",
+          "reason"
+        ],
+        "title": "CaptureTool",
+        "type": "object"
+      },
+      "Context": {
+        "additionalProperties": false,
+        "properties": {
+          "tools": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/CaptureTool"
+                },
+                {
+                  "$ref": "#/$defs/WorkTool"
+                },
+                {
+                  "$ref": "#/$defs/UnavailableTool"
+                }
+              ]
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Tools",
+            "type": "array"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "input_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Input Sha256",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "tools",
+          "source_revision",
+          "input_sha256",
+          "created_at"
+        ],
+        "title": "Context",
+        "type": "object"
+      },
+      "ContextData": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "pattern": "^[a-f0-9-]{36}$",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "run_id": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9-]{36}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Run Id"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Context"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "task_id",
+          "run_id",
+          "context"
+        ],
+        "title": "ContextData",
+        "type": "object"
+      },
+      "LedgerCounts": {
+        "additionalProperties": false,
+        "properties": {
+          "campaigns": {
+            "minimum": 0,
+            "title": "Campaigns",
+            "type": "integer"
+          },
+          "stopped_campaigns": {
+            "minimum": 0,
+            "title": "Stopped Campaigns",
+            "type": "integer"
+          },
+          "invitations": {
+            "minimum": 0,
+            "title": "Invitations",
+            "type": "integer"
+          },
+          "available_unbound_invitations": {
+            "minimum": 0,
+            "title": "Available Unbound Invitations",
+            "type": "integer"
+          },
+          "expired_unbound_invitations": {
+            "minimum": 0,
+            "title": "Expired Unbound Invitations",
+            "type": "integer"
+          },
+          "retired_invitations": {
+            "minimum": 0,
+            "title": "Retired Invitations",
+            "type": "integer"
+          },
+          "currently_bound_recipients": {
+            "minimum": 0,
+            "title": "Currently Bound Recipients",
+            "type": "integer"
+          },
+          "currently_attributed_providers": {
+            "minimum": 0,
+            "title": "Currently Attributed Providers",
+            "type": "integer"
+          },
+          "active_providers_in_core": {
+            "minimum": 0,
+            "title": "Active Providers In Core",
+            "type": "integer"
+          },
+          "historical_recipient_bindings": {
+            "minimum": 0,
+            "title": "Historical Recipient Bindings",
+            "type": "integer"
+          },
+          "historical_active_providers_in_core": {
+            "minimum": 0,
+            "title": "Historical Active Providers In Core",
+            "type": "integer"
+          },
+          "committed_commands": {
+            "minimum": 0,
+            "title": "Committed Commands",
+            "type": "integer"
+          },
+          "discovered_prospects": {
+            "default": null,
+            "title": "Discovered Prospects",
+            "type": "null"
+          },
+          "outreach_sent": {
+            "default": null,
+            "title": "Outreach Sent",
+            "type": "null"
+          },
+          "received_replies": {
+            "default": null,
+            "title": "Received Replies",
+            "type": "null"
+          },
+          "native_pending_outbox": {
+            "default": null,
+            "title": "Native Pending Outbox",
+            "type": "null"
+          },
+          "failed_attempts": {
+            "default": null,
+            "title": "Failed Attempts",
+            "type": "null"
+          },
+          "cost_microusd": {
+            "default": null,
+            "title": "Cost Microusd",
+            "type": "null"
+          }
+        },
+        "required": [
+          "campaigns",
+          "stopped_campaigns",
+          "invitations",
+          "available_unbound_invitations",
+          "expired_unbound_invitations",
+          "retired_invitations",
+          "currently_bound_recipients",
+          "currently_attributed_providers",
+          "active_providers_in_core",
+          "historical_recipient_bindings",
+          "historical_active_providers_in_core",
+          "committed_commands"
+        ],
+        "title": "LedgerCounts",
+        "type": "object"
+      },
+      "ReceiptActivity": {
+        "additionalProperties": false,
+        "properties": {
+          "operation": {
+            "enum": [
+              "resolve",
+              "recipient-challenge",
+              "verify-recipient",
+              "events",
+              "retire-recipient"
+            ],
+            "title": "Operation",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "committed_at": {
+            "format": "date-time",
+            "title": "Committed At",
+            "type": "string"
+          },
+          "outcome": {
+            "enum": [
+              "available",
+              "expired",
+              "stopped",
+              "already_attributed",
+              "issued",
+              "already_bound",
+              "recipient_bound",
+              "applied",
+              "duplicate",
+              "stale",
+              "recipient_retired",
+              "candidate_retired"
+            ],
+            "title": "Outcome",
+            "type": "string"
+          },
+          "source_revision": {
+            "anyOf": [
+              {
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Source Revision"
+          }
+        },
+        "required": [
+          "operation",
+          "request_id",
+          "committed_at",
+          "outcome"
+        ],
+        "title": "ReceiptActivity",
+        "type": "object"
+      },
+      "Scope": {
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "site_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Site Id",
+            "type": "string"
+          },
+          "environment_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Environment Id",
+            "type": "string"
+          },
+          "environment_class": {
+            "enum": [
+              "test",
+              "production"
+            ],
+            "title": "Environment Class",
+            "type": "string"
+          }
+        },
+        "required": [
+          "business_id",
+          "site_id",
+          "environment_id",
+          "environment_class"
+        ],
+        "title": "Scope",
+        "type": "object"
+      },
+      "ThreadSummary": {
+        "additionalProperties": false,
+        "properties": {
+          "thread_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Thread Id",
+            "type": "string"
+          },
+          "case_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Case Id",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "last_inbound_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Inbound Id"
+          }
+        },
+        "required": [
+          "thread_id",
+          "case_id",
+          "revision",
+          "last_inbound_id"
+        ],
+        "title": "ThreadSummary",
+        "type": "object"
+      },
+      "UnavailableTool": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "enum": [
+              "acquisition.capture.read",
+              "acquisition.correspondence.read"
+            ],
+            "title": "Name",
+            "type": "string"
+          },
+          "status": {
+            "const": "unavailable",
+            "title": "Status",
+            "type": "string"
+          },
+          "data": {
+            "title": "Data",
+            "type": "null"
+          },
+          "reason": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[a-z_]+$",
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "data",
+          "reason"
+        ],
+        "title": "UnavailableTool",
+        "type": "object"
+      },
+      "WorkCounts": {
+        "additionalProperties": false,
+        "properties": {
+          "outbound_captured": {
+            "minimum": 0,
+            "title": "Outbound Captured",
+            "type": "integer"
+          },
+          "inbound_captured": {
+            "minimum": 0,
+            "title": "Inbound Captured",
+            "type": "integer"
+          },
+          "held_recipients": {
+            "minimum": 0,
+            "title": "Held Recipients",
+            "type": "integer"
+          },
+          "stopped_recipients": {
+            "minimum": 0,
+            "title": "Stopped Recipients",
+            "type": "integer"
+          },
+          "operator_privacy_cases": {
+            "minimum": 0,
+            "title": "Operator Privacy Cases",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "outbound_captured",
+          "inbound_captured",
+          "held_recipients",
+          "stopped_recipients",
+          "operator_privacy_cases"
+        ],
+        "title": "WorkCounts",
+        "type": "object"
+      },
+      "WorkSnapshot": {
+        "additionalProperties": false,
+        "properties": {
+          "external_sent": {
+            "const": false,
+            "default": false,
+            "title": "External Sent",
+            "type": "boolean"
+          },
+          "work_version": {
+            "const": "acquisition-work.v1",
+            "default": "acquisition-work.v1",
+            "title": "Work Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/$defs/Scope"
+          },
+          "adapter_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Adapter Id",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "time_basis": {
+            "const": "all_time",
+            "default": "all_time",
+            "title": "Time Basis",
+            "type": "string"
+          },
+          "synthetic": {
+            "const": true,
+            "default": true,
+            "title": "Synthetic",
+            "type": "boolean"
+          },
+          "marketing_configuration": {
+            "enum": [
+              "configured",
+              "stopped",
+              "expired",
+              "pending",
+              "source_changed"
+            ],
+            "title": "Marketing Configuration",
+            "type": "string"
+          },
+          "counts": {
+            "$ref": "#/$defs/WorkCounts"
+          },
+          "watermark": {
+            "$ref": "#/$defs/WorkWatermark"
+          },
+          "threads": {
+            "items": {
+              "$ref": "#/$defs/ThreadSummary"
+            },
+            "maxItems": 100,
+            "title": "Threads",
+            "type": "array"
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "scope",
+          "adapter_id",
+          "observed_at",
+          "marketing_configuration",
+          "counts",
+          "watermark",
+          "threads",
+          "truncated"
+        ],
+        "title": "WorkSnapshot",
+        "type": "object"
+      },
+      "WorkTool": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "const": "acquisition.correspondence.read",
+            "title": "Name",
+            "type": "string"
+          },
+          "status": {
+            "const": "available",
+            "title": "Status",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/$defs/WorkSnapshot"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "null"
+          }
+        },
+        "required": [
+          "name",
+          "status",
+          "data",
+          "reason"
+        ],
+        "title": "WorkTool",
+        "type": "object"
+      },
+      "WorkWatermark": {
+        "additionalProperties": false,
+        "properties": {
+          "committed_receipts": {
+            "minimum": 0,
+            "title": "Committed Receipts",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "committed_receipts",
+          "sha256"
+        ],
+        "title": "WorkWatermark",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "contract_version": {
+        "const": "director-read.v1",
+        "title": "Contract Version",
+        "type": "string"
+      },
+      "source_revision": {
+        "pattern": "^[a-f0-9]{40}$",
+        "title": "Source Revision",
+        "type": "string"
+      },
+      "observed_at": {
+        "format": "date-time",
+        "title": "Observed At",
+        "type": "string"
+      },
+      "request_id": {
+        "pattern": "^[a-f0-9-]{36}$",
+        "title": "Request Id",
+        "type": "string"
+      },
+      "data": {
+        "$ref": "#/$defs/ContextData"
+      }
+    },
+    "required": [
+      "contract_version",
+      "source_revision",
+      "observed_at",
+      "request_id",
+      "data"
+    ],
+    "title": "ContextEnvelope",
+    "type": "object"
+  },
+  "AvailabilityEnvelope": {
+    "$defs": {
+      "Availability": {
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "pattern": "^[a-f0-9-]{36}$",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "configured": {
+            "title": "Configured",
+            "type": "boolean"
+          },
+          "read_only": {
+            "const": true,
+            "title": "Read Only",
+            "type": "boolean"
+          },
+          "interactive_cli_tools": {
+            "const": false,
+            "title": "Interactive Cli Tools",
+            "type": "boolean"
+          },
+          "adapter_revision": {
+            "const": "codex-consult.director.v1",
+            "title": "Adapter Revision",
+            "type": "string"
+          },
+          "tools": {
+            "items": {
+              "enum": [
+                "acquisition.capture.read",
+                "acquisition.correspondence.read"
+              ],
+              "type": "string"
+            },
+            "title": "Tools",
+            "type": "array"
+          },
+          "worker_health": {
+            "const": "unknown",
+            "title": "Worker Health",
+            "type": "string"
+          }
+        },
+        "required": [
+          "business_id",
+          "configured",
+          "read_only",
+          "interactive_cli_tools",
+          "adapter_revision",
+          "tools",
+          "worker_health"
+        ],
+        "title": "Availability",
+        "type": "object"
+      }
+    },
+    "additionalProperties": false,
+    "properties": {
+      "contract_version": {
+        "const": "director-read.v1",
+        "title": "Contract Version",
+        "type": "string"
+      },
+      "source_revision": {
+        "pattern": "^[a-f0-9]{40}$",
+        "title": "Source Revision",
+        "type": "string"
+      },
+      "observed_at": {
+        "format": "date-time",
+        "title": "Observed At",
+        "type": "string"
+      },
+      "request_id": {
+        "pattern": "^[a-f0-9-]{36}$",
+        "title": "Request Id",
+        "type": "string"
+      },
+      "data": {
+        "$ref": "#/$defs/Availability"
+      }
+    },
+    "required": [
+      "contract_version",
+      "source_revision",
+      "observed_at",
+      "request_id",
+      "data"
+    ],
+    "title": "AvailabilityEnvelope",
+    "type": "object"
+  }
+}

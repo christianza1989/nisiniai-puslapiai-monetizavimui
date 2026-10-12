@@ -46,8 +46,9 @@ async def message(thread_id: str, value: MessageInput, request: Request, respons
 
 
 @router.get("/chat/threads/{thread_id}")
-async def read_thread(thread_id: str, request: Request, response: Response,
-                      context=Depends(authenticated, scope="function")):
+async def read_thread(
+    thread_id: str, request: Request, response: Response, context=Depends(authenticated, scope="function")
+):
     tx, session = context
     thread = await tx.get(Thread, identifier(thread_id))
     if not thread:
@@ -56,8 +57,20 @@ async def read_thread(thread_id: str, request: Request, response: Response,
     tasks = list(await tx.scalars(select(Task).where(Task.thread_id == thread.id).order_by(Task.sequence)))
     if any(task.kind != "chat.consult" for task in tasks):
         raise ControlError(404, "not_found")
-    return envelope(request, response, {"thread_id": thread.id, "business_id": thread.business_id,
-                     "created_at": thread.created_at.isoformat(), "tasks": [task_view(t) for t in tasks]})
+    from ..director.read import ensure_task_read
+
+    for task in tasks:
+        await ensure_task_read(tx, task)
+    return envelope(
+        request,
+        response,
+        {
+            "thread_id": thread.id,
+            "business_id": thread.business_id,
+            "created_at": thread.created_at.isoformat(),
+            "tasks": [task_view(t) for t in tasks],
+        },
+    )
 
 
 @router.get("/tasks/{task_id}")

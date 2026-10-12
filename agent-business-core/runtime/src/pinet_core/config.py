@@ -48,6 +48,7 @@ class Settings(BaseSettings):
     creation_web_search_enabled: bool = False
     creation_language_review_enabled: bool = True
     chat_enabled: bool = False
+    director_acquisition_enabled: bool = False
     chat_operator_user_id: str = ""
     chat_daily_limit: int = 20
     chat_runner_enabled: bool = False
@@ -56,7 +57,7 @@ class Settings(BaseSettings):
     chat_workspace: str = ""
     chat_runner_seconds: int = 120
     chat_model: str = "gpt-6-luna"
-    jev_api_key: SecretStr = SecretStr('')
+    jev_api_key: SecretStr = SecretStr("")
     jev_budget_microusd: int = 150000
     jev_max_calls: int = 50
     jev_timeout_seconds: float = 1.5
@@ -64,7 +65,7 @@ class Settings(BaseSettings):
     core_url: str = "http://127.0.0.1:8840"
     allow_simulation: bool = False
     learning_enabled: bool = False
-    learning_namespace: str = ''
+    learning_namespace: str = ""
     voice_enabled: bool = False
     m0_verified: bool = False
     google_api_key: str = ""
@@ -102,10 +103,21 @@ class Settings(BaseSettings):
 
     @property
     def voice_ready(self):
-        return all((self.voice_enabled, self.m0_verified, self.google_api_key,
-                    self.livekit_url, self.livekit_api_key, self.livekit_api_secret, not self.allow_simulation,
-                    self.global_daily_budget_microusd > 0, self.voice_cost_ceiling_microusd > 0,
-                    self.live_model == "gemini-3.8-live", pricing.current()))
+        return all(
+            (
+                self.voice_enabled,
+                self.m0_verified,
+                self.google_api_key,
+                self.livekit_url,
+                self.livekit_api_key,
+                self.livekit_api_secret,
+                not self.allow_simulation,
+                self.global_daily_budget_microusd > 0,
+                self.voice_cost_ceiling_microusd > 0,
+                self.live_model == "gemini-3.8-live",
+                pricing.current(),
+            )
+        )
 
 
 @lru_cache

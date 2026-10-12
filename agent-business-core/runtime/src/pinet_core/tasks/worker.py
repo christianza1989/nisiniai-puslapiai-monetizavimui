@@ -1,13 +1,14 @@
 """One durable worker; static typed handlers supply authority/context/effects."""
 
 import asyncio
+import json
 
 from sqlalchemy import select, text
 from sqlalchemy.exc import SQLAlchemyError
 
 from ..acquisition.ledger import LedgerError
 from ..config import settings
-from ..control.routes import scope
+from ..control.routes import ControlError, scope
 from ..models import new_id, utcnow
 from . import codex
 from .models import Task, TaskRun
@@ -34,11 +35,30 @@ class ChatHandler:
     async def authority(self, tx, task):
         return await authority(tx, task)
 
+    def deadline_valid(self, tx, task, now):
+        from ..director.read import deadline_valid
+
+        expiry = tx.info.get("chat_session_deadlines", {}).get(task.id)
+        return expiry is not None and expiry > now and deadline_valid(tx, task, now)
+
     async def context(self, tx, task):
-        return await context_for(tx, task)
+        from ..director.read import prepare
+
+        return await prepare(tx, task, await context_for(tx, task))
+
+    def revision_for(self, context):
+        from ..director.read import ADAPTER_REVISION
+
+        return ADAPTER_REVISION if "_director_receipt" in context else self.adapter_revision
+
+    async def store_context(self, tx, task, run_id, context):
+        from ..director.read import store
+
+        await store(tx, task, run_id, context)
 
     async def run(self, context, heartbeat, adapter=None):
-        result, usage = await (adapter or codex.run)(context, heartbeat)
+        public = {key: value for key, value in context.items() if not key.startswith("_")}
+        result, usage = await (adapter or codex.run)(public, heartbeat)
         return codex.normalize_answer(result), usage
 
     async def complete(self, tx, task, result):
@@ -60,7 +80,11 @@ def handler_for(kind):
 
 
 async def finish_run(tx, task, status, *, usage=None):
-    run = await tx.get(TaskRun, task.run_id) if task.run_id else None
+    run = (
+        await tx.scalar(select(TaskRun).where(TaskRun.id == task.run_id, TaskRun.task_id == task.id))
+        if task.run_id
+        else None
+    )
     if run:
         run.status, run.finished_at, run.usage = status, utcnow(), usage
         run.cost_microusd = None  # CLI usage is not an authoritative USD invoice.
@@ -106,7 +130,12 @@ async def claim(*, kind=None):
                     task.status, task.failure_code = "failed", "authorization_revoked"
                     await append_event(tx, task)
                     continue
-                context = await handler.context(tx, task)
+                try:
+                    context = await handler.context(tx, task)
+                except (ControlError, LedgerError, codex.RunnerError):
+                    task.status, task.failure_code = "failed", "task_context_unavailable"
+                    await append_event(tx, task)
+                    continue
                 task.status, task.run_id, task.lease_until = "running", new_id(), lease_deadline()
                 tx.add(
                     TaskRun(
@@ -119,14 +148,21 @@ async def claim(*, kind=None):
                         status="running",
                         model=handler.model,
                         effort=handler.effort,
-                        adapter_revision=handler.adapter_revision,
+                        adapter_revision=handler.revision_for(context)
+                        if hasattr(handler, "revision_for")
+                        else handler.adapter_revision,
                     )
                 )
+                await tx.flush()
+                if hasattr(handler, "store_context"):
+                    await handler.store_context(tx, task, task.run_id, context)
                 await append_event(tx, task)
                 return {
                     "task_id": task.id,
                     "run_id": task.run_id,
                     "user_id": user_id,
+                    "environment_id": task.environment_id,
+                    "source_revision": task.source_revision,
                     "kind": task.kind,
                     "context": context,
                 }
@@ -142,7 +178,12 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
             return False
         admitted = await handler.authority(tx, task)
         now = await tx.scalar(text("SELECT clock_timestamp()"))
-        if not task.lease_until or task.lease_until <= now or not admitted:
+        if (
+            not task.lease_until
+            or task.lease_until <= now
+            or not admitted
+            or not handler.deadline_valid(tx, task, now)
+        ):
             task.status, task.failure_code, task.lease_until = "failed", "authorization_revoked", None
             await finish_run(tx, task, "failed")
             await append_event(tx, task)
@@ -181,13 +222,54 @@ async def execute_once(adapter=None, *, kind=None):
     async with scope(user=actor) as tx:
         task = await tx.scalar(select(Task).where(Task.id == task_id).with_for_update())
         if not task:
+            # Losing a current grant must discard output, not lose already observed accounting.
+            if await tx.scalar(
+                text(
+                    "SELECT to_regprocedure('public.director_settle_revoked_task(character varying,character varying,character varying,character varying,character varying,character varying,jsonb,character varying)') IS NOT NULL"
+                )
+            ):
+                observed = (
+                    {
+                        key: value
+                        for key, value in (usage or {}).items()
+                        if isinstance(key, str)
+                        and (
+                            key.endswith("_tokens")
+                            or (
+                                claimed["kind"] == "acquisition.reviewed_capture"
+                                and key == "model_calls"
+                                and value == 0
+                            )
+                        )
+                        and type(value) is int
+                        and 0 <= value <= 1_000_000_000
+                    }
+                    if isinstance(usage, dict)
+                    else None
+                )
+                await tx.scalar(
+                    text("SELECT director_settle_revoked_task(:t,:r,:u,:e,:s,:k,CAST(:j AS JSONB),:event)"),
+                    {
+                        "t": task_id,
+                        "r": run_id,
+                        "u": actor,
+                        "e": claimed["environment_id"],
+                        "s": claimed["source_revision"],
+                        "k": claimed["kind"],
+                        "j": json.dumps(observed) if observed else None,
+                        "event": new_id(),
+                    },
+                )
             return True
         if task.status != "running" or task.run_id != run_id:
             await finish_run(tx, task, task.status, usage=usage)
             return True
-        if not await handler.authority(tx, task):
+        admitted = await handler.authority(tx, task)
+        if not admitted:
             failure = "authorization_revoked"
         now = await tx.scalar(text("SELECT clock_timestamp()"))
+        if admitted and not handler.deadline_valid(tx, task, now):
+            failure = "authorization_revoked"
         if not task.lease_until or task.lease_until <= now:
             failure = "worker_interrupted"
         if not failure:
@@ -198,7 +280,7 @@ async def execute_once(adapter=None, *, kind=None):
                     result = await handler.complete(tx, task, result)
                     admitted = await handler.authority(tx, task)
                     now = await tx.scalar(text("SELECT clock_timestamp()"))
-                    if not admitted:
+                    if not admitted or not handler.deadline_valid(tx, task, now):
                         raise LedgerError(409, "authorization_revoked")
                     if not task.lease_until or task.lease_until <= now:
                         raise LedgerError(409, "worker_interrupted")

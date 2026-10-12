@@ -67,7 +67,13 @@ async def read_snapshot(app, database, *, business_id, user_id, session_id):
     Counts are all-time synthetic captures, explicitly distinct from real inbox or
     outbound sends. Old CaptureLedgerSnapshot.v1 retains its missing null fields.
     """
-    registration = ready(app)
+    return await read_registered_snapshot(
+        ready(app), database, business_id=business_id, user_id=user_id, session_id=session_id
+    )
+
+
+async def read_registered_snapshot(registration, database, *, business_id, user_id, session_id):
+    """Same canonical per-projection read transaction for an authenticated fixed caller."""
     from ..config import settings
 
     cfg = settings()

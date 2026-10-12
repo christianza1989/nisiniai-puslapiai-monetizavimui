@@ -1,4 +1,5 @@
 """Admission and state transitions share the same durable task rows."""
+
 import hashlib
 import json
 from datetime import timedelta
@@ -34,20 +35,36 @@ async def grant_for(tx, business_id, user_id):
 
 async def authority(tx, task):
     cfg = settings()
-    if (task.kind != "chat.consult" or not cfg.control_enabled or not cfg.chat_enabled or not cfg.chat_runner_enabled
-            or task.user_id != cfg.chat_operator_user_id or task.source_revision != cfg.control_source_revision):
+    if (
+        task.kind != "chat.consult"
+        or not cfg.control_enabled
+        or not cfg.chat_enabled
+        or not cfg.chat_runner_enabled
+        or task.user_id != cfg.chat_operator_user_id
+        or task.source_revision != cfg.control_source_revision
+    ):
         return False
     user = await tx.get(User, task.user_id)
     # Runtime may update sessions, so FOR SHARE can serialize logout with the final result commit.
     # Do not broaden write privileges on read-only membership/grant/identity tables to acquire locks.
     session = await tx.scalar(select(Session).where(Session.id == task.session_id).with_for_update(read=True))
-    if not user or not user.enabled or not session or session.user_id != task.user_id or session.revoked_at or session.expires_at <= utcnow():
+    if (
+        not user
+        or not user.enabled
+        or not session
+        or session.user_id != task.user_id
+        or session.revoked_at
+        or session.expires_at <= utcnow()
+    ):
         return False
+    tx.info.setdefault('chat_session_deadlines',{})[task.id]=session.expires_at
     try:
         await grant_for(tx, task.business_id, task.user_id)
     except ControlError:
         return False
-    return True
+    from ..director.read import execution_authorized
+
+    return await execution_authorized(tx, task)
 
 
 async def append_event(tx, task):
@@ -134,20 +151,44 @@ async def get_task(tx, task_id, *, lock=False, kind="chat.consult"):
     if not task:
         raise ControlError(404, "not_found")
     await grant_for(tx, task.business_id, task.user_id)
+    if task.kind == "chat.consult":
+        from ..director.read import ensure_task_read
+
+        await ensure_task_read(tx, task)
     return task
 
 
 async def context_for(tx, task):
     grant = await grant_for(tx, task.business_id, task.user_id)
     business = await tx.get(Business, task.business_id)
-    previous = list(await tx.scalars(select(Task).where(Task.thread_id == task.thread_id,
-            Task.kind == "chat.consult", Task.sequence < task.sequence, Task.status == "succeeded").order_by(Task.sequence.desc()).limit(4)))
+    previous = list(
+        await tx.scalars(
+            select(Task)
+            .where(
+                Task.thread_id == task.thread_id,
+                Task.kind == "chat.consult",
+                Task.sequence < task.sequence,
+                Task.status == "succeeded",
+            )
+            .order_by(Task.sequence.desc())
+            .limit(4)
+        )
+    )
+    from ..director.read import visible_tasks
+
+    previous = await visible_tasks(tx, previous, for_model=True)
     # Only verified registration metadata; no unpublished knowledge or private customer corpus.
-    return {"business": {"display_name": grant.display_name, "site_id": business.site_id,
-            "canonical_host": business.canonical_host, "stage": grant.stage,
-            "runtime_status": grant.runtime_status},
-            "history": [{"message": t.message, "answer": t.result["answer"][:2000]} for t in reversed(previous)],
-            "message": task.message}
+    return {
+        "business": {
+            "display_name": grant.display_name,
+            "site_id": business.site_id,
+            "canonical_host": business.canonical_host,
+            "stage": grant.stage,
+            "runtime_status": grant.runtime_status,
+        },
+        "history": [{"message": t.message, "answer": t.result["answer"][:2000]} for t in reversed(previous)],
+        "message": task.message,
+    }
 
 
 async def expire_run(tx, task):

@@ -1,0 +1,40 @@
+{
+  "siteId": "core",
+  "summary": "The normal consultation context only includes registration metadata/history/question while portal acquisition readers are separate; mount their canonical current data under real Task Session/owner/module read authority with immutable full-scope Run context provenance and revocation fences.",
+  "category": "code",
+  "evidence": [
+    "26e09018458c92bf119a327751338af67f6f6264:agent-business-core/runtime/src/pinet_core/tasks/service.py:context_for",
+    "docs/ACQUISITION_CORE_ADOPTION_HANDOFF_2026-10-11.md",
+    "docs/ACQUISITION_TYPED_TASKS_NORMAL_QA_2026-10-12.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/director",
+    "agent-business-core/runtime/migrations/versions/0028_director_read.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/normal.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_routes.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_read.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/models.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/operations.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/routes.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/acceptance_tests/test_director_read.py",
+    "agent-business-core/runtime/offline_tests/test_director_read.py",
+    "agent-business-core/contracts/director-read-v1",
+    "docs/ACQUISITION_DIRECTOR_READ_QA_2026-10-12.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "DefaultOFF director read; scoped source revert/empty-only0028 downgrade. Populated immutable context/history and original source/operational receipts are never reset; frozen served253 lane stays unchanged.",
+  "id": "upgrade-1b3dd0c6-7748-41d8-b4de-d80a3f453605",
+  "branch": "codex/acquisition-director-read-20261012",
+  "baseSha": "26e09018458c92bf119a327751338af67f6f6264",
+  "createdAt": "2026-10-12T02:38:43.292Z"
+}

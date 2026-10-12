@@ -5,8 +5,8 @@ from sqlalchemy.ext.asyncio import create_async_engine
 
 from pinet_core.acquisition import models as acquisition_models  # noqa: F401
 from pinet_core.acquisition import module_models as acquisition_module_models  # noqa: F401
-from pinet_core.acquisition import work_models as acquisition_work_models  # noqa: F401
 from pinet_core.acquisition import task_models as acquisition_task_models  # noqa: F401
+from pinet_core.acquisition import work_models as acquisition_work_models  # noqa: F401
 from pinet_core.config import settings
 from pinet_core.content_work import models as content_work_models  # noqa: F401
 from pinet_core.control import models as control_models  # noqa: F401
@@ -16,6 +16,7 @@ from pinet_core.customer import models as customer_models  # noqa: F401
 from pinet_core.customer_agents import models as customer_agent_models  # noqa: F401
 from pinet_core.customer_profile import models as customer_profile_models  # noqa: F401
 from pinet_core.customer_profile import refresh_models as customer_source_refresh_models  # noqa: F401
+from pinet_core.director import models as director_models  # noqa: F401
 from pinet_core.facebook import models as facebook_models  # noqa: F401
 from pinet_core.models import Base
 from pinet_core.public_projects import models as public_models  # noqa: F401

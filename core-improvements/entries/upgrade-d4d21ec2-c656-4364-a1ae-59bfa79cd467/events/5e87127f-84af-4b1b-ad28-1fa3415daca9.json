@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Development source QA only; current33director,27legacy,28typed with passive private clock diagnostic,35offline and scoped static/wire checks. No source acceptance inferred for actual model, ordinary UI, targetPC or public. Frozen source and actual normal process/model block follow separately.",
+  "checks": [
+    {
+      "command": "pytest acceptance_tests/test_director_read.py -q (owned full0028)",
+      "result": "PASS",
+      "evidence": "33passed93.42s; SHAa85f474289d47fca56d76b2035635089de76b92c7a8c1329616a7c9aa1940521"
+    },
+    {
+      "command": "pytest tests/test_control_tasks.py tests/test_control_operations.py -q",
+      "result": "PASS",
+      "evidence": "27passed72.08s; SHA681070ee954d88329cbd96c927673b77d6db5d164fb47474a045dc0c9cadb776"
+    },
+    {
+      "command": "pytest acceptance_tests/test_acquisition_tasks.py -q -p artifacts.director_clock_witness (passive diagnostics, no gate change)",
+      "result": "PASS",
+      "evidence": "28passed63.15s; SHAb4a68246649975973f1fab246b0d3a3ffdbb898264be226d160fbedbaa4777c9; no approval-clock diagnostic emitted"
+    },
+    {
+      "command": "pytest offline_tests/test_director_read.py offline_tests/test_control_codex.py offline_tests/test_acquisition_tasks.py -q",
+      "result": "PASS",
+      "evidence": "35passed15.21s; SHA2f006092f2f25149517214615044ad85981e8cee63e8fdc79b424a7494d01141"
+    },
+    {
+      "command": "scoped Ruff/compileall/exact director wire regeneration equality",
+      "result": "PASS",
+      "evidence": "All scoped checks pass;23487byte wire SHA3167f1b86fb6bda64440b767974d2e6d9334b28b141dc133257ed473ab18c41a; legacy schema files unchanged"
+    }
+  ],
+  "eventId": "5e87127f-84af-4b1b-ad28-1fa3415daca9",
+  "sequence": 3,
+  "at": "2026-10-12T04:10:19.817Z"
+}

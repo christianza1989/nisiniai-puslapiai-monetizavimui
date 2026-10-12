@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "commit": "51bb9f6d23270065925cabcece05c3d51823744b",
+  "note": "Bounded source-facts source51bb9f6d all111library and38actual restrictedPG/cleanGit PASS, same cleanpostrun captured. Originalfailures/privatehistoricalscope retained. Legacyserialization/noop/hash, fullgroups, separatemanifestpin, independentreviewveto/currentbinding/expiry/stop verified; root operational/calibration/live/model/adoption not performed. Window released; docs-only delivery.",
+  "checks": [
+    {
+      "command": "python -m pytest tests -q --tb=short (L)",
+      "result": "PASS",
+      "evidence": "agent-business-core/xbot/QA-SOURCE-FACTS.json"
+    },
+    {
+      "command": "XBOT_QA_FROZEN=1 uv run pytest tests/test_xbot_bridge.py -q --tb=short (P)",
+      "result": "PASS",
+      "evidence": "agent-business-core/xbot/QA-SOURCE-FACTS.json"
+    },
+    {
+      "command": "Ruff/format/diff/schema parity/exact20staged safety",
+      "result": "PASS",
+      "evidence": "agent-business-core/xbot/QA-SOURCE-FACTS.md"
+    }
+  ],
+  "eventId": "dbd9e552-08ab-477b-9195-9be801dff0bc",
+  "sequence": 3,
+  "at": "2026-10-12T14:37:55.051Z"
+}

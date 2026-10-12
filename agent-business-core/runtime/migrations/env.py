@@ -7,6 +7,7 @@ from pinet_core.acquisition import models as acquisition_models  # noqa: F401
 from pinet_core.acquisition import module_models as acquisition_module_models  # noqa: F401
 from pinet_core.acquisition import task_models as acquisition_task_models  # noqa: F401
 from pinet_core.acquisition import work_models as acquisition_work_models  # noqa: F401
+from pinet_core.business_discovery import models as business_discovery_models  # noqa: F401
 from pinet_core.config import settings
 from pinet_core.content_work import models as content_work_models  # noqa: F401
 from pinet_core.control import models as control_models  # noqa: F401

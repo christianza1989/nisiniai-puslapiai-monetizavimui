@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, Query, Request
-from sqlalchemy import func, select
+from sqlalchemy import select
 
-from ..config import settings
+from ..business_discovery.wire import Archive
 from ..control.models import Portfolio
 from ..control.routes import ControlError, SafeRoute, authenticated, identifier
 from ..control.routes import envelope as core_envelope
@@ -23,6 +23,7 @@ from .service import (
     admission_enabled,
     artifact_integrity,
     artifact_view,
+    create_own,
     current_actor,
     digest,
     event,
@@ -62,31 +63,20 @@ async def owned(tx, session, creation_id, *, lock=False):
 @router.post("/creations", status_code=202)
 async def start(value: Start, request: Request, context=Depends(authenticated, scope="function")):
     tx, session = context
-    portfolio = await current_actor(tx, session, str(value.portfolio_id), lock=True)
-    material = digest(value.model_dump(mode="json"))
-    old = await tx.scalar(select(Creation).where(Creation.idempotency_key == str(value.idempotency_key)))
-    if old:
-        if old.fingerprint != material:
-            raise ControlError(409, "idempotency_conflict")
-        return envelope(request, view(old))
-    admission_enabled()
-    if (await tx.scalar(select(func.count()).select_from(Creation))) >= 100:
-        raise ControlError(409, "creation_count_limit")
-    row = Creation(id=new_id(), user_id=session.user_id, organization_id=portfolio.organization_id, portfolio_id=portfolio.id,
-        environment_id=settings().environment, display_name=value.display_name, idea=value.idea, canonical_host=value.canonical_host,
-        idempotency_key=str(value.idempotency_key), fingerprint=material, source_revision=settings().control_source_revision,
-        status="queued", stage="queued", current_revision=0, job_sequence=0, event_sequence=0)
-    tx.add(row)
-    await tx.flush()
-    await queue(tx, row, session, value.idea, str(value.idempotency_key), material)
+    row = await create_own(tx, session, value)
     return envelope(request, view(row))
 
 
 @router.get("/creations")
-async def listing(request: Request, context=Depends(authenticated, scope="function")):
+async def listing(request: Request, include_archived: bool = False, context=Depends(authenticated, scope="function")):
     tx, session = context
     await current_actor(tx, session)
-    rows = list(await tx.scalars(select(Creation).order_by(Creation.updated_at.desc(), Creation.id).limit(100)))
+    statement = select(Creation)
+    from ..business_discovery.models import CreationArchive
+    from ..business_discovery.service import schema_ready
+    if not include_archived and await schema_ready(tx):
+        statement = statement.where(~select(CreationArchive.id).where(CreationArchive.creation_id == Creation.id).exists())
+    rows = list(await tx.scalars(statement.order_by(Creation.updated_at.desc(), Creation.id).limit(100)))
     return envelope(request, {"items": [view(row) for row in rows]})
 
 
@@ -114,6 +104,10 @@ async def revise(creation_id: str, value: Revise, request: Request, context=Depe
     tx, session = context
     row = await owned(tx, session, creation_id, lock=True)
     fingerprint = digest({"creation_id": row.id, **value.model_dump(mode="json")})
+    from ..business_discovery.models import CreationArchive
+    from ..business_discovery.service import schema_ready
+    if await schema_ready(tx) and await tx.scalar(select(CreationArchive.id).where(CreationArchive.creation_id == row.id)):
+        raise ControlError(409, "creation_archived")
     old = await tx.scalar(select(Job).where(Job.idempotency_key == str(value.idempotency_key)))
     if old:
         if old.fingerprint != fingerprint:
@@ -195,6 +189,41 @@ async def artifact(creation_id: str, artifact_id: str, request: Request, context
         raise ControlError(404, "not_found")
     artifact_integrity(item)
     return envelope(request, {"artifact": artifact_view(item), "content": item.content})
+
+
+@router.post("/creations/{creation_id}/archive")
+async def archive_creation(creation_id: str, request: Request, value: "Archive",
+                           context=Depends(authenticated, scope="function")):
+    from ..business_discovery import service as discovery_service
+    from ..business_discovery.models import CreationArchive, Discovery
+    from ..business_discovery.wire import ArchiveView
+    tx, session = context
+    discovery_service.enabled()
+    row = await owned(tx, session, creation_id, lock=True)
+    fingerprint = digest({"creation_id": row.id, **value.model_dump(mode="json")})
+    prior = await tx.scalar(select(CreationArchive).where(
+        CreationArchive.idempotency_key == str(value.idempotency_key)))
+    if prior and prior.fingerprint != fingerprint:
+        raise ControlError(409, "idempotency_conflict")
+    prior = prior or await tx.scalar(select(CreationArchive).where(CreationArchive.creation_id == row.id))
+    if not prior:
+        job = await tx.get(Job, row.active_job_id) if row.active_job_id else None
+        if job and job.status in ACTIVE:
+            job.status, job.lease_until, job.finished_at = "cancelled", None, utcnow()
+            row.status, row.stage, row.failure_code, row.active_job_id = "cancelled", "cancelled", None, None
+            await event(tx, row, job, "Kūrimo užklausa pašalinta iš aktyvios eigos. Ankstesni rezultatai ir istorija išsaugoti.")
+        prior = CreationArchive(id=new_id(), creation_id=row.id, session_id=session.id,
+            idempotency_key=str(value.idempotency_key), fingerprint=fingerprint,
+            **{key: getattr(row, key) for key in ("user_id", "organization_id", "portfolio_id", "environment_id")})
+        tx.add(prior)
+        linked = await tx.scalar(select(Discovery).where(Discovery.linked_creation_id == row.id).with_for_update())
+        if linked:
+            linked.status, linked.updated_at = "archived", utcnow()
+        await tx.flush()
+    result = core_envelope(request, ArchiveView(creation_id=row.id, archived_at=prior.created_at,
+        history_preserved=True, provider_calls=0).model_dump(mode="json"))
+    result["contract_version"] = "creation-archive.v1"
+    return result
 
 
 async def domain_actor(context):

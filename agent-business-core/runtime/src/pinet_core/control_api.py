@@ -11,6 +11,7 @@ from .acquisition.task_routes import router as acquisition_task_router
 from .acquisition.work_routes import owner_router as acquisition_work_owner_router
 from .acquisition.work_routes import router as acquisition_work_router
 from .agent_preparation.routes import router as agent_preparation_router
+from .business_discovery.routes import router as business_discovery_router
 from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
 from .control.routes import router as control_router
@@ -65,6 +66,7 @@ app.include_router(customer_router)
 app.include_router(customer_agents_router)
 app.include_router(xbot_bridge_router)
 app.include_router(creation_router)
+app.include_router(business_discovery_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
 app.include_router(customer_text_router)

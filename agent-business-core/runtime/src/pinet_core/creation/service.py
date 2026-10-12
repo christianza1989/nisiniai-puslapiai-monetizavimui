@@ -183,3 +183,27 @@ def artifact_integrity(row):
 
 def lease_deadline():
     return utcnow() + timedelta(seconds=30)
+
+
+async def create_own(tx, session, value):
+    """Canonical own-portfolio admission, reused by direct creation and approved discovery."""
+    from .models import Creation
+    portfolio = await current_actor(tx, session, str(value.portfolio_id), lock=True)
+    material = digest(value.model_dump(mode="json"))
+    old = await tx.scalar(select(Creation).where(Creation.idempotency_key == str(value.idempotency_key)))
+    if old:
+        if old.fingerprint != material:
+            raise ControlError(409, "idempotency_conflict")
+        return old
+    admission_enabled()
+    if (await tx.scalar(select(func.count()).select_from(Creation))) >= 100:
+        raise ControlError(409, "creation_count_limit")
+    row = Creation(id=new_id(), user_id=session.user_id, organization_id=portfolio.organization_id,
+        portfolio_id=portfolio.id, environment_id=settings().environment, display_name=value.display_name,
+        idea=value.idea, canonical_host=value.canonical_host, idempotency_key=str(value.idempotency_key),
+        fingerprint=material, source_revision=settings().control_source_revision,
+        status="queued", stage="queued", current_revision=0, job_sequence=0, event_sequence=0)
+    tx.add(row)
+    await tx.flush()
+    await queue(tx, row, session, value.idea, str(value.idempotency_key), material)
+    return row

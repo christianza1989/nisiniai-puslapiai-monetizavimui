@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Ordinary customer has no initial business discovery dialogue; accepted private draft silently ends the expected full business workflow. Add scoped no-idea/short-idea conversation, flexible acquisition-first report, exact report approval and recoverable test archival, preserving shared transport, accounting and history.",
+  "category": "workflow",
+  "evidence": [
+    "docs/VERSLOMATIKA_BUSINESS_DISCOVERY.md",
+    "docs/VERSLOMATIKA_BUSINESS_DISCOVERY_QA_2026-10-13.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery",
+    "agent-business-core/runtime/migrations/versions/0029_business_discovery.py",
+    "agent-business-core/runtime/scripts/customer_discovery_worker.py",
+    "agent-business-core/runtime/offline_tests/test_business_discovery.py",
+    "agent-business-core/runtime/tests/test_business_discovery.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "docs/contracts/verslomatika-business-discovery.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the new module and exact shared hunks. Do not downgrade populated discovery/approval/attempt/archive history, reset counters, or delete private original customer/model receipts. Default-OFF feature flags preserve legacy admission.",
+  "id": "upgrade-29d491f1-7134-43b3-bd0b-f80a64089b42",
+  "branch": "codex/customer-discovery-flow-20261013",
+  "baseSha": "0b72589ef4abee74ea50940b37d7b17c3d666397",
+  "createdAt": "2026-10-12T22:24:08.048Z"
+}

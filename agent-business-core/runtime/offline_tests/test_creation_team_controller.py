@@ -93,6 +93,7 @@ async def test_failed_owned_process_preserves_terminal_usage(tmp_path, mode):
 
 
 @pytest.mark.parametrize("event,code", [
+    ({"type": "error", "message": "Selected model is at capacity. Please try a different model."}, "model_unavailable"),
     ({"type": "error", "message": "Reconnecting... 2/5 (Incomplete response returned, reason: max_output_tokens)"},
      "provider_error"),
     ({"type": "item.completed", "item": {"type": "error", "message": "stream disconnected"}}, "provider_error"),

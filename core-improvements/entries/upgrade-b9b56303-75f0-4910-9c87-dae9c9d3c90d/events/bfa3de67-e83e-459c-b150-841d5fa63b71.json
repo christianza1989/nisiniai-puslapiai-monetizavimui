@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual GUIDE capacity FAIL preserved; exact error classification and owned early-stop/usage witnesses pass. External capacity recovery remains UNVERIFIED; no old Job rewrite or model/retry/DTO/policy change.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_control_codex.py offline_tests/test_creation_team_controller.py -q",
+      "result": "PASS",
+      "evidence": "44PASS7explicit opt-in SKIP log88c6f5e086e06276ca725e4b2632d8b0275f2c2a8fd17557322f4b6df8a0d088; original4FAIL229206fc retained; docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md"
+    },
+    {
+      "command": "pytest offline_tests/test_customer_text.py -q",
+      "result": "PASS",
+      "evidence": "26PASS logf7e4ad4ed6eadbcec67657213fec22042823489962bbfdfa48122921f037ce8b; no provider"
+    },
+    {
+      "command": "ruff check transport and two changed suites",
+      "result": "PASS",
+      "evidence": "All checks passed; original actual receipt5128482f/source witness229206fc preserved"
+    }
+  ],
+  "eventId": "bfa3de67-e83e-459c-b150-841d5fa63b71",
+  "sequence": 2,
+  "at": "2026-10-12T07:07:02.484Z"
+}

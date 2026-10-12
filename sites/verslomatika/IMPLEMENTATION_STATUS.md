@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current native GUIDE path — 2026-10-12T07:05Z
+
+**Whole local platform OPEN; private business accepted2 is retained, first native GUIDE failed on actual coordinator model capacity.** [Native evidence and original FAIL](../../docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md): creator/critic succeeded, three Attempts/eight Events, no Page application/source/media/approval; all six business artifact versions unchanged. Normal retained-cookie portal projections match,104 completed receipt responses plus three separately preserved initial summary-harness calls. This does not admit a GUIDE or ordinary browser.
+
+Scoped common CLI classification now identifies that exact terminal capacity as existing model_unavailable, stops before later output and preserves known usage. Relevant source44PASS/7explicit opt-in SKIP plus customer-text26PASS/RuffPASS; original4FAIL and collection harness failure retained. New canonical recovery has not run yet. Next clean same-DB/Session source adoption and explicit new GUIDE Job, then actual source/media/editorial/dependency-complete release/SEO-GEO/maintained Source/Profile and saved conversations. Models/retries/deadlines/permissions/language policy unchanged. Human secure browser entry and target-PC/public launch remain separate dependencies; all older lanes held.
+
 ## Current executable customer path — 2026-10-12T06:28Z
 
 **Whole local platform remains OPEN. One actual canonical customer creation and feedback path now works through private draft delivery.** [Current evidence](../../docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md), draft [PR106](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/106), functional source6c36db6ab230ea2d20605c08bbab2fd9228e8443. Fresh verified customer/own Portfolio, existing creator/critic/coordinator worker, accepted revision1, concrete customer criticism and accepted revision2, six intact artifact versions and canonical private V2 intake are observed. Original Windows FAIL and shared-deadline timeout remain in the same17Attempts/33Events history.

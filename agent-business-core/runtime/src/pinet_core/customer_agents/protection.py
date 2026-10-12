@@ -94,7 +94,7 @@ def freeze(reference, snapshot, messages):
         if typed != case["messages"]:
             raise ControlError(409, "protected_manifest_conflict")
         script = digest(typed)
-        if script in scripts and scripts[script] != case["split"]:
+        if script in scripts:
             raise ControlError(409, "protected_manifest_conflict")
         scripts[script] = case["split"]
         Reference(manifest_path=ref.manifest_path, manifest_sha256=ref.manifest_sha256, case_id=case["case_id"])

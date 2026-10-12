@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Protected customer corpus accepts renamed identical scripts within a split and inflates unique holdout coverage",
+  "category": "code",
+  "evidence": [
+    "Source-only original FAIL00b72586effd25f5e3c8af27523cc2f71d6f92083014454e0f37e4d3d3225129; original corpus/history/DB unchanged; model calls0",
+    "Original regression4FAIL2PASS log2dfa8f4f46ebd2514ff0ede8472390ad5af5fdefa99fafd2e36339c0b31c57e6"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/protection.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agent_protection.py",
+    "agent-business-core/runtime/tests/test_customer_agent_protection.py",
+    "SKILLS/business-agent-calibration/references/runbook.md",
+    "docs/CUSTOMER_PROTECTED_SCRIPT_QA_2026-10-12.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this uniqueness check/tests/runbook; preserve original private FAILs, manifests and all operational history",
+  "id": "upgrade-a9a26f4d-af8a-4ea5-82fc-f5603369d1da",
+  "branch": "codex/customer-protected-script-uniqueness-20261012",
+  "baseSha": "a9cebfa0b4b07cfb1a8b91f01ad48fdfb64d0902",
+  "createdAt": "2026-10-12T16:08:42.130Z"
+}

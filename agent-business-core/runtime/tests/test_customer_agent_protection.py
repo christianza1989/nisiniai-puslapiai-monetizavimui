@@ -2,11 +2,12 @@
 import hashlib
 import json
 from copy import deepcopy
+from pathlib import Path
 from uuid import UUID, uuid4, uuid5
 
 import httpx
 import pytest
-from sqlalchemy import select
+from sqlalchemy import func, select
 from test_customer_agent_lab import (  # noqa: F401 - canonical fixture chain
     configured,
     creation,
@@ -28,7 +29,7 @@ from pinet_core.customer_text import adapter
 from pinet_core.customer_text import service as chat
 from pinet_core.customer_text.wire import Start, Turn
 from pinet_core.db import db
-from pinet_core.models import Artifact, Conversation, Job, Outbox, new_id
+from pinet_core.models import Artifact, Conversation, Event, Job, Outbox, new_id
 from pinet_core.security import digest as instruction_digest
 
 
@@ -58,6 +59,32 @@ async def episode(c, tmp_path, monkeypatch, case_id="case3", scheme="json-sorted
     rq = review.Request(bearer=c["token"], conversation_id=result["conversation"]["conversation_id"],
         request_id=uuid4(), episode=result["snapshot"])
     return result, rq, ref, messages, captures
+
+
+@pytest.mark.parametrize("duplicate", [(0, 1), (3, 4)])
+@pytest.mark.parametrize("scheme", ["json-sorted-utf8-compact.v1", "json-sorted-utf8-spaced.v1"])
+async def test_duplicate_scripts_reject_before_conversation_or_paid_dispatch(configured, tmp_path, monkeypatch, duplicate, scheme):  # noqa: F811
+    c, captures = configured, []
+    fake(monkeypatch, captures)
+    ref, messages = manifest(c, tmp_path, monkeypatch, scheme=scheme)
+    path = Path(ref["manifest_path"])
+    value = json.loads(path.read_bytes())
+    source, target = duplicate
+    value["cases"][target]["messages"] = list(value["cases"][source]["messages"])
+    value["corpus_sha256"] = protection.corpus_digest(value)
+    path.write_text(json.dumps(value), encoding="utf-8")
+    original = path.read_bytes()
+    ref["manifest_sha256"] = hashlib.sha256(original).hexdigest()
+
+    async def counts():
+        async with db.transaction(c["saved"]["business_id"], c["environment"]) as tx:
+            return tuple([await tx.scalar(select(func.count()).select_from(model))
+                          for model in (Conversation, Event, Job, Artifact, Outbox)])
+
+    before = await counts()
+    with pytest.raises(ControlError, match="protected_manifest_conflict"):
+        await lab.episode(c["token"], c["frozen"], messages, uuid4(), protected_case=ref)
+    assert await counts() == before and captures == [] and path.read_bytes() == original
 
 
 @pytest.mark.parametrize("case_id,scheme", [("case0", "json-sorted-utf8-compact.v1"),

@@ -4,6 +4,7 @@ import json
 from datetime import timedelta
 
 from sqlalchemy import func, select, text
+from sqlalchemy.exc import IntegrityError
 
 from ..config import settings
 from ..control.models import BusinessGrant, Membership, Session, User
@@ -33,7 +34,7 @@ async def grant_for(tx, business_id, user_id):
 
 async def authority(tx, task):
     cfg = settings()
-    if (not cfg.control_enabled or not cfg.chat_enabled or not cfg.chat_runner_enabled
+    if (task.kind != "chat.consult" or not cfg.control_enabled or not cfg.chat_enabled or not cfg.chat_runner_enabled
             or task.user_id != cfg.chat_operator_user_id or task.source_revision != cfg.control_source_revision):
         return False
     user = await tx.get(User, task.user_id)
@@ -66,6 +67,16 @@ def task_view(task):
 
 
 async def submit(tx, session, *, target, message, key, start):
+    try:
+        async with tx.begin_nested():
+            return await _submit_chat(tx, session, target=target, message=message, key=key, start=start)
+    except IntegrityError as error:
+        if getattr(error.orig, "sqlstate", None) == "23505":
+            raise ControlError(409, "idempotency_conflict") from None
+        raise
+
+
+async def _submit_chat(tx, session, *, target, message, key, start):
     chat_guard()
     user_id = session.user_id
     digest = hashlib.sha256(json.dumps([target, message, start], ensure_ascii=False,
@@ -80,16 +91,18 @@ async def submit(tx, session, *, target, message, key, start):
         thread = await tx.scalar(select(Thread).where(Thread.id == target).with_for_update())
         if not thread:
             raise ControlError(404, "not_found")
+        if await tx.scalar(select(Task.id).where(Task.thread_id == thread.id, Task.kind != "chat.consult").limit(1)):
+            raise ControlError(404, "not_found")
         grant = await grant_for(tx, thread.business_id, user_id)
     if user_id != settings().chat_operator_user_id:
         raise ControlError(403, "operator_required")
     previous = await tx.scalar(select(Task).where(Task.idempotency_key == key))
     if previous:
-        if previous.fingerprint != digest:
+        if previous.kind != "chat.consult" or previous.fingerprint != digest:
             raise ControlError(409, "idempotency_conflict")
         return previous
     since = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
-    count = await tx.scalar(select(func.count()).select_from(Task).where(Task.created_at >= since))
+    count = await tx.scalar(select(func.count()).select_from(Task).where(Task.created_at >= since, Task.kind == "chat.consult"))
     if count >= settings().chat_daily_limit:
         raise ControlError(429, "task_rate_limited")
     if thread is None:
@@ -113,8 +126,8 @@ async def submit(tx, session, *, target, message, key, start):
     return task
 
 
-async def get_task(tx, task_id, *, lock=False):
-    query = select(Task).where(Task.id == task_id)
+async def get_task(tx, task_id, *, lock=False, kind="chat.consult"):
+    query = select(Task).where(Task.id == task_id, Task.kind == kind)
     if lock:
         query = query.with_for_update()
     task = await tx.scalar(query)
@@ -128,7 +141,7 @@ async def context_for(tx, task):
     grant = await grant_for(tx, task.business_id, task.user_id)
     business = await tx.get(Business, task.business_id)
     previous = list(await tx.scalars(select(Task).where(Task.thread_id == task.thread_id,
-            Task.sequence < task.sequence, Task.status == "succeeded").order_by(Task.sequence.desc()).limit(4)))
+            Task.kind == "chat.consult", Task.sequence < task.sequence, Task.status == "succeeded").order_by(Task.sequence.desc()).limit(4)))
     # Only verified registration metadata; no unpublished knowledge or private customer corpus.
     return {"business": {"display_name": grant.display_name, "site_id": business.site_id,
             "canonical_host": business.canonical_host, "stage": grant.stage,

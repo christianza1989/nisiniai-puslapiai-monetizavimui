@@ -1,0 +1,835 @@
+{
+  "contract_version": "acquisition-tasks.v1",
+  "schemas": {
+    "TaskEnvelope": {
+      "$defs": {
+        "CaptureResult": {
+          "additionalProperties": false,
+          "properties": {
+            "external_sent": {
+              "const": false,
+              "default": false,
+              "title": "External Sent",
+              "type": "boolean"
+            },
+            "state": {
+              "const": "captured",
+              "title": "State",
+              "type": "string"
+            },
+            "synthetic": {
+              "const": true,
+              "title": "Synthetic",
+              "type": "boolean"
+            },
+            "thread_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "case_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Case Id",
+              "type": "string"
+            },
+            "mail_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Mail Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "state",
+            "synthetic",
+            "thread_id",
+            "case_id",
+            "mail_id"
+          ],
+          "title": "CaptureResult",
+          "type": "object"
+        },
+        "TaskView": {
+          "additionalProperties": false,
+          "properties": {
+            "task_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Task Id",
+              "type": "string"
+            },
+            "thread_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "business_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "sequence": {
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Sequence",
+              "type": "integer"
+            },
+            "kind": {
+              "const": "acquisition.reviewed_capture",
+              "title": "Kind",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "running",
+                "succeeded",
+                "failed",
+                "cancelled"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "message": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Message",
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "title": "Updated At",
+              "type": "string"
+            },
+            "result": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/CaptureResult"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "failure_code": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Failure Code"
+            }
+          },
+          "required": [
+            "task_id",
+            "thread_id",
+            "business_id",
+            "sequence",
+            "kind",
+            "status",
+            "message",
+            "created_at",
+            "updated_at",
+            "result",
+            "failure_code"
+          ],
+          "title": "TaskView",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "acquisition-tasks.v1",
+          "default": "acquisition-tasks.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "environment": {
+          "title": "Environment",
+          "type": "string"
+        },
+        "source_revision": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "request_id": {
+          "title": "Request Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/TaskView"
+        }
+      },
+      "required": [
+        "environment",
+        "source_revision",
+        "observed_at",
+        "request_id",
+        "data"
+      ],
+      "title": "TaskEnvelope",
+      "type": "object"
+    },
+    "ReportEnvelope": {
+      "$defs": {
+        "CaptureResult": {
+          "additionalProperties": false,
+          "properties": {
+            "external_sent": {
+              "const": false,
+              "default": false,
+              "title": "External Sent",
+              "type": "boolean"
+            },
+            "state": {
+              "const": "captured",
+              "title": "State",
+              "type": "string"
+            },
+            "synthetic": {
+              "const": true,
+              "title": "Synthetic",
+              "type": "boolean"
+            },
+            "thread_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "case_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Case Id",
+              "type": "string"
+            },
+            "mail_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Mail Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "state",
+            "synthetic",
+            "thread_id",
+            "case_id",
+            "mail_id"
+          ],
+          "title": "CaptureResult",
+          "type": "object"
+        },
+        "Execution": {
+          "additionalProperties": false,
+          "properties": {
+            "run_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Run Id",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "running",
+                "succeeded",
+                "failed",
+                "cancelled"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "model": {
+              "const": "none",
+              "title": "Model",
+              "type": "string"
+            },
+            "effort": {
+              "const": "none",
+              "title": "Effort",
+              "type": "string"
+            },
+            "adapter_revision": {
+              "const": "acquisition-reviewed-capture.v1",
+              "title": "Adapter Revision",
+              "type": "string"
+            },
+            "started_at": {
+              "format": "date-time",
+              "title": "Started At",
+              "type": "string"
+            },
+            "finished_at": {
+              "anyOf": [
+                {
+                  "format": "date-time",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Finished At"
+            },
+            "model_calls": {
+              "anyOf": [
+                {
+                  "const": 0,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Model Calls"
+            },
+            "cost_microusd": {
+              "default": null,
+              "title": "Cost Microusd",
+              "type": "null"
+            }
+          },
+          "required": [
+            "run_id",
+            "status",
+            "model",
+            "effort",
+            "adapter_revision",
+            "started_at",
+            "finished_at",
+            "model_calls"
+          ],
+          "title": "Execution",
+          "type": "object"
+        },
+        "TaskReport": {
+          "additionalProperties": false,
+          "properties": {
+            "agent_id": {
+              "const": "acquisition-reviewed-capture",
+              "default": "acquisition-reviewed-capture",
+              "title": "Agent Id",
+              "type": "string"
+            },
+            "task": {
+              "$ref": "#/$defs/TaskView"
+            },
+            "execution": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Execution"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_revision": {
+              "pattern": "^[a-f0-9]{40}$",
+              "title": "Source Revision",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task",
+            "execution",
+            "source_revision"
+          ],
+          "title": "TaskReport",
+          "type": "object"
+        },
+        "TaskView": {
+          "additionalProperties": false,
+          "properties": {
+            "task_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Task Id",
+              "type": "string"
+            },
+            "thread_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "business_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "sequence": {
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Sequence",
+              "type": "integer"
+            },
+            "kind": {
+              "const": "acquisition.reviewed_capture",
+              "title": "Kind",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "running",
+                "succeeded",
+                "failed",
+                "cancelled"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "message": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Message",
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "title": "Updated At",
+              "type": "string"
+            },
+            "result": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/CaptureResult"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "failure_code": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Failure Code"
+            }
+          },
+          "required": [
+            "task_id",
+            "thread_id",
+            "business_id",
+            "sequence",
+            "kind",
+            "status",
+            "message",
+            "created_at",
+            "updated_at",
+            "result",
+            "failure_code"
+          ],
+          "title": "TaskView",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "acquisition-tasks.v1",
+          "default": "acquisition-tasks.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "environment": {
+          "title": "Environment",
+          "type": "string"
+        },
+        "source_revision": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "request_id": {
+          "title": "Request Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/TaskReport"
+        }
+      },
+      "required": [
+        "environment",
+        "source_revision",
+        "observed_at",
+        "request_id",
+        "data"
+      ],
+      "title": "ReportEnvelope",
+      "type": "object"
+    },
+    "PageEnvelope": {
+      "$defs": {
+        "CaptureResult": {
+          "additionalProperties": false,
+          "properties": {
+            "external_sent": {
+              "const": false,
+              "default": false,
+              "title": "External Sent",
+              "type": "boolean"
+            },
+            "state": {
+              "const": "captured",
+              "title": "State",
+              "type": "string"
+            },
+            "synthetic": {
+              "const": true,
+              "title": "Synthetic",
+              "type": "boolean"
+            },
+            "thread_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "case_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Case Id",
+              "type": "string"
+            },
+            "mail_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Mail Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "state",
+            "synthetic",
+            "thread_id",
+            "case_id",
+            "mail_id"
+          ],
+          "title": "CaptureResult",
+          "type": "object"
+        },
+        "TaskPage": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "items": {
+              "items": {
+                "$ref": "#/$defs/TaskView"
+              },
+              "maxItems": 50,
+              "title": "Items",
+              "type": "array"
+            },
+            "next_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Next Cursor"
+            },
+            "snapshot_id": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Snapshot Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "items",
+            "next_cursor",
+            "snapshot_id"
+          ],
+          "title": "TaskPage",
+          "type": "object"
+        },
+        "TaskView": {
+          "additionalProperties": false,
+          "properties": {
+            "task_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Task Id",
+              "type": "string"
+            },
+            "thread_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "business_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "sequence": {
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Sequence",
+              "type": "integer"
+            },
+            "kind": {
+              "const": "acquisition.reviewed_capture",
+              "title": "Kind",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "running",
+                "succeeded",
+                "failed",
+                "cancelled"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "message": {
+              "maxLength": 1000,
+              "minLength": 1,
+              "title": "Message",
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "title": "Updated At",
+              "type": "string"
+            },
+            "result": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/CaptureResult"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "failure_code": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Failure Code"
+            }
+          },
+          "required": [
+            "task_id",
+            "thread_id",
+            "business_id",
+            "sequence",
+            "kind",
+            "status",
+            "message",
+            "created_at",
+            "updated_at",
+            "result",
+            "failure_code"
+          ],
+          "title": "TaskView",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "acquisition-tasks.v1",
+          "default": "acquisition-tasks.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "environment": {
+          "title": "Environment",
+          "type": "string"
+        },
+        "source_revision": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "request_id": {
+          "title": "Request Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/TaskPage"
+        }
+      },
+      "required": [
+        "environment",
+        "source_revision",
+        "observed_at",
+        "request_id",
+        "data"
+      ],
+      "title": "PageEnvelope",
+      "type": "object"
+    },
+    "EventsEnvelope": {
+      "$defs": {
+        "Event": {
+          "additionalProperties": false,
+          "properties": {
+            "sequence": {
+              "minimum": 1,
+              "title": "Sequence",
+              "type": "integer"
+            },
+            "task_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Task Id",
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "queued",
+                "running",
+                "succeeded",
+                "failed",
+                "cancelled"
+              ],
+              "title": "Status",
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "title": "Created At",
+              "type": "string"
+            },
+            "failure_code": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Failure Code"
+            }
+          },
+          "required": [
+            "sequence",
+            "task_id",
+            "status",
+            "created_at",
+            "failure_code"
+          ],
+          "title": "Event",
+          "type": "object"
+        },
+        "EventPage": {
+          "additionalProperties": false,
+          "properties": {
+            "task_id": {
+              "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+              "title": "Task Id",
+              "type": "string"
+            },
+            "items": {
+              "items": {
+                "$ref": "#/$defs/Event"
+              },
+              "maxItems": 50,
+              "title": "Items",
+              "type": "array"
+            },
+            "next_sequence": {
+              "minimum": 0,
+              "title": "Next Sequence",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "task_id",
+            "items",
+            "next_sequence"
+          ],
+          "title": "EventPage",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "const": "acquisition-tasks.v1",
+          "default": "acquisition-tasks.v1",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "environment": {
+          "title": "Environment",
+          "type": "string"
+        },
+        "source_revision": {
+          "pattern": "^[a-f0-9]{40}$",
+          "title": "Source Revision",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "request_id": {
+          "title": "Request Id",
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/$defs/EventPage"
+        }
+      },
+      "required": [
+        "environment",
+        "source_revision",
+        "observed_at",
+        "request_id",
+        "data"
+      ],
+      "title": "EventsEnvelope",
+      "type": "object"
+    }
+  }
+}

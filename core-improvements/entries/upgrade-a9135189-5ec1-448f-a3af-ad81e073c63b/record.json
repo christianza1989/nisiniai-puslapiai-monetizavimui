@@ -1,0 +1,22 @@
+{
+  "siteId": "verslomatika",
+  "summary": "The current platform status header still calls PR59 source reception the next task after completed normal acquisition migration/correspondence/typed capture and joint BFF lifecycle QA; make current acceptance discoverable without rewriting historical evidence or treating HTTP as ordinary browser acceptance.",
+  "category": "workflow",
+  "evidence": [
+    "253590f9f5f482c69e0d6c0b5dddf8f4535ea20b:sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6116518608",
+    "Root immutable normal stop/restart/frozen-origin receipt hashes cfbb8af9,32f49ed6,1bc0ec99; private inputs omitted"
+  ],
+  "paths": [
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "docs/ACQUISITION_TYPED_TASKS_NORMAL_QA_2026-10-12.md",
+    "agent-business-core/contracts/acquisition-tasks-v1/README.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the new current acceptance entry/evidence links; all original historical status entries, private receipts, FAILs, DB rows, source pins and runtime holds remain retained.",
+  "id": "upgrade-a9135189-5ec1-448f-a3af-ad81e073c63b",
+  "branch": "codex/acquisition-typed-capture-20261012",
+  "baseSha": "253590f9f5f482c69e0d6c0b5dddf8f4535ea20b",
+  "createdAt": "2026-10-12T02:19:11.873Z"
+}

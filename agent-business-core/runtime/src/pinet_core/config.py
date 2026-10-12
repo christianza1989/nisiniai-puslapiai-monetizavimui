@@ -33,6 +33,9 @@ class Settings(BaseSettings):
     acquisition_capture_config: str = ""
     acquisition_work_enabled: bool = False
     acquisition_work_config: str = ""
+    acquisition_tasks_enabled: bool = False
+    # Zero disables the optional ceiling; attempts remain durable.
+    acquisition_tasks_daily_limit: int = Field(default=0, ge=0)
     public_projects_enabled: bool = False
     creation_enabled: bool = False
     creation_runner_enabled: bool = False

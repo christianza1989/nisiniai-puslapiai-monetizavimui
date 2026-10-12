@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Scoped draft104 stacked on103; exact delivery d2fa589ea2839c65a8c87858d0fd386c245a6547, frozen functional166fdde682bb6c54fa5b523bd0df5d35f61f9f67. Actual local typed/legacy/normal/restart/migration evidence retained; whole platform/UI/director/production/target adoption still OPEN.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/104",
+  "commit": "d2fa589ea2839c65a8c87858d0fd386c245a6547",
+  "eventId": "463fe3b0-1ef0-4b2b-b94b-45dbc342132e",
+  "sequence": 4,
+  "at": "2026-10-12T01:35:11.646Z"
+}

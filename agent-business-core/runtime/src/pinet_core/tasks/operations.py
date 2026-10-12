@@ -98,7 +98,7 @@ async def history(business_id: str, request: Request, response: Response, limit:
     tx, session = context
     business_id = identifier(business_id)
     await grant_for(tx, business_id, session.user_id)
-    query = select(Task.id, Task.created_at).where(Task.business_id == business_id)
+    query = select(Task.id, Task.created_at).where(Task.business_id == business_id, Task.kind == "chat.consult")
     if status:
         query = query.where(Task.status == status)
     # The visible creation set binds each page; inserting a task requires an explicit reload.
@@ -129,9 +129,9 @@ async def overview(business_id: str, request: Request, response: Response,
     tx, session = context
     business_id = identifier(business_id)
     await grant_for(tx, business_id, session.user_id)
-    counts = dict((await tx.execute(select(Task.status, func.count()).where(Task.business_id == business_id)
+    counts = dict((await tx.execute(select(Task.status, func.count()).where(Task.business_id == business_id, Task.kind == "chat.consult")
                                    .group_by(Task.status))).all())
-    last = await tx.scalar(select(func.max(Task.created_at)).where(Task.business_id == business_id))
+    last = await tx.scalar(select(func.max(Task.created_at)).where(Task.business_id == business_id, Task.kind == "chat.consult"))
     return envelope(request, response, {"business_id": business_id,
                     "task_counts": {state: counts.get(state, 0) for state in STATES},
                     "last_task_at": last.isoformat() if last else None, "agent": agent_view(session.user_id)})

@@ -7,6 +7,7 @@ commands. They retain supplied reviewed copy; they do not prove a real model run
 import hashlib
 import json
 import re
+from contextlib import asynccontextmanager
 from types import SimpleNamespace
 
 from sqlalchemy import cast, select, text
@@ -79,6 +80,18 @@ class Correspondence:
     def __init__(self, database):
         self.database = database
 
+    @asynccontextmanager
+    async def capture_transaction(self, scope, transaction):
+        if transaction is None:
+            async with self.database.transaction(scope.business_id, scope.environment_id) as tx:
+                yield tx
+        else:
+            # Only the internal worker supplies a transaction. Canonical effect
+            # and task terminal state then share one commit, without a send step.
+            await transaction.execute(text("SELECT set_config('pinet.business',:b,true),set_config('pinet.environment',:e,true)"),
+                                      {"b": scope.business_id, "e": scope.environment_id})
+            yield transaction
+
     async def locked(self, tx, scope, adapter, *, campaign_id=None):
         if scope.environment_class != "test":
             raise LedgerError(403, "synthetic_scope_required")
@@ -145,7 +158,8 @@ class Correspondence:
         return Reply(raw)
 
     async def capture_reviewed(
-        self, *, scope, adapter_id, request_id, recipient, campaign, prospect, prepared
+        self, *, scope, adapter_id, request_id, recipient, campaign, prospect, prepared,
+        transaction=None, before_effect=None
     ):
         """Trusted typed worker only. No HTTP endpoint accepts an arbitrary review."""
         assessment = reviewed_copy(campaign, prospect, prepared)
@@ -158,7 +172,7 @@ class Correspondence:
                 "prepared": prepared,
             }
         )
-        async with self.database.transaction(scope.business_id, scope.environment_id) as tx:
+        async with self.capture_transaction(scope, transaction) as tx:
             values = await self.locked(tx, scope, adapter_id, campaign_id=campaign.campaign_id)
             replay = await self.replay(tx, values, "capture", request_id, input_hash)
             if replay:
@@ -207,6 +221,8 @@ class Correspondence:
             now, source = await self.admission(tx, scope, adapter_id)
             if gates(campaign, prospect, now):
                 raise LedgerError(409, "correspondence_offer_unavailable")
+            if before_effect is not None:
+                await before_effect(tx)
             case = Case(
                 id=new_id(),
                 business_id=scope.business_id,

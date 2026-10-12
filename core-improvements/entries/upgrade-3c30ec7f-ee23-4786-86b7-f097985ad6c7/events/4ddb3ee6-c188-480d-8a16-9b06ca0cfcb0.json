@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original actual hidden owner UUID23505 FAIL3c2a76b8 retained. Shared canonical chat-admission actor lock; capture whole-TX rollback + scoped23505→409, chat savepoint rollback +409. Development real crosskind concurrent UUID and hidden-history case PASS, frozen check pending; original grants/history not restored or reset.",
+  "eventId": "4ddb3ee6-c188-480d-8a16-9b06ca0cfcb0",
+  "sequence": 2,
+  "at": "2026-10-12T01:17:19.380Z"
+}

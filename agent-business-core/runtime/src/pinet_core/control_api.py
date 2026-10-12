@@ -8,6 +8,7 @@ from .acquisition.control_routes import router as acquisition_control_router
 from .acquisition.routes import acquisition_router
 from .acquisition.work_routes import owner_router as acquisition_work_owner_router
 from .acquisition.work_routes import router as acquisition_work_router
+from .acquisition.task_routes import router as acquisition_task_router
 from .agent_preparation.routes import router as agent_preparation_router
 from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
@@ -47,6 +48,7 @@ app.include_router(acquisition_control_router)
 app.include_router(acquisition_router())
 app.include_router(acquisition_work_router)
 app.include_router(acquisition_work_owner_router)
+app.include_router(acquisition_task_router)
 app.include_router(task_router)
 app.include_router(operations_router)
 app.include_router(customer_router)

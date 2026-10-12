@@ -12,6 +12,8 @@ from pinet_core.acquisition.module_schema import TABLE as ACQUISITION_MODULE_TAB
 from pinet_core.acquisition.module_schema import grants_sql as acquisition_module_grants_sql
 from pinet_core.acquisition.work_schema import TABLES as ACQUISITION_WORK_TABLES
 from pinet_core.acquisition.work_schema import runtime_grants_sql as acquisition_work_grants_sql
+from pinet_core.acquisition.task_schema import TABLE as ACQUISITION_TASK_TABLE
+from pinet_core.acquisition.task_schema import grants_sql as acquisition_task_grants_sql
 from pinet_core.config import settings
 from pinet_core.models import Business, new_id
 
@@ -39,6 +41,14 @@ async def main():
             known = set(await tx.scalars(text("SELECT tablename FROM pg_tables WHERE schemaname='public'")))
             acquisition = known.intersection(ACQUISITION_TABLES)
             work = known.intersection(ACQUISITION_WORK_TABLES)
+            if ACQUISITION_TASK_TABLE in known:
+                if work != set(ACQUISITION_WORK_TABLES) or ACQUISITION_MODULE_TABLE not in known:
+                    raise RuntimeError("Partial acquisition task schema; bootstrap grants refused")
+                complete = await tx.scalar(text("SELECT EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid='control_tasks'::regclass AND conname='control_tasks_session_kind_check') AND EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid='control_tasks'::regclass AND conname='uq_control_task_kind_scope')"))
+                if not complete:
+                    raise RuntimeError("Partial acquisition task schema; bootstrap grants refused")
+                for statement in acquisition_task_grants_sql():
+                    await tx.execute(text(statement))
             if work and (work != set(ACQUISITION_WORK_TABLES) or acquisition != set(ACQUISITION_TABLES)
                          or ACQUISITION_MODULE_TABLE not in known):
                 raise RuntimeError("Partial acquisition work schema; bootstrap grants refused")

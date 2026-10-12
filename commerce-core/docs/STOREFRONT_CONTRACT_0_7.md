@@ -51,6 +51,23 @@ document titles are unchanged. This prevents the interface from switching
 back to the order market's language after creation or resume. The default
 callback falls back to the stored title when native titles are absent.
 
+0.11: optional onCartChange(lines) receives only fresh {sku,quantity} copies
+after product input changes. Enabled catalog SKUs, integer quantities 0..100,
+at most 100 input rows; zero/unknown/inactive/invalid lines are removed,
+duplicates summed and a sum over 100 rejected. Customer and terms fields are
+never sent to this callback. Caller owns bounded cart storage and its native
+storage warning. Callback exceptions are caught with one fixed warning and
+cannot hide a successfully created order or alter its retry identity.
+
+Successful create clears the cart. Lost-response recovery clears a matching
+submitted cart, but preserves different goods added after that attempt.
+Ordinary saved-order resume keeps new goods; New order begins with current
+cartLines, which are already empty after create in the same mount. Original
+initialLines are never replayed after create. Order snapshots remain unchanged.
+Order creation temporarily locks request inputs; late quote responses are
+discarded after cart/customer/country/delivery edits rather than accepting an
+obsolete total. Server pricing, stock and replay gates remain authoritative.
+
 `GET /api/orders/:order/receipt` requires the buyer bearer credential.
 `GET /api/orders/:order/documents/:document` exports only that order's sale
 or credit PDF. It never grants buyer access to operator attachments or

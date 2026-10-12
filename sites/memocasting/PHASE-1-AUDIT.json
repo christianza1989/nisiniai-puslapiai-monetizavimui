@@ -2,7 +2,7 @@
   "siteId": "memocasting",
   "canonicalHost": "memocasting.lt",
   "phase": 1,
-  "evaluatedAt": "2026-10-11T23:53:44.579Z",
+  "evaluatedAt": "2026-10-12T00:45:23.504Z",
   "evaluator": "memocasting-editorial-agent",
   "environment": {
     "scope": "isolated local production build; no deployment",
@@ -12,17 +12,19 @@
     "browser": "Chrome CUA actual viewport; not physical-device certification"
   },
   "version": {
-    "packageSha256": "c8340a869b1f209990540d90fa9d13e8340a006a8947854ecb7ab97c0c0b7a8c",
+    "packageSha256": "ddfcb27897b6da02e5c135dbb5f58360de40fea25ab1c84b30f6e892ac9d4d30",
     "lighthouse": "13.5.0",
-    "publicTests": 54,
+    "publicTests": 57,
     "studioTests": 47,
-    "commerceTests": 39
+    "commerceTests": 39,
+    "sourceVersion": "Current local source bound by qa/render-seo.json per-file SHA256; Git heads recorded at handoff"
   },
   "verdict": {
     "local": "NOT_ACCEPTED_FULL_GATE",
     "launch": "NOT_READY",
     "demand": "UNMEASURED",
-    "visual": "LOCAL_REVIEW_WITH_LIMITATIONS"
+    "visual": "OWNER_DEFERRED_DESIGN_PHASE",
+    "seoStructure": "LOCAL_SCOPE_VERIFIED_NOT_DEPLOYED"
   },
   "checks": [
     {
@@ -334,7 +336,8 @@
       "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json",
+        "qa/render-seo.json: new exact package20pages/6articles/57requests0issues; QA_SEO33assertions; current GEO_READINESS.md"
       ],
       "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
     },
@@ -374,11 +377,11 @@
       "stage": "local",
       "gate": true,
       "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Actual revision-bound release/import checked; separate correction propagation across every projection not exercised with a staged revocation."
+        "GEO_READINESS.md: exact actual HTTP times/statuses and private preview; isolated official Studio copy lifecycle; public output/audits/memocasting-lifecycle-*.json"
       ],
-      "notes": "Actual revision-bound release/import checked; separate correction propagation across every projection not exercised with a staged revocation."
+      "notes": "Actual future/due/correction/revoked HTTP and gated media/discovery/related links checked. Original approved state restored. Local dev integration only; production remains unverified."
     },
     {
       "id": "K1",
@@ -471,11 +474,11 @@
       "stage": "local",
       "gate": true,
       "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Common future/paused/missing/revoked projection tests pass; staged actual HTTP link before/after revocation not executed for Memo."
+        "GEO_READINESS.md: exact actual HTTP times/statuses and private preview; isolated official Studio copy lifecycle; public output/audits/memocasting-lifecycle-*.json"
       ],
-      "notes": "Common future/paused/missing/revoked projection tests pass; staged actual HTTP link before/after revocation not executed for Memo."
+      "notes": "Actual future/due/correction/revoked HTTP and gated media/discovery/related links checked. Original approved state restored. Local dev integration only; production remains unverified."
     },
     {
       "id": "M3",
@@ -579,11 +582,11 @@
       "stage": "local",
       "gate": true,
       "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
-      "status": "UNVERIFIED",
+      "status": "PASS",
       "evidence": [
-        "Shared negative tests and real unknown/legacy404 checked; private studio preview and timed before/after HTTP transition not fully exercised."
+        "GEO_READINESS.md: exact actual HTTP times/statuses and private preview; isolated official Studio copy lifecycle; public output/audits/memocasting-lifecycle-*.json"
       ],
-      "notes": "Shared negative tests and real unknown/legacy404 checked; private studio preview and timed before/after HTTP transition not fully exercised."
+      "notes": "Actual future/due/correction/revoked HTTP and gated media/discovery/related links checked. Original approved state restored. Local dev integration only; production remains unverified."
     },
     {
       "id": "P3",
@@ -603,7 +606,8 @@
       "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json",
+        "qa/render-seo.json: new exact package20pages/6articles/57requests0issues; QA_SEO33assertions; current GEO_READINESS.md"
       ],
       "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
     },
@@ -614,7 +618,8 @@
       "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
       "status": "PASS",
       "evidence": [
-        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json"
+        "qa/render-final.json:20pages6guides57requests0issues; public output/audits/memocasting-final.json:58requests0findings; qa/edinburgh-browser.json",
+        "qa/render-seo.json: new exact package20pages/6articles/57requests0issues; QA_SEO33assertions; current GEO_READINESS.md"
       ],
       "notes": "Actual routes, body, sources, links, metadata and assets checked; same shared projection, functional cart noindex. Source review and browser viewport evidence are separate."
     },

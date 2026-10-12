@@ -1,5 +1,7 @@
 # Vietinės versijos perdavimas · 2026-10-12
 
+Aktualus tęsinys: savininkas atidėjo dizainą ir pavedė užbaigti struktūrą/SEO/GEO, suderinant su shopo sesija. Ši apimtis vietiškai patikrinta pagal [GEO_READINESS](GEO_READINESS.md) ir [SEO_STRUCTURE_CONTRACT](SEO_STRUCTURE_CONTRACT.md). Naujas oficialus packageSHA `ddfcb27897b6da02e5c135dbb5f58360de40fea25ab1c84b30f6e892ac9d4d30`;57publictests,57renderrequest0issues,33SEOHTTP, timed/revoked/corrected actualHTTP, privatepreview irCLS0. Visas shop/dizaino/paleidimo gate dar nepriimtas. Žemiau išlaikytas ankstesnio paketo istorinis kvitas.
+
 Parengtas atskiras Memocasting rendereris ir vietinis parduotuvės kelias, naudojantis bendrą commerce source be jo pakeitimų. 20 patvirtintų puslapių / 6 gidai / 30 responsive WebP. Trys Edinburgh temomis papildyti originalūs gidai yra apdaila, džiovinimo etapų planavimas ir nepavykusio liejinio pagalbos aprašas. Šaltinių taikymo ribos matomos pačiuose tekstuose; svetimos paslaugos, saugos pažadai, receptai, klientų istorijos ir vaizdai neperimti. Sitemap neperskaitytas dėl403; pilnas svetimos svetainės inventorius neapsimestas.
 
 Paketo SHA-256: `c8340a869b1f209990540d90fa9d13e8340a006a8947854ecb7ab97c0c0b7a8c`. Importas tik oficialus; private review ir release manifest saugomi izoliuotoje studijoje, nekuriant rankinių approved hash. `CONTENT-PLAN.json` turi38klausimų sprendimus ir7rašymui dar nepribrendusius privačius planus. Dar trys nežinomi istoriniai SKU nėra paskelbti.

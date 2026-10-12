@@ -2,8 +2,8 @@
   {
     "slug": "",
     "pageId": "4cc41bac-2537-4c4f-985b-3f8df01edbed",
-    "revisionHash": "486b8f7cedefd8d37da4ff3ac35b23016a0d02c099c18009adef106e574772ea",
-    "textSha256": "70659dcfea7589e68037c12802b1c9f274dc79538224c1d7d514c1d450883b78"
+    "revisionHash": "b8f133c67ff79e759f284c191d945817d632aaf75264e8f51a0e49f2b5118327",
+    "textSha256": "0e572c02ff53814c031ed6b483c19c1f20c0cb1a8a73124f564b49cd81b83afd"
   },
   {
     "slug": "products/liejimo-rinkinys-porai",
@@ -20,14 +20,14 @@
   {
     "slug": "collections/all",
     "pageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
-    "revisionHash": "e7e77676137d6b23d8095b2883947a1e2545ea2decbe67cd5727f56436bb5111",
-    "textSha256": "24e1652d709c9f7f86888e59c4202f212edbe8cdd1cb372efea3dcfa74cd2a63"
+    "revisionHash": "2d27dbe70f11414445a5e87df28a5baa6c6e10e7a373e5c8ff58bbdab54e48f0",
+    "textSha256": "86ade4111e82bcea0a611a8c1f2a5a505b111e722498a39b989dea9fda1ba633"
   },
   {
     "slug": "pages/instrukcija",
     "pageId": "29842385-77b0-432e-9dea-fc4106ed630f",
-    "revisionHash": "ac8a7691468a117ed6068e7769c3da48b7f47064e702b095fdb0e8b9b3313abc",
-    "textSha256": "059d0d847e1abd479f441b2a36b94d47baab3c7f1a4d75d7243231839459a2cc"
+    "revisionHash": "6c23ce21addd6d1a134968778cb29f5b95401eb526f09e9d757978c7792a5cfb",
+    "textSha256": "76184f57cf2ef36bed635f6083f45de37a681cbcf6b0fd161e767d42ddb4b756"
   },
   {
     "slug": "gidai",

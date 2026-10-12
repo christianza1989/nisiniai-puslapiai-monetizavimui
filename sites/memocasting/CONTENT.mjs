@@ -3,7 +3,7 @@ const p=text=>({type:'paragraph',text}),h=text=>({type:'heading',level:2,text}),
 const def=(slug,type,title,description,body,extra={})=>({slug,type,title,description,intent:description,body,...extra});
 const product='products/liejimo-rinkinys-porai',family='products/seimos-rinkinys-1';
 export const pages=[
-def('','home','Prisiminimas. Jūsų rankomis.','Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.',[
+def('','home','Rankų liejimo rinkiniai porai ir šeimai','Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.',[
  p('Rankų liejimo rinkinys — dovana, kuri kviečia dalyvauti. Medžiagos tampa priemone bendrai veiklai, o liejinys primena žmones ir akimirką, kurią pasirinkote išsaugoti.'),
  h('Du rinkiniai. Aiškus pasirinkimas.'),p('Poros rinkinys kainuoja 32 €. Jame yra vienas alginato pakelis, 1 200 g gipso ir kibiras. Poros rinkinį galite rinktis su baltais dažais už papildomus 3 €. Šeimos rinkinys kainuoja 48 €; jame yra du alginato ir du gipso pakeliai. Tikslūs šeimos medžiagų svoriai dar tikslinami.'),
  h('Pirma susitarkite dėl akimirkos.'),p('Nuspręskite, kas dalyvaus, kada turėsite laisvo laiko ir kam dovanosite: patį rinkinį ar vėliau sukurtą prisiminimą. Dovanų gidai padės atskirti šiuos pasirinkimus.'),
@@ -22,12 +22,12 @@ def(family,'product','Rankų liejimo rinkinys šeimai','Šeimos rinkinys — 48 
  h('Pakuotė ir pristatymas'),p('Šeimos rinkinio siuntos svoris — 4 kg, matmenys — 25 × 25 × 20 cm. Kaina — 48 €. Pristatymo suma skaičiuojama atskirai; dabartinis vietinis tarifas testinis.'),
  p('Rinkinių palyginimas padės patikrinti žinomus skirtumus. Instrukcijos puslapyje rasite pasiruošimo ribas; tikslūs medžiagų parametrai bus pridėti po patvirtinimo.')
 ],{links:[['collections/all','Rinkinių palyginimas'],['pages/instrukcija','Instrukcijos puslapyje'],[product,'Rinkinys porai']]}),
-def('collections/all','faq','Išsirinkite, su kuo kursite.','Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.',[
+def('collections/all','faq','Rankų liejimo rinkiniai: porai ar šeimai?','Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.',[
  p('Porai: 32 €, vienas alginato pakelis, 1 200 g gipso ir kibiras. Poros variantas su baltais dažais — 35 €. Šeimai: 48 €, du alginato ir du gipso pakeliai.'),
  p('Poros siunta sveria 2 kg ir yra 20 × 20 × 17 cm. Šeimos siunta sveria 4 kg ir yra 25 × 25 × 20 cm. Siuntos matmenys nėra indo talpos ar tinkamo rankų skaičiaus įrodymas.'),
  p('Rinkitės pagal žmones ir konkrečiam rinkiniui patvirtintą instrukciją. Šeimos pakelių svoriai, dalyvių ribos ir tikros produktų nuotraukos dar ruošiamos. Kūdikio pėdutės ar alginato papildymas šiuo metu neparduodami.')
 ],{links:[[product,'Poros rinkinys'],[family,'Šeimos rinkinys'],['pages/instrukcija','instrukciją']]}),
-def('pages/instrukcija','faq','Prieš pradėdami rankų liejimą.','Ką patikrinti savo rinkinio instrukcijoje prieš atidarant medžiagas. Tikslūs Memocasting parametrai ruošiami.',[
+def('pages/instrukcija','faq','Rankų liejimo instrukcija: ką patikrinti prieš pradedant?','Ką patikrinti savo rinkinio instrukcijoje prieš atidarant medžiagas. Tikslūs Memocasting parametrai ruošiami.',[
  p('Pilna Memocasting instrukcija šiuo metu tikrinama. Kol nėra patvirtinto jūsų rinkinio lapo, nepradėkite maišyti medžiagų ir nesiremkite kito gamintojo receptu. Čia išlaikome seną instrukcijos adresą, tačiau nepateikiame spėjamų santykių ar saugos pažadų.'),
  h('Sutikrinkite rinkinį ir jo dokumentus'),ul('Raskite rinkinio pavadinimą ir medžiagų pakelių žymėjimą.','Patikrinkite pakelių būklę, jų galiojimą ir tiekėjo naudojimo informaciją.','Įsitikinkite, kad instrukcija skirta būtent toms medžiagoms ir tam kiekiui.','Jeigu trūksta lapo ar informacija neaiški, prieš naudodami kreipkitės pagalbos.'),
  h('Keturi etapai, kuriuos turi paaiškinti instrukcija'),p('Pasiruošimas, formos sudarymas, gipso užpildymas ir liejinio išėmimas bei džiovinimas yra skirtingi darbo etapai. Kiekvienam reikia atskiros medžiagų ir veiksmų informacijos. Vien bendras vaizdo įrašas šių parametrų nepakeičia.'),

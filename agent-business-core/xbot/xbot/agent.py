@@ -3,10 +3,11 @@
 from datetime import UTC, datetime
 from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, StrictInt
 
 from .codex import CodexRunner
 from .contracts import Strict
+from .source_facts import validate_manifest
 
 
 class Idea(Strict):
@@ -24,7 +25,7 @@ class Plan(Strict):
 class Draft(Strict):
     text: str = Field(min_length=5, max_length=280)
     media_brief: str = Field(max_length=700)
-    fact_indices: list[int] = Field(max_length=10)
+    fact_indices: list[StrictInt] = Field(max_length=10)
 
 
 class Review(Strict):
@@ -84,6 +85,12 @@ class Agent:
             "source_signals": signals[:8],
             "now_utc": datetime.now(UTC).isoformat(),
         }
+        if profile.get("source_fact_manifest") is not None:
+            manifest, _ = validate_manifest(profile["facts"], profile["source_fact_manifest"])
+            # Group maps reference the exact facts already supplied; no duplicate
+            # text, lossy synopsis or extra unbounded context is introduced.
+            evidence["source_groups"] = [g.model_dump(mode="json") for g in manifest.groups]
+            evidence["source_fact_manifest"] = manifest.model_dump(mode="json")
         if kind == "plan":
             out = await self.ask(
                 Plan,

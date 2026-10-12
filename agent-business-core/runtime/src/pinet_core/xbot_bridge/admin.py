@@ -75,11 +75,12 @@ async def open_local(tx, *, agent_id, authorizing_session_id, proof, mandate, se
 
     projection = await knowledge.projection(tx)
     pages = sorted(projection["pages"], key=lambda p: p["id"]) if projection else []
-    facts = [p["text"] for p in pages]
-    if not 1 <= len(facts) <= 35 or any(len(f) > 1800 for f in facts):
-        raise ValueError("bounded_public_facts_required")
     lib = load()
+    from xbot.source_facts import project
     from xbot.store import fingerprint
+
+    source_facts = project(pages, canonical_host=business.canonical_host)
+    facts = source_facts["facts"]
 
     now, admission_id = utcnow(), str(uuid4())
     expires = now + timedelta(seconds=seconds)
@@ -98,6 +99,7 @@ async def open_local(tx, *, agent_id, authorizing_session_id, proof, mandate, se
         knowledge_ref=reference.model_dump(),
         index_receipt_sha256=receipt_hash,
         facts_sha256=fingerprint(facts),
+        source_fact_manifest_sha256=source_facts["source_fact_manifest_sha256"],
         expires_at=expires.timestamp(),
         profile_current=True,
         module_admitted=True,
@@ -106,6 +108,7 @@ async def open_local(tx, *, agent_id, authorizing_session_id, proof, mandate, se
         "site_id": agent.site_id,
         "canonical": "https://" + agent.canonical_host,
         "facts": facts,
+        "source_fact_manifest": source_facts["source_fact_manifest"],
         "facts_source": "Current maintained public KnowledgeReferenceV2",
         "facts_verified_at": now.timestamp(),
         "allowed_urls": [p["url"] for p in pages][:20],

@@ -501,3 +501,65 @@ async def test_admin_current_requires_exact_business_and_environment_context(mai
         assert (await knowledge.current(tx)).business_id == c["saved"]["business_id"]
         await tx.execute(text("SELECT set_config('pinet.environment',:e,true)"), {"e": c["environment"] + "-foreign"})
         assert await knowledge.current(tx) is None
+
+# Explicit finite monitor delegates every mutation to the existing canonical CLI.
+def source_monitor_module():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    try:
+        return importlib.import_module("customer_source_monitor")
+    finally:
+        sys.path.pop(0)
+
+
+async def test_source_monitor_real_pg_retains_profile_and_chains_exact_receipts(maintained, monkeypatch, tmp_path):
+    c, monitor = maintained, source_monitor_module()
+    original = cli.maintain
+    async def native(tx, **kwargs):
+        kwargs.setdefault("project_runner", native_transport)
+        return await original(tx, **kwargs)
+    monkeypatch.setattr(cli, "maintain", native)
+    clock = [utcnow()]
+    async def sleep(seconds):
+        clock[0] += timedelta(seconds=seconds)
+    before = await snapshot(c)
+    directory = tmp_path / "monitor"
+    result = await monitor.monitor(c["value"], directory,
+        until=(clock[0] + timedelta(seconds=40)).isoformat(), interval_seconds=20,
+        ttl_seconds=settings().knowledge_ttl_seconds, executor=cli.execute,
+        clock=lambda: clock[0], sleep=sleep, check=lambda: settings().control_source_revision)
+    assert result["new_rechecks"] == 2 and result["provider_calls"] == 0
+    after = await snapshot(c)
+    for key in before.keys() - {"knowledge_states", "control_customer_source_refreshes"}:
+        assert before[key] == after[key], key
+    assert len(after["control_customer_source_refreshes"]) == len(before["control_customer_source_refreshes"]) + 2
+    first = json.loads((directory / "000001/receipt.json").read_text())
+    second = json.loads((directory / "000002/request.json").read_text())
+    assert second["expected_refreshed_at"] == first["source_refreshed_at"]
+    assert first["profile_admission_id"] == c["value"]["profile_admission_id"]
+    assert (await profile_get(c))["profile_current"]
+
+
+async def test_source_monitor_real_pg_session_expiry_stops_without_next_proof(maintained, monkeypatch, tmp_path):
+    c, monitor = maintained, source_monitor_module()
+    original = cli.maintain
+    async def native(tx, **kwargs):
+        kwargs.setdefault("project_runner", native_transport)
+        return await original(tx, **kwargs)
+    monkeypatch.setattr(cli, "maintain", native)
+    clock, retained = [utcnow()], []
+    async def expire(seconds):
+        clock[0] += timedelta(seconds=seconds)
+        async with AsyncSession(c["admin"]) as tx, tx.begin():
+            await tx.execute(update(Session).where(Session.id == c["value"]["authorizing_session_id"])
+                .values(expires_at=utcnow() - timedelta(seconds=1)))
+        retained.append(await snapshot(c))
+    directory = tmp_path / "monitor"
+    with pytest.raises((ValueError, ControlError, HTTPException)):
+        await monitor.monitor(c["value"], directory,
+            until=(clock[0] + timedelta(seconds=60)).isoformat(), interval_seconds=20,
+            ttl_seconds=settings().knowledge_ttl_seconds, executor=cli.execute,
+            clock=lambda: clock[0], sleep=expire, check=lambda: settings().control_source_revision)
+    assert len(retained) == 1 and await snapshot(c) == retained[0]
+    assert json.loads((directory / "000001/receipt.json.status.json").read_text())["status"] == "committed"
+    assert json.loads((directory / "000002/receipt.json.status.json").read_text())["status"] == "reserved"
+    assert not (directory / "000003").exists()

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Explicit finite operator source supervision delegates to the existing canonical command, preserving Profile and authority. No model/provider/channel calls. Original collection FAIL468fb8 and three UTC lint findings retained and corrected. Operational owner Session expired; new login/current-source admission/UI launch remain pending, no actual monitor adoption claimed.",
+  "checks": [
+    {
+      "command": "pytest -q offline_tests/test_customer_source_monitor.py offline_tests/test_customer_source_maintain.py",
+      "result": "PASS",
+      "evidence": "34PASS91aa5d26a03bfc3fbed295062233cc1441aaf0f28789db9e2d182648cc4dffc8; docs/CUSTOMER_SOURCE_MONITOR_QA_2026-10-12.md"
+    },
+    {
+      "command": "pytest -q tests/test_customer_source_maintain.py -k source_monitor",
+      "result": "PASS",
+      "evidence": "2 real isolated PostgreSQL PASS/31 deselected d774e4ab6225de52dff61fff5455f3eb35dcaea477b0b0f6dacfc2e9d182b32d; preserved original Profile/history and authority expiry stop, provider0"
+    },
+    {
+      "command": "ruff check scripts/customer_source_monitor.py offline_tests/test_customer_source_monitor.py tests/test_customer_source_maintain.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped lint/diff PASS after UTC aliases corrected; no dependency/SQL/API/DTO changes"
+    }
+  ],
+  "eventId": "47df966d-f640-409e-bb21-f95651fcbfdb",
+  "sequence": 2,
+  "at": "2026-10-12T13:35:26.057Z"
+}

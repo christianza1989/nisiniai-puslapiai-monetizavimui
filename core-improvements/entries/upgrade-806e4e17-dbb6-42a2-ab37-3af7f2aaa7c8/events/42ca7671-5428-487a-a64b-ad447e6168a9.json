@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Full foundation continues0.10: PackingConfirmed generates exact individual parcel plan/fullsender/fresh bounded quote/durable booking; existing manual plan/command/cancellation wins; ShipmentRegistered collects private provider PDFs/tracking through retry/dead queue. Company/sender/current service scope locks buyer quotes; wholesale carrier declared value uses private agreed prices; unsupported legacy endpoint rejected before state writes. All production automation policies remainoff. Actual IAB0905BADA simulatedpaid→physicalpackconfirmation→jobs→onefixturebooking1002/privatePDF/TEST1002 buyer receipt320px. No real money/shipment/label/mail. Site native content and final local audit continue.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "96Node tests and20migrations; native workerd/D1/R2/Queue incl new actual automaticfixture→onebooking→privatePDF; dryrun20assets. No remoteprovider calls."
+    },
+    {
+      "command": "Actual IAB automatic foundation flow8799",
+      "result": "PASS",
+      "evidence": "0905BADA3999cents, no manualorigin/plan/quote/command needed after pack; fixtureprovider1002; buyer invoice/TEST1002 width320/scroll320. Ignored tmp/ui-review/automatic-shipping-buyer-320-10.png and operator screenshot. ProviderPDF is priorTESTinvoicebytefixture, not truecarrierlabel."
+    },
+    {
+      "command": "Exact0e736ab419f6b280c0ffacda25adb598922e27b5 clean gitarchive/npmci/fullverify",
+      "result": "PASS",
+      "evidence": "Ignored tmp/source-restore-09/commerce-core/restore-verify.log,93Node/native/dryrun761.83KiB20assets; no private runtime needed."
+    }
+  ],
+  "eventId": "42ca7671-5428-487a-a64b-ad447e6168a9",
+  "sequence": 21,
+  "at": "2026-10-12T06:00:08.829Z"
+}

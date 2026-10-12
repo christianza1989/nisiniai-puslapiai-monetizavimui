@@ -4,6 +4,7 @@ import { CommerceOperations } from './operations.mjs';
 import { DocumentFiles } from './document-pdf.mjs';
 import { ShipmentCommands } from './shipment-commands.mjs';
 import { CustomerNotifications } from './notifications.mjs';
+import { ShippingAutomation } from './shipping-automation.mjs';
 const notifyKinds = [
   'OrderPlaced',
   'PaymentConfirmed',
@@ -97,6 +98,11 @@ export class CommerceJobs {
       }
     }
     if (notifyKinds.includes(event.kind)) await this.notification(store, env, event);
+    const automaticShipping = new ShippingAutomation(this.s, this.options);
+    if (event.kind === 'PackingConfirmed')
+      await automaticShipping.preparePacked(store, env, event.aggregate_id);
+    if (event.kind === 'ShipmentRegistered')
+      await automaticShipping.collectRegistered(store, env, event.aggregate_id);
     // Remaining domain events are already persisted/audited by their producer.
     // They are acknowledged here; optional consumers subscribe via handlers.
   }

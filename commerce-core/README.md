@@ -1,4 +1,6 @@
 # Bendras prekybos modulis
+
+Aktualus papildymas 0.10: [automatinė siuntos ir PDF eiga po komplektavimo](docs/CONTINUATION_0_10.md). Backend ir pagrindo sritis tęsia žemiau aprašytą 0.9; source merge / provider prijungimas / realus paleidimas yra atskiri.
 Pirmas klientas — Memocasting. [Pilnas modulio planas](docs/MODULIO_PLANAS.md), [aktuali apimtis](docs/IMPLEMENTATION_STATUS.md), [roadmap](docs/ROADMAP.md), [architektūra](docs/ARCHITECTURE.md), [API](docs/API.md), [priėmimas](docs/ACCEPTANCE.md).
 
 Vienas bendras prekybos pagrindas mūsų parduotuvėms; kiekviena parduotuvė turi savo katalogą, įmonę, rinkas ir integracijų paskyras. Tikras kelių nepriklausomų pardavėjų marketplace paliekamas atskirai plėtrai.

@@ -29,7 +29,8 @@ test('approved private wholesale offer derives carrier price from partner addres
         accountRef: 'fixture_carrier',
         environment: 'sandbox',
         provider: 'fixture',
-        quote: async () => {
+        quote: async (payload) => {
+          assert.equal(payload.value, 8000);
           quotes++;
           return [{ serviceId: '42', amount: 799, currency: 'EUR', name: 'TEST carrier' }];
         },

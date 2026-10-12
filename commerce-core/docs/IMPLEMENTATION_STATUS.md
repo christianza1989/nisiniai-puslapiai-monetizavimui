@@ -1,5 +1,7 @@
 # Aktualus pavedimas ir būsena
 
+0.10 tęsinys užbaigia automatinį individualių siuntų paruošimą ir PDF surinkimą po fizinio komplektavimo, su kainos limitu ir patvariomis išimtimis. [Aktualus automatikos kvitas](CONTINUATION_0_10.md). 0.9 browser SDK nepakitęs; tikros integracijos, verslo faktai ir native svetainės tekstų priėmimas tebėra atskiri vartai.
+
 Aktualus 0.9: [pilno operacinio pagrindo kvitas](CONTINUATION_0_9.md), [0.8 vykdymas ir atkūrimas](CONTINUATION_0_8.md). Įgyvendinti nuo tikrų prieigų nepriklausomi prekybos, administravimo, PDF, siuntų, jobs, backup, katalogo / kainų / priedų, finansinių šaltinių / ginčų ir fizinių grąžinimų keliai. Tikra svetainės / mail gateway integracija užbaigiama savininko svetainės sesijoje; galutinis dizainas ir agentai atidėti. Verslo faktų (registracijos adresas, stock, priedų pakuotės, tiekėjo instrukcijos), provider sutarties ir gyvo runtime vartai atskiri. Ankstesnės 0.2–0.6 būsenos žemiau yra istorija, ne dabartinės realizacijos inventorius.
 
 2026-10-12 papildymas 0.6: immutable siuntėjo vieta, individualios ir tikrai išmatuotos pakuotės, privatūs operatoriaus kainų pasiūlymai bei locker snapshot. 60 Node testų, 8 migracijos/native D1 ir actual UI PASS; [0.6 siuntų paruošimo kvitas](CONTINUATION_2026_10_12_SHIPPING.md). Dabartinio Sendparcel staging read adapteris veikia su fixture protokolu. Tiekėjo prieiga, tikras tarifas, automatinis registravimas, PDF saugykla ir tracking dar nepriimti. Savininko nauja paskyra patikrinta; rekvizitai tušti, konkretus API laiškas paruoštas privačiai ir neišsiųstas.

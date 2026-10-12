@@ -61,6 +61,9 @@ export function prepareBusiness(
     automationPolicy: {
       approved: false,
       autoExecutePreparedShipments: false,
+      autoPrepareIndividualShipments: false,
+      autoCollectShipmentDocuments: false,
+      maxCarrierSubsidyMinor: 0,
       sendNotifications: false,
     },
     notificationPolicy: {

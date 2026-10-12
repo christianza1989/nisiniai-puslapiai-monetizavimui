@@ -169,16 +169,13 @@ export class CommerceService {
     const catalog = await this.catalog(id, environment);
     const priced = lines.map((line) => {
       const p = catalog.find((p) => p.sku === line.sku);
-      requireValue(
-        p && p.enabled !== false && integer(p.prices[market.country], 1),
-        'product_unavailable',
-        409,
-      );
+      const unitAmount = options.privatePrices?.[line.sku] ?? p?.prices[market.country];
+      requireValue(p && p.enabled !== false && integer(unitAmount, 1), 'product_unavailable', 409);
       return {
         ...line,
         title: p.titles?.[market.country] || p.title,
-        unitAmount: p.prices[market.country],
-        lineAmount: p.prices[market.country] * line.quantity,
+        unitAmount,
+        lineAmount: unitAmount * line.quantity,
         package: p.package,
       };
     });
@@ -226,6 +223,8 @@ export class CommerceService {
         const q = JSON.parse(row.payload_json);
         requireValue(
           q.accountRef === store.shippingAccountRef &&
+            delivery.serviceIds?.includes(q.providerServiceId) &&
+            q.dispatchHash === (await digest(canonical(store.dispatch))) &&
             q.public.currency === market.currency &&
             q.itemsHash === (await digest(canonical(priced))),
           'delivery_quote_conflict',

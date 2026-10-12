@@ -29,6 +29,7 @@ export function deliveryFingerprint(input) {
       deliveryId: input.deliveryId,
       city: address.city.trim(),
       postalCode: address.postalCode.trim(),
+      isCompany: input.customer.isCompany === true,
     }),
   );
 }
@@ -36,7 +37,7 @@ export class BuyerDeliveryQuotes {
   constructor(service) {
     this.s = service;
   }
-  async create(store, env, input, adapter) {
+  async create(store, env, input, adapter, quoteOptions = {}) {
     const config = await this.s.store(store, env);
     requireValue(
       identifier(input?.id) &&
@@ -73,7 +74,7 @@ export class BuyerDeliveryQuotes {
         method.serviceIds.every(identifier),
       'delivery_not_enabled',
     );
-    const base = await this.s.quote(store, env, input, { draftDelivery: true });
+    const base = await this.s.quote(store, env, input, { ...quoteOptions, draftDelivery: true });
     const packages = planParcels({ snapshot: base }, { mode: 'individual' });
     requireValue(
       config.dispatch?.country === 'LT' &&
@@ -84,12 +85,12 @@ export class BuyerDeliveryQuotes {
       503,
     );
     const offers = await adapter.quote({
-      sender: { ...config.dispatch, isCompany: true },
+      sender: { ...config.dispatch, isCompany: config.dispatch.isCompany !== false },
       recipient: {
         country: input.country,
         city: input.customer.address.city.trim(),
         postalCode: input.customer.address.postalCode.trim(),
-        isCompany: false,
+        isCompany: input.customer.isCompany === true,
       },
       parcels: packages.parcels,
       value: base.amount,
@@ -118,6 +119,7 @@ export class BuyerDeliveryQuotes {
       accountRef: adapter.accountRef,
       packageMode: 'individual',
       itemsHash: await digest(canonical(base.lines)),
+      dispatchHash: await digest(canonical(config.dispatch)),
       providerExpiresAt: null,
     };
     await this.s

@@ -151,6 +151,7 @@ export class Wholesale extends Backoffice {
     );
     requireValue(list?.currency === partner.currency, 'partner_price_list_mismatch');
     const prices = JSON.parse(list.definition_json).lines;
+    const privatePrices = Object.fromEntries(prices.map((p) => [p.sku, p.unitAmount]));
     const customer = JSON.parse(partner.customer_json);
     const quoteInput = {
       lines: input.lines,
@@ -170,10 +171,11 @@ export class Wholesale extends Backoffice {
         env,
         { ...quoteInput, id: 'b2b_' + h },
         this.shippingReadAdapters[store],
+        { privatePrices },
       );
       quoteInput.deliveryQuoteId = rate.id;
     }
-    const snapshot = await this.s.quote(store, env, quoteInput);
+    const snapshot = await this.s.quote(store, env, quoteInput, { privatePrices });
     requireValue(snapshot.delivery.kind !== 'locker', 'wholesale_door_delivery_required');
     for (const l of snapshot.lines) {
       const p = prices.find((p) => p.sku === l.sku);

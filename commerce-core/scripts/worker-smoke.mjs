@@ -1089,6 +1089,89 @@ try {
   );
   await mail.execute(nativeStore, 'sandbox', mailEvent.id, 'fixture_operator');
   assert.equal(nativeMailCalls, 1);
+  const automaticStore = 'store_auto_native';
+  const automaticConfig = foundationStore('store-auto-native.example', automaticStore);
+  automaticConfig.dispatch = {
+    country: 'LT',
+    city: 'Vilnius',
+    postalCode: '02211',
+    name: 'Native Test Sender',
+    line1: 'Testinė g. 1',
+    phone: '+37060000001',
+    email: 'sender@example.test',
+    isCompany: true,
+  };
+  automaticConfig.automationPolicy = {
+    autoPrepareIndividualShipments: true,
+    autoExecutePreparedShipments: true,
+    autoCollectShipmentDocuments: true,
+    maxCarrierSubsidyMinor: 0,
+  };
+  await newest.provisionStore(automaticConfig, foundationProducts());
+  let autoLedger = {},
+    automaticPosts = 0;
+  const automaticCarrier = foundationCarrier({
+    load: async () => autoLedger,
+    save: async (value) => {
+      autoLedger = value;
+      automaticPosts++;
+    },
+    loadPdf: async () => nativeBytes, // valid existing TEST invoice used only as generic provider-PDF fixture
+  });
+  const autoRate = await new BuyerDeliveryQuotes(newest).create(
+    automaticStore,
+    'sandbox',
+    { ...dynamicInput, id: 'auto_native_rate' },
+    automaticCarrier,
+  );
+  const automaticOrder = (
+    await newest.createOrder(
+      automaticStore,
+      'sandbox',
+      { ...dynamicInput, deliveryQuoteId: autoRate.id },
+      key(200),
+    )
+  ).order;
+  await newest.checkout(
+    automaticStore,
+    'sandbox',
+    automaticOrder.id,
+    foundationPayment('store-auto-native.example', automaticStore),
+  );
+  await newest.acceptPayment(
+    automaticStore,
+    'sandbox',
+    payment(
+      await newest.getOrder(automaticStore, 'sandbox', automaticOrder.id),
+      automaticStore,
+      'evt_auto_native',
+    ),
+  );
+  await newest.markPacked(automaticStore, 'sandbox', automaticOrder.id, 'fixture_operator');
+  const automaticJobs = new CommerceJobs(newest, {
+    privateStorage: new R2PrivateStorage(await mf.getR2Bucket('COMMERCE_FILES')),
+    loadDocumentFont: async () =>
+      new Uint8Array(readFileSync(join(root, 'public/fonts/NotoSans-Regular.ttf'))),
+    shippingReadAdapters: { [automaticStore]: automaticCarrier },
+    shippingAdapters: { [automaticStore]: automaticCarrier },
+  });
+  await automaticJobs.scheduled(automaticStore, 'sandbox');
+  await automaticJobs.scheduled(automaticStore, 'sandbox');
+  await automaticJobs.scheduled(automaticStore, 'sandbox');
+  assert.equal(automaticPosts, 1);
+  assert.equal(
+    (await newest.getOrder(automaticStore, 'sandbox', automaticOrder.id)).fulfillment_state,
+    'labelled',
+  );
+  assert.equal(
+    (
+      await newest.one(
+        "SELECT COUNT(*) n FROM private_files WHERE store_id=? AND kind='shipment_document'",
+        automaticStore,
+      )
+    ).n,
+    1,
+  );
   await mf.dispose();
   mf = undefined;
   await start('src/worker.mjs', { COMMERCE_ENV: 'production' });

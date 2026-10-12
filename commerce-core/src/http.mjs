@@ -72,6 +72,7 @@ export function createHandler({
     privateStorage,
     loadDocumentFont,
     shippingAdapters,
+    shippingReadAdapters,
     notificationAdapters,
   });
   const notifications = new CustomerNotifications(service, notificationAdapters);
@@ -796,6 +797,12 @@ export function createHandler({
         if (admin[2] === 'pack')
           return json(await service.markPacked(store.id, environment, admin[1], actor.id));
         requireValue(shippingAdapters[store.id], 'shipping_not_connected', 503);
+        requireValue(
+          shippingAdapters[store.id].supportsIdempotentCreate === true &&
+            typeof shippingAdapters[store.id].create === 'function',
+          'legacy_shipping_not_supported',
+          503,
+        );
         return json(
           await service.registerShipment(
             store.id,

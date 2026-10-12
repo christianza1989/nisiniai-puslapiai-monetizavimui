@@ -1,6 +1,6 @@
 # Madbeauty:6 papildomi gidai
 
-Būsena **EXPORTED_NOT_DEPLOYED**. Paketas135puslapiai/131gidai/664responsiveWebP. Papildoma6ImageGenfotografijos ir originali code-native4kontūrų schema.129ankstesnės revizijos ir299datos išsaugotos. NativeGPT-6Luna/xhigh,7actualjobs (6drafts+1substantiverevision),12actualprimarysource records,12actualChrome1440/390views.
+Būsena **EXPORTED_NOT_DEPLOYED**. Pakete 135 puslapiai, 131 gidas ir 664 responsive WebP variantai. Papildomai: 6 originalios ImageGen fotografijos ir originali keturių nagų kontūrų schema. Išsaugotos 129 ankstesnės revizijos ir visos 299 publikavimo akimirkos. Tekstai rengti GPT-6 Luna / xhigh: 7 tikri CLI darbai (6 juodraščiai ir viena esminė revizija). Peržiūrėti 12 pirminių šaltinių įrašų ir 12 tikrų Chrome vaizdų kompiuteryje bei telefone.
 
 [Peržiūra](index.html) · [Datos ir valandos](PUBLICATION-DATES.csv) · [Tikra būsena](DELIVERY.json).
 

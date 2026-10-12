@@ -1,0 +1,30 @@
+{
+  "state": "CONSUMER_INTAKE_ACCEPTED_AWAITING_ACTUAL_RECEIPT",
+  "siteId": "madbeauty",
+  "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+  "producerCommit": "b948707db0cb6e449f2c1f34f0f238edf44f625b",
+  "producerPullRequest": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/107",
+  "consumerThread": "01a11268-7ab2-7a23-973c-598322dba15a",
+  "canonicalLeaseOwner": "platform-consumer-chat-until-actual-receipt",
+  "before": {
+    "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+    "pages": 129,
+    "guides": 125,
+    "version": "87e6c536-aa20-4f9c-a052-62ab21f9526c",
+    "runtimeSource": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+    "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2"
+  },
+  "candidate": {
+    "pages": 135,
+    "guides": 131,
+    "assetVariants": 664,
+    "newGuides": 6,
+    "newPhotographs": 6,
+    "newNativeDiagrams": 1,
+    "newAssetVariants": 34,
+    "old129Preserved": true,
+    "calendar299Preserved": true
+  },
+  "productionDeployed": false,
+  "scope": "Actual producer approval/export and chat acceptance of consumer intake. No consumer acceptance or canonical deployment claimed until independently received and verified."
+}

@@ -1,5 +1,7 @@
 # Aktualus pavedimas ir būsena
 
+0.11 prideda krepšelio caller hook / create-clear / naujų pasirinkimų išsaugojimą, stale quote atmetimą ir request input lock. [Aktuali funkcijų matrica ir toliau taisoma pagaminto rinkinio expiry/traceability spraga](SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). Visas shop dar nepriimtas; našumas ir galutinis dizainas atidėti.
+
 0.10.3 taiko tą patį productTitle callback ir išsaugoto pirkėjo užsakymo ekranui, su sąsajos kalba ir originalios line kopija. Native svetainės create / reload patikra atliekama atskirai po naujo SDK prijungimo; apskaitos snapshot ir PDF pavadinimai nekeičiami.
 
 0.10.2 užbaigia šalies / taisyklių versijos nuorodos resolver ir ankstesnio sutikimo išvalymą pakeitus šalį. Browser SDK baitai pasikeitę; svetainės kopijai reikia naujo manifest ir tikros URL / approved revision atitikties. 0.10 tęsinys užbaigia automatinį individualių siuntų paruošimą ir PDF surinkimą po fizinio komplektavimo, su kainos limitu ir patvariomis išimtimis. [Aktualus automatikos kvitas](CONTINUATION_0_10.md). Tikros integracijos, verslo faktai ir native svetainės tekstų priėmimas tebėra atskiri vartai.

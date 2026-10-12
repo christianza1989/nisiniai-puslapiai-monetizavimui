@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+Aktuali 0.11 funkcijų peržiūra ir atvira stock spraga: [SHOP_FUNCTIONAL_REVIEW](docs/SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). Krepšelio hook / recovery / stale quote pataisos neprilygsta galutiniam viso shop priėmimui.
+
 Aktualus papildymas 0.10: [automatinė siuntos ir PDF eiga po komplektavimo](docs/CONTINUATION_0_10.md). Backend ir pagrindo sritis tęsia žemiau aprašytą 0.9; source merge / provider prijungimas / realus paleidimas yra atskiri.
 Pirmas klientas — Memocasting. [Pilnas modulio planas](docs/MODULIO_PLANAS.md), [aktuali apimtis](docs/IMPLEMENTATION_STATUS.md), [roadmap](docs/ROADMAP.md), [architektūra](docs/ARCHITECTURE.md), [API](docs/API.md), [priėmimas](docs/ACCEPTANCE.md).
 

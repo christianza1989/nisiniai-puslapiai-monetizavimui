@@ -32,6 +32,17 @@ The minimal `/commerce` preview is a noindex functional test surface and has
 no final brand design. Caller styles and product-page cart integration belong
 to the website owner. Same-origin API routing is required; no wildcard CORS.
 
+0.10.2: termsUrl additionally accepts a synchronous resolver receiving
+{ country, language, policyVersion }. The country and version come from the
+selected admitted market; language remains the interface language. Return
+the actual same-origin URL for that approved legal revision, or null when
+there is no match. The caller must not invent approval/version mappings.
+An empty, invalid, foreign, credential-bearing or throwing resolver disables
+acceptance and order submission. Changing country refreshes the link and
+clears prior consent. A fixed same-origin string remains supported for one
+shared legal document. Changing SDK bytes requires the site adapter's normal
+manifest regeneration and its actual integration test.
+
 `GET /api/orders/:order/receipt` requires the buyer bearer credential.
 `GET /api/orders/:order/documents/:document` exports only that order's sale
 or credit PDF. It never grants buyer access to operator attachments or

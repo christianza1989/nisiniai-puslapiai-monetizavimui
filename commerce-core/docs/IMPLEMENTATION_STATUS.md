@@ -1,6 +1,6 @@
 # Aktualus pavedimas ir būsena
 
-0.10 tęsinys užbaigia automatinį individualių siuntų paruošimą ir PDF surinkimą po fizinio komplektavimo, su kainos limitu ir patvariomis išimtimis. [Aktualus automatikos kvitas](CONTINUATION_0_10.md). 0.9 browser SDK nepakitęs; tikros integracijos, verslo faktai ir native svetainės tekstų priėmimas tebėra atskiri vartai.
+0.10.2 užbaigia šalies / taisyklių versijos nuorodos resolver ir ankstesnio sutikimo išvalymą pakeitus šalį. Browser SDK baitai pasikeitę; svetainės kopijai reikia naujo manifest ir tikros URL / approved revision atitikties. 0.10 tęsinys užbaigia automatinį individualių siuntų paruošimą ir PDF surinkimą po fizinio komplektavimo, su kainos limitu ir patvariomis išimtimis. [Aktualus automatikos kvitas](CONTINUATION_0_10.md). Tikros integracijos, verslo faktai ir native svetainės tekstų priėmimas tebėra atskiri vartai.
 
 Aktualus 0.9: [pilno operacinio pagrindo kvitas](CONTINUATION_0_9.md), [0.8 vykdymas ir atkūrimas](CONTINUATION_0_8.md). Įgyvendinti nuo tikrų prieigų nepriklausomi prekybos, administravimo, PDF, siuntų, jobs, backup, katalogo / kainų / priedų, finansinių šaltinių / ginčų ir fizinių grąžinimų keliai. Tikra svetainės / mail gateway integracija užbaigiama savininko svetainės sesijoje; galutinis dizainas ir agentai atidėti. Verslo faktų (registracijos adresas, stock, priedų pakuotės, tiekėjo instrukcijos), provider sutarties ir gyvo runtime vartai atskiri. Ankstesnės 0.2–0.6 būsenos žemiau yra istorija, ne dabartinės realizacijos inventorius.
 

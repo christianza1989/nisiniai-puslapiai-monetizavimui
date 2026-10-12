@@ -71,3 +71,21 @@ privačioje fixture aplinkoje; MOQ2 / casepack2 kainynas €20 už poros
 rinkinį, qty4, carrier quote → €87.99, vienas priimtas užsakymas 113CC217
 ir jo vietinė Checkout nuoroda. Tikras partneris ar mokėjimas nesukurti.
 Įrodymas tmp/ui-review/wholesale-company-checkout-10.png.
+
+## 0.10.2 taisyklių nuoroda ir šalies pakeitimas
+
+Svetainės integracija atskleidė, kad fiksuota UI kalbos taisyklių nuoroda
+neatspindi kitos pasirinktos pristatymo šalies taisyklių versijos.
+Canonical mountCheckout termsUrl dabar priima ir resolver su pasirinkta
+country / policyVersion bei sąsajos language. Nerasta atitiktis, svetimas
+URL ar resolver klaida neleidžia patvirtinti ir pateikti užsakymo.
+Pakeitus šalį, ankstesnis checkbox sutikimas išvalomas ir suma tikrinama
+iš naujo. Serverio priimamos rinkos taisyklių versijos kontraktas nepakito.
+
+97 Node testai, native workerd / D1 / R2 / Queue ir dry-run PASS.
+Resolver testas tikrina LT sąsajos PL rinkos teisingą nuorodą, senos versijos
+atmetimą ir same-origin / credential ribas. Tikra vietinio fixture naršyklė
+rodo PL pasirinkimą, išvalytą checkbox ir neaktyvų submit 320 px pločiu:
+tmp/ui-review/terms-country-reset-320-102.png. Fixture naudoja bendrą
+taisyklių URL, todėl native svetainės revision → URL atitikties ši nuotrauka
+neįrodo; ji tikrinama svetainės sesijoje. Teisinis turinio priėmimas atskiras.

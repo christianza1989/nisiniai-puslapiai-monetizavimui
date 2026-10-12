@@ -99,3 +99,24 @@ identity, dokumentų politika, Worker assets ir M7 taip pat yra atskiri darbai.
 Rollback — scoped source revert; DB istorijos nenuvalyti, pritaikytos 0008
 neperrašyti. Išjungus read adapterį išlieka planai ir kainų istorija. Svetainės
 sesijos failai bei produkciniai duomenys nepakeisti.
+
+## 2026-10-12 12:07 tiekėjo atsakymas
+
+Savininko nurodytame Gmail pokalbyje „MB Memocasting — nuosavos parduotuvės
+API bandymų prieiga“ perskaitytas Šarūnės Urbanskaitės, Siųsk pigiau verslo
+klientų vadybininkės, atsakymas. Tai atnaujina aukščiau esančio ankstesnio
+tyrimo nežinomus komercinius klausimus, nekeisdamas istorinio kvito.
+
+Ji patvirtina, kad atskiros sutarties su vežėju nereikia: naudojamos Siųsk
+pigiau paslaugos. Pasak atsakymo, nėra mėnesinių ar kitų API mokesčių;
+už tiksliai nurodytas siuntas mokama pagal siunčiamas siuntas. Sąskaitoms
+MB vardu reikia sistemoje suvesti įmonės rekvizitus. Tikros kainos,
+priemokų / PVM sudėtis ir išankstinio apmokėjimo tvarka šiuo atsakymu
+dar nepatikrintos.
+
+Į pokalbį įtraukta IT kolegė; klausimai dėl staging / JWT / password header,
+Cloudflare egress IP, idempotency / prarasto atsakymo paieškos, pasiūlymo
+kainos fiksavimo / galiojimo, kelių pakuočių / paštomatų ir PDF paskirties
+pažymėti IT ir dar neatsakyti. Jokių raktų ar staging patikros nėra.
+Tiekėjo laiškas savaime neįjungia produkcinės prieigos ar mokamos siuntos.
+Ši sesija atsakymo laiško nesiuntė ir paskyros rekvizitų nekeičia.

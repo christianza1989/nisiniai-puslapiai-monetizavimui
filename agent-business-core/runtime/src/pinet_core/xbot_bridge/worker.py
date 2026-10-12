@@ -26,6 +26,7 @@ async def run_local(token, ticket_id, directory, *, agent_factory, before_accept
     from xbot.config import Config
     from xbot.contracts import validate_text
     from xbot.service import Service
+    from xbot.source_facts import validate_citations
     from xbot.store import Conflict, Store
 
     path = Path(directory).resolve()
@@ -127,6 +128,9 @@ async def run_local(token, ticket_id, directory, *, agent_factory, before_accept
     )
     if acceptable:
         try:
+            validate_citations(
+                public["facts"], public.get("source_fact_manifest"), proposal["draft"]["fact_indices"]
+            )
             validate_text(proposal["draft"]["text"], public["allowed_urls"])
         except ValueError:
             acceptable = False

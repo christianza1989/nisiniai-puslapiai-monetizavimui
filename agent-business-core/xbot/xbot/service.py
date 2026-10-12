@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo
 
 from .agent import Agent
 from .contracts import READS, WRITES, validate_text
+from .source_facts import manifest_hash, validate_citations
 from .store import Conflict, fingerprint
 from .treg import Treg
 
@@ -238,8 +239,11 @@ class Service:
                     or source.get("facts_hash") != fingerprint(p["facts"])
                     or not source["review"]["approved"]
                     or source["review"]["unsupported_claims"]
+                    or source.get("source_fact_manifest_sha256") != manifest_hash(p.get("source_fact_manifest"))
                 ):
                     raise Conflict("draft_provenance_or_review_changed")
+                if p.get("source_fact_manifest") is not None:
+                    validate_citations(p["facts"], p["source_fact_manifest"], source["draft"]["fact_indices"])
                 current_instruction = fingerprint(
                     (Path(__file__).resolve().parents[1] / "instructions/AGENT.md").read_text(encoding="utf-8")
                 )
@@ -411,6 +415,8 @@ class Service:
                 if current["revision"] != job["policy_revision"] or current["profile"]["paused"]:
                     raise Conflict("context_changed_during_generation")
                 await self.gate_async(job)
+                if job["kind"] == "draft" and p.get("source_fact_manifest") is not None:
+                    validate_citations(p["facts"], p["source_fact_manifest"], result["draft"]["fact_indices"])
                 self.store.record(
                     site,
                     job["kind"],
@@ -418,6 +424,11 @@ class Service:
                     {
                         **result,
                         "facts_hash": fingerprint(p["facts"]),
+                        **(
+                            {"source_fact_manifest_sha256": manifest_hash(p["source_fact_manifest"])}
+                            if p.get("source_fact_manifest") is not None
+                            else {}
+                        ),
                         "instruction_hash": fingerprint(
                             (Path(__file__).resolve().parents[1] / "instructions/AGENT.md").read_text(encoding="utf-8")
                         ),

@@ -9,9 +9,10 @@ import time
 from dataclasses import dataclass
 from typing import Literal
 
-from pydantic import Field
+from pydantic import Field, model_serializer
 
 from .contracts import Strict
+from .source_facts import manifest_hash, validate_manifest
 from .store import Conflict, fingerprint
 
 
@@ -37,9 +38,17 @@ class Binding(Strict):
     knowledge_ref: KnowledgeRef
     index_receipt_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     facts_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    source_fact_manifest_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
     expires_at: float = Field(gt=0)
     profile_current: bool = Field(strict=True)
     module_admitted: bool = Field(strict=True)
+
+    @model_serializer(mode="wrap")
+    def preserve_legacy_shape(self, handler):
+        result = handler(self)
+        if self.source_fact_manifest_sha256 is None:
+            result.pop("source_fact_manifest_sha256", None)
+        return result
 
 
 @dataclass(frozen=True)
@@ -140,6 +149,7 @@ class ModuleAdapter:
         if (
             profile.site_id != authority.site_id
             or fingerprint(profile.facts) != fresh.facts_sha256
+            or manifest_hash(profile.source_fact_manifest) != fresh.source_fact_manifest_sha256
             or not fresh.profile_current
             or fresh.expires_at <= time.time()
         ):
@@ -181,6 +191,11 @@ class ModuleAdapter:
             fresh.site_id,
         ) or fingerprint(profile["facts"]) != fresh.facts_sha256:
             raise Conflict("core_facts_or_scope_changed")
+        manifest = profile.get("source_fact_manifest")
+        if manifest_hash(manifest) != fresh.source_fact_manifest_sha256:
+            raise Conflict("core_source_fact_manifest_changed")
+        if manifest is not None:
+            validate_manifest(profile["facts"], manifest)
 
     def scoped(self, authority, permission="xbot.read"):
         if permission not in authority.capabilities:

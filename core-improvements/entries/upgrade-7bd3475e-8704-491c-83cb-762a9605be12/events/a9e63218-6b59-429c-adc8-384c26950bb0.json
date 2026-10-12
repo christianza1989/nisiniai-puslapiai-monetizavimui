@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Created and attached stacked draftPR110; exact canonical contract handed to portal owner. Relevant source verification complete; actual current-customer/BFF and ordinary browser stay separately pending.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/110",
+  "commit": "3a07c313ac4f400bda25a89e07cfcf4edf08ac5b",
+  "eventId": "a9e63218-6b59-429c-adc8-384c26950bb0",
+  "sequence": 3,
+  "at": "2026-10-12T10:48:19.468Z"
+}

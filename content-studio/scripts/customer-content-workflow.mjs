@@ -4,7 +4,8 @@ import { lstat } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { loadCustomerContentContext, assertArtifactDirectories, readArtifactBytes } from './customer-content-context.mjs';
-import { stableV2, validateV2Editorial } from '../src/content-package-v2.mjs';
+import { createHash } from 'node:crypto';
+import { stableV2, validateV2Editorial, normalizeV2Blocks, inlineNodes } from '../src/content-package-v2.mjs';
 import { workflowOverview, reviewCurrent } from '../src/content-workflow.mjs';
 import { IMAGE_POLICY } from '../src/image-pipeline.mjs';
 
@@ -17,7 +18,7 @@ const text = (v, max, min = 0) => typeof v === 'string' && v.length <= max && v.
 function keys(value, allowed) { if (!object(value) || Object.keys(value).some(k => !allowed.includes(k))) fail('workflow_invalid_input'); }
 const baseKeys = ['command','creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir','pageId'];
 const commands = {
-  status: [], prepare: [],
+  status: [], prepare: [], 'read-page': [], 'read-media': ['assetId','expectedRevisionHash'],
   'amend-page': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
   'amend-site': ['expectedSiteHash','patch'],
   'import-media': ['expectedSiteHash','sourcePath','metadata'],
@@ -26,7 +27,7 @@ const commands = {
   'approve-batch': ['expectedSiteHash','pageIds','actorId'],
   release: ['expectedSiteHash'],
 };
-const pageCommands = new Set(['amend-page','record-review']);
+const pageCommands = new Set(['amend-page','record-review','read-page','read-media']);
 const types = new Set(['home','service','product','guide','faq','location','article','index','author','policy','about','contact']);
 
 function pagePatch(value, site, page) {
@@ -128,6 +129,39 @@ export async function customerContentWorkflow(input) {
   keys(input,[...baseKeys,...commands[input.command]]);
   const context = await loadCustomerContentContext(input,{requirePage:pageCommands.has(input.command)});
   const {model,site,page} = context;
+  if (['read-page','read-media'].includes(input.command)) {
+    const revisionHash=model.revisionHash(page);
+    if(input.command==='read-media' && (!id(input.assetId) || !hash(input.expectedRevisionHash)
+        || input.expectedRevisionHash!==revisionHash)) fail('workflow_context_stale');
+    const media=page.media.map(asset=>{
+      const stored=site.assets.find(a=>a.id===asset.id);
+      if(!new RegExp(`^/content-assets/${site.id}/[a-zA-Z0-9._-]+\\.(webp|avif)$`).test(asset.src)
+          || !stored || stored.src!==asset.src || stored.width!==asset.width || stored.height!==asset.height)
+        fail('workflow_unknown_asset');
+      return {id:asset.id,alt:asset.alt,width:asset.width,height:asset.height,bytes:stored.bytes,sha256:stored.sha256,
+        credit:asset.credit||'',mime:asset.src.endsWith('.webp')?'image/webp':'image/avif'};
+    });
+    const value=await current(context,input,site);
+    if(input.command==='read-media') {
+      const asset=media.find(a=>a.id===input.assetId);
+      if(!asset) fail('workflow_unknown_asset');
+      const stored=page.media.find(a=>a.id===asset.id),directory=path.join(context.data,'media',site.id);
+      await assertArtifactDirectories(context.root,directory);
+      const bytes=await readArtifactBytes(path.join(directory,path.basename(stored.src)),IMAGE_POLICY.maxInputBytes);
+      if(bytes.length!==asset.bytes || createHash('sha256').update(bytes).digest('hex')!==asset.sha256) fail('workflow_media_integrity');
+      return {...value,mediaData:{pageId:page.id,revisionHash,asset,base64:bytes.toString('base64')}};
+    }
+    const body=normalizeV2Blocks(page.body),targets=new Set([...page.links.map(l=>l.targetPageId),
+      ...inlineNodes({body}).filter(n=>n.type==='link'&&n.target.kind==='page').map(n=>n.target.pageId)]);
+    if([...targets].some(target=>target===page.id||!site.pages.some(p=>p.id===target&&p.siteId===site.id&&p.status!=='revoked')))
+      fail('workflow_unknown_link');
+    const links=[...targets].map(target=>{const p=site.pages.find(p=>p.id===target);return {pageId:p.id,
+      path:p.type==='home'?'/':'/'+p.slug+'/',title:p.title};});
+    const doc={pageId:page.id,revisionHash,title:page.title,description:page.description,intent:page.intent,
+      body,media,links};
+    if(Buffer.byteLength(stableV2(doc))>500000) fail('workflow_status_limit');
+    return {...value,pageDocument:doc,pageDocumentHash:createHash('sha256').update(stableV2(doc)).digest('hex')};
+  }
   if (['status','prepare'].includes(input.command)) {
     const value = await current(context,input,site);
     if (input.command === 'prepare' && page) value.pageData = structuredClone(page);

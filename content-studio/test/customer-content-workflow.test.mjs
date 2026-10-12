@@ -51,6 +51,50 @@ async function sandbox(t){
   return {dir,input,revision,siteId,file,read,call,status,ok,amend,write,mutate,mutateAsync,unchanged};
 }
 
+test('current page read reflects saved edits without mutation or private prompt/site projection',async t=>{
+  const f=await sandbox(t),s=f.status(),page=s.pages.find(p=>p.type==='home');
+  const before=await readFile(f.file),result=f.call({command:'read-page',pageId:page.pageId});
+  assert.equal(result.status,0,JSON.stringify(result.value));
+  assert.equal(result.value.pageDocument.pageId,page.pageId);
+  assert.equal(result.value.pageDocument.revisionHash,page.revisionHash);
+  assert.ok(result.value.pageDocument.body.length);
+  assert.equal('siteSnapshot' in result.value.pageDocument,false);
+  assert.equal('facts' in result.value.pageDocument,false);
+  assert.equal('prompt' in result.value.pageDocument,false);
+  assert.deepEqual(await readFile(f.file),before);await f.unchanged();
+  f.amend(page.pageId,{title:'Aktualus išsaugotas pavadinimas'});
+  const after=await readFile(f.file),updated=f.ok({command:'read-page',pageId:page.pageId});
+  assert.equal(updated.pageDocument.title,'Aktualus išsaugotas pavadinimas');
+  assert.notEqual(updated.pageDocument.revisionHash,page.revisionHash);
+  assert.deepEqual(await readFile(f.file),after);
+  assert.notEqual(f.call({command:'read-page',pageId:'foreign-page'}).status,0);
+});
+
+test('current media read is page/hash/byte bound and never exposes originals or source paths',async t=>{
+  const f=await sandbox(t),p=f.status().pages.find(p=>p.type==='home');
+  const sharp=(await import('sharp')).default,sources=path.join(f.revision,'media-inputs');await mkdir(sources);
+  const sourcePath=path.join(sources,'reader.png');await writeFile(sourcePath,await sharp({create:{width:900,height:500,channels:3,background:'#7799aa'}}).png().toBuffer());
+  const imported=f.ok({command:'import-media',expectedSiteHash:f.status().expectedSiteHash,sourcePath,
+    metadata:{mime:'image/png',alt:'Sintetinė schema',rights:'Tik sintetinis testas',prompt:'Private input prompt'}}).operation.result;
+  f.amend(p.pageId,{media:[{id:imported.assetId}]});
+  const doc=f.ok({command:'read-page',pageId:p.pageId}),before=await readFile(f.file);
+  assert.equal(doc.pageDocument.media.length,4); // 900px original is never upscaled to1200/1600.
+  assert.ok(doc.pageDocument.media.every(a=>!('prompt'in a)&&!('rights'in a)&&!('src'in a)));
+  assert.equal(doc.pageDocumentHash,digest(doc.pageDocument));
+  const args={command:'read-media',pageId:p.pageId,assetId:imported.assetId,expectedRevisionHash:doc.pageDocument.revisionHash};
+  const media=f.ok(args).mediaData,bytes=Buffer.from(media.base64,'base64');
+  assert.equal(media.asset.sha256,rawHash(bytes));assert.equal(media.asset.bytes,bytes.length);
+  assert.equal(media.asset.mime,'image/webp');assert.equal('file'in media,false);
+  assert.deepEqual(await readFile(f.file),before);await f.unchanged();
+  assert.equal(f.call({...args,expectedRevisionHash:'0'.repeat(64)}).value.code,'workflow_context_stale');
+  assert.equal(f.call({...args,assetId:'foreign-asset'}).value.code,'workflow_unknown_asset');
+  const other=f.status().pages.find(x=>x.path==='/kontaktai/');
+  assert.equal(f.call({...args,pageId:other.pageId,expectedRevisionHash:other.revisionHash}).value.code,'workflow_unknown_asset');
+  const site=await f.read(),asset=site.assets.find(a=>a.id===imported.assetId),file=path.join(f.input.dataDir,'media',f.siteId,path.basename(asset.src));
+  await writeFile(file,Buffer.from('corrupt'));
+  assert.equal(f.call(args).value.code,'workflow_media_integrity');
+});
+
 test('live bounded status includes native non-guide and added canonical pages without invented readiness',async t=>{
   const f=await sandbox(t),s=f.status();
   assert.equal(s.version,'customer-content-workflow.v1');assert.equal(s.state,'current');assert.equal(s.release,'UNVERIFIED');

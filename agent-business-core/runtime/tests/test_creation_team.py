@@ -48,7 +48,9 @@ def coordinator(context):
 
 def runner(calls, *, first_bad=False, always_revise=False):
     async def run(context, authorized, *, role, seconds):
-        assert 0 < seconds <= settings().creation_runner_seconds and await authorized()
+        # Callback receives the remaining overall two-round Job budget. The
+        # production adapter independently clamps each actual CLI to300s.
+        assert 0 < seconds <= 2 * settings().creation_runner_seconds and await authorized()
         calls.append(role)
         if role == "creator":
             value = draft("Patikslinau bandomojo verslo tekstą ir palikau nepatikrintus faktus atvirais klausimais.")

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Offline-only CI collection fixture repair; no production/schema change. Original remote CI import failure0edbec retained, exact local CI selection recovered. Actual model/source evidence remains distinct from CI/source checks.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_content_page.py -q",
+      "result": "PASS",
+      "evidence": "17standalonePASS97538e3d72eb5a06c53c5a4df9c6cd936cbb683d452892ca7e38e8bf5ee27ee3; self-contained synthetic fixture no other-directory import"
+    },
+    {
+      "command": "pytest offline_tests -q -k acquisition",
+      "result": "PASS",
+      "evidence": "Exact CI offline collection/selection13PASSaf40a6997af97bdc6a79afa238d7c0ec6f5397899712a22e5c83339468f3c854; remote CI recovery pending"
+    },
+    {
+      "command": "ruff check offline_tests/test_content_page.py",
+      "result": "PASS",
+      "evidence": "All checks passed; docs/CUSTOMER_CURRENT_PAGE_READ.md; issue66 reservation6123926805"
+    }
+  ],
+  "eventId": "842ec782-6f71-4866-aef5-c31c3f4561ce",
+  "sequence": 5,
+  "at": "2026-10-12T12:16:01.633Z"
+}

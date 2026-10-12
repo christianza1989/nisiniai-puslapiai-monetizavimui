@@ -5,6 +5,7 @@ import { CommerceService } from '../src/service.mjs';
 import { ShippingOperations } from '../src/shipping.mjs';
 import { ShipmentCommands } from '../src/shipment-commands.mjs';
 import { SendparcelBookingAdapter } from '../src/sendparcel-booking.mjs';
+import { FinishedStock } from '../src/finished-stock.mjs';
 import { fixtureStore, fixtureProducts, cart, key, fakeCheckout, payment } from './fixtures.mjs';
 const origin = {
   id: 'origin',
@@ -18,7 +19,7 @@ const origin = {
   isCompany: true,
   reason: 'Fixture complete sender',
 };
-async function setup() {
+async function setup(tracked = false) {
   let clock = Date.now(),
     creates = 0,
     lose = false,
@@ -29,8 +30,29 @@ async function setup() {
     shipping = new ShippingOperations(s);
   await s.provisionStore(
     { ...fixtureStore(), shippingAccountRef: 'carrier_fixture', requireCustomer: true },
-    fixtureProducts(),
+    fixtureProducts(tracked ? 0 : 10).map((p) => ({
+      ...p,
+      ...(tracked ? { lotTrackingRequired: true } : {}),
+    })),
   );
+  if (tracked)
+    await new FinishedStock(s).receive(
+      'store_a',
+      'sandbox',
+      {
+        id: 'shipping_lot',
+        sku: 'couple',
+        mode: 'receive',
+        quantity: 1,
+        expectedAvailable: 0,
+        supplierRef: 'TEST batch',
+        reason: 'TEST inspected stock',
+        qualityChecked: true,
+        expiresAt: clock + 100000,
+        quarantined: false,
+      },
+      'operator',
+    );
   const { order } = await s.createOrder(
     'store_a',
     'sandbox',
@@ -144,6 +166,53 @@ async function setup() {
     },
   };
 }
+test('a quarantine racing the final booking mark is rejected by SQL before any carrier POST', async () => {
+  const x = await setup(true);
+  try {
+    const original = x.s.stmt.bind(x.s);
+    let injected = false;
+    x.s.stmt = (sql, ...args) => {
+      const statement = original(sql, ...args);
+      if (sql.startsWith('UPDATE shipment_commands SET first_attempt_at=')) {
+        const run = statement.run.bind(statement);
+        statement.run = async () => {
+          if (!injected) {
+            injected = true;
+            await new FinishedStock(x.s).control(
+              'store_a',
+              'sandbox',
+              {
+                id: 'racing_quarantine',
+                sku: 'couple',
+                lotId: 'shipping_lot',
+                kind: 'quarantine',
+                delta: 0,
+                expectedAvailable: 0,
+                expectedVersion: 1,
+                reason: 'TEST concurrent supplier hold',
+              },
+              'operator',
+            );
+          }
+          return run();
+        };
+      }
+      return statement;
+    };
+    await assert.rejects(
+      x.commands.execute('store_a', 'sandbox', 'command', x.adapter, 'operator'),
+      /stock_quality_hold/,
+    );
+    assert.equal(injected, true);
+    assert.equal(x.creates(), 0);
+    const command = await x.commands.get('store_a', 'sandbox', 'command');
+    assert.equal(command.first_attempt_at, null);
+    assert.equal(command.state, 'planned');
+    assert.equal(command.review_reason, 'stock_quality_hold');
+  } finally {
+    x.db.close();
+  }
+});
 test('non-idempotent carrier gets one POST; timeout survives retry, facts reconciliation and private document/tracking replay', async () => {
   const x = await setup();
   x.lose();

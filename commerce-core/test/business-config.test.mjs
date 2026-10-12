@@ -12,6 +12,7 @@ test('owner business template keeps prices in cents, inactive unknown add-ons, r
   assert.equal(prepared.products.find((p) => p.sku === 'wooden_base').prices.LT, 1000);
   assert.equal(prepared.products.find((p) => p.sku === 'white_paint').enabled, false);
   assert.ok(prepared.products.every((p) => p.stock === 0));
+  assert.ok(prepared.products.slice(0, 2).every((p) => p.lotTrackingRequired === true));
   assert.equal(prepared.store.dispatch.postalCode, '02211');
   assert.equal(prepared.store.legalSnapshot.address, null);
   assert.equal(prepared.store.enabled, false);

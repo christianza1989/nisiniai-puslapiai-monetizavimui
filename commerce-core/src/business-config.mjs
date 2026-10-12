@@ -84,6 +84,7 @@ export function prepareBusiness(
       title: p.title,
       enabled: true,
       stock: 0,
+      lotTrackingRequired: true,
       prices: Object.fromEntries(business.markets.map((c) => [c, p.baseAmountEur])),
       package: p.package,
       included: p.included,

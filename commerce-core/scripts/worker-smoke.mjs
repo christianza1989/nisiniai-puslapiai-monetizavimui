@@ -9,6 +9,7 @@ import Stripe from 'stripe';
 import { CommerceService } from '../src/service.mjs';
 import { CommerceOperations } from '../src/operations.mjs';
 import { Backoffice } from '../src/backoffice.mjs';
+import { FinishedStock } from '../src/finished-stock.mjs';
 import { Wholesale } from '../src/wholesale.mjs';
 import { ShippingOperations } from '../src/shipping.mjs';
 import { ShipmentCommands } from '../src/shipment-commands.mjs';
@@ -27,7 +28,14 @@ import {
 } from '../test/foundation-fixtures.mjs';
 import { applyMigrations } from '../src/migrations.mjs';
 import { digest } from '../src/validation.mjs';
-import { fixtureStore, fixtureProducts, cart, key, payment } from '../test/fixtures.mjs';
+import {
+  fixtureStore,
+  fixtureProducts,
+  cart,
+  key,
+  payment,
+  fakeCheckout,
+} from '../test/fixtures.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const directory = mkdtempSync(join(tmpdir(), 'commerce-workerd-'));
@@ -50,6 +58,7 @@ const options = {
           'admin.css',
           'admin.mjs',
           'backoffice-ui.mjs',
+          'finished-stock-ui.mjs',
           'shipping-ui.mjs',
           'private-files-ui.mjs',
           'shipment-commands-ui.mjs',
@@ -997,6 +1006,76 @@ try {
   }
   assert.ok(nativeJobs > 0, 'native Queue must actually dispatch the worker job consumer');
   const newest = new CommerceService(db);
+  let qualityClock = Date.now();
+  const qualityService = new CommerceService(db, { now: () => qualityClock }),
+    qualityStore = 'store_finished_native',
+    qualityBack = new Backoffice(qualityService),
+    qualityStock = new FinishedStock(qualityService);
+  await qualityService.provisionStore(
+    { ...fixtureStore(qualityStore), hosts: ['finished-native.example'] },
+    fixtureProducts(0).map((p) => ({ ...p, lotTrackingRequired: true })),
+  );
+  await qualityBack.component(
+    qualityStore,
+    'sandbox',
+    { id: 'powder', name: 'TEST native powder', unit: 'unit' },
+    'fixture_operator',
+  );
+  await qualityBack.recipe(
+    qualityStore,
+    'sandbox',
+    { id: 'recipe', sku: 'couple', components: [{ id: 'powder', quantity: 1, unit: 'unit' }] },
+    'fixture_operator',
+  );
+  await qualityBack.receive(
+    qualityStore,
+    'sandbox',
+    {
+      id: 'native_raw',
+      componentId: 'powder',
+      supplierRef: 'TEST native batch',
+      quantity: 2,
+      expiresAt: qualityClock + 1000,
+    },
+    'fixture_operator',
+  );
+  await qualityBack.assemble(
+    qualityStore,
+    'sandbox',
+    { id: 'native_kit', recipeId: 'recipe', quantity: 2 },
+    'fixture_operator',
+  );
+  const qualityOrder = (await qualityService.createOrder(qualityStore, 'sandbox', cart(), key(912)))
+    .order;
+  await qualityService.checkout(qualityStore, 'sandbox', qualityOrder.id, fakeCheckout);
+  assert.equal(
+    (await qualityStock.order(qualityStore, 'sandbox', qualityOrder.id)).allocations[0].lot_id,
+    'native_kit',
+  );
+  qualityClock += 1001;
+  assert.equal((await qualityService.catalog(qualityStore, 'sandbox'))[0].available, 0);
+  await assert.rejects(
+    qualityService.createOrder(qualityStore, 'sandbox', cart(), key(913)),
+    /stock_unavailable/,
+  );
+  await qualityService.acceptPayment(
+    qualityStore,
+    'sandbox',
+    payment(
+      await qualityService.getOrder(qualityStore, 'sandbox', qualityOrder.id),
+      qualityStore,
+      'evt_native_quality',
+    ),
+  );
+  const heldOrder = await qualityService.getOrder(qualityStore, 'sandbox', qualityOrder.id);
+  assert.equal(heldOrder.payment_state, 'paid');
+  assert.equal(heldOrder.fulfillment_state, 'stock_exception');
+  assert.equal(heldOrder.stock_state, 'released');
+  assert.equal((await qualityStock.list(qualityStore, 'sandbox')).lots[0].available, 2);
+  await assert.rejects(
+    qualityService.markPacked(qualityStore, 'sandbox', qualityOrder.id, 'fixture_operator'),
+    /packing_not_allowed/,
+  );
   const nativeCatalog = new CatalogOperations(newest),
     originalSku = (await nativeCatalog.list(nativeStore, 'sandbox')).find(
       (p) => p.sku === 'couple',

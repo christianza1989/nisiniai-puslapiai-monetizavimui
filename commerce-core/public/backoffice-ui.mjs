@@ -1,5 +1,6 @@
 // All data comes from the private API. No demo-data fallback or HTML interpolation.
 import { renderFinanceIO } from './finance-io-ui.mjs';
+import { renderFinishedStock } from './finished-stock-ui.mjs';
 export async function renderBackoffice(content, view, ctx) {
   const { node: n, table, cell, api, action, has, money, date } = ctx;
   const hints = {
@@ -55,6 +56,7 @@ export async function renderBackoffice(content, view, ctx) {
     return f;
   };
   if (view === 'components') {
+    await renderFinishedStock(content, ctx, refresh);
     const components = data.components;
     content.append(
       n('h2', {}, 'Medžiagos'),

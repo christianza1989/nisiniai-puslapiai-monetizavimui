@@ -159,6 +159,48 @@ const element = (tag, attrs = {}, ...children) => {
   el.append(...children.flat().filter((c) => c !== undefined && c !== null));
   return el;
 };
+const buyerMessages = {
+  lt: {
+    empty: 'Krepšelis tuščias.',
+    catalogue: 'Išsirinkti rinkinį',
+    expired: 'Rezervacija pasibaigė. Norėdami pirkti, pradėkite naują užsakymą.',
+    paymentOff: 'Mokėjimas šiuo metu neįjungtas.',
+    delivery: 'Patvirtintas pristatymas',
+    held: 'Užsakymo vykdymas sustabdytas. Susisiekite su klientų aptarnavimu.',
+    canceled: 'Užsakymo vykdymas atšauktas.',
+    returned: 'Prekių grąžinimas užregistruotas.',
+  },
+  pl: {
+    empty: 'Koszyk jest pusty.',
+    catalogue: 'Wybierz zestaw',
+    expired: 'Rezerwacja wygasła. Aby kupić, rozpocznij nowe zamówienie.',
+    paymentOff: 'Płatności są obecnie wyłączone.',
+    delivery: 'Potwierdzona dostawa',
+    held: 'Realizacja zamówienia została wstrzymana. Skontaktuj się z obsługą klienta.',
+    canceled: 'Realizacja zamówienia została anulowana.',
+    returned: 'Zwrot produktów został zarejestrowany.',
+  },
+  lv: {
+    empty: 'Grozs ir tukšs.',
+    catalogue: 'Izvēlēties komplektu',
+    expired: 'Rezervācijas termiņš ir beidzies. Lai iegādātos, sāciet jaunu pasūtījumu.',
+    paymentOff: 'Maksājumi pašlaik nav pieejami.',
+    delivery: 'Apstiprinātā piegāde',
+    held: 'Pasūtījuma izpilde ir apturēta. Sazinieties ar klientu apkalpošanu.',
+    canceled: 'Pasūtījuma izpilde ir atcelta.',
+    returned: 'Preču atgriešana ir reģistrēta.',
+  },
+  et: {
+    empty: 'Ostukorv on tühi.',
+    catalogue: 'Valige komplekt',
+    expired: 'Broneering on aegunud. Ostmiseks alustage uut tellimust.',
+    paymentOff: 'Maksmine pole praegu saadaval.',
+    delivery: 'Kinnitatud tarne',
+    held: 'Tellimuse täitmine on peatatud. Võtke ühendust klienditeenindusega.',
+    canceled: 'Tellimuse täitmine on tühistatud.',
+    returned: 'Kauba tagastamine on registreeritud.',
+  },
+};
 export function resolveTermsLink(termsUrl, context, origin) {
   try {
     const value = typeof termsUrl === 'function' ? termsUrl(context) : termsUrl;
@@ -191,7 +233,7 @@ export function normalizeCheckoutCart(lines, catalog) {
 }
 /**
  * @param {HTMLElement} root
- * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),initialLines?:Array<{sku:string,quantity:number}>,onCartChange?:(lines:Array<{sku:string,quantity:number}>)=>void,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string}} options
+ * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),catalogueUrl?:string,initialLines?:Array<{sku:string,quantity:number}>,onCartChange?:(lines:Array<{sku:string,quantity:number}>)=>void,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string}} options
  */
 export async function mountCheckout(
   root,
@@ -200,6 +242,7 @@ export async function mountCheckout(
     country = 'LT',
     client = new CommerceClient(),
     termsUrl = '/pirkimo-taisykles',
+    catalogueUrl,
     initialLines = [],
     onCartChange,
     headingLevel = 1,
@@ -209,6 +252,7 @@ export async function mountCheckout(
   } = {},
 ) {
   const t = translations[language] || translations.lt;
+  const m = buyerMessages[language] || buyerMessages.lt;
   const status = element('p', { role: 'status', 'aria-live': 'polite' });
   const content = element('div');
   root.replaceChildren(
@@ -292,6 +336,32 @@ export async function mountCheckout(
     );
     for (const line of order.snapshot.lines)
       content.append(element('p', {}, productTitle({ ...line }, language) + ' × ' + line.quantity));
+    if (order.payment_state === 'pending' && order.stock_state === 'released')
+      content.append(element('p', { role: 'status' }, m.expired));
+    if (
+      order.payment_state === 'pending' &&
+      order.stock_state === 'reserved' &&
+      !context.paymentConnected
+    )
+      content.append(element('p', { role: 'status' }, m.paymentOff));
+    const customer = order.snapshot.customer,
+      address = customer?.address;
+    if (address || order.snapshot.country || order.snapshot.delivery?.label) {
+      content.append(element('h2', {}, m.delivery));
+      for (const value of [
+        customer?.contactName || customer?.name,
+        customer?.email,
+        customer?.phone,
+        address?.line1,
+        address?.line2,
+        [address?.postalCode, address?.city, address?.country || order.snapshot.country]
+          .filter(Boolean)
+          .join(' · '),
+        order.snapshot.delivery?.label,
+        customer?.locker?.label || customer?.locker?.id,
+      ])
+        if (typeof value === 'string' && value) content.append(element('p', {}, value));
+    }
     const buttons = element('div', { class: 'actions' });
     const add = (label, task) => {
       const b = element('button', { type: 'button' }, label);
@@ -320,6 +390,13 @@ export async function mountCheckout(
     });
     content.append(buttons);
     const receipt = await client.receipt();
+    if (receipt.withdrawalRequested) content.append(element('p', { role: 'status' }, t[28]));
+    if (receipt.fulfillmentBlocked || order.fulfillment_state === 'stock_exception')
+      content.append(element('p', { role: 'status' }, m.held));
+    if (order.fulfillment_state === 'canceled')
+      content.append(element('p', { role: 'status' }, m.canceled));
+    if (order.fulfillment_state === 'return_received')
+      content.append(element('p', { role: 'status' }, m.returned));
     if (receipt.documents?.length) {
       content.append(element('h2', {}, t[33]));
       for (const doc of receipt.documents.filter((d) => ['sale', 'credit'].includes(d.kind))) {
@@ -413,6 +490,17 @@ export async function mountCheckout(
     const quoteButton = element('button', { type: 'button' }, t[13]),
       submit = element('button', { type: 'submit', disabled: true }, t[14]);
     const summary = element('p', { role: 'status' });
+    const emptyMessage = element('div', {}, element('p', { role: 'status' }, m.empty));
+    const catalogueHref =
+      typeof catalogueUrl === 'string' && resolveTermsLink(catalogueUrl, {}, location.origin);
+    if (catalogueHref) emptyMessage.append(element('a', { href: catalogueHref }, m.catalogue));
+    form.insertBefore(emptyMessage, form.children[0]);
+    const cartEmpty = () => !productInputs.some(({ q }) => Number(q.value) > 0);
+    let quoteBusy = false;
+    const refreshEmpty = () => {
+      emptyMessage.hidden = !cartEmpty();
+      quoteButton.disabled = quoteBusy || cartEmpty();
+    };
     let quoted,
       deliveryQuoteId,
       quoteVersion = 0,
@@ -423,6 +511,7 @@ export async function mountCheckout(
       deliveryQuoteId = undefined;
       submit.disabled = true;
       summary.textContent = t[32];
+      refreshEmpty();
     };
     const selected = () => markets.find((m) => m.country === marketSelect.value);
     const refreshTerms = () => {
@@ -515,8 +604,10 @@ export async function mountCheckout(
     });
     marketSelect.addEventListener('change', refresh);
     delivery.addEventListener('change', refreshLockers);
-    quoteButton.addEventListener('click', () =>
-      run(quoteButton, async () => {
+    quoteButton.addEventListener('click', async () => {
+      if (cartEmpty() || quoteBusy) return;
+      quoteBusy = true;
+      await run(quoteButton, async () => {
         const version = quoteVersion,
           proposal = input(),
           customer = customerInput(),
@@ -537,8 +628,10 @@ export async function mountCheckout(
         summary.textContent = t[21] + ': ' + money(quoted.amount, quoted.currency);
         submit.disabled = !canOrder || !termsAvailable || !terms.checked;
         status.textContent = '';
-      }),
-    );
+      });
+      quoteBusy = false;
+      refreshEmpty();
+    });
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!canOrder || !quoted || !termsAvailable || !terms.checked || !form.reportValidity())

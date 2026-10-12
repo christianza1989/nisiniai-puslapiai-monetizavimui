@@ -1,0 +1,18 @@
+{
+  "state": "PASS_EXACT_EXPORTED_PACKAGE",
+  "checkedAt": "2026-10-12T06:33:36.348Z",
+  "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+  "pages": 135,
+  "guides": 131,
+  "assets": 664,
+  "newOriginalPhotographs": 6,
+  "newCodeNativeDiagrams": 1,
+  "newMediaVariants": 34,
+  "preservedPages": 129,
+  "preservedAssetVariants": 630,
+  "preservedPublicationMoments": 299,
+  "newUniquePublicationMoments": 6,
+  "nativeCLIJobs": 7,
+  "observedModel": "gpt-6-luna/xhigh",
+  "scope": "Immutable producer package and actual bytes/provenance. Does not imply canonical deployment."
+}

@@ -1,0 +1,23 @@
+{
+  "state": "EXPORTED_NOT_DEPLOYED",
+  "preparedAt": "2026-10-12T06:30:42.176Z",
+  "additionalApproved": 6,
+  "approvedTotal": 135,
+  "guideTotal": 131,
+  "preservedApprovedSnapshots": 129,
+  "preservedPublicationMoments": 299,
+  "release": {
+    "path": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next6-20261012\\output\\releases\\madbeauty\\c939126b-508b-4b0f-bc09-7da198aa3940\\content-package.json",
+    "pages": 135,
+    "assets": 664,
+    "manifestPath": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next6-20261012\\output\\releases\\madbeauty\\c939126b-508b-4b0f-bc09-7da198aa3940\\release-manifest.json",
+    "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+    "state": "exported-not-deployed"
+  },
+  "productionAcceptance": null,
+  "policy": "autonomous-agent actual six gates; no mandatory human specialist signature",
+  "humanExpertReviewPerformed": false,
+  "limitations": [
+    "Producer rendered acceptance only. Consumer must keep runtime9dcd67c/core566/browserOverlays, data/mail and actual latest config. Export is not canonical deployment."
+  ]
+}

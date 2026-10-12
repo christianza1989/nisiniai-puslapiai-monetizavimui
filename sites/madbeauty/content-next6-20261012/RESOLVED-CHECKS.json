@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-12T06:30:33.071Z",
+  "publicRevisionUnchangedByPrivateFactCheckClear": true,
+  "humanExpertReviewPerformed": false,
+  "decisions": [
+    {
+      "planId": "MS-aromaterapinis",
+      "revisionHash": "195d250df96b4ae667e8fb7eb8f78f821acae8b5142769c344fbef6e0ca0eff6",
+      "originalFactChecks": [
+        "Gidui dar nepriskirtas aromaterapinio masažo temai tinkamas vaizdas: sugeneruoti, importuoti per bendrą medijos kelią ir patikrinti tikrus pikselius bei mobilų kadravimą prieš redakcinę peržiūrą."
+      ],
+      "resolution": "Actual6-photo import/crop completed. Price example remains explicitly dated2026-10-12; individual fragrance suitability is not claimed."
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "revisionHash": "b98fa4cb08588823542f0773f126171db2439f9eb0fb705ab059a82f36ab7337",
+      "originalFactChecks": [
+        "Šiame juodraštyje nėra pridėta šiai temai skirta medija. Prieš redakcinį patvirtinimą sukurti ir pridėti vienodo mastelio ovalo, migdolo, kvadrato ir squoval kontūrų code-native schemą; atskirai sugeneruoti papildomą redakcinį vaizdą pagal mediaBrief, jį importuoti ir patikrinti tikrus pikselius, mobilų kadravimą bei alt tekstą."
+      ],
+      "resolution": "Four contour original SVG paths and derived four common WebP variants actually attached and inspected, including the mobile diagram screenshot. Separate ImageGen photograph imported and inspected."
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "revisionHash": "b72d560f9d8eb0038c5323d65d760e89e26d1a037064ab7cb4e1395611e94810",
+      "originalFactChecks": [
+        "Prieš redakcinį patvirtinimą peržiūrėti jau priskirtos iliustracijos tikruosius pikselius ir mobilų kadrą. Iliustracija nėra produkto bandymo, tikro teikėjo ar kliento rezultato įrodymas."
+      ],
+      "resolution": "Actual attached photograph/crop reviewed. Earlier missing chemical detail resolved with named scoped manufacturer evidence rather than fabricated general chemistry; native revision receipt retained."
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "revisionHash": "14a5b01ef74b00255988e35d72388ec1509f93ca0b3f6c0a615e07b5e1802175",
+      "originalFactChecks": [
+        "Klasikinio, aparatinio ir kombinuoto pedikiūro apibrėžimai pateikti kaip įprasta meniu terminų reikšmė, ne kaip patikrintas vienodas techninis standartas. Prieš tvirtinant juos kaip universalius, patikrinkite tinkamame Lietuvos profesiniame šaltinyje.",
+        "Šiame tekste neįvardijama konkretaus teikėjo darbų apimtis, kaina, trukmė ar vietinė pasiūla; publikavimo metu bet kokiam teikėjų paieškos veiksmui reikalingas aktualus katalogo rezultatas. AAD šaltinis yra JAV organizacijos rekomendacija, todėl JAV licencijavimo taisyklės į Lietuvos kontekstą neperkeliamos.",
+        "Teminis vaizdas dar neprisegtas: prieš patvirtinimą sugeneruoti ir peržiūrėti tikrą vaizdą, patikrinti mobilų kadravimą, teises ir alt tekstą."
+      ],
+      "resolution": "No universal technical definition is promoted; exact named-service scope remains provider-specific. Cosmetic versus medical boundary and generic instrument mechanism sufficiently bounded. Fresh national catalogue hrefs checked; photograph/crop actually reviewed."
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "revisionHash": "cee57e32727b33aef66da7a9c3df1e40ca36f50b4e62fb4f8f7b68260b5dd8e9",
+      "originalFactChecks": [
+        "Šiai temai dar nepridėta atskira patikrinta iliustracija. Prieš tvirtinant juodraštį sugeneruoti ir importuoti teminį vaizdą, patikrinti tikruosius pikselius bei mobilų kadravimą ir pridėti responsive vaizdų šeimą."
+      ],
+      "resolution": "Original rear hair portrait and actual responsive crop inspected. Photo is contextual illustration, not a verified treatment result."
+    },
+    {
+      "planId": "SP-poroms",
+      "revisionHash": "3936a1a8fd81742c63ba9e44a43c4b2eb3e1aba91245e71540b58df416ce89ee",
+      "originalFactChecks": [
+        "Prieš patvirtinant juodraštį, dar kartą patikrinti abiejų SPA VILNIUS meniu kainas, trukmes ir įtrauktas dalis. Jei jos pasikeitė, pašalinti arba palikti tik aiškiai datuotus 2026-10-12 pavyzdžius.",
+        "Sugeneruoti ir peržiūrėti šiam gidui skirtą iliustraciją, jos mobilų kadrą ir alt tekstą; prijungtų medijos išteklių šiame juodraščio kontekste nėra.",
+        "Teikėjo nepatvirtinti dviejų specialistų grafikas, vienalaikis procedūrų atlikimas, privatumo erdvės sąlygos ir tiksli antrojo paketo komponentų trukmė. Tekste šie dalykai pateikti kaip tikrintini, o ne kaip faktai."
+      ],
+      "resolution": "Dated2026-10-12 menu examples retained, not future tariffs. Unknown schedule/privacy correctly remain questions, not asserted claims. Actual consultation photo/crop inspected."
+    }
+  ]
+}

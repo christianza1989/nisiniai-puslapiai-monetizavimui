@@ -1,0 +1,50 @@
+{
+  "selectedPlanIds": [
+    "MS-aromaterapinis",
+    "ND-forma-ilgis",
+    "NP-gelis-akrilas-poligelis",
+    "PD-aparatinis-klasikinis",
+    "PP-tiesinimas",
+    "SP-poroms"
+  ],
+  "specialistPendingPlanIds": [],
+  "receipt": {
+    "siteId": "madbeauty",
+    "selectedAt": "2026-10-12T06:25:57.649Z",
+    "decisions": [
+      {
+        "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+        "kept": 1,
+        "deferred": 0
+      },
+      {
+        "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+        "kept": 2,
+        "deferred": 0
+      },
+      {
+        "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+        "kept": 1,
+        "deferred": 0
+      }
+    ],
+    "state": "selected-requires-final-links-and-current-review",
+    "approved": false,
+    "deployed": false
+  }
+}

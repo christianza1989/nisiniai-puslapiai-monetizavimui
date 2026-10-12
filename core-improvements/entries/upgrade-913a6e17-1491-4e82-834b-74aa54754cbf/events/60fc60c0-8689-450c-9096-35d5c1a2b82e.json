@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Frozen functional166fdde682bb6c54fa5b523bd0df5d35f61f9f67; source clean before/after. Original wire/hiddenUUID FAIL3c2a76b8, tuple serializer FAIL5659843e and mismatched Run FAIL6d76a7fd retained before repair. 28typed/26correspondence/27legacy chat+operations/22foundation/97offline+67subtests and four unchanged schemas/new typed wire PASS. Actual new common-worker process + normal TCP/API/PostgreSQL restart/replay no duplicate capture; stop/expiry queued failure without Run; full0001->0027/bootstrap/empty rollback/populated refusal/grant repair/partial refusal/actual pg_dump restore preserves all operational0023 rows. First normal inspection pool closed after Docker restart is a private harness failure, retained original lane/recovery and tool output; corrected inspection pool disposal, core pool_pre_ping unchanged. Supplied copy source QA only, provider/model/live0/external_sent=false. Ordinary UI/director/research/preparation/scheduler/full local platform/targetPC/public remain OPEN.",
+  "checks": [
+    {
+      "command": "python artifacts/acq-typed-frozen.private.py (owned clean166fdde; pytest typed/work/legacy/foundation/offline + schemas)",
+      "result": "PASS",
+      "evidence": "Private frozen receipt SHA417940c0082a435884d8e1d4be631f25c93735e6cba20d8fd17215ce9e2925c1; typed28 SHA839469d9f134291f7626293cee7d18f578fe0a602824fe5da985bd29df8db4ef; legacy27 SHA0b140de27549a3e44eb35c31d9fa6d7ceba6603628c5b625ec6c6afcda872913"
+    },
+    {
+      "command": "python artifacts/acq-private-invoke.private.py acq-typed-normal.private.py",
+      "result": "PASS",
+      "evidence": "Actual TCP18868/PostgreSQL15438/new common-worker process restart receipt SHA1efb5905e2c985312eb6d1455511c12b03567e2a0e29fecc7ed5d7f2df8b5c6d"
+    },
+    {
+      "command": "python artifacts/acq-private-invoke.private.py acq-typed-chain.private.py",
+      "result": "PASS",
+      "evidence": "Full0027 chain/bootstrap/rollback/refusal/grant/backup restore/operational0023 unchanged receipt SHA6466d01ddf2ebf5ea603be0d79c045ba86a11f363a7cb9f746d3a2e9f51437ed"
+    },
+    {
+      "command": "python -m ruff check (nine new/rewritten typed paths); git diff --check; repository-safety . --staged",
+      "result": "PASS",
+      "evidence": "9focused Python paths PASS; exact35-staged blob safety PASS0findings before functional166fdde. Source reviewer confirmed Run repair on166fdde, no QA by reviewer."
+    }
+  ],
+  "eventId": "60fc60c0-8689-450c-9096-35d5c1a2b82e",
+  "sequence": 3,
+  "at": "2026-10-12T01:32:49.792Z"
+}

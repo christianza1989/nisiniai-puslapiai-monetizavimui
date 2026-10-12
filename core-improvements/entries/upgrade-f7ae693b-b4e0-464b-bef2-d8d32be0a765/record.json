@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Remove stale unmounted/shared-snapshot instruction after canonical acquisition director integration",
+  "category": "skills",
+  "evidence": [
+    "bdf0cc559b62265d31c6c8e038078abd6d0f3336: SKILLS/niche-client-acquisition/SKILL.md still says capture projection is unmounted and both consumers share one consistent snapshot.",
+    "Actual functional9af0ebb normal capture/work registered readers retain separate consistent projection timestamps; director context contains both canonical reads. Frozen33+28 and actual-model/restart/replay receipt340fa9da preserved in docs/ACQUISITION_DIRECTOR_READ_QA_2026-10-12.md."
+  ],
+  "paths": [
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/catalog.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this skill/catalog entry if needed before adoption. Preserve all historical loaded instruction fingerprints and original model/test receipts; no runtime or threshold change.",
+  "id": "upgrade-f7ae693b-b4e0-464b-bef2-d8d32be0a765",
+  "branch": "codex/acquisition-director-read-20261012",
+  "baseSha": "bdf0cc559b62265d31c6c8e038078abd6d0f3336",
+  "createdAt": "2026-10-12T04:31:15.503Z"
+}

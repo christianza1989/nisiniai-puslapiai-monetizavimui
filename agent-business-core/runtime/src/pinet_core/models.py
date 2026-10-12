@@ -51,6 +51,7 @@ class MailMessage(Scoped, Base):
     direction: Mapped[str] = mapped_column(String)
     state: Mapped[str] = mapped_column(String)
     __table_args__ = (
+        UniqueConstraint("id", "business_id", "environment_id", name="uq_mail_message_scope"),
         UniqueConstraint("business_id", "environment_id", "message_id"),
         ForeignKeyConstraint(["case_id", "business_id", "environment_id"],
                              ["cases.id", "cases.business_id", "cases.environment_id"], ondelete="CASCADE"),

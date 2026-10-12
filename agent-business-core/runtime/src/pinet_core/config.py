@@ -31,6 +31,8 @@ class Settings(BaseSettings):
     customer_outbox_directory: str = "artifacts/customer-outbox"
     acquisition_capture_enabled: bool = False
     acquisition_capture_config: str = ""
+    acquisition_work_enabled: bool = False
+    acquisition_work_config: str = ""
     public_projects_enabled: bool = False
     creation_enabled: bool = False
     creation_runner_enabled: bool = False

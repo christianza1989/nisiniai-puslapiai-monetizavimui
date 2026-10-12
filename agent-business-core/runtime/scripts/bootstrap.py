@@ -10,6 +10,8 @@ from pinet_core.acquisition.ledger_schema import TABLES as ACQUISITION_TABLES
 from pinet_core.acquisition.ledger_schema import runtime_grants_sql
 from pinet_core.acquisition.module_schema import TABLE as ACQUISITION_MODULE_TABLE
 from pinet_core.acquisition.module_schema import grants_sql as acquisition_module_grants_sql
+from pinet_core.acquisition.work_schema import TABLES as ACQUISITION_WORK_TABLES
+from pinet_core.acquisition.work_schema import runtime_grants_sql as acquisition_work_grants_sql
 from pinet_core.config import settings
 from pinet_core.models import Business, new_id
 
@@ -36,6 +38,10 @@ async def main():
             # Repair prior broadening, rather than merely excluding future grants.
             known = set(await tx.scalars(text("SELECT tablename FROM pg_tables WHERE schemaname='public'")))
             acquisition = known.intersection(ACQUISITION_TABLES)
+            work = known.intersection(ACQUISITION_WORK_TABLES)
+            if work and (work != set(ACQUISITION_WORK_TABLES) or acquisition != set(ACQUISITION_TABLES)
+                         or ACQUISITION_MODULE_TABLE not in known):
+                raise RuntimeError("Partial acquisition work schema; bootstrap grants refused")
             if acquisition and acquisition != set(ACQUISITION_TABLES):
                 raise RuntimeError("Partial acquisition schema; bootstrap grants refused")
             if acquisition:
@@ -45,6 +51,9 @@ async def main():
                 if acquisition != set(ACQUISITION_TABLES):
                     raise RuntimeError("Partial acquisition schema; bootstrap grants refused")
                 for statement in acquisition_module_grants_sql():
+                    await tx.execute(text(statement))
+            if work:
+                for statement in acquisition_work_grants_sql():
                     await tx.execute(text(statement))
             # Module-owned tables retain their least-privilege migration grants.
             tables = (await tx.execute(text("SELECT tablename FROM pg_tables WHERE schemaname='public' "

@@ -1,6 +1,6 @@
 # Memocasting · vietinė parduotuvė ir gidai
 
-Operatorius MB Memocasting; savininko pateiktais duomenimis ne PVM mokėtojas. Poros rinkinys 32 €, su pasirenkamais baltais dažais 35 €, šeimos 48 €. Bazinė poros komplektacija: vienas alginato pakelis, 1 200 g gipso, kibiras. Šeimos: du alginato ir du gipso pakeliai; tikslūs svoriai nepatvirtinti. Siuntos 2 kg / 20×20×17 cm ir 4 kg / 25×25×20 cm. Dažų papildomos siuntos parametrai dar nepatvirtinti. Tikros nuotraukos iš savininko bus priimtos atskirai.
+Operatorius MB Memocasting; savininko pateiktais duomenimis ne PVM mokėtojas. Poros rinkinys 32 €, su pasirenkamais baltais dažais 35 €, šeimos 48 €. Bazinė poros komplektacija: vienas alginato pakelis, 1 200 g gipso, kibiras. Šeimos: du alginato ir du gipso pakeliai; tikslūs svoriai nepatvirtinti. Siuntos 2 kg / 20×20×17 cm ir 4 kg / 25×25×20 cm. Dažų papildomos siuntos parametrai dar nepatvirtinti. Savininko nuotraukos peržiūrėtos ir importuotos bendru medijos keliu; neaiškios kilmės stambus planas lieka privatus. Pagaliukai įeina, medinis pagrindas pasirenkamas +10 €. Aktualūs kontaktai/įmonės kodas ir adreso vaidmenys — OWNER-FACTS.mjs bei FOUNDATION_STATUS.md.
 
 Pirkėjas — pora, šeima ar dovanos pirkėjas; mokamas rezultatas — konkretus rinkinio pardavimas. Marža ir tikri vežėjo kaštai nežinomi. Vietinis užsakymas ir testinė užklausa nėra pajamos ar įrodytas poreikis. Memorycasting.com didmeninis pasiūlymas atskiras vėlesnis projektas.
 

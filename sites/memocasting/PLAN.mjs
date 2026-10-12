@@ -41,7 +41,8 @@ const raw=[
 ['vente en gros moulage mains|venta al por mayor moldes manos','memorycasting.com/localized-wholesale','outside-scope','Kaip užsakyti vietinei rinkai?','B2lokalizacijos tik konkrečiam partnerio pilotui; S+V+T',''],
 ['Memocasting privatumas','privatumas','existing','Kokie duomenys naudojami?','ActualsessionStorage/API/DB ir operacijų ribos',''],
 ['Memocasting pirkimo sąlygos','naudojimo-salygos','existing','Ką reiškia vietinis užsakymas?','Galutinės realios sąlygos S+T; testinis režimas aiškus',''],
-['alginato papildymas650g|kūdikio pėdutės','legacy-inventory','exclude-unverified-sku','Ar ankstesnė prekė dabar parduodama?','Ne: Shopifyexport/savininko/tiekėjo duomenys nepateikti; 404 be nesusijusio redirect',''],
+['alginato papildymas650g','products/alginato-papildymas-650g-dvieju-ranku-rinkiniui','existing','Kaip patikrinti rinkinio papildymo suderinamumą?','Originalus dokumentų/kiekio/klausimo lapas; informacinis, neSKU. Konkretus pasiūlymas lieka S+V+B',''],
+['kūdikio pėdutės','products/kudikio-pedutes','existing','Kokių produkto dokumentų reikia pėdučių rinkiniui?','Originalus informacijos patikros lapas suownerprovidedvaizdu; neamžiaus/saugos pažadas arSKU. Produkto faktai lieka S+V+B',''],
 ['checkout|krepšelis|užsakymo būsena','cart','functional-noindex','Kaip atlikti konkretų pirkimo veiksmą?','Esamas commerceAPI, serverinės kainos/idempotency; ne organicURL','']
 ];
 const site=await getSite('memocasting');

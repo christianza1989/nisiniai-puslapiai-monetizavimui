@@ -2,26 +2,26 @@
   {
     "slug": "",
     "pageId": "4cc41bac-2537-4c4f-985b-3f8df01edbed",
-    "revisionHash": "b8f133c67ff79e759f284c191d945817d632aaf75264e8f51a0e49f2b5118327",
-    "textSha256": "0e572c02ff53814c031ed6b483c19c1f20c0cb1a8a73124f564b49cd81b83afd"
+    "revisionHash": "0f6d868390c312a47ac76a2831f4915e619a64b4066ae1a4b4691d5e8cbd83e1",
+    "textSha256": "8814efda133889e717c09704ea6668f5558352fb32f8d5dc863843bc20eee1c5"
   },
   {
     "slug": "products/liejimo-rinkinys-porai",
     "pageId": "01d74212-2141-4060-8127-a71c42090450",
-    "revisionHash": "45de01443ec77879a44c909724595899f9cd72e6ec6f7660529b1e037f7bd1fd",
-    "textSha256": "8d6cc64ed07f921b17b800b06c1bd865f3fc7a467cc8586763c20675c0739850"
+    "revisionHash": "ee374a9374a936b2bd6a9a47e3091eb879a9ac27edfd7b7037466f947d9cae8b",
+    "textSha256": "50ee1f097001fdd8786edd0260e960e7d21a4639d367d942fcb3d049430315bc"
   },
   {
     "slug": "products/seimos-rinkinys-1",
     "pageId": "66af512a-e57e-4f14-bfd5-0651eca06613",
-    "revisionHash": "0eab5e4b039c63adc714208eb33e9add81448bafafa0c00fba712f83b6c5d923",
-    "textSha256": "b6298e3825e9987cb9a2b907e7ce0afa25fb372bf21396d8dba36db0e620cd08"
+    "revisionHash": "650757aad1d3d48df43543e92acac5f0e58064fb00b66e35cddd5711c8cc0a51",
+    "textSha256": "a4967a29c79a9e3df4da1c978b484c90a4e1ee31c659ca7201625e785f05dcd2"
   },
   {
     "slug": "collections/all",
     "pageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
-    "revisionHash": "2d27dbe70f11414445a5e87df28a5baa6c6e10e7a373e5c8ff58bbdab54e48f0",
-    "textSha256": "86ade4111e82bcea0a611a8c1f2a5a505b111e722498a39b989dea9fda1ba633"
+    "revisionHash": "54465cc648e50f772ae0552a8539843c6509065edda483e624af4239f954097a",
+    "textSha256": "cdd355a0d63f4042ccdefa14ae2b30ae50c360a0e2984c407dbd54af820b36ed"
   },
   {
     "slug": "pages/instrukcija",
@@ -38,8 +38,8 @@
   {
     "slug": "gidai/dovana-porai",
     "pageId": "ff93abdd-8aae-4992-985e-f624ff8d874e",
-    "revisionHash": "91047eeb255d2e287049df709414eb303e16f45b61a0cefcd957e62d927ad155",
-    "textSha256": "ec7334e6965802e045d0ebfe65f3943f56fb452477d4684dc4b2a01ae2fca5b7"
+    "revisionHash": "077cecbaf50a052cc6470f5889078994c79c6d7d768daf093c2384b7c4f067d3",
+    "textSha256": "5bcc4ec9d4a3f693421dfdc33e12efca587b88f0d283c8ae71aa58cab5bc720e"
   },
   {
     "slug": "gidai/dovana-vestuviu-metinems",
@@ -56,8 +56,8 @@
   {
     "slug": "apie-projekta",
     "pageId": "457cc2a3-775e-421a-8869-341e1eef359d",
-    "revisionHash": "616bfaa2f2aa0f762dd17d3ab2060b4b8db5687c234f4879c5f12071f15d5847",
-    "textSha256": "8f1726e2f2c43189b631c3e2dc8ec9cd7818c7f95b67dc4a25a1e1c80917f996"
+    "revisionHash": "51034e20373555c744ec2d2b6b2446871a9fa1b0c89d1ab5576e7fa039ded9d3",
+    "textSha256": "e12b8cc2ac3f1598e89bc567115e37737beb05e94f17b309b90ddd550fa2598e"
   },
   {
     "slug": "redakcija",
@@ -68,26 +68,26 @@
   {
     "slug": "kontaktai",
     "pageId": "87bcedff-88d4-408a-a4d0-92b07bd75ec2",
-    "revisionHash": "ce4f45ac1e8f1350676ec796c702457fda3d3ac8c5edc2a6966121a1d8bd1459",
-    "textSha256": "faff2a74231942c84e67dbad6431ec08547f55046da514bf2d79611bbc13677f"
+    "revisionHash": "70b8dd7612b6b1af3b3e5a5f0266bcdf7caacc5ac5e55e103a92ad7b98f85f44",
+    "textSha256": "2a51e719cf8c07522db344891b06ac0774436b64525ba5332542331d7d61b220"
   },
   {
     "slug": "pristatymas",
     "pageId": "24d9421d-e6d4-4d41-82a4-bcb850b81747",
-    "revisionHash": "81c2f6d61af586de54d575b188911358bc62692034c75f129e450ee0a5bce5db",
-    "textSha256": "a1d426a14b90d01d37ee58c9601cb1f613fab375a11e129cd17d1ea66f048c88"
+    "revisionHash": "40619c18dffdca19d7a0bcb1ec2aa6f8628585e5c100c2e42118d2d69f85aa7b",
+    "textSha256": "88fe24f1f45de32eed5667ca7e419ae6305b0c814d25ae435ffb7ba46adcd071"
   },
   {
     "slug": "grazinimas",
     "pageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
-    "revisionHash": "605f61af24280ac70d5a67d2ce8a6e8c74731e39511727d50ef44933ea566052",
-    "textSha256": "18773b2607f95bd6bf83df45514876110c8d9d9c0efabd1f38ee284172b4d6ea"
+    "revisionHash": "7845a1449ecfb07daf882a23497f6403718f868007f07592a79aa430349a823e",
+    "textSha256": "6bc1849a1111f251364840ccbcdcb8300acde9305e22e67bfe29ed7ec636fd38"
   },
   {
     "slug": "privatumas",
     "pageId": "887515ad-a6dd-4d47-a3cd-d884a5ccc3a4",
-    "revisionHash": "b3c72867cb02a91ed586d45b5c3b58a337891c2249db0bb2900430b6f739d4fa",
-    "textSha256": "edc491d4154081516112ed9f44540f5820bc08e9e555e857d1a2bf4792df1d80"
+    "revisionHash": "997a70fede0f434b064024b7452b93d7eb7fca65036a8daab1517c2be27470bb",
+    "textSha256": "b2a37f735f4cac6827edbf811dfbf8ae5ee59eae588a579aac65f03fab64c49d"
   },
   {
     "slug": "naudojimo-salygos",
@@ -100,6 +100,18 @@
     "pageId": "684d6a6f-ede6-4bde-8a40-234b242d931a",
     "revisionHash": "279b9da7e63ffddb2a56176cdb0cce01e0bae2899ec83206a6dd2b0678c32dcc",
     "textSha256": "453f4b2df1d59a6e140d505f2f6b81cbb026e73d0ae56314d97247df052e279d"
+  },
+  {
+    "slug": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+    "pageId": "330139f8-8078-4d03-b859-6602d4745f13",
+    "revisionHash": "7fe63104ffea420db13781571dcbc40811159ff919a2eea75e30b38b111eae8b",
+    "textSha256": "742f00bcb943a5fa20cfb08bf7a8d783147bd128ab0f9d9149937fba0769a6a3"
+  },
+  {
+    "slug": "products/kudikio-pedutes",
+    "pageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+    "revisionHash": "7ac7dfe371c95f75bdc1056a03f677ed222f48f288066e3f0ce70ac5c9be2b74",
+    "textSha256": "16cdae542a03b29ceb9d3f44a48874235789809d47d1d4dfc60b8de2ca940982"
   },
   {
     "slug": "gidai/dziovinimas-ir-isemimas",

@@ -1,0 +1,197 @@
+{
+  "recordedOn": "2026-10-12",
+  "source": "Direct owner message with six local image attachments, read via shop thread",
+  "entries": [
+    {
+      "key": "owner-main",
+      "sourceFile": "main_picture_with_logo_Black_png_c1259d42-e683-4b32-9a11-b6dca95ea0cb.webp",
+      "sourceSha256": "24c39ccb5927411166943808b61854d0446a87faab87c1891e2cb46815aec287",
+      "alt": "Memory Casting rinkinio ir rankų liejinio vaizdas su pakuotėmis bei mediniu pagrindu.",
+      "credit": "Rinkinio ir liejinio vaizdas. Komplektaciją tikrinkite pasirinkto produkto apraše.",
+      "decision": "public-home; pictured extras not confirmed",
+      "variantIds": [
+        "754f510b-06a4-4750-b9be-c1f7a04a745e",
+        "c5b26ed7-8ea4-4e87-b26a-839035005586",
+        "3cbccf4c-a1d7-4c51-9ad9-41fc1045dd3d",
+        "9bf3253c-bb64-4a64-9d64-c61191bcf0bf",
+        "a7293a72-7638-4d0c-8540-1c9704e974ee"
+      ],
+      "variants": [
+        {
+          "id": "754f510b-06a4-4750-b9be-c1f7a04a745e",
+          "width": 1600,
+          "height": 1128,
+          "src": "/content-assets/memocasting/754f510b-06a4-4750-b9be-c1f7a04a745e.webp"
+        },
+        {
+          "id": "c5b26ed7-8ea4-4e87-b26a-839035005586",
+          "width": 1200,
+          "height": 846,
+          "src": "/content-assets/memocasting/c5b26ed7-8ea4-4e87-b26a-839035005586.webp"
+        },
+        {
+          "id": "3cbccf4c-a1d7-4c51-9ad9-41fc1045dd3d",
+          "width": 800,
+          "height": 564,
+          "src": "/content-assets/memocasting/3cbccf4c-a1d7-4c51-9ad9-41fc1045dd3d.webp"
+        },
+        {
+          "id": "9bf3253c-bb64-4a64-9d64-c61191bcf0bf",
+          "width": 640,
+          "height": 451,
+          "src": "/content-assets/memocasting/9bf3253c-bb64-4a64-9d64-c61191bcf0bf.webp"
+        },
+        {
+          "id": "a7293a72-7638-4d0c-8540-1c9704e974ee",
+          "width": 360,
+          "height": 254,
+          "src": "/content-assets/memocasting/a7293a72-7638-4d0c-8540-1c9704e974ee.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-couple",
+      "sourceFile": "3d-ranku-liejimo-rinkinys-porai-591224.webp",
+      "sourceSha256": "cf83aac1f1ec4acb7672124e0fc540c2102bba14b17b028a97da969977916e7a",
+      "alt": "Baltas susikibusių poros rankų liejinys rožiniame ir žydrame fone.",
+      "credit": "Rankų liejinio pavyzdys; rinkinio komplektacija aprašyta tekste.",
+      "decision": "public-couple-example; not a customer testimonial",
+      "variantIds": [
+        "665e2e7c-aaad-439c-bb4d-fa798a0d26ef",
+        "e772a569-61f8-4162-87ab-e40d8414f178"
+      ],
+      "variants": [
+        {
+          "id": "665e2e7c-aaad-439c-bb4d-fa798a0d26ef",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/665e2e7c-aaad-439c-bb4d-fa798a0d26ef.webp"
+        },
+        {
+          "id": "e772a569-61f8-4162-87ab-e40d8414f178",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/e772a569-61f8-4162-87ab-e40d8414f178.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-family",
+      "sourceFile": "didelis-ranku-liejimo-rinkinys-seimai-257535.webp",
+      "sourceSha256": "7614e7687a352aef02946861b503958b8d82467157635a1dee5783b6a2729216",
+      "alt": "Kelių susikibusių rankų liejinys rožiniame ir žydrame fone.",
+      "credit": "Liejinio pavyzdys; nuotrauka nenustato rinkinio dalyvių skaičiaus.",
+      "decision": "public-family-example; capacity not verified",
+      "variantIds": [
+        "c6bb0722-4dcd-49ef-a1ba-0290ae2a597d",
+        "46879fea-b147-40cb-9e4c-42a455f94c0a"
+      ],
+      "variants": [
+        {
+          "id": "c6bb0722-4dcd-49ef-a1ba-0290ae2a597d",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/c6bb0722-4dcd-49ef-a1ba-0290ae2a597d.webp"
+        },
+        {
+          "id": "46879fea-b147-40cb-9e4c-42a455f94c0a",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/46879fea-b147-40cb-9e4c-42a455f94c0a.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-baby",
+      "sourceFile": "kudikio-pedutes-961017.webp",
+      "sourceSha256": "29c442a03a2623c4417993b42a422cb2091ae03468f66a7161d9d61cf48c2842",
+      "alt": "Du pėdučių liejiniai rožiniame ir žydrame fone.",
+      "credit": "Liejinių pavyzdys; produkto tinkamumas ir pardavimo duomenys dar nepatvirtinti.",
+      "decision": "public-informational-example-only; no baby SKU or safety approval",
+      "variantIds": [
+        "80ee3c1a-88a2-445b-9aef-e01f7870f223",
+        "7a7f154b-a4ee-43b1-a0bf-a236766e384a"
+      ],
+      "variants": [
+        {
+          "id": "80ee3c1a-88a2-445b-9aef-e01f7870f223",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/80ee3c1a-88a2-445b-9aef-e01f7870f223.webp"
+        },
+        {
+          "id": "7a7f154b-a4ee-43b1-a0bf-a236766e384a",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/7a7f154b-a4ee-43b1-a0bf-a236766e384a.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-closeup",
+      "sourceFile": "close-up-of-a-detailed-3d-hand-cast-scul_Tg7wfN7lSSyjI9XcEykuXA_-NILgU_BTcC1532LyTcckA.webp",
+      "sourceSha256": "25e1422d870cf608db739ef3bfcb97e6116bb43fc417186922d788943f353d52",
+      "alt": "Rožinės ir žydros spalvos rankų skulptūros vaizdas ant stalo.",
+      "credit": "",
+      "decision": "private-only; unknown creation provenance, not verified real result",
+      "variantIds": [
+        "70c91bde-ac02-4ab7-9a11-0e9f3bc1e51d",
+        "bbb1f651-5db1-4488-83ad-e48f0f7ac540",
+        "9bd48334-5b1e-43dd-bb6f-0def93e57d13",
+        "d4e375e6-7ff0-4c75-aa48-91d63f3c836a"
+      ],
+      "variants": [
+        {
+          "id": "70c91bde-ac02-4ab7-9a11-0e9f3bc1e51d",
+          "width": 1024,
+          "height": 1024,
+          "src": "/content-assets/memocasting/70c91bde-ac02-4ab7-9a11-0e9f3bc1e51d.webp"
+        },
+        {
+          "id": "bbb1f651-5db1-4488-83ad-e48f0f7ac540",
+          "width": 800,
+          "height": 800,
+          "src": "/content-assets/memocasting/bbb1f651-5db1-4488-83ad-e48f0f7ac540.webp"
+        },
+        {
+          "id": "9bd48334-5b1e-43dd-bb6f-0def93e57d13",
+          "width": 640,
+          "height": 640,
+          "src": "/content-assets/memocasting/9bd48334-5b1e-43dd-bb6f-0def93e57d13.webp"
+        },
+        {
+          "id": "d4e375e6-7ff0-4c75-aa48-91d63f3c836a",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/d4e375e6-7ff0-4c75-aa48-91d63f3c836a.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-wood",
+      "sourceFile": "isdziovintas-uosinis-padeklas-922559.webp",
+      "sourceSha256": "b5b4f2224759cc6cc702f4b24636737456c0346bd324b67b068859d240b95dfe",
+      "alt": "Rankų liejinys ant apvalaus medinio pagrindo.",
+      "credit": "Medinis pagrindas pasirenkamas atskirai už 10 €. Liejinys vaizde yra pavyzdys.",
+      "decision": "public-optional-base; wood species and dimensions unconfirmed",
+      "variantIds": [
+        "1aae0e50-d485-4f03-b647-e6699d271afe",
+        "8a31fd3c-c9a2-493d-99f8-ca4f673b1dd7"
+      ],
+      "variants": [
+        {
+          "id": "1aae0e50-d485-4f03-b647-e6699d271afe",
+          "width": 400,
+          "height": 400,
+          "src": "/content-assets/memocasting/1aae0e50-d485-4f03-b647-e6699d271afe.webp"
+        },
+        {
+          "id": "8a31fd3c-c9a2-493d-99f8-ca4f673b1dd7",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/8a31fd3c-c9a2-493d-99f8-ca4f673b1dd7.webp"
+        }
+      ]
+    }
+  ]
+}

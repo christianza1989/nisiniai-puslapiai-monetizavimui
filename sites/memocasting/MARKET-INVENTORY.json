@@ -1,0 +1,3343 @@
+{
+  "version": 1,
+  "preparedOn": "2026-10-12",
+  "siteId": "memocasting",
+  "scope": "Four-market structure and complete private localization plan; only reviewed LT content public locally",
+  "markets": [
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "prefix": ""
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "prefix": "pl"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "prefix": "lv"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "prefix": "et"
+    }
+  ],
+  "routes": [
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "",
+      "path": "/",
+      "sourcePageId": "4cc41bac-2537-4c4f-985b-3f8df01edbed",
+      "storageType": "home",
+      "publicRole": "localized-landing",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "products/liejimo-rinkinys-porai",
+      "path": "/products/liejimo-rinkinys-porai",
+      "sourcePageId": "01d74212-2141-4060-8127-a71c42090450",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Rinkinys porai — 32 €. Su pasirinktiniais baltais dažais — 35 €. Bendrai veiklai ir asmeniškam prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "products/seimos-rinkinys-1",
+      "path": "/products/seimos-rinkinys-1",
+      "sourcePageId": "66af512a-e57e-4f14-bfd5-0651eca06613",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Šeimos rinkinys — 48 €. Du alginato ir du gipso pakeliai bendram šeimos prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "collections/all",
+      "path": "/collections/all",
+      "sourcePageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "pages/instrukcija",
+      "path": "/pages/instrukcija",
+      "sourcePageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Ką patikrinti savo rinkinio instrukcijoje prieš atidarant medžiagas. Tikslūs Memocasting parametrai ruošiami.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "gidai",
+      "path": "/gidai",
+      "sourcePageId": "bdd31dec-eeda-4ea9-9552-6fa0a16151a7",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Rankų liejimo gidai: dovanos pasirinkimas, proceso planavimas, apdaila ir pagalbos klausimai.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "gidai/dovana-porai",
+      "path": "/gidai/dovana-porai",
+      "sourcePageId": "ff93abdd-8aae-4992-985e-f624ff8d874e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Trys būdai padovanoti rankų liejimo idėją ir trumpas pasirinkimo lapas, kad dovana tiktų abiem.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "gidai/dovana-vestuviu-metinems",
+      "path": "/gidai/dovana-vestuviu-metinems",
+      "sourcePageId": "65534355-5b66-42be-ba22-23060c6a0f2e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Atskirkite rinkinio įteikimą, bendrą veiklą ir gatavą prisiminimą. Planavimo lapas be spėjamų pristatymo terminų.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "path": "/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "sourcePageId": "61da1023-a13e-49f7-b6be-62cf372f4936",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Sprendimas pagal gavėjų norą dalyvauti, laiką ir lūkestį dėl rezultato — su praktiniais pasirinkimo pavyzdžiais.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "apie-projekta",
+      "path": "/apie-projekta",
+      "sourcePageId": "457cc2a3-775e-421a-8869-341e1eef359d",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Rankų liejimo rinkinių idėja ir už ją atsakinga MB Memocasting.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "redakcija",
+      "path": "/redakcija",
+      "sourcePageId": "378cd675-fc86-4823-ab5c-4ff0a77e0bd9",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Kas atsako už gidų turinį, kaip tikriname teiginius ir atskiriame iliustracijas nuo produkto nuotraukų.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "kontaktai",
+      "path": "/kontaktai",
+      "sourcePageId": "87bcedff-88d4-408a-a4d0-92b07bd75ec2",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Pateikite klausimą apie rinkinį, instrukciją ar užsakymo būseną.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "pristatymas",
+      "path": "/pristatymas",
+      "sourcePageId": "24d9421d-e6d4-4d41-82a4-bcb850b81747",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Kada parodoma pristatymo suma ir kas dar turi būti patvirtinta prieš tikrą siuntimą.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "grazinimas",
+      "path": "/grazinimas",
+      "sourcePageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Vietinio atsisakymo prašymo ir tikros grąžinimo procedūros skirtumas.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "privatumas",
+      "path": "/privatumas",
+      "sourcePageId": "887515ad-a6dd-4d47-a3cd-d884a5ccc3a4",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Kokie testiniai duomenys naudojami krepšelyje, užsakyme ir pagalbos formoje.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "naudojimo-salygos",
+      "path": "/naudojimo-salygos",
+      "sourcePageId": "6db61a25-2056-4a41-a97e-c2bc1794f817",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Kaip vertinti testinį užsakymą ir kokios prekybos sąlygos dar neaktyvuotos.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "cart",
+      "path": "/cart",
+      "sourcePageId": "684d6a6f-ede6-4bde-8a40-234b242d931a",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": false,
+      "state": "reviewed-LT-local-release",
+      "intent": "Patikrinkite pasirinkimą ir serverio apskaičiuotą sumą prieš išsaugodami vietinį užsakymą.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "gidai/liejinio-dazymas-ir-prieziura",
+      "path": "/gidai/liejinio-dazymas-ir-prieziura",
+      "sourcePageId": "49eb9c9a-d1b3-437c-8198-cdd582634ed5",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Atskirti apdailos pasirinkimus ir pasiruošti dažymui, neperimant kito rinkinio recepto.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "gidai/dziovinimas-ir-isemimas",
+      "path": "/gidai/dziovinimas-ir-isemimas",
+      "sourcePageId": "43b143fe-1ac7-4776-811e-1c5e99caa7a2",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Suprasti atskirus proceso etapus ir planuoti dovaną pagal savo medžiagų dokumentus.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "pagalba",
+      "path": "/pagalba",
+      "sourcePageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Paruošti konkretų pagalbos klausimą, nepriimant nepagrįstos diagnozės ar taisymo recepto.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "path": "/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "sourcePageId": "330139f8-8078-4d03-b859-6602d4745f13",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Patikrinti ankstesnio papildymo pasiūlymo dabartinę informaciją ir pasiruošti klausimą apie konkretų rinkinį.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "LT",
+      "language": "lt",
+      "locale": "lt-LT",
+      "sourceSlug": "products/kudikio-pedutes",
+      "path": "/products/kudikio-pedutes",
+      "sourcePageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "reviewed-LT-local-release",
+      "intent": "Suprasti, kokių konkretaus pėdučių rinkinio dokumentų ir pasiūlymo faktų trūksta, nepakeičiant jų bendrais saugos pažadais.",
+      "priceAuthority": null,
+      "dependencies": []
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "",
+      "path": "/pl",
+      "sourcePageId": "4cc41bac-2537-4c4f-985b-3f8df01edbed",
+      "storageType": "faq",
+      "publicRole": "localized-landing",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "0c8dbf42-9ec8-4ecd-ab75-545899172d1f"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "products/liejimo-rinkinys-porai",
+      "path": "/pl/products/liejimo-rinkinys-porai",
+      "sourcePageId": "01d74212-2141-4060-8127-a71c42090450",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rinkinys porai — 32 €. Su pasirinktiniais baltais dažais — 35 €. Bendrai veiklai ir asmeniškam prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "8125d493-11eb-4d09-840b-999de78a5a9d"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "products/seimos-rinkinys-1",
+      "path": "/pl/products/seimos-rinkinys-1",
+      "sourcePageId": "66af512a-e57e-4f14-bfd5-0651eca06613",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Šeimos rinkinys — 48 €. Du alginato ir du gipso pakeliai bendram šeimos prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "8db60556-be40-4416-8001-fd57d52844fe"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "collections/all",
+      "path": "/pl/collections/all",
+      "sourcePageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "245cd2e3-98b7-49c0-b9ec-24aa4d743587"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "pages/instrukcija",
+      "path": "/pl/pages/instrukcija",
+      "sourcePageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Ką patikrinti savo rinkinio instrukcijoje prieš atidarant medžiagas. Tikslūs Memocasting parametrai ruošiami.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "a7b973e5-0590-4527-8d15-75668fbeb251"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "gidai",
+      "path": "/pl/gidai",
+      "sourcePageId": "bdd31dec-eeda-4ea9-9552-6fa0a16151a7",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo gidai: dovanos pasirinkimas, proceso planavimas, apdaila ir pagalbos klausimai.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "3cc3df2d-1b69-49cf-b3a4-00fe1caf4312"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "gidai/dovana-porai",
+      "path": "/pl/gidai/dovana-porai",
+      "sourcePageId": "ff93abdd-8aae-4992-985e-f624ff8d874e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Trys būdai padovanoti rankų liejimo idėją ir trumpas pasirinkimo lapas, kad dovana tiktų abiem.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "be969e7a-1e59-422d-8989-48f3b39cb0c9"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "gidai/dovana-vestuviu-metinems",
+      "path": "/pl/gidai/dovana-vestuviu-metinems",
+      "sourcePageId": "65534355-5b66-42be-ba22-23060c6a0f2e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Atskirkite rinkinio įteikimą, bendrą veiklą ir gatavą prisiminimą. Planavimo lapas be spėjamų pristatymo terminų.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "21415d90-2019-4e55-89ee-73dce7aa6082"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "path": "/pl/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "sourcePageId": "61da1023-a13e-49f7-b6be-62cf372f4936",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Sprendimas pagal gavėjų norą dalyvauti, laiką ir lūkestį dėl rezultato — su praktiniais pasirinkimo pavyzdžiais.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "943b4371-4957-4e49-8a69-bcf6e1acd737"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "apie-projekta",
+      "path": "/pl/apie-projekta",
+      "sourcePageId": "457cc2a3-775e-421a-8869-341e1eef359d",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo rinkinių idėja ir už ją atsakinga MB Memocasting.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "35c8cc82-b4ef-4f45-a771-9eab9d3a0ba2"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "redakcija",
+      "path": "/pl/redakcija",
+      "sourcePageId": "378cd675-fc86-4823-ab5c-4ff0a77e0bd9",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kas atsako už gidų turinį, kaip tikriname teiginius ir atskiriame iliustracijas nuo produkto nuotraukų.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "51077b66-af8a-41c3-8265-7dda90b33859"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "kontaktai",
+      "path": "/pl/kontaktai",
+      "sourcePageId": "87bcedff-88d4-408a-a4d0-92b07bd75ec2",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Pateikite klausimą apie rinkinį, instrukciją ar užsakymo būseną.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "25521593-9209-4bcb-9afa-03af9f0548e6"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "pristatymas",
+      "path": "/pl/pristatymas",
+      "sourcePageId": "24d9421d-e6d4-4d41-82a4-bcb850b81747",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kada parodoma pristatymo suma ir kas dar turi būti patvirtinta prieš tikrą siuntimą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "0fca5538-d1eb-45bb-a716-1af57a44f88c"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "grazinimas",
+      "path": "/pl/grazinimas",
+      "sourcePageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Vietinio atsisakymo prašymo ir tikros grąžinimo procedūros skirtumas.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "5db22749-6b24-4d86-99b4-abdc4fd523bd"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "privatumas",
+      "path": "/pl/privatumas",
+      "sourcePageId": "887515ad-a6dd-4d47-a3cd-d884a5ccc3a4",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kokie testiniai duomenys naudojami krepšelyje, užsakyme ir pagalbos formoje.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "25f9e4f2-37ba-4f9d-84c6-3f25ce0658b8"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "naudojimo-salygos",
+      "path": "/pl/naudojimo-salygos",
+      "sourcePageId": "6db61a25-2056-4a41-a97e-c2bc1794f817",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kaip vertinti testinį užsakymą ir kokios prekybos sąlygos dar neaktyvuotos.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "13ce0752-adf0-427e-a7c7-6042bd0b0bc9"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "cart",
+      "path": "/pl/cart",
+      "sourcePageId": "684d6a6f-ede6-4bde-8a40-234b242d931a",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": false,
+      "state": "private-translation-plan",
+      "intent": "Patikrinkite pasirinkimą ir serverio apskaičiuotą sumą prieš išsaugodami vietinį užsakymą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "fa5b1b64-99c6-41d3-b1f4-f76b7cae7fdf"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "gidai/liejinio-dazymas-ir-prieziura",
+      "path": "/pl/gidai/liejinio-dazymas-ir-prieziura",
+      "sourcePageId": "49eb9c9a-d1b3-437c-8198-cdd582634ed5",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Atskirti apdailos pasirinkimus ir pasiruošti dažymui, neperimant kito rinkinio recepto.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "dc3dfba6-efef-451c-827b-248d9db267ed"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "gidai/dziovinimas-ir-isemimas",
+      "path": "/pl/gidai/dziovinimas-ir-isemimas",
+      "sourcePageId": "43b143fe-1ac7-4776-811e-1c5e99caa7a2",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Suprasti atskirus proceso etapus ir planuoti dovaną pagal savo medžiagų dokumentus.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "a2163e99-0e3c-43a9-ab2e-fa845a54ea47"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "pagalba",
+      "path": "/pl/pagalba",
+      "sourcePageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Paruošti konkretų pagalbos klausimą, nepriimant nepagrįstos diagnozės ar taisymo recepto.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "4281209a-11b8-4dbb-a36b-c3d4b34a5c00"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "path": "/pl/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "sourcePageId": "330139f8-8078-4d03-b859-6602d4745f13",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Patikrinti ankstesnio papildymo pasiūlymo dabartinę informaciją ir pasiruošti klausimą apie konkretų rinkinį.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "ba3753bb-6345-42d8-b46b-1d2a01adad4c"
+    },
+    {
+      "country": "PL",
+      "language": "pl",
+      "locale": "pl-PL",
+      "sourceSlug": "products/kudikio-pedutes",
+      "path": "/pl/products/kudikio-pedutes",
+      "sourcePageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Suprasti, kokių konkretaus pėdučių rinkinio dokumentų ir pasiūlymo faktų trūksta, nepakeičiant jų bendrais saugos pažadais.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "0593bf48-5cd7-49c1-8ccc-747aaf7e9927"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "",
+      "path": "/lv",
+      "sourcePageId": "4cc41bac-2537-4c4f-985b-3f8df01edbed",
+      "storageType": "faq",
+      "publicRole": "localized-landing",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "355af238-d5db-49a1-aa22-dcadda5835c8"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "products/liejimo-rinkinys-porai",
+      "path": "/lv/products/liejimo-rinkinys-porai",
+      "sourcePageId": "01d74212-2141-4060-8127-a71c42090450",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rinkinys porai — 32 €. Su pasirinktiniais baltais dažais — 35 €. Bendrai veiklai ir asmeniškam prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "64467f7d-5053-449f-9872-32c4d694e21c"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "products/seimos-rinkinys-1",
+      "path": "/lv/products/seimos-rinkinys-1",
+      "sourcePageId": "66af512a-e57e-4f14-bfd5-0651eca06613",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Šeimos rinkinys — 48 €. Du alginato ir du gipso pakeliai bendram šeimos prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "a48e2656-fbc2-4929-98d2-7a984c64936c"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "collections/all",
+      "path": "/lv/collections/all",
+      "sourcePageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "aed7937c-4412-4508-93c1-d9d9866a5ade"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "pages/instrukcija",
+      "path": "/lv/pages/instrukcija",
+      "sourcePageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Ką patikrinti savo rinkinio instrukcijoje prieš atidarant medžiagas. Tikslūs Memocasting parametrai ruošiami.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "f2069d99-2460-42e8-be76-402afb391958"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "gidai",
+      "path": "/lv/gidai",
+      "sourcePageId": "bdd31dec-eeda-4ea9-9552-6fa0a16151a7",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo gidai: dovanos pasirinkimas, proceso planavimas, apdaila ir pagalbos klausimai.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "58e7c6e2-f0a2-403a-acba-b8923ea4f8a8"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "gidai/dovana-porai",
+      "path": "/lv/gidai/dovana-porai",
+      "sourcePageId": "ff93abdd-8aae-4992-985e-f624ff8d874e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Trys būdai padovanoti rankų liejimo idėją ir trumpas pasirinkimo lapas, kad dovana tiktų abiem.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "ad6b9612-826a-40f2-b454-1c29f297f013"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "gidai/dovana-vestuviu-metinems",
+      "path": "/lv/gidai/dovana-vestuviu-metinems",
+      "sourcePageId": "65534355-5b66-42be-ba22-23060c6a0f2e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Atskirkite rinkinio įteikimą, bendrą veiklą ir gatavą prisiminimą. Planavimo lapas be spėjamų pristatymo terminų.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "039ab9ec-abdc-40d5-96e0-27ece70c29a7"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "path": "/lv/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "sourcePageId": "61da1023-a13e-49f7-b6be-62cf372f4936",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Sprendimas pagal gavėjų norą dalyvauti, laiką ir lūkestį dėl rezultato — su praktiniais pasirinkimo pavyzdžiais.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "45836ba4-868c-4986-bb0a-9e9e91db922a"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "apie-projekta",
+      "path": "/lv/apie-projekta",
+      "sourcePageId": "457cc2a3-775e-421a-8869-341e1eef359d",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo rinkinių idėja ir už ją atsakinga MB Memocasting.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "1a94e75f-20af-4fb5-82c2-0fca60327e64"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "redakcija",
+      "path": "/lv/redakcija",
+      "sourcePageId": "378cd675-fc86-4823-ab5c-4ff0a77e0bd9",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kas atsako už gidų turinį, kaip tikriname teiginius ir atskiriame iliustracijas nuo produkto nuotraukų.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "9d71114f-b222-4355-81df-25d7a054d0f9"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "kontaktai",
+      "path": "/lv/kontaktai",
+      "sourcePageId": "87bcedff-88d4-408a-a4d0-92b07bd75ec2",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Pateikite klausimą apie rinkinį, instrukciją ar užsakymo būseną.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "227726d9-6d01-473f-9278-fbb153403d51"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "pristatymas",
+      "path": "/lv/pristatymas",
+      "sourcePageId": "24d9421d-e6d4-4d41-82a4-bcb850b81747",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kada parodoma pristatymo suma ir kas dar turi būti patvirtinta prieš tikrą siuntimą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "b5030b0f-7a96-4ed7-98fa-5c763a827d0b"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "grazinimas",
+      "path": "/lv/grazinimas",
+      "sourcePageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Vietinio atsisakymo prašymo ir tikros grąžinimo procedūros skirtumas.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "542dc3ed-0bc5-43b9-86fc-8eb1085ca196"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "privatumas",
+      "path": "/lv/privatumas",
+      "sourcePageId": "887515ad-a6dd-4d47-a3cd-d884a5ccc3a4",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kokie testiniai duomenys naudojami krepšelyje, užsakyme ir pagalbos formoje.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "fe610ab5-f573-4216-8c7a-25c40d315cf6"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "naudojimo-salygos",
+      "path": "/lv/naudojimo-salygos",
+      "sourcePageId": "6db61a25-2056-4a41-a97e-c2bc1794f817",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kaip vertinti testinį užsakymą ir kokios prekybos sąlygos dar neaktyvuotos.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "a559b9ec-bf4b-4b1c-bf5a-c8a1661f545a"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "cart",
+      "path": "/lv/cart",
+      "sourcePageId": "684d6a6f-ede6-4bde-8a40-234b242d931a",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": false,
+      "state": "private-translation-plan",
+      "intent": "Patikrinkite pasirinkimą ir serverio apskaičiuotą sumą prieš išsaugodami vietinį užsakymą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "65bca36b-7db5-4c22-a9f0-0367e2de6d1e"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "gidai/liejinio-dazymas-ir-prieziura",
+      "path": "/lv/gidai/liejinio-dazymas-ir-prieziura",
+      "sourcePageId": "49eb9c9a-d1b3-437c-8198-cdd582634ed5",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Atskirti apdailos pasirinkimus ir pasiruošti dažymui, neperimant kito rinkinio recepto.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "e0e0af35-78f4-4a44-9805-ae1e71824d61"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "gidai/dziovinimas-ir-isemimas",
+      "path": "/lv/gidai/dziovinimas-ir-isemimas",
+      "sourcePageId": "43b143fe-1ac7-4776-811e-1c5e99caa7a2",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Suprasti atskirus proceso etapus ir planuoti dovaną pagal savo medžiagų dokumentus.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "4fe03569-d012-48f0-96cb-e95de888eae2"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "pagalba",
+      "path": "/lv/pagalba",
+      "sourcePageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Paruošti konkretų pagalbos klausimą, nepriimant nepagrįstos diagnozės ar taisymo recepto.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "34439766-d600-42b1-8332-ed1a0b866f9b"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "path": "/lv/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "sourcePageId": "330139f8-8078-4d03-b859-6602d4745f13",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Patikrinti ankstesnio papildymo pasiūlymo dabartinę informaciją ir pasiruošti klausimą apie konkretų rinkinį.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "6f0fce72-1c57-4ff0-9f29-19fc62039bde"
+    },
+    {
+      "country": "LV",
+      "language": "lv",
+      "locale": "lv-LV",
+      "sourceSlug": "products/kudikio-pedutes",
+      "path": "/lv/products/kudikio-pedutes",
+      "sourcePageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Suprasti, kokių konkretaus pėdučių rinkinio dokumentų ir pasiūlymo faktų trūksta, nepakeičiant jų bendrais saugos pažadais.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "908d99d7-46d6-44ee-a350-c7821c1eddc7"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "",
+      "path": "/et",
+      "sourcePageId": "4cc41bac-2537-4c4f-985b-3f8df01edbed",
+      "storageType": "faq",
+      "publicRole": "localized-landing",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "cea3c3f0-a71f-48a3-aa48-c606f27d17aa"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "products/liejimo-rinkinys-porai",
+      "path": "/et/products/liejimo-rinkinys-porai",
+      "sourcePageId": "01d74212-2141-4060-8127-a71c42090450",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rinkinys porai — 32 €. Su pasirinktiniais baltais dažais — 35 €. Bendrai veiklai ir asmeniškam prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "7c5f2df9-74f8-400d-8b96-23385f513118"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "products/seimos-rinkinys-1",
+      "path": "/et/products/seimos-rinkinys-1",
+      "sourcePageId": "66af512a-e57e-4f14-bfd5-0651eca06613",
+      "storageType": "product",
+      "publicRole": "product",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Šeimos rinkinys — 48 €. Du alginato ir du gipso pakeliai bendram šeimos prisiminimui.",
+      "priceAuthority": "server market configuration, never currency conversion",
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "6f87921e-a801-4099-a11e-4ce8252b9f48"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "collections/all",
+      "path": "/et/collections/all",
+      "sourcePageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "8a7f39e9-2d4f-4ad9-a186-b1028cb2ea79"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "pages/instrukcija",
+      "path": "/et/pages/instrukcija",
+      "sourcePageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Ką patikrinti savo rinkinio instrukcijoje prieš atidarant medžiagas. Tikslūs Memocasting parametrai ruošiami.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "7cc56697-16ea-42b1-8a87-d6808da76873"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "gidai",
+      "path": "/et/gidai",
+      "sourcePageId": "bdd31dec-eeda-4ea9-9552-6fa0a16151a7",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo gidai: dovanos pasirinkimas, proceso planavimas, apdaila ir pagalbos klausimai.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "e9a294a2-172e-49d5-9df8-e69a01066c13"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "gidai/dovana-porai",
+      "path": "/et/gidai/dovana-porai",
+      "sourcePageId": "ff93abdd-8aae-4992-985e-f624ff8d874e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Trys būdai padovanoti rankų liejimo idėją ir trumpas pasirinkimo lapas, kad dovana tiktų abiem.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "7f65a778-5f09-4429-8285-16c7ce76aa86"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "gidai/dovana-vestuviu-metinems",
+      "path": "/et/gidai/dovana-vestuviu-metinems",
+      "sourcePageId": "65534355-5b66-42be-ba22-23060c6a0f2e",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Atskirkite rinkinio įteikimą, bendrą veiklą ir gatavą prisiminimą. Planavimo lapas be spėjamų pristatymo terminų.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "f6184a4f-3aa0-42e4-a3da-52fa9f50120b"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "path": "/et/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "sourcePageId": "61da1023-a13e-49f7-b6be-62cf372f4936",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Sprendimas pagal gavėjų norą dalyvauti, laiką ir lūkestį dėl rezultato — su praktiniais pasirinkimo pavyzdžiais.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "8aaec0db-a019-4f88-9c1b-92200911a42c"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "apie-projekta",
+      "path": "/et/apie-projekta",
+      "sourcePageId": "457cc2a3-775e-421a-8869-341e1eef359d",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Rankų liejimo rinkinių idėja ir už ją atsakinga MB Memocasting.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "9ae3b742-b399-4753-bd9b-702cfbfc29f8"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "redakcija",
+      "path": "/et/redakcija",
+      "sourcePageId": "378cd675-fc86-4823-ab5c-4ff0a77e0bd9",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kas atsako už gidų turinį, kaip tikriname teiginius ir atskiriame iliustracijas nuo produkto nuotraukų.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "95ec3561-7d0d-438b-9792-f89b83aa2922"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "kontaktai",
+      "path": "/et/kontaktai",
+      "sourcePageId": "87bcedff-88d4-408a-a4d0-92b07bd75ec2",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Pateikite klausimą apie rinkinį, instrukciją ar užsakymo būseną.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "8aa80657-7be5-4045-b8b9-1675231ebaa3"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "pristatymas",
+      "path": "/et/pristatymas",
+      "sourcePageId": "24d9421d-e6d4-4d41-82a4-bcb850b81747",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kada parodoma pristatymo suma ir kas dar turi būti patvirtinta prieš tikrą siuntimą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "2124e4ca-ca32-4290-aa13-78c86515a481"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "grazinimas",
+      "path": "/et/grazinimas",
+      "sourcePageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Vietinio atsisakymo prašymo ir tikros grąžinimo procedūros skirtumas.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "3ce6ecca-a17f-43ea-88ae-cb3bed8cecfc"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "privatumas",
+      "path": "/et/privatumas",
+      "sourcePageId": "887515ad-a6dd-4d47-a3cd-d884a5ccc3a4",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kokie testiniai duomenys naudojami krepšelyje, užsakyme ir pagalbos formoje.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "f7c627f7-f51e-4037-b6d1-30886a5a1e6e"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "naudojimo-salygos",
+      "path": "/et/naudojimo-salygos",
+      "sourcePageId": "6db61a25-2056-4a41-a97e-c2bc1794f817",
+      "storageType": "service",
+      "publicRole": "service",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Kaip vertinti testinį užsakymą ir kokios prekybos sąlygos dar neaktyvuotos.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "06608f8a-8bd8-4df1-82ae-1f0ae0526aaa"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "cart",
+      "path": "/et/cart",
+      "sourcePageId": "684d6a6f-ede6-4bde-8a40-234b242d931a",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": false,
+      "state": "private-translation-plan",
+      "intent": "Patikrinkite pasirinkimą ir serverio apskaičiuotą sumą prieš išsaugodami vietinį užsakymą.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "54a331d4-4458-4ffa-805b-3de3e53c990c"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "gidai/liejinio-dazymas-ir-prieziura",
+      "path": "/et/gidai/liejinio-dazymas-ir-prieziura",
+      "sourcePageId": "49eb9c9a-d1b3-437c-8198-cdd582634ed5",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Atskirti apdailos pasirinkimus ir pasiruošti dažymui, neperimant kito rinkinio recepto.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "42d32782-0cda-405d-90c3-dbcbfc52f927"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "gidai/dziovinimas-ir-isemimas",
+      "path": "/et/gidai/dziovinimas-ir-isemimas",
+      "sourcePageId": "43b143fe-1ac7-4776-811e-1c5e99caa7a2",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Suprasti atskirus proceso etapus ir planuoti dovaną pagal savo medžiagų dokumentus.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "171a0115-be3c-4fbe-bcd5-b1916f22d8e3"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "pagalba",
+      "path": "/et/pagalba",
+      "sourcePageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "storageType": "guide",
+      "publicRole": "guide",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Paruošti konkretų pagalbos klausimą, nepriimant nepagrįstos diagnozės ar taisymo recepto.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "611cd27a-9758-4ce7-a148-bebd73b30a4f"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "path": "/et/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "sourcePageId": "330139f8-8078-4d03-b859-6602d4745f13",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Patikrinti ankstesnio papildymo pasiūlymo dabartinę informaciją ir pasiruošti klausimą apie konkretų rinkinį.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "1e81728d-d630-43c2-84f5-762fe08f9f1c"
+    },
+    {
+      "country": "EE",
+      "language": "et",
+      "locale": "et-EE",
+      "sourceSlug": "products/kudikio-pedutes",
+      "path": "/et/products/kudikio-pedutes",
+      "sourcePageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+      "storageType": "faq",
+      "publicRole": "faq",
+      "indexable": true,
+      "state": "private-translation-plan",
+      "intent": "Suprasti, kokių konkretaus pėdučių rinkinio dokumentų ir pasiūlymo faktų trūksta, nepakeičiant jų bendrais saugos pažadais.",
+      "priceAuthority": null,
+      "dependencies": [
+        "Complete native-language content and all UI strings",
+        "Full revision-bound language/fact/media/link review",
+        "Country commerce prices/currency/delivery/legal/contact policy",
+        "Actual locale HTML/schema/hreflang/sitemap/LLM/404/media/browser tests"
+      ],
+      "privatePageId": "9dbe3a49-88ea-45c2-b2d3-8c140f53dc19"
+    }
+  ],
+  "decisions": [
+    {
+      "market": "LT",
+      "locale": "lt-LT",
+      "prefix": "",
+      "queryJobs": [
+        {
+          "sourceQuestionId": "M1",
+          "sourceQueries": [
+            "rankų liejimo rinkinys porai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/products/liejimo-rinkinys-porai",
+          "question": "Ar mums tinka32EUR rinkinys?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M2",
+          "sourceQueries": [
+            "rankų liejimo rinkinys šeimai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/products/seimos-rinkinys-1",
+          "question": "Kuo skiriasi48EUR rinkinys?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M3",
+          "sourceQueries": [
+            "rankų liejimo rinkinys",
+            "ranku liejimo rinkinys",
+            "rankų liejimo rinkiniai"
+          ],
+          "sourceDecision": "merge-synonyms",
+          "targetPath": "/collections/all",
+          "question": "Kurį iš dviejų rinkinių pasirinkti?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M4",
+          "sourceQueries": [
+            "balti dažai rankų liejiniui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/products/liejimo-rinkinys-porai",
+          "question": "Ar pridėti poros dažų variantą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M5",
+          "sourceQueries": [
+            "Memocasting įmonė"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/apie-projekta",
+          "question": "Kas atsako už prekę?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M6",
+          "sourceQueries": [
+            "rankų liejinių rezultatai"
+          ],
+          "sourceDecision": "defer",
+          "targetPath": "/rezultatai",
+          "question": "Kaip atrodo tikri rezultatai?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M7",
+          "sourceQueries": [
+            "rankų liejimo instrukcija",
+            "kaip pasidaryti rankų liejinį"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pages/instrukcija",
+          "question": "Kaip atlikti darbą su savo rinkiniu?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M8",
+          "sourceQueries": [
+            "pasiruošimas rankų liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/gidai/pasirengimas-ranku-liejimui",
+          "question": "Kokią vietą ir pagalbą pasiruošti?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M9",
+          "sourceQueries": [
+            "rankų pozos liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/gidai/ranku-pozos",
+          "question": "Kokią pozą pasirinkti?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M10",
+          "sourceQueries": [
+            "alginato vandens santykis",
+            "gipso vandens santykis"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pages/instrukcija#kuriu-skaiciu-negalima-atspeti",
+          "question": "Kiek vandens ir kokia temperatūra?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M11",
+          "sourceQueries": [
+            "žiedai rankų liejimui",
+            "nagai rankų liejimui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pages/instrukcija",
+          "question": "Ką nusiimti ir kaip įvertinti įstrigimo ribas?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M12",
+          "sourceQueries": [
+            "kada išimti rankų liejinį",
+            "rankų liejinio džiovinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/gidai/dziovinimas-ir-isemimas",
+          "question": "Kuo skiriasi stingimas nuo džiovinimo?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M13",
+          "sourceQueries": [
+            "rankų liejinio dažymas",
+            "rankų liejinio priežiūra"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/gidai/liejinio-dazymas-ir-prieziura",
+          "question": "Kada ir kaip prižiūrėti rezultatą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M14",
+          "sourceQueries": [
+            "rankų liejimo sauga",
+            "rankų liejimas vaikams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/produkto-sauga",
+          "question": "Kam medžiagos tinka ir kokios ribos?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M15",
+          "sourceQueries": [
+            "nepavyko rankų liejinys"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pagalba",
+          "question": "Kokius duomenis pateikti apie nepavykusį darbą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M16",
+          "sourceQueries": [
+            "burbuliukai rankų liejinyje"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pagalba#pozymis-nera-diagnoze",
+          "question": "Kodėl atsirado skylutės?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M17",
+          "sourceQueries": [
+            "alginatas nesustingsta",
+            "alginatas per greitai stingsta"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pagalba#pirmas-klausimas-kuriame-etape",
+          "question": "Kas galėjo paveikti formos sudarymą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M18",
+          "sourceQueries": [
+            "sulūžęs rankų liejinys"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/gidai/suluzes-ranku-liejinys",
+          "question": "Kada įmanoma taisyti, o kada kartoti?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M19",
+          "sourceQueries": [
+            "ar rankų liejimo rinkinį galima naudoti kelis kartus"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pagalba#ko-nepakeicia-bendras-internetinis-patarimas",
+          "question": "Kiek bandymų leidžia mūsų medžiagos?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M20",
+          "sourceQueries": [
+            "rankų liejimo rinkinio defektas"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/grazinimas",
+          "question": "Kaip pranešti apie galimą trūkumą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M21",
+          "sourceQueries": [
+            "rankų liejimo dovana"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/dovanos",
+          "question": "Kam bendra veikla tinka?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M22",
+          "sourceQueries": [
+            "dovana porai",
+            "dovanos poroms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/gidai/dovana-porai",
+          "question": "Rinkinys, veikla ar rezultatas?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M23",
+          "sourceQueries": [
+            "dovana šeimai"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/gidai/dovana-seimai",
+          "question": "Kaip susitarti dėl bendros šeimos veiklos?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M24",
+          "sourceQueries": [
+            "dovana vestuvių metinėms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/gidai/dovana-vestuviu-metinems",
+          "question": "Ką įteiksiu tą dieną?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M25",
+          "sourceQueries": [
+            "dovana vestuvėms",
+            "rankų liejimas vestuvėse"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/dovanos#vestuves",
+          "question": "Dviejų žmonių veikla ar didelio renginio paslauga?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M26",
+          "sourceQueries": [
+            "dovana tėvams",
+            "dovana seneliams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/gidai/dovana-tevams-ir-seneliams",
+          "question": "Kaip įtraukti artimuosius be spaudimo?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M27",
+          "sourceQueries": [
+            "rankų liejimo dovana Kalėdoms",
+            "dovana Valentino dienai",
+            "dovana mamai",
+            "dovana tėčiui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/dovanos#progos",
+          "question": "Kada planuoti prieš konkrečią progą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M28",
+          "sourceQueries": [
+            "rankų liejimo rinkinys ar paruošta dovana"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+          "question": "Ar gavėjai nori patys kurti?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M29",
+          "sourceQueries": [
+            "kaip palyginti rankų liejimo rinkinius"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/collections/all",
+          "question": "Kokią informaciją turi pateikti pardavėjas?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M30",
+          "sourceQueries": [
+            "Memocasting pristatymas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pristatymas",
+          "question": "Kokia suma ir terminas mano šalyje?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M31",
+          "sourceQueries": [
+            "Memocasting grąžinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/grazinimas",
+          "question": "Kaip atsisakyti ar pranešti apie trūkumą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M32",
+          "sourceQueries": [
+            "Memocasting kontaktai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/kontaktai",
+          "question": "Kaip gauti pagalbą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M35",
+          "sourceQueries": [
+            "Memocasting privatumas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/privatumas",
+          "question": "Kokie duomenys naudojami?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M36",
+          "sourceQueries": [
+            "Memocasting pirkimo sąlygos"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/naudojimo-salygos",
+          "question": "Ką reiškia vietinis užsakymas?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M37",
+          "sourceQueries": [
+            "alginato papildymas650g"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+          "question": "Kaip patikrinti rinkinio papildymo suderinamumą?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M38",
+          "sourceQueries": [
+            "kūdikio pėdutės"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/products/kudikio-pedutes",
+          "question": "Kokių produkto dokumentų reikia pėdučių rinkiniui?",
+          "localResearch": "retained bounded LT observation"
+        },
+        {
+          "sourceQuestionId": "M39",
+          "sourceQueries": [
+            "checkout",
+            "krepšelis",
+            "užsakymo būsena"
+          ],
+          "sourceDecision": "functional-noindex",
+          "targetPath": "/cart",
+          "question": "Kaip atlikti konkretų pirkimo veiksmą?",
+          "localResearch": "retained bounded LT observation"
+        }
+      ]
+    },
+    {
+      "market": "PL",
+      "locale": "pl-PL",
+      "prefix": "pl",
+      "queryJobs": [
+        {
+          "sourceQuestionId": "M1",
+          "sourceQueries": [
+            "rankų liejimo rinkinys porai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/products/liejimo-rinkinys-porai",
+          "question": "Ar mums tinka32EUR rinkinys?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M2",
+          "sourceQueries": [
+            "rankų liejimo rinkinys šeimai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/products/seimos-rinkinys-1",
+          "question": "Kuo skiriasi48EUR rinkinys?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M3",
+          "sourceQueries": [
+            "rankų liejimo rinkinys",
+            "ranku liejimo rinkinys",
+            "rankų liejimo rinkiniai"
+          ],
+          "sourceDecision": "merge-synonyms",
+          "targetPath": "/pl/collections/all",
+          "question": "Kurį iš dviejų rinkinių pasirinkti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M4",
+          "sourceQueries": [
+            "balti dažai rankų liejiniui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/products/liejimo-rinkinys-porai",
+          "question": "Ar pridėti poros dažų variantą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M5",
+          "sourceQueries": [
+            "Memocasting įmonė"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/apie-projekta",
+          "question": "Kas atsako už prekę?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M6",
+          "sourceQueries": [
+            "rankų liejinių rezultatai"
+          ],
+          "sourceDecision": "defer",
+          "targetPath": "/pl/rezultatai",
+          "question": "Kaip atrodo tikri rezultatai?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M7",
+          "sourceQueries": [
+            "rankų liejimo instrukcija",
+            "kaip pasidaryti rankų liejinį"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/pages/instrukcija",
+          "question": "Kaip atlikti darbą su savo rinkiniu?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M8",
+          "sourceQueries": [
+            "pasiruošimas rankų liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/gidai/pasirengimas-ranku-liejimui",
+          "question": "Kokią vietą ir pagalbą pasiruošti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M9",
+          "sourceQueries": [
+            "rankų pozos liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/gidai/ranku-pozos",
+          "question": "Kokią pozą pasirinkti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M10",
+          "sourceQueries": [
+            "alginato vandens santykis",
+            "gipso vandens santykis"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/pages/instrukcija#kuriu-skaiciu-negalima-atspeti",
+          "question": "Kiek vandens ir kokia temperatūra?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M11",
+          "sourceQueries": [
+            "žiedai rankų liejimui",
+            "nagai rankų liejimui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/pages/instrukcija",
+          "question": "Ką nusiimti ir kaip įvertinti įstrigimo ribas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M12",
+          "sourceQueries": [
+            "kada išimti rankų liejinį",
+            "rankų liejinio džiovinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/gidai/dziovinimas-ir-isemimas",
+          "question": "Kuo skiriasi stingimas nuo džiovinimo?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M13",
+          "sourceQueries": [
+            "rankų liejinio dažymas",
+            "rankų liejinio priežiūra"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/gidai/liejinio-dazymas-ir-prieziura",
+          "question": "Kada ir kaip prižiūrėti rezultatą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M14",
+          "sourceQueries": [
+            "rankų liejimo sauga",
+            "rankų liejimas vaikams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/produkto-sauga",
+          "question": "Kam medžiagos tinka ir kokios ribos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M15",
+          "sourceQueries": [
+            "nepavyko rankų liejinys"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/pagalba",
+          "question": "Kokius duomenis pateikti apie nepavykusį darbą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M16",
+          "sourceQueries": [
+            "burbuliukai rankų liejinyje"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/pagalba#pozymis-nera-diagnoze",
+          "question": "Kodėl atsirado skylutės?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M17",
+          "sourceQueries": [
+            "alginatas nesustingsta",
+            "alginatas per greitai stingsta"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/pagalba#pirmas-klausimas-kuriame-etape",
+          "question": "Kas galėjo paveikti formos sudarymą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M18",
+          "sourceQueries": [
+            "sulūžęs rankų liejinys"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/gidai/suluzes-ranku-liejinys",
+          "question": "Kada įmanoma taisyti, o kada kartoti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M19",
+          "sourceQueries": [
+            "ar rankų liejimo rinkinį galima naudoti kelis kartus"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/pagalba#ko-nepakeicia-bendras-internetinis-patarimas",
+          "question": "Kiek bandymų leidžia mūsų medžiagos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M20",
+          "sourceQueries": [
+            "rankų liejimo rinkinio defektas"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/grazinimas",
+          "question": "Kaip pranešti apie galimą trūkumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M21",
+          "sourceQueries": [
+            "rankų liejimo dovana"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/dovanos",
+          "question": "Kam bendra veikla tinka?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M22",
+          "sourceQueries": [
+            "dovana porai",
+            "dovanos poroms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/gidai/dovana-porai",
+          "question": "Rinkinys, veikla ar rezultatas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M23",
+          "sourceQueries": [
+            "dovana šeimai"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/gidai/dovana-seimai",
+          "question": "Kaip susitarti dėl bendros šeimos veiklos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M24",
+          "sourceQueries": [
+            "dovana vestuvių metinėms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/gidai/dovana-vestuviu-metinems",
+          "question": "Ką įteiksiu tą dieną?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M25",
+          "sourceQueries": [
+            "dovana vestuvėms",
+            "rankų liejimas vestuvėse"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/dovanos#vestuves",
+          "question": "Dviejų žmonių veikla ar didelio renginio paslauga?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M26",
+          "sourceQueries": [
+            "dovana tėvams",
+            "dovana seneliams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/pl/gidai/dovana-tevams-ir-seneliams",
+          "question": "Kaip įtraukti artimuosius be spaudimo?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M27",
+          "sourceQueries": [
+            "rankų liejimo dovana Kalėdoms",
+            "dovana Valentino dienai",
+            "dovana mamai",
+            "dovana tėčiui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/dovanos#progos",
+          "question": "Kada planuoti prieš konkrečią progą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M28",
+          "sourceQueries": [
+            "rankų liejimo rinkinys ar paruošta dovana"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+          "question": "Ar gavėjai nori patys kurti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M29",
+          "sourceQueries": [
+            "kaip palyginti rankų liejimo rinkinius"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/pl/collections/all",
+          "question": "Kokią informaciją turi pateikti pardavėjas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M30",
+          "sourceQueries": [
+            "Memocasting pristatymas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/pristatymas",
+          "question": "Kokia suma ir terminas mano šalyje?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M31",
+          "sourceQueries": [
+            "Memocasting grąžinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/grazinimas",
+          "question": "Kaip atsisakyti ar pranešti apie trūkumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M32",
+          "sourceQueries": [
+            "Memocasting kontaktai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/kontaktai",
+          "question": "Kaip gauti pagalbą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M35",
+          "sourceQueries": [
+            "Memocasting privatumas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/privatumas",
+          "question": "Kokie duomenys naudojami?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M36",
+          "sourceQueries": [
+            "Memocasting pirkimo sąlygos"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/naudojimo-salygos",
+          "question": "Ką reiškia vietinis užsakymas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M37",
+          "sourceQueries": [
+            "alginato papildymas650g"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+          "question": "Kaip patikrinti rinkinio papildymo suderinamumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M38",
+          "sourceQueries": [
+            "kūdikio pėdutės"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/pl/products/kudikio-pedutes",
+          "question": "Kokių produkto dokumentų reikia pėdučių rinkiniui?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M39",
+          "sourceQueries": [
+            "checkout",
+            "krepšelis",
+            "užsakymo būsena"
+          ],
+          "sourceDecision": "functional-noindex",
+          "targetPath": "/pl/cart",
+          "question": "Kaip atlikti konkretų pirkimo veiksmą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        }
+      ]
+    },
+    {
+      "market": "LV",
+      "locale": "lv-LV",
+      "prefix": "lv",
+      "queryJobs": [
+        {
+          "sourceQuestionId": "M1",
+          "sourceQueries": [
+            "rankų liejimo rinkinys porai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/products/liejimo-rinkinys-porai",
+          "question": "Ar mums tinka32EUR rinkinys?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M2",
+          "sourceQueries": [
+            "rankų liejimo rinkinys šeimai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/products/seimos-rinkinys-1",
+          "question": "Kuo skiriasi48EUR rinkinys?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M3",
+          "sourceQueries": [
+            "rankų liejimo rinkinys",
+            "ranku liejimo rinkinys",
+            "rankų liejimo rinkiniai"
+          ],
+          "sourceDecision": "merge-synonyms",
+          "targetPath": "/lv/collections/all",
+          "question": "Kurį iš dviejų rinkinių pasirinkti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M4",
+          "sourceQueries": [
+            "balti dažai rankų liejiniui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/products/liejimo-rinkinys-porai",
+          "question": "Ar pridėti poros dažų variantą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M5",
+          "sourceQueries": [
+            "Memocasting įmonė"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/apie-projekta",
+          "question": "Kas atsako už prekę?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M6",
+          "sourceQueries": [
+            "rankų liejinių rezultatai"
+          ],
+          "sourceDecision": "defer",
+          "targetPath": "/lv/rezultatai",
+          "question": "Kaip atrodo tikri rezultatai?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M7",
+          "sourceQueries": [
+            "rankų liejimo instrukcija",
+            "kaip pasidaryti rankų liejinį"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/pages/instrukcija",
+          "question": "Kaip atlikti darbą su savo rinkiniu?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M8",
+          "sourceQueries": [
+            "pasiruošimas rankų liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/gidai/pasirengimas-ranku-liejimui",
+          "question": "Kokią vietą ir pagalbą pasiruošti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M9",
+          "sourceQueries": [
+            "rankų pozos liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/gidai/ranku-pozos",
+          "question": "Kokią pozą pasirinkti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M10",
+          "sourceQueries": [
+            "alginato vandens santykis",
+            "gipso vandens santykis"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/pages/instrukcija#kuriu-skaiciu-negalima-atspeti",
+          "question": "Kiek vandens ir kokia temperatūra?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M11",
+          "sourceQueries": [
+            "žiedai rankų liejimui",
+            "nagai rankų liejimui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/pages/instrukcija",
+          "question": "Ką nusiimti ir kaip įvertinti įstrigimo ribas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M12",
+          "sourceQueries": [
+            "kada išimti rankų liejinį",
+            "rankų liejinio džiovinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/gidai/dziovinimas-ir-isemimas",
+          "question": "Kuo skiriasi stingimas nuo džiovinimo?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M13",
+          "sourceQueries": [
+            "rankų liejinio dažymas",
+            "rankų liejinio priežiūra"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/gidai/liejinio-dazymas-ir-prieziura",
+          "question": "Kada ir kaip prižiūrėti rezultatą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M14",
+          "sourceQueries": [
+            "rankų liejimo sauga",
+            "rankų liejimas vaikams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/produkto-sauga",
+          "question": "Kam medžiagos tinka ir kokios ribos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M15",
+          "sourceQueries": [
+            "nepavyko rankų liejinys"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/pagalba",
+          "question": "Kokius duomenis pateikti apie nepavykusį darbą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M16",
+          "sourceQueries": [
+            "burbuliukai rankų liejinyje"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/pagalba#pozymis-nera-diagnoze",
+          "question": "Kodėl atsirado skylutės?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M17",
+          "sourceQueries": [
+            "alginatas nesustingsta",
+            "alginatas per greitai stingsta"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/pagalba#pirmas-klausimas-kuriame-etape",
+          "question": "Kas galėjo paveikti formos sudarymą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M18",
+          "sourceQueries": [
+            "sulūžęs rankų liejinys"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/gidai/suluzes-ranku-liejinys",
+          "question": "Kada įmanoma taisyti, o kada kartoti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M19",
+          "sourceQueries": [
+            "ar rankų liejimo rinkinį galima naudoti kelis kartus"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/pagalba#ko-nepakeicia-bendras-internetinis-patarimas",
+          "question": "Kiek bandymų leidžia mūsų medžiagos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M20",
+          "sourceQueries": [
+            "rankų liejimo rinkinio defektas"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/grazinimas",
+          "question": "Kaip pranešti apie galimą trūkumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M21",
+          "sourceQueries": [
+            "rankų liejimo dovana"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/dovanos",
+          "question": "Kam bendra veikla tinka?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M22",
+          "sourceQueries": [
+            "dovana porai",
+            "dovanos poroms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/gidai/dovana-porai",
+          "question": "Rinkinys, veikla ar rezultatas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M23",
+          "sourceQueries": [
+            "dovana šeimai"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/gidai/dovana-seimai",
+          "question": "Kaip susitarti dėl bendros šeimos veiklos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M24",
+          "sourceQueries": [
+            "dovana vestuvių metinėms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/gidai/dovana-vestuviu-metinems",
+          "question": "Ką įteiksiu tą dieną?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M25",
+          "sourceQueries": [
+            "dovana vestuvėms",
+            "rankų liejimas vestuvėse"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/dovanos#vestuves",
+          "question": "Dviejų žmonių veikla ar didelio renginio paslauga?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M26",
+          "sourceQueries": [
+            "dovana tėvams",
+            "dovana seneliams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/lv/gidai/dovana-tevams-ir-seneliams",
+          "question": "Kaip įtraukti artimuosius be spaudimo?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M27",
+          "sourceQueries": [
+            "rankų liejimo dovana Kalėdoms",
+            "dovana Valentino dienai",
+            "dovana mamai",
+            "dovana tėčiui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/dovanos#progos",
+          "question": "Kada planuoti prieš konkrečią progą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M28",
+          "sourceQueries": [
+            "rankų liejimo rinkinys ar paruošta dovana"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+          "question": "Ar gavėjai nori patys kurti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M29",
+          "sourceQueries": [
+            "kaip palyginti rankų liejimo rinkinius"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/lv/collections/all",
+          "question": "Kokią informaciją turi pateikti pardavėjas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M30",
+          "sourceQueries": [
+            "Memocasting pristatymas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/pristatymas",
+          "question": "Kokia suma ir terminas mano šalyje?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M31",
+          "sourceQueries": [
+            "Memocasting grąžinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/grazinimas",
+          "question": "Kaip atsisakyti ar pranešti apie trūkumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M32",
+          "sourceQueries": [
+            "Memocasting kontaktai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/kontaktai",
+          "question": "Kaip gauti pagalbą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M35",
+          "sourceQueries": [
+            "Memocasting privatumas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/privatumas",
+          "question": "Kokie duomenys naudojami?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M36",
+          "sourceQueries": [
+            "Memocasting pirkimo sąlygos"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/naudojimo-salygos",
+          "question": "Ką reiškia vietinis užsakymas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M37",
+          "sourceQueries": [
+            "alginato papildymas650g"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+          "question": "Kaip patikrinti rinkinio papildymo suderinamumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M38",
+          "sourceQueries": [
+            "kūdikio pėdutės"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/lv/products/kudikio-pedutes",
+          "question": "Kokių produkto dokumentų reikia pėdučių rinkiniui?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M39",
+          "sourceQueries": [
+            "checkout",
+            "krepšelis",
+            "užsakymo būsena"
+          ],
+          "sourceDecision": "functional-noindex",
+          "targetPath": "/lv/cart",
+          "question": "Kaip atlikti konkretų pirkimo veiksmą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        }
+      ]
+    },
+    {
+      "market": "EE",
+      "locale": "et-EE",
+      "prefix": "et",
+      "queryJobs": [
+        {
+          "sourceQuestionId": "M1",
+          "sourceQueries": [
+            "rankų liejimo rinkinys porai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/products/liejimo-rinkinys-porai",
+          "question": "Ar mums tinka32EUR rinkinys?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M2",
+          "sourceQueries": [
+            "rankų liejimo rinkinys šeimai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/products/seimos-rinkinys-1",
+          "question": "Kuo skiriasi48EUR rinkinys?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M3",
+          "sourceQueries": [
+            "rankų liejimo rinkinys",
+            "ranku liejimo rinkinys",
+            "rankų liejimo rinkiniai"
+          ],
+          "sourceDecision": "merge-synonyms",
+          "targetPath": "/et/collections/all",
+          "question": "Kurį iš dviejų rinkinių pasirinkti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M4",
+          "sourceQueries": [
+            "balti dažai rankų liejiniui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/products/liejimo-rinkinys-porai",
+          "question": "Ar pridėti poros dažų variantą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M5",
+          "sourceQueries": [
+            "Memocasting įmonė"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/apie-projekta",
+          "question": "Kas atsako už prekę?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M6",
+          "sourceQueries": [
+            "rankų liejinių rezultatai"
+          ],
+          "sourceDecision": "defer",
+          "targetPath": "/et/rezultatai",
+          "question": "Kaip atrodo tikri rezultatai?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M7",
+          "sourceQueries": [
+            "rankų liejimo instrukcija",
+            "kaip pasidaryti rankų liejinį"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/pages/instrukcija",
+          "question": "Kaip atlikti darbą su savo rinkiniu?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M8",
+          "sourceQueries": [
+            "pasiruošimas rankų liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/gidai/pasirengimas-ranku-liejimui",
+          "question": "Kokią vietą ir pagalbą pasiruošti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M9",
+          "sourceQueries": [
+            "rankų pozos liejimui"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/gidai/ranku-pozos",
+          "question": "Kokią pozą pasirinkti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M10",
+          "sourceQueries": [
+            "alginato vandens santykis",
+            "gipso vandens santykis"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/pages/instrukcija#kuriu-skaiciu-negalima-atspeti",
+          "question": "Kiek vandens ir kokia temperatūra?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M11",
+          "sourceQueries": [
+            "žiedai rankų liejimui",
+            "nagai rankų liejimui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/pages/instrukcija",
+          "question": "Ką nusiimti ir kaip įvertinti įstrigimo ribas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M12",
+          "sourceQueries": [
+            "kada išimti rankų liejinį",
+            "rankų liejinio džiovinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/gidai/dziovinimas-ir-isemimas",
+          "question": "Kuo skiriasi stingimas nuo džiovinimo?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M13",
+          "sourceQueries": [
+            "rankų liejinio dažymas",
+            "rankų liejinio priežiūra"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/gidai/liejinio-dazymas-ir-prieziura",
+          "question": "Kada ir kaip prižiūrėti rezultatą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M14",
+          "sourceQueries": [
+            "rankų liejimo sauga",
+            "rankų liejimas vaikams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/produkto-sauga",
+          "question": "Kam medžiagos tinka ir kokios ribos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M15",
+          "sourceQueries": [
+            "nepavyko rankų liejinys"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/pagalba",
+          "question": "Kokius duomenis pateikti apie nepavykusį darbą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M16",
+          "sourceQueries": [
+            "burbuliukai rankų liejinyje"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/pagalba#pozymis-nera-diagnoze",
+          "question": "Kodėl atsirado skylutės?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M17",
+          "sourceQueries": [
+            "alginatas nesustingsta",
+            "alginatas per greitai stingsta"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/pagalba#pirmas-klausimas-kuriame-etape",
+          "question": "Kas galėjo paveikti formos sudarymą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M18",
+          "sourceQueries": [
+            "sulūžęs rankų liejinys"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/gidai/suluzes-ranku-liejinys",
+          "question": "Kada įmanoma taisyti, o kada kartoti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M19",
+          "sourceQueries": [
+            "ar rankų liejimo rinkinį galima naudoti kelis kartus"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/pagalba#ko-nepakeicia-bendras-internetinis-patarimas",
+          "question": "Kiek bandymų leidžia mūsų medžiagos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M20",
+          "sourceQueries": [
+            "rankų liejimo rinkinio defektas"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/grazinimas",
+          "question": "Kaip pranešti apie galimą trūkumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M21",
+          "sourceQueries": [
+            "rankų liejimo dovana"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/dovanos",
+          "question": "Kam bendra veikla tinka?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M22",
+          "sourceQueries": [
+            "dovana porai",
+            "dovanos poroms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/gidai/dovana-porai",
+          "question": "Rinkinys, veikla ar rezultatas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M23",
+          "sourceQueries": [
+            "dovana šeimai"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/gidai/dovana-seimai",
+          "question": "Kaip susitarti dėl bendros šeimos veiklos?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M24",
+          "sourceQueries": [
+            "dovana vestuvių metinėms"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/gidai/dovana-vestuviu-metinems",
+          "question": "Ką įteiksiu tą dieną?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M25",
+          "sourceQueries": [
+            "dovana vestuvėms",
+            "rankų liejimas vestuvėse"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/dovanos#vestuves",
+          "question": "Dviejų žmonių veikla ar didelio renginio paslauga?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M26",
+          "sourceQueries": [
+            "dovana tėvams",
+            "dovana seneliams"
+          ],
+          "sourceDecision": "plan",
+          "targetPath": "/et/gidai/dovana-tevams-ir-seneliams",
+          "question": "Kaip įtraukti artimuosius be spaudimo?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M27",
+          "sourceQueries": [
+            "rankų liejimo dovana Kalėdoms",
+            "dovana Valentino dienai",
+            "dovana mamai",
+            "dovana tėčiui"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/dovanos#progos",
+          "question": "Kada planuoti prieš konkrečią progą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M28",
+          "sourceQueries": [
+            "rankų liejimo rinkinys ar paruošta dovana"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+          "question": "Ar gavėjai nori patys kurti?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M29",
+          "sourceQueries": [
+            "kaip palyginti rankų liejimo rinkinius"
+          ],
+          "sourceDecision": "section",
+          "targetPath": "/et/collections/all",
+          "question": "Kokią informaciją turi pateikti pardavėjas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M30",
+          "sourceQueries": [
+            "Memocasting pristatymas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/pristatymas",
+          "question": "Kokia suma ir terminas mano šalyje?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M31",
+          "sourceQueries": [
+            "Memocasting grąžinimas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/grazinimas",
+          "question": "Kaip atsisakyti ar pranešti apie trūkumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M32",
+          "sourceQueries": [
+            "Memocasting kontaktai"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/kontaktai",
+          "question": "Kaip gauti pagalbą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M35",
+          "sourceQueries": [
+            "Memocasting privatumas"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/privatumas",
+          "question": "Kokie duomenys naudojami?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M36",
+          "sourceQueries": [
+            "Memocasting pirkimo sąlygos"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/naudojimo-salygos",
+          "question": "Ką reiškia vietinis užsakymas?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M37",
+          "sourceQueries": [
+            "alginato papildymas650g"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+          "question": "Kaip patikrinti rinkinio papildymo suderinamumą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M38",
+          "sourceQueries": [
+            "kūdikio pėdutės"
+          ],
+          "sourceDecision": "existing",
+          "targetPath": "/et/products/kudikio-pedutes",
+          "question": "Kokių produkto dokumentų reikia pėdučių rinkiniui?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        },
+        {
+          "sourceQuestionId": "M39",
+          "sourceQueries": [
+            "checkout",
+            "krepšelis",
+            "užsakymo būsena"
+          ],
+          "sourceDecision": "functional-noindex",
+          "targetPath": "/et/cart",
+          "question": "Kaip atlikti konkretų pirkimo veiksmą?",
+          "localResearch": "native query/intent verification pending; LT text is a brief, not a local query measurement"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "routeDecisions": 88,
+    "ltApproved": 22,
+    "privateTranslations": 66,
+    "topicalQuestions": 39
+  },
+  "gates": {
+    "runtimeLocale": "approved slug prefix adapter, no query override",
+    "publication": "same common revision/time projection; unreviewed translations remain private",
+    "hreflang": "same-role equivalents only when actually eligible; no planned URL",
+    "commerce": "shop session owns native country checkout/API and authoritative prices, currency, policies",
+    "legal": "real operator facts and country policy acceptance required",
+    "localDemand": "PL prior estimate is not LT conversion; LV/EE unmeasured, not zero"
+  },
+  "releaseDate": "Not a launch schedule; private plan date is a proposal only"
+}

@@ -9,3 +9,5 @@ Pagrindinis `/` atkuriamas tuo pačiu ketinimu su originaliu dabartiniu turiniu.
 Archyvo dovanų mamai straipsnis yra ankstesnio ketinimo įrodymas, ne automatinis perpublikavimo leidimas. Bendros dovanų broliui, sveikatai, verslui ir panašios inventoriaus temos neatkuriamos vien dėl seno domeno. Dabartiniam ribotam rankų liejimo pasiūlymui jos neturi patvirtinto atskiro darbo. Techniniai `/account`, wallet dialog ir paginavimo adresai neatkuriami kaip SEO puslapiai.
 
 Papildomus peradresavimus spręsti tik gavus pilnesnį GSC/Shopify inventorių ir patikrinus tą patį skaitytojo ketinimą. Dabartinis 38 klausimų planas atskiras nuo istorinio inventoriaus; nei tyrimas, nei vietinis paketas nėra domeno paleidimo įrodymas.
+
+2026-10-12 tęsinys po savininko naujųnuotraukų/pamatųpavedimo: papildymo irpėdučiųadresaivietiškaiatkurti200 suoriginaliais informaciniaisdocument/klausimųlapais;neProduct/Offer/SKU. Senasšeimosbe-1tebe404. Ankstesni404sprendimai aukščiau yraistorinischeckpoint,necurrentstatus. Tikslūs6GSCkeliaiperžiūrėti,neprodukcinėGoogleindexinggarantija.

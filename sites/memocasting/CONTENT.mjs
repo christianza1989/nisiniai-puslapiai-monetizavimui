@@ -1,27 +1,29 @@
+import {applyOwnerFacts} from './OWNER-FACTS.mjs';
+import {legacyInformation} from './LEGACY-CONTENT.mjs';
 import {technicalPages} from './TECHNICAL-CONTENT.mjs';
 const p=text=>({type:'paragraph',text}),h=text=>({type:'heading',level:2,text}),ul=(...items)=>({type:'list',items});
 const def=(slug,type,title,description,body,extra={})=>({slug,type,title,description,intent:description,body,...extra});
 const product='products/liejimo-rinkinys-porai',family='products/seimos-rinkinys-1';
-export const pages=[
+export const pages=applyOwnerFacts([
 def('','home','Rankų liejimo rinkiniai porai ir šeimai','Rankų liejimo rinkiniai porai ir šeimai. Išsirinkite, su kuo norite sukurti asmenišką prisiminimą.',[
  p('Rankų liejimo rinkinys — dovana, kuri kviečia dalyvauti. Medžiagos tampa priemone bendrai veiklai, o liejinys primena žmones ir akimirką, kurią pasirinkote išsaugoti.'),
  h('Du rinkiniai. Aiškus pasirinkimas.'),p('Poros rinkinys kainuoja 32 €. Jame yra vienas alginato pakelis, 1 200 g gipso ir kibiras. Poros rinkinį galite rinktis su baltais dažais už papildomus 3 €. Šeimos rinkinys kainuoja 48 €; jame yra du alginato ir du gipso pakeliai. Tikslūs šeimos medžiagų svoriai dar tikslinami.'),
  h('Pirma susitarkite dėl akimirkos.'),p('Nuspręskite, kas dalyvaus, kada turėsite laisvo laiko ir kam dovanosite: patį rinkinį ar vėliau sukurtą prisiminimą. Dovanų gidai padės atskirti šiuos pasirinkimus.'),
  h('Prieš pradėdami perskaitykite instrukciją.'),p('Vandens kiekis, maišymas ir laukimo laikas priklauso nuo konkrečių medžiagų. Instrukcijos puslapyje paaiškiname, ką būtina patikrinti prieš darbą. Neperkelkite kito gamintojo santykių į savo rinkinį.'),
  h('Aiškumas iki apmokėjimo.'),p('Krepšelyje prekės ir pristatymo suma skaičiuojama serveryje. Ši vietinė parduotuvė skirta bandymui: pristatymo tarifas ir likučiai yra testiniai, tikri mokėjimai dar nepriimami. MB Memocasting tikrą prekybą pradės priėmus mokėjimo, pristatymo ir produkto informacijos patikras.')
-],{image:'gift',links:[['collections/all','Peržiūrėti rinkinius'],['gidai','Dovanų gidai'],['pages/instrukcija','Instrukcijos puslapyje']]}),
+],{image:'owner-main',links:[['collections/all','Peržiūrėti rinkinius'],['gidai','Dovanų gidai'],['pages/instrukcija','Instrukcijos puslapyje']]}),
 def(product,'product','Rankų liejimo rinkinys porai','Rinkinys porai — 32 €. Su pasirinktiniais baltais dažais — 35 €. Bendrai veiklai ir asmeniškam prisiminimui.',[
  h('Kas yra rinkinyje?'),ul('Vienas alginato pakelis.','1 200 g gipso.','Kibiras.'),p('Baltus dažus galima pridėti už 3 €. Tai pasirenkamas poros rinkinio variantas; dažų tūris ir naudojimo instrukcija bus pateikti patvirtinus produkto duomenis.'),
  h('Ką patikrinti prieš pasirinkimą?'),p('Rinkinys skirtas poros rankų liejinio idėjai. Konkreti poza, rankų dydžiai ir indo talpa turi būti vertinami pagal patvirtintą instrukciją. Nežadame, kad bet kokia rankų padėtis ar dydis tilps.'),
  h('Pakuotė ir pristatymas'),p('Poros rinkinio siuntos svoris — 2 kg, pakuotės matmenys — 20 × 20 × 17 cm. Pristatymo suma parodoma krepšelyje prieš užsakymo išsaugojimą. Vietiniame bandyme naudojamas testinis tarifas; jis nėra viešas komercinis pasiūlymas.'),
  p('Patikrinkite instrukcijos informaciją ir apgalvokite, ar dovanosite rinkinį, ar planuosite bendrą veiklą. Tikras mokėjimas dar neįjungtas.')
-],{links:[['pages/instrukcija','instrukcijos informaciją'],['gidai/dovana-porai','dovanosite rinkinį'],[family,'Šeimos rinkinys']]}),
+],{image:'owner-couple',links:[['pages/instrukcija','instrukcijos informaciją'],['gidai/dovana-porai','dovanosite rinkinį'],[family,'Šeimos rinkinys']]}),
 def(family,'product','Rankų liejimo rinkinys šeimai','Šeimos rinkinys — 48 €. Du alginato ir du gipso pakeliai bendram šeimos prisiminimui.',[
  h('Patvirtinta komplektacija'),ul('Du alginato pakeliai.','Du gipso pakeliai.'),p('Tikslūs pakelių svoriai ir šeimos rinkinio indo duomenys dar tikslinami. Suaugusiųjų ir vaikų rankų skaičiaus nenurodome, kol jo nepatvirtina realus rinkinio bandymas ir instrukcija.'),
  h('Šeimos veiklą suplanuokite iš anksto'),p('Pirmiausia sutarkite, kas dalyvaus. Patikrinkite konkrečiam rinkiniui taikomą tinkamumą ir rankų padėties ribas. Šeimos pavadinimas savaime nepatvirtina tinkamumo kūdikiams ar bet kokiam dalyvių skaičiui.'),
  h('Pakuotė ir pristatymas'),p('Šeimos rinkinio siuntos svoris — 4 kg, matmenys — 25 × 25 × 20 cm. Kaina — 48 €. Pristatymo suma skaičiuojama atskirai; dabartinis vietinis tarifas testinis.'),
  p('Rinkinių palyginimas padės patikrinti žinomus skirtumus. Instrukcijos puslapyje rasite pasiruošimo ribas; tikslūs medžiagų parametrai bus pridėti po patvirtinimo.')
-],{links:[['collections/all','Rinkinių palyginimas'],['pages/instrukcija','Instrukcijos puslapyje'],[product,'Rinkinys porai']]}),
+],{image:'owner-family',links:[['collections/all','Rinkinių palyginimas'],['pages/instrukcija','Instrukcijos puslapyje'],[product,'Rinkinys porai']]}),
 def('collections/all','faq','Rankų liejimo rinkiniai: porai ar šeimai?','Poros ir šeimos rinkinių palyginimas: patvirtintos kainos, komplektacija ir pasirinkimo ribos.',[
  p('Porai: 32 €, vienas alginato pakelis, 1 200 g gipso ir kibiras. Poros variantas su baltais dažais — 35 €. Šeimai: 48 €, du alginato ir du gipso pakeliai.'),
  p('Poros siunta sveria 2 kg ir yra 20 × 20 × 17 cm. Šeimos siunta sveria 4 kg ir yra 25 × 25 × 20 cm. Siuntos matmenys nėra indo talpos ar tinkamo rankų skaičiaus įrodymas.'),
@@ -85,5 +87,5 @@ def('grazinimas','faq','Užsakymo atsisakymas ir klausimai','Vietinio atsisakymo
 def('privatumas','service','Vietinio bandymo privatumo informacija','Kokie testiniai duomenys naudojami krepšelyje, užsakyme ir pagalbos formoje.',[p('Ši peržiūra skirta vietiniam bandymui. Naudokite tik testinius vardus, adresus ir kontaktus. Operatorius — MB Memocasting; galutiniai rekvizitai ir tikra duomenų tvarkymo tvarka dar ruošiami.'),h('Krepšelis ir užsakymo prieiga'),p('Krepšelio prekės saugomos naršyklės skirtuko sessionStorage. Prieš siunčiant užsakymą šiame skirtuke išsaugoma užklausos kopija su gavėjo duomenimis, pakartojimo raktu ir prieigos žetonu. Tai leidžia pakartoti tą patį užsakymą negavus pirmo atsakymo. Sąsaja tokią prieigą naudoja iki 24 valandų; uždarius arba išvalius skirtuką ji gali būti prarasta.'),p('Užsakymo serveris saugo gavėjo vardą, el. paštą, telefoną, adresą, prekes ir pristatymo pasirinkimą izoliuotoje vietinėje duomenų bazėje. Prieigos žetono reikšmės serveris nesaugo — tik jos hash. Žetonas nesiunčiamas URL ar analitikai.'),h('Pagalbos forma'),p('Vardas, el. paštas ir klausimas naudojami užklausai saugoti ir jos atsakymui parengti. Vietiniame bandyme laiškai nesiunčiami. Formos pateikimas nėra rinkodaros prenumerata.'),h('Tikro paleidimo sąlygos'),p('Prieš paleidimą turi būti patvirtinti tikri duomenų gavėjai, saugojimo terminai, duomenų subjektų prašymų vykdymas ir naudojamų paslaugų tvarka. Vietinė peržiūra nepatvirtina šių operacinių procesų. Produkcijos duomenų čia neįveskite.')]),
 def('naudojimo-salygos','service','Vietinio bandymo sąlygos','Kaip vertinti testinį užsakymą ir kokios prekybos sąlygos dar neaktyvuotos.',[p('Ši vietinė parduotuvė skirta pirkimo kelio patikrai. Kainos 32 € porai, 35 € porai su baltais dažais ir 48 € šeimai yra savininko patvirtintos produktų kainos; likučiai ir pristatymo tarifas yra testiniai.'),p('Užsakymo išsaugojimas sukuria testinį įrašą. Tai nėra tikras prekių pardavimas, apmokėjimo patvirtinimas ar siuntimo įsipareigojimas. Mokėjimo ir vežėjo integracijos dar neprijungtos.'),p('Galutinės prekybos sąlygos bus pateiktos prieš produkcijos paleidimą kartu su rekvizitais, vežėjo informacija, grąžinimo procedūra ir patvirtinta produkto instrukcija. Šis tekstas nesuteikia leidimo pradėti gyvą prekybą.')]),
 def('cart','faq','Jūsų krepšelis','Patikrinkite pasirinkimą ir serverio apskaičiuotą sumą prieš išsaugodami vietinį užsakymą.',[p('Prekių ir pristatymo kainas skaičiuoja prekybos serveris. Prieš mokėjimą užsakymas išsaugomas patvariai; jo pakartojimas naudoja tą patį raktą ir prieigos žetoną.')])
-,...technicalPages];
-export const blockedLegacy=['products/alginato-papildymas-650g-dvieju-ranku-rinkiniui','products/kudikio-pedutes','products/seimos-rinkinys'];
+,...technicalPages,...legacyInformation]);
+export const blockedLegacy=['products/seimos-rinkinys'];

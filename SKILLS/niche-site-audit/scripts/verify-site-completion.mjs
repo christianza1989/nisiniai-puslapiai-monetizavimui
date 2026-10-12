@@ -78,6 +78,10 @@ export async function verifySiteCompletion(args){
   // Eligibility is imported from the active core, never reimplemented here.
   const pages=pkg.schemaVersion===2?projection.projectContentPagesV2(pkg,[pkg],settings,{targets:[]},now):projection.projectPublicPages(pkg,[pkg],settings,now);
   const expected=articleExpectations(pkg,pages,indexSlug,isLoopback(origin)),publicIds=new Set(pages.map(p=>p.id)),http=[],issues=[];
+  if(pkg.siteId==='memocasting'){
+    const {memoRoute,memoPath}=await import(pathToFileURL(path.join(core,'lib/memocasting-locales.mjs')));
+    for(const e of expected){const page=pages.find(p=>p.id===e.id),route=memoRoute(page);e.locale=route.locale;e.isArticleIndex=route.baseSlug===indexSlug;e.articleIndexUrl='https://'+pkg.canonicalHost+memoPath(route,indexSlug);}
+  }
   if(!pages.some(p=>p.type==='home'))issues.push('NO_PUBLIC_HOME');
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
@@ -123,7 +127,7 @@ export async function verifySiteCompletion(args){
     auditScore=scoreAudit(audit,catalog);if(!auditScore.stages.local.perfect)issues.push('LOCAL_AUDIT_INCOMPLETE');
   }
   let coreCommit=null;try{coreCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:core,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch{}
-  const sourceFiles=['scripts/content-package-core.mjs',projectionFile,...(pkg.siteId==='memocasting'?['lib/memocasting-content.mjs','lib/memocasting-structure.mjs','components/niche/memocasting-site.tsx','app/layout.tsx']:[]),...(pkg.schemaVersion===2?['scripts/content-package-v2.mjs','schemas/content-package.v2.schema.json','lib/content-seo-v2.mjs']:['lib/niche-seo.ts','lib/niche-schema-core.mjs'])];
+  const sourceFiles=['scripts/content-package-core.mjs',projectionFile,...(pkg.siteId==='memocasting'?['lib/memocasting-content.mjs','lib/memocasting-locales.mjs','lib/memocasting-structure.mjs','components/niche/memocasting-site.tsx','app/layout.tsx']:[]),...(pkg.schemaVersion===2?['scripts/content-package-v2.mjs','schemas/content-package.v2.schema.json','lib/content-seo-v2.mjs']:['lib/niche-seo.ts','lib/niche-schema-core.mjs'])];
   const report={version:1,checkedAt:new Date().toISOString(),projectionAt:new Date(now).toISOString(),siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,transportOrigin:origin.origin,
     packageSha256,inspector:{scriptSha256:sha(await readFile(import.meta.filename)),htmlParserSha256:sha(await readFile(path.join(import.meta.dirname,'rendered_site.py')))},source:{coreCommit,files:await Promise.all(sourceFiles.map(async file=>({file,sha256:sha(await readFile(path.join(core,file)))})))},
     state:issues.length?'NOT_COMPLETE':args.includes('--render-only')?'RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE':'LOCAL_DELIVERY_CHECKS_PASS',

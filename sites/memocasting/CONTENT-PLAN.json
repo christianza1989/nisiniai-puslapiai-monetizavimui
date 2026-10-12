@@ -768,26 +768,45 @@
     {
       "id": "M37",
       "query": [
-        "alginato papildymas650g",
-        "kūdikio pėdutės"
+        "alginato papildymas650g"
       ],
       "country": "LT",
       "language": "lt",
-      "path": "legacy-inventory",
-      "decision": "exclude-unverified-sku",
-      "question": "Ar ankstesnė prekė dabar parduodama?",
-      "answerScope": "Ne: Shopifyexport/savininko/tiekėjo duomenys nepateikti; 404 be nesusijusio redirect",
+      "path": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "decision": "existing",
+      "question": "Kaip patikrinti rinkinio papildymo suderinamumą?",
+      "answerScope": "Originalus dokumentų/kiekio/klausimo lapas; informacinis, neSKU. Konkretus pasiūlymas lieka S+V+B",
       "evidence": "owner map2026-10-11; measured volume not asserted",
-      "originalContribution": "Ne: Shopifyexport/savininko/tiekėjo duomenys nepateikti; 404 be nesusijusio redirect",
+      "originalContribution": "Originalus dokumentų/kiekio/klausimo lapas; informacinis, neSKU. Konkretus pasiūlymas lieka S+V+B",
       "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
       "seasonalHook": "",
-      "publicPageId": null,
-      "answerReadiness": "current-scope-only",
-      "publication": "not-published",
+      "publicPageId": "330139f8-8078-4d03-b859-6602d4745f13",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
       "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
     },
     {
       "id": "M38",
+      "query": [
+        "kūdikio pėdutės"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "products/kudikio-pedutes",
+      "decision": "existing",
+      "question": "Kokių produkto dokumentų reikia pėdučių rinkiniui?",
+      "answerScope": "Originalus informacijos patikros lapas suownerprovidedvaizdu; neamžiaus/saugos pažadas arSKU. Produkto faktai lieka S+V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Originalus informacijos patikros lapas suownerprovidedvaizdu; neamžiaus/saugos pažadas arSKU. Produkto faktai lieka S+V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M39",
       "query": [
         "checkout",
         "krepšelis",

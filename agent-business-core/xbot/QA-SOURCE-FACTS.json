@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "source_sha": "51bb9f6d23270065925cabcece05c3d51823744b",
+  "companion_sha": "5924a2eb858cf45e736bc5e79a2f07cfbbc39af2",
+  "base_sha": "29ca43411ff0a7f525f6988828371622f02859e0",
+  "sets": [
+    {
+      "source": "51bb9f6d23270065925cabcece05c3d51823744b",
+      "started": "2026-10-12T14:25:16.038Z",
+      "finished": "2026-10-12T14:25:49.222Z",
+      "exit": 0,
+      "name": "L",
+      "command": "python -m pytest tests -q --tb=short",
+      "result": "PASS",
+      "cases": 111,
+      "seconds": 31.75,
+      "provider": "fake library/provider adapters; authorized private pure historical fixture"
+    },
+    {
+      "source": "51bb9f6d23270065925cabcece05c3d51823744b",
+      "started": "2026-10-12T14:25:49.228Z",
+      "finished": "2026-10-12T14:34:32.300Z",
+      "exit": 0,
+      "name": "P",
+      "command": "XBOT_QA_FROZEN=1 uv run pytest tests/test_xbot_bridge.py -q --tb=short",
+      "result": "PASS",
+      "cases": 38,
+      "seconds": 511.51,
+      "provider": "actual restricted PG17/cleanGit; fake model; isolated15439"
+    }
+  ],
+  "checks": {
+    "ruff": "PASS",
+    "format": "PASS",
+    "schema_parity": "binding/snapshot PASS; command/manifest unchanged",
+    "post_run_source": "same HEAD; separately recorded clean status",
+    "source_staged_safety": "20files0findings"
+  },
+  "historical_private_fixture": {
+    "scope": "pure authorized synthetic historical source; no current authority/admission",
+    "sha256": "fb340810e5809eee2ddf296a576ffb8ffa76c58b5f7eee0150d4356bcabe4b43",
+    "codepoint_lengths": [
+      4126,
+      1656,
+      3099
+    ],
+    "utf8_lengths": [
+      4349,
+      1768,
+      3285
+    ],
+    "chunks": [
+      3,
+      1,
+      2
+    ],
+    "body_in_git": false
+  },
+  "private_artifact_sha256": {
+    "source-facts-original-fail.log": "c39c430d8844408753e82545b344c6508298ecac6bf20c67e5073aa1f6510a44",
+    "source-facts-library-dev-1.log": "e9cefc896863a7c5896428139a93cf7e2d7d6ad9be8788eeaaceb829fbc76343",
+    "source-facts-library-dev-2.log": "73bc24afe6e64f9f3fc7c696b6a4c6dba1918f897cdc2669bcb049a188ba9fcf",
+    "source-facts-library-dev-3.log": "5f834cd367107eb5021558e0307f631ba387bed419fe1b6bb6942096e0c1fc34",
+    "source-facts-library-dev-4.log": "f703921a7c2ad25ec33f2e5e266e5cd749d6a41e0fdb30de630ce875946e7f6c",
+    "source-facts-library-dev-5.log": "df2ee73b9530ef7ae43f2bc00ef5b19b79e278bfb38fb1d40ff63bd10d2da81c",
+    "source-facts-library-dev-full.log": "d746e3046d7d54e7144fc8736976cece7f77d094fb64c177f33d348f9aca5da2",
+    "source-facts-pg-dev-1.log": "5c0906e0a68e600c8bf37b35b1b5ffb34c9f0b908e2677435cc8631c8ec78b6b",
+    "source-facts-pg-dev-2.log": "4c874917e6e6cbb0d5b90f43902036e511663e2ceae46b76b43fd19130ebd25e",
+    "source-facts-frozen-L.log": "30ba18639898fd111385a41df4248320f9ae16ad366132a6298deb7585497c64",
+    "source-facts-frozen-P.log": "7d081b6ce43bdc662b2b9b38e8170ee83db6cdbef83cf7af6c70dc795086e7c0",
+    "source-facts-frozen-L-meta.json": "7e0344e9e19e16f99564893661a6a943c7130af9d8235ea4e04b7994836847c4",
+    "source-facts-frozen-P-meta.json": "90ae2cddad1d10cc0be9e479fe1167ad0e758dbe9d0c88f0bef442db1275ff0d",
+    "source-facts-post-freeze.json": "79937599d1cc8b1f8f94cbf809ef6ab1437669e705c5d587e9ac1e463337268c",
+    "source-facts-staged-safety.json": "434c6513046f7e6b907d9acd7546deeeb629b076a5ad8c22609e56ef26b2dd31"
+  },
+  "not_performed": [
+    "root operational source/Profile/permissions/DB/API/UI adoption",
+    "new model/provider calls",
+    "actual semantic calibration",
+    "live X/module activation",
+    "main merge/deployment"
+  ]
+}

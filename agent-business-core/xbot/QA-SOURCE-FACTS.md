@@ -19,3 +19,11 @@ Private raw logs, tokens, databases, snapshot bodies and proposals stay ignored 
 3. Scoped Ruff/format, regenerated binding/snapshot schemas against maintained models, unchanged command/manifest schema, diff/safety/secret exclusion and paired freshness/handoff. No unrelated website/SEO/performance or broad core audit.
 
 Latest local source-facts acceptance PENDING frozen L/P. Semantic model qualification, root target-source admission/caller/dashboard, main merge/deployment, calibrated/live module and actual X activity remain OPEN.
+
+## Frozen result — 2026-10-12
+
+Exact source **51bb9f6d23270065925cabcece05c3d51823744b**; same clean HEAD before both sets and separately captured after both before documentation. L: **111PASS/31.75s** (87prior+24new, fake providers), including authorized private historical snapshot reconstruction. P: **38PASS/511.51s**, actual isolated restricted PostgreSQL17 and clean-Git source verifier with fake models. Code/instruction/schema/compatibility/grouped-source/owner/binding/ticket/replay/revocation/expiry/stop gates pass within this local scope. Independent reviewer veto remains effective with complete citations. Seeded SQL-clock accounting metadata is explicitly distinguished in historical PG bridge QA.
+
+Ruff/format/diff PASS; current generated binding/snapshot schemas equal maintained models, command/manifest schema bytes unchanged. Exact-staged20files safety PASS before freeze. Sanitized commands, times, fixture identity and private receipt hashes are in QA-SOURCE-FACTS.json; no raw root page bodies are committed. Source window RELEASED; later delivery metadata is documentation-only.
+
+Local bounded projection/compatibility/synthetic-PG acceptance PASS. Full groups and injected veto do not establish semantic truth, actual calibration quality or commercial results. Root frozen0f385/source/Profile/owner recovery/monitor/operational DB/API/UI remain outside this acceptance. New code/instructions require root's explicit exact-source integration/admission; old source cannot be silently renewed. Main merge, target-root adoption, actual model/calibration/live X remain OPEN.

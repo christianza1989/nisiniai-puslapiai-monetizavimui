@@ -24,3 +24,7 @@ Faktinis naujoLTpaketoHTTP:109request, visi22public200,21discovery,66privatevert
 | Galutinis dizainas / gyvasStripeSP / deploy | Atidėtas atskirasetapas |tikpagalsavininkoautorizaciją;šischeckpointneaktyvuoja |
 
 Pirminiai faktųšaltiniai: savininko2026-10-12atsakymai;[RC2026-124leidinys](https://www.registrucentras.lt/jar/infleid/download.do?oid=336173),page25. Molynėsg.2Craštas matomas valstybiniotransporto/airportįrašopaieškosfragmente;pilnasministryPDFfetchnepavyko, tainėradokumentopilnopatvirtinimoapsimetimas. Paslaugų/saugos/teisiniųterminųnormosperduodamoskonkrečiaiprimary-source revieweiga, ne iš fotografijos.
+
+## Checkout ir pašto seam checkpoint
+
+Ordinarymerge0.8exact06f42886, nativeclient/no parallel old orderstorage; source receiptCHECKOUT_INTEGRATION.md. Naujas tikras LT releasead1d63d7, SHAfcf6203b... (22/43), privatumo klientų duomenų saugojimas sutikrintas. ActualAdd/PLquote36.50/create/reload/withdrawal/paymentoff; public66tests/all10SEOsmoke/109SEOHTTP/72render0issues; commerce76/fullnativeverify. LatesthomeLH92/100/100/100,LCP3.2s,CLS0; earlier89preserved. PrivateMAILgateway5Node+nativeD1bindingfixturePASS, dryrun, defaultoff; currentpublicruntime2026-05-22vsnewconfig2026-10-12 gateexplicit. Native66pagecontent/media translations, fullstate/accessibilityaudit/legalfacts andparent0.9integrationremainwork. Foundation_NOT_COMPLETE.

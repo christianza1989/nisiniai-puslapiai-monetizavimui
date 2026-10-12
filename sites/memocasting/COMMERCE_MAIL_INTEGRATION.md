@@ -1,0 +1,15 @@
+# Privati bendro pašto jungtis prekybos pranešimams
+
+Svetainės sesijos companion PR31 prideda `lib/commerce-mail-gateway.mjs` ir `workers/commerce-mail/`. Naudojamas jau esantis `lib/smtp-protocol.mjs` bei Hostinger TLS transportas pagal MAIL_CORE. Nėra naujo pašto tiekėjo, SMTP prisijungimo, tikro laiško ar viešo HTTP maršruto.
+
+Vienas privatus service binding atitinka vieną konfigūruotą parduotuvę, aplinką ir tikrą SMTP vartotoją. `From` privalo sutapti su autentifikuotu SMTP adresu; viešas parduotuvės aptarnavimo adresas gali būti `Reply-To`. Bandomojoje aplinkoje gavėjai papildomai ribojami aiškiu testinių adresų sąrašu. Joks šio įrašo adresas nėra nurodymas siųsti laišką.
+
+`POST https://core-mail.internal/commerce/messages/<id>` priima schemaVersion1 pranešimą: environment, storeId, id, messageId, from, to, replyTo, subject, text. ID yra alnum/hyphen iki220ženklų; actual Message-ID `<id@authenticated-from-domain>`. Parent0.9 adapterio sutartis sutikrinta koordinuojant: `commerce-` + eventId su `_` pakeistu į `-`. Patvarus D1 įrašas saugo tik konteksto metaduomenis, gavėją, nekintantį SHA256 ir būseną; laiško tekstas, slaptažodis ir credentials į šį ledger nekopijuojami.
+
+Prieš pirmą SMTP bandymą atliekamas atominis vienkartinis INSERT su būsena `unknown`. Lygiagretus vykdytojas ar pakartojimas nebesiunčia. Tik teigiamas DATA250 leidžia įrašyti `accepted` ir stabilų `smtp-accepted:<Message-ID>` reference. Tai SMTP priėmimas, ne INBOX įrodymas ar sugalvotas pašto serverio queueID. Timeout, proceso nutrūkimas arba prarastas DB patvirtinimas palieka `unknown`; automatinis antras siuntimas nevykdomas. `GET` tuo pačiu keliu skaito tik sukonfigūruotos parduotuvės/aplinkos receipt. Pakeistas payload tas patsID→409.
+
+Patikros:5 Node/SQLite testai (lygiagretumas, restart, payload konfliktas, prarastas transporto/DB atsakymas, store/env/sender/recipient/header atmetimas, disabled neclaim, esamo SMTP socket fixture); actual workerd+D1+Worker service binding priėmimas su vienu transporto fixture bandymu ir0tikrųsiuntimų; Wrangler dry-run10.42KiB/3.65KiBgzip. Default `COMMERCE_MAIL_ENABLED=0`, workers_dev/preview_urls=false. Visi transporto atsakymai no-store/noindex, maksimalus body64KB, vidinisHTTPShost ir tikGET/POST.
+
+Tikras vietinis public repo workerd palaiko compatibility2026-05-22, todėl native fixture būtent šios datos; naujo Worker konfigūracija2026-10-12. Pirmas bandymas nauja data nepasileido — tai įrašytas apribojimas, o ne naujos datos runtimePASS. Prieš produkcinį priėmimą reikia tos konfigūracijos matching runtime, private servicebinding/DB, tikro autentifikuoto siuntėjo bei retention/recovery policy. Jų įjungimas nėra šio checkpoint dalis. Native Node API taip pat ištaisytas po pastebėto Miniflare Request tipo skirtumo; faktinis galutinis testas praėjo.
+
+Nei main adoption, nei produkcijos operacinė parengtis šiuo dokumentu neskelbiama. Parent prekybos0.9 exactsource ir nauja JSDoc/schemaVersion/terms/eligibleCountries jungtis dar perduodami atskiru patikrintu checkpoint.

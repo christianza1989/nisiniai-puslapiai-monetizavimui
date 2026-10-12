@@ -144,6 +144,29 @@ test('empty cart updates on 0 → 1 → 0 and only permits a same-origin catalog
     }
   }));
 
+test('expired pending receipts are unpaid in every UI language, while active reservations still wait for payment and original facts stay unchanged', () =>
+  withDom(async () => {
+    for (const [language, unpaid, waiting, pay] of [
+      ['lt', 'Neapmokėtas', 'Laukia mokėjimo', 'Apmokėti'],
+      ['pl', 'Nieopłacone', 'Oczekuje na płatność', 'Zapłać'],
+      ['lv', 'Nav apmaksāts', 'Gaida maksājumu', 'Maksāt'],
+      ['et', 'Maksmata', 'Ootab makset', 'Maksa'],
+    ])
+      for (const stockState of ['reserved', 'released']) {
+        const client = clientFixture(),
+          root = new Element('div');
+        client.order.stock_state = stockState;
+        client.attempt = { orderId: client.order.id };
+        const original = JSON.stringify(client.order);
+        await mountCheckout(root, { client, language });
+        const content = textContent(root);
+        assert.equal(content.includes(unpaid), stockState === 'released', language);
+        assert.equal(content.includes(waiting), stockState === 'reserved', language);
+        assert.equal(Boolean(button(root, pay)), stockState === 'reserved', language);
+        assert.equal(JSON.stringify(client.order), original);
+      }
+  }));
+
 test('saved receipt displays original delivery facts and explains expiry, disconnected payment and persistent withdrawal', () =>
   withDom(async () => {
     for (const stockState of ['reserved', 'released']) {

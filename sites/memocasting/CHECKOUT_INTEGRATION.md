@@ -1,5 +1,7 @@
 # Vietinis prekybos kliento prijungimas
 
+Aktualus 2026-10-12 tęsinys: 0.11 exact SDK `703d9dcd19083cfe6cb73e4f2add935f09986f21`; PUBLIC `220233ea5f45c23109758c977c2dd7e69b183876`. Kiekių išsaugojimas, pašalinimas, sėkmingo create krepšelio išvalymas, naujas pasirinkimas prie seno užsakymo, tikras katalogo/markets envelope ir native retry patikrinti pagal [SHOP_ACCEPTANCE.md](SHOP_ACCEPTANCE.md). 80 PUBLIC testų, TypeScript ir build PASS. Žemiau palikta 0.8 etapų istorija; jos SDK, paketas, puslapių ir testų skaičiai nėra dabartinis inventorius.
+
 2026-10-12: svetainės sesija savo checkout įprastu merge prijungė shopo 0.8 source `06f428860745059a5a0d848dca3691b8cbb80a95`. Bendro prekybos modulio failai neperrašomi. Pirkimo klientas naudojamas tiesiogiai; bendras source valdo sumas, užsakymo raktą, prieigos žetoną, atkūrimą, dokumentus ir atsisakymo registravimą.
 
 Paveikti teksto vaidmenys: krepšelio H1, produktų kiekiai, laukai, sutikimas, veiksmų mygtukai, būsenos ir klaidos. Esami svetainės šriftai bei tipografikos taisyklės išlaikomi. Patikros planas: vienas H1 serverio ir kliento HTML; faktinis pradinių kiekių perdavimas; 320 px bei desktop laukų ir mygtukų reflow; klaviatūros eiga; serverio suma; užsakymo atkūrimas po reload; atsisakymas ir neprijungto mokėjimo būsena. Vien TypeScript/build nėra šių sąlygų įrodymas.

@@ -1,0 +1,17 @@
+# Memocasting · vietinė parduotuvė ir gidai
+
+Operatorius MB Memocasting; savininko pateiktais duomenimis ne PVM mokėtojas. Poros rinkinys 32 €, su pasirenkamais baltais dažais 35 €, šeimos 48 €. Bazinė poros komplektacija: vienas alginato pakelis, 1 200 g gipso, kibiras. Šeimos: du alginato ir du gipso pakeliai; tikslūs svoriai nepatvirtinti. Siuntos 2 kg / 20×20×17 cm ir 4 kg / 25×25×20 cm. Dažų papildomos siuntos parametrai dar nepatvirtinti. Tikros nuotraukos iš savininko bus priimtos atskirai.
+
+Pirkėjas — pora, šeima ar dovanos pirkėjas; mokamas rezultatas — konkretus rinkinio pardavimas. Marža ir tikri vežėjo kaštai nežinomi. Vietinis užsakymas ir testinė užklausa nėra pajamos ar įrodytas poreikis. Memorycasting.com didmeninis pasiūlymas atskiras vėlesnis projektas.
+
+Šioje izoliuotoje versijoje 20 patvirtintų puslapių, šeši originalūs gidai, šešios originalios AI teminių vaizdų šeimos / 30 optimizuotų variantų. [Turinio šaltinis](memocasting/CONTENT.mjs), [techniniai gidai](memocasting/TECHNICAL-CONTENT.mjs), [38 klausimų planas](memocasting/CONTENT-PLAN.json), [Edinburgh panaudojimas](memocasting/EDINBURGH-RESEARCH.md), [istorijos sprendimai](memocasting/history/ASSESSMENT.md), [dizainas](memocasting/DESIGN.md). Septyni būsimi tekstai ir trys nepatvirtinti istoriniai SKU lieka privatūs.
+
+Studijos prepare → faktinė pilno teksto/šaltinių/medijos peržiūra → revision-bound review → approveReviewedBatch → immutable release → bendras importas. Release nėra deployment. Privačios peržiūros, studijos DB, originalūs PNG, prieigos žetonai ir raw tyrimas į Git nepatenka. LT/PL/LV/EE ankstesnio tyrimo išlaidos 0,3724 USD; papildomų Treg užklausų 0 USD. LT170 ir PL1000 yra tiekėjo apimties įverčiai, ne konversija; null nereiškia nulio. Raw tyrimas prijungtas prie bendro privataus seoResearch adapterio, kitų rinkų įrašai LT rašytojui pažymėti unsupported_market.
+
+Vietinis HTTP8817 ir izoliuotas bendras prekybos API8797. Fixture: po 8 pradinių vienetų, LT kurjeris 4,50 €, mokėjimas ir siuntimas neprijungti. Serverinės kainos, quote, patvarus order-before-payment, prieigos žetono hash, idempotent pakartojimas, būsenos gavimas ir atsisakymo prašymas. Svetainės produkcijos host prekybos bridge grąžina503. Tikras apmokėjimas, fulfillment ir pinigų grąžinimas nevaidinami.
+
+Kontaktų routing naudoja savininko leistą tinklo info@pinet.lt; tai nėra naujai sukurta Memo dėžutė. Vietinė pagalbos forma įrašė vieną sintetinę užklausą į izoliuotą D1; SMTP ir voice išjungti. Neįjungta CRM, marketingas, partnerių perdavimas ar automatinis prospecting.
+
+Patikros ir jų ribos: [DELIVERY](memocasting/DELIVERY.md), [visa kriterijų matrica](memocasting/PHASE-1-AUDIT.json). 54 public-core,47 studio ir39 commerce testai, build ir TypeScript, visų10nišų SEO regresija, 20puslapių HTML bei release patikros. Lighthouse13.5.0 realus vietinis production build: home90/100/100/100; apdailos gidas94/100/100/100. Tai laboratoriniai rezultatai, ne produkcijos field CWV. 200% zoom, tekstų spacing override ir tikras operatoriaus SMTP/INBOX priėmimas neįrodyti; vietinis 10/10 ar domain-ready neskelbiamas.
+
+Paleidimo data nenustatyta. GSC, realios užklausos ir užsakymai nematuoti. Sprendimas: parengtas vietinis draft PR peržiūrai; plėtros ir paleidimo vartai atskiri. PR101 remiasi commerce PR96, viešo rendererio porinis PR31; nesujungti ir nepaleisti automatiškai.

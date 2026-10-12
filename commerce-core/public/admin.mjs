@@ -488,6 +488,9 @@ function renderOrder(content, detail) {
       ],
     );
   if (c?.locker) pairs.push(['Paštomatas', c.locker.label]);
+  if (c?.companyCode) pairs.push(['Įmonės kodas', c.companyCode]);
+  if (c?.vatCode) pairs.push(['PVM kodas', c.vatCode]);
+  if (c?.contactName) pairs.push(['Kontaktinis asmuo', c.contactName]);
   if (o.refunded_amount) pairs.push(['Grąžinta suma', money(o.refunded_amount, o.currency)]);
   if (state.order.disputes?.length) {
     content.append(

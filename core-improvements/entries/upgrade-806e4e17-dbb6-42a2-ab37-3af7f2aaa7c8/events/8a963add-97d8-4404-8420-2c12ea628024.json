@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "0.10.1 closes a real B2B UI gap: legal company name/code/optional VAT and distinct contact, immutable customer snapshot, private detail view, carrier contact/company fields. Actual fixture company/list/approval/MOQ/casepack/carrier quote/accept/Checkout link UI verified; no actual partner or payment. The full independent commerce software remains prepared; native site content/actual integrations/facts remain separate.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "96Node/native workerd-D1-R2-Queue/20migrations/dryrun762.86KiB20assets. Company delivery and agreed declared value assertions included."
+    },
+    {
+      "command": "Actual IAB B2B fixture workflow",
+      "result": "PASS",
+      "evidence": "TEST legal company123456789+distinctcontact; private20EUR MOQ2/casepack2 qty4+799centcarrier quote→8799cents oneorder113CC217→localCheckoutlink; details showcompanycode/contact. Ignored tmp/ui-review/wholesale-company-details-101.png and wholesale-company-checkout-10.png."
+    },
+    {
+      "command": "Exact3acf6eaf62aa5fb94dac3d1245c61b77171cffc9 sourcearchive/npmci/fullverify",
+      "result": "PASS",
+      "evidence": "Ignored tmp/source-restore-10/commerce-core/restore-verify.log;96Node/native/buildPASS20assets, no private runtime needed; exactHEADGitHubpreflightSUCCESS."
+    }
+  ],
+  "eventId": "8a963add-97d8-4404-8420-2c12ea628024",
+  "sequence": 22,
+  "at": "2026-10-12T06:23:16.949Z"
+}

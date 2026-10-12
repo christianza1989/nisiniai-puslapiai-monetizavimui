@@ -57,3 +57,17 @@ Siųsk pigiau prijungimą. Faktinis gavėjo INBOX ir production neįjungti.
 
 Svetainės native 66 tekstai ir pilnas lokalus site audit tęsiasi atskiroje
 savininko sesijoje. Šis kvitas neužbaigia jų priėmimo.
+
+## 0.10.1 didmenos rekvizitai
+
+Partnerio forma ir privatus užsakymo vaizdas turi įmonės kodą, pasirinktinį
+PVM kodą ir atskirą kontaktinį asmenį. Dokumento pirkėjo vardas yra įmonės
+juridinis pavadinimas; siuntai perduodamas kontaktas ir atskiri įmonės
+rekvizitai. Iki tol forma nepateikė visų jau backend palaikomų laukų.
+Tai pateikti duomenys, ne automatinė įmonės / PVM registro verifikacija.
+
+Actual IAB: TEST partneris išsaugotas nepatvirtintas, tada patvirtintas
+privačioje fixture aplinkoje; MOQ2 / casepack2 kainynas €20 už poros
+rinkinį, qty4, carrier quote → €87.99, vienas priimtas užsakymas 113CC217
+ir jo vietinė Checkout nuoroda. Tikras partneris ar mokėjimas nesukurti.
+Įrodymas tmp/ui-review/wholesale-company-checkout-10.png.

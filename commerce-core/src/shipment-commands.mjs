@@ -133,7 +133,10 @@ export class ShipmentCommands {
       sender,
       recipient: {
         ...customer.address,
-        name: customer.name,
+        name: customer.contactName || customer.name,
+        ...(customer.isCompany
+          ? { companyName: customer.name, companyCode: customer.companyCode }
+          : {}),
         phone: customer.phone,
         email: customer.email,
         isCompany: plan.payload.recipient.isCompany,

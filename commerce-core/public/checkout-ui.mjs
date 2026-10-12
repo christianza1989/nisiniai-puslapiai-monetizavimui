@@ -162,6 +162,7 @@ const element = (tag, attrs = {}, ...children) => {
 const buyerMessages = {
   lt: {
     empty: 'Krepšelis tuščias.',
+    unpaid: 'Neapmokėtas',
     catalogue: 'Išsirinkti rinkinį',
     expired: 'Rezervacija pasibaigė. Norėdami pirkti, pradėkite naują užsakymą.',
     paymentOff: 'Mokėjimas šiuo metu neįjungtas.',
@@ -172,6 +173,7 @@ const buyerMessages = {
   },
   pl: {
     empty: 'Koszyk jest pusty.',
+    unpaid: 'Nieopłacone',
     catalogue: 'Wybierz zestaw',
     expired: 'Rezerwacja wygasła. Aby kupić, rozpocznij nowe zamówienie.',
     paymentOff: 'Płatności są obecnie wyłączone.',
@@ -182,6 +184,7 @@ const buyerMessages = {
   },
   lv: {
     empty: 'Grozs ir tukšs.',
+    unpaid: 'Nav apmaksāts',
     catalogue: 'Izvēlēties komplektu',
     expired: 'Rezervācijas termiņš ir beidzies. Lai iegādātos, sāciet jaunu pasūtījumu.',
     paymentOff: 'Maksājumi pašlaik nav pieejami.',
@@ -192,6 +195,7 @@ const buyerMessages = {
   },
   et: {
     empty: 'Ostukorv on tühi.',
+    unpaid: 'Maksmata',
     catalogue: 'Valige komplekt',
     expired: 'Broneering on aegunud. Ostmiseks alustage uut tellimust.',
     paymentOff: 'Maksmine pole praegu saadaval.',
@@ -331,7 +335,13 @@ export async function mountCheckout(
     };
     content.append(
       element('p', {}, t[27] + ': ' + order.id.slice(0, 8).toUpperCase()),
-      element('p', {}, states[order.payment_state] || order.payment_state),
+      element(
+        'p',
+        {},
+        order.payment_state === 'pending' && order.stock_state === 'released'
+          ? m.unpaid
+          : states[order.payment_state] || order.payment_state,
+      ),
       element('p', {}, t[21] + ': ' + money(order.amount, order.currency)),
     );
     for (const line of order.snapshot.lines)

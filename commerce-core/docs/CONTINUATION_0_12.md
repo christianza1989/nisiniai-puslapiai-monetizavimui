@@ -1,5 +1,14 @@
 # Prekybos pagrindas 0.12
 
+0.12.1 susietos svetainės actual patikra aptiko prieštaringą pending / released
+mokėjimo eilutę. Pasibaigusi rezervacija dabar visomis keturiomis kalbomis
+rodoma kaip „Neapmokėtas“, su rezervacijos pabaigos paaiškinimu ir be mokėjimo
+mygtuko. Aktyvios rezervacijos laukimo būsena ir originalūs faktai nekinta.
+Papildomas mounted testas tikrina visas keturias kalbas ir abu atvejus.
+0.12.1 pilna patikra: 117 Node testų, native D1 / R2 / Queue su 22
+migracijomis ir Worker dry-run PASS. Exact svetainės SDK importas tikrinamas
+atskirai po šios siauros pataisos.
+
 2026-10-12. Užbaigtas pagamintų rinkinių partijų kelias: surinkimas išsaugo
 suvartotas medžiagų partijas ir ankstyviausią jų galiojimą. Vėlesnis komponento
 karantinas taikomas ir pagamintam rinkiniui. Fizinis laisvas kiekis atskirtas

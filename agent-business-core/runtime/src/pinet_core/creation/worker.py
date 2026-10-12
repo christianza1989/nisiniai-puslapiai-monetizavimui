@@ -41,7 +41,10 @@ async def context_for(tx, creation, job):
                              "availability": "unknown", "reason": i["reason"]} for i in candidates]
     except ImportError:
         pass  # Domain catalogue is an optional separate source integration, not fabricated candidates.
-    return {"display_name": creation.display_name, "idea": creation.idea, "canonical_host": creation.canonical_host,
+    from ..business_discovery.service import approved_build_context
+    approved_plan = await approved_build_context(tx, creation)
+    return {"approved_business_plan": approved_plan,
+            "display_name": creation.display_name, "idea": creation.idea, "canonical_host": creation.canonical_host,
             "current_date": utcnow().date().isoformat(), "locale": "lt-LT", "timezone": "Europe/Vilnius",
             "history": history, "current_draft": prior, "feedback": job.message, "base_revision": job.base_revision,
             "prior_context_projection": projection, "previous_artifacts_preserved": bool(revisions),

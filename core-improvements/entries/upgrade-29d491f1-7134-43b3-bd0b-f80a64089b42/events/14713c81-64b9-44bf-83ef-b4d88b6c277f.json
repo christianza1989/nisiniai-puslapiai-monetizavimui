@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Scoped server discovery lifecycle is source-verified; full functional website/controller, ordinary UI/model, operational adoption/archive and designer/agent/calibration acceptance remain OPEN. Original14PASS1FAIL role pin, inherited paused env58PASS1FAIL, indentation and Ruff errors retained; no original model/customer/accounting reset. Isolated source callbacks only/provider0.",
+  "checks": [
+    {
+      "command": "python artifacts/run_discovery_source_qa.private.py: 63 offline, 21 actual restricted PostgreSQL lifecycle+legacy, scoped Ruff",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_BUSINESS_DISCOVERY_QA_2026-10-13.md"
+    },
+    {
+      "command": "python -m pinet_core.business_discovery.contract; git diff --check; pytest -q offline_tests/test_business_discovery.py (20 PASS)",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_BUSINESS_DISCOVERY_QA_2026-10-13.md"
+    }
+  ],
+  "eventId": "14713c81-64b9-44bf-83ef-b4d88b6c277f",
+  "sequence": 2,
+  "at": "2026-10-12T22:32:30.102Z"
+}

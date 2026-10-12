@@ -38,6 +38,9 @@ class Settings(BaseSettings):
     acquisition_tasks_daily_limit: int = Field(default=0, ge=0)
     public_projects_enabled: bool = False
     creation_enabled: bool = False
+    business_discovery_enabled: bool = False
+    business_discovery_runner_enabled: bool = False
+    business_discovery_research_limit: int = Field(default=0, ge=0)
     creation_runner_enabled: bool = False
     # Zero disables the operator's daily ceiling; all attempts are still recorded.
     creation_daily_limit: int = Field(default=0, ge=0)

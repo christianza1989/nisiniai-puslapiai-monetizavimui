@@ -198,7 +198,7 @@ class Trace:
         if kind in {"web_search", "web_search_call"} and self.web:
             key = item.get("id") or json.dumps(item, sort_keys=True)
             self.searches.add(key)
-            if len(self.searches) > self.limit:
+            if self.limit is not None and len(self.searches) > self.limit:
                 raise RunnerError("research_limit")
         else:
             try:

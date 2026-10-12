@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "source": "Owner messages, 2026-10-12",
+  "legal": {
+    "name": "MB Memocasting",
+    "companyCode": "306026827",
+    "vatRegistered": false,
+    "address": null,
+    "registeredAddressConfirmationPending": true,
+    "phone": "+37069108251",
+    "email": "info@memorycasting.lt"
+  },
+  "dispatch": { "name": "MB Memocasting", "country": "LT", "city": "Vilnius", "line1": "Molynės g. 2C", "postalCode": "02211", "phone": "+37069108251", "email": "info@memorycasting.lt", "isCompany": true },
+  "returns": { "country": "LT", "city": "Vilnius", "line1": "Molynės g. 2C", "postalCode": "02211" },
+  "products": [
+    { "sku": "couple", "title": "Rankų liejimo rinkinys porai", "baseAmountEur": 3200, "package": { "weightGrams": 2000, "dimensionsMm": [200, 200, 170] }, "included": ["1 pakelis alginato", "1200 g gipso", "Kibiras", "Maišymo pagaliukai"], "knownMaterialCostsEur": { "alginate": 600, "gypsum": 100, "bucket": 100 } },
+    { "sku": "family", "title": "Rankų liejimo rinkinys šeimai", "baseAmountEur": 4800, "package": { "weightGrams": 4000, "dimensionsMm": [250, 250, 200] }, "included": ["2 pakeliai alginato", "2 pakeliai gipso", "Maišymo pagaliukai"] }
+  ],
+  "optionalExtras": [
+    { "id": "white_paint", "title": "Balti dažai", "amountEur": 300, "package": null },
+    { "id": "wooden_base", "title": "Medinis pagrindas", "amountEur": 1000, "package": null }
+  ],
+  "markets": ["LT", "PL", "LV", "EE"],
+  "unconfirmed": ["Optional extras packed weight and dimensions", "Actual stock and lots", "PL, LV, EE sale prices and shipping tariffs", "Alginate supplier safety documents and exact mixing instructions"],
+  "connections": { "stripeEnabled": false, "sendparcelEnabled": false },
+  "productionAdmission": false
+}

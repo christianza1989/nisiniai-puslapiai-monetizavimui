@@ -1,5 +1,6 @@
 import { renderBackoffice } from './backoffice-ui.mjs';
 import { renderShipping } from './shipping-ui.mjs';
+import { renderPrivateFiles } from './private-files-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -37,6 +38,10 @@ const kinds = {
   packing: 'Komplektavimo lapas',
 };
 const errorNames = {
+  file_too_large: 'Pasirinkite PDF failą iki 2 MB.',
+  invalid_private_file: 'Failas turi būti PDF dokumentas iki 2 MB.',
+  private_storage_missing: 'Privati failų saugykla neprijungta.',
+  private_file_integrity_failed: 'Failo kontrolinė suma nesutampa. Patikrinkite saugyklą.',
   invalid_shipping_plan: 'Pasirinkite siuntėjo vietą ir patikrinkite gavėjo bei pakuotės duomenis.',
   invalid_shipping_origin:
     'Įrašykite miestą, penkių skaitmenų Lietuvos pašto kodą ir vietos patvirtinimo paaiškinimą.',
@@ -149,6 +154,23 @@ async function api(path, body) {
   const value = await response.json();
   if (!response.ok) throw new Error(value.error || 'operation_failed');
   return value;
+}
+async function binary(path, options = {}) {
+  let response;
+  try {
+    response = await fetch(path, {
+      ...options,
+      headers: { ...options.headers, authorization: 'Bearer ' + state.token },
+      signal: AbortSignal.timeout(20000),
+    });
+  } catch {
+    throw new Error('network');
+  }
+  if (!response.ok) {
+    const value = await response.json().catch(() => ({}));
+    throw new Error(value.error || 'operation_failed');
+  }
+  return options.method === 'POST' ? response.json() : response.blob();
 }
 async function action(button, task, message) {
   button.disabled = true;
@@ -559,6 +581,7 @@ function renderOrder(content, detail) {
       integrations: state.data.integrations,
     });
   renderRefunds(content, detail);
+  renderPrivateFiles(content, detail, { node, table, cell, action, has, binary, reload, date });
 }
 function renderRefunds(content, detail) {
   const o = detail.order,
@@ -976,7 +999,7 @@ function renderDocuments(content) {
     'article',
     { class: 'document' },
     node('h2', { id: 'document-heading', tabindex: '-1' }, d.numberLabel),
-    node('p', {}, 'TESTINIS VIDAUS DOKUMENTAS · ' + kinds[d.kind]),
+    node('p', {}, (p.internalTestDocument ? 'TESTINIS VIDAUS DOKUMENTAS · ' : '') + kinds[d.kind]),
     node(
       'dl',
       {},
@@ -1027,7 +1050,9 @@ function renderDocuments(content) {
     node(
       'p',
       { class: 'hint' },
-      'Šis dokumentas skirtas modulio patikrinimui. Tikrų apskaitos dokumentų išdavimas dar neaktyvus.',
+      p.internalTestDocument
+        ? 'Šis dokumentas skirtas modulio patikrinimui.'
+        : 'Dokumentas išduotas pagal patvirtintą pardavėjo rekvizitų ir numeracijos politiką.',
     ),
   );
   content.append(
@@ -1035,13 +1060,23 @@ function renderDocuments(content) {
     node(
       'div',
       { class: 'actions' },
-      node(
-        'button',
-        { type: 'button', onclick: () => window.print() },
-        'Spausdinti testinį dokumentą',
-      ),
+      node('button', { type: 'button', onclick: () => window.print() }, 'Spausdinti'),
     ),
   );
+  const download = node('button', { type: 'button' }, 'Atsisiųsti PDF');
+  download.addEventListener('click', () =>
+    action(
+      download,
+      async () => {
+        const blob = await binary('/api/operator/documents/' + d.id + '/pdf'),
+          url = URL.createObjectURL(blob);
+        node('a', { href: url, download: d.numberLabel + '.pdf' }).click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      },
+      'Dokumentas paruoštas atsisiųsti.',
+    ),
+  );
+  content.lastElementChild.append(download);
 }
 $('#login-form').addEventListener('submit', async (event) => {
   event.preventDefault();

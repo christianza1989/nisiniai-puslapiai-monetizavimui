@@ -11,15 +11,64 @@ import { CommerceOperations } from '../src/operations.mjs';
 import { Backoffice } from '../src/backoffice.mjs';
 import { Wholesale } from '../src/wholesale.mjs';
 import { applyMigrations } from '../src/migrations.mjs';
+import { digest } from '../src/validation.mjs';
 import { fixtureStore, fixtureProducts, cart, key, payment } from '../test/fixtures.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const directory = mkdtempSync(join(tmpdir(), 'commerce-workerd-'));
+const coreToken = 'fixture_core_worker_12345678901234567890';
 const options = {
   modules: true,
   compatibilityDate: '2026-10-11',
   d1Databases: { COMMERCE_DB: '00000000-0000-0000-0000-000000000001' },
-  bindings: { COMMERCE_ENV: 'sandbox', TEST_HARNESS: 'fixture-only' },
+  r2Buckets: { COMMERCE_FILES: 'commerce-private-fixture' },
+  serviceBindings: {
+    ASSETS: async (request) => {
+      const asset = new URL(request.url).pathname.slice(1);
+      if (
+        ![
+          'admin.html',
+          'admin.css',
+          'admin.mjs',
+          'backoffice-ui.mjs',
+          'shipping-ui.mjs',
+          'private-files-ui.mjs',
+          'commerce.html',
+          'commerce-client.mjs',
+          'checkout-ui.mjs',
+          'checkout.css',
+          'commerce-preview.mjs',
+          'fonts/NotoSans-Regular.ttf',
+        ].includes(asset)
+      )
+        return new Response('Not found', { status: 404 });
+      return new Response(readFileSync(join(root, 'public', asset)), {
+        headers: {
+          'content-type': asset.endsWith('.html')
+            ? 'text/html; charset=utf-8'
+            : asset.endsWith('.css')
+              ? 'text/css; charset=utf-8'
+              : 'text/javascript; charset=utf-8',
+        },
+      });
+    },
+  },
+  bindings: {
+    COMMERCE_ENV: 'sandbox',
+    TEST_HARNESS: 'fixture-only',
+    COMMERCE_CORE_GRANTS: JSON.stringify([
+      {
+        id: 'fixture_core_operator',
+        storeId: 'store_a',
+        legalEntityId: 'store_a_entity',
+        environment: 'sandbox',
+        tokenHash: await digest(coreToken),
+        issuedAt: Date.now() - 1000,
+        expiresAt: Date.now() + 3600000,
+        permissions: ['read', 'document'],
+      },
+    ]),
+  },
   resourcePersistencePath: directory,
 };
 let mf;
@@ -62,6 +111,16 @@ try {
   await service.provisionStore(fixtureStore('store_b'), fixtureProducts(3));
   assert.equal((await dispatch('unknown.example', '/api/catalog')).status, 404);
   assert.equal((await dispatch('store-a.example', '/api/catalog')).status, 200);
+  assert.equal((await dispatch('unknown.example', '/admin')).status, 404);
+  const adminAsset = await dispatch('store-a.example', '/admin');
+  assert.equal(adminAsset.status, 200);
+  assert.equal(adminAsset.headers.get('cache-control'), 'no-store');
+  assert.match(await adminAsset.text(), /Prekybos valdymas/);
+  const storefrontContext = await (
+    await dispatch('store-a.example', '/api/storefront-context')
+  ).json();
+  assert.equal(storefrontContext.publishOffers, false);
+  assert.equal(storefrontContext.environment, 'sandbox');
   const conflict = await dispatch(
     'store-a.example',
     '/api/orders',
@@ -85,6 +144,34 @@ try {
   );
   assert.deepEqual(concurrent.map((r) => r.status).sort(), [201, 409]);
   const result = await concurrent.find((r) => r.status === 201).json();
+  const pdf = await mf.dispatchFetch(
+    'https://store-a.example/api/operator/orders/' + result.order.id + '/files/file_worker',
+    {
+      method: 'POST',
+      headers: {
+        authorization: 'Bearer ' + coreToken,
+        'content-type': 'application/pdf',
+        'x-file-name': 'worker-fixture.pdf',
+      },
+      body: '%PDF-1.7\nworker fixture',
+    },
+  );
+  assert.equal(pdf.status, 200);
+  const privateMeta = await pdf.json();
+  const privateResponse = await dispatch(
+    'store-a.example',
+    '/api/operator/files/file_worker',
+    'GET',
+    undefined,
+    { authorization: 'Bearer ' + coreToken },
+  );
+  assert.equal(privateResponse.status, 200);
+  assert.equal(await privateResponse.text(), '%PDF-1.7\nworker fixture');
+  assert.equal((await dispatch('store-a.example', '/api/operator/files/file_worker')).status, 403);
+  assert.equal(
+    (await (await mf.getR2Bucket('COMMERCE_FILES')).get(privateMeta.file.storage_key)).size,
+    23,
+  );
   assert.equal((await dispatch('store-a.example', '/api/orders/' + result.order.id)).status, 403);
   assert.equal(
     (
@@ -703,6 +790,44 @@ try {
     (await timed.acceptPayment('store_b', 'sandbox', payment(lateOrder, 'store_b', 'evt_late')))
       .order.stock_state,
     'allocated',
+  );
+  await mf.dispose();
+  mf = undefined;
+  db = await start('src/worker.mjs');
+  const storedDocument = await new CommerceService(db).one(
+    "SELECT id FROM documents WHERE store_id='store_a' AND kind='sale' ORDER BY created_at LIMIT 1",
+  );
+  const nativePdf = await dispatch(
+    'store-a.example',
+    '/api/operator/documents/' + storedDocument.id + '/pdf',
+    'GET',
+    undefined,
+    { authorization: 'Bearer ' + coreToken },
+  );
+  assert.equal(nativePdf.status, 200);
+  assert.equal(nativePdf.headers.get('content-type'), 'application/pdf');
+  const nativeBytes = new Uint8Array(await nativePdf.arrayBuffer());
+  assert.equal(new TextDecoder().decode(nativeBytes.slice(0, 5)), '%PDF-');
+  assert.ok(nativeBytes.length > 10000);
+  assert.equal(
+    (
+      await dispatch(
+        'store-b.example',
+        '/api/operator/documents/' + storedDocument.id + '/pdf',
+        'GET',
+        undefined,
+        { authorization: 'Bearer ' + coreToken },
+      )
+    ).status,
+    403,
+  );
+  const exportedFile = await new CommerceService(db).one(
+    'SELECT storage_key FROM private_files WHERE source_id=?',
+    storedDocument.id,
+  );
+  assert.equal(
+    (await (await mf.getR2Bucket('COMMERCE_FILES')).get(exportedFile.storage_key)).size,
+    nativeBytes.length,
   );
   await mf.dispose();
   mf = undefined;

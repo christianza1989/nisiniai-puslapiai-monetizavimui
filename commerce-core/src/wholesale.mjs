@@ -251,7 +251,11 @@ export class Wholesale extends Backoffice {
   }
   async accept(store, env, quoteId, actor) {
     await this.guard(store, env, actor);
-    requireValue(env === 'sandbox', 'wholesale_production_not_configured', 503);
+    requireValue(
+      env === 'sandbox' || (await this.s.store(store, env)).operationalAdmission?.approved === true,
+      'wholesale_production_not_configured',
+      503,
+    );
     const existing = () =>
       this.s.one(
         'SELECT order_id FROM wholesale_orders WHERE store_id=? AND quote_id=?',

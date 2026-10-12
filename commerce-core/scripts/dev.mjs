@@ -8,6 +8,7 @@ import { localOperatorAuthorize } from '../src/local-identity.mjs';
 import { fixtureStore, fixtureProducts, fixtureShippingRead } from '../test/fixtures.mjs';
 import { localStripeSandbox } from '../src/local-stripe.mjs';
 import { localShippingSandbox } from '../src/local-shipping.mjs';
+import { NodePrivateStorage } from '../src/node-private-storage.mjs';
 import { requireValue } from '../src/validation.mjs';
 const args = process.argv.slice(2),
   portIndex = args.indexOf('--port'),
@@ -66,6 +67,11 @@ const handler = createHandler({
   environment: 'sandbox',
   paymentAdapters: stripe ? { [storeId]: stripe } : {},
   shippingReadAdapters: shipping ? { [storeId]: shipping } : {},
+  privateStorage: new NodePrivateStorage(
+    fileURLToPath(new URL('../runtime/private-files', import.meta.url)),
+  ),
+  loadDocumentFont: async () =>
+    new Uint8Array(readFileSync(new URL('../public/fonts/NotoSans-Regular.ttf', import.meta.url))),
   operatorAuthorize: localOperatorAuthorize(async () => {
     try {
       return JSON.parse(
@@ -83,6 +89,12 @@ const assets = {
   '/admin.mjs': ['admin.mjs', 'text/javascript; charset=utf-8'],
   '/backoffice-ui.mjs': ['backoffice-ui.mjs', 'text/javascript; charset=utf-8'],
   '/shipping-ui.mjs': ['shipping-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/private-files-ui.mjs': ['private-files-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/commerce': ['commerce.html', 'text/html; charset=utf-8'],
+  '/commerce-client.mjs': ['commerce-client.mjs', 'text/javascript; charset=utf-8'],
+  '/checkout-ui.mjs': ['checkout-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/checkout.css': ['checkout.css', 'text/css; charset=utf-8'],
+  '/commerce-preview.mjs': ['commerce-preview.mjs', 'text/javascript; charset=utf-8'],
 };
 createServer(async (req, res) => {
   if (req.headers.host !== host) {
@@ -142,7 +154,7 @@ createServer(async (req, res) => {
     const chunks = [];
     req.on('data', (c) => {
       size += c.length;
-      if (size > 65536) {
+      if (size > (req.url?.includes('/files/') ? 2 * 1024 * 1024 : 65536)) {
         reject(new Error('body limit'));
         req.destroy();
       } else chunks.push(c);

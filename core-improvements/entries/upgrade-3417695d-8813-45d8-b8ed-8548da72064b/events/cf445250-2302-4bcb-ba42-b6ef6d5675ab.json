@@ -1,0 +1,40 @@
+{
+  "status": "local-verified",
+  "commit": "0f1d8324a6825b76c23bb8df8e85f58a04b4f8fe",
+  "note": "Linked local shop code acceptance completed at canonical be32c223b2e45168b52a5eeec2d111006fe98214 and PUBLIC a82c6da55ff53df895a5c6600adba421b51fbe37. Real providers, business stock facts, deployment, final design and performance are separate gates. No actual payment, shipment or email was performed.",
+  "checks": [
+    {
+      "command": "Canonical owner verify at exact be32 checkpoint",
+      "result": "PASS",
+      "evidence": "117 Node tests, native workerd/D1/R2/Queue with22 migrations and Worker dry-run; actual operator lot/quarantine/release proof. commerce-core/docs/CONTINUATION_0_12.md."
+    },
+    {
+      "command": "PUBLIC80 tests, TypeScript, exact SDK verifier and build",
+      "result": "PASS",
+      "evidence": "Exact staged SDK/caller source, manifest source be32; source safety3 files zero findings. Actual IAB empty0-1-0, catalogue URLs, persisted address/payment-off/withdrawal and four-language expired states in qa/shop-buyer-012.json."
+    },
+    {
+      "command": "Canonical traced synthetic lot adopt, normal buyer create, quarantine and release",
+      "result": "PASS",
+      "evidence": "Actual FEFO allocation and buyer hold in all4 languages, qa/shop-hold-012.json and shop-hold-release-012.json; no fake allocations or other session DB edits. Only own sandbox fixture facts."
+    },
+    {
+      "command": "Existing DB22 migrations and immutable snapshot read-only verification",
+      "result": "PASS",
+      "evidence": "qa/shop-final-snapshot-0121.json: A908/0298/EA44 amounts and original SHA256 unchanged. Reservation state transitions used canonical expire with explicit test clock; no DB reset."
+    },
+    {
+      "command": "Exact PUBLIC a82 Git archive build without private companion",
+      "result": "PASS",
+      "evidence": "output/audits/standalone-shop-a82c6da-proof.json: package e69 and two SDK hashes match, build PASS. Installed PUBLIC dependencies junction reused, not clean npm ci. GitHub returned no checks/statuses for PUBLIC, no CI PASS claim."
+    },
+    {
+      "command": "Scoped visual and common render verification",
+      "result": "PASS",
+      "evidence": "Actually viewed ET320 held and LT1280 expired PNG, no horizontal clipped controls and oneH1; detector empty.267 HTTP checks,88pages/24guides with0 rendering issues. Whole-site audit retains LOCAL_AUDIT_INCOMPLETE; actual200% and reduced-motion not verified."
+    }
+  ],
+  "eventId": "cf445250-2302-4bcb-ba42-b6ef6d5675ab",
+  "sequence": 5,
+  "at": "2026-10-12T18:38:23.293Z"
+}

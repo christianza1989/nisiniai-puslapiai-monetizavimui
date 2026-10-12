@@ -1,6 +1,12 @@
 # Bendro prekybos kliento eksportas į savarankišką public build
 
-## Shopo 0.11 checkpoint · 2026-10-12
+## Aktualus shopo 0.12.1 · 2026-10-12
+
+PUBLIC `a82c6da55ff53df895a5c6600adba421b51fbe37`, canonical browser source `be32c223b2e45168b52a5eeec2d111006fe98214`. Oficialus exporter paėmė tik du viešus Git blobs; caller perduoda patvirtintą tos pačios kalbos `catalogueUrl`. Client 7295 baitai, SHA256 `7c5f07e33eacc8c9b42b55060d9014a3497f7ddd8d916abe4bc992298b7c557e`; UI 25702 baitai, SHA256 `7c4e09a790d40ed5f287805584e789948ac44b2f59d370b48655008b1056e89c`.
+
+Exact Git archive `output/standalone-shop-a82c6da` neturi gretimo privataus core. Build ir visų 10 paketų compile PASS, abiejų SDK failų baitai sutampa, Memocasting paketo e69 SHA nepasikeitė. Priklausomybės jau įdiegtos ir naudotos per junction, clean npm ci neteigiamas. Privatus kvitas `output/audits/standalone-shop-a82c6da-proof.json`, build log šalia. 80 PUBLIC testų, TypeScript ir actual keturių kalbų pirkėjo priėmimas pateikti [SHOP_ACCEPTANCE.md](SHOP_ACCEPTANCE.md). Šiai PUBLIC galvai GitHub nepateikė checks / statuses; vietinio build nepavadiname CI PASS.
+
+## Ankstesnis shopo 0.11 checkpoint · 2026-10-12
 
 Aktuali patikrinta PUBLIC kopija `220233ea5f45c23109758c977c2dd7e69b183876`, canonical browser source `703d9dcd19083cfe6cb73e4f2add935f09986f21`. Exact Git archive išskleistas į atskirą `output/standalone-shop-220233e`; gretimo privataus core nėra. Pilnas `npm run build` PASS, visi 10 turinio paketų sukompiliuoti, SDK manifest ir abiejų failų baitai patikrinti. Naudotos jau įdiegtos PUBLIC priklausomybės per junction; tai nėra clean `npm ci` bandymas.
 

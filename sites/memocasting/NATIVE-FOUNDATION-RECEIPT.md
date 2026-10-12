@@ -1,6 +1,6 @@
 # 88 puslapių vietinio pagrindo kvitas · 2026-10-12
 
-Šis kvitas išlaiko ankstesnio 0.10.3 etapo patikras. Dabartinis parduotuvės tęsinys, 0.11 SDK ir pirkėjo krepšelio pataisų priėmimas pateikti [SHOP_ACCEPTANCE.md](SHOP_ACCEPTANCE.md). Vėlesnis paskutinis prieš shopo tęsinį atliktas Lighthouse matavimas: home 89, PL gidas 92; kitos trys kategorijos 100, CLS 0. Našumas ir galutinis dizainas atidėti savininko; žemiau esantis 91/90 matavimas yra ankstesnis kvitas, ne dabartinio shopo performance rezultatas.
+Šis kvitas išlaiko ankstesnio 0.10.3 etapo patikras. Aktualus susietas parduotuvės 0.12.1 SDK, sandėlio ir keturių kalbų pirkėjo priėmimas pateikti [SHOP_ACCEPTANCE.md](SHOP_ACCEPTANCE.md); jo vietinis kodo priėmimas užbaigtas, tikri išoriniai vartai lieka. Vėlesnis paskutinis prieš shopo tęsinį atliktas Lighthouse matavimas: home 89, PL gidas 92; kitos trys kategorijos 100, CLS 0. Našumas ir galutinis dizainas atidėti savininko; žemiau esantis 91/90 matavimas yra ankstesnis kvitas, ne dabartinio shopo performance rezultatas.
 
 Oficialus nekintamas leidinys `04491c02-b38d-4e3a-8fff-8de2b53c407f`, SHA256 `e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6`:22LT+22PL+22LV+22ET,24gidai,172WebP. Native66 tekstai visi perskaityti atskiroje saviredakcijoje, pataisyti ir priimti revision-bound bendroje studijoje. MEDIA_CORE tikrai importavo33native alt/caption šeimas/129variantus iš anksčiau apžiūrėtų originalų. LT22 originalios datos ir patvirtinti tekstai neperrašyti.
 

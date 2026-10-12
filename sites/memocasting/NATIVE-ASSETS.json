@@ -1,0 +1,1306 @@
+{
+  "version": 1,
+  "preparedOn": "2026-10-12",
+  "scope": "Same previously inspected originals; native alt/caption families, no new generation; not yet approved/published",
+  "entries": [
+    {
+      "key": "owner-main-pl",
+      "language": "pl",
+      "sourceKey": "owner-main",
+      "sourceSha256": "24c39ccb5927411166943808b61854d0446a87faab87c1891e2cb46815aec287",
+      "alt": "Zestaw Memory Casting i odlew dłoni z opakowaniami oraz drewnianą podstawą.",
+      "credit": "Zdjęcie zestawu i odlewu. Potwierdzoną zawartość oraz opcjonalne dodatki opisano w tekście.",
+      "variantIds": [
+        "e2c87437-f7d2-418b-80aa-6d33df94accc",
+        "45ec0129-3539-4850-a208-b8ec45a6590a",
+        "e67e4a2a-e839-4253-b5f8-00040366cd09",
+        "a708886f-822c-4966-8858-69e596d0f5c7",
+        "bfb869a7-1f79-4faf-9d57-04f70d219612"
+      ],
+      "variants": [
+        {
+          "id": "e2c87437-f7d2-418b-80aa-6d33df94accc",
+          "width": 1600,
+          "height": 1128,
+          "src": "/content-assets/memocasting/e2c87437-f7d2-418b-80aa-6d33df94accc.webp"
+        },
+        {
+          "id": "45ec0129-3539-4850-a208-b8ec45a6590a",
+          "width": 1200,
+          "height": 846,
+          "src": "/content-assets/memocasting/45ec0129-3539-4850-a208-b8ec45a6590a.webp"
+        },
+        {
+          "id": "e67e4a2a-e839-4253-b5f8-00040366cd09",
+          "width": 800,
+          "height": 564,
+          "src": "/content-assets/memocasting/e67e4a2a-e839-4253-b5f8-00040366cd09.webp"
+        },
+        {
+          "id": "a708886f-822c-4966-8858-69e596d0f5c7",
+          "width": 640,
+          "height": 451,
+          "src": "/content-assets/memocasting/a708886f-822c-4966-8858-69e596d0f5c7.webp"
+        },
+        {
+          "id": "bfb869a7-1f79-4faf-9d57-04f70d219612",
+          "width": 360,
+          "height": 254,
+          "src": "/content-assets/memocasting/bfb869a7-1f79-4faf-9d57-04f70d219612.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-couple-pl",
+      "language": "pl",
+      "sourceKey": "owner-couple",
+      "sourceSha256": "cf83aac1f1ec4acb7672124e0fc540c2102bba14b17b028a97da969977916e7a",
+      "alt": "Biały odlew połączonych dłoni pary na różowym i niebieskim tle.",
+      "credit": "Przykład odlewu dłoni; zawartość zestawu jest opisana w tekście.",
+      "variantIds": [
+        "ccede13e-d515-4e47-ad9c-f82bcc954b15",
+        "6332715f-8904-4372-876c-9b1250c92b82"
+      ],
+      "variants": [
+        {
+          "id": "ccede13e-d515-4e47-ad9c-f82bcc954b15",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/ccede13e-d515-4e47-ad9c-f82bcc954b15.webp"
+        },
+        {
+          "id": "6332715f-8904-4372-876c-9b1250c92b82",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/6332715f-8904-4372-876c-9b1250c92b82.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-family-pl",
+      "language": "pl",
+      "sourceKey": "owner-family",
+      "sourceSha256": "7614e7687a352aef02946861b503958b8d82467157635a1dee5783b6a2729216",
+      "alt": "Odlew kilku połączonych dłoni na różowym i niebieskim tle.",
+      "credit": "Przykład wyglądu; zdjęcie nie określa liczby uczestników właściwej dla zestawu.",
+      "variantIds": [
+        "352771d8-8a91-4093-9de5-3f6283452925",
+        "194f5353-63b8-4936-80e3-641234cfe9c1"
+      ],
+      "variants": [
+        {
+          "id": "352771d8-8a91-4093-9de5-3f6283452925",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/352771d8-8a91-4093-9de5-3f6283452925.webp"
+        },
+        {
+          "id": "194f5353-63b8-4936-80e3-641234cfe9c1",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/194f5353-63b8-4936-80e3-641234cfe9c1.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-baby-pl",
+      "language": "pl",
+      "sourceKey": "owner-baby",
+      "sourceSha256": "29c442a03a2623c4417993b42a422cb2091ae03468f66a7161d9d61cf48c2842",
+      "alt": "Dwa odlewy stóp na różowym i niebieskim tle.",
+      "credit": "Przykłady odlewów; przydatność produktu i dane sprzedażowe nie zostały zatwierdzone.",
+      "variantIds": [
+        "fb4167f6-3371-4683-bea1-4cf6d5fb8e22",
+        "4d8cbb5e-8b5b-4fc5-be94-0ac74e55706a"
+      ],
+      "variants": [
+        {
+          "id": "fb4167f6-3371-4683-bea1-4cf6d5fb8e22",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/fb4167f6-3371-4683-bea1-4cf6d5fb8e22.webp"
+        },
+        {
+          "id": "4d8cbb5e-8b5b-4fc5-be94-0ac74e55706a",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/4d8cbb5e-8b5b-4fc5-be94-0ac74e55706a.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-wood-pl",
+      "language": "pl",
+      "sourceKey": "owner-wood",
+      "sourceSha256": "b5b4f2224759cc6cc702f4b24636737456c0346bd324b67b068859d240b95dfe",
+      "alt": "Odlew dłoni na okrągłej drewnianej podstawie.",
+      "credit": "Drewniana podstawa jest opcjonalnym dodatkiem za 10 €. Odlew na zdjęciu jest przykładem.",
+      "variantIds": [
+        "74c1ddb7-dc3f-43df-910a-1f665da0af45",
+        "6fdde304-588d-42f9-9c78-c95d1140378d"
+      ],
+      "variants": [
+        {
+          "id": "74c1ddb7-dc3f-43df-910a-1f665da0af45",
+          "width": 400,
+          "height": 400,
+          "src": "/content-assets/memocasting/74c1ddb7-dc3f-43df-910a-1f665da0af45.webp"
+        },
+        {
+          "id": "6fdde304-588d-42f9-9c78-c95d1140378d",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/6fdde304-588d-42f9-9c78-c95d1140378d.webp"
+        }
+      ]
+    },
+    {
+      "key": "gift-pl",
+      "language": "pl",
+      "sourceKey": "gift",
+      "sourceSha256": "3c602c8f2fb97a02f4d35cfde1d921932d072ff45d9a834a70e988d408e927f9",
+      "alt": "Połączone dłonie dwojga dorosłych obok pustej kartki z życzeniami.",
+      "credit": "Ilustracja redakcyjna planowania wspólnego prezentu.",
+      "variantIds": [
+        "3496a295-816f-469f-b5a3-9e4006d89539",
+        "b3acf31e-824f-41eb-92c1-36d6978c8d9c",
+        "d5a5e474-b7a5-438b-9617-00c264956286",
+        "6b06666a-4910-475d-bae8-f1f9a1cfc243",
+        "1b742a95-7d3b-4249-85b0-008970af5aef"
+      ],
+      "variants": [
+        {
+          "id": "3496a295-816f-469f-b5a3-9e4006d89539",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/3496a295-816f-469f-b5a3-9e4006d89539.webp"
+        },
+        {
+          "id": "b3acf31e-824f-41eb-92c1-36d6978c8d9c",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/b3acf31e-824f-41eb-92c1-36d6978c8d9c.webp"
+        },
+        {
+          "id": "d5a5e474-b7a5-438b-9617-00c264956286",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/d5a5e474-b7a5-438b-9617-00c264956286.webp"
+        },
+        {
+          "id": "6b06666a-4910-475d-bae8-f1f9a1cfc243",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/6b06666a-4910-475d-bae8-f1f9a1cfc243.webp"
+        },
+        {
+          "id": "1b742a95-7d3b-4249-85b0-008970af5aef",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/1b742a95-7d3b-4249-85b0-008970af5aef.webp"
+        }
+      ]
+    },
+    {
+      "key": "planning-pl",
+      "language": "pl",
+      "sourceKey": "planning",
+      "sourceSha256": "58142cf883e9440f6b19cf61704eebbccdbe68b998b2acde19f9732c2294d2df",
+      "alt": "Otwarty notes, ołówek i kartka do prezentu.",
+      "credit": "Ilustracja redakcyjna planowania prezentu.",
+      "variantIds": [
+        "2ab26b9e-89ef-4b9f-a44c-ef1c0a003a32",
+        "d358fe56-0a78-4236-9bda-3b798b05b5f5",
+        "a586089c-3cfb-4870-84a2-0882e88888bf",
+        "9d6aca7f-99b9-4071-a105-8cecd7a8038e",
+        "ff78de75-f7c5-4844-88cd-c46df9cf0b52"
+      ],
+      "variants": [
+        {
+          "id": "2ab26b9e-89ef-4b9f-a44c-ef1c0a003a32",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/2ab26b9e-89ef-4b9f-a44c-ef1c0a003a32.webp"
+        },
+        {
+          "id": "d358fe56-0a78-4236-9bda-3b798b05b5f5",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/d358fe56-0a78-4236-9bda-3b798b05b5f5.webp"
+        },
+        {
+          "id": "a586089c-3cfb-4870-84a2-0882e88888bf",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/a586089c-3cfb-4870-84a2-0882e88888bf.webp"
+        },
+        {
+          "id": "9d6aca7f-99b9-4071-a105-8cecd7a8038e",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/9d6aca7f-99b9-4071-a105-8cecd7a8038e.webp"
+        },
+        {
+          "id": "ff78de75-f7c5-4844-88cd-c46df9cf0b52",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/ff78de75-f7c5-4844-88cd-c46df9cf0b52.webp"
+        }
+      ]
+    },
+    {
+      "key": "comparison-pl",
+      "language": "pl",
+      "sourceKey": "comparison",
+      "sourceSha256": "af7cd19476655c6aad8065b7e5e0f43d1c6c1850f491b44d000f0d5cd5155410",
+      "alt": "Otwarta skrzynka z przyborami do twórczej pracy obok zapakowanego prezentu.",
+      "credit": "Ilustracja redakcyjna porównania aktywności z gotowym prezentem.",
+      "variantIds": [
+        "1cce6efc-8391-45d1-ac5a-f9d360c95812",
+        "5db6a3fd-2255-473e-8c48-d4aa80ab5e72",
+        "a7bc3c43-310d-4ae5-8829-5c83b68293c0",
+        "a4490554-94bd-44b0-8c2c-75ab89cd37fa",
+        "c88dc411-08be-4231-a601-bae6725bcbfa"
+      ],
+      "variants": [
+        {
+          "id": "1cce6efc-8391-45d1-ac5a-f9d360c95812",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/1cce6efc-8391-45d1-ac5a-f9d360c95812.webp"
+        },
+        {
+          "id": "5db6a3fd-2255-473e-8c48-d4aa80ab5e72",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/5db6a3fd-2255-473e-8c48-d4aa80ab5e72.webp"
+        },
+        {
+          "id": "a7bc3c43-310d-4ae5-8829-5c83b68293c0",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/a7bc3c43-310d-4ae5-8829-5c83b68293c0.webp"
+        },
+        {
+          "id": "a4490554-94bd-44b0-8c2c-75ab89cd37fa",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/a4490554-94bd-44b0-8c2c-75ab89cd37fa.webp"
+        },
+        {
+          "id": "c88dc411-08be-4231-a601-bae6725bcbfa",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/c88dc411-08be-4231-a601-bae6725bcbfa.webp"
+        }
+      ]
+    },
+    {
+      "key": "finishing-pl",
+      "language": "pl",
+      "sourceKey": "finishing",
+      "sourceSha256": "e85b9f5dfc7559dca9527174ce7f963ebc1bdf90d326d3ac6da8c8ed65662b30",
+      "alt": "Białe i brązowe przykłady ceramiczne obok pędzla.",
+      "credit": "Ilustracja redakcyjna wyboru wyglądu; nie przedstawia produktu ani wykonanej przez nas usługi.",
+      "variantIds": [
+        "ce2582dd-83a6-4a97-a386-02c9689e6dc6",
+        "a4e26c61-9d64-4562-a9dd-18e0d624daf2",
+        "8e2e745e-2f79-4bd9-8a6d-ce30053cd69a",
+        "afbab149-9aa6-4f7a-92d8-38e52dbcb579",
+        "e83aae25-d808-408b-936f-0dd5355b27b1"
+      ],
+      "variants": [
+        {
+          "id": "ce2582dd-83a6-4a97-a386-02c9689e6dc6",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/ce2582dd-83a6-4a97-a386-02c9689e6dc6.webp"
+        },
+        {
+          "id": "a4e26c61-9d64-4562-a9dd-18e0d624daf2",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/a4e26c61-9d64-4562-a9dd-18e0d624daf2.webp"
+        },
+        {
+          "id": "8e2e745e-2f79-4bd9-8a6d-ce30053cd69a",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/8e2e745e-2f79-4bd9-8a6d-ce30053cd69a.webp"
+        },
+        {
+          "id": "afbab149-9aa6-4f7a-92d8-38e52dbcb579",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/afbab149-9aa6-4f7a-92d8-38e52dbcb579.webp"
+        },
+        {
+          "id": "e83aae25-d808-408b-936f-0dd5355b27b1",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/e83aae25-d808-408b-936f-0dd5355b27b1.webp"
+        }
+      ]
+    },
+    {
+      "key": "drying-pl",
+      "language": "pl",
+      "sourceKey": "drying",
+      "sourceSha256": "9f359370b4c86c90dede3d356eee6a631ff5e19045595d3dd54ed800bab50214",
+      "alt": "Trzy puste karty, zegar i ołówek do zaplanowania etapów.",
+      "credit": "Ilustracja redakcyjna etapów; nie określa czasu schnięcia.",
+      "variantIds": [
+        "9cdc8e1b-d27c-461c-a25b-07f484336cbe",
+        "cad81cf2-8ff9-45eb-932a-a32b397a5d9c",
+        "40d95d7c-da2e-4293-83ae-bb3a9d2324af",
+        "62790ab2-f5a1-447a-9241-553c9826fd36",
+        "6a95f8d6-f39d-4e82-af88-03cdf111948e"
+      ],
+      "variants": [
+        {
+          "id": "9cdc8e1b-d27c-461c-a25b-07f484336cbe",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/9cdc8e1b-d27c-461c-a25b-07f484336cbe.webp"
+        },
+        {
+          "id": "cad81cf2-8ff9-45eb-932a-a32b397a5d9c",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/cad81cf2-8ff9-45eb-932a-a32b397a5d9c.webp"
+        },
+        {
+          "id": "40d95d7c-da2e-4293-83ae-bb3a9d2324af",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/40d95d7c-da2e-4293-83ae-bb3a9d2324af.webp"
+        },
+        {
+          "id": "62790ab2-f5a1-447a-9241-553c9826fd36",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/62790ab2-f5a1-447a-9241-553c9826fd36.webp"
+        },
+        {
+          "id": "6a95f8d6-f39d-4e82-af88-03cdf111948e",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/6a95f8d6-f39d-4e82-af88-03cdf111948e.webp"
+        }
+      ]
+    },
+    {
+      "key": "diagnostics-pl",
+      "language": "pl",
+      "sourceKey": "diagnostics",
+      "sourceSha256": "1422bdd6dec688ae49532836306b664ae8de4daa9a6e95499c1e24284ee52009",
+      "alt": "Pusty notes, lupa i ceramiczne przykłady do opisu obserwacji.",
+      "credit": "Ilustracja redakcyjna zbierania informacji; nie jest diagnozą lub zdjęciem projektu klienta.",
+      "variantIds": [
+        "4d8a68e1-7b7b-4334-971c-7d9389436a3b",
+        "19a70902-74b1-4519-aa9e-58541a92b78e",
+        "447aa105-57a2-44da-97fa-805dfce69fc1",
+        "ee6b49dd-bcdd-402d-a8d9-0049e797bc4e",
+        "bd30d0d7-2fc8-4fb0-9b64-9b0a17283dca"
+      ],
+      "variants": [
+        {
+          "id": "4d8a68e1-7b7b-4334-971c-7d9389436a3b",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/4d8a68e1-7b7b-4334-971c-7d9389436a3b.webp"
+        },
+        {
+          "id": "19a70902-74b1-4519-aa9e-58541a92b78e",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/19a70902-74b1-4519-aa9e-58541a92b78e.webp"
+        },
+        {
+          "id": "447aa105-57a2-44da-97fa-805dfce69fc1",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/447aa105-57a2-44da-97fa-805dfce69fc1.webp"
+        },
+        {
+          "id": "ee6b49dd-bcdd-402d-a8d9-0049e797bc4e",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/ee6b49dd-bcdd-402d-a8d9-0049e797bc4e.webp"
+        },
+        {
+          "id": "bd30d0d7-2fc8-4fb0-9b64-9b0a17283dca",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/bd30d0d7-2fc8-4fb0-9b64-9b0a17283dca.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-main-lv",
+      "language": "lv",
+      "sourceKey": "owner-main",
+      "sourceSha256": "24c39ccb5927411166943808b61854d0446a87faab87c1891e2cb46815aec287",
+      "alt": "Memory Casting komplekts un roku atlējums ar iepakojumiem un koka pamatni.",
+      "credit": "Komplekta un atlējuma attēls. Apstiprinātā komplektācija un izvēles papildinājumi aprakstīti tekstā.",
+      "variantIds": [
+        "e6165349-3b90-4e1c-b826-234bfee1171e",
+        "dc9686e2-dd7b-4eba-88e8-ca522652eb38",
+        "5810f900-a9d0-413a-b076-dcea2a8de906",
+        "a01ba7e1-76bf-4868-8b25-6dd77cc38bc2",
+        "cbdbb2d7-310e-4be0-9b82-2e3b23c4d832"
+      ],
+      "variants": [
+        {
+          "id": "e6165349-3b90-4e1c-b826-234bfee1171e",
+          "width": 1600,
+          "height": 1128,
+          "src": "/content-assets/memocasting/e6165349-3b90-4e1c-b826-234bfee1171e.webp"
+        },
+        {
+          "id": "dc9686e2-dd7b-4eba-88e8-ca522652eb38",
+          "width": 1200,
+          "height": 846,
+          "src": "/content-assets/memocasting/dc9686e2-dd7b-4eba-88e8-ca522652eb38.webp"
+        },
+        {
+          "id": "5810f900-a9d0-413a-b076-dcea2a8de906",
+          "width": 800,
+          "height": 564,
+          "src": "/content-assets/memocasting/5810f900-a9d0-413a-b076-dcea2a8de906.webp"
+        },
+        {
+          "id": "a01ba7e1-76bf-4868-8b25-6dd77cc38bc2",
+          "width": 640,
+          "height": 451,
+          "src": "/content-assets/memocasting/a01ba7e1-76bf-4868-8b25-6dd77cc38bc2.webp"
+        },
+        {
+          "id": "cbdbb2d7-310e-4be0-9b82-2e3b23c4d832",
+          "width": 360,
+          "height": 254,
+          "src": "/content-assets/memocasting/cbdbb2d7-310e-4be0-9b82-2e3b23c4d832.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-couple-lv",
+      "language": "lv",
+      "sourceKey": "owner-couple",
+      "sourceSha256": "cf83aac1f1ec4acb7672124e0fc540c2102bba14b17b028a97da969977916e7a",
+      "alt": "Balts pāra sadoto roku atlējums rozā un zilā fonā.",
+      "credit": "Roku atlējuma piemērs; komplektācija aprakstīta tekstā.",
+      "variantIds": [
+        "6a445d7a-b720-457f-afa6-43489d2ec33d",
+        "5eba2a63-714f-4184-9ed8-88f3aa6feb39"
+      ],
+      "variants": [
+        {
+          "id": "6a445d7a-b720-457f-afa6-43489d2ec33d",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/6a445d7a-b720-457f-afa6-43489d2ec33d.webp"
+        },
+        {
+          "id": "5eba2a63-714f-4184-9ed8-88f3aa6feb39",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/5eba2a63-714f-4184-9ed8-88f3aa6feb39.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-family-lv",
+      "language": "lv",
+      "sourceKey": "owner-family",
+      "sourceSha256": "7614e7687a352aef02946861b503958b8d82467157635a1dee5783b6a2729216",
+      "alt": "Vairāku sadotu roku atlējums rozā un zilā fonā.",
+      "credit": "Izskata piemērs; foto nenosaka komplektam piemēroto dalībnieku skaitu.",
+      "variantIds": [
+        "3d21cdef-9e5e-455b-b2b7-3b0094f3a774",
+        "a093f864-e4a8-44e5-a926-37bb2c8791a5"
+      ],
+      "variants": [
+        {
+          "id": "3d21cdef-9e5e-455b-b2b7-3b0094f3a774",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/3d21cdef-9e5e-455b-b2b7-3b0094f3a774.webp"
+        },
+        {
+          "id": "a093f864-e4a8-44e5-a926-37bb2c8791a5",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/a093f864-e4a8-44e5-a926-37bb2c8791a5.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-baby-lv",
+      "language": "lv",
+      "sourceKey": "owner-baby",
+      "sourceSha256": "29c442a03a2623c4417993b42a422cb2091ae03468f66a7161d9d61cf48c2842",
+      "alt": "Divi pēdu atlējumi rozā un zilā fonā.",
+      "credit": "Atlējumu piemēri; produkta piemērotība un pārdošanas dati vēl nav apstiprināti.",
+      "variantIds": [
+        "57fc8957-ceff-4977-9b6d-35ba485aa50f",
+        "c9f739a0-ca27-4fa6-8dd0-e72c6cdce539"
+      ],
+      "variants": [
+        {
+          "id": "57fc8957-ceff-4977-9b6d-35ba485aa50f",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/57fc8957-ceff-4977-9b6d-35ba485aa50f.webp"
+        },
+        {
+          "id": "c9f739a0-ca27-4fa6-8dd0-e72c6cdce539",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/c9f739a0-ca27-4fa6-8dd0-e72c6cdce539.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-wood-lv",
+      "language": "lv",
+      "sourceKey": "owner-wood",
+      "sourceSha256": "b5b4f2224759cc6cc702f4b24636737456c0346bd324b67b068859d240b95dfe",
+      "alt": "Roku atlējums uz apaļas koka pamatnes.",
+      "credit": "Koka pamatne ir izvēles papildinājums par 10 €. Atlējums attēlā ir piemērs.",
+      "variantIds": [
+        "deee1895-2c96-4b0c-9390-872523479e60",
+        "69a8324d-def2-48a9-8e24-169aa5dba90c"
+      ],
+      "variants": [
+        {
+          "id": "deee1895-2c96-4b0c-9390-872523479e60",
+          "width": 400,
+          "height": 400,
+          "src": "/content-assets/memocasting/deee1895-2c96-4b0c-9390-872523479e60.webp"
+        },
+        {
+          "id": "69a8324d-def2-48a9-8e24-169aa5dba90c",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/69a8324d-def2-48a9-8e24-169aa5dba90c.webp"
+        }
+      ]
+    },
+    {
+      "key": "gift-lv",
+      "language": "lv",
+      "sourceKey": "gift",
+      "sourceSha256": "3c602c8f2fb97a02f4d35cfde1d921932d072ff45d9a834a70e988d408e927f9",
+      "alt": "Divu pieaugušo sadotas rokas blakus tukšai dāvanas vēstulei.",
+      "credit": "Redakcijas ilustrācija kopīgas dāvanas plānošanai.",
+      "variantIds": [
+        "13b53d9a-f061-4d2f-b7fe-8c9ff1c77c63",
+        "860bc592-3787-4b56-9846-5c779ad14f71",
+        "8e8df54a-72ee-485c-b4f3-493ba90beef8",
+        "9f1b4d92-9318-4a82-a4b1-35623f83c98a",
+        "25b393e6-313a-426c-88e3-45287176b065"
+      ],
+      "variants": [
+        {
+          "id": "13b53d9a-f061-4d2f-b7fe-8c9ff1c77c63",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/13b53d9a-f061-4d2f-b7fe-8c9ff1c77c63.webp"
+        },
+        {
+          "id": "860bc592-3787-4b56-9846-5c779ad14f71",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/860bc592-3787-4b56-9846-5c779ad14f71.webp"
+        },
+        {
+          "id": "8e8df54a-72ee-485c-b4f3-493ba90beef8",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/8e8df54a-72ee-485c-b4f3-493ba90beef8.webp"
+        },
+        {
+          "id": "9f1b4d92-9318-4a82-a4b1-35623f83c98a",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/9f1b4d92-9318-4a82-a4b1-35623f83c98a.webp"
+        },
+        {
+          "id": "25b393e6-313a-426c-88e3-45287176b065",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/25b393e6-313a-426c-88e3-45287176b065.webp"
+        }
+      ]
+    },
+    {
+      "key": "planning-lv",
+      "language": "lv",
+      "sourceKey": "planning",
+      "sourceSha256": "58142cf883e9440f6b19cf61704eebbccdbe68b998b2acde19f9732c2294d2df",
+      "alt": "Atvērta piezīmju grāmata, zīmulis un dāvanas kartīte.",
+      "credit": "Redakcijas ilustrācija dāvanas plānošanai.",
+      "variantIds": [
+        "2a669dc1-9c25-4f20-a3fe-58bb5053083c",
+        "339a180f-3b9d-4927-adba-9a24c41f5bd9",
+        "e41809ee-815b-4833-bea3-33ca6c879571",
+        "9442a6be-0df1-4905-ba64-020736510fe5",
+        "76710faf-6909-436f-ba0a-ba5900ca02d2"
+      ],
+      "variants": [
+        {
+          "id": "2a669dc1-9c25-4f20-a3fe-58bb5053083c",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/2a669dc1-9c25-4f20-a3fe-58bb5053083c.webp"
+        },
+        {
+          "id": "339a180f-3b9d-4927-adba-9a24c41f5bd9",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/339a180f-3b9d-4927-adba-9a24c41f5bd9.webp"
+        },
+        {
+          "id": "e41809ee-815b-4833-bea3-33ca6c879571",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/e41809ee-815b-4833-bea3-33ca6c879571.webp"
+        },
+        {
+          "id": "9442a6be-0df1-4905-ba64-020736510fe5",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/9442a6be-0df1-4905-ba64-020736510fe5.webp"
+        },
+        {
+          "id": "76710faf-6909-436f-ba0a-ba5900ca02d2",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/76710faf-6909-436f-ba0a-ba5900ca02d2.webp"
+        }
+      ]
+    },
+    {
+      "key": "comparison-lv",
+      "language": "lv",
+      "sourceKey": "comparison",
+      "sourceSha256": "af7cd19476655c6aad8065b7e5e0f43d1c6c1850f491b44d000f0d5cd5155410",
+      "alt": "Atvērta radošo piederumu kaste blakus iesaiņotai dāvanai.",
+      "credit": "Redakcijas ilustrācija nodarbes un gatavas dāvanas salīdzinājumam.",
+      "variantIds": [
+        "4048c111-a42b-49e2-afe7-a3bec0d480d5",
+        "4eae1567-42e6-444b-a051-3ee1cd6ff902",
+        "672a4b40-5ec5-4458-a366-5c2c3893247d",
+        "f45a26d1-e45a-4b06-a65f-ff3efefb55a8",
+        "0d22c0fe-851b-420b-9c58-34558de5e4bf"
+      ],
+      "variants": [
+        {
+          "id": "4048c111-a42b-49e2-afe7-a3bec0d480d5",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/4048c111-a42b-49e2-afe7-a3bec0d480d5.webp"
+        },
+        {
+          "id": "4eae1567-42e6-444b-a051-3ee1cd6ff902",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/4eae1567-42e6-444b-a051-3ee1cd6ff902.webp"
+        },
+        {
+          "id": "672a4b40-5ec5-4458-a366-5c2c3893247d",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/672a4b40-5ec5-4458-a366-5c2c3893247d.webp"
+        },
+        {
+          "id": "f45a26d1-e45a-4b06-a65f-ff3efefb55a8",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/f45a26d1-e45a-4b06-a65f-ff3efefb55a8.webp"
+        },
+        {
+          "id": "0d22c0fe-851b-420b-9c58-34558de5e4bf",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/0d22c0fe-851b-420b-9c58-34558de5e4bf.webp"
+        }
+      ]
+    },
+    {
+      "key": "finishing-lv",
+      "language": "lv",
+      "sourceKey": "finishing",
+      "sourceSha256": "e85b9f5dfc7559dca9527174ce7f963ebc1bdf90d326d3ac6da8c8ed65662b30",
+      "alt": "Balti un bronzas krāsas keramikas piemēri blakus otai.",
+      "credit": "Redakcijas ilustrācija izskata izvēlei; tā nerāda produktu vai mūsu veiktu pakalpojumu.",
+      "variantIds": [
+        "4547e918-e757-4903-802c-964dc8cfc320",
+        "4b1883de-df6a-4ac0-9147-3ab3c528cf0e",
+        "da8e8a6f-d961-4e5a-b201-e4e3968381cb",
+        "3d312d31-2ef7-47c7-a673-55de4dd38f91",
+        "58bab8b9-0234-4816-8b3e-65de638f91ba"
+      ],
+      "variants": [
+        {
+          "id": "4547e918-e757-4903-802c-964dc8cfc320",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/4547e918-e757-4903-802c-964dc8cfc320.webp"
+        },
+        {
+          "id": "4b1883de-df6a-4ac0-9147-3ab3c528cf0e",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/4b1883de-df6a-4ac0-9147-3ab3c528cf0e.webp"
+        },
+        {
+          "id": "da8e8a6f-d961-4e5a-b201-e4e3968381cb",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/da8e8a6f-d961-4e5a-b201-e4e3968381cb.webp"
+        },
+        {
+          "id": "3d312d31-2ef7-47c7-a673-55de4dd38f91",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/3d312d31-2ef7-47c7-a673-55de4dd38f91.webp"
+        },
+        {
+          "id": "58bab8b9-0234-4816-8b3e-65de638f91ba",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/58bab8b9-0234-4816-8b3e-65de638f91ba.webp"
+        }
+      ]
+    },
+    {
+      "key": "drying-lv",
+      "language": "lv",
+      "sourceKey": "drying",
+      "sourceSha256": "9f359370b4c86c90dede3d356eee6a631ff5e19045595d3dd54ed800bab50214",
+      "alt": "Trīs tukšas kartītes, pulkstenis un zīmulis posmu plānošanai.",
+      "credit": "Redakcijas ilustrācija posmiem; tā nenosaka žūšanas ilgumu.",
+      "variantIds": [
+        "f8543a93-8b1e-44a5-8bd2-c989f54ab3ea",
+        "19612a29-1fc0-4427-aa76-4673ea2ed678",
+        "9c6d8c1f-2dee-4daf-b847-5b09dda7ef9e",
+        "c57773c7-e180-4aff-95bd-f24b9285efd3",
+        "d8089435-4342-4e74-8786-c80426e6cb5b"
+      ],
+      "variants": [
+        {
+          "id": "f8543a93-8b1e-44a5-8bd2-c989f54ab3ea",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/f8543a93-8b1e-44a5-8bd2-c989f54ab3ea.webp"
+        },
+        {
+          "id": "19612a29-1fc0-4427-aa76-4673ea2ed678",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/19612a29-1fc0-4427-aa76-4673ea2ed678.webp"
+        },
+        {
+          "id": "9c6d8c1f-2dee-4daf-b847-5b09dda7ef9e",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/9c6d8c1f-2dee-4daf-b847-5b09dda7ef9e.webp"
+        },
+        {
+          "id": "c57773c7-e180-4aff-95bd-f24b9285efd3",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/c57773c7-e180-4aff-95bd-f24b9285efd3.webp"
+        },
+        {
+          "id": "d8089435-4342-4e74-8786-c80426e6cb5b",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/d8089435-4342-4e74-8786-c80426e6cb5b.webp"
+        }
+      ]
+    },
+    {
+      "key": "diagnostics-lv",
+      "language": "lv",
+      "sourceKey": "diagnostics",
+      "sourceSha256": "1422bdd6dec688ae49532836306b664ae8de4daa9a6e95499c1e24284ee52009",
+      "alt": "Tukša piezīmju grāmata, lupa un keramikas piemēri novērojumu aprakstam.",
+      "credit": "Redakcijas ilustrācija informācijas vākšanai; tā nav diagnoze vai klienta projekta foto.",
+      "variantIds": [
+        "50c64351-a2f1-4d69-a617-b8bd6d515db9",
+        "abe0a193-6703-439a-9069-03d438acf3c6",
+        "ba437e06-eff0-4730-9768-d7aca3aaabde",
+        "1f7d1886-d2af-4ceb-9f0f-bfb1b236943f",
+        "922ea1a4-c5cb-4287-ae65-19d1e7d9fbd6"
+      ],
+      "variants": [
+        {
+          "id": "50c64351-a2f1-4d69-a617-b8bd6d515db9",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/50c64351-a2f1-4d69-a617-b8bd6d515db9.webp"
+        },
+        {
+          "id": "abe0a193-6703-439a-9069-03d438acf3c6",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/abe0a193-6703-439a-9069-03d438acf3c6.webp"
+        },
+        {
+          "id": "ba437e06-eff0-4730-9768-d7aca3aaabde",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/ba437e06-eff0-4730-9768-d7aca3aaabde.webp"
+        },
+        {
+          "id": "1f7d1886-d2af-4ceb-9f0f-bfb1b236943f",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/1f7d1886-d2af-4ceb-9f0f-bfb1b236943f.webp"
+        },
+        {
+          "id": "922ea1a4-c5cb-4287-ae65-19d1e7d9fbd6",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/922ea1a4-c5cb-4287-ae65-19d1e7d9fbd6.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-main-et",
+      "language": "et",
+      "sourceKey": "owner-main",
+      "sourceSha256": "24c39ccb5927411166943808b61854d0446a87faab87c1891e2cb46815aec287",
+      "alt": "Memory Castingu komplekt ja kätevaland koos pakendite ning puidust alusega.",
+      "credit": "Komplekti ja valandi pilt. Kinnitatud sisu ning valikulised lisandid on kirjeldatud tekstis.",
+      "variantIds": [
+        "88f231ae-ac59-4cfe-95b6-d90638dd2dd5",
+        "e6113e70-60cf-458a-9946-5dc3f424d1ea",
+        "19257e12-4745-4ef3-9591-840c1e1fbced",
+        "5914d7a3-a06c-4964-9ec5-d9f2fdffe91c",
+        "242b9c9d-76ba-406f-9d58-035a5c0ed5cf"
+      ],
+      "variants": [
+        {
+          "id": "88f231ae-ac59-4cfe-95b6-d90638dd2dd5",
+          "width": 1600,
+          "height": 1128,
+          "src": "/content-assets/memocasting/88f231ae-ac59-4cfe-95b6-d90638dd2dd5.webp"
+        },
+        {
+          "id": "e6113e70-60cf-458a-9946-5dc3f424d1ea",
+          "width": 1200,
+          "height": 846,
+          "src": "/content-assets/memocasting/e6113e70-60cf-458a-9946-5dc3f424d1ea.webp"
+        },
+        {
+          "id": "19257e12-4745-4ef3-9591-840c1e1fbced",
+          "width": 800,
+          "height": 564,
+          "src": "/content-assets/memocasting/19257e12-4745-4ef3-9591-840c1e1fbced.webp"
+        },
+        {
+          "id": "5914d7a3-a06c-4964-9ec5-d9f2fdffe91c",
+          "width": 640,
+          "height": 451,
+          "src": "/content-assets/memocasting/5914d7a3-a06c-4964-9ec5-d9f2fdffe91c.webp"
+        },
+        {
+          "id": "242b9c9d-76ba-406f-9d58-035a5c0ed5cf",
+          "width": 360,
+          "height": 254,
+          "src": "/content-assets/memocasting/242b9c9d-76ba-406f-9d58-035a5c0ed5cf.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-couple-et",
+      "language": "et",
+      "sourceKey": "owner-couple",
+      "sourceSha256": "cf83aac1f1ec4acb7672124e0fc540c2102bba14b17b028a97da969977916e7a",
+      "alt": "Paari ühendatud käte valge valand roosal ja sinisel taustal.",
+      "credit": "Kätevalandi näide; komplekti sisu on kirjeldatud tekstis.",
+      "variantIds": [
+        "92379046-9dbe-4462-8a38-cf96d8049e99",
+        "ae4dde37-617e-45ac-ba5d-92c2affc5b5f"
+      ],
+      "variants": [
+        {
+          "id": "92379046-9dbe-4462-8a38-cf96d8049e99",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/92379046-9dbe-4462-8a38-cf96d8049e99.webp"
+        },
+        {
+          "id": "ae4dde37-617e-45ac-ba5d-92c2affc5b5f",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/ae4dde37-617e-45ac-ba5d-92c2affc5b5f.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-family-et",
+      "language": "et",
+      "sourceKey": "owner-family",
+      "sourceSha256": "7614e7687a352aef02946861b503958b8d82467157635a1dee5783b6a2729216",
+      "alt": "Mitme ühendatud käe valand roosal ja sinisel taustal.",
+      "credit": "Välimuse näide; foto ei määra komplektile sobivat osalejate arvu.",
+      "variantIds": [
+        "6f2d5024-d3ad-4ce9-9dcd-966be97b7e75",
+        "47fe0957-e92e-4d66-816d-57d37a0838ca"
+      ],
+      "variants": [
+        {
+          "id": "6f2d5024-d3ad-4ce9-9dcd-966be97b7e75",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/6f2d5024-d3ad-4ce9-9dcd-966be97b7e75.webp"
+        },
+        {
+          "id": "47fe0957-e92e-4d66-816d-57d37a0838ca",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/47fe0957-e92e-4d66-816d-57d37a0838ca.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-baby-et",
+      "language": "et",
+      "sourceKey": "owner-baby",
+      "sourceSha256": "29c442a03a2623c4417993b42a422cb2091ae03468f66a7161d9d61cf48c2842",
+      "alt": "Kaks jalalabade valandit roosal ja sinisel taustal.",
+      "credit": "Valandite näited; toote sobivus ja müügiandmed ei ole veel kinnitatud.",
+      "variantIds": [
+        "53556601-89b5-46f5-91eb-3836a8b584cd",
+        "2ad67b72-3e28-4ab1-aaac-fbae78e7a60a"
+      ],
+      "variants": [
+        {
+          "id": "53556601-89b5-46f5-91eb-3836a8b584cd",
+          "width": 533,
+          "height": 533,
+          "src": "/content-assets/memocasting/53556601-89b5-46f5-91eb-3836a8b584cd.webp"
+        },
+        {
+          "id": "2ad67b72-3e28-4ab1-aaac-fbae78e7a60a",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/2ad67b72-3e28-4ab1-aaac-fbae78e7a60a.webp"
+        }
+      ]
+    },
+    {
+      "key": "owner-wood-et",
+      "language": "et",
+      "sourceKey": "owner-wood",
+      "sourceSha256": "b5b4f2224759cc6cc702f4b24636737456c0346bd324b67b068859d240b95dfe",
+      "alt": "Kätevaland ümmargusel puidust alusel.",
+      "credit": "Puidust alus on valikuline lisand hinnaga 10 €. Fotol olev valand on näide.",
+      "variantIds": [
+        "2e5b1967-9e46-47cc-8960-cc426cbb5210",
+        "8addb3f5-2559-475c-a374-e79c231874a5"
+      ],
+      "variants": [
+        {
+          "id": "2e5b1967-9e46-47cc-8960-cc426cbb5210",
+          "width": 400,
+          "height": 400,
+          "src": "/content-assets/memocasting/2e5b1967-9e46-47cc-8960-cc426cbb5210.webp"
+        },
+        {
+          "id": "8addb3f5-2559-475c-a374-e79c231874a5",
+          "width": 360,
+          "height": 360,
+          "src": "/content-assets/memocasting/8addb3f5-2559-475c-a374-e79c231874a5.webp"
+        }
+      ]
+    },
+    {
+      "key": "gift-et",
+      "language": "et",
+      "sourceKey": "gift",
+      "sourceSha256": "3c602c8f2fb97a02f4d35cfde1d921932d072ff45d9a834a70e988d408e927f9",
+      "alt": "Kahe täiskasvanu ühendatud käed tühja kingikirja kõrval.",
+      "credit": "Toimetuse illustratsioon ühise kingi kavandamiseks.",
+      "variantIds": [
+        "440e4bb4-c17d-41bc-852b-3bd069c1ea7a",
+        "8991a062-d23a-43b9-a3ff-f6adc2761165",
+        "6c4c2cf7-2e72-4f39-b77e-c6e8e4012066",
+        "a8945041-b336-402e-a62c-931e5b658b3a",
+        "e0569693-392b-41df-be5b-b21d30e49f94"
+      ],
+      "variants": [
+        {
+          "id": "440e4bb4-c17d-41bc-852b-3bd069c1ea7a",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/440e4bb4-c17d-41bc-852b-3bd069c1ea7a.webp"
+        },
+        {
+          "id": "8991a062-d23a-43b9-a3ff-f6adc2761165",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/8991a062-d23a-43b9-a3ff-f6adc2761165.webp"
+        },
+        {
+          "id": "6c4c2cf7-2e72-4f39-b77e-c6e8e4012066",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/6c4c2cf7-2e72-4f39-b77e-c6e8e4012066.webp"
+        },
+        {
+          "id": "a8945041-b336-402e-a62c-931e5b658b3a",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/a8945041-b336-402e-a62c-931e5b658b3a.webp"
+        },
+        {
+          "id": "e0569693-392b-41df-be5b-b21d30e49f94",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/e0569693-392b-41df-be5b-b21d30e49f94.webp"
+        }
+      ]
+    },
+    {
+      "key": "planning-et",
+      "language": "et",
+      "sourceKey": "planning",
+      "sourceSha256": "58142cf883e9440f6b19cf61704eebbccdbe68b998b2acde19f9732c2294d2df",
+      "alt": "Avatud märkmik, pliiats ja kingikaart.",
+      "credit": "Toimetuse illustratsioon kingi kavandamiseks.",
+      "variantIds": [
+        "99105871-dd60-4bea-8a58-c8b647dda66c",
+        "8ad00434-5ea9-491b-864a-3879c0abee81",
+        "049335ff-85d9-48b0-957c-c9d34dd4fc79",
+        "f57cc105-dadb-4370-9a5e-7a0d09c5b6ac",
+        "8b818b78-be22-49cb-acb7-2fa6394a9ec4"
+      ],
+      "variants": [
+        {
+          "id": "99105871-dd60-4bea-8a58-c8b647dda66c",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/99105871-dd60-4bea-8a58-c8b647dda66c.webp"
+        },
+        {
+          "id": "8ad00434-5ea9-491b-864a-3879c0abee81",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/8ad00434-5ea9-491b-864a-3879c0abee81.webp"
+        },
+        {
+          "id": "049335ff-85d9-48b0-957c-c9d34dd4fc79",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/049335ff-85d9-48b0-957c-c9d34dd4fc79.webp"
+        },
+        {
+          "id": "f57cc105-dadb-4370-9a5e-7a0d09c5b6ac",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/f57cc105-dadb-4370-9a5e-7a0d09c5b6ac.webp"
+        },
+        {
+          "id": "8b818b78-be22-49cb-acb7-2fa6394a9ec4",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/8b818b78-be22-49cb-acb7-2fa6394a9ec4.webp"
+        }
+      ]
+    },
+    {
+      "key": "comparison-et",
+      "language": "et",
+      "sourceKey": "comparison",
+      "sourceSha256": "af7cd19476655c6aad8065b7e5e0f43d1c6c1850f491b44d000f0d5cd5155410",
+      "alt": "Avatud loovtarvikute karp pakitud kingituse kõrval.",
+      "credit": "Toimetuse illustratsioon tegevuse ja valmis kingi võrdlemiseks.",
+      "variantIds": [
+        "93683d54-41e1-4e76-8017-b7ca78b8264f",
+        "76223285-3a9c-43b7-b0c7-ece95b411092",
+        "045eed01-d025-41a2-b274-8261e83ee4b9",
+        "ff97987f-9fe1-4154-8f59-90070410f71b",
+        "8d342071-b3c5-44b8-b6f0-81d67ae76c0d"
+      ],
+      "variants": [
+        {
+          "id": "93683d54-41e1-4e76-8017-b7ca78b8264f",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/93683d54-41e1-4e76-8017-b7ca78b8264f.webp"
+        },
+        {
+          "id": "76223285-3a9c-43b7-b0c7-ece95b411092",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/76223285-3a9c-43b7-b0c7-ece95b411092.webp"
+        },
+        {
+          "id": "045eed01-d025-41a2-b274-8261e83ee4b9",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/045eed01-d025-41a2-b274-8261e83ee4b9.webp"
+        },
+        {
+          "id": "ff97987f-9fe1-4154-8f59-90070410f71b",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/ff97987f-9fe1-4154-8f59-90070410f71b.webp"
+        },
+        {
+          "id": "8d342071-b3c5-44b8-b6f0-81d67ae76c0d",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/8d342071-b3c5-44b8-b6f0-81d67ae76c0d.webp"
+        }
+      ]
+    },
+    {
+      "key": "finishing-et",
+      "language": "et",
+      "sourceKey": "finishing",
+      "sourceSha256": "e85b9f5dfc7559dca9527174ce7f963ebc1bdf90d326d3ac6da8c8ed65662b30",
+      "alt": "Valged ja pronksitooni keraamilised näited pintsli kõrval.",
+      "credit": "Toimetuse illustratsioon välimuse valimiseks; see ei kujuta toodet ega meie tehtud teenust.",
+      "variantIds": [
+        "cc40d449-9ded-45d5-a487-6b3b98fdfda7",
+        "718bc032-fb10-4074-af59-f9b37dc16f24",
+        "49a06fd3-eba2-4dd7-b8e5-d600447fccf4",
+        "78e16e57-afb5-4377-a3a8-f8bdd8e884c9",
+        "aec3f230-e8ea-4d05-a937-84955d041e2a"
+      ],
+      "variants": [
+        {
+          "id": "cc40d449-9ded-45d5-a487-6b3b98fdfda7",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/cc40d449-9ded-45d5-a487-6b3b98fdfda7.webp"
+        },
+        {
+          "id": "718bc032-fb10-4074-af59-f9b37dc16f24",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/718bc032-fb10-4074-af59-f9b37dc16f24.webp"
+        },
+        {
+          "id": "49a06fd3-eba2-4dd7-b8e5-d600447fccf4",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/49a06fd3-eba2-4dd7-b8e5-d600447fccf4.webp"
+        },
+        {
+          "id": "78e16e57-afb5-4377-a3a8-f8bdd8e884c9",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/78e16e57-afb5-4377-a3a8-f8bdd8e884c9.webp"
+        },
+        {
+          "id": "aec3f230-e8ea-4d05-a937-84955d041e2a",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/aec3f230-e8ea-4d05-a937-84955d041e2a.webp"
+        }
+      ]
+    },
+    {
+      "key": "drying-et",
+      "language": "et",
+      "sourceKey": "drying",
+      "sourceSha256": "9f359370b4c86c90dede3d356eee6a631ff5e19045595d3dd54ed800bab50214",
+      "alt": "Kolm tühja kaarti, kell ja pliiats etappide kavandamiseks.",
+      "credit": "Toimetuse illustratsioon etappide kohta; see ei määra kuivamisaega.",
+      "variantIds": [
+        "285e0dbd-1ee1-4f41-9a4d-8f4638288430",
+        "54139479-0675-45b1-9395-31ae43625632",
+        "55083113-cd86-4749-90bc-3a9b41e70eeb",
+        "c1ee1bc7-27bf-4133-a099-404757a97f86",
+        "7a1ec55f-1f16-412e-87c0-75a1ed49e7e2"
+      ],
+      "variants": [
+        {
+          "id": "285e0dbd-1ee1-4f41-9a4d-8f4638288430",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/285e0dbd-1ee1-4f41-9a4d-8f4638288430.webp"
+        },
+        {
+          "id": "54139479-0675-45b1-9395-31ae43625632",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/54139479-0675-45b1-9395-31ae43625632.webp"
+        },
+        {
+          "id": "55083113-cd86-4749-90bc-3a9b41e70eeb",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/55083113-cd86-4749-90bc-3a9b41e70eeb.webp"
+        },
+        {
+          "id": "c1ee1bc7-27bf-4133-a099-404757a97f86",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/c1ee1bc7-27bf-4133-a099-404757a97f86.webp"
+        },
+        {
+          "id": "7a1ec55f-1f16-412e-87c0-75a1ed49e7e2",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/7a1ec55f-1f16-412e-87c0-75a1ed49e7e2.webp"
+        }
+      ]
+    },
+    {
+      "key": "diagnostics-et",
+      "language": "et",
+      "sourceKey": "diagnostics",
+      "sourceSha256": "1422bdd6dec688ae49532836306b664ae8de4daa9a6e95499c1e24284ee52009",
+      "alt": "Tühi märkmik, luup ja keraamilised näited tähelepanekute kirjeldamiseks.",
+      "credit": "Toimetuse illustratsioon teabe kogumiseks; see pole diagnoos ega kliendiprojekti foto.",
+      "variantIds": [
+        "7624f1c2-142b-4b2a-89db-bbd15f83abb9",
+        "3fb082b2-5a32-4681-b8ab-dc37bdec0e8a",
+        "0530d49d-dfd1-4651-b9e1-94575e3081a9",
+        "c937ab88-c22c-42f5-84c2-961344a8ba43",
+        "8424206b-a10e-460e-b23d-d22dc8d5f5f5"
+      ],
+      "variants": [
+        {
+          "id": "7624f1c2-142b-4b2a-89db-bbd15f83abb9",
+          "width": 1536,
+          "height": 1024,
+          "src": "/content-assets/memocasting/7624f1c2-142b-4b2a-89db-bbd15f83abb9.webp"
+        },
+        {
+          "id": "3fb082b2-5a32-4681-b8ab-dc37bdec0e8a",
+          "width": 1200,
+          "height": 800,
+          "src": "/content-assets/memocasting/3fb082b2-5a32-4681-b8ab-dc37bdec0e8a.webp"
+        },
+        {
+          "id": "0530d49d-dfd1-4651-b9e1-94575e3081a9",
+          "width": 800,
+          "height": 533,
+          "src": "/content-assets/memocasting/0530d49d-dfd1-4651-b9e1-94575e3081a9.webp"
+        },
+        {
+          "id": "c937ab88-c22c-42f5-84c2-961344a8ba43",
+          "width": 640,
+          "height": 427,
+          "src": "/content-assets/memocasting/c937ab88-c22c-42f5-84c2-961344a8ba43.webp"
+        },
+        {
+          "id": "8424206b-a10e-460e-b23d-d22dc8d5f5f5",
+          "width": 360,
+          "height": 240,
+          "src": "/content-assets/memocasting/8424206b-a10e-460e-b23d-d22dc8d5f5f5.webp"
+        }
+      ]
+    }
+  ]
+}

@@ -194,7 +194,7 @@ def inspect_page(observation):
         items = crumb_lists[0].get('itemListElement', [])
         crumb_urls = [url(i.get('item')) for i in items]
         check(len(items) >= 2 and [i.get('position') for i in items] == list(range(1, len(items) + 1)), 'BREADCRUMB_POSITIONS')
-        check(bool(crumb_urls) and crumb_urls[0] == p['origin'] + '/' and crumb_urls[-1] == p['url'], 'BREADCRUMB_ENDPOINTS')
+        check(bool(crumb_urls) and crumb_urls[0] == p.get('homeUrl', p['origin'] + '/') and crumb_urls[-1] == p['url'], 'BREADCRUMB_ENDPOINTS')
         check(p['articleIndexUrl'] in crumb_urls[1:-1], 'BREADCRUMB_HUB')
         containers = [e for e in doc.nodes() if 'data-niche-breadcrumbs' in e.attrs or re.search(r'breadcrumb|crumb|duonos', e.attrs.get('aria-label', '') + ' ' + e.attrs.get('class', ''), re.I)]
         check(any(visible(e) and all(norm(i.get('name', '')) in norm(e.text()) for i in items)

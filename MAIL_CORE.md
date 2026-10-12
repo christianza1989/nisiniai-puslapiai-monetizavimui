@@ -37,3 +37,7 @@ Hostinger sąranka patikrinta pagal [oficialias instrukcijas](https://www.hostin
 Shared `publicSiteByHost/publicSitePage` resolveris tą pačią POST formą ir agreguotus įvykius aptarnauja V1 arba priimtam V2. V2 užklausai papildomai reikia public contact ir policy `/privatumas`; private/missing/revoked policy išjungia formą ir interest endpointą. D1 įrašas lieka nepriklausomas nuo voice runtime; name/email/message/UUID/ms/consent/source-path/status sutartis nepakitusi.
 
 [M5 HTTP-QA](research/dovanos123-integration-2026-10-04/M5/HTTP-QA.json) įrodo tik sintetinę užklausą izoliuotoje vietinėje fixture D1: valid1, wrongorigin403, noconsent400, honeypot0, statusnew, sourcepath tinkamas, consentAt=createdAt. SMTP/voice0. Tai nėra actual INBOX receipt ar Dovanos123 production D1/legacy CaseSource backfill priėmimas.
+
+## Privati prekybos pranešimų jungtis (2026-10-12, source PRs)
+
+Companion PR31 prideda išjungtą service-binding Worker, naudojantį tą patį SMTP protokolą ir autentifikuotą Hostinger siuntėją. Vienas parduotuvės/aplinkos kontekstas, patvarus vienkartinis D1 claim prieš SMTP, nekintantis payload hash, GET receipt; timeout ar prarastas patvirtinimas lieka unknown be antro siuntimo. SMTP DATA250 accepted skiriasi nuo INBOX. Tik Node socket ir actual native D1/servicebinding fixtures, jokių gyvų laiškų ar auth. Visa sutartis ir runtime datos apribojimas: [COMMERCE_MAIL_INTEGRATION](sites/memocasting/COMMERCE_MAIL_INTEGRATION.md); upgrade031aa670-7e7b-43ae-b4ae-e69a84b886c2. Source dar draft PR101/31, ne main adoption ar aktyvacija.

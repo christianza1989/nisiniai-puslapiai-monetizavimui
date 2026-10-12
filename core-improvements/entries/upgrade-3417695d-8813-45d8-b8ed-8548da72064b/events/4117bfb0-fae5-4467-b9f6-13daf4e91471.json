@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Buyer cart/catalog integration verified at canonical SDK 703d9dcd19083cfe6cb73e4f2add935f09986f21 and PUBLIC 220233ea5f45c23109758c977c2dd7e69b183876. The full shop remains IN_PROGRESS while the separately discovered finished-kit expiry/quarantine defect and final buyer empty/receipt states are completed. Performance and final visual design are deferred; no production or provider activation.",
+  "checks": [
+    {
+      "command": "npm run test:core; npx tsc --noEmit; npm run build",
+      "result": "PASS",
+      "evidence": "80 PUBLIC tests, TypeScript and build for the 0.11 checkpoint; canonical 104-test/native receipt supplied by the commerce owner."
+    },
+    {
+      "command": "Actual IAB buyer workflow and read-only owned SQLite inspection",
+      "result": "PASS",
+      "evidence": "Two quantities survive reload, zero removal, Add retains other selections, synthetic order a9087516 is 11650 cents, reload preserves its identity, fresh family selection survives New order without the bought cart. Original snapshot SHA1d24cf0c... retained in private qa/shop-buyer-011.json."
+    },
+    {
+      "command": "Actual IAB connection failure and retry in four languages",
+      "result": "PASS",
+      "evidence": "Owned8827 stop/restart, native cart/product alerts and retry, Add remains disabled while unavailable. Product320/cart390 and cart320/desktop1280 layout checks; no foreign runtime touched."
+    },
+    {
+      "command": "Exact Git-archive standalone PUBLIC build and SDK/package verification",
+      "result": "PASS",
+      "evidence": "220233e archive with no private companion, package e69 SHA, exact two-file SDK. Existing node_modules junction reused; not a clean dependency install."
+    },
+    {
+      "command": "Poppler render and actual visual inspection of existing synthetic buyer PDF",
+      "result": "PASS",
+      "evidence": "One-page document SHA5e3ebaf8... retains Lithuanian glyphs and readable32+4.50=36.50. This is a fixture visual/transport proof, not legal invoice acceptance."
+    }
+  ],
+  "eventId": "4117bfb0-fae5-4467-b9f6-13daf4e91471",
+  "sequence": 4,
+  "at": "2026-10-12T17:58:34.271Z"
+}

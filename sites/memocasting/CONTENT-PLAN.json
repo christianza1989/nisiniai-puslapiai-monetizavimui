@@ -1,0 +1,878 @@
+{
+  "version": 1,
+  "siteId": "memocasting",
+  "preparedOn": "2026-10-12",
+  "scope": "Du patvirtinti rinkiniai ir naudojimo/dovanojimo/pagalbos klausimai; .com B2B tik perdavimas, ne build",
+  "budget": {
+    "priorActualUsd": 0.3724,
+    "additionalActualUsd": 0,
+    "reservedMaximumUsd": 0.25,
+    "notRecurring": true
+  },
+  "cadence": "Dependency-ready batches, no article-per-day/weekly quota; contentPolicy compatibility settings are not editorial limits",
+  "seasonalWindows": [
+    {
+      "window": "2026-10/11",
+      "job": "Kalėdų pasiruošimas",
+      "condition": "tikri terminai ir produkto priėmimas; jokio deliveryguarantee"
+    },
+    {
+      "window": "2027-01",
+      "job": "Valentino veiklos planavimas",
+      "condition": "esamas G2skyrius, ne sinonimųURL"
+    },
+    {
+      "window": "2027-03/04",
+      "job": "Šeimos ir artimųjų dalyvavimas",
+      "condition": "V+B tinkamumas; tikrų vietinių švenčių datų prieš use patikra"
+    }
+  ],
+  "records": [
+    {
+      "id": "M1",
+      "query": [
+        "rankų liejimo rinkinys porai"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "products/liejimo-rinkinys-porai",
+      "decision": "existing",
+      "question": "Ar mums tinka32EUR rinkinys?",
+      "answerScope": "Kainos/komplektacijos lapas; S",
+      "evidence": "owner2026-10-11; DataForSEO2026-10-11, underlying2026-08 LT170, not conversion",
+      "originalContribution": "Kainos/komplektacijos lapas; S",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "01d74212-2141-4060-8127-a71c42090450",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M2",
+      "query": [
+        "rankų liejimo rinkinys šeimai"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "products/seimos-rinkinys-1",
+      "decision": "existing",
+      "question": "Kuo skiriasi48EUR rinkinys?",
+      "answerScope": "Tikra komplektacija; rankų talpa dar V+B",
+      "evidence": "owner2026-10-11; DataForSEO2026-10-11, underlying2026-08 LT170, not conversion",
+      "originalContribution": "Tikra komplektacija; rankų talpa dar V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "66af512a-e57e-4f14-bfd5-0651eca06613",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M3",
+      "query": [
+        "rankų liejimo rinkinys",
+        "ranku liejimo rinkinys",
+        "rankų liejimo rinkiniai"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "collections/all",
+      "decision": "merge-synonyms",
+      "question": "Kurį iš dviejų rinkinių pasirinkti?",
+      "answerScope": "Dviejų patvirtintų pasiūlymų palyginimas; S+B",
+      "evidence": "owner2026-10-11; DataForSEO2026-10-11, underlying2026-08 LT170, not conversion",
+      "originalContribution": "Dviejų patvirtintų pasiūlymų palyginimas; S+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M4",
+      "query": [
+        "balti dažai rankų liejiniui"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "products/liejimo-rinkinys-porai",
+      "decision": "section",
+      "question": "Ar pridėti poros dažų variantą?",
+      "answerScope": "Patvirtinta+3EUR kaina; tūris/suderinamumas V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Patvirtinta+3EUR kaina; tūris/suderinamumas V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "01d74212-2141-4060-8127-a71c42090450",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M5",
+      "query": [
+        "Memocasting įmonė"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "apie-projekta",
+      "decision": "existing",
+      "question": "Kas atsako už prekę?",
+      "answerScope": "MB Memocasting; ne išgalvoti žmonės/rekvizitai; S",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "MB Memocasting; ne išgalvoti žmonės/rekvizitai; S",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "457cc2a3-775e-421a-8869-341e1eef359d",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M6",
+      "query": [
+        "rankų liejinių rezultatai"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "rezultatai",
+      "decision": "defer",
+      "question": "Kaip atrodo tikri rezultatai?",
+      "answerScope": "Tikros nuotraukos, sutikimai ir rinkinio identifikacija; K",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Tikros nuotraukos, sutikimai ir rinkinio identifikacija; K",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": null,
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M7",
+      "query": [
+        "rankų liejimo instrukcija",
+        "kaip pasidaryti rankų liejinį"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pages/instrukcija",
+      "decision": "existing",
+      "question": "Kaip atlikti darbą su savo rinkiniu?",
+      "answerScope": "Senas canonical; V+B instrukcija ir video, dabar read-first ribos",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Senas canonical; V+B instrukcija ir video, dabar read-first ribos",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M8",
+      "query": [
+        "pasiruošimas rankų liejimui"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/pasirengimas-ranku-liejimui",
+      "decision": "plan",
+      "question": "Kokią vietą ir pagalbą pasiruošti?",
+      "answerScope": "Konkretaus rinkinio darbų sąrašas ir foto; V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Konkretaus rinkinio darbų sąrašas ir foto; V+B",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "a15a13a1-71e4-484d-a031-37954cb760b9",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M9",
+      "query": [
+        "rankų pozos liejimui"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/ranku-pozos",
+      "decision": "plan",
+      "question": "Kokią pozą pasirinkti?",
+      "answerScope": "Išbandytų pozų mastelis ir išėmimo ribos, ne generuota anatomijos instrukcija; B+V",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Išbandytų pozų mastelis ir išėmimo ribos, ne generuota anatomijos instrukcija; B+V",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "27c62c28-b365-4acd-beaa-2b5ddba9a42c",
+      "answerReadiness": "current-scope-only",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M10",
+      "query": [
+        "alginato vandens santykis",
+        "gipso vandens santykis"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pages/instrukcija#kuriu-skaiciu-negalima-atspeti",
+      "decision": "section",
+      "question": "Kiek vandens ir kokia temperatūra?",
+      "answerScope": "TikSKUparametrai; V+B; jokio internetinio universalrecepto",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "TikSKUparametrai; V+B; jokio internetinio universalrecepto",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M11",
+      "query": [
+        "žiedai rankų liejimui",
+        "nagai rankų liejimui"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pages/instrukcija",
+      "decision": "section",
+      "question": "Ką nusiimti ir kaip įvertinti įstrigimo ribas?",
+      "answerScope": "Medžiagų naudojimo instrukcija; V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Medžiagų naudojimo instrukcija; V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "29842385-77b0-432e-9dea-fc4106ed630f",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M12",
+      "query": [
+        "kada išimti rankų liejinį",
+        "rankų liejinio džiovinimas"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/dziovinimas-ir-isemimas",
+      "decision": "existing",
+      "question": "Kuo skiriasi stingimas nuo džiovinimo?",
+      "answerScope": "Parengtas originalus etapų/apdailos/stebėjimų gidas pagal Edinburgh temų kontekstą; ne techninis Memo receptas. Tikslūs parametrai ir remonto bandymai lieka V+B priklausomybė.",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Parengtas originalus etapų/apdailos/stebėjimų gidas pagal Edinburgh temų kontekstą; ne techninis Memo receptas. Tikslūs parametrai ir remonto bandymai lieka V+B priklausomybė.",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "43b143fe-1ac7-4776-811e-1c5e99caa7a2",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M13",
+      "query": [
+        "rankų liejinio dažymas",
+        "rankų liejinio priežiūra"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/liejinio-dazymas-ir-prieziura",
+      "decision": "existing",
+      "question": "Kada ir kaip prižiūrėti rezultatą?",
+      "answerScope": "Parengtas originalus etapų/apdailos/stebėjimų gidas pagal Edinburgh temų kontekstą; ne techninis Memo receptas. Tikslūs parametrai ir remonto bandymai lieka V+B priklausomybė.",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Parengtas originalus etapų/apdailos/stebėjimų gidas pagal Edinburgh temų kontekstą; ne techninis Memo receptas. Tikslūs parametrai ir remonto bandymai lieka V+B priklausomybė.",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "49eb9c9a-d1b3-437c-8198-cdd582634ed5",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M14",
+      "query": [
+        "rankų liejimo sauga",
+        "rankų liejimas vaikams"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "produkto-sauga",
+      "decision": "plan",
+      "question": "Kam medžiagos tinka ir kokios ribos?",
+      "answerScope": "Tiekėjo klasifikacija/oda/amžius/atliekos; V, ne sveikatos pažadas",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Tiekėjo klasifikacija/oda/amžius/atliekos; V, ne sveikatos pažadas",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "05d73fd3-d184-4e13-803a-ad40b2b3e1f5",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M15",
+      "query": [
+        "nepavyko rankų liejinys"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pagalba",
+      "decision": "existing",
+      "question": "Kokius duomenis pateikti apie nepavykusį darbą?",
+      "answerScope": "Parengtas originalus etapų/apdailos/stebėjimų gidas pagal Edinburgh temų kontekstą; ne techninis Memo receptas. Tikslūs parametrai ir remonto bandymai lieka V+B priklausomybė.",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Parengtas originalus etapų/apdailos/stebėjimų gidas pagal Edinburgh temų kontekstą; ne techninis Memo receptas. Tikslūs parametrai ir remonto bandymai lieka V+B priklausomybė.",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M16",
+      "query": [
+        "burbuliukai rankų liejinyje"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pagalba#pozymis-nera-diagnoze",
+      "decision": "section",
+      "question": "Kodėl atsirado skylutės?",
+      "answerScope": "Tikro bandymo palyginimas; B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Tikro bandymo palyginimas; B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M17",
+      "query": [
+        "alginatas nesustingsta",
+        "alginatas per greitai stingsta"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pagalba#pirmas-klausimas-kuriame-etape",
+      "decision": "section",
+      "question": "Kas galėjo paveikti formos sudarymą?",
+      "answerScope": "Galiojimo/santykių/temperatūros diagnostika; V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Galiojimo/santykių/temperatūros diagnostika; V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M18",
+      "query": [
+        "sulūžęs rankų liejinys"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/suluzes-ranku-liejinys",
+      "decision": "plan",
+      "question": "Kada įmanoma taisyti, o kada kartoti?",
+      "answerScope": "Sudėties/suderinamų būdų ribos ir realus pavyzdys; V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Sudėties/suderinamų būdų ribos ir realus pavyzdys; V+B",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "53b97d71-e9ef-490c-864d-7cde41689f27",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M19",
+      "query": [
+        "ar rankų liejimo rinkinį galima naudoti kelis kartus"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pagalba#ko-nepakeicia-bendras-internetinis-patarimas",
+      "decision": "section",
+      "question": "Kiek bandymų leidžia mūsų medžiagos?",
+      "answerScope": "Tikras sunaudojimas; S+V+B; jokio refillSKU",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Tikras sunaudojimas; S+V+B; jokio refillSKU",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "23796e2f-040d-40a5-86fa-9630580f1fc7",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M20",
+      "query": [
+        "rankų liejimo rinkinio defektas"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "grazinimas",
+      "decision": "section",
+      "question": "Kaip pranešti apie galimą trūkumą?",
+      "answerScope": "Faktinis kanalas ir mūsų atvejo duomenys; T+K",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Faktinis kanalas ir mūsų atvejo duomenys; T+K",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M21",
+      "query": [
+        "rankų liejimo dovana"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "dovanos",
+      "decision": "plan",
+      "question": "Kam bendra veikla tinka?",
+      "answerScope": "Hub pagal dalyvavimą/laiką/vietą; S+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Hub pagal dalyvavimą/laiką/vietą; S+B",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
+      "answerReadiness": "current-scope-only",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M22",
+      "query": [
+        "dovana porai",
+        "dovanos poroms"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/dovana-porai",
+      "decision": "existing",
+      "question": "Rinkinys, veikla ar rezultatas?",
+      "answerScope": "Trys scenarijai ir pasirinkimo lapas; S; išsamus tekstas parengtas",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Trys scenarijai ir pasirinkimo lapas; S; išsamus tekstas parengtas",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "ff93abdd-8aae-4992-985e-f624ff8d874e",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M23",
+      "query": [
+        "dovana šeimai"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/dovana-seimai",
+      "decision": "plan",
+      "question": "Kaip susitarti dėl bendros šeimos veiklos?",
+      "answerScope": "Dalyvių organizavimo planas be išgalvoto rankų/amžiaus skaičiaus; S+V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Dalyvių organizavimo planas be išgalvoto rankų/amžiaus skaičiaus; S+V+B",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "52239986-e4fd-4b2c-bab4-496387a49216",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M24",
+      "query": [
+        "dovana vestuvių metinėms"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/dovana-vestuviu-metinems",
+      "decision": "existing",
+      "question": "Ką įteiksiu tą dieną?",
+      "answerScope": "Atgalinio planavimo lapas ir atsarginis planas; S; tekstas parengtas",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Atgalinio planavimo lapas ir atsarginis planas; S; tekstas parengtas",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "65534355-5b66-42be-ba22-23060c6a0f2e",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M25",
+      "query": [
+        "dovana vestuvėms",
+        "rankų liejimas vestuvėse"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "dovanos#vestuves",
+      "decision": "section",
+      "question": "Dviejų žmonių veikla ar didelio renginio paslauga?",
+      "answerScope": "Atskirtos apimtys; renginio paslaugos nepatvirtintos",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Atskirtos apimtys; renginio paslaugos nepatvirtintos",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M26",
+      "query": [
+        "dovana tėvams",
+        "dovana seneliams"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/dovana-tevams-ir-seneliams",
+      "decision": "plan",
+      "question": "Kaip įtraukti artimuosius be spaudimo?",
+      "answerScope": "Dalyvavimo/komforto pasirinkimo lapas; V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Dalyvavimo/komforto pasirinkimo lapas; V+B",
+      "media": "Originali tema-specific iliustracija; technikai tikras bandymas/medžiagų dokumentai prieš vaizdą",
+      "seasonalHook": "",
+      "publicPageId": "6dbe53ce-7090-40ad-a3ea-eaebad687043",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "private-plan-only",
+      "next": "Gauti nurodytus faktus, rašyti per studiją, full-text review/media/import"
+    },
+    {
+      "id": "M27",
+      "query": [
+        "rankų liejimo dovana Kalėdoms",
+        "dovana Valentino dienai",
+        "dovana mamai",
+        "dovana tėčiui"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "dovanos#progos",
+      "decision": "section",
+      "question": "Kada planuoti prieš konkrečią progą?",
+      "answerScope": "Nedauginti progų/sinonimųURL; tikras cutoffT; seasonalpriority atskirai",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Nedauginti progų/sinonimųURL; tikras cutoffT; seasonalpriority atskirai",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "Kalėdų2026 pasiruošimas nuo spalio; sausio2027 Valentino planavimas, be garantuotos datos",
+      "publicPageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M28",
+      "query": [
+        "rankų liejimo rinkinys ar paruošta dovana"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana",
+      "decision": "existing",
+      "question": "Ar gavėjai nori patys kurti?",
+      "answerScope": "4kriterijai ir pavyzdžiai; originalus tekstas parengtas",
+      "evidence": "owner2026-10-11; DataForSEO2026-10-11, underlying2026-08 LT170, not conversion",
+      "originalContribution": "4kriterijai ir pavyzdžiai; originalus tekstas parengtas",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "61da1023-a13e-49f7-b6be-62cf372f4936",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M29",
+      "query": [
+        "kaip palyginti rankų liejimo rinkinius"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "collections/all",
+      "decision": "section",
+      "question": "Kokią informaciją turi pateikti pardavėjas?",
+      "answerScope": "Masė/talpa/instrukcija/pagalba/galutinė suma; S+B; competitor dokumentai nėra mūsų faktai",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Masė/talpa/instrukcija/pagalba/galutinė suma; S+B; competitor dokumentai nėra mūsų faktai",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "11bb6bb7-3113-4532-adf7-8cec5deb8194",
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M30",
+      "query": [
+        "Memocasting pristatymas"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "pristatymas",
+      "decision": "existing",
+      "question": "Kokia suma ir terminas mano šalyje?",
+      "answerScope": "Realus carrier/paketas/pašto kodas; T; dabar fixture ribos",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Realus carrier/paketas/pašto kodas; T; dabar fixture ribos",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "24d9421d-e6d4-4d41-82a4-bcb850b81747",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M31",
+      "query": [
+        "Memocasting grąžinimas"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "grazinimas",
+      "decision": "existing",
+      "question": "Kaip atsisakyti ar pranešti apie trūkumą?",
+      "answerScope": "Patvarus vietinis prašymas; tikras adresas/teisinės sąlygos S+T",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Patvarus vietinis prašymas; tikras adresas/teisinės sąlygos S+T",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "53ac4b89-8168-4762-887f-438c0b5aba21",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M32",
+      "query": [
+        "Memocasting kontaktai"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "kontaktai",
+      "decision": "existing",
+      "question": "Kaip gauti pagalbą?",
+      "answerScope": "Shared forma ir durable testinis gavimas; actualINBOXdar trūksta",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Shared forma ir durable testinis gavimas; actualINBOXdar trūksta",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "87bcedff-88d4-408a-a4d0-92b07bd75ec2",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M33",
+      "query": [
+        "hand casting kits wholesale",
+        "zestawy do odlewów dłoni hurt"
+      ],
+      "country": "GLOBAL",
+      "language": "und",
+      "path": "memorycasting.com/en/wholesale",
+      "decision": "outside-scope",
+      "question": "Ar parduotuvei verta prekiauti?",
+      "answerScope": "B1 atskira vėlesnė svetainė, kainynas/MOQ/tiekimas S+T",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "B1 atskira vėlesnė svetainė, kainynas/MOQ/tiekimas S+T",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": null,
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M34",
+      "query": [
+        "vente en gros moulage mains",
+        "venta al por mayor moldes manos"
+      ],
+      "country": "GLOBAL",
+      "language": "und",
+      "path": "memorycasting.com/localized-wholesale",
+      "decision": "outside-scope",
+      "question": "Kaip užsakyti vietinei rinkai?",
+      "answerScope": "B2lokalizacijos tik konkrečiam partnerio pilotui; S+V+T",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "B2lokalizacijos tik konkrečiam partnerio pilotui; S+V+T",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": null,
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M35",
+      "query": [
+        "Memocasting privatumas"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "privatumas",
+      "decision": "existing",
+      "question": "Kokie duomenys naudojami?",
+      "answerScope": "ActualsessionStorage/API/DB ir operacijų ribos",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "ActualsessionStorage/API/DB ir operacijų ribos",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "887515ad-a6dd-4d47-a3cd-d884a5ccc3a4",
+      "answerReadiness": "current-scope-only",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M36",
+      "query": [
+        "Memocasting pirkimo sąlygos"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "naudojimo-salygos",
+      "decision": "existing",
+      "question": "Ką reiškia vietinis užsakymas?",
+      "answerScope": "Galutinės realios sąlygos S+T; testinis režimas aiškus",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Galutinės realios sąlygos S+T; testinis režimas aiškus",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "6db61a25-2056-4a41-a97e-c2bc1794f817",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M37",
+      "query": [
+        "alginato papildymas650g"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "products/alginato-papildymas-650g-dvieju-ranku-rinkiniui",
+      "decision": "existing",
+      "question": "Kaip patikrinti rinkinio papildymo suderinamumą?",
+      "answerScope": "Originalus dokumentų/kiekio/klausimo lapas; informacinis, neSKU. Konkretus pasiūlymas lieka S+V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Originalus dokumentų/kiekio/klausimo lapas; informacinis, neSKU. Konkretus pasiūlymas lieka S+V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "330139f8-8078-4d03-b859-6602d4745f13",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M38",
+      "query": [
+        "kūdikio pėdutės"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "products/kudikio-pedutes",
+      "decision": "existing",
+      "question": "Kokių produkto dokumentų reikia pėdučių rinkiniui?",
+      "answerScope": "Originalus informacijos patikros lapas suownerprovidedvaizdu; neamžiaus/saugos pažadas arSKU. Produkto faktai lieka S+V+B",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Originalus informacijos patikros lapas suownerprovidedvaizdu; neamžiaus/saugos pažadas arSKU. Produkto faktai lieka S+V+B",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "ef4ab657-b8db-4c57-abe0-3f5c395be67e",
+      "answerReadiness": "bounded-current-answer; supplier/business evidence required for promised technical detail",
+      "publication": "local-reviewed-package-not-deployed",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    },
+    {
+      "id": "M39",
+      "query": [
+        "checkout",
+        "krepšelis",
+        "užsakymo būsena"
+      ],
+      "country": "LT",
+      "language": "lt",
+      "path": "cart",
+      "decision": "functional-noindex",
+      "question": "Kaip atlikti konkretų pirkimo veiksmą?",
+      "answerScope": "Esamas commerceAPI, serverinės kainos/idempotency; ne organicURL",
+      "evidence": "owner map2026-10-11; measured volume not asserted",
+      "originalContribution": "Esamas commerceAPI, serverinės kainos/idempotency; ne organicURL",
+      "media": "Actual current MEDIA/DESIGN; būsimos fotokilmės vartai",
+      "seasonalHook": "",
+      "publicPageId": "684d6a6f-ede6-4bde-8a40-234b242d931a",
+      "answerReadiness": "current-scope-only",
+      "publication": "not-published",
+      "next": "Išlaikyti tikslų ketinimą ir nekurti dublių"
+    }
+  ],
+  "materializedPrivatePlans": [
+    {
+      "slug": "gidai/pasirengimas-ranku-liejimui",
+      "pageId": "a15a13a1-71e4-484d-a031-37954cb760b9",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    },
+    {
+      "slug": "gidai/ranku-pozos",
+      "pageId": "27c62c28-b365-4acd-beaa-2b5ddba9a42c",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    },
+    {
+      "slug": "produkto-sauga",
+      "pageId": "05d73fd3-d184-4e13-803a-ad40b2b3e1f5",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    },
+    {
+      "slug": "gidai/suluzes-ranku-liejinys",
+      "pageId": "53b97d71-e9ef-490c-864d-7cde41689f27",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    },
+    {
+      "slug": "dovanos",
+      "pageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    },
+    {
+      "slug": "gidai/dovana-seimai",
+      "pageId": "52239986-e4fd-4b2c-bab4-496387a49216",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    },
+    {
+      "slug": "gidai/dovana-tevams-ir-seneliams",
+      "pageId": "6dbe53ce-7090-40ad-a3ea-eaebad687043",
+      "proposalPublishAt": "2026-10-19T07:00:00Z",
+      "state": "private-not-written-not-approved"
+    }
+  ],
+  "preparedArticles": 6,
+  "unknownVolume": "null is not zero; PL1000 and LT170 are previous provider estimates, LV/EE unmeasured",
+  "afterLaunch": "GSC/AI/inquiry/order measurements at30/60/90days; no automation created"
+}

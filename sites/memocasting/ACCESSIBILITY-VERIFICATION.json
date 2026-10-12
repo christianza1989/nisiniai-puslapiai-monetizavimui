@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-12T10:47:38.651Z",
+  "packageSha256": "e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6",
+  "viewportObservations": 264,
+  "userTextSpacingPages": 88,
+  "keyboardFamilySurfaces": 36,
+  "keyboardSteps": 720,
+  "additionalProductConfirmationSteps": 20,
+  "screenshots": 36,
+  "zoom200": "UNVERIFIED",
+  "reducedMotionEnabledMode": "UNVERIFIED",
+  "limits": [
+    "Browser viewport is not a physical-device or full WCAG certification",
+    "Saved fullPage screenshots can precede below-fold lazy image load; actual ET home scrolling verifies9images",
+    "First keyboard productBODY transient retained; separate after-load confirmation passed"
+  ],
+  "source": "ACCESSIBILITY-VERIFICATION.md"
+}

@@ -72,7 +72,7 @@ export function renderShipping(content, detail, ctx) {
       else
         content.append(
           table(
-            ['Paslauga', 'Vežėjo kaina', 'Pristatymo informacija'],
+            ['Paslauga', 'Vežėjo kaina', 'Pristatymo informacija', 'Veiksmas'],
             q.payload.offers.map((offer) =>
               node(
                 'tr',
@@ -80,11 +80,43 @@ export function renderShipping(content, detail, ctx) {
                 cell(offer.name, 'Paslauga'),
                 cell(money(offer.amount, offer.currency), 'Vežėjo kaina', 'money'),
                 cell(offer.deliveryText || 'Nenurodyta', 'Pristatymo informacija'),
+                cell(prepareButton(q, offer), 'Veiksmas'),
               ),
             ),
           ),
         );
     }
+  }
+  function prepareButton(q, offer) {
+    const id = crypto.randomUUID(),
+      button = node(
+        'button',
+        {
+          type: 'button',
+          disabled:
+            !has('ship') ||
+            o.fulfillment_state !== 'ready' ||
+            Boolean(detail.shipmentCommands?.some((c) => c.state !== 'canceled')),
+        },
+        'Paruošti registravimą',
+      );
+    button.addEventListener('click', () =>
+      action(
+        button,
+        async () => {
+          await api('/api/operator/orders/' + o.id + '/shipment-commands', {
+            id,
+            planId: q.plan_id,
+            quoteId: q.id,
+            serviceId: offer.serviceId,
+            maxCost: offer.amount,
+          });
+          await reload();
+        },
+        'Siuntos registravimo užduotis išsaugota.',
+      ),
+    );
+    return button;
   }
   if (!integrations.shippingQuotes)
     content.append(
@@ -125,23 +157,42 @@ export function renderShipping(content, detail, ctx) {
     minlength: '3',
     maxlength: '200',
   });
+  const senderFields = Object.fromEntries(
+    [
+      ['name', 'Siuntėjo vardas / įmonė'],
+      ['line1', 'Siuntėjo adresas'],
+      ['phone', 'Siuntėjo telefonas su šalies kodu'],
+      ['email', 'Siuntėjo el. paštas'],
+    ].map(([key, label]) => [
+      key,
+      {
+        label,
+        input: node('input', {
+          required: true,
+          maxlength: key === 'email' ? '254' : '150',
+          type: key === 'email' ? 'email' : key === 'phone' ? 'tel' : 'text',
+        }),
+      },
+    ]),
+  );
   const company = node('input', { id: 'shipping-company', type: 'checkbox', checked: '' });
   const saveOrigin = node('button', { type: 'submit' }, 'Išsaugoti siuntėjo vietą');
   const originId = crypto.randomUUID();
   const originForm = node(
     'form',
     { class: 'stock-form' },
-    node('h3', {}, 'Siuntėjo vieta kainai apskaičiuoti'),
+    node('h3', {}, 'Siuntėjo adresas ir kontaktai'),
     node(
       'p',
       { class: 'hint' },
-      'Šalis: Lietuva. Šie duomenys naudojami kainai; siuntos registravimui dar reikės viso siuntėjo adreso ir kontaktų.',
+      'Šalis: Lietuva. Kiekviena išsaugota versija lieka su savo pakuotės planu.',
     ),
     node(
       'div',
       { class: 'fields' },
       node('label', { for: 'shipping-city' }, 'Miestas', city),
       node('label', { for: 'shipping-postal' }, 'Pašto kodas', postal),
+      ...Object.values(senderFields).map(({ label, input }) => node('label', {}, label, input)),
     ),
     node(
       'label',
@@ -169,6 +220,9 @@ export function renderShipping(content, detail, ctx) {
           postalCode: postal.value,
           isCompany: company.checked,
           reason: explanation.value,
+          ...Object.fromEntries(
+            Object.entries(senderFields).map(([key, value]) => [key, value.input.value]),
+          ),
         });
         await reload();
       },

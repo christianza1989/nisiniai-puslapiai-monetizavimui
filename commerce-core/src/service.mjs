@@ -697,11 +697,12 @@ export class CommerceService {
     const token = crypto.randomUUID(),
       now = this.now();
     await this.stmt(
-      "UPDATE outbox SET state='leased',lease_token=?,lease_until=?,attempts=attempts+1 WHERE store_id=? AND id IN (SELECT id FROM outbox WHERE store_id=? AND state!='done' AND lease_until<=? ORDER BY created_at LIMIT ?)",
+      "UPDATE outbox SET state='leased',lease_token=?,lease_until=?,attempts=attempts+1 WHERE store_id=? AND id IN (SELECT o.id FROM outbox o WHERE o.store_id=? AND o.state!='done' AND o.lease_until<=? AND NOT EXISTS(SELECT 1 FROM outbox_delivery d WHERE d.store_id=o.store_id AND d.event_id=o.id AND (d.state='dead' OR d.next_attempt_at>?)) ORDER BY o.created_at,o.id LIMIT ?)",
       token,
       now + 60000,
       store,
       store,
+      now,
       now,
       limit,
     ).run();

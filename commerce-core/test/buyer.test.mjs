@@ -88,3 +88,15 @@ test('buyer refuses writes when context is closed or persistent retry storage fa
   assert.equal((await x.service.one('SELECT COUNT(*) count FROM orders')).count, 0);
   x.db.close();
 });
+test('definitive validation rejection unlocks the form while unknown outcomes retain the replay identity', async () => {
+  const x = await setup();
+  const bad = input();
+  bad.customer.phone = 'wrong';
+  await assert.rejects(x.client.create(bad), /invalid_customer_phone/);
+  assert.equal(x.client.attempt, undefined);
+  assert.equal(x.storage.values.size, 0);
+  const order = await x.client.create(input());
+  assert.ok(order.id);
+  assert.equal((await x.service.one('SELECT COUNT(*) count FROM orders')).count, 1);
+  x.db.close();
+});

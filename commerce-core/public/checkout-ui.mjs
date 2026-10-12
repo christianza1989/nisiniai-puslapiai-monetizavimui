@@ -166,17 +166,28 @@ export async function mountCheckout(
     country = 'LT',
     client = new CommerceClient(),
     termsUrl = '/pirkimo-taisykles',
+    initialLines = [],
+    headingLevel = 1,
+    title,
+    productTitle = (product) => product.title,
   } = {},
 ) {
   const t = translations[language] || translations.lt;
   const status = element('p', { role: 'status', 'aria-live': 'polite' });
   const content = element('div');
-  root.replaceChildren(element('h1', {}, t[0]), status, content);
+  root.replaceChildren(
+    ...(Number.isInteger(headingLevel) && headingLevel >= 1 && headingLevel <= 6
+      ? [element('h' + headingLevel, {}, title || t[0])]
+      : []),
+    status,
+    content,
+  );
   const money = (amount, currency) =>
     new Intl.NumberFormat(language, { style: 'currency', currency }).format(amount / 100);
   const run = async (button, task) => {
     button.disabled = true;
     root.setAttribute('aria-busy', 'true');
+    status.setAttribute('role', 'status');
     status.textContent = '…';
     try {
       await task();
@@ -255,6 +266,14 @@ export async function mountCheckout(
       content.append(
         element('p', {}, t[34] + ': ' + (receipt.shipment.tracking || receipt.shipment.state)),
       );
+    for (const event of receipt.tracking || [])
+      content.append(
+        element(
+          'p',
+          {},
+          [event.providerDate, event.text, event.location].filter(Boolean).join(' · '),
+        ),
+      );
   };
   const formView = () => {
     content.replaceChildren();
@@ -269,11 +288,19 @@ export async function mountCheckout(
       return input;
     };
     const productInputs = catalog.map((p) => {
-      const q = field(p.sku, p.title, {
+      const q = field(p.sku, productTitle(p, language), {
         type: 'number',
         min: '0',
         max: Math.min(100, p.available),
-        value: '0',
+        value: String(
+          initialLines.find(
+            (l) =>
+              l.sku === p.sku &&
+              Number.isInteger(l.quantity) &&
+              l.quantity >= 0 &&
+              l.quantity <= 100,
+          )?.quantity || 0,
+        ),
         inputmode: 'numeric',
       });
       return { p, q };
@@ -391,6 +418,11 @@ export async function mountCheckout(
     try {
       await orderView(await client.resume());
     } catch {
+      if (!client.attempt) {
+        formView();
+        status.textContent = t[29];
+        return client;
+      }
       status.textContent = t[30];
       const retry = element('button', { type: 'button' }, t[16]);
       retry.addEventListener('click', () =>

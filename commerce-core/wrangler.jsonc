@@ -31,4 +31,5 @@
       "enabled": true,
     },
   },
+  "triggers": { "crons": ["*/5 * * * *"] },
 }

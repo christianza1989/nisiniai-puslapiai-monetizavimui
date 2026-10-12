@@ -3,6 +3,7 @@ import { CommerceError, requireValue, integer, identifier } from './validation.m
 // Current official SP OpenAPI2.0.1, inspected 2026-10-12. This connector is
 // sandbox/read-only until order-create price/idempotency contracts are verified.
 const STAGING = 'https://staging.sendparcel.com';
+export const SENDPARCEL_PRODUCTION = 'https://api.sendparcel.com';
 const shortText = (v, max = 200) =>
   typeof v === 'string' && v.length > 0 && v.length <= max && !/[\x00-\x1f\x7f]/.test(v);
 const optionalText = (v, max = 200) => v === undefined || v === '' || shortText(v, max);
@@ -19,10 +20,14 @@ export class SendparcelAdapter {
     apiPassword,
     accessToken,
     baseUrl = STAGING,
+    productionReadAdmission,
     fetchImpl = fetch,
   }) {
     requireValue(
-      environment === 'sandbox' && baseUrl === STAGING,
+      (environment === 'sandbox' && baseUrl === STAGING) ||
+        (environment === 'production' &&
+          baseUrl === SENDPARCEL_PRODUCTION &&
+          productionReadAdmission === true),
       'carrier_environment_not_admitted',
       403,
     );
@@ -41,11 +46,12 @@ export class SendparcelAdapter {
     this.accessToken = accessToken;
     this.fetch = fetchImpl;
     this.provider = 'sendparcel';
+    this.baseUrl = baseUrl;
     this.supportsIdempotentCreate = false;
     this.supportsBooking = false;
   }
-  async request(path, body, query = {}, maxBytes = 5 * 1024 * 1024, timeoutMs = 15000) {
-    const paths = {
+  allowedPaths() {
+    return {
       '/rest-api/quotes': 'POST',
       '/rest-api/returns/postboxes': 'POST',
       '/rest-api/services': 'GET',
@@ -53,8 +59,11 @@ export class SendparcelAdapter {
       '/rest-api/orders/documents': 'POST',
       '/rest-api/tracks': 'POST',
     };
+  }
+  async request(path, body, query = {}, maxBytes = 5 * 1024 * 1024, timeoutMs = 15000) {
+    const paths = this.allowedPaths();
     requireValue(paths[path], 'carrier_operation_not_admitted', 403);
-    const url = new URL(path, STAGING);
+    const url = new URL(path, this.baseUrl);
     for (const [key, value] of Object.entries(query)) url.searchParams.set(key, String(value));
     let response;
     try {

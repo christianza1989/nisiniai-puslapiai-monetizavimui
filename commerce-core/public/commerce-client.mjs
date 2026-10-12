@@ -29,7 +29,11 @@ export class CommerceClient {
       throw new Error('network');
     }
     const value = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(value.error || 'operation_failed');
+    if (!response.ok) {
+      const error = new Error(value.error || 'operation_failed');
+      error.status = response.status;
+      throw error;
+    }
     return value;
   }
   async initialize() {
@@ -85,6 +89,7 @@ export class CommerceClient {
     ]
       .map((b) => b.toString(16).padStart(2, '0'))
       .join('');
+    if (this.busy) throw new Error('checkout_busy');
     if (this.attempt && this.attempt.fingerprint !== fingerprint)
       throw new Error('checkout_attempt_exists');
     this.attempt ||= {
@@ -113,6 +118,17 @@ export class CommerceClient {
       this.attempt.until = this.now() + 30 * 86400000;
       this.persist();
       return result.order;
+    } catch (error) {
+      if (
+        !this.attempt?.orderId &&
+        ([400, 403, 422].includes(error.status) ||
+          (error.status === 409 &&
+            ['stock_unavailable', 'product_unavailable'].includes(error.message)))
+      ) {
+        this.storage.removeItem(this.key);
+        this.attempt = undefined;
+      }
+      throw error;
     } finally {
       this.busy = false;
     }
@@ -178,6 +194,7 @@ export class CommerceClient {
     return response.blob();
   }
   newOrder() {
+    if (this.busy) throw new Error('checkout_busy');
     this.storage.removeItem(this.key);
     this.attempt = undefined;
   }

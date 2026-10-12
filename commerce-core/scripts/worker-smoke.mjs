@@ -10,6 +10,15 @@ import { CommerceService } from '../src/service.mjs';
 import { CommerceOperations } from '../src/operations.mjs';
 import { Backoffice } from '../src/backoffice.mjs';
 import { Wholesale } from '../src/wholesale.mjs';
+import { ShippingOperations } from '../src/shipping.mjs';
+import { ShipmentCommands } from '../src/shipment-commands.mjs';
+import { R2PrivateStorage } from '../src/private-storage.mjs';
+import {
+  foundationStore,
+  foundationProducts,
+  foundationPayment,
+  foundationCarrier,
+} from '../test/foundation-fixtures.mjs';
 import { applyMigrations } from '../src/migrations.mjs';
 import { digest } from '../src/validation.mjs';
 import { fixtureStore, fixtureProducts, cart, key, payment } from '../test/fixtures.mjs';
@@ -22,6 +31,10 @@ const options = {
   compatibilityDate: '2026-10-11',
   d1Databases: { COMMERCE_DB: '00000000-0000-0000-0000-000000000001' },
   r2Buckets: { COMMERCE_FILES: 'commerce-private-fixture' },
+  queueProducers: { COMMERCE_QUEUE: 'commerce-fixture-jobs' },
+  queueConsumers: {
+    'commerce-fixture-jobs': { maxBatchSize: 1, maxBatchTimeout: 1, maxRetries: 2 },
+  },
   serviceBindings: {
     ASSETS: async (request) => {
       const asset = new URL(request.url).pathname.slice(1);
@@ -33,6 +46,8 @@ const options = {
           'backoffice-ui.mjs',
           'shipping-ui.mjs',
           'private-files-ui.mjs',
+          'shipment-commands-ui.mjs',
+          'jobs-ui.mjs',
           'commerce.html',
           'commerce-client.mjs',
           'checkout-ui.mjs',
@@ -791,9 +806,141 @@ try {
       .order.stock_state,
     'allocated',
   );
+  const nativeStore = 'store_native';
+  await service.provisionStore(
+    foundationStore('store-native.example', nativeStore),
+    foundationProducts(),
+  );
+  const nativeCustomer = {
+    name: 'Native Test User',
+    email: 'buyer@example.test',
+    phone: '+37060000000',
+    address: { country: 'LT', line1: 'Testinė g. 2', city: 'Vilnius', postalCode: '01101' },
+  };
+  const nativeOrder = (
+    await service.createOrder(
+      nativeStore,
+      'sandbox',
+      { ...cart(), deliveryId: 'fixture_door', customer: nativeCustomer },
+      key(100),
+    )
+  ).order;
+  await service.checkout(
+    nativeStore,
+    'sandbox',
+    nativeOrder.id,
+    foundationPayment('store-native.example', nativeStore),
+  );
+  await service.acceptPayment(
+    nativeStore,
+    'sandbox',
+    payment(
+      await service.getOrder(nativeStore, 'sandbox', nativeOrder.id),
+      nativeStore,
+      'evt_native_commands',
+    ),
+  );
+  await service.markPacked(nativeStore, 'sandbox', nativeOrder.id);
+  let fixtureLedger = {};
+  const nativeCarrier = foundationCarrier({
+    load: async () => fixtureLedger,
+    save: async (value) => {
+      fixtureLedger = value;
+    },
+    loadPdf: async () => new TextEncoder().encode('%PDF-1.7\nnative fixture'),
+  });
+  const nativeShipping = new ShippingOperations(service);
+  await nativeShipping.origin(
+    nativeStore,
+    'sandbox',
+    {
+      id: 'native_origin',
+      country: 'LT',
+      name: 'Native Test MB',
+      line1: 'Testinė g. 1',
+      city: 'Vilnius',
+      postalCode: '02211',
+      phone: '+37060000001',
+      email: 'sender@example.test',
+      isCompany: true,
+      reason: 'Native fixture origin',
+    },
+    'fixture_operator',
+  );
+  await nativeShipping.prepare(
+    nativeStore,
+    'sandbox',
+    nativeOrder.id,
+    { id: 'native_plan', originId: 'native_origin', recipientIsCompany: false, mode: 'individual' },
+    'fixture_operator',
+  );
+  await nativeShipping.quote(
+    nativeStore,
+    'sandbox',
+    'native_plan',
+    { id: 'native_quote' },
+    nativeCarrier,
+    'fixture_operator',
+  );
+  const nativeCommands = new ShipmentCommands(
+    service,
+    new R2PrivateStorage(await mf.getR2Bucket('COMMERCE_FILES')),
+  );
+  await nativeCommands.prepare(
+    nativeStore,
+    'sandbox',
+    nativeOrder.id,
+    {
+      id: 'native_command',
+      planId: 'native_plan',
+      quoteId: 'native_quote',
+      serviceId: '42',
+      maxCost: 799,
+    },
+    'fixture_operator',
+  );
+  const nativeExecution = await Promise.allSettled(
+    [1, 2].map(() =>
+      nativeCommands.execute(
+        nativeStore,
+        'sandbox',
+        'native_command',
+        nativeCarrier,
+        'fixture_operator',
+      ),
+    ),
+  );
+  assert.ok(nativeExecution.some((r) => r.status === 'fulfilled'));
+  assert.equal(Object.keys(fixtureLedger).length, 1);
+  await nativeCommands.refresh(
+    nativeStore,
+    'sandbox',
+    'native_command',
+    nativeCarrier,
+    'fixture_operator',
+  );
+  assert.equal(
+    (await service.getOrder(nativeStore, 'sandbox', nativeOrder.id)).fulfillment_state,
+    'labelled',
+  );
+  assert.equal(
+    (
+      await service.one(
+        "SELECT COUNT(*) n FROM private_files WHERE store_id=? AND kind='shipment_document'",
+        nativeStore,
+      )
+    ).n,
+    1,
+  );
+  await assert.rejects(
+    service
+      .stmt('UPDATE shipment_commands SET first_attempt_at=NULL WHERE store_id=?', nativeStore)
+      .run(),
+    /shipment_command_immutable/,
+  );
   await mf.dispose();
   mf = undefined;
-  db = await start('src/worker.mjs');
+  db = await start('src/worker.mjs', { COMMERCE_AUTOMATION_ENABLED: '1' });
   const storedDocument = await new CommerceService(db).one(
     "SELECT id FROM documents WHERE store_id='store_a' AND kind='sale' ORDER BY created_at LIMIT 1",
   );
@@ -829,6 +976,17 @@ try {
     (await (await mf.getR2Bucket('COMMERCE_FILES')).get(exportedFile.storage_key)).size,
     nativeBytes.length,
   );
+  const producer = await mf.getQueueProducer('COMMERCE_QUEUE');
+  await producer.send({ schemaVersion: 1, storeId: 'store_a', environment: 'sandbox' });
+  let nativeJobs = 0;
+  for (let attempt = 0; attempt < 60; attempt++) {
+    nativeJobs = (
+      await new CommerceService(db).one("SELECT COUNT(*) n FROM outbox_delivery WHERE state='done'")
+    ).n;
+    if (nativeJobs > 0) break;
+    await new Promise((resolve) => setTimeout(resolve, 100));
+  }
+  assert.ok(nativeJobs > 0, 'native Queue must actually dispatch the worker job consumer');
   await mf.dispose();
   mf = undefined;
   await start('src/worker.mjs', { COMMERCE_ENV: 'production' });

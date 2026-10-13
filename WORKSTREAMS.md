@@ -404,3 +404,7 @@ Planning reference now separates protected plan reconciliation from concrete aut
 2026-10-13 RESERVED: owner removes public Pinet identity/email and verslomatika attribution from parasoplansetes only. Scope own package re-review/release, StepOver renderer, public contact visibility, schema/LLM projection and report. Preserve other sites, transport secrets and historical artifacts.
 
 2026-10-13 DEPLOYED: owner public identity override removes Pinet/verslomatika from parasoplansetes; new Workspace public address sales@parasoplansetes.lt. Immutable release49475e39 / Worker04a29b4b. Native SEO/core/type/build checks and live identity27+27/domain284/redirect5 PASS; OS DNS cache caveat. Report sites/parasoplansetes/PUBLIC_IDENTITY_20261013.md. No mail activation.
+
+2026-10-13 RESERVED: manufacturer technical specification research and Lithuanian product drafts in sites/parasoplansetes/produktai-technine-informacija-20261013 only; preserve approved public package and deployment. No publication in this task.
+
+2026-10-13 COMPLETE DRAFT ONLY:12 Lithuanian manufacturer technical descriptions (6hardware/4software/2catalogues), all8product type pages covered. 19Treg reads cost0.00285USD; source disagreements retained per field. Folder sites/parasoplansetes/produktai-technine-informacija-20261013. Public package/deployment unchanged; no approval/release fabricated.

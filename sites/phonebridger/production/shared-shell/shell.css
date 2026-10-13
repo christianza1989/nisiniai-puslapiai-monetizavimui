@@ -11,3 +11,4 @@
 .pb-mobile-summary[data-footer-visible]{display:none}
 .pb-shell-signoff h2{font-weight:700}
 @media(max-width:480px){.pb-shell-wide-label{display:none}.pb-shell-short-label{display:inline}.pb-shell-cta{font-size:11px;padding:10px 8px}.pb-shell-footer-bottom{font-size:11px}}
+@media(max-width:360px){.pb-shell-cta{white-space:normal;text-align:center;max-width:80px}.pb-shell-cta svg{display:none}.pb-shell-short-label{max-width:58px}}

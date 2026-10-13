@@ -1,0 +1,20 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Current-main integration exposed incompatible legacy SEO expectations and simultaneous stable-site-ID / English locale onboarding changes. Preserve the reviewed CollectionPage migration and both onboarding capabilities; original failure retained in the launch audit.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/32",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/test/site-locale.test.mjs",
+    "sites/phonebridger/launch-audit-20261013/PHASE-1-AUDIT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124",
+  "rollback": "Revert only the scoped compatibility follow-up; retain latest main CollectionPage and stable-site-ID semantics and the original dated SEO baseline.",
+  "id": "upgrade-89bcbbcb-e6f9-4450-87f3-62f9dd6e741e",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "dc620666f184e53f584f9b5ffc90daa23aabd21b",
+  "createdAt": "2026-10-13T06:55:24.208Z"
+}

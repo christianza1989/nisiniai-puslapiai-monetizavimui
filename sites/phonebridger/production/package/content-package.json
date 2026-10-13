@@ -535,7 +535,7 @@
       "type": "service",
       "slug": "privacy",
       "title": "Your data. Clear boundaries.",
-      "description": "How MB Memocasting handles PhoneBridger enquiries, accounts, payments, supplier delivery, reviews and limited measurement.",
+      "description": "How MB Memocasting handles PhoneBridger accounts, support, optional referral cookies, creator payouts, purchases and limited measurement.",
       "intent": "Understand PhoneBridger privacy information and its current beta boundaries.",
       "body": [
         {
@@ -585,7 +585,42 @@
         },
         {
           "type": "paragraph",
-          "text": "We store your email, creation date and salted password hash, never a readable password. A first-party Secure, HttpOnly, SameSite session cookie expires after eight hours; logging out revokes the session. Account records remain until deletion. Email verification and automatic password recovery are not available yet. Creating an account does not itself make a purchase. Your account connects you to your own order history when Checkout is available."
+          "text": "We store your email, creation date and salted password hash, never a readable password. A first-party Secure, HttpOnly, SameSite session cookie expires after eight hours; logging out revokes the session. Email verification and password recovery use expiring, single-use links sent to your email address. We store token hashes, not readable tokens. Resetting your password revokes existing sessions. Deleting your login removes its email, password, sessions, profile and verification records; financial records may remain for the purposes explained below. Creating an account does not itself make a purchase. Your account connects you to your own order history when Checkout is available."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Account settings and support"
+        },
+        {
+          "type": "paragraph",
+          "text": "Account settings store your display name, manual setup checklist and choice to receive support reply notifications. Support records include your subject, message, related order reference and replies. Diagnostic details are included only if you choose to send them and are filtered before storage. Reply notifications require a verified email and your explicit choice in Account settings. Verification and password recovery messages are service messages, not marketing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Service mail is queued with encrypted content. Content is cleared after its send attempt or expiry; delivery records are removed after 30 days. Support correspondence may be retained while handling your request or a related dispute. Contact us to request access, correction or deletion; necessary financial and legal records may need to remain."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Creator referrals and commissions"
+        },
+        {
+          "type": "paragraph",
+          "text": "The creator program stores applications, submitted public channel links, audience descriptions, approval decisions, accepted program terms, referral links and codes, performance totals, commission events and payout references. Creators see masked referral information, not buyer email addresses or delivery details. Financial records remain available for refunds, disputes and accounting after a login is deleted; that deletion suspends its creator access."
+        },
+        {
+          "type": "paragraph",
+          "text": "Referral links ask for your choice before setting first-party referral cookies. If you allow tracking, pb_ref remembers the referral and pb_visitor recognizes repeat visits for up to 30 days. We store a keyed hash of the visitor identifier in referral click records and remove those click records after 90 days. We remember your allow or decline choice in pb_ref_choice for 30 days. You can change your referral preference at any time; declining clears referral cookies and stops cookie-based attribution. Do Not Track and Global Privacy Control are respected. You can shop without referral tracking and still enter an eligible creator code at checkout."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Creator payout setup"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stripe hosts creator identity and bank verification. We store the connected Stripe account reference, country, environment, capability status and transfer or reversal references. Identity documents and bank details are supplied directly to Stripe rather than stored by this website. Stripe processes this information under its own privacy practices. A confirmed transfer to a Stripe balance does not itself confirm receipt in a bank account."
         },
         {
           "type": "heading",
@@ -630,7 +665,7 @@
         },
         {
           "type": "paragraph",
-          "text": "No advertising trackers or marketing subscription is included. Checkout availability is shown on the shop; purchase processing starts only when you choose to buy. The downloaded apps have their own permissions and pairing settings; this website notice does not replace their setup information. Updated 6 October 2026."
+          "text": "No advertising trackers or marketing subscription is included. Checkout availability is shown on the shop; purchase processing starts only when you choose to buy. The downloaded apps have their own permissions and pairing settings; this website notice does not replace their setup information. Updated 13 October 2026."
         },
         {
           "type": "paragraph",
@@ -641,12 +676,12 @@
       "media": [],
       "links": [],
       "id": "b82b4bbf-cafa-4f4a-a47e-aed706fea3d4",
-      "revisionHash": "ac00fcbb08c29e40d47e5fe8f7dd68fc4fe5c75cdc59d854577b2cb3b06fb6f1",
+      "revisionHash": "c0d4472abcbae2bcd69a4d88d2bcdfce368205a668a38e0051bcb16c0d2a31ac",
       "approval": {
         "status": "approved",
-        "revisionHash": "ac00fcbb08c29e40d47e5fe8f7dd68fc4fe5c75cdc59d854577b2cb3b06fb6f1",
-        "approvedAt": "2026-10-06T20:09:56.017Z",
-        "actorId": "owner-authorized-production-review-20261006"
+        "revisionHash": "c0d4472abcbae2bcd69a4d88d2bcdfce368205a668a38e0051bcb16c0d2a31ac",
+        "approvedAt": "2026-10-13T07:13:13.998Z",
+        "actorId": "codex-owner-authorized-launch-polish-20261013"
       }
     },
     {
@@ -1663,5 +1698,5 @@
       }
     }
   ],
-  "generatedAt": "2026-10-06T20:52:45.590Z"
+  "generatedAt": "2026-10-13T08:59:21.824Z"
 }

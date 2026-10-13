@@ -5,11 +5,16 @@ const root=path.resolve(process.argv[2]||'../dovanos-memorycasting/.sites-runtim
 const release=JSON.parse(await readFile(path.join(root,'release.json'),'utf8'));
 const origin=process.argv[3];
 if(origin&&origin!=='https://phonebridger.com')throw Error('Use the exact authorized canonical origin.');
-const headers=new Set(),footers=new Set();
+const headers=new Set(),footers=new Set();let privateLayouts=0;
 for(const slug of Object.keys(release.routes)){
  let html;
  if(origin){const response=await fetch(origin+'/'+slug,{signal:AbortSignal.timeout(15000)});if(!response.ok)throw Error('Public route failed: '+slug);html=await response.text();}
  else html=await readFile(path.join(root,'assets',slug,'index.html'),'utf8');
+ if(['account','recover','verify'].includes(slug)&&release.routes[slug].revisionHash===null){
+  const script=slug==='account'?'/assets/account-workspace/workspace.js':'/assets/account-security/security.js';
+  if(!html.includes(script)||!/<main\b/.test(html))throw Error('Private layout missing: '+slug);
+  privateLayouts++;continue;
+ }
  const h=html.match(/<header class="pb-global-header">[\s\S]*?<\/header>/g),f=html.match(/<footer class="pb-global-footer">[\s\S]*?<\/footer>/g);
  if(h?.length!==1||f?.length!==1||/<(?:header|footer) class="(?:site-header|inner-header|site-footer|inner-footer)\b/.test(html))throw Error('Shell missing or duplicated: '+slug);
  headers.add(h[0]);footers.add(f[0]);
@@ -22,4 +27,4 @@ for(const slug of Object.keys(release.routes)){
 if(headers.size!==1||footers.size!==1)throw Error('Page shell versions differ');
 for(const file of ['app.js','assets/shared-shell/shell.js'])new Script(await readFile(path.join(root,'assets',file),'utf8'));
 if(origin)for(const file of ['shell.css','shell.js','icons.svg','cards.svg']){const response=await fetch(origin+'/assets/shared-shell/'+file,{signal:AbortSignal.timeout(15000)});if(!response.ok||await response.text()!==await readFile(path.join(root,'assets/assets/shared-shell',file),'utf8'))throw Error('Public shell asset differs: '+file);}
-console.log(JSON.stringify({origin:origin||'local build',routes:Object.keys(release.routes).length,headerVersions:headers.size,footerVersions:footers.size,links:'PASS',scripts:'PASS',...(origin?{deployedAssets:'PASS'}:{})}));
+console.log(JSON.stringify({origin:origin||'local build',routes:Object.keys(release.routes).length,privateLayouts,headerVersions:headers.size,footerVersions:footers.size,links:'PASS',scripts:'PASS',...(origin?{deployedAssets:'PASS'}:{})}));

@@ -1,0 +1,18 @@
+{
+  "siteId": "phonebridger",
+  "summary": "The old PhoneBridger public-shell checker incorrectly rejected the new separate account/security layouts. Admit only declared null-revision private routes with their real layout scripts; keep all public shell/version/link checks.",
+  "category": "code",
+  "evidence": [
+    "Original build acceptance failed: Shell missing or duplicated: account; preserved in launch audit baseline.",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124"
+  ],
+  "paths": [
+    "sites/phonebridger/production/check-shell.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124",
+  "rollback": "Scoped revert of checker distinction; public shell acceptance remains mandatory and private API/browser flows are verified separately.",
+  "id": "upgrade-e7eee58b-88fa-4920-9819-6916663430ef",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "dc620666f184e53f584f9b5ffc90daa23aabd21b",
+  "createdAt": "2026-10-13T07:41:49.784Z"
+}

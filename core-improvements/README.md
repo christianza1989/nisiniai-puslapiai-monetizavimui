@@ -39,6 +39,10 @@ Procesui nutrūkus prepared būsenoje, source / payload neišmetami. Patikrinti 
 
 Vietinis lock padeda vieno įrašo operacijoms, ne sprendžia distributed konkurenciją ar priešišką vienalaikį filesystem keitimą. Own worktree / failų scope / reviewed PR tebėra būtini.
 
+## Committed change coverage
+
+After freshness and committing your scoped changes, run `node scripts/core-upgrade-check.mjs --repo <affected checkout> --journal <companion checkout> --base <actual pre-change commit>`. It checks changed shared paths against exact journal paths whose GitHub issue belongs to that repository. Public-core changes can have a record in this journal with their public-core issue and repository-relative paths. Keep the baseline literal; an empty diff is not proof that an earlier upgrade was covered. The helper is read-only and does not prove semantic review, checks, main merge or runtime adoption. Uncommitted work is deliberately excluded. For a main integration, additionally assess inherited changes and keep historical migrations/failures intact.
+
 ## Naujas PC / nauja sesija
 
 Po main merge naujas agentas fetchina abu repo, perskaito AGENTS ir susijusius Git skills, mato naują TOOLS sutartį bei žurnalą. Nepublikuoti vietiniai įrašai nepasiekia kitų PC. Pagal [šalto starto bandymą](../docs/CORE_UPGRADE_COLD_START.md) patikrinti pilną kelią; testo fixtures nėra tikras nišos klientų aptarnavimas.

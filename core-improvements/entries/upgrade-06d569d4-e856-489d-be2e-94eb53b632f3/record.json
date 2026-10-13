@@ -1,0 +1,29 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Current main deliberately migrated guide hubs to CollectionPage; inherited nine-site SEO golden test failed. Validate the exact projected collection before historical normalization, retain original fixture bytes, and test English guides. Account deletion now also removes private profile and referral cookies require explicit choice rather than silent link tracking.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/32",
+    "Baseline on fresh integration: 125 tests, 124 passed, historical akmenas schema hash failed after reviewed CollectionPage migration; original failure retained in audit.",
+    "European Commission cookie guidance retrieved 2026-10-13; referral implementation previously set pb_ref/pb_visitor on initial GET."
+  ],
+  "paths": [
+    "lib/niche-schema-core.mjs",
+    "tests/niche-seo-legacy.test.mjs",
+    "tests/niche-seo.test.mjs",
+    "lib/phonebridger-account-security.mjs",
+    "tests/phonebridger-account-security.test.mjs",
+    "lib/phonebridger-referral-choice.mjs",
+    "lib/phonebridger-affiliate.mjs",
+    "tests/phonebridger-affiliate.test.mjs",
+    "tests/phonebridger-referral-choice.test.mjs",
+    "deploy/phonebridger/worker.mjs",
+    "deploy/phonebridger/build.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/32",
+  "rollback": "Scoped revert of follow-up; do not rewrite historical SEO hashes or current-main guide collection semantics, financial ledgers, frozen mouse or public purchase edition.",
+  "id": "upgrade-06d569d4-e856-489d-be2e-94eb53b632f3",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "dc620666f184e53f584f9b5ffc90daa23aabd21b",
+  "createdAt": "2026-10-13T07:35:05.645Z"
+}

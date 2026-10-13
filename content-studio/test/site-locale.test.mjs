@@ -14,10 +14,14 @@ test('shared v1 onboarding preserves defaults and validates English identity bef
     assert.equal(old.locale, 'lt-LT'); assert.equal(old.timezone, 'Europe/Vilnius');
     const english = await model.createSite({ canonicalHost: 'english-locale.example', name: 'Fixture', offer: 'Test', locale: 'en-us', timezone: 'Europe/London' });
     assert.equal(english.locale, 'en-US'); assert.equal(english.timezone, 'Europe/London');
+    const stable = await model.createSite({ canonicalHost: 'stable-locale.example', siteId: 'stable-english', name: 'Fixture', offer: 'Test', locale: 'en-us', timezone: 'Europe/London' });
+    assert.equal(stable.id, 'stable-english'); assert.equal(stable.locale, 'en-US'); assert.equal(stable.timezone, 'Europe/London');
+    await assert.rejects(model.createSite({ canonicalHost: 'invalid-stable.example', siteId: '../unsafe', locale: 'en-US' }));
+    assert.equal((await model.listSites()).some(s => s.canonicalHost === 'invalid-stable.example'), false);
     for (const extra of [{ locale: '' }, { locale: 'bad_locale' }, { timezone: 'Nowhere/Invalid' }, { timezone: '' }]) {
       await assert.rejects(model.createSite({ canonicalHost: 'invalid-locale.example', name: 'Fixture', offer: 'Test', ...extra }));
       assert.equal((await model.listSites()).some(s => s.canonicalHost === 'invalid-locale.example'), false);
     }
-    assert.equal((await model.listSites()).length, 2);
+    assert.equal((await model.listSites()).length, 3);
   } finally { await rm(data, { recursive: true, force: true }); }
 });

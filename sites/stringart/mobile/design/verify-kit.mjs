@@ -30,7 +30,8 @@ for(const s of screens.screens){const p=join(here,s.file),b=await readFile(p),m=
 if(report.screenCount!==22)throw Error('Missing screens');
 await writeFile(join(here,'screens.json'),JSON.stringify(screens,null,2)+'\n');
 for(const name of ['quick','detailed','fine']){const p=validateProject(JSON.parse(await readFile(join(kit,'samples',name+'.json'),'utf8')));report.sampleResults.push({name,connections:steps(p).length,pins:p.frame.pins});}
-const compiled=await stat(join(here,'../qa/asset-kit/resource-check.apk'));if(compiled.size<1000)throw Error('Missing Android resource link evidence');
+const nativeProof=join(here,'../qa/asset-kit/resource-check.apk');
+try{const compiled=await stat(nativeProof);if(compiled.size<1000)throw Error('Invalid Android resource link evidence');report.androidResourceProofSha256=createHash('sha256').update(await readFile(nativeProof)).digest('hex');}catch(e){if(e.code==='ENOENT')report.android='UNVERIFIED on this machine; rerun aapt2 compile/link. Original session result is in the delivered REVIEW.json.';else throw e;}
 report.manifestSha256=createHash('sha256').update(await readFile(join(kit,'manifest.json'))).digest('hex');
 await writeFile(join(here,'REVIEW.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));

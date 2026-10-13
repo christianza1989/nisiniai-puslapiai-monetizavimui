@@ -107,5 +107,6 @@
       "minimum": 4.5
     }
   ],
+  "androidResourceProofSha256": "04c79c7d1748a54d0167de2e2c59ab09a03eabfcfc07f94887f48d4d2c30919a",
   "manifestSha256": "5164b0af7ba34072e37aa5569f7801cb42c9938a4b9d89ddf2a728264f8bb4a6"
 }

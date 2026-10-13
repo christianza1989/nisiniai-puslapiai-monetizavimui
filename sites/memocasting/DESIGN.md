@@ -44,3 +44,5 @@ Dizaino krypties pasirinkimas savininko atidėtas. Šis etapas tikrina 88 puslap
 - [x] FontTools faktiškai perskaitė penkių WOFF2 metaduomenis: Newsreader400 static; Source Sans3 tikra wght200–900 ašis. Abiejų Sans unicode šeimų junginys ir Newsreader turi visus LT/PL/LV/ET reikalingus tikrintus ženklus.
 - [ ] Deklaruoti tikrą Sans svorių diapazoną vienoje šeimoje; pašalinti dubliuotas svorių deklaracijas ir sintetinio logo kursyvo poreikį. Originalūs fontų baitai/licencijos nepakeičiami.
 - [ ] Dabartinis 320/390/768/1440 reflow, visos keturios kalbos, mygtukai/checkbox/formos, gids/autorius/datos/šaltiniai/footer. Atskirai tikra 200% zoom ir text-spacing patikra; bandymas nepaverčiamas PASS, jei mechanizmas neveikia.
+
+2026-10-13 aktuali homepage iteracija: [kompaktiško filmo ir vaizdų rinkinio priėmimas](ASSET_KIT_2026_10_13.md), [3D tyrimas](3D_MODEL_RESEARCH_2026_10_13.md). Official release60c80be9, exact63 design assets;98tests/TS/build/86HTTP/88pageSEO ir actual desktop/mobile PASS. Upgrade-6ea0a7d2-e1c7-4bee-8c3e-434858238d70. Ankstesni priėmimai lieka istorija; main/production adoption neteigiama.

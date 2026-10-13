@@ -37,3 +37,5 @@ Tai siteId planavimo vardas, ne priimta public/runtime registry registracija. Pa
 Savininkas patvirtino savo memorycasting.lt landing page. [Homepage briefas](HOMEPAGE_BRIEF.md) ir papildomų senų adresų inventorius paruošti iš teksto bei tikros naršyklės peržiūros. Tai atspirties taškas būsimam dizainui; senas kainas, teiginius ir rekvizitus pakeis patvirtinti verslo duomenys.
 
 Savininko pasirinktas tarptautinis vardas **memorycasting.com**, orientuotas į lokalizuotą partnerystę ir vėlesnį agentų partnerių paieškos kelią. [Domenų/rinkų sprendimas](DOMENAI_IR_RINKOS.md), [partnerių svetainės planas](PARTNERIU_SVETAINE.md). Vardas patvirtintas, registracija ir veikiančio puslapio įrodymai dar nėra.
+
+2026-10-13 aktuali homepage iteracija: [kompaktiško filmo ir vaizdų rinkinio priėmimas](ASSET_KIT_2026_10_13.md), [3D tyrimas](3D_MODEL_RESEARCH_2026_10_13.md). Official release60c80be9, exact63 design assets;98tests/TS/build/86HTTP/88pageSEO ir actual desktop/mobile PASS. Upgrade-6ea0a7d2-e1c7-4bee-8c3e-434858238d70. Ankstesni priėmimai lieka istorija; main/production adoption neteigiama.

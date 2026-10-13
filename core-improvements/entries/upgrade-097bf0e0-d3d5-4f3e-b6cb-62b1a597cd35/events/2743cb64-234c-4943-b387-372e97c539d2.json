@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Explicit one-turn actual6.1SolHigh synthetic internal CLI trial succeeded on functionalff66; records retained, no retries, no original customer/business/foundation/channel acceptance. Subsequent additive original preview0032 migration preserved thirteen table counts and a private pg_dump backup; runtime adoption/normal Chrome remains pending.",
+  "checks": [
+    {
+      "command": "git-freshness.mjs --phase continue --companion publiccore -- QApython actual-workspace-team.private.py",
+      "result": "PASS",
+      "evidence": "Fresh7af/ec8 ancestry; actual plan/adviser/synthesis3calls succeeded; ordinary HTTP register/file-verify/login/send/history/replay; no extra invocation on replay;39,266input/1,742output/444reasoning-output tokens observed. USD UNVERIFIED. QA rows/private receipt retained, original0031/five counts unchanged during trial."
+    },
+    {
+      "command": "adopt-workspace-team.py migrate",
+      "result": "PASS",
+      "evidence": "Only own original loopback database: no running jobs; private backup,0031to0032, thirteen legacy/S1/task table counts unchanged, five new team tables empty; runtime nonsuper/non-BYPASS.17external/runner holds remain false."
+    }
+  ],
+  "eventId": "2743cb64-234c-4943-b387-372e97c539d2",
+  "sequence": 3,
+  "at": "2026-10-13T23:15:00.477Z"
+}

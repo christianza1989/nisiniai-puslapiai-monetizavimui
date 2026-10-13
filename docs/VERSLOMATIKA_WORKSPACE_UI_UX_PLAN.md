@@ -152,6 +152,24 @@ Kryptis — santūri darbo aplinka, paremta savininko pateiktu Codex pavyzdžiu.
 
 Tabai ir skydeliai valdomi klaviatūra, turi matomą fokusą ir teisingą grįžimą jį uždarius. Regionų antraštės, prasmingi mygtukų pavadinimai, skaitomi kontrastai, 200% mastelis ir sumažinto judesio režimas. Svarbūs perspėjimai bei laukų klaidos nemažinami, kad tilptų į siaurą stulpelį.
 
+## Ikonos, teksto akcentai ir judesys
+
+Savininko papildymas — 2026-10-13: aplinka turi jaustis vientisa, šiuolaikiška ir tiksliai reaguoti į veiksmus. Kokybės pojūtis remiasi aiškumu, nuosekliais valdikliais ir išsaugotu kontekstu. Toliau aprašomi įgyvendinimo reikalavimai; paspaudžiamas maketas demonstruoja tik vietines sąveikas, ne agentų vykdymą.
+
+Viena linijinių ikonų sistema naudojama prie penkių navigacijos skilčių, darbo tabų, pagrindinių veiksmų ir agentų vaidmenų. Ikonos lieka kartu su pavadinimais; profesija nėra atskira spalvų sistema. Pasirinkta skiltis, žinutės autorius, rezultato pavadinimas ir būtinas savininko veiksmas gauna aiškų teksto akcentą. Inter 400 skirtas tekstui, 500 — įprastiems valdikliams, 600 — pasirinkimui ir pagrindiniams veiksmams; 700 naudojamas tik trumpam svarbiam akcentui, kai jo reikia. Antrinė informacija neparyškinama vien dėl ikonų pridėjimo. Tikri šrifto svoriai ir lietuviški ženklai išlieka tikrinami.
+
+| Sąveika | Judesio paskirtis ir orientacinė trukmė |
+| --- | --- |
+| Užvedimas, paspaudimas, klaviatūros pasirinkimas | Aiškus valdiklio atsakas per 100–140 ms; funkcija nepriklauso nuo užvedimo. |
+| Darbo tabas, dokumento atvėrimas, grįžimas | Turinys keičiasi per 180–220 ms; atvertas objektas, redakcija ir grįžimo vieta išlieka aiškūs. |
+| Susikaupti ir išdėstymo atkūrimas | Vienas pagrindinis erdvinis perėjimas per 240–280 ms parodo, kur persikėlė darbo sritis. Pokalbio istorija ir juodraštis nekuriami iš naujo. |
+| Gauta nauja žinutė ar išsaugotas rezultatas | Trumpas vietinis patvirtinimas; skaitomos istorijos neperstumia. Skaitant senesnes žinutes pateikiamas aiškus naujų žinučių veiksmas. |
+| Vykdomas darbas ir nutrūkęs ryšys | Tikra serverio būsena, paskutinio atnaujinimo laikas ir paaiškinimas. Judesys nesukuria fiktyvaus progreso ar sėkmės. |
+
+Perėjimai greitai sulėtėja pabaigoje, neturi šokinėjimo ar privalomos pradžios animacijos. Ilgas atsakymas, foninė veikla ir agento mąstymas neanimuojami kaip pasirodymas. Naudojamos esamos naršyklės galimybės; vien mikrointerakcijoms nereikia naujos bibliotekos. Vienu metu ribojamas animuojamų sričių skaičius, neanimuojama visa ilgų žinučių istorija. Spartus pakartotinis paspaudimas nutraukia ankstesnį perėjimą ir palieka naujausią pasirinktą būseną; valdikliai nelaukia animacijos pabaigos.
+
+Sumažinto judesio režime erdviniai perėjimai išjungiami, tačiau pasirinkimas, paspaudimo atsakas ir būsenų tekstai išlieka. Patikra apima desktop ir telefoną, klaviatūrą, pakartotinį perjungimą, sumažintą judesį, ilgą istoriją, skaitymo vietą, juodraštį ir konkrečios redakcijos nuorodą. Ikonų bei teksto patikra apima tamsią ir šviesią temas, siaurą ekraną bei teksto tarpų pakeitimus. Maketo judesio patikra nėra faktinės programos našumo ar žmogaus UI/UX priėmimo įrodymas.
+
 ## Modulinis įgyvendinimas
 
 Vienas bendras WorkspaceShell, BusinessSwitcher, Navigation, ConversationPane, WorkPanel, ActivityFeed, ArtifactViewer, ApprovalCard ir būsenų komponentų rinkinys. Komandos katalogas, Darbų sąrašas ir Rezultatų biblioteka yra to paties workspace rodiniai, ne atskiri core. Pasirinktas verslas, pokalbis, peržiūrimas objektas ir rengiamai žinutei pridėta nuoroda yra atskiros būsenos. Vizualiniai tokenai ir modulio registras leidžia keisti išdėstymą bei funkcijas nekeisdami core verslo taisyklių.

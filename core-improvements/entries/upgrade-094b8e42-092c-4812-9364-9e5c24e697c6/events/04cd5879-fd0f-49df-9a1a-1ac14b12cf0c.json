@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Supported v1 fresh-quote/no-insurance admission works without falsely promising an absolute charge ceiling. Increased quote stops before POST. DPD EE exception binds actual approved service courier; unknown/nonDPD service cannot use five parcels. DB clock removes isolate-skew dependency. All final checks PASS; remote Sendparcel credentials absent, no remote booking.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core run verify",
+      "result": "PASS",
+      "evidence": "Final0.13.1:127Node/native23/D1-R2-Queue/shared database clock with skewed callers; Worker dry-run767.76KiB gzip/21assets. Private logcommerce-core/tmp/verify-0131-final.txt"
+    }
+  ],
+  "eventId": "04cd5879-fd0f-49df-9a1a-1ac14b12cf0c",
+  "sequence": 4,
+  "at": "2026-10-13T22:13:44.415Z"
+}

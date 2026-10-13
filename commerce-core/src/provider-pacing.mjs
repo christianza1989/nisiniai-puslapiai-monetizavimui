@@ -2,6 +2,7 @@ import { requireValue } from './validation.mjs';
 
 // A durable lease serializes requests across isolates. Waiting a full second
 // after completion also covers slow responses; no provider operation is retried.
+// The database clock defines slots, so isolate clock skew cannot weaken pacing.
 export class ProviderPacing {
   constructor(
     db,
@@ -22,12 +23,11 @@ export class ProviderPacing {
     const deadline = this.now() + this.maxWaitMs;
     const token = crypto.randomUUID();
     while (true) {
-      const at = this.now();
       const claim = await this.db
         .prepare(
-          'INSERT INTO provider_request_pacing(scope_hash,next_allowed_at,lease_token,lease_until) VALUES(?,0,?,?) ON CONFLICT(scope_hash) DO UPDATE SET lease_token=excluded.lease_token,lease_until=excluded.lease_until WHERE next_allowed_at<=? AND lease_until<=? RETURNING lease_token',
+          "INSERT INTO provider_request_pacing(scope_hash,next_allowed_at,lease_token,lease_until) VALUES(?,0,?,(CAST(strftime('%s','now') AS INTEGER)+90)*1000) ON CONFLICT(scope_hash) DO UPDATE SET lease_token=excluded.lease_token,lease_until=excluded.lease_until WHERE next_allowed_at<=CAST(strftime('%s','now') AS INTEGER)*1000 AND lease_until<=CAST(strftime('%s','now') AS INTEGER)*1000 RETURNING lease_token",
         )
-        .bind(scope, token, at + 90000, at, at)
+        .bind(scope, token)
         .first();
       if (claim) break;
       requireValue(this.now() < deadline, 'carrier_pacing_busy', 503);
@@ -38,9 +38,9 @@ export class ProviderPacing {
     } finally {
       await this.db
         .prepare(
-          'UPDATE provider_request_pacing SET next_allowed_at=?,lease_token=NULL,lease_until=0 WHERE scope_hash=? AND lease_token=?',
+          "UPDATE provider_request_pacing SET next_allowed_at=(CAST(strftime('%s','now') AS INTEGER)+2)*1000,lease_token=NULL,lease_until=0 WHERE scope_hash=? AND lease_token=?",
         )
-        .bind(this.now() + 1000, scope, token)
+        .bind(scope, token)
         .run();
     }
   }

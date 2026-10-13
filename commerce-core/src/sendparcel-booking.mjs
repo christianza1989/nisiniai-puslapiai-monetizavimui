@@ -10,16 +10,23 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
   constructor(options) {
     super(options);
     const a = options.bookingAdmission;
-    // A key alone is insufficient. The currently published create response has
-    // no amount and cannot prove a cost ceiling, reference or idempotency.
+    // A key alone is insufficient. V1 fresh-quote pricing is supported without
+    // pretending its create response proves an absolute final-charge ceiling.
     requireValue(
       a?.approved === true &&
         a.protocol === 'legacy_single_attempt' &&
         text(a.contractReference) &&
-        a.costCeilingGuaranteed === true &&
+        (a.costCeilingGuaranteed === true || a.pricingProtocol === 'v1_fresh_quote_no_insurance') &&
         Array.isArray(a.serviceIds) &&
         a.serviceIds.length > 0 &&
         a.serviceIds.every((id) => typeof id === 'string' && /^\d{1,12}$/.test(id)) &&
+        (!a.serviceCouriers ||
+          (typeof a.serviceCouriers === 'object' &&
+            !Array.isArray(a.serviceCouriers) &&
+            Object.entries(a.serviceCouriers).every(
+              ([id, courier]) =>
+                /^\d{1,12}$/.test(id) && /^[A-Za-z][A-Za-z0-9]{1,30}$/.test(courier),
+            ))) &&
         (!a.lockerBindings ||
           (typeof a.lockerBindings === 'object' &&
             !Array.isArray(a.lockerBindings) &&
@@ -28,6 +35,10 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       503,
     );
     this.admission = a;
+    this.costCeilingGuaranteed = a.costCeilingGuaranteed === true;
+    this.pricingProtocol = this.costCeilingGuaranteed
+      ? 'contractual_ceiling'
+      : 'v1_fresh_quote_no_insurance';
     this.supportsBooking = true;
     this.supportsIdempotentCreate = false;
   }
@@ -54,7 +65,12 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     );
     for (const address of [payload.sender, payload.recipient]) {
       if (!address?.locker) continue;
-      const limit = address.country === 'EE' && address.locker.courier === 'dpd' ? 5 : 1;
+      const limit =
+        address.country === 'EE' &&
+        address.locker.courier === 'dpd' &&
+        this.admission.serviceCouriers?.[payload.serviceId] === 'dpd'
+          ? 5
+          : 1;
       requireValue(payload.parcels.length <= limit, 'carrier_locker_parcel_limit', 409);
     }
   }

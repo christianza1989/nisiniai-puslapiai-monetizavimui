@@ -9,19 +9,19 @@ test('shared durable per-key pacing separates starts, retains only hashes and ap
   const db = new NodeDatabase();
   db.migrate();
   const starts = [];
-  const make = (accountRef) =>
+  const make = (accountRef, clockOffset) =>
     new SendparcelAdapter({
       environment: 'sandbox',
       accountRef,
       apiPassword: 'fixture_shared_key',
-      rateLimiter: new ProviderPacing(db),
+      rateLimiter: new ProviderPacing(db, { now: () => Date.now() + clockOffset }),
       fetchImpl: async (url) => {
         starts.push({ path: new URL(url).pathname, at: Date.now() });
         return Response.json({});
       },
     });
-  const a = make('store_one'),
-    b = make('store_two');
+  const a = make('store_one', 30000),
+    b = make('store_two', -30000);
   await Promise.all([
     a.request('/rest-api/services'),
     b.request('/rest-api/services'),

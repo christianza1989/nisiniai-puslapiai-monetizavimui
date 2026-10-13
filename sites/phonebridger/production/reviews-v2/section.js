@@ -20,10 +20,11 @@
 
   function render() {
     const small = stage.clientWidth < 600;
+    const spacing = step();
     index = mod(Math.round(position));
     cards.forEach((card, slot) => {
       const d = mod(slot - position + total / 2) - total / 2, depth = Math.abs(d);
-      card.style.setProperty('--rv-x', d * step() + 'px');
+      card.style.setProperty('--rv-x', d * spacing + 'px');
       card.style.setProperty('--rv-y', Math.min(depth, 4) * 11 + 'px');
       card.style.setProperty('--rv-yaw', clamp(-d * 7, 18) + 'deg');
       card.style.setProperty('--rv-scale', Math.max(.64, 1 - depth * .105));

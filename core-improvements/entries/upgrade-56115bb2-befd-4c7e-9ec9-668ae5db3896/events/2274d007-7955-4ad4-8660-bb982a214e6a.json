@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual candidate browser verifies card geometry and pause; mobile lab target is measured separately, not inferred.",
+  "checks": [
+    {
+      "command": "node .sites-runtime/audit-reviews-layout.cjs",
+      "result": "PASS",
+      "evidence": "Both 1440 and 390px: 11 initial width reads, 24 unchanged card offsets, pause button works."
+    }
+  ],
+  "eventId": "2274d007-7955-4ad4-8660-bb982a214e6a",
+  "sequence": 2,
+  "at": "2026-10-13T09:24:21.326Z"
+}

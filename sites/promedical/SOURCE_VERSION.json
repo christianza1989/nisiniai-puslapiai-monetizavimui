@@ -1,11 +1,11 @@
 {
   "packageSha256": "7ce29ed99c6a20a6fe3eac4ea651e1d7d39ca137e1c74c31f0397e202461fba9",
-  "sourceVersion": "7f0a5d447b7c923e55eb094c98ae3d39684296b5",
-  "coreCommit": "5ec90e469b02207487c5d7833009a6f46be28ed1",
+  "sourceVersion": "039dbeaaeb1fe67e1d8d89dd7132d1c3b46dbb23",
+  "coreCommit": "dd434ffd11be66d017474186aad6881198faab77",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "d647b623694515e57594f48eec0b73ad016cb97156a684fc9efaac4338ad0b49"
+      "sha256": "ae7050a66f45efd52eba69c2b1e432e284ac2378125afcb62aa2fccd6e040f35"
     },
     {
       "file": "components/niche/promedical-site.module.css",
@@ -80,12 +80,13 @@
       "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
     }
   ],
-  "checkedAt": "2026-10-10T20:52:37.974Z",
-  "productionVersion": "dc031a6e-623f-451c-9ee7-5a932233ccfc",
-  "notes": "Owner-requested manufacturer-neutral Home and common navigation/footer deployed. All1909 other pages and publication dates unchanged; Home image alt metadata changed, files/rights preserved. Prior complete manifest archived in generic-home-v1.json. Earlier editorial/logo/typography receipts retained. Core commit identifies baseline before this evidence update.",
-  "productionDeployment": "6a3ff47a-372a-4148-ba5e-d2a3c7685147",
+  "checkedAt": "2026-10-13T08:40:56.602Z",
+  "productionVersion": "078fa837-d02b-4879-b685-e4d8c1adc23f",
+  "notes": "Owner-requested removal of the automation attribution and URL from the common Promedical Footer. Package/calendar/media/styles/other tenants unchanged. Current D:/Core operational configs; prior complete manifest archived in footer receipt. Core commit is baseline before this evidence update.",
+  "productionDeployment": "aff0b917-21a4-4968-9f5b-0268bbfdf38c",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
   "logoEvidence": "verification-20261010/logo-change-v2.json",
   "editorialEvidence": "verification-20261010/editorial-release-v1.json",
-  "homeEvidence": "verification-20261010/generic-home-v1.json"
+  "homeEvidence": "verification-20261010/generic-home-v1.json",
+  "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json"
 }

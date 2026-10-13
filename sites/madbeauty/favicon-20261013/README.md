@@ -17,3 +17,5 @@ Checks: `check.mjs native` for both editions; main `accept.mjs native` tests twe
 Deploy helpers require committed source, native/browser/live-before proofs and exact provider lease. Main activation and preservation must finish before `MADBEAUTY_RELEASE_KIND=trial node .../deploy.mjs lease` and the trial activation. Provider configuration is checked after each release, including query redaction restoration omitted by pinned Wrangler. Capture real HTTPS acceptance before claiming live completion. Application rollback can restore the recorded previous Worker version; it must not replace current data or later changes.
 
 Git source, actual deployed version and consumer receipt are distinct. Final versions and checks are recorded in RECEIPT.json and RECEIPT.md after real activation.
+
+Hosted MIME note: Cloudflare serves ICO as image/vnd.microsoft.icon, while the native asset fixture used image/x-icon. The initial hosted harness allowed only the latter and failed after the byte hash had already matched. The assertion now accepts both; no deployed asset or Worker changed for this test correction.

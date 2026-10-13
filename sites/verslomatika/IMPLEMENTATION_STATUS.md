@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current next-PC workspace UI — 2026-10-13
+
+**UI source/build package ready for review; compiled preview confirmation and human UI/UX acceptance pending. Whole platform OPEN.** [Current PC handoff](../../docs/handoffs/VERSLOMATIKA_WORKSPACE_UI_PC_2026-10-13.md) replaces earlier current-entry instructions for this UI-first task while preserving every historical receipt below. Primary owns the unified left business navigation / centre conversation / right work inspector; one separately authorized helper owns core integration and checks, each in its own branch/worktree. Portal83437e9 production build9IqbUkOvYL1hB1JNq3KeV/59targeted frontend tests, core54offline/20restrictedPG and scoped journal checks pass. Existing actor/revision/hash/foundation/usage gates remain; new role-state projection and held-start atomicity reuse canonical core. No second core or calibration framework.
+
+Actual initial ordinary-login development UI captures and native200% zoom are inspected; final compiled confirmation is not inferred from them. Automatic production3025 launch was rejected before execution (`blocked by policy`); no workaround. Human foreground start is the current dependency, then prepared desktop/mobile/error/history/revision checks. Real model pipeline/calibration resumes only after the human's UI/UX acceptance. All original failures, orphan evidence and old-PC histories remain preserved; fresh isolated PostgreSQL accounts are new synthetic data. Scheduler/runners/live channels/Supabase/deployment/purchases remain held.
+
 ## Current operator source supervision — 2026-10-12T13:35Z
 
 **Whole local platform OPEN; source packet verified, operational monitor pending.** [Finite monitor evidence](../../docs/CUSTOMER_SOURCE_MONITOR_QA_2026-10-12.md):34 offline and2 isolated real-PG checks PASS, providers0. One explicit local adapter reuses canonical complete-source maintenance, preserves the original Profile/receipt/TTL, records immutable iteration receipts, serializes each run, rejects uncertain restart/deadline changes and stops after current authority expiry. No duplicated calibration/agent/controller or customer write API.

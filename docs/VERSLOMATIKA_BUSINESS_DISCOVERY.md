@@ -60,3 +60,11 @@ nepajungti ankstesni verslai šiame siaurame pataisyme nemigruojami.
 2. Tikras automatinis visų svetainės statymo etapų controller: katalogas/palyginimas/local inquiry, esamas turinys/media/editorial/renderer/SEO-GEO ir fail/replay/source/cancel vartai.
 3. Actual foundation proof; tada per-module Designer ir acquisition/customer-agent sąsajos bei esama kalibracija. Registracija ar private-draft PASS foundation nepakeičia.
 4. Naujas savarankiškas kliento testas iš kelių sakinių, be root tiekėjo inventoriaus / turinio / rankinių praleistų veiksmų. Išsaugoti visus tikrus originalus, intervencijas ir ribas.
+
+## Pirmo pokalbio ir peržiūros klaidos taisymas
+
+Tiekėjo URL ir rinkos pasirinkimas nesuteikia savininko biudžeto, laiko ar pageidaujamos pardavimo/vykdymo atsakomybės. Agentas pirmiausia atskiria pats ištiriamus faktus nuo tokių sprendimą keičiančių savininko duomenų ir prireikus pateikia trumpą needs_input atsakymą, o ne išgalvoja atsakymus dideliam planui. Tai nėra privaloma vienoda anketa ar naujas evaluator/corpus.
+
+Kai po validuoto kūrėjo kandidato nepavyksta vėlesnė peržiūra, worker gali išsaugoti tikslų kandidatą ir jau baigtas peržiūras kaip nekintamą ataskaitą. Job ir Discovery lieka failed, can_build=false; tai ne priimtas planas ir ne automatinis mokamas retry. Savininkas gali aptarti tą pačią redakciją. Galutiniai savininko/session/source/instruction/deadline/lease/archive vartai taikomi ir šiam juodraščiui; nebegaliojantis ar netinkamas rezultatas nepublikuojamas. Ankstesnis originalus failed bandymas atgaline data nepildomas.
+
+Tikros bazės nesėkmė, source regresija ir klausimų elgesio patikros atskirtos [šio inkremento QA](VERSLOMATIKA_DISCOVERY_RESPONSE_RECOVERY_QA_2026-10-13.md). Visos platformos priėmimas lieka OPEN.

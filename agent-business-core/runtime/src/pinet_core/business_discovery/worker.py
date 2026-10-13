@@ -121,7 +121,8 @@ async def retain_usage(claimed, sequence, role, receipt, outcome, value=None):
         await tx.flush()
 
 
-async def run_team(claimed, role_runner):
+async def run_team(claimed, role_runner, *, progress=None):
+    progress = progress if progress is not None else {}
     context = claimed["context"]
     if role_runner is adapter.run_role:
         _, workspace = adapter.available()
@@ -153,6 +154,9 @@ async def run_team(claimed, role_runner):
         if reply.state == "needs_input":
             return {"reply": reply.model_dump(mode="json"), "reviews": []}
         reviews = []
+        # Keep the exact validated candidate and completed reviews if a later
+        # provider stream fails. This is a failed, non-buildable report, not approval.
+        progress["payload"] = {"reply": reply.model_dump(mode="json"), "reviews": reviews}
         for role in ("critic", "coordinator"):
             sequence, pin, seconds = await reserve(claimed, role, round_number)
             review_context = {**context, "candidate": reply.model_dump(mode="json"),
@@ -186,31 +190,40 @@ async def execute_once(*, discovery_id=None, role_runner=None):
         if not claimed:
             return False
         payload, failure = None, None
+        progress = {}
         try:
-            payload = await run_team(claimed, role_runner or adapter.run_role)
+            payload = await run_team(claimed, role_runner or adapter.run_role, progress=progress)
         except RunnerError as error:
             failure = error.code
+            payload = progress.get("payload")
         async with scope(user=claimed["user_id"]) as tx:
             row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
             if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
                 return True
+            result_allowed = True
             if not await service.authority(tx, job) or row.status == "archived":
                 failure = "authorization_revoked"
+                result_allowed = False
             elif row.current_revision != job.base_revision:
                 failure = "stale_report"
+                result_allowed = False
             elif not job.deadline_at or job.deadline_at <= utcnow() or not job.lease_until or job.lease_until <= utcnow():
                 failure = "run_timeout"
+                result_allowed = False
             elif job.instruction_hash != adapter.fingerprint():
                 failure = "instructions_changed"
+                result_allowed = False
+            if payload and result_allowed:
+                report = Report(id=new_id(), discovery_id=row.id, job_id=job.id, revision=row.current_revision + 1,
+                    payload=payload, material_hash=digest(payload), source_revision=job.source_revision, **binding(row))
+                tx.add(report)
+                row.current_revision = report.revision
+                if plan := payload["reply"]["plan"]:
+                    row.title = plan["business_name"]
             if failure:
                 await service.fail(tx, row, job, failure)
                 return True
-            report = Report(id=new_id(), discovery_id=row.id, job_id=job.id, revision=row.current_revision + 1,
-                payload=payload, material_hash=digest(payload), source_revision=job.source_revision, **binding(row))
-            tx.add(report)
-            row.current_revision, row.status = report.revision, payload["reply"]["state"]
-            if plan := payload["reply"]["plan"]:
-                row.title = plan["business_name"]
+            row.status = payload["reply"]["state"]
             row.active_job_id, row.updated_at = None, utcnow()
             job.status, job.finished_at, job.lease_until = "succeeded", utcnow(), None
             await tx.flush()

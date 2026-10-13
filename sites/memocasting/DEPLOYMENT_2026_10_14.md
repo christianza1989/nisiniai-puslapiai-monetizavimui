@@ -20,6 +20,10 @@ Own launcher turi explicit --stripe-test opt-in ir privačioje aplinkoje MEMO_ST
 
 Guard ir isolatedDB backup/orders/policies/foreignfields regresijos PASS; pastaroji naudoja injekcinę testinę identity ir neįrodo actualStripe. Pirmas regresijos fixtureStore bandymas netiko ilgo storeId hostname dėl underscore; pradinis invalid_hosts FAIL išsaugotas sesijos istorijoje, testui įrašytas aiškus loopbackhost ir pakartota. Own8synthetic order DB dar nepakeista. PUBLIC111testų PASS.
 
+Galutinis PUBLIC TypeScript, scopedESLint ir productionbuild PASS. SDK maintainedexport source8eb7893a02360987137397d96a68ddb7ffb410da, kurio commerce subtree sutampa su peerbd67; abu SDKfailų baitai liko tie patys, naujas manifest tiksliai pririša peržiūrėtą0.13source. `wrangler deploy --config dist/server/wrangler.json --name memocasting-site --dry-run` PASS:639assets,2974.28KiBupload/794.70KiBgzip, tikASSETSbinding. Tai pakavimo patikra, ne funkcionali production commerce konfigūracija ar upload. Public547sourceassets nė vienas neviršija25MiB. Frontend vėl8817, dabartinis footer actualnaršyklėje „Mokėjimai šiuo metu neįjungti.“; verifiedTEST UI šaka dar nelivepatikrinta. Žurnalas ir111tests neišplečiami į hosted/LIVEPASS.
+
+Žmogaus sąlyginis tęstinumas įgyvendintas kaip šio pokalbio aktyvus heartbeat „Memocasting paleidimas po Stripe“, kas10min. Jis turi tylėti nekintančiai būsenai, gerbti dabartinius saugumo/faktų vartus ir išsijungti po actualhosted priėmimo. Tai nėra claim, kad Stripe patvirtinimas ar publikavimas jau atlikti.
+
 ## Konkreti likusi eiga ir grįžimas
 
 1. Žmogaus2FA shopo Stripe lange; peer signing-secret-ready ir exact schema kvitas.

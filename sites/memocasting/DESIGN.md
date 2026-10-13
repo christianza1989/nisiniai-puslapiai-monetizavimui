@@ -1,3 +1,5 @@
+Aktuali hero iteracija2026-10-13: [atskiri daiktų ir švaraus fono sluoksniai](HERO_LAYERS_2026_10_13.md). Pilnai įgyvendinta ir lokaliai patikrinta; galerijos naujas konceptas tik pasiūlymas.
+
 # Memocasting vizualinė sistema
 
 Vėlesnis 2026-10-13 įgyvendinimas: [vidinių puslapių dizainas ir pardavimo kelias](STOREFRONT_2026_10_13.md). Bendras shell dabar baltas / Manrope / rožinis, su kompaktišku native meniu; katalogas ir abu produktai visose keturiose esamose kalbose turi naujus šablonus. Produktai naudoja patvirtintas nuotraukas, native kainas bei pirkimą, galerijos dialogą ir mobilų pirkimo veiksmą. Žemiau esantys planavimo bei laikino serif dizaino aprašai yra ankstesni etapai. Skaitomo turinio, galutinių produkcijos sąlygų ir realių 3D / klientų įrodymų darbai lieka pagal bendrą planą.

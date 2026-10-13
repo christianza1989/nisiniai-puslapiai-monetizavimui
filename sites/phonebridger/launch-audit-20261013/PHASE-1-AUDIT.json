@@ -485,7 +485,7 @@
       "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; dedicated build and core projection tests"
+        "evidence/core-tests.txt; dedicated build and core projection tests"
       ],
       "notes": "Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved."
     },
@@ -584,7 +584,7 @@
       "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; dedicated build and core projection tests"
+        "evidence/core-tests.txt; dedicated build and core projection tests"
       ],
       "notes": "Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved."
     },
@@ -595,7 +595,7 @@
       "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; dedicated build and core projection tests"
+        "evidence/core-tests.txt; dedicated build and core projection tests"
       ],
       "notes": "Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved."
     },
@@ -606,7 +606,7 @@
       "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; dedicated build and core projection tests"
+        "evidence/core-tests.txt; dedicated build and core projection tests"
       ],
       "notes": "Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved."
     },
@@ -617,7 +617,7 @@
       "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; dedicated build and core projection tests"
+        "evidence/core-tests.txt; dedicated build and core projection tests"
       ],
       "notes": "Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved."
     },
@@ -749,7 +749,7 @@
       "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; evidence/live-verification.json"
+        "evidence/core-tests.txt; evidence/live-verification.json"
       ],
       "notes": "Server validation, origin, size and durable inquiry behavior covered by current regression suite; account ownership/CSRF checked on canonical with disposable account removed."
     },
@@ -870,7 +870,7 @@
       "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
       "status": "PASS",
       "evidence": [
-        "Repository-safety exact staged reports; check-stage result; evidence/core-tests.log"
+        "Repository-safety exact staged reports; check-stage result; evidence/core-tests.txt"
       ],
       "notes": "Exact staged scanner and exact private-value matcher passed before source commits; authentication, tenant, payload and protected source namespaces tested. Private keys and customer rows remain ignored."
     },
@@ -903,7 +903,7 @@
       "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; core-improvements/entries; current AGENTS/START_HERE and git-freshness results"
+        "evidence/core-tests.txt; core-improvements/entries; current AGENTS/START_HERE and git-freshness results"
       ],
       "notes": "Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved."
     },
@@ -914,7 +914,7 @@
       "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; core-improvements/entries; current AGENTS/START_HERE and git-freshness results"
+        "evidence/core-tests.txt; core-improvements/entries; current AGENTS/START_HERE and git-freshness results"
       ],
       "notes": "Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved."
     },
@@ -925,7 +925,7 @@
       "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
       "status": "PASS",
       "evidence": [
-        "evidence/core-tests.log; core-improvements/entries; current AGENTS/START_HERE and git-freshness results"
+        "evidence/core-tests.txt; core-improvements/entries; current AGENTS/START_HERE and git-freshness results"
       ],
       "notes": "Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved."
     },

@@ -218,7 +218,7 @@ No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200
 
 - [x] **M2 · PASS · local gate** — Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.
 
-  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.log; dedicated build and core projection tests.
+  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.txt; dedicated build and core projection tests.
 
 - [x] **M3 · PASS · local** — Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.
 
@@ -254,19 +254,19 @@ No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200
 
 - [x] **P1 · PASS · local gate** — Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.
 
-  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.log; dedicated build and core projection tests.
+  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.txt; dedicated build and core projection tests.
 
 - [x] **P2 · PASS · local gate** — Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.
 
-  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.log; dedicated build and core projection tests.
+  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.txt; dedicated build and core projection tests.
 
 - [x] **P3 · PASS · local gate** — Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.
 
-  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.log; dedicated build and core projection tests.
+  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.txt; dedicated build and core projection tests.
 
 - [x] **Q1 · PASS · local gate** — Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.
 
-  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.log; dedicated build and core projection tests.
+  Authoritative approved package hashes/date scope control public content, links, sitemap/schema and machine-readable projections. Revocation, preview/cross-host and import negative regressions pass; unrelated package dates/content preserved. Evidence: evidence/core-tests.txt; dedicated build and core projection tests.
 
 - [x] **Q2 · PASS · local gate** — Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.
 
@@ -314,7 +314,7 @@ No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200
 
 - [x] **U1 · PASS · local gate** — Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.
 
-  Server validation, origin, size and durable inquiry behavior covered by current regression suite; account ownership/CSRF checked on canonical with disposable account removed. Evidence: evidence/core-tests.log; evidence/live-verification.json.
+  Server validation, origin, size and durable inquiry behavior covered by current regression suite; account ownership/CSRF checked on canonical with disposable account removed. Evidence: evidence/core-tests.txt; evidence/live-verification.json.
 
 - [ ] **U2 · UNVERIFIED · local gate** — Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.
 
@@ -358,7 +358,7 @@ No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200
 
 - [x] **X1 · PASS · local gate** — No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.
 
-  Exact staged scanner and exact private-value matcher passed before source commits; authentication, tenant, payload and protected source namespaces tested. Private keys and customer rows remain ignored. Evidence: Repository-safety exact staged reports; check-stage result; evidence/core-tests.log.
+  Exact staged scanner and exact private-value matcher passed before source commits; authentication, tenant, payload and protected source namespaces tested. Private keys and customer rows remain ignored. Evidence: Repository-safety exact staged reports; check-stage result; evidence/core-tests.txt.
 
 - [x] **X2 · PASS · local** — Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.
 
@@ -370,15 +370,15 @@ No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200
 
 - [x] **Y1 · PASS · local gate** — Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.
 
-  Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved. Evidence: evidence/core-tests.log; core-improvements/entries; current AGENTS/START_HERE and git-freshness results.
+  Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved. Evidence: evidence/core-tests.txt; core-improvements/entries; current AGENTS/START_HERE and git-freshness results.
 
 - [x] **Y2 · PASS · local gate** — Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.
 
-  Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved. Evidence: evidence/core-tests.log; core-improvements/entries; current AGENTS/START_HERE and git-freshness results.
+  Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved. Evidence: evidence/core-tests.txt; core-improvements/entries; current AGENTS/START_HERE and git-freshness results.
 
 - [x] **Y3 · PASS · local gate** — START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.
 
-  Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved. Evidence: evidence/core-tests.log; core-improvements/entries; current AGENTS/START_HERE and git-freshness results.
+  Shared compatibility/privacy changes journalled; 130 core tests, current shared build and all nine niche SEO smoke passed. Canonical workflow/freshness and real committed coverage checked. Prototype/native engine preserved. Evidence: evidence/core-tests.txt; core-improvements/entries; current AGENTS/START_HERE and git-freshness results.
 
 - [x] **Z1 · PASS · local gate** — Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.
 

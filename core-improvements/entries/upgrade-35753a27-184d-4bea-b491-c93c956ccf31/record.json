@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Approved customer build ended after a private draft; native initial guides required manual per-page admission and archive did not deterministically cancel pending guide jobs",
+  "category": "workflow",
+  "evidence": [
+    "docs/VERSLOMATIKA_SITE_BUILD_CONTINUATION_QA_2026-10-13.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/routes.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/worker.py",
+    "agent-business-core/runtime/migrations/versions/0030_site_build_candidates.py",
+    "agent-business-core/runtime/scripts/customer_site_build_worker.py",
+    "agent-business-core/runtime/offline_tests/test_site_build.py",
+    "agent-business-core/runtime/tests/test_site_build.py",
+    "docs/VERSLOMATIKA_SITE_BUILD_CONTINUATION.md",
+    "docs/VERSLOMATIKA_SITE_BUILD_CONTINUATION_QA_2026-10-13.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable site_build_enabled and scoped revert this adapter;0030 drops only safe candidate function; preserve all Creation/GuideJob/attempt/event/report/accounting history",
+  "id": "upgrade-35753a27-184d-4bea-b491-c93c956ccf31",
+  "branch": "codex/discovery-site-continuation-20261013",
+  "baseSha": "e4d36a2e0f575f28406b658724a3131f5a56684b",
+  "createdAt": "2026-10-13T03:38:34.791Z"
+}

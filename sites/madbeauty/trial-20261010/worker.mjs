@@ -12,7 +12,7 @@ import {directoryRoute,directoryRows,renderDirectory} from '../prototype/public/
 import {renderPublicProfile} from '../prototype/public/profile-seo.mjs';
 import {renderFooter} from '../prototype/public/footer.mjs';
 const origin='https://bandymas.madbeauty.lt';
-const assetPaths=new Set([...trialAssets,'/booking-channel-model.mjs','/booking-channel-ui.mjs']);
+const assetPaths=new Set([...trialAssets,'/favicon.svg','/favicon.ico','/favicon-32.png','/apple-touch-icon.png','/booking-channel-model.mjs','/booking-channel-ui.mjs']);
 const mediaPaths=new Map(trialMedia.assets.flatMap(a=>a.variants.map(v=>[v.file.split('/').at(-1),'/'+v.file])));
 const valid=env=>env.APP_ORIGIN===origin&&env.RELEASE_MODE==='temporary-live-test'&&/^\d{4}-\d\d-\d\dT/.test(env.TRIAL_EXPIRES_AT||'')&&Number.isFinite(Date.parse(env.TRIAL_EXPIRES_AT));
 const expired=env=>Date.now()>=Date.parse(env.TRIAL_EXPIRES_AT);

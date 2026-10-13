@@ -9,7 +9,7 @@ import {pathToFileURL} from 'node:url';
 import {core,pinCore} from '../release-20261010/pinned-core.mjs';
 import {nativeMainRuntime} from '../community-20261011/native-main-runtime.mjs';
 const {build}=await import(pathToFileURL(path.join(core,'node_modules/esbuild/lib/main.js'))),{Miniflare}=await import(pathToFileURL(path.join(core,'node_modules/miniflare/dist/src/index.js'))),require=createRequire(path.resolve(import.meta.dirname,'../../../content-studio/package.json')),sharp=require('sharp');
-const bundle=await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[pinCore]});
+const bundle=process.env.MADBEAUTY_COMMUNITY_MAIN_ARTIFACT?{outputFiles:[{text:''}]}:await build({entryPoints:[path.join(import.meta.dirname,'worker.mjs')],write:false,bundle:true,format:'esm',platform:'node',external:['cloudflare:*'],loader:{'.sql':'text','.html':'text'},plugins:[pinCore]});
 
 test('Native community image pipeline: audiences, private attachments, ownership, restart and blocked image reads',async()=>{
  const runtime=await nativeMainRuntime(bundle.outputFiles[0].text,'https://community-images.test'),origin=runtime.origin,storage=await mkdtemp(path.join(os.tmpdir(),'madbeauty-community-images-')),mails=[],image=await sharp({create:{width:80,height:100,channels:3,background:'#7542f5'}}).withExif({IFD0:{Artist:'Private source metadata'}}).png().toBuffer();

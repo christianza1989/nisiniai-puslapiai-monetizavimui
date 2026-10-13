@@ -1,0 +1,24 @@
+{
+  "note": "Three owner-selected moment scenes integrated; complete family/gift/couple switching with semantic ARIA and stable layout verified. Observed320 tab-wrap fixed. Official content package unchanged.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "npm run test:core; npx tsc --noEmit; npm run build",
+      "evidence": "98 tests;PUBLIC/output/moments-tests.private.txt and moments-build.private.txt",
+      "result": "PASS"
+    },
+    {
+      "command": "node output/asset-kit-http.private.mjs",
+      "evidence": "101 requests;PUBLIC/output/moments-http.private.json",
+      "result": "PASS"
+    },
+    {
+      "command": "CUA all3 selection/return/Enter/320px/motion-off",
+      "evidence": "PUBLIC/output/moments-browser.private.json and moments-family-final.png",
+      "result": "PASS"
+    }
+  ],
+  "eventId": "cf37f0e0-b44d-49f7-a0e4-8386511b147b",
+  "sequence": 2,
+  "at": "2026-10-13T13:27:56.798Z"
+}

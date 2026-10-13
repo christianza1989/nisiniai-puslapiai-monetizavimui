@@ -1644,7 +1644,7 @@
       "body": [
         {
           "type": "paragraph",
-          "text": "The organizational attribution for these guides is MB Pinet, the operator named in the shared project configuration. PhoneBridger’s guide contact is hello@phonebridger.com. We do not list a fictional individual expert, customer test or independent certification."
+          "text": "The organizational attribution for these guides is MB Memocasting, the operator of PhoneBridger. PhoneBridger’s guide contact is hello@phonebridger.com. We do not list a fictional individual expert, customer test or independent certification."
         },
         {
           "type": "heading",
@@ -1671,7 +1671,7 @@
         },
         {
           "type": "paragraph",
-          "text": "These guides were prepared and checked on 6 October 2026 for the beta described on Downloads. This private preview is not evidence of public publication. Before launch, the real first publication date and any later meaningful review must be recorded; changing a calendar date alone does not update the guidance."
+          "text": "These guides were first published on 6 October 2026 for the beta described on Downloads. Their operator attribution and publication wording were reviewed on 13 October 2026. Original publication dates are retained; a calendar change alone does not update the product guidance."
         },
         {
           "type": "heading",
@@ -1689,7 +1689,7 @@
         },
         {
           "type": "paragraph",
-          "text": "There is no measured latency guarantee, supported-device certification, independent product review or proof of demand in these guides. Paid orders, production customer accounts and native file dragging are not activated by the website preview."
+          "text": "There is no measured latency guarantee, supported-device certification, independent product review or proof of demand in these guides. The website supports customer accounts and paid orders. Purchasing records an entitlement in your account; it does not supply an activation key for the current beta. Native file dragging is planned and remains unavailable in this release."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
@@ -1705,14 +1705,14 @@
         }
       ],
       "id": "14e8eb39-e0e3-4944-88df-dced524fb6a6",
-      "revisionHash": "b743757c5e6d5c3fffc59bd8e70023dbf05c1321fd1324bb4a883d62137bd89f",
+      "revisionHash": "a0197a9e0d8d6b8537fa04cd66c9b59743f8c73d4553b88f90033db9822e11f6",
       "approval": {
         "status": "approved",
-        "revisionHash": "b743757c5e6d5c3fffc59bd8e70023dbf05c1321fd1324bb4a883d62137bd89f",
-        "approvedAt": "2026-10-06T05:41:33.320Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "a0197a9e0d8d6b8537fa04cd66c9b59743f8c73d4553b88f90033db9822e11f6",
+        "approvedAt": "2026-10-13T09:07:05.321Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
       }
     }
   ],
-  "generatedAt": "2026-10-13T09:05:21.694Z"
+  "generatedAt": "2026-10-13T09:07:05.327Z"
 }

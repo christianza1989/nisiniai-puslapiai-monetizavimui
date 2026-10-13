@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped local verification only. Main merge and adoption are not claimed; full commerce/payout, legal and native release gates remain open.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/site-locale.test.mjs",
+      "result": "PASS",
+      "evidence": "Stable site ID validation and English locale defaults passed on current-main integration."
+    }
+  ],
+  "eventId": "175d2285-3c15-4121-9ab9-2f95b0625244",
+  "sequence": 2,
+  "at": "2026-10-13T09:08:41.974Z"
+}

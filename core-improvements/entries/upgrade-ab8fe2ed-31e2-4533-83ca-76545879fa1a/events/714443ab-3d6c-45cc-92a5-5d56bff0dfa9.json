@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped local verification only. Main merge and adoption are not claimed; full commerce/payout, legal and native release gates remain open.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "130/130 including ordered CSS cascade and URL rewrite checks. Local three-width home: one H1, decoded images, no overflow or page errors. Performance target remains failed."
+    }
+  ],
+  "eventId": "714443ab-3d6c-45cc-92a5-5d56bff0dfa9",
+  "sequence": 2,
+  "at": "2026-10-13T09:08:41.983Z"
+}

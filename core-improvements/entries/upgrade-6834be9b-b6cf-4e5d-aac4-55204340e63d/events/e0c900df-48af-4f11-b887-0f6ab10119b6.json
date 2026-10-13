@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/53",
+  "commit": "43f5c09cf1fea7bdc983c1f921796f4eee915251",
+  "note": "Canonical slug batches and site adapter/source evidence pushed to the existing Core PR53, dependent public PR28 source82aa0cf deployed/verified. Shared main adoption is pending review; no main merge or other-PC adoption claim.",
+  "eventId": "e0c900df-48af-4f11-b887-0f6ab10119b6",
+  "sequence": 3,
+  "at": "2026-10-13T17:59:53.150Z"
+}

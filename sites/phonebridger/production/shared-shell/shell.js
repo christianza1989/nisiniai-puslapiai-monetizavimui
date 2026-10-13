@@ -1,6 +1,8 @@
 (() => {
  const header=document.querySelector('.pb-global-header'),nav=document.querySelector('#pb-global-nav'),toggle=document.querySelector('.pb-shell-toggle');
  if(!header||!nav||!toggle)return;
+ const skip=document.querySelector('a.skip[href="#main"]'),main=document.getElementById('main');
+ if(skip&&main)skip.addEventListener('click',event=>{event.preventDefault();if(!main.hasAttribute('tabindex'))main.setAttribute('tabindex','-1');main.focus({preventScroll:true});main.scrollIntoView({block:'start'});});
  const close=()=>{nav.removeAttribute('data-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');toggle.querySelector('use').setAttribute('href','/assets/shared-shell/icons.svg#menu');};
  toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';nav.toggleAttribute('data-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');toggle.querySelector('use').setAttribute('href','/assets/shared-shell/icons.svg#'+(open?'close':'menu'));});
  nav.addEventListener('click',event=>{if(event.target.closest('a'))close();});

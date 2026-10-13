@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Add the missing canonical owner-scoped workspace read index and exact result viewer; portal-only loaded-page association cannot establish complete scoped relationships or a task/result library.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_WORKSPACE_READ_2026_10_13.md",
+    "docs/handoffs/VERSLOMATIKA_WORKSPACE_READ_2026_10_13.md",
+    "Source baseline f0119909 has no workspace-read contract/route; portal4ee220e workspace.ts resolves association against loaded business/source pages."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_read/__init__.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_read/wire.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_read/service.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_read/routes.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_read/contract.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "docs/contracts/verslomatika-workspace-read.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the additive module/router imports and corresponding portal adapter; preserve existing database/history/runtime and earlier builds.",
+  "id": "upgrade-0a8395f7-2796-4448-99ee-da16146e9863",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "f0119909ee8ae6071ae051537743e2f5603ef5f3",
+  "createdAt": "2026-10-13T16:10:00.632Z"
+}

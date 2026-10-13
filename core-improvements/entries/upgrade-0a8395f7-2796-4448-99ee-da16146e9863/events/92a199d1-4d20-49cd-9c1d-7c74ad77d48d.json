@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Additive provider-zero read projection and exact detail. Preserved original QA interpreter mismatch, fixture stage/status constraint failures, duplicate-module collection error and reproduced old-detail latest-label1FAIL. Corrected fixtures/CLI and exact detail basis; no production constraints, gates or old receipts relaxed. Source-reviewed metadata basis explicitly does not claim full native-intake/readiness proof. Running API has not adopted this source yet; portal/Chrome integration remains in progress.",
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_workspace_read.py tests/test_workspace_read_pg.py tests/test_workspace_admission.py -q",
+      "result": "PASS",
+      "evidence": "35 PASS121.14s; actual isolated restricted-PG/ordinary-customer HTTP plus offline contract/cursor tests; zero provider/channel calls; docs/handoffs/VERSLOMATIKA_WORKSPACE_READ_2026_10_13.md"
+    },
+    {
+      "command": "python -m pytest offline_tests/test_business_discovery.py -q",
+      "result": "PASS",
+      "evidence": "24 PASS1.68s in a separate process to preserve its qualified module identity"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/workspace_read src/pinet_core/api.py src/pinet_core/control_api.py tests/test_workspace_read.py tests/test_workspace_read_pg.py",
+      "result": "PASS",
+      "evidence": "Scoped code/router import and test lint passed; no dependency/lock/migration changes"
+    }
+  ],
+  "eventId": "92a199d1-4d20-49cd-9c1d-7c74ad77d48d",
+  "sequence": 2,
+  "at": "2026-10-13T16:27:53.959Z"
+}

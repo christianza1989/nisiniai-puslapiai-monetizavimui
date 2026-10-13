@@ -1,6 +1,6 @@
 # MemoryString tools and integration plan
 
-14 October 2026 | research dated 13 October | siteId stringart | brand/domain pending | core base 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Current authorized implementation is the independent local creator/Android package. The ten-partner business platform is authorized next in a separate chat; retail and subdomain websites follow later.
+14 October 2026 | research dated 13 October | siteId stringart | brand/domain pending | core base 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Authorized implementation now includes the separately preserved local creator/Android package and the persistent local ten-partner business demonstration. Retail/subdomains and live integrations follow later. The current [platform acceptance](platform/ACCEPTANCE.md) supplies its actual evidence and boundaries.
 
 Paid customer outcomes: a delivered portrait, an accepted machine, a useful DIY kit and a defined local studio/support package. Software previews do not prove manufacturing, supply, support or payments. The dated English plan contains the commercial model and remaining due diligence.
 
@@ -9,8 +9,8 @@ Paid customer outcomes: a delivered portrait, an accepted machine, a useful DIY 
 | Product/market evidence | Private supplier files and dated primary public offers | Signed SKU specification, counterpart and physical test |
 | Creator | Pinned MIT solver, chosen English UI/assets, local storage and signed test APK; phone/JSON tests pass | Physical frame/thread pilot and broader usability/device coverage |
 | Supplier cooperation | Unsent English proposal/checklist | Verified recipient and explicit sending instruction |
-| Partner operations | Order/stock/role specification; next authorized local demonstration | One persistent server path and verified tenant/stock flows |
-| Payments/shipping/machine | Planned seams only | Documented adapter, authorization and actual acceptance |
+| Partner operations | Node24/SQLite local adapter, exact synthetic EU fixture, 17 backend/HTTP checks and actual role/browser journey | Local verified; production auth/hosting/adapter acceptance separate |
+| Payments/shipping/machine | Local payment/shipping simulations; machine control off | Production adapter, authorization and physical acceptance separate |
 | Acquisition | Creator/referral strategy and cost scenarios | Accepted offer, defined budget/rights and real sales test |
 
 ## Public evidence and supplied files
@@ -45,9 +45,9 @@ Alternatives: the generated standalone HTML and manual kit instructions. Stop us
 
 ## Future shared core plus business adapter
 
-Potential reuse: CONTENT_CORE, SEO_GEO_CORE, MAIL_CORE and business-case contracts. No runtime/adoption audit of every existing service is implied. Business inputs include partner/SKU, approved revision, verified payment and shipment. Server-side tenant isolation, transactions, photo access/deletion, referrals and restart acceptance remain future work.
+Potential future reuse: CONTENT_CORE, SEO_GEO_CORE, MAIL_CORE and business-case contracts. No runtime/adoption audit of every existing service is implied. The local platform already verifies tenant isolation, transactions, approved-project access, referral accounting and restart persistence with synthetic data. Production photo intake/retention/deletion, identity and verified real payment/shipment adapters remain later work.
 
-Use a single accepted data store and role boundaries; do not build another publishing/CRM core. A manual pilot studio is the alternative until demand and the actual integration justify automation. Hosting, shipping, payment fees and software support need a real budget. A plan does not enable subscriptions, email, payments or campaigns. Owner MB Pinet; a local synthetic-data demonstration is authorized next. Paid services and live external integrations remain off.
+The [platform adapter](platform/README.md) now uses one transactional SQLite state/receipt store, server-side role projections and the unchanged Android project validator/assets. Stock/order/referral logic is scoped to this business; no new publishing/CRM core or shared adoption is claimed. Local tooling adds no npm dependency or paid provider execution. Database and raw proof stay local; production mode is refused. A manual pilot studio remains the alternative before physical/commercial acceptance. Hosting, shipping, payment fees and software support need a real budget. Owner MB Pinet; paid services and live external integrations remain off.
 
 ## Supplier generator / physical equipment seam
 

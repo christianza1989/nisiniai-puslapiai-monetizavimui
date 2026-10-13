@@ -30,7 +30,7 @@ Suggested gates: authentic counterpart and conformity; 30 machine jobs across te
 
 ## Current output and next decisions
 
-The English plan, unsent supplier proposal and 25-repository assessment are prepared. The independent MIT-based creator app and local Android test APK exist. The selected app design and assets are implemented and tested on the authorized Android phone. The ten-partner inventory/order/supplier demonstration is specified and authorized next, with no accepted server or real partner network yet.
+The English plan, unsent supplier proposal and 25-repository assessment are prepared. The independent MIT-based creator app and local Android test APK exist and remain preserved. The selected app design and assets are implemented and tested on the authorized Android phone. The separate ten-partner inventory/order/supplier demonstration now has a persistent local server and verified synthetic role/stock/order/referral flows; see [platform acceptance](platform/ACCEPTANCE.md). No real partner network, hardware acceptance or commercial demand is established by that local result.
 
 Resolve counterpart/bank identity, exact SKU, conformity, freight/customs, warranty/parts, software/photo-processing rights, private-label kit specifications and brand clearance. Request a distributor page and lead routing first; 301 migration is a separate optional agreement. Real sales determine expansion.
 

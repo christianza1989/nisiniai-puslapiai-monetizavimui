@@ -1,0 +1,267 @@
+{
+  "at": "2026-10-13T09:17:56.555Z",
+  "base": "https://phonebridger.com",
+  "combinations": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/privacy",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/editorial",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/referral-preferences",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/getting-started",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/usb-wifi",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/android-permissions",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/phone-position",
+      "width": 1440,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/privacy",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/editorial",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/referral-preferences",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/getting-started",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/usb-wifi",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/android-permissions",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/phone-position",
+      "width": 768,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/privacy",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/editorial",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/referral-preferences",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/getting-started",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/usb-wifi",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/android-permissions",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/phone-position",
+      "width": 390,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/privacy",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/editorial",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/referral-preferences",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/getting-started",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/usb-wifi",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/android-permissions",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    },
+    {
+      "route": "/guides/phone-position",
+      "width": 320,
+      "status": 200,
+      "oneH1": true,
+      "noOverflow": true,
+      "visibleImagesDecoded": true
+    }
+  ],
+  "keyboardMenuEscapeFocus": true,
+  "keyboardSkipLink": true,
+  "nativeReferralDecline": true,
+  "pageErrors": [],
+  "browserZoomUnverified": true
+}

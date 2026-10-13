@@ -1,0 +1,36 @@
+{
+  "baseline": {
+    "at": "2026-10-13T07:19:09.065Z",
+    "url": "https://phonebridger.com/",
+    "tool": "13.5.0",
+    "scores": {
+      "performance": 52,
+      "accessibility": 96,
+      "seo": 100
+    },
+    "metrics": {
+      "largest-contentful-paint": "8.5 s",
+      "cumulative-layout-shift": "0.002",
+      "total-blocking-time": "430 ms",
+      "total-byte-weight": "Total size was 5,143 KiB"
+    }
+  },
+  "final": {
+    "at": "2026-10-13T09:19:20.378Z",
+    "url": "https://phonebridger.com/",
+    "tool": "13.5.0",
+    "scores": {
+      "performance": 69,
+      "accessibility": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "largest-contentful-paint": "5.7 s",
+      "cumulative-layout-shift": "0",
+      "total-blocking-time": "220 ms",
+      "total-byte-weight": "Total size was 1,566 KiB"
+    }
+  },
+  "target": 90,
+  "scope": "Mobile lab on actual canonical hostname; not field CWV or independent usability certification."
+}

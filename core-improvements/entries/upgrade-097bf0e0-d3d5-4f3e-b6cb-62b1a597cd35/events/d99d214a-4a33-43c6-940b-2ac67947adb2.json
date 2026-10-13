@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Correct a mistaken public OpenAPI expectation in the adoption handoff: docs/OpenAPI are disabled404; startup succeeded and an exact live S2roster probe returns expected401/unauthenticated. No owning/private UI data or schema was exposed. Historical adopted event is retained; it claimed API startup availability, not normal-user acceptance.",
+  "checks": [
+    {
+      "command": "protected live18870 S2roster GET without bearer",
+      "result": "PASS",
+      "evidence": "Expected401/unauthenticated on exact source route; public OpenAPI404 is not a failed private S2 implementation."
+    }
+  ],
+  "eventId": "d99d214a-4a33-43c6-940b-2ac67947adb2",
+  "sequence": 5,
+  "at": "2026-10-13T23:25:31.362Z"
+}

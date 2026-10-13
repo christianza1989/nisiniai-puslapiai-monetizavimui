@@ -67,7 +67,8 @@ export function foundationCarrier({ load, save, loadPdf }) {
   return new SendparcelBookingAdapter({
     environment: 'sandbox',
     accountRef: 'fixture_sendparcel',
-    accessToken: 'fixture.jwt.signature',
+    apiPassword: 'fixture_api_password',
+    rateLimiter: { run: (_scope, perform) => perform() },
     bookingAdmission: {
       approved: true,
       protocol: 'legacy_single_attempt',
@@ -110,7 +111,9 @@ export function foundationCarrier({ load, save, loadPdf }) {
         const bytes = await loadPdf();
         let binary = '';
         for (const byte of bytes) binary += String.fromCharCode(byte);
-        return Response.json([{ ftype: 'application/pdf', file_data: btoa(binary) }]);
+        return Response.json([
+          { file_name: 'fixture.pdf', ftype: 'application/pdf', file_data: btoa(binary) },
+        ]);
       }
       if (path.endsWith('/tracks'))
         return Response.json({

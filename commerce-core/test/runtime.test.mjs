@@ -8,6 +8,7 @@ import { createHandler } from '../src/http.mjs';
 import { runtimeOptions, runtimeHandler } from '../src/runtime.mjs';
 import { fixtureStore, fixtureProducts, cart, key } from './fixtures.mjs';
 import { digest } from '../src/validation.mjs';
+import { StripeCheckoutAdapter } from '../src/stripe-adapter.mjs';
 const store = 'store_a',
   environment = 'sandbox',
   token = 'fixture_core_token_12345678901234567890';
@@ -168,5 +169,49 @@ test('context publishes no offers in tests; private file upload/download needs a
     (await handler(new Request('https://store-a.example/api/operator/files/file_1'))).status,
     403,
   );
+  db.close();
+});
+
+test('context distinguishes verified merchant TEST from fixtures and wrong-account credentials without enabling production or shipping', async () => {
+  const { db, s } = await setup();
+  // This isolated fixture has a synthetic account ID; inject account evidence.
+  const config = await s.store(store, environment);
+  const payment = new StripeCheckoutAdapter({
+    environment,
+    accountRef: 'acct_fixture',
+    apiKey: 'rk_test_fixturekey12345678',
+    webhookSecret: 'whsec_fixture',
+    client: { accounts: { retrieveCurrent: async () => ({ id: 'acct_fixture' }) } },
+  });
+  payment.accountRef = config.paymentAccountRef;
+  payment.verifyAccount = async () => ({
+    ready: true,
+    id: config.paymentAccountRef,
+    verified: true,
+  });
+  const context = async () =>
+    (
+      await createHandler({ service: s, environment, paymentAdapters: { [store]: payment } })(
+        new Request('https://store-a.example/api/storefront-context'),
+      )
+    ).json();
+  const verified = await context();
+  assert.equal(verified.paymentProvider, 'stripe');
+  assert.equal(verified.paymentEnvironment, 'test');
+  assert.equal(verified.paymentAccountVerified, true);
+  for (const field of [
+    'shippingConnected',
+    'shippingQuotesConnected',
+    'productionReady',
+    'publishOffers',
+  ])
+    assert.equal(verified[field], false);
+  payment.verifyAccount = async () => {
+    throw new Error('wrong actual account');
+  };
+  const blocked = await context();
+  assert.equal(blocked.paymentConnected, false);
+  assert.equal(blocked.paymentAccountVerified, false);
+  assert.equal(blocked.paymentEnvironment, null);
   db.close();
 });

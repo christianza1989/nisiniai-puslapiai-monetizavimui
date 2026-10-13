@@ -78,7 +78,8 @@ async function setup(tracked = false) {
   const adapter = new SendparcelBookingAdapter({
     environment: 'sandbox',
     accountRef: 'carrier_fixture',
-    accessToken: 'fixture.jwt.signature',
+    apiPassword: 'fixture_api_password',
+    rateLimiter: { run: (_scope, perform) => perform() },
     bookingAdmission: {
       approved: true,
       protocol: 'legacy_single_attempt',
@@ -118,7 +119,13 @@ async function setup(tracked = false) {
       }
       if (p.endsWith('/infos')) return Response.json(bookings.get(String(b.orderInfo.id)) || {});
       if (p.endsWith('/documents'))
-        return Response.json([{ ftype: 'application/pdf', file_data: btoa('%PDF-1.7\nfixture') }]);
+        return Response.json([
+          {
+            file_name: 'fixture.pdf',
+            ftype: 'application/pdf',
+            file_data: btoa('%PDF-1.7\nfixture'),
+          },
+        ]);
       if (p.endsWith('/tracks'))
         return Response.json({
           info: [{ date: '2026-10-12 10:00:00', event: 'Fixture scanned', location: 'Vilnius' }],
@@ -310,7 +317,8 @@ test('booking needs a documented ceiling contract and approved service; staging 
   const config = {
     environment: 'sandbox',
     accountRef: 'carrier',
-    accessToken: 'fixture.jwt.signature',
+    apiPassword: 'fixture_api_password',
+    rateLimiter: { run: (_scope, perform) => perform() },
   };
   assert.throws(() => new SendparcelBookingAdapter(config), /carrier_booking_contract_missing/);
   assert.throws(
@@ -326,4 +334,80 @@ test('booking needs a documented ceiling contract and approved service; staging 
       }),
     /carrier_booking_contract_missing/,
   );
+});
+
+test('locker multi-parcel limits reject before quote or create; only DPD Estonia permits up to five', async () => {
+  const x = await setup();
+  const payload = (country, courier, count) => ({
+    sender: origin,
+    recipient: { country, locker: { courier } },
+    parcels: Array.from({ length: count }, () => ({
+      weightGrams: 2000,
+      dimensionsMm: [200, 200, 170],
+    })),
+  });
+  assert.throws(
+    () => x.adapter.validateParcels(payload('LT', 'dpd', 2)),
+    /carrier_locker_parcel_limit/,
+  );
+  assert.throws(
+    () => x.adapter.validateParcels(payload('EE', 'omniva', 2)),
+    /carrier_locker_parcel_limit/,
+  );
+  assert.throws(
+    () => x.adapter.validateParcels(payload('EE', 'dpd', 6)),
+    /carrier_locker_parcel_limit/,
+  );
+  assert.doesNotThrow(() => x.adapter.validateParcels(payload('EE', 'dpd', 5)));
+  await assert.rejects(
+    x.adapter.createBooking(payload('LT', 'dpd', 2)),
+    /carrier_locker_parcel_limit/,
+  );
+  assert.equal(x.creates(), 0);
+  x.db.close();
+});
+
+test('private provider response and filename evidence bind labels to complete parcel tracking order; incomplete sequences stay unmapped', async () => {
+  const x = await setup();
+  await x.commands.execute('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
+  const fact = x.adapter.fact({
+    id: '1001',
+    status: 1,
+    tracking_number: 'ORDER_TRACK',
+    shipper: {},
+    recipient: {},
+    parcels: [
+      { weight: 2, length: 20, width: 20, height: 17, tracking_number: 'PACK_ONE' },
+      { weight: 4, length: 25, width: 25, height: 20, tracking_number: 'PACK_TWO' },
+    ],
+  });
+  assert.deepEqual(fact.trackingNumbers, ['PACK_ONE', 'PACK_TWO']);
+  assert.equal(fact.providerResponse.tracking_number, 'ORDER_TRACK');
+  const incomplete = structuredClone(fact.providerResponse);
+  delete incomplete.parcels[1].tracking_number;
+  assert.equal(x.adapter.fact(incomplete).trackingNumbers, null);
+  x.adapter.labelFileNames.add('label.pdf');
+  const actualFetch = x.adapter.fetch;
+  x.adapter.fetch = async (url, options) =>
+    new URL(url).pathname.endsWith('/documents')
+      ? Response.json([
+          { file_name: 'terms.pdf', ftype: 'application/pdf', file_data: btoa('%PDF-1.7\nterms') },
+          { file_name: 'label.pdf', ftype: 'application/pdf', file_data: btoa('%PDF-1.7\nlabel') },
+        ])
+      : actualFetch(url, options);
+  const result = await x.commands.refresh('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
+  assert.equal(result.files.length, 2);
+  assert.equal(result.documents[0].kind, 'document');
+  assert.equal(result.documents[1].kind, 'label');
+  assert.equal(result.documents[1].trackingNumber, 'TEST1001');
+  const rows = await x.s.rows(
+    "SELECT payload_json FROM shipment_observations WHERE kind='document' ORDER BY received_at,id",
+  );
+  const labels = rows.map((r) => JSON.parse(r.payload_json)).filter((r) => r.kind === 'label');
+  assert.equal(labels.length, 1);
+  assert.equal(labels[0].providerFilename, 'label.pdf');
+  assert.equal(labels[0].parcelIndex, 0);
+  assert.equal(labels[0].trackingNumber, 'TEST1001');
+  assert.equal(labels[0].labelMappingVerified, true);
+  x.db.close();
 });

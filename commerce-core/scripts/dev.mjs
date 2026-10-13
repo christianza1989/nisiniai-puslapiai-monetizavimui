@@ -37,12 +37,6 @@ requireValue(
   !(shippingIndex >= 0 && args.includes('--shipping-fixture')),
   'shipping_configuration_conflict',
 );
-const shipping =
-  shippingIndex >= 0
-    ? localShippingSandbox(args[shippingIndex + 1])
-    : args.includes('--shipping-fixture')
-      ? fixtureShippingRead()
-      : null;
 const storeId = foundation ? 'store_foundation' : stripe ? 'store_stripe' : 'store_a';
 mkdirSync(new URL('../runtime/', import.meta.url), { recursive: true });
 const db = new NodeDatabase(
@@ -58,6 +52,12 @@ const db = new NodeDatabase(
   ),
 );
 db.migrate();
+const shipping =
+  shippingIndex >= 0
+    ? localShippingSandbox(args[shippingIndex + 1], db)
+    : args.includes('--shipping-fixture')
+      ? fixtureShippingRead()
+      : null;
 const service = new CommerceService(db);
 if (!(await service.one('SELECT id FROM stores WHERE id=?', storeId)))
   await service.provisionStore(

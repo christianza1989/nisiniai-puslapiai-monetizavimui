@@ -35,6 +35,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     return { ...super.allowedPaths(), '/rest-api/orders/creates': 'POST' };
   }
   async validateCost(payload) {
+    this.validateParcels(payload);
     this.address(payload.sender);
     this.address(payload.recipient);
     if (!this.admission.serviceIds.includes(payload.serviceId)) return false;
@@ -45,6 +46,17 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
         o.currency === payload.currency &&
         o.amount <= payload.maxCost,
     );
+  }
+  validateParcels(payload) {
+    requireValue(
+      Array.isArray(payload.parcels) && integer(payload.parcels.length, 1, 100),
+      'carrier_parcel_invalid',
+    );
+    for (const address of [payload.sender, payload.recipient]) {
+      if (!address?.locker) continue;
+      const limit = address.country === 'EE' && address.locker.courier === 'dpd' ? 5 : 1;
+      requireValue(payload.parcels.length <= limit, 'carrier_locker_parcel_limit', 409);
+    }
   }
   address(input) {
     requireValue(completeSender(input), 'shipment_sender_incomplete');
@@ -78,6 +90,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     return result;
   }
   async createBooking(payload) {
+    this.validateParcels(payload);
     requireValue(
       payload.currency === 'EUR' &&
         integer(payload.value, 1) &&
@@ -99,7 +112,13 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
         height: p.dimensionsMm[2] / 10,
       })),
     };
-    const row = await this.request('/rest-api/orders/creates', { orderCreate: request });
+    // No client reference, idempotency key, insurance or v2 quote ID is invented.
+    const row = await this.request(
+      '/rest-api/orders/creates',
+      { orderCreate: request },
+      {},
+      256 * 1024,
+    );
     return this.fact(row);
   }
   fact(row) {
@@ -107,7 +126,8 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       /^\d{1,12}$/.test(String(row.id)) &&
         integer(row.status, 0, 4) &&
         row.status !== 4 &&
-        Array.isArray(row.parcels),
+        Array.isArray(row.parcels) &&
+        integer(row.parcels.length, 1, 100),
       'shipment_response_invalid',
       502,
     );
@@ -121,6 +141,15 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       postalCode: a?.postal_code,
       phone: a?.phone,
     });
+    const numbers = row.parcels.map((p) => p.tracking_number ?? null);
+    if (numbers.length === 1 && numbers[0] === null) numbers[0] = row.tracking_number ?? null;
+    requireValue(
+      numbers.every((n) => n === null || (typeof n === 'string' && text(n))),
+      'shipment_response_invalid',
+      502,
+    );
+    const trackingNumbers =
+      numbers.every((n) => n !== null) && new Set(numbers).size === numbers.length ? numbers : null;
     return {
       id: String(row.id),
       providerStatus: row.status,
@@ -131,6 +160,9 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
         dimensionsMm: [p.length, p.width, p.height].map((n) => Math.round(n * 10)),
       })),
       tracking: row.tracking_number || undefined,
+      trackingNumbers,
+      // Durable private observation stores the actual response for reconciliation.
+      providerResponse: row,
       costVerifiedByResponse: false,
     };
   }

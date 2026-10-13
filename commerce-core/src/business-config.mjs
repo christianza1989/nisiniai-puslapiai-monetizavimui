@@ -11,6 +11,7 @@ export function prepareBusiness(
   );
   const missing = [
     ...(!registeredAddress ? ['registered_address'] : []),
+    ...business.products.filter((p) => !p.package).map((p) => p.sku + '_packed_measurements'),
     'actual_inventory_and_lots',
     'optional_extras_package_measurements',
     'foreign_market_price_and_language_approval',
@@ -53,8 +54,8 @@ export function prepareBusiness(
       ],
     })),
     checkout: {
-      successUrl: 'https://memocasting.lt/krepselis',
-      cancelUrl: 'https://memocasting.lt/krepselis',
+      successUrl: 'https://memocasting.lt/cart',
+      cancelUrl: 'https://memocasting.lt/cart',
     },
     productionAdmission: { approved: false },
     operationalAdmission: { approved: false },

@@ -51,7 +51,7 @@ Vykdymas ir paruošimas dabar leidžiami tik sandbox/testOnly, su atskira refund
 ShippingOperations → numeruota 0008 → origins/plans/quotes/locker snapshots.
 Domenas bendras, serverio store/actor grant ir sandbox/testOnly ribos privalomos.
 planParcels saugo tikrą turinį, individualius SKU paketus arba operatoriaus
-matavimus. SendparcelAdapter priima tik staging JWT read operacijas; quotes
+matavimus. SendparcelAdapter v1 naudoja password API raktą ir bendrą D1 pacing; quotes
 konfigūruojami shippingReadAdapters, booking — atskirai shippingAdapters.
 Kainos nekeičia apmokėto order snapshot. Fixture yra tik test/dev argumentas.
-[Protokolas, priėmimas ir likę vartai](CONTINUATION_2026_10_12_SHIPPING.md).
+[Aktualus v1 protokolas ir likę vartai](SENDPARCEL_V1_2026_10_14.md).

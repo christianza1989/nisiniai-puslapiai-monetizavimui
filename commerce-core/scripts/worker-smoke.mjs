@@ -18,6 +18,7 @@ import { CatalogOperations } from '../src/catalog.mjs';
 import { BuyerDeliveryQuotes } from '../src/buyer-delivery.mjs';
 import { ReturnOperations } from '../src/returns.mjs';
 import { PublicAbuseGuard } from '../src/public-guard.mjs';
+import { ProviderPacing } from '../src/provider-pacing.mjs';
 import { CustomerNotifications } from '../src/notifications.mjs';
 import { CommerceJobs } from '../src/jobs.mjs';
 import {
@@ -140,6 +141,26 @@ try {
       .map((name) => ({ name, source: readFileSync(join(root, 'migrations', name), 'utf8') })),
   );
   let service = new CommerceService(db);
+  const pacingScope = await digest('fixture_shared_provider_key');
+  const pacingStarts = [];
+  await Promise.all(
+    [new ProviderPacing(db), new ProviderPacing(db)].map((gate) =>
+      gate.run(pacingScope, async () => {
+        pacingStarts.push(Date.now());
+      }),
+    ),
+  );
+  assert.equal(pacingStarts.length, 2);
+  assert.ok(pacingStarts[1] - pacingStarts[0] >= 1000);
+  assert.equal(
+    (
+      await db
+        .prepare('SELECT lease_token FROM provider_request_pacing WHERE scope_hash=?')
+        .bind(pacingScope)
+        .first()
+    ).lease_token,
+    null,
+  );
   await service.provisionStore(fixtureStore(), fixtureProducts(1));
   await service.provisionStore(fixtureStore('store_b'), fixtureProducts(3));
   assert.equal((await dispatch('unknown.example', '/api/catalog')).status, 404);
@@ -243,6 +264,12 @@ try {
 
   db = await start('test/worker-harness.mjs');
   service = new CommerceService(db);
+  const fixtureContext = await (
+    await dispatch('store-a.example', '/api/storefront-context')
+  ).json();
+  assert.equal(fixtureContext.paymentProvider, 'fixture');
+  assert.equal(fixtureContext.paymentAccountVerified, false);
+  assert.equal(fixtureContext.paymentEnvironment, null);
   assert.equal((await service.getOrder('store_a', 'sandbox', result.order.id)).amount, 3200);
   const checkout = await dispatch(
     'store-a.example',

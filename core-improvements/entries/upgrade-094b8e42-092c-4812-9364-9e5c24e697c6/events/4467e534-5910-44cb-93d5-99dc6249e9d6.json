@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original bearer-header assertion failed and was corrected to the provider-confirmed password protocol. Runtime preserves one create attempt; locker limits and filename/tracking evidence tested. Provider API credentials absent: no real remote shipment or quote claim. Local test evidence is not production acceptance.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core run verify",
+      "result": "PASS",
+      "evidence": "126Node; native workerd/D1/R2/Queue including shared pacing and fixture identity;23 migrations; Worker dry-run767.56KiB gzip/21assets. Private logcommerce-core/tmp/verify2-20261014.txt"
+    },
+    {
+      "command": "npm --prefix commerce-core run check:format",
+      "result": "PASS",
+      "evidence": "After0.13.0 metadata-only version bump; source unchanged from full verify"
+    }
+  ],
+  "eventId": "4467e534-5910-44cb-93d5-99dc6249e9d6",
+  "sequence": 2,
+  "at": "2026-10-13T21:53:10.829Z"
+}

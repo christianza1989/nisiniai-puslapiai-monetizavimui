@@ -454,11 +454,26 @@ export class ShipmentCommands {
     );
     const documents = await adapter.documents(command.provider_id);
     requireValue(
-      Array.isArray(documents) && documents.length <= 5,
+      Array.isArray(documents) && documents.length <= 100,
       'carrier_document_invalid',
       502,
     );
+    // Preserve the provider filename and document order. Only a verified complete
+    // per-parcel sequence can bind labels to tracking numbers.
+    const fact = await adapter.bookingInformation(command.provider_id);
+    requireValue(
+      await adapter.verifyBooking(command.payload, fact),
+      'shipment_facts_mismatch',
+      409,
+    );
+    const labels = documents.filter((d) => d.kind === 'label');
+    const mapped =
+      Array.isArray(fact.trackingNumbers) &&
+      fact.trackingNumbers.length === command.payload.parcels.length &&
+      labels.length === fact.trackingNumbers.length;
+    let labelIndex = 0;
     const stored = [];
+    const documentFacts = [];
     for (const d of documents) {
       const hash = await hashBytes(d.bytes),
         fileId = 'ship_' + command.id.slice(0, 35) + '_' + hash.slice(0, 32);
@@ -479,10 +494,22 @@ export class ShipmentCommands {
           )
         ).file.id,
       );
+      const parcelIndex = d.kind === 'label' ? labelIndex++ : null;
+      const documentFact = {
+        fileId: stored.at(-1),
+        providerFilename: d.providerFilename || null,
+        kind: d.kind || 'document',
+        providerDocumentIndex: stored.length - 1,
+        parcelIndex: mapped && parcelIndex !== null ? parcelIndex : null,
+        trackingNumber: mapped && parcelIndex !== null ? fact.trackingNumbers[parcelIndex] : null,
+        labelMappingVerified: mapped && parcelIndex !== null,
+      };
+      documentFacts.push(documentFact);
+      await this.observe(command, 'document', documentFact);
     }
     const events = await adapter.tracking(command.provider_id);
     requireValue(Array.isArray(events) && events.length <= 1000, 'carrier_tracking_invalid', 502);
     for (const event of events) await this.observe(command, 'tracking', event);
-    return { files: stored, tracking: events };
+    return { files: stored, documents: documentFacts, tracking: events };
   }
 }

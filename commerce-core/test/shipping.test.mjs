@@ -41,7 +41,8 @@ function connector(responseFn) {
   const adapter = new SendparcelAdapter({
     environment: env,
     accountRef: 'fixture_sendparcel',
-    accessToken: 'fixture.jwt.signature',
+    apiPassword: 'fixture_api_password',
+    rateLimiter: { run: (_scope, perform) => perform() },
     fetchImpl: async (url, options) => {
       calls.push({ url: String(url), ...options, body: options.body && JSON.parse(options.body) });
       return Response.json(await responseFn(url, options, calls.length));
@@ -189,7 +190,8 @@ test('current SP quote protocol converts grams/mm/cents and persists an estimate
   assert.equal(calls[0].body.quote.value, 32);
   assert.equal(calls[0].body.quote.shipper.postal_code, '02211');
   assert.equal(calls[0].redirect, 'error');
-  assert.equal(calls[0].headers.authorization, 'Bearer fixture.jwt.signature');
+  assert.equal(calls[0].headers.authorization, undefined);
+  assert.equal(calls[0].headers.password, 'fixture_api_password');
   assert.equal(
     (await shipping.quote(store, env, plan.id, { id: 'quote_1' }, adapter, actor)).replayed,
     true,
@@ -289,7 +291,8 @@ test('SP credentials and read-only operation allowlist reject production, redire
       new SendparcelAdapter({
         environment: 'production',
         accountRef: 'a',
-        accessToken: 'fixture.jwt.signature',
+        apiPassword: 'fixture_api_password',
+        rateLimiter: { run: (_scope, perform) => perform() },
       }),
     /carrier_environment_not_admitted/,
   );
@@ -299,7 +302,8 @@ test('SP credentials and read-only operation allowlist reject production, redire
         environment: env,
         baseUrl: 'https://attacker.example',
         accountRef: 'a',
-        accessToken: 'fixture.jwt.signature',
+        apiPassword: 'fixture_api_password',
+        rateLimiter: { run: (_scope, perform) => perform() },
       }),
     /carrier_environment_not_admitted/,
   );
@@ -341,6 +345,8 @@ test('SP documents are private PDF bytes, tracking retains unknown timezone and 
   const docs = await adapter.documents('123');
   assert.equal(docs[0].private, true);
   assert.equal(docs[0].filename, 'shipment-document-1.pdf');
+  assert.equal(docs[0].providerFilename, 'terms.pdf');
+  assert.equal(docs[0].kind, 'document');
   assert.equal(new TextDecoder().decode(docs[0].bytes).slice(0, 5), '%PDF-');
   adapter.fetch = async () =>
     Response.json([{ ftype: 'application/pdf', file_data: btoa('<html>wrong') }]);

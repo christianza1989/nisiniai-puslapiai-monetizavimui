@@ -9,6 +9,8 @@ export class StripeCheckoutAdapter {
     this.environment = environment;
     this.accountRef = accountRef;
     this.webhookSecret = webhookSecret;
+    this.provider = 'stripe';
+    this.fixture = !apiKey && Boolean(client) && !client.accounts?.retrieveCurrent;
     if (!client)
       requireValue(
         typeof apiKey === 'string' &&
@@ -42,15 +44,17 @@ export class StripeCheckoutAdapter {
     };
   }
   async verifyAccount() {
-    if (this.environment !== 'production') return { ready: true, id: this.accountRef };
+    if (this.environment === 'sandbox' && this.fixture)
+      return { ready: true, id: this.accountRef, verified: false };
     requireValue(/^acct_[A-Za-z0-9]+$/.test(this.accountRef), 'stripe_account_not_verified', 503);
     const account = await this.client.accounts.retrieveCurrent();
     requireValue(
-      account.id === this.accountRef && account.charges_enabled === true,
+      account.id === this.accountRef &&
+        (this.environment === 'sandbox' || account.charges_enabled === true),
       'stripe_account_not_verified',
       503,
     );
-    return { ready: true, id: account.id };
+    return { ready: true, id: account.id, verified: true };
   }
   async isReady() {
     try {

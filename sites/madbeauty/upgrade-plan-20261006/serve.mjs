@@ -1,0 +1,4 @@
+import {createServer} from 'node:http';
+import {readFile} from 'node:fs/promises';
+const allowed=new Set(['index.html','PLAN.md','AUDIT.md','CATALOGUE.md','VALIDATION.md','README.md','TAXONOMY_PROPOSAL.json','BACKLOG.json','COUNTS.json']);
+createServer(async(req,res)=>{const name=new URL(req.url,'http://127.0.0.1:8811').pathname.slice(1)||'index.html';if(req.method!=='GET'||!allowed.has(name)){res.writeHead(404);res.end('Not found');return;}try{const bytes=await readFile(new URL(name,import.meta.url));res.writeHead(200,{'Content-Type':name.endsWith('.html')?'text/html; charset=utf-8':name.endsWith('.json')?'application/json; charset=utf-8':'text/plain; charset=utf-8','Cache-Control':'no-store','X-Robots-Tag':'noindex'});res.end(bytes);}catch{res.writeHead(404);res.end('Not found');}}).listen(8811,'127.0.0.1',()=>console.log('Madbeauty upgrade plan http://127.0.0.1:8811'));

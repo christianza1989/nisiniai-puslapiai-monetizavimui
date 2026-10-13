@@ -1,0 +1,100 @@
+{
+  "state": "PASS",
+  "startedAt": "2026-10-09T21:48:03.276Z",
+  "finishedAt": "2026-10-09T21:48:06.453Z",
+  "origin": "https://bandymas.madbeauty.lt",
+  "checks": [
+    {
+      "name": "Existing fictional client/owner/operator sessions",
+      "state": "PASS"
+    },
+    {
+      "name": "Guest mutations and missing CSRF rejected",
+      "state": "PASS"
+    },
+    {
+      "name": "Foreign provider cannot read or mutate another workspace",
+      "state": "PASS"
+    },
+    {
+      "name": "Procedure selection replay returns one private draft",
+      "state": "PASS"
+    },
+    {
+      "name": "Offer price/duration/staff validation and stale version",
+      "state": "PASS"
+    },
+    {
+      "name": "Operator review publishes eligible provider offer",
+      "state": "PASS"
+    },
+    {
+      "name": "Single slot cannot be held by two customers",
+      "state": "PASS"
+    },
+    {
+      "name": "Confirmation replay returns one durable booking and snapshot",
+      "state": "PASS"
+    },
+    {
+      "name": "Service draft cannot change current quote or saved booking",
+      "state": "PASS"
+    },
+    {
+      "name": "Move booking updates both roles and rejects stale cancellation",
+      "state": "PASS"
+    },
+    {
+      "name": "Reception access is scoped and revocation affects existing session",
+      "state": "PASS"
+    },
+    {
+      "name": "Ordered multi-service visit includes addon and one atomic snapshot",
+      "state": "PASS"
+    },
+    {
+      "name": "Owner busy block removes the slot and release restores it",
+      "state": "PASS"
+    },
+    {
+      "name": "Private client card is scoped; stale write cannot replace it",
+      "state": "PASS"
+    },
+    {
+      "name": "Notification preferences stay separate from marketing",
+      "state": "PASS"
+    },
+    {
+      "name": "Own data export excludes another client and internal card actor",
+      "state": "PASS"
+    },
+    {
+      "name": "Repeated erasure request keeps the same safe customer projection",
+      "state": "PASS"
+    },
+    {
+      "name": "Erasure case review retains future visit; customer can withdraw",
+      "state": "PASS"
+    },
+    {
+      "name": "Booking closure cannot hide a confirmed visit",
+      "state": "PASS"
+    },
+    {
+      "name": "Owner report excludes client email/contact values",
+      "state": "PASS"
+    },
+    {
+      "name": "Cancellation and archived offer preserve historical snapshot",
+      "state": "PASS"
+    }
+  ],
+  "cleanup": [],
+  "bookingId": "booking_b2774520-77e3-4417-8a85-0304bef6900a",
+  "offerId": "offer_7fa9641e-3740-486a-a2f4-70625ab0ba72",
+  "bookingState": "canceled",
+  "offerState": "archived",
+  "smtp": false,
+  "erasureExecuted": false,
+  "error": null
+}

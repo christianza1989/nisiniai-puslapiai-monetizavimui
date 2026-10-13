@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-06T17:31:27.317Z",
+  "source": {
+    "private": {
+      "repository": "christianza1989/nisiniai-puslapiai-monetizavimui",
+      "commit": "f44da286f5d7be9c5579e7ce77c464f564db2eba",
+      "pullRequest": 8
+    },
+    "publicCore": {
+      "repository": "christianza1989/niche-public-core",
+      "commit": "2f4bd1cace3c358231bc5e76795051ad6e324f74",
+      "pullRequest": 5
+    }
+  },
+  "installed": {
+    "madbeauty": "277e5fb7-51f0-44b1-bc1b-96bd7ca42a8a",
+    "dovanos123": "9828114e-776a-4034-9a4b-ceab3111c9e5"
+  },
+  "status": {
+    "source": "pushed",
+    "deployment": "live canonical",
+    "mainMerge": "not merged"
+  },
+  "safety": {
+    "stagedPrivatePaths": "excluded",
+    "exactPrivateCredentialsAndEncodedValues": "PASS",
+    "whitespace": "PASS"
+  },
+  "note": "These commits capture the tested/deployed source and initial canonical evidence. Later documentation-only commits may close reservations without changing deployed code."
+}

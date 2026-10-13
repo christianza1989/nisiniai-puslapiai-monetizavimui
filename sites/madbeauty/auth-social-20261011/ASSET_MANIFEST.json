@@ -1,0 +1,99 @@
+[
+  {
+    "name": "auth-friends-violet",
+    "path": "C:/Users/Lenovo/.codex/generated_images/01a11268-7ab2-7a23-973c-598322dba15a/exec-0564c94c-2536-4ae2-8a86-1e268ea893f9.png",
+    "prompt": "Use case: photorealistic-natural. Asset type: portrait editorial photograph for Madbeauty Lithuanian beauty marketplace login/register page. Two adult female friends in their late 20s/30s sitting together in a beautiful contemporary Lithuanian beauty salon, relaxed candid smiles and natural conversation, understated stylish clothes, one holding a small lavender cosmetic pouch. Realistic skin texture, believable hands, no posed commercial grin. Beautiful rich violet/lavender upholstery, warm cream walls, brushed chrome mirror and soft daylight, high-end tasteful photographic composition, gentle grain, editorial magazine quality. Vertical 3:4 composition, friends and salon in upper 70 percent, softly darker violet seat and surroundings in bottom quarter where real HTML white headline will sit. No typography, letters, logo, watermark, mock UI or artificial ratings. This is editorial illustration, not an actual provider or customer testimonial.",
+    "role": "Editorial authentication side photo; synthetic, not provider work",
+    "transparent": false,
+    "source": {
+      "width": 1086,
+      "height": 1448,
+      "mime": "image/png",
+      "hasAlpha": false
+    },
+    "policy": "responsive-webp-v1",
+    "variants": [
+      {
+        "file": "images/auth-friends-violet-1086.webp",
+        "width": 1086,
+        "height": 1448,
+        "bytes": 64138,
+        "sha256": "fd7682198a585e2d9479f13ee0a18b5f0b67aa8d88349eec962f4cfb4d760a09"
+      },
+      {
+        "file": "images/auth-friends-violet-800.webp",
+        "width": 800,
+        "height": 1067,
+        "bytes": 43758,
+        "sha256": "03133388a230bac7b8962ebbf325337dfaa313c1a49a5d6948b76cd99d03dd11"
+      },
+      {
+        "file": "images/auth-friends-violet-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 31966,
+        "sha256": "14cb7f428954fdc1594c1c7a887845927426d310a546d3cdb4d6f4ae5ee53a55"
+      },
+      {
+        "file": "images/auth-friends-violet-360.webp",
+        "width": 360,
+        "height": 480,
+        "bytes": 15060,
+        "sha256": "0fffa0c4aa46ae2c5edd9db0fba8a56218cdf193994ddc69edc1dc4d6f406f94"
+      }
+    ],
+    "originalSha256": "c505925843222301fb386ce70129e7908293f5f91a819b847f7f59ea0329b792"
+  },
+  {
+    "name": "auth-beauty-kit",
+    "path": "C:/Users/Lenovo/.codex/generated_images/01a11268-7ab2-7a23-973c-598322dba15a/exec-a5f98116-8041-4dd4-bf1f-12c08334dd69.png",
+    "prompt": "Use case: stylized-concept. Asset type: transparent original decorative cutout for Madbeauty beauty marketplace login code screen and invite-a-friend dialog. A very beautiful premium small still-life: one open lavender leather cosmetic pouch, elegant brushed silver compact mirror reflecting soft white, a violet glass nail polish bottle and slim black-handled powder brush lying beside it. Fine detailed materials, tasteful photorealistic 3D product editorial finish with gentle black ink-like outline accents consistent with beauty category illustrations. Tight balanced horizontal composition, each object distinct and believable, limited quantity, generous clear outer margin. Rich violet #7040E8, pale lavender and silver highlights. True transparent alpha background, isolated objects, restrained small contact shadows only, no flat background, no checkerboard, no text, letters, logos, watermark, user interface, heart symbols or people.",
+    "role": "Decorative auth/invite cutout",
+    "transparent": true,
+    "source": {
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/png",
+      "hasAlpha": true
+    },
+    "policy": "responsive-webp-v1",
+    "variants": [
+      {
+        "file": "images/auth-beauty-kit-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 210678,
+        "sha256": "4a1cfc6e61cdd43fed2ffb08f249fa9fd5870643a341efc2c40d136e798de19a"
+      },
+      {
+        "file": "images/auth-beauty-kit-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 146924,
+        "sha256": "d5e262e26291c2b17b4716c786486b8da4b98ee61fbbd434e0ea6c3f3ed29b4c"
+      },
+      {
+        "file": "images/auth-beauty-kit-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 72426,
+        "sha256": "feaf32a2badacbe31e9bc6dab267cb22f9c6d1424690693c23133d38b03baaa5"
+      },
+      {
+        "file": "images/auth-beauty-kit-640.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 50528,
+        "sha256": "70a69a7adf080948ce239bdaba424bdc4714c0fc065da72f525a1a2a74a90a97"
+      },
+      {
+        "file": "images/auth-beauty-kit-360.webp",
+        "width": 360,
+        "height": 240,
+        "bytes": 20668,
+        "sha256": "63ce3ee8c03f64ca342b72b2a8f5b4ff6076450596a50e9136ad2905a58f594d"
+      }
+    ],
+    "originalSha256": "9c4898a78cd53ca68ded3cc61582551df1cb998d57c33664f8b36907a35498bf"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-09T19:32:44.638Z",
+  "phase": "removed",
+  "status": "PASS",
+  "runtime": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+  "clientId": "account_0b7965f6-021c-4e7e-9ca8-4573b4933120",
+  "favoriteIds": [],
+  "sourceHash": "48fd5d51a613fdb0ea6161dcdf15bc8ae4ade35f10c4ec8620f0c2963ba033e3",
+  "targetHash": "02d0512e915ef232a1bb77873fdc5430cc85e1caef0034fd31c06a3ffb4239d1",
+  "mailboxHash": "36bfa6a737b629b82c9ab373214df600e585e20b1149bbd35ac0d4883f86973d",
+  "scope": "Normal current hosted candidate customer favorite removal. Bookings, target snapshot and capture mailbox match the retained pre-restart fbc fixture baseline. New runtime restart is not claimed. Synthetic records only; no production writes."
+}

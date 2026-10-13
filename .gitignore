@@ -86,3 +86,11 @@ browser-profile*/
 # Local operation locks/temporary atomic receipts; journal and payload stay tracked.
 /core-improvements/entries/**/operation.lock
 /core-improvements/entries/**/*.tmp
+
+/sites/madbeauty/cloudflare/output/
+/sites/madbeauty/cloudflare/.wrangler/
+/sites/madbeauty/cloudflare/.dev.vars*
+/sites/dovanos123/runtime/
+
+# Sanitized source/deployment identities only; other research JSON stays private.
+!/research/cloudflare-release-20261006/SOURCE_COMMITS.json

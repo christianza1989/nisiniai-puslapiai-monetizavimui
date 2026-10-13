@@ -1,0 +1,163 @@
+# Madbeauty Facebook ir bendruomenės darbų tęstinumas
+
+Atnaujinta 2026-10-11. Aktyvi apimtis: pradėti nuo Facebook, įgyvendinti C0–C2 ir padaryti viską išbandoma. Grupės ir renginiai suplanuoti, jų realizacija šiame lange neužsakyta. Checkbox pažymimas tik su konkrečiu rezultatu ir įrodymu; parašytas kodas savaime nėra priėmimas.
+
+## Aktualus checkpoint
+
+Aktualu 2026-10-11T08:39:35.673Z: main 87e6c536-aa20-4f9c-a052-62ab21f9526c, trial 283f9d36-88a3-44ba-87f0-dbf25e3e0f65, runtime source 9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63. Bendruomenė C0–C2 abiejuose aktyvi; main Facebook išjungtas, Meta patvirtinimas savininko atidėtas. Vieno rezervavimo būdo inkrementas gyvai priimtas, native/hosted100/139 ir actual trial salono create/switch/reload. Reviewer cd397c44 nekeistas. [Rezervavimo kvitas](../booking-channel-20261011/RECEIPT.md). Žemiau ankstesni leidimai ir jų browser proofai yra istorija, ne naujo leidimo pilnas pakartojimas.
+
+Likusių žemiau nepažymėtų plataus bendruomenės browser/viewport vartų nelaikyti vien testų suma užbaigtais. Telefono/SMS ir reviewer Chrome diagnostika atidėta kartu su Facebook patvirtinimu; dabartinis savininko rezervavimo inkrementas užbaigtas.
+
+## Kur tęsti po konteksto praradimo
+
+Checkout: `madbeauty-service-picker-20261010`, šaka `ai/madbeauty-service-picker-20261010`, PR88. Plano commit `c8f7d1e`; šis dokumentas gali turėti naujesnius dar necommitintus checkpointus. Pirmiausia `git status`, tada šis failas ir jo naujausias checkpoint. Kitų failų pakeitimų nenurašyti ar reset'inti.
+
+Dabartinis žingsnis: **C0–C2 main/trial aktyvūs; vieno rezervavimo būdo inkrementas priimtas gyvai**. Tikras savininko Facebook login išsaugo savo ankstesnio trial leidimo įrodymus. Viešas Facebook paleidimas ir Meta verification atidėti savininko; pradiniai sutikimai priimti, jų kartoti nereikia. [Aktualus kvitas](RECEIPT.json).
+
+Meta programėlė1827877621543839 vis dar Unpublished. App Review nauji prašymai email/public_profile yra Not submitted; konkretus submission1827877654877169 turi Verification, App settings, Allowed usage, Data handling ir Reviewer instructions žingsnius, Submit for review disabled. Pagrindinio domeno bendruomenė jau aktyvi; public Facebook login išjungtas. Pradinis owner-consent klausimas nebelaukia atsakymo.
+
+Tolimesnis Facebook veiksmas tik savininkui grįžus prie verification: faktinė tiekėjų geografija, Chrome reviewer konkretus login blokavimas ir galutinis Meta Submit. Telefono/SMS/CAPTCHA nekartoti; rekvizitų ir sutikimų readback išlikęs. Rezervavimo kanalo pakeitimas neapeina šių ribų. [Meta planas](META_REVIEW.md).
+
+Gyvas pagrindas: main `87e6c536-aa20-4f9c-a052-62ab21f9526c`, trial `283f9d36-88a3-44ba-87f0-dbf25e3e0f65`, runtime source `9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63`; reviewer `cd397c44-6eb8-4e2f-8d2c-e3ad954371fd` nekeistas. Main/trial bendruomenė true, mainFBfalse/trialFBtrue. Native/hosted main100, trial139; prior full community browser scenarios retain their earlier versions. Trialexpiry `2026-10-16T21:10:47.982Z`,40solo+5publicsalons/11–21reviews išsaugoti; naujas rezervavimo bandymo salonas privatus ir nepatvirtintas, jokių dummy canonical. [Aktualus kvitas](RECEIPT.md), [rezervavimo inkrementas](../booking-channel-20261011/RECEIPT.md).
+
+## Užbaigtas pasiruošimas
+
+- [x] Pilnas produktinis ir techninis planas: [PLAN.md](PLAN.md).
+- [x] Dizaino / ekranų kryptis: [SURFACE.md](SURFACE.md).
+- [x] 22 struktūriniai darbai, 32 ekranai ir priklausomybės: [BACKLOG.json](BACKLOG.json); JSON / cycle / screen / vietinių nuorodų patikros PASS, planas `c8f7d1e`.
+- [x] Patikrintas gyvas auth ir profilio kvietimo pagrindas pagal ankstesnį kvitą.
+- [x] Facebook galimybių tyrimas: [FACEBOOK_INTEGRATION_PLAN.md](../auth-social-20261011/FACEBOOK_INTEGRATION_PLAN.md).
+- [x] Perskaitytas Meta My Apps ir atidarytas naujos programėlės kūrimo vedlys; Madbeauty programėlės tame pradiniame žingsnyje dar nebuvo.
+- [x] Su savininko action-time patvirtinimu sukurta Madbeauty Meta programėlė `1827877621543839`; patvirtinta Dashboard būsena, programėlė dar nepaskelbta.
+
+## Facebook pirmas etapas
+
+- [x] F0 Paruošti programėlę Meta, jos tikrus domenus ir callback sutartį; fiksuoti App ID / režimą / leidimus be secret.
+- [x] F1 Įgyvendinti vienkartinį session-bound OAuth state, code exchange ir tokeno app / subject / expiry tikrinimą.
+- [x] F2 Atominė Facebook tapatybė, pirmas email kodas ir aiškus esamos paskyros susiejimas; jokio automatinio merge.
+- [x] F3 Paskyros susiejimas / atsiejimas, deauthorization ir signed deletion callback.
+- [x] F4 Tikras login mygtukas ir grįžimas į pradėtą kelią; neįjungti viešai be veikiančios konfigūracijos.
+- [x] F5 Vietiniai + native replay / expiry / wrong app / concurrency / role / restart testai.
+- [x] F6a Tikras savininko/admin Meta login, logout/relogin, unlink ir OTP relink; aktualus RECEIPT.json.
+- [x] F6-review-a Abu Allowed usage sutikimai ir savininko Data handling faktai išsaugoti Meta; readback PASS.
+- [x] F6-review-b Savininko skirtas portfelis900173107610943 pervadintas į Memocasting, MB; juridiniai rekvizitai ir controller vardas saved/readback PASS.
+- [x] F6-review-c Connected business portfolio grid / Remove readback; agento Connect paspaudimas neįrodytas, nekartoti.
+- [ ] F6-review-d Verified business: telefono/SMS patvirtinimą savininkas atidėjo. Tiekėjų geografija, reviewer OAuth ir galutinis Submit dar nepriimti.
+- [x] F6-review-e Izoliuotas reviewer Worker / namespaces / session secret / query redaction / protected provider preservation, hosted130 / community19 ir IAB feed/reload PASS.
+- [ ] F6-review-f Chrome OTP grįžimo į login diagnostika; bendras browser priėmimas PARTIAL.
+- [ ] F6b Išorinis vartotojas po Meta peržiūros ir publikavimo; admin bandymas šio vartų nepakeičia.
+
+## C0 Pagrindas
+
+- [x] C0-01 Esamos tapatybės, aktoriaus ir auditorijos serverio sutartys.
+- [x] C0-02 Atskira community saugykla, pridedanti migracija ir native restart kelias.
+- [x] C0-03 Srauto / composer / pokalbio desktop ir mobile dizainas; grupių / renginių maketai vėlesnei apimčiai.
+- [x] C0-04 Skundų, blokavimo, limitų ir audituojamų sprendimų pagrindas prieš viešą UGC.
+
+## C1 Srautas
+
+- [x] C1-01 Įrašai, auditorija, redagavimas / šalinimas ir saugi vaizdų medija.
+- [x] C1-02 Atrask / Sekami, miesto / paslaugos filtrai, stabilus pagination ir tikra paslaugos nuoroda.
+- [x] C1-03 Patiktukai, komentarai / atsakymai ir privatūs idėjų albumai.
+
+## C2 Draugystės ir žinutės
+
+- [x] C2-01 Draugystės prašymai, priėmimas / atsiėmimas / nutraukimas ir blokavimo viršenybė.
+- [x] C2-02 Žinučių užklausos, patvarūs asmeniniai / salono pokalbiai, atskiros vizito teisės.
+- [x] C2-03 5s automatinis atnaujinimas, reconnect / logout / revocation ir privatūs nuotraukų priedai.
+
+## Priėmimas prieš pagrindinio domeno aktyvinimą
+
+Žemiau esantys vartai skirti pagrindinio domeno aktyvinimui. Priimtas izoliuotas trial ir tikras savininko Facebook bandymas turi atskirus įrodymus RECEIPT.json; šie checkbox jų nepanaikina.
+
+- [ ] C0–C2 vietinio backend ir native Worker paritetas, jokių svetimos auditorijos / organizacijos duomenų.
+- [ ] Du tikri browser langai: įrašas → reakcija / komentaras → sekti → draugystė → pokalbis → refresh / reconnect.
+- [ ] Ne draugo užklausa, atmetimas, blokavimas, sesijos pabaiga ir netinkamas privatus media ID.
+- [ ] Pakartojimų, versijos konfliktų ir native restart patikros su įrodymais.
+- [ ] 390 / 768 / 1440 px, klaviatūra, fokusas, loading / empty / error / success / access revoked.
+- [ ] Pranešimų / privatumo nustatymai, eksportas ir naujo socialinio turinio saugojimo taikymas aiškus prieš atitinkamą viešą / destruktyvią funkciją.
+- [ ] Trial įrašai ir žinutės pažymėti sintetiniais, demo profilių / galerijų / atsiliepimų ir expiry išsaugojimas.
+- [ ] Patikrintas faktinis release, bindings / namespaces / mail / content išsaugojimas ir rollback.
+- [ ] Naudotojui pateiktos testavimo nuorodos bei konkretus dviejų paskyrų scenarijus.
+
+## Vėlesni etapai
+
+- [ ] C3-01 Grupių kūrimas ir narystė.
+- [ ] C3-02 Grupių diskusijos, rolės ir valdymas.
+- [ ] C4-01 Renginių tipai ir organizatoriaus publikacija.
+- [ ] C4-02 Konferencijų programa ir pranešėjai.
+- [ ] C4-03 Mokymų / konkursų paraiškos.
+- [ ] C4-04 Vietos, registracija ir laukimo eilė.
+- [ ] C4-05 Kvietimai, pakeitimai ir priminimai.
+- [ ] Visos bendruomenės C5 priėmimas pagal struktūrinį backlogą.
+
+## Checkpoint tvarka
+
+Po kiekvieno prasmingo paketo čia įrašyti source commit arba uncommitted failų sritį, tikrą patikrą ir jos rezultatą, nebaigtą problemą, gyvos versijos tapatybę ir kitą konkretų veiksmą. Pakeisti „Dabartinis žingsnis“ viršuje. Facebook išorinis trukdis neatleidžia nuo nepriklausomų C0–C2 darbų; neskelbti viso etapo baigtu vien dėl testų sumos ar sukurto UI.
+
+### 2026-10-11 Facebook vietinio pagrindo checkpoint
+
+Nauji `backend/facebook-auth.mjs` ir `.test.mjs`; siauri `backend/auth.mjs`, `backend/http-core.mjs`, `cloudflare/fetch-api.mjs` ir `platform-object.mjs` pakeitimai. Vienkartinis sesijos state, realių Graph endpointų adapteris su app / subject / expiry tikrinimu, OTP transakcijos tapatybės susiejimas, signin rotacija, signed deletion / deauthorization ir konfigūracijos išjungimas. `node --test sites/madbeauty/backend/facebook-auth.test.mjs sites/madbeauty/prototype/http-adapter.test.mjs`: 19/19 PASS, iš jų 11 naujų Facebook sutarčių testų; provider atsakymai šiuose testuose sintetiniai. Tikras Graph OAuth, native Worker, frontend ir deployed kelias dar NEPRIIMTI. Gyvos versijos aukščiau nepakeistos. App konfigūracijos ir UI darbai tęsiami.
+
+### 2026-10-11 savininko patvirtinimo ir native checkpoint
+
+Meta App Secret paruoštas privačiai po savininko patvirtinimo; jo vertės čia, Git ar ekrano įrodymuose nėra. Email leidimas pridėtas su atskiru patvirtinimu. Abu OAuth callback adresai ir canonical deauthorization išsaugoti. Naujas `cloudflare/facebook-runtime.test.mjs`: Workers SQLite restart, OTP pirmas susiejimas, linked signin / cookie rotacija, replay, signed deletion, wrong-app ir no-referrer tikrinimas PASS (provider šiame teste sintetinis). Facebook unit / HTTP 15/15 PASS; prieš papildomą killswitch testą combined existing auth / invite / adapter patikros 25/25 PASS. Trial email forma dabar siūlo demo adresą, o ne realų FB hint. Pridėtas state / pending cleanup ir išsaugoma griežtesnė API referrer policy. Gyvai dar niekas iš šio paketo neįdiegta. Ikonos upload užblokuotas extension file permission; tęsti nepriklausomą C0–C2 kelią.
+
+### 2026-10-11 C0–C2 ir Meta ikonos checkpoint
+
+Paruoštas bendruomenės serverio pagrindas su atskirais person / organization ir conversation Durable Objects, autentifikuota API, auditorijų / blokavimo / nuosavybės / versijų ribomis. Vietinėje naršyklėje pereitas OTP → bendruomenės profilis → viešas testinis įrašas kelias. Pridėti feed, follow, save, friendship ir request / message UI; prieinamumas bei mobilioji navigacija patikslinti. Community unit + native Worker ir Facebook / esamo adapterio combined patikra: **27/27 PASS**. Native community testas patvirtino restart ir privatumo / užklausų / revocation ribas. Tai nėra C0–C2 priėmimas: medija, real-time / salonų inbox, retention, moderavimo eilė, papildomas dviejų naršyklių acceptance ir realus trial deploy dar liko.
+
+Savininko paprašyta nauja pikta gražuolė sugeneruota built-in ImageGen pagal esamą estetinių procedūrų iliustraciją. Galutinė Meta ikona: `assets/madbeauty-angry-beauty-icon-v1.png` (1024 × 1024 PNG, 1 693 852 B); tikslus prompt ir kilmė sibling `.provenance.json`. Upload pakartotinai sustabdė ChatGPT Chrome plėtinio `Allow access to file URLs` prieigos trūkumas. Savininkui pateikta konkreti įjungimo / savarankiško upload užklausa. Meta Basics tebėra Unpublished; ikona dar **NEĮKELTA**, gyvos versijos ir Workers secrets nepakeisti.
+
+### 2026-10-11 ikoną įkelia savininkas
+
+Savininkas atsakė „Įkelsiu ikoną pats“. Galutinis PNG taip pat nukopijuotas į `C:/Users/Lenovo/Downloads/madbeauty-app-icon-v1.png`; agentas Meta upload nebekartoja. Pagrindo source checkpoint `cd973a0` push į PR88 šaką; etapų priėmimas ir deploy nepasikeitė. Tęsiant pirmiausia patikrinti, ar savininkas išsaugojo ikoną. Po checkpoint pradėtas `backend/community-media-state.mjs` ir `backend/community.mjs` prijungimas: privatūs SQL WebP variantai / dalys, attachment ownership, auditorijos skaitymas ir 12 mėn. žinučių cleanup. Šis naujas medijos inkrementas dar nepriimtas: upload / read HTTP, alarm, UI ir medijos testai liko; dabartinis API ir toliau saugiai atmeta medijos priedus. Po jo esami community Node / native testai 3/3 PASS. Kitą darbą pradėti naujais medijos ribų testais, tada pilnu HTTP keliu; naujo inkremento neskelbti veikiančiu upload.
+
+### 2026-10-11 privataus media / salonų / UI checkpoint
+
+Uncommitted paketui pridėtos optimized WebP SQL dalys, audience-bound HTTP read/upload, orphan24h / 12 kalendorinių mėnesių cleanup, asmens šalinimo journal / retry, realių organizacijos darbuotojų inbox, moderation audit, actual paslaugos ir esamos darbų galerijos ryšys bei trial90narių/45įrašų idempotent seed. Šalinimas neduoda prieigos ištrintai paskyrai ir sutvarko jos komentarus / reakcijas / albumų nuorodas; native visos paskyros removal testas PASS. Moderatoriaus eilė nerodo privačių pokalbių. Du vietiniai browser langai: nuotrauka, komentaras/redagavimas, patiktukas, named albumas, sekimas, accepted friendship, tekstas + privatus foto-only priedas ir 5s atnaujinimas be reload. Restart išsaugojo turinį.
+
+Rasta reali HTMLFormElement.id shadowing klaida dėl hidden name=id. Pataisyta getAttribute ir prasmingas regressijos testas: comment/save/edit bei neaiškaus post atsakymo operacijos ir upload intent išsaugojimas PASS. Naujos 21 backend/media/native patikros PASS; po papildomų UI, operatoriaus ir native FB patikrų 23/23 bei7/7 PASS (persidengiančių testų nesumuoti). Trial native45publicprofiles ir90communityactors tęstinis sąrašas, actualservice/gallery,11–21reviews/books tikslus before/after ir restart PASS. Actual390/768/1440DOM nėra horizontalaus dokumento overflow; ekranų vaizdinį priėmimą dar papildyti hosted. Pokalbio atnaujinimas yra5s poll su hidden pause/backoff; WebSocket hibernation dar neįdiegta. Meta ikona savininko įkelta ir agento Save Changes patvirtinta, screenshot meta-icon-saved.png. Cloudflare401 išspręstas oficialiu Wrangler4.92 whoami token refresh; trial before lease2292c0bd gautas, jokios deployed mutacijos šiame checkpointe.
+
+### 2026-10-11 hosted checkpoint
+
+Trial5d2173cb-fff3-4902-83b9-021b56f61889 su IMAGES/COMMUNITY, canonical776ac16c-c67b-41bb-8630-3145509fe57c su COMMUNITYdisabled ir FBlogin disabled/callback configured. Runtime d539271. [RECEIPT.md](RECEIPT.md) ir JSON nurodo source/hash/native/public/live19/browser bei incidentus. Meta consent actualChrome atviras, savininkui konkretus ContinueasChristian leidimas pateiktas, dar negautas. CheckboxF0–F5 reiškia configured/native įgyvendinimą, ne publicFacebookOAuth. C0–C2 patikros nurodytam ribotam trial ir5s polling; main bendruomenė dar neaktyvinta, WShibernation vėlesnė transporto plėtra. Grupės/events/conferences C3–C4 neįgyvendinti. Kelias bandymui /bandymo-paskyros → /bendruomene. Trial data protected QA/content/mail/expiry išsaugoti.
+
+### 2026-10-11 Tikras savininko Facebook bandymas
+
+Savininkas pranešė, kad pats prisijungė per Facebook. Actual Chrome account UI patvirtino demo-client-0 susiejimą. Agentas pereitas existing-authorized Meta login → ta pati paskyra → unlink (sesija panaikinta) → actual OAuth → būtinas trial OTP → relink. Sutikimų ar Meta leidimų apimtis nedidinta, joks realus laiškas nesiųstas.8 esami vizitų URL prieš/po vienodi. Susiejimas atkurtas. Kodo/deployment šiame bandyme nekeista. Meta App Review juodraštis perskaitytas, Not submitted, išorinė prieiga nepriimta.
+
+### 2026-10-11 Meta peržiūros pasiruošimas
+
+Faktinė App Review submission1827877654877169 reikalauja patvirtinto verslo portfelio; turimi3kitų projektų portfeliai Unverified, MB Pinet savininko faktas paklaustas. Website platform prieš tai trūko, pridėtas Site URL https://madbeauty.lt/ ir Save Changes/readback PASS. Testing instructions for Web išsaugotos ir pakartotinai atidarius perskaitytos: actual trialOAuth/OTP/relogin/unlink ir no fees/no geo, aiškiai trialexpiry disclosed, nėra1year access claim. Reviewer target /paskyra trial yra tik juodraštis, ne ilgalaikės Meta peržiūros priėmimas. Programėlė Unpublished, Submit disabled, jokių bendrovių duomenų ar atitikties faktų neišgalvota.
+
+Aktualūs užlaikantys faktai: verified MB Pinet portfolio; atskiras email/public_profile Allowedusage sutikimas; controllercountry/national-security history/processes; provider processing/remoteaccess countries ir durablereview target. Savininkui3konkretūs klausimai pateikti. Datahandling nėra patvirtinta anketa, tik iš dalies technicaldraft. Main publicFB/community false, trialexpiry nekeistas. Gavus Allowedusage atsakymą nebekartoti patvirtinimo klausimo tai pačiai apimčiai, priimti abudu konkretūs Save.
+
+### 2026-10-11 Atskiros Meta peržiūros aplinkos vietinis kandidatas
+
+Paruošti review-build.mjs ir review-native.test.mjs; [planas ir duomenų srautai](META_REVIEW.md). Artifact ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188; native OTP, bendruomenės įrašas, SQLite restart, host ribos ir HTTP / DO expiry PASS. Tik vietinis paruošimas, perziura.madbeauty.lt dar neįdiegtas; review callback, secret, reviewer paskyros ir realus OAuth dar nepriimti. Esamo trial expiry ir gyvų versijų nekeista. Pirmas naujos compatibility date bandymas nepasileido, išlaikyta priimto runtime2026-05-22 data. Query redaction reikia provider API prieš FB aktyvinimą. Konkretūs savininko portfelio / faktų / sutartinių Allowed usage atsakymai tebėra reikalingi.
+
+### 2026-10-11 Sutikimai, duomenų faktai ir MB Pinet portfelis
+
+Abu konkretūs email/public_profile Allowed usage Save ir abiejų Edit readback PASS po savininko patvirtinimo. Data handling išsaugoti MB Pinet / Lithuania / No national-security requests per12m / None of the above procedures, pagal savininko faktus. Tiekėjų ir processing/remote-access šalių sąrašas nebaigtas; nekurti EU-only ar galiojančių procedūrų deklaracijos.
+
+Meta naujo Business kūrimą blokavo paskyros limitu.3prieinamų portfelių juridiniai rekvizitai tušti, visi Unverified. Savininkas patvirtino animateme.co(0assets) naudojimą MB Pinet / Madbeauty.900173107610943 pervadintas į MB Pinet, Business info ir App Verification pasirinkimo readback PASS. Kitų projektų nekeitėme / nešalinome. Business details MB Pinet/Lithuania/madbeauty.lt juodraštis neišsaugotas dėl privalomo adreso/regiono/pašto kodo/telefono; faktai paklausti. Connect pasirinktas / įjungtas, nepaspaustas: konkretus App1827877621543839→business900173107610943 valdymo perdavimas laukia action-time patvirtinimo. Įrodymai/meta planas ir RECEIPT.json aktualūs. Main/trial/QA/expiry/source runtime nekeisti; programėlė Unpublished, review Not submitted.
+
+
+### 2026-10-11 Memocasting rekvizitai ir reviewer deployment
+
+Savininko pataisyti Memocasting, MB rekvizitai išsaugoti ir readback PASS; kodas306026827, privatus telefonas tik Meta / vietiniuose įrodymuose. Data handling valdytojo vardas pataisytas ir reopened readback PASS. App Verification / submission grid jau rodo Connected business portfolio900173107610943 / Memocasting, MB / Unverified / Remove; agento Connect paspaudimas neįrodytas ir nekartotas. Verification vedlys Lithuania / Private Company / rekvizitai pradėtas; sustota ties reCAPTCHA, savininko handoff paklaustas. App vis dar Unpublished / Not submitted. Tiekėjų šalių deklaracija nebaigta. Perziura.madbeauty.lt įdiegta, version b46dfaab-ce7c-4407-a400-bc3ea57cff84 / source cd5e4d0 / artifact ea02b98a. Naujos PLATFORM ir COMMUNITY namespaces, naujas session secret, query redaction readback ir main/trial/QA išsaugojimas PASS. Native ribos/restart/expiry PASS; public hosted130 ir community19 scenarijų PASS; IAB OTP→profilis→feed→reload PASS. Chrome2OTP grįžo į login, priežastis UNVERIFIED, browser acceptance PARTIAL. FB išjungtas, review callback/appsecret/actualOAuth ir anketa dar neaktyvinti. Originalus trialexpiry ir main/trial runtime nepakitę.
+
+### 2026-10-11 Plano apmokėjimas, kvotos atkūrimas ir skaitymų leidimas
+
+- [x] Klasifikuotas actual provider `Exceeded allowed rows read in Durable Objects free tier.` ir visų3domenų root/session500. Nekartotas deploy / DBrestore incidentui gydyti.
+- [x] Savininkas pats pranešė apie plano apmokėjimą; įprastas HTTPS root/session200 visuose3domenuose ir platesnis priėmimas atkurti. Subscription connector GET atsisakė prieigos; billing prieiga nedidinta, finansinis veiksmas agento neatliktas.
+- [x] Source71e3fb4: OTP patvirtinimas prieš navigate reikalauja atskiros tos pačios sesijos patikros; klaidos recover su nauju kodu ir išsaugotu tikslu.19auth/adapter/account-state PASS.
+- [x] Source2c1b41d: autoriaus24įrašų projekcijai1person read vietoje25, anoniminė platformos sesija neskaito vidinių komandų kolekcijų.8community/media/read-budget ir37backend/native PASS. Ne visa dienos billable suma ar neriboto mastelio pažadas.
+- [x] Maintained release išsaugo tikrą ankstesnį artifact/proofs ir3pakeičiamus auth modulius; saugo papildomą reviewer worker, nieko neprovisionina iš naujo. Main1579cf1/90760306, trial1579cf1/f608921e ir revieweb30a67/cd397c44 įkelti. Esami namespaces/secrets/flags/content/core/expiry/query-redaction ir kitų worker lease PASS.
+- [x] Exact native+hosted main84, trial130, review130 PASS. Exact compiled trial community restart/profiles PASS; reviewer9host/OTP/restart/expiry scenarijų PASS. Nauji HTTPS community19 atskirai trial ir review PASS; seni įrodymai nepervadinti naujo leidimo patikromis.
+- [x] Actual IAB trial OTP→community return→testinis profilis→feed→reload PASS; reviewcd397c44 naujas OTP→account→reload→feed PASS. Main90760306 homepage interaktyviai atsidaro Chrome.
+- [ ] Chrome reviewer: naujas b2e96aa4 OTP vėl grąžino login, directsession ERR_BLOCKED_BY_CLIENT. Konkreti priežastis UNVERIFIED, apsaugos nešvelnintos. cd397c44 Chrome auth dar nekartotas; PARTIAL priėmimas lieka.
+- [ ] Meta telefono/SMS patvirtinimas savininko atidėtas. Negalima siųsti SMS ar naudoti screenshot kitą numerį. Tiekėjų geografija, reviewer actualFacebookOAuth ir finalSubmit / publicactivation dar nepriimti.
+
+Aktualūs [RECEIPT.json](RECEIPT.json), [QUOTA_INCIDENT.md](QUOTA_INCIDENT.md). Source1579cf1 main/trial; revieweb30a67. Native / hosted / community / provider / browser evidence laikomi privačiame cloudflare/output/community-20261011, ne Git. Originalus trialexpiry2026-10-16T21:10:47.982Z išlaikytas. Neskelbti publicFacebook ar visos platformos baigta. Kitas įvykdomas darbas: konkreti Chrome blokavimo diagnostika; Meta telefono žingsnis laukia vėlesnio savininko grįžimo.

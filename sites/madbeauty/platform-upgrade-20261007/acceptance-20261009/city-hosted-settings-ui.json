@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-09T19:17:12.847Z",
+  "restoredAfterReload": {
+    "document": {
+      "client": 375,
+      "scroll": 375
+    },
+    "main": {
+      "client": 375,
+      "scroll": 375
+    },
+    "marketing": false,
+    "reminderLeadMin": "1440",
+    "service": true,
+    "viewport": {
+      "height": 900,
+      "width": 390
+    }
+  },
+  "disabledAfterReload": {
+    "service": false,
+    "marketing": false,
+    "reminderLeadMin": 0
+  },
+  "scope": "Normal hosted settings off/restore/reload, source-target record checks stored separately. Off UI observed in accessibility snapshot; screenshot recorded."
+}

@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-09T20:11:10.332Z",
+  "scope": "Madbeauty article policy: removes mandatory human specialist review; agent evidence workflow retained.",
+  "policySource": "e80b3e1",
+  "policySha256": "cbec5ebdc888a0b09fe8dd409edeaf06602f32318301f30d6d8236d1ac9207d6",
+  "workflowVerification": {
+    "command": "node --test content-studio/test/content-workflow.test.mjs",
+    "testFileSha256": "aa1ec1d02cce139d26e04c2f90bcc2b18671304c4121d379d5d4a8887d6bd8a2",
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "durationMs": 1278.0258,
+    "observedCases": [
+      "agent reviews and atomic linked approval without human specialist",
+      "unknown/foreign links, source candidates and missing images rejected",
+      "site facts invalidate stale reviews",
+      "rich v2 blocks and source metadata preserved",
+      "private HTTP origin guards retained",
+      "wall-clock dates and weekly cadence preserved"
+    ]
+  },
+  "contentDeployment": "not-yet-performed-for-new11",
+  "incumbentProductionVersion": "1de389a7-3f36-44f5-ad57-bb3a457f2146",
+  "fullPlatformUpgradeDeployed": false
+}

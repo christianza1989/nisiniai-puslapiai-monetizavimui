@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "status": "LIVE-TEMPORARY-FICTIONAL-TEST-ACCEPTED",
+  "recordedAt": "2026-10-09T21:33:50.827Z",
+  "authorization": "Direct owner 2026-10-10: temporarily publish the existing 40 dummy profiles for testing",
+  "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652",
+  "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+  "origin": "https://bandymas.madbeauty.lt",
+  "worker": "madbeauty-temporary-test-20261010",
+  "version": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+  "workerArtifactSha256": "92880a4ca16dc78247436c4829117448e4750b2b052c9d5535d3530fcf4be70d",
+  "appAssetSha256": "b9a0b538c76fe41d8e4986ed6cc6fd425830433408b7c70ffea0f3e9daa470ed",
+  "assetManifestSha256": "dc01aaef8f21249e087a32f56c2b27b37532218cfe2bdd6a4495df55888a3dc4",
+  "packageSha256": "98882a2d62274315166757ebc581a1cc2b4aff98f4425b179a676e4bae8cf9b2",
+  "expiresAt": "2026-10-16T21:10:47.982Z",
+  "expiryMeaning": "All host/API/asset access returns410 after expiry; stops source alarms. Does not claim backup/data purge.",
+  "namespace": "a07857f7b8414eb789f3ff639953ff1b",
+  "className": "TemporaryTestPlatform",
+  "secretNames": [
+    "SESSION_SECRET"
+  ],
+  "smtp": false,
+  "profiles": {
+    "soloPublic": 40,
+    "salonsPublic": 5,
+    "salonsSeeded": 6,
+    "pendingSalon": 1,
+    "advertisedAccountChoices": 48,
+    "soloImageAssets": 120,
+    "responsiveImageVariants": 609
+  },
+  "assets": 1059,
+  "tests": {
+    "product": {
+      "pass": 264,
+      "fail": 0,
+      "durationMs": 93762.1884,
+      "checkpoint": "06ad2bcedba9858fb0cb0ee257dcfcae9a5d8959",
+      "finalDelta": "One trial-only server chooser navigation exception, verified in actual final browser"
+    },
+    "nativeWorkers": {
+      "pass": 1,
+      "fail": 0,
+      "durationMs": 2279.2265,
+      "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652"
+    },
+    "http": {
+      "pass": true,
+      "requests": 664
+    },
+    "nativeBrowser": "acceptance/ui.json"
+  },
+  "canonical": {
+    "origin": "https://madbeauty.lt",
+    "version": "4e43bd2d-e5ea-491f-ae3e-ea74d260fbe9",
+    "namespace": "2faf96eedef1425c8d4fc07444cde2f3",
+    "settingsUnchanged": true,
+    "deploymentsUnchanged": true,
+    "existingDomainsUnchanged": true,
+    "observedDnsUnchanged": true,
+    "dnsScope": "Public DoH A/www A/MX/TXT/NS; OAuth cannot read full zone record inventory",
+    "fullPlatformUpgradeDeployed": false
+  },
+  "evidence": [
+    "acceptance/provider.json",
+    "acceptance/http.json",
+    "acceptance/ui.json",
+    "acceptance/assets.json",
+    "acceptance/regression.txt"
+  ],
+  "exclusions": [
+    "No real provider supply evidence",
+    "No SMTP/inbox receipt",
+    "No invented customer retention/backup policy",
+    "Test URLs excluded from canonical article registry"
+  ]
+}

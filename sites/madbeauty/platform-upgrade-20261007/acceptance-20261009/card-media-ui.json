@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-09T19:32:19.007Z",
+  "runtime": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+  "hostedMobile": {
+    "cards": [
+      {
+        "favorite": "true",
+        "image": [
+          {
+            "alt": "Testinis violetinis stačiakampis – serverio medijos patikra",
+            "complete": true,
+            "currentSrc": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/api/madbeauty/media/asset_11673ba5-2405-4ef7-ab3f-dbff0dacd361-360.webp",
+            "naturalHeight": 268,
+            "naturalWidth": 358,
+            "src": "/api/madbeauty/media/asset_11673ba5-2405-4ef7-ab3f-dbff0dacd361-640.webp",
+            "tag": "IMG"
+          }
+        ],
+        "name": "Izoliuotas serverio salonas"
+      }
+    ],
+    "document": 390,
+    "main": 390,
+    "viewport": {
+      "height": 900,
+      "width": 390
+    }
+  },
+  "hostedDesktop": {
+    "document": 1265,
+    "image": [
+      {
+        "alt": "Testinis violetinis stačiakampis – serverio medijos patikra",
+        "complete": true,
+        "currentSrc": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/api/madbeauty/media/asset_11673ba5-2405-4ef7-ab3f-dbff0dacd361-640.webp",
+        "naturalHeight": 300,
+        "naturalWidth": 400,
+        "src": "/api/madbeauty/media/asset_11673ba5-2405-4ef7-ab3f-dbff0dacd361-640.webp"
+      }
+    ],
+    "main": 1265,
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  },
+  "emptyDesktop": {
+    "cards": [
+      {
+        "coverHeight": 230,
+        "link": "/salonai/provider_5a54c905-6f32-4fc2-904f-6b0c0fb9744a",
+        "name": "Bandomasis profilis be nuotraukos",
+        "photos": 0,
+        "placeholder": "Nuotrauka nepateikta"
+      }
+    ],
+    "document": 1265,
+    "main": 1265,
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    }
+  },
+  "emptyMobile": {
+    "cards": [
+      {
+        "coverHeight": 230,
+        "photos": 0,
+        "placeholder": "Nuotrauka nepateikta"
+      }
+    ],
+    "document": 375,
+    "main": 375,
+    "viewport": {
+      "height": 900,
+      "width": 390
+    }
+  },
+  "scope": "Actual protected Worker gallery cover; separate in-memory Node no-photo fixture. DOM dimensions recorded rather than inferred from screenshot. Synthetic records only; no production or real provider claim.",
+  "favoriteRemoved": {
+    "cards": 0,
+    "heading": "Dar nėra išsaugotų profilių",
+    "url": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev/paskyra/issaugoti",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    }
+  }
+}

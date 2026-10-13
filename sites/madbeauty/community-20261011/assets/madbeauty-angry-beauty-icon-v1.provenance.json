@@ -1,0 +1,13 @@
+{
+  "asset": "madbeauty-angry-beauty-icon-v1.png",
+  "dimensions": [
+    1024,
+    1024
+  ],
+  "date": "2026-10-11",
+  "generator": "Built-in image_gen",
+  "purpose": "Meta Madbeauty application icon",
+  "reference": "sites/madbeauty/prototype/public/images/service-illustration-estetines-proceduros-800.webp",
+  "processing": "Resized generated square 1254 x 1254 to required 1024 x 1024 PNG; composition unchanged.",
+  "prompt": "Use case: logo-brand. Asset type: Madbeauty Meta application icon, one square 1024 x 1024 illustration. Input image is STYLE REFERENCE ONLY: match the supplied Madbeauty category illustration's black and white pen-and-ink linework, subtle pencil hatching and selective violet beauty accents. Create a NEW beautiful adult woman mascot, not the reference woman's identity or pose. Head and upper shoulders facing nearly forward, slight three-quarter turn, large expressive face, elegantly arched brows drawn slightly inward, fiercely confident slightly angry 'mad beauty' expression, sophisticated rather than comic rage. Beautiful almond eyes, strong winged eyeliner, violet irises/eyeshadow, full violet lips, glossy swept wavy hair with delicate violet highlight strands. Premium fashion illustration, fine black contours and restrained engraving shading on ivory skin, enough bold silhouettes to remain recognizable at 48px. Head occupies about 78 percent of the square, keep important hair and face within a 10 percent safe margin for rounded icon crops. Simple solid very pale lavender #F3EEFF background, tiny subtle violet halo only. Black, ivory and signature violet #7542F5 palette. No cosmetics tools, no hands, no text, no letters, no logos, no watermark, no mockup or border. Produce just the finished square icon."
+}

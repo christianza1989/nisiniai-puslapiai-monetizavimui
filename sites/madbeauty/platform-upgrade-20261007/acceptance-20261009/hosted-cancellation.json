@@ -1,0 +1,221 @@
+{
+  "at": "2026-10-09T13:38:13.703Z",
+  "state": "PASS",
+  "scope": "Protected hosted full-app whole-visit cancellation after active organization cutover. Synthetic accounts and capture-only messages. Not SMTP inbox, real-provider pilot, version-conflict rejection or full upgrade completion.",
+  "runtimeSource": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+  "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "workerVersion": "cdcf8bce-85df-4978-b1a4-cfaf40c635c6",
+  "booking": {
+    "id": "booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+    "status": "canceled",
+    "sourceVersion": 1,
+    "targetVersion": 3,
+    "startAt": "2026-10-13T06:00:00.000Z",
+    "endAt": "2026-10-13T07:45:00.000Z",
+    "durationMin": 105,
+    "priceMinor": 8000,
+    "segments": 2
+  },
+  "checks": {
+    "initialTransportFailureLeavesSourceTargetAndMailboxExact": true,
+    "sourceReadCollectionsUnchanged": true,
+    "targetChangedReadCollections": [
+      "bookings",
+      "events"
+    ],
+    "oneCapturedBookingUpdate": true,
+    "physicalMediaObjectsUnchanged": 3,
+    "activeTargetRestartExact": true,
+    "expiredSessionRetryLeavesAllSnapshotsAndMailboxExact": true
+  },
+  "freedSlot": {
+    "at": "2026-10-09T13:36:05.389Z",
+    "state": "PASS",
+    "scope": "Actual protected hosted anonymous read-only visitAvailability after whole-visit cancellation; no new hold or booking created.",
+    "bookingId": "booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+    "dateKey": "2026-10-13",
+    "startAt": "2026-10-13T06:00:00.000Z",
+    "endAt": "2026-10-13T07:45:00.000Z",
+    "durationMin": 105,
+    "priceMinor": 8000,
+    "segments": 2,
+    "availableSlots": 28
+  },
+  "rasters": [
+    {
+      "name": "cancel-confirm-390-accepted",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "5bdf25d74cebb33f26b30538be63e56b9ebeb14b809ba8f3bdee488c0c6b940c"
+      }
+    },
+    {
+      "name": "cancel-error-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 343,
+          "scroll": 343,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "6c2de21187d7bfa86346e6a6d05861e4d3bc6a3844d1af54017b4f7a3bca1274"
+      }
+    },
+    {
+      "name": "cancel-success-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "baa3d6812e687871e30b452adef0c4d5459dac4868bc5a90286c49f4ffc9adae"
+      }
+    },
+    {
+      "name": "cancel-restart-client-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "baa3d6812e687871e30b452adef0c4d5459dac4868bc5a90286c49f4ffc9adae"
+      }
+    },
+    {
+      "name": "cancel-owner-calendar-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 375,
+        "scroll": 375
+      },
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 0,
+          "scroll": 0,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 375,
+        "height": 865,
+        "sha256": "b9b90b416fafa0fb797f2ba8cc45781b80644d9e001917d10670f8b8ab41fe80"
+      }
+    },
+    {
+      "name": "cancel-owner-dialog-390",
+      "viewport": {
+        "height": 900,
+        "width": 390
+      },
+      "document": {
+        "client": 390,
+        "scroll": 390
+      },
+      "containers": [
+        {
+          "client": 390,
+          "scroll": 390,
+          "tag": "MAIN"
+        },
+        {
+          "client": 358,
+          "scroll": 358,
+          "tag": "DIALOG"
+        }
+      ],
+      "png": {
+        "width": 390,
+        "height": 900,
+        "sha256": "f07d8de9c689209a3e922bd4e74aa9ebf953f5d4ff9b6e142b7638c74fadb63b"
+      }
+    }
+  ],
+  "diagnostics": {
+    "firstTwo390LabelsActually1280": true,
+    "oldTabRejection": "Missing/expired session (CSRF403); no stale-booking-version acceptance inferred",
+    "transportError": "Retained reason and fields, no write; explicit retry after QA access renewal committed one cancellation"
+  },
+  "receiptPolicy": "All raw SQL, recipient identities, session/csrf/OTP and acceptance keys remain private ignored evidence. Raster dimensions recorded independently from DOM viewport."
+}

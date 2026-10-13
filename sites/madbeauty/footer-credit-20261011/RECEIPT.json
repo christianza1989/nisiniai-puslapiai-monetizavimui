@@ -1,0 +1,74 @@
+{
+  "state": "LIVE_ACCEPTED",
+  "at": "2026-10-10T22:29:35.233Z",
+  "href": "https://verslomatika.lt",
+  "rel": null,
+  "browser": {
+    "canonicalRobots": "index,follow",
+    "linkVerified": true,
+    "screenshot": "screenshots/credit-link-live.jpg"
+  },
+  "trialDocumentNoindexNofollowPreserved": true,
+  "releases": [
+    {
+      "kind": "main",
+      "version": "5a5304f8-0eb1-4cd6-9dd3-63986d4ea949",
+      "artifactSha256": "4fccc61a42f66e165d1e52fc1742e70a23fb2ba83fd54370af93057cec704093",
+      "sourceCommit": "04de4303fa643a22abc873fee4a5efeb1fbad879",
+      "previousVersion": "a3e1e766-e1d7-48e6-a20f-e431e7171773",
+      "allBindingsPreserved": true,
+      "observabilityPreserved": true,
+      "otherWorkersUnchanged": true,
+      "native": {
+        "state": "PASS",
+        "kind": "main",
+        "checks": 4,
+        "artifactSha256": "4fccc61a42f66e165d1e52fc1742e70a23fb2ba83fd54370af93057cec704093",
+        "at": "2026-10-10T22:27:17.501Z",
+        "link": "https://verslomatika.lt",
+        "rel": null,
+        "trialRobotsPreserved": false
+      },
+      "live": {
+        "state": "PASS",
+        "kind": "main",
+        "checks": 4,
+        "artifactSha256": "4fccc61a42f66e165d1e52fc1742e70a23fb2ba83fd54370af93057cec704093",
+        "at": "2026-10-10T22:27:59.454Z",
+        "link": "https://verslomatika.lt",
+        "rel": null,
+        "trialRobotsPreserved": false
+      }
+    },
+    {
+      "kind": "trial",
+      "version": "0e5aa85a-908e-4412-b48a-eaaedcd8553f",
+      "artifactSha256": "5864dd80c44e94b9269bd9d05893e8cea9d7ab7670d804b9548cd5a6fe56cff7",
+      "sourceCommit": "04de4303fa643a22abc873fee4a5efeb1fbad879",
+      "previousVersion": "de570fb1-4b49-4ab0-b98c-0757ae72d17e",
+      "allBindingsPreserved": true,
+      "observabilityPreserved": true,
+      "otherWorkersUnchanged": true,
+      "native": {
+        "state": "PASS",
+        "kind": "trial",
+        "checks": 4,
+        "artifactSha256": "5864dd80c44e94b9269bd9d05893e8cea9d7ab7670d804b9548cd5a6fe56cff7",
+        "at": "2026-10-10T22:28:10.022Z",
+        "link": "https://verslomatika.lt",
+        "rel": null,
+        "trialRobotsPreserved": true
+      },
+      "live": {
+        "state": "PASS",
+        "kind": "trial",
+        "checks": 4,
+        "artifactSha256": "5864dd80c44e94b9269bd9d05893e8cea9d7ab7670d804b9548cd5a6fe56cff7",
+        "at": "2026-10-10T22:28:51.669Z",
+        "link": "https://verslomatika.lt",
+        "rel": null,
+        "trialRobotsPreserved": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-11T08:39:35.673Z",
+  "state": "BOOKING_CHANNEL_LIVE_ACCEPTED",
+  "scope": "One organization booking destination; not external calendar synchronization or whole-platform completion",
+  "editions": {
+    "main": {
+      "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+      "version": "87e6c536-aa20-4f9c-a052-62ab21f9526c",
+      "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+      "previousVersion": "d0416bb5-d7d5-4e22-af9d-54572de0f643",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": true,
+      "facebookEnabled": false,
+      "nativeChecks": 100,
+      "hostedChecks": 100,
+      "expiresAt": null,
+      "queryRedaction": true,
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+          "sha256": "e29dafa688b27b784d1f452948edbc45d5b0f41090046904ec31f0e4bbe9ab43"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+          "sha256": "c9c0bb6309b4f7f131e608fd97b502bafe57e99cbd1eca1aa54b5a11de5c9ce3"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        },
+        {
+          "file": "app.css",
+          "previousSha256": "e562f1bd645c310e0b5d2eaa86944b255bfb4a4d118a4e343375b1a47b99765b",
+          "sha256": "0b6c2e5c17aef99209d582b266d16f27fec1cccbcc1fdc54aea673a2850cd6d4"
+        },
+        {
+          "file": "workspace-ui.mjs",
+          "previousSha256": "343f67bb09cb6f169df3b0dcd5b9fb80ba9f205096f6a4c9667e67e471b238a9",
+          "sha256": "03d9a61345bb089cf9b70ebb47569d3f8f2519fa81aa1b7637b555b142cd2064"
+        },
+        {
+          "file": "public-views.mjs",
+          "previousSha256": "f265154808486886892a36ed92225c80e7474625d9d639b1effad1011773f32c",
+          "sha256": "68112e27a10614084712bcc3f621db2dd59e236a0a32883bb291c3df0e9ef692"
+        },
+        {
+          "file": "profile-service-menu.mjs",
+          "previousSha256": "fbb837e9dd8f97ba419ba2516a388f51e2ede372c5fac3ec0378a13cbcbd00ce",
+          "sha256": "4eb4a6a523b93c332d4d3fe4362a99499734a844bdceefbac65d2c0a19a312d3"
+        },
+        {
+          "file": "search-results-ui.mjs",
+          "previousSha256": "737a459a449ea1b5f7ff4dbc33ad7a9cd74c0197e511a473cb5d34752e43fdd0",
+          "sha256": "064fe765821e9652e468cb0fdb73368750afc5a9c5823b1ff16631285f5c6a65"
+        },
+        {
+          "file": "profile-seo.mjs",
+          "previousSha256": "39f64e5a6c22022c8c8d9e445dcc88fc4ef0e3e9d5f784e98161e5541ed0ada9",
+          "sha256": "5d43f3e1b40b093ae94fe11ac862c151a58f9543699ccbfd45486d8fef41b154"
+        },
+        {
+          "file": "booking-ui.mjs",
+          "previousSha256": "430d12f44ad8f22eb1e8bfa77c02fbb8625d285e36acefb8183980b64b78452d",
+          "sha256": "1d74d81fa8a04d06bc2f45e6754ba9ea74f54a4dca37bbf3009b288ce73fad7e"
+        },
+        {
+          "file": "visit-sequence-ui.mjs",
+          "previousSha256": "bfddfc86d966d87e0a5f1ae2b68937705d4bc80bed52f8827be25015f0ca802f",
+          "sha256": "e6be06063a92e6ffc95fb7a3d0633744d91cca481e874a8b5e85c0359554fd29"
+        },
+        {
+          "file": "form-state.mjs",
+          "previousSha256": "e31c9cad55904bd0ef4755e1e1610f8158f4716398572e8c5c0aa90a3b4c5d33",
+          "sha256": "e98b1a2f2dfcb9eb626a6c6035ba2a81fe2ffab57a2fa8a1d01ec6ad8d21ea29"
+        },
+        {
+          "file": "booking-channel-model.mjs",
+          "previousSha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec",
+          "sha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec"
+        },
+        {
+          "file": "booking-channel-ui.mjs",
+          "previousSha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8",
+          "sha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8"
+        }
+      ],
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+        },
+        {
+          "name": "ORGANIZATION_STAGING",
+          "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+        }
+      ],
+      "communityNative": {
+        "state": "PASS",
+        "kind": "main",
+        "at": "2026-10-11T08:33:02.719Z",
+        "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+        "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+        "exactCompiledArtifact": true,
+        "productionConfiguration": true,
+        "localIsolatedData": true,
+        "fixtureSeedDenied": true,
+        "emptyCanonicalProviderProjection": true,
+        "facebookDisabled": true,
+        "suites": [
+          "community-runtime.test.mjs",
+          "community-media-runtime.test.mjs"
+        ],
+        "coverage": [
+          "audiences",
+          "friendships",
+          "comments",
+          "albums",
+          "private messages",
+          "replay",
+          "version conflicts",
+          "request rejection",
+          "blocking",
+          "logout",
+          "account erasure",
+          "media ownership",
+          "EXIF removal",
+          "private image access",
+          "SQLite restart",
+          "message retention"
+        ]
+      }
+    },
+    "trial": {
+      "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+      "version": "283f9d36-88a3-44ba-87f0-dbf25e3e0f65",
+      "artifactSha256": "ff9c22835ed8efd4c23a22267112b432966a97c3e76d7fbb06e309f41cfa70ff",
+      "previousVersion": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": true,
+      "facebookEnabled": true,
+      "nativeChecks": 139,
+      "hostedChecks": 139,
+      "expiresAt": "2026-10-16T21:10:47.982Z",
+      "queryRedaction": true,
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+          "sha256": "e29dafa688b27b784d1f452948edbc45d5b0f41090046904ec31f0e4bbe9ab43"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+          "sha256": "c9c0bb6309b4f7f131e608fd97b502bafe57e99cbd1eca1aa54b5a11de5c9ce3"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        },
+        {
+          "file": "app.css",
+          "previousSha256": "e562f1bd645c310e0b5d2eaa86944b255bfb4a4d118a4e343375b1a47b99765b",
+          "sha256": "0b6c2e5c17aef99209d582b266d16f27fec1cccbcc1fdc54aea673a2850cd6d4"
+        },
+        {
+          "file": "workspace-ui.mjs",
+          "previousSha256": "343f67bb09cb6f169df3b0dcd5b9fb80ba9f205096f6a4c9667e67e471b238a9",
+          "sha256": "03d9a61345bb089cf9b70ebb47569d3f8f2519fa81aa1b7637b555b142cd2064"
+        },
+        {
+          "file": "public-views.mjs",
+          "previousSha256": "f265154808486886892a36ed92225c80e7474625d9d639b1effad1011773f32c",
+          "sha256": "68112e27a10614084712bcc3f621db2dd59e236a0a32883bb291c3df0e9ef692"
+        },
+        {
+          "file": "profile-service-menu.mjs",
+          "previousSha256": "fbb837e9dd8f97ba419ba2516a388f51e2ede372c5fac3ec0378a13cbcbd00ce",
+          "sha256": "4eb4a6a523b93c332d4d3fe4362a99499734a844bdceefbac65d2c0a19a312d3"
+        },
+        {
+          "file": "search-results-ui.mjs",
+          "previousSha256": "737a459a449ea1b5f7ff4dbc33ad7a9cd74c0197e511a473cb5d34752e43fdd0",
+          "sha256": "064fe765821e9652e468cb0fdb73368750afc5a9c5823b1ff16631285f5c6a65"
+        },
+        {
+          "file": "profile-seo.mjs",
+          "previousSha256": "39f64e5a6c22022c8c8d9e445dcc88fc4ef0e3e9d5f784e98161e5541ed0ada9",
+          "sha256": "5d43f3e1b40b093ae94fe11ac862c151a58f9543699ccbfd45486d8fef41b154"
+        },
+        {
+          "file": "booking-ui.mjs",
+          "previousSha256": "430d12f44ad8f22eb1e8bfa77c02fbb8625d285e36acefb8183980b64b78452d",
+          "sha256": "1d74d81fa8a04d06bc2f45e6754ba9ea74f54a4dca37bbf3009b288ce73fad7e"
+        },
+        {
+          "file": "visit-sequence-ui.mjs",
+          "previousSha256": "bfddfc86d966d87e0a5f1ae2b68937705d4bc80bed52f8827be25015f0ca802f",
+          "sha256": "e6be06063a92e6ffc95fb7a3d0633744d91cca481e874a8b5e85c0359554fd29"
+        },
+        {
+          "file": "form-state.mjs",
+          "previousSha256": "e31c9cad55904bd0ef4755e1e1610f8158f4716398572e8c5c0aa90a3b4c5d33",
+          "sha256": "e98b1a2f2dfcb9eb626a6c6035ba2a81fe2ffab57a2fa8a1d01ec6ad8d21ea29"
+        },
+        {
+          "file": "booking-channel-model.mjs",
+          "previousSha256": null,
+          "sha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec"
+        },
+        {
+          "file": "booking-channel-ui.mjs",
+          "previousSha256": null,
+          "sha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8"
+        }
+      ],
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+        }
+      ],
+      "communityNative": {
+        "state": "PASS",
+        "artifactSha256": "ff9c22835ed8efd4c23a22267112b432966a97c3e76d7fbb06e309f41cfa70ff",
+        "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+        "at": "2026-10-11T08:35:08.517Z",
+        "checks": "45 existing profiles and reviews preserved, 90 paged actors, 45 idempotent posts, actual gallery and service authorization, SQL restart"
+      }
+    }
+  },
+  "nativeBooking": {
+    "state": "PASS",
+    "at": "2026-10-11T08:32:59.714Z",
+    "kind": "main",
+    "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+    "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+    "exactCompiledArtifact": true,
+    "isolatedSQLite": true,
+    "checks": 2,
+    "coverage": [
+      "strict HTTPS salon URL",
+      "owner-only configuration",
+      "optimistic version conflict",
+      "active hold protection",
+      "future visit protection",
+      "waitlist protection",
+      "no native holds/inquiries/waitlists/manual visits or schedule edits under external channel",
+      "public search/profile/SSR outbound destination",
+      "no booking mail for external link",
+      "history preserved",
+      "SQLite restart",
+      "native schedule confirmation",
+      "switch-versus-hold race",
+      "external registration"
+    ]
+  },
+  "regression": {
+    "backend": 88,
+    "frontend": 28
+  },
+  "design": {
+    "disposition": "ship",
+    "scope": "local incumbent extension desktop/mobile",
+    "document": "DESIGN_CHECK.md",
+    "detector": "One pre-existing sidebar border warning; no new channel warning"
+  },
+  "browser": {
+    "main": {
+      "guestAuthGate": true,
+      "realCustomerLogin": false
+    },
+    "trial": {
+      "version": "283f9d36-88a3-44ba-87f0-dbf25e3e0f65",
+      "actor": "demo-client-5@example.com",
+      "organizationId": "provider_1055642f-0c3b-412d-9c0a-c3aaf4ef8f28",
+      "synthetic": true,
+      "published": false,
+      "createWithTreatwell": true,
+      "missingUrlValidation": true,
+      "externalCalendar": true,
+      "reload": true,
+      "returnRequiresConfirmation": true,
+      "nativeCalendarRestored": true,
+      "finalMode": "treatwell",
+      "finalImage": "../cloudflare/output/booking-channel-20261011/trial-settings-live-final.jpg",
+      "realMailSent": false,
+      "externalUrlClicked": false,
+      "externalDestination": "Synthetic placeholder only; no external appointment was created"
+    }
+  },
+  "preservation": {
+    "original45PublicProfiles": true,
+    "originalReviewRange": "11–21 synthetic reviews",
+    "originalTrialExpiry": "2026-10-16T21:10:47.982Z",
+    "mainDummyProfiles": false,
+    "reviewAndProtectedWorkersUnchanged": true,
+    "mailSettings": true,
+    "content129": true
+  },
+  "boundaries": [
+    "Treatwell URL form validated, ownership/reachability unverified",
+    "Salon decides price/service details; final booking and price in Treatwell",
+    "No imported availability or bookings",
+    "No automatic external confirmation, reminders or native reviews",
+    "Facebook verification deferred; main Facebook disabled",
+    "No groups/events added"
+  ],
+  "rollback": "Forward fix or preserve requireNativeCalendar guard; pre-feature runtime ignores external mode",
+  "incident": "Initial status lease failed 401; Wrangler refreshed, stale local candidate isolated without deployment, prior artifact restored using SHA; fresh before/build/native proofs then deployed sequentially"
+}

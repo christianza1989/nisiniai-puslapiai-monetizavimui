@@ -1,0 +1,43 @@
+{
+  "state": "PASS",
+  "at": "2026-10-09T21:50:41.193Z",
+  "account": "d102163f74a45ab6d33bca786ce281ec",
+  "host": "bandymas.madbeauty.lt",
+  "worker": "madbeauty-temporary-test-20261010",
+  "canonicalSettingsUnchanged": true,
+  "canonicalDeploymentsUnchanged": true,
+  "existingWorkerDomainsUnchanged": true,
+  "observedSiteMailDnsUnchanged": true,
+  "dnsReadMethod": "Public DoH A/www A/MX/TXT/NS; OAuth cannot read full zone record inventory",
+  "testDns": {
+    "name": "bandymas.madbeauty.lt",
+    "type": "A",
+    "status": 0,
+    "answers": [
+      {
+        "name": "bandymas.madbeauty.lt",
+        "type": 1,
+        "data": "104.21.94.245"
+      },
+      {
+        "name": "bandymas.madbeauty.lt",
+        "type": 1,
+        "data": "172.67.141.220"
+      }
+    ]
+  },
+  "canonicalSettingsSha256": "d3c92bedc0fa0ac264277deeca87f35f4d6d4a224bffc94a87b4d4aac3eb1efc",
+  "namespace": "a07857f7b8414eb789f3ff639953ff1b",
+  "className": "TemporaryTestPlatform",
+  "productionNamespace": "2faf96eedef1425c8d4fc07444cde2f3",
+  "version": [
+    {
+      "version_id": "5f55df40-6ba1-4ece-8ac8-958a83529d6a",
+      "percentage": 100
+    }
+  ],
+  "secretNames": [
+    "SESSION_SECRET"
+  ],
+  "smtp": false
+}

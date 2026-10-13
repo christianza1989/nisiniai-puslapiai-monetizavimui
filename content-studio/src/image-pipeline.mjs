@@ -1,11 +1,13 @@
 import sharp from 'sharp';
-export const IMAGE_POLICY = Object.freeze({version:'responsive-webp-v1',widths:[360,640,800,1200,1600],quality:75,alphaQuality:100,maxInputBytes:12*1024*1024,maxInputPixels:40_000_000,maxInputEdge:8192,maxOutputEdge:1600});
+import {IMAGE_POLICY,rejectAnimatedRaster} from './image-policy.mjs';
+export {IMAGE_POLICY} from './image-policy.mjs';
 const inputTypes={png:'image/png',jpeg:'image/jpeg',webp:'image/webp'};
 
 // Local preprocessing only: no remote image service, credentials or paid runtime.
 // Public files omit EXIF/XMP/GPS. Keep the original separately in private storage.
 export async function optimizeRaster(bytes, declaredMime) {
  if(!Buffer.isBuffer(bytes)||!bytes.length||bytes.length>IMAGE_POLICY.maxInputBytes)throw Error('Vaizdo failas turi būti ne tuščias ir ne didesnis kaip 12 MB.');
+ rejectAnimatedRaster(bytes,declaredMime);
  const options={limitInputPixels:IMAGE_POLICY.maxInputPixels,failOn:'error'};
  const meta=await sharp(bytes,options).metadata();
  if(!inputTypes[meta.format]||inputTypes[meta.format]!==declaredMime)throw Error('Priimami tik tikri PNG, JPEG arba WebP failai; MIME turi atitikti turinį.');

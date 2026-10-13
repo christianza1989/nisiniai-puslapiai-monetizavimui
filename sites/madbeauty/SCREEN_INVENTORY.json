@@ -439,7 +439,7 @@
       "id": "customer-settings",
       "surface": "customer",
       "route": "/paskyra/nustatymai",
-      "label": "Komunikacijos ir privacy",
+      "label": "Komunikacijos ir privatumas",
       "status": "PLANNED",
       "indexableCandidate": false,
       "states": [
@@ -681,6 +681,38 @@
       "route": "/meistrui/komanda",
       "label": "Darbuotojai ir rolės",
       "status": "PLANNED",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-access",
+      "surface": "professional",
+      "route": "/meistrui/prieigos",
+      "label": "Komandos paskyrų prieigos",
+      "status": "IMPLEMENTED_ACCEPTANCE_IN_PROGRESS",
+      "indexableCandidate": false,
+      "states": [
+        "normal",
+        "loading",
+        "empty",
+        "error",
+        "validation",
+        "permission-or-stale-if-applicable"
+      ]
+    },
+    {
+      "id": "professional-locations",
+      "surface": "professional",
+      "route": "/meistrui/vietos",
+      "label": "Veiklos vietos, adresai ir peržiūra",
+      "status": "IMPLEMENTED_ACCEPTANCE_IN_PROGRESS",
       "indexableCandidate": false,
       "states": [
         "normal",

@@ -1,0 +1,706 @@
+{
+  "recordedAt": "2026-10-06T17:29:27.356Z",
+  "status": "live-canonical",
+  "dns": {
+    "registrar": "Hostinger",
+    "authority": "Cloudflare",
+    "zones": "active",
+    "nameServers": [
+      "asa.ns.cloudflare.com",
+      "sullivan.ns.cloudflare.com"
+    ],
+    "ordinaryResolverHttps": "PASS",
+    "systemDnsUnchanged": true,
+    "oldHostingerZone": "Website A records bridged for cached old nameservers; gift certificate TXT mirrored narrowly during validation",
+    "mailDns": "pinet.lt preserved"
+  },
+  "workersDev": false,
+  "versionPreviews": false,
+  "mail": {
+    "mailbox": "info@pinet.lt",
+    "transport": "Authenticated HTTPS to pinned PHPMailer/PHP on existing own Hostinger Premium hosting",
+    "workerMailboxPassword": "deleted",
+    "primaryInbox": "PASS"
+  },
+  "gitStatus": "Draft PR source handoff; main merge is separate",
+  "limits": [
+    "No current production Lighthouse measurement",
+    "No indexing, demand, capacity or uptime guarantee",
+    "No destructive production restore rehearsal"
+  ],
+  "origin": "https://madbeauty.lt",
+  "service": "madbeauty-platform-preview",
+  "version": "277e5fb7-51f0-44b1-bc1b-96bd7ca42a8a",
+  "deployedAt": "2026-10-06T17:08:47.096023Z",
+  "canonicalVerification": {
+    "origin": "https://madbeauty.lt",
+    "at": "2026-10-06T17:09:24.272Z",
+    "production": true,
+    "pages": [
+      {
+        "path": "/",
+        "status": 200
+      },
+      {
+        "path": "/gidai",
+        "status": 200
+      },
+      {
+        "path": "/paslaugos/manikiuras",
+        "status": 200
+      },
+      {
+        "path": "/redakcija",
+        "status": 200
+      },
+      {
+        "path": "/gidai/kas-ieina-i-manikiuro-kaina",
+        "status": 200
+      },
+      {
+        "path": "/gidai/kaip-pasirinkti-nagu-spalva",
+        "status": 200
+      },
+      {
+        "path": "/gidai/kaip-vertinti-meistro-darbu-galerija",
+        "status": 200
+      },
+      {
+        "path": "/apie",
+        "status": 200
+      },
+      {
+        "path": "/kontaktai",
+        "status": 200
+      },
+      {
+        "path": "/kaip-veikia",
+        "status": 200
+      },
+      {
+        "path": "/tikrinimas",
+        "status": 200
+      },
+      {
+        "path": "/pagalba",
+        "status": 200
+      },
+      {
+        "path": "/privatumas",
+        "status": 200
+      },
+      {
+        "path": "/slapukai",
+        "status": 200
+      },
+      {
+        "path": "/taisykles",
+        "status": 200
+      },
+      {
+        "path": "/atsaukimas",
+        "status": 200
+      },
+      {
+        "path": "/autoriai/mb-pinet",
+        "status": 200
+      }
+    ],
+    "assets": [
+      {
+        "path": "/account-ui.mjs",
+        "status": 200
+      },
+      {
+        "path": "/app-media.json",
+        "status": 200
+      },
+      {
+        "path": "/app.css",
+        "status": 200
+      },
+      {
+        "path": "/app.mjs",
+        "status": 200
+      },
+      {
+        "path": "/booking-ui.mjs",
+        "status": 200
+      },
+      {
+        "path": "/calendar-layout.mjs",
+        "status": 200
+      },
+      {
+        "path": "/calendar-ui.mjs",
+        "status": 200
+      },
+      {
+        "path": "/chat-ui.mjs",
+        "status": 200
+      },
+      {
+        "path": "/config.mjs",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/0598d240-44e9-4f35-8e2f-922f94acbd83.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/1b8018ca-e91e-424d-8d74-e3ae18b3deb7.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/2b85fe40-f390-4079-9d0f-854a5c954875.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/2db81dab-30b2-4687-ac3c-c5cb8d774c6b.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/2fbfaec5-26bd-403d-aec5-5332e6230fd3.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/32c67d0c-748c-49bb-8a8e-634c1ab45cc1.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/3bdf81e9-8188-405c-bf66-3e94ee1adb92.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/3c7cf4f4-12e6-4383-ae5c-2e9108a77c41.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/3f5ad984-d9c3-4c8a-b12e-0b233c3ce29f.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/482e64a1-14b1-410a-a433-9b7b85a37f13.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/52f234b6-1734-4303-9cba-3e3a737381f8.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/665d4c52-43e2-4635-8368-d921980b1f30.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/6b01152f-934e-4a4f-b98b-471c0585d052.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/7cee90b4-4251-45c7-b081-f05fb620d7b5.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/88dab7a3-7cb7-4cf9-bfea-86cc6d9e8afc.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/a76fd63e-2742-49ba-8f24-5f7ae4daa56e.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/ad083450-b91b-444c-95be-45cf31f18856.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/bffc49d3-cb91-4ebe-8cdc-d9f5a25a1aeb.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/ccfc86ac-40a5-4e0e-a0ef-01844bee3f20.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-assets/madbeauty/ddd046b0-878e-48ea-8cea-284b3ee9e781.webp",
+        "status": 200
+      },
+      {
+        "path": "/content-render.mjs",
+        "status": 200
+      },
+      {
+        "path": "/content.mjs",
+        "status": 200
+      },
+      {
+        "path": "/demo-adapter.mjs",
+        "status": 200
+      },
+      {
+        "path": "/demo-model.mjs",
+        "status": 200
+      },
+      {
+        "path": "/fonts/dmsans-app.woff2",
+        "status": 200
+      },
+      {
+        "path": "/fonts/dmsans-DMSans[opsz,wght].ttf",
+        "status": 200
+      },
+      {
+        "path": "/fonts/dmsans-OFL.txt",
+        "status": 200
+      },
+      {
+        "path": "/fonts/dmserifdisplay-DMSerifDisplay-Regular.ttf",
+        "status": 200
+      },
+      {
+        "path": "/fonts/dmserifdisplay-OFL.txt",
+        "status": 200
+      },
+      {
+        "path": "/form-state.mjs",
+        "status": 200
+      },
+      {
+        "path": "/http-adapter.mjs",
+        "status": 200
+      },
+      {
+        "path": "/icons.svg",
+        "status": 200
+      },
+      {
+        "path": "/images/brows-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/brows-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/brows-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/brows-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/brows-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hair-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hair-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hair-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hair-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hair-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hero-violet-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hero-violet-1600.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hero-violet-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hero-violet-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/hero-violet-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/lashes-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/lashes-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/lashes-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/lashes-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/lashes-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/massage-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/massage-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/massage-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/massage-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/massage-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-color-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-color-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-color-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-color-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-color-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-french-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-french-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-french-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-french-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-french-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-neutral-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-neutral-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-neutral-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-neutral-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/nails-neutral-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/pedicure-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/pedicure-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/pedicure-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/pedicure-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/pedicure-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/skincare-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/skincare-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/skincare-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/skincare-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/skincare-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/studio-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/studio-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/studio-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/studio-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/studio-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/technician-1024.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/technician-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/technician-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/technician-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/workspace-1200.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/workspace-1536.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/workspace-360.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/workspace-640.webp",
+        "status": 200
+      },
+      {
+        "path": "/images/workspace-800.webp",
+        "status": 200
+      },
+      {
+        "path": "/kit.css",
+        "status": 200
+      },
+      {
+        "path": "/media.json",
+        "status": 200
+      },
+      {
+        "path": "/platform-adapter.mjs",
+        "status": 200
+      },
+      {
+        "path": "/platform-domain.mjs",
+        "status": 200
+      },
+      {
+        "path": "/product-trust.mjs",
+        "status": 200
+      },
+      {
+        "path": "/profile-fixtures-v2.mjs",
+        "status": 200
+      },
+      {
+        "path": "/public-views.mjs",
+        "status": 200
+      },
+      {
+        "path": "/seo-contract.mjs",
+        "status": 200
+      },
+      {
+        "path": "/service-editor.mjs",
+        "status": 200
+      },
+      {
+        "path": "/tokens.css",
+        "status": 200
+      },
+      {
+        "path": "/ui.mjs",
+        "status": 200
+      },
+      {
+        "path": "/wordmark.svg",
+        "status": 200
+      },
+      {
+        "path": "/workspace-ui.mjs",
+        "status": 200
+      },
+      {
+        "path": "/workspace.css",
+        "status": 200
+      }
+    ],
+    "boundaries": [
+      {
+        "path": "/backend/local-admin.mjs",
+        "status": 404
+      },
+      {
+        "path": "/.dev.vars",
+        "status": 404
+      },
+      {
+        "path": "/runtime/platform.sqlite",
+        "status": 404
+      },
+      {
+        "path": "/meistrai/demo-org-0",
+        "status": 404
+      },
+      {
+        "path": "/originals/asset_abc",
+        "status": 404
+      },
+      {
+        "path": "/images/profile-0-360.webp",
+        "status": 404
+      },
+      {
+        "path": "/not-a-page",
+        "status": 404
+      }
+    ],
+    "discovery": [
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/llms.txt",
+        "status": 200
+      },
+      {
+        "path": "/llms-full.txt",
+        "status": 200
+      }
+    ],
+    "csrf": true,
+    "catalog": true
+  },
+  "mailVerification": {
+    "date": "2026-10-06T17:10:09.707Z",
+    "origin": "https://madbeauty.lt",
+    "csrfSession": true,
+    "smtpAccepted": true,
+    "ownInboxReceived": true,
+    "otpVerified": true,
+    "ownerOperator": true,
+    "serverLogout": true
+  },
+  "actualImages": {
+    "at": "2026-10-06T16:59:01.038Z",
+    "runtime": "actual-cloudflare-images",
+    "checks": [
+      {
+        "id": "phone-exif",
+        "source": {
+          "width": 48,
+          "height": 32,
+          "mime": "image/jpeg"
+        },
+        "width": 48,
+        "height": 32,
+        "metadataRemoved": true,
+        "sha256": "242c40173c152461215a50e9ddbbfb44211ff2a90392bec5242b22b24575aa27"
+      },
+      {
+        "id": "transparent",
+        "source": {
+          "width": 32,
+          "height": 48,
+          "mime": "image/png"
+        },
+        "width": 32,
+        "height": 48,
+        "metadataRemoved": true,
+        "sha256": "7a489f27a970671d0eeff3b297416f9a1654c5d592c104021df2c9a624ecd9bf"
+      },
+      {
+        "id": "tall",
+        "source": {
+          "width": 16,
+          "height": 3200,
+          "mime": "image/png"
+        },
+        "width": 8,
+        "height": 1600,
+        "metadataRemoved": true,
+        "sha256": "4b1cf2b2bc02c9e212664784f704e473c919d85e86def7dc5a6891fa7274b197"
+      }
+    ]
+  },
+  "temporaryImageWorker": "removed after PASS",
+  "recovery": {
+    "actualOwnerBookmark": "saved privately",
+    "isolatedPopulatedRuntimeRestart": "PASS"
+  },
+  "browser": {
+    "desktopHomepage": "PASS",
+    "mobile390HomepageAndLogin": "PASS",
+    "horizontalOverflow": false,
+    "visibleBrokenHomepageImages": 0
+  },
+  "regression": {
+    "backendPlatformFoundation": 74,
+    "workersRuntimeModules": 6,
+    "studio": 33,
+    "publicCore": 51
+  },
+  "catalog": "Empty real-provider catalog; no fictional provider/customer booking seeded",
+  "previousCodeVersion": "8fb72085-58cc-4242-884e-b47a319ed2bd",
+  "runbook": "OPERATIONS.md"
+}

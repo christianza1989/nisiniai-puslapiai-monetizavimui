@@ -1,0 +1,52 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {openStore} from './store.mjs';
+import {createAuth} from './auth.mjs';
+import {createPlatform} from './platform.mjs';
+const now=Date.parse('2026-10-07T07:00:00Z');
+const fails=(code,fn)=>assert.throws(fn,e=>e.code===code);
+function fixture(){
+ const store=openStore({filename:':memory:',secret:'places-isolated-fixture-'.repeat(3),clock:()=>now}),auth=createAuth(store),api=createPlatform(store);
+ const login=email=>{const s=auth.session(null),c=auth.start(s,email,'fixture');return auth.verify(s,c.challengeId,store.capture(c.challengeId).code,'fixture').user;};
+ const owner=login('places-owner@example.com'),operator=login('places-operator@example.com'),client=login('places-client@example.com'),stranger=login('places-stranger@example.com');operator.operator=true;
+ const org=api.createOrganization(owner,{name:'Izoliuotų vietų testas',kind:'salon',city:'Vilnius',address:'Tik testinis adresas V',bio:'Atminties fixture, nėra realus teikėjas.'}),scope={role:'professional',organizationId:org.id};
+ const workspace=()=>api.workspace(owner,scope),p=workspace().practitioners[0],r=workspace().resources[0];
+ const review=l=>{const pending=api.submitLocation(owner,{id:l.id,version:l.version});return api.moderateLocation(operator,{id:l.id,version:pending.version,state:'approved'});};
+ const offer=(place,resource,id)=>{const chosen=api.selectProcedures(owner,{organizationId:org.id,locationId:place,procedureIds:['kirpimai-vyru-kirpimas'],version:workspace().selectionVersion,idempotencyKey:id})[0];return api.saveOffer(owner,{id:chosen.id,version:chosen.version,label:'Vietos kirpimas',variants:[{id,label:'Kirpimas',priceMinor:3000,durationMin:60,staffOptions:[{practitionerId:p.id,resourceId:resource.id}]}]});};
+ const publish=o=>{const pending=api.submitOffer(owner,{id:o.id,version:o.version});return api.moderateOffer(operator,{id:o.id,version:pending.version,state:'approved'});};
+ const shift=(id,values)=>{const s=workspace().schedules.find(s=>s.id===id);return api.edit(owner,{scope,table:'schedules',id,version:s.version,values});};
+ const branch=()=>api.saveLocation(owner,{organizationId:org.id,label:'Izoliuotas Kauno filialas',city:'Kaunas',publicAddress:'Tik testinis adresas K',openingHoursLabel:'Pagal pamainą',latitude:54.8985,longitude:23.9036});
+ const approve=()=>{const rev=api.submitRevision(owner,{scope,name:org.name,bio:org.bio});api.moderate(operator,{id:rev.id,state:'approved'});};
+ return {store,api,owner,operator,client,stranger,org,scope,p,r,workspace,review,offer,publish,shift,branch,approve};
+}
+test('Legacy staff without a version receive an explicit version when assigned to places',()=>{const f=fixture();try{const d=f.store.read();delete d.practitioners.find(p=>p.id===f.p.id).version;f.store.write(d);const l=f.branch(),p=f.api.assignStaffLocations(f.owner,{id:f.p.id,version:0,locationIds:[f.org.locationId,l.id],transferBufferMin:30});assert.equal(p.version,1);assert.equal(f.workspace().schedules.length,2);fails('VERSION_CONFLICT',()=>f.api.assignStaffLocations(f.owner,{id:f.p.id,version:0,locationIds:p.locationIds,transferBufferMin:30}));}finally{f.store.close();}});
+test('Reviewed places drive city search, physical resources, private drafts and individual staff shifts',()=>{const f=fixture();try{
+ const {api,owner,operator,org,p,r}=f;f.publish(f.offer(org.locationId,r,'place-v'));f.approve();const l=f.branch();
+ assert.equal(api.profile(org.id).locations.length,1);assert.equal(api.catalog({city:'Kaunas'}).length,0);
+ fails('FORBIDDEN',()=>api.saveLocation(f.stranger,{organizationId:org.id,label:'Hijack'}));fails('INVALID_INPUT',()=>api.saveLocation(owner,{organizationId:org.id,label:'Bad',city:'Kaunas',publicAddress:'Bad',openingHoursLabel:'Bad',latitude:54}));
+ const staff=api.assignStaffLocations(owner,{id:p.id,version:p.version,locationIds:[org.locationId,l.id],transferBufferMin:30});assert.equal(f.workspace().schedules.find(s=>s.locationId===l.id).weekdays.length,0);
+ const r2=api.createResource(owner,{organizationId:org.id,locationId:l.id,label:'Kauno darbo resursas'});fails('FORBIDDEN',()=>f.offer(l.id,r,'place-wrong-resource'));
+ const o=f.offer(l.id,r2,'place-k');fails('LOCATION_UNPUBLISHED',()=>api.submitOffer(owner,{id:o.id,version:o.version}));f.review(l);fails('OFFER_INCOMPLETE',()=>f.publish(o));
+ const old=f.workspace().schedules.find(s=>s.locationId===org.locationId),second=f.workspace().schedules.find(s=>s.locationId===l.id);
+ fails('SCHEDULE_CONFLICT',()=>f.shift(second.id,{weekdays:['Thu']}));f.shift(old.id,{weekdays:['Mon','Tue','Wed','Thu','Fri'],startMin:540,endMin:720,breakStartMin:600,breakEndMin:615});
+ f.shift(second.id,{weekdays:['Thu','Fri'],startMin:780,endMin:1200,breakStartMin:960,breakEndMin:975});f.publish(o);
+ assert.equal(api.catalog({city:'Kaunas'})[0].location.id,l.id);assert.equal(api.catalog({city:'Vilnius'})[0].id,'place-v');assert.equal(api.profile(org.id).locations.length,2);
+ assert.equal(api.availability({providerServiceId:'place-k',dayOffset:1,from:540,to:720}).slots.length,0);assert.ok(api.availability({providerServiceId:'place-k',dayOffset:1,from:840,to:960}).slots.length);assert.equal(api.availability({providerServiceId:'place-k',dayOffset:5,from:840,to:960}).slots.length,0);
+ fails('SCHEDULE_CONFLICT',()=>api.assignStaffLocations(owner,{id:p.id,version:staff.version,locationIds:[org.locationId,l.id],transferBufferMin:90}));
+ fails('LOCATION_REQUIRED',()=>api.search({sort:'distance',anyTime:true}));const sorted=api.search({sort:'distance',near:{latitude:54.8985,longitude:23.9036},anyTime:true});assert.equal(sorted[0].id,'place-k');assert.equal(sorted[0].distanceKm,0);assert.equal(sorted[1].distanceKm,null);
+ const edited=api.saveLocation(owner,{organizationId:org.id,id:l.id,version:f.workspace().locations.find(x=>x.id===l.id).version,label:'Naujas privatus pavadinimas',city:'Kaunas',publicAddress:'Privatus naujas adresas',openingHoursLabel:'Naujos valandos',latitude:null,longitude:null});
+ assert.equal(api.profile(org.id).locations.find(x=>x.id===l.id).publicAddress,'Tik testinis adresas K');api.grantMembership(owner,{organizationId:org.id,email:f.stranger.email,role:'reception',version:0});const reception=api.workspace(f.stranger,f.scope).locations.find(x=>x.id===l.id);assert.equal(reception.draft,undefined);assert.equal(reception.publicAddress,'Tik testinis adresas K');
+ fails('FORBIDDEN',()=>api.moderateLocation(owner,{id:edited.id,version:edited.version,state:'approved'}));
+ }finally{f.store.close();}});
+test('Place versions invalidate stale holds; future bookings keep their reviewed address and cannot be stranded',()=>{const f=fixture();try{
+ const {api,org,owner,r,p}=f;f.publish(f.offer(org.locationId,r,'place-bookable'));f.approve();const candidate=()=>api.availability({providerServiceId:'place-bookable',dayOffset:1,from:1020,to:1200}).slots[0];
+ const stale=candidate(),hold=api.hold(f.client,stale),original=f.workspace().locations[0];
+ const edit=input=>api.saveLocation(owner,{organizationId:org.id,id:original.id,version:f.workspace().locations[0].version||0,label:'Vilniaus vieta',city:'Vilnius',publicAddress:'Tik testinis adresas V',openingHoursLabel:'Peržiūrėtos valandos',latitude:null,longitude:null,...input});
+ f.review(edit({}));fails('SLOT_CONFLICT',()=>api.confirm(f.client,{holdId:hold.id,name:'Fixture klientas',idempotencyKey:'stale-place-confirm'}));api.releaseHold(f.client,hold.id);
+ const h=api.hold(f.client,candidate()),b=api.confirm(f.client,{holdId:h.id,name:'Fixture klientas',idempotencyKey:'place-confirm'});assert.equal(b.serviceSnapshot.location.publicAddress,'Tik testinis adresas V');
+ const legacy=f.store.read(),old=legacy.bookings.find(x=>x.id===b.id);delete old.locationId;f.store.write(legacy);
+ fails('LOCATION_CONFLICT',()=>api.setLocationActive(owner,{id:original.id,version:f.workspace().locations[0].version||0,active:false}));const pending=api.submitLocation(owner,{id:original.id,version:edit({publicAddress:'Naujas adresas'}).version});fails('LOCATION_CONFLICT',()=>api.moderateLocation(f.operator,{id:original.id,version:pending.version,state:'approved'}));assert.equal(api.profile(org.id).location.publicAddress,'Tik testinis adresas V');
+ const l=f.review(f.branch());const person=f.workspace().practitioners.find(x=>x.id===p.id);fails('SCHEDULE_CONFLICT',()=>api.assignStaffLocations(owner,{id:p.id,version:person.version,locationIds:[l.id],transferBufferMin:30}));
+ api.cancelBooking(f.client,{scope:{role:'customer'},id:b.id,version:b.version});api.moderateLocation(f.operator,{id:original.id,version:pending.version,state:'approved'});assert.equal(api.profile(org.id).location.publicAddress,'Naujas adresas');assert.equal(api.workspace(f.client,{role:'customer'}).bookings[0].serviceSnapshot.location.publicAddress,'Tik testinis adresas V');
+ api.setLocationActive(owner,{id:original.id,version:f.workspace().locations[0].version||0,active:false});assert.equal(api.catalog().length,0);assert.equal(api.profile(org.id).location.id,l.id);
+ }finally{f.store.close();}});

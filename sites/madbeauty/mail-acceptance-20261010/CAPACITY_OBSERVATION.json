@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-09T22:18:56.999Z",
+  "adapter": "Node SQLite :memory:",
+  "completedReceipts": 4096,
+  "elapsedDays": 60,
+  "pendingAcknowledgements": 0,
+  "nextNewReceipt": "CAPACITY503",
+  "externalMailSent": 0,
+  "customerRecords": 0,
+  "conclusion": "Reproduced bounded journal exhaustion; no current timed retirement. Not a production incident or a capacity guarantee."
+}

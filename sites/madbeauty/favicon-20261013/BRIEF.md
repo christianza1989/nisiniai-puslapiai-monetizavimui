@@ -13,4 +13,3 @@ Kryptis – esamos juodos, baltos ir violetinės tapatybės plėtinys. Violetini
 Horizontalus 290 × 54 logotipas lieka svetainės antraštei. Anksčiau favicon užklausos grąžindavo šį horizontalų failą; dabar grąžinamas tikras kvadratinis failas. Nuorodų versija pakeista, kad naršyklė paprašytų naujos ikonos.
 
 Tekstas, navigacija ir svetainės šriftai nekeičiami. Vizualinė peržiūra atlikta nuosekliai šioje sesijoje; tai nėra nepriklausomo dizainerio vertinimas.
-

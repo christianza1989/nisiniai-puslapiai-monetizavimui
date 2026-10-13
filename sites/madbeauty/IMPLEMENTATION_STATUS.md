@@ -537,4 +537,3 @@ Bus įrašyti po testų ir actual desktop/mobile/keyboard/flow/SEO/performance p
 Tikras auth / tenant server security / patvarios inquiries / SMTP-INBOX / authoritative kalendoriaus ir atomic booking backend / mokėjimai / voice / FB outreach / PWA-native / production seed exclusion build / shared SSR SEO adapteris / teikėjų teisės ir tikri faktai / DNS-TLS-hosting / deployment / GSC-Bing / paklausa. Jie neįeina į privačios demonstracijos priėmimą ir nevadinami veikiančiais.
 
 Nėra 10/10, domain-ready, realaus vizito ar išmatuoto pranašumo prieš Fresha teiginio.
-

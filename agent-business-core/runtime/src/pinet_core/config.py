@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     control_source_revision: str = ""
     control_session_seconds: int = 28800
     customer_enabled: bool = False
+    workspace_topics_enabled: bool = False
     customer_agents_enabled: bool = False
     xbot_bridge_enabled: bool = False
     customer_text_enabled: bool = False

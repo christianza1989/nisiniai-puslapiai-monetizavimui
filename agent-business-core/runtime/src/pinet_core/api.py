@@ -57,6 +57,7 @@ from .security import digest, operator_auth, signed_edge, worker_auth
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
 from .workspace_read.routes import router as workspace_read_router
+from .workspace_topics.routes import router as workspace_topics_router
 from .xbot_bridge.routes import router as xbot_bridge_router
 
 
@@ -99,6 +100,7 @@ app.include_router(operations_router)
 app.include_router(director_read_router)
 app.include_router(customer_router)
 app.include_router(workspace_read_router)
+app.include_router(workspace_topics_router)
 app.include_router(creation_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)

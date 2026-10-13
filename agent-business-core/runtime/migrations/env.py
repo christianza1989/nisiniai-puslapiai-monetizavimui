@@ -22,6 +22,7 @@ from pinet_core.facebook import models as facebook_models  # noqa: F401
 from pinet_core.models import Base
 from pinet_core.public_projects import models as public_models  # noqa: F401
 from pinet_core.tasks import models as task_models  # noqa: F401
+from pinet_core.workspace_topics import models as workspace_topic_models  # noqa: F401
 
 
 def run(connection):

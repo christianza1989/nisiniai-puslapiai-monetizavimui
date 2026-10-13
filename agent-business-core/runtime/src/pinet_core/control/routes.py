@@ -32,6 +32,32 @@ class ControlError(Exception):
 
 class SafeRoute(APIRoute):
     body_limit = 4096
+
+    async def handle(self, scope, receive, send):
+        # FastAPI finalizes function-scoped dependencies outside get_route_handler.
+        # A failed transaction commit must finish the safe contract before headers.
+        started = False
+        async def tracked_send(message):
+            nonlocal started
+            if message["type"] == "http.response.start":
+                started = True
+            await send(message)
+        try:
+            await super().handle(scope, receive, tracked_send)
+        except (ControlError, SQLAlchemyError) as error:
+            if started:
+                # Streaming responses cannot be replaced once headers were sent.
+                raise
+            request = Request(scope)
+            code = error.code if isinstance(error, ControlError) else "source_unavailable"
+            status = error.status if isinstance(error, ControlError) else 503
+            response = JSONResponse({"code": code, "message": code,
+                "request_id": getattr(request.state, "control_request_id", new_id())}, status_code=status,
+                headers={"Cache-Control": "private, no-store", "X-Content-Type-Options": "nosniff",
+                         **({"WWW-Authenticate": "Bearer"} if status == 401 else {}),
+                         **({"Retry-After": "900"} if status == 429 else {})})
+            await response(scope, receive, send)
+
     def get_route_handler(self):
         original = super().get_route_handler()
 

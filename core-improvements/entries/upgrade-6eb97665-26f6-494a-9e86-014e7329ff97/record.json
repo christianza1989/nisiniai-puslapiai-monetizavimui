@@ -7,7 +7,8 @@
     "Prototype peer inspected actual200-onlyASSETS video delivery and repaired206streaming; wrapper adapted through canonical renderer, actualexactbytes verified.",
     "New actual foreign-host check caught dovanos123.lt200 leakage when namespace gate lived only in niche branch; original failure retained, admission moved before all legacy fallbacks.",
     "Official Studio release93fd0751 modifies one homepage body only;87otherpages and originalmetadata/media/links/dates identical. Browser and finalnativechecks follow.",
-    "Final official3b350683release,87otherpages exact;88tests/TS/build/42rangeHTTP/103SEO/all10smokePASS.267renderHTTP0renderissues; historicalA-Zaudit mismatch/localincomplete retained. Actualdesktop/mobilevideo forwardreverse/320dock/CTA/cart/native4locale andcarousel/FAQ checks."
+    "Final official3b350683release,87otherpages exact;88tests/TS/build/42rangeHTTP/103SEO/all10smokePASS.267renderHTTP0renderissues; historicalA-Zaudit mismatch/localincomplete retained. Actualdesktop/mobilevideo forwardreverse/320dock/CTA/cart/native4locale andcarousel/FAQ checks.",
+    "ObservedGitLFtoCRLF warning for originalOFL.txt would break19asset byte manifest on a fresh Windows clone. Added only selected license -text and selectedMP4binary attributes; actualGitblobsha/textattribute checked."
   ],
   "rollback": "Revert only this paired homepage integration and restore previous officialbff release through the standard importer. Keep Studio history, backendDB, prototype/demo and other sessions unchanged.",
   "paths": [
@@ -35,7 +36,8 @@
     "tests/memocasting-homepage.test.mjs",
     "lib/memocasting-homepage-assets.mjs",
     "cloudflare-env.d.ts",
-    "sites/memocasting/FOUNDATION_STATUS.md"
+    "sites/memocasting/FOUNDATION_STATUS.md",
+    ".gitattributes"
   ],
   "id": "upgrade-6eb97665-26f6-494a-9e86-014e7329ff97",
   "branch": "codex/memocasting-site-20261012",

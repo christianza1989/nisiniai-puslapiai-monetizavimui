@@ -2,6 +2,7 @@
 import {purchaseTerms} from './purchase-terms.mjs';
 import {updatePrivacyNotice} from './privacy-copy.mjs';
 import {performanceSource} from './performance.mjs';
+import {updateGuidePublication} from './guide-copy.mjs';
 export function transform(file, input) {
  let text=input;
  if(file.endsWith('.html')) {
@@ -32,5 +33,5 @@ export function transform(file, input) {
   text=text.replace(/  const menuButton =[\s\S]*?  const privacy =/,"  root.dataset.theme = 'dark';\n  document.querySelector('meta[name=\"theme-color\"]').content = '#101114';\n  const privacy =").replace(/  updateNavigation\(\);\s*\}\)\(\);/, '})();');
   text=text.replace("querySelector('[data-open-privacy]').addEventListener","querySelector('[data-open-privacy]')?.addEventListener").replace("querySelector('[data-close-privacy]').addEventListener","querySelector('[data-close-privacy]')?.addEventListener");
  }
- return performanceSource(file,file==='privacy/index.html'?updatePrivacyNotice(text):text);
+ return performanceSource(file,updateGuidePublication(file,file==='privacy/index.html'?updatePrivacyNotice(text):text));
 }

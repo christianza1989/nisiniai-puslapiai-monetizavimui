@@ -1,0 +1,18 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Live guide audit found MB Pinet in guide bylines and generated Organization while purchase/privacy identify MB Memocasting. Dedicated build now derives Organization from accepted seller policy; four guide editions correct private-preview wording and attribution while retaining original publication dates. Other niches and original prototype unchanged.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/32",
+    "Four guide texts individually inspected; dedicated schema used shared MB Pinet default despite accepted MB Memocasting seller policy."
+  ],
+  "paths": [
+    "deploy/phonebridger/build.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/32",
+  "rollback": "Scoped revert of dedicated operator source; do not rewrite accepted seller policy, original publication dates or other niche operator defaults.",
+  "id": "upgrade-c1636270-b956-4b4b-ab1e-0fd3b7b6c1a7",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "734ec1c2220b2d915c2c4c2bcefc7007f73cb2a1",
+  "createdAt": "2026-10-13T09:04:43.991Z"
+}

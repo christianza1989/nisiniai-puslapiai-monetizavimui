@@ -955,6 +955,10 @@
         {
           "type": "paragraph",
           "text": "After the initial pairing, you can keep using Wi-Fi or prepare USB once. The current beta prefers an authorized physical USB phone automatically and falls back to Wi-Fi when the cable is removed. Native file dragging is planned and is not part of this setup."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
@@ -1032,12 +1036,12 @@
         }
       ],
       "id": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
-      "revisionHash": "cd5759db5e64400a8307d5f99d8736c98acabe1f20a0bdf3ef2a84cdcf574613",
+      "revisionHash": "ab05ce79477de5111b43564292b51153e33038f5c4d7d973148b6933c59c56f0",
       "approval": {
         "status": "approved",
-        "revisionHash": "cd5759db5e64400a8307d5f99d8736c98acabe1f20a0bdf3ef2a84cdcf574613",
-        "approvedAt": "2026-10-06T05:41:33.208Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "ab05ce79477de5111b43564292b51153e33038f5c4d7d973148b6933c59c56f0",
+        "approvedAt": "2026-10-13T09:04:09.358Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
       }
     },
     {
@@ -1141,6 +1145,10 @@
         {
           "type": "paragraph",
           "text": "For example, connect one desk phone by USB and keep a second paired phone on Wi-Fi. This illustrates a supported arrangement; it is not a claim that a particular phone, dock or cable has been tested. If you ask for help, include the phone model, Windows/Android versions, visible connection status and whether the cable transfers data."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
@@ -1226,12 +1234,12 @@
         }
       ],
       "id": "21266ff0-7a65-4a82-8497-690ac3f549eb",
-      "revisionHash": "74a6e3e0924904acf0630dd9ee7ac49eeae43fa40895061872eb1d8ac7ac9a48",
+      "revisionHash": "925a5ff3bf137f00de14a237545c225022800fd19a5681f3862d69906842695e",
       "approval": {
         "status": "approved",
-        "revisionHash": "74a6e3e0924904acf0630dd9ee7ac49eeae43fa40895061872eb1d8ac7ac9a48",
-        "approvedAt": "2026-10-06T06:08:11.516Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "925a5ff3bf137f00de14a237545c225022800fd19a5681f3862d69906842695e",
+        "approvedAt": "2026-10-13T09:04:09.394Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
       }
     },
     {
@@ -1338,6 +1346,10 @@
         {
           "type": "paragraph",
           "text": "Describe the feature you are enabling, the exact visible prompt, your Android version and the app version. A cropped screenshot of the setting can help if it contains no personal content. Do not include a password, pairing token, private app messages or a full settings export."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
@@ -1423,12 +1435,12 @@
         }
       ],
       "id": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
-      "revisionHash": "ae43fbdc432157ce69ec5f6cb204bc9db95400ded6ba82b91d8912017a47ac97",
+      "revisionHash": "378233c1a2fa9e590125f740fcd556c211964dad4496f8830a1155abad1e8dc2",
       "approval": {
         "status": "approved",
-        "revisionHash": "ae43fbdc432157ce69ec5f6cb204bc9db95400ded6ba82b91d8912017a47ac97",
-        "approvedAt": "2026-10-06T06:08:11.532Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "378233c1a2fa9e590125f740fcd556c211964dad4496f8830a1155abad1e8dc2",
+        "approvedAt": "2026-10-13T09:04:09.412Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
       }
     },
     {
@@ -1533,6 +1545,10 @@
         {
           "type": "paragraph",
           "text": "If you need help, include the phone position, orientation, app versions and a simple sketch of the desk. Leave account credentials and private phone screens out of that sketch."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
         }
       ],
       "publishAt": "2026-10-06T00:00:00.000Z",
@@ -1610,12 +1626,12 @@
         }
       ],
       "id": "761a09b5-ace2-4371-bca6-29dceed59240",
-      "revisionHash": "b9589df29e161f16979f5db6b00ff8ea7b73e31dcb8f3d1510688976b43a3867",
+      "revisionHash": "1b9f6d5ef018b1f71c2989e255fce8d1e8be0b591cdeff2a4d05cf671d43a2ed",
       "approval": {
         "status": "approved",
-        "revisionHash": "b9589df29e161f16979f5db6b00ff8ea7b73e31dcb8f3d1510688976b43a3867",
-        "approvedAt": "2026-10-06T06:08:11.546Z",
-        "actorId": "codex-editorial-review-20261006"
+        "revisionHash": "1b9f6d5ef018b1f71c2989e255fce8d1e8be0b591cdeff2a4d05cf671d43a2ed",
+        "approvedAt": "2026-10-13T09:04:09.431Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
       }
     },
     {
@@ -1698,5 +1714,5 @@
       }
     }
   ],
-  "generatedAt": "2026-10-13T08:59:21.824Z"
+  "generatedAt": "2026-10-13T09:05:21.694Z"
 }

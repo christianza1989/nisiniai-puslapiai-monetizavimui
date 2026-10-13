@@ -24,6 +24,9 @@ class Settings(BaseSettings):
     control_session_seconds: int = 28800
     customer_enabled: bool = False
     workspace_topics_enabled: bool = False
+    workspace_team_enabled: bool = False
+    workspace_team_runner_enabled: bool = False
+    workspace_team_actor_ids: list[str] = []
     customer_agents_enabled: bool = False
     xbot_bridge_enabled: bool = False
     customer_text_enabled: bool = False

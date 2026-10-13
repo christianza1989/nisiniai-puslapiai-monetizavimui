@@ -52,7 +52,8 @@ class Task(OwnedTaskScope, Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
     event_sequence: Mapped[int] = mapped_column(Integer, default=0)
     source_revision: Mapped[str] = mapped_column(String)
-    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint(*BINDING, "kind", name="uq_control_task_kind_scope"), UniqueConstraint("user_id", "environment_id", "idempotency_key"),
+    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint(*BINDING, "kind", name="uq_control_task_kind_scope"),
+                      UniqueConstraint(*BINDING, "thread_id", "kind", name="uq_control_task_thread_kind_scope"), UniqueConstraint("user_id", "environment_id", "idempotency_key"),
                       UniqueConstraint("thread_id", "sequence"),
                       parent_binding("control_task_threads", "thread_id"),
                       ForeignKeyConstraint(["session_id"], ["control_sessions.id"]))

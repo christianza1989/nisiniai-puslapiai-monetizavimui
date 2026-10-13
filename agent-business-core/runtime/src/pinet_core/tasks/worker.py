@@ -46,6 +46,11 @@ class ChatHandler:
 
         return await prepare(tx, task, await context_for(tx, task))
 
+    async def reserve_root(self, tx, task):
+        if settings().workspace_team_enabled:
+            from ..workspace_team.quota import call_slot
+            await call_slot(tx, task.user_id)
+
     def revision_for(self, context):
         from ..director.read import ADAPTER_REVISION
 
@@ -68,8 +73,9 @@ class ChatHandler:
 def handlers():
     # Source-fixed registry, never a browser-selected import/tool/executable.
     from ..acquisition.tasks import CaptureHandler
+    from ..workspace_team.handler import TeamHandler
 
-    return (ChatHandler(), CaptureHandler())
+    return (ChatHandler(), CaptureHandler(), TeamHandler())
 
 
 def handler_for(kind):
@@ -86,7 +92,13 @@ async def finish_run(tx, task, status, *, usage=None):
         else None
     )
     if run:
+        if task.kind == "workspace.team_turn":
+            from ..workspace_team.quota import merge_usage, saved_usage
+            usage = merge_usage(usage, await saved_usage(tx, task_id=task.id, run_id=run.id, user_id=task.user_id,
+                environment_id=task.environment_id, source_revision=task.source_revision))
         run.status, run.finished_at, run.usage = status, utcnow(), usage
+        if task.kind == "workspace.team_turn" and task.status in {"succeeded", "failed", "cancelled"}:
+            task.lease_until = None
         run.cost_microusd = None  # CLI usage is not an authoritative USD invoice.
 
 
@@ -105,6 +117,11 @@ async def claim(*, kind=None):
                     text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                     {"k": "chat-claim:" + settings().environment + ":" + user_id},
                 )
+                if settings().workspace_team_enabled:
+                    from ..workspace_team.quota import release_queue
+                    await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
+                        {"k": "chat-admission:"+settings().environment+":"+user_id})
+                    await release_queue(tx, user_id)
                 running = list(
                     await tx.scalars(select(Task).where(Task.status == "running").with_for_update())
                 )
@@ -117,9 +134,14 @@ async def claim(*, kind=None):
                         await finish_run(tx, task, "failed")
                 if busy:
                     continue
+                if settings().workspace_team_enabled and await tx.scalar(
+                    text("SELECT workspace_team_actor_busy(:u,:e)"), {"u": user_id, "e": settings().environment}
+                ):
+                    continue
                 task = await tx.scalar(
                     select(Task)
                     .where(Task.status == "queued", Task.kind == handler.kind)
+                    .where(handler.queue_filter() if hasattr(handler, "queue_filter") else True)
                     .order_by(Task.created_at, Task.id)
                     .limit(1)
                     .with_for_update()
@@ -131,6 +153,8 @@ async def claim(*, kind=None):
                     await append_event(tx, task)
                     continue
                 try:
+                    if hasattr(handler, "reserve_root"):
+                        await handler.reserve_root(tx, task)
                     context = await handler.context(tx, task)
                 except (ControlError, LedgerError, codex.RunnerError):
                     task.status, task.failure_code = "failed", "task_context_unavailable"
@@ -228,6 +252,10 @@ async def execute_once(adapter=None, *, kind=None):
                     "SELECT to_regprocedure('public.director_settle_revoked_task(character varying,character varying,character varying,character varying,character varying,character varying,jsonb,character varying)') IS NOT NULL"
                 )
             ):
+                if claimed["kind"] == "workspace.team_turn":
+                    from ..workspace_team.quota import merge_usage, saved_usage
+                    usage = merge_usage(usage, await saved_usage(tx, task_id=task_id, run_id=run_id, user_id=actor,
+                        environment_id=claimed["environment_id"], source_revision=claimed["source_revision"]))
                 observed = (
                     {
                         key: value

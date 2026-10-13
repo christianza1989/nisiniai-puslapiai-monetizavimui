@@ -6,6 +6,8 @@ Savininko prioritetas: pirmiau sutvarkyti UI/UX, tada tęsti tikrus modelių ban
 
 **Komandos pokalbio papildymas — 2026-10-13:** savininkas pasirinko bendravimą pirmiausia su koordinatoriumi. Koordinatorius pagal užduotį pasitelkia specialistus, o jie savo vardu atsako tame pačiame pokalbyje. Tam numatyti tikri dalyvių ID, aiškūs pavedimai, bendras versijuotas kontekstas ir naujų agentų prijungimas pagal jų paskirtį bei parengtį. Visi agentai automatiškai nevykdomi po kiekvienos žinutės. [Komandos pokalbio architektūros papildymas](VERSLOMATIKA_TEAM_CHAT_ARCHITECTURE.md) yra siūlomas būsimas core ir sąsajos išplėtimas; dabartinė trijų vaidmenų vykdymo eiga dar nėra ši grupinio pokalbio sistema.
 
+**Naujo agento parengimas:** prašymas „sukurk agentą, kuris atliks šį darbą“ numatomas kaip vienas koordinatoriaus valdomas užsakymas. Jis apima paskirties ir rezultato apibrėžimą, reikalingus gebėjimus, įrankius bei žinias, agento sukūrimą, esamą kalibravimą, pataisymus, patikrintos versijos pritaikymą ir įtraukimą į komandą. Atskiro kalibravimo prašymo nereikės. Trūkstama integracija tampa aiškia įgyvendinimo užduotimi; išsaugotas aprašas dar nepatvirtina veikiančio agento. Vykdymas remiasi faktinėmis verslo teisėmis, prieigomis, parengtimi ir sutarta apimtimi.
+
 ## Pagrindinis ekranas
 
 | Kairė — verslo erdvė | Centras — pokalbis | Dešinė — darbo sritis |

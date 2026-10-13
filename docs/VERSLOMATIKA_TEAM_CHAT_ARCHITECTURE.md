@@ -104,6 +104,46 @@ Reuse the current knowledge index's source/TTL/revocation rules for approved web
 
 A new agent joins through the maintained configuration/admission process, receives a stable scoped participant mapping and a permitted onboarding packet of current business/decisions/tasks/team capabilities. It can identify which colleague to request without executing that colleague. New roster/configuration revisions are checked at the next task and before execution; they do not hot-rewrite an active run's instruction snapshot. Agent creation/configuration, team membership, execution readiness, calibration and external-channel activation remain separate states.
 
+## Coordinator-owned agent creation and calibration
+
+The owner's additional requirement is end-to-end: “we need a new agent that does this work” becomes one coordinator-owned provisioning task, including creation, tool/source preparation, calibration, correction, verified adoption and team onboarding. The owner must not need a second “now calibrate it” request. This is an accepted planning requirement; a universal production agent factory is not implemented by this document.
+
+Reuse the canonical [create-and-calibrate contract](../SKILLS/business-agent-calibration/references/create-and-calibrate.md), [calibration skill](../SKILLS/business-agent-calibration/SKILL.md), maintained [runbook](../SKILLS/business-agent-calibration/references/runbook.md), existing [customer agent lab](../agent-business-core/runtime/src/pinet_core/customer_agents/lab.py) and [business tool contract](../BUSINESS_TOOLS_CORE.md). Do not duplicate their evaluator, scorer, protected corpus, learning controller or tool policy. Their applicable authority, channel and execution-budget conditions remain in force.
+
+Proposed coordinator-owned stages:
+
+| Stage | Coordinator responsibility and saved evidence |
+| --- | --- |
+| Purpose and result | Convert the owner's goal into a concrete job, outputs, success conditions, autonomy and business constraints. Ask only for indispensable unknown facts/choices; derive routine configuration from existing context. |
+| Capability coverage | Compare required actions against currently admitted tools/adapters. Record existing coverage, missing implementation and external access dependencies; a prompt cannot supply a missing capability. |
+| Durable creation | Save/reconcile one existing agent draft identity and immutable specification revision using canonical request/CAS rules. Bind the provisioning task and future team participant to that exact agent/business/configuration. |
+| Knowledge and tools | Prepare approved sources, maintained role instructions, relevant team context and only the tools needed for this job. Resolve actual connector/admission prerequisites without copying secrets into chat. |
+| Baseline and calibration | Run the maintained task-appropriate calibration path against actual supported core/tool behavior, retaining source/configuration/knowledge/tool versions, protected cases, usage and original failures. |
+| Repair and regression | Diagnose whether the cause is behavior, facts, an adapter, transport, infrastructure or evaluation; fix the smallest authorized cause, run meaningful regression and unseen protected cases. Preserve the original failure. |
+| Adoption and rollback | Bind acceptance to the tested configuration/release and actual adapter adoption; preserve the last verified version and restoration path. A candidate or stored numeric score alone is not calibration. |
+| Team onboarding | Add the prepared stable participant with its current purposes/capabilities, relevant common context and verified readiness. Coordinator and colleagues can discover what it can do. |
+| Operational execution | Start only the admitted job/channel with applicable current business authority and source/readiness. Agent creation, calibration, team presence and external activation remain independently visible. |
+
+All stages are one resumable parent task. The chat shows concise milestones and specific blockers; the Activity/Checks panels retain detail. Reconnect or a repeated owner request with the same key/material reconciles the original draft/provisioning job instead of making a duplicate agent. Known existing authorization is reused; a missing credential, unavailable runtime or exhausted execution budget is a concrete dependency, not a reason to ask the owner to supervise every routine step.
+
+“Created and calibrated” refers to the declared, actually tested job. An internal data-analysis agent needs its data/tool/output behavior verified; a customer conversation agent uses the applicable conversation/contact/channel requirements of the maintained contract. Group-chat membership does not silently add voice, SMTP or other external channels to an unrelated internal purpose. Existing narrower owner scope and holds take precedence.
+
+### Extensible capabilities rather than fixed agent names
+
+Purpose names and display aliases organize the UI. Flexibility comes from a maintained capability registry and task composition. Each executable capability must have a stable key/version, typed inputs/outputs, implemented adapter, relevant data/resource scope, allowed action class, current admission, test evidence, quota/cost/deadline rules and failure behavior. Agents can combine compatible admitted capabilities into a new business role without rewriting the whole conversation system.
+
+Maintain three distinct states: requested capability, implemented/tested adapter, and admitted execution for this business. Customer-agents.v1's four purpose choices organize saved drafts; they do not install four runtimes or grant arbitrary capabilities. A `custom` specification must not become unrestricted shell/tool execution or an unvalidated model-selected endpoint.
+
+Provisioning uses a capability dependency graph: sources/access, required adapters, configuration, tests, readiness and operational job/channel dependencies. Future readiness should be defined per actual purpose rather than forcing every internal role to have every external channel. This does not weaken current discovery-origin foundation or registration gates; changing an existing prerequisite requires an explicit core contract/policy increment and regression, not a frontend exception.
+
+When a required capability is missing, the coordinator owns a development dependency: define the smallest adapter/core extension, route it through the maintained source ownership/review/regression/release process, then verify actual adoption and recalibrate the affected job. It cannot invent a tool result or hot-install self-generated production code. Reuse [CORE_IMPROVEMENT](../CORE_IMPROVEMENT.md); do not create a second execution or permission framework.
+
+Flexibility includes research, writing, analysis, pricing/stock reads, offer preparation, approved CRM/catalogue updates and other domain work when the corresponding capability exists and is admitted. Actual supported coverage is discovered from the registry rather than promised universally. High-impact action classes use their existing precise authority; the owner's requested job can authorize applicable operations within its stated scope, without giving all agents every permission by default.
+
+Every custom role's acceptance must cover both useful work and relevant exceptions: incomplete data, revised intent, duplicate execution, unavailable tools, scope denial, interruption and recovery. Use the existing supported evaluation/learning mechanisms; define only the missing task adapter/cases/criteria, keeping protected tests and production facts unchanged. A configured but uncalibrated member stays visibly in preparation and cannot be presented as operationally ready.
+
+Provisioning also needs acceptance tests: duplicate requests produce one identity; calibration failure never activates; missing capability opens a truthful development dependency; replay after crash retains usage and configuration; a revised specification requires appropriate revalidation; registry membership cannot widen permissions; newly admitted colleagues learn current team capabilities; current quotas apply across the entire preparation task; verified release/rollback is demonstrated in the actual adapter.
+
 ## Scheduling, disagreements and new owner messages
 
 The coordinator is the single writer of the active task plan for an owner turn. Specialists can work concurrently only on genuinely independent admitted tasks. Shared document/business mutations require the maintained resource owner, exact base revision and serialization/CAS checks. A new chat feature does not permit a late result to overwrite a newer document.

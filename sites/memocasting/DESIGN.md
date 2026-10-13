@@ -1,5 +1,7 @@
 # Memocasting vizualinė sistema
 
+Aktualus2026-10-13LT homepage yra savininko pasirinktas kitos sesijos Memory Casting prototipas: Manrope400/600, baltas/šiltas paviršius, rožinis akcentas, statiškas hero ir antros sekcijos scroll-scrub filmas. [Tekstų vaidmenys, integracija, patikros ir ribos](HOMEPAGE_INTEGRATION.md). Žemiau esanti kontaktinio lapo sistema tebėra kitų puslapių laikinas dizainas, ne dabartinio homepage autoritetas.
+
 2026-10-12. Agentas renkasi autonomiškai pagal savininko perdavimą. Bendro tinklo maketai nėra šios parduotuvės tapatybė.
 
 ## Krypties atranka

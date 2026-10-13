@@ -16,6 +16,8 @@ Raw JSON/PNG captures and test DBs remain local/ignored. Selected actual images 
 
 The collaborating chat's final live overview review found a singular purchase label error. Source follow-up `5f2fc47c55e4749d10fbee9493a399c871388342` fixes it; one actual pristine operator render plus browser-only zero/two fixtures confirm all three forms. Source/proof binding is appended in proof/EVIDENCE.md without overwriting original acceptance hashes. No backend or broader visual retest was needed for this copy-only change.
 
+The same review then included the adjacent order and stock-line counters. Current copy source `c4fd8f4a4f0f3293a0a41ca3144e7516be6784b4` handles zero/one/two forms across all three queue labels, with a focused rendered matrix and unchanged persistent state. The collaborating chat independently reran all 17 backend/HTTP cases against handoff head `14c033b204cb09b2f22c804a1e3f86a65ac8cff2` and reported PASS; this copy batch changes no backend source.
+
 ## Acceptance matrix
 
 | Requirement | Result | Evidence |

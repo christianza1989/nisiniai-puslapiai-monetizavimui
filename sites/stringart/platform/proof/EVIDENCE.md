@@ -2,7 +2,7 @@
 
 14 October 2026. Implemented source commit: bdd1c96216446a81e35c433e66edfc8a82491651. Dependency PR126: 5aa9eab3e355292f2f0ee725e74e9029520e1467. Fetched main: 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Scoped review: PR129; merge and other-PC adoption are separate.
 
-Current application source also includes the narrowly scoped copy follow-up `5f2fc47c55e4749d10fbee9493a399c871388342`, described below. The original implementation/proof fingerprints remain preserved.
+Current application source includes the narrowly scoped overview-copy follow-up `c4fd8f4a4f0f3293a0a41ca3144e7516be6784b4`, building on `5f2fc47c55e4749d10fbee9493a399c871388342`, described below. The original implementation/proof fingerprints remain preserved.
 
 Hashes below are SHA-256 of the exact executed local working-file bytes; Git/checkout line-ending normalization can change physical bytes on another PC. Use the source commit plus semantic tests for adoption.
 
@@ -33,7 +33,7 @@ Backend/HTTP final result: 17 tests, 17 pass, 0 fail/skip. Actual process restar
 
 ## Purchase-count copy follow-up
 
-14 October 2026. Source `5f2fc47c55e4749d10fbee9493a399c871388342` repairs only the overview's purchase/purchases agreement. Current app.mjs SHA-256: `99a0d7afedc5e61f74f7827aa144dfba6d3c505208653a79b3f17db1301cc874`. All other functional source hashes above remain unchanged.
+14 October 2026. Source `5f2fc47c55e4749d10fbee9493a399c871388342` repairs only the overview's purchase/purchases agreement. app.mjs SHA-256 at that follow-up: `99a0d7afedc5e61f74f7827aa144dfba6d3c505208653a79b3f17db1301cc874`. All other functional source hashes above remain unchanged.
 
 The actual pristine operator overview at `http://127.0.0.1:8946`, measured 1440×1000, displays “1 supplier purchase open” and was visually inspected once. Browser-only copy fixtures confirm “0 supplier purchases open” and “2 supplier purchases open”; they do not modify persistent server state. Backend suites and unrelated screens were not rerun for this one-label correction.
 
@@ -41,3 +41,14 @@ The actual pristine operator overview at `http://127.0.0.1:8946`, measured 1440�
 - Local actual-state screenshot: `proof/captures/purchase-copy-pristine-1.png`, SHA-256 `7a153ba192dd8f467c9482c48cd22cc74a9b6d05f65c14a1e00fbc50a103d9f7`.
 
 These raw files remain local/ignored. The original incorrect copy and scoped correction are recorded in FIRST-FAILURES.md.
+
+## Adjacent overview counters — current copy source
+
+Source `c4fd8f4a4f0f3293a0a41ca3144e7516be6784b4` adds correct singular order and stock-line agreement to the same overview repair. Current app.mjs SHA-256: `9553f7081104db2489a4f7be6a53c3496653cf182e19592915c0dab1ce1137a2`.
+
+The focused rendered count matrix confirms all three labels at zero/one/two, including “1 order in progress”, “1 stock line below its reorder point” and “1 supplier purchase open”. The actual pristine operator overview was inspected at 1440×1000; zero/one/two variations use explicit browser-only fixtures and do not alter the persistent DB.
+
+- Local matrix receipt: `proof/overview-copy.json`, SHA-256 `8bb0e7228a7a39b528a34f37c737f972b6829b1a7436a722831b1ccecd2b434a`.
+- Local actual-state screenshot: `proof/captures/overview-copy-pristine.png`, SHA-256 `7a153ba192dd8f467c9482c48cd22cc74a9b6d05f65c14a1e00fbc50a103d9f7`.
+
+The collaborating chat reported its independent 17/17 backend/HTTP rerun against handoff head `14c033b204cb09b2f22c804a1e3f86a65ac8cff2`. Backend source is unchanged by these copy-only commits. No independent complete UI acceptance is inferred from that backend report.

@@ -3,3 +3,4 @@
 /android/.gradle/
 /android/local.properties
 /android/app/src/main/assets/MemoryString.html
+/android/app/src/main/assets/app-assets/

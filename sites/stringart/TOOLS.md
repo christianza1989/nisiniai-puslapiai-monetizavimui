@@ -1,15 +1,15 @@
 # MemoryString tools and integration plan
 
-13 October 2026 | siteId stringart | brand/domain pending | core base 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Current authorized implementation is the independent local creator/Android package. Websites and the ten-partner business platform are paused.
+14 October 2026 | research dated 13 October | siteId stringart | brand/domain pending | core base 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Current authorized implementation is the independent local creator/Android package. The ten-partner business platform is authorized next in a separate chat; retail and subdomain websites follow later.
 
 Paid customer outcomes: a delivered portrait, an accepted machine, a useful DIY kit and a defined local studio/support package. Software previews do not prove manufacturing, supply, support or payments. The dated English plan contains the commercial model and remaining due diligence.
 
 | Capability | Current evidence | Activation boundary |
 | --- | --- | --- |
 | Product/market evidence | Private supplier files and dated primary public offers | Signed SKU specification, counterpart and physical test |
-| Creator | Pinned MIT solver, own English UI, local full-project storage and test APK | Actual Android device, accepted frame/thread and usability |
+| Creator | Pinned MIT solver, chosen English UI/assets, local storage and signed test APK; phone/JSON tests pass | Physical frame/thread pilot and broader usability/device coverage |
 | Supplier cooperation | Unsent English proposal/checklist | Verified recipient and explicit sending instruction |
-| Partner operations | Order/stock/role specification | Resumed platform scope and one persistent server path |
+| Partner operations | Order/stock/role specification; next authorized local demonstration | One persistent server path and verified tenant/stock flows |
 | Payments/shipping/machine | Planned seams only | Documented adapter, authorization and actual acceptance |
 | Acquisition | Creator/referral strategy and cost scenarios | Accepted offer, defined budget/rights and real sales test |
 
@@ -37,7 +37,7 @@ Data should be general product phrases or necessary public professional summarie
 
 ## Current local creator and SDK
 
-Trevor MIT worker supplies the initial mono/colour computation. Copyright and full notice ship in the generated HTML/APK. Known fields, bounded inputs, full frame/sequence storage and independent import IDs belong to our adapter. No npm or paid model dependencies, photo upload or external font/analytics resource. Installed English device speech has a text fallback; phone availability is unverified.
+Trevor MIT worker supplies the initial mono/colour computation. Copyright and full notice ship in the generated HTML/APK. Known fields, bounded inputs, full frame/sequence storage and independent import IDs belong to our adapter. No npm or paid model dependencies, photo upload or external font/analytics resource. Installed English device speech has a text fallback; native speech and automatic progression passed on the authorized Android 16 phone. Other devices and physical kit compatibility remain unverified.
 
 The owner expressly approved official Android SDK installation and terms to build the APK. SDK 35, Build Tools 35.0.0, Platform Tools 37.0.1 and official Gradle 8.9 are installed in a task cache. AGP 8.7.3 and JDK 21 compile Java 17 sources. Actual APK/asset/signature evidence is in mobile/ACCEPTANCE.md. This is local SDK/tooling authorization, not Play publishing or a paid service. Development work hours and a commercial support cost have not been priced.
 
@@ -47,7 +47,7 @@ Alternatives: the generated standalone HTML and manual kit instructions. Stop us
 
 Potential reuse: CONTENT_CORE, SEO_GEO_CORE, MAIL_CORE and business-case contracts. No runtime/adoption audit of every existing service is implied. Business inputs include partner/SKU, approved revision, verified payment and shipment. Server-side tenant isolation, transactions, photo access/deletion, referrals and restart acceptance remain future work.
 
-Use a single accepted data store and role boundaries; do not build another publishing/CRM core. A manual pilot studio is the alternative until demand and the actual integration justify automation. Hosting, shipping, payment fees and software support need a real budget. A plan does not enable subscriptions, email, payments or campaigns. Owner MB Pinet; paused until resumed scope.
+Use a single accepted data store and role boundaries; do not build another publishing/CRM core. A manual pilot studio is the alternative until demand and the actual integration justify automation. Hosting, shipping, payment fees and software support need a real budget. A plan does not enable subscriptions, email, payments or campaigns. Owner MB Pinet; a local synthetic-data demonstration is authorized next. Paid services and live external integrations remain off.
 
 ## Supplier generator / physical equipment seam
 

@@ -24,7 +24,7 @@ for(const [label,limit] of [['quick',1400],['detailed',2400],['fine',3500]]){
  const result=await solve(cfg);
  const project=validateProject({schema:SCHEMA,id:'memorystring-sample-'+label,title:'Golden retriever sample · '+label,createdAt:'2026-10-13T00:00:00Z',algorithm:ALGORITHM,frame:{diameterCm:42,pins:200,numbering:'clockwise-top-1'},layers:result.layers,step:0});
  let drawing='<circle cx="256" cy="256" r="240" fill="#FFFDF8"/>';
- for(const layer of project.layers){drawing+='<g fill="none" stroke="'+layer.color+'" stroke-width=".6" stroke-opacity="'+layer.alpha+'">';for(let i=1;i<layer.path.length;i++){const a=coords(layer.path[i-1]),b=coords(layer.path[i]);drawing+='<path d="M'+a.x.toFixed(2)+' '+a.y.toFixed(2)+'L'+b.x.toFixed(2)+' '+b.y.toFixed(2)+'"/>';}drawing+='</g>';}
+ for(const layer of project.layers){drawing+='<g fill="none" stroke="'+layer.color+'" stroke-width="2.5067" stroke-opacity="'+layer.alpha+'">';for(let i=1;i<layer.path.length;i++){const a=coords(layer.path[i-1]),b=coords(layer.path[i]);drawing+='<path d="M'+a.x.toFixed(2)+' '+a.y.toFixed(2)+'L'+b.x.toFixed(2)+' '+b.y.toFixed(2)+'"/>';}drawing+='</g>';}
  for(let i=0;i<200;i++){const p=coords(i);drawing+='<circle cx="'+p.x+'" cy="'+p.y+'" r=".8" fill="#183D35"/>';}
  const svg='<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">'+drawing+'</svg>';
  await writeFile(join(kit,'detail',label+'.svg'),svg);await writeFile(join(kit,'detail',label+'.png'),await sharp(Buffer.from(svg)).png().toBuffer());await writeFile(join(kit,'samples',label+'.json'),JSON.stringify(project,null,2)+'\n');

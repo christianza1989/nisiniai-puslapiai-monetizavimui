@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "date": "2026-10-13",
-  "status": "prepared asset kit, not yet wired to redesigned app",
+  "date": "2026-10-14",
+  "status": "prepared asset kit; selected runtime assets integrated in the local creator",
   "generator": "Original SVG/Android vector sources + Sharp rasterisation; named illustrative rasters use built-in ImageGen",
   "fontSource": {
     "repo": "google/fonts",
@@ -417,33 +417,33 @@
     },
     {
       "path": "detail/detailed.png",
-      "bytes": 331003,
-      "sha256": "b8e916ba1a55472f59b7cd2b5500df4122315a3cfc5ffd78d99e98c0dbde961d"
+      "bytes": 378317,
+      "sha256": "d966cb46f625a3784e1b28ab5aa60b6f8cf04e63dfa1da291bb07fa5b3eb4d38"
     },
     {
       "path": "detail/detailed.svg",
-      "bytes": 71317,
-      "sha256": "1295da588862b5cb0532da41dfdb505b2834b7b3e95cf33a1e15c608e3a74742"
+      "bytes": 71321,
+      "sha256": "1608392e31aa1a29884b592150f6c979e07feb3d6c9392fdc5394fb07fc197a9"
     },
     {
       "path": "detail/fine.png",
-      "bytes": 331003,
-      "sha256": "b8e916ba1a55472f59b7cd2b5500df4122315a3cfc5ffd78d99e98c0dbde961d"
+      "bytes": 378317,
+      "sha256": "d966cb46f625a3784e1b28ab5aa60b6f8cf04e63dfa1da291bb07fa5b3eb4d38"
     },
     {
       "path": "detail/fine.svg",
-      "bytes": 71317,
-      "sha256": "1295da588862b5cb0532da41dfdb505b2834b7b3e95cf33a1e15c608e3a74742"
+      "bytes": 71321,
+      "sha256": "1608392e31aa1a29884b592150f6c979e07feb3d6c9392fdc5394fb07fc197a9"
     },
     {
       "path": "detail/quick.png",
-      "bytes": 330234,
-      "sha256": "a0b13ee36511843b5a1d55e180727a5849cc040341b5a68a72839a93d0da4243"
+      "bytes": 378155,
+      "sha256": "ca53ebbfe3617622cfc6fc3a8cca382381bc5c0b446fd7c1db16b904f1355191"
     },
     {
       "path": "detail/quick.svg",
-      "bytes": 70156,
-      "sha256": "99f35f13341e8a42bbc30018dac093067cbb54962b1e6f7c9345371bd5918549"
+      "bytes": 70160,
+      "sha256": "72cfc5a158a653e756ca069241c9b3503b40e88fa062640a0a495885cfa22cc5"
     },
     {
       "path": "detail/solver-results.json",
@@ -467,8 +467,8 @@
     },
     {
       "path": "fonts/LibreBaskerville-Variable.woff2",
-      "bytes": 63944,
-      "sha256": "2123f0ce2a44cbd4059e82e97e2ac341a8c9b29e9753c910b6e376e88acd1ce2"
+      "bytes": 64008,
+      "sha256": "1ce91cc87fd7602c7d4d1a925af15aaefbb85acd379dbee9b34a82e653669320"
     },
     {
       "path": "fonts/Roboto-OFL.txt",
@@ -482,8 +482,8 @@
     },
     {
       "path": "fonts/Roboto-Variable.woff2",
-      "bytes": 222612,
-      "sha256": "1bb1a95b39459726ac4c6d89a119981c852f092f9c8fcb9688d3236d2233f2c0"
+      "bytes": 222128,
+      "sha256": "66e3a7dafb09acdf7af615078ae7f281a048d18e37816dd093c4722a37b8c884"
     },
     {
       "path": "frames/frame-42cm-200pins.png",
@@ -3052,8 +3052,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7734,
-      "sha256": "6fd1b23ec2eced74ed3560bb590a20d6fe3412ca2286b6fc0136a60ba49699fc"
+      "bytes": 8163,
+      "sha256": "f68b9c2314d6fccb1e4674449579025f40fe3104e44e197ec443762ddbacfe32"
     },
     {
       "path": "samples/detailed.json",

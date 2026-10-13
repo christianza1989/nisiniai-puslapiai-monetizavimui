@@ -61,3 +61,7 @@ Sources: [Roboto](https://github.com/google/fonts/tree/66928797f271fed5ee428544e
 From the parent design/ directory, build-kit.mjs regenerates vector/density/font exports and manifest, and build-samples.mjs runs the actual pinned solver on the included sample. Dependencies used: Node 24, bundled Sharp, Python 3.12, FontTools 4.66.1 and Brotli 1.2.0. FontTools/Brotli were installed in a task-specific cache, not the shared Python runtime. Point PYTHONPATH to that cache, pass --python for the bundled Python and --modules for a different Sharp package directory. --fetch-fonts is optional; normal regeneration uses the included font originals. The completed kit and screen files can be used directly without running these tools.
 
 Prepared assets are ready for integration. This is not evidence that all new app screens or the final physical threading workflow have been implemented and accepted.
+
+## Current integration
+
+The selected assets, fonts and SVG icons are now bundled by the creator build. Actual previews use line thickness scaled to the solver pixel grid, matching the functional sample exports. Android uses local packaged asset URLs; the portable browser file uses data URIs. See ../../ACCEPTANCE.md for source-bound device evidence. This kit verifier checks files and resources, not physical portrait quality.

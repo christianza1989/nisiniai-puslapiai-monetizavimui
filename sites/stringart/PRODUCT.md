@@ -4,7 +4,7 @@
 
 ## Platform
 
-Android and an offline browser creator using the same self-contained asset.
+Android phone and an offline browser creator using the same controller, solver and local assets.
 
 ## Stack
 
@@ -12,7 +12,7 @@ Browser JavaScript, a pinned MIT Web Worker solver and IndexedDB. Android Java A
 
 ## Users
 
-DIY customers prepare a photo and follow physical pin instructions. The owner and future partners evaluate previews and kit usability. A separate partner business platform is planned and paused.
+DIY customers prepare a photo and follow physical pin instructions. The owner and future partners evaluate previews and kit usability. A separate partner business platform is the next authorized task after the app, in a requested new chat.
 
 ## Product Purpose
 
@@ -32,7 +32,7 @@ MemoryString is a candidate related to the owner's MemoryCasting hand-casting ki
 
 ## Evidence on Hand
 
-Dated supplier/market research, original private supplier files, the GitHub assessment and pinned solver notice. A synthetic geometric sample demonstrates computation; it is not a customer portrait or hardware result. Source-bound verification is in mobile/ACCEPTANCE.md.
+Dated supplier/market research, original private supplier files, the GitHub assessment and pinned solver notice. An explicitly selected AI photo demonstrates computation; it is not a customer portrait or hardware result. Source-bound verification is in mobile/ACCEPTANCE.md.
 
 ## Product Principles
 

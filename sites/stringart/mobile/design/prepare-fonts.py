@@ -7,7 +7,7 @@ kit=Path(sys.argv[1])
 report=[]
 for name in ["Roboto","LibreBaskerville"]:
     path=kit/"fonts"/(name+"-Variable.ttf")
-    font=TTFont(path)
+    font=TTFont(path, recalcTimestamp=False)
     cmap=font.getBestCmap()
     required="MemoryString 0123456789 ąčęėįšųūž ĄČĘĖĮŠŲŪŽ"
     absent=sorted(set(ch for ch in required if ord(ch) not in cmap))

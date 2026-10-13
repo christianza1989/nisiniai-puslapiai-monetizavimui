@@ -1,76 +1,71 @@
 ---
 name: MemoryString creator
-description: A quiet workbench for making one connection at a time.
+description: A quiet workbench for preserving memories in thread.
 colors:
-  forest: "#164d40"
-  forest-hover: "#103d32"
   canvas: "#f7f5ef"
-  paper: "#ffffff"
-  ink: "#182c26"
-  muted: "#52635b"
-  line: "#d6ded5"
-  wash: "#edf1e9"
-  focus: "#a35724"
-  error: "#a02e25"
+  paper: "#fffdf8"
+  forest: "#164d40"
+  forest-hover: "#103c31"
+  ink: "#183d35"
+  muted: "#52645e"
+  outline: "#75877c"
+  line: "#d7ded8"
+  wash: "#e9ede5"
+  copper: "#b57859"
+  error: "#8b3d32"
+  white: "#ffffff"
 typography:
-  headline:
-    fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "2rem"
-    fontWeight: 700
-    lineHeight: 1.2
-    letterSpacing: "-0.025em"
+  display:
+    fontFamily: "Libre Baskerville, Georgia, serif"
+    fontSize: "clamp(1.9rem, 6vw, 2.7rem)"
+    fontWeight: 400
+    lineHeight: 1.15
+    letterSpacing: "-0.02em"
   title:
-    fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "1.375rem"
+    fontFamily: "Roboto, system-ui, sans-serif"
+    fontSize: "1.3rem"
     fontWeight: 600
-    lineHeight: 1.3
+    lineHeight: 1.2
   body:
-    fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif"
+    fontFamily: "Roboto, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.45
   label:
-    fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif"
+    fontFamily: "Roboto, system-ui, sans-serif"
     fontSize: "0.875rem"
-    fontWeight: 600
-    lineHeight: 1.55
+    fontWeight: 400
+    lineHeight: 1.4
   pin:
-    fontFamily: "system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "3rem"
+    fontFamily: "Roboto, system-ui, sans-serif"
+    fontSize: "clamp(2rem, 10.5vw, 3.4rem)"
     fontWeight: 600
     lineHeight: 1.1
-    letterSpacing: "-0.02em"
 rounded:
-  control: "8px"
-  surface: "12px"
+  field: "12px"
+  surface: "14px"
+  sheet: "24px"
+  action: "99px"
 spacing:
-  small: "8px"
+  compact: "8px"
   field: "16px"
-  surface: "24px"
-  workspace: "40px"
+  gutter: "20px"
+  sheet: "24px"
 components:
   button-primary:
     backgroundColor: "{colors.forest}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
-    padding: "10px 16px"
-  button-primary-hover:
-    backgroundColor: "{colors.forest-hover}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.action}"
+    padding: "0.7rem 1rem"
   button-secondary:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "10px 16px"
+    textColor: "{colors.forest}"
+    rounded: "{rounded.action}"
+    padding: "0.7rem 1rem"
   input:
     backgroundColor: "{colors.paper}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "9px 11px"
-  reader:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.surface}"
-    padding: "24px"
+    rounded: "{rounded.field}"
+    padding: "0.7rem 0.9rem"
 ---
 
 # Design System: MemoryString creator
@@ -79,65 +74,57 @@ components:
 
 **Creative North Star: "Quiet Workbench"**
 
-The creator uses a warm canvas and forest controls around the actual generated artwork. Its character is calm and practical: a device sits beside a numbered frame while the person works. White work surfaces distinguish settings and current instructions without competing with the thread preview.
+The owner selected warm ivory, forest controls and copper thread accents. The home screen gives the artwork room; operational screens give the current task priority. Brand and home display text use Libre Baskerville. Functional headings, instructions, controls and large pin numbers use bundled Roboto.
 
-The current connection receives the largest numbers. The preview, text alternative and manual controls remain understandable together. This is the implemented local creator's visual system; the paused sales site and partner platform have no accepted visual implementation.
+This is the implemented Android phone creator. The 22 concept screens in mobile/design are visual references; real counts, paths, names and progress replace their illustrative values. Whole-screen concept PNGs are never used as app UI. The home illustration is decorative AI art; actual generated previews remain visibly separate.
 
 **Key Characteristics:**
 
-- Flat tonal surfaces.
-- Prominent current pin numbers.
-- Native geometry and device typography.
-- Responsive wrapping and visible focus.
+- Warm, flat work surfaces and outlined selections.
+- Live thread geometry and a compact diagram beside the instruction.
+- Prominent from/to numbers with a complete text alternative.
+- English controls, offline assets and manual alternatives to speech.
 
 ## Colors
 
-### Primary
+Forest carries primary actions, selection, focus and current pin numbers. Ink carries text, muted carries context, and outline defines control boundaries. Copper identifies the current chord and supplies the brand detail. Small canvas pin labels use ink for legibility. Destructive actions use the error colour with explicit wording.
 
-Forest marks the current stage and principal action. Its deeper hover shade provides a small, immediate state change.
-
-### Neutral
-
-Canvas surrounds white paper work surfaces; ink carries instructions, muted text carries context, and line/wash separate or soften controls. Focus and error colours are functional signals rather than alternate brand themes. Normative values are in the frontmatter.
-
-**The Current Step Rule.** Use the forest emphasis to clarify the selected stage and current task.
+**The Current Step Rule.** Colour and geometry support the written current connection; they never replace its instruction.
 
 ## Typography
 
-One native device family serves the operational app, with actual 400/600/700 weights and font synthesis disabled. The body role supports prose up to 70ch; hints use the smaller utility scale and 1.5 line height. Headline size becomes 1.75rem on the mobile breakpoint. Pin numbers retain the fixed rem size and tabular numerals. Long project titles wrap anywhere.
+Self-hosted variable fonts retain their OFL notices and real weights; font synthesis is disabled. Title and body roles wrap naturally. Project names accept up to 80 characters; older imported names are preserved and wrap. Pins use tabular numerals. The topbar's icon columns retain 48px width when text grows. Narrow library cards put their text below the thumbnail instead of squeezing it into a small column.
 
-**The Readable Number Rule.** Keep both the from-pin and to-pin labels beside their values and retain a full text instruction.
+**The Readable Number Rule.** Show both pin values, their from/to labels and one complete sentence using the same live sequence.
 
 ## Layout
 
-The desktop main container is 1,248px including side padding; studio/guide use two columns with a generous workspace gap. At 760px and below, views stack with 16px outside padding. The mobile guide's overview is 160px wide, making room for instructions. Export remains available through My projects; the desktop guide has an additional shortcut.
+Phone pages use a centred 36rem shell and 20px gutters. At 350px and below, gutters become 16px, editor sliders use two rows, the library changes reading order and quiet guide actions stack. At 800px and above the guide/editor shell can expand to 62rem; the guide uses two columns. Short landscape guide layouts use two columns at smaller widths. Forms and enlarged text may scroll vertically.
 
-At 400px and below, reader buttons fit automatically into columns of at least 6rem, stacking when enlarged text needs more width. Pin groups wrap without clipping. Header, stage navigation and project actions wrap naturally. Text enlargement and spacing are supported by the shipping CSS; the preview server's QA query only supplies the test override.
+The guide diagram is bounded by available screen height. Preview art uses a 38svh cap to leave room for real project details and actions. Android system bars, cutouts and the input keyboard are handled by the native root insets; their pixels are not imitated in HTML.
 
 ## Elevation & Depth
 
-Flat tonal layering separates canvas and white work surfaces. No shadows are used. The result is an unobstructed workspace around the generated line art.
+Flat tonal surfaces separate controls and supporting notes. A soft backdrop and lifted sheet indicate an interrupted task. Snackbars carry temporary results without becoming part of the permanent layout. No decorated card shadows surround artwork.
 
 ## Shapes
 
-Controls use gently curved corners; workspace/reader surfaces use a slightly softer corner. The recurring circular frame, pin dots and current chord are real instruction geometry. The mark is our own simple ring-and-thread vector.
+Pill actions, round icon hit areas, softly rounded text fields and bottom sheets share one vocabulary. Selection tiles have outlined radio indicators. The recurring circle and pin positions are mathematical, with pin 1 at the top and numbering clockwise. Frame diagrams carry actual declared counts.
 
 ## Components
 
-Primary and secondary buttons share a minimum 48px height, visible three-pixel focus ring and restrained hover. Disabled controls dim and stop accepting input. Inputs have labels, flexible width and native range/file interactions. Stage navigation uses forest for the active stage.
+Actions have at least 48px height; icon hit areas have 48px width. Primary, secondary, disabled, focus, selected, loading and error states are implemented. File selection uses the Android system picker. Voice options use one bottom sheet; rename, delete and recovery use protected dialogs. A colour layer cannot begin until the person confirms the thread is ready.
 
-The guide combines an overview, clearly separated from/to numbers, progress and manual controls. A faint complete preview supplies orientation; completed spans and the current chord convey state. Narration settings sit below the manual controls. The project library wraps long names and supplies continue/export/delete actions. Errors use text and a distinct surface, never colour alone.
+The guide distinguishes the connection currently being made from the completed count. Pressing Done advances and saves the completed count. Voice advancement waits for speech completion and the chosen pause. Navigation, manual changes, colour boundaries and app backgrounding cancel obsolete speech. The library resumes exact saved paths; exported JSON keeps frame, numbering, layers and position.
 
-Motion is limited to a short view reveal and control-colour transition; reduced-motion preferences suppress them.
+Motion is a brief view reveal and restrained colour transition. Reduced-motion preferences suppress both. The product currently ships the owner's pinned light palette; a separate dark scheme and tablet experience are not accepted implementations.
 
 ## Do's and Don'ts
 
-- **Do** keep the current pin pair and its text instruction prominent.
-- **Do** preserve wrapping, visible focus and manual alternatives to speech.
-- **Do** use generated geometry as actual artwork evidence within the creator.
-- **Don't** present the synthetic sample as a real customer portrait or machine result.
-- **Don't** replace readable state labels with decorative symbols alone.
+- **Do** preserve the current instruction, real counts and manual controls.
+- **Do** use the bundled font roles and original SVG icon family.
+- **Do** draw previews from the actual solver output.
+- **Don't** use the AI home portrait as evidence of algorithm or physical kit quality.
+- **Don't** seed real-looking customers, activations or machine connectivity into this creator.
 
-Recorded inline from mobile/index.html, style.css and actual browser views on 13 October 2026. The detector's cream-palette warning is an intentional material choice, not a clean detector PASS. Physical-phone and complete WCAG acceptance remain unverified; these limits are not visual-system rules.
-
-The owner subsequently selected the warm ivory/forest/copper screen concept. Its 22 separate screen references, precise copy and prepared asset pack are in [mobile/design](mobile/design/README.md). That future visual system uses bundled Roboto for operations and Libre Baskerville for the brand/home, larger pill actions and a compact guide. It is recorded separately because it has not yet replaced the implemented prototype described above.
+Recorded from the current source and Android device captures. Review is sequential, not independent. Phone behaviour and asset integrity are documented in mobile/ACCEPTANCE.md. Physical frame/thread validation, tablet coverage, a complete accessibility audit and measured pixel-for-pixel comp reproduction remain separate limits.

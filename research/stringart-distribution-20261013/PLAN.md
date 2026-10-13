@@ -1,6 +1,6 @@
 # MemoryString: verslo ir platinimo planas
 
-2026-10-13 | MB Pinet | Verslo, demonstracinės sistemos ir derybų planas, 4 versija - aktuali
+2026-10-14 | MB Pinet | Verslo, demonstracinės sistemos ir derybų planas, 5 versija - aktuali. Tyrimas atliktas spalio 13 d.; programėlės patikros atnaujintos spalio 14 d.
 
 ## Rekomenduojamas sprendimas
 
@@ -8,7 +8,7 @@ Kurti vieną savo prekės ženklą ir keturis tarpusavyje susijusius pajamų ša
 
 Vertingiausias pasiūlymas partneriui: jis gauna priemones gaminti ir valdyti užsakymus, o mes suteikiame įrangą, svetainę, procesą, mokymus, medžiagų tiekimą bei palaikymą. Partneris pats atsako už savo vietinę gamybą, pardavimą ir klientus pagal sutartyje nustatytą modelį.
 
-Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Prieš platesnes derybas paruošti 10 testinių partnerių demonstraciją: aparatai, žaliavos, rinkiniai, pardavimai, tiekėjo portalas ir telefono programa. Specifikacija pateikta plano pabaigoje. Pirkimas, reklamos biudžetas bei sutartys vertinami po konkrečių pasiūlymų. Savininko nurodymu pirmiausia tęsiama atskirai autorizuota Android kūrėjo programėlė; svetainės ir partnerių demonstracijos realizavimas laukia šio etapo.
+Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Prieš platesnes derybas paruošti 10 testinių partnerių demonstraciją: aparatai, žaliavos, rinkiniai, pardavimai, tiekėjo portalas ir telefono programa. Specifikacija pateikta plano pabaigoje. Pirkimas, reklamos biudžetas bei sutartys vertinami po konkrečių pasiūlymų. Atskirai autorizuota Android kūrėjo programėlė jau įgyvendinta ir patikrinta telefone; kitas užsakytas etapas - partnerių demonstracinė frontend/backend sistema atskirame pokalbyje. Pardavimo svetainės numatytos vėliau.
 
 ## Dabartinė padėtis
 
@@ -16,7 +16,7 @@ Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Prieš platesnes
 - Yra gamintojo PDF, nuotraukos ir trys vaizdo įrašai. Tai gamintojo medžiaga, ne mūsų gamybos rezultatai.
 - Naujas prekės ženklas, domenas, partneriai, platintojo teisės ir paklausa dar nepatvirtinti.
 - Savininkas pasirinko influencerius, vaizdo turinį ir galimą rekomendavimo sistemą kaip klientų pritraukimo kryptį.
-- Šis dokumentas apima tyrimą, veiklos modelį, ekonomikos prielaidas, demonstracinės sistemos reikalavimus, Android programėlės būseną ir pirmą laišką. Pardavimo svetainės ir partnerių platformos kūrimas sustabdytas savininko prašymu. Atskirai autorizuota kūrėjo programėlė jau veikia vietiniame naršyklės bandyme; surinktas ir parašu patikrintas Android 8+ testinis APK. Tikras telefonas, rinkinys ir aparatas dar nepatikrinti.
+- Šis dokumentas apima tyrimą, veiklos modelį, ekonomikos prielaidas, demonstracinės sistemos reikalavimus, Android programėlės būseną ir pirmą laišką. Pasirinktas programėlės dizainas įgyvendintas, Android 8+ testinis APK patikrintas savininko Android 16 telefone. Partnerių demonstracinė frontend/backend sistema yra kitas užsakytas darbas atskirame pokalbyje; mažmeninės ir partnerių subdomenų svetainės numatytos vėliau. Fizinis rinkinys ir aparatas dar nepatikrinti.
 
 ## Pirmas komercinis veiksmas
 
@@ -300,11 +300,11 @@ Laisvas kiekis = turimas kiekis minus rezervuotas. Pakeliui esančios prekės ta
 
 Per 7-10 minučių planuojamą demonstraciją parodyti partnerį, užsakymą, patvirtintą failą, medžiagų rezervaciją, gamybą ir kokybę; parduoti testinį rinkinį, sumažinti jo atsargą, sukurti pirkimo pasiūlymą ir priimti siuntą; vienam tinkamam rekomendavimui priskirti vieną komisiją. Sintetinis adapteris neperveda pinigų, nesiunčia laiškų ir nevaldo aparato.
 
-Visa partnerių platforma šiuo metu sustabdyta. Šis scenarijus yra planas. Atskirai sukurta vietinė Android kūrėjo programėlė nėra priimta atsargų ar užsakymų sistema.
+Kitas užsakytas darbas - partnerių platformos planavimas ir demonstracinės frontend/backend sistemos įgyvendinimas atskirame pokalbyje. Čia pateiktas scenarijus lieka reikalavimų planu; atsargų ir užsakymų serveris dar nepriimtas.
 
 ## Įgyvendinimo seka
 
-Kai savininkas atnaujins partnerių platformos kūrimo apimtį, pirma sukurti vienos studijos užsakymų kelią ir sintetiniu užsakymu patikrinti serverinę eigą. Tada išbandyti tikrą apmokėjimą ir pristatymą, kai šie veiksmai autorizuoti. Antras etapas - kelių partnerių duomenų atskyrimas, jų pardavėjo tapatybė ir realios pajėgumo taisyklės. Trečias - atskaitomybė, rekomendavimo išmokos, šalies variantai ir apyvartos kontrolė.
+Pirmame partnerių platformos kūrimo etape sukurti vienos studijos užsakymų kelią ir sintetiniu užsakymu patikrinti serverinę eigą. Tada išbandyti tikrą apmokėjimą ir pristatymą, kai šie veiksmai autorizuoti. Antras etapas - kelių partnerių duomenų atskyrimas, jų pardavėjo tapatybė ir realios pajėgumo taisyklės. Trečias - atskaitomybė, rekomendavimo išmokos, šalies variantai ir apyvartos kontrolė.
 
 Nuotolinis aparato valdymas ir failų generavimas per API dar nepatvirtinti. Pradžioje galima valdoma failų perdavimo užduotis su operatoriumi. Esamo core arba kuriamos Verslomatika sistemos buvimas neįrodo priimto Stringart adapterio, kelių partnerių prekybos, išmokų ar aparatų integracijos.
 
@@ -312,7 +312,7 @@ Nuotolinis aparato valdymas ir failų generavimas per API dar nepatvirtinti. Pra
 
 # 10. Mūsų Android kūrėjo programėlė ir atvirasis kodas
 
-Savininkas pasirinko Android ir balso vedlį. Programėlės sąsaja bei diktuojamas tekstas yra anglų kalba. Ji autorizuota atskirai; svetainės ir partnerių platformos kūrimas lieka sustabdytas.
+Savininkas pasirinko Android ir balso vedlį. Programėlės sąsaja bei diktuojamas tekstas yra anglų kalba. Ji autorizuota atskirai; ją užbaigus, užsakytas naujas pokalbis partnerių demonstracinei sistemai. Pardavimo svetainės numatytos vėliau.
 
 Galima įkelti JPG, PNG ar WebP nuotrauką, ją apkirpti, didinti, paslinkti, pasukti, keisti ryškumą bei kontrastą ir generuoti vienspalvę ar keturių spalvų peržiūrą. Siūlomi 42 cm / 200 vinučių, 50 cm / 240 ir 60 cm / 300 rėmai fiziškai nepatikrinti. Pirma vinutė yra viršuje, numeriai didėja pagal laikrodžio rodyklę; kiekvienas spalvų sluoksnis pradedamas atskiru pririšimu.
 
@@ -322,7 +322,7 @@ Vietinė IndexedDB saugykla išsaugo ID, visą seką, rėmo ir algoritmo versij�
 
 ## Patikros ir ribos
 
-Surinktas Android 8+ vietinis testinis APK; patikrintas parašas ir HTML bei MIT licencijos buvimas pakete. Interneto, mikrofono, kameros ir plačios failų prieigos leidimų nėra. Savininkui leidus, APK įdiegtas ir paleistas USB prijungtame Android 16 telefone. Sistemos failų parinkimas, balso veikimas ir galutinė telefono sąsaja dar nepriimti. Parengti 22 pasirinkto stiliaus ekranų maketai ir atskiras assetų rinkinys; naujas dizainas dar neįdiegtas. Tai ne programėlių parduotuvės leidimas.
+Surinktas ir parašu patikrintas Android 8+ vietinis testinis APK su įgyvendintu pasirinktu dizainu, šriftais, ikonėlėmis ir licencijomis. Interneto, mikrofono, kameros ir plačios failų prieigos leidimų nėra. Savininkui leidus, jis įdiegtas USB prijungtame Android 16 telefone. Praėjo 18 telefono patikrų: generavimas, progreso atkūrimas, angliško balso pabaiga ir sustabdymas, spalvų keitimas, pervadinimas su klaviatūra, sistemos Back, ekrano pasukimas ir 200 % tekstas. Tikras JSON eksportas bei importas per sistemos failų parinkiklį taip pat praėjo po failo dydžio metaduomenų klaidos pataisos. Parengti 22 peržiūrėti ekranų maketai ir 45 ikonėlių šeimų assetų rinkinys. Tai vietinė testinė versija, ne programėlių parduotuvės leidimas ar fizinio rinkinio priėmimas.
 
 Praėjo septynios Node patikros: tikras vienspalvis/RGB skaičiavimas, netaisyklingos įvestys, numeravimas, sekos ir progreso atkūrimas. Naršyklėje patikrinti generavimas, atšaukimas, klaidos, eksportas/importas, išsaugojimas po perkrovimo, angliško balso atsakymai ir skirtingi ekrano bei teksto dydžiai. Tai ne fizinio portreto, rinkinio ar aparato priėmimas.
 

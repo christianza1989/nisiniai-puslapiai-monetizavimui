@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-13T22:28:43.520Z",
   "status": "PASS",
   "integrityFiles": 623,
   "screenCount": 22,
@@ -46,7 +46,7 @@
   "fonts": "glyph and variable-axis checks PASS",
   "android": "aapt2 compile and link SDK35 PASS; resource check is not a deployed app",
   "screens": "All 22 inspected sequentially, final targeted repairs inspected",
-  "runtimeAcceptance": "UNVERIFIED for redesigned UI; current phone installed/launched only",
+  "runtimeAcceptance": "Not assessed by this asset check; see ../ACCEPTANCE.md for device evidence",
   "sampleResults": [
     {
       "name": "quick",
@@ -108,5 +108,5 @@
     }
   ],
   "androidResourceProofSha256": "04c79c7d1748a54d0167de2e2c59ab09a03eabfcfc07f94887f48d4d2c30919a",
-  "manifestSha256": "5164b0af7ba34072e37aa5569f7801cb42c9938a4b9d89ddf2a728264f8bb4a6"
+  "manifestSha256": "ce2881ded2d100ad15939e6923651dd1597aa8399779ec0664acc3b7f6c9961a"
 }

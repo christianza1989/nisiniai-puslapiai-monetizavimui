@@ -1,6 +1,6 @@
 # MemoryString: business and distribution plan
 
-13 October 2026 | MB Pinet | English working plan, version 4
+14 October 2026 | MB Pinet | English working plan, version 5. Research dated 13 October; app acceptance updated 14 October.
 
 ## Recommended business
 
@@ -15,7 +15,7 @@ MemoryString is the owner's candidate name alongside their existing MemoryCastin
 - We have a supplier quotation and supplied PDFs, images and videos. No machine has been purchased or physically tested.
 - Hardware, software ownership, conformity documents, territory rights and true landed costs remain unresolved.
 - The partner network is a proposed business. Ten demonstration partners are synthetic, with 16 machines and 825 kits in the planned dataset.
-- The sales website and full partner-platform implementation are paused at the owner's request. The separate creator app is authorized, Android first, English throughout. A local test APK has compiled successfully; physical-phone and frame acceptance remain pending.
+- The separate Android creator now implements the selected design, in English throughout. Its local test APK passed the connected-phone workflow and native JSON backup round-trip. A separate chat for the ten-partner frontend/backend demonstration is the next authorized work; retail/subdomain websites follow later. Physical frame/machine acceptance remains pending.
 - Supplier correspondence is a draft. No supplier message, purchase, campaign, domain migration or public deployment has been performed.
 
 ## Immediate sequence
@@ -279,9 +279,9 @@ Acceptance order: one persistent server path first; then all role workspaces; th
 
 The owner selected Android first and requested voice instructions. The separate app prepares photos, generates mono/colour previews and stores a physical threading sequence, frame layout and progress locally. Retail-site development remains paused.
 
-The app should offer cropping/zoom/rotation, contrast/brightness, tested frame presets, clear pin numbers, layer tie-on instructions, repeat/previous/next, speech rate and post-speech interval. Advance only after speech completion and the chosen pause. Cancel obsolete callbacks when pausing or moving manually; pause when hidden/locked. Preserve a text alternative.
+The app implements cropping/zoom/rotation, contrast/brightness, declared frame presets, clear pin numbers, layer tie-on/readiness, repeat/previous/next, speech rate and post-speech interval. Automatic advancement waits for speech completion and the chosen pause. Obsolete callbacks are cancelled when pausing or moving manually; hidden/backgrounded guidance pauses. A text alternative remains. The physical frame presets still require a kit pilot.
 
-English is the current interface/narration language. Installed voices vary by device; no voice can be assumed present. Our Android wrapper uses local TextToSpeech, the system file picker and private WebView storage, with no Internet or microphone permission. The signed Android 8+ test APK compiled, installed and launched on the authorized USB Android 16 phone. Browser computation, save/resume and voice callbacks were tested; complete phone, kit and machine acceptance remain pending. There are now 22 reviewed screen references and a prepared app asset kit; the new layouts are not implemented. This test package is separate from a production store release.
+English is the interface/narration language; installed offline voices vary by device. The selected warm design and assets are implemented. The signed Android 8+ test APK was installed on the authorized Android 16 phone. Eighteen device assertions passed, including real generation, save/resume/reload, speech completion/pause, colour stops, keyboard-safe rename, Back, rotation and 200% text. Native system-picker export/import also passed after repairing stale provider-size handling. Seven Node tests pass. The kit contains 22 reviewed references and 45 icon families. This local test edition is separate from store release, a broader device matrix and physical kit/machine acceptance; details are in mobile/ACCEPTANCE.md.
 
 ## Generator choice and rights
 
@@ -363,7 +363,7 @@ Our priority order: authenticated counterpart and accepted product → viable co
 
 # 16. Ninety-day pilot and acceptance gates
 
-Timing starts from an agreed start; freight/documents may move dates. These are suggested gates, not forecasts. Website/platform construction remains paused until the owner resumes that scope; the authorized creator app can progress independently.
+Timing starts from an agreed start; freight/documents may move dates. These are suggested gates, not forecasts. The Android creator is implemented and tested on the authorized phone. A separate chat for the ten-partner frontend/backend demonstration is the next authorized work; retail and partner subdomain websites follow later.
 
 | Phase | Output | Continue when |
 | --- | --- | --- |

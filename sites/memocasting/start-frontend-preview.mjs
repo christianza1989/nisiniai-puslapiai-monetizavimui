@@ -2,15 +2,19 @@
 import fs from 'node:fs/promises';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {spawn} from 'node:child_process';
-export function memoPreviewBackendAllowed(context){
- return context?.environment==='sandbox'&&context.testOnly===true&&context.paymentConnected===false&&context.shippingConnected===false&&context.shippingQuotesConnected===false&&context.productionReady===false&&context.publishOffers===false;
+export function memoPreviewBackendAllowed(context,{stripeTest=false}={}){
+ const isolated=context?.environment==='sandbox'&&context.testOnly===true&&context.shippingConnected===false&&context.shippingQuotesConnected===false&&context.productionReady===false&&context.publishOffers===false;
+ if(!isolated)return false;
+ return stripeTest?context.schemaVersion===1&&context.paymentConnected===true&&context.paymentProvider==='stripe'&&context.paymentEnvironment==='test'&&context.paymentAccountVerified===true:context.paymentConnected===false;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
 const publicRoot=fileURLToPath(new URL('../../../dovanos-memorycasting/',import.meta.url));
 const response=await fetch('http://127.0.0.1:8827/api/storefront-context',{signal:AbortSignal.timeout(5000)});
 if(!response.ok)throw Error('Start the authorized local sandbox backend on8827 first.');
 const context=await response.json();
-if(!memoPreviewBackendAllowed(context))throw Error('Local preview refuses a non-sandbox or provider-enabled backend.');
+const stripeTest=process.argv.includes('--stripe-test');
+if(process.argv.slice(2).some(arg=>arg!=='--stripe-test'))throw Error('Unknown preview option.');
+if(!memoPreviewBackendAllowed(context,{stripeTest}))throw Error('Local preview refuses a non-sandbox or unverified provider context.');
 const directory=new URL('../../../dovanos-memorycasting/dist/server/',import.meta.url);
 await fs.access(new URL('wrangler.json',directory));
 const file=new URL('.dev.vars',directory);

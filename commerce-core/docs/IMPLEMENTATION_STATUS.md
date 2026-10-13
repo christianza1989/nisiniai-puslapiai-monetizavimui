@@ -1,6 +1,6 @@
 # Aktualus pavedimas ir būsena
 
-0.12 užbaigia pagamintų rinkinių galiojimą, karantiną, FEFO paskyrimą, senos kilmės sutikrinimą ir originalių partijų grąžinimus. Pirkėjo ekranas rodo originalų pristatymą ir aiškias tuščio krepšelio / rezervacijos / mokėjimo būsenas. [Aktualus kvitas ir migravimo sutartis](CONTINUATION_0_12.md), [funkcijų matrica](SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). 116 Node ir native D1 / R2 / Queue su 22 migracijomis PASS; susietos svetainės exact SDK priėmimas tęsiamas. Našumas ir galutinis dizainas atidėti.
+0.12.1: **LOCAL_SHOP_CODE_VERIFIED; PRODUCTION_NOT_READY.** Pagamintų rinkinių kilmė, galiojimas / karantinas, FEFO, saugus sutikrinimas, grąžinimai ir pirkėjo būsenos užbaigti. 117 Node / native D1-R2-Queue / 22 migracijos / build ir clean source restore PASS. Exact SDK susietoje svetainėje actual patikrintas LT / PL / LV / ET. [Galutinis vietinis funkcijų kvitas ir tikri paleidimo vartai](LOCAL_SHOP_ACCEPTANCE_0_12_1.md), [migravimo sutartis](CONTINUATION_0_12.md), [funkcijų matrica](SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). Visos svetainės auditas, našumas, galutinis dizainas ir agentai lieka atskiri.
 
 0.10.3 taiko tą patį productTitle callback ir išsaugoto pirkėjo užsakymo ekranui, su sąsajos kalba ir originalios line kopija. Native svetainės create / reload patikra atliekama atskirai po naujo SDK prijungimo; apskaitos snapshot ir PDF pavadinimai nekeičiami.
 

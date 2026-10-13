@@ -1,0 +1,31 @@
+# Memocasting paleidimas · vykdomas
+
+Savininkas 2026-10-14 autorizavo svetainės publikavimą ir IV domeno prijungimą po Stripe užbaigimo. Šis įrašas fiksuoja pasiruošimą, o ne jau įvykusį paleidimą. Kanoninis adresas https://memocasting.lt; www turi nukreipti į apex, išsaugodamas path/query. Dabartinis approved content release 4ea58f2e-3057-49ac-8631-b0d87ed8f472 / SHA256 3f5a4864a45a094ee5c8baceb8e27f5c2607a1d3f73ab5118e482c3ffb61b818.
+
+## Domenas ir paslaugų išsaugojimas
+
+Actual IV prisijungusiame Chrome patvirtintas domenas memocasting.lt, ID943285. Apex A23.227.38.65 ir www CNAME shops.myshopify.com yra Shopify nukreipimai. MX10 skujuotis.serveriai.lt, SPF, du DKIM politikos/rakto įrašai, Google CNAME bei du OpenAI verification TXT išsaugomi. Editor rodo9records, DNSSEC išjungta ir ns1–ns4.serveriai.lt. Pilna source reikšmių kopija privačiame qa/deploy-dns-before.private.json; token-bearing privatūs header/account duomenys nekopijuojami. Public DNS probe DS grąžino lt SOA authority, ne DS atsakymą; tai nėra teiginys apie aktyvią DS apsaugą. AAAA probe taip pat tik SOA. CAA PowerShell enum nepalaikomas, todėl ši patikra dar nepabaigta.
+
+Esama Cloudflare paskyra patvirtinta per connector ir installed Wrangler OAuth. Memocasting zone nebuvo. Paruošta nauja Free Website zone594d40b07aa3f211aa656290ef35f1fd, status pending, asa.ns.cloudflare.com / sullivan.ns.cloudflare.com. Visi9įrašai nukopijuoti DNS-only ir actualAPI sutikrinti type/name/content/MXpriority,9/9match. IV implicit TTL laukeliai buvo tušti; destination TTL3600 pasirengimo sprendimas, ne išgalvota originali eksplicitinė TTL reikšmė. Delegacija, Shopify svetainės nukreipimas ir mail veikianti zona nepakeisti. Kitų zonų/Worker/DB šaltiniai tik read-only discovery, joks svetimas resursas neredaguotas.
+
+Workers custom domain pagal [dabartinę dokumentaciją](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/) reikalauja active Cloudflare zone. Todėl vien www CNAME pakeitimas IV neprijungia šio Workers projekto. Pasirinkta eiga: iš anksto veikiantis izoliuotas frontend/backend su exact bindings, pilnas zonos mirror, tada po Stripe/operacinio priėmimo delegacija ir tik website apex/www pakeitimas. Esamą www CNAME būtina suderinti prieš Custom Domain pridėjimą; MX/TXT/Google lieka. Domenas ir registracija lieka IV. DNSSEC/parentDS sutikrinti prieš cutover; Mail DNS palyginti po jo.
+
+## Stripe ir prekybos versija
+
+Shopo sesija valdo canonical0.13.0 ir credentials. Tikslus source bd67c8d197bf955d066ed8ab7042c631bfe6a90f perneštas kaip commerce-core subtree į savo branch; nėra svetimo dirty checkout kopijos. Šiame checkout126Node testai PASS, peer23native/worker build yra atskiras jo įrodymas. Vienas additive0023_provider_pacing.sql, senos migracijos neperrašomos. Own8827 schema/order snapshots migracijos ir provider activation dar nepaleistos šio pasiruošimo metu. SDK kilmės manifestas atnaujinamas per maintained Git export iš peržiūrėto committed šaltinio.
+
+Nuolatinis MB Memocasting TEST account acct_1S5SjjLx4n55ikI7 API patikrintas shopo sesijoje. Restricted key privatus, webhook/CLI papildoma teisė reikalavo action-time žmogaus patvirtinimo; dabar galutinį scope išsaugojimą sustabdė Stripe authenticator2FA. Autorizacija TEST nėra LIVE credentials grant. Naujos private sdk.json buvimas, actual signed event ir serverio paid state dar nepriimti. Raktai, signing secret, kortelės ir kliento testiniai kontaktai nepatenka į Git/log/receipt.
+
+Own launcher turi explicit --stripe-test opt-in ir privačioje aplinkoje MEMO_STRIPE_TEST_CONFIG filepath. Default all-OFF išlaikytas. Opt-in reikalauja tikros API identity patikros būtent šio account, backup, nekintamo orders hash ir CAS storeconfig atnaujinimo; dabartiniai policy/foreign fields išsaugomi. Frontend preview guard reikalauja schema1, sandbox/testOnly, stripe/test/verified, shipping/quotes/production/offers OFF; fixture ar incomplete context atmetami. Success/cancel grįžta į8817/cart; naujas8817host pridedamas prie leidžiamo storehost. Footer verifiedTEST atskiria nuo LIVE ir aiškiai pasako, kad tikri pinigai nenuskaitomi.
+
+Guard ir isolatedDB backup/orders/policies/foreignfields regresijos PASS; pastaroji naudoja injekcinę testinę identity ir neįrodo actualStripe. Pirmas regresijos fixtureStore bandymas netiko ilgo storeId hostname dėl underscore; pradinis invalid_hosts FAIL išsaugotas sesijos istorijoje, testui įrašytas aiškus loopbackhost ir pakartota. Own8synthetic order DB dar nepakeista. PUBLIC111testų PASS.
+
+## Konkreti likusi eiga ir grįžimas
+
+1. Žmogaus2FA shopo Stripe lange; peer signing-secret-ready ir exact schema kvitas.
+2. Savos8827DB count/hash/backup, additive migracija, patikrintasTESTopt-in; native hostedCheckout, success/cancel/recovery ir signedpaid event. Jokio fiktyvaus mokėjimo patvirtinimo.
+3. LIVE įjungimui patvirtinti tikrą account/credentials grant, produkcijos legal/policy, stock/lots, pilnos siuntos su dažais matmenis/svorį ir realaus pristatymo sąlygas. Testinė4.50EURfixture ir12stock nėra produkcijos faktai. Sintetinė8827DB nekeliama.
+4. Frontend atskiras memocasting target; serverinė MEMO_COMMERCE service binding į atskirą canonical Worker, be loopbackOrigin/NICHE_DEV_SITE_ID produkcijoje. AtskiriD1/R2/Queue ir secretbindings pagal canonicalruntime, jokio kitų tenantDB panaudojimo. Pinned tooling, generated vinextartifact; dry-run nėra upload/hosted priėmimas.
+5. Exact artifact upload, destination/runtime/asset/API/private boundary checks, snapshot of prior remoteversion/bindings. Tada reread IV+CF zone, DNS/mail-safe authorizedcutover. HTTPS/browser/apex/www/3legacy301/sitemap/canonical/schema/nativecheckout/providerstatus/MX/SPF/DKIM actual domain patikra; propagation su timestamp/TTL ir jokiohosts/TLSbypass.
+
+Grįžimas atskiria Worker code version nuoDB, secretbindings ir DNS. Beforecutover pendingzona nedaro esamų paslaugų pakeitimo. Po cutover restore tik savo website/delegation pakeitimus, palyginus naujus savininko įrašus; neužrašyti backupDB ant vėliau gautų užsakymų. Kvitas užbaigiamas tik gavus realų deploymentID/URL/hosted rezultatus. Upgrade-fb7f08e1-1a74-4e6a-8529-e90d7a213dab, PR101/31 ir peerPR96; mainmerge/adoption atskiri.

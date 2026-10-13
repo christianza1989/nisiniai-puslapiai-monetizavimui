@@ -6,6 +6,10 @@ import {NodeDatabase} from '../../commerce-core/src/node-db.mjs';
 import {NodePrivateStorage} from '../../commerce-core/src/node-private-storage.mjs';
 import {CommerceService} from '../../commerce-core/src/service.mjs';
 import {createHandler} from '../../commerce-core/src/http.mjs';
+import {prepareMemoStripeTest} from './PREPARE-STRIPE-TEST.mjs';
+const stripeTest=process.argv.includes('--stripe-test');
+if(process.argv.slice(2).some(arg=>arg!=='--stripe-test'))throw Error('Unknown sandbox option.');
+if(stripeTest&&!process.env.MEMO_STRIPE_TEST_CONFIG)throw Error('A private verified Stripe TEST configuration path is required.');
 const port=8827,host=`127.0.0.1:${port}`,runtime=new URL('./runtime/commerce-07-8827/',import.meta.url);
 mkdirSync(runtime,{recursive:true});const db=new NodeDatabase(fileURLToPath(new URL('store.sqlite',runtime)));db.migrate();
 const service=new CommerceService(db),countries=['LT','PL','LV','EE'];
@@ -14,5 +18,7 @@ if(!await service.one('SELECT id FROM stores WHERE id=?','memocasting_local_07_8
  {sku:'family',title:'Rankų liejimo rinkinys šeimai',stock:12,prices:Object.fromEntries(countries.map(c=>[c,4800])),package:{weightGrams:4000,dimensionsMm:[250,250,200]}}
 ]);
 // Unmeasured extras are omitted from this fixture; never invent their parcel data.
-const handler=createHandler({service,environment:'sandbox',privateStorage:new NodePrivateStorage(fileURLToPath(new URL('private-files/',runtime))),loadDocumentFont:async()=>readFileSync(new URL('../../commerce-core/public/fonts/NotoSans-Regular.ttf',import.meta.url))});
-createServer(async(req,res)=>{try{if(req.headers.host!==host){res.writeHead(404);res.end();return;}let size=0;const chunks=[];for await(const chunk of req){size+=chunk.length;if(size>65536){res.writeHead(413);res.end();return;}chunks.push(chunk);}const response=await handler(new Request(`http://${host}${req.url}`,{method:req.method,headers:req.headers,body:['GET','HEAD'].includes(req.method)?undefined:Buffer.concat(chunks)}));res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));}catch{res.writeHead(500);res.end('Local integration failure');}}).listen(port,'127.0.0.1',()=>console.log(`Memocasting 0.7 isolated browser fixture http://${host}; all providers OFF; base parcels only.`));
+let paymentAdapters={};
+if(stripeTest){try{paymentAdapters=await prepareMemoStripeTest({service,db,runtime,configFile:process.env.MEMO_STRIPE_TEST_CONFIG});}catch{db.close();console.error('Stripe TEST admission failed; no server started. Check the private configuration and account verification.');process.exit(1);}}
+const handler=createHandler({service,environment:'sandbox',paymentAdapters,privateStorage:new NodePrivateStorage(fileURLToPath(new URL('private-files/',runtime))),loadDocumentFont:async()=>readFileSync(new URL('../../commerce-core/public/fonts/NotoSans-Regular.ttf',import.meta.url))});
+createServer(async(req,res)=>{try{if(req.headers.host!==host){res.writeHead(404);res.end();return;}let size=0;const chunks=[];for await(const chunk of req){size+=chunk.length;if(size>65536){res.writeHead(413);res.end();return;}chunks.push(chunk);}const response=await handler(new Request(`http://${host}${req.url}`,{method:req.method,headers:req.headers,body:['GET','HEAD'].includes(req.method)?undefined:Buffer.concat(chunks)}));res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));}catch{res.writeHead(500);res.end('Local integration failure');}}).listen(port,'127.0.0.1',()=>console.log(`Memocasting isolated browser fixture http://${host}; ${stripeTest?'verified Stripe TEST only':'all providers OFF'}; shipping/mail/production OFF; base parcels only.`));

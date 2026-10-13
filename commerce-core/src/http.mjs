@@ -97,11 +97,19 @@ export function createHandler({
   const context = async (store) => {
     const payment = paymentAdapters[store.id],
       carrier = shippingAdapters[store.id];
+    let verification;
+    try {
+      verification = payment?.verifyAccount ? await payment.verifyAccount() : null;
+    } catch {
+      verification = { ready: false, verified: false };
+    }
     const paymentConnected = Boolean(
       payment &&
       payment.environment === environment &&
       payment.accountRef === store.paymentAccountRef &&
-      (typeof payment.isReady !== 'function' || (await payment.isReady()) === true),
+      (verification
+        ? verification.ready === true
+        : typeof payment.isReady !== 'function' || (await payment.isReady()) === true),
     );
     const shippingConnected = Boolean(
       carrier &&
@@ -146,6 +154,18 @@ export function createHandler({
       testOnly: store.testOnly === true,
       legalName: store.legalSnapshot.name,
       paymentConnected,
+      paymentProvider: paymentConnected
+        ? payment?.fixture === true
+          ? 'fixture'
+          : payment?.provider || null
+        : null,
+      paymentEnvironment:
+        paymentConnected && payment?.provider === 'stripe' && verification?.verified === true
+          ? environment === 'sandbox'
+            ? 'test'
+            : 'live'
+          : null,
+      paymentAccountVerified: paymentConnected && verification?.verified === true,
       shippingConnected,
       documentReady,
       shippingQuotesConnected: Boolean(shippingReadAdapters[store.id]),

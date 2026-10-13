@@ -13,6 +13,9 @@ export default {
       return new Response('Test harness disabled', { status: 403 });
     const service = new CommerceService(env.COMMERCE_DB);
     const client = new Stripe('fixture-api-key', { httpClient: Stripe.createFetchHttpClient() });
+    // This deployed-test entrypoint never contacts an account endpoint and must
+    // remain explicitly unverified; production Worker does not import it.
+    client.accounts = undefined;
     client.checkout.sessions.create = async (data) => ({
       id: 'cs_' + data.metadata.order_id.replaceAll('-', ''),
       url: 'https://checkout.stripe.test/fixture',
@@ -42,7 +45,8 @@ export default {
         store_a: new SendparcelAdapter({
           environment: 'sandbox',
           accountRef: 'fixture_sendparcel',
-          accessToken: 'fixture.jwt.signature',
+          apiPassword: 'fixture_api_password',
+          rateLimiter: { run: (_scope, perform) => perform() },
           fetchImpl: async () =>
             Response.json({
               offers: [

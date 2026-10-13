@@ -4,7 +4,8 @@ export function fixtureShippingRead() {
   const adapter = new SendparcelAdapter({
     environment: 'sandbox',
     accountRef: 'fixture_sendparcel',
-    accessToken: 'fixture.jwt.signature',
+    apiPassword: 'fixture_api_password',
+    rateLimiter: { run: (_scope, perform) => perform() },
     fetchImpl: async () =>
       Response.json({
         offers: [

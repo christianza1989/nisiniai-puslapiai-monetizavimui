@@ -8,6 +8,7 @@ import { SendparcelBookingAdapter } from './sendparcel-booking.mjs';
 import { coreOperatorAuthorize } from './identity.mjs';
 import { R2PrivateStorage, limitedBytes } from './private-storage.mjs';
 import { requireValue } from './validation.mjs';
+import { ProviderPacing } from './provider-pacing.mjs';
 const parse = (raw, fallback) => {
   if (raw === undefined) return fallback;
   requireValue(
@@ -66,7 +67,8 @@ export function runtimeOptions(env) {
       const carrierOptions = {
         accountRef: connection.sendparcel.accountRef,
         apiPassword: connection.sendparcel.apiPassword,
-        accessToken: connection.sendparcel.accessToken,
+        rateLimiter: new ProviderPacing(env.COMMERCE_DB),
+        labelFileNames: connection.sendparcel.labelFileNames,
         environment,
         ...(environment === 'production'
           ? {

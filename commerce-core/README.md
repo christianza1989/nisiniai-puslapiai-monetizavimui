@@ -1,6 +1,8 @@
 # Bendras prekybos modulis
 
-Aktualus 0.12 pagrindas: [partijų apskaita, saugi migracija ir pirkėjo sąsaja](docs/CONTINUATION_0_12.md), [funkcijų peržiūra](docs/SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). Pagaminto rinkinio galiojimo ir kilmės spraga pataisyta; svetainės exact SDK importas ir jos faktinis priėmimas tikrinami atskirai.
+2026-10-14 papildymas: [Sendparcel v1 patikslinimai](docs/SENDPARCEL_V1_2026_10_14.md) ir [nuolatinės Stripe TEST paskyros prijungimas](docs/STRIPE_TEST_CONNECTION.md). API password, per-raktą D1 ribojimas, paštomatų pakuočių ribos ir privatūs etikečių faktai pakeičia seną JWT interpretaciją. Abu rinkiniai apima baltus dažus už tas pačias 32 / 48 € kainas; naujų pilnų pakuočių matavimai dar nepatvirtinti. Mokėjimų prijungimas lieka aktyvus iki tikro Checkout → webhook bandymo.
+
+Aktualus 0.12.1 pagrindas: [susietas vietinis prekybos priėmimas](docs/LOCAL_SHOP_ACCEPTANCE_0_12_1.md), [partijų apskaita ir migracija](docs/CONTINUATION_0_12.md), [funkcijų peržiūra](docs/SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). Pagaminto rinkinio galiojimo / kilmės ir pirkėjo būsenų spragos užbaigtos, exact SDK svetainėje patikrintas. Production, visos svetainės auditas, dizainas, našumas ir agentai lieka atskiri vartai.
 
 Aktualus papildymas 0.10: [automatinė siuntos ir PDF eiga po komplektavimo](docs/CONTINUATION_0_10.md). Backend ir pagrindo sritis tęsia žemiau aprašytą 0.9; source merge / provider prijungimas / realus paleidimas yra atskiri.
 Pirmas klientas — Memocasting. [Pilnas modulio planas](docs/MODULIO_PLANAS.md), [aktuali apimtis](docs/IMPLEMENTATION_STATUS.md), [roadmap](docs/ROADMAP.md), [architektūra](docs/ARCHITECTURE.md), [API](docs/API.md), [priėmimas](docs/ACCEPTANCE.md).

@@ -1,0 +1,17 @@
+# Sendparcel v1 patikslinimas — 2026-10-14
+
+Šaltiniai: savininko pateiktas tiekėjo IT atsakymas ir tą pačią dieną perskaityta [oficiali API dokumentacija](https://api.sendparcel.com/rest-api/doc), OpenAPI2.0.1. Ankstesnė 2026-10-12 dokumentacijos interpretacija apie JWT šiam v1 ryšiui nebegalioja; istorinis tyrimas nekeičiamas.
+
+V1 adapteriui būtinas atskiras staging arba production API raktas `apiPassword`; siunčiama tik `password` antraštė. JWT, Bearer, v2 login ir v2 pasiūlymų ID nenaudojami. IP allowlist nereikia. `/rest-api/quotes` pasiūlymo `product.id` tampa `product_id` kuriant užsakymą. `total_price.amount_in_cents` yra galutinė EUR kaina su PVM ir mokesčiais. Draudimas automatiškai nepridedamas.
+
+Nauja 0023 migracija prideda bendrą per-raktą ribojimą. D1 lease serializuoja visas v1 užklausas, išskyrus quotes, ir po atsakymo palieka bent vieną sekundę iki kitos užklausos. Ta pati credential apimtis galioja skirtingoms parduotuvėms ir Worker procesams; DB saugomas tik SHA-256, ne raktas. Užimta / po nutrūkimo likusi lease blokuoja siuntimą, o 429 grąžinamas kaip sanitizuota klaida be automatinio POST kartojimo. Senos migracijos neperrašytos.
+
+Pasiūlymas galioja maždaug 20 min.; vidinė priėmimo riba lieka 15 min., prieš pirmą registraciją būtina nauja kaina. V1 neturi kliento order ID / idempotency key ar paieškos pagal juos. Vienas kūrimo POST, originalus atsakymas privačiame `shipment_observations`, siuntos ID bei ryšys su mūsų order išsaugomi. Nutrūkus atsakymui — unknown ir faktų sutikrinimas pagal tiekėjo ID; naujas POST savaime nekuriamas.
+
+Paštomatams leidžiama viena pakuotė, išimtis DPD Estijoje — iki penkių. Riba taikoma siuntėjo ir gavėjo paštomatui prieš quote / create. Postboxes užklausa neturi country filtro; šalis atrenkama vietiškai po pilnos puslapių patikros.
+
+Dokumentai gaunami per `/rest-api/orders/documents`, kaip nurodo faktinė OpenAPI schema. `file_name` išsaugomas kaip privatus tiekėjo faktas, PDF patikrinamas ir laikomas privačioje saugykloje. `labelFileNames` ryšio konfigūracijoje turi tik staging atsakymu patvirtintus etikečių failų vardus. Nežinomas vardas lieka dokumentu. Etikečių eilė susiejama su pakuočių sekimo numeriais tik esant pilnai vienareikšmei sekai ir sutampančiam etikečių skaičiui. Vieno order bendras tracking numeris nepriskiriamas visoms pakuotėms.
+
+Dar reikalingas staging raktas ir tikras staging atsakymo pavyzdys etikečių vardams / multiparcel tracking struktūrai patvirtinti. IT laiškas neįrodo absoliučios kainos lubų garantijos: create atsakyme sumos nėra, todėl automatinės booking admission laukelis `costCeilingGuaranteed` neįjungtas vien šiuo laišku. Raktas ir quote patikra atskiri nuo leidimo pirkti tikrą siuntimą. Production booking, quotes ir automatinis vykdymas šiame darbe neįjungti.
+
+Memocasting abu 32 / 48 € rinkiniai dabar apima baltus dažus, atskiro dažų SKU pasiūlyme nebėra. Ankstesni 2 / 4 kg ir matmenys saugomi kaip ankstesni faktai; dabartinės pakuotės po dažų įtraukimo nepatvirtintos. Paruoštame production kataloge package lieka null, kol pasvertas naujas pilnas rinkinys. Seni order snapshot ir testinės parduotuvės DB nekeičiami.

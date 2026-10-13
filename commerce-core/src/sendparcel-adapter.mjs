@@ -1,7 +1,7 @@
-import { CommerceError, requireValue, integer, identifier } from './validation.mjs';
+import { CommerceError, requireValue, integer, identifier, digest } from './validation.mjs';
 
-// Current official SP OpenAPI2.0.1, inspected 2026-10-12. This connector is
-// sandbox/read-only until order-create price/idempotency contracts are verified.
+// V1 REST API: official OpenAPI2.0.1 plus provider IT clarification 2026-10-14.
+// The v2 JWT and quote IDs do not belong to this integration.
 const STAGING = 'https://staging.sendparcel.com';
 export const SENDPARCEL_PRODUCTION = 'https://api.sendparcel.com';
 const shortText = (v, max = 200) =>
@@ -18,7 +18,8 @@ export class SendparcelAdapter {
     environment,
     accountRef,
     apiPassword,
-    accessToken,
+    rateLimiter,
+    labelFileNames = [],
     baseUrl = STAGING,
     productionReadAdmission,
     fetchImpl = (...args) => fetch(...args),
@@ -32,18 +33,23 @@ export class SendparcelAdapter {
       403,
     );
     requireValue(
-      identifier(accountRef) &&
-        (apiPassword === undefined || (shortText(apiPassword, 500) && apiPassword.length >= 8)) &&
-        typeof accessToken === 'string' &&
-        accessToken.length <= 4096 &&
-        /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(accessToken),
+      identifier(accountRef) && shortText(apiPassword, 500) && apiPassword.length >= 8,
       'carrier_credentials_missing',
       503,
     );
     this.environment = environment;
     this.accountRef = accountRef;
     this.apiPassword = apiPassword;
-    this.accessToken = accessToken;
+    requireValue(rateLimiter?.run, 'carrier_pacing_not_connected', 503);
+    requireValue(
+      Array.isArray(labelFileNames) &&
+        labelFileNames.length <= 100 &&
+        labelFileNames.every((name) => shortText(name, 200)),
+      'carrier_document_policy_invalid',
+      503,
+    );
+    this.rateLimiter = rateLimiter;
+    this.labelFileNames = new Set(labelFileNames);
     this.fetch = fetchImpl;
     this.provider = 'sendparcel';
     this.baseUrl = baseUrl;
@@ -63,6 +69,14 @@ export class SendparcelAdapter {
   async request(path, body, query = {}, maxBytes = 5 * 1024 * 1024, timeoutMs = 15000) {
     const paths = this.allowedPaths();
     requireValue(paths[path], 'carrier_operation_not_admitted', 403);
+    const perform = () => this.performRequest(path, body, query, maxBytes, timeoutMs);
+    // /quotes is the sole exception to the provider's one-request-per-second rule.
+    if (path === '/rest-api/quotes') return perform();
+    const scope = await digest(this.baseUrl + '\n' + this.apiPassword);
+    return this.rateLimiter.run(scope, perform);
+  }
+  async performRequest(path, body, query, maxBytes, timeoutMs) {
+    const paths = this.allowedPaths();
     const url = new URL(path, this.baseUrl);
     for (const [key, value] of Object.entries(query)) url.searchParams.set(key, String(value));
     let response;
@@ -74,14 +88,14 @@ export class SendparcelAdapter {
         headers: {
           'content-type': 'application/json',
           accept: 'application/json',
-          ...(this.apiPassword ? { password: this.apiPassword } : {}),
-          ...(this.accessToken ? { authorization: 'Bearer ' + this.accessToken } : {}),
+          password: this.apiPassword,
         },
         ...(body === undefined ? {} : { body: JSON.stringify(body) }),
       });
     } catch {
       throw new CommerceError('carrier_transport_failed', 503);
     }
+    requireValue(response.status !== 429, 'carrier_rate_limited', 503);
     requireValue(response.ok, 'carrier_request_failed', 503);
     requireValue(
       response.headers.get('content-type')?.toLowerCase().includes('json'),
@@ -289,10 +303,11 @@ export class SendparcelAdapter {
       {},
       15 * 1024 * 1024,
     );
-    requireValue(Array.isArray(rows) && rows.length <= 5, 'carrier_document_invalid', 502);
+    requireValue(Array.isArray(rows) && rows.length <= 100, 'carrier_document_invalid', 502);
     return rows.map((row, index) => {
       requireValue(
-        row.ftype === 'application/pdf' &&
+        shortText(row.file_name, 200) &&
+          row.ftype === 'application/pdf' &&
           typeof row.file_data === 'string' &&
           row.file_data.length > 0 &&
           row.file_data.length <= 2800000 &&
@@ -307,9 +322,12 @@ export class SendparcelAdapter {
         'carrier_document_invalid',
         502,
       );
-      // The API may return several PDFs. Do not identify a label from its filename.
+      // Exact filenames come from a verified private provider policy. Unknown
+      // filenames stay ordinary documents, never guessed printable labels.
       return {
         filename: 'shipment-document-' + (index + 1) + '.pdf',
+        providerFilename: row.file_name,
+        kind: this.labelFileNames.has(row.file_name) ? 'label' : 'document',
         contentType: 'application/pdf',
         bytes,
         private: true,

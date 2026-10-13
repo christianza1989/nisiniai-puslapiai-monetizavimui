@@ -2,6 +2,12 @@
 
 Current scope: implement the supplied three-region UI/UX and connect existing core data before further real model trials. The human explicitly authorized one helper chat and mutual working messages. Primary chat owns UI/UX/integration; helper chat `Verslomatika core integracija ir patikros` owns core projections and targeted checks. Each has its own branch/worktree; no new unrelated sessions or agents were created.
 
+## Current planning extension
+
+The owner requests a full shared team conversation and clarifies its default: owner → coordinator → assigned specialists, with real named replies in the same chat. [Team conversation architecture](../VERSLOMATIKA_TEAM_CHAT_ARCHITECTURE.md) records the source inventory, typed participants/delegation/context, lifecycle/authority boundaries, UX, implementation order and acceptance cases. A narrow cross-link and interaction requirement extend the existing workspace plan. This is proposed design, not implemented wire/runtime or model acceptance. No production source/schema/migration/calibration changes are included. Direct owner `@agent` is optional later; the first mode always presents coordinator-facing input.
+
+The owner subsequently instructed the primary to stop further communication with helper chat01a133c2-67ef-7690-a357-28ce53429224. No subsequent message/status request is sent to that chat. This planning increment is primary-authored and makes no new independent-review claim. Earlier helper delivered work and its preserved evidence remain separate.
+
 ## Source and local environment
 
 - Initial core continuation: df3c055afbfa99260970b61e38fce7ed95d617f2; companion5924a2eb858cf45e736bc5e79a2f07cfbbc39af2; portal41e8a020f88e1ed7c9f908df233bb6618d053768.

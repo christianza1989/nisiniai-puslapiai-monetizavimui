@@ -4,6 +4,8 @@ Verslomatika tampa viena nuolatine pasirinkto verslo darbo erdve. Savininkas cen
 
 Savininko prioritetas: pirmiau sutvarkyti UI/UX, tada tęsti tikrus modelių bandymus. Šis dokumentas yra siūloma įgyvendinimo kryptis, o ne jau veikiančios sąsajos ar užbaigtos platformos įrodymas. Dabartiniai duomenys, API teisės ir bandymų istorija išsaugomi.
 
+**Komandos pokalbio papildymas — 2026-10-13:** savininkas pasirinko bendravimą pirmiausia su koordinatoriumi. Koordinatorius pagal užduotį pasitelkia specialistus, o jie savo vardu atsako tame pačiame pokalbyje. Tam numatyti tikri dalyvių ID, aiškūs pavedimai, bendras versijuotas kontekstas ir naujų agentų prijungimas pagal jų paskirtį bei parengtį. Visi agentai automatiškai nevykdomi po kiekvienos žinutės. [Komandos pokalbio architektūros papildymas](VERSLOMATIKA_TEAM_CHAT_ARCHITECTURE.md) yra siūlomas būsimas core ir sąsajos išplėtimas; dabartinė trijų vaidmenų vykdymo eiga dar nėra ši grupinio pokalbio sistema.
+
 ## Pagrindinis ekranas
 
 | Kairė — verslo erdvė | Centras — pokalbis | Dešinė — darbo sritis |
@@ -44,6 +46,8 @@ Po navigacija yra to verslo pokalbiai: pagrindinis idėjos/kūrimo pokalbis ir, 
 Pirmą kartą galima parašyti vieną sakinį arba pasirinkti Padėk rasti idėją. AI pateikia suprantamus klausimus ir pasirinkimų rekomendacijas. Atsakymą galima rinktis arba parašyti savo žodžiais; klausimo priežastis pateikiama trumpai. Žmogaus neprašoma parengti techninės specifikacijos.
 
 AI žinutės pirmiausia pateikia išvadą ir kitą žingsnį. Didelės ataskaitos, failai ir patikros atveriami dešinėje iš aiškaus žinutės rezultato. Ilga informacija nėra privalomai įklijuojama į chatą. Naujesnės žinutės turi indikatorių, kol žmogus skaito ankstesnes.
+
+Pagrindinis žinutės gavėjas yra koordinatorius. Jo pavedimas specialistui ir specialisto atsakymas susiejami su ta pačia užduotimi bei pokalbiu; atsakymo autorius rodomas pagal tikrą core vykdymo įrašą. Atsakant į specialisto žinutę, pirmoje versijoje pastaba perduodama koordinatoriui su nuoroda į tą rezultatą. Tiesioginis savininko `@agentas` pasirinkimas gali būti vėlesnis papildymas. Komanda gauna darbui reikalingą bendro konteksto dalį, o ne automatiškai iš naujo analizuoja visą istoriją po kiekvienos žinutės.
 
 Žinutės juodraštis išlieka keičiant skiltį. Kai vykdymas neleidžia siųsti naujos žinutės, galima toliau rašyti vietinį juodraštį; siuntimo būsena ir priežastis aiškios. Nepatvirtintas siuntimo rezultatas nėra naujas automatinis bandymas. Atskiro verslo ar paskyros juodraščiai nesimaišo.
 

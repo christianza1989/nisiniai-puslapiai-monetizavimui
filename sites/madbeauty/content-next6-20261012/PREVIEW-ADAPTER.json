@@ -1,0 +1,88 @@
+{
+  "capturedAt": "2026-10-12T06:26:55.274Z",
+  "private": true,
+  "productionRenderer": false,
+  "nativeFunctionSourceSha256": "a6896c955a720f6efd5c2cb78270824dc51510e54ea4d6011c12bd374b530287",
+  "bodyContentUnchanged": true,
+  "scope": "Read-only extraction of the actual common studio preview function without starting a second server. Private presentation adapter changes paths/byline/source/related wrappers and verified commerce hrefs; consumer runtime acceptance required separately.",
+  "captures": [
+    {
+      "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+      "file": "MS-aromaterapinis.html",
+      "nativeHtmlSha256": "c6a7cf2f098dc0cb61f13886bafc4242dae61fad0b819b826e85ce883f175963",
+      "adaptedHtmlSha256": "5640241eb406f3e4d2057033ffb736702d0190399a05f26a2c7bd6f8ccecd9ec"
+    },
+    {
+      "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+      "file": "ND-forma-ilgis.html",
+      "nativeHtmlSha256": "e06d538161eb84360b5ff42d2853630ff0c4e98b74f54cb38f67a501d211cfb5",
+      "adaptedHtmlSha256": "8bc9a786c25fb2fb614525552a7a959541a72cb0f1735bf1fe2bf9c8fffc40cb"
+    },
+    {
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "file": "NP-gelis-akrilas-poligelis.html",
+      "nativeHtmlSha256": "8870e2287f71068987ab399db4cd7d8d912904dfd34a82074e73b4570d503be9",
+      "adaptedHtmlSha256": "5402c7d9f699fdb75125d0aeafe428644434f5b2ec4e6517b04f361364497358"
+    },
+    {
+      "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+      "file": "PD-aparatinis-klasikinis.html",
+      "nativeHtmlSha256": "41b86d48bace368d2c955fa38524d168e571563df893004e89fc310b4478eecf",
+      "adaptedHtmlSha256": "dae2e18bf829e9034f5d92f959da71fe2bbfa4cbb6ac21b94fb408436aefa75b"
+    },
+    {
+      "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+      "file": "PP-tiesinimas.html",
+      "nativeHtmlSha256": "4907c28903548e6d9c09afa786b7266ad3f0b9db7d7866756ed15df1c2e182a8",
+      "adaptedHtmlSha256": "f14111eaac0970a444ba690880a7bd08984c81b281212ed6195095ceff1abe12"
+    },
+    {
+      "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+      "file": "SP-poroms.html",
+      "nativeHtmlSha256": "5e427f47d920cb8c29c3f4df3fcf676ddb510e911d633f176d47223721cdd1c4",
+      "adaptedHtmlSha256": "23bec96fa341930094ddb1ae84f9bdd4ffe2f33c581f793db0b4ba77e06b356e"
+    },
+    {
+      "pageId": "61455054-263f-416a-8d1b-a993e4949753",
+      "file": "reference-61455054-263f-416a-8d1b-a993e4949753.html",
+      "nativeHtmlSha256": "9fa1a9fe1ae28ad5163a69750274a88ffc4a5b5e7f470fd9140e78eb859f536a",
+      "adaptedHtmlSha256": "1de666b044f134684ed2a1f80089859231d5eb1f25ccaeefa08b689d4b0cd225"
+    },
+    {
+      "pageId": "8118dd44-f9c4-4282-a0d6-201b5d038a3d",
+      "file": "reference-8118dd44-f9c4-4282-a0d6-201b5d038a3d.html",
+      "nativeHtmlSha256": "1554ea75dff8d9018682007c68938819323c7d0869e5cbb9b4d9a118d3c13e0c",
+      "adaptedHtmlSha256": "2dd7cd1ddf5185d2c562831ad102f5ebaa064c0e87fe2cbc81c5ce4d308109ac"
+    },
+    {
+      "pageId": "1a330536-9424-46c9-a12f-61435e941cd2",
+      "file": "reference-1a330536-9424-46c9-a12f-61435e941cd2.html",
+      "nativeHtmlSha256": "bfa057104d6191d18ac16b8497be01dac0b71a29904df62258aac740c2a93bae",
+      "adaptedHtmlSha256": "cab6fcb14f58eecc1df7dd91fd5a08c7e3d0fb42cf19de231dcaa5c855871b24"
+    },
+    {
+      "pageId": "1017b2b1-d685-4673-a12b-7cfd350a8d0a",
+      "file": "reference-1017b2b1-d685-4673-a12b-7cfd350a8d0a.html",
+      "nativeHtmlSha256": "ef011c9dd039f8b0a7d80a249b94093ef747f754fe0d89aa26294753bab9b851",
+      "adaptedHtmlSha256": "04c01c6ef7cae337541544768c5884f84a3fc96ac1b44c36f4bf49a603daf229"
+    },
+    {
+      "pageId": "7dcc9ea0-7cb1-43e3-9eca-dccc896d6410",
+      "file": "reference-7dcc9ea0-7cb1-43e3-9eca-dccc896d6410.html",
+      "nativeHtmlSha256": "cc15385a3a4598d8508d735695912e6ab2e4dde4390253d565310163f8677fc3",
+      "adaptedHtmlSha256": "a96327a6b0623c29afa1ee8d3c09eb45bfebd5f5358b861be87d05053b312918"
+    },
+    {
+      "pageId": "5e3605f0-9b80-41e6-ba8b-4daac9fd91b5",
+      "file": "reference-5e3605f0-9b80-41e6-ba8b-4daac9fd91b5.html",
+      "nativeHtmlSha256": "394bff526611ef4f2ef543bce519ee253a809519d118292455e010af3d757b58",
+      "adaptedHtmlSha256": "3339215f8fd337f9e7bfa0604d9ad4e1befe0f114a868b90e33a5cdcce0ba495"
+    },
+    {
+      "pageId": "e12cce12-d605-46b1-ab5c-621f4c30f2f5",
+      "file": "reference-e12cce12-d605-46b1-ab5c-621f4c30f2f5.html",
+      "nativeHtmlSha256": "2429f0b41ded2e0da596f30f6a607f00e49f4c41853111522086ea9800559bb7",
+      "adaptedHtmlSha256": "bcbbd640ba9df96ad8065335f2ee6fd8bf58c0dc48a12ce7aedbc0143b272abd"
+    }
+  ]
+}

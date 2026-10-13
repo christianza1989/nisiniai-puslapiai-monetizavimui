@@ -1,0 +1,67 @@
+{
+  "state": "PASS_ACTUAL_SIX_FULL_FINAL_TEXT_REVIEWS",
+  "checkedAt": "2026-10-12T06:30:33.071Z",
+  "method": "All six final complete bodies actually read in the tool output after all substantive edits; individual observations recorded here.",
+  "pages": [
+    {
+      "planId": "MS-aromaterapinis",
+      "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+      "revisionHash": "195d250df96b4ae667e8fb7eb8f78f821acae8b5142769c344fbef6e0ca0eff6",
+      "state": "PASS_FULL_FINAL_TEXT_READ",
+      "checkedAt": "2026-10-12T06:30:31.747Z",
+      "usefulness": "Directly distinguishes manual massage, aromatic product and total programme. A named dated105min SPA menu separates15/60/30 components; reader can compare whether seeking massage alone or a wider ritual.",
+      "facts": "Read all final blocks. NCCIH essential-oil definition and weak insomnia evidence match actual primary reading. SPA295EUR/105min and15/60/30 match dated R107; no unknown rest duration, simultaneous staffing, health or current Madbeauty supply asserted.",
+      "resolution": "Actual6-photo import/crop completed. Price example remains explicitly dated2026-10-12; individual fragrance suitability is not claimed."
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+      "revisionHash": "b98fa4cb08588823542f0773f126171db2439f9eb0fb705ab059a82f36ab7337",
+      "state": "PASS_FULL_FINAL_TEXT_READ",
+      "checkedAt": "2026-10-12T06:30:31.988Z",
+      "usefulness": "Separates contour from length and colour. Gives an original equal-dimension four-contour diagram plus controlled one-variable comparison and an explicitly illustrative short oval/squoval selection.",
+      "facts": "Read all final blocks. Oval/almond/square/squoval contour descriptions match actual OPI shapes. Native diagram is schematic, not anatomy or universal fitting advice. AAD cosmetic versus nail problem boundary is preserved.",
+      "resolution": "Four contour original SVG paths and derived four common WebP variants actually attached and inspected, including the mobile diagram screenshot. Separate ImageGen photograph imported and inspected."
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "revisionHash": "b72d560f9d8eb0038c5323d65d760e89e26d1a037064ab7cb4e1395611e94810",
+      "state": "PASS_FULL_FINAL_TEXT_READ",
+      "checkedAt": "2026-10-12T06:30:32.213Z",
+      "usefulness": "Initial generic draft was actually revised through Luna/xhigh. Final answer distinguishes OPI liquid monomer+powder structure, OPI builder structure versus gel-polish surface and ready-tube Gelish hybrid, with a comparable red-colour extension example.",
+      "facts": "Read all final blocks after revision and duplicate-photo removal. Primary OPI2page PDF supports monomer/powder/set-before-file and optional GelColor finish; official OPI gel101 supports structural builder versus polish; Gelish supports preprepared hybrid/lamp. No recipe, timings, strongest/safest or all-product guarantee.",
+      "resolution": "Actual attached photograph/crop reviewed. Earlier missing chemical detail resolved with named scoped manufacturer evidence rather than fabricated general chemistry; native revision receipt retained."
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+      "revisionHash": "14a5b01ef74b00255988e35d72388ec1509f93ca0b3f6c0a615e07b5e1802175",
+      "state": "PASS_FULL_FINAL_TEXT_READ",
+      "checkedAt": "2026-10-12T06:30:32.429Z",
+      "usefulness": "Explains conventional manual/apparatus/combined menu terminology and independently compares nail/skin/colour scope. Worked selection examples show why a method name is not a complete service specification.",
+      "facts": "Read all final blocks. Definitions are explicitly conventional menu usage, not universal professional standard or protocol. Actual NVSC A/B injury boundary and hygiene requirements support the safety paragraph; AAD medical issues not hidden in cosmetic service. No prices, city supply or superiority promise.",
+      "resolution": "No universal technical definition is promoted; exact named-service scope remains provider-specific. Cosmetic versus medical boundary and generic instrument mechanism sufficiently bounded. Fresh national catalogue hrefs checked; photograph/crop actually reviewed."
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+      "revisionHash": "cee57e32727b33aef66da7a9c3df1e40ca36f50b4e62fb4f8f7b68260b5dd8e9",
+      "state": "PASS_FULL_FINAL_TEXT_READ",
+      "checkedAt": "2026-10-12T06:30:32.642Z",
+      "usefulness": "Directly compares one-occasion heat styling with a named product-system procedure, explains scope/product differences and gives an illustrative event-selection example without fixed duration.",
+      "facts": "Read all final blocks. FDA describes solution+heat, warns product-dependent formaldehyde and explicitly notes not all products contain it. AAD supports excessive-heat damage. No universal temperature, guaranteed result, US-rule-to-LT transfer or treatment recipe.",
+      "resolution": "Original rear hair portrait and actual responsive crop inspected. Photo is contextual illustration, not a verified treatment result."
+    },
+    {
+      "planId": "SP-poroms",
+      "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+      "revisionHash": "3936a1a8fd81742c63ba9e44a43c4b2eb3e1aba91245e71540b58df416ce89ee",
+      "state": "PASS_FULL_FINAL_TEXT_READ",
+      "checkedAt": "2026-10-12T06:30:32.891Z",
+      "usefulness": "Two genuine dated same-provider packages compared by scope/time/price, with original105/95min hypothetical10:00-to11:45/11:35 arithmetic, simultaneity and privacy distinctions.",
+      "facts": "Read all final blocks. R107295EUR/105min versusR108175EUR/95min;120EUR and10min differences independently computed. Only R107 components15/60/30 listed. Two-specialist availability, privacy, rest inclusion and R108 component timings explicitly unverified; no wellness marketing converted to medical promise.",
+      "resolution": "Dated2026-10-12 menu examples retained, not future tariffs. Unknown schedule/privacy correctly remain questions, not asserted claims. Actual consultation photo/crop inspected."
+    }
+  ]
+}

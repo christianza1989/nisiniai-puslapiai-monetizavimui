@@ -1,0 +1,10 @@
+{
+  "state": "PASS_CURRENT_PROVIDER_DEPLOYMENT",
+  "checkedAt": "2026-10-13T13:32:58.936Z",
+  "worker": "madbeauty-platform-preview",
+  "version": "f68008dd-5ceb-446b-8113-d68bd1631919",
+  "percentage": 100,
+  "deploymentId": "c4bd6af3-fb66-496a-8eeb-154e1c7d8607",
+  "createdAt": "2026-10-13T13:17:57.308509Z",
+  "scope": "Independent read-only provider version/traffic confirmation; runtime/package/asset identity checked separately against compiled receipt and canonical HTTP."
+}

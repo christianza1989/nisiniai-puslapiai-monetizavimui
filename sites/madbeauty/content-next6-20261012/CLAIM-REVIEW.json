@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-12T06:30:42.175Z",
+  "pages": [
+    {
+      "planId": "MS-aromaterapinis",
+      "pageId": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+      "reviewRevisionHash": "195d250df96b4ae667e8fb7eb8f78f821acae8b5142769c344fbef6e0ca0eff6",
+      "checkedAt": "2026-10-12T06:30:33.171Z",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false,
+      "verifiedClaims": "Read all final blocks. NCCIH essential-oil definition and weak insomnia evidence match actual primary reading. SPA295EUR/105min and15/60/30 match dated R107; no unknown rest duration, simultaneous staffing, health or current Madbeauty supply asserted."
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "pageId": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+      "reviewRevisionHash": "b98fa4cb08588823542f0773f126171db2439f9eb0fb705ab059a82f36ab7337",
+      "checkedAt": "2026-10-12T06:30:33.362Z",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false,
+      "verifiedClaims": "Read all final blocks. Oval/almond/square/squoval contour descriptions match actual OPI shapes. Native diagram is schematic, not anatomy or universal fitting advice. AAD cosmetic versus nail problem boundary is preserved."
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "pageId": "d52b71f7-c715-4086-be3a-01f37a819a00",
+      "reviewRevisionHash": "b72d560f9d8eb0038c5323d65d760e89e26d1a037064ab7cb4e1395611e94810",
+      "checkedAt": "2026-10-12T06:30:33.551Z",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false,
+      "verifiedClaims": "Read all final blocks after revision and duplicate-photo removal. Primary OPI2page PDF supports monomer/powder/set-before-file and optional GelColor finish; official OPI gel101 supports structural builder versus polish; Gelish supports preprepared hybrid/lamp. No recipe, timings, strongest/safest or all-product guarantee."
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "pageId": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+      "reviewRevisionHash": "14a5b01ef74b00255988e35d72388ec1509f93ca0b3f6c0a615e07b5e1802175",
+      "checkedAt": "2026-10-12T06:30:33.733Z",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false,
+      "verifiedClaims": "Read all final blocks. Definitions are explicitly conventional menu usage, not universal professional standard or protocol. Actual NVSC A/B injury boundary and hygiene requirements support the safety paragraph; AAD medical issues not hidden in cosmetic service. No prices, city supply or superiority promise."
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "pageId": "3d74e53b-5300-4328-94c9-747ada19b94f",
+      "reviewRevisionHash": "cee57e32727b33aef66da7a9c3df1e40ca36f50b4e62fb4f8f7b68260b5dd8e9",
+      "checkedAt": "2026-10-12T06:30:33.911Z",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false,
+      "verifiedClaims": "Read all final blocks. FDA describes solution+heat, warns product-dependent formaldehyde and explicitly notes not all products contain it. AAD supports excessive-heat damage. No universal temperature, guaranteed result, US-rule-to-LT transfer or treatment recipe."
+    },
+    {
+      "planId": "SP-poroms",
+      "pageId": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+      "reviewRevisionHash": "3936a1a8fd81742c63ba9e44a43c4b2eb3e1aba91245e71540b58df416ce89ee",
+      "checkedAt": "2026-10-12T06:30:34.078Z",
+      "reviewMode": "autonomous-agent",
+      "humanExpertReviewPerformed": false,
+      "verifiedClaims": "Read all final blocks. R107295EUR/105min versusR108175EUR/95min;120EUR and10min differences independently computed. Only R107 components15/60/30 listed. Two-specialist availability, privacy, rest inclusion and R108 component timings explicitly unverified; no wellness marketing converted to medical promise."
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "state": "FAVICON_AND_EXACT_CONTENT135_LIVE_ACCEPTED",
+  "at": "2026-10-13T13:23:51.446Z",
+  "scope": "Madbeauty favicon both sites; canonical exact135 package consumption. Not whole-platform or Facebook verification completion.",
+  "instructionNetworkMain": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+  "instructionCompanionMain": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+  "editions": {
+    "main": {
+      "sourceCommit": "4f6fb988c5cc302502a4ca5523df937b5e9ccc14",
+      "version": "f68008dd-5ceb-446b-8113-d68bd1631919",
+      "at": "2026-10-13T13:18:04.228Z",
+      "artifactSha256": "384825934db64e4824cfd42517f88d08d89f867f0d03698a640a3755e5ef3833",
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "runtimeBase": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+      "totalAssets": 923,
+      "previousVersion": "87e6c536-aa20-4f9c-a052-62ab21f9526c",
+      "faviconAssets": [
+        {
+          "file": "favicon.svg",
+          "sha256": "87a1c64c940276669aab954b1c0eaf87ce627b9e015c92f0179167eb1cea4ed1"
+        },
+        {
+          "file": "favicon.ico",
+          "sha256": "13a59c6ce4fa81aa4ac061265c6d50732bce680c5993e08f80e53e09200c0a18"
+        },
+        {
+          "file": "favicon-32.png",
+          "sha256": "961a08520942a1b5af154ff38157c54e429f79d49d3846f15afa138aba5339e2"
+        },
+        {
+          "file": "apple-touch-icon.png",
+          "sha256": "ef4c68e6d4f3779f2c0e036913ad8c8de406b08dae5849d5053618b9c8c3596b"
+        }
+      ],
+      "configurationPreservation": {
+        "state": "PASS",
+        "at": "2026-10-13T13:18:40.040Z",
+        "version": "f68008dd-5ceb-446b-8113-d68bd1631919",
+        "bindingsVarsSecretsAndNamespacesPreserved": true,
+        "observabilityAndQueryRedactionPreserved": true,
+        "domainsAndOtherFourWorkersPreserved": true,
+        "customerWritesByThisTask": 0
+      },
+      "hostedFavicon": {
+        "state": "PASS",
+        "at": "2026-10-13T13:19:17.463Z",
+        "artifactSha256": "384825934db64e4824cfd42517f88d08d89f867f0d03698a640a3755e5ef3833",
+        "kind": "main",
+        "checks": [
+          {
+            "path": "/favicon.svg",
+            "status": 200,
+            "contentType": "image/svg+xml",
+            "sha256": "87a1c64c940276669aab954b1c0eaf87ce627b9e015c92f0179167eb1cea4ed1"
+          },
+          {
+            "path": "/favicon.svg?v=20261013",
+            "status": 200,
+            "contentType": "image/svg+xml",
+            "sha256": "87a1c64c940276669aab954b1c0eaf87ce627b9e015c92f0179167eb1cea4ed1"
+          },
+          {
+            "path": "/favicon.ico",
+            "status": 200,
+            "contentType": "image/vnd.microsoft.icon",
+            "sha256": "13a59c6ce4fa81aa4ac061265c6d50732bce680c5993e08f80e53e09200c0a18"
+          },
+          {
+            "path": "/favicon.ico?v=20261013",
+            "status": 200,
+            "contentType": "image/vnd.microsoft.icon",
+            "sha256": "13a59c6ce4fa81aa4ac061265c6d50732bce680c5993e08f80e53e09200c0a18"
+          },
+          {
+            "path": "/favicon-32.png",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "961a08520942a1b5af154ff38157c54e429f79d49d3846f15afa138aba5339e2"
+          },
+          {
+            "path": "/favicon-32.png?v=20261013",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "961a08520942a1b5af154ff38157c54e429f79d49d3846f15afa138aba5339e2"
+          },
+          {
+            "path": "/apple-touch-icon.png",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "ef4c68e6d4f3779f2c0e036913ad8c8de406b08dae5849d5053618b9c8c3596b"
+          },
+          {
+            "path": "/apple-touch-icon.png?v=20261013",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "ef4c68e6d4f3779f2c0e036913ad8c8de406b08dae5849d5053618b9c8c3596b"
+          }
+        ],
+        "originalWordmarkPreserved": true,
+        "multiFrameIco": true
+      }
+    },
+    "trial": {
+      "sourceCommit": "be3cc6497ba63c9687e5630bfeca1c660a928bcd",
+      "version": "bf048234-6008-4b47-96d3-b1f44f0cdb58",
+      "at": "2026-10-13T13:20:13.632Z",
+      "artifactSha256": "d6821bdc0b303b064a9a4156926274694f9509c0ebb83bb088f2d135e7a781e6",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "runtimeBase": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+      "totalAssets": 1489,
+      "previousVersion": "283f9d36-88a3-44ba-87f0-dbf25e3e0f65",
+      "faviconAssets": [
+        {
+          "file": "favicon.svg",
+          "sha256": "87a1c64c940276669aab954b1c0eaf87ce627b9e015c92f0179167eb1cea4ed1"
+        },
+        {
+          "file": "favicon.ico",
+          "sha256": "13a59c6ce4fa81aa4ac061265c6d50732bce680c5993e08f80e53e09200c0a18"
+        },
+        {
+          "file": "favicon-32.png",
+          "sha256": "961a08520942a1b5af154ff38157c54e429f79d49d3846f15afa138aba5339e2"
+        },
+        {
+          "file": "apple-touch-icon.png",
+          "sha256": "ef4c68e6d4f3779f2c0e036913ad8c8de406b08dae5849d5053618b9c8c3596b"
+        }
+      ],
+      "configurationPreservation": {
+        "state": "PASS",
+        "at": "2026-10-13T13:20:58.597Z",
+        "version": "bf048234-6008-4b47-96d3-b1f44f0cdb58",
+        "bindingsVarsSecretsAndNamespacesPreserved": true,
+        "observabilityAndQueryRedactionPreserved": true,
+        "domainsAndOtherFourWorkersPreserved": true,
+        "customerWritesByThisTask": 0
+      },
+      "hostedFavicon": {
+        "state": "PASS",
+        "at": "2026-10-13T13:21:02.247Z",
+        "artifactSha256": "d6821bdc0b303b064a9a4156926274694f9509c0ebb83bb088f2d135e7a781e6",
+        "kind": "trial",
+        "checks": [
+          {
+            "path": "/favicon.svg",
+            "status": 200,
+            "contentType": "image/svg+xml",
+            "sha256": "87a1c64c940276669aab954b1c0eaf87ce627b9e015c92f0179167eb1cea4ed1"
+          },
+          {
+            "path": "/favicon.svg?v=20261013",
+            "status": 200,
+            "contentType": "image/svg+xml",
+            "sha256": "87a1c64c940276669aab954b1c0eaf87ce627b9e015c92f0179167eb1cea4ed1"
+          },
+          {
+            "path": "/favicon.ico",
+            "status": 200,
+            "contentType": "image/vnd.microsoft.icon",
+            "sha256": "13a59c6ce4fa81aa4ac061265c6d50732bce680c5993e08f80e53e09200c0a18"
+          },
+          {
+            "path": "/favicon.ico?v=20261013",
+            "status": 200,
+            "contentType": "image/vnd.microsoft.icon",
+            "sha256": "13a59c6ce4fa81aa4ac061265c6d50732bce680c5993e08f80e53e09200c0a18"
+          },
+          {
+            "path": "/favicon-32.png",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "961a08520942a1b5af154ff38157c54e429f79d49d3846f15afa138aba5339e2"
+          },
+          {
+            "path": "/favicon-32.png?v=20261013",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "961a08520942a1b5af154ff38157c54e429f79d49d3846f15afa138aba5339e2"
+          },
+          {
+            "path": "/apple-touch-icon.png",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "ef4c68e6d4f3779f2c0e036913ad8c8de406b08dae5849d5053618b9c8c3596b"
+          },
+          {
+            "path": "/apple-touch-icon.png?v=20261013",
+            "status": 200,
+            "contentType": "image/png",
+            "sha256": "ef4c68e6d4f3779f2c0e036913ad8c8de406b08dae5849d5053618b9c8c3596b"
+          }
+        ],
+        "originalWordmarkPreserved": true,
+        "multiFrameIco": true
+      },
+      "expiresAt": "2026-10-16T21:10:47.982Z",
+      "publicDemoSoloProfiles": 40,
+      "publicDemoSalons": 5
+    }
+  },
+  "contentConsumer": {
+    "state": "CANONICAL_CONTENT135_LIVE_ACCEPTED",
+    "origin": "https://madbeauty.lt",
+    "producerSource": "b948707db0cb6e449f2c1f34f0f238edf44f625b",
+    "producerPR": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/107",
+    "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+    "pages": 135,
+    "guides": 131,
+    "contentAssets": 664,
+    "preservedSnapshots": 129,
+    "preservedPublicationDates": 299,
+    "additional": [
+      {
+        "id": "a24a5ffb-13e1-447b-b50e-f015f6e661c7",
+        "slug": "gidai/nagu-dizainas-forma-ilgis",
+        "title": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+        "publishAt": "2026-12-24T14:00:00.000Z",
+        "revisionHash": "b98fa4cb08588823542f0773f126171db2439f9eb0fb705ab059a82f36ab7337"
+      },
+      {
+        "id": "101ecc90-7e7c-4b82-962a-75e3401abd7c",
+        "slug": "gidai/pedikiuras-aparatinis-klasikinis",
+        "title": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+        "publishAt": "2026-12-25T14:00:00.000Z",
+        "revisionHash": "14a5b01ef74b00255988e35d72388ec1509f93ca0b3f6c0a615e07b5e1802175"
+      },
+      {
+        "id": "d52b71f7-c715-4086-be3a-01f37a819a00",
+        "slug": "gidai/nagu-priauginimas-gelis-akrilas-poligelis",
+        "title": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+        "publishAt": "2026-12-25T08:00:00.000Z",
+        "revisionHash": "b72d560f9d8eb0038c5323d65d760e89e26d1a037064ab7cb4e1395611e94810"
+      },
+      {
+        "id": "3d74e53b-5300-4328-94c9-747ada19b94f",
+        "slug": "gidai/plauku-prieziura-tiesinimas",
+        "title": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+        "publishAt": "2026-12-26T08:00:00.000Z",
+        "revisionHash": "cee57e32727b33aef66da7a9c3df1e40ca36f50b4e62fb4f8f7b68260b5dd8e9"
+      },
+      {
+        "id": "e309ab67-20b7-4b87-a185-9a9725fadd1a",
+        "slug": "gidai/spa-poroms",
+        "title": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+        "publishAt": "2026-12-27T08:00:00.000Z",
+        "revisionHash": "3936a1a8fd81742c63ba9e44a43c4b2eb3e1aba91245e71540b58df416ce89ee"
+      },
+      {
+        "id": "48be8ecf-88d5-4bd5-85e9-4fc87c35403b",
+        "slug": "gidai/masazas-aromaterapinis",
+        "title": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+        "publishAt": "2026-12-24T08:00:00.000Z",
+        "revisionHash": "195d250df96b4ae667e8fb7eb8f78f821acae8b5142769c344fbef6e0ca0eff6"
+      }
+    ],
+    "nativePublicationBoundaryStates": 12,
+    "nativeUniqueCommerceTargets": 10,
+    "nativeAll664ContentBinariesAtDue": true,
+    "realClockDuePages": 9,
+    "hostedPagesChecked": 135,
+    "hostedAssetsChecked": 923,
+    "currentPublicProfilesSha256": "3eeabb0a752ada5c3bbe7f5640bd1a27f00710e7cf76fb19886269b7cee97c9d",
+    "futureClockDeployed": false,
+    "proofs": {
+      "native.json": {
+        "sha256": "7d8e41ed78df38d7e1387f413b7a634f6295a292de32933e0d99935ec540fde3",
+        "at": "2026-10-13T13:06:55.895Z",
+        "state": "PASS",
+        "evidence": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\favicon-20261013\\main\\native.json"
+      },
+      "platform-native.json": {
+        "sha256": "80e7bfb439e6ad49d85c7da4895df7b87ee2c53681ff1b612359324c729c0f78",
+        "at": "2026-10-13T13:08:33.203Z",
+        "state": "PASS",
+        "evidence": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\favicon-20261013\\main\\platform-native.json"
+      },
+      "live-before.json": {
+        "sha256": "48f58893473d6d11a270bb64b42386a65dc95953a205c6a91fe25184712ad436",
+        "at": "2026-10-13T13:08:46.623Z",
+        "state": "PASS",
+        "evidence": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\favicon-20261013\\main\\live-before.json"
+      },
+      "live-after.json": {
+        "sha256": "db8a8a04fe96d4915740ed379e9b4d2576408e1b6b30ce39fad62a28bed847f8",
+        "at": "2026-10-13T13:21:05.723Z",
+        "state": "PASS",
+        "evidence": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\favicon-20261013\\main\\live-after.json"
+      },
+      "browser/native.json": {
+        "sha256": "43f4da739b2ab327c3a2b168159b2cc1fc159dccf982b2022df7df5e0998ce61",
+        "at": "2026-10-13T13:16:13.891Z",
+        "state": "PASS",
+        "evidence": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\favicon-20261013\\main\\browser\\native.json"
+      }
+    }
+  },
+  "browser": {
+    "currentNativeDiagram": [
+      "browser/diagram-desktop.jpg",
+      "browser/diagram-mobile.jpg"
+    ],
+    "actualHosted": [
+      "browser/hosted-main-desktop.jpg",
+      "browser/hosted-main-mobile.jpg",
+      "browser/hosted-trial-mobile.jpg",
+      "browser/hosted-icon.jpg"
+    ],
+    "scope": "Current main guide index desktop/mobile, trial homepage mobile and actual SVG image; no overflow or browser error. Future six-guide views are native-only with inherited content-only evidence clearly distinguished.",
+    "directory": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\favicon-20261013\\main\\browser",
+    "review": "Sequential personal inspection; no independent review asserted"
+  },
+  "preservation": {
+    "mainCommunity": true,
+    "mainFacebook": false,
+    "trialCommunity": true,
+    "trialFacebook": true,
+    "customerWritesByThisTask": 0,
+    "emailDnsBillingChanges": 0,
+    "otherThreeWorkersUnchanged": true,
+    "trialFixturesExpiryAndContent129Preserved": true,
+    "mainAll885IncumbentAssetsPreserved": true
+  },
+  "sourcePR": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/127",
+  "gitMerge": "Pending review; source push and live activation are distinct",
+  "rollback": "Recorded previous main87e6c536/trial283f9d36 versions; no data restore, automatic rollback or replay of historical content129 build helpers."
+}

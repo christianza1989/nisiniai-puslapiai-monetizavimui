@@ -1,0 +1,19 @@
+{
+  "state": "PASS_ACTUAL_RENDERED_PIXELS",
+  "checkedAt": "2026-10-12T06:30:33.073Z",
+  "observations": "Both six-article contact sheets and actual mobile contour diagram were opened and inspected. Six readable headings/bylines and distinct coherent images; no clipping or overlap. Contact sheets are first-fold crops, full bodies were independently read. Diagram labels clear; small disclaimer also exists in surrounding body. Producer preview with declared adapter, not canonical public renderer.",
+  "sheets": [
+    {
+      "file": "SCREENS-desktop.jpg",
+      "sha256": "d5831e8bd8870936097cfbff792600ee77ecf892d4f3a6646bfe5929840d298f"
+    },
+    {
+      "file": "SCREENS-mobile.jpg",
+      "sha256": "ee0ab791100bb9055aca2ded941f69a4cf80ab90ab362f761deca216aaa64996"
+    },
+    {
+      "file": "screenshots/diagram-mobile.png",
+      "sha256": "1d1259e25dc21635bfb1205fc0d18f8109dfe65c93d830d029bf979f2557ab93"
+    }
+  ]
+}

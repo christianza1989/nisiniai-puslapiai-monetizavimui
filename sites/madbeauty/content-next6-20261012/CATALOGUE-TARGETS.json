@@ -1,0 +1,239 @@
+{
+  "checkedAt": "2026-10-12T06:26:02.139Z",
+  "registrySha256": "c6c3d5daeb1db22668bce02cf1d469143d3acb85d41898faa16b4218a2ee414c",
+  "generatedAt": "2026-10-12T06:25:58.840Z",
+  "expiresAt": "2026-10-12T07:25:58.840Z",
+  "cityTargets": 0,
+  "scope": "Actual canonical national information routes. Planned procedures deferred; no test providers/city or booking availability claims.",
+  "targets": [
+    {
+      "id": "mb:catalog:kuno-masazai-aromaterapinis-masazas",
+      "url": "https://madbeauty.lt/paslaugos/kuno-masazai-aromaterapinis-masazas",
+      "label": "Aromaterapinis masažas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:25:59.328Z",
+      "evidence": {
+        "taxonomyNodeId": "kuno-masazai-aromaterapinis-masazas",
+        "routeRegistryId": "mb:catalog:kuno-masazai-aromaterapinis-masazas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/kuno-masazai-aromaterapinis-masazas",
+        "indexEligible": false,
+        "htmlSha256": "787b0ceb04d74903a06d15d1dfc3dbca1b004d66c793519f10e5c1cac350bc55"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-dizainas",
+      "url": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+      "label": "Dizainas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:25:59.530Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-dizainas",
+        "routeRegistryId": "mb:catalog:nagu-dizainas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-dizainas",
+        "indexEligible": false,
+        "htmlSha256": "f15efd4d5db487371e44c0966a6f455978b257d1aeeb54b9f42448e1d23d26f0"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-geliu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-geliu",
+      "label": "Nagų priauginimas geliu",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:25:59.728Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-geliu",
+        "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-geliu",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-geliu",
+        "indexEligible": false,
+        "htmlSha256": "22e5623e57b8baee9959e56d51ee2168b8b0e5fb701ed6910e38506a4c8aa79b"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-akrilu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-akrilu",
+      "label": "Nagų priauginimas akrilu",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:25:59.937Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-akrilu",
+        "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-akrilu",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-akrilu",
+        "indexEligible": false,
+        "htmlSha256": "b579317bd13456d3ce1c9d3940a37b41cd37a6dae0b309c017c6226619905a2a"
+      }
+    },
+    {
+      "id": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-poligeliu",
+      "url": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-poligeliu",
+      "label": "Nagų priauginimas poligeliu",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:26:00.132Z",
+      "evidence": {
+        "taxonomyNodeId": "nagu-modeliavimas-nagu-priauginimas-poligeliu",
+        "routeRegistryId": "mb:catalog:nagu-modeliavimas-nagu-priauginimas-poligeliu",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/nagu-modeliavimas-nagu-priauginimas-poligeliu",
+        "indexEligible": false,
+        "htmlSha256": "13135ecb550efe4f316b20d240d4a5fcefbe8b3bb9561de4044e5ba7608cbbe9"
+      }
+    },
+    {
+      "id": "mb:catalog:pedikiuras-klasikinis-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-klasikinis-pedikiuras",
+      "label": "Klasikinis pedikiūras",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:26:00.338Z",
+      "evidence": {
+        "taxonomyNodeId": "pedikiuras-klasikinis-pedikiuras",
+        "routeRegistryId": "mb:catalog:pedikiuras-klasikinis-pedikiuras",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pedikiuras-klasikinis-pedikiuras",
+        "indexEligible": false,
+        "htmlSha256": "ef3ea94417d668f4de1e8358e44ff2ca0c9637926558bf245fafc6394674afa1"
+      }
+    },
+    {
+      "id": "mb:catalog:pedikiuras-aparatinis-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-aparatinis-pedikiuras",
+      "label": "Aparatinis pedikiūras",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:26:00.533Z",
+      "evidence": {
+        "taxonomyNodeId": "pedikiuras-aparatinis-pedikiuras",
+        "routeRegistryId": "mb:catalog:pedikiuras-aparatinis-pedikiuras",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pedikiuras-aparatinis-pedikiuras",
+        "indexEligible": false,
+        "htmlSha256": "13ebe7b2aa509532cf34669ba4cd442e6403f7e15e6934989af5094393474a45"
+      }
+    },
+    {
+      "id": "mb:catalog:pedikiuras-kombinuotas-pedikiuras",
+      "url": "https://madbeauty.lt/paslaugos/pedikiuras-kombinuotas-pedikiuras",
+      "label": "Kombinuotas pedikiūras",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:26:00.729Z",
+      "evidence": {
+        "taxonomyNodeId": "pedikiuras-kombinuotas-pedikiuras",
+        "routeRegistryId": "mb:catalog:pedikiuras-kombinuotas-pedikiuras",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/pedikiuras-kombinuotas-pedikiuras",
+        "indexEligible": false,
+        "htmlSha256": "8e41e1ac1eb6a86d1022e2122603f08c0d24270dfaffc4b03d73cf62d044b228"
+      }
+    },
+    {
+      "id": "mb:catalog:plauku-forma-plauku-tiesinimas",
+      "url": "https://madbeauty.lt/paslaugos/plauku-forma-plauku-tiesinimas",
+      "label": "Plaukų tiesinimas",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:26:00.934Z",
+      "evidence": {
+        "taxonomyNodeId": "plauku-forma-plauku-tiesinimas",
+        "routeRegistryId": "mb:catalog:plauku-forma-plauku-tiesinimas",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/plauku-forma-plauku-tiesinimas",
+        "indexEligible": false,
+        "htmlSha256": "1acbe8246929811c1bc37d3d0f992b1ffda252087fcccdd2ea80dee8ae982381"
+      }
+    },
+    {
+      "id": "mb:catalog:spa-ritualai-spa-ritualas-poroms",
+      "url": "https://madbeauty.lt/paslaugos/spa-ritualai-spa-ritualas-poroms",
+      "label": "SPA ritualas poroms",
+      "relationship": "Straipsnyje aptartos procedūros aprašas; miestas ir realaus teikėjo pasiūlymas pasirenkami atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-12T06:26:01.130Z",
+      "evidence": {
+        "taxonomyNodeId": "spa-ritualai-spa-ritualas-poroms",
+        "routeRegistryId": "mb:catalog:spa-ritualai-spa-ritualas-poroms",
+        "purpose": "information",
+        "allowedQueryParams": [],
+        "httpStatus": 200,
+        "canonical": "https://madbeauty.lt/paslaugos/spa-ritualai-spa-ritualas-poroms",
+        "indexEligible": false,
+        "htmlSha256": "86d51c99985d83a01f9619aeeecc8048b20ebe5d2269159f80509af66e6d49a3"
+      }
+    }
+  ],
+  "deferred": [],
+  "pages": [
+    {
+      "planId": "MS-aromaterapinis",
+      "kept": [
+        "mb:catalog:kuno-masazai-aromaterapinis-masazas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "kept": [
+        "mb:catalog:nagu-dizainas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "kept": [
+        "mb:catalog:nagu-modeliavimas-nagu-priauginimas-geliu",
+        "mb:catalog:nagu-modeliavimas-nagu-priauginimas-akrilu",
+        "mb:catalog:nagu-modeliavimas-nagu-priauginimas-poligeliu"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "kept": [
+        "mb:catalog:pedikiuras-klasikinis-pedikiuras",
+        "mb:catalog:pedikiuras-aparatinis-pedikiuras",
+        "mb:catalog:pedikiuras-kombinuotas-pedikiuras"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "kept": [
+        "mb:catalog:plauku-forma-plauku-tiesinimas"
+      ],
+      "deferred": []
+    },
+    {
+      "planId": "SP-poroms",
+      "kept": [
+        "mb:catalog:spa-ritualai-spa-ritualas-poroms"
+      ],
+      "deferred": []
+    }
+  ]
+}

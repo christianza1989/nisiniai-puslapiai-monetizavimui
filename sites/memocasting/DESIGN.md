@@ -2,6 +2,8 @@
 
 Aktualus2026-10-13LT homepage yra savininko pasirinktas kitos sesijos Memory Casting prototipas: Manrope400/600, baltas/šiltas paviršius, rožinis akcentas, statiškas hero ir antros sekcijos scroll-scrub filmas. [Tekstų vaidmenys, integracija, patikros ir ribos](HOMEPAGE_INTEGRATION.md). Žemiau esanti kontaktinio lapo sistema tebėra kitų puslapių laikinas dizainas, ne dabartinio homepage autoritetas.
 
+Naujas savininko pavedimas: pirmiausia pilnai suplanuoti homepage. [10 sekcijų išdėstymas, trūkstamos medžiagos, Awwwards tyrimas ir 3D pritaikymas](HOMEPAGE_PLAN.md), [vietinės studijos šaltinis](homepage-study/index.html). Tai agento siūlomas tolesnis išdėstymas; esamas turinio leidinys ir veikiantis homepage šiuo planavimo etapu nepakeisti. Tamsi būsimos skulptūrų vitrinos sekcija papildo pasirinktą tapatybę.
+
 2026-10-12. Agentas renkasi autonomiškai pagal savininko perdavimą. Bendro tinklo maketai nėra šios parduotuvės tapatybė.
 
 ## Krypties atranka

@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Hosted scheduled guides need a reversible site-specific publication pause without editing approved snapshots or hiding already published guides.",
+  "category": "code",
+  "evidence": [
+    "Public lib/niche-links.mjs at d2feca83129075270ad9dcf2aea762b1f46c8f82 currently uses approval and request time only; owner explicitly requested pausing Promedical future articles on 2026-10-13.",
+    "sites/promedical/verification-20261013/article-publication-links-v1.json verifies 2 public and 55 scheduled guides."
+  ],
+  "paths": [
+    "lib/niche-links.mjs",
+    "config/niche-network.json",
+    "scripts/compile-content-packages.mjs",
+    "tests/niche-links.test.mjs",
+    "tests/niche-render-cache.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/pull/28",
+  "rollback": "Scoped revert of the pause setting only restores original eligibility. For a later planned resume first review and reschedule elapsed unpublished dates to avoid bulk publication; preserve approved source and history.",
+  "id": "upgrade-ec4be78a-eafa-45ee-90c7-ac9d3ad112ae",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "2c959ed5e7abd597112d4865abd0ff7413aff6a5",
+  "createdAt": "2026-10-13T19:27:32.715Z"
+}

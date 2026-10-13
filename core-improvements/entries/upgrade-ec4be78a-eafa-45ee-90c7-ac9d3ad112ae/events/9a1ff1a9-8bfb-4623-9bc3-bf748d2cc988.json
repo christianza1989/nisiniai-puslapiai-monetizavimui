@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Five scoped public files committed and pushed in PR28. Paired site plan/current state and source-bound deployed pause evidence in existing core PR53; shared main is not merged or adopted. Resume requires owner request and reviewed future dates.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/28",
+  "eventId": "9a1ff1a9-8bfb-4623-9bc3-bf748d2cc988",
+  "sequence": 3,
+  "at": "2026-10-13T19:39:23.012Z"
+}

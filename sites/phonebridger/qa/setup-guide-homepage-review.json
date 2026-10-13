@@ -1,0 +1,194 @@
+{
+  "date": "2026-10-06",
+  "state": "setup section integrated and actual homepage verified",
+  "records": [
+    {
+      "width": 1448,
+      "scrollWidth": 1448,
+      "uniqueIds": true,
+      "threeSteps": true,
+      "threeImages": true,
+      "images": true,
+      "beforeDownloads": true,
+      "afterConnections": true,
+      "textClips": [],
+      "cardWidths": [
+        423,
+        423,
+        423
+      ],
+      "rowCount": 1,
+      "backgrounds": [
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)",
+        "radial-gradient(at 80% 15%, rgba(177, 29, 107, 0.094), rgba(0, 0, 0, 0) 60%), linear-gradient(145deg, rgb(27, 26, 34), rgb(18, 20, 27) 75%)",
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)"
+      ],
+      "textures": true,
+      "middleBorder": "rgb(255, 45, 154)",
+      "ctaHref": "#downloads",
+      "qrIllustration": true,
+      "ctaFocus": true,
+      "usbMouse": true,
+      "usbKeyboard": true,
+      "downloadNavigation": true,
+      "usbExistingLink": true
+    },
+    {
+      "width": 1280,
+      "scrollWidth": 1280,
+      "uniqueIds": true,
+      "threeSteps": true,
+      "threeImages": true,
+      "images": true,
+      "beforeDownloads": true,
+      "afterConnections": true,
+      "textClips": [],
+      "cardWidths": [
+        372,
+        372,
+        372
+      ],
+      "rowCount": 1,
+      "backgrounds": [
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)",
+        "radial-gradient(at 80% 15%, rgba(177, 29, 107, 0.094), rgba(0, 0, 0, 0) 60%), linear-gradient(145deg, rgb(27, 26, 34), rgb(18, 20, 27) 75%)",
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)"
+      ],
+      "textures": true,
+      "middleBorder": "rgb(255, 45, 154)",
+      "ctaHref": "#downloads",
+      "qrIllustration": true,
+      "ctaFocus": true,
+      "usbMouse": true,
+      "usbKeyboard": true,
+      "downloadNavigation": true,
+      "usbExistingLink": true
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "uniqueIds": true,
+      "threeSteps": true,
+      "threeImages": true,
+      "images": true,
+      "beforeDownloads": true,
+      "afterConnections": true,
+      "textClips": [],
+      "cardWidths": [
+        312,
+        312,
+        312
+      ],
+      "rowCount": 1,
+      "backgrounds": [
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)",
+        "radial-gradient(at 80% 15%, rgba(177, 29, 107, 0.094), rgba(0, 0, 0, 0) 60%), linear-gradient(145deg, rgb(27, 26, 34), rgb(18, 20, 27) 75%)",
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)"
+      ],
+      "textures": true,
+      "middleBorder": "rgb(255, 45, 154)",
+      "ctaHref": "#downloads",
+      "qrIllustration": true,
+      "ctaFocus": true,
+      "usbMouse": true,
+      "usbKeyboard": true,
+      "downloadNavigation": true,
+      "usbExistingLink": true
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "uniqueIds": true,
+      "threeSteps": true,
+      "threeImages": true,
+      "images": true,
+      "beforeDownloads": true,
+      "afterConnections": true,
+      "textClips": [],
+      "cardWidths": [
+        718,
+        718,
+        718
+      ],
+      "rowCount": 3,
+      "backgrounds": [
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)",
+        "radial-gradient(at 80% 15%, rgba(177, 29, 107, 0.094), rgba(0, 0, 0, 0) 60%), linear-gradient(145deg, rgb(27, 26, 34), rgb(18, 20, 27) 75%)",
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)"
+      ],
+      "textures": true,
+      "middleBorder": "rgb(255, 45, 154)",
+      "ctaHref": "#downloads",
+      "qrIllustration": true,
+      "ctaFocus": true,
+      "usbMouse": true,
+      "usbKeyboard": true,
+      "downloadNavigation": true,
+      "usbExistingLink": true
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "uniqueIds": true,
+      "threeSteps": true,
+      "threeImages": true,
+      "images": true,
+      "beforeDownloads": true,
+      "afterConnections": true,
+      "textClips": [],
+      "cardWidths": [
+        350,
+        350,
+        350
+      ],
+      "rowCount": 3,
+      "backgrounds": [
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)",
+        "radial-gradient(at 80% 15%, rgba(177, 29, 107, 0.094), rgba(0, 0, 0, 0) 60%), linear-gradient(145deg, rgb(27, 26, 34), rgb(18, 20, 27) 75%)",
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)"
+      ],
+      "textures": true,
+      "middleBorder": "rgb(255, 45, 154)",
+      "ctaHref": "#downloads",
+      "qrIllustration": true,
+      "ctaFocus": true,
+      "usbMouse": true,
+      "usbKeyboard": true,
+      "downloadNavigation": true,
+      "usbExistingLink": true
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "uniqueIds": true,
+      "threeSteps": true,
+      "threeImages": true,
+      "images": true,
+      "beforeDownloads": true,
+      "afterConnections": true,
+      "textClips": [],
+      "cardWidths": [
+        280,
+        280,
+        280
+      ],
+      "rowCount": 3,
+      "backgrounds": [
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)",
+        "radial-gradient(at 80% 15%, rgba(177, 29, 107, 0.094), rgba(0, 0, 0, 0) 60%), linear-gradient(145deg, rgb(27, 26, 34), rgb(18, 20, 27) 75%)",
+        "radial-gradient(at 35% 40%, rgba(116, 32, 68, 0.082), rgba(0, 0, 0, 0) 65%), linear-gradient(145deg, rgb(25, 26, 33), rgb(18, 20, 27) 73%)"
+      ],
+      "textures": true,
+      "middleBorder": "rgb(255, 45, 154)",
+      "ctaHref": "#downloads",
+      "qrIllustration": true,
+      "ctaFocus": true,
+      "usbMouse": true,
+      "usbKeyboard": true,
+      "downloadNavigation": true,
+      "usbExistingLink": true
+    }
+  ],
+  "errors": [],
+  "badAssets": []
+}

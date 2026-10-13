@@ -229,6 +229,16 @@ export async function createSite(input) {
     const siteId = input.siteId === undefined ? siteIdFromDomain(domain) : input.siteId;
     if (input.siteId !== undefined && (typeof siteId !== 'string' || !/^[a-z0-9][a-z0-9-]{1,62}$/.test(siteId))) throw new Error('Netinkamas stabilus svetainės ID.');
     const site = makeSite(domain, plain(input.name, 120) || domain, plain(input.offer, 500), siteId);
+    // Existing v1 identity fields; leave established Lithuanian defaults intact.
+    if (input.locale !== undefined) {
+      if (typeof input.locale !== 'string' || !input.locale.trim()) throw new Error('Invalid locale.');
+      site.locale = Intl.getCanonicalLocales(input.locale)[0];
+    }
+    if (input.timezone !== undefined) {
+      if (typeof input.timezone !== 'string' || !input.timezone.trim()) throw new Error('Invalid timezone.');
+      new Intl.DateTimeFormat(site.locale, { timeZone: input.timezone });
+      site.timezone = input.timezone;
+    }
     if(input.schemaVersion===2){site.schemaVersion=2;site.renderer=input.renderer==='gift'?'gift':'niche';site.operatorName=JSON.parse(readFileSync(networkSettingsFile,'utf8')).contactsBySite?.[site.id]?.operatorName||JSON.parse(readFileSync(networkSettingsFile,'utf8')).operatorName;}
     if (all.some(item => item.id === site.id)) throw new Error('Svetainės ID jau naudojamas.');
     await writeJson(siteFile(site.id), site);

@@ -1,0 +1,1395 @@
+{
+  "siteId": "phonebridger",
+  "canonicalHost": "phonebridger.com",
+  "phase": 1,
+  "evaluatedAt": "2026-10-06T06:20:02.871Z",
+  "evaluator": "Codex agent; not independent human or legal certification",
+  "environment": {
+    "source": "127.0.0.1:4177",
+    "privateCore": "127.0.0.1:4187",
+    "regressionWorker": "127.0.0.1:8789",
+    "lighthouse": "13.5.0 default mobile",
+    "publicDeployment": false
+  },
+  "version": {
+    "companionParent": "e32dc585063a8cb172a908f293cf1aad3098331a",
+    "coreParent": "e42107b468a05797aa864fd0bd42b871d3168b60",
+    "packageSha256": "28aab9c65368343cd2e6a822a6365833064521e698e9601a059f045d7ee2743f",
+    "manifestSha256": "bdb63208014086e1c0ff72aa89f2896a3aec1d768d0b13c82ffd2f88c91713c9"
+  },
+  "verdict": {
+    "local": "NOT READY",
+    "launch": "NOT READY",
+    "demand": "UNMEASURED",
+    "visual": "Guide review repairs scored ship; production/runtime readiness separate"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "PAGES.md",
+        "prototype/shop/index.html"
+      ],
+      "notes": "Private Phase 1; planned prices, no checkout/order/stock claim."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "FAIL",
+      "evidence": [
+        "PAGE_PLAN.md",
+        "prototype/shop/index.html",
+        "prototype/contact/index.html"
+      ],
+      "notes": "Payer/revenue hypothesis and honest choices exist, but interest opens a mailto draft; no durable business-intent record."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "No production observations, qualified demand or operational interval exist."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/package/content-package.json",
+        "prototype/editorial/index.html"
+      ],
+      "notes": "MB Pinet is the configured organization; hello@phonebridger.com is the owner-approved contact. Recipient consistency is not delivery or legal-identity verification."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "PRODUCT.md",
+        "prototype/index.html",
+        "knowledge/PROMPTS.md"
+      ],
+      "notes": "Illustrative demo/sample-user reviews are identified; no Review/AggregateRating schema or invented expert. Original contextual guide imagery is labelled."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/RESEARCH.md"
+      ],
+      "notes": "One bounded Archive/domain retrieval was inaccessible. Limits recorded; not evidence of no history or domain ownership."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/RESEARCH.md",
+        "qa/knowledge-v1/verification.json"
+      ],
+      "notes": "Unknown legacy URLs deferred until history can be inspected; no bulk homepage redirects. Missing/private guide URLs return404."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "NA",
+      "evidence": [],
+      "notes": "No legacy redirects implemented in this prepared preview. Real domain history remains unresolved under C1/B3/O3."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "PASS",
+      "evidence": [
+        "PAGE_PLAN.md",
+        "qa/site-pages-v1/responsive-geometry.json"
+      ],
+      "notes": "Existing dated official-brand desktop/mobile inspections inform the inherited product-choice and support journey. Guide work extends that chosen identity; source availability limits are recorded."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/RESEARCH.md",
+        "knowledge/content.mjs",
+        "PAGE_PLAN.md"
+      ],
+      "notes": "Native instructions checked against current release documents; platform claims use primary sources. Search/buyer intents are hypotheses, with no invented volume, demand or result."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/RESEARCH.md",
+        "knowledge/content.mjs",
+        "PAGE_PLAN.md"
+      ],
+      "notes": "Native instructions checked against current release documents; platform claims use primary sources. Search/buyer intents are hypotheses, with no invented volume, demand or result."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "knowledge/DESIGN.md",
+        "knowledge/PROMPTS.md",
+        "knowledge/image-ledger.json",
+        "qa/knowledge-v1/finish-review.md"
+      ],
+      "notes": "Pinned identity preserved; all16 initial captures inspected. Fresh review repairs scored ship for the bounded tablet/category fixes. Four1536x1024 contextual images inspected, with20 shared-pipeline derivatives. Not an independent product test."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "knowledge/DESIGN.md",
+        "knowledge/PROMPTS.md",
+        "knowledge/image-ledger.json",
+        "qa/knowledge-v1/finish-review.md"
+      ],
+      "notes": "Pinned identity preserved; all16 initial captures inspected. Fresh review repairs scored ship for the bounded tablet/category fixes. Four1536x1024 contextual images inspected, with20 shared-pipeline derivatives. Not an independent product test."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "knowledge/DESIGN.md",
+        "knowledge/PROMPTS.md",
+        "knowledge/image-ledger.json",
+        "qa/knowledge-v1/finish-review.md"
+      ],
+      "notes": "Pinned identity preserved; all16 initial captures inspected. Fresh review repairs scored ship for the bounded tablet/category fixes. Four1536x1024 contextual images inspected, with20 shared-pipeline derivatives. Not an independent product test."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "PAGES.md"
+      ],
+      "notes": "Seventeen inner routes plus homepage; new6 destinations reachable in navigation/footer/context.286 same-origin checks, distinct jobs, no doorway location variants."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "PAGES.md"
+      ],
+      "notes": "Seventeen inner routes plus homepage; new6 destinations reachable in navigation/footer/context.286 same-origin checks, distinct jobs, no doorway location variants."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "PAGES.md"
+      ],
+      "notes": "Seventeen inner routes plus homepage; new6 destinations reachable in navigation/footer/context.286 same-origin checks, distinct jobs, no doorway location variants."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "PRODUCT.md",
+        "DESIGN.md",
+        "prototype/index.html"
+      ],
+      "notes": "Selected homepage presents Windows/Android offer and live illustrative demo, features, setup, FAQs and disclosed sample feedback; it remains visually frozen."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "PRODUCT.md",
+        "DESIGN.md",
+        "prototype/index.html"
+      ],
+      "notes": "Selected homepage presents Windows/Android offer and live illustrative demo, features, setup, FAQs and disclosed sample feedback; it remains visually frozen."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "FAIL",
+      "evidence": [
+        "qa/knowledge-v1/lighthouse-homepage-frozen.json",
+        "PAGES.md"
+      ],
+      "notes": "Actual frozen app.js raises a null addEventListener exception at63; mailto-only contact and recovery do not prove delivered outcomes. Inner account behavior is locally exercised."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/guides-getting-started-desktop.png",
+        "qa/knowledge-v1/guides-usb-wifi-mobile.png",
+        "qa/knowledge-v1/guides-android-permissions-desktop.png",
+        "qa/knowledge-v1/guides-phone-position-mobile.png"
+      ],
+      "notes": "All four guides individually read and rendered, each with direct answer, useful steps, checks/limits/next action and topic-specific figure. Android access warning, one USB phone, source-app audio policy and no native file dragging are qualified."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/guides-getting-started-desktop.png",
+        "qa/knowledge-v1/guides-usb-wifi-mobile.png",
+        "qa/knowledge-v1/guides-android-permissions-desktop.png",
+        "qa/knowledge-v1/guides-phone-position-mobile.png"
+      ],
+      "notes": "All four guides individually read and rendered, each with direct answer, useful steps, checks/limits/next action and topic-specific figure. Android access warning, one USB phone, source-app audio policy and no native file dragging are qualified."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/guides-getting-started-desktop.png",
+        "qa/knowledge-v1/guides-usb-wifi-mobile.png",
+        "qa/knowledge-v1/guides-android-permissions-desktop.png",
+        "qa/knowledge-v1/guides-phone-position-mobile.png"
+      ],
+      "notes": "All four guides individually read and rendered, each with direct answer, useful steps, checks/limits/next action and topic-specific figure. Android access warning, one USB phone, source-app audio policy and no native file dragging are qualified."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/guides-getting-started-desktop.png",
+        "qa/knowledge-v1/guides-usb-wifi-mobile.png",
+        "qa/knowledge-v1/guides-android-permissions-desktop.png",
+        "qa/knowledge-v1/guides-phone-position-mobile.png"
+      ],
+      "notes": "All four guides individually read and rendered, each with direct answer, useful steps, checks/limits/next action and topic-specific figure. Android access warning, one USB phone, source-app audio policy and no native file dragging are qualified."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/guides-getting-started-desktop.png",
+        "qa/knowledge-v1/guides-usb-wifi-mobile.png",
+        "qa/knowledge-v1/guides-android-permissions-desktop.png",
+        "qa/knowledge-v1/guides-phone-position-mobile.png"
+      ],
+      "notes": "All four guides individually read and rendered, each with direct answer, useful steps, checks/limits/next action and topic-specific figure. Android access warning, one USB phone, source-app audio policy and no native file dragging are qualified."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "prototype/editorial/index.html",
+        "knowledge/package/content-package.json"
+      ],
+      "notes": "Organization rather than fictional person; visible byline/profile/schema use configured MB Pinet. Actual production legal identity still needs B3 evidence."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "evidence": [
+        "prototype/editorial/index.html",
+        "knowledge/package/content-package.json"
+      ],
+      "notes": "Organization rather than fictional person; visible byline/profile/schema use configured MB Pinet. Actual production legal identity still needs B3 evidence."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "FAIL",
+      "evidence": [
+        "prototype/guides/getting-started/index.html",
+        "knowledge/package/content-package.json"
+      ],
+      "notes": "Visible prepared/reviewed date is honestly labelled private. Shared Article datePublished currently represents prepared publishAt; real first public publication must replace it before admission. No historical public availability asserted."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/prepare.mjs",
+        "prototype/editorial/index.html",
+        "qa/knowledge-v1/verification.json"
+      ],
+      "notes": "Editorial AI/source/correction/illustration scope explicit. Agent review attributed as agent review. Real Studio CRUD approval/export; mutation rejected, corrected alias revisions reviewed again; no handwritten approval hashes."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/prepare.mjs",
+        "prototype/editorial/index.html",
+        "qa/knowledge-v1/verification.json"
+      ],
+      "notes": "Editorial AI/source/correction/illustration scope explicit. Agent review attributed as agent review. Real Studio CRUD approval/export; mutation rejected, corrected alias revisions reviewed again; no handwritten approval hashes."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/prepare.mjs",
+        "prototype/editorial/index.html",
+        "qa/knowledge-v1/verification.json"
+      ],
+      "notes": "Editorial AI/source/correction/illustration scope explicit. Agent review attributed as agent review. Real Studio CRUD approval/export; mutation rejected, corrected alias revisions reviewed again; no handwritten approval hashes."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "FAIL",
+      "evidence": [
+        "prototype/index.html",
+        "qa/knowledge-v1/verification.json"
+      ],
+      "notes": "Prepared inner-page metadata uses core helpers, but the user-frozen homepage head lacks canonical and JSON-LD. No silent protected-region change."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "knowledge/render.mjs",
+        "prototype/assets/brand-mark.svg"
+      ],
+      "notes": "English H1/headings and informative alt/sharing metadata match new content. Actual PhoneBridger SVG/favicon, no unrelated inherited brand."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "core-preview.test.mjs"
+      ],
+      "notes": "Actual404 for unknown/private routes, no homepage canonical fallback; preview carries noindex atHTTP boundary."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "FAIL",
+      "evidence": [
+        "knowledge/render.mjs",
+        "prototype/index.html"
+      ],
+      "notes": "All prepared inner graphs parse and match shared projection; whole-site requirement remains incomplete because frozen homepage graph absent."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "prototype/guides/android-permissions/index.html"
+      ],
+      "notes": "Visible/schema breadcrumb and organization/profile agree. No invented Product/Offer/Review/AggregateRating entity or rich-result promise."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "prototype/guides/android-permissions/index.html"
+      ],
+      "notes": "Visible/schema breadcrumb and organization/profile agree. No invented Product/Offer/Review/AggregateRating entity or rich-result promise."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/verify.mjs",
+        "qa/knowledge-v1/verification.json",
+        "tests/niche-links.test.mjs (sibling core)"
+      ],
+      "notes": "Real target IDs, meaningful anchors and existing fragments checked. Adapter corrected to feed root paths to shared contextualParts then emit relative URLs. Future/revoked projection hides targets. Whole-site authoritative cutover remains P1."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/verify.mjs",
+        "qa/knowledge-v1/verification.json",
+        "tests/niche-links.test.mjs (sibling core)"
+      ],
+      "notes": "Real target IDs, meaningful anchors and existing fragments checked. Adapter corrected to feed root paths to shared contextualParts then emit relative URLs. Future/revoked projection hides targets. Whole-site authoritative cutover remains P1."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/verify.mjs",
+        "qa/knowledge-v1/verification.json",
+        "tests/niche-links.test.mjs (sibling core)"
+      ],
+      "notes": "Real target IDs, meaningful anchors and existing fragments checked. Adapter corrected to feed root paths to shared contextualParts then emit relative URLs. Future/revoked projection hides targets. Whole-site authoritative cutover remains P1."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/RESEARCH.md",
+        "knowledge/content.mjs"
+      ],
+      "notes": "Current primary Android/Google sources opened; retrieval dates and specific claim scope retained. No endorsement implication."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/package/content-package.json",
+        "tests/niche-links.test.mjs (sibling core)"
+      ],
+      "notes": "No owned-network links exported by this site. Shared eligibility negatives retained; no unpublished partner domains introduced."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/lighthouse-permissions-final.json"
+      ],
+      "notes": "Source/prose/related links actually rendered. Inline prose and byline links underlined; no sponsored or user-submitted link relation is applicable to these authored sources."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "FAIL",
+      "evidence": [
+        "core-preview.test.mjs",
+        "prototype/robots.txt",
+        "prototype/sitemap.xml",
+        "prototype/index.html"
+      ],
+      "notes": "Private slash/query behavior and intended prepared URLs tested. Canonical completeness fails on frozen homepage; real-host coherence not established."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/verify.mjs",
+        "qa/knowledge-v1/verification.json",
+        "core-preview.test.mjs"
+      ],
+      "notes": "14 eligible prepared URLs only; future/revoked/auth excluded. Real loopback/Host/hash guards, not robots alone. Meaningful reviewed revision timestamps retained."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "FAIL",
+      "evidence": [
+        "knowledge/render.mjs",
+        "knowledge/projection.json",
+        "prototype/manifest.json"
+      ],
+      "notes": "New6 guide/editorial HTML and inner metadata use one shared projection. Older frozen homepage and static commercial/auth surfaces still travel in a private attested snapshot; full public HTML cutover has not happened."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "core-preview.test.mjs",
+        "knowledge/prepare.mjs",
+        "qa/knowledge-v1/core-regression-http.json"
+      ],
+      "notes": "Approval mutation/future/revocation, private Host/files and manifest isolation tested. Actual core shadow importer validated14pages20assets; no live host or registry activation. Nine incumbents unchanged."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/verification.json",
+        "core-preview.test.mjs",
+        "knowledge/prepare.mjs",
+        "qa/knowledge-v1/core-regression-http.json"
+      ],
+      "notes": "Approval mutation/future/revocation, private Host/files and manifest isolation tested. Actual core shadow importer validated14pages20assets; no live host or registry activation. Nine incumbents unchanged."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "FAIL",
+      "evidence": [
+        "prototype/llms.txt",
+        "prototype/llms-full.txt",
+        "knowledge/projection.json"
+      ],
+      "notes": "Prepared English exports are consistent with reviewed package, but no active PhoneBridger public projection exists. Public publication scope/dates and whole-site authority remain incomplete."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "knowledge/render.mjs"
+      ],
+      "notes": "Useful qualified answers in semantic HTML with primary citations; no model-only claims. llms.txt is optional supplementary output, not an AI ranking requirement or guarantee."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/content.mjs",
+        "knowledge/RESEARCH.md",
+        "knowledge/render.mjs"
+      ],
+      "notes": "Useful qualified answers in semantic HTML with primary citations; no model-only claims. llms.txt is optional supplementary output, not an AI ranking requirement or guarantee."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/interactions-final.json",
+        "VERIFY.md"
+      ],
+      "notes": "Actual guide TOC/details, navigation menu/Escape, skip anchor and visible focus exercised; earlier local form/session state checks retained separately."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "FAIL",
+      "evidence": [
+        "qa/knowledge-v1/lighthouse-homepage-frozen.json",
+        "qa/knowledge-v1/performance-summary.json"
+      ],
+      "notes": "New hub/permission Lighthouse accessibility100 is not conformance. Frozen homepage has prohibited aria-label and visible/accessibility-name mismatch; actual200% browser zoom/OS reduced-motion behavior not exercised."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "FAIL",
+      "evidence": [
+        "qa/knowledge-v1/lighthouse-homepage-frozen.json",
+        "qa/knowledge-v1/performance-summary.json"
+      ],
+      "notes": "New hub/permission Lighthouse accessibility100 is not conformance. Frozen homepage has prohibited aria-label and visible/accessibility-name mismatch; actual200% browser zoom/OS reduced-motion behavior not exercised."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/browser-checks.json",
+        "qa/knowledge-v1/finish-review.md"
+      ],
+      "notes": "Sixnew routes at1280/390/320/768; all actual images loaded/no overflow. Tablet composition repaired and fresh scored ship; reading captures individually inspected."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "qa/knowledge-v1/browser-checks.json"
+      ],
+      "notes": "Narrow reading/TOC/figure/source/footer checked, but actual enlarged text/200% zoom is not available through current IAB controls. Narrowing viewport is not substituted for zoom."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/browser-checks.json"
+      ],
+      "notes": "Browser viewport evidence labelled browser evidence, not physical Android/device/Pointer Lock proof."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "FAIL",
+      "evidence": [
+        "qa/knowledge-v1/performance-summary.json"
+      ],
+      "notes": "Actual local production-media mobile Lighthouse: guide hub96, permissions97, frozen homepage62 (threshold>=90 unmet). No live production measurement. Homepage LCP15.33s/TBT106ms; preserve freeze and retain failure."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "knowledge/image-ledger.json",
+        "qa/knowledge-v1/performance-summary.json"
+      ],
+      "notes": "Default mobile Lighthouse13.5.0 and timestamps saved. Guide LCP2.64/2.41s, CLS0.00021/0.01053, TBT0. 20 small WebP variants, srcsets/sizes/dimensions/lazy lower images and prioritizedhero. Homepage optimization is a separately authorized repair dependency."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "FAIL",
+      "evidence": [
+        "PAGES.md",
+        "prototype/contact/index.html"
+      ],
+      "notes": "Mailto draft does not create durable D1 inquiry or prove core-failure recovery. Existing shared contact capability is not wired into this private site."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PAGES.md"
+      ],
+      "notes": "No real SMTP acceptance or matching marked Message-ID INBOX receipt tested for PhoneBridger. No customer messages sent. Missing evidence is notNA."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "PAGES.md"
+      ],
+      "notes": "No real SMTP acceptance or matching marked Message-ID INBOX receipt tested for PhoneBridger. No customer messages sent. Missing evidence is notNA."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "FAIL",
+      "evidence": [
+        "prototype/assets/site-pages-v1/site.js",
+        "PAGES.md"
+      ],
+      "notes": "No per-site bot/DNT/GPC/test-filtered inquiry counters wired. Saved choice/browser clicks are not received inquiries or demand."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "PASS",
+      "evidence": [
+        "prototype/privacy/index.html",
+        "PAGES.md"
+      ],
+      "notes": "Current private website cookie/local-storage/account/email-draft facts disclosed, no active analytics/marketing provider implied. Production data processors still need W2/W3."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "No production observations, qualified demand or operational interval exist."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "prototype/privacy/index.html",
+        "prototype/terms/index.html"
+      ],
+      "notes": "Preview inventory/limits present, but current legal requirements, actual seller identifiers, processors/transfers, retention/deletion and production basis not independently established. Do not infer compliance."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "prototype/privacy/index.html",
+        "prototype/terms/index.html"
+      ],
+      "notes": "Preview inventory/limits present, but current legal requirements, actual seller identifiers, processors/transfers, retention/deletion and production basis not independently established. Do not infer compliance."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "prototype/privacy/index.html",
+        "prototype/assets/site-pages-v1/site.js"
+      ],
+      "notes": "No enabled nonessential cookies/marketing, no blanket marketing consent or fake cookie banner. Necessary local session is separate."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "core-preview.test.mjs",
+        "qa/knowledge-v1/verification.json",
+        "qa/knowledge-v1/staged-safety.json"
+      ],
+      "notes": "Actual staged-blobs scan across scoped companion files passes with exact local-secret comparisons; public-core/rules staged scans also pass. Runtime tenant/payload/private-file guards tested. No arbitrary-data absence guarantee."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "PAGES.md",
+        "core-preview.test.mjs",
+        "qa/knowledge-v1/lighthouse-homepage-frozen.json"
+      ],
+      "notes": "Error/optional core/account boundaries and remaining recovery/spam/mail gaps explicitly recorded. Existing console failure retained under freeze, not hidden by score."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/core-regression-http.json",
+        "qa/knowledge-v1/core-checks.json",
+        "CORE_FEEDBACK.md"
+      ],
+      "notes": "Pure SEO/localized schema fix in shared core;52tests,tsc/scopedESLint/build and all9real local Worker smoke checks pass.45fixed-clock incumbent outputs byte identical. No package or nativeinput changes."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "evidence": [
+        "qa/knowledge-v1/core-regression-http.json",
+        "qa/knowledge-v1/core-checks.json",
+        "CORE_FEEDBACK.md"
+      ],
+      "notes": "Pure SEO/localized schema fix in shared core;52tests,tsc/scopedESLint/build and all9real local Worker smoke checks pass.45fixed-clock incumbent outputs byte identical. No package or nativeinput changes."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "README.md",
+        "knowledge/README.md",
+        "../../START_HERE.md",
+        "../../AGENTS.md"
+      ],
+      "notes": "Existing project entrypoints lead to current module/audit/core-feedback; new knowledge README links maintained contract and exact build dependencies."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.json",
+        "PHASE-1-AUDIT.md",
+        "qa/knowledge-v1/finish-review.md",
+        "qa/knowledge-v1/performance-summary.json"
+      ],
+      "notes": "All85criteria retained and scored by maintained scorer. Original failed reports/review and repairs preserved. Local/launch NOTREADY, demandUNMEASURED; no10/10 claim."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.json",
+        "PHASE-1-AUDIT.md",
+        "qa/knowledge-v1/finish-review.md",
+        "qa/knowledge-v1/performance-summary.json"
+      ],
+      "notes": "All85criteria retained and scored by maintained scorer. Original failed reports/review and repairs preserved. Local/launch NOTREADY, demandUNMEASURED; no10/10 claim."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "notes": "Actual public deployment/bindings/domain/legal/delivery/inspection evidence not available; local preparation cannot certify this gate."
+    }
+  ],
+  "scores": {
+    "siteId": "phonebridger",
+    "evaluatedAt": "2026-10-06T06:20:02.871Z",
+    "stages": {
+      "local": {
+        "passed": 54,
+        "applicable": 72,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A2",
+          "G3",
+          "I3",
+          "K1",
+          "L1",
+          "O1",
+          "P1",
+          "Q1",
+          "R2",
+          "R3",
+          "S2",
+          "T1",
+          "U1",
+          "U2",
+          "U3",
+          "V1",
+          "W1",
+          "W2"
+        ]
+      },
+      "launch": {
+        "passed": 0,
+        "applicable": 10,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3",
+          "I4",
+          "O3",
+          "U4",
+          "W3",
+          "X3",
+          "Z3"
+        ]
+      },
+      "operations": {
+        "passed": 0,
+        "applicable": 2,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A3",
+          "V3"
+        ]
+      }
+    },
+    "categories": {
+      "A": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "A2",
+          "A3"
+        ]
+      },
+      "B": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "B3"
+        ]
+      },
+      "C": {
+        "passed": 2,
+        "applicable": 2,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "D": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "E": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "F": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "G": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "G3"
+        ]
+      },
+      "H": {
+        "passed": 5,
+        "applicable": 5,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "I": {
+        "passed": 2,
+        "applicable": 4,
+        "score": 5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "I3",
+          "I4"
+        ]
+      },
+      "J": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "K": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "K1"
+        ]
+      },
+      "L": {
+        "passed": 2,
+        "applicable": 4,
+        "score": 5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "L1"
+        ]
+      },
+      "M": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "N": {
+        "passed": 3,
+        "applicable": 4,
+        "score": 7.5,
+        "perfect": false,
+        "gateReady": true,
+        "blockers": []
+      },
+      "O": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "O1",
+          "O3"
+        ]
+      },
+      "P": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "P1"
+        ]
+      },
+      "Q": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "Q1"
+        ]
+      },
+      "R": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "R2",
+          "R3"
+        ]
+      },
+      "S": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "S2"
+        ]
+      },
+      "T": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "T1"
+        ]
+      },
+      "U": {
+        "passed": 0,
+        "applicable": 4,
+        "score": 0,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "U1",
+          "U2",
+          "U3",
+          "U4"
+        ]
+      },
+      "V": {
+        "passed": 1,
+        "applicable": 3,
+        "score": 3.33,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "V1",
+          "V3"
+        ]
+      },
+      "W": {
+        "passed": 1,
+        "applicable": 4,
+        "score": 2.5,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "W1",
+          "W2",
+          "W3"
+        ]
+      },
+      "X": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "X3"
+        ]
+      },
+      "Y": {
+        "passed": 3,
+        "applicable": 3,
+        "score": 10,
+        "perfect": true,
+        "gateReady": true,
+        "blockers": []
+      },
+      "Z": {
+        "passed": 2,
+        "applicable": 3,
+        "score": 6.66,
+        "perfect": false,
+        "gateReady": false,
+        "blockers": [
+          "Z3"
+        ]
+      }
+    }
+  }
+}

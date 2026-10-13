@@ -1,0 +1,42 @@
+# Product boundaries
+
+This module is the existing homepage + self-contained browser simulation:
+Windows desktop/window manager, Chrome, PhoneBridger settings, two Android
+Home screens with Home/Back/Recents, Google-style apps, chat/mail replies,
+Files/Drive transfers, editable Sheets and the eight-panel Creators dashboard.
+The upper landscape phone remains a local video player with the two owner
+clips. All interface and dummy content is English. Keep is excluded; Chrome
+does not offer Photos, Tasks, Contacts, WhatsApp, Files, Docs or Calendar tabs.
+
+Browser scenarios are isolated page-memory data. They do not read actual OS
+files, pair phones, authenticate to Google/WhatsApp, send messages, record
+real sales or make payments. Reset/reload clears the simulation. Dummy news,
+avatars, photos, balances, bank details and commissions never enter the studio
+draft, public package, knowledge base, lead store or financial ledger.
+
+The original native repository is authoritative for real feature status and
+release facts. Its frozen mouse engine, approved startup exception, USB/Wi-Fi
+parity, pairing/configuration and accepted release bundles are untouched.
+Future bulk channels must use its existing shared connection/TLS API rather
+than introduce a transport-specific path or alter movement.
+
+The future creator backend must live behind a distinct server adapter with
+authenticated creator ownership, idempotent order/refund events and audited
+payout settlement. The simulator's browser ledger is a UX model only. Shared
+core SEO, mail and interest APIs are not payment/affiliate APIs.
+
+## Focused simulator mode
+
+Captured wheel input scrolls the app under the demo cursor on PC and either side phone; reaching its limits never scrolls the website. Phones have no native or custom scrollbars. Activation smoothly aligns and fits the display group to the available viewport, with the website header hidden and inert. Esc restores normal page scrolling and header access. This is website presentation/wheel behavior; the accepted cursor transitions and native input engine are preserved.
+
+## Six-card section and receiving folders
+
+The section immediately below the laptop has six live scenario invitations. Desktop calls the existing capture API; touch view selects the appropriate phone app. PC-to-side-phone drops prepare a PhoneBridger receiving-folder dialog rather than immediately copying into a preset folder. Save here queues the selected folder, Cancel does not queue. The upper video phone is excluded. All files and transfers are fictional page-memory records.
+
+The owner confirmed four future shop choices: App only and App + 1/2/3 holders, in black/silver. The later product direction replaces the earlier recessed mark with flat laser engraving and two equal symmetrical overlapping squares. Selected black/silver front cutouts and a software-package artwork have been generated/reviewed in the owner's source workspace; the homepage uses the black holder and integrated package photograph. These conceptual product images do not establish manufactured dimensions, contents or stock.
+
+## Four-offer conversion section
+
+The selected English conversion section follows the six simulator invitations. Four semantic radio cards select App only or the app with 1/2/3 holders. Selection changes background, number and border in pink; mouse, arrow keys and Home/End work. The main image integrates the package, dark surface, pink flow and reflections while labels/icons remain editable.
+
+Choose my setup opens an honest local summary for the selected offer, with a coming-soon shop notice, close/Escape/focus restoration and working beta link. Black/Silver swatches are finish information, not a checkout or mixed-colour policy. No price, payment, stock, entitlement, fulfilment or real order is implemented.

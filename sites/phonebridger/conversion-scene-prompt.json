@@ -1,0 +1,17 @@
+{
+  "prompt": "Use case: compositing / product-mockup.\nAsset type: finished photographic hero artwork for ONLY the left product panel of a PhoneBridger webpage conversion section, opaque background, approximately square composition.\nInput image 1 is the approved full webpage composition reference: use ONLY its left product photograph (black software box, dark studio floor, flowing hot-pink ribbon light) for camera, atmosphere and product framing. Do NOT generate the rest of the webpage.\nInput image 2 is the approved high-resolution transparent software package: preserve this precise product identity, geometry, panel shapes, open reveal with actual Devices UI, logo, lettering and existing design.\nPrimary request: create a single cohesive premium studio product photograph of that exact open PhoneBridger software package on a very dark charcoal subtly textured desk/floor, with the same hot pink flowing light ribbons behind it and soft pink reflections and physically believable contact shadow on the floor. The background and product must look photographed together. Preserve the box in a frontal three-quarter view, left spine and inner app UI visible, large right front face with clipped right corners.\nComposition: one package only centered, occupying about 76% image width and 79% image height; show the entire box without cropping, with balanced margins. Top 9% and bottom 12% should remain sufficiently quiet and dark for webpage labels/icons added later. Dark edges blend with #101114 page background. Pink ribbons sweep gracefully from left to right BEHIND the box, with subtle reflected light, no neon rods, no clutter. Highest crisp detail, premium textured matte black material, restrained soft studio illumination.\nText already on the box remains English and exactly as reference: PhoneBridger, WINDOWS APP, One mouse. More screens., DIGITAL DOWNLOAD. Lime green only the small WINDOWS APP badge. Two overlapping equal rounded-square brand mark in magenta. Preserve printed screen artwork; do not invent new interface design.\nDo not bake any webpage text, Windows badge/icon above package, benefit icons, Move/Type/Transfer labels, CTA, border, selection rectangle, green annotations, arrows, other products, holders, phones, prices, watermarks or full webpage into this photograph.\nOpaque finished dark photograph, not a transparent cutout.",
+  "toolMode": "built-in ImageGen",
+  "generatedArtifact": "exec-7605a54f-2bb0-44cc-b2b0-87a514164d8b.png",
+  "source": "software-package-scene-v1.png",
+  "date": "2026-10-05",
+  "inputs": [
+    {
+      "file": "../../website/concepts/shop-setup-v1/conversion-section-v8-hybrid.png",
+      "role": "composition reference: left photographic panel only"
+    },
+    {
+      "file": "software-package.png",
+      "role": "approved transparent product source"
+    }
+  ]
+}

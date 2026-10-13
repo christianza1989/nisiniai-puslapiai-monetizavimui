@@ -1,0 +1,238 @@
+/* Dark app surfaces and opaque hardware backing; pointer behavior is preserved. */
+:root{color-scheme:dark}
+.scene-shell{isolation:isolate}
+.workspace-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;z-index:-1;opacity:1;mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 88%,transparent);border-radius:14px}
+.scene-shell::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#101114 0%,transparent 10%,transparent 90%,#101114 100%)}
+.scene-shell{aspect-ratio:1200/880}
+.demo-scene{height:880px}
+.device-mounts{position:absolute;inset:0;z-index:0;pointer-events:none}
+.device-mount{position:absolute;background:linear-gradient(180deg,#222326,#08090b 18%,#030405 82%,#151618);border:1px solid #08090b;border-radius:2px;box-shadow:0 1px 2px #0009;pointer-events:none}
+.mount-left,.mount-right{top:343.58px;width:17px;height:34px}
+.mount-left{left:264px}
+.mount-right{left:920px}
+.mount-top{left:578px;top:166px;width:44px;height:21px}
+.demo-scene .laptop{left:213.6px;top:170.1956px;width:772.8px;height:677.12px}
+.demo-scene .laptop .hardware{inset:auto;left:-154.56px;top:-7.36px;width:1081.92px;height:721.28px}
+/* Cover alpha seams beneath both the live screens and the photographed bezels. */
+.demo-scene .device::before{content:"";position:absolute;background:#0c0e10;pointer-events:none;z-index:0}
+.demo-scene .laptop::before{left:-154.56px;top:-7.36px;width:1081.92px;height:721.28px;clip-path:polygon(21.8% 2.3%,78.2% 2.3%,80% 5%,79.9% 65.3%,85.7% 90.8%,85.3% 92.9%,14.7% 92.9%,14.3% 90.8%,20.3% 65.3%,20% 5%)}
+.demo-scene .phone::before{inset:1.8% 16.8% 1.7%;border-radius:27px}
+.demo-scene .phone-top::before{inset:16.8% 1.8% 16.8% 1.7%}
+.demo-scene .device[data-active=true] .device-screen{box-shadow:none}
+.demo-scene .device.drop-target .device-screen{box-shadow:0 0 0 2px #cfff62}
+.demo-scene .portal{opacity:0;box-shadow:none}
+.demo-scene.is-free .demo-cursor{display:none!important}
+.pc-screen{left:75.44px;right:75.44px;top:25.2494px;bottom:235.52px;border-radius:6.44px}
+.demo-scene .phone{width:235.44px;height:353.16px}
+.phone-left{left:74.4896px}
+.phone-right{left:892.0701px}
+.demo-scene .phone-screen{border-radius:22.68px}
+.demo-scene .phone-top{left:423.42px;top:-23.5101px;width:353.16px;height:235.44px}
+.demo-scene .phone-top .hardware{width:235.44px;height:353.16px;left:58.86px;top:-58.86px}
+.demo-scene .video-screen{border-radius:19.44px}
+.desk-shadow{top:827px}
+.workspace .device-screen,.mobile-screen{color-scheme:dark;background:#202124;color:#e8eaed}
+.workspace .device-screen,.mobile-screen .phone-app{font-family:Arial,"Segoe UI",sans-serif}
+.workspace .app-logo{width:14px;height:14px;flex:none;fill:none}
+.browser-tabs{height:27px;min-height:27px;padding:0 0 0 3px;gap:1px;background:#202124;color:#bdc1c6;align-items:center}
+.chrome-tab-strip{display:flex;align-self:stretch;align-items:flex-end;flex:1;min-width:0;gap:1px;overflow:hidden}
+.browser-tab{flex:1;min-width:0;max-width:100px;height:24px;border-radius:7px 7px 0 0;gap:4px;padding:0 5px;font:7px Arial,sans-serif!important;position:relative}
+.browser-tab:not(.active)::after{content:"";position:absolute;right:0;top:7px;height:10px;border-right:1px solid #5f6368}
+.browser-tab.active{background:#35363a;color:#e8eaed;flex:1.45}
+.browser-tab:focus-visible,.chrome-icon:focus-visible,.chrome-window-buttons button:focus-visible{outline:1px solid #8ab4f8;outline-offset:-2px}
+.browser-tab:hover{background:#303134}
+.browser-tab .app-logo{width:10px;height:10px}
+.tab-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser-tab>.tab-close{font-size:10px;opacity:1;margin:0 0 0 auto;flex:none;line-height:12px;width:12px;border-radius:50%;text-align:center}
+.tab-close:hover{background:#626468}
+.browser-tab:not(.active)>.tab-close{display:none}
+.chrome-icon{background:none;color:#bdc1c6;border:0;padding:0;width:18px;height:18px;min-width:18px;border-radius:50%;font:11px Arial,sans-serif!important;line-height:18px}
+.chrome-icon:hover{background:#505155}
+.chrome-icon:disabled{opacity:.28}
+.chrome-tab-search{background:#35363a;border-radius:5px;font-size:14px!important;margin-right:2px}
+.tab-plus{padding:0;font-size:13px!important}
+.chrome-window-buttons{display:flex;align-self:stretch;flex:none;margin-left:2px}
+.chrome-window-buttons button{width:19px;padding:0;background:none;color:#bdc1c6;font:10px Arial,sans-serif!important;border:0}
+.chrome-window-buttons button:hover{background:#45464a}
+.chrome-window-buttons button:last-child:hover{background:#c42b1c;color:white}
+.browser-address{height:27px;min-height:27px;padding:3px 5px;gap:3px;background:#35363a;color:#bdc1c6}
+.chrome-omnibox{display:flex;align-items:center;gap:6px;flex:1;min-width:0;height:19px;border-radius:20px;background:#202124;padding:0 7px;color:#bdc1c6;border:1px solid transparent}
+.chrome-omnibox:focus-within{border-color:#8ab4f8;background:#292a2d}
+.chrome-omnibox>span{font-size:9px}
+.chrome-omnibox input{background:none;border:0;outline:0;min-width:0;flex:1;color:#e8eaed;font:7px Arial,sans-serif;padding:0;box-shadow:none}
+.chrome-omnibox button{padding:0;background:none;color:#bdc1c6;font-size:12px!important}
+.send-tab{font:6.5px Arial,sans-serif!important;padding:2px 5px;color:#bdc1c6}
+.chrome-profile{width:15px;height:15px;min-width:15px;border-radius:50%;background:#7c4dff;color:#fff;font:8px Arial,sans-serif!important;padding:0;margin:0 3px}
+.chrome-popover,.tab-destinations{position:absolute;top:54px;right:6px;z-index:22;background:#292a2d;color:#e8eaed;border:1px solid #5f6368;border-radius:6px;box-shadow:0 6px 18px #0007;padding:6px;display:flex;flex-direction:column;gap:2px;width:160px;font:8px Arial,sans-serif}
+.chrome-popover>strong{padding:5px 7px;font-size:9px}
+.chrome-popover button,.tab-destinations button{background:none;color:#e8eaed;border:0;text-align:left;padding:6px 7px;font:8px Arial,sans-serif!important;border-radius:3px}
+.chrome-popover button:hover,.tab-destinations button:hover{background:#3c4043}
+.chrome-popover small{font-size:6px;color:#9aa0a6;margin-left:auto}
+.chrome-popover hr{width:100%;border:0;border-top:1px solid #5f6368;margin:3px 0}
+.chrome-profile-card{display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px}
+.chrome-profile-card .google-avatar{margin:0;width:27px;height:27px;font-size:13px}
+.browser-minimized{position:absolute;inset:0;background:linear-gradient(140deg,#192a4f,#221731);z-index:7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:19px}
+.browser-minimized button{background:#35363a;color:#e8eaed;border:1px solid #5f6368;padding:8px 16px;border-radius:5px;font-size:9px!important}
+.browser-is-minimized .desktop-taskbar{z-index:8}
+.browser-maximized .desktop-taskbar{display:none}
+.pc-page{overflow:auto;background:#202124;color:#e8eaed;scrollbar-width:thin;scrollbar-color:#5f6368 transparent}
+.web-app-page{display:flex;flex-direction:column;overflow:hidden}
+.sheet-page{display:flex;flex-direction:column;font-family:Arial,sans-serif}
+.sheet-title{padding:8px 10px 5px;gap:8px;display:flex;align-items:center;background:#202124;color:#e8eaed;border:0}
+.sheet-title>.app-logo{width:22px;height:26px}
+.sheet-title strong{font-size:11px;font-weight:400}
+.sheet-title small{font-size:7px;display:block;margin-top:5px;color:#bdc1c6}
+.sheet-title>div{flex:1;min-width:0}
+.sheet-share{background:#c2e7ff;color:#001d35;font-size:8px!important;padding:6px 13px;border-radius:15px}
+.sheet-menu{display:flex;align-items:center;gap:9px;margin:0 7px 5px;padding:4px 8px;background:#303134;border-radius:15px;font-size:8px;color:#e8eaed;min-height:21px}
+.sheet-menu button{padding:0 3px;background:none;color:#e8eaed;font-size:10px!important}
+.sheet-formula{background:#202124;color:#bdc1c6;border-block:1px solid #5f6368;padding:4px 8px;font:8px Arial,sans-serif;min-height:20px}
+.sheet-formula::before{content:"A2";border-right:1px solid #5f6368;margin-right:8px;padding-right:16px}
+.sheet-formula span{margin-left:8px;color:#bdc1c6}
+.sheet-table{table-layout:fixed;border-collapse:collapse;flex:none;width:100%;font:8px Arial,sans-serif;background:#202124;color:#e8eaed}
+.sheet-table td,.sheet-table th{border:1px solid #454746!important;background:#202124;color:#e8eaed;height:24px;padding:4px 8px;font:8px Arial,sans-serif}
+.sheet-table th{background:#292a2d;color:#bdc1c6;font-weight:400}
+.sheet-table th:first-child{width:26px}
+.sheet-table tbody tr:first-child td{background:#183d2f;color:#c3e8d0;font-weight:600}
+.sheet-table .sheet-success{color:#81c995}
+.sheet-table td[contenteditable]:focus,.shared-app .sheet-table td[contenteditable]:focus{background:#24362d;box-shadow:inset 0 0 0 1.5px #57bb8a;outline:0}
+.cell-bold{font-weight:700!important}.cell-italic{font-style:italic!important}
+.sheet-bottom{display:flex;gap:16px;align-items:center;min-height:24px;margin-top:auto;padding:0 15px;background:#292a2d;color:#bdc1c6;font:8px Arial,sans-serif}
+.sheet-bottom strong{color:#81c995;background:#243b2d;padding:7px 13px;border-bottom:2px solid #81c995}
+.sheet-bottom small{margin-left:auto;font-size:6px}
+.pc-mail{padding:0;display:flex;flex-direction:column;background:#202124;color:#e8eaed}
+.gmail-topbar{display:flex;gap:9px;align-items:center;padding:6px 11px;height:36px;min-height:36px;font-size:10px}
+.pc-mail-logo{display:flex;align-items:center;gap:5px;min-width:78px;color:#e8eaed;font:15px Arial,sans-serif;padding:0}
+.pc-mail-logo .app-logo{width:21px;height:21px}
+.gmail-menu-icon{font-size:13px;color:#bdc1c6}
+.mail-search{flex:1;min-width:0;background:#303134;color:#e8eaed;border:0;border-radius:15px;padding:7px 11px;outline:none;font:8px Arial,sans-serif}
+.gmail-topbar .avatar{width:20px;height:20px;background:#00897b;color:#fff;margin-left:auto}
+.gmail-layout{position:relative;display:flex;flex:1;min-height:0}
+.gmail-sidebar{display:flex;flex-direction:column;width:110px;flex:none;padding:4px 6px 10px 0;gap:2px;font:8px Arial,sans-serif}
+.gmail-sidebar button{padding:5px 12px;background:none;border:0;text-align:left;color:#e8eaed;font:8px Arial,sans-serif!important;border-radius:0 14px 14px 0}
+.gmail-sidebar button small{float:right}
+.gmail-sidebar .selected{background:#004a77;color:#c2e7ff;font-weight:600!important}
+.gmail-sidebar .gmail-compose{background:#c2e7ff;color:#001d35;padding:10px;margin:0 9px 7px;border-radius:9px;font-size:9px!important}
+.gmail-sidebar>span{padding:7px 12px;color:#bdc1c6}
+.gmail-inbox{flex:1;min-width:0;border-radius:10px 0 0 0;background:#292a2d;margin-right:7px;overflow:auto}
+.inbox-tools{padding:7px 9px;color:#bdc1c6;font:8px Arial,sans-serif;border-bottom:1px solid #3c4043}
+.inbox-tools>span{float:right;font-size:6px}
+.inbox-categories{display:flex;gap:20px;padding:10px;font:8px Arial,sans-serif;color:#bdc1c6;border-bottom:1px solid #3c4043}
+.inbox-categories strong{color:#8ab4f8;position:relative}
+.inbox-categories strong::after{content:"";position:absolute;left:0;right:-9px;bottom:-10px;background:#8ab4f8;height:2px}
+.inbox-row{display:flex;gap:9px;align-items:center;width:100%;padding:10px 8px;border-bottom:1px solid #3c4043;background:#35363a;color:#e8eaed;font:7px Arial,sans-serif!important;text-align:left;white-space:nowrap}
+.inbox-row:hover{box-shadow:inset 0 0 0 1px #5f6368}
+.inbox-row>strong{width:67px;flex:none;overflow:hidden;text-overflow:ellipsis}
+.inbox-row>span:nth-of-type(2){overflow:hidden;text-overflow:ellipsis}
+.inbox-row small{margin-left:auto;font-size:6px}
+.mail-starred>span:first-child{color:#fdd663}
+.mail-empty{padding:20px;font-size:9px;color:#bdc1c6;text-align:center}
+.gmail-compose-panel{position:absolute;right:15px;bottom:0;width:258px;height:182px;display:flex;flex-direction:column;background:#292a2d;color:#e8eaed;border-radius:7px 7px 0 0;box-shadow:0 2px 15px #0008;overflow:hidden;border:1px solid #45474c}
+.compose-title{display:flex;gap:7px;align-items:center;background:#303134;padding:6px 9px;font-size:8px}
+.compose-title>span{flex:1}
+.compose-title button{padding:0;background:none;color:#bdc1c6;font-size:11px!important}
+.compose-recipient,.compose-subject{margin:0 9px;padding:6px 0;border-bottom:1px solid #3c4043;color:#bdc1c6;font-size:7px}
+.compose-subject{color:#e8eaed}
+.compose-recipient span{background:#3c4043;padding:2px 5px;border-radius:8px;font-size:6px}
+.gmail-compose-panel textarea{padding:7px 10px;flex:1;min-height:0;width:100%;background:#292a2d;border:0;resize:none;color:#e8eaed;font:8px/1.6 Arial,sans-serif;outline:0}
+.compose-format{background:#303134;padding:4px 10px;font-size:8px;color:#bdc1c6}
+.pc-mail-footer{display:flex;align-items:center;padding:6px 9px;gap:10px;margin:0;border:0;background:#292a2d;font-size:6px;color:#9aa0a6}
+.pc-mail-footer button{background:#8ab4f8;color:#202124;padding:5px 13px;border-radius:13px;font:8px Arial,sans-serif!important}
+.pc-mail-footer>span:last-child{margin-left:auto}
+.phone-status{background:#202124;color:#e8eaed}
+.phone-left .phone-status{background:#1f2c34;color:#e9edef}
+.chat-app{background-color:#0b141a;background-image:radial-gradient(#2b3a4160 .6px,transparent .6px),radial-gradient(#2b3a4130 1px,transparent 1px);background-position:0 0,5px 5px;background-size:12px 12px;color:#e9edef}
+.chat-header{background:#1f2c34;color:#e9edef}
+.chat-header small{color:#aebac1}
+.chat-avatar{background:#667781;color:#dfe5e7}
+.chat-day{background:#182229;color:#aebac1;border-radius:5px}
+.incoming{background:#202c33;color:#e9edef}
+.outgoing{background:#005c4b;color:#e9edef}
+.chat-bubble small{color:#aebac1}
+.chat-bubble small span{color:#53bdeb}
+.chat-form{background:#0b141a}
+.chat-form input{background:#202c33;color:#e9edef}
+.chat-form button{background:#00a884;color:#071b13}
+.typing-indicator{color:#8696a0;background:#202c33}
+.gmail-app{background:#202124;color:#e8eaed}
+.mail-header{background:#202124;color:#e8eaed;gap:8px}
+.mail-header button{color:#a8c7fa}
+.mail-attachment{margin-left:auto;font-size:10px}.mail-header .mail-attachment+button{margin-left:0}
+.mail-field{border-color:#3c4043;color:#e8eaed}
+.mail-field>span:first-child{color:#9aa0a6}
+.gmail-app textarea,.gmail-app textarea:focus{background:#202124;color:#e8eaed;font-family:Arial,sans-serif}
+.mail-format{background:#292a2d;border-color:#3c4043;color:#bdc1c6}
+.gesture-bar,.phone-left .gesture-bar{background:#9aa0a6}
+.shared-app{background:#202124;color:#e8eaed;scrollbar-color:#5f6368 transparent}
+.shared-header{background:#202124;border-color:#3c4043;color:#e8eaed;min-height:27px}
+.shared-header button{background:none;color:#bdc1c6}
+.shared-app[data-open-app=gmail]>.shared-header{display:none}
+.shared-app .sheet-title{background:#202124;color:#e8eaed;padding:8px 7px}
+.shared-app .sheet-title small,.shared-app .sheet-share{display:none}
+.shared-app .sheet-title .app-logo{width:17px;height:20px}
+.shared-app .sheet-title strong{font-size:8px}
+.shared-app .sheet-table td,.shared-app .sheet-table th{background:#202124;color:#e8eaed;font:6px Arial,sans-serif;padding:5px 4px}
+.shared-app .sheet-table tbody tr:first-child td{background:#183d2f;color:#c3e8d0}
+.shared-app .sheet-bottom{padding:0 8px;gap:8px;font-size:6px;min-height:23px}
+.shared-app .sheet-bottom strong{padding:6px}
+.mini-window{background:#202020;color:#f3f3f3;border-color:#4b4b4b;box-shadow:0 8px 23px #0008;font-family:"Segoe UI",Arial,sans-serif}
+.window-heading{background:#2c2c2c;color:#f3f3f3}.window-heading button{color:#ddd}.window-icon{color:#8ab4f8}
+.utility-app{background:#202124;color:#e8eaed;font-family:Arial,sans-serif;scrollbar-color:#5f6368 transparent}
+.utility-app textarea,.utility-app input{background:#292a2d;color:#e8eaed;border-color:#5f6368}
+.utility-app ::-webkit-scrollbar-thumb{background:#5f6368}
+.notes-tools{color:#bdc1c6}.notes-tools span:last-child{color:#81c995}
+.notes-input{background:#202020;color:#e8eaed}.notes-count{color:#9aa0a6}
+.calc-keys button{background:#3b3b3b;color:#f3f3f3;box-shadow:0 1px 0 #181818}
+.calc-keys button:nth-child(-n+4){background:#323232}
+.calc-keys button:last-child{background:#323232;color:#f3f3f3}
+.calc-keys button:nth-last-child(2){background:#76b9ed;color:#04223a}
+.calc-keys button:hover{background:#4b4b4b}
+.todo-count{color:#9aa0a6}.todo-row{border-color:#3c4043}.todo-row.done label span{color:#9aa0a6}
+.todo-row input{accent-color:#8ab4f8}.todo-form input{background:#292a2d;border-color:#5f6368;color:#e8eaed}
+.todo-form button,.calendar-form button{background:#a8c7fa;color:#062e6f}
+.calendar-grid button{background:none;color:#e8eaed;border-radius:50%}
+.calendar-grid button.selected{background:#8ab4f8;color:#202124}
+.calendar-grid button.has-event:after{background:#8ab4f8}.calendar-heading button{color:#bdc1c6}
+.calendar-day-label{color:#8ab4f8}.calendar-event{color:#e8eaed}.empty-agenda{color:#9aa0a6}
+.calendar-form input{background:#292a2d;color:#e8eaed;border-color:#5f6368}
+.demo-browser-bar button{background:#303134;color:#bdc1c6}.demo-address{background:#303134;border-color:#5f6368;color:#e8eaed}
+.demo-web-page .article-tag{color:#8ab4f8}.demo-web-page p{color:#bdc1c6}.demo-web-page button,.real-site-link{background:#303134;color:#8ab4f8}
+.phone-launcher{background:#17191eea;color:#e8eaed}.app-tile{background:#303134;color:#8ab4f8}
+.tile-notes{background:#594919;color:#fdd663}.tile-calculator{background:#293949;color:#8ab4f8}.tile-tasks{background:#20365e;color:#a8c7fa}.tile-calendar{background:#243959;color:#a8c7fa}.tile-sheets{background:#183d2f;color:#81c995}.tile-gmail{background:#49302e;color:#f28b82}
+.google-replica{display:flex;flex-direction:column;flex:1;min-height:0;height:100%;overflow:hidden;background:#202124;color:#e8eaed;font:9px Arial,sans-serif}
+.google-app-topbar{display:flex;align-items:center;padding:9px 12px;gap:8px;height:40px;min-height:40px;border-bottom:1px solid #3c4043}
+.google-app-topbar .app-logo{width:22px;height:22px}.google-app-topbar strong{font-size:16px;font-weight:400}
+.app-menu{font-size:14px;color:#bdc1c6}.google-avatar{width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:#00897b;color:#fff;font-size:10px;margin-left:auto;flex:none}
+.google-replica>.utility-app{padding:15px 35px}
+.google-notes>.utility-app{padding:12px 80px;background:#202124}
+.keep-editor .notes-tools{font-size:11px;color:#e8eaed}.keep-editor .notes-tools span:first-child{font-weight:600}
+.keep-editor{border:1px solid #5f6368;border-radius:7px;margin:15px 75px;padding:12px!important}
+.keep-editor textarea{font:10px/1.7 Arial,sans-serif!important;min-height:100px;background:#202124}
+.google-tasks .todo-heading strong{font-size:13px}.google-tasks .todo-row label{font-size:10px}.google-tasks .todo-row{padding:12px 0}.google-tasks .todo-count{font-size:8px}.google-tasks .todo-form input{padding:7px}
+.google-calendar .calendar-heading strong{font-size:14px}.google-calendar .calendar-grid button{font-size:9px!important;min-height:19px}.google-calendar .calendar-grid .weekday{font-size:8px}.google-calendar .utility-app{display:grid;grid-template-columns:1.3fr 1fr;gap:6px 20px;padding:10px 25px;align-content:start}
+.google-calendar .calendar-heading,.google-calendar .calendar-grid{grid-column:1}.google-calendar .calendar-day-label,.google-calendar .calendar-events,.google-calendar .calendar-form{grid-column:2}.google-calendar .calendar-day-label{grid-row:1;font-size:10px}.google-calendar .calendar-events{grid-row:2;font-size:9px;min-height:65px}.google-calendar .calendar-form{grid-row:3;font-size:8px}.google-calendar .empty-agenda{font-size:9px}.google-calendar .calendar-event{font-size:9px}
+.drive-layout{display:flex;flex:1;min-height:0;overflow:hidden}.drive-sidebar{width:110px;display:flex;flex-direction:column;padding:6px 8px;gap:3px;font-size:8px;flex:none}
+.drive-sidebar button{background:#37393d;color:#e8eaed;padding:11px;border-radius:9px;font-size:10px!important;text-align:left;margin-bottom:4px}
+.drive-sidebar>span{padding:4px 9px;white-space:nowrap}.drive-sidebar>.selected{background:#004a77;color:#c2e7ff;border-radius:12px}.drive-sidebar small{color:#9aa0a6;margin-top:auto;padding:7px;font-size:7px;line-height:1.7}
+.drive-main{flex:1;min-width:0;background:#18191b;border-radius:11px 11px 0 0;padding:12px 15px;overflow:auto;margin-right:10px}
+.drive-search{background:#303134;border:0;color:#e8eaed;border-radius:16px;padding:8px 12px;font-size:9px;width:100%;outline:0}
+.drive-main h3{font:18px Arial,sans-serif;margin:13px 0 10px}.drive-filters{display:flex;gap:6px;margin-bottom:15px;font-size:8px}.drive-filters span{border:1px solid #5f6368;border-radius:6px;padding:5px 9px}
+.drive-section-title{font-size:9px;font-weight:400}.drive-file-list{margin-top:9px}.drive-file{display:flex;align-items:center;border-bottom:1px solid #3c4043;padding:8px 0;gap:8px}
+.drive-file-open{display:flex;align-items:center;gap:7px;min-width:0;flex:1;background:none;color:#e8eaed;text-align:left;padding:0;font:8px Arial,sans-serif!important}
+.drive-file-open>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.drive-file-owner,.drive-file-date{font-size:6px;color:#bdc1c6}.drive-star{background:none;color:#fdd663;font-size:13px!important;padding:0}.drive-folder-form{display:flex;gap:5px;margin-top:10px}.drive-folder-form input{flex:1;min-width:0;background:#303134;border:1px solid #5f6368;color:#e8eaed;padding:6px;font-size:8px}.drive-folder-form button{background:#8ab4f8;color:#202124;border-radius:5px;font-size:8px!important;padding:4px 7px}
+.google-app{overflow:auto;padding:10px 35px}.google-links{display:flex;gap:9px;align-items:center;justify-content:flex-end;font-size:9px}.google-links button{background:none;color:#e8eaed;font-size:8px!important}.google-links .google-avatar{margin:0}
+.google-wordmark{font:46px Arial,sans-serif;letter-spacing:-2px;text-align:center;margin:24px 0 16px;color:#e8eaed}
+.google-search-form{background:#303134;border:1px solid #5f6368;border-radius:24px;display:flex;align-items:center;gap:9px;padding:8px 13px;margin:0 auto;max-width:330px;font-size:15px}
+.google-search-form input{flex:1;min-width:0;background:none;border:0;color:#e8eaed;outline:none;font:9px Arial,sans-serif}
+.google-search-form button{background:none;color:#bdc1c6;font-size:12px!important;padding:0}
+.google-shortcuts{display:flex;gap:13px;justify-content:center;margin-top:18px}.google-shortcuts button{display:flex;flex-direction:column;align-items:center;gap:7px;background:none;color:#e8eaed;font:7px Arial,sans-serif!important;padding:0;min-width:34px}.google-shortcuts .app-logo{width:25px;height:25px;padding:5px;box-sizing:content-box;background:#303134;border-radius:50%}
+.google-results{margin-top:20px;display:flex;flex-direction:column;gap:12px}.search-result{display:flex;flex-direction:column;align-items:flex-start;gap:4px;background:none;text-align:left;padding:0;color:#bdc1c6;font:8px Arial,sans-serif!important}.search-result strong{color:#8ab4f8;font-size:14px;font-weight:400}.search-result small{font-size:7px;color:#9aa0a6}.app-empty{color:#9aa0a6;font-size:9px;padding:10px 0}
+.shared-app .google-app-topbar{height:27px;min-height:27px;padding:5px 8px;gap:5px}.shared-app .google-app-topbar strong{font-size:10px}.shared-app .google-app-topbar .app-logo{width:15px;height:15px}.shared-app .google-avatar{width:15px;height:15px;font-size:7px}.shared-app .app-menu{display:none}
+.shared-app>.google-replica>.google-app-topbar{display:none}
+.phone-app-grid .app-logo{width:25px;height:25px}.phone-top .phone-app-grid{grid-template-columns:repeat(5,1fr)}
+.shared-app .keep-editor{margin:8px;padding:8px!important}.shared-app .keep-editor .notes-tools{font-size:8px}.shared-app .keep-editor textarea{font-size:7px!important}
+.shared-app .google-replica>.utility-app{padding:8px}.shared-app .google-tasks .todo-heading strong{font-size:9px}.shared-app .google-tasks .todo-row label{font-size:7px}.shared-app .google-tasks .todo-row{padding:8px 0}
+.shared-app .google-calendar .utility-app{display:flex;gap:3px}.shared-app .google-calendar .calendar-heading strong{font-size:8px}.shared-app .google-calendar .calendar-grid button{font-size:6px!important;min-height:17px}.shared-app .google-calendar .calendar-grid .weekday{font-size:5px}.shared-app .google-calendar .calendar-day-label,.shared-app .google-calendar .empty-agenda,.shared-app .google-calendar .calendar-event{font-size:6px}
+.shared-app .drive-sidebar{display:none}.shared-app .drive-main{margin:0;padding:8px;background:#202124;border-radius:0}.shared-app .drive-search{font-size:7px;padding:6px 8px}.shared-app .drive-main h3{font-size:13px}.shared-app .drive-filters{gap:3px;font-size:5px}.shared-app .drive-filters span{padding:3px}.shared-app .drive-file-date,.shared-app .drive-file-owner{display:none}.shared-app .drive-file-open{font-size:7px!important;gap:5px}.shared-app .drive-file-open .app-logo{width:13px;height:13px}.shared-app .drive-section-title{font-size:7px}
+.shared-app .google-app{padding:8px}.shared-app .google-wordmark{font-size:28px;margin:28px 0 18px}.shared-app .google-search-form{padding:6px;gap:3px}.shared-app .google-search-form input{font-size:7px}.shared-app .google-shortcuts{flex-wrap:wrap;gap:12px 8px}.shared-app .google-shortcuts button{font-size:6px!important;min-width:28px}.shared-app .google-shortcuts .app-logo{width:18px;height:18px}.shared-app .google-links{gap:6px;font-size:6px}.shared-app .google-links button{font-size:6px!important}
+@media(max-width:700px){.mobile-screen{background:#202124;color:#e8eaed}.mobile-screen .sheet-title strong{font-size:13px}.mobile-screen .shared-header{background:#202124;min-height:34px}.mobile-screen .sheet-table td,.mobile-screen .sheet-table th{font-size:10px;padding:7px}.mobile-screen .gmail-app textarea{font:12px/1.8 Arial,sans-serif;background:#202124;color:#e8eaed}.mobile-screen .google-app-topbar{height:38px;min-height:38px}.mobile-screen .google-app-topbar strong{font-size:16px}.mobile-screen .google-replica>.utility-app{padding:12px}.mobile-screen .keep-editor{margin:10px;padding:12px!important}.mobile-screen .keep-editor textarea{font-size:12px!important}.mobile-screen .keep-editor .notes-tools{font-size:12px}.mobile-screen .google-tasks .todo-heading strong{font-size:14px}.mobile-screen .google-tasks .todo-row label{font-size:12px}.mobile-screen .google-calendar .calendar-heading strong{font-size:13px}.mobile-screen .google-calendar .calendar-grid button{font-size:10px!important;min-height:23px}.mobile-screen .google-calendar .calendar-grid .weekday{font-size:8px}.mobile-screen .google-calendar .calendar-day-label,.mobile-screen .google-calendar .empty-agenda,.mobile-screen .google-calendar .calendar-event{font-size:10px}.mobile-screen .google-wordmark{font-size:39px;margin:15px 0}.mobile-screen .google-search-form input{font-size:11px}.mobile-screen .google-shortcuts{gap:14px}.mobile-screen .google-shortcuts .app-logo{width:23px;height:23px}.mobile-screen .google-shortcuts button{font-size:9px!important}.mobile-screen .drive-search{font-size:12px}.mobile-screen .drive-main h3{font-size:20px}.mobile-screen .drive-file-open{font-size:11px!important}.mobile-screen .drive-section-title{font-size:11px}.mobile-screen .drive-filters{font-size:9px}.mobile-screen .drive-file{padding:12px 0}.mobile-screen .drive-folder-form input,.mobile-screen .drive-folder-form button{font-size:10px!important}}

@@ -1,0 +1,23 @@
+# PhoneBridger private account workspace
+
+**Canonical update, 11 October 2026:** [Live creator workspace](https://phonebridger.com/creator) and [account](https://phonebridger.com/account) are deployed. The requested existing account retains creator capability without changing login or preaccepting terms. The live program uses 25% commission / 5% code discount; the creator accepts the live edition in Settings. Email verification, password recovery, explicit support notification preferences and Stripe recipient onboarding/transfer reconciliation are implemented. The human approved platform-paid Stripe fees and platform responsibility for negative recipient balances. Recipient setup still requires the restricted key's Accounts v2 permission, and actual transfers require Stripe to clear the merchant's paused payouts plus recipient identity/bank verification. Never describe a Stripe balance transfer as confirmed bank arrival.
+
+Current acceptance: 115 core tests, 68 local workspace route/width combinations and 12 actual canonical security route/width combinations passed. Real messages reached the owned service mailbox; verification, browser password reset, single-use tokens, session revocation, support ticket/reply mail and QA account cleanup passed. Frozen installers and all 14 public content editions passed canonical verification. Core release/rollback and provider limitations are recorded in `deploy/phonebridger/ACCOUNT_COMPLETION_2026-10-11.md`. Historical October 7 evidence below retains its original date; its unavailable-feature descriptions are superseded by this update.
+
+100 core tests and 17 actual canonical routes at 1440/390/320 passed; live technical Checkout verified USD29 → USD27.55, remained unpaid and was expired with a real signed event. Full public/auth/CSRF/original-download verification passed. `review/live-creator-desktop.png` and `review/live-creator-mobile.png` show actual canonical UI through an own disposable QA account; its links/capability/account were deactivated/removed after the review. Core release record contains version/rollback evidence. Earlier nonzero sandbox screenshots remain labelled historical local fixtures.
+
+Canonical editable design source; the identical portable copy is companion `sites/phonebridger/account-workspace`. The dedicated core Worker/build serves the real account/commerce/creator APIs and published assets. Opening this HTML from disk is not a functional Worker preview. Product UI is English.
+
+Customer overview/downloads/licences/orders/detail/support/profile/password/sessions share the existing account. Creator application/overview/links/performance/masked referrals/earnings/payout history/media kit/content/settings require separate operator approval. Device setup remains a manual checklist; native activation/device state is not inferred from website activity.
+
+Design uses Manrope, charcoal layered cards, pink actions, semantic forms, SVG icons/chart, responsive records and a keyboard-operated mobile drawer. Imagery comes from already released brand/software/holder assets. Homepage and native app are outside scope.
+
+Review: [core PR 7](https://github.com/christianza1989/niche-public-core/pull/7), [portable UI PR 28](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/28). [Isolated test workspace](https://phonebridger-playground.phonebridger-app.workers.dev/account). A customer can apply for creator capability; test records do not unlock real software, ship goods or transfer money.
+
+Verification, 7 October 2026: 97 passing core tests; actual local registration/session/settings/support/application/approval/link flows; 17 routes at four widths (68 combinations), drawer keyboard and error/retry; hosted 1440/390/320 and cross-account denial. Hosted sandbox Checkout produced USD 27.55, but remains unpaid. Actual provider payment/refund need manual verification; signed integration/refund tests passed using canonical provider fixtures.
+
+`review/creator-desktop.png`, `review/creator-mobile.png`, `review/customer-desktop.png` are actual browser screenshots. The nonzero creator balance is an isolated local fixture, labelled sandbox. Real customer data is not copied into source.
+
+Only the isolated playground was deployed. Live creator finance/provider payouts are disabled. Proposed 25% commission / 5% audience discount / 30-day attribution and versioned holds/payout rules need human approval and separate live implementation. Detailed commands/evidence are in core `deploy/phonebridger/ACCOUNT_WORKSPACE.md`.
+
+The frozen Windows/Android mouse baseline, accepted bundles and pairing/configuration were untouched. Keep them outside all website changes.

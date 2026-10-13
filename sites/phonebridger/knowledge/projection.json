@@ -1,0 +1,91 @@
+{
+  "mode": "private prepared preview",
+  "eligible": [
+    {
+      "slug": "",
+      "id": "eb95d158-e80a-4bd2-9551-f7ca12e047ef",
+      "revisionHash": "f6e3b6f6b834326da8341f5032754a7361574506f6e0ceaa8e80b6d1d4cca601",
+      "media": 0
+    },
+    {
+      "slug": "shop",
+      "id": "311df081-e4bb-4ced-bbba-d456301d2319",
+      "revisionHash": "7fa9c0257647ff9ab65aaba4e711911ce11b0578e306a7bdc213966cdcdd04fb",
+      "media": 0
+    },
+    {
+      "slug": "contact",
+      "id": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+      "revisionHash": "08791c1c78a2830d86a26070d75d72b609a1852232d799cee180c1f0cdee8002",
+      "media": 0
+    },
+    {
+      "slug": "help",
+      "id": "e736b026-a06c-414c-bf6c-17d20d693ef7",
+      "revisionHash": "f19c0deab516a6176f1950a17010b49daa104bdd31dba3900d16dd2e670c0a8b",
+      "media": 0
+    },
+    {
+      "slug": "downloads",
+      "id": "58053a3b-c5de-40d2-bfec-13541e794e83",
+      "revisionHash": "b57121573294455403961340e2fecf74b58810f0ecce1641b8bd053e5c1a03a5",
+      "media": 0
+    },
+    {
+      "slug": "about",
+      "id": "2e64c8a0-56b3-400a-a6d1-0b310109928b",
+      "revisionHash": "3ac314648dfd7451e18977acf61cb228b171ed39948b1df303605d73703fe1ef",
+      "media": 0
+    },
+    {
+      "slug": "privacy",
+      "id": "b82b4bbf-cafa-4f4a-a47e-aed706fea3d4",
+      "revisionHash": "1c3a27a8f8d6897fe3779f1067ef246f7d336b6f3731739811500e31d2ac6166",
+      "media": 0
+    },
+    {
+      "slug": "terms",
+      "id": "ba1b41d1-e831-48ed-bf1c-7734865d4882",
+      "revisionHash": "2b427329aa138de420cf1c2450ed8767bba85c2516c81a2a580b52c3c0a06275",
+      "media": 0
+    },
+    {
+      "slug": "guides",
+      "id": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+      "revisionHash": "594c1382514d212cdb33ad88d0f137a29a368bc8c36327ae5fa77683ffdd9c08",
+      "media": 0
+    },
+    {
+      "slug": "guides/getting-started",
+      "id": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
+      "revisionHash": "cd5759db5e64400a8307d5f99d8736c98acabe1f20a0bdf3ef2a84cdcf574613",
+      "media": 5
+    },
+    {
+      "slug": "guides/usb-wifi",
+      "id": "21266ff0-7a65-4a82-8497-690ac3f549eb",
+      "revisionHash": "74a6e3e0924904acf0630dd9ee7ac49eeae43fa40895061872eb1d8ac7ac9a48",
+      "media": 5
+    },
+    {
+      "slug": "guides/android-permissions",
+      "id": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
+      "revisionHash": "ae43fbdc432157ce69ec5f6cb204bc9db95400ded6ba82b91d8912017a47ac97",
+      "media": 5
+    },
+    {
+      "slug": "guides/phone-position",
+      "id": "761a09b5-ace2-4371-bca6-29dceed59240",
+      "revisionHash": "b9589df29e161f16979f5db6b00ff8ea7b73e31dcb8f3d1510688976b43a3867",
+      "media": 5
+    },
+    {
+      "slug": "editorial",
+      "id": "14e8eb39-e0e3-4944-88df-dced524fb6a6",
+      "revisionHash": "b743757c5e6d5c3fffc59bd8e70023dbf05c1321fd1324bb4a883d62137bd89f",
+      "media": 0
+    }
+  ],
+  "publicAdmission": false,
+  "homepageHeadFrozen": true
+}

@@ -1,5 +1,7 @@
 # Pilnas homepage išdėstymas · 2026-10-13
 
+Šis dokumentas yra planavimo etapas. Aktualus [11 sekcijų įgyvendinimo kvitas](HOMEPAGE_IMPLEMENTATION_2026_10_13.md) papildytas savininko Instagram reikalavimu ir mažesnio hero mastelio screenshot.
+
 Struktūros pasiūlymas pagal tiesioginį savininko pavedimą. Išsaugoma pasirinkta Memory Casting tapatybė: Manrope 400/600, balta, šiltas neutralus fonas ir rožinis akcentas. Tamsi 3D scena yra vienos sekcijos fonas, ne nauja viso puslapio tapatybė. Tai agento rekomendacija ir vietinė išdėstymo studija, ne paskelbtas naujas leidinys ar užbaigtas homepage.
 
 Peržiūra: `node sites/memocasting/homepage-study/preview.mjs`, http://127.0.0.1:8841/. Studija naudoja jau turimas iliustracijas iš public companion; jos nėra tikrų klientų darbų įrodymas. 3D vietoje rodoma aiškiai įvardyta statiška iliustracija, kol nėra patikrintų GLB. Veikia proceso etapų, rinkinių sudėties ir progų pasirinkimai bei pastabų rodymas. Pirkimo nuorodos veda į esamą vietinę parduotuvę 8817; ši studija krepšelio nedubliuoja.

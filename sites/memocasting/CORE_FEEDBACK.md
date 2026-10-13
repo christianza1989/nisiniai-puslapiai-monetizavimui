@@ -1,5 +1,7 @@
 # Shared core feedback
 
+2026-10-13 complete homepage: upgrade-70071bf8-a382-4cee-a2c3-3d6328d5fa8c repairs optional motion initialization after removing sample testimonials, native catalogue admission/late cleanup, narrow-screen text overflow, hero CTA overlap and mobile video controls retained on desktop resize. Eleven LT sections now use eligible native destinations and the official Studio revision; 87 other pages are unchanged. 93 PUBLIC tests / TypeScript / build / 42 HTTP checks / Memo SEO smoke and actual browser evidence are recorded in [the implementation receipt](HOMEPAGE_IMPLEMENTATION_2026_10_13.md). Instagram Embed security rejection was respected through plain verified public links. No GLB viewer, production acceptance or main adoption is claimed.
+
 Own journal upgrade-4628ed51-64ef-4325-bc1d-f916225bac87 records the exact scoped fixture/discovery changes and actual verification. It does not claim parent commerce merge/adoption, complete website acceptance or production deployment.
 
 Public companion: Memo route-role helper, functional cart noindex, parameterized read-only audit proxy, correct site operator, minimal renderer dispatch. Other tenants keep existing projection behavior. Source schema and commerce implementation unchanged.

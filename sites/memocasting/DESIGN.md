@@ -1,8 +1,8 @@
 # Memocasting vizualinė sistema
 
-Aktualus2026-10-13LT homepage yra savininko pasirinktas kitos sesijos Memory Casting prototipas: Manrope400/600, baltas/šiltas paviršius, rožinis akcentas, statiškas hero ir antros sekcijos scroll-scrub filmas. [Tekstų vaidmenys, integracija, patikros ir ribos](HOMEPAGE_INTEGRATION.md). Žemiau esanti kontaktinio lapo sistema tebėra kitų puslapių laikinas dizainas, ne dabartinio homepage autoritetas.
+Aktualus 2026-10-13 LT homepage turi 11 įgyvendintų sekcijų. Išlaikoma savininko pasirinkta Memory Casting tapatybė: Manrope 400/600, balta / šiltas neutralus fonas / rožinis akcentas. Vėlesnis savininko screenshot nustato hero mastelį: antraštė iki58px, visas produktas matomas iš toliau, ramūs tekstiniai CTA ir daugiau erdvės prieš dock. H2 iki48px, closing iki64px, body16px / hero15px desktop ir16px mobile, kontrolės14–15px. Finite scroll filmas dabar trečioje sekcijoje, tamsi skulptūrų scena ketvirtoje; [įgyvendinimas ir patikros](HOMEPAGE_IMPLEMENTATION_2026_10_13.md). [Pradinio prototipo integravimo istorija](HOMEPAGE_INTEGRATION.md). Žemiau esanti kontaktinio lapo sistema tebėra kitų puslapių laikinas dizainas.
 
-Naujas savininko pavedimas: pirmiausia pilnai suplanuoti homepage. [10 sekcijų išdėstymas, trūkstamos medžiagos, Awwwards tyrimas ir 3D pritaikymas](HOMEPAGE_PLAN.md), [vietinės studijos šaltinis](homepage-study/index.html). Tai agento siūlomas tolesnis išdėstymas; esamas turinio leidinys ir veikiantis homepage šiuo planavimo etapu nepakeisti. Tamsi būsimos skulptūrų vitrinos sekcija papildo pasirinktą tapatybę.
+Naujas savininko pavedimas: pirmiausia pilnai suplanuoti homepage. [10 sekcijų išdėstymas, trūkstamos medžiagos, Awwwards tyrimas ir 3D pritaikymas](HOMEPAGE_PLAN.md), [vietinės studijos šaltinis](homepage-study/index.html). Planavimo kvitas išlaikomas kaip ankstesnio etapo istorija; jo 10 sekcijų studija nėra aktualus 11 sekcijų rendereris. Tamsi būsimos skulptūrų vitrinos sekcija papildo pasirinktą tapatybę.
 
 2026-10-12. Agentas renkasi autonomiškai pagal savininko perdavimą. Bendro tinklo maketai nėra šios parduotuvės tapatybė.
 

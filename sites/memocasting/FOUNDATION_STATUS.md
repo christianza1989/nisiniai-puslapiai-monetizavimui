@@ -1,4 +1,10 @@
-# Aktualus Memocasting pagrindas
+# Aktualus Memocasting homepage
+
+2026-10-13: [įgyvendintas interaktyvus LT homepage](HOMEPAGE_IMPLEMENTATION_2026_10_13.md): 11 sekcijų, savininko mažesnio hero mastelio kryptis, native katalogo kainos, pasirinkimai, filmas ir Instagram nuorodos. Oficialus leidinys b0ec6830-275b-4beb-bb4e-90e300ddaad2, SHA256 fb7848132351ee1077e473a0223164bdaa1d94736a12deb447d97701c314a8be. 88 puslapiai / 84 indexable / 24 gidai / 172 WebP ir 19 dizaino assetų; kiti 87 puslapiai, SDK ir backend nepakito. Tikri GLB / nuotraukos / atsiliepimai laukiami iš savininko. Žemiau esantys 3b/bff/e69 kvitai ir SITE_COMPLETION.json yra ankstesnių auditų istorija, ne naujo homepage pilnas A–Z priėmimas.
+
+---
+
+# Ankstesnių Memocasting etapų kvitai
 
 2026-10-13: [savininko pasirinktas LT homepage integruotas vietoje](HOMEPAGE_INTEGRATION.md). Oficialus7b65db24leidinys, SHA256 3b350683681814d4a1fb130f6f9bdb5761de89eb7fb97b2663de75ca92a7ef14,88puslapiai/84indexable/24gidai/172WebP ir19atskirųdizainoassetų. Canonical SDK0.12.1be32c223 irkitų87puslapių tekstai išsaugoti. Platesnis dizainas irproduction priėmimas tęsiami atskirai; žemiau esantys bff/e69 kvitai yra istorija.
 

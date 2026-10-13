@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "V1 publication has no operational per-site pause: approved scheduled pages become public at their date even when an owner requests a pause. Add an optional cutoff to the existing projection without altering approved dates or hashes.",
+  "category": "code",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/46",
+  "evidence": [
+    "sites/parasoplansetes/PUBLICATION_PAUSE_20261013.md",
+    "Owner request 2026-10-13: pause this website's content publication"
+  ],
+  "paths": [
+    "lib/niche-links.mjs",
+    "lib/niche-sites.ts",
+    "tests/niche-links.test.mjs",
+    "config/niche-network.json"
+  ],
+  "rollback": "Remove this site's publicationCutoffsBySite entry after reviewing the resume calendar. Revert optional cutoff helper only if no site still depends on it. Approved content bytes and dates remain unchanged.",
+  "id": "upgrade-a0ca2f0e-8ab0-40c2-b42a-9f62e120347d",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "a78a7bad5e21c98402bad2e77fd885fac265b533",
+  "createdAt": "2026-10-13T19:29:11.148Z"
+}

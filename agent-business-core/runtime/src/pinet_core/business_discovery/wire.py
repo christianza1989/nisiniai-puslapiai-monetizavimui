@@ -260,6 +260,7 @@ class AttemptView(Strict):
     job_id: UUID
     sequence: int = Field(ge=1, le=6)
     role: Literal["creator", "critic", "coordinator"]
+    state: Literal["reserved", "succeeded", "failed", "interrupted"]
     round_number: int = Field(ge=1, le=2)
     model: Literal["gpt-6-luna", "gpt-6.1-sol"]
     source_revision: Source

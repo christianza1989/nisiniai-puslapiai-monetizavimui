@@ -2237,6 +2237,16 @@
             "title": "Role",
             "type": "string"
           },
+          "state": {
+            "enum": [
+              "reserved",
+              "succeeded",
+              "failed",
+              "interrupted"
+            ],
+            "title": "State",
+            "type": "string"
+          },
           "round_number": {
             "maximum": 2,
             "minimum": 1,
@@ -2272,6 +2282,7 @@
           "job_id",
           "sequence",
           "role",
+          "state",
           "round_number",
           "model",
           "source_revision",

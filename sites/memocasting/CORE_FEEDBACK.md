@@ -12,3 +12,5 @@ Public companion: Memo route-role helper, functional cart noindex, parameterized
 ## 2026-10-13 homepage integracija
 
 Upgrade upgrade-6eb97665-26f6-494a-9e86-014e7329ff97. Actual foreign-host bandymas parodė dovanos123.lt200 per bendro ASSETS fallback, kai dizaino namespace gate buvo tik niche šakoje. Siauras gate perkeltas prieš gift/legacy dispatch; exact home revizija ir manifestas naudoja bendrą eligible projekciją. Range/pipeline gyvavimas ir320px nukirptas krepšelis patikrinti bei pataisyti. [Įrodymai ir likę apribojimai](HOMEPAGE_INTEGRATION.md). Branch/PR perdavimas nėra main adoption ar produkcijos leidimas.
+
+2026-10-13 Egeon continuation: upgrade-33bff8a0-5e74-4546-a076-3489c78396b1 repairs the reproduced630px-height storytelling disable, supplies reversible word progress and full-width film/timeline. The owner-authorized hero edit uses built-in imagegen and canonical responsive media, exact24-asset manifest. [Current receipt](HERO_STORYTELLING_2026_10_13.md) preserves the old failures and separates local scope from production/main adoption.

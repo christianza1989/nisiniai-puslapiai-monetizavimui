@@ -1,5 +1,8 @@
 # Memocasting vizualinė sistema
 
+2026-10-13 vėlesnis savininko Egeon pavedimas: [hero ir storytelling tęsinys](HERO_STORYTELLING_2026_10_13.md). Naujas atitolintas viso ekrano hero, žodžių scroll reveal, full-width filmas ir šešių etapų timeline; pašalintas desktop aukščio651px ribojimas. Leidinys75ebcfb3, SHA2567a3251b32d44501c888c566d5c8da4f664075968c7ba43ad766d39212aef7361;24 dizaino assetai. Toliau pateikti kvitai yra ankstesni etapai.
+
+
 Aktualus 2026-10-13 LT homepage turi 11 įgyvendintų sekcijų. Išlaikoma savininko pasirinkta Memory Casting tapatybė: Manrope 400/600, balta / šiltas neutralus fonas / rožinis akcentas. Vėlesnis savininko screenshot nustato hero mastelį: antraštė iki58px, visas produktas matomas iš toliau, ramūs tekstiniai CTA ir daugiau erdvės prieš dock. H2 iki48px, closing iki64px, body16px / hero15px desktop ir16px mobile, kontrolės14–15px. Finite scroll filmas dabar trečioje sekcijoje, tamsi skulptūrų scena ketvirtoje; [įgyvendinimas ir patikros](HOMEPAGE_IMPLEMENTATION_2026_10_13.md). [Pradinio prototipo integravimo istorija](HOMEPAGE_INTEGRATION.md). Žemiau esanti kontaktinio lapo sistema tebėra kitų puslapių laikinas dizainas.
 
 Naujas savininko pavedimas: pirmiausia pilnai suplanuoti homepage. [10 sekcijų išdėstymas, trūkstamos medžiagos, Awwwards tyrimas ir 3D pritaikymas](HOMEPAGE_PLAN.md), [vietinės studijos šaltinis](homepage-study/index.html). Planavimo kvitas išlaikomas kaip ankstesnio etapo istorija; jo 10 sekcijų studija nėra aktualus 11 sekcijų rendereris. Tamsi būsimos skulptūrų vitrinos sekcija papildo pasirinktą tapatybę.

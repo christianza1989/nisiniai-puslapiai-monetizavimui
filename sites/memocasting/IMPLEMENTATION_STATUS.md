@@ -1,3 +1,5 @@
+2026-10-13 vėlesnis savininko Egeon pavedimas: [hero ir storytelling tęsinys](HERO_STORYTELLING_2026_10_13.md). Naujas atitolintas viso ekrano hero, žodžių scroll reveal, full-width filmas ir šešių etapų timeline; pašalintas desktop aukščio651px ribojimas. Leidinys75ebcfb3, SHA2567a3251b32d44501c888c566d5c8da4f664075968c7ba43ad766d39212aef7361;24 dizaino assetai. Toliau pateikti kvitai yra ankstesni etapai.
+
 # Aktualus Memocasting homepage
 
 2026-10-13: [įgyvendintas interaktyvus LT homepage](HOMEPAGE_IMPLEMENTATION_2026_10_13.md): 11 sekcijų, savininko mažesnio hero mastelio kryptis, native katalogo kainos, pasirinkimai, filmas ir Instagram nuorodos. Oficialus leidinys b0ec6830-275b-4beb-bb4e-90e300ddaad2, SHA256 fb7848132351ee1077e473a0223164bdaa1d94736a12deb447d97701c314a8be. 88 puslapiai / 84 indexable / 24 gidai / 172 WebP ir 19 dizaino assetų; kiti 87 puslapiai, SDK ir backend nepakito. Tikri GLB / nuotraukos / atsiliepimai laukiami iš savininko. Žemiau esantys 3b/bff/e69 kvitai ir SITE_COMPLETION.json yra ankstesnių auditų istorija, ne naujo homepage pilnas A–Z priėmimas.

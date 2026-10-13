@@ -1,4 +1,5 @@
 import {pages as sourcePages} from './CONTENT.mjs';
+import {memoCanonicalSlug} from '../../../dovanos-memorycasting/lib/memocasting-routes.mjs';
 export const p=text=>({type:'paragraph',text});
 export const h=text=>({type:'heading',level:2,text});
 export const list=(...items)=>({type:'list',items});
@@ -10,7 +11,7 @@ const sourceLabels={
 };
 export function nativePage(language,sourceSlug,title,description,body,links=[]){
  if(!['pl','lv','et'].includes(language))throw Error('Unsupported native market language');
- const source=sourcePages.find(p=>p.slug===sourceSlug);if(!source)throw Error('Unknown source page family: '+sourceSlug);
+ const source=sourcePages.find(p=>p.slug===memoCanonicalSlug(sourceSlug));if(!source)throw Error('Unknown source page family: '+sourceSlug);
  const sources=(source.sources||[]).map(s=>{
   const key=s.url.includes('registrucentras.lt')?'registration':s.url.includes('finishing')?'finishing':s.url.includes('common-problems')?'problems':'drying';
   const text=sourceLabels[language]?.[key];if(!text)throw Error('Missing native source explanation');return {...s,label:text[0],reason:text[1]};

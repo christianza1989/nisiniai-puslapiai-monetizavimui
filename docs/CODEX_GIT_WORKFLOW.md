@@ -51,4 +51,13 @@ Global bootstrap padeda aptikti net seną project AGENTS, executable gate blokuo
 
 ## Patikros
 
+Komitintų pakeitimų aprėptis pagal konkretų upgrade įrašą:
+
+```powershell
+node scripts/core-upgrade-check.mjs --base <pradinio-commit-SHA> --entry <upgrade-id>
+node ../nisiniai_puslapiai_monetizavimui/scripts/core-upgrade-check.mjs --repo . --journal ../nisiniai_puslapiai_monetizavimui --base <public-pradinio-commit-SHA> --entry <tas-pats-upgrade-id>
+```
+
+Įrašo paths turi aprėpti konkrečios poros sekamus pakeitimus. Įrankis skaito abu Git HEAD, ne nekomitintą record ar working tree; savo pasirinkto įrašo bookkeeping leidžiamas automatiškai. Tai tik deklaruotos failų aprėpties patikra, ne semantinis priėmimas, freshness, sauga ar main adoption. Trūkstamas paths duoda FAIL_UNCOVERED ir exit1. Regresija `node --test scripts/core-upgrade-check.test.mjs` patvirtina, kad nekomitintas žurnalo pakeitimas negali paslėpti neaprėpto committed failo.
+
 `node --test scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs` imituoja du PC su bare Git ir dviem clone: naujas remote main, dirty darbo išlikimas, feature commit, failed fetch, netinkamas origin, global override, asmeninių instrukcijų išsaugojimas ir idempotence. CI `Agent workflow` vykdo šiuos testus ir kalibravimo Git input gate PR bei manual režimu. Tai nėra visų PC įdiegimo ar actual naujos Codex sesijos paklusnumo įrodymas. GitHub privalomų checks / branch protection nustatymai yra atskira serverinė enforcement pakopa.

@@ -1,6 +1,8 @@
 # Memocasting domeno ir senų adresų atkūrimas
 
-2026-10-12. Tai paleidimo sutartis ir adresų inventorius, ne veikiančios svetainės ar DNS pakeitimo patvirtinimas.
+2026-10-13 savininko pakeitimas: `/products/liejimo-rinkinys-porai` → `/rinkinys-porai`, `/products/seimos-rinkinys-1` → `/seimos-rinkinys`, `/collections/all` → `/ranku-liejimo-rinkiniai`. Visi trys seni LT adresai turi 301 į tą patį perkeltą turinį; nauji adresai turi 200, canonical ir sitemap. Parametrai išlaikomi, www šiems trims adresams nukreipia tiesiai į galutinį HTTPS adresą. Kitų kalbų adresai išlaikomi, jų LT hreflang atnaujinamas. [Aktualus kvitas](URL_MIGRATION_2026_10_13.md). Viešas deployment / DNS šiuo pakeitimu neatliekamas.
+
+2026-10-12 istorinis inventorius ir pradinės rekomendacijos žemiau. Ankstesnį poros URL išsaugojimo sprendimą pakeitė aukščiau pateiktas aiškus savininko nurodymas; GSC istorinių skaičių tai nekeičia.
 
 Savininko Google paieškos ekrane pagal „ranku liejimo rinkinys“ memocasting.lt matomas antras įprastas rezultatas. Ekranas pažymėtas kaip suasmenintas; tai nėra visos Lietuvos pozicijos matavimas. 2026-10-12 šios sesijos HTTPS užklausa į pagrindinį domeną grąžino HTTP 402. Nei dabartinis indeksavimas, nei domeno senumas negarantuoja būsimo reitingo.
 
@@ -13,9 +15,9 @@ Savininko pateiktame Search Console išorinių nuorodų ekrane matyti šie šeš
 | /pages/instrukcija | 1 / 1 | 200, patikrinta instrukcija, išsaugotas adresas; santykiai ir sauga tik pagal realias medžiagas |
 | /products/alginato-papildymas-650g-dvieju-ranku-rinkiniui | 1 / 1 | Išsaugotas atskiras adresas; ankstesnis pavadinimas nėra patvirtinimas, kad dabartinis papildymas yra 650 g ar parduodamas. Turinio ir prekybos būsena laukia savininko bei tiekėjo duomenų |
 | /products/kudikio-pedutes | 1 / 1 | Išsaugotas atskiras adresas; ankstesnė prekė ir tinkamumas kūdikiams dar nepatvirtinti. Jokio pirkimo ar saugos pažado iš vien seno slug |
-| /products/liejimo-rinkinys-porai | 1 / 1 | 200 poros rinkinio puslapis, €32 pagal savininką, išsaugotas adresas |
+| /products/liejimo-rinkinys-porai | 1 / 1 | 301 į /rinkinys-porai; tas pats poros puslapis, €32 pagal savininką |
 
-LT poros prekės ir instrukcijos canonical adresai turi likti aukščiau nurodyti seni adresai. [SEO/GEO plane](SEO_GEO_PLANAS.md) jų ankstesni /lt/ adresai yra planavimo pasiūlymai: nekurti dviejų indeksuojamų to paties turinio kopijų. Lokalizuotų PL/LV/EE puslapių hreflang grįžta į šiuos LT canonical; šeimos prekė ir nauji gidai gali turėti naujus planuotus adresus. Nedaryti nereikalingo seno poros URL perkėlimo vien dėl vienodesnio prefikso.
+Instrukcijos canonical adresas lieka /pages/instrukcija. Poros, šeimos ir katalogo LT canonical pakeisti pagal 2026-10-13 nurodymą; lokalizuotų PL / LV / ET puslapių LT hreflang grįžta į naujus canonical. [SEO/GEO plane](SEO_GEO_PLANAS.md) ankstesni /lt/ adresai yra istoriniai planavimo pasiūlymai; nekurti dviejų indeksuojamų to paties turinio kopijų.
 
 Papildymo ir kūdikio puslapius prieš viešinimą reikia atkurti iš Shopify eksporto ar kitų savininko šaltinių. Jei prekė nutraukta, prasmingas 200 informacinis puslapis galimas tik turint tikrą ankstesnį aprašymą ir aiškią neparduodamos prekės būseną. Jei turinio atkurti nepavyksta ir nėra lygiaverčio pakaitalo, sprendimas gali būti 404/410; nukreipimas į nesusijusią poros prekę būtų klaidinantis. Visos šešios eilutės turi būti išspręstos prieš paleidimo priėmimą; dabar jos pažymėtos, ne išgalvotos.
 

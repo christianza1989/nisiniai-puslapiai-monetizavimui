@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Valid failed discovery candidates remain immutable and non-buildable; actual PG tests cover review/creator/exhaustion failures and session/archive/deadline/lease/source/instruction fences plus invalid first output. Original actual model FAIL and fixture/Ruff/path failures retained. Owner-decision instruction is a candidate behavior fix; a new real model/UI result remains unverified. No new evaluator/corpus, automatic paid retry, migration, history reset or foundation READY.",
+  "checks": [
+    {
+      "command": "isolated PostgreSQL pytest tests/test_business_discovery_recovery.py tests/test_business_discovery.py:12PASS57.37s; added instruction/invalid-first selection2PASS7.16s",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DISCOVERY_RESPONSE_RECOVERY_QA_2026-10-13.md"
+    },
+    {
+      "command": "ruff check src/pinet_core/business_discovery/worker.py tests/test_business_discovery_recovery.py; git diff --check",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_DISCOVERY_RESPONSE_RECOVERY_QA_2026-10-13.md"
+    }
+  ],
+  "eventId": "d691700d-b3f0-4229-92f1-0ed5df6fde89",
+  "sequence": 2,
+  "at": "2026-10-13T04:52:01.667Z"
+}

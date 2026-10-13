@@ -1,5 +1,11 @@
 # StepOver peržiūra Cloudflare be domeno
 
+## Domeno prijungimas 2026-10-13
+
+Savininkas užsakė `parasoplansetes.lt` ir `www` prijungimą. Abi Custom Domain sąsajos ir Hostinger vardų serveriai jau nustatyti; viešo DNS / TLS priėmimas laukia sklaidos. Tikslūs rezultatai ir tęsinys: [DOMAIN_CONNECTION_20261013](../DOMAIN_CONNECTION_20261013.md). Žemiau pateikti ankstesni be-domeno kvitai yra istorija.
+
+`prepare.mjs` turi atskirus `PARASOPLANSETES_CUSTOM_DOMAIN_ENABLED=1` ir `PARASOPLANSETES_SITE_INDEXING_ENABLED=1` jungiklius. Indeksavimas reikalauja įjungto domeno, tačiau nėra įjungiamas vien jį prijungus. Aktualaus prijungimo metu indeksavimas yra `0`, peržiūra visada noindex. `check-domain.mjs <report.json>` yra read-only tikro domeno / HTTPS / 308 bandymas šiai noindex būsenai; `check.mjs` tikrina visą paketo publikavimą ir mediją.
+
 Savininkas 2026-10-09 aiškiai pavedė įkelti svetainę kol kas be domeno. Tai viešas laikinas `workers.dev` adresas su `noindex`, ne galutinis parasoplansetes.lt / SEO paleidimo priėmimas. Domeno / WordPress / 301 / Search Console ir SMTP priėmimo būsenos nesikeičia.
 
 ## Aktualus rezultatas: įkelta 2026-10-09

@@ -4,6 +4,57 @@ import { createPreviewHandler } from './adapter.mjs';
 const host = 'parasoplansetes-preview.example.workers.dev';
 const env = { PREVIEW_HOST: host };
 
+test('Canonical and www hosts require the explicit domain switch, even with indexing enabled', async () => {
+  const handler = createPreviewHandler({ fetch: () => new Response('native') });
+  for (const hostname of ['parasoplansetes.lt', 'www.parasoplansetes.lt', 'other.example', 'signaturepads.lt', 'parasoplansetes.lt:444']) {
+    assert.equal((await handler.fetch(new Request(`https://${hostname}/`), { ...env, SITE_INDEXING_ENABLED: '1' })).status, 404);
+  }
+  const response = await handler.fetch(new Request('https://parasoplansetes.lt/'), { ...env, CUSTOM_DOMAIN_ENABLED: '1' });
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('x-robots-tag'), 'noindex, nofollow');
+});
+
+test('Custom-domain aliases preserve path/query in a single permanent HTTPS redirect', async () => {
+  const handler = createPreviewHandler({ fetch: () => { throw new Error('Alias must not render duplicate content'); } });
+  for (const url of ['https://www.parasoplansetes.lt/gidai?a=1', 'http://www.parasoplansetes.lt/gidai?a=1', 'http://parasoplansetes.lt/gidai?a=1']) {
+    const response = await handler.fetch(new Request(url), { ...env, CUSTOM_DOMAIN_ENABLED: '1' });
+    assert.equal(response.status, 308);
+    assert.equal(response.headers.get('location'), 'https://parasoplansetes.lt/gidai?a=1');
+  }
+});
+
+test('Canonical POST retains body, rejects foreign origins and strips spoofed routing headers', async () => {
+  let calls = 0;
+  const handler = createPreviewHandler({ async fetch(request) {
+    calls++;
+    assert.equal(request.url, 'https://parasoplansetes.lt/uzklausa');
+    assert.equal(request.headers.get('origin'), 'https://parasoplansetes.lt');
+    assert.equal(request.headers.get('x-forwarded-host'), null);
+    assert.equal(await request.text(), 'name=QA');
+    return new Response('saved');
+  } });
+  const domainEnv = { ...env, CUSTOM_DOMAIN_ENABLED: '1' };
+  const good = await handler.fetch(new Request('https://parasoplansetes.lt/uzklausa', { method: 'POST', body: 'name=QA', headers: { origin: 'https://parasoplansetes.lt', 'x-forwarded-host': 'other.example' } }), domainEnv);
+  assert.equal(good.status, 200);
+  const bad = await handler.fetch(new Request('https://parasoplansetes.lt/uzklausa', { method: 'POST', body: 'name=QA', headers: { origin: `https://${host}` } }), domainEnv);
+  assert.equal(bad.status, 403);
+  assert.equal(calls, 1);
+});
+
+test('Indexing switch applies only to the canonical domain; native publication/robots and preview isolation remain', async () => {
+  const handler = createPreviewHandler({ fetch(request) {
+    return new Response(new URL(request.url).pathname === '/robots.txt' ? 'User-agent: *\nAllow: /\n' : 'native', { headers: { 'content-type': 'text/plain' } });
+  } });
+  const domainEnv = { ...env, CUSTOM_DOMAIN_ENABLED: '1', SITE_INDEXING_ENABLED: '1' };
+  const robots = await handler.fetch(new Request('https://parasoplansetes.lt/robots.txt'), domainEnv);
+  assert.match(await robots.text(), /Allow: \/\n/);
+  assert.equal(robots.headers.get('x-robots-tag'), null);
+  const preview = await handler.fetch(new Request(`https://${host}/robots.txt`), domainEnv);
+  assert.match(await preview.text(), /Disallow: \/\n/);
+  assert.equal(preview.headers.get('x-robots-tag'), 'noindex, nofollow');
+  assert.equal((await handler.fetch(new Request('https://other.example/'), domainEnv)).status, 404);
+});
+
 test('Only the explicitly configured preview host is admitted; robots disallows indexing', async () => {
   let calls = 0;
   const handler = createPreviewHandler({ fetch: () => { calls++; return new Response('app'); } });

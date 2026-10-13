@@ -9,12 +9,17 @@ function privateResponse(body, status = 200, extra = {}) {
 }
 
 // A site-specific deployment boundary; the shared renderer keeps its normal
-// publication, host, media and form checks. Only this exact preview is admitted.
+// publication, host, media and form checks. Custom hosts require an explicit
+// deployment switch; the preview remains excluded from search independently.
 export function createPreviewHandler(application) {
   return {
     async fetch(request, env, ctx) {
       const incoming = new URL(request.url);
-      if (!env.PREVIEW_HOST || incoming.host !== env.PREVIEW_HOST) {
+      const isPreview = Boolean(env.PREVIEW_HOST) && incoming.host === env.PREVIEW_HOST;
+      const isCanonical = env.CUSTOM_DOMAIN_ENABLED === '1' && incoming.host === canonicalHost;
+      const isAlias = env.CUSTOM_DOMAIN_ENABLED === '1' && incoming.host === `www.${canonicalHost}`;
+      const noindex = isPreview || env.SITE_INDEXING_ENABLED !== '1';
+      if (!isPreview && !isCanonical && !isAlias) {
         return privateResponse('Not found', 404);
       }
       if (!['GET', 'HEAD', 'OPTIONS'].includes(request.method)) {
@@ -24,7 +29,13 @@ export function createPreviewHandler(application) {
           if (origin ? origin !== incoming.origin : !referer || new URL(referer).origin !== incoming.origin) return privateResponse('Forbidden', 403);
         } catch { return privateResponse('Forbidden', 403); }
       }
-      if (incoming.pathname === '/robots.txt') {
+      if (isAlias || isCanonical && incoming.protocol !== 'https:') {
+        const target = new URL(incoming);
+        target.protocol = 'https:';
+        target.host = canonicalHost;
+        return privateResponse(null, 308, { location: target.href });
+      }
+      if (noindex && incoming.pathname === '/robots.txt') {
         return privateResponse('User-agent: *\nDisallow: /\n', 200, { 'content-type': 'text/plain; charset=utf-8' });
       }
       const destination = new URL(incoming);
@@ -60,7 +71,7 @@ export function createPreviewHandler(application) {
         ? await env.ASSETS.fetch(request)
         : await application.fetch(forwarded, env, ctx);
       const responseHeaders = new Headers(response.headers);
-      responseHeaders.set('x-robots-tag', 'noindex, nofollow');
+      if (noindex) responseHeaders.set('x-robots-tag', 'noindex, nofollow');
       responseHeaders.set('cache-control', 'private, no-store');
       const location = responseHeaders.get('location');
       if (location) {

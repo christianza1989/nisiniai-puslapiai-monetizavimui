@@ -1,5 +1,8 @@
 # Memocasting vizualinė sistema
 
+Vėlesnis 2026-10-13 įgyvendinimas: [vidinių puslapių dizainas ir pardavimo kelias](STOREFRONT_2026_10_13.md). Bendras shell dabar baltas / Manrope / rožinis, su kompaktišku native meniu; katalogas ir abu produktai visose keturiose esamose kalbose turi naujus šablonus. Produktai naudoja patvirtintas nuotraukas, native kainas bei pirkimą, galerijos dialogą ir mobilų pirkimo veiksmą. Žemiau esantys planavimo bei laikino serif dizaino aprašai yra ankstesni etapai. Skaitomo turinio, galutinių produkcijos sąlygų ir realių 3D / klientų įrodymų darbai lieka pagal bendrą planą.
+
+
 Aktualus kitų puslapių tęsinys 2026-10-13: [87 likusių puslapių išdėstymo ir įgyvendinimo planas](OTHER_PAGES_PLAN_2026_10_13.md). Vidinius produktų, katalogo, gidų ir informacinių puslapių šablonus numatyta suvienodinti su savininko pasirinkta homepage tapatybe. Tai planas; dabartinio laikino vidinių puslapių serif/kreminio dizaino nelaikyti baigtu perdarymu. [Dabartinis auditas](SEO_AUDIT_2026_10_13.md) atskiria realizuotą homepage nuo būsimų šablonų ir produkcijos duomenų.
 
 

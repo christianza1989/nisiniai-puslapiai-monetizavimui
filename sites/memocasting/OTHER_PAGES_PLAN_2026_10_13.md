@@ -1,5 +1,7 @@
 # Kitų puslapių planas · 2026-10-13
 
+Vėlesnis šios dienos etapas įgyvendintas: [bendras vidinių puslapių dizainas, katalogas ir abu produktai](STOREFRONT_2026_10_13.md). 12 pardavimo URL keturiomis kalbomis pažymėti kaip vietiškai realizuoti; kitų puslapių turinio ir individualių šablonų darbai lieka pagal šį planą.
+
 Visi 88 esami URL inventorizuoti: 87 kitų puslapių planai ir jau realizuoto LT homepage audito bazė. 22 paskirtys keturiomis kalbomis: LT, PL, LV ir ET. Tai įgyvendinimo planas, o ne naujas publikuotas turinys. Tikslūs ID, esami ir siūlomi metaduomenys, sekos, nuorodos ir faktų ribos pateikti [PAGE_BRIEFS_2026_10_13.json](PAGE_BRIEFS_2026_10_13.json).
 
 ## Bendra vizualinė sistema
@@ -77,7 +79,7 @@ Kiekvienas puslapis turi vieną pagrindinį skaitytojo darbą. Žemiau pateiktos
 
 **Vidinės nuorodos:** `/ranku-liejimo-rinkiniai`, `/pages/instrukcija`, `/pristatymas`, `/grazinimas`, `/pagalba`.
 
-**Duomenų ribos:** 48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras. Vaikų tinkamumą, talpą ir poza apibrėžti tik pagal tikrus dokumentus.
+**Duomenų ribos:** 48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras. Vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus.
 
 **Išdėstymas ir veikimas:** Desktop media + purchase columns; mobile media/title/price/actions before long detail. Gallery zoom + keyboard/focus; Native variants/addons/state errors; Accessible accordions; Optional on-demand 3D.
 

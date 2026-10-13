@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Owned local API restored from clean2ba2fbad40ba0b334b32be329fb693224e90b0be, loopback18870/listener7196/environmentlocal. Actual fresh_final password login/source/held start503/unchanged empty history/logout PASS; all13execution flagsFALSE/provider0. Original2orphan rows preserved. This is this local adapter's actual adoption only; main/other-PC/public/fullfoundation/production-UI acceptance remain separate.",
+  "checks": [
+    {
+      "command": "Actual TCP canonical password login, envelope source, valid held discovery start and before/after list/logout against127.0.0.1:18870",
+      "result": "PASS",
+      "evidence": "Sanitized receiptSHA25649dbb2376f5e128f2cb7b830d35eb217fef30ec08aba8addc3c6639e67f90696; docs/handoffs/verslomatika-workspace-core-helper-20261013.md"
+    },
+    {
+      "command": "Canonical synthetic11turn history fixture with provider0 callbacks and10job paging",
+      "result": "PASS",
+      "evidence": "11jobs/2744char assistant;20newest+2older messages, exact has_more; receiptSHA256571a820df72927b8fa13f4edbd34ad00125ca5f15bc2e270e213bd4416d6333d"
+    }
+  ],
+  "eventId": "3bb22a91-81cd-47f6-ba9f-79d206aca03b",
+  "sequence": 3,
+  "at": "2026-10-13T06:29:00.069Z"
+}

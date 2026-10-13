@@ -8,6 +8,7 @@ from ..creation.routes import CreationRoute
 from ..customer.service import customer_guard
 from . import service
 from .models import Discovery, DiscoveryAttempt, DiscoveryJob, Report
+from .projection import attempt_state
 from .wire import Approve, Archive, Message, Start
 
 router = APIRouter(prefix="/customer/v2/discoveries", route_class=CreationRoute,
@@ -108,12 +109,14 @@ async def execution(discovery_id: str, request: Request,
     attempts = list(await tx.scalars(select(DiscoveryAttempt).where(
         DiscoveryAttempt.discovery_id == row.id,
         DiscoveryAttempt.job_id.in_([j.id for j in jobs])).order_by(DiscoveryAttempt.created_at)))
+    jobs_by_id = {job.id: job for job in jobs}
     return envelope(request, {"jobs": [{"job_id": j.id, "sequence": j.sequence,
         "status": j.status, "base_revision": j.base_revision, "failure_code": j.failure_code,
         "source_revision": j.source_revision, "instruction_hash": j.instruction_hash,
         "finished_at": j.finished_at.isoformat() if j.finished_at else None} for j in jobs],
         "attempts": [{"attempt_id": a.id, "job_id": a.job_id, "sequence": a.sequence,
-                     "role": a.role, "round_number": a.round_number, "model": a.model,
+                     "role": a.role, "state": attempt_state(jobs_by_id.get(a.job_id), a),
+                     "round_number": a.round_number, "model": a.model,
                      "source_revision": a.source_revision, "instruction_hash": a.instruction_hash,
                      "created_at": a.created_at.isoformat()} for a in attempts],
         "source_reads": [{key: page.get(key) for key in ("url", "status", "http_status", "observed_at", "title",

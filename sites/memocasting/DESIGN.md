@@ -46,3 +46,6 @@ Dizaino krypties pasirinkimas savininko atidėtas. Šis etapas tikrina 88 puslap
 - [ ] Dabartinis 320/390/768/1440 reflow, visos keturios kalbos, mygtukai/checkbox/formos, gids/autorius/datos/šaltiniai/footer. Atskirai tikra 200% zoom ir text-spacing patikra; bandymas nepaverčiamas PASS, jei mechanizmas neveikia.
 
 2026-10-13 aktuali homepage iteracija: [kompaktiško filmo ir vaizdų rinkinio priėmimas](ASSET_KIT_2026_10_13.md), [3D tyrimas](3D_MODEL_RESEARCH_2026_10_13.md). Official release60c80be9, exact63 design assets;98tests/TS/build/86HTTP/88pageSEO ir actual desktop/mobile PASS. Upgrade-6ea0a7d2-e1c7-4bee-8c3e-434858238d70. Ankstesni priėmimai lieka istorija; main/production adoption neteigiama.
+
+2026-10-13 right-film refinement plan: preserve Manrope/type sizes/copy and compact six-stage rail; move desktop film to right ~62% with full-frame contain, stronger edge feather and lighter grayscale. Text left30% on white, no overlap. Verify desktop1280x630 all stage captions, tablet and mobile manual view; retain verified wheel smoothing. PNG/video source and official content unchanged.
+

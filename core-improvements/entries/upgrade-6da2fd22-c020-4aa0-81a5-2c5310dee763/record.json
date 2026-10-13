@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Refused discovery start persisted a queued parent without a job under current route dependency cleanup, corrupting the ordinary workspace list despite runner hold.",
+  "category": "code",
+  "evidence": [
+    "docs/handoffs/verslomatika-workspace-core-helper-20261013.md",
+    "Actual loopback18870/source786 refusal503 left two original parent-only rows; immutable snapshot2/SHA256e1faf39c0a7d0148e25000b40d3df105f1cac584f27aeebc0465b47c765e73ed"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of nested atomic start and preflight; preserve original failed rows, successful immutable reports, jobs, attempts and accounting.",
+  "id": "upgrade-6da2fd22-c020-4aa0-81a5-2c5310dee763",
+  "branch": "codex/verslomatika-workspace-core-helper-20261013",
+  "baseSha": "6fccc84c0394c351224ad9e34622d66fe37fcd64",
+  "createdAt": "2026-10-13T06:13:29.563Z"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Original refused-start persistence regression4FAIL1PASS22.26s preserved (0d64d5be); earlier async-count harness5FAIL90d9501d separately retained. Atomic start preflight/savepoint repair preserves successful replay while held; no shared route/db, worker, schema or flags changed. Both original local orphan rows2 byte-exact unchanged after regression, SHAe1faf39c.",
+  "checks": [
+    {
+      "command": "uv run python -m pytest -q tests/test_workspace_admission.py tests/test_business_discovery.py tests/test_business_discovery_recovery.py artifacts/workspace-helper/pg_projection_acceptance.py",
+      "result": "PASS",
+      "evidence": "20PASS109.85s, logSHA25617ae3a4415be1efabcde468c0fc4ea06939f23ad30f4ccf3ab6ebdf88053b71c; docs/handoffs/verslomatika-workspace-core-helper-20261013.md"
+    },
+    {
+      "command": "uv run python -m pytest -q offline_tests/test_workspace_projection.py offline_tests/test_business_discovery.py",
+      "result": "PASS",
+      "evidence": "54PASS1.35s; strict generated schema unchanged."
+    },
+    {
+      "command": "uv run python -m ruff check src/pinet_core/business_discovery/service.py tests/test_workspace_admission.py",
+      "result": "PASS",
+      "evidence": "All checks passed after import formatting."
+    },
+    {
+      "command": "Read-only original-orphan SQL snapshot comparison",
+      "result": "PASS",
+      "evidence": "Both original2rows unchanged, SHA256e1faf39c0a7d0148e25000b40d3df105f1cac584f27aeebc0465b47c765e73ed; no deletion/normalization."
+    }
+  ],
+  "eventId": "b7bf2534-abea-4ad0-bc68-7dd607018d69",
+  "sequence": 2,
+  "at": "2026-10-13T06:18:36.864Z"
+}

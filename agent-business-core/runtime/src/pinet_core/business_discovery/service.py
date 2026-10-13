@@ -143,14 +143,22 @@ async def start(tx, session, value):
         return old
     if not await schema_ready(tx):
         raise ControlError(503, "discovery_unavailable")
-    row = Discovery(id=new_id(), title="Naujo verslo idėja", initial_message=value.message,
-        status="queued", current_revision=0, job_sequence=0, user_id=session.user_id,
-        organization_id=portfolio.organization_id, portfolio_id=portfolio.id,
-        environment_id=settings().environment, source_revision=settings().control_source_revision,
-        idempotency_key=str(value.idempotency_key), fingerprint=fingerprint)
-    tx.add(row)
-    await tx.flush()
-    await enqueue(tx, row, session, value.message, str(value.idempotency_key), fingerprint)
+    cfg = settings()
+    if not cfg.business_discovery_runner_enabled or not cfg.creation_runner_enabled:
+        raise ControlError(503, "discovery_runner_unavailable")
+    # SafeRoute returns a caught refusal before current dependency cleanup exits.
+    # Own the atomic parent+job write here, so every later admission failure rolls
+    # back even when the enclosing request transaction closes with a response.
+    # Successful exact replay above remains readable while execution is held.
+    async with tx.begin_nested():
+        row = Discovery(id=new_id(), title="Naujo verslo idėja", initial_message=value.message,
+            status="queued", current_revision=0, job_sequence=0, user_id=session.user_id,
+            organization_id=portfolio.organization_id, portfolio_id=portfolio.id,
+            environment_id=cfg.environment, source_revision=cfg.control_source_revision,
+            idempotency_key=str(value.idempotency_key), fingerprint=fingerprint)
+        tx.add(row)
+        await tx.flush()
+        await enqueue(tx, row, session, value.message, str(value.idempotency_key), fingerprint)
     return row
 
 

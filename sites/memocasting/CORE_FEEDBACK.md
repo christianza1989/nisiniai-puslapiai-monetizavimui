@@ -18,3 +18,5 @@ Upgrade upgrade-6eb97665-26f6-494a-9e86-014e7329ff97. Actual foreign-host bandym
 2026-10-13 aktuali homepage iteracija: [kompaktiško filmo ir vaizdų rinkinio priėmimas](ASSET_KIT_2026_10_13.md), [3D tyrimas](3D_MODEL_RESEARCH_2026_10_13.md). Official release60c80be9, exact63 design assets;98tests/TS/build/86HTTP/88pageSEO ir actual desktop/mobile PASS. Upgrade-6ea0a7d2-e1c7-4bee-8c3e-434858238d70. Ankstesni priėmimai lieka istorija; main/production adoption neteigiama.
 
 2026-10-13 hero layer limitation: old flattened photograph could not independently scale objects. Site-specific markup/CSS and canonical responsive media repair, not a new shared optimizer. upgrade-3da50b37-bdcc-4991-a583-6dd453c7789e; acceptance HERO_LAYERS_2026_10_13.md.
+
+2026-10-14 homepage footer: mixed navigation/plain automation domain/unknown payment methods repaired in site-only server/client components and conservative native capability helper. No sharedSDK/provider change. Upgrade-256fa1d5-8aa6-4d68-ab2d-d3357d85d26c; HOMEPAGE_FOLLOWUP_2026_10_14.md records explicit Instagram security boundary and uncompletedmedia.

@@ -1,3 +1,5 @@
+Aktualus homepage tęsinys2026-10-14: [footer, payment status, logo, hero CTA ir process fade](HOMEPAGE_FOLLOWUP_2026_10_14.md). Lokaliai patikrinta5iš6; Instagram originalmedia laukia, saugos atmetimas išlaikytas.
+
 Aktuali hero iteracija2026-10-13: [atskiri daiktų ir švaraus fono sluoksniai](HERO_LAYERS_2026_10_13.md). Pilnai įgyvendinta ir lokaliai patikrinta; galerijos naujas konceptas tik pasiūlymas.
 
 # Memocasting vizualinė sistema

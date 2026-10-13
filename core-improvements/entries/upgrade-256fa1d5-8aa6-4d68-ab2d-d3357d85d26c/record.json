@@ -1,0 +1,28 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Owner authorizes peer-transferred homepage refinements: grouped footer with a normal automation link, truthful payment capability status, larger hero logo, removal of secondary process CTA and less process edge fade. Instagram embedded previews are blocked by a prior explicit browser security rejection; preserve honest source links until owner originals are available.",
+  "evidence": [
+    "Direct human2026-10-13: continue what the other agent wrote",
+    "Existing footer is one mixed link list and automation domain is plain text",
+    "Shop peer confirms paymentConnected/productionReady/publishOffers false; no approved method list",
+    "Earlier Browser Use security rejection expressly forbids same embed outcome via alternate paths; original Instagram URLs retained"
+  ],
+  "paths": [
+    "sites/memocasting",
+    "WORKSTREAMS.md",
+    "components/niche/memocasting-site.tsx",
+    "components/niche/memocasting-homepage.css",
+    "components/niche/memocasting-homepage-footer.tsx",
+    "components/niche/memocasting-payment-status.tsx",
+    "lib/memocasting-payment-status.mjs",
+    "lib/memocasting-homepage-markup.mjs",
+    "tests/memocasting-payment-status.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Revert only this homepage follow-up; previous alpha hero, approved content/commerce runtime and curated Instagram URLs are preserved.",
+  "id": "upgrade-256fa1d5-8aa6-4d68-ab2d-d3357d85d26c",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "b47b811feb03fdb8afb131c52bb746e4db68225f",
+  "createdAt": "2026-10-13T21:00:29.993Z"
+}

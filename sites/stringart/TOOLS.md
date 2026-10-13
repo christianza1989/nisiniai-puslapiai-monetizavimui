@@ -1,80 +1,64 @@
-# Stringart - įrankių ir integracijų planas
+# MemoryString tools and integration plan
 
-2026-10-13 | BUSINESS 1 versija | siteId stringart, domenas nenustatytas | core SHA 7af6b9641012a30c5f95eac38a66daeff8f8cb39 | dabartinė apimtis: tyrimas / planas, ne runtime.
+13 October 2026 | siteId stringart | brand/domain pending | core base 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Current authorized implementation is the independent local creator/Android package. Websites and the ten-partner business platform are paused.
 
-Mokamas rezultatas: pristatytas individualus paveikslas; priimta įranga; veikiančios vietinės studijos paketas. Tiekimo, aparatų API, mokėjimų ir kitų gamybos integracijų priėmimo įrodymų nėra.
+Paid customer outcomes: a delivered portrait, an accepted machine, a useful DIY kit and a defined local studio/support package. Software previews do not prove manufacturing, supply, support or payments. The dated English plan contains the commercial model and remaining due diligence.
 
-| Sritis | Dabar | Vėliau / įjungimo sąlyga |
+| Capability | Current evidence | Activation boundary |
 | --- | --- | --- |
-| Poreikis ir pirkėjai | Pirminiai vieši produkto / rinkos puslapiai | Lokalizuoti SERP / apimčių duomenys tik su atskiru biudžetu ir geo patikra |
-| Tiekėjas / produkto faktai | Savininko PDF, gamintojo pirminiai puslapiai ir prieštaravimų registras | Gamintojo patvirtinta specifikacija, atitiktis, bandymo priėmimas |
-| Pokalbis / klientas | Peržiūrimas gamintojo laiško juodraštis | Esamo mail / case core adapteris po autorizuoto prijungimo; ne atskiras CRM |
-| Vykdymas | Serverinio užsakymo / gamybos būsenų specifikacija | Įrangos failų adapteris ir apmokėjimo / siuntos patikra |
-| Matavimas ir medija | Vieneto ekonomikos prielaidos; tikrų demonstracijų planas | Realios maržos, grąžinimai, partnerio / influencerio priskyrimas |
+| Product/market evidence | Private supplier files and dated primary public offers | Signed SKU specification, counterpart and physical test |
+| Creator | Pinned MIT solver, own English UI, local full-project storage and test APK | Actual Android device, accepted frame/thread and usability |
+| Supplier cooperation | Unsent English proposal/checklist | Verified recipient and explicit sending instruction |
+| Partner operations | Order/stock/role specification | Resumed platform scope and one persistent server path |
+| Payments/shipping/machine | Planned seams only | Documented adapter, authorization and actual acceptance |
+| Acquisition | Creator/referral strategy and cost scenarios | Accepted offer, defined budget/rights and real sales test |
 
-## Kandidatas: vieši pirminiai puslapiai ir savininko dokumentai
+## Public evidence and supplied files
 
-- Paskirtis: modelio, kainos, MOQ, konkurentų pasiūlymo ir produkto apribojimų patikra. Dabar.
-- Tapatybė / šaltiniai: PLAN.md S1-S13 ir savininko stringmachine katalogas; peržiūrėta 2026-10-13. Įvestis URL / PDF → konkretus teiginys, data ir prieštaravimas.
-- Rinkos / kalbos: LT, ES konkurentų EN / NL / PL, gamintojo EN, RingString RU. Oficialus puslapis patvirtina tik skelbiamą pasiūlymą; mūsų pristatymas / paklausa neįrodyti.
-- Sąnaudos: naudojamo read-only viešo tyrimo naujų provider mokėjimų 0 USD. Prenumeratų / pirkimų leidimo nėra.
-- Duomenys / teisės: tik vieši produkto faktai ir savininko pateiktos medžiagos; žali klientų duomenys nerenkami. Medijos pernaudojimo teisės nepatvirtintos.
-- Alternatyva: gamintojo pasirašyta specifikacija ir savo bandymų žurnalas. Stop: prieštaraujantis modelis ar nepatikrinama tapatybė.
-- Savininkas: MB Pinet. Priėmimas: SKU atitinkantys dokumentai ir fizinis bandymas. Būsena: **verified read-only source review**, ne patvirtintas tiekėjas.
+Use dated product facts, not third-party document instructions. Supplier PDF/video and public pages are consistent on some identity signals but conflict on machine configuration. Cost of new read-only research-provider execution is USD 0; no paid calls or new subscriptions. Review does not authenticate registration, factory, bank or conformity. Competitor photographs/media remain unlicensed for our app.
 
-## Kandidatas: limadata.google.serp.organic
+Alternative: manufacturer-signed drawings/specifications and our own job log. Stop a purchase if the quoted product or legal counterpart cannot be reconciled. Owner MB Pinet; physical/model-specific acceptance remains pending.
 
-- Paskirtis: būsimų bendrųjų paieškos temų šaltinių atranka; dabar tik katalogas. Treg search/get atlikta 2026-10-13.
-- Provider: LimaData; [API dokumentacija](https://api.limadata.com/docs/basic_v2). POST /api/v1/search/web; įvestis query ir page → organic results.
-- Geo / kalbos: katalogo įvestyje nėra šalies / kalbos kontrolės. Netinka patvirtinti TOP1 visose ES šalyse arba LT/lt rinkos pozicijos.
-- Kaina: 0,002 USD už sėkmingą kvietimą, HTTP klaidos nemokestinamos pagal katalogą. Leidžiamas execution biudžetas šiame darbe 0; provider call neatliktas.
-- Vendor reported HTTP sėkmė 0,9383 iš 21 049 imčių; tai nėra semantinio tikslumo ar indeksavimo įrodymas. Mūsų kokybė nematuota.
-- Duomenys: tik bendros produkto užklausos, be asmens / klientų duomenų. Alternatyva: vieši pirminiai puslapiai; locale-aware endpoint atskirai tik po jo get ir leidimo.
-- Stop: trūksta reikiamos geo sutarties. Trigger: apibrėžta rinkos užklausa, tinkamas įrankis ir biudžetas. Savininkas MB Pinet. Būsena **deferred**, netinka lokalizuotų pozicijų priėmimui.
+## Treg catalogue candidates - not executed
 
-## Kandidatas: serpstat.google.keywords.volume
+Catalogue search/get was performed on 13 October 2026. The following prices and provider metrics are dated catalogue statements, not a current subscription or our semantic-quality benchmark. Execution authorization/spend for this work: 0 calls / USD 0.
 
-- Paskirtis: būsimų konkrečios rinkos raktažodžių paklausos įvertinimas; dabar tik katalogas.
-- Provider: Serpstat; [API sutartis](https://api-docs.serpstat.com/docs/serpstat-public-api/2brcbdgmr6rcx-get-keywords-info), Treg get 2026-10-13. POST JSON-RPC method SerpstatKeywordProcedure.getKeywordsInfo, id, params.keywords ir params.se → grąžintų frazių apimtis / CPC / konkurencija.
-- Aprėptis: iki 1 000 frazių; reikia konkrečios bazės kodo. LT/lt ir pasirinktų ES rinkų aprėptis šiam darbui nepatikrinta. Negrąžinta frazė nėra nulinė paklausa.
-- Kaina: 0,0005 USD už grąžintą frazę, tuščiam atsakymui 1 kredito minimumas pagal katalogą. 20 frazių vienos bazės būsimam bandymui orientyras iki 0,010 USD, patvirtinus dabartinę sutartį. Dabar execution leidimas 0, call neatliktas.
-- Treg search rodė HTTP success 1,0 / 8 153; get apraše yra ribotos semantinės aprėpties atsiliepimų. Mūsų LT kokybė nematuota.
-- Duomenys: produkto frazės, be PII. Alternatyva: pirmos šalies GSC, kai domenas / paskyra yra ir leista; viešas rinkos tyrimas be apimčių.
-- Stop: geo nepalaikoma arba atsakymas ne toje rinkoje. Trigger: konkreti lokalizacija ir scoped biudžetas. Savininkas MB Pinet. Būsena **candidate / not executed**.
+| Endpoint | Purpose, input and output | Dated price | Coverage/limits and alternatives |
+| --- | --- | --- | --- |
+| limadata.google.serp.organic | query/page to organic web results | USD 0.002 per successful request | No country/language control in this catalogue contract; cannot establish LT or EU TOP1. Public primary pages are the current alternative. |
+| serpstat.google.keywords.volume | JSON-RPC getKeywordsInfo; keywords and concrete se database to volume/CPC/competition | USD 0.0005 per returned phrase; empty-result minimum one credit | Up to 1,000 phrases. LT/lt database support not tested; missing phrase does not equal zero demand. Twenty phrases would be roughly USD 0.010 under this contract, a proposal only. |
+| influencersclub.creators.enrich.analytics | handle/public URL and platform to audience/posting/engagement summaries | USD 0.4784 per successful request | Five creators would cost USD 2.392, not authorized. LT/DE/NL completeness untested; modelled analytics are not sales. Start include_lookalikes=false. |
 
-## Kandidatas: influencersclub.creators.enrich.analytics
+LimaData reported HTTP success 0.9383/21,049 samples; Serpstat reported 1.0/8,153, with semantic-coverage concerns in get feedback. Influencer analytics had no verified reliability sample in the inspected contract. These are vendor HTTP measures, not proof of search accuracy or conversion.
 
-- Paskirtis: prieš kūrėjo kampaniją vertinti auditorijos atitikimą ir veiklos rodiklius. Vėliau, ne automatinis influencerių kontaktavimas.
-- Provider: influencers.club; [analytics sutartis](https://docs.influencers.club/openapi/enrich-by-handle-analytics/public_v1_creators_enrich_handle_analytics_create), Treg search/get 2026-10-13.
-- Įvestis handle / viešas URL / YouTube @handle ir platform; platformos instagram, tiktok, twitch, twitter, youtube ir onlyfans pagal katalogą. Šiam verslui onlyfans nenumatyta. Output - auditorijos / posting / likes / comments ir modeliuotos analizės suvestinė, ne pardavimų rezultatai. include_lookalikes pradžioje false.
-- Kaina 0,4784 USD už sėkmingą kvietimą (0,8 kredito). 5 kūrėjų būsimo bandymo riba 2,392 USD be papildomų kvietimų; tai pasiūlymas, ne autorizacija. Dabar provider spend 0.
-- Aprėptis: LT / DE / NL auditorijų duomenų pilnumas nepatikrintas; patvirtinto patikimumo / samples šiame get nėra. Mūsų bandymas neatliktas. Modeliuoti duomenys nėra tikri pirkimai.
-- Teisės: tik reikalingi viešų profesinių kanalų suvestiniai faktai; nekaupti nereikalingų asmens kontaktų. Sutartas saugojimas ir naudojimo teisės prieš provider testą.
-- Alternatyva: rankinis viešų paskutinių 10 vaizdo įrašų peržiūrėjimas ir paties kūrėjo pateikta auditorijos suvestinė. Stop: nėra aktualios auditorijos / tinkamo turinio / teisėto naudojimo.
-- Trigger: priimtas produktas, konkretūs 5 kanalai ir kampanijos biudžetas. Savininkas MB Pinet. Priėmimas: tinkama rinka, turinio teisės ir realaus pardavimo bandymas. Būsena **candidate / not executed**.
+Primary contracts: [LimaData](https://api.limadata.com/docs/basic_v2), [Serpstat](https://api-docs.serpstat.com/docs/serpstat-public-api/2brcbdgmr6rcx-get-keywords-info), [influencers.club](https://docs.influencers.club/openapi/enrich-by-handle-analytics/public_v1_creators_enrich_handle_analytics_create).
 
-## Kandidatas: esamas turinio, case ir mail core + Stringart adapteris
+Data should be general product phrases or necessary public professional summaries, without customer photos/PII. Confirm geo, use/retention rights, updated contract and a scoped budget before execution. Alternative creator selection: manually inspect ten recent public videos and ask the creator for audience statistics. First-party GSC is useful only after a real domain/account exists and is authorized. Stop when the required market is unsupported. Owner MB Pinet.
 
-- Paskirtis: lokalizuotos svetainės, kontaktai, užsakymo atvejis ir aptarnavimo tęstinumas; palaipsniui po sistemos pavedimo.
-- Šaltinis / data: šios fresh main bazės CONTENT_CORE, SEO_GEO_CORE, MAIL_CORE ir agent-business-core sutartys; konkretaus Stringart runtime šio tyrimo metu nėra. Tai potencialus pakartotinis naudojimas, ne viso core vykdymo auditas.
-- Įvestis: siteId / partnerId, patvirtinti faktai, peržiūros versija, apmokėjimas ir siunta → per-site / per-partner dokumentai ir užsakymo būsenos.
-- Aprėptis: kalba, pardavėjas, valiuta ir PVM pagal realią rinką. Tikros išmokos, tenant isolation, failų saugojimas ir partnerių ecommerce nepriimti.
-- Kaina / biudžetas: naujo modulio darbo valandos, hostingas, mokėjimų / siuntų / modelių kaina dar nesąmatuota. Naujos prenumeratos ir live įjungimas šiuo planu neautorizuojami.
-- Teisės: duomenų minimizavimas, operatoriaus ir partnerių atskyrimas, nuotraukų ištrynimas, veiksmų istorija. Žalių klientų duomenų į Git nekopijuoti.
-- Alternatyva: vienos studijos rankiniu būdu valdoma eiga prieš platesnę automatizaciją, naudojant priimtą duomenų saugojimą. Stop: nėra aiškaus pardavėjo / duomenų teisėtumo / gamybos kontrolės.
-- Trigger: konkretus sistemos įgyvendinimo etapas. Savininkas MB Pinet. Priėmimas: viena pilna serverinė eiga, tikros autorizuotos operacijos ir partnerių atskyrimo patikra. Būsena **deferred implementation**.
+## Current local creator and SDK
 
-## Kandidatas: gamintojo failų generatorius ir įrangos adapteris
+Trevor MIT worker supplies the initial mono/colour computation. Copyright and full notice ship in the generated HTML/APK. Known fields, bounded inputs, full frame/sequence storage and independent import IDs belong to our adapter. No npm or paid model dependencies, photo upload or external font/analytics resource. Installed English device speech has a text fallback; phone availability is unverified.
 
-- Paskirtis: patvirtintos nuotraukos failą paversti konkrečia gamybos užduotimi.
-- Šaltiniai: PLAN S3-S5 ir pateiktas FAQ; data 2026-10-13. Viešame ALINEDECO yra design.alinedeco.com nuoroda; dokumentuotas API šio tyrimo metu negautas ir nenaudotas.
-- Įvestis / output: nuotrauka, dydis, vinutės, siūlas / spalvos → peržiūra ir aparatui tinkamas failas. Konkreti formato / API sutartis nežinoma.
-- Kaina: pateiktame PDF nemokama programinė įranga, tačiau licencijos partneriams, API, SLA, serverių ir būsimų mokesčių sąlygos nepatvirtintos. Neriboto nemokamo API nepažadėti.
-- Aprėptis: PDF Windows ir aktualių puslapių browser režimai prieštarauja; patikrinti konkrečiam SKU. Mūsų hardware bandymas neatliktas.
-- Duomenys / teisės: nuotraukų serveris, vieta, deletion ir komercinės integracijos teisės nežinomos. Reikalinga sutartis; realių nuotraukų nekelti į nepriimtą srautą.
-- Alternatyva: operatoriaus priimtas vietinis failų perdavimas; licencijuotas alternatyvus generatorius tik po formato ir teisių patikros. Stop: nėra teisėto / tęstinio failo paruošimo arba atitikties.
-- Trigger: suderintas SKU ir bandoma mašina. Savininkai MB Pinet ir gamintojo techninė komanda pagal būsimą sutartį. Priėmimas: patvirtintas vaizdas atitinka fizinį darbą, failas versijuotas, nutrūkimo / atkūrimo bandymas. Būsena **blocked by missing supplier contract**, ne runtime.
+The owner expressly approved official Android SDK installation and terms to build the APK. SDK 35, Build Tools 35.0.0, Platform Tools 37.0.1 and official Gradle 8.9 are installed in a task cache. AGP 8.7.3 and JDK 21 compile Java 17 sources. Actual APK/asset/signature evidence is in mobile/ACCEPTANCE.md. This is local SDK/tooling authorization, not Play publishing or a paid service. Development work hours and a commercial support cost have not been priced.
 
-## Peržiūra ir išlaidos
+Alternatives: the generated standalone HTML and manual kit instructions. Stop use with an unknown physical numbering scheme; source/API rights for ALINEDECO remain unconfirmed. Only the selected MIT worker was integrated; other MIT projects require separate adoption tests, GPL projects their actual redistribution conditions.
 
-Planui pritaikytas pilnas kliento kelias, įskaitant tiekimą, kokybę, garantiją, mediją ir partnerių ekonomiką. Paid provider calls 0 / spend 0 USD. Stripe Directory sąranka patikrinta per oficialią dokumentaciją; CLI / connector paieška neprieinama, paieškos rezultatų neišgalvojome. Tiekėjų pasirinkimas remiasi savininko dokumentais ir pirminiais viešais puslapiais. Naujo atkuriamo Stringart bendro core kodo defekto šiame planavimo darbe nenustatyta; shared code nekeičiama. App managed-worktree kūrimo klaida išsaugota QA ir apeita atskira švaria CLI worktree; tai ne core source pataisa.
+## Future shared core plus business adapter
+
+Potential reuse: CONTENT_CORE, SEO_GEO_CORE, MAIL_CORE and business-case contracts. No runtime/adoption audit of every existing service is implied. Business inputs include partner/SKU, approved revision, verified payment and shipment. Server-side tenant isolation, transactions, photo access/deletion, referrals and restart acceptance remain future work.
+
+Use a single accepted data store and role boundaries; do not build another publishing/CRM core. A manual pilot studio is the alternative until demand and the actual integration justify automation. Hosting, shipping, payment fees and software support need a real budget. A plan does not enable subscriptions, email, payments or campaigns. Owner MB Pinet; paused until resumed scope.
+
+## Supplier generator / physical equipment seam
+
+The supplied offer claims free lifetime software; partner licence, API, SLA, hosting, future charges and source reuse are unknown. PDF Windows versus current browser descriptions require exact-SKU reconciliation. Public ALINEDECO's generator link is not a documented machine API.
+
+Required contract: image/layout/thread/colour input, exact file and pin coordinates/numbering, legal ownership, partner rights, processing locations, retention/deletion, local/EU execution and continuity if the online service stops. Never upload real customer photos into an unaccepted third-party path.
+
+Alternative: supplier-approved manual file transfer or our own licensed solver after a format/physical test. The present JSON is a hand-threading project, not a NOVA/ALINEDECO file. Acceptance requires approved-preview-to-physical-art correspondence and interruption/recovery. Missing supplier agreement, machine and format keep this seam unverified.
+
+## Cost and scope audit
+
+No paid research endpoint, supplier/influencer contact, transaction, domain purchase/migration or public deployment occurred. Stripe Directory configuration was inspected; its CLI/connector search was unavailable, so no invented directory result was used. Supplier selection was user-provided and primary-page evidence is dated.
+
+No reproducible shared-core defect was established; shared code remains unchanged. Worktree registration failure was preserved and resolved with an isolated CLI worktree. Current mobile code is business-scoped. Real-phone/kit/machine acceptance is separate from source and successful compilation.

@@ -1,0 +1,14 @@
+import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const read=p=>readFileSync(path.join(root,p),'utf8');
+const jsString=v=>JSON.stringify(v).replaceAll('<','\\u003c');
+let model=read('model.mjs').replaceAll('export ','');
+let app=read('app.mjs').replace(/^import .*;\r?\n/,'');
+const code=`window.MEMORYSTRING_SOLVER=${jsString(read('vendor/solver.js'))};\nwindow.MEMORYSTRING_LICENSE=${jsString(read('vendor/LICENSE-TrevorPeters0n.txt'))};\n${model}\n${app}`;
+if(code.includes('</script>'))throw Error('Unsafe script terminator');
+const html=read('index.html').replace('<link rel="stylesheet" href="style.css">',`<style>${read('style.css')}</style>`).replace('<script type="module" src="app.mjs"></script>',`<script>${code}</script>`);
+const output=path.join(root,'output');mkdirSync(output,{recursive:true});writeFileSync(path.join(output,'MemoryString.html'),html);
+const assets=path.join(root,'android','app','src','main','assets');mkdirSync(assets,{recursive:true});writeFileSync(path.join(assets,'MemoryString.html'),html);
+console.log(JSON.stringify({file:path.join(output,'MemoryString.html'),bytes:Buffer.byteLength(html),networkDependencies:0}));

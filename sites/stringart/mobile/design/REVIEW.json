@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-13",
+  "status": "PASS",
+  "integrityFiles": 623,
+  "screenCount": 22,
+  "svgCount": 61,
+  "pngCount": 482,
+  "transparentIllustrations": [
+    {
+      "name": "home-dog-string-art",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-black",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-cyan",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-magenta",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-yellow",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    }
+  ],
+  "iconFamilies": 45,
+  "fonts": "glyph and variable-axis checks PASS",
+  "android": "aapt2 compile and link SDK35 PASS; resource check is not a deployed app",
+  "screens": "All 22 inspected sequentially, final targeted repairs inspected",
+  "runtimeAcceptance": "UNVERIFIED for redesigned UI; current phone installed/launched only",
+  "sampleResults": [
+    {
+      "name": "quick",
+      "connections": 1400,
+      "pins": 200
+    },
+    {
+      "name": "detailed",
+      "connections": 1430,
+      "pins": 200
+    },
+    {
+      "name": "fine",
+      "connections": 1430,
+      "pins": 200
+    }
+  ],
+  "limits": [
+    "AI decorative dog is separate from actual solver output",
+    "Current prototype and physical kit acceptance are separate",
+    "Generated headings are governed by exact font tokens; every pin dot is drawn mathematically in production"
+  ],
+  "tokenContrast": [
+    {
+      "fg": "ink",
+      "bg": "canvas",
+      "ratio": 10.96,
+      "minimum": 4.5
+    },
+    {
+      "fg": "muted",
+      "bg": "canvas",
+      "ratio": 5.76,
+      "minimum": 4.5
+    },
+    {
+      "fg": "white",
+      "bg": "forest",
+      "ratio": 9.68,
+      "minimum": 4.5
+    },
+    {
+      "fg": "outline",
+      "bg": "canvas",
+      "ratio": 3.49,
+      "minimum": 3
+    },
+    {
+      "fg": "error",
+      "bg": "errorSurface",
+      "ratio": 6.23,
+      "minimum": 4.5
+    },
+    {
+      "fg": "warning",
+      "bg": "warningSurface",
+      "ratio": 6.07,
+      "minimum": 4.5
+    }
+  ],
+  "manifestSha256": "5164b0af7ba34072e37aa5569f7801cb42c9938a4b9d89ddf2a728264f8bb4a6"
+}

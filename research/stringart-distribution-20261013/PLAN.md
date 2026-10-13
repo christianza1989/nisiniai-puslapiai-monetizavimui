@@ -1,14 +1,14 @@
-# STRINGART: gamybos studija ir Europos partnerių tinklas
+# MemoryString: verslo ir platinimo planas
 
-2026-10-13 | MB Pinet | Verslo ir derybų planas, 1 versija
+2026-10-13 | MB Pinet | Verslo, demonstracinės sistemos ir derybų planas, 4 versija - aktuali
 
 ## Rekomenduojamas sprendimas
 
-Kurti vieną savo prekės ženklą ir tris tarpusavyje susijusius pajamų šaltinius: gaminti paveikslus klientams, platinti patikrintą įrangą bei medžiagas ir suteikti vietiniams partneriams paruoštą veiklos paketą. Pirmoji mūsų studija Lietuvoje būtų gamybos, mokymų, kokybės ir sistemos bandymų vieta. Tikslas - tapti gamintojo pagrindiniu ES platintoju ir vėliau plėstis pasaulyje.
+Kurti vieną savo prekės ženklą ir keturis tarpusavyje susijusius pajamų šaltinius: gaminti paveikslus klientams, platinti patikrintą įrangą bei medžiagas, parduoti rankų darbo rinkinius ir suteikti vietiniams partneriams paruoštą veiklos paketą. Pirmoji mūsų studija Lietuvoje būtų gamybos, mokymų, kokybės ir sistemos bandymų vieta. Tikslas - tapti gamintojo pagrindiniu ES platintoju ir vėliau plėstis pasaulyje.
 
 Vertingiausias pasiūlymas partneriui: jis gauna priemones gaminti ir valdyti užsakymus, o mes suteikiame įrangą, svetainę, procesą, mokymus, medžiagų tiekimą bei palaikymą. Partneris pats atsako už savo vietinę gamybą, pardavimą ir klientus pagal sutartyje nustatytą modelį.
 
-Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Didelę sistemą projektuoti dabar, tačiau įgyvendinti nuosekliais etapais, tikrinant kiekvieną kelią nuo užklausos iki pristatyto paveikslo. Pirkimas, reklamos biudžetas ir sutartys vertinami po konkrečių pasiūlymų.
+Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Prieš platesnes derybas paruošti 10 testinių partnerių demonstraciją: aparatai, žaliavos, rinkiniai, pardavimai, tiekėjo portalas ir telefono programa. Specifikacija pateikta plano pabaigoje. Pirkimas, reklamos biudžetas bei sutartys vertinami po konkrečių pasiūlymų. Savininko nurodymu pirmiausia tęsiama atskirai autorizuota Android kūrėjo programėlė; svetainės ir partnerių demonstracijos realizavimas laukia šio etapo.
 
 ## Dabartinė padėtis
 
@@ -16,9 +16,9 @@ Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Didelę sistemą
 - Yra gamintojo PDF, nuotraukos ir trys vaizdo įrašai. Tai gamintojo medžiaga, ne mūsų gamybos rezultatai.
 - Naujas prekės ženklas, domenas, partneriai, platintojo teisės ir paklausa dar nepatvirtinti.
 - Savininkas pasirinko influencerius, vaizdo turinį ir galimą rekomendavimo sistemą kaip klientų pritraukimo kryptį.
-- Šis dokumentas apima tyrimą, veiklos modelį, ekonomikos prielaidas, sistemos reikalavimus ir paruoštą pirmą laišką. Sistema ir pardavimų tinklas dar nesukurti.
+- Šis dokumentas apima tyrimą, veiklos modelį, ekonomikos prielaidas, demonstracinės sistemos reikalavimus, Android programėlės būseną ir pirmą laišką. Pardavimo svetainės ir partnerių platformos kūrimas sustabdytas savininko prašymu. Atskirai autorizuota kūrėjo programėlė jau veikia vietiniame naršyklės bandyme; surinktas ir parašu patikrintas Android 8+ testinis APK. Tikras telefonas, rinkinys ir aparatas dar nepatikrinti.
 
-## Pirmas veiksmas
+## Pirmas komercinis veiksmas
 
 Gamintojui pateikti konkretų ES plėtros pasiūlymą ir paprašyti patvirtinto modelio specifikacijos, platintojo kainų, esamų teritorinių teisių bei atitikties dokumentų. Prieš perkant išspręsti prieštaravimus dėl spalvų, komplektacijos ir programinės įrangos.
 
@@ -111,6 +111,12 @@ Rinkos nėra tuščios: Lietuvoje yra vietinė alternatyva, RingString jau turi 
 | Partnerio veiklos paketas | Vietinis verslininkas gauna paleidimo priemones | Vienkartinis įdiegimas, programos mokestis, medžiagų tiekimas | Mūsų įrodytas procesas ir partnerio ekonomiškai gyvybinga veikla |
 | DIY rinkinys, vėliau | Žmogus pats sukuria paveikslą | Rinkinys ir pasirinktos instrukcijos | Savos / licencijuotos instrukcijos, fizinio rinkinio testai |
 
+## MemoryString ir MemoryCasting
+
+Savininkas pasiūlė MemoryString kaip atskiros produktų linijos ženklą šalia savo MemoryCasting rankų liejimo rinkinių verslo. Galima bendra dovanų kampanija ir šeimos ženklas, išlaikant skirtingų produktų, pardavėjo ir saugos informaciją. MemoryCasting apyvarta, leidžiami vaizdai ir konkretaus prekės ženklo teisės šiame darbe nepatikrinti.
+
+Jau yra atskira [MemoryString programa Mac kompiuteriams](https://www.codebyz.com/products/memory-string). Tai konkretus pavadinimo sutapimas, ne prekių ženklų registro išvada. Prieš viešą paleidimą reikia patikrinti ženklą, domeną ir programėlių pavadinimus; jų dar neregistravome.
+
 ## Vienas ženklas ir skirtingi partnerystės lygiai
 
 Rekomenduojama viena pagrindinė tapatybė, lokalizuota šalims. Atskiro ženklo versiją pasiūlyti kaip brangesnį papildomą variantą, nes ji reikalauja kitokio turinio, rinkodaros ir palaikymo. Įrangos gamintojo ženklas pradžioje lieka atskiras nuo mūsų paveikslų ir studijų ženklo.
@@ -192,7 +198,35 @@ Vieno aparato studijos bandymui numatyti maždaug 4 500-7 000 € orientacinį a
 
 <!-- PAGE -->
 
-# 7. Ką konkrečiai gauna vietinis partneris
+# 7. Rankų darbo rinkinio ekonomika ir priėmimas
+
+Gamintojas dar nepateikė mūsų ženklo pilno rinkinio kainos. Toliau pateiktos sąnaudos yra prielaidos, o ne komercinis pasiūlymas. Vien atskiro žiedo kaina nėra viso rinkinio savikaina.
+
+| Vienas pristatytas rinkinys | EUR | Pagrindas |
+| --- | --- | --- |
+| Pirkėjo sumokama kaina su PVM | 99,99 | Kainos bandymas |
+| Pajamos be 21 % PVM | 82,64 | 99,99 / 1,21 |
+| Atgabentas rinkinys ir produkto dėžė | 28,00 | Prielaida |
+| Užsakymo paruošimas ir siuntimo pakuotė | 5,00 | Prielaida |
+| Pristatymas pirkėjui | 10,00 | Prielaida |
+| Mokėjimo apdorojimas | 3,30 | 3 % + 0,30 EUR |
+| Visos pritraukimo išlaidos su komisija | 15,00 | Prielaida |
+| Kokybės ir aptarnavimo rezervas | 3,00 | Prielaida |
+| Kintama programėlės instrukcijos sąnauda | 1,00 | Prielaida |
+| Visos kintamos sąnaudos | 65,30 | Ne išmatuota savikaina |
+| Likutis prieš fiksuotas sąnaudas ir mokestį | 17,34 | Ne grynasis pelnas |
+
+Tomis pačiomis sąnaudų prielaidomis 79,99 EUR kaina palieka apie 1,41 EUR, o 119,99 EUR - apie 33,27 EUR. Siūlomas bent 20 EUR rinkinio likučio kriterijus prie 99,99 EUR nepasiektas. Prieš kainodarą reikia tikros atgabenimo ir aptarnavimo sąmatos; konkurento kaina negarantuoja mūsų maržos.
+
+Komplektas: tiksliai sunumeruotas pagrindas su vinutėmis, tinkamas siūlas ir jo tvirtinimas, kabinimo dalys, dėžė ar stovas, telefono laikiklis, instrukcija ir konkretaus rėmo aktyvavimo kodas. Gamintojas galėtų tiekti visą komplektą nuo vinučių iki pakuotės. Programėlės kodų aktyvavimas yra būsima serverio funkcija; dabartinė programa naudoja vietinius projektus.
+
+Pirma priimti vieną rėmo versiją: atstumai, numeravimas, vedlys, tvirtinimas, siūlo kiekis, pakuotė, kabinimas ir rezultatas. Programėlės ilgis skaičiuoja tiesias jungtis, ne siūlo apsukimus bei atliekas. Testuoti skirtingas nuotraukas ir realų portreto atpažįstamumą; vien mažėjanti pikselių klaida to neįrodo.
+
+Standartinis rinkinys netampa individualizuota preke vien todėl, kad pirkėjas vėliau įkelia savo nuotrauką. Grąžinimus ir teises vertinti pagal tikrą parduodamą produktą.
+
+<!-- PAGE -->
+
+# 8. Ką konkrečiai gauna vietinis partneris
 
 | Paketo dalis | Pirmo priimto paketo turinys |
 | --- | --- |
@@ -221,7 +255,7 @@ Sutartyje numatyti prekės ženklo naudojimą, domenų ir svetainės nuosavybę,
 
 <!-- PAGE -->
 
-# 8. Sistema: nuo nuotraukos iki siuntos
+# 9. Partnerių sistemos planas ir demonstracija
 
 Sistema turi palaikyti visą verslo kelią: vartotojo užsakymą, aparatų platinimą, partnerių veiklą ir medžiagų tiekimą. Bendras branduolys dalijasi turinio, kontaktų, teisių ir matavimo principais; šio produkto gamybos adapteris lieka atskiras modulis.
 
@@ -241,15 +275,70 @@ Gamybai perduodamas būtent patvirtintos peržiūros failas ir jo versija. Pakar
 | Tiekimas / įranga | Atsargų poreikis, garantijų registras, dalių užklausa | Techninis remontas ir galutinė saugos atsakomybė |
 | Partneriai / reklama | Prieigos, užsakymų ribos, komisijų žurnalas, ataskaitos | Partnerio priėmimas, kampanijos leidimas, išmokų ginčas |
 
+## Dešimt testinių partnerių ir atsargų taisyklės
+
+Tai planuojama demonstracija, ne tikras Europos tinklas. Visi partneriai, jų adresai, kontaktai, užsakymai ir likučiai turi būti aiškiai testiniai. Aplinka privati, neindeksuojama, duomenų vardų sritis atskira; kontaktams naudoti .example domenus.
+
+| Testinė rinka | Miestas | Aparatai | Supakuoti rinkiniai |
+| --- | --- | --- | --- |
+| Lietuva | Vilnius | 2 | 80 |
+| Vokietija | Berlynas | 3 | 120 |
+| Nyderlandai | Amsterdamas | 2 | 95 |
+| Prancūzija | Lionas | 1 | 70 |
+| Lenkija | Varšuva | 2 | 150 |
+| Ispanija | Valensija | 1 | 60 |
+| Italija | Milanas | 1 | 85 |
+| Švedija | Stokholmas | 2 | 55 |
+| Danija | Kopenhaga | 1 | 65 |
+| Suomija | Helsinkis | 1 | 45 |
+
+Iš viso: 10 testinių partnerių, 16 aparatų ir 825 supakuoti rinkiniai. Operatorius mato visą tinklą; partneris tik savo veiklą; tiekėjas jam skirtus pirkimus ir sutartą bendrą poreikį; klientas savo projektą; influenceris savo priskyrimus. Prieigos tikrinamos serveryje, ne vien paslepiant ekrano mygtuką.
+
+Aparatas yra atskiras turto vienetas su serijos numeriu, vieta, garantija ir aptarnavimu. Vinutės skaičiuojamos vienetais, siūlas metrais, pagrindai ir dėžės vienetais. Rinkinio komplektavimas vieną kartą sunaudoja sudedamąsias dalis ir sukuria supakuotą rinkinį; jo pardavimas nebesunaudoja tų pačių medžiagų antrą kartą.
+
+Laisvas kiekis = turimas kiekis minus rezervuotas. Pakeliui esančios prekės tampa turimomis tik jas gavus. Rezervacija, komplektavimas, grąžinimas, perkėlimas ir korekcija turi susietą judėjimą, veikėją bei priežastį. Partnerių bendra pardavimų vertė, mūsų pajamos ir pirkimai iš tiekėjo atskiriami.
+
+Per 7-10 minučių planuojamą demonstraciją parodyti partnerį, užsakymą, patvirtintą failą, medžiagų rezervaciją, gamybą ir kokybę; parduoti testinį rinkinį, sumažinti jo atsargą, sukurti pirkimo pasiūlymą ir priimti siuntą; vienam tinkamam rekomendavimui priskirti vieną komisiją. Sintetinis adapteris neperveda pinigų, nesiunčia laiškų ir nevaldo aparato.
+
+Visa partnerių platforma šiuo metu sustabdyta. Šis scenarijus yra planas. Atskirai sukurta vietinė Android kūrėjo programėlė nėra priimta atsargų ar užsakymų sistema.
+
 ## Įgyvendinimo seka
 
-Pirma sukurti vienos studijos užsakymų kelią ir sintetiniu užsakymu patikrinti serverinę eigą. Tada išbandyti tikrą apmokėjimą ir pristatymą, kai šie veiksmai autorizuoti. Antras etapas - kelių partnerių duomenų atskyrimas, jų pardavėjo tapatybė ir realios pajėgumo taisyklės. Trečias - atskaitomybė, rekomendavimo išmokos, šalies variantai ir apyvartos kontrolė.
+Kai savininkas atnaujins partnerių platformos kūrimo apimtį, pirma sukurti vienos studijos užsakymų kelią ir sintetiniu užsakymu patikrinti serverinę eigą. Tada išbandyti tikrą apmokėjimą ir pristatymą, kai šie veiksmai autorizuoti. Antras etapas - kelių partnerių duomenų atskyrimas, jų pardavėjo tapatybė ir realios pajėgumo taisyklės. Trečias - atskaitomybė, rekomendavimo išmokos, šalies variantai ir apyvartos kontrolė.
 
 Nuotolinis aparato valdymas ir failų generavimas per API dar nepatvirtinti. Pradžioje galima valdoma failų perdavimo užduotis su operatoriumi. Esamo core arba kuriamos Verslomatika sistemos buvimas neįrodo priimto Stringart adapterio, kelių partnerių prekybos, išmokų ar aparatų integracijos.
 
 <!-- PAGE -->
 
-# 9. Influenceriai, vaizdo turinys ir rekomendavimai
+# 10. Mūsų Android kūrėjo programėlė ir atvirasis kodas
+
+Savininkas pasirinko Android ir balso vedlį. Programėlės sąsaja bei diktuojamas tekstas yra anglų kalba. Ji autorizuota atskirai; svetainės ir partnerių platformos kūrimas lieka sustabdytas.
+
+Galima įkelti JPG, PNG ar WebP nuotrauką, ją apkirpti, didinti, paslinkti, pasukti, keisti ryškumą bei kontrastą ir generuoti vienspalvę ar keturių spalvų peržiūrą. Siūlomi 42 cm / 200 vinučių, 50 cm / 240 ir 60 cm / 300 rėmai fiziškai nepatikrinti. Pirma vinutė yra viršuje, numeriai didėja pagal laikrodžio rodyklę; kiekvienas spalvų sluoksnis pradedamas atskiru pririšimu.
+
+Vedlys rodo jungties pradžią ir pabaigą. Yra ankstesnis ir kitas žingsnis, pakartojimas balsu, balso tempas bei 3-20 sekundžių pauzė po ištarto teksto. Automatinis žingsnis keičiamas tik pasibaigus balsui ir pauzei. Sustabdžius, pakeitus žingsnį ar paslėpus programėlę ankstesni balso atsakymai atmetami. Tekstas ir rankiniai mygtukai išlieka.
+
+Vietinė IndexedDB saugykla išsaugo ID, visą seką, rėmo ir algoritmo versiją bei baigtą žingsnį. JSON eksportas skirtas atsarginei kopijai; importas sukuria atskirą ID. Ištrynus programėlės duomenis projektai dingsta. Nuotraukos ir sekos nesiunčiamos į serverį.
+
+## Patikros ir ribos
+
+Surinktas Android 8+ vietinis testinis APK; patikrintas parašas ir HTML bei MIT licencijos buvimas pakete. Interneto, mikrofono, kameros ir plačios failų prieigos leidimų nėra. Savininkui leidus, APK įdiegtas ir paleistas USB prijungtame Android 16 telefone. Sistemos failų parinkimas, balso veikimas ir galutinė telefono sąsaja dar nepriimti. Parengti 22 pasirinkto stiliaus ekranų maketai ir atskiras assetų rinkinys; naujas dizainas dar neįdiegtas. Tai ne programėlių parduotuvės leidimas.
+
+Praėjo septynios Node patikros: tikras vienspalvis/RGB skaičiavimas, netaisyklingos įvestys, numeravimas, sekos ir progreso atkūrimas. Naršyklėje patikrinti generavimas, atšaukimas, klaidos, eksportas/importas, išsaugojimas po perkrovimo, angliško balso atsakymai ir skirtingi ekrano bei teksto dydžiai. Tai ne fizinio portreto, rinkinio ar aparato priėmimas.
+
+## Algoritmas ir teisės
+
+[GitHub temoje](https://github.com/topics/string-art) peržiūrėtos 25 saugyklos: 13 identifikuota MIT, trys GPL-3.0, devynių teisės nepatvirtintos. Šešiems kandidatams nagrinėti konkretūs failai; visų variklių našumo ar fizinių portretų palyginimo nebuvo.
+
+Pasirinktas [TrevorPeters0n/string-art-studio](https://github.com/TrevorPeters0n/string-art-studio) MIT algoritmas, versija 004a7b7481e45a951d2348a11870c531d926b29f. Paimta tik skaičiavimo gija, vertinanti pikselių klaidos mažėjimą ir spalvų sluoksnius. Autorystė ir licencija išlaikytos. Mūsų sąsaja, įvesties ribos, saugykla ir balsas atskiri; konkurentų vaizdai, ženklai ir GPL kodas nekopijuoti.
+
+[halfmonty](https://github.com/halfmonty/StringArtGenerator) taip pat MIT; senasis kodas indexold.html nesuteikia vėlesnio komercinio produkto teisių. [Vrellis](https://artof01.com/vrellis/works/knit.html) aprašas nėra kodo licencija, o minimas MIT institutas nėra MIT programos licencija. [MarginallyClever](https://github.com/MarginallyClever/weaving_algorithm) yra GPL-2.0 ir neintegruotas; GPL komercija leidžiama laikantis jos sąlygų. [Reddit pavyzdys](https://www.reddit.com/r/DIY/comments/au0ilz/made_a_string_art_portrait_out_of_a_continuous_2/) naudingas sekai ir painiojimosi problemoms, bet ne universaliam laikui ar saugos normoms.
+
+ALINEDECO nemokama prieiga neįrodo atvirojo kodo teisių. Mūsų JSON nėra patvirtintas aparato failas: reikia teisių, formato, koordinačių, numeravimo ir fizinio bandymo. Rinkinio kodai, paskyros ir partnerių serveris dar neįgyvendinti.
+
+<!-- PAGE -->
+
+# 11. Influenceriai, vaizdo turinys ir rekomendavimai
 
 ## Dvi atskiros kampanijos
 
@@ -272,7 +361,7 @@ Siūlomas mažas bandymas: 5 kūrėjai vienoje rinkoje, po vieną pagrindinį va
 
 <!-- PAGE -->
 
-# 10. SEO ir gamintojo domenų bendradarbiavimas
+# 12. SEO ir gamintojo domenų bendradarbiavimas
 
 Pirmas derybų prašymas - gamintojo svetainėje atskiras ES platintojo puslapis, aiškus mūsų aptarnavimo aprašymas ir ES užklausų perdavimo tvarka. Jis suteiktų klientui suprantamą vietinio pirkimo kelią. Tai nėra sutartis dėl paieškos pozicijos.
 
@@ -299,7 +388,7 @@ Mokamos / rekomendavimo nuorodos tinklalapiuose žymimos sponsored arba nofollow
 
 <!-- PAGE -->
 
-# 11. Atitiktis, sauga ir duomenys
+# 13. Atitiktis, sauga ir duomenys
 
 Prieš aparatą atgabenant naudojimui ar perpardavimui nustatyti tikslų modelį, taikomą atitikties kelią ir atsakingą asmenį. ES mašinų sistema keičiasi 2027-01-20: iki šios datos pateiktoms mašinoms taikoma Direktyva 2006/42/EB, vėliau bendrąja tvarka taikomas Reglamentas 2023/1230. Mūsų 90 dienų planas artimas šiam perėjimui. CE ženklas ant nuotraukos nėra dokumentų ir vertinimo pakaitalas. [S22]
 
@@ -323,7 +412,7 @@ Individualaus paveikslo atsisakymo išimtį atskirti nuo nekokybiškos prekės t
 
 <!-- PAGE -->
 
-# 12. Derybų pasiūlymas gamintojui
+# 14. Derybų pasiūlymas gamintojui
 
 ## Ką mes galėtume suteikti
 
@@ -348,7 +437,7 @@ Mūsų stipriausias argumentas bus išmatuota paklausa ir aptarnavimo sistema. V
 
 <!-- PAGE -->
 
-# 13. 90 dienų eiga ir sprendimo vartai
+# 15. 90 dienų eiga ir sprendimo vartai
 
 Dienos skaičiuojamos nuo sutarto starto; transportas, dokumentai ir bandymo rezultatai gali keisti kalendorių. Žemiau - siūlomos sprendimo taisyklės, o ne veiklos rezultatų prognozė.
 
@@ -372,7 +461,7 @@ Pirmoji rinka - Lietuva su mūsų studija. Toliau rinktis vieną iš Vokietijos 
 
 <!-- PAGE -->
 
-# 14. Gamintojui skirtų klausimų priedas
+# 16. Gamintojui skirtų klausimų priedas
 
 Šį sąrašą naudoti po pirmo gamintojo susidomėjimo arba kaip pokalbio darbotvarkę. Atsakymai turi būti susieti su konkrečiu modeliu ir pasiūlymu.
 
@@ -396,7 +485,7 @@ Pirmoji rinka - Lietuva su mūsų studija. Toliau rinktis vieną iš Vokietijos 
 
 <!-- PAGE -->
 
-# 15. Šaltiniai ir tyrimo ribos
+# 17. Šaltiniai ir tyrimo ribos
 
 Visi šaltiniai peržiūrėti 2026-10-13. Viešas gamintojo ar konkurento teiginys nėra nepriklausomas veiklos patvirtinimas. Paieškos įrankis kai kuriems puslapiams pateikia talpyklos amžių; prieš sandorį reikalingas naujas gamintojo pasiūlymas.
 
@@ -434,43 +523,39 @@ Treg atlikta tik katalogo paieška ir parametrų / kainų skaitymas. Mokamų tie
 
 <!-- PAGE -->
 
-# 16. Paruoštas pirmas laiškas
+# 18. Paruoštas pirmas laiškas
 
 Subject: Proposal for EU distribution and a local production partner network
 
 Dear Joy,
 
-Thank you for the information, videos and quotation for your third-generation string art machine.
+Thank you for your quotation and materials. We represent MB Pinet in Lithuania and would like to explore becoming Wenzhou Vanmac's principal EU distribution partner, with international expansion after a successful pilot.
 
-We would like to explore a long-term relationship with Wenzhou Vanmac, with the ambition to become your principal EU distribution partner and expand internationally after proving the business.
-
-We represent MB Pinet in Lithuania and are developing an automation platform. We propose combining your equipment with localized websites, photo approval, order management, production workflows, consumables, training and after-sales support for local production partners. Our own pilot studio would produce and ship personalized portraits.
+Our concept combines your equipment and consumables with localized websites, portrait approval, order and inventory management, training and after-sales support. Local partners would produce portraits and sell private-label DIY kits supported by our own phone application.
 
 Our proposed approach has three stages:
 
-1. Evaluate one demonstration machine and a small compatible consumables batch.
-2. Validate production, creator-led video marketing and selected local partners.
-3. Agree performance-based distribution rights and the ability to appoint local partners.
+1. Evaluate one demonstration machine and a compatible consumables batch.
+2. Validate our pilot studio, creator-led marketing and selected local partners.
+3. Agree performance-based distribution rights and local partner appointments.
 
-We would use influencers, YouTube demonstrations and sales-based referrals to develop equipment sales and recurring consumables orders, supported by product feedback. These are proposed capabilities; an established European reseller network is not yet in place.
+We propose a ten-partner demonstration with clearly labelled test data, showing machines, consumables, DIY kits, sales and replenishment. A real European network is not yet in place.
 
 Before preparing a pilot order, please confirm:
 
-- Existing EU distributors and exclusivity rights, and whether a principal-distributor / subpartner structure is available.
-- Demonstration terms and distributor prices for 3-5, 10, 25 and 50 machines, MOQ, lead times and the exact FCA location. These are discussion scenarios, not purchase commitments.
-- The hardware and software included in the USD 2,450 quotation. The September FAQ describes monochrome production, while current pages and video show multicolor work. Please confirm the model, thread changes, controller, screen and computer requirements.
-- Model-specific EU conformity documents, instructions, warranty, spare parts and preparations for the machinery rules applying from 20 January 2027.
-- Software integration and commercial usage rights, photo/file hosting and deletion, and options for a local or EU-hosted workflow.
-- Approved media and localization rights, and permission to use our studio brand while clearly identifying the equipment manufacturer.
+- Existing EU distributors/exclusivity rights and whether a principal-distributor/subpartner structure is available.
+- Trial/distributor prices for 3-5, 10, 25 and 50 machines, MOQ, lead times and the exact FCA location. These are discussion scenarios, not commitments.
+- Exact hardware/software in the USD 2,450 quote: mono/colour capability, thread changes, controller, screen, computer requirements and specifications.
+- Model-specific EU conformity, instructions, warranty, spare parts and preparation for the rules applying from 20 January 2027.
+- Your relationship with ALINEDECO, who owns its rights, and who can authorize an API, white-label licence or local/EU-hosted integration. Free access alone does not establish source-code reuse rights.
+- Media/localization rights and private-label DIY kits: fitted pins, thread, packaging, codes, sample price, MOQ and frame drawings.
 
-After a successful pilot, we would discuss protected registered leads, territory-development milestones and an official EU distributor page linking to our local sales and support. Any regional-page migration would be a separate, mutually agreed project.
+After a successful pilot, we would discuss registered-lead protection, territory milestones and an official EU distributor page linking to us. Domain or regional-page migration would be a separate agreement.
 
-We prefer a measurable pilot before large stock commitments. Would your management team be available for a short video meeting?
+Would your management team be available for a video meeting to discuss this pilot?
 
 Best regards,
 
-MB Pinet team
-Lithuania
-info@pinet.lt
+MB Pinet team | Lithuania | info@pinet.lt
 
-Laiško būsena: paruoštas juodraštis, neišsiųstas. Jį geriausia siųsti atsakant į originalią Joy Huang laiško giją. Viešai matomas sales@vanmac.net, tačiau tai nepatvirtina originalaus siuntėjo adreso. Laiškas neteikia užsakymo, mokėjimo, išskirtinumo ar įdiegto pajėgumo pažado.
+Draft status: prepared for review; not sent. Reply in the original Joy Huang thread after verifying the recipient. This draft is not a purchase, payment or exclusivity commitment.

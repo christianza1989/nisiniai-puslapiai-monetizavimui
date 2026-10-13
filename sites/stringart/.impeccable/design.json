@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T13:16:51.470Z",
+  "title": "Design System: MemoryString creator",
+  "extensions": {
+    "colorMeta": {
+      "forest": {
+        "displayName": "forest",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0613 174.11)",
+          "oklch(25% 0.0613 174.11)",
+          "oklch(35% 0.0613 174.11)",
+          "oklch(45% 0.0613 174.11)",
+          "oklch(55% 0.0613 174.11)",
+          "oklch(65% 0.0613 174.11)",
+          "oklch(80% 0.0613 174.11)",
+          "oklch(95% 0.0613 174.11)"
+        ]
+      },
+      "forest-hover": {
+        "displayName": "forest hover",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0525 173.55)",
+          "oklch(25% 0.0525 173.55)",
+          "oklch(35% 0.0525 173.55)",
+          "oklch(45% 0.0525 173.55)",
+          "oklch(55% 0.0525 173.55)",
+          "oklch(65% 0.0525 173.55)",
+          "oklch(80% 0.0525 173.55)",
+          "oklch(95% 0.0525 173.55)"
+        ]
+      },
+      "canvas": {
+        "displayName": "canvas",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0082 91.48)",
+          "oklch(25% 0.0082 91.48)",
+          "oklch(35% 0.0082 91.48)",
+          "oklch(45% 0.0082 91.48)",
+          "oklch(55% 0.0082 91.48)",
+          "oklch(65% 0.0082 91.48)",
+          "oklch(80% 0.0082 91.48)",
+          "oklch(95% 0.0082 91.48)"
+        ]
+      },
+      "paper": {
+        "displayName": "paper",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(25% 0.0000 89.88)",
+          "oklch(35% 0.0000 89.88)",
+          "oklch(45% 0.0000 89.88)",
+          "oklch(55% 0.0000 89.88)",
+          "oklch(65% 0.0000 89.88)",
+          "oklch(80% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "ink": {
+        "displayName": "ink",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0284 173.10)",
+          "oklch(25% 0.0284 173.10)",
+          "oklch(35% 0.0284 173.10)",
+          "oklch(45% 0.0284 173.10)",
+          "oklch(55% 0.0284 173.10)",
+          "oklch(65% 0.0284 173.10)",
+          "oklch(80% 0.0284 173.10)",
+          "oklch(95% 0.0284 173.10)"
+        ]
+      },
+      "muted": {
+        "displayName": "muted",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0243 165.25)",
+          "oklch(25% 0.0243 165.25)",
+          "oklch(35% 0.0243 165.25)",
+          "oklch(45% 0.0243 165.25)",
+          "oklch(55% 0.0243 165.25)",
+          "oklch(65% 0.0243 165.25)",
+          "oklch(80% 0.0243 165.25)",
+          "oklch(95% 0.0243 165.25)"
+        ]
+      },
+      "line": {
+        "displayName": "line",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0149 142.22)",
+          "oklch(25% 0.0149 142.22)",
+          "oklch(35% 0.0149 142.22)",
+          "oklch(45% 0.0149 142.22)",
+          "oklch(55% 0.0149 142.22)",
+          "oklch(65% 0.0149 142.22)",
+          "oklch(80% 0.0149 142.22)",
+          "oklch(95% 0.0149 142.22)"
+        ]
+      },
+      "wash": {
+        "displayName": "wash",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0114 128.59)",
+          "oklch(25% 0.0114 128.59)",
+          "oklch(35% 0.0114 128.59)",
+          "oklch(45% 0.0114 128.59)",
+          "oklch(55% 0.0114 128.59)",
+          "oklch(65% 0.0114 128.59)",
+          "oklch(80% 0.0114 128.59)",
+          "oklch(95% 0.0114 128.59)"
+        ]
+      },
+      "focus": {
+        "displayName": "focus",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.1184 51.07)",
+          "oklch(25% 0.1184 51.07)",
+          "oklch(35% 0.1184 51.07)",
+          "oklch(45% 0.1184 51.07)",
+          "oklch(55% 0.1184 51.07)",
+          "oklch(65% 0.1184 51.07)",
+          "oklch(80% 0.1184 51.07)",
+          "oklch(95% 0.1184 51.07)"
+        ]
+      },
+      "error": {
+        "displayName": "error",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.1515 28.65)",
+          "oklch(25% 0.1515 28.65)",
+          "oklch(35% 0.1515 28.65)",
+          "oklch(45% 0.1515 28.65)",
+          "oklch(55% 0.1515 28.65)",
+          "oklch(65% 0.1515 28.65)",
+          "oklch(80% 0.1515 28.65)",
+          "oklch(95% 0.1515 28.65)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Page title",
+        "purpose": "Creator/guide title; mobile 1.75rem."
+      },
+      "pin": {
+        "displayName": "Current pin",
+        "purpose": "From/to physical instruction."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "view-reveal",
+        "value": "0.18s ease-out",
+        "purpose": "View entry, only without reduced motion."
+      },
+      {
+        "name": "control-colour",
+        "value": "0.15s ease",
+        "purpose": "Button colours, only without reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "narrow",
+        "value": "400px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The next principal action.",
+      "html": "<button class=\"ds-button ds-primary\">Done · next</button>",
+      "css": ".ds-button{min-height:48px;padding:10px 16px;border-radius:8px;font:600 1rem system-ui;cursor:pointer;border:1px solid var(--line,#d6ded5)}.ds-button:focus-visible{outline:3px solid var(--focus,#a35724);outline-offset:3px}.ds-primary{background:var(--green,#164d40);color:white;border-color:var(--green,#164d40)}.ds-primary:hover{background:var(--green-hover,#103d32)}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A supporting action.",
+      "html": "<button class=\"ds-button ds-secondary\">Export</button>",
+      "css": ".ds-button{min-height:48px;padding:10px 16px;border-radius:8px;font:600 1rem system-ui;cursor:pointer;border:1px solid var(--line,#d6ded5)}.ds-button:focus-visible{outline:3px solid var(--focus,#a35724);outline-offset:3px}.ds-secondary{background:var(--surface,#fff);color:var(--ink,#182c26)}.ds-secondary:hover{background:var(--wash,#edf1e9)}"
+    },
+    {
+      "name": "Artwork title input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labelled local-project metadata.",
+      "html": "<label class=\"ds-label\" for=\"ds-title\">Artwork title</label><input class=\"ds-input\" id=\"ds-title\" placeholder=\"A family portrait\">",
+      "css": ".ds-label{display:block;font:600 .875rem system-ui;margin-bottom:6px;color:var(--ink,#182c26)}.ds-input{box-sizing:border-box;min-height:48px;max-width:100%;width:100%;padding:9px 11px;font:1rem system-ui;border:1px solid var(--line,#d6ded5);border-radius:8px;color:var(--ink,#182c26);background:var(--surface,#fff)}.ds-input:focus-visible{outline:3px solid var(--focus,#a35724);outline-offset:3px}"
+    },
+    {
+      "name": "Stage navigation",
+      "kind": "nav",
+      "description": "The active creator stage.",
+      "html": "<nav class=\"ds-stages\"><button class=\"ds-button ds-stage\">Photo & preview</button><button class=\"ds-button ds-stage ds-current\">Build guide</button></nav>",
+      "css": ".ds-button{min-height:48px;padding:10px 16px;border-radius:8px;font:600 1rem system-ui;cursor:pointer;border:1px solid var(--line,#d6ded5)}.ds-button:focus-visible{outline:3px solid var(--focus,#a35724);outline-offset:3px}.ds-stages{display:flex;flex-wrap:wrap;gap:8px}.ds-stage{background:transparent;border-color:transparent;color:var(--ink,#182c26)}.ds-current{background:var(--green,#164d40);color:white}.ds-stage:hover{background:var(--wash,#edf1e9);color:var(--ink,#182c26)}"
+    },
+    {
+      "name": "Pin reader surface",
+      "kind": "card",
+      "refersTo": "reader",
+      "description": "The signature current connection.",
+      "html": "<section class=\"ds-reader\"><div><span>From pin</span><strong>1</strong></div><div><span>To pin</span><strong>101</strong></div><p>Tie the thread at pin 1, then go to pin 101.</p></section>",
+      "css": ".ds-reader{padding:24px;border-radius:12px;background:var(--surface,#fff);font:1rem/1.55 system-ui;color:var(--ink,#182c26);display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}.ds-reader span{display:block;font-size:.875rem;color:var(--muted,#52635b)}.ds-reader strong{display:block;font-size:3rem;line-height:1.1;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--green,#164d40)}.ds-reader p{width:100%;margin:0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Quiet Workbench",
+    "overview": "The creator uses a warm canvas and forest controls around the actual generated artwork. Its character is calm and practical: a device sits beside a numbered frame while the person works. White work surfaces distinguish settings and current instructions without competing with the thread preview.\n\nThe current connection receives the largest numbers. The preview, text alternative and manual controls remain understandable together. This is the implemented local creator's visual system; the paused sales site and partner platform have no accepted visual implementation.",
+    "keyCharacteristics": [
+      "Flat tonal surfaces.",
+      "Prominent current pin numbers.",
+      "Native geometry and device typography.",
+      "Responsive wrapping and visible focus."
+    ],
+    "rules": [
+      {
+        "name": "The Current Step Rule",
+        "body": "Use the forest emphasis to clarify the selected stage and current task.",
+        "section": "colors"
+      },
+      {
+        "name": "The Readable Number Rule",
+        "body": "Keep both the from-pin and to-pin labels beside their values and retain a full text instruction.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "**Do** keep the current pin pair and its text instruction prominent.",
+      "**Do** preserve wrapping, visible focus and manual alternatives to speech.",
+      "**Do** use generated geometry as actual artwork evidence within the creator."
+    ],
+    "donts": [
+      "**Don't** present the synthetic sample as a real customer portrait or machine result.",
+      "**Don't** replace readable state labels with decorative symbols alone."
+    ]
+  }
+}

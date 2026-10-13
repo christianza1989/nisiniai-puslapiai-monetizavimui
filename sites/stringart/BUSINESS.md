@@ -1,33 +1,37 @@
-# Stringart - verslo hipotezė
+# MemoryString business hypothesis
 
-2026-10-13. Darbinis siteId `stringart`; prekės ženklas ir domenas nepasirinkti. Statusas: **discussing / research prepared**. Core main bazė: `7af6b9641012a30c5f95eac38a66daeff8f8cb39`; companion source sąsajos šiame darbe nenaudojamos.
+13 October 2026. siteId `stringart`; MemoryString is a candidate brand, with no approved domain or trademark clearance. Current source-bound acceptance: [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md). Core base: `7af6b9641012a30c5f95eac38a66daeff8f8cb39`. No companion source interfaces changed.
 
-Savininkas šiame pokalbyje paprašė ištirti pateiktą aparatą, savo individualių paveikslų gamybą / siuntimą ir tarptautinį įrangos platinimą. Papildė vietinių ES partnerių ženklu / svetaine / įranga, savo automatizavimo sistema, pagrindinio platintojo tikslu, gamintojo domenų bendradarbiavimu bei influencerių / vaizdo / rekomendavimo kanalais. Aparato dar neturi; turi tik pasiūlymą. Tyrimas ir konkretus planas autorizuoti, tačiau tai nėra pirkimo, mokamo tyrimo, kampanijos paleidimo ar pasirašytų platintojo teisių įrodymas.
+The owner requested equipment distribution, a portrait studio, local EU partners supplied with equipment/materials/websites/training, DIY kits and our own creator app. The owner has only a quotation. Website and full partner-platform implementation were subsequently paused. The separate Android creator app, English language and SDK installation/build were explicitly authorized.
 
-## Pasirinktas modelis
+## Recommended business
 
-Viena Lietuvos demonstracinė ir gamybos studija → patikrintos įrangos / medžiagų platinimas → vietinių gamybos partnerių paketas. Vienas pagrindinis ženklas ir lokalizuotos šalies svetainės versijos; savas partnerio ženklas - vėlesnis atskiras variantas. Negalima pažadėti viso verslo arba klientų srauto vien pardavus aparatą.
+One Lithuanian pilot and fulfilment studio, then accepted equipment/consumables distribution, then one or two local production partners. Scale the EU network against real sales, quality and support milestones. Initial channels are finished portraits, DIY kits and equipment; recurring materials/software depend on a defined working service.
 
-Klientas, norintis dovanos ar interjero akcento, moka už baigtą paveikslą. Studija moka už atgabentą, paruoštą įrangą ir palaikymą. Vietinis verslininkas moka už tiksliai apibrėžtą paleidimo paketą ir veikiančią programos paslaugą. Paveikslo ir partnerio paketo pirkėjai, influenceriai, tiekėjai ir šalies vystymo partneriai yra skirtingi vaidmenys.
+A gift/interior customer pays for a finished portrait; a DIY buyer pays for a kit and useful instructions; a studio pays for accepted equipment/support; an entrepreneur pays for a defined launch package. Suppliers and influencers have different roles. Initially each local partner is its own customer's seller; centralized payments and payouts require a separate contractual/technical design.
 
-Pirmas produktas: patikrintas 42 cm vienspalvis žmogaus / augintinio portretas, su peržiūra prieš gamybą. Spalvos ir didesni formatai priimami atskirai. Pirmoje partnerių versijoje vietinis partneris būtų savo klientų pardavėjas; centralizuotas atsiskaitymas ir išmokos - atskiras sutartinis / techninis etapas.
+Start with a physically accepted 42 cm monochrome portrait, approved preview and real delivery capacity. Colour and larger frames have separate acceptance gates. Our app's proposed presets do not establish hardware compatibility.
 
-## Įrodymai ir prieštaraujantys faktai
+## Evidence and contrary findings
 
-Žr. [pilną planą, šaltinius ir laišką](../../research/stringart-distribution-20261013/PLAN.md). Pateikta aparato kaina 2 450 USD FCA China. Reali atgabenimo sąmata, distributor discount ir atitiktis nežinomi. Gamintojo PDF ir aktualūs puslapiai prieštarauja dėl monochrome / multicolor, ekranų / kompiuterio, pakuotės bei komplektacijos. Prieš užsakymą reikia modelį atitinkančios specifikacijos.
+The [complete English plan](../../research/stringart-distribution-20261013/PLAN-EN.md) records dated sources, conflicts, assumptions and the supplier letter. PLAN.md is the current Lithuanian counterpart. Both are version 4, updated in place; superseded drafts are archived outside the project.
 
-DIY RingString viešos kainos 69,99-99,99 €; tai ne baigtas paveikslas. Baigtą 50 cm darbą už 129 € siūlantis Art in Black ir nuo 159 € siūlantis Arezu riboja nepagrįstos aukštos kainos prielaidą. Lietuvoje yra Vieno Siūlo ir lietuviškai parduodamas RingString. Svetainių pasiūlymai neįrodo jų apyvartos ar mūsų paklausos.
+The supplied USD 2,450 FCA China quotation requires an exact named FCA place, configuration and landed-cost quote. The PDF and current NOVA/ALINEDECO pages differ on mono/colour, screen/computer, power and packing. Association signals link VANMAC and ALINEDECO; their legal/software ownership is unverified.
 
-149 € paveikslo modelyje, su hipotetiniu 21 % PVM ir 90,95 € visų kintamų sąnaudų, lieka 32,19 € fiksuotoms sąnaudoms bei pelnui. Tarp sąnaudų yra 25 € visų pritraukimo išlaidų. Paprastas įrangos perpardavimas pagal pilną FCA kainą modeliavimo pavyzdyje beveik nepalieka maržos; distributor price ir aptarnavimo sąnaudos pakeis sprendimą.
+Dated public DIY offers of EUR 69.99-99.99 compete with our planned kit; they are not finished portraits. Art in Black's EUR 129 finished 50 cm offer and Arezu's offer from EUR 159 challenge an unsupported premium-price assumption. Lithuania already has Vieno Siulo and RingString offers. Public listings do not prove turnover or our demand.
 
-## Pradinis komercinis bandymas
+Under explicitly hypothetical 21% VAT and costs, a EUR 149 portrait produces EUR 123.14 net revenue, EUR 90.95 variable costs including EUR 25 acquisition, and EUR 32.19 contribution before fixed costs/tax. Full-price machine resale is approximately break-even in the worked scenario; distributor terms and service costs can change that. The EUR 99.99 DIY scenario leaves EUR 17.34, below the proposed EUR 20 gate. No discounted factory price is agreed.
 
-Iki aparato / tiekimo parengimo galima tik skaidri išankstinė poreikio užklausa, ne pažadas pagaminti ar išsiųsti. Kvalifikuotos paveikslo užklausos požymiai: pageidaujamas produktas / formatas, pristatymo šalis, dovanos data ir reakcija į tikrą preliminarią kainą. Partnerio paraiškai: šalis / miestas, dabartinė veikla, gamybos vieta, patirtis ir finansavimo pasirengimas. Nuotraukas rinkti tik turint priimtą saugų kelią; viešai nepublikuoti.
+## Demand and expansion gates
 
-Siūlomi vartai: techninė ir atitikties patikra; 30 bandomųjų darbų; bent 90 % priimami iš pirmo karto; vienos rinkos 20 apmokėtų / pristatytų užsakymų; bent 30 € vieneto likutis po visų pritraukimo ir tiesioginių sąnaudų; 1-2 partnerių praktinis priėmimas. Šios ribos yra siūlomos sprendimo taisyklės, ne išmatuoti rinkos standartai.
+Until supply is accepted, collect only transparent expressions of interest. Useful portrait inquiries state product/format, delivery market, date and reaction to a real indicative price. Partner applications cover city, current activity, workspace, experience and funding readiness. Do not publish private customer photos.
 
-## Kas dar būtina
+Suggested gates: authentic counterpart and conformity; 30 machine jobs across ten photos; 90% first-pass acceptance; twenty paid/fulfilled one-market orders; at least EUR 30 portrait contribution after all variable/acquisition costs; practical onboarding of one or two partners. DIY's proposed EUR 20 gate needs revised costs/price. These are decision rules, not measured industry standards.
 
-Juridinio gamintojo ir banko gavėjo patikra, konkretus SKU / komplektas, ES atitiktis, transportas ir muito klasifikacija, garantija / dalys, programos teisės ir duomenų srautai, prekės ženklo patikra, faktinės darbo / pakavimo / influencerio sąnaudos. Domeno 301 nėra pradinis bendradarbiavimo reikalavimas: pirma oficialus regioninis pardavimo kelias ir užklausų perdavimas.
+## Current output and next decisions
 
-[Įrankių planas](TOOLS.md). Nauja studijos ar partnerių sistema neįgyvendinta. Esamo core turinio / kontaktų infrastruktūra nesuteikia automatinio ecommerce, kelių partnerių mokėjimų, aparatų API ar nuotolinės gamybos priėmimo. Šio tyrimo paid provider išlaidos 0 USD; jokie tiekėjai, influenceriai ar partneriai nekontaktuoti. Centrinis business-development registras šioje sesijoje neredaguojamas pagal jo paskirtą savininkystę.
+The English plan, unsent supplier proposal and 25-repository assessment are prepared. The independent MIT-based creator app and local Android test APK exist. The ten-partner inventory/order/supplier demonstration is specified and paused, with no accepted server or real partner network.
+
+Resolve counterpart/bank identity, exact SKU, conformity, freight/customs, warranty/parts, software/photo-processing rights, private-label kit specifications and brand clearance. Request a distributor page and lead routing first; 301 migration is a separate optional agreement. Real sales determine expansion.
+
+No supplier/influencer message, machine purchase, campaign, domain migration or public deployment was performed. Paid research-provider execution: 0 calls, USD 0. Our own core adapter remains separate from the shared content/mail engine; no second CRM or publishing core was built.

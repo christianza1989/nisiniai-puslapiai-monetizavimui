@@ -4,7 +4,7 @@ Website corrections are live. Full commercial product verdict: **NOT READY**. Th
 
 ## Release and evidence
 
-Canonical: https://phonebridger.com. Production version: 028a75ec-40db-4619-84e6-39c532f3ed39. Source: 617351158f3f641907251304864877165a734fcc + c2118013eaffc707ff4e3e2657563d9d1615bc5f. Package SHA-256: c4123af737bd9ba1092355762e8dc56e94e9f773db0a4d6fa9d9a08d43362b06. Fourteen public pages and twenty built routes; 32 affected-page/viewport combinations, keyboard menu/skip checks, real public authentication and unchanged download hashes verified.
+Canonical: https://phonebridger.com. Production version: f6ca95ba-bb81-4052-b4b4-0260bc13479a. Source: 617351158f3f641907251304864877165a734fcc + 3393197d988c2d0248c85554dfd50cac4520ccd7. Package SHA-256: c4123af737bd9ba1092355762e8dc56e94e9f773db0a4d6fa9d9a08d43362b06. Fourteen public pages and twenty built routes; 32 affected-page/viewport combinations, keyboard menu/skip checks, real public authentication and unchanged download hashes verified.
 
 ## Baseline defects and completed repairs
 
@@ -12,7 +12,7 @@ Canonical: https://phonebridger.com. Production version: 028a75ec-40db-4619-84e6
 - P1: Privacy notice said verification/recovery unavailable and omitted current profile/support/creator data. Reviewed edition now matches implemented purposes and deletion/retention. Account deletion removes profile as well as security/session data.
 - P1: Four guide bylines, generated Organization and editorial copy used MB Pinet while purchase/privacy name MB Memocasting. Corrected public attribution, private-preview wording and stale commerce claims through reviewed Studio editions. Original publication dates remain October 6.
 - P2: Narrow header under enlarged text spacing overflowed 320px; wrapping repaired without removing labels. Homepage duplicate demo H1 corrected.
-- P2: Heavy originals and twenty render-blocking CSS files. Derived WebP responsive families and ordered hashed CSS bundle retain original source and scene geometry. Baseline mobile 52; final canonical 69. Target remains failed.
+- P2: Heavy originals and twenty render-blocking CSS files. Derived WebP responsive families and ordered hashed CSS bundle retain original source and scene geometry. Baseline mobile 52; final canonical 71. Target remains failed.
 - Shared compatibility: current-main CollectionPage migration broke inherited historical golden test; exact collection inventory tested before narrow normalization, original fixture unchanged. Studio stable-ID plus English locale behavior retained. Public shell checker now recognizes intentionally private layouts. Missing committed-upgrade coverage helper implemented with real Git regressions and repository-scoped journals.
 
 ## Product launch gates
@@ -38,7 +38,7 @@ Canonical: https://phonebridger.com. Production version: 028a75ec-40db-4619-84e6
 
 **Signed Windows release:** Accepted Windows bundle production_signed=false; unchanged original hash. Android compatible signer and existing physical USB/Wi-Fi switch proof retained.
 
-**Mobile performance:** Canonical score 69; target 90. Baseline 52. Rich homepage keeps real media and simulator.
+**Mobile performance:** Canonical score 71; target 90. Baseline 52. Rich homepage keeps real media and simulator.
 
 **Fulfilment and recovery:** Manual supplier workflow and guarded order records implemented; no new complete live customer delivery, bank reconciliation or backup restoration drill certified.
 
@@ -49,6 +49,8 @@ Canonical: https://phonebridger.com. Production version: 028a75ec-40db-4619-84e6
 See evidence/performance.json for exact mobile lab version/date, scores and LCP/CLS/TBT/transfer values. This is lab evidence, not field CWV. Selected dark/pink/lime identity and desk scene are preserved; image derivatives were visually checked, including rejection of an initially blank conversion before publication. Long guides retain distinct tasks and illustrative images. Text-focused policies have a deliberate text-only treatment.
 
 No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200-percent browser zoom, full contrast/reduced-motion/rich-demo acceptance remain unverified. No native mouse files changed or manifest hashes regenerated. Existing physical USB/Wi-Fi switch evidence is retained, not reclassified as untested because of an obsolete note.
+
+The final focused carousel check verifies all 24 card positions and pause at 1440/390px after sampling stage width once per render. The 32-case matrix covers unchanged HTML before this two-line JS performance patch; exact versions are recorded in evidence/README.md. Canonical mobile TBT is 100ms; performance target remains failed.
 
 ## A–Z acceptance
 
@@ -302,7 +304,7 @@ No full WCAG claim: keyboard menu/Escape/focus and skip link exercised; real 200
 
 - [ ] **T1 · FAIL · local gate** — Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.
 
-  Actual canonical mobile lab target is 90; measured 69. Rich demo CPU and LCP remain limits. Evidence: evidence/performance.json.
+  Actual canonical mobile lab target is 90; measured 71. Rich demo CPU and LCP remain limits. Evidence: evidence/performance.json.
 
 - [x] **T2 · PASS · local** — Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.
 

@@ -16,19 +16,19 @@
     }
   },
   "final": {
-    "at": "2026-10-13T09:19:20.378Z",
+    "at": "2026-10-13T09:25:46.002Z",
     "url": "https://phonebridger.com/",
     "tool": "13.5.0",
     "scores": {
-      "performance": 69,
+      "performance": 71,
       "accessibility": 100,
       "seo": 100
     },
     "metrics": {
-      "largest-contentful-paint": "5.7 s",
-      "cumulative-layout-shift": "0",
-      "total-blocking-time": "220 ms",
-      "total-byte-weight": "Total size was 1,566 KiB"
+      "largest-contentful-paint": "6.3 s",
+      "cumulative-layout-shift": "0.001",
+      "total-blocking-time": "100 ms",
+      "total-byte-weight": "Total size was 1,549 KiB"
     }
   },
   "target": 90,

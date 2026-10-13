@@ -1,0 +1,38 @@
+{
+  "state": "ACTUAL_CONSUMER_AND_DOMAIN_ACCEPTED",
+  "siteId": "madbeauty",
+  "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+  "producerCommit": "b948707db0cb6e449f2c1f34f0f238edf44f625b",
+  "producerPullRequest": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/107",
+  "consumerThread": "01a11268-7ab2-7a23-973c-598322dba15a",
+  "canonicalLeaseOwner": null,
+  "before": {
+    "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+    "pages": 129,
+    "guides": 125,
+    "version": "87e6c536-aa20-4f9c-a052-62ab21f9526c",
+    "runtimeSource": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+    "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2"
+  },
+  "candidate": {
+    "pages": 135,
+    "guides": 131,
+    "assetVariants": 664,
+    "newGuides": 6,
+    "newPhotographs": 6,
+    "newNativeDiagrams": 1,
+    "newAssetVariants": 34,
+    "old129Preserved": true,
+    "calendar299Preserved": true
+  },
+  "productionDeployed": true,
+  "scope": "Actual consumer receipt, compiled artifact bytes, native boundary/media/schema/OG evidence, current provider 100% version and independent real-clock canonical HTTP accepted. Historical producer evidence remains unchanged.",
+  "acceptedAt": "2026-10-13T13:33:33.151Z",
+  "actual": {
+    "version": "f68008dd-5ceb-446b-8113-d68bd1631919",
+    "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+    "artifactSha256": "384825934db64e4824cfd42517f88d08d89f867f0d03698a640a3755e5ef3833",
+    "consumerReceiptSha256": "204512008955f0beb25b5857f48a94c0de118853872f11db8899240cbf18a507",
+    "consumerPR": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/127"
+  }
+}

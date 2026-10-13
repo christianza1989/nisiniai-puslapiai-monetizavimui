@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-12T06:25:56.514Z",
+  "state": "PASS_ACTUAL_NATIVE_DIAGRAM_PIXELS",
+  "svgSha256": "56692b7106f79ba21d56e06b6f7f32456ca7ca7fbff668b9486a6e4c1a460204",
+  "pngSha256": "bba8e57701cc5cb05a15a0c66cc2174fbc8cee2ee10cfb9f917f449ad84739ed",
+  "observation": "Actual rendered SVG image opened: four equal drawing lengths, distinct curved/tapered/flat/rounded-corner contours, correct LT labels, clear nonprescriptive schematic note. This is a simplified original comparison, not nail anatomy or fit specification.",
+  "asset": {
+    "id": "f3757de4-b5f4-4600-944d-4f76192bd0cf",
+    "groupId": "3ed2405e-11fb-4cc9-9d5c-ee9dc819bb41",
+    "src": "/content-assets/madbeauty/f3757de4-b5f4-4600-944d-4f76192bd0cf.webp",
+    "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+    "width": 1200,
+    "height": 570,
+    "credit": "",
+    "rights": "Originali Madbeauty vektorinė schema; kontūrų pavadinimai patikrinti OPI apraše",
+    "prompt": "Code-native original SVG nail-contours.svg; no ImageGen or procedural anatomy. Four independent paths with the same drawing dimensions.",
+    "bytes": 18248,
+    "sha256": "a3a777a82edfefc2a8bc58cb28864773ef445f002464221346b0c665dd7ed32b",
+    "variants": [
+      {
+        "id": "f3757de4-b5f4-4600-944d-4f76192bd0cf",
+        "groupId": "3ed2405e-11fb-4cc9-9d5c-ee9dc819bb41",
+        "src": "/content-assets/madbeauty/f3757de4-b5f4-4600-944d-4f76192bd0cf.webp",
+        "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+        "width": 1200,
+        "height": 570,
+        "credit": "",
+        "rights": "Originali Madbeauty vektorinė schema; kontūrų pavadinimai patikrinti OPI apraše",
+        "prompt": "Code-native original SVG nail-contours.svg; no ImageGen or procedural anatomy. Four independent paths with the same drawing dimensions.",
+        "bytes": 18248,
+        "sha256": "a3a777a82edfefc2a8bc58cb28864773ef445f002464221346b0c665dd7ed32b"
+      },
+      {
+        "id": "8493794a-b750-47a5-afb1-3dc14dd36219",
+        "groupId": "3ed2405e-11fb-4cc9-9d5c-ee9dc819bb41",
+        "src": "/content-assets/madbeauty/8493794a-b750-47a5-afb1-3dc14dd36219.webp",
+        "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+        "width": 800,
+        "height": 380,
+        "credit": "",
+        "rights": "Originali Madbeauty vektorinė schema; kontūrų pavadinimai patikrinti OPI apraše",
+        "prompt": "Code-native original SVG nail-contours.svg; no ImageGen or procedural anatomy. Four independent paths with the same drawing dimensions.",
+        "bytes": 10960,
+        "sha256": "ab798d4cbe94002d1d4ae81673b2c2620232b09b35a503935be134179c05b219"
+      },
+      {
+        "id": "04b15959-a2ed-4117-b754-7d0b31eeea38",
+        "groupId": "3ed2405e-11fb-4cc9-9d5c-ee9dc819bb41",
+        "src": "/content-assets/madbeauty/04b15959-a2ed-4117-b754-7d0b31eeea38.webp",
+        "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+        "width": 640,
+        "height": 304,
+        "credit": "",
+        "rights": "Originali Madbeauty vektorinė schema; kontūrų pavadinimai patikrinti OPI apraše",
+        "prompt": "Code-native original SVG nail-contours.svg; no ImageGen or procedural anatomy. Four independent paths with the same drawing dimensions.",
+        "bytes": 8532,
+        "sha256": "98762f184422420cc1849173d1972dc0a37cfe5156e792ed14181db630a02d95"
+      },
+      {
+        "id": "ca39725c-f64a-4407-b39f-fd35fb0aea3f",
+        "groupId": "3ed2405e-11fb-4cc9-9d5c-ee9dc819bb41",
+        "src": "/content-assets/madbeauty/ca39725c-f64a-4407-b39f-fd35fb0aea3f.webp",
+        "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+        "width": 360,
+        "height": 171,
+        "credit": "",
+        "rights": "Originali Madbeauty vektorinė schema; kontūrų pavadinimai patikrinti OPI apraše",
+        "prompt": "Code-native original SVG nail-contours.svg; no ImageGen or procedural anatomy. Four independent paths with the same drawing dimensions.",
+        "bytes": 4024,
+        "sha256": "d94cdc8644c55f03c5479468b45ee55e2e69fcdb41c2b165624d91e068731e17"
+      }
+    ],
+    "optimization": {
+      "policy": "responsive-webp-v1",
+      "sourceBytes": 57164,
+      "variantBytes": [
+        {
+          "width": 1200,
+          "bytes": 18248
+        },
+        {
+          "width": 800,
+          "bytes": 10960
+        },
+        {
+          "width": 640,
+          "bytes": 8532
+        },
+        {
+          "width": 360,
+          "bytes": 4024
+        }
+      ],
+      "originalStoredPrivately": true
+    }
+  }
+}

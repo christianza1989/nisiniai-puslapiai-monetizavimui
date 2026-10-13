@@ -1,0 +1,134 @@
+[
+  {
+    "id": "R101",
+    "title": "NCCIH · aromaterapijos ribos",
+    "url": "https://www.nccih.nih.gov/health/aromatherapy",
+    "note": "Tikrai perskaityta2026-10-12: eteriniai aliejai naudojami kvapo arba praskiestos odos priemonės forma; gali būti masažo komponentas. Nemigos naudos patikimų tyrimų mažai. Kvapas neįrodo gydymo, detox ar garantuoto poveikio. Ne dozės, skiedimo, vartojimo ar individualaus alergijos testavimo receptas. JAV informacija, ne LT teisė.",
+    "retrievedAt": "2026-10-12T06:11:57.026Z",
+    "reviewedAt": "2026-10-12T06:11:57.026Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "52783af0918f56f5d9179a92b53fbf26d2e07e0d8bcef4aa4db6c98ac0c227fc",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R102",
+    "title": "OPI · nagų formų kontūrai",
+    "url": "https://www.opi.com/blog/nail-care/how-to-shape-nails",
+    "note": "Tikrai perskaityti OPI almond/square/oval/squoval skyriai: migdolas siaurėja į suapvalintą viršūnę, ovalas kiaušinio kontūras, kvadratas tiesus laisvas kraštas, squoval minkštinti kampai. Galima originali vienodo scheminio mastelio kontūrų iliustracija. Ne kopijuoti nuotraukas, dildymo45laipsnių/recepto instrukcijas, marketingą „tinka visiems“ ar populiarumo įrodymą.",
+    "retrievedAt": "2026-10-12T06:11:57.548Z",
+    "reviewedAt": "2026-10-12T06:11:57.548Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "87f4be49f3c012b3413961aff408081f081704fa4f9dbfa0fe52429d47539af2",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R103",
+    "title": "Gelish · PolyGEL sistemos aprašas",
+    "url": "https://gelish.com/enhancements/polygel",
+    "note": "2026-10-12 actual tiesioginiame HTML perskaityta HYBRID/APPLY/REAPPLY/CURE: tūbelės paruošta hibridinė sistema modeliuojama ir kietinama gamintojo nurodyta lempa. Nemaišyti savarankiško gelio ir akrilo kaip recepto; ne visų produktų cheminė specifikacija. Marketingo lengvesnis/stipresnis/no dust/no odor neperkelti kaip nepriklausomo saugumo ar patvarumo įrodymo. Nenaudoti sekundžių, abrazyvo, dildymo ar dozės instrukcijų.",
+    "retrievedAt": "2026-10-12T06:11:59.685Z",
+    "reviewedAt": "2026-10-12T06:11:59.685Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "67cd9e9d45e2046f385f81da32841cde2bfef23c9fe1a5c9b348c8a6f212892b",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R105",
+    "title": "AAD · manikiūro ir pedikiūro sauga",
+    "url": "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/manicure-pedicure-safety",
+    "note": "2026-10-12 actualread turinio dalis178–205: higiena/įrankių valymas, nagų problemų neslėpti dirbtiniais nagais, naudojami produktai gali sukelti reakcijas; medicinines problemas vertina gydytojas. Aparatas neįrodo savaiminio saugumo. JAV licencijų ir normų neperkelti į LT; jokių gydymo/procedūros namuose instrukcijų.",
+    "retrievedAt": "2026-10-12T06:12:00.104Z",
+    "reviewedAt": "2026-10-12T06:12:00.104Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "f73bafd71fa459082852812eb764cf20159c17a1057d3ab0360d55f50ce6825c",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R106",
+    "title": "FDA · glotninimo produkto ir formavimo skirtumas",
+    "url": "https://www.fda.gov/consumers/consumer-updates/formaldehyde-hair-smoothing-products-what-you-should-know",
+    "note": "2026-10-12 actualread82–98: glotninimo procedūra gali apimti tirpalo naudojimą ir kaitinimą; ne visi produktai turi formaldehido, reikia konkrečios sudėties ir produkto dokumentacijos/ventiliacijos. Pavadinimas keratinas/botox nėra saugumo garantija. Neišgalvoti individualių temperatūrų, poveikio trukmės, namų recepto ar LT teisinio draudimo pagal JAV informaciją.",
+    "retrievedAt": "2026-10-12T06:12:00.493Z",
+    "reviewedAt": "2026-10-12T06:12:00.493Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "0ad1e8201648ab7bdb99f16b4f6b7c59e63e00e8972ace87df7ddb505388da21",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R107",
+    "title": "SPA VILNIUS · SPA poilsis dviese",
+    "url": "https://www.spavilnius.lt/lt/vilnius/procedura/dienos-programa-spa-poilsis-dviese/931",
+    "note": "2026-10-12 web.run parsedofficial actualread26–58: SPA poilsis dviese295EUR/105min; ožkų pieno/uogų vonia dviem15min, ESPA aromaterapinis viso kūno masažas60min, pėdų masažas dviem30min; poilsis; chalatas/rankšluostis/šlepetės. Teikėjo vienas datuotas meniu, ne rinkosvidurkis/futureprice/realMadbeauty supply. Actual abiejų specialistų grafikas ir įskaičiuotas poilsio laikas nepatvirtinti. Marketingo sveikatos naudos nekartoti.",
+    "retrievedAt": "2026-10-12T06:12:00.854Z",
+    "reviewedAt": "2026-10-12T06:12:00.854Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "46b545c513ccb441222271e030c226326eff17203b76bcad59edc1e4cf7148e2",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R108",
+    "title": "SPA VILNIUS · ajurvedinis ritualas dviem",
+    "url": "https://www.spavilnius.lt/lt/vilnius/procedura/ajurvedinis-relaksacinis-ritualas-dviem/1436",
+    "note": "2026-10-12 web.run parsedofficial actualread26–42/61–78: ajurvedinis relaksacinis ritualas dviem175EUR/95min; ožkų pieno/uogų vonia, viso kūno masažas, poilsis. Komponentų minučių paskirstymas nepateiktas, jo neišgalvoti; ne faktinis dviejų terapeutų užimtumo įrodymas. Meniu nepatvirtina nervų sistemos/gydymo/energijosbalanso naudos ar individualaus tinkamumo; ne Madbeauty pasiūla.",
+    "retrievedAt": "2026-10-12T06:12:01.073Z",
+    "reviewedAt": "2026-10-12T06:12:01.073Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "b1e3c8b7b95615d10885503cfd20a5dab92d8829bab16442d7e937efb87dfbf9",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R109",
+    "title": "NVSC · grožio paslaugų higienos ribos",
+    "url": "https://nvsc.lrv.lt/lt/naujienos/nvsc-primena-grozio-paslaugos-turi-buti-saugios-apO1/",
+    "note": "2026-10-12 actualread156–173:2026-09-17 pranešimas. A/B skiriasi odos/gleivinės pažeidimu, ne tiesiog aparato pavadinimu. Instrumentų valymo/dezinfekcijos reikalavimai išlieka; galiojantis leidimas-higienos pasas pagal veiklą. Negarantuoti visų Madbeauty teikėjų patikros ar universalaus „aparatinis saugesnis“.",
+    "retrievedAt": "2026-10-12T06:12:01.312Z",
+    "reviewedAt": "2026-10-12T06:12:01.312Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "a362f15fb392047820b1d774b4682cf7412755371a57ea2548e625a7e522014c",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R110",
+    "title": "AAD · dirbtinių nagų rizikos",
+    "url": "https://www.aad.org/public/everyday-care/nail-care-secrets/basics/pedicures/reduce-artificial-nail-damage",
+    "note": "Gamintojo skirtumus sieti su AAD dirbtinių nagų vartotojo informacija, nesukuriant universalaus geriausio ar nealergizuojančio produkto. Nenaudoti namų nuėmimo ar klinikinio protokolo.",
+    "retrievedAt": "2026-10-12T06:12:01.490Z",
+    "reviewedAt": "2026-10-12T06:12:01.490Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "7b7d42241b6b9e22cc5bb7be5485510443f0d62de4b0e1491260c07a7843a9b9",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R111",
+    "title": "AAD · plaukų formavimo ribos",
+    "url": "https://www.aad.org/public/diseases/hair-loss/hair-care/styling",
+    "note": "AAD plaukų formavimo įtaka: karštis ir mechaninis pažeidimas gali žaloti plaukus; ne universalios procedūros temperatūros, permanentrepair ar ligos gydymo instrukcijos.",
+    "retrievedAt": "2026-10-12T06:12:01.662Z",
+    "reviewedAt": "2026-10-12T06:12:01.662Z",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "sha256": "bc7feab4db6ebda90b3243969e2a75e1a938c8f4987a6d94b39e4bb16f158072",
+    "provider": "Actual web.run primary-page reading plus private raw HTTP copy. Dynamic source parsed prices are not claimed to be in Angular shell bytes."
+  },
+  {
+    "id": "R112",
+    "title": "OPI · Liquid Perfection Acrylic Tip and Overlay",
+    "url": "https://assets.ctfassets.net/uyr7q3lwti8o/5VzbzNgITiPhXIEmmb1IQK/1ba02852ce2118e7bfcc2f36cb0e0b1e/Pages_from_Monomer_Education_2025_INDD_Protocol_StepBySteps_Tips-and-Overlays.pdf",
+    "note": "Actualread2page officialOPI2025PDF: Liquid Perfection Monomer and acrylic powder listed; powder is worked with monomer, product sets before filing, GelColor finish is a separate finalstep. Distinguish structural acrylic from optional gel-polish surface, not claim lamp presence proves underlying system. No mixingratios, beadmethod, minutes, filegrit or DIY instructions; no healthygrowth promise.",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "retrievedAt": "2026-10-12T06:23:19.743Z",
+    "reviewedAt": "2026-10-12T06:23:19.744Z",
+    "sha256": "6634d7a73bb72bdc53ca4c9b93b7321adf224e8e8e6caae9f7bc9c7220d0a63d",
+    "provider": "Actual primary web.run document reading; raw HTTP bytes archived privately."
+  },
+  {
+    "id": "R113",
+    "title": "OPI · gelinis lakas ir konstrukcinis builder gel",
+    "url": "https://www.opi.com/blog/product-spotlight/what-are-gel-nails",
+    "note": "Actualread OPI gel101: GelColor provides colour and shine; GELevate builder is structural and can overlay, fill, adhere tips and build short/medium length. Different roles, may be combined; GelColor islampcured. Do not copy30seconds/universal wear claims/no damage/vegan=safety. Product examples are named, not a guarantee for all systems.",
+    "review": "READ_FOR_BOUNDED_CLAIMS",
+    "retrievedAt": "2026-10-12T06:23:20.423Z",
+    "reviewedAt": "2026-10-12T06:23:20.423Z",
+    "sha256": "cf4417747f3cbbdd96ada938f44aea608cec2ce44b6851e642ed36ee3d613063",
+    "provider": "Actual primary web.run document reading; raw HTTP bytes archived privately."
+  }
+]

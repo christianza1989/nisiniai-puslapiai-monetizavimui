@@ -1,0 +1,302 @@
+{
+  "state": "PASS_PRIVATE_NATIVE_RENDER",
+  "checkedAt": "2026-10-12T06:28:06.538Z",
+  "scope": "Private actual common studio previews using the declared presentation adapter; not a canonical runtime or deployment claim.",
+  "browser": "Actual installed Chrome through Playwright",
+  "views": [
+    {
+      "planId": "MS-aromaterapinis",
+      "device": "desktop",
+      "checkedAt": "2026-10-12T06:28:02.853Z",
+      "revisionHash": "195d250df96b4ae667e8fb7eb8f78f821acae8b5142769c344fbef6e0ca0eff6",
+      "htmlSha256": "5640241eb406f3e4d2057033ffb736702d0190399a05f26a2c7bd6f8ccecd9ec",
+      "screenshot": "screenshots/MS-aromaterapinis-desktop.png",
+      "title": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/2acc9825-8e5b-43b4-9e64-95fb4a96db03.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "device": "desktop",
+      "checkedAt": "2026-10-12T06:28:03.184Z",
+      "revisionHash": "b98fa4cb08588823542f0773f126171db2439f9eb0fb705ab059a82f36ab7337",
+      "htmlSha256": "8bc9a786c25fb2fb614525552a7a959541a72cb0f1735bf1fe2bf9c8fffc40cb",
+      "screenshot": "screenshots/ND-forma-ilgis-desktop.png",
+      "title": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/c7e268c7-227f-40ff-b392-dc2536c27d7a.webp",
+          "renderWidth": 780
+        },
+        {
+          "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+          "naturalWidth": 780,
+          "naturalHeight": 370,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/8493794a-b750-47a5-afb1-3dc14dd36219.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "device": "desktop",
+      "checkedAt": "2026-10-12T06:28:03.512Z",
+      "revisionHash": "b72d560f9d8eb0038c5323d65d760e89e26d1a037064ab7cb4e1395611e94810",
+      "htmlSha256": "5402c7d9f699fdb75125d0aeafe428644434f5b2ec4e6517b04f361364497358",
+      "screenshot": "screenshots/NP-gelis-akrilas-poligelis-desktop.png",
+      "title": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/8fc4d388-2d58-4780-8df6-690e4fa52543.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "device": "desktop",
+      "checkedAt": "2026-10-12T06:28:03.801Z",
+      "revisionHash": "14a5b01ef74b00255988e35d72388ec1509f93ca0b3f6c0a615e07b5e1802175",
+      "htmlSha256": "dae2e18bf829e9034f5d92f959da71fe2bbfa4cbb6ac21b94fb408436aefa75b",
+      "screenshot": "screenshots/PD-aparatinis-klasikinis-desktop.png",
+      "title": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/260e693e-847e-4599-b6a3-c56aa14d3e73.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "device": "desktop",
+      "checkedAt": "2026-10-12T06:28:04.116Z",
+      "revisionHash": "cee57e32727b33aef66da7a9c3df1e40ca36f50b4e62fb4f8f7b68260b5dd8e9",
+      "htmlSha256": "f14111eaac0970a444ba690880a7bd08984c81b281212ed6195095ceff1abe12",
+      "screenshot": "screenshots/PP-tiesinimas-desktop.png",
+      "title": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/2bd40f9f-2729-44c1-be07-abb644a0fb4b.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "SP-poroms",
+      "device": "desktop",
+      "checkedAt": "2026-10-12T06:28:04.410Z",
+      "revisionHash": "3936a1a8fd81742c63ba9e44a43c4b2eb3e1aba91245e71540b58df416ce89ee",
+      "htmlSha256": "23bec96fa341930094ddb1ae84f9bdd4ffe2f33c581f793db0b4ba77e06b356e",
+      "screenshot": "screenshots/SP-poroms-desktop.png",
+      "title": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/674ce501-4968-4078-a78e-c85a10257161.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "MS-aromaterapinis",
+      "device": "mobile",
+      "checkedAt": "2026-10-12T06:28:04.857Z",
+      "revisionHash": "195d250df96b4ae667e8fb7eb8f78f821acae8b5142769c344fbef6e0ca0eff6",
+      "htmlSha256": "5640241eb406f3e4d2057033ffb736702d0190399a05f26a2c7bd6f8ccecd9ec",
+      "screenshot": "screenshots/MS-aromaterapinis-mobile.png",
+      "title": "Aromaterapinis masažas: naudojamos priemonės, kvapas ir komfortas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Masažo aliejaus buteliukai ant mėlyno paviršiaus",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/523b08ee-e7b1-453a-8b4a-ea11f8e6f66b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "ND-forma-ilgis",
+      "device": "mobile",
+      "checkedAt": "2026-10-12T06:28:05.150Z",
+      "revisionHash": "b98fa4cb08588823542f0773f126171db2439f9eb0fb705ab059a82f36ab7337",
+      "htmlSha256": "8bc9a786c25fb2fb614525552a7a959541a72cb0f1735bf1fe2bf9c8fffc40cb",
+      "screenshot": "screenshots/ND-forma-ilgis-mobile.png",
+      "title": "Nagų forma ir ilgis: ovalas, migdolas, kvadratas ir kasdieniai poreikiai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Ovalaus, migdolo ir kvadratinio kontūro nagų pavyzdžiai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/7709f853-4919-44d4-9616-49a492e1ff59.webp",
+          "renderWidth": 342
+        },
+        {
+          "alt": "Vienodo scheminio ilgio ovalo, migdolo, kvadrato ir squoval nagų kontūrai",
+          "naturalWidth": 342,
+          "naturalHeight": 162,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/ca39725c-f64a-4407-b39f-fd35fb0aea3f.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "NP-gelis-akrilas-poligelis",
+      "device": "mobile",
+      "checkedAt": "2026-10-12T06:28:05.353Z",
+      "revisionHash": "b72d560f9d8eb0038c5323d65d760e89e26d1a037064ab7cb4e1395611e94810",
+      "htmlSha256": "5402c7d9f699fdb75125d0aeafe428644434f5b2ec4e6517b04f361364497358",
+      "screenshot": "screenshots/NP-gelis-akrilas-poligelis-mobile.png",
+      "title": "Gelis, akrilas ir poligelis: medžiaga, konstrukcija bei pasirinkimo ribos",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Nagų modeliavimo priemonės ir parodomieji tipsai",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/66262d59-e135-4cfa-9a0d-c6ac7c680c7b.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "PD-aparatinis-klasikinis",
+      "device": "mobile",
+      "checkedAt": "2026-10-12T06:28:05.535Z",
+      "revisionHash": "14a5b01ef74b00255988e35d72388ec1509f93ca0b3f6c0a615e07b5e1802175",
+      "htmlSha256": "dae2e18bf829e9034f5d92f959da71fe2bbfa4cbb6ac21b94fb408436aefa75b",
+      "screenshot": "screenshots/PD-aparatinis-klasikinis-mobile.png",
+      "title": "Aparatinis ir klasikinis pedikiūras: metodas ir darbų apimtis",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Paruošta pedikiūro darbo vieta ir uždarytos priemonės",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/b01b4479-2833-4a5f-b0d3-05b9779ef2c3.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "PP-tiesinimas",
+      "device": "mobile",
+      "checkedAt": "2026-10-12T06:28:05.721Z",
+      "revisionHash": "cee57e32727b33aef66da7a9c3df1e40ca36f50b4e62fb4f8f7b68260b5dd8e9",
+      "htmlSha256": "f14111eaac0970a444ba690880a7bd08984c81b281212ed6195095ceff1abe12",
+      "screenshot": "screenshots/PP-tiesinimas-mobile.png",
+      "title": "Ilgalaikis plaukų tiesinimas ir įprastas formavimas: skirtinga procedūra",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Tiesių plaukų portretas iš nugaros",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/73a8f385-d90b-4e81-8871-c1c0332c4b30.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "SP-poroms",
+      "device": "mobile",
+      "checkedAt": "2026-10-12T06:28:05.908Z",
+      "revisionHash": "3936a1a8fd81742c63ba9e44a43c4b2eb3e1aba91245e71540b58df416ce89ee",
+      "htmlSha256": "23bec96fa341930094ddb1ae84f9bdd4ffe2f33c581f793db0b4ba77e06b356e",
+      "screenshot": "screenshots/SP-poroms-mobile.png",
+      "title": "SPA poroms: du specialistai, privatumas ir procedūrų derinimas",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Poros SPA apsilankymo aptarimas konsultacijoje",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261012/sites/madbeauty/content-next6-20261012/assets/cd0aed55-f09e-4eb0-aae8-85e5b7471e95.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    }
+  ],
+  "sheets": [
+    "SCREENS-desktop.jpg",
+    "SCREENS-mobile.jpg"
+  ]
+}

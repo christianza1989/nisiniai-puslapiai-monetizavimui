@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const h=import.meta.dirname, read=async p=>JSON.parse(await fs.readFile(p,'utf8'));
+const selection=await read(h+'/SELECTION.json'),site=await read(selection.privateStudio+'/sites/madbeauty.json'),baseline=await read(h+'/BASELINE129.json'),pkg=await read(h+'/release/content-package.json'),delivery=await read(h+'/DELIVERY.json');
+assert.equal(delivery.state,'ACTUAL_DOMAIN_VERIFIED');assert.equal(site.pages.length,299);assert.equal(site.pages.filter(p=>p.type==='guide').length,295);
+for(const d of baseline.dates)assert.equal(site.pages.find(p=>p.id===d.id)?.publishAt,d.publishAt);
+for(const p of pkg.pages)assert.equal(site.pages.find(x=>x.id===p.id)?.publishAt,p.publishAt);
+const now=Date.now(),zone='Europe/Vilnius',fmt=new Intl.DateTimeFormat('en-CA',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+const entries=site.pages.toSorted((a,b)=>a.publishAt.localeCompare(b.publishAt)||a.slug.localeCompare(b.slug)).map(p=>{const approved=pkg.pages.find(x=>x.id===p.id),parts=Object.fromEntries(fmt.formatToParts(new Date(p.publishAt)).map(x=>[x.type,x.value]));return{id:p.id,type:p.type,title:approved?.title||p.title,slug:p.slug,publishAt:p.publishAt,localDate:parts.year+'-'+parts.month+'-'+parts.day,localTime:parts.hour+':'+parts.minute,timezone:zone,state:approved?(Date.parse(p.publishAt)<=now?'DEPLOYED_ELIGIBLE':'DEPLOYED_SCHEDULED'):'PLANNED_UNWRITTEN',deployedRevisionHash:approved?.revisionHash||null};});
+const status={checkedAt:new Date(now).toISOString(),state:'ACTUAL_DEPLOYMENT_STATUS_SNAPSHOT',packageSha256:delivery.release.packageSha256,productionVersion:delivery.productionAcceptance.productionVersion,plannedGuides:295,deployedGuides:131,remainingGuides:164,preservedCalendarInstants:299,entries};
+await fs.writeFile(h+'/PUBLICATION-STATUS.json',JSON.stringify(status,null,2)+'\n');
+const cell=v=>'"'+String(v??'').replaceAll('"','""')+'"',rows=[['ID','Tipas','Straipsnis arba puslapis','Data Lietuvoje','Laikas Lietuvoje','Zona','UTC','Planuojamas adresas','Būsena'],...entries.map(p=>[p.id,p.type,p.title,p.localDate,p.localTime,p.timezone,p.publishAt,'https://madbeauty.lt/'+p.slug,p.state])];
+await fs.writeFile(h+'/ALL-PUBLICATION-DATES.csv','\uFEFF'+rows.map(r=>r.map(cell).join(';')).join('\r\n')+'\r\n');
+const link='<p><a href="ALL-PUBLICATION-DATES.csv">Viso plano 299 puslapių datos, valandos ir rengimo būsena (CSV)</a></p>';
+const html=await fs.readFile(h+'/index.html','utf8');if(!html.includes('ALL-PUBLICATION-DATES.csv'))await fs.writeFile(h+'/index.html',html.replace('<div class="grid">',link+'<div class="grid">'));
+const md=await fs.readFile(h+'/README.md','utf8');if(!md.includes('ALL-PUBLICATION-DATES.csv'))await fs.writeFile(h+'/README.md',md+'\n[Visas kalendorius su būsenomis](ALL-PUBLICATION-DATES.csv): 299 puslapiai, iš jų 295 gidai. Parengti ir įkelti 131; liko 164. Tai būsenų išvestis, originalios publikavimo datos nekeičiamos.\n');
+console.log({calendarRows:entries.length,guideTotal:295,deployedGuides:131,remainingGuides:164,datesChanged:0});

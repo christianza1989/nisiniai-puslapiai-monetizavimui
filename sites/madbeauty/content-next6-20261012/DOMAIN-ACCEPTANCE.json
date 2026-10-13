@@ -1,0 +1,876 @@
+{
+  "state": "PASS_ACTUAL_CANONICAL_DOMAIN",
+  "checkedAt": "2026-10-13T13:30:54.840Z",
+  "origin": "https://madbeauty.lt",
+  "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+  "totalApprovedPages": 135,
+  "totalApprovedGuides": 131,
+  "additionalGuides": 6,
+  "duePages": 9,
+  "futurePagesHidden": 126,
+  "newFutureMediaHidden": 34,
+  "uniqueAdditionalPublicationMoments": 6,
+  "http": [
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-gidas",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-gidas",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kas-ieina-i-manikiuro-kaina",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-nagu-spalva",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kaip-vertinti-meistro-darbu-galerija",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/autoriai/redakcija",
+      "status": 200,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/manikiuras-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/manikiuras-be-lakavimo",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/manikiuras-ar-gelinis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/manikiuras-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/gelinis-lakavimas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/gelinis-lakavimas-ar-stiprinimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/gelinis-lakavimas-nuemimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/gelinis-lakavimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-dizainas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-dizainas-forma-ilgis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-dizainas-chrome-cat-eye",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-dizainas-akcentai-kaina",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/pedikiuras-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/pedikiuras-aparatinis-klasikinis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/pedikiuras-be-lakavimo",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/pedikiuras-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-galiukai-ar-forma",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-sluoksniai",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-bob-kare",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-kirpciukai",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-garbanoti",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-trumpas-vyriskas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-pasiruosimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kirpimas-nuotrauka",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-dazymas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-dazymas-balayage-airtouch",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-dazymas-ombre-sombre",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-dazymas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/antakiai-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/antakiai-korekcija-ar-dazymas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/antakiai-dazai-henna",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/antakiai-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/blakstienos-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/blakstienos-laminavimas-ar-priauginimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/blakstienos-dazymas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/blakstienos-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/masazas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/masazas-nugara-ar-kunas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/masazas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/veido-prieziura-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/veido-prieziura-konsultacija",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/veido-prieziura-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-priauginimas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-priauginimas-gelis-akrilas-poligelis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-priauginimas-formos-tipsai",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/nagu-priauginimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-garbanos-bangos",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-susegta",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-vestuves",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-pasiruosimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-formavimas-makiazas-kartu",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-prieziura-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-prieziura-atstatymas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-prieziura-tiesinimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-prieziura-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/depiliacija-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/depiliacija-kojos",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/depiliacija-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/depiliacija-ar-lazeris",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-salinimas-lazeriu-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-salinimas-lazeriu-lazeris-ipl",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-salinimas-lazeriu-zonos",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-salinimas-lazeriu-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/makiazas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/makiazas-dieninis-proginis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/makiazas-vestuvinis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/makiazas-nuotrauka",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/makiazas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kuno-prieziura-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kuno-prieziura-sveitimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kuno-prieziura-ivyniojimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kuno-prieziura-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/auskaru-verimas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/auskaru-verimas-metodai",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/auskaru-verimas-papuosalas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/auskaru-verimas-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/barzda-vyrams-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/barzda-vyrams-kirpimas-modeliavimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/barzda-vyrams-masinele-skutimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/barzda-vyrams-kaina-trukme",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/spa-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/spa-hamamas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/spa-poroms",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/spa-galvos-spa",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/ilgalaikis-makiazas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/ilgalaikis-makiazas-antakiai",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/ilgalaikis-makiazas-lupos-akys",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/tatuiruotes-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/tatuiruotes-eskizas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/estetika-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/estetika-mikroadatine",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/estetika-mezoterapija-biorevitalizacija",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-priauginimas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/plauku-priauginimas-korekcija-nuemimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/rankos-pedos-spa-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/rankos-pedos-spa-parafinas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/idegis-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/fizinis-aktyvumas-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/kineziterapija-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/psichologine-pagalba-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/savijauta-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/odontologija-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/medicina-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/gyvunai-gidas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/masazas-aromaterapinis",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/fizinis-aktyvumas-joga-pilatesas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/psichologine-pagalba-poros-seima",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/odontologija-balinimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/makiazas-pamoka",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-registracija",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-sauga",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-salygos",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-gincas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-vizitu-derinimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-meistrui-meniu",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-meistrui-grafikas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-meistrui-galerija",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/bendri-meistrui-matavimas",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/sezonai-kaledos",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/sezonai-naujieji",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/sezonai-valentino",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/gidai/sezonai-velykos",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/fd26f487-3963-456f-a813-20f81332918b.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/2914ada0-81ed-409c-bef5-9ee4c71efd26.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/c7e268c7-227f-40ff-b392-dc2536c27d7a.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/7b043b85-97c8-4574-bb9a-469c4292e565.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/7709f853-4919-44d4-9616-49a492e1ff59.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/f3757de4-b5f4-4600-944d-4f76192bd0cf.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/8493794a-b750-47a5-afb1-3dc14dd36219.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/04b15959-a2ed-4117-b754-7d0b31eeea38.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/ca39725c-f64a-4407-b39f-fd35fb0aea3f.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/48240033-f073-4a89-a63c-4ddcb9bc3a60.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/6d02b7cb-4baf-4105-92d5-f296dda14b29.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/260e693e-847e-4599-b6a3-c56aa14d3e73.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/d5e690c5-f54d-4446-b9b1-45bee902d9aa.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/b01b4479-2833-4a5f-b0d3-05b9779ef2c3.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/0e47f57d-f0fa-4d2a-907f-0123b1ca5495.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/94602deb-aea5-4259-9a44-55cd92a8adff.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/8fc4d388-2d58-4780-8df6-690e4fa52543.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/767219c4-bd23-48af-b0c6-b79af9037a80.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/66262d59-e135-4cfa-9a0d-c6ac7c680c7b.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/9273e2ef-32e2-4970-b7e6-4b49a936f25c.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/6253209e-a799-490a-8c18-c1baaf292320.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/2bd40f9f-2729-44c1-be07-abb644a0fb4b.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/3166c8db-b929-4c4a-9b8d-baa3759aa199.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/73a8f385-d90b-4e81-8871-c1c0332c4b30.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/b488ddb8-e820-479f-baed-ddd840829dab.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/e43b9b04-5e99-4764-84fc-264033652a58.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/674ce501-4968-4078-a78e-c85a10257161.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/9a70dffd-f21f-49b5-b187-d06fcc9bc125.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/cd0aed55-f09e-4eb0-aae8-85e5b7471e95.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/f9626d0d-1e2c-4d5a-9e58-e8b74dd50cc4.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/4e8cb1d9-6c69-4306-a2ba-8afe78ea5d89.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/2acc9825-8e5b-43b4-9e64-95fb4a96db03.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/34f021ed-a7c4-4b74-8478-cadcc1996a65.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    },
+    {
+      "path": "/content-assets/madbeauty/523b08ee-e7b1-453a-8b4a-ea11f8e6f66b.webp",
+      "status": 404,
+      "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509"
+    }
+  ],
+  "scope": "Actual canonical ordinary HTTPS verification; future boundary, exact runtime/core/version, byline/schema/OG and browser acceptance independently required from consumer receipt."
+}

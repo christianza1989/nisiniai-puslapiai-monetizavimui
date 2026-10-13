@@ -1,0 +1,4 @@
+@font-face{font-family:Roboto;src:url("../fonts/Roboto-Variable.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Libre Baskerville";src:url("../fonts/LibreBaskerville-Variable.woff2") format("woff2");font-weight:400 700;font-display:swap}
+:root{--ms-canvas:#F7F5EF;--ms-surface:#FFFDF8;--ms-forest:#164D40;--ms-ink:#183D35;--ms-copper:#B57859;--ms-muted:#52645E;--ms-outline:#75877C;--ms-subtle:#DFE5DE;--ms-error:#8B3D32;--ms-errorSurface:#F8E7E2;--ms-warning:#815112;--ms-warningSurface:#FFF2D6;--ms-cyan:#0089A4;--ms-magenta:#C40068;--ms-yellow:#FFD244;--ms-black:#232724;--ms-white:#FFFFFF;--ms-body:Roboto,system-ui,sans-serif;--ms-display:"Libre Baskerville",Georgia,serif;--ms-touch:3rem;--ms-radius:0.875rem;}
+.ms-icon{width:1.5rem;height:1.5rem;flex:none;color:currentColor}.ms-pin-number{font-variant-numeric:tabular-nums;font-family:var(--ms-body)}

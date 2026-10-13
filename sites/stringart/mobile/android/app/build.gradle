@@ -1,0 +1,9 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'lt.pinet.memorystring.demo'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    defaultConfig { applicationId 'lt.pinet.memorystring.demo'; minSdk 26; targetSdk 35; versionCode 2; versionName '0.2.0-device-test'; testInstrumentationRunner 'lt.pinet.memorystring.demo.AppJourney' }
+    sourceSets { debug { if (project.hasProperty('memorystringDeviceQa')) { java.srcDirs += ['src/androidTest/java']; manifest.srcFile 'src/deviceQa/AndroidManifest.xml' } } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+}

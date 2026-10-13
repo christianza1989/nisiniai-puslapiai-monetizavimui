@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-13T22:28:43.520Z",
+  "status": "PASS",
+  "integrityFiles": 623,
+  "screenCount": 22,
+  "svgCount": 61,
+  "pngCount": 482,
+  "transparentIllustrations": [
+    {
+      "name": "home-dog-string-art",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-black",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-cyan",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-magenta",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    },
+    {
+      "name": "spool-yellow",
+      "width": 1254,
+      "height": 1254,
+      "alphaMin": 0,
+      "alphaMax": 255
+    }
+  ],
+  "iconFamilies": 45,
+  "fonts": "glyph and variable-axis checks PASS",
+  "android": "aapt2 compile and link SDK35 PASS; resource check is not a deployed app",
+  "screens": "All 22 inspected sequentially, final targeted repairs inspected",
+  "runtimeAcceptance": "Not assessed by this asset check; see ../ACCEPTANCE.md for device evidence",
+  "sampleResults": [
+    {
+      "name": "quick",
+      "connections": 1400,
+      "pins": 200
+    },
+    {
+      "name": "detailed",
+      "connections": 1430,
+      "pins": 200
+    },
+    {
+      "name": "fine",
+      "connections": 1430,
+      "pins": 200
+    }
+  ],
+  "limits": [
+    "AI decorative dog is separate from actual solver output",
+    "Current prototype and physical kit acceptance are separate",
+    "Generated headings are governed by exact font tokens; every pin dot is drawn mathematically in production"
+  ],
+  "tokenContrast": [
+    {
+      "fg": "ink",
+      "bg": "canvas",
+      "ratio": 10.96,
+      "minimum": 4.5
+    },
+    {
+      "fg": "muted",
+      "bg": "canvas",
+      "ratio": 5.76,
+      "minimum": 4.5
+    },
+    {
+      "fg": "white",
+      "bg": "forest",
+      "ratio": 9.68,
+      "minimum": 4.5
+    },
+    {
+      "fg": "outline",
+      "bg": "canvas",
+      "ratio": 3.49,
+      "minimum": 3
+    },
+    {
+      "fg": "error",
+      "bg": "errorSurface",
+      "ratio": 6.23,
+      "minimum": 4.5
+    },
+    {
+      "fg": "warning",
+      "bg": "warningSurface",
+      "ratio": 6.07,
+      "minimum": 4.5
+    }
+  ],
+  "androidResourceProofSha256": "04c79c7d1748a54d0167de2e2c59ab09a03eabfcfc07f94887f48d4d2c30919a",
+  "manifestSha256": "ce2881ded2d100ad15939e6923651dd1597aa8399779ec0664acc3b7f6c9961a"
+}

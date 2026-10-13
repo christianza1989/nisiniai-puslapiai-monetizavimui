@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "language": "en",
+  "generator": "built-in image_gen",
+  "assets": [
+    {
+      "id": "home-dog-string-art",
+      "path": "rasters/home-dog-string-art.png",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Extract and regenerate ONLY the circular golden retriever BLACK STRING ART illustration from this selected MemoryString home screen as a separate high-resolution1024x1024PNGasset. Preserve the same front-facing cheerful goldenretriever,blackcontinuousfinechords,visiblepinringandpremiumwarmcraftappearance. The circular art itself has warmivory interior #F7F5EF; outside the pins is truly TRANSPARENT ALPHA. Keep the entire outermost pins withabout6%transparentpadding aroundall sides. No UI,text,logo,phone,statusbars,buttons,props,shadow outsidecircle or colouredthreads. This is the home illustration asset, not a real algorithm proof.",
+      "references": [
+        "exec-5ca9b1ce-ace3-4539-8d40-c88d3d54f549.png"
+      ],
+      "generatorSource": "exec-17274635-4bcf-426f-841e-7ec17254dae4.png",
+      "intendedUse": "Home decorative illustration; not algorithm result"
+    },
+    {
+      "id": "sample-golden-retriever",
+      "path": "rasters/sample-golden-retriever.png",
+      "transparentBackground": false,
+      "prompt": "Use case: precise-object-edit. Extract/regenerate only the golden retriever PHOTOGRAPH seen inside this MemoryString photo editor as one clean1024x1024square sample photo. Preserve the same front-facing cheerfulgoldenretriever withtongueout,softnaturaloutdoorlight,neutralmutedgreenblurredbackground,facecentredwithcomfortableearsandheadmargin. Remove all UI,cropcircle,grid,cornermarks,text,frame,statusbars. No stringart or drawing. Photorealistic natural sample photo, no watermark. Used as AI-labelled built-in sample, not customer's photo.",
+      "references": [
+        "exec-a90a8b9a-d756-45c4-89f7-d00210db9aa2.png"
+      ],
+      "generatorSource": "exec-fd239940-ef7b-4f75-993d-c5254c240fed.png",
+      "intendedUse": "Clearly labelled AI sample for on-device generation"
+    },
+    {
+      "id": "spool-black",
+      "path": "rasters/spool-black.png",
+      "transparentBackground": true,
+      "prompt": "Use case: product-mockup. Derive ONE separate isolated spool of BLACK fine cottonthread from the MemoryString thread-choice reference screen. Horizontal cylinder slightlythreequarterfrontview,shortnaturalcardboardcoreandflanges,finelyvisiblewoundthread,softneutralstudioillumination. Clean compact centered object,1024x1024withabout12%padding,TRUE TRANSPARENT ALPHA outside the spool. No UI,label,text,logo,frame,circle tile,castshadowfaroutsideobject,hands orprops. Preserve a premium natural craftlook. This is an illustrative selectorasset, no supplierproductclaim. Colour preciselyblackcharcoal.",
+      "references": [
+        "exec-6baaf232-911f-46e7-b52e-e946732e8830.png"
+      ],
+      "generatorSource": "exec-4b84519e-cbe8-4fc2-aa12-5a7b8817dae0.png",
+      "intendedUse": "Illustrative thread selector and layer-change icon; not supplier photo"
+    },
+    {
+      "id": "spool-cyan",
+      "path": "rasters/spool-cyan.png",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Recolour ONLY the wound thread of this isolated spool to CYAN (#0089A4). Preserve EXACTLY the spool silhouette,horizontalpose,cardboardcore,texture,lighting,dimensions,paddingandtransparentalphaoutsideobject. Do not change the browncardboard. Keepphotographicthreadtextureandnaturalshadingwhile cyan remains clear. No addedtext,logos,tilebackground,shadowextensionorprops. Separate1024x1024PNGasset forMemoryString'sCMYKthreadselector. True transparentbackground.",
+      "references": [
+        "exec-4b84519e-cbe8-4fc2-aa12-5a7b8817dae0.png"
+      ],
+      "generatorSource": "exec-e35aabf4-e390-436a-a063-4f801688bb8f.png",
+      "intendedUse": "Illustrative thread selector and layer-change icon; not supplier photo"
+    },
+    {
+      "id": "spool-magenta",
+      "path": "rasters/spool-magenta.png",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Recolour ONLY the wound thread of this isolated spool to MAGENTA (#C40068). Preserve EXACTLY the spool silhouette,horizontalpose,cardboardcore,texture,lighting,dimensions,paddingandtransparentalphaoutsideobject. Do not change the browncardboard. Keepphotographicthreadtextureandnaturalshadingwhile magenta remains clear. No addedtext,logos,tilebackground,shadowextensionorprops. Separate1024x1024PNGasset forMemoryString'sCMYKthreadselector. True transparentbackground.",
+      "references": [
+        "exec-4b84519e-cbe8-4fc2-aa12-5a7b8817dae0.png"
+      ],
+      "generatorSource": "exec-84cdf0a1-47c2-4589-9bfc-32bf1d5a3cf8.png",
+      "intendedUse": "Illustrative thread selector and layer-change icon; not supplier photo"
+    },
+    {
+      "id": "spool-yellow",
+      "path": "rasters/spool-yellow.png",
+      "transparentBackground": true,
+      "prompt": "Use case: precise-object-edit. Recolour ONLY the wound thread of this isolated spool to YELLOW (#FFD244). Preserve EXACTLY the spool silhouette,horizontalpose,cardboardcore,texture,lighting,dimensions,paddingandtransparentalphaoutsideobject. Do not change the browncardboard. Keepphotographicthreadtextureandnaturalshadingwhile yellow remains clear. No addedtext,logos,tilebackground,shadowextensionorprops. Separate1024x1024PNGasset forMemoryString'sCMYKthreadselector. True transparentbackground.",
+      "references": [
+        "exec-4b84519e-cbe8-4fc2-aa12-5a7b8817dae0.png"
+      ],
+      "generatorSource": "exec-0423cc36-3477-4210-8b4c-a0fa6b23fb22.png",
+      "intendedUse": "Illustrative thread selector and layer-change icon; not supplier photo"
+    }
+  ]
+}

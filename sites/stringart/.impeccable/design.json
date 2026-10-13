@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T20:52:30.380Z",
+  "title": "Design System: MemoryString creator",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "displayName": "canvas",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0082 91.48)",
+          "oklch(25% 0.0082 91.48)",
+          "oklch(35% 0.0082 91.48)",
+          "oklch(45% 0.0082 91.48)",
+          "oklch(55% 0.0082 91.48)",
+          "oklch(65% 0.0082 91.48)",
+          "oklch(80% 0.0082 91.48)",
+          "oklch(95% 0.0082 91.48)"
+        ]
+      },
+      "paper": {
+        "displayName": "paper",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0069 88.64)",
+          "oklch(25% 0.0069 88.64)",
+          "oklch(35% 0.0069 88.64)",
+          "oklch(45% 0.0069 88.64)",
+          "oklch(55% 0.0069 88.64)",
+          "oklch(65% 0.0069 88.64)",
+          "oklch(80% 0.0069 88.64)",
+          "oklch(95% 0.0069 88.64)"
+        ]
+      },
+      "forest": {
+        "displayName": "forest",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0613 174.11)",
+          "oklch(25% 0.0613 174.11)",
+          "oklch(35% 0.0613 174.11)",
+          "oklch(45% 0.0613 174.11)",
+          "oklch(55% 0.0613 174.11)",
+          "oklch(65% 0.0613 174.11)",
+          "oklch(80% 0.0613 174.11)",
+          "oklch(95% 0.0613 174.11)"
+        ]
+      },
+      "ink": {
+        "displayName": "ink",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0450 177.18)",
+          "oklch(25% 0.0450 177.18)",
+          "oklch(35% 0.0450 177.18)",
+          "oklch(45% 0.0450 177.18)",
+          "oklch(55% 0.0450 177.18)",
+          "oklch(65% 0.0450 177.18)",
+          "oklch(80% 0.0450 177.18)",
+          "oklch(95% 0.0450 177.18)"
+        ]
+      },
+      "muted": {
+        "displayName": "muted",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0239 173.07)",
+          "oklch(25% 0.0239 173.07)",
+          "oklch(35% 0.0239 173.07)",
+          "oklch(45% 0.0239 173.07)",
+          "oklch(55% 0.0239 173.07)",
+          "oklch(65% 0.0239 173.07)",
+          "oklch(80% 0.0239 173.07)",
+          "oklch(95% 0.0239 173.07)"
+        ]
+      },
+      "outline": {
+        "displayName": "outline",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0266 158.69)",
+          "oklch(25% 0.0266 158.69)",
+          "oklch(35% 0.0266 158.69)",
+          "oklch(45% 0.0266 158.69)",
+          "oklch(55% 0.0266 158.69)",
+          "oklch(65% 0.0266 158.69)",
+          "oklch(80% 0.0266 158.69)",
+          "oklch(95% 0.0266 158.69)"
+        ]
+      },
+      "line": {
+        "displayName": "line",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0110 149.85)",
+          "oklch(25% 0.0110 149.85)",
+          "oklch(35% 0.0110 149.85)",
+          "oklch(45% 0.0110 149.85)",
+          "oklch(55% 0.0110 149.85)",
+          "oklch(65% 0.0110 149.85)",
+          "oklch(80% 0.0110 149.85)",
+          "oklch(95% 0.0110 149.85)"
+        ]
+      },
+      "wash": {
+        "displayName": "wash",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0114 128.60)",
+          "oklch(25% 0.0114 128.60)",
+          "oklch(35% 0.0114 128.60)",
+          "oklch(45% 0.0114 128.60)",
+          "oklch(55% 0.0114 128.60)",
+          "oklch(65% 0.0114 128.60)",
+          "oklch(80% 0.0114 128.60)",
+          "oklch(95% 0.0114 128.60)"
+        ]
+      },
+      "copper": {
+        "displayName": "copper",
+        "role": "secondary",
+        "tonalRamp": [
+          "oklch(15% 0.0886 47.57)",
+          "oklch(25% 0.0886 47.57)",
+          "oklch(35% 0.0886 47.57)",
+          "oklch(45% 0.0886 47.57)",
+          "oklch(55% 0.0886 47.57)",
+          "oklch(65% 0.0886 47.57)",
+          "oklch(80% 0.0886 47.57)",
+          "oklch(95% 0.0886 47.57)"
+        ]
+      },
+      "error": {
+        "displayName": "error",
+        "role": "error",
+        "tonalRamp": [
+          "oklch(15% 0.1090 29.97)",
+          "oklch(25% 0.1090 29.97)",
+          "oklch(35% 0.1090 29.97)",
+          "oklch(45% 0.1090 29.97)",
+          "oklch(55% 0.1090 29.97)",
+          "oklch(65% 0.1090 29.97)",
+          "oklch(80% 0.1090 29.97)",
+          "oklch(95% 0.1090 29.97)"
+        ]
+      },
+      "forest-hover": {
+        "displayName": "forest hover",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.0518 173.21)",
+          "oklch(25% 0.0518 173.21)",
+          "oklch(35% 0.0518 173.21)",
+          "oklch(45% 0.0518 173.21)",
+          "oklch(55% 0.0518 173.21)",
+          "oklch(65% 0.0518 173.21)",
+          "oklch(80% 0.0518 173.21)",
+          "oklch(95% 0.0518 173.21)"
+        ]
+      },
+      "white": {
+        "displayName": "white",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0000 146.31)",
+          "oklch(25% 0.0000 146.31)",
+          "oklch(35% 0.0000 146.31)",
+          "oklch(45% 0.0000 146.31)",
+          "oklch(55% 0.0000 146.31)",
+          "oklch(65% 0.0000 146.31)",
+          "oklch(80% 0.0000 146.31)",
+          "oklch(95% 0.0000 146.31)"
+        ]
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet",
+        "value": "0 -8px 30px #183d351a",
+        "purpose": "Lift an interrupting bottom sheet."
+      },
+      {
+        "name": "dialog",
+        "value": "0 12px 40px #183d3520",
+        "purpose": "Protected rename/delete/recovery task."
+      }
+    ],
+    "motion": [
+      {
+        "name": "view-reveal",
+        "value": ".18s ease-out",
+        "purpose": "Brief view reveal; suppressed by reduced-motion preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "350px"
+      },
+      {
+        "name": "compact-library",
+        "value": "650px"
+      },
+      {
+        "name": "wide-guide",
+        "value": "800px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The current primary action.",
+      "html": "<button class=\"ds-primary\">Save & start building</button>",
+      "css": ".ds-primary{font:500 1rem/1.3 Roboto,system-ui,sans-serif;min-height:48px;padding:.7rem 1rem;border-radius:99px;cursor:pointer;border:1px solid var(--forest,#164d40);background:var(--forest,#164d40);color:white}.ds-primary:hover{background:#103c31}.ds-primary:focus-visible{outline:3px solid var(--forest,#164d40);outline-offset:3px;}.ds-primary:disabled{opacity:.55;cursor:default}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A reversible alternative.",
+      "html": "<button class=\"ds-secondary\">Save for later</button>",
+      "css": ".ds-secondary{font:500 1rem/1.3 Roboto,system-ui,sans-serif;min-height:48px;padding:.7rem 1rem;border-radius:99px;cursor:pointer;border:1.5px solid var(--forest,#164d40);color:var(--forest,#164d40);background:transparent}.ds-secondary:hover{background:var(--wash,#e9ede5)}.ds-secondary:focus-visible{outline:3px solid var(--forest,#164d40);outline-offset:3px;}"
+    },
+    {
+      "name": "Artwork name",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "A visible label and editable local name.",
+      "html": "<label class=\"ds-label\">Artwork name<input class=\"ds-input\" value=\"Golden memories\" maxlength=\"80\"></label>",
+      "css": ".ds-label{display:block;font:.875rem/1.4 Roboto,system-ui;color:var(--ink,#183d35)}.ds-input{box-sizing:border-box;width:100%;min-height:48px;border:1.5px solid var(--outline,#75877c);border-radius:12px;background:var(--paper,#fffdf8);color:var(--ink,#183d35);font:1rem Roboto,system-ui;padding:.7rem .9rem;margin-top:.4rem}.ds-input:focus-visible{outline:3px solid var(--forest,#164d40);outline-offset:3px;}"
+    },
+    {
+      "name": "Preview selector",
+      "kind": "nav",
+      "description": "Choose actual thread output or original photo.",
+      "html": "<nav class=\"ds-segments\"><button class=\"ds-selected\">Thread art</button><button>Original</button></nav>",
+      "css": ".ds-segments{display:flex;border:1px solid var(--forest,#164d40);border-radius:99px;overflow:hidden}.ds-segments button{flex:1;min-height:48px;background:transparent;color:var(--forest,#164d40);border:0;padding:.65rem;font:500 1rem Roboto,system-ui}.ds-segments .ds-selected{background:var(--forest,#164d40);color:white}.ds-segments button:focus-visible{outline:3px solid #75877c;outline-offset:-4px}"
+    },
+    {
+      "name": "Current connection",
+      "kind": "custom",
+      "description": "Live values and full text instruction.",
+      "html": "<section class=\"ds-reader\"><div><strong>113</strong><span>From pin</span></div><div><strong>27</strong><span>To pin</span></div><p>Take the thread from pin 113 to pin 27.</p></section>",
+      "css": ".ds-reader{display:flex;flex-wrap:wrap;justify-content:space-evenly;gap:.7rem;text-align:center;font:1rem/1.45 Roboto,system-ui;color:var(--ink,#183d35)}.ds-reader strong{display:block;font-size:clamp(2rem,10.5vw,3.4rem);line-height:1.1;font-weight:600;color:var(--forest,#164d40);font-variant-numeric:tabular-nums}.ds-reader span{font-size:.875rem;color:var(--muted,#52645e)}.ds-reader p{width:100%;margin:.6rem 0}"
+    },
+    {
+      "name": "Selected frame",
+      "kind": "card",
+      "description": "Actual frame dimensions and pin count.",
+      "html": "<label class=\"ds-frame\"><input type=\"radio\" checked name=\"demo-frame\"><strong>42 cm</strong><span>200 pins</span></label>",
+      "css": ".ds-frame{display:flex;flex-direction:column;gap:.2rem;align-items:center;border:2px solid var(--forest,#164d40);border-radius:14px;padding:.6rem;color:var(--ink,#183d35);font:1rem Roboto,system-ui;cursor:pointer}.ds-frame:focus-within{outline:3px solid var(--forest,#164d40);outline-offset:3px;}.ds-frame span{font-size:.8rem;color:var(--muted,#52645e)}.ds-frame input{accent-color:var(--forest,#164d40);width:20px;height:20px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Quiet Workbench",
+    "overview": "The owner selected warm ivory, forest controls and copper thread accents. The home screen gives the artwork room; operational screens give the current task priority. Brand and home display text use Libre Baskerville. Functional headings, instructions, controls and large pin numbers use bundled Roboto.",
+    "keyCharacteristics": [
+      "Warm, flat work surfaces and outlined selections.",
+      "Live thread geometry and a compact diagram beside the instruction.",
+      "Prominent from/to numbers with a complete text alternative.",
+      "English controls, offline assets and manual alternatives to speech."
+    ],
+    "rules": [
+      {
+        "name": "The Current Step Rule",
+        "body": "Colour and geometry support the written current connection; they never replace its instruction.",
+        "section": "colors"
+      },
+      {
+        "name": "The Readable Number Rule",
+        "body": "Show both pin values, their from/to labels and one complete sentence using the same live sequence.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "**Do** preserve the current instruction, real counts and manual controls.",
+      "**Do** use the bundled font roles and original SVG icon family.",
+      "**Do** draw previews from the actual solver output."
+    ],
+    "donts": [
+      "**Don't** use the AI home portrait as evidence of algorithm or physical kit quality.",
+      "**Don't** seed real-looking customers, activations or machine connectivity into this creator."
+    ]
+  }
+}

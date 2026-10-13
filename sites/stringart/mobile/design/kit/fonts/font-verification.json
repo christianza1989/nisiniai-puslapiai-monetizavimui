@@ -1,0 +1,31 @@
+[
+  {
+    "family": "Roboto",
+    "glyphs": 927,
+    "requiredGlyphsPresent": true,
+    "axes": [
+      {
+        "tag": "wght",
+        "min": 100.0,
+        "max": 900.0
+      },
+      {
+        "tag": "wdth",
+        "min": 75.0,
+        "max": 100.0
+      }
+    ]
+  },
+  {
+    "family": "LibreBaskerville",
+    "glyphs": 789,
+    "requiredGlyphsPresent": true,
+    "axes": [
+      {
+        "tag": "wght",
+        "min": 400.0,
+        "max": 700.0
+      }
+    ]
+  }
+]

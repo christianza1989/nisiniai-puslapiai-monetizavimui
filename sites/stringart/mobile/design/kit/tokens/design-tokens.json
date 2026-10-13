@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "language": "en",
+  "platform": "android",
+  "colors": {
+    "canvas": "#F7F5EF",
+    "surface": "#FFFDF8",
+    "forest": "#164D40",
+    "ink": "#183D35",
+    "copper": "#B57859",
+    "muted": "#52645E",
+    "outline": "#75877C",
+    "subtle": "#DFE5DE",
+    "error": "#8B3D32",
+    "errorSurface": "#F8E7E2",
+    "warning": "#815112",
+    "warningSurface": "#FFF2D6",
+    "cyan": "#0089A4",
+    "magenta": "#C40068",
+    "yellow": "#FFD244",
+    "black": "#232724",
+    "white": "#FFFFFF"
+  },
+  "space": [
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    32,
+    40,
+    48
+  ],
+  "radius": {
+    "card": 14,
+    "field": 12,
+    "sheet": 24,
+    "pill": 999
+  },
+  "touchTarget": 48,
+  "icon": {
+    "viewport": 24,
+    "stroke": 1.8
+  },
+  "type": {
+    "body": {
+      "family": "Roboto",
+      "size": 16,
+      "line": 24,
+      "weight": 400
+    },
+    "hint": {
+      "family": "Roboto",
+      "size": 14,
+      "line": 20,
+      "weight": 400
+    },
+    "title": {
+      "family": "Roboto",
+      "size": 24,
+      "line": 32,
+      "weight": 600
+    },
+    "label": {
+      "family": "Roboto",
+      "size": 16,
+      "line": 22,
+      "weight": 500
+    },
+    "pin": {
+      "family": "Roboto",
+      "size": 56,
+      "line": 64,
+      "weight": 600
+    },
+    "display": {
+      "family": "Libre Baskerville",
+      "size": 40,
+      "line": 48,
+      "weight": 400
+    }
+  },
+  "motion": {
+    "durationMs": 180,
+    "reducedMotion": true
+  }
+}

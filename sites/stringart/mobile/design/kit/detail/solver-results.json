@@ -1,0 +1,23 @@
+[
+  {
+    "label": "quick",
+    "limit": 1400,
+    "actualConnections": 1400,
+    "straightThreadMetres": 433.7464712316182,
+    "source": "AI sample photo through actual pinned MIT solver; not a physical portrait"
+  },
+  {
+    "label": "detailed",
+    "limit": 2400,
+    "actualConnections": 1430,
+    "straightThreadMetres": 437.01515358158576,
+    "source": "AI sample photo through actual pinned MIT solver; not a physical portrait"
+  },
+  {
+    "label": "fine",
+    "limit": 3500,
+    "actualConnections": 1430,
+    "straightThreadMetres": 437.01515358158576,
+    "source": "AI sample photo through actual pinned MIT solver; not a physical portrait"
+  }
+]

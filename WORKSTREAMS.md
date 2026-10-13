@@ -400,3 +400,7 @@ Planning reference now separates protected plan reconciliation from concrete aut
 2026-10-13 RESERVED: owner-authorized parasoplansetes.lt/www custom domain connection; preview adapter/prepare/tests and site domain report. Preserve package, other sites, D1 and mail/chat/voice settings. Hostinger login pending; no nameserver change until DNS inventory.
 
 2026-10-13 CONFIGURED: parasoplansetes.lt and www attached to existing Worker; Hostinger NS saved darwin/sue; adapter tests 10 PASS, deployed version 19f7c2fb-d4d8-4359-ace0-83e4b32796ec, preview HTTP 284 PASS. Public DNS/TLS pending propagation; indexing/mail/chat/voice off. Exact scope/report: sites/parasoplansetes/DOMAIN_CONNECTION_20261013.md.
+
+2026-10-13 RESERVED: owner removes public Pinet identity/email and verslomatika attribution from parasoplansetes only. Scope own package re-review/release, StepOver renderer, public contact visibility, schema/LLM projection and report. Preserve other sites, transport secrets and historical artifacts.
+
+2026-10-13 DEPLOYED: owner public identity override removes Pinet/verslomatika from parasoplansetes; new Workspace public address sales@parasoplansetes.lt. Immutable release49475e39 / Worker04a29b4b. Native SEO/core/type/build checks and live identity27+27/domain284/redirect5 PASS; OS DNS cache caveat. Report sites/parasoplansetes/PUBLIC_IDENTITY_20261013.md. No mail activation.

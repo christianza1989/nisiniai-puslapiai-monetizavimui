@@ -1,3 +1,10 @@
+## 2026-10-13 — Faviconas ir tikslus135 turinio leidimas gyvai
+
+Madbeauty violetinė m ikona įkelta į pagrindinę ir bandomąją svetaines. SVG/ICO/PNG/telefono failų MIME ir SHA patikrinti natyviai bei per tikrą HTTPS; desktop/mobile vaizdai apžiūrėti. Main f68008dd-5ceb-446b-8113-d68bd1631919, trial bf048234-6008-4b47-96d3-b1f44f0cdb58. [Kvitas](favicon-20261013/RECEIPT.md), [tikslūs duomenys](favicon-20261013/RECEIPT.json), source PR127.
+
+Canonical tikslus135/131guides/664WebP paketas86c75950 iš producerb948707/PR107 priimtas. Šeši gidai lieka suplanuoti2026-12-24–27; visos299 datos ir129 ankstesnės snapshot išsaugotos. Native12 publication boundary/10 commerce targets/all664, exact-artifact4 behavioral tests ir actual HTTPS135routes/923assets PASS; real-clock9 eligiblepages. Būsimo laikrodžio production nėra. Trial ikonų-only leidimas išsaugojo content129,40solo+5salons, expiry ir visą konfigūraciją. Main communitytrue/FBfalse, trial community/FBtrue nekeičiami; Meta verification vis dar atidėtas.
+
+Naujas fresh worktree integruoja fetched networkmain7af6b964, companionec8a9c03 perskaitytas. Incumbent kompiliuotas runtime9d/core566 sąmoningai išsaugotas, naujo core migracija nepriimta. Kitų Workers/bindings/namespaces/secrets/vars/routing/query-redaction išsaugojimas PASS, klientų duomenų/pašto/DNS/billing pakeitimų0. Senos129/community/booking versijos žemiau yra istorija; kitam main leidimui reikia135/86c75950 +923assets bazės, trial1489assets. Nepaleisti seno129 build/deploy kaip aktualios bazės.
 ## 2026-10-11 — Vienas salono rezervavimo būdas gyvai
 
 Main 87e6c536-aa20-4f9c-a052-62ab21f9526c, trial 283f9d36-88a3-44ba-87f0-dbf25e3e0f65, source 9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63. Madbeauty arba Treatwell pasirinkimas registracijoje ir savininko darbo vietoje: external išjungia native laikus/hold/booking/waitlist/schedule, rodo sąžiningą outbound CTA; esami native salonai lieka native. Exact compiled main rezervavimo/restart/race bei community/media, exact trial fixtures/community ir native/hosted100/139 PASS. Actual trial create/external/reload/return native/revert external PASS, privatus nepaskelbtas sintetinis salonas.40solo+5publicsalons/reviews/expiry/mail/namespaces/content129/core566 išsaugoti. Main C0–C2 jau buvo aktyvinta d0416bb5 ir lieka aktyvi; FBmainfalse. [Kvitas](booking-channel-20261011/RECEIPT.md), [checkbox](booking-channel-20261011/ROADMAP.md).
@@ -530,3 +537,4 @@ Bus įrašyti po testų ir actual desktop/mobile/keyboard/flow/SEO/performance p
 Tikras auth / tenant server security / patvarios inquiries / SMTP-INBOX / authoritative kalendoriaus ir atomic booking backend / mokėjimai / voice / FB outreach / PWA-native / production seed exclusion build / shared SSR SEO adapteris / teikėjų teisės ir tikri faktai / DNS-TLS-hosting / deployment / GSC-Bing / paklausa. Jie neįeina į privačios demonstracijos priėmimą ir nevadinami veikiančiais.
 
 Nėra 10/10, domain-ready, realaus vizito ar išmatuoto pranašumo prieš Fresha teiginio.
+

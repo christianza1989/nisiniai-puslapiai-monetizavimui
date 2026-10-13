@@ -1,0 +1,243 @@
+{
+  "createdAt": "2026-10-13T15:38:03.166Z",
+  "locale": "lt-LT",
+  "sourceDate": "2026-10-13",
+  "status": "private-draft",
+  "publicPackageChanged": false,
+  "publicPackageSha256": "23469e38235bf104ec0d491c65c8d280ee6fe3a55f30486cd03dbc18279a8692",
+  "publicHead": "9d577b3461878bf5b615971d165329a2d88e19de",
+  "privateHead": "6e645cadb3adb2a7d31a788cc44a0bbd814100da",
+  "hardwarePages": 6,
+  "softwarePages": 4,
+  "cataloguePages": 2,
+  "productTypePagesCovered": 8,
+  "sourceCalls": 19,
+  "sourceCostUsd": 0.0028499999999999997,
+  "entries": [
+    {
+      "file": "naturasign-pad-classic.md",
+      "title": "StepOver naturaSign Pad Classic",
+      "slug": "produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "kind": "hardware",
+      "sources": [
+        "https://stepover.com/en/products/signature-pads/naturasign-pad-classic/",
+        "https://stepover.com/wp-content/uploads/StepOver_Technical-Data-Sheet_naturaSign-Pad-Classic_EN.pdf"
+      ],
+      "technicalRows": 25,
+      "publicationStatus": "private-draft",
+      "reviewNotes": [
+        "Puslapio jungtinėje jutiklio / ekrano eilutėje yra 10 × 2,9 cm; PDF atskirai nurodo 9,6 × 2,5 cm ekraną ir 9,8 × 2,6 cm jutiklį. Prieš viešinant aktyvaus ploto skaičius gauti patikslinimą.",
+        "Puslapis rašo daugiau kaip 7000 matavimų/s, PDF – 7000. Šių reikšmių nesuvienodinti savavališkai.",
+        "PDF srovę pateikia kaip >100 mA. Neperrašyti į <100 mA ir nepateikti kaip maksimalios srovės.",
+        "PDF trejų metų varianto GTIN: 4260130061593; jo prieinamumo Lietuvoje nepatvirtinome."
+      ],
+      "pageId": "225aff0d-674d-47ba-be62-198e74b129a2",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "publishAt": "2026-10-08T16:03:32.124Z",
+      "fileSha256": "647ddc03f6c4427e14b04ccc7b7fd6e17ef3584e04dac4ed465783e9a8789f37"
+    },
+    {
+      "file": "durasign-pad-4-3.md",
+      "title": "StepOver duraSign Pad 4.3",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "kind": "hardware",
+      "sources": [
+        "https://stepover.com/en/products/signature-pads/durasign-pad-4-3/",
+        "https://stepover.com/wp-content/uploads/StepOver_Technical-Data-Sheet_duraSign-Pad-4.3_EN.pdf"
+      ],
+      "technicalRows": 30,
+      "publicationStatus": "private-draft",
+      "reviewNotes": [
+        "Keturių spalvų ekranas neturi būti aprašomas kaip 64 000 spalvų ekranas.",
+        "Gamintojas jutikliui deklaruoja >30 mln. parašų, o apšvietimui – 20 000 val. tikėtiną trukmę. Tai nėra mūsų tarnavimo laiko garantija.",
+        "Trejų metų varianto GTIN: 4260130061630; pritaikymą konkrečiam pardavimui tikslinti."
+      ],
+      "pageId": "dc242d72-77a6-4f7c-9606-84e57aa73ee8",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "publishAt": "2026-10-08T16:03:32.124Z",
+      "fileSha256": "d16d4d91fe5953b595f5a1d4f83dfdef3ed0a0ec53b7b466652d77e600acfab8"
+    },
+    {
+      "file": "durasign-pad-5-0.md",
+      "title": "StepOver duraSign Pad 5.0",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "kind": "hardware",
+      "sources": [
+        "https://stepover.com/en/products/signature-pads/durasign-pad-5-0/",
+        "https://stepover.com/wp-content/uploads/StepOver_Technical-Data-Sheet_duraSign_-Pad_5.0__EN.pdf"
+      ],
+      "technicalRows": 29,
+      "publicationStatus": "private-draft",
+      "reviewNotes": [
+        "Papildoma UTC/GMT datos žyma užsakoma gamykloje, vėliau neaktyvuojama; gamintojo nurodytas nuokrypis – iki vienos dienos per metus. Tai nėra kvalifikuota laiko žyma.",
+        "Rašiklio laikymas PDF: −20…+70 °C / RH≤65 % arba −20…+65 °C / RH≤95 %, be kondensacijos; patikrinta PDF 5 puslapio vaizde.",
+        "Matymo kampai PDF: horizontalūs min. 60°, įprastai 70°; vertikalūs dviem kryptimis min. 60° / 45°, įprastai 70° / 50°.",
+        "PDF >30 mln. parašų ir 20 000 val. apšvietimo duomenys yra gamintojo deklaracijos, ne mūsų garantija. Trejų metų varianto GTIN: 4260130061647."
+      ],
+      "pageId": "497c8819-4fc2-497d-ad38-7082dc18bc5c",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "publishAt": "2026-10-08T16:03:32.124Z",
+      "fileSha256": "c900a3eb323eabaa5d8cba159a5e55847ee69dd4e5f2fa323f0366af292e5e43"
+    },
+    {
+      "file": "durasign-pad-10-0.md",
+      "title": "StepOver duraSign Pad 10.0",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "kind": "hardware",
+      "sources": [
+        "https://stepover.com/en/products/signature-pads/durasign-pad-10-0/",
+        "https://stepover.com/wp-content/uploads/StepOver_Technical-Data-Sheet_duraSign-Pad-10.0_EN.pdf"
+      ],
+      "technicalRows": 28,
+      "publicationStatus": "private-draft",
+      "reviewNotes": [
+        "Puslapis pateikia 22,41 × 12,67 cm, PDF – 22,27 × 12,53 cm. Nelaikyti jų tapačiu aktyviu plotu be gamintojo paaiškinimo.",
+        "UTC/GMT datos žyma ir korpuso atidarymo aptikimas – gamyklinės papildomos opcijos; joms naudojama CR2032 baterija. Nepriskirti visiems įrenginiams kaip standartinių funkcijų.",
+        "PDF kampai: horizontalūs min. 60° / įprastai 70°; vertikalūs min. 60° / 45°, įprastai 70° / 50°.",
+        "Trejų metų varianto GTIN: 4260130061616. Jutiklio >30 mln. parašų / apšvietimo 20 000 val. nėra mūsų garantija."
+      ],
+      "pageId": "1838da73-e900-4334-8983-2a56e036e280",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "publishAt": "2026-10-08T16:03:32.124Z",
+      "fileSha256": "f3e919994f4763e3aadc8e23301cd04254030018385e127aa9f2f4d82e6ce5d0"
+    },
+    {
+      "file": "durasign-pad-ng-10.md",
+      "title": "StepOver duraSign Pad NG 10",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "kind": "hardware",
+      "sources": [
+        "https://stepover.com/en/products/signature-pads/durasign-pad-ng-10/",
+        "https://stepover.com/wp-content/uploads/StepOver_Technical-Data-Sheet_duraSign-Pad-NG-10_EN.pdf"
+      ],
+      "technicalRows": 32,
+      "publicationStatus": "private-draft",
+      "reviewNotes": [
+        "Puslapio svoris 955 g, PDF 945 g; aktyvus plotas puslapyje 22,41 × 12,67 cm, PDF 22,27 × 12,53 cm. Šių laukų viešinimas laukia patikslinimo.",
+        "PDF datos / laiko žymą vadina standartine, tačiau jos eilutės antraštėje yra optional. Tai vidinio laikrodžio data, ne kvalifikuota laiko žyma; NTP sinchronizavimo sąlygas tikslinti.",
+        "Atidarymo aptikimas pagrindiniame puslapio tekste pristatomas kaip integruotas, PDF – papildoma gamyklinė opcija. Standartinės komplektacijos nepažadėti.",
+        "Vaizdo įrašo 512K reikšmės vienetas PDF nepatikslintas; nekeisti į tikslų kbit/s skaičių. Atmintyje – bent keturi vaizdai, įrašas iki 30 min.",
+        "Papildomų tinklo priedų maitinimas: 7 W Europlugs arba 7,5 W International; tai ne planšetės 5 W galia. VESA 100 nurodo produkto puslapis.",
+        "Trejų metų varianto GTIN: 4260130061623. >30 mln. parašų / 20 000 val. – deklaruojami gamintojo rodikliai."
+      ],
+      "pageId": "d60d6eb9-35e6-4778-b7e5-136827efc61d",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "publishAt": "2026-10-08T16:03:32.124Z",
+      "fileSha256": "1222acebd3949389d9919983059e228c6544991ec8810e963d57466f9671d71b"
+    },
+    {
+      "file": "nextgen-pad-5.md",
+      "title": "StepOver nextGen Pad 5",
+      "slug": "produktas/paraso-plansete-stepover-nextgen-pad-5",
+      "kind": "hardware",
+      "sources": [
+        "https://stepover.com/en/products/signature-pads/nextgen-pad-5/",
+        "https://stepover.com/wp-content/uploads/StepOver_Technical-Data-Sheet_nextGen-Pad-5_EN.pdf"
+      ],
+      "technicalRows": 33,
+      "publicationStatus": "private-draft",
+      "reviewNotes": [
+        "PDF sistemos reikalavimų skiltyje įrenginys vadinamas tinklo įrenginiu, o connectivity skiltyje – HID / serial. Prieš skelbiant tikslų USB protokolą reikalingas gamintojo patikslinimas.",
+        "Puslapio pabaigoje VESA 100 ir dalis eSignatureOffice teksto mini kitą modelį – duraSign Pad NG 10. Šių teiginių nextGen Pad 5 nepriskirti.",
+        "Atidarymo aptikimą tikslinti: marketingo skiltis sako integrated, PDF – optional.",
+        "Rašiklio laikymas: −20…+70 °C / RH≤65 % arba −20…+65 °C / RH≤95 %, be kondensacijos. Patikrinta PDF 6 puslapio vaizde.",
+        "PDF kampai: horizontalūs min. 60° / įprastai 70°; vertikalūs min. 60° / 45°, įprastai 70° / 50°. Vaizdo įrašų 512K vienetas nepatikslintas; iki 30 min., bent keturi budėjimo vaizdai.",
+        "Tinklo priedo adapteris 10/100 Mbit/s, maitinimo šaltinis 7,5 W. Tai ne įrenginio 2,0 W galia. Trejų metų varianto GTIN: 4260130061654."
+      ],
+      "pageId": "90a6e7c4-7fe2-412f-9a55-6d6e16a88076",
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-nextgen-pad-5",
+      "publishAt": "2026-11-14T08:00:00.000Z",
+      "fileSha256": "c9b86295dfae7b8221124ee805d84e5fb975e05fb6f4d87d8c2c49a62878ac05"
+    },
+    {
+      "file": "esignatureoffice.md",
+      "slug": "programine-iranga/esignatureoffice",
+      "kind": "software",
+      "sources": [
+        "https://stepover.com/en/products/software/esignatureoffice/",
+        "https://stepover.com/wp-content/uploads/Flyer-eSignatureOffice-EN.pdf"
+      ],
+      "publicationStatus": "private-draft",
+      "pageId": "f9a76c07-c828-46b9-a31f-d8e5d997d464",
+      "url": "https://parasoplansetes.lt/programine-iranga/esignatureoffice",
+      "title": "eSignatureOffice – PDF pasirašymo programa",
+      "publishAt": "2026-10-10T07:00:00.000Z",
+      "fileSha256": "538f4419515b924b0b9980530abdb8402ab7c4c9d359fe35a79369012a101e99",
+      "technicalRows": 8
+    },
+    {
+      "file": "print2ng.md",
+      "slug": "programine-iranga/print2ng",
+      "kind": "software",
+      "sources": [
+        "https://stepover.com/en/products/software/print2ng/"
+      ],
+      "publicationStatus": "private-draft",
+      "pageId": "265c5f13-24f2-48aa-b4b6-ad1e52e116f1",
+      "url": "https://parasoplansetes.lt/programine-iranga/print2ng",
+      "title": "Print2NG – tiesioginis dokumentų siuntimas į NextGen planšetes",
+      "publishAt": "2026-10-10T07:00:00.000Z",
+      "fileSha256": "2ad56e568c06273d838e341468ede53f027ae01201308be09fadc7519547166f",
+      "technicalRows": 9
+    },
+    {
+      "file": "office-plugin.md",
+      "slug": "programine-iranga/office-plugin",
+      "kind": "software",
+      "sources": [
+        "https://stepover.com/en/products/software/stepover-office-plugin/"
+      ],
+      "publicationStatus": "private-draft",
+      "pageId": "ad59a259-6dab-4f83-a8aa-3c134860691e",
+      "url": "https://parasoplansetes.lt/programine-iranga/office-plugin",
+      "title": "StepOver Office Plugin – parašas Word ir Excel dokumentuose",
+      "publishAt": "2026-10-31T08:00:00.000Z",
+      "fileSha256": "18789a025990f9a53dc498311a566481bec97611c71b725a4af530cded3cc413",
+      "technicalRows": 7
+    },
+    {
+      "file": "websignatureoffice-ir-lite.md",
+      "slug": "programine-iranga/websignatureoffice",
+      "kind": "software",
+      "sources": [
+        "https://stepover.com/en/products/cloud-sign-online/websignatureoffice/",
+        "https://stepover.com/en/products/cloud-sign-online/websignatureoffice-lite/"
+      ],
+      "publicationStatus": "private-draft",
+      "pageId": "7ab49804-5789-4037-8395-1e293c399122",
+      "url": "https://parasoplansetes.lt/programine-iranga/websignatureoffice",
+      "title": "webSignatureOffice ir Lite – pasirašymas internetu",
+      "publishAt": "2026-11-07T08:00:00.000Z",
+      "fileSha256": "62621e3b9008a918aa35f93b072800a32cfd1f768f7321f1a974ca96c2af962f",
+      "technicalRows": 14
+    },
+    {
+      "file": "paraso-plansetes-modeliu-apzvalga.md",
+      "slug": "paraso-plansetes",
+      "kind": "catalogue",
+      "sources": [],
+      "publicationStatus": "private-draft",
+      "pageId": "9b93ad4b-8566-4c67-a7d1-b31f74966210",
+      "url": "https://parasoplansetes.lt/paraso-plansetes",
+      "title": "StepOver parašo planšečių modeliai",
+      "publishAt": "2026-10-08T16:03:32.122Z",
+      "fileSha256": "4e2ba87567d2d63a05f16233d9c4b4f7d5fc5dfe9a7ffa780f2ee0211587fb00",
+      "technicalRows": 6
+    },
+    {
+      "file": "programines-irangos-apzvalga.md",
+      "slug": "programine-iranga",
+      "kind": "catalogue",
+      "sources": [
+        "https://stepover.com/en/products/software/ng-pad-feature-extension/"
+      ],
+      "publicationStatus": "private-draft",
+      "pageId": "af94fcfd-72b6-49fe-833b-7ff35e5bdc8a",
+      "url": "https://parasoplansetes.lt/programine-iranga",
+      "title": "Programinė įranga dokumentams pasirašyti",
+      "publishAt": "2026-10-08T16:03:32.124Z",
+      "fileSha256": "886c7962c9efd80224542fbd47b8f26a530c2eafe2badb7010039ad5f3899c7f",
+      "technicalRows": 4
+    }
+  ]
+}

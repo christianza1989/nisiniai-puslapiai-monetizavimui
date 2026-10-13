@@ -136,3 +136,10 @@ Devynios skirtingos kompozicijos: priėmimas, klientų aptarnavimas, sveikatos �
 Visi vaizdai pateikiami per bendrą Content Studio responsive media importą: 45 nauji WebP variantai, devynių šeimų ID parinkti `config/parasoplansetes-homepage-media.json`. Hero kraštinių santykis 2:1; mobilus vaizdas nepridengia teksto. Tiksli laida, patikros ir ribos: [DESIGN_DEPLOYMENT_20261010.md](DESIGN_DEPLOYMENT_20261010.md).
 
 Mobilus AI paleidiklis yra 52 px apskritimas su aiškiu prieinamumo pavadinimu. Pokalbio tęstinumo, sutikimų, kontaktų ir serverio autorizacijos logika išsaugota.
+
+## Techninių duomenų tekstai — 2026-10-13
+
+- [x] Peržiūrėti esamą produkto puslapį ir teksto vaidmenis: Manrope, kūno tekstas 17 px / 1,65 (telefone 16 px), skaitomi antraščių ir pastraipų tarpai.
+- [x] Išlaikyti trumpą pirmą modelio savybių sąrašą katalogo kortelėms; išsamias charakteristikas rodyti tik jų skyriuje, semantiniu parametrų ir reikšmių sąrašu.
+- [x] Naudoti tuos pačius spalvų, teksto ir svorių kintamuosius; skaičiams – vienodo pločio skaitmenis. Iki 520 px parametrą ir reikšmę išdėstyti vieną po kito, netrumpinti sąlygų ir nesumažinti teksto.
+- [x] Patikrinti ilgus techninius laukus, kelias gretimas parametrų grupes, katalogo korteles ir programų puslapius 1280 / 320 / 390 px vaizde. Duomenys neapkarpyti, horizontalaus slinkimo nėra; 223 eilučių vietinės ir 164 dabartinių gyvų eilučių HTTP patikros PASS. Faktiniai rezultatai ir likusios 200 % mastelio patikros ribos – [TECHNICAL_COPY_ADOPTION_20261013.md](TECHNICAL_COPY_ADOPTION_20261013.md).

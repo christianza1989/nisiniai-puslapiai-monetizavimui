@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/125",
+  "note": "Draft follow-up targets main and depends on earlier integration/creator PRs. Current main fetched/integrated; exact follow-up scope in commit history. No main merge or cross-machine adoption claimed. PhoneBridger branch runtime release is recorded separately.",
+  "eventId": "f43d67de-dda6-4216-8847-49a2f96b0954",
+  "sequence": 3,
+  "at": "2026-10-13T09:28:28.881Z"
+}

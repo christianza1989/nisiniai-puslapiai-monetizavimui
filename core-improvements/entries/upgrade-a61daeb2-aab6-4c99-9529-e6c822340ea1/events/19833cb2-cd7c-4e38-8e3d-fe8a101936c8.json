@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual local and canonical keyboard skip action focuses main without reload; entire WCAG acceptance remains unverified.",
+  "checks": [
+    {
+      "command": "node .sites-runtime/audit-final-browser.cjs https://phonebridger.com",
+      "result": "PASS",
+      "evidence": "32 affected route/viewport combinations, menu Escape focus and actual main activeElement asserted; zero page errors."
+    }
+  ],
+  "eventId": "19833cb2-cd7c-4e38-8e3d-fe8a101936c8",
+  "sequence": 2,
+  "at": "2026-10-13T09:28:28.835Z"
+}

@@ -51,6 +51,8 @@ Lighthouse13.5.0: home90 ir apdailos gidas94performance, kitose kategorijose100.
 
 ## Aktualus kalbinių versijų tekstų patikros planas · 2026-10-12
 Dizaino krypties pasirinkimas savininko atidėtas. Šis etapas tikrina 88 puslapių įskaitomumą ir veikimą esamoje sistemoje, nepatvirtina galutinės tapatybės.
+
+2026-10-14 rinkinių sudėties pataisa: išlaikyti dabartiniai Manrope tekstų vaidmenys; prie serverio kainos pridėta lokalizuota įtrauktų dažų eilutė, pašalintas dažų checkbox. Actual LT desktop1280, LT mobile320 ir PL desktop1280 patikrinti be clipping/overflow; native mobile juosta rodo 48 €. [Patikros apimtis ir likę apribojimai](INCLUDED_PAINT_2026_10_14.md). Ankstesnės typography užduotys ir 200%/spacing nežinomybė šia maža pataisa nepervadinamos PASS.
 - [x] FontTools faktiškai perskaitė penkių WOFF2 metaduomenis: Newsreader400 static; Source Sans3 tikra wght200–900 ašis. Abiejų Sans unicode šeimų junginys ir Newsreader turi visus LT/PL/LV/ET reikalingus tikrintus ženklus.
 - [ ] Deklaruoti tikrą Sans svorių diapazoną vienoje šeimoje; pašalinti dubliuotas svorių deklaracijas ir sintetinio logo kursyvo poreikį. Originalūs fontų baitai/licencijos nepakeičiami.
 - [ ] Dabartinis 320/390/768/1440 reflow, visos keturios kalbos, mygtukai/checkbox/formos, gids/autorius/datos/šaltiniai/footer. Atskirai tikra 200% zoom ir text-spacing patikra; bandymas nepaverčiamas PASS, jei mechanizmas neveikia.

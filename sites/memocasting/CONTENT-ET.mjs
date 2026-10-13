@@ -5,22 +5,22 @@ export const estonianPages=[
 d('','Kätevalukomplektid paarile ja perele','Valige komplekt ning kavandage ühine mälestus. Komplekti sisu, ettevalmistus ja kingiideed.',[
 p('Kätevalukomplekt on idee ühiseks tegevuseks. Valmis eseme asemel võite kinkida võimaluse luua valitud hetkest mälestus. Esmalt leppige kokku, kas kõik soovivad osaleda ja milline tulemus neile oluline on.'),
 h('Paarile või perele?'),p('Paari komplekt sisaldab üht alginaadipakki, 1 200 g kipsi, ämbrit ja segamispulki. Perekomplektis on kaks alginaadipakki, kaks kipsipakki ja segamispulgad. Käte arv, suurus ja asend tuleb üle kontrollida konkreetse komplekti juhendist.'),
-p('Leedus kinnitatud baashinnad on 32 € paarile ja 48 € perele. Paari komplekti valge värv on valikuline lisand hinnaga 3 € ning puidust alus maksab lisaks 10 €. Eesti müügihinnad ja tegelik tarne ei ole veel kinnitatud. Me ei tuleta neid väljamõeldud valuutakursist.'),
+p('Leedus kinnitatud baashinnad on 32 € paarile ja 48 € perele. Valge värv kuulub paari- ja perekomplekti hinna sisse. Puidust alus maksab lisaks 10 €. Eesti müügihinnad ja tegelik tarne ei ole veel kinnitatud. Me ei tuleta neid väljamõeldud valuutakursist.'),
 h('Kingi üleandmine ja valmistamine on eri sündmused'),p('Võite üle anda komplekti või kutse ühisele tegevusele ning valmistada valandi hiljem. Ettevalmistus, vormist eemaldamine, kuivamine ja viimistlus on eraldi etapid. Ilma materjali juhendita ei määra me üldisi segamisvahekordi ega kestust.'),
 p('See on poe kohalik testversioon. Ostukorvi summad arvutab server, kuid testtellimuse salvestamine ei tähenda tegelikku müüki, makset ega saatmist. Juhendid aitavad valikut kavandada ja enne töö alustamist vajalikud andmed kokku koguda.')
 ],[['collections/all','Võrrelge komplekte'],['pages/instrukcija','Teave kasutusjuhendi kohta'],['gidai','Lugege juhendeid']]),
-d(pair,'Kätevalukomplekt paarile','Paari komplekti sisu, valikuline värv ja puidust alus. Leedus kinnitatud baashind: 32 €.',[
-p('Paari komplektiga saate kavandada ühise kätevalandi. Leedus kinnitatud baashind on 32 €, valikulise valge värviga 35 €. Eesti müügihind ja müügiks kättesaadavus tuleb kinnitada eraldi.'),
-h('Kinnitatud komplekti sisu'),list('Üks alginaadipakk.','1 200 g kipsi.','Ämber.','Segamispulgad.'),
+d(pair,'Kätevalukomplekt paarile','Paari komplekti sisu koos hinnas sisalduva valge värviga ja valikuline puidust alus. Leedus kinnitatud baashind: 32 €.',[
+p('Paari komplektiga saate kavandada ühise kätevalandi. Leedus kinnitatud baashind on 32 € ja valge värv kuulub komplekti hinna sisse. Eesti müügihind ja müügiks kättesaadavus tuleb kinnitada eraldi.'),
+h('Kinnitatud komplekti sisu'),list('Üks alginaadipakk.','1 200 g kipsi.','Ämber.','Segamispulgad.','Valge värv.'),
 h('Enne käte asendi valimist'),p('Käte suurus ja asend peavad vastama konkreetse komplekti mahule ning juhendile. Nimetus „paarile” ei kinnita iga kahe käe asendi sobivust. Ärge alustage segamist teise tootja juhendi alusel.'),
 h('Põhipakk ja lisandid'),p('Põhisaadetis kaalub 2 kg ja selle mõõdud on 20 × 20 × 17 cm. Need on transpordipakendi andmed, mitte ämbri maht. Tarne hind arvutatakse eraldi. Kohaliku ostukorvi tariif on testandmetena kasutatav summa, mitte vedaja tegelik pakkumine.'),
-p('Kinnitatud baaspakkumises võib valida valge värvi lisaks 3 € eest. Värvi kogus ja kasutusdokumendid on veel kontrollimisel. Valiku saab aktiveerida alles kinnitatud serveriseadistuse põhjal.'),
+p('Valge värv kuulub komplekti ilma lisatasuta. Värvi kogus ja kasutusdokumendid on veel täpsustamisel.'),
 h('Valikuline puidust alus'),p('Puidust alus maksab lisaks 10 € ega kuulu baashinna sisse. Puiduliik ja mõõdud ei ole veel kinnitatud. Fotol olev valand näitab välimuse näidet ega ole komplekti lisasisu.'),image('owner-wood'),
 p('Põhipaki kaal ja mõõdud ei kinnita lisanditega saadetise parameetreid. Konkreetset tellimust tuleb hinnata eraldi saadetisena.')
 ],[['pages/instrukcija','Teave kasutusjuhendi kohta'],['gidai/dovana-porai','Kingiidee paarile'],[family,'Perekomplekt']]),
-d(family,'Kätevalukomplekt perele','Perekomplekti sisu ja kavandamise piirid. Leedus kinnitatud baashind: 48 €.',[
+d(family,'Kätevalukomplekt perele','Perekomplekt hinnas sisalduva valge värviga. Leedus kinnitatud baashind: 48 €.',[
 p('Perekomplekt aitab kavandada ühist mälestust. Leedus kinnitatud baashind on 48 €. Eesti müügihind ja tegelik tarne ei ole veel kinnitatud.'),
-h('Kinnitatud komplekti sisu'),list('Kaks alginaadipakki.','Kaks kipsipakki.','Segamispulgad.'),
+h('Kinnitatud komplekti sisu'),list('Kaks alginaadipakki.','Kaks kipsipakki.','Segamispulgad.','Valge värv.'),
 p('Üksikute pakkide kaal ja anuma parameetrid vajavad täpsustamist. Me ei määra täiskasvanute või laste arvu enne, kui seda kinnitavad konkreetse komplekti juhend ja tegelik kontroll.'),
 h('Leppige esmalt kokku osalejad'),p('Selgitage, kes soovib osaleda, ning kontrollige lubatud käte asendit ja suurust. Nimetus „perele” ei kinnita sobivust imikutele ega suvalisele osalejate arvule. Ka näidisfoto ei ole selle tõend.'),
 h('Põhisaadetis'),p('Perekomplekti pakk kaalub 4 kg ja selle mõõdud on 25 × 25 × 20 cm. Tarne on eraldi hinnakirje. Kohalik testostukorv kasutab testtariifi.'),
@@ -29,7 +29,7 @@ p('Põhipaki parameetrid ei hõlma lisandite kinnitamata pakendiandmeid. Komplek
 ],[['collections/all','Komplektide võrdlus'],['pages/instrukcija','Teave juhendi kohta'],[pair,'Komplekt paarile']]),
 d('collections/all','Komplekt paarile või perele?','Võrrelge kinnitatud sisu ja baashindu. Osalejate arvu ning anuma mahu jaoks on vaja konkreetset juhendit.',[
 p('Paari komplektis on üks alginaadipakk, 1 200 g kipsi, ämber ja segamispulgad. Perekomplektis on kaks alginaadipakki, kaks kipsipakki ja segamispulgad. Ainult nime ja foto võrdlemisest ei piisa: tähtsad on osalejate käed ning konkreetse komplekti tingimused.'),
-h('Baashinnad ja lisandid'),p('Leedus kinnitatud hinnad: 32 € paarile, 35 € paarile valge värviga ja 48 € perele. Puidust alus on eraldi lisand hinnaga 10 €. Eesti müügihinnad ja kättesaadavus vajavad veel kinnitamist. Need summad ei sisalda tarnet.'),
+h('Baashinnad ja lisandid'),p('Leedus kinnitatud hinnad: 32 € paarile ja 48 € perele. Valge värv kuulub mõlema komplekti hinna sisse. Puidust alus on eraldi lisand hinnaga 10 €. Eesti müügihinnad ja kättesaadavus vajavad veel kinnitamist. Need summad ei sisalda tarnet.'),
 h('Pakendi mõõt ei ole vormi maht'),p('Paari põhipakk: 2 kg, 20 × 20 × 17 cm. Pere põhipakk: 4 kg, 25 × 25 × 20 cm. Transpordimõõdud ei määra anuma mahtu ega käte arvu. Lisanditega pakk tuleb kontrollida eraldi.'),
 h('Valige ühise plaani järgi'),list('Leppige kokku, kes soovib osaleda.','Kontrollige juhendit ja lubatud käte asendit.','Eristage kingi üleandmist valandi valmistamisest ja kuivamisest.','Ärge käsitage fotot mahu või ohutuse tõendina.'),
 p('Praegune imiku jalalabade valamise toode ja alginaadi lisapakk ei ole veel müügiks kinnitatud. Säilitatud vanadel aadressidel on teave, mitte aktiivne pakkumine.')
@@ -109,7 +109,7 @@ h('Küsimus ei ole turundusnõusolek'),p('Nime, e-posti ja küsimust kasutatakse
 h('Enne tegelikku käivitamist'),p('Tuleb kinnitada tegelikud andmesaajad, säilitustähtajad, inimeste õiguste täitmine ja kasutatud teenuste kord. Kohalik eelvaade ei tõenda nende protsesside toimimist. Tootmiskeskkonna andmeid siia ei sisestata.')
 ]),
 d('naudojimo-salygos','Kohaliku poe testi tingimused','Mida testtellimus tähendab ja mis tuleb enne tegeliku müügi alustamist kinnitada.',[
-p('See versioon kontrollib ostuprotsessi. Omanik kinnitas Leedu baashinnad: 32 € paarile, 35 € paarile valge värviga ja 48 € perele. Puidust alus maksab lisaks 10 €. Eesti müügihinnad vajavad kinnitamist; ostukorvi laoseis ja tarne on testandmed.'),
+p('See versioon kontrollib ostuprotsessi. Omanik kinnitas Leedu baashinnad: 32 € paarile ja 48 € perele. Valge värv kuulub mõlema komplekti hinna sisse. Puidust alus maksab lisaks 10 €. Eesti müügihinnad vajavad kinnitamist; ostukorvi laoseis ja tarne on testandmed.'),
 p('Tellimuse salvestamine loob testkirje, mitte tegeliku müügi, maksekinnituse või saatmiskohustuse. Maksmise nupp jääb mitteaktiivseks, kuni õige integratsioon on vastu võetud.'),
 p('Enne müüki on vaja ettevõtte täielikke andmeid, tarbijale kohaldatavaid tingimusi, tagastusprotsessi, tegelikku tarnet ja kinnitatud tootejuhendit. Keeleversioon ei asenda neid fakte. See tekst ei anna õigust alustada päris tellimuste vastuvõtmist.')
 ]),
@@ -122,7 +122,7 @@ h('Kolm eri valikut'),list('Loomuliku välimuse säilitamine pärast juhendikoha
 p('Edinburgh Casting käsitleb värvimist ja päris pronksivalu eraldi teenustena. See aitab materjalierinevust mõista, kuid ei ole Memocastingu pakkumine. Siin selliste professionaalsete teenuste pakkumist ei ole.'),
 h('Pange eesmärk ühe lausega kirja'),p('Lõpetage lause „Ma tahan, et valand näeks välja…”. Lisage soovitud värv, pinna ilme ja koht, kus seda eksponeerida. Valge mälestus heledal riiulil ning metallitooni aktsent on eri esteetilised valikud, mitte kvaliteeditasemed. Kingi puhul arutage pöördumatu muudatus saajaga läbi.'),
 h('Enne värvi avamist'),list('Tehke kindlaks kips, värv ja nende dokumendid.','Kontrollige katte sobivust ning aluspinna ettevalmistust.','Leidke aluspinna ja kihtide kuivamistingimused.','Vajaduse korral leppige kokku sobiv eraldi katseproov.'),
-p('Paari baaspakkumise valikuline valge värv hinnaga 3 € ei tõenda krundi, laki või kõigi teise tootja nõutud vahendite olemasolu. Kogus ja kasutusdokumendid on veel täpsustamisel.'),
+p('Paari- ja perekomplekti kuuluv valge värv ei tõenda krundi, laki või kõigi teise tootja nõutud vahendite olemasolu. Kogus ja kasutusdokumendid on veel täpsustamisel.'),
 h('Hooldus sõltub materjalist'),p('Kipsipind ja lisakate võivad vajada eri tingimusi. Õigete dokumentideta ei soovitata universaalset pesemist, keemilist puhastamist või lakkimist. Säilitage kasutatud toodete andmed, et hilisem küsimus käiks kindla materjali kohta.')
 ],[['pages/instrukcija','Komplekti dokumendid'],['gidai/dziovinimas-ir-isemimas','Kuivamisetapid'],['pagalba','Märgatud probleemi kirjeldamine'],['gidai','Kõik juhendid']]),
 d('gidai/dziovinimas-ir-isemimas','Valandi eemaldamine ja kuivamine: eristage etappe','Eemaldamiseks valmisolek ei tähenda värvimisvalmidust. Etapiplaan ilma kinnitamata tundide arvuta.',[

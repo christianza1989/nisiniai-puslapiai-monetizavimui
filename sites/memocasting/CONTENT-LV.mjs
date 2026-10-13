@@ -5,22 +5,22 @@ export const latvianPages=[
 d('','Roku atlējuma komplekti pārim un ģimenei','Izvēlieties komplektu un ieplānojiet kopīgu piemiņu. Komplektācija, sagatavošanās un dāvanas idejas.',[
 p('Roku atlējuma komplekts ir ideja kopīgai nodarbei. Jūs varat uzdāvināt ne tikai gatavu priekšmetu, bet arī iespēju radīt izvēlētā brīža piemiņu. Vispirms vienojieties, vai visi vēlas piedalīties un kāds rezultāts viņiem ir svarīgs.'),
 h('Pārim vai ģimenei?'),p('Pāra komplektā ir viens algināta iepakojums, 1 200 g ģipša, spainis un maisīšanas kociņi. Ģimenes komplektā ir divi algināta iepakojumi, divi ģipša iepakojumi un maisīšanas kociņi. Roku skaits, izmērs un novietojums jāpārbauda konkrētā komplekta instrukcijā.'),
-p('Apstiprinātās bāzes cenas Lietuvā ir 32 € pārim un 48 € ģimenei. Baltu krāsu pāra komplektam var izvēlēties papildus par 3 €, bet koka pamatni — par 10 €. Pārdošanas cenas Latvijā un faktiskā piegāde vēl nav apstiprinātas. Tās neaizstājam ar izdomātu valūtas pārrēķinu.'),
+p('Apstiprinātās bāzes cenas Lietuvā ir 32 € pārim un 48 € ģimenei. Balta krāsa ir iekļauta pāra un ģimenes komplekta cenā. Koka pamatni var izvēlēties papildus par 10 €. Pārdošanas cenas Latvijā un faktiskā piegāde vēl nav apstiprinātas. Tās neaizstājam ar izdomātu valūtas pārrēķinu.'),
 h('Dāvanas pasniegšana un izgatavošana ir atsevišķi notikumi'),p('Varat pasniegt komplektu vai uzaicinājumu kopīgai nodarbei, bet atlējumu izgatavot vēlāk. Sagatavošana, izņemšana, žūšana un apdare ir atsevišķi posmi. Bez materiālu dokumentiem nenorādām universālas proporcijas vai ilgumu.'),
 p('Šī ir vietējā veikala testa versija. Groza summas aprēķina serveris, taču testa pasūtījuma saglabāšana nenozīmē īstu pārdošanu, apmaksu vai nosūtīšanu. Ceļveži palīdzēs izvēlēties un savākt vajadzīgo informāciju pirms darba.')
 ],[['collections/all','Salīdziniet komplektus'],['pages/instrukcija','Informācija par instrukciju'],['gidai','Lasiet ceļvežus']]),
-d(pair,'Roku atlējuma komplekts pārim','Pāra komplektācija, izvēles krāsa un koka pamatne. Apstiprinātā bāzes cena Lietuvā: 32 €.',[
-p('Ar pāra komplektu varat ieplānot kopīgu roku atlējumu. Apstiprinātā bāzes cena Lietuvā ir 32 €, bet ar izvēles balto krāsu — 35 €. Pārdošanas cena un pieejamība Latvijā jāapstiprina atsevišķi.'),
-h('Apstiprinātā komplektācija'),list('Viens algināta iepakojums.','1 200 g ģipša.','Spainis.','Maisīšanas kociņi.'),
+d(pair,'Roku atlējuma komplekts pārim','Pāra komplektācija ar cenā iekļautu balto krāsu un izvēles koka pamatni. Apstiprinātā bāzes cena Lietuvā: 32 €.',[
+p('Ar pāra komplektu varat ieplānot kopīgu roku atlējumu. Apstiprinātā bāzes cena Lietuvā ir 32 €, ieskaitot balto krāsu. Pārdošanas cena un pieejamība Latvijā jāapstiprina atsevišķi.'),
+h('Apstiprinātā komplektācija'),list('Viens algināta iepakojums.','1 200 g ģipša.','Spainis.','Maisīšanas kociņi.','Balta krāsa.'),
 h('Pirms izvēlaties roku novietojumu'),p('Roku izmēram un novietojumam jāatbilst konkrētā komplekta tilpumam un instrukcijai. Nosaukums „pārim” neapstiprina jebkādu divu roku pozu. Nesāciet sajaukšanu pēc cita ražotāja norādījumiem.'),
 h('Bāzes paka un papildinājumi'),p('Bāzes sūtījums sver 2 kg; izmēri ir 20 × 20 × 17 cm. Tie ir transporta iepakojuma dati, nevis spaiņa tilpums. Piegādi aprēķina atsevišķi. Vietējā groza tarifs ir testam, nevis īsts pārvadātāja piedāvājums.'),
-p('Apstiprinātajā bāzes piedāvājumā balta krāsa ir izvēles papildinājums par 3 €. Tās tilpums un lietošanas dokumenti vēl tiek pārbaudīti. Izvēle tiks aktivizēta tikai pēc servera konfigurācijas apstiprināšanas.'),
+p('Balta krāsa ir iekļauta komplektā bez papildu maksas. Tās tilpums un lietošanas dokumenti vēl tiek precizēti.'),
 h('Izvēles koka pamatne'),p('Koka pamatne maksā papildus 10 € un neietilpst bāzes cenā. Koka suga un izmēri vēl nav apstiprināti. Attēlā redzamais atlējums ir izskata piemērs, nevis komplekta papildu sastāvdaļa.'),image('owner-wood'),
 p('Bāzes pakas svars un izmēri neapstiprina sūtījuma parametrus ar papildinājumiem. Konkrētā izvēle jānovērtē kā atsevišķs sūtījums.')
 ],[['pages/instrukcija','Informācija par instrukciju'],['gidai/dovana-porai','Dāvanas ideja pārim'],[family,'Ģimenes komplekts']]),
-d(family,'Roku atlējuma komplekts ģimenei','Ģimenes komplektācija un plānošanas robežas. Apstiprinātā bāzes cena Lietuvā: 48 €.',[
+d(family,'Roku atlējuma komplekts ģimenei','Ģimenes komplekts ar cenā iekļautu balto krāsu. Apstiprinātā bāzes cena Lietuvā: 48 €.',[
 p('Ģimenes komplekts palīdz ieplānot kopīgu piemiņu. Apstiprinātā bāzes cena Lietuvā ir 48 €. Pārdošanas cena Latvijā un faktiskā piegāde vēl nav apstiprinātas.'),
-h('Apstiprinātā komplektācija'),list('Divi algināta iepakojumi.','Divi ģipša iepakojumi.','Maisīšanas kociņi.'),
+h('Apstiprinātā komplektācija'),list('Divi algināta iepakojumi.','Divi ģipša iepakojumi.','Maisīšanas kociņi.','Balta krāsa.'),
 p('Atsevišķo iepakojumu masa un trauka parametri vēl jāprecizē. Nenorādām pieaugušo vai bērnu skaitu, kam komplekts der, kamēr to neapstiprina konkrētā instrukcija un reāla pārbaude.'),
 h('Vispirms vienojieties par dalībniekiem'),p('Noskaidrojiet, kurš vēlas piedalīties, un pārbaudiet pieļaujamo roku novietojumu un izmēru. Nosaukums „ģimenei” neapstiprina piemērotību zīdaiņiem vai jebkādam dalībnieku skaitam. Arī piemēra foto to nepierāda.'),
 h('Bāzes sūtījums'),p('Ģimenes komplekta paka sver 4 kg; izmēri ir 25 × 25 × 20 cm. Piegādes cena ir atsevišķa. Vietējā testa grozā izmantots testa tarifs.'),
@@ -29,7 +29,7 @@ p('Bāzes pakas parametri neietver neapstiprinātus papildinājumu iepakojuma da
 ],[['collections/all','Komplektu salīdzinājums'],['pages/instrukcija','Informācija par instrukciju'],[pair,'Komplekts pārim']]),
 d('collections/all','Komplekts pārim vai ģimenei?','Salīdziniet apstiprināto komplektāciju un bāzes cenas. Dalībnieku skaitam un trauka tilpumam vajadzīga instrukcija.',[
 p('Pāra komplektā ir viens algināta iepakojums, 1 200 g ģipša, spainis un maisīšanas kociņi. Ģimenes komplektā ir divi algināta un divi ģipša iepakojumi, kā arī kociņi. Ar nosaukuma un foto salīdzināšanu nepietiek: svarīgas ir dalībnieku rokas un konkrētā komplekta nosacījumi.'),
-h('Bāzes cenas un papildinājumi'),p('Lietuvā apstiprinātās cenas: 32 € pārim, 35 € pārim ar baltu krāsu un 48 € ģimenei. Koka pamatne ir atsevišķs papildinājums par 10 €. Cenas un pieejamība pārdošanai Latvijā vēl jāapstiprina. Šajās summās nav iekļauta piegāde.'),
+h('Bāzes cenas un papildinājumi'),p('Lietuvā apstiprinātās cenas: 32 € pārim un 48 € ģimenei. Balta krāsa ir iekļauta abu komplektu cenā. Koka pamatne ir atsevišķs papildinājums par 10 €. Cenas un pieejamība pārdošanai Latvijā vēl jāapstiprina. Šajās summās nav iekļauta piegāde.'),
 h('Pakas izmērs nav formas tilpums'),p('Pāra bāzes paka: 2 kg, 20 × 20 × 17 cm. Ģimenes paka: 4 kg, 25 × 25 × 20 cm. Transporta izmēri nenosaka trauka tilpumu vai roku skaitu. Pakas ar papildinājumiem jāpārbauda atsevišķi.'),
 h('Izvēlieties pēc kopīgā plāna'),list('Vienojieties, kurš vēlas piedalīties.','Pārbaudiet instrukciju un pieļaujamo roku novietojumu.','Nošķiriet dāvanas pasniegšanu no izgatavošanas un žūšanas.','Foto neuzskatiet par tilpuma vai drošuma pierādījumu.'),
 p('Aktuāls zīdaiņa pēdu atlējuma produkts un algināta papildinājums vēl nav apstiprināti pārdošanai. Saglabātajās vēsturiskajās adresēs ir informācija, nevis aktīvs piedāvājums.')
@@ -109,7 +109,7 @@ h('Jautājums nav mārketinga piekrišana'),p('Vārds, e-pasts un jautājums tie
 h('Pirms īstas palaišanas'),p('Jāapstiprina faktiskie datu saņēmēji, glabāšanas termiņi, personu tiesību izpilde un izmantoto pakalpojumu kārtība. Vietējais priekšskatījums nepierāda šo procesu darbību. Produkcijas datus šeit neievadiet.')
 ]),
 d('naudojimo-salygos','Vietējā veikala testa noteikumi','Ko nozīmē testa pasūtījums un kas jāapstiprina pirms faktiskas pārdošanas sākuma.',[
-p('Šī versija paredzēta pirkuma procesa pārbaudei. Īpašnieks apstiprināja Lietuvas bāzes cenas: 32 € pārim, 35 € pārim ar baltu krāsu un 48 € ģimenei. Koka pamatne maksā papildus 10 €. Latvijas pārdošanas cenas vēl jāapstiprina. Groza krājumu un piegādes dati ir testam.'),
+p('Šī versija paredzēta pirkuma procesa pārbaudei. Īpašnieks apstiprināja Lietuvas bāzes cenas: 32 € pārim un 48 € ģimenei. Balta krāsa ir iekļauta abu komplektu cenā. Koka pamatne maksā papildus 10 €. Latvijas pārdošanas cenas vēl jāapstiprina. Groza krājumu un piegādes dati ir testam.'),
 p('Pasūtījuma saglabāšana veido testa ierakstu, nevis īstu pārdošanu, maksājuma apstiprinājumu vai nosūtīšanas saistības. Maksājuma poga nav aktīva, kamēr nav pieņemta pareizā integrācija.'),
 p('Pirms pārdošanas vajadzīgi pilni uzņēmuma dati, patērētājam piemērojamie noteikumi, atgriešanas process, īsta piegāde un apstiprināta instrukcija. Valodas versija šos faktus neaizstāj. Šis teksts neļauj sākt īstu pasūtījumu pieņemšanu.')
 ]),
@@ -122,7 +122,7 @@ h('Trīs atšķirīgas izvēles'),list('Atstāt dabīgu izskatu pēc instrukcija
 p('Edinburgh Casting krāsošanu un īstu bronzas liešanu apraksta kā dažādus pakalpojumus. Šī atšķirība palīdz saprast materiālu, bet nav Memocasting piedāvājums. Šeit nav tādu profesionālu pakalpojumu piedāvājuma.'),
 h('Pierakstiet mērķi vienā teikumā'),p('Pabeidziet teikumu „Es gribu, lai atlējums izskatītos…”. Norādiet krāsu, virsmas raksturu un vietu, kur to plānojat novietot. Balts atlējums uz gaiša plaukta un metāla krāsas akcents ir dažādi estētiski lēmumi, nevis kvalitātes pakāpes. Dāvanas izskata neatgriezenisku maiņu pārrunājiet ar saņēmēju.'),
 h('Pirms atverat krāsu'),list('Identificējiet ģipsi, krāsu un dokumentus.','Pārbaudiet pārklājuma saderību un pamatnes sagatavošanu.','Atrodiet pamatnes un slāņu žūšanas nosacījumus.','Ja vajag izmēģinājumu, vienojieties par piemērotu atsevišķu paraugu.'),
-p('Izvēles baltā krāsa par 3 € pāra komplekta bāzes piedāvājumā neapstiprina grunts, lakas vai visu cita ražotāja prasīto līdzekļu esamību. Tās tilpums un lietošanas dokumenti vēl tiek precizēti.'),
+p('Pāra un ģimenes komplektā iekļautā baltā krāsa neapstiprina grunts, lakas vai visu cita ražotāja prasīto līdzekļu esamību. Tās tilpums un lietošanas dokumenti vēl tiek precizēti.'),
 h('Kopšana atkarīga no materiāla'),p('Ģipša virsmai un papildu pārklājumam var būt dažādi nosacījumi. Bez pareiziem dokumentiem neiesakām universālu mazgāšanu, ķīmisku tīrīšanu vai lakošanu. Saglabājiet izmantoto produktu datus, lai jautājums būtu par konkrētu materiālu.')
 ],[['pages/instrukcija','Komplekta dokumenti'],['gidai/dziovinimas-ir-isemimas','Žūšanas posmi'],['pagalba','Novērotās problēmas apraksts'],['gidai','Visi ceļveži']]),
 d('gidai/dziovinimas-ir-isemimas','Atlējuma izņemšana un žūšana: nošķiriet posmus','Gatavība izņemšanai nenozīmē gatavību krāsošanai. Posmu plāns bez neapstiprināta stundu skaita.',[

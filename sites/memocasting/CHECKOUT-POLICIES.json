@@ -1,29 +1,29 @@
 {
   "state": "APPROVED_CONTENT_FOR_LOCAL_TEST_ONLY",
-  "packageSha256": "e69b16f2c764ad51d075f6700af9ad97ad9f1a7fb2248c30552f68efb9afa9c6",
+  "packageSha256": "3f5a4864a45a094ee5c8baceb8e27f5c2607a1d3f73ab5118e482c3ffb61b818",
   "policies": [
     {
       "country": "LT",
       "language": "lt",
-      "policyVersion": "c34b4ae65b138015c8459f30ccc719326e2f9fff056c464d8d732efca707bca8",
+      "policyVersion": "0eb607172a0a2661180d450eb15d4b9160a85815bce2d9b307ae5cb4f869f622",
       "url": "/naudojimo-salygos"
     },
     {
       "country": "PL",
       "language": "pl",
-      "policyVersion": "f5dba3371fd7b2057a90264064adf76ea0ef536fdf0d33d0f492ac51facec07e",
+      "policyVersion": "46529099f2fc7f2eddbf735a41ccf8bd0091bd931521b0805b961e87eff28880",
       "url": "/pl/naudojimo-salygos"
     },
     {
       "country": "LV",
       "language": "lv",
-      "policyVersion": "cdc2ec1e9d36485c1d6159339e2cecbd603d23a7183618abe55c7e1c9cda3816",
+      "policyVersion": "5bc00fe6c286b3950447592a80d6486db509d9d55b77a76a438cc7407db272f2",
       "url": "/lv/naudojimo-salygos"
     },
     {
       "country": "EE",
       "language": "et",
-      "policyVersion": "2942240cbd96735a3456e00df3cd496df2f9810f1b0c8a881207ec6bcbae52d6",
+      "policyVersion": "abad70c8da19e9fa51846096e86ba211a9ef31568eca4fd5e93089f9f9c44c14",
       "url": "/et/naudojimo-salygos"
     }
   ],

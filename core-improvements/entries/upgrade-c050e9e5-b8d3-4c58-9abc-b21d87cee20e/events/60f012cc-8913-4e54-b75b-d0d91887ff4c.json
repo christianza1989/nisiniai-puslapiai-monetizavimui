@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Paint inclusion phase verified for both kits; 26 reviewed changed pages and 62 immutable unchanged snapshots/context reviews. Original facts-context release rejection preserved. Permanent Stripe TEST key and payment acceptance remain pending in authorized shop session; this event does not close payment task.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/paint-tests.private.txt:110 tests"
+    },
+    {
+      "command": "npx tsc --noEmit; scoped ESLint; npm run build",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/paint-types-final.private.txt,paint-lint-final.private.txt,paint-build-final.private.txt"
+    },
+    {
+      "command": "node sites/memocasting/QA_INCLUDED_PAINT.mjs",
+      "result": "PASS",
+      "evidence": "88 approved pages,8 source kits,current helper idempotent"
+    },
+    {
+      "command": "npm run test:seo-smoke; site SEO HTTP; native gateway guards",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/paint-seo.private.txt,paint-seo-http.private.txt,paint-native-guards.private.txt:88pages/103HTTP/13guards"
+    },
+    {
+      "command": "Actual IAB UI:desktop1280/mobile320, native quote",
+      "result": "PASS",
+      "evidence": "PUBLIC/output/paint-couple-final.png,paint-family-mobile-final.png,paint-cart-final.png;included paint/no selector/84.50EUR fixture quote"
+    }
+  ],
+  "eventId": "60f012cc-8913-4e54-b75b-d0d91887ff4c",
+  "sequence": 2,
+  "at": "2026-10-13T21:49:31.779Z"
+}

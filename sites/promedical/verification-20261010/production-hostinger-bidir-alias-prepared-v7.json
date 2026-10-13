@@ -1,0 +1,73 @@
+{
+  "observedAt": "2026-10-10T09:54:07.811Z",
+  "state": "ORDINARY_BIDIRECTIONAL_INBOX_CONFIRMED_ALIAS_PREPARED_OWNER_CONFIRMATION_PENDING",
+  "previousReceipt": "production-hostinger-warmup-support-v6.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "websiteTransport": "cloudflare_email",
+  "vendor": {
+    "specialist": "Fausta",
+    "replyAtVilnius": "2026-10-10 12:45",
+    "ordinaryIncomingInboxConfirmed": true,
+    "ordinaryReplyReceivedInboxConfirmed": true,
+    "ordinaryTestAddress": "cs-email-delivery@hostinger.com",
+    "ordinaryReplyMarker": "PROMEDICAL-HOSTINGER-20261010-BIDIR-REPLY-1",
+    "statement": "Hostinger confirms both ordinary test directions reached Inbox and says it cannot manually override spam classification. Recommends reviewing Cloudflare sender/format and legitimate Not spam training.",
+    "websiteSenderHostingerMailboxAbsentReported": true,
+    "missingMailboxProvedSpamCause": false,
+    "particularDomainOrIpReputationSignalConfirmed": false,
+    "formalCaseId": null
+  },
+  "nativeMail": {
+    "ownTestCount": 6,
+    "initialJunkCount": 6,
+    "postFilterNewTestCount": 4,
+    "manualOwnTrainingTests": [
+      1,
+      5
+    ],
+    "latestIndependentReceipt": "production-native-warmup-inbox-v1.json",
+    "latestIndependentLeadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+    "latestIndependentAutomaticInbox": false,
+    "latestIndependentManuallyMoved": false
+  },
+  "preparedAlias": {
+    "address": "uzklausos@promedical.lt",
+    "destination": "info@promedical.lt",
+    "account": "info@azprekyba.lt",
+    "configurationType": "Alias on existing mailbox; send and receive through that mailbox, no new mailbox credentials.",
+    "uiUrl": "https://hpanel.hostinger.com/email/promedical.lt/alias?location=webmail.email_alias_settings",
+    "sourceMailboxDisabledFieldVerified": true,
+    "aliasLocalPartEntered": "uzklausos",
+    "createButtonEnabled": true,
+    "created": false,
+    "ownerConfirmationRequested": true,
+    "ownerConfirmationReceived": false,
+    "privateProof": "content-studio/tmp/promedical-uzklausos-alias-prepared-detail-20261010.png",
+    "noCheckoutOrNewPlanSubmitted": true,
+    "reasonForConfirmation": {
+      "source": "C:/Users/VP/.codex/plugins/cache/openai-curated-remote/hostinger-connector/0.1.0/skills/hostinger/SKILL.md",
+      "quote": "One confirmation before any write.",
+      "application": "The prior specific filter approval did not name this new alias resource."
+    },
+    "reasonForTrial": "Provide an existing receiving address for the website sender and allow natural replies from that address. Not a proven classification fix."
+  },
+  "followup": {
+    "sentAtVilnius": "2026-10-10 12:52",
+    "questions": [
+      "Does the current Incoming Allow list reject all unlisted senders if one entry is added, as the actual UI says?",
+      "Is custom Authentication-Results available with trusted DKIM results when filters execute, and can Move to Inbox precede or override automatic Junk classification?"
+    ],
+    "requestedTechnicalCaseReference": true,
+    "newFullHeadersOrCredentialsSent": false
+  },
+  "independentRecipientRequest": {
+    "requested": "One owner Gmail or Outlook address for 1–2 controlled test messages and replies.",
+    "addressProvided": false,
+    "unapprovedRecipientUsed": false
+  },
+  "automaticWebsiteInboxProved": false,
+  "filterAllowListsSpamProtectionsDnsBindingsOrBillingChanged": false,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "remaining": "Await specific alias approval and vendor answers; perform a new independent native test only after a meaningful supported action. Keep gradual genuine sending distinct from bulk or fake engagement. Whole site recovery/privacy/rate/backup acceptance remains separate."
+}

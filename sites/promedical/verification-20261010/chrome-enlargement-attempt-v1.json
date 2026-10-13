@@ -1,0 +1,13 @@
+{
+  "observedAt":"2026-10-10T07:45:09Z",
+  "sourceVersion":"fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "packageSha256":"cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+  "origin":"http://127.0.0.1:8791",
+  "path":"/gidai/medicininio-vezimelio-pasirinkimas",
+  "environment":"Separate agent-owned Chrome tab, actual local future renderer; no viewport emulation added",
+  "mechanism":"Supported cua browser pressKey ctrl+plus",
+  "baseline":{"viewportWidth":1920,"viewportHeight":945,"dpr":1,"documentScrollWidth":1905,"sampleParagraphFontSize":"20px"},
+  "after":{"viewportWidth":1920,"viewportHeight":945,"dpr":1,"documentScrollWidth":1905},
+  "result":"ENLARGEMENT_NOT_ESTABLISHED",
+  "notes":"The shortcut did not establish a real browser zoom percentage or changed viewport/DPR. No repeated shortcut, CSS/DPR injection, global preference change or synthetic pass. Agent-owned test tab closed. Existing narrow/reflow evidence retained; R2/S2 remain UNVERIFIED."
+}

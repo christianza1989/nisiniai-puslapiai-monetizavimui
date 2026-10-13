@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-10T08:48:47.476Z",
+  "state": "FULL_HEADERS_SENT_VENDOR_CONFIRMS_JUNK_HUMAN_REVIEW_IN_PROGRESS",
+  "sent": true,
+  "ownerAuthorized": true,
+  "previousReceipt": "production-hostinger-filter-support-v2.json",
+  "mailbox": "info@promedical.lt",
+  "sender": "uzklausos@promedical.lt",
+  "vendorRequest": {
+    "reviewer": "Airida",
+    "displayedAtVilnius": "2026-10-10 11:39",
+    "scope": "Complete original headers of one own affected test; no unrelated body or credentials."
+  },
+  "ownerApproval": {
+    "received": true,
+    "scope": "Specific original recipient-side headers of qcoq self-test to the existing Hostinger support conversation",
+    "answer": "Taip, siųsti šias antraštes"
+  },
+  "headers": {
+    "providerMessageId": "<qcoqvnq3Xo05SkHnBX47BAvfAmAeqqugCxwj@promedical.lt>",
+    "headerBytes": 4950,
+    "headerSha256": "67565cdc92465f7b6973f003cfb07a788766225043ec5d87bfe6ed64b57eca34",
+    "originalCompleteHeaders": true,
+    "noBodyIncluded": true,
+    "credentialExactValueMatches": 0,
+    "readMethod": "Read-only EXAMINE and combined exact Message-ID/own body marker search; BODY.PEEK[HEADER] literal only for one matching UID; no message body or unrelated message fetched",
+    "privateRawFile": "content-studio/tmp/promedical-own-full-headers-5c1eba0e-20261010.txt",
+    "privatePreparedReply": "content-studio/tmp/promedical-hostinger-full-headers-reply-20261010.txt"
+  },
+  "transmission": {
+    "sentAtVilnius": "2026-10-10 11:46",
+    "uiAttachmentName": "Attachment_6ac9fb5380fee7.44833630.txt",
+    "composerCleared": true,
+    "replyAcknowledgesSuppliedHeaders": true,
+    "privateScreenshot": "content-studio/tmp/promedical-hostinger-headers-airida-review-20261010.png"
+  },
+  "vendorResponse": {
+    "displayedAtVilnius": "2026-10-10 11:47",
+    "channel": "Hostinger Agent chat",
+    "humanReviewedLabel": false,
+    "confirms": [
+      "Delivered copy contains all three exact approved filter values.",
+      "SPF, DKIM and DMARC pass.",
+      "X-Spam: Yes and receiving mailbox event INBOX.Junk."
+    ],
+    "limitations": "Does not establish Authentication-Results availability at rule-evaluation time, whether the rule matched, folder-action precedence or root cause. No internal filter trace or fix supplied."
+  },
+  "specialistReview": {
+    "requested": true,
+    "reviewAccepted": true,
+    "reviewer": "Airida",
+    "status": "HUMAN_REVIEW_IN_PROGRESS",
+    "formalTicketId": null,
+    "visibleSignal": "Airida peržiūri tavo užklausą / Tavo užklausa peržiūrima",
+    "settingsChangeProhibitedInRequest": true
+  },
+  "actualMailboxUi": {
+    "path": "/0/settings/allow-block-list",
+    "incomingAllowListText": "Only accept incoming email from these addresses or domains. Leave empty to accept mail from anyone.",
+    "fourListsEmpty": true,
+    "exactApprovedFilterStillEnabled": true,
+    "ruleFieldsUnchanged": true
+  },
+  "outcome": "The complete original headers of one own marked test were sent to Hostinger with specific owner approval. Hostinger Agent confirms all three filter values and SPF/DKIM/DMARC pass in the delivered copy, alongside X-Spam: Yes and Junk receipt, but cannot establish rule matching, evaluation order or root cause. Further technical review accepted; Airida is reviewing the existing case. No setting change or confirmed fix; automatic Inbox remains unproved.",
+  "automaticInboxProved": false,
+  "settingsChanged": false,
+  "fullHeadersSent": true,
+  "appSourceChanged": false,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "privacy": "Only the specifically owner-approved full headers of one own marked self-test were transmitted to Hostinger. No message body, credentials, unrelated mail or customer data. Raw header metadata and support screenshots remain private and excluded from Git.",
+  "nextStep": "Await Airida-reviewed technical reply in the preserved support tab. Apply only a supported change within owner authorization; broader security/allow-list changes require specific approval. Retest only after a relevant supported change or new diagnostic reason."
+}

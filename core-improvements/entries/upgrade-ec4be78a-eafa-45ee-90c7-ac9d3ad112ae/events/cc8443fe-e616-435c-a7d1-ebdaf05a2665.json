@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Validated per-site guide cutoff and indefinite pause without approved snapshot changes. Public source 7647030d21ebc90726844a22d6c336b33ef7aa9d deployed as b40523b5-c11b-460c-a551-82a4f31b537b at 100%. Two published guides remain; 55 held at current and actual local November23 clock. Original package hash and runtime bindings/routes/CPU/date unchanged.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs (public checkout)",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261013/publication-pause-v1.json: 64 tests and 114 actual RSC renders"
+    },
+    {
+      "command": "Local current/future and live publication-pause verify.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261013/publication-pause-v1.json: 177 HTTP requests each"
+    },
+    {
+      "command": "Compiler 10 packages, normal build, types/lint/dryrun and all 10 tenant SEO smoke",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261013/publication-pause-v1.json"
+    }
+  ],
+  "eventId": "cc8443fe-e616-435c-a7d1-ebdaf05a2665",
+  "sequence": 2,
+  "at": "2026-10-13T19:39:21.775Z"
+}

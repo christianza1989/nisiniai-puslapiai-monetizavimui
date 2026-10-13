@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Reproduced inline punctuation/anchor adjacency error; repair preserves literal inline text, semantic block separation and hidden/missing-body rejection.",
+  "eventId": "2bea8391-37c3-4c0d-85e2-4b5f657fdcdc",
+  "sequence": 2,
+  "at": "2026-10-10T05:58:11.738Z"
+}

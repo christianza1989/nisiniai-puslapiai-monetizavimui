@@ -1,0 +1,171 @@
+{
+  "checkedAt": "2026-10-10T07:09:14.014Z",
+  "accountId": "1c0a7407abfb959d5ff46540f5f7009d",
+  "worker": "promedical",
+  "plan": {
+    "name": "Workers Paid",
+    "status": "Active",
+    "evidence": "Reloaded signed-in Cloudflare Billing subscription row observed 2026-10-10. Purchase was completed by owner; agent made no billing mutation."
+  },
+  "emailSending": {
+    "domain": "promedical.lt",
+    "domainId": "72eb0887f31a4d4cb0e04ecf2120bd4e",
+    "enabled": true,
+    "created": "2026-10-10T07:08:15.965981Z",
+    "transport": "native Workers binding; Hostinger inbound mailbox preserved",
+    "activation": "Signed-in dashboard after native API create returned authentication error; no broader token or connector scopes granted"
+  },
+  "dns": {
+    "beforeCount": 12,
+    "afterCount": 17,
+    "preservedExistingRecords": 12,
+    "addedRecords": [
+      {
+        "id": "5d1a3798ce10b8c71445143eee5e09bf",
+        "type": "MX",
+        "name": "cf-bounce.promedical.lt",
+        "content": "route3.mx.cloudflare.net",
+        "ttl": 1,
+        "proxied": false,
+        "priority": 39
+      },
+      {
+        "id": "05a538585e32fa93f3eae6c0ed57be78",
+        "type": "MX",
+        "name": "cf-bounce.promedical.lt",
+        "content": "route2.mx.cloudflare.net",
+        "ttl": 1,
+        "proxied": false,
+        "priority": 65
+      },
+      {
+        "id": "01d87fcea1af16586bd1e4ea9653a8cb",
+        "type": "MX",
+        "name": "cf-bounce.promedical.lt",
+        "content": "route1.mx.cloudflare.net",
+        "ttl": 1,
+        "proxied": false,
+        "priority": 78
+      },
+      {
+        "id": "285eb011fecc052950c3bc44134972c9",
+        "type": "TXT",
+        "name": "cf-bounce._domainkey.promedical.lt",
+        "content": "\"v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiweykoi+o48IOGuP7GR3X0MOExCUDY/BCRHoWBnh3rChl7WhdyCxW3jgq1daEjPPqoi7sJvdg5hEQVsgVRQP4DcnQDVjGMbASQtrY4WmB1VebF+RPJB2ECPsEDTpeiI5ZyUAwJaVX7r6bznU67g7LvFq35yIo4sdlmtZGV+i0H4cpYH9+3JJ78k\" \"m4KXwaf9xUJCWF6nxeD+qG6Fyruw1Qlbds2r85U9dkNDVAS3gioCvELryh1TxKGiVTkg4wqHTyHfWsp7KD3WQHYJn0RyfJJu6YEmL77zonn7p2SRMvTMP3ZEXibnC9gz3nnhR6wcYL8Q7zXypKTMD58bTixDSJwIDAQAB\"",
+        "ttl": 1,
+        "proxied": false
+      },
+      {
+        "id": "47e89c7c4660f25a477510edc8e63e7f",
+        "type": "TXT",
+        "name": "cf-bounce.promedical.lt",
+        "content": "\"v=spf1 include:_spf.mx.cloudflare.net ~all\"",
+        "ttl": 1,
+        "proxied": false
+      }
+    ],
+    "existingRecords": [
+      {
+        "id": "13ee162ec01d550b405ff3359c6a55e5",
+        "type": "A",
+        "name": "ftp.promedical.lt",
+        "content": "194.59.166.37",
+        "ttl": 1800,
+        "proxied": false
+      },
+      {
+        "id": "dfffb2f25ba2931b8725bb6d110f4f4d",
+        "type": "CNAME",
+        "name": "autoconfig.promedical.lt",
+        "content": "autoconfig.mail.hostinger.com",
+        "ttl": 300,
+        "proxied": false
+      },
+      {
+        "id": "fa7928038f2244267f8538eb84d591cd",
+        "type": "CNAME",
+        "name": "autodiscover.promedical.lt",
+        "content": "autodiscover.mail.hostinger.com",
+        "ttl": 300,
+        "proxied": false
+      },
+      {
+        "id": "f0bba0104d094240f5f1d5ae00fa4242",
+        "type": "CNAME",
+        "name": "hostingermail-a._domainkey.promedical.lt",
+        "content": "hostingermail-a.dkim.mail.hostinger.com",
+        "ttl": 300,
+        "proxied": false
+      },
+      {
+        "id": "f8831747138887e881bc7d78b2c81130",
+        "type": "CNAME",
+        "name": "hostingermail-b._domainkey.promedical.lt",
+        "content": "hostingermail-b.dkim.mail.hostinger.com",
+        "ttl": 300,
+        "proxied": false
+      },
+      {
+        "id": "932fa0c7ab97db65d8d818d417fad806",
+        "type": "CNAME",
+        "name": "hostingermail-c._domainkey.promedical.lt",
+        "content": "hostingermail-c.dkim.mail.hostinger.com",
+        "ttl": 300,
+        "proxied": false
+      },
+      {
+        "id": "6d706a4b38ec46f3772b46876f8ba3cd",
+        "type": "CNAME",
+        "name": "promedical.lt",
+        "content": "promedical.lt.cdn.hstgr.net",
+        "ttl": 1,
+        "proxied": true
+      },
+      {
+        "id": "69f030c16553b3e615a6139624e48daa",
+        "type": "CNAME",
+        "name": "www.promedical.lt",
+        "content": "www.promedical.lt.cdn.hstgr.net",
+        "ttl": 1,
+        "proxied": true
+      },
+      {
+        "id": "ab302b2601be6016329b5af06bbc709a",
+        "type": "MX",
+        "name": "promedical.lt",
+        "content": "mx2.hostinger.com",
+        "ttl": 1,
+        "proxied": false,
+        "priority": 10
+      },
+      {
+        "id": "8dcef92e7d48032b9deb31ff7fc54010",
+        "type": "MX",
+        "name": "promedical.lt",
+        "content": "mx1.hostinger.com",
+        "ttl": 1,
+        "proxied": false,
+        "priority": 5
+      },
+      {
+        "id": "bbae3108adff80750e5bae94128af1f0",
+        "type": "TXT",
+        "name": "_dmarc.promedical.lt",
+        "content": "\"v=DMARC1; p=none\"",
+        "ttl": 1,
+        "proxied": false
+      },
+      {
+        "id": "8f6900d14ab1261658e8026bcf444b6b",
+        "type": "TXT",
+        "name": "promedical.lt",
+        "content": "\"v=spf1 include:_spf.mail.hostinger.com ~all\"",
+        "ttl": 1,
+        "proxied": false
+      }
+    ]
+  },
+  "limitations": [
+    "Sending activation and DNS configuration alone are not SMTP acceptance or matching inbox receipt."
+  ]
+}

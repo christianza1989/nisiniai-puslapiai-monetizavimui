@@ -1,0 +1,115 @@
+{
+  "observedAt": "2026-10-10T09:38:18.000Z",
+  "state": "NATURAL_REPLY_SENT_OWN_TRAINING_SIXTH_NATIVE_TEST_STILL_JUNK",
+  "previousReceipt": "production-hostinger-filter-support-v5.json",
+  "ownerInstruction": "Try natural email warm-up and replies; consider general deliverability principles as well as Hostinger advice; continue the existing support case.",
+  "websiteSender": "uzklausos@promedical.lt",
+  "websiteTransport": "cloudflare_email",
+  "mailboxSenderAndRecipient": "info@promedical.lt",
+  "ordinaryMailboxTransport": "Hostinger Mail",
+  "vendorTest": {
+    "vendorConfirmedAtVilnius": "2026-10-10 12:30",
+    "from": "cs-email-delivery@hostinger.com",
+    "to": "info@promedical.lt",
+    "subjectObserved": "Email from Hostinger",
+    "receivedAtVilniusUi": "2026-10-10 12:29",
+    "initialFolder": "INBOX",
+    "manualMove": false,
+    "requestedMarkerIncluded": false,
+    "initialExactMarkerSearchReceipt": "content-studio/tmp/promedical-hostinger-bidir-receipt-initial.json",
+    "initialSearchResultMeaning": "No match for the requested marker; this was not a delivery failure. Actual vendor message was then found by the exact official sender in receiving INBOX and read.",
+    "meaning": "Ordinary external mail can enter the new receiving mailbox's Inbox. This does not establish Cloudflare website-sender or shared-IP reputation."
+  },
+  "naturalReply": {
+    "from": "info@promedical.lt",
+    "to": "cs-email-delivery@hostinger.com",
+    "marker": "PROMEDICAL-HOSTINGER-20261010-BIDIR-REPLY-1",
+    "sentAtVilniusUi": "2026-10-10 12:32",
+    "submittedOnce": true,
+    "sentFolderVerified": true,
+    "uiShowsSenderRecipientAndMarker": true,
+    "privateProof": "content-studio/tmp/promedical-hostinger-natural-reply-sent-20261010.png",
+    "vendorReceiptAndFolderConfirmed": false,
+    "privacy": "Ordinary diagnostic acknowledgement and public business addresses only; no credentials, customer data or full headers included. No other recipients or bulk campaign."
+  },
+  "supportFollowup": {
+    "sentAtVilnius": "2026-10-10 12:33",
+    "scope": "Reported actual external Inbox receipt and own natural Reply, requested vendor receipt/folder/authentication confirmation and domain-versus-Cloudflare-IP distinction. Shared the public Cloudflare new-domain troubleshooting guide. No new private complete-header packet sent.",
+    "formalTicketId": null,
+    "confirmedFix": false
+  },
+  "ownTrainingAction": {
+    "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+    "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-1",
+    "originalMessageId": "<nQVw5qwAaZz1S4L7u9JnQkW1iGacrXZWDGOe@promedical.lt>",
+    "action": "Not spam through signed-in owner webmail UI after verifying the exact own UUID, marker and From address.",
+    "resultObserved": "Message moved to Inbox",
+    "occurredBefore": "2026-10-10T09:34:39.089Z",
+    "preciseActionTimeRecorded": false,
+    "privateProof": "content-studio/tmp/promedical-own-fifth-not-spam-training-20261010.png",
+    "automaticInboxProof": false,
+    "otherMailMovedOrDeleted": false,
+    "originalJunkReceiptPreserved": true
+  },
+  "sixthNativeTest": {
+    "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-2",
+    "leadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+    "submittedOnceAt": "2026-10-10T09:34:39.089Z",
+    "d1MatchesBeforeSubmission": 0,
+    "createdAtMs": 1791624877071,
+    "sourcePath": "/kontaktai",
+    "messageLength": 176,
+    "d1Status": "notified",
+    "nativeLog": {
+      "event": "niche_lead_notified",
+      "siteId": "promedical",
+      "leadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+      "transport": "cloudflare_email",
+      "timestampMs": 1791624878322
+    },
+    "receiverReceipt": "production-native-warmup-inbox-v1.json",
+    "receivedMessageId": "<0z8WMnuGTlrpCs0jbmo8wFg15WCBfN25CRHF@promedical.lt>",
+    "inboxMatches": 0,
+    "junkMatches": 1,
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass",
+    "approvedDkimFragmentPresent": true,
+    "spamFlag": "Yes",
+    "manualMoveOrFlagChange": false,
+    "automaticInbox": false,
+    "privateFormProof": "content-studio/tmp/promedical-native-after-warmup-form-success-20261010.png"
+  },
+  "extraNativeVendorTestAttempt": {
+    "marker": "PROMEDICAL-HOSTINGER-20261010-CF-DIRECT-1",
+    "from": "uzklausos@promedical.lt",
+    "to": "cs-email-delivery@hostinger.com",
+    "endpoint": "POST /accounts/{account_id}/email/sending/send",
+    "purpose": "One plain diagnostic comparison through the same Cloudflare sending service to the official address supplied in this support case; no website binding expansion.",
+    "attemptCount": 1,
+    "outcome": "API_AUTHENTICATION_ERROR_SEND_NOT_CONFIRMED",
+    "apiErrorCode": 10000,
+    "providerMessageId": null,
+    "retried": false,
+    "accessOrTokenScopeChanged": false
+  },
+  "generalPrinciplesVerified": [
+    {
+      "source": "https://developers.cloudflare.com/email-service/reference/troubleshooting/",
+      "finding": "Cloudflare lists new-domain reputation, authentication, content, complaints and valid recipients among deliverability factors, and advises starting new domains with small volumes. This is guidance, not this case's proven cause."
+    },
+    {
+      "source": "https://support.google.com/mail/answer/81126?hl=en",
+      "finding": "Google distinguishes sender domain and sending-IP reputation, including the effects of other senders on a shared IP; authentication and expected consistent sending matter. These are Gmail guidelines, not proof of Hostinger's private scoring."
+    },
+    {
+      "source": "https://www.hostinger.com/support/why-new-emails-land-in-spam-and-how-to-warm-up-your-hostinger-mail-domain/",
+      "finding": "Hostinger advises gradual real conversations, replies and Not spam training over the first weeks. A single exchange does not establish a permanent fix. Actual mail UI also displays a fresh-address warm-up notice."
+    }
+  ],
+  "automaticWebsiteInboxProved": false,
+  "mailboxFiltersAllowListsOrSpamProtectionChanged": false,
+  "appSourceBindingsDnsOrBillingChanged": false,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "remaining": "Await specialist's receipt of the ordinary mailbox reply, specific Cloudflare sender/reputation finding and supported resolution. No repeated sending burst; future independent provider tests require known authorized recipients. Recovery/rate/privacy/backup acceptance remains separate."
+}

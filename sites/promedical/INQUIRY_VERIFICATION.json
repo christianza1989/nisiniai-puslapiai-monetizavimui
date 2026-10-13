@@ -1,0 +1,33 @@
+{
+  "evaluatedAt": "2026-10-09T18:04:55.275Z",
+  "state": "OWNED_LOCAL_QA_RECORDS_CLEANED",
+  "environment": "Local D1 only; no SMTP binding or real email sent",
+  "browserSubmission": "Unchanged URLSearchParams client form saved the marked PLV1504 request after reboot; earlier connection-error attempt preserved separately",
+  "nativeIntegration": "Actual native HTTP integration passed before reboot and after resume; its own randomized synthetic row and counter delta were cleaned by the test",
+  "records": [
+    {
+      "id": "90f6a7d6-9f2d-4d14-a67f-aa39e7914ff1",
+      "present": true,
+      "siteId": "promedical",
+      "status": "new",
+      "sourcePath": "/kontaktai",
+      "ownedSynthetic": true,
+      "model": "PLV150",
+      "quantity": 4,
+      "removed": 1,
+      "remaining": 0
+    },
+    {
+      "id": "b31ad0a6-a272-45ed-a260-49cbf29973c7",
+      "present": true,
+      "siteId": "promedical",
+      "status": "new",
+      "sourcePath": "/kontaktai",
+      "ownedSynthetic": true,
+      "model": null,
+      "quantity": null,
+      "removed": 1,
+      "remaining": 0
+    }
+  ]
+}

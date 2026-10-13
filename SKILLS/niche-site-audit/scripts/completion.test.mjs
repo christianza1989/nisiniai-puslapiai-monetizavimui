@@ -57,3 +57,21 @@ test('a live origin cannot use a synthetic future clock or a foreign host',async
     await assert.rejects(verifySiteCompletion(['--package',file,'--origin','https://beauty.example','--article-index','guides','--now','2030-01-01T00:00:00Z']),/only against an isolated/);
   }finally{await rm(tmp,{recursive:true,force:true});}
 });
+
+test('hidden URLs follow each current eligible projection without cross-call caching',()=>{
+  const base={type:'product',title:'Model',description:'Facts',body:[{text:'All technical facts.'}],media:[]};
+  const home={...base,id:'home',type:'home',slug:''},a={...base,id:'a',slug:'models/next'},b={...base,id:'b',slug:'models/next-longer'},c={...base,id:'c',slug:'models/revoked'};
+  const pkg={canonicalHost:'equipment.example',locale:'lt-LT',pages:[home,a,b,c]};
+  const first=articleExpectations(pkg,[b,home],'guides');
+  assert.deepEqual(first.map(p=>p.id),['b','home']);
+  for(const p of first){
+    assert.deepEqual(p.publicUrls,['https://equipment.example/models/next-longer','https://equipment.example/']);
+    assert.deepEqual(p.hiddenUrls,['https://equipment.example/models/next','https://equipment.example/models/revoked']);
+    assert.deepEqual(p.bodyTexts,['All technical facts.']);
+  }
+  const second=articleExpectations(pkg,[home,a,c],'other-guides',true);
+  for(const p of second){assert.deepEqual(p.hiddenUrls,['https://equipment.example/models/next-longer']);assert.equal(p.allowNoindex,true);assert.equal(p.articleIndexUrl,'https://equipment.example/other-guides');}
+  assert.deepEqual(first[0].hiddenUrls,['https://equipment.example/models/next','https://equipment.example/models/revoked']);
+  const other=articleExpectations({...pkg,canonicalHost:'other.example'},[a],'guides');
+  assert.deepEqual(other[0].hiddenUrls,['https://other.example/','https://other.example/models/next-longer','https://other.example/models/revoked']);
+});

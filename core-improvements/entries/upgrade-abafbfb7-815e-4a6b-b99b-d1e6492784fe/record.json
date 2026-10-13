@@ -1,0 +1,20 @@
+{
+  "siteId": "promedical",
+  "summary": "Atomic bounded editorial review recording avoids full-site serialization per page after a verified business-context update",
+  "category": "workflow",
+  "evidence": [
+    "content-studio/src/model.mjs recordEditorialReview reads and rewrites one full site per page; current Promedical contact change invalidates 1856 context-bound reviews"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/scripts/content-workflow.mjs",
+    "content-studio/test/editorial-review-batch.test.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of batch API, CLI entry and documentation; individual review recorder remains supported and immutable approvals are preserved",
+  "id": "upgrade-abafbfb7-815e-4a6b-b99b-d1e6492784fe",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "0cd50bd65a7d3c43382c40a81f1a6d84968f8211",
+  "createdAt": "2026-10-09T21:16:37.948Z"
+}

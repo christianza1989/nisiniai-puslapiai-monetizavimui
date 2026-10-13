@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Atomic recorder and CLI verified in isolated rollback tests and three genuinely reread native contact-page delta reviews; no automatic evidence or approval, other catalogue review rebinding remains pending.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/draft-context.test.mjs content-studio/test/editorial-review-batch.test.mjs content-studio/test/content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/CONTENT-AND-MAIL-CORE-CHECKS.md"
+    }
+  ],
+  "eventId": "1a7ac2ef-1dfb-49ac-9727-b685f2043c35",
+  "sequence": 2,
+  "at": "2026-10-09T21:56:25.800Z"
+}

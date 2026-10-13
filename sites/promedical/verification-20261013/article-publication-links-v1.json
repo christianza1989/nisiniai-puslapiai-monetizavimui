@@ -1,0 +1,244 @@
+{
+  "state": "PASS",
+  "checkedAt": "2026-10-13T18:30:20.340Z",
+  "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+  "sourceVersion": "d2feca83129075270ad9dcf2aea762b1f46c8f82",
+  "productionVersion": "bf9ae69d-2a14-4608-89c9-eae7274e4578",
+  "scope": "Read-only current production guide schedule and all 57 ID-based link graphs; pure before/at projection checks, separate actual RSC regression.",
+  "schedule": {
+    "total": 57,
+    "public": 2,
+    "future": 55,
+    "start": {
+      "id": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+      "title": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+      "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "publishAt": "2026-10-12T07:00:00.000Z",
+      "date": "2026-10-12",
+      "time": "10:00",
+      "live": true
+    },
+    "end": {
+      "id": "dfb4e63e-6578-463e-a4af-ed96e8aa0f15",
+      "title": "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra",
+      "path": "/gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas",
+      "publishAt": "2026-11-22T12:00:00.000Z",
+      "date": "2026-11-22",
+      "time": "14:00",
+      "live": false
+    },
+    "next": [
+      {
+        "id": "eb1e5df2-c357-436b-87af-642802724ce9",
+        "title": "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai",
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "publishAt": "2026-10-14T07:00:00.000Z",
+        "date": "2026-10-14",
+        "time": "10:00",
+        "live": false
+      },
+      {
+        "id": "9e46f186-582e-4eda-a6d8-30c5e6c903fe",
+        "title": "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją",
+        "path": "/gidai/bazinio-vezimelio-komplektacija",
+        "publishAt": "2026-10-14T11:00:00.000Z",
+        "date": "2026-10-14",
+        "time": "14:00",
+        "live": false
+      },
+      {
+        "id": "adff0071-e64c-4fd7-8e57-6db62cf6010e",
+        "title": "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą",
+        "path": "/gidai/vaistu-vezimelio-komplektacija",
+        "publishAt": "2026-10-15T07:00:00.000Z",
+        "date": "2026-10-15",
+        "time": "10:00",
+        "live": false
+      }
+    ],
+    "days": 42,
+    "singleArticleDays": 27,
+    "twoArticleDays": 15,
+    "timezone": "Europe/Vilnius",
+    "times": [
+      "10:00",
+      "14:00"
+    ]
+  },
+  "links": {
+    "internalLinks": 355,
+    "catalogueLinks": 124,
+    "deferredLinks": 141,
+    "externalManufacturerLinks": 162,
+    "missingTargetIds": 0,
+    "oldInternalPaths": 0,
+    "unrenderableLabels": 0,
+    "rewriteRequiredForURLChange": false
+  },
+  "studio": {
+    "staleGuideCount": 57,
+    "staleGuideIds": [
+      "a4a35108-c881-401b-a598-d2d0c800b7d3",
+      "eab8457c-da03-420f-a149-33ebbd30953e",
+      "eb1e5df2-c357-436b-87af-642802724ce9",
+      "9e46f186-582e-4eda-a6d8-30c5e6c903fe",
+      "adff0071-e64c-4fd7-8e57-6db62cf6010e",
+      "09b019e6-dab0-4b50-a254-aa3892f89017",
+      "be0923a8-c3de-4174-b643-98739ab43e0b",
+      "e6f574e9-b8a0-4aab-853c-5d00277636c6",
+      "e069a825-8c56-4332-9133-fb1cb2a90580",
+      "dc9b41a3-6f3a-4010-8a60-f430eb92889b",
+      "46b0543a-7f52-45b3-a430-a5c304f79b6e",
+      "51c7d249-2055-4f26-997f-7cc832313fb4",
+      "27bb1b7d-18d2-44b0-b28f-f47f700bcd03",
+      "d042d62b-06a2-4a95-b742-b4d645a19984",
+      "2a8c3c5b-59b0-49b0-9521-47c6940294ba",
+      "ab5eb205-84ff-438b-ad55-ec4ad7e21e46",
+      "8c200256-0d2e-4947-acbd-dd364e44ab96",
+      "9002e667-f305-4a41-8ed6-f151feb544d5",
+      "1f90b2be-97ba-4446-a08a-7a8cc9353737",
+      "04d5918f-47e7-4482-8d8f-1bf8eaca5376",
+      "6f1f2454-7763-40fb-817f-cb14334af75b",
+      "e5f7ef5c-8c3e-4be2-8961-723aad09e37d",
+      "bf06232a-d0ad-4389-bc81-6714d6ce2c97",
+      "7fb61c62-a821-47e2-b42c-81685961c434",
+      "f8d3911c-3e7f-4938-ac54-6621bc18ad6f",
+      "28a9913e-441d-4f5c-9f5b-cba5678c7a61",
+      "b8f88ba7-7439-4d3f-b8be-54db499e993d",
+      "6a8b051a-7002-4e7d-bf66-5a57fc2397b1",
+      "6d5cb8d8-67a0-4f05-8b71-9fa29974f359",
+      "838140de-f743-4e42-8dc7-f789516f6848",
+      "e97facac-85f5-4722-ae4a-e09c76a7a9cb",
+      "880b11bb-86a8-43ba-a01a-be0e522e68fc",
+      "beb78705-8f79-4258-8e4e-4ea573a3e6b1",
+      "5078652c-3ab2-4775-a691-8b2987d633d1",
+      "16b77d9a-eb4c-4e22-97f1-63dfb058be29",
+      "5c6ab15f-ad8c-47e3-a198-bc7d2af425de",
+      "fe797a91-0fd8-4196-946f-5f0cab05d155",
+      "9f659d54-95cd-407c-9e73-4f0784b46a95",
+      "84d9dbfc-3e74-46eb-aaeb-2c5fa0b8948a",
+      "9e3f497a-e66c-454a-9538-809296e34d0f",
+      "ff9ead26-22fc-4292-850b-21f29ce4d11e",
+      "f97260fd-040b-43e9-9d7b-260d8ef66cc0",
+      "7b870e24-5f44-4d7a-b006-36492a74847b",
+      "aa4d1eb7-9e9a-4173-8e53-02e927f1f855",
+      "bba2cd58-1c98-48a6-ad58-fb23033af2bf",
+      "1f166ace-c55b-4d5f-8502-b7e72bc84522",
+      "3d1a5995-d8fe-4570-8bf5-03c0f9100f52",
+      "2462531f-7f75-4ad6-9246-22a5d0cc1e87",
+      "059a836b-90c6-4106-ae72-166beaea7c24",
+      "55dbf0cb-c7f7-4a2a-8892-ed7495bb071f",
+      "df457deb-150e-4d60-babc-fcf6a2159771",
+      "3aad033e-b626-4fb3-949c-33b7a417b413",
+      "e91be90d-88db-447a-a301-1de1238d6df0",
+      "8e238abd-4e45-4083-bc1e-7e079ec34eed",
+      "bec2ba0c-e772-415c-ad80-c9d04734dea6",
+      "0d835567-da53-46ab-82ab-fde3f294bff0",
+      "dfb4e63e-6578-463e-a4af-ed96e8aa0f15"
+    ],
+    "note": "Deployed approved guide snapshots are authoritative for timed publication. Do not replace them with older studio snapshots on a future full export."
+  },
+  "cloudflare": {
+    "checkedAt": "2026-10-13T18:29:37.067Z",
+    "deployment": {
+      "id": "7609d183-78d3-4637-9774-5f85a02335c6",
+      "source": "wrangler",
+      "strategy": "percentage",
+      "author_email": "info@azprekyba.lt",
+      "annotations": {
+        "workers/message": "Promedical legacy catalogue 301; source d2feca8",
+        "workers/triggered_by": "deployment"
+      },
+      "versions": [
+        {
+          "version_id": "bf9ae69d-2a14-4608-89c9-eae7274e4578",
+          "percentage": 100
+        }
+      ],
+      "created_on": "2026-10-13T18:20:30.070322Z"
+    },
+    "annotations": {
+      "workers/message": "Promedical legacy catalogue 301; source d2feca83129075270ad9dcf2aea762b1f46c8f82",
+      "workers/tag": "legacy-301-20261013",
+      "workers/triggered_by": "version_upload"
+    }
+  },
+  "checks": {
+    "liveRouteChecks": 57,
+    "liveRequests": 61,
+    "allScheduledGuidesInDeployedPackage": 57,
+    "projectionBoundaryChecks": 114,
+    "actualRSCRenders": 114,
+    "existingRSCAndLinkTests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "rawAuditSha256": "ef623b9a665c1df7705bf0f6ca18e951a36f88c1f160689f1ee217868b77351e"
+  },
+  "publicGuides": [
+    {
+      "path": "/gidai/iso-moduliu-sistema",
+      "publishAt": "2026-10-13T07:00:00.000Z",
+      "live": true,
+      "status": 200
+    },
+    {
+      "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "publishAt": "2026-10-12T07:00:00.000Z",
+      "live": true,
+      "status": 200
+    }
+  ],
+  "responseCacheEvidence": [
+    {
+      "path": "/gidai",
+      "status": 200,
+      "cacheControl": "private, no-store",
+      "cfCacheStatus": null,
+      "ms": 134,
+      "sha256": "c44d17254771d5815c89e29098ec14843886ab364a420e4abc4c8b633893efcd"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "cacheControl": "private, no-store",
+      "cfCacheStatus": null,
+      "ms": 143,
+      "sha256": "88be9c0b9d493fd2862fa8a11f037f1307acb1c2f35e6d4be1cfcc330a4ca534"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "cacheControl": "private, no-store",
+      "cfCacheStatus": null,
+      "ms": 392,
+      "sha256": "f28c4b026e7fc3c32abe3e22e71d9b6485ef8b1649d2ccfa421d07485cd1f949"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "cacheControl": "private, no-store",
+      "cfCacheStatus": null,
+      "ms": 699,
+      "sha256": "c5956a6ad2f8b1e8747e4c4bbc45a3c27b836c353f635f25567ca9246f3f56f1"
+    },
+    {
+      "path": "/gidai/iso-moduliu-sistema",
+      "status": 200,
+      "cacheControl": "private, no-store",
+      "cfCacheStatus": null,
+      "ms": 42,
+      "sha256": "9ebc6188cdfe4d04caa20a07b74cec446c60adc600b8b44bf093c85f12f8c701"
+    },
+    {
+      "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "status": 200,
+      "cacheControl": "private, no-store",
+      "cfCacheStatus": null,
+      "ms": 119,
+      "sha256": "7638e417b90779d8250aab2f31257ff617cdcc22b7cf6b8432bee32d2ad1750f"
+    }
+  ],
+  "result": "Scheduled publication works in the hosted Worker. All guide internal links resolve by stable IDs; a catalogue URL change requires no article prose rewrite. Future article links become clickable when their own publication dates arrive. Older local studio snapshots need reconciliation before a future full export.",
+  "scopeLimits": "No article body/approval/date, source or production setting changed. This checks publication and URL integrity, not a new substantive editorial review or indexing."
+}

@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-10T06:04:12.801Z",
+  "scope": "Node lab only, not Worker CPU or production acceptance",
+  "phase": "before",
+  "packagePages": 1910,
+  "projectionMedianMs": 4.3233000000000175,
+  "projectionP95Ms": 9.168499999999995,
+  "categories": 437,
+  "rootCount": 34,
+  "oldRootIdComparisons": 93923
+}

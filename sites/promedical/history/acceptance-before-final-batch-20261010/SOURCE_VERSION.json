@@ -1,0 +1,35 @@
+{
+  "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
+  "sourceVersion": "19a2c0baf6f064bd350af4e8e9f040a389b218be",
+  "coreCommit": "a8b15a33a7b48e26aec0a240a5b32fd71d4d3a49",
+  "files": [
+    {
+      "file": "components/niche/promedical-site.tsx",
+      "sha256": "8903b7e9d2e50dc46445ca5b9f8aad26e3f55593db494d94cbeeb2a4acb3d7bb"
+    },
+    {
+      "file": "components/niche/promedical-site.module.css",
+      "sha256": "c97df2d0b3f99c379aa539aab34148e60dd477a5fb6cc3820033fec6a792a23f"
+    },
+    {
+      "file": "components/niche/promedical-inquiry.tsx",
+      "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+    },
+    {
+      "file": "app/layout.tsx",
+      "sha256": "da8209d06baccb14229569ff5f14c2e87ddbebc0b4b6b400847116df6b1eebfa"
+    },
+    {
+      "file": "app/niche/[siteId]/brand-icon/route.ts",
+      "sha256": "b47299f08dcc420905dab1dec06a6bb2b7c44b1ca9d6dc0cd954babe0c62580e"
+    },
+    {
+      "file": "config/niche-network.json",
+      "sha256": "5a2d020f1c1681b10f329f42a1f34546f43d84f3dc5414f6c3a264a94cfd910c"
+    },
+    {
+      "file": "lib/generated/content-packages.json",
+      "sha256": "cb682f7082f8dddc3a41749c549227057682cb77edddedf1c45a3db0bcd94be8"
+    }
+  ]
+}

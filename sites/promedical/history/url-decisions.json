@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "domain": "promedical.lt",
+  "auditCheckedAt": "2026-10-09T14:30:25.240Z",
+  "liveCheckedAt": "2026-10-09T15:09:09.197Z",
+  "assessmentStatus": "agent-reviewed",
+  "scope": "13 live same-host visible content URLs. Semantic decisions only, not public redirect configuration.",
+  "applyOnlyAfterAuthorizedCutover": true,
+  "publicChangesApplied": false,
+  "decisions": [
+    {
+      "oldUrl": "https://promedical.lt/",
+      "action": "keep-url-new-content",
+      "reason": "Root išlaikomas naujam vartotojo patvirtintam Klaro pasiūlymui. Dabartinis root aprašo parašo įrangą; seno teksto nekopijuoti ir SEO autoriteto tęstinumo neteigti. Viešas pakeitimas šiame darbe neatliktas.",
+      "evidenceUrls": [
+        "https://promedical.lt/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed",
+      "targetPath": "/"
+    },
+    {
+      "oldUrl": "https://promedical.lt/iranga/paraso-plansetes/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/iranga/paraso-plansetes/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/iranga/elektroninio-paraso-plansetes-monitoriu-ispletimai/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/iranga/elektroninio-paraso-plansetes-monitoriu-ispletimai/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/iranga/programine-iranga/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/iranga/programine-iranga/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/programine-iranga-signotec-signosign-universal/",
+      "action": "remove-404",
+      "reason": "Root turi nuorodą į Signotec signoSign Universal, tačiau tikras atsakymas jau HTTP 404. Neatkurti numanomo turinio ir nekurti Klaro atitikmens; išlaikyti 404.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/programine-iranga-signotec-signosign-universal/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/apie-mus-spaudoje/",
+      "action": "remove-404",
+      "reason": "Šis puslapis apie Signotec įrangos spaudos paminėjimą. Jis nėra Klaro ar dabartinio Promedical pasiūlymo klientų / reputacijos įrodymas. Neatkurti; tikras 404 tik po atskirai autorizuoto pakeitimo.",
+      "evidenceUrls": [
+        "https://promedical.lt/apie-mus-spaudoje/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/musu-slapuku-politika/",
+      "action": "defer",
+      "reason": "Seno kelio ketinimas yra privatumo / slapukų informacija. Naujasis /privatumas yra galimas lygiavertis taikinys tik užbaigus tikrus operacinius privatumo faktus ir patikrinus jo viešą HTTP 200. Iki tol jokio 301 ir jokio seno teksto pernaudojimo.",
+      "evidenceUrls": [
+        "https://promedical.lt/musu-slapuku-politika/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed",
+      "targetPath": "/privatumas"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/paraso-plansete-signotec-delta/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/paraso-plansete-signotec-delta/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/monitoriaus-ispletimas-pasirasymui-signotec-delta-pen-display/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/monitoriaus-ispletimas-pasirasymui-signotec-delta-pen-display/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/programine-iranga-stepover-esignatureoffice/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/programine-iranga-stepover-esignatureoffice/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://promedical.lt/produktas/programine-iranga-signotec-signosign-2/",
+      "action": "remove-404",
+      "reason": "Dabartinio parašo įrangos puslapio ketinimas neturi lygiaverčio Klaro produkto ar kategorijos. Neatkurti naujame kataloge; tikras 404 tik po atskirai autorizuoto viešo pakeitimo. Esama versija šiame darbe išsaugota.",
+      "evidenceUrls": [
+        "https://promedical.lt/produktas/programine-iranga-signotec-signosign-2/",
+        "https://www.klaro.cz/hlavni-menu"
+      ],
+      "confidence": "high",
+      "status": "agent-reviewed"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Measured compression bottleneck fixed in one shared, versioned pipeline. Existing immutable files preserved; new catalogue imports use v2. Two-file timing comparison is workload-specific.",
+  "checks": [
+    {
+      "command": "node --test test/image-pipeline.test.mjs test/media-import.test.mjs test/draft-media-metadata.test.mjs test/editorial-skill.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/MEDIA-BENCHMARK.md — 10/10 real-byte alpha, orientation, HTTP import/export, immutability and loader checks"
+    }
+  ],
+  "eventId": "8e49c51b-42b4-4d85-abfa-e2dcbb44dee1",
+  "sequence": 2,
+  "at": "2026-10-09T15:36:30.356Z"
+}

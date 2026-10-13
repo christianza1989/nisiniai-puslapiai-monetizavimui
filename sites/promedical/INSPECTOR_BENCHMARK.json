@@ -1,0 +1,23 @@
+{
+  "state": "PASS_EXACT_OUTPUT_PARITY",
+  "scope": "articleExpectations calculation only; two actual measured invocations on the same1856-page approved package, not total HTTP audit speed or a universal benchmark",
+  "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
+  "baseline": {
+    "label": "baseline",
+    "sourceSha256": "49db89a40ed92080ce8660bb43d4e40bcb19b37f604b0766f19911a83c58fc0a",
+    "pages": 1856,
+    "calculationMs": 47140.2609,
+    "serializedBytes": 164996703,
+    "outputSha256": "cb1f1616ce501ae3e11a364f11fe622ef05f1f722b80004372c7fa8a660724c1",
+    "measuredAt": "2026-10-09T18:21:49.863Z"
+  },
+  "fixed": {
+    "label": "fixed",
+    "sourceSha256": "3343061733aa27728d327f38a74b565148f66d4b33ac966b3edc397f081f38f7",
+    "pages": 1856,
+    "calculationMs": 47.83620000000002,
+    "serializedBytes": 164996703,
+    "outputSha256": "cb1f1616ce501ae3e11a364f11fe622ef05f1f722b80004372c7fa8a660724c1",
+    "measuredAt": "2026-10-09T18:21:50.104Z"
+  }
+}

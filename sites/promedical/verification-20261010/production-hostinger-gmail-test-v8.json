@@ -1,0 +1,93 @@
+{
+  "observedAt": "2026-10-10T10:30:08.999Z",
+  "state": "ALLOW_LIST_EXCLUSIVITY_CONFIRMED_GMAIL_SENT_REPLY_AND_ALIAS_APPROVAL_PENDING",
+  "previousReceipt": "production-hostinger-bidir-alias-prepared-v7.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "websiteTransport": "cloudflare_email",
+  "vendor": {
+    "specialist": "Fausta",
+    "replyAtVilnius": "2026-10-10 13:00",
+    "incomingAllowRestrictsToListedSendersConfirmed": true,
+    "incomingAllowLeftEmpty": true,
+    "authenticationResultsAtFilterTimeConfirmed": false,
+    "inboxActionPrecedenceConfirmed": false,
+    "particularReputationCauseConfirmed": false,
+    "formalCaseId": null,
+    "followupSentAtVilnius": "2026-10-10 13:27",
+    "followup": "Acknowledged exclusive allow-list behavior and unconfirmed reputation cause; requested technical-team investigation using the already-approved header packet or a concrete supported registration procedure.",
+    "privateFollowupProof": "content-studio/tmp/promedical-hostinger-technical-escalation-1327-20261010.png"
+  },
+  "ordinaryTest": {
+    "provider": "Gmail",
+    "recipient": "OWNER_PROVIDED_PRIVATE_ADDRESS_OMITTED",
+    "specificOwnerAuthorization": true,
+    "sender": "info@promedical.lt",
+    "transport": "Hostinger Mail webmail",
+    "subject": "Promedical pašto patikra – GMAIL-1",
+    "marker": "PROMEDICAL-GMAIL-20261010-1",
+    "sentCount": 1,
+    "sentAtVilnius": "2026-10-10 13:27",
+    "sentFolderExactRecipientSenderAndBodyVerified": true,
+    "privateProof": "content-studio/tmp/promedical-gmail-first-test-sent-20261010.png",
+    "recipientArrivalConfirmed": false,
+    "recipientInitialFolder": null,
+    "genuineReplyReceived": false,
+    "remaining": "Owner to report original Gmail folder and send a real reply; Sent does not prove Gmail acceptance or Inbox."
+  },
+  "alias": {
+    "address": "uzklausos@promedical.lt",
+    "destination": "info@promedical.lt",
+    "prepared": true,
+    "created": false,
+    "ownerConfirmationReceived": false,
+    "correctedSpecificConfirmationRequested": true,
+    "ownerCorrection": "info@azprekyba.lt mail is on Google Workspace; hPanel login identity is distinct from the Hostinger alias target.",
+    "googleWorkspaceMailChanged": false,
+    "newPlanPurchased": false,
+    "privateProof": "content-studio/tmp/promedical-alias-approval-corrected-20261010.png"
+  },
+  "nativeMail": {
+    "ownTestCount": 6,
+    "initialJunkCount": 6,
+    "manualOwnTrainingTests": [
+      1,
+      5
+    ],
+    "latestIndependentReceipt": "production-native-warmup-inbox-v1.json",
+    "latestIndependentLeadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+    "latestIndependentManuallyMoved": false,
+    "automaticWebsiteInboxProved": false
+  },
+  "formatReview": {
+    "method": "Read-only inspection of native transport, payload and MIME serializer; these exact files match the deployed source commit.",
+    "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+    "paths": [
+      "lib/niche-mail.ts",
+      "lib/smtp-protocol.mjs",
+      "app/niche/[siteId]/lead/route.ts"
+    ],
+    "observations": [
+      "Plain UTF-8 text; base64 body lines wrapped at76 characters.",
+      "Single From, To, Subject, Date and Message-ID; MIME-Version and Content-Type present.",
+      "Native From is uzklausos@promedical.lt with Promedical display name; Reply-To is the form sender.",
+      "No promotional attachment or tracking pixel in the application payload."
+    ],
+    "knownFormatDefectFound": false,
+    "caseSpecificSpamCauseProved": false,
+    "limitations": "Source inspection is not a receiver spam-score trace or a guarantee of delivery."
+  },
+  "guidance": {
+    "sources": [
+      "https://www.hostinger.com/support/why-new-emails-land-in-spam-and-how-to-warm-up-your-hostinger-mail-domain/",
+      "https://support.google.com/mail/answer/81126?hl=en",
+      "https://developers.cloudflare.com/email-service/concepts/deliverability/"
+    ],
+    "application": "Use small amounts of expected correspondence and genuine replies. Domain and sending-IP reputation are distinct; Hostinger ordinary-mail success does not verify Cloudflare website-message classification."
+  },
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "filterAllowListsSpamProtectionsDnsBindingsOrBillingChanged": false,
+  "privacy": "Personal Gmail address and raw UI proofs remain private and are excluded from Git. No new raw headers, credentials, unrelated mail bodies or customer data sent to support.",
+  "summary": "At13:00 Vilnius Fausta confirmed that Incoming Allow accepts only listed senders, so the list remains empty to preserve customer mail. She cannot confirm filter timing or a case-specific reputation cause. One owner-authorized ordinary message from info@promedical.lt to the owner-provided Gmail address was sent at13:27 and verified in Sent; Gmail arrival/folder and genuine reply are still pending. All six native Cloudflare website messages initially reached Junk; the latest remains unmoved. The prepared uzklausos@ alias to the existing Hostinger info@promedical.lt mailbox is still not created or approved. The owner clarified that info@azprekyba.lt mail is hosted by Google Workspace; it was mentioned only as the hPanel login identity and is not the alias target. No automatic website Inbox fix or formal technical case ID is proved.",
+  "remaining": "Await Gmail original-folder report and real reply, exact Promedical alias approval, and supported vendor escalation procedure. Retest a new native form only after a meaningful action. Recovery, privacy, rate, backup and whole-site acceptance remain separate."
+}

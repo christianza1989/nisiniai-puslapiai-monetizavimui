@@ -1,0 +1,18 @@
+{
+  "siteId": "promedical",
+  "summary": "The rendered HTML inspector inserts spaces at every inline element boundary, turning linked titles followed by punctuation into different text. The actual final bundle's 35 article false-positive body failures are reproduced; real browser innerText includes both expected paragraphs. Preserve inline text adjacency and block separators, with regressions that retain genuine missing/hidden-body failures.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/FINAL_BATCH_ACCEPTANCE.md"
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "SKILLS/niche-site-audit/scripts/rendered-site_test.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of text extraction and its regression fixture; preserve original failed reports, content approvals, HTML and assets.",
+  "id": "upgrade-d681c4d4-13bb-4236-ab0c-b26693d5b3cb",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
+  "createdAt": "2026-10-10T05:26:38.007Z"
+}

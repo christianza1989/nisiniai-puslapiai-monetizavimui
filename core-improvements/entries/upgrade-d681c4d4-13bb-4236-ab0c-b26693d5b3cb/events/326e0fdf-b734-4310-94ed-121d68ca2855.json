@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual local/future runtime checks pass in their scoped evidence; production whole-site CPU/mail acceptance remains incomplete.",
+  "checks": [
+    {
+      "command": "bundled Python -X utf8 -m unittest rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "FINAL_BATCH_ACCEPTANCE.md:11/11actual parser tests and before-repair failure"
+    },
+    {
+      "command": "node --test completion.test.mjs score-audit.test.mjs",
+      "result": "PASS",
+      "evidence": "FINAL_BATCH_ACCEPTANCE.md:10/10actual completion/scoring tests"
+    },
+    {
+      "command": "verify-site-completion.mjs --origin http://127.0.0.1:8791 --now 2026-11-23T12:00:00Z --render-only",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261010/future-clock-rendered-v3.json:5694GET/zeroissues"
+    }
+  ],
+  "eventId": "326e0fdf-b734-4310-94ed-121d68ca2855",
+  "sequence": 3,
+  "at": "2026-10-10T05:58:12.988Z"
+}

@@ -1,0 +1,687 @@
+{
+  "state": "DEPLOYED_PAUSED_VERIFIED",
+  "checkedAt": "2026-10-13T19:39:19.588Z",
+  "pauseAt": "2026-10-13T19:26:54.000Z",
+  "siteId": "promedical",
+  "sourceVersion": "7647030d21ebc90726844a22d6c336b33ef7aa9d",
+  "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+  "previousManifest": {
+    "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+    "sourceVersion": "d2feca83129075270ad9dcf2aea762b1f46c8f82",
+    "coreCommit": "dd9350939adc9519e76c11be63583aa3b5d035a7",
+    "files": [
+      {
+        "file": "components/niche/promedical-site.tsx",
+        "sha256": "ec7d9815c83d70a752b603d5278ba9f9eca2eb8d3a4160d798af2be442bf42cf"
+      },
+      {
+        "file": "components/niche/promedical-site.module.css",
+        "sha256": "9de6eb5a7d7dbc813a812b3737ad594f4a73f9fc42e78f6b64ccf4197acba889"
+      },
+      {
+        "file": "components/niche/promedical-inquiry.tsx",
+        "sha256": "394a465626313d401840520b1086ebbf13106c9187b07d3cde4ac4773bc4aec4"
+      },
+      {
+        "file": "components/niche/article-meta.tsx",
+        "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
+      },
+      {
+        "file": "app/layout.tsx",
+        "sha256": "da8209d06baccb14229569ff5f14c2e87ddbebc0b4b6b400847116df6b1eebfa"
+      },
+      {
+        "file": "app/niche/[siteId]/brand-icon/route.ts",
+        "sha256": "65bd4be6df2f69bb090aad666d8b4184b2023ac9205b8084e05939efd63660cf"
+      },
+      {
+        "file": "config/niche-network.json",
+        "sha256": "e017b9873f9f7a5e3394135e1ec1f89f0ae6628d8af4f186ebfd3a0c9b127c56"
+      },
+      {
+        "file": "lib/generated/content-packages.json",
+        "sha256": "eebe238d6601fb52b89010eaffb12927132f04e7b7717727de9370a93f4e0000"
+      },
+      {
+        "file": "lib/smtp-protocol.mjs",
+        "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+      },
+      {
+        "file": "lib/niche-sites.ts",
+        "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "6f412f42a0b48317170c7e1f61070fe5d6a80b5a8792d913b5d49e6b94263aa8"
+      },
+      {
+        "file": "tests/niche-render-cache.test.mjs",
+        "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
+      },
+      {
+        "file": "lib/niche-mail.ts",
+        "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
+      },
+      {
+        "file": "app/niche/[siteId]/lead/route.ts",
+        "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
+      },
+      {
+        "file": "tests/niche-mail.test.mjs",
+        "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
+      },
+      {
+        "file": "public/brand/promedical/logo-v1-360.webp",
+        "sha256": "19cf7453972bbb326f0d9c3c71338e1d5d2e8f7290090c6b4f26f06638d609ba"
+      },
+      {
+        "file": "public/brand/promedical/logo-v1-640.webp",
+        "sha256": "fb296e2ecf7483c1c1e80249a0aa9d76a71b1e2885165fac9014150efb07a8e1"
+      },
+      {
+        "file": "public/brand/promedical/logo-v2-360.webp",
+        "sha256": "d37155984dc68b78c3b6d3660cf369e7448d84e6d05c2830e0e9e779da9b86ba"
+      },
+      {
+        "file": "public/brand/promedical/logo-v2-640.webp",
+        "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
+      },
+      {
+        "file": "content-packages/promedical/content-package.json",
+        "sha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af"
+      },
+      {
+        "file": "config/niche-path-aliases.json",
+        "sha256": "9cc439fddac44e00689fc975eb96d57ddd036bce55ae2c8d34b62aa2f777081d"
+      },
+      {
+        "file": "proxy.ts",
+        "sha256": "f74c9805e9b957466b830f6d4eeac7c7612f696b91dbc8818ae97f3c64f076ec"
+      },
+      {
+        "file": "lib/niche-path-aliases.mjs",
+        "sha256": "9e7cbbb0fa2ba1b94c6fa10011f080bed43795d419f3cbfaafeec47cbf0c44cd"
+      },
+      {
+        "file": "lib/promedical-inquiry-paths.mjs",
+        "sha256": "31fdb96cf732c1e7b29981a5f05a2194096752c3aeb2bcc1618b89f3af886cf2"
+      },
+      {
+        "file": "scripts/compile-content-packages.mjs",
+        "sha256": "c2eab4b3e0a094cdc54a72d43a713acdd2293a58a5f3ea27b8a15132bbd0bc4f"
+      },
+      {
+        "file": "tests/niche-path-aliases.test.mjs",
+        "sha256": "4f00a5d584cd5fa36b58980f9734c563776be5a37a368b6608ae42ee5b63bc55"
+      },
+      {
+        "file": "tests/promedical-url-migration-smoke.mjs",
+        "sha256": "22617a7b50140e08c9ab0de0c3258be92300a3799d3a9c8a984af1b9518f537b"
+      }
+    ],
+    "checkedAt": "2026-10-13T18:22:41.351Z",
+    "productionVersion": "bf9ae69d-2a14-4608-89c9-eae7274e4578",
+    "notes": "All 1,845 exact legacy catalogue paths return HTTP 301 to unchanged Lithuanian canonical targets. Package, URL map, dates, visual presentation and runtime bindings/routes/CPU/date preserved. Local and live complete migration checks pass.",
+    "productionDeployment": "7609d183-78d3-4637-9774-5f85a02335c6",
+    "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
+    "logoEvidence": "verification-20261010/logo-change-v2.json",
+    "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+    "homeEvidence": "verification-20261010/generic-home-v1.json",
+    "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json",
+    "urlMigrationEvidence": "verification-20261013/url-migration-v1.json",
+    "urlRedirectEvidence": "verification-20261013/url-redirect-301-v1.json"
+  },
+  "currentManifest": {
+    "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+    "sourceVersion": "7647030d21ebc90726844a22d6c336b33ef7aa9d",
+    "coreCommit": "2c959ed5e7abd597112d4865abd0ff7413aff6a5",
+    "files": [
+      {
+        "file": "components/niche/promedical-site.tsx",
+        "sha256": "ec7d9815c83d70a752b603d5278ba9f9eca2eb8d3a4160d798af2be442bf42cf"
+      },
+      {
+        "file": "components/niche/promedical-site.module.css",
+        "sha256": "9de6eb5a7d7dbc813a812b3737ad594f4a73f9fc42e78f6b64ccf4197acba889"
+      },
+      {
+        "file": "components/niche/promedical-inquiry.tsx",
+        "sha256": "394a465626313d401840520b1086ebbf13106c9187b07d3cde4ac4773bc4aec4"
+      },
+      {
+        "file": "components/niche/article-meta.tsx",
+        "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
+      },
+      {
+        "file": "app/layout.tsx",
+        "sha256": "da8209d06baccb14229569ff5f14c2e87ddbebc0b4b6b400847116df6b1eebfa"
+      },
+      {
+        "file": "app/niche/[siteId]/brand-icon/route.ts",
+        "sha256": "65bd4be6df2f69bb090aad666d8b4184b2023ac9205b8084e05939efd63660cf"
+      },
+      {
+        "file": "config/niche-network.json",
+        "sha256": "45dc799320cb5b8248434c9935e3633dfc1c390eaafe59d9a56fe4070f2776b7"
+      },
+      {
+        "file": "lib/generated/content-packages.json",
+        "sha256": "eebe238d6601fb52b89010eaffb12927132f04e7b7717727de9370a93f4e0000"
+      },
+      {
+        "file": "lib/smtp-protocol.mjs",
+        "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+      },
+      {
+        "file": "lib/niche-sites.ts",
+        "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "6f412f42a0b48317170c7e1f61070fe5d6a80b5a8792d913b5d49e6b94263aa8"
+      },
+      {
+        "file": "tests/niche-render-cache.test.mjs",
+        "sha256": "f6c1f7da392e895963ab1fe1810833ca4911085bf6a07f613a39d72e6a53c0bd"
+      },
+      {
+        "file": "lib/niche-mail.ts",
+        "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
+      },
+      {
+        "file": "app/niche/[siteId]/lead/route.ts",
+        "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
+      },
+      {
+        "file": "tests/niche-mail.test.mjs",
+        "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
+      },
+      {
+        "file": "public/brand/promedical/logo-v1-360.webp",
+        "sha256": "19cf7453972bbb326f0d9c3c71338e1d5d2e8f7290090c6b4f26f06638d609ba"
+      },
+      {
+        "file": "public/brand/promedical/logo-v1-640.webp",
+        "sha256": "fb296e2ecf7483c1c1e80249a0aa9d76a71b1e2885165fac9014150efb07a8e1"
+      },
+      {
+        "file": "public/brand/promedical/logo-v2-360.webp",
+        "sha256": "d37155984dc68b78c3b6d3660cf369e7448d84e6d05c2830e0e9e779da9b86ba"
+      },
+      {
+        "file": "public/brand/promedical/logo-v2-640.webp",
+        "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
+      },
+      {
+        "file": "content-packages/promedical/content-package.json",
+        "sha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af"
+      },
+      {
+        "file": "config/niche-path-aliases.json",
+        "sha256": "9cc439fddac44e00689fc975eb96d57ddd036bce55ae2c8d34b62aa2f777081d"
+      },
+      {
+        "file": "proxy.ts",
+        "sha256": "f74c9805e9b957466b830f6d4eeac7c7612f696b91dbc8818ae97f3c64f076ec"
+      },
+      {
+        "file": "lib/niche-path-aliases.mjs",
+        "sha256": "9e7cbbb0fa2ba1b94c6fa10011f080bed43795d419f3cbfaafeec47cbf0c44cd"
+      },
+      {
+        "file": "lib/promedical-inquiry-paths.mjs",
+        "sha256": "31fdb96cf732c1e7b29981a5f05a2194096752c3aeb2bcc1618b89f3af886cf2"
+      },
+      {
+        "file": "scripts/compile-content-packages.mjs",
+        "sha256": "1a13e9e8189eee376a1f63056e9db339a805568a652302616140380d26df7121"
+      },
+      {
+        "file": "tests/niche-path-aliases.test.mjs",
+        "sha256": "4f00a5d584cd5fa36b58980f9734c563776be5a37a368b6608ae42ee5b63bc55"
+      },
+      {
+        "file": "tests/promedical-url-migration-smoke.mjs",
+        "sha256": "22617a7b50140e08c9ab0de0c3258be92300a3799d3a9c8a984af1b9518f537b"
+      },
+      {
+        "file": "lib/niche-links.mjs",
+        "sha256": "ac869a14a0cc59b6d5c64d375b51d689c89d4f00e20757ce0680cedc6c1b8fe7"
+      },
+      {
+        "file": "tests/niche-links.test.mjs",
+        "sha256": "18b033689748c875c5bf6e872118e90366c4e532862063ae1219519146e1dab9"
+      }
+    ],
+    "checkedAt": "2026-10-13T19:39:19.588Z",
+    "productionVersion": "b40523b5-c11b-460c-a551-82a4f31b537b",
+    "notes": "Owner-requested indefinite pause of future Promedical guides. Two already published guides remain public; 55 future approved guides, all original dates and content are preserved. Package unchanged; site-specific shared projection cutoff applies to HTML, links, media, schema, sitemap and reading exports. Existing runtime settings preserved.",
+    "productionDeployment": "ff47e93c-ffeb-4622-8af2-463a6f66d083",
+    "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
+    "logoEvidence": "verification-20261010/logo-change-v2.json",
+    "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+    "homeEvidence": "verification-20261010/generic-home-v1.json",
+    "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json",
+    "urlMigrationEvidence": "verification-20261013/url-migration-v1.json",
+    "urlRedirectEvidence": "verification-20261013/url-redirect-301-v1.json",
+    "guidePublicationPause": {
+      "status": "paused",
+      "pausedAt": "2026-10-13T19:26:54.000Z",
+      "publicGuides": 2,
+      "heldGuides": 55,
+      "evidence": "verification-20261013/publication-pause-v1.json"
+    }
+  },
+  "cloudflareBefore": {
+    "checkedAt": "2026-10-13T19:29:45.204Z",
+    "deployment": {
+      "id": "7609d183-78d3-4637-9774-5f85a02335c6",
+      "source": "wrangler",
+      "strategy": "percentage",
+      "author_email": "info@azprekyba.lt",
+      "annotations": {
+        "workers/message": "Promedical legacy catalogue 301; source d2feca8",
+        "workers/triggered_by": "deployment"
+      },
+      "versions": [
+        {
+          "version_id": "bf9ae69d-2a14-4608-89c9-eae7274e4578",
+          "percentage": 100
+        }
+      ],
+      "created_on": "2026-10-13T18:20:30.070322Z"
+    },
+    "bindings": [
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "database_id": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+        "id": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+        "name": "DB",
+        "type": "d1"
+      },
+      {
+        "allowed_destination_addresses": [
+          "info@promedical.lt"
+        ],
+        "allowed_sender_addresses": [
+          "uzklausos@promedical.lt"
+        ],
+        "name": "LEAD_EMAIL",
+        "type": "send_email"
+      },
+      {
+        "name": "LEAD_SMTP_ENABLED",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_PASSWORD",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_USER",
+        "type": "secret_text"
+      }
+    ],
+    "annotations": {
+      "workers/message": "Promedical legacy catalogue 301; source d2feca83129075270ad9dcf2aea762b1f46c8f82",
+      "workers/tag": "legacy-301-20261013",
+      "workers/triggered_by": "version_upload"
+    },
+    "limits": {
+      "cpu_ms": 1000
+    },
+    "compatibility_date": "2026-05-15",
+    "routes": [
+      {
+        "id": "672c5c30b46349be92b1b2404b7a492a",
+        "pattern": "promedical.lt/*",
+        "script": "promedical",
+        "request_limit_fail_open": false
+      },
+      {
+        "id": "63bf784bc56741f7b4f6287f03ad718e",
+        "pattern": "www.promedical.lt/*",
+        "script": "promedical",
+        "request_limit_fail_open": false
+      }
+    ]
+  },
+  "cloudflareAfter": {
+    "checkedAt": "2026-10-13T19:37:36.200Z",
+    "deployment": {
+      "id": "ff47e93c-ffeb-4622-8af2-463a6f66d083",
+      "source": "wrangler",
+      "strategy": "percentage",
+      "author_email": "info@azprekyba.lt",
+      "annotations": {
+        "workers/message": "Promedical future guides paused; source 7647030",
+        "workers/triggered_by": "deployment"
+      },
+      "versions": [
+        {
+          "version_id": "b40523b5-c11b-460c-a551-82a4f31b537b",
+          "percentage": 100
+        }
+      ],
+      "created_on": "2026-10-13T19:36:19.392886Z"
+    },
+    "bindings": [
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "database_id": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+        "id": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+        "name": "DB",
+        "type": "d1"
+      },
+      {
+        "allowed_destination_addresses": [
+          "info@promedical.lt"
+        ],
+        "allowed_sender_addresses": [
+          "uzklausos@promedical.lt"
+        ],
+        "name": "LEAD_EMAIL",
+        "type": "send_email"
+      },
+      {
+        "name": "LEAD_SMTP_ENABLED",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_PASSWORD",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_USER",
+        "type": "secret_text"
+      }
+    ],
+    "annotations": {
+      "workers/message": "Promedical future guide publication paused; source 7647030d21ebc90726844a22d6c336b33ef7aa9d",
+      "workers/tag": "guide-pause-20261013",
+      "workers/triggered_by": "version_upload"
+    },
+    "limits": {
+      "cpu_ms": 1000
+    },
+    "compatibility_date": "2026-05-15",
+    "routes": [
+      {
+        "id": "672c5c30b46349be92b1b2404b7a492a",
+        "pattern": "promedical.lt/*",
+        "script": "promedical",
+        "request_limit_fail_open": false
+      },
+      {
+        "id": "63bf784bc56741f7b4f6287f03ad718e",
+        "pattern": "www.promedical.lt/*",
+        "script": "promedical",
+        "request_limit_fail_open": false
+      }
+    ]
+  },
+  "local": {
+    "state": "PASS",
+    "checkedAt": "2026-10-13T19:34:53.655Z",
+    "base": "http://127.0.0.1:8841",
+    "qaClock": null,
+    "pauseAt": "2026-10-13T19:26:54.000Z",
+    "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+    "guideCount": 57,
+    "publicGuides": [
+      {
+        "id": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas"
+      },
+      {
+        "id": "eab8457c-da03-420f-a149-33ebbd30953e",
+        "path": "/gidai/iso-moduliu-sistema"
+      }
+    ],
+    "heldGuides": 55,
+    "hiddenGuideAssets": 29,
+    "checkedCatalogueTargets": 83,
+    "sitemapUrls": 1854,
+    "requests": 177,
+    "scope": "Read-only hosted/local public inventory, every guide route, exports, held-guide media and linked catalogue targets. No approval/date/source body change or form/mail submission.",
+    "reportSha256": "3f9ce1c058207aa8aafd23d847672be950359af4a51df86c331ebb9a74e1027e",
+    "examples": [
+      {
+        "path": "/gidai",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "3467fed98a184cfe9c7383a742ce0547400ee29de1a348807154d39858c48aeb",
+        "ms": 458
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "c5956a6ad2f8b1e8747e4c4bbc45a3c27b836c353f635f25567ca9246f3f56f1",
+        "ms": 499
+      },
+      {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "2d4bc9e7bbb13fea680746868d4ae671175da80be0fc9c324c0ab354d5babff1",
+        "ms": 237
+      },
+      {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "status": 404,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "33070aef42a5a90f4f061959d388e2527b39546a0fc625d5374d2801798d14d6",
+        "ms": 244
+      }
+    ]
+  },
+  "future": {
+    "state": "PASS",
+    "checkedAt": "2026-10-13T19:35:30.991Z",
+    "base": "http://127.0.0.1:8843",
+    "qaClock": "2026-11-23T12:00:00.000Z",
+    "pauseAt": "2026-10-13T19:26:54.000Z",
+    "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+    "guideCount": 57,
+    "publicGuides": [
+      {
+        "id": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas"
+      },
+      {
+        "id": "eab8457c-da03-420f-a149-33ebbd30953e",
+        "path": "/gidai/iso-moduliu-sistema"
+      }
+    ],
+    "heldGuides": 55,
+    "hiddenGuideAssets": 29,
+    "checkedCatalogueTargets": 83,
+    "sitemapUrls": 1854,
+    "requests": 177,
+    "scope": "Read-only hosted/local public inventory, every guide route, exports, held-guide media and linked catalogue targets. No approval/date/source body change or form/mail submission.",
+    "reportSha256": "f63c1c1f2cf72c63acfcff25572849d26f2ecf977591a634b2a7abe92d02969b",
+    "examples": [
+      {
+        "path": "/gidai",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": "2026-11-23T12:00:00.000Z",
+        "sha256": "3467fed98a184cfe9c7383a742ce0547400ee29de1a348807154d39858c48aeb",
+        "ms": 650
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": "2026-11-23T12:00:00.000Z",
+        "sha256": "c5956a6ad2f8b1e8747e4c4bbc45a3c27b836c353f635f25567ca9246f3f56f1",
+        "ms": 700
+      },
+      {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": "2026-11-23T12:00:00.000Z",
+        "sha256": "2d4bc9e7bbb13fea680746868d4ae671175da80be0fc9c324c0ab354d5babff1",
+        "ms": 319
+      },
+      {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "status": 404,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": "2026-11-23T12:00:00.000Z",
+        "sha256": "33070aef42a5a90f4f061959d388e2527b39546a0fc625d5374d2801798d14d6",
+        "ms": 327
+      }
+    ]
+  },
+  "live": {
+    "state": "PASS",
+    "checkedAt": "2026-10-13T19:37:35.516Z",
+    "base": "https://promedical.lt",
+    "qaClock": null,
+    "pauseAt": "2026-10-13T19:26:54.000Z",
+    "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+    "guideCount": 57,
+    "publicGuides": [
+      {
+        "id": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas"
+      },
+      {
+        "id": "eab8457c-da03-420f-a149-33ebbd30953e",
+        "path": "/gidai/iso-moduliu-sistema"
+      }
+    ],
+    "heldGuides": 55,
+    "hiddenGuideAssets": 29,
+    "checkedCatalogueTargets": 83,
+    "sitemapUrls": 1854,
+    "requests": 177,
+    "scope": "Read-only hosted/local public inventory, every guide route, exports, held-guide media and linked catalogue targets. No approval/date/source body change or form/mail submission.",
+    "reportSha256": "49b74ddfadad883fb175816a39fbb5c8a559b7be3ddb5fb572b6cb9cc4d786fc",
+    "examples": [
+      {
+        "path": "/gidai",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "01fed65228589460eb5adafe45b091db818c86bebc39ff27bc8e129f0ef23d90",
+        "ms": 961
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "c5956a6ad2f8b1e8747e4c4bbc45a3c27b836c353f635f25567ca9246f3f56f1",
+        "ms": 988
+      },
+      {
+        "path": "/gidai/irangos-pirkimo-uzklausa",
+        "status": 404,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "33070aef42a5a90f4f061959d388e2527b39546a0fc625d5374d2801798d14d6",
+        "ms": 123
+      },
+      {
+        "path": "/gidai/medicininio-vezimelio-pasirinkimas",
+        "status": 200,
+        "location": null,
+        "cacheControl": "private, no-store",
+        "qaClock": null,
+        "sha256": "8a883128e325028ca949d40c084e3651078c14d32607b50de9130515bef6c7c9",
+        "ms": 837
+      }
+    ]
+  },
+  "checks": {
+    "unitTests": {
+      "passed": 64,
+      "failed": 0
+    },
+    "actualRSCPublicationRenders": 114,
+    "compilePackages": 10,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "normalBuild": "PASS",
+    "dryRun": "PASS",
+    "seo": [
+      {
+        "siteId": "akmenas",
+        "result": "PASS",
+        "logSha256": "2214bb913ba66cbf8114b61c561ddea0509684111ebd350b3ddc6e1feb40e14a"
+      },
+      {
+        "siteId": "auksarankiams",
+        "result": "PASS",
+        "logSha256": "78f257efa3f5a0d96528c9ffe8287cfef840246a27fdd89a2833d938f1078589"
+      },
+      {
+        "siteId": "autoelektrikaivilniuje",
+        "result": "PASS",
+        "logSha256": "f4e5a3dc79f1f57055abe4aa388350e5982924a543c980f67afdf7d549f38bb7"
+      },
+      {
+        "siteId": "fasadopastoliai",
+        "result": "PASS",
+        "logSha256": "87bdc7d42386e6990164e6b2c88e93a787451b54c6ef5d93d31a09044cdc6bd4"
+      },
+      {
+        "siteId": "greitossvetaines",
+        "result": "PASS",
+        "logSha256": "ef283c703a9ae859de4bef6a0dc440a30b999033eae664df4183206f7f76defa"
+      },
+      {
+        "siteId": "laiptucentras",
+        "result": "PASS",
+        "logSha256": "8f8f78c92f6f3be74c825fc3c985097cc308e164b5e80b4dea1eda5aeaab5812"
+      },
+      {
+        "siteId": "miniekskavatoriai",
+        "result": "PASS",
+        "logSha256": "8713e2e7b8e4bfa0c0e92e7ce541b635afb0f55107bac46c88f69f76aac39778"
+      },
+      {
+        "siteId": "promedical",
+        "result": "PASS",
+        "logSha256": "aaba62912935105f24a2d6e485354b2feb76e978f04c11a237e5eda4f6656124"
+      },
+      {
+        "siteId": "roletaiklaipedoje",
+        "result": "PASS",
+        "logSha256": "e3bfb7999bd6de315fc81ba5fd1913981b18ef7e7b15cb1b8fff0f8905cb2686"
+      },
+      {
+        "siteId": "traktoriupadangos",
+        "result": "PASS",
+        "logSha256": "6f9279d28cb628e7d069ff3dd247b40f772c5f1191445a4645ae5498c6a9da0f"
+      }
+    ]
+  },
+  "resume": "Only on owner request. Review and reschedule elapsed future dates before removing the cutoff to avoid bulk publication; reconcile older studio guide snapshots first.",
+  "scope": "Publication pause only. No approved text/date/revision edits, site design, catalogue URL, mail, DNS, billing or other tenant changes."
+}

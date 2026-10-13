@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Canonical bounded slug edit and shared page-ID redirect gates verified; actual Promedical deployment983732bb and complete3710local/3709live route checks are separate from shared main adoption. Initial synthetic fixture omissions and local transport/trailing-slash assertion failures were repaired/recorded; original1845 source URLs retain one-hop308. Added portable preparation script. Studio65 editorial copies remain older and were excluded from public replacement.",
+  "checks": [
+    {
+      "command": "node --test test/*.test.mjs (content-studio)",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261013/url-migration-v1.json:54/54"
+    },
+    {
+      "command": "node --test tests/*.test.mjs (public core)",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261013/url-migration-v1.json:61/61"
+    },
+    {
+      "command": "node tests/promedical-url-migration-smoke.mjs; all10tenant seo-core-smoke",
+      "result": "PASS",
+      "evidence": "sites/promedical/verification-20261013/url-migration-v1.json"
+    }
+  ],
+  "eventId": "b79fba18-6dfe-48fd-a4d4-dda56b96fd7e",
+  "sequence": 2,
+  "at": "2026-10-13T17:56:07.480Z"
+}

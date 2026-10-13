@@ -1,0 +1,17 @@
+{
+  "observedAt":"2026-10-10T07:34:34Z",
+  "state":"NATIVE_SEND_AND_RECEIVING_MAILBOX_VERIFIED_INITIAL_JUNK_FILTER_APPROVAL_PENDING",
+  "sourceVersion":"fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "productionVersion":"03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "recipient":"info@promedical.lt",
+  "sender":"uzklausos@promedical.lt",
+  "tests":[
+    {"marker":"PROMEDICAL-QA-20261010-0722","leadId":"cc4aee75-7f5e-4cf5-b036-9689e5ace6cd","createdAtMs":1791616907055,"sourcePath":"/kontaktai","messageLength":150,"d1Status":"notified","nativeLog":{"event":"niche_lead_notified","transport":"cloudflare_email","timestampMs":1791616909319},"cloudflareMessageId":"<33LCglfPk8fEA3O94GxNJaW3hz004cai9DBH@promedical.lt>","cloudflareDelivery":"Delivered","initialFolder":"INBOX.Junk","spf":"pass","dkim":"pass","dmarc":"pass","laterAction":"Only this own synthetic message marked Not spam through owner webmail UI. This manual action is not an automatic Inbox delivery proof."},
+    {"marker":"PROMEDICAL-QA-20261010-0729","leadId":"ff85af75-ca48-4f17-bf42-66003ebe639f","createdAtMs":1791617305409,"sourcePath":"/kontaktai","messageLength":177,"d1Status":"notified","nativeLog":{"event":"niche_lead_notified","transport":"cloudflare_email","timestampMs":1791617306718},"cloudflareMessageId":"<U0RzljF8A0IRSS3NUTgEvL4YCok95dLvTwLk@promedical.lt>","cloudflareDelivery":"Delivered","initialFolder":"INBOX.Junk","spf":"pass","dkim":"pass","dmarc":"pass","laterAction":"None; preserved as independent evidence that single-message learning did not yet ensure automatic Inbox routing."}
+  ],
+  "receiptFiles":["production-native-inbox-v1.json","production-native-inbox-v2.json","production-native-inbox-v3.json","production-native-inbox-v4.json","production-native-inbox-v5.json","production-native-second-inbox-v1.json","production-native-second-inbox-v2.json"],
+  "formProof":"screenshots/final-batch-20261010/production-native-inquiry-success.png",
+  "pendingFilter":{"name":"Promedical svetainės užklausos","scope":"Match all rules","fromEquals":"uzklausos@promedical.lt","subjectContains":"[promedical.lt] Poreikio užklausa","authenticationResultsContains":"dkim=pass header.d=promedical.lt","action":"Move to Inbox","enabled":false,"ownerActionTimeApprovalPending":true},
+  "privacy":"Only exact own markers and Message-IDs queried. Read-only EXAMINE/targeted headers; credentials and unrelated mail bodies never copied into evidence. No historical D1 row/message removed.",
+  "limitations":["Cloudflare rewrites the Message-ID; original own-ID probes returned no match and are retained.","Native acceptance, recipient server delivery, mailbox Junk receipt and automatic Inbox classification are distinct gates.","Production recovery/reconciliation/rate/backup evidence remains separate."]
+}

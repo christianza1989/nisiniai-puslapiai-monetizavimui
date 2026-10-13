@@ -111,6 +111,20 @@ test('unknown and foreign links, source candidates, missing guide images and sit
   await assert.rejects(() => model.releaseContent(a.id),/tikslas dar neparengtas|atšauktą|nepatvirtintą/);
 });
 
+test('each atomic approval batch refreshes the registered network boundary', async () => {
+  const a=await site('workflow-network-refresh.example');
+  const h=await page(a,'','home'),g=await page(a,'gidas');
+  const source={url:'https://new-network-boundary.example/guide',label:'Sintetinis išorinis šaltinis',reason:'Izoliuotas tinklo ribos bandymas, ne gyvo šaltinio patvirtinimas.',verified:true};
+  for(const p of [h,g]){await model.editPage(a.id,p.id,{externalLinks:[source]});await review(a.id,p.id);}
+  await model.approveReviewedBatch(a.id,[h.id,g.id],'isolated-test');
+  const before=model.packageForSite(await model.getSite(a.id));
+  // A newly registered host needs eligible, checked network-target evidence.
+  // A snapshot from the previous operation must not bypass that boundary.
+  await site('new-network-boundary.example');
+  await assert.rejects(()=>model.approveReviewedBatch(a.id,[h.id,g.id],'isolated-test'),/Tinklo nuoroda/);
+  assert.deepEqual(model.packageForSite(await model.getSite(a.id)).pages,before.pages,'failed batch preserves every prior immutable approval');
+});
+
 test('reviewed workflow also preserves rich v2 blocks, source metadata and author snapshots', async () => {
   const fixture = v2Fixture();
   const s = await model.createSite({canonicalHost:fixture.canonicalHost,name:fixture.site.name,offer:fixture.site.offer,schemaVersion:2,renderer:'gift'});

@@ -1,0 +1,340 @@
+{
+  "state": "PASS",
+  "testedAt": "2026-10-09T17:18:55.933Z",
+  "environment": "local production Workers runtime, canonical Host header",
+  "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
+  "products": 1408,
+  "categories": 437,
+  "cataloguePages": 59,
+  "uniqueDiscovered": 1408,
+  "nestedCategory": "kategorijos/instrumentacni-voziky/instruman",
+  "duplicateSkuPaths": [
+    "/produktai/plv150-vyprodej",
+    "/produktai/plv150"
+  ],
+  "observations": [
+    {
+      "path": "/produktai",
+      "status": 200,
+      "htmlSha256": "032d11cbb84b3cc9fb8b4ba32672bc7034ca99fb394e0a889a22617cd7b93f2b"
+    },
+    {
+      "path": "/produktai?p=2",
+      "status": 200,
+      "htmlSha256": "48fd9e3180ea4211b312d0919bd5f53d2e74a7388856c6633b03adc1801e8379"
+    },
+    {
+      "path": "/produktai?p=3",
+      "status": 200,
+      "htmlSha256": "a35042b83085f30f3612d544c8b8c0de067e9da73ce4720961f0ef740533b924"
+    },
+    {
+      "path": "/produktai?p=4",
+      "status": 200,
+      "htmlSha256": "0dabd39488dbdeee479213c2bd02691371e277ee2b2a2149b0a18c58b28346e4"
+    },
+    {
+      "path": "/produktai?p=5",
+      "status": 200,
+      "htmlSha256": "bf8c93d248b92191bfad1be995401a04439c4c1468e3a88327bf17738951b75f"
+    },
+    {
+      "path": "/produktai?p=6",
+      "status": 200,
+      "htmlSha256": "bf349b1e6df0d4f2b3c8a70714ee8e5a8955b61bb210149e477caa17d135ccb6"
+    },
+    {
+      "path": "/produktai?p=7",
+      "status": 200,
+      "htmlSha256": "bc12b56a197254aa209d7f40ce505addb48c2ae806cf12772ee7870dc86ad20d"
+    },
+    {
+      "path": "/produktai?p=8",
+      "status": 200,
+      "htmlSha256": "6ec3576fbe64adfefc679f05085263a751ad4af4b11ee94a22a9415e12f74300"
+    },
+    {
+      "path": "/produktai?p=9",
+      "status": 200,
+      "htmlSha256": "2dbd94ed7ba908fac347e3965304e2390f41402bf3ef3656330838df27ef57f5"
+    },
+    {
+      "path": "/produktai?p=10",
+      "status": 200,
+      "htmlSha256": "e65aafaf3368a9e227650ab54a7b84d94dd8a8caae43742b510cfcb57655a40a"
+    },
+    {
+      "path": "/produktai?p=11",
+      "status": 200,
+      "htmlSha256": "eeee0a998dba910d5d9344dee46cf695953988d4552eb173951ec7a4d83e5ecd"
+    },
+    {
+      "path": "/produktai?p=12",
+      "status": 200,
+      "htmlSha256": "6d04e4a09663da01955d19a39314a1572702d6fe0396fea083f0eccdc7875efa"
+    },
+    {
+      "path": "/produktai?p=13",
+      "status": 200,
+      "htmlSha256": "8081d9cbb98d33cbfa92f3aeb92fad7ff8b9ff31f655c168414a93b6677b75c0"
+    },
+    {
+      "path": "/produktai?p=14",
+      "status": 200,
+      "htmlSha256": "dcae1214873d613e45f32170dd6bc5fd96bbd22c678e90ed3458a765f7463204"
+    },
+    {
+      "path": "/produktai?p=15",
+      "status": 200,
+      "htmlSha256": "c1d03a4a8d83224af602795d6a33416655cfc45206bd10ed77e2e4a30352c4cf"
+    },
+    {
+      "path": "/produktai?p=16",
+      "status": 200,
+      "htmlSha256": "328ad834c9b9148c48f8dba61415daba98132a8d7d8b9c7d597ea863962b87a5"
+    },
+    {
+      "path": "/produktai?p=17",
+      "status": 200,
+      "htmlSha256": "d607eff999e2f80d1690909cbcbe71ceecf99d5f1965b7303de69734436278e3"
+    },
+    {
+      "path": "/produktai?p=18",
+      "status": 200,
+      "htmlSha256": "866a80d0278834f8e495a8bcfd3eb1f07c5917e59f84fdc6eb21761c55fff5b4"
+    },
+    {
+      "path": "/produktai?p=19",
+      "status": 200,
+      "htmlSha256": "0ce918479c614356a65793dc85429f409646150b2e76777a8170951fbb1a1842"
+    },
+    {
+      "path": "/produktai?p=20",
+      "status": 200,
+      "htmlSha256": "acd00a3b5be150bac6ddbc52935763e395dfd54ad99668ec2223db1ba55a8407"
+    },
+    {
+      "path": "/produktai?p=21",
+      "status": 200,
+      "htmlSha256": "01ec3341def31027a953997ba6d915b00103198659b279a0db8a8886140bb95c"
+    },
+    {
+      "path": "/produktai?p=22",
+      "status": 200,
+      "htmlSha256": "05d62da4fcfde63ca3992525f1e09bc6c81f8c87ed633d5f18d3656896359ca0"
+    },
+    {
+      "path": "/produktai?p=23",
+      "status": 200,
+      "htmlSha256": "65dc8b32a36ccb65bab1ba8828694d4478a059963f9d5995e4d249dc91a48049"
+    },
+    {
+      "path": "/produktai?p=24",
+      "status": 200,
+      "htmlSha256": "e31595f1de2d8c359f92194ffd313516e500140cef8f6b62743407678f850dab"
+    },
+    {
+      "path": "/produktai?p=25",
+      "status": 200,
+      "htmlSha256": "e692d89df27f6593a77aaf3b43b7a6ba858fff4a12d9ed8dcdc0009cb233a08f"
+    },
+    {
+      "path": "/produktai?p=26",
+      "status": 200,
+      "htmlSha256": "8b26cbc07797259df229c71d4819dc4a865f1bc309a50d3b88a0d9d971fce0e6"
+    },
+    {
+      "path": "/produktai?p=27",
+      "status": 200,
+      "htmlSha256": "0773759a11e93b825251a931b40cf7fa33f3d2feb7f7070e6a4ba8a9c2f641af"
+    },
+    {
+      "path": "/produktai?p=28",
+      "status": 200,
+      "htmlSha256": "1aa5340981b4322bf75894de618282d277fc89d99eaefa66f222ad1a91682b48"
+    },
+    {
+      "path": "/produktai?p=29",
+      "status": 200,
+      "htmlSha256": "8f0ab20bbf303d950051a74ab4821f46d43c639ceb345eccdc6b235c8fbac53f"
+    },
+    {
+      "path": "/produktai?p=30",
+      "status": 200,
+      "htmlSha256": "b8b5f9f31a7aa4fe16b1c8e02a205ecacdd56c5e57a4477de13bd7b9e8e8a29d"
+    },
+    {
+      "path": "/produktai?p=31",
+      "status": 200,
+      "htmlSha256": "a70e93b986f68f42ad10fcd9131bcc32e39b2808e51a624d198555293db60141"
+    },
+    {
+      "path": "/produktai?p=32",
+      "status": 200,
+      "htmlSha256": "96f5774f709327e04f14eb8169d665f50280243f197ee6f6d4dea66675c09f31"
+    },
+    {
+      "path": "/produktai?p=33",
+      "status": 200,
+      "htmlSha256": "05360d68f737a8b15966b71811ddbe9c995dd418726b7e7015d95331a9a6945f"
+    },
+    {
+      "path": "/produktai?p=34",
+      "status": 200,
+      "htmlSha256": "0aaefe51177949d7bb56c573cb2f1dc0b0bc8b1221cafe9e8c27141929114dc0"
+    },
+    {
+      "path": "/produktai?p=35",
+      "status": 200,
+      "htmlSha256": "e6d979ce0dc9d66a1eef21aa28c44cbe3465334d2d97a1aa95767265ebd0e90b"
+    },
+    {
+      "path": "/produktai?p=36",
+      "status": 200,
+      "htmlSha256": "b75951039781e124ddcb7eaf6fb82ebfd15aad3d89c6766cc10752bfb34e7620"
+    },
+    {
+      "path": "/produktai?p=37",
+      "status": 200,
+      "htmlSha256": "a3f512f1bd4283090997223608b923c24a12645df03383faf2abb1bbb62f812f"
+    },
+    {
+      "path": "/produktai?p=38",
+      "status": 200,
+      "htmlSha256": "c28b317c516d420a6e6bfc33a3e3427972d68c785fef276515e4f9e4f590f0ec"
+    },
+    {
+      "path": "/produktai?p=39",
+      "status": 200,
+      "htmlSha256": "77c34d4a98a8d42550f2ba759be6e683edd7a865dce3efad06203980f63681b9"
+    },
+    {
+      "path": "/produktai?p=40",
+      "status": 200,
+      "htmlSha256": "b1c0b63973da0f8ae33ed21fd0dfd25e25f89ab7dee9347fd75e2e92e84e6b21"
+    },
+    {
+      "path": "/produktai?p=41",
+      "status": 200,
+      "htmlSha256": "c0f4ceb30260d890ad70495f71c726d6b025fa9cdfe8c244f1435022e88a7abd"
+    },
+    {
+      "path": "/produktai?p=42",
+      "status": 200,
+      "htmlSha256": "a0c4b9dcc25405af564f8c2e5b935a0c66e2a80dd0c8df0959d8a5ede97c69a2"
+    },
+    {
+      "path": "/produktai?p=43",
+      "status": 200,
+      "htmlSha256": "20e11355d32c0367878af54e60b991e54b85f822eeda2b03598af54ccb846c31"
+    },
+    {
+      "path": "/produktai?p=44",
+      "status": 200,
+      "htmlSha256": "b5779006ad540da0ab9f1e89bc24a6023baa1fda482bb83b69ef8010d80d3b4b"
+    },
+    {
+      "path": "/produktai?p=45",
+      "status": 200,
+      "htmlSha256": "7eb548d1b3a1650c133728cc0dc19fdf1dabd7d97fd63679ced3b080143fcff0"
+    },
+    {
+      "path": "/produktai?p=46",
+      "status": 200,
+      "htmlSha256": "8f08830334bd1142ee917c01db38babcb03053cf775a96060a576ce53586fa05"
+    },
+    {
+      "path": "/produktai?p=47",
+      "status": 200,
+      "htmlSha256": "39e842f340b6033f67e2d3c9c0974c003ee1ce302e5d4f49ad1556cf2bdf6e6b"
+    },
+    {
+      "path": "/produktai?p=48",
+      "status": 200,
+      "htmlSha256": "1c3d53aa095b9208129557971028456f2db1ed0d094e2f05e13a91d952d7030a"
+    },
+    {
+      "path": "/produktai?p=49",
+      "status": 200,
+      "htmlSha256": "a82a668957c02aebbcad3dc76acfb98f221694ce15dc53d6b6480b05d89bbd30"
+    },
+    {
+      "path": "/produktai?p=50",
+      "status": 200,
+      "htmlSha256": "132cd2663ec7fd8b80607c94f2f6e2c5e1d9248ec2b5f5579b4b6c9be4a445e6"
+    },
+    {
+      "path": "/produktai?p=51",
+      "status": 200,
+      "htmlSha256": "48e8ad5bc7c2be077dfa1108990eab16392eac54105a1a607a2e34ee04d5c140"
+    },
+    {
+      "path": "/produktai?p=52",
+      "status": 200,
+      "htmlSha256": "b9a08f23f2fdaa1044a26d3e3ef52c132566eb30e5641233e213512cbae88dda"
+    },
+    {
+      "path": "/produktai?p=53",
+      "status": 200,
+      "htmlSha256": "70713b28d1234c86d242b85b9107cb0615888569c829de56c91a6d4cf2ba7d12"
+    },
+    {
+      "path": "/produktai?p=54",
+      "status": 200,
+      "htmlSha256": "ec9e896b2ff799975259dd204668002f3adf0eac7a2fbe52f4488776b022785a"
+    },
+    {
+      "path": "/produktai?p=55",
+      "status": 200,
+      "htmlSha256": "9d7792429fca9968d9592cb97379400c907e3b2acf3787e5071d1f48d90be555"
+    },
+    {
+      "path": "/produktai?p=56",
+      "status": 200,
+      "htmlSha256": "90f8b35c9aa8d60127640e5106bcebfe1344673e75cfef828e48a877a541cb69"
+    },
+    {
+      "path": "/produktai?p=57",
+      "status": 200,
+      "htmlSha256": "60f688c07a790ed1ddaa366ab8b9c57fc618beaf4723f7e4b55516d83eabae5d"
+    },
+    {
+      "path": "/produktai?p=58",
+      "status": 200,
+      "htmlSha256": "f6a6be2a605bdd16508574a6c62b4b9ae4c76a6724aa61a619bb06d1dd823d8f"
+    },
+    {
+      "path": "/produktai?p=59",
+      "status": 200,
+      "htmlSha256": "7804a3486329d8b39a320d9a917290c10e9c86b2804327a99f37896b8686c655"
+    },
+    {
+      "path": "/produktai?q=ZV1253N-PZ",
+      "status": 200,
+      "htmlSha256": "64fce4d7dde660f6707ea81c56fb03361f60c4725cfd3bda109d189a8cf2e7cb"
+    },
+    {
+      "path": "/produktai?q=neegzistuojantis-qa-kodas-20261009",
+      "status": 200,
+      "htmlSha256": "52cf488eda4a08fef6265d925bb5edb4512570468a22d6cf244a3b25923769a7"
+    },
+    {
+      "path": "/produktai?p=999999",
+      "status": 200,
+      "htmlSha256": "f21391753c8d3e685e88e71e75350c984da8ef027bf84a3a78f3216d7c833792"
+    },
+    {
+      "path": "/kategorijos/instrumentacni-voziky/instruman",
+      "status": 200,
+      "htmlSha256": "654ea77bab4f4854bd2d224c59cb9d881be3ebe9a2d3bfdfbbdef940ada1ec71"
+    },
+    {
+      "path": "/produktai?category=instrumentacni-voziky%2Finstruman",
+      "status": 200,
+      "htmlSha256": "9d87f772842dc0d1f2b9b0a4bcc4ed9fc62a24115da501b343584871f58763dd"
+    }
+  ],
+  "limitations": [
+    "HTTP checks do not replace pixel, keyboard, inquiry delivery or production-domain acceptance."
+  ]
+}

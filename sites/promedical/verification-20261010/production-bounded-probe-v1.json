@@ -1,0 +1,500 @@
+{
+  "checkedAt": "2026-10-10T05:52:40.885Z",
+  "worker": "promedical",
+  "version": "608be43e-ca4c-4089-af73-26448482274f",
+  "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+  "scope": "Bounded current production observations; not replacement for retained failed full catalogue audit or field/crawler evidence",
+  "requests": [
+    {
+      "url": "https://promedical.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "bbb39cb1753e783fac0804b9a709577b591a0d821f221c7dcb742da43fef79d2",
+      "bodyBytes": 72461,
+      "title": "Medicininė įranga jūsų įstaigai",
+      "canonical": "https://promedical.lt/",
+      "noindex": false,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://promedical.lt/#organization",
+              "name": "Promedical",
+              "url": "https://promedical.lt/redakcija",
+              "email": "info@promedical.lt"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://promedical.lt/#website",
+              "url": "https://promedical.lt/",
+              "name": "Promedical",
+              "description": "Klaro medicininiai vežimėliai, baldai, laikymo sistemos ir priedai gydymo įstaigoms",
+              "inLanguage": "lt-LT",
+              "publisher": {
+                "@id": "https://promedical.lt/#organization"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://promedical.lt/#webpage",
+              "url": "https://promedical.lt/",
+              "name": "Medicininė įranga jūsų įstaigai",
+              "description": "Klaro medicininiai vežimėliai, modulinės laikymo sistemos ir įstaigų įranga. Atraskite produktus ir pateikite komplektacijos užklausą.",
+              "inLanguage": "lt-LT",
+              "isPartOf": {
+                "@id": "https://promedical.lt/#website"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.promedical.lt/",
+      "status": 404,
+      "contentType": "text/plain;charset=UTF-8",
+      "location": null,
+      "xRobotsTag": "noindex",
+      "bodySha256": "0efaae6d4f2450f55f16774ad933a03e0b1443dfff0f7f7cbd325da38a8c18ce",
+      "bodyBytes": 14,
+      "noindex": false,
+      "jsonLd": []
+    },
+    {
+      "url": "http://promedical.lt/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "b15e7901d3facbbb84a51238105dd60c744cefa43b6afc9e937c87767e355fd4",
+      "bodyBytes": 75414,
+      "title": "Medicininė įranga jūsų įstaigai",
+      "canonical": "https://promedical.lt/",
+      "noindex": false,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://promedical.lt/#organization",
+              "name": "Promedical",
+              "url": "https://promedical.lt/redakcija",
+              "email": "info@promedical.lt"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://promedical.lt/#website",
+              "url": "https://promedical.lt/",
+              "name": "Promedical",
+              "description": "Klaro medicininiai vežimėliai, baldai, laikymo sistemos ir priedai gydymo įstaigoms",
+              "inLanguage": "lt-LT",
+              "publisher": {
+                "@id": "https://promedical.lt/#organization"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://promedical.lt/#webpage",
+              "url": "https://promedical.lt/",
+              "name": "Medicininė įranga jūsų įstaigai",
+              "description": "Klaro medicininiai vežimėliai, modulinės laikymo sistemos ir įstaigų įranga. Atraskite produktus ir pateikite komplektacijos užklausą.",
+              "inLanguage": "lt-LT",
+              "isPartOf": {
+                "@id": "https://promedical.lt/#website"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "90b31b27261116c3edfbf82b9d9ecffc48aa004d3faa332473122869eb7cb11e",
+      "bodyBytes": 133987,
+      "title": "Klaro produktų katalogas",
+      "canonical": "https://promedical.lt/produktai",
+      "noindex": false,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://promedical.lt/#organization",
+              "name": "Promedical",
+              "url": "https://promedical.lt/redakcija",
+              "email": "info@promedical.lt"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://promedical.lt/#website",
+              "url": "https://promedical.lt/",
+              "name": "Promedical",
+              "description": "Klaro medicininiai vežimėliai, baldai, laikymo sistemos ir priedai gydymo įstaigoms",
+              "inLanguage": "lt-LT",
+              "publisher": {
+                "@id": "https://promedical.lt/#organization"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://promedical.lt/produktai#webpage",
+              "url": "https://promedical.lt/produktai",
+              "name": "Klaro produktų katalogas",
+              "description": "Medicininiai vežimėliai, spintos, stelažai, moduliniai krepšiai ir kiti Klaro produktai. Ieškokite pagal paskirtį arba katalogo numerį.",
+              "inLanguage": "lt-LT",
+              "isPartOf": {
+                "@id": "https://promedical.lt/#website"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Promedical",
+                  "item": "https://promedical.lt/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Klaro produktų katalogas",
+                  "item": "https://promedical.lt/produktai"
+                }
+              ]
+            },
+            {
+              "@type": "Service",
+              "name": "Klaro produktų katalogas",
+              "description": "Medicininiai vežimėliai, spintos, stelažai, moduliniai krepšiai ir kiti Klaro produktai. Ieškokite pagal paskirtį arba katalogo numerį.",
+              "url": "https://promedical.lt/produktai",
+              "provider": {
+                "@type": "Organization",
+                "@id": "https://promedical.lt/#organization",
+                "name": "Promedical",
+                "url": "https://promedical.lt/redakcija",
+                "email": "info@promedical.lt"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "c3700acce41d9d80f234c33bee5c996a6624c3074a8f2c0da4112e0433602e4e",
+      "bodyBytes": 36922,
+      "title": "Įrangos užklausa ir kontaktai",
+      "canonical": "https://promedical.lt/kontaktai",
+      "noindex": false,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://promedical.lt/#organization",
+              "name": "Promedical",
+              "url": "https://promedical.lt/redakcija",
+              "email": "info@promedical.lt"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://promedical.lt/#website",
+              "url": "https://promedical.lt/",
+              "name": "Promedical",
+              "description": "Klaro medicininiai vežimėliai, baldai, laikymo sistemos ir priedai gydymo įstaigoms",
+              "inLanguage": "lt-LT",
+              "publisher": {
+                "@id": "https://promedical.lt/#organization"
+              }
+            },
+            {
+              "@type": "ContactPage",
+              "@id": "https://promedical.lt/kontaktai#webpage",
+              "url": "https://promedical.lt/kontaktai",
+              "name": "Įrangos užklausa ir kontaktai",
+              "description": "Pateikite Klaro įrangos poreikį: įstaiga, skyrius, produktų kodai, kiekiai ir komplektacija. Promedical kontaktas – info@promedical.lt.",
+              "inLanguage": "lt-LT",
+              "isPartOf": {
+                "@id": "https://promedical.lt/#website"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Promedical",
+                  "item": "https://promedical.lt/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Įrangos užklausa ir kontaktai",
+                  "item": "https://promedical.lt/kontaktai"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "fd211182885ff2d0d51537e4cdd40afbeba8716221191b6492102f1084bc504c",
+      "bodyBytes": 102,
+      "noindex": false,
+      "jsonLd": [],
+      "robots": "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /uzklausa\nSitemap: https://promedical.lt/sitemap.xml\n"
+    },
+    {
+      "url": "https://promedical.lt/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "ce25a26b72bcc082fa63c2a5743a890ad0e79968ba95c538f111fb01db2b434e",
+      "bodyBytes": 201223,
+      "noindex": false,
+      "jsonLd": [],
+      "locations": 1853,
+      "containsFutureGuide": false
+    },
+    {
+      "url": "https://promedical.lt/llms.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "cb3a64776d972e95ae96f7b8564ca05a5b954c75c886ec52eab6510dc823cd46",
+      "bodyBytes": 593772,
+      "noindex": false,
+      "jsonLd": [],
+      "containsFutureGuide": false
+    },
+    {
+      "url": "https://promedical.lt/llms-full.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "b7ba133547ece51340348300b29c693239e39df9f4739370f1f59159de8b3554",
+      "bodyBytes": 4550665,
+      "noindex": false,
+      "jsonLd": [],
+      "containsFutureGuide": false
+    },
+    {
+      "url": "https://promedical.lt/gidai/medicininio-vezimelio-pasirinkimas",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "281ad5988b6da90178eec7f03c94b9e3003d18b59743a822cc3ca0d3a486968c",
+      "bodyBytes": 8208,
+      "title": "Promedical",
+      "noindex": true,
+      "jsonLd": []
+    },
+    {
+      "url": "https://promedical.lt/produktai/zs1333",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": null,
+      "xRobotsTag": null,
+      "bodySha256": "5449c887e56dd07a27a66ede112d8f841cf2dfad95805e44fbadee2e216e5e7e",
+      "bodyBytes": 48333,
+      "title": "Medicininė spinta Metal Line Profi su MS krepšiais / lentynomis – ZS1333 – aukštas variantas",
+      "canonical": "https://promedical.lt/produktai/zs1333",
+      "noindex": false,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://promedical.lt/#organization",
+              "name": "Promedical",
+              "url": "https://promedical.lt/redakcija",
+              "email": "info@promedical.lt"
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://promedical.lt/#website",
+              "url": "https://promedical.lt/",
+              "name": "Promedical",
+              "description": "Klaro medicininiai vežimėliai, baldai, laikymo sistemos ir priedai gydymo įstaigoms",
+              "inLanguage": "lt-LT",
+              "publisher": {
+                "@id": "https://promedical.lt/#organization"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://promedical.lt/produktai/zs1333#webpage",
+              "url": "https://promedical.lt/produktai/zs1333",
+              "name": "Medicininė spinta Metal Line Profi su MS krepšiais / lentynomis – ZS1333 – aukštas variantas",
+              "description": "Medicininė spinta Metal Line Profi su MS krepšiais / lentynomis – ZS1333 – aukštas variantas. Spintos matmenys (aukštas variantas): plotis 48 cm × gylis 72 cm × aukštis 211 cm. Konstrukcija: nerūdijantysis plienas AISI304.",
+              "inLanguage": "lt-LT",
+              "isPartOf": {
+                "@id": "https://promedical.lt/#website"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Promedical",
+                  "item": "https://promedical.lt/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Medicininė spinta Metal Line Profi su MS krepšiais / lentynomis – ZS1333 – aukštas variantas",
+                  "item": "https://promedical.lt/produktai/zs1333"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Medicininė spinta Metal Line Profi su MS krepšiais / lentynomis – ZS1333 – aukštas variantas",
+          "sku": "ZS1333",
+          "brand": {
+            "@type": "Brand",
+            "name": "Klaro"
+          },
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "Klaro, spol. s r.o."
+          },
+          "description": "Medicininė spinta Metal Line Profi su MS krepšiais / lentynomis – ZS1333 – aukštas variantas. Spintos matmenys (aukštas variantas): plotis 48 cm × gylis 72 cm × aukštis 211 cm. Konstrukcija: nerūdijantysis plienas AISI304.",
+          "image": "https://promedical.lt/content-assets/promedical/9e71f400-1ba3-4279-9f34-bbd4c067c947.webp"
+        }
+      ]
+    }
+  ],
+  "formChecks": [
+    {
+      "case": "missing-consent",
+      "expected": 400,
+      "status": 400,
+      "pass": true,
+      "storedSuccess": false,
+      "bodySha256": "f92efac60da099ea84acebc9e00b3eb39190857f77e532709bd65792de35ffdd"
+    },
+    {
+      "case": "cross-origin",
+      "expected": 403,
+      "status": 403,
+      "pass": true,
+      "storedSuccess": false,
+      "bodySha256": "dd866d506360e2e2729e1809ccf425a621bd6aef65df5170be85130953a050c7"
+    },
+    {
+      "case": "honeypot",
+      "expected": 200,
+      "status": 200,
+      "pass": true,
+      "storedSuccess": false,
+      "bodySha256": "a68f0dcf2c5624537578b26ea911faf78703f1f61594b72b4bbcc033208e6efe"
+    },
+    {
+      "case": "over-10KB",
+      "expected": 400,
+      "status": 400,
+      "pass": true,
+      "storedSuccess": false,
+      "bodySha256": "70fffbc57b7b3d7f9ab089af7d40149722de13b62ad338b743914895e90f08bb"
+    }
+  ],
+  "dns": {
+    "before": "2026-10-09T23:37:23.926Z",
+    "after": "2026-10-10 05:43:37 UTC",
+    "recordsBefore": 12,
+    "recordsAfter": 12,
+    "changes": [
+      {
+        "before": {
+          "id": "6d706a4b38ec46f3772b46876f8ba3cd",
+          "type": "CNAME",
+          "name": "promedical.lt",
+          "content": "promedical.lt.cdn.hstgr.net",
+          "ttl": 300,
+          "proxied": false
+        },
+        "after": {
+          "id": "6d706a4b38ec46f3772b46876f8ba3cd",
+          "type": "CNAME",
+          "name": "promedical.lt",
+          "content": "promedical.lt.cdn.hstgr.net",
+          "ttl": 1,
+          "proxied": true
+        }
+      },
+      {
+        "before": {
+          "id": "69f030c16553b3e615a6139624e48daa",
+          "type": "CNAME",
+          "name": "www.promedical.lt",
+          "content": "www.promedical.lt.cdn.hstgr.net",
+          "ttl": 300,
+          "proxied": false
+        },
+        "after": {
+          "id": "69f030c16553b3e615a6139624e48daa",
+          "type": "CNAME",
+          "name": "www.promedical.lt",
+          "content": "www.promedical.lt.cdn.hstgr.net",
+          "ttl": 1,
+          "proxied": true
+        }
+      }
+    ],
+    "unchangedOtherRecords": 10,
+    "routes": [
+      {
+        "id": "672c5c30b46349be92b1b2404b7a492a",
+        "pattern": "promedical.lt/*",
+        "script": "promedical",
+        "request_limit_fail_open": false
+      },
+      {
+        "id": "63bf784bc56741f7b4f6287f03ad718e",
+        "pattern": "www.promedical.lt/*",
+        "script": "promedical",
+        "request_limit_fail_open": false
+      }
+    ]
+  },
+  "limitations": [
+    "Actual browser synthetic valid form stored one new D1 row; SMTP delivery failed and has not been counted as delivered.",
+    "Rejected-form D1 absence must be checked separately.",
+    "Workers Free exceededCpu failures in full catalogue audit remain unresolved.",
+    "Google and AI indexing/citation are not established by these HTTP observations."
+  ]
+}

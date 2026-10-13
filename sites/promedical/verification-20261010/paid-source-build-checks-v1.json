@@ -1,0 +1,17 @@
+{
+  "recordedAt":"2026-10-10T07:34:34Z",
+  "sourceVersion":"fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "scope":["lib/niche-mail.ts","app/niche/[siteId]/lead/route.ts","tests/niche-mail.test.mjs"],
+  "checks":[
+    {"command":"Focused native mail dispatcher and SMTP protocol tests","result":"PASS","passed":5,"notes":"One native attempt, MIME/header validation, Reply-To and unique ID, no cross-provider retry; disabled local mail and unchanged unbound SMTP path."},
+    {"command":"npm run test:core","result":"PASS","passed":57},
+    {"command":"TypeScript noEmit and focused ESLint","result":"PASS"},
+    {"command":"Compile packages and normal framework build through paired freshness wrapper","result":"PASS","notes":"Private build log retained; no QA clock in normal output. Clean production copy used after initial dry-run detected unused local clock module."},
+    {"command":"Actual wrangler types and clean versions upload dry run","result":"PASS","notes":"Installed CLI4.92.0 generated native D1/SendEmail/ASSETS types. Sender/destination restrictions and1000ms cap matched config. No QA module in126module production package."},
+    {"command":"All10canonical-Host SEO smoke cases","result":"PASS","evidence":"all-site-seo-paid-v1.json"},
+    {"command":"Canonical full future rendered inspection","result":"PASS","evidence":"future-completion-paid-v1.json","notes":"1910pages/57guides/3777assets/5694GET/zero issues; render-only is not all-stage acceptance."},
+    {"command":"Exact3staged public blobs repository safety and in-memory private SMTP value scan","result":"PASS","notes":"11400bytes, zero findings and zero exact matches. Credentials remain ignored and outside Git."}
+  ],
+  "productionEvidence":"production-paid-native-version-v1.json; production-completion-paid-native-v1.json; production-native-mail-v1.json",
+  "limitations":["Native unit boundary stubs do not prove actual provider delivery; separate real production tests record it.","Local source/build success does not supersede current future-publication/operational acceptance gaps."]
+}

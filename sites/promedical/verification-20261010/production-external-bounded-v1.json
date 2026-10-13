@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-10T07:47:03.701Z",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "packageExternalTargets": 1873,
+  "domains": [
+    "www.klaro.cz",
+    "vpt.lrv.lt",
+    "www.edpb.europa.eu",
+    "klausk.vpt.lt"
+  ],
+  "rows": [
+    {
+      "url": "https://www.klaro.cz/",
+      "status": 200,
+      "finalUrl": "https://www.klaro.cz/"
+    },
+    {
+      "url": "https://verslomatika.lt/",
+      "status": 200,
+      "finalUrl": "https://verslomatika.lt/"
+    },
+    {
+      "url": "https://www.klaro.cz/en",
+      "status": 200,
+      "finalUrl": "https://www.klaro.cz/en"
+    },
+    {
+      "url": "https://www.klaro.cz/en/navody-pdf-2186",
+      "status": 200,
+      "finalUrl": "https://www.klaro.cz/en/navody-pdf-2186"
+    }
+  ],
+  "scope": "Bounded current manufacturer/brand-attribution and two package supplier target probes. Full source crawl at catalogue import remains separate historical evidence. Not every external destination retested today.",
+  "limitations": [
+    "This is not a complete N4 launch acceptance. No third-party body copied or partner/ownership claim."
+  ]
+}

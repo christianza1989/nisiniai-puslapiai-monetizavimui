@@ -1,0 +1,38 @@
+{
+  "pageId": "fbecd4f2-ddef-4f28-b12a-97d2da359a68",
+  "bodyBlocks": 15,
+  "reviewedAt": "2026-10-09T16:13:35.786Z",
+  "inventory": [
+    {
+      "file": "components/niche/promedical-inquiry.tsx",
+      "sha256": "20f3894dbc0e11e556aa2025862bcbce87a9f252ae7baac2a71e26e82a5e9e36"
+    },
+    {
+      "file": "components/niche/interest-tracking.tsx",
+      "sha256": "b23cdfb3003620924e8a69c6982b8e330546ed396f5cdd89e323ff78fdd54a4a"
+    },
+    {
+      "file": "app/niche/[siteId]/lead/route.ts",
+      "sha256": "d6e0ad365126c0d3d19395d227f96b34e7a69fdbe2bc4e96d42c36057da3c5de"
+    },
+    {
+      "file": "app/niche/[siteId]/interest/route.ts",
+      "sha256": "04d2507681f80f19cefed81115c55697ca1c0e819a782629334e8942f651b78d"
+    },
+    {
+      "file": "lib/niche-mail.ts",
+      "sha256": "e4aebd51022cf34ff350cc97c677ea06418b4a5a88fdada28bebdd0bf4bd2c6c"
+    },
+    {
+      "file": "lib/niche-network.ts",
+      "sha256": "57b468e47e7aad18e023c2e7e37142348e9d28ee6dcce6e634beecb84537ce14"
+    }
+  ],
+  "changesSinceEarlierEvidence": [
+    "Current public notice names URL, persistence and per-item removal of shortlist",
+    "Notice includes durable request metadata and SMTP acceptance limitation",
+    "Client distinguishes duplicate SKU products by URL",
+    "Keyboard skip target now focusable"
+  ],
+  "scope": "Implementation-to-copy inspection; production retention/controller/processors/INBOX remain unverified. Earlier evidence preserved."
+}

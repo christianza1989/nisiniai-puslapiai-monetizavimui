@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-10T10:34:26.752Z",
+  "leadId": "4fec5322-e942-44c3-9ae8-b9164c774722",
+  "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-3",
+  "recipient": "info@promedical.lt",
+  "tlsVerified": true,
+  "authenticatedExpectedMailbox": true,
+  "method": "Read-only EXAMINE, exact own synthetic body-marker search and BODY.PEEK of selected headers for its unique UID only; no body or unrelated message fetched; no manual folder/flag change",
+  "folders": [
+    {
+      "mailbox": "INBOX",
+      "ownMarkerMatches": 0,
+      "headers": null
+    },
+    {
+      "mailbox": "INBOX.Junk",
+      "ownMarkerMatches": 1,
+      "headers": {
+        "providerMessageId": "<NwCgjLOz7396sbJO5o8QkhL2pCfELRah1ioy@promedical.lt>",
+        "spf": "pass",
+        "dkim": "pass",
+        "dmarc": "pass",
+        "approvedDkimFragmentPresent": true,
+        "spamFlag": "Yes"
+      }
+    }
+  ],
+  "automaticInbox": false
+}

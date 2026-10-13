@@ -1,0 +1,222 @@
+{
+  "observedAt": "2026-10-10T12:51:45.605Z",
+  "state": "GMAIL_BIDIRECTIONAL_INBOX_ALIAS_CREATED_NATIVE_WEBSITE_STILL_JUNK",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "recipient": "info@promedical.lt",
+  "sender": "uzklausos@promedical.lt",
+  "tests": [
+    {
+      "marker": "PROMEDICAL-QA-20261010-0722",
+      "leadId": "cc4aee75-7f5e-4cf5-b036-9689e5ace6cd",
+      "createdAtMs": 1791616907055,
+      "sourcePath": "/kontaktai",
+      "messageLength": 150,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791616909319
+      },
+      "cloudflareMessageId": "<33LCglfPk8fEA3O94GxNJaW3hz004cai9DBH@promedical.lt>",
+      "cloudflareDelivery": "Delivered",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "laterAction": "Only this own synthetic message marked Not spam through owner webmail UI. This manual action is not an automatic Inbox delivery proof."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-0729",
+      "leadId": "ff85af75-ca48-4f17-bf42-66003ebe639f",
+      "createdAtMs": 1791617305409,
+      "sourcePath": "/kontaktai",
+      "messageLength": 177,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791617306718
+      },
+      "cloudflareMessageId": "<U0RzljF8A0IRSS3NUTgEvL4YCok95dLvTwLk@promedical.lt>",
+      "cloudflareDelivery": "Delivered",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "laterAction": "None; preserved as independent evidence that single-message learning did not yet ensure automatic Inbox routing."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-0810-FILTER",
+      "leadId": "5c1eba0e-5908-43a8-886c-e4eee42f5e79",
+      "createdAtMs": 1791619827348,
+      "messageLength": 167,
+      "timestampMs": 1791619829055,
+      "receipt": "production-native-filter-inbox-v1.json",
+      "sourcePath": "/kontaktai",
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791619829055
+      },
+      "cloudflareMessageId": "<qcoqvnq3Xo05SkHnBX47BAvfAmAeqqugCxwj@promedical.lt>",
+      "recipientReceipt": "Verified in receiving mailbox",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "approvedDkimFragmentPresent": true,
+      "laterAction": "None; not moved manually. New automatic Inbox check failed after filter enabled and persisted conditions verified."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-FILTER-RECHECK",
+      "leadId": "a8e118f6-c48c-4504-b8c1-0b63258ebebd",
+      "createdAtMs": 1791620086505,
+      "messageLength": 170,
+      "timestampMs": 1791620087749,
+      "receipt": "production-native-filter-recheck-v1.json",
+      "sourcePath": "/kontaktai",
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791620087749
+      },
+      "cloudflareMessageId": "<l11nrsl1VfFoJO3xxXraeRroNp0IWZeA9kjK@promedical.lt>",
+      "recipientReceipt": "Verified in receiving mailbox",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "approvedDkimFragmentPresent": true,
+      "laterAction": "None; not moved manually. New automatic Inbox check failed after filter enabled and persisted conditions verified."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-1",
+      "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+      "createdAtMs": 1791623875873,
+      "sourcePath": "/kontaktai",
+      "messageLength": 173,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "siteId": "promedical",
+        "leadId": "c3bcd836-ed29-43d5-bdb4-b31f3519cf1a",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791623877455
+      },
+      "cloudflareMessageId": "<nQVw5qwAaZz1S4L7u9JnQkW1iGacrXZWDGOe@promedical.lt>",
+      "recipientReceipt": "Verified in receiving mailbox",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "approvedDkimFragmentPresent": true,
+      "receipt": "production-native-support-learning-inbox-v1.json",
+      "laterAction": "After the recorded initial Junk check, only this exact own message was marked Not spam under the owner warm-up request; UI confirmed manual move to Inbox. This is not an automatic Inbox pass."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-2",
+      "leadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+      "createdAtMs": 1791624877071,
+      "sourcePath": "/kontaktai",
+      "messageLength": 176,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "siteId": "promedical",
+        "leadId": "768767b9-40c9-487d-b6af-a49e4e98cbfb",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791624878322
+      },
+      "cloudflareMessageId": "<0z8WMnuGTlrpCs0jbmo8wFg15WCBfN25CRHF@promedical.lt>",
+      "recipientReceipt": "Verified in receiving mailbox",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "approvedDkimFragmentPresent": true,
+      "receipt": "production-native-warmup-inbox-v1.json",
+      "laterAction": "None; new independent test after natural Reply and own Not spam training still Junk. No manual move or flag change."
+    },
+    {
+      "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-3",
+      "leadId": "4fec5322-e942-44c3-9ae8-b9164c774722",
+      "createdAtMs": 1791628451518,
+      "sourcePath": "/kontaktai",
+      "messageLength": 185,
+      "d1Status": "notified",
+      "nativeLog": {
+        "event": "niche_lead_notified",
+        "transport": "cloudflare_email",
+        "timestampMs": 1791628452762
+      },
+      "cloudflareMessageId": "<NwCgjLOz7396sbJO5o8QkhL2pCfELRah1ioy@promedical.lt>",
+      "initialFolder": "INBOX.Junk",
+      "spf": "pass",
+      "dkim": "pass",
+      "dmarc": "pass",
+      "spamFlag": "Yes",
+      "approvedDkimFragmentPresent": true,
+      "laterAction": "None; new independent message remains Junk after owner Gmail reply and approved alias creation."
+    }
+  ],
+  "receiptFiles": [
+    "production-native-inbox-v1.json",
+    "production-native-inbox-v2.json",
+    "production-native-inbox-v3.json",
+    "production-native-inbox-v4.json",
+    "production-native-inbox-v5.json",
+    "production-native-second-inbox-v1.json",
+    "production-native-second-inbox-v2.json",
+    "production-native-filter-inbox-v1.json",
+    "production-native-filter-recheck-v1.json",
+    "production-native-support-learning-inbox-v1.json",
+    "production-native-warmup-inbox-v1.json",
+    "verification-20261010/production-native-after-alias-inbox-v1.json"
+  ],
+  "formProof": "screenshots/final-batch-20261010/production-native-inquiry-success.png",
+  "privacy": "Only exact own markers and Message-IDs queried. Read-only EXAMINE/targeted headers; credentials and unrelated mail bodies never copied into evidence. No historical D1 row/message removed.",
+  "limitations": [
+    "Cloudflare rewrites the Message-ID; original own-ID probes returned no match and are retained.",
+    "Native acceptance, recipient server delivery, mailbox Junk receipt and automatic Inbox classification are distinct gates.",
+    "Production recovery/reconciliation/rate/backup evidence remains separate.",
+    "All three approved UI conditions persisted; the final received DKIM fragment is present, but it is not established when Hostinger evaluates filters or how spam classification interacts with them. No speculative cause asserted.",
+    "No rule loosening or spam disablement. Owner-authorized technical support request sent through signed-in Hostinger support chat; outcome is recorded separately. Automatic Inbox remains unproved."
+  ],
+  "filter": {
+    "name": "Promedical svetainės užklausos",
+    "scope": "Match all rules",
+    "fromEquals": "uzklausos@promedical.lt",
+    "subjectContains": "[promedical.lt] Poreikio užklausa",
+    "authenticationResultsContains": "dkim=pass header.d=promedical.lt",
+    "action": "Move to Inbox",
+    "enabled": true,
+    "ownerActionTimeApprovalPending": false,
+    "ownerApproved": true,
+    "savedAndReopened": true,
+    "uiFilterPath": "/0/settings/filters/0",
+    "otherMailRulesChanged": false,
+    "automaticInboxProved": false
+  },
+  "supportDraft": "MAIL_FILTER_SUPPORT.md",
+  "supportSent": true,
+  "diagnosticAttempts": [
+    "First telemetry sanitizer expected an array at result.events and returned a type error; corrected result.events.events parser read only the exact own UUID events successfully.",
+    "Cloudflare own Message-ID fetch returned raw MIME text, not a delivery-status object; no Delivered status claimed from that API.",
+    "First read-only helper produced a saved negative receipt and process exit1; actual folder evidence is Junk, not an unavailable mailbox or positiveInbox."
+  ],
+  "supportReceipt": "verification-20261010/production-hostinger-technical-case-v12.json",
+  "supportOutcome": "The exact owner-approved filter image and complete rule values were sent in the existing Hostinger case at 15:44 Vilnius. At 15:49 specialist Mantas reports that the conversation was transferred to him and technical request #23926736 was passed to a colleague for deeper investigation. The actual vendor message and case number are visibly verified. Progress will be provided in this chat and, according to the vendor, copied to email when offline. Our acknowledgement at 15:50 asks to confirm the colleague has the image, full values and previously approved qcoq headers, and requests a first-response estimate and supported correction. No estimate, concrete fix or separate vendor confirmation of attachment review is yet received. All seven native website tests retain initial Junk receipts; ordinary mailbox Gmail replies and the saved alias remain separate positives. Automatic website Inbox is not repaired; filter, allow lists, protections, DNS, binding, source and billing unchanged.",
+  "supportHumanTicket": {
+    "confirmedTicketId": "23926736",
+    "reviewedBy": [
+      "Ian",
+      "Airida",
+      "Fausta",
+      "Mantas"
+    ],
+    "status": "REGISTERED_TECHNICAL_CASE_23926736_PENDING_NATIVE_INBOX_FIX"
+  }
+}

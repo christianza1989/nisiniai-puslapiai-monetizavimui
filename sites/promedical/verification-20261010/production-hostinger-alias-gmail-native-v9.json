@@ -1,0 +1,132 @@
+{
+  "observedAt": "2026-10-10T10:38:38.284Z",
+  "state": "GMAIL_BIDIRECTIONAL_INBOX_ALIAS_CREATED_NATIVE_WEBSITE_STILL_JUNK",
+  "previousReceipt": "production-hostinger-gmail-test-v8.json",
+  "mailbox": "info@promedical.lt",
+  "websiteSender": "uzklausos@promedical.lt",
+  "gmail": {
+    "recipient": "OWNER_PROVIDED_PRIVATE_ADDRESS_OMITTED",
+    "specificOwnerAuthorization": true,
+    "firstMessageMarker": "PROMEDICAL-GMAIL-20261010-1",
+    "firstMessageSentAtVilnius": "2026-10-10 13:27",
+    "ownerReportsInitialGmailInbox": true,
+    "gmailMailboxNotInspectedByAgent": true,
+    "genuineOwnerReplyReceived": true,
+    "genuineReplyInitialFolder": "INBOX",
+    "genuineReplyReceivedAtVilnius": "2026-10-10 13:30",
+    "replyNeverMovedByAgent": true,
+    "acknowledgementMarker": "PROMEDICAL-GMAIL-20261010-ACK-1",
+    "acknowledgementSentAtVilnius": "2026-10-10 13:33",
+    "acknowledgementActualThreadSenderRecipientAndBodyVerified": true,
+    "authorizedOutboundCount": 2,
+    "acknowledgementGmailArrivalNotSeparatelyVerified": true,
+    "privateThreadProof": "content-studio/tmp/promedical-gmail-genuine-thread-20261010.png"
+  },
+  "alias": {
+    "address": "uzklausos@promedical.lt",
+    "destination": "info@promedical.lt",
+    "specificOwnerApprovalReceived": true,
+    "createSubmittedOnce": true,
+    "savedAliasRowReadBack": true,
+    "usage": "1/5",
+    "created": true,
+    "privateProof": "content-studio/tmp/promedical-uzklausos-alias-created-visible-20261010.png",
+    "newMailboxOrPlanPurchased": false,
+    "newCredentialsCreated": false,
+    "googleWorkspaceMailChanged": false,
+    "notProvedSpamFix": true,
+    "proofCorrection": "The first cropped image was obscured by the chat overlay after viewport change; the verified visible alias-page image supersedes it. Incorrect UI proof remains private and was not used as configuration authority."
+  },
+  "nativeTest": {
+    "marker": "PROMEDICAL-QA-20261010-SUPPORT-FIX-3",
+    "leadId": "4fec5322-e942-44c3-9ae8-b9164c774722",
+    "formSubmittedOnceAt": "2026-10-10T10:34:13.126Z",
+    "d1CreatedAtMs": 1791628451518,
+    "d1SourcePath": "/kontaktai",
+    "d1Status": "notified",
+    "messageLength": 185,
+    "exactOwnD1BaselineMatches": 0,
+    "exactOwnD1AfterMatches": 1,
+    "d1ReadChecksRowsWritten": 0,
+    "nativeLog": {
+      "event": "niche_lead_notified",
+      "siteId": "promedical",
+      "leadId": "4fec5322-e942-44c3-9ae8-b9164c774722",
+      "transport": "cloudflare_email",
+      "timestampMs": 1791628452762
+    },
+    "initialTelemetryQueryMatchedNoEvent": true,
+    "laterExactOwnTelemetryQueryFoundNotification": true,
+    "receiverReceipt": "production-native-after-alias-inbox-v1.json",
+    "providerMessageId": "<NwCgjLOz7396sbJO5o8QkhL2pCfELRah1ioy@promedical.lt>",
+    "initialFolder": "INBOX.Junk",
+    "spf": "pass",
+    "dkim": "pass",
+    "dmarc": "pass",
+    "approvedDkimFragmentPresent": true,
+    "spamFlag": "Yes",
+    "manuallyMoved": false,
+    "automaticInbox": false,
+    "privateFormProof": "content-studio/tmp/promedical-native-after-alias-form-success-20261010.png"
+  },
+  "support": {
+    "specialist": "Fausta",
+    "incomingAllowExclusiveConfirmed": true,
+    "allowListLeftEmpty": true,
+    "latestOwnResultsReportedAtVilnius": "2026-10-10 13:35",
+    "replyAtVilnius": "2026-10-10 13:35",
+    "reply": "Requests a screenshot showing the three exact saved filter conditions and folder action for visual review.",
+    "formalCaseId": null,
+    "particularReputationCauseConfirmed": false,
+    "authenticationResultsAtFilterTimeConfirmed": false,
+    "inboxActionPrecedenceConfirmed": false,
+    "filterReadBack": {
+      "name": "Promedical svetainės užklausos",
+      "scope": "Match all rules",
+      "enabled": true,
+      "conditions": [
+        {
+          "field": "From",
+          "operator": "is equal",
+          "value": "uzklausos@promedical.lt"
+        },
+        {
+          "field": "Subject",
+          "operator": "contains",
+          "value": "[promedical.lt] Poreikio užklausa"
+        },
+        {
+          "field": "Authentication-Results",
+          "operator": "contains",
+          "value": "dkim=pass header.d=promedical.lt"
+        }
+      ],
+      "action": "Move message to Inbox",
+      "readOnly": true,
+      "noSaveClicked": true
+    },
+    "preparedScreenshot": "content-studio/tmp/promedical-exact-filter-for-hostinger-20261010.png",
+    "screenshotContainsOnlySavedRuleSettings": true,
+    "screenshotLongFieldsVisuallyEllipsized": true,
+    "plan": "Provide the screenshot plus the complete existing values in text after specific upload approval.",
+    "specificScreenshotUploadApprovalPending": true,
+    "screenshotUploaded": false,
+    "newFullHeaderPacketSent": false,
+    "privateGmailAddressSentToVendor": false
+  },
+  "nativeMail": {
+    "ownTestCount": 7,
+    "initialJunkCount": 7,
+    "manualOwnTrainingTests": [
+      1,
+      5
+    ],
+    "automaticWebsiteInboxProved": false
+  },
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "filterAllowListsSpamProtectionsDnsBindingsOrBillingChanged": false,
+  "summary": "The owner reports the13:27 Gmail test arrived directly in Inbox and sent a genuine reply; that reply is visibly in info@promedical.lt Inbox at13:30 without a manual folder move. A natural acknowledgement from info@ was sent at13:33, completing two authorized outbound Gmail messages. With specific owner approval, uzklausos@promedical.lt was created as an alias of the existing Hostinger info@promedical.lt mailbox and the saved alias row shows1/5 usage. A seventh NEW native website form after the reply and alias creation was saved/notified but again initially reached Junk with SPF/DKIM/DMARC pass; it remains unmoved. Incoming Allow stays empty because the vendor confirms its exclusive semantics. Hostinger at13:35 requested a visual screenshot of the unchanged three-condition filter; a private copy is prepared pending specific owner file-upload approval. No confirmed spam-score cause, automatic website Inbox fix or technical case ID.",
+  "remaining": "Await specific screenshot-upload approval and vendor visual/technical review. No extra repeated native tests without a meaningful reason; genuine gradual sending takes time and is not an instant repair. Whole-site recovery/privacy/rate/backup acceptance remains separate.",
+  "privacy": "Personal recipient, own reply body, raw selected headers and UI images remain private. Only sanitized evidence and public business mail addresses are included here."
+}

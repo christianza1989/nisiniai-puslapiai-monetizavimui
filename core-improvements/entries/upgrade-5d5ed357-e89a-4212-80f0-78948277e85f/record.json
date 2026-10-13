@@ -1,0 +1,18 @@
+{
+  "siteId": "promedical",
+  "summary": "Controlled-clock article UI labelled a scheduled publication date as a completed editorial review. Shared ArticleMeta now shows publication date and an update only when modified differs; it no longer claims that future editorial review occurred. Publication predicates, dates, package schema and historic approvals are unchanged.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/FINAL_BATCH_ACCEPTANCE.md",
+    "components/niche/article-meta.tsx"
+  ],
+  "paths": [
+    "components/niche/article-meta.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/19",
+  "rollback": "Scoped revert of the visible ArticleMeta label/conditional; do not alter native date fields, published snapshots or schema.",
+  "id": "upgrade-5d5ed357-e89a-4212-80f0-78948277e85f",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
+  "createdAt": "2026-10-09T23:29:14.917Z"
+}

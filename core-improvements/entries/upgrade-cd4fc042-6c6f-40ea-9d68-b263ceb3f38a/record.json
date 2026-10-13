@@ -1,0 +1,20 @@
+{
+  "siteId": "promedical",
+  "category": "code",
+  "summary": "Large V1 catalogue repeats full publication projection within one SSR request and performs nested category identity scans; Free Worker actual exceededCpu503. Paths belong to the public companion repo.",
+  "evidence": [
+    "sites/promedical/verification-20261010/production-runtime-observations.json",
+    "sites/promedical/verification-20261010/runtime-projection-before.json"
+  ],
+  "paths": [
+    "lib/niche-sites.ts",
+    "lib/niche-seo.ts",
+    "components/niche/promedical-site.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/19",
+  "rollback": "Scoped revert only of request-local projection reuse and equivalent category Set lookup; preserve approval hashes/calendar/package and earlier production failure evidence.",
+  "id": "upgrade-cd4fc042-6c6f-40ea-9d68-b263ceb3f38a",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "e0aa27ea7a957be5d602b35a38c0462b4ffc58d8",
+  "createdAt": "2026-10-10T06:04:14.477Z"
+}

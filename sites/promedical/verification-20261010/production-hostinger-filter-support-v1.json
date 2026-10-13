@@ -1,0 +1,46 @@
+{
+  "state": "SUPPORT_SENT_AUTOMATIC_INBOX_UNRESOLVED",
+  "observedAt": "2026-10-10T08:26:40.000Z",
+  "sent": true,
+  "ownerAuthorized": true,
+  "channel": "Signed-in Hostinger hPanel support/Agent chat, then visible human review action",
+  "recipient": "Hostinger Mail technical support",
+  "mailbox": "info@promedical.lt",
+  "requestFile": "MAIL_FILTER_SUPPORT.md",
+  "messageIds": [
+    "<qcoqvnq3Xo05SkHnBX47BAvfAmAeqqugCxwj@promedical.lt>",
+    "<l11nrsl1VfFoJO3xxXraeRroNp0IWZeA9kjK@promedical.lt>"
+  ],
+  "humanTicket": {
+    "confirmedTicketId": null,
+    "reviewAccepted": true,
+    "reviewer": "Ian",
+    "status": "HUMAN_REVIEW_IN_PROGRESS",
+    "technicalNoteSubmitted": true,
+    "visibleSignal": "Ian peržiūri tavo užklausą / Tavo užklausa peržiūrima"
+  },
+  "vendorObservations": [
+    "Hostinger Agent reports successful receipt and spam classification at 08:10:28–08:10:29 UTC and 08:14:47–08:14:48 UTC, with corresponding new folder events in INBOX.Junk.",
+    "Agent clarifies that the records available to it do not include Message-IDs, filter match results, evaluation-time headers or pipeline execution order. Time correlation is vendor-reported; exact own-message mailbox identity is independently recorded in our targeted IMAP receipts.",
+    "Agent cannot establish whether the three-condition filter matched or why the Inbox action did not prevail.",
+    "Agent states it made no account, DNS, filter, spam or allow-list changes.",
+    "Initial Agent message could not create a ticket through available ticket functions. After the next request, the visible Wait for human review action accepted the case and named reviewer Ian. No formal ticket ID is shown."
+  ],
+  "outcome": "Hostinger support confirms spam/Junk outcomes at both test times but cannot establish filter match or execution precedence from its available diagnostics. The visible human-review action accepted the technical case; Ian is reviewing it. No formal ticket ID or resolution is shown yet.",
+  "nextStep": "Await the human review in the preserved signed-in support tab. Apply only a concretely supported change within the authorized scope; broader security changes need a specific approval. Retest a new own marked form only after a relevant change or new diagnostic reason.",
+  "automaticInboxProved": false,
+  "filterChanged": false,
+  "broadSpamProtectionChanged": false,
+  "dnsChanged": false,
+  "appSourceChanged": false,
+  "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+  "privateScreenshot": "content-studio/data/promedical-hostinger-human-review-20261010.png",
+  "privacy": "Only approved public business addresses, exact own test Message-IDs, filter conditions and authentication outcomes sent. No passwords, tokens, unrelated mailbox bodies or customer data. Screenshots/raw chat stay private and ignored.",
+  "source": "https://www.hostinger.com/support/1583780-how-to-contact-hostinger-support/",
+  "sourcePurpose": "Official guidance verifies the Agent/human-specialist support channel; it is not evidence of actual Inbox recovery.",
+  "limitations": [
+    "Submitting a technical case is not proof of a fix or automatic Inbox receipt.",
+    "The receiving header containing DKIM pass does not establish whether that header was available during filter evaluation.",
+    "No formal ticket identifier or human conclusion yet; only actual accepted human review is claimed."
+  ]
+}

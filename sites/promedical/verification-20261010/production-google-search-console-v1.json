@@ -1,0 +1,57 @@
+{
+  "observedAt": "2026-10-10T07:43:35.554Z",
+  "domain": "promedical.lt",
+  "property": "sc-domain:promedical.lt",
+  "method": "Signed-in owner Chrome UI and narrow DNS readback",
+  "ownershipVerified": true,
+  "verificationMethod": "Domain name provider TXT",
+  "dns": {
+    "beforeRecords": 17,
+    "afterRecords": 18,
+    "allPriorRecordsUnchanged": true,
+    "recordId": "78d1c5e5bfb53c6413233d347bc8c4dd"
+  },
+  "sitemap": {
+    "url": "https://promedical.lt/sitemap.xml",
+    "submittedAt": "2026-10-10",
+    "status": "Sitemap processed successfully",
+    "lastRead": "2026-10-10",
+    "discoveredPages": 1853,
+    "discoveredVideos": 0,
+    "initialAttempt": "Submitted successfully, initially Couldn't fetch / 0 discovered; later real read succeeded without another submission.",
+    "listViewLimitation": "List view still showed the initial fetch failure; the actual detail page was checked again and says Sitemap processed successfully / 1853 discovered / last read October10. No duplicate submission."
+  },
+  "homepage": {
+    "url": "https://promedical.lt/",
+    "indexResult": "Not indexed, historical noindex found on September16 before this deployment",
+    "liveTestDate": "2026-10-10T07:26Z",
+    "liveResult": "URL is available to Google; Page can be indexed; no enhancements",
+    "indexingRequested": true,
+    "requestResult": "URL added to priority crawl queue"
+  },
+  "proof": [
+    "screenshots/final-batch-20261010/google-indexing-requested.png",
+    "screenshots/final-batch-20261010/google-sitemap-processed.png",
+    "screenshots/final-batch-20261010/google-product-live-test.png"
+  ],
+  "accountIdentifierPublished": false,
+  "limitations": [
+    "Sitemap discovery is not a count of indexed pages.",
+    "Priority crawl request is not a guarantee of indexing or ranking.",
+    "Actual AI recommendations and citations remain unmeasured."
+  ],
+  "product": {
+    "url": "https://promedical.lt/produktai/zs1333",
+    "liveTestAt": "2026-10-10T07:34:46Z",
+    "liveResult": "URL is available to Google, but has issues; Page can be indexed",
+    "breadcrumbs": {
+      "validItems": 1
+    },
+    "productSnippet": {
+      "invalidItems": 1,
+      "criticalIssue": "Either offers, review, or aggregateRating should be specified",
+      "decision": "Keep truthful Product metadata for the real supplier model. No confirmed public price or genuine review/rating exists; no fabricated Offer, zero price, stock or ratings added. Google product rich-result eligibility is not asserted."
+    },
+    "officialReference": "https://developers.google.com/search/docs/appearance/structured-data/product-snippet"
+  }
+}

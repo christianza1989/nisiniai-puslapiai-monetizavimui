@@ -16,8 +16,8 @@ Komanda grąžina primary `assetId`, visų variantų ID, tikrus matmenis ir bait
 
 ## Vykdoma politika
 
-- `responsive-webp-v1`: 360 / 640 / 800 / 1200 / 1600 px kandidatai, tik iki tikro originalo dydžio. Jei originalas mažesnis, paskutinis dydis yra jo tikras plotis; nedidinama ir nedubliuojama. Maksimalus viešo vaizdo kraštas 1600 px; proporcijos išlaikomos.
-- WebP quality 75, alphaQuality 100, effort 6. Skaidrus PNG išlaiko alpha; tai nėra PNG fono užliejimas. JPEG EXIF orientacija pritaikoma prieš resize.
+- `responsive-webp-v2`: 360 / 640 / 800 / 1200 / 1600 px kandidatai, tik iki tikro originalo dydžio. Jei originalas mažesnis, paskutinis dydis yra jo tikras plotis; nedidinama ir nedubliuojama. Maksimalus viešo vaizdo kraštas 1600 px; proporcijos išlaikomos.
+- WebP quality 75, alphaQuality 100, effort 4. Tai kompresoriaus darbo sąnaudų nustatymas, o ne raiškos mažinimas. 2026-10-09 dviejų tikrų 720px katalogo vaizdų matavime effort6 truko 6844/18549ms, effort4 183/361ms; failai padidėjo 1,94/3,96%. Senas v1 effort6 ir jo immutable failai neperspaudžiami; v2 taikoma naujiems importams. Skaidrus PNG išlaiko alpha; tai nėra PNG fono užliejimas. JPEG EXIF orientacija pritaikoma prieš resize. Matavimas nėra universalus greičio ar vizualinės kokybės pažadas.
 - Viešuose variantuose nelieka originalo EXIF/XMP/GPS. Originalas ir tikslus pateiktas prompt/provenance įrašas laikomi ignoruojamame `content-studio/data/media-originals/<siteId>/`, be viešo endpointo.
 - Iki 12 MB, 40 mln. dekoduotų pikselių ir 8192 px įėjimo krašto. Tikras formatas turi atitikti deklaruotą MIME. Sugadinti, neleistini ar animuoti failai atmetami. Tai nėra leidimas importuoti nepatikrintas teises ar pavojingus teiginius.
 - Kiekviena kopija turi naują immutable ID, tikrus matmenis, baitus ir SHA-256. `groupId` ir pilnas prompt yra tik studijos metaduomenys, ne viešos schemos pakeitimas.

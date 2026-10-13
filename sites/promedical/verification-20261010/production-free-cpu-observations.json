@@ -1,0 +1,128 @@
+{
+  "scope": "Twelve own qa=cpu-free-20261010 GETs only; sanitized native Cloudflare observations. Samples are not full availability acceptance.",
+  "status": 200,
+  "success": true,
+  "eventCount": 12,
+  "events": [
+    {
+      "at": 1791612887038,
+      "message": "GET https://promedical.lt/produktai/zs1333?qa=cpu-free-20261010-11",
+      "cpuMs": 24,
+      "wallMs": 25,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai/zs1333",
+      "status": 200
+    },
+    {
+      "at": 1791612886951,
+      "message": "GET https://promedical.lt/produktai?qa=cpu-free-20261010-10",
+      "cpuMs": 66,
+      "wallMs": 67,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai",
+      "status": 200
+    },
+    {
+      "at": 1791612886910,
+      "message": "GET https://promedical.lt/kategorijos/profi-maxi-vysoke?qa=cpu-free-20261010-9",
+      "cpuMs": 22,
+      "wallMs": 29,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/kategorijos/profi-maxi-vysoke",
+      "status": 200
+    },
+    {
+      "at": 1791612886867,
+      "message": "GET https://promedical.lt/produktai/zs1333?qa=cpu-free-20261010-8",
+      "cpuMs": 16,
+      "wallMs": 16,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai/zs1333",
+      "status": 200
+    },
+    {
+      "at": 1791612886816,
+      "message": "GET https://promedical.lt/produktai?qa=cpu-free-20261010-7",
+      "cpuMs": 30,
+      "wallMs": 35,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai",
+      "status": 200
+    },
+    {
+      "at": 1791612886764,
+      "message": "GET https://promedical.lt/kategorijos/profi-maxi-vysoke?qa=cpu-free-20261010-6",
+      "cpuMs": 29,
+      "wallMs": 29,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/kategorijos/profi-maxi-vysoke",
+      "status": 200
+    },
+    {
+      "at": 1791612886724,
+      "message": "GET https://promedical.lt/produktai/zs1333?qa=cpu-free-20261010-5",
+      "cpuMs": 21,
+      "wallMs": 27,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai/zs1333",
+      "status": 200
+    },
+    {
+      "at": 1791612886669,
+      "message": "GET https://promedical.lt/produktai?qa=cpu-free-20261010-4",
+      "cpuMs": 29,
+      "wallMs": 29,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai",
+      "status": 200
+    },
+    {
+      "at": 1791612886621,
+      "message": "GET https://promedical.lt/kategorijos/profi-maxi-vysoke?qa=cpu-free-20261010-3",
+      "cpuMs": 29,
+      "wallMs": 33,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/kategorijos/profi-maxi-vysoke",
+      "status": 200
+    },
+    {
+      "at": 1791612886577,
+      "message": "GET https://promedical.lt/produktai/zs1333?qa=cpu-free-20261010-2",
+      "cpuMs": 20,
+      "wallMs": 21,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai/zs1333",
+      "status": 200
+    },
+    {
+      "at": 1791612886521,
+      "message": "GET https://promedical.lt/produktai?qa=cpu-free-20261010-1",
+      "cpuMs": 30,
+      "wallMs": 35,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/produktai",
+      "status": 200
+    },
+    {
+      "at": 1791612886437,
+      "message": "GET https://promedical.lt/kategorijos/profi-maxi-vysoke?qa=cpu-free-20261010-0",
+      "cpuMs": 38,
+      "wallMs": 43,
+      "outcome": "ok",
+      "version": "15935a3c-6cd6-4ace-b1b4-da5cf4d6f59d",
+      "path": "/kategorijos/profi-maxi-vysoke",
+      "status": 200
+    }
+  ]
+}

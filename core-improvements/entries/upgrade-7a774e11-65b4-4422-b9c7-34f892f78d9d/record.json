@@ -1,0 +1,19 @@
+{
+  "siteId": "promedical",
+  "summary": "Draft prompt carries3.56MB of unrelated1910pages,3598assets and full network; relevant approved model body/specifications are absent. Bound draft context to the requested page's direct source/link graph and real editorial intents, with immutable approved source snapshots and explicit omitted counts.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/CORE_FEEDBACK.md"
+  ],
+  "paths": [
+    "content-studio/src/generator.mjs",
+    "content-studio/src/draft-context.mjs",
+    "content-studio/test/draft-context.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of draft-context integration; immutable approvals/release snapshots are not edited by this source change.",
+  "id": "upgrade-7a774e11-65b4-4422-b9c7-34f892f78d9d",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "0cd50bd65a7d3c43382c40a81f1a6d84968f8211",
+  "createdAt": "2026-10-09T20:53:29.951Z"
+}

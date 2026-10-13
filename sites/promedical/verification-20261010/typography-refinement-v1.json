@@ -1,0 +1,1190 @@
+{
+  "version": 1,
+  "recordedAt": "2026-10-10T13:50:59.489Z",
+  "siteId": "promedical",
+  "state": "TYPOGRAPHY_REFINEMENT_DEPLOYED",
+  "sourceVersion": "523dcc607cf417f2c47ac2309380d72844bfddd5",
+  "previousSourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+  "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+  "previousSourceManifest": {
+    "packageSha256": "cc7f7ab02d304b8b3a4b269ebdcfb6f0eacdccc1b229738dc6c690e811aff259",
+    "sourceVersion": "fa176690be28cbe502137462e0ff5a35efcc4a47",
+    "coreCommit": "9bb808e7881d4001e33d878e935120ce16d624db",
+    "files": [
+      {
+        "file": "components/niche/promedical-site.tsx",
+        "sha256": "2abce4942057e2040669be35653cff226ea1b6cba55213e8e717434069abf491"
+      },
+      {
+        "file": "components/niche/promedical-site.module.css",
+        "sha256": "50594e42d077928689dc775346f1931a82e98c16ac14bcd8298562abdcf34ede"
+      },
+      {
+        "file": "components/niche/promedical-inquiry.tsx",
+        "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+      },
+      {
+        "file": "components/niche/article-meta.tsx",
+        "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
+      },
+      {
+        "file": "app/layout.tsx",
+        "sha256": "da8209d06baccb14229569ff5f14c2e87ddbebc0b4b6b400847116df6b1eebfa"
+      },
+      {
+        "file": "app/niche/[siteId]/brand-icon/route.ts",
+        "sha256": "b47299f08dcc420905dab1dec06a6bb2b7c44b1ca9d6dc0cd954babe0c62580e"
+      },
+      {
+        "file": "config/niche-network.json",
+        "sha256": "e017b9873f9f7a5e3394135e1ec1f89f0ae6628d8af4f186ebfd3a0c9b127c56"
+      },
+      {
+        "file": "lib/generated/content-packages.json",
+        "sha256": "7ffa5f09849dc084c9148d3000cc30d7843ecd577dc5e70738c2a8a62974e3f1"
+      },
+      {
+        "file": "lib/smtp-protocol.mjs",
+        "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+      },
+      {
+        "file": "lib/niche-sites.ts",
+        "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "42212969fb49d6130fc750d8902cf986c2cf00541ecb860ea2b2337e60b99a53"
+      },
+      {
+        "file": "tests/niche-render-cache.test.mjs",
+        "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
+      },
+      {
+        "file": "lib/niche-mail.ts",
+        "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
+      },
+      {
+        "file": "app/niche/[siteId]/lead/route.ts",
+        "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
+      },
+      {
+        "file": "tests/niche-mail.test.mjs",
+        "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
+      }
+    ],
+    "checkedAt": "2026-10-10T07:43:35.554Z",
+    "productionVersion": "03f65927-d62f-45c1-8ccd-f125c5f2c8bc",
+    "notes": "Current committed public source and deployed normal production bytes. Core commit is the source baseline before this evidence-only update, not an impossible self-referential future commit. Previous acceptance files are exact archived copies under history/acceptance-before-paid-20261010. No QA clock in production."
+  },
+  "files": [
+    {
+      "file": "components/niche/promedical-site.module.css",
+      "sha256": "58558bcad88366018a125ea0d68505af4bb92a914e921d431d5c787ef11ffa62"
+    },
+    {
+      "file": "components/niche/promedical-site.tsx",
+      "sha256": "e1172ce19ff571b825b65ef03d27108aea351e6bb00a62e85eced48c29d3367b"
+    }
+  ],
+  "production": {
+    "worker": "promedical",
+    "versionId": "780b04d1-8ac5-4b41-ab73-e5a38f858dc2",
+    "deploymentId": "e9504d3c-f252-4812-9a60-e9ee0e41f161",
+    "percentage": 100,
+    "cpuMs": 1000,
+    "bindingsPreserved": [
+      "ASSETS",
+      "isolated DB",
+      "sender/recipient restricted LEAD_EMAIL",
+      "existing secret names"
+    ],
+    "qaClockDeployed": false
+  },
+  "scope": "Promedical CSS roles, responsive product/category grid and product image sizes only; content/package/publication/SEO schema/inquiry behavior unchanged",
+  "assessment": {
+    "author": "Same agent sequential visual and source assessment; no independent reviewer",
+    "primaryFont": "Self-hosted Figtree 400/500/600/700; Arial fallback; existing swap and latin-ext assets unchanged",
+    "beforeMobile": {
+      "skuPx": 10,
+      "productDescriptionPx": 12,
+      "productLinkPx": 11,
+      "footerPx": 10
+    },
+    "after": {
+      "bodyPx": 16,
+      "proseDesktopPx": 17,
+      "proseMobilePx": 16,
+      "cardDescriptionPx": 16,
+      "skuPx": 13,
+      "metadataPx": 14,
+      "cardHeadingDesktopPx": 18,
+      "cardHeadingMobilePx": 17,
+      "bodyLine": 1.6,
+      "proseLine": 1.7,
+      "proseMaxWidth": "72ch",
+      "headingWeight": 600,
+      "tracking": "-.025em hero / -.02em headings / -.01em cards",
+      "exceptions": "Compact brand subtitle11–12px and numeric badge12px; brand lettering is intentionally distinct"
+    },
+    "desktopTabletRepair": "768px screenshot showed four narrow homepage product columns; final 721–1050px product/category columns are two, each345px at measured768px; 520px and below product grid is one column",
+    "contrast": [
+      {
+        "foreground": "#153c32",
+        "background": "#ffffff",
+        "ratio": 12.18
+      },
+      {
+        "foreground": "#53695f",
+        "background": "#f4f8f6",
+        "ratio": 5.52
+      },
+      {
+        "foreground": "#087a4d",
+        "background": "#ffffff",
+        "ratio": 5.38
+      },
+      {
+        "foreground": "#087a4d",
+        "background": "#e6f3ed",
+        "ratio": 4.72
+      },
+      {
+        "foreground": "#c2d8cf",
+        "background": "#153c32",
+        "ratio": 8.13
+      },
+      {
+        "foreground": "#3a5c4d",
+        "background": "#e6f3ed",
+        "ratio": 6.53
+      }
+    ]
+  },
+  "browser": {
+    "actualWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "representativeCases": [
+      {
+        "url": "https://promedical.lt/",
+        "width": 1440,
+        "documentWidth": 1425,
+        "h1Px": "51.84px"
+      },
+      {
+        "url": "https://promedical.lt/produktai/zv1253n-pz",
+        "width": 1440,
+        "documentWidth": 1425,
+        "h1Px": "32px"
+      },
+      {
+        "url": "https://promedical.lt/produktai",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "30px"
+      },
+      {
+        "url": "private-future-render/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+        "width": 1440,
+        "documentWidth": 1425,
+        "h1Px": "40px"
+      },
+      {
+        "url": "private-future-render/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/kontaktai",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "34px"
+      },
+      {
+        "url": "https://promedical.lt/kategorijos/infuflex-page",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/produktai/xmk50-60m",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "28px"
+      },
+      {
+        "url": "https://promedical.lt/privatumas",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/gidai",
+        "width": 390,
+        "documentWidth": 375,
+        "h1Px": "30px"
+      },
+      {
+        "url": "private-future-render/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "30px"
+      },
+      {
+        "url": "private-future-render/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "34px"
+      },
+      {
+        "url": "https://promedical.lt/produktai",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/kategorijos/infuflex-page",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/produktai/xmk50-60m",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "28px"
+      },
+      {
+        "url": "https://promedical.lt/kontaktai",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/privatumas",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/gidai",
+        "width": 320,
+        "documentWidth": 305,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "34px"
+      },
+      {
+        "url": "https://promedical.lt/produktai",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/kategorijos/infuflex-page",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/produktai/xmk50-60m",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "28px"
+      },
+      {
+        "url": "https://promedical.lt/kontaktai",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/privatumas",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "30px"
+      },
+      {
+        "url": "https://promedical.lt/gidai",
+        "width": 768,
+        "documentWidth": 753,
+        "h1Px": "30px"
+      }
+    ],
+    "documentOverflow": 0,
+    "guideChecks": [
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininio-vezimelio-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "ISO modulių sistema: kaip suderinti laikymą ir transportavimą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/iso-moduliu-sistema",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip parengti įrangos pirkimo užklausą gydymo įstaigai",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/irangos-pirkimo-uzklausa",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Bazinis vežimėlis ir priedai: kaip patikrinti komplektaciją",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/bazinio-vezimelio-komplektacija",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip pasirinkti Mayo instrumentų staliuką",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/mayo-staliuko-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip rasti Klaro atsarginę dalį pagal įrangos kodą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/klaro-atsargines-dalies-paieska",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininės spintos pasirinkimas: talpa, moduliai ir prieiga",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinines-spintos-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip aprašyti nerūdijančio plieno stalo poreikį",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/nerudijancio-plieno-stalo-poreikis",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip pasirinkti skalbinių ir atliekų vežimėlio komplektaciją",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/skalbiniu-ir-atlieku-vezimelio-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kaip patikrinti medicininės įrangos valymo dokumentus",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinines-irangos-valymo-dokumentai",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Įrangos komplekto priėmimas: ką sutikrinti su užsakymu",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/irangos-komplekto-priemimo-patikra",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicinos įstaigos baldų planavimas: patalpos, darbo vietos ir maršrutai",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinos-istaigos-baldu-planavimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Stovai ir laikikliai medicinos įstaigai: paskirtis, vieta ir suderinamumas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiai-stovai-ir-laikikliai",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicinos priemonių laikymo ir transportavimo planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Sterilizavimo skyriaus baldai ir transportavimas: įrangos poreikio planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/sterilizavimo-skyriaus-baldu-ir-transportavimo-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininių baldų priežiūros planas pagal gamintojo dokumentus",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiu-baldu-prieziuros-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Vaistų vežimėlio komplektacija pagal priemonių paskirstymo darbą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/vaistu-vezimelio-komplektacija",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Tvarstymo vežimėlis: darbo paviršiaus, laikymo vietų ir priedų planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/tvarstymo-vezimelio-komplektacija",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininio vežimėlio matmenys: durų, posūkių ir kabineto patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininio-vezimelio-matmenu-patikra",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininio vežimėlio ratukai ir stabdžiai pagal grindis bei maršrutą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininio-vezimelio-ratukai-ir-stabdziai",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/iso-moduliu-matmenu-patikra",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "ISO krepšio gylis ir talpa: kaip sutalpinti priemonių rinkinį",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/iso-krepsio-gylis-ir-talpa",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininės spintos vidus: lentynų, stalčių ir modulių planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinines-spintos-lentynu-ir-stalciu-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Infuzijų stovo apkrova: bendra riba, kabliukai ir priedai",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/infuziju-stovo-apkrovos-patikra",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininės įrangos pasiūlymų palyginimas: vienodi modeliai ir komplektacijos",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinines-irangos-pasiulymu-palyginimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininių baldų techninė specifikacija: poreikio ir patikrinamų parametrų ruošinys",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiu-baldu-technines-specifikacijos-ruosinys",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Anesteziologinis vežimėlis: kaip suderinti aukštį, stalčius ir priedus",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/anesteziologinio-vezimelio-komplektacija",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Reanimacinio vežimėlio komplektacija: prieinamumas ir priedų suderinamumas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/reanimacinio-vezimelio-komplektacija",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Vizitų vežimėlis dokumentams ir darbo priemonėms: kaip pasirinkti",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/vizitu-vezimelio-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininis vežimėlis kompiuteriui: fizinio suderinamumo patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininis-vezimelis-kompiuteriui",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "ISO krepšių pertvaros: skyrių planas ir detalių suderinamumas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/iso-krepsiu-pertvaru-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "ISO modulių ženklinimas: priemonių vietų ir papildymo žemėlapis",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/iso-moduliu-zenklinimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "ISO krepšiai ar padėklai: kaip pasirinkti pagal pakuotes ir naudojimą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/iso-krepsiai-ar-padeklai",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Mobili ar stacionari medicininė spinta: vietos ir judėjimo poreikio palyginimas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/mobili-ar-stacionari-medicinine-spinta",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininės spintos durys: atidarymo vietos ir priėjimo matavimas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinines-spintos-duru-atidarymo-vieta",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininės spintos užraktas: mechaninės prieigos ir raktų valdymo patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinines-spintos-uzrakto-patikra",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Staliukas prie lovos: aukščio, pagrindo ir lovos tarpo suderinamumas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/staliuko-prie-lovos-suderinamumas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Sulankstomas infuzijų stovas: transportavimo ir laikymo matmenų patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/sulankstomo-infuziju-stovo-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Skalbinių maišas ir rėmas: angos, tvirtinimo ir talpos suderinamumas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/skalbiniu-maisui-tinkamo-remo-patikra",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Švarių skalbinių transportavimo vežimėlis: vietų ir uždarymo poreikio planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/svariu-skalbiniu-transportavimo-vezimelis",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Atliekų maišų laikikliai medicinos įstaigai: angos ir keitimo mechanizmo pasirinkimas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiu-atlieku-maisu-laikiklis",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Stelažo apkrova ir vieta: kaip suplanuoti medicinos priemonių laikymą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininio-stelazo-apkrovos-ir-vietos-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "REGO dėžės ir vežimėlis: formato bei komplektacijos suderinamumas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/rego-deziu-ir-vezimelio-suderinamumas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/padeklu-vezimelio-formato-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Nerūdijančio plieno padėklai sterilizavimo skyriui: matmenų ir talpinimo patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/nerudijancio-plieno-sterilizavimo-padeklo-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Valymo vežimėlio komplektacija: priemonių ir laikymo vietų planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/valymo-vezimelio-komplektacijos-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicininių baldų naudojimo išlaidos: ką įtraukti į pasiūlymų palyginimą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiu-baldu-naudojimo-islaidu-palyginimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Laboratorijos baldai: fizinės darbo ir laikymo vietos planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/laboratorijos-baldu-darbo-vietos-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Vaistinės baldai ir moduliai: pakuočių, stalčių ir laikymo vietų planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/vaistines-baldu-ir-moduliu-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Nerūdijančio plieno klasė: kaip perskaityti medicininių baldų medžiagų nurodymą",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiu-baldu-nerudijancio-plieno-klase",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Sieniniai medicinos įstaigos laikikliai: vietos, paskirties ir tvirtinimo patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicininiu-sieniniu-laikikliu-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kiek skalbinių vežimėlių reikia: maršruto ir apkrovos planavimo pavyzdys",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/skalbiniu-vezimeliu-kiekio-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Padėklų įdėklai: matmenų, paskirties ir medžiagos patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/padeklu-ideklu-suderinamumas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Vežimėliai plovimo mašinoms: A ir B variantų suderinamumo patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/vezimelio-plovimo-masinai-suderinamumas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Medicinos įstaigos baldų atnaujinimas etapais: inventoriaus ir poreikio planas",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/medicinos-istaigos-baldu-atnaujinimo-planas",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Netipinės baldų komplektacijos užklausa: matmenys, pavyzdžiai ir tikslinimai",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/netipines-baldu-komplektacijos-uzklausa",
+        "width": 320,
+        "titleMatches": true
+      },
+      {
+        "bodyLine": "27.2px",
+        "bodySize": "16px",
+        "metaSize": "14px",
+        "scrollWidth": 305,
+        "title": "Kambarių aptarnavimo vežimėlis: priemonių, grindų ir durų variantų patikra",
+        "titleSize": "30px",
+        "url": "private-future-render/gidai/kambariu-aptarnavimo-vezimelio-pasirinkimas",
+        "width": 320,
+        "titleMatches": true
+      }
+    ],
+    "guideCount": 57,
+    "guideClock": "2026-11-23T12:00:00.000Z",
+    "checks": "Representative desktop/mobile visual review; final tablet grid confirmation and all57 future guide DOM typography/overflow checks at actual320px",
+    "limitations": [
+      "In-app viewport changes initially affected a different tab; requested widths were rejected until actual widths were measured. Chrome verified actual320/768; no requested-width-only PASS.",
+      "One Chrome Page.getFrameTree timeout after7guides; remaining50 completed with the supported in-app browser at actual320px.",
+      "Chrome ctrl+plus and ctrl+equal did not alter measured width or DPR. True200% browser zoom is not proved; narrow viewport and rem source checks do not replace it.",
+      "All57 titles/body/meta/overflow measured; selected actual text layouts visually inspected. No claim of manual inspection of every product or all article paragraphs."
+    ]
+  },
+  "checks": [
+    {
+      "name": "existing public core tests",
+      "result": "PASS",
+      "count": 57
+    },
+    {
+      "name": "TypeScript and focused ESLint",
+      "result": "PASS"
+    },
+    {
+      "name": "all10tenant SEO regression on final normal bundle",
+      "result": "PASS",
+      "evidence": "typography-seo-regression-v1.json"
+    },
+    {
+      "name": "normal final build and126module versions upload dry-run",
+      "result": "PASS"
+    },
+    {
+      "name": "final Impeccable mechanical detector",
+      "result": "PASS",
+      "findings": []
+    },
+    {
+      "name": "exact component bytes except responsive image sizes / unchanged package hash",
+      "result": "PASS"
+    },
+    {
+      "name": "scoped repository safety and exact private SMTP secret comparison",
+      "result": "PASS"
+    }
+  ],
+  "retainedFailures": [
+    "First and intermediate rebuilds hit Windows EPERM while own local Workers held dist assets; stopped only verified own previews and final build passed. Private logs retained."
+  ],
+  "privateScreenshots": [
+    "promedical-type-before-home-desktop.png",
+    "promedical-type-local-home-desktop.png",
+    "promedical-type-local-catalog-mobile.png",
+    "promedical-type-local-guide-desktop.png",
+    "promedical-type-final-home-tablet.png"
+  ],
+  "fullSiteAcceptance": "Previous strict audit remains historical and incomplete; this focused typography task does not claim full operational/SEO/GEO acceptance or repaired Hostinger Inbox",
+  "productionLive": {
+    "checkedAt": "2026-10-10T13:54:31.243Z",
+    "state": "PASS",
+    "method": "Read-only production GET and real supported-browser DOM / screenshot observations; no form POST or QA clock",
+    "routes": [
+      {
+        "route": "/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/produktai",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/produktai/zv1253n-pz",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/kategorijos/infuflex-page",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/kontaktai",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/privatumas",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/gidai",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "route": "/robots.txt",
+        "status": 200,
+        "contentType": "text/plain; charset=utf-8"
+      },
+      {
+        "route": "/sitemap.xml",
+        "status": 200,
+        "contentType": "application/xml; charset=utf-8"
+      },
+      {
+        "route": "/llms.txt",
+        "status": 200,
+        "contentType": "text/markdown; charset=utf-8"
+      }
+    ],
+    "cssAssets": [
+      {
+        "path": "/_next/static/css/niche-styles.D-f75NbR.css",
+        "status": 200,
+        "sha256": "2cdf69c9e923c165a66d4a05140ffb1211504d3dd6393ca66c2fc759f1435aba",
+        "matchesFinalBuild": true
+      },
+      {
+        "path": "/_next/static/css/promedical-site.DV6hq2rh.css",
+        "status": 200,
+        "sha256": "85d366205eb6b405f01375f831ca5a2fc8f66c5dadfabe58bd80eee1f9052b64",
+        "matchesFinalBuild": true
+      },
+      {
+        "path": "/_next/static/css/promedical-inquiry.DV6hq2rh.css",
+        "status": 200,
+        "sha256": "85d366205eb6b405f01375f831ca5a2fc8f66c5dadfabe58bd80eee1f9052b64",
+        "matchesFinalBuild": true
+      },
+      {
+        "path": "/fonts/promedical/font.css",
+        "status": 200,
+        "sha256": "a3393d7a205a7e625f54f1ec8ea5cc24e511f3f1443ea33993ec8c2b37345f70",
+        "matchesFinalBuild": true
+      }
+    ],
+    "dom": [
+      {
+        "url": "https://promedical.lt/",
+        "width": 1440,
+        "documentWidth": 1425,
+        "h1": {
+          "cl": "",
+          "color": "rgb(21, 60, 50)",
+          "font": "Figtree, Arial, sans-serif",
+          "line": "59.616px",
+          "size": "51.84px",
+          "tag": "H1",
+          "text": "Medicininė įranga jūsų įstaigai",
+          "tracking": "-1.296px",
+          "weight": "600",
+          "width": 530.625
+        },
+        "sku": {
+          "cl": "_sku_1463r_84",
+          "color": "rgb(83, 105, 95)",
+          "font": "Figtree, Arial, sans-serif",
+          "line": "20.8px",
+          "size": "13px",
+          "tag": "SPAN",
+          "text": "KLARO · ZV1253N-PZ",
+          "tracking": "0.195px",
+          "weight": "500",
+          "width": 285
+        },
+        "body": {
+          "cl": "",
+          "color": "rgb(83, 105, 95)",
+          "font": "Figtree, Arial, sans-serif",
+          "line": "25.6px",
+          "size": "16px",
+          "tag": "P",
+          "text": "Raskite įrangą pagal paskirtį ir darbo aplinką.",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 410.796875
+        }
+      },
+      {
+        "url": "https://promedical.lt/produktai",
+        "width": 390,
+        "documentWidth": 375,
+        "h1": {
+          "cl": "",
+          "color": "rgb(21, 60, 50)",
+          "font": "Figtree, Arial, sans-serif",
+          "line": "36px",
+          "size": "30px",
+          "tag": "H1",
+          "text": "Klaro produktų katalogas",
+          "tracking": "-0.6px",
+          "weight": "600",
+          "width": 335
+        },
+        "sku": {
+          "cl": "_sku_1463r_84",
+          "color": "rgb(83, 105, 95)",
+          "font": "Figtree, Arial, sans-serif",
+          "line": "20.8px",
+          "size": "13px",
+          "tag": "SPAN",
+          "text": "KLARO · NEREZ1002IS",
+          "tracking": "0.195px",
+          "weight": "500",
+          "width": 335
+        },
+        "body": {
+          "cl": "",
+          "color": "rgb(83, 105, 95)",
+          "font": "Figtree, Arial, sans-serif",
+          "line": "24.8px",
+          "size": "16px",
+          "tag": "P",
+          "text": "Infuzijų stovas NEREZ1002IS. Konstrukcija: nerūdijantysis plienas AISI",
+          "tracking": "normal",
+          "weight": "400",
+          "width": 335
+        }
+      }
+    ],
+    "screenshots": [
+      "promedical-type-live-home-desktop.png",
+      "promedical-type-live-catalog-mobile.png"
+    ],
+    "screenshotStorage": "Private content-studio/tmp; screenshot pixels excluded from Git"
+  }
+}

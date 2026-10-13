@@ -62,7 +62,7 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /--- references\/network-linking.md ---/);
   assert.match(captured.prompt, /--- references\/media-workflow.md ---/);
   assert.equal(drafted.editorialSkill.files.includes('../PROJECT_CONTRACT.md'), true);
-  assert.match(captured.prompt, /responsive-webp-v1/);
+  assert.match(captured.prompt, /responsive-webp-v2/);
   assert.match(captured.prompt, /"networkCatalog":/);
   assert.match(captured.prompt, /Runtime task \(draft\)/);
   assert.match(captured.prompt, /"pageData":/);

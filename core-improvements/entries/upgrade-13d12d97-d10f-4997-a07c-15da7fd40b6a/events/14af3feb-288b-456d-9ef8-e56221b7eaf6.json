@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Scoped SMTP sender and EHLO identity verified by UTF8/injection/default regression and actual synthetic Hostinger SMTP acceptance plus targeted read-only IMAP receipt. Hosted form still pending.",
+  "checks": [
+    {
+      "command": "node --test tests/smtp.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/promedical/CONTENT-AND-MAIL-CORE-CHECKS.md"
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "sites/promedical/CONTENT-AND-MAIL-CORE-CHECKS.md"
+    }
+  ],
+  "eventId": "14af3feb-288b-456d-9ef8-e56221b7eaf6",
+  "sequence": 2,
+  "at": "2026-10-09T21:56:29.266Z"
+}

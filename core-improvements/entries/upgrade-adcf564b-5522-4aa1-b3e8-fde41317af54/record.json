@@ -1,0 +1,20 @@
+{
+  "siteId": "promedical",
+  "summary": "Measured WebP effort6 bulk import stalls on real 720px catalogue photographs; version compression effort4 at unchanged quality and safety limits.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/MEDIA-BENCHMARK.md"
+  ],
+  "paths": [
+    "content-studio/src/image-pipeline.mjs",
+    "MEDIA_CORE.md",
+    "SKILLS/niche-content-planner/references/media-workflow.md",
+    "content-studio/test/editorial-skill.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of the v2 policy/docs/fixture; previously imported immutable assets remain valid and are not rewritten.",
+  "id": "upgrade-adcf564b-5522-4aa1-b3e8-fde41317af54",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "1c66407b9a81895175703fb4ebbdd5e29d4132da",
+  "createdAt": "2026-10-09T15:34:14.971Z"
+}

@@ -1,0 +1,593 @@
+{
+  "checkedAt": "2026-10-09T15:09:09.197Z",
+  "domain": "promedical.lt",
+  "scope": "Live same-host visible HTML anchor graph from root, max70 requests; robots and two sitemap discovery endpoints. No private/admin/API crawl, no assets downloaded.",
+  "truncated": false,
+  "contentUrlCount": 13,
+  "html200Count": 12,
+  "html404Count": 1,
+  "records": [
+    {
+      "url": "https://promedical.lt/",
+      "resolvedUrl": "https://promedical.lt/",
+      "checkedAt": "2026-10-09T15:08:56.292Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "e40d3efe84fa43b13d7ac07e2f922e0db39f8ee108d4d73de9ccbf1dffc0ca3e",
+      "title": "",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "SKAITMENINIO PARAŠO PLANŠETĖS"
+        },
+        {
+          "level": "h2",
+          "text": "ĮRANGA"
+        },
+        {
+          "level": "h3",
+          "text": "SIGNOTEC PARAŠO PLANŠETĖMIS PASITIKI:"
+        },
+        {
+          "level": "h2",
+          "text": "SUSISIEKITE SU MUMIS!"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/robots.txt",
+      "resolvedUrl": "https://promedical.lt/robots.txt",
+      "checkedAt": "2026-10-09T15:08:56.483Z",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "76057d448928906f01d5d7df49ff8f3baf4c0f31738badda7899d6e9d4b6cedd",
+      "title": "",
+      "robots": null,
+      "headings": []
+    },
+    {
+      "url": "https://promedical.lt/wp-sitemap.xml",
+      "resolvedUrl": "https://promedical.lt/wp-sitemap.xml",
+      "checkedAt": "2026-10-09T15:08:58.706Z",
+      "status": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "f0833ca3f4ed57133c4ae06a68b2e3569bea04e28eaa5f43530df5eb89564a09",
+      "title": "Puslapis nerastas",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "404: Page Not Found"
+        },
+        {
+          "level": "h2",
+          "text": "This page could not be found!"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/sitemap_index.xml",
+      "resolvedUrl": "https://promedical.lt/sitemap_index.xml",
+      "checkedAt": "2026-10-09T15:08:59.247Z",
+      "status": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "f0833ca3f4ed57133c4ae06a68b2e3569bea04e28eaa5f43530df5eb89564a09",
+      "title": "Puslapis nerastas",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "404: Page Not Found"
+        },
+        {
+          "level": "h2",
+          "text": "This page could not be found!"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/iranga/paraso-plansetes/",
+      "resolvedUrl": "https://promedical.lt/iranga/paraso-plansetes/",
+      "checkedAt": "2026-10-09T15:08:59.713Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "5de0a6b9c1d486b2b2cc5b2def5cc609aa2b15c1aba5b016d53c194b14671929",
+      "title": "Parašo planšetės",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Parašo planšetės"
+        },
+        {
+          "level": "h4",
+          "text": "Filtruoti pagal kainą"
+        },
+        {
+          "level": "h4",
+          "text": "Produkto kategorijos"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė StepOver naturaSign Pad Classic"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė signotec Delta"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė StepOver duraSign Pad 10.0"
+        },
+        {
+          "level": "h2",
+          "text": "Skaitmeninio parašo planšetės"
+        },
+        {
+          "level": "h3",
+          "text": "Kuo skiriasi pasirašymas popieriuje, paprastose ir parašo planšetėse?"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/iranga/elektroninio-paraso-plansetes-monitoriu-ispletimai/",
+      "resolvedUrl": "https://promedical.lt/iranga/elektroninio-paraso-plansetes-monitoriu-ispletimai/",
+      "checkedAt": "2026-10-09T15:09:00.466Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "0ba602d8d7d7bfb5616cc6e9fc628b629d588b9ae36cce43a33d9a39466f90c9",
+      "title": "Elektroninio parašo planšetės – monitorių išplėtimai",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Elektroninio parašo planšetės - monitorių išplėtimai"
+        },
+        {
+          "level": "h4",
+          "text": "Filtruoti pagal kainą"
+        },
+        {
+          "level": "h4",
+          "text": "Produkto kategorijos"
+        },
+        {
+          "level": "h2",
+          "text": "Monitoriaus išplėtimas pasirašymui signotec Delta Pen Display"
+        },
+        {
+          "level": "h2",
+          "text": "Elektroninio parašo planšetės"
+        },
+        {
+          "level": "h2",
+          "text": "Parašas planšetėse"
+        },
+        {
+          "level": "h2",
+          "text": "Pasirašymas planšetėje"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/iranga/programine-iranga/",
+      "resolvedUrl": "https://promedical.lt/iranga/programine-iranga/",
+      "checkedAt": "2026-10-09T15:09:01.104Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "dd64d891c77468bb6bb7987e7daed8fc0ce4429027d5b7c7caab6418d76a5c39",
+      "title": "Programinė įranga",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Programinė įranga"
+        },
+        {
+          "level": "h2",
+          "text": "Programinė įranga StepOver eSignatureOffice"
+        },
+        {
+          "level": "h2",
+          "text": "Programinė įranga signotec signoSign/2 Pro"
+        },
+        {
+          "level": "h4",
+          "text": "Filtruoti pagal kainą"
+        },
+        {
+          "level": "h4",
+          "text": "Produkto kategorijos"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/programine-iranga-signotec-signosign-universal/",
+      "resolvedUrl": "https://promedical.lt/produktas/programine-iranga-signotec-signosign-universal/",
+      "checkedAt": "2026-10-09T15:09:01.620Z",
+      "status": 404,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "e6cd6945638b9c0a524573390c063f82c43e71f7d1c9f0e21c0492f591b5ac0e",
+      "title": "Puslapis nerastas",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "404: Page Not Found"
+        },
+        {
+          "level": "h2",
+          "text": "This page could not be found!"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/apie-mus-spaudoje/",
+      "resolvedUrl": "https://promedical.lt/apie-mus-spaudoje/",
+      "checkedAt": "2026-10-09T15:09:02.170Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "0bd3132c9e3f000bc46e035a165cad333595d58059ccb02abc0ad005c71a3499",
+      "title": "Apie mus spaudoje",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Apie SIGNOTEC ĮRANGĄ spaudoje"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/musu-slapuku-politika/",
+      "resolvedUrl": "https://promedical.lt/musu-slapuku-politika/",
+      "checkedAt": "2026-10-09T15:09:02.777Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "0bd53634319bd871e84d8c8c8a1930c6da6da60dcf0e6b560ab993c1d59c4e79",
+      "title": "Mūsų slapukų politika",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h2",
+          "text": "Mūsų slapukų politika"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+      "resolvedUrl": "https://promedical.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic/",
+      "checkedAt": "2026-10-09T15:09:03.346Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "4fd23228a81e219e1bfc0f9254254298c55b138db65d880da17a08968f2dee83",
+      "title": "Parašo planšetė StepOver naturaSign Pad Classic",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Parašo planšetė StepOver naturaSign Pad Classic"
+        },
+        {
+          "level": "h2",
+          "text": "Panašūs produktai"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė StepOver duraSign Pad 10.0"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė signotec Delta"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/paraso-plansete-signotec-delta/",
+      "resolvedUrl": "https://promedical.lt/produktas/paraso-plansete-signotec-delta/",
+      "checkedAt": "2026-10-09T15:09:03.934Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "d2eb7d39950feb20ed4b1c8feb723201e461654a748c34e8b3068920f4552238",
+      "title": "Parašo planšetė signotec Delta",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Parašo planšetė signotec Delta"
+        },
+        {
+          "level": "h2",
+          "text": "Panašūs produktai"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė StepOver naturaSign Pad Classic"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė StepOver duraSign Pad 10.0"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+      "resolvedUrl": "https://promedical.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0/",
+      "checkedAt": "2026-10-09T15:09:06.298Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "03c9707eae69273b05aa90e3556051c37d5a4a8c706364aa9e4f556e5852a379",
+      "title": "Parašo planšetė StepOver duraSign Pad 10.0",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Parašo planšetė StepOver duraSign Pad 10.0"
+        },
+        {
+          "level": "h2",
+          "text": "Panašūs produktai"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė StepOver naturaSign Pad Classic"
+        },
+        {
+          "level": "h2",
+          "text": "Parašo planšetė signotec Delta"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/monitoriaus-ispletimas-pasirasymui-signotec-delta-pen-display/",
+      "resolvedUrl": "https://promedical.lt/produktas/monitoriaus-ispletimas-pasirasymui-signotec-delta-pen-display/",
+      "checkedAt": "2026-10-09T15:09:07.040Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "2b94a5fd6bbca8917d71cefb50edbca4ca55e133d90ef9863dbac0ca96e45281",
+      "title": "Monitoriaus išplėtimas pasirašymui signotec Delta Pen Display",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Monitoriaus išplėtimas pasirašymui signotec Delta Pen Display"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/programine-iranga-stepover-esignatureoffice/",
+      "resolvedUrl": "https://promedical.lt/produktas/programine-iranga-stepover-esignatureoffice/",
+      "checkedAt": "2026-10-09T15:09:07.887Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "fa661ee43275cfa98bfc9688c804d5a78fccebf4dd29ab6c4a15f7dfcf9beae0",
+      "title": "Programinė įranga StepOver eSignatureOffice",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Programinė įranga StepOver eSignatureOffice"
+        },
+        {
+          "level": "h2",
+          "text": "Panašūs produktai"
+        },
+        {
+          "level": "h2",
+          "text": "Programinė įranga signotec signoSign/2 Pro"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    },
+    {
+      "url": "https://promedical.lt/produktas/programine-iranga-signotec-signosign-2/",
+      "resolvedUrl": "https://promedical.lt/produktas/programine-iranga-signotec-signosign-2/",
+      "checkedAt": "2026-10-09T15:09:08.571Z",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "a68fbbdae7c16b9abaa8f4b2802887d58f0991d43fb8a719be5216d0b2b60d15",
+      "title": "Programinė įranga signotec signoSign/2 Pro",
+      "robots": "noindex, nofollow",
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Programinė įranga signotec signoSign/2 Pro"
+        },
+        {
+          "level": "h2",
+          "text": "Panašūs produktai"
+        },
+        {
+          "level": "h2",
+          "text": "Programinė įranga StepOver eSignatureOffice"
+        },
+        {
+          "level": "h6",
+          "text": "KATEGORIJA"
+        },
+        {
+          "level": "h6",
+          "text": "INFORMACIJA"
+        },
+        {
+          "level": "h6",
+          "text": "KONTAKTAI"
+        }
+      ]
+    }
+  ],
+  "archiveAudit": {
+    "sourcePath": "C:/Core/promedical-core-20261009/sites/promedical/history/audit.json",
+    "checkedAt": "2026-10-09T14:30:25.240Z",
+    "coverage": "no-matching-html-captures",
+    "sha256": "bc588d1197d9ac8165eb4c20da70e7cf7b585f781772b52e32a25fdeb37d769d"
+  },
+  "publicChangesApplied": false
+}

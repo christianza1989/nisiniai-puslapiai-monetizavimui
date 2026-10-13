@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Large catalogue URL migration needs canonical bounded draft edits and identity-bound public redirects; per-page editing would repeatedly rewrite the32MB studio site and slug-based homepage selection would disappear after renaming routes.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/URL_MIGRATION_20261013.md",
+    "content-studio/test/page-slug-batch.test.mjs",
+    "https://github.com/christianza1989/niche-public-core/pull/28"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/test/page-slug-batch.test.mjs",
+    "scripts/migrate-promedical-urls.mjs",
+    "sites/promedical/URL_MIGRATION_20261013.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped source revert; restore only this migration's private studio-before snapshot after confirming the studio is idle. Public rollback uses the previous Worker version and preserved approved package, never D1/DNS deletion.",
+  "id": "upgrade-6834be9b-b6cf-4e5d-aac4-55204340e63d",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "8c9989e4c69245091d9685f166c4fde76ab35988",
+  "createdAt": "2026-10-13T17:29:59.176Z"
+}

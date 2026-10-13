@@ -1,0 +1,19 @@
+{
+  "siteId": "promedical",
+  "summary": "Canonical articleExpectations recomputes the same full hidden-URL projection inside each page; full1856-page audit incurs cubic membership work. Calculate invocation-local hidden URLs once with an eligible-ID set, preserving exact output and cross-call freshness.",
+  "category": "code",
+  "evidence": [
+    "sites/promedical/INSPECTOR-BENCHMARK.md",
+    "sites/promedical/TEST_FINDINGS.md"
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs",
+    "SKILLS/niche-site-audit/scripts/completion.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/52",
+  "rollback": "Scoped revert of function-local hidden URL calculation and regression case. Keep eligibility projection, all validator/HTML/discovery predicates, request bounds and audit acceptance requirements unchanged.",
+  "id": "upgrade-3c677f31-1920-4901-9484-908f83a40a10",
+  "branch": "codex/promedical-20261009",
+  "baseSha": "af4b441895962139cf586caf0b2676b5d0c75295",
+  "createdAt": "2026-10-09T18:21:19.206Z"
+}

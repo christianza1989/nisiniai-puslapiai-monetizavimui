@@ -1,0 +1,234 @@
+{
+  "state": "INCOMPLETE_USER_REQUESTED_STOP",
+  "packageSha256": "32f955d9c35b7590027069ff3a8a43eca6bc8afc35ba83a6d5f4021ecb5c65e6",
+  "savedAt": "2026-10-09T17:29:37.660Z",
+  "observations": [
+    {
+      "page": "/",
+      "width": 1440,
+      "observedAt": "2026-10-09T17:19:28.581Z",
+      "dom": {
+        "bodyFont": "Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "images": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/cf994159-8b49-4fb7-8697-2af593aa4b26.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE PROFI COMBI ZV2334N su vieta dokumentams – žema versija",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/ef01c47d-fc09-4960-80ad-4cc21974f09c.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/4abacf59-6cdc-45d3-8e92-8d0bbf9baafd.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/abc16777-192d-498e-8f1f-14cf2a815729.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/2d28f40c-6d3f-4f75-a1c8-18c60f7d5090.webp",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 1425,
+        "url": "http://127.0.0.1:8787/",
+        "viewport": 1425
+      }
+    },
+    {
+      "page": "/",
+      "width": 768,
+      "observedAt": "2026-10-09T17:19:30.788Z",
+      "dom": {
+        "bodyFont": "Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "images": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/cf994159-8b49-4fb7-8697-2af593aa4b26.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE PROFI COMBI ZV2334N su vieta dokumentams – žema versija",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/ef01c47d-fc09-4960-80ad-4cc21974f09c.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro BASIC, PROFI vežimėlio komplektacijos pavyzdys – vaistų vežimėlis 01",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/4abacf59-6cdc-45d3-8e92-8d0bbf9baafd.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Medicininė spinta Metal Line Basic – ZS1211 – žemas variantas",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/09dbcedc-4bae-4518-850c-14b6b07a2ccb.webp",
+            "loaded": true
+          },
+          {
+            "alt": "Klaro Nerūdijančiojo plieno spinta šlapimo indams ir basonams – ATP0002",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/2d28f40c-6d3f-4f75-a1c8-18c60f7d5090.webp",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 753,
+        "url": "http://127.0.0.1:8787/",
+        "viewport": 753
+      }
+    },
+    {
+      "page": "/",
+      "width": 390,
+      "observedAt": "2026-10-09T17:19:31.334Z",
+      "dom": {
+        "bodyFont": "Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "images": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/cf994159-8b49-4fb7-8697-2af593aa4b26.webp",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 375,
+        "url": "http://127.0.0.1:8787/",
+        "viewport": 375
+      }
+    },
+    {
+      "page": "/",
+      "width": 320,
+      "observedAt": "2026-10-09T17:19:31.894Z",
+      "dom": {
+        "bodyFont": "Arial, sans-serif",
+        "h1": "Medicininė įranga jūsų įstaigai",
+        "images": [
+          {
+            "alt": "Klaro Daugiafunkcis medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "currentSrc": "http://127.0.0.1:8787/content-assets/promedical/cf994159-8b49-4fb7-8697-2af593aa4b26.webp",
+            "loaded": true
+          }
+        ],
+        "scrollWidth": 305,
+        "url": "http://127.0.0.1:8787/",
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/",
+      "action": "native details menu + skip link",
+      "observedAt": "2026-10-09T17:19:43.984Z",
+      "dom": {
+        "active": "",
+        "font": "Figtree, Arial, sans-serif",
+        "menuOpen": false,
+        "reducedMotionStyle": true
+      }
+    },
+    {
+      "page": "/kontaktai",
+      "action": "two identical SKUs kept separately",
+      "dom": {
+        "rows": [
+          {
+            "label": null,
+            "value": "3"
+          },
+          {
+            "label": null,
+            "value": "2"
+          }
+        ],
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/kontaktai",
+      "action": "quantity changed and only selected duplicate removed",
+      "dom": {
+        "rows": [
+          {
+            "label": null,
+            "value": "4"
+          }
+        ]
+      }
+    },
+    {
+      "page": "/kontaktai",
+      "action": "marked local form submission",
+      "observedAt": "2026-10-09T17:21:55.928Z",
+      "status": "Ryšys nutrūko. Duomenų išsaugojimo patvirtinimo negavome. Bandykite dar kartą arba rašykite el. paštu.",
+      "dom": {
+        "rows": [
+          {
+            "label": null,
+            "value": "4"
+          }
+        ],
+        "savedButton": "Siųsti užklausą",
+        "scrollWidth": 305,
+        "viewport": 305
+      }
+    },
+    {
+      "page": "/gidai/medicininio-vezimelio-pasirinkimas",
+      "width": 320,
+      "observedAt": "2026-10-09T17:23:30.479Z",
+      "dom": {
+        "bodyCharacters": 5481,
+        "headings": [
+          "1. Aprašykite vieną pagrindinę paskirtį",
+          "2. Patikrinkite visą judėjimo kelią",
+          "3. Sudarykite priemonių ir laikymo vietų sąrašą",
+          "4. Palyginkite korpusą su priežiūros tvarka",
+          "5. Įvertinkite ratukus ir stabdymą",
+          "6. Atskirai patikrinkite kiekvieną priedą",
+          "Pavyzdys: procedūrų kabinetas",
+          "Prieš išsiunčiant užklausą",
+          "Šaltiniai ir dokumentai",
+          "Pasirinkite įrangą"
+        ],
+        "images": [
+          {
+            "alt": "Klaro Medicininis vežimėlis METAL LINE BASIC ZV1253N/PZ – aukšta versija",
+            "loaded": true,
+            "src": "http://127.0.0.1:8787/content-assets/promedical/20e50921-b610-4a83-b86a-245df79ad78d.webp"
+          }
+        ],
+        "scrollWidth": 305,
+        "sources": [
+          {
+            "text": "Klaro: moduliniai vežimėliai ",
+            "url": "https://www.klaro.cz/en/zakladni-voziky"
+          },
+          {
+            "text": "Klaro: vežimėliai su priedais ",
+            "url": "https://www.klaro.cz/en/voziky-s-prislusenstvim"
+          },
+          {
+            "text": "Klaro: nerūdijančio plieno rūšys ",
+            "url": "https://www.klaro.cz/en/druhy-nerezove-oceli"
+          },
+          {
+            "text": "Klaro: produktų instrukcijų paieška ",
+            "url": "https://www.klaro.cz/en/navody-pdf-2186"
+          }
+        ],
+        "title": "Kaip pasirinkti medicininį vežimėlį įstaigai",
+        "viewport": 305
+      }
+    }
+  ],
+  "limitations": [
+    "No final keyboard/menu/200%zoom pass; immediate attempted actions were not confirmed.",
+    "Marked browser form reported connection error and SQL query found no matching record.",
+    "Guide full-page screenshot/CDP failures recorded; remaining guides not inspected in this run."
+  ]
+}

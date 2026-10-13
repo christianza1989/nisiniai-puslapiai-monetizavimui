@@ -1,7 +1,7 @@
 {
   "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
-  "sourceVersion": "82aa0cfb1bee40bb0e6bd451cac55246aee9a610",
-  "coreCommit": "8c9989e4c69245091d9685f166c4fde76ab35988",
+  "sourceVersion": "d2feca83129075270ad9dcf2aea762b1f46c8f82",
+  "coreCommit": "dd9350939adc9519e76c11be63583aa3b5d035a7",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
@@ -89,7 +89,7 @@
     },
     {
       "file": "proxy.ts",
-      "sha256": "0d0f81a997d0e31a5ff3eedffc1820c792d389f6d8ea55887f4869e2faf87482"
+      "sha256": "f74c9805e9b957466b830f6d4eeac7c7612f696b91dbc8818ae97f3c64f076ec"
     },
     {
       "file": "lib/niche-path-aliases.mjs",
@@ -109,17 +109,18 @@
     },
     {
       "file": "tests/promedical-url-migration-smoke.mjs",
-      "sha256": "79f713b17541bc4226cc114144257137a0683c5886ad62296fcae351863a8d50"
+      "sha256": "22617a7b50140e08c9ab0de0c3258be92300a3799d3a9c8a984af1b9518f537b"
     }
   ],
-  "checkedAt": "2026-10-13T17:54:57.665Z",
-  "productionVersion": "983732bb-4f96-4fa9-ac2d-7a4285a08940",
-  "notes": "Lithuanian catalogue URL migration:1408 products/436 categories/1845 exact legacy308 routes; shared canonical/sitemap/schema/reading exports, stable-ID selection and saved inquiry path migration.65 live editorial snapshots and guide dates preserved; no staged homepage, DNS/billing/mail change. Narrow source/runtime verification, not indexing or whole-site acceptance.",
-  "productionDeployment": "9a9ee85c-9141-46b8-b20e-6abf08e25256",
+  "checkedAt": "2026-10-13T18:22:41.351Z",
+  "productionVersion": "bf9ae69d-2a14-4608-89c9-eae7274e4578",
+  "notes": "All 1,845 exact legacy catalogue paths return HTTP 301 to unchanged Lithuanian canonical targets. Package, URL map, dates, visual presentation and runtime bindings/routes/CPU/date preserved. Local and live complete migration checks pass.",
+  "productionDeployment": "7609d183-78d3-4637-9774-5f85a02335c6",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
   "logoEvidence": "verification-20261010/logo-change-v2.json",
   "editorialEvidence": "verification-20261010/editorial-release-v1.json",
   "homeEvidence": "verification-20261010/generic-home-v1.json",
   "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json",
-  "urlMigrationEvidence": "verification-20261013/url-migration-v1.json"
+  "urlMigrationEvidence": "verification-20261013/url-migration-v1.json",
+  "urlRedirectEvidence": "verification-20261013/url-redirect-301-v1.json"
 }

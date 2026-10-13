@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Discovery execution omitted saved role outcomes, preventing workspace activity from distinguishing a recorded attempt from completed or failed work.",
+  "category": "code",
+  "evidence": [
+    "docs/handoffs/verslomatika-workspace-core-helper-20261013.md",
+    "Original 11FAIL at df3c055; retained log SHA25643f67a6fa273f23063d57d9c5f03a30423f3ac523229c8bea6fd1e8c6b9f0719"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/projection.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/routes.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/wire.py",
+    "docs/contracts/verslomatika-business-discovery.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of additive AttemptView.state projection and generated schema; existing immutable attempts, job usage and history remain untouched.",
+  "id": "upgrade-50bdf843-c7ee-427f-9ced-11978500f3f3",
+  "branch": "codex/verslomatika-workspace-core-helper-20261013",
+  "baseSha": "df3c055afbfa99260970b61e38fce7ed95d617f2",
+  "createdAt": "2026-10-13T05:45:15.079Z"
+}

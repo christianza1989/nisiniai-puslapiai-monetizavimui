@@ -1,0 +1,84 @@
+# Verslomatika workspace core helper — 2026-10-13
+
+Source: `df3c055afbfa99260970b61e38fce7ed95d617f2`; own branch `codex/verslomatika-workspace-core-helper-20261013`, managed `be36/CORE_SHARED` worktree. Primary chat `01a133bf-6c35-7783-8dd9-f02e73ee59b2` owns portal components, layout, CSS, BFF consumers and final integration. Helper chat `01a133c2-67ef-7690-a357-28ce53429224` owns this document and the named regression scope. [Reservation](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6139054624).
+
+Start freshness fetched private main `7af6b9641012a30c5f95eac38a66daeff8f8cb39` and public main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`; both are ancestors of the inspected source. Companion `5924a2eb858cf45e736bc5e79a2f07cfbbc39af2` is read-only. No main merge or live activation is authorized here.
+
+## Identity and read boundaries
+
+All authenticated projections carry `{contract_version, environment, source_revision, observed_at, request_id, data}`. Preserve this envelope at the BFF and discard data when actor/environment changes. A list response is not permission to a previously cached object: each object GET checks current session, enabled user, owner membership, portfolio and RLS. Browser-provided identifiers never grant access.
+
+| Workspace purpose | Existing endpoint | Exact useful fields / limits |
+| --- | --- | --- |
+| Current customer | `GET /customer/v1/me` | `user_id`, `email`, `display_name`, `email_verified`, `portfolios[{organization_id,portfolio_id,display_name}]`, `capabilities`. Current customer capabilities are `portfolio.read`, `business_intake.create`; these do not grant every module. |
+| Registered businesses | `GET /operator/v2/portfolios/{portfolio_id}/businesses?limit=&cursor=` | `portfolio_id`, `items[{business_id,display_name,sites[{site_id,canonical_host}],stage,connection_status,runtime_status,last_verified_activity_at}]`, `next_cursor`, `snapshot_id`. Limit1–100/default25; signed cursor is session/actor/portfolio/environment/snapshot bound and expires after300s. |
+| One registered business | `GET /operator/v2/businesses/{business_id}` | Same Business fields. Registered/runtime status is not website acceptance or launch. |
+| Proposed existing business | `GET /customer/v1/business-intakes` and `/{intake_id}` | Own pending intake identity; separate from registered business and discovery identity. |
+| Idea conversations | `GET /customer/v2/discoveries?include_archived=true` | `items` (max100, newest updated first). Each has `discovery_id`, `portfolio_id`, `title`, `initial_message`, `status`, `current_revision`, `active_job_id`, `linked_creation_id`, `latest_report_sha256`, `source_revision`, `failure_code`, dates and gates below. |
+| One idea | `GET /customer/v2/discoveries/{discovery_id}` | Same DiscoveryView. Its `discovery_id` is not a `business_id` or `creation_id`. Join only through the explicit `linked_creation_id`. |
+| Creation | `GET /customer/v2/creations` and `/{creation_id}` | `creation_id`, `portfolio_id`, `display_name`, `idea`, `canonical_host`, `status`, `stage`, `current_revision`, `active_job_id`, `failure_code`, dates, `source_revision`, `capabilities{can_revise,can_cancel}`, `latest_summary`. List max100; archive records are excluded unless `include_archived=true`. |
+| Creation→business binding | `GET /customer/v2/creations/{creation_id}/registration` | `creation_id`, `current_revision`, `observed_at`, `observation_scope`, `state`, `registration{registration_id,business_id,site_id,canonical_host,accepted_revision,candidate_sha256,accepted_source_revision,registered_at,revoked_at}`, `revision_pending`, `binding_current`, acceptance flags. Query `accepted_revision` selects an existing registration observation, not a new grant. |
+
+Canonical contracts: [portfolio](../contracts/verslomatika-portfolio.openapi.json), [customer](../contracts/verslomatika-customer.openapi.json), [discovery](../contracts/verslomatika-business-discovery.openapi.json), [creation](../contracts/verslomatika-customer-creation.openapi.json). Runtime routes are mounted in the existing `control_api` application; ordinary customer login is `/customer/v1/auth/login` and logout uses `/operator/v2/auth/logout`. The portal owns HttpOnly session handling; secrets stay server-side.
+
+## Conversation and versioned report
+
+`GET /discoveries/{id}/messages?offset=0&limit=20` (under `/customer/v2`) returns `{items[{message_id,role:user|assistant,content,revision,status,created_at}],offset,limit,has_more}`. Limit1–50. Offset/limit count saved jobs/turns, so one turn can supply both a user and assistant item. Read next pages using the requested turn limit, not `items.length`. Returned turns are chronological within a page; the first page contains the newest turns. Prepend older pages when building a transcript.
+
+`GET /discoveries/{id}/reports?offset=0&limit=20` returns `{items,offset,limit,has_more}`, newest revision first. Each report is `{discovery_id,revision,report_sha256,source_revision,created_at,reply,reviews}`. `reply={assistant_message,state:needs_input|plan_ready,questions,plan}`; plan may be null. Questions contain `id,question,reason,required_for_build,suggestions`.
+
+`plan` contains `business_name,summary,canonical_host_candidate,domain_authority:UNVERIFIED,sections,acquisition_channels,tools,sources,deliverables,alternatives,publication_blockers`. The ten section areas are business/customers/acquisition/fulfilment/economics/website/content_seo_geo/brand/agents/risks. Reviews contain `candidate_sha256,approved,summary,required_changes,suggestions`; their hash is of the reply candidate, whereas `report_sha256` is of the immutable reply+reviews payload. These hashes are different identities.
+
+Read an explicitly selected historical report without silently substituting the latest. Exact actions:
+
+- `POST /customer/v2/discoveries`: `{portfolio_id,message,idempotency_key}`.
+- `POST /discoveries/{id}/messages`: `{base_revision,message,idempotency_key}`.
+- `POST /discoveries/{id}/build`: `{report_revision,report_sha256,idempotency_key}` → `{discovery,creation_id,report_revision,report_sha256,approval_id}`.
+- `POST /discoveries/{id}/archive`: `{idempotency_key}`; linked builds require the separate creation archive action.
+- `POST /customer/v2/creations/{id}/archive`: `{idempotency_key}` → `creation-archive.v1`, `history_preserved:true`, `provider_calls:0`.
+
+Create a durable UUID before a write. An uncertain response retries only the same key/body. Stale report, changed key payload, a foreign object and revoked session must remain server errors, not automatic new work. A failed review may retain a readable valid candidate with `status=failed`, `can_build=false`; review transport failure is not acceptance. History GETs do not dispatch models, though detail reads may mark an expired/revoked existing job failed.
+
+Creation history uses `GET /creations/{id}/messages` (last20 jobs; no pagination); `{items[{message_id,job_id,role,content,revision,created_at}]}`. Creation revisions are requested by `POST /creations/{id}/revisions {base_revision,message,idempotency_key}`, not the discovery message endpoint.
+
+## Activity, artifacts and checks
+
+| Surface | Endpoint | Existing safe projection |
+| --- | --- | --- |
+| Discovery execution | `GET /customer/v2/discoveries/{id}/execution` | `jobs[{job_id,sequence,status,base_revision,failure_code,source_revision,instruction_hash,finished_at}]`, `attempts[{attempt_id,job_id,sequence,role,round_number,model,source_revision,instruction_hash,created_at}]`, `source_reads[{url,status,http_status,observed_at,title,body_sha256,text_sha256,response_bytes,error}]`, `cost_status:UNVERIFIED`, `channel_activation:not_performed`. Last20 jobs; attempts max120. At source df3c055 attempts are reservations with no outcome field. |
+| Creation role work | `GET /customer/v2/creations/{id}/team` | `team.v1`: creation/status/scope/current_revision/active_job_id/latest_job_id/creation_updated_at/accepted_candidate_sha256, bounded rounds/calls/deadline, `attempts`, `events`, `full_f1_status`, `launch_status`. Attempt `state=reserved|succeeded|failed|interrupted` derives from recorded TeamEvents. Events include actual role, round, state, summary and safe candidate/review/check/usage metadata. |
+| Creation stage events | `GET /customer/v2/creations/{id}/events` | Last200 `{event_id,sequence,job_id,status,stage,message,created_at}`; chronological. No percentage progress. |
+| Creation artifacts | `GET /customer/v2/creations/{id}/artifacts` and `/{artifact_id}` | Last60 metadata items `{artifact_id,revision,kind:business_plan|website_preview|content_package,display_name,media_type,sha256,bytes,created_at}`; detail adds `content` after integrity check. Preview content requires the existing sandboxed renderer/portal viewer. |
+| Content projection | `GET /customer/v2/creations/{id}/content` | `content.v1`, accepted revision/source/candidate and existing studio page observations. Follow its native schemas; a draft/observed file is not publication. |
+| Actual guide jobs | `GET /customer/v2/creations/{id}/content-work` and `/{job_id}` | `content-work.v1`, last20 jobs. Job identity, accepted_revision/source_sha256/source_revision/page_id/status/deadline/finished/failure/cancel gate/output/application digest/page observation, attempts and events. Attempts identify role reservations; event state supplies completion. Approval/source/media verification remain `not_performed`; fullF1 and launch remain UNVERIFIED. |
+
+Creation team checks contain `{id,draft_sha256,kind,status,observed,summary}`; kinds are language_quality/source/browser/seo_geo/media/contact_delivery/publication/launch/demand. Status is PASS/FAIL/UNVERIFIED/NA. Language's automatic observation has its own limited meaning; it is not editorial acceptance. Read checks for the selected candidate hash. Positive critic/coordinator decisions accept a private draft, not public launch. Content work checks similarly bind real evidence receipts to the exact output.
+
+## Foundation, modules and permissions
+
+Discovery authoritative gates are `can_message`, `can_build`, `foundation_status:UNVERIFIED`, `can_create_agents:false`, `can_open_designer:false`, `channel_activation:not_performed`, `launch_status:UNVERIFIED`. Build readiness also requires idle current report, matching current source, complete plan and two positive matching reviews. Registered business connection/runtime status and Registration `binding_current` are different gates.
+
+Customer agents are already implemented at `/customer/v2/creations/{creation_id}/agents`: GET list, POST draft, GET `/{agent_id}`, POST/GET `/{agent_id}/revisions`, GET exact `/{revision}`, GET `/{agent_id}/test-runs` and `/score-evidence`. List has `items,purposes,can_create_draft,configuration_blockers,has_more,next_cursor`; four purposes are site_chat/customer_research/email/custom. Detail has `agent`, `configuration`, `readiness`. Agent identity includes `agent_id,creation_id,business_id,registration_id,purpose,name,current_revision`; configuration records its own sha256/revision/saved source/date. Readiness distinguishes `can_edit_configuration`, calibration, module admission, activation, provider execution and blockers. Operator preparation/score evidence are existing separate contracts, not a new evaluator.
+
+For an approved discovery build, create/revise explicitly invokes `require_agent_foundation` and returns409 `website_foundation_not_ready` while foundation is UNVERIFIED. Existing history remains readable. Legacy agent list `can_create_draft` only reflects current registration and does not itself prove the additional linked-build foundation check. Combine explicit discovery gates for the new workspace; do not promote this field to READY.
+
+## Missing projections and bounded first implementation
+
+1. Discovery role completion is persisted in `DiscoveryJob.usage.roles[{sequence,role,outcome,...}]` by `worker.retain_usage`, but source df3c055 `routes.execution` omits it. Primary agreed the additive safe `AttemptView.state` field before production changes; [scope extension](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6139114747). The helper reads exact sequence+role receipts: succeeded/failed remain independent of later job failure; no outcome yields reserved for queued/running job, interrupted for terminal job. Malformed outcomes or duplicate matching sequences fail closed to the same fallback. No worker/migration/history/accounting change; raw usage/traces remain private.
+2. No maintained all-module manifest or per-business customer permissions projection exists. `/operator/v2/capabilities` only returns portfolio.read. Module-specific gates are authoritative; unavailable navigation should explain the dependency, and a disabled feature response must remain visible.
+3. No generic per-business multi-chat create/rename/pin/search APIs exist. Discovery title is generated by the saved plan; archive is available. UI navigation can group real saved discoveries/creations, but cannot claim persistent rename/pin semantics.
+4. There is no direct business→creation index in Business/Creation DTOs; use explicit discovery link and registration binding. Do not join by display name or domain. Imported intakes are separate.
+5. Discovery/creation lists are bounded100 without list cursors. Creation transcript20, stage events200 and artifacts60 are bounded, without full-history pagination. Discovery history/reports and customer agents do page. These limitations are separate from the first workspace shell.
+6. No customer foundation READY proof/Designer dispatch endpoint or launch proof is present for new approved builds. UI-first work leaves full controller/media/editorial/renderer/SEO/GEO, actual model behavior, normal-account target-PC and public acceptance OPEN.
+
+## Local readiness and verification
+
+Initial state: PATH Python3.12; managed Python3.13.15 and uv0.12.21 available; Docker installed but daemon stopped; no PostgreSQL service; own venv/.env absent. `uv sync --locked --python 3.13 --project agent-business-core/runtime` installed107 locked dependencies successfully. Docker Desktop started hidden; daemon29.8.1 became available. Canonical setup creates fresh private credentials; helper disables knowledge refresh and leaves modules/runners/voice/SMTP/provider flags defaultOFF.
+
+Own PostgreSQL uses pinned canonical postgres17 image, unique container `verslomatika-workspace-helper-postgres`, unique Compose project/volume and loopback15440, using an ignored local override. This is a new synthetic environment; no old DB/accounts/history/accounting were transferred. Migration/runtime-role and targeted test results will be recorded after execution. No API/worker is started by dependency installation.
+
+Executed: original missing-state regression11FAIL/1.81s (logSHA256 `43f67a6fa273f23063d57d9c5f03a30423f3ac523229c8bea6fd1e8c6b9f0719`); development malformed-type regression4FAIL/25PASS retained (logSHA256 `5b96bbfa50160224df391555161bb5b888c8f310d5c31a4b459c40269afab265`). Fixed string guards reject unhashable role/outcome values. Final30new workspace +24existing discovery =54PASS/4.06s; scoped Ruff PASS; canonical generated-schema equality and required strict state enum PASS.
+
+Local schema initialization passed through `0030_site_build_candidates` with72public tables; restricted runtime role has superuser/bypassRLS/createDB/createRole all false. Windows blocked the Alembic `.exe` launcher (4551); `uv run python -m alembic upgrade head` executed the same canonical package successfully. An initial post-migration bootstrap was mistakenly attempted after the blocked launcher and failed on missing alembic_version; no schema or permission check was weakened. `scripts/bootstrap.py --role-only` before migrations and full bootstrap after them both passed. Flags voice/SMTP/discovery runner/creation runner/site_build/learning are false. The shell version check once used the wrong relative venv path; corrected by runtime working directory. All original failures remain in tool history/local receipts; no old operational DB was touched.
+
+Upgrade: [50bdf843](../../core-improvements/entries/upgrade-50bdf843-c7ee-427f-9ced-11978500f3f3/record.json). Existing PostgreSQL discovery/recovery tests and a private zero-provider HTTP projection probe are being run against this new synthetic environment; their outcome is separate from the above source/offline checks. Ordinary-account UI, actual models, full foundation, target-PC product and public launch acceptance remain OPEN.

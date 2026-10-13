@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original df3c05511FAIL missing-state log43f67a6f preserved. Development corrupt role/outcome4FAIL log5b96bbfa preserved and strict type guards added. Additive safe projection does not edit any worker, migration, immutable history/accounting or portal. PG verification still in progress; this event certifies executed offline/schema/Ruff only.",
+  "checks": [
+    {
+      "command": "uv run python -m pytest -q offline_tests/test_workspace_projection.py offline_tests/test_business_discovery.py",
+      "result": "PASS",
+      "evidence": "54PASS4.06s; 30new workspace cases and24existing discovery. docs/handoffs/verslomatika-workspace-core-helper-20261013.md"
+    },
+    {
+      "command": "uv run python -m ruff check src/pinet_core/business_discovery/projection.py src/pinet_core/business_discovery/routes.py src/pinet_core/business_discovery/wire.py offline_tests/test_workspace_projection.py",
+      "result": "PASS",
+      "evidence": "All checks passed; scope only additive read projection and tests."
+    },
+    {
+      "command": "uv run python -m pinet_core.business_discovery.contract; exact generated-schema comparison in test_workspace_consumer_contract_is_generated_and_strict",
+      "result": "PASS",
+      "evidence": "Generated canonical JSON equality; AttemptView additionalProperties:false, required state, exact four-state enum."
+    }
+  ],
+  "eventId": "40f2abf4-19cb-4f71-a193-54f5dc4e97ec",
+  "sequence": 2,
+  "at": "2026-10-13T05:48:43.301Z"
+}

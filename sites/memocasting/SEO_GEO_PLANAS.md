@@ -1,4 +1,7 @@
 # Memocasting: pilnas apibrėžtos nišos temų ir URL žemėlapis
+
+**Aktuali 2026-10-13 peržiūra:** [visų kitų puslapių planas](OTHER_PAGES_PLAN_2026_10_13.md), [88 tikslūs briefai](PAGE_BRIEFS_2026_10_13.json), [SEO auditas](SEO_AUDIT_2026_10_13.md) ir [dabartinė URL sutartis](SEO_STRUCTURE_CONTRACT.md). Toliau pateiktas tyrimas bei adresų sprendimai yra datuota istorija. Vėlesnis savininko pavedimas pakeitė tris LT canonical į `/rinkinys-porai`, `/seimos-rinkinys`, `/ranku-liejimo-rinkiniai`; seni trys adresai nukreipiami 301. Ankstesnis mokamo tyrimo limitas nėra leidimas naujiems calls.
+
 2026-10-12 adresų korekcija: savininko GSC nuorodų inventorius turi viršenybę prieš planuotą naują LT slug. Poros rinkinio canonical `/products/liejimo-rinkinys-porai`, instrukcijos `/pages/instrukcija`; jų turinio kopijų naujais /lt/ adresais nekurti. [Visų šešių senų adresų atkūrimo sutartis](MIGRACIJA.md).
 
 Savininko patvirtintas senas landing page memorycasting.lt: [homepage briefas ir papildomų URL atranka](HOMEPAGE_BRIEF.md). Šeimos produkto `/products/seimos-rinkinys-1` taip pat išsaugomas patikrinus eksportą; kitas `/products/seimos-rinkinys` kol kas nežymimas tuo pačiu produktu.

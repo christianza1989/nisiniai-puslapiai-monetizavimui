@@ -1,5 +1,8 @@
 # Memocasting vizualinė sistema
 
+Aktualus kitų puslapių tęsinys 2026-10-13: [87 likusių puslapių išdėstymo ir įgyvendinimo planas](OTHER_PAGES_PLAN_2026_10_13.md). Vidinius produktų, katalogo, gidų ir informacinių puslapių šablonus numatyta suvienodinti su savininko pasirinkta homepage tapatybe. Tai planas; dabartinio laikino vidinių puslapių serif/kreminio dizaino nelaikyti baigtu perdarymu. [Dabartinis auditas](SEO_AUDIT_2026_10_13.md) atskiria realizuotą homepage nuo būsimų šablonų ir produkcijos duomenų.
+
+
 2026-10-13 vėlesnis savininko Egeon pavedimas: [hero ir storytelling tęsinys](HERO_STORYTELLING_2026_10_13.md). Naujas atitolintas viso ekrano hero, žodžių scroll reveal, full-width filmas ir šešių etapų timeline; pašalintas desktop aukščio651px ribojimas. Leidinys75ebcfb3, SHA2567a3251b32d44501c888c566d5c8da4f664075968c7ba43ad766d39212aef7361;24 dizaino assetai. Toliau pateikti kvitai yra ankstesni etapai.
 
 

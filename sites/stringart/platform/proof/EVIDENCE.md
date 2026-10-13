@@ -2,6 +2,8 @@
 
 14 October 2026. Implemented source commit: bdd1c96216446a81e35c433e66edfc8a82491651. Dependency PR126: 5aa9eab3e355292f2f0ee725e74e9029520e1467. Fetched main: 7af6b9641012a30c5f95eac38a66daeff8f8cb39. Scoped review: PR129; merge and other-PC adoption are separate.
 
+Current application source also includes the narrowly scoped copy follow-up `5f2fc47c55e4749d10fbee9493a399c871388342`, described below. The original implementation/proof fingerprints remain preserved.
+
 Hashes below are SHA-256 of the exact executed local working-file bytes; Git/checkout line-ending normalization can change physical bytes on another PC. Use the source commit plus semantic tests for adoption.
 
 | Source | SHA-256 |
@@ -28,3 +30,14 @@ Local raw proof reports (ignored, present on this PC):
 | proof/final-source-layout-browser.json | Exact browser JSON download and final 7-capture normal/text/spacing suite | 409eb476514ec996730ddcf0a26d75d0d3e95307c5f02aef5b944b8aa5333ff0 |
 
 Backend/HTTP final result: 17 tests, 17 pass, 0 fail/skip. Actual process restart and two-process last-unit contention passed. The source-bound acceptance matrix, preserved first failures and runbook are committed; raw PNG/JSON/DB are local and are not promised by a fresh clone. No paid execution, external messages, real transactions or public deployment occurred.
+
+## Purchase-count copy follow-up
+
+14 October 2026. Source `5f2fc47c55e4749d10fbee9493a399c871388342` repairs only the overview's purchase/purchases agreement. Current app.mjs SHA-256: `99a0d7afedc5e61f74f7827aa144dfba6d3c505208653a79b3f17db1301cc874`. All other functional source hashes above remain unchanged.
+
+The actual pristine operator overview at `http://127.0.0.1:8946`, measured 1440×1000, displays “1 supplier purchase open” and was visually inspected once. Browser-only copy fixtures confirm “0 supplier purchases open” and “2 supplier purchases open”; they do not modify persistent server state. Backend suites and unrelated screens were not rerun for this one-label correction.
+
+- Local receipt: `proof/purchase-copy.json`, SHA-256 `f19b0af9c99bd966c097d4ea6388fdec4319a3f2edb104dafc3bdce0fb69b3c8`.
+- Local actual-state screenshot: `proof/captures/purchase-copy-pristine-1.png`, SHA-256 `7a153ba192dd8f467c9482c48cd22cc74a9b6d05f65c14a1e00fbc50a103d9f7`.
+
+These raw files remain local/ignored. The original incorrect copy and scoped correction are recorded in FIRST-FAILURES.md.

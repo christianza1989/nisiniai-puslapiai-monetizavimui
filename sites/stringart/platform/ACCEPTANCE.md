@@ -14,6 +14,8 @@ Focused subsequent checks verify the added supplier receipt-date control and mac
 
 Raw JSON/PNG captures and test DBs remain local/ignored. Selected actual images were inspected directly and in contact sheets for normal operator/partner/supplier families and adverse states. Initial failures are retained in proof/FIRST-FAILURES.md; screenshots were not overwritten by later-prefix results. The original complete browser suite's successful behavior remains evidence for unchanged components; targeted checks cover later typography and supplier-control changes. Extra targeted typography checks were necessary to repair concrete clipping; they were not cosmetic rerolls.
 
+The collaborating chat's final live overview review found a singular purchase label error. Source follow-up `5f2fc47c55e4749d10fbee9493a399c871388342` fixes it; one actual pristine operator render plus browser-only zero/two fixtures confirm all three forms. Source/proof binding is appended in proof/EVIDENCE.md without overwriting original acceptance hashes. No backend or broader visual retest was needed for this copy-only change.
+
 ## Acceptance matrix
 
 | Requirement | Result | Evidence |

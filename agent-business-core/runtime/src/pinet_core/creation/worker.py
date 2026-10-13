@@ -53,7 +53,7 @@ async def context_for(tx, creation, job):
             "scope": "private_business_and_website_draft", "expected_instruction_hash": job.instruction_hash}
 
 
-async def claim(*, team_enabled=True):
+async def claim(*, team_enabled=True, creation_id=None):
     cfg = settings()
     if not cfg.creation_enabled or not cfg.creation_runner_enabled or cfg.control_mode != "local":
         return None
@@ -70,6 +70,8 @@ async def claim(*, team_enabled=True):
             async with scope(user=candidate["user_id"]) as tx:
                 creation, job = await locked(tx, candidate["id"], candidate["user_id"])
                 if not creation or not job or job.status not in ACTIVE:
+                    continue
+                if creation_id is not None and creation.id != creation_id:
                     continue
                 if job.status == "running":
                     await fail(tx, creation, job, "worker_interrupted")
@@ -101,7 +103,7 @@ async def heartbeat(job_id, user_id, run_id):
         return True
 
 
-async def execute_once(runner=None, *, role_runner=None, intake_runner=None):
+async def execute_once(runner=None, *, role_runner=None, intake_runner=None, creation_id=None):
     # Keep a database mutex until the owned child is stopped and completion is fenced.
     # An API cancellation can clear task state but cannot release this execution barrier.
     async with scope() as execution_scope:
@@ -109,12 +111,13 @@ async def execute_once(runner=None, *, role_runner=None, intake_runner=None):
                                                {"k": "creation-execution:" + settings().environment})
         if not acquired:
             return False
-        return await _execute_once(runner, role_runner=role_runner, intake_runner=intake_runner)
+        return await _execute_once(runner, role_runner=role_runner, intake_runner=intake_runner,
+                                   creation_id=creation_id)
 
 
-async def _execute_once(runner=None, *, role_runner=None, intake_runner=None):
+async def _execute_once(runner=None, *, role_runner=None, intake_runner=None, creation_id=None):
     # Explicit single-run injection is an existing offline test seam, never a customer/runtime switch.
-    claimed = await claim(team_enabled=runner is None)
+    claimed = await claim(team_enabled=runner is None, creation_id=creation_id)
     if not claimed:
         return False
     result, receipt, failure, outputs = None, {}, None, []

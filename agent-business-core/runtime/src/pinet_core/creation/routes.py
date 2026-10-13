@@ -207,6 +207,8 @@ async def archive_creation(creation_id: str, request: Request, value: "Archive",
         raise ControlError(409, "idempotency_conflict")
     prior = prior or await tx.scalar(select(CreationArchive).where(CreationArchive.creation_id == row.id))
     if not prior:
+        from ..content_work.service import stop_archived
+        await stop_archived(tx, row)
         job = await tx.get(Job, row.active_job_id) if row.active_job_id else None
         if job and job.status in ACTIVE:
             job.status, job.lease_until, job.finished_at = "cancelled", None, utcnow()

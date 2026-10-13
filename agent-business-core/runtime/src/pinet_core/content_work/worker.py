@@ -22,7 +22,7 @@ REPAIRABLE = {"writer_output_invalid", "writer_unknown_link", "writer_unverified
               "writer_unknown_asset", "writer_notes_overflow"}
 
 
-async def claim():
+async def claim(*, creation_id=None):
     try:
         service.enabled()
     except ControlError:
@@ -45,6 +45,8 @@ async def claim():
             async with scope(user=row["user_id"]) as owned:
                 creation, job = await service.locked(owned, row["id"], row["user_id"])
                 if not job or job.status not in ACTIVE:
+                    continue
+                if creation_id is not None and creation.id != creation_id:
                     continue
                 if job.status == "running":
                     await service.fail(owned, job, "worker_interrupted")
@@ -209,12 +211,12 @@ async def run(claimed, role_runner, writer):
     raise RunnerError("review_limit")
 
 
-async def execute_once(*, role_runner=None, writer=None):
+async def execute_once(*, role_runner=None, writer=None, creation_id=None):
     async with scope() as execution:
         if not await execution.scalar(text("SELECT pg_try_advisory_xact_lock(hashtextextended(:k,0))"),
                                       {"k": "creation-execution:" + settings().environment}):
             return False
-        claimed = await claim()
+        claimed = await claim(creation_id=creation_id)
         if not claimed:
             return False
         try:

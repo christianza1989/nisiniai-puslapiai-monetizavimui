@@ -1,18 +1,13 @@
-from types import SimpleNamespace
-
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy import select
 
-from ..config import settings
 from ..control.routes import ControlError, SafeRoute, authenticated, identifier
 from ..control.routes import envelope as shared_envelope
-from ..creation.review import canonical_sha256
 from ..creation.routes import owned
-from ..creation.service import ACTIVE, binding
+from ..creation.service import ACTIVE
 from ..customer.service import customer_guard
-from ..models import new_id, utcnow
-from ..tasks.codex_transport import RunnerError
-from . import service, studio
+from ..models import utcnow
+from . import service
 from .models import GuideJob
 from .wire import StartGuide
 
@@ -40,44 +35,7 @@ async def start(creation_id: str, value: StartGuide, request: Request,
                 context=Depends(authenticated, scope="function")):
     tx, session = context
     creation = await owned(tx, session, creation_id, lock=True)
-    fingerprint = canonical_sha256({"creation_id": creation.id, **value.model_dump(mode="json")})
-    prior = await tx.scalar(select(GuideJob).where(GuideJob.idempotency_key == str(value.idempotency_key)))
-    if prior:
-        if prior.fingerprint != fingerprint:
-            raise ControlError(409, "idempotency_conflict")
-        return envelope(request, await service.projection(tx, prior))
-    service.enabled()
-    if not await service.review_schema_ready(tx):
-        raise ControlError(503, "content_work_unavailable")
-    revision = await service.current_revision(tx, creation, value.accepted_revision)
-    active = await tx.scalar(select(GuideJob).where(GuideJob.creation_id == creation.id, GuideJob.status.in_(ACTIVE))
-                             .with_for_update())
-    if active:
-        await service.expire(tx, active)
-        if active.status in ACTIVE:
-            raise ControlError(409, "content_work_busy")
-    sequence = await service.next_sequence(tx, creation.id)
-    if sequence > 20:
-        raise ControlError(409, "content_work_limit")
-    await service.job_quota(tx)
-    target = SimpleNamespace(creation_id=creation.id, accepted_revision=value.accepted_revision,
-        source_hash=revision.material_hash, page_id=value.page_id, canonical_host=creation.canonical_host)
-    async def authorized():
-        await service.current_actor(tx, session, creation.portfolio_id)
-        return creation.current_revision == value.accepted_revision and creation.status not in ACTIVE
-    try:
-        prepared = await studio.invoke(target, "prepare", authorized, seconds=20)
-    except RunnerError as error:
-        raise ControlError(409 if error.code in {"writer_planning_brief_required", "writer_page_not_in_intake"}
-                           else 503, error.code) from None
-    row = GuideJob(id=new_id(), creation_id=creation.id, revision_id=revision.id,
-        accepted_revision=value.accepted_revision, source_hash=revision.material_hash, page_id=value.page_id,
-        session_id=session.id, sequence=sequence, idempotency_key=str(value.idempotency_key),
-        fingerprint=fingerprint, source_revision=settings().control_source_revision, status="queued",
-        binding={key: prepared[key] for key in studio.BINDING_KEYS}, event_sequence=0, **binding(creation))
-    tx.add(row)
-    await tx.flush()
-    await service.event(tx, row, "queued", "Pasirinkto gido rengimo užduotis įrašyta ir laukia vykdytojo.")
+    row = await service.admit(tx, session, creation, value)
     return envelope(request, await service.projection(tx, row))
 
 

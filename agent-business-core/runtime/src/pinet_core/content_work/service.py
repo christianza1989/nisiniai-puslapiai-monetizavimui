@@ -1,5 +1,6 @@
 import re
 from datetime import timedelta
+from types import SimpleNamespace
 
 from sqlalchemy import func, select, text
 
@@ -12,6 +13,7 @@ from ..creation.review import canonical_sha256
 from ..creation.service import ACTIVE, binding, current_actor, daily_limit_reached
 from ..creation.service import authority as creation_authority
 from ..models import new_id, utcnow
+from ..tasks.codex_transport import RunnerError
 from .models import GuideAttempt, GuideEvent, GuideJob
 from .wire import EventPayload, JobView
 
@@ -32,6 +34,8 @@ async def authority(tx, job, creation=None):
     except ControlError:
         return False
     creation = creation or await tx.get(Creation, job.creation_id)
+    if creation is not None and await archived(tx, creation):
+        return False
     return bool(await creation_authority(tx, job) and creation and creation.current_revision == job.accepted_revision
         and creation.status not in ACTIVE and creation.canonical_host)
 
@@ -171,6 +175,71 @@ def lease(job):
 
 async def next_sequence(tx, creation_id):
     return (await tx.scalar(select(func.max(GuideJob.sequence)).where(GuideJob.creation_id == creation_id)) or 0) + 1
+
+
+async def archived(tx, creation):
+    from ..business_discovery.models import CreationArchive
+    from ..business_discovery.service import schema_ready
+    return bool(await schema_ready(tx) and await tx.scalar(
+        select(CreationArchive.id).where(CreationArchive.creation_id == creation.id)))
+
+
+async def stop_archived(tx, creation):
+    """Called under the archive's actor/Creation locks; charged history stays intact."""
+    jobs = list(await tx.scalars(select(GuideJob).where(GuideJob.creation_id == creation.id,
+                                 GuideJob.status.in_(ACTIVE)).with_for_update()))
+    for job in jobs:
+        job.status, job.lease_until, job.finished_at = "cancelled", None, utcnow()
+        await event(tx, job, "cancelled",
+                    "Verslo kūrimas archyvuotas. Gido rengimas sustabdytas; istorija išsaugota.")
+    return len(jobs)
+
+
+async def admit(tx, session, creation, value):
+    """Canonical API/controller admission; caller holds the current owned Creation."""
+    from . import studio
+    if await archived(tx, creation):
+        raise ControlError(409, "creation_archived")
+    fingerprint = canonical_sha256({"creation_id": creation.id, **value.model_dump(mode="json")})
+    prior = await tx.scalar(select(GuideJob).where(GuideJob.idempotency_key == str(value.idempotency_key)))
+    if prior:
+        if prior.fingerprint != fingerprint:
+            raise ControlError(409, "idempotency_conflict")
+        return prior
+    enabled()
+    if not await review_schema_ready(tx):
+        raise ControlError(503, "content_work_unavailable")
+    revision = await current_revision(tx, creation, value.accepted_revision)
+    active = await tx.scalar(select(GuideJob).where(GuideJob.creation_id == creation.id,
+                                                   GuideJob.status.in_(ACTIVE)).with_for_update())
+    if active:
+        await expire(tx, active)
+        if active.status in ACTIVE:
+            raise ControlError(409, "content_work_busy")
+    sequence = await next_sequence(tx, creation.id)
+    if sequence > 20:
+        raise ControlError(409, "content_work_limit")
+    await job_quota(tx)
+    target = SimpleNamespace(creation_id=creation.id, accepted_revision=value.accepted_revision,
+        source_hash=revision.material_hash, page_id=value.page_id, canonical_host=creation.canonical_host)
+    async def authorized():
+        await current_actor(tx, session, creation.portfolio_id)
+        return (creation.current_revision == value.accepted_revision and creation.status not in ACTIVE
+                and not await archived(tx, creation))
+    try:
+        prepared = await studio.invoke(target, "prepare", authorized, seconds=20)
+    except RunnerError as error:
+        raise ControlError(409 if error.code in {"writer_planning_brief_required", "writer_page_not_in_intake"}
+                           else 503, error.code) from None
+    row = GuideJob(id=new_id(), creation_id=creation.id, revision_id=revision.id,
+        accepted_revision=value.accepted_revision, source_hash=revision.material_hash, page_id=value.page_id,
+        session_id=session.id, sequence=sequence, idempotency_key=str(value.idempotency_key),
+        fingerprint=fingerprint, source_revision=settings().control_source_revision, status="queued",
+        binding={key: prepared[key] for key in studio.BINDING_KEYS}, event_sequence=0, **binding(creation))
+    tx.add(row)
+    await tx.flush()
+    await event(tx, row, "queued", "Pasirinkto gido rengimo užduotis įrašyta ir laukia vykdytojo.")
+    return row
 
 
 __all__ = ["current_actor"]

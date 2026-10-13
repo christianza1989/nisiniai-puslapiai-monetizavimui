@@ -451,6 +451,37 @@ const selectedPages = (site, ids) => {
   if (!Array.isArray(ids) || !ids.length || ids.length > 200 || new Set(ids).size !== ids.length) throw new Error('Reikia 1–200 unikalių šios svetainės puslapių ID.');
   return ids.map(id => { const page = site.pages.find(p => p.id === id && p.siteId === site.id && p.status !== 'revoked'); if (!page) throw new Error('Puslapis nepriklauso šiai svetainei arba atšauktas.'); return page; });
 };
+// A URL migration edits drafts under the same lock and validation as editPage.
+// It never approves, exports, or rewrites an existing published snapshot.
+export async function editPageSlugs(siteId, changes) {
+  return locked(async () => {
+    if (!Array.isArray(changes) || changes.some(change => !change || typeof change !== 'object')) throw new Error('Reikia konkrečių URL pakeitimų.');
+    const site = await getSite(siteId), pages = selectedPages(site, changes.map(change => change.pageId));
+    const proposed = new Map();
+    for (const [index, page] of pages.entries()) {
+      const change = changes[index];
+      if (page.slug !== change.expectedSlug || revisionHash(page) !== change.expectedRevisionHash) throw new Error('URL migracijos revizija arba ankstesnis adresas pasikeitė.');
+      const slug = normalizeSlug(change.slug, page.type);
+      // Reject normalization/truncation rather than silently changing a reviewed map.
+      if (typeof change.slug !== 'string' || slug !== change.slug) throw new Error('URL turi tiksliai atitikti kanoninį formatą ir ilgio ribą.');
+      proposed.set(page.id, slug);
+    }
+    const slugs = new Set();
+    for (const page of site.pages) {
+      const slug = proposed.get(page.id) ?? page.slug;
+      if (slugs.has(slug)) throw new Error('Toks URL jau suplanuotas.');
+      slugs.add(slug);
+    }
+    const updatedAt = new Date().toISOString();
+    for (const page of pages) {
+      page.slug = proposed.get(page.id);
+      if (site.schemaVersion === 2) page.siteSnapshot = structuredClone(publicSite(site));
+      page.status = 'review'; page.approval = null; page.updatedAt = updatedAt;
+    }
+    await writeJson(siteFile(siteId), site);
+    return { siteId, changed: pages.map(page => page.id), approval: 'not-performed', deployment: 'not-performed' };
+  });
+}
 export async function finalizeInternalLinks(siteId, pageIds) {
   return locked(async () => {
     const site = await getSite(siteId), pages = selectedPages(site, pageIds);

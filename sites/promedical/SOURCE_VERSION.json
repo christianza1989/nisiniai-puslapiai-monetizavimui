@@ -1,11 +1,11 @@
 {
-  "packageSha256": "7ce29ed99c6a20a6fe3eac4ea651e1d7d39ca137e1c74c31f0397e202461fba9",
-  "sourceVersion": "039dbeaaeb1fe67e1d8d89dd7132d1c3b46dbb23",
-  "coreCommit": "dd434ffd11be66d017474186aad6881198faab77",
+  "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+  "sourceVersion": "82aa0cfb1bee40bb0e6bd451cac55246aee9a610",
+  "coreCommit": "8c9989e4c69245091d9685f166c4fde76ab35988",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
-      "sha256": "ae7050a66f45efd52eba69c2b1e432e284ac2378125afcb62aa2fccd6e040f35"
+      "sha256": "ec7d9815c83d70a752b603d5278ba9f9eca2eb8d3a4160d798af2be442bf42cf"
     },
     {
       "file": "components/niche/promedical-site.module.css",
@@ -13,7 +13,7 @@
     },
     {
       "file": "components/niche/promedical-inquiry.tsx",
-      "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+      "sha256": "394a465626313d401840520b1086ebbf13106c9187b07d3cde4ac4773bc4aec4"
     },
     {
       "file": "components/niche/article-meta.tsx",
@@ -33,7 +33,7 @@
     },
     {
       "file": "lib/generated/content-packages.json",
-      "sha256": "86b9a47b9df2d30d7f4fc98fbdf1687fbefb3f838a291b67bf286424b4b065a2"
+      "sha256": "eebe238d6601fb52b89010eaffb12927132f04e7b7717727de9370a93f4e0000"
     },
     {
       "file": "lib/smtp-protocol.mjs",
@@ -78,15 +78,48 @@
     {
       "file": "public/brand/promedical/logo-v2-640.webp",
       "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
+    },
+    {
+      "file": "content-packages/promedical/content-package.json",
+      "sha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af"
+    },
+    {
+      "file": "config/niche-path-aliases.json",
+      "sha256": "9cc439fddac44e00689fc975eb96d57ddd036bce55ae2c8d34b62aa2f777081d"
+    },
+    {
+      "file": "proxy.ts",
+      "sha256": "0d0f81a997d0e31a5ff3eedffc1820c792d389f6d8ea55887f4869e2faf87482"
+    },
+    {
+      "file": "lib/niche-path-aliases.mjs",
+      "sha256": "9e7cbbb0fa2ba1b94c6fa10011f080bed43795d419f3cbfaafeec47cbf0c44cd"
+    },
+    {
+      "file": "lib/promedical-inquiry-paths.mjs",
+      "sha256": "31fdb96cf732c1e7b29981a5f05a2194096752c3aeb2bcc1618b89f3af886cf2"
+    },
+    {
+      "file": "scripts/compile-content-packages.mjs",
+      "sha256": "c2eab4b3e0a094cdc54a72d43a713acdd2293a58a5f3ea27b8a15132bbd0bc4f"
+    },
+    {
+      "file": "tests/niche-path-aliases.test.mjs",
+      "sha256": "4f00a5d584cd5fa36b58980f9734c563776be5a37a368b6608ae42ee5b63bc55"
+    },
+    {
+      "file": "tests/promedical-url-migration-smoke.mjs",
+      "sha256": "79f713b17541bc4226cc114144257137a0683c5886ad62296fcae351863a8d50"
     }
   ],
-  "checkedAt": "2026-10-13T08:40:56.602Z",
-  "productionVersion": "078fa837-d02b-4879-b685-e4d8c1adc23f",
-  "notes": "Owner-requested removal of the automation attribution and URL from the common Promedical Footer. Package/calendar/media/styles/other tenants unchanged. Current D:/Core operational configs; prior complete manifest archived in footer receipt. Core commit is baseline before this evidence update.",
-  "productionDeployment": "aff0b917-21a4-4968-9f5b-0268bbfdf38c",
+  "checkedAt": "2026-10-13T17:54:57.665Z",
+  "productionVersion": "983732bb-4f96-4fa9-ac2d-7a4285a08940",
+  "notes": "Lithuanian catalogue URL migration:1408 products/436 categories/1845 exact legacy308 routes; shared canonical/sitemap/schema/reading exports, stable-ID selection and saved inquiry path migration.65 live editorial snapshots and guide dates preserved; no staged homepage, DNS/billing/mail change. Narrow source/runtime verification, not indexing or whole-site acceptance.",
+  "productionDeployment": "9a9ee85c-9141-46b8-b20e-6abf08e25256",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
   "logoEvidence": "verification-20261010/logo-change-v2.json",
   "editorialEvidence": "verification-20261010/editorial-release-v1.json",
   "homeEvidence": "verification-20261010/generic-home-v1.json",
-  "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json"
+  "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json",
+  "urlMigrationEvidence": "verification-20261013/url-migration-v1.json"
 }

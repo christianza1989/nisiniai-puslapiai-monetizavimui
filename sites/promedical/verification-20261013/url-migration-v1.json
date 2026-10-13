@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "siteId": "promedical",
+  "state": "DEPLOYED_VERIFIED",
+  "checkedAt": "2026-10-13T17:54:57.665Z",
+  "scope": "Owner-requested Lithuanian catalogue URL migration through the canonical studio and public core. One exact duplicate category merged. No content rewrite or staged homepage cutover.",
+  "publicSource": "82aa0cfb1bee40bb0e6bd451cac55246aee9a610",
+  "coreBaseline": "8c9989e4c69245091d9685f166c4fde76ab35988",
+  "fetchedMain": {
+    "core": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+    "public": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937"
+  },
+  "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+  "previousPackageSha256": "7ce29ed99c6a20a6fe3eac4ea651e1d7d39ca137e1c74c31f0397e202461fba9",
+  "inventory": {
+    "packagePages": 1909,
+    "currentSitemapUrls": 1854,
+    "products": 1408,
+    "categories": 436,
+    "oldCatalogueRoutes": 1845,
+    "uniqueNewCatalogueRoutes": 1844,
+    "unchangedEditorialPages": 65,
+    "scheduledGuides": 57
+  },
+  "canonicalRelease": {
+    "path": "D:\\Core\\promedical-core-20261009\\content-studio\\output\\releases\\promedical\\2380063d-157b-4cd8-bf99-12bbfdf74e0a\\content-package.json",
+    "pages": 1909,
+    "assets": 3777,
+    "manifestPath": "D:\\Core\\promedical-core-20261009\\content-studio\\output\\releases\\promedical\\2380063d-157b-4cd8-bf99-12bbfdf74e0a\\release-manifest.json",
+    "packageSha256": "63f1f2e106a9f793a7b1824a893dff55fbe555c9bb47cab1c2d888f1c66d93b5",
+    "state": "exported-not-deployed"
+  },
+  "checks": {
+    "studioTests": {
+      "pass": 54,
+      "fail": 0
+    },
+    "publicTests": {
+      "pass": 61,
+      "fail": 0
+    },
+    "compilePackages": 10,
+    "build": "PASS",
+    "types": "PASS",
+    "focusedLint": "PASS",
+    "stagedSafety": "PASS",
+    "dryRun": "PASS",
+    "all10SiteLocalSeoSmoke": "PASS",
+    "catalogueSearchPagination": {
+      "state": "PASS",
+      "pages": 59,
+      "uniqueProducts": 1408
+    },
+    "localHttp": {
+      "state": "PASS",
+      "requests": 3710,
+      "canonicalPages": 1854,
+      "redirects": 1845,
+      "issues": []
+    },
+    "productionHttp": {
+      "state": "PASS",
+      "requests": 3709,
+      "canonicalPages": 1854,
+      "redirects": 1845,
+      "issues": []
+    },
+    "browser": {
+      "local": {
+        "views": [
+          {
+            "canonical": "https://promedical.lt/produktai/infuziju-stovas-nerez1005ais",
+            "client": 1425,
+            "imageLoaded": true,
+            "scroll": 1425,
+            "title": "Infuzijų stovas NEREZ1005AIS",
+            "width": 1440
+          },
+          {
+            "client": 1425,
+            "page": "inquiry",
+            "path": "/produktai/infuziju-stovas-nerez1005ais",
+            "quantity": "2",
+            "rows": 1,
+            "scroll": 1425
+          },
+          {
+            "canonical": "https://promedical.lt/kategorijos/moduliniai-vezimeliai",
+            "client": 375,
+            "links": [
+              "/kategorijos/moduliniai-vezimeliai",
+              "/kategorijos/vezimeliai-su-priedais",
+              "/kategorijos/iso-moduliu-sistema",
+              "/kategorijos/spintos",
+              "/kategorijos/specialios-paskirties-vezimeliai",
+              "/kategorijos/sterilizavimo-iranga",
+              "/kategorijos/medicininiai-baldai",
+              "/kategorijos/vezimeliu-priedai"
+            ],
+            "page": "category",
+            "scroll": 375,
+            "title": "Moduliniai vežimėliai",
+            "width": 390
+          }
+        ],
+        "legacyURLRedirected": true,
+        "inquiryAddedTwiceOneRowQuantity2": true,
+        "ownLocalTestItemRemoved": true,
+        "mailNotSubmitted": true
+      },
+      "production": {
+        "views": [
+          {
+            "url": "https://promedical.lt/produktai/infuziju-stovas-nerez1005ais",
+            "canonical": "https://promedical.lt/produktai/infuziju-stovas-nerez1005ais",
+            "client": 1425,
+            "imageLoaded": true,
+            "scroll": 1425,
+            "title": "Infuzijų stovas NEREZ1005AIS",
+            "width": 1440
+          },
+          {
+            "url": "https://promedical.lt/kategorijos/moduliniai-vezimeliai",
+            "canonical": "https://promedical.lt/kategorijos/moduliniai-vezimeliai",
+            "categoryLinks": [
+              "/kategorijos/moduliniai-vezimeliai",
+              "/kategorijos/vezimeliai-su-priedais",
+              "/kategorijos/iso-moduliu-sistema",
+              "/kategorijos/spintos",
+              "/kategorijos/specialios-paskirties-vezimeliai",
+              "/kategorijos/sterilizavimo-iranga",
+              "/kategorijos/medicininiai-baldai",
+              "/kategorijos/vezimeliu-priedai"
+            ],
+            "client": 375,
+            "scroll": 375,
+            "title": "Moduliniai vežimėliai",
+            "width": 390
+          }
+        ],
+        "oldProductAndCategoryRedirected": true,
+        "mailNotSubmitted": true
+      }
+    }
+  },
+  "cloudflare": {
+    "before": {
+      "version": "078fa837-d02b-4879-b685-e4d8c1adc23f",
+      "deployment": "aff0b917-21a4-4968-9f5b-0268bbfdf38c",
+      "routes": [
+        {
+          "id": "672c5c30b46349be92b1b2404b7a492a",
+          "pattern": "promedical.lt/*",
+          "script": "promedical",
+          "request_limit_fail_open": false
+        },
+        {
+          "id": "63bf784bc56741f7b4f6287f03ad718e",
+          "pattern": "www.promedical.lt/*",
+          "script": "promedical",
+          "request_limit_fail_open": false
+        }
+      ],
+      "limits": {
+        "cpu_ms": 1000
+      }
+    },
+    "after": {
+      "version": "983732bb-4f96-4fa9-ac2d-7a4285a08940",
+      "deployment": "9a9ee85c-9141-46b8-b20e-6abf08e25256",
+      "createdOn": "2026-10-13T17:46:41.2006Z",
+      "routes": [
+        {
+          "id": "672c5c30b46349be92b1b2404b7a492a",
+          "pattern": "promedical.lt/*",
+          "script": "promedical",
+          "request_limit_fail_open": false
+        },
+        {
+          "id": "63bf784bc56741f7b4f6287f03ad718e",
+          "pattern": "www.promedical.lt/*",
+          "script": "promedical",
+          "request_limit_fail_open": false
+        }
+      ],
+      "limits": {
+        "cpu_ms": 1000
+      },
+      "compatibility_date": "2026-05-15"
+    },
+    "bindings": [
+      {
+        "name": "ASSETS",
+        "type": "assets"
+      },
+      {
+        "database_id": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+        "id": "083a8bd9-8989-4fc9-a9bc-3211067b629d",
+        "name": "DB",
+        "type": "d1"
+      },
+      {
+        "allowed_destination_addresses": [
+          "info@promedical.lt"
+        ],
+        "allowed_sender_addresses": [
+          "uzklausos@promedical.lt"
+        ],
+        "name": "LEAD_EMAIL",
+        "type": "send_email"
+      },
+      {
+        "name": "LEAD_SMTP_ENABLED",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_PASSWORD",
+        "type": "secret_text"
+      },
+      {
+        "name": "LEAD_SMTP_USER",
+        "type": "secret_text"
+      }
+    ],
+    "bindingsUnchanged": true
+  },
+  "invariants": {
+    "allRetainedTitlesFactsBodyDatesMediaExternalSourcesUnchanged": true,
+    "editorial65And57GuideDatesUnchanged": true,
+    "other9PackagesUnchanged": true,
+    "oldOriginalUrlsSingleHop308": true,
+    "canonicalSitemapSchemaReadingExportsUseSharedProjection": true,
+    "d1EmailSecretNamesRoutesCpuCompatibilityUnchanged": true,
+    "dnsBillingAndMailSubmissionUntouched": true
+  },
+  "limitations": [
+    "Original sitemap paths redirect in one hop. A noncanonical trailing-slash variant is normalized by vinext before proxy and has one additional308; the original failed check is retained locally.",
+    "Discovery/HTTP200 is not Google indexing or guaranteed ranking/AI recommendation. Search Console sitemap URL remains unchanged.",
+    "The local studio65 editorial copies predate the approved live rewrite; only the newly approved1844 catalogue snapshots were merged into the current public package. A future full studio export must reconcile those editorial copies before replacing production.",
+    "This narrow migration does not update previous whole-site audit/operational/mail Inbox gates."
+  ],
+  "rawEvidenceDirectory": "D:\\Core\\promedical-core-20261009\\sites\\promedical\\url-migration-20261013",
+  "previousManifest": {
+    "packageSha256": "7ce29ed99c6a20a6fe3eac4ea651e1d7d39ca137e1c74c31f0397e202461fba9",
+    "sourceVersion": "039dbeaaeb1fe67e1d8d89dd7132d1c3b46dbb23",
+    "coreCommit": "dd434ffd11be66d017474186aad6881198faab77",
+    "files": [
+      {
+        "file": "components/niche/promedical-site.tsx",
+        "sha256": "ae7050a66f45efd52eba69c2b1e432e284ac2378125afcb62aa2fccd6e040f35"
+      },
+      {
+        "file": "components/niche/promedical-site.module.css",
+        "sha256": "9de6eb5a7d7dbc813a812b3737ad594f4a73f9fc42e78f6b64ccf4197acba889"
+      },
+      {
+        "file": "components/niche/promedical-inquiry.tsx",
+        "sha256": "9c272430e9f1e6c56434fe03b4fdf099fbf3553d3bbe5b6012d74217d7fc2187"
+      },
+      {
+        "file": "components/niche/article-meta.tsx",
+        "sha256": "06549387ba4fa5ab47bb77aae51300222a53378035906a80ea1f68b1f23b164e"
+      },
+      {
+        "file": "app/layout.tsx",
+        "sha256": "da8209d06baccb14229569ff5f14c2e87ddbebc0b4b6b400847116df6b1eebfa"
+      },
+      {
+        "file": "app/niche/[siteId]/brand-icon/route.ts",
+        "sha256": "65bd4be6df2f69bb090aad666d8b4184b2023ac9205b8084e05939efd63660cf"
+      },
+      {
+        "file": "config/niche-network.json",
+        "sha256": "e017b9873f9f7a5e3394135e1ec1f89f0ae6628d8af4f186ebfd3a0c9b127c56"
+      },
+      {
+        "file": "lib/generated/content-packages.json",
+        "sha256": "86b9a47b9df2d30d7f4fc98fbdf1687fbefb3f838a291b67bf286424b4b065a2"
+      },
+      {
+        "file": "lib/smtp-protocol.mjs",
+        "sha256": "96127119e93d06aa26808e430acaeda30ed57a30ac89360e3c40ac9dbc3b4e23"
+      },
+      {
+        "file": "lib/niche-sites.ts",
+        "sha256": "20871662ec14d407c57fc6a91fc97964191c7fa5ccf606d1a1078f5f2c7f64f2"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "6f412f42a0b48317170c7e1f61070fe5d6a80b5a8792d913b5d49e6b94263aa8"
+      },
+      {
+        "file": "tests/niche-render-cache.test.mjs",
+        "sha256": "c653b31801e2c28269ade43789f9679686cc67a6a06107ef428b121f8e7bf74b"
+      },
+      {
+        "file": "lib/niche-mail.ts",
+        "sha256": "335e8aed06cc36dbf5a82dd8722556f685f6d55e75023362337b830ff825b67c"
+      },
+      {
+        "file": "app/niche/[siteId]/lead/route.ts",
+        "sha256": "ac1aefd01a9b9a6826dc0d1992d0609fbd4f6cedd971f86a8c9a311b6faddff8"
+      },
+      {
+        "file": "tests/niche-mail.test.mjs",
+        "sha256": "0a740d66bfe3dd064b8a8842cab6a2cf252678f7f9652de5cc0752efcd4062ff"
+      },
+      {
+        "file": "public/brand/promedical/logo-v1-360.webp",
+        "sha256": "19cf7453972bbb326f0d9c3c71338e1d5d2e8f7290090c6b4f26f06638d609ba"
+      },
+      {
+        "file": "public/brand/promedical/logo-v1-640.webp",
+        "sha256": "fb296e2ecf7483c1c1e80249a0aa9d76a71b1e2885165fac9014150efb07a8e1"
+      },
+      {
+        "file": "public/brand/promedical/logo-v2-360.webp",
+        "sha256": "d37155984dc68b78c3b6d3660cf369e7448d84e6d05c2830e0e9e779da9b86ba"
+      },
+      {
+        "file": "public/brand/promedical/logo-v2-640.webp",
+        "sha256": "f62b0ba716989dad2ac524e8b02decec369ef0037d04925480c8aae6776d2331"
+      }
+    ],
+    "checkedAt": "2026-10-13T08:40:56.602Z",
+    "productionVersion": "078fa837-d02b-4879-b685-e4d8c1adc23f",
+    "notes": "Owner-requested removal of the automation attribution and URL from the common Promedical Footer. Package/calendar/media/styles/other tenants unchanged. Current D:/Core operational configs; prior complete manifest archived in footer receipt. Core commit is baseline before this evidence update.",
+    "productionDeployment": "aff0b917-21a4-4968-9f5b-0268bbfdf38c",
+    "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
+    "logoEvidence": "verification-20261010/logo-change-v2.json",
+    "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+    "homeEvidence": "verification-20261010/generic-home-v1.json",
+    "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json"
+  }
+}

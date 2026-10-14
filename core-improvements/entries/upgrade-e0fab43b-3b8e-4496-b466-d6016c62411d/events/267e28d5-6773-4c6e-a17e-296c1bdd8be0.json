@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implemented the reserved session-bound native draft bridge and lock split. Initial own QA fixture failed before provisioning because companion path configuration was missing (tests-882773e3.log,3offlinePASS/1fixtureERROR8.80s); fixed only private harness configuration/locked local dependencies and retained the log. Initial Ruff F811 fixture-parameter import notation corrected with canonical fixture noqa.19new offline/restrictedPG cases PASS135.14s, scoped Ruff PASS; full public compatibility is still running. No original preview schema/counts or restricted role attributes changed, no models/server/channels.",
+  "eventId": "267e28d5-6773-4c6e-a17e-296c1bdd8be0",
+  "sequence": 2,
+  "at": "2026-10-14T07:27:00.543Z"
+}

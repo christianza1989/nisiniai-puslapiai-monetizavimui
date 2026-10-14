@@ -2,6 +2,12 @@
 
 An English, persistent local manufacturer demonstration for the proposed MemoryString studio network. The current [plan](PLAN.md), [acceptance](ACCEPTANCE.md) and [manufacturer runbook](RUNBOOK.md) describe the scope and actual evidence.
 
+The default fresh database contains the complete **September 2026** fixture for all ten studios: 489 September orders (186 portraits / 303 kit orders, 621 kits ordered), plus ten labelled August carry-over orders. Every studio has orders on all 30 days. Monthly sales are an order-creation cohort: current collected amounts less current refunds for September-created orders, rather than a cash-flow statement. Stock is initially the 30 September snapshot and remains live in the local adapter.
+
+The fixture includes 40 assembly batches / 212 assembled kits, 100 supplier purchase orders (70 received, 30 open), 20 inter-studio transfers, 12 creator sources, 382 commission rows, 4,180 audit entries and 2,893 stock movements. Opening packed kits are 825; reconciled current packed kits are 612. Completed, returned, cancelled and all active portrait/kit stages remain actionable. The original AI pet photo/sequence is a shared prepared sample, not 186 individual customer photographs.
+
+Existing databases are never silently replaced at startup. To load this month into an older synthetic database, stop the server and run the reset command below: the CLI first saves a consistent SQLite backup under `.local/backups/`. The operator's Reset fixtures control restores the selected profile; it does not create a new backup. `MEMORYSTRING_FIXTURE=baseline` selects the original small `eu-ten-v1` fixture for historical acceptance/regression. Month is the default for a fresh database and reset; both remain local test data.
+
 From the repository root, using Node 24:
 
 ```powershell

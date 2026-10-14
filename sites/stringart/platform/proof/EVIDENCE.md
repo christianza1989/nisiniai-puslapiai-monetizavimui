@@ -71,3 +71,23 @@ The same existing PDF/text filenames remain under `C:/Users/Lenovo/Downloads/str
 Validation: helper arithmetic/fixture totals/text bounds and PDF extraction terms pass. Protected English chapters 1–8, 11–15 and 17; Lithuanian chapters 1–8, 11–14, 16 and 17 match prior source after newline normalization. Every source URL is identical. The supplier proposal matches between both language plans and the stable text export. Same-author full updated-text self-edit and source comparison preserve facts, negations, conditions and dates; no fresh market/legal revalidation is implied.
 
 Native bundled Poppler rendered the affected English pages 1/10/11/17/19 and Lithuanian pages 1/10/11/12/17/20; all were visually reviewed for readable text, tables, headers/footers and page flow. A short Lithuanian orphan page was removed by condensing only the new status paragraph, and a stale app-section server-status sentence was corrected and re-rendered. Raw manifests/checks/renders are in the own ignored research tmp. No backend/browser journey rerun or fixture reset was needed for this document-only batch. Original checkout, supplier materials, mobile/code, real services and unsent-message boundary remain unchanged.
+
+
+## Complete September month — root follow-up, 14 October 2026
+
+Own branch `codex/memorystring-month-fixtures-20261014`, dependency PR129 `689053db3502bfad6aabb3f20edc23344443e642`, fetched main `7af6b9641012a30c5f95eac38a66daeff8f8cb39`. Source commit and scoped PR are supplied by the Git handoff. These fingerprints bind the executed working bytes; original proof above remains historical.
+
+24/24 Node/backend/real HTTP checks passed on final functional source. Sequential CUA review includes all ten completed partner identities and exact monthly values, daily table, pagination, normal desktop/320, and measured 32px text plus simultaneous spacing at 320/1280. Final containment confirms repaired country/tag/large-metric cases. Role switching is disabled while loading; open supplier actions precede received records after final source reload. Raw local reports/captures listed in ACCEPTANCE.md remain ignored. No independent review, browser zoom, physical quality, broader device matrix or production admission is claimed.
+
+| Current source | SHA-256 |
+| --- | --- |
+| month-fixture.mjs | 7adb7400db7170060fcb8fb33c414a7e32957ec1aa32ee47341e673eda197f43 |
+| store.mjs | c76b112f4128e8863340526134d509aba196cc85a3d7cffc6779ccda14aa24da |
+| server.mjs | 0238db7cc21a43bb41d5b294cc46f4580cfb07b0a276056e49cfa2f1c660cc20 |
+| reset.mjs | c65f10d3cb2a848a59ee4a5e58efb91b9eea3f62d81ee1369fe0b0c935318ea6 |
+| app.mjs | fdaf0a9980dde1c2cf2f31d610050afae9d6a351fd82697c2eb6ac32132d5e5e |
+| style.css | 4115f3879f1d5e437f841c44d32616684ee8fa5bba61a88a8e102a5f9f358bd3 |
+| tests/month.test.mjs | f2832f50e6384f2c3f38450978a7f929f027a16bca2a19a0289d8d465b252e86 |
+| tests/http.test.mjs | 9b7e6442efd76973a6c10419d40238effa782df0e4e2c91cb61d6919226138c2 |
+
+Fixture: 489 September orders / ten August carry-over, 186 portraits / 303 kit orders / 621 ordered kits, 40 batches / 212 assembled kits, 100 purchases / 70 received / 30 open, 20 transfers, 12 creators / 382 commission rows, 4,180 audits / 2,893 movements; 825 opening / 612 current kits. Cohort collected less refunds €85,232.08; September order refunds €6,259.71. Every studio has all 30 days. Full stock and money reconcile; all remain synthetic examples. Prior databases are preserved by CLI backup before explicit fixture load.

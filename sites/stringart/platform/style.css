@@ -32,3 +32,7 @@ button,.button{max-width:100%;overflow-wrap:anywhere;flex-wrap:wrap}
 p{overflow-wrap:anywhere}
 .pagehead{flex-wrap:wrap}
 .pagehead>.status{flex-shrink:0}
+
+.listpages{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1rem 0}.listpages p{margin:0}.listpages .actions{display:flex;gap:.6rem;flex-wrap:wrap}.sectiongap summary{cursor:pointer;font-weight:600;min-height:44px;line-height:1.5}.sectiongap[open] summary{margin-bottom:1rem}
+.counttag{white-space:normal;max-width:100%;overflow-wrap:anywhere}.country{flex-wrap:wrap}.country>div{min-width:0;flex:1 1 8rem;overflow-wrap:anywhere}.countrycount{max-width:100%;margin-left:auto}
+.ledgerstrip dl{flex:1 1 min(100%,12rem);min-width:0;max-width:100%;overflow-wrap:anywhere}.ledgerstrip dd,.ledgerstrip dt,.ledgerstrip small{overflow-wrap:anywhere}

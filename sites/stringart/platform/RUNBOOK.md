@@ -4,9 +4,9 @@
 
 ## 0:00–1:00 — establish the fixture boundary
 
-Point to the environment bar: ten synthetic EU studios, fictional contacts/addresses, simulated payment/shipping/telemetry and live adapters off. Overview begins with 16 machine assets and exactly 825 packed kits. The country counts match the business plan. Open Studios → Vilnius to show its profile, fictional address, machine locations/serials and stock.
+Point to the environment bar and September period: ten synthetic EU studios, fictional contacts/addresses, simulated payment/shipping/telemetry and live adapters off. Overview has 16 machine assets and 612 packed kits after the month; 825 is the documented 1 September opening stock. Open the monthly summary and expand Daily order history: 489 September orders, distinct studio volumes and activity on all 30 days. Open Studios → Vilnius to show its profile, fictional address, machine locations/serials and stock.
 
-Explain the three reporting lines: fixture partner sales derive from recorded customer orders; €990 is our separate assumed one-month service revenue at €99 per studio; supplier purchases begin at zero and become received purchase value after reconciliation. These are independent measures, not our turnover or a real distributor network.
+Explain the three reporting lines: €85,232.08 is the synthetic September order cohort's collected total less current refunds; €990 is our separate assumed one-month service revenue at €99 per studio; €14,303 is the assumed value of received supplier purchases. August carry-over orders are excluded from September order sales. These are independent measures, not our turnover, cash-flow accounting or a real distributor network.
 
 ## 1:00–4:00 — one portrait from review to delivery
 
@@ -31,11 +31,11 @@ Create a Kit order, simulate payment, reserve and pack it. The packed SKU reduce
 
 Switch to Vilnius partner studio. It sees its own studio/orders/machines/materials and participant transfers, not Berlin's private customer records. Return to the operator and reserve a five-kit transfer from Vilnius to Berlin. Dispatch it: source stock reduces; Berlin only has incoming. Receive it: Berlin gains stock once.
 
-Switch to Equipment & materials supplier → Purchase orders. It sees assigned orders and agreed aggregate SKU demand, with no individual studio/customer photo/project/revenue records. Set an expected receipt date and acknowledge the seeded PO-1001, then dispatch it through the simulated adapter. Switch back to operator → Supply → Reconcile & receive. Only receipt adds the 12,000 m thread and 24 boards to Vilnius stock. The received supplier purchase measure increases by the fixture's €288 assumed value.
+Switch to Equipment & materials supplier → Purchase orders. It sees 100 assigned orders and agreed aggregate SKU demand, with no individual studio/customer photo/project/revenue records. Open orders come first. Choose a Proposed 20-board order (€140 assumed value), note its generated ID and expected receipt date, acknowledge it and dispatch through the simulated adapter. Switch back to operator → Supply → find that exact ID and Reconcile & receive. Only receipt adds those 20 boards to the named studio. Its October expected date is a fixture expectation; a demonstration receipt uses the actual clock.
 
 ## 7:00–8:30 — commission and traceability
 
-Open Referrals. Newly delivered portrait commission remains held. Historical synthetic order MS-LT-100 was delivered on 5 September; its review ended on 5 October. Simulate its eligible payout without changing the clock.
+Open Referrals. Newly delivered portrait commission remains held. August carry-over orders ending in -090 demonstrate paid commissions; four show later refund recovery. Search Orders for MS-LT-100: this September order's review has elapsed on the current demonstration date, so its eligible payout can be simulated without changing the clock.
 
 Open that historical order and refund its goods. Return to Referrals: the same commission row now records recovery after the simulated payout. A delivery-only refund leaves goods commission unchanged. Show Activity and the linked stock movements; actor, timestamp, transaction and order IDs explain each change.
 

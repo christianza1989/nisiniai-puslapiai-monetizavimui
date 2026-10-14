@@ -16,24 +16,33 @@ function version(entity,c){requireThat(entity.version===c.version,'stale_version
 function entity(list,entityId){const e=list.find(e=>e.id===entityId);requireThat(e,'not_found','The record could not be found.',404);return e;}
 function balance(s,tenant,sku){const b=s.stock.find(b=>b.tenant===tenant&&b.sku===sku);requireThat(b,'unknown_stock','Choose an existing studio and stock item.',400);return b;}
 export function summary(s){
- const orders=s.orders.filter(o=>o.paidCents>0), net=orders.reduce((n,o)=>n+o.paidCents-o.refundGoodsCents-o.refundShippingCents,0);
+ const inPeriod=o=>!s.period||(o.at>=s.period.start&&o.at<=s.period.end);
+ const cohort=s.orders.filter(inPeriod),orders=cohort.filter(o=>o.paidCents>0),net=orders.reduce((n,o)=>n+o.paidCents-o.refundGoodsCents-o.refundShippingCents,0);
+ const daily=s.period?Array.from({length:Math.floor((Date.parse(s.period.end)-Date.parse(s.period.start))/86400000)+1},(_,i)=>{
+  const day=new Date(Date.parse(s.period.start)+i*86400000).toISOString().slice(0,10),rows=cohort.filter(o=>o.at.startsWith(day));
+  return {day,orders:rows.length,portrait:rows.filter(o=>o.type==='portrait').length,kits:rows.filter(o=>o.type==='kit').reduce((n,o)=>n+o.quantity,0),salesCents:rows.reduce((n,o)=>n+o.paidCents-o.refundGoodsCents-o.refundShippingCents,0)};
+ }):[];
  return {studios:s.partners.length,machines:s.machines.length,kits:s.stock.filter(b=>b.sku==='kit42').reduce((n,b)=>n+b.onHand,0),
   salesCents:net,orders:orders.length,delivered:orders.filter(o=>o.state==='delivered').length,
+  inquiries:cohort.length,portraitOrders:cohort.filter(o=>o.type==='portrait').length,kitOrders:cohort.filter(o=>o.type==='kit').length,refundCents:cohort.reduce((n,o)=>n+o.refundGoodsCents+o.refundShippingCents,0),daily,
+  byStudio:s.partners.map(p=>{const rows=cohort.filter(o=>o.tenant===p.id);return {tenant:p.id,orders:rows.length,portrait:rows.filter(o=>o.type==='portrait').length,kit:rows.filter(o=>o.type==='kit').length,salesCents:rows.reduce((n,o)=>n+o.paidCents-o.refundGoodsCents-o.refundShippingCents,0),refundCents:rows.reduce((n,o)=>n+o.refundGoodsCents+o.refundShippingCents,0)};}),
   ourAssumedRevenueCents:s.partners.length*s.assumptions.subscriptionCents*s.assumptions.platformMonths,
-  supplierPurchasesCents:s.purchases.filter(p=>p.state==='received').reduce((n,p)=>n+p.lines.reduce((a,l)=>a+l.qty*l.unitCents,0),0),
+  supplierPurchasesCents:s.purchases.filter(p=>p.state==='received'&&(!s.period||(p.receivedAt>=s.period.start&&p.receivedAt<=s.period.end))).reduce((n,p)=>n+p.lines.reduce((a,l)=>a+l.qty*l.unitCents,0),0),
   commissionCents:s.commissions.reduce((n,l)=>n+l.amountCents,0)};
 }
 export class Store {
- constructor(filename){
+ constructor(filename,{seedFactory=makeSeed,clock=()=>new Date().toISOString(),idFactory=id}={}){
+  this.seedFactory=seedFactory;this.clock=clock;this.createId=idFactory;
   mkdirSync(path.dirname(filename),{recursive:true});this.db=new DatabaseSync(filename);
   this.db.exec('PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS state (id INTEGER PRIMARY KEY CHECK(id=1), value TEXT NOT NULL); CREATE TABLE IF NOT EXISTS receipts (actor TEXT, key TEXT, hash TEXT, response TEXT, PRIMARY KEY(actor,key));');
-  this.db.prepare('INSERT OR IGNORE INTO state(id,value) VALUES(1,?)').run(JSON.stringify(makeSeed()));
+  if(!this.db.prepare('SELECT id FROM state WHERE id=1').get())this.db.prepare('INSERT OR IGNORE INTO state(id,value) VALUES(1,?)').run(JSON.stringify(seedFactory()));
  }
  close(){this.db.close();}
  read(){return JSON.parse(this.db.prepare('SELECT value FROM state WHERE id=1').get().value);}
+ write(s){this.db.prepare('UPDATE state SET value=? WHERE id=1').run(JSON.stringify(s));}
  view(actor){
   const s=this.read();
-  if(actor.role==='supplier')return {fixture:s.fixture,generation:s.generation,role:actor.role,adapters:s.adapters,
+  if(actor.role==='supplier')return {fixture:s.fixture,period:s.period,generation:s.generation,role:actor.role,adapters:s.adapters,
    demand:s.skus.map(sku=>({sku:sku.id,name:sku.name,unit:sku.unit,agreed:true,available:s.stock.filter(b=>b.sku===sku.id).reduce((n,b)=>n+b.onHand-b.reserved,0),
     reorderDemand:s.stock.filter(b=>b.sku===sku.id).reduce((n,b)=>n+Math.max(0,sku.reorder-(b.onHand-b.reserved)),0)})),
    purchases:s.purchases.filter(p=>p.supplier===actor.tenant).map(({id,state,version,eta,lines,note,tracking})=>({id,state,version,eta,lines,note,tracking})),skus:s.skus};
@@ -67,7 +76,7 @@ export class Store {
   try {
    const prior=this.db.prepare('SELECT hash,response FROM receipts WHERE actor=? AND key=?').get(principal,c.key);
    if(prior){requireThat(prior.hash===hash,'key_conflict','This action key was already used with different input.');this.db.exec('COMMIT');return {...JSON.parse(prior.response),replayed:true};}
-   const s=this.read(),now=new Date().toISOString(),tx=id('tx');
+   const id=this.createId,s=this.read(),now=this.clock(),tx=id('tx');
    const move=(tenant,sku,onHand,reserved,reason,link)=>{
     const b=balance(s,tenant,sku);
     requireThat(b.onHand+onHand>=0&&b.reserved+reserved>=0&&b.onHand+onHand>=b.reserved+reserved,'insufficient_stock',`Not enough available ${sku}. Release a reservation or receive stock first.`);
@@ -87,7 +96,7 @@ export class Store {
    let result,tenant=null,entityId=c.id||null;
    if(c.type==='reset'){
     requireThat(actor.role==='operator','forbidden','Only the operator may reset synthetic fixtures.',403);
-    const fresh=makeSeed();fresh.generation=s.generation+1;
+    const fresh=this.seedFactory();fresh.generation=s.generation+1;
     this.db.prepare('UPDATE state SET value=? WHERE id=1').run(JSON.stringify(fresh));this.db.exec('DELETE FROM receipts');
     result={ok:true,generation:fresh.generation};
    }else{
@@ -96,7 +105,8 @@ export class Store {
      requireThat(['portrait','kit'].includes(c.orderType),'invalid_type','Choose a portrait or kit.',400);
      if(c.referral)requireThat(s.referrals.some(r=>r.id===c.referral),'invalid_referral','Choose a known referral source.',400);
      const quantity=integer(c.quantity||1,1,c.orderType==='portrait'?1:20);
-     const o={id:id('MS'),tenant,type:c.orderType,customer:text(c.customer,100),email:'buyer@demo.customers.example',title:c.orderType==='portrait'?'42 cm monochrome pet portrait':'42 cm DIY gift kit',quantity,state:'inquiry',version:1,
+     const email=c.email?text(c.email,160):'buyer@demo.customers.example';requireThat(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),'invalid_email','Enter a valid customer email address.',400);
+     const o={id:id('MS'),tenant,type:c.orderType,customer:text(c.customer,100),email,title:c.title?text(c.title,100):c.orderType==='portrait'?'42 cm monochrome pet portrait':'42 cm DIY gift kit',channel:c.channel?text(c.channel,40):'Direct website',quantity,state:'inquiry',version:1,
       goodsCents:(c.orderType==='portrait'?13700:9999)*quantity,shippingCents:c.orderType==='portrait'?1200:900,paidCents:0,refundGoodsCents:0,refundShippingCents:0,referral:c.referral||null,revisions:[],approvedRevision:null,reservations:[],consumed:false,returned:false,at:now,history:[{state:'inquiry',at:now,note:'Synthetic local order'}]};
      s.orders.push(o);result=o;entityId=o.id;
     }else if(c.type.startsWith('order.')){
@@ -186,17 +196,17 @@ export class Store {
      move(tenant,c.sku,c.delta,0,text(c.reason),tx);result={ok:true};entityId=c.sku;
     }else if(c.type==='transfer.create'){
      requireThat(actor.role==='operator','forbidden','Cross-studio transfers are coordinated by the operator.',403);entity(s.partners,c.from);entity(s.partners,c.to);requireThat(c.from!==c.to,'invalid_transfer','Select a different destination.',400);
-     const t={id:id('TR'),from:c.from,to:c.to,sku:c.sku,qty:integer(c.qty),state:'reserved',version:1,at:now};move(t.from,t.sku,0,t.qty,'Transfer reservation',t.id);s.transfers.push(t);result=t;entityId=t.id;tenant=t.from;
+     const t={id:id('TR'),from:c.from,to:c.to,sku:c.sku,qty:integer(c.qty),state:'reserved',version:1,at:now,history:[{state:'reserved',at:now}]};move(t.from,t.sku,0,t.qty,'Transfer reservation',t.id);s.transfers.push(t);result=t;entityId=t.id;tenant=t.from;
     }else if(c.type.startsWith('transfer.')){
      const t=entity(s.transfers,c.id);version(t,c);tenant=t.to;
      if(c.type==='transfer.dispatch'){owned(actor,t.from);requireThat(t.state==='reserved','invalid_state','Dispatch a reserved transfer.');move(t.from,t.sku,-t.qty,-t.qty,'Transfer dispatched',t.id);t.state='in_transit';}
      else if(c.type==='transfer.receive'){owned(actor,t.to);requireThat(t.state==='in_transit','invalid_state','Receive an in-transit transfer.');move(t.to,t.sku,t.qty,0,'Transfer received',t.id);t.state='received';}
      else if(c.type==='transfer.cancel'){owned(actor,t.from);requireThat(t.state==='reserved','invalid_state','Only an undispatched transfer may be cancelled.');move(t.from,t.sku,0,-t.qty,'Transfer cancelled',t.id);t.state='cancelled';}
      else throw new Fault('unknown_command','Unknown transfer action.',400);
-     t.version++;result=t;
+     t.version++;(t.history||=[]).push({state:t.state,at:now});result=t;
     }else if(c.type==='purchase.create'){
      requireThat(actor.role==='operator','forbidden','Only the operator creates supplier orders.',403);entity(s.partners,c.tenant);entity(s.skus,c.sku);
-     const p={id:id('PO'),supplier:'supplier-demo',tenant:c.tenant,state:'proposed',version:1,eta:calendarDate(c.eta),lines:[{sku:c.sku,qty:integer(c.qty),unitCents:integer(c.unitCents,1,100000)}],note:'Synthetic purchase · live ordering off'};
+     const p={id:id('PO'),supplier:'supplier-demo',tenant:c.tenant,state:'proposed',version:1,eta:calendarDate(c.eta),at:now,history:[{state:'proposed',at:now}],lines:[{sku:c.sku,qty:integer(c.qty),unitCents:integer(c.unitCents,1,100000)}],note:'Synthetic purchase · live ordering off'};
      s.purchases.push(p);result=p;entityId=p.id;tenant=p.tenant;
     }else if(c.type.startsWith('purchase.')){
      const p=entity(s.purchases,c.id);version(p,c);tenant=p.tenant;
@@ -209,16 +219,16 @@ export class Store {
       else if(c.type==='purchase.dispatch'){requireThat(p.state==='acknowledged','invalid_state','Dispatch an acknowledged purchase.');p.tracking=`SIM-${p.id}`;p.state='in_transit';}
       else throw new Fault('unknown_command','Unknown purchase action.',400);
      }
-     p.version++;result=actor.role==='supplier'?{id:p.id,state:p.state,version:p.version,eta:p.eta,lines:p.lines,tracking:p.tracking}:p;
+     if(p.state==='received')p.receivedAt=now;(p.history||=[]).push({state:p.state,at:now});p.version++;result=actor.role==='supplier'?{id:p.id,state:p.state,version:p.version,eta:p.eta,lines:p.lines,tracking:p.tracking}:p;
     }else if(c.type==='machine.service'){
      const m=entity(s.machines,c.id);owned(actor,m.tenant);tenant=m.tenant;version(m,c);requireThat(!m.job,'machine_busy','Finish or cancel the assigned job before service.');requireThat(['ready','service'].includes(c.status),'invalid_status','Choose ready or service.',400);
      m.status=c.status;m.version++;m.service.push({at:now,note:text(c.note),actor:actor.id});result=m;
     }else if(c.type==='commission.payout'){
      requireThat(actor.role==='operator','forbidden','Only the operator reconciles commissions.',403);const row=s.commissions.find(l=>l.orderId===c.id);requireThat(row,'not_found','No commission exists for this order.',404);
-     requireThat(row.amountCents>0&&row.releaseAt&&Date.parse(row.releaseAt)<=Date.now(),'review_period','The delivery review period has not ended.');requireThat(!row.payout,'already_paid','Payout is already simulated.');row.payout={at:now,amountCents:row.amountCents,simulated:true};row.status='paid_simulated';result=row;tenant=row.tenant;
+     requireThat(row.amountCents>0&&row.releaseAt&&Date.parse(row.releaseAt)<=Date.parse(now),'review_period','The delivery review period has not ended.');requireThat(!row.payout,'already_paid','Payout is already simulated.');row.payout={at:now,amountCents:row.amountCents,simulated:true};row.status='paid_simulated';result=row;tenant=row.tenant;
     }else throw new Fault('unknown_command','Unknown action.',400);
     s.audit.push({id:id('audit'),at:now,actor:actor.id,role:actor.role,tenant,type:c.type,entity:entityId,transaction:tx});
-    this.db.prepare('UPDATE state SET value=? WHERE id=1').run(JSON.stringify(s));
+    this.write(s);
    }
    const response=JSON.parse(JSON.stringify({ok:true,result,transaction:tx}));this.db.prepare('INSERT INTO receipts(actor,key,hash,response) VALUES(?,?,?,?)').run(principal,c.key,hash,JSON.stringify(response));
    this.db.exec('COMMIT');return response;

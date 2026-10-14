@@ -1,0 +1,22 @@
+{
+  "rollback": "Scoped shared transport/test revert; retain first failures and own QA/artifacts. No schema/policy/source adoption/DB rollback or runtime flag change.",
+  "summary": "Shared studio._execute cancels an in-flight authorization monitor SQL query on successful childEOF, invalidating the caller-owned AsyncSession and causing PendingRollbackError on the next query. Drain/serialize success authorization and join bounded owned cleanup on failure/cancellation without foreign rollback or background callbacks.",
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/tests/test_studio_authorization_cleanup.py",
+    "docs/decisions/VERSLOMATIKA_STUDIO_AUTHORIZATION_CLEANUP_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_STUDIO_AUTHORIZATION_CLEANUP_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "agent-business-core/runtime/artifacts/s5-foundation/error-boundary/tests-e5f7ff38.log:actualrestrictedborrowedSQLpg_sleepEOF1FAIL1.61s",
+    "docs/handoffs/VERSLOMATIKA_FOUNDATION_ERROR_BOUNDARY_2026_10_14.md:preserved57PASS1FAIL185.41s",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6171528110"
+  ],
+  "siteId": "core",
+  "id": "upgrade-922c5e66-693f-4b1f-8870-3ac3d1d746dc",
+  "branch": "codex/verslomatika-studio-authorization-cleanup-20261014",
+  "baseSha": "f0c904622f0b1cf8f15819e354e1649cf210bbd3",
+  "createdAt": "2026-10-14T15:13:33.894Z"
+}

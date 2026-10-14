@@ -7,6 +7,7 @@ import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
 import { draftBrief } from './draft-brief.mjs';
+import { generatorFailure } from './generator-diagnostics.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -24,7 +25,7 @@ function run(command, args, input, timeoutMs) {
     child.stdout.on('data', data => { stdout = (stdout + data.toString()).slice(-12000); });
     child.stderr.on('data', data => { stderr = (stderr + data.toString()).slice(-12000); });
     child.on('error', error => finish(error));
-    child.on('close', code => code === 0 ? finish(null, { stdout, stderr }) : finish(new Error(`${command} grąžino kodą ${code}. ${(stderr || stdout).slice(-1400)}`)));
+    child.on('close', code => code === 0 ? finish(null, { stdout, stderr }) : finish(new Error(`${command} grąžino kodą ${code}. ${generatorFailure(stdout, stderr)}`)));
     child.stdin.on('error', () => {});
     child.stdin.end(input || '');
   });
@@ -34,7 +35,7 @@ async function codexJson(prompt, schemaFile) {
   const temp = path.join(DATA, 'tmp'); await mkdir(temp, { recursive: true });
   const resultFile = path.join(temp, `${randomUUID()}.json`);
   const args = [
-    '--ask-for-approval', 'never', 'exec', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
+    '--ask-for-approval', 'never', 'exec', '--json', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
     '--sandbox', 'read-only',
     '--output-schema', path.join(SCHEMAS, schemaFile), '--output-last-message', resultFile, '-'
   ];

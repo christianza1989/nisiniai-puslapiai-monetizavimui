@@ -244,6 +244,13 @@ async def execute_once(adapter=None, *, kind=None):
     except Exception:
         failure = "provider_error"  # No private provider/OS diagnostic text.
     async with scope(user=actor) as tx:
+        # Native effect adapters lock their parent/actor before the Task row.
+        # No provider runs while these completion locks are held.
+        if not failure and hasattr(handler, "completion_locks"):
+            try:
+                await handler.completion_locks(tx, claimed)
+            except (ControlError, LedgerError, codex.RunnerError) as error:
+                failure = error.code
         task = await tx.scalar(select(Task).where(Task.id == task_id).with_for_update())
         if not task:
             # Losing a current grant must discard output, not lose already observed accounting.

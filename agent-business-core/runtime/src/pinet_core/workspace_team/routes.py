@@ -7,6 +7,7 @@ from ..customer.service import customer_guard
 from ..workspace_topics.routes import query_keys
 from . import directory, service
 from .directory_wire import DirectoryEnvelope
+from .preparation_wire import VERSION, PreparationEnvelope, PrepareAgent
 from .wire import Cancel, Envelope, Send
 
 router = APIRouter(prefix="/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/team",
@@ -50,6 +51,18 @@ async def send(portfolio_id: str, topic_id: str, value: Send, request: Request, 
     query_keys(request, set())
     tx, session = context
     return envelope(request, await service.send(tx, session, portfolio_id, topic_id, value))
+
+
+@router.post("/agent-preparations", response_model=PreparationEnvelope)
+async def prepare_agent(portfolio_id: str, topic_id: str, value: PrepareAgent, request: Request,
+    context=Depends(authenticated, scope="function")):
+    query_keys(request, set())
+    tx, session = context
+    owner = Send(idempotency_key=value.idempotency_key, content=value.content, reply_to_event_id=value.reply_to_event_id)
+    data = await service.send(tx, session, portfolio_id, topic_id, owner, preparation=value)
+    result = core_envelope(request, data)
+    result["contract_version"] = VERSION
+    return result
 
 
 @router.post("/turns/{task_id}/cancel", response_model=Envelope)

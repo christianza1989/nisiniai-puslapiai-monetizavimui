@@ -1,0 +1,23 @@
+# S4: explicit coordinator preparation of a canonical agent draft
+
+2026-10-14 · proposed implementation slice within the authorized local platform continuation. S3directory is delivered; a read projection cannot save a new agent. This slice connects one explicit owner action to the existing customer_agents canonical storage. It does not implement universal execution, Foundation proof, calibration, learning or activation.
+
+## Owner action and execution
+
+Use a separate strict `workspace-agent-preparation.v1` request on the existing topic/team route family. The owner deliberately selects preparation of an agent description, a native Creation target and one existing purpose. A default S2 consultation remains unchanged. Model input never chooses identities, target UUIDs, permissions, model, tools or channels. The server pins current native Session/Creation/latest Registration/business/grant/source through the peer's canonical ProvisioningScope bridge before the model call. Current Foundation guards remain mandatory.
+
+Persist intent on the existing native TeamTurn with an additive0033migration and exact scope FK; default old rows remain consultations. Reuse nativeTask kind `workspace.team_turn`, Run/Attempt/worker, stop/deadline/accounting and root3-call reservation, with exactly one plan attempt for this action. Do not create another queue or executor. The typed model returns a canonical Specification or a clarification; it receives no bearer and has no external tools.
+
+Commit an accepted draft only in the existing worker completion savepoint, using a deterministic per-Task native Create UUID. Trusted coordinator result and canonical Agent/Config receipt commit atomically with that effect. Recheck task run/lease/cancellation and current native authority before and after the effect; rollback removes only the uncommitted effect, retaining the model attempt/usage. No model retry after an unknown write outcome or automatic activation.
+
+## Locking and acceptance
+
+The native provisioning bridge must share public API mutation and UUID replay logic, use Registration lifetime before actor/Creation locks, and preserve immutable Config storage. Dry capture and per-phase verification use its canonical lock=False path with final current checks; no actor/Creation lock is taken behind a Task lock during claim, reservation or heartbeat. Completion acquires the canonical write locks before the worker's Task row lock; archive/cancel paths must not deadlock by holding the actor while waiting for a Task held by a worker waiting for that same actor. An optional maintained-handler completion-lock hook is preferable to a second worker. Final Task authority remains caller-owned. Verify the lock matrix and cancellation race in actual restricted PostgreSQL before admission.
+
+Read/roster availability, body replay and scope checks fail closed. A source/profile/Foundation mismatch is a concrete refusal, not a fabricated successfully prepared business. Agent draft remains not_admitted/calibrationUNVERIFIED; directory refresh reads the actual saved canonical receipt. General specialist work and same-chat onward delegation remain later capabilities under their actual permissions.
+
+## Ownership and regression plan
+
+Primary owns workspace_team preparation/wire/adapter/service/routes/handler/models and additive migration, Task worker completion hook only if necessary, new preparation tests/contract and later private workspace portal hookup. Peer owns customer_agents/service.py/provisioning.py and its own tests, docs and upgrade. Public homepage belongs to the new user-owned homepage session; primary does not edit its public components/styles.
+
+Before executable changes reserve exact paths in issue66/WORKSTREAMS and register a unique core upgrade. Required tests: unadmitted/foreign/stale target and Foundation refusal before provider; exact replay/cross-action UUID conflict; valid one-call draft persisted to canonical storage; malformed Specification; cancellation/source/session/grant/revision change after provider; atomic final rollback; actor/Registration/Task lock race; existing S2default context/delegation/accounting unaffected. Synthetic fixture metadata and provider-zero tests remain separate from actual model, real Foundation, normal-account UI and calibration acceptance.

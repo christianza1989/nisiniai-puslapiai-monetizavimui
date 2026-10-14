@@ -41,6 +41,10 @@ async def schema_ready(tx):
       AND EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid='control_tasks'::regclass AND conname='uq_control_task_thread_kind_scope' AND convalidated)
       AND EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid='control_tasks'::regclass AND conname='control_tasks_kind_check' AND convalidated AND pg_get_constraintdef(oid) LIKE '%workspace.team_turn%')
       AND EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid='control_tasks'::regclass AND conname='control_tasks_session_kind_check' AND convalidated AND pg_get_constraintdef(oid) LIKE '%workspace.team_turn%')
+      AND (SELECT count(*)=2 FROM pg_attribute WHERE attrelid='control_workspace_team_turns'::regclass
+        AND attname IN('agent_creation_id','agent_purpose') AND NOT attisdropped)
+      AND (SELECT count(*)=2 FROM pg_constraint WHERE conrelid='control_workspace_team_turns'::regclass
+        AND conname IN('workspace_agent_intent_check','fk_workspace_agent_intent_creation') AND convalidated)
       AND EXISTS(SELECT 1 FROM pg_index WHERE indexrelid=to_regclass('uq_workspace_team_owner_message') AND indisunique AND indisvalid)
       AND NOT EXISTS(SELECT 1 FROM unnest(CAST(:names AS TEXT[])) AS tables(name) WHERE has_table_privilege(current_user,tables.name,'UPDATE,DELETE'))
       AND (SELECT count(*)=5 FROM pg_proc WHERE oid IN
@@ -165,10 +169,10 @@ async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id
     return event
 
 
-async def send(tx, session, portfolio_id, topic_id, value):
+async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
     try:
         async with tx.begin_nested():
-            return await _send(tx, session, portfolio_id, topic_id, value)
+            return await _send(tx, session, portfolio_id, topic_id, value, preparation=preparation)
     except IntegrityError as error:
         queue, seen = [error], set()
         while queue:
@@ -183,11 +187,17 @@ async def send(tx, session, portfolio_id, topic_id, value):
         raise
 
 
-async def _send(tx, session, portfolio_id, topic_id, value):
+async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
     row = await topic(tx, session, portfolio_id, topic_id)
+    if preparation is not None:
+        from .preparation import capture
+        await capture(tx, session, row, preparation.creation_id, source=settings().control_source_revision)
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
         {"k": "chat-admission:"+row.environment_id+":"+row.user_id})
-    fingerprint = digest({"kind": KIND, "topic_id": row.id, "binding": binding(row), "request": value.model_dump(mode="json", exclude={"idempotency_key"})})
+    material = {"kind": KIND, "topic_id": row.id, "binding": binding(row), "request": value.model_dump(mode="json", exclude={"idempotency_key"})}
+    if preparation is not None:
+        material["agent_preparation"] = {"creation_id": str(preparation.creation_id), "purpose": preparation.purpose}
+    fingerprint = digest(material)
     old = await tx.scalar(select(Task).where(Task.idempotency_key == str(value.idempotency_key)))
     if old:
         turn = await tx.get(TeamTurn, old.id)
@@ -216,6 +226,8 @@ async def _send(tx, session, portfolio_id, topic_id, value):
     owner_id = new_id()
     tx.add(TeamTurn(id=task.id, team_thread_id=thread.id, topic_id=row.id, task_thread_id=native.id, business_id=row.business_id,
         task_kind=KIND, owner_event_id=owner_id, roster_sha256=roster_hash(roster_items(row, admitted=True)),
+        agent_creation_id=str(preparation.creation_id) if preparation is not None else None,
+        agent_purpose=preparation.purpose if preparation is not None else None,
         deadline=utcnow()+timedelta(hours=24), **binding(row)))
     await tx.flush()
     event = await add_event(tx, row, thread, task.id, "user", "owner_message", value.content, event_id=owner_id, reply=reply)
@@ -229,6 +241,8 @@ async def _send(tx, session, portfolio_id, topic_id, value):
     except RunnerError as error:
         raise ControlError(429, error.code) from None
     await topic(tx, session, portfolio_id, topic_id)
+    if preparation is not None:
+        await capture(tx, session, row, preparation.creation_id, source=task.source_revision)
     return topics.project(Accepted, turn=await turn_view(tx, task, row), event=event_view(event, row))
 
 
@@ -304,6 +318,9 @@ async def task_scope(tx, task):
             or owner.content != task.message or owner.source_revision != task.source_revision):
         raise ControlError(503, "source_unavailable")
     tx.info.setdefault("workspace_team_deadlines", {})[task.id] = min(turn.deadline, session.expires_at)
+    if turn.agent_creation_id is not None:
+        from .preparation import verify_task
+        await verify_task(tx, task, row, turn)
     return row, thread, turn
 
 
@@ -334,6 +351,11 @@ async def context_for(tx, task):
     from . import directory
     session = await tx.get(Session, task.session_id)
     context["configured_agents"] = await directory.context(tx, session, row)
+    if turn.agent_creation_id is not None:
+        from .preparation import SCOPE_KEY
+        context[SCOPE_KEY] = tx.info["workspace_agent_scopes"][task.id]
+        context["agent_preparation"] = {"purpose": turn.agent_purpose, "outcome": "native_draft_only",
+            "calibration": "separate_required_checks", "activation": "not_authorized"}
     turn.context, turn.context_sha256, turn.context_cutoff = context, digest(context), thread.event_sequence
     turn.deadline = min(turn.deadline, utcnow()+timedelta(seconds=3*settings().chat_runner_seconds+30))
     tx.info["workspace_team_deadlines"][task.id] = turn.deadline

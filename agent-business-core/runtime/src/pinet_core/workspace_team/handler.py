@@ -130,6 +130,10 @@ class TeamHandler:
     async def store_context(self, tx, task, run_id, context):
         context["_run_id"] = run_id
 
+    async def completion_locks(self, tx, claimed):
+        from .preparation import completion_locks
+        await completion_locks(tx, claimed)
+
     async def run(self, context, heartbeat, runner=None):
         usage, messages = [], []
         public = {key: value for key, value in context.items() if not key.startswith("_")}
@@ -140,7 +144,7 @@ class TeamHandler:
                 if not await heartbeat():
                     raise codex.RunnerError("authorization_revoked")
                 value, observed = await (runner or adapter.run)(phase, packet, heartbeat)
-                model = adapter.Plan if phase == "plan" else adapter.Answer
+                model = adapter.plan_model(packet) if phase == "plan" else adapter.Answer
                 value = model.model_validate(value).model_dump(mode="json")
             except codex.RunnerError as error:
                 observed = observed_usage(error.receipt)
@@ -162,6 +166,9 @@ class TeamHandler:
 
         try:
             plan, plan_attempt = await call("plan", public)
+            if public.get("agent_preparation") is not None:
+                return {"context_sha256": context["_team_context_sha256"], "preparation": plan,
+                    "attempt_id": plan_attempt}, combined_usage(usage)
             if plan["decision"] == "answer":
                 messages.append(await publish(context, plan_attempt, "coordinator", "answer", adapter.public_text(plan)))
             else:
@@ -182,6 +189,9 @@ class TeamHandler:
 
     async def complete(self, tx, task, result):
         row, thread, turn = await service.task_scope(tx, task)
+        if turn.agent_creation_id is not None:
+            from .preparation import complete
+            return await complete(tx, task, row, turn, result)
         if not isinstance(result, dict) or set(result) != {"messages", "context_sha256"} or result["context_sha256"] != turn.context_sha256:
             raise codex.RunnerError("output_invalid")
         messages = result["messages"]

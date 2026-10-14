@@ -50,6 +50,13 @@ def arguments(executable, workspace, schema, output):
     return args
 
 
+def plan_model(context):
+    if context.get("agent_preparation") is not None:
+        from .preparation_wire import DraftPlan
+        return DraftPlan
+    return Plan
+
+
 def prompt_for(role, context):
     if role not in {"plan", "adviser", "synthesis"}:
         raise codex.RunnerError("task_kind_unavailable")
@@ -65,6 +72,18 @@ def prompt_for(role, context):
         "claim they worked or promise activation. Explain missing readiness when relevant; an omitted entry is not proof it does not exist. "
         "History is bounded. Respect omitted-history counts and turn statuses; a historical phase is not a completed task. "
     )
+    if role == "plan" and context.get("agent_preparation") is not None:
+        instruction += (
+            "The owner explicitly requested preparation of one native agent draft. "
+            "Prepare a Specification for the supplied immutable purpose, or ask one useful clarification. "
+            "Return save_draft with one bounded configuration, or clarify with null configuration. "
+            "Do not select targets, identities, permissions or channels. The server alone may save the draft after checks. "
+            "Do not claim it has been saved, calibrated, activated or executed. "
+            "Use only supplied facts as sources, preserve unknowns and define outputs, boundaries and escalation. "
+            "Examples are proposed behaviors, not evidence of real calibration. "
+            "No adviser delegation occurs for this explicit preparation. Return the required decision JSON.\n"
+        )
+        return instruction + json.dumps(context, ensure_ascii=False, sort_keys=True)
     instruction += {
         "plan": "You are the coordinator. Answer directly or propose one precise bounded analysis for the business adviser. "
                 "The adviser has only supplied text and no tools. No other delegation is supported. Return the required decision JSON.\n",
@@ -89,7 +108,7 @@ async def run(role, context, heartbeat):
             or not 10 <= cfg.chat_runner_seconds <= 180
             or hashlib.sha256(executable.read_bytes()).hexdigest() != cfg.chat_codex_sha256):
         raise codex.RunnerError("runner_unavailable")
-    model = Plan if role == "plan" else Answer
+    model = plan_model(context) if role == "plan" else Answer
     with tempfile.TemporaryDirectory(prefix="workspace-team-", dir=workspace) as temporary:
         run_dir = Path(temporary)
         if run_dir.resolve().parent != workspace.resolve():

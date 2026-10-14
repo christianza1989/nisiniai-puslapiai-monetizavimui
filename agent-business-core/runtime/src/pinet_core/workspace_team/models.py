@@ -49,12 +49,17 @@ class TeamTurn(Owned, Base):
     business_id: Mapped[str] = mapped_column(String)
     task_kind: Mapped[str] = mapped_column(String, default="workspace.team_turn")
     owner_event_id: Mapped[str] = mapped_column(String)
+    agent_creation_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    agent_purpose: Mapped[str | None] = mapped_column(String, nullable=True)
     context: Mapped[dict | None] = mapped_column(JSONB(none_as_null=True), nullable=True)
     context_sha256: Mapped[str | None] = mapped_column(String, nullable=True)
     context_cutoff: Mapped[int | None] = mapped_column(Integer, nullable=True)
     roster_sha256: Mapped[str] = mapped_column(String)
     deadline: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("id", "team_thread_id", *OWNER),
+        ForeignKeyConstraint(["agent_creation_id", *OWNER],
+            [f"control_creations.{c}" for c in ["id", *OWNER]],
+            ondelete="RESTRICT", name="fk_workspace_agent_intent_creation"),
         ForeignKeyConstraint(["team_thread_id", "topic_id", "task_thread_id", "business_id", *OWNER],
             [f"{TeamThread.__tablename__}.{c}" for c in ["id", "topic_id", "task_thread_id", "business_id", *OWNER]], ondelete="CASCADE"),
         parent("control_workspace_topics", "topic_id"),

@@ -128,3 +128,11 @@ Motion is a brief view reveal and restrained colour transition. Reduced-motion p
 - **Don't** seed real-looking customers, activations or machine connectivity into this creator.
 
 Recorded from the current source and Android device captures. Review is sequential, not independent. Phone behaviour and asset integrity are documented in mobile/ACCEPTANCE.md. Physical frame/thread validation, tablet coverage, a complete accessibility audit and measured pixel-for-pixel comp reproduction remain separate limits.
+
+## Partner operations extension — 14 October 2026
+
+The [local operations module](platform/README.md) extends Quiet Workbench in Operate mode. It uses the original brand mark, icons and bundled fonts directly. A forest workspace navigation and ivory work area frame country/studio coverage, action queues, order detail/revision previews, scrollable operational tables and transactional forms. The platform's scope-specific typography/asset and screen plan is in platform/PLAN.md; no second mobile identity or source kit is introduced.
+
+Desktop sidebar widths use rems, while tablet/phone navigation scrolls horizontally. Intrinsic rem-based form/detail columns collapse as text grows. Dense table data stays readable through deliberate horizontal scrolling rather than compressed columns. Roboto uses real 400/500/600 weights and tabular numerals; Libre Baskerville 400 carries brand/display. Normal metadata is at least 14px. Headings, long names, status and actions wrap; primary SVG controls use white icons. The environment bar establishes the synthetic data boundary once and action copy names actual simulation where it matters.
+
+Actual operator/partner/supplier desktop/mobile and adverse screens were reviewed. Main-only overflow checks initially missed enlarged sidebar clipping; the final focused tests include the brand/navigation and measured 200% text with spacing at 1280/768/320px. Initial failures and corrections remain in platform/proof/FIRST-FAILURES.md, with current evidence in platform/ACCEPTANCE.md. This is bounded sequential visual/accessibility review, not a blanket WCAG or physical-equipment certification.

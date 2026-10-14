@@ -1,0 +1,4 @@
+.local/
+proof/captures/
+proof/*.json
+proof/*.log

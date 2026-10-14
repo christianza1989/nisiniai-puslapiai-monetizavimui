@@ -2,7 +2,7 @@
 
 14 October 2026. Research dated 13 October. siteId `stringart`; MemoryString is a candidate brand, with no approved domain or trademark clearance. Current source-bound acceptance: [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md). Core base: `7af6b9641012a30c5f95eac38a66daeff8f8cb39`. No companion source interfaces changed.
 
-The owner requested equipment distribution, a portrait studio, local EU partners supplied with equipment/materials/websites/training, DIY kits and our own creator app. The owner has only a quotation. The separate Android creator app, English language and SDK installation/build were explicitly authorized. The local creator has now passed the connected-phone tests; the ten-partner frontend/backend demonstration is the next authorized work in a separate requested chat. Retail and partner subdomain sites follow later.
+The owner requested equipment distribution, a portrait studio, local EU partners supplied with equipment/materials/websites/training, DIY kits and our own creator app. The owner has only a quotation. The separate Android creator app, English language and SDK installation/build were explicitly authorized. The local creator passed the connected-phone tests, and the separately authorized ten-studio operating demonstration is complete with synthetic fixtures. Retail and partner subdomain sites, physical acceptance and live integrations remain later work.
 
 ## Recommended business
 
@@ -14,7 +14,7 @@ Start with a physically accepted 42 cm monochrome portrait, approved preview and
 
 ## Evidence and contrary findings
 
-The [complete English plan](../../research/stringart-distribution-20261013/PLAN-EN.md) records dated sources, conflicts, assumptions and the supplier letter. PLAN.md is the current Lithuanian counterpart. Both are version 5, updated in place; superseded drafts are archived outside the project.
+The [complete English plan](../../research/stringart-distribution-20261013/PLAN-EN.md) records dated sources, conflicts, assumptions and the unsent supplier letter. PLAN.md is the current Lithuanian counterpart. Both are version 6, updated in place with the accepted local app/platform status; research dates and commercial assumptions remain preserved. Superseded drafts are archived outside the project.
 
 The supplied USD 2,450 FCA China quotation requires an exact named FCA place, configuration and landed-cost quote. The PDF and current NOVA/ALINEDECO pages differ on mono/colour, screen/computer, power and packing. Association signals link VANMAC and ALINEDECO; their legal/software ownership is unverified.
 
@@ -30,7 +30,7 @@ Suggested gates: authentic counterpart and conformity; 30 machine jobs across te
 
 ## Current output and next decisions
 
-The English plan, unsent supplier proposal and 25-repository assessment are prepared. The independent MIT-based creator app and local Android test APK exist. The selected app design and assets are implemented and tested on the authorized Android phone. The ten-partner inventory/order/supplier demonstration is specified and authorized next, with no accepted server or real partner network yet.
+The English plan, unsent supplier proposal and 25-repository assessment are prepared. The independent MIT-based creator app and local Android test APK exist and remain preserved. The selected app design and assets are implemented and tested on the authorized Android phone. The separate ten-partner inventory/order/supplier demonstration now has a persistent local server and verified synthetic role/stock/order/referral flows; see [platform acceptance](platform/ACCEPTANCE.md). No real partner network, hardware acceptance or commercial demand is established by that local result.
 
 Resolve counterpart/bank identity, exact SKU, conformity, freight/customs, warranty/parts, software/photo-processing rights, private-label kit specifications and brand clearance. Request a distributor page and lead routing first; 301 migration is a separate optional agreement. Real sales determine expansion.
 

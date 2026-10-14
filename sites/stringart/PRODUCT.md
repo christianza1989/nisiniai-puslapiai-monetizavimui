@@ -12,7 +12,7 @@ Browser JavaScript, a pinned MIT Web Worker solver and IndexedDB. Android Java A
 
 ## Users
 
-DIY customers prepare a photo and follow physical pin instructions. The owner and future partners evaluate previews and kit usability. A separate partner business platform is the next authorized task after the app, in a requested new chat.
+DIY customers prepare a photo and follow physical pin instructions. The owner and future partners evaluate previews and kit usability. The separate partner business platform now provides a persistent local demonstration; production access and integration remain later phases.
 
 ## Product Purpose
 
@@ -45,3 +45,7 @@ Dated supplier/market research, original private supplier files, the GitHub asse
 ## Accessibility & Inclusion
 
 English interface and narration, readable text alongside optional speech, visible keyboard focus, controls at least 44 px high, responsive wrapping and tested narrow/text-enlargement states. No blanket WCAG certification or physical-device acceptance claim.
+
+## Partner operations — separate local module
+
+The owner's 14 October next-phase request is now implemented under [platform/](platform/README.md): a persistent English operator/partner/supplier workspace with synthetic stock, portrait/DIY fulfilment, machine service and referral accounting. Its one [current plan](platform/PLAN.md) and [acceptance](platform/ACCEPTANCE.md) define the entities, permissions, transitions and evidence. It extends the same identity and reads the original prepared asset kit and exact JSON validator; the Android creator stack and package remain unchanged. The local Node24/SQLite adapter is not production auth, a public retail website or a physical manufacturer interface.

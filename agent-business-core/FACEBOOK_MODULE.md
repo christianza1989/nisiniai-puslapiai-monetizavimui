@@ -1,5 +1,7 @@
 # Facebook acquisition core: local increment
 
+2026-10-14: [full plan/source/API audit](../docs/FACEBOOK_FULL_AUDIT_2026-10-14.md) re-ran the private module checks and found/fixed workspace configuration and time-dependent action replay defects on its own branch. Page publishing/comments/Messenger should use separate official API adapters; continuous computer use is not required for those accepted channels. Groups/profile UI adapters remain separate and unaccepted. The reviewed [v2 roadmap PR20](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/20) is still outside fetched main. Live transport and hosting remain unimplemented/unverified.
+
 2026-10-01. Implemented private per-niche policy, metadata/signal registry, durable preparation queue, operator GUI, bounded CLI drafting and database integration. This is not a running personal-profile browser collector, Page webhook or external sender. Actual acceptance: [QA](../research/facebook-module-2026-10-01/QA.md), [UI](../research/facebook-module-2026-10-01/UI-CHECK.json), [CLI](../research/facebook-module-2026-10-01/CLI-PROBE.json). Target architecture and real platform access: [FB_ACQUISITION_PLAN](../FB_ACQUISITION_PLAN.md).
 
 ## Use the existing core
@@ -12,9 +14,11 @@ Production flags are unchanged. No module policy was enabled in the `local` envi
 
 ## Operator UI and endpoints
 
+Workspace contact configuration uses `STUDIO_NETWORK_SETTINGS` first, then `PINET_PUBLIC_CORE_PATH/config/niche-network.json`, then the legacy sibling `dovanos-memorycasting/config/niche-network.json`. An invalid explicit file fails instead of silently using another site's configuration. Action replay binds the submitted key/signal/kind and preserves the original qualification snapshot; fresh preparation recomputes qualification. Legacy action payload/hash records are not rewritten by replay.
+
 When the core is started from this source, open `/operator/facebook-ui` on its existing local port. The running older core process was not restarted; loading a new router requires a coordinated normal restart by its owner. The HTML login shell is public and contains no data/secret; every data/mutation endpoint requires existing operator authentication. Use the existing private operator key; do not put it in a URL, browser localStorage, public package or this document.
 
-`GET /operator/facebook/sites` uses the real registry. UI selects a site and shows its module policy, group rules/metadata, anonymous signals, queued actions, private drafts, separate demand metrics and control audit. Enable, pause and disable apply to the selected site only. Site changes clear old data and disable mutations while loading; writes serialize in the UI. Password state remains in memory and is cleared on logout/failure. Displayed content uses DOM text, not executable HTML.
+`GET /operator/facebook/sites` uses the real registry. UI selects a site and shows its module policy, group rules/metadata, anonymous signals, queued actions, private drafts, separate demand metrics and control audit. Enable, pause and disable apply to the selected site only. Site changes clear old data and disable mutations while loading; writes serialize in the UI. Password state remains in memory and is cleared on logout or initial connection failure; an arbitrary later request error is displayed and does not perform logout. This legacy operator shell is not evidence of hosted per-actor authorization. Displayed content uses DOM text, not executable HTML.
 
 Paths below share `/operator/sites/{siteId}/facebook`:
 

@@ -1,5 +1,7 @@
 # Facebook kanalas visam nišų tinklui
 
+**2026-10-14 audito papildymas:** [pilnas plano, kodo ir API / naršyklės auditas](docs/FACEBOOK_FULL_AUDIT_2026-10-14.md). Pagrindinis siūlomas gyvas kanalas yra valdomos Page publikavimas, komentarai ir Messenger per API; nuolatinio computer-use jam nereikia. Grupių ir asmeninio profilio adapteris turi atskirą priėmimą. [V2 roadmapas PR20](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/20) šiame fetched main dar nesujungtas; jo originalaus Page turinio planas yra peržiūrėtas pasiūlymas, ne įgyvendintas transportas. Toliau esantys istoriniai rezultatai nesikeičia.
+
 2026-10-01. **Po savininko pavedimo įgyvendintas atskiras privatus FB core modulis, per-nišos įjungimas, GUI, patvari eilė ir ribotas Codex CLI generavimas. Gyvas rinkimas, Page webhook, siuntimas ir nuolatinis stebėjimas neprijungti.** Faktinis šios pakopos kodas / naudojimas / ribos: [FACEBOOK_MODULE](agent-business-core/FACEBOOK_MODULE.md), [priėmimas](research/facebook-module-2026-10-01/QA.md). Žemiau aprašyta tikslinė architektūra nėra visų jos adapterių veikimo įrodymas. Šis dokumentas papildo [ACQUISITION_CORE](ACQUISITION_CORE.md), o ne kuria antrą CRM. Faktinė paskyros / grupių peržiūra ir aktualūs Meta šaltiniai: [tyrimas](research/facebook-acquisition-2026-10-01/RESEARCH.md). Vykdymo instrukcija: [acquisition skill FB priedas](SKILLS/niche-client-acquisition/references/facebook.md).
 
 ## Sprendimas dėl vienos paskyros
@@ -127,14 +129,14 @@ Plėsti esamą operatoriaus core UI, nekeisti turinio kalendoriaus klientų CRM 
 - **Rezultatai:** tikri projektui adresuoti poreikiai, kvalifikuoti poreikiai, partnerio priėmimai, vykdymas, mokėjimas, sąnaudos; synthetic / supplier / buyer atskirai.
 - **Valdymas:** bendras ir per-nišą pause, riboti kanalai / veiksmai / išlaidos, instrukcijų versija. Modelis pats nepakelia teisių ar biudžeto.
 
-Tai suplanuotas UI; naujo FB ekranų šiame etape nėra.
+Privatus vietinis GUI jau įgyvendintas: per-nišos valdymas, grupės, signalai, užduotys, juodraščiai ir valdymo istorija aprašyti [modulio sutartyje](agent-business-core/FACEBOOK_MODULE.md). Platesnis pokalbių, tikrų siuntimų ir rezultatų vaizdas lieka planas; istorinis GUI QA nepriima naujų live adapterių.
 
 ## Įgyvendinimo seka
 
 | Etapas | Rezultatas | Priklausomybė ir baigimo įrodymas |
 |---|---|---|
 | F0 — atlikta | Paskyros ribota peržiūra, grupės/šaltiniai, planas ir skill priedas | Tik dokumentų priėmimas; jokio bot runtime ar pardavimų PASS |
-| F1 — paruošimas | Per-nišos config, SourcePolicy, privati signalų/draft eilė, GUI maketas, kalibravimo fixture | Teisėtas duomenų įėjimas; anoniminės/redaguotos synthetic situacijos; nėra nuolatinio grupių collector |
+| F1 — vietinė pakopa atlikta | Per-nišos policy, grupių metaduomenys, privati signalų/draft eilė, GUI ir izoliuotas fixture | Priimta tik vietinė paruošimo apimtis pagal modulio QA; pilnas SourcePolicy/live teisių adapteris ir nuolatinis collector dar nėra priimti |
 | F2 — Page inbound | Vienas tikras Page/app susiejimas, webhook/queue/send adapteris, esamas case ryšys | Tikrinti konkrečios Page kontrolę, realius scopes/access/review reikalavimus, privatumo/secret tvarką ir endpoint testus; paskui ribotas gyvas mandatas |
 | F3 — leistinas grupių veiksmas | Pasirinktas tinkamas adapteris ir grupių registry, vienas account writer | Tik realus platformos automatizacijos pagrindas bei grupės/duomenų/veiksmo sąlygos. Jei jų nėra, šaka lieka off |
 | F4 — plėtra | Daugiau nišų / kontekstų pagal patikrintus scenarijus | Kokybiškas tikras poreikis ir ekonomika; nediegti commerce/voice vien dėl FB aktyvumo |

@@ -1,6 +1,7 @@
 """Private drafts and durable queue. No crawler, Meta request or browser submit here."""
 import hashlib
 import json
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -14,6 +15,16 @@ from .contracts import ModulePolicy
 from .models import FacebookAccountLease, FacebookRecord
 
 ROOT = Path(__file__).resolve().parents[5]
+
+
+def network_settings_path():
+    explicit = os.environ.get("STUDIO_NETWORK_SETTINGS")
+    if explicit:
+        return Path(explicit).expanduser().resolve()
+    public_core = os.environ.get("PINET_PUBLIC_CORE_PATH")
+    if public_core:
+        return Path(public_core).expanduser().resolve() / "config/niche-network.json"
+    return ROOT.parent / "dovanos-memorycasting/config/niche-network.json"
 
 
 def fingerprint(value):
@@ -86,15 +97,20 @@ async def update_policy(tx, item, data):
     return await policy(tx)
 
 
-async def insert_unique(tx, item, kind, key, payload, state="recorded"):
+async def insert_unique(tx, item, kind, key, payload, state="recorded", input_payload=None):
     await module_lock(tx, item)
     await require_enabled(tx)
     old = await record(tx, kind, key)
     if old:
-        if old.payload.get("input_hash") != fingerprint(payload):
+        # Action qualification ages; bind replay to the submitted command instead.
+        # Compare stored command fields so pre-fix records remain replayable unchanged.
+        old_hash = (fingerprint({field: old.payload.get(field) for field in input_payload})
+                    if input_payload is not None else old.payload.get("input_hash"))
+        if old_hash != fingerprint(input_payload if input_payload is not None else payload):
             raise HTTPException(409, "facebook_idempotency_conflict")
         return view(old)
-    row = add(tx, item, kind, key, state, {**payload, "input_hash": fingerprint(payload)})
+    row = add(tx, item, kind, key, state,
+              {**payload, "input_hash": fingerprint(input_payload if input_payload is not None else payload)})
     await tx.flush()
     return view(row)
 
@@ -143,8 +159,9 @@ def qualification(signal):
 
 async def queue_draft(tx, item, data):
     signal = await by_id(tx, "signal", data.signal_id)
-    payload = {**data.model_dump(), "qualification": qualification(signal)}
-    return await insert_unique(tx, item, "action", data.key, payload, "queued")
+    command = data.model_dump()
+    payload = {**command, "qualification": qualification(signal)}
+    return await insert_unique(tx, item, "action", data.key, payload, "queued", input_payload=command)
 
 
 async def listing(tx, kind):
@@ -158,7 +175,7 @@ async def draft_context(tx, item, signal):
              ROOT / "SKILLS/niche-client-acquisition/references/facebook.md"]
     sources = [{"path": str(path.relative_to(ROOT)), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
                for path in paths]
-    cfg_path = ROOT.parent / "dovanos-memorycasting/config/niche-network.json"
+    cfg_path = network_settings_path()
     cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
     contact = cfg.get("contactsBySite", {}).get(item.site_id, {})
     facts = await knowledge.projection(tx)

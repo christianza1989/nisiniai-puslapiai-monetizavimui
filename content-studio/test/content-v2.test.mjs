@@ -25,6 +25,7 @@ test('v2 validator/hash/schema copies match; v1 packages remain readable unchang
   assert.ok(legacy.length>0,'current registry must contain legacy packages');
   assert.deepEqual(legacy.map(p=>p.siteId).sort(),sourcePackages.filter(p=>p.schemaVersion===1).map(p=>p.siteId).sort(),'all current V1 source packages remain compiled');
   for(const p of legacy){const source=sourcePackages.find(s=>s.siteId===p.siteId);assert.deepEqual(p,source,'compile preserves the exact source package');assert.equal(publicCore.validateContentPackage(p),p);for(const page of p.pages)assert.equal(model.revisionHash(page),publicCore.pageRevisionHash(page));}
+  assert.equal(new Set(packages.map(p=>p.siteId)).size,packages.length,'compiled sites must be unique');
   const pkg=v2Fixture();assert.equal(validateV2Package(pkg),pkg);assert.equal(publicCore.validateContentPackage(pkg),pkg);
 });
 test('every editorial/public field changes approval hash; unknown/private/cross-site data rejected',()=>{
@@ -57,6 +58,8 @@ test('v2 normal importer refuses activation; explicit shadow does not touch comp
   // Run the actual scripts in a tiny isolated public-repo layout, no real staging mutation.
   const isolated=path.join(root,'public');await mkdir(path.join(isolated,'scripts'),{recursive:true});await mkdir(path.join(isolated,'schemas'),{recursive:true});
   for(const file of ['content-package-core.mjs','content-package-v2.mjs','content-v2-admission.mjs','import-content-package.mjs','compile-content-packages.mjs'])await writeFile(path.join(isolated,'scripts',file),await readFile(path.join(publicRoot,'scripts',file)));
+  await mkdir(path.join(isolated,'lib'),{recursive:true});
+  for(const file of ['niche-path-aliases.mjs','niche-links.mjs'])await writeFile(path.join(isolated,'lib',file),await readFile(path.join(publicRoot,'lib',file)));
   await writeFile(path.join(isolated,'schemas/content-package.v2.schema.json'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json')));
   const source=path.join(root,'export');await mkdir(source,{recursive:true});await writeFile(path.join(source,'content-package.json'),JSON.stringify(v2Fixture()));
   const before=await readFile(path.join(publicRoot,'lib/generated/content-packages.json'));

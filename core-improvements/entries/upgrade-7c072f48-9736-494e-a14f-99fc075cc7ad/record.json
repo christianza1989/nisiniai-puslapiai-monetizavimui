@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "After verified real Page API publication the shared Facebook dashboard still reports Page not connected and zero external sends; legacy static status conceals working API/browser transports.",
+  "category": "code",
+  "evidence": [
+    "Actual localhost published API receipt2026-10-14 contrasted with master policy live.page=not_connected and overview.sent_external_actions=0",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/facebook/service.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/console.html",
+    "agent-business-core/runtime/tests/test_facebook.py",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md",
+    "sites/lineage2ai/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/142",
+  "rollback": "Scoped revert of status presentation only; keep real immutable live receipts and private credentials. No changing sending gates or claiming customer demand.",
+  "id": "upgrade-7c072f48-9736-494e-a14f-99fc075cc7ad",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "a3790cde04b47ec8dec68efb658aedcf8505c0ed",
+  "createdAt": "2026-10-14T19:14:19.986Z"
+}

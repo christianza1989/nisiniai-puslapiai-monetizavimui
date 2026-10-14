@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Reviewed scoped source pushed and remote SHA read back. DraftPR134 contains the private provenance helper and test-only inventory repair. Functional source61ec74ab3ef856d84c19b278c7293bae527e7af2; full studio54/54 and exact-staged safety PASS. No main merge or website publication. Actual private data remain local; browser, Gemini writing and rendered website acceptance pending.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/134",
+  "commit": "61ec74ab3ef856d84c19b278c7293bae527e7af2",
+  "eventId": "9c2412f8-d2fa-4cae-b539-d318a9a05294",
+  "sequence": 5,
+  "at": "2026-10-14T09:02:46.229Z"
+}

@@ -1,7 +1,7 @@
 {
-  "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
-  "sourceVersion": "7647030d21ebc90726844a22d6c336b33ef7aa9d",
-  "coreCommit": "2c959ed5e7abd597112d4865abd0ff7413aff6a5",
+  "packageSha256": "38df2ee29c9d35d2cf975f01b93a65f0e448a08914d60f3e718bfc12ae9af645",
+  "sourceVersion": "85e9575e143b7a208cf47e094e7c8376be0762f2",
+  "coreCommit": "00901f8d54ed7e3a6897310deaae920334bf32a4",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
@@ -33,7 +33,7 @@
     },
     {
       "file": "lib/generated/content-packages.json",
-      "sha256": "eebe238d6601fb52b89010eaffb12927132f04e7b7717727de9370a93f4e0000"
+      "sha256": "eea492a673e11818c48908347d190ace8dbf233d356caa1feec1e8c1975e717c"
     },
     {
       "file": "lib/smtp-protocol.mjs",
@@ -81,7 +81,7 @@
     },
     {
       "file": "content-packages/promedical/content-package.json",
-      "sha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af"
+      "sha256": "38df2ee29c9d35d2cf975f01b93a65f0e448a08914d60f3e718bfc12ae9af645"
     },
     {
       "file": "config/niche-path-aliases.json",
@@ -118,15 +118,79 @@
     {
       "file": "tests/niche-links.test.mjs",
       "sha256": "18b033689748c875c5bf6e872118e90366c4e532862063ae1219519146e1dab9"
+    },
+    {
+      "file": "content-packages/promedical/assets/8196e8cf-39c5-4290-bdb2-6158e7afc59f.webp",
+      "sha256": "46b7ba8d318640fe423ee6c864a9b95989d90d7a0031aa7d2a438045a998500e"
+    },
+    {
+      "file": "public/content-assets/promedical/8196e8cf-39c5-4290-bdb2-6158e7afc59f.webp",
+      "sha256": "46b7ba8d318640fe423ee6c864a9b95989d90d7a0031aa7d2a438045a998500e"
+    },
+    {
+      "file": "content-packages/promedical/assets/8d1cf8eb-340b-4e3a-a75c-9a8ac78b1075.webp",
+      "sha256": "9a04a8b21bcd488631d806223b8771cc52dbf6ba24ccc61d5ae7f0bd536d7bc7"
+    },
+    {
+      "file": "public/content-assets/promedical/8d1cf8eb-340b-4e3a-a75c-9a8ac78b1075.webp",
+      "sha256": "9a04a8b21bcd488631d806223b8771cc52dbf6ba24ccc61d5ae7f0bd536d7bc7"
+    },
+    {
+      "file": "content-packages/promedical/assets/8f25a4a2-23db-4b97-b0d5-45ab87eb2c5c.webp",
+      "sha256": "94689f190e13e6f494f2a79c9c9b9a6a27d2145ff7185578bf6602f79d6a154f"
+    },
+    {
+      "file": "public/content-assets/promedical/8f25a4a2-23db-4b97-b0d5-45ab87eb2c5c.webp",
+      "sha256": "94689f190e13e6f494f2a79c9c9b9a6a27d2145ff7185578bf6602f79d6a154f"
+    },
+    {
+      "file": "content-packages/promedical/assets/a9f05fe4-bb22-4d96-b0cc-c17cd1291d31.webp",
+      "sha256": "fb552caf39247be31562e206592114ad8ec520d800634758198d09115dc62841"
+    },
+    {
+      "file": "public/content-assets/promedical/a9f05fe4-bb22-4d96-b0cc-c17cd1291d31.webp",
+      "sha256": "fb552caf39247be31562e206592114ad8ec520d800634758198d09115dc62841"
+    },
+    {
+      "file": "content-packages/promedical/assets/b000c131-0838-4386-8a4a-0ff2b1f3230d.webp",
+      "sha256": "d3c3638948c084968e3a13280b2c837839ed1061a92d497683aaab6efeb0a49f"
+    },
+    {
+      "file": "public/content-assets/promedical/b000c131-0838-4386-8a4a-0ff2b1f3230d.webp",
+      "sha256": "d3c3638948c084968e3a13280b2c837839ed1061a92d497683aaab6efeb0a49f"
+    },
+    {
+      "file": "content-packages/promedical/assets/b4126b8f-c376-4f4c-9695-180bab89ef62.webp",
+      "sha256": "9dec7854e795fcaa72468678fdfd642e2bb0cd2f97f6c9510d1315af418d6853"
+    },
+    {
+      "file": "public/content-assets/promedical/b4126b8f-c376-4f4c-9695-180bab89ef62.webp",
+      "sha256": "9dec7854e795fcaa72468678fdfd642e2bb0cd2f97f6c9510d1315af418d6853"
+    },
+    {
+      "file": "content-packages/promedical/assets/e2045105-9135-4c62-87c7-a7f5e3dba216.webp",
+      "sha256": "076771eb8ec613f2d837ae56c6429f176be5ee56ee5b7247be5706db69011899"
+    },
+    {
+      "file": "public/content-assets/promedical/e2045105-9135-4c62-87c7-a7f5e3dba216.webp",
+      "sha256": "076771eb8ec613f2d837ae56c6429f176be5ee56ee5b7247be5706db69011899"
+    },
+    {
+      "file": "content-packages/promedical/assets/f7a1fc04-4aed-4f41-acfa-1c611f9d549b.webp",
+      "sha256": "d43e76bb047337565e2e8a2c1dffcb6f80241751c5abdca8ddd5ddda917598e3"
+    },
+    {
+      "file": "public/content-assets/promedical/f7a1fc04-4aed-4f41-acfa-1c611f9d549b.webp",
+      "sha256": "d43e76bb047337565e2e8a2c1dffcb6f80241751c5abdca8ddd5ddda917598e3"
     }
   ],
-  "checkedAt": "2026-10-13T19:39:19.588Z",
-  "productionVersion": "b40523b5-c11b-460c-a551-82a4f31b537b",
-  "notes": "Owner-requested indefinite pause of future Promedical guides. Two already published guides remain public; 55 future approved guides, all original dates and content are preserved. Package unchanged; site-specific shared projection cutoff applies to HTML, links, media, schema, sitemap and reading exports. Existing runtime settings preserved.",
-  "productionDeployment": "ff47e93c-ffeb-4622-8af2-463a6f66d083",
+  "checkedAt": "2026-10-14T18:51:11.094Z",
+  "productionVersion": "58297b75-f4c8-4c43-9b85-7f7a34c41f30",
+  "notes": "Owner-accepted ISO E2 and eight product terminology updates reviewed and deployed; medical-cart E2 preserved. Nine changed pages/other1900/siteenvelope/other9sitepackages exact. Eight byte-identical aliases correct rail/system-drawing alt. All55futureguides remain publicly paused. New owner direction resumes all legacy-content rewriting privately; publishing/export/import/deploy/scheduledpublication paused until direct human resumption. Unknown legacy original writers not relabelled. Existing settings/bindings/routes preserved; scoped UI/HTTP only.",
+  "productionDeployment": "c1a55589-2ab6-409d-9f37-7b9f5f936c2d",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
   "logoEvidence": "verification-20261010/logo-change-v2.json",
-  "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+  "editorialEvidence": "verification-20261014/terminology-iso-release-v1.json",
   "homeEvidence": "verification-20261010/generic-home-v1.json",
   "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json",
   "urlMigrationEvidence": "verification-20261013/url-migration-v1.json",
@@ -137,5 +201,16 @@
     "publicGuides": 2,
     "heldGuides": 55,
     "evidence": "verification-20261013/publication-pause-v1.json"
+  },
+  "editorialPublishingPause": {
+    "writing": "continue_all_legacy_content_private_in_small_batches",
+    "publication": "paused_by_owner",
+    "deploymentAllowed": false,
+    "scheduledPublicationAllowed": false,
+    "releaseExportAllowed": false,
+    "publicPackageImportAllowed": false,
+    "scopeHumanMessage": "01a13bb6-01f0-7893-a9a9-1f710b68a599",
+    "pauseHumanMessage": "01a13bba-6c2e-7b11-b7d4-90d6678ac76f",
+    "note": "New writing scope supersedes writing pause for55heldguides. Current public pause still holds and new publication requires direct human resumption."
   }
 }

@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Europe/Kiev",
+  "sourceMainSha": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+  "referencePlanSha": "da5493c16c38a5840c73661dc3fed3f181bcf49a",
+  "referencePlanPr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/20",
+  "referencePlanStateObserved": "OPEN",
+  "sources": [
+    {"id":"M1","url":"https://developers.facebook.com/documentation/business-messaging/messenger-platform/overview","access":"Chrome rendered page","updated":"2026-09-28","finding":"Page messaging, scoped IDs and access requirements; concrete app access not tested"},
+    {"id":"M2","url":"https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy","access":"Chrome rendered page","updated":"2026-09-28","finding":"Conditional messaging windows, private replies and applicable automated-bot 30-second responsiveness requirement"},
+    {"id":"M3","url":"https://developers.facebook.com/docs/graph-api/changelog/version19.0/","access":"Chrome rendered page","finding":"Old Groups API features/permissions and group app installation removed 2024-04-22"},
+    {"id":"M4","url":"https://developers.facebook.com/documentation/pages-api/posts","access":"Chrome rendered page","updated":"2026-04-17","finding":"Owned Page posts/photos and scheduling API; actual token/format not accepted"},
+    {"id":"M5","url":"https://developers.facebook.com/documentation/pages-api/comments-mentions","access":"Chrome rendered page","updated":"2026-04-16","finding":"Page comment/reply actor and permission requirements; not a profile/group publishing adapter"},
+    {"id":"M6","url":"https://www.facebook.com/legal/automated_data_collection_terms","access":"Chrome rendered page","effective":"2024-10-07","finding":"Separate Meta authorization and allowed use; compliance record retention distinct from raw prospect retention"},
+    {"id":"M7","url":"https://developers.facebook.com/documentation/business-messaging/messenger-platform/webhooks","access":"Chrome rendered page","updated":"2026-09-16","finding":"HTTPS challenge, event signatures, five-second ACK, deduplication, retries/order and app-access prerequisites"}
+  ],
+  "catalog": {
+    "access":"Treg catalog_search and catalog_get metadata only",
+    "endpoints":[{"id":"anyapi.facebook.group.posts","quotedUsdPerCall":0.002},{"id":"scrapecreators.x.v1-facebook-group-posts","quotedUsdPerCall":0.00188}],
+    "providerCalls":0,
+    "actualProviderSpendUsd":0,
+    "realGroupDataImported":0,
+    "limitations":"Technical catalog availability does not establish Meta authorization, reuse rights, current coverage or permission to send. No catalog example personal data retained."
+  },
+  "originalFailures": [
+    {"id":"F1","command":"python -m pytest offline_tests/test_facebook_workspace.py -q --tb=short","result":"FAIL","actual":"1 failed; FileNotFoundError while draft_context ignored STUDIO_NETWORK_SETTINGS and read missing managed-worktree sibling config"},
+    {"id":"F2","command":"python -m pytest tests/test_facebook.py tests/test_facebook_audit.py -q --tb=short","result":"FAIL","actual":"16 passed, 1 failed; same action replay after signal aged returned 409 facebook_idempotency_conflict"}
+  ],
+  "checks": [
+    {"command":"python -m pinet_core.facebook.check_schema","result":"PASS","actual":"20 tables, 16 FORCE RLS, disposable UUID schema removed"},
+    {"command":"python -m pytest tests/test_facebook.py tests/test_facebook_audit.py offline_tests/test_facebook_workspace.py -q --tb=short","result":"PASS","actual":"Final 21 passed in 10.38s under successful freshness wrapper; earlier 21 passed in 8.84s and fixture cleanup 2/2 kept separate"},
+    {"command":"python -m pytest tests/test_core.py tests/test_policy.py tests/test_codex_lab.py -q --tb=short","result":"PASS","actual":"32 passed in 34.41s; no actual model/provider sending calls"},
+    {"command":"ruff check src/pinet_core/facebook/service.py tests/test_facebook_audit.py offline_tests/test_facebook_workspace.py","result":"PASS","actual":"All checks passed after import cleanup; original lint errors were in newly authored audit test"}
+  ],
+  "environment": {
+    "python":"3.13.15",
+    "dependencies":"uv sync --locked; existing lock unchanged",
+    "database":"Own disposable Docker postgres:18.6 container pinet-facebook-audit-20261014, loopback15446, restricted runtime role and synthetic test namespaces",
+    "ownTestContainerRemovedAfterAcceptance":true,
+    "otherContainersModified":false,
+    "productionDatabaseAccessed":false,
+    "liveFacebookActions":0,
+    "actualModelGenerationCalls":0,
+    "smtpCalls":0,
+    "voiceCalls":0,
+    "newGuiBrowserQa":"NOT RUN; source reviewed and historical QA kept separate",
+    "liveAcceptance":"NOT RUN"
+  },
+  "setupLimitations": [
+    "Initial managed worktree app creation failed at tracking; separate Git worktree created from successfully fetched main.",
+    "Web fetch returned 429/login and initial in-app browser failed; successful direct Chrome source reads used.",
+    "Audit author's first own test .env path was incorrect; moved only own generated files and reran setup successfully.",
+    "Fetched main has no core-upgrade-check.mjs; existing core checkout helper is pinned separately and used read-only with --root for committed coverage."
+  ],
+  "conclusion": {"privatePreparation":"PASS_WITH_LOCAL_REPAIRS","liveRuntime":"NOT_READY","actualPageAppAccess":"UNVERIFIED","reviewedMainAdoption":"PENDING"}
+}

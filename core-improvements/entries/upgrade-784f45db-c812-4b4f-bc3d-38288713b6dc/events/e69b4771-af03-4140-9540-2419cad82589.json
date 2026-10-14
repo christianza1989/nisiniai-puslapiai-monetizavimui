@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Initial integration check failed 11/12 because the compiler fixture lacked lib/niche-path-aliases.mjs and lib/niche-links.mjs. Added only actual fixture dependencies; admission-gate and exact source comparison assertions retained. Full paired suite subsequently passed.",
+  "checks": [
+    {
+      "command": "npm test --prefix content-studio with STUDIO_PUBLIC_CORE_DIR pointing to the isolated Promedical public companion",
+      "result": "PASS",
+      "evidence": "61 tests passed, zero failed; private output/promedical-gemini-editorial-20261014/studio-tests.log"
+    }
+  ],
+  "eventId": "e69b4771-af03-4140-9540-2419cad82589",
+  "sequence": 2,
+  "at": "2026-10-14T09:56:07.766Z"
+}

@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "siteId": "promedical",
+  "checkedAt": "2026-10-14T17:20:28.356Z",
+  "status": "PASS_ONE_REVIEWED_GUIDE_DEPLOYED",
+  "publicSource": "85b2bb18475c226c2afafdfa33f13540e33ce6a1",
+  "coreImplementation": "00901f8d54ed7e3a6897310deaae920334bf32a4",
+  "packageSha256": "6c7ea6b522ba35ad10723c9904552fb795cf30e3f704e4d41cc3c996344fb4e9",
+  "pageId": "a4a35108-c881-401b-a598-d2d0c800b7d3",
+  "revisionHash": "22302fd46ef11bfe46edc1d0c20a72a7a423bc56929f2a43bae788cfe178a4ab",
+  "acceptedBodySha256": "ae21fa4ea8e87082944e42606ee33e71e321e0b2a6c4cf74b4284f56ac128850",
+  "changedUrls": [
+    "https://promedical.lt/gidai/medicininio-vezimelio-pasirinkimas"
+  ],
+  "unchangedPages": 1908,
+  "baselineMediaPinned": 3777,
+  "approvedGuidesThisRun": 1,
+  "deployedGuidesThisRun": 1,
+  "publicGuideCount": 2,
+  "heldGuideCount": 55,
+  "ISO": "Private E2 second sample; no approval/release/deploy",
+  "runtime": {
+    "checkedAt": "2026-10-14T17:15:32.495Z",
+    "deployment": "cad514ac-ae33-4ef3-9432-957c51563873",
+    "version": "5e694d1f-02e8-4859-bdab-68b53a8dd544",
+    "percentage": 100,
+    "settingsAndBindingsUnchanged": true,
+    "routesUnchanged": true,
+    "oldDeployment": "ff47e93c-ffeb-4622-8af2-463a6f66d083",
+    "oldVersion": "b40523b5-c11b-460c-a551-82a4f31b537b"
+  },
+  "checks": {
+    "studioTests": 66,
+    "publicTests": 64,
+    "commonSeoSmokePublicPages": 1854,
+    "localRequests": 97,
+    "liveRequests": 97,
+    "normalBuild": "PASS",
+    "dryRun": "PASS",
+    "actualVisualViewports": [
+      1440,
+      390,
+      320
+    ],
+    "allAcceptedBodyBlocks": true,
+    "canonicalArticleBreadcrumbAndOrganization": true,
+    "sourceExplanationsLithuanian": true,
+    "exactStagedPublicSafety": "PASS",
+    "sameSiteEnvelopeAndOtherPages": true,
+    "liveVisualViewports": [
+      1440,
+      390
+    ],
+    "liveAcceptedBodyAndHero": true
+  },
+  "rollback": {
+    "version": "b40523b5-c11b-460c-a551-82a4f31b537b",
+    "deployment": "ff47e93c-ffeb-4622-8af2-463a6f66d083",
+    "baselinePackageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
+    "scope": "Own code/content only; no D1/email/DNS/resource data deletion or restoration."
+  },
+  "limitations": [
+    "No full-site factual or operational acceptance.",
+    "Actual200%browserzoom unverified; no new form/mail delivery test.",
+    "Shared source changes remain in draft PRs; no main merge/adoption."
+  ],
+  "privateEvidenceRoot": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2",
+  "publicPr": "https://github.com/christianza1989/niche-public-core/pull/39",
+  "corePr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/138",
+  "registryIntegrity": {
+    "siteId": "promedical",
+    "records": 1993,
+    "status": "PASS_REVISION_AND_ARTIFACT_INTEGRITY",
+    "limitation": "Integrity is not proof of authorship, model backend identity or editorial quality."
+  },
+  "registryFilters": {
+    "currentGemini": 2,
+    "currentMixed": 2,
+    "historicalCodex": 1,
+    "unknownCurrent": 1907
+  },
+  "evidence": {
+    "publicRenderer": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2/PUBLIC_RENDERER_RECEIPT.json",
+    "liveVisual": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2/LIVE_VISUAL_RECEIPT.json",
+    "localHttp": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2/LOCAL_HTTP_KVITAS.json",
+    "liveHttp": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2/LIVE_HTTP_KVITAS.json",
+    "runtime": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2/RUNTIME_KVITAS.json",
+    "baselineMediaManifest": "D:/Core/output/promedical-gemini-editorial-20261014/publication-e2/BASELINE_MEDIA_MANIFEST_ORIGINAL.json"
+  }
+}

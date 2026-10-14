@@ -1,0 +1,17 @@
+{
+  "siteId": "promedical",
+  "summary": "The V2 gated-import fixture omits the current compiler's path-alias and publication-pause validator modules and fails before testing the admission gate.",
+  "category": "code",
+  "evidence": [
+    "content-studio/test/content-v2.test.mjs: isolated compiler fails ERR_MODULE_NOT_FOUND for lib/niche-path-aliases.mjs after PR134 integration on the current Promedical companion."
+  ],
+  "paths": [
+    "content-studio/test/content-v2.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/137",
+  "rollback": "Revert the two fixture dependency-copy lines; no production source or publishing gate changes.",
+  "id": "upgrade-784f45db-c812-4b4f-bc3d-38288713b6dc",
+  "branch": "codex/promedical-gemini-editorial-20261014",
+  "baseSha": "61b43c4bd650dcaea150526893dcddc12c2fc0cc",
+  "createdAt": "2026-10-14T09:42:09.712Z"
+}

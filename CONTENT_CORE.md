@@ -37,6 +37,14 @@ Dideliam jau perskaitytų puslapių rinkiniui naudoti bendrą `recordEditorialRe
 
 Prieš importą paleisti `node content-studio/scripts/verify-content-release.mjs <release-directory>`: tikrina tikrus paketo/visų media baitus, public validator, puslapių/revizijų inventorių. Kito checkout public core keliui naudoti `STUDIO_PUBLIC_CORE_DIR`. Manifestą laikyti privačiai; SHA sutapimas nėra atliktos šaltinių patikros ar deployment įrodymas.
 
+### Tik pasirinktos esamos V1 publikacijos atnaujinimas
+
+Kai jau įdiegtas patvirtintas paketas yra naujesnis už kitus privačius juodraščius, nekurti jiems fiktyvių fresh review ir neeksportuoti senesnio viso site snapshot. `releaseReviewedOverlay(siteId, input)` / CLI `release-scoped` išlaiko tiksliai prisegto jau įdiegto V1 paketo visą site envelope ir kiekvieną nepasirinktą puslapį. Pasirinkti puslapiai turi įprastą tikrą aktualios revizijos peržiūrą ir `approveReviewedBatch` patvirtinimą; jų ID/URL/type/publishAt negali pasikeisti. Native V2 šiame kelyje aiškiai atmetamas iki atskiro native adapterio, ne flatteninamas.
+
+Input: `pageIds`, `basePackagePath`, `expectedBasePackageSha256`, `baseAssetsDirectory`, `expectedBaseAssets:[{name,sha256}]`, `expectedBaseAssetsSha256`, `baselineEvidence:{sourceVersion,deploymentId,observedAt}`. Medijos inventoriaus SHA yra `releaseSha(stable(expectedBaseAssets))`; inventorius gaunamas iš anksčiau prisegto patikrinto baseline kvito, o ne kuriamas iš dabartinės galimai pakeistos direktorijos. Kviečiantis agentas patikrina tikrą įdiegtos versijos tapatybę ir išsaugo baseline prieš darbą. Helper patikrina realius baseline baitus/common validator, exact selected review/approval, visų nuorodų priklausomybes ir mediją prieš bei kopijuodamas. Seni media URL negali turėti kitų baitų. Privatus manifestas aiškiai skiria naują review nuo paveldėtos jau patvirtinto prisegto baseline revizijos; istorinis review neperspausdinamas kaip šiandien atliktas.
+
+Bendras release verifier papildomai patikrina išsaugotą baseline, visą site envelope, visų nepasirinktų puslapių kontrolę, pasirinkimo ribas ir baseline mediją. Į public importą patenka tik bendras patvirtintas `content-package.json` ir `assets`, ne baseline/review/provenance failai. Esamo full `releaseContent` vartai nesikeičia. Scoped release tebėra exported-not-deployed; preview/build, actual deployment, schema/tekstų/nuorodų sutaptis ir esami site-specific publikavimo cutoff/bot/channel/runtime apribojimai tikrinami atskirai.
+
 ## Migracija ir adapteriai
 
 - V1 plan/draft/autopilot įjungia `contentWorkflowVersion=1` ir policy prieš generavimą. Galima įjungti anksčiau per policy API/CLI. Tuomet ir senas individualaus approval / export API nebegali apeiti aktualios peržiūros. Senos įdiegtos revizijos savaime neperrašomos.

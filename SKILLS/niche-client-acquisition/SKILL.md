@@ -11,9 +11,15 @@ Read [PROJECT_CONTRACT](../PROJECT_CONTRACT.md), the site's actual BUSINESS / cu
 
 ## Choose the task
 
+For Facebook bot connection, publishing setup, live acceptance or transport troubleshooting, use [facebook-bot-setup](../facebook-bot-setup/SKILL.md) and its canonical system entrypoint. This skill retains acquisition strategy and signal qualification; the setup skill resolves actual Page API / desktop connection without reusing another site's credentials or historical PASS.
+
 For a new acquisition strategy produce a private `sites/<siteId>/ACQUISITION.md` and a small, measurable experiment. For a prospecting task return minimal source-backed records and a truthful next action. For a real inbound exchange read only the authorized site's thread / facts and prepare the supported answer. Do not repeat an entire niche business study for a routine draft if the current BUSINESS decision is still applicable.
 
 For Facebook group research/actions or Messenger work also read [the Facebook workflow](references/facebook.md). Use one account coordinator and isolated niche task contexts; separate personal-profile groups from official Page messaging. Existing owner authorization is distinct from source/platform rights. Do not infer an operational FB adapter or continuous collector from this instruction.
+
+For owner-authorized Page/profile timeline posts, one image upload, a comment on a specific post or a bounded group search, read [the Codex desktop publishing workflow](references/facebook-browser-worker.md). The bridge requires an actual desktop Computer Use session, immutable Codex-reviewed content, explicit audience, verified actor and durable results. The owner's mandate can delegate routine content and destination choices without human approval for each task. Group comments require current actor-specific access/rule evidence; discovery cannot publish or join. Ordinary CLI drafting does not have browser tools. Local fixture acceptance is distinct from real Facebook publication and from a continuous collector; host/tool safety rejections are not bypassed.
+
+For owner-authorized publishing as an owned Page through the official Graph API, read [the Page API workflow](references/facebook-page-api.md). It supports text/photo posts, comments on owned Page posts and replies, with private credentials, an actual Meta identity/scope check, one durable HTTP write attempt and GET receipts. Page API and desktop share account coordination and publication usage; routine jobs do not require a new human approval. Personal-profile and group actions stay on Computer Use. Mock acceptance, host activation and real Meta authorization are separate gates.
 
 ## Research and choose independently
 

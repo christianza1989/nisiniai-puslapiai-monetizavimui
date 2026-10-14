@@ -238,7 +238,7 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 ### 12. ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas
 
-**Skaitytojo sprendimas.** Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.
+**Skaitytojo sprendimas.** Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.
 
 **Unikalus rezultatas.** Dviejų tikrų modulių ir vieno laikymo rėmo matavimo lentelė; 600×400 ir 400×300 naudoti tik ten, kur tai patvirtinta šaltinyje.
 
@@ -667,7 +667,7 @@ Siūlomas pirmas rašymo etapas: baldų darbo vietos planavimas, stovų ir laiki
 
 **Skaitytojo sprendimas.** Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.
 
-**Unikalus rezultatas.** Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.
+**Unikalus rezultatas.** Padėklas–bėgeliai–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.
 
 **Frazė ir URL.** „padėklų vežimėlio matmenys“ → `/gidai/padeklu-vezimelio-formato-pasirinkimas`. Nėra patikimos skaitinės apimties. Tikslios frazės SERP netirtas; artimos grupės rezultatai nėra tikslios intencijos įrodymas.
 

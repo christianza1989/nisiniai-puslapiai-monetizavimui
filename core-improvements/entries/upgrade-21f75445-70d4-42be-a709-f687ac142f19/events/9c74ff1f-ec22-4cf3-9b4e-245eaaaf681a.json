@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Registry implementation verified in focused tests. Initial full studio run had 51/52 PASS; original failure is content-v2.test.mjs:22, expected packages.length9 but actual10 in handed-over companion. Exact tool output preserved in chat, and private failure note records it. Issue132 scope expanded before replacing the obsolete inventory count with exact current source/compiled ID equality. All validator/hash/schema checks remain.",
+  "eventId": "9c74ff1f-ec22-4cf3-9b4e-245eaaaf681a",
+  "sequence": 2,
+  "at": "2026-10-14T08:50:09.379Z"
+}

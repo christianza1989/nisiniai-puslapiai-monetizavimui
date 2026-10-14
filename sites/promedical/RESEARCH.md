@@ -15,7 +15,7 @@ Savininko faktai: Klaro atstovaujamo tiekėjo svetainė, visas katalogas, promed
 | https://www.klaro.cz/en/voziky-s-prislusenstvim | Slaugos, anesteziologijos, vaistų, tvarsčių, reanimacijos, vizitavimo grupės | Atrankos paskirties paaiškinimas, be klinikinės komplektacijos nurodymų |
 | https://www.klaro.cz/en/druhy-nerezove-oceli | Gamintojas skiria plieno rūšis ir jų cheminį atsparumą | Nėra bendro dezinfekavimo recepto; derinti konkretų gaminį ir naudojamą priemonę |
 | https://www.klaro.cz/en/iso-modul-system | Sistemos grupės apima spintas, UNI-TRANS, krepšius, stelažus | ISO gido viso priemonių kelio struktūra |
-| https://www.klaro.cz/en/iso-skrine-kose | Skirtingi krepšiai, pertvaros, etiketės ir kreipiančiosios su savo kodais | Tikslios dalių tapatybės ir suderinamumo patikra |
+| https://www.klaro.cz/en/iso-skrine-kose | Skirtingi krepšiai, pertvaros, etiketės ir bėgeliai su savo kodais | Tikslios dalių tapatybės ir suderinamumo patikra |
 | https://www.klaro.cz/en/iso-skrine-prehled | Skirtingų aukščių ir korpusų spintų variantai | Nepersinešti vienos spintos parametro visai kategorijai |
 | https://www.klaro.cz/en/regalovy-system | Stelažų, lentynų ir modulinių dalių asortimentas | Visos komplektacijos sąrašas; nėra bendros apkrovos teiginio |
 | https://www.klaro.cz/en/navody-pdf-2186 | Instrukcijų paieška pagal katalogo numerį; dėl nerasto dokumento kreiptis į gamintoją | Giduose prašyti konkretaus modelio dokumentų |

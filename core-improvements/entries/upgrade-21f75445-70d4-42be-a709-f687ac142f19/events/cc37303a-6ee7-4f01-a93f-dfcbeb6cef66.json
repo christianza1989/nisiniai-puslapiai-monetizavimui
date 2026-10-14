@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final source adds nativeV2 rich-payload integrity and requires known author jobId/provider/promptVersion; original intermediate53/53 receipt remains. Final full54/54PASS plus actual private8revision integrity/filter adoption and exact public package unchanged. Browser and seven-page rewrite acceptance remain open.",
+  "checks": [
+    {
+      "command": "npm test --prefix content-studio",
+      "result": "PASS",
+      "evidence": "54/54 actual final source; private studio-tests-final-source.txt. Includes7focused provenance cases and all prior content/media/links/workflow checks."
+    },
+    {
+      "command": "node output/parasoplansetes-approved-copy-20261014/prepare-selection.mjs",
+      "result": "PASS",
+      "evidence": "Actual8private records verified against preserved revision snapshots; Gemini1/Codex0/mixed1/observedUI1; finalSource contains exact2Codex segments."
+    }
+  ],
+  "eventId": "cc37303a-6ee7-4f01-a93f-dfcbeb6cef66",
+  "sequence": 4,
+  "at": "2026-10-14T08:56:38.191Z"
+}

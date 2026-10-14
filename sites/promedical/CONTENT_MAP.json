@@ -1247,7 +1247,7 @@
         "publicRevisionHash": "ea8475f77b2bc044aef151efd8c4f0178abbf531f51f95ed109316633624e3fd"
       },
       "action": "existing-section",
-      "readerJob": "Paaiškinti vardinio dydžio, gylio, kreipiančiųjų ir konkretaus modelio skirtumus be universalumo.",
+      "readerJob": "Paaiškinti vardinio dydžio, gylio, bėgelių ir konkretaus modelio skirtumus be universalumo.",
       "priority": "P1",
       "reason": "Skaitytojo darbo ir realaus inventoriaus sprendimas, ne išmatuotos Google pozicijos ar LT apimties išvada."
     },
@@ -1492,7 +1492,7 @@
       "action": "new",
       "readerJob": "Kokią spintos konstrukciją ir talpos informaciją palyginti konkrečiam įstaigos laikymo poreikiui?",
       "priority": "P2",
-      "reason": "P2. Spintos pastatymo, prieigos ir vidinės talpos darbas skiriasi nuo ISO krepšių perdavimo tarp įrangos. Originalus indėlis: matavimo ir talpos darbo lapas su pažymėtu spintos poreikio pavyzdžiu; išoriniai matmenys nevadinami naudinga vidine talpa. plan-klaro-iso ir faktinė spintų kategorija patvirtina skirtingų sistemų inventorių; bendro ISO termino nemedicininiai rezultatai neįrodo medicininio poreikio apimties. Prieš tekstą tikrinti dviejų tikrų modelių vidaus/išorės duomenis, kreipiančiąsias, ratukus, priedus ir durų variantus. Nežadėti automatinio vaistų išdavimo, universalios modulių sąveikos ar montavimo. Vaizdas: tikra spinta ir originali aiškiai iliustracinė matavimo schema. Kelias: gidai → spintos pasirinkimas → spintų kategorija; ISO gidas tik kai sprendžiamas modulių kelias. Data privati, LT apimtis nežinoma.",
+      "reason": "P2. Spintos pastatymo, prieigos ir vidinės talpos darbas skiriasi nuo ISO krepšių perdavimo tarp įrangos. Originalus indėlis: matavimo ir talpos darbo lapas su pažymėtu spintos poreikio pavyzdžiu; išoriniai matmenys nevadinami naudinga vidine talpa. plan-klaro-iso ir faktinė spintų kategorija patvirtina skirtingų sistemų inventorių; bendro ISO termino nemedicininiai rezultatai neįrodo medicininio poreikio apimties. Prieš tekstą tikrinti dviejų tikrų modelių vidaus/išorės duomenis, bėgelius, ratukus, priedus ir durų variantus. Nežadėti automatinio vaistų išdavimo, universalios modulių sąveikos ar montavimo. Vaizdas: tikra spinta ir originali aiškiai iliustracinė matavimo schema. Kelias: gidai → spintos pasirinkimas → spintų kategorija; ISO gidas tik kai sprendžiamas modulių kelias. Data privati, LT apimtis nežinoma.",
       "planningDate": "2026-11-13",
       "pillar": {
         "path": "/gidai",
@@ -4086,7 +4086,7 @@
       "slug": "gidai/iso-moduliu-matmenu-patikra",
       "title": "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas",
       "query": "ISO 600x400 moduliai",
-      "readerDecision": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
+      "readerDecision": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
       "uniqueAsset": "Dviejų tikrų modulių ir vieno laikymo rėmo matavimo lentelė; 600×400 ir 400×300 naudoti tik ten, kur tai patvirtinta šaltinyje.",
       "categoryId": "iso-modul-system",
       "serpCallIds": [
@@ -4200,7 +4200,7 @@
       "outline": [
         {
           "purpose": "Atsakyti į sprendimą",
-          "brief": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų."
+          "brief": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų."
         },
         {
           "purpose": "Parengti praktiškai naudojamą rezultatą",
@@ -10099,7 +10099,7 @@
       "title": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
       "query": "padėklų vežimėlio matmenys",
       "readerDecision": "Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.",
-      "uniqueAsset": "Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.",
+      "uniqueAsset": "Padėklas–bėgeliai–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.",
       "categoryId": "plata",
       "serpCallIds": [
         "serp-29"
@@ -10216,7 +10216,7 @@
         },
         {
           "purpose": "Parengti praktiškai naudojamą rezultatą",
-          "brief": "Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio."
+          "brief": "Padėklas–bėgeliai–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio."
         },
         {
           "purpose": "Parodyti tikrą modelio informaciją",
@@ -10228,7 +10228,7 @@
         }
       ],
       "mediaBrief": {
-        "asset": "original Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.",
+        "asset": "original Padėklas–bėgeliai–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio.",
         "purpose": "demonstrate the exact reader decision; use existing model photos only when their identity and role match",
         "technicalDrawing": false,
         "newMediaGenerated": false,
@@ -14971,7 +14971,7 @@
       "path": "/gidai/iso-moduliu-matmenu-patikra",
       "pageId": "27bb1b7d-18d2-44b0-b28f-f47f700bcd03",
       "action": "existing-or-planned-guide-section",
-      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
+      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
       "reason": "Tas pats skaitytojo sprendimas; sinonimai ir nedideli parametrų variantai apimami viename gide."
     },
     {
@@ -14984,7 +14984,7 @@
       "path": "/gidai/iso-moduliu-matmenu-patikra",
       "pageId": "27bb1b7d-18d2-44b0-b28f-f47f700bcd03",
       "action": "existing-or-planned-guide-section",
-      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
+      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
       "reason": "Tas pats skaitytojo sprendimas; sinonimai ir nedideli parametrų variantai apimami viename gide."
     },
     {
@@ -14997,7 +14997,7 @@
       "path": "/gidai/iso-moduliu-matmenu-patikra",
       "pageId": "27bb1b7d-18d2-44b0-b28f-f47f700bcd03",
       "action": "existing-or-planned-guide-section",
-      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
+      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
       "reason": "Tas pats skaitytojo sprendimas; sinonimai ir nedideli parametrų variantai apimami viename gide."
     },
     {
@@ -16024,7 +16024,7 @@
       "path": "/gidai/iso-moduliu-matmenu-patikra",
       "pageId": "27bb1b7d-18d2-44b0-b28f-f47f700bcd03",
       "action": "existing-or-planned-guide-section",
-      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
+      "job": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
       "reason": "Atskiras plane aprašytas skaitytojo sprendimas; prie pagrindinės frazės būtinas gido pasirinkimo / planavimo kontekstas."
     },
     {

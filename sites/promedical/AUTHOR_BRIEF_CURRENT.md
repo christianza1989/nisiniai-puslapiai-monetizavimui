@@ -1,0 +1,15 @@
+# Aktuali autoriaus užduoties taisyklė
+
+Kiekvienai naujai Promedical autoriaus užduočiai prieš siuntimą perskaityti aktualius sites/promedical.md, sites/promedical/EDITORIAL_LANGUAGE.md ir konkretaus puslapio faktų paketą.
+
+Pagrindiniam puslapiui galioja `sites/promedical.md` viršuje esantis savininko 2026-10-10 pozicionavimas: bendrinis medicininės įrangos ir baldų pristatymas, be gamintojų pavadinimų ar vieno tiekėjo atstovavimo žymų. Tai apima hero pavadinimą, description, visą native body ir papildomas sąsajos frazes. Žemiau išsaugota senesnė bendro katalogo verslo informacija šios homepage taisyklės nepakeičia. Konkrečių katalogo gaminių „Klaro“ techniniai faktai lieka tinkami jų puslapiams.
+
+Rašyk gydymo įstaigos įrangos pirkėjui, kuris jau žino darbo tvarką ir reikalavimus. Konkrečių krepšių, padėklų ar konteinerių laikymo dalis vadink bėgeliais. Taisyklingai derink: horizontalūs plastikiniai bėgeliai, bėgelių pora, pakreipti bėgeliai. Pagal kontekstą pridėk krepšių/padėklų/konteinerių, bet jų nesumaišyk. Nekeisk veiksmažodžio kreiptis ar kreipiamųjų ratukų reikšmės. Pakreiptų bėgelių nevadink reguliuojamais ar teleskopiniais be konkretaus modelio dokumentų. Išsaugok medžiagą, ilgį, porų kiekį, apkrovą, modelių tapatybę ir suderinamumo ribas.
+
+Remkis tik užduočiai patikrintais konkrečiais faktais ir konkrečiu šio puslapio planu. Nekurk darbuotojų apklausų, klinikinės tvarkos, kainų ar universalaus ISO suderinamumo. Rašyk natūraliai lietuviškai; baigęs pats perskaityk ir suredaguok visą tekstą, ne tik paskutines pataisas. Šis šablonas yra aktuali ateities taisyklė, ne naujas Gemini siuntimas. Faktų, nuorodų, paveikslų ir publikavimo peržiūra lieka atskira.
+
+Savininko pastaba apie DI stilių: tekstui dar reikia redakcijos. Pradėk nuo konkretaus skirtumo arba veiksmo, kurio ieško skaitytojas. Pavyzdžiui, Mayo modelių įžangoje iš karto pasakyk, kuriame aukštis reguliuojamas ranka, kuriame hidrauliškai ir kurį padėklą galima nuimti. Nepradėk abstrakčiu „esminis sprendimas priklauso“. Šaltinio nuorodą įterpk ten, kur ji pagrindžia duomenis; nekartok „gamintojo šaltinyje nurodoma“ prie kiekvieno modelio. Trumpink antraštes, nereikalingus įvadus prieš sąrašus ir pastraipas, kurios pakartoja tą patį. Faktų patikros taisyklės turi likti privačioje užduotyje, o skaitytojui pateik konkrečius duomenis ir jų sąlygas. Nekeisk reikalingų techninių sąlygų vien todėl, kad trumpesnis sakinys skamba sklandžiau.
+
+Rišlią autoriaus redakciją atlieka tikras Gemini. Plati Codex stiliaus redakcija saugoma kaip aiškiai pažymėtas privatus pasiūlymas ir nepriimama kaip nauja Gemini autoriaus redakcija. Codex tiksliai registruoja savo faktines, gramatines ir struktūrines pataisas. Naujas tekstas turi savo reviziją; senos faktinio vaizdo patikros jai nepriskiriamos.
+
+Naujausias 2026-10-14 savininko nurodymas: rašymą tęsti mažomis privačiomis partijomis, o publikavimą pristabdyti. Negalima eksportuoti naujo viešo leidimo, importuoti jo į viešą paketą, diegti ar įjungti suplanuoto publikavimo, kol žmogus pats atnaujins leidimą. Anksčiau priimta redakcija nesuteikia naujo publikavimo leidimo.

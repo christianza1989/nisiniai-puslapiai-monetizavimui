@@ -134,7 +134,7 @@
       "title": "Padėklų vežimėlis: formatas, vietų skaičius ir tarpai tarp jų",
       "description": "Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.",
       "intent": "Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis.",
-      "reason": "Skaitytojo sprendimas: Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis. Unikalus rezultatas: Padėklas–kreipiančiosios–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio. Šaltinis: https://www.klaro.cz/plata. Pavyzdžiai: NEREZ3100, NEREZ3101, NEREZ3104. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "reason": "Skaitytojo sprendimas: Suderinti realaus padėklo formatą bei aukštį su konkretaus vežimėlio vietomis. Unikalus rezultatas: Padėklas–bėgeliai–tarpas lentelė su tikrais modeliais; nesumaišyti nominalaus vietų skaičiaus ir tinkamo pakuotės aukščio. Šaltinis: https://www.klaro.cz/plata. Pavyzdžiai: NEREZ3100, NEREZ3101, NEREZ3104. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
       "cluster": "Laikymas ir logistika",
       "pillarSlug": "gidai/medicinos-priemoniu-laikymo-ir-transportavimo-planas",
       "sourceQueries": [

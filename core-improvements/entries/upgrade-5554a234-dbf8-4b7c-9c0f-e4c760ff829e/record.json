@@ -1,0 +1,23 @@
+{
+  "siteId": "promedical",
+  "summary": "Scoped reviewed release preserves a pinned deployed baseline while updating only genuinely reviewed selected pages",
+  "category": "workflow",
+  "evidence": [
+    "Owner accepted one E2 guide; full release requires every separately restored mutable draft to match its old published snapshot.",
+    "Original reproduced failure stored privately at D:/Core/output/promedical-gemini-editorial-20261014/SCOPED_RELEASE_ORIGINAL_FAILURE.json; unchanged base package SHA00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af."
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/src/scoped-content-release.mjs",
+    "content-studio/src/content-release.mjs",
+    "content-studio/scripts/content-workflow.mjs",
+    "content-studio/test/scoped-content-release.test.mjs",
+    "CONTENT_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/145",
+  "rollback": "Revert only this scoped API/verifier/CLI/docs/test increment; original full release and immutable package/review artifacts remain untouched. No runtime or data rollback implied.",
+  "id": "upgrade-5554a234-dbf8-4b7c-9c0f-e4c760ff829e",
+  "branch": "codex/promedical-gemini-editorial-20261014",
+  "baseSha": "cc962367ad318426ec7d79579b1e6937053409e5",
+  "createdAt": "2026-10-14T16:14:41.747Z"
+}

@@ -1,5 +1,6 @@
 """Ordinary owner API, canonical native fixtures and provider-zero atomic effects."""
 import asyncio
+from datetime import timedelta
 from uuid import uuid4
 
 import pytest
@@ -255,7 +256,7 @@ async def test_discovery_foundation_refuses_preparation_before_any_provider(dire
     auth, _, base, records, _ = await directory_setup(c, count=0)
     result = await c["client"].post(base+"/team/agent-preparations", headers=auth, json={
         "idempotency_key": str(uuid4()), "creation_id": records["creation"], "purpose": "custom", "content": "Parenkite agentą."})
-    assert result.status_code == 409 and result.json()["error"]["code"] == "website_foundation_not_ready"
+    assert result.status_code == 409 and result.json()["code"] == "website_foundation_not_ready"
     async with AsyncSession(c["admin"]) as tx:
         assert not list(await tx.scalars(select(Task).where(Task.environment_id == c["environment"])))
 
@@ -274,3 +275,41 @@ async def test_expired_authorizing_login_never_creates_a_draft(prepare_customer)
     assert await worker.execute_once(expired, kind=KIND)
     task, configs, events, _, runs = await saved(c, accepted["turn"]["task_id"])
     assert task.status == "failed" and not configs and len(events) == 1 and runs[0].usage["input_tokens"] == 17
+
+
+async def test_lease_expired_after_history_fence_rolls_back_both_effects(prepare_customer, monkeypatch):
+    c = prepare_customer
+    base = await setup(c)
+    accepted, _ = await submit(c, base)
+    original = preparation.complete
+
+    async def expired(tx, task, row, turn, result):
+        receipt = await original(tx, task, row, turn, result)
+        # The effect and existing SQL fence have run; the worker still must
+        # refuse an expired lease before its atomic terminal transition.
+        task.lease_until = utcnow()-timedelta(seconds=1)
+        return receipt
+
+    monkeypatch.setattr(preparation, "complete", expired)
+    assert await worker.execute_once(plan, kind=KIND)
+    task, configs, events, attempts, runs = await saved(c, accepted["turn"]["task_id"])
+    assert task.status == "failed" and task.failure_code == "worker_interrupted"
+    assert task.result is None and not configs and len(events) == 1
+    assert attempts[0].state == "succeeded" and runs[0].usage["input_tokens"] == 17
+
+
+async def test_invalid_native_specification_retains_usage_without_saving(prepare_customer):
+    c = prepare_customer
+    base = await setup(c)
+    accepted, _ = await submit(c, base)
+
+    async def malformed(phase, packet, heartbeat):
+        value, usage = await plan(phase, packet, heartbeat)
+        value["configuration"]["name"] = ""
+        return value, usage
+
+    assert await worker.execute_once(malformed, kind=KIND)
+    task, configs, events, attempts, runs = await saved(c, accepted["turn"]["task_id"])
+    assert task.status == "failed" and task.failure_code == "output_invalid"
+    assert task.result is None and not configs and len(events) == 1
+    assert attempts[0].state == "failed" and runs[0].usage == {"input_tokens": 17, "output_tokens": 9}

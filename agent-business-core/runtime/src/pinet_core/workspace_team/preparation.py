@@ -2,7 +2,7 @@
 import json
 from uuid import UUID, uuid5
 
-from sqlalchemy import select
+from sqlalchemy import select, text
 
 from ..control.models import Session
 from ..control.routes import ControlError
@@ -117,4 +117,10 @@ async def complete(tx, task, row, turn, result):
     event = await service.add_event(tx, row, thread, task.id, "coordinator", "answer", content,
         reply=turn.owner_event_id, attempt=attempt.id)
     service.event_view(event, row)
+    # Validate the existing deferred history fences while the Task still owns
+    # its running lease. The worker's savepoint keeps this event and the native
+    # Config atomic with final authority checks and its terminal transition.
+    await tx.flush()
+    await tx.execute(text("SET CONSTRAINTS workspace_team_fence IMMEDIATE"))
+    await tx.execute(text("SET CONSTRAINTS workspace_team_fence DEFERRED"))
     return {"public_events_saved": 1, "context_sha256": turn.context_sha256, "agent_preparation": receipt}

@@ -1,6 +1,6 @@
 # MemoryString: verslo ir platinimo planas
 
-2026-10-14 | MB Pinet | Verslo, demonstracinės sistemos ir derybų planas, 5 versija - aktuali. Tyrimas atliktas spalio 13 d.; programėlės patikros atnaujintos spalio 14 d.
+2026-10-14 | MB Pinet | Verslo, demonstracinės sistemos ir derybų planas, 6 versija - aktuali. Tyrimas atliktas spalio 13 d.; vietinės programėlės ir partnerių sistemos patikros atnaujintos spalio 14 d.
 
 ## Rekomenduojamas sprendimas
 
@@ -8,7 +8,7 @@ Kurti vieną savo prekės ženklą ir keturis tarpusavyje susijusius pajamų ša
 
 Vertingiausias pasiūlymas partneriui: jis gauna priemones gaminti ir valdyti užsakymus, o mes suteikiame įrangą, svetainę, procesą, mokymus, medžiagų tiekimą bei palaikymą. Partneris pats atsako už savo vietinę gamybą, pardavimą ir klientus pagal sutartyje nustatytą modelį.
 
-Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Prieš platesnes derybas paruošti 10 testinių partnerių demonstraciją: aparatai, žaliavos, rinkiniai, pardavimai, tiekėjo portalas ir telefono programa. Specifikacija pateikta plano pabaigoje. Pirkimas, reklamos biudžetas bei sutartys vertinami po konkrečių pasiūlymų. Atskirai autorizuota Android kūrėjo programėlė jau įgyvendinta ir patikrinta telefone; kitas užsakytas etapas - partnerių demonstracinė frontend/backend sistema atskirame pokalbyje. Pardavimo svetainės numatytos vėliau.
+Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Deryboms jau parengta vietinė Android testinė programėlė ir dešimties sintetinių studijų veiklos demonstracija: įrangos apskaita, žaliavos, rinkiniai, užsakymai ir testinė tiekėjo darbo vieta. Tai nėra tikras partnerių tinklas ar gamintojo prisijungimas. Pirkimas, reklamos biudžetas bei sutartys vertinami po konkrečių pasiūlymų. Toliau reikia patikrinti gamintoją, produktą ir fizinį bandomąjį komplektą; pardavimo svetainės bei gyvos integracijos numatytos vėliau.
 
 ## Dabartinė padėtis
 
@@ -16,11 +16,11 @@ Pradėti nuo gamintojo patikros ir vienos bandomosios studijos. Prieš platesnes
 - Yra gamintojo PDF, nuotraukos ir trys vaizdo įrašai. Tai gamintojo medžiaga, ne mūsų gamybos rezultatai.
 - Naujas prekės ženklas, domenas, partneriai, platintojo teisės ir paklausa dar nepatvirtinti.
 - Savininkas pasirinko influencerius, vaizdo turinį ir galimą rekomendavimo sistemą kaip klientų pritraukimo kryptį.
-- Šis dokumentas apima tyrimą, veiklos modelį, ekonomikos prielaidas, demonstracinės sistemos reikalavimus, Android programėlės būseną ir pirmą laišką. Pasirinktas programėlės dizainas įgyvendintas, Android 8+ testinis APK patikrintas savininko Android 16 telefone. Partnerių demonstracinė frontend/backend sistema yra kitas užsakytas darbas atskirame pokalbyje; mažmeninės ir partnerių subdomenų svetainės numatytos vėliau. Fizinis rinkinys ir aparatas dar nepatikrinti.
+- Šis dokumentas apima tyrimą, veiklos modelį, ekonomikos prielaidas, vietinės sistemos ir Android programėlės būseną bei neišsiųstą laišką. Android 8+ testinis APK patikrintas savininko Android 16 telefone. Vietinė partnerių sistema taip pat baigta ir patikrinta su testiniais duomenimis: trys naudotojų vaidmenys, patvari užsakymų bei atsargų saugykla, grąžinimai ir komisijų apskaita. Mažmeninės ir partnerių subdomenų svetainės, klientų paskyros, aktyvavimas bei gyvos integracijos numatytos vėliau. Fizinis rinkinys ir aparatas dar nepatikrinti.
 
 ## Pirmas komercinis veiksmas
 
-Gamintojui pateikti konkretų ES plėtros pasiūlymą ir paprašyti patvirtinto modelio specifikacijos, platintojo kainų, esamų teritorinių teisių bei atitikties dokumentų. Prieš perkant išspręsti prieštaravimus dėl spalvų, komplektacijos ir programinės įrangos.
+Parengtą vietinę demonstraciją naudoti siūlomam bendradarbiavimui paaiškinti. Gamintojui pateikti konkretų ES plėtros pasiūlymą ir paprašyti patvirtinto modelio specifikacijos, platintojo kainų, esamų teritorinių teisių bei atitikties dokumentų. Prieš perkant išspręsti prieštaravimus dėl spalvų, komplektacijos ir programinės įrangos. Pirmas laiškas tebėra neišsiųstas.
 
 <!-- PAGE -->
 
@@ -257,7 +257,7 @@ Sutartyje numatyti prekės ženklo naudojimą, domenų ir svetainės nuosavybę,
 
 # 9. Partnerių sistemos planas ir demonstracija
 
-Sistema turi palaikyti visą verslo kelią: vartotojo užsakymą, aparatų platinimą, partnerių veiklą ir medžiagų tiekimą. Bendras branduolys dalijasi turinio, kontaktų, teisių ir matavimo principais; šio produkto gamybos adapteris lieka atskiras modulis.
+Būsima komercinė sistema turi palaikyti visą verslo kelią: vartotojo užsakymą, aparatų platinimą, partnerių veiklą ir medžiagų tiekimą. Vietinė Node24/SQLite demonstracija jau įgyvendina testinius užsakymų, atsargų ir partnerių apskaitos scenarijus. Šio verslo adapteris yra atskiras modulis; bendra turinio, kontaktų ir publikavimo sistema nekopijuojama. Toliau pateikta funkcijų lentelė aprašo komercinį tikslą, o ne visų funkcijų veikimą realiems klientams.
 
 ## Paveikslo užsakymo būsenos
 
@@ -277,7 +277,7 @@ Gamybai perduodamas būtent patvirtintos peržiūros failas ir jo versija. Pakar
 
 ## Dešimt testinių partnerių ir atsargų taisyklės
 
-Tai planuojama demonstracija, ne tikras Europos tinklas. Visi partneriai, jų adresai, kontaktai, užsakymai ir likučiai turi būti aiškiai testiniai. Aplinka privati, neindeksuojama, duomenų vardų sritis atskira; kontaktams naudoti .example domenus.
+Vietinė demonstracija parengta; tikro Europos partnerių tinklo nėra. Visos studijos, adresai, kontaktai, užsakymai ir likučiai yra aiškiai testiniai. Aplinka veikia tik vietiniame kompiuteryje, yra neindeksuojama ir naudoja atskirus duomenis; kontaktų domenai baigiasi .example.
 
 | Testinė rinka | Miestas | Aparatai | Supakuoti rinkiniai |
 | --- | --- | --- | --- |
@@ -292,19 +292,21 @@ Tai planuojama demonstracija, ne tikras Europos tinklas. Visi partneriai, jų ad
 | Danija | Kopenhaga | 1 | 65 |
 | Suomija | Helsinkis | 1 | 45 |
 
-Iš viso: 10 testinių partnerių, 16 aparatų ir 825 supakuoti rinkiniai. Operatorius mato visą tinklą; partneris tik savo veiklą; tiekėjas jam skirtus pirkimus ir sutartą bendrą poreikį; klientas savo projektą; influenceris savo priskyrimus. Prieigos tikrinamos serveryje, ne vien paslepiant ekrano mygtuką.
+Pradinis duomenų rinkinys: 10 sintetinių studijų, 16 įrangos apskaitos vienetų ir 825 supakuoti rinkiniai. Tai nėra tikri aparatai ar pardavimui skirtos atsargos. Veikia trys testiniai naudotojų vaidmenys: operatorius mato visą demonstraciją, partneris tik savo studiją, tiekėjas jam priskirtus pirkimus ir sutartą bendrą poreikį. Ribos tikrinamos serveryje; tiekėjas nemato klientų nuotraukų ar kitų partnerių privačių įrašų. Rolių parinkiklis yra vietinio bandymo priemonė. Tikros klientų ir influencerių paskyros bei vieša prieiga numatytos vėliau.
 
 Aparatas yra atskiras turto vienetas su serijos numeriu, vieta, garantija ir aptarnavimu. Vinutės skaičiuojamos vienetais, siūlas metrais, pagrindai ir dėžės vienetais. Rinkinio komplektavimas vieną kartą sunaudoja sudedamąsias dalis ir sukuria supakuotą rinkinį; jo pardavimas nebesunaudoja tų pačių medžiagų antrą kartą.
 
+Portreto rezervacija susiejama su tikslia patvirtinto projekto versija ir testiniu 42 cm, 200 vinučių vienspalviu profiliu. Gamybos medžiagos nurašomos jas išdavus, o pakavimo medžiagos lieka rezervuotos iki pakavimo. Pakartotinei gamybai atskirai apskaitomos naujos medžiagos ir aparato pakeitimas. Atšaukus užsakymą atlaisvinamos nepanaudotos rezervacijos, bet panaudotos medžiagos negrąžinamos į atsargas. Fizinis profilio ir gamintojo failo suderinamumas nepatvirtintas.
+
 Laisvas kiekis = turimas kiekis minus rezervuotas. Pakeliui esančios prekės tampa turimomis tik jas gavus. Rezervacija, komplektavimas, grąžinimas, perkėlimas ir korekcija turi susietą judėjimą, veikėją bei priežastį. Partnerių bendra pardavimų vertė, mūsų pajamos ir pirkimai iš tiekėjo atskiriami.
 
-Per 7-10 minučių planuojamą demonstraciją parodyti partnerį, užsakymą, patvirtintą failą, medžiagų rezervaciją, gamybą ir kokybę; parduoti testinį rinkinį, sumažinti jo atsargą, sukurti pirkimo pasiūlymą ir priimti siuntą; vienam tinkamam rekomendavimui priskirti vieną komisiją. Sintetinis adapteris neperveda pinigų, nesiunčia laiškų ir nevaldo aparato.
+Parengtas 7-10 minučių pristatymo scenarijus: studijos profilis, portreto nuotraukos peržiūra, patvirtinta projekto versija, imituotas mokėjimas, medžiagų išdavimas, kokybė bei pakavimas. Toliau parodomas rinkinio komplektavimas, pardavimas be antro žaliavų nurašymo, atsargų perkėlimas, grąžinimas ir tiekėjo siuntos gavimas. Vienam tinkamam užsakymui priskiriamas vienas komisijos įrašas; grąžinimai jį koreguoja. Naujas užsakymas laukia 30 dienų laikotarpio, o ankstesnės datos testinis užsakymas leidžia parodyti imituotą išmoką ir jos korekciją. Pinigai nepervedami, laiškai nesiunčiami ir fizinis aparatas nevaldomas; aktyvavimas išjungtas.
 
-Kitas užsakytas darbas - partnerių platformos planavimas ir demonstracinės frontend/backend sistemos įgyvendinimas atskirame pokalbyje. Čia pateiktas scenarijus lieka reikalavimų planu; atsargų ir užsakymų serveris dar nepriimtas.
+Vietinis serveris ir trys testinės darbo vietos patikrinti: 17 serverio ir HTTP bandymų, atkūrimas po paleidimo iš naujo, konkuruojančios paskutinio vieneto rezervacijos, naršyklės scenarijus bei klaidų būsenos. Tai programinės įrangos bandymas su testiniais duomenimis, ne fizinės gamybos, paklausos ar platintojo teisių įrodymas. Įrodymai ir pristatymo eiga: sites/stringart/platform/ACCEPTANCE.md bei RUNBOOK.md.
 
 ## Įgyvendinimo seka
 
-Pirmame partnerių platformos kūrimo etape sukurti vienos studijos užsakymų kelią ir sintetiniu užsakymu patikrinti serverinę eigą. Tada išbandyti tikrą apmokėjimą ir pristatymą, kai šie veiksmai autorizuoti. Antras etapas - kelių partnerių duomenų atskyrimas, jų pardavėjo tapatybė ir realios pajėgumo taisyklės. Trečias - atskaitomybė, rekomendavimo išmokos, šalies variantai ir apyvartos kontrolė.
+Vietinis vienos studijos scenarijus, trijų naudotojų vaidmenų teisių ribos, atsargų ir komisijų apskaita jau patikrinti. Toliau reikia priimto fizinio profilio ir aparato bandymo, gamintojo teisių bei realaus partnerio proceso. Tik atskirai autorizavus ir patikrinus galima jungti tikrą autentifikavimą, viešą prieglobą, mokėjimus, pristatymą, aktyvavimą ir išmokas. Pardavimo svetainės, šalių variantai bei platesnė komercinė plėtra lieka vėlesni etapai.
 
 Nuotolinis aparato valdymas ir failų generavimas per API dar nepatvirtinti. Pradžioje galima valdoma failų perdavimo užduotis su operatoriumi. Esamo core arba kuriamos Verslomatika sistemos buvimas neįrodo priimto Stringart adapterio, kelių partnerių prekybos, išmokų ar aparatų integracijos.
 
@@ -312,7 +314,7 @@ Nuotolinis aparato valdymas ir failų generavimas per API dar nepatvirtinti. Pra
 
 # 10. Mūsų Android kūrėjo programėlė ir atvirasis kodas
 
-Savininkas pasirinko Android ir balso vedlį. Programėlės sąsaja bei diktuojamas tekstas yra anglų kalba. Ji autorizuota atskirai; ją užbaigus, užsakytas naujas pokalbis partnerių demonstracinei sistemai. Pardavimo svetainės numatytos vėliau.
+Savininkas pasirinko Android ir balso vedlį. Programėlės sąsaja bei diktuojamas tekstas yra anglų kalba. Vietinė testinė programėlė įgyvendinta ir patikrinta telefone; atskirame pokalbyje taip pat baigta vietinė partnerių demonstracija. Programėlės kodas ir JSON sutartis išsaugoti. Pardavimo svetainės numatytos vėliau.
 
 Galima įkelti JPG, PNG ar WebP nuotrauką, ją apkirpti, didinti, paslinkti, pasukti, keisti ryškumą bei kontrastą ir generuoti vienspalvę ar keturių spalvų peržiūrą. Siūlomi 42 cm / 200 vinučių, 50 cm / 240 ir 60 cm / 300 rėmai fiziškai nepatikrinti. Pirma vinutė yra viršuje, numeriai didėja pagal laikrodžio rodyklę; kiekvienas spalvų sluoksnis pradedamas atskiru pririšimu.
 
@@ -334,7 +336,7 @@ Pasirinktas [TrevorPeters0n/string-art-studio](https://github.com/TrevorPeters0n
 
 [halfmonty](https://github.com/halfmonty/StringArtGenerator) taip pat MIT; senasis kodas indexold.html nesuteikia vėlesnio komercinio produkto teisių. [Vrellis](https://artof01.com/vrellis/works/knit.html) aprašas nėra kodo licencija, o minimas MIT institutas nėra MIT programos licencija. [MarginallyClever](https://github.com/MarginallyClever/weaving_algorithm) yra GPL-2.0 ir neintegruotas; GPL komercija leidžiama laikantis jos sąlygų. [Reddit pavyzdys](https://www.reddit.com/r/DIY/comments/au0ilz/made_a_string_art_portrait_out_of_a_continuous_2/) naudingas sekai ir painiojimosi problemoms, bet ne universaliam laikui ar saugos normoms.
 
-ALINEDECO nemokama prieiga neįrodo atvirojo kodo teisių. Mūsų JSON nėra patvirtintas aparato failas: reikia teisių, formato, koordinačių, numeravimo ir fizinio bandymo. Rinkinio kodai, paskyros ir partnerių serveris dar neįgyvendinti.
+ALINEDECO nemokama prieiga neįrodo atvirojo kodo teisių. Mūsų JSON nėra patvirtintas aparato failas: reikia teisių, formato, koordinačių, numeravimo ir fizinio bandymo. Vietinis partnerių serveris baigtas su testiniais duomenimis; rinkinio aktyvavimo kodai, tikros klientų paskyros ir gamintojo integracija dar neįgyvendinti.
 
 <!-- PAGE -->
 
@@ -439,14 +441,14 @@ Mūsų stipriausias argumentas bus išmatuota paklausa ir aptarnavimo sistema. V
 
 # 15. 90 dienų eiga ir sprendimo vartai
 
-Dienos skaičiuojamos nuo sutarto starto; transportas, dokumentai ir bandymo rezultatai gali keisti kalendorių. Žemiau - siūlomos sprendimo taisyklės, o ne veiklos rezultatų prognozė.
+Dienos skaičiuojamos nuo sutarto starto; transportas, dokumentai ir bandymo rezultatai gali keisti kalendorių. Žemiau - siūlomos sprendimo taisyklės, o ne veiklos rezultatų prognozė. Vietinė Android testinė versija ir dešimties studijų demonstracija jau baigtos; gamintojo, fizinio produkto ir gyvų integracijų priėmimas vertinamas atskirai.
 
 | Laikas | Darbas ir atsakinga sritis | Kas leidžia tęsti |
 | --- | --- | --- |
 | 1-7 diena | MB Pinet: pirmas laiškas, pokalbis su gamintoju, modelio / teritorijos / kainų klausimai | Gauta viena konkreti komplektacija ir atsakymai apie bendradarbiavimą |
 | 8-14 diena | Techninis ir teisinis vertinimas; transporto ir mažos medžiagų partijos pasiūlymai | Priimtina atitiktis, sutarties subjektas, aiški bandomo užsakymo suma |
 | 15-35 diena, gavus aparatą | Studija: 30 bandomųjų darbų, 10 skirtingų nuotraukų, realus laiko / broko / medžiagų žurnalas | Bent 90 % darbų priimti iš pirmo karto; saugos vertinimas priimtinas |
-| 15-35 diena, lygiagrečiai | Sistema: vieno užsakymo serverinis prototipas, būsenos, versijos ir privatumas | Nėra antros gamybos po pakartotinio pranešimo; tas pats patvirtintas failas |
+| Programinė įranga, vietinis etapas baigtas | Android testinė versija ir patvari dešimties studijų demonstracija | Vietinis atkūrimas, teisių ribos, pakartotiniai veiksmai ir konkurencinės rezervacijos patikrinti; fizinis profilis bei gyvi adapteriai dar nepriimti |
 | 36-60 diena | Vienos rinkos pardavimo bandymas: 5 kūrėjai, vaizdo turinys, kodai ir ribotas biudžetas | 20 tikrų apmokėtų / pristatytų užsakymų; matomas pritraukimo ir vieneto likutis |
 | 61-90 diena | 1-2 pilotiniai partneriai, mokymai ir duomenų atskyrimo patikra | Partneris pats pagamina 10 darbų, aptarnauja klientą ir pagrindžia ekonomiką |
 | Po 90 dienų | ES plėtros sprendimas ir kainų / teisių sutartis | Teigiami rezultatai bei realus dalių / palaikymo pajėgumas |
@@ -539,7 +541,7 @@ Our proposed approach has three stages:
 2. Validate our pilot studio, creator-led marketing and selected local partners.
 3. Agree performance-based distribution rights and local partner appointments.
 
-We propose a ten-partner demonstration with clearly labelled test data, showing machines, consumables, DIY kits, sales and replenishment. A real European network is not yet in place.
+We have prepared our own Android creator as a local test edition and a ten-studio operating demonstration using clearly labelled synthetic data. It illustrates machine asset records, consumables, DIY stock, order handling and replenishment. A real partner network, live supplier login, public hosting and machine integration are not in place; commercial demand and distribution rights have not been established.
 
 Before preparing a pilot order, please confirm:
 

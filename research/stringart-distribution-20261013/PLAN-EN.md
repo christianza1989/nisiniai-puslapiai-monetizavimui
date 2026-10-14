@@ -1,6 +1,6 @@
 # MemoryString: business and distribution plan
 
-14 October 2026 | MB Pinet | English working plan, version 5. Research dated 13 October; app acceptance updated 14 October.
+14 October 2026 | MB Pinet | English working plan, version 6. Research dated 13 October; local app and platform acceptance updated 14 October.
 
 ## Recommended business
 
@@ -14,13 +14,13 @@ MemoryString is the owner's candidate name alongside their existing MemoryCastin
 
 - We have a supplier quotation and supplied PDFs, images and videos. No machine has been purchased or physically tested.
 - Hardware, software ownership, conformity documents, territory rights and true landed costs remain unresolved.
-- The partner network is a proposed business. Ten demonstration partners are synthetic, with 16 machines and 825 kits in the planned dataset.
-- The separate Android creator now implements the selected design, in English throughout. Its local test APK passed the connected-phone workflow and native JSON backup round-trip. A separate chat for the ten-partner frontend/backend demonstration is the next authorized work; retail/subdomain websites follow later. Physical frame/machine acceptance remains pending.
+- The partner network is a proposed business. The completed local demonstration starts with ten synthetic studios, 16 machine asset records and 825 packed kits; these are not real partners, machines or available stock.
+- Our separate Android creator implements the selected English design. Its local test APK passed the connected-phone workflow and native JSON backup round-trip. The persistent operator, partner and supplier demonstration is also complete locally, with synthetic data and simulated external actions. Retail/subdomain websites, production authentication, activation and live integrations follow later. Physical frame/machine acceptance remains pending.
 - Supplier correspondence is a draft. No supplier message, purchase, campaign, domain migration or public deployment has been performed.
 
 ## Immediate sequence
 
-Confirm the manufacturer and exact product; negotiate software/territory/DIY terms; inspect conformity and logistics; validate one machine and kit; demonstrate the system honestly; test one sales market; then recruit one or two real partners. Request principal-distributor status against agreed performance milestones rather than promising a global network before a pilot.
+Use the prepared local app and operating demonstration to explain the proposed partnership while confirming the manufacturer and exact product. Negotiate software/territory/DIY terms, inspect conformity and logistics, validate one machine and kit, test one sales market, then recruit one or two real partners. Request principal-distributor status against agreed performance milestones rather than promising a global network before a pilot. The supplier proposal remains unsent.
 
 <!-- PAGE -->
 
@@ -230,9 +230,9 @@ Start with a pilot city/area and a 3-6 month review. Later territory rights depe
 
 # 9. The operating system and demonstration
 
-The future system combines equipment, portrait production, DIY stock and partner operations. Share established core content/contact/publication principles; keep this business's manufacturing and stock logic in a dedicated adapter. Existing automation infrastructure does not prove that these integrations are already accepted.
+The completed local Node24/SQLite demonstration combines synthetic equipment assets, portrait orders, DIY stock and partner operations in a dedicated business adapter. The wider commercial system remains a future phase; shared content/contact/publication principles are preserved without claiming production integration.
 
-Roles: operator sees the network; production partner sees its own studio; supplier sees assigned purchase orders, equipment/demand and agreed summaries; customer sees their own kit/artwork; affiliate sees their own attribution and commission. Enforce read/write boundaries on the server. Suppliers do not need every customer's photo or partners' profits.
+The three local test roles are operator, partner and supplier. Server-side permissions limit the partner to its studio and the supplier to assigned purchase orders and agreed demand aggregates, excluding customer photos and individual partner records. The identity chooser is a test adapter, not a live supplier login. Production customer/affiliate accounts and public access remain later work.
 
 | Synthetic market | City | Machines | Packed kits |
 | --- | --- | --- | --- |
@@ -247,9 +247,11 @@ Roles: operator sees the network; production partner sees its own studio; suppli
 | Denmark | Copenhagen | 1 | 65 |
 | Finland | Helsinki | 1 | 45 |
 
-Totals: 10 demonstration partners, 16 machines, 825 packed kits. Fake addresses/contact domains must be explicit; use .example, a private noindex environment and a separate namespace. No fake network is presented as real distribution.
+Opening fixture totals: 10 synthetic studios, 16 machine asset records and 825 packed kits. The private loopback demonstration is noindex, uses fictional addresses and .example contacts, and keeps its fixtures separate. No test network or stock is presented as real distribution or supply.
 
 Equipment is an asset with location, serial, warranty and service state. Nails are units, thread metres, boards/boxes units. Kits are a separate SKU with BOM/batch version. Assembly consumes components once and creates a kit; selling the kit does not consume those components again.
+
+Portrait reservation binds the approved project revision/hash to a hypothetical 42 cm, 200-pin monochrome profile. Production materials are consumed when issued; packing materials remain reserved until packing. Rework records replacement materials and station reassignment. Cancellation releases unused reservations without restoring materials already used. The profile is not physically accepted or a manufacturer machine-file contract.
 
 Available =on-hand minus reserved. Incoming stock becomes on-hand only after receipt. Record actor, reason and linked movement for reservation, assembly, sale, return, transfer and correction. Test last-unit contention, rollback, duplicate events and restart persistence. Partner GMV, our revenue and supplier purchasing are separate measures.
 
@@ -257,21 +259,21 @@ Available =on-hand minus reserved. Incoming stock becomes on-hand only after rec
 
 # 10. Order flow, automation and supplier view
 
-Portrait flow: inquiry → photo suitability → preview → customer-approved revision → verified payment → production task → making → quality check → packed → dispatched → delivered/claim. Production receives the exact approved file and layout version. Duplicate payment/shipment events must not create duplicate production or commissions.
+Target commercial portrait flow: inquiry → photo suitability → preview → customer-approved revision → verified payment → production task → making → quality check → packed → dispatched → delivered/claim. The local demonstration preserves the approved revision while explicitly simulating buyer approval, payment, making, shipment and delivery; it does not drive a machine or verify a real transaction.
 
 Automate validation, queues, assignment within accepted capacity, reminders, stock demand, labels, tracking and ledgers. Humans remain responsible for poor photos, rights, image approval, loading/thread changes, safety, repairs, packing and exceptions.
 
 The supplier may provide everything from nails to machines, plus private-label kits under a signed specification. Aggregate partner demand into purchasing proposals; distinguish a proposal from an order actually transmitted to the supplier. Separate dispatch from receipt and accepted stock.
 
-## Proposed 7-10 minute demonstration
+## Prepared 7-10 minute demonstration
 
-Show ten clearly labelled test partners and their assets/stock. Open Germany's studio, location, capacity and orders. Create a portrait job, approve its file, reserve materials and assign a machine. Simulate manufacture and quality checks.
+Show ten clearly labelled synthetic studios and their asset/stock records. Open Germany's profile, then create a portrait in the selected test studio. Review the prepared sample photo, approve its exact project revision, simulate payment, reserve stock and issue production materials. Show quality/rework, packing and simulated delivery with the same order ID.
 
-Sell a DIY kit in the test adapter: available stock reduces, the buyer activates a layout-specific code, creates a preview and resumes the guide after reload. Show a replenishment warning and aggregated purchase proposal. The supplier enters a date/shipment state; the operator receives and reconciles it. One affiliate event creates one commission entry.
+Assemble a packed DIY kit from its BOM, then sell that packed SKU without consuming its components twice. Demonstrate a transfer, inspected return and refund. The test supplier workspace records an expected receipt date and dispatch; operator receipt alone adds incoming stock. One attributed order has one commission ledger, with a 30-day hold and refund adjustments. Use the dated historical fixture to demonstrate eligible simulated payout and recovery. Kit activation remains off; Android creation and saved-guide recovery are a separate accepted local workflow.
 
-Show what the manufacturer gains: understandable equipment/consumables demand, local support and warranty records. Test payment, shipment and message adapters change local state without moving money, sending mail or driving a physical machine.
+Show the proposed manufacturer benefit: understandable aggregate equipment/consumables demand and traceable asset/service records. Payment, shipment and payout actions are simulated locally. No money is moved, no messages are sent and no physical equipment is controlled. There is no public hosting or live supplier access.
 
-Acceptance order: one persistent server path first; then all role workspaces; then mobile activation, stock assembly/transfers, returns/referrals and adverse states. A set of independent charts is not an accepted operating system. Public access, production payments and real machine control require separate integrations and release decisions.
+The persistent path, three test workspaces and stock/order/referral flows have passed local acceptance: 17 backend/HTTP checks including restart and two-process stock contention, plus the rendered journey and adverse states. This demonstrates software behavior with fixtures, not hardware compatibility, demand or commercial rights. Production identity/hosting, real payment/shipping/activation and machine integration require separate authorization and acceptance. Current evidence and presentation steps are in sites/stringart/platform/ACCEPTANCE.md and RUNBOOK.md.
 
 <!-- PAGE -->
 
@@ -363,14 +365,14 @@ Our priority order: authenticated counterpart and accepted product → viable co
 
 # 16. Ninety-day pilot and acceptance gates
 
-Timing starts from an agreed start; freight/documents may move dates. These are suggested gates, not forecasts. The Android creator is implemented and tested on the authorized phone. A separate chat for the ten-partner frontend/backend demonstration is the next authorized work; retail and partner subdomain websites follow later.
+Timing starts from an agreed start; freight/documents may move dates. These are suggested gates, not forecasts. The Android local test edition and persistent ten-studio demonstration are complete. Next come supplier/product verification and a physical pilot; retail/subdomain sites and live integrations remain later separately accepted phases.
 
 | Phase | Output | Continue when |
 | --- | --- | --- |
 | Days 1-7 | Supplier reply/meeting; SKU, rights, territories, prices | One coherent quotation and cooperation answers |
 | Days 8-14 | Counterpart/conformity/logistics/kit sample assessment | Acceptable documentation and known pilot sum |
 | Days 15-35 after receipt | 30 machine jobs across ten photos; time/material/defect log | Suggested 90% first-pass acceptance and acceptable safety |
-| Software track | Creator app; later persistent order/stock path and ten-partner demo | Actual save/reload, permissions, contention and idempotency evidence |
+| Software track | Local creator and persistent ten-studio demonstration complete | Local save/reload, permissions, contention and idempotency pass; physical profiles and production adapters remain separate |
 | Days 36-60 | One-market, five-creator sales test | Twenty paid/fulfilled orders with actual contribution |
 | Days 61-90 | One or two real partners, training and isolated data | Each independently makes ten acceptable jobs and handles customers |
 | After pilot | EU scale and distribution agreement | Viable economics, demand, parts and support capacity |
@@ -423,7 +425,7 @@ Our proposed approach has three stages:
 2. Validate our pilot studio, creator-led marketing and selected local partners.
 3. Agree performance-based distribution rights and local partner appointments.
 
-We propose a ten-partner demonstration with clearly labelled test data, showing machines, consumables, DIY kits, sales and replenishment. A real European network is not yet in place.
+We have prepared our own Android creator as a local test edition and a ten-studio operating demonstration using clearly labelled synthetic data. It illustrates machine asset records, consumables, DIY stock, order handling and replenishment. A real partner network, live supplier login, public hosting and machine integration are not in place; commercial demand and distribution rights have not been established.
 
 Before preparing a pilot order, please confirm:
 

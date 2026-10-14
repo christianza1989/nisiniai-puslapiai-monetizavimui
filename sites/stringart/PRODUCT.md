@@ -12,7 +12,7 @@ Browser JavaScript, a pinned MIT Web Worker solver and IndexedDB. Android Java A
 
 ## Users
 
-DIY customers prepare a photo and follow physical pin instructions. The owner and future partners evaluate previews and kit usability. A separate partner business platform is the next authorized task after the app, in a requested new chat.
+DIY customers prepare a photo and follow physical pin instructions. The owner and future partners evaluate previews and kit usability. The separate partner business platform now provides a persistent local demonstration; production access and integration remain later phases.
 
 ## Product Purpose
 

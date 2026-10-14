@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "New distinct S3 actual-model and original loopback read-service checkpoint on functional source a9aaa671e4fa04514a92167caf780d308cc408f4. The dedicated synthetic FK-valid QA metadata is not real intake, Foundation, normal-account, calibration or factory acceptance. No main merge or other-PC adoption is claimed. Original source failures, missing old CLI path and private receipts remain retained.",
+  "checks": [
+    {
+      "command": "git-freshness.mjs --phase continue --companion dovanos-memorycasting -- qa-venv python actual-workspace-directory.private.py a9aaa671e4fa04514a92167caf780d308cc408f4",
+      "result": "PASS",
+      "evidence": "Private receipt actual-directory-20261014T045857Z/receipt.private.json: one actual gpt-6.1-sol/high plan call succeeded through maintained ordinary API/Task worker/adapter, correct two exact saved draft descriptions and non-admission/UNVERIFIED wording, exact request replay and no second worker invocation. Observed13503 input295 output0 cached134 reasoning-output tokens; USD UNVERIFIED. Exact current CLI0.162.0-alpha.17.2 hashed before dispatch; missing old vendor path stopped prior to provider/row writes. Original preview counts unchanged and runtime admin absent."
+    },
+    {
+      "command": "adopt-workspace-directory.py a9aaa671e4fa04514a92167caf780d308cc408f4 and protected route HTTP probe",
+      "result": "PASS",
+      "evidence": "Private directory-adoption-20261014T045802Z-801e6d.private.json pins clean functional source, restricted runtime/no admin, original0032 loopback database with retained table counts and17 external/model/channel holds plus workspace runner OFF/actors empty. New directory route rejects anonymous read401; portal3025 serves native login200 with tested S3 build9Zc2kTK5B9ri0QToi0Nvp. This is mounted read-service/source adoption, not owning-account directory/browser or whole-product acceptance."
+    },
+    {
+      "command": "portal canonical directory Git manifest import and post-import typecheck",
+      "result": "PASS",
+      "evidence": "Portal functional2f2b81372822e34271ca6c4feb6a091a9967fd87 imports exact corea9aaa671 directory Git bytes SHA2560e18a90539b8a2f5da8e5b01e9f737a3b5336318d547f94b800e142f96fad41a; independent peer verified schema/manifest/type banner identity. Source and current browser fixtures remain distinct from normal account acceptance."
+    }
+  ],
+  "eventId": "51a8490e-a5f6-4e6f-a270-6474980a69ba",
+  "sequence": 3,
+  "at": "2026-10-14T06:49:05.176Z"
+}

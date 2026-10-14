@@ -2,6 +2,7 @@
 import asyncio
 import json
 import os
+import re
 import shutil
 from pathlib import Path
 from uuid import UUID
@@ -40,6 +41,30 @@ def configuration():
     environment["STUDIO_NETWORK_SETTINGS"] = str(network.resolve())
     environment["STUDIO_PUBLIC_CORE_DIR"] = str(public.resolve())
     return Path(node).resolve(), script, artifacts, environment
+
+
+async def preflight_dependencies(still_authorized):
+    """Import maintained Node helpers before admitting any paid supervisor work.
+
+    Uses the existing bounded transport and deployment-owned companion settings;
+    the fixed helper never initializes a studio, reads a customer case or starts work.
+    """
+    node, _, _, environment = configuration()
+    script = ROOT / "content-studio/scripts/customer-content-preflight.mjs"
+    if not script.is_file():
+        raise RunnerError("studio_dependencies_unavailable")
+    value = await _execute([node, script], {"version": "customer-content-preflight.v1"},
+                           environment, still_authorized, 10)
+    expected = {"version", "state", "modules", "sharpVersion", "providerCalls", "initialization", "server"}
+    if (not isinstance(value, dict) or set(value) != expected
+            or value.get("version") != "customer-content-preflight.v1" or value.get("state") != "ready"
+            or value.get("modules") != ["intake", "writer", "workflow", "model", "sharp"]
+            or type(value.get("providerCalls")) is not int or value["providerCalls"] != 0
+            or value.get("initialization") != "not-performed" or value.get("server") != "not-started"
+            or not isinstance(value.get("sharpVersion"), str)
+            or not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+(?:[-+][a-zA-Z0-9.-]+)?", value["sharpVersion"])):
+        raise RunnerError("studio_dependencies_unavailable")
+    return value
 
 
 async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576):

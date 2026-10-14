@@ -10,6 +10,7 @@ from ..config import settings
 from ..content_work import adapter as guide_adapter
 from ..control.models import Membership, User
 from ..control.routes import ControlError, scope
+from ..creation import studio
 from ..customer.models import Account
 from ..customer_text.adapter import source_current
 from ..db import db
@@ -40,6 +41,13 @@ async def source_guard():
 async def preflight():
     configured = actors()
     await source_guard()
+
+    async def authorized():
+        await source_guard()
+        return True
+
+    # Missing native/import dependencies must fail before SQL admission or paid work.
+    await studio.preflight_dependencies(authorized)
     # These maintained checks inspect pinned paths/hashes/profiles and call no provider.
     await asyncio.to_thread(discovery.adapter.available)
     await asyncio.to_thread(guide_adapter.execution_hash)

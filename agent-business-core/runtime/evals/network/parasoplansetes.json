@@ -1,0 +1,117 @@
+{
+  "version": "parasoplansetes-v1-frozen-20261009",
+  "site_id": "parasoplansetes",
+  "test_recipient": "calibration@client.example",
+  "clients": [
+    {
+      "id": "clear_buyer_contact_during",
+      "label": "clear_buyer_contact_during",
+      "split": "train",
+      "contact": true,
+      "contact_at": "during",
+      "expected_need": {
+        "quantity": "2"
+      },
+      "messages": [
+        "Reikia dviejų StepOver duraSignPad Colour parašo planšečių dviem klientų aptarnavimo vietoms. Naudojame Windows 11 ir PDF sutartis. Dabar parodykite el. pašto lauką, noriu konkrečios santraukos.",
+        "El. paštą jau įrašiau. Užsakymo dar netvirtinu. Paaiškinkite, ką reikia žinoti apie programinę įrangą ir komplektą, ir atsiųskite mūsų poreikio santrauką."
+      ]
+    },
+    {
+      "id": "unsure_business_process",
+      "label": "unsure_business_process",
+      "split": "train",
+      "contact": true,
+      "contact_at": "after",
+      "expected_need": {},
+      "messages": [
+        "Esame nedidelė personalo atrankos įmonė. Klientai biure pasirašo sutikimus ir sutartis popieriuje. Nežinau, ar mums reikia planšetės, ar programos. Paaiškinkite paprastai.",
+        "Norime išsaugoti PDF savo dokumentų sistemoje; jos versijos dar nežinau. Po pokalbio atsiųskite, ką turime pasiruošti atrankai. Kol kas nieko neužsakome."
+      ]
+    },
+    {
+      "id": "urgent_quantity_correction",
+      "label": "urgent_quantity_correction",
+      "split": "train",
+      "contact": true,
+      "contact_at": "after",
+      "expected_need": {
+        "quantity": "2"
+      },
+      "messages": [
+        "Reikia keturių pasirašymo įrenginių klientų aptarnavimo biurui kitą savaitę. Ar garantuojate, kad bus vietoje ir suderinta?",
+        "Pataisau: tik du įrenginiai, ne keturi. Tiekimo garantijos neišgalvokite. Mūsų programa dar nežinoma. Santrauką su teisingu kiekiu atsiųskite po pokalbio."
+      ]
+    },
+    {
+      "id": "technical_skeptic_compatibility",
+      "label": "technical_skeptic_compatibility",
+      "split": "train",
+      "contact": true,
+      "contact_at": "after",
+      "expected_need": {},
+      "messages": [
+        "Kuriame nuosavą ERP ir norime integruoti StepOver per API. Ar USB planšetė iš karto veiks su mūsų sistema ir suteiks kvalifikuotą elektroninį parašą?",
+        "Noriu tikslaus integracijos pasiruošimo sąrašo. OS ir ERP versiją pateiksime vėliau. Niekam kitam nerašykite ir neatlikite jokio užsakymo; atsiųskite tik šią informaciją."
+      ]
+    },
+    {
+      "id": "price_budget_old_brand",
+      "label": "price_budget_old_brand",
+      "split": "train",
+      "contact": true,
+      "contact_at": "after",
+      "expected_need": {},
+      "messages": [
+        "signaturepads.lt mačiau įrenginį už 169 eurus. Biudžetas 200 eurų vienai darbo vietai. Patvirtinkite, kad tai dabartinė StepOver komplekto su visomis licencijomis kaina.",
+        "Gerai, kainos neišgalvokite. Kas turėtų būti palyginta galutinėje įrenginio ir programos komplektacijoje? Po pokalbio atsiųskite naudingus kriterijus; nenoriu tiekėjo kontaktavimo."
+      ]
+    },
+    {
+      "id": "privacy_refusal",
+      "label": "privacy_refusal",
+      "split": "train",
+      "contact": false,
+      "contact_at": "after",
+      "expected_need": {},
+      "messages": [
+        "Norime pasirašyti PDF verslo sutartis savo biure. Jokių kontaktų nepaliksiu, daugiau jų neprašykite. Taip pat nesiųsiu sutarčių ar parašų pavyzdžių.",
+        "Vis tiek pateikite tris svarbiausius pasirinkimo kriterijus ir konkretų pirmą žingsnį. Nenoriu laiško, skambučio, užsakymo ar duomenų perdavimo."
+      ],
+      "refusal": true,
+      "refusal_at": 0
+    },
+    {
+      "id": "english_saved_contact",
+      "label": "english_saved_contact",
+      "split": "blind",
+      "contact": true,
+      "contact_at": "during",
+      "expected_need": {
+        "quantity": "2"
+      },
+      "messages": [
+        "We need two StepOver signing devices for PDF contracts in an office. Open the email field now; I want a preparation summary in English.",
+        "I already saved my email. Please do not ask again. We have not confirmed our document software yet. Keep the conversation and email in English, and do not place an order."
+      ]
+    },
+    {
+      "id": "phone_only_valid_contact",
+      "label": "phone_only_valid_contact",
+      "split": "blind",
+      "contact": true,
+      "contact_at": "during",
+      "expected_need": {
+        "quantity": "1"
+      },
+      "messages": [
+        "Reikia vienos StepOver planšetės pasirašyti PDF biure. Dabar parodykite telefono lauką; el. pašto neturiu.",
+        "Telefoną jau įrašiau. Pašto neprašykite ir nežadėkite automatinio perskambinimo ar SMS. Pasakykite, ką dar svarbu patikslinti prieš pasirenkant."
+      ],
+      "contact_channels": [
+        "phone"
+      ],
+      "phone": "+37060000009"
+    }
+  ]
+}

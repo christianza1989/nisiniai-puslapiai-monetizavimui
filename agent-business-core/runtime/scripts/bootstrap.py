@@ -1,4 +1,5 @@
 """Local runtime role; migration owner and application role stay distinct."""
+import argparse
 import asyncio
 import os
 
@@ -10,6 +11,9 @@ from pinet_core.models import Business, new_id
 
 
 async def main():
+    parser = argparse.ArgumentParser(description="Prepare the restricted database role and runtime grants")
+    parser.add_argument("--role-only", action="store_true", help="Create the role before the initial migrations")
+    args = parser.parse_args()
     cfg = settings()
     engine = create_async_engine(cfg.admin_database_url)
     password = os.environ.get("PINET_DB_RUNTIME_PASSWORD")
@@ -23,6 +27,9 @@ async def main():
         if not exists:
             await tx.execute(text(f"CREATE ROLE pinet_runtime LOGIN PASSWORD '{password}' "
                                   "NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE"))
+        if args.role_only:
+            print("Restricted runtime role prepared; run migrations before applying grants.")
+            return
         await tx.execute(text("GRANT USAGE ON SCHEMA public TO pinet_runtime"))
         await tx.execute(text("GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO pinet_runtime"))
         await tx.execute(text("REVOKE ALL ON alembic_version FROM pinet_runtime"))

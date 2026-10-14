@@ -32,7 +32,23 @@ class Element:
     def text(self, visible=True):
         if visible and self.hidden():
             return ''
-        return ' '.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        # Inline markup does not add whitespace in the DOM: links may touch
+        # punctuation or split a word. Keep real text-node adjacency while
+        # separating ordinary HTML block/line-break boundaries. This is still
+        # a structural check, not a computed CSS visibility/layout inspector.
+        blocks = {'address', 'article', 'aside', 'blockquote', 'br', 'dd', 'div',
+                  'dl', 'dt', 'fieldset', 'figcaption', 'figure', 'footer',
+                  'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr',
+                  'li', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table',
+                  'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul'}
+        parts = []
+        for child in self.children:
+            if isinstance(child, Element):
+                text = child.text(visible)
+                parts.append(' ' + text + ' ' if child.tag in blocks else text)
+            else:
+                parts.append(child)
+        return ''.join(parts)
 
 
 class Document(HTMLParser):

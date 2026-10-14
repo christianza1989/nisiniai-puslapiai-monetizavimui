@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-09T06:09:11.436Z",
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "sourceVersion": "7761a29a0464e6ed0544b17567cd68539df89109",
+  "coreBase": "f743b1cbcb09418d733fbe3c72b6968d65a72259",
+  "companionBase": "e578426610f067fd7a4db3574f754b8d06ef5426",
+  "renderReceipt": "render-only.json",
+  "readingAdapter": [
+    {
+      "repository": "companion",
+      "file": "lib/niche-reading-core.mjs",
+      "sha256": "f03e011a918007f91d5c7c24c3d348f16a4e67d192faf16f8460d9debc0bb560"
+    },
+    {
+      "repository": "companion",
+      "file": "lib/niche-seo.ts",
+      "sha256": "ec6d36be78381a80f094f18bcc9e46d6c3caa560eef36413f9d89d277b5e371b"
+    },
+    {
+      "repository": "companion",
+      "file": "components/niche/parasoplansetes-site.tsx",
+      "sha256": "0ba15400dc1264a15c536be510be827bc717a78da38fa955cfa5f2e6530d5d63"
+    }
+  ],
+  "normalizedLogs": [
+    {
+      "file": "parasoplansetes-self-audit-build.txt",
+      "originalSha256": "287cc595db1a35bdd754ab51edcda26842496f4d1940c2d5d2d480f033babe36"
+    },
+    {
+      "file": "parasoplansetes-self-audit-core-tests.txt",
+      "originalSha256": "1b8baf8579585b6216e574ebe066e8d12099b17641071036ae768db1a245ee5b"
+    },
+    {
+      "file": "parasoplansetes-self-audit-final-build.txt",
+      "originalSha256": "762a55195914e4ec2d03b0c25b9abb2dfa998ac9481a82c0f9e06662b1ce6a4e"
+    }
+  ],
+  "upgrades": [
+    "upgrade-88ce5681-1eb3-469a-8d54-3abd682dff42",
+    "upgrade-f0ea22fb-3c0d-4fbc-afdf-f7ea9ba88640"
+  ],
+  "paidAuditCalls": 0,
+  "liveDeployment": false
+}

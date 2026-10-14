@@ -15,6 +15,25 @@ from pinet_core.models import CostReservation
 from pinet_core.service import business
 
 
+async def test_total_limit_survives_midnight_and_replay_does_not_charge(client, monkeypatch):
+    from datetime import timedelta
+    from pinet_core.models import utcnow
+    cfg = settings()
+    monkeypatch.setattr(cfg, 'global_daily_budget_microusd', 100)
+    monkeypatch.setattr(cfg, 'global_total_budget_microusd', 100)
+    item = await business('traktoriupadangos')
+    authority = Policy(daily_budget_microusd=100)
+    async with db.transaction(item.id, cfg.environment) as tx:
+        old = await budget.reserve(tx, item.id, authority, 'yesterday', 80)
+        old.created_at = utcnow() - timedelta(days=1)
+    async with db.transaction(item.id, cfg.environment) as tx:
+        replay = await budget.reserve(tx, item.id, authority, 'yesterday', 80)
+        assert replay.reserved_microusd == 80
+        with pytest.raises(HTTPException, match='total_cost_budget_exhausted'):
+            await budget.reserve(tx, item.id, authority, 'today-denied', 30)
+        await budget.reserve(tx, item.id, authority, 'today-allowed', 20)
+
+
 async def test_explicit_cost_configuration_required(client, monkeypatch):
     item = await business("traktoriupadangos")
     monkeypatch.setattr(settings(), "global_daily_budget_microusd", 0)

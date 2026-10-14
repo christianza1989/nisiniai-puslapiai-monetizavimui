@@ -1,0 +1,21 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Codex text baseline finds repeated or deferred questions, weakly specified next steps, unexplained jargon and an unsupported current signaturepads brand-separation claim. Correct own niche procedures without invented business facts or changed evaluator thresholds.",
+  "category": "prompt",
+  "evidence": [
+    "Private admitted Codex-only baseline6/6 operational checks; independent category scores4/5 flag usability gaps. Original histories/reviews retained under private artifacts.",
+    "Known price_budget_old_brand: assistant treats intended signotec migration as current signaturepads.lt catalogue fact; approved knowledge does not establish this live state. Source BUSINESS retains original mixed catalogue observation.",
+    "New office_unsure_not_device_count: useful_next_step4/5 due jargon despite customer requesting a simple first step; candidate receives training feedback only."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/instructions/niches/parasoplansetes/conversation.md",
+    "agent-business-core/runtime/src/pinet_core/instructions/niches/parasoplansetes/sales.md",
+    "agent-business-core/runtime/evals/text-service-v2/parasoplansetes.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44#issuecomment-6088281765",
+  "rollback": "Revert own niche procedural changes through review; preserve immutable old v1 and new frozen v2 corpus and original runs. No autonomous release promotion, customer outreach or live-source fact change is authorized by a model grade.",
+  "id": "upgrade-2e6a780f-cc35-4f7f-963f-1a5f9bccb460",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "38cba4aae63d97a42c27a67e6f2070ec2241e132",
+  "createdAt": "2026-10-09T20:07:38.939Z"
+}

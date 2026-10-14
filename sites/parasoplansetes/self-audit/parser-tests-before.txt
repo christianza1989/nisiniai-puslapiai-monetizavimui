@@ -1,0 +1,32 @@
+.F....F.....
+======================================================================
+FAIL: test_block_and_line_break_boundaries_separate_visible_text (__main__.RenderedSiteTests.test_block_and_line_break_boundaries_separate_visible_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Core\parasoplansetes-workspace-20261008\nisiniai_puslapiai_monetizavimui\SKILLS\niche-site-audit\scripts\rendered-site_test.py", line 42, in test_block_and_line_break_boundaries_separate_visible_text
+    self.assertEqual(norm(d.root.text()), 'First answer. Next line. One Two')
+AssertionError: 'First answer . Next line. One Two' != 'First answer. Next line. One Two'
+- First answer . Next line. One Two
+?             -
++ First answer. Next line. One Two
+
+
+======================================================================
+FAIL: test_inline_links_preserve_approved_text_and_punctuation (__main__.RenderedSiteTests.test_inline_links_preserve_approved_text_and_punctuation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Core\parasoplansetes-workspace-20261008\nisiniai_puslapiai_monetizavimui\SKILLS\niche-site-audit\scripts\rendered-site_test.py", line 37, in test_inline_links_preserve_approved_text_and_punctuation
+    self.assertEqual(inspect_page(o), [])
+AssertionError: Lists differ: ['APPROVED_BODY_RENDERED'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'APPROVED_BODY_RENDERED'
+
+- ['APPROVED_BODY_RENDERED']
++ []
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.021s
+
+FAILED (failures=2)

@@ -1,0 +1,48 @@
+# Paruoštas tęsinys ir tikros prieigos kliūtys
+
+2026-10-09 savininko užsakyta Cloudflare peržiūra be domeno **įkelta**: https://parasoplansetes-preview.pinet-azprekyba.workers.dev/ . [Diegimas ir faktiniai bandymai](cloudflare-preview/README.md): atskiras Worker/EU D1, noindex, originalus paketas; galutinės5adapterio regresijos ir60gyvų HTTP checks PASS, naršyklėje dizainas/gidas veikia, pažymėta QA forma įrašyta remote D1. Išspręstas120sekundžių OAuth callback timeout ir pirmo įkėlimo framework CSS/JS404. Mail/voice išjungti; žemiau esančių galutinio domeno / SMTP / WordPress migracijos vartų tai nepakeičia.
+
+2026-10-09 07:13 UTC. Šis dokumentas papildo auditą; nepakeičia neįvykdytų kriterijų į PASS.
+
+## Kas patikrinta šiame tęsinyje
+
+- Treg `my_tools`: 0 prijungtų komandos įrankių. Search Console / Analytics ryšio nėra. Mokamų provider kvietimų šiame tęsinyje: 0; bendras ankstesnis tyrimas 0,231 USD iš 2 EUR biudžeto.
+- Cloudflare prisijungimas veikia. `/accounts` grąžino vieną paskyrą; tikslūs `/zones?name=parasoplansetes.lt` ir `signaturepads.lt` filtrai sėkmingai grąžino po 0 zonų. Tai ne registratoriaus domeno nuosavybės ar registracijos patikra. DNS pakeitimų neatlikta.
+- Šio PC DNS resolveris naujam domenui NS, A ir AAAA užklausose grąžino ENOTFOUND. Visi penki vieši HTTPS tikslai taip pat ENOTFOUND. Nevadiname domeno laisvu ar neregistruotu vien pagal DNS.
+- signaturepads.lt NS: ns1.dns-parking.com / ns2.dns-parking.com. Pagrindinis puslapis ir parašo planšečių kategorija grąžino 200. Visi penki seni produktai su galiniu `/` grąžino 200 ir savo canonical; variantai be `/` turi 301 į tą patį seną domeną su `/`. StepOver pardavimų atskyrimas dar neįdiegtas.
+- Visi penki nauji modeliai vietiniame tikro rendererio patikrinime grąžino 200 ir tikslų `https://parasoplansetes.lt/produktas/...` canonical. Vietinio preview noindex yra tyčinis.
+- Šiame Core kataloge nerasta `.dev.vars.hostinger` ar savininko prisijungimų failo pagal tikslinius failų vardus. Svetimos nišos `.dev.vars` neperimtas. SMTP ir INBOX bandymas neatliktas; slaptažodžių į pokalbį nereikia.
+- CUA inventoriuje tik IAB ir MCP Apps; native apps nėra. IAB palaiko viewport, tačiau tikro naršyklės mastelio valdymo galimybės neadvertizuoja. 200 % priėmimas lieka UNVERIFIED.
+- GitHub nauja 2026-10-09 patikra: `guzhas` turi Write abiejuose repo; abi šakos sėkmingai įkeltos, draft private PR46 ir companion PR17 sukurti bei susieti. Ankstesni 403 kvitai išsaugoti, credential nekeistas. Aktualus perdavimas — `GIT_DELIVERY.md`.
+
+Kvitai: `self-audit/migration-preview-20261009.json`, `self-audit/migration-preflight-20261009.json`, `self-audit/access-checks-20261009.json`.
+
+## Paruošta vykdoma migracijos patikra
+
+`migration-url-map.json` turi tik penkis perkeliamus produktus. `verify-migration.mjs` yra tik skaitymo įrankis: nieko nediegia, netaiso WordPress ir nekeičia DNS.
+
+Iš šio privataus repo šaknies:
+
+```powershell
+node sites/parasoplansetes/verify-migration.mjs preview --base http://127.0.0.1:8798 --report sites/parasoplansetes/self-audit/migration-preview-20261009.json
+node sites/parasoplansetes/verify-migration.mjs preflight --report sites/parasoplansetes/self-audit/migration-preflight-live.json
+node sites/parasoplansetes/verify-migration.mjs postflight --report sites/parasoplansetes/self-audit/migration-postflight-live.json
+```
+
+Preview įrodė tik vietinius modelius. Preflight šiame tęsinyje teisingai baigėsi exit 1 / BLOCKED_URL_CHECKS dėl viešų tikslų. Sėkmingas preflight vis tiek nepakeičia formos, pašto, privatumo ir rollback priėmimo. Postflight po realių pakeitimų reikalaus dešimties seno URL variantų tiesioginio 301 į tikslų naują HTTPS adresą, galutinio 200, teisingo canonical, jokio noindex ir išlikusių seno domeno home / kategorijos. Papildomas redirect hop nėra PASS.
+
+## Vykdymo tvarka, kai atsiranda prieiga
+
+1. Prisijungti prie paskyros, kuri valdo parasoplansetes.lt DNS; patikrinti registraciją / nuosavybę. Domeno nepirkti ir mokamos paslaugos neaktyvuoti automatiškai: dabartinis 2 EUR tyrimo biudžetas nėra naujos metinės paslaugos patvirtinimas.
+2. Git perdavimas atliktas: privatų draft PR46 ir companion draft PR17 peržiūrėti, patikrinti aktualias CI būsenas ir sujungti pagal core tvarką. Kitų sesijų failų ar main istorijos neperrašyti. Merge nėra runtime redeploy ar domain-ready įrodymas.
+3. Atlikti tikrą 200 % naršyklės bandymą ir vieną aiškiai pažymėtą formos → D1 → SMTP 250 → matching Message-ID INBOX bandymą savininko dėžutei pagal MAIL_CORE. Nevykdyti hardcoded traktorių formos helperio kaip StepOver įrodymo; StepOver bandyme būtini `site_id=parasoplansetes`, tikras jo source path ir tikslus testinio įrašo ID.
+4. Tikroje produkcijoje patikrinti HTTPS, host routing, D1, pašto paslaptis, abuse/recovery ir faktinę privatumo / saugojimo tvarką. Įprasto vietinio preview SMTP lieka išjungtas.
+5. Paleisti production preflight. Tada WordPress backup ir tiksliniai pakeitimai pagal MIGRATION.md bei SIGNOTEC_WORDPRESS_DRAFT.md; įdiegti tik penkis sutartus 301. Paleisti postflight. Platus viso domeno ar kategorijos redirect nereikalingas.
+6. Patvirtinti abiejų domenų Search Console properties, pateikti savo domenų sitemap, užfiksuoti indexing ir tikrų užklausų baseline. Pirmos dvi Google vietos bei AI citatos lieka matuojami tikslai, ne atlikto kodo išvada.
+
+Pilnas vietinis priėmimas tebėra NOT_COMPLETE dėl R2/S2/U2/U3. Gyvo domeno paleidimas ir paklausa nepriimti. Šis tęsinys nesukūrė approval, paid monitoring ar išsiuntimo klientams automatikos.
+# 2026-10-09 agento faktinė būklė
+
+[Agent calibration report](AGENT-CALIBRATION-20261009.md): own profile/widget/core prijungti, approved source priimtas tik own local DB. 6/6train ir2/2reserved PASS per actual core,287backend/63public patikrosPASS. Tikram garsui trūksta Gemini/SFU konfigūracijos, veikiančio native voice runtime ir mikrofono; Windows blokuoja locked PyAV. Paštui trūksta SMTP/IMAP ir owner test recipient. Realus audio/inbox/customerreply/paleidimas liekaUNVERIFIED; naujas public voice deployment ar mokamas host neužsakytas. Nauji paid calls0; aktualus bendras ankstesnio Treg tyrimo kaštas0,2438USD.
+
+2026-10-09 aktualus agento checkpoint po perkrovimo: [AGENT-RESUME-20261009](AGENT-RESUME-20261009.md). Actual public Gemini chat/contact/memory ir automatinis owner-only SMTP/INBOX/reply transportas patikrinti. Išsaugotas 5.0 factual FAIL, pridėtas guard ir tikras reviewed correction tame pačiame thread, INBOX PASS. 316 backend / 63 public / 19 puslapių HTTP PASS. Core rezervacijų limitas išnaudotas; fizinis telefonas, viešas SFU, nuolatinis cloud ir reviewed main adoption dar nepriimti. Istoriniai kvitai neperrašyti.

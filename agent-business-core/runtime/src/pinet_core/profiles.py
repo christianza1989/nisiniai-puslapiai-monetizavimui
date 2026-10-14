@@ -16,6 +16,16 @@ class Profile:
 
 
 PROFILES = {
+    "parasoplansetes": Profile("parasoplansetes", "parasoplansetes.lt",
+        "Išsiaiškink pasirašymo procesą, dokumentus, darbo vietų kiekį ir naudojamą programą. "
+        "Kliento pataisymus išsaugok; kainos, licencijos ir suderinamumas nėra patvirtinti vien pagal modelį.",
+        frozenset({"goal", "document_type", "quantity", "workplaces", "software", "operating_system", "integration", "requirements", "budget", "deadline", "location"}),
+        "dokumento tipą, pasirašymo darbo vietų skaičių ir naudojamą programą",
+        "Jūsų StepOver pasirašymo sprendimo poreikis",
+        {"quantity": "Kliento aiškiai nurodytas įrenginių kiekis, be spėjimo iš darbuotojų skaičiaus.",
+         "software": "Tik kliento įvardyta programa; dokumento PDF formatas pats nepatvirtina integracijos.",
+         "requirements": "Kliento keliami reikalavimai, įskaitant pageidaujamą parašo lygį. "
+         "Reikalavimas nėra patvirtintas mūsų sprendimo atitikimas."}),
     "traktoriupadangos": Profile("traktoriupadangos", "traktoriupadangos.lt",
         "Padangų matmenis ir žmogaus pataisymus patikslink; nežinomų laukų neužpildyk spėjimu.",
         frozenset({"goal", "tyre_marking", "tractor_model", "use", "quantity", "urgency", "location"}),

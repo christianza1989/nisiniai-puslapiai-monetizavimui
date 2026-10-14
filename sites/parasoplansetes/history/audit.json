@@ -1,0 +1,98 @@
+{
+  "version": 2,
+  "domain": "parasoplansetes.lt",
+  "checkedAt": "2026-10-08T15:24:35.521Z",
+  "terms": [
+    "paraso",
+    "parašo",
+    "stepover",
+    "dokument",
+    "pasiras",
+    "sign"
+  ],
+  "coverage": "unknown",
+  "inventoryComplete": false,
+  "omittedRows": 0,
+  "queries": [
+    {
+      "mode": "inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "ok": false,
+      "observedRows": 0,
+      "omitted": 0,
+      "truncated": false,
+      "error": "archive_timeout"
+    },
+    {
+      "mode": "content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "ok": true,
+      "observedRows": 0,
+      "omitted": 0,
+      "truncated": false
+    },
+    {
+      "mode": "years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "ok": false,
+      "observedRows": 0,
+      "omitted": 0,
+      "truncated": false,
+      "error": "archive_timeout"
+    },
+    {
+      "mode": "latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "ok": false,
+      "observedRows": 0,
+      "omitted": 0,
+      "truncated": false,
+      "error": "archive_timeout"
+    }
+  ],
+  "inventory": [],
+  "roots": [],
+  "snapshots": [],
+  "requests": [
+    {
+      "operation": "cdx-inventory",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-08T15:24:35.534Z",
+      "status": null,
+      "error": "archive_timeout"
+    },
+    {
+      "operation": "cdx-content",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301",
+      "checkedAt": "2026-10-08T15:24:44.549Z",
+      "status": 200,
+      "error": null,
+      "resolvedUrl": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt&matchType=domain&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&filter=%21original%3A.*%28%3F%3A%2F%28%3F%3Aproduktas%7Cproduct%7Citem%7Ccart%7Cmy-account%7Cwp-admin%29%2F%7C%2Fpage%2F%5B0-9%5D%2B%2F%7C%5C.%28%3F%3Apng%7Cgif%7Cjpe%3Fg%7Cwebp%7Csvg%7Ccss%7Cjs%29%28%3F%3A%5C%3F.*%29%3F%24%29.*&collapse=urlkey&limit=301"
+    },
+    {
+      "operation": "cdx-years",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&collapse=timestamp%3A4&limit=65",
+      "checkedAt": "2026-10-08T15:24:47.002Z",
+      "status": null,
+      "error": "archive_timeout"
+    },
+    {
+      "operation": "cdx-latest",
+      "url": "https://web.archive.org/cdx/search/cdx?url=parasoplansetes.lt%2F&matchType=exact&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&limit=-1",
+      "checkedAt": "2026-10-08T15:24:56.027Z",
+      "status": null,
+      "error": "archive_timeout"
+    }
+  ],
+  "assessmentStatus": "agent-review-required",
+  "seoSignals": {
+    "currentBacklinks": null,
+    "organicTraffic": null,
+    "googleManualActions": null,
+    "contentReuseRights": "unconfirmed"
+  },
+  "publicChangesApplied": false,
+  "siteId": "parasoplansetes",
+  "maxUrls": 300,
+  "maxSnapshots": 4
+}

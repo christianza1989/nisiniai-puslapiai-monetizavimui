@@ -1,0 +1,17 @@
+✔ reading verification binds each body to its canonical section and uses exact hidden URLs (7.8449ms)
+✔ completion CLI fails for an unverified review item even when all local gates pass (325.1059ms)
+✔ two niche contracts bind author IDs to actual eligible profiles without a hardcoded path (1.276ms)
+✔ a live origin cannot use a synthetic future clock or a foreign host (8.5508ms)
+✔ perfect local preparation never hides unverified production readiness (1.8487ms)
+✔ omitted, duplicated and unsupported PASS records cannot inflate scores (1.2176ms)
+✔ unverified review counts zero; all NA does not manufacture readiness (0.6257ms)
+✔ a new audit begins entirely unverified and rejects ambiguous site identity (0.8447ms)
+✔ initializer includes the full catalog and never overwrites an existing review (23.9974ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 474.4459

@@ -1,0 +1,100 @@
+{
+  "recordedAt": "2026-10-09T07:17:53.893Z",
+  "originalAcceptancePath": "C:/Core/cold-start-20261008/nisiniai_puslapiai_monetizavimui/research/core-cold-start-pc-20261008/acceptance.json",
+  "originalAcceptanceSha256": "b6d1171c6f69de839f3786432c47740faef685074cecb9132980fa9cf59830fd",
+  "originalsModified": false,
+  "source": {
+    "coreMain": "f743b1cbcb09418d733fbe3c72b6968d65a72259",
+    "companionMain": "e578426610f067fd7a4db3574f754b8d06ef5426"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "status": "PASS",
+      "scope": "original work preservation, current main worktrees, bootstrap, start gate, dependencies"
+    },
+    {
+      "step": 2,
+      "status": "PARTIAL_PASS_FULL_STEP_UNVERIFIED",
+      "scope": "existing sodybai.lt F1 BUSINESS -> TOOLS continuation; no full new-site cold-build acceptance",
+      "limitations": [
+        "Parent narrowed prompt to BUSINESS -> TOOLS continuation, not full new F1 site.",
+        "Actual read list omitted mandatory START_HERE.md and builder SKILL; repeat version must read them explicitly."
+      ],
+      "repeatV2": {
+        "status": "PASS",
+        "completeColdStartProtocol": "UNVERIFIED",
+        "mainAdoption": "UNVERIFIED",
+        "explicitReadIntervention": true,
+        "entrypoints": 29
+      }
+    },
+    {
+      "step": 3,
+      "status": "PASS_AFTER_AUTONOMOUS_CORRECTION",
+      "scope": "new session canonical conflict diagnosis, scope/journal/skill catalog SHA/consumer review/single-file plan and apply"
+    },
+    {
+      "step": 4,
+      "status": "PASS",
+      "scope": "actual fixture restore bytes/collision/dirty/symlink/corrupt payload plus offline regression"
+    },
+    {
+      "step": 5,
+      "status": "BLOCKED_PUSH_403_MAIN_ADOPTION_UNVERIFIED",
+      "scope": "Real reviewed scoped upgrade committed locally; no PR or merge because current account is read-only"
+    }
+  ],
+  "delivery": {
+    "sourceCommit": "709e91af9ba6453de40c1f05876ef06aabd0f7a4",
+    "sourceDelivery": "local-commit-only",
+    "push": {
+      "status": "FAIL",
+      "httpStatus": 403,
+      "account": "guzhas"
+    },
+    "repositoryPermissions": {
+      "pull": true,
+      "push": false,
+      "admin": false,
+      "maintain": false,
+      "triage": false
+    },
+    "pr": null,
+    "merge": null,
+    "mainAdoption": "UNVERIFIED",
+    "ownerInput": "pending Write access / authorized writable account / local handoff decision",
+    "finalBundle": "C:/Core/cold-start-20261008/core-cold-start-results.bundle"
+  },
+  "transcriptIntegrity": [
+    {
+      "session": "f1",
+      "threadId": "01a11b31-38f9-7c61-9a1f-6b09bb9fb038",
+      "path": "C:/Core/cold-start-20261008/f1-session.jsonl",
+      "expectedSha256": "c14e8b29c4b7251840208aec77631bb6dc8fb9804423d3c6502be6da23dd2011",
+      "actualSha256": "c14e8b29c4b7251840208aec77631bb6dc8fb9804423d3c6502be6da23dd2011",
+      "status": "PASS"
+    },
+    {
+      "session": "fixture",
+      "threadId": "01a11b32-b436-7da2-8053-886e48920c47",
+      "path": "C:/Core/cold-start-20261008/fixture-session.jsonl",
+      "expectedSha256": "ad15fa280e8ac415dcc1ce165b09984173b66825f0bcebc41a60302fff7f0a73",
+      "actualSha256": "ad15fa280e8ac415dcc1ce165b09984173b66825f0bcebc41a60302fff7f0a73",
+      "status": "PASS"
+    },
+    {
+      "session": "review",
+      "threadId": "01a11b3d-371d-7b40-aafe-a793574a5053",
+      "path": "C:/Core/cold-start-20261008/review-session.jsonl",
+      "expectedSha256": "8468f8b6485254c776158ee51e42d372724dcac9e57428eb80d8819e90360279",
+      "actualSha256": "6a46efcc621bace51853fc08a269ed424509fe3dbae391e418bd95e78a47dc6f",
+      "status": "MISMATCH_CURRENT_FILE"
+    }
+  ],
+  "limits": [
+    "Prior separate sessions; not fresh StepOver F1 acceptance",
+    "No new fixture, review or merge executed in this continuation",
+    "Review transcript mismatch preserved; no claim of identical historic review snapshot"
+  ]
+}

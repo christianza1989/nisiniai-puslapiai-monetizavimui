@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Owner-authorized V1 per-site publication cutoff implemented and deployed to existing StepOver Worker. Shared regression also adds tests/publication-pause.test.mjs. All approved package bytes/dates preserved. Studio business stage intentionally retained because it does not control hosted publication. Initial record attempt missing required issue reference failed before any record; corrected with existing PR46 coordination reference.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "70 tests; output/parasoplansetes-publication-pause-20261013/core-tests.log"
+    },
+    {
+      "command": "node --test tests/niche-links.test.mjs tests/publication-pause.test.mjs",
+      "result": "PASS",
+      "evidence": "6 regression tests; retained 24 pages through 2035; sites/parasoplansetes/PUBLICATION_PAUSE_20261013.md"
+    },
+    {
+      "command": "npx tsc --noEmit; npm run build; wrangler deploy --dry-run",
+      "result": "PASS",
+      "evidence": "output/parasoplansetes-publication-pause-20261013/ logs"
+    },
+    {
+      "command": "isolated compiled HTTP and rendered verifier --now 2035-01-01T00:00:00Z",
+      "result": "PASS",
+      "evidence": "future-http.json284 / future-rendered.json268; 24visible22hidden0issues"
+    },
+    {
+      "command": "custom domain live HTTP checker",
+      "result": "PASS",
+      "evidence": "output/parasoplansetes-publication-pause-20261013/domain-http.json284"
+    }
+  ],
+  "eventId": "81bd1145-492f-481f-beef-4cd097f8ea8c",
+  "sequence": 2,
+  "at": "2026-10-13T19:34:48.604Z"
+}

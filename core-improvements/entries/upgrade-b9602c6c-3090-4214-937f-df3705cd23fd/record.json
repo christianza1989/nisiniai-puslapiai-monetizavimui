@@ -1,0 +1,19 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Reviewed follow-up with approved homepage footer lacking a trailing slash is wrongly rejected and replaced with generic template. Normalize only the empty HTTP root path to slash; retain exact approval, host, scheme, query, fragment and evidence restrictions.",
+  "category": "code",
+  "evidence": [
+    "Private canonical Codex-only candidate1 price_budget_old_brand: factual reviewer approved complete criteria letter, but actual_core_followup.validation=template_grounded; canonical email_quality3/5 and operational FAIL retained.",
+    "Reproducible tests/test_followup_root_url.py before repair:1failed/10passed; omitted-slash homepage rejects reviewed draft while slash variant passes. Negative controls cover foreign host, alternate scheme, userinfo, port, non-approved path, query, fragment and absent approved homepage."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/followup_projection.py",
+    "agent-business-core/runtime/tests/test_followup_root_url.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44#issuecomment-6088281765",
+  "rollback": "Revert only this review-bound URL normalization and its regressions through PR review; keep source1 FAIL and source2 repetitions distinct. No approval/source expansion, unreviewed letter sending or active tenant changes.",
+  "id": "upgrade-b9602c6c-3090-4214-937f-df3705cd23fd",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "f45854333dd92743fa2cb9527168de5796adf5b3",
+  "createdAt": "2026-10-09T20:20:58.977Z"
+}

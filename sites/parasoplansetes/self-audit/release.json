@@ -1,0 +1,14 @@
+{
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "state": "exported-not-deployed",
+  "pages": 19,
+  "assets": 20,
+  "approvedPageIds": [
+    "225aff0d-674d-47ba-be62-198e74b129a2",
+    "dc242d72-77a6-4f7c-9606-84e57aa73ee8",
+    "497c8819-4fc2-497d-ad38-7082dc18bc5c",
+    "1838da73-e900-4334-8983-2a56e036e280",
+    "d60d6eb9-35e6-4778-b7e5-136827efc61d"
+  ],
+  "unchangedPublicationSchedule": true
+}

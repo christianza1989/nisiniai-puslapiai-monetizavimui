@@ -1,7 +1,7 @@
 import copy
 import json
 import unittest
-from rendered_site import inspect_page, inspect_robots
+from rendered_site import Document, norm, inspect_page, inspect_robots
 
 
 def fixture(host='beauty.example', name='Beauty editorial', kind='Organization', hub='guides', profile='authors/editorial', locale='en-GB'):
@@ -28,6 +28,25 @@ def fixture(host='beauty.example', name='Beauty editorial', kind='Organization',
 
 
 class RenderedSiteTests(unittest.TestCase):
+    def test_inline_links_preserve_approved_text_and_punctuation(self):
+        o, _, _ = fixture()
+        o['expected']['bodyTexts'] = ['See models, software (.NET/REST) and signature.']
+        o['html'] = o['html'].replace('<p>A specific useful answer.</p>',
+            '<p>See <a href="/guide">models</a>, software (<strong>.NET/REST</strong>) '
+            'and sig<em>na</em>ture.</p>')
+        self.assertEqual(inspect_page(o), [])
+
+    def test_block_and_line_break_boundaries_separate_visible_text(self):
+        d = Document('<div><p>First <strong>answer</strong>.</p><p>Next<br>line.</p>'
+                     '<ul><li>One</li><li>Two</li></ul></div>')
+        self.assertEqual(norm(d.root.text()), 'First answer. Next line. One Two')
+
+    def test_hidden_inline_body_cannot_supply_approved_facts(self):
+        o, _, _ = fixture()
+        o['html'] = o['html'].replace('<p>A specific useful answer.</p>',
+            '<p>A specific <span hidden>useful </span>answer.</p>')
+        self.assertIn('APPROVED_BODY_RENDERED', inspect_page(o))
+
     def test_training_block_does_not_block_search_agents(self):
         text = 'User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\n'
         urls = ['https://beauty.example/guide']

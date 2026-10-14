@@ -1,0 +1,5 @@
+
+> site-creator-vinext-starter@0.1.0 test:seo-smoke
+> node tests/seo-core-smoke.mjs
+
+SEO core smoke passed: parasoplansetes, 19 public pages, robots, sitemap, llms, schemas, host isolation and 404.

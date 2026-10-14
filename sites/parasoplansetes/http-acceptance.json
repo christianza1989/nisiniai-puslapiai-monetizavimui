@@ -1,0 +1,148 @@
+{
+  "at": "2026-10-08T16:55:43.726Z",
+  "packageSha256": "fae6a474091ea5b13e703aeca7aa22f5a159fa3e31ac32f665b4e1e7530c3429",
+  "publishAt": "2026-10-08T16:45:49.664Z",
+  "scope": "Local HTTP probes; synthetic data, no SMTP, no production demand.",
+  "results": [
+    {
+      "name": "missing consent",
+      "status": 400,
+      "body": "<!doctype html><html lang=\"lt\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,nofollow\"><title>Užklausa</title><style>body{font:18px/1.6 system-ui,sans-serif;background:#f6faf5;color:#18302b;margin:0}main{max-width:640px;margin:10vh auto;padding:32px}a{color:#18584b}</style></head><body><main><h1>Užklausos nepavyko priimti</h1><p>Įrašykite vardą, veikiantį el. paštą, bent 20 ženklų žinutę ir pažymėkite sutikimą.</p><p><a href=\"/\">Grįžti į pradžią</a></p></main></body></html>",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "name": "bad email",
+      "status": 400,
+      "body": "<!doctype html><html lang=\"lt\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,nofollow\"><title>Užklausa</title><style>body{font:18px/1.6 system-ui,sans-serif;background:#f6faf5;color:#18302b;margin:0}main{max-width:640px;margin:10vh auto;padding:32px}a{color:#18584b}</style></head><body><main><h1>Užklausos nepavyko priimti</h1><p>Įrašykite vardą, veikiantį el. paštą, bent 20 ženklų žinutę ir pažymėkite sutikimą.</p><p><a href=\"/\">Grįžti į pradžią</a></p></main></body></html>",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "name": "foreign origin",
+      "status": 403,
+      "body": "<!doctype html><html lang=\"lt\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,nofollow\"><title>Užklausa</title><style>body{font:18px/1.6 system-ui,sans-serif;background:#f6faf5;color:#18302b;margin:0}main{max-width:640px;margin:10vh auto;padding:32px}a{color:#18584b}</style></head><body><main><h1>Užklausos nepavyko priimti</h1><p>Neleidžiama užklausos kilmė.</p><p><a href=\"/\">Grįžti į pradžią</a></p></main></body></html>",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "name": "oversize",
+      "status": 400,
+      "body": "<!doctype html><html lang=\"lt\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,nofollow\"><title>Užklausa</title><style>body{font:18px/1.6 system-ui,sans-serif;background:#f6faf5;color:#18302b;margin:0}main{max-width:640px;margin:10vh auto;padding:32px}a{color:#18584b}</style></head><body><main><h1>Užklausos nepavyko priimti</h1><p>Patikrinkite formą ir bandykite dar kartą.</p><p><a href=\"/\">Grįžti į pradžią</a></p></main></body></html>",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "name": "honeypot",
+      "status": 200,
+      "body": "<!doctype html><html lang=\"lt\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,nofollow\"><title>Užklausa</title><style>body{font:18px/1.6 system-ui,sans-serif;background:#f6faf5;color:#18302b;margin:0}main{max-width:640px;margin:10vh auto;padding:32px}a{color:#18584b}</style></head><body><main><h1>Užklausa gauta</h1><p>Užklausa gauta.</p><p><a href=\"/\">Grįžti į pradžią</a></p></main></body></html>",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "name": "counter bot",
+      "status": 204
+    },
+    {
+      "name": "counter DNT",
+      "status": 204
+    },
+    {
+      "name": "counter GPC",
+      "status": 204
+    },
+    {
+      "name": "counter foreign origin",
+      "status": 403
+    },
+    {
+      "name": "counter bad event",
+      "status": 400
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/",
+      "status": 200,
+      "titlePresent": true,
+      "dueUrlPresent": true,
+      "noindex": null,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/gidai",
+      "status": 200,
+      "titlePresent": true,
+      "dueUrlPresent": true,
+      "noindex": null,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/gidai/terminalinis-serveris-paraso-plansete",
+      "status": 200,
+      "titlePresent": true,
+      "dueUrlPresent": true,
+      "noindex": null,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/content-assets/parasoplansetes/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
+      "status": 200,
+      "titlePresent": false,
+      "dueUrlPresent": false,
+      "noindex": null,
+      "contentType": "image/webp"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/sitemap.xml",
+      "status": 200,
+      "titlePresent": false,
+      "dueUrlPresent": true,
+      "noindex": null,
+      "contentType": "application/xml; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/llms.txt",
+      "status": 200,
+      "titlePresent": true,
+      "dueUrlPresent": true,
+      "noindex": null,
+      "contentType": "text/markdown; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/llms-full.txt",
+      "status": 200,
+      "titlePresent": true,
+      "dueUrlPresent": true,
+      "noindex": null,
+      "contentType": "text/markdown; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/does-not-exist",
+      "status": 404,
+      "titlePresent": false,
+      "dueUrlPresent": false,
+      "noindex": null,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/niche/parasoplansetes",
+      "status": 404,
+      "titlePresent": false,
+      "dueUrlPresent": false,
+      "noindex": null,
+      "contentType": "text/plain;charset=UTF-8"
+    },
+    {
+      "name": "canonical discovery",
+      "path": "/favicon.ico",
+      "status": 200,
+      "titlePresent": false,
+      "dueUrlPresent": false,
+      "noindex": null,
+      "contentType": "image/svg+xml"
+    }
+  ]
+}

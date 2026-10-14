@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "note": "Refusal flag retained in runner receipt so a post-refusal invitation cannot receive operational PASS merely because model scores are high. Existing service thresholds unchanged; pure checker extracted.",
+  "checks": [
+    {
+      "command": "pytest tests/test_network_receipts.py",
+      "result": "PASS",
+      "evidence": "Actual ASGI negative-control invites form after refusal; all5 synthetic scores cannot override respect_contact_refusal=false. Before-refusal invitation remains allowed."
+    },
+    {
+      "command": "pytest full runtime core sourceC2",
+      "result": "PASS",
+      "evidence": "342PASS151.17s, private full-core-candidate2.log."
+    }
+  ],
+  "commit": "f45854333dd92743fa2cb9527168de5796adf5b3",
+  "eventId": "1f8b68fc-e6be-4c25-9de7-960fb6cfe127",
+  "sequence": 2,
+  "at": "2026-10-09T20:36:00.116Z"
+}

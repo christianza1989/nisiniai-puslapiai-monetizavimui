@@ -49,7 +49,14 @@ def test_signature_requires_both_confirmed_operator_fields():
     assert module.signature_present(item.model_copy(update={'body':'Pagarbiai, MB Pinet\ninfo@pinet.lt'}), identity)
 
 
-def test_operator_identity_does_not_accept_another_sites_projection(monkeypatch):
+def test_operator_identity_does_not_accept_another_sites_projection(monkeypatch, tmp_path):
+    from conftest import knowledge
+
+    # The identity fence must work in a fresh clone without private calibration artifacts.
+    source = tmp_path / 'artifacts/network-calibration/knowledge'
+    source.mkdir(parents=True)
+    (source / 'traktoriupadangos.json').write_text(json.dumps(knowledge()), encoding='utf-8')
+    monkeypatch.setattr(module, 'ROOT', tmp_path)
     original = module.Knowledge.model_validate_json
     def mismatched(value):
         return original(value).model_copy(update={'site_id':'greitossvetaines'})

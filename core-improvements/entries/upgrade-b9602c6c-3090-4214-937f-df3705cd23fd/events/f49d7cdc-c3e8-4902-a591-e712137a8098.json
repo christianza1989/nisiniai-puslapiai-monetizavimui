@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root-path normalization preserves reviewed customer content. SourceC2 actual price_budget_old_brand now uses reviewed_informational_followup/server_bound_model_facts_review and email_quality5/5; original sourceC1 generic fallback FAIL remains preserved.",
+  "checks": [
+    {
+      "command": "pytest tests/test_followup_root_url.py and existing projection/profile regressions",
+      "result": "PASS",
+      "evidence": "38PASS focused sourceC2; root positive and9unapproved URL negative controls; original1FAIL10PASS preserved."
+    },
+    {
+      "command": "network_lab sourceC2 known-v1 price_budget_old_brand",
+      "result": "PASS",
+      "evidence": "Actual reviewed body retained, all10servicechecks true, email5/5; private candidate2knownreport."
+    },
+    {
+      "command": "pytest full runtime core sourceC2",
+      "result": "PASS",
+      "evidence": "342PASS151.17s, private full-core-candidate2.log."
+    }
+  ],
+  "eventId": "f49d7cdc-c3e8-4902-a591-e712137a8098",
+  "sequence": 2,
+  "at": "2026-10-09T20:36:02.909Z"
+}

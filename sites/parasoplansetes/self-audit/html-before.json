@@ -1,0 +1,336 @@
+{
+  "siteId": "parasoplansetes",
+  "canonicalHost": "parasoplansetes.lt",
+  "base": "http://127.0.0.1:8798",
+  "checkedAt": "2026-10-08T18:42:52.285Z",
+  "packageGeneratedAt": "2026-10-08T16:31:50.311Z",
+  "publicPages": 19,
+  "readOnly": true,
+  "requests": 47,
+  "pages": [
+    {
+      "path": "/",
+      "title": "StepOver parašo planšetės verslui",
+      "h1": "StepOver parašo planšetės verslui",
+      "canonical": "https://parasoplansetes.lt/",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "articleWords": 29,
+      "anchors": 37,
+      "images": 7
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-paraso-plansete",
+      "title": "Kaip pasirinkti parašo planšetę verslui",
+      "h1": "Kaip pasirinkti parašo planšetę verslui",
+      "canonical": "https://parasoplansetes.lt/gidai/kaip-pasirinkti-paraso-plansete",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 0,
+      "anchors": 32,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-08T15:47:01.529Z",
+        "modified": "2026-10-08T16:31:50.073Z"
+      }
+    },
+    {
+      "path": "/paraso-plansetes",
+      "title": "StepOver parašo planšečių modeliai",
+      "h1": "StepOver parašo planšečių modeliai",
+      "canonical": "https://parasoplansetes.lt/paraso-plansetes",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 39,
+      "anchors": 33,
+      "images": 6
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "title": "StepOver naturaSign Pad Classic",
+      "h1": "StepOver naturaSign Pad Classic",
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 22,
+      "images": 1
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "title": "StepOver duraSign Pad 4.3",
+      "h1": "StepOver duraSign Pad 4.3",
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 22,
+      "images": 1
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "title": "StepOver duraSign Pad 5.0",
+      "h1": "StepOver duraSign Pad 5.0",
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 22,
+      "images": 1
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "title": "StepOver duraSign Pad 10.0",
+      "h1": "StepOver duraSign Pad 10.0",
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 22,
+      "images": 1
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "title": "StepOver duraSign Pad NG 10",
+      "h1": "StepOver duraSign Pad NG 10",
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 22,
+      "images": 1
+    },
+    {
+      "path": "/programine-iranga",
+      "title": "StepOver programinė įranga dokumentų pasirašymui",
+      "h1": "StepOver programinė įranga dokumentų pasirašymui",
+      "canonical": "https://parasoplansetes.lt/programine-iranga",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 24,
+      "images": 1
+    },
+    {
+      "path": "/integracija",
+      "title": "StepOver integracijos apimties vertinimas",
+      "h1": "StepOver integracijos apimties vertinimas",
+      "canonical": "https://parasoplansetes.lt/integracija",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "articleWords": 0,
+      "anchors": 23,
+      "images": 1
+    },
+    {
+      "path": "/gidai/pdf-pasirasymas-plansete",
+      "title": "PDF pasirašymas parašo planšete: visas dokumento kelias",
+      "h1": "PDF pasirašymas parašo planšete: visas dokumento kelias",
+      "canonical": "https://parasoplansetes.lt/gidai/pdf-pasirasymas-plansete",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 0,
+      "anchors": 34,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-08T16:03:32.124Z",
+        "modified": "2026-10-08T16:31:50.179Z"
+      }
+    },
+    {
+      "path": "/gidai/paraso-plansetes-integracija",
+      "title": "Parašo planšetės integracija: ką paruošti IT komandai",
+      "h1": "Parašo planšetės integracija: ką paruošti IT komandai",
+      "canonical": "https://parasoplansetes.lt/gidai/paraso-plansetes-integracija",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 0,
+      "anchors": 33,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-08T16:03:32.125Z",
+        "modified": "2026-10-08T16:31:50.189Z"
+      }
+    },
+    {
+      "path": "/gidai/terminalinis-serveris-paraso-plansete",
+      "title": "Parašo planšetė terminaliniame serveryje: bandymo sąrašas",
+      "h1": "Parašo planšetė terminaliniame serveryje: bandymo sąrašas",
+      "canonical": "https://parasoplansetes.lt/gidai/terminalinis-serveris-paraso-plansete",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList",
+        "Article"
+      ],
+      "articleWords": 0,
+      "anchors": 28,
+      "images": 1,
+      "dates": {
+        "published": "2026-10-08T16:45:49.664Z",
+        "modified": "2026-10-08T16:45:49.664Z"
+      }
+    },
+    {
+      "path": "/gidai",
+      "title": "Parašo planšečių pasirinkimo ir diegimo gidai",
+      "h1": "Parašo planšečių pasirinkimo ir diegimo gidai",
+      "canonical": "https://parasoplansetes.lt/gidai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 29,
+      "anchors": 34,
+      "images": 4
+    },
+    {
+      "path": "/kontaktai",
+      "title": "Aptarkime jūsų pasirašymo procesą",
+      "h1": "Aptarkime jūsų pasirašymo procesą",
+      "canonical": "https://parasoplansetes.lt/kontaktai",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 21,
+      "images": 0
+    },
+    {
+      "path": "/apie-projekta",
+      "title": "Apie parasoplansetes.lt",
+      "h1": "Apie parasoplansetes.lt",
+      "canonical": "https://parasoplansetes.lt/apie-projekta",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 20,
+      "images": 0
+    },
+    {
+      "path": "/redakcija",
+      "title": "MB Pinet: turinio rengimas ir peržiūra",
+      "h1": "MB Pinet: turinio rengimas ir peržiūra",
+      "canonical": "https://parasoplansetes.lt/redakcija",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 20,
+      "images": 0
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "title": "Informacijos ir užklausos naudojimo sąlygos",
+      "h1": "Informacijos ir užklausos naudojimo sąlygos",
+      "canonical": "https://parasoplansetes.lt/naudojimo-salygos",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 20,
+      "images": 0
+    },
+    {
+      "path": "/privatumas",
+      "title": "Užklausų ir svetainės privatumo informacija",
+      "h1": "Užklausų ir svetainės privatumo informacija",
+      "canonical": "https://parasoplansetes.lt/privatumas",
+      "schemaTypes": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "articleWords": 0,
+      "anchors": 21,
+      "images": 0
+    }
+  ],
+  "externalUrls": [
+    "https://verslomatika.lt/",
+    "https://stepover.com/produkte/software/esignatureoffice/",
+    "https://stepover.com/produkte/unterschriftenpads/nextgen-pad-5/",
+    "https://ec.europa.eu/digital-building-blocks/sites/spaces/DIGITAL/pages/880312429/eSignature+FAQ",
+    "https://stepover.com/produkte/entwickler/",
+    "https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en"
+  ],
+  "urlVariants": {
+    "slash": {
+      "status": 308,
+      "location": "/gidai"
+    },
+    "query": {
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/gidai"
+    }
+  },
+  "findings": []
+}

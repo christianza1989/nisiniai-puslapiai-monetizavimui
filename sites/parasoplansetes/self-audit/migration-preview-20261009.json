@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-09T07:13:36.995Z",
+  "mode": "preview",
+  "siteId": "parasoplansetes",
+  "mapSha256": "43c8ae251922b2e601d822c645163bb43e43f092c2010048eb7a191aca6adf41",
+  "writesPerformed": false,
+  "limits": "This read-only URL check does not certify mail, privacy, DNS ownership, rankings or full launch readiness.",
+  "targets": [
+    {
+      "url": "http://127.0.0.1:8798/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "status": 200,
+      "location": null,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "noindex": true,
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "pass": true
+    },
+    {
+      "url": "http://127.0.0.1:8798/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "status": 200,
+      "location": null,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "noindex": true,
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "pass": true
+    },
+    {
+      "url": "http://127.0.0.1:8798/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "status": 200,
+      "location": null,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "noindex": true,
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "pass": true
+    },
+    {
+      "url": "http://127.0.0.1:8798/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "status": 200,
+      "location": null,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "noindex": true,
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "pass": true
+    },
+    {
+      "url": "http://127.0.0.1:8798/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "status": 200,
+      "location": null,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "noindex": true,
+      "expectedCanonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "pass": true
+    }
+  ],
+  "status": "PASS_URL_CHECKS"
+}

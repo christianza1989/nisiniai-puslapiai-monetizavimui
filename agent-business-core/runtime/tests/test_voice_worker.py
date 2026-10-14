@@ -67,6 +67,7 @@ def configure_fake_transport(monkeypatch, script, fail_heartbeat=False):
 
         def generate_reply(self, **kwargs):
             self.replies.append(kwargs)
+            self.handlers["agent_state_changed"](SimpleNamespace(new_state="speaking"))
 
         async def aclose(self):
             if not self.closed:
@@ -79,8 +80,12 @@ def configure_fake_transport(monkeypatch, script, fail_heartbeat=False):
 def context_for(session):
     async def connect():
         return None
+    async def set_attributes(value):
+        attributes.update(value)
+    attributes = {}
     return SimpleNamespace(job=SimpleNamespace(metadata=f"traktoriupadangos:{session['conversation_id']}"),
-                           room=SimpleNamespace(name=f"pinet-{session['conversation_id']}"), connect=connect)
+                           room=SimpleNamespace(name=f"pinet-{session['conversation_id']}",
+                               local_participant=SimpleNamespace(set_attributes=set_attributes, attributes=attributes)), connect=connect)
 
 
 async def test_exact_worker_adapter_tools_transcript_and_finalization_offline(client, monkeypatch):
@@ -109,7 +114,9 @@ async def test_exact_worker_adapter_tools_transcript_and_finalization_offline(cl
         await fake.aclose()
 
     created, model_config = configure_fake_transport(monkeypatch, script)
-    await adapter.entrypoint(context_for(session))
+    worker_context = context_for(session)
+    await adapter.entrypoint(worker_context)
+    assert worker_context.room.local_participant.attributes == {"pinet.voice.ready": "true"}
     assert created[0].closed and created[0].replies
     assert results["ui"]["status"] == "shown"
     assert results["need"]["fields"]["tyre_marking"]["status"] == "proposed"
@@ -208,3 +215,87 @@ async def test_clipped_sdk_transcript_marks_coverage_incomplete(client, monkeypa
     async with db.transaction(item.id, settings().environment) as tx:
         convo = await tx.get(Conversation, session["conversation_id"])
         assert convo.state == "finalized" and convo.payload["coverage"] == "incomplete"
+
+
+async def test_public_end_waits_for_live_owner_final_transcript_before_postcall(client, monkeypatch):
+    from pinet_core.models import Job
+
+    session = await start(client)
+    item = await business("traktoriupadangos")
+
+    async def script(fake, agent):
+        async with db.transaction(item.id, settings().environment) as tx:
+            convo = await tx.get(Conversation, session["conversation_id"])
+            convo.payload = {**convo.payload, "test": False}
+        ended = await edge(client, "POST", "traktoriupadangos", session, "/end")
+        assert ended.json()["state"] == "ending"
+        async with db.transaction(item.id, settings().environment) as tx:
+            assert (await tx.get(Conversation, session["conversation_id"])).state == "active"
+            assert not list(await tx.scalars(select(Job)))
+        fake.emit_text("Gavau jūsų poreikį ir aptarėme kitą žingsnį.", item_id="last-spoken", role="assistant")
+        await fake.aclose()
+
+    configure_fake_transport(monkeypatch, script)
+    await adapter.entrypoint(context_for(session))
+    async with db.transaction(item.id, settings().environment) as tx:
+        assert (await tx.get(Conversation, session["conversation_id"])).state == "finalized"
+        events = list(await tx.scalars(select(Event).where(Event.kind == "agent_transcript")))
+        assert len(events) == 1 and events[0].event_key == "last-spoken"
+        assert {job.kind for job in await tx.scalars(select(Job))} == {"analysis", "quality"}
+
+
+async def test_private_probe_cannot_claim_an_ordinary_session(client, monkeypatch):
+    session = await start(client)
+
+    async def script(fake, agent):
+        raise AssertionError("Provider must not open for an ordinary session in probe mode")
+
+    created, _ = configure_fake_transport(monkeypatch, script)
+    monkeypatch.setattr(settings(), "m0_probe_enabled", True)
+    with pytest.raises(httpx.HTTPStatusError):
+        await adapter.probe_entrypoint(context_for(session))
+    assert not created
+    item = await business("traktoriupadangos")
+    async with db.transaction(item.id, settings().environment) as tx:
+        assert (await tx.get(Conversation, session["conversation_id"])).owner is None
+
+
+async def test_private_probe_without_cost_reservation_never_opens_provider(client, monkeypatch):
+    session = await start(client)
+    item = await business("traktoriupadangos")
+    async with db.transaction(item.id, settings().environment) as tx:
+        convo = await tx.get(Conversation, session["conversation_id"])
+        convo.payload = {**convo.payload, "m0_probe": True, "cost_ceiling_microusd": 10000}
+
+    async def script(fake, agent):
+        raise AssertionError("An unreserved probe must not open a provider")
+
+    created, _ = configure_fake_transport(monkeypatch, script)
+    monkeypatch.setattr(settings(), "m0_probe_enabled", True)
+    with pytest.raises(httpx.HTTPStatusError):
+        await adapter.probe_entrypoint(context_for(session))
+    assert not created
+
+
+def test_worker_registration_marker_tracks_actual_registration_without_credentials(monkeypatch, tmp_path):
+    import json
+
+    callbacks = {}
+
+    class Worker:
+        def on(self, name):
+            def register(callback):
+                callbacks[name] = callback
+                return callback
+            return register
+
+    monkeypatch.chdir(tmp_path)
+    adapter.configure_worker_cli(Worker(), "pinet-m0-consultant")
+    marker = tmp_path / "artifacts/voice-processes/consultant.registration.json"
+    assert json.loads(marker.read_text())["ready"] is False
+    callbacks["worker_registered"]("private-id", {"ignored": "private-details"})
+    record = json.loads(marker.read_text())
+    assert record["ready"] is True
+    assert record["agent_name"] == "pinet-m0-consultant"
+    assert set(record) == {"ready", "agent_name", "pid", "environment", "registered_at"}
+    assert "private-id" not in marker.read_text() and "private-details" not in marker.read_text()

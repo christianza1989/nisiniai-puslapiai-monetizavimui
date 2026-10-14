@@ -1,0 +1,20 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Canonical text dialogue dropped the corpus refusal flag before operational checks, making refusal gate vacuously pass. Carry actual scenario metadata and prove a shown popup after refusal fails despite perfect model scores.",
+  "category": "code",
+  "evidence": [
+    "Source inspection of client_lab.dialogue return and network_lab.postcall checks: refusal_at carried, refusal omitted; original reports retained.",
+    "Focused real ASGI/core negative control in tests/test_network_receipts.py opens a popup after refusal, receives shown ACK, then independently rejects it despite synthetic5/5 helpful scores; invitation before refusal remains allowed."
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/client_lab.py",
+    "agent-business-core/runtime/scripts/network_lab.py",
+    "agent-business-core/runtime/tests/test_network_receipts.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44#issuecomment-6088281765",
+  "rollback": "Revert the scoped checker change through review, preserving old FAIL/false-positive provenance. Do not rewrite frozen historical reports or relax refusal/quality thresholds.",
+  "id": "upgrade-d910442e-6bb5-4e56-9517-c496d3f562f7",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "38cba4aae63d97a42c27a67e6f2070ec2241e132",
+  "createdAt": "2026-10-09T20:10:29.512Z"
+}

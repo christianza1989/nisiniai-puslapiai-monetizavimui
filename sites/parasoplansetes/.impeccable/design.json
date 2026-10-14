@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T23:03:22.546Z",
+  "title": "Design System: parasoplansetes.lt",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "workbench",
+        "value": "0 18px 55px #213b6810",
+        "purpose": "Dokumento proceso paviršius."
+      },
+      {
+        "name": "conversation",
+        "value": "0 16px 60px #172b4938",
+        "purpose": "Iškeltas pokalbio sluoksnis."
+      }
+    ],
+    "motion": [
+      {
+        "name": "action-background",
+        "value": "background .18s ease",
+        "purpose": "Veiksmo hover; išjungtas prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "guides-pair",
+        "value": "1100px"
+      },
+      {
+        "name": "native-menu",
+        "value": "900px"
+      },
+      {
+        "name": "single-column",
+        "value": "700px"
+      },
+      {
+        "name": "small-phone",
+        "value": "360px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pagrindinis veiksmas",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Mėlynas realios kelionės veiksmas.",
+      "html": "<a class=\"ds-primary\" href=\"#\">Palyginti modelius <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M5 12h14m-6-6 6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;gap:20px;min-height:52px;padding:14px 22px;background:#185de5;color:white;border-radius:8px;font:700 14px/1.7 'StepOver Manrope',sans-serif;text-decoration:none;transition:background .18s ease}.ds-primary svg{width:22px;height:22px}.ds-primary:hover{background:#124cc0}.ds-primary:focus-visible{outline:3px solid #185de5;outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}"
+    },
+    {
+      "name": "Teksto veiksmas",
+      "kind": "button",
+      "description": "Antrinė nuoroda be dekoratyvinio paviršiaus.",
+      "html": "<a class=\"ds-link\" href=\"#\">Visi modeliai</a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;font:700 14px/1.7 'StepOver Manrope',sans-serif;color:#185de5;text-decoration:none}.ds-link:hover{text-decoration:underline;text-underline-offset:.23em}.ds-link:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
+    },
+    {
+      "name": "Užklausos laukas",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Matoma etiketė ir 16 px įvestis.",
+      "html": "<label class=\"ds-field\">El. paštas<input type=\"email\" placeholder=\"vardas@imone.lt\"></label>",
+      "css": ".ds-field{display:grid;gap:8px;font:700 13px/1.7 'StepOver Manrope',sans-serif;color:#172b49}.ds-field input{font:400 16px/1.6 'StepOver Manrope',sans-serif;padding:12px 14px;border:1px solid #aebcd1;border-radius:7px;background:white;color:#172b49}.ds-field input:hover{border-color:#718bac}.ds-field input:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
+    },
+    {
+      "name": "Navigacija",
+      "kind": "nav",
+      "description": "Aiškus aktyvus kelias.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Modeliai</a><a href=\"#\">Programinė įranga</a><a href=\"#\">Integracija</a><a href=\"#\">Gidai</a></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;gap:24px;font:600 13px/1.7 'StepOver Manrope',sans-serif}.ds-nav a{display:flex;align-items:center;min-height:44px;color:#172b49;text-decoration:none}.ds-nav a[aria-current]{color:#185de5;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid #185de5;outline-offset:5px}"
+    },
+    {
+      "name": "Dokumento eiga",
+      "kind": "custom",
+      "description": "Natyvi keturių žingsnių schema.",
+      "html": "<ol class=\"ds-workflow\"><li>Dokumentas</li><li>Peržiūra</li><li>Parašas</li><li>Archyvas</li></ol>",
+      "css": ".ds-workflow{list-style:none;padding:22px 0 0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;font:600 11px/1.7 'StepOver Manrope',sans-serif;color:#172b49}.ds-workflow li{position:relative;padding-top:17px}.ds-workflow li:before{content:'';position:absolute;top:0;width:7px;height:7px;border-radius:50%;background:#185de5}.ds-workflow li:after{content:'';position:absolute;top:3px;left:12px;right:0;height:1px;background:#dce3ee}.ds-workflow li:last-child:after{display:none}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Dokumento darbo stalas",
+    "overview": "2026-10-10 StepOver redesign. Dokumento eiga, tikras įrenginys, palyginamos savybės ir konkretus kitas veiksmas. Šaltos šviesios plokštumos, mėlyni veiksmai ir tamsus rašalas jungia katalogą su skaitmeniniu dokumentų procesu.",
+    "keyCharacteristics": [
+      "Vienas mėlynas veiksmo akcentas.",
+      "Matoma dokumento eiga ir modelio savybės.",
+      "Bendra katalogo, skaitymo ir pokalbio tipografija.",
+      "Platus desktop išdėstymas tampa viena mobile seka."
+    ],
+    "rules": [
+      {
+        "name": "The Action Rule",
+        "body": "Mėlyna nukreipia į veiksmą arba pažymi būseną.",
+        "section": "colors"
+      },
+      {
+        "name": "The Plain Heading Rule",
+        "body": "H1 įvardija patvirtintą turinį; reklaminė frazė jo nepakeičia.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do išlaikyti paketo faktus, tikrus vaizdus, kreditus ir nuorodas.",
+      "Do aiškiai skirti įrenginį, programinį kelią ir užklausą.",
+      "Do jungti visus puslapius ta pačia veiksmų kalba."
+    ],
+    "donts": [
+      "Don't kurti kainų, klientų, įvertinimų, tiekimo ar sertifikavimo įrodymų.",
+      "Don't perpiešti įrenginio ar kopijuoti Dribbble vaizdo.",
+      "Don't vadinti vietinio fixture tikro AI ar el. pašto pristatymo įrodymu."
+    ]
+  }
+}

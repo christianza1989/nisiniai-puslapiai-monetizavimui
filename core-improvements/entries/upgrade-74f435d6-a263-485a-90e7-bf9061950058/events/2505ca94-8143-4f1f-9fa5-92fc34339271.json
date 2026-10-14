@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original provider/HTML/port/HTTP-checker failures retained. Actual public chat/need/contact/memory and source renewal verified; lifetime ceiling stops further paid calls. Historical corpus not rewritten.",
+  "checks": [
+    {
+      "command": "python -m pytest -q",
+      "result": "PASS",
+      "evidence": "316 passed, 155.61s; sites/parasoplansetes/AGENT-RESUME-20261009.md"
+    },
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "63 public tests; sites/parasoplansetes/AGENT-RESUME-20261009.md"
+    }
+  ],
+  "eventId": "2505ca94-8143-4f1f-9fa5-92fc34339271",
+  "sequence": 2,
+  "at": "2026-10-09T19:40:00.817Z"
+}

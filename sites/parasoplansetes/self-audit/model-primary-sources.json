@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-08T18:58:53.727Z",
+  "scope": "Agent primary-page retrieval and direct model field review; no supplier offer/stock/compatibility acceptance",
+  "checks": [
+    {
+      "pageId": "225aff0d-674d-47ba-be62-198e74b129a2",
+      "slug": "produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "url": "https://stepover.com/produkte/unterschriftenpads/naturasign-pad-classic/",
+      "checkedAt": "2026-10-08T18:58:53.727Z",
+      "modelFields": [
+        "Ekranas: Nespalvinis LCD",
+        "Rezoliucija: 320 × 85 pikselių",
+        "Programinis kelias: Programa darbo vietoje"
+      ]
+    },
+    {
+      "pageId": "dc242d72-77a6-4f7c-9606-84e57aa73ee8",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "url": "https://stepover.com/produkte/unterschriftenpads/durasign-pad-4-3/",
+      "checkedAt": "2026-10-08T18:58:53.727Z",
+      "modelFields": [
+        "Ekranas: 4,3 col. TFT, 4 spalvos",
+        "Rezoliucija: 480 × 272 pikselių",
+        "Programinis kelias: Programa darbo vietoje"
+      ]
+    },
+    {
+      "pageId": "497c8819-4fc2-497d-ad38-7082dc18bc5c",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "url": "https://stepover.com/produkte/unterschriftenpads/durasign-pad-5-0/",
+      "checkedAt": "2026-10-08T18:58:53.727Z",
+      "modelFields": [
+        "Ekranas: 5 col. spalvotas",
+        "Rezoliucija: 800 × 480 pikselių",
+        "Programinis kelias: Programa darbo vietoje"
+      ]
+    },
+    {
+      "pageId": "1838da73-e900-4334-8983-2a56e036e280",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "url": "https://stepover.com/produkte/unterschriftenpads/durasign-pad-10-0/",
+      "checkedAt": "2026-10-08T18:58:53.727Z",
+      "modelFields": [
+        "Ekranas: 10 col. spalvotas",
+        "Rezoliucija: 1024 × 600 pikselių",
+        "Programinis kelias: Programa darbo vietoje"
+      ]
+    },
+    {
+      "pageId": "d60d6eb9-35e6-4778-b7e5-136827efc61d",
+      "slug": "produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "url": "https://stepover.com/produkte/unterschriftenpads/durasign-pad-ng-10/",
+      "checkedAt": "2026-10-08T18:58:53.727Z",
+      "modelFields": [
+        "Ekranas: 10 col. spalvotas",
+        "Rezoliucija: 1024 × 600 pikselių",
+        "Programinis kelias: PDF įrenginyje, nextGen API arba Print2NG"
+      ]
+    }
+  ]
+}

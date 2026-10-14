@@ -1,0 +1,12 @@
+{
+  "state": "NOT_COMPLETE",
+  "siteId": "parasoplansetes",
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "publicPages": 19,
+  "hiddenPages": 0,
+  "articles": 4,
+  "requests": 46,
+  "issues": [
+    "LOCAL_AUDIT_INCOMPLETE"
+  ]
+}

@@ -59,11 +59,9 @@ async def resolve(tx, args: KnowledgeQuery):
     if (not state or not state.payload.get('knowledge')
             or state.refreshed_at + timedelta(seconds=settings().knowledge_ttl_seconds) < utcnow()):
         return {"status": "unavailable", "reason": "knowledge_snapshot_expired", "sources": []}
-    tokens = set(re.findall(r"\w+", args.query.casefold()))
     pages = [p for p in state.payload["knowledge"]["pages"] if p["revision_hash"] not in state.payload["revoked"]]
-    scored = sorted(pages, key=lambda p: sum(t in p["text"].casefold() or t in p["title"].casefold()
-                                           for t in tokens), reverse=True)
-    matching = [p for p in scored if any(t in p["text"].casefold() or t in p["title"].casefold() for t in tokens)]
+    tokens = search_tokens(args.query)
+    matching = ranked_pages(pages, args.query)
     sources = []
     for page in matching[:3]:
         offset = 0
@@ -76,6 +74,36 @@ async def resolve(tx, args: KnowledgeQuery):
             "commercial_tools": "disabled", "knowledge_revision": state.revision,
             "deployment_id": state.payload["knowledge"]["deployment_id"],
             "snapshot_ttl_seconds": settings().knowledge_ttl_seconds}
+
+
+def search_tokens(value):
+    # Keep model decimals atomic: 5.0 must not match 10.0 via the token "0".
+    return set(t.replace(',', '.') if re.fullmatch(r'\d+(?:[.,]\d+)+', t) else t
+               for t in re.findall(r'\d+(?:[.,]\d+)+|\w+', value.casefold()))
+
+
+def ranked_pages(pages, query):
+    tokens = search_tokens(query)
+    identifiers = {t.strip('.,;:()[]').casefold() for t in query.split()}
+    normalized = ' '.join(re.findall(r'\d+(?:[.,]\d+)+|\w+', query.casefold()))
+
+    def rank(page):
+        title, body = page['title'].casefold(), page['text'].casefold()
+        title_tokens, body_tokens = search_tokens(title), search_tokens(body)
+        title_phrase = ' '.join(re.findall(r'\d+(?:[.,]\d+)+|\w+', title))
+        identity = page['id'].casefold() in identifiers or page['url'].casefold() in identifiers
+        exact_title = bool(title_phrase) and (' ' + title_phrase + ' ') in (' ' + normalized + ' ')
+        numbers = {t for t in tokens if re.fullmatch(r'\d+(?:\.\d+)*', t)}
+        title_hits = sum(t in title_tokens if t in numbers else t in title for t in tokens)
+        body_hits = sum(t in body_tokens if t in numbers else t in body for t in tokens)
+        # Identity is selected only inside the already approved, non-revoked set.
+        # A verbose generic page cannot displace an exact title or model number.
+        return (identity, exact_title, len(numbers & title_tokens),
+                title_hits / max(1, len(title_tokens)), title_hits, body_hits)
+
+    scored = [(rank(page), page) for page in pages]
+    return [page for score, page in sorted(scored, key=lambda pair: pair[0], reverse=True)
+            if score[0] or score[4] or score[5]]
 
 
 async def projection(tx):
@@ -101,10 +129,11 @@ async def refresh_from_edge(item):
         state = await current(tx)
         if state and state.refreshed_at + timedelta(seconds=cfg.knowledge_refresh_seconds) > utcnow():
             return {"status": "fresh"}
-    base = cfg.knowledge_source_base_url or f"https://{item.canonical_host}"
+    override = cfg.knowledge_source_overrides.get(item.site_id)
+    base = override or cfg.knowledge_source_base_url or f"https://{item.canonical_host}"
     parsed = urlparse(base)
     local = cfg.environment == "local" and parsed.scheme == "http" and parsed.hostname in {"127.0.0.1", "localhost"}
-    if not local and (parsed.scheme != "https" or parsed.hostname != item.canonical_host):
+    if not local and (parsed.scheme != "https" or (not override and parsed.hostname != item.canonical_host)):
         return {"status": "rejected", "reason": "source_host_not_allowed"}
     if parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in {"", "/"}:
         return {"status": "rejected", "reason": "invalid_source_url"}
@@ -114,7 +143,7 @@ async def refresh_from_edge(item):
     signature = hmac.new(cfg.edge_secret.encode(), canonical.encode(), hashlib.sha256).hexdigest()
     try:
         async with httpx.AsyncClient(timeout=4, follow_redirects=False) as client:
-            async with client.stream("GET", base.rstrip("/") + path, headers={"Host": item.canonical_host,
+            async with client.stream("GET", base.rstrip("/") + path, headers={"Host": parsed.netloc if override else item.canonical_host,
                 "x-pinet-timestamp": stamp, "x-pinet-nonce": nonce, "x-pinet-signature": signature}) as response:
                 if response.status_code != 200:
                     return {"status": "unavailable", "reason": f"http_{response.status_code}"}

@@ -1,0 +1,28 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Actual text transport needs a provider-compatible bound tool wire and separate chat admission/deadline. Public preview knowledge renewal rejects its deployment origin; daily-only accounting does not enforce a total task budget. HTML-only owner replies initially lost their body. Browser continuity exposed invalid provider JSON under the default thinking/output limit.",
+  "category": "code",
+  "evidence": [
+    "sites/parasoplansetes/AGENT-PAUSE-20261009.md",
+    "agent-business-core/runtime/artifacts/parasoplansetes-20261009/api-preview-source.log",
+    "agent-business-core/runtime/artifacts/parasoplansetes-20261009/owner-reply-receipt.json"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/chat.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/src/pinet_core/budget.py",
+    "agent-business-core/runtime/src/pinet_core/knowledge.py",
+    "agent-business-core/runtime/src/pinet_core/mail_reader.py",
+    "agent-business-core/runtime/src/pinet_core/mailbox.py",
+    "agent-business-core/runtime/tests",
+    "sites/parasoplansetes/AGENT-RESUME-20261009.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Turn off CHAT_WIDGET_ENABLED on the isolated preview and disable its private chat admission first; revert scoped transport/config changes while preserving original receipt files. No reset of another checkout or mailbox mutation.",
+  "id": "upgrade-74f435d6-a263-485a-90e7-bf9061950058",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "b432fa544af3609453b4ff918c326a859c7d1bac",
+  "createdAt": "2026-10-09T18:13:20.926Z"
+}

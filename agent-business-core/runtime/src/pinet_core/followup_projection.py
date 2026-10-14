@@ -1,6 +1,6 @@
 """Server-generated factual review binding for free customer follow-ups."""
 import re
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, urlunsplit
 
 from .security import digest
 
@@ -13,8 +13,13 @@ def bind(data, subject, body, review, engine):
 
 
 def verified_result(data, analysis):
+    from .config import settings
+
     value = analysis.get('validated_followup')
-    if not isinstance(value, dict) or value.get('engine') != 'codex_cli_text_lab':
+    allowed = {'codex_cli_text_lab', 'gemini-3.8-flash'}
+    if settings().text_provider == 'openrouter' and settings().text_provider_ready:
+        allowed.add(settings().text_engine)
+    if not isinstance(value, dict) or value.get('engine') not in allowed:
         return None  # Production generator must obtain its own review before opting in.
     if (value.get('review', {}).get('approved') is not True or value['review'].get('unsupported_claims') or
             value.get('body_hash') != digest(value.get('body', '')) or
@@ -23,18 +28,29 @@ def verified_result(data, analysis):
             set(value.get('evidence_ids', [])) != {e['id'] for e in data['evidence']}):
         return None
     body, subject = value.get('body', ''), value.get('subject', '')
+    from .quality_guards import unsupported_model_exclusion
+    if unsupported_model_exclusion(body, data['knowledge']):
+        return None
     if (not 20 <= len(body) <= 6000 or not 3 <= len(subject) <= 180 or
             any(ord(c) < 32 for c in subject) or re.search(
                 r'\[TEST|\bSINTETIN\w*\s+(?:BANDYM|LAIŠK)|\bTESTINIS\s+LAIŠKAS', body + subject, re.I)):
         return None
-    sources = {p['url']: p for p in data['knowledge']['pages']}
+    sources = {root_url(p['url']): p for p in data['knowledge']['pages']}
     used = []
     for url in re.findall(r'https?://[^\s<>]+', body, flags=re.I):
         url = url.rstrip('.,;)')
-        if url not in sources or urlsplit(url).hostname != data['knowledge']['canonical_host']:
+        key = root_url(url)
+        if key not in sources or urlsplit(url).hostname != data['knowledge']['canonical_host']:
             return None
-        used.append(sources[url])
+        used.append(sources[key])
     return {'subject': subject, 'body': body, 'hash': digest(body), 'kind': 'reviewed_informational_followup',
         'validation': 'server_bound_model_facts_review', 'knowledge_revision': value['knowledge_revision'],
         'source_refs': [{k: p[k] for k in ['id', 'url', 'revision_hash', 'projection_hash']} for p in used],
         'test': data['test']}
+
+
+def root_url(url):
+    # The empty HTTP path and / identify the same approved homepage. Preserve
+    # scheme, authority, non-root paths, queries and fragments exactly.
+    value = urlsplit(url)
+    return urlunsplit(value._replace(path='/')) if not value.path else url

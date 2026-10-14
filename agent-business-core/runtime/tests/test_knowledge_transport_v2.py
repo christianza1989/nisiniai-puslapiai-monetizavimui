@@ -46,7 +46,7 @@ def test_emitter_dispatches_actual_m2_public_projection_and_keeps_v1_format(tmp_
     (core / 'config').mkdir()
     for name in ('niche-links.mjs', 'content-projection-v2.mjs'):
         (core / 'lib' / name).write_bytes((PUBLIC / 'lib' / name).read_bytes())
-    fixture = ROOT.parents[1] / 'research/dovanos123-integration-2026-10-04/M1/content-package.v2.fixture.json'
+    fixture = ROOT / 'tests/fixtures/content-package.v2.fixture.json'
     gift = json.loads(fixture.read_text(encoding='utf-8'))
     # The fixture's original approved revisions remain intact.
     v1 = {'schemaVersion': 1, 'siteId': 'legacy', 'canonicalHost': 'legacy.example',

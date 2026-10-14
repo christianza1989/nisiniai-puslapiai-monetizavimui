@@ -4,7 +4,7 @@ import pytest
 from sqlalchemy import select
 from test_policy import configure
 
-from pinet_core import budget, jobs
+from pinet_core import budget, jobs, text_provider
 from pinet_core.config import settings
 from pinet_core.contracts import Analysis
 from pinet_core.db import db
@@ -30,9 +30,15 @@ async def test_invalid_model_output_still_records_paid_usage_without_external_ca
             pass
 
         async def generate_content(self, **kwargs):
+            config = kwargs["config"]
+            assert config.response_schema is None
+            assert config.response_json_schema["additionalProperties"] is False
+            refs = config.response_json_schema["properties"]["evidence_event_ids"]
+            assert refs["items"]["enum"] == ["client-fixture"]
+            assert "const" not in refs["items"]
             return SimpleNamespace(text="invalid JSON", usage_metadata=SimpleNamespace(prompt_token_count=1000,
                 candidates_token_count=1000, thoughts_token_count=0, total_token_count=2000))
-    monkeypatch.setattr(jobs.genai, "Client", lambda **kwargs: SimpleNamespace(aio=FakeAio()))
+    monkeypatch.setattr(text_provider.genai, "Client", lambda **kwargs: SimpleNamespace(aio=FakeAio()))
     with pytest.raises(ValueError):
         await jobs.model_output(Analysis, "synthetic test only", {"business_id": item.id,
             "evidence": [{"id": "client-fixture", "speaker": "client"}]}, "model:explicit-fixture:1")

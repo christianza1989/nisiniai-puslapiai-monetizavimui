@@ -1,0 +1,24 @@
+{
+  "anchors": [
+    {
+      "href": "/redakcija",
+      "text": "MB Pinet"
+    },
+    {
+      "href": "/programine-iranga",
+      "text": "eSignatureOffice"
+    },
+    {
+      "href": "/paraso-plansetes",
+      "text": "StepOver modelius"
+    },
+    {
+      "href": "https://verslomatika.lt/",
+      "text": "verslomatika.lt"
+    }
+  ],
+  "overflow": false,
+  "paragraph": "Peržiūrėkite StepOver modelius, o jei programos kelias dar neaiškus — pirmiausia aptarkite procesą. Užklausa nėra įrangos užsakymas ar galutinė kainos sąmata.",
+  "url": "http://127.0.0.1:8798/gidai/kaip-pasirinkti-paraso-plansete",
+  "width": 390
+}

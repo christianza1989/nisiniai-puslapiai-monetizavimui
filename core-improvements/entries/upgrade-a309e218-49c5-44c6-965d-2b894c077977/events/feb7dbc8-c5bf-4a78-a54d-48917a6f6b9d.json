@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Add postcall creation timing to quality/scoring evidence and clarify that a final dialogue cannot acknowledge a future draft. Preserve original scalar grading prompt and10service thresholds. Paired evaluator diagnostic8calls: honest answer accepted4/4 and false sending/delivery rejected4/4 under both prompts; original complex-case false-positive remains, so no claim of reproduced improvement on the simplified positive. Earlier3call diagnostic interrupted by Windows stdout encoding and preserved separately.",
+  "eventId": "feb7dbc8-c5bf-4a78-a54d-48917a6f6b9d",
+  "sequence": 2,
+  "at": "2026-10-09T20:45:07.580Z"
+}

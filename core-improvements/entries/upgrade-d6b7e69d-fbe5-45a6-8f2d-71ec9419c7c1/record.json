@@ -1,0 +1,19 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Named StepOver5.0 retrieval is displaced by generic text overlap; exact approved page/title/model identity must precede body word overlap. Preserve numeric model distinctions and revocation/expiry/tenant authority.",
+  "category": "code",
+  "evidence": [
+    "Private canonical Codex text-service-v2 baseline screen_5_not_automatic_exclusion: two knowledge.resolve receipts omit the approved5.0 product page; quality root_cause=tool and independent_review_helpful=false.",
+    "Reproducible synthetic offline red controls:11failed/3passed in tests/test_knowledge_ranking.py before source repair. Original private log ranking-original-red.log retained."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/knowledge.py",
+    "agent-business-core/runtime/tests/test_knowledge_ranking.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44#issuecomment-6088281765",
+  "rollback": "Revert this scoped source/test commit through review; retain original FAIL evidence and frozen knowledge/corpus. No active knowledge approval, production release or tenant data mutation.",
+  "id": "upgrade-d6b7e69d-fbe5-45a6-8f2d-71ec9419c7c1",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "38cba4aae63d97a42c27a67e6f2070ec2241e132",
+  "createdAt": "2026-10-09T20:07:33.377Z"
+}

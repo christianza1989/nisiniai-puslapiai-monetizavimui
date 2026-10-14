@@ -9,7 +9,8 @@ from pinet_core.profiles import PROFILES, get
 
 
 def test_six_niche_role_registry_and_fact_boundaries():
-    assert len(PROFILES) == 6
+    assert set(PROFILES) == {'traktoriupadangos', 'greitossvetaines', 'akmenas',
+        'roletaiklaipedoje', 'laiptucentras', 'auksarankiams', 'parasoplansetes'}
     for site, profile in PROFILES.items():
         for role in ['conversation', 'sales', 'supplier', 'quality']:
             release = compose(site, role)

@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 2,
+  "siteId": "v2-fixture",
+  "canonicalHost": "v2-fixture.example",
+  "locale": "lt-LT",
+  "site": {
+    "id": "v2-fixture",
+    "name": "Izoliuotas redakcinis bandymas",
+    "canonicalHost": "v2-fixture.example",
+    "locale": "lt-LT",
+    "timezone": "Europe/Vilnius",
+    "brand": {
+      "accent": "#246f74"
+    },
+    "offer": "Tik izoliuotas migracijos bandymas",
+    "contact": {
+      "email": "info@pinet.lt",
+      "phone": ""
+    },
+    "renderer": "gift",
+    "operatorName": "MB Pinet"
+  },
+  "pages": [
+    {
+      "id": "gift-home",
+      "siteId": "v2-fixture",
+      "contentVersion": 2,
+      "type": "home",
+      "slug": "",
+      "title": "Bandomasis turinys",
+      "description": "Izoliuotas v2 turinio kontrakto testas.",
+      "intent": "Migracijos patikra",
+      "body": [
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Ši pastraipa skirta izoliuotam turinio modelio bandymui. Nuorodos gali pasikartoti tiksliose teksto vietose. "
+            },
+            {
+              "type": "link",
+              "text": "gidas",
+              "target": {
+                "kind": "page",
+                "pageId": "gift-article-1"
+              }
+            },
+            {
+              "type": "text",
+              "text": " ir antras "
+            },
+            {
+              "type": "link",
+              "text": "gidas",
+              "target": {
+                "kind": "page",
+                "pageId": "gift-article-1"
+              }
+            },
+            {
+              "type": "text",
+              "text": ". Faktai nėra viešos svetainės turinys."
+            }
+          ]
+        }
+      ],
+      "publishAt": "2026-10-01T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Testas",
+        "readingMinutes": 2,
+        "authors": [
+          {
+            "id": "test-redakcija",
+            "siteId": "v2-fixture",
+            "locale": "lt-LT",
+            "slug": "test-redakcija",
+            "name": "Bandomoji redakcija",
+            "role": "Testas",
+            "bio": "Tik fixture, ne tikro eksperto profilis.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [
+          {
+            "id": "test-source",
+            "title": "Bandomasis šaltinis",
+            "publisher": "Fixture",
+            "url": "https://example.org/source",
+            "accessedAt": "2026-10-01T00:00:00.000Z",
+            "public": true
+          }
+        ],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": null,
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "v2-fixture",
+        "name": "Izoliuotas redakcinis bandymas",
+        "canonicalHost": "v2-fixture.example",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#246f74"
+        },
+        "offer": "Tik izoliuotas migracijos bandymas",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "gift",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "8ca698afbb788308247d9f7ac2d80aac94d5ef82416c6427d3f086d160af267a",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "8ca698afbb788308247d9f7ac2d80aac94d5ef82416c6427d3f086d160af267a",
+        "approvedAt": "2026-10-02T00:00:00.000Z",
+        "actorId": "fixture-editor"
+      }
+    },
+    {
+      "id": "gift-article-1",
+      "siteId": "v2-fixture",
+      "contentVersion": 2,
+      "type": "article",
+      "slug": "straipsniai/bandomasis-gidas",
+      "title": "Bandomasis turinys",
+      "description": "Izoliuotas v2 turinio kontrakto testas.",
+      "intent": "Migracijos patikra",
+      "body": [
+        {
+          "type": "richParagraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Ši pastraipa skirta izoliuotam turinio modelio bandymui. Nuorodos gali pasikartoti tiksliose teksto vietose. "
+            },
+            {
+              "type": "link",
+              "text": "gidas",
+              "target": {
+                "kind": "page",
+                "pageId": "gift-article-1"
+              }
+            },
+            {
+              "type": "text",
+              "text": " ir antras "
+            },
+            {
+              "type": "link",
+              "text": "gidas",
+              "target": {
+                "kind": "page",
+                "pageId": "gift-article-1"
+              }
+            },
+            {
+              "type": "text",
+              "text": ". Faktai nėra viešos svetainės turinys."
+            }
+          ]
+        }
+      ],
+      "publishAt": "2026-10-23T04:30:00.000Z",
+      "media": [],
+      "links": [],
+      "externalLinks": [],
+      "editorial": {
+        "category": "Testas",
+        "readingMinutes": 2,
+        "authors": [
+          {
+            "id": "test-redakcija",
+            "siteId": "v2-fixture",
+            "locale": "lt-LT",
+            "slug": "test-redakcija",
+            "name": "Bandomoji redakcija",
+            "role": "Testas",
+            "bio": "Tik fixture, ne tikro eksperto profilis.",
+            "kind": "organization",
+            "sameAs": []
+          }
+        ],
+        "sources": [
+          {
+            "id": "test-source",
+            "title": "Bandomasis šaltinis",
+            "publisher": "Fixture",
+            "url": "https://example.org/source",
+            "accessedAt": "2026-10-01T00:00:00.000Z",
+            "public": true
+          }
+        ],
+        "datePublished": null,
+        "dateModified": null,
+        "productRecommendation": false,
+        "featuredImageId": null,
+        "relatedPageIds": [],
+        "commerceTargets": []
+      },
+      "siteSnapshot": {
+        "id": "v2-fixture",
+        "name": "Izoliuotas redakcinis bandymas",
+        "canonicalHost": "v2-fixture.example",
+        "locale": "lt-LT",
+        "timezone": "Europe/Vilnius",
+        "brand": {
+          "accent": "#246f74"
+        },
+        "offer": "Tik izoliuotas migracijos bandymas",
+        "contact": {
+          "email": "info@pinet.lt",
+          "phone": ""
+        },
+        "renderer": "gift",
+        "operatorName": "MB Pinet"
+      },
+      "revisionHash": "21228e1c0f55eb5586ce73dadb04f3a0666dba9cada8f030ccd813c153b4cadc",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "21228e1c0f55eb5586ce73dadb04f3a0666dba9cada8f030ccd813c153b4cadc",
+        "approvedAt": "2026-10-02T00:00:00.000Z",
+        "actorId": "fixture-editor"
+      }
+    }
+  ],
+  "generatedAt": "2026-10-02T00:00:00.000Z"
+}

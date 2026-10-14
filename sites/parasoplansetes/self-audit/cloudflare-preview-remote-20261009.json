@@ -1,0 +1,417 @@
+{
+  "checkedAt": "2026-10-09T09:07:33.827Z",
+  "base": "https://parasoplansetes-preview.pinet-azprekyba.workers.dev",
+  "kind": "preview-runtime",
+  "pages": 19,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-paraso-plansete",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/gidai/kaip-pasirinkti-paraso-plansete",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/paraso-plansetes",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/paraso-plansetes",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/programine-iranga",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/programine-iranga",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/integracija",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/integracija",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/gidai/pdf-pasirasymas-plansete",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/gidai/pdf-pasirasymas-plansete",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/gidai/paraso-plansetes-integracija",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/gidai/paraso-plansetes-integracija",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/gidai/terminalinis-serveris-paraso-plansete",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/gidai/terminalinis-serveris-paraso-plansete",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/gidai",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/kontaktai",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/apie-projekta",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/apie-projekta",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/redakcija",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/naudojimo-salygos",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/privatumas",
+      "status": 200,
+      "canonical": "https://parasoplansetes.lt/privatumas",
+      "noindex": "noindex, nofollow",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/css/niche-styles.D-f75NbR.css",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 449,
+      "contentType": "text/css",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/css/parasoplansetes-site.Cb2B6edh.css",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 14353,
+      "contentType": "text/css",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/index-WrdTurqe.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 194356,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 694,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/framework-D_rUT4EX.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 190152,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/app-elements-H_Dr48wG.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 12828,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/hash-Cp347hhd.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 256,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/record-uXSNv6cl.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 79,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/app-rsc-cache-busting-B09gxWqP.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 4962,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/app-rsc-render-mode-CvTCGruk.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 668,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/headers-C_MtfdF4.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 3286,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/protocol-headers-B9-bVeat.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 327,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/deployment-id-DFhHa9wO.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 97,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/navigation-errors-D5LMQqDL.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 4040,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/layout-segment-context-DKE5rZ0o.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 534,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/_next/static/chunks/streamed-icons-CAm-YTy2.js",
+      "kind": "framework-asset",
+      "status": 200,
+      "bytes": 772,
+      "contentType": "text/javascript",
+      "pass": true
+    },
+    {
+      "path": "/niche/parasoplansetes",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "/api/health",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "/gift/parasoplansetes",
+      "status": 404,
+      "pass": true
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/uzklausa",
+      "kind": "cross-origin",
+      "status": 403,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6b19d0f2-a258-48be-9d46-66867bdf4e34.webp",
+      "status": 200,
+      "bytes": 4186,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/154e4efb-4bbe-4d12-8725-9128f845b536.webp",
+      "status": 200,
+      "bytes": 3442,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6f96f282-c3e2-44e7-a645-69fc590f45be.webp",
+      "status": 200,
+      "bytes": 4406,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/72dd3442-8ebe-4c1b-b070-1872a414cbfd.webp",
+      "status": 200,
+      "bytes": 2664,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/2a4ffcc8-4a67-443b-b32e-2c21a658c8b3.webp",
+      "status": 200,
+      "bytes": 3454,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/c5530e22-0c75-46ad-8973-f71e1aac10a9.webp",
+      "status": 200,
+      "bytes": 29902,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6e137c98-78e6-444b-8860-b5504b14fb5d.webp",
+      "status": 200,
+      "bytes": 22090,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/75e95132-667d-4980-b523-122b07b45aa1.webp",
+      "status": 200,
+      "bytes": 13134,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/eaf7f497-2be7-42aa-8acc-4cfbf91b8635.webp",
+      "status": 200,
+      "bytes": 10006,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/f662199f-fc30-4532-97ac-2b732c88d5f6.webp",
+      "status": 200,
+      "bytes": 4650,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/246323f5-171a-469b-b4fd-403870ef722f.webp",
+      "status": 200,
+      "bytes": 38660,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/1cb4dda2-1813-47a8-a3e7-ec77ea5a5a1c.webp",
+      "status": 200,
+      "bytes": 24428,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/662e318a-d291-4e6b-8c3b-443b1b208b0b.webp",
+      "status": 200,
+      "bytes": 12690,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/2ff7618a-5d40-4b66-8a0d-ca762ee39754.webp",
+      "status": 200,
+      "bytes": 9166,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/f7af355c-80e6-4126-8e08-d3f56c1ff603.webp",
+      "status": 200,
+      "bytes": 4400,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
+      "status": 200,
+      "bytes": 38660,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/10d2c46c-4dd8-480c-b774-0a9abc3fed12.webp",
+      "status": 200,
+      "bytes": 24428,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/7ed6f893-4e38-4cd3-bda8-051a82245575.webp",
+      "status": 200,
+      "bytes": 12690,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/122d4817-a836-4b10-981f-c0ad27a79860.webp",
+      "status": 200,
+      "bytes": 9166,
+      "pass": true
+    },
+    {
+      "path": "/content-assets/parasoplansetes/682659c4-ba4f-4ab1-bbf3-f224998447b3.webp",
+      "status": 200,
+      "bytes": 4400,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "remoteDeploymentProven": true
+}

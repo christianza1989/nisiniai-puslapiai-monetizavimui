@@ -1,0 +1,1060 @@
+{
+  "siteId": "parasoplansetes",
+  "canonicalHost": "parasoplansetes.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-09T06:09:11.436Z",
+  "evaluator": "Codex agent, actual source/browser/HTTP review; no human expert certification",
+  "environment": {
+    "os": "Windows",
+    "node": "24.21.0",
+    "worker": "Wrangler4.92.0 local production build",
+    "preview": "127.0.0.1:8798",
+    "canonicalTransport": "read-only loopback8800, noindex",
+    "mail": "disabled",
+    "database": "local D1 synthetic only"
+  },
+  "version": {
+    "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+    "sourceVersion": "7761a29a0464e6ed0544b17567cd68539df89109",
+    "coreBase": "f743b1cbcb09418d733fbe3c72b6968d65a72259"
+  },
+  "verdict": {
+    "local": "NOT_READY",
+    "launch": "NOT_READY",
+    "demand": "UNMEASURED",
+    "visual": "Coherent distinct device/process design; reused conceptual topology for related guides disclosed."
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md",
+        "SALES_OPERATIONS.md"
+      ],
+      "notes": "Concrete equipment/license/deployment inquiry pilot; no order or proven demand claim."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md",
+        "SALES_OPERATIONS.md"
+      ],
+      "notes": "Existing owner catalogue supports actual offer selection; stock/license/price explicitly require confirmation; no fake checkout."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Core MB Pinet/info@pinet.lt defaults match approved package, footer/schema and core recipient resolver; no new contact override. SMTP behavior separately U2."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md",
+        "SALES_OPERATIONS.md"
+      ],
+      "notes": "No phone copied to public package, fake qualifications, reviews or exclusive representative status."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "history/REPORT.md",
+        "history/ASSESSMENT.md"
+      ],
+      "notes": "Canonical bounded archive retrieval returned UNKNOWN/0 readable snapshots; retrieval failure retained."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "MIGRATION.md",
+        "history/url-decisions.json"
+      ],
+      "notes": "No inferred historical URL restoration. Five actual owner products have exact conditional 1:1 targets; whole-domain/category redirect rejected."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "screenshots/"
+      ],
+      "notes": "Actual own catalogue desktop and StepOver nextGen5 desktop/mobile observations inform device/license distinction; screenshot URLs and limitations recorded."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/model-primary-sources.json",
+        "CONTENT_READINESS.md"
+      ],
+      "notes": "All five specific StepOver model primary sources reviewed; 4.3 explicitly four colours, NG10 device PDF/.NET REST/Print2NG path distinguished; stock/price/customer compatibility not invented."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "SEO_BASELINE.md",
+        "RESEARCH.md"
+      ],
+      "notes": "Desktop head and brand samples measured; mobile/13 null volumes/conversions explicitly unverified. No market-size inference."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "screenshots/"
+      ],
+      "notes": "Full home, gidai and long guides reviewed. Device rail/native process differs from nearest yellow silhouette/interior split hero network references."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "screenshots/"
+      ],
+      "notes": "Final actual CSS dimensions/tokens/navigation updated; unavailable cost inputs justify static model comparison instead of a fake calculator."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "screenshots/"
+      ],
+      "notes": "Five actual owner product photos kept at actual300px with credit. Original conceptual illustrations labelled; no customer deployment or technical blueprint claim."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "19 public pages reachable through actual header/footer/catalogue/related/index links; all4 guides discovered."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "Native desktop/mobile navigation and hash CTA tested; privacy route actually opened, catalogue model destinations verified."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "TOPICAL_PLAN.md"
+      ],
+      "notes": "Real models and distinct selection/PDF/integration/session reader jobs; no city or synonym doorway URLs."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "H1 identifies StepOver signature pads, useful process and model/contact actions in first screen."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Middle explains equipment/program/archive and sector-independent needs; ends with specific inquiry requirements and guides."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "Native invalid form, real503-before-table, real200-after-table, privacy route and CTA documented; no success-only mock."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Three initially prepared guides individually read before native review; fourth session guide distinct."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/model-primary-sources.json",
+        "self-audit/semantic-after.json"
+      ],
+      "notes": "Current bounded technical statements compared to model-specific manufacturer evidence; legal/customer assurances remain excluded."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Selection6criteria/example, PDF8tests, integration ownership, session6tests; source/next-step panels present."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/guide390.json",
+        "self-audit/guide390.jpg",
+        "VERIFICATION.md"
+      ],
+      "notes": "Current selection guide inspected at390 with no horizontal overflow and exact approved inline text. Prior all-four-guide image/body reviews retained as historical evidence; body wording/assets unchanged apart from reviewed anchors."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "DESIGN.md",
+        "screenshots/"
+      ],
+      "notes": "Each guide real inspected image family; initial selection documentary, PDF conceptual document, integration topology. Text-focused legal/contact pages justified."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Actual MB Pinet Organization byline links to public redakcija."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "Visible byline and Organization schema agree; no fictitious Person expertise."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "Stable native publish/review dates agree with schema; scheduled timestamp tested against actual clock, production date remains unestablished."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "About/editorial pages explain AI, sources, agent review, limitation and correction email."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Codex editorial verification documented as agent/process, not a qualified human reviewer."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "PASS",
+      "evidence": [
+        "CONTENT_READINESS.md",
+        "self-audit/release.json"
+      ],
+      "notes": "Four guide anchor revisions and five model-source revisions reviewed at their new native revision hashes; final immutable release imported through canonical importer."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/render-only.json",
+        "self-audit/parasoplansetes-self-audit-after.json"
+      ],
+      "notes": "Current package19pages/4guides metadata and actual HTTP checked; one H1/title/description/lt/canonical."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "Semantic h2/h3, specific alt and own SVG mark/favicon. Brand accessible-name mismatch repaired before final commit."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "Future URL and exclusive media404 before date; unknown/private404 and no home canonical. Core negative regression tests pass."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/render-only.json"
+      ],
+      "notes": "All19 current structured outputs checked; source/author/date/breadcrumb relationships remain native eligibility-bound."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "Eligible breadcrumb paths and author profile relations agree; visible breadcrumb inspected mobile."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "No invented stock/Offer/Rating/Review/LocalBusiness; model facts in semantic content."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/guide390.json",
+        "self-audit/semantic-after.json",
+        "CONTENT_READINESS.md"
+      ],
+      "notes": "Corrected initially overbroad PASS: all four guides now have two useful same-site contextual body anchors in addition to related panels; visible text and destinations verified."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "self-audit/parasoplansetes-self-audit-core-tests.txt"
+      ],
+      "notes": "Historical real-clock package boundary preserved; current57 core regressions preserve hash/date/revocation/host restrictions."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "TOPICAL_PLAN.md"
+      ],
+      "notes": "Distinct question clusters; scoped2–4 related targets, no all-to-all authority mechanism."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/model-primary-sources.json",
+        "CONTENT_READINESS.md"
+      ],
+      "notes": "Model-specific manufacturer source links now accompany each of five model pages, with dated scope. Existing guide/Commission evidence remains bounded; no live availability certification."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Owned network domains registered; old WordPress source links removed before approval, future eligible links ID-gated; no undisclosed pending network publication."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "Relevant source and related anchors rendered in full guides; core LinkedText used. No sponsored/UGC links in this offer."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/seo-all-niches.json",
+        "self-audit/render-only.json"
+      ],
+      "notes": "Current all10-niche true-Host SEO smoke and this package canonical HTML/robots/sitemap/discovery pass; local noindex transport is explicit, not production robot access."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "Before/after sitemap eligibility and meaningful reviewed dates; private preview noindex, robots not asserted as auth."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "evidence": [
+        "rendered-before-publication.json",
+        "rendered-after-publication.json",
+        "http-acceptance.json"
+      ],
+      "notes": "One core authoritative projection controls HTML/media/links/schema/sitemap/LLM at same real clock and immutable package."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/parasoplansetes-self-audit-core-tests.txt",
+        "rendered-before-publication.json",
+        "rendered-after-publication.json"
+      ],
+      "notes": "Current57 core tests pass; original actual clock future page/media404 and later200 receipts retained with original package hash."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Native reviewed release and canonical importer, generated registry append; other9 approved packages byte-unchanged by Git scope."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/semantic-before.json",
+        "self-audit/semantic-after.json",
+        "self-audit/render-only.json"
+      ],
+      "notes": "Initial URL-presence check overstated body parity:10 visible homepage blocks were omitted from llms-full. Fixed shared native-home reading adapter; independent comparison now missingHtml0/missingFullText0 across19pages."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Useful definitions and qualified answers/source reasons in visible semantic body, not a hidden model-only payload."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "GEO_READINESS.md",
+        "SEO_BASELINE.md"
+      ],
+      "notes": "Google ignores llms.txt. Supplementary export parity is fixed, but Google ranking, AI inclusion and citations are not measured or guaranteed; connected GSC/GA4 absent."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "Actual Enter skip→MAIN#turinys; details close/open with Enter; native labeled form; visible3px link/summary focus."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual200% text/zoom did not change in IAB; viewport/score is not proof."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "Native required/email/consent errors, image alt, semantic headings/details state. CSS has no necessary animation or forced motion."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/cards730.json",
+        "self-audit/cards730.jpg",
+        "self-audit/guide390.json",
+        "VERIFICATION.md"
+      ],
+      "notes": "Current730px guide cards loaded and rendered110px, correct sizes/currentSrc; current390px guide has no overflow. Initial320/390/768/1440 evidence is historical; this is not physical-phone or200% proof."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Narrow article/form/footer verified, actual enlarged-text behavior still unproved."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "screenshots/"
+      ],
+      "notes": "IAB viewport observations explicitly distinguished from physical phone and synthesized touch; unsupported200% attempt recorded."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/lighthouse-home.report.json",
+        "self-audit/lighthouse-pdf.report.json"
+      ],
+      "notes": "Current actual production-build mobile lab98home/98PDF, each automated accessibility100/best-practices100; real media, noindex preview. Two parallel samples, not field CWV or causal before/after claim."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/performance.json",
+        "self-audit/cards730.json"
+      ],
+      "notes": "Current LCP/CLS/TBT and category data saved; responsive110px card sizes corrected. Lab-only measures, not field INP; image variants/JS/CSS limits remain explicit."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "PASS",
+      "evidence": [
+        "http-acceptance.json",
+        "d1-local-evidence.json",
+        "d1-after-restart.json"
+      ],
+      "notes": "Native/HTTP validation, origin/size limits and503/200 actual; one marked durable QA row persists after restart with notification disabled."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "SMTP/recipient acceptance not tested; local notification disabled."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "No real marked Message-ID and matching INBOX evidence."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "PASS",
+      "evidence": [
+        "http-acceptance.json",
+        "public-core-tests.txt",
+        "VERIFICATION.md"
+      ],
+      "notes": "Bots/DNT/GPC204, foreign origin403, invalid event400; synthetic local counters not unique users or received leads; supported exclusions preserved."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Public privacy inventory matches D1 lead fields and aggregate counters, no tracking identifiers/cookies, voice and third-party analytics off."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Information/inquiry terms and public privacy reflect native local synthetic pilot, not active production collection assurance."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "Purpose/contact/rights/storage/processor scope truthful; real production recipients/retention explicitly pending, not invented."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md",
+        "approved native package fae6a474"
+      ],
+      "notes": "No nonessential cookie/marketing runtime; form consent only inquiry use, no blanket subscription."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "public-staged-safety.json",
+        "http-acceptance.json"
+      ],
+      "notes": "Exact staged49blobs scanner PASS; no raw provider responses/private studio/D1/.openai config staged. Hash/date/host/payload boundaries tested."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Local write failure honest503, durable notification-disabled success, honeypot/size/origin assessed; production rate/recovery gaps named."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "CORE_FEEDBACK.md",
+        "self-audit/source-manifest.json"
+      ],
+      "notes": "Own shared reading helper/import/tests plus scoped niche card sizes and separate shared inspector fix. Eligibility/schema/lead isolation unchanged; source remains own branches, unmerged."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "PASS",
+      "evidence": [
+        "self-audit/parasoplansetes-self-audit-core-tests.txt",
+        "self-audit/seo-all-niches.json",
+        "self-audit/parser-tests-after.txt",
+        "self-audit/completion-tests.txt",
+        "self-audit/parasoplansetes-self-audit-final-build.txt"
+      ],
+      "notes": "Public57tests, all10SEO, scoped lint/tsc/build previously observed on unchanged committed source; private12Python/9Node tests pass after parser repair."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "CONTENT_READINESS.md",
+        "ACQUISITION.md",
+        "GEO_READINESS.md",
+        "HANDOFF.md",
+        "self-audit/source-manifest.json"
+      ],
+      "notes": "Required missing readiness/acquisition documents now contain actual facts and limits. Both repo mains freshly fetched; canonical project skills used."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "SELF_AUDIT.md",
+        "self-audit/initial-PHASE-1-AUDIT.json",
+        "self-audit/render-only-before-parser-fix.json",
+        "self-audit/parser-tests-before.txt",
+        "PHASE-1-AUDIT.json"
+      ],
+      "notes": "Own historic85-item audit and genuine failed receipts preserved; current code/package/browser/HTTP/lab evidence bound separately."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "SELF_AUDIT.md",
+        "PHASE-1-AUDIT.json",
+        "SITE_COMPLETION.json"
+      ],
+      "notes": "Four local gates remain UNVERIFIED; no full-local/site/domain/Google/AI outcome acceptance declared."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "VERIFICATION.md"
+      ],
+      "notes": "Actual production/operations control or data absent; not applicable local proof and not waived."
+    }
+  ],
+  "evidenceReuse": {
+    "initialAudit": "self-audit/initial-PHASE-1-AUDIT.json",
+    "initialSource": "39e327937ce32f2b27eef54c323d5d9a63a095de",
+    "initialPackage": "fae6a474091ea5b13e703aeca7aa22f5a159fa3e31ac32f665b4e1e7530c3429",
+    "reason": "Own historical evidence reused only for unchanged business, schema, lead/privacy/server contract, assets, keyboard and publication-boundary behavior. Four guides and five model source revisions, reading projection, card sizes and inspector checked separately below. Historical screenshots/lab scores do not become new observations."
+  }
+}

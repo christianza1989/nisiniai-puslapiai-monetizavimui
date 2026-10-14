@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-09T07:17:53.907Z",
+  "paidProviderCalls": 0,
+  "newSpendUsd": 0,
+  "previousSpendUsd": 0.231,
+  "cloudflare": {
+    "whoami": "SUCCESS",
+    "accountsCount": 1,
+    "queries": [
+      {
+        "path": "/zones",
+        "query": {
+          "name": "parasoplansetes.lt",
+          "per_page": 50
+        },
+        "httpStatus": 200,
+        "count": 0
+      },
+      {
+        "path": "/zones",
+        "query": {
+          "name": "signaturepads.lt",
+          "per_page": 50
+        },
+        "httpStatus": 200,
+        "count": 0
+      }
+    ],
+    "writes": 0
+  },
+  "treg": {
+    "tool": "my_tools",
+    "count": 0,
+    "providerCalls": 0
+  },
+  "mail": {
+    "hostingerEnvFound": false,
+    "credentialValuesRead": false,
+    "smtpExecuted": false,
+    "inboxExecuted": false
+  },
+  "browser": {
+    "surface": "IAB",
+    "capabilities": [
+      "visibility",
+      "viewport"
+    ],
+    "nativeApps": 0,
+    "actual200PercentVerified": false
+  },
+  "github": {
+    "lastPushHttpStatus": 403,
+    "account": "guzhas",
+    "writeAccessGranted": false,
+    "newPushAttempt": false
+  },
+  "limits": [
+    "Cloudflare result covers the connected account only",
+    "ENOTFOUND does not prove registrar availability",
+    "No source site, DNS, mail or production writes"
+  ]
+}

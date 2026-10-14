@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Reviewed PR32/PR9 prerequisites adopted by exact source; explicit site allowlists, own profile/corpus and source admission added. Native probes now site-scoped with foreign-audio-draft rejection. No production channels enabled.",
+  "eventId": "62f0eaea-696d-4418-b59c-7780d475a1e9",
+  "sequence": 2,
+  "at": "2026-10-09T15:54:57.025Z"
+}

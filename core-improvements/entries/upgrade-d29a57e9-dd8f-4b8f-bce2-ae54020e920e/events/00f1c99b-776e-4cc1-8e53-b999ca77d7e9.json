@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Delivered original 5.0 exclusion and independent reviewer false-positive retained. Current site procedural rule, independent reviewer instruction and prepublication guard tested. Two actual Gemini corrective writer/reviewer calls, same Case/thread SMTP + exact inbox PASS; deduped rerun, no blind paid retry.",
+  "checks": [
+    {
+      "command": "python -m pytest -q",
+      "result": "PASS",
+      "evidence": "316 passed, 155.61s; sites/parasoplansetes/AGENT-RESUME-20261009.md"
+    },
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "63 public tests; sites/parasoplansetes/AGENT-RESUME-20261009.md"
+    }
+  ],
+  "eventId": "00f1c99b-776e-4cc1-8e53-b999ca77d7e9",
+  "sequence": 2,
+  "at": "2026-10-09T19:40:07.048Z"
+}

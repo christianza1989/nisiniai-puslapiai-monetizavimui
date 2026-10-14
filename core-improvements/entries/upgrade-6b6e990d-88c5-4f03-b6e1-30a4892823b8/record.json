@@ -1,0 +1,34 @@
+{
+  "siteId": "core",
+  "summary": "Add explicitly selected OpenRouter text transport after actual Gemini HTTP402 billing block; retain shared signed chat/tools, accounting and independently reviewed followup paths",
+  "category": "code",
+  "evidence": [
+    "sites/parasoplansetes/AGENT-OPENROUTER-20261010.md",
+    "agent-business-core/runtime/tests/test_openrouter.py",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/46#issuecomment-6090138482"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/text_provider.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/chat.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/src/pinet_core/followup_projection.py",
+    "agent-business-core/runtime/tests/test_openrouter.py",
+    "agent-business-core/runtime/tests/test_chat_wire.py",
+    "agent-business-core/runtime/tests/test_model_usage.py",
+    "agent-business-core/runtime/tests/conftest.py",
+    "agent-business-core/runtime/scripts/text_provider_preflight.py",
+    "agent-business-core/runtime/.env.example",
+    "agent-business-core/runtime/README.md",
+    "sites/parasoplansetes/AGENT-OPENROUTER-20261010.md",
+    "sites/parasoplansetes/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Set private PINET_TEXT_PROVIDER=gemini and restart owned runtime, or scoped revert; no DB migration, prior reservations and original tests retained",
+  "id": "upgrade-6b6e990d-88c5-4f03-b6e1-30a4892823b8",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "6691b0f0a52e32d275b99d8cae5b751e2d6550c0",
+  "createdAt": "2026-10-09T22:20:54.631Z"
+}

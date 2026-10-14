@@ -1,0 +1,280 @@
+{
+  "siteId": "parasoplansetes",
+  "evaluatedAt": "2026-10-09T06:09:11.436Z",
+  "stages": {
+    "local": {
+      "passed": 68,
+      "applicable": 72,
+      "score": 9.44,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "R2",
+        "S2",
+        "U2",
+        "U3"
+      ]
+    },
+    "launch": {
+      "passed": 0,
+      "applicable": 11,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "B3",
+        "I4",
+        "O3",
+        "U4",
+        "W3",
+        "X3",
+        "Z3"
+      ]
+    },
+    "operations": {
+      "passed": 0,
+      "applicable": 2,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "A3",
+        "V3"
+      ]
+    }
+  },
+  "categories": {
+    "A": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "A3"
+      ]
+    },
+    "B": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "B3"
+      ]
+    },
+    "C": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": true,
+      "blockers": []
+    },
+    "D": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "E": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "F": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "G": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "H": {
+      "passed": 5,
+      "applicable": 5,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "I": {
+      "passed": 3,
+      "applicable": 4,
+      "score": 7.5,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "I4"
+      ]
+    },
+    "J": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "K": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "L": {
+      "passed": 3,
+      "applicable": 4,
+      "score": 7.5,
+      "perfect": false,
+      "gateReady": true,
+      "blockers": []
+    },
+    "M": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "N": {
+      "passed": 3,
+      "applicable": 4,
+      "score": 7.5,
+      "perfect": false,
+      "gateReady": true,
+      "blockers": []
+    },
+    "O": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "O3"
+      ]
+    },
+    "P": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "Q": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "R": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "R2"
+      ]
+    },
+    "S": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "S2"
+      ]
+    },
+    "T": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": true,
+      "blockers": []
+    },
+    "U": {
+      "passed": 1,
+      "applicable": 4,
+      "score": 2.5,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "U2",
+        "U3",
+        "U4"
+      ]
+    },
+    "V": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "V3"
+      ]
+    },
+    "W": {
+      "passed": 3,
+      "applicable": 4,
+      "score": 7.5,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "W3"
+      ]
+    },
+    "X": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "X3"
+      ]
+    },
+    "Y": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "Z": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "Z3"
+      ]
+    }
+  }
+}

@@ -4,6 +4,7 @@ from uuid import uuid4
 
 import httpx
 import pytest
+from pydantic import SecretStr
 from sqlalchemy import delete
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
@@ -24,12 +25,29 @@ from pinet_core.security import edge_signature
 from pinet_core.service import business
 
 
+@pytest.fixture(autouse=True)
+def isolate_text_provider(monkeypatch):
+    # Private runtime selection must not change synthetic unit-test transport.
+    cfg = settings()
+    monkeypatch.setattr(cfg, 'text_provider', 'gemini')
+    monkeypatch.setattr(cfg, 'openrouter_api_key', SecretStr(''))
+
+
 @pytest.fixture
 async def client(monkeypatch):
     cfg = settings()
     monkeypatch.setattr(cfg, "environment", f"test-{uuid4()}")
     monkeypatch.setattr(cfg, "allow_simulation", True)
     monkeypatch.setattr(cfg, "google_api_key", "")
+    # A running owner's scoped pilot must not turn unit tests into live IO.
+    monkeypatch.setattr(cfg, 'smtp_enabled', False)
+    monkeypatch.setattr(cfg, 'imap_enabled', False)
+    monkeypatch.setattr(cfg, 'smtp_sites', [])
+    monkeypatch.setattr(cfg, 'smtp_recipient_allowlist', [])
+    monkeypatch.setattr(cfg, 'voice_pilot_enabled', False)
+    # Isolate the legacy transport fixtures from checkout-local niche admission.
+    monkeypatch.setattr(cfg, 'voice_sites', ['traktoriupadangos'])
+    monkeypatch.setattr(cfg, 'knowledge_refresh_sites', ['traktoriupadangos'])
     monkeypatch.setattr(cfg, 'learning_enabled', False)
     monkeypatch.setattr(cfg, 'learning_namespace', '')
     # Each fixture owns and disposes its engine. Match runtime connection pooling;

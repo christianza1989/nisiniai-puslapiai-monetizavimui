@@ -3,6 +3,7 @@ import asyncio
 import imaplib
 import re
 import ssl
+from html.parser import HTMLParser
 from email import policy
 from email.parser import BytesParser
 from email.utils import parseaddr
@@ -15,6 +16,41 @@ from .db import db
 from .models import Business, MailMessage
 
 
+NO_TEXT = '[Laiškas be tekstinės dalies; HTML ir priedai automatiškai nevykdomi.]'
+
+
+def body_text(message):
+    plain = message.get_body(preferencelist=('plain',))
+    if plain:
+        return plain.get_content()[:16000]
+    html = message.get_body(preferencelist=('html',))
+    if not html:
+        return NO_TEXT
+    # Parse inert text only. No DOM, images, links, CSS, scripts or attachments
+    # are loaded or executed; the resulting text remains untrusted evidence.
+    class Text(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.hidden = []
+            self.parts = []
+        def handle_starttag(self, tag, attrs):
+            if tag in {'script', 'style', 'head', 'svg', 'template'}:
+                self.hidden.append(tag)
+            if not self.hidden and tag in {'br', 'p', 'div', 'li', 'blockquote'}:
+                self.parts.append('\n')
+        def handle_endtag(self, tag):
+            if self.hidden and tag == self.hidden[-1]:
+                self.hidden.pop()
+            if not self.hidden and tag in {'p', 'div', 'li', 'blockquote'}:
+                self.parts.append('\n')
+        def handle_data(self, value):
+            if not self.hidden:
+                self.parts.append(value)
+    parser = Text()
+    parser.feed(html.get_content()[:65536])
+    return re.sub(r'\n[ \t]*\n+', '\n\n', ''.join(parser.parts)).strip()[:16000] or NO_TEXT
+
+
 def fetch_replies(known):
     cfg = settings()
     results = []
@@ -25,13 +61,16 @@ def fetch_replies(known):
         if status != "OK":
             return []
         for uid in data[0].split()[-100:]:
-            status, parts = imap.uid("fetch", uid, "(BODY.PEEK[HEADER.FIELDS (MESSAGE-ID IN-REPLY-TO REFERENCES FROM TO SUBJECT)] RFC822.SIZE)")
+            status, parts = imap.uid("fetch", uid, "(BODY.PEEK[HEADER.FIELDS (MESSAGE-ID IN-REPLY-TO REFERENCES FROM TO SUBJECT AUTO-SUBMITTED PRECEDENCE LIST-ID)] RFC822.SIZE)")
             if status != "OK":
                 continue
             pairs = [part for part in parts if isinstance(part, tuple)]
             if not pairs:
                 continue
             header = BytesParser(policy=policy.default).parsebytes(pairs[0][1])
+            if (str(header.get('Auto-Submitted', 'no')).casefold() != 'no'
+                    or str(header.get('Precedence', '')).casefold() in {'bulk', 'list', 'junk'} or header.get('List-ID')):
+                continue  # Never reply to automated responses or mailing lists.
             refs = re.findall(r"<[^<>\s]+>", str(header.get("In-Reply-To", "")) + " " + str(header.get("References", "")))
             if len({known[ref]["case_id"] for ref in refs if ref in known}) > 1:
                 continue  # Ambiguous thread; never guess which client case to update.
@@ -50,8 +89,7 @@ def fetch_replies(known):
             if not pairs or len(pairs[0][1]) > 65536:
                 continue
             message = BytesParser(policy=policy.default).parsebytes(pairs[0][1])
-            body = message.get_body(preferencelist=("plain",))
-            text = body.get_content() if body else "[Laiškas be tekstinės dalies; HTML ir priedai automatiškai nevykdomi.]"
+            text = body_text(message)
             results.append({"original": original, "provider_id": provider_id, "sender": sender,
                             "subject": str(header.get("Subject", "")), "body": text[:16000]})
     return results
@@ -59,12 +97,15 @@ def fetch_replies(known):
 
 async def sync_replies():
     cfg = settings()
-    if cfg.environment != "local" or not cfg.lab_mail_enabled:
+    owner_lab = cfg.environment == 'local' and cfg.lab_mail_enabled
+    if not owner_lab and not (cfg.imap_enabled and cfg.imap_sites):
         raise RuntimeError("local_owner_mail_connection_required")
     async with db.registry() as tx:
         sites = list(await tx.scalars(select(Business.site_id)))
     known = {}
     for site in sites:
+        if not owner_lab and site not in cfg.imap_sites:
+            continue
         item = await service.business(site)
         async with db.transaction(item.id, cfg.environment) as tx:
             for message in await tx.scalars(select(MailMessage).where(MailMessage.direction == "outbound",

@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-09T06:14:49.119Z",
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "source": "7761a29a0464e6ed0544b17567cd68539df89109",
+  "guide390": "guide390.json",
+  "cards730": "cards730.json",
+  "initialGuideToCatalog": "Mouse/AX link navigated at1280; URL and actual catalogue observed.",
+  "homeToGuide": "Keyboard Enter activated actual anchor at390; matching guide URL/content observed.",
+  "toolLimitations": "One mouse locator click after viewport override left focus at main and did not navigate; keyboard succeeded. No product defect inferred from this automation-only observation. First tab debugger synchronization stalled; fresh tab restored DOM interaction. This is not actual200% zoom or physical touch testing.",
+  "temporaryViewportReset": true
+}

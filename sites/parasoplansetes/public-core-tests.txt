@@ -1,0 +1,66 @@
+
+> site-creator-vinext-starter@0.1.0 test:core
+> node --test tests/*.test.mjs
+
+✔ approved immutable package passes validation (9.0401ms)
+✔ responsive media permits 60 variants and rejects a 61st (5.3358ms)
+✔ a niche package may publish an email-only contact (0.8275ms)
+✔ scheduled page is invisible until publishAt without a worker (0.6783ms)
+✔ approval cannot survive a body edit (0.8941ms)
+✔ cross-site references are rejected (0.6427ms)
+✔ future link target can be packaged, but never points to a missing page (0.9514ms)
+✔ optional approved external sources preserve old hashes and protect new edits (1.7039ms)
+✔ external sources must be labeled HTTPS links without credentials (1.3722ms)
+✔ future/missing/revoked inline destinations keep exact labels and only live pages/media project (6.4694ms)
+✔ network deployment, owned aliases and private sources cannot bypass target readiness (3.3395ms)
+✔ commerce is verified separately: canonical destination, approved attribution, expiry and text projection (29.628ms)
+✔ scheduled appearance and revocation update all exports without rewriting a file or package (10.3051ms)
+✔ only approved date semantics, profile and projected sources are exported (5.5731ms)
+✔ canonical identity, concise index and updated content stay site scoped (2.1373ms)
+✔ activation needs exact bytes and production evidence; local fixture cannot admit a real domain (28.6454ms)
+✔ SEO/LLM and legacy media aliases consume only the same projected public inventory (3.1003ms)
+✔ owned informational citations need an approved snapshot and current target; identity links cannot bypass readiness (9.012ms)
+✔ gift rich import keeps links in paragraphs, headings and repeated list items (24.8739ms)
+✔ unsafe, unknown and credential-bearing targets become labels with loss evidence (1.0197ms)
+✔ gift capture is deterministic and does not mutate module/global dates (1244.4893ms)
+✔ inline link inventory retains every occurrence and exact position (0.7329ms)
+✔ snapshot refuses overwrite, unsafe location and application/secret dependencies (266.9603ms)
+✔ staged handoff preserves exact reviewed bytes, all 11 approvals and the closed dependency set (7.2738ms)
+✔ all 15 shipped files have exact reviewed WebP bytes and every media reference resolves (482.2559ms)
+✔ the staged candidate stays outside active packages, public media and production admission (140.3088ms)
+✔ actual transferred dates use the shared projection and SEO/LLM inventory without changing approvals (63.62ms)
+✔ expired MemoryCasting information targets fail closed without altering transferred text or approval (7.646ms)
+✔ editorial candidate closes only the reviewed dependency set and leaves legal drafts outside (460.9899ms)
+✔ reviewed initial guides have truthful title/author/claims and preserve old URLs and schedule (16.3463ms)
+✔ article inline targets reveal in original heading/paragraph/list positions at exact boundary, then revoke (296.246ms)
+✔ home/index/authors do not leak future titles or create dangling navigation; images use actual family (201.5481ms)
+✔ metadata/schema match visible facts, not schedule; organization and safe JSON-LD only (98.0548ms)
+✔ Shared article schema uses the actual projected index and truthful editorial dates across adapters (66.7921ms)
+✔ article index renders the approved orientation body, not just its description (80.5896ms)
+✔ support page plan retains all legacy paths without fictional Person or automatic approval (2.882ms)
+✔ footer uses eligible original terms URL and does not invent an active automation-network link (90.94ms)
+✔ contact form requires public privacy, keeps real email fallback and never requests marketing consent (107.727ms)
+✔ empty review keeps each unspecified item attached to the correct offer (4.3713ms)
+✔ partial review distinguishes unknown from explicitly excluded scope (0.4896ms)
+✔ all excluded is fully specified but is not declared a complete installation or winner (0.4853ms)
+✔ invalid or misaligned selections fail instead of producing a false completeness result (0.7391ms)
+✔ cross-domain targets share approval/time/deployment guards and raw approval stays intact (4.7329ms)
+✔ contextual links use literal natural anchors, preserve text and cannot link inside words (6.1012ms)
+✔ mixed page media never becomes a hero variant or duplicate width (2.4554ms)
+✔ generator metadata is not a visitor badge; real source credit is retained (1.9002ms)
+✔ guide breadcrumb and schema share the actual public hub, not raw future pages (13.4666ms)
+✔ organization author references only an eligible profile and has consistent dates (2.5984ms)
+✔ public profile links to the same organization; future schedule never predates modified (3.8931ms)
+✔ informational utility pages do not become services through the editor bucket (1.722ms)
+✔ V1 guide hub is a CollectionPage and references only the supplied public inventory (4.8488ms)
+✔ SMTP header injection is rejected; Lithuanian message uses MIME UTF-8 (12.7924ms)
+✔ fragmented multiline replies and confirmed acceptance work without exposing credentials (25.4903ms)
+✔ SMTP refusal retains a generic error and closes the socket (2.7583ms)
+ℹ tests 54
+ℹ suites 0
+ℹ pass 54
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4733.6863

@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-09T06:00:07.977Z",
+  "projectionAt": "2026-10-09T06:00:06.605Z",
+  "siteId": "parasoplansetes",
+  "canonicalHost": "parasoplansetes.lt",
+  "transportOrigin": "http://127.0.0.1:8800",
+  "packageSha256": "ed39a2769c2fdd1732696f39076bf827972cc81bb98d385d30d9620149012e7b",
+  "inspector": {
+    "scriptSha256": "49db89a40ed92080ce8660bb43d4e40bcb19b37f604b0766f19911a83c58fc0a",
+    "htmlParserSha256": "92284c933c7d0f1a38c405f43c6ca3ef955252ce03a18b8bbe89544141fb11a1"
+  },
+  "source": {
+    "coreCommit": "7761a29a0464e6ed0544b17567cd68539df89109",
+    "files": [
+      {
+        "file": "scripts/content-package-core.mjs",
+        "sha256": "bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d"
+      },
+      {
+        "file": "lib/niche-links.mjs",
+        "sha256": "29d8ae699f7ee715718d31791fa1f0189dd47fa50f0fd270d9477b364c927b35"
+      },
+      {
+        "file": "lib/niche-seo.ts",
+        "sha256": "ec6d36be78381a80f094f18bcc9e46d6c3caa560eef36413f9d89d277b5e371b"
+      },
+      {
+        "file": "lib/niche-schema-core.mjs",
+        "sha256": "cdd0886e4dcb188caba5c9c8beb9f3f5914541d7286da4962ff16dd714a3c00f"
+      }
+    ]
+  },
+  "state": "RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE",
+  "publicPages": 19,
+  "hiddenPages": 0,
+  "articles": 4,
+  "rendered": [
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/gidai/kaip-pasirinkti-paraso-plansete",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/paraso-plansetes",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/programine-iranga",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/integracija",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/gidai/pdf-pasirasymas-plansete",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/gidai/paraso-plansetes-integracija",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/gidai/terminalinis-serveris-paraso-plansete",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/gidai",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/kontaktai",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/apie-projekta",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/redakcija",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/naudojimo-salygos",
+      "errors": []
+    },
+    {
+      "url": "https://parasoplansetes.lt/privatumas",
+      "errors": []
+    }
+  ],
+  "crawlerPolicy": {
+    "Googlebot": [],
+    "bingbot": [],
+    "OAI-SearchBot": [],
+    "Claude-SearchBot": [],
+    "PerplexityBot": []
+  },
+  "http": [
+    {
+      "path": "/produktas/paraso-plansete-stepover-naturasign-pad-classic",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "74c982f241f53eabf0ea0d52c94267c74c491108b49bba94d970146b9c48b41e"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c865b0583f69782b5c265f5d4510af46d0de746750131ddf9a2953fe646eebed"
+    },
+    {
+      "path": "/gidai/kaip-pasirinkti-paraso-plansete",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "57288548ac5438a4d4260f0d7117ab59aafdd60ca78d52985e8900d7b10ffccf"
+    },
+    {
+      "path": "/paraso-plansetes",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1219581218bda36bc88941fe2f9787e44a65331fa9c31e27c8d2f2ce887c06db"
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-4-3",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "81dd016effd983bc4575ce75e909a69005a53a2288a423599c104f5389bfa497"
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-10-0",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "892b3f85b8bc8588f94a6cdfa99e306220fd19e7e3e45aa4080c9ad94d111ba0"
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-5-0",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "438dcbfcf1c6c068b2ae4665b33d11417a974a9e36e3bc33d9cd508efc3dbc4b"
+    },
+    {
+      "path": "/produktas/paraso-plansete-stepover-durasign-pad-ng-10",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0bb67664870d5f0d87767a888f2ea60af4a9717ec37675a2594a10b0d5c6037d"
+    },
+    {
+      "path": "/programine-iranga",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6f3b67e9cb51991ebcde03b109b1becceb7eac2a37b700b1a029a7771148686c"
+    },
+    {
+      "path": "/integracija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "acc55f443ecd37daa0232fda3d5ff97bc270e782b9f120f9bb56d43838a7f42b"
+    },
+    {
+      "path": "/gidai/pdf-pasirasymas-plansete",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b0d067d86ed516d5f731e15d5ce288373bdaaebbb01928d9daa4916debf3670a"
+    },
+    {
+      "path": "/gidai/paraso-plansetes-integracija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "772e43297c5748f89d6cf90780ef10ef12c0c9c52d21879f7da01abfd9f17f2f"
+    },
+    {
+      "path": "/gidai/terminalinis-serveris-paraso-plansete",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d572c6c21bcee3226a8ad17d05821bc87887d1dd75f6dd3158055c40ba34c6f6"
+    },
+    {
+      "path": "/gidai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8a325fc6719cb9f6ae1512ec7cfa504f1fd139bdef18a234df6ab40e78f78029"
+    },
+    {
+      "path": "/kontaktai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "372f1529c11c8f994c532bf160997478d4edac04ce49bbaa9181a13d6ea7b4d1"
+    },
+    {
+      "path": "/apie-projekta",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5f643b2e61896071aaef5642fa5749cbfabf25c7c1e18550f10d89fbd8d467db"
+    },
+    {
+      "path": "/redakcija",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ecea059ef8b920a17c5f28ef0f1bcf8dedb3187ed7d346ce0f15f9a37c77e725"
+    },
+    {
+      "path": "/naudojimo-salygos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fea60537ddb3477aca97c5fd672f380779f4772c5cf501c6eb374d6a27bf9a72"
+    },
+    {
+      "path": "/privatumas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ba1d06d07b71027b1c9fc80a609e5636447a3ce224c8c9415f9a2d2bcb691cc1"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/154e4efb-4bbe-4d12-8725-9128f845b536.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a87df360e0c54d24236b18d271a2b0f2866dff8220d45f4493236b093461c8d1"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6f96f282-c3e2-44e7-a645-69fc590f45be.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "5de6339e0c21f52fd5924abbaeeaa17af042d1a7b68dd78903fe8d626b041381"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/72dd3442-8ebe-4c1b-b070-1872a414cbfd.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "15d76cd7c605a5b41ff00d3638a99ca534dc6e7eb4cd9b0837739d631c95458d"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6b19d0f2-a258-48be-9d46-66867bdf4e34.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "514cc5b63f271af176c08d26b16f2543caecba3dcd275b3e5f5d009a6f4edadd"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/2a4ffcc8-4a67-443b-b32e-2c21a658c8b3.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1f38ea0ba652231c2d32e1dee56c3a282412e2954c59fe1b8fad4ec4d312b844"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/75e95132-667d-4980-b523-122b07b45aa1.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "6e86346d1b306c16fe400b1b9af815c6978275e2b8527b81ce6b1b9db240e1e6"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/6e137c98-78e6-444b-8860-b5504b14fb5d.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "f1e0171750ed089168391c91d37263f60d6d31aee1713112d27152c4731002e4"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/c5530e22-0c75-46ad-8973-f71e1aac10a9.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "cc5df6721edd7a25b650477b5c7d59085da8a0022d96d3556f3d6597e72d5f75"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/eaf7f497-2be7-42aa-8acc-4cfbf91b8635.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "a9c3eca6a244f10b95e4fc37fd2e9a84b85eca1fda69823be816980751cf35fc"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/f662199f-fc30-4532-97ac-2b732c88d5f6.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "ad9d4540177e27cc74081735eb17910ebc0d8c6feb166f9ae09baa7092453493"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/1cb4dda2-1813-47a8-a3e7-ec77ea5a5a1c.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "9af4cec5a56022ffcf5974429f577c3f9e9322fa0e72245e0164ec5e1361b851"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/662e318a-d291-4e6b-8c3b-443b1b208b0b.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "92ea6061b33642c3de832475990cf26d7fc5e2137d45f1b9130eb809a4464418"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/2ff7618a-5d40-4b66-8a0d-ca762ee39754.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "2186c09c85663a1c8b7cc17c0f32a209d8f90920759cd9d6a286c000968720ce"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/246323f5-171a-469b-b4fd-403870ef722f.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "04311f1cb9a43843e22a1568fa5745e44ecc3cc42077344cd2161248f1347b52"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/f7af355c-80e6-4126-8e08-d3f56c1ff603.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1eadf452adb18b1bd57e5f1363c205422588e8dd0ea54e45cefc9c649eefce8d"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/7ed6f893-4e38-4cd3-bda8-051a82245575.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "92ea6061b33642c3de832475990cf26d7fc5e2137d45f1b9130eb809a4464418"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/10d2c46c-4dd8-480c-b774-0a9abc3fed12.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "9af4cec5a56022ffcf5974429f577c3f9e9322fa0e72245e0164ec5e1361b851"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/122d4817-a836-4b10-981f-c0ad27a79860.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "2186c09c85663a1c8b7cc17c0f32a209d8f90920759cd9d6a286c000968720ce"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/cb64f6da-31e1-4032-a004-bc7c68df0d45.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "04311f1cb9a43843e22a1568fa5745e44ecc3cc42077344cd2161248f1347b52"
+    },
+    {
+      "path": "/content-assets/parasoplansetes/682659c4-ba4f-4ab1-bbf3-f224998447b3.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "sha256": "1eadf452adb18b1bd57e5f1363c205422588e8dd0ea54e45cefc9c649eefce8d"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "sha256": "039ed0cfc036f0a559ec4ef46fec4450d6393adeb099cd7b1c6528b1afe88a26"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "3eafdf554acb1d834cdcafa494ea66464edf4d6a516b4b908e606bf297616c13"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "50c4a3f5a294c33236ccf2c2774341c115b1b97bed26c19a89ff56522938da0c"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "3ffbc4f5639ac68adc626d352faf4c8cfc1857f48db313aac13c27ab8790d34e"
+    },
+    {
+      "path": "/content-package.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9566a60a4f78081db88e8ebbc9e7fb088cb1edc407452ca59ee44459da353fd4"
+    },
+    {
+      "path": "/release-manifest.json",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c4f4144b9c3d1aa54615a8219bc4ebbf2f4c1dad99823c2f5f4309efd9102998"
+    },
+    {
+      "path": "/__niche-check-ed39a2769c2fdd17",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2802914052b9cd5b8b8048806b795fde6c90665abd2e052c85ac456943b30ef5"
+    }
+  ],
+  "auditScore": null,
+  "issues": [],
+  "limitations": [
+    "HTML checks do not prove computed browser visibility, image pixels, factual correctness or business capability.",
+    "Separate A–Z/browser/performance/form/source evidence and actual launch gates remain required.",
+    "Current package pages only; dynamic catalogue, query facets and other business routes retain their own acceptance.",
+    "Robots checks use the standard parser for search agents, not a verified crawler visit or proof of WAF/CDN/account access. Training and user-request bots have separate owner-controlled policies.",
+    "A controlled-clock local check is not evidence that the future live date has occurred.",
+    "GET requests only; no deployment, approval, paid research, DNS, mail or client writes."
+  ]
+}

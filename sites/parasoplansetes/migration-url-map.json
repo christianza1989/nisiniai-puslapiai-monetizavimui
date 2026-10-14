@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "siteId": "parasoplansetes",
+  "sourceOrigin": "https://signaturepads.lt",
+  "targetOrigin": "https://parasoplansetes.lt",
+  "deployed": false,
+  "preserveSourcePaths": ["/", "/iranga/paraso-plansetes/"],
+  "products": [
+    {"slug": "paraso-plansete-stepover-naturasign-pad-classic"},
+    {"slug": "paraso-plansete-stepover-durasign-pad-4-3"},
+    {"slug": "paraso-plansete-stepover-durasign-pad-5-0"},
+    {"slug": "paraso-plansete-stepover-durasign-pad-10-0"},
+    {"slug": "paraso-plansete-stepover-durasign-pad-ng-10"}
+  ],
+  "rule": "Only these five product paths, with or without a trailing slash, may receive a 301 to the exact target. Preserve signotec paths and the existing home/category. Apply only after production target, form, privacy and rollback acceptance."
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original native suite 45/46 FAIL: hardcoded 9 while shared compiler validates 10 packages. Exact source/compiled site ID inventory now replaces only that constant; V1 validators, revision hashes and schema equality retained. Final native suite 46/46 PASS.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/parasoplansetes/CONTENT_PRODUCTION_20261010.md"
+    }
+  ],
+  "eventId": "172f9887-a3ce-4253-afb3-9e3e4a822a1c",
+  "sequence": 2,
+  "at": "2026-10-10T06:52:11.453Z"
+}

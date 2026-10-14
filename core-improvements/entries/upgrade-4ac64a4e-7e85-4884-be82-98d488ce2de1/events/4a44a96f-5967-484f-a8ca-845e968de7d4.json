@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/17",
+  "commit": "4b960b2132f28fc2a4839c570f9df4d2533698f1",
+  "note": "Scoped public source committed/pushed to own PR17 branch; remoteSHA matches, exact4stagedfiles safety0findings and fresh base/handoff PASS. Current existing preview Worker38792c72-6be2-46ee-8498-5aa09b774c8d deployed. Draft remains unmerged; actual post-fix Chrome navigation/model reply and OpenRouter mail/reply are not accepted.",
+  "eventId": "4a44a96f-5967-484f-a8ca-845e968de7d4",
+  "sequence": 4,
+  "at": "2026-10-09T23:24:32.508Z"
+}

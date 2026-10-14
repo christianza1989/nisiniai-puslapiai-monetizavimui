@@ -1,0 +1,20 @@
+{
+  "siteId": "parasoplansetes",
+  "summary": "Companion V1 native StepOver homepage is visible in HTML but omitted from llms-full. Companion source paths reserved in issue44: lib/niche-seo.ts, lib/niche-reading-core.mjs, tests/niche-reading.test.mjs and tests/seo-core-smoke.mjs. Extract rendered-body adapter, preserve legacy custom-home hidden-body exclusion.",
+  "category": "code",
+  "evidence": [
+    "sites/parasoplansetes/self-audit/semantic-before.json",
+    "companion source 39e327937ce32f2b27eef54c323d5d9a63a095de:lib/niche-seo.ts",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44#issuecomment-6066772478"
+  ],
+  "paths": [
+    "sites/parasoplansetes/CORE_FEEDBACK.md",
+    "sites/parasoplansetes/self-audit"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/44",
+  "rollback": "Scoped revert of companion shared reading adapter and its imports/tests; historical content approval bytes stay unchanged.",
+  "id": "upgrade-88ce5681-1eb3-469a-8d54-3abd682dff42",
+  "branch": "codex/parasoplansetes-f1-20261008",
+  "baseSha": "d8e4e802d127fbf94aa5d20500b3af38a0f5159d",
+  "createdAt": "2026-10-08T18:50:33.218Z"
+}

@@ -1,7 +1,7 @@
 {
-  "packageSha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af",
-  "sourceVersion": "7647030d21ebc90726844a22d6c336b33ef7aa9d",
-  "coreCommit": "2c959ed5e7abd597112d4865abd0ff7413aff6a5",
+  "packageSha256": "6c7ea6b522ba35ad10723c9904552fb795cf30e3f704e4d41cc3c996344fb4e9",
+  "sourceVersion": "85b2bb18475c226c2afafdfa33f13540e33ce6a1",
+  "coreCommit": "00901f8d54ed7e3a6897310deaae920334bf32a4",
   "files": [
     {
       "file": "components/niche/promedical-site.tsx",
@@ -33,7 +33,7 @@
     },
     {
       "file": "lib/generated/content-packages.json",
-      "sha256": "eebe238d6601fb52b89010eaffb12927132f04e7b7717727de9370a93f4e0000"
+      "sha256": "a1fbc0c928170a4eabb180a3f9381e6fceb36685eb5006090a503cdbaf4a2331"
     },
     {
       "file": "lib/smtp-protocol.mjs",
@@ -81,7 +81,7 @@
     },
     {
       "file": "content-packages/promedical/content-package.json",
-      "sha256": "00c42e945f23f3f96ae7a10a0da738728e05dc66fcb474b9f7a2efbac1a7f6af"
+      "sha256": "6c7ea6b522ba35ad10723c9904552fb795cf30e3f704e4d41cc3c996344fb4e9"
     },
     {
       "file": "config/niche-path-aliases.json",
@@ -120,13 +120,13 @@
       "sha256": "18b033689748c875c5bf6e872118e90366c4e532862063ae1219519146e1dab9"
     }
   ],
-  "checkedAt": "2026-10-13T19:39:19.588Z",
-  "productionVersion": "b40523b5-c11b-460c-a551-82a4f31b537b",
-  "notes": "Owner-requested indefinite pause of future Promedical guides. Two already published guides remain public; 55 future approved guides, all original dates and content are preserved. Package unchanged; site-specific shared projection cutoff applies to HTML, links, media, schema, sitemap and reading exports. Existing runtime settings preserved.",
-  "productionDeployment": "ff47e93c-ffeb-4622-8af2-463a6f66d083",
+  "checkedAt": "2026-10-14T17:20:28.356Z",
+  "productionVersion": "5e694d1f-02e8-4859-bdab-68b53a8dd544",
+  "notes": "One owner-accepted E2 guide updated through genuine review/approval and pinned-baseline overlay. Description/intent and four Lithuanian source explanations align with accepted text. Other1908pages/siteenvelope/3777media/URL/date and55guidepause preserved. ISO E2 is a private second sample only. Existing runtime settings/bindings/routes preserved. No whole-site,200%zoom or form/mail acceptance claim.",
+  "productionDeployment": "cad514ac-ae33-4ef3-9432-957c51563873",
   "typographyEvidence": "verification-20261010/typography-refinement-v1.json",
   "logoEvidence": "verification-20261010/logo-change-v2.json",
-  "editorialEvidence": "verification-20261010/editorial-release-v1.json",
+  "editorialEvidence": "verification-20261014/gemini-e2-release-v1.json",
   "homeEvidence": "verification-20261010/generic-home-v1.json",
   "footerEvidence": "verification-20261013/footer-attribution-removal-v1.json",
   "urlMigrationEvidence": "verification-20261013/url-migration-v1.json",

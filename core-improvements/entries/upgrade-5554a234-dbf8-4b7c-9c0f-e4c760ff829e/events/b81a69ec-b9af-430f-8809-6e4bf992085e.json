@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/138",
+  "commit": "00901f8d54ed7e3a6897310deaae920334bf32a4",
+  "note": "Scoped release implementation pushed for draft review. Full studio66 tests and actual one-page overlay/import/deployment prove this local use; root read-only review confirmed baseline media pinning. Public PR39 holds only accepted E2 package/compiled data. No shared main merge or cross-PC adoption. Curated source/runtime receipt preserves1908otherpages,3777media,55-guide pause, existing bindings/settings/routes and explicit renderer/zoom/mail limits.",
+  "eventId": "b81a69ec-b9af-430f-8809-6e4bf992085e",
+  "sequence": 4,
+  "at": "2026-10-14T17:31:00.703Z"
+}

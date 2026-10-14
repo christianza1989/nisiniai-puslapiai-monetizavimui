@@ -5,7 +5,8 @@ from ..control.routes import envelope as core_envelope
 from ..creation.routes import CreationRoute
 from ..customer.service import customer_guard
 from ..workspace_topics.routes import query_keys
-from . import service
+from . import directory, service
+from .directory_wire import DirectoryEnvelope
 from .wire import Cancel, Envelope, Send
 
 router = APIRouter(prefix="/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/team",
@@ -23,6 +24,17 @@ async def roster(portfolio_id: str, topic_id: str, request: Request, context=Dep
     query_keys(request, set())
     tx, session = context
     return envelope(request, await service.roster(tx, session, portfolio_id, topic_id))
+
+
+@router.get("/directory", response_model=DirectoryEnvelope)
+async def team_directory(portfolio_id: str, topic_id: str, request: Request, limit: int = Query(20, ge=1, le=50),
+    cursor: str | None = Query(None, min_length=1, max_length=2048), context=Depends(authenticated, scope="function")):
+    query_keys(request, {"limit", "cursor"})
+    tx, session = context
+    row = await service.topic(tx, session, portfolio_id, topic_id)
+    value = core_envelope(request, await directory.read(tx, session, row, limit=limit, cursor=cursor))
+    value["contract_version"] = "workspace-directory.v1"
+    return value
 
 
 @router.get("/events", response_model=Envelope)

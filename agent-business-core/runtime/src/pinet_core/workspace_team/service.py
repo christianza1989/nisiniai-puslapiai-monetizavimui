@@ -331,6 +331,9 @@ async def context_for(tx, task):
         "history": [{"event": event_view(e, row), "turn_status": (await tx.get(Task, e.task_id)).status} for e in reversed(rows)], "omitted_history_events": max(0, total-len(rows)),
         "history_cutoff": thread.event_sequence, "roster": roster_items(row, admitted=True),
         "roster_sha256": turn.roster_sha256, "old_notes": "excluded_without_explicit_new_intent"}
+    from . import directory
+    session = await tx.get(Session, task.session_id)
+    context["configured_agents"] = await directory.context(tx, session, row)
     turn.context, turn.context_sha256, turn.context_cutoff = context, digest(context), thread.event_sequence
     turn.deadline = min(turn.deadline, utcnow()+timedelta(seconds=3*settings().chat_runner_seconds+30))
     tx.info["workspace_team_deadlines"][task.id] = turn.deadline

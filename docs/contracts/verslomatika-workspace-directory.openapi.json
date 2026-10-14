@@ -1,0 +1,388 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Workspace saved-agent directory",
+    "version": "workspace-directory.v1",
+    "description": "Existing canonical draft metadata, never speaking/execution/calibration admission."
+  },
+  "paths": {
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/team/directory": {
+      "get": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Scoped saved-agent directory",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectoryEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid/denied/changed/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid/denied/changed/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid/denied/changed/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid/denied/changed/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid/denied/changed/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid/denied/changed/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DirectoryEntry": {
+        "additionalProperties": false,
+        "properties": {
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "registration_id": {
+            "format": "uuid",
+            "title": "Registration Id",
+            "type": "string"
+          },
+          "business_id": {
+            "format": "uuid",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "revision_id": {
+            "format": "uuid",
+            "title": "Revision Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "configuration_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Configuration Sha256",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "purpose": {
+            "enum": [
+              "site_chat",
+              "customer_research",
+              "email",
+              "custom"
+            ],
+            "title": "Purpose",
+            "type": "string"
+          },
+          "goal": {
+            "maxLength": 2000,
+            "minLength": 10,
+            "title": "Goal",
+            "type": "string"
+          },
+          "business_state": {
+            "enum": [
+              "current",
+              "not_current"
+            ],
+            "title": "Business State",
+            "type": "string"
+          },
+          "configuration_state": {
+            "const": "draft",
+            "default": "draft",
+            "title": "Configuration State",
+            "type": "string"
+          },
+          "availability": {
+            "const": "not_admitted",
+            "default": "not_admitted",
+            "title": "Availability",
+            "type": "string"
+          },
+          "calibration_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Calibration Status",
+            "type": "string"
+          },
+          "can_delegate": {
+            "const": false,
+            "default": false,
+            "title": "Can Delegate",
+            "type": "boolean"
+          },
+          "provider_execution": {
+            "const": false,
+            "default": false,
+            "title": "Provider Execution",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "agent_id",
+          "creation_id",
+          "registration_id",
+          "business_id",
+          "revision_id",
+          "revision",
+          "configuration_sha256",
+          "name",
+          "purpose",
+          "goal",
+          "business_state"
+        ],
+        "title": "DirectoryEntry",
+        "type": "object"
+      },
+      "DirectoryPage": {
+        "additionalProperties": false,
+        "properties": {
+          "topic_id": {
+            "format": "uuid",
+            "title": "Topic Id",
+            "type": "string"
+          },
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "business_id": {
+            "format": "uuid",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DirectoryEntry"
+            },
+            "maxItems": 50,
+            "title": "Items",
+            "type": "array"
+          },
+          "total_count": {
+            "minimum": 0,
+            "title": "Total Count",
+            "type": "integer"
+          },
+          "snapshot_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Snapshot Sha256",
+            "type": "string"
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "topic_id",
+          "portfolio_id",
+          "business_id",
+          "items",
+          "total_count",
+          "snapshot_sha256",
+          "has_more"
+        ],
+        "title": "DirectoryPage",
+        "type": "object"
+      },
+      "DirectoryEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-directory.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectoryPage"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectoryEnvelope",
+        "type": "object"
+      },
+      "Error": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "request_id"
+        ],
+        "title": "Error",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "CustomerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

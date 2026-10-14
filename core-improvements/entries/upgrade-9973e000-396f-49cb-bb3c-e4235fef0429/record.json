@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Workspace coordinator and Team view cannot see existing canonical customer-agent descriptions; add exact non-callable scoped directory and bounded context without duplicate execution or calibration",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_WORKSPACE_DIRECTORY_S3_2026_10_14.md",
+    "S2 source ff66d7bc70a1afa62c58371bbd1817ebe4e1f3d5 has exactly two built-in roster members and no canonical Agent/Config directory"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/directory.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/directory_wire.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/directory_contract.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/routes.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/service.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/adapter.py",
+    "docs/contracts/verslomatika-workspace-directory.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert S3 code/schema/portal imports to S2; no migration, stored configuration rewrite or new runtime activation",
+  "id": "upgrade-9973e000-396f-49cb-bb3c-e4235fef0429",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "00cd408144c0d77dfc1c97367e7c0bfc1aca9186",
+  "createdAt": "2026-10-14T04:35:08.234Z"
+}

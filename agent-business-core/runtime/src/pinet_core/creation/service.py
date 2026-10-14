@@ -116,6 +116,11 @@ async def queue(tx, creation, session, message, key, fingerprint):
     if not await job_history_schema_ready(tx):
         raise ControlError(503, "creation_unavailable")
     await quota(tx, session.user_id)
+    from . import execution_profiles as profiles
+    try:
+        await profiles.admission(tx)
+    except profiles.RunnerError:
+        raise ControlError(503, "creation_unavailable") from None
     creation.job_sequence += 1
     job = Job(id=new_id(), creation_id=creation.id, session_id=session.id, sequence=creation.job_sequence,
         base_revision=creation.current_revision, message=message, idempotency_key=key, fingerprint=fingerprint,
@@ -204,6 +209,11 @@ async def create_own(tx, session, value):
             raise ControlError(409, "idempotency_conflict")
         return old
     admission_enabled()
+    from . import execution_profiles as profiles
+    try:
+        await profiles.require_schema(tx)
+    except profiles.RunnerError:
+        raise ControlError(503, "creation_unavailable") from None
     if (await tx.scalar(select(func.count()).select_from(Creation))) >= 100:
         raise ControlError(409, "creation_count_limit")
     row = Creation(id=new_id(), user_id=session.user_id, organization_id=portfolio.organization_id,

@@ -1,4 +1,5 @@
 from functools import lru_cache
+from typing import Literal
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -49,6 +50,7 @@ class Settings(BaseSettings):
     site_build_actor_ids: list[str] = Field(default_factory=list, max_length=16)
     business_discovery_research_limit: int = Field(default=0, ge=0)
     creation_runner_enabled: bool = False
+    creation_execution_profile: Literal["default", "local_sol61_high_v1"] = "default"
     # Zero disables the operator's daily ceiling; all attempts are still recorded.
     creation_daily_limit: int = Field(default=0, ge=0)
     creation_global_daily_limit: int = Field(default=0, ge=0)

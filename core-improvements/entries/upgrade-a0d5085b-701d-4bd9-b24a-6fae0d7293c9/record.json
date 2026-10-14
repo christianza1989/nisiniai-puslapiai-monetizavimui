@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Root interface review found a second creator-Luna-only GUIDE wire validator/allOf that blocks a correctly bound local Sol/high creator. Align existing GUIDE output enum/export with bound server projection, preserving default SQL denial and history; no DTO fields or browser model selector.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_work/wire.py",
+    "agent-business-core/runtime/scripts/customer_content_work_contract.py",
+    "docs/contracts/verslomatika-customer-content-work.openapi.json",
+    "agent-business-core/runtime/offline_tests/test_pipeline_execution_profile.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "7496b7a5ddf183c080d7d4f05a9128f6ed096cc7:content_work/wire.py27-55 creatorLuna validator/allOf",
+    "Root explicitly extended S8 before GUIDE wire/export edits; portal consumers remain root-owned"
+  ],
+  "rollback": "Scoped GUIDE wire/export revert only with compatible bound-profile server/portal readers; preserve original failures and all historical rows. No portal/runtime/model activation.",
+  "id": "upgrade-a0d5085b-701d-4bd9-b24a-6fae0d7293c9",
+  "branch": "codex/verslomatika-local-sol-high-profile-s8-20261014",
+  "baseSha": "7496b7a5ddf183c080d7d4f05a9128f6ed096cc7",
+  "createdAt": "2026-10-14T17:37:13.752Z"
+}

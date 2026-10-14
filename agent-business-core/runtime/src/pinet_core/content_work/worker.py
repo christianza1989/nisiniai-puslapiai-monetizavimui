@@ -52,6 +52,8 @@ async def claim(*, creation_id=None):
                     continue
                 if creation_id is not None and creation.id != creation_id:
                     continue
+                from ..creation import execution_profiles as profiles
+                await profiles.ensure_current(owned, "guide", job)
                 if job.status == "running":
                     await service.fail(owned, job, "worker_interrupted")
                     continue
@@ -80,6 +82,8 @@ async def current(tx, claimed):
     creation, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
     if not job or job.status != "running" or job.run_id != claimed["run_id"]:
         raise RunnerError("authorization_revoked")
+    from ..creation import execution_profiles as profiles
+    await profiles.ensure_current(tx, "guide", job)
     if (not job.lease_until or job.lease_until <= utcnow() or not job.deadline_at
             or job.deadline_at <= utcnow() or not await service.authority(tx, job, creation)):
         raise RunnerError("authorization_revoked" if not job.deadline_at or job.deadline_at > utcnow() else "run_timeout")

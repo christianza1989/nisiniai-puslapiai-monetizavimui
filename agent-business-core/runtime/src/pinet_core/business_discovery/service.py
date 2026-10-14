@@ -121,6 +121,11 @@ async def enqueue(tx, row, session, message, key, fingerprint):
         raise ControlError(503, "discovery_unavailable")
     from ..creation.service import quota
     await quota(tx, session.user_id)
+    from ..creation import execution_profiles as profiles
+    try:
+        await profiles.admission(tx)
+    except profiles.RunnerError:
+        raise ControlError(503, "discovery_runner_unavailable") from None
     row.job_sequence += 1
     job = DiscoveryJob(id=new_id(), discovery_id=row.id, session_id=session.id,
         sequence=row.job_sequence, base_revision=row.current_revision, message=message,

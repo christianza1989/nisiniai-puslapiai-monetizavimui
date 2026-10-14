@@ -52,3 +52,22 @@ The focused rendered count matrix confirms all three labels at zero/one/two, inc
 - Local actual-state screenshot: `proof/captures/overview-copy-pristine.png`, SHA-256 `7a153ba192dd8f467c9482c48cd22cc74a9b6d05f65c14a1e00fbc50a103d9f7`.
 
 The collaborating chat reported its independent 17/17 backend/HTTP rerun against handoff head `14c033b204cb09b2f22c804a1e3f86a65ac8cff2`. Backend source is unchanged by these copy-only commits. No independent complete UI acceptance is inferred from that backend report.
+
+## Consolidated business plans v6 and stable PDF exports
+
+14 October 2026. Documentation source `64952feb12ea4c362fdee09af5c3e1109fb63736` updates the existing English and Lithuanian plans in place to version 6. Only app/platform current status, next sequence and prepared demonstration claims change. Original source dates, pricing/economics, hardware/manufacturer conflicts and commercial/physical uncertainty are preserved. No additional current plan files were created.
+
+| Current source/output | SHA-256 of local bytes | Result |
+| --- | --- | --- |
+| research/stringart-distribution-20261013/PLAN-EN.md | 5430af6836373acaa1bb6288891510eb412e97e9fcd00ab1dee0d7580419b3cd | Version 6, English |
+| research/stringart-distribution-20261013/PLAN.md | 8e8814e8c8d29ebac549a2cfb15d4ff843422a9f2c1e3a088a96b995920527c7 | Version 6, Lithuanian |
+| MemoryString-Business-Plan.pdf | 1a9d7bcf439c1724ea82364ec2d7af6134208624637e013fb9262eec1f251229 | 19 pages, 27 link annotations, zero text-bound issues |
+| STRINGART-verslo-ir-bendradarbiavimo-planas.pdf | 12bbb5e9574853bf24f188111ca6e5a5061ea35a1490a76392091b281b661127 | 20 pages, 35 link annotations, zero text-bound issues |
+| Supplier-Cooperation-Proposal.txt | 5811ae8ba286f631eca7c32eb97996dc9072869661a79fdfd29662f4a0fa163c | Stable export refreshed; unsent |
+| Supplier-Due-Diligence-Checklist.txt | 7fe64bb29af23c6305b8a8140e3bf4d2cf6b6e7615c1b88fac90bce1be10c0a6 | Stable export regenerated; content unchanged |
+
+The same existing PDF/text filenames remain under `C:/Users/Lenovo/Downloads/stringmachine/analysis-2026-10-13/`; binary outputs and raw QA stay local, not in Git. The PDF edit marker succeeded once for two outputs. A private helper copy changed only ROOT and current PDF subject metadata; the original read-only helper remained SHA-256 `275a11eab5fa873535be18cfafecc12f943b3dd78068c124a676b28d8437164b`.
+
+Validation: helper arithmetic/fixture totals/text bounds and PDF extraction terms pass. Protected English chapters 1–8, 11–15 and 17; Lithuanian chapters 1–8, 11–14, 16 and 17 match prior source after newline normalization. Every source URL is identical. The supplier proposal matches between both language plans and the stable text export. Same-author full updated-text self-edit and source comparison preserve facts, negations, conditions and dates; no fresh market/legal revalidation is implied.
+
+Native bundled Poppler rendered the affected English pages 1/10/11/17/19 and Lithuanian pages 1/10/11/12/17/20; all were visually reviewed for readable text, tables, headers/footers and page flow. A short Lithuanian orphan page was removed by condensing only the new status paragraph, and a stale app-section server-status sentence was corrected and re-rendered. Raw manifests/checks/renders are in the own ignored research tmp. No backend/browser journey rerun or fixture reset was needed for this document-only batch. Original checkout, supplier materials, mobile/code, real services and unsent-message boundary remain unchanged.

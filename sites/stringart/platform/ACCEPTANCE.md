@@ -18,6 +18,8 @@ The collaborating chat's final live overview review found a singular purchase la
 
 The same review then included the adjacent order and stock-line counters. Current copy source `c4fd8f4a4f0f3293a0a41ca3144e7516be6784b4` handles zero/one/two forms across all three queue labels, with a focused rendered matrix and unchanged persistent state. The collaborating chat independently reran all 17 backend/HTTP cases against handoff head `14c033b204cb09b2f22c804a1e3f86a65ac8cff2` and reported PASS; this copy batch changes no backend source.
 
+The released consolidated-plan documentation scope is now version 6 in both existing language files, source `64952feb12ea4c362fdee09af5c3e1109fb63736`. Stable English/Lithuanian PDFs and supplier text exports were regenerated and their affected pages rendered/reviewed. Protected facts/economics/source chapters and URLs remain unchanged; physical/commercial uncertainties and the unsent proposal boundary remain explicit. PDF/source fingerprints and exact QA scope are appended in proof/EVIDENCE.md. No functional code or runtime data changes belong to that document batch.
+
 ## Acceptance matrix
 
 | Requirement | Result | Evidence |

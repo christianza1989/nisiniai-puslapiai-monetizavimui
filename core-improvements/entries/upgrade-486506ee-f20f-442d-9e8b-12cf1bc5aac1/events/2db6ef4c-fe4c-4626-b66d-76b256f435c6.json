@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/149",
+  "commit": "a5d4f137087f8e1537e2024a2ce2af8196a27e43",
+  "note": "Created+attached open draft PR149 scoped against exact frozen remote Sol UI798, pushed functional a5d.172offlinePASS7opt-inCLISKIP42.37s/8deadlinePGPASS44.65s/2guardedhistoryPGPASS25.90s; first failures retained. ScopedRuff/diff/exact798 identity/default timing evidence/26staged0findings/full-SHA6sharedpath3upgrade coverage/pairedhandoff PASS. Root received exact functional SHA; source/test RELEASED/read-only, ownreceiptmetadata follows. No schema/paidprobe/ordinary/frozen798/original0032/counts/role mutation or main/actual model completion adoption claim. Root S9/d405/new isolated branch/UI and safe adoption remain separate.",
+  "eventId": "2db6ef4c-fe4c-4626-b66d-76b256f435c6",
+  "sequence": 4,
+  "at": "2026-10-14T19:39:43.754Z"
+}

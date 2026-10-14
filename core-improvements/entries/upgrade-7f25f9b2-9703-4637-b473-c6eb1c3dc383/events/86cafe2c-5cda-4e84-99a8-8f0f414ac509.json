@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Public issue36 scoped compiler/model/proxy now derives optional source proof from actual clean public Git root, canonical origin/main ancestor and revalidated raw package bytes, in existing admission map. Root transport/producer owned separately. Preserved readonly inventory VM JSONinterop and missing installer log directory errors, corrected probe/log preparation only. Both committed exact-source and no-ownGit copy Worker profiles built; headers remain absent on unproven source and forbidden hosts. No manual semantic PASS, account/model/channel/production changes.",
+  "eventId": "86cafe2c-5cda-4e84-99a8-8f0f414ac509",
+  "sequence": 2,
+  "at": "2026-10-14T11:18:29.193Z"
+}

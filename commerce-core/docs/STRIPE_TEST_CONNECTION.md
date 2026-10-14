@@ -10,6 +10,8 @@ node commerce-core/scripts/stripe-test-connect.mjs <actual-sandbox-account-id> 8
 
 Tik 127.0.0.1 serveris priima `rk_test_` raktą su Checkout Sessions Write, Accounts Read ir Events Read. Formoje raktas maskuojamas, atsakymai ir klaidos jo negrąžina, yra Host / Origin / nonce / 4 096 baitų įvedimo / vienalaikio įvedimo ir pakartojimo apsaugos. Faktinė paskyra tikrinama prieš privačiai sukuriant `runtime/stripe-memocasting/connection-pending.json` (`wx`; esamas failas neperrašomas). Šis failas dar nėra paruoštas payment adapteriui — webhook būtinas atskirai. Rakto negalima pateikti pokalbyje, Git, build ar public assets.
 
+Faktinis Stripe CLI1.53.1 `listen` bandymas papildomai pareikalavo `Debugging Tools: Write` (`stripecli_session_write`). Vietiniam webhook gavimui ši ketvirta ribota TEST teisė būtina. Pirminis403 neslepiamas: Accounts patikra su trimis teisėmis praėjo, CLI įvykių kanalas nepraėjo. Žmogus patvirtino papildymą; Stripe jo išsaugojimui papildomai prašo žmogaus autentifikavimo programėlės kodo. Kodo negalima pateikti pokalbyje ar automatizuotai apeiti.
+
 Naršyklės rakto kūrimo galutiniam veiksmui būtinas Computer Use action-time patvirtinimas. Forma gali būti paruošta prieš šį žingsnį. Live raktai ir bendri sk_test secret nepriimami šio įvedimo įrankio.
 
 Kanoninė frontend context schemaVersion1 papildyta:

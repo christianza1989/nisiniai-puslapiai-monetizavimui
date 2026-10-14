@@ -338,7 +338,9 @@ test('booking needs a documented ceiling contract and approved service; staging 
 
 test('locker multi-parcel limits reject before quote or create; only DPD Estonia permits up to five', async () => {
   const x = await setup();
+  x.adapter.admission.serviceCouriers = { 42: 'dpd' };
   const payload = (country, courier, count) => ({
+    serviceId: '42',
     sender: origin,
     recipient: { country, locker: { courier } },
     parcels: Array.from({ length: count }, () => ({
@@ -359,11 +361,52 @@ test('locker multi-parcel limits reject before quote or create; only DPD Estonia
     /carrier_locker_parcel_limit/,
   );
   assert.doesNotThrow(() => x.adapter.validateParcels(payload('EE', 'dpd', 5)));
+  x.adapter.admission.serviceCouriers['42'] = 'omniva';
+  assert.throws(
+    () => x.adapter.validateParcels(payload('EE', 'dpd', 5)),
+    /carrier_locker_parcel_limit/,
+  );
   await assert.rejects(
     x.adapter.createBooking(payload('LT', 'dpd', 2)),
     /carrier_locker_parcel_limit/,
   );
   assert.equal(x.creates(), 0);
+  x.db.close();
+});
+
+test('admitted v1 fresh-quote protocol supports one booking without insurance or a false absolute-cost claim', async () => {
+  const x = await setup();
+  const sent = [];
+  const adapter = new SendparcelBookingAdapter({
+    environment: 'sandbox',
+    accountRef: 'carrier_fixture',
+    apiPassword: 'fixture_api_password',
+    rateLimiter: { run: (_scope, f) => f() },
+    bookingAdmission: {
+      approved: true,
+      protocol: 'legacy_single_attempt',
+      pricingProtocol: 'v1_fresh_quote_no_insurance',
+      contractReference: 'Provider IT protocol fixture',
+      serviceIds: ['42'],
+    },
+    fetchImpl: async (url, options) => {
+      sent.push({ path: new URL(url).pathname, body: JSON.parse(options.body) });
+      return x.adapter.fetch(url, options);
+    },
+  });
+  assert.equal(adapter.costCeilingGuaranteed, false);
+  const command = await x.commands.get('store_a', 'sandbox', x.input.id);
+  x.price(800);
+  assert.equal(await adapter.validateCost(command.payload), false);
+  assert.equal(x.creates(), 0);
+  x.price(799);
+  await x.commands.execute('store_a', 'sandbox', x.input.id, adapter, 'operator');
+  assert.equal(x.creates(), 1);
+  const create = sent.find((s) => s.path.endsWith('/creates')).body.orderCreate;
+  assert.equal(create.product_id, '42');
+  assert.equal('insurance' in create, false);
+  assert.equal('idempotency_key' in create, false);
+  assert.equal((await x.commands.get('store_a', 'sandbox', x.input.id)).state, 'registered');
   x.db.close();
 });
 

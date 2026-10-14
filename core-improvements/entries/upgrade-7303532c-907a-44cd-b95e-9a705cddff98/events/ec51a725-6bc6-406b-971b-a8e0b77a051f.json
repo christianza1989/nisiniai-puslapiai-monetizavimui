@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual owned QA0037 baseline1FAIL19.92s retained in build-continuation-approval-lookup-first.log: newer actual target is approval/blocked/build_approval_unavailable behind105 older lookup-only fixtures. No provider or foreign fixture execution. Implement exact approval overload after reviewed0038 integration; baseline is not acceptance.",
+  "eventId": "ec51a725-6bc6-406b-971b-a8e0b77a051f",
+  "sequence": 2,
+  "at": "2026-10-14T18:20:48.802Z"
+}

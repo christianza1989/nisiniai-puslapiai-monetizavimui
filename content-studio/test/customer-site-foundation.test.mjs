@@ -74,6 +74,8 @@ test('canonical complete synthetic release is replayed once; missing local evide
   assert.equal((await readdir(path.join(f.base.outputDir,'releases',f.siteId))).length,1);
   const missing=f.call('customer-site-foundation',f.request(pin,'verify-local'));assert.equal(missing.value.state,'candidate');assert.deepEqual(missing.value.blockers,['local_evidence_missing']);
   const dir=path.join(f.directory,'foundation',digest(pin)),preview={version:1,scopeSha256:digest(pin),packageSha256:first.value.release.package_sha256,releaseId:first.value.release.release_id,publicSourceRevision:publicRevision,origin:'http://127.0.0.1:9'};
+  assert.equal(previewBinding({...preview,version:2,transportHost:'origin'},pin,first.value.release),preview.origin);
+  for(const patch of [{version:2},{version:2,transportHost:'canonical'},{version:1,transportHost:'origin'},{version:3},{version:2,transportHost:'origin',origin:'https://127.0.0.1:9'}])assert.throws(()=>previewBinding({...preview,...patch},pin,first.value.release));
   for(const origin of ['https://example.org','http://user:password@127.0.0.1:9','http://127.0.0.1:9/private','http://localhost:9/?x=1'])assert.throws(()=>previewBinding({...preview,origin},pin,first.value.release));
   const alias=path.join(dir,'preview.json');await symlink(path.join(f.temporary,'outside'),alias,process.platform==='win32'?'junction':'dir');assert.equal(f.call('customer-site-foundation',f.request(pin,'verify-local')).value.state,'candidate');await unlink(alias);
   const packageFile=path.join(f.base.outputDir,'releases',f.siteId,first.value.release.release_id,'content-package.json'),bytes=await readFile(packageFile);await writeFile(packageFile,Buffer.concat([bytes,Buffer.from(' ')]));const corrupted=f.call('customer-site-foundation',input);assert.equal(corrupted.value.state,'blocked');assert.equal(corrupted.value.release,null);await writeFile(packageFile,bytes);
@@ -81,20 +83,21 @@ test('canonical complete synthetic release is replayed once; missing local evide
   f.amend(pin.required_page_ids[0],{title:'Pasikeitęs privatus juodraštis'});assert.equal(f.call('customer-site-foundation',input).value.code,'foundation_context_stale');await f.unchanged();
 });
 
-async function rendererFixture(pkg,releaseDirectory,t){
+async function rendererFixture(pkg,releaseDirectory,t,transport='canonical'){
   // Load the actual shared renderer/SEO helpers; only HTTP/storage are fixture adapters.
   const require=createRequire(path.join(publicCore,'package.json')),ts=require('typescript'),React=require('react'),render=require('react-dom/server').renderToStaticMarkup;
   const media=await import(pathToFileURL(path.join(publicCore,'lib/niche-media.mjs'))),projection=await import(pathToFileURL(path.join(publicCore,'lib/content-projection-v2.mjs'))),seo=await import(pathToFileURL(path.join(publicCore,'lib/content-seo-v2.mjs')));
   const cache=new Map();function load(relative){const file=path.resolve(publicCore,relative);if(cache.has(file))return cache.get(file);const m={exports:{}};cache.set(file,m.exports);const output=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;
     const local=name=>{if(name.endsWith('niche-media.mjs'))return media;if(name.endsWith('.module.css'))return {default:new Proxy({},{get:(_,k)=>String(k)})};if(name.startsWith('@/')||name.startsWith('.')){const base=name.startsWith('@/')?path.join(publicCore,name.slice(2)):path.resolve(path.dirname(file),name);const found=[base,base+'.ts',base+'.tsx'].find(p=>fs.existsSync(p));if(!found||!found.startsWith(publicCore+path.sep))throw Error('Unscoped fixture import');return load(path.relative(publicCore,found));}return require(name);};vm.runInNewContext(output,{module:m,exports:m.exports,require:local,URL,Intl,Date,Set,Map,console});cache.set(file,m.exports);return m.exports;}
   const {NativeContentSite}=load('components/niche/native-content-site.tsx'),{contentMetadata}=load('lib/content-page-seo.ts'),pages=projection.projectContentPagesV2(pkg,[pkg],{},{}),http=[];
-  const server=createServer(async(req,res)=>{const p=new URL(req.url,'http://localhost').pathname;http.push(p);res.setHeader('x-niche-package-sha256',hash(fs.readFileSync(path.join(releaseDirectory,'content-package.json'))));res.setHeader('x-niche-source-revision',publicRevision);
+  const hosts=[];
+  const server=createServer(async(req,res)=>{const p=new URL(req.url,'http://localhost').pathname;http.push(p);hosts.push(req.headers.host);if(req.headers.host!==(transport==='origin'?'127.0.0.1:'+server.address().port:pkg.canonicalHost)){res.statusCode=404;res.end('Not found');return;}res.setHeader('x-niche-package-sha256',hash(fs.readFileSync(path.join(releaseDirectory,'content-package.json'))));res.setHeader('x-niche-source-revision',publicRevision);
     const page=pages.find(page=>new URL(page.url).pathname===p);if(page){const meta=contentMetadata(pkg,page),body=render(React.createElement(NativeContentSite,{pkg,page,livePages:pages}));res.setHeader('content-type','text/html');res.end(`<!doctype html><html lang="lt"><head><title>${meta.title}</title><meta name="description" content="${page.description}"><meta name="robots" content="noindex,nofollow"><link rel="canonical" href="${page.url}"><meta property="og:title" content="${page.title}"><meta property="og:description" content="${page.description}"><meta property="og:url" content="${page.url}">${(meta.openGraph?.images||[]).map(image=>`<meta property="og:image" content="${image.url}">`).join('')}</head><body>${body}</body></html>`);return;}
     if(p.startsWith('/content-assets/'+pkg.siteId+'/')){const file=path.join(releaseDirectory,'assets',path.basename(p));if(fs.existsSync(file)){res.setHeader('content-type','image/webp');res.end(fs.readFileSync(file));return;}}
     const kind={'/sitemap.xml':'sitemap','/llms.txt':'llms','/llms-full.txt':'llms-full','/robots.txt':'robots'}[p];if(kind){const value=seo.contentSeoV2(pkg,pages,kind,true);res.setHeader('content-type',value.type);res.end(value.body);return;}res.statusCode=404;res.end('Not found');});
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
   const stop=()=>server.listening?new Promise(resolve=>server.close(resolve)):Promise.resolve();t.after(stop);
-  return {origin:'http://127.0.0.1:'+server.address().port,http,stop};
+  return {origin:'http://127.0.0.1:'+server.address().port,http,hosts,stop};
 }
 
 async function inventory(directory){
@@ -104,17 +107,26 @@ async function inventory(directory){
 }
 
 import {pathToFileURL} from 'node:url';
-test('full local verifier really crawls a synthetic renderer; incomplete audit and changed evidence remain candidates',async t=>{
+for(const transport of ['canonical','origin'])test(`full local verifier crawls synthetic ${transport} Host; incomplete audit and changed evidence remain candidates`,async t=>{
   const f=await fixture(t);await f.prepare();const pin=f.scope(),first=f.call('customer-site-foundation',f.request(pin)).value;assert.equal(first.state,'candidate');
-  const dir=path.join(f.directory,'foundation',digest(pin)),releaseDirectory=path.join(f.base.outputDir,'releases',f.siteId,first.release.release_id),pkg=JSON.parse(await readFile(path.join(releaseDirectory,'content-package.json'))),server=await rendererFixture(pkg,releaseDirectory,t);
+  const dir=path.join(f.directory,'foundation',digest(pin)),releaseDirectory=path.join(f.base.outputDir,'releases',f.siteId,first.release.release_id),pkg=JSON.parse(await readFile(path.join(releaseDirectory,'content-package.json'))),server=await rendererFixture(pkg,releaseDirectory,t,transport);
   const evidenceFile='evidence-protocol.json',evidenceBytes=Buffer.from(JSON.stringify({synthetic:true,scope:'fixture protocol assumptions only; not factual/pixel/form/customer acceptance',source:publicRevision}));await writeFile(path.join(dir,evidenceFile),evidenceBytes);
   const review={version:1,scopeSha256:digest(pin),packageSha256:first.release.package_sha256,publicSourceRevision:publicRevision,reviewer:'synthetic-protocol-fixture',checkedAt:new Date().toISOString(),areas:Object.fromEntries(['facts','sources','media','presentation','enlargement','inquiry','measurement','language'].map(k=>[k,{status:'PASS',files:[{name:evidenceFile,sha256:hash(evidenceBytes)}]}]))};
   // These are controlled test inputs, not an automatically generated real A–Z audit.
   const catalog=catalogFromMarkdown(await readFile(path.join(ROOT,'SKILLS/niche-site-audit/references/checklist.md'),'utf8'));
   const audit={siteId:f.siteId,canonicalHost:pkg.canonicalHost,evaluatedAt:new Date().toISOString(),version:{packageSha256:first.release.package_sha256,sourceVersion:publicRevision},checks:catalog.map(c=>({id:c.id,status:c.stage==='local'?'PASS':'UNVERIFIED',evidence:c.stage==='local'?['Synthetic protocol assumption, not site acceptance']:[],notes:'Only an isolated test input.'}))};
-  const preview={version:1,scopeSha256:digest(pin),packageSha256:first.release.package_sha256,releaseId:first.release.release_id,publicSourceRevision:publicRevision,origin:server.origin};
+  const preview={version:transport==='origin'?2:1,scopeSha256:digest(pin),packageSha256:first.release.package_sha256,releaseId:first.release.release_id,publicSourceRevision:publicRevision,origin:server.origin,...(transport==='origin'?{transportHost:'origin'}:{})};
   await writeFile(path.join(dir,'preview.json'),JSON.stringify(preview));await writeFile(path.join(dir,'review-evidence.json'),JSON.stringify(review));await writeFile(path.join(dir,'PHASE-1-AUDIT.json'),JSON.stringify(audit));
+  if(transport==='origin'){
+    const wrong={...preview,version:1};delete wrong.transportHost;await writeFile(path.join(dir,'preview.json'),JSON.stringify(wrong));
+    const blocked=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(blocked.value.state,'candidate');assert.deepEqual(blocked.value.blockers,['foundation_renderer_unbound']);
+    await writeFile(path.join(dir,'preview.json'),JSON.stringify(preview));server.http.length=0;server.hosts.length=0;
+  }
   const result=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(result.status,0,JSON.stringify(result.value));assert.equal(result.value.state,'verified-local',JSON.stringify(result.value));assert.equal(result.value.synthetic,true);assert.equal(result.value.admission,'not_performed');assert.ok(server.http.length>12);assert.ok(result.value.completion.requests>12);
+  const expectedHost=transport==='origin'?new URL(server.origin).host:pkg.canonicalHost;
+  assert.deepEqual([...new Set(server.hosts)],[expectedHost]);
+  const checked=JSON.parse(await readFile(path.join(dir,'completion-'+result.value.completion.report_sha256+'.json')));
+  assert.equal(checked.transportHost,expectedHost);assert.equal(checked.canonicalHost,pkg.canonicalHost);assert.equal(checked.transportOrigin,server.origin);
   const paused={...pin,language_review_mode:'paused_local_pilot'},pausedRelease=f.call('customer-site-foundation',f.request(paused)).value.release,pausedDir=path.join(f.directory,'foundation',digest(paused));
   await writeFile(path.join(pausedDir,'preview.json'),JSON.stringify({...preview,scopeSha256:digest(paused),packageSha256:pausedRelease.package_sha256,releaseId:pausedRelease.release_id}));
   await writeFile(path.join(pausedDir,'PHASE-1-AUDIT.json'),JSON.stringify({...audit,version:{...audit.version,packageSha256:pausedRelease.package_sha256}}));
@@ -131,6 +143,8 @@ test('full local verifier really crawls a synthetic renderer; incomplete audit a
   const retained={...f.request(pin,'check-retained'),observation:recorded};
   async function check(expected){const before=await inventory(f.temporary),answer=f.call('customer-site-foundation',retained);assert.deepEqual(await inventory(f.temporary),before);assert.equal(server.http.length,httpCount);if(expected){assert.equal(answer.status,0,JSON.stringify(answer.value));assert.equal(answer.value.state,'retained-current');assert.equal(answer.value.observation_sha256,digest(recorded));}else{assert.equal(answer.status,1,JSON.stringify(answer.value));assert.equal(answer.value.code,'foundation_invalid_evidence');}}
   await check(true);
+  const exactReportHash=recorded.completion.report_sha256,wrongHostReport={...checked,transportHost:transport==='origin'?pkg.canonicalHost:new URL(server.origin).host};
+  const wrongReportFile=path.join(dir,'completion-'+digest(wrongHostReport)+'.json');await writeFile(wrongReportFile,JSON.stringify(wrongHostReport));recorded.completion.report_sha256=digest(wrongHostReport);await check(false);recorded.completion.report_sha256=exactReportHash;
   recorded.synthetic=false;await check(false);recorded.synthetic=true;
   recorded.completion.state='UNVERIFIED';await check(false);recorded.completion.state='LOCAL_DELIVERY_CHECKS_PASS';
   const files=[path.join(dir,evidenceFile),path.join(dir,'PHASE-1-AUDIT.json'),path.join(dir,'review-evidence.json'),path.join(dir,'preview.json'),path.join(dir,'completion-'+recorded.completion.report_sha256+'.json'),path.join(releaseDirectory,'content-package.json'),path.join(releaseDirectory,'release-manifest.json'),path.join(releaseDirectory,'assets',Object.keys(recorded.release.asset_sha256)[0])];

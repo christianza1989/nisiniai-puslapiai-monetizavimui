@@ -134,8 +134,8 @@ async function candidate(context,base,scope,details,directory){
   return actual;
 }
 export function previewBinding(value,scope,release){
-  exact(value,['version','scopeSha256','packageSha256','releaseId','publicSourceRevision','origin']);
-  if(value.version!==1||value.scopeSha256!==digest(scope)||value.packageSha256!==release.package_sha256
+  exact(value,['version','scopeSha256','packageSha256','releaseId','publicSourceRevision','origin',...(value.version===2?['transportHost']:[])]);
+  if(![1,2].includes(value.version)||(value.version===2&&value.transportHost!=='origin')||value.scopeSha256!==digest(scope)||value.packageSha256!==release.package_sha256
       ||value.releaseId!==release.release_id||value.publicSourceRevision!==scope.sources.public_source_revision)fail('foundation_preview_binding_invalid');
   let origin;try{origin=new URL(value.origin);}catch{fail('foundation_preview_binding_invalid');}
   if(origin.protocol!=='http:'||!['127.0.0.1','localhost'].includes(origin.hostname)||!origin.port||origin.pathname!=='/'
@@ -163,15 +163,15 @@ async function reviews(directory,scope,release){
   }
   return sha(raw);
 }
-async function renderer(origin,scope,release){
-  const response=await fetch(origin+'/',{redirect:'manual',signal:AbortSignal.timeout(10000),headers:{Host:scope.accepted.canonical_host,'Cache-Control':'no-cache'}});
+async function renderer(origin,scope,release,originHost=false){
+  const response=await fetch(origin+'/',{redirect:'manual',signal:AbortSignal.timeout(10000),headers:{Host:originHost?new URL(origin).host:scope.accepted.canonical_host,'Cache-Control':'no-cache'}});
   const size=Number(response.headers.get('content-length')||0);if(size>1000000)fail('foundation_renderer_unbound');
   await response.body?.cancel();
   if(response.status!==200||response.headers.get('x-niche-package-sha256')!==release.package_sha256
       ||response.headers.get('x-niche-source-revision')!==scope.sources.public_source_revision)fail('foundation_renderer_unbound');
 }
 async function localCompletion(context,scope,release,directory){
-  const previewRaw=await readArtifactBytes(path.join(directory,'preview.json'),16384),origin=previewBinding(JSON.parse(previewRaw),scope,release.evidence);
+  const previewRaw=await readArtifactBytes(path.join(directory,'preview.json'),16384),preview=JSON.parse(previewRaw),origin=previewBinding(preview,scope,release.evidence),originHost=preview.version===2;
   const auditPath=path.join(directory,'PHASE-1-AUDIT.json'),auditRaw=await readArtifactBytes(auditPath,2000000),audit=JSON.parse(auditRaw);
   if(audit.siteId!==context.siteId||audit.canonicalHost!==scope.accepted.canonical_host||audit.version?.packageSha256!==release.evidence.package_sha256
       ||audit.version?.sourceVersion!==scope.sources.public_source_revision)fail('foundation_audit_binding_invalid');
@@ -181,18 +181,19 @@ async function localCompletion(context,scope,release,directory){
   const indexes=required.filter(p=>p.type==='index'&&articles.every(a=>a.slug.startsWith(p.slug+'/'))).sort((a,b)=>a.slug.length-b.slug.length);
   if(!indexes.length)fail('foundation_article_index_unavailable');
   if(required.some(p=>!Number.isFinite(Date.parse(p.publishAt))||Date.parse(p.publishAt)>Date.now()))fail('foundation_publication_pending');
-  await renderer(origin,scope,release.evidence);
+  await renderer(origin,scope,release.evidence,originHost);
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
   const python=path.join(ROOT,'agent-business-core/runtime/.venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
   const report=await verifySiteCompletion(['--package',path.join(release.directory,'content-package.json'),'--origin',origin,
-    '--core',publicCore,'--article-index',indexes[0].slug,'--audit',auditPath,'--package-header','x-niche-package-sha256','--python',python]);
-  await renderer(origin,scope,release.evidence);
+    '--core',publicCore,'--article-index',indexes[0].slug,'--audit',auditPath,'--package-header','x-niche-package-sha256','--python',python,...(originHost?['--loopback-host','origin']:[])]);
+  await renderer(origin,scope,release.evidence,originHost);
   // Preserve actual inspection failures as immutable private receipts, not prose or a fabricated PASS.
   const reportBytes=Buffer.from(JSON.stringify(report)+'\n');if(reportBytes.length>5000000)fail('foundation_evidence_limit');
   const reportFile=path.join(directory,'completion-'+digest(report)+'.json');
   try{await writeFile(reportFile,reportBytes,{flag:'wx'});}catch(error){if(error.code!=='EEXIST')throw error;const old=await readArtifactBytes(reportFile,5000000);if(!old.equals(reportBytes))fail('foundation_evidence_changed');}
   if(report.state!=='LOCAL_DELIVERY_CHECKS_PASS'||report.issues.length||report.packageSha256!==release.evidence.package_sha256
       ||report.siteId!==context.siteId||report.canonicalHost!==scope.accepted.canonical_host||report.source.coreCommit!==scope.sources.public_source_revision
+      ||report.transportOrigin!==origin||report.transportHost!==(originHost?new URL(origin).host:scope.accepted.canonical_host)
       ||report.inspector.scriptSha256!==scope.sources.verifier_sha256||report.inspector.htmlParserSha256!==scope.sources.parser_sha256
       ||!report.auditScore?.stages?.local?.perfect||report.publicPages<required.length){
     const error=Object.assign(new Error('foundation_local_delivery_incomplete'),{code:'foundation_local_delivery_incomplete',
@@ -234,7 +235,8 @@ async function retained(context,scope,recorded,details,directory,publicCore){
   const report=await json(path.join(directory,'completion-'+proof.report_sha256+'.json'),5000000);
   if(digest(report)!==proof.report_sha256||report.state!=='LOCAL_DELIVERY_CHECKS_PASS'||report.issues.length
       ||report.packageSha256!==release.evidence.package_sha256||report.siteId!==context.siteId||report.canonicalHost!==scope.accepted.canonical_host
-      ||report.transportOrigin!==origin||Date.parse(report.checkedAt)!==Date.parse(proof.checked_at)||report.publicPages!==proof.public_pages
+      ||report.transportOrigin!==origin||(report.transportHost??scope.accepted.canonical_host)!==(preview.version===2?new URL(origin).host:scope.accepted.canonical_host)
+      ||Date.parse(report.checkedAt)!==Date.parse(proof.checked_at)||report.publicPages!==proof.public_pages
       ||report.http.length!==proof.requests||report.source.coreCommit!==scope.sources.public_source_revision
       ||report.inspector.scriptSha256!==scope.sources.verifier_sha256||report.inspector.htmlParserSha256!==scope.sources.parser_sha256
       ||!report.auditScore?.stages?.local?.perfect)fail('foundation_retained_stale');

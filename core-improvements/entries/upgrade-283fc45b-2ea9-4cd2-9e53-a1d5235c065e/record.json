@@ -1,0 +1,33 @@
+{
+  "siteId": "core",
+  "summary": "Owner requests one discoverable Facebook setup skill and complete canonical system documentation after actual Page API/profile Computer Use acceptance; fragmented historical draft docs misroute future agents.",
+  "category": "skills",
+  "evidence": [
+    "Owner request2026-10-14 after five-task live acceptance",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md",
+    "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md"
+  ],
+  "paths": [
+    "SKILLS/facebook-bot-setup/SKILL.md",
+    "SKILLS/facebook-bot-setup/agents/openai.yaml",
+    "SKILLS/facebook-bot-setup/references/meta-page-connection.md",
+    "SKILLS/catalog.json",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "AGENTS.md",
+    "agent-business-core/FACEBOOK_SYSTEM.md",
+    "agent-business-core/FACEBOOK_MODULE.md",
+    "agent-business-core/FACEBOOK_BROWSER_WORKER.md",
+    "agent-business-core/FACEBOOK_PAGE_API.md",
+    "PROJECT_STATUS.md",
+    "sites/lineage2ai/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/142",
+  "rollback": "Scoped revert of discovery/documentation/catalog entry; preserve actual live receipts and original failure history. Keep runtime policies paused; no token copies, mass reinstall or main reset.",
+  "id": "upgrade-283fc45b-2ea9-4cd2-9e53-a1d5235c065e",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "a3790cde04b47ec8dec68efb658aedcf8505c0ed",
+  "createdAt": "2026-10-14T19:37:15.288Z"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Verified open PR135 head fa2aad4e47a45af89381f495fd70dd6207358bc3 contains scoped diagnostic correction. Standard Auto-review and Join-only assumptions corrected using actual own session and browser evidence; exact additional host deny rule UNKNOWN. This does not fix/override the host gate or complete live Facebook acceptance. No external post/comment, no permission changes, no new confirmation request.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/135",
+  "commit": "fa2aad4e47a45af89381f495fd70dd6207358bc3",
+  "eventId": "1b6a5d29-b7de-465e-be73-a324b720fe76",
+  "sequence": 4,
+  "at": "2026-10-14T15:11:36.481Z"
+}

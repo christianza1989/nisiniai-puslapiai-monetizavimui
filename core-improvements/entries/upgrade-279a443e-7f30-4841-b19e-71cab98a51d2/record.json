@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Windows cp1252 stdout can fail after a successful browser claim when the task contains Lithuanian text; force UTF-8 before exchanging desktop queue JSON.",
+  "category": "code",
+  "evidence": [
+    "research/facebook-browser-worker-2026-10-14/QA.md",
+    "agent-business-core/runtime/tests/test_facebook_browser.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/facebook/desktop_worker.py",
+    "agent-business-core/runtime/tests/test_facebook_browser.py",
+    "research/facebook-browser-worker-2026-10-14/QA.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/136",
+  "rollback": "Revert only stdout encoding repair; preserve task receipts and avoid reclaiming a job after output failure.",
+  "id": "upgrade-279a443e-7f30-4841-b19e-71cab98a51d2",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "ffa6fee18cd1ae532ae892ff12674abf8290ac6c",
+  "createdAt": "2026-10-14T10:03:23.130Z"
+}

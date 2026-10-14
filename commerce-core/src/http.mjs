@@ -738,6 +738,35 @@ export function createHandler({
         const event = await adapter.verifyEvent(
           await boundedBody(request),
           request.headers.get('stripe-signature'),
+          {
+            checkoutInScope: async (session) => {
+              if (session.metadata?.store_id === store.id) return true;
+              const reference = (value) =>
+                typeof value === 'string' && value.length <= 200 ? value : null;
+              const own = await service.one(
+                'SELECT o.id FROM orders o JOIN stores s ON s.id=o.store_id WHERE o.store_id=? AND s.environment=? AND (o.checkout_id=? OR o.id=? OR o.id=? OR o.payment_id=?) LIMIT 1',
+                store.id,
+                environment,
+                reference(session.id),
+                reference(session.metadata?.order_id),
+                reference(session.client_reference_id),
+                reference(session.payment_intent),
+              );
+              // A known own session with removed/conflicting metadata must not be hidden.
+              requireValue(!own, 'stripe_store_mismatch', 403);
+              if (session.metadata?.store_id !== undefined) {
+                requireValue(identifier(session.metadata.store_id), 'stripe_metadata_invalid');
+                return false;
+              }
+              // Unscoped sessions carrying our core markers are ambiguous, not foreign.
+              requireValue(
+                session.metadata?.environment === undefined &&
+                  session.metadata?.order_id === undefined,
+                'stripe_metadata_invalid',
+              );
+              return false;
+            },
+          },
         );
         if (event) {
           if (event.kind === 'dispute') {

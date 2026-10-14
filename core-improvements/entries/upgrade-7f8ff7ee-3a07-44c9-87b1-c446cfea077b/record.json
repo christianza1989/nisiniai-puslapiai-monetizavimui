@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Facebook host denial diagnosis incorrectly attributed generic pre-process policy rejection to standard Auto-review and treated Join as evidence against comment access; actual turn context and empty actor-specific composers distinguish those states.",
+  "category": "workflow",
+  "evidence": [
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md#papildoma-atmetimo-diagnostika-pagal-savininko-tęsinį",
+    "SKILLS/niche-client-acquisition/references/facebook-browser-worker.md"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "SKILLS/niche-client-acquisition/references/facebook-browser-worker.md",
+    "agent-business-core/FACEBOOK_BROWSER_WORKER.md",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/142",
+  "rollback": "Scoped documentation revert; preserve earlier immutable rejection/test journal events and private proof. No host policy override or external retry.",
+  "id": "upgrade-7f8ff7ee-3a07-44c9-87b1-c446cfea077b",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "0020d560fb37417f4321686cb4deeb7300732301",
+  "createdAt": "2026-10-14T15:09:28.475Z"
+}

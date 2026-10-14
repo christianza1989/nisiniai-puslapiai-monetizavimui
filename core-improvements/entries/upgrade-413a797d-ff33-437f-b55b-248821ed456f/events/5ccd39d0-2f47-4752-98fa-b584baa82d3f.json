@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Source pushed to open PR135; actual remote head verified. 82 local regressions and actual synthetic CUA acceptance are documented. Main merge, production adapter adoption and live post receipt remain separate.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/135",
+  "commit": "994dd6bb9658fcb6efd28bcf07a8f7904e5d6b63",
+  "eventId": "5ccd39d0-2f47-4752-98fa-b584baa82d3f",
+  "sequence": 4,
+  "at": "2026-10-14T10:08:38.526Z"
+}

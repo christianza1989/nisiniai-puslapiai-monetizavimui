@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Real restricted borrowed pg_sleep query is no longer cancelled on successful EOF; subsequent SQL succeeds. Serial final denial and deadline/caller cancellation reject output while joining owned child/callback cleanup. First baseline1FAIL1.61s and prior57PASS1FAIL185.41s retained. No foreign rollback/maskedSQL/schema/Node/public/model/flags; original preview0032/counts/role unchanged. Branch verification only, no main/adoption/full-platform claim.",
+  "checks": [
+    {
+      "command": "git-freshness.mjs --phase continue --companion primary-public -- observe-qa.py test tests/test_studio_authorization_cleanup.py offline_tests/test_creation_studio.py tests/test_foundation_bridge.py tests/test_foundation_bridge_pg.py tests/test_content_page_pg.py offline_tests/test_content_page.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "agent-business-core/runtime/artifacts/s5-foundation/error-boundary/tests-9e8bbf34.log:89PASS97.62s;observe-qa-state.json:original0032/allcounts/restrictedroleunchanged"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation/studio.py tests/test_studio_authorization_cleanup.py",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_STUDIO_AUTHORIZATION_CLEANUP_2026_10_14.md:scopedRuffPASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_STUDIO_AUTHORIZATION_CLEANUP_2026_10_14.md:diffPASS"
+    }
+  ],
+  "eventId": "6453a5d0-950f-4b43-ba10-36ba86e16fe0",
+  "sequence": 2,
+  "at": "2026-10-14T15:23:34.879Z"
+}

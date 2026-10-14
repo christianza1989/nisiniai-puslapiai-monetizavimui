@@ -83,13 +83,19 @@ async def lifespan(app):
     await director_read.start(app, db)
     from .workspace_team import lifecycle as team_lifecycle
     team_worker = await team_lifecycle.start(app)
+    from .site_build import lifecycle as build_lifecycle
+    build_worker = None
     try:
+        build_worker = await build_lifecycle.start(app)
         yield
     finally:
-        await team_lifecycle.stop(team_worker)
-        await routing.active.close()
-        routing.active = None
-        await db.engine.dispose()
+        try:
+            await build_lifecycle.stop(build_worker)
+        finally:
+            await team_lifecycle.stop(team_worker)
+            await routing.active.close()
+            routing.active = None
+            await db.engine.dispose()
 
 
 app = FastAPI(title="Pinet business core", lifespan=lifespan)

@@ -63,8 +63,13 @@ async def claim(*, team_enabled=True, creation_id=None):
         await discovery.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                                 {"k": "creation-worker:" + cfg.environment})
         candidates = (await discovery.execute(text("SELECT * FROM control_creation_candidates(:e)"), {"e": cfg.environment})).mappings().all()
+        global_candidates = candidates
+        if creation_id is not None:
+            from ..site_build.selectors import selected
+            candidates = await selected(discovery, "creation", cfg.environment, creation_id)
         # One actual provider process across cooperating workers, including a just-revoked lease.
-        if any(row["status"] == "running" and row["lease_until"] and row["lease_until"] > utcnow() for row in candidates):
+        if any(row["status"] == "running" and row["lease_until"] and row["lease_until"] > utcnow()
+               for row in [*global_candidates, *candidates]):
             return None
         for candidate in candidates:
             async with scope(user=candidate["user_id"]) as tx:

@@ -1,0 +1,32 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Ordinary Discovery/approved Creation/initial GUIDE queues have no opt-in API supervisor; selected worker parents are filtered after global LIMIT20. Add finite local/test actor lifecycle, durable owner-RLS keyset catch-up and additive selected-candidate overloads, preserving canonical authority/execution and failure history.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/lifecycle.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/selectors.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/worker.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/worker.py",
+    "agent-business-core/runtime/migrations/versions/0037_selected_work_candidates.py",
+    "agent-business-core/runtime/tests/test_site_build_selectors_pg.py",
+    "agent-business-core/runtime/tests/test_site_build_lifecycle_pg.py",
+    "agent-business-core/runtime/offline_tests/test_site_build_lifecycle.py",
+    "docs/decisions/VERSLOMATIKA_EXECUTOR_LIFECYCLE_S7_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_EXECUTOR_LIFECYCLE_S7_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6172681447",
+    "bbb20edb6e39a15beba1bb6cb084a3f98163af99:control_api.py37/53-58;api.py67/84-89;threeSelectedWorkerClaimsAfterGlobalLimit20",
+    "Authorized primary scope extension includes exact content_work/worker.py selected-parent hook; no runtime activation"
+  ],
+  "rollback": "Scoped supervisor/hooks/0037 overload revert. Preserve existing one-argument functions,0035/0036/history/first failures and private QA; disable the supervisor through its default-OFF setting. No foreign data/reset/runtime flag changes.",
+  "id": "upgrade-1a237dab-47fe-4989-9961-3909a8a388c9",
+  "branch": "codex/verslomatika-executor-lifecycle-s7-20261014",
+  "baseSha": "bbb20edb6e39a15beba1bb6cb084a3f98163af99",
+  "createdAt": "2026-10-14T16:08:14.395Z"
+}

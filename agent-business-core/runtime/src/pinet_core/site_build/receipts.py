@@ -13,7 +13,7 @@ from ..customer_text.service import customer_session
 from ..models import new_id, utcnow
 from . import service as builds
 from .models import FoundationReceipt
-from .receipt_wire import FoundationView, ReceiptView
+from .receipt_wire import Check, FoundationView, ReceiptView
 
 
 async def schema_ready(tx):
@@ -38,7 +38,10 @@ def stored(row):
     try:
         expected = FoundationScope.model_validate_json(json.dumps(row.scope))
         observation = foundation.parse_observation(row.observation, expected)
+        request = Check.model_validate_json(json.dumps({"accepted_revision": row.accepted_revision,
+            "command": row.command, "idempotency_key": row.idempotency_key}))
         if (expected.fingerprint() != row.scope_sha256 or digest(row.observation) != row.observation_sha256
+                or request_fingerprint(row.creation_id, request) != row.request_fingerprint
                 or row.state != observation.state or str(expected.creation_id) != row.creation_id
                 or str(expected.approval_id) != row.approval_id or str(expected.accepted.revision_id) != row.revision_id
                 or str(expected.session_id) != row.session_id or expected.accepted.accepted_revision != row.accepted_revision
@@ -52,7 +55,8 @@ def stored(row):
 def receipt_view(row):
     expected, observed = stored(row)
     return ReceiptView.model_validate_json(json.dumps({
-        "receipt_id": row.id, "creation_id": row.creation_id, "accepted_revision": row.accepted_revision,
+        "receipt_id": row.id, "idempotency_key": row.idempotency_key, "command": row.command,
+        "creation_id": row.creation_id, "accepted_revision": row.accepted_revision,
         "checked_at": (observed.completion.checked_at if observed.completion else row.created_at).isoformat(),
         "state": observed.state, "blockers": observed.blockers,
         "release_id": str(observed.release.release_id) if observed.release else None,
@@ -196,7 +200,7 @@ async def check(token, creation_id, value):
         await foundation.verify(tx, expected)
         row = FoundationReceipt(id=new_id(), creation_id=identity, approval_id=str(expected.approval_id),
             revision_id=str(expected.accepted.revision_id), accepted_revision=expected.accepted.accepted_revision,
-            session_id=session.id, idempotency_key=key, request_fingerprint=fingerprint,
+            session_id=session.id, idempotency_key=key, command=value.command, request_fingerprint=fingerprint,
             scope_sha256=expected.fingerprint(), observation_sha256=digest(observed.model_dump(mode="json")),
             state=observed.state, scope=expected.model_dump(mode="json"), observation=observed.model_dump(mode="json"),
             **binding(creation))

@@ -41,7 +41,7 @@ async def record(c, cid):
             "channel_activation": "not_performed", "calibration_status": "UNVERIFIED"}
         value = FoundationReceipt(id=new_id(), creation_id=cid, approval_id=approval.id,
             revision_id=proof["revision_id"], accepted_revision=proof["accepted_revision"], session_id=session_id,
-            idempotency_key=str(uuid4()), request_fingerprint="a"*64, scope_sha256=digest(frozen),
+            idempotency_key=str(uuid4()), command="candidate", request_fingerprint="a"*64, scope_sha256=digest(frozen),
             observation_sha256=digest(observed), state="blocked", scope=frozen, observation=observed, **binding(native))
         return owner, value
 
@@ -109,4 +109,16 @@ async def test_incomplete_or_foreign_json_identity_cannot_be_inserted(build):
     with pytest.raises(DBAPIError):
         async with scope(user=owner) as tx:
             tx.add(second)
+            await tx.flush()
+
+
+async def test_json_null_identity_cannot_satisfy_sql_checks(build):
+    c = build
+    cid, _, _ = await first(c)
+    owner, value = await record(c, cid)
+    value.scope = {key: None for key in value.scope}
+    value.scope["accepted"] = {key: None for key in ("revision_id", "accepted_revision", "candidate_sha256", "accepted_source_revision")}
+    with pytest.raises(DBAPIError):
+        async with scope(user=owner) as tx:
+            tx.add(value)
             await tx.flush()

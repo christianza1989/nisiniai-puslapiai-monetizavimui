@@ -23,6 +23,8 @@ class Check(Strict):
 
 class ReceiptView(Strict):
     receipt_id: UUID
+    idempotency_key: UUID
+    command: Literal["candidate", "verify-local"]
     creation_id: UUID
     accepted_revision: int = Field(ge=1, le=20)
     checked_at: datetime

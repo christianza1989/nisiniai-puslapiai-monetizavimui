@@ -15,6 +15,7 @@ class FoundationReceipt(Owned, Base):
     accepted_revision: Mapped[int] = mapped_column(Integer)
     session_id: Mapped[str] = mapped_column(String)
     idempotency_key: Mapped[str] = mapped_column(String)
+    command: Mapped[str] = mapped_column(String)
     request_fingerprint: Mapped[str] = mapped_column(String)
     scope_sha256: Mapped[str] = mapped_column(String)
     observation_sha256: Mapped[str] = mapped_column(String)

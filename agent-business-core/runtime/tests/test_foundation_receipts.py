@@ -38,7 +38,8 @@ def test_replay_material_covers_creation_revision_command_and_uuid():
 
 
 def receipt():
-    return {"receipt_id": str(uuid4()), "creation_id": str(uuid4()), "accepted_revision": 1,
+    return {"receipt_id": str(uuid4()), "idempotency_key": str(uuid4()), "command": "candidate",
+        "creation_id": str(uuid4()), "accepted_revision": 1,
         "checked_at": "2026-10-14T09:00:00Z", "state": "candidate", "blockers": ["review_evidence_missing"],
         "release_id": str(uuid4()), "package_sha256": "a"*64, "execution_source_revision": "b"*40,
         "public_source_revision": "c"*40, "synthetic": True, "calibration_status": "UNVERIFIED",
@@ -62,6 +63,6 @@ def test_owner_projection_never_turns_partial_or_stale_into_ready():
 
 
 def test_exact_contract_has_no_origin_paths_model_tool_or_permission_input():
-    root = Path(__file__).resolve().parents[2]
-    assert json.loads((root / "contracts/site-foundation.schema.json").read_text("utf-8")) == document()
+    root = Path(__file__).resolve().parents[3]
+    assert json.loads((root / "docs/contracts/verslomatika-site-foundation.openapi.json").read_text("utf-8")) == document()
     assert set(document()["components"]["schemas"]["Check"]["properties"]) == {"accepted_revision", "command", "idempotency_key"}

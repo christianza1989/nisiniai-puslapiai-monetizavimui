@@ -6,6 +6,8 @@ Treg tyrimas: 1 650 frazių paieškų apimties rezultatų ir 18 LT Google rezult
 
 Naujesnis savininko nurodymas: [1–2 nauji straipsniai per dieną](DAILY_CONTENT.md). Bendras daily režimas pritaikytas Memocasting; [92 gidų dienos kalendorius](DAILY_EDITORIAL_CALENDAR_2026_10_14.csv) pradeda nuo šešių Kalėdų temų spalio 15–17 d. Kasdienis Codex rengimas įjungtas. Viešas pasirodymas lieka sąlyginis pagal tikrą straipsnio ir svetainės paleidimo priėmimą; vėluojant nėra masinio ankstesnių datų turinio išleidimo.
 
+Tolesnė plėtra įtraukta į [long tail planą](LONG_TAIL_PLAN_2026_10_14.md): gavėjo poreikiai, konkretus biudžetas, metinių ir santykio etapas, bendro laiko organizavimas, pasirinkimas prieš perkant ir pagalba po pirkimo. Atranka prasideda pirmojoje partijoje; po paleidimo papildoma tikrais užklausų ir puslapių duomenimis. Kas mėnesį numatyta peržiūrėti kitų 30 dienų kandidatų eilę. Tai tęstinis planavimo procesas, ne jau atliktas naujas tyrimas ar automatiškai patvirtinti papildomi URL.
+
 Ankstesnis visos dabartinės svetainės struktūros planas apima 88 esamus URL: 22 puslapių paskirtys keturiomis kalbomis — LT, PL, LV ir ET. Platus dovanų tyrimas šiame etape atliktas LT rinkai; kitų kalbų paklausa juo nepatvirtinama. Planavimas, straipsnių parašymas, tikros medijos parengimas, peržiūra ir publikavimas turi atskiras būsenas.
 
 | Plano dalis | Būklė ir šaltinis |

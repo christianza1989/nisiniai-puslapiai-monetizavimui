@@ -164,7 +164,10 @@ async def observe(scope, *, command="candidate", still_authorized):
     await guard()
     if await asyncio.to_thread(source_pins) != expected.sources:
         raise ControlError(503, "source_unavailable")
-    node, _, artifacts, environment = studio.configuration()
+    try:
+        node, _, artifacts, environment = studio.configuration()
+    except RunnerError:
+        raise ControlError(503, "foundation_bridge_unavailable") from None
     directory = artifacts / "customer-content" / str(expected.creation_id) / f"revision-{expected.accepted.accepted_revision}"
     payload = {"command": command, "scope": expected.model_dump(mode="json"),
         "creationId": str(expected.creation_id), "acceptedRevision": expected.accepted.accepted_revision,
@@ -173,7 +176,11 @@ async def observe(scope, *, command="candidate", still_authorized):
     try:
         value = await studio._execute([node, SCRIPT], payload, environment, still_authorized, 180)
     except RunnerError as error:
-        raise ControlError(503, "foundation_bridge_unavailable") from error
+        if error.code == "authorization_revoked":
+            raise ControlError(401, "unauthenticated") from None
+        if error.code in {"foundation_source_unavailable", "foundation_source_stale"}:
+            raise ControlError(503, "source_unavailable") from None
+        raise ControlError(503, "foundation_bridge_unavailable") from None
     result = parse_observation(value, expected)
     await guard()
     if await asyncio.to_thread(source_pins) != expected.sources:

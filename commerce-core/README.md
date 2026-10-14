@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+0.14.0: [produkcinio prijungimo ir D1 migravimo instrukcija](docs/PRODUCTION_CONNECTION.md). Atskiras operatoriaus įrankis išsaugo istorinius SQL failus, perduoda vientisus trigerius per native D1 binding ir blokuoja neatpažintą schemą. Vietiniai testai nėra tikros bazės ar LIVE Stripe prijungimo kvitas.
+
 2026-10-14 papildymas: [Sendparcel v1 patikslinimai](docs/SENDPARCEL_V1_2026_10_14.md) ir [nuolatinės Stripe TEST paskyros prijungimas](docs/STRIPE_TEST_CONNECTION.md). API password, per-raktą D1 ribojimas, paštomatų pakuočių ribos ir privatūs etikečių faktai pakeičia seną JWT interpretaciją. Abu rinkiniai apima baltus dažus už tas pačias 32 / 48 € kainas; naujų pilnų pakuočių matavimai dar nepatvirtinti. Mokėjimų prijungimas lieka aktyvus iki tikro Checkout → webhook bandymo.
 
 Aktualus 0.12.1 pagrindas: [susietas vietinis prekybos priėmimas](docs/LOCAL_SHOP_ACCEPTANCE_0_12_1.md), [partijų apskaita ir migracija](docs/CONTINUATION_0_12.md), [funkcijų peržiūra](docs/SHOP_FUNCTIONAL_REVIEW_2026_10_12.md). Pagaminto rinkinio galiojimo / kilmės ir pirkėjo būsenų spragos užbaigtos, exact SDK svetainėje patikrintas. Production, visos svetainės auditas, dizainas, našumas ir agentai lieka atskiri vartai.

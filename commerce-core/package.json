@@ -1,6 +1,6 @@
 {
   "name": "@pinet/commerce-core",
-  "version": "0.13.1",
+  "version": "0.14.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,6 +12,7 @@
     "operator:token": "node scripts/operator-token.mjs",
     "demo:seed": "node scripts/seed-demo.mjs",
     "business:prepare": "node scripts/prepare-business.mjs",
+    "production:migrate": "node scripts/migrate-production-d1.mjs",
     "dev:worker": "wrangler dev --local --port 8796",
     "build:worker": "wrangler deploy --dry-run --outdir tmp/worker-build",
     "test:worker": "node scripts/worker-smoke.mjs",

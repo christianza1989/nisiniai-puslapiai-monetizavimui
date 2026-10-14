@@ -5,11 +5,13 @@ import path from 'node:path';
 import { randomBytes } from 'node:crypto';
 import { Store, Fault } from './store.mjs';
 import { identities } from './seed.mjs';
+import { makeMonthSeed } from './month-fixture.mjs';
 
 const root=fileURLToPath(new URL('.',import.meta.url));
-export function createServer({dbFile=process.env.MEMORYSTRING_DB||path.join(root,'.local','operations.sqlite')}={}){
+export function createServer({dbFile=process.env.MEMORYSTRING_DB||path.join(root,'.local','operations.sqlite'),fixture=process.env.MEMORYSTRING_FIXTURE||'month'}={}){
  if(process.env.NODE_ENV==='production')throw Error('This synthetic local adapter is not admitted for production.');
- const store=new Store(dbFile),sessions=new Map();
+ if(!['month','baseline'].includes(fixture))throw Error('Choose the month or baseline synthetic fixture.');
+ const store=new Store(dbFile,fixture==='month'?{seedFactory:makeMonthSeed}:{}),sessions=new Map();
  const server=http.createServer(async(req,res)=>{
   res.setHeader('X-Robots-Tag','noindex, nofollow, noarchive');res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');
   res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'");

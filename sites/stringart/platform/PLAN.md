@@ -6,6 +6,12 @@ The owner authorized the next local frontend/backend phase through the collabora
 
 ## Outcome and boundaries
 
+### Current extension: a complete synthetic month
+
+Owner instruction, 14 October 2026: fill all ten studios with a complete month of mock data. Root owns this follow-up on `codex/memorystring-month-fixtures-20261014`. Use 1–30 September 2026 (UTC), with different studio volumes, orders on every day, completed and active portrait/kit journeys, exact preview histories, refund/return/cancellation/rework cases, weekly assembly, stock counts, supplier receipts, transfers, machine service and several referral sources. Build records by replaying the existing atomic commands with a fixture-only clock and deterministic IDs. Opening balances remain identifiable; current stock must reconcile to every movement. August opening orders support mature commission examples and are excluded from September sales.
+
+Keep all UI and data labels in English. Show the selected period and daily/partner totals in the existing overview; paginate long orders/audit/movement lists without hiding records. Preserve the Quiet Workbench text roles, inspect the changed overview and populated tables at desktop/320px and 200% text/spacing, and self-edit the final copy. Verify all ten role projections, chronology, daily coverage, state/reservation/machine/commission consistency, restart and a continued business action after loading. Preserve the prior local database and load only the named synthetic adapter. Existing historical acceptance remains unchanged; this extension receives a separate dated record within ACCEPTANCE.md. Retail, real authentication and all live adapters stay deferred.
+
 Demonstrate one operating system for a proposed EU studio network: operator oversight, isolated partner workspaces, supplier demand and purchase orders, portrait fulfilment, DIY kits, material accounting and referral commissions. All contacts, addresses, assets, sales and stock in this demonstration are synthetic. No real network, exclusivity, hardware compatibility or available supply is asserted.
 
 Retail/subdomain websites, production identity, customer activation, live telemetry/machine files, payments/payouts, mail, shipping, paid services and deployment remain later phases. Every external adapter is simulated and live off. The app's `memorystring.instructions/v1` JSON is validated through its unchanged model, retained as a revision-bound hand-threading project, and never called a manufacturer file.

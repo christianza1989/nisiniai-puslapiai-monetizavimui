@@ -1,5 +1,7 @@
 # Bendra visų svetainių turinio sistema
 
+Pilnas privatus ištirtos temos aprašas perduodamas esamam V1 `enqueue('draft', siteId, pageId, {fullBrief})`: tikslus `slug`, `question`, `contribution`, `outline` ir papildomi JSON duomenys iki 128 KiB. Jis perduodamas kaip nepatikima `pageData.editorialBrief` duomenų dalis, be trumpinimo, tačiau negauna instrukcijų ar patvirtinimo galios. Netinkamas adresas atmetamas prieš sukuriant darbą; caller objekto pakeitimai nekeičia eilėje esančio aprašo. Senas kvietimas be aprašo lieka suderinamas. Viešų schemų, patvirtinimų ir istorinių instrukcijų fingerprint šis laukas nekeičia. V2 generatoriaus vartas lieka uždaras.
+
 **Privaloma teksto saviredakcija — 2026-10-10:** visoms nišoms nuo pirmo juodraščio taikomos [kalbos kokybės taisyklės](SKILLS/niche-content-planner/references/language-quality.md). Autorius pats perskaito visą galutinį tekstą, pataiso sintaksę, vertinius ir neaiškias formuluotes, patikrina nuorodas bei išsaugotą faktinę prasmę; atskiro agento ar sesijos nereikia. Žinomos neištaisytos kalbos klaidos laikomos privačiomis redakcinėmis kliūtimis iki patvirtinimo. Esamo `recordEditorialReview.evidence.presentation` paaiškinime fiksuojama faktinė kalbos ir sąsajos peržiūros apimtis, ne automatiškai įrašytas PASS. Schema ir senų patvirtinimų istorija nekeičiama.
 
 2026-10-05. Vienas workflow visoms nišoms pagal siteId, įskaitant Madbeauty. Viešos V1/V2 schemos, publikavimo filtrai ir medijos importas nekopijuojami kiekvienai svetainei.

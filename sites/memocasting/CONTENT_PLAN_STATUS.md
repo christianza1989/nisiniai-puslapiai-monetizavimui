@@ -1,5 +1,7 @@
 # Turinio plano būklė · 2026-10-14
 
+**Naujausias pavedimas:** užbaigti visą topical authority ir long tail turinio paketą dabar, o ne kasdien rengti naują tekstą ar vėliau grįžti planuoti. [Aktualus priėmimo planas](BULK_CONTENT_COMPLETION.md) yra pagrindinis vykdymo šaltinis. Žemiau esanti ankstesnio tęstinio ciklo būsena išsaugota istorijai; jos kadencija taikoma publikavimui, ne parengimo ribai. Peržiūrėjus įkeliamas visas ateities datų paketas; vėlesnė rezultatų peržiūra maždaug po metų. Viešas įkėlimas vis dar laukia jau sutarto Stripe ir domeno priėmimo.
+
 **2026-10-14 dovanų turinio apimtis išplėsta pagal savininko pavedimą.** Parengtas [platus LT temų žemėlapis](TOPICAL_MAP_2026_10_14.md): 1 667 frazės, 107 turinio sprendimai, 106 skirtingi tiksliniai adresai ir 21 Kalėdų tema. Jis papildo ankstesnį 39 klausimų planą; ankstesnė siaura aprėptis nebevadinama visu dovanų turinio planu.
 
 Treg tyrimas: 1 650 frazių paieškų apimties rezultatų ir 18 LT Google rezultatų rinkinių; tikras vienkartinis mokestis 0,44136 USD iš autorizuoto 1 USD. Null, nulis, nematuota apimtis ir sinonimų bendras įvertis atskirti. Parengti pilni temų aprašai bei pirmosios susietos partijos darbų planas. Šeši nauji Kalėdų planai įrašyti esamu studijos mergePlan; jie privatūs, be straipsnio teksto ir patvirtinimo. Įrodymai priimti bendru SEO adapteriu, išsaugant ankstesnius crawl, pirminių šaltinių ir matavimo būsenos įrašus.

@@ -1,5 +1,7 @@
 # Kasdienis Memocasting turinys · 2026-10-14
 
+**Naujausia apimtis:** [viską parengti dabar](BULK_CONTENT_COMPLETION.md), įskaitant konkretesnes užklausas, visus tekstus ir vaizdus. Šiame dokumente minima 1–2 per dieną riba nuo šiol skirta vien viešam jau įkelto paketo pasirodymui. Ankstesnis kasdienio juodraščių rengimo ir mėnesinio temų papildymo ciklas pakeistas. Esama rengimo automatika pavadinta „Memocasting viso turinio užbaigimas“ ir turi užbaigti visą paketą, po hosted priėmimo išsijungti. Straipsnių pasirodymą turi valdyti hostingas, veikiant išjungtam savininko PC. Rezultatų ir turinio atnaujinimo peržiūra maždaug po metų.
+
 Savininkas pasirinko **1–2 naujus straipsnius per dieną**. Kalėdų temos turi pirmenybę. Patvirtinimas galioja turinio rengimui ir jo tęstiniam publikavimui po realaus svetainės paleidimo priėmimo; mokamų tyrimų periodinis leidimas nesuteiktas.
 
 Bendroje turinio studijoje pritaikytas `cadence: daily`, `articlesPerDay: 2`, Lietuvos laikas `Europe/Vilnius`. Tai viršutinė parengtų straipsnių riba. Kai tinkamai parengtas vienas straipsnis, antro nereikia užpildyti pasikartojančia tema. Kalendorius, tekstų parengimas ir jų atsiradimas viešame domene yra atskiros būsenos.

@@ -1,4 +1,6 @@
-# Tęstinis konkrečių dovanų užklausų planas
+# Konkrečių dovanų užklausų aprėptis
+
+**Aktualus savininko patikslinimas 2026-10-14:** visą long tail aprėptį ir tekstus parengti dabar pagal [viso turinio užbaigimą](BULK_CONTENT_COMPLETION.md). Žemiau aprašytas ankstesnis kasdienio rengimo ir mėnesinio planavimo ciklas paliktas kaip pakeisto sprendimo istorija; jis nebėra vykdymo nurodymas. Visos prasmingos kandidatų kryptys įvertinamos ir priskiriamos URL arba skyriui dabar. Į hostingą keliamas visas peržiūrėtas ateities datų paketas, straipsniai atsiranda po 1–2 per dieną. Naujo planavimo grįžus po pirmųjų 92 gidų nereikia; tolesnė rezultatų peržiūra maždaug po metų.
 
 Pradinis dovanų žemėlapis yra pagrindas tolesniam darbui. Savininkas numatė 1–2 naujus straipsnius per dieną ir 2026-10-14 paprašė plano, kaip tęsti su „long tail“ raktažodžiais. Šią plėtrą pradėti dar rengiant pirmąją partiją, o vėliau atranką papildyti tikromis svetainės paieškos bei produkto duomenų išvadomis. Nereikia laukti, kol visi 92 gidai bus vieši.
 

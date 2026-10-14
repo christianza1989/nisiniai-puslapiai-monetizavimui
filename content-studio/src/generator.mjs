@@ -6,6 +6,7 @@ import { randomUUID } from 'node:crypto';
 import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
+import { draftBrief } from './draft-brief.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -68,7 +69,7 @@ async function planSite(siteId, months = 0, skill, requestedCount = null) {
   return mergePlan(siteId, result.pages, months);
 }
 
-async function draftPage(siteId, pageId, skill) {
+async function draftPage(siteId, pageId, skill, fullBrief = null) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
   if (!page) throw new Error('Puslapis nerastas.');
@@ -79,7 +80,8 @@ async function draftPage(siteId, pageId, skill) {
       intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
       sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
       plannedNetworkLinks: page.networkLinkSuggestions || [],
-      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) }
+      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })),
+      ...(fullBrief ? { editorialBrief: draftBrief(fullBrief, page) } : {}) }
   });
   const result = await codexJson(prompt, 'draft-result.schema.json');
   if (!Array.isArray(result.blocks)) throw new Error('Codex negrąžino teksto blokų.');
@@ -159,6 +161,9 @@ async function generateImage(siteId, input) {
 }
 
 export async function enqueue(type, siteId, pageId, input = {}) {
+  // Capture before queuing: later mutation of the caller's object cannot change a job.
+  const fullBrief = type === 'draft' && input.fullBrief != null
+    ? draftBrief(input.fullBrief, (await getSite(siteId)).pages.find(page => page.id === pageId) || {}) : null;
   if(['autopilot','plan','draft','draft-batch'].includes(type)&&(await getSite(siteId)).schemaVersion===2)throw new Error('V2 generavimo kontraktas dar nepriimtas. Importuokite arba redaguokite struktūrizuotą v2 juodraštį; legacy generatorius jo neperrašo.');
   if (['autopilot','plan','draft','draft-batch'].includes(type)) {
     const site = await getSite(siteId);
@@ -173,7 +178,7 @@ export async function enqueue(type, siteId, pageId, input = {}) {
         if (skill) await updateJob(job.id, { editorialSkill: skill.metadata });
         const detail = type === 'autopilot' ? await autopilot(siteId, job.id, skill)
           : type === 'plan' ? await planSite(siteId, input.months ? contentPolicy({ ...((await getSite(siteId)).contentPolicy), months: Number(input.months) }).months : 0, skill)
-          : type === 'draft' ? await draftPage(siteId, pageId, skill)
+          : type === 'draft' ? await draftPage(siteId, pageId, skill, fullBrief)
           : type === 'draft-batch' ? await draftBatch(siteId, job.id, skill)
           : type === 'network-check' ? await verifyNetworkLinks(siteId, pageId)
           : type === 'image' ? await generateImage(siteId, input)

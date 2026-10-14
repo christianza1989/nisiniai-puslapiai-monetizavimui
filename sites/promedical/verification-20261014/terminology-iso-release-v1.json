@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "siteId": "promedical",
+  "checkedAt": "2026-10-14T18:51:11.094Z",
+  "status": "PASS_NINE_REVIEWED_PAGES_DEPLOYED_BEFORE_NEW_OWNER_PUBLICATION_PAUSE",
+  "publicSource": "85e9575e143b7a208cf47e094e7c8376be0762f2",
+  "coreImplementation": "00901f8d54ed7e3a6897310deaae920334bf32a4",
+  "packageSha256": "38df2ee29c9d35d2cf975f01b93a65f0e448a08914d60f3e718bfc12ae9af645",
+  "releaseId": "d3e75b6e-eff5-40b3-b2a2-4a6ce085af77",
+  "updatedPages": [
+    {
+      "pageId": "eab8457c-da03-420f-a149-33ebbd30953e",
+      "slug": "gidai/iso-moduliu-sistema",
+      "revisionHash": "5ef4e64cc467f9c0ca35622a5218d317791c188965605a801e36da52ebfa8239"
+    },
+    {
+      "pageId": "4fa604c7-9856-4cad-8f52-d7acf46580f3",
+      "slug": "produktai/nerudijanciojo-plieno-vezimelis-konteineriams-cn-15-21-15-21",
+      "revisionHash": "0c50d8aa4409a0d585692761fc7ad9ad3e3b7303ed81283362c97d96c4dc8af7"
+    },
+    {
+      "pageId": "fcf6bc85-7e6d-45b8-a57f-fb5f0a9f4c37",
+      "slug": "produktai/nerudijanciojo-plieno-vezimelis-konteineriams-cn-17-21-17-21",
+      "revisionHash": "da44c010c784fe64b5c00893de91cb66a0376e47a655a7bcb1b7b301d22f3b52"
+    },
+    {
+      "pageId": "b6fccacd-0db8-4184-8b1a-818c2670c434",
+      "slug": "produktai/medicininis-vezimelis-cn-23-21-vb-23-21-vb",
+      "revisionHash": "3530ccaecd9f3d732b2aec00af4b4853f066938534b1c0a599ac94c8f29f0b32"
+    },
+    {
+      "pageId": "406f36b2-622f-4de7-8048-cf0124a60541",
+      "slug": "produktai/medicininis-vezimelis-cn-23-21-va-23-21-va",
+      "revisionHash": "18fd711293b22ed22fd6cdbe6cd0482c1d87936ee46ed7026e1e5e065fc8d033"
+    },
+    {
+      "pageId": "2aca6e99-8949-4e37-a315-e70923462f35",
+      "slug": "produktai/auksta-viendure-spinta-cn-29-21-va-29-21-va",
+      "revisionHash": "c57ddf98d4bfbd6219401fdc2db10ab971612c335ed58b314916cbe50010edec"
+    },
+    {
+      "pageId": "5056c632-a710-4cbb-86db-33bb99f85374",
+      "slug": "produktai/vezimelis-maisto-padeklams-cn-21-21-21-vb",
+      "revisionHash": "44fcc39189ca965ece7969b28f749ad4131a6480cde5947bf67222989f2fdd08"
+    },
+    {
+      "pageId": "a5188390-8aea-4d8a-9a15-332a69cfe934",
+      "slug": "produktai/zema-viendure-spintele-cn-29-21-vc-29-21-vc",
+      "revisionHash": "581a6fe8adbb88c46f0d135ddee51271c3c2ad1c630102af34216ce1f5e46e60"
+    },
+    {
+      "pageId": "e55327c1-f647-4fbc-b39a-1f9f16aac61c",
+      "slug": "produktai/nestandartinis-nerudijanciojo-plieno-vezimelis-47-21",
+      "revisionHash": "b0f15aaaa94a13d2adfe55df57e2a5ff780db4b6621f246f23dbf8a91bee11bb"
+    }
+  ],
+  "unchangedPages": 1900,
+  "otherNineSitePackagesUnchanged": true,
+  "baselineMediaPinned": 3777,
+  "newByteIdenticalMediaAliases": 8,
+  "referencedReleaseAssets": 3780,
+  "fullGeminiCodexGuidesLive": 2,
+  "terminologyOnlyProducts": 8,
+  "privateHeldDraftsTerminologyCorrected": 4,
+  "publicGuideCount": 2,
+  "heldGuideCount": 55,
+  "runtime": {
+    "status": "PASS_ACTUAL_DEPLOYMENT_RUNTIME_UNCHANGED",
+    "checkedAt": "2026-10-14T18:39:46.376Z",
+    "deployment": "c1a55589-2ab6-409d-9f37-7b9f5f936c2d",
+    "version": "58297b75-f4c8-4c43-9b85-7f7a34c41f30",
+    "percentage": 100,
+    "settingsAndSixBindingsUnchanged": true,
+    "routesUnchanged": true,
+    "oldDeployment": "cad514ac-ae33-4ef3-9432-957c51563873",
+    "oldVersion": "5e694d1f-02e8-4859-bdab-68b53a8dd544",
+    "comparisonException": "Version/deployment annotations identify the new content; operational settings compared exactly",
+    "resourceDataOrSecretValueMutation": false
+  },
+  "checks": {
+    "publicTests": 64,
+    "normalBuild": "PASS",
+    "commonSeoSmokePublicPages": 1854,
+    "dryRun": "PASS",
+    "localRequests": 120,
+    "liveRequests": 120,
+    "publicActualBrowserViews": 18,
+    "publicViewports": [
+      1440,
+      390
+    ],
+    "isoAdditionalNarrowViewport": 320,
+    "liveActualBrowserViews": 3,
+    "zeroObsoleteMechanicalNounsPublic": true,
+    "steeringWheelsAndContactVerbsPreserved": true,
+    "allFinalBodyAndMetadata": true,
+    "isoContextualUniqueLinks": 12,
+    "isoLithuanianSourceReasons": 8,
+    "actualHeroBytesVerified": true,
+    "revisionArtifactIntegrityRecords": 2008
+  },
+  "currentEditorialControls": {
+    "writing": "continue_all_legacy_content_private_in_small_batches",
+    "publication": "paused_by_owner",
+    "deploymentAllowed": false,
+    "scheduledPublicationAllowed": false,
+    "releaseExportAllowed": false,
+    "publicPackageImportAllowed": false,
+    "scopeHumanMessage": "01a13bb6-01f0-7893-a9a9-1f710b68a599",
+    "pauseHumanMessage": "01a13bba-6c2e-7b11-b7d4-90d6678ac76f",
+    "note": "New writing scope supersedes writing pause for55heldguides. Current public pause still holds and new publication requires direct human resumption."
+  },
+  "currentTerminologyRule": "EDITORIAL_LANGUAGE.md",
+  "currentAuthorBrief": "AUTHOR_BRIEF_CURRENT.md",
+  "limitations": [
+    "Scoped content/language/renderer proof; no unrelated full-site acceptance",
+    "200% browser zoom/text-spacing overrides not verified in this task",
+    "Forms/inbox/audio not tested; prior mail limits remain",
+    "Git branches/PRs not merged to main; future writers need latest source and policy",
+    "Unknown legacy original authorship not reassigned"
+  ]
+}

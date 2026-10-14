@@ -149,9 +149,9 @@
       "type": "guide",
       "slug": "gidai/iso-moduliu-matmenu-patikra",
       "title": "ISO modulių matmenys: nominalus formatas ir realus įdėjimo tarpas",
-      "description": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
-      "intent": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų.",
-      "reason": "Skaitytojo sprendimas: Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir kreipiančiųjų matmenų. Unikalus rezultatas: Dviejų tikrų modulių ir vieno laikymo rėmo matavimo lentelė; 600×400 ir 400×300 naudoti tik ten, kur tai patvirtinta šaltinyje. Šaltinis: https://www.klaro.cz/iso-modul-system. Pavyzdžiai: 3-4-S11416-M11417VAR-01, S11416-M11417VAR-02, S11416-M11417VAR-03. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
+      "description": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
+      "intent": "Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų.",
+      "reason": "Skaitytojo sprendimas: Atskirti nominalų modulio formatą nuo tikros laikymo vietos ir bėgelių matmenų. Unikalus rezultatas: Dviejų tikrų modulių ir vieno laikymo rėmo matavimo lentelė; 600×400 ir 400×300 naudoti tik ten, kur tai patvirtinta šaltinyje. Šaltinis: https://www.klaro.cz/iso-modul-system. Pavyzdžiai: 3-4-S11416-M11417VAR-01, S11416-M11417VAR-02, S11416-M11417VAR-03. Parametrus tikrinti konkretaus modelio instrukcijoje. LT apimtis null, todėl jos nelaikyti nuline paklausa. CTA: pateikti modelių kodus, kiekius ir matavimus į sales@promedical.lt. Nesukurti kainos, tiekimo ar atitikties pažadų.",
       "cluster": "ISO modulių sistema",
       "pillarSlug": "gidai/iso-moduliu-sistema",
       "sourceQueries": [

@@ -23,7 +23,7 @@ async def stop_process(process):
 
 
 async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, parse_trace,
-                  stdout_limit=131072, output_limit=32768, on_event=None, trace_file=None):
+                  stdout_limit=131072, output_limit=32768, on_event=None, trace_file=None, partial_receipt=None):
     observed_stdout = []
 
     def observed_receipt():
@@ -31,15 +31,22 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             return receipt
         # EOF may never arrive even after a terminal usage event was already received.
         # Parse complete bounded lines only; absent/invalid evidence remains unknown.
-        prefix = b"".join(observed_stdout).rsplit(b"\n", 1)
-        if len(prefix) != 2:
-            return None
-        try:
-            return parse_trace(prefix[0].decode("utf-8", errors="replace"))
-        except RunnerError as error:
-            return error.receipt or None
-        except ValueError:
-            return None
+        raw = b"".join(observed_stdout)
+        prefix = raw.rsplit(b"\n", 1)
+        parsed = None
+        if len(prefix) == 2:
+            try:
+                parsed = parse_trace(prefix[0].decode("utf-8", errors="replace"))
+            except RunnerError as error:
+                parsed = error.receipt or None
+            except ValueError:
+                pass
+        if partial_receipt is not None and raw:
+            # Opt-in pipeline evidence only; unrelated callers keep their exact receipt.
+            snapshot = partial_receipt(raw)
+            if snapshot:
+                return {**(parsed or {}), **snapshot}
+        return parsed
 
     async def bounded(stream, cap, inspect=False):
         chunks, size, pending = [], 0, b""

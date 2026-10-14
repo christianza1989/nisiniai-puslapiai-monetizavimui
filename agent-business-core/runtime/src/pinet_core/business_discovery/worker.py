@@ -55,7 +55,7 @@ async def claim(discovery_id=None):
                     "scope": "business_discovery_plan_only", "permitted_web_actions": cfg.business_discovery_research_limit or None}
                 job.status, job.run_id = "running", new_id()
                 job.instruction_hash, job.lease_until = adapter.fingerprint(), lease_deadline()
-                job.deadline_at = utcnow() + timedelta(seconds=min(600, cfg.creation_runner_seconds * 2))
+                job.deadline_at = utcnow() + timedelta(seconds=adapter.deadlines.job_seconds(profiles.selected()))
                 row.status, row.updated_at = "running", utcnow()
                 await tx.flush()
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
@@ -94,11 +94,14 @@ async def reserve(claimed, role, round_number):
         if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
             raise RunnerError("authorization_revoked")
         from ..creation import execution_profiles as profiles
-        await profiles.ensure_current(tx, "discovery", job)
+        profile = await profiles.ensure_current(tx, "discovery", job)
         if not await service.authority(tx, job) or not job.deadline_at or job.deadline_at <= utcnow():
             raise RunnerError("authorization_revoked")
         if not job.lease_until or job.lease_until <= utcnow() or job.instruction_hash != adapter.fingerprint():
             raise RunnerError("instructions_changed")
+        if profile == profiles.SOL_HIGH and adapter.deadlines.role_seconds(
+                profile, role, (job.deadline_at - utcnow()).total_seconds()) <= 0:
+            raise RunnerError("run_timeout")
         await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                          {"k": "creation-admission:" + cfg.environment})
         params = {"e": cfg.environment, "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}
@@ -109,6 +112,10 @@ async def reserve(claimed, role, round_number):
         count = await tx.scalar(select(func.count()).select_from(DiscoveryAttempt).where(DiscoveryAttempt.job_id == job.id))
         if count >= 6:
             raise RunnerError("attempt_limit")
+        # Locks/quota reads consume the same persisted clock; never pay for an exhausted role.
+        if profile == profiles.SOL_HIGH and adapter.deadlines.role_seconds(
+                profile, role, (job.deadline_at - utcnow()).total_seconds()) <= 0:
+            raise RunnerError("run_timeout")
         attempt = DiscoveryAttempt(id=new_id(), discovery_id=row.id, job_id=job.id,
             sequence=count + 1, role=role, round_number=round_number, run_id=job.run_id,
             source_revision=job.source_revision, instruction_hash=adapter.instructions(role)[1],

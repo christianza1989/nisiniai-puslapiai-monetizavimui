@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual trial silence cause remains UNVERIFIED; original300.074s/run_timeout/5completed web items/no usage preserved. Initial scoped7FAIL5PASS6.08s→12PASS7.81s; intermediate own syntax/unused-import errors retained and corrected. Broader165PASS4FAIL7SKIP80.14s retained: two Discovery30s fixtures below reserved budgets, one stale S8 missing owner/paid metadata fixture, one Windows4s cleanup under load. Only root-released fixture corrections; unchanged Windows case1PASS2.02s and final172PASS7opt-inSKIP42.37s. First PG40PASS2FAIL327.88s preserved: two strict migration ownership guards refused deadline QA name; same2 cases PASS25.90s in explicitly owned profile-prefix QA, no allowlist weakening. New8PG source group final receipt pending. In-memory exact798 default/Creation/GUIDE hashes/allroleargv/stop_process identity PASS; high timing hash alone differs. No provider/ordinary/frozen/original adoption; original0032/counts/restricted-role unchanged.",
+  "eventId": "326f69a7-bec6-485f-8c7e-4548b13ef68b",
+  "sequence": 2,
+  "at": "2026-10-14T19:31:14.889Z"
+}

@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import HTMLResponse
-from fastapi.routing import APIRoute
 from sqlalchemy import select
 
 from ..config import settings
@@ -11,22 +10,12 @@ from ..models import Business
 from ..security import operator_auth, worker_auth
 from ..service import business
 from . import service
+from .browser_routes import router as browser_router
 from .contracts import ActionInput, GroupInput, InboundFixture, PolicyUpdate, SignalInput
-
-
-class BoundedRoute(APIRoute):
-    def get_route_handler(self):
-        handler = super().get_route_handler()
-
-        async def bounded(request: Request):
-            if request.method in {"POST", "PUT"} and len(await request.body()) > 20000:
-                raise HTTPException(413, "facebook_request_too_large")
-            return await handler(request)
-
-        return bounded
-
+from .route_types import BoundedRoute
 
 router = APIRouter(route_class=BoundedRoute)
+router.include_router(browser_router)
 
 
 @router.get("/operator/facebook-ui", response_class=HTMLResponse)

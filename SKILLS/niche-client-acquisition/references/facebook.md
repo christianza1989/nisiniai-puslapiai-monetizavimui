@@ -2,6 +2,8 @@
 
 Read for group research, group actions or Messenger work in this network. Read [FB_ACQUISITION_PLAN](../../../FB_ACQUISITION_PLAN.md) and the dated [primary evidence](../../../research/facebook-acquisition-2026-10-01/RESEARCH.md). Verify current platform rules before operational use. This reference does not connect an account or create a runtime.
 
+For owner-authorized text posts on their own Page or personal timeline, also apply [the Codex desktop browser worker](facebook-browser-worker.md) and [its implementation/acceptance contract](../../../agent-business-core/FACEBOOK_BROWSER_WORKER.md). That additive transport has local Page/profile CUA acceptance; it does not enable group collection or prove live Facebook publication. Official Page APIs remain a separate option that avoids UI work once their own access/adapter is accepted.
+
 ## Ownership and action scope
 
 One Facebook channel coordinator owns the account adapter and job queue; niche workers receive only their siteId facts and permitted task context. Do not share cookies/tokens or let several workers write through the same account. Browser work needs one account lease with stale-worker fencing and exact target checks; extra tabs do not replace this. Official Page API threads use per-conversation ordering and actual provider limits without browser tabs.

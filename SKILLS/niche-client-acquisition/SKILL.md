@@ -15,6 +15,8 @@ For a new acquisition strategy produce a private `sites/<siteId>/ACQUISITION.md`
 
 For Facebook group research/actions or Messenger work also read [the Facebook workflow](references/facebook.md). Use one account coordinator and isolated niche task contexts; separate personal-profile groups from official Page messaging. Existing owner authorization is distinct from source/platform rights. Do not infer an operational FB adapter or continuous collector from this instruction.
 
+For an owner-authorized post on their own Page or personal timeline, read [the Codex desktop publishing workflow](references/facebook-browser-worker.md). The implemented browser bridge requires an actual desktop Computer Use session, an immutable reviewed body, explicit audience, verified publisher and a durable receipt. Ordinary CLI drafting does not have those browser tools. The local fixture acceptance is distinct from a real Facebook post and from a continuous collector.
+
 ## Research and choose independently
 
 Identify the buyer, paid result, payer and real capability. Separate buyer / lead purchaser / fulfilment supplier / referral partner. Research the local buying path and relevant foreign implementations using primary sources; vendor case metrics are reported claims, not expected returns. Look for concrete intent before scaling a company list: a dated request, a relevant project, stated procurement need or a real inbound message. A business category is fit, not present demand.

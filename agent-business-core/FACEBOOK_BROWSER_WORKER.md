@@ -1,0 +1,48 @@
+# Facebook Page ir profilio publikavimas per Codex desktop
+
+2026-10-14 savininkas užsakė publikavimą per Codex Computer Use iš savo Page ir asmeninio profilio. Šis inkrementas prideda veikiantį vietinį užduočių tiltą, valdymo langą ir desktop vykdymo sutartį. Vykdytojas naudoja actual Codex desktop naršyklės įrankius. Įprastas `codex` CLI juodraščių generatorius jų neturi. Nuolat veikiančio autonominio desktop proceso, scheduler ar hosted Facebook adapterio šis pakeitimas neįjungia.
+
+## Kaip veikia
+
+Operatorius `/operator/facebook-browser-ui` pasirenka verslą ir patikrintą leidėją: Page arba profilį. Jis paruošia galutinį tekstą, auditoriją ir patikros pastabą. Serveris saugo nekintamą užduotį su teksto SHA256, leidėjo, aktualių verslo faktų, operatoriaus kontaktų ir instrukcijų snapshot. Viešas HTML yra tik prisijungimo langas; duomenys ir keitimai naudoja esamą operatoriaus autentifikaciją. Prieiga laikoma atmintyje, ne URL ar localStorage.
+
+Codex desktop gauna vieną užduotį per autentifikuotą vietinį HTTP tiltą. Naršyklėje jis perjungia tik patikrintą Page / profilį, atveria savo timeline įrašo formą ir patikrina aktyvų autorių, browser actor ID, paskirties URL, tekstą bei auditoriją. Jei yra tarpinis „Next“, galutinė peržiūra pasiekiama prieš submit permit. Serveris leidžia vieną galutinį publikavimo paspaudimą. Codex po jo perskaito matomą įrašą ir užregistruoja tikrą įrašo ID / nuorodą bei minimalų privatų ekrano įrodymą.
+
+Page naudoja `public` auditoriją. Profilis gali naudoti `public`, `friends` arba `only_me`; užduotyje ji privaloma. Rinktis nustatytą auditoriją yra konkretaus įrašo veiksmas, ne leidimas keisti bendrą paskyros privatumo konfigūraciją. Pirmas inkrementas apima tik tekstinį įrašą savo timeline. Grupės, komentarai, DM, medija, reklama ir kolektorius turi atskiras sutartis ir adapterių priėmimą.
+
+## Patikimumas ir ribos
+
+- Naujos nišos Facebook modulis ir browser policy numatytai išjungti. Reikia abiejų vartų. Page / profilio binding turi konkrečią prieigos pastabą ir galioja daugiausia 30 dienų. Pasibaigus patikrai registruojamas naujas binding raktas; ankstesnės užduotys neperrašomos.
+- Visos nišos dalijasi esamu aplinkos / account lease ir jo epoch. Visi binding, naudojantys tą patį realų Facebook prisijungimą, turi tą patį `account_key`. Skirtingi raktai tai pačiai paskyrai nepagrįstai apeitų koordinavimą; key priskyrimas yra operatoriaus atsakomybė.
+- Claim galioja 30–240 s, numatytai 120 s; `renew` pratęsia iki 120 s tik dar galiojantį claim. Pasibaigęs browser lease negali būti perimtas net kitos nišos ar seno preparation worker. Kitas tokios paskyros darbas sustabdomas.
+- `Observation` turi tikrą UI stebėjimo UTC laiką, tab ID, tapatybę, URL, body hash ir auditoriją. Leidžiamas 20 s senumas bei iki 3 s clock skew. Permit galioja 15 s ir išduodamas vieną kartą. Policy, faktų, kontaktų, instrukcijų ar binding pokytis reikalauja naujos peržiūros / užduoties.
+- `ready → claimed → submitting → visible` arba `pending_moderation`. Neaiškus rezultatas / worker nutrūkimas pereina į `uncertain`; nėra automatinio retry. Pauzė atšaukia ready / claimed, o jau išduotą permit pažymi uncertain. Serveris negali atšaukti jau įvykusio Facebook paspaudimo, todėl galutinės UI būsenos patikra būtina.
+- Uncertain paskyra lieka užrakinta. Check-only vykdytojas gali pateikti tikrą matomo įrašo receipt su originalia task capability. Jei operatorius pats patikrino savo įrašų istoriją ir patvirtino, kad įrašas nepaskelbtas, `/reconcile` su dabartine revision ir konkrečiu įrodymu atlaisvina paskyrą; senoji užduotis lieka blocked. Naujas siuntimas reikalauja atskiros naujos užduoties.
+- Idempotency raktas su pakeistu tekstu ar auditorija atmetamas. Receipt leidžiamas tik po permit, tik tam pačiam tab / autoriui / tekstui / auditorijai. Praradus sesiją, atskira check-only capability leidžia perskaityti jau esamą įrašą naujame tab; tikrinti ir originalaus bandymo laiką, o ne vien sutampantį tekstą. Seną capability ši patikra panaikina ir naujo publish neleidžia. Nuoroda turi atitikti to autoriaus įrašą ir provider ID; grupės ar login URL netinka. Fixture papildomai reikalauja actual sintetinės DB publikacijos.
+- Worker secret lieka konfigūracijoje. CLI tiltas leidžia tik configured HTTP loopback core, draudžia redirects / proxy aplinką, nekopijuoja cookies ar Facebook tokens. Task capability yra privati ir nerodoma operatoriaus lentelėje. Operator access proof ir worker UI observation yra patikimo vykdytojo teiginiai, ne kriptografinis Meta patvirtinimas.
+- Dienos kvota skaičiuoja claim bandymus UTC dienoje per nišą, ne Meta rate limit ar garantuotą sėkmingų postų skaičių. Įrašas nėra gauta kliento užklausa. `external_sending=null` reiškia neaiškų rezultatą, o fixture kvitai visada lieka synthetic.
+
+## Paleidimas ir tiltų komandos
+
+Naudoti canonical [desktop skill eigą](../SKILLS/niche-client-acquisition/references/facebook-browser-worker.md) ir actual Computer Use įrankio instrukcijas. Iš `agent-business-core/runtime/` su esama `.venv`:
+
+```text
+python -m pinet_core.facebook.desktop_worker claim --site SITE --request-file PRIVATE_JSON
+python -m pinet_core.facebook.desktop_worker check --site SITE --job JOB --request-file PRIVATE_JSON
+python -m pinet_core.facebook.desktop_worker renew --site SITE --job JOB --request-file PRIVATE_JSON
+python -m pinet_core.facebook.desktop_worker submit-permit --site SITE --job JOB --request-file PRIVATE_JSON
+python -m pinet_core.facebook.desktop_worker receipt --site SITE --job JOB --request-file PRIVATE_JSON
+python -m pinet_core.facebook.desktop_worker block --site SITE --job JOB --request-file PRIVATE_JSON
+```
+
+`--base-url` prireikus nurodo konkretaus vietinio core loopback portą. Claim input yra `{owner,seconds?}`. Check input yra `{owner}`: jis keičia tik check-only capability jau uncertain užduočiai, niekada neleidžia publikavimo. Kitos komandos naudoja originalius `{owner,task_token,epoch}`. Submit prideda `observation`, receipt dar prideda `status`, `provider_post_id`, `permalink`, `evidence`; block turi `reason`. Schemos: `facebook/browser_contracts.py`. CLI stdout visada UTF-8, kad Windows cp1252 nesugadintų lietuviško task JSON po jau įvykusio claim. Failai su task token ir raw UI įrodymais saugomi ignored runtime artifacts, ne Git.
+
+Operator API bazė `/operator/sites/{siteId}/facebook/browser`: dashboard GET, `/policy` PUT su CAS, `/bindings` ir `/posts` POST, `/posts/{id}/reconcile` POST su CAS. Worker API bazė `/internal/sites/{siteId}/facebook/browser`: `/claim` ir `/posts/{id}/{check|renew|submit-permit|receipt|block}` POST. Visi input ribojami 20 000 bytes. Naujos DB lentelės / migrations nekuriamos; naudojami esami RLS `FacebookRecord` ir account leases. Senų action send endpoint elgesys nesikeičia.
+
+## Faktinis priėmimas
+
+Disposable PostgreSQL, atskira `test-*` aplinka ir loopback preview: `runtime/scripts/facebook-browser-acceptance.py`. Kiekvienas paleidimas numatytai kuria unikalią test aplinką; `PINET_FACEBOOK_ACCEPTANCE_ENV` gali pakartotinai atverti konkretų savo testą. Šis helper naudoja tik synthetic Page / profilį ir testinius tekstus. Jis neprijungia realių paskyrų. Backend regresija: `tests/test_facebook_browser.py`. Actual desktop CUA atliko abu claim → UI teksto / autoriaus / auditorijos peržiūra → permit → vienas click → matomas įrašas / nuoroda → backend receipt kelius; abiejų galutinė būsena `visible`, `external_sending=false`.
+
+Privačiai patikrintos savininko pateiktos tikros Page ir profilio sesijos bei abi Create post formos. Konkreti publikuojama medžiaga dar nesuderinta; realių Facebook įrašų kvitų nėra. Asmeninių URL, raw feed, draugų, kontaktų ar cookies Git nesaugome. Tikrų paskyrų binding į produkcinės nišos runtime neįjungtas, nes dar reikia konkretaus teksto, auditorijos ir verslo konteksto. Main merge, kito checkout adoption ir live publication yra atskiri etapai.
+
+Oficiali Page API gali vykdyti vėlesnį priimtą serverinį publikavimo adapterį be desktop CUA. Asmeninio profilio timeline nepervadiname į Page API. Desktop veikimui Codex sesija ir naršyklė reikalingos publikavimo metu; turinio planavimas, queue, audit ir kvitai vyksta core API / DB. Oficialioji produkto dokumentacija: [OpenAI Browser](https://learn.chatgpt.com/docs/browser?surface=app). Pilnas ankstesnio plano auditas: [2026-10-14](../docs/FACEBOOK_FULL_AUDIT_2026-10-14.md).

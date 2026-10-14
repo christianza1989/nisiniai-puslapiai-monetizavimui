@@ -2,7 +2,7 @@
 
 Read for group research, group actions or Messenger work in this network. Read [FB_ACQUISITION_PLAN](../../../FB_ACQUISITION_PLAN.md) and the dated [primary evidence](../../../research/facebook-acquisition-2026-10-01/RESEARCH.md). Verify current platform rules before operational use. This reference does not connect an account or create a runtime.
 
-For owner-authorized text posts on their own Page or personal timeline, also apply [the Codex desktop browser worker](facebook-browser-worker.md) and [its implementation/acceptance contract](../../../agent-business-core/FACEBOOK_BROWSER_WORKER.md). That additive transport has local Page/profile CUA acceptance; it does not enable group collection or prove live Facebook publication. Official Page APIs remain a separate option that avoids UI work once their own access/adapter is accepted.
+For owner-authorized Page/profile timeline posts, one image, specific parent-post comments or bounded group metadata search, also apply [the Codex desktop browser worker](facebook-browser-worker.md) and [its implementation/acceptance contract](../../../agent-business-core/FACEBOOK_BROWSER_WORKER.md). Codex can perform content/channel review within the owner's mandate without per-task human approval. The transport has local Page/profile/image CUA acceptance; it does not enable a continuous group collector or prove live Facebook publication. Official Page APIs remain a separate option that avoids UI work once their own access/adapter is accepted.
 
 ## Ownership and action scope
 

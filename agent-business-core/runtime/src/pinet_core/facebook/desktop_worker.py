@@ -10,10 +10,10 @@ from urllib.parse import urlparse
 import httpx
 
 from ..config import settings
-from .browser_contracts import BlockInput, ClaimInput, ReceiptInput, SubmitInput, TaskInput
+from .browser_contracts import BlockInput, ClaimInput, DiscoveryResult, ReceiptInput, SubmitInput, TaskInput
 
 SCHEMAS = {"claim": ClaimInput, "check": ClaimInput, "renew": TaskInput, "submit-permit": SubmitInput,
-           "receipt": ReceiptInput, "block": BlockInput}
+           "receipt": ReceiptInput, "block": BlockInput, "discovery-result": DiscoveryResult}
 
 
 async def call(site, operation, request, job_id=None, base_url=None):

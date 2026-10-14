@@ -15,7 +15,7 @@ For a new acquisition strategy produce a private `sites/<siteId>/ACQUISITION.md`
 
 For Facebook group research/actions or Messenger work also read [the Facebook workflow](references/facebook.md). Use one account coordinator and isolated niche task contexts; separate personal-profile groups from official Page messaging. Existing owner authorization is distinct from source/platform rights. Do not infer an operational FB adapter or continuous collector from this instruction.
 
-For an owner-authorized post on their own Page or personal timeline, read [the Codex desktop publishing workflow](references/facebook-browser-worker.md). The implemented browser bridge requires an actual desktop Computer Use session, an immutable reviewed body, explicit audience, verified publisher and a durable receipt. Ordinary CLI drafting does not have those browser tools. The local fixture acceptance is distinct from a real Facebook post and from a continuous collector.
+For owner-authorized Page/profile timeline posts, one image upload, a comment on a specific post or a bounded group search, read [the Codex desktop publishing workflow](references/facebook-browser-worker.md). The bridge requires an actual desktop Computer Use session, immutable Codex-reviewed content, explicit audience, verified actor and durable results. The owner's mandate can delegate routine content and destination choices without human approval for each task. Group comments require current actor-specific access/rule evidence; discovery cannot publish or join. Ordinary CLI drafting does not have browser tools. Local fixture acceptance is distinct from real Facebook publication and from a continuous collector; host/tool safety rejections are not bypassed.
 
 ## Research and choose independently
 

@@ -11,12 +11,16 @@ from ..db import db
 from ..models import utcnow
 from ..security import operator_auth, worker_auth
 from ..service import business
+from . import browser_extensions as extension
 from . import browser_service as service
 from . import service as fb
 from .browser_contracts import (
     BlockInput,
     BrowserPolicyUpdate,
     ClaimInput,
+    DiscoveryResult,
+    GroupAccessInput,
+    MediaInput,
     PostInput,
     PublisherBinding,
     ReceiptInput,
@@ -62,6 +66,28 @@ async def post(site_id: str, data: PostInput):
     item = await business(site_id)
     async with db.transaction(item.id, settings().environment) as tx:
         return await service.queue(tx, item, data)
+
+
+@router.post("/operator/sites/{site_id}/facebook/browser/media", dependencies=[Depends(operator_auth)])
+async def media(site_id: str, data: MediaInput):
+    item = await business(site_id)
+    async with db.transaction(item.id, settings().environment) as tx:
+        return await extension.add_media(tx, item, data)
+
+
+@router.post("/operator/sites/{site_id}/facebook/browser/group-access", dependencies=[Depends(operator_auth)])
+async def group_access(site_id: str, data: GroupAccessInput):
+    item = await business(site_id)
+    async with db.transaction(item.id, settings().environment) as tx:
+        return await extension.group_access(tx, item, data)
+
+
+@router.post("/internal/sites/{site_id}/facebook/browser/posts/{ident}/discovery-result",
+             dependencies=[Depends(worker_auth)])
+async def discovery(site_id: str, ident: str, data: DiscoveryResult):
+    item = await business(site_id)
+    async with db.transaction(item.id, settings().environment) as tx:
+        return await extension.complete_discovery(tx, item, ident, data)
 
 
 @router.post("/operator/sites/{site_id}/facebook/browser/posts/{ident}/reconcile",
@@ -139,6 +165,7 @@ class FixturePost(Strict):
     actor_id: str = Field(max_length=100)
     body: str = Field(max_length=5000)
     audience: Literal["public", "friends", "only_me"]
+    media_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
 
 
 @router.post("/operator/facebook-browser-fixture/{kind}/{actor_id}")
@@ -155,6 +182,7 @@ async def fixture_publish(kind: str, actor_id: str, data: FixturePost, request: 
                 and job.payload["binding"]["actor_id"] == actor_id
                 and job.payload["binding"]["actor_kind"] == kind
                 and job.payload["audience"] == data.audience
+                and (extension.task_projection(job)["media"] or {}).get("sha256") == data.media_sha256
                 and job.payload["body_sha256"] == service.body_hash(data.body)]
         if len(jobs) != 1:
             raise HTTPException(409, "fixture_requires_one_matching_submit_permit")
@@ -167,7 +195,7 @@ async def fixture_publish(kind: str, actor_id: str, data: FixturePost, request: 
         if old:
             raise HTTPException(409, "fixture_one_write_only")
         result = fb.add(tx, item, "browser_fixture_post", job.id, "synthetic_visible",
-            {"actor_id": actor_id, "actor_kind": kind, "body": data.body})
+            {"actor_id": actor_id, "actor_kind": kind, "body": data.body, "media_sha256": data.media_sha256})
         await tx.flush()
         return {"id": result.id, "body": data.body, "actor_id": actor_id, "actor_kind": kind,
                 "permalink": job.payload["binding"]["target_url"].rsplit("/", 2)[0] + "/posts/" + result.id,

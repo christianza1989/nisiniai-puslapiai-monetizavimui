@@ -6,7 +6,7 @@ from urllib.parse import parse_qs, urlparse
 
 from pydantic import Field, field_validator, model_validator
 
-from .contracts import Strict
+from .contracts import GroupInput, Strict
 
 
 def destination(value: str):
@@ -33,6 +33,15 @@ def destination(value: str):
         # Port required for the explicitly isolated local fixture.
         return value.rstrip("/")
     raise ValueError("Facebook or isolated fixture destination required")
+
+
+def thread_destination(value: str):
+    parsed = urlparse(value)
+    if (parsed.scheme != "https" or parsed.hostname not in {"facebook.com", "www.facebook.com"}
+            or parsed.username or parsed.password or parsed.port or parsed.query or parsed.fragment
+            or not re.fullmatch(r"/(?:groups/[a-zA-Z0-9_.-]+|[a-zA-Z0-9_.-]+)/posts/[a-zA-Z0-9_-]+/?", parsed.path)):
+        raise ValueError("canonical Facebook parent post URL required")
+    return value.rstrip("/")
 
 
 class BrowserPolicy(Strict):
@@ -91,6 +100,27 @@ class PostInput(Strict):
     purpose: Literal["business", "personal"] = "business"
     audience: Literal["public", "friends", "only_me"]
     review_note: str = Field(min_length=12, max_length=1200)
+    action: Literal["post", "comment", "discover_groups"] = "post"
+    target_url: str = Field(default="", max_length=500)
+    group_access_key: str = Field(default="", max_length=100)
+    attachment_key: str = Field(default="", max_length=100)
+    query: str = Field(default="", max_length=120)
+
+    @model_validator(mode="after")
+    def scope(self):
+        if self.action == "comment":
+            self.target_url = thread_destination(self.target_url)
+            if self.target_url.split("/")[3] == "groups" and not self.group_access_key:
+                raise ValueError("group comments require actor-specific group access")
+        elif self.target_url or self.group_access_key:
+            raise ValueError("post/search destination is derived from the publisher/query")
+        if self.action == "discover_groups" and len(self.query.strip()) < 3:
+            raise ValueError("specific bounded group query required")
+        if self.action != "discover_groups" and self.query:
+            raise ValueError("query belongs only to discovery")
+        if self.attachment_key and self.action != "post":
+            raise ValueError("media is supported only for timeline posts")
+        return self
 
 
 class ClaimInput(Strict):
@@ -113,11 +143,12 @@ class Observation(Strict):
     audience: Literal["public", "friends", "only_me"]
     tab_id: str = Field(min_length=1, max_length=160)
     observed_at: datetime
+    media_sha256: str | None = Field(default=None, pattern=r"^[a-f0-9]{64}$")
 
     @field_validator("target_url")
     @classmethod
     def target(cls, value):
-        return destination(value)
+        return thread_destination(value) if "/posts/" in value and "facebook.com" in value else destination(value)
 
     @field_validator("observed_at")
     @classmethod
@@ -137,6 +168,7 @@ class ReceiptInput(TaskInput):
     provider_post_id: str = Field(default="", max_length=160)
     permalink: str = Field(default="", max_length=600)
     evidence: str = Field(min_length=10, max_length=1500)
+    provider_comment_id: str = Field(default="", max_length=160, pattern=r"^[a-zA-Z0-9_-]*$")
 
 
 class BlockInput(TaskInput):
@@ -148,3 +180,34 @@ class ReconcileInput(Strict):
     base_revision: int = Field(ge=1)
     outcome: Literal["not_published"]
     evidence: str = Field(min_length=30, max_length=1500)
+
+
+class MediaInput(Strict):
+    key: str = Field(min_length=2, max_length=100, pattern=r"^[a-zA-Z0-9_-]+$")
+    path: str = Field(max_length=600)
+    alt: str = Field(min_length=8, max_length=500)
+    provenance: str = Field(min_length=12, max_length=1000)
+
+
+class GroupAccessInput(Strict):
+    key: str = Field(min_length=2, max_length=100, pattern=r"^[a-zA-Z0-9_-]+$")
+    binding_key: str = Field(min_length=2, max_length=100)
+    group_key: str = Field(min_length=2, max_length=160)
+    comments_allowed: bool
+    evidence: str = Field(min_length=30, max_length=1000)
+    valid_until: datetime
+
+    @field_validator("valid_until")
+    @classmethod
+    def aware(cls, value):
+        if value.utcoffset() is None:
+            raise ValueError("timezone required")
+        return value
+
+
+class DiscoveryResult(TaskInput):
+    actor_id: str = Field(min_length=2, max_length=100)
+    actor_name: str = Field(min_length=2, max_length=160)
+    search_url: str = Field(max_length=500)
+    groups: list[GroupInput] = Field(max_length=3)
+    evidence: str = Field(min_length=20, max_length=1000)

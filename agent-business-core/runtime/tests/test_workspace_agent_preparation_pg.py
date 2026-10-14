@@ -1,4 +1,5 @@
 """Ordinary owner API, canonical native fixtures and provider-zero atomic effects."""
+import asyncio
 from uuid import uuid4
 
 import pytest
@@ -18,7 +19,7 @@ from test_workspace_team_pg import team  # noqa: F401
 
 from pinet_core.config import settings
 from pinet_core.control.models import BusinessGrant, Session
-from pinet_core.control.routes import token_hash
+from pinet_core.control.routes import ControlError, token_hash
 from pinet_core.creation_registration.models import Registration
 from pinet_core.customer_agents import service as agents
 from pinet_core.customer_agents.models import Agent, Config
@@ -66,7 +67,8 @@ async def setup(c):
         "title": "Sintetinė agento parengimo užduotis", "anchor": {"kind": "business",
             "selection_id": c["saved"]["business_id"]}})
     assert topic.status_code == 200, topic.text
-    return root+"/"+topic.json()["data"]["current_topic"]["topic_id"]
+    c["preparation_topic"] = topic.json()["data"]["current_topic"]
+    return root+"/"+c["preparation_topic"]["topic_id"]
 
 
 async def submit(c, base, *, key=None, content="Parenkite pagalbininko aprašą pateiktai užduočiai."):
@@ -172,6 +174,61 @@ async def test_late_source_denial_rolls_back_config_and_public_effect_together(p
     task, configs, events, _, runs = await saved(c, accepted["turn"]["task_id"])
     assert task.status == "failed" and not configs and len(events) == 1
     assert runs[0].usage["input_tokens"] == 17
+
+
+async def test_canonical_control_refusal_after_effect_is_terminal_and_accounted(prepare_customer, monkeypatch):
+    c = prepare_customer
+    base = await setup(c)
+    accepted, _ = await submit(c, base)
+    from pinet_core.customer_agents import provisioning
+    original = provisioning.create
+
+    async def refused(tx, scope, value):
+        await original(tx, scope, value)
+        raise ControlError(409, "agent_business_not_current")
+
+    monkeypatch.setattr(provisioning, "create", refused)
+    assert await worker.execute_once(plan, kind=KIND)
+    task, configs, events, _, runs = await saved(c, accepted["turn"]["task_id"])
+    assert task.status == "failed" and task.failure_code == "agent_business_not_current"
+    assert not configs and len(events) == 1 and runs[0].usage["input_tokens"] == 17
+
+
+async def test_parent_locks_before_task_allow_archive_to_finish_without_deadlock(prepare_customer, monkeypatch):
+    c = prepare_customer
+    base = await setup(c)
+    accepted, _ = await submit(c, base)
+    acquired, resume = asyncio.Event(), asyncio.Event()
+    original = preparation.completion_locks
+
+    async def paused(tx, claimed):
+        await original(tx, claimed)
+        acquired.set()
+        await asyncio.wait_for(resume.wait(), timeout=8)
+
+    monkeypatch.setattr(preparation, "completion_locks", paused)
+    running = asyncio.create_task(worker.execute_once(plan, kind=KIND))
+    archive = None
+    try:
+        await asyncio.wait_for(acquired.wait(), timeout=8)
+        view = c["preparation_topic"]
+        archive = asyncio.create_task(c["client"].post(base+"/controls", headers=c["auth"], json={
+            "idempotency_key": str(uuid4()), "expected_metadata_revision": view["metadata_revision"],
+            "title": view["title"], "pinned": view["pinned"], "archived": True}))
+        with pytest.raises(asyncio.TimeoutError):
+            await asyncio.wait_for(asyncio.shield(archive), timeout=0.25)
+        resume.set()
+        assert await asyncio.wait_for(running, timeout=8)
+        response = await asyncio.wait_for(archive, timeout=8)
+        assert response.status_code == 200 and response.json()["data"]["current_topic"]["archived_at"]
+        task, configs, events, _, _ = await saved(c, accepted["turn"]["task_id"])
+        assert task.status == "succeeded" and len(configs) == 1 and len(events) == 2
+    finally:
+        resume.set()
+        for pending in (running, archive):
+            if pending is not None and not pending.done():
+                pending.cancel()
+        await asyncio.gather(*[pending for pending in (running, archive) if pending is not None], return_exceptions=True)
 
 
 async def test_grant_revoked_after_provider_discards_effect_retains_accounting(prepare_customer):

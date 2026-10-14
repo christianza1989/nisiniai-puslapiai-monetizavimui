@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Public native inquiry repair committed at 9100673aede683da1b5ee70608673f2533ed36ae, base5924a2e; scoped PR35 stacked on29. First route405, obsolete form prohibition test, SQLite CANTOPEN long-path fixture and mismatched probe Origin403 retained. Correct origin/native browser submit durable local D1 succeeds, foreign origin403 remains. No production, SMTP/inbox, normal account, full Foundation or calibration acceptance.",
+  "checks": [
+    {
+      "command": "node --test tests/native-inquiry.test.mjs tests/native-niche-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "13 targeted routing/render/handler SQLite regressions; existing publication/privacy/origin/body/consent and cross-site refusals retained"
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "68 checks; source9100673 only source changes documented in public docs/NATIVE_INQUIRY_2026_10_14.md"
+    },
+    {
+      "command": "npm run build; SEO_SMOKE_BASE_URL=http://127.0.0.1:8896 npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "Production build plus seven existing pages/SEO outputs/schemas/isolation/404. Initial missing-server failure retained, no production deployment."
+    },
+    {
+      "command": "node output/native-inquiry/verify-http-browser.mjs",
+      "result": "PASS",
+      "evidence": "Owned synthetic native loopback8897 Chrome actual form POST200 and direct read-only D1 nativeqa/new/kontaktai row; aggregate POST204/count1; foreign origin403. 1280/390/320/200%root text screenshots, validation/focus/44px/no overflow. Ignored source-hashed receipt browser-1791969727628, no normal account/inbox claim."
+    },
+    {
+      "command": "git diff --cached --check; repository-safety.mjs . --staged; git-freshness.mjs --phase handoff with companion",
+      "result": "PASS",
+      "evidence": "Seven exact public staged blobs, no findings; fresh public main ec8a9c03 and private main7af6b964 both ancestors. Public original checkout untouched."
+    }
+  ],
+  "eventId": "159955a0-f964-430a-8373-da8748da6002",
+  "sequence": 2,
+  "at": "2026-10-14T09:25:14.652Z"
+}

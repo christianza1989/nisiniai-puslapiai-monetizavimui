@@ -1,12 +1,18 @@
 # Turinio plano būklė · 2026-10-14
 
-**Visos dabartinės svetainės turinio ir puslapių struktūros planas parengtas.** Jis apima 88 esamus URL: 22 puslapių paskirtys keturiomis kalbomis — LT, PL, LV ir ET. Tai visa dabartinė sutarta aprėptis. Suplanuotų patobulinimų įgyvendinimas ir naujų straipsnių rengimas vertinami atskirai.
+**2026-10-14 dovanų turinio apimtis išplėsta pagal savininko pavedimą.** Parengtas [platus LT temų žemėlapis](TOPICAL_MAP_2026_10_14.md): 1 667 frazės, 107 turinio sprendimai, 106 skirtingi tiksliniai adresai ir 21 Kalėdų tema. Jis papildo ankstesnį 39 klausimų planą; ankstesnė siaura aprėptis nebevadinama visu dovanų turinio planu.
+
+Treg tyrimas: 1 650 frazių paieškų apimties rezultatų ir 18 LT Google rezultatų rinkinių; tikras vienkartinis mokestis 0,44136 USD iš autorizuoto 1 USD. Null, nulis, nematuota apimtis ir sinonimų bendras įvertis atskirti. Parengti pilni temų aprašai bei pirmosios susietos partijos darbų planas. Šeši nauji Kalėdų planai įrašyti esamu studijos mergePlan; jie privatūs, be straipsnio teksto ir patvirtinimo. Įrodymai priimti bendru SEO adapteriu, išsaugant ankstesnius crawl, pirminių šaltinių ir matavimo būsenos įrašus.
+
+Ankstesnis visos dabartinės svetainės struktūros planas apima 88 esamus URL: 22 puslapių paskirtys keturiomis kalbomis — LT, PL, LV ir ET. Platus dovanų tyrimas šiame etape atliktas LT rinkai; kitų kalbų paklausa juo nepatvirtinama. Planavimas, straipsnių parašymas, tikros medijos parengimas, peržiūra ir publikavimas turi atskiras būsenas.
 
 | Plano dalis | Būklė ir šaltinis |
 |---|---|
 | Puslapių sąrašas, paskirtis, sekcijos ir prioritetai | Parengta: [visų puslapių planas](OTHER_PAGES_PLAN_2026_10_13.md) ir 88 tikslūs [puslapių aprašai](PAGE_BRIEFS_2026_10_13.json). |
 | SEO ketinimai, metaduomenų pasiūlymai, struktūriniai duomenys ir vidinės nuorodos | Parengta kiekvienam esamam URL; 352 vidinės nuorodos patikrintos plano etape. Metaduomenų pasiūlymai dar nėra automatiškai publikuoti; naujos paieškų apimtys nematuotos. |
-| Naudojimo, dovanų ir pagalbos temos | 39 klausimų sprendimai [teminiame plane](CONTENT-PLAN.json): atskiri URL, esami puslapiai, sinonimų sujungimas ir skyriai. |
+| Naudojimo ir pagalbos bazė | Ankstesni 39 klausimų sprendimai [baziniame plane](CONTENT-PLAN.json) išsaugoti kaip rinkinių naudojimo, pagalbos ir pradinio dovanojimo aprėptis. |
+| Platus dovanų temų žemėlapis | [107 sprendimai](TOPICAL_MAP_2026_10_14.json), [1 667 frazių lentelė](GIFT_KEYWORDS_2026_10_14.csv) ir [visų tikslinių URL lentelė](GIFT_URLS_2026_10_14.csv): gavėjai, progos, dovanos tipas, biudžetas, pasirinkimas ir naudojimas. |
+| Kalėdos 2026 | 21 tema; pirmosios partijos [išsamūs aprašai](CHRISTMAS_BRIEFS_2026_10_14.json). Pagrindas, moterims, mamai, vyrams, šeimai ir porai — šeši nauji privatūs studijos planai. Parašytų ar publikuotų šios partijos straipsnių dar nėra. |
 | Nauji puslapiai | 6 sąlyginiai pasiūlymai aprašų `futureUrls` dalyje: dovanos, dovana šeimai, pozos, produkto sauga, galerija ir atsiliepimai. Tikri dokumentai, nuotraukos, teisės ir atskiras poreikis yra jų įgyvendinimo sąlygos. |
 | Dabartiniai baziniai tekstai | Patvirtintame 4ea58f2e leidinyje yra 88 puslapiai ir 24 gidų kalbinės versijos: 6 gidai kiekviena kalba. Tai 6 skirtingos gidų temos. |
 | Vizualinis įgyvendinimas | LT interaktyvus homepage, bendras vidinių puslapių stilius, katalogas ir abu produktai keturiomis kalbomis realizuoti vietiškai. Likusių puslapių individualūs patobulinimai vykdomi pagal briefus. |

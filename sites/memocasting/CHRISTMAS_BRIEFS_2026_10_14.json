@@ -1,0 +1,841 @@
+{
+  "version": 1,
+  "siteId": "memocasting",
+  "date": "2026-10-14",
+  "locale": "lt-LT",
+  "state": "reviewed editorial briefs, no approved articles",
+  "firstWaveIds": [
+    "H00",
+    "C00",
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "R05",
+    "R06",
+    "O02",
+    "S10"
+  ],
+  "briefs": [
+    {
+      "id": "H00",
+      "slug": "dovanos",
+      "title": "Dovanų idėjos pagal žmogų, progą ir biudžetą",
+      "query": "dovanos",
+      "cluster": "Pagrindas",
+      "priority": "P0",
+      "question": "Nuo ko pradėti renkantis dovaną?",
+      "contribution": "Kelias pagal gavėją, progą ir norimą patirtį; dovanų tipų atrankos kriterijai; nuorodos į konkrečius gidus.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kam bendra veikla tinka?",
+      "publicState": "private-plan-or-draft",
+      "parentId": null,
+      "format": "editorial navigation hub with selection guide",
+      "proposedMetaDescription": "Nuo ko pradėti renkantis dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
+      "outline": [
+        "Kelias pagal gavėją, progą ir norimą patirtį",
+        "dovanų tipų atrankos kriterijai",
+        "nuorodos į konkrečius gidus"
+      ],
+      "demand": {
+        "searchVolume": 3600,
+        "volumeState": "estimate",
+        "measuredQuery": "dovanos",
+        "keywordDifficulty": 22,
+        "nov2025": 6600,
+        "dec2025": 12100,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-dovanos.private.json"
+        ]
+      },
+      "aliases": [
+        "dovanos",
+        "paskutinės minutės dovanos",
+        "jaukios dovanos",
+        "kūrybinės dovanos",
+        "įsimintinos dovanos",
+        "dovanų idėjos",
+        "dovana pensininkui",
+        "dovanu idejos",
+        "smagios dovanos",
+        "dovanu korteles likutis",
+        "dovanos internetu",
+        "suvenyrai dovanos",
+        "isimintinos dovanos",
+        "atminimo dovanos mokiniams",
+        "ka dovanoti",
+        "šmaikščios dovanos",
+        "dovanos kolektyvui",
+        "e-dovanos",
+        "atminimo dovana",
+        "mielos dovanos",
+        "ispudingos dovanos",
+        "dovanos klaipedoje",
+        "auto dovanos",
+        "elektronines dovanos",
+        "senukai dovanos",
+        "kitokia dovana",
+        "jaunuju dovanos sveciams",
+        "dovanos iš maisto",
+        "dovana mergaitei 10 metu",
+        "dovana 13 metu berniukui",
+        "dovanos ideja",
+        "dovana 11 metų berniukui",
+        "dovana 12 metu mergaitei",
+        "dovanos 13 metų mergaitei",
+        "dovana iš g raidės",
+        "dovanos 10 metu berniukui",
+        "dovanos darzelio grupems",
+        "linksma dovana zvejui",
+        "grazios dovanos",
+        "dovana 30 metu proga",
+        "solidzios dovanos",
+        "poilsio dovanos",
+        "dovanos sukakties proga",
+        "alavines dovanos",
+        "smagios dovanos akropolis kaunas",
+        "smagios dovanos savas",
+        "brangios dovanos",
+        "vertingos dovanos",
+        "vakariene dovana",
+        "gourmet dovanos",
+        "akropolio dovanų kortelė likutis",
+        "akropolio dovanu kortele galiojimas",
+        "akropolis dovanu kortele parduotuves",
+        "dovana mergaitei 11 metu",
+        "dovana prabangi",
+        "dovana mergaitei 8 metu",
+        "dovana mergaitei 9 metu",
+        "verslo dovanos",
+        "prabangios verslo dovanos",
+        "verslo dovanos su logotipu",
+        "dovanos verslo klientams apmokestinimas",
+        "dovanos verslo partneriams leidžiami atskaitymai",
+        "dovana 10 metų berniukui",
+        "dovanos berniukams",
+        "dovanos 4 metu berniukui",
+        "dovana 4 metu mergaitei",
+        "dovana mergaitei 6 metu",
+        "g&m dovanos",
+        "dovanos suvenyrai parduotuvė",
+        "gintaro dovanos",
+        "aika dovanos",
+        "dovanos ketvirtokams",
+        "dovana mokyklos baigimo proga",
+        "dovanu idejos mokiniams",
+        "dovanų karalystė",
+        "beta dovanos",
+        "verslo dovanos kaunas",
+        "dovana internetu",
+        "dovanos klaipeda",
+        "stilingos dovanos",
+        "geriausios dovanos",
+        "dovanos i namus",
+        "dovana atminimui sinonimas",
+        "gėlės ir dovanos",
+        "prabangios dovanos",
+        "dovana 15 metu mergaitei",
+        "dovanos mergaitems 12 metu",
+        "dovana mergaitei 7 metu",
+        "dovana mergaitei 4 metu",
+        "dovana berniukui 10 metu",
+        "dovana 12 metu berniukui",
+        "dovana 14 metu berniukui",
+        "dovanosideja lt",
+        "dovana 9 metų berniukui",
+        "geriausios dovanos is lietuvos",
+        "dovanos į užsienį",
+        "dovanos su lietuvos atributika",
+        "verslo dovanos uzsienieciams",
+        "dovana iš a raidės",
+        "dovanos iš v raidės",
+        "dovana is l raides",
+        "dovanos iš j raidės",
+        "dovanos is e raides",
+        "dovanos is s raides",
+        "dovanos is r raides",
+        "dovana 8 metų berniukui",
+        "dovanu pristatymas i namus vilniuje",
+        "ka padovanoti astuoniolikmeciui",
+        "suvenyrines dovanos",
+        "natūralios dovanos",
+        "subtilios dovanos",
+        "pegasas dovanos",
+        "dovanos automobiliu megejams",
+        "dovanos automobiliui",
+        "dovanos 45 metu proga",
+        "dovana 65 metu proga",
+        "prabangi dovana",
+        "dovana maistas i namus",
+        "maisto dovanu krepseliai"
+      ],
+      "productFit": "editorial alternative; conditional on recipient wanting shared creation",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Dovanų idėjos pagal žmogų, progą ir biudžetą“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "",
+      "links": [
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Nuo ko pradėti renkantis dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
+      "answerLead": "Dovanos pasirinkimą pradėkite nuo gavėjo norų, progos ir biudžeto. Palyginkite praktišką daiktą, patirtį ir bendrą veiklą, tada patikrinkite tikras pirkimo ir naudojimo sąlygas.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    },
+    {
+      "id": "C00",
+      "slug": "gidai/kaledines-dovanos",
+      "title": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+      "query": "kalėdinės dovanos",
+      "cluster": "Kalėdos",
+      "priority": "P0",
+      "question": "Ką dovanoti Kalėdoms, kad dovana tiktų žmogui?",
+      "contribution": "Gavėjo, biudžeto ir laiko matrica; pasirinkimas tarp daikto, bendros veiklos ir patirties; pasiruošimo kalendorius.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "7db71eba-3193-4e80-b481-24f0751f84e1",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+      "publicState": "private-plan-or-draft",
+      "parentId": "H00",
+      "format": "editorial navigation hub with selection guide",
+      "proposedMetaDescription": "Ką dovanoti Kalėdoms, kad dovana tiktų žmogui. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "outline": [
+        "Gavėjo, biudžeto ir laiko matrica",
+        "pasirinkimas tarp daikto, bendros veiklos ir patirties",
+        "pasiruošimo kalendorius"
+      ],
+      "demand": {
+        "searchVolume": 1000,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos",
+        "keywordDifficulty": 3,
+        "nov2025": 5400,
+        "dec2025": 6600,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-3.private.json"
+        ]
+      },
+      "aliases": [
+        "kalėdinės dovanos",
+        "kalėdinės dovanos krikšto tėvams",
+        "prasmingos kalėdinės dovanos",
+        "personalizuotos kalėdinės dovanos",
+        "romantiškos kalėdinės dovanos",
+        "praktinės kalėdinės dovanos",
+        "praktiškos kalėdinės dovanos",
+        "rankų darbo kalėdinės dovanos",
+        "pasidaryk pats kalėdinės dovanos",
+        "patirties kalėdinės dovanos",
+        "lietuviškos kalėdinės dovanos",
+        "valgomos kalėdinės dovanos",
+        "tvarios kalėdinės dovanos",
+        "simbolinės kalėdinės dovanos",
+        "jaukios kalėdinės dovanos",
+        "kūrybinės kalėdinės dovanos",
+        "įsimintinos kalėdinės dovanos",
+        "ką dovanoti kalėdoms",
+        "kalėdinių dovanų idėjos",
+        "dovanos kalėdoms",
+        "dovanu rinkiniai kaledoms",
+        "valgomos dovanos kaledoms",
+        "idomios kaledines dovanos",
+        "kaledines dovanos",
+        "jaukios kaledines dovanos",
+        "praktiskos kaledines dovanos",
+        "populiariausios kaledines dovanos",
+        "saldžios kalėdinės dovanos",
+        "universali dovana kaledoms",
+        "kaledines dovanos rinkiniai",
+        "mielos kaledines dovanos",
+        "kaledines dovanos pirmokams",
+        "smulkios dovanos kaledoms",
+        "populiariausios kaledu dovanos",
+        "kaledines dovanos bendradarbiams",
+        "skanios kalėdinės dovanos",
+        "dovanos kalėdinės",
+        "kalėdinės dovanos partneriams",
+        "valgoma kalėdų dovana",
+        "verslo kalėdinės dovanos",
+        "skanios dovanos kaledoms",
+        "kaledinis maisto rinkinys",
+        "kalediniai rinkiniai",
+        "jaukios dovanos kalėdoms",
+        "skanestai kaledoms",
+        "kalėdinės verslo dovanos",
+        "kalediniai valgomi rinkiniai",
+        "gurmaniskos dovanos kaledoms",
+        "valgomos kaledines dovanos",
+        "kaledines dovanos kolektyvui",
+        "kalėdinės dovanos kolektyvams",
+        "kalėdinės dovanos berniukams",
+        "maisto dovanos kalėdoms",
+        "valgomos kaledines dovanos internetu",
+        "kaledines saldzios dovanos",
+        "kaledines dovanos mergaitems",
+        "kaledines dovanos pradinukams",
+        "kaledos lt",
+        "kalediniai rinkiniai gurmanams",
+        "kalėdinės dovanos 2021",
+        "kalėdų dovana knyga",
+        "suvenyrai kaledoms",
+        "kalėdiniai renginiai kaune",
+        "maisto rinkiniai kaledoms"
+      ],
+      "productFit": "editorial alternative; conditional on recipient wanting shared creation",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Kalėdinės dovanos: kaip išrinkti tinkamą“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "Kalėdos 2026: rengti spalį–lapkritį pagal ankstesnio sezono paklausą; nenurodyti nepatvirtinto pristatymo termino.",
+      "links": [
+        {
+          "targetId": "H00",
+          "anchor": "Dovanų idėjos pagal žmogų, progą ir biudžetą",
+          "reason": "Grįžti prie platesnio pasirinkimo."
+        },
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Ką dovanoti Kalėdoms, kad dovana tiktų žmogui. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "answerLead": "Dovanos pasirinkimą pradėkite nuo gavėjo norų, progos ir biudžeto. Palyginkite praktišką daiktą, patirtį ir bendrą veiklą, tada patikrinkite tikras pirkimo ir naudojimo sąlygas.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    },
+    {
+      "id": "C01",
+      "slug": "gidai/kaledines-dovanos-moterims",
+      "title": "Kalėdinės dovanos moterims pagal jų pomėgius",
+      "query": "kalėdinės dovanos moterims",
+      "cluster": "Kalėdos",
+      "priority": "P0",
+      "question": "Kaip išrinkti dovaną moteriai nepasikliaujant stereotipais?",
+      "contribution": "Pomėgių ir santykio artumo scenarijai; praktiškų ir sentimentalių dovanų skirtumai; kada bendra veikla tinka, o kada netinka.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "2343efcf-55bf-4aca-9b6a-d55eb4a20ef8",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kalėdinės dovanos moterims pagal jų pomėgius",
+      "publicState": "private-plan-or-draft",
+      "parentId": "C00",
+      "format": "original selection/practical guide",
+      "proposedMetaDescription": "Kaip išrinkti dovaną moteriai nepasikliaujant stereotipais. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "outline": [
+        "Pomėgių ir santykio artumo scenarijai",
+        "praktiškų ir sentimentalių dovanų skirtumai",
+        "kada bendra veikla tinka, o kada netinka"
+      ],
+      "demand": {
+        "searchVolume": 390,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos moterims",
+        "keywordDifficulty": 0,
+        "nov2025": 1300,
+        "dec2025": 2400,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-dovanos.private.json"
+        ]
+      },
+      "aliases": [
+        "kalėdinės dovanos moterims",
+        "kalėdinės dovanos žmonai",
+        "kaledine dovana moteriai",
+        "originali kaledine dovana moteriai",
+        "kalediniai rinkiniai moterims"
+      ],
+      "productFit": "editorial alternative; conditional on recipient wanting shared creation",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Kalėdinės dovanos moterims pagal jų pomėgius“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "Kalėdos 2026: rengti spalį–lapkritį pagal ankstesnio sezono paklausą; nenurodyti nepatvirtinto pristatymo termino.",
+      "links": [
+        {
+          "targetId": "C00",
+          "anchor": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+          "reason": "Grįžti prie platesnio pasirinkimo."
+        },
+        {
+          "targetId": "R01",
+          "anchor": "Dovanos moterims pagal pomėgius ir poreikius",
+          "reason": "Palyginti pasirinkimą ir kitomis progomis."
+        },
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Kaip išrinkti dovaną moteriai nepasikliaujant stereotipais. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "answerLead": "Dovaną moteriai rinkitės pagal jos pomėgius ir norus. Santykio artumas, realus biudžetas ir galimybė pasiruošti padės pasirinkti tarp daikto, patirties ir bendros veiklos.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    },
+    {
+      "id": "C02",
+      "slug": "gidai/kaledines-dovanos-mamai",
+      "title": "Kalėdinės dovanos mamai: dėmesys, laikas ir prisiminimai",
+      "query": "kalėdinės dovanos mamai",
+      "cluster": "Kalėdos",
+      "priority": "P0",
+      "question": "Kaip parinkti mamai dovaną, kuri atlieptų jos norus?",
+      "contribution": "Mamos pageidavimų išsiaiškinimas; dovana nuo vieno žmogaus ar visos šeimos; bendro laiko planas be pareigos dalyvauti.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "2d587e3e-09a3-4fb5-b1fc-0fac3b3bab63",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kalėdinės dovanos mamai: dėmesys, laikas ir prisiminimai",
+      "publicState": "private-plan-or-draft",
+      "parentId": "C00",
+      "format": "original selection/practical guide",
+      "proposedMetaDescription": "Kaip parinkti mamai dovaną, kuri atlieptų jos norus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "outline": [
+        "Mamos pageidavimų išsiaiškinimas",
+        "dovana nuo vieno žmogaus ar visos šeimos",
+        "bendro laiko planas be pareigos dalyvauti"
+      ],
+      "demand": {
+        "searchVolume": 110,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos mamai",
+        "keywordDifficulty": 0,
+        "nov2025": 390,
+        "dec2025": 880,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-3.private.json"
+        ]
+      },
+      "aliases": [
+        "kalėdinės dovanos mamai",
+        "dovana mamai kalėdoms",
+        "kaledines dovanos mamai",
+        "dovana mamai kaledoms"
+      ],
+      "productFit": "editorial alternative; conditional on recipient wanting shared creation",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Kalėdinės dovanos mamai: dėmesys, laikas ir prisiminimai“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "Kalėdos 2026: rengti spalį–lapkritį pagal ankstesnio sezono paklausą; nenurodyti nepatvirtinto pristatymo termino.",
+      "links": [
+        {
+          "targetId": "C00",
+          "anchor": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+          "reason": "Grįžti prie platesnio pasirinkimo."
+        },
+        {
+          "targetId": "R03",
+          "anchor": "Dovanos mamai: nuo kasdienio dėmesio iki bendros patirties",
+          "reason": "Palyginti pasirinkimą ir kitomis progomis."
+        },
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Kaip parinkti mamai dovaną, kuri atlieptų jos norus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "answerLead": "Mamą verta pradžiuginti dovana, kuri atitinka jos pačios norus. Pirmiausia apsispręskite, ar ji norėtų praktiško daikto, poilsio, ar bendro laiko su šeima.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    },
+    {
+      "id": "C03",
+      "slug": "gidai/kaledines-dovanos-vyrams",
+      "title": "Kalėdinės dovanos vyrams pagal pomėgius ir gyvenimo būdą",
+      "query": "kalėdinės dovanos vyrams",
+      "cluster": "Kalėdos",
+      "priority": "P0",
+      "question": "Kaip pasirinkti dovaną vyrui pagal jo interesus?",
+      "contribution": "Pomėgio pažinimo klausimai; tinkamumo ir grąžinimo patikra; asmeninė dovana vietoj atsitiktinio aksesuarų sąrašo.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "9bd829a9-fd02-4762-bf8b-3a6e0559c4e9",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kalėdinės dovanos vyrams pagal pomėgius ir gyvenimo būdą",
+      "publicState": "private-plan-or-draft",
+      "parentId": "C00",
+      "format": "original selection/practical guide",
+      "proposedMetaDescription": "Kaip pasirinkti dovaną vyrui pagal jo interesus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "outline": [
+        "Pomėgio pažinimo klausimai",
+        "tinkamumo ir grąžinimo patikra",
+        "asmeninė dovana vietoj atsitiktinio aksesuarų sąrašo"
+      ],
+      "demand": {
+        "searchVolume": 480,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos vyrams",
+        "keywordDifficulty": 0,
+        "nov2025": 1900,
+        "dec2025": 2900,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "aliases": [
+        "kalėdinės dovanos vyrams",
+        "kalėdinės dovanos vyrui",
+        "ka padovanoti vyrui kaledu proga",
+        "kaledu dovanos jam",
+        "kalėdinės dovanos jam",
+        "kalediniai rinkiniai vyrams"
+      ],
+      "productFit": "editorial alternative; conditional on recipient wanting shared creation",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Kalėdinės dovanos vyrams pagal pomėgius ir gyvenimo būdą“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "Kalėdos 2026: rengti spalį–lapkritį pagal ankstesnio sezono paklausą; nenurodyti nepatvirtinto pristatymo termino.",
+      "links": [
+        {
+          "targetId": "C00",
+          "anchor": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+          "reason": "Grįžti prie platesnio pasirinkimo."
+        },
+        {
+          "targetId": "R02",
+          "anchor": "Dovanos vyrams pagal pomėgius ir poreikius",
+          "reason": "Palyginti pasirinkimą ir kitomis progomis."
+        },
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Kaip pasirinkti dovaną vyrui pagal jo interesus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "answerLead": "Dovaną vyrui rinkitės pagal jo interesus ir tai, ką jis iš tiesų norėtų veikti ar naudoti. Prieš pirkdami specializuotą daiktą, patikrinkite konkrečius jo poreikius.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    },
+    {
+      "id": "C04",
+      "slug": "gidai/kaledines-dovanos-seimai",
+      "title": "Kalėdinės dovanos šeimai: ką veikti kartu",
+      "query": "kalėdinės dovanos šeimai",
+      "cluster": "Kalėdos",
+      "priority": "P0",
+      "question": "Kokia viena dovana galėtų tikti visai šeimai?",
+      "contribution": "Dalyvių interesų ir laiko suderinimas; bendros veiklos organizavimas; skirtingo amžiaus dalyvių ribos pagal konkrečių produktų dokumentus.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "94c34ccb-1514-4dc4-9137-f0eb3b6b0589",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kalėdinės dovanos šeimai: ką veikti kartu",
+      "publicState": "private-plan-or-draft",
+      "parentId": "C00",
+      "format": "original selection/practical guide",
+      "proposedMetaDescription": "Kokia viena dovana galėtų tikti visai šeimai. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "outline": [
+        "Dalyvių interesų ir laiko suderinimas",
+        "bendros veiklos organizavimas",
+        "skirtingo amžiaus dalyvių ribos pagal konkrečių produktų dokumentus"
+      ],
+      "demand": {
+        "searchVolume": 110,
+        "volumeState": "estimate",
+        "measuredQuery": "kalėdinės dovanos šeimai",
+        "keywordDifficulty": 0,
+        "nov2025": 480,
+        "dec2025": 720,
+        "underlyingThrough": "2026-08",
+        "evidenceIds": [
+          "volume-0.private.json",
+          "related-0.private.json"
+        ]
+      },
+      "aliases": [
+        "kalėdinės dovanos šeimai",
+        "kalediniai rinkiniai seimai"
+      ],
+      "productFit": "direct or strongly relevant",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Kalėdinės dovanos šeimai: ką veikti kartu“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "Kalėdos 2026: rengti spalį–lapkritį pagal ankstesnio sezono paklausą; nenurodyti nepatvirtinto pristatymo termino.",
+      "links": [
+        {
+          "targetId": "C00",
+          "anchor": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+          "reason": "Grįžti prie platesnio pasirinkimo."
+        },
+        {
+          "targetId": "R06",
+          "anchor": "Dovana šeimai: kaip pasirinkti bendrą veiklą",
+          "reason": "Palyginti pasirinkimą ir kitomis progomis."
+        },
+        {
+          "targetId": "S10",
+          "anchor": "Rinkinys ar paruošta dovana?",
+          "reason": "Įvertinti bendro kūrimo tinkamumą."
+        },
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Kokia viena dovana galėtų tikti visai šeimai. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "answerLead": "Bendra dovana šeimai tinka tada, kai jos norėtų visi dalyviai. Derinkite interesus, laiką ir galimybę dalyvauti, o rinkinio naudojimo ribas tikrinkite jo instrukcijoje.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    },
+    {
+      "id": "C05",
+      "slug": "gidai/kaledines-dovanos-porai",
+      "title": "Kalėdinės dovanos porai: bendro laiko idėjos",
+      "query": "kalėdinės dovanos porai",
+      "cluster": "Kalėdos",
+      "priority": "P0",
+      "question": "Ką dovanoti porai, kai norisi vienos bendros dovanos?",
+      "contribution": "Santykio artumo scenarijai; veikla namuose ar už jų; įteikimo ir vėlesnio bendro vakaro atskyrimas.",
+      "decision": "existing-private-plan",
+      "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
+      "pageId": "ed9ba99d-2f1c-4e33-97d7-43f651b2dbe9",
+      "publicRevisionHash": null,
+      "currentDraftTitle": "Kalėdinės dovanos porai: bendro laiko idėjos",
+      "publicState": "private-plan-or-draft",
+      "parentId": "C00",
+      "format": "original selection/practical guide",
+      "proposedMetaDescription": "Ką dovanoti porai, kai norisi vienos bendros dovanos. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "outline": [
+        "Santykio artumo scenarijai",
+        "veikla namuose ar už jų",
+        "įteikimo ir vėlesnio bendro vakaro atskyrimas"
+      ],
+      "demand": {
+        "searchVolume": null,
+        "volumeState": "provider_null",
+        "measuredQuery": "kalėdinės dovanos porai",
+        "keywordDifficulty": null,
+        "nov2025": null,
+        "dec2025": null,
+        "underlyingThrough": null,
+        "evidenceIds": [
+          "volume-0.private.json"
+        ]
+      },
+      "aliases": [
+        "kalėdinės dovanos porai",
+        "dovana porai kaledu proga"
+      ],
+      "productFit": "direct or strongly relevant",
+      "productTargets": [
+        "P01",
+        "P02"
+      ],
+      "cta": "Jei gavėjai nori kurti kartu, palyginti tikrus poros ir šeimos rinkinius; kitu atveju pasiūlyti tinkamesnį dovanos tipą.",
+      "requiredEvidence": [
+        "Konkrečių įvardijamų prekių, kainų, terminų ir sąlygų pirmosios šalies šaltiniai prieš rekomendavimą.",
+        "Originali pasirinkimo matrica ir aiškiai iliustraciniai scenarijai, ne išgalvota klientų patirtis."
+      ],
+      "mediaBrief": "Atskira redakcinė temos „Kalėdinės dovanos porai: bendro laiko idėjos“ kompozicija: gavėjo pasirinkimo ar įteikimo momentas, šviesus prabangus fonas, mobilus kadravimas. DI iliustracija nevadinama klientų darbu; produktas tik pagal tikrą rinkinį.",
+      "semanticStructure": [
+        "Vienas H1; aiškus atsakymas pradžioje; H2 pagal konkrečią sprendimo eigą.",
+        "Matomos nuorodos ir autoriaus organizacija; tikros publication/review datos po priėmimo.",
+        "Article/BlogPosting tik straipsniui, BreadcrumbList pagal tikrą kelią; Product/Offer tik tikram produkto puslapiui; FAQ turinys matomas, jokio rich-result pažado."
+      ],
+      "earliestReadyDate": "2026-10-16",
+      "calendarStatus": "preparation target, conditional on dependencies; not publication or indexing proof",
+      "seasonalHook": "Kalėdos 2026: rengti spalį–lapkritį pagal ankstesnio sezono paklausą; nenurodyti nepatvirtinto pristatymo termino.",
+      "links": [
+        {
+          "targetId": "C00",
+          "anchor": "Kalėdinės dovanos: kaip išrinkti tinkamą",
+          "reason": "Grįžti prie platesnio pasirinkimo."
+        },
+        {
+          "targetId": "R05",
+          "anchor": "Dovana porai: bendra veikla ar paruoštas prisiminimas?",
+          "reason": "Palyginti pasirinkimą ir kitomis progomis."
+        },
+        {
+          "targetId": "S10",
+          "anchor": "Rinkinys ar paruošta dovana?",
+          "reason": "Įvertinti bendro kūrimo tinkamumą."
+        },
+        {
+          "targetId": "P01",
+          "anchor": "Rankų liejimo rinkinys porai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        },
+        {
+          "targetId": "P02",
+          "anchor": "Rankų liejimo rinkinys šeimai",
+          "reason": "Patikrinti konkrečią komplektaciją ir dabartinę kainą."
+        }
+      ],
+      "description": "Ką dovanoti porai, kai norisi vienos bendros dovanos. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
+      "answerLead": "Dovana porai gali būti bendra veikla arba jau paruoštas prisiminimas. Rinkitės pagal abiejų žmonių pomėgius ir norą dalyvauti, o ne vien pagal šventės progą.",
+      "practicalAsset": "Originali pasirinkimo lentelė: gavėjo noras / tinkamas dovanos tipas / pasiruošimas / kada šis pasirinkimas netiks. Sukurti prieš tekste pažadant lentelę.",
+      "avoidClaims": [
+        "Nėra universalios dovanos visoms moterims, vyrams ar šeimoms.",
+        "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
+        "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
+      ],
+      "draftState": "complete brief, article not yet written or reviewed"
+    }
+  ]
+}

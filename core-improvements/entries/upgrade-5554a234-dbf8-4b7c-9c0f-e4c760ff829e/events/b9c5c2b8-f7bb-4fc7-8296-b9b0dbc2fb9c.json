@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original live-data full-release failure preserved. First focused fixture run correctly failed normal approval for missing synthetic site facts; fixture supplied explicit synthetic facts rather than weakening approval. V1-only scoped path keeps existing full release and public schema unchanged.",
+  "eventId": "b9c5c2b8-f7bb-4fc7-8296-b9b0dbc2fb9c",
+  "sequence": 2,
+  "at": "2026-10-14T16:26:02.151Z"
+}

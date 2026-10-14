@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Native V1 scoped release keeps pinned site/pages/media; selected pages still require genuine current review/approval. Regression covers altered baseline assets before copying, wrong inventory hash, unselected drafts/site drift, stale reviews, scope identity/date/URL and V2 rejection, fake fresh reviews and new selected approved media. Initial isolated fixture failures (required facts/body minimum) fixed without weakening production gates. No production deployment claimed.",
+  "checks": [
+    {
+      "command": "node --test test/*.test.mjs (content-studio; STUDIO_PUBLIC_CORE_DIR own paired checkout)",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-gemini-editorial-20261014/SCOPED_FEATURE_FULL_TESTS.log: 66 tests, 0 failures, including 5 scoped regressions."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Own core branch; no whitespace errors. Manual orchestrator review examined source invariants, not a renderer/deploy PASS."
+    }
+  ],
+  "eventId": "81abd300-723a-42b4-b337-77ce616ade44",
+  "sequence": 3,
+  "at": "2026-10-14T16:45:13.941Z"
+}

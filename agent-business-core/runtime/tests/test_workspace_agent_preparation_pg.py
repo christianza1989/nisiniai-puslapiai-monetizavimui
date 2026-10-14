@@ -140,6 +140,28 @@ async def test_clarification_is_persisted_without_an_agent_effect(prepare_custom
     assert task.result["agent_preparation"] is None and events[-1].content == "Kokio rezultato reikia?"
 
 
+async def test_retained_preparation_replays_after_native_creation_changes_without_new_admission(prepare_customer):
+    c = prepare_customer
+    base = await setup(c)
+    accepted, body = await submit(c, base)
+    # A legitimate revision invalidates the native registered write target,
+    # while preserving this owner's current topic read authority.
+    response = await c["client"].post(f'/customer/v2/creations/{c["request"]["creation_id"]}/revisions',
+        headers=c["auth"], json={"base_revision": 1, "message": "Patikslinkite sintetinį verslo pasiūlymą.",
+            "idempotency_key": str(uuid4())})
+    assert response.status_code == 202, response.text
+    denied = await c["client"].post(base+"/team/agent-preparations", headers=c["auth"], json={
+        **body, "idempotency_key": str(uuid4())})
+    assert denied.status_code == 409 and denied.json()["code"] == "agent_business_not_current"
+    replay = await c["client"].post(base+"/team/agent-preparations", headers=c["auth"], json=body)
+    assert replay.status_code == 200, replay.text
+    assert replay.json()["data"]["turn"]["task_id"] == accepted["turn"]["task_id"]
+    changed = await c["client"].post(base+"/team/agent-preparations", headers=c["auth"], json={**body,"purpose":"email"})
+    assert changed.status_code == 409 and changed.json()["code"] == "idempotency_conflict"
+    async with AsyncSession(c["admin"]) as tx:
+        assert len(list(await tx.scalars(select(Task).where(Task.environment_id == c["environment"])))) == 1
+
+
 async def test_cancel_after_provider_preserves_usage_without_effect_or_fake_reply(prepare_customer):
     c = prepare_customer
     base = await setup(c)

@@ -189,9 +189,6 @@ async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
 
 async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
     row = await topic(tx, session, portfolio_id, topic_id)
-    if preparation is not None:
-        from .preparation import capture
-        await capture(tx, session, row, preparation.creation_id, source=settings().control_source_revision)
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
         {"k": "chat-admission:"+row.environment_id+":"+row.user_id})
     material = {"kind": KIND, "topic_id": row.id, "binding": binding(row), "request": value.model_dump(mode="json", exclude={"idempotency_key"})}
@@ -204,7 +201,14 @@ async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None)
         if old.kind != KIND or old.fingerprint != fingerprint or not turn or turn.topic_id != row.id:
             raise ControlError(409, "idempotency_conflict")
         event = await tx.get(TeamEvent, turn.owner_event_id)
+        await topic(tx, session, portfolio_id, topic_id)
         return topics.project(Accepted, turn=await turn_view(tx, old, row), event=event_view(event, row))
+    if preparation is not None:
+        # An exact retained receipt proves prior acceptance only. Reconcile it
+        # under current topic authority before applying *new-write* Foundation
+        # admission; a later Creation change must not discard its original UUID.
+        from .preparation import capture
+        await capture(tx, session, row, preparation.creation_id, source=settings().control_source_revision)
     reasons = await blockers(tx, row)
     if reasons:
         raise ControlError(409 if reasons[0] in {"topic_archived", "topic_capacity_reached"} else 403, reasons[0])

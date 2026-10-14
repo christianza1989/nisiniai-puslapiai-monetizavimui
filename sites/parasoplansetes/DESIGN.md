@@ -2,6 +2,7 @@
 name: "parasoplansetes.lt / StepOver"
 description: "Aiški įrenginio, programos ir dokumento proceso atranka"
 colors:
+  canvas: "#ffffff"
   primary: "#185de5"
   primary-hover: "#124cc0"
   ink: "#172b49"
@@ -52,6 +53,8 @@ components:
 ---
 
 # Design System: parasoplansetes.lt
+
+2026-10-14 savininko nurodymu homepage stilius taikomas ir vidiniams puslapiams: bendras baltas fonas, vienodas 1600 px maksimalus header/footer rėmas, logotipo dydžiai, kontaktų mygtukas ir mobilus meniu. Vidinių puslapių papildoma viršutinė juosta pašalinta; gidų kortelės bei užklausos formų sekcijos naudoja tuos pačius stilius. Straipsnių skaitymo plotis, breadcrumbs, metadata ir produktų techninė informacija išsaugoti. Aktualus peržiūros planas ir įrodymai: [STYLE_ALIGNMENT_20261014](STYLE_ALIGNMENT_20261014.md). Tai esamos tapatybės suvienodinimas, ne turinio perrašymas ar publikavimo pauzės atšaukimas.
 
 ## Overview
 

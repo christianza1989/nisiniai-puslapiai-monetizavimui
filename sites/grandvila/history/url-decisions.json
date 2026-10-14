@@ -1,0 +1,886 @@
+{
+  "auditCheckedAt": "2026-10-14T10:06:17.706Z",
+  "domain": "grandvila.lt",
+  "entries": [
+    {
+      "oldUrl": "https://www.grandvila.lt/",
+      "action": "keep-url-new-content",
+      "targetPath": "/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190920190513/https://www.grandvila.lt/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/2017/02/",
+      "action": "keep-url-new-content",
+      "targetPath": "/2017/02/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20250113203329/https://grandvila.lt/2017/02/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/2017/02/14/hello-world/",
+      "action": "keep-url-new-content",
+      "targetPath": "/2017/02/14/hello-world/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807114626/https://grandvila.lt/2017/02/14/hello-world/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/2017/02/14/hello-world/?utm_source=rss&utm_medium=rss&utm_campaign=hello-world",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807123808/http://grandvila.lt/2017/02/14/hello-world/?utm_source=rss&utm_medium=rss&utm_campaign=hello-world"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/apie-mus/",
+      "action": "keep-url-new-content",
+      "targetPath": "/apie-mus/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200929165801/http://grandvila.lt/apie-mus/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/apie-virtuves-sefa/",
+      "action": "keep-url-new-content",
+      "targetPath": "/apie-virtuves-sefa/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328045306/https://grandvila.lt/apie-virtuves-sefa/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/austriu-degustacija/",
+      "action": "keep-url-new-content",
+      "targetPath": "/austriu-degustacija/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328045717/https://grandvila.lt/austriu-degustacija/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/author/andrius/",
+      "action": "keep-url-new-content",
+      "targetPath": "/author/andrius/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20260122161410/https://grandvila.lt/author/andrius/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/category/uncategorized/",
+      "action": "keep-url-new-content",
+      "targetPath": "/category/uncategorized/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807124608/https://grandvila.lt/category/uncategorized/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/contacts/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152729/https://www.grandvila.lt/en/contacts/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/gallery/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152628/https://www.grandvila.lt/en/gallery/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/news-2/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825151903/https://www.grandvila.lt/en/news-2/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/adventure-treasure-hunt/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152020/https://www.grandvila.lt/en/room/adventure-treasure-hunt/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/ballroom/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152451/https://www.grandvila.lt/en/room/ballroom/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/basketball/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152654/https://www.grandvila.lt/en/room/basketball/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/beer-tasting/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152552/https://www.grandvila.lt/en/room/beer-tasting/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/billiards/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152213/https://www.grandvila.lt/en/room/billiards/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/catering/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152226/https://www.grandvila.lt/en/room/catering/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/childrens-playground/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152339/https://www.grandvila.lt/en/room/childrens-playground/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/conferences-and-seminars/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152326/https://www.grandvila.lt/en/room/conferences-and-seminars/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/fishing/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152830/https://www.grandvila.lt/en/room/fishing/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/football/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152007/https://www.grandvila.lt/en/room/football/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/go-kart-races/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152439/https://www.grandvila.lt/en/room/go-kart-races/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/hot-tub/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152123/https://www.grandvila.lt/en/room/hot-tub/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/jacuzzi/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152045/https://www.grandvila.lt/en/room/jacuzzi/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/sauna/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152515/https://www.grandvila.lt/en/room/sauna/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/sleeping-rooms/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152148/https://www.grandvila.lt/en/room/sleeping-rooms/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/spa-zona/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190722063549/https://www.grandvila.lt/en/room/spa-zona/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/various-services-entertainment/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190722063628/https://www.grandvila.lt/en/room/various-services-entertainment/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room/volleyball/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152805/https://www.grandvila.lt/en/room/volleyball/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room_category/activities/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152351/https://www.grandvila.lt/en/room_category/activities/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room_category/paslaugos/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152741/https://www.grandvila.lt/en/room_category/paslaugos/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/room_category/services/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152752/https://www.grandvila.lt/en/room_category/services/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/en/villa/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152427/https://www.grandvila.lt/en/villa/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200929181440/http://grandvila.lt/galerija/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/aplinka/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/aplinka/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807125556/http://grandvila.lt/galerija/aplinka/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/desertai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/desertai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807131443/http://grandvila.lt/galerija/desertai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/kambariai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/kambariai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807123939/http://grandvila.lt/galerija/kambariai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/konferenciju-sale/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/konferenciju-sale/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807132238/http://grandvila.lt/galerija/konferenciju-sale/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/maitinimas/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/maitinimas/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807114200/http://grandvila.lt/galerija/maitinimas/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/mobilus-baras/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/mobilus-baras/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807115025/http://grandvila.lt/galerija/mobilus-baras/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/pokyliu-sales/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/pokyliu-sales/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807123837/http://grandvila.lt/galerija/pokyliu-sales/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/pramogos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/pramogos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807123243/http://grandvila.lt/galerija/pramogos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/spa-zona/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/spa-zona/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807131726/http://grandvila.lt/galerija/spa-zona/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/galerija/terasa/",
+      "action": "keep-url-new-content",
+      "targetPath": "/galerija/terasa/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807125239/http://grandvila.lt/galerija/terasa/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=1",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152706/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=1"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=13",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152503/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=13"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=14",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152416/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=14"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=2",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825151837/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=2"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=3",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152111/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=3"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=4",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152237/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=4"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=5",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190825152539/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=5"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=6",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190920190558/https://www.grandvila.lt/galerija/?type_0=gallery&album_gallery_id_0=6"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/grill-degustaciniai-vakarai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/grill-degustaciniai-vakarai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328045227/https://grandvila.lt/grill-degustaciniai-vakarai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/kontaktai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/kontaktai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200929180526/http://grandvila.lt/kontaktai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/kontaktai/?fbclid=IwAR1Azg5PH7H6DmlaX7_JMsOdif7i9zChVZcJaMnZKG5HnDwgpnJgvnjQulI",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127205306/https://grandvila.lt/kontaktai/?fbclid=IwAR1Azg5PH7H6DmlaX7_JMsOdif7i9zChVZcJaMnZKG5HnDwgpnJgvnjQulI"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/miegamuju-kambariu-planai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/miegamuju-kambariu-planai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127203028/https://grandvila.lt/miegamuju-kambariu-planai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/naujienos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/naujienos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200929164628/http://grandvila.lt/naujienos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://www.grandvila.lt/naujienos-2/",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20190722063653/https://www.grandvila.lt/naujienos-2/"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/paslaugos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127204717/https://grandvila.lt/paslaugos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/paslaugos/foto-veidrodis/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/foto-veidrodis/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20210416080716/https://grandvila.lt/paslaugos/foto-veidrodis/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/paslaugos/foto-veidrodis/?gad_source=1&gclid=Cj0KCQjwtsy1BhD7ARIsAHOi4xaIgEUWCHRHFXEjXeEqghNTDpjgE-J-EQRoV1mmBuO309D8EeIMbPgaAkneEALw_wcB",
+      "action": "defer",
+      "targetPath": null,
+      "reason": "Istorinis arba query URL neįtrauktas į dabartinį aktyvų sitemap; nėra automatinio atkūrimo ar redirect sprendimo.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20241111204011/https://grandvila.lt/paslaugos/foto-veidrodis/?gad_source=1&gclid=Cj0KCQjwtsy1BhD7ARIsAHOi4xaIgEUWCHRHFXEjXeEqghNTDpjgE-J-EQRoV1mmBuO309D8EeIMbPgaAkneEALw_wcB"
+      ],
+      "confidence": "low",
+      "status": "proposed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/paslaugos/ivairios-paslaugos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/ivairios-paslaugos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807125636/http://grandvila.lt/paslaugos/ivairios-paslaugos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/paslaugos/konferencijos-ir-seminarai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/konferencijos-ir-seminarai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807132631/http://grandvila.lt/paslaugos/konferencijos-ir-seminarai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/paslaugos/maitinimas/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/maitinimas/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807130748/http://grandvila.lt/paslaugos/maitinimas/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/paslaugos/miegamieji-kambariai/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/miegamieji-kambariai/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807130450/http://grandvila.lt/paslaugos/miegamieji-kambariai/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/paslaugos/pokyliu-sale/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/pokyliu-sale/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807122558/http://grandvila.lt/paslaugos/pokyliu-sale/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/paslaugos/spa-zona/",
+      "action": "keep-url-new-content",
+      "targetPath": "/paslaugos/spa-zona/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200807124333/http://grandvila.lt/paslaugos/spa-zona/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/portfolio/",
+      "action": "keep-url-new-content",
+      "targetPath": "/portfolio/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127200144/https://grandvila.lt/portfolio/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/portfolio/aplinka/",
+      "action": "keep-url-new-content",
+      "targetPath": "/portfolio/aplinka/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127204756/https://grandvila.lt/portfolio/aplinka/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "http://grandvila.lt/pramogos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20200929170444/http://grandvila.lt/pramogos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/alaus-degustacija/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/alaus-degustacija/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328045103/https://grandvila.lt/pramogos/alaus-degustacija/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/dazasvydis/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/dazasvydis/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328043839/https://grandvila.lt/pramogos/dazasvydis/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/futbolas/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/futbolas/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328060223/https://grandvila.lt/pramogos/futbolas/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/ivairios-paslaugos-pramogos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/ivairios-paslaugos-pramogos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328061521/https://grandvila.lt/pramogos/ivairios-paslaugos-pramogos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/jacuzzi/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/jacuzzi/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328055606/https://grandvila.lt/pramogos/jacuzzi/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/kartu-varzybos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/kartu-varzybos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127211026/https://grandvila.lt/pramogos/kartu-varzybos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/kartu-varzybos-2/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/kartu-varzybos-2/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328054959/https://grandvila.lt/pramogos/kartu-varzybos-2/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/krepsinis-2/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/krepsinis-2/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230328042608/https://grandvila.lt/pramogos/krepsinis-2/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    },
+    {
+      "oldUrl": "https://grandvila.lt/pramogos/nuotykines-orientacines-varzybos/",
+      "action": "keep-url-new-content",
+      "targetPath": "/pramogos/nuotykines-orientacines-varzybos/",
+      "reason": "Dabartinis tos pačios paskirties URL yra pilname migracijos registre; tikslus kelias išsaugomas.",
+      "evidenceUrls": [
+        "https://web.archive.org/web/20230127214611/https://grandvila.lt/pramogos/nuotykines-orientacines-varzybos/"
+      ],
+      "confidence": "medium",
+      "status": "agent-reviewed"
+    }
+  ]
+}

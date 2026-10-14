@@ -1,0 +1,2289 @@
+{
+  "version": 1,
+  "kind": "standalone-client-planning-register",
+  "preparedAt": "2026-10-14",
+  "language": "lt-LT",
+  "country": "LT",
+  "timezone": "Europe/Vilnius",
+  "canonicalHost": null,
+  "status": "planned-not-written-not-published",
+  "clusters": [
+    {
+      "id": "kompleksas",
+      "title": "Kompleksas ir pasitikėjimas",
+      "question": "Kas tai per vieta ir kaip ją pasiekti?",
+      "root": "home"
+    },
+    {
+      "id": "vilos",
+      "title": "Vilos ir erdvės",
+      "question": "Kuri vila tinka mano svečiams ir planams?",
+      "root": "vilos"
+    },
+    {
+      "id": "renginiai",
+      "title": "Šventės ir įmonių renginiai",
+      "question": "Kaip surengti mano tipo renginį?",
+      "root": "renginiai"
+    },
+    {
+      "id": "maitinimas",
+      "title": "Maitinimas ir degustacijos",
+      "question": "Kokį maitinimą galime pasirinkti?",
+      "root": "maitinimas"
+    },
+    {
+      "id": "poilsis",
+      "title": "Nakvynė, SPA ir pramogos",
+      "question": "Kur miegosime ir ką galėsime veikti?",
+      "root": "nakvyne"
+    },
+    {
+      "id": "rezervavimas",
+      "title": "Datos, rezervavimas ir sąlygos",
+      "question": "Ar data laisva ir kaip patvirtinamas užsakymas?",
+      "root": "rezervuoti"
+    }
+  ],
+  "sources": {
+    "grand": {
+      "name": "Grand Vila",
+      "url": "https://grandvila.lt/",
+      "status": "Visas ankstesnis auditas",
+      "sitemap": 51
+    },
+    "vilaite": {
+      "name": "Vilaitė",
+      "url": "https://vilaite.lt/",
+      "status": "Sitemap ir pagrindinių puslapių peržiūra",
+      "sitemap": 32
+    },
+    "pasaka": {
+      "name": "Vila Pasaka",
+      "url": "https://vilapasaka.lt/",
+      "status": "Sitemap ir pagrindinių puslapių peržiūra",
+      "sitemap": 33
+    }
+  },
+  "pages": [
+    {
+      "id": "home",
+      "cluster": "kompleksas",
+      "path": "/",
+      "title": "Trys vilos jūsų šventei ir poilsiui",
+      "query": "vilų kompleksas prie Kauno",
+      "question": "Ką galiu užsakyti ir nuo ko pradėti?",
+      "contribution": "Vienas tikras trijų vilų palyginimas ir bendras datos pasirinkimo kelias.",
+      "outline": [
+        "Trys vilos ir jų skirtumai",
+        "Šventė, įmonės renginys ar poilsis",
+        "Maitinimas, nakvynė ir SPA sąlygos",
+        "Datos pasirinkimas ir kontaktas"
+      ],
+      "facts": [
+        "Bendras pavadinimas ir domenas",
+        "Patvirtinti pajėgumai",
+        "Bendras kontaktas"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Padėti pasirinkti konkretų objektą"
+        },
+        {
+          "target": "renginiai",
+          "reason": "Pasirinkti renginio tipą"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Tikrinti datą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Pagrindinis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [
+        "sodybų kompleksas prie Kauno",
+        "vilos šventėms ir poilsiui"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Trys vilos jūsų šventei ir poilsiui",
+      "metaDescription": "Ką galiu užsakyti ir nuo ko pradėti? Vienas tikras trijų vilų palyginimas ir bendras datos pasirinkimo kelias.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vilos",
+      "cluster": "vilos",
+      "path": "/vilos/",
+      "title": "Palyginkite tris vilas",
+      "query": "sodyba šventei prie Kauno",
+      "question": "Kuri iš trijų vilų tinka mano šventei?",
+      "contribution": "Patikrinta palyginimo lentelė: šventės svečiai, nakvynė, erdvės ir papildomos sąlygos.",
+      "outline": [
+        "Vilos pagal šventės dydį",
+        "Salės ir terasos",
+        "Nakvynė ir vonios kambariai",
+        "SPA prieiga ir datos"
+      ],
+      "facts": [
+        "Salės ir lovų pajėgumas atskirai",
+        "Kas įeina ir kas papildoma"
+      ],
+      "links": [
+        {
+          "target": "grand",
+          "reason": "Didelės šventės erdvė"
+        },
+        {
+          "target": "vilaite",
+          "reason": "Jaukesnės šventės pasirinkimas"
+        },
+        {
+          "target": "pasaka",
+          "reason": "Nedidelės šventės ir SPA"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Temos centras",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Palyginkite tris vilas",
+      "metaDescription": "Kuri iš trijų vilų tinka mano šventei? Patikrinta palyginimo lentelė: šventės svečiai, nakvynė, erdvės ir papildomos sąlygos.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "grand",
+      "cluster": "vilos",
+      "path": "/vilos/grand-vila/",
+      "title": "Grand Vila – erdvės, nakvynė ir datos",
+      "query": "Grand Vila",
+      "question": "Ar Grand Vila tinka mano renginiui?",
+      "contribution": "Didesnė šventė, erdvės ir nakvynė su tikrais šios vilos vaizdais ir sąlygomis.",
+      "outline": [
+        "Kam tinka ši vila",
+        "Erdvės ir patvirtintas pajėgumas",
+        "Nakvynė bei papildomos paslaugos",
+        "Galerija ir užimtumas"
+      ],
+      "facts": [
+        "150 svečių ir 25 kambarių teiginių aktualumas",
+        "Tikros nuotraukos ir naudojimo teisės"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Palyginti su kitomis vilomis"
+        },
+        {
+          "target": "grand-erdves",
+          "reason": "Apžiūrėti konkrečias erdves"
+        },
+        {
+          "target": "grand-nakvyne",
+          "reason": "Suplanuoti nakvynę"
+        },
+        {
+          "target": "grand-grafikas",
+          "reason": "Tikrinti šios vilos datą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [
+        "Grand Vila nuoma",
+        "Grand Vila rezervacija"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Grand Vila – erdvės, nakvynė ir datos",
+      "metaDescription": "Ar Grand Vila tinka mano renginiui? Didesnė šventė, erdvės ir nakvynė su tikrais šios vilos vaizdais ir sąlygomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "grand-erdves",
+      "cluster": "vilos",
+      "path": "/vilos/grand-vila/erdves/",
+      "title": "Grand Vila – salės ir terasos",
+      "query": "Grand Vila pokylių salė",
+      "question": "Kaip šioje viloje tilps svečiai ir vyks renginys?",
+      "contribution": "Šios vilos erdvių ir išdėstymo paaiškinimas su tikromis nuotraukomis.",
+      "outline": [
+        "Salės paskirtis ir svečiai",
+        "Stalų bei renginio išdėstymas",
+        "Terasos ir lauko erdvės",
+        "Įranga bei papildomos sąlygos"
+      ],
+      "facts": [
+        "Tikras pajėgumas pagal išdėstymą",
+        "Aktuali įranga"
+      ],
+      "links": [
+        {
+          "target": "grand",
+          "reason": "Grįžti į vilos pasiūlymą"
+        },
+        {
+          "target": "grand-galerija",
+          "reason": "Apžiūrėti visas erdves"
+        },
+        {
+          "target": "vestuves",
+          "reason": "Suplanuoti šventę"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand"
+      ],
+      "decision": "Sujungti tos vilos salių ir terasų šaltinius; smulkios temos – skiltys, kol nereikia atskiros paskirties.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Grand Vila – salės ir terasos",
+      "metaDescription": "Kaip šioje viloje tilps svečiai ir vyks renginys? Šios vilos erdvių ir išdėstymo paaiškinimas su tikromis nuotraukomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "grand-nakvyne",
+      "cluster": "poilsis",
+      "path": "/vilos/grand-vila/nakvyne/",
+      "title": "Grand Vila – kambariai ir nakvynė",
+      "query": "Grand Vila kambariai",
+      "question": "Kur ir kaip po šventės nakvos mūsų svečiai?",
+      "contribution": "Tikras kambarių, lovų ir vonios kambarių registras bei paaiškinti planai.",
+      "outline": [
+        "Kambarių tipai ir lovos",
+        "Privatūs ar bendri vonios kambariai",
+        "Svečių paskirstymo planai",
+        "Atvykimas, išvykimas ir užsakymas"
+      ],
+      "facts": [
+        "Kambarių ir miegamų vietų skaičiai",
+        "Pardavimo atskirai arba su vila taisyklės"
+      ],
+      "links": [
+        {
+          "target": "nakvyne",
+          "reason": "Palyginti komplekso nakvynę"
+        },
+        {
+          "target": "grand",
+          "reason": "Šios vilos sąlygos"
+        },
+        {
+          "target": "g-sveciu-planas",
+          "reason": "Pasiruošti svečių paskirstymą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Grand Vila – kambariai ir nakvynė",
+      "metaDescription": "Kur ir kaip po šventės nakvos mūsų svečiai? Tikras kambarių, lovų ir vonios kambarių registras bei paaiškinti planai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "grand-galerija",
+      "cluster": "vilos",
+      "path": "/vilos/grand-vila/galerija/",
+      "title": "Grand Vila – nuotraukų galerija",
+      "query": "Grand Vila nuotraukos",
+      "question": "Kaip atrodo konkrečios vilos erdvės?",
+      "contribution": "Visos tinkamos publikuoti šios vilos galerijos, jų tvarka ir teminiai ryšiai.",
+      "outline": [
+        "Salės ir terasos",
+        "Kambariai",
+        "Aplinka",
+        "Nuotraukų ryšys su paslaugomis"
+      ],
+      "facts": [
+        "Visi failai ir teisės",
+        "Nuotraukų priskyrimas tikrai vilai"
+      ],
+      "links": [
+        {
+          "target": "grand-erdves",
+          "reason": "Suprasti nuotraukose matomas erdves"
+        },
+        {
+          "target": "grand-nakvyne",
+          "reason": "Patikrinti kambarių informaciją"
+        },
+        {
+          "target": "grand",
+          "reason": "Grįžti į vilos pasiūlymą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Galerija",
+      "sources": [
+        "grand"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Grand Vila – nuotraukų galerija",
+      "metaDescription": "Kaip atrodo konkrečios vilos erdvės? Visos tinkamos publikuoti šios vilos galerijos, jų tvarka ir teminiai ryšiai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "grand-grafikas",
+      "cluster": "rezervavimas",
+      "path": "/vilos/grand-vila/uzimtumas/",
+      "title": "Grand Vila – užimtumo kalendorius",
+      "query": "Grand Vila laisvos datos",
+      "question": "Nuo kada iki kada vila užimta ir ar mano intervalas laisvas?",
+      "contribution": "Vienas tikras užimtumo modelis, tiksli intervalo pradžia bei pabaiga ir užklausos kelias.",
+      "outline": [
+        "Pasirinktas objektas ir mėnuo",
+        "Užimti intervalai su valandomis",
+        "Atvykimo ir išvykimo pasirinkimas",
+        "Serverinis tikrinimas ir užklausa"
+      ],
+      "facts": [
+        "Esamos rezervacijos",
+        "Buferiai ir laiko taisyklės",
+        "Veikiantis booking modulis"
+      ],
+      "links": [
+        {
+          "target": "grand",
+          "reason": "Vilos sąlygos"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Pateikti tikrą veiksmą"
+        },
+        {
+          "target": "rezervavimo-salygos",
+          "reason": "Suprasti patvirtinimą ir atšaukimą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Funkcija",
+      "sources": [
+        "grand"
+      ],
+      "decision": "Vieša vilos turinio skiltis ir privatumą saugantis grafikas; datų kombinacijos nėra atskiri SEO puslapiai.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Grand Vila – užimtumo kalendorius",
+      "metaDescription": "Nuo kada iki kada vila užimta ir ar mano intervalas laisvas? Vienas tikras užimtumo modelis, tiksli intervalo pradžia bei pabaiga ir užklausos kelias.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vilaite",
+      "cluster": "vilos",
+      "path": "/vilos/vilaite/",
+      "title": "Vilaitė – erdvės, nakvynė ir datos",
+      "query": "Vilaitė",
+      "question": "Ar Vilaitė tinka mano renginiui?",
+      "contribution": "Jaukesnė šventė ir terasos su tikrais šios vilos vaizdais ir sąlygomis.",
+      "outline": [
+        "Kam tinka ši vila",
+        "Erdvės ir patvirtintas pajėgumas",
+        "Nakvynė bei papildomos paslaugos",
+        "Galerija ir užimtumas"
+      ],
+      "facts": [
+        "50 šventės svečių, kambarių bei palėpės registras",
+        "Tikros nuotraukos ir naudojimo teisės"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Palyginti su kitomis vilomis"
+        },
+        {
+          "target": "vilaite-erdves",
+          "reason": "Apžiūrėti konkrečias erdves"
+        },
+        {
+          "target": "vilaite-nakvyne",
+          "reason": "Suplanuoti nakvynę"
+        },
+        {
+          "target": "vilaite-grafikas",
+          "reason": "Tikrinti šios vilos datą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "vilaite"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [
+        "Vilaitė nuoma",
+        "Vilaitė rezervacija"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vilaitė – erdvės, nakvynė ir datos",
+      "metaDescription": "Ar Vilaitė tinka mano renginiui? Jaukesnė šventė ir terasos su tikrais šios vilos vaizdais ir sąlygomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vilaite-erdves",
+      "cluster": "vilos",
+      "path": "/vilos/vilaite/erdves/",
+      "title": "Vilaitė – salės ir terasos",
+      "query": "Vilaitė pokylių salė",
+      "question": "Kaip šioje viloje tilps svečiai ir vyks renginys?",
+      "contribution": "Šios vilos erdvių ir išdėstymo paaiškinimas su tikromis nuotraukomis.",
+      "outline": [
+        "Salės paskirtis ir svečiai",
+        "Stalų bei renginio išdėstymas",
+        "Terasos ir lauko erdvės",
+        "Įranga bei papildomos sąlygos"
+      ],
+      "facts": [
+        "Tikras pajėgumas pagal išdėstymą",
+        "Aktuali įranga"
+      ],
+      "links": [
+        {
+          "target": "vilaite",
+          "reason": "Grįžti į vilos pasiūlymą"
+        },
+        {
+          "target": "vilaite-galerija",
+          "reason": "Apžiūrėti visas erdves"
+        },
+        {
+          "target": "vestuves",
+          "reason": "Suplanuoti šventę"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "vilaite"
+      ],
+      "decision": "Sujungti tos vilos salių ir terasų šaltinius; smulkios temos – skiltys, kol nereikia atskiros paskirties.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vilaitė – salės ir terasos",
+      "metaDescription": "Kaip šioje viloje tilps svečiai ir vyks renginys? Šios vilos erdvių ir išdėstymo paaiškinimas su tikromis nuotraukomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vilaite-nakvyne",
+      "cluster": "poilsis",
+      "path": "/vilos/vilaite/nakvyne/",
+      "title": "Vilaitė – kambariai ir nakvynė",
+      "query": "Vilaitė kambariai",
+      "question": "Kur ir kaip po šventės nakvos mūsų svečiai?",
+      "contribution": "Tikras kambarių, lovų ir vonios kambarių registras bei paaiškinti planai.",
+      "outline": [
+        "Kambarių tipai ir lovos",
+        "Privatūs ar bendri vonios kambariai",
+        "Svečių paskirstymo planai",
+        "Atvykimas, išvykimas ir užsakymas"
+      ],
+      "facts": [
+        "Kambarių ir miegamų vietų skaičiai",
+        "Pardavimo atskirai arba su vila taisyklės"
+      ],
+      "links": [
+        {
+          "target": "nakvyne",
+          "reason": "Palyginti komplekso nakvynę"
+        },
+        {
+          "target": "vilaite",
+          "reason": "Šios vilos sąlygos"
+        },
+        {
+          "target": "g-sveciu-planas",
+          "reason": "Pasiruošti svečių paskirstymą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "vilaite"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vilaitė – kambariai ir nakvynė",
+      "metaDescription": "Kur ir kaip po šventės nakvos mūsų svečiai? Tikras kambarių, lovų ir vonios kambarių registras bei paaiškinti planai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vilaite-galerija",
+      "cluster": "vilos",
+      "path": "/vilos/vilaite/galerija/",
+      "title": "Vilaitė – nuotraukų galerija",
+      "query": "Vilaitė nuotraukos",
+      "question": "Kaip atrodo konkrečios vilos erdvės?",
+      "contribution": "Visos tinkamos publikuoti šios vilos galerijos, jų tvarka ir teminiai ryšiai.",
+      "outline": [
+        "Salės ir terasos",
+        "Kambariai",
+        "Aplinka",
+        "Nuotraukų ryšys su paslaugomis"
+      ],
+      "facts": [
+        "Visi failai ir teisės",
+        "Nuotraukų priskyrimas tikrai vilai"
+      ],
+      "links": [
+        {
+          "target": "vilaite-erdves",
+          "reason": "Suprasti nuotraukose matomas erdves"
+        },
+        {
+          "target": "vilaite-nakvyne",
+          "reason": "Patikrinti kambarių informaciją"
+        },
+        {
+          "target": "vilaite",
+          "reason": "Grįžti į vilos pasiūlymą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Galerija",
+      "sources": [
+        "vilaite"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vilaitė – nuotraukų galerija",
+      "metaDescription": "Kaip atrodo konkrečios vilos erdvės? Visos tinkamos publikuoti šios vilos galerijos, jų tvarka ir teminiai ryšiai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vilaite-grafikas",
+      "cluster": "rezervavimas",
+      "path": "/vilos/vilaite/uzimtumas/",
+      "title": "Vilaitė – užimtumo kalendorius",
+      "query": "Vilaitė laisvos datos",
+      "question": "Nuo kada iki kada vila užimta ir ar mano intervalas laisvas?",
+      "contribution": "Vienas tikras užimtumo modelis, tiksli intervalo pradžia bei pabaiga ir užklausos kelias.",
+      "outline": [
+        "Pasirinktas objektas ir mėnuo",
+        "Užimti intervalai su valandomis",
+        "Atvykimo ir išvykimo pasirinkimas",
+        "Serverinis tikrinimas ir užklausa"
+      ],
+      "facts": [
+        "Esamos rezervacijos",
+        "Buferiai ir laiko taisyklės",
+        "Veikiantis booking modulis"
+      ],
+      "links": [
+        {
+          "target": "vilaite",
+          "reason": "Vilos sąlygos"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Pateikti tikrą veiksmą"
+        },
+        {
+          "target": "rezervavimo-salygos",
+          "reason": "Suprasti patvirtinimą ir atšaukimą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Funkcija",
+      "sources": [
+        "vilaite"
+      ],
+      "decision": "Vieša vilos turinio skiltis ir privatumą saugantis grafikas; datų kombinacijos nėra atskiri SEO puslapiai.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vilaitė – užimtumo kalendorius",
+      "metaDescription": "Nuo kada iki kada vila užimta ir ar mano intervalas laisvas? Vienas tikras užimtumo modelis, tiksli intervalo pradžia bei pabaiga ir užklausos kelias.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "pasaka",
+      "cluster": "vilos",
+      "path": "/vilos/vila-pasaka/",
+      "title": "Vila Pasaka – erdvės, nakvynė ir datos",
+      "query": "Vila Pasaka",
+      "question": "Ar Vila Pasaka tinka mano renginiui?",
+      "contribution": "Nedidelė šventė, nakvynė ir SPA su tikrais šios vilos vaizdais ir sąlygomis.",
+      "outline": [
+        "Kam tinka ši vila",
+        "Erdvės ir patvirtintas pajėgumas",
+        "Nakvynė bei papildomos paslaugos",
+        "Galerija ir užimtumas"
+      ],
+      "facts": [
+        "30 šventės svečių, SPA bei atskirų kambarių taisyklės",
+        "Tikros nuotraukos ir naudojimo teisės"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Palyginti su kitomis vilomis"
+        },
+        {
+          "target": "pasaka-erdves",
+          "reason": "Apžiūrėti konkrečias erdves"
+        },
+        {
+          "target": "pasaka-nakvyne",
+          "reason": "Suplanuoti nakvynę"
+        },
+        {
+          "target": "pasaka-grafikas",
+          "reason": "Tikrinti šios vilos datą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [
+        "Vila Pasaka nuoma",
+        "Vila Pasaka rezervacija"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vila Pasaka – erdvės, nakvynė ir datos",
+      "metaDescription": "Ar Vila Pasaka tinka mano renginiui? Nedidelė šventė, nakvynė ir SPA su tikrais šios vilos vaizdais ir sąlygomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "pasaka-erdves",
+      "cluster": "vilos",
+      "path": "/vilos/vila-pasaka/erdves/",
+      "title": "Vila Pasaka – salės ir terasos",
+      "query": "Vila Pasaka pokylių salė",
+      "question": "Kaip šioje viloje tilps svečiai ir vyks renginys?",
+      "contribution": "Šios vilos erdvių ir išdėstymo paaiškinimas su tikromis nuotraukomis.",
+      "outline": [
+        "Salės paskirtis ir svečiai",
+        "Stalų bei renginio išdėstymas",
+        "Terasos ir lauko erdvės",
+        "Įranga bei papildomos sąlygos"
+      ],
+      "facts": [
+        "Tikras pajėgumas pagal išdėstymą",
+        "Aktuali įranga"
+      ],
+      "links": [
+        {
+          "target": "pasaka",
+          "reason": "Grįžti į vilos pasiūlymą"
+        },
+        {
+          "target": "pasaka-galerija",
+          "reason": "Apžiūrėti visas erdves"
+        },
+        {
+          "target": "vestuves",
+          "reason": "Suplanuoti šventę"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "pasaka"
+      ],
+      "decision": "Sujungti tos vilos salių ir terasų šaltinius; smulkios temos – skiltys, kol nereikia atskiros paskirties.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vila Pasaka – salės ir terasos",
+      "metaDescription": "Kaip šioje viloje tilps svečiai ir vyks renginys? Šios vilos erdvių ir išdėstymo paaiškinimas su tikromis nuotraukomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "pasaka-nakvyne",
+      "cluster": "poilsis",
+      "path": "/vilos/vila-pasaka/nakvyne/",
+      "title": "Vila Pasaka – kambariai ir nakvynė",
+      "query": "Vila Pasaka kambariai",
+      "question": "Kur ir kaip po šventės nakvos mūsų svečiai?",
+      "contribution": "Tikras kambarių, lovų ir vonios kambarių registras bei paaiškinti planai.",
+      "outline": [
+        "Kambarių tipai ir lovos",
+        "Privatūs ar bendri vonios kambariai",
+        "Svečių paskirstymo planai",
+        "Atvykimas, išvykimas ir užsakymas"
+      ],
+      "facts": [
+        "Kambarių ir miegamų vietų skaičiai",
+        "Pardavimo atskirai arba su vila taisyklės"
+      ],
+      "links": [
+        {
+          "target": "nakvyne",
+          "reason": "Palyginti komplekso nakvynę"
+        },
+        {
+          "target": "pasaka",
+          "reason": "Šios vilos sąlygos"
+        },
+        {
+          "target": "g-sveciu-planas",
+          "reason": "Pasiruošti svečių paskirstymą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vila Pasaka – kambariai ir nakvynė",
+      "metaDescription": "Kur ir kaip po šventės nakvos mūsų svečiai? Tikras kambarių, lovų ir vonios kambarių registras bei paaiškinti planai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "pasaka-galerija",
+      "cluster": "vilos",
+      "path": "/vilos/vila-pasaka/galerija/",
+      "title": "Vila Pasaka – nuotraukų galerija",
+      "query": "Vila Pasaka nuotraukos",
+      "question": "Kaip atrodo konkrečios vilos erdvės?",
+      "contribution": "Visos tinkamos publikuoti šios vilos galerijos, jų tvarka ir teminiai ryšiai.",
+      "outline": [
+        "Salės ir terasos",
+        "Kambariai",
+        "Aplinka",
+        "Nuotraukų ryšys su paslaugomis"
+      ],
+      "facts": [
+        "Visi failai ir teisės",
+        "Nuotraukų priskyrimas tikrai vilai"
+      ],
+      "links": [
+        {
+          "target": "pasaka-erdves",
+          "reason": "Suprasti nuotraukose matomas erdves"
+        },
+        {
+          "target": "pasaka-nakvyne",
+          "reason": "Patikrinti kambarių informaciją"
+        },
+        {
+          "target": "pasaka",
+          "reason": "Grįžti į vilos pasiūlymą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Galerija",
+      "sources": [
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vila Pasaka – nuotraukų galerija",
+      "metaDescription": "Kaip atrodo konkrečios vilos erdvės? Visos tinkamos publikuoti šios vilos galerijos, jų tvarka ir teminiai ryšiai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "pasaka-grafikas",
+      "cluster": "rezervavimas",
+      "path": "/vilos/vila-pasaka/uzimtumas/",
+      "title": "Vila Pasaka – užimtumo kalendorius",
+      "query": "Vila Pasaka laisvos datos",
+      "question": "Nuo kada iki kada vila užimta ir ar mano intervalas laisvas?",
+      "contribution": "Vienas tikras užimtumo modelis, tiksli intervalo pradžia bei pabaiga ir užklausos kelias.",
+      "outline": [
+        "Pasirinktas objektas ir mėnuo",
+        "Užimti intervalai su valandomis",
+        "Atvykimo ir išvykimo pasirinkimas",
+        "Serverinis tikrinimas ir užklausa"
+      ],
+      "facts": [
+        "Esamos rezervacijos",
+        "Buferiai ir laiko taisyklės",
+        "Veikiantis booking modulis"
+      ],
+      "links": [
+        {
+          "target": "pasaka",
+          "reason": "Vilos sąlygos"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Pateikti tikrą veiksmą"
+        },
+        {
+          "target": "rezervavimo-salygos",
+          "reason": "Suprasti patvirtinimą ir atšaukimą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Funkcija",
+      "sources": [
+        "pasaka"
+      ],
+      "decision": "Vieša vilos turinio skiltis ir privatumą saugantis grafikas; datų kombinacijos nėra atskiri SEO puslapiai.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vila Pasaka – užimtumo kalendorius",
+      "metaDescription": "Nuo kada iki kada vila užimta ir ar mano intervalas laisvas? Vienas tikras užimtumo modelis, tiksli intervalo pradžia bei pabaiga ir užklausos kelias.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "renginiai",
+      "cluster": "renginiai",
+      "path": "/renginiai/",
+      "title": "Šeimos šventės ir įmonių renginiai",
+      "query": "sodyba renginiams prie Kauno",
+      "question": "Koks renginio kelias man tinkamas?",
+      "contribution": "Renginio tipo pasirinkimas ir tinkamų vilų palyginimas.",
+      "outline": [
+        "Šeimos šventės",
+        "Įmonių susitikimai",
+        "Konferencijos",
+        "Vila, maitinimas ir nakvynė"
+      ],
+      "facts": [
+        "Tikras renginių aptarnavimas"
+      ],
+      "links": [
+        {
+          "target": "vestuves",
+          "reason": "Vestuvių pasirinkimas"
+        },
+        {
+          "target": "seimos-sventes",
+          "reason": "Kitos šeimos progos"
+        },
+        {
+          "target": "imones",
+          "reason": "Įmonių kelias"
+        },
+        {
+          "target": "konferencijos",
+          "reason": "Darbo renginio sąlygos"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Temos centras",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Šeimos šventės ir įmonių renginiai",
+      "metaDescription": "Koks renginio kelias man tinkamas? Renginio tipo pasirinkimas ir tinkamų vilų palyginimas.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vestuves",
+      "cluster": "renginiai",
+      "path": "/renginiai/vestuves/",
+      "title": "Vieta vestuvėms prie Kauno",
+      "query": "sodyba vestuvėms prie Kauno",
+      "question": "Kaip pasirinkti vilą vestuvėms pagal svečius ir šventės eigą?",
+      "contribution": "Trijų realių erdvių palyginimas ceremonijai, vakarienei, šokiams ir nakvynei.",
+      "outline": [
+        "Svečių skaičius ir salė",
+        "Ceremonija bei terasa",
+        "Maitinimas ir nakvynė",
+        "Data ir pasiūlymo derinimas"
+      ],
+      "facts": [
+        "Ceremonijos vietos sąlygos",
+        "Pajėgumas ir paslaugos"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Palyginti objektus"
+        },
+        {
+          "target": "meniu",
+          "reason": "Derinti šventinį stalą"
+        },
+        {
+          "target": "g-vestuviu-planas",
+          "reason": "Pasiruošti nakvynei"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [
+        "vestuvių vieta netoli Kauno",
+        "vila vestuvėms su nakvyne"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vieta vestuvėms prie Kauno",
+      "metaDescription": "Kaip pasirinkti vilą vestuvėms pagal svečius ir šventės eigą? Trijų realių erdvių palyginimas ceremonijai, vakarienei, šokiams ir nakvynei.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "seimos-sventes",
+      "cluster": "renginiai",
+      "path": "/renginiai/seimos-sventes/",
+      "title": "Gimtadieniai, jubiliejai ir krikštynos",
+      "query": "sodyba šeimos šventei prie Kauno",
+      "question": "Kuri erdvė tinka mūsų šeimos progai?",
+      "contribution": "Vilos pagal šventės mastą, vaikų poreikius ir nakvynę.",
+      "outline": [
+        "Maža ir didesnė kompanija",
+        "Šventės išdėstymas",
+        "Maitinimas bei vaikų poreikiai",
+        "Papildomos paslaugos"
+      ],
+      "facts": [
+        "Tikros vaikų erdvės ir prieiga",
+        "Renginio sąlygos"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Pasirinkti vilą"
+        },
+        {
+          "target": "pramogos",
+          "reason": "Išsirinkti tinkamas veiklas"
+        },
+        {
+          "target": "meniu",
+          "reason": "Derinti maitinimą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Gimtadieniai, jubiliejai ir krikštynos yra vieno aiškaus šeimos švenčių puslapio skiltys; ne trys vienodi URL.",
+      "variants": [
+        "sodyba gimtadieniui",
+        "sodyba krikštynoms"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Gimtadieniai, jubiliejai ir krikštynos",
+      "metaDescription": "Kuri erdvė tinka mūsų šeimos progai? Vilos pagal šventės mastą, vaikų poreikius ir nakvynę.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "imones",
+      "cluster": "renginiai",
+      "path": "/renginiai/imoniu-renginiai/",
+      "title": "Įmonių renginiai su nakvyne",
+      "query": "sodyba įmonių renginiams su nakvyne",
+      "question": "Kur derinti komandos renginį, maitinimą ir nakvynę?",
+      "contribution": "Konkrečių vilų erdvių bei nakvynės ir pramogų derinimas.",
+      "outline": [
+        "Komandos dydis ir vieta",
+        "Darbo bei vakaro dalys",
+        "Nakvynė ir maitinimas",
+        "Paslaugų užsakymo ribos"
+      ],
+      "facts": [
+        "Tikra įranga ir veiklos",
+        "Komandos nakvynės pajėgumas"
+      ],
+      "links": [
+        {
+          "target": "konferencijos",
+          "reason": "Patikrinti darbo dalies įrangą"
+        },
+        {
+          "target": "nakvyne",
+          "reason": "Paskirstyti kambarius"
+        },
+        {
+          "target": "g-imones-programa",
+          "reason": "Parengti programą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Įmonių renginiai su nakvyne",
+      "metaDescription": "Kur derinti komandos renginį, maitinimą ir nakvynę? Konkrečių vilų erdvių bei nakvynės ir pramogų derinimas.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "konferencijos",
+      "cluster": "renginiai",
+      "path": "/renginiai/konferencijos-ir-seminarai/",
+      "title": "Konferencijos ir seminarai",
+      "query": "konferencijų salė prie Kauno su nakvyne",
+      "question": "Ar erdvė ir įranga tinka darbo renginiui?",
+      "contribution": "Salės išdėstymo, įrangos, interneto, maitinimo ir nakvynės patikra.",
+      "outline": [
+        "Salė pagal darbo formatą",
+        "Įrangos sąrašas",
+        "Dienos maitinimas",
+        "Nakvynė ir laikas"
+      ],
+      "facts": [
+        "Patvirtinta įranga bei pajėgumas"
+      ],
+      "links": [
+        {
+          "target": "imones",
+          "reason": "Viso renginio planas"
+        },
+        {
+          "target": "vilos",
+          "reason": "Palyginti erdves"
+        },
+        {
+          "target": "maitinimas",
+          "reason": "Derinti aptarnavimą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Atskiras techninio darbo renginio klausimas, ne vestuvių puslapio sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Konferencijos ir seminarai",
+      "metaDescription": "Ar erdvė ir įranga tinka darbo renginiui? Salės išdėstymo, įrangos, interneto, maitinimo ir nakvynės patikra.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "maitinimas",
+      "cluster": "maitinimas",
+      "path": "/maitinimas/",
+      "title": "Maitinimas jūsų renginiui",
+      "query": "maitinimas šventei sodyboje",
+      "question": "Kaip derinamas mūsų renginio maitinimas?",
+      "contribution": "Viena bendra tvarka su konkrečių vilų aptarnavimo ir papildomų paslaugų ribomis.",
+      "outline": [
+        "Maitinimo variantai",
+        "Derinimas ir aptarnavimas",
+        "Vilos bei papildomos sąlygos",
+        "Meniu ir degustacijos"
+      ],
+      "facts": [
+        "Aktualus aptarnavimas",
+        "Kas įeina ir kas papildoma"
+      ],
+      "links": [
+        {
+          "target": "meniu",
+          "reason": "Peržiūrėti patiekalų kryptis"
+        },
+        {
+          "target": "sefas",
+          "reason": "Pažinti tikrą virtuvės komandą"
+        },
+        {
+          "target": "degustacijos",
+          "reason": "Išsirinkti papildomą patirtį"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Temos centras",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Sujungti panašius trijų svetainių maitinimo aprašymus į vieną originalų atsakymą.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Maitinimas jūsų renginiui",
+      "metaDescription": "Kaip derinamas mūsų renginio maitinimas? Viena bendra tvarka su konkrečių vilų aptarnavimo ir papildomų paslaugų ribomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "meniu",
+      "cluster": "maitinimas",
+      "path": "/maitinimas/meniu/",
+      "title": "Šventinis meniu ir derinimas",
+      "query": "šventinis meniu sodyboje",
+      "question": "Kokį meniu ir aptarnavimą galime suderinti?",
+      "contribution": "Aktualūs tikri pasirinkimai, derinimo eiga ir mitybos poreikių aptarimas.",
+      "outline": [
+        "Meniu kryptys",
+        "Derinimo eiga",
+        "Mitybos poreikiai",
+        "Paslaugos bei kainos kai patvirtintos"
+      ],
+      "facts": [
+        "Aktualus meniu",
+        "Patvirtinta informacija apie patiekalus"
+      ],
+      "links": [
+        {
+          "target": "maitinimas",
+          "reason": "Visos maitinimo sąlygos"
+        },
+        {
+          "target": "vestuves",
+          "reason": "Vestuvių planas"
+        },
+        {
+          "target": "g-meniu",
+          "reason": "Pasiruošti meniu aptarimui"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Šventinis meniu ir derinimas",
+      "metaDescription": "Kokį meniu ir aptarnavimą galime suderinti? Aktualūs tikri pasirinkimai, derinimo eiga ir mitybos poreikių aptarimas.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "sefas",
+      "cluster": "maitinimas",
+      "path": "/maitinimas/virtuves-komanda/",
+      "title": "Virtuvės komanda",
+      "query": "Grand Vila virtuvės šefas",
+      "question": "Kas iš tikrųjų ruošia mūsų renginio maistą?",
+      "contribution": "Tikras dabartinės komandos profilis ir konkrečių teiginių šaltiniai.",
+      "outline": [
+        "Aktuali komanda",
+        "Tikra patirtis",
+        "Meniu bei paslaugų ryšys",
+        "Patikrinti šaltiniai"
+      ],
+      "facts": [
+        "Dabartinis šefo ryšys su verslu",
+        "Profilių bei vaizdų teisės"
+      ],
+      "links": [
+        {
+          "target": "meniu",
+          "reason": "Peržiūrėti tikrą pasiūlymą"
+        },
+        {
+          "target": "maitinimas",
+          "reason": "Maitinimo tvarka"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Seną šefo profilį atnaujinti pagal tikrą dabartinį ryšį; nepriskirti buvusios komandos automatiškai.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Virtuvės komanda",
+      "metaDescription": "Kas iš tikrųjų ruošia mūsų renginio maistą? Tikras dabartinės komandos profilis ir konkrečių teiginių šaltiniai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "degustacijos",
+      "cluster": "maitinimas",
+      "path": "/maitinimas/degustacijos/",
+      "title": "Degustacijos ir gastronomijos vakarai",
+      "query": "degustacinis vakaras prie Kauno",
+      "question": "Kokias gastronomines patirtis galima užsakyti?",
+      "contribution": "Sujungti tikras austrių, grill ir kitas aktualias patirtis su jų sąlygomis.",
+      "outline": [
+        "Aktualios patirtys",
+        "Kam ir kur jos vyksta",
+        "Suderinimas su renginiu",
+        "Užsakymo ir papildomo mokesčio sąlygos"
+      ],
+      "facts": [
+        "Tikras dabartinis pasiūlymas",
+        "Galima data ir teikėjas"
+      ],
+      "links": [
+        {
+          "target": "meniu",
+          "reason": "Suderinti su pagrindiniu maitinimu"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Pateikti konkretaus renginio poreikį"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Pirmiausia vienas turiningas hub; atskirti detalę tik pagal skirtingą realią paslaugą ir pakankamą informaciją.",
+      "variants": [
+        "austrių degustacija",
+        "grill degustaciniai vakarai"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Degustacijos ir gastronomijos vakarai",
+      "metaDescription": "Kokias gastronomines patirtis galima užsakyti? Sujungti tikras austrių, grill ir kitas aktualias patirtis su jų sąlygomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "nakvyne",
+      "cluster": "poilsis",
+      "path": "/nakvyne/",
+      "title": "Nakvynė trijų vilų komplekse",
+      "query": "sodyba su nakvyne prie Kauno",
+      "question": "Kur mūsų svečiai gali pasilikti nakčiai?",
+      "contribution": "Tikri trijų vilų kambarių variantai ir palyginimas, ne vien suminis vietų skaičius.",
+      "outline": [
+        "Kambariai pagal vilą",
+        "Lovų bei vonios kambarių tipai",
+        "Nuoma su renginiu ar atskirai",
+        "Svečių išdėstymo planai"
+      ],
+      "facts": [
+        "Visas kambarių inventorius",
+        "Pardavimo ir atvykimo taisyklės"
+      ],
+      "links": [
+        {
+          "target": "grand-nakvyne",
+          "reason": "Grand Vila kambariai"
+        },
+        {
+          "target": "vilaite-nakvyne",
+          "reason": "Vilaitės kambariai"
+        },
+        {
+          "target": "pasaka-nakvyne",
+          "reason": "Vilos Pasaka kambariai"
+        },
+        {
+          "target": "g-sveciu-planas",
+          "reason": "Paskirstyti svečius"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Temos centras",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Nakvynė trijų vilų komplekse",
+      "metaDescription": "Kur mūsų svečiai gali pasilikti nakčiai? Tikri trijų vilų kambarių variantai ir palyginimas, ne vien suminis vietų skaičius.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "spa",
+      "cluster": "poilsis",
+      "path": "/spa-ir-pramogos/spa/",
+      "title": "SPA, pirtis ir poilsio erdvė",
+      "query": "privatus SPA prie Kauno",
+      "question": "Kur yra SPA ir kokiomis sąlygomis juo naudotis?",
+      "contribution": "Tikros Vilos Pasaka SPA vietos, laiko, papildomo užsakymo ir kitų vilų prieigos paaiškinimas.",
+      "outline": [
+        "Tikra SPA vieta",
+        "Kas prieinama ir kada",
+        "Nuoma bei kitų vilų svečių prieiga",
+        "Naudojimo ir užsakymo sąlygos"
+      ],
+      "facts": [
+        "SPA resursas ir tvarka",
+        "Aktuali infrastruktūra"
+      ],
+      "links": [
+        {
+          "target": "pasaka",
+          "reason": "Tikros vietos pristatymas"
+        },
+        {
+          "target": "nakvyne",
+          "reason": "Nakvynės pasirinkimas"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Derinti datą ir resursą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "pasaka",
+        "grand"
+      ],
+      "decision": "Vienas bendros vietos paslaugos puslapis; ne trys tariami atskiri SPA.",
+      "variants": [
+        "pirtis ir jacuzzi prie Kauno"
+      ],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "SPA, pirtis ir poilsio erdvė",
+      "metaDescription": "Kur yra SPA ir kokiomis sąlygomis juo naudotis? Tikros Vilos Pasaka SPA vietos, laiko, papildomo užsakymo ir kitų vilų prieigos paaiškinimas.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "pramogos",
+      "cluster": "poilsis",
+      "path": "/spa-ir-pramogos/pramogos/",
+      "title": "Pramogos komplekse",
+      "query": "pramogos sodyboje šventei",
+      "question": "Kokios veiklos tikrai galimos mūsų renginiui?",
+      "contribution": "Aktuali veiklų lentelė su vieta, sezonu, užsakymu ir tinkamumo sąlygomis.",
+      "outline": [
+        "Veiklų rūšys",
+        "Vieta ir vilos ryšys",
+        "Sezoniškumas bei papildomas užsakymas",
+        "Renginio programos derinimas"
+      ],
+      "facts": [
+        "Aktualios veiklos",
+        "Teikėjo ir saugumo sąlygos"
+      ],
+      "links": [
+        {
+          "target": "imones",
+          "reason": "Komandos renginio programa"
+        },
+        {
+          "target": "seimos-sventes",
+          "reason": "Šeimos šventės poreikiai"
+        },
+        {
+          "target": "spa",
+          "reason": "Poilsio alternatyva"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Artimas veiklas sujungti į skiltis; neprikelti dubliuojančių senų -2 puslapių vien dėl skaičiaus.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Pramogos komplekse",
+      "metaDescription": "Kokios veiklos tikrai galimos mūsų renginiui? Aktuali veiklų lentelė su vieta, sezonu, užsakymu ir tinkamumo sąlygomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "rezervuoti",
+      "cluster": "rezervavimas",
+      "path": "/rezervuoti/",
+      "title": "Pasirinkite vilą ir datą",
+      "query": "vilos rezervacija prie Kauno",
+      "question": "Kaip patikrinti datą ir pateikti tikrą rezervavimo veiksmą?",
+      "contribution": "Veikiantis objekto, intervalo, svečių ir papildomų paslaugų pasirinkimas.",
+      "outline": [
+        "Objektas ir intervalas",
+        "Svečių skaičiai atskirai",
+        "Papildomos paslaugos",
+        "Santrauka ir patvirtinimo reikšmė"
+      ],
+      "facts": [
+        "Tikras grafikas ir kainos",
+        "Patvirtinimo režimas",
+        "Patvarus įrašymas"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Palyginti prieš pasirenkant"
+        },
+        {
+          "target": "rezervavimo-salygos",
+          "reason": "Perskaityti sąlygas"
+        },
+        {
+          "target": "privatumas",
+          "reason": "Sužinoti duomenų paskirtį"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Funkcija",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pateikti užklausą",
+        "target": "rezervavimo-salygos"
+      },
+      "metaTitle": "Pasirinkite vilą ir datą",
+      "metaDescription": "Kaip patikrinti datą ir pateikti tikrą rezervavimo veiksmą? Veikiantis objekto, intervalo, svečių ir papildomų paslaugų pasirinkimas.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "rezervavimo-salygos",
+      "cluster": "rezervavimas",
+      "path": "/rezervavimo-salygos/",
+      "title": "Rezervavimo, keitimo ir atšaukimo sąlygos",
+      "query": "vilos rezervavimo sąlygos",
+      "question": "Kas patvirtina užsakymą, kaip mokama ir keičiama data?",
+      "contribution": "Konkrečios tikros verslo taisyklės ir jų versija užsakymo metu.",
+      "outline": [
+        "Užklausa ir patvirtinimas",
+        "Avansas ir kaina",
+        "Perkėlimas bei atšaukimas",
+        "Atvykimas, išvykimas ir papildomos paslaugos"
+      ],
+      "facts": [
+        "Operatorius ir sutarties tvarka",
+        "Patvirtintos finansinės taisyklės"
+      ],
+      "links": [
+        {
+          "target": "rezervuoti",
+          "reason": "Pradėti pagal perskaitytas sąlygas"
+        },
+        {
+          "target": "kontaktai",
+          "reason": "Patikslinti individualų atvejį"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Pasitikėjimas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tekstinis puslapis; dekoratyvi fotografija nereikalinga.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Rezervavimo, keitimo ir atšaukimo sąlygos",
+      "metaDescription": "Kas patvirtina užsakymą, kaip mokama ir keičiama data? Konkrečios tikros verslo taisyklės ir jų versija užsakymo metu.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "privatumas",
+      "cluster": "rezervavimas",
+      "path": "/privatumas/",
+      "title": "Privatumo politika",
+      "query": "duomenys rezervuojant vilą",
+      "question": "Kaip naudojami mano pateikti duomenys?",
+      "contribution": "Tikro operatoriaus duomenų procesai, gavėjai, terminai ir teisės.",
+      "outline": [
+        "Duomenų valdytojas",
+        "Užklausos bei rezervacijos duomenys",
+        "Gavėjai ir saugojimas",
+        "Teisės ir matavimas"
+      ],
+      "facts": [
+        "Tikras operatorius",
+        "Tikri saugojimo ir analitikos procesai"
+      ],
+      "links": [
+        {
+          "target": "kontaktai",
+          "reason": "Susisiekti dėl duomenų"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Pasitikėjimas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tekstinis puslapis; dekoratyvi fotografija nereikalinga.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Privatumo politika",
+      "metaDescription": "Kaip naudojami mano pateikti duomenys? Tikro operatoriaus duomenų procesai, gavėjai, terminai ir teisės.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "apie",
+      "cluster": "kompleksas",
+      "path": "/apie-kompleksa/",
+      "title": "Apie trijų vilų kompleksą",
+      "query": "Grand Vila Vilaitė Vila Pasaka",
+      "question": "Kaip susijusios trys vilos ir kas jas valdo?",
+      "contribution": "Tikra istorija, trijų objektų ryšys ir patikrinti dabartiniai bei istoriniai faktai.",
+      "outline": [
+        "Trijų vilų ryšys",
+        "Tikra istorija",
+        "Operatorius ir komanda",
+        "Patikrinti pripažinimai bei šaltiniai"
+      ],
+      "facts": [
+        "Teisinis operatorius",
+        "Datos ir apdovanojimų aktualumas"
+      ],
+      "links": [
+        {
+          "target": "vilos",
+          "reason": "Peržiūrėti kiekvieną objektą"
+        },
+        {
+          "target": "sefas",
+          "reason": "Dabartinės virtuvės profilis"
+        },
+        {
+          "target": "kontaktai",
+          "reason": "Tikras kontaktas"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Apie trijų vilų kompleksą",
+      "metaDescription": "Kaip susijusios trys vilos ir kas jas valdo? Tikra istorija, trijų objektų ryšys ir patikrinti dabartiniai bei istoriniai faktai.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "vieta",
+      "cluster": "kompleksas",
+      "path": "/vieta-ir-atvykimas/",
+      "title": "Vieta ir atvykimas į kompleksą",
+      "query": "sodybos Byliškėse prie Kauno",
+      "question": "Kaip nuvykti į pasirinktą vilą ir rasti reikiamą pastatą?",
+      "contribution": "Trys atskiri adresai ir patikrintas teritorijos planas, o ne vienas generinis žemėlapis.",
+      "outline": [
+        "Trys vilų adresai",
+        "Atvykimas ir pasirinktas pastatas",
+        "Automobilių statymas",
+        "Praktinė informacija prieš atvykstant"
+      ],
+      "facts": [
+        "Tikros koordinatės ir teritorijos planas",
+        "Aktualus parkavimas"
+      ],
+      "links": [
+        {
+          "target": "grand",
+          "reason": "Grand Vila adresas"
+        },
+        {
+          "target": "vilaite",
+          "reason": "Vilaitės adresas"
+        },
+        {
+          "target": "pasaka",
+          "reason": "Vilos Pasaka adresas"
+        },
+        {
+          "target": "kontaktai",
+          "reason": "Susisiekti atvykstant"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Puslapis",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Patikrintas teritorijos planas ir tikra atvykimo fotografija; maketo žemėlapis nepakeičia matavimo.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vieta ir atvykimas į kompleksą",
+      "metaDescription": "Kaip nuvykti į pasirinktą vilą ir rasti reikiamą pastatą? Trys atskiri adresai ir patikrintas teritorijos planas, o ne vienas generinis žemėlapis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "kontaktai",
+      "cluster": "kompleksas",
+      "path": "/kontaktai/",
+      "title": "Kontaktai ir užklausa",
+      "query": "vilų komplekso kontaktai",
+      "question": "Su kuo suderinti datą ir individualius poreikius?",
+      "contribution": "Vienas tikras kontaktų kelias su aiškiu objekto pasirinkimu ir duomenų paaiškinimu.",
+      "outline": [
+        "Bendras patvirtintas gavėjas",
+        "Trys vilos ir adresai",
+        "Užklausos forma",
+        "Gavimo ir atsakymo reikšmė"
+      ],
+      "facts": [
+        "Bendras kontaktas ir operatorius",
+        "Tikras pristatymas"
+      ],
+      "links": [
+        {
+          "target": "rezervuoti",
+          "reason": "Pasirinkti konkretų intervalą"
+        },
+        {
+          "target": "vieta",
+          "reason": "Rasti objektą"
+        },
+        {
+          "target": "privatumas",
+          "reason": "Duomenų paaiškinimas"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Pasitikėjimas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tekstinis kontaktų paviršius ir patikrinta vietos informacija.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Kontaktai ir užklausa",
+      "metaDescription": "Su kuo suderinti datą ir individualius poreikius? Vienas tikras kontaktų kelias su aiškiu objekto pasirinkimu ir duomenų paaiškinimu.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "gidu-hub",
+      "cluster": "kompleksas",
+      "path": "/planavimo-gidas/",
+      "title": "Šventės ir poilsio planavimo gidas",
+      "query": "kaip planuoti šventę sodyboje",
+      "question": "Kur rasti nuoseklius atsakymus prieš rezervuojant?",
+      "contribution": "Klausimų indeksas, susietas su tikromis vilomis ir funkcijomis.",
+      "outline": [
+        "Vilos pasirinkimas",
+        "Svečių ir nakvynės planas",
+        "Maitinimas",
+        "Kaina bei rezervavimo eiga"
+      ],
+      "facts": [
+        "Tikras organizacijos ar autoriaus profilis"
+      ],
+      "links": [
+        {
+          "target": "g-vila",
+          "reason": "Pasirinkimo kriterijai"
+        },
+        {
+          "target": "g-vestuviu-planas",
+          "reason": "Vestuvės su nakvyne"
+        },
+        {
+          "target": "g-meniu",
+          "reason": "Meniu aptarimas"
+        },
+        {
+          "target": "g-biudzetas",
+          "reason": "Kas sudaro pasiūlymą"
+        },
+        {
+          "target": "g-imones-programa",
+          "reason": "Parengti įmonės programą"
+        },
+        {
+          "target": "g-sveciu-planas",
+          "reason": "Paskirstyti svečius kambariuose"
+        },
+        {
+          "target": "g-data",
+          "reason": "Suprasti tikrą rezervavimo eigą"
+        }
+      ],
+      "phase": "pagrindas",
+      "type": "Temos centras",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas puslapis iš peržiūrėtų šaltinių",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Šventės ir poilsio planavimo gidas",
+      "metaDescription": "Kur rasti nuoseklius atsakymus prieš rezervuojant? Klausimų indeksas, susietas su tikromis vilomis ir funkcijomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-vila",
+      "cluster": "vilos",
+      "path": "/planavimo-gidas/kaip-pasirinkti-vila/",
+      "title": "Kaip pasirinkti vilą pagal svečius ir renginį",
+      "query": "kaip pasirinkti sodybą šventei",
+      "question": "Kokie kriterijai iš tikrųjų lemia tinkamą pasirinkimą?",
+      "contribution": "Patikrintais trijų vilų faktais paremtas pasirinkimo ruošinys.",
+      "outline": [
+        "Šventės ir nakvynės svečiai",
+        "Erdvės pagal eigą",
+        "Papildomos sąlygos",
+        "Palyginimo pavyzdys"
+      ],
+      "facts": [
+        "Patvirtinti trijų vilų skirtumai"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "vilos",
+          "reason": "Pritaikyti kriterijus palyginimui"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Tikrinti pasirinktą intervalą"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Kaip pasirinkti vilą pagal svečius ir renginį",
+      "metaDescription": "Kokie kriterijai iš tikrųjų lemia tinkamą pasirinkimą? Patikrintais trijų vilų faktais paremtas pasirinkimo ruošinys.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-vestuviu-planas",
+      "cluster": "renginiai",
+      "path": "/planavimo-gidas/vestuves-su-nakvyne/",
+      "title": "Vestuvės su nakvyne: ką suplanuoti iš anksto",
+      "query": "vestuvių sodyba su nakvyne",
+      "question": "Kaip suderinti šventės eigą, kambarius ir išvykimą?",
+      "contribution": "Praktinis pasiruošimo sąrašas ir aiškus atskirų svečių skaičių pavyzdys.",
+      "outline": [
+        "Ceremonija ir vakaras",
+        "Kambarių poreikis",
+        "Atvykimas bei išvykimas",
+        "Klausimai prieš pasiūlymą"
+      ],
+      "facts": [
+        "Tikros kambarių ir laiko taisyklės"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "vestuves",
+          "reason": "Vestuvių pasiūlymas"
+        },
+        {
+          "target": "nakvyne",
+          "reason": "Tikras kambarių pasirinkimas"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Vestuvės su nakvyne: ką suplanuoti iš anksto",
+      "metaDescription": "Kaip suderinti šventės eigą, kambarius ir išvykimą? Praktinis pasiruošimo sąrašas ir aiškus atskirų svečių skaičių pavyzdys.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-imones-programa",
+      "cluster": "renginiai",
+      "path": "/planavimo-gidas/imones-renginys-su-nakvyne/",
+      "title": "Įmonės renginys su nakvyne: programos ruošinys",
+      "query": "įmonės renginio programa sodyboje",
+      "question": "Kaip suderinti darbo, laisvalaikio ir poilsio dalis?",
+      "contribution": "Aiškiai iliustracinis programos ruošinys su tikros įrangos ir resursų tikrinimo vietomis.",
+      "outline": [
+        "Darbo formatas ir įranga",
+        "Maitinimo laikas",
+        "Veiklos bei nakvynė",
+        "Kas derinama individualiai"
+      ],
+      "facts": [
+        "Aktuali įranga",
+        "Veiklų teikimas ir laiko ribos"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "imones",
+          "reason": "Derinti renginį"
+        },
+        {
+          "target": "konferencijos",
+          "reason": "Patikrinti darbo erdvę"
+        },
+        {
+          "target": "pramogos",
+          "reason": "Suplanuoti laisvalaikį"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Įmonės renginys su nakvyne: programos ruošinys",
+      "metaDescription": "Kaip suderinti darbo, laisvalaikio ir poilsio dalis? Aiškiai iliustracinis programos ruošinys su tikros įrangos ir resursų tikrinimo vietomis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-sveciu-planas",
+      "cluster": "poilsis",
+      "path": "/planavimo-gidas/sveciu-nakvynes-planas/",
+      "title": "Svečių nakvynės planas pagal kambarius",
+      "query": "kaip paskirstyti svečius kambariuose",
+      "question": "Kaip paskirstyti svečius neperžengiant tikrų vietų skaičiaus?",
+      "contribution": "Tikrais kambarių planais paremtas ruošinys su atskiromis lovų ir vonios kambarių reikšmėmis.",
+      "outline": [
+        "Kambarių inventorius",
+        "Lovos ir poros",
+        "Privatūs bei bendri patogumai",
+        "Atvykimo informacija"
+      ],
+      "facts": [
+        "Patvirtinti planai",
+        "Pajėgumas ir privatumo sąlygos"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "nakvyne",
+          "reason": "Peržiūrėti inventorių"
+        },
+        {
+          "target": "vilos",
+          "reason": "Palyginti objektus"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Svečių nakvynės planas pagal kambarius",
+      "metaDescription": "Kaip paskirstyti svečius neperžengiant tikrų vietų skaičiaus? Tikrais kambarių planais paremtas ruošinys su atskiromis lovų ir vonios kambarių reikšmėmis.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-meniu",
+      "cluster": "maitinimas",
+      "path": "/planavimo-gidas/sventinio-meniu-derinimas/",
+      "title": "Kaip pasiruošti šventinio meniu derinimui",
+      "query": "kaip suderinti šventinį meniu",
+      "question": "Kokią informaciją pateikti virtuvei prieš renginį?",
+      "contribution": "Konkretus meniu aptarimo ruošinys su svečiais, aptarnavimu ir individualiais mitybos poreikiais.",
+      "outline": [
+        "Renginio eiga ir svečiai",
+        "Patiekalų kryptys",
+        "Mitybos poreikių perdavimas",
+        "Kas patvirtinama pasiūlyme"
+      ],
+      "facts": [
+        "Aktualus meniu ir aptarnavimas",
+        "Tikrų patiekalų informacija"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "meniu",
+          "reason": "Aktualus meniu"
+        },
+        {
+          "target": "maitinimas",
+          "reason": "Bendros sąlygos"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Kaip pasiruošti šventinio meniu derinimui",
+      "metaDescription": "Kokią informaciją pateikti virtuvei prieš renginį? Konkretus meniu aptarimo ruošinys su svečiais, aptarnavimu ir individualiais mitybos poreikiais.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-biudzetas",
+      "cluster": "rezervavimas",
+      "path": "/planavimo-gidas/kas-ieina-i-vilos-nuoma/",
+      "title": "Kas įeina į vilos nuomą ir kas užsakoma papildomai",
+      "query": "kas įeina į sodybos nuomą",
+      "question": "Kaip palyginti pasiūlymus nepagalvojus, kad viskas įskaičiuota?",
+      "contribution": "Vienodas pasiūlymo sudėties ruošinys be išgalvotų kainų ar įtrauktų paslaugų.",
+      "outline": [
+        "Erdvė ir intervalas",
+        "Maitinimas bei nakvynė",
+        "SPA ir kiti priedai",
+        "Avansas ir pasiūlymo ribos"
+      ],
+      "facts": [
+        "Patvirtinta kainos sudėtis ir taisyklės"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "vilos",
+          "reason": "Palyginti sąlygas"
+        },
+        {
+          "target": "maitinimas",
+          "reason": "Patikslinti aptarnavimą"
+        },
+        {
+          "target": "rezervavimo-salygos",
+          "reason": "Perskaityti finansines taisykles"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Kas įeina į vilos nuomą ir kas užsakoma papildomai",
+      "metaDescription": "Kaip palyginti pasiūlymus nepagalvojus, kad viskas įskaičiuota? Vienodas pasiūlymo sudėties ruošinys be išgalvotų kainų ar įtrauktų paslaugų.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    },
+    {
+      "id": "g-data",
+      "cluster": "rezervavimas",
+      "path": "/planavimo-gidas/uzimtumo-ir-rezervavimo-eiga/",
+      "title": "Kaip patikrinti užimtumą ir rezervuoti vilą",
+      "query": "kaip rezervuoti sodybą",
+      "question": "Kuo skiriasi laisva data, užklausa ir patvirtinta rezervacija?",
+      "contribution": "Tikros įdiegtos sistemos žingsniai, pradžios ir pabaigos laikai bei būsenų paaiškinimas.",
+      "outline": [
+        "Data ir intervalas",
+        "Užklausa bei laikinas rezervavimas",
+        "Patvirtinimas ir avansas",
+        "Perkėlimas bei atšaukimas"
+      ],
+      "facts": [
+        "Veikianti sistemos eiga",
+        "Patvirtintos komercinės taisyklės"
+      ],
+      "links": [
+        {
+          "target": "gidu-hub",
+          "reason": "Grįžti į planavimo klausimų indeksą"
+        },
+        {
+          "target": "rezervuoti",
+          "reason": "Atlikti tikrą veiksmą"
+        },
+        {
+          "target": "rezervavimo-salygos",
+          "reason": "Išsamios taisyklės"
+        }
+      ],
+      "phase": "gidai",
+      "type": "Gidas",
+      "sources": [
+        "grand",
+        "vilaite",
+        "pasaka"
+      ],
+      "decision": "Naujas originalus atsakymas į atskirą planavimo klausimą; ne paslaugos teksto sinonimas.",
+      "variants": [],
+      "media": "Tikra atitinkamo objekto fotografija; reikšmę papildantys planai ar lentelės.",
+      "cta": {
+        "label": "Pasiteirauti dėl datos",
+        "target": "rezervuoti"
+      },
+      "metaTitle": "Kaip patikrinti užimtumą ir rezervuoti vilą",
+      "metaDescription": "Kuo skiriasi laisva data, užklausa ir patvirtinta rezervacija? Tikros įdiegtos sistemos žingsniai, pradžios ir pabaigos laikai bei būsenų paaiškinimas.",
+      "evidence": "Peržiūrėti verslo šaltiniai; frazės kryptis siūloma. LT/lt apimtis ir tiksli SERP pozicija nematuotos."
+    }
+  ],
+  "discovery": [
+    "home",
+    "vilos",
+    "renginiai",
+    "maitinimas",
+    "nakvyne",
+    "spa",
+    "pramogos",
+    "gidu-hub",
+    "apie",
+    "vieta",
+    "kontaktai",
+    "rezervuoti",
+    "rezervavimo-salygos",
+    "privatumas"
+  ],
+  "evidence": {
+    "businessSources": "Peržiūrėti esamų vilų šaltiniai.",
+    "keywordVolumes": "Nematuota",
+    "controlledSerp": "Nematuota",
+    "geoVisibility": "Nematuota",
+    "firstPartyAnalytics": "Neprijungta"
+  },
+  "phases": [
+    {
+      "id": "pagrindas",
+      "title": "Pagrindas prieš paleidimą",
+      "text": "Vilos, realios paslaugos, sąlygos, kontaktai ir veikiantis rezervavimas."
+    },
+    {
+      "id": "gidai",
+      "title": "Naudingi planavimo atsakymai",
+      "text": "Gidai leidžiami susietomis grupėmis, kai jų faktai, nuotraukos ir funkcijos parengti."
+    },
+    {
+      "id": "matavimas",
+      "title": "Plėtra pagal duomenis",
+      "text": "GSC klausimai, tinkamos užklausos ir tikrų rezervacijų priežastys parodo, ką papildyti."
+    }
+  ],
+  "geoPrompts": [
+    "Kuri vila prie Kauno tinka didesnėms vestuvėms su nakvyne?",
+    "Kur prie Kauno surengti nedidelę šeimos šventę?",
+    "Kokią vietą rinktis įmonės renginiui su nakvyne?",
+    "Kaip palyginti salės ir miegamų vietų pajėgumą?",
+    "Kur yra komplekso SPA ir kokiomis sąlygomis juo naudotis?",
+    "Kaip patikrinti vilos užimtumą nuo atvykimo iki išvykimo?",
+    "Kas įeina į vilos nuomą, o kas užsakoma papildomai?",
+    "Kaip planuoti svečių nakvynę po šventės?"
+  ]
+}

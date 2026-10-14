@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Final implementation: 82 full regression tests passed; actual Page/profile CUA fixture receipts accepted. Same-tab normal receipts and new-tab check-only recovery verified; live Facebook publishing and 200 percent visual zoom remain unverified. Initial cp1252 UnicodeEncodeError after claim retained as evidence; late-import Ruff E402 helper regression fixed with imports inside seed before final checks.",
+  "checks": [
+    {
+      "command": "pytest tests/test_facebook_browser.py tests/test_facebook.py tests/test_facebook_audit.py offline_tests/test_facebook_workspace.py tests/test_core.py tests/test_policy.py tests/test_codex_lab.py -q",
+      "result": "PASS",
+      "evidence": "research/facebook-browser-worker-2026-10-14/QA.md: 82 passed in 69.28s"
+    },
+    {
+      "command": "scoped Ruff, impeccable detect both HTML, actual desktop/mobile CUA review",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md"
+    },
+    {
+      "command": "test_windows_cli_does_not_lose_claim_on_lithuanian_output",
+      "result": "PASS",
+      "evidence": "tests/test_facebook_browser.py: controlled cp1252 subprocess returns valid UTF-8 JSON"
+    }
+  ],
+  "eventId": "7c6c7710-f677-4d7b-b27d-33ae27258885",
+  "sequence": 2,
+  "at": "2026-10-14T10:05:22.641Z"
+}

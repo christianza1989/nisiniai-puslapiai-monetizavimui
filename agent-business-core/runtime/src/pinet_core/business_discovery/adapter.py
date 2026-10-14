@@ -10,6 +10,7 @@ from ..config import settings
 from ..creation import adapter as shared
 from ..tasks.codex import child_environment
 from ..tasks.codex_transport import RunnerError, execute
+from . import deadlines
 from .wire import PlanReview, Reply
 
 ROOT = shared.ROOT
@@ -46,6 +47,10 @@ def instructions(role):
         parts.append("Review this exact proposed plan independently. Judge coverage, economic assumptions, acquisition feasibility, source contradictions and honest readiness. Return concrete required_changes or approve; never approve unobserved execution. The coordinator also checks the critic findings. Do not demand held live activation or language-only fixes before a local plan.")
     schema = Reply if role == "creator" else PlanReview
     profile = shared.pipeline_profile(role)
+    from ..creation import execution_profiles as profiles
+    timing = deadlines.policy(profiles.selected())
+    if timing is not None:
+        profile = {**profile, "timing_policy": timing}
     material = "\n".join(parts)
     pin = hashlib.sha256(json.dumps({"role": role, "instructions": material, "schema": schema.model_json_schema(),
                                      "execution": profile}, sort_keys=True).encode()).hexdigest()
@@ -101,11 +106,15 @@ async def run_role(context, authorized, *, role, seconds):
     trace = shared.Trace(web, permitted)
     receipt = {}
     try:
+        remaining_seconds = deadlines.role_seconds(name, role, seconds) - (monotonic() - started)
+        if remaining_seconds <= 0:
+            raise RunnerError("run_timeout")
         argv = shared.arguments(binary, folder, schema, output, web=web, role=role, execution_profile=name)
         result, receipt = await execute(argv, prompt=prompt, cwd=folder, env=child_environment(),
-            output=output, seconds=min(seconds, settings().creation_runner_seconds) - (monotonic() - started),
+            output=output, seconds=remaining_seconds,
             still_authorized=authorized, parse_trace=trace.parse, on_event=trace.event,
-            stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl")
+            stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl",
+            partial_receipt=trace.partial_receipt)
         value = schema_model.model_validate(result)
         if role == "creator":
             check_tools(value, context["capabilities"])

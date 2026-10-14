@@ -210,6 +210,27 @@ class Trace:
         self.limit = limit
         self.usage = None
 
+    def partial_receipt(self, raw):
+        # Hash exact retained complete JSON-object lines, never a malformed/partial suffix.
+        valid = []
+        for line in raw.splitlines(keepends=True):
+            if not line.endswith(b"\n"):
+                break
+            try:
+                event = json.loads(line)
+            except (ValueError, UnicodeDecodeError):
+                break
+            if not isinstance(event, dict) or not isinstance(event.get("item", {}), dict):
+                break
+            valid.append(line)
+        if not valid:
+            return None
+        receipt = {"web_search_count": len(self.searches),
+            "trace_sha256": hashlib.sha256(b"".join(valid)).hexdigest()}
+        if self.usage is not None:
+            receipt["usage"] = self.usage
+        return receipt
+
     def event(self, value):
         if not isinstance(value, dict) or not isinstance(value.get("item", {}), dict):
             raise RunnerError("output_invalid", {"usage": self.usage, "web_search_count": len(self.searches)}
@@ -362,7 +383,8 @@ async def run_role(context, still_authorized, *, role, seconds):
         result, receipt = await execute(argv,
             prompt=prompt, cwd=folder, env=child_environment(), output=output, seconds=remaining_seconds,
             still_authorized=still_authorized, parse_trace=trace.parse, on_event=trace.event,
-            stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl")
+            stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl",
+            partial_receipt=trace.partial_receipt)
         receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", model
         receipt["reasoning_effort"] = profile["reasoning_effort"]
         receipt["prompt_bytes"], receipt["context_bytes"] = len(prompt.encode()), len(json.dumps(context, ensure_ascii=False).encode())

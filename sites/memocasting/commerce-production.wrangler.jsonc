@@ -1,0 +1,27 @@
+{
+  "$schema": "../../commerce-core/node_modules/wrangler/config-schema.json",
+  "name": "memocasting-commerce",
+  "account_id": "d102163f74a45ab6d33bca786ce281ec",
+  "main": "../../commerce-core/src/worker.mjs",
+  "compatibility_date": "2026-10-11",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "../../commerce-core/public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "vars": {
+    "COMMERCE_ENV": "production",
+    "COMMERCE_AUTOMATION_ENABLED": "0"
+  },
+  "d1_databases": [
+    {
+      "binding": "COMMERCE_DB",
+      "database_name": "memocasting-commerce-production",
+      "database_id": "534c0277-9563-4ec3-91fc-8e1e89e7f2c9",
+      "migrations_dir": "../../commerce-core/migrations"
+    }
+  ],
+  "observability": { "enabled": true }
+}

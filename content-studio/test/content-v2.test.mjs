@@ -19,12 +19,22 @@ test('v2 validator/hash/schema copies match; v1 packages remain readable unchang
   assert.equal(await readFile(new URL('../src/content-package-v2.mjs',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'scripts/content-package-v2.mjs'),'utf8'));
   assert.equal(await readFile(new URL('../schemas/content-package.v2.schema.json',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json'),'utf8'));
   const packages=JSON.parse(await readFile(path.join(publicRoot,'lib/generated/content-packages.json'),'utf8'));
+<<<<<<< HEAD
   const directories=await readdir(path.join(publicRoot,'content-packages'),{withFileTypes:true});
   const sourcePackages=await Promise.all(directories.filter(d=>d.isDirectory()).map(d=>readFile(path.join(publicRoot,'content-packages',d.name,'content-package.json'),'utf8').then(JSON.parse)));
   const legacy=packages.filter(p=>p.schemaVersion===1);
   assert.ok(legacy.length>0,'current registry must contain legacy packages');
   assert.deepEqual(legacy.map(p=>p.siteId).sort(),sourcePackages.filter(p=>p.schemaVersion===1).map(p=>p.siteId).sort(),'all current V1 source packages remain compiled');
   for(const p of legacy){const source=sourcePackages.find(s=>s.siteId===p.siteId);assert.deepEqual(p,source,'compile preserves the exact source package');assert.equal(publicCore.validateContentPackage(p),p);for(const page of p.pages)assert.equal(model.revisionHash(page),publicCore.pageRevisionHash(page));}
+=======
+  const sourceRoot=path.join(publicRoot,'content-packages');
+  const sourceDirectories=(await readdir(sourceRoot,{withFileTypes:true})).filter(d=>d.isDirectory());
+  const sourcePackages=await Promise.all(sourceDirectories.map(d=>readFile(path.join(sourceRoot,d.name,'content-package.json'),'utf8').then(JSON.parse)));
+  assert.ok(sourcePackages.length>0,'companion must contain actual source packages');
+  assert.deepEqual(packages.map(p=>p.siteId).sort(),sourcePackages.map(p=>p.siteId).sort(),'compiled inventory must match all current source sites');
+  assert.equal(new Set(packages.map(p=>p.siteId)).size,packages.length,'compiled sites must be unique');
+  for(const p of packages){assert.equal(p.schemaVersion,1);assert.equal(publicCore.validateContentPackage(p),p);for(const page of p.pages)assert.equal(model.revisionHash(page),publicCore.pageRevisionHash(page));}
+>>>>>>> codex/parasoplansetes-editorial-provenance-20261014
   const pkg=v2Fixture();assert.equal(validateV2Package(pkg),pkg);assert.equal(publicCore.validateContentPackage(pkg),pkg);
 });
 test('every editorial/public field changes approval hash; unknown/private/cross-site data rejected',()=>{

@@ -18,6 +18,7 @@ from pinet_core.control.routes import ControlError, scope, token_hash
 from pinet_core.creation import studio
 from pinet_core.creation import worker as creation_worker
 from pinet_core.creation.models import Creation, Job, Revision
+from pinet_core.customer.models import Account
 from pinet_core.models import utcnow
 from pinet_core.site_build import foundation, service, worker
 from pinet_core.site_build.continuation_models import BuildContinuation
@@ -180,7 +181,8 @@ async def test_current_actor_loss_stops_continued_admission(build, monkeypatch, 
         assert await tx.scalar(select(func.count()).select_from(GuideJob).where(GuideJob.creation_id == cid)) == 0
 
 
-async def test_deferred_sql_fence_rejects_session_expiry_after_insert(build, monkeypatch):
+@pytest.mark.parametrize("change", ["session_expiry", "membership_revoked", "account_unverified"])
+async def test_deferred_sql_fence_rejects_actor_loss_after_insert(build, monkeypatch, change):
     from pinet_core.creation.service import digest
     c = build
     cid, auth = await accepted(c, monkeypatch)
@@ -197,9 +199,70 @@ async def test_deferred_sql_fence_rejects_session_expiry_after_insert(build, mon
             tx.add(BuildContinuation(**values))
             await tx.flush()
             async with AsyncSession(c["admin"]) as admin, admin.begin():
-                await admin.execute(update(Session).where(Session.id == session_id).values(expires_at=utcnow()-timedelta(seconds=1)))
+                if change == "session_expiry":
+                    await admin.execute(update(Session).where(Session.id == session_id).values(expires_at=utcnow()-timedelta(seconds=1)))
+                elif change == "membership_revoked":
+                    await admin.execute(update(Membership).where(Membership.user_id == owner,
+                        Membership.environment_id == c["environment"]).values(enabled=False))
+                else:
+                    await admin.execute(update(Account).where(Account.user_id == owner,
+                        Account.environment_id == c["environment"]).values(verified_at=None))
     async with AsyncSession(c["admin"]) as tx:
         assert await tx.scalar(select(func.count()).select_from(BuildContinuation).where(BuildContinuation.creation_id == cid)) == 1
+
+
+async def test_superseded_replay_is_never_current_even_when_latest_session_is_revoked(build, monkeypatch):
+    c = build
+    cid, auth = await accepted(c, monkeypatch)
+    payload = request()
+    first = await c["client"].post(path(cid), headers=auth, json=payload)
+    assert first.status_code == 200 and first.json()["data"]["current"]
+    before = await snapshot(c, cid)
+    async with AsyncSession(c["admin"]) as tx, tx.begin():
+        original = await tx.scalar(select(Session).where(Session.token_hash == token_hash(auth["Authorization"][7:])))
+        new_token, fresh_id = uuid4().hex+uuid4().hex, str(uuid4())
+        tx.add(Session(id=fresh_id, user_id=original.user_id, environment_id=original.environment_id,
+            token_hash=token_hash(new_token), expires_at=utcnow()+timedelta(hours=1)))
+    newer = await c["client"].post(path(cid), headers={"Authorization": "Bearer "+new_token}, json=request())
+    assert newer.status_code == 200 and newer.json()["data"]["current"]
+    replay = await c["client"].post(path(cid), headers=auth, json=payload)
+    assert replay.status_code == 200 and not replay.json()["data"]["current"]
+    assert replay.json()["data"]["continuation_id"] == first.json()["data"]["continuation_id"]
+    async with AsyncSession(c["admin"]) as tx, tx.begin():
+        await tx.execute(update(Session).where(Session.id == fresh_id).values(revoked_at=utcnow()))
+    replay = await c["client"].post(path(cid), headers=auth, json=payload)
+    assert replay.status_code == 200 and not replay.json()["data"]["current"]
+    observed = await c["client"].get(path(cid), headers=auth)
+    assert observed.status_code == 200
+    assert observed.json()["data"]["latest"]["continuation_id"] == newer.json()["data"]["continuation_id"]
+    assert not observed.json()["data"]["latest"]["current"]
+    with pytest.raises(ControlError) as denied:
+        await service.advance(cid)
+    assert denied.value.status == 401
+    assert await snapshot(c, cid) == before
+    async with AsyncSession(c["admin"]) as tx:
+        assert await tx.scalar(select(func.count()).select_from(BuildContinuation).where(BuildContinuation.creation_id == cid)) == 2
+        assert await tx.scalar(select(func.count()).select_from(GuideJob).where(GuideJob.creation_id == cid)) == 0
+
+
+async def test_missing_new_actor_trigger_blocks_admission_but_preserves_latest_history(build, monkeypatch):
+    c = build
+    cid, auth = await accepted(c, monkeypatch)
+    payload = request()
+    first = await c["client"].post(path(cid), headers=auth, json=payload)
+    assert first.status_code == 200
+    async with AsyncSession(c["admin"]) as tx, tx.begin():
+        await tx.execute(text("ALTER TABLE control_site_build_continuations DISABLE TRIGGER build_continuation_actor_fence"))
+    try:
+        refused = await c["client"].post(path(cid), headers=auth, json=request())
+        assert refused.status_code == 503 and refused.json()["code"] == "build_continuation_schema_unavailable"
+        observed = await c["client"].get(path(cid), headers=auth)
+        assert observed.status_code == 200
+        assert observed.json()["data"]["latest"]["continuation_id"] == first.json()["data"]["continuation_id"]
+        assert observed.json()["data"]["latest"]["current"]
+    finally:
+        async with AsyncSession(c["admin"]) as tx, tx.begin():
+            await tx.execute(text("ALTER TABLE control_site_build_continuations ENABLE TRIGGER build_continuation_actor_fence"))
 
 
 @pytest.mark.parametrize("change", ["public_source", "accepted_revision"])

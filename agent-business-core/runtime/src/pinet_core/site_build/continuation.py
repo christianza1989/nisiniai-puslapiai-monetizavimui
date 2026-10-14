@@ -19,13 +19,18 @@ from .continuation_wire import ContinuationState, ContinuationView, Resume
 TABLE = "control_site_build_continuations"
 
 
-async def schema_ready(tx):
-    return bool(await tx.scalar(text("""SELECT EXISTS(SELECT 1 FROM pg_class
+async def schema_ready(tx, *, admission=False):
+    ready = bool(await tx.scalar(text("""SELECT EXISTS(SELECT 1 FROM pg_class
       WHERE oid=to_regclass('control_site_build_continuations') AND relrowsecurity AND relforcerowsecurity)
       AND EXISTS(SELECT 1 FROM pg_constraint WHERE conrelid=to_regclass('control_site_build_continuations')
         AND conname='fk_build_continuation_session' AND convalidated AND confdeltype='r')
       AND (SELECT count(*)=2 FROM pg_trigger WHERE tgrelid=to_regclass('control_site_build_continuations')
         AND tgname IN('build_continuation_immutable','build_continuation_fence') AND tgenabled<>'D')""")))
+    if ready and admission:
+        return bool(await tx.scalar(text("""SELECT EXISTS(SELECT 1 FROM pg_trigger
+          WHERE tgrelid=to_regclass('control_site_build_continuations')
+          AND tgname='build_continuation_actor_fence' AND tgenabled<>'D' AND tgdeferrable AND tginitdeferred)""")))
+    return ready
 
 
 def fingerprint(creation_id, value):
@@ -95,6 +100,9 @@ async def latest(tx, creation):
 
 
 async def current(tx, creation, row):
+    newest = await latest(tx, creation)
+    if not newest or newest.id != row.id:
+        return None
     value = stored(row)
     session = await tx.scalar(select(Session).where(Session.id == row.session_id,
         Session.user_id == row.user_id, Session.environment_id == row.environment_id)
@@ -123,7 +131,7 @@ def view(row, *, is_current):
 
 
 async def resume(tx, session, creation, value):
-    if not await schema_ready(tx):
+    if not await schema_ready(tx, admission=True):
         raise ControlError(503, "build_continuation_schema_unavailable")
     await current_actor(tx, session, creation.portfolio_id)
     key, request = str(value.idempotency_key), fingerprint(creation.id, value)

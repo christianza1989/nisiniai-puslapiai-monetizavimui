@@ -14,7 +14,7 @@ Plačiose užklausose vyrauja mažmeninės kategorijos ir atrinkti pasiūlymai. 
 
 ## Pirmoji Kalėdų partija
 
-Rengimo tikslas: **2026-10-14–16**. Pagrindus ir penkis gavėjų gidus rengti kaip susietą partiją; paskelbti tik turint originalų tekstą, tinkamą vaizdą ir atlikus faktų bei kalbos peržiūrą. Tai nėra teiginys, kad tekstai jau vieši. Esamus poros, šeimos, metinių bei rinkinio pasirinkimo gidus suderinti tuo pačiu darbu.
+Savininkas papildomai pasirinko **1–2 straipsnius per dieną**. [Dienos kalendoriuje](DAILY_EDITORIAL_CALENDAR_2026_10_14.csv) pirmi šeši nauji Kalėdų gidai išdėstyti spalio 15–17 d., 10:00 ir 16:00 Lietuvos laiku. Tai sąlyginės datos: tekstai, medija, redakcinė peržiūra ir realus svetainės paleidimas turi būti priimti. Pagrindus parengti prieš susijusius klausimus; vėluojant datas slinkti pirmyn, išlaikant dienos ribą. Esamus poros, šeimos, metinių bei rinkinio pasirinkimo gidus suderinti atskirai nuo naujų straipsnių kiekio.
 
 | Tema | Vidurkis / mėn. | 2025 m. lapkritis | 2025 m. gruodis | Tikslinis kelias |
 |---|---:|---:|---:|---|
@@ -616,6 +616,8 @@ Ar ir ką dovanoti per Velykas? Šeimos įpročiai; simbolinės ir valgomos dova
 Kaip sudaryti advento kalendorių neperkant bereikalingų daiktų? 24 dienų veiklų ir nedidelių dovanų planas; tikras bendras biudžetas; atskirti kalendoriaus turinį nuo vienos Kalėdų dovanos.
 
 ## Kalendorius ir priklausomybės
+
+**Aktuali kadencija:** [1–2 nauji straipsniai per dieną](DAILY_CONTENT.md), 92 dar nepublikuotų gidų temos su konkrečiomis vietinėmis datomis ir UTC akimirkomis. Toliau nurodyti temų parengimo langai yra orientyrai; tikslus dienos paskirstymas ir naujesnis savininko nurodymas turi pirmenybę. Datos automatiškai nepatvirtina turinio.
 
 - Spalio 14–16 d.: dovanų ir Kalėdų pagrindai, moterims, mamai, vyrams, šeimai ir porai; susijusių esamų gidų atnaujinimas.
 - Iki spalio 23 d.: tėvams, tėčiui, seneliams, merginai, vaikinui, draugams, kolegoms, originalios ir nebrangios kalėdinės dovanos — rengti tik turint savarankišką atsakymą.

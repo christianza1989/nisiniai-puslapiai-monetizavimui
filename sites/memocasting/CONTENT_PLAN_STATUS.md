@@ -4,6 +4,8 @@
 
 Treg tyrimas: 1 650 frazių paieškų apimties rezultatų ir 18 LT Google rezultatų rinkinių; tikras vienkartinis mokestis 0,44136 USD iš autorizuoto 1 USD. Null, nulis, nematuota apimtis ir sinonimų bendras įvertis atskirti. Parengti pilni temų aprašai bei pirmosios susietos partijos darbų planas. Šeši nauji Kalėdų planai įrašyti esamu studijos mergePlan; jie privatūs, be straipsnio teksto ir patvirtinimo. Įrodymai priimti bendru SEO adapteriu, išsaugant ankstesnius crawl, pirminių šaltinių ir matavimo būsenos įrašus.
 
+Naujesnis savininko nurodymas: [1–2 nauji straipsniai per dieną](DAILY_CONTENT.md). Bendras daily režimas pritaikytas Memocasting; [92 gidų dienos kalendorius](DAILY_EDITORIAL_CALENDAR_2026_10_14.csv) pradeda nuo šešių Kalėdų temų spalio 15–17 d. Kasdienis Codex rengimas įjungtas. Viešas pasirodymas lieka sąlyginis pagal tikrą straipsnio ir svetainės paleidimo priėmimą; vėluojant nėra masinio ankstesnių datų turinio išleidimo.
+
 Ankstesnis visos dabartinės svetainės struktūros planas apima 88 esamus URL: 22 puslapių paskirtys keturiomis kalbomis — LT, PL, LV ir ET. Platus dovanų tyrimas šiame etape atliktas LT rinkai; kitų kalbų paklausa juo nepatvirtinama. Planavimas, straipsnių parašymas, tikros medijos parengimas, peržiūra ir publikavimas turi atskiras būsenas.
 
 | Plano dalis | Būklė ir šaltinis |

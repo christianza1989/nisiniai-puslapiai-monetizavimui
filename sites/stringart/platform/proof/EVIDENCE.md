@@ -91,3 +91,5 @@ Own branch `codex/memorystring-month-fixtures-20261014`, dependency PR129 `68905
 | tests/http.test.mjs | 9b7e6442efd76973a6c10419d40238effa782df0e4e2c91cb61d6919226138c2 |
 
 Fixture: 489 September orders / ten August carry-over, 186 portraits / 303 kit orders / 621 ordered kits, 40 batches / 212 assembled kits, 100 purchases / 70 received / 30 open, 20 transfers, 12 creators / 382 commission rows, 4,180 audits / 2,893 movements; 825 opening / 612 current kits. Cohort collected less refunds €85,232.08; September order refunds €6,259.71. Every studio has all 30 days. Full stock and money reconcile; all remain synthetic examples. Prior databases are preserved by CLI backup before explicit fixture load.
+
+Git source delivery: implementation commit 088dcf1cab19f5f9e84c80f746199b429bd34093 on draft PR130 (https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/130), stacked on PR129. Exact staged safety: 17/17 source/text files, zero findings. Main merge and other-PC adoption have not occurred. This final note changes no functional source or executed fingerprints.

@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "114/114 actual imported181-page package tests; both included-paint and legacy cart tests PASS."
+    },
+    {
+      "command": "npm run test:seo-smoke",
+      "result": "PASS",
+      "evidence": "Local built Workers8883,88 currently eligible pages plus future404; test-only source change does not alter runtime."
+    }
+  ],
+  "note": "Original full archive113/114 failure preserved. Restricted price assertion to product/home offer pages with digit boundary; all8product paint-list checks and cart legacy-addon rejection retained. Gift guides may use unrelated3/13/35 euro budgets. No price/content change.",
+  "status": "local-verified",
+  "eventId": "d23a34e3-afbb-4b11-80b3-1cda02cf83ba",
+  "sequence": 2,
+  "at": "2026-10-14T20:54:03.283Z"
+}

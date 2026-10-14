@@ -70,6 +70,28 @@ test('current page read reflects saved edits without mutation or private prompt/
   assert.notEqual(f.call({command:'read-page',pageId:'foreign-page'}).status,0);
 });
 
+test('operator resolves known internal links with exact fences without arbitrary body or approval',async t=>{
+  const f=await sandbox(t);
+  f.mutate(`const s=await m.getSite(siteId),p=s.pages.find(p=>p.type==='home');await m.editPage(siteId,p.id,{body:[{type:'paragraph',text:'Skaitykite [gidus](/gidai/) ir pasirinkite kitą žingsnį.'}]});`);
+  const status=f.status(),page=status.pages.find(page=>page.type==='home');
+  const input={command:'resolve-internal-links',pageId:page.pageId,expectedSiteHash:status.expectedSiteHash,
+    expectedRevisionHash:page.revisionHash,expectedPlanningHash:page.planningHash};
+  const before=await readFile(f.file);
+  for(const patch of [{expectedRevisionHash:'f'.repeat(64)},{expectedPlanningHash:'f'.repeat(64)},
+    {expectedSiteHash:'f'.repeat(64)},{body:[]}]){
+    assert.equal(f.call({...input,...patch}).status,1);assert.deepEqual(await readFile(f.file),before);
+  }
+  assert.equal(f.ok(input).operation.result.changed,true);
+  const after=(await f.read()).pages.find(p=>p.id===page.pageId);
+  assert.equal(after.body[0].type,'richParagraph');assert.equal(after.body[0].content[1].target.kind,'page');
+  assert.equal(after.approval,null);assert.equal(after.publishedRevision,null);
+  assert.equal(f.call(input).value.code,'workflow_context_stale');await f.unchanged();
+  const latest=f.status(),current=latest.pages.find(p=>p.pageId===page.pageId),saved=await readFile(f.file);
+  assert.equal(f.ok({...input,expectedSiteHash:latest.expectedSiteHash,expectedRevisionHash:current.revisionHash,
+    expectedPlanningHash:current.planningHash}).operation.result.changed,false);
+  assert.deepEqual(await readFile(f.file),saved);
+});
+
 test('current media read is page/hash/byte bound and never exposes originals or source paths',async t=>{
   const f=await sandbox(t),p=f.status().pages.find(p=>p.type==='home');
   const sharp=(await import('sharp')).default,sources=path.join(f.revision,'media-inputs');await mkdir(sources);

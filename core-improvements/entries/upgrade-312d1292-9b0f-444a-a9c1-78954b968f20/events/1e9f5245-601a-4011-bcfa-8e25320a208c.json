@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "ActualChrome rawMarkdown reproduced; one bounded converter after actual inventory plus trusted no-body resolver; unknownintake targets retain exact text withblockingfactnote, strict operatorfailsclosed. No external source verification/HTML/approval/schema/renderer changes. Peer readonly scope applied, immutable6b active API untouched.",
+  "checks": [
+    {
+      "command": "nativeintake/workflow/bridge integration and focused current regressions",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_NATIVE_INTERNAL_LINKS_S17_2026_10_15.md:34PASS48.08s; finalworkflow19PASS34.20s; finalintake23PASS6.86s (overlap)"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_NATIVE_INTERNAL_LINKS_S17_2026_10_15.md:source, no-op,3hashes, literal/image/code, privatefacts, actualmedia/release guards retained"
+    }
+  ],
+  "eventId": "1e9f5245-601a-4011-bcfa-8e25320a208c",
+  "sequence": 2,
+  "at": "2026-10-14T23:58:52.796Z"
+}

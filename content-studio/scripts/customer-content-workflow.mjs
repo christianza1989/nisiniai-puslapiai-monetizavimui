@@ -8,6 +8,7 @@ import { createHash } from 'node:crypto';
 import { stableV2, validateV2Editorial, normalizeV2Blocks, inlineNodes } from '../src/content-package-v2.mjs';
 import { workflowOverview, reviewCurrent } from '../src/content-workflow.mjs';
 import { IMAGE_POLICY } from '../src/image-pipeline.mjs';
+import { resolveInternalRichLinks } from '../src/internal-rich-links.mjs';
 
 const VERSION = 'customer-content-workflow.v1';
 const object = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -20,6 +21,7 @@ const baseKeys = ['command','creationId','acceptedRevision','sourceHash','canoni
 const commands = {
   status: [], prepare: [], 'read-page': [], 'read-media': ['assetId','expectedRevisionHash'],
   'amend-page': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
+  'resolve-internal-links': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash'],
   'amend-site': ['expectedSiteHash','patch'],
   'import-media': ['expectedSiteHash','sourcePath','metadata'],
   'finalize-links': ['expectedSiteHash','pageIds'],
@@ -27,7 +29,7 @@ const commands = {
   'approve-batch': ['expectedSiteHash','pageIds','actorId'],
   release: ['expectedSiteHash'],
 };
-const pageCommands = new Set(['amend-page','record-review','read-page','read-media']);
+const pageCommands = new Set(['amend-page','resolve-internal-links','record-review','read-page','read-media']);
 const types = new Set(['home','service','product','guide','faq','location','article','index','author','policy','about','contact']);
 
 function pagePatch(value, site, page) {
@@ -175,6 +177,14 @@ export async function customerContentWorkflow(input) {
   if (input.command === 'amend-page') {
     if (!hash(input.expectedRevisionHash) || !hash(input.expectedPlanningHash)) fail('workflow_expected_context_required');
     await model.editPage(site.id,page.id,pagePatch(input.patch,site,page),{...expected,
+      expectedRevisionHash:input.expectedRevisionHash,expectedPlanningHash:input.expectedPlanningHash});
+  } else if (input.command === 'resolve-internal-links') {
+    if(!hash(input.expectedRevisionHash)||!hash(input.expectedPlanningHash)
+        ||input.expectedRevisionHash!==model.revisionHash(page)
+        ||input.expectedPlanningHash!==model.planningContextHash(page))fail('workflow_context_stale');
+    const body=resolveInternalRichLinks(page.body,site.pages,page.id);
+    result={changed:stableV2(body)!==stableV2(page.body)};
+    if(result.changed)await model.editPage(site.id,page.id,{body},{...expected,
       expectedRevisionHash:input.expectedRevisionHash,expectedPlanningHash:input.expectedPlanningHash});
   } else if (input.command === 'amend-site') {
     await model.editSite(site.id,sitePatch(input.patch),expected);

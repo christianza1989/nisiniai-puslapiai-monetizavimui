@@ -32,6 +32,25 @@ function draftFixture() {
     language_review: 'Tekstas peržiūrėtas kaip sintetinis testas; tikra redakcinė peržiūra neatlikta.',
     remaining_gates: ['Patikrinti faktinius mokymo pajėgumus.', 'Parengti tikrus temos vaizdus.', 'Patikrinti kontaktinio laiško pristatymą.'] };
 }
+test('accepted Creator internal Markdown becomes native known-page links at intake',async t=>{
+  const f=await sandbox(t);
+  f.input.draft.pages[0].sections[0].body='Pasiruoškite ir [rinkitės užduotį](/uzduoties-pasirinkimas/).';
+  update(f.input);const result=f.call();assert.equal(result.status,0,JSON.stringify(result.value));
+  const site=JSON.parse(await readFile(f.sitePath()));
+  const block=site.pages[0].body.find(block=>block.type==='richParagraph');
+  assert.equal(block.content[1].target.pageId,site.pages[1].id);
+  assert.equal(block.content[1].text,'rinkitės užduotį');
+  assert.ok(site.pages.every(page=>page.approval===null&&page.publishedRevision===null));
+});
+test('unknown inline destination remains exact original text and blocks native readiness without losing private draft',async t=>{
+  const f=await sandbox(t),text='Palyginkite [nežinomą puslapį](/dar-nera/) prieš sprendimą.';
+  f.input.draft.pages[0].sections[0].body=text;update(f.input);
+  assert.equal(f.call().status,0);
+  const site=JSON.parse(await readFile(f.sitePath())),home=site.pages[0];
+  assert.equal(home.body.find(block=>block.type==='paragraph').text,text);
+  assert.ok(home.factChecks.some(note=>note.includes('neišspręstų vidinių nuorodų')));
+  assert.equal(home.approval,null);assert.equal(home.publishedRevision,null);
+});
 async function sandbox(t) {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'creation-intake-'));
   t.after(async () => { assert.ok(path.basename(directory).startsWith('creation-intake-')); await rm(directory, { recursive: true, force: true }); });

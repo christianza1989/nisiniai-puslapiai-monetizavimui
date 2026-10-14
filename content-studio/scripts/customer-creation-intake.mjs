@@ -4,6 +4,7 @@ import { lstat, mkdir, open, readFile, readdir, realpath, unlink, writeFile } fr
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { stableV2, normalizeV2Blocks } from '../src/content-package-v2.mjs';
+import { resolveInternalRichLinks } from '../src/internal-rich-links.mjs';
 
 const VERSION = 'customer-content-intake.v1';
 const sha = value => createHash('sha256').update(value).digest('hex');
@@ -181,7 +182,8 @@ export async function intakeCreationDraft(input) {
       const body = page.sections.flatMap(section => [{ type: 'heading', level: 2, text: section.heading },
         { type: 'paragraph', text: section.body }, ...(section.items.length ? [{ type: 'list', items: section.items }] : [])]);
       await model.addPage(siteId, { id: pageId(page.path), type: proposalPageType(page), slug: page.path.slice(1, -1),
-        title: page.title, description: page.meta_description, intent: page.intent, body: normalizeV2Blocks(body), publishAt: importedAt,
+        title: page.title, description: page.meta_description, intent: page.intent,
+        body: normalizeV2Blocks(body), publishAt: importedAt,
         ...(item ? { planningBrief: item, sourceQueries: item.source_queries, reason: item.reason, cluster: item.primary_topic } : {}) });
       pageMappings.push({ path: page.path, pageId: pageId(page.path), origin: 'draft' });
     }
@@ -215,8 +217,11 @@ export async function intakeCreationDraft(input) {
         linkSuggestions.push({ targetPageId: targetPage.id, label: draft.pages.find(candidate => candidate.path === target)?.navigation_label ?? targetPage.title,
           reason: item ? 'Turinio plane numatytas skaitytojo perėjimas; jo kontekstą dar reikia patikrinti.' : 'Pradinis navigacijos kelias padeda rasti pasiūlymą ir jo paaiškinimus; ryšys dar nepatikrintas.' });
       }
+      let unresolvedLinks=0;
+      const resolved=resolveInternalRichLinks(page.body,importedSite.pages,page.id,{onUnresolved:()=>unresolvedLinks++});
+      if(unresolvedLinks)factChecks.push('Tekste yra neišspręstų vidinių nuorodų; originalus žymėjimas paliktas peržiūrai ir negali būti laikomas veikiančia navigacija.');
       if (factChecks.length > 40 || factChecks.some(note => note.length > 600)) fail('intake_notes_overflow');
-      await model.editPage(siteId, page.id, { factChecks, externalLinks, linkSuggestions, ...(item ? { cluster: item.primary_topic } : {}) });
+      await model.editPage(siteId, page.id, { body:resolved,factChecks, externalLinks, linkSuggestions, ...(item ? { cluster: item.primary_topic } : {}) });
     }
     // The typed plan places broad parents before supports; draft inventory can have a different order.
     for (const [pathname, item] of plan.byPath) {

@@ -2,6 +2,12 @@
 
 Scope/policy/rollback: [decision](../decisions/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md). Own branch `codex/verslomatika-discovery-high-deadline-s10-20261014` starts at frozen798/public1a. Trace upgrade486506ee-f20f-442d-9e8b-12cf1bc5aac1, timing upgrade24a54d56-2930-4880-b210-1bf0c43ba0be, separately approved fixture-only upgrade0af668f7-1100-4846-a74a-25ab6de2fd0d. No schema or provider action. Root S9/UI/adoption are separate.
 
+Root integration/adoption receipt: functional a5d4f137 and metadata ef5ae28d are independently reviewed and cherry-picked into the coordinator. Separate clean/pushed frozen source08e9efb9eb8850fc7b6ffd7b3db482f58427e54a combines S10 with S9; independent focused24offlinePASS14.14s and six-path/three-upgrade committed coverage PASS. S10 production/test paths match the released packet; only independently reviewed S9 selectors/service/tests differ.
+
+Owned ordinary clone backed up privately and migrated0038→0039 from08e9; all82 preexisting tables retain count+SHA256 contents including the two old profile bindings and actual success/timeout history. Original0032/counts unchanged. No-provider preflight PASS, one verified synthetic owner, restricted role/no admin API, same36-attempt ceiling and channel holds. New API18871 launched through paired freshness executable wrapper19:40Z; live source08e9 stays fixed. Portal1e55234/build5xFGdOzgeBueLojb6L83R on3027 shows truthful failure/earlier questions and live directory state.
+
+One normal UI follow-up in the same Discovery is running:jobf44adbda-2aae-4b2c-ad65-0b8329049d2b/source08e9;3 charged creatorSol attempts total (old succeeded, old timed out, new running). Old source798 remains immutable in those rows. The separate ignored read-only observer initially rejected intentional mixed-source history; it now allows exactly prior/adopted receipts' sources, without DB writes or canonical guard changes. Actual completion/reviews/Creation/GUIDE/full Foundation remain unverified. This is local clone adoption, not main merge or another PC adoption.
+
 Ignored immutable evidence in `agent-business-core/runtime/artifacts/s10-deadlines/`:
 
 - `baseline-52ac5044.log`:7 FAIL/5 PASS6.08s, reproducing absent partial count/hash and existing300s High caps instead of420/90/90/reviewer reserves. `focus-9650c91f.log`:12 PASS7.81s after canonical fixes.

@@ -1,6 +1,7 @@
 """Private drafts and durable queue. No crawler, Meta request or browser submit here."""
 import hashlib
 import json
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -14,6 +15,16 @@ from .contracts import ModulePolicy
 from .models import FacebookAccountLease, FacebookRecord
 
 ROOT = Path(__file__).resolve().parents[5]
+
+
+def network_settings_path():
+    explicit = os.environ.get("STUDIO_NETWORK_SETTINGS")
+    if explicit:
+        return Path(explicit).expanduser().resolve()
+    public_core = os.environ.get("PINET_PUBLIC_CORE_PATH")
+    if public_core:
+        return Path(public_core).expanduser().resolve() / "config/niche-network.json"
+    return ROOT.parent / "dovanos-memorycasting/config/niche-network.json"
 
 
 def fingerprint(value):
@@ -38,10 +49,28 @@ def view(row):
 
 async def policy(tx):
     row = await record(tx, "policy", "module")
+    module = ModulePolicy.model_validate(row.payload["policy"] if row else {}).model_dump()
+    api_row = await record(tx, "page_api_policy", "publishing")
+    browser_row = await record(tx, "browser_policy", "publishing")
+    bindings = (await tx.scalars(select(FacebookRecord).where(
+        FacebookRecord.kind.in_(["page_api_binding", "browser_binding"])))).all()
+    api_verified = any(b.kind == "page_api_binding" and b.state == "verified"
+        and not b.payload.get("fixture", True)
+        and datetime.fromisoformat(b.payload["valid_until"]) > utcnow() for b in bindings)
+    browser_verified = any(b.kind == "browser_binding" and b.payload.get("access") == "verified"
+        and b.payload.get("verification_scope") == "live"
+        and datetime.fromisoformat(b.payload["valid_until"]) > utcnow() for b in bindings)
+    def active(transport, verified):
+        value = transport.payload["policy"] if transport else {}
+        return bool(module["enabled"] and not module["paused"] and verified
+                    and value.get("enabled") and not value.get("paused"))
+    api_enabled, browser_enabled = active(api_row, api_verified), active(browser_row, browser_verified)
     return {"revision": row.revision if row else 0,
-            "policy": ModulePolicy.model_validate(row.payload["policy"] if row else {}).model_dump(),
-            "live": {"groups": "unverified_platform_permission", "page": "not_connected",
-                     "external_sending": False}}
+            "policy": module,
+            "live": {"groups": "unverified_platform_permission",
+                "page": "api_verified" if api_verified else "not_connected",
+                "page_api_enabled":api_enabled,"browser_enabled":browser_enabled,
+                "external_sending":api_enabled or browser_enabled}}
 
 
 async def require_enabled(tx):
@@ -73,6 +102,10 @@ async def update_policy(tx, item, data):
     add(tx, item, "audit", new_id(), "recorded",
         {"event": "policy_updated", "reason": data.reason, "revision": row.revision})
     if not data.policy.enabled or data.policy.paused:
+        from .browser_service import cancel_active
+        from .page_api_service import cancel_active as cancel_page_api
+        await cancel_active(tx)
+        await cancel_page_api(tx)
         actions = (await tx.scalars(select(FacebookRecord).where(
             FacebookRecord.kind == "action", FacebookRecord.state.in_(["queued", "drafting"])
         ).with_for_update())).all()
@@ -86,15 +119,20 @@ async def update_policy(tx, item, data):
     return await policy(tx)
 
 
-async def insert_unique(tx, item, kind, key, payload, state="recorded"):
+async def insert_unique(tx, item, kind, key, payload, state="recorded", input_payload=None):
     await module_lock(tx, item)
     await require_enabled(tx)
     old = await record(tx, kind, key)
     if old:
-        if old.payload.get("input_hash") != fingerprint(payload):
+        # Action qualification ages; bind replay to the submitted command instead.
+        # Compare stored command fields so pre-fix records remain replayable unchanged.
+        old_hash = (fingerprint({field: old.payload.get(field) for field in input_payload})
+                    if input_payload is not None else old.payload.get("input_hash"))
+        if old_hash != fingerprint(input_payload if input_payload is not None else payload):
             raise HTTPException(409, "facebook_idempotency_conflict")
         return view(old)
-    row = add(tx, item, kind, key, state, {**payload, "input_hash": fingerprint(payload)})
+    row = add(tx, item, kind, key, state,
+              {**payload, "input_hash": fingerprint(input_payload if input_payload is not None else payload)})
     await tx.flush()
     return view(row)
 
@@ -143,8 +181,9 @@ def qualification(signal):
 
 async def queue_draft(tx, item, data):
     signal = await by_id(tx, "signal", data.signal_id)
-    payload = {**data.model_dump(), "qualification": qualification(signal)}
-    return await insert_unique(tx, item, "action", data.key, payload, "queued")
+    command = data.model_dump()
+    payload = {**command, "qualification": qualification(signal)}
+    return await insert_unique(tx, item, "action", data.key, payload, "queued", input_payload=command)
 
 
 async def listing(tx, kind):
@@ -158,7 +197,7 @@ async def draft_context(tx, item, signal):
              ROOT / "SKILLS/niche-client-acquisition/references/facebook.md"]
     sources = [{"path": str(path.relative_to(ROOT)), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
                for path in paths]
-    cfg_path = ROOT.parent / "dovanos-memorycasting/config/niche-network.json"
+    cfg_path = network_settings_path()
     cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
     contact = cfg.get("contactsBySite", {}).get(item.site_id, {})
     facts = await knowledge.projection(tx)
@@ -219,6 +258,9 @@ async def claim_account(tx, account_key, owner, seconds=60):
     row = await tx.scalar(select(FacebookAccountLease).where(
         FacebookAccountLease.environment_id == env, FacebookAccountLease.account_key == account_key
     ).with_for_update())
+    if row and row.owner and row.owner.startswith(("browser-job:", "browser-uncertain:",
+                                                  "page-api-job:", "page-api-uncertain:")):
+        raise HTTPException(409, "facebook_account_requires_check_only_reconciliation")
     if row and row.lease_until and row.lease_until > utcnow():
         raise HTTPException(409, "facebook_account_busy")
     if not row:
@@ -269,7 +311,11 @@ async def import_fixture(tx, item, data):
 async def overview(tx):
     counts = dict((await tx.execute(select(FacebookRecord.kind, func.count()).group_by(
         FacebookRecord.kind))).all())
-    return {"counts": counts, "received_real_needs": 0, "sent_external_actions": 0,
+    accepted = await tx.scalar(select(func.count()).select_from(FacebookRecord).where(
+        FacebookRecord.kind.in_(["page_api_job","browser_post"]),
+        FacebookRecord.state.in_(["accepted","published","visible","pending_moderation"]),
+        FacebookRecord.payload["external_sending"].as_boolean().is_(True)))
+    return {"counts": counts, "received_real_needs": 0, "sent_external_actions": accepted,
             "note": "Signals and synthetic case fixtures are not received customer demand."}
 
 

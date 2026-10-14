@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Official Page API transport accepted only with isolated HTTP MockTransport. Original mixed quota claimed-vs-limited FAIL and Ruff unused import, missing system PyYAML and two pre-existing private receipt links preserved in report. Runtime HTTP remains master/API disabled and credentials unavailable; no real Meta writes or permission override.",
+  "checks": [
+    {
+      "command": "runtime pytest tests/test_facebook_page_api.py tests/test_facebook_browser.py tests/test_facebook_browser_extensions.py tests/test_facebook_audit.py tests/test_facebook.py tests/test_core.py tests/test_policy.py tests/test_codex_lab.py -q",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md: 120 passed in131.63s"
+    },
+    {
+      "command": "runtime pytest offline_tests/test_facebook_workspace.py -q",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md: 3 passed in3.82s"
+    },
+    {
+      "command": "runtime pytest tests/test_facebook_page_api.py -q after final API guard changes; scoped ruff check",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md: 30 passed in13.02s; Ruff PASS"
+    },
+    {
+      "command": "actual localhost Page API auth/readiness smoke; canonical quick_validate via runtime venv; changed skill hash and new-link check",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md: 401/200, expected503, zero jobs; skill valid;25 links and all new links PASS;2 historical private JSON references unverified"
+    }
+  ],
+  "eventId": "f1240a79-b126-4062-85d9-e8681df1350e",
+  "sequence": 2,
+  "at": "2026-10-14T17:13:12.400Z"
+}

@@ -17,26 +17,49 @@ from pinet_core.tasks.codex_transport import RunnerError, execute
 
 
 async def test_two_rounds_share_job_time_without_expanding_each_cli_timeout(monkeypatch):
+    from contextlib import asynccontextmanager
     from copy import deepcopy
+    from types import SimpleNamespace
 
     from test_creation_content_plan import planned
     from test_creation_review import decision, report
     from test_creation_review import draft as draft_fixture
 
     from pinet_core.config import settings
-    from pinet_core.creation import renderer, review, team
+    from pinet_core.creation import adapter, execution_profiles, renderer, review, team
 
     cfg = settings()
     monkeypatch.setattr(cfg, "creation_runner_seconds", 30)
     monkeypatch.setattr(cfg, "creation_language_review_enabled", False)
     monkeypatch.setattr(cfg, "control_mode", "local")
     monkeypatch.setattr(cfg, "environment", "test-team-time")
+    monkeypatch.setattr(cfg, "creation_execution_profile", execution_profiles.DEFAULT)
     clock, calls = [0.0], []
     monkeypatch.setattr(team, "monotonic", lambda: clock[0])
     value = renderer.normalize_creator(planned(draft_fixture.__wrapped__()))
 
-    async def reserve(*args, **kwargs):
+    current = []
+    async def reserve(claimed, role, round_number, **kwargs):
+        current[:] = [SimpleNamespace(model=adapter.role_model(role), instruction_hash=adapter.role_instruction_hash(
+            role, structure_repair=kwargs.get("structure_repair", False), language_repair=kwargs.get("language_repair", False)))]
         return "synthetic-attempt"
+
+    class PaidSnapshot:
+        async def get(self, model, identity):
+            if model is team.Attempt:
+                assert identity == "synthetic-attempt"
+                return current[0]
+            assert model is team.Job and identity == "synthetic-job"
+            return SimpleNamespace(id=identity)
+
+    @asynccontextmanager
+    async def owned_scope(*, user):
+        assert user == "synthetic-owner"
+        yield PaidSnapshot()
+
+    async def current_default(tx, kind, job):
+        assert kind == "creation" and job.id == "synthetic-job"
+        return execution_profiles.DEFAULT
 
     async def finish(*args):
         pass
@@ -70,7 +93,10 @@ async def test_two_rounds_share_job_time_without_expanding_each_cli_timeout(monk
 
     monkeypatch.setattr(team, "reserve", reserve)
     monkeypatch.setattr(team, "finish", finish)
-    result, evidence = await team.run({"context": {"permitted_web_actions": 0}}, authorized, role_runner=runner)
+    monkeypatch.setattr(team, "scope", owned_scope)
+    monkeypatch.setattr(execution_profiles, "ensure_current", current_default)
+    result, evidence = await team.run({"user_id": "synthetic-owner", "job_id": "synthetic-job",
+        "context": {"permitted_web_actions": 0}}, authorized, role_runner=runner)
     assert result["business"] == value["business"] and calls == ["creator", "critic", "coordinator"] * 2
     assert evidence["deadline_monotonic"] == 60 and len(evidence["attempts"]) == 6
 

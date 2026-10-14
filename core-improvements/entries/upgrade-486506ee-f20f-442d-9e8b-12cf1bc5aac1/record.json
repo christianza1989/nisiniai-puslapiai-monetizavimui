@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "A real local Discovery timeout retained five completed permitted web items but lost their observed count and trace hash because partial CLI stdout had no terminal usage event. Preserve bounded observed failure evidence through explicit pipeline partial receipts, with original error and unknown usage/cost.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_partial_cli_receipts.py",
+    "docs/decisions/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Frozen798e03f73fb9fe00d032930824aa3d72da1e7797 owned trial:300.074s/run_timeout/41439B/15valid events/5completed web items/no terminal usage; failure count/hash absent",
+    "Canonical Trace counts5 but parse(partial) raises provider_error without receipt; actual operation code remains run_timeout",
+    "Root authorized S10 source repair after accepting silence cause UNVERIFIED; private raw prompts/text/logs excluded"
+  ],
+  "rollback": "Scoped revert after joining own supervisor. Preserve all historical jobs/charges/failure evidence; no retry/refund/raw output/approval. Explicit optional callback defaultNone leaves unrelated callers unchanged. No runtime/DB/provider adoption.",
+  "id": "upgrade-486506ee-f20f-442d-9e8b-12cf1bc5aac1",
+  "branch": "codex/verslomatika-discovery-high-deadline-s10-20261014",
+  "baseSha": "798e03f73fb9fe00d032930824aa3d72da1e7797",
+  "createdAt": "2026-10-14T19:04:10.088Z"
+}

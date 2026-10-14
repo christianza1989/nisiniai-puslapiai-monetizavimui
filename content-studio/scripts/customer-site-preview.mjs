@@ -30,11 +30,12 @@ export async function previewSource(root,expected){
   return expected;
 }
 
-export function previewEnvironment(siteId){
+export function previewEnvironment(siteId,runtimeRoot=null){
   if(!/^creation-[a-f0-9]{32}$/.test(siteId))fail('foundation_preview_site_invalid');
   const keys=new Set(['PATH','SYSTEMROOT','WINDIR','TEMP','TMP','PATHEXT','COMSPEC']);
   const env=Object.fromEntries(Object.entries(process.env).filter(([key])=>keys.has(key.toUpperCase())));
-  return {...env,NICHE_DEV_SITE_ID:siteId,CLOUDFLARE_CF_FETCH_ENABLED:'false',WRANGLER_SEND_METRICS:'false',
+  if(runtimeRoot!==null&&!path.isAbsolute(runtimeRoot))fail('foundation_preview_path_invalid');
+  return {...env,...(runtimeRoot!==null?{SITES_RUNTIME_ROOT:runtimeRoot}:{}),NICHE_DEV_SITE_ID:siteId,CLOUDFLARE_CF_FETCH_ENABLED:'false',WRANGLER_SEND_METRICS:'false',
     WRANGLER_WRITE_LOGS:'false',LEAD_EMAIL_ENABLED:'0',VOICE_ENABLED:'false',SMTP_ENABLED:'false',NODE_ENV:'production'};
 }
 
@@ -82,7 +83,7 @@ async function terminateOwned(child){
 export function previewProcess(root,mode,args,siteId,log,timeoutMs=140000){
   if(!['import','compile','build','serve'].includes(mode)||!path.isAbsolute(root)||!path.isAbsolute(log)||!Array.isArray(args)||!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>150000)fail('foundation_preview_process_invalid');
   const child=spawn(process.execPath,[import.meta.filename,'--owned-runner',root,mode,...args],{cwd:root,
-    env:previewEnvironment(siteId),windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe','ipc']});
+    env:previewEnvironment(siteId,mode==='serve'&&args[1]?args[1]:null),windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe','ipc']});
   let size=0,error=null,finished=false;
   const timer=setTimeout(()=>{error=Object.assign(new Error('foundation_preview_timeout'),{code:'foundation_preview_timeout'});void terminateOwned(child);},timeoutMs);
   const writes=[];
@@ -210,6 +211,18 @@ async function availablePort(wanted=0){
   const port=server.address().port;await new Promise(resolve=>server.close(resolve));return port;
 }
 
+export async function previewRuntimeState(publicCore,owner){
+  if(!/^[a-f0-9]{64}$/.test(owner.scopeSha256))fail('foundation_preview_scope_invalid');
+  // Workerd's Windows SQLite/registry paths can exceed MAX_PATH inside a deep
+  // checkout. Keep only owned local state shallow; source identity stays exact.
+  const root=path.join(publicCore,'output/foundation-state',owner.scopeSha256.slice(0,16));
+  await safeDirectories(publicCore,root);
+  const marker=path.join(root,'owner.json');
+  try{const bytes=await readArtifactBytes(marker,16384);if(stableV2(JSON.parse(bytes))!==stableV2(owner))fail('foundation_preview_foreign_state');}
+  catch(error){if(error.code!=='ENOENT')throw error;if((await readdir(root)).length)fail('foundation_preview_foreign_state');await writeFile(marker,JSON.stringify(owner)+'\n',{flag:'wx'});}
+  return root;
+}
+
 export async function withCustomerSitePreview(prepared,operation,retainedOrigin=null){
   await previewSource(prepared.checkout,prepared.publicSourceRevision);
   const saved=JSON.parse(await readArtifactBytes(path.join(prepared.parent,'build.json'),16384));
@@ -217,7 +230,8 @@ export async function withCustomerSitePreview(prepared,operation,retainedOrigin=
       ||stableV2(saved.build)!==stableV2(await previewBuildDigest(prepared.checkout)))fail('foundation_preview_build_changed');
   let wanted=0;
   if(retainedOrigin!==null){const url=new URL(retainedOrigin);if(url.protocol!=='http:'||url.hostname!=='127.0.0.1'||!url.port||url.origin!==retainedOrigin)fail('foundation_preview_origin_invalid');wanted=Number(url.port);}
-  const port=await availablePort(wanted),origin='http://127.0.0.1:'+port,run=previewProcess(prepared.checkout,'serve',[String(port)],prepared.siteId,path.join(prepared.parent,'server.private.log'),150000);
+  const runtimeRoot=await previewRuntimeState(process.env.STUDIO_PUBLIC_CORE_DIR,saved.binding);
+  const port=await availablePort(wanted),origin='http://127.0.0.1:'+port,run=previewProcess(prepared.checkout,'serve',[String(port),runtimeRoot],prepared.siteId,path.join(prepared.parent,'server.private.log'),150000);
   try{
     let ready=false;
     for(let attempt=0;attempt<40&&!run.finished;attempt++){
@@ -246,7 +260,7 @@ if(process.argv[2]==='--owned-runner'){
   process.once('disconnect',stop);setTimeout(stop,150000).unref();
   process.send({kind:'owned-preview-ready',mode});
   process.channel.unref();
-  const fixedArgs=mode==='import'?[args[0],'--acceptance',args[1]]:mode==='build'?['build']:mode==='serve'?['dev','--config','dist/server/wrangler.json','--local','--persist-to','.sites-runtime/preview-state','--ip','127.0.0.1','--port',args[0],'--inspector-port','0']:[];
+  const fixedArgs=mode==='import'?[args[0],'--acceptance',args[1]]:mode==='build'?['build']:mode==='serve'?['dev','--config','dist/server/wrangler.json','--local','--persist-to',args[1]?path.join(args[1],'state'):'.sites-runtime/preview-state','--ip','127.0.0.1','--port',args[0],'--inspector-port','0']:[];
   const file=path.join(root,entry);process.argv=[process.execPath,file,...fixedArgs];
   if(mode==='serve'){
     // Wrangler's CJS entry runs only as require.main; dynamic import silently

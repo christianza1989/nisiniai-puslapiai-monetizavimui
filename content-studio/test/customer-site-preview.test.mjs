@@ -6,7 +6,7 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import os from 'node:os';
 import path from 'node:path';
-import {previewSource,previewEnvironment,previewDependencies,previewBuildDigest,previewProcess,previewAdmission,previewImportedRelease} from '../scripts/customer-site-preview.mjs';
+import {previewSource,previewEnvironment,previewDependencies,previewBuildDigest,previewProcess,previewAdmission,previewImportedRelease,previewRuntimeState} from '../scripts/customer-site-preview.mjs';
 const site='creation-'+'a'.repeat(32);
 const git=(root,args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],windowsHide:true}).trim();
 async function temporary(t){
@@ -73,6 +73,14 @@ test('partial imported release retry requires exact package, activation and asse
   assert.equal(await previewImportedRelease(root,pkg,bytes,assetHashes,admission),true);
   await writeFile(path.join(folder,'assets/fixture.webp'),'changed');await assert.rejects(previewImportedRelease(root,pkg,bytes,assetHashes,admission),/release_changed/);await writeFile(path.join(folder,'assets/fixture.webp'),asset);
   await writeFile(path.join(folder,'activation.json'),'changed');await assert.rejects(previewImportedRelease(root,pkg,bytes,assetHashes,admission),/release_changed/);
+});
+
+test('short local state binds its full owner and rejects prefix collision or foreign existing files',async t=>{
+  const root=await temporary(t),owner={scopeSha256:'a'.repeat(64),packageSha256:'b'.repeat(64)},folder=await previewRuntimeState(root,owner);
+  assert.equal(folder,path.join(root,'output/foundation-state','a'.repeat(16)));assert.equal(await previewRuntimeState(root,owner),folder);
+  await assert.rejects(previewRuntimeState(root,{...owner,scopeSha256:'a'.repeat(16)+'c'.repeat(48)}),/foreign_state/);
+  const other=path.join(root,'output/foundation-state','d'.repeat(16));await mkdir(other);await writeFile(path.join(other,'foreign'),'owned elsewhere');
+  await assert.rejects(previewRuntimeState(root,{scopeSha256:'d'.repeat(64)}),/foreign_state/);
 });
 
 test('successful fixed compiler exits, timeout and parent disconnect stop only owned processes',async t=>{

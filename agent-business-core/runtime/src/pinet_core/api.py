@@ -54,6 +54,7 @@ from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, ut
 from .order_tests import Confirmation, QuoteInput
 from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
+from .site_build.routes import router as site_foundation_router
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
 from .workspace_read.routes import router as workspace_read_router
@@ -116,6 +117,7 @@ app.include_router(content_work_router)
 app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)
+app.include_router(site_foundation_router)
 
 
 @app.post("/operator/sites/{site_id}/order-tests", dependencies=[Depends(operator_auth)])

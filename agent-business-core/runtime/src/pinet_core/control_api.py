@@ -24,6 +24,7 @@ from .customer_text.routes import router as customer_text_router
 from .db import db
 from .director.routes import router as director_read_router
 from .public_projects.routes import router as public_router
+from .site_build.routes import router as site_foundation_router
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
 from .workspace_read.routes import router as workspace_read_router
@@ -83,3 +84,4 @@ app.include_router(content_work_router)
 app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)
+app.include_router(site_foundation_router)

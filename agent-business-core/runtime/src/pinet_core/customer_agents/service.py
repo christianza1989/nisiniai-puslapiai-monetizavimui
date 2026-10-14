@@ -71,7 +71,7 @@ async def check_binding(tx, session, creation, registry, *, writing=False):
         if not await configuration_current(tx, creation, registry):
             raise ControlError(409, "agent_business_not_current")
         from ..business_discovery.service import require_agent_foundation
-        await require_agent_foundation(tx, creation)
+        await require_agent_foundation(tx, creation, session=session)
     await current_actor(tx, session, creation.portfolio_id)
     return registry
 

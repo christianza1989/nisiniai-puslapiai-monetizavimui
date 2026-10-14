@@ -21,6 +21,7 @@ from pinet_core.director import models as director_models  # noqa: F401
 from pinet_core.facebook import models as facebook_models  # noqa: F401
 from pinet_core.models import Base
 from pinet_core.public_projects import models as public_models  # noqa: F401
+from pinet_core.site_build import models as site_foundation_models  # noqa: F401
 from pinet_core.tasks import models as task_models  # noqa: F401
 from pinet_core.workspace_team import models as workspace_team_models  # noqa: F401
 from pinet_core.workspace_topics import models as workspace_topic_models  # noqa: F401

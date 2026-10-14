@@ -58,3 +58,7 @@ Pradėti peržiūrėti spragas po pirmosios prasmingos publikuotų puslapių par
 Prieš baigiantis pradinei eilei atlikti visos nišos spragų peržiūrą. Kasdienis tęstinumas neturi išsijungti vien dėl to, kad paskelbti pirmieji 92 gidai. Tęsti pagal peržiūrėtą naujų ir atnaujinamų klausimų eilę. Kai nėra kito vertingo atsakymo ar būtino šaltinio, naujo teksto nekurti; užfiksuoti konkrečią duomenų ar turinio priklausomybę. Naujam mokamam Treg tyrimui atskiras leidimas, ankstesnis 1 USD nesuteikia periodinio biudžeto.
 
 Metaduomenys ir srautą gaunantys tekstai atnaujinami prasmingai; nesukuriamos netikros „atnaujinta šiandien“ datos. Originalaus atsakymo ir aiškaus kūrėjo reikalavimai remiasi [Google naudingo turinio gairėmis](https://developers.google.com/search/docs/fundamentals/creating-helpful-content), perskaitytomis 2026-10-14. Peržiūros ritmas, kandidatų eilė ir straipsnių atranka yra mūsų redakciniai sprendimai, o ne Google reitingų garantija.
+
+## Įgyvendinta aprėptis
+
+Visi 92 atrinkti nauji gidai ir dovanų indeksas parengti ir patvirtinti leidinyje 7b6bfd6c. Konkretesni klausimai aprašyti jų pilnuose briefuose ir tekstų skyriuose; frazių variantai nekuriami kaip vienodi atskiri URL. Ankstesnis mėnesinis planavimo ciklas nevykdomas; po paketo paleidimo sekanti bendra turinio peržiūra numatyta maždaug po metų. Tai pasirinkto tyrimo korpuso aprėptis, ne pažadas apie visas būsimas Google užklausas.

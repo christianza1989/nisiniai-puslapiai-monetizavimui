@@ -31,3 +31,7 @@ Patikra: 15 bendrų turinio, generatoriaus ir instrukcijų regresijų PASS; dien
 Savininkas papildomai paprašė tęstinio konkretesnių dovanų užklausų plano. [Long tail planas](LONG_TAIL_PLAN_2026_10_14.md) pradedamas dar rengiant pradinę partiją: kiekvieną savaitę tikrinama artimiausių temų parengtis, kas mėnesį sutaikomas platesnis žemėlapis su prieinamais duomenimis ir parengiama kitų 30 dienų kandidatų eilė. Naujas URL kuriamas tik kitam skaitytojo klausimui; dalis darbų papildys ar atnaujins esamus gidus.
 
 Pradinių 92 gidų eilės pabaiga nėra automatinė šio darbo pabaiga. Prieš jai baigiantis atlikti aprėpties ir poreikio peržiūrą, tęsti pagal peržiūrėtą naujų bei atnaujinamų temų eilę. Be vertingos kitos temos ar reikalingo šaltinio menkaverčio teksto nekurti. Search Console duomenų šaltinio prijungimas ir atskirai autorizuotas naujas Treg tyrimas gali papildyti įrodymus; ankstesnis 1 USD neperkeliamas į periodines išlaidas.
+
+## Galutinis parengimas
+
+Visi 92 nauji gidai ir dovanų indeksas jau parašyti, su vaizdais, suredaguoti ir patvirtinti. Kasdienio rašymo nebėra; šiame dokumente ankstesni tuščių planų ar tęstinio rengimo skaičiai yra istorija. Aktualus kalendorius ir LATEST-RELEASE nurodo visą vietinį paketą. 1–2 per dieną taikoma tik pasirodymui iš hostingo po Stripe/domeno priėmimo. Žmogaus išjungtas paleidimo monitorius PAUSED, rengimo tęstinumas išjungiamas po viso hosted paketo priėmimo.

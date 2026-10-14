@@ -1,8 +1,16 @@
 {
-  "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\4ea58f2e-3057-49ac-8631-b0d87ed8f472\\content-package.json",
-  "pages": 88,
-  "assets": 172,
-  "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\4ea58f2e-3057-49ac-8631-b0d87ed8f472\\release-manifest.json",
-  "packageSha256": "3f5a4864a45a094ee5c8baceb8e27f5c2607a1d3f73ab5118e482c3ffb61b818",
-  "state": "exported-not-deployed"
+  "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\7b6bfd6c-841a-4bb0-a611-c82cf281d4b1\\content-package.json",
+  "pages": 181,
+  "assets": 649,
+  "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\7b6bfd6c-841a-4bb0-a611-c82cf281d4b1\\release-manifest.json",
+  "packageSha256": "b967a3664651c59f7b13ae39f679e2fa7ab43e1e656877546853a28582922826",
+  "state": "exported-not-deployed",
+  "localAcceptance": {
+    "build": "PASS",
+    "coreTests": "114/114 PASS",
+    "seoSmoke": "88 current local Workers pages PASS",
+    "scheduledBoundaries": "93 exact before/after PASS",
+    "hosted": "not performed"
+  },
+  "previousReleaseId": "4ea58f2e-3057-49ac-8631-b0d87ed8f472"
 }

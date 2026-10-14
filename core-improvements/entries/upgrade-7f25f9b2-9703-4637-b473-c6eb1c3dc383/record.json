@@ -1,0 +1,25 @@
+{
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/36",
+  "paths": [
+    "scripts/content-build-proof.mjs",
+    "scripts/compile-content-packages.mjs",
+    "lib/content-model-v2.ts",
+    "proxy.ts",
+    "tests/content-build-proof.test.mjs",
+    "tests/bound-build-http.mjs",
+    "docs/CONTENT_BUILD_PROOF.md"
+  ],
+  "siteId": "core",
+  "category": "code",
+  "summary": "Actual native V2 renderer does not expose exact raw package and trusted source build response proof; canonical local Foundation cannot bind real HTTP to its immutable release. Reuse maintained compiler/admission/host projection with optional source-derived headers, preserve all Host/admission gates and normal rendering without proof.",
+  "rollback": "Scoped public source revert; keep immutable isolated test/build outputs. No deployment, provider, schema or permissions to undo.",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/36",
+    "Public910 proxy SHA0a705cef actual local-preview canonical404/loopback200 with absent headers; readonly inventory using retained testOnly previewqa rawSHA37771aef",
+    "docs/decisions/VERSLOMATIKA_BUILD_PROOF_HEADERS_2026_10_14.md"
+  ],
+  "id": "upgrade-7f25f9b2-9703-4637-b473-c6eb1c3dc383",
+  "branch": "codex/verslomatika-build-proof-journal-20261014",
+  "baseSha": "8b2f9a8c3b267bc4ed05378692d2c906d87a3d07",
+  "createdAt": "2026-10-14T10:48:08.454Z"
+}

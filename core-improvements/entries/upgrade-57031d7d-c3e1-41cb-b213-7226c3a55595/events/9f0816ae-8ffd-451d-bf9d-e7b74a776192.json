@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Scoped audit and two preparation repairs published in PR135. Tested source commit ae27c5b86567a482568ed20389be221889263210. Original failures and 53 test results retained; reviewed main merge and running adapter adoption remain pending.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/135",
+  "commit": "ae27c5b86567a482568ed20389be221889263210",
+  "eventId": "9f0816ae-8ffd-451d-bf9d-e7b74a776192",
+  "sequence": 3,
+  "at": "2026-10-14T09:03:21.336Z"
+}

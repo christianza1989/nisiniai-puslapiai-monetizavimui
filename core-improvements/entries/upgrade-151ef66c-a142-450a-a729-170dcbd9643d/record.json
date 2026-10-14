@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Native Foundation verification has no trusted source-bound isolated preview producer; copied sandbox parent Git identity and a caller-provided preview cannot prove the actual public build",
+  "evidence": [
+    "Existing canonical Foundation candidate test reproducibly returns local_evidence_missing without a bound private preview. Public910 native local-preview Host gate is correct; headers and transport are independently repaired. New producer must use the same release/import/build path with actual detached Git root, current source pin, checked dependency snapshot and bounded process lifecycle."
+  ],
+  "paths": [
+    "content-studio/scripts/customer-site-preview.mjs",
+    "content-studio/scripts/customer-site-foundation.mjs",
+    "docs/decisions/VERSLOMATIKA_LOCAL_PREVIEW_PRODUCER_S5_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only new producer and its fixed bridge call; preserve owned preview source/build/state and all evidence receipts. Existing candidate/retained checks and default transport remain intact. No old approval/source/report or original DB/runtime is rewritten.",
+  "id": "upgrade-151ef66c-a142-450a-a729-170dcbd9643d",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "f8820e4b5915442655b9526102f10a0786bbc3f9",
+  "createdAt": "2026-10-14T10:58:21.192Z"
+}

@@ -9,6 +9,7 @@ import {customerContentWorkflow} from './customer-content-workflow.mjs';
 import {stableV2,validateV2Package} from '../src/content-package-v2.mjs';
 import {verifyContentRelease} from '../src/content-release.mjs';
 import {verifySiteCompletion,requestCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-site-completion.mjs';
+import {prepareCustomerSitePreview,withCustomerSitePreview} from './customer-site-preview.mjs';
 
 const ROOT=path.resolve(import.meta.dirname,'../..'),VERSION='native-foundation-evidence.v1';
 const VERIFIER=path.join(ROOT,'SKILLS/niche-site-audit/scripts/verify-site-completion.mjs');
@@ -168,8 +169,7 @@ async function renderer(origin,scope,release,originHost=false){
   if(response.status!==200||response.headers.get('x-niche-package-sha256')!==release.package_sha256
       ||response.headers.get('x-niche-source-revision')!==scope.sources.public_source_revision)fail('foundation_renderer_unbound');
 }
-async function localCompletion(context,scope,release,directory){
-  const previewRaw=await readArtifactBytes(path.join(directory,'preview.json'),16384),preview=JSON.parse(previewRaw),origin=previewBinding(preview,scope,release.evidence),originHost=preview.version===2;
+async function localCompletion(context,scope,release,directory,usingPrepared=false){
   const auditPath=path.join(directory,'PHASE-1-AUDIT.json'),auditRaw=await readArtifactBytes(auditPath,2000000),audit=JSON.parse(auditRaw);
   if(audit.siteId!==context.siteId||audit.canonicalHost!==scope.accepted.canonical_host||audit.version?.packageSha256!==release.evidence.package_sha256
       ||audit.version?.sourceVersion!==scope.sources.public_source_revision)fail('foundation_audit_binding_invalid');
@@ -179,6 +179,24 @@ async function localCompletion(context,scope,release,directory){
   const indexes=required.filter(p=>p.type==='index'&&articles.every(a=>a.slug.startsWith(p.slug+'/'))).sort((a,b)=>a.slug.length-b.slug.length);
   if(!indexes.length)fail('foundation_article_index_unavailable');
   if(required.some(p=>!Number.isFinite(Date.parse(p.publishAt))||Date.parse(p.publishAt)>Date.now()))fail('foundation_publication_pending');
+  let previewRaw=null,preview=null;
+  try{previewRaw=await readArtifactBytes(path.join(directory,'preview.json'),16384);preview=JSON.parse(previewRaw);}catch(error){if(error.code!=='ENOENT')throw error;}
+  const markerPath=path.join(directory,'preview-producer.json'),marker={version:1,scopeSha256:digest(scope),releaseId:release.evidence.release_id,packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision};
+  let produced=false;
+  try{if(stableV2(await json(markerPath,16384))!==stableV2(marker))fail('foundation_preview_binding_invalid');produced=true;}catch(error){if(error.code!=='ENOENT')throw error;}
+  if(!usingPrepared&&(!preview||produced)){
+    const retainedOrigin=preview?previewBinding(preview,scope,release.evidence):null;
+    if(preview&&(preview.version!==2||preview.transportHost!=='origin'))fail('foundation_preview_binding_invalid');
+    const prepared=await prepareCustomerSitePreview(context,scope,release);
+    return withCustomerSitePreview(prepared,async started=>{
+      if(preview){if(stableV2(started)!==stableV2(preview))fail('foundation_preview_binding_invalid');}
+      else await writeFile(path.join(directory,'preview.json'),JSON.stringify(started)+'\n',{flag:'wx'});
+      if(!produced)await writeFile(markerPath,JSON.stringify(marker)+'\n',{flag:'wx'});
+      return localCompletion(context,scope,release,directory,true);
+    },retainedOrigin);
+  }
+  if(!preview)fail('foundation_preview_binding_invalid');
+  const origin=previewBinding(preview,scope,release.evidence),originHost=preview.version===2;
   await renderer(origin,scope,release.evidence,originHost);
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
   const python=path.join(ROOT,'agent-business-core/runtime/.venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');

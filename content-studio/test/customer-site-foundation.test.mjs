@@ -153,3 +153,25 @@ for(const transport of ['canonical','origin'])test(`full local verifier crawls s
   const guide=(await f.site()).pages.find(p=>p.type==='guide'),mediaFile=path.join(f.base.dataDir,'media',f.siteId,path.basename(guide.media[0].src)),image=await readFile(mediaFile);await writeFile(mediaFile,Buffer.from('changed current media'));await check(false);await writeFile(mediaFile,image);
   f.amend(pin.required_page_ids[0],{title:'Naujesnis privatus juodraštis'});await check(false);await f.unchanged();
 });
+
+test('maintained native preview builds the exact synthetic release and reuses immutable origin with no model or deployment',
+  {skip:process.env.PINET_RUN_NATIVE_PREVIEW_TEST!=='1'},async t=>{
+  const f=await fixture(t);await f.prepare();const pin=f.scope(),first=f.call('customer-site-foundation',f.request(pin)).value;
+  assert.equal(first.state,'candidate');const dir=path.join(f.directory,'foundation',digest(pin));
+  const evidenceFile='evidence-native-preview-protocol.json',bytes=Buffer.from(JSON.stringify({synthetic:true,scope:'controlled protocol inputs only; not actual business/facts/form delivery/language acceptance',source:publicRevision}));
+  await writeFile(path.join(dir,evidenceFile),bytes);
+  const review={version:1,scopeSha256:digest(pin),packageSha256:first.release.package_sha256,publicSourceRevision:publicRevision,reviewer:'synthetic-native-preview-protocol',checkedAt:new Date().toISOString(),areas:Object.fromEntries(['facts','sources','media','presentation','enlargement','inquiry','measurement','language'].map(k=>[k,{status:'PASS',files:[{name:evidenceFile,sha256:hash(bytes)}]}]))};
+  const catalog=catalogFromMarkdown(await readFile(path.join(ROOT,'SKILLS/niche-site-audit/references/checklist.md'),'utf8'));
+  const audit={siteId:f.siteId,canonicalHost:pin.accepted.canonical_host,evaluatedAt:new Date().toISOString(),version:{packageSha256:first.release.package_sha256,sourceVersion:publicRevision},checks:catalog.map(c=>({id:c.id,status:c.stage==='local'?'PASS':'UNVERIFIED',evidence:c.stage==='local'?['Synthetic protocol assumption only; not real site acceptance']:[],notes:'Controlled test input only.'}))};
+  await writeFile(path.join(dir,'review-evidence.json'),JSON.stringify(review));await writeFile(path.join(dir,'PHASE-1-AUDIT.json'),JSON.stringify(audit));
+  const answer=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(answer.status,0,JSON.stringify(answer.value));assert.equal(answer.value.state,'verified-local',JSON.stringify(answer.value));assert.equal(answer.value.synthetic,true);assert.equal(answer.value.admission,'not_performed');assert.equal(answer.value.deployment,'not_performed');
+  const previewFile=path.join(dir,'preview.json'),previewBytes=await readFile(previewFile),preview=JSON.parse(previewBytes);
+  assert.equal(preview.version,2);assert.equal(preview.transportHost,'origin');assert.equal(preview.publicSourceRevision,publicRevision);assert.equal(preview.packageSha256,first.release.package_sha256);
+  const retained={...f.request(pin,'check-retained'),observation:answer.value};assert.equal(f.call('customer-site-foundation',retained).value.state,'retained-current');
+  const second=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(second.value.state,'verified-local',JSON.stringify(second.value));assert.deepEqual(await readFile(previewFile),previewBytes);
+  const parent=path.join(publicCore,'output/foundation-preview',digest(pin)),record=JSON.parse(await readFile(path.join(parent,'build.json')));
+  assert.equal(record.binding.publicSourceRevision,publicRevision);assert.equal(record.binding.packageSha256,first.release.package_sha256);assert.ok(record.build.files>0);
+  const configFile=path.join(parent,'repo/dist/server/wrangler.json'),config=await readFile(configFile);await writeFile(configFile,Buffer.concat([config,Buffer.from(' ')]));
+  const changed=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(changed.value.state,'candidate');assert.deepEqual(changed.value.blockers,['foundation_preview_build_changed']);await writeFile(configFile,config);
+  await f.unchanged();
+});

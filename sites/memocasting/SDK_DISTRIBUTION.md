@@ -1,5 +1,9 @@
 # Bendro prekybos kliento eksportas į savarankišką public build
 
+## LIVE serverio šaltinio kilmė · 2026-10-15
+
+PUBLIC `a55d639` manifestas oficialiu `sync-commerce-sdk.mjs` eksportu susietas su peržiūrėtu commerce 0.14.1 source `011b52fad673a6887c0d1dd258ccef0cc5202253`. Du vieši JS failai liko tų pačių baitų ir SHA256 kaip 0.12.1 įraše žemiau; pasikeitė tik sourceRevision. Exact SDK verifier PASS. Tai kilmės atnaujinimas; naujo frontend build, svetainės publikavimo ar veikiančių LIVE mokėjimų įrodymas iš jo nevedamas. Tikra backend, duomenų ir likusių žmogaus veiksmų būsena fiksuojama [paleidimo žurnale](DEPLOYMENT_2026_10_14.md).
+
 ## Aktualus shopo 0.12.1 · 2026-10-12
 
 PUBLIC `a82c6da55ff53df895a5c6600adba421b51fbe37`, canonical browser source `be32c223b2e45168b52a5eeec2d111006fe98214`. Oficialus exporter paėmė tik du viešus Git blobs; caller perduoda patvirtintą tos pačios kalbos `catalogueUrl`. Client 7295 baitai, SHA256 `7c5f07e33eacc8c9b42b55060d9014a3497f7ddd8d916abe4bc992298b7c557e`; UI 25702 baitai, SHA256 `7c4e09a790d40ed5f287805584e789948ac44b2f59d370b48655008b1056e89c`.

@@ -185,7 +185,7 @@ async def claim(tx, item, data):
     value = await enabled(tx)
     today = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
     count = await tx.scalar(select(func.count()).select_from(FacebookRecord).where(
-        FacebookRecord.kind == "browser_attempt", FacebookRecord.created_at >= today))
+        FacebookRecord.kind.in_(["browser_attempt", "page_api_attempt"]), FacebookRecord.created_at >= today))
     if count >= value["daily_post_limit"]:
         return {"state": "limited", "processed": 0}
     job = await tx.scalar(select(FacebookRecord).where(FacebookRecord.kind == "browser_post",

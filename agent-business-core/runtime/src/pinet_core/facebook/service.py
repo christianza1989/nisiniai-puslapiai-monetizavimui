@@ -85,7 +85,9 @@ async def update_policy(tx, item, data):
         {"event": "policy_updated", "reason": data.reason, "revision": row.revision})
     if not data.policy.enabled or data.policy.paused:
         from .browser_service import cancel_active
+        from .page_api_service import cancel_active as cancel_page_api
         await cancel_active(tx)
+        await cancel_page_api(tx)
         actions = (await tx.scalars(select(FacebookRecord).where(
             FacebookRecord.kind == "action", FacebookRecord.state.in_(["queued", "drafting"])
         ).with_for_update())).all()
@@ -238,7 +240,8 @@ async def claim_account(tx, account_key, owner, seconds=60):
     row = await tx.scalar(select(FacebookAccountLease).where(
         FacebookAccountLease.environment_id == env, FacebookAccountLease.account_key == account_key
     ).with_for_update())
-    if row and row.owner and row.owner.startswith(("browser-job:", "browser-uncertain:")):
+    if row and row.owner and row.owner.startswith(("browser-job:", "browser-uncertain:",
+                                                  "page-api-job:", "page-api-uncertain:")):
         raise HTTPException(409, "facebook_account_requires_check_only_reconciliation")
     if row and row.lease_until and row.lease_until > utcnow():
         raise HTTPException(409, "facebook_account_busy")

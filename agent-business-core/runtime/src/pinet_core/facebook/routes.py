@@ -12,10 +12,12 @@ from ..service import business
 from . import service
 from .browser_routes import router as browser_router
 from .contracts import ActionInput, GroupInput, InboundFixture, PolicyUpdate, SignalInput
+from .page_api_routes import router as page_api_router
 from .route_types import BoundedRoute
 
 router = APIRouter(route_class=BoundedRoute)
 router.include_router(browser_router)
+router.include_router(page_api_router)
 
 
 @router.get("/operator/facebook-ui", response_class=HTMLResponse)

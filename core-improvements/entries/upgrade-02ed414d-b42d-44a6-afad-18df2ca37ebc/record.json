@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Probe maintained studio imports before the opt-in supervisor reaches SQL or paid work; reject missing Sharp before a successful model run reaches intake.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/lifecycle.py",
+    "content-studio/scripts/customer-content-preflight.mjs",
+    "agent-business-core/runtime/offline_tests/test_studio_dependency_preflight.py",
+    "content-studio/test/customer-content-preflight.test.mjs",
+    "docs/decisions/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md",
+    "docs/handoffs/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the dependency helper and startup hook; preserve all original errors and immutable model/source records. No runtime adoption performed.",
+  "id": "upgrade-02ed414d-b42d-44a6-afad-18df2ca37ebc",
+  "branch": "codex/verslomatika-studio-dependency-preflight-s12-20261015",
+  "baseSha": "c99094cae712d085e06314af39d166b9492028d3",
+  "createdAt": "2026-10-14T21:37:46.978Z"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "First frozen import failed ERR_MODULE_NOT_FOUND for missing sharp; initial premature sibling-media cause was corrected, separate GUI scope stays root-owned. Initial new-import Ruff I001 preserved in decision and corrected. No providers/DB/server/init/adoption; active c990 instructions unchanged.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_studio_dependency_preflight.py offline_tests/test_site_build_lifecycle.py offline_tests/test_creation_studio.py -q",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md#patikra-ir-ribos"
+    },
+    {
+      "command": "node --test content-studio/test/customer-content-preflight.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md#patikra-ir-ribos"
+    },
+    {
+      "command": "paired freshness continue wrapper -- owned inert Python probe invoking studio.preflight_dependencies",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md#patikra-ir-ribos"
+    },
+    {
+      "command": "ruff check creation/studio.py site_build/lifecycle.py offline_tests/test_studio_dependency_preflight.py",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STUDIO_DEPENDENCY_PREFLIGHT_S12_2026_10_15.md#patikra-ir-ribos"
+    }
+  ],
+  "eventId": "55399946-ab24-458d-91d3-0af9bf321933",
+  "sequence": 2,
+  "at": "2026-10-14T21:37:55.804Z"
+}

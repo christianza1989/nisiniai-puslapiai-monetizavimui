@@ -1,0 +1,9 @@
+# Studio preview in independent worktrees
+
+The running c990 headless pipeline remains immutable. Readonly peer inspection found a fresh worktree lacked declared Sharp dependencies; canonical npm ci installed the pinned five packages without changing source/locks. The no-provider supervisor preflight had not caught that missing dependency; the peer owns its separate preflight repair.
+
+After actual dependency installation, root reproduced ERR_MODULE_NOT_FOUND for niche-media.mjs when importing the frozen studio server, despite a valid STUDIO_PUBLIC_CORE_DIR. The server statically imported the old sibling path. Root reserves issue66#6178946741 and changes only that import to the same deployment-owned configured companion selection already used by maintained pipeline helpers: STUDIO_PUBLIC_CORE_DIR, PINET_PUBLIC_CORE_PATH, STUDIO_NETWORK_SETTINGS-derived directory, then the original sibling default. Explicit empty/relative configuration fails; customer input cannot select an import path. No new media optimizer or server is created.
+
+Four focused Node checks verify nonadjacent paths with spaces, explicit invalid configuration, exact legacy fallback and importing the actual server/media module without starting or initializing data. The first run had3PASS/1FAIL because the new legacy fallback used one too few parent segments; root corrected the implementation and retained that failure. Final4PASS264.089ms; both affected modules syntax-check successfully. No provider/runtime/DB/channel action occurred in these source checks. Actual current imported content and page presentation still require their own observation; source import success is not business/site quality acceptance.
+
+Rollback is a scoped revert of server/public-core resolver and test. Keep frozen job/session/source receipts and source-independent local dependencies. The live c990 API and all original schema0032 data are untouched by this source repair.

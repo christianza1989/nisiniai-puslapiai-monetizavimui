@@ -109,7 +109,7 @@ class Pipeline:
             raise PipelineError("api_response_invalid") from None
         if response.status_code >= 300:
             error = value.get("error", {})
-            code = error.get("code", "api_refused") if isinstance(error, dict) else "api_refused"
+            code = value.get("code") or (error.get("code", "api_refused") if isinstance(error, dict) else "api_refused")
             code = code if isinstance(code, str) and re.fullmatch(r"[a-z0-9_:-]{1,160}", code) else "api_refused"
             self.log("api", code=code, http_status=response.status_code)
             raise PipelineError(code)
@@ -211,6 +211,13 @@ class Pipeline:
             raise PipelineError("saved_discovery_mismatch")
         discovery_id = saved_id or discovery_id
         if mutate and message:
+            # Same canonical wire validation as the server; do not spend a turn on bad input.
+            from pinet_core.business_discovery.wire import Start
+            try:
+                message = Start.model_validate_json(json.dumps({"portfolio_id": self.state["scope"]["portfolio_id"],
+                    "message": message, "idempotency_key": str(uuid4())})).message
+            except ValueError:
+                raise PipelineError("invalid_discovery_request") from None
             if discovery_id:
                 view, _ = self.discovery_snapshot(discovery_id)
                 stored = self.state["operations"].get("research_message")

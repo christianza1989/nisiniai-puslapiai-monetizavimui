@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Studio private preview ignores configured companion path and cannot import in independent worktrees",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_STUDIO_COMPANION_S12_2026_10_15.md"
+  ],
+  "paths": [
+    "content-studio/src/server.mjs",
+    "content-studio/src/public-core.mjs",
+    "content-studio/test/public-core.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of configured preview-media import; preserve running frozen pipeline and generated artifacts",
+  "id": "upgrade-be00ea5a-c6af-444d-8478-63715b4007d2",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "c99094cae712d085e06314af39d166b9492028d3",
+  "createdAt": "2026-10-14T21:32:43.336Z"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual first new HTTP start refused400 on2685>2500characters before provider admission; generic top-level code decoding and missing canonical wire precheck repaired. Frozen servingc990 unchanged, failed request preserved, corrected2397character request separately admitted.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_workspace_pipeline_runner.py",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_HEADLESS_PIPELINE_S11_2026_10_14.md:19PASS1.27s including top-level code and oversized predispatch refusal"
+    }
+  ],
+  "eventId": "77e69d07-5606-4bff-a9ca-35e779048a6a",
+  "sequence": 3,
+  "at": "2026-10-14T21:28:33.020Z"
+}

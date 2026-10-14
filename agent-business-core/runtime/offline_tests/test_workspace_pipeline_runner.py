@@ -50,6 +50,23 @@ def test_source_mismatch_refuses_dispatch(tmp_path):
     assert error.value.code == "api_source_mismatch" and requests == []
 
 
+def test_canonical_top_level_api_error_is_retained(tmp_path):
+    value = pipeline(tmp_path, lambda request: httpx.Response(409,
+        json={"code": "stale_revision", "message": "private message never logged"}))
+    with pytest.raises(runner.PipelineError) as error:
+        value.request("POST", "/customer/v2/discoveries", {})
+    assert error.value.code == "stale_revision"
+    assert "private message" not in (tmp_path / "events.private.jsonl").read_text()
+
+
+def test_oversized_discovery_message_refused_before_http_dispatch(tmp_path):
+    value = pipeline(tmp_path, lambda request: pytest.fail("invalid input dispatched"))
+    value.state["scope"] = {"portfolio_id": str(uuid4())}
+    with pytest.raises(runner.PipelineError) as error:
+        value.run(discovery_id=None, message="x"*2501, source=SOURCE, mutate=True, timeout=10, poll=0)
+    assert error.value.code == "invalid_discovery_request" and value.state["operations"] == {}
+
+
 def report_fixture():
     identifier = str(uuid4())
     reply = {"state": "plan_ready", "plan": {"synthetic": True}}

@@ -31,7 +31,7 @@
       "decisionReason": "Išlaikyti tikrą URL ir ID; naujas aprašas savaime nekeičia patvirtintos revizijos.",
       "pageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
       "publicRevisionHash": null,
-      "currentDraftTitle": "Kam bendra veikla tinka?",
+      "currentDraftTitle": "Dovanų idėjos pagal žmogų, progą ir biudžetą",
       "publicState": "private-plan-or-draft",
       "parentId": null,
       "format": "editorial navigation hub with selection guide",
@@ -214,7 +214,10 @@
         "Jokio išgalvoto išbandymo, kliento citatos, nuolaidos, sandėlio likučio ar pristatymo garantijos.",
         "Rinkinio nesieti su patvirtintu vaikų amžiumi ar konkrečiu rankų skaičiumi, kol nėra dokumentų."
       ],
-      "draftState": "complete brief, article not yet written or reviewed"
+      "draftState": "complete brief, article not yet written or reviewed",
+      "proposedPublishAt": "2026-10-15T07:00:00.000Z",
+      "proposedLocalDate": "2026-10-15",
+      "proposedLocalTime": "10:00"
     },
     {
       "id": "C00",

@@ -265,7 +265,7 @@ Ką galiu paruošti šiandien ir ko nebegaliu pažadėti? Vietinio įsigijimo, s
 
 **C19 · Kalėdinių dovanų pakavimas: paprastai ir tvarkingai**
 
-Kaip gražiai supakuoti skirtingų formų dovanas? Tikrai nufotografuoti trys pakavimo būdai; medžiagų kiekio sąrašas; trapios dovanos apsauga pagal jos savybes.
+Kaip gražiai supakuoti skirtingų formų dovanas? Trys pakavimo paaiškinimai su originaliomis aiškinamosiomis schemomis; kelių Kalėdų gavėjų pakavimo planas; trapios dovanos apsaugos ir dekoravimo skirtumas.
 
 **H00 · Dovanų idėjos pagal žmogų, progą ir biudžetą**
 
@@ -449,7 +449,7 @@ Kada rinktis rankų darbo dovaną? Įgūdžio, laiko ir kokybės kriterijai; aut
 
 **T08 · Pasidaryk pats dovanos: realistiškas kūrybos planas**
 
-Kokią dovaną galiu pats pagaminti turėdamas ribotą laiką? Tikrai atliktų trijų projektų laiko ir medžiagų lapas; nesėkmės atsarginis planas; rinkinys ir paruoštas rezultatas.
+Kokią dovaną galiu pats pagaminti turėdamas ribotą laiką? Trys iliustraciniai projektų planai su priemonių sąrašais; laiko etapų užrašymo lapas ir atsarginis variantas. Praktinio bandymo teiginio nėra.
 
 **T09 · Patirties dovanos: kaip pasirinkti veiklą gavėjui**
 
@@ -489,7 +489,7 @@ Kaip suplanuoti dovanos įteikimą? Privatus ar viešas įteikimas; trumpa konkr
 
 **S05 · Kaip supakuoti dovaną pagal jos formą**
 
-Kaip tvarkingai supakuoti dėžutę, cilindrą ar trapią dovaną? Originalios nuotraukos ir tikri matmenys; trys formų instrukcijos; transportavimo ir dekoravimo skirtumas.
+Kaip tvarkingai supakuoti dėžutę, cilindrą ar trapią dovaną? Trys formų pakavimo paaiškinimai; originalios aiškinamosios schemos ir iliustracinis perimetro skaičiavimas; dekoravimo ir transportavimo skirtumas.
 
 **S06 · Dovanų etiketas: susitarimai ir asmeninės ribos**
 

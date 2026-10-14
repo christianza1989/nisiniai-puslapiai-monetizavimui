@@ -25,4 +25,6 @@ Stripe ir domeno vartai pagal [paleidimo įrašą](DEPLOYMENT_2026_10_14.md) iš
 
 ## Dabartinė darbų būklė
 
+2026-10-14 gidų indekso patikros planas: išlaikyti esamą baltą / Manrope vidinių puslapių sistemą, H1 ir H2 hierarchiją, 3:2 kortelių fotografijas bei esamus telefono dydžius. Sutvarkyti tikrą šešių hardcoded adresų apribojimą: kiekvieną tuo metu tinkamą tos kalbos gidą parodyti vienoje prasmingoje grupėje; dovanų indeksas apima pasirinkimo temas, o naudojimo gidai lieka bendrame indekse. Sekcijų navigacija su skaičiais turi 44 px veiksmų plotą ir natūraliai persikelia į kelias eilutes. Tikrinti ilgus pavadinimus, aktualų desktop / mobile, būsimo straipsnio nepasiekiamumą iki jo datos ir matomo indekso bei CollectionPage hasPart sutapimą. Šis planas dar nėra patikros PASS.
+
 Šio įrašo pradžioje naujoji 92 gidų eilė buvo planas, be naujų straipsnių tekstų. Rengimo automatika jau pakeista į viso paketo užbaigimą, ne 1–2 juodraščius per dieną. Native V1 draft kelias papildomas pilno privataus aprašo įvestimi, kad rašytojas gautų tikrą klausimą, struktūrą, konkretesnes frazes ir įrodymų ribas. Vėlesni skaičiai fiksuojami iš actual studio inventoriaus, o ne iš planų kiekio. Užbaigtas planas, parašytas tekstas, peržiūra, eksportas ir hosted priėmimas turi būti nurodyti atskirai.

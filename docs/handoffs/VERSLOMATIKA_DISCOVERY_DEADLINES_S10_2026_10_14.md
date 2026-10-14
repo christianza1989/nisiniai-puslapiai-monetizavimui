@@ -8,6 +8,8 @@ Owned ordinary clone backed up privately and migrated0038→0039 from08e9; all82
 
 One normal UI follow-up in the same Discovery is running:jobf44adbda-2aae-4b2c-ad65-0b8329049d2b/source08e9;3 charged creatorSol attempts total (old succeeded, old timed out, new running). Old source798 remains immutable in those rows. The separate ignored read-only observer initially rejected intentional mixed-source history; it now allows exactly prior/adopted receipts' sources, without DB writes or canonical guard changes. Actual completion/reviews/Creation/GUIDE/full Foundation remain unverified. This is local clone adoption, not main merge or another PC adoption.
 
+Subsequent actual observation19:50Z:the same new job failed run_timeout after the420s creator allowance. Its observed trace has6 web items and no terminal result/output; new partial failure evidence is retained privately, with usage/cost unknown.3 total charged creator attempts, one saved success and two preserved timeouts; no critic/coordinator/Creation/GUIDE execution. Chrome shows matching stopped state, saved3-turn history, creatorfailed and reviewersnotstarted. The longer cap did not prove completion. Read-only comparative diagnosis is reopened; no blind further cap increase, automatic retry, receipt rewrite or additional provider test has occurred.
+
 Ignored immutable evidence in `agent-business-core/runtime/artifacts/s10-deadlines/`:
 
 - `baseline-52ac5044.log`:7 FAIL/5 PASS6.08s, reproducing absent partial count/hash and existing300s High caps instead of420/90/90/reviewer reserves. `focus-9650c91f.log`:12 PASS7.81s after canonical fixes.

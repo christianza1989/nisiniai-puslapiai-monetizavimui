@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Private sidecar stores original artifacts and canonical revision snapshots; filters primary writer, mixed contributions, observed UI model and current/history revisions. Six focused cases and full studio53/53 PASS. Live private adoption contains7legacy_unknown revisions plus1Gemini-primary/mixed selection draft with two exact Codex segments, UI4Argon/Medium inherited from original pilot and backendIDnull. Public source/package untouched. Gemini browser access, direct law reading, rendered review/approval/import/deploy remain open; this verifies the helper, not completion of the seven-article rewrite.",
+  "checks": [
+    {
+      "command": "npm test --prefix content-studio",
+      "result": "PASS",
+      "evidence": "53/53 cases; private output/parasoplansetes-approved-copy-20261014/studio-tests-final.txt; committed focused test cases reproduce integrity/privacy/attribution"
+    },
+    {
+      "command": "node output/parasoplansetes-approved-copy-20261014/prepare-selection.mjs",
+      "result": "PASS",
+      "evidence": "Actual model revision and private registry8records verified; filters Gemini1,Codex0,mixed1,UI-model1; public package unchanged"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped source whitespace check"
+    }
+  ],
+  "eventId": "c326e499-6882-45d6-96be-acd4bd7c8951",
+  "sequence": 3,
+  "at": "2026-10-14T08:50:11.520Z"
+}

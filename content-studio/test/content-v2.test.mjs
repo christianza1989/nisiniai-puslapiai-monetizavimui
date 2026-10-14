@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,readFile,rm,writeFile,mkdir} from 'node:fs/promises';
+import {mkdtemp,readFile,readdir,rm,writeFile,mkdir} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
@@ -19,7 +19,12 @@ test('v2 validator/hash/schema copies match; v1 packages remain readable unchang
   assert.equal(await readFile(new URL('../src/content-package-v2.mjs',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'scripts/content-package-v2.mjs'),'utf8'));
   assert.equal(await readFile(new URL('../schemas/content-package.v2.schema.json',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json'),'utf8'));
   const packages=JSON.parse(await readFile(path.join(publicRoot,'lib/generated/content-packages.json'),'utf8'));
-  assert.equal(packages.length,9);
+  const sourceRoot=path.join(publicRoot,'content-packages');
+  const sourceDirectories=(await readdir(sourceRoot,{withFileTypes:true})).filter(d=>d.isDirectory());
+  const sourcePackages=await Promise.all(sourceDirectories.map(d=>readFile(path.join(sourceRoot,d.name,'content-package.json'),'utf8').then(JSON.parse)));
+  assert.ok(sourcePackages.length>0,'companion must contain actual source packages');
+  assert.deepEqual(packages.map(p=>p.siteId).sort(),sourcePackages.map(p=>p.siteId).sort(),'compiled inventory must match all current source sites');
+  assert.equal(new Set(packages.map(p=>p.siteId)).size,packages.length,'compiled sites must be unique');
   for(const p of packages){assert.equal(p.schemaVersion,1);assert.equal(publicCore.validateContentPackage(p),p);for(const page of p.pages)assert.equal(model.revisionHash(page),publicCore.pageRevisionHash(page));}
   const pkg=v2Fixture();assert.equal(validateV2Package(pkg),pkg);assert.equal(publicCore.validateContentPackage(pkg),pkg);
 });

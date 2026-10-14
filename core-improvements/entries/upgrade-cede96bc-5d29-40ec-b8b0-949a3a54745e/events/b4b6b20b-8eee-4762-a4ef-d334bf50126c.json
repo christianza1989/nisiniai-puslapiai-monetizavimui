@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original51/52FAIL: hardcoded compiled package count9 with actual10 in transferred companion. Exact source/compiled site-ID inventory equality replaces obsolete count, with nonempty and uniqueness checks, all schema/validator/hash checks preserved. Full studio53/53PASS after repair. No runtime/public package modifications.",
+  "checks": [
+    {
+      "command": "npm test --prefix content-studio",
+      "result": "PASS",
+      "evidence": "Final53/53; actual tenth companion source included. Original51/52 FAIL remains recorded in upgrade21f75445 fixing event and private note."
+    },
+    {
+      "command": "git diff -- content-studio/test/content-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "Only readdir import and dynamic inventory assertion; existing validator/hash/schema compatibility loops unchanged."
+    }
+  ],
+  "eventId": "b4b6b20b-8eee-4762-a4ef-d334bf50126c",
+  "sequence": 2,
+  "at": "2026-10-14T08:56:51.412Z"
+}

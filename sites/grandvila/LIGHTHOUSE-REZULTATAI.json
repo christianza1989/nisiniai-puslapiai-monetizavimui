@@ -1,0 +1,1693 @@
+{
+  "at": "2026-10-14T09:52:12.200Z",
+  "runs": [
+    {
+      "file": "lighthouse-activities-mobile.report.json",
+      "url": "https://grandvila.lt/pramogos/",
+      "finalUrl": "https://grandvila.lt/pramogos/",
+      "at": "2026-10-14T09:48:17.565Z",
+      "formFactor": "mobile",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 16,
+        "accessibility": 87,
+        "best-practices": 96,
+        "seo": 92,
+        "agentic-browsing": 21
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4194.791,
+          "display": "4.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 18848.4865,
+          "display": "18.8 s"
+        },
+        "total-blocking-time": {
+          "value": 2178,
+          "display": "2,180 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.29127022626547083,
+          "display": "0.291"
+        },
+        "speed-index": {
+          "value": 8192.883427515764,
+          "display": "8.2 s"
+        },
+        "total-byte-weight": {
+          "value": 7341638,
+          "display": "Total size was 7,170 KiB"
+        }
+      },
+      "requests": 60,
+      "failed": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "18.8 s"
+        },
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,100 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1000,
+            "LCP": 1000
+          }
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "6.4 s",
+          "items": 7,
+          "savings": {
+            "TBT": 2200
+          }
+        },
+        {
+          "id": "bootup-time",
+          "title": "Reduce JavaScript execution time",
+          "display": "3.0 s",
+          "items": 10,
+          "savings": {
+            "TBT": 1600
+          }
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "15 layout shifts found",
+          "items": 15,
+          "savings": {
+            "CLS": 0.291
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+          "items": 3
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "items": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 2
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 249 KiB",
+          "items": 4,
+          "savings": {
+            "FCP": 1250,
+            "LCP": 1600
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 457 KiB",
+          "items": 7,
+          "savings": {
+            "FCP": 650,
+            "LCP": 2450
+          }
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "items": 1
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description"
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 1,307 KiB",
+          "items": 30,
+          "savings": {
+            "FCP": 1000,
+            "LCP": 4900
+          }
+        },
+        {
+          "id": "cls-culprits-insight",
+          "title": "Layout shift culprits",
+          "items": 2,
+          "savings": {
+            "CLS": 0
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,000 ms",
+          "savings": {
+            "FCP": 1000,
+            "LCP": 1000
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 220 ms",
+          "items": 10,
+          "savings": {
+            "FCP": 200,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 2
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 916 KiB",
+          "items": 2,
+          "savings": {
+            "FCP": 0,
+            "LCP": 4200
+          }
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "title": "LCP breakdown",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 2,770 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 2750,
+            "LCP": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-contacts-mobile.report.json",
+      "url": "https://grandvila.lt/kontaktai/",
+      "finalUrl": "https://grandvila.lt/kontaktai/",
+      "at": "2026-10-14T09:47:42.649Z",
+      "formFactor": "mobile",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 35,
+        "accessibility": 92,
+        "best-practices": 100,
+        "seo": 92,
+        "agentic-browsing": 38
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4143.420600000001,
+          "display": "4.1 s"
+        },
+        "largest-contentful-paint": {
+          "value": 5050.997200000001,
+          "display": "5.1 s"
+        },
+        "total-blocking-time": {
+          "value": 1494.5783000000047,
+          "display": "1,490 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.14781576117223555,
+          "display": "0.148"
+        },
+        "speed-index": {
+          "value": 7396.209261798245,
+          "display": "7.4 s"
+        },
+        "total-byte-weight": {
+          "value": 2326464,
+          "display": "Total size was 2,272 KiB"
+        }
+      },
+      "requests": 67,
+      "failed": [
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,120 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1000,
+            "LCP": 1000
+          }
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "4.6 s",
+          "items": 7,
+          "savings": {
+            "TBT": 1500
+          }
+        },
+        {
+          "id": "bootup-time",
+          "title": "Reduce JavaScript execution time",
+          "display": "2.7 s",
+          "items": 13,
+          "savings": {
+            "TBT": 1400
+          }
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "3 layout shifts found",
+          "items": 3,
+          "savings": {
+            "CLS": 0.148
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+          "items": 3
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 2
+        },
+        {
+          "id": "presentation-role-conflict",
+          "title": "Elements with `role=\"none\"` or `role=\"presentation\"` have conflicts",
+          "items": 3
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 214 KiB",
+          "items": 3,
+          "savings": {
+            "FCP": 1050,
+            "LCP": 1050
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 620 KiB",
+          "items": 8,
+          "savings": {
+            "FCP": 350,
+            "LCP": 500
+          }
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description"
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 808 KiB",
+          "items": 42,
+          "savings": {
+            "FCP": 800,
+            "LCP": 1050
+          }
+        },
+        {
+          "id": "cls-culprits-insight",
+          "title": "Layout shift culprits",
+          "items": 1,
+          "savings": {
+            "CLS": 0
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,020 ms",
+          "savings": {
+            "FCP": 1000,
+            "LCP": 1000
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 190 ms",
+          "items": 10,
+          "savings": {
+            "FCP": 200,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 2
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 31 KiB",
+          "items": 1,
+          "savings": {
+            "FCP": 0,
+            "LCP": 150
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 2,740 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 2750,
+            "LCP": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-gallery-mobile.report.json",
+      "url": "https://grandvila.lt/galerija/pokyliu-sales/",
+      "finalUrl": "https://grandvila.lt/galerija/pokyliu-sales/",
+      "at": "2026-10-14T09:46:35.601Z",
+      "formFactor": "mobile",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 16,
+        "accessibility": 87,
+        "best-practices": 100,
+        "seo": 92,
+        "agentic-browsing": 20
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4183.5698999999995,
+          "display": "4.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 14348.350199999997,
+          "display": "14.3 s"
+        },
+        "total-blocking-time": {
+          "value": 2392.5,
+          "display": "2,390 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.2943677096474047,
+          "display": "0.294"
+        },
+        "speed-index": {
+          "value": 7841.486919255405,
+          "display": "7.8 s"
+        },
+        "total-byte-weight": {
+          "value": 2706608,
+          "display": "Total size was 2,643 KiB"
+        }
+      },
+      "requests": 50,
+      "failed": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "14.3 s"
+        },
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,280 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1200,
+            "LCP": 1200
+          }
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "6.9 s",
+          "items": 7,
+          "savings": {
+            "TBT": 2400
+          }
+        },
+        {
+          "id": "bootup-time",
+          "title": "Reduce JavaScript execution time",
+          "display": "4.1 s",
+          "items": 10,
+          "savings": {
+            "TBT": 2050
+          }
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "2 layout shifts found",
+          "items": 2,
+          "savings": {
+            "CLS": 0.294
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+          "items": 3
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "items": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 2
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 261 KiB",
+          "items": 5,
+          "savings": {
+            "FCP": 1200,
+            "LCP": 1200
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 464 KiB",
+          "items": 7,
+          "savings": {
+            "FCP": 350,
+            "LCP": 1750
+          }
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description"
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 851 KiB",
+          "items": 31,
+          "savings": {
+            "FCP": 700,
+            "LCP": 4000
+          }
+        },
+        {
+          "id": "cls-culprits-insight",
+          "title": "Layout shift culprits",
+          "items": 1,
+          "savings": {
+            "CLS": 0
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,180 ms",
+          "savings": {
+            "FCP": 1200,
+            "LCP": 1200
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 150 ms",
+          "items": 10,
+          "savings": {
+            "FCP": 150,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 2
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 220 KiB",
+          "items": 4,
+          "savings": {
+            "FCP": 0,
+            "LCP": 500
+          }
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "title": "LCP breakdown",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 2,660 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 2650,
+            "LCP": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-home-desktop.report.json",
+      "url": "https://grandvila.lt/",
+      "finalUrl": "https://grandvila.lt/",
+      "at": "2026-10-14T09:20:27.507Z",
+      "formFactor": "desktop",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 65,
+        "accessibility": 87,
+        "best-practices": 100,
+        "seo": 85,
+        "agentic-browsing": 50
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 1211.5529999999999,
+          "display": "1.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 3855.2273099441527,
+          "display": "3.9 s"
+        },
+        "total-blocking-time": {
+          "value": 169.5,
+          "display": "170 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.02153130494379634,
+          "display": "0.022"
+        },
+        "speed-index": {
+          "value": 3453.366360763451,
+          "display": "3.5 s"
+        },
+        "total-byte-weight": {
+          "value": 6507295,
+          "display": "Total size was 6,355 KiB"
+        }
+      },
+      "requests": 112,
+      "failed": [
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,380 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1300,
+            "LCP": 1300
+          }
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "2.3 s",
+          "items": 7,
+          "savings": {
+            "TBT": 150
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-input-field-name",
+          "title": "ARIA input fields do not have accessible names",
+          "items": 2
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "items": 1
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "items": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 2
+        },
+        {
+          "id": "presentation-role-conflict",
+          "title": "Elements with `role=\"none\"` or `role=\"presentation\"` have conflicts",
+          "items": 3
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 171 KiB",
+          "items": 3,
+          "savings": {
+            "FCP": 150,
+            "LCP": 100
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 385 KiB",
+          "items": 7,
+          "savings": {
+            "FCP": 0,
+            "LCP": 400
+          }
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are not crawlable",
+          "items": 2
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 1,233 KiB",
+          "items": 59,
+          "savings": {
+            "FCP": 150,
+            "LCP": 750
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,280 ms",
+          "savings": {
+            "FCP": 1300,
+            "LCP": 1300
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 250 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 250,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 2
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 1,516 KiB",
+          "items": 5,
+          "savings": {
+            "FCP": 0,
+            "LCP": 100
+          }
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "title": "LCP breakdown",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 540 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 550,
+            "LCP": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-home-mobile-repeat.report.json",
+      "url": "https://grandvila.lt/",
+      "finalUrl": "https://grandvila.lt/",
+      "at": "2026-10-14T09:45:40.832Z",
+      "formFactor": "mobile",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 21,
+        "accessibility": 80,
+        "best-practices": 100,
+        "seo": 85,
+        "agentic-browsing": 25
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4228.6975,
+          "display": "4.2 s"
+        },
+        "largest-contentful-paint": {
+          "value": 59983.65805994414,
+          "display": "60.0 s"
+        },
+        "total-blocking-time": {
+          "value": 5864.500000000002,
+          "display": "5,860 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.1491508041860657,
+          "display": "0.149"
+        },
+        "speed-index": {
+          "value": 16162.195146203725,
+          "display": "16.2 s"
+        },
+        "total-byte-weight": {
+          "value": 21905153,
+          "display": "Total size was 21,392 KiB"
+        }
+      },
+      "requests": 136,
+      "failed": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "60.0 s"
+        },
+        {
+          "id": "speed-index",
+          "title": "Speed Index",
+          "display": "16.2 s"
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "display": "5,860 ms"
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "display": "2,870 ms"
+        },
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,860 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1750,
+            "LCP": 1750
+          }
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "display": "65.4 s"
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "19.6 s",
+          "items": 7,
+          "savings": {
+            "TBT": 5850
+          }
+        },
+        {
+          "id": "bootup-time",
+          "title": "Reduce JavaScript execution time",
+          "display": "5.7 s",
+          "items": 13,
+          "savings": {
+            "TBT": 2350
+          }
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "5 layout shifts found",
+          "items": 5,
+          "savings": {
+            "CLS": 0.149
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+          "items": 3
+        },
+        {
+          "id": "aria-input-field-name",
+          "title": "ARIA input fields do not have accessible names",
+          "items": 2
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "items": 7
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "items": 3
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "items": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 3
+        },
+        {
+          "id": "presentation-role-conflict",
+          "title": "Elements with `role=\"none\"` or `role=\"presentation\"` have conflicts",
+          "items": 3
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 196 KiB",
+          "items": 3,
+          "savings": {
+            "FCP": 900,
+            "LCP": 900
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 382 KiB",
+          "items": 8,
+          "savings": {
+            "FCP": 200,
+            "LCP": 1650
+          }
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are not crawlable",
+          "items": 2
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "llms-txt",
+          "title": "llms.txt does not follow recommendations"
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 2,745 KiB",
+          "items": 82,
+          "savings": {
+            "FCP": 800,
+            "LCP": 2850
+          }
+        },
+        {
+          "id": "cls-culprits-insight",
+          "title": "Layout shift culprits",
+          "items": 3,
+          "savings": {
+            "CLS": 0
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,760 ms",
+          "savings": {
+            "FCP": 1750,
+            "LCP": 1750
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 260 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 250,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 2
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 1,584 KiB",
+          "items": 5,
+          "savings": {
+            "FCP": 0,
+            "LCP": 50
+          }
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "title": "LCP breakdown",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 21 KiB",
+          "items": 2,
+          "savings": {
+            "FCP": 0,
+            "LCP": 200
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 2,300 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 2300,
+            "LCP": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-home-mobile.report.json",
+      "url": "https://grandvila.lt/",
+      "finalUrl": "https://grandvila.lt/",
+      "at": "2026-10-14T09:18:41.812Z",
+      "formFactor": "mobile",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 21,
+        "accessibility": 80,
+        "best-practices": 100,
+        "seo": 85,
+        "agentic-browsing": 38
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4481.4645,
+          "display": "4.5 s"
+        },
+        "largest-contentful-paint": {
+          "value": 61995.55830994415,
+          "display": "62.0 s"
+        },
+        "total-blocking-time": {
+          "value": 3693.000000000001,
+          "display": "3,690 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.1491508041860657,
+          "display": "0.149"
+        },
+        "speed-index": {
+          "value": 12782.934831159768,
+          "display": "12.8 s"
+        },
+        "total-byte-weight": {
+          "value": 21990145,
+          "display": "Total size was 21,475 KiB"
+        }
+      },
+      "requests": 140,
+      "failed": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "62.0 s"
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "display": "1,250 ms"
+        },
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,570 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1450,
+            "LCP": 1450
+          }
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "display": "66.6 s"
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "12.5 s",
+          "items": 7,
+          "savings": {
+            "TBT": 3700
+          }
+        },
+        {
+          "id": "bootup-time",
+          "title": "Reduce JavaScript execution time",
+          "display": "4.0 s",
+          "items": 13,
+          "savings": {
+            "TBT": 1650
+          }
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "5 layout shifts found",
+          "items": 5,
+          "savings": {
+            "CLS": 0.149
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+          "items": 3
+        },
+        {
+          "id": "aria-input-field-name",
+          "title": "ARIA input fields do not have accessible names",
+          "items": 2
+        },
+        {
+          "id": "color-contrast",
+          "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+          "items": 7
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "items": 3
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements do not have `[alt]` attributes",
+          "items": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 3
+        },
+        {
+          "id": "presentation-role-conflict",
+          "title": "Elements with `role=\"none\"` or `role=\"presentation\"` have conflicts",
+          "items": 3
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 232 KiB",
+          "items": 4,
+          "savings": {
+            "FCP": 1150,
+            "LCP": 1350
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 394 KiB",
+          "items": 8,
+          "savings": {
+            "FCP": 200,
+            "LCP": 1900
+          }
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are not crawlable",
+          "items": 2
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 2,736 KiB",
+          "items": 81,
+          "savings": {
+            "FCP": 900,
+            "LCP": 4150
+          }
+        },
+        {
+          "id": "cls-culprits-insight",
+          "title": "Layout shift culprits",
+          "items": 2,
+          "savings": {
+            "CLS": 0
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,470 ms",
+          "savings": {
+            "FCP": 1450,
+            "LCP": 1450
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 250 ms",
+          "items": 18,
+          "savings": {
+            "FCP": 250,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 2
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 1,584 KiB",
+          "items": 5,
+          "savings": {
+            "FCP": 0,
+            "LCP": 200
+          }
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "title": "LCP breakdown",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 21 KiB",
+          "items": 2,
+          "savings": {
+            "FCP": 0,
+            "LCP": 200
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 2,750 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 2750,
+            "LCP": 0
+          }
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-service-mobile.report.json",
+      "url": "https://grandvila.lt/paslaugos/pokyliu-sale/",
+      "finalUrl": "https://grandvila.lt/paslaugos/pokyliu-sale/",
+      "at": "2026-10-14T09:47:16.296Z",
+      "formFactor": "mobile",
+      "version": "13.5.0",
+      "chrome": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "runtimeError": null,
+      "warnings": [],
+      "scores": {
+        "performance": 18,
+        "accessibility": 87,
+        "best-practices": 100,
+        "seo": 92,
+        "agentic-browsing": 22
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4360.357500000001,
+          "display": "4.4 s"
+        },
+        "largest-contentful-paint": {
+          "value": 14538.047500000004,
+          "display": "14.5 s"
+        },
+        "total-blocking-time": {
+          "value": 2030,
+          "display": "2,030 ms"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.2738301638401565,
+          "display": "0.274"
+        },
+        "speed-index": {
+          "value": 7460.292325781964,
+          "display": "7.5 s"
+        },
+        "total-byte-weight": {
+          "value": 2399297,
+          "display": "Total size was 2,343 KiB"
+        }
+      },
+      "requests": 45,
+      "failed": [
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "display": "14.5 s"
+        },
+        {
+          "id": "server-response-time",
+          "title": "Reduce initial server response time",
+          "display": "Root document took 1,140 ms",
+          "items": 1,
+          "savings": {
+            "FCP": 1050,
+            "LCP": 1050
+          }
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimize main-thread work",
+          "display": "4.8 s",
+          "items": 7,
+          "savings": {
+            "TBT": 2050
+          }
+        },
+        {
+          "id": "bootup-time",
+          "title": "Reduce JavaScript execution time",
+          "display": "2.6 s",
+          "items": 11,
+          "savings": {
+            "TBT": 1400
+          }
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "14 layout shifts found",
+          "items": 14,
+          "savings": {
+            "CLS": 0.274
+          }
+        },
+        {
+          "id": "valid-source-maps",
+          "title": "Missing source maps for large first-party JavaScript",
+          "items": 1
+        },
+        {
+          "id": "aria-hidden-focus",
+          "title": "`[aria-hidden=\"true\"]` elements contain focusable descendents",
+          "items": 3
+        },
+        {
+          "id": "heading-order",
+          "title": "Heading elements are not in a sequentially-descending order",
+          "items": 1
+        },
+        {
+          "id": "link-name",
+          "title": "Links do not have a discernible name",
+          "items": 2
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "Est savings of 236 KiB",
+          "items": 4,
+          "savings": {
+            "FCP": 1100,
+            "LCP": 900
+          }
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 365 KiB",
+          "items": 6,
+          "savings": {
+            "FCP": 200,
+            "LCP": 1800
+          }
+        },
+        {
+          "id": "meta-description",
+          "title": "Document does not have a meta description"
+        },
+        {
+          "id": "agent-accessibility-tree",
+          "title": "Accessibility tree is not well-formed",
+          "items": 1
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration",
+          "display": "3 failure reasons",
+          "items": 3
+        },
+        {
+          "id": "cache-insight",
+          "title": "Use efficient cache lifetimes",
+          "display": "Est savings of 818 KiB",
+          "items": 27,
+          "savings": {
+            "FCP": 900,
+            "LCP": 3850
+          }
+        },
+        {
+          "id": "cls-culprits-insight",
+          "title": "Layout shift culprits",
+          "items": 1,
+          "savings": {
+            "CLS": 0
+          }
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "display": "Est savings of 1,040 ms",
+          "savings": {
+            "FCP": 1050,
+            "LCP": 1050
+          }
+        },
+        {
+          "id": "font-display-insight",
+          "title": "Font display",
+          "display": "Est savings of 190 ms",
+          "items": 10,
+          "savings": {
+            "FCP": 200,
+            "INP": 0
+          }
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "items": 1
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "display": "Est savings of 31 KiB",
+          "items": 1,
+          "savings": {
+            "FCP": 0,
+            "LCP": 350
+          }
+        },
+        {
+          "id": "lcp-breakdown-insight",
+          "title": "LCP breakdown",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "items": 2,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "legacy-javascript-insight",
+          "title": "Legacy JavaScript",
+          "display": "Est savings of 12 KiB",
+          "items": 1,
+          "savings": {
+            "FCP": 0,
+            "LCP": 200
+          }
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "items": 3,
+          "savings": {
+            "LCP": 0
+          }
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render-blocking requests",
+          "display": "Est savings of 2,840 ms",
+          "items": 14,
+          "savings": {
+            "FCP": 2850,
+            "LCP": 0
+          }
+        }
+      ]
+    }
+  ]
+}

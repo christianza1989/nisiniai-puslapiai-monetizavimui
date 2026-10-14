@@ -1,0 +1,377 @@
+{
+  "siteId": "grandvila",
+  "evaluatedAt": "2026-10-14T09:52:12.210Z",
+  "stages": {
+    "local": {
+      "passed": 14,
+      "applicable": 67,
+      "score": 2.08,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "A2",
+        "B1",
+        "B2",
+        "D2",
+        "E3",
+        "F1",
+        "F2",
+        "G1",
+        "G3",
+        "H2",
+        "H4",
+        "H5",
+        "I2",
+        "I3",
+        "J1",
+        "J3",
+        "K1",
+        "L1",
+        "L2",
+        "L3",
+        "M1",
+        "M2",
+        "N1",
+        "N2",
+        "N3",
+        "O2",
+        "P1",
+        "P2",
+        "P3",
+        "Q1",
+        "Q2",
+        "R1",
+        "R2",
+        "R3",
+        "S1",
+        "S2",
+        "T1",
+        "U1",
+        "U2",
+        "U3",
+        "V1",
+        "V2",
+        "W1",
+        "W2",
+        "W4",
+        "X1"
+      ]
+    },
+    "launch": {
+      "passed": 1,
+      "applicable": 11,
+      "score": 0.9,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "B3",
+        "I4",
+        "O3",
+        "U4",
+        "W3",
+        "X3",
+        "Z3"
+      ]
+    },
+    "operations": {
+      "passed": 0,
+      "applicable": 2,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "A3",
+        "V3"
+      ]
+    }
+  },
+  "categories": {
+    "A": {
+      "passed": 0,
+      "applicable": 2,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "A2",
+        "A3"
+      ]
+    },
+    "B": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "B1",
+        "B2",
+        "B3"
+      ]
+    },
+    "C": {
+      "passed": 3,
+      "applicable": 3,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "D": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "D2"
+      ]
+    },
+    "E": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "E3"
+      ]
+    },
+    "F": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "F1",
+        "F2"
+      ]
+    },
+    "G": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "G1",
+        "G3"
+      ]
+    },
+    "H": {
+      "passed": 0,
+      "applicable": 4,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "H2",
+        "H4",
+        "H5"
+      ]
+    },
+    "I": {
+      "passed": 1,
+      "applicable": 4,
+      "score": 2.5,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "I2",
+        "I3",
+        "I4"
+      ]
+    },
+    "J": {
+      "passed": 0,
+      "applicable": 2,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "J1",
+        "J3"
+      ]
+    },
+    "K": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "K1"
+      ]
+    },
+    "L": {
+      "passed": 0,
+      "applicable": 4,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "L1",
+        "L2",
+        "L3"
+      ]
+    },
+    "M": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "M1",
+        "M2"
+      ]
+    },
+    "N": {
+      "passed": 0,
+      "applicable": 4,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "N1",
+        "N2",
+        "N3"
+      ]
+    },
+    "O": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "O2",
+        "O3"
+      ]
+    },
+    "P": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    "Q": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "Q1",
+        "Q2"
+      ]
+    },
+    "R": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    "S": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "S1",
+        "S2"
+      ]
+    },
+    "T": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "T1"
+      ]
+    },
+    "U": {
+      "passed": 0,
+      "applicable": 4,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "U1",
+        "U2",
+        "U3",
+        "U4"
+      ]
+    },
+    "V": {
+      "passed": 0,
+      "applicable": 3,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "V1",
+        "V2",
+        "V3"
+      ]
+    },
+    "W": {
+      "passed": 0,
+      "applicable": 4,
+      "score": 0,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "W1",
+        "W2",
+        "W3",
+        "W4"
+      ]
+    },
+    "X": {
+      "passed": 1,
+      "applicable": 3,
+      "score": 3.33,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "X1",
+        "X3"
+      ]
+    },
+    "Y": {
+      "passed": 1,
+      "applicable": 1,
+      "score": 10,
+      "perfect": true,
+      "gateReady": true,
+      "blockers": []
+    },
+    "Z": {
+      "passed": 2,
+      "applicable": 3,
+      "score": 6.66,
+      "perfect": false,
+      "gateReady": false,
+      "blockers": [
+        "Z3"
+      ]
+    }
+  }
+}

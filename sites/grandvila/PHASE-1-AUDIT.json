@@ -1,0 +1,1035 @@
+{
+  "siteId": "grandvila",
+  "canonicalHost": "grandvila.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-14T09:52:12.210Z",
+  "evaluator": "Codex, vieno agento viešas auditas",
+  "environment": {
+    "target": "https://grandvila.lt/",
+    "scope": "existing production read-only audit and modernization plan",
+    "country": "LT",
+    "language": "lt-LT",
+    "timezone": "Europe/Kiev",
+    "noProductionWrites": true
+  },
+  "version": {
+    "sourceVersion": "core-main:7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+    "companionMain": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "companionCheckout": "5924a2eb858cf45e736bc5e79a2f07cfbbc39af2",
+    "packageSha256": null,
+    "inventorySha256": "e09ba83d7eefdef87fa478ba6280cd3e02399a3b0115a5b7da91e2b92f0c3782"
+  },
+  "verdict": {
+    "local": "NOT_READY_MIGRATION",
+    "launch": "NEW_RELEASE_NOT_BUILT",
+    "demand": "NOT_MEASURED",
+    "visual": "LEGACY_BASELINE_REDESIGN_SPECIFIED"
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "NA",
+      "evidence": [],
+      "notes": "Audituojamas esamas švenčių verslas; naujo F1 paklausos testo ši užduotis nekuria."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Pasiūlymas ir kontaktai vieši, bet realus formos pristatymas ir šio verslo pajėgumas nebandyti."
+      ],
+      "notes": "Pasiūlymas ir kontaktai vieši, bet realus formos pristatymas ir šio verslo pajėgumas nebandyti."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Kvalifikuotų užklausų, pajamų ir plėtros duomenys nepateikti."
+      ],
+      "notes": "Kvalifikuotų užklausų, pajamų ir plėtros duomenys nepateikti."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Homepage tel:+370645422220 skiriasi nuo kontaktų ir poraštės tel:+37064542222."
+      ],
+      "notes": "Homepage tel:+370645422220 skiriasi nuo kontaktų ir poraštės tel:+37064542222."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Nefabrikuota tapatybė, tačiau nuotraukų, susijusių vilų atsiliepimų ir apdovanojimų aktualumo teisės dar nepatvirtintos."
+      ],
+      "notes": "Nefabrikuota tapatybė, tačiau nuotraukų, susijusių vilų atsiliepimų ir apdovanojimų aktualumo teisės dar nepatvirtintos."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Teisinis operatorius ir savininko domeno kontrolė viešu GET neįrodomi."
+      ],
+      "notes": "Teisinis operatorius ir savininko domeno kontrolė viešu GET neįrodomi."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "history/REPORT.md",
+        "Canonical history helper: 80 URL, 2 skaitomi snapshot, dalinis istorijos indeksas aiškiai pažymėtas."
+      ],
+      "notes": "Canonical history helper: 80 URL, 2 skaitomi snapshot, dalinis istorijos indeksas aiškiai pažymėtas."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "URL-INVENTORIUS.json",
+        "Visiems 53 aktyviems adresams tikslus adreso išsaugojimo registras; istoriniams EN URL atskira defer/404 peržiūra."
+      ],
+      "notes": "Visiems 53 aktyviems adresams tikslus adreso išsaugojimo registras; istoriniams EN URL atskira defer/404 peržiūra."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "PASS",
+      "evidence": [
+        "artifacts/redirects.json",
+        "HTTP ir www bei slashless paslaugos URL grąžina vieną 301 į patikrintą HTTPS slash 200."
+      ],
+      "notes": "HTTP ir www bei slashless paslaugos URL grąžina vieną 301 į patikrintą HTTPS slash 200."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Analogų turinio palyginimas atliktas, bet pilnas abiejų rinkų desktop/mobile dizaino palyginimas ir būsimas maketas dar nepriimti."
+      ],
+      "notes": "Analogų turinio palyginimas atliktas, bet pilnas abiejų rinkų desktop/mobile dizaino palyginimas ir būsimas maketas dar nepriimti."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Esami tekstai ir vieša biblioteka archyvuoti; naudojimo teisės bei visos paslaugų sąlygos laukia patvirtinimo."
+      ],
+      "notes": "Esami tekstai ir vieša biblioteka archyvuoti; naudojimo teisės bei visos paslaugų sąlygos laukia patvirtinimo."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "ATNAUJINIMO-PLANAS.md",
+        "Plane paieškos ketinimai atskirti nuo nepasiekiamų GSC/GA ir paklausos skaičių."
+      ],
+      "notes": "Plane paieškos ketinimai atskirti nuo nepasiekiamų GSC/GA ir paklausos skaičių."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Homepage slideris, blank white mobile logo, kontaktų tuščias tarpas ir paslaugų skaitymas nesudaro priimtos naujos sistemos."
+      ],
+      "notes": "Homepage slideris, blank white mobile logo, kontaktų tuščias tarpas ir paslaugų skaitymas nesudaro priimtos naujos sistemos."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Dabartinė svetainė neturi priimto šios svetainės DESIGN; šiame etape parengta tik specifikacija."
+      ],
+      "notes": "Dabartinė svetainė neturi priimto šios svetainės DESIGN; šiame etape parengta tik specifikacija."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Viešų vaizdų kilmė užfiksuota, licencijos ir atsiliepimų/klientų nuotraukų teisės neįrodomos viešu parsisiuntimu."
+      ],
+      "notes": "Viešų vaizdų kilmė užfiksuota, licencijos ir atsiliepimų/klientų nuotraukų teisės neįrodomos viešu parsisiuntimu."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "5 adresams crawl rinkinyje nerasta įeinančios nuorodos iš kito puslapio."
+      ],
+      "notes": "5 adresams crawl rinkinyje nerasta įeinančios nuorodos iš kito puslapio."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Homepage mobile meniu atsidaro, tačiau visų submenu/lightbox/keyboard veikimas neįrodytas."
+      ],
+      "notes": "Homepage mobile meniu atsidaro, tačiau visų submenu/lightbox/keyboard veikimas neįrodytas."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Hello world/uncategorized/portfolio šablono adresai ir kartų varžybų -2 dubliuojanti tema."
+      ],
+      "notes": "Hello world/uncategorized/portfolio šablono adresai ir kartų varžybų -2 dubliuojanti tema."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Kintantis sliderio pirmas ekranas ir nematomas mobile logo; CTA Rezervuoti veda į bendrą kontaktų puslapį."
+      ],
+      "notes": "Kintantis sliderio pirmas ekranas ir nematomas mobile logo; CTA Rezervuoti veda į bendrą kontaktų puslapį."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Homepage turi atskirą erdvių, maitinimo, nakvynės, pramogų ir vietos informaciją; išsaugotinos skirtingos temos."
+      ],
+      "notes": "Homepage turi atskirą erdvių, maitinimo, nakvynės, pramogų ir vietos informaciją; išsaugotinos skirtingos temos."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Nėra formos privatumo kelio; serverinės error/success būsenos nepriimtos."
+      ],
+      "notes": "Nėra formos privatumo kelio; serverinės error/success būsenos nepriimtos."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "NA",
+      "evidence": [],
+      "notes": "Tai esamo verslo migracijos auditas; naujų trijų gidų leidimas neužsakytas. Visi esami URL įtraukti į registrą."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Pramogų tekste yra nepagrįstų universalių sveikatinimo ir visiško saugumo teiginių; paslaugų vietos sąlygos turi būti išsaugotos."
+      ],
+      "notes": "Pramogų tekste yra nepagrįstų universalių sveikatinimo ir visiško saugumo teiginių; paslaugų vietos sąlygos turi būti išsaugotos."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Pilna aktyvių tekstų inventorizacija nėra naujos redakcinės revizijos priėmimas."
+      ],
+      "notes": "Pilna aktyvių tekstų inventorizacija nėra naujos redakcinės revizijos priėmimas."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Paslaugos skaitymas telefone peržiūrėtas; visų galutinių būsimų ilgų tekstų rendererio dar nėra."
+      ],
+      "notes": "Paslaugos skaitymas telefone peržiūrėtas; visų galutinių būsimų ilgų tekstų rendererio dar nėra."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Pramogų galerijos vienas originalas ir miniatiūra pakartotinai 404; generiniai Image alt ir placeholder šeimos."
+      ],
+      "notes": "Pramogų galerijos vienas originalas ir miniatiūra pakartotinai 404; generiniai Image alt ir placeholder šeimos."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "https://grandvila.lt/apie-mus/",
+        "Grand Vila brand/organizacija bei tikras šefo profilis viešai identifikuoti, fiktyvus autorius nepridėtas."
+      ],
+      "notes": "Grand Vila brand/organizacija bei tikras šefo profilis viešai identifikuoti, fiktyvus autorius nepridėtas."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Organization sameAs turi Vila Pasaka FB ir kitą YouTube kanalą nei matoma poraštėje."
+      ],
+      "notes": "Organization sameAs turi Vila Pasaka FB ir kitą YouTube kanalą nei matoma poraštėje."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Schemose datos ir en-GB; daugelyje puslapių nėra matomų atitinkamos reikšmės datų."
+      ],
+      "notes": "Schemose datos ir en-GB; daugelyje puslapių nėra matomų atitinkamos reikšmės datų."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "2017-02-14 schema data nėra patikrinta tikro pirmojo Grand Vila leidimo data; archyvas rodo tik mėginius."
+      ],
+      "notes": "2017-02-14 schema data nėra patikrinta tikro pirmojo Grand Vila leidimo data; archyvas rodo tik mėginius."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Nerasta prieinamos redakcinės/taisymų informacijos ar privatumo metodo; apie mus yra verslo istorija."
+      ],
+      "notes": "Nerasta prieinamos redakcinės/taisymų informacijos ar privatumo metodo; apie mus yra verslo istorija."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "NA",
+      "evidence": [],
+      "notes": "Nauja review/approved revizija šiame report-only etape nekurta; auditą atliko vienas agentas, nepriklausoma peržiūra neimituota."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "WordPress turinio atnaujinimo procesas ir būsimas studio exact-revision dar nebandyti."
+      ],
+      "notes": "WordPress turinio atnaujinimo procesas ir būsimas studio exact-revision dar nebandyti."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "52/53 be description; visi en-GB; 19 puslapių H1 !=1; 1 archyvas be canonical."
+      ],
+      "notes": "52/53 be description; visi en-GB; 19 puslapių H1 !=1; 1 archyvas be canonical."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "6 duplicate title grupės, generic alt, heading-order ir logo kontrasto trūkumai."
+      ],
+      "notes": "6 duplicate title grupės, generic alt, heading-order ir logo kontrasto trūkumai."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "artifacts/requests.json",
+        "Unikalus neegzistuojantis kelias HTTP 404; EN istorijos mėginiai taip pat 404."
+      ],
+      "notes": "Unikalus neegzistuojantis kelias HTTP 404; EN istorijos mėginiai taip pat 404."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Yoast JSON-LD parses, tačiau entity social/date/language semantika neatitinka viso matomo turinio."
+      ],
+      "notes": "Yoast JSON-LD parses, tačiau entity social/date/language semantika neatitinka viso matomo turinio."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Schema breadcrumb vardas Home visur; paslaugos matomame rendererio vaizde breadcrumb nerastas."
+      ],
+      "notes": "Schema breadcrumb vardas Home visur; paslaugos matomame rendererio vaizde breadcrumb nerastas."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Išgalvota schema nepridėta; esamų sertifikatų, atsiliepimų ir Person teiginių faktinės teisės nepriimtos."
+      ],
+      "notes": "Išgalvota schema nepridėta; esamų sertifikatų, atsiliepimų ir Person teiginių faktinės teisės nepriimtos."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "GSC URL Inspection ir oficialus Rich Results vertinimas neatlikti."
+      ],
+      "notes": "GSC URL Inspection ir oficialus Rich Results vertinimas neatlikti."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "7 #comments nuorodų vietos neturi taikinio id; 5 silpnai susieti URL."
+      ],
+      "notes": "7 #comments nuorodų vietos neturi taikinio id; 5 silpnai susieti URL."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Esamo WordPress draft/date/revocation link filter prieiga nepatikrinta."
+      ],
+      "notes": "Esamo WordPress draft/date/revocation link filter prieiga nepatikrinta."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Tušti Paslaugos/Naujienos ir dubliuojantys pramogų puslapiai turi IA kliūčių."
+      ],
+      "notes": "Tušti Paslaugos/Naujienos ir dubliuojantys pramogų puslapiai turi IA kliūčių."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Sveikatinimo, saugumo ir vienintelės sodybos teiginiams nerasta susietų aktualių pirminių šaltinių puslapiuose."
+      ],
+      "notes": "Sveikatinimo, saugumo ir vienintelės sodybos teiginiams nerasta susietų aktualių pirminių šaltinių puslapiuose."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Vilaitė/Pasaka/Fotopramoga/Dilano knyga sąsajos išsaugotos; jų nuosavybė ir publikavimo tinkamumas nepatvirtinti."
+      ],
+      "notes": "Vilaitė/Pasaka/Fotopramoga/Dilano knyga sąsajos išsaugotos; jų nuosavybė ir publikavimo tinkamumas nepatvirtinti."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Prose ir navigacijos nuorodos inventorizuotos, visų trečiųjų šalių galutinių tikslų nebandyta."
+      ],
+      "notes": "Prose ir navigacijos nuorodos inventorizuotos, visų trečiųjų šalių galutinių tikslų nebandyta."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Socialinių profilių paskyrų ir visų išorinių tikslų kontrolė nepatvirtinta."
+      ],
+      "notes": "Socialinių profilių paskyrų ir visų išorinių tikslų kontrolė nepatvirtinta."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "artifacts/sitemaps-manifest.json",
+        "51 sitemap 200 su self canonical; baziniai 301 ir slash patikrinti, vienas papildomas archive canonical trūkumas pažymėtas K1."
+      ],
+      "notes": "51 sitemap 200 su self canonical; baziniai 301 ir slash patikrinti, vienas papildomas archive canonical trūkumas pažymėtas K1."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Sitemap laiko Hello world/uncategorized/portfolio ir tuščius hub; semantinio tinkamumo vartas neįvykdytas."
+      ],
+      "notes": "Sitemap laiko Hello world/uncategorized/portfolio ir tuščius hub; semantinio tinkamumo vartas neįvykdytas."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "HTTPS/DNS viešai veikia, bet savininko control, būsimo core domain isolation ir indeksavimas nepriimti."
+      ],
+      "notes": "HTTPS/DNS viešai veikia, bet savininko control, būsimo core domain isolation ir indeksavimas nepriimti."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Esamas WordPress nėra importuotas į bendrą core; vieno approval predicate įrodymai nepasiekiami."
+      ],
+      "notes": "Esamas WordPress nėra importuotas į bendrą core; vieno approval predicate įrodymai nepasiekiami."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Draft/hash/date/revocation/cross-host bandymai naujam adapteriui neatlikti."
+      ],
+      "notes": "Draft/hash/date/revocation/cross-host bandymai naujam adapteriui neatlikti."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Grand Vila package import/compile neįvyko šiame audite."
+      ],
+      "notes": "Grand Vila package import/compile neįvyko šiame audite."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "llms.txt ir llms-full.txt HTTP 404 – trūksta core papildomų skaitymo išvesčių."
+      ],
+      "notes": "llms.txt ir llms-full.txt HTTP 404 – trūksta core papildomų skaitymo išvesčių."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Svarbios paslaugų sąlygos fragmentuotos; universalūs sveikatinimo teiginiai be šaltinių, planų paaiškinimai raster-only."
+      ],
+      "notes": "Svarbios paslaugų sąlygos fragmentuotos; universalūs sveikatinimo teiginiai be šaltinių, planų paaiškinimai raster-only."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "ATNAUJINIMO-PLANAS.md",
+        "Ataskaita ir planas nevadina llms.txt Google reikalavimu ar citavimo/reitingo garantija."
+      ],
+      "notes": "Ataskaita ir planas nevadina llms.txt Google reikalavimu ar citavimo/reitingo garantija."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Kontaktų laukai be labels, unnamed mobile menu ir Lighthouse unnamed links/ARIA radiniai."
+      ],
+      "notes": "Kontaktų laukai be labels, unnamed mobile menu ir Lighthouse unnamed links/ARIA radiniai."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Lighthouse kontrastas 2,4:1 ir 3,69:1, menu 32×36; tikras 200% didinimas papildomai UNVERIFIED."
+      ],
+      "notes": "Lighthouse kontrastas 2,4:1 ir 3,69:1, menu 32×36; tikras 200% didinimas papildomai UNVERIFIED."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "H1 hierarchy/ARIA-hidden focus/image-alt radiniai; native form type/required nepateikti."
+      ],
+      "notes": "H1 hierarchy/ARIA-hidden focus/image-alt radiniai; native form type/required nepateikti."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Home ir paslauga desktop/mobile bei paslaugos 320 peržiūrėti; tablet/visų galerijų vizualinė patikra neužbaigta."
+      ],
+      "notes": "Home ir paslauga desktop/mobile bei paslaugos 320 peržiūrėti; tablet/visų galerijų vizualinė patikra neužbaigta."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Justified 14px/28px tekstas telefone su dideliais tarpais; white mobile logo/tuščia kontaktų pradžia; zoom nežinomas."
+      ],
+      "notes": "Justified 14px/28px tekstas telefone su dideliais tarpais; white mobile logo/tuščia kontaktų pradžia; zoom nežinomas."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "ACCESSIBILITY-VERIFICATION.md",
+        "Įrodymai pažymėti kaip emuliuotas viewport; nevadinami fizinio telefono ar tikro enlargement bandymu."
+      ],
+      "notes": "Įrodymai pažymėti kaip emuliuotas viewport; nevadinami fizinio telefono ar tikro enlargement bandymu."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Homepage pirmas mobile 21 ir desktop 65, tikri vaizdai, LH13.5; papildomi bandymai LIGHTHOUSE rezultate."
+      ],
+      "notes": "Homepage pirmas mobile 21 ir desktop 65, tikri vaizdai, LH13.5; papildomi bandymai LIGHTHOUSE rezultate."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "LIGHTHOUSE.md",
+        "Konkrečios išmatuotos nuotraukų, JS/CSS/font/cache/LCP/TBT/CLS priežastys ir biudžetai dokumentuoti."
+      ],
+      "notes": "Konkrečios išmatuotos nuotraukų, JS/CSS/font/cache/LCP/TBT/CLS priežastys ir biudžetai dokumentuoti."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "CrUX ir savininko production field CWV šiame audite neprijungti."
+      ],
+      "notes": "CrUX ir savininko production field CWV šiame audite neprijungti."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Viešas formos HTML neturi native required/email tipo; serverinė validation/durable DB nebandyti."
+      ],
+      "notes": "Viešas formos HTML neturi native required/email tipo; serverinė validation/durable DB nebandyti."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "SMTP priėmimo bandymo nėra; žinutės nesiųstos."
+      ],
+      "notes": "SMTP priėmimo bandymo nėra; žinutės nesiųstos."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Matching Message-ID inbox receipt nėra; žinutės nesiųstos."
+      ],
+      "notes": "Matching Message-ID inbox receipt nėra; žinutės nesiųstos."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Produkcijos DB/pristatymo/atsparumo/spam operacijos nepasiekiamos read-only scope."
+      ],
+      "notes": "Produkcijos DB/pristatymo/atsparumo/spam operacijos nepasiekiamos read-only scope."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Yra GTM/GA4/Meta snippet, bet property scope, bot/test/DNT/GPC ir qualified conversions nepatikrinti."
+      ],
+      "notes": "Yra GTM/GA4/Meta snippet, bet property scope, bot/test/DNT/GPC ir qualified conversions nepatikrinti."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Privatumo kelias nerastas formoje/nav, nors Lighthouse be consent veiksmų krauna GTM ir Meta bei facebook.com/tr."
+      ],
+      "notes": "Privatumo kelias nerastas formoje/nav, nors Lighthouse be consent veiksmų krauna GTM ir Meta bei facebook.com/tr."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "GSC/GA4/qualified inquiry rezultatai auditui neprijungti; nei nulis, nei įrodyta paklausa."
+      ],
+      "notes": "GSC/GA4/qualified inquiry rezultatai auditui neprijungti; nei nulis, nei įrodyta paklausa."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "53 aktyvių URL/nav/sitemap rinkinyje nerasta prieinamo privacy/terms kelio."
+      ],
+      "notes": "53 aktyvių URL/nav/sitemap rinkinyje nerasta prieinamo privacy/terms kelio."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Formoje nėra duomenų paskirties, gavėjų, saugojimo ir teisių informacijos."
+      ],
+      "notes": "Formoje nėra duomenų paskirties, gavėjų, saugojimo ir teisių informacijos."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Teisinio operatoriaus ir production duomenų procesų nėra prieigos patvirtinti."
+      ],
+      "notes": "Teisinio operatoriaus ir production duomenų procesų nėra prieigos patvirtinti."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "FAIL",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "GTM/Meta script ir Meta pixel request įvyko naujame LH bandyme; sutikimo sąsaja nenaudota ir viešoje peržiūroje neaptikta."
+      ],
+      "notes": "GTM/Meta script ir Meta pixel request įvyko naujame LH bandyme; sutikimo sąsaja nenaudota ir viešoje peržiūroje neaptikta."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Šiame Git pakete nėra raw media/klientų DB/sekretų; legacy backend security/private draft ribos netikrintos."
+      ],
+      "notes": "Šiame Git pakete nėra raw media/klientų DB/sekretų; legacy backend security/private draft ribos netikrintos."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.md",
+        "Headers, redirect/404, vieša medijos biblioteka ir formos/source/priklausomybių ribos aprašytos; CVE/vuln neišgalvoti."
+      ],
+      "notes": "Headers, redirect/404, vieša medijos biblioteka ir formos/source/priklausomybių ribos aprašytos; CVE/vuln neišgalvoti."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Backup/restore/admin/rate/incident controls nepateikti."
+      ],
+      "notes": "Backup/restore/admin/rate/incident controls nepateikti."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "NA",
+      "evidence": [],
+      "notes": "Report-only užduotis shared kodo ar schemos nekeičia; reikalingi pritaikymai dokumentuoti kaip būsimas core darbas."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "NA",
+      "evidence": [],
+      "notes": "Core/SEO source nekeistas; regresijų vykdymas neįrodo dabartinio WordPress ar būsimos migracijos."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "CORE_FEEDBACK.md",
+        "Savo svetainės planas, inventorius ir core feedback susieti; esamos canonical taisyklės išsaugotos."
+      ],
+      "notes": "Savo svetainės planas, inventorius ir core feedback susieti; esamos canonical taisyklės išsaugotos."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.json",
+        "A-Z 85 kriterijai, URL/source hashes, LH, screenshots ribos ir backlog saugomi šiame site kataloge."
+      ],
+      "notes": "A-Z 85 kriterijai, URL/source hashes, LH, screenshots ribos ir backlog saugomi šiame site kataloge."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "PHASE-1-AUDIT.md",
+        "Verdict NOT_READY_MIGRATION; tikra audit-only apimtis, nėra 10/10 ir domain-ready teiginių."
+      ],
+      "notes": "Verdict NOT_READY_MIGRATION; tikra audit-only apimtis, nėra 10/10 ir domain-ready teiginių."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "artifacts/crawl-pages.json",
+        "Naujos svetainės paleidimo, domain readiness ir paklausos priėmimas neužsakytas/nevykdytas."
+      ],
+      "notes": "Naujos svetainės paleidimo, domain readiness ir paklausos priėmimas neužsakytas/nevykdytas."
+    }
+  ]
+}

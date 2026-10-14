@@ -1,5 +1,5 @@
 import Stripe from 'stripe';
-import { requireValue, CommerceError, integer } from './validation.mjs';
+import { requireValue, CommerceError, integer, identifier } from './validation.mjs';
 export class StripeCheckoutAdapter {
   constructor({ apiKey, webhookSecret, accountRef, environment, client }) {
     requireValue(
@@ -266,7 +266,7 @@ export class StripeCheckoutAdapter {
       { idempotencyKey: 'checkout-' + order.store_id + '-' + order.id },
     );
   }
-  async verifyEvent(body, signature) {
+  async verifyEvent(body, signature, { checkoutInScope } = {}) {
     let event;
     try {
       event = await this.client.webhooks.constructEventAsync(
@@ -337,10 +337,17 @@ export class StripeCheckoutAdapter {
     )
       return null;
     const session = event.data.object;
+    requireValue(session && typeof session === 'object', 'stripe_event_invalid');
+    // Only signed, mode-checked Checkout events may reach this read-only scope gate.
+    // Other event kinds retain their independent refund/dispute ledger contracts.
+    if (checkoutInScope && !(await checkoutInScope(session))) return null;
     if (session.payment_status !== 'paid') return null;
     requireValue(
       session.metadata?.environment === this.environment &&
-        typeof session.payment_intent === 'string',
+        identifier(session.metadata.store_id) &&
+        identifier(session.metadata.order_id) &&
+        identifier(session.id) &&
+        identifier(session.payment_intent),
       'stripe_metadata_invalid',
     );
     return {

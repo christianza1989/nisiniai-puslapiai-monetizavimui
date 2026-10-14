@@ -7,7 +7,7 @@ from sqlalchemy import text
 
 from pinet_core.config import settings
 from pinet_core.creation import language_mode
-from pinet_core.creation.adapter import available, role_model, team_instruction_hash
+from pinet_core.creation.adapter import available, pipeline_model, team_instruction_hash
 from pinet_core.creation.service import job_history_schema_ready
 from pinet_core.creation.team import review_schema_ready
 from pinet_core.creation.worker import execute_once, loop
@@ -35,8 +35,9 @@ async def main(action):
                     "'control_creation_attempt_count(varchar,timestamptz)','EXECUTE')")):
                 raise ValueError('creation_team_schema_not_ready')
         digest = team_instruction_hash()
-        print({"source_revision": cfg.control_source_revision, "instruction_hash": digest, "model": "gpt-6-luna",
-               "role_models": {role: role_model(role) for role in ("creator", "critic", "coordinator")},
+        print({"source_revision": cfg.control_source_revision, "instruction_hash": digest, "model": pipeline_model("creator"),
+               "role_models": {role: pipeline_model(role) for role in ("creator", "critic", "coordinator")},
+               "execution_profile": cfg.creation_execution_profile,
                "web_search_enabled": cfg.creation_web_search_enabled, "global_daily_limit": cfg.creation_global_daily_limit,
                "job_limit": cfg.creation_job_limit,
                "shared_job_seconds": 2 * cfg.creation_runner_seconds,

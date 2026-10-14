@@ -166,17 +166,38 @@ def role_profile(role):
     return profile
 
 
-def arguments(executable, workspace, schema, output, *, web, role="creator"):
-    profile = role_profile(role)
+def pipeline_profile(role, *, execution_profile=None):
+    from . import execution_profiles as profiles
+    name = profiles.selected() if execution_profile is None else execution_profile
+    if name == profiles.DEFAULT:
+        return role_profile(role)
+    profile = {"model": profiles.model(name, role), "reasoning_effort": profiles.effort(name), "verbosity": None}
+    review_model_catalogue()
+    profile["model_catalogue_sha256"] = REVIEW_MODEL_CATALOGUE_SHA256
+    return profile
+
+
+def pipeline_model(role):
+    return pipeline_profile(role)["model"]
+
+
+def arguments(executable, workspace, schema, output, *, web, role="creator", execution_profile=None):
+    if execution_profile is None:
+        profile = role_profile(role)  # Existing unrelated calibration/consultation callers.
+    else:
+        from . import execution_profiles as profiles
+        if execution_profile != profiles.selected():
+            raise RunnerError("instructions_changed")
+        profile = pipeline_profile(role, execution_profile=execution_profile)
     result = consult_arguments(executable, workspace, schema, output)
     result[result.index("--model") + 1] = profile["model"]
     at = result.index('web_search="disabled"')
     result[at] = 'web_search="live"' if web else 'web_search="disabled"'
     # These two roles review one supplied draft and have no tools or research.
     # Calibrate the indexed business reviews with Sol; the fixed catalogue supplies metadata.
-    if role != "creator":
-        at = result.index('model_reasoning_effort="medium"')
-        result[at] = f'model_reasoning_effort="{profile["reasoning_effort"]}"'
+    at = result.index('model_reasoning_effort="medium"')
+    result[at] = f'model_reasoning_effort="{profile["reasoning_effort"]}"'
+    if "model_catalogue_sha256" in profile:
         if profile["verbosity"] is not None:
             result += ['-c', f'model_verbosity="{profile["verbosity"]}"']
         result += ['-c', 'model_catalog_json=' + json.dumps(str(review_model_catalogue()))]
@@ -249,32 +270,53 @@ def _role_paths_fit(workspace):
     return len(str(longest).encode("utf-16-le")) // 2 < 260
 
 
-def role_instruction_hash(role, *, structure_repair=False, language_repair=False):
+def role_instruction_hash(role, *, structure_repair=False, language_repair=False, execution_profile=None):
+    from . import execution_profiles as profiles
+    name = profiles.selected() if execution_profile is None else execution_profile
     if role == "creator":
-        return instructions(structure_repair=structure_repair, language_repair=language_repair)[1]
-    if structure_repair or language_repair:
-        raise RunnerError("review_invalid")
-    from .review import business_role_instruction_hash as review_hash
-    return review_hash(role)
+        base = instructions(structure_repair=structure_repair, language_repair=language_repair)[1]
+    else:
+        if structure_repair or language_repair:
+            raise RunnerError("review_invalid")
+        from .review import business_role_instruction_hash as review_hash
+        base = review_hash(role)
+    return pipeline_instruction_hash(base, role, execution_profile=name)
+
+
+def pipeline_instruction_hash(base, role, *, execution_profile):
+    from . import execution_profiles as profiles
+    name = execution_profile
+    if name == profiles.DEFAULT:
+        return base
+    return hashlib.sha256(json.dumps({"instruction_sha256": base,
+        "execution": pipeline_profile(role, execution_profile=name)}, sort_keys=True).encode()).hexdigest()
 
 
 def team_instruction_hash():
     value = {role: role_instruction_hash(role) for role in ("creator", "critic", "coordinator")}
     value["creator_structure_repair"] = role_instruction_hash("creator", structure_repair=True)
     value["creator_language_repair"] = role_instruction_hash("creator", language_repair=True)
-    value["execution_profiles"] = {role: role_profile(role) for role in ("creator", "critic", "coordinator")}
+    value["execution_profiles"] = {role: pipeline_profile(role) for role in ("creator", "critic", "coordinator")}
     return hashlib.sha256(json.dumps(value, sort_keys=True).encode()).hexdigest()
 
 
 async def run_role(context, still_authorized, *, role, seconds):
+    from . import execution_profiles as profiles
     started = monotonic()
-    model = role_model(role)
+    name = profiles.selected()
+    profile = pipeline_profile(role, execution_profile=name)
+    model = profile["model"]
+    context = dict(context)
+    expected_execution = context.pop("_expected_execution", None)
+    if name != profiles.DEFAULT and expected_execution is None:
+        raise RunnerError("instructions_changed")
     binary, workspace = available()
     cfg = settings()
     structure_repair = role == "creator" and context.get("structure_repair") is True
     language_repair = role == "creator" and context.get("language_repair") is True
     if role == "creator":
-        policy, instruction_hash = instructions(structure_repair=structure_repair, language_repair=language_repair)
+        policy, base_hash = instructions(structure_repair=structure_repair, language_repair=language_repair)
+        instruction_hash = pipeline_instruction_hash(base_hash, role, execution_profile=name)
         if context.get("expected_instruction_hash") != instruction_hash:
             raise RunnerError("instructions_changed")
         if language_repair and context.get("permitted_web_actions") != 0:
@@ -282,7 +324,8 @@ async def run_role(context, still_authorized, *, role, seconds):
         prompt = policy + "\n\nUNTRUSTED_CONTEXT_JSON\n" + json.dumps(context, ensure_ascii=False)
         schema_model = CreatorDraft
     else:
-        instruction_hash = role_instruction_hash(role, structure_repair=structure_repair, language_repair=language_repair)
+        instruction_hash = role_instruction_hash(role, structure_repair=structure_repair,
+            language_repair=language_repair, execution_profile=name)
         from .review import CoordinatorDecision, CriticReview, coordinator_prompt, critic_prompt
         if role == "critic":
             prompt, schema_model = critic_prompt(**context), CriticReview
@@ -290,6 +333,9 @@ async def run_role(context, still_authorized, *, role, seconds):
             prompt, schema_model = coordinator_prompt(**context), CoordinatorDecision
         else:
             raise RunnerError("review_invalid")
+    if expected_execution is not None and expected_execution != {
+        "model": model, "reasoning_effort": profile["reasoning_effort"], "instruction_hash": instruction_hash}:
+        raise RunnerError("instructions_changed")
     if len(prompt.encode()) > 262144:
         raise RunnerError("context_limit")
     # Preserve bounded private first-output/trace evidence, including failed attempts.
@@ -311,13 +357,14 @@ async def run_role(context, still_authorized, *, role, seconds):
         remaining_seconds = min(seconds, cfg.creation_runner_seconds) - (monotonic() - started)
         if remaining_seconds <= 0:
             raise RunnerError("run_timeout")
-        argv = arguments(binary, folder, schema, output, web=web, role=role)
+        argv = arguments(binary, folder, schema, output, web=web, role=role, execution_profile=name)
         model = argv[argv.index("--model") + 1]
         result, receipt = await execute(argv,
             prompt=prompt, cwd=folder, env=child_environment(), output=output, seconds=remaining_seconds,
             still_authorized=still_authorized, parse_trace=trace.parse, on_event=trace.event,
             stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl")
         receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", model
+        receipt["reasoning_effort"] = profile["reasoning_effort"]
         receipt["prompt_bytes"], receipt["context_bytes"] = len(prompt.encode()), len(json.dumps(context, ensure_ascii=False).encode())
         receipt["prior_context_projection"] = context.get("prior_context_projection")
         try:
@@ -334,7 +381,8 @@ async def run_role(context, still_authorized, *, role, seconds):
         return result, receipt
     except RunnerError as error:
         error.receipt = {**(error.receipt or {}), "instruction_hash": instruction_hash,
-                         "adapter_revision": "codex-business-team.v1", "model": model}
+                         "adapter_revision": "codex-business-team.v1", "model": model,
+                         "reasoning_effort": profile["reasoning_effort"]}
         (folder / "failure.private.json").write_text(json.dumps({"code": error.code, "instruction_hash": instruction_hash,
             "adapter_revision": "codex-business-team.v1", "model": model, "receipt": error.receipt}), encoding="utf-8")
         raise

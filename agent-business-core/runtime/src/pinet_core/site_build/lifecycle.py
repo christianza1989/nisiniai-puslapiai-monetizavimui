@@ -44,6 +44,8 @@ async def preflight():
     await asyncio.to_thread(discovery.adapter.available)
     await asyncio.to_thread(guide_adapter.execution_hash)
     async with db.registry() as tx:
+        from ..creation import execution_profiles as profiles
+        await profiles.require_schema(tx)
         role = (await tx.execute(text("SELECT rolsuper,rolbypassrls FROM pg_roles WHERE rolname=current_user"))).one()
         if any(role) or not await selectors.ready(tx):
             raise RuntimeError("site_build_runner_schema_unavailable")

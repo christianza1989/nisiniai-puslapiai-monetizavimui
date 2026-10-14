@@ -130,6 +130,12 @@ async def _projection(tx, job):
     attempts = list(await tx.scalars(select(GuideAttempt).where(GuideAttempt.job_id == job.id).order_by(GuideAttempt.sequence)))
     events = list(await tx.scalars(select(GuideEvent).where(GuideEvent.job_id == job.id).order_by(GuideEvent.sequence)))
     result = job.result or {}
+    from ..creation import execution_profiles as profiles
+    for attempt in attempts:
+        try:
+            await profiles.validate_attempt(tx, "guide", job, attempt.role, attempt.model)
+        except RunnerError:
+            raise ControlError(503, "invalid_content_source") from None
     for row in events:
         if row.payload.get("candidate") and canonical_sha256(row.payload["candidate"]) != row.payload.get("output_sha256"):
             raise ControlError(503, "invalid_content_source")
@@ -231,6 +237,11 @@ async def admit(tx, session, creation, value):
     except RunnerError as error:
         raise ControlError(409 if error.code in {"writer_planning_brief_required", "writer_page_not_in_intake"}
                            else 503, error.code) from None
+    from ..creation import execution_profiles as profiles
+    try:
+        await profiles.admission(tx)
+    except RunnerError:
+        raise ControlError(503, "content_work_unavailable") from None
     row = GuideJob(id=new_id(), creation_id=creation.id, revision_id=revision.id,
         accepted_revision=value.accepted_revision, source_hash=revision.material_hash, page_id=value.page_id,
         session_id=session.id, sequence=sequence, idempotency_key=str(value.idempotency_key),

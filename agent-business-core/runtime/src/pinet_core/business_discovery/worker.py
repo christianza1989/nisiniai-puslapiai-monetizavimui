@@ -38,6 +38,8 @@ async def claim(discovery_id=None):
                 row, job = await service.locked(tx, candidate["id"], candidate["user_id"])
                 if not row or not job or discovery_id and row.id != discovery_id:
                     continue
+                from ..creation import execution_profiles as profiles
+                await profiles.ensure_current(tx, "discovery", job)
                 if job.status == "running":
                     await service.fail(tx, row, job, "worker_interrupted")
                     continue
@@ -66,6 +68,11 @@ async def heartbeat(claimed):
         row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
         if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
             return False
+        from ..creation import execution_profiles as profiles
+        try:
+            await profiles.ensure_current(tx, "discovery", job)
+        except RunnerError:
+            return False
         code = None
         if row.status == "archived" or not await service.authority(tx, job):
             code = "authorization_revoked"
@@ -86,6 +93,8 @@ async def reserve(claimed, role, round_number):
         row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
         if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
             raise RunnerError("authorization_revoked")
+        from ..creation import execution_profiles as profiles
+        await profiles.ensure_current(tx, "discovery", job)
         if not await service.authority(tx, job) or not job.deadline_at or job.deadline_at <= utcnow():
             raise RunnerError("authorization_revoked")
         if not job.lease_until or job.lease_until <= utcnow() or job.instruction_hash != adapter.fingerprint():
@@ -103,7 +112,7 @@ async def reserve(claimed, role, round_number):
         attempt = DiscoveryAttempt(id=new_id(), discovery_id=row.id, job_id=job.id,
             sequence=count + 1, role=role, round_number=round_number, run_id=job.run_id,
             source_revision=job.source_revision, instruction_hash=adapter.instructions(role)[1],
-            model=shared_adapter.role_model(role), **binding(row))
+            model=shared_adapter.pipeline_model(role), **binding(row))
         tx.add(attempt)
         await tx.flush()
         return attempt.sequence, attempt.instruction_hash, (job.deadline_at - utcnow()).total_seconds()
@@ -206,6 +215,11 @@ async def execute_once(*, discovery_id=None, role_runner=None):
             if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
                 return True
             result_allowed = True
+            from ..creation import execution_profiles as profiles
+            try:
+                await profiles.ensure_current(tx, "discovery", job)
+            except RunnerError:
+                failure, result_allowed = "instructions_changed", False
             if not await service.authority(tx, job) or row.status == "archived":
                 failure = "authorization_revoked"
                 result_allowed = False

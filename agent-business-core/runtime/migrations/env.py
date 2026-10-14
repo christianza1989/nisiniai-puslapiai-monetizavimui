@@ -11,6 +11,7 @@ from pinet_core.business_discovery import models as business_discovery_models  #
 from pinet_core.config import settings
 from pinet_core.content_work import models as content_work_models  # noqa: F401
 from pinet_core.control import models as control_models  # noqa: F401
+from pinet_core.creation import execution_profile_models as pipeline_profile_models  # noqa: F401
 from pinet_core.creation import models as creation_models  # noqa: F401
 from pinet_core.creation_registration import models as creation_registration_models  # noqa: F401
 from pinet_core.customer import models as customer_models  # noqa: F401

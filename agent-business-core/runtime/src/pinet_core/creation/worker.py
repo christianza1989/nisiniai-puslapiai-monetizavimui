@@ -78,6 +78,8 @@ async def claim(*, team_enabled=True, creation_id=None):
                     continue
                 if creation_id is not None and creation.id != creation_id:
                     continue
+                from . import execution_profiles as profiles
+                profile_name = await profiles.ensure_current(tx, "creation", job)
                 if job.status == "running":
                     await fail(tx, creation, job, "worker_interrupted")
                     continue
@@ -86,12 +88,13 @@ async def claim(*, team_enabled=True, creation_id=None):
                     continue
                 instruction_hash = adapter.team_instruction_hash() if team_enabled else adapter.instructions()[1]
                 job.status, job.run_id, job.lease_until = "running", new_id(), lease_deadline()
-                job.instruction_hash, job.model, job.adapter_revision = instruction_hash, "gpt-6-luna", (
+                job.instruction_hash, job.model, job.adapter_revision = instruction_hash, adapter.pipeline_model("creator"), (
                     "codex-business-team.v1" if team_enabled else adapter.ADAPTER_REVISION)
                 creation.status, creation.stage = "running", "drafting"
                 await event(tx, creation, job, "AI rengia verslo pasiūlymą ir svetainės juodraštį.")
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
                         "creation_id": creation.id, "revision": creation.current_revision + 1,
+                        "execution_profile": profile_name,
                         "context": await context_for(tx, creation, job)}
     return None
 
@@ -100,6 +103,11 @@ async def heartbeat(job_id, user_id, run_id):
     async with scope(user=user_id) as tx:
         creation, job = await locked(tx, job_id, user_id)
         if not creation or not job or job.status != "running" or job.run_id != run_id:
+            return False
+        from . import execution_profiles as profiles
+        try:
+            await profiles.ensure_current(tx, "creation", job)
+        except adapter.RunnerError:
             return False
         if not job.lease_until or job.lease_until <= utcnow() or not await authority(tx, job):
             await fail(tx, creation, job, "authorization_revoked")
@@ -166,6 +174,11 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None, cr
         job.usage, job.cost_microusd = receipt or None, None
         if job.status != "running" or job.run_id != claimed["run_id"]:
             return True
+        from . import execution_profiles as profiles
+        try:
+            await profiles.ensure_current(tx, "creation", job)
+        except adapter.RunnerError:
+            failure = "instructions_changed"
         if not await authority(tx, job):
             failure = "authorization_revoked"
         if not job.lease_until or job.lease_until <= utcnow():

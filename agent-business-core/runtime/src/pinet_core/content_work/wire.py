@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Annotated, Literal
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field
 
 from ..creation.review import CoordinatorDecision, CriticReview, Digest, EvidenceReceipt
 from ..creation.team_wire import TokenUsage
@@ -32,10 +32,6 @@ class NativeOutput(Strict):
 
 
 class AttemptView(Strict):
-    model_config = {**Strict.model_config, "json_schema_extra": {"allOf": [
-        {"if": {"properties": {"role": {"const": "creator"}}},
-         "then": {"properties": {"model": {"const": "gpt-6-luna"}}}}
-    ]}}
     attempt_id: UUID
     sequence: int = Field(ge=1, le=6)
     role: Literal["creator", "critic", "coordinator"]
@@ -46,13 +42,6 @@ class AttemptView(Strict):
     # Historical Luna reviews remain readable; execution choice is server owned.
     model: Literal["gpt-6-luna", "gpt-6.1-sol"]
     created_at: datetime
-
-    @model_validator(mode="after")
-    def model_matches_role(self):
-        if self.role == "creator" and self.model != "gpt-6-luna":
-            raise ValueError("Creator model must remain Luna")
-        return self
-
 
 class EventPayload(Strict):
     language_review_mode: Literal["required", "paused_local_pilot"] = "required"

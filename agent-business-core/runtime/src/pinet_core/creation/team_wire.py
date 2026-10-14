@@ -3,7 +3,7 @@ from datetime import datetime
 from typing import Literal
 from uuid import UUID
 
-from pydantic import Field, model_validator
+from pydantic import Field
 
 from .language_mode import LanguageReviewMode
 from .wire import Strict
@@ -52,10 +52,6 @@ class EventData(Strict):
 
 
 class AttemptView(Strict):
-    model_config = {**Strict.model_config, "json_schema_extra": {"allOf": [
-        {"if": {"properties": {"role": {"const": "creator"}}},
-         "then": {"properties": {"model": {"const": "gpt-6-luna"}}}}
-    ]}}
     attempt_id: UUID
     job_id: UUID
     sequence: int = Field(ge=1, le=6)
@@ -67,13 +63,6 @@ class AttemptView(Strict):
     instruction_hash: str = Field(pattern=r"^[a-f0-9]{64}$")
     model: Literal["gpt-6-luna", "gpt-6.1-sol"]
     created_at: datetime
-
-    @model_validator(mode="after")
-    def model_matches_role(self):
-        if self.role == "creator" and self.model != "gpt-6-luna":
-            raise ValueError("Creator model must remain Luna")
-        return self
-
 
 class TeamEventView(Strict):
     event_id: UUID

@@ -154,7 +154,7 @@ async def test_pipeline_stage_failed_dispatch_keeps_captured_profile(tmp_path, m
     async def authorized():
         return True
     with pytest.raises(adapter.RunnerError, match="provider_error") as error:
-        await chosen.run_role(context, authorized, role=role, seconds=30)
+        await chosen.run_role(context, authorized, role=role, seconds=600 if stage == "discovery" else 30)
     assert error.value.receipt["model"] == "gpt-6.1-sol"
     assert error.value.receipt["reasoning_effort"] == "high"
     assert error.value.receipt["instruction_hash"] == context["expected_instruction_hash"]

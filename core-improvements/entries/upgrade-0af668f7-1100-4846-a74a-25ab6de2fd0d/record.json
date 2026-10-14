@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Align only stale inert offline fixtures with required S8 paid Attempt metadata and S10 remaining-job Discovery budget. Preserve exact Creation48/60/30 clock assertions, GUIDE30 and all production guards.",
+  "paths": [
+    "agent-business-core/runtime/offline_tests/test_pipeline_execution_profile.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "docs/handoffs/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md",
+    "Root explicitly released only two Discovery fixture budget arguments and one default two_rounds claimed owner/Job/Attempt binding fixture",
+    "First offline165PASS4FAIL7SKIP80.14s retained; source Creation/team.py unchanged from798, fixture KeyError user_id precedes deadline exercise; actual Windows outer4s failure rerun unchanged1PASS2.02s, no timeout weakening"
+  ],
+  "rollback": "Revert only scoped fixture alignment. Retain original failures and all production metadata/profile/deadline guards, exact clock assertions and Windows test bounds. No source798/runtime/DB/provider adoption.",
+  "id": "upgrade-0af668f7-1100-4846-a74a-25ab6de2fd0d",
+  "branch": "codex/verslomatika-discovery-high-deadline-s10-20261014",
+  "baseSha": "798e03f73fb9fe00d032930824aa3d72da1e7797",
+  "createdAt": "2026-10-14T19:19:47.534Z"
+}

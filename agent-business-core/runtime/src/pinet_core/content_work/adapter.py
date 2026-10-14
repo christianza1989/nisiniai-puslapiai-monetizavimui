@@ -78,7 +78,7 @@ async def run_role(context, authorized, *, role, seconds):
         result, receipt = await execute(argv, prompt=prompt,
             cwd=folder, env=child_environment(), output=output, seconds=seconds, still_authorized=authorized,
             parse_trace=trace.parse, on_event=trace.event, stdout_limit=1048576, output_limit=200000,
-            trace_file=folder / "trace.private.jsonl")
+            trace_file=folder / "trace.private.jsonl", partial_receipt=trace.partial_receipt)
         receipt.update(instruction_hash=expected, adapter_revision=ADAPTER, model=model, reasoning_effort=profile["reasoning_effort"])
         return result, receipt
     except RunnerError as error:

@@ -377,8 +377,8 @@
         }
       ],
       "factGates": [
-        "32 EUR bazė; balti dažai +3 EUR tik jei priedas aktyvus; 1200 g gipso; alginato masė nepatvirtinta.",
-        "Native stock, addonFor, rinkos kaina ir tikri pakuotės matmenys; neužrašyti universalių laikų."
+        "32 EUR LT kaina su įtrauktais baltais dažais; 1200 g gipso; alginato ir dažų kiekiai nepatvirtinti.",
+        "Tikri likučiai, kitų rinkų kainos ir pilnos siuntos su dažais duomenys turi būti patvirtinti; medinis pagrindas atskirai, be universalių naudojimo laikų."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -550,8 +550,8 @@
         }
       ],
       "factGates": [
-        "48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras.",
-        "Vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus."
+        "48 EUR LT kaina su įtrauktais baltais dažais; nepatvirtinti dalyvių skaičius, pakelių masės, dažų kiekis ir kibiras.",
+        "Pilnos siuntos su dažais duomenys, vaikų tinkamumas, talpa ir pozų ribos tik pagal tikrus dokumentus."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -3626,8 +3626,8 @@
         }
       ],
       "factGates": [
-        "32 EUR bazė; balti dažai +3 EUR tik jei priedas aktyvus; 1200 g gipso; alginato masė nepatvirtinta.",
-        "Native stock, addonFor, rinkos kaina ir tikri pakuotės matmenys; neužrašyti universalių laikų."
+        "32 EUR LT kaina su įtrauktais baltais dažais; 1200 g gipso; alginato ir dažų kiekiai nepatvirtinti.",
+        "Tikri likučiai, kitų rinkų kainos ir pilnos siuntos su dažais duomenys turi būti patvirtinti; medinis pagrindas atskirai, be universalių naudojimo laikų."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -3799,8 +3799,8 @@
         }
       ],
       "factGates": [
-        "48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras.",
-        "Vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus."
+        "48 EUR LT kaina su įtrauktais baltais dažais; nepatvirtinti dalyvių skaičius, pakelių masės, dažų kiekis ir kibiras.",
+        "Pilnos siuntos su dažais duomenys, vaikų tinkamumas, talpa ir pozų ribos tik pagal tikrus dokumentus."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -6875,8 +6875,8 @@
         }
       ],
       "factGates": [
-        "32 EUR bazė; balti dažai +3 EUR tik jei priedas aktyvus; 1200 g gipso; alginato masė nepatvirtinta.",
-        "Native stock, addonFor, rinkos kaina ir tikri pakuotės matmenys; neužrašyti universalių laikų."
+        "32 EUR LT kaina su įtrauktais baltais dažais; 1200 g gipso; alginato ir dažų kiekiai nepatvirtinti.",
+        "Tikri likučiai, kitų rinkų kainos ir pilnos siuntos su dažais duomenys turi būti patvirtinti; medinis pagrindas atskirai, be universalių naudojimo laikų."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -7048,8 +7048,8 @@
         }
       ],
       "factGates": [
-        "48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras.",
-        "Vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus."
+        "48 EUR LT kaina su įtrauktais baltais dažais; nepatvirtinti dalyvių skaičius, pakelių masės, dažų kiekis ir kibiras.",
+        "Pilnos siuntos su dažais duomenys, vaikų tinkamumas, talpa ir pozų ribos tik pagal tikrus dokumentus."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -10124,8 +10124,8 @@
         }
       ],
       "factGates": [
-        "32 EUR bazė; balti dažai +3 EUR tik jei priedas aktyvus; 1200 g gipso; alginato masė nepatvirtinta.",
-        "Native stock, addonFor, rinkos kaina ir tikri pakuotės matmenys; neužrašyti universalių laikų."
+        "32 EUR LT kaina su įtrauktais baltais dažais; 1200 g gipso; alginato ir dažų kiekiai nepatvirtinti.",
+        "Tikri likučiai, kitų rinkų kainos ir pilnos siuntos su dažais duomenys turi būti patvirtinti; medinis pagrindas atskirai, be universalių naudojimo laikų."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",
@@ -10297,8 +10297,8 @@
         }
       ],
       "factGates": [
-        "48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras.",
-        "Vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus."
+        "48 EUR LT kaina su įtrauktais baltais dažais; nepatvirtinti dalyvių skaičius, pakelių masės, dažų kiekis ir kibiras.",
+        "Pilnos siuntos su dažais duomenys, vaikų tinkamumas, talpa ir pozų ribos tik pagal tikrus dokumentus."
       ],
       "sourceRefs": [
         "OWNER-FACTS.mjs",

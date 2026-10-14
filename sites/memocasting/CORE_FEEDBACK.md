@@ -22,3 +22,5 @@ Upgrade upgrade-6eb97665-26f6-494a-9e86-014e7329ff97. Actual foreign-host bandym
 2026-10-13 hero layer limitation: old flattened photograph could not independently scale objects. Site-specific markup/CSS and canonical responsive media repair, not a new shared optimizer. upgrade-3da50b37-bdcc-4991-a583-6dd453c7789e; acceptance HERO_LAYERS_2026_10_13.md.
 
 2026-10-14 homepage footer: mixed navigation/plain automation domain/unknown payment methods repaired in site-only server/client components and conservative native capability helper. No sharedSDK/provider change. Upgrade-256fa1d5-8aa6-4d68-ab2d-d3357d85d26c; HOMEPAGE_FOLLOWUP_2026_10_14.md records explicit Instagram security boundary and uncompletedmedia.
+
+2026-10-14 plan reconciliation: active fact gates retained an obsolete paint surcharge after owner inclusion. Scope repaired in88-ID plan/current topic source while preserving original revision/metadata snapshots. CONTENT_PLAN_STATUS.md separates complete planning from implementation/launch. Upgrade-cb64e20e-2c57-4fbc-9e92-044233703eef; no content or provider activation.

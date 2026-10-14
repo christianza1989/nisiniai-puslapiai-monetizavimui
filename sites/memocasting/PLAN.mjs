@@ -5,10 +5,10 @@ process.env.STUDIO_OUTPUT_DIR=new URL('./studio-output/',import.meta.url).pathna
 const {getSite,mergePlan,editPage}=await import('../../content-studio/src/model.mjs');
 // Reconcile the owner's bounded map; rows are questions, not an article quota.
 const raw=[
-['rankų liejimo rinkinys porai','products/liejimo-rinkinys-porai','existing','Ar mums tinka32EUR rinkinys?','Kainos/komplektacijos lapas; S',''],
-['rankų liejimo rinkinys šeimai','products/seimos-rinkinys-1','existing','Kuo skiriasi48EUR rinkinys?','Tikra komplektacija; rankų talpa dar V+B',''],
-['rankų liejimo rinkinys|ranku liejimo rinkinys|rankų liejimo rinkiniai','collections/all','merge-synonyms','Kurį iš dviejų rinkinių pasirinkti?','Dviejų patvirtintų pasiūlymų palyginimas; S+B',''],
-['balti dažai rankų liejiniui','products/liejimo-rinkinys-porai','section','Ar pridėti poros dažų variantą?','Patvirtinta+3EUR kaina; tūris/suderinamumas V+B',''],
+['rankų liejimo rinkinys porai','rinkinys-porai','existing','Ar mums tinka32EUR rinkinys?','Kainos/komplektacijos lapas; S',''],
+['rankų liejimo rinkinys šeimai','seimos-rinkinys','existing','Kuo skiriasi48EUR rinkinys?','Tikra komplektacija; rankų talpa dar V+B',''],
+['rankų liejimo rinkinys|ranku liejimo rinkinys|rankų liejimo rinkiniai','ranku-liejimo-rinkiniai','merge-synonyms','Kurį iš dviejų rinkinių pasirinkti?','Dviejų patvirtintų pasiūlymų palyginimas; S+B',''],
+['balti dažai rankų liejiniui','gidai/liejinio-dazymas-ir-prieziura','section','Kada ir kaip naudoti rinkinyje esančius baltus dažus?','Balti dažai įeina į poros32EUR ir šeimos48EUR rinkinius, savininkas2026-10-14; kiekis ir naudojimo/suderinamumo ribos V+B',''],
 ['Memocasting įmonė','apie-projekta','existing','Kas atsako už prekę?','MB Memocasting; ne išgalvoti žmonės/rekvizitai; S',''],
 ['rankų liejinių rezultatai','rezultatai','defer','Kaip atrodo tikri rezultatai?','Tikros nuotraukos, sutikimai ir rinkinio identifikacija; K',''],
 ['rankų liejimo instrukcija|kaip pasidaryti rankų liejinį','pages/instrukcija','existing','Kaip atlikti darbą su savo rinkiniu?','Senas canonical; V+B instrukcija ir video, dabar read-first ribos',''],
@@ -33,7 +33,7 @@ const raw=[
 ['dovana tėvams|dovana seneliams','gidai/dovana-tevams-ir-seneliams','plan','Kaip įtraukti artimuosius be spaudimo?','Dalyvavimo/komforto pasirinkimo lapas; V+B',''],
 ['rankų liejimo dovana Kalėdoms|dovana Valentino dienai|dovana mamai|dovana tėčiui','dovanos#progos','section','Kada planuoti prieš konkrečią progą?','Nedauginti progų/sinonimųURL; tikras cutoffT; seasonalpriority atskirai','Kalėdų2026 pasiruošimas nuo spalio; sausio2027 Valentino planavimas, be garantuotos datos'],
 ['rankų liejimo rinkinys ar paruošta dovana','gidai/ranku-liejimo-rinkinys-ar-paruosta-dovana','existing','Ar gavėjai nori patys kurti?','4kriterijai ir pavyzdžiai; originalus tekstas parengtas',''],
-['kaip palyginti rankų liejimo rinkinius','collections/all','section','Kokią informaciją turi pateikti pardavėjas?','Masė/talpa/instrukcija/pagalba/galutinė suma; S+B; competitor dokumentai nėra mūsų faktai',''],
+['kaip palyginti rankų liejimo rinkinius','ranku-liejimo-rinkiniai','section','Kokią informaciją turi pateikti pardavėjas?','Masė/talpa/instrukcija/pagalba/galutinė suma; S+B; competitor dokumentai nėra mūsų faktai',''],
 ['Memocasting pristatymas','pristatymas','existing','Kokia suma ir terminas mano šalyje?','Realus carrier/paketas/pašto kodas; T; dabar fixture ribos',''],
 ['Memocasting grąžinimas','grazinimas','existing','Kaip atsisakyti ar pranešti apie trūkumą?','Patvarus vietinis prašymas; tikras adresas/teisinės sąlygos S+T',''],
 ['Memocasting kontaktai','kontaktai','existing','Kaip gauti pagalbą?','Shared forma ir durable testinis gavimas; actualINBOXdar trūksta',''],

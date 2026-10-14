@@ -1,5 +1,7 @@
 # Kitų puslapių planas · 2026-10-13
 
+Aktuali būklė ir 2026-10-14 faktų patikslinimas: [CONTENT_PLAN_STATUS.md](CONTENT_PLAN_STATUS.md). Struktūros planas apima visus88URL; įgyvendinimo ir publikavimo priėmimas vertinami atskirai. Žemiau pateikta pradinių22paskirčių seka nėra pilnas jau realizuoto11sekcijų homepage inventorius.
+
 Vėlesnis šios dienos etapas įgyvendintas: [bendras vidinių puslapių dizainas, katalogas ir abu produktai](STOREFRONT_2026_10_13.md). 12 pardavimo URL keturiomis kalbomis pažymėti kaip vietiškai realizuoti; kitų puslapių turinio ir individualių šablonų darbai lieka pagal šį planą.
 
 Visi 88 esami URL inventorizuoti: 87 kitų puslapių planai ir jau realizuoto LT homepage audito bazė. 22 paskirtys keturiomis kalbomis: LT, PL, LV ir ET. Tai įgyvendinimo planas, o ne naujas publikuotas turinys. Tikslūs ID, esami ir siūlomi metaduomenys, sekos, nuorodos ir faktų ribos pateikti [PAGE_BRIEFS_2026_10_13.json](PAGE_BRIEFS_2026_10_13.json).
@@ -56,7 +58,7 @@ Kiekvienas puslapis turi vieną pagrindinį skaitytojo darbą. Žemiau pateiktos
 
 **Vidinės nuorodos:** `/ranku-liejimo-rinkiniai`, `/pages/instrukcija`, `/pristatymas`, `/grazinimas`, `/gidai/dovana-porai`, `/pagalba`.
 
-**Duomenų ribos:** 32 EUR bazė; balti dažai +3 EUR tik jei priedas aktyvus; 1200 g gipso; alginato masė nepatvirtinta. Native stock, addonFor, rinkos kaina ir tikri pakuotės matmenys; neužrašyti universalių laikų.
+**Duomenų ribos:** 32 EUR LT kaina su įtrauktais baltais dažais; 1200 g gipso; alginato ir dažų kiekiai nepatvirtinti. Atskirai parduodamas medinis pagrindas tik pagal serverio prieinamumą. Tikri likučiai, kitų rinkų kainos ir pilnos siuntos su dažais matmenys/svoris turi būti patvirtinti; neužrašyti universalių laikų.
 
 **Išdėstymas ir veikimas:** Desktop media + purchase columns; mobile media/title/price/actions before long detail. Gallery zoom + keyboard/focus; Native variants/addons/state errors; Accessible accordions; Optional on-demand 3D.
 
@@ -71,7 +73,7 @@ Kiekvienas puslapis turi vieną pagrindinį skaitytojo darbą. Žemiau pateiktos
 1. Breadcrumb ir H1
 2. Tikros šeimos rinkinio nuotraukos
 3. Native kaina, likutis ir pirkti
-4. Du alginato ir du gipso pakeliai bei pagaliukai
+4. Du alginato ir du gipso pakeliai, pagaliukai ir balti dažai
 5. Tinkamumas ir kompozicijos ribos iš instrukcijos
 6. Proceso santrauka
 7. Pristatymas ir pagalba
@@ -79,7 +81,7 @@ Kiekvienas puslapis turi vieną pagrindinį skaitytojo darbą. Žemiau pateiktos
 
 **Vidinės nuorodos:** `/ranku-liejimo-rinkiniai`, `/pages/instrukcija`, `/pristatymas`, `/grazinimas`, `/pagalba`.
 
-**Duomenų ribos:** 48 EUR LT bazė; nepatvirtinti dalyvių skaičius, pakelių masės ir kibiras. Vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus.
+**Duomenų ribos:** 48 EUR LT kaina su įtrauktais baltais dažais; nepatvirtinti dalyvių skaičius, pakelių masės, dažų kiekis ir kibiras. Pilnos siuntos su dažais duomenis, vaikų tinkamumą, talpą ir pozų ribas apibrėžti tik pagal tikrus dokumentus.
 
 **Išdėstymas ir veikimas:** Desktop media + purchase columns; mobile media/title/price/actions before long detail. Gallery zoom + keyboard/focus; Native variants/addons/state errors; Accessible accordions; Optional on-demand 3D.
 

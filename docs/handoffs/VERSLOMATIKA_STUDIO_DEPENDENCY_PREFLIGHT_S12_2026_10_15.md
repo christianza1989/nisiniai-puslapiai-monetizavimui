@@ -7,3 +7,5 @@ Suderinti failai: `creation/studio.py`, minimalus `site_build/lifecycle.py` star
 Patikra: Python50 / Node6 PASS, tikras savo worktree importų probe ready su Sharp0.35.5, provider0/server0/data init0. Pirmas Ruff import-order FAIL ištaisytas; jo istorija sprendime išlieka. Nėra DB, provider, runtime ar deployment adoption.
 
 Po peržiūros pagrindinė sesija gali sujungti scoped source commit ir iš naujo patikrinti savo būsimą užšaldytą source. Dabartinės gyvos užduoties source ar instrukcijų snapshot neperrašyti. Būsimo įjungto supervisor startup dabar vykdo tikrą importų probe; nesėkmė reiškia konkretų setup dependency / Node gedimą, ne leidimą praleisti vartus ar įdiegti pakaitinį media optimizer.
+
+Funkcinis commit `d18b679834f7b2ce9530887cf4fb4dbc0be2faf1`; pushed / sukurtas / prisegtas [draft PR150](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/150), base exact remote frozen `c99094cae712d085e06314af39d166b9492028d3`. Exact11 staged safety0findings, 3 shared paths / vieno upgrade coverage ir paired handoff PASS. Source/test langas atlaisvintas root peržiūrai ir sujungimui; merge į main ir actual adoption dar neatlikti.

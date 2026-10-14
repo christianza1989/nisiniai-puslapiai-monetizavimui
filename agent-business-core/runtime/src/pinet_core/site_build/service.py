@@ -81,6 +81,26 @@ async def advance(creation_id):
         from . import continuation
         continuing = None
         creation = await tx.get(Creation, identity)
+        # A separately admitted current-source revision is the authority to produce
+        # its new private draft. S6 requires that accepted proof and cannot renew a
+        # failed base0 job. Historical approval/source/session rows stay unchanged.
+        admitted = await tx.get(Job, creation.active_job_id, populate_existing=True) if (
+            creation and creation.status in ACTIVE and creation.active_job_id) else None
+        if admitted and admitted.status in ACTIVE and admitted.source_revision == settings().control_source_revision:
+            from ..creation import execution_profiles as profiles
+            from ..creation.service import authority, binding
+            if admitted.creation_id != identity or binding(admitted) != binding(creation) or not await authority(tx, admitted):
+                return observation(identity, "authority", "blocked", code="authorization_revoked")
+            await profiles.ensure_current(tx, "creation", admitted)
+            admitted_session = await tx.get(Session, admitted.session_id, populate_existing=True)
+            creation = await owned(tx, admitted_session, identity, lock=True)
+            if creation.active_job_id != admitted.id or creation.status not in ACTIVE:
+                return observation(identity, "business_draft", "blocked", code="creation_job_stale")
+            if await approved_build_context(tx, creation) is None:
+                return observation(identity, "approval", "blocked", code="build_approval_unavailable")
+            if await guides.archived(tx, creation):
+                return observation(identity, "authority", "blocked", code="creation_archived")
+            return observation(identity, "business_draft", admitted.status, job_id=admitted.id)
         if creation and await continuation.schema_ready(tx):
             continuing = await continuation.latest(tx, creation)
         approval = await tx.scalar(select(BuildApproval).where(BuildApproval.creation_id == identity))

@@ -295,13 +295,28 @@ def role_instruction_hash(role, *, structure_repair=False, language_repair=False
     from . import execution_profiles as profiles
     name = profiles.selected() if execution_profile is None else execution_profile
     if role == "creator":
-        base = instructions(structure_repair=structure_repair, language_repair=language_repair)[1]
+        base = creator_instructions(name, structure_repair=structure_repair, language_repair=language_repair)[1]
     else:
         if structure_repair or language_repair:
             raise RunnerError("review_invalid")
         from .review import business_role_instruction_hash as review_hash
         base = review_hash(role)
     return pipeline_instruction_hash(base, role, execution_profile=name)
+
+
+def creator_instructions(name, *, structure_repair=False, language_repair=False):
+    from . import execution_profiles as profiles
+    material, pin = instructions(structure_repair=structure_repair, language_repair=language_repair)
+    if name != profiles.SOL_HIGH or structure_repair or language_repair:
+        return material, pin
+    from . import prompt_projection
+    files = [file for file in INSTRUCTION_FILES if not (
+        language_mode.mode() == "paused_local_pilot" and file == language_patch.LANGUAGE_REFERENCE)]
+    try:
+        return prompt_projection.project(material, pin, files, footer=(
+            language_mode.PAUSED_POLICY if language_mode.mode() == "paused_local_pilot" else ""))
+    except ValueError:
+        raise RunnerError("instructions_unavailable") from None
 
 
 def pipeline_instruction_hash(base, role, *, execution_profile):
@@ -336,7 +351,8 @@ async def run_role(context, still_authorized, *, role, seconds):
     structure_repair = role == "creator" and context.get("structure_repair") is True
     language_repair = role == "creator" and context.get("language_repair") is True
     if role == "creator":
-        policy, base_hash = instructions(structure_repair=structure_repair, language_repair=language_repair)
+        policy, base_hash = creator_instructions(name, structure_repair=structure_repair,
+                                                language_repair=language_repair)
         instruction_hash = pipeline_instruction_hash(base_hash, role, execution_profile=name)
         if context.get("expected_instruction_hash") != instruction_hash:
             raise RunnerError("instructions_changed")

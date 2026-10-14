@@ -42,7 +42,7 @@ async def review_schema_ready(tx):
         AND conname='control_creation_attempts_model_check'""")))
 
 
-async def reserve(claimed, role, round_number, *, structure_repair=False, language_repair=False):
+async def reserve(claimed, role, round_number, *, structure_repair=False, language_repair=False, deadline=None):
     from .worker import locked
     if role not in START or round_number not in (1, 2):
         raise adapter.RunnerError("review_invalid")
@@ -52,7 +52,10 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
                 or not job.lease_until or job.lease_until <= utcnow() or not await authority(tx, job)):
             raise adapter.RunnerError("authorization_revoked")
         from . import execution_profiles as profiles
-        await profiles.ensure_current(tx, "creation", job)
+        profile_name = await profiles.ensure_current(tx, "creation", job)
+        if profile_name == profiles.SOL_HIGH and deadline is not None and adapter.deadlines.role_seconds(
+                profile_name, role, deadline - monotonic()) < 1:
+            raise adapter.RunnerError("run_timeout")
         if adapter.team_instruction_hash() != job.instruction_hash:
             raise adapter.RunnerError("instructions_changed")
         if not await review_schema_ready(tx) or not await job_history_schema_ready(tx):
@@ -67,6 +70,9 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
         sequence = (await tx.scalar(select(func.max(Attempt.sequence)).where(Attempt.job_id == job.id))) or 0
         if sequence >= 6:
             raise adapter.RunnerError("review_limit")
+        if profile_name == profiles.SOL_HIGH and deadline is not None and adapter.deadlines.role_seconds(
+                profile_name, role, deadline - monotonic()) < 1:
+            raise adapter.RunnerError("run_timeout")
         attempt = Attempt(id=new_id(), creation_id=creation.id, job_id=job.id, run_id=job.run_id, sequence=sequence + 1,
             role=role, round_number=round_number, stage="private_draft", source_revision=job.source_revision,
             instruction_hash=adapter.role_instruction_hash(role, structure_repair=structure_repair,
@@ -126,7 +132,8 @@ async def run(claimed, still_authorized, role_runner=None):
     run_role = role_runner or adapter.run_role
     # The transport still caps each CLI call separately. Both fixed review rounds
     # share this one deadline; no timer is reset or extra role/call admitted.
-    deadline = monotonic() + 2 * settings().creation_runner_seconds
+    execution_profile = claimed.get("execution_profile", profiles.DEFAULT)
+    deadline = monotonic() + adapter.deadlines.job_seconds(execution_profile)
     remaining_web = context["permitted_web_actions"]
     receipts, candidate, critic, repair = [], None, None, None
     creator_model = profiles.model(claimed.get("execution_profile", profiles.DEFAULT), "creator")
@@ -136,14 +143,16 @@ async def run(claimed, still_authorized, role_runner=None):
 
     async def call(role, round_number, data, normalize_role):
         seconds = deadline - monotonic()
-        if seconds < 1:
+        if seconds < 1 or execution_profile == profiles.SOL_HIGH and adapter.deadlines.role_seconds(
+                execution_profile, role, seconds) < 1:
             raise failure("run_timeout")
         if not await still_authorized():
             raise failure("authorization_revoked")
         try:
+            timing = {"deadline": deadline} if execution_profile == profiles.SOL_HIGH else {}
             attempt_id = await reserve(claimed, role, round_number,
                 structure_repair=role == "creator" and data.get("structure_repair") is True,
-                language_repair=role == "creator" and data.get("language_repair") is True)
+                language_repair=role == "creator" and data.get("language_repair") is True, **timing)
         except adapter.RunnerError as error:
             raise failure(error.code) from None
         async with scope(user=claimed["user_id"]) as tx:
@@ -257,6 +266,7 @@ async def run(claimed, still_authorized, role_runner=None):
 
 
 async def projection(tx, creation):
+    from . import execution_profiles as profiles
     revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id, Revision.sequence == creation.current_revision))
     jobs = list(reversed(list(await tx.scalars(select(Job).where(Job.creation_id == creation.id)
                                              .order_by(Job.sequence.desc()).limit(20)))))
@@ -271,7 +281,6 @@ async def projection(tx, creation):
     by_attempt, job_by_id = {a.id: a for a in attempts}, {j.id: j for j in jobs}
     views = []
     for attempt in attempts:
-        from . import execution_profiles as profiles
         try:
             await profiles.validate_attempt(tx, "creation", job_by_id[attempt.job_id], attempt.role, attempt.model)
         except adapter.RunnerError:
@@ -294,5 +303,5 @@ async def projection(tx, creation):
         scope="private_business_and_website_draft", current_revision=creation.current_revision or None,
         active_job_id=creation.active_job_id, latest_job_id=jobs[-1].id if jobs else None, creation_updated_at=creation.updated_at,
         accepted_candidate_sha256=revision.material_hash if reviewed else None, max_rounds=2, max_calls_per_job=6,
-        deadline_seconds=2 * settings().creation_runner_seconds, full_f1_status="UNVERIFIED", launch_status="UNVERIFIED",
+        deadline_seconds=adapter.deadlines.job_seconds(profiles.selected()), full_f1_status="UNVERIFIED", launch_status="UNVERIFIED",
         attempts=views, events=timeline).model_dump(mode="json")

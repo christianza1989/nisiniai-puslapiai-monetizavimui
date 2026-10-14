@@ -25,6 +25,11 @@ guide hub '/gidai/', contact '/kontaktai/', privacy '/privatumas/', and a truthf
 such as '/redakcija/', plus the distinct offer/support pages the business needs. Initial GUIDE paths
 must be real descendants of their guide hub. Unknown people, expertise, contacts and service capacity
 must not be invented. Draft text and a form intention are not an operating inquiry-delivery receipt.
+Keep this deliverable focused: normally two to four purposeful sections per page, concise substantive
+paragraphs, and short executable GUIDE briefs with outlines rather than full guide articles. Choose the
+initial demand-test guides and mark other justified expansion briefs later; no filler or arbitrary cadence.
+The maintained GUIDE stage writes the full articles. More JSON text is not a quality score; keep distinct
+reader decisions, necessary factual/legal limitations and complete usable copy instead of repeating plans.
 Deep editorial review, writing individual guides, media import, release, rendering and actual F1 verification
 are separate maintained stages. Do not execute or claim them in this no-file role. Preserve all remaining
 gates and unknowns. The full canonical instruction snapshot is retained by the server; below are complete

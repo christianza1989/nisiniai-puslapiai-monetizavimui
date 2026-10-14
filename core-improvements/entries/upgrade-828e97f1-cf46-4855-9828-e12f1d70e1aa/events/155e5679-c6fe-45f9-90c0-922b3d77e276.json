@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Exactde06 already two-role overall clock; fixtures now use2*cfg expiry/bounds and current graph+bounded patch only for language scenario. Independent critic observes actual foreign sentence even if lightweight screen misses; legacy paused/history behavior remains. Original7FAIL/20PASS and later2FAIL/25PASS preserved.",
+  "checks": [
+    {
+      "command": "native PostgreSQL maintained timing/authority/accounting/patch regressions",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md:25nativePASS149.16s thenfinaltargeted6PASS37.19s includingremaining2 failures, stale/foreign rejection andpausedhistory"
+    },
+    {
+      "command": "scoped Ruff test_creation_team.py and diff check",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md:productionDefaultunchanged, exactboundhashes/non-targetfields/actualcharges asserted"
+    }
+  ],
+  "eventId": "155e5679-c6fe-45f9-90c0-922b3d77e276",
+  "sequence": 2,
+  "at": "2026-10-14T22:58:24.336Z"
+}

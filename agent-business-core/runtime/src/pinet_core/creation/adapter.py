@@ -11,7 +11,7 @@ from ..tasks.codex import arguments as consult_arguments
 from ..tasks.codex import check_trace_event, child_environment
 from ..tasks.codex import parse_trace as consult_trace
 from ..tasks.codex_transport import RunnerError, execute
-from . import language_mode, language_patch
+from . import deadlines, language_mode, language_patch
 from .renderer import CreatorDraft, normalize, normalize_creator, structural_repair_context
 
 ROOT = Path(__file__).resolve().parents[5]
@@ -325,7 +325,8 @@ def pipeline_instruction_hash(base, role, *, execution_profile):
     if name == profiles.DEFAULT:
         return base
     return hashlib.sha256(json.dumps({"instruction_sha256": base,
-        "execution": pipeline_profile(role, execution_profile=name)}, sort_keys=True).encode()).hexdigest()
+        "execution": pipeline_profile(role, execution_profile=name),
+        "timing_policy": deadlines.policy(name)}, sort_keys=True).encode()).hexdigest()
 
 
 def team_instruction_hash():
@@ -391,7 +392,7 @@ async def run_role(context, still_authorized, *, role, seconds):
         schema.write_text(json.dumps(output_schema), encoding="utf-8")
         web = role == "creator" and cfg.creation_web_search_enabled and context.get("permitted_web_actions", 6) > 0
         trace = Trace(web, context.get("permitted_web_actions", 0))
-        remaining_seconds = min(seconds, cfg.creation_runner_seconds) - (monotonic() - started)
+        remaining_seconds = deadlines.role_seconds(name, role, seconds) - (monotonic() - started)
         if remaining_seconds <= 0:
             raise RunnerError("run_timeout")
         argv = arguments(binary, folder, schema, output, web=web, role=role, execution_profile=name)

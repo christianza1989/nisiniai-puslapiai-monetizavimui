@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "The maintained approved native build stops after GUIDEs without a fixed bridge from current approved intake and reviewed release to actual local website completion evidence. Add a strict source/context-bound private evidence bridge over canonical workflow/release/verifier paths; retain blockers and keep admission/persistence separate.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_FOUNDATION_BRIDGE_S5_2026_10_14.md",
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation_wire.py",
+    "content-studio/scripts/customer-site-foundation.mjs",
+    "agent-business-core/runtime/tests/test_foundation_bridge.py",
+    "agent-business-core/runtime/tests/test_foundation_bridge_pg.py",
+    "content-studio/test/customer-site-foundation.test.mjs",
+    "docs/decisions/VERSLOMATIKA_FOUNDATION_BRIDGE_S5_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_FOUNDATION_BRIDGE_S5_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the new evidence bridge and tests; no migration, runtime adoption, permissions or activation to undo. Retain any immutable private candidate releases and evidence history.",
+  "id": "upgrade-783e06a4-832c-4aff-acba-daf40594fd98",
+  "branch": "codex/verslomatika-foundation-evidence-bridge-20261014",
+  "baseSha": "faea0e75ca4bad441b8905898f052fef020acc17",
+  "createdAt": "2026-10-14T09:04:41.659Z"
+}

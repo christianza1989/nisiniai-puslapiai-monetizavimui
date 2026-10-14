@@ -36,10 +36,14 @@ async def claim(*, creation_id=None):
                          {"k": "content-work-claim:" + cfg.environment})
         rows = (await tx.execute(text("SELECT * FROM control_content_work_candidates(:e)"),
                                  {"e": cfg.environment})).mappings().all()
+        global_rows = rows
+        if creation_id is not None:
+            from ..site_build.selectors import selected
+            rows = await selected(tx, "guide", cfg.environment, creation_id)
         old_running = (await tx.execute(text("SELECT * FROM control_creation_candidates(:e)"),
                                         {"e": cfg.environment})).mappings().all()
         if any(row["status"] == "running" and row["lease_until"] and row["lease_until"] > utcnow()
-               for row in [*rows, *old_running]):
+               for row in [*global_rows, *rows, *old_running]):
             return None
         for row in rows:
             async with scope(user=row["user_id"]) as owned:

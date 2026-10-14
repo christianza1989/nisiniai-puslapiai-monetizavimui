@@ -26,7 +26,12 @@ async def claim(discovery_id=None):
                                 {"k": "creation-worker:" + cfg.environment})
         candidates = (await discovery.execute(text("SELECT * FROM control_discovery_candidates(:e)"),
                                                 {"e": cfg.environment})).mappings().all()
-        if any(c["status"] == "running" and c["lease_until"] and c["lease_until"] > utcnow() for c in candidates):
+        global_candidates = candidates
+        if discovery_id is not None:
+            from ..site_build.selectors import selected
+            candidates = await selected(discovery, "discovery", cfg.environment, discovery_id)
+        if any(c["status"] == "running" and c["lease_until"] and c["lease_until"] > utcnow()
+               for c in [*global_candidates, *candidates]):
             return None
         for candidate in candidates:
             async with scope(user=candidate["user_id"]) as tx:

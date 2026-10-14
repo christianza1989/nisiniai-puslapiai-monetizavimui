@@ -45,6 +45,8 @@ class Settings(BaseSettings):
     business_discovery_enabled: bool = False
     business_discovery_runner_enabled: bool = False
     site_build_enabled: bool = False
+    site_build_api_runner_enabled: bool = False
+    site_build_actor_ids: list[str] = Field(default_factory=list, max_length=16)
     business_discovery_research_limit: int = Field(default=0, ge=0)
     creation_runner_enabled: bool = False
     # Zero disables the operator's daily ceiling; all attempts are still recorded.

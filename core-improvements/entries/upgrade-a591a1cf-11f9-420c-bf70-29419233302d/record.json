@@ -1,0 +1,23 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "category": "code",
+  "summary": "Foundation.observe maps the maintained studio authorization_revoked RunnerError to503 and leaves its direct configuration RunnerError outside the safe boundary. Restore canonical401 revocation and503 availability semantics without changing admission or execution.",
+  "rollback": "Scoped revert of observe boundary and new regression tests; no schema/source adoption/runtime/flags/data changes.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/tests/test_foundation_bridge.py",
+    "agent-business-core/runtime/tests/test_foundation_bridge_pg.py",
+    "docs/decisions/VERSLOMATIKA_FOUNDATION_ERROR_BOUNDARY_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_FOUNDATION_ERROR_BOUNDARY_2026_10_14.md"
+  ],
+  "siteId": "core",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6168690341"
+  ],
+  "id": "upgrade-a591a1cf-11f9-420c-bf70-29419233302d",
+  "branch": "codex/verslomatika-foundation-error-boundary-20261014",
+  "baseSha": "40c27a3b255eca87cc86bc87adc98f883e5d6705",
+  "createdAt": "2026-10-14T12:49:18.598Z"
+}

@@ -1,0 +1,7 @@
+{
+  "note": "Actual maintained monitor revocation and realconfiguration validation reproduced2FAIL3.45s; corrected onlyobserve401/503boundary.33offlinePASS0.89s; newbothcommands nativeHTTP/RLS revoke casespassedwith0receipt andownedchildcleanup. Wider57PASS1FAIL185.41s exposedseparateborrowedAsyncSession transportcancellation PendingRollback at existingstalesourceverify; firstfailurepreservedandrootowns/authorizedseparatescope, notmasked. Focused38case rerunpassed. InitialwrongPythonpath/importlint fixedasfixturepreparation; originalschema32/counts/role unchanged.",
+  "status": "fixing",
+  "eventId": "66604fd5-a3d2-4ea5-89dd-202c9834469a",
+  "sequence": 2,
+  "at": "2026-10-14T13:11:24.410Z"
+}

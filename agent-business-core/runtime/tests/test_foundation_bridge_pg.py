@@ -1,5 +1,6 @@
 """Current native RLS/Node pins on a synthetic approved case, provider zero."""
 import subprocess
+import sys
 from uuid import uuid4
 
 import pytest
@@ -12,6 +13,7 @@ from pinet_core.config import settings
 from pinet_core.control.models import Session, User
 from pinet_core.control.routes import ControlError, scope, token_hash
 from pinet_core.creation.adapter import ROOT
+from pinet_core.models import utcnow
 from pinet_core.site_build import foundation
 
 
@@ -75,3 +77,40 @@ async def test_cached_disabled_owner_and_source_change_cannot_reuse_a_pin(build,
         with pytest.raises(ControlError) as error:
             await foundation.verify(tx, pin)
         assert error.value.code == "unauthenticated"
+
+
+@pytest.mark.parametrize("command", ["candidate", "verify-local"])
+async def test_actual_http_monitor_revocation_returns_401_without_a_receipt(build, monkeypatch, command):  # noqa: F811
+    """Real owned HTTP/native capture/RLS callback and studio monitor, provider zero."""
+    from sqlalchemy import func
+
+    from pinet_core.site_build.models import FoundationReceipt
+    cid, auth, _, session_id = await prepared(build, monkeypatch)
+    execute = foundation.studio._execute
+    stops = []
+    stop = foundation.studio.stop_process
+    async def stopped(process):
+        await stop(process)
+        stops.append(process.returncode)
+    monkeypatch.setattr(foundation.studio, "stop_process", stopped)
+    checks = 0
+    async def invoke(arguments, payload, environment, authorized, seconds, **kwargs):
+        if str(arguments[1]) != str(foundation.SCRIPT):
+            return await execute(arguments, payload, environment, authorized, seconds, **kwargs)
+        async def current_authority():
+            nonlocal checks
+            checks += 1
+            if checks == 2:
+                async with AsyncSession(build["admin"]) as admin, admin.begin():
+                    await admin.execute(update(Session).where(Session.id == session_id).values(revoked_at=utcnow()))
+            return await authorized()
+        return await execute([sys.executable, "-c", "import time; time.sleep(30)"], payload,
+            environment, current_authority, 10)
+    monkeypatch.setattr(foundation.studio, "_execute", invoke)
+    response = await build["client"].post(f"/customer/v2/creations/{cid}/foundation/checks", headers=auth,
+        json={"idempotency_key": str(uuid4()), "accepted_revision": 1, "command": command})
+    assert response.status_code == 401 and response.json()["code"] == "unauthenticated", response.text
+    assert checks == 2 and stops and all(code is not None for code in stops)
+    async with AsyncSession(build["admin"]) as tx:
+        assert await tx.scalar(select(func.count()).select_from(FoundationReceipt)
+            .where(FoundationReceipt.creation_id == cid)) == 0

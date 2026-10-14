@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "python -m pytest tests/test_foundation_bridge.py -q",
+      "evidence": "own error-boundary-fixed.log33PASS0.89s"
+    },
+    {
+      "result": "PASS",
+      "command": "python observe-qa.py test tests/test_foundation_bridge.py tests/test_foundation_bridge_pg.py -q",
+      "evidence": "docs/handoffs/VERSLOMATIKA_FOUNDATION_ERROR_BOUNDARY_2026_10_14.md; own error-boundary/tests-1d465a2b.log38PASS78.21s, original0032/counts/restrictedroleunchanged"
+    },
+    {
+      "result": "PASS",
+      "command": "python -m ruff check <three scoped Python paths>",
+      "evidence": "finalscope RuffPASS afterimportformatcorrection"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Scopedobserveerrorboundary verified: actual2FAIL before,33offlinePASS and38offline/restrictedPGPASS78.21s after; bothnativeHTTPcurrentSessionrevocation401/ownedcleanup/0receipt. Separateoldtransportcleanup firstfailurepreservedandrootauthorizednewscope; no whole-platformclaim. No originalschema/count/role orruntime/public/model/flags changes.",
+  "eventId": "c27d55eb-ea29-4944-9ea3-ce6612b70084",
+  "sequence": 3,
+  "at": "2026-10-14T13:12:22.120Z"
+}

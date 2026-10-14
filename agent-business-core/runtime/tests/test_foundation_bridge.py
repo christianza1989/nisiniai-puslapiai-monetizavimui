@@ -1,5 +1,8 @@
 """Evidence is not permission: strict wire, bounded effects and final source fencing."""
+import asyncio
 import json
+import os
+import sys
 from uuid import uuid4
 
 import pytest
@@ -222,3 +225,77 @@ def test_public_dirty_source_unavailability_and_reserved_host_synthetic_marker(m
     pin = FoundationScope.model_validate_json(json.dumps(pin.model_dump(mode="json") | {
         "environment_id": "local", "accepted": pin.accepted.model_dump(mode="json") | {"canonical_host": "foundation.invalid"}}))
     assert foundation.parse_observation(observation(pin), pin).synthetic
+
+
+async def test_observe_real_studio_monitor_revocation_is_native_401_and_stops_owned_child(monkeypatch, tmp_path):
+    """The maintained monitor/cleanup executes; no provider, DB or native artifact writes."""
+    pin = scope()
+    retained_setup(monkeypatch, pin)
+    from pathlib import Path
+    environment = {key: value for key, value in os.environ.items()
+        if key.upper() in {"SYSTEMROOT", "WINDIR", "PATH", "TEMP", "TMP", "COMSPEC", "PATHEXT"}}
+    monkeypatch.setattr(foundation.studio, "configuration", lambda: (Path(sys.executable), None, tmp_path, environment))
+    actual_execute = foundation.studio._execute
+    actual_stop = foundation.studio.stop_process
+    children = []
+    async def stop(process):
+        children.append(process)
+        await actual_stop(process)
+    monkeypatch.setattr(foundation.studio, "stop_process", stop)
+    async def execute(arguments, payload, environment, authorized, seconds):
+        # Replace only the command with an inert long-running child; retain the actual transport.
+        return await actual_execute([sys.executable, "-c", "import time; time.sleep(30)"], payload,
+            environment, authorized, 5)
+    monkeypatch.setattr(foundation.studio, "_execute", execute)
+    checks = 0
+    async def authorized():
+        nonlocal checks
+        checks += 1
+        return checks == 1
+    with pytest.raises(ControlError) as error:
+        await asyncio.wait_for(foundation.observe(pin, still_authorized=authorized), 10)
+    assert len(children) == 1 and children[0].returncode is not None
+    assert error.value.status == 401 and error.value.code == "unauthenticated"
+
+
+async def test_observe_actual_configuration_loss_is_safe_503_before_dispatch(monkeypatch):
+    pin = scope()
+    from pinet_core.creation import studio
+    # Use the real configuration validation after a previously captured source pin.
+    async def guard():
+        return None
+    monkeypatch.setattr(foundation, "guard", guard)
+    monkeypatch.setattr(foundation, "source_pins", lambda: pin.sources)
+    monkeypatch.setenv("PINET_PUBLIC_CORE_PATH", "relative-unavailable-companion")
+    called = False
+    async def execute(*args):
+        nonlocal called
+        called = True
+    monkeypatch.setattr(studio, "_execute", execute)
+    with pytest.raises(ControlError) as error:
+        await foundation.observe(pin, still_authorized=yes)
+    assert not called and error.value.status == 503 and error.value.code == "foundation_bridge_unavailable"
+
+
+@pytest.mark.parametrize("command", ["candidate", "verify-local"])
+@pytest.mark.parametrize("failure,status,code", [
+    ("authorization_revoked", 401, "unauthenticated"),
+    ("studio_unavailable", 503, "foundation_bridge_unavailable"),
+    ("studio_timeout", 503, "foundation_bridge_unavailable"),
+    ("studio_output_limit", 503, "foundation_bridge_unavailable"),
+    ("studio_intake_failed", 503, "foundation_bridge_unavailable"),
+    ("foundation_source_stale", 503, "source_unavailable"),
+    ("foundation_source_unavailable", 503, "source_unavailable"),
+])
+async def test_observe_keeps_revocation_distinct_from_source_and_process_failure(monkeypatch, command, failure, status, code):
+    pin = scope()
+    retained_setup(monkeypatch, pin)
+    calls = []
+    async def execute(arguments, payload, environment, authorized, seconds):
+        assert payload["command"] == command and seconds == 180
+        calls.append(payload)
+        raise foundation.RunnerError(failure)
+    monkeypatch.setattr(foundation.studio, "_execute", execute)
+    with pytest.raises(ControlError) as error:
+        await foundation.observe(pin, command=command, still_authorized=yes)
+    assert len(calls) == 1 and error.value.status == status and error.value.code == code

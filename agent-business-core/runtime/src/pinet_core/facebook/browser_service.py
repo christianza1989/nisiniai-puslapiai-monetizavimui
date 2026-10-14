@@ -268,6 +268,34 @@ async def renew(tx, item, ident, data):
     return {"lease_until": lease.lease_until.isoformat()}
 
 
+async def resume(tx, item, ident, data):
+    """Explicitly resume a charged task only after proof that no submit was authorized."""
+    await fb.module_lock(tx, item)
+    job = await fb.by_id(tx, "browser_post", ident)
+    if (job.state != "blocked" or job.payload.get("reason") != "operator_checked_not_published"
+            or job.payload.get("submit_attempted") or job.payload.get("submit_observation")
+            or job.payload.get("submit_permit_until") or job.payload.get("receipt")
+            or not job.payload.get("reconciliation")):
+        raise HTTPException(409, "facebook_resume_requires_reconciled_unsubmitted_task")
+    charged = await fb.record(tx, "browser_attempt", job.payload.get("quota_token", job.payload.get("task_token", "")))
+    if not charged or charged.payload.get("job_id") != job.id:
+        raise HTTPException(409, "facebook_resume_requires_existing_quota_charge")
+    await binding_guard(tx, item, job=job)
+    claimed = await fb.claim_account(tx, job.payload["binding"]["account_key"], job.payload["lease_owner"], data.seconds)
+    # Preserve the quota record key across capability rotation, including later resumptions.
+    job.payload = {**job.payload, "quota_token": job.payload.get("quota_token", job.payload["task_token"]),
+        "owner": data.owner, "task_token": new_id(), "epoch": claimed["epoch"], "lease_until": claimed["expires_at"]}
+    job.payload.pop("recovery_check", None)
+    job.payload.pop("reason", None)
+    job.state, job.revision = "claimed", job.revision + 1
+    fb.add(tx,item,"audit",new_id(),"recorded",{"event":"browser_unsubmitted_task_resumed","job_id":job.id,"epoch":claimed["epoch"]})
+    await tx.flush()
+    return {"state":"claimed","processed":1,"site_id":item.site_id,"job_id":job.id,
+        **{k:job.payload[k] for k in ("owner","task_token","epoch","lease_until","body","body_sha256","audience")},
+        "publisher":job.payload["binding"],**extension.task_projection(job),
+        "instructions":"Explicitly resumed unsubmitted task. Read existing desktop worker reference; fresh actual UI observation and one submit permit required. No automatic retry."}
+
+
 async def submit_permit(tx, item, ident, data):
     job = await owned(tx, item, ident, data)
     if job.state != "claimed":
@@ -290,6 +318,8 @@ async def submit_permit(tx, item, ident, data):
 async def receipt(tx, item, ident, data):
     job = await owned(tx, item, ident, data)
     incoming = data.model_dump(mode="json")
+    if not incoming["moderation_notice"]:
+        incoming.pop("moderation_notice")
     if not incoming["provider_comment_id"]:
         incoming.pop("provider_comment_id")
     if incoming["observation"].get("media_sha256") is None:
@@ -361,6 +391,8 @@ async def dashboard(tx):
     jobs = await fb.listing(tx, "browser_post")
     # Claim tokens are only returned to the authenticated worker, not the operator table.
     for job in jobs:
+        if job["state"] in {"visible", "pending_moderation", "searched"}:
+            job.pop("reason", None)
         receipt = job.get("receipt")
         if receipt:
             job["result"] = {k: receipt[k] for k in ("status", "provider_post_id", "permalink", "evidence")}
@@ -395,7 +427,8 @@ async def check(tx, item, ident, data):
     job = await fb.by_id(tx, "browser_post", ident)
     if job.state != "uncertain":
         raise HTTPException(409, "facebook_check_only_requires_uncertain_post")
-    job.payload = {**job.payload, "owner": data.owner, "task_token": new_id(), "recovery_check": True}
+    job.payload = {**job.payload, "quota_token": job.payload.get("quota_token", job.payload["task_token"]),
+                   "owner": data.owner, "task_token": new_id(), "recovery_check": True}
     job.revision += 1
     await tx.flush()
     return {"state": "check_only", "processed": 1, "site_id": item.site_id, "job_id": job.id,

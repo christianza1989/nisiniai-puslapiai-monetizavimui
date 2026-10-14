@@ -155,6 +155,39 @@ async def test_live_shaped_comment_receipt_and_group_rule_revision(fb_client):
     assert (await claim(fb_client)).json()["state"] == "blocked"
 
 
+async def test_pending_group_comment_without_provider_id(fb_client):
+    await setup(fb_client, scope="live")
+    group = {"key": "pending-group", "name": "Synthetic moderation group",
+        "url": "https://www.facebook.com/groups/synthetic-pending",
+        "rules_url": "https://www.facebook.com/groups/synthetic-pending/about", "reuse": "unknown"}
+    await fb_client.post(f"/operator/sites/{SITE}/facebook/groups", headers=headers(), json=group)
+    proof = {"key": "pending-proof", "binding_key": "binding-page", "group_key": group["key"],
+        "comments_allowed": True, "valid_until": (utcnow()+timedelta(hours=1)).isoformat(),
+        "evidence": "Synthetic actor-specific composer and group rules; no real Facebook action."}
+    assert (await fb_client.post(endpoint()+"/group-access",headers=headers(),json=proof)).status_code == 200
+    target = group["url"] + "/posts/123456789"
+    await post(fb_client,action="comment",target_url=target,group_access_key=proof["key"])
+    packet = (await claim(fb_client)).json()
+    assert (await command(fb_client,packet,"submit-permit",{"observation":observation(packet,target_url=target)})).status_code == 200
+    receipt = {"status":"pending_moderation","provider_post_id":"123456789",
+        "permalink":target,"observation":observation(packet,target_url=target),
+        "evidence":"Synthetic UI accepted comment with explicit first-comment admin review notice."}
+    assert (await command(fb_client,packet,"receipt",receipt)).status_code == 422
+    receipt["moderation_notice"] = "facebook_admin_review"
+    result = await command(fb_client,packet,"receipt",receipt)
+    assert result.status_code == 200, result.text
+    assert result.json()["state"] == "pending_moderation"
+    assert result.json()["external_sending"] is True
+    # Known moderation releases the account without creating another send attempt.
+    await post(fb_client,key="next-authorized-task")
+    assert (await claim(fb_client)).json()["state"] == "claimed"
+    for changed in ({"status":"visible"},{"provider_post_id":"wrong"},{"permalink":target+"?comment_id=client123"}):
+        assert (await command(fb_client,packet,"receipt",{**receipt,**changed})).status_code == 422
+    # A later real comment ID can promote visibility through read-only checking.
+    receipt.update(status="visible",provider_comment_id="987654321",permalink=target+"?comment_id=987654321")
+    assert (await command(fb_client,packet,"receipt",receipt)).json()["state"] == "visible"
+
+
 @pytest.mark.parametrize("changes", [{"action": "comment", "target_url": "https://www.facebook.com/groups/x/posts/1"},
     {"action": "comment", "target_url": "https://evil.test/a/posts/1"},
     {"action": "discover_groups", "query": "x"}, {"action": "comment", "target_url": "https://www.facebook.com/a/posts/1", "attachment_key": "img"}])

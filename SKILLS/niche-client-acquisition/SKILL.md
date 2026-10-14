@@ -11,6 +11,8 @@ Read [PROJECT_CONTRACT](../PROJECT_CONTRACT.md), the site's actual BUSINESS / cu
 
 ## Choose the task
 
+For Facebook bot connection, publishing setup, live acceptance or transport troubleshooting, use [facebook-bot-setup](../facebook-bot-setup/SKILL.md) and its canonical system entrypoint. This skill retains acquisition strategy and signal qualification; the setup skill resolves actual Page API / desktop connection without reusing another site's credentials or historical PASS.
+
 For a new acquisition strategy produce a private `sites/<siteId>/ACQUISITION.md` and a small, measurable experiment. For a prospecting task return minimal source-backed records and a truthful next action. For a real inbound exchange read only the authorized site's thread / facts and prepare the supported answer. Do not repeat an entire niche business study for a routine draft if the current BUSINESS decision is still applicable.
 
 For Facebook group research/actions or Messenger work also read [the Facebook workflow](references/facebook.md). Use one account coordinator and isolated niche task contexts; separate personal-profile groups from official Page messaging. Existing owner authorization is distinct from source/platform rights. Do not infer an operational FB adapter or continuous collector from this instruction.

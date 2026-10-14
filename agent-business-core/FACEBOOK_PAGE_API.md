@@ -1,5 +1,7 @@
 # Facebook Page publikavimas per oficialų API
 
+Aktualus visos sistemos prijungimas: [FACEBOOK_SYSTEM](FACEBOOK_SYSTEM.md), [setup skill](../SKILLS/facebook-bot-setup/SKILL.md) ir [Meta Page/token eiga](../SKILLS/facebook-bot-setup/references/meta-page-connection.md). Vėlesnis tikras own-Page tekstinis POST/GET ir matomas Public įrašas priimti2026-10-14; photo/comment/reply API formos šiame gyvame teste atskirai nevykdytos. Visos policies po penkių užduočių paused; source nėra production/24/7 adoption.
+
 2026-10-14, issue146 / PR135. Įgyvendinti Page tekstai, viena nuotrauka, komentarai po valdomo Page įrašais ir atsakymai į pirminius komentarus. Vykdomas Graph v26.0. [Izoliuota patikra](../docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md) nėra realios Meta prieigos ar viešo publikavimo įrodymas. Asmeninis profilis ir grupės lieka [Codex Computer Use](FACEBOOK_BROWSER_WORKER.md).
 
 Agentas pats peržiūri turinį pagal savininko pavedimą ir saugo `review_note`; žmogaus patvirtinimo kiekvienam įrašui nėra. Bendra FB politika ir atskira Page API politika turi būti įjungtos. Naujos nišos lieka išjungtos. Platformos teisių ar hosto atmetimo įjungimas nepakeičia.
@@ -8,7 +10,7 @@ Agentas pats peržiūri turinį pagal savininko pavedimą ir saugo `review_note`
 
 Reikalingas konkrečios savininko valdomos Meta programos Page access token ir programos access token diagnostikai. Programos egzistavimas, Page administratoriaus UI ir Business Manager asset ID nėra Graph teisių įrodymas. `debug_token` tikrina PAGE tipą, programą, galiojimą ir granular Page scope; `/me` patvirtina tikrą Page ID. Meta programos access lygis / App Review ir žmogaus Page užduotys yra atskiros platformos sąlygos.
 
-Pagal aktualius pirminius šaltinius įrašams / nuotraukoms naudojami `pages_manage_posts`, `pages_manage_engagement`, `pages_read_engagement`, `pages_read_user_engagement`; komentarams / atsakymams trys pastarieji be `pages_manage_posts`. Vaizdo, reklamos, Messenger ir kitų žmonių profilių duomenų šis inkrementas neprašo. Jei reali programa nepateikia šių leidimų, patikrinti aktualią Meta sutartį, o ne pašalinti trūkstamą teisę vien dėl PASS.
+Actual Meta programos Pages leidimų sąsaja 2026-10-14 pateikia `pages_manage_posts`, `pages_manage_engagement`, `pages_read_engagement`, `pages_read_user_content`; komentarams / atsakymams trys pastarieji be `pages_manage_posts`. Page įrašų gide tuo metu buvo nesutampantis pavadinimas `pages_read_user_engagement`; jo negalima tiesiog reikalauti iš tokeno, kai reali platforma suteikia `pages_read_user_content`. Nepriklausomo literal scope testo originalus403 išsaugotas. Teisė nesumažinta, pataisytas tikras jos identifikatorius. Vaizdo, reklamos, Messenger ir kitų žmonių profilių duomenų šis inkrementas neprašo. Jei reali programa nepateikia šių leidimų, patikrinti aktualią Meta sutartį, o ne pašalinti trūkstamą teisę vien dėl PASS.
 
 `PINET_FACEBOOK_PAGE_CREDENTIALS_PATH` nurodo privatų ignored JSON failą po `runtime/artifacts/`. Struktūra `credentials: [...]`; kiekvieno įrašo laukai: `key`, `site_id`, `environment`, `account_key`, `page_id`, `app_id`, `page_token`, `app_token`. Vienam site/env/key reikia vieno įrašo. Apriboti failo prieigą savininkui / konkrečiam runtime. Paslaptys nekeliauja į HTTP valdymo kūnus, DB, Codex prompt, užduoties paketą, logus ar Git. HTTP priima tik credential key.
 

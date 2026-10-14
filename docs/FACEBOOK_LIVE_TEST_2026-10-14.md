@@ -57,3 +57,47 @@ Sanitizuotas diagnostikos kvitas ir tuščios Page komentaro formos ekranas saug
 Po savininko pateikto Browser permissions ekrano ir tiesioginio „gal vėl pabandyk“ 2026-10-14 16:11:35 UTC (19:11:35 Europe/Kiev) pakartota ta pati ankstesnė ribota penkių užduočių įjungimo komanda per įprastą `exec_command` patikrą. Nekeistas transportas, host policy, approval režimas ar autentifikacija. Komanda trečią kartą atmesta prieš proceso paleidimą su tuo pačiu `CreateProcess ... rejected: blocked by policy`. Read-only actual localhost API po atmetimo: module enabled=false, browser enabled=false, bindings=0, jobs=0. Naršymo / downloads / full CDP nustatymų ekrane nematyti konkrečios šio shell atmetimo taisyklės; jie nėra jo pašalinimo įrodymas.
 
 Paties modulio įjungimo ir browser vykdymo regresija pakartota izoliuotais ASGI / `test-*` duomenimis: `pytest tests/test_facebook_browser.py tests/test_facebook_browser_extensions.py -q` — **40 PASS, 24,02 s**. Ji apima policy įjungimą, autentifikaciją / tenant ribas, Page / profile queue ir receipt, komentaro / grupės proof ir vaizdo tikrinimą. Gyvas Facebook siuntimas šioje regresijoje neįmanomas. Šis bandymas projekto defekto neparodė ir neatstoja realaus FB post / comment kvito. Tikri paskelbimai lieka 0; nuosavi preview procesai užbaigti, private DB volume ir diagnostikos kvitas išsaugoti.
+
+## Vėlesnis užbaigtas gyvas testas —2026-10-14 apie19:28UTC
+
+Toliau pateiktas naujas etapas pakeičia dabartinę būseną, išlaikant visą ankstesnių nesėkmingų bandymų istoriją aukščiau.
+
+### Naujo etapo įrodymai
+
+2026-10-14, own `codex/facebook-full-audit-20261014`, issue142 / PR135. Savininko mandatas: penkios rankinės užduotys, tada pause. Jokio periodinio worker ar klientų duomenų rinkimo.
+
+## Dabartinis rezultatas
+
+- Page API įrašas: **PASS actual**. Vienas Graph POST, patvarus provider ID, GET tikslus Page autorius / tekstas, actual Facebook UI tas pats įrašas ir Public žyma.
+- Computer Use grupės paieška: **PASS actual**. Modulį atstovaujantis Codex gavo read-only užduotį, actual Facebook Search rado vieną viešą Lineage2 grupę ir išsaugojo tik root metaduomenis.
+- Page grupės komentaras: **SUBMITTED / PENDING_MODERATION actual**. Vienas submit permit ir vienas Post comment. Facebook paaiškinimas: pirmą kiekvieno dalyvio komentarą grupės administratoriai peržiūri prieš rodydami kitiems; tapimas nariu šios peržiūros nekeičia. Provider comment ID dar nerodomas. Komentaras nekartojamas, viešo matomumo PASS nėra.
+- Profilio įrašas su AI vaizdu: **PASS actual**. Tikslus tekstas, Public auditorija ir nekintama vietinė iliustracija patikrinti. Chrome file chooser iš pradžių grąžino konkrečią trūkstamos Allow access to file URLs prieigos klaidą. Savininkas patvirtino pakeitimą; chrome://extensions įrankio protokolo atmetimas neapeitas. Savininkui rankiniu būdu įjungus jungiklį, įkėlimas pavyko. Actual Next→galutinė peržiūra→vienas permit→vienas Post→„Your post has been published“, tikras profilio permalink, Public ir AI caption / vaizdas.
+- Profilio komentaras: **PASS actual**. Iš Christian Za profilio paskelbtas vienas komentaras po jo paties nauju viešu AI įrašu. Actual autorius / tikslus tekstas / real comment ID / timestamp permalink ir serverio visible kvitas.
+
+Page komentaras po pradinės moderavimo būsenos **PASS actual visible**: po pause atliktas tik read-only patikrinimas iš asmeninio profilio. Matau tą patį Page autorių, tekstą, tikrą comment ID / permalink, reakciją ir parent autoriaus atsakymą. Atsakymas nėra kliento užklausa; papildomas reply nesiųstas.
+
+2026-10-14T19:26Z normalūs master/API/browser pause HTTP200. Visos penkios job užduotys išliko, bendri quota records5 (API1 + desktop4), priimti tikri išoriniai veiksmai4; discovery nėra send. Po pause external_sending=false; jokio nuolatinio worker / automatinio pakartojimo. Tikrų provider ID / asmens duomenų šis Git dokumentas nekopijuoja.
+
+Privatūs kvitai, screenshot ir credential failai lieka ignored runtime artifacts; jų turinys, tokenai ir socialinio įrašo žalias turinys į Git nekeliami.
+
+## Bendros spragos ir prasminga regresija
+
+`upgrade-442058cf-c49f-4682-bc4e-fdd0c8783f0d`: pirmo komentaro moderavimui Facebook nerodo provider comment ID. Originalus atkūrimo testas gavo422 `extra_forbidden moderation_notice`. Naujas aiškus `facebook_admin_review` kvitas leidžia tik grupės exact parent URL / provider parent ID, current actor/body/tab stebėjimą ir jau suteiktą submit permit; būsena lieka pending_moderation. Visible vis dar reikalauja tikro comment ID / permalink. Wrong parent / fake query / visible withoutID atmetami; late knownID visibility ir kitos paskyros užduoties lease tikrinami. **72 PASS,55.56s** browser/browser_extensions/Page API rinkiniams ir scoped Ruff PASS.
+
+`upgrade-7c072f48-9736-494e-a14f-99fc075cc7ad`: po tikro API įrašo master skydelis vis dar rodė static not_connected / zero sends. Planas prieš pakeitimą: parodyti ryšio patikros galiojimą atskirai nuo transporto policy ir master pause; suskaičiuoti tik provider accepted / visible / pending real kvitus, nepaversti jų gauta paklausa. Išlaikyti esamą16px system-ui status rolę / kontrastą / responsive; patikrinti actual desktop ir320px ilgo connected/paused teksto vaizdą bei enlargement. Pirmas FAIL, galutinė regresija ir UI įrodymai pridedami po pataisos.
+
+Status testas pirmiausia gavo `not_connected != api_verified`. Po pataisos isolated positive, pause, expired binding, fixture/uncertain netraukimo ir demand0 testas PASS. Tikras localhost po perkrovimo patvirtino Page api_verified, abi siuntimo galimybes išjungtas per master pause ir accepted real count4.
+
+Galutinė paveiktų Facebook/API/browser/audit/core/policy/Codex Lab rinkinių partija: **125 PASS,101.07s**, scoped Ruff PASS. Po istorinio resume reason pateikimo sutvarkymo pre-submit/post-permit resume patikra **2 PASS,2.50s**; pakartotiniai testai nepridedami kaip nauji unikalūs testai. Skills hash ir27 vietinės nuorodos PASS, du ankstesni privatūs kvitų taikiniai išlieka UNVERIFIED.
+
+Galutinio statuso UI patikra: actual localhost1365×900 ir320×900, Page verify patvirtintas, master/API/browser paused,4 siuntimai,0 realių poreikių, undefined audit teksto nebėra. Status rolė16px/24px system-ui, rgb82/98/119 ant balto fono, mobilus status241px pločio, document scrollWidth305≤320, clipping/overlap nerasta. Keyboard Control+plus bandymas nepakeitė devicePixelRatio/innerWidth, todėl tikras200% browser zoom **UNVERIFIED**, nepervadintas viewport patikra. Fontai/stiliai nekito; laikini viewport override atstatyti.
+
+Savininko vėlesniu pavedimu sukurtas [setup skill](../SKILLS/facebook-bot-setup/SKILL.md), [Meta connection reference](../SKILLS/facebook-bot-setup/references/meta-page-connection.md) ir [pilnas system entrypoint](../agent-business-core/FACEBOOK_SYSTEM.md). Skill/pakeisto acquisition frontmatter validacijos PASS; installer portable idempotency/preserved-copy testas1PASS. Actual naujas facebook-bot-setup įdiegtas kaip junction į own Git source; keturios jau esančios kitų core skills kopijos išlaikytos ir praneštos, neperrašytos. Active sesijos instrukcijos ir kitų PC įdiegimas nesikeičia automatiškai.
+
+Autoriaus praktinė instrukcijų peržiūra: naujas Page→API su minimaliais persisted scopes ir real verify; profilis/vaizdas→desktop/chooser, ne Page API; pending beID→moderation kvitas, ne išgalvotas visible; API timeout→lock/check, ne POST retry; expired pre-permit→reconcile/explicit resume, po permit resume draudžiamas; du PC su atskiromis DB→nėra bendro lock; like request→ši eilė nepalaiko, nevadinti comment reakcija. Tai paties autoriaus scenarijų pritaikymas ir source patikra, ne nepriklausomas kito AI bandymas ar papildomas live postas.
+
+`upgrade-e48965d5-9c0b-4de5-8239-5e4f9f40eeec`: privalomam extension handoff užsitęsus, nepradėtas image job lease baigėsi, original renew409 `facebook_stale_account_lease`. Actual composer teberodė nepaskelbtą tekstą; jokio submit permit / attempt / receipt nebuvo. Esamas normalus operator reconciliation→naujas explicit resume tai pačiai job→fresh epoch/token→vienas vėlesnis actual submit. Resume po bet kokio permit atmetamas, foreign job404, stale capability409, quota charge lieka1. Šių dviejų atvejų ir statuso testo partija **3 PASS,3.83s**, scoped Ruff PASS. Originalus expiry lieka reconciliation ir journal istorijoje.
+
+Ankstesni trys pre-execution host atmetimai lieka istorijoje be pateiktos konkrečios rizikos priežasties. Šiame tęsinyje normalūs master/API/browser HTTP policy veiksmai200; jokių DB approval overrides, kitos nišos kelio ar išorinio publikavimo už eilės.
+
+Main merge, produkcinis deployment ir24/7 autonomija nėra šio rankinio testo PASS.

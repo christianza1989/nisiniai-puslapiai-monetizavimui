@@ -57,3 +57,15 @@ Paruoštas naujos `Pinet Page Publisher` programos vedlys su `Manage everything 
 Po tikros minimalios Meta prieigos: privataus credential failo prijungimas → verify → įjungimas per įprastą leidžiamą master/API kelią → pirmas jau autorizuotas tekstas → vienas run-once → provider ID / GET / matomas FB rezultatas → pause. Ankstesnė hosto įjungimo klaida lieka atskira ir neapeinama kitu transportu. Jei ji pasikartoja, neįrašyti fiktyvaus live PASS.
 
 Upgrade IDs: `aeaa2ac8-6c85-47e3-81a7-6373e9a829b8` oficialiam Page transportui; `06e6ba33-e9fb-4262-9576-ed0531b68e1d` bendrai kvotai. [Runbook](../agent-business-core/FACEBOOK_PAGE_API.md) aprašo įjungimą, check-only ir scoped rollback.
+
+## Vėlesnis tikras prijungimas ir gyvas priėmimas
+
+Ankstesnis readiness / UNVERIFIED yra istorinis etapas, ne dabartinė jungties būsena. Savininkui tiesiogiai patvirtinus kūrimą, Terms / Developer Policies ir tik Lineage2ai.com Page, actual Meta UI sukurta Pinet Page Publisher. Naujos programos OAuth pradžioje Meta default apėmė10 Page; prieš bet kokį turinio/API veiksmą prieiga iš karto susiaurinta ir Save→reopen patikrinta: visi5 requested scope laukai pasirinkti tik Lineage2ai.com, kitų pasirinktų0 iš50 peržiūrėtų laukų. Kitų programų prieigos nekoreguotos. Tokia laikina pradinė apimtis nėra ignoruojama ar vadinama single-Page nuo pirmo žingsnio.
+
+`upgrade-e1174029-7ded-4c4a-9651-636c523aa141`: aktuali Meta UI permission yra pages_read_user_content. Anksčiau perrašytas dokumento pages_read_user_engagement literalas atmetė teisingai scoped jungtį; pirmas403 facebook_page_scopes_missing išsaugotas. Literal actual-scope testas ir visas API rinkinys po pataisos **31 PASS,12.91s**, Ruff PASS; reikalaujama teisė nepašalinta. Actual requested5: manage_posts, manage_engagement, read_engagement, read_user_content ir show_list su pages_ prefiksu.
+
+Actual server-side OAuth long-user exchange ir vienos autorizuotos Page accounts rezultatą pakeitė verified long-lived Page tokenas su expires_at0; tai nėra neatsišaukimo pažadas. Oficialaus Meta GET debug_token + /me proof turi bounded24h galiojimą ir neturi fixture flag. Privatus credential failas ignored ir WindowsACL apribotas savininkui / SYSTEM. Tokenai, app secret ir user tokenas neišvesti, DB jų nėra; exact app/browser/Graph identifikatoriai tik privatūs. App lieka Unpublished; toks own-Page testas nėra production App Review / kitų naudotojų prieigos priėmimas.
+
+Tikras HTTP verify200, normalus master/API/browser įjungimas200, vienas jau patvirtinto teksto Graph POST, provider ID patvariai saved, GET exact Page / body, published external_sending=true. Actual Facebook UI rodo tą patį tekstą ir Public. Ankstesnė blocked-by-policy priežastis liko nedetalizuota; šiame teisėtai susiaurintame tęsinyje atmetimas nepasikartojo. DB approval overrides ar vykdymo už eilės nėra.
+
+[Visas penkių užduočių gyvas testas](FACEBOOK_LIVE_TEST_2026-10-14.md) atskirai aprašo Page komentarą po moderavimo, profilio vaizdą / komentarą ir galutinį pause. API transporto actual PASS jau yra; main merge, production adoption ir24/7 scheduler lieka neprijungti.

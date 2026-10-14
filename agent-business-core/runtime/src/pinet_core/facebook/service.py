@@ -49,10 +49,28 @@ def view(row):
 
 async def policy(tx):
     row = await record(tx, "policy", "module")
+    module = ModulePolicy.model_validate(row.payload["policy"] if row else {}).model_dump()
+    api_row = await record(tx, "page_api_policy", "publishing")
+    browser_row = await record(tx, "browser_policy", "publishing")
+    bindings = (await tx.scalars(select(FacebookRecord).where(
+        FacebookRecord.kind.in_(["page_api_binding", "browser_binding"])))).all()
+    api_verified = any(b.kind == "page_api_binding" and b.state == "verified"
+        and not b.payload.get("fixture", True)
+        and datetime.fromisoformat(b.payload["valid_until"]) > utcnow() for b in bindings)
+    browser_verified = any(b.kind == "browser_binding" and b.payload.get("access") == "verified"
+        and b.payload.get("verification_scope") == "live"
+        and datetime.fromisoformat(b.payload["valid_until"]) > utcnow() for b in bindings)
+    def active(transport, verified):
+        value = transport.payload["policy"] if transport else {}
+        return bool(module["enabled"] and not module["paused"] and verified
+                    and value.get("enabled") and not value.get("paused"))
+    api_enabled, browser_enabled = active(api_row, api_verified), active(browser_row, browser_verified)
     return {"revision": row.revision if row else 0,
-            "policy": ModulePolicy.model_validate(row.payload["policy"] if row else {}).model_dump(),
-            "live": {"groups": "unverified_platform_permission", "page": "not_connected",
-                     "external_sending": False}}
+            "policy": module,
+            "live": {"groups": "unverified_platform_permission",
+                "page": "api_verified" if api_verified else "not_connected",
+                "page_api_enabled":api_enabled,"browser_enabled":browser_enabled,
+                "external_sending":api_enabled or browser_enabled}}
 
 
 async def require_enabled(tx):
@@ -293,7 +311,11 @@ async def import_fixture(tx, item, data):
 async def overview(tx):
     counts = dict((await tx.execute(select(FacebookRecord.kind, func.count()).group_by(
         FacebookRecord.kind))).all())
-    return {"counts": counts, "received_real_needs": 0, "sent_external_actions": 0,
+    accepted = await tx.scalar(select(func.count()).select_from(FacebookRecord).where(
+        FacebookRecord.kind.in_(["page_api_job","browser_post"]),
+        FacebookRecord.state.in_(["accepted","published","visible","pending_moderation"]),
+        FacebookRecord.payload["external_sending"].as_boolean().is_(True)))
+    return {"counts": counts, "received_real_needs": 0, "sent_external_actions": accepted,
             "note": "Signals and synthetic case fixtures are not received customer demand."}
 
 

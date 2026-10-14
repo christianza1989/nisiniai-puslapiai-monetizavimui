@@ -12,7 +12,7 @@ import httpx
 from ..config import settings
 from .browser_contracts import BlockInput, ClaimInput, DiscoveryResult, ReceiptInput, SubmitInput, TaskInput
 
-SCHEMAS = {"claim": ClaimInput, "check": ClaimInput, "renew": TaskInput, "submit-permit": SubmitInput,
+SCHEMAS = {"claim": ClaimInput, "check": ClaimInput, "resume": ClaimInput, "renew": TaskInput, "submit-permit": SubmitInput,
            "receipt": ReceiptInput, "block": BlockInput, "discovery-result": DiscoveryResult}
 
 

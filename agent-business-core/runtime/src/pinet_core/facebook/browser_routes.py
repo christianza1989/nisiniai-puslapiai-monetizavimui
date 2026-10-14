@@ -112,6 +112,13 @@ async def renew(site_id: str, ident: str, data: TaskInput):
         return await service.renew(tx, item, ident, data)
 
 
+@router.post("/internal/sites/{site_id}/facebook/browser/posts/{ident}/resume", dependencies=[Depends(worker_auth)])
+async def resume(site_id: str, ident: str, data: ClaimInput):
+    item = await business(site_id)
+    async with db.transaction(item.id, settings().environment) as tx:
+        return await service.resume(tx, item, ident, data)
+
+
 @router.post("/internal/sites/{site_id}/facebook/browser/posts/{ident}/check", dependencies=[Depends(worker_auth)])
 async def check(site_id: str, ident: str, data: ClaimInput):
     item = await business(site_id)

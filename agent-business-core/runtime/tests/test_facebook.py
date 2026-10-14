@@ -48,6 +48,31 @@ async def enable(client, site=SITE, enabled=True, paused=False, limit=20):
     return response.json()
 
 
+async def test_dashboard_reports_actual_transports_and_receipts(fb_client):
+    await enable(fb_client)
+    item = await business(SITE)
+    async with db.transaction(item.id, settings().environment) as tx:
+        fb.add(tx,item,"page_api_policy","publishing","configured",{"policy":{"enabled":True,"paused":False,"daily_write_limit":5}})
+        binding = fb.add(tx,item,"page_api_binding","synthetic-status","verified",{
+            "fixture":False,"valid_until":(utcnow()+timedelta(hours=1)).isoformat()})
+        for kind,state,real in [("page_api_job","published",True),("browser_post","pending_moderation",True),
+                ("browser_post","visible",False),("browser_post","uncertain",True)]:
+            fb.add(tx,item,kind,str(uuid4()),state,{"external_sending":real})
+        assert binding.state == "verified"
+    result = (await fb_client.get(base(),headers=headers())).json()
+    assert result["live"]["page"] == "api_verified"
+    assert result["live"]["page_api_enabled"] is True
+    assert result["overview"]["sent_external_actions"] == 2
+    assert result["overview"]["received_real_needs"] == 0
+    paused = await enable(fb_client,paused=True)
+    assert paused["live"]["page"] == "api_verified"
+    assert paused["live"]["page_api_enabled"] is False
+    async with db.transaction(item.id,settings().environment) as tx:
+        binding=await fb.record(tx,"page_api_binding","synthetic-status")
+        binding.payload={**binding.payload,"valid_until":(utcnow()-timedelta(seconds=1)).isoformat()}
+    assert (await fb_client.get(base(),headers=headers())).json()["live"]["page"] == "not_connected"
+
+
 async def seed(client, site=SITE, reuse="unknown", role="buyer", data_class="anonymous"):
     await enable(client, site)
     group = {"key": "qa-group", "name": "Anonymous QA group metadata",

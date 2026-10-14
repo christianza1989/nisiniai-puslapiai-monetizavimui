@@ -169,6 +169,7 @@ class ReceiptInput(TaskInput):
     permalink: str = Field(default="", max_length=600)
     evidence: str = Field(min_length=10, max_length=1500)
     provider_comment_id: str = Field(default="", max_length=160, pattern=r"^[a-zA-Z0-9_-]*$")
+    moderation_notice: Literal["", "facebook_admin_review"] = ""
 
 
 class BlockInput(TaskInput):

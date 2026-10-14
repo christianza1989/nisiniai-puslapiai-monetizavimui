@@ -437,3 +437,13 @@ async def test_browser_limit_includes_completed_api_attempts(fb_client, meta):
     assert response.status_code == 200
     await desktop_queue(fb_client)
     assert (await desktop_claim(fb_client)).json()["state"] == "limited"
+
+
+async def test_actual_meta_permission_name_is_accepted(fb_client, meta):
+    # Literal observed on Meta's Pages use-case panel, not copied from the implementation constant.
+    meta.scopes = ["pages_manage_posts", "pages_manage_engagement", "pages_read_engagement",
+                   "pages_read_user_content"]
+    response = await fb_client.post(endpoint() + "/verify", headers=headers(),
+                                   json={"credential_key": "owned-page"})
+    assert response.status_code == 200, response.text
+    assert response.json()["actions"] == ["comment", "photo", "post", "reply"]

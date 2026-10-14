@@ -17,8 +17,8 @@ from .contracts import Strict
 
 GRAPH = "https://graph.facebook.com/v26.0/"
 POST_SCOPES = {"pages_manage_posts", "pages_manage_engagement", "pages_read_engagement",
-               "pages_read_user_engagement"}
-COMMENT_SCOPES = {"pages_manage_engagement", "pages_read_engagement", "pages_read_user_engagement"}
+               "pages_read_user_content"}
+COMMENT_SCOPES = {"pages_manage_engagement", "pages_read_engagement", "pages_read_user_content"}
 SCOPES = {"post": POST_SCOPES, "photo": POST_SCOPES, "comment": COMMENT_SCOPES, "reply": COMMENT_SCOPES}
 
 

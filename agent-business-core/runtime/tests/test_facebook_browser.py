@@ -67,6 +67,43 @@ def observation(packet, **changes):
             "tab_id": "actual-test-tab", "observed_at": utcnow().isoformat(), **changes}
 
 
+@pytest.mark.parametrize("had_permit", [False, True])
+async def test_explicit_resume_only_before_any_submit_permit(fb_client, had_permit):
+    await setup(fb_client)
+    await queue(fb_client)
+    packet = (await claim(fb_client)).json()
+    path = endpoint(internal=True) + f'/posts/{packet["job_id"]}/resume'
+    body = {"owner":"explicit-resume-owner","seconds":240}
+    assert (await fb_client.post(path,headers=headers(True),json=body)).status_code == 409
+    if had_permit:
+        assert (await command(fb_client,packet,"submit-permit",{"observation":observation(packet)})).status_code == 200
+    item = await business(SITE)
+    async with db.transaction(item.id,settings().environment) as tx:
+        job = await fb.by_id(tx,"browser_post",packet["job_id"])
+        job.payload = {**job.payload,"lease_until":(utcnow()-timedelta(seconds=1)).isoformat()}
+    assert (await fb_client.get(endpoint(),headers=headers())).json()["posts"][0]["state"] == "uncertain"
+    # Rotating check-only capability must preserve the original quota charge.
+    checked = await fb_client.post(endpoint(internal=True)+f'/posts/{packet["job_id"]}/check',
+        headers=headers(True),json={"owner":"check-only-resume-proof"})
+    assert checked.status_code == 200
+    current = (await fb_client.get(endpoint(),headers=headers())).json()["posts"][0]
+    proof = {"base_revision":current["revision"],"outcome":"not_published",
+        "evidence":"Synthetic check-only evidence confirms no fixture post was created; no real provider or browser action."}
+    assert (await fb_client.post(endpoint()+f'/posts/{packet["job_id"]}/reconcile',headers=headers(),json=proof)).status_code == 200
+    assert (await fb_client.post(path.replace(SITE,OTHER),headers=headers(True),json=body)).status_code == 404
+    resumed = await fb_client.post(path,headers=headers(True),json=body)
+    if had_permit:
+        assert resumed.status_code == 409
+    else:
+        assert resumed.status_code == 200, resumed.text
+        updated = resumed.json()
+        assert updated["task_token"] != packet["task_token"] and updated["epoch"] > packet["epoch"]
+        assert (await command(fb_client,packet,"submit-permit",{"observation":observation(packet)})).status_code == 409
+        assert (await command(fb_client,updated,"submit-permit",{"observation":observation(updated)})).status_code == 200
+    async with db.transaction(item.id,settings().environment) as tx:
+        assert len(await fb.listing(tx,"browser_attempt")) == 1
+
+
 async def command(client, packet, operation, payload=None, site=SITE):
     return await client.post(endpoint(site, True) + f'/posts/{packet["job_id"]}/{operation}',
                              headers=headers(True), json={**task(packet), **(payload or {})})

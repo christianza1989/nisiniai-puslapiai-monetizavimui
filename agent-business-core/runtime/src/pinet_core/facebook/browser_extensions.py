@@ -97,6 +97,13 @@ def comment_receipt(job, data):
     target = urlparse(job.payload["target_url"])
     link = urlparse(data.permalink)
     parent_id = target.path.rstrip("/").rsplit("/", 1)[-1]
+    if (data.status == "pending_moderation" and not data.provider_comment_id
+            and data.moderation_notice == "facebook_admin_review"
+            and target.path.startswith("/groups/") and data.provider_post_id == parent_id
+            and data.permalink == job.payload["target_url"]):
+        # Facebook can acknowledge first-comment admin review without exposing an ID.
+        # This stores known moderation, never visibility or permission to resend.
+        return
     if (not data.provider_comment_id or data.provider_post_id != parent_id
             or link.scheme != target.scheme or link.hostname != target.hostname or link.port
             or link.username or link.password or link.fragment

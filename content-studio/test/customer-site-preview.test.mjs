@@ -3,9 +3,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,mkdir,readFile,writeFile,rm,lstat} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
 import os from 'node:os';
 import path from 'node:path';
-import {previewSource,previewEnvironment,previewDependencies,previewBuildDigest,previewProcess} from '../scripts/customer-site-preview.mjs';
+import {previewSource,previewEnvironment,previewDependencies,previewBuildDigest,previewProcess,previewAdmission,previewImportedRelease} from '../scripts/customer-site-preview.mjs';
 const site='creation-'+'a'.repeat(32);
 const git=(root,args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],windowsHide:true}).trim();
 async function temporary(t){
@@ -56,6 +57,22 @@ test('compiled artifact digest detects changed or missing build bytes',async t=>
   const root=await temporary(t);await mkdir(path.join(root,'dist/server'),{recursive:true});await writeFile(path.join(root,'dist/server/index.js'),'synthetic original');
   const before=await previewBuildDigest(root);assert.equal(before.files,1);await writeFile(path.join(root,'dist/server/index.js'),'synthetic changed');assert.notEqual((await previewBuildDigest(root)).sha256,before.sha256);
   await rm(path.join(root,'dist/server/index.js'));await assert.rejects(previewBuildDigest(root),/build_changed/);
+});
+
+test('partial build retry preserves exact local admission bytes and rejects a foreign package without overwrite',async t=>{
+  const root=await temporary(t),file=path.join(root,'local-admission.json'),pkg={siteId:site,canonicalHost:'foundation.example'},sha='b'.repeat(64);
+  const first=await previewAdmission(file,pkg,sha),bytes=await readFile(file);
+  assert.equal(await previewAdmission(file,pkg,sha),first);assert.deepEqual(await readFile(file),bytes);
+  await assert.rejects(previewAdmission(file,pkg,'c'.repeat(64)),/admission_changed/);assert.deepEqual(await readFile(file),bytes);
+});
+
+test('partial imported release retry requires exact package, activation and asset bytes',async t=>{
+  const root=await temporary(t),pkg={siteId:site},bytes=Buffer.from('{"synthetic":true}'),admission=path.join(root,'admission.json'),folder=path.join(root,'content-packages',site),asset=Buffer.from('synthetic protocol bytes'),assetHashes={'fixture.webp':createHash('sha256').update(asset).digest('hex')};
+  await writeFile(admission,'synthetic exact local admission');assert.equal(await previewImportedRelease(root,pkg,bytes,assetHashes,admission),false);
+  await mkdir(path.join(folder,'assets'),{recursive:true});await writeFile(path.join(folder,'content-package.json'),bytes);await writeFile(path.join(folder,'activation.json'),await readFile(admission));await writeFile(path.join(folder,'assets/fixture.webp'),asset);
+  assert.equal(await previewImportedRelease(root,pkg,bytes,assetHashes,admission),true);
+  await writeFile(path.join(folder,'assets/fixture.webp'),'changed');await assert.rejects(previewImportedRelease(root,pkg,bytes,assetHashes,admission),/release_changed/);await writeFile(path.join(folder,'assets/fixture.webp'),asset);
+  await writeFile(path.join(folder,'activation.json'),'changed');await assert.rejects(previewImportedRelease(root,pkg,bytes,assetHashes,admission),/release_changed/);
 });
 
 test('successful fixed compiler exits, timeout and parent disconnect stop only owned processes',async t=>{

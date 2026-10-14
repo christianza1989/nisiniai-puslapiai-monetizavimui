@@ -117,6 +117,31 @@ export async function previewBuildDigest(checkout){
   return {sha256:digest(entries),files:entries.length,bytes:size};
 }
 
+export async function previewAdmission(file,pkg,packageSha256){
+  const binding={schemaVersion:1,scope:'local-preview',testOnly:true,siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,
+    renderer:'niche',packageSha256,reviewer:'native-local-preview-producer'};
+  let raw;
+  try{raw=await readArtifactBytes(file,16384);}catch(error){if(error.code!=='ENOENT')throw error;
+    const value={...binding,acceptedAt:new Date().toISOString()};raw=Buffer.from(JSON.stringify(value)+'\n');await writeFile(file,raw,{flag:'wx'});
+  }
+  const value=JSON.parse(raw),{acceptedAt,...actual}=value;
+  if(stableV2(actual)!==stableV2(binding)||!Number.isFinite(Date.parse(acceptedAt))||Date.parse(acceptedAt)>Date.now())fail('foundation_preview_admission_changed');
+  return hash(raw);
+}
+
+export async function previewImportedRelease(checkout,pkg,packageBytes,assetHashes,admissionFile){
+  if(!/^creation-[a-f0-9]{32}$/.test(pkg.siteId))fail('foundation_preview_site_invalid');
+  const folder=path.join(checkout,'content-packages',pkg.siteId);
+  let imported;
+  try{imported=await readArtifactBytes(path.join(folder,'content-package.json'),5*1048576);}catch(error){if(error.code==='ENOENT')return false;throw error;}
+  await assertArtifactDirectories(checkout,path.join(folder,'assets'));
+  if(!imported.equals(packageBytes)||!(await readArtifactBytes(path.join(folder,'activation.json'),16384)).equals(await readArtifactBytes(admissionFile,16384)))fail('foundation_preview_release_changed');
+  for(const [name,expected]of Object.entries(assetHashes)){
+    if(path.basename(name)!==name||!/^[a-zA-Z0-9._-]+\.(webp|avif)$/.test(name)||hash(await readArtifactBytes(path.join(folder,'assets',name),8*1048576))!==expected)fail('foundation_preview_release_changed');
+  }
+  return true;
+}
+
 export async function prepareCustomerSitePreview(context,scope,release){
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR,source=scope.sources.public_source_revision;
   if(typeof publicCore!=='string')fail('foundation_preview_source_unavailable');
@@ -145,11 +170,10 @@ export async function prepareCustomerSitePreview(context,scope,release){
     let saved=null;try{saved=JSON.parse(await readArtifactBytes(buildRecord,16384));}catch(error){if(error.code!=='ENOENT')throw error;}
     if(saved&&(stableV2(saved.binding)!==stableV2(expected)||stableV2(saved.build)!==stableV2(await previewBuildDigest(checkout))))fail('foundation_preview_build_changed');
     if(!saved){
-      const admission={schemaVersion:1,scope:'local-preview',testOnly:true,siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,
-        renderer:'niche',packageSha256:hash(packageBytes),acceptedAt:new Date().toISOString(),reviewer:'native-local-preview-producer'};
-      const admissionFile=path.join(parent,'local-admission.json');await writeFile(admissionFile,JSON.stringify(admission)+'\n',{flag:'wx'});
+      const admissionFile=path.join(parent,'local-admission.json');await previewAdmission(admissionFile,pkg,hash(packageBytes));
       const log=path.join(parent,'build.private.log');
-      for(const [mode,args]of [['import',[native,admissionFile]],['compile',[]],['build',[]]]){
+      const imported=await previewImportedRelease(checkout,pkg,packageBytes,release.evidence.asset_sha256,admissionFile);
+      for(const [mode,args]of [...(imported?[]:[['import',[native,admissionFile]]]),['compile',[]],['build',[]]]){
         const run=previewProcess(checkout,mode,args,pkg.siteId,log);try{await run.done;}finally{await run.close();}
         await previewSource(checkout,source);
       }

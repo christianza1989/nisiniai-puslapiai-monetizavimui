@@ -189,9 +189,9 @@ async function localCompletion(context,scope,release,directory,usingPrepared=fal
     if(preview&&(preview.version!==2||preview.transportHost!=='origin'))fail('foundation_preview_binding_invalid');
     const prepared=await prepareCustomerSitePreview(context,scope,release);
     return withCustomerSitePreview(prepared,async started=>{
+      if(!produced)await writeFile(markerPath,JSON.stringify(marker)+'\n',{flag:'wx'});
       if(preview){if(stableV2(started)!==stableV2(preview))fail('foundation_preview_binding_invalid');}
       else await writeFile(path.join(directory,'preview.json'),JSON.stringify(started)+'\n',{flag:'wx'});
-      if(!produced)await writeFile(markerPath,JSON.stringify(marker)+'\n',{flag:'wx'});
       return localCompletion(context,scope,release,directory,true);
     },retainedOrigin);
   }

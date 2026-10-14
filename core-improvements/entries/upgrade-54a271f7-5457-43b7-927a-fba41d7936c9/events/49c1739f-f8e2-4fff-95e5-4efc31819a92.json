@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "After a separate tiny authorized6.1-sol/high CLI diagnosis succeeded on cleana9, one native S4 recovery witness ran on cleanf354f0cba2955f3e641c76d426a030bdafb85908 with the existing allowed180s bound (earlier trials used120s). Actual one plan succeeded, saved one native Agent/Config draft, current directory/events and exact retained UUID replay passed; originalpreview before/after schema/counts equal. Known usage13394input/1206output/208reasoning, monetary costUNVERIFIED. Two previous53c provider_error/run_timeout receipts remain failures with unknown cost; no single-cause inference from changed timeout/recovered provider/new source. This is a synthetic native legacy Creation/Registration/Profile fixture, not original-account UI, new BuildApproval Foundation, calibration, activation or channel acceptance.",
+  "checks": [
+    {
+      "command": "git-freshness phase continue with companion -- actual-agent-preparation-recovery.private.py f354f0cba2955f3e641c76d426a030bdafb85908",
+      "result": "PASS",
+      "evidence": "Private receipt actual-agent-preparation-20261014T100722Z: one actual gpt-6.1-sol/high plan, native Task succeeded, Agent1/Config1 draft, directory total1 and bound IDs, owner+coordinator events2, same request UUID no redispatch, restricted-role/API admin absent, original before==after. No channels/calibration/global source adoption."
+    }
+  ],
+  "eventId": "49c1739f-f8e2-4fff-95e5-4efc31819a92",
+  "sequence": 6,
+  "at": "2026-10-14T10:31:19.163Z"
+}

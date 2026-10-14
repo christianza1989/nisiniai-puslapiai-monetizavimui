@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Canonical current_actor reuses cached User.enabled after a concurrent disable, failing to observe current actor revocation",
+  "evidence": [
+    "Peer read-only S5 review reproduced risk recipe; root real restricted PG test_current_actor_pg atf354 captured User.enabled=True, external admin disabled owner, second current_actor did not raise401:1FAIL/1PASS7.88s. Session revocation case already passed. Original sanitized log foundation-receipts-cached-actor-before.log retained."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/service.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped function revert only; immutable receipts, accepted source/history, quota and permissions untouched. Keep first failure and rerun current actor/Foundation/native creation-team regression after any revert.",
+  "id": "upgrade-a576663f-1810-491d-a602-dbdfb11e51cc",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "f354f0cba2955f3e641c76d426a030bdafb85908",
+  "createdAt": "2026-10-14T10:28:19.835Z"
+}

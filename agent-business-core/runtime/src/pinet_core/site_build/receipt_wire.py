@@ -18,7 +18,7 @@ class Strict(BaseModel):
 class Check(Strict):
     accepted_revision: int = Field(ge=1, le=20)
     command: Literal["candidate", "verify-local"]
-    idempotency_key: UUID
+    idempotency_key: UUID = Field(strict=False)
 
 
 class ReceiptView(Strict):

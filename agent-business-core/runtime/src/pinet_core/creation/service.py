@@ -57,9 +57,17 @@ async def current_actor(tx, session, portfolio_id=None, *, lock=False):
     statement = select(User).where(User.id == session.user_id)
     if lock:
         statement = statement.with_for_update()
-    user = await tx.scalar(statement)
-    await tx.refresh(session, with_for_update={"read": True} if lock else None)
-    if not user or not user.enabled or session.revoked_at or session.expires_at <= utcnow():
+    user = await tx.scalar(statement.execution_options(populate_existing=True))
+    if not user or not user.enabled:
+        raise ControlError(401, "unauthenticated")
+    # Current authority is a fresh SQL observation, not an ORM identity-map value.
+    # A revoked/hidden Session must become the native401 before refreshing children.
+    statement = select(Session).where(Session.id == session.id, Session.user_id == user.id,
+        Session.environment_id == settings().environment)
+    if lock:
+        statement = statement.with_for_update(read=True)
+    current_session = await tx.scalar(statement.execution_options(populate_existing=True))
+    if not current_session or current_session.revoked_at or current_session.expires_at <= utcnow():
         raise ControlError(401, "unauthenticated")
     account = await tx.scalar(select(Account).where(Account.user_id == user.id, Account.verified_at.is_not(None)))
     if not account:

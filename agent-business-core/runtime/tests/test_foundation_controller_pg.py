@@ -3,7 +3,6 @@ import asyncio
 import json
 from uuid import uuid4
 
-import pytest
 from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_site_build import build as build_fixture

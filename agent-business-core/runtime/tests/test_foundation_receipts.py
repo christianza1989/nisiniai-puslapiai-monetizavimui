@@ -37,6 +37,14 @@ def test_replay_material_covers_creation_revision_command_and_uuid():
     assert request_fingerprint(str(uuid4()), value) != expected
 
 
+def test_native_http_decoded_uuid_is_accepted_without_coercing_revision_or_command():
+    value = {"accepted_revision": 1, "command": "candidate", "idempotency_key": str(uuid4())}
+    assert str(Check.model_validate(value).idempotency_key) == value["idempotency_key"]
+    for changed in ({"accepted_revision": "1"}, {"accepted_revision": True}, {"idempotency_key": 1}):
+        with pytest.raises(ValidationError):
+            Check.model_validate({**value, **changed})
+
+
 def receipt():
     return {"receipt_id": str(uuid4()), "idempotency_key": str(uuid4()), "command": "candidate",
         "creation_id": str(uuid4()), "accepted_revision": 1,

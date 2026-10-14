@@ -3,6 +3,9 @@ import {createHash} from 'node:crypto';
 import {spawn,execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {request as httpRequest} from 'node:http';
+import {request as httpsRequest} from 'node:https';
+import {gunzipSync,inflateSync,brotliDecompressSync} from 'node:zlib';
 import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
@@ -14,6 +17,36 @@ export function completionTransportHost(origin,canonicalHost,args=[]){
   if(mode!==null&&mode!=='origin')throw Error('Unsupported --loopback-host mode.');
   if(mode==='origin'&&(!isLoopback(origin)||origin.protocol!=='http:'||!origin.port))throw Error('Origin Host transport requires an explicit HTTP loopback port.');
   return mode==='origin'?origin.host:isLoopback(origin)?canonicalHost:null;
+}
+export async function requestCompletion(url,transportHost,{maxBytes=8*1024*1024,timeoutMs=20000,probeOnly=false}={}){
+  const target=new URL(url),signal=AbortSignal.timeout(timeoutMs);
+  if(transportHost===null){
+    const response=await fetch(target,{redirect:'manual',signal,headers:{'Cache-Control':'no-cache'}});
+    if(Number(response.headers.get('content-length')||0)>maxBytes){await response.body?.cancel();throw Error('Response exceeds bounded inspector size.');}
+    if(probeOnly){await response.body?.cancel();return {status:response.status,headers:response.headers,data:Buffer.alloc(0)};}
+    const chunks=[];let size=0;
+    for await(const chunk of response.body||[]){size+=chunk.length;if(size>maxBytes)throw Error('Response exceeds bounded inspector size.');chunks.push(chunk);}
+    return {status:response.status,headers:response.headers,data:Buffer.concat(chunks)};
+  }
+  // Native fetch strips Host on supported Node versions. Override it only for
+  // loopback transport; hosted HTTPS retains fetch's normal TLS/Host behavior.
+  if(!isLoopback(target)||!['http:','https:'].includes(target.protocol)||typeof transportHost!=='string'||!/^[a-zA-Z0-9.:[\]-]+$/.test(transportHost))throw Error('Invalid loopback inspector Host.');
+  return new Promise((resolve,reject)=>{
+    const request=(target.protocol==='https:'?httpsRequest:httpRequest)(target,{method:'GET',agent:false,signal,
+      headers:{Host:transportHost,'Cache-Control':'no-cache','Accept-Encoding':'identity'}},response=>{
+      const headers=new Headers();for(let i=0;i<response.rawHeaders.length;i+=2)headers.append(response.rawHeaders[i],response.rawHeaders[i+1]);
+      if(Number(headers.get('content-length')||0)>maxBytes){request.destroy(Error('Response exceeds bounded inspector size.'));return;}
+      if(probeOnly){resolve({status:response.statusCode,headers,data:Buffer.alloc(0)});response.destroy();return;}
+      const chunks=[];let size=0;response.on('error',reject);
+      response.on('data',chunk=>{size+=chunk.length;if(size>maxBytes)request.destroy(Error('Response exceeds bounded inspector size.'));else chunks.push(chunk);});
+      response.on('end',()=>{try{
+        let data=Buffer.concat(chunks);const encoding=headers.get('content-encoding')?.toLowerCase();
+        const decode={gzip:gunzipSync,deflate:inflateSync,br:brotliDecompressSync}[encoding];
+        if(decode)data=decode(data,{maxOutputLength:maxBytes});else if(encoding&&encoding!=='identity')throw Error('Unsupported inspector content encoding.');
+        resolve({status:response.statusCode,headers,data});
+      }catch(error){reject(error);}});
+    });request.on('error',reject);request.end();
+  });
 }
 const urlFor=(pkg,p)=>new URL('/'+p.slug,'https://'+pkg.canonicalHost).href;
 const urlsIn=text=>new Set((text.match(/https?:\/\/[^\s<>\[\]()"']+/g)||[]).map(u=>u.replace(/&amp;/g,'&').split('#')[0]));
@@ -90,9 +123,8 @@ export async function verifySiteCompletion(args){
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
   const get=async pathname=>{
-    const response=await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(transportHost?{Host:transportHost}:{})}});
-    const data=Buffer.from(await response.arrayBuffer());
-    if(data.length>8*1024*1024)throw Error('Response exceeds bounded inspector size: '+pathname);
+    const response=await requestCompletion(new URL(pathname,origin),transportHost);
+    const data=response.data;
     const receipt={path:pathname,status:response.status,contentType:response.headers.get('content-type')||'',sha256:sha(data)};
     const header=arg('--package-header',args);if(header&&response.headers.get(header)!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);
     http.push(receipt);return {...receipt,html:data.toString('utf8')};

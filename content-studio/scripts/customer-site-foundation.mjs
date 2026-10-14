@@ -8,7 +8,7 @@ import {loadCustomerContentContext,assertArtifactDirectories,readArtifactBytes} 
 import {customerContentWorkflow} from './customer-content-workflow.mjs';
 import {stableV2,validateV2Package} from '../src/content-package-v2.mjs';
 import {verifyContentRelease} from '../src/content-release.mjs';
-import {verifySiteCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-site-completion.mjs';
+import {verifySiteCompletion,requestCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-site-completion.mjs';
 
 const ROOT=path.resolve(import.meta.dirname,'../..'),VERSION='native-foundation-evidence.v1';
 const VERIFIER=path.join(ROOT,'SKILLS/niche-site-audit/scripts/verify-site-completion.mjs');
@@ -164,9 +164,7 @@ async function reviews(directory,scope,release){
   return sha(raw);
 }
 async function renderer(origin,scope,release,originHost=false){
-  const response=await fetch(origin+'/',{redirect:'manual',signal:AbortSignal.timeout(10000),headers:{Host:originHost?new URL(origin).host:scope.accepted.canonical_host,'Cache-Control':'no-cache'}});
-  const size=Number(response.headers.get('content-length')||0);if(size>1000000)fail('foundation_renderer_unbound');
-  await response.body?.cancel();
+  const response=await requestCompletion(origin+'/',originHost?new URL(origin).host:scope.accepted.canonical_host,{maxBytes:1000000,timeoutMs:10000,probeOnly:true});
   if(response.status!==200||response.headers.get('x-niche-package-sha256')!==release.package_sha256
       ||response.headers.get('x-niche-source-revision')!==scope.sources.public_source_revision)fail('foundation_renderer_unbound');
 }

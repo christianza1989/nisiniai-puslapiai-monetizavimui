@@ -1,5 +1,11 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Active headless pipeline instruction — 2026-10-14
+
+The owner explicitly requested direct end-to-end API testing and continuous stage/error logging instead of more UI-driven trials. Root owns S11: a thin loopback HTTP client using normal synthetic customer authentication, persisted exact idempotency keys and the maintained Discovery → reviewed approval → Creation → GUIDE → Foundation contracts. Existing workers remain the only executors. The client must stop on a real failure or missing gate, preserve the first failure and expose which stage/role failed; it must never fabricate a plan, quality approval or successful Foundation.
+
+Actual current isolated ordinary trial has three charged creator attempts: one clarification reply and two subsequent timeouts (300s and 420s). No critic/coordinator, Creation or GUIDE execution occurred. The original API18870/schema0032 is retained; UI3027/API18871 serves isolated source08e9efb9 and schema0039. Longer waiting did not repair the fault. Canonical CLI stderr currently disappears on partial failure; root repairs private bounded diagnostics and numeric execution observations before another normal trial. Current source51d096da incorporates fetched main808581d9/public1a26f289; running08e9 retains its own historical snapshot. Peer01a13440 owns one separately accounted no-web diagnostic after its own freshness integration. Whole local platform remains OPEN.
+
 ## Current platform continuation — 2026-10-14
 
 **Whole local platform OPEN; accepted UI and bounded integration packages are complete.** The owner explicitly accepted the workspace UI and authorized team integration, then requested a safe pause and now resumed platform work. Root owns workspace/API/native controller integration; authorized peer01a13440 owns separately reserved core checks. Revoked01a133c2 remains excluded. The separate homepage task owns public homepage work.

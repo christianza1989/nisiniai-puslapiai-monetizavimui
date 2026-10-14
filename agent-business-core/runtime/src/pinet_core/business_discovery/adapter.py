@@ -101,10 +101,15 @@ async def run_role(context, authorized, *, role, seconds):
     if role != "creator":
         output_schema["properties"]["candidate_sha256"] = {"type": "string", "enum": [context["candidate_sha256"]]}
     schema.write_text(json.dumps(output_schema), encoding="utf-8")
+    inputs = {"role": role, "model": model, "reasoning_effort": profile["reasoning_effort"],
+              "instruction_hash": pin, "prompt_bytes": len(prompt.encode()),
+              "context_bytes": len(json.dumps(context, ensure_ascii=False).encode()),
+              "output_schema_sha256": hashlib.sha256(json.dumps(output_schema, sort_keys=True).encode()).hexdigest()}
+    (folder / "input.private.json").write_text(json.dumps(inputs), encoding="utf-8")
     permitted = context.get("permitted_web_actions", 0)
     web = role == "creator" and settings().creation_web_search_enabled and (permitted is None or permitted > 0)
     trace = shared.Trace(web, permitted)
-    receipt = {}
+    receipt = dict(inputs)
     try:
         remaining_seconds = deadlines.role_seconds(name, role, seconds) - (monotonic() - started)
         if remaining_seconds <= 0:
@@ -114,8 +119,10 @@ async def run_role(context, authorized, *, role, seconds):
             output=output, seconds=remaining_seconds,
             still_authorized=authorized, parse_trace=trace.parse, on_event=trace.event,
             stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl",
-            partial_receipt=trace.partial_receipt)
+            partial_receipt=trace.partial_receipt, stderr_file=folder / "stderr.private.log",
+            observation_file=folder / "execution.private.json")
         value = schema_model.model_validate(result)
+        receipt.update(inputs)
         if role == "creator":
             check_tools(value, context["capabilities"])
         elif value.candidate_sha256 != context["candidate_sha256"]:
@@ -126,7 +133,7 @@ async def run_role(context, authorized, *, role, seconds):
         return value.model_dump(mode="json"), receipt
     except (RunnerError, ValueError) as error:
         code = error.code if isinstance(error, RunnerError) else "output_invalid"
-        receipt = {**receipt, **(getattr(error, "receipt", None) or {}), "instruction_hash": pin,
+        receipt = {**inputs, **receipt, **(getattr(error, "receipt", None) or {}), "instruction_hash": pin,
                    "model": model, "reasoning_effort": profile["reasoning_effort"], "adapter_revision": "codex-business-discovery.v1"}
         (folder / "failure.private.json").write_text(json.dumps(
             {"code": code, "receipt": receipt}, ensure_ascii=False, default=str), encoding="utf-8")

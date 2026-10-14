@@ -384,7 +384,8 @@ async def run_role(context, still_authorized, *, role, seconds):
             prompt=prompt, cwd=folder, env=child_environment(), output=output, seconds=remaining_seconds,
             still_authorized=still_authorized, parse_trace=trace.parse, on_event=trace.event,
             stdout_limit=1048576, output_limit=262144, trace_file=folder / "trace.private.jsonl",
-            partial_receipt=trace.partial_receipt)
+            partial_receipt=trace.partial_receipt, stderr_file=folder / "stderr.private.log",
+            observation_file=folder / "execution.private.json")
         receipt["instruction_hash"], receipt["adapter_revision"], receipt["model"] = instruction_hash, "codex-business-team.v1", model
         receipt["reasoning_effort"] = profile["reasoning_effort"]
         receipt["prompt_bytes"], receipt["context_bytes"] = len(prompt.encode()), len(json.dumps(context, ensure_ascii=False).encode())

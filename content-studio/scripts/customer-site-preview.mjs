@@ -185,8 +185,24 @@ export async function prepareCustomerSitePreview(context,scope,release){
     if(stableV2(await previewDependencies(publicCore,checkout))!==stableV2(dependencies))fail('foundation_preview_dependencies_changed');
     await previewSource(publicCore,source);await previewSource(checkout,source);
     if(hash(await readArtifactBytes(path.join(native,'content-package.json'),5*1048576))!==hash(packageBytes))fail('foundation_preview_release_changed');
-    return {checkout,parent,scopeSha256:scopeSha,packageSha256:hash(packageBytes),publicSourceRevision:source,siteId:pkg.siteId,releaseId:release.evidence.release_id};
+    return {checkout,parent,scopeSha256:scopeSha,packageSha256:hash(packageBytes),publicSourceRevision:source,siteId:pkg.siteId,releaseId:release.evidence.release_id,buildSha256:hash(await readArtifactBytes(buildRecord,16384))};
   }finally{await lock.close();await unlink(path.join(parent,'operation.lock'));}
+}
+
+export async function checkCustomerSitePreview(context,scope,release,buildSha256){
+  const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR,source=scope.sources.public_source_revision;
+  if(typeof publicCore!=='string'||!/^[a-f0-9]{64}$/.test(buildSha256))fail('foundation_preview_build_changed');
+  const scopeSha=digest(scope),parent=path.join(publicCore,'output/foundation-preview',scopeSha),checkout=path.join(parent,'repo');
+  await assertArtifactDirectories(publicCore,checkout);await previewSource(publicCore,source);await previewSource(checkout,source);
+  const owner={version:1,scopeSha256:scopeSha,packageSha256:release.evidence.package_sha256,releaseId:release.evidence.release_id,publicSourceRevision:source,nativeContextSha256:hash(context.directory)};
+  if(stableV2(JSON.parse(await readArtifactBytes(path.join(parent,'owner.json'),16384)))!==stableV2(owner))fail('foundation_preview_foreign_checkout');
+  const buildRaw=await readArtifactBytes(path.join(parent,'build.json'),16384);
+  if(hash(buildRaw)!==buildSha256)fail('foundation_preview_build_changed');
+  const expected={binding:{...owner,dependencies:await previewDependencies(publicCore,checkout)},build:await previewBuildDigest(checkout)};
+  if(stableV2(JSON.parse(buildRaw))!==stableV2(expected))fail('foundation_preview_build_changed');
+  const packageBytes=await readArtifactBytes(path.join(release.directory,'content-package.json'),5*1048576),pkg=JSON.parse(packageBytes);
+  if(hash(packageBytes)!==release.evidence.package_sha256||!await previewImportedRelease(checkout,pkg,packageBytes,release.evidence.asset_sha256,path.join(parent,'local-admission.json')))fail('foundation_preview_release_changed');
+  return {state:'retained-current',buildSha256};
 }
 
 async function availablePort(wanted=0){
@@ -197,7 +213,7 @@ async function availablePort(wanted=0){
 export async function withCustomerSitePreview(prepared,operation,retainedOrigin=null){
   await previewSource(prepared.checkout,prepared.publicSourceRevision);
   const saved=JSON.parse(await readArtifactBytes(path.join(prepared.parent,'build.json'),16384));
-  if(saved.binding.scopeSha256!==prepared.scopeSha256||saved.binding.packageSha256!==prepared.packageSha256
+  if(hash(await readArtifactBytes(path.join(prepared.parent,'build.json'),16384))!==prepared.buildSha256||saved.binding.scopeSha256!==prepared.scopeSha256||saved.binding.packageSha256!==prepared.packageSha256
       ||stableV2(saved.build)!==stableV2(await previewBuildDigest(prepared.checkout)))fail('foundation_preview_build_changed');
   let wanted=0;
   if(retainedOrigin!==null){const url=new URL(retainedOrigin);if(url.protocol!=='http:'||url.hostname!=='127.0.0.1'||!url.port||url.origin!==retainedOrigin)fail('foundation_preview_origin_invalid');wanted=Number(url.port);}

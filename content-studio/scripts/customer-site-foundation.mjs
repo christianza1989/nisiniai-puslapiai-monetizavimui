@@ -9,7 +9,7 @@ import {customerContentWorkflow} from './customer-content-workflow.mjs';
 import {stableV2,validateV2Package} from '../src/content-package-v2.mjs';
 import {verifyContentRelease} from '../src/content-release.mjs';
 import {verifySiteCompletion,requestCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-site-completion.mjs';
-import {prepareCustomerSitePreview,withCustomerSitePreview} from './customer-site-preview.mjs';
+import {prepareCustomerSitePreview,withCustomerSitePreview,checkCustomerSitePreview} from './customer-site-preview.mjs';
 
 const ROOT=path.resolve(import.meta.dirname,'../..'),VERSION='native-foundation-evidence.v1';
 const VERIFIER=path.join(ROOT,'SKILLS/niche-site-audit/scripts/verify-site-completion.mjs');
@@ -135,8 +135,8 @@ async function candidate(context,base,scope,details,directory){
   return actual;
 }
 export function previewBinding(value,scope,release){
-  exact(value,['version','scopeSha256','packageSha256','releaseId','publicSourceRevision','origin',...(value.version===2?['transportHost']:[])]);
-  if(![1,2].includes(value.version)||(value.version===2&&value.transportHost!=='origin')||value.scopeSha256!==digest(scope)||value.packageSha256!==release.package_sha256
+  exact(value,['version','scopeSha256','packageSha256','releaseId','publicSourceRevision','origin',...(value.version>=2?['transportHost']:[]),...(value.version===3?['producerSha256']:[])]);
+  if(![1,2,3].includes(value.version)||(value.version>=2&&value.transportHost!=='origin')||(value.version===3&&!hex(value.producerSha256,64))||value.scopeSha256!==digest(scope)||value.packageSha256!==release.package_sha256
       ||value.releaseId!==release.release_id||value.publicSourceRevision!==scope.sources.public_source_revision)fail('foundation_preview_binding_invalid');
   let origin;try{origin=new URL(value.origin);}catch{fail('foundation_preview_binding_invalid');}
   if(origin.protocol!=='http:'||!['127.0.0.1','localhost'].includes(origin.hostname)||!origin.port||origin.pathname!=='/'
@@ -181,22 +181,26 @@ async function localCompletion(context,scope,release,directory,usingPrepared=fal
   if(required.some(p=>!Number.isFinite(Date.parse(p.publishAt))||Date.parse(p.publishAt)>Date.now()))fail('foundation_publication_pending');
   let previewRaw=null,preview=null;
   try{previewRaw=await readArtifactBytes(path.join(directory,'preview.json'),16384);preview=JSON.parse(previewRaw);}catch(error){if(error.code!=='ENOENT')throw error;}
-  const markerPath=path.join(directory,'preview-producer.json'),marker={version:1,scopeSha256:digest(scope),releaseId:release.evidence.release_id,packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision};
-  let produced=false;
-  try{if(stableV2(await json(markerPath,16384))!==stableV2(marker))fail('foundation_preview_binding_invalid');produced=true;}catch(error){if(error.code!=='ENOENT')throw error;}
+  const markerPath=path.join(directory,'preview-producer.json'),binding={version:2,scopeSha256:digest(scope),releaseId:release.evidence.release_id,packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision};
+  let markerRaw=null,marker=null;
+  try{markerRaw=await readArtifactBytes(markerPath,16384);marker=JSON.parse(markerRaw);const {buildSha256,...actual}=marker;if(!hex(buildSha256,64)||stableV2(actual)!==stableV2(binding))fail('foundation_preview_binding_invalid');}catch(error){if(error.code!=='ENOENT')throw error;}
+  const produced=marker!==null;
+  if(preview?.version===3&&(!produced||sha(markerRaw)!==preview.producerSha256))fail('foundation_preview_binding_invalid');
   if(!usingPrepared&&(!preview||produced)){
     const retainedOrigin=preview?previewBinding(preview,scope,release.evidence):null;
-    if(preview&&(preview.version!==2||preview.transportHost!=='origin'))fail('foundation_preview_binding_invalid');
+    if(preview&&(preview.version!==3||preview.transportHost!=='origin'))fail('foundation_preview_binding_invalid');
     const prepared=await prepareCustomerSitePreview(context,scope,release);
+    if(produced&&prepared.buildSha256!==marker.buildSha256)fail('foundation_preview_binding_invalid');
     return withCustomerSitePreview(prepared,async started=>{
-      if(!produced)await writeFile(markerPath,JSON.stringify(marker)+'\n',{flag:'wx'});
-      if(preview){if(stableV2(started)!==stableV2(preview))fail('foundation_preview_binding_invalid');}
-      else await writeFile(path.join(directory,'preview.json'),JSON.stringify(started)+'\n',{flag:'wx'});
+      if(!produced){markerRaw=Buffer.from(JSON.stringify({...binding,buildSha256:prepared.buildSha256})+'\n');await writeFile(markerPath,markerRaw,{flag:'wx'});}
+      const bound={...started,version:3,producerSha256:sha(markerRaw)};
+      if(preview){if(stableV2(bound)!==stableV2(preview))fail('foundation_preview_binding_invalid');}
+      else await writeFile(path.join(directory,'preview.json'),JSON.stringify(bound)+'\n',{flag:'wx'});
       return localCompletion(context,scope,release,directory,true);
     },retainedOrigin);
   }
   if(!preview)fail('foundation_preview_binding_invalid');
-  const origin=previewBinding(preview,scope,release.evidence),originHost=preview.version===2;
+  const origin=previewBinding(preview,scope,release.evidence),originHost=preview.version>=2;
   await renderer(origin,scope,release.evidence,originHost);
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
   const python=path.join(ROOT,'agent-business-core/runtime/.venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
@@ -251,11 +255,17 @@ async function retained(context,scope,recorded,details,directory,publicCore){
   const report=await json(path.join(directory,'completion-'+proof.report_sha256+'.json'),5000000);
   if(digest(report)!==proof.report_sha256||report.state!=='LOCAL_DELIVERY_CHECKS_PASS'||report.issues.length
       ||report.packageSha256!==release.evidence.package_sha256||report.siteId!==context.siteId||report.canonicalHost!==scope.accepted.canonical_host
-      ||report.transportOrigin!==origin||(report.transportHost??scope.accepted.canonical_host)!==(preview.version===2?new URL(origin).host:scope.accepted.canonical_host)
+      ||report.transportOrigin!==origin||(report.transportHost??scope.accepted.canonical_host)!==(preview.version>=2?new URL(origin).host:scope.accepted.canonical_host)
       ||Date.parse(report.checkedAt)!==Date.parse(proof.checked_at)||report.publicPages!==proof.public_pages
       ||report.http.length!==proof.requests||report.source.coreCommit!==scope.sources.public_source_revision
       ||report.inspector.scriptSha256!==scope.sources.verifier_sha256||report.inspector.htmlParserSha256!==scope.sources.parser_sha256
       ||!report.auditScore?.stages?.local?.perfect)fail('foundation_retained_stale');
+  if(preview.version===3){
+    const markerRaw=await readArtifactBytes(path.join(directory,'preview-producer.json'),16384),marker=JSON.parse(markerRaw);
+    const {buildSha256,...actual}=marker,binding={version:2,scopeSha256:digest(scope),releaseId:release.evidence.release_id,packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision};
+    if(sha(markerRaw)!==preview.producerSha256||stableV2(actual)!==stableV2(binding)||!hex(buildSha256,64))fail('foundation_retained_stale');
+    await checkCustomerSitePreview(context,scope,release,buildSha256);
+  }
   for(const entry of report.source.files){
     // The report contains fixed canonical inspector paths, never free caller paths.
     if(typeof entry.file!=='string'||!/^((scripts|schemas|lib)\/[a-zA-Z0-9._-]+)$/.test(entry.file)

@@ -75,7 +75,8 @@ test('canonical complete synthetic release is replayed once; missing local evide
   const missing=f.call('customer-site-foundation',f.request(pin,'verify-local'));assert.equal(missing.value.state,'candidate');assert.deepEqual(missing.value.blockers,['local_evidence_missing']);
   const dir=path.join(f.directory,'foundation',digest(pin)),preview={version:1,scopeSha256:digest(pin),packageSha256:first.value.release.package_sha256,releaseId:first.value.release.release_id,publicSourceRevision:publicRevision,origin:'http://127.0.0.1:9'};
   assert.equal(previewBinding({...preview,version:2,transportHost:'origin'},pin,first.value.release),preview.origin);
-  for(const patch of [{version:2},{version:2,transportHost:'canonical'},{version:1,transportHost:'origin'},{version:3},{version:2,transportHost:'origin',origin:'https://127.0.0.1:9'}])assert.throws(()=>previewBinding({...preview,...patch},pin,first.value.release));
+  for(const patch of [{version:2},{version:2,transportHost:'canonical'},{version:1,transportHost:'origin'},{version:3},{version:3,transportHost:'origin',producerSha256:'wrong'},{version:2,transportHost:'origin',origin:'https://127.0.0.1:9'}])assert.throws(()=>previewBinding({...preview,...patch},pin,first.value.release));
+  assert.equal(previewBinding({...preview,version:3,transportHost:'origin',producerSha256:'a'.repeat(64)},pin,first.value.release),preview.origin);
   for(const origin of ['https://example.org','http://user:password@127.0.0.1:9','http://127.0.0.1:9/private','http://localhost:9/?x=1'])assert.throws(()=>previewBinding({...preview,origin},pin,first.value.release));
   const alias=path.join(dir,'preview.json');await symlink(path.join(f.temporary,'outside'),alias,process.platform==='win32'?'junction':'dir');assert.equal(f.call('customer-site-foundation',f.request(pin,'verify-local')).value.state,'candidate');await unlink(alias);
   const packageFile=path.join(f.base.outputDir,'releases',f.siteId,first.value.release.release_id,'content-package.json'),bytes=await readFile(packageFile);await writeFile(packageFile,Buffer.concat([bytes,Buffer.from(' ')]));const corrupted=f.call('customer-site-foundation',input);assert.equal(corrupted.value.state,'blocked');assert.equal(corrupted.value.release,null);await writeFile(packageFile,bytes);
@@ -166,12 +167,14 @@ test('maintained native preview builds the exact synthetic release and reuses im
   await writeFile(path.join(dir,'review-evidence.json'),JSON.stringify(review));await writeFile(path.join(dir,'PHASE-1-AUDIT.json'),JSON.stringify(audit));
   const answer=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(answer.status,0,JSON.stringify(answer.value));assert.equal(answer.value.state,'verified-local',JSON.stringify(answer.value));assert.equal(answer.value.synthetic,true);assert.equal(answer.value.admission,'not_performed');assert.equal(answer.value.deployment,'not_performed');
   const previewFile=path.join(dir,'preview.json'),previewBytes=await readFile(previewFile),preview=JSON.parse(previewBytes);
-  assert.equal(preview.version,2);assert.equal(preview.transportHost,'origin');assert.equal(preview.publicSourceRevision,publicRevision);assert.equal(preview.packageSha256,first.release.package_sha256);
+  assert.equal(preview.version,3);assert.equal(preview.transportHost,'origin');assert.equal(preview.publicSourceRevision,publicRevision);assert.equal(preview.packageSha256,first.release.package_sha256);
   const retained={...f.request(pin,'check-retained'),observation:answer.value};assert.equal(f.call('customer-site-foundation',retained).value.state,'retained-current');
+  const markerFile=path.join(dir,'preview-producer.json'),markerBytes=await readFile(markerFile);await unlink(markerFile);assert.equal(f.call('customer-site-foundation',retained).value.code,'foundation_invalid_evidence');await writeFile(markerFile,markerBytes);
   const second=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(second.value.state,'verified-local',JSON.stringify(second.value));assert.deepEqual(await readFile(previewFile),previewBytes);
   const parent=path.join(publicCore,'output/foundation-preview',digest(pin)),record=JSON.parse(await readFile(path.join(parent,'build.json')));
   assert.equal(record.binding.publicSourceRevision,publicRevision);assert.equal(record.binding.packageSha256,first.release.package_sha256);assert.ok(record.build.files>0);
   const configFile=path.join(parent,'repo/dist/server/wrangler.json'),config=await readFile(configFile);await writeFile(configFile,Buffer.concat([config,Buffer.from(' ')]));
+  assert.equal(f.call('customer-site-foundation',retained).value.code,'foundation_invalid_evidence');
   const changed=await f.asyncCall(f.request(pin,'verify-local'));assert.equal(changed.value.state,'candidate');assert.deepEqual(changed.value.blockers,['foundation_preview_build_changed']);await writeFile(configFile,config);
   await f.unchanged();
 });

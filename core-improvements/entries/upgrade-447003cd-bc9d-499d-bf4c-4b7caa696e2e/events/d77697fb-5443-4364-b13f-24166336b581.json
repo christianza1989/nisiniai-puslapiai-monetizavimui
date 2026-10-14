@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Only HTTP client control uses latestperpage/currentacceptedRevision; all snapshots/history retained. Latestfailure stillblocks, oldsuccesscannotmask it, oldrevisioncannotcompletecurrent. Original4FAIL1PASS preserved; no provider/retry/refund/qualitybypass in repair.",
+  "checks": [
+    {
+      "command": "pytest offline guide history plus maintained workspace pipeline boundary suite",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HEADLESS_GUIDE_HISTORY_S16_2026_10_15.md:24PASS1.58s"
+    },
+    {
+      "command": "scoped Ruff and diff check",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HEADLESS_GUIDE_HISTORY_S16_2026_10_15.md:importorder corrected; source/control scope only"
+    }
+  ],
+  "eventId": "d77697fb-5443-4364-b13f-24166336b581",
+  "sequence": 2,
+  "at": "2026-10-14T23:18:42.265Z"
+}

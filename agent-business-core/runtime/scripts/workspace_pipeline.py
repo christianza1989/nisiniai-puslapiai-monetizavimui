@@ -249,7 +249,17 @@ class Pipeline:
                 details = self.creation_snapshot(creation_id)
                 if details["view"]["status"] in {"failed", "cancelled"}:
                     raise PipelineError(details["view"].get("failure_code") or details["view"]["status"])
-                jobs = details["content-work"]["items"]
+                # Snapshot/logging retains every attempt. Control decisions use
+                # only the latest job for each page of the accepted revision,
+                # matching the canonical supervisor after an explicit retry.
+                latest = {}
+                for job in details["content-work"]["items"]:
+                    if (details["view"]["status"] == "draft_ready"
+                            and job["accepted_revision"] == details["view"]["current_revision"]
+                            and (job["page_id"] not in latest
+                                 or job["sequence"] > latest[job["page_id"]]["sequence"])):
+                        latest[job["page_id"]] = job
+                jobs = list(latest.values())
                 failed = next((j for j in jobs if j["status"] in {"failed", "cancelled"}), None)
                 if failed:
                     raise PipelineError(failed.get("failure_code") or failed["status"])

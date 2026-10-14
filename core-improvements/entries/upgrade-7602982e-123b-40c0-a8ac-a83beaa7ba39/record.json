@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Native approved-build controller has no explicit current-owner current-source continuation; old approval Session/source correctly block resumed builds after a code upgrade",
+  "evidence": [
+    "site_build/service.py advance uses immutable BuildApproval.session_id and rejects approved report/Creation/accepted_source_revision unequal to current execution revision. Existing test_site_build.py source/expiry test reproduces those blocks. S6 adds explicit append-only continuation, not a bypass or historical rewrite; ADR and issue66 reservation6168684025 pin scope."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation_models.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation_schema.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation_wire.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation_contract.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/routes.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/migrations/versions/0035_build_continuations.py",
+    "agent-business-core/contracts/site-continuation.schema.json",
+    "docs/decisions/VERSLOMATIKA_BUILD_CONTINUATION_S6_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the continuation API/controller hook and imports. Preserve all immutable continuation rows and historical approvals/revisions/source/intake. Migration downgrade refuses retained records; restore the old strict original-Session/source path. Original preview/DB not migrated by source verification.",
+  "id": "upgrade-7602982e-123b-40c0-a8ac-a83beaa7ba39",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "840ef66b96741db9df4a2d46634b89760f1ec95d",
+  "createdAt": "2026-10-14T12:48:28.843Z"
+}

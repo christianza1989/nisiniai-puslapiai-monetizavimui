@@ -7,6 +7,7 @@ from ..creation.routes import CreationRoute, owned
 from ..customer.service import customer_guard
 from ..customer_text.service import bearer_token
 from . import receipts, service
+from .continuation_wire import Resume
 from .receipt_wire import Check
 
 router = APIRouter(prefix="/customer/v2/creations", route_class=CreationRoute,
@@ -35,3 +36,28 @@ async def check(creation_id: str, value: Check, request: Request):
     # Each maintained token/owner scope closes before the long fixed Node/HTTP observation.
     token = bearer_token(request.headers.get("authorization", ""))
     return envelope(request, await receipts.check(token, creation_id, value))
+
+
+@router.get("/{creation_id}/build-continuations")
+async def continuation_detail(creation_id: str, request: Request, context=Depends(authenticated, scope="function")):
+    from . import continuation
+    if request.query_params:
+        raise ControlError(400, "invalid_request")
+    tx, session = context
+    creation = await owned(tx, session, creation_id)
+    value = shared_envelope(request, await continuation.state(tx, session, creation))
+    value["contract_version"] = "site-continuation.v1"
+    return value
+
+
+@router.post("/{creation_id}/build-continuations")
+async def resume_build(creation_id: str, value: Resume, request: Request,
+                       context=Depends(authenticated, scope="function")):
+    from . import continuation
+    if request.query_params:
+        raise ControlError(400, "invalid_request")
+    tx, session = context
+    creation = await owned(tx, session, creation_id, lock=True)
+    output = shared_envelope(request, await continuation.resume(tx, session, creation, value))
+    output["contract_version"] = "site-continuation.v1"
+    return output

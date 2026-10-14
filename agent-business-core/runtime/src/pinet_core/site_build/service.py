@@ -78,15 +78,24 @@ async def advance(creation_id):
     if not target:
         return observation(identity, "approval", "blocked", code="build_approval_unavailable")
     async with scope(user=target["user_id"]) as tx:
+        from ..creation.models import Creation
+        from . import continuation
+        continuing = None
+        creation = await tx.get(Creation, identity)
+        if creation and await continuation.schema_ready(tx):
+            continuing = await continuation.latest(tx, creation)
         approval = await tx.scalar(select(BuildApproval).where(BuildApproval.creation_id == identity))
-        session = await tx.get(Session, approval.session_id) if approval else None
+        session = (await tx.get(Session, continuing.session_id, populate_existing=True) if continuing
+                   else await tx.get(Session, approval.session_id) if approval else None)
         if not approval or not session:
             return observation(identity, "authority", "blocked", code="authorization_revoked")
         creation = await owned(tx, session, identity, lock=True)
+        if continuing and not await continuation.current(tx, creation, continuing):
+            return observation(identity, "source", "blocked", code="build_continuation_stale")
         approved = await approved_build_context(tx, creation)
         if approved is None:
             return observation(identity, "approval", "blocked", code="build_approval_unavailable")
-        if (approved["source_revision"] != settings().control_source_revision
+        if not continuing and (approved["source_revision"] != settings().control_source_revision
                 or creation.source_revision != settings().control_source_revision):
             return observation(identity, "source", "blocked", code="site_build_source_stale")
         if await guides.archived(tx, creation):
@@ -97,7 +106,7 @@ async def advance(creation_id):
             return observation(identity, "business_draft", "blocked",
                                code=creation.failure_code or "accepted_revision_missing")
         proof = await accepted_proof(tx, creation)
-        if proof["accepted_source_revision"] != settings().control_source_revision:
+        if not continuing and proof["accepted_source_revision"] != settings().control_source_revision:
             return observation(identity, "source", "blocked", code="site_build_source_stale")
         revision = await guides.current_revision(tx, creation, creation.current_revision)
         import_job = await tx.get(Job, revision.job_id)

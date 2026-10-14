@@ -1,0 +1,19 @@
+# S6 current-owner build continuation
+
+Owner resumed platform work after safe pause. Root's [ADR](../decisions/VERSLOMATIKA_BUILD_CONTINUATION_S6_2026_10_14.md) and issue66 comment6168684025 own this slice. Upgrade7602982e; public dependency1a26f289092cecadc5799de898e809dc1769498a. Original preview3025/API18870/sourcea9/schema0032 remains unchanged.
+
+New canonical `site-continuation.v1` GET/POST `/customer/v2/creations/{creation_id}/build-continuations` accepts only accepted revision and UUID. The server records exact unchanged historical material plus the current authorizing Session and execution/public source pins. Strict UUID replay does not renew authority; its current boolean is a fresh observation. Existing controller selects the latest continuation under current owner/Session/Creation locks and blocks stale material without falling back to the original approval. Existing GUIDE quota, prepared native context, writer, role review and cancellation apply; a failed guide is not retried by a new continuation. Foundation quality, agent calibration and live channels remain separate.
+
+Additive0035 has forced RLS, owner/portfolio/environment and parent/session foreign keys, SELECT/INSERT-only runtime grants, immutable UPDATE and deferred current actor/revision/approval fence. Retained rows block downgrade. No original approval/report/revision/intake/source/Session expiry is rewritten.
+
+Executed source checks in dedicated `pinet_build_continuation_qa_6d11ba012b48`:
+
+- Final focused22offline+restrictedPG/native HTTP cases PASS, source log `agent-business-core/runtime/artifacts/workspace-ui/build-continuation-final-source.log`. Synthetic creator/reviewer/coordinator adapters invoke the actual maintained native intake/writer; providers0. Includes old-source refusal, explicit new current Session/source, guide execution and immutable historical snapshot, replay concurrency/conflict/foreign owner, expiry/revocation/account/membership, public source/native revision drift, direct SQL grants/immutability and late Session expiry after insert, failed guide retention without retry.
+- Earlier configured group24PASS/1FAIL176.62s included existing5sitebuild+5Foundationcontroller cases. The sole failure was the new test reading an expired detached ORM Session's ID; fixed by retaining its scalar ID before transaction close.
+- Earlier focused recovery17PASS/2FAIL105.92s proved the positive guide flow and deferred SQL fence. Two new assertions incorrectly expected an exception for disabled owner/membership: forced RLS correctly hides approval and the controller returns blocked authorization_revoked. Corrected to assert that exact block and zero guide admission, retaining both failures.
+- Initial10PASS/15FAIL/4teardownERROR103.68s retained in `build-continuation-first.log`: QA test launch overlapped preparation and omitted the explicit companion path. Migration preparation then confirmed0035/restricted role/original0032 retention; subsequent runs use explicit clean public1a companion/network config. No source guard or intake threshold was weakened.
+- Scoped Ruff and exact generated continuation contract PASS. First6lint findings were fixed and retained in tool history.
+
+Private artifacts/logs are ignored and not part of Git delivery. Isolated source tests use explicitly synthetic execution source values; they are not actual code deployment, paid model calls or real-business quality evidence. Peer independently reproduced a pre-existing borrowed-Session monitor cancellation problem in the separate Foundation regression and owns its newly authorized transport repair. That outstanding broader regression is not relabelled PASS here.
+
+Next: independent peer source review, portal BFF/control integration and backed-up ordinary runtime/source artifact adoption. Whole local platform remains OPEN; no original migration/worker/channel/production activation is implied.

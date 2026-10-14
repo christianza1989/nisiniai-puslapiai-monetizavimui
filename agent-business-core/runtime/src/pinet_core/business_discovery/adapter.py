@@ -45,7 +45,7 @@ def instructions(role):
     if role != "creator":
         parts.append("Review this exact proposed plan independently. Judge coverage, economic assumptions, acquisition feasibility, source contradictions and honest readiness. Return concrete required_changes or approve; never approve unobserved execution. The coordinator also checks the critic findings. Do not demand held live activation or language-only fixes before a local plan.")
     schema = Reply if role == "creator" else PlanReview
-    profile = shared.role_profile(role)
+    profile = shared.pipeline_profile(role)
     material = "\n".join(parts)
     pin = hashlib.sha256(json.dumps({"role": role, "instructions": material, "schema": schema.model_json_schema(),
                                      "execution": profile}, sort_keys=True).encode()).hexdigest()
@@ -76,7 +76,11 @@ def check_tools(reply, supplied_capabilities):
 
 
 async def run_role(context, authorized, *, role, seconds):
+    from ..creation import execution_profiles as profiles
     started = monotonic()
+    name = profiles.selected()
+    profile = shared.pipeline_profile(role, execution_profile=name)
+    model = profile["model"]
     binary, workspace = available()
     policy, pin = instructions(role)
     if pin != context["expected_instruction_hash"]:
@@ -97,7 +101,7 @@ async def run_role(context, authorized, *, role, seconds):
     trace = shared.Trace(web, permitted)
     receipt = {}
     try:
-        argv = shared.arguments(binary, folder, schema, output, web=web, role=role)
+        argv = shared.arguments(binary, folder, schema, output, web=web, role=role, execution_profile=name)
         result, receipt = await execute(argv, prompt=prompt, cwd=folder, env=child_environment(),
             output=output, seconds=min(seconds, settings().creation_runner_seconds) - (monotonic() - started),
             still_authorized=authorized, parse_trace=trace.parse, on_event=trace.event,
@@ -107,14 +111,14 @@ async def run_role(context, authorized, *, role, seconds):
             check_tools(value, context["capabilities"])
         elif value.candidate_sha256 != context["candidate_sha256"]:
             raise RunnerError("review_candidate_mismatch")
-        receipt.update(instruction_hash=pin, model=shared.role_model(role),
+        receipt.update(instruction_hash=pin, model=model, reasoning_effort=profile["reasoning_effort"],
                        adapter_revision="codex-business-discovery.v1",
                        output_schema_sha256=hashlib.sha256(json.dumps(output_schema, sort_keys=True).encode()).hexdigest())
         return value.model_dump(mode="json"), receipt
     except (RunnerError, ValueError) as error:
         code = error.code if isinstance(error, RunnerError) else "output_invalid"
         receipt = {**receipt, **(getattr(error, "receipt", None) or {}), "instruction_hash": pin,
-                   "model": shared.role_model(role), "adapter_revision": "codex-business-discovery.v1"}
+                   "model": model, "reasoning_effort": profile["reasoning_effort"], "adapter_revision": "codex-business-discovery.v1"}
         (folder / "failure.private.json").write_text(json.dumps(
             {"code": code, "receipt": receipt}, ensure_ascii=False, default=str), encoding="utf-8")
         raise RunnerError(code, receipt) from None

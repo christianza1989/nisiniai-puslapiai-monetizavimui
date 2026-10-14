@@ -4,7 +4,9 @@ import json
 from uuid import uuid4
 
 from ..creation import language_mode
-from ..creation.adapter import Trace, arguments, available, role_model, role_profile
+from ..creation.adapter import Trace, arguments, available
+from ..creation.adapter import pipeline_model as role_model
+from ..creation.adapter import pipeline_profile as role_profile
 from ..tasks.codex import child_environment
 from ..tasks.codex_transport import RunnerError, execute
 from . import review
@@ -43,6 +45,9 @@ def execution_hash():
 
 
 async def run_role(context, authorized, *, role, seconds):
+    from ..creation import execution_profiles as profiles
+    name = profiles.selected()
+    profile = role_profile(role, execution_profile=name)
     binary, workspace = available()
     prepared = context["prepared"]
     expected = instruction_hash(role, prepared)
@@ -67,16 +72,18 @@ async def run_role(context, authorized, *, role, seconds):
     schema_file.write_text(json.dumps(schema), encoding="utf-8")
     trace = Trace(False, 0)
     try:
-        argv = arguments(binary, folder, schema_file, output, web=False, role=role)
+        argv = arguments(binary, folder, schema_file, output, web=False, role=role, execution_profile=name)
         if argv[argv.index("--model") + 1] != model or instruction_hash(role, prepared) != expected:
             raise RunnerError("instructions_changed")
         result, receipt = await execute(argv, prompt=prompt,
             cwd=folder, env=child_environment(), output=output, seconds=seconds, still_authorized=authorized,
             parse_trace=trace.parse, on_event=trace.event, stdout_limit=1048576, output_limit=200000,
             trace_file=folder / "trace.private.jsonl")
-        receipt.update(instruction_hash=expected, adapter_revision=ADAPTER, model=model)
+        receipt.update(instruction_hash=expected, adapter_revision=ADAPTER, model=model, reasoning_effort=profile["reasoning_effort"])
         return result, receipt
     except RunnerError as error:
+        error.receipt = {**(error.receipt or {}), "instruction_hash": expected,
+            "adapter_revision": ADAPTER, "model": model, "reasoning_effort": profile["reasoning_effort"]}
         (folder / "failure.private.json").write_text(json.dumps({"code": error.code,
             "instruction_hash": expected, "adapter_revision": ADAPTER, "model": model,
             "receipt": error.receipt}), encoding="utf-8")

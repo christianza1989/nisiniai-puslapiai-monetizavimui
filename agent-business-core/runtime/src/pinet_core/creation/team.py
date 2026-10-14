@@ -19,9 +19,9 @@ START = {"creator": "Kūrėjas rengia verslo pasiūlymą ir svetainės juodrašt
 
 
 class TeamError(adapter.RunnerError):
-    def __init__(self, code, attempts):
+    def __init__(self, code, attempts, *, model="gpt-6-luna"):
         super().__init__(code)
-        self.receipt = {"adapter_revision": TEAM_ADAPTER, "model": "gpt-6-luna", "attempts": attempts,
+        self.receipt = {"adapter_revision": TEAM_ADAPTER, "model": model, "attempts": attempts,
                         "cost_microusd": None, "web_search_count": sum(r.get("web_search_count", 0) for r in attempts)}
 
 
@@ -51,6 +51,8 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
         if (not creation or not job or job.status != "running" or job.run_id != claimed["run_id"]
                 or not job.lease_until or job.lease_until <= utcnow() or not await authority(tx, job)):
             raise adapter.RunnerError("authorization_revoked")
+        from . import execution_profiles as profiles
+        await profiles.ensure_current(tx, "creation", job)
         if adapter.team_instruction_hash() != job.instruction_hash:
             raise adapter.RunnerError("instructions_changed")
         if not await review_schema_ready(tx) or not await job_history_schema_ready(tx):
@@ -68,7 +70,7 @@ async def reserve(claimed, role, round_number, *, structure_repair=False, langua
         attempt = Attempt(id=new_id(), creation_id=creation.id, job_id=job.id, run_id=job.run_id, sequence=sequence + 1,
             role=role, round_number=round_number, stage="private_draft", source_revision=job.source_revision,
             instruction_hash=adapter.role_instruction_hash(role, structure_repair=structure_repair,
-                language_repair=language_repair), model=adapter.role_model(role), **binding(creation))
+                language_repair=language_repair), model=adapter.pipeline_model(role), **binding(creation))
         tx.add(attempt)
         await tx.flush()
         await _event(tx, creation, job, attempt, "reserved", START[role], {})
@@ -82,6 +84,8 @@ async def finish(claimed, attempt_id, state, summary, payload):
         if (not creation or not job or job.status != "running" or job.run_id != claimed["run_id"]
                 or not job.lease_until or job.lease_until <= utcnow() or not await authority(tx, job)):
             raise adapter.RunnerError("authorization_revoked")
+        from . import execution_profiles as profiles
+        await profiles.ensure_current(tx, "creation", job)
         attempt = await tx.get(Attempt, attempt_id)
         if not attempt or attempt.job_id != job.id or attempt.run_id != job.run_id:
             raise adapter.RunnerError("authorization_revoked")
@@ -116,6 +120,7 @@ def usage_view(receipt):
 
 
 async def run(claimed, still_authorized, role_runner=None):
+    from . import execution_profiles as profiles
     from .review import critic_sha256, draft_sha256, normalize_coordinator, normalize_critic
     context = dict(claimed["context"])
     run_role = role_runner or adapter.run_role
@@ -124,19 +129,34 @@ async def run(claimed, still_authorized, role_runner=None):
     deadline = monotonic() + 2 * settings().creation_runner_seconds
     remaining_web = context["permitted_web_actions"]
     receipts, candidate, critic, repair = [], None, None, None
+    creator_model = profiles.model(claimed.get("execution_profile", profiles.DEFAULT), "creator")
+
+    def failure(code):
+        return TeamError(code, receipts, model=creator_model)
 
     async def call(role, round_number, data, normalize_role):
         seconds = deadline - monotonic()
         if seconds < 1:
-            raise TeamError("run_timeout", receipts)
+            raise failure("run_timeout")
         if not await still_authorized():
-            raise TeamError("authorization_revoked", receipts)
+            raise failure("authorization_revoked")
         try:
             attempt_id = await reserve(claimed, role, round_number,
                 structure_repair=role == "creator" and data.get("structure_repair") is True,
                 language_repair=role == "creator" and data.get("language_repair") is True)
         except adapter.RunnerError as error:
-            raise TeamError(error.code, receipts) from None
+            raise failure(error.code) from None
+        async with scope(user=claimed["user_id"]) as tx:
+            attempt = await tx.get(Attempt, attempt_id)
+            job = await tx.get(Job, claimed["job_id"])
+            if not attempt or not job:
+                raise failure("authorization_revoked")
+            profile_name = await profiles.ensure_current(tx, "creation", job)
+            expected = {"model": attempt.model, "reasoning_effort": profiles.effort(profile_name),
+                "instruction_hash": attempt.instruction_hash}
+        data = {**data, "_expected_execution": expected}
+        if role == "creator":
+            data["expected_instruction_hash"] = attempt.instruction_hash
         seconds = deadline - monotonic()
         receipt, value = {}, None
         try:
@@ -181,9 +201,9 @@ async def run(claimed, still_authorized, role_runner=None):
                               "web_search_count": receipt.get("web_search_count"), "cost_microusd": None})
             except adapter.RunnerError:
                 pass  # Current revocation fences public writes; retain observed accounting in the raised private receipt.
-            raise TeamError(error.code, receipts) from None
+            raise failure(error.code) from None
         if monotonic() >= deadline:
-            raise TeamError("run_timeout", receipts)
+            raise failure("run_timeout")
         return value, receipt
 
     for round_number in (1, 2):
@@ -227,13 +247,13 @@ async def run(claimed, still_authorized, role_runner=None):
             lambda value: normalize_coordinator(value, draft=candidate, critic=critic, expected_stage="private_draft", expected_round=round_number, receipts=checks))
         if decision["decision"] == "accept_draft":
             language_mode.draft_observation(candidate)
-            return candidate, {"adapter_revision": TEAM_ADAPTER, "model": "gpt-6-luna", "attempts": receipts,
+            return candidate, {"adapter_revision": TEAM_ADAPTER, "model": creator_model, "attempts": receipts,
                 "language_screening": language, "language_review_mode": language_mode.mode(), "critic": critic, "coordinator": decision,
                 "instruction_hash": adapter.team_instruction_hash(), "deadline_monotonic": deadline,
                 "web_search_count": sum(r.get("web_search_count", 0) for r in receipts)}
         if decision["decision"] == "blocked":
-            raise TeamError("review_blocked", receipts)
-    raise TeamError("review_limit", receipts)
+            raise failure("review_blocked")
+    raise failure("review_limit")
 
 
 async def projection(tx, creation):
@@ -251,6 +271,12 @@ async def projection(tx, creation):
     by_attempt, job_by_id = {a.id: a for a in attempts}, {j.id: j for j in jobs}
     views = []
     for attempt in attempts:
+        from . import execution_profiles as profiles
+        try:
+            await profiles.validate_attempt(tx, "creation", job_by_id[attempt.job_id], attempt.role, attempt.model)
+        except adapter.RunnerError:
+            from ..control.routes import ControlError
+            raise ControlError(503, "invalid_content_source") from None
         final = [e.state for e in events if e.attempt_id == attempt.id and e.state != "reserved"]
         state = final[-1] if final else "reserved" if job_by_id[attempt.job_id].status == "running" else "interrupted"
         views.append(AttemptView(attempt_id=attempt.id, job_id=attempt.job_id, sequence=attempt.sequence, role=attempt.role,

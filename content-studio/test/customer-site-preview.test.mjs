@@ -87,3 +87,12 @@ test('successful fixed compiler exits, timeout and parent disconnect stop only o
   const disconnected=start(5000);
   await disconnected.ready;disconnected.child.disconnect();await assert.rejects(disconnected.done,/build_failed/);assert.equal(disconnected.finished,true);
 });
+
+test('guarded server invokes a CJS CLI as its main module and closes its owned child tree',async t=>{
+  const {root}=await repository(t),bin=path.join(root,'node_modules/wrangler/bin');await mkdir(bin,{recursive:true});await mkdir(path.join(root,'scripts'));await mkdir(path.join(root,'output'));
+  await writeFile(path.join(root,'scripts/sites-env.mjs'),'export const synthetic=true;');
+  await writeFile(path.join(bin,'wrangler.js'),"if(require.main===module){console.log('synthetic owned CLI main');setInterval(()=>{},1000);}");
+  const log=path.join(root,'output/server.private.log'),run=previewProcess(root,'serve',['12345'],site,log,12000);t.after(()=>run.close());await run.ready;
+  let reached=false;for(let attempt=0;attempt<100;attempt++){try{reached=(await readFile(log,'utf8')).includes('synthetic owned CLI main');}catch(error){if(error.code!=='ENOENT')throw error;}if(reached)break;await new Promise(r=>setTimeout(r,50));}
+  assert.equal(reached,true,(await readFile(log,'utf8').catch(()=>'' )).slice(0,2000));run.child.disconnect();await assert.rejects(run.done,/build_failed/);assert.equal(run.finished,true);
+});

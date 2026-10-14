@@ -248,6 +248,10 @@ if(process.argv[2]==='--owned-runner'){
   process.channel.unref();
   const fixedArgs=mode==='import'?[args[0],'--acceptance',args[1]]:mode==='build'?['build']:mode==='serve'?['dev','--config','dist/server/wrangler.json','--local','--persist-to','.sites-runtime/preview-state','--ip','127.0.0.1','--port',args[0],'--inspector-port','0']:[];
   const file=path.join(root,entry);process.argv=[process.execPath,file,...fixedArgs];
-  if(mode==='serve')await import(pathToFileURL(path.join(root,'scripts/sites-env.mjs')));
-  await import(pathToFileURL(file));
+  if(mode==='serve'){
+    // Wrangler's CJS entry runs only as require.main; dynamic import silently
+    // exits without starting a Worker. Keep it inside this guarded child tree.
+    const server=spawn(process.execPath,['--import',pathToFileURL(path.join(root,'scripts/sites-env.mjs')).href,file,...fixedArgs],{cwd:root,env:process.env,windowsHide:true,stdio:'inherit'});
+    process.exitCode=await new Promise((resolve,reject)=>{server.once('error',reject);server.once('exit',code=>resolve(code??2));});
+  }else await import(pathToFileURL(file));
 }

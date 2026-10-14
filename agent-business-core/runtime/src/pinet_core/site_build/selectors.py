@@ -4,6 +4,7 @@ from sqlalchemy import select, text
 from ..business_discovery.models import BuildApproval, Discovery
 from ..creation.models import Creation
 from ..tasks.codex_transport import RunnerError
+from . import approval_selectors
 
 PAGE_SIZE = 8
 KINDS = {"discovery": ("control_discovery_candidates", "control_business_discovery_jobs", "discovery_id"),
@@ -36,6 +37,8 @@ def statements():
 
 
 async def ready(tx):
+    if not await approval_selectors.ready(tx):
+        return False
     return all([await tx.scalar(text("SELECT to_regprocedure(:signature) IS NOT NULL"),
         {"signature": function+"(varchar,varchar)"}) for function, _, _ in KINDS.values()])
 

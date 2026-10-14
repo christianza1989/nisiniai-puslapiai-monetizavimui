@@ -3,7 +3,7 @@ import asyncio
 import hashlib
 from uuid import UUID, uuid5
 
-from sqlalchemy import select, text
+from sqlalchemy import select
 
 from ..business_discovery.models import BuildApproval
 from ..business_discovery.service import approved_build_context
@@ -19,6 +19,7 @@ from ..creation.routes import owned
 from ..creation.service import ACTIVE
 from ..creation_registration.service import accepted_proof
 from ..customer_text.adapter import source_current
+from . import approval_selectors
 
 NAMESPACE = UUID("8351b9d1-9456-46a7-b7c5-88204aed6c65")
 
@@ -69,12 +70,10 @@ async def advance(creation_id):
     if not await asyncio.to_thread(source_current):
         raise ControlError(503, "source_unavailable")
     async with scope() as registry:
-        ready = await registry.scalar(text("SELECT to_regprocedure('control_site_build_candidates(varchar)') IS NOT NULL"))
+        ready = await approval_selectors.ready(registry)
         if not ready:
             raise ControlError(503, "site_build_schema_unavailable")
-        target = (await registry.execute(text(
-            "SELECT * FROM control_site_build_candidates(:e) WHERE creation_id=:id"),
-            {"e": settings().environment, "id": identity})).mappings().first()
+        target = await approval_selectors.selected(registry, settings().environment, identity)
     if not target:
         return observation(identity, "approval", "blocked", code="build_approval_unavailable")
     async with scope(user=target["user_id"]) as tx:

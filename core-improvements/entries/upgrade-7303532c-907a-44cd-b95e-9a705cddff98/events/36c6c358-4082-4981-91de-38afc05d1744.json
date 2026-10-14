@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Preserved actual LIMIT100 first failure; additive0039 exact lookup executes only the newer target, with maintained lifecycle/authority/schema/privilege regressions. Original0032 and frozen ordinary798/schema0038 untouched; provider0, adoption not performed.",
+  "checks": [
+    {
+      "command": "owned restricted PostgreSQL pytest tests/test_site_build_approval_lookup_pg.py tests/test_site_build.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "8 passed117.92s; runtime/artifacts/workspace-ui/build-continuation-approval-lookup-final.log, actual newer target GUIDE after105 historical lookup-only rows"
+    },
+    {
+      "command": "ruff check exact S9 source/migration/test paths; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; no whitespace errors"
+    }
+  ],
+  "eventId": "36c6c358-4082-4981-91de-38afc05d1744",
+  "sequence": 3,
+  "at": "2026-10-14T19:13:28.884Z"
+}

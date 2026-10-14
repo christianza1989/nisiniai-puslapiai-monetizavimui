@@ -56,11 +56,16 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
             chunks.append(chunk)
         return b"".join(chunks)
 
+    finishing = asyncio.Event()
+
     async def monitor():
-        while True:
+        while not finishing.is_set():
             if not await still_authorized():
                 raise RunnerError("authorization_revoked")
-            await asyncio.sleep(1)
+            try:
+                await asyncio.wait_for(finishing.wait(), 1)
+            except TimeoutError:
+                pass
 
     if seconds <= 0 or not await still_authorized():
         raise RunnerError("authorization_revoked" if seconds > 0 else "run_timeout")
@@ -83,9 +88,15 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
                 for task in done:
                     task.result()
             raw, errors = tasks[0].result(), tasks[1].result()
+            # The callback may borrow the caller's SQL Session. Successful EOF must
+            # drain its current query, then authorize serially, never cancel it.
+            finishing.set()
+            await asyncio.shield(tasks[2])
             await process.wait()
-        if not await still_authorized():
-            raise RunnerError("authorization_revoked")
+            final_authorization = asyncio.create_task(still_authorized())
+            tasks.append(final_authorization)
+            if not await asyncio.shield(final_authorization):
+                raise RunnerError("authorization_revoked")
         if process.returncode:
             try:
                 code = json.loads(errors).get("code", "studio_intake_failed")
@@ -100,10 +111,29 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
     except (ValueError, OSError):
         raise RunnerError("studio_intake_failed") from None
     finally:
-        for task in tasks:
-            task.cancel()
-        await asyncio.gather(*tasks, return_exceptions=True)
-        await stop_process(process)
+        finishing.set()
+
+        async def cleanup():
+            for task in tasks:
+                if not task.done():
+                    task.cancel()
+            try:
+                await stop_process(process)
+            finally:
+                await asyncio.gather(*tasks, return_exceptions=True)
+
+        # Repeated caller cancellation must not abandon a callback's cancellation
+        # cleanup or leave a child using a scope that the caller is about to close.
+        cleanup_task = asyncio.create_task(cleanup())
+        cancelled = False
+        while not cleanup_task.done():
+            try:
+                await asyncio.shield(cleanup_task)
+            except asyncio.CancelledError:
+                cancelled = True
+        cleanup_task.result()
+        if cancelled:
+            raise asyncio.CancelledError
 
 
 async def import_draft(draft, *, creation_id, revision, canonical_host, still_authorized, seconds=20):

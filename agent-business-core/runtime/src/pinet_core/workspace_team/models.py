@@ -19,8 +19,8 @@ class TeamThread(Owned, Base):
     __tablename__ = "control_workspace_team_threads"
     topic_id: Mapped[str] = mapped_column(String)
     task_thread_id: Mapped[str] = mapped_column(String)
-    business_id: Mapped[str] = mapped_column(String)
-    grant_id: Mapped[str] = mapped_column(String)
+    business_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    grant_id: Mapped[str | None] = mapped_column(String, nullable=True)
     event_sequence: Mapped[int] = mapped_column(Integer, default=0)
     __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("topic_id"), UniqueConstraint("task_thread_id"), UniqueConstraint("id", "topic_id", "task_thread_id", "business_id", *OWNER),
         parent("control_workspace_topics", "topic_id"),
@@ -46,7 +46,7 @@ class TeamTurn(Owned, Base):
     team_thread_id: Mapped[str] = mapped_column(String)
     topic_id: Mapped[str] = mapped_column(String)
     task_thread_id: Mapped[str] = mapped_column(String)
-    business_id: Mapped[str] = mapped_column(String)
+    business_id: Mapped[str | None] = mapped_column(String, nullable=True)
     task_kind: Mapped[str] = mapped_column(String, default="workspace.team_turn")
     owner_event_id: Mapped[str] = mapped_column(String)
     agent_creation_id: Mapped[str | None] = mapped_column(String, nullable=True)
@@ -76,7 +76,7 @@ class Attempt(Owned, Base):
     task_id: Mapped[str] = mapped_column(String)
     team_thread_id: Mapped[str] = mapped_column(String)
     run_id: Mapped[str] = mapped_column(String)
-    business_id: Mapped[str] = mapped_column(String)
+    business_id: Mapped[str | None] = mapped_column(String, nullable=True)
     ordinal: Mapped[int] = mapped_column(Integer)
     phase: Mapped[str] = mapped_column(String)
     state: Mapped[str] = mapped_column(String, default="reserved")
@@ -126,3 +126,37 @@ class TeamEvent(Owned, Base):
         ForeignKeyConstraint(["reply_to_event_id", "team_thread_id", *OWNER],
             [f"control_workspace_team_events.{c}" for c in ["id", "team_thread_id", *OWNER]],
             ondelete="NO ACTION", deferrable=True, initially="DEFERRED", name="fk_workspace_team_reply"))
+
+
+class DirectChat(Owned, Base):
+    """Append-only recipient/parent mapping; neither a grant nor an executor."""
+
+    __tablename__ = "control_workspace_direct_chats"
+    parent_topic_id: Mapped[str] = mapped_column(String)
+    child_topic_id: Mapped[str] = mapped_column(String)
+    team_thread_id: Mapped[str] = mapped_column(String)
+    task_thread_id: Mapped[str] = mapped_column(String)
+    business_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    grant_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    mode: Mapped[str] = mapped_column(String)
+    recipient: Mapped[dict] = mapped_column(JSONB)
+    recipient_sha256: Mapped[str] = mapped_column(String)
+    execution_scope: Mapped[dict] = mapped_column(JSONB)
+    execution_sha256: Mapped[str] = mapped_column(String)
+    session_id: Mapped[str] = mapped_column(String)
+    source_revision: Mapped[str] = mapped_column(String)
+    idempotency_key: Mapped[str] = mapped_column(String)
+    request_fingerprint: Mapped[str] = mapped_column(String)
+    __table_args__ = (
+        UniqueConstraint(*BINDING), UniqueConstraint("child_topic_id"), UniqueConstraint("team_thread_id"),
+        UniqueConstraint("task_thread_id"), UniqueConstraint("user_id", "environment_id", "idempotency_key", name="uq_direct_chat_request"),
+        ForeignKeyConstraint(["parent_topic_id", *OWNER], [f"control_workspace_topics.{key}" for key in BINDING], ondelete="RESTRICT"),
+        ForeignKeyConstraint(["child_topic_id", *OWNER], [f"control_workspace_topics.{key}" for key in BINDING], ondelete="RESTRICT"),
+        ForeignKeyConstraint(["team_thread_id", *OWNER], [f"{TeamThread.__tablename__}.{key}" for key in BINDING],
+            deferrable=True, initially="DEFERRED", ondelete="RESTRICT", name="fk_direct_team_scope"),
+        ForeignKeyConstraint(["task_thread_id", "organization_id", "user_id", "environment_id"],
+            [f"control_task_threads.{key}" for key in ("id", "organization_id", "user_id", "environment_id")],
+            deferrable=True, initially="DEFERRED", ondelete="RESTRICT", name="fk_direct_task_scope"),
+        ForeignKeyConstraint(["session_id", "user_id", "environment_id"],
+            [f"control_sessions.{key}" for key in ("id", "user_id", "environment_id")], ondelete="RESTRICT"),
+    )

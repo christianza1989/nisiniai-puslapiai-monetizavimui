@@ -1040,3 +1040,15 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 peer S42 WIRE CHECKPOINT: issue66/comments6203127387+6203188865; NEWdirect_wire.py/direct_contract.py +focusedcontracttest only, no runtime registration/migration. workspace-direct.v1 has immutabletypedrecipient, consultantworkspaceVSactualbusinessscope, opaquechat, separatehistory/status/realusage, savedpreviewtruthfulstate. 50PASS0.26s (27new+18Episode+5legacy), Ruff3files/export/diffPASS; baseline1FAIL1PASS1.51s SHA89b5676d retained. Ownupgradeaf9d3fda. Rootcodegensfromwirepin; actualbackend/privateCreationconsultant scopeunion andsavedincrementalnativepreview remain active nextpackets. Source3b7/API18871/nativecase unchanged. No helperDB/provider/process/browser actions.
 2026-10-16 peer S42 WIRE REFINEMENT beforeRootcodegen: Rootexplicitcan_cancel projection +owneddiscovery workspaceanchor added; fixedrecipient/nativebusinessonly unchanged. New52PASS0.36s/Ruff3files/standaloneexportPASS; priorwire9bea immutablehistory retained. Runtime/Taskschema still untouched; frozenrevisedpin next, thenauthorizedworkspaceTaskunion implementation.
 2026-10-16 peer S42 WIRE CONVERSATION REPAIR: independentfrontendb237DTOreproconfirmed1FAIL29deselected1.41s SHA936846f11f retained; admitted/sendablesavedpreview musthaveactualnativeConversation, blockedunstartednullallowed, consultantnullunchanged. Final53PASS0.54s/Ruff3/exportPASS; Source-onlywirefix separatefromdirtyruntimeSQLwork, Rootserving3b7untouched. Wirejournalaf9d3fda appendedevents, nohistoricaloverwrite.
+# S42 direct messenger consultant checkpoint — 2026-10-16
+
+Helper chat01a13440 owns `codex/verslomatika-direct-messenger-20261016` from Root3b7;
+wire9bea/b237/393 already handed to Root. Functional consultant packet reserves
+workspace_team direct helpers/models/routes/quota/adapter, tasks models/worker/
+direct_scope and workspace_topics/service, additive0043, source/offline/native-QA
+tests only, under issue66 comments6203127387/6203188865/6203398904. Parent group and
+old immutable native Episode provenance remain independent. Focused82PASS, broad
+1870PASS8SKIP67subtests plus2 dependency-only failures retained; ignored dependency
+setup repair16PASS. Five actual PostgreSQL tests collected only. No helper DB,
+provider, current-case, serving, browser or portal work. Root owns actual QA/adoption.
+Saved-agent incremental preview remains a required following source packet.

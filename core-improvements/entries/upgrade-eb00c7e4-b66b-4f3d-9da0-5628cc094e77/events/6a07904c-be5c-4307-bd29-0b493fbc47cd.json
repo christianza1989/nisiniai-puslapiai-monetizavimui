@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "First consultant source packet only, not whole Messenger acceptance. Exact typed workspace Task scope, immutable recipient/hidden child mapping, one Answer dispatch, current ownership/source final checks, shared one-call quota and retained failure accounting. Saved native preview remains explicitly blocked until next separate incremental packet; Root owns actual PG/adoption.",
+  "checks": [
+    {
+      "command": "pytest offline_tests + maintained workspace team/topics unit tests",
+      "result": "PASS",
+      "evidence": "1870PASS8SKIP67subtests;2initial environment failures retained (absent ignored Node dependencies), firstlog SHA256 6f1cea895dfdf79256e4054fa2f36e3c422e507ccecb9f12ea05fc644445f867; exact two failure regressions plus14direct tests after ignored dependency setup16PASS5.38s repairlogSHA256 2f590d14385de515b24497776d64f21b3f2683eaffcaa09605ed44afab05dda3"
+    },
+    {
+      "command": "pytest direct contract/scope/schema/execution + immutable Episode + legacy team/topics focused cohort",
+      "result": "PASS",
+      "evidence": "82PASS0.72s, final logSHA256 dadf4e56c3b1b25ad7889597ca5c794ab8e3878d2181f545313d553511d02ba9"
+    },
+    {
+      "command": "pytest --collect-only tests/test_workspace_direct_pg.py; ruff check affected runtime/migration/test files; git diff --check",
+      "result": "PASS",
+      "evidence": "5actual HTTP/restricted PostgreSQL cases collected only, DB/provider0; all affected Ruff clean; no native/RLS or serving PASS claimed."
+    }
+  ],
+  "eventId": "6a07904c-be5c-4307-bd29-0b493fbc47cd",
+  "sequence": 3,
+  "at": "2026-10-15T22:36:36.224Z"
+}

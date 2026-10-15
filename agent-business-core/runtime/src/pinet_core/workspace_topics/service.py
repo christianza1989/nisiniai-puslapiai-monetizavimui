@@ -139,6 +139,8 @@ async def owned_topic(tx, session, portfolio_id, topic_id, *, lock=False):
     row = await tx.scalar(stmt.execution_options(populate_existing=True))
     if not row:
         raise ControlError(404, "not_found")
+    from ..workspace_team.direct_visibility import reject_child
+    await reject_child(tx, row.id)
     await anchor_authority(tx, owned, anchor_of(row), grant_id=row.grant_id, lock=lock)
     if lock:
         row = await tx.scalar(stmt.with_for_update().execution_options(populate_existing=True))
@@ -353,6 +355,10 @@ def decoded_cursor(value, session, portfolio_id, snapshot):
 
 async def topic_rows(tx, owned, anchor, state):
     statement = select(Topic).where(*constraints(Topic, owned)).execution_options(populate_existing=True)
+    from ..workspace_team.direct_visibility import exclusion
+    private_children = await exclusion(tx)
+    if private_children is not None:
+        statement = statement.where(private_children)
     if anchor:
         statement = statement.where(Topic.anchor_kind == anchor.kind)
         if anchor.kind != "portfolio":

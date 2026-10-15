@@ -554,13 +554,13 @@
             "title": "Failure Code"
           },
           "reserved_calls": {
-            "maximum": 3,
+            "maximum": 10,
             "minimum": 0,
             "title": "Reserved Calls",
             "type": "integer"
           },
           "settled_calls": {
-            "maximum": 3,
+            "maximum": 10,
             "minimum": 0,
             "title": "Settled Calls",
             "type": "integer"

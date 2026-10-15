@@ -8,7 +8,7 @@ from pydantic import ValidationError
 
 from pinet_core.workspace_team.episode_contract import document
 from pinet_core.workspace_team.episode_wire import EpisodeView, TestAgent
-from pinet_core.workspace_team.wire import PublicEvent
+from pinet_core.workspace_team.wire import PublicEvent, Turn
 
 
 def request():
@@ -58,6 +58,20 @@ def test_test_completion_never_becomes_calibration_or_activation():
             {"quality_job_id": str(uuid4())}):
         with pytest.raises(ValidationError):
             EpisodeView.model_validate(view() | change)
+
+
+def test_turn_uses_exact_native_counts_while_ordinary_calls_keep_three_call_bound():
+    now = datetime.now(UTC).isoformat()
+    native = view() | {"max_calls": 10, "reserved_calls": 8, "settled_calls": 8, "usage_complete": True}
+    raw = {"task_id": str(uuid4()), "topic_id": str(uuid4()), "sequence": 1,
+        "idempotency_key": str(uuid4()), "status": "succeeded", "created_at": now, "updated_at": now,
+        "failure_code": None, "reserved_calls": 8, "settled_calls": 8, "usage_complete": True,
+        "cost_status": "UNVERIFIED", "context_receipt": None, "started_at": now, "lease_until": None}
+    assert Turn.model_validate(raw | {"native_episode": native}).reserved_calls == 8
+    for change in ({}, {"native_episode": native, "reserved_calls": 0},
+            {"native_episode": native, "usage_complete": False}):
+        with pytest.raises(ValidationError):
+            Turn.model_validate(raw | change)
 
 
 def event():

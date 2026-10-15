@@ -113,8 +113,8 @@ class Turn(Strict):
     created_at: datetime
     updated_at: datetime
     failure_code: str | None = Field(pattern=r"^[a-z_]{1,64}$")
-    reserved_calls: int = Field(strict=True, ge=0, le=3)
-    settled_calls: int = Field(strict=True, ge=0, le=3)
+    reserved_calls: int = Field(strict=True, ge=0, le=10)
+    settled_calls: int = Field(strict=True, ge=0, le=10)
     usage_complete: bool
     cost_status: Literal["UNVERIFIED"]
     context_receipt: ContextReceipt | None
@@ -123,6 +123,11 @@ class Turn(Strict):
 
     @model_validator(mode="after")
     def counts(self):
+        native = self.native_episode
+        if (native is None and self.reserved_calls > 3
+                or native is not None and (self.reserved_calls, self.settled_calls, self.usage_complete) != (
+                    native.reserved_calls, native.settled_calls, native.usage_complete)):
+            raise ValueError("Exact native or ordinary turn accounting required")
         if self.settled_calls > self.reserved_calls or self.status == "succeeded" and (
                 self.reserved_calls == 0 or self.settled_calls != self.reserved_calls):
             raise ValueError("Wrong accepted turn accounting")

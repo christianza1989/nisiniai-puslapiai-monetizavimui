@@ -138,6 +138,9 @@ def event_view(event, row):
 async def turn_view(tx, task, row):
     from . import episode
     attempts = list(await tx.scalars(select(Attempt).where(Attempt.task_id == task.id)))
+    native = await episode.projection(tx, task)
+    if native is not None and attempts:
+        raise ControlError(503, "source_unavailable")
     turn = await tx.get(TeamTurn, task.id)
     run = await tx.get(TaskRun, task.run_id) if task.run_id else None
     receipt = None
@@ -148,11 +151,13 @@ async def turn_view(tx, task, row):
             "history_cutoff": turn.context_cutoff, "history_event_ids": [item["event"]["event_id"] for item in turn.context["history"]],
             "omitted_history_events": turn.context["omitted_history_events"], "reply_to_event_id": turn.context["reply"]["event_id"] if turn.context["reply"] else None}
     return topics.project(Turn, task_id=task.id, topic_id=row.id, sequence=task.sequence,
-        native_episode=await episode.projection(tx, task),
+        native_episode=native,
         idempotency_key=task.idempotency_key, status=task.status, created_at=task.created_at,
-        updated_at=task.updated_at, failure_code=task.failure_code, reserved_calls=len(attempts),
-        settled_calls=sum(a.state != "reserved" for a in attempts),
-        usage_complete=bool(attempts) and all(a.state != "reserved" and a.usage is not None for a in attempts),
+        updated_at=task.updated_at, failure_code=task.failure_code,
+        reserved_calls=native["reserved_calls"] if native else len(attempts),
+        settled_calls=native["settled_calls"] if native else sum(a.state != "reserved" for a in attempts),
+        usage_complete=native["usage_complete"] if native else bool(attempts) and all(
+            a.state != "reserved" and a.usage is not None for a in attempts),
         cost_status="UNVERIFIED", context_receipt=receipt, started_at=run.created_at if run else None, lease_until=task.lease_until)
 
 

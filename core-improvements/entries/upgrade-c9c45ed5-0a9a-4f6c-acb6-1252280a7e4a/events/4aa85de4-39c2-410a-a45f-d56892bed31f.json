@@ -1,0 +1,8 @@
+{
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/167",
+  "note": "Draft integration PR created and attached. Exact S37 functional source86785a5c596d783fe2c37daa2bc7ba905268d244 fromd68843c8; targetremote f01 still includes typed-page predecessor until integrating owner pushes current checkout. Sharedcoverage f01-to86785 covers19 throughS35+S37journals; exactS37d688-to86785 covers14. Native10case actualexecution/serving/customer recovery remain Root-owned and pending. Helper readonlyportal review found no blocking identity/replay bypass; no portal mutations or DB/provider/customer/serving actions.",
+  "status": "pr",
+  "eventId": "4aa85de4-39c2-410a-a45f-d56892bed31f",
+  "sequence": 7,
+  "at": "2026-10-15T16:54:59.380Z"
+}

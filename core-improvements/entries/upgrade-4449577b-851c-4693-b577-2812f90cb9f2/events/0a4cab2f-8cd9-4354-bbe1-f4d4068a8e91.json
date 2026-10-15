@@ -1,0 +1,19 @@
+{
+  "status": "fixing",
+  "note": "S27 narrow shared guard extraction and server-owned copy amendment adapter implemented. Existing media + new adapter offline cohort 60 PASS / 3.22 s. First Ruff failed only import order in the new test; corrected then scoped Ruff PASS. Four real restricted-PG/native-Node selectors collected; execution pending frozen helper command integration. No accepted-case/provider/serving mutation or final native acceptance claimed.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_creation_media.py offline_tests/test_creation_content_amendment.py -q",
+      "result": "PASS",
+      "evidence": "60 passed in 3.22s; exact owner/source/revision/S6/receipt/no-retry and existing media assertions retained."
+    },
+    {
+      "command": "ruff check src/pinet_core/creation/content_amendment.py src/pinet_core/creation/media.py offline_tests/test_creation_content_amendment.py tests/test_creation_content_amendment_pg.py",
+      "result": "PASS",
+      "evidence": "All checks passed after correcting only the new test import order."
+    }
+  ],
+  "eventId": "0a4cab2f-8cd9-4354-bbe1-f4d4068a8e91",
+  "sequence": 2,
+  "at": "2026-10-15T07:40:28.431Z"
+}

@@ -47,6 +47,49 @@ class MediaAttachment(BaseModel):
     prompt: str = Field(default="", max_length=20000)
 
 
+def native_mutation_guard(tx, session, identity, request, *, still_authorized=None,
+                          unavailable_code="media_revision_unavailable", stale_code="media_context_stale"):
+    """Shared current-owner/S6 boundary for fixed native mutations, never admission.
+
+    The caller owns the SQL transaction. Keep the same actor/Creation lock order
+    for media and deterministic copy corrections; neither may reuse a GUIDE job.
+    """
+    source_pin = settings().control_source_revision
+    original_proof = None
+
+    async def guard(*, lock=False):
+        nonlocal original_proof
+        enabled()
+        if (settings().control_source_revision != source_pin
+                or not await asyncio.to_thread(source_current)):
+            raise ControlError(503, "source_unavailable")
+        creation = await owned(tx, session, identity, lock=lock)
+        await tx.refresh(creation)
+        if (creation.status != "draft_ready" or creation.active_job_id
+                or creation.current_revision != request.accepted_revision or await archived(tx, creation)):
+            raise ControlError(409, unavailable_code)
+        if await tx.scalar(select(GuideJob.id).where(GuideJob.creation_id == identity, GuideJob.status.in_(ACTIVE))):
+            raise ControlError(409, "content_work_busy")
+        proof = await accepted_proof(tx, creation)
+        if (proof["accepted_revision"] != request.accepted_revision
+                or proof["candidate_sha256"] != request.candidate_sha256
+                or proof["canonical_host"] != request.canonical_host
+                or original_proof is not None and proof != original_proof):
+            raise ControlError(409, stale_code)
+        if proof["accepted_source_revision"] != source_pin:
+            if not await continuation.schema_ready(tx):
+                raise ControlError(409, "build_continuation_stale")
+            current = await continuation.latest(tx, creation)
+            if not current or not await continuation.current(tx, creation, current):
+                raise ControlError(409, "build_continuation_stale")
+        if still_authorized is not None and not await still_authorized():
+            raise ControlError(401, "unauthenticated")
+        original_proof = proof
+        return creation, proof
+
+    return guard
+
+
 async def attach(tx, session, creation_id, request, *, seconds=20, still_authorized=None):
     """Import/attach once, retaining case receipts even if later checks refuse.
 
@@ -64,38 +107,7 @@ async def attach(tx, session, creation_id, request, *, seconds=20, still_authori
     if (isinstance(seconds, bool) or not isinstance(seconds, (int, float))
             or not 0 < seconds <= 20 or not request.alt.strip() or not request.rights.strip()):
         raise ControlError(400, "invalid_media_attachment")
-    source_pin = settings().control_source_revision
-    original_proof = None
-
-    async def guard(*, lock=False):
-        nonlocal original_proof
-        enabled()
-        if (settings().control_source_revision != source_pin
-                or not await asyncio.to_thread(source_current)):
-            raise ControlError(503, "source_unavailable")
-        creation = await owned(tx, session, identity, lock=lock)
-        await tx.refresh(creation)
-        if (creation.status != "draft_ready" or creation.active_job_id
-                or creation.current_revision != request.accepted_revision or await archived(tx, creation)):
-            raise ControlError(409, "media_revision_unavailable")
-        if await tx.scalar(select(GuideJob.id).where(GuideJob.creation_id == identity, GuideJob.status.in_(ACTIVE))):
-            raise ControlError(409, "content_work_busy")
-        proof = await accepted_proof(tx, creation)
-        if (proof["accepted_revision"] != request.accepted_revision
-                or proof["candidate_sha256"] != request.candidate_sha256
-                or proof["canonical_host"] != request.canonical_host
-                or original_proof is not None and proof != original_proof):
-            raise ControlError(409, "media_context_stale")
-        if proof["accepted_source_revision"] != source_pin:
-            if not await continuation.schema_ready(tx):
-                raise ControlError(409, "build_continuation_stale")
-            current = await continuation.latest(tx, creation)
-            if not current or not await continuation.current(tx, creation, current):
-                raise ControlError(409, "build_continuation_stale")
-        if still_authorized is not None and not await still_authorized():
-            raise ControlError(401, "unauthenticated")
-        original_proof = proof
-        return creation, proof
+    guard = native_mutation_guard(tx, session, identity, request, still_authorized=still_authorized)
 
     # This follows existing admission lock order. The transaction is caller-owned.
     creation, proof = await guard(lock=True)

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Runtime has no current-owner and S6-fenced deterministic native body correction adapter; existing metadata amendment deliberately rejects body and bare Node cannot supply SQL authority or reliable reconciliation.",
+  "category": "code",
+  "evidence": [
+    "docs/handoffs/VERSLOMATIKA_NATIVE_AGENT_CHAIN_2026-10-15.md",
+    "content-studio/scripts/customer-content-workflow.mjs:pagePatch",
+    "agent-business-core/runtime/src/pinet_core/creation/media.py:native_mutation_guard"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/media.py",
+    "agent-business-core/runtime/src/pinet_core/creation/content_amendment.py",
+    "agent-business-core/runtime/CONTENT_COMPLETION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the scoped runtime amendment adapter and guard extraction; preserve immutable private amendment receipts, accepted source, original failures and prior content history.",
+  "id": "upgrade-4449577b-851c-4693-b577-2812f90cb9f2",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "36a46074a0b1f52b77879765821149b6634c3c65",
+  "createdAt": "2026-10-15T07:33:38.487Z"
+}

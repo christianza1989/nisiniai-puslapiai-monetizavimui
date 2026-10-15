@@ -81,8 +81,8 @@ async def prepared(c, monkeypatch):
                 "factChecks": ["Tik izoliuotas sintetinis QA, ne tikras turinio priėmimas."]}}, environment, authorized, 20)
         await guard()
     # Generate only inert raster test bytes; maintained media.attach performs the real import.
-    sharp = (studio.ROOT / "content-studio/node_modules/sharp/lib/index.js").as_uri()
-    code = f"import sharp from {json.dumps(sharp)};process.stdout.write((await sharp({{create:{{width:400,height:300,channels:3,background:'#135050'}}}}).png().toBuffer()).toString('base64'));"
+    package = (studio.ROOT / "content-studio/package.json").as_uri()
+    code = f"import {{createRequire}} from 'node:module';const sharp=createRequire({json.dumps(package)})('sharp');process.stdout.write((await sharp({{create:{{width:400,height:300,channels:3,background:'#135050'}}}}).png().toBuffer()).toString('base64'));"
     png = base64.b64decode(await asyncio.to_thread(subprocess.check_output,
         [str(node), "--input-type=module", "-e", code], cwd=studio.ROOT, env=environment, text=True))
     inputs = directory / "media-inputs"

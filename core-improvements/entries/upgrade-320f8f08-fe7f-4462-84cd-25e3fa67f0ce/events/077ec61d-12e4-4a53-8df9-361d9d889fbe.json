@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root actual restricted PostgreSQL+HTTP+Node acceptance on combined ebc286cf in a new EMPTY dedicated database318d:10legacyPASS/5newFAIL147.19s, provider0 and original0032preserved. Every new case failed before continuity at synthetic PNG fixture hardcoding sharp/lib/index.js; installed maintained package exports resolve to sharp/dist/index.cjs. Retained full private test-0.raw.private.log and original source. Minimal fixture-only correction uses createRequire(content-studio/package.json)('sharp') and the actual dependency exports; no package install, production/authority/observer weakening or fake success. Actual eight-pixel PNG probe generated95bytes, exports resolved successfully. Corrected native cohort remains pending; servingAPIeb8/currentfailed571 untouched.",
+  "eventId": "077ec61d-12e4-4a53-8df9-361d9d889fbe",
+  "sequence": 4,
+  "at": "2026-10-15T21:33:19.160Z"
+}

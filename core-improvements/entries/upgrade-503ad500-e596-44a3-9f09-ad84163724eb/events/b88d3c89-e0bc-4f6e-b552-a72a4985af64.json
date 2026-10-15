@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "commit": "7c4a5be1ba9ca94cdac1f16d3a8be5f329d41b82",
+  "note": "24distinct native cases accepted across exact frozen cohorts, NOTone24casefinalrun: d23321PASS+3setupErrors256.25s retained (3new+18teamPASS); explicitcompanionQAconfigrerun1nativecallerPASS+2prepFAIL35.18s retained; test-onlypreparefixtureconfig correction7c final5PASS41.06s actualexit0 (3newrepeat+2prep). Core3sourcebytesd233/7c identical.125offlinePASS6.09s,41existingsignatures/contracts/policy/quota unchanged,Ruff/safetyPASS. Root owns separateS26integrationQA/privatewrapper/services; helperprovider0/nooperationaladoption/mainclaim.",
+  "checks": [
+    {
+      "command": "Root frozen d233 restricted PG tests/test_team_runner_readiness_pg.py and tests/test_workspace_team_pg.py",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_TEAM_RUNNER_READINESS_2026_10_15.md: safe log inspected21PASS256.25s;3unrelatedfixtureSETUPERRORpreserved."
+    },
+    {
+      "command": "Root frozen d233 explicitcompanion rerun nativecaller; final frozen7c tests/test_team_runner_readiness_pg.py plus2preparation selectors",
+      "result": "PASS",
+      "evidence": "Same decision:1nativecallerPASS35.18s (2prepFAILpreserved), then5PASS41.06s actualexit0; safe final log inspected/cleanQA7c and exactcorebytesverified.24unique cases; repeated3notadded."
+    },
+    {
+      "command": "python -B -m pytest -q --tb=short -p no:cacheprovider workspaceoffline+readiness+teamboundary cohort",
+      "result": "PASS",
+      "evidence": "Same decision:125PASS6.09s actualexit0,18case subsetnotadditive; original2FAIL3.87s retained."
+    },
+    {
+      "command": "Ruff3source+4affectedtests; ASTexistingqualifiedsignatures; wire/contract/policy/quota/episode diff; exactstagedrepositorysafety",
+      "result": "PASS",
+      "evidence": "Same decision: allchecksPASS,41existingsignatures unchanged, no wire/contract/policy/quota/episode diff; lastchange testfixtureconfigonly."
+    }
+  ],
+  "eventId": "b88d3c89-e0bc-4f6e-b552-a72a4985af64",
+  "sequence": 4,
+  "at": "2026-10-15T06:13:37.328Z"
+}

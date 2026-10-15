@@ -154,3 +154,33 @@ async def test_foreign_agent_and_changed_revision_fail_before_allocation(episode
         assert not list(await tx.scalars(select(Task).where(Task.environment_id == c["environment"])))
         assert not await tx.scalar(text(f"SELECT count(*) FROM {ALLOCATION} WHERE environment_id=:e"), {"e": c["environment"]})
 
+
+async def test_retained_unprofiled_allocation_keeps_topic_history_and_owner_replay_readable(episode_customer):
+    import json
+
+    from pinet_core.control.routes import scope
+    from pinet_core.workspace_team import calibration_budget as budget
+    from pinet_core.workspace_team.calibration_plan import EpisodePlan
+
+    c, p, _ = episode_customer
+    base = await setup(c)
+    accepted, body = await submit(c, base)
+    tid = accepted["turn"]["task_id"]
+    # Synthetic historical0040 migration fixture only. No operational data and
+    # no UPDATE of an admitted allocation: insert the retained shape afresh via
+    # the same canonical immutable allocator after this test's admin cleanup.
+    async with AsyncSession(c["admin"]) as tx, tx.begin():
+        plan = (await tx.execute(text(f"SELECT plan FROM {ALLOCATION} WHERE task_id=:t"), {"t": tid})).scalar_one()
+        await tx.execute(text(f"DELETE FROM {ALLOCATION} WHERE task_id=:t"), {"t": tid})
+    plan["snapshot"].pop("execution_profile")
+    retained = EpisodePlan.model_validate_json(json.dumps(plan))
+    async with scope(user=str(p.scope.user_id)) as tx:
+        await budget.allocate(tx, tid, retained)
+    history = await c["client"].get(base+"/team/events", headers=c["auth"])
+    assert history.status_code == 200, history.text
+    observed = history.json()["data"]["turns"][0]["native_episode"]
+    assert observed["reasoning_effort"] is None and observed["execution_profile_sha256"] is None
+    replay = await c["client"].post(base+"/team/agent-tests", headers=c["auth"], json=body)
+    assert replay.status_code == 200, replay.text
+    assert replay.json()["data"]["turn"]["task_id"] == tid
+

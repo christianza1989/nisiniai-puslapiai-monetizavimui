@@ -58,6 +58,10 @@ def test_test_completion_never_becomes_calibration_or_activation():
             {"quality_job_id": str(uuid4())}):
         with pytest.raises(ValidationError):
             EpisodeView.model_validate(view() | change)
+    retained = EpisodeView.model_validate(view() | {"execution_profile_sha256": None, "reasoning_effort": None})
+    assert retained.calibration_status == "UNVERIFIED" and retained.reasoning_effort is None
+    with pytest.raises(ValidationError):
+        EpisodeView.model_validate(view() | {"execution_profile_sha256": None})
 
 
 def test_turn_uses_exact_native_counts_while_ordinary_calls_keep_three_call_bound():

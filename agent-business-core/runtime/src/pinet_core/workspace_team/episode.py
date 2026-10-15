@@ -129,7 +129,8 @@ async def projection(tx, task):
         config_revision=plan.snapshot.config_revision, config_sha256=plan.snapshot.config_sha256,
         max_calls=plan.call_limit, reserved_calls=observed["reserved_calls"], settled_calls=observed["settled_calls"],
         usage_complete=observed["usage_complete"], scenario=header["plan"].get("scenario", "owner_scenario"),
-        model=plan.model, reasoning_effort=plan.effort, execution_profile_sha256=pin.fingerprint(),
+        model=plan.model, reasoning_effort=plan.effort if pin else None,
+        execution_profile_sha256=pin.fingerprint() if pin else None,
         conversation_id=result.get("conversation_id"), quality_job_id=result.get("quality_job_id")).model_dump(mode="json")
 
 

@@ -270,14 +270,28 @@
             "type": "string"
           },
           "reasoning_effort": {
-            "const": "high",
-            "title": "Reasoning Effort",
-            "type": "string"
+            "anyOf": [
+              {
+                "const": "high",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reasoning Effort"
           },
           "execution_profile_sha256": {
-            "pattern": "^[a-f0-9]{64}$",
-            "title": "Execution Profile Sha256",
-            "type": "string"
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Execution Profile Sha256"
           },
           "conversation_id": {
             "anyOf": [

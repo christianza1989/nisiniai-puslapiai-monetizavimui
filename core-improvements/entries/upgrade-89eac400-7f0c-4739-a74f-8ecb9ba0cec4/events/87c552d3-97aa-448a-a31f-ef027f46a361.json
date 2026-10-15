@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "commit": "f8de263b4f86069669701fe5b36e6d0fd5a84411",
+  "note": "Explicit execution policy source f8de has exact3source+2test byte equality with clean frozen Root27fe292424598eb92e3a3a90f71c28c50be2865b.29nativePASS305.08s=8newpolicy+8pinnedHigh+7Rootcaller+6targetedDEFAULT, restricted separate QA/inert providers; frozenHEAD/status verified after result.431offlinePASS7.84s; initial3FAIL2.70s preserved. Metadata Snapshot/history/frozen usage/default models and argv retained. No provider/serving/admission/main/full-calibration claim.",
+  "checks": [
+    {
+      "command": "Root frozen27fe pytest tests/test_high_execution_policy.py tests/test_customer_sol_high.py plus7caller and6targetedDEFAULT selectors",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_EXECUTION_POLICY_2026_10_15.md: actual terminal29PASS305.08s inspected using status-only filter; exact ownedbytes and clean frozencheckout independently verified."
+    },
+    {
+      "command": "python -B -m pytest -q --tb=short -p no:cacheprovider offline_tests/test_customer*.py offline_tests/test_high_execution_policy.py",
+      "result": "PASS",
+      "evidence": "Same decision:431PASS7.84s actual exit0;56case subset not additive;2existing Pydantic warnings."
+    },
+    {
+      "command": "python -B -m ruff check threeownedsourcefiles andtwopolicytestfiles; AST signatures; wire/OpenAPI diff; exact-staged repository-safety",
+      "result": "PASS",
+      "evidence": "Same decision: RuffPASS,67existing signatures unchanged, wire/OpenAPI diff empty; staged safety10files0findings and diffcheckPASS."
+    }
+  ],
+  "eventId": "87c552d3-97aa-448a-a31f-ef027f46a361",
+  "sequence": 3,
+  "at": "2026-10-15T05:43:50.473Z"
+}

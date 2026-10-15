@@ -17,7 +17,7 @@ ROUTE = """BEGIN
       END IF;
       IF EXISTS(SELECT 1 FROM public.control_workspace_direct_chats c WHERE c.team_thread_id=
         CASE WHEN TG_TABLE_NAME='control_workspace_team_threads' THEN to_jsonb(NEW)->>'id' ELSE to_jsonb(NEW)->>'team_thread_id' END) THEN
-        PERFORM public.workspace_direct_team_check(TG_TABLE_NAME,to_jsonb(NEW));
+        PERFORM public.workspace_direct_team_check(TG_TABLE_NAME::VARCHAR,to_jsonb(NEW));
         RETURN NEW;
       END IF;
       IF TG_TABLE_NAME='control_workspace_team_threads' THEN SELECT * INTO th FROM public.control_workspace_team_threads WHERE id=NEW.id;"""
@@ -141,15 +141,65 @@ def policies():
 
 
 def guard_functions():
+    boundary = f"""CREATE FUNCTION workspace_direct_task_boundary(tbl VARCHAR,j JSONB) RETURNS VARCHAR
+      LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,public AS $$
+      DECLARE t public.control_tasks%ROWTYPE;th public.control_task_threads%ROWTYPE;c public.{TABLE}%ROWTYPE;trusted BOOLEAN;BEGIN
+      -- Only a tiny applicability/accounting classification; no message/result,
+      -- current grant, output permission or model authority is returned.
+      SELECT EXISTS(SELECT 1 FROM pg_roles WHERE rolname=session_user AND(rolsuper OR rolbypassrls)) INTO trusted;
+      IF NOT trusted AND(j->>'user_id' IS DISTINCT FROM current_setting('pinet.control_user',true)
+        OR j->>'environment_id' IS DISTINCT FROM current_setting('pinet.environment',true)) THEN RETURN NULL;END IF;
+      IF tbl='control_task_threads' THEN
+        SELECT * INTO th FROM public.control_task_threads WHERE id=j->>'id';
+        IF th.id IS NULL OR EXISTS(SELECT 1 FROM unnest(ARRAY['business_id','user_id','organization_id','environment_id']) k
+          WHERE to_jsonb(th)->>k IS DISTINCT FROM j->>k) THEN RETURN NULL;END IF;
+        IF EXISTS(SELECT 1 FROM public.{TABLE} WHERE task_thread_id=th.id) THEN RETURN 'direct';END IF;
+        RETURN CASE WHEN th.business_id IS NOT NULL THEN 'legacy' ELSE NULL END;
+      END IF;
+      IF tbl NOT IN('control_tasks','control_task_runs','control_task_events') THEN RETURN NULL;END IF;
+      SELECT * INTO t FROM public.control_tasks WHERE id=CASE WHEN tbl='control_tasks' THEN j->>'id' ELSE j->>'task_id' END;
+      IF t.id IS NULL OR EXISTS(SELECT 1 FROM unnest(ARRAY['business_id','user_id','organization_id','environment_id']) k
+        WHERE to_jsonb(t)->>k IS DISTINCT FROM j->>k) THEN RETURN NULL;END IF;
+      SELECT * INTO c FROM public.{TABLE} WHERE task_thread_id=t.thread_id;
+      IF NOT FOUND THEN
+        RETURN CASE WHEN t.kind IN('chat.consult','acquisition.reviewed_capture','workspace.team_turn')
+          AND t.business_id IS NOT NULL THEN 'legacy' ELSE NULL END;
+      END IF;
+      IF t.kind<>'{KIND}' OR c.mode<>'consultant' OR c.business_id IS DISTINCT FROM t.business_id
+        OR c.user_id<>t.user_id OR c.organization_id<>t.organization_id OR c.environment_id<>t.environment_id
+        THEN RETURN 'direct';END IF;
+      IF t.status IN('failed','cancelled') AND t.result IS NULL THEN
+        IF tbl='control_tasks' AND coalesce((j->>'kind'=t.kind AND j->>'status'=t.status
+          AND j->'result'='null'::jsonb AND j->>'thread_id'=t.thread_id AND j->>'session_id'=t.session_id
+          AND j->>'source_revision'=t.source_revision),FALSE) THEN RETURN 'terminal';END IF;
+        IF tbl='control_task_runs' AND coalesce((j->>'id'=t.run_id AND j->>'status'=t.status
+          AND j->>'model'='gpt-6.1-sol' AND j->>'effort'='high' AND j->>'adapter_revision'='codex-workspace-direct.v1'),FALSE)
+          THEN RETURN 'terminal';END IF;
+        IF tbl='control_task_events' AND coalesce((j->>'status'=t.status AND (j->>'sequence')::INTEGER<=t.event_sequence
+          AND j->>'failure_code' IS NOT DISTINCT FROM t.failure_code),FALSE)
+          THEN RETURN 'terminal';END IF;
+      END IF;
+      RETURN 'direct';END$$"""
     task_guard = f"""CREATE FUNCTION workspace_direct_task_fence() RETURNS TRIGGER
       LANGUAGE plpgsql SECURITY INVOKER SET search_path=pg_catalog,public AS $$
       DECLARE c public.{TABLE}%ROWTYPE;t public.control_tasks%ROWTYPE;native public.control_task_threads%ROWTYPE;
-        terminal_failure BOOLEAN=FALSE;rid VARCHAR;BEGIN
+        terminal_failure BOOLEAN=FALSE;rid VARCHAR;boundary VARCHAR;BEGIN
+      boundary=public.workspace_direct_task_boundary(TG_TABLE_NAME::VARCHAR,to_jsonb(NEW));
+      IF boundary='legacy' THEN RETURN NEW;END IF;
+      IF boundary IS NULL THEN RAISE EXCEPTION 'exact typed task boundary required' USING ERRCODE='23514';END IF;
+      IF TG_TABLE_NAME='control_tasks' AND TG_OP='UPDATE' AND
+        (to_jsonb(NEW)-ARRAY['status','result','failure_code','run_id','lease_until','updated_at','event_sequence'])<>
+        (to_jsonb(OLD)-ARRAY['status','result','failure_code','run_id','lease_until','updated_at','event_sequence'])
+        THEN RAISE EXCEPTION 'immutable direct task request' USING ERRCODE='23514';END IF;
+      IF TG_TABLE_NAME='control_task_runs' AND TG_OP='UPDATE' AND
+        (to_jsonb(NEW)-ARRAY['status','finished_at','usage','cost_microusd'])<>
+        (to_jsonb(OLD)-ARRAY['status','finished_at','usage','cost_microusd'])
+        THEN RAISE EXCEPTION 'immutable direct run binding' USING ERRCODE='23514';END IF;
+      IF boundary='terminal' THEN RETURN NEW;END IF; -- retained failure/accounting only, never success/output
       IF TG_TABLE_NAME='control_task_threads' THEN
         SELECT * INTO c FROM public.{TABLE} WHERE task_thread_id=NEW.id;
         IF NOT FOUND THEN
-          IF NEW.business_id IS NULL THEN RAISE EXCEPTION 'NULL task thread needs exact workspace chat' USING ERRCODE='23514';END IF;
-          RETURN NEW;
+          RAISE EXCEPTION 'current exact workspace chat required' USING ERRCODE='23514';
         END IF;
         IF NEW.business_id IS DISTINCT FROM c.business_id OR NEW.user_id<>c.user_id OR NEW.organization_id<>c.organization_id
           OR NEW.environment_id<>c.environment_id OR NOT public.workspace_direct_parent(to_jsonb(c),TRUE)
@@ -195,8 +245,10 @@ def guard_functions():
           (to_jsonb(OLD)-ARRAY['status','finished_at','usage','cost_microusd'])
           THEN RAISE EXCEPTION 'immutable direct run binding' USING ERRCODE='23514';END IF;
       END IF;
-      IF TG_TABLE_NAME='control_task_events' AND (NEW.status<>t.status OR NEW.sequence>t.event_sequence)
-        THEN RAISE EXCEPTION 'exact direct task state event required' USING ERRCODE='23514';END IF;
+      IF TG_TABLE_NAME='control_task_events' THEN
+        IF NEW.status<>t.status OR NEW.sequence>t.event_sequence OR NEW.failure_code IS DISTINCT FROM t.failure_code
+          THEN RAISE EXCEPTION 'exact direct task state event required' USING ERRCODE='23514';END IF;
+      END IF;
       RETURN NEW;END$$"""
     team_guard = f"""CREATE FUNCTION workspace_direct_team_check(tbl VARCHAR,j JSONB) RETURNS VOID
       LANGUAGE plpgsql SECURITY INVOKER SET search_path=pg_catalog,public AS $$
@@ -271,7 +323,10 @@ def guard_functions():
           THEN RAISE EXCEPTION 'earlier same-chat reply required' USING ERRCODE='23514';END IF;
       END IF;
       END$$"""
-    return [task_guard, team_guard,
+    return [boundary,
+        "REVOKE ALL ON FUNCTION workspace_direct_task_boundary(VARCHAR,JSONB) FROM PUBLIC",
+        "GRANT EXECUTE ON FUNCTION workspace_direct_task_boundary(VARCHAR,JSONB) TO pinet_runtime",
+        task_guard, team_guard,
         "REVOKE ALL ON FUNCTION workspace_direct_task_fence() FROM PUBLIC",
         "REVOKE ALL ON FUNCTION workspace_direct_team_check(VARCHAR,JSONB) FROM PUBLIC",
         "GRANT EXECUTE ON FUNCTION workspace_direct_team_check(VARCHAR,JSONB) TO pinet_runtime",

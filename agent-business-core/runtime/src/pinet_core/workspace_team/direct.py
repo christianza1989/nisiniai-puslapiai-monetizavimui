@@ -35,6 +35,7 @@ async def schema_ready(tx):
       AND EXISTS(SELECT 1 FROM pg_constraint WHERE conname='control_task_business_execution_check' AND conrelid=to_regclass('public.control_tasks') AND convalidated)
       AND EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.workspace_direct_team_check(character varying,jsonb)') AND NOT prosecdef)
       AND EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.workspace_direct_run_usage(character varying,character varying,character varying,character varying,character varying)') AND prosecdef)
+      AND EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.workspace_direct_task_boundary(character varying,jsonb)') AND prosecdef)
       AND EXISTS(SELECT 1 FROM pg_proc WHERE oid=to_regprocedure('public.control_workspace_team_fence()') AND pg_get_functiondef(oid) LIKE '%workspace_direct_team_check%')
       AND(SELECT count(*)=6 FROM pg_trigger WHERE tgname IN('direct_task_fence','direct_binding_fence','direct_binding_immutable')
         AND tgrelid IN(to_regclass('public.control_task_threads'),to_regclass('public.control_tasks'),to_regclass('public.control_task_runs'),
@@ -90,8 +91,8 @@ async def owned(tx, session, portfolio_id, topic_id, chat_id, *, lock=False):
         raise ControlError(503, "direct_schema_unavailable")
     statement = select(DirectChat).where(DirectChat.id == identifier(chat_id), DirectChat.parent_topic_id == row.id,
         *topics.constraints(DirectChat, binding(row)))
-    if lock:
-        statement = statement.with_for_update(read=True)
+    # The binding is append-only and has no UPDATE privilege. Current parent/
+    # actor locks serialize admission; immutable rows need no FOR SHARE grant.
     chat = await tx.scalar(statement.execution_options(populate_existing=True))
     if not chat:
         raise ControlError(404, "not_found")

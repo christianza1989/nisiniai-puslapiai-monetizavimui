@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root actual fresh915 fail-fast QA produced1PASS1FAIL20.43s: first create fixed, worker.execute_once hit UndefinedColumnError record NEW has no field sequence on TaskRun deferred trigger. Original logSHA25649516f5545ea40c9f3688a9b6466bd45de60b1a26c435b623c3753c3bd1cbe2e retained. Event sequence AND failure_code references now sit inside a separate procedural Event-table IF. AND on table name cannot hide parse-time missing fields. No comparison or current authority fence removed. Root independently confirmed old3b7/0042 nested membership test hits2s LockNotAvailable baseline, not an acceptance PASS.",
+  "eventId": "66a4ffcc-3ea6-473a-a805-9a59cccc9c9c",
+  "sequence": 5,
+  "at": "2026-10-15T23:27:08.911Z"
+}

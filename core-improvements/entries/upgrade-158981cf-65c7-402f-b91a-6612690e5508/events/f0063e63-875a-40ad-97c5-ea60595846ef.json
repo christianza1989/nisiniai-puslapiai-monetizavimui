@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Full source/offline regression completed at functional repair eff5b585. Restored only ignored local Node dependency junction before run. No source changes after functional pin, no helper DB/provider/serving/case operations; Root actual-PG rerun remains acceptance gate. Stage2 mutation stays paused.",
+  "checks": [
+    {
+      "command": "pytest -q offline_tests tests/test_workspace_team.py tests/test_workspace_topics.py",
+      "result": "PASS",
+      "evidence": "1876PASS8SKIP67subtests84.87s; 2 inherited Pydantic deprecation warnings. Full logSHA256 18f184a365af6f100f8d66d53835f36dca72d630b37ca7a12b248e64f6adbe8e; includes actual Python-to-Node isolated fixture bridges, no DB/provider fixtures."
+    }
+  ],
+  "eventId": "f0063e63-875a-40ad-97c5-ea60595846ef",
+  "sequence": 4,
+  "at": "2026-10-15T23:14:20.691Z"
+}

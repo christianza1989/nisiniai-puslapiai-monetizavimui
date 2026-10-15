@@ -19,6 +19,7 @@ from ..customer_text.adapter import VERSION as TRANSPORT
 from ..customer_text.wire import NeedValue
 from ..models import Business
 from .lab import Episode
+from .preview import PreviewSnapshot
 from .wire import Digest, Strict
 
 VERSION = "customer-quality.v1"
@@ -36,7 +37,7 @@ class Binding(Strict):
     profile: AdmittedProfile
     adapter: Literal[TRANSPORT]
     model: Literal[MODEL, "gpt-6.1-sol"]
-    task_calibration: Episode | None = None
+    task_calibration: Episode | PreviewSnapshot | None = None
     execution_profile: execution.Pin | None = None
 
     @model_serializer(mode="wrap")

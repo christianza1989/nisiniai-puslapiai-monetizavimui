@@ -2,6 +2,7 @@
 import asyncio
 from dataclasses import dataclass
 from datetime import timedelta
+from typing import Literal
 from uuid import UUID
 
 from fastapi import HTTPException
@@ -20,6 +21,7 @@ from ..db import db
 from ..models import Artifact, Contact, Conversation, Event, Job, new_id, utcnow
 from ..tasks.codex_transport import RunnerError
 from . import evaluator, lab, protection, quality, typed_checks
+from .preview import QUALITY_VERSION, PreviewSnapshot, check_prefix
 from .wire import Strict
 
 VERSION = "customer-quality-dispatch.v1"
@@ -54,7 +56,19 @@ class SessionTypedRequest(SessionScoredRequest):
     typed_expectations: protection.Reference
 
 
+class SessionPreviewRequest(SessionScoredRequest):
+    """Opt-in next-message review; existing v1 Session requests stay byte-identical."""
+    version: Literal[QUALITY_VERSION] = QUALITY_VERSION
+    episode: PreviewSnapshot
+    preview_turn_id: UUID
+    text_request_id: UUID
+    base_transcript_revision: int = Field(strict=True, ge=0, le=19)
+    base_transcript_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+
+
 def parse_session_request(value):
+    if isinstance(value, dict) and value.get("version") == QUALITY_VERSION:
+        return SessionPreviewRequest.model_validate(value)
     schema = (SessionTypedRequest if isinstance(value, dict) and "typed_expectations" in value else
               SessionScoredRequest if isinstance(value, dict) and "score_competence" in value else SessionReviewRequest)
     return schema.model_validate(value)
@@ -158,6 +172,11 @@ async def _prepare(principal, request):
     async with principal.text_authority(frozen["creation_id"], calibration=frozen) as (
             tx, session, creation, identity, business, binding):
         row = await chat.locked(tx, str(request.conversation_id), binding)
+        preview = {}
+        if isinstance(request, SessionPreviewRequest):
+            revision, transcript_sha256 = await check_prefix(tx, row.id, request)
+            preview = {"direct_preview_version": QUALITY_VERSION, "direct_preview_turn_id": str(request.preview_turn_id),
+                "transcript_revision": revision, "transcript_sha256": transcript_sha256}
         protection_sha256 = await protection.review_proof(tx, row)
         typed = None
         if isinstance(request, (TypedRequest, SessionTypedRequest)):
@@ -168,8 +187,14 @@ async def _prepare(principal, request):
         proof_material = {"protected_case_sha256": protection_sha256} if protection_sha256 is not None else {}
         execution_material = execution.call_fields(binding, "customer_quality")
         fingerprint = digest({**material, **proof_material, **typed_material, **execution_material})
-        job = await tx.scalar(select(Job).where(Job.conversation_id == row.id, Job.kind == "quality",
-            Job.business_id == business.id, Job.environment_id == settings().environment).with_for_update())
+        query = select(Job).where(Job.conversation_id == row.id, Job.kind == "quality",
+            Job.business_id == business.id, Job.environment_id == settings().environment)
+        if preview:
+            query = query.where(Job.payload["direct_preview_version"].astext == QUALITY_VERSION,
+                Job.payload["direct_preview_turn_id"].astext == str(request.preview_turn_id))
+        else:
+            query = query.where(Job.payload["direct_preview_version"].astext.is_distinct_from(QUALITY_VERSION))
+        job = await tx.scalar(query.with_for_update())
         if job:
             if job.payload.get("dispatch") != VERSION or job.payload.get("fingerprint") != fingerprint:
                 raise ControlError(409, "quality_request_conflict")
@@ -188,7 +213,7 @@ async def _prepare(principal, request):
             payload={"dispatch": VERSION, "request_id": str(request.request_id), "fingerprint": fingerprint,
                 "binding_sha256": digest(binding), "input_sha256": digest(data),
                 "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile,
-                **proof_material, **score_material, **typed_material, **session_material, **execution_material})
+                **proof_material, **score_material, **typed_material, **session_material, **execution_material, **preview})
         tx.add(job)
         await tx.flush()
         await core.add_event(tx, row, "quality-request:" + str(request.request_id), "quality_request",

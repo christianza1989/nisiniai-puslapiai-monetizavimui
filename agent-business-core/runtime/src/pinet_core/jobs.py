@@ -218,13 +218,27 @@ async def complete_in_transaction(tx, business_id, task, result):
         # disable/revoke use that same ordering, including their row lock.
         await current_source(tx, convo)
         allow_tuning = await tuning_allowed(tx, convo)
-    existing = await tx.scalar(select(Artifact).where(Artifact.conversation_id == task["conversation_id"],
-                                                      Artifact.kind == task["kind"]))
+    query = select(Artifact).where(Artifact.conversation_id == task["conversation_id"], Artifact.kind == task["kind"])
+    preview = job.payload.get("direct_preview_version") == "customer-agent-direct-quality.v1"
+    revision = 1
+    if preview:
+        allow_tuning = False
+        from .customer_agents.preview import VERSION as preview_version
+        frozen = convo.payload.get("customer_text_binding", {}).get("task_calibration", {})
+        revision = job.payload.get("transcript_revision")
+        if (task["kind"] != "quality" or frozen.get("version") != preview_version
+                or type(revision) is not int or not 1 <= revision <= 20):
+            raise ValueError("customer_preview_quality_parent_conflict")
+        query = query.where(Artifact.revision == revision)
+        result = {**result, "direct_preview": {key: job.payload[key] for key in (
+            "direct_preview_version", "direct_preview_turn_id", "transcript_revision", "transcript_sha256")},
+            "quality_job_id": job.id}
+    existing = await tx.scalar(query)
     if not existing:
         artifact_id = new_id()
         common = {"business_id": business_id, "environment_id": settings().environment,
                   "conversation_id": task["conversation_id"]}
-        tx.add(Artifact(id=artifact_id, **common, kind=task["kind"], payload=result))
+        tx.add(Artifact(id=artifact_id, **common, kind=task["kind"], revision=revision, payload=result))
         if allow_tuning and task["kind"] == "quality" and result.get("root_cause", "unknown") != "unknown" and result.get("issues"):
             issue_id = new_id()
             tx.add(Artifact(id=issue_id, **common, kind=f"calibration_issue:{issue_id}",

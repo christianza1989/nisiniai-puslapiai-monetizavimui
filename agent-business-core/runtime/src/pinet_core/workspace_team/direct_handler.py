@@ -75,19 +75,43 @@ class DirectHandler:
         return deadline is not None and deadline > now
 
     async def context(self, tx, task):
+        row, chat, turn, _ = await direct.task_scope(tx, task)
+        if chat.mode == "agent_preview":
+            from .direct_preview import context_for
+            return await context_for(tx, task, row, chat, turn)
         from .direct_context import context_for
         return await context_for(tx, task)
 
     async def store_context(self, tx, task, run_id, context):
         context["_run_id"] = run_id
+        if "_direct_preview_plan" in context:
+            from .calibration_budget import bind_run
+            await bind_run(tx, task.id, run_id, context["_direct_context_sha256"])
+
+    def revision_for(self, context):
+        if "_direct_preview_plan" in context:
+            from .direct_preview_plan import ADAPTER
+            return ADAPTER
+        return self.adapter_revision
 
     async def completion_locks(self, tx, claimed):
+        if "_direct_preview_plan" in claimed["context"]:
+            from .direct_preview import completion_locks
+            await completion_locks(tx, claimed["context"])
         task = await tx.get(Task, claimed["task_id"], populate_existing=True)
         if not task or task.run_id != claimed["run_id"]:
             raise ControlError(403, "authorization_revoked")
         await direct.task_scope(tx, task, lock=True)
 
     async def run(self, context, heartbeat, runner=None):
+        if "_direct_preview_plan" in context:
+            from .direct_preview import execute
+            try:
+                return await execute(context, heartbeat)
+            except ControlError as error:
+                raise codex.RunnerError(error.code) from None
+            except SQLAlchemyError:
+                raise codex.RunnerError("task_result_unavailable") from None
         packet = {key: value for key, value in context.items() if not key.startswith("_")}
         receipt, usage = None, None
         try:
@@ -119,6 +143,9 @@ class DirectHandler:
 
     async def complete(self, tx, task, result):
         row, chat, turn, _ = await direct.task_scope(tx, task)
+        if chat.mode == "agent_preview":
+            from .direct_preview import complete
+            return await complete(tx, task, chat, turn, result)
         if (not isinstance(result, dict) or set(result) != {"attempt_id", "context_sha256", "answer"}
                 or result["context_sha256"] != turn.context_sha256 or digest(turn.context) != turn.context_sha256):
             raise codex.RunnerError("output_invalid")

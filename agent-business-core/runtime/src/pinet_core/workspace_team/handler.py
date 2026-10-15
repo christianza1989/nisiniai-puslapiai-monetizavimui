@@ -1,4 +1,5 @@
 """One typed handler for the maintained worker; no duplicate queue/lease/executor."""
+import asyncio
 import hashlib
 import json
 
@@ -37,6 +38,8 @@ def combined_usage(values):
 
 
 async def reserve(context, phase, packet):
+    if not await asyncio.to_thread(adapter.runner_ready):
+        raise codex.RunnerError("runner_unavailable")
     async with scope(user=context["_user_id"]) as tx:
         await call_slot(tx, context["_user_id"])
         task = await tx.scalar(select(Task).where(Task.id == context["_task_id"], Task.kind == KIND).with_for_update())

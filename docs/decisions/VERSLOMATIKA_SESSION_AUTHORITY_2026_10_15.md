@@ -2,6 +2,8 @@
 
 Current status: **locally verified for exact functional source `552357a619c1d7543d5a1b6599a5d39293c29015`**. Coordinator's frozen-source native acceptance is complete: **127 unique PostgreSQL cases passed** (16 new Session cases and 111 existing compatibility cases). This result covers the original Luna/default-Medium adapter only. The separately owned Sol High work is not covered by it.
 
+Review receipt: [draft PR154](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/154), created/attached against coordinator519. Root already integrated functional source; metadata-only `b5c4e385d6493a14e9cd5a4df8926686f4307062` closes journal acceptance. The separately cherry-picked history/shared append currently reports a merge conflict, so this is not an instruction to merge duplicate functional commits.
+
 Upgrade `upgrade-a11d021c-30bb-4865-b079-0a1e9aa06ff0`, issue66. Owned helper branch `codex/verslomatika-session-authority-20261015` starts at coordinator `51a83116e38f2d4579da59aa88e26ba04951947d`. Paired freshness fetched core main `808581d919d06cb4a2d151cc7f9ec1be1782aba2` and public main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`; read-only companion source `1a26f289092cecadc5799de898e809dc1769498a`.
 
 ## Problem and scope

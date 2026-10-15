@@ -59,10 +59,20 @@ def guard():
 
 
 async def snapshot(token, creation_id, agent_id, expected_revision):
+    return await _snapshot(chat._bearer(token), creation_id, agent_id, expected_revision)
+
+
+async def snapshot_session(principal, agent_id, expected_revision):
+    from .session import required
+    principal = required(principal)
+    return await _snapshot(principal, str(principal.scope.creation_id), agent_id, expected_revision)
+
+
+async def _snapshot(principal, creation_id, agent_id, expected_revision):
     guard()
     if type(expected_revision) is not int or not 1 <= expected_revision <= 2147483647:
         raise ControlError(400, "invalid_request")
-    async with agents.authority(token, creation_id, agent_id, writing=True) as (tx, session, creation, registry, agent):
+    async with principal.agent_authority(creation_id, agent_id, writing=True) as (tx, session, creation, registry, agent):
         if agent.purpose != "site_chat" or agent.current_revision != expected_revision:
             raise ControlError(409, "conversation_task_not_current")
         config = await agents.current_config(tx, agent)
@@ -123,6 +133,15 @@ def profile_matches(calibration, admission):
 
 
 async def episode(token, frozen, messages, request_id, *, protected_case=None):
+    return await _episode(chat._bearer(token), frozen, messages, request_id, protected_case=protected_case)
+
+
+async def episode_session(principal, frozen, messages, request_id, *, protected_case=None):
+    from .session import required
+    return await _episode(required(principal), frozen, messages, request_id, protected_case=protected_case)
+
+
+async def _episode(principal, frozen, messages, request_id, *, protected_case=None):
     """One explicit synthetic script; durable dispatch reconciles exact replies."""
     messages = [Turn(request_id=UUID(int=1), base_need_revision=0, message=m).message for m in messages]
     if not 1 <= len(messages) <= 8:
@@ -132,7 +151,7 @@ async def episode(token, frozen, messages, request_id, *, protected_case=None):
                     script_sha256=digest(messages)).model_dump(mode="json")
     from . import protection
     proof = protection.freeze(protected_case, frozen, messages) if protected_case is not None else None
-    created = await chat.start(token, value["creation_id"], Start(request_id=request_id,
+    created = await principal.start(value["creation_id"], Start(request_id=request_id,
         admission_id=value["admission_id"], notice_version="customer-text.local.v1", consent=True),
         calibration=value, protection=proof)
     turns, current = [], created
@@ -141,7 +160,7 @@ async def episode(token, frozen, messages, request_id, *, protected_case=None):
         prior = next((e["data"] for e in current["events"] if e["kind"] == "provider_attempt"
                       and e["data"].get("request_id") == key), None)
         revision = prior["need_revision"] if prior else current["need_revision"]
-        current = await chat.turn(token, value["creation_id"], created["conversation_id"],
+        current = await principal.turn(value["creation_id"], created["conversation_id"],
             Turn(request_id=key, base_need_revision=revision, message=message), calibration=value)
         turns.append(current["turn"])
         if current["turn"]["status"] != "succeeded":

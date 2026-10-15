@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Existing customer agent lab and independent Quality require bearer tokens, so a claimed workspace Task cannot invoke them with its canonical Session identity and durable per-call fence.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_SESSION_AUTHORITY_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/session.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/lab.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the scoped adapter source; preserve native conversations, attempts, usage, Config/Profile/source and protected corpus receipts.",
+  "id": "upgrade-a11d021c-30bb-4865-b079-0a1e9aa06ff0",
+  "branch": "codex/verslomatika-session-authority-20261015",
+  "baseSha": "51a83116e38f2d4579da59aa88e26ba04951947d",
+  "createdAt": "2026-10-15T03:24:54.299Z"
+}

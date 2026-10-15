@@ -6,6 +6,7 @@ from ..creation.routes import CreationRoute
 from ..customer.service import customer_guard
 from ..workspace_topics.routes import query_keys
 from . import directory, service
+from .direct_routes import router as direct_router
 from .directory_wire import DirectoryEnvelope
 from .episode_wire import VERSION as EPISODE_VERSION
 from .episode_wire import EpisodeEnvelope, TestAgent
@@ -96,3 +97,9 @@ async def cancel(portfolio_id: str, topic_id: str, task_id: str, value: Cancel, 
 
 
 router.include_router(episode_router)
+
+# Preserve every historical /team path and route class; attach its independent sibling.
+combined_router = APIRouter()
+combined_router.include_router(router)
+combined_router.include_router(direct_router)
+router = combined_router

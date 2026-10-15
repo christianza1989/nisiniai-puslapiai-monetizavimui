@@ -10,7 +10,9 @@ from ..models import Base, utcnow
 
 class OwnedTaskScope(ControlScope):
     organization_id: Mapped[str] = mapped_column(String)
-    business_id: Mapped[str] = mapped_column(String)
+    # SQL independently permits NULL only for an exact new direct workspace
+    # consultant binding. Every legacy/native business kind remains non-null.
+    business_id: Mapped[str | None] = mapped_column(String, nullable=True)
     user_id: Mapped[str] = mapped_column(String)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
 
@@ -27,6 +29,7 @@ class Thread(OwnedTaskScope, Base):
     last_sequence: Mapped[int] = mapped_column(Integer, default=0)
     __table_args__ = (
         UniqueConstraint(*BINDING),
+        UniqueConstraint("id", "organization_id", "user_id", "environment_id", name="uq_task_thread_owned_scope"),
         ForeignKeyConstraint(["business_id", "environment_id"],
                              ["control_business_grants.business_id", "control_business_grants.environment_id"]),
         ForeignKeyConstraint(["user_id", "environment_id"], ["control_users.id", "control_users.environment_id"]),

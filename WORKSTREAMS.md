@@ -1042,3 +1042,15 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 peer S42 WIRE CONVERSATION REPAIR: independentfrontendb237DTOreproconfirmed1FAIL29deselected1.41s SHA936846f11f retained; admitted/sendablesavedpreview musthaveactualnativeConversation, blockedunstartednullallowed, consultantnullunchanged. Final53PASS0.54s/Ruff3/exportPASS; Source-onlywirefix separatefromdirtyruntimeSQLwork, Rootserving3b7untouched. Wirejournalaf9d3fda appendedevents, nohistoricaloverwrite.
 
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
+# S42 direct messenger consultant checkpoint — 2026-10-16
+
+Helper chat01a13440 owns `codex/verslomatika-direct-messenger-20261016` from Root3b7;
+wire9bea/b237/393 already handed to Root. Functional consultant packet reserves
+workspace_team direct helpers/models/routes/quota/adapter, tasks models/worker/
+direct_scope and workspace_topics/service, additive0043, source/offline/native-QA
+tests only, under issue66 comments6203127387/6203188865/6203398904. Parent group and
+old immutable native Episode provenance remain independent. Focused82PASS, broad
+1870PASS8SKIP67subtests plus2 dependency-only failures retained; ignored dependency
+setup repair16PASS. Five actual PostgreSQL tests collected only. No helper DB,
+provider, current-case, serving, browser or portal work. Root owns actual QA/adoption.
+Saved-agent incremental preview remains a required following source packet.

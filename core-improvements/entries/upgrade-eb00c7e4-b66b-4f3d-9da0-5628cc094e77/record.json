@@ -1,0 +1,24 @@
+{
+  "evidence": [
+    "Root authorized exact direct execution union after canonical0011/0032 FK/NOTNULL and group-only provenance prevented a private creation consultant DM. Old business/native grant authority must remain unchanged.",
+    "Runtime scope baseline9FAIL1.13s before implementation because the exact direct_scope helper is absent; logSHA256d2e52e6ba1eaa9723aff844f1ccdea287077fbbab40bbcd035fb78f3c7c44b38. Wire delivered separately9bea+b237; no helper actual DB/provider/case/serving actions."
+  ],
+  "rollback": "Scoped source revert with all direct/group/native Task and usage/history retained. Additive migration downgrade must refuse retained direct or NULL-workspace rows. No old receipt rewrite, fabricated grant, force-reset, destructive data rollback or implicit activation.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team",
+    "agent-business-core/runtime/src/pinet_core/tasks/models.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/direct_scope.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_topics/service.py",
+    "agent-business-core/runtime/migrations/versions/0043_workspace_direct.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "siteId": "core",
+  "summary": "Implement the explicitly requested persisted direct messenger on the maintained Task worker, including true workspace-only consultant execution without inventing a registered business and a separate bounded native-preview continuation.",
+  "category": "code",
+  "id": "upgrade-eb00c7e4-b66b-4f3d-9da0-5628cc094e77",
+  "branch": "codex/verslomatika-direct-messenger-20261016",
+  "baseSha": "b237819daf0f4f87978037c92cb05c541e14977d",
+  "createdAt": "2026-10-15T22:11:12.436Z"
+}

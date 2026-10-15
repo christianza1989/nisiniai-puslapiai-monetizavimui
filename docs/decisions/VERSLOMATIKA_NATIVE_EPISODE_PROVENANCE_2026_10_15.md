@@ -53,9 +53,17 @@ the tool transcript; base c077121 retains the initial source for reproduction.
 The new PG
 file collects 16 selectors covering exact proof, missing/foreign/mismatched
 receipts, role/dual provenance and lease refusal, ordinary role replay, and
-permissions. Execution in a fresh isolated 0041 QA DB is pending root launch.
+permissions. The root subsequently executed all 16 on frozen functional source
+`6cd16976d487a2a856c887f320cddde161b3582e`: 16 PASS in 182.39s in a new
+restricted 0041 QA database. Migration/bootstrap, including the actual canonical
+CHECK comparator, passed. The original 0032 preview counts remained intact and
+provider calls were zero. Root's safe log was read by this peer; SHA256
+`b775d0292e4345c6184a629f2f426b0441f4bbd6407cda8ee4a973122209b834`.
+This is root-executed evidence, not a duplicate test run by this peer.
 The metadata fixtures use zero providers and prove no actual calibration grade.
 
 Root owns the model/wire/service/handler integration. Serving remains unchanged;
 this source does not migrate an operational DB or complete the platform.
 Downgrade refuses retained native history rather than discarding its provenance.
+The scoped schema/proof writing window is closed; later caller/High integration
+and actual user-journey adoption remain with their existing owners.

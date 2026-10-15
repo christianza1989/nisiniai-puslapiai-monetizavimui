@@ -269,3 +269,46 @@ nesukuria autoriaus duomenų ir nepatvirtina Foundation. Esamos redakcijos bei j
 source/schema kvitai neperrašomi. Reikalingos regresijos: tikslios senų schemų ir
 artefaktų SHA, netinkama ar dalinė v3 struktūra, tipo pakeitimo hash konfliktas,
 S36 ribotos pataisos, native importo replay ir jokių teisių / faktų pripažinimas.
+# Explicit private preview intake recovery
+
+`GET|POST /customer/v2/creations/{creation_id}/private-preview-intake` uses the separate
+`creation-private-preview-intake.v1` contract. POST accepts only the current exact
+`accepted_revision`, `candidate_sha256` and a caller-retained UUID `idempotency_key`.
+It authenticates the current verified owner in the existing local customer scope.
+Only a Creation whose public `canonical_host` is NULL can receive this explicit binding:
+`<creation UUID without hyphens>.preview.invalid`. That technical host is private native
+metadata; the Creation's public domain remains NULL and domain authority stays UNVERIFIED.
+Existing non-null host selection and historical intake/proof material retain their semantics.
+
+Migration 0042 adds owner/session-bound requests and immutable terminal receipts. Recovery
+revalidates the exact accepted payload/coordinator, original optional Discovery source context,
+current clean execution source, public companion and importer/network hashes before, during
+and after the fixed Node importer. No model is called and no Creation job/quota is renewed.
+The original job usage (including `studio_domain_required`) remains untouched. Native paths
+stay the maintained per-Creation accepted-revision directories; no candidate copying, manual
+SQL mutation, approval, source verification, deployment or agent/channel activation is implied.
+
+GET is read-only. Both methods return a status envelope; HTTP 200 with state `failed` is a
+retained failure. An existing pending UUID reconciles without dispatch; after its 90-second
+lease expires, an explicit same-key retry may reclaim only the exact same current binding.
+Terminal UUIDs never execute again. A separate explicit UUID may retry a terminal failure;
+successful current intake rejects another import. Old revision/source/session bindings are
+stale and provide no effective private host. Never wildcard-trust `.invalid`: use only the
+current exact status/accepted/source binding. Later native readers select the validated
+recovery receipt through the same resolver; all editorial/Foundation/public/agent gates remain.
+
+Source-only offline checks do not establish actual PostgreSQL enforcement, serving adoption
+or real customer recovery. Those checks belong to the integrating owner before live use.
+
+Offline QA: set `PYTHONPATH` to `agent-business-core/runtime/src`, set
+`PINET_CONTROL_SOURCE_REVISION` to a synthetic lowercase 40-hex revision, then run
+`python -m pytest agent-business-core/runtime/offline_tests -q -p no:cacheprovider`.
+Opt-in native QA lives in `tests/test_private_preview_pg.py`: the integrating owner must
+supply and migrate an EMPTY dedicated PostgreSQL QA database using the existing runtime
+and admin connection settings, plus the maintained native Node/companion configuration.
+With `PINET_PRIVATE_PREVIEW_QA=1`, run `python -m pytest
+agent-business-core/runtime/tests/test_private_preview_pg.py -q -p no:cacheprovider`.
+This fixture deliberately retains synthetic append-only rows and private files; ordinary
+customer fixture cleanup cannot delete their referenced actor/session history. It uses a
+synthetic source-current seam, real companion/importer hashes and real native HTTP/RLS/Node,
+with synthetic role outputs and zero provider calls. Collect-only is not execution evidence.

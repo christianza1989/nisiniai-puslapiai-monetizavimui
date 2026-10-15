@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Source-only functional checkpoint. Original Job usage/publicNULL/accepted source intact; non-null fast selection exact. Actual PG enforcement/native HTTP/Node/serving/adoption remain integrating Root responsibility. Eight opt-in EMPTY dedicated QA scenarios added and only collected; retain synthetic append-only provenance deliberately.",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "PINET_CONTROL_SOURCE_REVISION=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb PYTHONPATH=agent-business-core/runtime/src python -m pytest agent-business-core/runtime/offline_tests -q -p no:cacheprovider",
+      "evidence": "1691 passed,8 skipped,67 subtests passed112.05s; SHA58d00c6d98a06cb5a4d7cd07a0a2cbd3d5ba33cd4ed15afd0bd83549548785eb. Includes52 S37 focused tests; not additive."
+    },
+    {
+      "result": "PASS",
+      "command": "python -m pytest agent-business-core/runtime/tests/test_private_preview_pg.py --collect-only -q -p no:cacheprovider",
+      "evidence": "8 scenarios collected0.38s; no DB/provider/Node execution. Integrator must run actual EMPTY dedicated native QA."
+    },
+    {
+      "result": "PASS",
+      "command": "python -m ruff check exact18 changed Python source/migration/test files; git diff --check",
+      "evidence": "All checks passed; clean diff after documentation EOF correction. Canonical wire2e0 unchanged."
+    }
+  ],
+  "eventId": "a28a0147-3512-43ac-aeb1-b71d37bfbbc8",
+  "sequence": 4,
+  "at": "2026-10-15T16:44:41.868Z"
+}

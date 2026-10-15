@@ -95,11 +95,13 @@ async def capture(tx, session, creation_id):
     job = await tx.get(Job, revision.job_id) if revision else None
     if not job or not isinstance(job.usage, dict) or not isinstance(current, dict):
         raise ControlError(503, "invalid_content_completion_source")
-    mappings = job.usage.get("content_intake", {}).get("pageMappings", [])
+    from ..creation.private_preview import selected_intake
+    _, intake = await selected_intake(tx, creation, revision, job)
+    mappings = (intake or {}).get("pageMappings", [])
     by_path = {row["path"]: row["pageId"] for row in mappings}
     try:
         required = {by_path[page["path"]] for page in revision.payload["pages"]}
-        required.update(builds.initial_pages(revision.payload, job.usage["content_intake"]))
+        required.update(builds.initial_pages(revision.payload, intake))
         # Native supporting pages may be added by the maintained editorial workflow.
         required.update(p["pageId"] for p in current["pages"] if p["type"] not in {"guide", "article"})
         expected = FoundationScope.model_validate_json(json.dumps({**binding(creation),

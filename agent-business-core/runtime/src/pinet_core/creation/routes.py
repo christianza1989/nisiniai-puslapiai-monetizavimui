@@ -18,6 +18,7 @@ from ..domain_catalogue.models import (
 from ..domain_catalogue.service import CatalogueError
 from ..models import new_id, utcnow
 from .models import Artifact, Creation, Event, Job, Revision
+from .private_preview_wire import PreparePrivateIntake
 from .service import (
     ACTIVE,
     admission_enabled,
@@ -58,6 +59,30 @@ async def owned(tx, session, creation_id, *, lock=False):
         raise ControlError(404, "not_found")
     await current_actor(tx, session, row.portfolio_id)
     return row
+
+
+@router.get("/creations/{creation_id}/private-preview-intake")
+async def private_intake_detail(creation_id: str, request: Request, context=Depends(authenticated, scope="function")):
+    from . import private_preview
+    if request.query_params:
+        raise ControlError(400, "invalid_request")
+    tx, session = context
+    row = await owned(tx, session, creation_id)
+    result = core_envelope(request, await private_preview.view(tx, session, row))
+    result["contract_version"] = "creation-private-preview-intake.v1"
+    return result
+
+
+@router.post("/creations/{creation_id}/private-preview-intake")
+async def private_intake_prepare(creation_id: str, value: PreparePrivateIntake, request: Request):
+    from ..customer_text.service import bearer_token
+    from . import private_preview
+    if request.query_params:
+        raise ControlError(400, "invalid_request")
+    result = core_envelope(request, await private_preview.prepare(bearer_token(request.headers.get("authorization", "")),
+        identifier(creation_id), value))
+    result["contract_version"] = "creation-private-preview-intake.v1"
+    return result
 
 
 @router.post("/creations", status_code=202)

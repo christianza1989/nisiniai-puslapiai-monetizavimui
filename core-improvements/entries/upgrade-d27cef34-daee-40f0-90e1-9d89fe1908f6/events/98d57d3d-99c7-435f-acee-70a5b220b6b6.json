@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original frozen372 native6PASS2FAIL94.06s retained. Fixed actual authority boundary: catch RunnerError from lost current profile in text._authorized, preserving settlement then canonical text_authorization_changed. Corrected negative knowledge/attribution fixture to require typed FAIL only for unchanged independent_review_helpful criterion/allother9true, still2Highcalls/holdout replay/not_admitted. No scorer/protected/threshold change. Root readonly c345 diagnostic found0failedArtifacts after fixture teardown; do not claim retained bool inspection. New offline profile-refusal and exactnegativecriterion regression,391customerPASS9.52s; native rerun pending fresh frozen source.",
+  "eventId": "98d57d3d-99c7-435f-acee-70a5b220b6b6",
+  "sequence": 3,
+  "at": "2026-10-15T04:53:38.292Z"
+}

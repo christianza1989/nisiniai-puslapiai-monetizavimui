@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Existing High argv/receipt offline regression still supplies30seconds to reserve-aware canonical creation role clocks, causing4 inherited run_timeout failures before its mocked execute rather than testing actual arguments or provider-error receipts.",
+  "category": "workflow",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_CUSTOMER_SOL_HIGH_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/offline_tests/test_pipeline_execution_profile.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the scoped offline fixture input. No runtime/deadline/threshold/provider/config change.",
+  "id": "upgrade-9f62d97a-5e18-4a79-be2b-aecbc1bbd192",
+  "branch": "codex/verslomatika-customer-sol-high-20261015",
+  "baseSha": "519df2565036ef9bde1508cf80b584e12f59ce92",
+  "createdAt": "2026-10-15T04:34:19.382Z"
+}

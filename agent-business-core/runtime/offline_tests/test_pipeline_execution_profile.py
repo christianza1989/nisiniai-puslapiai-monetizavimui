@@ -5,7 +5,7 @@ from uuid import uuid4
 import pytest
 
 from pinet_core.config import settings
-from pinet_core.creation import adapter
+from pinet_core.creation import adapter, deadlines
 from pinet_core.creation import execution_profiles as profiles
 from pinet_core.creation.team_wire import AttemptView
 
@@ -110,12 +110,12 @@ async def test_real_argument_builder_and_private_receipt_keep_captured_sol_high(
         return True
     if failed:
         with pytest.raises(adapter.RunnerError, match="provider_error") as error:
-            await adapter.run_role(context, authorized, role=role, seconds=30)
+            await adapter.run_role(context, authorized, role=role, seconds=deadlines.job_seconds(profiles.SOL_HIGH))
         receipt = error.value.receipt
         stored = json.loads(next(tmp_path.glob("business-*/failure.private.json")).read_text("utf8"))
         assert stored["model"] == "gpt-6.1-sol"
     else:
-        _, receipt = await adapter.run_role(context, authorized, role=role, seconds=30)
+        _, receipt = await adapter.run_role(context, authorized, role=role, seconds=deadlines.job_seconds(profiles.SOL_HIGH))
     assert receipt["model"] == "gpt-6.1-sol" and receipt["reasoning_effort"] == "high"
 
 

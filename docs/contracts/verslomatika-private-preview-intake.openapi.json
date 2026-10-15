@@ -1,0 +1,542 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Explicit private preview intake",
+    "version": "creation-private-preview-intake.v1",
+    "description": "Local authenticated owner binding and accepted-revision native import recovery. Public canonical host remains unknown. No provider, approval, public domain, launch, deployment or channel activation authority."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/private-preview-intake": {
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current owner observation, including retained failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrivateIntakeEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current owner observation, including retained failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrivateIntakeEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, conflicting or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PreparePrivateIntake"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PreparePrivateIntake": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "candidate_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Candidate Sha256",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "accepted_revision",
+          "candidate_sha256",
+          "idempotency_key"
+        ],
+        "title": "PreparePrivateIntake",
+        "type": "object"
+      },
+      "PrivateIntakeAttempt": {
+        "additionalProperties": false,
+        "properties": {
+          "recovery_id": {
+            "format": "uuid",
+            "title": "Recovery Id",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "candidate_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Candidate Sha256",
+            "type": "string"
+          },
+          "accepted_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Accepted Source Revision",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "native_host": {
+            "maxLength": 253,
+            "minLength": 1,
+            "title": "Native Host",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "preparing",
+              "private_draft_imported",
+              "failed",
+              "stale"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z0-9_]{1,80}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          }
+        },
+        "required": [
+          "recovery_id",
+          "idempotency_key",
+          "accepted_revision",
+          "candidate_sha256",
+          "accepted_source_revision",
+          "source_revision",
+          "native_host",
+          "state",
+          "failure_code",
+          "created_at",
+          "finished_at"
+        ],
+        "title": "PrivateIntakeAttempt",
+        "type": "object"
+      },
+      "PrivateIntakeView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "current_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Revision"
+          },
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Sha256"
+          },
+          "state": {
+            "enum": [
+              "not_prepared",
+              "preparing",
+              "private_draft_imported",
+              "failed",
+              "stale"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "public_canonical_host": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Public Canonical Host"
+          },
+          "domain_authority": {
+            "const": "UNVERIFIED",
+            "title": "Domain Authority",
+            "type": "string"
+          },
+          "native_host": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Native Host"
+          },
+          "host_source": {
+            "enum": [
+              "not_bound",
+              "existing_canonical_host",
+              "explicit_private_preview"
+            ],
+            "title": "Host Source",
+            "type": "string"
+          },
+          "private_preview_only": {
+            "const": true,
+            "title": "Private Preview Only",
+            "type": "boolean"
+          },
+          "can_prepare": {
+            "title": "Can Prepare",
+            "type": "boolean"
+          },
+          "latest": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PrivateIntakeAttempt"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not_performed",
+            "title": "Deployment",
+            "type": "string"
+          },
+          "channel_activation": {
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_id",
+          "current_revision",
+          "candidate_sha256",
+          "state",
+          "public_canonical_host",
+          "domain_authority",
+          "native_host",
+          "host_source",
+          "private_preview_only",
+          "can_prepare",
+          "latest",
+          "full_f1_status",
+          "launch_status",
+          "deployment",
+          "channel_activation"
+        ],
+        "title": "PrivateIntakeView",
+        "type": "object"
+      },
+      "PrivateIntakeEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "creation-private-preview-intake.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PrivateIntakeView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "PrivateIntakeEnvelope",
+        "type": "object"
+      },
+      "Error": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "request_id"
+        ],
+        "title": "Error",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "CustomerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

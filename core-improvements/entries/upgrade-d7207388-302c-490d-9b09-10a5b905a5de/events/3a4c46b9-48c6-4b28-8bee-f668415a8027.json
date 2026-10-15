@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Draft PR153 targets only coordinator's feature branch; source6cd16976 preserves exact canonical author/fence anchors with native receipt provenance.13offlinePASS/Ruff/safety/scoped committed coverage PASS.16restrictedPG execution still pending coordinator's fresh disposable QA; no actual model/calibration/serving acceptance.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/153",
+  "commit": "6cd16976d487a2a856c887f320cddde161b3582e",
+  "eventId": "3a4c46b9-48c6-4b28-8bee-f668415a8027",
+  "sequence": 4,
+  "at": "2026-10-15T04:27:21.041Z"
+}

@@ -322,3 +322,23 @@ This fixture deliberately retains synthetic append-only rows and private files; 
 customer fixture cleanup cannot delete their referenced actor/session history. It uses a
 synthetic source-current seam, real companion/importer hashes and real native HTTP/RLS/Node,
 with synthetic role outputs and zero provider calls. Collect-only is not execution evidence.
+# Native GUIDE critic output
+
+The GUIDE provider uses private `content-work.critic-output.v2`: bounded prose,
+numeric selections from one exact native reference catalog and all nine check summaries.
+It reuses the business critic's compact field models. Stored/customer `creation.critic.v1`
+remains unchanged. The server recomputes the catalog from the original rich native candidate,
+restores only caller-validated receipt kinds/statuses/IDs, then applies the existing native
+hash/stage/round/pointer/coherence/language checks. Twelve findings and six references per
+finding remain available. Current provider output must use the private version; legacy
+stored full reviews and injected historical test seams retain their original validation.
+The coordinator already uses the shared S34 prose-only projection and restores its derived
+correction/remaining-check sets through the same strict stored contract.
+
+This follows an observed High GUIDE critic `provider_error` with
+`Incomplete response returned, reason: max_output_tokens`: 6.922 seconds versus a
+164.711-second execution deadline, no final file. The provider token budget was not exposed.
+That error is neither evidence of schema rejection nor the local 200000-byte output cap.
+Compact projection reduces redundant schema/output; actual provider success still requires
+a later authorized verification. It changes no model, effort, clocks, quotas, retry policy,
+failed/charged history or publication permissions. Never retry a terminal GUIDE implicitly.

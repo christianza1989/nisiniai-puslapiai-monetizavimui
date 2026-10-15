@@ -1,0 +1,7 @@
+{
+  "note": "Originalactual GUIDE critic trace6b7897296056d36a3980ecb2f6972a6ff6c6b28eec48eb113f99d026744f7356 retained: max_output_tokens6.922s/nooutput, not schema rejection/localbytecap/clockproof. Firstnew5FAIL14PASS3.11s SHA272923e5c9a6fbc5f05acaa6f8cb26f627d01d1a08f66fbc9ca23fdb443e3c91 retained. Added privateNativeCriticOutput using shared compact models, numeric ref catalog, trusted receipt hydration then unchanged full native validator. Coordinator alreadyS34 privateprose/derivedsets; code andpolicy remainexact, regressionadded. Intermediate2oldschemafixtureFAIL38PASS2.62s and1newcoordinatorfixtureFAIL46PASS4.32s retained; fixture expected oldFinding and supplied9actions aboveexisting5cap, correctedonlytests. Actualcreator825e792f matchesoriginalcriticcandidatehash238refs; provider schema9199→3424bytes, providerbudgetUNKNOWN. No helper providers/DB/Node/case/serving or historicalrewrites.",
+  "status": "fixing",
+  "eventId": "576faa84-50c2-4d85-9e77-a00727d2e143",
+  "sequence": 2,
+  "at": "2026-10-15T19:16:31.331Z"
+}

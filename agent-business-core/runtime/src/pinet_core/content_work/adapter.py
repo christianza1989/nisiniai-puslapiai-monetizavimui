@@ -60,7 +60,8 @@ async def run_role(context, authorized, *, role, seconds):
         prompt = creator_prompt(prepared, context.get("previous_candidate"), context.get("critic_feedback"))
         schema = prepared["outputSchema"]
     else:
-        prompt = review.policy(role) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context["review"], ensure_ascii=False)
+        prompt = (review.critic_prompt(context["review"]) if role == "critic" else
+            review.policy(role) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context["review"], ensure_ascii=False))
         schema = review.output_schema(role, context["review"])
     if len(prompt.encode()) > MAX_PROMPT_BYTES:
         raise RunnerError("context_limit")
@@ -81,6 +82,11 @@ async def run_role(context, authorized, *, role, seconds):
             trace_file=folder / "trace.private.jsonl", partial_receipt=trace.partial_receipt,
             stderr_file=folder / "stderr.private.log", observation_file=folder / "execution.private.json")
         receipt.update(instruction_hash=expected, adapter_revision=ADAPTER, model=model, reasoning_effort=profile["reasoning_effort"])
+        if role == "critic":
+            try:
+                result = review.provider_critic(result)
+            except RunnerError as error:
+                raise RunnerError(error.code, receipt) from None
         return result, receipt
     except RunnerError as error:
         error.receipt = {**(error.receipt or {}), "instruction_hash": expected,

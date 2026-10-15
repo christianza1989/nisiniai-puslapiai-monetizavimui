@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "1714passed8skipped67subtests81.66s; includes22new private native output cases, all legacy compat and negative exact binding/status/knownFAIL/index bounds.",
+      "command": "PINET_CONTROL_SOURCE_REVISION=bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb PYTHONPATH=agent-business-core/runtime/src python -m pytest agent-business-core/runtime/offline_tests -q -p no:cacheprovider"
+    },
+    {
+      "result": "PASS",
+      "evidence": "Actualcandidate hash matches originalschema,238refs, provider schema9199→3424bytes. Fiveexistingfunctions unchanged; coordinatorAST+policyidentical; storedCriticReview schemaSHAae215b8552aefb742e4738d96ba2a5a669ec9abbd0ab232ba4757867d7e8aa8b. No customer body copied intoGit.",
+      "command": "Offline reproduction from untouched actual saved creator825e792f plus originalcritic output.schema; AST/policy identity comparison against frozen749"
+    },
+    {
+      "result": "PASS",
+      "evidence": "All checks passed; README EOF corrected, exact scope only.",
+      "command": "python -m ruff check content_work/review.py content_work/adapter.py and3changedoffline testfiles; git diff --check"
+    }
+  ],
+  "note": "Current source-only S38 checkpoint: compact native provider output restores unchanged full stored CriticReview via original-candidate catalog and caller-validated receipts; all native hash/stage/round/pointer/status/coherence/language checks remain. Coordinator function and policy byte-equivalent/AST-identical, S34 privateprose+server sets already used. Creator/profile/clock/quota/transport/retry/error/history unchanged. Actual max_output_tokens cause/provider budget not exposed; reduction is not actual provider success or adoption proof. No helper DB/provider/Node/native-case/serving actions.",
+  "eventId": "4aa7d366-54ed-4f5f-acb5-b4fab34707f7",
+  "sequence": 3,
+  "at": "2026-10-15T19:17:18.715Z"
+}

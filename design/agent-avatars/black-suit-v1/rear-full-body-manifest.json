@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "sourceChat": "01a13932-061d-7392-ae71-085a551bbfb2",
+  "sourceAssetSet": "agent-pngs-full-body-20261015",
+  "scope": "Only the four rear portraits. Original square anchors and foreground, copy, layout and JavaScript preserved. Image-only landmark scaling allows the full-body canvas to continue behind the foreground.",
+  "sourceAssetsUnmodified": true,
+  "assets": [
+    {
+      "role": "researcher",
+      "file": "research-full-body.png",
+      "sha256": "261a417dd2aff82af55447a4bdc86320d5d413af13bacb7a87c8a73c59183ad1",
+      "bytes": 1380814,
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "placement": {
+        "widthPercent": 166,
+        "leftPercent": -34.6,
+        "topPercent": -3.2
+      }
+    },
+    {
+      "role": "designer",
+      "file": "design-full-body.png",
+      "sha256": "51d4903e2340431602867c9fdea8301dce3e6063cc58326181603022a511b99c",
+      "bytes": 1290393,
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "placement": {
+        "widthPercent": 186,
+        "leftPercent": -45.8,
+        "topPercent": -5.5
+      }
+    },
+    {
+      "role": "seo",
+      "file": "seo-full-body.png",
+      "sha256": "0744612281bb5d93e0a2490818c979d896b3a21483554dab5314340881993564",
+      "bytes": 1385349,
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "placement": {
+        "widthPercent": 167,
+        "leftPercent": -41.4,
+        "topPercent": -2.5
+      }
+    },
+    {
+      "role": "finance",
+      "file": "finance-full-body.png",
+      "sha256": "3a3b35fbc15584379645202cc7c6a3937ea1a894561fb2daec1cac4219571bec",
+      "bytes": 1319824,
+      "width": 1024,
+      "height": 1536,
+      "hasAlpha": true,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "placement": {
+        "widthPercent": 184,
+        "leftPercent": -46.1,
+        "topPercent": -3.9
+      }
+    }
+  ]
+}

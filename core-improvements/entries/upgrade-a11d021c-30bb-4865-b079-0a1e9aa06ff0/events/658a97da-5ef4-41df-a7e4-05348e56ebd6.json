@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "commit": "552357a619c1d7543d5a1b6599a5d39293c29015",
+  "note": "Exact functional552 accepted in coordinator's SEPARATE clean frozen source checkout:127 UNIQUE restricted PG cases PASS (new16 + existing111), inert providers. Original live-source11PASS2FAIL baseline, missing-Sharp setup errors and empty QA worker-secret401/409 failure retained; configured single-selector retry1PASS11.38s used only a new synthetic process-local QA secret, no source/gate/operational secret change. This event covers original Luna/default-Medium source552 ONLY, not later High changes, full calibration, main merge or serving adoption.",
+  "checks": [
+    {
+      "command": "pytest selectors: tests/test_customer_agent_session.py; first two setup selectors rerun in configured frozen552 text cohort",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_SESSION_AUTHORITY_2026_10_15.md: final new16 unique PASS (14 initial +2 setup-corrected), exact clean source552/restricted schema0039/provider0."
+    },
+    {
+      "command": "pytest selectors: tests/test_customer_text.py tests/test_customer_agent_lab.py; configured single test_legacy_worker_cannot_read_or_mutate_customer_text retry",
+      "result": "PASS",
+      "evidence": "Same decision: existing54 unique PASS (53 initial +1 process-local synthetic QA worker-secret retry1PASS11.38s); original55PASS1FAIL664.34s included2 new Session cases, all failures retained."
+    },
+    {
+      "command": "pytest tests/test_customer_review.py tests/test_customer_agent_protection.py tests/test_customer_competence.py tests/test_customer_typed_checks.py",
+      "result": "PASS",
+      "evidence": "Same decision:57PASS844.90s in separate restricted frozen552 QA DB; no model/provider/serving/config changes."
+    },
+    {
+      "command": "python -B -m pytest offline_tests/test_customer_agent_session.py offline_tests/test_customer_agent_lab.py offline_tests/test_customer_quality.py offline_tests/test_customer_agent_protection.py offline_tests/test_customer_competence.py offline_tests/test_customer_typed_checks.py",
+      "result": "PASS",
+      "evidence": "Same decision:160PASS3.64s; scoped RuffPASS; original4-source+test safety passes,52 public signatures/3bearer schemas unchanged."
+    }
+  ],
+  "eventId": "658a97da-5ef4-41df-a7e4-05348e56ebd6",
+  "sequence": 5,
+  "at": "2026-10-15T04:30:20.948Z"
+}

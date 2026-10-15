@@ -1,5 +1,17 @@
 # Kubilų verslas — atnaujintas darbas platformoje
 
+## Aktualu: tyrimas baigtas, privatus svetainės kūrimas tęsiamas
+
+2026-10-15 15:29 UTC: ketvirtas įprastas Discovery darbas `75ddc706-89ac-49be-885b-f758dcb840f5` sėkmingai užbaigė visas tris roles. Kūrėjas dirbo 512,73 s, kritikas 72,94 s, koordinatorius 35,22 s. Išsaugotas 2 redakcijos planas, SHA `2fe657bae5ae8991ffb03aecb6c71c614af1ede680f9bb5d150b8661acd45639`: 10 sričių, 18 šaltinių, 6 numatyti rezultatai. Normalioje Chrome sąsajoje patvirtinta ši tiksli redakcija ir pradėtas privatus Creation `85fb2b31-512e-4ee1-8904-fb6166ad594b`.
+
+Pirmas kūrimo darbas `96dd217a-d1e4-4190-806e-8a39d7f021d7` pateikė 8 puslapius ir 3 gidų aprašus. Kritikas pagrįstai paprašė užbaigti nutrūkusį dizaino paaiškinimo sakinį, tačiau koordinatoriaus mechaninių patikrų sąrašų neatitikimas sustabdė darbą su `review_invalid`. Priimtos redakcijos dar nėra. Originalūs rezultatai neperrašyti. [Tikslus atkūrimas ir S34 pataisa](VERSLOMATIKA_CREATION_REVIEW_RECOVERY_2026_10_15.md).
+
+S33 komercinių šaltinių pataisa integruota iš pagalbininko PR165: bendras rinkiklis anksčiau katalogo parenka tikras sąlygų nuorodas, o ribota v2 projekcija išsaugo vėliau tekste esančias svarbias išlygas su tiksliais fragmentų poslinkiais ir kontrolinėmis sumomis. Faktiniame ankstesniame šaltinių pakete išsaugotos visos penkios komercinės garantijos išlygos; originalus paketas, 24 s / 100 kB rinkimo ir 28 kB projekcijos ribos nekeičiami. Naujas rinkimo vykdymas ir seno plano kokybės patvirtinimas iš šios regresijos nepadaromi.
+
+S34 galutinis source `1ddcb132e30dc55c7d6d31afb73864649b0fcc5c` praėjo atskirą tikrą High koordinatoriaus bandymą per 24,50 s: galiojantis `revise`, privaloma `f_1` pataisa ir tiksliai 8 likusios patikros. Ši diagnostika neimportuota į seną darbą. Po IDLE patikros sustabdytas tik patikrintas API child6992; tas pats asmeninis measured checkout perjungtas į naują `codex/verslomatika-creation-recovery-serving-20261015` šaką ties1dd. Ankstesnė šaka ties736 išlieka, visų47 privačių artefaktų kontrolinės sumos sutampa. Nauja pilna DB kopija, visos84 lentelės ir originali0032 bazė išsaugotos; preflight PASS. API18871 child2992 paleistas per porinį freshness executable wrapper. Modeliai, kvotos36/34/3, vieno aktoriaus aprėptis ir išjungti išoriniai kanalai nepakito. Atskirai konservatyviai apskaitomi5 diagnostiniai modelio kvietimai.
+
+Per įprastą Chrome pokalbį pateiktas tęsinys pagal patvirtintą planą. Antras Creation darbas `04e37746-bb68-47c5-a565-4b113697faa7`, seka2/base0, sukurtas15:28:52Z, vykdomas su1dd. Šio įrašo metu kūrėjas dirba, `current_revision=0`; svetainės, native intake, gidų, medijos, Foundation ar publikavimo priėmimo dar nėra. Toliau stebėti tikrą peržiūrą ir tęsti esamą svetainės kelią, neįrašyti rankinio etalono ar diagnostikos rezultato. Toliau esantys RUNNING / laukiantys S32 įrašai yra ankstesnių momentų istorija.
+
 2026-10-15 savininkas aiškiai grąžino kubilų verslo kūrimą į darbų eilę. Ankstesnė [saugi pauzė](VERSLOMATIKA_WELLNESS_SAFE_PAUSE_2026_10_15.md) išsaugoma kaip istorinis taškas; jos draudimas pradėti naują bandymą šiuo pavedimu atšauktas. Tikslas nesikeičia: tyrimą, planą ir vėlesnę svetainę turi parengti pati Verslomatika, be rankinio etalono importavimo į modelio įvestį.
 
 ## Atnaujintas šaltinis ir bandymas

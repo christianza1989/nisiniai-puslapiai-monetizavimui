@@ -154,11 +154,12 @@ def test_structure_only_profile_is_smaller_exact_canonical_context_and_disables_
     assert digest != role_instruction_hash("creator")
 
 
-async def test_dispatched_creator_prompt_and_receipt_share_one_actual_instruction_snapshot(tmp_path, monkeypatch):
+@pytest.mark.parametrize('legacy_result', [False, True], ids=['typed-output', 'legacy-provider-output-rejected'])
+async def test_dispatched_creator_prompt_and_receipt_share_one_actual_instruction_snapshot(tmp_path, monkeypatch, legacy_result):
     import sys
     from pathlib import Path
 
-    from test_creation_content_plan import planned
+    from test_creation_content_plan import planned, typed
     from test_creation_review import draft as fixture
 
     from pinet_core.creation import adapter
@@ -188,15 +189,25 @@ async def test_dispatched_creator_prompt_and_receipt_share_one_actual_instructio
     async def execute(args, **kwargs):
         assert kwargs['prompt'].startswith(original_policy + '\n\nUNTRUSTED_CONTEXT_JSON\n')
         assert 'Changed typography after the completed snapshot read' not in kwargs['prompt']
-        return planned(fixture.__wrapped__()), {'usage': {'input_tokens': 1, 'output_tokens': 1}}
+        schema = json.loads(kwargs['output'].with_name('output.schema.json').read_text('utf-8'))
+        assert schema['properties']['schema_version']['const'] == 'business-draft.v3'
+        assert 'type' in schema['$defs']['TypedPage']['required']
+        value = (planned if legacy_result else typed)(fixture.__wrapped__())
+        return value, {'usage': {'input_tokens': 1, 'output_tokens': 1}}
 
     monkeypatch.setattr(adapter, 'execute', execute)
 
     async def authorized():
         return True
 
-    _, receipt = await adapter.run_role({'expected_instruction_hash': original_hash, 'permitted_web_actions': 0},
-                                       authorized, role='creator', seconds=30)
+    if legacy_result:
+        with pytest.raises(RunnerError, match='output_invalid') as error:
+            await adapter.run_role({'expected_instruction_hash': original_hash, 'permitted_web_actions': 0},
+                                   authorized, role='creator', seconds=30)
+        receipt = error.value.receipt
+    else:
+        _, receipt = await adapter.run_role({'expected_instruction_hash': original_hash, 'permitted_web_actions': 0},
+                                           authorized, role='creator', seconds=30)
     assert receipt['instruction_hash'] == original_hash and loads == [original_hash]
 
 

@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Ordinary Creation cannot carry an explicit author/editorial page type into native intake: its unversioned Page forbids type, while Foundation requires an actual author profile. Add a genuinely new private typed draft contract and preserve exact historical models/schema/material hashes.",
+  "category": "code",
+  "evidence": [
+    "Root-authorized typed bridge scope issue66/comments6196183316/6196204563; exact clean S36 base fb3444310fa975df8edd753fdc2e6ebb3a29394f, paired start808/ec8/1a26 PASS2026-10-15T15:48Z.",
+    "Read-only reproduction: unversioned Page has no type; existing importer only recognizes explicit author type, while /autorius/,/redakcija/,/author/ fall back to guide. No URL/prose inference or invented author identity is used in the repair.",
+    "Original new typed normalization/hash baseline2FAIL7PASS2.26s retained in ignored artifacts/typed-pages/initial-fail.private.log; existing five model schemas and synthetic legacy/planned normalized/artifact SHA captured before edits. Initial intermediate1FAIL236PASS11.93s was a stale old instruction-version assertion; later1FAIL267PASS10.87s was a new fixture missing its rationale edit value, both preserved privately. No provider/web/DB/runtime/current-case writes."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/src/pinet_core/creation/language_patch.py",
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "agent-business-core/runtime/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of typed-page bridge source; keep legacy and v3 accepted material, historical hashes/schema files and original failures immutable. Do not downgrade or relabel stored typed payloads; Root owns idle-only adoption.",
+  "id": "upgrade-995a0441-ba6f-4dc6-a6f0-c98854e4299c",
+  "branch": "codex/verslomatika-typed-page-bridge-20261015",
+  "baseSha": "fb3444310fa975df8edd753fdc2e6ebb3a29394f",
+  "createdAt": "2026-10-15T15:59:45.101Z"
+}

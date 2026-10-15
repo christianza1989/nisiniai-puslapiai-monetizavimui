@@ -209,3 +209,16 @@ async def test_nonbusiness_topic_refuses_before_native_preflight_or_allocation(e
     async with AsyncSession(c["admin"]) as tx:
         assert not list(await tx.scalars(select(Task).where(Task.environment_id == c["environment"])))
 
+
+async def test_unicode_eight_step_admission_uses_scoped_body_limit_and_ten_call_bound(episode_customer):
+    c, _, _ = episode_customer
+    base = await setup(c)
+    # JSON escaping exceeds the old16KiB transport cap but remains within the
+    # declared eight messages of4000 Unicode codepoints. No provider is run.
+    accepted, _ = await submit(c, base, messages=["ą"*4000]*8)
+    native = accepted["turn"]["native_episode"]
+    assert native["max_calls"] == 10 and native["reserved_calls"] == 0
+    result = await c["client"].post(base+"/team/turns/"+accepted["turn"]["task_id"]+"/cancel",
+        headers=c["auth"], json={})
+    assert result.status_code == 200
+

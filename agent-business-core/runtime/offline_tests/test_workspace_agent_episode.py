@@ -36,6 +36,15 @@ def test_exported_contract_reuses_native_team_receipt_and_denies_private_inputs(
     assert "native_episode_task_id" in schema["PublicEvent"]["properties"]
 
 
+def test_larger_scenario_body_is_scoped_to_the_one_new_route():
+    from pinet_core.workspace_team.routes import AgentEpisodeRoute, episode_router, router
+
+    scenario = [r for r in episode_router.routes if r.path.endswith("/agent-tests")]
+    assert len(scenario) == 1 and isinstance(scenario[0], AgentEpisodeRoute)
+    assert scenario[0].body_limit == 524288
+    assert all(r.body_limit == 16384 for r in router.routes if hasattr(r, "path"))
+
+
 @pytest.mark.parametrize("field", ["bearer", "session_id", "enabled", "model", "reasoning_effort",
     "source_revision", "protected_case", "typed_expectations", "max_calls", "tools", "calibrated"])
 def test_request_cannot_select_authority_model_private_paths_or_grades(field):

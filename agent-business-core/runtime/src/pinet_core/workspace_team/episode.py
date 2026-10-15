@@ -50,9 +50,10 @@ async def schema_ready(tx):
 def guard(user_id):
     cfg = settings()
     if (not cfg.workspace_team_enabled or not cfg.workspace_team_runner_enabled
-            or user_id not in cfg.workspace_team_actor_ids or not cfg.customer_agents_enabled
-            or not cfg.customer_text_enabled or not cfg.customer_text_runner_enabled):
-        raise ControlError(403, "agent_episode_unavailable")
+            or user_id not in cfg.workspace_team_actor_ids):
+        raise ControlError(403, "team_execution_disabled")
+    if not cfg.customer_agents_enabled or not cfg.customer_text_enabled or not cfg.customer_text_runner_enabled:
+        raise ControlError(503, "agent_episode_unavailable")
 
 
 async def preflight(session, topic, request: TestAgent):

@@ -16,6 +16,15 @@ router = APIRouter(prefix="/customer/v2/portfolios/{portfolio_id}/workspace-topi
     route_class=CreationRoute, dependencies=[Depends(customer_guard)])
 
 
+class AgentEpisodeRoute(CreationRoute):
+    # Eight 4000-codepoint messages plus the owner instruction, including UTF-8
+    # and JSON escapes. Other team routes keep their original16KiB limit.
+    body_limit = 524288
+
+
+episode_router = APIRouter(route_class=AgentEpisodeRoute)
+
+
 def envelope(request, data):
     value = core_envelope(request, data)
     value["contract_version"] = "workspace-team.v1"
@@ -29,7 +38,7 @@ async def roster(portfolio_id: str, topic_id: str, request: Request, context=Dep
     return envelope(request, await service.roster(tx, session, portfolio_id, topic_id))
 
 
-@router.post("/agent-tests", response_model=EpisodeEnvelope)
+@episode_router.post("/agent-tests", response_model=EpisodeEnvelope)
 async def test_agent(portfolio_id: str, topic_id: str, value: TestAgent, request: Request,
     context=Depends(authenticated, scope="function")):
     query_keys(request, set())
@@ -84,3 +93,6 @@ async def cancel(portfolio_id: str, topic_id: str, task_id: str, value: Cancel, 
     query_keys(request, set())
     tx, session = context
     return envelope(request, await service.cancel(tx, session, portfolio_id, topic_id, task_id))
+
+
+router.include_router(episode_router)

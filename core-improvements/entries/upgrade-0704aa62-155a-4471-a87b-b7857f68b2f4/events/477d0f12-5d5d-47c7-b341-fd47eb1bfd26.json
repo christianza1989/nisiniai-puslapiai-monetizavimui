@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Exact reviewed two-file fixture normalization from deployment-owner5315cc1d adopted; actual business JSON not changed. Unknown/default fixtures remain independent of owner's now-confirmed packages/address/simpleflags.0.17 runtime work remains unstaged and outside this fixture commit.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/business-config.test.mjs commerce-core/test/simple-stock.test.mjs",
+      "result": "PASS",
+      "evidence": "7testsPASS; original assertions unchanged except explicit isolated fixture setup. No actual owner facts rolled back."
+    }
+  ],
+  "eventId": "477d0f12-5d5d-47c7-b341-fd47eb1bfd26",
+  "sequence": 2,
+  "at": "2026-10-15T12:15:20.341Z"
+}

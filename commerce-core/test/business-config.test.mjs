@@ -2,11 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { prepareBusiness } from '../src/business-config.mjs';
-test('owner business template keeps prices in cents, inactive unknown add-ons, real contacts and zero invented stock with all live gates closed', () => {
+test('business preparation keeps unconfirmed packages and address explicit, prices in cents and all live gates closed', () => {
   const business = JSON.parse(
-      readFileSync(new URL('../config/memocasting-business.json', import.meta.url), 'utf8'),
-    ),
-    prepared = prepareBusiness(business);
+    readFileSync(new URL('../config/memocasting-business.json', import.meta.url), 'utf8'),
+  );
+  // This is the unconfirmed-business fixture, not a claim that today's owner
+  // facts are still unknown. Confirmed facts must not invalidate this regression.
+  business.legal.address = null;
+  business.products.forEach((p) => {
+    p.package = null;
+    delete p.lotTrackingRequired;
+  });
+  const prepared = prepareBusiness(business);
   assert.equal(prepared.products[0].prices.LT, 3200);
   assert.equal(prepared.products[1].prices.LT, 4800);
   assert.ok(

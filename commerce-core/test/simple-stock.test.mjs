@@ -271,6 +271,10 @@ test('business preparation honors explicit simple products, defaults other produ
   const business = JSON.parse(
     readFileSync(new URL('../config/memocasting-business.json', import.meta.url), 'utf8'),
   );
+  // Test the absent-field default independently of the site's current stock mode.
+  business.products.forEach((p) => {
+    delete p.lotTrackingRequired;
+  });
   const original = prepareBusiness(business);
   assert.ok(original.products.slice(0, 2).every((p) => p.lotTrackingRequired === true));
   business.products.forEach((p) => {

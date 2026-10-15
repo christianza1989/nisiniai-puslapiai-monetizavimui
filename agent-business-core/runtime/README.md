@@ -221,3 +221,27 @@ Užbaigtas vietinis ratas: originalus34/36, abi vėlesnės žinomų klaidų regr
 ## Žinių V2 ir mokymosi parengtis — 2026-10-04/05
 
 Atskiras tenant-scoped paged ingest priima pilną viešą projekciją atominiu commit, be 30 puslapių ar ilgo teksto nukirpimo. Naujas profilis automatiškai negauna source/learning admission; prieš sesiją, learning enqueue ir controller tikrinami atskiri vartai. Actual M2 emitter version dispatch nekeičia v1 kelio. [Payload/API sutartis](../../voice-agent-plan/PAGED_KNOWLEDGE_V2_API_2026-10-04.md), [275 PASS, galutinės 2 regresijos ir actual HTTP/šešių šaltinių įrodymai](../../voice-agent-plan/M4_RUNTIME_VALIDATION_2026-10-04.md). V2 Start/protected evaluator ir legacy gift D1 mapping dar nepriimti; gift neįjungtas.
+
+
+## Discovery komercinių sąlygų atranka
+
+Šaltinių rinkiklis prieš gilesnį katalogą seka tikras to paties host komercinių
+sąlygų, garantijos ir verslo dokumentų nuorodas. Bendri URL reikšmės signalai
+neapima visų kalbų ar neinformatyvių adresų; jie neįrodo pilnos svetainės aprėpties.
+DNS, TLS, robots, 24 s ir 100000 baitų ribos nesikeičia. Neperskaityti tinkami
+adresai lieka eilėje, nesėkmingas skaitymas lieka unavailable.
+
+`discovery-model-sources.v2` tame pačiame 28000 UTF-8 JSON baitų limite saugo
+teksto pradžią ir papildomus tikslius `evidence_spans`. Kiekvienas fragmentas turi
+pradinio capture teksto Unicode ženklų pradžios / pabaigos koordinates, savo SHA-256
+ir konteksto bei eilutės nukirpimo žymas. Komercinio naudojimo sąlygoms ir tikroms
+komercinių dokumentų nuorodoms teikiama pirmenybė prieš papildomą produktą ar vaizdą.
+Tai deterministinė ribota atranka, ne santrauka, faktų patvirtinimas ar viso
+puslapio perskaitymo įrodymas. Pilnas capture ir S28 sourceContext nekinta; senos
+versijos ir jų SHA lieka istoriniai. Naują atranką ir jos taisykles sieja instrukcijų
+pin; jos pritaikymas veikiančiam procesui priimamas atskirai.
+
+Tikrinant pokytį būtini vėlyvos neigiamos sąlygos, Unicode koordinačių / baitų,
+tikrų nuorodų prioritetų, saugos, neperskaitytos eilės ir nekintamo capture testai.
+Jie vykdomi esamuose `test_discovery_research_first.py` ir
+`test_discovery_source_projection.py`, be tiekėjo, web, DB ar mokamo modelio kvietimų.

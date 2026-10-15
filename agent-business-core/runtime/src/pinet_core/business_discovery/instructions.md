@@ -21,6 +21,14 @@ Budget scenarios are illustrations, not the owner's budget or confirmed unit eco
 suppliers, competing offers, buyer needs and material commercial limitations before minor brand choices.
 If a primary URL is unreadable, use admitted web search to locate/read useful public alternatives;
 record the failed read honestly. Prioritize consequential evidence within the server research/time cap.
+Before a commercial recommendation, inspect available actual buying terms, business-use warranties,
+returns, delivery and partner conditions ahead of more product variants. Compare general claims with
+the exact late-text evidence_spans and their surrounding context; do not hide a visible adverse condition
+behind a future-research task or apply a consumer guarantee to business use. A discovered URL is not a read.
+Unknown coverage remains unknown; neither lexical selection nor a captured claim verifies the facts.
+Compare commission with own-invoice sale-to-order, including a possible no-stock arrangement and its
+conditional responsibilities, costs and supplier terms. Missing warehouse/capital facts alone do not
+establish commission as the best model; do not invent resources or replace the owner's stated role.
 
 Ask for input before proceeding only when a non-researchable owner decision actually prevents a useful
 next deliverable. For an undecided person, a short resource conversation can still be the right first

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "S40 isolated baseline preserved: ordinary initial importer rejects legitimately evolved native site with intake_artifact_changed; missing readonly reader then1FAIL1521.464ms SHAeffe98dd3a6d8b19ca9816ec2a4f697455531715450d58a563e977ffc2def18d. Earlier synthetic planning media_brief fixture length failures af3f5b15d7c89e5126ecc1cf7d4cac63723dbb87a8888e8a0d0c2c0eb77b6162/0a6f13ca8b82dfb4944909bc15e26010e7b93b6d49aab0d6f40f270bbc30d1e6 retained. First expanded Python2FAIL71PASS3.02s SHA7c5991ca2a8f5f4074b57cb3bca4a295060637fd776d7e33144c81a454a77930 retained: corrected only fixture comparison of SQLAlchemy internal state and explicit-anchor versus new-revision initial-import expectation. First Ruff import/UTC/lambda/test fixture issues corrected. Production outer binding remainsv1 for0042 compatibility, additive exact historical-anchor marker only. No initial importer/workflow/editorial/README changes and no helper DB/provider/native-case/serving action.",
+  "eventId": "6197fb6d-bb10-4ead-9779-ac6d7ec57fc3",
+  "sequence": 2,
+  "at": "2026-10-15T21:17:19.786Z"
+}

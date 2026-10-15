@@ -17,6 +17,7 @@ from ..customer_text.adapter import source_current
 from ..customer_text.service import customer_session
 from ..models import new_id, utcnow
 from ..tasks.codex_transport import RunnerError
+from . import private_native_continuity as continuity
 from .accepted_material import accepted_material
 from .models import Job, PrivateIntakeReceipt, PrivateIntakeRequest, Revision
 from .private_preview_wire import PrivateIntakeView
@@ -90,6 +91,8 @@ def stored(row):
                 or value["native_host"] != private_host(row.creation_id)
                 or not re.fullmatch("[a-f0-9]{40}", value["source_revision"])):
             raise ValueError("invalid_binding")
+        if "continuity" in value:
+            continuity.checked_marker(value["continuity"])
         return value
     except (ValueError, TypeError, KeyError, AttributeError):
         raise ControlError(503, "invalid_private_intake_source") from None
@@ -104,6 +107,9 @@ def result(row, receipt):
             or (receipt.state == "failed") != (receipt.failure_code is not None)
             or (receipt.state == "failed") != (receipt.intake is None)):
         raise ControlError(503, "invalid_private_intake_source")
+    captured = stored(row)
+    if receipt.state == "private_draft_imported" and "continuity" in captured:
+        continuity.check_recorded(receipt.intake, captured["continuity"], captured)
     return receipt.intake
 
 
@@ -116,6 +122,51 @@ async def latest(tx, creation):
 async def terminal(tx, row):
     return await tx.scalar(select(PrivateIntakeReceipt).where(PrivateIntakeReceipt.recovery_id == row.id)
         .execution_options(populate_existing=True))
+
+
+async def retained_anchor(tx, creation, captured, marker=None):
+    """Resolve immutable historical evidence, never reuse its old authority.
+
+    Initial v1 rows remain exact. An additive marker pins an original successful
+    non-continuity receipt; renewals never form a recursive chain of snapshots.
+    Current owner/source/accepted context is independently captured by the caller.
+    """
+    if marker is not None:
+        continuity.checked_marker(marker)
+        row = await tx.get(PrivateIntakeRequest, marker["recovery_id"], populate_existing=True)
+    else:
+        row = await tx.scalar(select(PrivateIntakeRequest).join(PrivateIntakeReceipt,
+            PrivateIntakeReceipt.recovery_id == PrivateIntakeRequest.id).where(
+                PrivateIntakeRequest.creation_id == creation.id,
+                PrivateIntakeRequest.revision_id == captured["accepted"]["revision_id"],
+                PrivateIntakeReceipt.state == "private_draft_imported",
+                ~PrivateIntakeRequest.context.has_key("continuity"))  # noqa: W601
+            .order_by(PrivateIntakeRequest.created_at.desc(), PrivateIntakeRequest.id.desc()).limit(1)
+            .execution_options(populate_existing=True))
+    if row is None:
+        if marker is not None:
+            raise ControlError(409, "private_intake_anchor_stale")
+        return None
+    previous = stored(row)
+    receipt = await terminal(tx, row)
+    intake = result(row, receipt)
+    def stable(value):
+        return {k: v for k, v in value.items() if k not in {"source_revision", "session_id", "continuity"}}
+    if (binding(row) != binding(creation) or "continuity" in previous or row.revision_id != captured["accepted"]["revision_id"]
+            or stable(previous) != stable(captured) or not receipt or receipt.state != "private_draft_imported"
+            or not isinstance(intake, dict) or intake.get("version") != "customer-content-intake.v1"
+            or intake.get("state") != "private-draft-imported" or intake.get("creationId") != creation.id
+            or intake.get("acceptedRevision") != captured["accepted"]["accepted_revision"]
+            or intake.get("sourceHash") != captured["accepted"]["candidate_sha256"]
+            or intake.get("canonicalHost") != captured["native_host"]
+            or intake.get("importerHash") != captured["native_sources"]["importer_sha256"]):
+        raise ControlError(409, "private_intake_anchor_stale")
+    observed = {"version": continuity.MARKER_VERSION, "recovery_id": row.id, "receipt_id": receipt.id,
+        "context_sha256": row.context_sha256, "intake_sha256": receipt.intake_sha256,
+        "manifest_sha256": continuity.manifest_hash(intake), "observer_sha256": continuity.observer_sha256()}
+    if marker is not None and observed != marker:
+        raise ControlError(409, "private_intake_anchor_stale")
+    return observed, intake
 
 
 async def capture(tx, session, creation, *, admission=False):
@@ -158,6 +209,9 @@ async def current(tx, creation, row):
         return False
     try:
         _, observed = await capture(tx, session, creation)
+        if "continuity" in expected:
+            marker, _ = await retained_anchor(tx, creation, observed, expected["continuity"])
+            observed = {**observed, "continuity": marker}
         return observed == expected
     except ControlError as error:
         if error.status in {401, 404, 409}:
@@ -236,7 +290,7 @@ async def view(tx, session, creation):
         "deployment": "not_performed", "channel_activation": "not_performed"})).model_dump(mode="json")
 
 
-async def prepare(token, creation_id, value, *, intake_runner=None):
+async def prepare(token, creation_id, value, *, intake_runner=None, continuity_runner=None):
     from . import studio
     from .routes import owned
     await guard()
@@ -262,6 +316,9 @@ async def prepare(token, creation_id, value, *, intake_runner=None):
         if old and newest and newest.id != old.id:
             raise ControlError(409, "private_intake_binding_stale")
         if old:
+            if "continuity" in stored(old):
+                marker, anchor_intake = await retained_anchor(tx, creation, captured, stored(old)["continuity"])
+                captured = {**captured, "continuity": marker}
             if stored(old) != captured:
                 raise ControlError(409, "private_intake_binding_stale")
             if await terminal(tx, old) or old.lease_until > utcnow():
@@ -275,6 +332,11 @@ async def prepare(token, creation_id, value, *, intake_runner=None):
             ~select(PrivateIntakeReceipt.id).where(PrivateIntakeReceipt.recovery_id == PrivateIntakeRequest.id).exists()).limit(1))
         if pending:
             raise ControlError(409, "private_intake_in_progress")
+        if not old and newest:
+            retained = await retained_anchor(tx, creation, captured)
+            if retained:
+                marker, anchor_intake = retained
+                captured = {**captured, "continuity": marker}
         if old:
             row = old
             row.run_id, row.lease_until = new_id(), utcnow()+timedelta(seconds=90)
@@ -304,10 +366,14 @@ async def prepare(token, creation_id, value, *, intake_runner=None):
 
     intake, failure = None, None
     try:
-        options = {"source_context": captured["source_context"]} if captured["source_context"] is not None else {}
-        intake = await (intake_runner or studio.import_draft)(payload, creation_id=creation_id,
-            revision=value.accepted_revision, canonical_host=captured["native_host"],
-            still_authorized=authorized, seconds=20, **options)
+        if "continuity" in captured:
+            intake = await (continuity_runner or continuity.observe)(context=captured, anchor_intake=anchor_intake,
+                still_authorized=authorized, seconds=20)
+        else:
+            options = {"source_context": captured["source_context"]} if captured["source_context"] is not None else {}
+            intake = await (intake_runner or studio.import_draft)(payload, creation_id=creation_id,
+                revision=value.accepted_revision, canonical_host=captured["native_host"],
+                still_authorized=authorized, seconds=20, **options)
         if not isinstance(intake, dict) or intake.get("importerHash") != captured["native_sources"]["importer_sha256"]:
             raise RunnerError("studio_intake_failed")
         if not await authorized():

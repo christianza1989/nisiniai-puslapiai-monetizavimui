@@ -6,6 +6,7 @@ import { StripeCheckoutAdapter } from './stripe-adapter.mjs';
 import { SendparcelAdapter, SENDPARCEL_PRODUCTION } from './sendparcel-adapter.mjs';
 import { SendparcelBookingAdapter } from './sendparcel-booking.mjs';
 import { coreOperatorAuthorize } from './identity.mjs';
+import { AccessOperatorSessions, composeOperatorAuthorize } from './access-identity.mjs';
 import { R2PrivateStorage, limitedBytes } from './private-storage.mjs';
 import { requireValue } from './validation.mjs';
 import { ProviderPacing } from './provider-pacing.mjs';
@@ -31,6 +32,10 @@ export function runtimeOptions(env) {
     503,
   );
   const connections = parse(env.COMMERCE_CONNECTIONS, {});
+  const operatorSessions = new AccessOperatorSessions({
+    configuration: env.COMMERCE_ACCESS,
+    db: env.COMMERCE_DB,
+  });
   requireValue(
     connections &&
       typeof connections === 'object' &&
@@ -99,7 +104,11 @@ export function runtimeOptions(env) {
               env.COMMERCE_ABUSE_SALT,
             ).allow(request, store, kind)
         : undefined,
-    operatorAuthorize: coreOperatorAuthorize(async () => parse(env.COMMERCE_CORE_GRANTS, [])),
+    operatorSessions,
+    operatorAuthorize: composeOperatorAuthorize(
+      coreOperatorAuthorize(async () => parse(env.COMMERCE_CORE_GRANTS, [])),
+      operatorSessions,
+    ),
     privateStorage: env.COMMERCE_FILES ? new R2PrivateStorage(env.COMMERCE_FILES) : undefined,
     loadDocumentFont: env.ASSETS
       ? async () => {
@@ -136,8 +145,25 @@ export function runtimeHandler(service, options, assets) {
   return async (request) => {
     try {
       const url = new URL(request.url);
-      await service.resolveHost(url.host, options.environment);
+      const store = await service.resolveHost(url.host, options.environment);
       if (['GET', 'HEAD'].includes(request.method) && adminAssets[url.pathname] && assets) {
+        const buyerAssets = [
+          '/commerce',
+          '/commerce-client.mjs',
+          '/checkout-ui.mjs',
+          '/checkout.css',
+          '/commerce-preview.mjs',
+        ];
+        if (!buyerAssets.includes(url.pathname) && options.operatorSessions?.isConfigured(store)) {
+          const principal = await options.operatorAuthorize?.(request, store, 'read');
+          requireValue(
+            principal?.storeId === store.id &&
+              Array.isArray(principal.permissions) &&
+              principal.permissions.includes('read'),
+            'operator_forbidden',
+            403,
+          );
+        }
         const assetUrl = new URL(adminAssets[url.pathname], url.origin);
         const response = await assets.fetch(new Request(assetUrl, { method: request.method }));
         const headers = new Headers(response.headers);

@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import Stripe from 'stripe';
+import { generateKeyPair, exportJWK, SignJWT } from 'jose';
 import { CommerceService } from '../src/service.mjs';
 import { CommerceOperations } from '../src/operations.mjs';
 import { Backoffice } from '../src/backoffice.mjs';
@@ -1364,6 +1365,139 @@ try {
     (await simpleOps.overview(simpleStore, 'sandbox')).catalog.every(
       (p) => p.stockMode === 'simple',
     ),
+  );
+  await mf.dispose();
+  mf = undefined;
+  const accessKeys = await generateKeyPair('RS256', { extractable: true }),
+    accessPublic = { ...(await exportJWK(accessKeys.publicKey)), kid: 'native_fixture' };
+  const accessStoreId = 'store_access',
+    adminHost = 'admin-access.example',
+    publicHost = 'store-access.example',
+    alternateHost = 'alternate-access.example';
+  const accessIssuer = 'https://native-fixture.cloudflareaccess.com',
+    accessAudience = 'fixture_native_application_audience_123',
+    accessSubject = 'native-access-owner';
+  const accessStore = {
+    ...fixtureStore(accessStoreId),
+    environment: 'production',
+    testOnly: false,
+    requireCustomer: true,
+    hosts: [adminHost, publicHost, alternateHost],
+    productionAdmission: { approved: true },
+    operationalAdmission: { approved: false },
+    documentPolicy: { approved: false },
+    markets: [
+      {
+        country: 'LT',
+        currency: 'EUR',
+        policyVersion: 'fixture',
+        checkoutEnabled: false,
+        delivery: [{ id: 'inactive', amount: 0, label: 'Inactive', enabled: false }],
+      },
+    ],
+  };
+  const accessConfig = {
+    [accessStoreId]: {
+      issuer: accessIssuer,
+      audience: accessAudience,
+      adminHosts: [adminHost],
+      memberships: [
+        {
+          id: 'native_access_owner',
+          issuer: accessIssuer,
+          subject: accessSubject,
+          storeId: accessStoreId,
+          legalEntityId: accessStore.legalEntityId,
+          environment: 'production',
+          permissions: ['read'],
+          revoked: false,
+        },
+      ],
+    },
+  };
+  db = await start('test/access-worker-harness.mjs', {
+    COMMERCE_ENV: 'production',
+    COMMERCE_RUNTIME_ADMISSION: 'approved',
+    TEST_HARNESS: 'access-fixture-only',
+    TEST_ACCESS_CONFIG: JSON.stringify(accessConfig),
+    TEST_ACCESS_JWKS: JSON.stringify({ keys: [accessPublic] }),
+  });
+  const accessService = new CommerceService(db);
+  await accessService
+    .stmt(
+      'INSERT INTO stores(id,environment,config_json) VALUES(?,?,?)',
+      accessStoreId,
+      'production',
+      JSON.stringify(accessStore),
+    )
+    .run();
+  const accessIssuedSec = Math.floor(Date.now() / 1000),
+    accessJwt = await new SignJWT({
+      iss: accessIssuer,
+      aud: [accessAudience],
+      sub: accessSubject,
+      email: 'owner@example.test',
+      type: 'app',
+      iat: accessIssuedSec,
+      exp: accessIssuedSec + 3600,
+    })
+      .setProtectedHeader({ alg: 'RS256', kid: 'native_fixture' })
+      .sign(accessKeys.privateKey);
+  const accessHeaders = { 'cf-access-jwt-assertion': accessJwt };
+  assert.equal((await dispatch(adminHost, '/admin')).status, 403);
+  assert.equal((await dispatch(adminHost, '/admin', 'GET', undefined, accessHeaders)).status, 200);
+  const nativeSession = await dispatch(
+    adminHost,
+    '/api/operator/session',
+    'GET',
+    undefined,
+    accessHeaders,
+  );
+  assert.equal(nativeSession.status, 200);
+  assert.equal((await nativeSession.json()).method, 'access');
+  assert.equal(
+    (await dispatch(alternateHost, '/api/operator/session', 'GET', undefined, accessHeaders))
+      .status,
+    403,
+  );
+  assert.equal(
+    (
+      await dispatch(adminHost, '/api/operator/session', 'GET', undefined, {
+        'cf-access-jwt-assertion': 'forged-fixture',
+      })
+    ).status,
+    403,
+  );
+  assert.equal((await dispatch(publicHost, '/api/catalog')).status, 200);
+  assert.equal((await dispatch(publicHost, '/api/stripe/webhook', 'POST', {})).status, 503);
+  assert.equal(
+    (await dispatch(adminHost, '/api/operator/logout', 'POST', {}, accessHeaders)).status,
+    403,
+  );
+  assert.equal(
+    (
+      await dispatch(
+        adminHost,
+        '/api/operator/logout',
+        'POST',
+        {},
+        { ...accessHeaders, origin: 'https://' + adminHost },
+      )
+    ).status,
+    200,
+  );
+  assert.equal(
+    (await dispatch(adminHost, '/api/operator/session', 'GET', undefined, accessHeaders)).status,
+    403,
+  );
+  assert.equal(
+    (
+      await accessService.one(
+        'SELECT COUNT(*) n FROM operator_access_revocations WHERE store_id=?',
+        accessStoreId,
+      )
+    ).n,
+    1,
   );
   await mf.dispose();
   mf = undefined;

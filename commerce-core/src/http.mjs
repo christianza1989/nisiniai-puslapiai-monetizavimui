@@ -60,6 +60,7 @@ export function createHandler({
   privateStorage,
   loadDocumentFont,
   operatorAuthorize,
+  operatorSessions,
 }) {
   const operations = new CommerceOperations(service);
   const backoffice = new Backoffice(service);
@@ -239,6 +240,20 @@ export function createHandler({
           ),
         );
       if (path.startsWith('/api/operator/')) {
+        if (request.method === 'GET' && path === '/api/operator/session') {
+          const principal = await authorize('read');
+          return json({
+            authenticated: true,
+            method: principal.authentication === 'access' ? 'access' : 'bearer',
+            operatorId: principal.id,
+            permissions: principal.permissions,
+            expiresAt: principal.expiresAt ?? null,
+          });
+        }
+        if (request.method === 'POST' && path === '/api/operator/logout') {
+          requireValue(operatorSessions?.isConfigured(store), 'operator_forbidden', 403);
+          return json(await operatorSessions.logout(request, store));
+        }
         const financialOriginal = path.match(
           /^\/api\/operator\/financial-files\/([a-zA-Z0-9_-]+)$/,
         );

@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+0.17.0: [Access savininko sesijos](docs/PRODUCTION_CONNECTION.md#access-owner-sessions--source-0170). Patikrintas JWT ir tikslus core membership leidžia administravimui prisijungti be kartotinio žetono įklijavimo. Išsaugotos iki 8 val. teisių ribos ir Bearer suderinamumas; yra tos pačios kilmės patikra, atsijungimas ir hash revokacija naujoje0024 migracijoje. Tikra Access organizacija, AUD, savininko subject ir hosted prisijungimo priėmimas lieka diegimo savininko darbas; šaltinio testai jų neaktyvuoja.
+
 0.16.0: [Memocasting paprasti likučiai](docs/PRODUCTION_CONNECTION.md#current-memocasting-simple-counts--0160). Pagal naują savininko nurodymą produktams galima aiškiai parinkti kiekių režimą be partijų, galiojimo ir BOM; 999 yra nustatytas laikinas balansas. Admin neberodo šiam režimui netaikomų formų. Kitų produktų lot/legacy režimai ir rezervavimo, grąžinimo, mokėjimo bei pakartojimo apsaugos išsaugotos.
 
 0.15.0: [savininko administravimas ir prieigos paruošimas](docs/PRODUCTION_CONNECTION.md#owner-admin-and-temporary-production-grants--0150). Produkcinis operatoriaus įrankis numatytai tik parodo planą; pasirinkus `--write`, vietiškai paruošia konkrečios parduotuvės iki 8 val. grant ir privatų žetoną. Administravimo tekstai nebesiūlo vietinių demo komandų. Nuolatinė Access / SSO prieiga aprašyta kaip atskira dar neįgyvendinta sutartis.

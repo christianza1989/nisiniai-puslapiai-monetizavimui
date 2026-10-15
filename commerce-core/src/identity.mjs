@@ -13,7 +13,27 @@ export const OPERATOR_GRANTS = [
   'operate',
   'restore',
 ];
-const lifetime = 8 * 3600000;
+export const OPERATOR_MAX_LIFETIME_MS = 8 * 3600000;
+export function operatorGrantAllows(record, store, action, at) {
+  return Boolean(
+    record &&
+    identifier(record.id) &&
+    OPERATOR_GRANTS.includes(action) &&
+    record.storeId === store.id &&
+    record.environment === store.environment &&
+    record.legalEntityId === store.legalEntityId &&
+    integer(record.issuedAt, 0, 9999999999999) &&
+    integer(record.expiresAt, 0, 9999999999999) &&
+    record.issuedAt <= at &&
+    record.expiresAt > at &&
+    record.expiresAt > record.issuedAt &&
+    record.expiresAt - record.issuedAt <= OPERATOR_MAX_LIFETIME_MS &&
+    Array.isArray(record.permissions) &&
+    record.permissions.includes(action) &&
+    record.permissions.every((g) => OPERATOR_GRANTS.includes(g)) &&
+    record.revoked !== true,
+  );
+}
 const bytes = (hex) => Uint8Array.from(hex.match(/../g), (v) => parseInt(v, 16));
 async function equalHash(candidate, expected) {
   if (typeof expected !== 'string' || !/^[a-f0-9]{64}$/.test(expected)) return false;
@@ -48,24 +68,7 @@ export function coreOperatorAuthorize(load, now = () => Date.now()) {
       at = now();
     const admitted = [];
     for (const record of records) {
-      if (
-        !record ||
-        !identifier(record.id) ||
-        record.storeId !== store.id ||
-        record.environment !== store.environment ||
-        record.legalEntityId !== store.legalEntityId ||
-        !integer(record.issuedAt, 0, 9999999999999) ||
-        !integer(record.expiresAt, 0, 9999999999999) ||
-        record.issuedAt > at ||
-        record.expiresAt <= at ||
-        record.expiresAt - record.issuedAt > lifetime ||
-        record.expiresAt <= record.issuedAt ||
-        !Array.isArray(record.permissions) ||
-        !record.permissions.includes(action) ||
-        !record.permissions.every((g) => OPERATOR_GRANTS.includes(g)) ||
-        record.revoked === true
-      )
-        continue;
+      if (!operatorGrantAllows(record, store, action, at)) continue;
       if (await equalHash(hash, record.tokenHash)) admitted.push(record);
     }
     // Ambiguous credentials cannot choose a principal from source order.

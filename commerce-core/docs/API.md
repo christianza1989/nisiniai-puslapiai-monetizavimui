@@ -1,5 +1,7 @@
 # Vietinio prekybos API sutartis
 
+0.17 savininko prisijungimo papildymas: `GET /api/operator/session` po patvirtintos `read` teisės grąžina metodą (`access` / `bearer`), operatoriaus ID, teises ir Access sesijos galiojimą; negrąžina JWT. `POST /api/operator/logout` skirtas patvirtintam Access vartotojui: tikrina tą patį store/įmonės/aplinkos membership ir privalomą tos pačios kilmės Origin, įrašo tik JWT hash revokaciją ir grąžina to paties admin host fiksuotą Access logout adresą. Visi Access autentifikuoti ne GET/HEAD veiksmai reikalauja tikslaus Origin; ankstesnė Bearer serverio komandų sutartis nekeičiama. [Konfigūracija ir aktyvavimo ribos](PRODUCTION_CONNECTION.md#access-owner-sessions--source-0170). Pirkėjo ir Stripe maršrutams savininko Access autentifikacija nepridedama.
+
 Versija 0.6. Tai įgyvendinti endpointai, ne visas roadmap. Visos JSON išvestys turi `no-store`, `noindex` ir `nosniff`. Nežinomas host — 404. Parduotuvę ir aplinką nustato serveris; kliento `storeId`, kainos ar įmonės laukai jų nekeičia. Pinigai yra sveiki mažiausi valiutos vienetai. POST Origin, kai pateiktas, turi sutapti su request origin. JSON/webhook body riba 64 KiB.
 
 | Endpointas | Įvestis / leidimas | Rezultatas |

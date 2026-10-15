@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Source 0.17.0 only. Initial native harness run failed on a duplicate local issued identifier; original log retained privately and corrected to accessIssuedSec before final regression. No provider/browser/secrets/remote DB operations or actual hosted login receipt. Original23 tracked migrations unchanged. Site owner separately controls actual Access plan/app/policy/hostname/issuer/AUD/subject and preserves current runtime bindings and buyer admissions. Mechanical UI detector empty; actual browser UX remains site-owner acceptance.",
+  "checks": [
+    {
+      "command": "npm run verify --prefix commerce-core",
+      "result": "PASS",
+      "evidence": "commerce-core/tmp/verify-0.17.0-acceptance.log: formatting, 156 Node tests, native workerd/D124 migrations including real offline RSA/JWKS private assets/session/CSRF/logout/replay and buyer/provider independence; Worker dry-run3225.66KiB/gzip779.51KiB,21 assets. Local ignored log, not a provider receipt."
+    },
+    {
+      "command": "node --test commerce-core/test/access-identity.test.mjs",
+      "result": "PASS",
+      "evidence": "commerce-core/tmp/access-focused-final.log:9 focused tests cover forged/wrong claims/service tokens, rotation/key failure, exact membership, <=8h, hash revocation, cross-host/origin denial, legacy Bearer and old23 schema compatibility."
+    },
+    {
+      "command": "git diff --name-only b090e2a70a8c984245fa4e00fb8723d1b177fc6a -- commerce-core/migrations",
+      "result": "PASS",
+      "evidence": "No tracked original migration changes; only new0024_operator_access.sql is added."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped source whitespace check; business JSON, SDK and actual deployment configuration untouched."
+    }
+  ],
+  "eventId": "1ea0eebe-9e80-438d-b8ca-44fa260b0d7a",
+  "sequence": 2,
+  "at": "2026-10-15T12:38:30.025Z"
+}

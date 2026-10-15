@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root one-case diagnostic proved42883: TG_TABLE_NAME is PostgreSQLname, helperVARCHAR. Fixedexplicitcasts. NewSELECT-only owner/env-scoped SECDEFclassification separatesknownnonnull/unmappedlegacy fromdirect andexactfailure-onlyaccounting; immutableTask/runchecks beforeexception; live/currentoutputfences unchanged. RemovedimmutableMapFORSHARE instead ofgrantingUPDATE. Replacedimpossible nestedmembershiprevoke test with boundedtwo-task lock-order+queuedrelease regression; unchangedpre0043UserFK and0042S37Userlock means inheritedtest-order issue is distinguished fromnewSQLguard regression.",
+  "eventId": "9b0d8645-ad0e-47fd-943f-7f890a054ede",
+  "sequence": 2,
+  "at": "2026-10-15T23:09:55.808Z"
+}

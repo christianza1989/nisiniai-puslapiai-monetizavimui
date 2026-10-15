@@ -2,6 +2,7 @@
 
 import hashlib
 import unicodedata
+from contextlib import asynccontextmanager
 from copy import deepcopy
 from types import SimpleNamespace
 
@@ -10,7 +11,8 @@ from test_creation_content_plan import planned
 from test_creation_review import decision, receipt, report
 from test_creation_review import draft as draft_fixture
 
-from pinet_core.creation import language_patch, review, team
+from pinet_core.config import settings
+from pinet_core.creation import adapter, execution_profiles, language_patch, review, team
 from pinet_core.creation.renderer import language_screening, normalize_creator
 from pinet_core.creation.review import CHECK_KINDS, normalize_critic
 from pinet_core.tasks.codex_transport import RunnerError
@@ -18,6 +20,42 @@ from pinet_core.tasks.codex_transport import RunnerError
 draft = draft_fixture
 FIELD = "draft:/research/6/finding"
 FIXED = "Dalis mokymų skirta įmonių komandoms; kainos ir mūsų vykdymo galimybės dar nepatvirtintos."
+
+
+@pytest.fixture
+def inert_team_actor(monkeypatch):
+    """Current actor lookup seam only; role logic runs unchanged without SQL."""
+    current, checked = {}, []
+    job = SimpleNamespace(id="synthetic-job")
+    monkeypatch.setattr(settings(), "creation_execution_profile", execution_profiles.DEFAULT)
+
+    def record(attempt_id, role, **flags):
+        current.update(id=attempt_id, attempt=SimpleNamespace(model=adapter.role_model(role),
+            instruction_hash=adapter.role_instruction_hash(role,
+                structure_repair=flags.get("structure_repair", False),
+                language_repair=flags.get("language_repair", False))))
+
+    class Snapshot:
+        async def get(self, model, identity):
+            if model is team.Attempt:
+                assert identity == current["id"]
+                return current["attempt"]
+            assert model is team.Job and identity == job.id
+            return job
+
+    @asynccontextmanager
+    async def owned_scope(*, user):
+        assert user == "synthetic-owner"
+        yield Snapshot()
+
+    async def current_default(tx, kind, actual_job):
+        assert isinstance(tx, Snapshot) and kind == "creation" and actual_job is job
+        checked.append(current["id"])
+        return execution_profiles.DEFAULT
+
+    monkeypatch.setattr(team, "scope", owned_scope)
+    monkeypatch.setattr(execution_profiles, "ensure_current", current_default)
+    return record, checked
 
 
 @pytest.fixture
@@ -116,7 +154,7 @@ def test_content_area_does_not_expand_allowed_fields_or_bypass_full_review(candi
 
 
 @pytest.mark.parametrize("nine_fields", [False, True])
-async def test_team_uses_exact_mixed_patch_then_independent_second_review(candidate, monkeypatch, nine_fields):
+async def test_team_uses_exact_mixed_patch_then_independent_second_review(candidate, monkeypatch, nine_fields, inert_team_actor):
     calls, reservations, completions = [], [], []
     original = deepcopy(candidate)
     target = "draft:/content_plan/0/primary_topic"
@@ -130,7 +168,9 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
 
     async def reserve(claimed, role, round_number, **flags):
         reservations.append((role, round_number, flags))
-        return f"synthetic_attempt_{len(reservations)}"
+        attempt_id = f"synthetic_attempt_{len(reservations)}"
+        inert_team_actor[0](attempt_id, role, **flags)
+        return attempt_id
 
     async def finish(claimed, attempt_id, state, summary, payload):
         completions.append((attempt_id, state, payload))
@@ -140,6 +180,8 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
 
     async def runner(data, still_authorized, *, role, seconds):
         calls.append(role)
+        assert data["_expected_execution"] == {"model": adapter.role_model(role), "reasoning_effort": "medium",
+            "instruction_hash": adapter.role_instruction_hash(role, language_repair=data.get("language_repair", False))}
         if role == "creator":
             if calls.count(role) == 1:
                 value = deepcopy(candidate)
@@ -172,8 +214,10 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
 
     monkeypatch.setattr(team, "reserve", reserve)
     monkeypatch.setattr(team, "finish", finish)
-    result, evidence = await team.run({"context": {"permitted_web_actions": 6}}, authorized, role_runner=runner)
+    result, evidence = await team.run({"user_id": "synthetic-owner", "job_id": "synthetic-job",
+        "context": {"permitted_web_actions": 6}}, authorized, role_runner=runner)
     assert calls == ["creator", "critic", "coordinator"] * 2 and len(completions) == 6
+    assert inert_team_actor[1] == [item[0] for item in completions]
     assert all(state == "succeeded" for _, state, _ in completions)
     assert reservations[3][2]["language_repair"] is True
     assert evidence["critic"]["verdict"] == "accept_draft" and evidence["coordinator"]["decision"] == "accept_draft"

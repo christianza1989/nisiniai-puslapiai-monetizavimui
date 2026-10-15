@@ -2,6 +2,7 @@
 import { createHash } from 'node:crypto';
 import { lstat, readFile, realpath } from 'node:fs/promises';
 import path from 'node:path';
+import { validateDiscoverySourceContext } from '../src/discovery-source-context.mjs';
 const sha = value => createHash('sha256').update(value).digest('hex');
 const fail = code => { throw Object.assign(new Error(code), { code }); };
 const object = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -53,6 +54,10 @@ export async function loadCustomerContentContext(input, { requirePage = false, i
   const contextBytes = await readArtifactBytes(path.join(directory, 'intake-context.json'), 300000);
   if (sha(original) !== input.sourceHash || sha(contextBytes) !== manifest.requestHash) fail('writer_original_hash_mismatch');
   const intake = JSON.parse(contextBytes.toString('utf8')), proposal = JSON.parse(original.toString('utf8'));
+  if(Object.hasOwn(intake,'sourceContext')||Object.hasOwn(manifest,'sourceContextSha256')) {
+    const source=validateDiscoverySourceContext(intake.sourceContext,{creationId:input.creationId});
+    if(manifest.sourceContextSha256!==source.contextSha256)fail('writer_intake_binding_mismatch');
+  }
   if (intake.creationId !== input.creationId || intake.acceptedRevision !== input.acceptedRevision
       || intake.sourceHash !== input.sourceHash || intake.siteId !== siteId || intake.canonicalHost !== input.canonicalHost
       || intake.version !== manifest.version || intake.importerHash !== manifest.importerHash

@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Created/attached draftPR160 against Root feature branch. Functional4f75, separatetestonly58e2, acceptance-only57b2; Root already owns their integration. PRbase7aaf8bd had only WORKSTREAMS append conflict; own-branch merge preserves both append sections and Root business-doc bytes, with nine functional source paths unchanged. This PR/source integration is not main merge or operational adoption.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/160",
+  "commit": "57b2efef0db2f223b7a30d04650a710bc63dc2b5",
+  "eventId": "f83875d3-a9eb-4ff3-af36-5c6e441125b2",
+  "sequence": 4,
+  "at": "2026-10-15T09:22:43.621Z"
+}

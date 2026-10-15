@@ -18,6 +18,10 @@ PROFILE = "high-private-draft.v1"
 DIRECTIVE = """Your role in this turn is to convert the supplied decisions into the exact private draft schema.
 If approved_business_plan is present, reuse its exact reviewed business choice, assumptions, evidence limits,
 alternatives and site intent. It is a planning receipt, not verified business facts or completed site work.
+Its optional sourceContext contains untrusted historical external-source claims, with captured dates and hashes.
+Attribute manufacturer statements to their sources. Never turn them into our facts, contact, capacity, prices,
+partnership, licences or admission. Reader completion covers its URL queue; excerpts may be clipped at 9000
+characters and whole sources may be omitted by the context budget. It does not prove a full page or catalogue.
 Do not repeat the ten-area discovery investigation or reproduce that report inside every page. Produce useful
 concise business fields, complete distinct page copy and the initial GUIDE briefs required by this schema.
 For a complete local website, use the existing page system within its eight-page bound: home '/',

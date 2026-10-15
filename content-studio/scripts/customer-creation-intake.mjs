@@ -5,6 +5,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { stableV2, normalizeV2Blocks } from '../src/content-package-v2.mjs';
 import { resolveInternalRichLinks } from '../src/internal-rich-links.mjs';
+import { validateDiscoverySourceContext } from '../src/discovery-source-context.mjs';
 
 const VERSION = 'customer-content-intake.v1';
 const sha = value => createHash('sha256').update(value).digest('hex');
@@ -74,6 +75,8 @@ function validate(input) {
     }
   }
   const verifiedFacts = input.verifiedFacts ?? [];
+  const sourceContext = Object.hasOwn(input,'sourceContext')
+    ?validateDiscoverySourceContext(input.sourceContext,{creationId:input.creationId}):undefined;
   if (!Array.isArray(verifiedFacts) || verifiedFacts.length > 15 || verifiedFacts.some(item => !text(item, 800)) || verifiedFacts.join('\n').length > 12000) fail('invalid_verified_facts');
   const knownContact = input.knownContact ?? { email: '', phone: '' };
   if (!object(knownContact) || Object.keys(knownContact).some(key => !['email', 'phone'].includes(key))
@@ -92,6 +95,7 @@ function validate(input) {
   const contentPlan = input.contentPlan ?? draft.content_plan ?? [];
   if (!Array.isArray(contentPlan) || contentPlan.length > 24) fail('invalid_content_plan');
   return { draft, bytes, artifactsRoot, revisionDir, dataDir, outputDir, contentPlan, verifiedFacts,
+    ...(sourceContext===undefined?{}:{sourceContext}),
     contact: { email: knownContact.email ?? '', phone: knownContact.phone ?? '' }, operatorName: input.operatorName ?? '',
     siteId: 'creation-' + input.creationId.replaceAll('-', '') };
 }
@@ -140,7 +144,8 @@ export async function intakeCreationDraft(input) {
   const importerHash = sha(await readFile(new URL(import.meta.url)));
   const request = { version: VERSION, importerHash, creationId: input.creationId, acceptedRevision: input.acceptedRevision,
     sourceHash: input.sourceHash, canonicalHost: input.canonicalHost, siteId, dataDir, outputDir,
-    verifiedFacts: context.verifiedFacts, knownContact: context.contact, operatorName: context.operatorName, contentPlan: context.contentPlan };
+    verifiedFacts: context.verifiedFacts, knownContact: context.contact, operatorName: context.operatorName, contentPlan: context.contentPlan,
+    ...(context.sourceContext===undefined?{}:{sourceContext:context.sourceContext}) };
   const requestBytes = json(request), requestHash = sha(requestBytes);
   if (requestBytes.length > 300000) fail('input_too_large');
   await mkdir(revisionDir, { recursive: true });
@@ -242,6 +247,7 @@ export async function intakeCreationDraft(input) {
     const workflow = await model.getContentWorkflow(siteId);
     const manifest = { version: VERSION, state: 'private-draft-imported', creationId: input.creationId, acceptedRevision: input.acceptedRevision,
       sourceHash: input.sourceHash, requestHash, importerHash, siteId, canonicalHost: input.canonicalHost, importedAt,
+      ...(context.sourceContext===undefined?{}:{sourceContextSha256:context.sourceContext.contextSha256}),
       siteFileHash: sha(await readFile(path.join(dataDir, 'sites', siteId + '.json'))),
       contentPlanState: plan.state, planItems: context.contentPlan.length, planImported: plan.proposals.length, planIssues: plan.issues,
       planningBriefState: !context.contentPlan.length ? 'not-provided' : plan.issues.length || planningBriefs.some(item => item.state === 'blocked') ? 'partial' : 'attached',

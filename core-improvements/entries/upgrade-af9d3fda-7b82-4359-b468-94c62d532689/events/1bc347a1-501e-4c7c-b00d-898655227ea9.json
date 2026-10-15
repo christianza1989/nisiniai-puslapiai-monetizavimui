@@ -1,0 +1,7 @@
+{
+  "note": "Independent frontend-owner DTO review of b237 reproduced an admitted/sendable saved-agent preview chat with native_conversation_id NULL. Helper reproduced exactguarddefect beforefix:1FAIL29deselected1.41s, logSHA256936846f11fb26cfe6c574d2b5e644fe1a176b5c77e3586fdc483c29a1b9f8411 (DID NOT RAISE ValidationError). No DB/provider/case involved; serving stillRoot3b7. Narrow validator now requires actual Conversation when preview_admitted or can_send, while blocked unstarted metadata may stay NULL and consultants always NULL.",
+  "status": "fixing",
+  "eventId": "1bc347a1-501e-4c7c-b00d-898655227ea9",
+  "sequence": 5,
+  "at": "2026-10-15T22:19:40.256Z"
+}

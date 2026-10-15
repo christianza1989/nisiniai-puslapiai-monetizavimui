@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "evidence": "53PASS0.54s (30new+18Episode+5legacy). Includes admittedNULLnegative, sendableNULLnegative, blockedNULLpositive, actualConversationpositive, existingconsultantNULLvalid. LogSHA256 9a8c0934354525c417e4ee721283fc37fb47c4d5f8f2c85ce51e946e02a47239",
+      "command": "python -X utf8 -B -m pytest -p no:cacheprovider -q offline_tests/test_direct_messenger_contract.py offline_tests/test_workspace_agent_episode.py tests/test_workspace_team.py",
+      "result": "PASS"
+    },
+    {
+      "evidence": "Standalone export and3fileRuff PASS; no API/router/database/worker registration or native execution.",
+      "command": "python -m pinet_core.workspace_team.direct_contract --output private-direct-openapi.json; python -m ruff check direct_wire.py direct_contract.py test_direct_messenger_contract.py",
+      "result": "PASS"
+    }
+  ],
+  "note": "Narrow wire repair only. Uncommitted runtime/SQL workspace scope work remains outside this checkpoint and is not included or claimed verified. Root performs codegen and eventual real native DB/adoption.",
+  "status": "local-verified",
+  "eventId": "a2ea5af3-081c-4b24-9079-10c3368bf644",
+  "sequence": 6,
+  "at": "2026-10-15T22:19:41.690Z"
+}

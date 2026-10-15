@@ -184,3 +184,28 @@ async def test_retained_unprofiled_allocation_keeps_topic_history_and_owner_repl
     assert replay.status_code == 200, replay.text
     assert replay.json()["data"]["turn"]["task_id"] == tid
 
+
+async def test_nonbusiness_topic_refuses_before_native_preflight_or_allocation(episode_customer, monkeypatch):
+    from pinet_core.workspace_team import episode
+
+    c, _, _ = episode_customer
+    await setup(c)
+    portfolio = c["preparation_topic"]["portfolio_id"]
+    root = f"/customer/v2/portfolios/{portfolio}/workspace-topics"
+    topic = await c["client"].post(root, headers=c["auth"], json={"idempotency_key": str(uuid4()),
+        "title": "Sintetinė bendroji tema", "anchor": {"kind": "portfolio", "selection_id": portfolio}})
+    assert topic.status_code == 200, topic.text
+
+    async def forbidden(*_, **__):
+        pytest.fail("A nonbusiness topic cannot enter native preflight")
+
+    monkeypatch.setattr(episode, "preflight", forbidden)
+    base = root+"/"+topic.json()["data"]["current_topic"]["topic_id"]
+    response = await c["client"].post(base+"/team/agent-tests", headers=c["auth"], json={
+        "idempotency_key": str(uuid4()), "creation_id": c["request"]["creation_id"],
+        "agent_id": c["agent"]["agent"]["agent_id"], "expected_revision": 1,
+        "content": "Išbandykite šį scenarijų."})
+    assert response.status_code == 403 and response.json()["code"] == "business_anchor_required"
+    async with AsyncSession(c["admin"]) as tx:
+        assert not list(await tx.scalars(select(Task).where(Task.environment_id == c["environment"])))
+

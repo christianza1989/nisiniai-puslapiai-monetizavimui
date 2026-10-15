@@ -230,6 +230,8 @@ async def send_episode(tx, session, portfolio_id, topic_id, request):
     old = await retained(tx, session, portfolio_id, topic_id, row, value, fingerprint)
     if old is not None:
         return old
+    if row.anchor_kind != "business" or not row.business_id or not row.grant_id:
+        raise ControlError(403, "business_anchor_required")
     await episode.schema_ready(tx)
     from ..tasks.codex import RunnerError
     try:

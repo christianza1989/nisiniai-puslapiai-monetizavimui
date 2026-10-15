@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Independent review P2 reproduced: endpoint property was removed while upstream minProperties2 and endpoint-containing examples remained. Original exact target-only SDK validation false retained. Projection now adjusts cardinality for injected endpoint and projects examples/hidden fields. No browser/provider launch, liveCDP or product activation involved.",
+  "checks": [
+    {
+      "command": "npm.cmd test --prefix integrations/rea",
+      "result": "PASS",
+      "evidence": "13PASS; new test validates actual pinned inspect schema with SDK AJV, accepts target-only/exposed examples, rejects empty/endpoint injection, and verifies prepareCall still injects exact operator endpoint/origins."
+    },
+    {
+      "command": "npm.cmd run test:integration --prefix integrations/rea",
+      "result": "PASS",
+      "evidence": "1actual stdio/upstreamPASS9.6s; final ListTools inspect schema and examples validate before any browser call; existing PNG/staticJS/catalogue/denials remain PASS."
+    }
+  ],
+  "eventId": "2834c918-fdc0-481b-a904-a29a4572ac74",
+  "sequence": 5,
+  "at": "2026-10-15T12:16:32.337Z"
+}

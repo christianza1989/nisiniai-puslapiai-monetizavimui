@@ -6,6 +6,7 @@ import {mkdir, mkdtemp, readFile, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {crc32, deflateSync} from 'node:zlib';
 import {ROOT, digest, TOOLS} from '../client.mjs';
+import {AjvJsonSchemaValidator} from '@modelcontextprotocol/sdk/validation/ajv';
 
 function fixturePng() {
   const chunk = (type, data) => {
@@ -28,6 +29,10 @@ test('actual stdio proxy → pinned REA: discovery, gates, PNG evidence and stat
   const list = await client.listTools();
   assert.deepEqual(list.tools.map(t => t.name).sort(), ['rea_status', ...TOOLS.map(n => 'rea_' + n)].sort());
   assert.equal(list.tools.some(t => /scenario|open_binary|shell/.test(t.name)), false);
+  const inspect = list.tools.find(t => t.name === 'rea_inspect_web_page');
+  const validateInspect = new AjvJsonSchemaValidator().getValidator(inspect.inputSchema);
+  assert.equal(validateInspect({target_id: 'TARGET_ID_FROM_LIST_BROWSER_TARGETS'}).valid, true);
+  for (const example of inspect.inputSchema.examples) assert.equal(validateInspect(example).valid, true);
   const rejected = await client.callTool({name: 'rea_open_binary', arguments: {}});
   assert.equal(rejected.isError, true);
   const expanded = await client.callTool({name: 'rea_list_browser_targets',

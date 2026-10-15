@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial S33 baseline 4FAIL1PASS7.50s SHA335e77ce02c39dd68e69e8439f11f2d9a39549e4457c38c211353709de679649 preserved. Intermediate1FAIL41PASS9.57s exposed fair-link reservation; fixed without raising budgets. Intermediate1FAIL59PASS6.55s was a neutral fixture containing the matched word condition, corrected to unclassified prose. After629PASS7SKIP57.23s, final review reproduced late adverse warranty without a commercial-use keyword being displaced by early positive claims:1FAIL1.16s SHAa416b514e1c5a451f37904f40dd09cca4cf578a0603299ff52cb24aa6413f018. Lexical nearby restriction priority added, retaining exact slices. Final full regression and capture reproduction pending; original logs/v1 reference remain ignored/private. No provider/web/DB/case/serving actions.",
+  "eventId": "95a919b0-fd02-4942-bbfe-825216270f68",
+  "sequence": 2,
+  "at": "2026-10-15T14:52:51.813Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "S33 local verification only, before Root adoption. Final all Creation/Discovery plus CLI compatibility offline cohort631PASS7SKIP41.73s; focused61PASS2.27s preceded one additional single-line variant in final full cohort. Original4FAIL1PASS7.50s/intermediate failures and late-adverse1FAIL1.16s remain immutable private logs. No provider/web/DB/nativePG/case/serving/RootREA actions. Lexical URL/text selection remains language-limited; opaque links, source reader clipping and omitted candidates are honest unknown coverage.",
+  "checks": [
+    {
+      "command": "python -X utf8 -B -m pytest -p no:cacheprovider [all offline_tests/test_creation*.py, test_discovery*.py, test_business_discovery.py, test_partial_cli_receipts.py, test_control_codex.py] -q --tb=short",
+      "result": "PASS",
+      "evidence": "631 passed,7 skipped in41.73s; ignored artifacts/s33/final-offline-2.private.log. Synthetic late adverse conditions with/without commercial keywords, long Unicode line, actual commercial link priority, unread budget, unsafe links, unavailable pages, malformed capture, raw immutability, spans/offsets/hash/cuts and all-role instruction pins."
+    },
+    {
+      "command": "python -B -m ruff check sources.py source_projection.py test_discovery_research_first.py test_discovery_source_projection.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Four exact owned Python paths passed Ruff; diff check passed. No fetch/DNS/TLS/robots/Document/read change: AST identities Document,Connection,public_address,fetch,read all true against73658777948da00741f9e54cd78ca9efa15cb3e6."
+    },
+    {
+      "command": "Read-only original capture and13bodyHTML snapshot reproduction through exact preserved v1 and S33 v2 projectors",
+      "result": "PASS",
+      "evidence": "Raw capture SHA256c53877641390b3f786bbbc89d0c578b9e1b7ffff39a3cac6cc91aaf26d085337 unchanged; canonical0c3798fa3b9bad72b291e3c4ed66ffd0a78c5daf56dc2306bfa8507e5a14f8bd. v1 exact50efa3f5eac590a70e94b9e56f2659dc82fb2a4ee987748a5ae8528f70ab4683/22374B; v2 exact0482d5f84fb287511e1cf7b8a75fd5294b464e28f440594b3a2043ec2d4f5b05/22391B. All13pages retained,13HTML body hashes verified, all5complete business-use restriction clauses retained as exact offset/hash slices, actual commercial-document link visible.9spans/25candidates16omitted;7links/360captured353omitted;8/35remainingURLs shown27omitted. Original source data only in ignored artifacts/s33, no individual site text inGit."
+    }
+  ],
+  "eventId": "938e60d9-1053-441f-8cbf-263a1a819c28",
+  "sequence": 3,
+  "at": "2026-10-15T14:54:55.325Z"
+}

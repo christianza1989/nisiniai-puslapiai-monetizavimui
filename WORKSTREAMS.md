@@ -1052,3 +1052,5 @@ old immutable native Episode provenance remain independent. Focused82PASS, broad
 setup repair16PASS. Five actual PostgreSQL tests collected only. No helper DB,
 provider, current-case, serving, browser or portal work. Root owns actual QA/adoption.
 Saved-agent incremental preview remains a required following source packet.
+
+S42 actual-PG repair2026-10-16: helper own branch codex/verslomatika-direct-consultant-repair-20261016 fromea924493; Stage2 WIP paused/separate. Root retained9FAIL48PASS941.82s plusfirst50342883 diagnostic. Exactdirect.py/direct_schema.py +direct/teamPGtests scopedissue66 comment6204095479, upgrade158981cf. Triggernamecast, narrowlegacy/terminalaccountingapplicability, immutableMapnolock/noUPDATE; inheritedS37testordering correctedwithboundedtwo-transactionproof. Focused86PASS/Ruff/nativecollect24only; helperDB/provider/case/serving0. RootactualfreshPG/adoptionpending.

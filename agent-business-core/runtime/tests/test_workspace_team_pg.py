@@ -234,20 +234,60 @@ async def test_concurrent_exact_key_replay_and_cross_topic_or_legacy_reuse_are_r
     assert (await c["client"].post(base+"/team/turns", headers=auth, json=values[0][1] | {"author_type": "coordinator"})).status_code == 400
 
 
-async def test_commit_time_owner_revocation_rolls_back_turn_and_event_without_dispatch(team):
+async def test_owner_revocation_serializes_after_admission_and_releases_queue_without_dispatch(team):
     c = team
     auth, me, base, _, _ = await setup(c)
     pid, topic_id = base.split("/")[-3], base.split("/")[-1]
     key = str(uuid4())
-    with pytest.raises(IntegrityError):
-        async with scope(user=me["user_id"]) as tx:
-            session = await tx.scalar(select(Session).where(Session.token_hash == token_hash(auth["Authorization"][7:])))
-            await service.send(tx, session, pid, topic_id, Send(idempotency_key=key, content="Pozityvaus atsakymo dar negalima laikyti commit."))
-            async with AsyncSession(c["admin"]) as admin, admin.begin():
-                await admin.execute(update(Membership).where(Membership.user_id == me["user_id"], Membership.environment_id == c["environment"]).values(enabled=False))
+    # The pre0043 TaskThread->User FK already takes KEY SHARE. Canonical0042
+    # membership revocation takes User FOR UPDATE, so awaiting that UPDATE inside
+    # this still-open admission transaction deadlocks the test itself. Observe
+    # the actual blocking order with two tasks, then test the accepted queue's
+    # post-revocation release. Neither output fencing nor the lock is weakened.
+    started, revoker, pids = asyncio.Event(), None, {}
+
+    async def revoke():
+        async with AsyncSession(c["admin"]) as admin, admin.begin():
+            pids["revoker"] = await admin.scalar(text("SELECT pg_backend_pid()"))
+            started.set()
+            await admin.execute(update(Membership).where(Membership.user_id == me["user_id"],
+                Membership.environment_id == c["environment"]).values(enabled=False))
+
+    try:
+        async with asyncio.timeout(10):
+            async with scope(user=me["user_id"]) as tx:
+                pids["admission"] = await tx.scalar(text("SELECT pg_backend_pid()"))
+                session = await tx.scalar(select(Session).where(Session.token_hash == token_hash(auth["Authorization"][7:])))
+                await service.send(tx, session, pid, topic_id, Send(idempotency_key=key, content="Užklausa priimama prieš atšaukiant prieigą."))
+                revoker = asyncio.create_task(revoke())
+                await started.wait()
+                deadline, blocked = asyncio.get_running_loop().time() + 3, False
+                while asyncio.get_running_loop().time() < deadline:
+                    blocked = await tx.scalar(text("SELECT :owner=ANY(pg_blocking_pids(:waiter))"),
+                        {"owner": pids["admission"], "waiter": pids["revoker"]})
+                    if blocked:
+                        break
+                    await asyncio.sleep(0.01)
+                assert blocked and not revoker.done()
+            await revoker
+    finally:
+        if revoker is not None and not revoker.done():
+            revoker.cancel()
+            await asyncio.gather(revoker, return_exceptions=True)
+    called = []
+
+    async def forbidden(*args):
+        called.append(True)
+        pytest.fail("Revoked queued work must not dispatch a provider")
+
+    await worker.execute_once(adapter=forbidden, kind=KIND)
+    assert called == []
     async with AsyncSession(c["admin"]) as tx:
-        assert await tx.scalar(select(Task.id).where(Task.idempotency_key == key)) is None
-        assert list(await tx.scalars(select(TeamEvent).where(TeamEvent.environment_id == c["environment"]))) == []
+        task = await tx.scalar(select(Task).where(Task.idempotency_key == key))
+        assert task.status == "failed" and task.failure_code == "authorization_revoked" and task.result is None
+        assert not list(await tx.scalars(select(TaskRun).where(TaskRun.task_id == task.id)))
+        events = list(await tx.scalars(select(TeamEvent).where(TeamEvent.task_id == task.id)))
+        assert len(events) == 1 and events[0].kind == "owner_message"
 
 
 async def test_nullable_context_and_settlement_cannot_forge_complete_pin_or_call(team):

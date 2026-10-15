@@ -1,0 +1,21 @@
+{
+  "category": "code",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "summary": "Repair actual direct consultant admission and isolate new direct Task SQL guards from legacy revoked accounting while preserving current output fences.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_schema.py",
+    "agent-business-core/runtime/tests/test_workspace_team_pg.py",
+    "agent-business-core/runtime/tests/test_workspace_direct_pg.py"
+  ],
+  "evidence": [
+    "Root actual dedicated-empty PostgreSQL0043 migration/bootstrap PASS then57case cohort9FAIL48PASS941.82s at exactea924493/rootaa1726; original logSHA256 aa879da60c3bfd16f6a9a38eb7bcd029b977203f1439e0e596a7f3fb1f069c55. Helper only reads minimized diagnostic; DB/provider/customer-case/serving not touched.",
+    "All5direct HTTP create tests503; legacy revoked settlement hits new workspace_direct_task_fence exact task parent required because deferred trigger sees RLS-hidden old Task. Separate commit-time membership test waited408s behind an app transaction; preserve lock diagnostic and separate inheritedS37 serialization applicability before claiming repair."
+  ],
+  "rollback": "Scoped source/fresh-QA0043 generator repair; preserve originalea source/migration/failure evidence and all Task/history/usage. No UPDATE permission on immutable maps; no current output or native grant authority bypass.",
+  "id": "upgrade-158981cf-65c7-402f-b91a-6612690e5508",
+  "branch": "codex/verslomatika-direct-consultant-repair-20261016",
+  "baseSha": "ea9244934b627c06158b5ff8f972b965bdda5010",
+  "createdAt": "2026-10-15T23:03:41.629Z"
+}

@@ -4,6 +4,7 @@ The helper collects this file only. The integration owner runs it, never against
 the retained private customer case. Cleanup is restricted to the random test env.
 """
 import hashlib
+import json
 import sys
 from pathlib import Path
 from uuid import uuid4
@@ -200,3 +201,22 @@ async def test_actual_owner_revoked_after_call_retains_usage_and_never_publishes
         assert len(attempts) == 1 and attempts[0].usage == run.usage and len(events) == 1
     denied = await c["client"].get(base + "/chats/" + chat["chat_id"] + "/events", headers=auth)
     assert denied.status_code in {403, 404}
+
+
+async def test_actual_boundary_classifier_exposes_no_foreign_task_or_workspace_scope(messenger):
+    c = messenger
+    auth, me, base, _ = await setup(c)
+    chat, _ = await create(c, auth, base)
+    accepted, _ = await send(c, auth, base, chat)
+    async with AsyncSession(c["admin"]) as tx:
+        task = await tx.get(Task, accepted["turn"]["task_id"])
+        material = {key: getattr(task, key) for key in ("id", "business_id", "user_id", "organization_id", "environment_id")}
+    _, _, foreign = await verified(c)
+    async with scope(user=foreign["user_id"]) as tx:
+        assert await tx.scalar(text("SELECT workspace_direct_task_boundary('control_tasks',CAST(:j AS JSONB))"),
+            {"j": json.dumps(material)}) is None
+    async with scope(user=me["user_id"]) as tx:
+        assert await tx.scalar(text("SELECT workspace_direct_task_boundary('control_tasks',CAST(:j AS JSONB))"),
+            {"j": json.dumps(material)}) == "direct"
+        assert await tx.scalar(text("SELECT workspace_direct_task_boundary('control_tasks',CAST(:j AS JSONB))"),
+            {"j": json.dumps(material | {"environment_id": "test-foreign"})}) is None

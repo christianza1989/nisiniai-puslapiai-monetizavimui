@@ -297,6 +297,15 @@ stale and provide no effective private host. Never wildcard-trust `.invalid`: us
 current exact status/accepted/source binding. Later native readers select the validated
 recovery receipt through the same resolver; all editorial/Foundation/public/agent gates remain.
 
+Owner revocation ordering is explicit: migration 0042 adds an invoker-rights membership
+UPDATE/DELETE trigger that acquires the existing affected User row locks in deterministic
+order. Admission/finalization hold the same User lock through commit. Revocation that wins
+first is observed by the final owner check; revocation that starts after final validation
+waits until intake commits. Owner graph tables keep their existing INSERT/SELECT grants;
+there is no new UPDATE grant or SECURITY DEFINER bypass. Schema readiness requires this
+trigger. Native QA includes both membership-revoked-after-Node and real lock-wait ordering
+after the final check and before commit; static/collect-only checks do not prove that ordering.
+
 Source-only offline checks do not establish actual PostgreSQL enforcement, serving adoption
 or real customer recovery. Those checks belong to the integrating owner before live use.
 

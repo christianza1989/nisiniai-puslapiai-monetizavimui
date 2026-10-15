@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_private_preview.py offline_tests/test_private_preview_wire.py -q -p no:cacheprovider",
+      "evidence": "52 passed3.06s; deterministic OLD/new User-lock and unchanged INSERT/SELECT owner-grants structural checks.",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m pytest tests/test_private_preview_pg.py --collect-only -q -p no:cacheprovider",
+      "evidence": "10 tests collected0.44s; includes two new membership ordering cases, NO actual DB/HTTP/Node/provider execution.",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m ruff check private_preview.py 0042_creation_private_preview.py test_private_preview.py test_private_preview_pg.py; git diff --check",
+      "evidence": "All checks passed. Earlier full1691 result not rerun or rewritten for this source continuation.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Root correctly required commit-time membership ordering after dd058 privilege fix. No universal existing owner-revoke User-lock path found. Additive0042 invoker-only BEFORE UPDATE/DELETE membership trigger now locks OLD/new affected Users in deterministic order using existing grants; private admission/finalization already hold same User lock. No new grants/SECURITYDEFINER, deferred owner predicate retained, schema readiness requires trigger. Native tests add real membership revoke after Node and pg_blocking_pids proof of late revoke waiting for final intake commit. Actual native execution remains Root-owned; source-only/collect evidence is not PG ordering acceptance.",
+  "status": "local-verified",
+  "eventId": "b4d3db5f-4af7-4f9a-a3c5-65577aa8e2eb",
+  "sequence": 6,
+  "at": "2026-10-15T16:52:08.531Z"
+}

@@ -327,6 +327,9 @@ def test_additive_schema_preserves_history_and_restricts_native_writes(monkeypat
     # Canonical0012 grants runtime INSERT/SELECT, not UPDATE, on owner graph tables.
     # PostgreSQL row locking would require UPDATE and break every ordinary admission.
     assert "FOR SHARE OF m,p" not in sql
+    assert "BEFORE UPDATE OR DELETE ON control_memberships" in sql
+    assert "ORDER BY u.environment_id,u.id FOR UPDATE" in sql
+    assert "u.id=OLD.user_id" in sql and "u.id=NEW.user_id" in sql
     assert "c.canonical_host IS NOT NULL" in sql and "c.active_job_id IS NOT NULL" in sql
     assert "candidate_sha256" in sql and "coordinator_event_id" in sql and "NEW.run_id<>b.run_id" in sql
     # A retained binding blocks destructive rollback.

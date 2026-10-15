@@ -70,7 +70,9 @@ async def schema_ready(tx):
       SELECT count(*)=4 FROM pg_trigger WHERE tgname IN('private_intake_request_immutable',
         'private_intake_receipt_immutable','private_intake_request_fence','private_intake_receipt_fence')
         AND tgrelid IN(to_regclass('control_creation_private_intake_requests'),
-          to_regclass('control_creation_private_intake_receipts')) AND tgenabled<>'D'""")))
+          to_regclass('control_creation_private_intake_receipts')) AND tgenabled<>'D'
+      AND EXISTS(SELECT 1 FROM pg_trigger WHERE tgrelid=to_regclass('control_memberships')
+        AND tgname='private_intake_membership_lock' AND tgenabled<>'D')""")))
 
 
 def stored(row):

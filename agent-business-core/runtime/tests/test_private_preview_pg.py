@@ -6,6 +6,7 @@ The integrating owner supplies/migrates the dedicated QA DB; this file never cre
 import asyncio
 import os
 import secrets
+from contextlib import asynccontextmanager
 from pathlib import Path
 from uuid import uuid4
 
@@ -18,7 +19,7 @@ from test_customer_creations import start
 from test_customer_public import verified
 
 from pinet_core.config import settings
-from pinet_core.control.models import Session
+from pinet_core.control.models import Membership, Session
 from pinet_core.control.routes import scope, token_hash
 from pinet_core.control_api import app
 from pinet_core.creation import private_preview, studio, worker
@@ -177,7 +178,7 @@ async def test_owner_schema_hash_and_archive_guards_never_start_native(preview):
         assert await tx.scalar(select(func.count()).select_from(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == cid)) == 0
 
 
-@pytest.mark.parametrize("change", ["session", "source"])
+@pytest.mark.parametrize("change", ["session", "source", "membership"])
 async def test_after_real_node_revocation_or_source_change_cannot_commit_receipt(preview, monkeypatch, change):
     c = preview
     cid, auth, body, _ = await accepted(c)
@@ -186,16 +187,78 @@ async def test_after_real_node_revocation_or_source_change_cannot_commit_receipt
         result = await original(*args, **kwargs)
         if change == "source":
             monkeypatch.setattr(settings(), "control_source_revision", "f"*40)
-        else:
+        elif change == "session":
             async with AsyncSession(c["admin"]) as tx, tx.begin():
                 await tx.execute(update(Session).where(Session.token_hash == token_hash(auth["Authorization"][7:])).values(revoked_at=utcnow()))
+        else:
+            async with AsyncSession(c["admin"]) as tx, tx.begin():
+                creation = await tx.get(Creation, cid)
+                await tx.execute(update(Membership).where(Membership.user_id == creation.user_id,
+                    Membership.environment_id == c["environment"]).values(enabled=False))
         return result
     monkeypatch.setattr(studio, "import_draft", changed)
     response = await c["client"].post(path(cid), headers=auth, json=body)
-    assert response.status_code in {401, 409}, response.text
+    assert response.status_code in {401, 404, 409}, response.text
     async with AsyncSession(c["admin"]) as tx:
         row = await tx.scalar(select(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == cid))
         assert row and not await tx.scalar(select(PrivateIntakeReceipt.id).where(PrivateIntakeReceipt.recovery_id == row.id))
+
+
+async def test_membership_revoke_after_final_check_waits_for_intake_commit(preview, monkeypatch):
+    c = preview
+    cid, auth, body, _ = await accepted(c)
+    final_checked, release = asyncio.Event(), asyncio.Event()
+    original_scope = private_preview.scope
+    held = False
+    @asynccontextmanager
+    async def held_final_scope(**kwargs):
+        nonlocal held
+        async with original_scope(**kwargs) as tx:
+            yield tx
+            # The API has completed its final validation and is leaving the final
+            # transaction. Hold before commit while its User FOR UPDATE still exists.
+            if not held and await tx.scalar(select(PrivateIntakeReceipt.id).join(PrivateIntakeRequest,
+                    PrivateIntakeRequest.id == PrivateIntakeReceipt.recovery_id).where(PrivateIntakeRequest.creation_id == cid)):
+                held = True
+                final_checked.set()
+                await release.wait()
+    monkeypatch.setattr(private_preview, "scope", held_final_scope)
+    pending = asyncio.create_task(c["client"].post(path(cid), headers=auth, json=body))
+    revoker = None
+    try:
+        await asyncio.wait_for(final_checked.wait(), 45)
+        async with AsyncSession(c["admin"]) as tx:
+            owner = (await tx.get(Creation, cid)).user_id
+        started = asyncio.Event()
+        pid = None
+        async def revoke():
+            nonlocal pid
+            async with AsyncSession(c["admin"]) as tx, tx.begin():
+                pid = await tx.scalar(text("SELECT pg_backend_pid()"))
+                started.set()
+                await tx.execute(update(Membership).where(Membership.user_id == owner,
+                    Membership.environment_id == c["environment"]).values(enabled=False))
+        revoker = asyncio.create_task(revoke())
+        await asyncio.wait_for(started.wait(), 10)
+        blocked = False
+        async with AsyncSession(c["admin"]) as tx:
+            for _ in range(100):
+                blocked = bool(await tx.scalar(text("SELECT cardinality(pg_blocking_pids(:pid))>0"), {"pid": pid}))
+                if blocked:
+                    break
+                await asyncio.sleep(.02)
+        assert blocked and not revoker.done(), "Membership revocation must serialize on the intake User lock"
+    finally:
+        release.set()
+        if revoker:
+            await asyncio.wait_for(revoker, 15)
+    result = await asyncio.wait_for(pending, 15)
+    assert result.status_code == 200 and result.json()["data"]["state"] == "private_draft_imported", result.text
+    # The receipt committed before revocation, then current authority is denied.
+    assert (await c["client"].get(path(cid), headers=auth)).status_code == 404
+    async with AsyncSession(c["admin"]) as tx:
+        assert await tx.scalar(select(PrivateIntakeReceipt.id).join(PrivateIntakeRequest,
+            PrivateIntakeRequest.id == PrivateIntakeReceipt.recovery_id).where(PrivateIntakeRequest.creation_id == cid))
 
 
 async def test_storage_is_immutable_and_restricted_actor_has_no_history_mutation(preview):

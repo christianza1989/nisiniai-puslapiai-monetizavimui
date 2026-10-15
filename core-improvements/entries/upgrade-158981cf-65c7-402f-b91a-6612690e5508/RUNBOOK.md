@@ -33,3 +33,5 @@ tests collected only. No helper PostgreSQL, provider, customer-case or serving
 operation. Root runs fresh dedicated QA0043 and the legacy native/Episode cohort
 before any serving adoption. Stage2 preview WIP stays paused in its separate
 worktree. Source repair is not actual DB/adoption/main acceptance.
+
+Full offline follow-up at functional eff5b585:1876PASS8SKIP67subtests84.87s; two inherited Pydantic deprecation warnings. Actual Python-to-Node isolated fixtures included through ignored installed-dependency junction. No database/provider/serving adoption proof.

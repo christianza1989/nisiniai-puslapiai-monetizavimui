@@ -166,6 +166,27 @@ def test_saved_agent_preview_is_explicit_and_cannot_downgrade_to_workspace_scope
         wire().DirectCreate.model_validate({"idempotency_key": str(uuid4()), "mode": "consultant", "recipient": recipient})
 
 
+def test_preview_chat_admission_requires_real_conversation_but_blocked_metadata_may_remain_unstarted():
+    chat = sample()["chat"]
+    chat.update(mode="agent_preview", recipient={"kind": "saved_agent", "creation_id": str(uuid4()),
+        "agent_id": str(uuid4()), "revision_id": str(uuid4()), "revision": 1, "configuration_sha256": "d" * 64},
+        native_state={"configuration_state": "draft", "calibration_status": "UNVERIFIED", "module_admission": "not_admitted",
+            "channel_activation": "not_performed", "preview_admitted": False},
+        can_send=False, blockers=["preview_not_admitted"])
+    chat["execution_scope"] = {"kind": "business", "portfolio_id": chat["portfolio_id"],
+        "parent_topic_id": chat["parent_topic_id"], "business_id": str(uuid4()), "grant_id": str(uuid4())}
+    assert wire().DirectChat.model_validate(chat).native_conversation_id is None
+    chat["native_state"]["preview_admitted"] = True
+    with pytest.raises(ValidationError):
+        wire().DirectChat.model_validate(chat)
+    chat.update(can_send=True, blockers=[])
+    with pytest.raises(ValidationError):
+        wire().DirectChat.model_validate(chat)
+    identity = str(uuid4())
+    chat["native_conversation_id"] = identity
+    assert str(wire().DirectChat.model_validate(chat).native_conversation_id) == identity
+
+
 def test_current_quality_needs_artifact_but_later_transcript_does_not_rewrite_old_success():
     evidence = {"conversation_id": str(uuid4()), "configuration_sha256": "a" * 64, "transcript_revision": 1,
         "quality_state": "succeeded", "quality_current": True, "quality_artifact_id": None,

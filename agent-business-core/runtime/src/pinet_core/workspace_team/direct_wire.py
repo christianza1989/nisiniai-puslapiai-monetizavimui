@@ -152,6 +152,7 @@ class DirectChat(Strict):
                 or self.can_send != (not self.blockers) or len(set(self.blockers)) != len(self.blockers)
                 or self.turn_count == self.turn_limit and "chat_full" not in self.blockers
                 or native and self.can_send and not self.native_state.preview_admitted
+                or native and (self.native_state.preview_admitted or self.can_send) and self.native_conversation_id is None
                 or self.execution_scope.portfolio_id != self.portfolio_id
                 or self.execution_scope.parent_topic_id != self.parent_topic_id
                 or self.execution_scope.kind == "workspace" and (

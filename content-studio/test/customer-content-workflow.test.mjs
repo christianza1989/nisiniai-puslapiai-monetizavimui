@@ -11,6 +11,188 @@ import {IMAGE_POLICY} from '../src/image-pipeline.mjs';
 
 const digest=v=>createHash('sha256').update(stableV2(v)).digest('hex');
 const rawHash=v=>createHash('sha256').update(v).digest('hex');
+async function reviewedCopyFixture(t,patch={title:'Patikslintas privatus bandomojo puslapio pavadinimas'}) {
+  const f=await sandbox(t),s=f.status(),p=s.pages.find(p=>p.type==='home');
+  return {...f,request:{command:'amend-page-reviewed-copy',operationId:randomUUID(),pageId:p.pageId,
+    expectedSiteHash:s.expectedSiteHash,expectedRevisionHash:p.revisionHash,expectedPlanningHash:p.planningHash,patch}};
+}
+
+test('reviewed-copy distinct amendment persists exact copy and replay without touching original intake',async t=>{
+  const f=await reviewedCopyFixture(t),result=f.ok(f.request).operation.result;
+  assert.equal(result.state,'applied');assert.equal(result.replayed,false);assert.equal(result.changed,true);
+  const bytes=await readFile(f.file),replay=f.ok(f.request).operation.result;
+  assert.equal(replay.requestHash,result.requestHash);assert.equal(replay.receiptSha256,result.receiptSha256);
+  assert.equal(replay.replayed,true);assert.equal(replay.changed,false);
+  assert.deepEqual(await readFile(f.file),bytes);await f.unchanged();
+});
+
+const amendmentFiles=f=>({directory:path.join(f.revision,'reviewed-copy-amendments'),
+  receipt:path.join(f.revision,'reviewed-copy-amendments',f.request.operationId+'.json'),
+  before:path.join(f.revision,'reviewed-copy-amendments',f.request.operationId+'.before.json')});
+function failAmendment(f,after) {
+  const request={...f.input,...f.request},contextUrl=new URL('../scripts/customer-content-context.mjs',import.meta.url).href,
+    workflowUrl=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;
+  return f.mutate(`const input=${JSON.stringify(request)},c=await (await import(${JSON.stringify(contextUrl)})).loadCustomerContentContext(input,{requirePage:true});
+    const native=c.model;c.model={...native,editPage:async(...args)=>{${after?'await native.editPage(...args);':''}throw Object.assign(new Error('Synthetic lost response'),{code:'inert_interruption'});}};
+    try{await (await import(${JSON.stringify(workflowUrl)})).amendReviewedCopy(c,input);throw new Error('Expected interruption');}
+    catch(e){if(e.code!=='inert_interruption')throw e;console.log(JSON.stringify({code:e.code}));}`);
+}
+
+test('reviewed-copy body and metadata use raw request identity and immutable native before evidence',async t=>{
+  const f=await reviewedCopyFixture(t),original=await f.read(),page=original.pages.find(p=>p.id===f.request.pageId);
+  f.request.patch={title:'Žmogaus patikslintas privatus tekstas',intent:'Aiškiai paaiškinti mažo bandymo eigą.',
+    description:'Taisyklingas ir konkretus privataus sintetinio bandymo aprašas.',
+    body:page.body.map(b=>b.type==='paragraph'?{...b,text:b.text+' Patikslintas sakinys.'}:b),
+    factChecks:['  Tikras neatsakytas klausimas lieka atviras.  '],
+    externalLinks:[{url:'https://example.org/source',label:' Nepatikrintas kandidatas ',reason:' Reikia patikrinti turinį ',verified:false}]};
+  const value=f.ok(f.request),r=value.operation.result,site=await f.read(),updated=site.pages.find(p=>p.id===page.id);
+  const binding=Object.fromEntries(['operationId','creationId','acceptedRevision','sourceHash','canonicalHost','pageId',
+    'expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'].map(k=>[k,({...f.input,...f.request})[k]]));
+  assert.equal(r.requestHash,digest(binding));assert.equal(r.appliedSiteHash,value.expectedSiteHash);
+  assert.equal(r.beforeSiteHash,f.request.expectedSiteHash);assert.equal(r.beforeRevisionHash,f.request.expectedRevisionHash);
+  assert.equal(r.beforePlanningHash,f.request.expectedPlanningHash);assert.equal(r.beforePageSha256,digest(page));
+  const before=JSON.parse(await readFile(amendmentFiles(f).before,'utf8'));
+  assert.deepEqual(before.page,page);assert.deepEqual(before.binding.patch,f.request.patch);
+  assert.deepEqual(updated.factChecks,['Tikras neatsakytas klausimas lieka atviras.']);
+  assert.equal(updated.externalLinks[0].verified,false);assert.equal(updated.externalLinks[0].label,'Nepatikrintas kandidatas');
+  assert.deepEqual(site.assets,original.assets);assert.deepEqual(updated.media,page.media);assert.deepEqual(updated.links,page.links);
+  assert.deepEqual(updated.publishedRevision,page.publishedRevision);assert.equal(updated.status,'review');assert.equal(updated.approval,null);
+  for(const k of ['generation','sourceVerification','mediaVerification','editorialReview','approval','release','deployment','channelActivation','moduleAdmission'])
+    assert.equal(r[k],'not-performed');
+  await f.unchanged();
+});
+
+test('reviewed-copy strict patch and identities refuse invalid or stale writes without changing native bytes',async t=>{
+  const f=await reviewedCopyFixture(t),bytes=await readFile(f.file),p=f.request.pageId;
+  const rich=target=>[{type:'richParagraph',content:[{type:'link',text:'Nuoroda',target}]}];
+  for(const patch of [{body:null},{body:[]},{body:[{type:'paragraph',text:'\ue200citation\ue201'}]},
+    {body:Array.from({length:301},()=>({type:'paragraph',text:'Bandomasis tekstas.'}))},{body:[{type:'foreign',text:'bad'}]},
+    {title:'x'.repeat(161)},{description:'x'.repeat(221)},{intent:'x'.repeat(301)},
+    {factChecks:Array(41).fill('Pastaba')},{body:[{type:'image',assetId:'unknown-asset'}]},
+    {body:rich({kind:'page',pageId:p})},{body:rich({kind:'page',pageId:'unknown-page'})},
+    {externalLinks:[{url:'http://example.org',label:'Šaltinis',reason:'Kandidatas',verified:true}]},
+    {body:[{type:'paragraph',text:'x'.repeat(200001)}]},
+    {status:'approved'},{approval:{}},{editorial:{}},{media:[]},{siteId:'foreign'},{links:[]},{deployment:'performed'}]) {
+    assert.equal(f.call({...f.request,patch}).status,1);assert.deepEqual(await readFile(f.file),bytes);
+  }
+  for(const override of [{operationId:'not-a-uuid'},...['expectedSiteHash','expectedRevisionHash','expectedPlanningHash']
+    .map(k=>({[k]:'f'.repeat(64)})),{sourceHash:'f'.repeat(64)},{canonicalHost:'foreign.example.invalid'},{acceptedRevision:2}]) {
+    assert.equal(f.call({...f.request,...override}).status,1);assert.deepEqual(await readFile(f.file),bytes);
+  }
+  await f.unchanged();
+});
+
+test('reviewed-copy external native links require explicitly verified resulting source metadata',async t=>{
+  const f=await reviewedCopyFixture(t),url='https://example.org/reviewed';
+  const body=[{type:'richParagraph',content:[{type:'link',text:'Perskaitytas šaltinis',target:{kind:'external',url}}]}];
+  const link={url,label:'Konkretus šaltinis',reason:'Pagrindžia vieną teiginį.',verified:false};
+  assert.equal(f.call({...f.request,patch:{body,externalLinks:[link]}}).value.code,'writer_unverified_external_link');
+  const r=f.ok({...f.request,patch:{body,externalLinks:[{...link,verified:true}]}}).operation.result;
+  assert.equal(r.sourceVerification,'not-performed');await f.unchanged();
+});
+
+test('reviewed-copy preserves actual internal graph and attached raster family',async t=>{
+  const a=await attachmentFixture(t),attached=a.ok(a.request).operation.result;
+  const guide=(await a.read()).pages.find(p=>p.id===a.request.pageId);
+  a.mutate(`const s=await m.getSite(siteId),target=s.pages.find(p=>p.type==='home');
+    await m.editPage(siteId,${JSON.stringify(guide.id)},{body:[{type:'richParagraph',content:[{type:'link',text:'Pradžia',target:{kind:'page',pageId:target.id}}]},
+      {type:'image',assetId:${JSON.stringify(attached.assetId)}}]});`);
+  const s=a.status(),p=s.pages.find(p=>p.pageId===guide.id),site=await a.read(),before=site.pages.find(p=>p.id===guide.id);
+  const request={command:'amend-page-reviewed-copy',operationId:randomUUID(),pageId:p.pageId,
+    expectedSiteHash:s.expectedSiteHash,expectedRevisionHash:p.revisionHash,expectedPlanningHash:p.planningHash,
+    patch:{body:before.body.map(b=>b.type==='richParagraph'?{...b,content:b.content.map(n=>({...n,text:'Grįžkite į pradžią'}))}:b)}};
+  const missingGraph=a.call({...request,patch:{body:[{type:'paragraph',text:'Pašalintos nuorodos.'}]}});
+  assert.equal(missingGraph.value.code,'workflow_amendment_graph_changed');
+  a.ok(request);const after=await a.read(),page=after.pages.find(p=>p.id===guide.id);
+  assert.deepEqual(after.assets,site.assets);assert.deepEqual(page.media,before.media);assert.deepEqual(page.links,before.links);
+  assert.equal(page.body[1].assetId,attached.assetId);await a.unchanged();
+});
+
+test('reviewed-copy prepared-before interruption recovers once from original immutable evidence',async t=>{
+  const f=await reviewedCopyFixture(t);assert.equal(failAmendment(f,false).code,'inert_interruption');
+  const files=amendmentFiles(f),evidence=await readFile(files.before),prepared=JSON.parse(await readFile(files.receipt,'utf8'));
+  assert.equal(prepared.state,'prepared');const r=f.ok(f.request).operation.result;
+  assert.equal(r.replayed,true);assert.equal(r.changed,true);assert.deepEqual(await readFile(files.before),evidence);
+  const again=f.ok(f.request).operation.result;assert.equal(again.changed,false);assert.equal(again.receiptSha256,r.receiptSha256);
+  await f.unchanged();
+});
+
+test('reviewed-copy lost response after native rename reconciles applied without another native write',async t=>{
+  const f=await reviewedCopyFixture(t);assert.equal(failAmendment(f,true).code,'inert_interruption');
+  const files=amendmentFiles(f),bytes=await readFile(f.file),before=await readFile(files.before);
+  assert.equal(JSON.parse(await readFile(files.receipt,'utf8')).state,'prepared');
+  const result=f.ok(f.request),r=result.operation.result;
+  assert.equal(r.replayed,true);assert.equal(r.changed,false);assert.equal(r.appliedSiteHash,result.expectedSiteHash);
+  assert.deepEqual(await readFile(f.file),bytes);assert.deepEqual(await readFile(files.before),before);await f.unchanged();
+});
+
+test('reviewed-copy prepared or applied receipt never overwrites unrelated later edits or accepts changed request',async t=>{
+  for(const stage of ['before','after','applied']) {
+    const f=await reviewedCopyFixture(t);
+    if(stage==='applied')f.ok(f.request);else failAmendment(f,stage==='after');
+    const files=amendmentFiles(f),before=await readFile(files.before),receipt=await readFile(files.receipt);
+    assert.equal(f.call({...f.request,patch:{title:'Kitokia operacijos užduotis'}}).value.code,'workflow_amendment_receipt_conflict');
+    f.mutate(`await m.editPage(siteId,${JSON.stringify(f.request.pageId)},{title:'Kito rašymo pakeistas pavadinimas'});`);
+    const bytes=await readFile(f.file),denied=f.call(f.request);assert.equal(denied.status,1);
+    assert.deepEqual(await readFile(f.file),bytes);assert.deepEqual(await readFile(files.before),before);
+    assert.deepEqual(await readFile(files.receipt),receipt);await f.unchanged();
+  }
+});
+
+test('reviewed-copy other-page drift and preexisting operation exclusion fail closed without stealing lock',async t=>{
+  const f=await reviewedCopyFixture(t),files=amendmentFiles(f),lock=path.join(files.directory,f.request.operationId+'.lock');
+  await mkdir(files.directory);await writeFile(lock,'owned-by-another-operation');const bytes=await readFile(f.file);
+  assert.equal(f.call(f.request).value.code,'workflow_amendment_busy');assert.deepEqual(await readFile(f.file),bytes);
+  assert.equal(await readFile(lock,'utf8'),'owned-by-another-operation');await unlink(lock);
+  failAmendment(f,true);
+  f.mutate(`const s=await m.getSite(siteId),p=s.pages.find(p=>p.id!==${JSON.stringify(f.request.pageId)});await m.editPage(siteId,p.id,{title:'Kitas lygiagretus puslapis'});`);
+  const changed=await readFile(f.file);assert.equal(f.call(f.request).value.code,'workflow_context_stale');
+  assert.deepEqual(await readFile(f.file),changed);await f.unchanged();
+});
+
+test('reviewed-copy corrupted immutable evidence fails without repairing or overwriting it',async t=>{
+  const f=await reviewedCopyFixture(t);failAmendment(f,false);const files=amendmentFiles(f);
+  const corrupt=JSON.parse(await readFile(files.before,'utf8'));corrupt.page.title='Sugadintas pradinis įrodymas';
+  await writeFile(files.before,JSON.stringify(corrupt));const evidence=await readFile(files.before),bytes=await readFile(f.file);
+  assert.equal(f.call(f.request).value.code,'workflow_amendment_receipt_conflict');
+  assert.deepEqual(await readFile(files.before),evidence);assert.deepEqual(await readFile(f.file),bytes);await f.unchanged();
+});
+
+test('reviewed-copy already identical review-state copy records a no-op without invalidating native bytes',async t=>{
+  const f=await reviewedCopyFixture(t);f.amend(f.request.pageId,f.request.patch);
+  const s=f.status(),p=s.pages.find(p=>p.pageId===f.request.pageId),bytes=await readFile(f.file);
+  f.request={...f.request,expectedSiteHash:s.expectedSiteHash,expectedRevisionHash:p.revisionHash,expectedPlanningHash:p.planningHash};
+  const r=f.ok(f.request).operation.result;assert.equal(r.changed,false);assert.equal(r.replayed,false);
+  assert.equal(r.beforeSiteHash,r.appliedSiteHash);assert.deepEqual(await readFile(f.file),bytes);await f.unchanged();
+});
+
+test('reviewed-copy invalidates an actual current editorial review while retaining its historical evidence',async t=>{
+  const f=await reviewedCopyFixture(t),s=f.status(),p=s.pages.find(p=>p.pageId===f.request.pageId);
+  f.ok({command:'record-review',pageId:p.pageId,expectedSiteHash:s.expectedSiteHash,
+    review:{reviewer:'Synthetic isolated reviewer',revisionHash:p.revisionHash,evidence:evidence()}});
+  const current=f.status(),view=current.pages.find(v=>v.pageId===p.pageId),site=await f.read();
+  assert.equal(view.reviewCurrent,true);const page=site.pages.find(v=>v.id===p.pageId);
+  f.request={...f.request,expectedSiteHash:current.expectedSiteHash,expectedRevisionHash:view.revisionHash,expectedPlanningHash:view.planningHash};
+  f.ok(f.request);assert.equal(f.status().pages.find(v=>v.pageId===p.pageId).reviewCurrent,false);
+  assert.deepEqual((await f.read()).pages.find(v=>v.id===p.pageId).editorialReview,page.editorialReview);await f.unchanged();
+});
+
+test('reviewed-copy evidence-only interrupted preparation reconstructs receipt only at exact original state',async t=>{
+  const f=await reviewedCopyFixture(t);failAmendment(f,false);const files=amendmentFiles(f),before=await readFile(files.before);
+  await unlink(files.receipt);const r=f.ok(f.request).operation.result;
+  assert.equal(r.replayed,true);assert.equal(r.changed,true);assert.deepEqual(await readFile(files.before),before);await f.unchanged();
+});
+
+test('reviewed-copy concurrent same operation has at most one native write and never steals exclusion',async t=>{
+  const f=await reviewedCopyFixture(t),request={...f.input,...f.request},url=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;
+  const code=`try{const r=await (await import(${JSON.stringify(url)})).customerContentWorkflow(${JSON.stringify(request)});console.log(JSON.stringify(r.operation.result));}
+    catch(e){console.log(JSON.stringify({code:e.code}));}`;
+  const results=await Promise.all([f.mutateAsync(code),f.mutateAsync(code)]),accepted=results.filter(r=>r.state==='applied');
+  assert.ok(accepted.length>=1);assert.equal(accepted.filter(r=>r.changed).length,1);
+  assert.ok(results.every(r=>r.state==='applied'||r.code==='workflow_amendment_busy'));
+  const settled=f.ok(f.request).operation.result;assert.equal(settled.changed,false);
+  assert.equal(settled.receiptSha256,accepted[0].receiptSha256);await f.unchanged();
+});
 async function attachmentFixture(t) {
   const f=await sandbox(t),s=f.status(),page=s.pages.find(p=>p.type==='guide');
   const sharp=(await import('sharp')).default,sourcePath=path.join(f.revision,'media-inputs','attachment.png');

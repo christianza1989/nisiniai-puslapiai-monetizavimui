@@ -5,6 +5,8 @@ description: "Research or refresh a niche's complete topical plan: evidence-back
 
 # Niche content planner
 
+The maintained article-writing runner is `content-studio/src/editorial-cli.mjs`: the owner's selected workload is `gpt-6-luna` / `xhigh`, with an observed CLI-header receipt and no model fallback. The chat model is not proof of the writer model. Existing reconciled V2 plans use the native adapter and schema described in `docs/STUDIO_V2_DRAFTING.md`; never flatten them into V1 blocks or mistake fixture headers for a real model run.
+
 Read the [complete typography system contract](../niche-site-builder/references/typography-system.md) when planning, writing or reviewing public text. Fit actual titles, paragraphs, labels, captions, lists and sources to the site's maintained roles and reading hierarchy; inspect the real renderer when this task includes implementation. Recheck longer text, Lithuanian glyphs and wrapping after meaningful copy changes without silently shrinking fonts or discarding approved content. A read-only JSON planning/draft job records concrete presentation needs in supported existing fields and leaves rendered checks to its invoking agent; do not add unsupported schema fields or claim a browser check that did not occur.
 
 Before writing any returned title, description, brief or full draft, read and apply [mandatory language quality and self-editing](references/language-quality.md). Write naturally in the site's locale and perform a separate complete-text editing pass yourself; no second agent/session is required. Correct known language defects before returning output or recording approval evidence. This applies to every page in a batch and to source labels/anchors/alts, not only the opening paragraph.

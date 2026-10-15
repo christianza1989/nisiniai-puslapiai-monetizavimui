@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-15T07:17:20.061Z",
+  "generatedAt": "2026-10-15T07:17:19.839Z",
+  "expiresAt": "2026-10-15T08:17:19.839Z",
+  "registrySha256": "e8c6579fbe03e7c8f95e68df215fc1f332f5f2e86153ec53fe0dd9125cec3bc0",
+  "targetsVerified": 12,
+  "cityTargetsInvented": 0,
+  "scope": "Fresh live registry equality; original editorial checkedAt preserved, not approval hash rewriting."
+}

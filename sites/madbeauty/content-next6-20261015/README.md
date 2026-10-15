@@ -1,0 +1,15 @@
+# Madbeauty: šeši gidai gruodžio28–30
+
+Šeši nauji gidai parašyti, peržiūrėti, patvirtinti ir eksportuoti. Galutinis paketas `release-final/content-package.json`: **141puslapis,137gidai,702responsiveWebP**, SHA `ee7a92ee36a48c6ba3382882f05c538bdeef43aa6c82cbeb290fdb1acd33ad84`. Tai kol kas **verified-export-not-deployed**; tikras consumer priėmimas yra atskiras. Ankstesnis135puslapių/131gido paketas86c759... realiai įkeltas. Visos135ankstesnės patvirtintos revizijos ir299publikavimo akimirkos palygintos ir išsaugotos. Iki295gidų plano užbaigimo liko158neparašyti gidai.
+
+[Skaitomas visų datų ir valandų kalendorius](index.html) · [CSV](ALL-PUBLICATION-DATES.csv) · [dabartinės būsenos](PUBLICATION-STATUS.json). Šios partijos publikacijos: gruodžio28–30, kasdien10:00 ir16:00 Lietuvos laiku. Istoriniai publishAt nekeičiami.
+
+Realiai įvykdyti šeši native GPT‑6 Luna/xhigh draftai ir viena atskira to paties modelio auskarų gido revizija, be fallback. Visi7result baitai atitinka native receipts; [NATIVE-JOBS.json](NATIVE-JOBS.json). Šešios atskiros originalios ImageGen fotografijos ir dvi originalios aiškinamosios schemos importuotos per bendrą responsive media funkciją. [Galutinė teksto ir faktų peržiūra](FINAL-TEXT-REVIEW.json), [paskutinė antraštės pataisos peržiūra](TITLE-REVIEW.json), [media](IMAGE-REVIEW.json), [12tikrų Chrome desktop/mobile vaizdų patikra](RENDER-CHECK.json), [common package ir publikavimo ribos](PACKAGE-CHECK.json). Private preview nėra canonical schema/OG ar viešo future puslapio priėmimas.
+
+Pirmas immutable eksportas4377fd5f liko privačiai, bet neįdiegtas ir superseded: po paskutinės lietuvių kalbos patikros DP pavadinimo giminė pataisyta ir nauja revizija tikrai peržiūrėta/patvirtinta. Consumer įvestis tik **release-final/ee7a92**. Originalai, privatūs manifestai ir senas eksportas į Git / public assets neįtraukti.
+
+Šio vykdymo darbo kopija pradėta nuo tinklo main `808581d919d06cb4a2d151cc7f9ec1be1782aba2`, companion main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`; canonical freshness start PASS. Senos darbo kopijos ir tenant nekeisti.
+
+Nustatyta bendra kliūtis: main `content-studio/src/generator.mjs` dar neturi native V2 kelio, privalomo Luna/xhigh vykdymo ir pilno brief perdavimo. Ankstesnis tikras rengimas naudojo nesujungto PR10 `8ce36cf7` realizaciją. Šiame worktree suderinamos tik reikalingos jos dalys, išsaugant dabartinį stable siteId ir domeno migracijos kodą. Tai nėra leidimas vykdyti pasenusį dirty checkout ar perrašyti istorinius fingerprint.
+
+Scoped shared pataisos išvardytos [upgrade įraše](../../../core-improvements/entries/upgrade-3a1f1bbb-6cb7-4e00-ba0c-093eb9e3fcc5/record.json) ir [CORE-ADMISSION.md](CORE-ADMISSION.md): actual native V2 CLI, pilni briefai, Luna/xhigh pin ir receipt, coverage režimas, suderintos taisyklės bei committed-path checker. Studio67/67, vėlesni7instruction/checker testai ir companion54/54PASS. Pirmi nesėkmingi bandymai neištrinami; whole-catalog baseline audit nėra PASS. Public rendereris/schema ir platformos runtime čia nekeičiami. Shared source yra PR158šakoje, nėra main ar kitų kompiuterių adoption teiginio.

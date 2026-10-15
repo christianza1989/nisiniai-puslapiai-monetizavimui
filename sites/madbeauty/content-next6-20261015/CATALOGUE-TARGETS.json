@@ -1,0 +1,176 @@
+{
+  "generatedAt": "2026-10-15T06:27:34.874Z",
+  "expiresAt": "2026-10-15T07:27:34.874Z",
+  "registrySha256": "df286ba80f5a2f7dec709b98235da9eea85a47c8f569703924a2fd26654257aa",
+  "targets": [
+    {
+      "id": "mb:catalog:veido-kaukes-drekinamoji-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-drekinamoji-veido-procedura",
+      "label": "Drėkinamoji veido procedūra",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:35.211Z",
+      "evidence": {
+        "taxonomyNodeId": "veido-kaukes-drekinamoji-veido-procedura",
+        "httpStatus": 200,
+        "htmlSha256": "5330f2da2f92fc97da36907af515593b6aa6625e1c0102ed5b4d990495513c2b",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:veido-kaukes-maitinamoji-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-maitinamoji-veido-procedura",
+      "label": "Maitinamoji veido procedūra",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:35.410Z",
+      "evidence": {
+        "taxonomyNodeId": "veido-kaukes-maitinamoji-veido-procedura",
+        "httpStatus": 200,
+        "htmlSha256": "eaaa5860e8dccf22160cacdd86bd151625e03e6d520ea8bd0ca3f3a3be120c63",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:veido-kaukes-raminamoji-veido-procedura",
+      "url": "https://madbeauty.lt/paslaugos/veido-kaukes-raminamoji-veido-procedura",
+      "label": "Raminamoji veido procedūra",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:35.609Z",
+      "evidence": {
+        "taxonomyNodeId": "veido-kaukes-raminamoji-veido-procedura",
+        "httpStatus": 200,
+        "htmlSha256": "4d1fd6ba8e74524e3a4deab5ca5502b1b850235554bd20cb4b295740eda2797d",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:antakiu-laminavimas",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-laminavimas",
+      "label": "Laminavimas",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:35.814Z",
+      "evidence": {
+        "taxonomyNodeId": "antakiu-laminavimas",
+        "httpStatus": 200,
+        "htmlSha256": "7aa1a5ad1988023f58ee901efe5e394b5018e29b0b4c25b7142a1fc478968170",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:antakiu-laminavimas-antakiu-laminavimas-su-korekcija-ir-dazymu",
+      "url": "https://madbeauty.lt/paslaugos/antakiu-laminavimas-antakiu-laminavimas-su-korekcija-ir-dazymu",
+      "label": "Antakių laminavimas su korekcija ir dažymu",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:36.010Z",
+      "evidence": {
+        "taxonomyNodeId": "antakiu-laminavimas-antakiu-laminavimas-su-korekcija-ir-dazymu",
+        "httpStatus": 200,
+        "htmlSha256": "517b0ab03a00d105533f75c10feaf41bb9481a58cf47fd4b79b5fbaf999fc319",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:papuosalu-verimas-ausu-speneliu-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-ausu-speneliu-verimas",
+      "label": "Ausų spenelių vėrimas",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:36.202Z",
+      "evidence": {
+        "taxonomyNodeId": "papuosalu-verimas-ausu-speneliu-verimas",
+        "httpStatus": 200,
+        "htmlSha256": "1cba370e4eafa02b85b5df24e50b5c4fb08e2bd669f3eec69d73f4a8d839ad20",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:papuosalu-verimas-ausies-kremzles-verimas",
+      "url": "https://madbeauty.lt/paslaugos/papuosalu-verimas-ausies-kremzles-verimas",
+      "label": "Ausies kremzlės vėrimas",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:36.384Z",
+      "evidence": {
+        "taxonomyNodeId": "papuosalu-verimas-ausies-kremzles-verimas",
+        "httpStatus": 200,
+        "htmlSha256": "19ac9e770d8749e2b16905834505310b73f7a24e19ff38c8ea62280fd424444a",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:blakstienu-priauginimas",
+      "url": "https://madbeauty.lt/paslaugos/blakstienu-priauginimas",
+      "label": "Priauginimas",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:36.578Z",
+      "evidence": {
+        "taxonomyNodeId": "blakstienu-priauginimas",
+        "httpStatus": 200,
+        "htmlSha256": "3f530b15f1a0b5bf5ffaba467170c85300413dfd2592324c219159b642baf20c",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:barzda",
+      "url": "https://madbeauty.lt/paslaugos/barzda",
+      "label": "Barzda ir skutimas",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:36.775Z",
+      "evidence": {
+        "taxonomyNodeId": "barzda",
+        "httpStatus": 200,
+        "htmlSha256": "85512e04689b5c927ff095ccb094e50f10d50552c66857ad23794867dbb57d9c",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:kirpimai-vyru-kirpimas",
+      "url": "https://madbeauty.lt/paslaugos/kirpimai-vyru-kirpimas",
+      "label": "Vyrų kirpimas",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:36.961Z",
+      "evidence": {
+        "taxonomyNodeId": "kirpimai-vyru-kirpimas",
+        "httpStatus": 200,
+        "htmlSha256": "3981c7b0537da0e424892bcd04fc0501df26cda0cadfbc48a1d71f177cd11cd7",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-vasku-bikini-depiliacija-vasku",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-vasku-bikini-depiliacija-vasku",
+      "label": "Bikini depiliacija vašku",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:37.148Z",
+      "evidence": {
+        "taxonomyNodeId": "depiliacija-vasku-bikini-depiliacija-vasku",
+        "httpStatus": 200,
+        "htmlSha256": "2c18c439999177d256c66872ab0cafa77966aa8e93b4a658b2a5c74bde21ec17",
+        "indexEligible": false
+      }
+    },
+    {
+      "id": "mb:catalog:depiliacija-cukrumi-bikini-depiliacija-cukrumi",
+      "url": "https://madbeauty.lt/paslaugos/depiliacija-cukrumi-bikini-depiliacija-cukrumi",
+      "label": "Bikini depiliacija cukrumi",
+      "relationship": "Aptartos nacionalinės procedūros aprašas; miestą ir realią pasiūlą skaitytojas pasirenka atskirai.",
+      "verified": true,
+      "checkedAt": "2026-10-15T06:27:37.343Z",
+      "evidence": {
+        "taxonomyNodeId": "depiliacija-cukrumi-bikini-depiliacija-cukrumi",
+        "httpStatus": 200,
+        "htmlSha256": "daecc5916a5197e103a2dec78fb262468ef93717c84e4a12318dbc6cc8ac600a",
+        "indexEligible": false
+      }
+    }
+  ],
+  "cityTargetsLinked": 0
+}

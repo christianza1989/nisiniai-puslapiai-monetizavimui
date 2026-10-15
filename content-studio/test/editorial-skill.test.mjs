@@ -16,6 +16,7 @@ let prompt = ''; for await (const chunk of process.stdin) prompt += chunk;
 const args = process.argv.slice(2);
 await writeFile(process.env.STUDIO_SKILL_CAPTURE_PATH, JSON.stringify({ prompt, args }));
 const isPlan = args[args.indexOf('--output-schema') + 1].endsWith('plan-result.schema.json');
+if(!isPlan)process.stderr.write('model: gpt-6-luna\\nreasoning effort: xhigh\\n'); // Explicit synthetic CLI-header fixture, not live model evidence.
 const result = isPlan ? { pages: [{ type: 'guide', slug: 'pasirinkimas', title: 'Pasirinkimo vadovas', description: 'Kokius duomenis surinkti pasirinkimui.', intent: 'Kokius duomenis reikia surinkti?', reason: 'Naudingas kontrolinis sąrašas.', cluster: 'Pasirinkimas', pillarSlug: '', sourceQueries: [], publishDate: '2027-01-10', seasonalHook: '' }] }
   : { title: 'Pasirinkimo vadovas', description: 'Kokius duomenis surinkti pasirinkimui.', blocks: [{ type: 'paragraph', text: 'Pradėkite nuo dabartinės įrangos duomenų. Tai bandomasis privatus tekstas.', level: 0, items: [] }, { type: 'list', text: '', level: 0, items: ['Surinkite žymėjimą ir naudojimo sąlygas.'] }], factChecks: [], internalLinks: [], externalSources: [] };
 await writeFile(args[args.indexOf('--output-last-message') + 1], JSON.stringify(result));

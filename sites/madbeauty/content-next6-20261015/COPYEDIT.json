@@ -1,0 +1,110 @@
+{
+  "checkedAt": "2026-10-15T07:07:18.128Z",
+  "scope": "Editorial copyediting after actual complete native drafts; no source fact, number, route, ID or publication date changed. Original native result artifacts retained.",
+  "changes": [
+    {
+      "planId": "VP-drekinimas",
+      "edits": [
+        {
+          "before": "„Drėkinamoji veido procedūra“ nusako kosmetinės priežiūros kryptį, bet pats pavadinimas nepasako, ar į vizitą įeina veido valymas, kaukė, masažas ar kiti veiksmai. „Maitinamoji“ ir „raminančioji“ taip pat gali būti paslaugos aprašymo žodžiai, o ne vienodi protokolai. Rinkdamiesi atskirkite priežiūros tikslą, naudojamas priemones ir konkrečią paketo sudėtį.",
+          "after": "„Drėkinamoji veido procedūra“ nusako kosmetinės priežiūros kryptį, bet pats pavadinimas nepasako, ar į vizitą įeina veido valymas, kaukė, masažas ar kiti veiksmai. „Maitinamoji“ ir „raminamoji“ taip pat gali būti paslaugos aprašymo žodžiai, o ne vienodi protokolai. Rinkdamiesi atskirkite priežiūros tikslą, naudojamas priemones ir konkrečią paketo sudėtį."
+        }
+      ]
+    },
+    {
+      "planId": "AN-laminavimas",
+      "edits": [
+        {
+          "before": "Laminavimas",
+          "after": "laminavimas"
+        },
+        {
+          "before": "Antakių laminavimas su korekcija ir dažymu",
+          "after": "antakių laminavimas su korekcija ir dažymu"
+        }
+      ]
+    },
+    {
+      "planId": "AV-vietos",
+      "edits": [
+        {
+          "before": "Abiem atvejais vietos pavadinimą verta skaityti atskirai nuo papuošalo pasirinkimo ir kitų paslaugos sąlygų. Apie audinių ir papuošalo skirtumus plačiau rašo [American Piercing Association DUK].",
+          "after": "Abiem atvejais vietos pavadinimą verta skaityti atskirai nuo papuošalo pasirinkimo ir kitų paslaugos sąlygų. Apie audinių ir papuošalo skirtumus plačiau rašo [Association of Professional Piercers DUK]."
+        },
+        {
+          "before": "Ausų spenelių vėrimo",
+          "after": "ausų spenelių vėrimo"
+        },
+        {
+          "before": "Ausies kremzlės vėrimo",
+          "after": "ausies kremzlės vėrimo"
+        },
+        {
+          "before": {
+            "type": "paragraph",
+            "text": "Abiem atvejais vietos pavadinimą verta skaityti atskirai nuo papuošalo pasirinkimo ir kitų paslaugos sąlygų. Apie audinių ir papuošalo skirtumus plačiau rašo [Association of Professional Piercers DUK]."
+          },
+          "after": {
+            "type": "richParagraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Abiem atvejais vietos pavadinimą verta skaityti atskirai nuo papuošalo pasirinkimo ir kitų paslaugos sąlygų. Apie audinių ir papuošalo skirtumus plačiau rašo "
+              },
+              {
+                "type": "link",
+                "text": "Association of Professional Piercers DUK",
+                "target": {
+                  "kind": "external",
+                  "url": "https://safepiercing.org/piercing-faq/"
+                }
+              },
+              {
+                "type": "text",
+                "text": "."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "planId": "BL-efektai",
+      "edits": []
+    },
+    {
+      "planId": "BR-paketas",
+      "edits": [
+        {
+          "before": "Barzdos darbą palyginkite pagal metodą",
+          "after": "Barzdos tvarkymą palyginkite pagal metodą"
+        },
+        {
+          "before": "Pavyzdžiui, du meniu gali siūlyti kirpimą kartu su barzdos darbu, bet viename atskirai nurodyti formavimą mašinėle, kitame – skustuvu. Palyginimo esmė – pasirinkti norimą barzdos darbą ir tik tada patikrinti, ar plaukų kirpimo bei papildomų paslaugų apimtis taip pat sutampa.",
+          "after": "Pavyzdžiui, du meniu gali siūlyti kirpimą kartu su barzdos tvarkymu, bet viename atskirai nurodyti formavimą mašinėle, kitame – skustuvu. Palyginimo esmė – pasirinkti norimą barzdos tvarkymo būdą ir tik tada patikrinti, ar plaukų kirpimo bei papildomų paslaugų apimtis taip pat sutampa."
+        },
+        {
+          "before": "Vyrų kirpimas",
+          "after": "vyrų kirpimas"
+        },
+        {
+          "before": "Barzda ir skutimas",
+          "after": "barzda ir skutimas"
+        }
+      ]
+    },
+    {
+      "planId": "DP-bikini",
+      "edits": [
+        {
+          "before": "Bikini depiliacija vašku",
+          "after": "bikinio depiliacija vašku"
+        },
+        {
+          "before": "Bikini depiliacija cukrumi",
+          "after": "bikinio depiliacija cukrumi"
+        }
+      ]
+    }
+  ]
+}

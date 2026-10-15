@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-15T06:57:46.908Z",
+  "scope": "Private full graph before release selection. Deferred destinations remain planned, never live hrefs.",
+  "pages": [
+    {
+      "planId": "VP-drekinimas",
+      "pageId": "0c14f72b-4e98-4340-8373-2dff5413661d",
+      "publishAt": "2026-12-28T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+          "label": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Veido priežiūros paslaugų gidas: konsultacija, valymas ir procedūros apimtis"
+        }
+      ]
+    },
+    {
+      "planId": "AN-laminavimas",
+      "pageId": "3f4434e3-a763-4c6e-9e5e-485053a54c36",
+      "publishAt": "2026-12-28T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+          "label": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Antakių priežiūros gidas: korekcija, dažymas ir laminavimas"
+        },
+        {
+          "targetPageId": "6d35ba6d-7cf6-46f5-a247-81fe9b8d7065",
+          "label": "Priežiūra po antakių dažymo ir laminavimo: kodėl instrukcijos skiriasi?",
+          "reason": "Atsako kitą šiame skyriuje kylantį konkretų klausimą.",
+          "targetPlanId": null,
+          "targetTitle": "Priežiūra po antakių dažymo ir laminavimo: kodėl instrukcijos skiriasi?"
+        }
+      ]
+    },
+    {
+      "planId": "AV-vietos",
+      "pageId": "6cb7a406-fdd0-444a-8c40-fe51b88ddad3",
+      "publishAt": "2026-12-29T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+          "label": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Auskarų vėrimo gidas: vieta, papuošalas, eiga ir priežiūros planas"
+        }
+      ]
+    },
+    {
+      "planId": "BL-efektai",
+      "pageId": "b67877e7-c45f-4cf9-b98a-076bf4ff9e7e",
+      "publishAt": "2026-12-29T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "40e22039-917a-479f-840e-97edb71dcd55",
+          "label": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Blakstienų paslaugų gidas: dažymas, laminavimas ir priauginimas"
+        }
+      ]
+    },
+    {
+      "planId": "BR-paketas",
+      "pageId": "0ff71a50-4768-48b2-a800-24b1bdab32e2",
+      "publishAt": "2026-12-30T08:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+          "label": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Vyrų grožio paslaugų gidas: kirpimas, barzda, dažymas, oda ir depiliacija"
+        }
+      ]
+    },
+    {
+      "planId": "DP-bikini",
+      "pageId": "bb61c8c0-bb54-47a7-8dfd-69a2ed6478b8",
+      "publishAt": "2026-12-30T14:00:00.000Z",
+      "proposals": [
+        {
+          "targetPageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+          "label": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga",
+          "reason": "Grįžti į platesnį paslaugos paaiškinimą.",
+          "targetPlanId": null,
+          "targetTitle": "Depiliacijos gidas: vaškas, cukraus pasta, zonos ir vizito eiga"
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,12 @@
 import { spawn } from 'node:child_process';
-import { existsSync } from 'node:fs';
-import { mkdir, readFile, rm } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, rm, rmdir } from 'node:fs/promises';
 import path from 'node:path';
-import { randomUUID } from 'node:crypto';
-import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
+import { randomUUID, createHash } from 'node:crypto';
+import { ROOT, DATA, getSite, editSite, editPage, mergePlan, saveResponsiveAsset, createJob, updateJob, listJobs, normalizeBlocks, networkCatalog, verifyNetworkLinks } from './model.mjs';
 import { loadEditorialSkill, buildEditorialPrompt } from './editorial-skill.mjs';
 import { contentPolicy, planningWindow, localDate as scheduleDate } from './content-schedule.mjs';
+import {generateEditorialJson,ARTICLE_GENERATION_POLICY} from './editorial-cli.mjs';
+import {draftSnapshotHash,assertV2Draftable,v2DraftContext,acceptV2DraftResult,bindV2DraftSchema,V2_DRAFT_INSTRUCTION} from './draft-v2.mjs';
 
 const SCHEMAS = path.join(ROOT, 'schemas');
 const IMAGE_CLI = process.env.IMAGEGEN_CLI || path.join(process.env.USERPROFILE || '', '.codex', 'skills', '.system', 'imagegen', 'scripts', 'image_gen.py');
@@ -29,21 +30,24 @@ function run(command, args, input, timeoutMs) {
   });
 }
 
-async function codexJson(prompt, schemaFile) {
-  const temp = path.join(DATA, 'tmp'); await mkdir(temp, { recursive: true });
-  const resultFile = path.join(temp, `${randomUUID()}.json`);
-  const args = [
-    '--ask-for-approval', 'never', 'exec', '--ephemeral', '--ignore-user-config', '--skip-git-repo-check',
-    '--sandbox', 'read-only',
-    '--output-schema', path.join(SCHEMAS, schemaFile), '--output-last-message', resultFile, '-'
-  ];
-  try {
-    const codexJs = process.env.CODEX_JS || path.join(process.env.APPDATA || '', 'npm', 'node_modules', '@openai', 'codex', 'bin', 'codex.js');
-    const command = process.platform === 'win32' && existsSync(codexJs) ? process.execPath : (process.env.CODEX_BIN || 'codex');
-    await run(command, command === process.execPath ? [codexJs, ...args] : args, prompt, 300000);
-    const data = JSON.parse(await readFile(resultFile, 'utf8'));
-    return data;
-  } finally { await rm(resultFile, { force: true }); }
+async function codexJson(prompt, schemaFile, jobId=null, pageId=null, boundSchema=null) {
+  const mode=schemaFile==='plan-result.schema.json'?'plan':'draft';
+  let schemaPath=path.join(SCHEMAS,schemaFile),schemaDirectory;
+  if(boundSchema){
+    schemaDirectory=path.join(DATA,'tmp','draft-schema-'+randomUUID());
+    await mkdir(schemaDirectory,{recursive:true});
+    schemaPath=path.join(schemaDirectory,schemaFile);
+    await writeFile(schemaPath,JSON.stringify(boundSchema),{flag:'wx'});
+  }
+  let generated;
+  try{generated=await generateEditorialJson(prompt,schemaPath,{root:ROOT,dataDir:DATA,mode});}
+  finally{if(schemaDirectory){await rm(schemaPath,{force:true});await rmdir(schemaDirectory);}}
+  if(boundSchema)generated.receipt.draftSchemaSha256=createHash('sha256').update(JSON.stringify(boundSchema)).digest('hex');
+  if(jobId&&mode==='draft'){
+    const job=(await listJobs()).find(j=>j.id===jobId);
+    await updateJob(jobId,{lastGenerationReceipt:generated.receipt,...(pageId?{generationReceipts:{...(job?.generationReceipts||{}),[pageId]:generated.receipt}}:{})});
+  }
+  return generated.result;
 }
 
 const contextForSite = site => ({
@@ -59,29 +63,52 @@ const contextForSite = site => ({
 async function planSite(siteId, months = 0, skill, requestedCount = null) {
   const site = await getSite(siteId);
   const policy = contentPolicy({ ...site.contentPolicy, ...(months ? { months } : {}) }, site.timezone);
-  const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target) : '5-10');
+  const count = requestedCount || (months ? Math.min(24, planningWindow(policy).target ?? 24) : '5-10');
   const localDate = scheduleDate(Date.now(), policy.timezone);
-  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}` : 'an initial demand-test site'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; spread substantive pages across this horizon, respect existing dates and seasonal dependencies. Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
+  const coverage = policy.cadence === 'coverage';
+  const scope = coverage ? `the next projection of the complete researched topical coverage map (${policy.coverageTarget ?? 'not yet established'} total article intents, including retained articles). This 24-page operation is a transport batch, never the complete map or a publication quota. Cover missing distinct reader jobs, merge overlapping intents, and respect map dependencies. No weekly cap or requirement to spread evergreen content over months` : `a ${policy.months}-month calendar with target ${policy.cadence === 'weekly' ? `${policy.articlesPerWeek} articles/week` : `${policy.articlesPerMonth} articles/month`}`;
+  const timing = coverage ? `Tentative dates may be shared by a complete cluster. Use today or a realistic preparation date through ${planningWindow(policy).end}; never backdate. Set earlier dates for foundational content and its supporting answers together; seasonal material may have a later real date. Dates do not clear source, media, review or deployment gates.` : `Every new publishDate must be at least seven days after today and no later than ${planningWindow(policy).end}; respect existing dates and seasonal dependencies.`;
+  const instruction = `Autonomously choose up to ${count} distinct useful new URLs for ${months ? scope : 'an initial demand-test site with a full researched coverage map and a clearly identified first useful release subset'}. Fewer substantive topics are better than filler. Use the site's locale. Include home only if absent. Today in ${policy.timezone} is ${localDate}. ${months ? timing + ` Publication local time is ${policy.localTime} in ${policy.timezone}.` : 'Set home publishDate to today; give other pages sensible tentative dates. The initial scheduler may adjust them.'} Reconcile existing intents. Return plan-result.schema.json fields only; self-review before returning.`;
   const prompt = buildEditorialPrompt(skill, { mode: 'plan', instruction, siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() } });
   const result = await codexJson(prompt, 'plan-result.schema.json');
   if (!Array.isArray(result.pages)) throw new Error('Codex negrąžino puslapių plano.');
   return mergePlan(siteId, result.pages, months);
 }
 
-async function draftPage(siteId, pageId, skill) {
+export function draftPageData(site, page) {
+  return { id: page.id, type: page.type, slug: page.slug, title: page.title, description: page.description,
+    intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
+    sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
+    plannedNetworkLinks: page.networkLinkSuggestions || [],
+    ...(page.planningBrief ? {planningBrief:structuredClone(page.planningBrief)} : {}),
+    availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) };
+}
+async function draftPage(siteId, pageId, skill, jobId=null, revisionInput=null) {
   const site = await getSite(siteId);
   const page = site.pages.find(item => item.id === pageId);
   if (!page) throw new Error('Puslapis nerastas.');
+  if(site.schemaVersion===2){
+    const options=revisionInput?{revisionHash:revisionInput.expectedRevisionHash}:undefined;
+    const v2Context=v2DraftContext(site,page,options),expectedSiteHash=draftSnapshotHash(site);
+    const prompt=buildEditorialPrompt(skill,{mode:'draft',instruction:V2_DRAFT_INSTRUCTION+(revisionInput?' Revise the supplied currentDraft to fulfil the explicit editorialRevisionRequest. Preserve useful valid passages, resolve the specified actual issues, and return the complete revised native envelope. This is an explicit revision, never an automatic approval or rewrite of the saved published snapshot.':''),
+      siteData:contextForSite(site),pageData:{...draftPageData(site,page),v2Context,...(revisionInput?{currentDraft:{title:page.title,description:page.description,body:page.body,factChecks:page.factChecks},editorialRevisionRequest:revisionInput.editorialInstruction}:{})}});
+    const schema=bindV2DraftSchema(JSON.parse(await readFile(path.join(SCHEMAS,'draft-result.v2.schema.json'),'utf8')),site,page);
+    const result=await codexJson(prompt,'draft-result.v2.schema.json',jobId,pageId,schema);
+    const input=acceptV2DraftResult(site,page,result,options);
+    const receipt=(await listJobs()).find(j=>j.id===jobId)?.generationReceipts?.[pageId];
+    const updated=await editPage(siteId,pageId,input,{expectedSiteHash,...(revisionInput?{expectedRevisionHash:revisionInput.expectedRevisionHash}:{}),metadata:{version:2,createdAt:new Date().toISOString(),
+      expectedSiteHash,planningSourceSha256:page.planningBrief.sourcePlanSha256,skillFingerprint:skill.metadata.fingerprint,
+      researchEvidenceSha256:[...skill.researchSnapshots.values()][0]?.evidenceSha256||null,
+      generationReceipt:receipt||null,internalLinks:result.internalLinks,sourceIds:result.sourceIds,mediaBrief:result.mediaBrief,
+      ...(revisionInput?{revisesRevisionHash:revisionInput.expectedRevisionHash,editorialRevisionRequest:revisionInput.editorialInstruction}:{}),state:'private-draft-requires-source-media-and-rendered-review'}});
+    return {contentVersion:2,blocks:updated.body.length,factChecks:updated.factChecks,nextGate:'Source, actual media, link and rendered review; no automatic approval'};
+  }
   const prompt = buildEditorialPrompt(skill, { mode: 'draft',
     instruction: 'Write an original useful first draft for this page in the site locale. Honour its specific intent and actual deliverables. Source candidates remain unverified. Return draft-result.schema.json fields only; self-review and identify precise remaining fact/asset dependencies.',
     siteData: { ...contextForSite(site), networkCatalog: await networkCatalog() },
-    pageData: { id: page.id, type: page.type, slug: page.slug, title: page.title, description: page.description,
-      intent: page.intent, reason: page.editorialReason || '', cluster: page.cluster || '', pillarPageId: page.pillarPageId || '',
-      sourceQueries: page.sourceQueries || [], plannedInternalLinks: page.linkSuggestions || [], sourceCandidates: page.externalLinks || [],
-      plannedNetworkLinks: page.networkLinkSuggestions || [],
-      availableAssets: site.assets.map(({ id, alt, credit, rights }) => ({ id, alt, credit, rights })) }
+    pageData: draftPageData(site,page)
   });
-  const result = await codexJson(prompt, 'draft-result.schema.json');
+  const result = await codexJson(prompt, 'draft-result.schema.json',jobId,pageId);
   if (!Array.isArray(result.blocks)) throw new Error('Codex negrąžino teksto blokų.');
   const body = normalizeBlocks(result.blocks.map(block => ({ type: block.type, text: block.text, level: block.level, items: block.items })));
   const suggestions = [...(page.linkSuggestions || []), ...(result.internalLinks || [])]
@@ -106,7 +133,7 @@ async function draftBatch(siteId, jobId, skill) {
   if (!pages.length) return { generated: 0, failed: 0, detail: 'Tuščių planų nėra.' };
   let generated = 0; const failures = [];
   for (const page of pages) {
-    try { await draftPage(siteId, page.id, skill); generated++; }
+    try { await draftPage(siteId, page.id, skill,jobId); generated++; }
     catch (error) { failures.push(`${page.slug || '/'}: ${String(error.message || error).slice(0, 180)}`); }
     await updateJob(jobId, { detail: `${generated + failures.length}/${pages.length} parengta; ${generated} juodraščiai, ${failures.length} klaidos` });
   }
@@ -116,19 +143,22 @@ async function draftBatch(siteId, jobId, skill) {
 async function autopilot(siteId, jobId, skill) {
   let site = await getSite(siteId);
   const policy = contentPolicy(site.contentPolicy, site.timezone), window = planningWindow(policy);
-  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && Date.parse(page.publishAt) > Date.now() && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
+  if (policy.cadence === 'coverage' && window.target === null) throw new Error('Pirma parenkite pilną tyrimu pagrįstą temų žemėlapį ir coverageTarget. Autopilot nekuria savavališkos savaitinės kvotos ar pilnumo pažado.');
+  const countUpcoming = value => value.pages.filter(page => ['guide','article'].includes(page.type) && page.status !== 'revoked' && (policy.cadence === 'coverage' || Date.parse(page.publishAt) > Date.now()) && scheduleDate(page.publishAt, policy.timezone) <= window.end).length;
+  if (policy.cadence === 'coverage' && countUpcoming(site) < window.target) throw new Error('Pilnas ištirtas temų žemėlapis dar neįkeltas į planą. Įkelkite visas sutikrintas URL temas prieš juodraščius; autopilot neprikuria temų vien skaičiui pasiekti.');
   let plan = { added: 0, total: site.pages.length, targetArticles: window.target };
   // Bound work and stop on lack of progress; no repeated filler prompts to hit a quota.
-  for (let batch = 0; batch < Math.ceil(window.target / 24); batch++) {
+  for (let batch = 0; policy.cadence !== 'coverage' && batch < Math.ceil(window.target / 24); batch++) {
     const remaining = window.target - countUpcoming(site);
     if (remaining <= 0 && site.pages.some(page => page.type === 'home')) break;
-    await updateJob(jobId, { detail: `Planuojama partija ${batch + 1}; tikslas ${window.target} straipsnių per ${policy.months} mėn.` });
+    await updateJob(jobId, { detail: `Planuojama partija ${batch + 1}; ${policy.cadence === 'coverage' ? 'temų žemėlapio aprėptis' : 'kalendoriaus tikslas'} ${window.target} straipsnių.` });
     const next = await planSite(siteId, policy.months, skill, Math.min(24, Math.max(remaining, 1)));
     plan.added += next.added; plan.total = next.total;
     if (!next.added) break;
     site = await getSite(siteId);
   }
   plan.remainingArticles = Math.max(0, window.target - countUpcoming(site));
+  plan.status = plan.remainingArticles ? 'PARTIAL_PLAN' : 'COUNT_TARGET_MATERIALIZED_REQUIRES_COVERAGE_REVIEW';
   await updateJob(jobId, { detail: `Plane ${plan.total} puslapių, pridėta ${plan.added}; rengiami tušti juodraščiai.` });
   const drafts = { generated: 0, failed: 0, failures: [] };
   const emptyCount = (await getSite(siteId)).pages.filter(page => page.body.length === 0 && page.status !== 'revoked').length;
@@ -159,7 +189,21 @@ async function generateImage(siteId, input) {
 }
 
 export async function enqueue(type, siteId, pageId, input = {}) {
-  if(['autopilot','plan','draft','draft-batch'].includes(type)&&(await getSite(siteId)).schemaVersion===2)throw new Error('V2 generavimo kontraktas dar nepriimtas. Importuokite arba redaguokite struktūrizuotą v2 juodraštį; legacy generatorius jo neperrašo.');
+  if(type==='revise'){
+    const site=await getSite(siteId),page=site.pages.find(p=>p.id===pageId);
+    if(!/^[a-f0-9]{64}$/.test(input.expectedRevisionHash||'')||typeof input.editorialInstruction!=='string'||input.editorialInstruction.trim().length<20||input.editorialInstruction.length>4000)throw new Error('Explicit V2 revision requires current revision hash and a concrete editorial request.');
+    assertV2Draftable(site,page,{revisionHash:input.expectedRevisionHash});
+  }
+  if(['autopilot','plan','draft','draft-batch'].includes(type)){
+    const site=await getSite(siteId);
+    if(site.schemaVersion===2){
+      if(type==='plan')throw new Error('V2 generavimo planas materializuojamas per pilno sutikrinto plano reconciliation, ne legacy plan-result.');
+      const candidates=type==='draft'?site.pages.filter(p=>p.id===pageId):site.pages.filter(p=>!p.body.length&&p.status!=='revoked');
+      if(type==='draft'&&!candidates.length)throw new Error('V2 generavimo tikslas nerastas.');
+      for(const page of candidates)assertV2Draftable(site,page);
+      if(type==='autopilot'&&site.contentPolicy.cadence!=='coverage')throw new Error('V2 generavimo autopilot reikalauja materializuoto coverage plano.');
+    }
+  }
   if (['autopilot','plan','draft','draft-batch'].includes(type)) {
     const site = await getSite(siteId);
     if (site.contentWorkflowVersion !== 1) await editSite(siteId, { contentPolicy: contentPolicy(site.contentPolicy, site.timezone) });
@@ -168,12 +212,13 @@ export async function enqueue(type, siteId, pageId, input = {}) {
     const work = async () => {
       await updateJob(job.id, { status: 'running', startedAt: new Date().toISOString() });
       try {
-        const skill = ['autopilot', 'plan', 'draft', 'draft-batch'].includes(type)
-          ? await loadEditorialSkill(['autopilot', 'plan'].includes(type) ? 'plan' : 'draft') : null;
-        if (skill) await updateJob(job.id, { editorialSkill: skill.metadata });
+        const skill = ['autopilot', 'plan', 'draft', 'draft-batch','revise'].includes(type)
+          ? await loadEditorialSkill(type==='plan'||type==='autopilot'&&(await getSite(siteId)).schemaVersion!==2 ? 'plan' : 'draft') : null;
+        if (skill) await updateJob(job.id, { editorialSkill: skill.metadata,articleGenerationPolicy:ARTICLE_GENERATION_POLICY });
         const detail = type === 'autopilot' ? await autopilot(siteId, job.id, skill)
           : type === 'plan' ? await planSite(siteId, input.months ? contentPolicy({ ...((await getSite(siteId)).contentPolicy), months: Number(input.months) }).months : 0, skill)
-          : type === 'draft' ? await draftPage(siteId, pageId, skill)
+          : type === 'draft' ? await draftPage(siteId, pageId, skill,job.id)
+          : type === 'revise' ? await draftPage(siteId,pageId,skill,job.id,input)
           : type === 'draft-batch' ? await draftBatch(siteId, job.id, skill)
           : type === 'network-check' ? await verifyNetworkLinks(siteId, pageId)
           : type === 'image' ? await generateImage(siteId, input)

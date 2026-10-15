@@ -1,0 +1,13 @@
+{
+  "path": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next6-20261015\\output\\releases\\madbeauty\\29751d7c-2434-4e3c-85a9-bb5ee61df6bd\\content-package.json",
+  "pages": 141,
+  "assets": 702,
+  "manifestPath": "C:\\Users\\Lenovo\\.codex\\tmp\\madbeauty-next6-20261015\\output\\releases\\madbeauty\\29751d7c-2434-4e3c-85a9-bb5ee61df6bd\\release-manifest.json",
+  "packageSha256": "4377fd5fe33ef1309ae1fc4545eda91011f27ca975d33a0fb2351d966aff7889",
+  "state": "exported-not-deployed",
+  "portableDirectory": "sites/madbeauty/content-next6-20261015/release",
+  "guides": 137,
+  "priorApprovedSnapshotsPreserved": 135,
+  "publishAtPreserved": 299,
+  "actualCanonicalDeployment": false
+}

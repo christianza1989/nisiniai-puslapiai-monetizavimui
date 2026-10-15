@@ -1,0 +1,106 @@
+{
+  "reviewedAt": "2026-10-15T07:11:30.627Z",
+  "reviewer": "Codex editorial agent",
+  "decisions": {
+    "VP-drekinimas": {
+      "usefulness": "Atskiria kosmetinį tikslą, konkretų produktą ir paketo veiksmus; penkių punktų palyginimas ir pažymėtas hipotetinis dviejų pasiūlymų pavyzdys padeda pasirinkti. Nekartoja bendro veido priežiūros šakninio gido užduoties.",
+      "facts": "R201/R202 tik konkrečių Clarins produktų sudėties/tekstūros ir persidengiančių aprašų pavyzdžiai, ne klinikinis poveikis ar salono protokolas. R209 pateikia ribotą kreipimosi dėl užsitęsusių ar blogėjančių simptomų kontekstą. Universalios kainos, trukmės, gydymas ir rekomendacijos diagnozei neteigiami.",
+      "sources": "Realiai skaityti R201 Clarins HA², R202 SOS Comfort ir R209 AAD skyriai; SOURCE-NOTES.json fiksuoja konkrečių teiginių ribas. Produkto puslapio aprašymas aiškiai priskirtas gamintojui, ne mūsų testavimui.",
+      "resolution": "Trūkusi vaizdo šeima realiai sugeneruota, pikseliais peržiūrėta, responsive importuota ir atvaizduota. Ištaisyta „raminančioji“ į „raminamoji“ visame tekste."
+    },
+    "AN-laminavimas": {
+      "usefulness": "Paaiškina esamų plaukelių krypties keitimą ir atskiria laminavimą nuo dažymo, formos korekcijos bei užbaigimo. Du tikri katalogo pavadinimai ir sprendimo pavyzdys leidžia palyginti paketus neapsimetant salono pasiūlymu.",
+      "facts": "R203 HD Brows viešas BrowSculpt aprašas pagrindžia tik chemiškai keičiamą esamų plaukelių padėtį ir atskirai vardijamus darbus; nepriauginami nauji plaukeliai. Netvirtinama visų salonų eiga, išsilaikymo trukmė, universali sauga ar cheminės instrukcijos.",
+      "sources": "Realiai skaitytas HD Brows gamintojo metodas, full-treatment aprašas ir klausimas apie plaukelių nepridėjimą. Taikymo ribos aiškiai išsakytos; nevartojamas neperskaitytas profesionalus cheminis protokolas.",
+      "resolution": "Sena pastaba apie sistemos protokolą išspręsta išlaikant tik perskaityto viešo R203 aprašo apimtį; jokių procedūros atlikimo parametrų neįtraukta. Atskiras originalus vaizdas realiai importuotas ir peržiūrėtas."
+    },
+    "AV-vietos": {
+      "usefulness": "Po faktiškai atliktos Luna/xhigh revizijos gidas aiškina ausies spenelį, kremzlės sritį ir kitas plačias vietas; originali didelė schema bei hipotetinis įtraukto/neįtraukto papuošalo palyginimas papildo klausimų sąrašą. Nebelieka vien klausimų be atsakymo.",
+      "facts": "R210 realiai perskaitytos PDF2–4p. apie išorinę ausį pagrindžia minkštą spenelį be kremzlės ir oda dengtą karkasą. R204/R205 konsultacijos ir burnos papuošalo galimų problemų kontekstas, ne Lietuvos teisė ar individualus leidimas. Nėra dūrio taškų, kampų, procedūros instrukcijų ar diagnozės.",
+      "sources": "Realiai skaityti APP choosing/FAQ ir USAARL Basic Anatomy skyriai. Nepasiekiami NCBI/Elsevier kandidatai nenaudojami. Ištaisyta klaidinga išplėstinė APP forma į Association of Professional Piercers ir paprasta skliaustų etiketė paversta tikra R205 nuoroda.",
+      "resolution": "Pridėta atskira originali profilio nuotrauka ir originali plačių sričių schema. Mobilaus schemos vaizdo tikri pikseliai peržiūrėti; nevaizduoja dūrio vietų. Žiedo nuotrauka nevadinama ką tik atlikta procedūra."
+    },
+    "BL-efektai": {
+      "usefulness": "Palygina natūralų, centro doll-eye ir išorės cat-eye akcentą tuo pačiu masteliu ir pateikia pageidavimo suformulavimo veiksmus. Schema paaiškina skirtumą be skaičių ar individualaus tinkamumo pažado.",
+      "facts": "R206 London Lash stilių aprašai pagrindžia tik kokybinį ilgio pasiskirstymą. Natūralus ir doll-eye profiliai schemoje atskirti: natūralus lėkštesnis, doll-eye ryškesnis centre, cat-eye į išorę. Nėra mm ar klijavimo instrukcijų. Fotografijoje dekoratyvinės juostelės, ne tariama dokumentinė priauginimo procedūra.",
+      "sources": "Realiai skaitytas gamintojo London Lash stilių aprašas; iš jo nekopijuoti piešiniai ar specifinės matmenų schemos. Konteksto ribos ir skirtingas tankis tekste atskirti nuo stiliaus etiketės.",
+      "resolution": "Privaloma originali schema realiai sukurta ir po natūralaus/doll-eye skirtumo pataisos importuota. Faktinis mobilus342px vaizdas aiškus. Atskira iliustracinė nuotrauka teisingai aprašyta alt."
+    },
+    "BR-paketas": {
+      "usefulness": "Plaukus, barzdos metodą ir papildomas paslaugas skiria į keturių eilučių palyginimo ruošinį. Datuotas meniu pavyzdys parodo mašinėlės/skustuvo paketų skirtumą; kainos vertinamos tik palyginus panašią apimtį.",
+      "facts": "R207 tikras Gargždų Barzdaskučių meniu peržiūrėtas2026-10-15; mašinėlė ir skustuvas išvardyti atskirai. Išlaikytas faktas, kad puslapis tuomet nepriėmė Treatwell rezervacijų. Nėra aktualios kainos, trukmės, laisvų laikų ar mūsų teikėjo teiginio. Plovimas/rankšluostis/gėrimas nepažadėti.",
+      "sources": "Realiai perskaitytas R207 paslaugų meniu ir rezervacijų nepriėmimo pranešimas. Tai pirmos šalies paslaugų skelbimo pavyzdys, ne visos rinkos standartas; šaltinio laiko ribą išsaugo matomas2026-10-15 sakinys.",
+      "resolution": "R207 nuorodos turinys realiai patikrintas šio rengimo metu; datuoto teiginio kontekstas išlaikytas. Originali konsultacijos nuotrauka ir mobilus kadravimas peržiūrėti. Pataisyti nenatūralūs „barzdos darbo“ junginiai ir linksniuoti katalogo anchorai."
+    },
+    "DP-bikini": {
+      "usefulness": "Skiria metodo, zonos ir paketo apimtį; vieno meniu ir aiškiai iliustracinis palyginimas paaiškina, kodėl vien klasikinė/gili/braziliška etiketė nepakankama. Privatumo ir pertraukos klausimai padeda pasiruošti pokalbiui.",
+      "facts": "R208 DEPEXA patvirtina konkrečius higieninio/viso bikinio ir vaško/cukraus variantus, ne visų salonų terminų standartą. Jokios konkretaus teikėjo privatumo tvarkos ar veiksmų sekos neteigiama; tai aiškiai klausimai, ne garantijos. Nėra temperatūrų, nuskausminimo, rezultato, kainos ar trukmės pažadų.",
+      "sources": "Realiai perskaitytas DEPEXA moterų meniu ir abu metodai kiekvienai apimčiai. Šaltinio ribos išlaikytos SOURCE-NOTES.json ir viešame tekste; intymios zonos ribos nesuapsoliutintos pagal pavadinimą.",
+      "resolution": "Pastaba apie konkretaus teikėjo darbo tvarką išspręsta neteigiant nepatikrinto protokolo ar privatumo užtikrinimo fakto. Sugeneruotas tuščio privataus kabineto iliustracinis vaizdas nevadinamas konkretaus salono dokumentika. Pataisytas Bikinio pavadinimas/aprašas ir linksniuoti anchorai."
+    }
+  },
+  "reviewLog": [
+    {
+      "planId": "VP-drekinimas",
+      "pageId": "0c14f72b-4e98-4340-8373-2dff5413661d",
+      "revisionHash": "395d6e2890ee3c78cbe73cf6ee71450e6277a0a3ab7b39b201b13e3e256d986d",
+      "completeTextRead": true,
+      "previousFactChecks": [
+        "Teminis vaizdas dar nesukurtas ir nepridėtas. Prieš redakcinę peržiūrą parengti iliustraciją, importuoti responsyvius variantus ir patikrinti tikrus vaizdo pikselius."
+      ],
+      "resolution": "Trūkusi vaizdo šeima realiai sugeneruota, pikseliais peržiūrėta, responsive importuota ir atvaizduota. Ištaisyta „raminančioji“ į „raminamoji“ visame tekste."
+    },
+    {
+      "planId": "AN-laminavimas",
+      "pageId": "3f4434e3-a763-4c6e-9e5e-485053a54c36",
+      "revisionHash": "828d70c5332dcf893340506168e0fd23bdd310aa1193f96b6d46ba8c9ea496d5",
+      "completeTextRead": true,
+      "previousFactChecks": [
+        "Prieš tvirtinant procedūros eigos detales, patikrinti konkrečios laminavimo sistemos protokolą; pateiktas šaltinis aprašo tik HD Brows „BrowSculpt“.",
+        "Pridėti atskirai sugeneruotą ir pikseliais patikrintą antakių laminavimo teminę iliustraciją; šiame juodraštyje medija dar nepridėta."
+      ],
+      "resolution": "Sena pastaba apie sistemos protokolą išspręsta išlaikant tik perskaityto viešo R203 aprašo apimtį; jokių procedūros atlikimo parametrų neįtraukta. Atskiras originalus vaizdas realiai importuotas ir peržiūrėtas."
+    },
+    {
+      "planId": "AV-vietos",
+      "pageId": "6cb7a406-fdd0-444a-8c40-fe51b88ddad3",
+      "revisionHash": "7dd541a68b4e1384ebc11461ea719431b872cdd51d3bbb66c9f529cda15a3cc1",
+      "completeTextRead": true,
+      "previousFactChecks": [
+        "Teminė plačių sričių schema ir atskira auskaro konteksto nuotrauka dar nepridėtos. Prieš redakcinį patvirtinimą importuoti jų responsive variantus ir peržiūrėti faktinius vaizdus bei mobilų apkarpymą; schemoje palikti tik plačias sritis, be tikslių vietų ar procedūros vaizdavimo."
+      ],
+      "resolution": "Pridėta atskira originali profilio nuotrauka ir originali plačių sričių schema. Mobilaus schemos vaizdo tikri pikseliai peržiūrėti; nevaizduoja dūrio vietų. Žiedo nuotrauka nevadinama ką tik atlikta procedūra."
+    },
+    {
+      "planId": "BL-efektai",
+      "pageId": "b67877e7-c45f-4cf9-b98a-076bf4ff9e7e",
+      "revisionHash": "f94b2c40ac513544ab65c833b4e4faa24cd6f5d638ed0b18a5b9dd5bfb5c2f47",
+      "completeTextRead": true,
+      "previousFactChecks": [
+        "Prieš peržiūrą parengti ir prijungti originalią trijų išdėstymo krypčių iliustraciją. Patikrinti, kad joje būtų tik kokybiniai ilgių santykiai, nebūtų matmenų ar nepagrįstų individualaus tinkamumo teiginių, o mobiliajame vaizde kompozicija liktų aiški."
+      ],
+      "resolution": "Privaloma originali schema realiai sukurta ir po natūralaus/doll-eye skirtumo pataisos importuota. Faktinis mobilus342px vaizdas aiškus. Atskira iliustracinė nuotrauka teisingai aprašyta alt."
+    },
+    {
+      "planId": "BR-paketas",
+      "pageId": "0ff71a50-4768-48b2-a800-24b1bdab32e2",
+      "revisionHash": "7c36250da6d42b513fd043a6e36d22676190ef1c37d1b4bb64c5f6ca4f0f1c8d",
+      "completeTextRead": true,
+      "previousFactChecks": [
+        "Prieš patvirtinant draftą, patikrinti, ar R207 nuoroda tebėra pasiekiama ir ar puslapyje išlieka meniu pavyzdys bei 2026-10-15 datuotam teiginiui tinkamas kontekstas.",
+        "Šiam gidui dar nepriskirtas vaizdas. Prieš patvirtinimą sugeneruoti ir importuoti mediaBrief atitinkantį vaizdą, patikrinti faktinius pikselius, mobilų kadravimą ir alt tekstą."
+      ],
+      "resolution": "R207 nuorodos turinys realiai patikrintas šio rengimo metu; datuoto teiginio kontekstas išlaikytas. Originali konsultacijos nuotrauka ir mobilus kadravimas peržiūrėti. Pataisyti nenatūralūs „barzdos darbo“ junginiai ir linksniuoti katalogo anchorai."
+    },
+    {
+      "planId": "DP-bikini",
+      "pageId": "bb61c8c0-bb54-47a7-8dfd-69a2ed6478b8",
+      "revisionHash": "deaab2530fe4fdf57344495a4a1e571efb74ff815a1652f6e566fed8c82736c0",
+      "completeTextRead": true,
+      "previousFactChecks": [
+        "R208 patvirtina konkretaus teikėjo meniu terminus ir jame nurodytą zonos apimtį, bet ne procedūros veiksmų seką ar teikėjo privatumo tvarką. Prieš tvirtinant patikrinkite aktualų teikėjo paslaugos aprašą arba darbo tvarką; šiame tekste konkretaus teikėjo veiksmų ar privatumo užtikrinimo faktai neteigiami."
+      ],
+      "resolution": "Pastaba apie konkretaus teikėjo darbo tvarką išspręsta neteigiant nepatikrinto protokolo ar privatumo užtikrinimo fakto. Sugeneruotas tuščio privataus kabineto iliustracinis vaizdas nevadinamas konkretaus salono dokumentika. Pataisytas Bikinio pavadinimas/aprašas ir linksniuoti anchorai."
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "checkedAt": "2026-10-15T07:08:50.683Z",
+  "changes": [
+    {
+      "planId": "BR-paketas",
+      "before": {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Madbeauty kataloge pateikiamos atskiros nacionalinės kategorijos: "
+          },
+          {
+            "type": "link",
+            "text": "vyrų kirpimas",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:kirpimai-vyru-kirpimas"
+            }
+          },
+          {
+            "type": "text",
+            "text": " ir "
+          },
+          {
+            "type": "link",
+            "text": "barzda ir skutimas",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:barzda"
+            }
+          },
+          {
+            "type": "text",
+            "text": "."
+          }
+        ]
+      },
+      "after": {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Madbeauty kataloge galite atskirai peržiūrėti "
+          },
+          {
+            "type": "link",
+            "text": "vyrų kirpimo",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:kirpimai-vyru-kirpimas"
+            }
+          },
+          {
+            "type": "text",
+            "text": " ir "
+          },
+          {
+            "type": "link",
+            "text": "barzdos tvarkymo bei skutimo",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:barzda"
+            }
+          },
+          {
+            "type": "text",
+            "text": " kategorijas."
+          }
+        ]
+      }
+    },
+    {
+      "planId": "DP-bikini",
+      "before": {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Madbeauty nacionaliniame kataloge galite peržiūrėti kategorijas "
+          },
+          {
+            "type": "link",
+            "text": "bikinio depiliacija vašku",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:depiliacija-vasku-bikini-depiliacija-vasku"
+            }
+          },
+          {
+            "type": "text",
+            "text": " ir "
+          },
+          {
+            "type": "link",
+            "text": "bikinio depiliacija cukrumi",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:depiliacija-cukrumi-bikini-depiliacija-cukrumi"
+            }
+          },
+          {
+            "type": "text",
+            "text": ". Pasirinkite miestą atskirai ir patikrinkite, ar jame yra reali pasiūla; nacionalinis kategorijos aprašas nepatvirtina konkretaus teikėjo ar registracijos galimybės."
+          }
+        ]
+      },
+      "after": {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "text",
+            "text": "Madbeauty nacionaliniame kataloge rasite "
+          },
+          {
+            "type": "link",
+            "text": "bikinio depiliaciją vašku",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:depiliacija-vasku-bikini-depiliacija-vasku"
+            }
+          },
+          {
+            "type": "text",
+            "text": " ir "
+          },
+          {
+            "type": "link",
+            "text": "bikinio depiliaciją cukrumi",
+            "target": {
+              "kind": "commerce",
+              "targetId": "mb:catalog:depiliacija-cukrumi-bikini-depiliacija-cukrumi"
+            }
+          },
+          {
+            "type": "text",
+            "text": ". Pasirinkite miestą atskirai ir patikrinkite, ar jame yra reali pasiūla; nacionalinis kategorijos aprašas nepatvirtina konkretaus teikėjo ar registracijos galimybės."
+          }
+        ]
+      }
+    }
+  ]
+}

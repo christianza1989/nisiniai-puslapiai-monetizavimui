@@ -49,9 +49,9 @@ test('approved revision survives draft edits, time gate and export stay isolated
 
 test('HTTP studio is local, previews are noindex and state changes need studio header', async () => {
   const server = await createServer();
-  await new Promise(resolve => server.listen(4319, '127.0.0.1', resolve));
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   try {
-    const base = 'http://127.0.0.1:4319';
+    const base = 'http://127.0.0.1:'+server.address().port;
     const home = await fetch(base); assert.equal(home.status, 200); assert.match(await home.text(), /Turinio studija/);
     const blocked = await fetch(`${base}/api/sites`, { method: 'POST', body: '{}' }); assert.equal(blocked.status, 403);
     const allowed = await fetch(`${base}/api/sites`); assert.equal(allowed.status, 200); assert.ok((await allowed.json()).length >= 20);
@@ -100,7 +100,7 @@ test('six-month calendar keeps drafts private and external sources require verif
   assert.equal(first.publishAt.slice(0, 10), chosenDate);
   assert.equal(first.seasonalHook, 'Ruošiantis sezono pradžiai');
   assert.ok(Date.parse(first.publishAt) > Date.now());
-  assert.ok(Date.parse(second.publishAt) > Date.parse(first.publishAt));
+  assert.ok(Date.parse(second.publishAt) >= Date.parse(first.publishAt), 'coverage allows a cluster together, never a child before its root');
   assert.equal(model.packageForSite(draftSite).pages.length, 1);
   assert.equal((await model.listCalendar()).find(item => item.pageId === first.id).status, 'planned');
   await model.editPage(site.id, first.id, { body: [{ type: 'paragraph', text: longText }], externalLinks: [{ url: 'https://example.com/gaires', label: 'Oficialios gairės', reason: 'Patikrinti konkretų teiginį', verified: false }] });

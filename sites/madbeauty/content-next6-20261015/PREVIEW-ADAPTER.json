@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-10-15T07:15:33.488Z",
+  "private": true,
+  "productionRenderer": false,
+  "nativeFunctionSourceSha256": "a6896c955a720f6efd5c2cb78270824dc51510e54ea4d6011c12bd374b530287",
+  "bodyContentUnchanged": true,
+  "scope": "Read-only extraction of the actual common studio preview function without starting a second server. Private presentation adapter changes paths/byline/source/related wrappers and verified commerce hrefs; consumer runtime acceptance required separately.",
+  "captures": [
+    {
+      "pageId": "0c14f72b-4e98-4340-8373-2dff5413661d",
+      "file": "VP-drekinimas.html",
+      "nativeHtmlSha256": "93f42bdc3978755c9216138a8fc9e3d1246f64293b107c337a83d29ea7437f59",
+      "adaptedHtmlSha256": "9a9208ff55c18795a1085945725d2c060faaedc0e519057b4345556a3bd6888e"
+    },
+    {
+      "pageId": "3f4434e3-a763-4c6e-9e5e-485053a54c36",
+      "file": "AN-laminavimas.html",
+      "nativeHtmlSha256": "ff9edc730463ec8f49ccd93d2eff3675bf1f8fd09905be07bd05c51418c57c77",
+      "adaptedHtmlSha256": "a46479cdba3d7b9f393353894a0bba2be58ac12ec974148fa66bc4fbcf84671e"
+    },
+    {
+      "pageId": "6cb7a406-fdd0-444a-8c40-fe51b88ddad3",
+      "file": "AV-vietos.html",
+      "nativeHtmlSha256": "3668cd0ecb24186699714578ae9b34d005941e8488976969faaaac9880b4e0db",
+      "adaptedHtmlSha256": "88117308637ed7b9c949058074df5342759e00fb3614af93ad9897ff27ab8f2e"
+    },
+    {
+      "pageId": "b67877e7-c45f-4cf9-b98a-076bf4ff9e7e",
+      "file": "BL-efektai.html",
+      "nativeHtmlSha256": "6db7da5a6286ed74ceeafeb54e1f57b4afd6ef24b73443a718e524b314373718",
+      "adaptedHtmlSha256": "e85ead7ce649e7ad7585522a3a346f9515a46b4ff03c34dd91ac2b1820077917"
+    },
+    {
+      "pageId": "0ff71a50-4768-48b2-a800-24b1bdab32e2",
+      "file": "BR-paketas.html",
+      "nativeHtmlSha256": "6235f68ffeccbe240f14fbe6dc7871027589b00c73df9e0003ca81cc75cbf310",
+      "adaptedHtmlSha256": "4bd1a2365a22175e3b3eda145ae5bdf3b46d7010ab0ac957c1a71428e8268fd8"
+    },
+    {
+      "pageId": "bb61c8c0-bb54-47a7-8dfd-69a2ed6478b8",
+      "file": "DP-bikini.html",
+      "nativeHtmlSha256": "ba82cae905bfb11c10e33d22c4da2eb37abf27423b9834ea315d61723f606482",
+      "adaptedHtmlSha256": "070e2b44639eda6c7c3a1305c4e187c26c7397505b9f1297ba1abf4a39cc0e2e"
+    },
+    {
+      "pageId": "485e6aa9-bf58-49db-b938-b4471d4a6548",
+      "file": "reference-485e6aa9-bf58-49db-b938-b4471d4a6548.html",
+      "nativeHtmlSha256": "bec21f0ad848fb68c4a330c8a353e28714d883ccd7ffe1e46540b93740b5b437",
+      "adaptedHtmlSha256": "b95c4ebbbb8329f9234c153582c80e62f053147f561c280cf8df5386bbea75b2"
+    },
+    {
+      "pageId": "f969be0f-79b0-485f-9c90-6904e4b1948e",
+      "file": "reference-f969be0f-79b0-485f-9c90-6904e4b1948e.html",
+      "nativeHtmlSha256": "385e6c0a0371d5ec9118b95efc0fd09b607f97d1a54eb6f42b2fb207fdc22192",
+      "adaptedHtmlSha256": "e17b5f8335e87e59b49ca73a74b3efb3bead06f8a584fc3ba9b2a046558d2b50"
+    },
+    {
+      "pageId": "734d26c7-d9f3-4079-af80-771437a32caa",
+      "file": "reference-734d26c7-d9f3-4079-af80-771437a32caa.html",
+      "nativeHtmlSha256": "367777658c45955f5e85cf93d190a459fb6d9eff36762eca32372fe1e616e6a2",
+      "adaptedHtmlSha256": "6f874aa423696acdba040513bf320ed7de81cb1544a44cfb836fc0a2ed1f60ca"
+    },
+    {
+      "pageId": "40e22039-917a-479f-840e-97edb71dcd55",
+      "file": "reference-40e22039-917a-479f-840e-97edb71dcd55.html",
+      "nativeHtmlSha256": "fe8a75807bf307761db0b1c7e733fddf26aa34e617ecf27d598899f9e3ca477b",
+      "adaptedHtmlSha256": "1b0589c72a1affd9e4c462eba8abb8f25966a6d27e75a12f2c8b205d08b8ef3a"
+    },
+    {
+      "pageId": "f36137a1-20c4-4639-bcb6-e5740197536f",
+      "file": "reference-f36137a1-20c4-4639-bcb6-e5740197536f.html",
+      "nativeHtmlSha256": "967034a4212fecfb0e1226ecc81e97ab829ca3b236ed61fe6d071556814a7de9",
+      "adaptedHtmlSha256": "ca82cdfc7db45a9bc3988b2cd37c1a6569b58d40cda87f70a77ecc4184d86182"
+    },
+    {
+      "pageId": "0f24db66-5e50-44ba-a6bf-ab8a6196e95b",
+      "file": "reference-0f24db66-5e50-44ba-a6bf-ab8a6196e95b.html",
+      "nativeHtmlSha256": "c58d807f2ffb28757b50a1a52761c11bfa7bb0ac37b25dbaf3d9a77371b1db46",
+      "adaptedHtmlSha256": "62bc00562ed19406bf0f6bb5a4e1d3cbfe20e47259a4594bf556f595d4c135c4"
+    }
+  ]
+}

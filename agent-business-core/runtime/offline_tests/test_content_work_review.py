@@ -143,6 +143,27 @@ def test_native_schema_pins_exact_refs_hash_round_and_instructions():
     assert len(choices) == 9  # One correction plus eight factually unverified checks.
 
 
+@pytest.mark.parametrize("verdict", ["accept_draft", "revise"])
+def test_native_provider_exact_sets_keep_required_repairs_and_known_check_status(verdict):
+    candidate = output()
+    receipts = review.observations(candidate)
+    report = review.critic(critic(candidate, receipts, verdict), output=candidate, round_number=1, receipts=receipts)
+    prepared = {"pageData": {"planningBrief": {}}, "siteData": {}}
+    ctx = review.context(candidate, 1, receipts, prepared, report)
+    schema = review.output_schema("coordinator", ctx)
+    value = coordinator(candidate, report)
+    value["correction_ids"] = schema["properties"]["correction_ids"]["const"]
+    value["remaining_checks"] = schema["properties"]["remaining_checks"]["const"]
+    assert value["correction_ids"] == (["f_1"] if verdict == "revise" else [])
+    assert "language_quality" not in value["remaining_checks"] and len(value["remaining_checks"]) == 8
+    assert review.coordinator(value, output=candidate, critic_value=report, round_number=1,
+                              receipts=receipts)["decision"] == verdict
+    value["remaining_checks"].append("language_quality")
+    with pytest.raises(RunnerError, match="review_invalid"):
+        review.coordinator(value, output=candidate, critic_value=report, round_number=1, receipts=receipts)
+    assert "verified_coordinator_sets" in ctx
+
+
 @pytest.mark.parametrize("role", ["critic", "coordinator"])
 def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding(role):
     original_models = (CriticReview.model_json_schema(), CoordinatorDecision.model_json_schema())
@@ -169,6 +190,9 @@ def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding
         expected["properties"]["critic_sha256"]["const"] = canonical_sha256(report)
         expected["properties"]["decision"]["const"] = "revise"
         expected["properties"]["next_actions"]["items"]["enum"] = ctx["allowed_next_actions"]
+        expected["properties"]["correction_ids"]["const"] = ["f_1"]
+        expected["properties"]["remaining_checks"]["const"] = [
+            check["kind"] for check in report["checks"] if check["status"] in ("FAIL", "UNVERIFIED")]
     for key in ("draft_sha256", "stage", "round_number"):
         expected["properties"][key]["const"] = ctx[key]
     assert schema == expected and schema["properties"]["summary"]["maxLength"] == 360

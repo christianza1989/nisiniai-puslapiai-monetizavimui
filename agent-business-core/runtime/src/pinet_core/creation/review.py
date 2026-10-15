@@ -355,6 +355,11 @@ Konkurento pasiūlymas neįrodo mokios paklausos ar mūsų pajėgumo. Pirmame ra
 kitame tikrink pataisas ir galutinį variantą. Nauji tikri trūkumai leidžiami, visos priėmimo patikros lieka.
 """
 
+COORDINATOR_SET_DIRECTIVE = """verified_coordinator_sets pateikia tikslius correction_ids ir remaining_checks sąrašus pagal patikrintą
+kritiko išvadą. Pakartok juos nurodyta tvarka; nepridėk ir nepašalink reikšmių. Privalomas teksto
+radinys lieka correction_ids net kai ribota automatinė tos rūšies patikra turi PASS kvitą.
+"""
+
 COORDINATOR_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,
 jo kritiko išvadą ir tos versijos stebėjimų kvitus pateik trumpą klientui suprantamą sprendimą lietuviškai.
 Nerašyk vidinės minčių eigos ir nepratęsk tariamų derybų. Paaiškink, kas priimta, ką reikia pataisyti ir ką
@@ -373,7 +378,7 @@ Juodraščio kontekstas gali būti dalinis: automatinės kalbos patikros atmesti
 jo nelaikyk originaliu tekstu, necituok ir neatkurk atmestų sakinių. Kontrolinis kodas išlieka originalo.
 summary iki 360 simbolių: glaustai paaiškink sprendimą, nekartodamas kritiko teksto. Visus privalomų
 pataisų ID ir likusias patikras išsaugok atskiruose laukuose; next_actions tekstų netrumpink ir neperrašyk.
-"""
+""" + COORDINATOR_SET_DIRECTIVE
 
 
 def coordinator_actions(verified_critic):
@@ -395,6 +400,13 @@ def coordinator_actions(verified_critic):
         actions["language_quality"] = "Kalbos kokybę patikrinti vėliau; bandomajame etape jos taisymas laikinai išjungtas."
     choices.extend(actions[check.kind] for check in review.checks if check.status in ("FAIL", "UNVERIFIED"))
     return list(dict.fromkeys(choices)) or ["Tęsti faktines patikras prieš rengiant viešą leidimą."]
+
+
+def coordinator_sets(verified_critic):
+    """Mechanical reference sets from a caller-validated critic, never new evidence or approval."""
+    review = CriticReview.model_validate(verified_critic)
+    return {"correction_ids": [finding.id for finding in review.findings if finding.severity != "suggestion"],
+            "remaining_checks": [check.kind for check in review.checks if check.status in ("FAIL", "UNVERIFIED")]}
 
 
 def role_instruction_hash(role):
@@ -480,7 +492,8 @@ def coordinator_prompt(*, draft, critic, stage, round_number, receipts=()):
         context = _prompt_context(draft, stage, round_number, receipts)
         review = _normalize_critic(critic, draft, stage, round_number, receipts).model_dump(mode="json")
         context.update(critic=review, critic_sha256=canonical_sha256(review),
-                       allowed_next_actions=coordinator_actions(review))
+                       allowed_next_actions=coordinator_actions(review),
+                       verified_coordinator_sets=coordinator_sets(review))
         context["language_review_mode"] = language_mode.mode()
         return language_mode.policy(COORDINATOR_POLICY) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
     except (ValueError, TypeError, KeyError, IndexError):
@@ -517,6 +530,8 @@ def output_schema(role, context):
         schema["properties"]["critic_sha256"]["const"] = critic_sha256(critic)
         schema["properties"]["decision"]["const"] = critic.verdict
         schema["properties"]["next_actions"]["items"]["enum"] = coordinator_actions(critic)
+        for key, expected in coordinator_sets(critic).items():
+            schema["properties"][key]["const"] = expected
     for key in ("draft_sha256", "stage", "round_number"):
         schema["properties"][key]["const"] = bound[key]
     return schema

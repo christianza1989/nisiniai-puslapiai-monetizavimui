@@ -118,7 +118,7 @@ def test_business_provider_prose_bounds_are_also_authoritative_on_hydration(draf
             review.hydrate_business_critic(value, context(draft))
 
 
-def test_business_wire_is_complete_and_native_guide_profiles_remain_exact(draft):
+def test_business_wire_and_original_guide_schemas_preserve_explicit_coordinator_policy_upgrade(draft):
     schema = review.output_schema("critic", context(draft))
     summaries = schema["$defs"]["CheckSummaries"]
     assert set(summaries["required"]) == set(review.CHECK_KINDS)
@@ -136,7 +136,12 @@ def test_business_wire_is_complete_and_native_guide_profiles_remain_exact(draft)
                         "36d61ad8bc3b4f23a62ce25edd80d8f8b186652dc352530e55184f26dd0f962c"),
     }
     for role, (policy_hash, schema_hash) in originals.items():
-        assert review.role_instruction_hash(role) == policy_hash
+        if role == "coordinator":
+            historical = review.COORDINATOR_POLICY.removesuffix(review.COORDINATOR_SET_DIRECTIVE)
+            assert hashlib.sha256(historical.encode("utf-8")).hexdigest() == policy_hash
+            assert review.role_instruction_hash(role) != policy_hash
+        else:
+            assert review.role_instruction_hash(role) == policy_hash
         assert hashlib.sha256(json.dumps(review.model_output_schema(role), sort_keys=True).encode()).hexdigest() == schema_hash
 
 

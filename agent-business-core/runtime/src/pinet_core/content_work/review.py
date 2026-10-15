@@ -173,6 +173,7 @@ def context(output, round_number, receipts, prepared, critic_value=None):
         value["critic"] = critic(critic_value, output=output, round_number=round_number, receipts=receipts)
         value["critic_sha256"] = shared.canonical_sha256(value["critic"])
         value["allowed_next_actions"] = shared.coordinator_actions(value["critic"])
+        value["verified_coordinator_sets"] = shared.coordinator_sets(value["critic"])
     return value
 
 
@@ -194,6 +195,8 @@ def output_schema(role, value):
         schema["properties"]["critic_sha256"]["const"] = value["critic_sha256"]
         schema["properties"]["decision"]["const"] = value["critic"]["verdict"]
         schema["properties"]["next_actions"]["items"]["enum"] = shared.coordinator_actions(value["critic"])
+        for key, expected in shared.coordinator_sets(value["critic"]).items():
+            schema["properties"][key]["const"] = expected
     for key in ("draft_sha256", "stage", "round_number"):
         schema["properties"][key]["const"] = value[key]
     return schema

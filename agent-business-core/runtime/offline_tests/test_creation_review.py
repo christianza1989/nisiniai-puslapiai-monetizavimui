@@ -139,6 +139,42 @@ def test_coordinator_provider_selects_only_exact_corrections_and_remaining_check
     assert draft_sha256(draft) == schema["properties"]["draft_sha256"]["const"]
 
 
+@pytest.mark.parametrize("passed_kind", CHECK_KINDS)
+def test_provider_sets_match_strict_coordinator_when_one_receipt_passes(draft, passed_kind):
+    raw = report(draft)
+    evidence = receipt(draft, kind=passed_kind)
+    bind(raw, evidence)
+    critic = verify(raw, draft, [evidence])
+    context = {"draft": draft, "critic": critic, "stage": "private_draft", "round_number": 1,
+               "receipts": [evidence]}
+    schema = output_schema("coordinator", context)
+    value = decision(draft, critic)
+    value["correction_ids"] = schema["properties"]["correction_ids"]["const"]
+    value["remaining_checks"] = schema["properties"]["remaining_checks"]["const"]
+    assert passed_kind not in value["remaining_checks"] and value["correction_ids"] == ["f_1"]
+    assert verify_decision(value, draft, critic, [evidence])["decision"] == "revise"
+    original = deepcopy(critic)
+    value["remaining_checks"].append(passed_kind)
+    with pytest.raises(RunnerError, match="review_invalid"):
+        verify_decision(value, draft, critic, [evidence])
+    assert critic == original  # Mutating a schema cannot mutate authoritative evidence.
+    assert 'verified_coordinator_sets' in coordinator_prompt(**context)
+
+
+def test_provider_exact_empty_sets_do_not_imply_launch_acceptance(draft):
+    raw = report(draft, "accept_draft")
+    receipts = [receipt(draft, kind=kind, status="NA", identifier="r_"+kind) for kind in CHECK_KINDS]
+    for item in receipts:
+        bind(raw, item)
+    critic = verify(raw, draft, receipts)
+    ctx = {"draft": draft, "critic": critic, "stage": "private_draft", "round_number": 1, "receipts": receipts}
+    schema = output_schema("coordinator", ctx)
+    assert schema["properties"]["correction_ids"]["const"] == []
+    assert schema["properties"]["remaining_checks"]["const"] == []
+    final = verify_decision(decision(draft, critic), draft, critic, receipts)
+    assert final["full_f1_status"] == final["launch_status"] == "UNVERIFIED"
+
+
 def test_private_draft_acceptance_preserves_separate_real_world_gates(draft):
     critic = report(draft, "accept_draft")
     evidence = receipt(draft)

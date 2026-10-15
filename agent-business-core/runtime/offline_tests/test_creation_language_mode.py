@@ -113,7 +113,7 @@ def test_native_guide_keeps_full_text_and_honest_unverified_receipt(paused, monk
     prepared = {"pageData": {"planningBrief": {}}, "siteData": {}, "instructions": "Synthetic native instructions",
                 "instructionHash": "b" * 64}
     context = native.context(value, 1, receipts, prepared)
-    assert "language" not in native.output_schema("critic", context)["$defs"]["Finding"]["properties"]["area"]["enum"]
+    assert "language" not in native.output_schema("critic", context)["$defs"]["BusinessFinding"]["properties"]["area"]["enum"]
     first_hash = native_adapter.instruction_hash("creator", prepared)
     monkeypatch.setattr(paused, "creation_language_review_enabled", True)
     assert first_hash != native_adapter.instruction_hash("creator", prepared)

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Frozen73658777948da00741f9e54cd78ca9efa15cb3e6 additionally verified on a new isolated restricted PostgreSQL database. Root then adopted the same source in the existing ordinary QA clone after idle, full backup and84table equality. Initial missing studio_dependency_missing preflight and attempted-start failure retained; canonical npm ci --prefix content-studio installed5locked packages, no tracked manifests changed, preflight PASS before successful serving. Original0032 counts preserved. Real UI Job4 is running, not yet acceptance.",
+  "checks": [
+    {
+      "command": "pytest tests/test_discovery_deadlines_pg.py -q",
+      "result": "PASS",
+      "evidence": "8PASS32.88s; isolated database, provider0. Actual persisted900s claim/heartbeat, unchanged DEFAULT360s, reserves refuse before paid reservation including quota time, six-attempt existing bound and source/instruction snapshot refusal. Original0032 counts unchanged."
+    },
+    {
+      "command": "measured-adoption prepare/check/verify; normal Chrome UI send; read-only job monitor",
+      "result": "PASS",
+      "evidence": "Same84tables preserved and full private backup, schema0041, one allowed actor, admin false, channels false, quotas36/34/3 unchanged. Actual source7365877 API child6992 on loopback18871. New Job75ddc706-89ac-49be-885b-f758dcb840f5 sequence4/base1 has persisted900s deadline; no report approval/site claim.3separate diagnostic calls conservatively accounted outside DB attempts."
+    }
+  ],
+  "eventId": "99966479-4b2f-4562-a171-675dd8bbc94d",
+  "sequence": 4,
+  "at": "2026-10-15T14:17:14.281Z"
+}

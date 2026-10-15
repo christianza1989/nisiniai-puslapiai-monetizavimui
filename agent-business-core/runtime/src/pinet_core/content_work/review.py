@@ -142,7 +142,7 @@ def coordinator(value, *, output, critic_value, round_number, receipts):
     try:
         report = shared.CriticReview.model_validate(critic(critic_value, output=output,
             round_number=round_number, receipts=receipts))
-        decision = shared.CoordinatorDecision.model_validate(value)
+        decision = shared.CoordinatorDecision.model_validate(shared.coordinator_payload(value, report))
         if (decision.draft_sha256 != report.draft_sha256 or decision.critic_sha256 != shared.critic_sha256(report)
                 or decision.stage != "content" or decision.round_number != round_number
                 or decision.decision != report.verdict
@@ -191,12 +191,10 @@ def output_schema(role, value):
         refs.update(minItems=1, maxItems=1)
         refs["items"]["enum"] = [receipt["id"] for receipt in value["receipts"]]
     else:
-        schema = shared.model_output_schema("coordinator")
+        schema = shared.coordinator_provider_schema()
         schema["properties"]["critic_sha256"]["const"] = value["critic_sha256"]
         schema["properties"]["decision"]["const"] = value["critic"]["verdict"]
         schema["properties"]["next_actions"]["items"]["enum"] = shared.coordinator_actions(value["critic"])
-        for key, expected in shared.coordinator_sets(value["critic"]).items():
-            schema["properties"][key]["const"] = expected
     for key in ("draft_sha256", "stage", "round_number"):
         schema["properties"][key]["const"] = value[key]
     return schema

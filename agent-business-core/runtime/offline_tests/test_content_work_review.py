@@ -152,13 +152,14 @@ def test_native_provider_exact_sets_keep_required_repairs_and_known_check_status
     ctx = review.context(candidate, 1, receipts, prepared, report)
     schema = review.output_schema("coordinator", ctx)
     value = coordinator(candidate, report)
-    value["correction_ids"] = schema["properties"]["correction_ids"]["const"]
-    value["remaining_checks"] = schema["properties"]["remaining_checks"]["const"]
-    assert value["correction_ids"] == (["f_1"] if verdict == "revise" else [])
-    assert "language_quality" not in value["remaining_checks"] and len(value["remaining_checks"]) == 8
-    assert review.coordinator(value, output=candidate, critic_value=report, round_number=1,
-                              receipts=receipts)["decision"] == verdict
-    value["remaining_checks"].append("language_quality")
+    value.pop("correction_ids")
+    value.pop("remaining_checks")
+    value["schema_version"] = schema["properties"]["schema_version"]["const"]
+    value["next_actions"] = ctx["allowed_next_actions"][:5]
+    restored = review.coordinator(value, output=candidate, critic_value=report, round_number=1, receipts=receipts)
+    assert restored["decision"] == verdict and restored["correction_ids"] == (["f_1"] if verdict == "revise" else [])
+    assert "language_quality" not in restored["remaining_checks"] and len(restored["remaining_checks"]) == 8
+    value["remaining_checks"] = ["language_quality"]
     with pytest.raises(RunnerError, match="review_invalid"):
         review.coordinator(value, output=candidate, critic_value=report, round_number=1, receipts=receipts)
     assert "verified_coordinator_sets" in ctx
@@ -174,7 +175,7 @@ def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding
     prepared = {"pageData": {"planningBrief": {"head_query": "Kaip pasirinkti užduotį?"}}, "siteData": {}}
     ctx = review.context(candidate, 1, receipts, prepared, report if role == "coordinator" else None)
     schema = review.output_schema(role, ctx)
-    expected = model_output_schema(role)
+    expected = model_output_schema(role) if role == "critic" else review.shared.coordinator_provider_schema()
     if role == "critic":
         from pinet_core.creation import language_mode
         language_mode.constrain_findings(expected, "Finding")
@@ -190,9 +191,6 @@ def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding
         expected["properties"]["critic_sha256"]["const"] = canonical_sha256(report)
         expected["properties"]["decision"]["const"] = "revise"
         expected["properties"]["next_actions"]["items"]["enum"] = ctx["allowed_next_actions"]
-        expected["properties"]["correction_ids"]["const"] = ["f_1"]
-        expected["properties"]["remaining_checks"]["const"] = [
-            check["kind"] for check in report["checks"] if check["status"] in ("FAIL", "UNVERIFIED")]
     for key in ("draft_sha256", "stage", "round_number"):
         expected["properties"][key]["const"] = ctx[key]
     assert schema == expected and schema["properties"]["summary"]["maxLength"] == 360

@@ -271,7 +271,7 @@ def normalize_critic(value, *, draft, expected_stage, expected_round, receipts=(
 def normalize_coordinator(value, *, draft, critic, expected_stage, expected_round, receipts=()):
     try:
         review = _normalize_critic(critic, draft, expected_stage, expected_round, receipts)
-        decision = CoordinatorDecision.model_validate(value)
+        decision = CoordinatorDecision.model_validate(coordinator_payload(value, review))
         if (decision.draft_sha256 != review.draft_sha256 or decision.stage != review.stage
                 or decision.round_number != review.round_number
                 or decision.critic_sha256 != canonical_sha256(review.model_dump(mode="json"))):
@@ -356,11 +356,12 @@ kitame tikrink pataisas ir galutinį variantą. Nauji tikri trūkumai leidžiami
 """
 
 COORDINATOR_SET_DIRECTIVE = """verified_coordinator_sets pateikia tikslius correction_ids ir remaining_checks sąrašus pagal patikrintą
-kritiko išvadą. Pakartok juos nurodyta tvarka; nepridėk ir nepašalink reikšmių. Privalomas teksto
-radinys lieka correction_ids net kai ribota automatinė tos rūšies patikra turi PASS kvitą.
+kritiko išvadą. Šiuos mechaninius sąrašus atkurs serveris; jų negrąžink modelio išvestyje.
+Grąžink tik schemoje nurodytus laukus. Privalomas teksto radinys liks correction_ids net kai ribota
+automatinė tos rūšies patikra turi PASS kvitą. Sprendimo tekstas ir next_actions turi išsaugoti pataisą.
 """
 
-COORDINATOR_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,
+COORDINATOR_BASE_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,
 jo kritiko išvadą ir tos versijos stebėjimų kvitus pateik trumpą klientui suprantamą sprendimą lietuviškai.
 Nerašyk vidinės minčių eigos ir nepratęsk tariamų derybų. Paaiškink, kas priimta, ką reikia pataisyti ir ką
 tikrinti toliau. Nenaudok įrankių, nekurk naujų įrodymų, neišgalvok kritiko pritarimo ir neslėpk nesutarimo.
@@ -378,7 +379,11 @@ Juodraščio kontekstas gali būti dalinis: automatinės kalbos patikros atmesti
 jo nelaikyk originaliu tekstu, necituok ir neatkurk atmestų sakinių. Kontrolinis kodas išlieka originalo.
 summary iki 360 simbolių: glaustai paaiškink sprendimą, nekartodamas kritiko teksto. Visus privalomų
 pataisų ID ir likusias patikras išsaugok atskiruose laukuose; next_actions tekstų netrumpink ir neperrašyk.
-""" + COORDINATOR_SET_DIRECTIVE
+"""
+COORDINATOR_POLICY = COORDINATOR_BASE_POLICY.replace(
+    "Visus privalomų\npataisų ID ir likusias patikras išsaugok atskiruose laukuose; ",
+    "Pataisų ID ir likusias\npatikras tiksliuose laukuose išsaugos serveris; ",
+) + COORDINATOR_SET_DIRECTIVE
 
 
 def coordinator_actions(verified_critic):
@@ -407,6 +412,36 @@ def coordinator_sets(verified_critic):
     review = CriticReview.model_validate(verified_critic)
     return {"correction_ids": [finding.id for finding in review.findings if finding.severity != "suggestion"],
             "remaining_checks": [check.kind for check in review.checks if check.status in ("FAIL", "UNVERIFIED")]}
+
+
+COORDINATOR_PROSE_VERSION = "creation.coordinator-prose-output.v2"
+
+
+def coordinator_provider_schema():
+    """Project only derived arrays out of the maintained stored contract; no array consts."""
+    schema = model_output_schema("coordinator")
+    for field in ("correction_ids", "remaining_checks"):
+        del schema["properties"][field]
+        schema["required"].remove(field)
+    schema["properties"]["schema_version"]["const"] = COORDINATOR_PROSE_VERSION
+    return schema
+
+
+def coordinator_payload(value, verified_critic):
+    """Restore trusted mechanical fields only for the exact private provider envelope.
+
+    Legacy full results still go through the unchanged strict checks. A compact
+    result cannot supply replacement arrays, status evidence or extra fields.
+    """
+    if not isinstance(value, dict) or value.get("schema_version") != COORDINATOR_PROSE_VERSION:
+        return value
+    if set(value) != set(CoordinatorDecision.model_fields) - {"correction_ids", "remaining_checks"}:
+        raise ValueError("Exact coordinator prose envelope required")
+    restored = CoordinatorDecision.model_validate(
+        {**value, "schema_version": "creation.coordinator.v1", **coordinator_sets(verified_critic)}).model_dump(mode="json")
+    if any(action not in coordinator_actions(verified_critic) for action in restored["next_actions"]):
+        raise ValueError("Coordinator prose must select exact admitted actions")
+    return restored
 
 
 def role_instruction_hash(role):
@@ -518,8 +553,10 @@ def model_output_schema(role):
 
 def output_schema(role, context):
     """Constrain provider references and hashes; authoritative post-check stays strict."""
+    if role not in {"critic", "coordinator"}:
+        raise RunnerError("review_invalid")
     bound = _prompt_context(context["draft"], context["stage"], context["round_number"], context["receipts"])
-    schema = BusinessCriticOutput.model_json_schema() if role == "critic" else model_output_schema(role)
+    schema = BusinessCriticOutput.model_json_schema() if role == "critic" else coordinator_provider_schema()
     if role == "critic":
         language_mode.constrain_findings(schema, "BusinessFinding")
         finding = schema["$defs"]["BusinessFinding"]["properties"]
@@ -530,8 +567,6 @@ def output_schema(role, context):
         schema["properties"]["critic_sha256"]["const"] = critic_sha256(critic)
         schema["properties"]["decision"]["const"] = critic.verdict
         schema["properties"]["next_actions"]["items"]["enum"] = coordinator_actions(critic)
-        for key, expected in coordinator_sets(critic).items():
-            schema["properties"][key]["const"] = expected
     for key in ("draft_sha256", "stage", "round_number"):
         schema["properties"][key]["const"] = bound[key]
     return schema

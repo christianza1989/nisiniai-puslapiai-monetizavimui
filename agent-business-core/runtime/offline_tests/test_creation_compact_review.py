@@ -137,9 +137,10 @@ def test_business_wire_and_original_guide_schemas_preserve_explicit_coordinator_
     }
     for role, (policy_hash, schema_hash) in originals.items():
         if role == "coordinator":
-            historical = review.COORDINATOR_POLICY.removesuffix(review.COORDINATOR_SET_DIRECTIVE)
+            historical = review.COORDINATOR_BASE_POLICY
             assert hashlib.sha256(historical.encode("utf-8")).hexdigest() == policy_hash
             assert review.role_instruction_hash(role) != policy_hash
+            assert "patikras išsaugok atskiruose laukuose" not in review.COORDINATOR_POLICY
         else:
             assert review.role_instruction_hash(role) == policy_hash
         assert hashlib.sha256(json.dumps(review.model_output_schema(role), sort_keys=True).encode()).hexdigest() == schema_hash

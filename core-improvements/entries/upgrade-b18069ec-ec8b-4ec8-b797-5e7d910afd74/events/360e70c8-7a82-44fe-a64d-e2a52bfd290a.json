@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Supersedes the unsupported array-const provider approach. Actual invalid_json_schema FAIL and conservative diagnostic accounting retained. Narrow prose hydration passed offline review and independent read-only scrutiny; original full legacy extra-list response still rejects. Provider/UI proof for the new format remains pending.",
+  "checks": [
+    {
+      "command": "pytest five existing creation/content review/patch/controller offline modules -q",
+      "result": "PASS",
+      "evidence": "245PASS7SKIP15.91s. Provider-only prose projection restores only validated critic reference sets, rejects extra arrays/fields/wrong hashes/verdict/actions/launch. Existing public models and strict legacy path preserved."
+    },
+    {
+      "command": "pytest test_creation_review.py -k avoids_rejected_composite_constants; pytest test_creation_compact_review.py -k original_guide_schemas; scoped Ruff; git diff --check",
+      "result": "PASS",
+      "evidence": "1PASS5.20s/78deselected for primitive-only provider consts, plus1PASS1.58s/48deselected for preserved historical base/critic/model schema fingerprints and corrected prose-policy wording; scoped Ruff/diff clean. Independent authorized helper read both hydrators and found no approval/action/hash bypass; its nonblocking prompt ambiguity was corrected. No provider/adoption acceptance inferred."
+    }
+  ],
+  "eventId": "360e70c8-7a82-44fe-a64d-e2a52bfd290a",
+  "sequence": 6,
+  "at": "2026-10-15T15:14:45.692Z"
+}

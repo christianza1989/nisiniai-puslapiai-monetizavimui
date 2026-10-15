@@ -140,7 +140,7 @@ async def advance(creation_id):
         # Only a trusted, exact-case existing artifact receipt can enter this
         # path. No media inbox means no provider and no change to GUIDE policy.
         # Never mutate media while any GUIDE prepare/apply can be in flight.
-        attached = await media.advance(tx, session, creation)
+        attached = await media.advance(tx, session, creation, proof)
         if attached:
             return observation(identity, "media_preparation", "updated",
                                page_id=attached["page_id"], total=len(pages))

@@ -92,7 +92,103 @@ def test_symlink_inbox_cannot_import_a_foreign_receipt(inbox, tmp_path):
 async def test_absent_inbox_never_imports_or_dispatches_provider(inbox, monkeypatch):
     root, cid, _ = inbox
     monkeypatch.setattr(media.studio, "configuration", lambda: (None, None, root, {}))
-    assert await media.advance(object(), object(), SimpleNamespace(id=cid, current_revision=1)) is None
+    assert await media.advance(object(), object(), SimpleNamespace(id=cid, current_revision=1), {}) is None
+
+
+@pytest.mark.parametrize("changed", [False, True])
+async def test_real_strict_inbox_delegates_same_owner_and_original_fences_once(inbox, monkeypatch, changed):
+    from pinet_core.creation import media as attachment
+
+    root, cid, target = inbox
+    request = {"accepted_revision": 1, "candidate_sha256": "a" * 64, "canonical_host": "media.example.test",
+        "page_id": "page-" + "b" * 24, "expected_site_sha256": "c" * 64,
+        "expected_revision_sha256": "d" * 64, "expected_planning_sha256": "e" * 64,
+        "source_name": "existing.png", "source_sha256": "f" * 64, "mime": "image/png",
+        "alt": "Tikras bandymo failas", "rights": "Izoliuotas sintetinis bandymas"}
+    save(target, request)
+    before = target.read_bytes()
+    tx, session = object(), object()
+    calls = []
+
+    async def attach(actual_tx, actual_session, actual_id, value):
+        assert actual_tx is tx and actual_session is session and actual_id == cid
+        assert isinstance(value, attachment.MediaAttachment)
+        assert all(getattr(value, key) == expected for key, expected in request.items())
+        calls.append(value)
+        return {"attachment": {"changed": changed, "requestHash": "1" * 64, "receiptSha256": "2" * 64}}
+
+    monkeypatch.setattr(media.studio, "configuration", lambda: (None, None, root, {}))
+    monkeypatch.setattr(attachment, "attach", attach)
+    creation = SimpleNamespace(id=cid, current_revision=1)
+    proof = {key: request[key] for key in ("accepted_revision", "candidate_sha256", "canonical_host")}
+    result = await media.advance(tx, session, creation, proof)
+    assert result == ({"page_id": request["page_id"]} if changed else None)
+    assert len(calls) == 1 and target.read_bytes() == before
+    assert len(list((target.parent / "completed").glob("*.json"))) == 1
+    # A later legitimate GUIDE write changes target revision. The completed
+    # operation must not call the strict attachment primitive a second time.
+    assert await media.advance(tx, session, creation, proof) is None
+    assert len(calls) == 1
+
+    ack = next((target.parent / "completed").glob("*.json"))
+    saved = ack.read_bytes()
+    corrupted = json.loads(saved)
+    corrupted["candidateSha256"] = "9" * 64
+    ack.write_text(json.dumps(corrupted), encoding="utf-8")
+    with pytest.raises(ControlError, match="site_build_media_ack_invalid"):
+        await media.advance(tx, session, creation, proof)
+    assert len(calls) == 1
+
+
+async def test_replaced_next_remains_pending_and_foreign_proof_cannot_use_old_ack(inbox, monkeypatch):
+    from pinet_core.creation import media as attachment
+
+    root, cid, target = inbox
+    request = {"accepted_revision": 1, "candidate_sha256": "a" * 64, "canonical_host": "media.example.test",
+        "page_id": "page-" + "b" * 24, "expected_site_sha256": "c" * 64,
+        "expected_revision_sha256": "d" * 64, "expected_planning_sha256": "e" * 64,
+        "source_name": "existing.png", "source_sha256": "f" * 64, "mime": "image/png",
+        "alt": "Pirmasis vaizdas", "rights": "Sintetinis testas"}
+    save(target, request)
+    creation = SimpleNamespace(id=cid, current_revision=1)
+    proof = {key: request[key] for key in ("accepted_revision", "candidate_sha256", "canonical_host")}
+    calls = []
+
+    async def attach(*args):
+        calls.append(args[-1].alt)
+        if len(calls) == 1:
+            save(target, {**request, "alt": "Antrasis vaizdas"})
+        return {"attachment": {"changed": True, "requestHash": "1" * 64, "receiptSha256": "2" * 64}}
+
+    monkeypatch.setattr(media.studio, "configuration", lambda: (None, None, root, {}))
+    monkeypatch.setattr(attachment, "attach", attach)
+    await media.advance(object(), object(), creation, proof)
+    replacement = target.read_bytes()
+    assert calls == ["Pirmasis vaizdas"]
+    await media.advance(object(), object(), creation, proof)
+    assert calls == ["Pirmasis vaizdas", "Antrasis vaizdas"]
+    assert target.read_bytes() == replacement
+    assert len(list((target.parent / "completed").glob("*.json"))) == 2
+    with pytest.raises(ControlError, match="media_context_stale"):
+        await media.advance(object(), object(), creation, {**proof, "candidate_sha256": "9" * 64})
+    assert len(calls) == 2
+
+
+@pytest.mark.parametrize("extra", [{"source_path": "C:/foreign.png"}, {"source_name": "../../foreign.png"},
+                                  {"accepted_revision": True}])
+async def test_invalid_attachment_does_not_reach_bridge(inbox, monkeypatch, extra):
+    from pinet_core.creation import media as attachment
+
+    root, cid, target = inbox
+    save(target, extra)
+
+    async def forbidden(*_):
+        pytest.fail("Invalid receipt must not dispatch the bridge")
+
+    monkeypatch.setattr(media.studio, "configuration", lambda: (None, None, root, {}))
+    monkeypatch.setattr(attachment, "attach", forbidden)
+    with pytest.raises(ControlError, match="site_build_media_inbox_invalid"):
+        await media.advance(object(), object(), SimpleNamespace(id=cid, current_revision=1), {})
 
 
 @pytest.mark.parametrize("state", ["updated", "blocked"])

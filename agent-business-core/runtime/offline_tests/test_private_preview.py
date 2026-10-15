@@ -324,6 +324,9 @@ def test_additive_schema_preserves_history_and_restricts_native_writes(monkeypat
     assert sql.count("DEFERRABLE INITIALLY DEFERRED") == 2
     assert not any(value.lstrip().startswith(("UPDATE ", "DELETE ", "INSERT INTO ")) for value in statements)
     assert "verified_at IS NOT NULL" in sql and "m.role='owner'" in sql and "s.revoked_at IS NULL" in sql
+    # Canonical0012 grants runtime INSERT/SELECT, not UPDATE, on owner graph tables.
+    # PostgreSQL row locking would require UPDATE and break every ordinary admission.
+    assert "FOR SHARE OF m,p" not in sql
     assert "c.canonical_host IS NOT NULL" in sql and "c.active_job_id IS NOT NULL" in sql
     assert "candidate_sha256" in sql and "coordinator_event_id" in sql and "NEW.run_id<>b.run_id" in sql
     # A retained binding blocks destructive rollback.

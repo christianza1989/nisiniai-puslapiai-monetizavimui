@@ -89,15 +89,13 @@ def statements():
             AND NEW.intake->>'deployment'='not-performed',false) THEN
             RAISE EXCEPTION 'exact private native receipt required' USING ERRCODE='23514';END IF;
         END IF;
-        -- Hold actor/owner rows through this commit, including a concurrent revocation.
+        -- Hold session/user/account rows through commit; canonical grants permit their UPDATE.
         PERFORM 1 FROM public.control_sessions s JOIN public.control_users u
           ON u.id=s.user_id AND u.environment_id=s.environment_id
           JOIN public.control_customer_accounts a ON a.user_id=u.id AND a.environment_id=u.environment_id
           WHERE s.id=b.session_id AND s.user_id=b.user_id AND s.environment_id=b.environment_id FOR SHARE OF s,u,a;
-        PERFORM 1 FROM public.control_memberships m JOIN public.control_portfolios p
-          ON p.organization_id=m.organization_id AND p.environment_id=m.environment_id
-          WHERE m.user_id=b.user_id AND m.organization_id=b.organization_id AND m.environment_id=b.environment_id
-          AND p.id=b.portfolio_id FOR SHARE OF m,p;
+        -- The owner graph is INSERT/SELECT-only to runtime; observe it in the deferred
+        -- fence below without requiring a new UPDATE grant or a definer bypass.
         IF b.lease_until<=clock_timestamp() OR b.lease_until>clock_timestamp()+INTERVAL '100 seconds'
           OR b.user_id IS DISTINCT FROM current_setting('pinet.control_user',true)
           OR b.environment_id IS DISTINCT FROM current_setting('pinet.environment',true)

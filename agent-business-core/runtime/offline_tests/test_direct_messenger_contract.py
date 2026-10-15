@@ -27,7 +27,7 @@ def sample():
         "reply_to_event_id": None, "content": text, "content_sha256": hashlib.sha256(text.encode()).hexdigest(),
         "source_revision": "b" * 40, "created_at": "2026-10-16T00:00:01+03:00"}
     turn = {"task_id": task, "chat_id": chat_id, "mode": "consultant", "sequence": 1, "idempotency_key": str(uuid4()),
-        "status": "succeeded", "failure_code": None, "call_limit": 1,
+        "status": "succeeded", "can_cancel": False, "failure_code": None, "call_limit": 1,
         "usage": {"reserved_calls": 1, "settled_calls": 1, "usage_complete": True,
             "input_tokens": 100, "output_tokens": 20, "cost_status": "UNVERIFIED"}, "preview": None,
         "source_revision": "b" * 40, "created_at": "2026-10-16T00:00:00+03:00", "updated_at": "2026-10-16T00:00:01+03:00"}
@@ -86,6 +86,26 @@ def test_private_creation_consultant_has_workspace_scope_without_a_fake_business
     assert set(value["chat"]["execution_scope"]).isdisjoint({"business_id", "grant_id"})
     assert value["turns"][0]["call_limit"] == 1 and value["turns"][0]["usage"]["reserved_calls"] == 1
     assert value["chat"]["tools"] == [] and not value["chat"]["external_actions"]
+
+
+def test_discovery_is_an_exact_owned_workspace_anchor_not_a_native_business_downgrade():
+    value = sample()
+    value["chat"]["anchor"]["kind"] = "discovery"
+    assert wire().DirectHistory.model_validate(value).chat.execution_scope.anchor.kind == "discovery"
+    value["chat"]["execution_scope"] = copy.deepcopy(value["chat"]["execution_scope"])
+    value["chat"]["execution_scope"]["anchor"]["selection_id"] = str(uuid4())
+    with pytest.raises(ValidationError):
+        wire().DirectHistory.model_validate(value)
+
+
+def test_cancel_capability_is_explicit_server_projection_and_cannot_claim_terminal_effect():
+    turn = sample()["turns"][0]
+    assert wire().DirectTurn.model_validate(turn).can_cancel is False
+    turn["can_cancel"] = True
+    with pytest.raises(ValidationError):
+        wire().DirectTurn.model_validate(turn)
+    turn["status"] = "running"
+    assert wire().DirectTurn.model_validate(turn).can_cancel is True
 
 
 @pytest.mark.parametrize("field", ["recipient", "chat_id", "mode", "source_revision", "model", "tools", "business_id", "execution_scope"])

@@ -47,7 +47,7 @@ DirectRecipient = Annotated[DirectConsultant | DirectSavedAgent, Field(discrimin
 
 
 class DirectWorkspaceAnchor(Strict):
-    kind: Literal["portfolio", "creation"]
+    kind: Literal["portfolio", "creation", "discovery"]
     selection_id: UUID
 
 
@@ -244,6 +244,7 @@ class DirectTurn(Strict):
     sequence: int = Field(strict=True, ge=1, le=20)
     idempotency_key: UUID
     status: Literal["queued", "running", "succeeded", "failed", "cancelled"]
+    can_cancel: bool = Field(strict=True)
     failure_code: str | None = Field(pattern=r"^[a-z_]{1,80}$")
     call_limit: Literal[1, 3]
     usage: DirectUsage
@@ -256,6 +257,7 @@ class DirectTurn(Strict):
     def exact_execution_mode(self):
         native = self.mode == "agent_preview"
         if (self.call_limit != (3 if native else 1) or self.usage.reserved_calls > self.call_limit
+                or self.can_cancel and self.status not in {"queued", "running"}
                 or not native and self.preview is not None
                 or self.status == "succeeded" and (self.usage.reserved_calls == 0
                     or self.usage.settled_calls != self.usage.reserved_calls)

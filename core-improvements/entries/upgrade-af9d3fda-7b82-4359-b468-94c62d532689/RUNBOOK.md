@@ -21,7 +21,7 @@ optional reply. It cannot override recipient, execution scope, model or tools.
 
 `DirectRecipient` distinguishes source-fixed consultant identity/capability/hash
 from saved Agent/Config revision/hash. `DirectExecutionScope` independently
-distinguishes an owned portfolio/creation workspace from a real business/grant.
+distinguishes an owned portfolio/creation/discovery workspace from a real business/grant.
 Saved-agent preview cannot use workspace-only execution. The server derives and
 rechecks these bindings; schemas and directory metadata never supply authority.
 
@@ -31,6 +31,8 @@ preview reserves at most one text plus two existing Quality calls, preserves
 current transcript/config evidence and remains draft/not admitted/not activated.
 Until native preview is implemented and explicitly admitted, its composer remains
 blocked. DTO support is not admission or a promise of an operating channel.
+Every turn also carries server-projected `can_cancel`; terminal Tasks cannot claim
+that capability. The frontend must not infer current authorization from status alone.
 
 History is server-held and chat-bound, including trusted owner/consultant/native
 author provenance, message SHA, exact current configuration and native conversation

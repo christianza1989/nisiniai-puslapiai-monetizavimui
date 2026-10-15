@@ -1,0 +1,92 @@
+{
+  "version": "black-suit-v1",
+  "generatedAt": "2026-10-15",
+  "tool": "built-in image_gen",
+  "runtimeRolesActivated": false,
+  "assets": [
+    {
+      "file": "coordinator.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1517844,
+      "sha256": "df6d229f82a18b6cfc5731bdd7ea1fd2e01d21bf1171754946ef9666205b9bc7",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "designer.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1458639,
+      "sha256": "a65e54af5bc2e4fb397e2eb94e47420173d0df284435f147de5468c7ee44c659",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "finance.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1518138,
+      "sha256": "6fb4ea9ed702f3c93fec9b66cc863a5945a7d3526f9244e6a99ed3be22316bf4",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "marketing.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1487069,
+      "sha256": "675e69c85a4dcd3c3e8a64e1664dd80907e49e8fb928caa36f3f0e5f3c7fe316",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "researcher.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1645273,
+      "sha256": "25582852f1a67a01a3fa577e5281943d5f9e9b60802e3c904cb56ecefc007f26",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "sales.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1600973,
+      "sha256": "7a4a4dc8ec11ca27d0cad4cd8d0dd14ecaf05ffc1c8b0a85cf2c0d1062e74317",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "seo.png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1565874,
+      "sha256": "b2efa480b370dbc2fefef13adc66905fbfccb58acf788e6f79724faea96033b5",
+      "alpha": true,
+      "alphaRange": [
+        0,
+        255
+      ]
+    }
+  ]
+}

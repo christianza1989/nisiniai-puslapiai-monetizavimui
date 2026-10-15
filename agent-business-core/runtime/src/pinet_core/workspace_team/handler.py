@@ -195,6 +195,8 @@ class TeamHandler:
                 adviser_packet = {"business": public["business"], "owner_goal": public["message"],
                     "assignment": plan["assignment"], "coordinator_limitations": plan["limitations"],
                     "reply": public["reply"], "roster": public["roster"], "scope": "internal_tools_disabled_consultation"}
+                if "website_workflow" in public:
+                    adviser_packet["website_workflow"] = public["website_workflow"]
                 adviser, adviser_attempt = await call("adviser", adviser_packet)
                 messages.append(await publish(context, adviser_attempt, "adviser", "answer", adapter.public_text(adviser)))
                 result, synthesis_attempt = await call("synthesis", {**public, "coordinator_plan": plan, "adviser_result": adviser})

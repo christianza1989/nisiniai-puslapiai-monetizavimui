@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Workspace coordinator and adviser cannot see the already-owned native website workflow and ask for information the platform has already stored.",
+  "category": "code",
+  "evidence": [
+    "Actual ordinary Chrome turn a0c3144b-47fd-4be2-8d7c-85362c5b7fce succeeded with three Sol High roles but all observed only registration metadata while the same owner has nine current native pages.",
+    "Canonical read-only content_completion already exposes exact accepted/site/revision-bound current workflow observations; reuse its projection without another content engine or review authority."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/site_context.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/service.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/handler.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_site_context.py",
+    "agent-business-core/runtime/tests/test_workspace_site_context_pg.py",
+    "agent-business-core/runtime/WORKSPACE_TEAM.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this additive read-only context projection; retained Task context hashes, histories, native budgets and approvals are preserved.",
+  "id": "upgrade-f486a4d9-3453-48ab-ac43-8f7b0fc0fe25",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "8f9dee2eb41a9e2f7a2a88e9afc4e8e53ff14e72",
+  "createdAt": "2026-10-15T06:04:23.143Z"
+}

@@ -1,0 +1,9 @@
+# Current native website observations in the maintained team chat
+
+Ordinary coordinator consultations include one bounded read-only `website_workflow` snapshot from the maintained `workspace_read.resolve` and `content_completion.projection`. A unique current owner registration, matching Creation/source/candidate/site/host, and unarchived Creation are required. Missing, ambiguous, stale or archived relationships are explicit unavailable observations, never an empty website. Pending revision state is retained.
+
+The snapshot keeps the observation time, accepted source, exact site and page hashes, total page count and deterministic bounded page metadata. Omitted pages, notes and blockers are counted; truncated strings are labelled. Its entire UTF-8 packet is bounded. It contains no page body, private filesystem path, bearer, approval capability or execution permission. Media presence and review flags retain their literal limited meaning. It is not a fresh inspection of text, sources or pixels.
+
+The same frozen snapshot reaches the plan, actual adviser and synthesis; there is no reread or extra provider call between phases. The canonical graph and frozen registration scalars are recollected after awaited reads, including unavailable-source fallback. Session/topic/Task authority and the database clock deadline are rechecked before freezing. Native agent scenarios and agent preparation keep their separate existing canonical snapshots. Old stored context and receipts are never rewritten.
+
+This increment addresses an actual local three-role consultation that asked for the nine already-stored pages because it saw registration metadata only. Source unit checks are recorded separately from restricted-PG acceptance and actual model/browser adoption; none of those stages implies editorial approval, Foundation or public launch.

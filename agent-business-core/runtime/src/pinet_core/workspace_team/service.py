@@ -427,6 +427,14 @@ async def context_for(tx, task):
         execution.current(plan.snapshot.execution_profile)
         context[CONTEXT_KEY] = header["plan_sha256"]
         context["_agent_episode_plan"] = plan.model_dump(mode="json")
+    elif turn.agent_creation_id is None:
+        from . import site_context
+        context["website_workflow"] = await site_context.context(tx, session, row)
+        # The read-only canonical subprocess/graph lookups await I/O. Recheck the
+        # original Session/topic/task authority before freezing any observation.
+        _, _, current_turn = await task_scope(tx, task)
+        if current_turn.deadline <= await tx.scalar(select(func.clock_timestamp())):
+            raise ControlError(403, "authorization_revoked")
     if turn.agent_creation_id is not None:
         from .preparation import SCOPE_KEY
         context[SCOPE_KEY] = tx.info["workspace_agent_scopes"][task.id]

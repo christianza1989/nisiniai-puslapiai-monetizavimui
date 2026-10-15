@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash,randomUUID} from 'node:crypto';
-import {mkdtemp,mkdir,readFile,writeFile,rm,symlink,unlink} from 'node:fs/promises';
+import {mkdtemp,mkdir,readFile,readdir,writeFile,rm,symlink,unlink} from 'node:fs/promises';
 import {spawn,spawnSync} from 'node:child_process';
 import path from 'node:path';
 import os from 'node:os';
@@ -11,6 +11,18 @@ import {IMAGE_POLICY} from '../src/image-pipeline.mjs';
 
 const digest=v=>createHash('sha256').update(stableV2(v)).digest('hex');
 const rawHash=v=>createHash('sha256').update(v).digest('hex');
+async function attachmentFixture(t) {
+  const f=await sandbox(t),s=f.status(),page=s.pages.find(p=>p.type==='guide');
+  const sharp=(await import('sharp')).default,sourcePath=path.join(f.revision,'media-inputs','attachment.png');
+  await mkdir(path.dirname(sourcePath));
+  const bytes=await sharp({create:{width:900,height:500,channels:3,background:'#7799aa'}}).png().toBuffer();
+  await writeFile(sourcePath,bytes);
+  const request={command:'attach-media',pageId:page.pageId,expectedSiteHash:s.expectedSiteHash,
+    expectedRevisionHash:page.revisionHash,expectedPlanningHash:page.planningHash,sourcePath,
+    expectedSourceSha256:rawHash(bytes),metadata:{mime:'image/png',alt:'Tik sintetinio bandymo iliustracija',
+      rights:'Originalus izoliuotas Node fixture',prompt:'Private exact synthetic image prompt'}};
+  return {...f,request,bytes};
+}
 const script=name=>path.resolve(import.meta.dirname,'../scripts/'+name+'.mjs');
 const modelUrl=new URL('../src/model.mjs',import.meta.url).href;
 const evidence=()=>Object.fromEntries(['usefulness','facts','sources','media','links','presentation'].map(k=>[k,
@@ -68,6 +80,133 @@ test('current page read reflects saved edits without mutation or private prompt/
   assert.notEqual(updated.pageDocument.revisionHash,page.revisionHash);
   assert.deepEqual(await readFile(f.file),after);
   assert.notEqual(f.call({command:'read-page',pageId:'foreign-page'}).status,0);
+});
+
+test('byte-bound attachment imports once, selects featured media and replays without writes or approval',async t=>{
+  const f=await attachmentFixture(t),first=f.ok(f.request),r=first.operation.result;
+  assert.equal(r.state,'attached');assert.equal(r.sourceSha256,f.request.expectedSourceSha256);
+  const site=await f.read(),p=site.pages.find(p=>p.id===f.request.pageId);
+  assert.equal(site.assets.length,4);assert.equal(p.media.length,4);
+  assert.equal(p.editorial.featuredImageId,r.assetId);assert.equal(p.approval,null);
+  assert.equal(r.generation,'not-performed');assert.equal(r.mediaVerification,'not-performed');
+  f.ok({command:'record-review',pageId:p.id,expectedSiteHash:f.status().expectedSiteHash,
+    review:{reviewer:'synthetic-only',revisionHash:r.appliedRevisionHash,evidence:evidence()}});
+  assert.equal(f.status().pages.find(x=>x.pageId===p.id).reviewCurrent,true);
+  const saved=await readFile(f.file),again=f.ok(f.request).operation.result;
+  assert.equal(again.changed,false);assert.equal(again.replayed,true);assert.equal(again.assetId,r.assetId);
+  assert.deepEqual(await readFile(f.file),saved);await f.unchanged();
+});
+
+test('a mismatching source digest is rejected before any asset or page write',async t=>{
+  const f=await attachmentFixture(t),before=await readFile(f.file);
+  const result=f.call({...f.request,expectedSourceSha256:'0'.repeat(64)});
+  assert.equal(result.status,1);assert.equal(result.value.code,'workflow_media_source_mismatch');
+  assert.deepEqual(await readFile(f.file),before);await f.unchanged();
+});
+
+test('an already imported exact family is attached without generating duplicate assets',async t=>{
+  const f=await attachmentFixture(t),r=f.ok({command:'import-media',expectedSiteHash:f.request.expectedSiteHash,
+    sourcePath:f.request.sourcePath,expectedSourceSha256:f.request.expectedSourceSha256,metadata:f.request.metadata}).operation.result;
+  const request={...f.request,expectedSiteHash:f.status().expectedSiteHash},before=await f.read();
+  const attached=f.ok(request).operation.result;
+  assert.ok(r.variants.some(v=>v.id===attached.assetId));
+  assert.deepEqual((await f.read()).assets,before.assets);await f.unchanged();
+});
+
+test('a first receipt for an already featured family preserves current review and page bytes',async t=>{
+  const f=await attachmentFixture(t),r=f.ok({command:'import-media',expectedSiteHash:f.request.expectedSiteHash,
+    sourcePath:f.request.sourcePath,metadata:f.request.metadata}).operation.result;
+  const page=(await f.read()).pages.find(p=>p.id===f.request.pageId);
+  f.amend(page.id,{media:[{id:r.assetId}],editorial:{...page.editorial,featuredImageId:r.assetId}});
+  let s=f.status(),p=s.pages.find(p=>p.pageId===page.id);
+  f.ok({command:'record-review',pageId:p.pageId,expectedSiteHash:s.expectedSiteHash,
+    review:{reviewer:'synthetic-only',revisionHash:p.revisionHash,evidence:evidence()}});
+  s=f.status();p=s.pages.find(p=>p.pageId===page.id);
+  const before=await readFile(f.file),request={...f.request,expectedSiteHash:s.expectedSiteHash,
+    expectedRevisionHash:p.revisionHash,expectedPlanningHash:p.planningHash};
+  assert.equal(f.ok(request).operation.result.changed,false);
+  assert.deepEqual(await readFile(f.file),before);assert.equal(f.status().pages.find(p=>p.pageId===page.id).reviewCurrent,true);
+  await f.unchanged();
+});
+
+test('an amendment failure retains imported receipt and resumes the same real family',async t=>{
+  const f=await attachmentFixture(t),input={...f.input,...f.request};
+  const workflow=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;
+  const context=new URL('../scripts/customer-content-context.mjs',import.meta.url).href;
+  const failure=f.mutate('const {loadCustomerContentContext}=await import('+JSON.stringify(context)+');'
+    +'const {attachMedia}=await import('+JSON.stringify(workflow)+');const input='+JSON.stringify(input)+';'
+    +'const context=await loadCustomerContentContext(input,{requirePage:true});'
+    +'context.model={...context.model,editPage:async()=>{throw Object.assign(Error("inert"),{code:"inert_amend_failure"});}};'
+    +'try{await attachMedia(context,input);throw Error("expected failure");}catch(e){console.log(JSON.stringify({code:e.code}));}');
+  assert.equal(failure.code,'inert_amend_failure');
+  const files=await readdir(path.join(f.revision,'media-attachments')),file=files.find(p=>p.endsWith('.json'));
+  const receipt=JSON.parse(await readFile(path.join(f.revision,'media-attachments',file),'utf8'));
+  assert.equal(receipt.state,'imported');assert.equal((await f.read()).assets.length,4);
+  const resumed=f.ok(f.request).operation.result;
+  assert.equal(resumed.assetId,receipt.assetId);assert.equal(resumed.changed,true);assert.equal(resumed.replayed,true);
+  assert.equal((await f.read()).assets.length,4);await f.unchanged();
+});
+
+test('a real model write between import and amend is fenced and leaves the imported family recoverable',async t=>{
+  const f=await attachmentFixture(t),input={...f.input,...f.request},before=await f.read();
+  const workflow=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;
+  const context=new URL('../scripts/customer-content-context.mjs',import.meta.url).href;
+  const failure=f.mutate('const {loadCustomerContentContext}=await import('+JSON.stringify(context)+');'
+    +'const {attachMedia}=await import('+JSON.stringify(workflow)+');const input='+JSON.stringify(input)+';'
+    +'const context=await loadCustomerContentContext(input,{requirePage:true}),real=context.model;'
+    +'context.model={...real,editPage:async(...args)=>{await real.editSite(siteId,{audience:"Changed inert context"});'
+    +'return real.editPage(...args);}};try{await attachMedia(context,input);throw Error("expected failure");}'
+    +'catch(e){console.log(JSON.stringify({code:e.code}));}');
+  assert.equal(failure.code,'writer_context_stale');
+  const after=await f.read();assert.equal(after.assets.length,4);
+  assert.deepEqual(after.pages,before.pages);
+  const file=(await readdir(path.join(f.revision,'media-attachments'))).find(p=>p.endsWith('.json'));
+  assert.equal(JSON.parse(await readFile(path.join(f.revision,'media-attachments',file),'utf8')).state,'imported');
+  assert.equal(f.call(f.request).value.code,'workflow_context_stale');
+  assert.equal((await f.read()).assets.length,4);await f.unchanged();
+});
+
+test('a concurrent write immediately after import is not adopted as the post-import context',async t=>{
+  const f=await attachmentFixture(t),input={...f.input,...f.request},before=await f.read();
+  const workflow=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;
+  const context=new URL('../scripts/customer-content-context.mjs',import.meta.url).href;
+  const failure=f.mutate('const {loadCustomerContentContext}=await import('+JSON.stringify(context)+');'
+    +'const {attachMedia}=await import('+JSON.stringify(workflow)+');const input='+JSON.stringify(input)+';'
+    +'const context=await loadCustomerContentContext(input,{requirePage:true}),real=context.model;'
+    +'context.model={...real,saveResponsiveAsset:async(...args)=>{const asset=await real.saveResponsiveAsset(...args);'
+    +'await real.editSite(siteId,{audience:"Concurrent change after import"});return asset;}};'
+    +'try{await attachMedia(context,input);throw Error("expected failure");}'
+    +'catch(e){console.log(JSON.stringify({code:e.code}));}');
+  assert.equal(failure.code,'workflow_context_stale');
+  const after=await f.read();assert.deepEqual(after.pages,before.pages);assert.equal(after.assets.length,4);
+  const file=(await readdir(path.join(f.revision,'media-attachments'))).find(p=>p.endsWith('.json'));
+  assert.equal(JSON.parse(await readFile(path.join(f.revision,'media-attachments',file),'utf8')).state,'imported');
+  assert.equal(f.call(f.request).value.code,'workflow_context_stale');assert.equal((await f.read()).assets.length,4);
+  await f.unchanged();
+});
+
+test('prepared ambiguity and post-attachment target edits fail closed without another import',async t=>{
+  const f=await attachmentFixture(t),first=f.ok(f.request).operation.result,original=await f.read();
+  const file=path.join(f.revision,'media-attachments',first.requestHash+'.json');
+  const receipt=JSON.parse(await readFile(file,'utf8'));
+  await writeFile(file,JSON.stringify({...receipt,state:'prepared'}));
+  assert.equal(f.call(f.request).value.code,'workflow_media_import_uncertain');
+  assert.deepEqual((await f.read()).assets,original.assets);
+  await writeFile(file,JSON.stringify(receipt));
+  f.amend(f.request.pageId,{title:'Pasikeitęs sintetinis klausimas'});
+  const before=await readFile(f.file);
+  assert.equal(f.call(f.request).value.code,'workflow_context_stale');
+  assert.deepEqual(await readFile(f.file),before);await f.unchanged();
+});
+
+test('receipt context changes and imported-family corruption cannot cause another import',async t=>{
+  const f=await attachmentFixture(t),r=f.ok(f.request).operation.result,before=await f.read();
+  assert.equal(f.call({...f.request,expectedRevisionHash:'a'.repeat(64)}).value.code,'workflow_media_receipt_conflict');
+  assert.equal(f.call({...f.request,body:[]}).value.code,'workflow_invalid_input');
+  const asset=before.assets.find(a=>a.id===r.assetId);
+  await writeFile(path.join(f.input.dataDir,'media',f.siteId,path.basename(asset.src)),Buffer.from('corrupt'));
+  assert.equal(f.call(f.request).value.code,'workflow_media_integrity');
+  assert.deepEqual((await f.read()).assets,before.assets);await f.unchanged();
 });
 
 test('operator resolves known internal links with exact fences without arbitrary body or approval',async t=>{
@@ -230,6 +369,13 @@ test('complete synthetic dependency batch uses canonical approval/release and pr
   assert.equal(receipt.state,'exported-not-deployed');assert.equal(release.release,'UNVERIFIED');assert.ok(!JSON.stringify(release).includes(f.dir));
   const directory=path.join(f.input.outputDir,'releases',f.siteId,receipt.releaseId);assert.equal((await verifyContentRelease(directory,validateV2Package)).state,'verified-export-not-deployed');
   const immutable=await readFile(path.join(directory,'content-package.json')),siteBefore=await f.read(),snapshot=siteBefore.pages[0].publishedRevision;
+  const current=f.status(),home=current.pages.find(p=>p.type==='home');
+  f.ok({command:'attach-media',pageId:home.pageId,expectedSiteHash:current.expectedSiteHash,
+    expectedRevisionHash:home.revisionHash,expectedPlanningHash:home.planningHash,sourcePath,
+    expectedSourceSha256:rawHash(await readFile(sourcePath)),metadata:{mime:'image/png',alt:'Sintetinė testinė schema',
+      rights:'Originalus izoliuoto Node fixture vaizdas'}});
+  assert.deepEqual((await f.read()).pages[0].publishedRevision,snapshot);
+  assert.deepEqual(await readFile(path.join(directory,'content-package.json')),immutable);
   f.amend(siteBefore.pages[0].id,{title:'Naujas dar neperžiūrėtas juodraštis'});assert.deepEqual((await f.read()).pages[0].publishedRevision,snapshot);assert.deepEqual(await readFile(path.join(directory,'content-package.json')),immutable);
   assert.equal(f.call({command:'release',expectedSiteHash:f.status().expectedSiteHash}).status,1);await f.unchanged();
 });

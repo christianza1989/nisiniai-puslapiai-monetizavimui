@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Native Creation/GUIDE cannot attach existing image bytes through a bounded runtime adapter, and repeated import lacks byte-bound recovery receipts.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_NATIVE_MEDIA_ATTACHMENT_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/media.py",
+    "content-studio/scripts/customer-content-workflow.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert the scoped connector commit; retain all original intake and per-case media receipts for explicit reconciliation.",
+  "id": "upgrade-0e38a8dc-d99e-43f4-b9b1-b0a3aec4f2db",
+  "branch": "codex/verslomatika-native-media-connector-20261015",
+  "baseSha": "9c618026bb7f57dadfbe77f4e93e30dbdbf92b8c",
+  "createdAt": "2026-10-15T02:09:31.908Z"
+}

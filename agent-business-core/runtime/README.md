@@ -289,7 +289,8 @@ stay the maintained per-Creation accepted-revision directories; no candidate cop
 SQL mutation, approval, source verification, deployment or agent/channel activation is implied.
 
 GET is read-only. Both methods return a status envelope; HTTP 200 with state `failed` is a
-retained failure. An existing pending UUID reconciles without dispatch; after its 90-second
+retained failure. Failed receipt `intake` binds SQL NULL through the PostgreSQL JSONB mapper;
+JSON literal null remains excluded by the strict storage constraint. An existing pending UUID reconciles without dispatch; after its 90-second
 lease expires, an explicit same-key retry may reclaim only the exact same current binding.
 Terminal UUIDs never execute again. A separate explicit UUID may retry a terminal failure;
 successful current intake rejects another import. Old revision/source/session bindings are

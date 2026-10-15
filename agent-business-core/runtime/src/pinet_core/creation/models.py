@@ -174,7 +174,8 @@ class PrivateIntakeReceipt(Owned, Base):
     run_id: Mapped[str] = mapped_column(String)
     state: Mapped[str] = mapped_column(String)
     failure_code: Mapped[str | None] = mapped_column(String, nullable=True)
-    intake: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    # Failed receipts require SQL NULL; JSON literal null must not satisfy that check.
+    intake: Mapped[dict | None] = mapped_column(JSONB(none_as_null=True), nullable=True)
     intake_sha256: Mapped[str] = mapped_column(String)
     __table_args__ = (UniqueConstraint("recovery_id"),
         ForeignKeyConstraint(["recovery_id", *BINDING[1:]],

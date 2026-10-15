@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/165",
+  "commit": "750012de14f6dd043f1c2bd06c53d7c2f9e7fdc4",
+  "note": "Draft PR165 created/attached, stacked on Root published wellness-resume bbd258e16fb1a1b41ec442eb848e662f82b0fb39. Functional source750012de14f6dd043f1c2bd06c53d7c2f9e7fdc4 from73658777948da00741f9e54cd78ca9efa15cb3e6. Subsequent b4d95389e5fa7fbd8ad75207886670f7de9af6b3 merges only existing coordination docs/event; all six owned source/rule/test files remain byte-identical to functional commit. Exact736-to750 and bbd-to-b4 committed upgrade checks PASS3shared0uncovered/errors. Paired handoff14:54Zmain808581d919d06cb4a2d151cc7f9ec1be1782aba2/publicec8a9c032fe926d1d9722802d8eb26fa8bd02937/companion1a26f289092cecadc5799de898e809dc1769498a PASS; exact-stage11files safetyPASS. Root was sent functional commit only; no main merge, helper provider call, DB/case/serving change or runtime adoption.",
+  "eventId": "edaa3f68-8596-4e8a-aceb-76ecb11dbb95",
+  "sequence": 4,
+  "at": "2026-10-15T14:57:25.651Z"
+}

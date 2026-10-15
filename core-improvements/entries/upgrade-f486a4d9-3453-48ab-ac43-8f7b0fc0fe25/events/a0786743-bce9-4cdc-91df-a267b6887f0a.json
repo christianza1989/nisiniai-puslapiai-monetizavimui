@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "S26 exact current-owner native website context accepted. Original dafd339 approval-meaning loss preserved and repaired without changing Foundation. Frozen b8 restrictedPG28PASS353.29s includes four new actual native workflow/Session/Registration/deadline cases, S25 readiness, existing ordinary team and maintained preparation/native episode paths. Final5309 approval-hash/prompt delta has26targetedPASS0.27s,146unique workspaceofflinePASS1.00s, Ruff and actual native three-role workflow1PASS18.70s. Read-only peer review completed. Actual local API5309/UI d841 then completed three real SolHigh roles with the same nine-page snapshot and explicit remaining gates; this is consultation/read acceptance, not editorial approval/calibration/launch.",
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_workspace_site_context_pg.py tests/test_team_runner_readiness_pg.py tests/test_workspace_team_pg.py <two maintained preparation selectors> <one maintained native episode selector>",
+      "result": "PASS",
+      "evidence": "Frozen b8a4a67971d79c316efc698b76c189021a099079:28PASS353.29s; private safe team-site-context-native.log SHA2567ef6f89872253ec48980eeea13e76d46ce0a558f1b08fdfab17920c08a9aa1b3. Restricted role/0041, provider0/original0032 preserved."
+    },
+    {
+      "command": "python -m pytest -q tests/test_workspace_site_context_pg.py::test_real_native_workflow_is_frozen_once_for_all_three_roles",
+      "result": "PASS",
+      "evidence": "Clean final5309c1d2d0178c5c727ae73909b90a8acd94f841:1PASS18.70s, private team-site-context-approved-hash-final.log SHA256c0e5ae4d8716c0801fbfaed17ea47171cf616cb9ab6b54e7697b42b0e82b599a. Final delta preserves exact approved revision hash; no extra provider."
+    },
+    {
+      "command": "python -m pytest -q offline_tests/test_workspace*.py offline_tests/test_team_runner_readiness.py tests/test_workspace_team.py; ruff check affected source/tests",
+      "result": "PASS",
+      "evidence": "146uniquePASS1.00s; targeted26PASS0.27s is a subset, not additive. Missing/current/stale approvals, exact proof pins, omitted counts, ownership/error fallback and same-snapshot phase propagation verified. Ruff PASS."
+    },
+    {
+      "command": "Actual ordinary Chrome UI3030 submission to immutable API18871 source5309; canonical owner history and restricted ledger observation",
+      "result": "PASS",
+      "evidence": "Three plan/adviser/synthesis attempts succeeded with gpt-6.1-sol/high;58960input/1781output tokens,676reasoning included, costunknown. Same snapshot SHA256e4ed896dd18701e0a7b2a521f6cd554928e19f642af58b8b2ebad2a8478a0ba8 in all phases,9included/0omitted pages, acceptedCreation f044/sitea9e53 exact. No body/source/pixel review or external action. Private browser native-agent-real-website-context-20261015.png."
+    }
+  ],
+  "eventId": "a0786743-bce9-4cdc-91df-a267b6887f0a",
+  "sequence": 3,
+  "at": "2026-10-15T06:28:48.453Z"
+}

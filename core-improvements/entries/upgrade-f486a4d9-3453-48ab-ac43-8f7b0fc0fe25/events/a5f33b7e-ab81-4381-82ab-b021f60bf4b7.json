@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Clarifies the preceding abbreviated test-selector label with the actual expanded commands; its original result is retained. S26 remains locally verified only. Final immutable serving source5309 and actual three-role nine-page snapshot were additionally asserted by the private serving-proof script. No provider calls during database/fixture QA or preparation, no actual editorial approval/calibration/activation, no main delivery claimed.",
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_workspace_site_context_pg.py tests/test_team_runner_readiness_pg.py tests/test_workspace_team_pg.py tests/test_workspace_agent_preparation_pg.py::test_preparation_saves_one_canonical_draft_and_exact_replay_never_redispatches tests/test_workspace_agent_preparation_pg.py::test_cancel_after_provider_preserves_usage_without_effect_or_fake_reply tests/test_workspace_agent_episode_pg.py::test_owner_scenario_native_worker_same_chat_and_exact_usage_once",
+      "result": "PASS",
+      "evidence": "Frozen b8a4a67971d79c316efc698b76c189021a099079;28PASS353.29s; private team-site-context-native.log SHA2567ef6f89872253ec48980eeea13e76d46ce0a558f1b08fdfab17920c08a9aa1b3."
+    },
+    {
+      "command": "python -m pytest -q tests/test_workspace_site_context_pg.py::test_real_native_workflow_is_frozen_once_for_all_three_roles",
+      "result": "PASS",
+      "evidence": "Final5309c1d2d0178c5c727ae73909b90a8acd94f841;1PASS18.70s after the additive approved-hash/prompt repair; private team-site-context-approved-hash-final.log SHA256c0e5ae4d8716c0801fbfaed17ea47171cf616cb9ab6b54e7697b42b0e82b599a."
+    },
+    {
+      "command": "PowerShell: $testPaths=@(Get-ChildItem -LiteralPath offline_tests -Filter 'test_workspace*.py' -File | ForEach-Object {$_.FullName}); python -m pytest -q $testPaths offline_tests/test_team_runner_readiness.py tests/test_workspace_team.py",
+      "result": "PASS",
+      "evidence": "Final source146uniquePASS1.00s; smaller26-case cohort is overlapping. Actual staged source safety and Ruff passed separately."
+    },
+    {
+      "command": "python artifacts/workspace-ui/site-context-serving-proof.private.py",
+      "result": "PASS",
+      "evidence": "Actual owner history, restricted ledger, immutable clean serving5309,3succeededSolHigh attempts with the same canonical9-page digest; original0032 and84pre-adoption tables preserved. All result/backup/session files remain private."
+    }
+  ],
+  "eventId": "a5f33b7e-ab81-4381-82ab-b021f60bf4b7",
+  "sequence": 4,
+  "at": "2026-10-15T06:33:02.133Z"
+}

@@ -52,7 +52,7 @@ async def prepare(c, monkeypatch, *, historical=False):
         canonical_host=completion["canonical_host"], page_id=home["page_id"], operation_id=str(uuid4()),
         expected_site_sha256=completion["site_context_sha256"], expected_revision_sha256=home["revision_sha256"],
         expected_planning_sha256=home["planning_sha256"],
-        patch={"body": body + [{"type": "paragraph", "content": [{"type": "text",
+        patch={"body": body + [{"type": "richParagraph", "content": [{"type": "text",
             "text": "Ši konkreti pataisa išsaugo privataus bandymo ribas ir nėra paslaugos patvirtinimas."}]}]})
     return accepted_request, auth, me, completion, request
 

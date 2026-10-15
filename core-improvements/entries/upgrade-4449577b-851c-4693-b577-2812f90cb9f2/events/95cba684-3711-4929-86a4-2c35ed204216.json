@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "note": "First actual frozen990 restricted-PG/native-Node cohort2PASS2FAIL50.21s retained in editorial-copy-native.log. Positive-write and post-write-revocation fixtures incorrectly appended native paragraph with a rich content array: canonical paragraph requires text, richParagraph requires content. Native command correctly rejected workflow_invalid_amendment before writing. Change only fixture discriminator to richParagraph, preserve all assertions/authority/copy validators. Foreign-owner and unadopted-historical-source cases already passed. Re-freeze and rerun bounded native cohort; no accepted-case/provider/serving writes.",
+  "checks": [],
+  "eventId": "95cba684-3711-4929-86a4-2c35ed204216",
+  "sequence": 4,
+  "at": "2026-10-15T07:49:16.039Z"
+}

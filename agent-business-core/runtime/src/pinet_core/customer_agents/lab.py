@@ -2,7 +2,7 @@
 from uuid import UUID, uuid5
 
 from fastapi.encoders import jsonable_encoder
-from pydantic import Field
+from pydantic import Field, model_serializer
 from sqlalchemy import select
 
 from ..config import settings
@@ -10,9 +10,10 @@ from ..control.routes import ControlError
 from ..creation.service import binding, digest
 from ..customer_profile import service as profiles
 from ..customer_profile.models import REGISTRATION_KEYS, Admission
-from ..customer_text import adapter
+from ..customer_text import adapter, execution
 from ..customer_text import service as chat
 from ..customer_text.wire import Start, Turn
+from ..models import utcnow
 from . import service as agents
 from .models import Agent
 from .protection import Reference
@@ -34,6 +35,14 @@ class Snapshot(Strict):
     config_revision: Revision
     config_sha256: Digest
     specification: Specification
+    execution_profile: execution.Pin | None = None
+
+    @model_serializer(mode="wrap")
+    def optional_profile(self, handler):
+        value = handler(self)
+        if self.execution_profile is None:
+            value.pop("execution_profile", None)
+        return value
 
 
 class Episode(Snapshot):
@@ -69,36 +78,68 @@ async def snapshot_session(principal, agent_id, expected_revision):
 
 
 async def _snapshot(principal, creation_id, agent_id, expected_revision):
+    pin = getattr(principal, "execution_profile", None)
+    _snapshot_preconditions(expected_revision, pin)
+    async with principal.agent_authority(creation_id, agent_id, writing=True) as context:
+        return await _snapshot_body(*context, expected_revision, pin)
+
+
+def _snapshot_preconditions(expected_revision, pin):
     guard()
+    if pin is not None:
+        execution.current(pin)
     if type(expected_revision) is not int or not 1 <= expected_revision <= 2147483647:
         raise ControlError(400, "invalid_request")
-    async with principal.agent_authority(creation_id, agent_id, writing=True) as (tx, session, creation, registry, agent):
-        if agent.purpose != "site_chat" or agent.current_revision != expected_revision:
-            raise ControlError(409, "conversation_task_not_current")
-        config = await agents.current_config(tx, agent)
-        view = agents.config_view(agent, config)
-        profile = await profiles.projection(tx, session, creation, registration_identity=(registry.id, registry.fingerprint))
-        if not profile["profile_current"]:
-            raise ControlError(409, "customer_profile_not_current")
-        admission = await tx.get(Admission, profile["admission"]["admission_id"])
-        frozen = Snapshot(agent_id=agent.id, creation_id=creation.id, registration_id=registry.id,
-            registration_fingerprint=registry.fingerprint, admission_id=admission.id,
-            admission_fingerprint=admission.fingerprint, user_id=session.user_id, session_id=session.id,
-            environment_id=settings().environment, execution_source_revision=settings().control_source_revision,
-            config_revision_id=config.id, config_revision=config.revision,
-            config_sha256=view["sha256"], specification=view["specification"])
-        # No source/authority wait may be hidden after the observed Profile.
-        await agents.check_binding(tx, session, creation, registry, writing=True)
-        final = await profiles.projection(tx, session, creation, registration_identity=(registry.id, registry.fingerprint))
-        if not final["profile_current"] or final["admission"] != profile["admission"]:
-            raise ControlError(409, "customer_profile_not_current")
-        return frozen.model_dump(mode="json")
+
+
+async def snapshot_in_transaction(tx, session, creation_id, agent_id, expected_revision, *, execution_profile=None, lock=True):
+    """Metadata only; caller must finish this separate transaction BEFORE admission.
+
+    Canonical Profile observations ALWAYS retain policy/index/KnowledgeState locks
+    until the caller commits, including with lock=False. The flag only controls
+    Registration/actor/Creation/Agent locks. No TaskFence or model permission is
+    created here. The running worker must revalidate this exact frozen snapshot.
+    """
+    _snapshot_preconditions(expected_revision, execution_profile)
+    if type(lock) is not bool:
+        raise ControlError(400, "invalid_request")
+    async with agents.transaction_authority(tx, session, creation_id, agent_id, writing=True, lock=lock) as context:
+        result = await _snapshot_body(*context, expected_revision, execution_profile)
+    if execution_profile is not None:
+        execution.current(execution_profile)
+    if session.revoked_at or session.expires_at <= utcnow():
+        raise ControlError(401, "unauthenticated")
+    return result
+
+
+async def _snapshot_body(tx, session, creation, registry, agent, expected_revision, pin):
+    if agent.purpose != "site_chat" or agent.current_revision != expected_revision:
+        raise ControlError(409, "conversation_task_not_current")
+    config = await agents.current_config(tx, agent)
+    view = agents.config_view(agent, config)
+    profile = await profiles.projection(tx, session, creation, registration_identity=(registry.id, registry.fingerprint))
+    if not profile["profile_current"]:
+        raise ControlError(409, "customer_profile_not_current")
+    admission = await tx.get(Admission, profile["admission"]["admission_id"])
+    frozen = Snapshot(agent_id=agent.id, creation_id=creation.id, registration_id=registry.id,
+        registration_fingerprint=registry.fingerprint, admission_id=admission.id,
+        admission_fingerprint=admission.fingerprint, user_id=session.user_id, session_id=session.id,
+        environment_id=settings().environment, execution_source_revision=settings().control_source_revision,
+        config_revision_id=config.id, config_revision=config.revision,
+        config_sha256=view["sha256"], specification=view["specification"], execution_profile=pin)
+    await agents.check_binding(tx, session, creation, registry, writing=True)
+    final = await profiles.projection(tx, session, creation, registration_identity=(registry.id, registry.fingerprint))
+    if not final["profile_current"] or final["admission"] != profile["admission"]:
+        raise ControlError(409, "customer_profile_not_current")
+    return frozen.model_dump(mode="json")
 
 
 async def observe(tx, session, creation, identity, frozen):
     """Before policy/index locks; canonical creation lock already serializes edits."""
     guard()
     value = Episode.model_validate(frozen)
+    if value.execution_profile is not None:
+        execution.current(value.execution_profile)
     if (str(value.creation_id) != creation.id or str(value.user_id) != session.user_id
             or str(value.session_id) != session.id or value.environment_id != settings().environment
             or value.execution_source_revision != settings().control_source_revision

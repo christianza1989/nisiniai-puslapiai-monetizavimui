@@ -8,6 +8,7 @@ from ..control.routes import ControlError, open_cursor
 from ..creation.service import digest
 from ..customer_profile import service as profiles
 from ..customer_profile.models import Admission
+from ..customer_text import execution
 from ..models import Artifact, Conversation, Event, Job, utcnow
 from . import quality, review
 from . import service as agents
@@ -17,16 +18,27 @@ EVENT_LIMIT = 1000
 
 
 def usage(events, *, truncated=False):
+    return _usage(events, truncated=truncated)
+
+
+def _usage(events, *, truncated=False, binding=None):
     attempts = [e for e in events if e.kind in {"provider_attempt", "quality_provider_attempt"}]
     settled = [e for e in events if e.kind in {"provider_usage", "quality_provider_usage"}]
     values = [e.payload.get("usage", {}) for e in settled]
     known = [v for v in values if v.get("known") is True and isinstance(v.get("tokens"), dict) and v["tokens"]]
     def key(event):
         p = event.payload
+        if binding is not None:
+            kind = "customer_quality" if event.kind.startswith("quality_") else "customer_text"
+            if not execution.reservation_matches(binding, p, kind):
+                return None
+            if (event.kind.endswith("_usage") and execution.binding_pin(binding) is not None
+                    and not execution.verified({"_execution": p.get("execution")}, binding, kind)):
+                return None
         if event.kind.startswith("quality_"):
             return ("quality", p.get("job_id"), p.get("number")) if (p.get("model") == "gpt-6.1-sol"
                 and isinstance(p.get("job_id"), str) and type(p.get("number")) is int and 1 <= p["number"] <= 2) else None
-        return ("text", p.get("request_id"), p.get("run_id")) if (p.get("model") == "gpt-6-luna"
+        return ("text", p.get("request_id"), p.get("run_id")) if ((binding is not None or p.get("model") == "gpt-6-luna")
             and isinstance(p.get("request_id"), str) and isinstance(p.get("run_id"), str)) else None
     attempted, accounted = [key(e) for e in attempts], [key(e) for e in settled]
     complete = (not truncated and bool(attempts) and None not in attempted + accounted
@@ -50,6 +62,10 @@ def judgment(row, frozen, events, jobs, artifacts, truncated):
         return result
     job = jobs[0]
     payload = job.payload
+    pin = execution.binding_pin(frozen.model_dump(mode="json"))
+    if pin is not None and (payload.get("model_profile") != execution.role(pin, "customer_quality")
+            or payload.get("execution_profile_sha256") != pin.fingerprint()):
+        return result
     requests = [e for e in events if e.kind == "quality_request" and e.payload.get("job_id") == job.id]
     attempts = [e for e in events if e.kind == "quality_provider_attempt" and e.payload.get("job_id") == job.id]
     if (payload.get("dispatch") != review.VERSION or payload.get("model") != "gpt-6.1-sol"
@@ -89,6 +105,8 @@ def valid_attempts(job, attempts):
     if any(type(n) is not int for n in numbers) or set(numbers) != set(range(1, len(attempts) + 1)):
         return False
     fields = ("fingerprint", "binding_sha256", "input_sha256", "evaluator_sha256", "model", "model_profile")
+    if job.payload.get("execution_profile_sha256") is not None:
+        fields += ("execution_profile_sha256", "reasoning_effort")
     return all(e.event_key == f"quality-attempt:{job.id}:{e.payload['number']}"
         and all(e.payload.get(k) == job.payload.get(k) for k in fields) for e in attempts)
 
@@ -106,6 +124,12 @@ def settled_attempts(job, attempts, settled):
                 or event.event_key != f"quality-usage:{job.id}:{number}"
                 or event.sequence <= reservations[number].sequence):
             return False
+        if job.payload.get("execution_profile_sha256") is not None:
+            capture = execution.observation({"_execution": event.payload.get("execution")})
+            if (capture is None or capture["execution_profile_sha256"] != job.payload["execution_profile_sha256"]
+                    or capture["model"] != job.payload["model_profile"]["model"]
+                    or capture["reasoning_effort"] != job.payload["model_profile"]["reasoning_effort"]):
+                return False
         if number == 1:
             output = event.payload.get("output_sha256")
             if (event.payload.get("failure_code") is not None or not isinstance(output, str)
@@ -152,7 +176,7 @@ async def item(tx, row, agent, config, registry, *, scores=False):
         Job.business_id == row.business_id, Job.environment_id == row.environment_id, Job.kind == "quality").limit(2)))
     artifacts = list(await tx.scalars(select(Artifact).where(Artifact.conversation_id == row.id,
         Artifact.business_id == row.business_id, Artifact.environment_id == row.environment_id, Artifact.kind == "quality").limit(2)))
-    accounting = usage(events, truncated=truncated)
+    accounting = _usage(events, truncated=truncated, binding=frozen.model_dump(mode="json"))
     result = {"conversation_id": row.id, "created_at": row.created_at, "need_revision": row.need_revision,
         "config_revision": config.revision, "config_sha256": config.config_sha256,
         "current_configuration": config.revision == agent.current_revision,

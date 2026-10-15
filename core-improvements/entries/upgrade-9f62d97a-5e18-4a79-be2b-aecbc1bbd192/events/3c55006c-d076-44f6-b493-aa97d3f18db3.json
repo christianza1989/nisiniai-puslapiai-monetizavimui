@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Root authorized exact extra offline test path. Original4 inherited run_timeout failures retained: fixtureseconds30 was below unchanged canonical300/150 role reserves. Replaced only2test args with deadlines.job_seconds(SOL_HIGH), keeping actual argv/provider-error/receipt assertions. No runtime/deadline/threshold/creation adapter/provider/config change.",
+  "checks": [
+    {
+      "command": "python -B -m pytest -q -p no:cacheprovider offline_tests/test_pipeline_execution_profile.py",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_CUSTOMER_SOL_HIGH_2026_10_15.md: complete21PASS2.72s after preserved404PASS4FAIL8.55s combined reproduction; exact2fixture args only."
+    }
+  ],
+  "eventId": "3c55006c-d076-44f6-b493-aa97d3f18db3",
+  "sequence": 2,
+  "at": "2026-10-15T04:37:20.980Z"
+}

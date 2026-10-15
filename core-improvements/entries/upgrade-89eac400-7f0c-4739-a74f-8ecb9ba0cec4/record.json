@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Under admitted SOL_HIGH, enabling shared customer text flags still advertises and dispatches unprofiled bearer/default Session Luna and default Medium Quality. Add an explicit execution-choice gate without changing DEFAULT models, generic readiness, metadata capture or retained history.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HIGH_EXECUTION_POLICY_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text/execution.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/session.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert only; keep shared serving flags disabled until explicit all-roles policy is accepted. Preserve all old/new receipts, history and observed usage; no model relabel or fallback.",
+  "id": "upgrade-89eac400-7f0c-4739-a74f-8ecb9ba0cec4",
+  "branch": "codex/verslomatika-high-execution-policy-20261015",
+  "baseSha": "3fa5b2ac15b0b3f73bb0aaf13c2dd777a7667ea5",
+  "createdAt": "2026-10-15T05:24:47.968Z"
+}

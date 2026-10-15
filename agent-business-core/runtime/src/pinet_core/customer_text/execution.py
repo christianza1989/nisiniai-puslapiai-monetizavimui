@@ -68,6 +68,15 @@ def current(pin):
     return retained(pin)
 
 
+def require_choice(pin=None):
+    """New execution obeys the admitted runtime, without relabeling defaults."""
+    if pin is None:
+        if profiles.selected() != profiles.DEFAULT:
+            raise RunnerError("execution_profile_required")
+        return None
+    return current(pin)
+
+
 def role(pin, kind: Kind):
     value = retained(pin)
     if kind not in {"customer_text", "customer_quality"}:

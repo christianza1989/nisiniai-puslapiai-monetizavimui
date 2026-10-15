@@ -1,5 +1,7 @@
 # Verslomatika workspace implementation on this PC
 
+**2026-10-15 owner resumed the hot-tub platform work:** [Current resumed checkpoint](VERSLOMATIKA_WELLNESS_RESUMED_2026_10_15.md). S30 integrated and adopted on clean48fe7b8; third ordinary UI trial9903840d also timed out without a plan. S31 private process/EOF observation and a separate no-tools diagnostic are being prepared; no successful site claim. The older pause below is historical. REA remains a separate owned branch/PR162; do not change the active frozen API checkout during a job.
+
 **2026-10-15 current checkpoint and owner priority:** [Wellness business safe pause](VERSLOMATIKA_WELLNESS_SAFE_PAUSE_2026_10_15.md). The workspace UI was accepted and subsequent actual trials are recorded there. Owner now prioritizes a complete animated homepage and REA integration before resuming the hot-tub business. S30 is prepared but not adopted; do not start another paid business trial from the historical instructions below.
 
 Current scope: implement the supplied three-region UI/UX and connect existing core data before further real model trials. Primary owns UI/UX/integration. The original authorized helper delivered core projections/checks in its separate branch/worktree; subsequent human instruction stopped further communication with that chat. A newly authorized, separate UX review chat now critiques the plan read-only. No unrelated agent or new core is introduced.

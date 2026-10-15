@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Generated snapshot mirrors corrected S42wire393db128/rootf05acab: actual Conversation required for admitted saved preview. Peer admitted/null failure preserved in owning journal; b237 export was never committed/adopted. No router/runtime/schema/DB/provider/customer adoption.",
+  "checks": [
+    {
+      "command": "Root direct contract plus unchanged native Episode offline regression onf05acab",
+      "result": "PASS",
+      "evidence": "Final48PASS1.94s; earlier pre-fix47PASS did not cover later peer finding."
+    },
+    {
+      "command": "Generated OpenAPI mirror exact module JSON comparison",
+      "result": "PASS",
+      "evidence": "workspace-direct.v1/seven ops; original b237 mirror was regenerated after393 fix; final SHA256 5f66f3a941e8d081a68491c6084111833e386dbcefd1b8a48c52d0a39721df89"
+    }
+  ],
+  "eventId": "4022d6e3-667a-4681-b6cb-6fdec6fb6884",
+  "sequence": 2,
+  "at": "2026-10-15T22:23:41.173Z"
+}

@@ -1,32 +1,33 @@
 {
-  "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\332c8186-8412-4cf1-b3c6-68dbbdde554a\\content-package.json",
+  "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\bc122dcb-f4f5-47aa-aec3-bfc2bd8bed98\\content-package.json",
   "pages": 181,
-  "assets": 649,
-  "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\332c8186-8412-4cf1-b3c6-68dbbdde554a\\release-manifest.json",
-  "packageSha256": "aae501ef8a821f207bcb6391f5f160ac25e60088c3e65b3da3a67ce4a71c6120",
+  "assets": 664,
+  "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\bc122dcb-f4f5-47aa-aec3-bfc2bd8bed98\\release-manifest.json",
+  "packageSha256": "25b912d70c0a1696b0c2a39ffaeeb09226f7a2b559be85f616785ab24e8f4edf",
   "state": "deployed-scheduled",
-  "previousReleaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1",
+  "previousReleaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a",
   "deployment": {
-    "at": "2026-10-15T09:07:36.266Z",
+    "at": "2026-10-15T11:51:20.077747Z",
     "origin": "https://memocasting.lt",
     "worker": "memocasting-site",
-    "workerVersion": "45ce54ce-7c22-460f-a4e5-2ed08133f451",
-    "publicSource": "000c6a191a73bf1a36c9e94de259ccfdf7974567",
-    "profileSource": "05deeee",
-    "status": "public website accepted; checkout pending actual Stripe key and business facts",
+    "workerVersion": "2407731e-54aa-4e77-b5a7-d28a5454c87a",
+    "publicSource": "2eacf419227b67bce0df82e9af2684cf90d1192a",
+    "profileSource": "05deeee10e902cb87750234dd65abbd334e3c9a0",
+    "status": "public website and interactive gallery hosted; checkout and owner admin still being completed",
     "articlesUploaded": 92,
     "newArticlesVisibleAtCheck": 0,
     "hubUploaded": 1,
     "serverTimeFilter": true,
     "liveBeforeBoundary": "first two new guide HTML and media404",
     "liveAfterBoundary": "pending first actual publication at2026-10-15T13:00:00Z",
-    "mailDnsRecordsPreserved": 7
+    "mailDnsRecordsPreserved": 7,
+    "previousWorkerVersion": "45ce54ce-7c22-460f-a4e5-2ed08133f451"
   },
   "localAcceptance": {
     "build": "PASS",
-    "coreTests": "114/114 PASS",
+    "coreTests": "118/118 PASS",
     "scheduledBoundaries": "93 exact before/after shared projection PASS",
-    "media": "649files checked",
-    "hosted": "canonical HTTPS sampled routes/redirects/future boundaries PASS; actual after-boundary check pending"
+    "media": "664 native assets;15 new gallery design variants exact byte hashes hosted PASS",
+    "hosted": "new gallery HTML/15 assets/product/cart/sitemap/robots HTTPS PASS; Google sitemap accepted85URLs; actual after-boundary pending"
   }
 }

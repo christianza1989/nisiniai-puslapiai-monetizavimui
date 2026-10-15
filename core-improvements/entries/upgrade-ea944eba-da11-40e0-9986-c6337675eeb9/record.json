@@ -1,0 +1,24 @@
+{
+  "siteId": "memocasting",
+  "summary": "Connect owner-activated private EU R2 and Free Access to dedicated commerce backend with verified membership and existing buyer boundaries preserved",
+  "category": "workflow",
+  "evidence": [
+    "Owner confirmed both final Cloudflare activations2026-10-15. ActualR2 API nowenabled; dedicatedEUStandardbucketcreatedempty/private.",
+    "FreeAccessorganizationcreatedmemocasting-lt.cloudflareaccess.com with8h sessions; application/membership must use actualreturnedAUD and verifiedsubject, never inferredemailheader.",
+    "Owner selected login.memocasting.lt. Existing Access app moved to that host; owner-only email policy and OTP IdP retained, actual users API and get-identity UUID agree after successful sign-in. No invented subject or email-header trust.",
+    "Actual production version c71e009d-95c1-47ed-a69d-fa9578a5c43f at 2026-10-15T13:00:47.714043Z, dedicated EU R2 binding, existing three secrets plus COMMERCE_ACCESS preserved. Exact host/store CAS retained 2 products, 999 each, 2 adjustments and zero orders.",
+    "Actual Chrome root to /admin, automatic SSO overview and simple stock PASS. Logout UI succeeded and production revocations count is one. Anonymous/forged/old bootstrap Bearer on workers.dev admin return403; buyer context stays200 closed.",
+    "Native remote private EU R2 put/get/exact owned marker delete PASS; r2.dev public access disabled. No real payment or shipping booking."
+  ],
+  "paths": [
+    "sites/memocasting/commerce-production.wrangler.jsonc",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Checkactualversion/bindings/Accesspolicy/DNS before scopedrevert. Retain customerDB/inventory/privatefiles and currentsecrets. Disable onlyownapp/config, notwholeaccountAccess; never removeR2objects or roll back businessdata blindly.",
+  "id": "upgrade-ea944eba-da11-40e0-9986-c6337675eeb9",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "20bcdf1ea8a637caa8d7553f61af7aa1688df11d",
+  "createdAt": "2026-10-15T12:39:53.739Z"
+}

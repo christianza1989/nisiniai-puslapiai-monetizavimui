@@ -6,6 +6,9 @@
   "compatibility_date": "2026-10-11",
   "workers_dev": true,
   "preview_urls": false,
+  "routes": [
+    { "pattern": "login.memocasting.lt", "custom_domain": true }
+  ],
   "assets": {
     "directory": "../../commerce-core/public",
     "binding": "ASSETS",
@@ -21,6 +24,13 @@
       "database_name": "memocasting-commerce-production",
       "database_id": "534c0277-9563-4ec3-91fc-8e1e89e7f2c9",
       "migrations_dir": "../../commerce-core/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "COMMERCE_FILES",
+      "bucket_name": "memocasting-commerce-private",
+      "jurisdiction": "eu"
     }
   ],
   "observability": { "enabled": true }

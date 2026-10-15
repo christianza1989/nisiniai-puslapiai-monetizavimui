@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/166",
+  "commit": "d03469c1d99662a551e4c45ec3909b5d9ac6162c",
+  "note": "DraftPR166 created and attached; functionald03469c1d99662a551e4c45ec3909b5d9ac6162c exactS36basefb3444310fa975df8edd753fdc2e6ebb3a29394f. PublishedRootbase5f6aef7 currently precedesS36; dependency explicit, no push to foreignbranch. Exactfb-to-d034 and5f6-to-d034 committedcoveragePASS5shared0uncovered/errors,692PythonPASS7SKIP+58NodePASS, exactstagedsafety15PASS, pairedhandoff16:06Z808/ec8/1a26PASS. Root received functional commit only for independent idle adoption; helper source window closed. No provider/DB/runtime/case/serving/main/adoption action. S37 explicit preview binding/recovery will use a separate fresh branch and journal.",
+  "eventId": "7e77f802-f422-4ee5-83df-e032b1d17df1",
+  "sequence": 4,
+  "at": "2026-10-15T16:08:19.385Z"
+}

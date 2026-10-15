@@ -84,14 +84,17 @@ def test_unvalidated_scope_cannot_enter_session_authority():
         SessionPrincipal(value, Fence()).validated()
 
 
-@pytest.mark.parametrize("late", ["task", "source"])
+@pytest.mark.parametrize("late", ["task", "source", "session"])
 async def test_final_native_source_wait_cannot_hide_task_expiry_or_source_change(monkeypatch, late):
-    active, tx = SimpleNamespace(valid=True), object()
+    active, tx = SimpleNamespace(valid=True, final=False), object()
+    session = SimpleNamespace(revoked_at=None, expires_at=datetime.now(UTC) + timedelta(hours=1))
 
     class DeadlineFence(Fence):
         async def check(self, tx):
             if not active.valid:
                 raise ControlError(409, "task_not_current")
+            if active.final and late == "session":
+                session.expires_at = datetime.now(UTC) - timedelta(seconds=1)
 
     principal = SessionPrincipal(target(), DeadlineFence())
 
@@ -101,14 +104,15 @@ async def test_final_native_source_wait_cannot_hide_task_expiry_or_source_change
 
     @asynccontextmanager
     async def native(*_, **__):
-        yield tx, object(), object(), SimpleNamespace(id="inert", fingerprint="inert"), object()
+        yield tx, session, object(), SimpleNamespace(id="inert", fingerprint="inert"), object()
+        active.final = True
         if late == "task":
             active.valid = False
-        else:
+        elif late == "source":
             monkeypatch.setattr(settings(), "control_source_revision", "b" * 40)
 
     async def authorizing(*_):
-        return object()
+        return session
 
     async def bind(self, *args):
         await self.check(args[0])
@@ -117,7 +121,7 @@ async def test_final_native_source_wait_cannot_hide_task_expiry_or_source_change
     monkeypatch.setattr(session_adapter.agents, "transaction_authority", native)
     monkeypatch.setattr(provisioning, "authorizing_session", authorizing)
     monkeypatch.setattr(SessionPrincipal, "bind", bind)
-    with pytest.raises(ControlError, match="task_not_current|source_unavailable"):
+    with pytest.raises(ControlError, match="task_not_current|source_unavailable|unauthenticated"):
         async with principal.agent_authority(str(principal.scope.creation_id), str(uuid4()), writing=True):
             pass
 

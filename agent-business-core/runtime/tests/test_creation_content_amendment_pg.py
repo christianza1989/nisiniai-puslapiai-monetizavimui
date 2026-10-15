@@ -84,7 +84,7 @@ async def test_actual_body_write_replay_and_conflict_preserve_intake_and_usage(c
     with pytest.raises(ControlError) as error:
         await invoke(c, accepted_request, me, conflict)
     assert error.value.status == 409
-    stale = copy.Amendment.model_validate({**request.model_dump(), "operation_id": str(uuid4())})
+    stale = copy.Amendment.model_validate({**request.model_dump(exclude_unset=True), "operation_id": str(uuid4())})
     with pytest.raises(ControlError) as error:
         await invoke(c, accepted_request, me, stale)
     assert error.value.status == 409

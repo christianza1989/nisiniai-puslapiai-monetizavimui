@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "S30 only2shared source paths complete: deterministic28kB model-only primaryprojection, exact original observation provenance/captureSHA, explicit UTF8/reader-vs-projection/URL omission, globally unrepresented actual links, same3roles andversion/policy/implementation+validatorSHA instructionpins. Fullcapture/jobusage/S28 and allothercontext untouched; originalS29 timeout/noplan evidence retained. Final583CreationDiscoveryPASS7SKIP22.35s (all27newcases), Ruff/diffcheckPASS; actualreadonlyprivate13pagefixture95920→22374B/all13retained/37uniqueactualtargets, originalfile unchanged. This is notactualpaid completion/calibration/admission/adoption/main; Root owns subsequentUI rerun. NoNode/PG/fullplatform/provider/deadline/quota/model/case/serving changes.",
+  "checks": [
+    {
+      "command": "python -B -m pytest -p no:cacheprovider <rg --files offline_tests -g test_creation*.py -g *discovery*.py> -q --tb=short with PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true",
+      "result": "PASS",
+      "evidence": "Final583PASS7SKIP22.35s including all27newsourceprojectioncases; counts not additive with earlier94focused. docs/decisions/VERSLOMATIKA_DISCOVERY_SOURCE_PROJECTION_2026_10_15.md records original3FAIL2.20s and RootrealS29 timeout."
+    },
+    {
+      "command": "python -B private read-only project(source_reads) byte/hash/coverage measurement on Root-supplied frozen S29 extraction",
+      "result": "PASS",
+      "evidence": "Actual13/13pages95920→22374B,5reader-clipped/11projection-clipped,360links→37globallyuniqueactualtargets,35remaining→8shown/27omitted; fullrawSHAac38efb06c9bcefc2afb20f4ca4fad85a984054a4baf9e7985e909831da2526a, projectionSHA7dcc3df47977ee112ab68de47912294ee902c2c987ce156f23370076122142eb. Originalfile unchanged; raw/projtext staysignored/private. Same-otherfields wholeprompt66538B is derived, notpaidtrace."
+    },
+    {
+      "command": "python -B -m ruff check agent-business-core/runtime/src/pinet_core/business_discovery/adapter.py agent-business-core/runtime/src/pinet_core/business_discovery/source_projection.py agent-business-core/runtime/offline_tests/test_discovery_source_projection.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Actual final Ruff/diffcheckPASS; model/wire/worker/service/source_context paths unchanged, no otherinput clipping."
+    }
+  ],
+  "eventId": "e48c0bb9-03d8-42f7-8c90-2ace1a9e4168",
+  "sequence": 3,
+  "at": "2026-10-15T09:58:26.019Z"
+}

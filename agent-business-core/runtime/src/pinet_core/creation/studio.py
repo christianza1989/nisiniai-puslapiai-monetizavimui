@@ -9,6 +9,7 @@ from uuid import UUID
 
 from sqlalchemy import select
 
+from ..config import settings
 from ..tasks.codex_transport import RunnerError, stop_process
 from .adapter import ROOT, RUNTIME
 from .renderer import normalize
@@ -29,7 +30,11 @@ def configuration():
               Path(network_setting).parent.parent if network_setting is not None else
               ROOT.parent / "dovanos-memorycasting")
     network = Path(network_setting) if network_setting is not None else public / "config/niche-network.json"
-    artifacts = RUNTIME / "artifacts"
+    configured = settings().customer_content_artifacts_root
+    artifacts = Path(configured) if configured else RUNTIME / "artifacts"
+    if configured and (not artifacts.is_absolute() or artifacts.name != "artifacts"
+                       or artifacts.parent.name != "runtime"):
+        raise RunnerError("studio_unavailable")
     if (not node or not script.is_file() or not network.is_file() or not public.is_dir()
             or network.resolve().parent.parent != public.resolve() or not artifacts.is_dir()):
         raise RunnerError("studio_unavailable")

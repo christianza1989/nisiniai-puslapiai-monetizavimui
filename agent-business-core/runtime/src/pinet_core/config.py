@@ -57,6 +57,8 @@ class Settings(BaseSettings):
     creation_job_limit: int = Field(default=0, ge=0)
     creation_runner_seconds: int = 180
     creation_workspace: str = ""
+    # Operator-owned persistent native data. Empty preserves the legacy release-local root.
+    customer_content_artifacts_root: str = ""
     creation_web_search_enabled: bool = False
     creation_language_review_enabled: bool = True
     chat_enabled: bool = False

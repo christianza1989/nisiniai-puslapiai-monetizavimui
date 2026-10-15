@@ -65,7 +65,7 @@ The existing direct admin entry is `https://memocasting-commerce.phonebridger-ap
 
 The runtime and host/store must be admitted before the admin HTML/API can run. A valid production `read` grant can then show actual empty orders, catalog and stock while checkout, delivery, operational and document gates remain closed. This has been verified with a disposable production-shaped metadata store; it is not an actual deployed credential or owner-login receipt.
 
-The current login accepts a temporary Bearer token kept only in browser memory. It has no email/password account creation, SSO or automatic session renewal. `npm run operator:token` remains a **local dev** issuer: its `runtime/operators.json` records are not read by the production Worker and do not meet its full identity contract. The production login no longer suggests this dev command or synthetic order seeding.
+The 0.15 bootstrap login accepts a temporary Bearer token kept only in browser memory. It does not create email/password accounts. Version0.17 adds the separately configured Access path below; an installation without that actual configuration keeps token login. `npm run operator:token` remains a **local dev** issuer: its `runtime/operators.json` records are not read by the production Worker and do not meet its full identity contract. The production login no longer suggests this dev command or synthetic order seeding.
 
 The new helper prepares a production grant using the existing canonical identity contract. Run from `commerce-core/`, using the actual validated **raw store configuration** saved privately; a `prepareBusiness` proposal with unapproved production metadata is not an admitted store. The trusted deployment owner must already have authorized the operator identity and its store membership. The helper validates structure and scope, but does not verify a human, create an account or infer ownership from an email address.
 
@@ -87,9 +87,9 @@ The receipt is `CREDENTIAL_PREPARED_NOT_DEPLOYED`, not login acceptance. The dep
 
 Grants distinguish `read`, `stock`, `catalog`, `document`, `pack`, `ship`, `finance`, `wholesale`, `refund`, `operate` and `restore`. Catalog revisions require **catalog**, finished lots require **stock**. Finance/refund/restore are not default permissions. A grant never supplies missing legal facts, inventory quality, provider credentials or operation admission. Production refund-command creation in the present UI still has sandbox-only presentation guards; backend refund support is a separate protected contract, not a claim that all owner UI flows are complete.
 
-## Long-term owner login: proposed Access integration contract
+## Initial Access integration design — before 0.17
 
-This is a design analysis only. No Access app, IdP, policy, DNS, JWT adapter, cookie session, library dependency or new identity table was created or inspected in the actual provider account. The current commerce package contains only the scoped Bearer grant adapter; niche-specific auth elsewhere is not an established shared owner identity service.
+This section records the initial 0.15 design analysis, when only the scoped Bearer adapter existed. The 0.17 implementation below supersedes its missing-source parts. No actual Access app, IdP, policy, DNS or provider account was created or configured by this task. Niche-specific auth elsewhere is not an established shared owner identity service.
 
 Cloudflare documents Access as an authentication layer for a self-hosted web application. Its Worker example validates the `Cf-Access-Jwt-Assertion` signature against the team's JWKS, with configured issuer and application audience. The documentation also describes application session expiry and IdP reauthentication. Sources checked 2026-10-15: [JWT validation](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/) and [self-hosted application](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/). These facts support the following **proposed application contract**, not actual account readiness. The preliminary Stripe Directory lookup failed with `Invalid user agent` despite using the installed CLI; no resource was provisioned, and no alternative identity provider was selected.
 
@@ -145,3 +145,39 @@ Use a separate family ID/SKU. This is a delta, not a blind set operation: if act
 Order creation atomically reserves/decrements each SKU. Order replay does not reserve twice. Paid confirmation and packing keep that already-reserved quantity, rather than decrementing it again. Expiration releases unpaid reservations once through the existing expiry job/command; a paid late event must safely reallocate current stock or enter the existing stock-exception path. Failed multi-SKU orders roll back all lines, and concurrent orders cannot reserve the same last unit. Stock expiry processing still needs its admitted job/command; a runtime whose automation is disabled does not suddenly run a scheduler because counts were configured.
 
 Native D1 regression exposed a separate counter issue: its `meta.changes` includes the restoration trigger, so one expired reservation reported two changes. `expire` now counts IDs returned by the guarded update, retaining the Node adapter's direct-change fallback, in the same atomic event batch. Original23 migrations, lot-policy triggers, identity and checkout admissions remain unchanged. Tests cover Node and native simple reserve/payment/packing/expiry/replay, zero fictional lot/BOM rows, plus preserved tracked quarantine/policy guards and legacy/mixed UI.
+
+## Access owner sessions — source 0.17.0
+
+`src/access-identity.mjs` now implements the minimal generic extension with pinned `jose@6.2.12`. The audited Madbeauty auth is niche-local Node/SQLite OTP/accounts/SMTP and is not imported. Access application JWTs supply the bounded session; an exact trusted issuer/subject membership supplies store rights. Both Access and Bearer use the same extracted `operatorGrantAllows` scope, permission and maximum-eight-hour policy. No parallel password service, account creation or backend long-lived cookie is introduced.
+
+These are source/offline/native receipts. The deployment owner reported actual Access organization/app setup pending; this task creates no plan, resource, issuer, AUD, subject, secret or remote DB state. Actual owner login is not claimed.
+
+### Required actual configuration
+
+`COMMERCE_ACCESS` is a JSON **string** mapping exact store IDs. This contract deliberately contains invalid placeholders; replace them with verified provider/core values before activation:
+
+```json
+{"store_memocasting":{"issuer":"https://<actual-team>.cloudflareaccess.com","audience":"<actual-application-AUD>","adminHosts":["<approved-admin-host>"],"allowBearerBootstrap":false,"memberships":[{"id":"<admitted-core-operator-id>","issuer":"https://<actual-team>.cloudflareaccess.com","subject":"<verified-Access-owner-sub>","storeId":"store_memocasting","legalEntityId":"lt_306026827","environment":"production","permissions":["read","stock","catalog","document","pack","ship","operate"],"revoked":false}]}}
+```
+
+Use the exact canonical HTTPS team issuer without a trailing slash/path, actual application AUD, lowercase HTTPS admin hostname(s) without ports and actual verified human subject. Add the admin hostname to the store's own hosts. An empty membership list can stage a known app while denying everyone. Membership binds operator ID, issuer/subject, store, legal entity, environment and named permissions; public email or group/header values never enroll an owner. Ambiguous matches are denied. Finance/refund/restore are not implicit.
+
+Access application JWT lifetime must be <=8 hours. The adapter verifies RS256 signature/key ID against only the configured issuer's JWKS, issuer/audience/time claims, identity-based `type:app`, nonempty user subject/email, and the same core grant limits. Service/global tokens fail. Key retrieval has bounded caching/refresh; token-supplied key URLs are ignored. Actual provider refresh can issue a newly validated application token while its global session/policies remain valid; the source never extends an old token's expiry. Sources: [JWT validation](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/), [user/service application claims](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/), [session refresh/logout](https://developers.cloudflare.com/cloudflare-one/access-controls/access-settings/session-management/).
+
+### Routing, compatibility and logout
+
+The actual admin host needs its Access app/policy. Runtime additionally verifies private admin HTML/modules and operator APIs, so an alternate Workers hostname outside `adminHosts` cannot bypass Access. Public buyer assets/routes and Stripe webhooks retain independent normal gates. Business, checkout, shipping and document admissions remain separate.
+
+No Access entry preserves legacy Bearer behavior. Configured stores default to Access-only; a valid old Bearer API credential without a JWT works only with deliberate `allowBearerBootstrap:true`. Invalid/present JWTs never fall back to Bearer. Bad Access configuration denies admin/operator access without blocking public catalog/context or adding an owner requirement to Stripe. Do not upload placeholder configuration.
+
+`GET /api/operator/session` returns method, operator ID, named permissions and expiry only. Admin JS automatically resumes a verified Access session instead of requesting another pasted commerce token. It does not read JWTs into storage or introduce long-lived Bearer/localStorage login. Access-authorized unsafe methods require an exact same-origin Origin header, including PDF uploads and logout.
+
+New `0024_operator_access.sql` adds only hashed JWT revocations with store, actor, expiry and revocation time. Original23 migrations are unchanged. Apply it via the confirmed native migrator before enabling Access. An old23 database with no Access configuration still supports Bearer; configured Access fails closed until its revocation table exists.
+
+`POST /api/operator/logout` validates the same identity/membership/origin, records only the digest and immediately denies that JWT. Replay does not duplicate rows; expired records are cleaned for that store. UI clears private memory, then redirects only to its same-origin fixed `/cdn-cgi/access/logout`. Cloudflare also logs the user out of other apps on the same Access team; the UI states this before the click. A freshly signed permitted session may log in again, while revoked membership stays denied. Bearer logout keeps its existing local-memory semantics; actual grant revocation belongs to the trusted issuer.
+
+### Acceptance boundary
+
+The deployment owner alone selects/accepts any actual organization plan and configures app/policy/hostname, verified owner membership and runtime values. No billing/subscription/provider activation is implied by installing this source dependency. Offline real-RSA and native workerd tests cover forged/wrong issuer/audience/time/service tokens, membership ambiguity/revocation, cross-store/legal/environment denial, same-origin mutations, alternate-host denial, private assets/session, immediate hashed logout, key rotation/failure, explicit Bearer compatibility and independent public paths.
+
+The native harness receives generated public fixture keys only and requires its explicit test flag. Production entry remains `src/worker.mjs`, never `test/access-worker-harness.mjs`. Actual hosted owner login/relogin/logout, provider key refresh, policy logs and browser UX remain deployment-owner acceptance; this task performs no browser/provider/secrets/remote DB operation.

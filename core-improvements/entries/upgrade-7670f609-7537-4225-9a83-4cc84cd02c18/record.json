@@ -1,0 +1,36 @@
+{
+  "siteId": "memocasting",
+  "summary": "Adopt verified Access application JWT identity with exact scoped membership, CSRF and logout revocation while retaining buyer and Stripe routes",
+  "category": "code",
+  "evidence": [
+    "Reviewed exactshop0.17source3b40ca63e9786446e7d18f59a121f7a0e2b3af63. MaintainedjoseRS256/fixedissuer+AUD andsame8hgrantpolicy, no rawJWT/localStorage/authheadertrust.",
+    "New migration24 only revocationhashes. Existing23migrations andtemporaryBearercompatibility preserved. Actualproviderconfiguration/subject/hostedacceptance separate.",
+    "Own checkout: npm --prefix commerce-core run verify PASS (157 Node tests, native D1 24 migrations, workerd Access/JWKS/logout checks, formatting and bundle gzip 779.59 KiB).",
+    "Added narrow configured HTTPS admin-host root redirect to fixed /admin. GET/HEAD only, no query redirect, invalid/unconfigured/public/HTTP/POST hosts do not redirect and protected admin remains 403 anonymously.",
+    "Actual dedicated production D1 migrated from verified original 23 to 24 with canonical native binding migrator; no business data created."
+  ],
+  "paths": [
+    "commerce-core/README.md",
+    "commerce-core/docs/API.md",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/migrations/0024_operator_access.sql",
+    "commerce-core/package-lock.json",
+    "commerce-core/package.json",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/src/access-identity.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/src/identity.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/test/access-identity.test.mjs",
+    "commerce-core/test/access-worker-harness.mjs",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Readcurrentruntime/memberships/DB first; source rollback alone cannot revoke Accesssessions or reverse newrevocationdata. Preserveoriginal23/ownerbusinessfacts/actualprivatefiles/providersecrets and use scoped appdeny/configrevert ifneeded.",
+  "id": "upgrade-7670f609-7537-4225-9a83-4cc84cd02c18",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "58c226536cb8311a14b53c291b51d73ff529e816",
+  "createdAt": "2026-10-15T12:43:50.175Z"
+}

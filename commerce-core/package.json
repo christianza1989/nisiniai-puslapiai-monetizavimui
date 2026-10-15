@@ -1,6 +1,6 @@
 {
   "name": "@pinet/commerce-core",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@pdf-lib/fontkit": "1.1.1",
+    "jose": "6.2.12",
     "pdf-lib": "1.17.1",
     "stripe": "23.0.0"
   },

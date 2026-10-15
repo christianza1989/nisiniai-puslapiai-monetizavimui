@@ -9,6 +9,7 @@ import { usesOnlySimpleStock } from './finished-stock-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
+  authentication: 'bearer',
   data: null,
   view: 'orders',
   order: null,
@@ -208,7 +209,10 @@ async function api(path, body) {
   try {
     response = await fetch(path, {
       method: body === undefined ? 'GET' : 'POST',
-      headers: { authorization: 'Bearer ' + state.token, 'content-type': 'application/json' },
+      headers: {
+        ...(state.token ? { authorization: 'Bearer ' + state.token } : {}),
+        'content-type': 'application/json',
+      },
       body: body === undefined ? undefined : JSON.stringify(body),
       signal: AbortSignal.timeout(15000),
     });
@@ -224,7 +228,10 @@ async function binary(path, options = {}) {
   try {
     response = await fetch(path, {
       ...options,
-      headers: { ...options.headers, authorization: 'Bearer ' + state.token },
+      headers: {
+        ...options.headers,
+        ...(state.token ? { authorization: 'Bearer ' + state.token } : {}),
+      },
       signal: AbortSignal.timeout(20000),
     });
   } catch {
@@ -1242,6 +1249,7 @@ $('#login-form').addEventListener('submit', async (event) => {
   const b = event.submitter;
   b.disabled = true;
   state.token = $('#token').value.trim();
+  state.authentication = 'bearer';
   status('Tikrinama prieiga…', 'busy');
   try {
     await reload();
@@ -1281,15 +1289,74 @@ $('#refresh').addEventListener('click', () =>
     'Duomenys atnaujinti.',
   ),
 );
-$('#logout').addEventListener('click', () => {
+function clearSession() {
+  $('#access-logout-hint')?.remove();
   state.token = '';
+  state.authentication = 'bearer';
   state.data = null;
   state.order = null;
   state.document = null;
   state.stock = null;
+  state.refundDraft = null;
   $('#content').replaceChildren();
   $('#workspace').hidden = true;
   $('#login').hidden = false;
   $('#token').focus();
   status();
+}
+$('#logout').addEventListener('click', async () => {
+  if (state.authentication === 'access') {
+    const button = $('#logout');
+    button.disabled = true;
+    try {
+      const result = await api('/api/operator/logout', {}),
+        target = new URL(result.logoutUrl, location.origin);
+      if (
+        !result.loggedOut ||
+        target.origin !== location.origin ||
+        target.pathname !== '/cdn-cgi/access/logout' ||
+        target.search ||
+        target.hash
+      )
+        throw Error('operation_failed');
+      clearSession();
+      location.assign(target.href);
+    } catch {
+      status('Atsijungti nepavyko. Patikrinkite ryšį ir bandykite dar kartą.', 'error');
+    } finally {
+      button.disabled = false;
+    }
+    return;
+  }
+  clearSession();
 });
+async function resumeAccessSession() {
+  try {
+    const session = await api('/api/operator/session');
+    if (session.method !== 'access' || !session.authenticated || state.token) return;
+    state.authentication = 'access';
+    $('#login').hidden = true;
+    status('Įkeliami administravimo duomenys…', 'busy');
+    await reload();
+    $('#token').value = '';
+    $('#login').hidden = true;
+    $('#workspace').hidden = false;
+    if (!$('#access-logout-hint'))
+      $('#logout').after(
+        node(
+          'p',
+          { id: 'access-logout-hint', class: 'hint' },
+          'Atsijungimas taip pat užbaigs prisijungimą prie kitų tos pačios Cloudflare Access komandos programų.',
+        ),
+      );
+    status();
+    $('#view-title').setAttribute('tabindex', '-1');
+    $('#view-title').focus();
+  } catch {
+    // Unconfigured/unauthenticated Access keeps the existing manual token login.
+    if (state.authentication === 'access')
+      status('Administravimo duomenų nepavyko įkelti. Atnaujinkite puslapį.', 'error');
+    if (!state.token) state.authentication = 'bearer';
+  }
+}
+resumeAccessSession();

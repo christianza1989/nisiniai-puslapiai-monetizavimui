@@ -66,6 +66,11 @@ def parse_request(value):
     return schema.model_validate(value)
 
 
+def request_intent_sha256(request):
+    """Precommittable native Quality intent; Conversation is bound separately."""
+    return digest(request.model_dump(mode="json", exclude={"bearer", "conversation_id"}))
+
+
 @dataclass(frozen=True)
 class Dispatch:
     task: dict
@@ -77,6 +82,7 @@ class Dispatch:
     protection_sha256: str | None = None
     score_competence: bool = False
     typed: dict | None = None
+    request_input_sha256: str | None = None
 
 
 async def input_data(tx, row):
@@ -114,6 +120,7 @@ def current_job(job, dispatch):
         and job.payload.get("model_profile") == dispatch.model_profile
         and job.payload.get("competence_contract") == (competence.VERSION if dispatch.score_competence else None)
         and job.payload.get("protected_case_sha256") == dispatch.protection_sha256
+        and job.payload.get("request_input_sha256") == dispatch.request_input_sha256
         and job.payload.get("typed_binding_sha256") == (digest(dispatch.typed) if dispatch.typed is not None else None))
 
 
@@ -134,6 +141,9 @@ async def _prepare(principal, request):
     frozen = request.episode.model_dump(mode="json")
     material = {"version": VERSION, "conversation_id": str(request.conversation_id),
         "request_id": str(request.request_id), "episode": frozen}
+    session_material = ({"request_input_sha256": request_intent_sha256(request)}
+                        if isinstance(request, SessionReviewRequest) else {})
+    material.update(session_material)
     scored = isinstance(request, (ScoredRequest, SessionScoredRequest)) and request.score_competence
     if isinstance(request, (TypedRequest, SessionTypedRequest)) and not scored:
         raise ControlError(409, "typed_competence_required")
@@ -171,7 +181,7 @@ async def _prepare(principal, request):
             payload={"dispatch": VERSION, "request_id": str(request.request_id), "fingerprint": fingerprint,
                 "binding_sha256": digest(binding), "input_sha256": digest(data),
                 "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile,
-                **proof_material, **score_material, **typed_material})
+                **proof_material, **score_material, **typed_material, **session_material})
         tx.add(job)
         await tx.flush()
         await core.add_event(tx, row, "quality-request:" + str(request.request_id), "quality_request",
@@ -180,7 +190,7 @@ async def _prepare(principal, request):
         task = {"id": job.id, "conversation_id": row.id, "kind": "quality", "generation": 1,
             "owner": job.owner, "attempts": 1, "business_id": business.id, "environment_id": row.environment_id}
         dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile,
-                            protection_sha256, scored, typed)
+                            protection_sha256, scored, typed, session_material.get("request_input_sha256"))
         last_time(session, row)
         if not current_job(job, dispatch):
             raise ControlError(409, "quality_authorization_changed")
@@ -242,6 +252,7 @@ async def _reserve_call(principal, dispatch, number, prompt, wire):
             raise ControlError(409, "quality_call_already_reserved")
         await principal.reserve(tx, binding, kind="customer_quality", conversation_id=row.id,
             request_id=job.payload["request_id"], call_key=key, number=number, model=evaluator.MODEL,
+            request_input_sha256=dispatch.request_input_sha256,
             **evaluator.hashes(prompt, wire), protected_case_sha256=dispatch.protection_sha256)
         await core.add_event(tx, row, key, "quality_provider_attempt", {
             "job_id": job.id, "number": number, "model": evaluator.MODEL, "fingerprint": dispatch.fingerprint,

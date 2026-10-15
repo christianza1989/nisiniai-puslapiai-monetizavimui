@@ -4,7 +4,8 @@ The test fence is intentionally inert allocation, not production Task admission.
 Root's durable allocation integration has its own independently owned tests.
 """
 from copy import deepcopy
-from uuid import uuid4
+from pathlib import Path
+from uuid import uuid4, uuid5
 
 import pytest
 from sqlalchemy import select, text, update
@@ -31,6 +32,7 @@ from pinet_core.creation_registration.models import Registration
 from pinet_core.customer_agents import lab, provisioning, review
 from pinet_core.customer_agents.session import SessionPrincipal, TaskFence
 from pinet_core.customer_text import service as chat
+from pinet_core.customer_text.wire import Start, Turn
 from pinet_core.db import db
 from pinet_core.models import Event, utcnow
 
@@ -38,7 +40,8 @@ from pinet_core.models import Event, utcnow
 class InertFence(TaskFence):
     def __init__(self, user_id, environment, available=8):
         self.user_id, self.environment, self.available = user_id, environment, available
-        self.active, self.calls = True, []
+        self.active, self.calls, self.denied = True, [], []
+        self.pins = None
 
     async def check(self, tx):
         actor = (await tx.execute(text("SELECT current_setting('pinet.control_user',true), "
@@ -49,6 +52,11 @@ class InertFence(TaskFence):
 
     async def reserve(self, tx, call):
         await self.check(tx)
+        if self.pins is not None:
+            pin = self.pins.get(str(call.request_id))
+            if not pin or any(getattr(call, k) != v for k, v in pin.items()):
+                self.denied.append(call)
+                raise ControlError(409, "task_call_identity_changed")
         if self.available == 0:
             raise ControlError(429, "task_rate_limited")
         # The genuine native reservation is inserted AFTER this in the SAME tx.
@@ -121,6 +129,31 @@ async def test_zero_task_allocation_reserves_no_native_provider_event(principal,
         assert not list(await tx.scalars(select(Event.id).where(Event.kind == "provider_attempt")))
 
 
+@pytest.mark.parametrize("changed", ["script", "message"])
+async def test_first_dispatch_changed_script_or_message_same_ids_consumes_no_permit(principal, monkeypatch, changed):
+    c, p = principal
+    captures, operation = [], uuid4()
+    fake(monkeypatch, captures)
+    messages = ["Synthetic pinned original"]
+    step = uuid5(operation, "step:0")
+    p.fence.pins = {str(step): {"script_sha256": chat.digest(messages),
+        "request_input_sha256": chat.digest(messages[0])}}
+    with pytest.raises(ControlError, match="task_call_identity_changed"):
+        if changed == "script":
+            await lab.episode_session(p, c["frozen"], messages + ["Unplanned second input"], operation)
+        else:
+            frozen = lab.Episode(**lab.Snapshot.model_validate(c["frozen"]).model_dump(),
+                episode_id=operation, script_sha256=chat.digest(messages)).model_dump(mode="json")
+            created = await p.start(frozen["creation_id"], Start(request_id=operation,
+                admission_id=frozen["admission_id"], notice_version="customer-text.local.v1", consent=True),
+                calibration=frozen)
+            await p.turn(frozen["creation_id"], created["conversation_id"],
+                Turn(request_id=step, base_need_revision=0, message="  Changed first input  "), calibration=frozen)
+    assert not captures and not p.fence.calls and len(p.fence.denied) == 1
+    async with db.transaction(c["saved"]["business_id"], c["environment"]) as tx:
+        assert not list(await tx.scalars(select(Event.id).where(Event.kind == "provider_attempt")))
+
+
 @pytest.mark.parametrize("change", ["session", "source", "registry"])
 async def test_foreign_or_stale_session_scope_cannot_enter_provider(principal, monkeypatch, change):
     c, p = principal
@@ -171,7 +204,7 @@ async def test_logout_during_inert_call_preserves_accounting_without_session_ren
         assert usage.payload["usage"]["tokens"]["output_tokens"] == 9
 
 
-@pytest.mark.parametrize("cause,expected", [("communication", 1), ("unknown", 2)])
+@pytest.mark.parametrize("cause,expected", [("communication", 1), ("knowledge", 2)])
 async def test_same_quality_lifecycle_consumes_exact_permits_and_replays_without_extra_call(principal, monkeypatch, cause, expected):
     c, p = principal
     fake(monkeypatch, [])
@@ -185,6 +218,8 @@ async def test_same_quality_lifecycle_consumes_exact_permits_and_replays_without
     assert [call.kind for call in p.fence.calls] == ["customer_text"] + ["customer_quality"] * expected
     assert p.fence.calls[-1].call_key.startswith("quality-attempt:")
     events, artifacts, job = await rows(c, str(request.conversation_id))
+    assert job.payload["request_input_sha256"] == review.request_intent_sha256(request)
+    assert p.fence.calls[-1].request_input_sha256 == job.payload["request_input_sha256"]
     saved = deepcopy(([(e.id, e.payload) for e in events], [a.payload for a in artifacts], job.payload))
     assert await review.run_session(p, request) == first
     after, retained, current = await rows(c, str(request.conversation_id))
@@ -247,3 +282,27 @@ async def test_session_typed_quality_reuses_precommitted_receipts_without_admiss
     assert artifacts[0].payload["competence"]["module_admission"] == "not_admitted"
     assert len(p.fence.calls) == 3 and len(calls) == 1
     assert await review.run_session(p, request) == result and len(p.fence.calls) == 3
+
+
+async def test_first_quality_dispatch_changed_typed_reference_same_ids_consumes_no_permit(principal, tmp_path, monkeypatch):
+    c, p = principal
+    fake(monkeypatch, [])
+    reference, messages, _ = typed_manifest(c, tmp_path, monkeypatch)
+    episode = await lab.episode_session(p, c["frozen"], messages, uuid4(), protected_case=reference)
+    request = review.SessionTypedRequest(conversation_id=episode["conversation"]["conversation_id"],
+        request_id=uuid4(), episode=episode["snapshot"], typed_expectations=reference)
+    p.fence.pins = {str(request.request_id): {"script_sha256": request.episode.script_sha256,
+        "request_input_sha256": review.request_intent_sha256(request)}}
+    before = len(p.fence.calls)
+    alias = tmp_path / "same-manifest-other-path.private.json"
+    alias.write_bytes(Path(reference["manifest_path"]).read_bytes())
+    changed = review.SessionTypedRequest(**{**request.model_dump(),
+        "typed_expectations": {**reference, "manifest_path": str(alias)}})
+    assert review.request_intent_sha256(request) != review.request_intent_sha256(changed)
+    calls = []
+    scored_provider(monkeypatch, c, calls)
+    result = await review.run_session(p, changed)
+    assert result["status"] == "failed" and not calls and len(p.fence.calls) == before
+    assert len(p.fence.denied) == 1
+    events, artifacts, _ = await rows(c, str(request.conversation_id))
+    assert not artifacts and not any(e.kind == "quality_provider_attempt" for e in events)

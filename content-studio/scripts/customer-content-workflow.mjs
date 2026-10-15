@@ -1,10 +1,10 @@
 // Trusted local agent adapter; caller owns auth, lease and current accepted revision.
 // No provider, inferred facts, source fetch, automatic review or deployment.
-import { lstat } from 'node:fs/promises';
+import { lstat, mkdir, open, rename, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { loadCustomerContentContext, assertArtifactDirectories, readArtifactBytes } from './customer-content-context.mjs';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { stableV2, validateV2Editorial, normalizeV2Blocks, inlineNodes } from '../src/content-package-v2.mjs';
 import { workflowOverview, reviewCurrent } from '../src/content-workflow.mjs';
 import { IMAGE_POLICY } from '../src/image-pipeline.mjs';
@@ -23,13 +23,14 @@ const commands = {
   'amend-page': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
   'resolve-internal-links': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash'],
   'amend-site': ['expectedSiteHash','patch'],
-  'import-media': ['expectedSiteHash','sourcePath','metadata'],
+  'import-media': ['expectedSiteHash','sourcePath','metadata','expectedSourceSha256'],
+  'attach-media': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','sourcePath','metadata','expectedSourceSha256'],
   'finalize-links': ['expectedSiteHash','pageIds'],
   'record-review': ['expectedSiteHash','review'],
   'approve-batch': ['expectedSiteHash','pageIds','actorId'],
   release: ['expectedSiteHash'],
 };
-const pageCommands = new Set(['amend-page','resolve-internal-links','record-review','read-page','read-media']);
+const pageCommands = new Set(['amend-page','attach-media','resolve-internal-links','record-review','read-page','read-media']);
 const types = new Set(['home','service','product','guide','faq','location','article','index','author','policy','about','contact']);
 
 function pagePatch(value, site, page) {
@@ -93,6 +94,156 @@ function sitePatch(value) {
   }
   if (value.brand !== undefined) { keys(value.brand,['accent']); if (!/^#[a-f0-9]{6}$/i.test(value.brand.accent)) fail('workflow_invalid_patch'); }
   return structuredClone(value);
+}
+
+const digest = value => createHash('sha256').update(stableV2(value)).digest('hex');
+async function mediaInput(context,input) {
+  keys(input.metadata,['mime','alt','rights','credit','prompt']);
+  const m=input.metadata;
+  if(!['image/png','image/jpeg','image/webp'].includes(m.mime)||!text(m.alt,300,1)||!text(m.rights,300,1)
+      ||m.credit!==undefined&&!text(m.credit,200)||m.prompt!==undefined&&!text(m.prompt,20000))fail('workflow_invalid_media');
+  if(!text(input.sourcePath,32767,1)||!path.isAbsolute(input.sourcePath))fail('workflow_unsafe_media');
+  const file=path.resolve(input.sourcePath),sources=path.join(context.directory,'media-inputs'),relative=path.relative(sources,file);
+  if(!relative||relative.startsWith('..')||path.isAbsolute(relative))fail('workflow_unsafe_media');
+  await assertArtifactDirectories(context.root,path.dirname(file));
+  const bytes=await readArtifactBytes(file,IMAGE_POLICY.maxInputBytes),sourceSha256=createHash('sha256').update(bytes).digest('hex');
+  if(input.expectedSourceSha256!==undefined&&(!hash(input.expectedSourceSha256)||input.expectedSourceSha256!==sourceSha256))
+    fail('workflow_media_source_mismatch');
+  return {m,bytes,sourceSha256};
+}
+
+async function persistReceipt(file,value) {
+  const temporary=file+'.'+randomUUID()+'.tmp',handle=await open(temporary,'wx',0o600);
+  try {await handle.writeFile(stableV2(value)+'\n');await handle.sync();} finally {await handle.close();}
+  await rename(temporary,file);
+}
+
+async function existingFamily(context,site,source) {
+  const matches=[],groups=[...new Set(site.assets.map(a=>a.groupId).filter(g=>typeof g==='string'&&/^[a-f0-9-]{36}$/.test(g)))];
+  for(const groupId of groups) {
+    const family=site.assets.filter(a=>a.groupId===groupId);
+    if(family.some(a=>a.alt!==source.m.alt.trim()||a.rights!==source.m.rights.trim()
+        ||a.credit!==(source.m.credit??'').trim()))continue;
+    const originals=path.join(context.data,'media-originals',site.id);
+    await assertArtifactDirectories(context.root,originals);
+    let original;
+    try {original=JSON.parse((await readArtifactBytes(path.join(originals,groupId+'.json'),100000)).toString('utf8'));}
+    catch {fail('workflow_media_receipt_invalid');}
+    if(original.mime===source.m.mime&&original.sourceSha256===source.sourceSha256&&original.sourceBytes===source.bytes.length
+        &&original.prompt===(source.m.prompt??''))matches.push(family);
+  }
+  if(matches.length>1)fail('workflow_media_receipt_conflict');
+  if(!matches.length)return null;
+  const variants=matches[0].sort((a,b)=>b.width-a.width);
+  return {...variants[0],variants};
+}
+
+// Private, byte-bound import + existing fenced amend. No provider or arbitrary body.
+// The runtime caller owns current Session/RLS/Creation/GUIDE admission fencing.
+export async function attachMedia(context,input) {
+  if(!hash(input.expectedSourceSha256)||!hash(input.expectedSiteHash)||!hash(input.expectedRevisionHash)
+      ||!hash(input.expectedPlanningHash))fail('workflow_expected_context_required');
+  const source=await mediaInput(context,input),{model}=context;
+  const identity={creationId:input.creationId,acceptedRevision:input.acceptedRevision,sourceHash:input.sourceHash,
+    canonicalHost:input.canonicalHost,pageId:input.pageId,sourceSha256:source.sourceSha256,metadata:source.m};
+  const requestHash=digest(identity),binding={...identity,expectedSiteHash:input.expectedSiteHash,
+    expectedRevisionHash:input.expectedRevisionHash,expectedPlanningHash:input.expectedPlanningHash};
+  const directory=path.join(context.directory,'media-attachments');
+  try {await mkdir(directory);} catch(error) {if(error.code!=='EEXIST')throw error;}
+  await assertArtifactDirectories(context.root,directory);
+  const file=path.join(directory,requestHash+'.json'),lockFile=path.join(directory,requestHash+'.lock');
+  let lock;
+  try {lock=await open(lockFile,'wx',0o600);} catch(error) {if(error.code==='EEXIST')fail('workflow_media_busy');throw error;}
+  const token=randomUUID();await lock.writeFile(token);
+  try {
+    let receipt;
+    try {receipt=JSON.parse((await readArtifactBytes(file,100000)).toString('utf8'));}
+    catch(error) {if(error.code!=='ENOENT')fail('workflow_media_receipt_invalid');}
+    let site=await model.getSite(context.site.id),page=site.pages.find(p=>p.id===input.pageId&&p.siteId===site.id&&p.status!=='revoked');
+    if(!page)fail('workflow_unknown_link');
+    if(receipt&&(receipt.version!=='native-media-attachment.v1'||receipt.requestHash!==requestHash
+        ||stableV2(receipt.binding)!==stableV2(binding)||!['prepared','imported','attached'].includes(receipt.state)))
+      fail('workflow_media_receipt_conflict');
+    const replayed=Boolean(receipt);let changed=false;
+    if(!receipt) {
+      if(model.studioContextHash(site)!==input.expectedSiteHash||model.revisionHash(page)!==input.expectedRevisionHash
+          ||model.planningContextHash(page)!==input.expectedPlanningHash)fail('workflow_context_stale');
+      receipt={version:'native-media-attachment.v1',requestHash,binding,state:'prepared'};
+      const existing=await existingFamily(context,site,source);
+      // A crash during import is ambiguous. Retain prepared and refuse another import.
+      await persistReceipt(file,receipt);
+      const asset=existing??await model.saveResponsiveAsset(site.id,source.m,source.bytes,{expectedSiteHash:input.expectedSiteHash});
+      // saveResponsiveAsset changes only assets. Derive the exact expected
+      // transition from its actual records, never adopt an unrelated concurrent edit.
+      const importedSiteHash=model.studioContextHash({...site,assets:existing?site.assets:[...site.assets,...asset.variants]});
+      site=await model.getSite(site.id);
+      receipt={...receipt,state:'imported',assetId:asset.id,groupId:asset.groupId,
+        variants:asset.variants.map(({id,width,height,bytes,sha256})=>({id,width,height,bytes,sha256})),
+        importedSiteHash};
+      await persistReceipt(file,receipt);
+      if(model.studioContextHash(site)!==importedSiteHash)fail('workflow_context_stale');
+    }
+    if(receipt.state==='prepared')fail('workflow_media_import_uncertain');
+    if(!id(receipt.assetId)||!hash(receipt.importedSiteHash)||typeof receipt.groupId!=='string'
+        ||! /^[a-f0-9-]{36}$/.test(receipt.groupId)||!Array.isArray(receipt.variants)
+        ||!receipt.variants.length||receipt.variants.length>5||!receipt.variants.some(v=>v.id===receipt.assetId))
+      fail('workflow_media_receipt_invalid');
+    const family=site.assets.filter(a=>a.groupId===receipt.groupId);
+    if(family.length!==receipt.variants.length||new Set(receipt.variants.map(v=>v.id)).size!==family.length)
+      fail('workflow_media_receipt_invalid');
+    const originals=path.join(context.data,'media-originals',site.id);
+    await assertArtifactDirectories(context.root,originals);
+    let original;
+    try {original=JSON.parse((await readArtifactBytes(path.join(originals,receipt.groupId+'.json'),100000)).toString('utf8'));}
+    catch {fail('workflow_media_receipt_invalid');}
+    const originalName=receipt.groupId+'.'+({'image/png':'png','image/jpeg':'jpg','image/webp':'webp'}[source.m.mime]);
+    if(original.groupId!==receipt.groupId||original.mime!==source.m.mime||original.filename!==originalName||original.sourceSha256!==source.sourceSha256
+        ||original.sourceBytes!==source.bytes.length||original.prompt!==(source.m.prompt??''))
+      fail('workflow_media_receipt_invalid');
+    const originalBytes=await readArtifactBytes(path.join(originals,originalName),IMAGE_POLICY.maxInputBytes);
+    if(originalBytes.length!==source.bytes.length||createHash('sha256').update(originalBytes).digest('hex')!==source.sourceSha256)
+      fail('workflow_media_integrity');
+    for(const variant of receipt.variants) {
+      const asset=family.find(a=>a.id===variant.id);
+      if(!asset||['width','height','bytes','sha256'].some(k=>asset[k]!==variant[k])
+          ||asset.alt!==source.m.alt.trim()||asset.rights!==source.m.rights.trim()
+          ||asset.credit!==(source.m.credit??'').trim()
+          ||!new RegExp('^/content-assets/'+site.id+'/[a-f0-9-]{36}\\.webp$').test(asset.src))
+        fail('workflow_media_receipt_invalid');
+      const mediaDirectory=path.join(context.data,'media',site.id);
+      await assertArtifactDirectories(context.root,mediaDirectory);
+      const bytes=await readArtifactBytes(path.join(mediaDirectory,path.basename(asset.src)),IMAGE_POLICY.maxInputBytes);
+      if(bytes.length!==variant.bytes||createHash('sha256').update(bytes).digest('hex')!==variant.sha256)
+        fail('workflow_media_integrity');
+    }
+    page=site.pages.find(p=>p.id===input.pageId);
+    if(receipt.state==='attached') {
+      if(!hash(receipt.appliedRevisionHash)||!hash(receipt.appliedPlanningHash)
+          ||model.revisionHash(page)!==receipt.appliedRevisionHash||model.planningContextHash(page)!==receipt.appliedPlanningHash
+          ||page.editorial.featuredImageId!==receipt.assetId||family.some(a=>!page.media.some(m=>m.id===a.id)))
+        fail('workflow_context_stale');
+    } else {
+      if(model.studioContextHash(site)!==receipt.importedSiteHash||model.revisionHash(page)!==input.expectedRevisionHash
+          ||model.planningContextHash(page)!==input.expectedPlanningHash)fail('workflow_context_stale');
+      const patch=pagePatch({media:[...new Set([receipt.assetId,...page.media.map(a=>a.id)])].map(id=>({id})),
+        editorial:{...page.editorial,featuredImageId:receipt.assetId}},site,page);
+      const alreadyAttached=page.editorial.featuredImageId===receipt.assetId&&family.every(a=>page.media.some(m=>m.id===a.id));
+      const updated=alreadyAttached?page:await model.editPage(site.id,page.id,patch,{expectedSiteHash:receipt.importedSiteHash,
+        expectedRevisionHash:input.expectedRevisionHash,expectedPlanningHash:input.expectedPlanningHash});
+      receipt={...receipt,state:'attached',appliedRevisionHash:model.revisionHash(updated),
+        appliedPlanningHash:model.planningContextHash(updated)};
+      await persistReceipt(file,receipt);
+      changed=!alreadyAttached;
+    }
+    return {requestHash,state:'attached',sourceSha256:source.sourceSha256,pageId:page.id,assetId:receipt.assetId,
+      variantIds:receipt.variants.map(v=>v.id),appliedRevisionHash:receipt.appliedRevisionHash,
+      appliedPlanningHash:receipt.appliedPlanningHash,receiptSha256:digest(receipt),changed,
+      replayed,approval:'not-performed',mediaVerification:'not-performed',generation:'not-performed'};
+  } finally {
+    await lock.close();
+    if((await readArtifactBytes(lockFile,100)).toString('utf8')!==token)fail('workflow_media_lock_changed');
+    await unlink(lockFile);
+  }
 }
 
 async function filesPresent(context, page) {
@@ -171,6 +322,11 @@ export async function customerContentWorkflow(input) {
     return value;
   }
   if (!hash(input.expectedSiteHash)) fail('workflow_expected_context_required');
+  if(input.command==='attach-media') {
+    const result=await attachMedia(context,input);
+    return {...await current(context,input,await model.getSite(site.id)),
+      operation:{command:input.command,result,deployment:'not-performed'}};
+  }
   const expected = {expectedSiteHash:input.expectedSiteHash};
   if (model.studioContextHash(site) !== input.expectedSiteHash) fail('workflow_context_stale');
   let result;
@@ -189,18 +345,10 @@ export async function customerContentWorkflow(input) {
   } else if (input.command === 'amend-site') {
     await model.editSite(site.id,sitePatch(input.patch),expected);
   } else if (input.command === 'import-media') {
-    keys(input.metadata,['mime','alt','rights','credit','prompt']);
-    const m = input.metadata;
-    if (!['image/png','image/jpeg','image/webp'].includes(m.mime) || !text(m.alt,300,1) || !text(m.rights,300,1)
-        || m.credit !== undefined && !text(m.credit,200) || m.prompt !== undefined && !text(m.prompt,20000)) fail('workflow_invalid_media');
-    if (!text(input.sourcePath,32767,1) || !path.isAbsolute(input.sourcePath)) fail('workflow_unsafe_media');
-    const file = path.resolve(input.sourcePath), sources = path.join(context.directory,'media-inputs');
-    const relative = path.relative(sources,file);
-    if (!relative || relative.startsWith('..') || path.isAbsolute(relative)) fail('workflow_unsafe_media');
-    await assertArtifactDirectories(context.root,path.dirname(file));
-    const bytes = await readArtifactBytes(file,IMAGE_POLICY.maxInputBytes);
+    const {m,bytes,sourceSha256}=await mediaInput(context,input);
     const asset = await model.saveResponsiveAsset(site.id,m,bytes,expected);
-    result = {assetId:asset.id,variants:asset.variants.map(({id,width,height,bytes,sha256})=>({id,width,height,bytes,sha256}))};
+    result = {assetId:asset.id,variants:asset.variants.map(({id,width,height,bytes,sha256})=>({id,width,height,bytes,sha256})),
+      ...(input.expectedSourceSha256!==undefined?{sourceSha256}:{})};
   } else if (input.command === 'record-review') {
     keys(input.review,['reviewer','revisionHash','evidence']);
     keys(input.review.evidence,['usefulness','facts','sources','media','links','presentation']);

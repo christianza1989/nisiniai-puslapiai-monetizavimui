@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Root approved exact additional test file. Original configured companion run23PASS/1FAIL kept. Existing resolver reused; no sibling copies/aliases or provider/runtime changes.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/media-import.test.mjs with configured companion",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_MEDIA_IMPORT_TEST_PORTABILITY_2026_10_15.md"
+    }
+  ],
+  "eventId": "85e03fe8-44dc-4d78-a5d7-30757aab1c9f",
+  "sequence": 2,
+  "at": "2026-10-15T02:25:47.270Z"
+}

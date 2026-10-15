@@ -15,6 +15,7 @@ from ..models import Business, new_id, utcnow
 from ..tasks.models import Task, TaskRun, Thread
 from ..tasks.service import TERMINAL, append_event
 from ..workspace_topics import service as topics
+from . import adapter
 from .models import Attempt, Member, TeamEvent, TeamThread, TeamTurn
 from .policy import CAPABILITIES, KIND, MAX_HISTORY, participant_id, roster_hash, roster_items
 from .quota import call_slot
@@ -73,6 +74,7 @@ async def blockers(tx, row):
     if row.anchor_kind != "business":
         values.append("business_anchor_required")
     if (not cfg.workspace_team_runner_enabled or row.user_id not in cfg.workspace_team_actor_ids
+            or not await asyncio.to_thread(adapter.runner_ready)
             or not 1 <= cfg.chat_daily_limit <= 100 or not await asyncio.to_thread(source_current)):
         values.append("team_execution_disabled")
     if row.archived_at is not None:

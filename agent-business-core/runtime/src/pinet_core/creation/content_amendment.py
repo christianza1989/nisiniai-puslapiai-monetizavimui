@@ -52,6 +52,23 @@ class CopyPatch(Strict):
             raise ValueError("nonempty explicit patch required")
         if any(isinstance(value, str) and not value.strip() for value in patch.values()):
             raise ValueError("meaningful copy required")
+        # Native block numeric fields are integral. Python preserves 2.0/-0.0,
+        # while JSON.stringify serializes them as 2/0; refuse BEFORE writing so
+        # both runtimes bind exactly the same immutable request hash. Oversized
+        # integers likewise lose precision in JavaScript.
+        def native_json(value):
+            if isinstance(value, float) or type(value) is int and abs(value) > 9007199254740991:
+                raise ValueError("exact integral native JSON required")
+            if isinstance(value, list):
+                for item in value:
+                    native_json(item)
+            elif isinstance(value, dict):
+                for key, item in value.items():
+                    if not key.isascii():
+                        raise ValueError("native structural keys must be ASCII")
+                    native_json(item)
+
+        native_json(patch)
         if len(json.dumps(patch, ensure_ascii=False, allow_nan=False).encode()) > 200000:
             raise ValueError("bounded native patch required")
         return self

@@ -31,7 +31,10 @@ After timeout, cancellation or authorization loss, SQL rollback does not prove
 that the native file write failed. Preserve the same operation UUID and original
 request. Reconcile it under fresh current authority against its durable receipt;
 never automatically refresh hashes and overwrite a changed page. A retained lock
-is not stolen. Before the next independent amendment, reread current native state:
+is not stolen. A forcibly killed Node process can leave an operation or native
+model lock; injected exception recovery does not prove hard-kill recovery. Such
+locks require separately verified recovery of the known stopped operation before
+replay. Before the next independent amendment, reread current native state:
 any page change also changes the whole-site context hash.
 
 Before a real local adoption, freeze and test the exact source with a real

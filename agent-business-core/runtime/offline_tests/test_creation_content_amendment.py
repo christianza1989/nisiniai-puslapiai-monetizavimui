@@ -124,6 +124,15 @@ async def test_copy_patch_is_bounded_and_cannot_set_authority(amendment, patch):
     assert error.value.code == "invalid_content_amendment" and a.f.state.calls == 0
 
 
+@pytest.mark.parametrize("value", [2.0, -0.0, 9007199254740992])
+async def test_json_number_drift_is_rejected_before_any_native_write(amendment, value):
+    a = amendment
+    body = [{"type": "heading", "level": value, "text": "Sintetinis patikros pavadinimas"}]
+    with pytest.raises(ControlError) as error:
+        await copy.amend(a.f.tx, a.f.session, IDENTITY, {**a.request.model_dump(), "patch": {"body": body}})
+    assert error.value.code == "invalid_content_amendment" and a.f.state.calls == 0
+
+
 async def test_authority_lost_after_child_does_not_fabricate_success(amendment, monkeypatch):
     a = amendment
 

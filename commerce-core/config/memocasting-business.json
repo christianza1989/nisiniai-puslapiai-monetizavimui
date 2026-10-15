@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "amountUnit": "EUR_cents",
-  "source": "Owner messages, 2026-10-14/15: white paint included in both kits; registered address, packed measurements and temporary simple kit balances confirmed",
+  "source": "Owner messages, 2026-10-14/15: white paint included in both kits; registered address, packed measurements and temporary simple kit balances confirmed; registered postcode 02206 verified by official Lietuvos paštas search 2026-10-15",
   "legal": {
     "name": "MB Memocasting",
     "companyCode": "306026827",
     "vatRegistered": false,
-    "address": "Pupinės g. 10-55, Vilnius, Lietuva",
+    "address": { "country": "LT", "line1": "Pupinės g. 10-55", "city": "Vilnius", "postalCode": "02206" },
     "registeredAddressConfirmationPending": false,
     "phone": "+37069108251",
     "email": "info@memorycasting.lt"
@@ -24,6 +24,6 @@
   "plannedMarkets": ["PL", "LV", "EE"],
   "inventoryPolicy": { "mode": "simple", "unit": "kit_bucket", "configuredBalances": { "couple": 999, "family": 999 }, "basis": "Owner-configured temporary balances; not a physical stocktake", "lotAndExpiryRequired": false },
   "unconfirmed": ["Wooden base packed weight and dimensions", "White paint amount, safety documents and procurement cost", "PL, LV, EE sale prices and shipping tariffs", "Alginate supplier safety documents and exact mixing instructions"],
-  "connections": { "stripeEnabled": false, "sendparcelEnabled": false },
+  "connections": { "stripeEnabled": true, "sendparcelEnabled": false },
   "productionAdmission": false
 }

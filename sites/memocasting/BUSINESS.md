@@ -19,3 +19,12 @@ Pradinei LT prekybai pasirinkta paprasta poros ir šeimos rinkinių kibirų apsk
 Tikra produkcijosD1 priėmė2produktų katalogo revizijas ir2optimistines/idempotentines likučio korekcijas. Po operacijos abiejų available999; finished_lots/finished_allocations/orders0. Tai inventory priėmimas; checkout tebėra atskirai uždarytas iki tikro mokėjimų ir pristatymo prijungimo. PL/LV/EE prekybos kainos ir pristatymas dar neautorizuoti, todėl aktyvūs produktų prices tik LT32/48EUR.
 
 Siųsk pigiau integracija jau egzistuoja Sendparcelv1 adapteryje. Godos2026-10-12 IT laiškas patvirtina password APIkeyheader, atskirusstaging/productionraktus, v1quotes→product.id→product_id, vienąužklausąpersekundę ir20min kainos laiką. API key ir tikrų paslaugų/kainų priėmimas dar nepatvirtintas. Laiško protokolo patvirtinimas nėra sukurta ar apmokėta siunta.
+
+
+## Patikrintas Stripe ryšys ir dokumentų adresas · 2026-10-15
+
+Savininkas pakeitė dedikuotą Stripe LIVE raktą. Tikra paskyros patikra ir svetainės serverio atsakymas patvirtina MB Memocasting LIVE ryšį; senasis atskleistas raktas nebegalioja. Naujas raktas ir gavėjo paslaptis saugomi tik privačiai. Tai patvirtintas ryšys, o ne atliktas mokėjimas.
+
+Oficialioje Lietuvos pašto paieškoje Pupinės g. 10, Vilnius grąžintas vienas rezultatas — 02206. Savininko patvirtintas butas55 išsaugotas. Registracijos adresas dokumentams normalizuotas kaip LT, Pupinės g.10-55, Vilnius02206; Molynės g.2C, Vilnius02211 tebėra atskiras išsiuntimo/grąžinimo adresas. Šaltinis https://www.post.lt/pasto-kodu-ir-adresu-paieska, faktinis UI rezultatas ir ekrano kvitas išsaugoti privačiai.
+
+Siųsk pigiau API užklausa IT specialistei išsiųsta; šio tikrinimo metu naujo atsakymo ar rakto negauta. Pristatymas ir galutinis užsakymų priėmimas tebėra išjungti. Operacijų bei dokumentų leidimai neįjungti vien dėl Stripe ryšio.

@@ -1,0 +1,400 @@
+{
+  "at": "2026-10-09T18:52:58.049Z",
+  "selectionAt": "2026-10-09T12:00:00.000Z",
+  "runtimeSource": "fbc4bbc3e900694cee8c011667a1a2cb7abd1ecc",
+  "coreSource": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "rendererSha256": "52ec0a75ef855df980679204811c81c8611401eed6f8e420d41bcd32f2f45b9c",
+  "artifactSha256": "2975859764babda23a0ff1af1f181b509c4fc3d951b4703bded0e9a5b0cc2108",
+  "assets": 309,
+  "plannedPublicationStates": 64,
+  "scope": "Native compiled candidate HTTP publication clock only. Does not enter production or certify hosted product, SMTP, real pilot or final upgrade.",
+  "state": "PASS",
+  "finishedAt": "2026-10-09T18:53:05.107Z",
+  "states": [
+    {
+      "slug": "gidai/nagu-dizainas-gidas",
+      "now": "2026-10-14T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 10
+    },
+    {
+      "slug": "gidai/nagu-dizainas-gidas",
+      "now": "2026-10-14T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 11
+    },
+    {
+      "slug": "gidai/kirpimas-gidas",
+      "now": "2026-10-13T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 8
+    },
+    {
+      "slug": "gidai/kirpimas-gidas",
+      "now": "2026-10-13T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 9
+    },
+    {
+      "slug": "gidai/kirpimas-galiukai-ar-forma",
+      "now": "2026-10-19T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 17
+    },
+    {
+      "slug": "gidai/kirpimas-galiukai-ar-forma",
+      "now": "2026-10-19T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 18
+    },
+    {
+      "slug": "gidai/kirpimas-sluoksniai",
+      "now": "2026-10-28T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 33
+    },
+    {
+      "slug": "gidai/kirpimas-sluoksniai",
+      "now": "2026-10-28T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 34
+    },
+    {
+      "slug": "gidai/kirpimas-bob-kare",
+      "now": "2026-10-16T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 13
+    },
+    {
+      "slug": "gidai/kirpimas-bob-kare",
+      "now": "2026-10-16T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 14
+    },
+    {
+      "slug": "gidai/kirpimas-kirpciukai",
+      "now": "2026-10-23T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 26
+    },
+    {
+      "slug": "gidai/kirpimas-kirpciukai",
+      "now": "2026-10-23T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 27
+    },
+    {
+      "slug": "gidai/kirpimas-garbanoti",
+      "now": "2026-10-20T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 20
+    },
+    {
+      "slug": "gidai/kirpimas-garbanoti",
+      "now": "2026-10-20T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 21
+    },
+    {
+      "slug": "gidai/kirpimas-trumpas-vyriskas",
+      "now": "2026-10-28T13:59:59.999Z",
+      "visible": false,
+      "publicPages": 34
+    },
+    {
+      "slug": "gidai/kirpimas-trumpas-vyriskas",
+      "now": "2026-10-28T14:00:00.000Z",
+      "visible": true,
+      "publicPages": 35
+    },
+    {
+      "slug": "gidai/kirpimas-kaina-trukme",
+      "now": "2026-10-22T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 23
+    },
+    {
+      "slug": "gidai/kirpimas-kaina-trukme",
+      "now": "2026-10-22T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 24
+    },
+    {
+      "slug": "gidai/kirpimas-pasiruosimas",
+      "now": "2026-10-27T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 31
+    },
+    {
+      "slug": "gidai/kirpimas-pasiruosimas",
+      "now": "2026-10-27T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 32
+    },
+    {
+      "slug": "gidai/kirpimas-nuotrauka",
+      "now": "2026-10-26T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 29
+    },
+    {
+      "slug": "gidai/kirpimas-nuotrauka",
+      "now": "2026-10-26T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 30
+    },
+    {
+      "slug": "gidai/plauku-formavimas-gidas",
+      "now": "2026-10-15T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 11
+    },
+    {
+      "slug": "gidai/plauku-formavimas-gidas",
+      "now": "2026-10-15T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 12
+    },
+    {
+      "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "now": "2026-10-17T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 15
+    },
+    {
+      "slug": "gidai/plauku-formavimas-dziovinimas-ar-progine",
+      "now": "2026-10-17T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 16
+    },
+    {
+      "slug": "gidai/plauku-formavimas-garbanos-bangos",
+      "now": "2026-10-20T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 19
+    },
+    {
+      "slug": "gidai/plauku-formavimas-garbanos-bangos",
+      "now": "2026-10-20T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 20
+    },
+    {
+      "slug": "gidai/plauku-formavimas-susegta",
+      "now": "2026-10-26T13:59:59.999Z",
+      "visible": false,
+      "publicPages": 30
+    },
+    {
+      "slug": "gidai/plauku-formavimas-susegta",
+      "now": "2026-10-26T14:00:00.000Z",
+      "visible": true,
+      "publicPages": 31
+    },
+    {
+      "slug": "gidai/plauku-formavimas-vestuves",
+      "now": "2026-10-27T13:59:59.999Z",
+      "visible": false,
+      "publicPages": 32
+    },
+    {
+      "slug": "gidai/plauku-formavimas-vestuves",
+      "now": "2026-10-27T14:00:00.000Z",
+      "visible": true,
+      "publicPages": 33
+    },
+    {
+      "slug": "gidai/plauku-formavimas-kaina-trukme",
+      "now": "2026-10-21T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 22
+    },
+    {
+      "slug": "gidai/plauku-formavimas-kaina-trukme",
+      "now": "2026-10-21T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 23
+    },
+    {
+      "slug": "gidai/plauku-formavimas-pasiruosimas",
+      "now": "2026-10-25T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 28
+    },
+    {
+      "slug": "gidai/plauku-formavimas-pasiruosimas",
+      "now": "2026-10-25T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 29
+    },
+    {
+      "slug": "gidai/plauku-formavimas-makiazas-kartu",
+      "now": "2026-10-23T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 25
+    },
+    {
+      "slug": "gidai/plauku-formavimas-makiazas-kartu",
+      "now": "2026-10-23T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 26
+    },
+    {
+      "slug": "gidai/makiazas-gidas",
+      "now": "2026-10-14T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 9
+    },
+    {
+      "slug": "gidai/makiazas-gidas",
+      "now": "2026-10-14T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 10
+    },
+    {
+      "slug": "gidai/makiazas-dieninis-proginis",
+      "now": "2026-10-16T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 14
+    },
+    {
+      "slug": "gidai/makiazas-dieninis-proginis",
+      "now": "2026-10-16T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 15
+    },
+    {
+      "slug": "gidai/makiazas-vestuvinis",
+      "now": "2026-10-24T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 27
+    },
+    {
+      "slug": "gidai/makiazas-vestuvinis",
+      "now": "2026-10-24T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 28
+    },
+    {
+      "slug": "gidai/makiazas-nuotrauka",
+      "now": "2026-10-21T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 21
+    },
+    {
+      "slug": "gidai/makiazas-nuotrauka",
+      "now": "2026-10-21T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 22
+    },
+    {
+      "slug": "gidai/makiazas-kaina-trukme",
+      "now": "2026-10-19T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 18
+    },
+    {
+      "slug": "gidai/makiazas-kaina-trukme",
+      "now": "2026-10-19T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 19
+    },
+    {
+      "slug": "gidai/makiazas-pamoka",
+      "now": "2026-10-22T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 24
+    },
+    {
+      "slug": "gidai/makiazas-pamoka",
+      "now": "2026-10-22T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 25
+    },
+    {
+      "slug": "gidai/bendri-gidas",
+      "now": "2026-10-13T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 7
+    },
+    {
+      "slug": "gidai/bendri-gidas",
+      "now": "2026-10-13T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 8
+    },
+    {
+      "slug": "gidai/bendri-registracija",
+      "now": "2026-10-15T12:59:59.999Z",
+      "visible": false,
+      "publicPages": 12
+    },
+    {
+      "slug": "gidai/bendri-registracija",
+      "now": "2026-10-15T13:00:00.000Z",
+      "visible": true,
+      "publicPages": 13
+    },
+    {
+      "slug": "gidai/bendri-vizitu-derinimas",
+      "now": "2026-10-18T06:59:59.999Z",
+      "visible": false,
+      "publicPages": 16
+    },
+    {
+      "slug": "gidai/bendri-vizitu-derinimas",
+      "now": "2026-10-18T07:00:00.000Z",
+      "visible": true,
+      "publicPages": 17
+    },
+    {
+      "slug": "gidai/sezonai-kaledos",
+      "now": "2026-11-10T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 35
+    },
+    {
+      "slug": "gidai/sezonai-kaledos",
+      "now": "2026-11-10T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 36
+    },
+    {
+      "slug": "gidai/sezonai-naujieji",
+      "now": "2026-11-24T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 36
+    },
+    {
+      "slug": "gidai/sezonai-naujieji",
+      "now": "2026-11-24T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 37
+    },
+    {
+      "slug": "gidai/sezonai-valentino",
+      "now": "2027-01-12T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 37
+    },
+    {
+      "slug": "gidai/sezonai-valentino",
+      "now": "2027-01-12T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 38
+    },
+    {
+      "slug": "gidai/sezonai-velykos",
+      "now": "2027-02-23T07:59:59.999Z",
+      "visible": false,
+      "publicPages": 38
+    },
+    {
+      "slug": "gidai/sezonai-velykos",
+      "now": "2027-02-23T08:00:00.000Z",
+      "visible": true,
+      "publicPages": 39
+    }
+  ]
+}

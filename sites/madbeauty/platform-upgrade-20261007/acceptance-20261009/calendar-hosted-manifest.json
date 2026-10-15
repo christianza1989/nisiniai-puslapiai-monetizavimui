@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-09T12:21:13.738Z",
+  "artifactSha256": "0435a2c4157d65d205f3e9036d7c12db6e37a3e87b765b35daa8fbdd556a1dcd",
+  "source": "3a9ba48919bd984ab136f6b44a51077cdbe9ed24",
+  "runtime": "3c16e4cec06a8c5ce6b015fc6196dd3f6c597d8c",
+  "core": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+  "packageSha256": "bb1b90aa2929d9cc63607afb9b77977203eb9bc45031a6c8ae5e8775ce378511",
+  "worker": "madbeauty-ui-acceptance-20261009",
+  "namespacePolicy": "Preserve existing hosted source45cdaa/targetecd78b; no production binding",
+  "scope": "Protected full-app QA content reconciliation only. No clock hook or SMTP."
+}

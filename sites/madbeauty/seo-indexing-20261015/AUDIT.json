@@ -1,0 +1,368 @@
+{
+  "siteId": "madbeauty",
+  "domain": "madbeauty.lt",
+  "at": "2026-10-15T07:31:44.945Z",
+  "state": "AUDIT_COMPLETE",
+  "mode": "Read-only indexing and bounded technical SEO/GEO audit; no deployment",
+  "market": {
+    "country": "LT",
+    "language": "lt",
+    "timezone": "Europe/Vilnius",
+    "serpPersonalized": true
+  },
+  "source": {
+    "networkMain": "808581d919d06cb4a2d151cc7f9ec1be1782aba2",
+    "companionMain": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "sourceHead": "34afa8b9b90853efd38e021bb7c7b140d470f0e8"
+  },
+  "liveContent": {
+    "sha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+    "preparedPages": 135,
+    "eligiblePages": 12,
+    "eligibleGuides": 8,
+    "scheduledPages": 123,
+    "preparedGuides": 131,
+    "publicProviderProfiles": 0,
+    "projectionMatches": true,
+    "note": "Prepared and deployed future pages remain intentionally private until their existing publishAt; they are not indexed/public articles."
+  },
+  "technical": {
+    "sitemapUrls": 39,
+    "sitemapDuplicates": 0,
+    "sitemapNon200": [],
+    "sitemapNoindex": [],
+    "sitemapCanonicalMismatch": [],
+    "sitemapBadLanguage": [],
+    "sitemapH1Errors": [],
+    "schemaParseErrors": [],
+    "duplicateDescriptions": [
+      {
+        "description": "Grožio paslaugos ir rezervacijos. MB Pinet · info@pinet.lt.",
+        "urls": [
+          "https://madbeauty.lt/paslaugos",
+          "https://madbeauty.lt/paslaugos/plaukai",
+          "https://madbeauty.lt/paslaugos/nagai",
+          "https://madbeauty.lt/paslaugos/antakiai",
+          "https://madbeauty.lt/paslaugos/blakstienos",
+          "https://madbeauty.lt/paslaugos/makiazas",
+          "https://madbeauty.lt/paslaugos/depiliacija",
+          "https://madbeauty.lt/paslaugos/veidas",
+          "https://madbeauty.lt/paslaugos/kunas",
+          "https://madbeauty.lt/paslaugos/masazas",
+          "https://madbeauty.lt/paslaugos/spa",
+          "https://madbeauty.lt/paslaugos/ilgalaikis-makiazas",
+          "https://madbeauty.lt/paslaugos/tatuiruotes",
+          "https://madbeauty.lt/paslaugos/verimas",
+          "https://madbeauty.lt/paslaugos/estetika",
+          "https://madbeauty.lt/apie",
+          "https://madbeauty.lt/kontaktai",
+          "https://madbeauty.lt/kaip-veikia",
+          "https://madbeauty.lt/tikrinimas",
+          "https://madbeauty.lt/pagalba",
+          "https://madbeauty.lt/privatumas",
+          "https://madbeauty.lt/slapukai",
+          "https://madbeauty.lt/taisykles",
+          "https://madbeauty.lt/atsaukimas",
+          "https://madbeauty.lt/autoriai/mb-pinet"
+        ]
+      }
+    ],
+    "currentPackagePages": 135,
+    "currentEligibleContentPages": 12,
+    "currentEligibleGuides": 8,
+    "scheduledContentPages": 123,
+    "preparedGuides": 131,
+    "publicProviders": 0,
+    "projectionMatches": true,
+    "sitemapNotReachedInFourPasses": [
+      "https://madbeauty.lt/autoriai/mb-pinet"
+    ],
+    "redirects": [
+      {
+        "url": "http://madbeauty.lt/gidai",
+        "status": 308,
+        "location": "https://madbeauty.lt/gidai"
+      },
+      {
+        "url": "https://www.madbeauty.lt/gidai",
+        "status": 308,
+        "location": "https://madbeauty.lt/gidai"
+      },
+      {
+        "url": "https://madbeauty.lt/gidai/",
+        "status": 308,
+        "location": "https://madbeauty.lt/gidai"
+      }
+    ]
+  },
+  "google": {
+    "property": "sc-domain:madbeauty.lt",
+    "access": "Actual signed-in owner Chrome UI; Treg tools inventory has no GSC API connection",
+    "summary": {
+      "underlyingDate": "2026-10-09",
+      "indexed": 1,
+      "notIndexed": 10,
+      "stale": true,
+      "reasons": {
+        "noindex": 3,
+        "robotsBlocked": 2,
+        "differentCanonical": 4,
+        "crawledNotIndexed": 1
+      },
+      "notCurrentTotal": true
+    },
+    "sitemap": {
+      "url": "https://madbeauty.lt/sitemap.xml",
+      "status": "Success",
+      "submittedLabel": "Oct 11, 2026",
+      "lastReadLabel": "Oct 14, 2026",
+      "discoveredPages": 36,
+      "actualCurrentUrls": 39,
+      "countsDescribeDifferentSnapshots": true
+    },
+    "urlInspections": [
+      {
+        "url": "https://madbeauty.lt/",
+        "status": "URL is on Google",
+        "pageIndexing": "Page is indexed",
+        "lastCrawlLabel": "Oct 11, 2026, 1:34:03 AM",
+        "crawler": "Googlebot smartphone",
+        "crawlAllowed": true,
+        "pageFetch": "Successful",
+        "indexingAllowed": true,
+        "userCanonical": "https://madbeauty.lt/",
+        "googleCanonical": "Inspected URL",
+        "sitemapDiscoveryNote": "Temporary processing error"
+      },
+      {
+        "url": "https://madbeauty.lt/paslaugos/nagai",
+        "status": "URL is not on Google",
+        "reason": "URL is unknown to Google",
+        "lastCrawl": null,
+        "crawlDecision": "N/A",
+        "noReferringSitemapsDetected": true,
+        "note": "Unknown is not a recorded quality rejection or proof of a current robots block."
+      },
+      {
+        "url": "https://madbeauty.lt/kontaktai",
+        "status": "URL is not on Google",
+        "reason": "Duplicate, Google chose different canonical than user",
+        "lastCrawlLabel": "Oct 9, 2026, 1:06:09 PM",
+        "crawler": "Googlebot smartphone",
+        "crawlAllowed": true,
+        "pageFetch": "Successful",
+        "indexingAllowed": true,
+        "userCanonical": "https://madbeauty.lt/kontaktai",
+        "googleCanonical": "https://madbeauty.lt/",
+        "currentPublicHtmlSelfCanonical": true,
+        "note": "Stored Google selection predates the current inspection; current correct rel=canonical alone does not prove Google changed its choice."
+      },
+      {
+        "url": "https://madbeauty.lt/gidai/kirpimas-gidas",
+        "status": "URL is not on Google",
+        "reason": "URL is unknown to Google",
+        "lastCrawl": null,
+        "publishedAt": "2026-10-13T13:00:00.000Z"
+      }
+    ],
+    "totalIndexedUrls": null,
+    "totalIndexedUnknownReason": "Summary is stale and site: is not exhaustive; individual inspections and served results prove only their own URLs."
+  },
+  "serp": {
+    "surface": "Actual Google Web Chrome",
+    "query": "site:madbeauty.lt",
+    "country": "LT",
+    "language": "lt",
+    "personalized": true,
+    "visibleResultCount": 4,
+    "filter0VisibleResultCount": 4,
+    "urls": [
+      "https://madbeauty.lt/paslaugos/kunas",
+      "https://madbeauty.lt/paslaugos/tatuiruotes",
+      "https://madbeauty.lt/gidai/kaip-pasirinkti-nagu-spalva",
+      "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina"
+    ],
+    "rootIndexedButNotShownInSiteQuery": true,
+    "notExhaustive": true
+  },
+  "geo": {
+    "llmsTxt": 200,
+    "llmsFullTxt": 200,
+    "articleSchemaParseErrors": [],
+    "syntheticUaChecks": {
+      "Googlebot": {
+        "status": 200,
+        "robots": [
+          "index,follow"
+        ]
+      },
+      "OAI-SearchBot": {
+        "status": 200,
+        "robots": [
+          "index,follow"
+        ]
+      },
+      "Claude-SearchBot": {
+        "status": 200,
+        "robots": [
+          "index,follow"
+        ]
+      },
+      "PerplexityBot": {
+        "status": 200,
+        "robots": [
+          "index,follow"
+        ]
+      }
+    },
+    "syntheticUaLimitation": "A spoofed UA response is not a verified Google/AI crawler visit.",
+    "actualCurrentGoogleLiveTest": "NOT_EXECUTED",
+    "aiCitations": null,
+    "aiCitationsStatus": "NOT_MEASURED",
+    "specialAiSchemaRequired": false
+  },
+  "conclusion": {
+    "globalNoindexFound": false,
+    "sitemapWorking": true,
+    "all39SitemapUrlsIndexAllowed": true,
+    "rootGoogleIndexConfirmed": true,
+    "unknownImportantUrlsConfirmed": true,
+    "currentContactGoogleCanonicalMismatchConfirmed": true,
+    "siteCountIsNotIndexInventory": true,
+    "seoImprovementsRemain": true,
+    "causation": "Observed discovery delay, recent publication and an old duplicate cluster are distinct from technical indexability. Sparse category-specific value is an improvement target, not proven reason why Google has not yet discovered a URL."
+  },
+  "backlog": [
+    {
+      "priority": 1,
+      "scope": "Public service categories and trust pages",
+      "status": "OBSERVED_NOT_CHANGED",
+      "issue": "25 public URLs share the same generic meta description",
+      "action": "Write accurate unique descriptions based on each page; strengthen distinct visible purpose before requesting recrawl",
+      "dependency": "Scoped reviewed source/runtime release; do not change existing approved content bytes silently",
+      "acceptance": "Each affected production URL has one accurate description and matching visible main content; no guarantee of index selection"
+    },
+    {
+      "priority": 1,
+      "scope": "Service category pages, including /paslaugos/nagai",
+      "status": "OBSERVED_NOT_CHANGED",
+      "issue": "Mostly shared selection tree, generic explanatory copy, no published providers/offers; Nagai URL unknown to Google",
+      "action": "Provide category-specific selection guidance and links to currently published relevant guides; add real approved providers as available; keep the functional tree",
+      "dependency": "Reviewed visible text and real provider data; demo reviews/profiles stay in noindex trial",
+      "acceptance": "Useful distinct main content, working relevant links and honest supply; Google recrawl/index decision measured separately"
+    },
+    {
+      "priority": 2,
+      "scope": "/kontaktai and historical legal-page duplicate group",
+      "status": "CONTACT_CONFIRMED_OTHER_THREE_HISTORICAL_ONLY",
+      "issue": "Google still selects apex for contact after its Oct9 crawl despite current self canonical",
+      "action": "Compare distinct visible trust content and consolidate only if semantically appropriate; request re-evaluation after actual improvement",
+      "acceptance": "Current production self canonical and distinct useful page; later Google-selected canonical verified in owner URL Inspection"
+    },
+    {
+      "priority": 2,
+      "scope": "Important current hubs/categories/guides",
+      "status": "NOT_SUBMITTED_THIS_AUDIT",
+      "issue": "Some current URLs are unknown to Google, while sitemap is already Success",
+      "action": "After meaningful improvements, use bounded URL Inspection live test and indexing request for important URLs; keep valid sitemap and internal links",
+      "acceptance": "Request receipt is separate from actual crawl and eventual indexed state"
+    },
+    {
+      "priority": 3,
+      "scope": "/autoriai/mb-pinet",
+      "status": "OBSERVED_NOT_CHANGED",
+      "issue": "Legacy author URL not reached from sitemap-page links in four passes",
+      "action": "Review whether a useful distinct operator profile needs a link or whether it should consolidate with the existing editorial profile",
+      "acceptance": "Purposeful author architecture and no invented author expertise"
+    }
+  ],
+  "actions": {
+    "websiteChanges": 0,
+    "productionDeploys": 0,
+    "publicationDateChanges": 0,
+    "customerDataWrites": 0,
+    "gscIndexingRequests": 0,
+    "gscSitemapSubmissions": 0,
+    "paidDataCalls": 0,
+    "tregCostUsd": 0,
+    "browserLiveTestAttempt": {
+      "attempted": true,
+      "executed": false,
+      "result": "Visible TEST LIVE URL locator absent after the tab changed to a different property. Read-only DOM inspection detected the interruption; no test result or account action claimed."
+    }
+  },
+  "evidence": {
+    "publicHttp": {
+      "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/audit.private.json",
+      "sha256": "35e20525ab04ea245f65405cbcc6ec51351e49afb28f528df612897a691f8b25",
+      "capturedAt": "2026-10-15T07:25:03.623Z"
+    },
+    "firstParty": {
+      "google-site-filter0.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/google-site-filter0.txt",
+        "sha256": "e33c76f70fad9006e439325b88276e95ce951fca479365626d09d96293cc78fb"
+      },
+      "google-site.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/google-site.txt",
+        "sha256": "575de36facea9c4fa8a5294aef28ce11b9af6162fe91e60b3a3855598026a626"
+      },
+      "gsc-contact-canonical.jpg": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-contact-canonical.jpg",
+        "sha256": "de4ec67b9714531462e3ed4253da476a22e1cfee88557a3ef414826c6fa99c7b"
+      },
+      "gsc-contact-canonical.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-contact-canonical.txt",
+        "sha256": "b9ea26b1d76b026ee1fcac327414f84122dc0730aae76a77ad73a4f9e0b93cf9"
+      },
+      "gsc-kirpimas-unknown.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-kirpimas-unknown.txt",
+        "sha256": "a5781244f1e73c3b4851481c6b5ce2e2d9505077a962b49cc1a5aaa7335bf72b"
+      },
+      "gsc-nagai-unknown.jpg": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-nagai-unknown.jpg",
+        "sha256": "39193108e8e24341b767636d0053694c70ce14fab0119e50813e05800d65dce7"
+      },
+      "gsc-nagai-unknown.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-nagai-unknown.txt",
+        "sha256": "13a2c97f640c9821a8b421f552de050cd001ffe319b38b29957d645398f13d43"
+      },
+      "gsc-pages.jpg": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-pages.jpg",
+        "sha256": "bdd28d29f37353755ea224fcff1714ae1679cc1cde324eab37607ed1e5aed7fe"
+      },
+      "gsc-pages.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-pages.txt",
+        "sha256": "3d22586f2757d0a88a4ece89b0ea23db383c5251805c1f6dfe4d45879784e719"
+      },
+      "gsc-root-indexed.jpg": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-root-indexed.jpg",
+        "sha256": "44e1816028eb2185cb53530b6e0c72ecd24cfe123778e6a39909e493e50409bd"
+      },
+      "gsc-root-indexed.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-root-indexed.txt",
+        "sha256": "0f39832d1acd94accfdac13596f0d0ce9a87fb7e5db33be7acd1ae20eeef810b"
+      },
+      "gsc-sitemap-success.jpg": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-sitemap-success.jpg",
+        "sha256": "4dc2a336e4cfc13fc955324f79ce8ec29181d778b99b17bfac9c86349597469c"
+      },
+      "gsc-sitemap.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/gsc-sitemap.txt",
+        "sha256": "c6f5e19c1587a717e34d1fb9881d51939c58891c5a8878de786b48a5856be6d2"
+      },
+      "public-category-nagai.jpg": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/public-category-nagai.jpg",
+        "sha256": "3b68d02f6b852ecedbbc579c247da1e75ea6f3fadc30b01fd08d59bdd1305da5"
+      },
+      "public-category-nagai.txt": {
+        "artifact": "sites/madbeauty/cloudflare/output/seo-indexing-20261015/public-category-nagai.txt",
+        "sha256": "e1ab9c4cd557381ade9123441c4ce34d114c392028a677e0c721b064c79d8f71"
+      }
+    }
+  },
+  "primaryGuidance": [
+    "https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site",
+    "https://developers.google.com/search/docs/crawling-indexing/canonicalization-troubleshooting",
+    "https://developers.google.com/search/docs/appearance/ai-features"
+  ]
+}

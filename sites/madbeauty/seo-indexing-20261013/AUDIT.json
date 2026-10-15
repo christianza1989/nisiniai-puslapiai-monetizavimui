@@ -1,0 +1,273 @@
+{
+  "siteId": "madbeauty",
+  "at": "2026-10-13T14:14:14.189Z",
+  "mode": "Read-only indexing and technical SEO/GEO audit",
+  "deployedBaseline": {
+    "mainVersion": "f68008dd-5ceb-446b-8113-d68bd1631919",
+    "contentPackage": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+    "instructionMain": "7af6b9641012a30c5f95eac38a66daeff8f8cb39",
+    "instructionCompanion": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "workerVersionRequeriedThisAudit": false,
+    "note": "Worker version is the previously accepted receipt baseline, independently confirmed at13:32Z; this audit freshly verifies the content package header but does not requery provider version."
+  },
+  "technical": {
+    "sitemapUrls": 36,
+    "sitemapDuplicates": 0,
+    "sitemapNon200": [],
+    "sitemapNoindex": [],
+    "sitemapCanonicalMismatch": [],
+    "sitemapBadLanguage": [],
+    "sitemapH1Errors": [],
+    "schemaParseErrors": [],
+    "duplicateDescriptions": [
+      {
+        "description": "Grožio paslaugos ir rezervacijos. MB Pinet · info@pinet.lt.",
+        "urls": [
+          "https://madbeauty.lt/paslaugos",
+          "https://madbeauty.lt/paslaugos/plaukai",
+          "https://madbeauty.lt/paslaugos/nagai",
+          "https://madbeauty.lt/paslaugos/antakiai",
+          "https://madbeauty.lt/paslaugos/blakstienos",
+          "https://madbeauty.lt/paslaugos/makiazas",
+          "https://madbeauty.lt/paslaugos/depiliacija",
+          "https://madbeauty.lt/paslaugos/veidas",
+          "https://madbeauty.lt/paslaugos/kunas",
+          "https://madbeauty.lt/paslaugos/masazas",
+          "https://madbeauty.lt/paslaugos/spa",
+          "https://madbeauty.lt/paslaugos/ilgalaikis-makiazas",
+          "https://madbeauty.lt/paslaugos/tatuiruotes",
+          "https://madbeauty.lt/paslaugos/verimas",
+          "https://madbeauty.lt/paslaugos/estetika",
+          "https://madbeauty.lt/apie",
+          "https://madbeauty.lt/kontaktai",
+          "https://madbeauty.lt/kaip-veikia",
+          "https://madbeauty.lt/tikrinimas",
+          "https://madbeauty.lt/pagalba",
+          "https://madbeauty.lt/privatumas",
+          "https://madbeauty.lt/slapukai",
+          "https://madbeauty.lt/taisykles",
+          "https://madbeauty.lt/atsaukimas",
+          "https://madbeauty.lt/autoriai/mb-pinet"
+        ]
+      }
+    ],
+    "currentPackagePages": 135,
+    "currentEligibleContentPages": 9,
+    "currentEligibleGuides": 5,
+    "scheduledContentPages": 126,
+    "preparedGuides": 131,
+    "publicProviders": 0,
+    "projectionMatches": true,
+    "sitemapNotReachedInFourPasses": [
+      "https://madbeauty.lt/autoriai/mb-pinet"
+    ]
+  },
+  "google": {
+    "property": "sc-domain:madbeauty.lt",
+    "access": "Actual signed-in owner Chrome UI; Treg GSC API not connected",
+    "pageIndexingSummary": {
+      "lastUpdateLabel": "10/9/26",
+      "indexed": 1,
+      "notIndexed": 10,
+      "stale": true,
+      "reasons": {
+        "noindex": 3,
+        "robotsBlocked": 2,
+        "googleDifferentCanonical": 4,
+        "crawledNotIndexed": 1
+      }
+    },
+    "rootUrlInspection": {
+      "url": "https://madbeauty.lt/",
+      "state": "URL is on Google",
+      "pageIndexing": "Page is indexed",
+      "lastCrawlLabel": "Oct 11, 2026, 1:34:03 AM",
+      "crawledAs": "Googlebot smartphone",
+      "crawlAllowed": true,
+      "pageFetch": "Successful",
+      "indexingAllowed": true,
+      "userCanonical": "https://madbeauty.lt/",
+      "googleCanonical": "Inspected URL",
+      "discoverySitemapNote": "Temporary processing error"
+    },
+    "submittedSitemap": {
+      "url": "https://madbeauty.lt/sitemap.xml",
+      "submittedLabel": "Oct 11, 2026",
+      "lastReadLabel": "Oct 12, 2026",
+      "status": "Success",
+      "discoveredPages": 34,
+      "currentPublicSitemapUrls": 36
+    },
+    "historicalNoindexExamples": [
+      {
+        "url": "http://madbeauty.lt/",
+        "lastCrawled": "Oct 11, 2026",
+        "current": "308 to HTTPS apex"
+      },
+      {
+        "url": "https://madbeauty.lt/meistrams",
+        "lastCrawled": "Oct 9, 2026",
+        "current": "Functional professional onboarding remains intentionally noindex; public SSR landing improvement is a separate task"
+      },
+      {
+        "url": "https://madbeauty.lt/",
+        "lastCrawled": "Oct 7, 2026",
+        "current": "Current individual URL Inspection confirms indexed and indexing allowed"
+      }
+    ],
+    "robotsBlockedExamples": [
+      {
+        "url": "https://madbeauty.lt/meistrui/kalendorius",
+        "lastCrawled": "Oct 9, 2026",
+        "decision": "Keep private workspace blocked"
+      },
+      {
+        "url": "http://www.madbeauty.lt/",
+        "lastCrawled": "Oct 5, 2026",
+        "current": "308 to HTTPS apex"
+      }
+    ],
+    "differentCanonicalExamples": [
+      {
+        "url": "https://madbeauty.lt/kontaktai",
+        "lastCrawled": "Oct 9, 2026",
+        "currentSelfCanonical": true,
+        "currentStatus": 200,
+        "googleSelectedCanonical": "https://madbeauty.lt/",
+        "individualInspection": "URL is not on Google: Duplicate, Google chose different canonical than user",
+        "crawlAllowed": true,
+        "indexingAllowed": true,
+        "lastCrawlLabel": "Oct 9, 2026, 1:06:09 PM"
+      },
+      {
+        "url": "https://madbeauty.lt/taisykles",
+        "lastCrawled": "Oct 9, 2026",
+        "currentSelfCanonical": true,
+        "currentStatus": 200,
+        "googleSelectedCanonical": "Pending individual inspection; current rel=canonical alone cannot prove Google selection"
+      },
+      {
+        "url": "https://madbeauty.lt/privatumas",
+        "lastCrawled": "Oct 9, 2026",
+        "currentSelfCanonical": true,
+        "currentStatus": 200,
+        "googleSelectedCanonical": "Pending individual inspection; current rel=canonical alone cannot prove Google selection"
+      },
+      {
+        "url": "https://madbeauty.lt/slapukai",
+        "lastCrawled": "Oct 9, 2026",
+        "currentSelfCanonical": true,
+        "currentStatus": 200,
+        "googleSelectedCanonical": "Pending individual inspection; current rel=canonical alone cannot prove Google selection"
+      }
+    ],
+    "crawledNotIndexedExample": {
+      "url": "https://madbeauty.lt/gidai/kaip-pasirinkti-nagu-spalva",
+      "lastCrawled": "Oct 10, 2026",
+      "current": "Already served in the actual Google site query; summary reason is stale"
+    },
+    "manualActions": "No issues detected",
+    "securityIssues": "No issues detected"
+  },
+  "serp": {
+    "surface": "Actual Google Web in owner Chrome",
+    "query": "site:madbeauty.lt",
+    "effectiveUiLanguage": "lt",
+    "effectiveUiCountry": "Lietuva",
+    "personalized": true,
+    "visibleResults": [
+      "https://madbeauty.lt/paslaugos/kunas",
+      "https://madbeauty.lt/gidai/kaip-pasirinkti-nagu-spalva",
+      "https://madbeauty.lt/gidai/kas-ieina-i-manikiuro-kaina"
+    ],
+    "filteredResultsMessage": true,
+    "filter0VisibleResultsCount": 3,
+    "notExhaustive": true,
+    "totalIndexedUrlCount": null
+  },
+  "geo": {
+    "robotsAndHtml": "Public paths allowed; four synthetic Google/AI user-agent root checks return200/index,follow",
+    "verifiedSearchBotEvidence": "Googlebot smartphone successful/indexing allowed on apex in owner URL Inspection",
+    "syntheticUaIsNotVerifiedBot": true,
+    "llmsTxt": 200,
+    "llmsFullTxt": 200,
+    "visibleGuideSchemas": [
+      "Article",
+      "BreadcrumbList"
+    ],
+    "sampledAiCitations": null,
+    "aiVisibility": "Not measured",
+    "specialAiSchemaNeeded": false
+  },
+  "conclusion": {
+    "activeGlobalIndexBlock": false,
+    "historicalHomeNoindexResolved": true,
+    "notAllPreparedGuidesPublished": true,
+    "newArticlesToday": 2,
+    "sitemapWorking": true,
+    "siteQueryIsNotIndexInventory": true,
+    "improvementsRemain": true
+  },
+  "backlog": [
+    {
+      "priority": 1,
+      "area": "25 public pages with generic duplicate meta description",
+      "status": "OBSERVED_NOT_CHANGED",
+      "action": "Write accurate page-specific descriptions from real category/trust content; no changes to publication dates or invented providers",
+      "acceptance": "Production titles/descriptions/canonicals remain distinct, HTML matches visible page purpose; metadata alone is not a Google indexing guarantee"
+    },
+    {
+      "priority": 1,
+      "area": "Category value and real published provider supply",
+      "status": "OBSERVED_NOT_CHANGED",
+      "action": "Add genuinely useful category-specific explanations, currently published related guides and real approved profiles as available; preserve the functioning service tree",
+      "dependency": "Real provider consent/details for profiles; revision-bound review for new editorial text",
+      "acceptance": "Useful distinct main content and valid links; demo profiles remain on noindex trial"
+    },
+    {
+      "priority": 2,
+      "area": "Four historical Google canonical clusters",
+      "status": "PARTLY_VERIFIED",
+      "action": "Inspect selected Google canonical, compare currently visible distinct content, then request recrawl only for changed important URLs",
+      "acceptance": "Owner URL Inspection eventually reports intended canonical; self canonical is a signal, not proof of Google choice"
+    },
+    {
+      "priority": 2,
+      "area": "Unlinked old author module /autoriai/mb-pinet",
+      "status": "OBSERVED_NOT_CHANGED",
+      "action": "Review whether to link the distinct operator profile or consolidate semantically with existing editorial author; do not invent a redirect from path name alone",
+      "acceptance": "One purposeful author/contact architecture with accurate visible identity"
+    },
+    {
+      "priority": 3,
+      "area": "Current robots/noindex exclusions",
+      "status": "KEEP",
+      "action": "Keep private workspaces, account/search/filter pages, future guides and trial protected; do not remove noindex wholesale"
+    }
+  ],
+  "actions": {
+    "productionDeploys": 0,
+    "publicationDateChanges": 0,
+    "gscSubmissions": 0,
+    "gscIndexingRequests": 0,
+    "reason": "Apex already indexed and sitemap already Success; avoid repeat requests and bulk validation when an intentionally noindex onboarding URL remains in the group",
+    "paidDataCalls": 0,
+    "tregCostUsd": 0
+  },
+  "evidence": {
+    "privateHttpAudit": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\seo-indexing-20261013\\audit.private.json",
+    "privateHttpAuditSha256": "1b9819c6cbe7492e01166de027f1fb1cb48474689121277b27982edaf0b18b97",
+    "rootIndexScreenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\seo-indexing-20261013\\gsc-root-indexed.jpg",
+    "sitemapScreenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\seo-indexing-20261013\\gsc-sitemap-success.jpg",
+    "manualActionsScreenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\seo-indexing-20261013\\gsc-manual-actions.jpg",
+    "contactCanonicalScreenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\seo-indexing-20261013\\gsc-contact-canonical.jpg",
+    "securityIssuesScreenshot": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\madbeauty-favicon-20261013\\sites\\madbeauty\\cloudflare\\output\\seo-indexing-20261013\\gsc-security-issues.jpg"
+  },
+  "primaryGuidance": [
+    "https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site",
+    "https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl",
+    "https://developers.google.com/search/docs/crawling-indexing/canonicalization-troubleshooting",
+    "https://developers.google.com/search/docs/appearance/ai-features"
+  ],
+  "state": "AUDIT_COMPLETE"
+}

@@ -1,5 +1,7 @@
 # Madbeauty — aktualus roadmap entrypoint
 
+Aktualus 2026-10-06 pavedimas ir priėmimas: [IMPLEMENTATION_STATUS](IMPLEMENTATION_STATUS.md). Pilnas upgrade savininko pristabdytas; [straipsnių / katalogo pagrindas](content-foundation-20261006/README.md) paruoštas atskirai turinio sesijai. Žemiau ankstesnių etapų istorija, ne dabartinio release / visos naujos apimties priėmimas.
+
 2026-10-06 · **Vietinė platforma įgyvendinta; išplėstinis priėmimas su ribomis**. Aktualus entrypoint: `node sites/madbeauty/prototype/app-server.mjs` → http://127.0.0.1:8788/. Root8786 neliečiamas. Savininko naujausias nurodymas: nebeperžiūrėti demo vaizdų/profilių ir gerinti platformą.
 
 Veikia email-only vietinis auth, atskiros narystės, naujos meistro darbo vietos ir kliento sukūrimas, pirmas rankinis vizitas dar prieš viešinimą, serverio laiko paieška, atomic hold/confirm/change/cancel, kliento ir meistro ta pati vizito projekcija, pokalbiai, profilinių versijų ir atsiliepimų moderavimas. Nauji klientai ir inquiry/waitlist klientai matomi tik savo darbo vietoje. Kalendorius turi7 dienas, datą/komandos filtrą, blokus, soft atlaisvinimą ir buferių/rezervacijų konfliktų apsaugą. Priedų redaktorius išlaiko kelis arba nulį priedų; paslaugos išjungimas saugo būsimus vizitus.

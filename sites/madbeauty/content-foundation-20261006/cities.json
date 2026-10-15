@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "siteId": "madbeauty",
+  "cities": [
+    {
+      "id": "vilnius",
+      "label": "Vilnius"
+    },
+    {
+      "id": "kaunas",
+      "label": "Kaunas"
+    },
+    {
+      "id": "klaipeda",
+      "label": "Klaipėda"
+    },
+    {
+      "id": "siauliai",
+      "label": "Šiauliai"
+    },
+    {
+      "id": "panevezys",
+      "label": "Panevėžys"
+    },
+    {
+      "id": "akmene",
+      "label": "Akmenė"
+    },
+    {
+      "id": "alytus",
+      "label": "Alytus"
+    },
+    {
+      "id": "anyksciai",
+      "label": "Anykščiai"
+    },
+    {
+      "id": "ariogala",
+      "label": "Ariogala"
+    },
+    {
+      "id": "baltoji-voke",
+      "label": "Baltoji Vokė"
+    },
+    {
+      "id": "birstonas",
+      "label": "Birštonas"
+    },
+    {
+      "id": "birzai",
+      "label": "Biržai"
+    },
+    {
+      "id": "daugai",
+      "label": "Daugai"
+    },
+    {
+      "id": "druskininkai",
+      "label": "Druskininkai"
+    },
+    {
+      "id": "dukstas",
+      "label": "Dūkštas"
+    },
+    {
+      "id": "dusetos",
+      "label": "Dusetos"
+    },
+    {
+      "id": "eisiskes",
+      "label": "Eišiškės"
+    },
+    {
+      "id": "elektrenai",
+      "label": "Elektrėnai"
+    },
+    {
+      "id": "ezerelis",
+      "label": "Ežerėlis"
+    },
+    {
+      "id": "gargzdai",
+      "label": "Gargždai"
+    },
+    {
+      "id": "garliava",
+      "label": "Garliava"
+    },
+    {
+      "id": "gelgaudiskis",
+      "label": "Gelgaudiškis"
+    },
+    {
+      "id": "grigiskes",
+      "label": "Grigiškės"
+    },
+    {
+      "id": "ignalina",
+      "label": "Ignalina"
+    },
+    {
+      "id": "jieznas",
+      "label": "Jieznas"
+    },
+    {
+      "id": "jonava",
+      "label": "Jonava"
+    },
+    {
+      "id": "joniskelis",
+      "label": "Joniškėlis"
+    },
+    {
+      "id": "joniskis",
+      "label": "Joniškis"
+    },
+    {
+      "id": "jurbarkas",
+      "label": "Jurbarkas"
+    },
+    {
+      "id": "kaisiadorys",
+      "label": "Kaišiadorys"
+    },
+    {
+      "id": "kalvarija",
+      "label": "Kalvarija"
+    },
+    {
+      "id": "kavarskas",
+      "label": "Kavarskas"
+    },
+    {
+      "id": "kazlu-ruda",
+      "label": "Kazlų Rūda"
+    },
+    {
+      "id": "kedainiai",
+      "label": "Kėdainiai"
+    },
+    {
+      "id": "kelme",
+      "label": "Kelmė"
+    },
+    {
+      "id": "kretinga",
+      "label": "Kretinga"
+    },
+    {
+      "id": "kudirkos-naumiestis",
+      "label": "Kudirkos Naumiestis"
+    },
+    {
+      "id": "kupiskis",
+      "label": "Kupiškis"
+    },
+    {
+      "id": "kursenai",
+      "label": "Kuršėnai"
+    },
+    {
+      "id": "kybartai",
+      "label": "Kybartai"
+    },
+    {
+      "id": "lazdijai",
+      "label": "Lazdijai"
+    },
+    {
+      "id": "lentvaris",
+      "label": "Lentvaris"
+    },
+    {
+      "id": "linkuva",
+      "label": "Linkuva"
+    },
+    {
+      "id": "marijampole",
+      "label": "Marijampolė"
+    },
+    {
+      "id": "mazeikiai",
+      "label": "Mažeikiai"
+    },
+    {
+      "id": "moletai",
+      "label": "Molėtai"
+    },
+    {
+      "id": "naujoji-akmene",
+      "label": "Naujoji Akmenė"
+    },
+    {
+      "id": "nemencine",
+      "label": "Nemenčinė"
+    },
+    {
+      "id": "neringa",
+      "label": "Neringa"
+    },
+    {
+      "id": "obeliai",
+      "label": "Obeliai"
+    },
+    {
+      "id": "pabrade",
+      "label": "Pabradė"
+    },
+    {
+      "id": "pagegiai",
+      "label": "Pagėgiai"
+    },
+    {
+      "id": "pakruojis",
+      "label": "Pakruojis"
+    },
+    {
+      "id": "palanga",
+      "label": "Palanga"
+    },
+    {
+      "id": "pandelys",
+      "label": "Pandėlys"
+    },
+    {
+      "id": "panemune",
+      "label": "Panemunė"
+    },
+    {
+      "id": "pasvalys",
+      "label": "Pasvalys"
+    },
+    {
+      "id": "plunge",
+      "label": "Plungė"
+    },
+    {
+      "id": "priekule",
+      "label": "Priekulė"
+    },
+    {
+      "id": "prienai",
+      "label": "Prienai"
+    },
+    {
+      "id": "radviliskis",
+      "label": "Radviliškis"
+    },
+    {
+      "id": "ramygala",
+      "label": "Ramygala"
+    },
+    {
+      "id": "raseiniai",
+      "label": "Raseiniai"
+    },
+    {
+      "id": "rietavas",
+      "label": "Rietavas"
+    },
+    {
+      "id": "rokiskis",
+      "label": "Rokiškis"
+    },
+    {
+      "id": "rudiskes",
+      "label": "Rūdiškės"
+    },
+    {
+      "id": "salantai",
+      "label": "Salantai"
+    },
+    {
+      "id": "seda",
+      "label": "Seda"
+    },
+    {
+      "id": "simnas",
+      "label": "Simnas"
+    },
+    {
+      "id": "skaudvile",
+      "label": "Skaudvilė"
+    },
+    {
+      "id": "skuodas",
+      "label": "Skuodas"
+    },
+    {
+      "id": "smalininkai",
+      "label": "Smalininkai"
+    },
+    {
+      "id": "subacius",
+      "label": "Subačius"
+    },
+    {
+      "id": "sakiai",
+      "label": "Šakiai"
+    },
+    {
+      "id": "salcininkai",
+      "label": "Šalčininkai"
+    },
+    {
+      "id": "seduva",
+      "label": "Šeduva"
+    },
+    {
+      "id": "silale",
+      "label": "Šilalė"
+    },
+    {
+      "id": "silute",
+      "label": "Šilutė"
+    },
+    {
+      "id": "sirvintos",
+      "label": "Širvintos"
+    },
+    {
+      "id": "svencioneliai",
+      "label": "Švenčionėliai"
+    },
+    {
+      "id": "svencionys",
+      "label": "Švenčionys"
+    },
+    {
+      "id": "taurage",
+      "label": "Tauragė"
+    },
+    {
+      "id": "telsiai",
+      "label": "Telšiai"
+    },
+    {
+      "id": "trakai",
+      "label": "Trakai"
+    },
+    {
+      "id": "troskunai",
+      "label": "Troškūnai"
+    },
+    {
+      "id": "tytuvenai",
+      "label": "Tytuvėnai"
+    },
+    {
+      "id": "ukmerge",
+      "label": "Ukmergė"
+    },
+    {
+      "id": "utena",
+      "label": "Utena"
+    },
+    {
+      "id": "uzventis",
+      "label": "Užventis"
+    },
+    {
+      "id": "vabalninkas",
+      "label": "Vabalninkas"
+    },
+    {
+      "id": "varena",
+      "label": "Varėna"
+    },
+    {
+      "id": "varniai",
+      "label": "Varniai"
+    },
+    {
+      "id": "veisiejai",
+      "label": "Veisiejai"
+    },
+    {
+      "id": "venta",
+      "label": "Venta"
+    },
+    {
+      "id": "vieksniai",
+      "label": "Viekšniai"
+    },
+    {
+      "id": "vievis",
+      "label": "Vievis"
+    },
+    {
+      "id": "vilkaviskis",
+      "label": "Vilkaviškis"
+    },
+    {
+      "id": "vilkija",
+      "label": "Vilkija"
+    },
+    {
+      "id": "virbalis",
+      "label": "Virbalis"
+    },
+    {
+      "id": "visaginas",
+      "label": "Visaginas"
+    },
+    {
+      "id": "zarasai",
+      "label": "Zarasai"
+    },
+    {
+      "id": "zagare",
+      "label": "Žagarė"
+    },
+    {
+      "id": "ziezmariai",
+      "label": "Žiežmariai"
+    }
+  ]
+}

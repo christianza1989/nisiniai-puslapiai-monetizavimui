@@ -1,5 +1,7 @@
 # Madbeauty — vietinė platforma
 
+Aktualus siauras turinio pagrindas ir entrypoint: [IMPLEMENTATION_STATUS](../IMPLEMENTATION_STATUS.md), [content foundation](../content-foundation-20261006/README.md). Pilnas upgrade tebėra PAUSED; žemiau ankstesnių UI/backend etapų kvitai.
+
 <!-- UIUX_V3_CURRENT -->
 ## Aktualus UI/UX V3 rezultatas — 2026-10-06
 

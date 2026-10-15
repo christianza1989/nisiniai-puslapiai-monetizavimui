@@ -1,0 +1,232 @@
+{
+  "browser": "2",
+  "tab": "13",
+  "role": "fictional-owner-45",
+  "origin": "https://bandymas.madbeauty.lt",
+  "version": "5f55df40-6ba1-4ece-8ac8-958a83529d6a",
+  "actions": [
+    "ordinary owner login",
+    "search manikiuras without Lithuanian diacritics",
+    "select Aparatinis manikiūras and Kombinuotas manikiūras",
+    "save both private drafts",
+    "mobile incomplete variant submission blocked because staff work resource was not selected; draft remains unchanged",
+    "complete variant saved with Enter; after full reload the draft retains45min/23EUR/one staff",
+    "both created UI drafts archived through normal owner controls"
+  ],
+  "views": [
+    {
+      "name": "offers-desktop",
+      "containers": [
+        {
+          "client": 1425,
+          "scroll": 1425,
+          "tag": "MAIN"
+        },
+        {
+          "client": 1054,
+          "scroll": 1054,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 1054,
+          "scroll": 1054,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 1054,
+          "scroll": 1054,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 1055,
+          "scroll": 1055,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 1055,
+          "scroll": 1055,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 1055,
+          "scroll": 1055,
+          "tag": "ARTICLE"
+        }
+      ],
+      "documentClient": 1425,
+      "documentScroll": 1425,
+      "height": 1000,
+      "url": "https://bandymas.madbeauty.lt/meistrui/paslaugos",
+      "width": 1440
+    },
+    {
+      "name": "offers-mobile-after-reload",
+      "containers": [
+        {
+          "client": 375,
+          "scroll": 375,
+          "tag": "MAIN"
+        },
+        {
+          "client": 316,
+          "scroll": 316,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 316,
+          "scroll": 316,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 316,
+          "scroll": 316,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 317,
+          "scroll": 317,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 317,
+          "scroll": 317,
+          "tag": "ARTICLE"
+        },
+        {
+          "client": 317,
+          "scroll": 317,
+          "tag": "ARTICLE"
+        }
+      ],
+      "documentClient": 375,
+      "documentScroll": 375,
+      "drafts": [
+        "Aparatinis manikiūras",
+        "Kombinuotas manikiūras"
+      ],
+      "height": 900,
+      "url": "https://bandymas.madbeauty.lt/meistrui/paslaugos",
+      "width": 390
+    },
+    {
+      "name": "offer-editor-mobile",
+      "containers": [
+        {
+          "client": 343,
+          "scroll": 343,
+          "tag": "DIALOG"
+        },
+        {
+          "client": 285,
+          "scroll": 285,
+          "tag": "FIELDSET"
+        },
+        {
+          "client": 237,
+          "scroll": 237,
+          "tag": "FIELDSET"
+        }
+      ],
+      "height": 900,
+      "url": "https://bandymas.madbeauty.lt/meistrui/paslaugos",
+      "width": 390
+    },
+    {
+      "name": "calendar-mobile",
+      "containers": [
+        {
+          "class": "",
+          "client": 375,
+          "scroll": 375
+        },
+        {
+          "class": "calendar-controls",
+          "client": 317,
+          "scroll": 317
+        },
+        {
+          "class": "toolbar calendar-toolbar",
+          "client": 317,
+          "scroll": 317
+        },
+        {
+          "class": "calendar-filter",
+          "client": 317,
+          "scroll": 317
+        },
+        {
+          "class": "toolbar calendar-actions",
+          "client": 317,
+          "scroll": 317
+        },
+        {
+          "class": "calendar-caption",
+          "client": 317,
+          "scroll": 317
+        }
+      ],
+      "documentClient": 375,
+      "documentScroll": 375,
+      "height": 900,
+      "url": "https://bandymas.madbeauty.lt/meistrui/kalendorius",
+      "width": 390
+    },
+    {
+      "name": "calendar-desktop",
+      "containers": [
+        {
+          "class": "",
+          "client": 1425,
+          "scroll": 1425
+        },
+        {
+          "class": "calendar-controls",
+          "client": 1055,
+          "scroll": 1055
+        },
+        {
+          "class": "toolbar calendar-toolbar",
+          "client": 1055,
+          "scroll": 1055
+        },
+        {
+          "class": "calendar-filter",
+          "client": 765,
+          "scroll": 765
+        },
+        {
+          "class": "toolbar calendar-actions",
+          "client": 266,
+          "scroll": 266
+        },
+        {
+          "class": "calendar-caption",
+          "client": 1055,
+          "scroll": 1055
+        },
+        {
+          "class": "time-calendar-wrap",
+          "client": 1044,
+          "scroll": 1044
+        },
+        {
+          "class": "time-calendar",
+          "client": 1044,
+          "scroll": 1044
+        }
+      ],
+      "documentClient": 1425,
+      "documentScroll": 1425,
+      "height": 1000,
+      "url": "https://bandymas.madbeauty.lt/meistrui/kalendorius",
+      "width": 1440
+    }
+  ],
+  "state": "PASS",
+  "observedAt": "2026-10-09T21:55:45.289Z",
+  "cleanup": {
+    "apparatusOffer": "archived",
+    "combinationOffer": "archived",
+    "confirmedBy": "fresh owner service page after calendar navigation"
+  }
+}

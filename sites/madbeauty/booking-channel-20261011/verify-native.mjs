@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import path from 'node:path';
+const repo=path.resolve(import.meta.dirname,'../../..'),dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011/main'),artifact=path.join(dir,'worker.mjs');
+const manifest=JSON.parse(await readFile(path.join(dir,'manifest.json'))),hash=async()=>createHash('sha256').update(await readFile(artifact)).digest('hex');
+assert.equal(await hash(),manifest.artifactSha256);
+execFileSync(process.execPath,['--test','sites/madbeauty/cloudflare/booking-channel-runtime.test.mjs'],{cwd:repo,env:{...process.env,MADBEAUTY_BOOKING_ARTIFACT:artifact},stdio:'inherit'});
+assert.equal(await hash(),manifest.artifactSha256);
+const proof={state:'PASS',at:new Date().toISOString(),kind:'main',sourceCommit:manifest.sourceCommit,artifactSha256:manifest.artifactSha256,exactCompiledArtifact:true,isolatedSQLite:true,checks:2,coverage:['strict HTTPS salon URL','owner-only configuration','optimistic version conflict','active hold protection','future visit protection','waitlist protection','no native holds/inquiries/waitlists/manual visits or schedule edits under external channel','public search/profile/SSR outbound destination','no booking mail for external link','history preserved','SQLite restart','native schedule confirmation','switch-versus-hold race','external registration']};
+await writeFile(path.join(dir,'booking-channel-native.json'),JSON.stringify(proof,null,2));console.log(JSON.stringify(proof));

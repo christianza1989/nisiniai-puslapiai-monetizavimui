@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-09T19:48:39.565Z",
+  "status": "PASS",
+  "manifest": {
+    "at": "2026-10-09T19:47:18.946Z",
+    "source": "302b7ef5df532b60ca3a12dd66fb933fd336cf3d",
+    "runtime": "1ba6c7dec9ac437f4bc60608d4ee9f15a92e71bb",
+    "core": "c7e0c9a5a43e22c74af5da14e61ad403bdc40ee7",
+    "packageSha256": "320a8e0f50f1623cfa95e64bf2b3c16d96890cc998f587b114004d52bd581369",
+    "worker": "madbeauty-ui-acceptance-20261009",
+    "origin": "https://madbeauty-ui-acceptance-20261009.phonebridger-app.workers.dev",
+    "artifactSha256": "23133fb5f37e066322d8b904837a388eedf0d0a3249c9a4c80972c7e5fd6ada2",
+    "scriptGzipBytes": 267681,
+    "assets": 404,
+    "largestAssetBytes": 240164,
+    "scope": "Protected full application using existing isolated namespaces, capture-only mail, no production writes."
+  },
+  "productionVersion": [
+    {
+      "version_id": "1de389a7-3f36-44f5-ad57-bb3a457f2146",
+      "percentage": 100
+    }
+  ],
+  "qaVersion": [
+    {
+      "version_id": "0de7cc2f-599a-4374-ac53-fe5997deb6d0",
+      "percentage": 100
+    }
+  ],
+  "productionSettingsAndDeploymentsUnchanged": true,
+  "qaBindings": [
+    {
+      "name": "ORGANIZATION_STAGING",
+      "namespace": "ecd78b7e01e847a4a766f55edc17392d",
+      "class": "HostedOrganization"
+    },
+    {
+      "name": "PLATFORM",
+      "namespace": "45cdaa118d4f412b8616f9eb41a5b639",
+      "class": "HostedSource"
+    }
+  ],
+  "sourceHash": "48fd5d51a613fdb0ea6161dcdf15bc8ae4ade35f10c4ec8620f0c2963ba033e3",
+  "targetHash": "02d0512e915ef232a1bb77873fdc5430cc85e1caef0034fd31c06a3ffb4239d1",
+  "sourceMediaHash": "13485802b385b788ca4340b83904536b6f05a03afcb9011b629e541421c1e79a",
+  "mailboxHash": "36bfa6a737b629b82c9ab373214df600e585e20b1149bbd35ac0d4883f86973d",
+  "sourceCollections": 29,
+  "targetCollections": 29,
+  "physicalMediaObjects": 3,
+  "bookings": [
+    {
+      "id": "booking_38f0783d-c30e-4f58-bfae-952bf0c5c3da",
+      "version": 3,
+      "status": "canceled",
+      "startAt": "2026-10-13T06:00:00.000Z"
+    },
+    {
+      "id": "booking_ca8cc9ef-c382-4829-99cb-5e89874adb8a",
+      "version": 2,
+      "status": "confirmed",
+      "startAt": "2026-10-14T06:00:00.000Z"
+    }
+  ],
+  "scope": "Exact hosted state preservation after code replacement. Synthetic QA accounts, no SMTP/inbox or real-provider claim."
+}

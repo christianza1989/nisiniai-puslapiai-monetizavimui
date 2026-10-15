@@ -1,0 +1,17 @@
+{
+  "status": "DESIGN_CONCEPT_PREVIEW_ONLY",
+  "date": "2026-10-10",
+  "route": "/paslaugos",
+  "tool": "built-in image_gen",
+  "image": "services-concept-v1.png",
+  "sha256": "3795690b3a381827af1facf9f543a4cd8ebcca8e61faaf0e86cf61c51a36d276",
+  "categories": 14,
+  "review": "All 14 categories visibly present once; readable hierarchy and consistent black/violet illustrative style. This is a raster concept, not individual SVG assets or an implemented page.",
+  "implementationNotes": [
+    "Preserve actual catalogue IDs and complete category name Depiliacija ir plaukų šalinimas; shorten only if label remains clear.",
+    "Generate or draw each illustration separately for production; do not crop the full page into shipping assets.",
+    "Keep actual navigation, footer contacts and existing operator attribution. Generated social icons and extra footer links are not approved business facts.",
+    "Desktop raster does not verify mobile behavior, accessibility, search or routing. No live deployment performed for this design request."
+  ]
+}
+

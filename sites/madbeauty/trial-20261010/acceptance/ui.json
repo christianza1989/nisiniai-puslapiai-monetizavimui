@@ -1,0 +1,93 @@
+{
+  "state": "PASS",
+  "origin": "https://bandymas.madbeauty.lt",
+  "version": "aa58e71c-0342-4413-93d8-de611d2a74bd",
+  "sourceCommit": "fa519ecaaabf42a55fcc9f0e89a6cc986a128652",
+  "browser": "Codex native in-app browser 2, tab 13",
+  "observedAt": "2026-10-09T21:33:50.825Z",
+  "search": {
+    "serviceChoices": 258,
+    "cityChoices": 103,
+    "filteredCity": "Žagarė",
+    "checkpoint": "Initial live adapter; search modules unchanged in final client metadata/navigation patch"
+  },
+  "accountChooser": {
+    "bannerNavigation": true,
+    "clientLinkNavigation": true,
+    "accountHint": true,
+    "visibleTestCode": true,
+    "normalSessionLogin": true,
+    "realEmailOwnershipVerified": false
+  },
+  "booking": {
+    "id": "booking_b8edc789-6726-4e3d-9369-f4478a9fecc3",
+    "procedure": "Manikiūras",
+    "organization": "demo-org-0",
+    "day": "2026-10-11",
+    "from": "17:00",
+    "to": "18:00",
+    "minutes": 60,
+    "priceEUR": 20,
+    "normalUiConfirmed": true,
+    "detailSeen": true,
+    "normalUiCanceled": true,
+    "finalState": "canceled"
+  },
+  "seo": {
+    "clientRenderedCanonical": 0,
+    "clientRenderedSchema": 0,
+    "clientRenderedRobots": "noindex,nofollow"
+  },
+  "widths": [
+    {
+      "view": "Canceled customer booking and provider profile",
+      "viewport": 390,
+      "document": 375,
+      "main": 375
+    },
+    {
+      "view": "Provider profile",
+      "viewport": 1440,
+      "document": 1425,
+      "main": 1425
+    }
+  ],
+  "providerImages": {
+    "count": 6,
+    "loaded": 6,
+    "synthetic": true
+  },
+  "images": {
+    "booking-native.jpg": {
+      "bytes": 67004,
+      "sha256": "64754830408ecbecdb9ed0da066edb7afdad9f93d94463f973694585fe3d9c06",
+      "height": 712,
+      "width": 1265
+    },
+    "canceled-mobile-native.jpg": {
+      "bytes": 33854,
+      "sha256": "5d55ea691a2ec76554928d1b27f450c6d3688c608bfbbb6cac23e3d4982fb9de",
+      "height": 812,
+      "width": 375
+    },
+    "profile-mobile-native.jpg": {
+      "bytes": 47920,
+      "sha256": "0a93232443c38078251ebe690ca1886dcc357c7ed6b6efba77fbee00d24802f0",
+      "height": 812,
+      "width": 375
+    },
+    "profile-desktop-native.jpg": {
+      "bytes": 116409,
+      "sha256": "4d1020be380b003dd14e9a3c1c3567f62405b59ef7e74ab3d5824d4b5ce5b43a",
+      "height": 891,
+      "width": 1425
+    }
+  },
+  "screenshotMethod": "Native JPEG screenshots saved without resizing, cropping or compositing. Raster dimensions recorded from original bytes; DOM viewport sizes are separately measured.",
+  "limits": [
+    "Fictional test; no real service or payment",
+    "Capture transport is not inbox delivery",
+    "Live booking SQL views tested; durable restart/expiry verified separately in native Workers",
+    "Original production backend upgrade remains undeployed"
+  ]
+}

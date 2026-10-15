@@ -1,0 +1,5 @@
+/node_modules/
+/smtp-protocol.mjs
+/*.zip
+
+/output/

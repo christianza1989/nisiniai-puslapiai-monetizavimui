@@ -1,0 +1,33 @@
+{
+  "scope": "Original native browser captures, no image edits. Raster dimensions are separate from DOM viewport dimensions.",
+  "images": [
+    {
+      "file": "card-media-empty-desktop.jpg",
+      "format": "jpeg",
+      "width": 1264,
+      "height": 2040,
+      "bytes": 95088
+    },
+    {
+      "file": "card-media-empty-mobile.jpg",
+      "format": "jpeg",
+      "width": 374,
+      "height": 2555,
+      "bytes": 97316
+    },
+    {
+      "file": "card-media-hosted-desktop.jpg",
+      "format": "jpeg",
+      "width": 1264,
+      "height": 900,
+      "bytes": 39042
+    },
+    {
+      "file": "card-media-hosted-mobile.jpg",
+      "format": "jpeg",
+      "width": 390,
+      "height": 900,
+      "bytes": 29884
+    }
+  ]
+}

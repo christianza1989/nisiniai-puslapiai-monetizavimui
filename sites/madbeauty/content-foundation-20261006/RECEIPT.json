@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-06",
+  "state": "local-foundation-accepted-not-deployed",
+  "branch": "ai/madbeauty-content-foundation-20261006",
+  "baseCommit": "b422165",
+  "taxonomy": {
+    "version": "2026-10-06-v1",
+    "nodes": 305,
+    "categories": 21,
+    "groups": 59,
+    "treatments": 225,
+    "coreTreatments": 194,
+    "extensionTreatments": 31,
+    "cities": 103
+  },
+  "regression": {
+    "tests": 89,
+    "passed": 89,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 7060.6362,
+    "manifest": "TEST_MANIFEST.md"
+  },
+  "registry": {
+    "version": "madbeauty-catalogue-v1",
+    "staticDeployed": false,
+    "staticReadyTargets": 0,
+    "ttlMs": 3600000,
+    "indexEligible": false,
+    "offersSource": "backend/platform.catalog approved-public-only projection"
+  },
+  "browser": {
+    "mode": "isolated-memory-fixture / verified-private-shadow",
+    "desktop": {
+      "width": 1280,
+      "height": 720,
+      "clientWidth": 1265,
+      "scrollWidth": 1265
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "scrollWidth": 375
+    },
+    "physicalDevice": "UNVERIFIED",
+    "consoleErrors": 0
+  },
+  "shadowImport": {
+    "state": "verified-private-shadow-not-deployed",
+    "synthetic": true,
+    "packageSha256": "8c0e0855ae540c05b227ca0d33e9dccd46463ad1e64953cae8aee7143d836679",
+    "pages": 2,
+    "assets": 1,
+    "liveRegistryActivated": false
+  },
+  "production": {
+    "changed": false,
+    "version": "402a0fb5-bd02-4a78-8a3b-de083aeb68e8",
+    "storageIdentityChanged": false,
+    "mailSent": false,
+    "approvedPackageSha256": "dba452bae4c613cc91b2da0d67addd221e405f30c594992553f3009bfc809579"
+  },
+  "sharedCore": {
+    "commit": "a61b2721b5d25a1fc006777014b6add8530ed979",
+    "changed": false,
+    "files": [
+      {
+        "file": "lib/content-projection-v2.mjs",
+        "sha256": "71395b4e57d74743fb60d5146a1727f481e399fc6279cdf0bc7b38b5b4b9271a"
+      },
+      {
+        "file": "lib/content-seo-v2.mjs",
+        "sha256": "080e1d1939c92fc02869ab4bd6fb1da2023fd4185496bef96f6a1b6a32d1a62f"
+      },
+      {
+        "file": "lib/gift-seo.ts",
+        "sha256": "baf17783d072cfa60109b6cdb768739d58f6a19ffde9d2df239b3a35daef46ba"
+      },
+      {
+        "file": "lib/gift-content.ts",
+        "sha256": "8f7644b8b74bbde2bf8740a76dec9de2127564982acdbab5694603dcacf7f6a0"
+      },
+      {
+        "file": "scripts/content-package-core.mjs",
+        "sha256": "bbe9a40d5fd36efeef5153f6f2e2ef41aea3f2e61d211156fe5765c82452592d"
+      },
+      {
+        "file": "scripts/content-package-v2.mjs",
+        "sha256": "e7d6f81478a2778516d0c7f80a797b6eeac6fe27eb02ec9ed048348203a128c7"
+      },
+      {
+        "file": "scripts/content-v2-admission.mjs",
+        "sha256": "5fdb9c737c5272e3271e377262fa55782256ef3b85a73bf217d40c23c2cf866e"
+      },
+      {
+        "file": "schemas/content-package.v2.schema.json",
+        "sha256": "2753d520745cba4a1fba07f624cfc2cab41bceb20bca280761dfd555cbf2cd54"
+      }
+    ]
+  },
+  "sourceHashes": [
+    {
+      "file": "sites/madbeauty/prototype/taxonomy.mjs",
+      "sha256": "e4ca28cbd8b63fd967b5babc692f22658fe5d7da9d9480dd5e0f90e1b204c7ce"
+    },
+    {
+      "file": "sites/madbeauty/prototype/taxonomy-data.mjs",
+      "sha256": "d0dc5c905d857ca39182de24bacea016b351510494e91621b8a81741540cc06f"
+    },
+    {
+      "file": "sites/madbeauty/prototype/content-targets.mjs",
+      "sha256": "59058fa34f5ddfb5acabf0b6abc6e0b8dc5f506858346407418bac5db5ba05cf"
+    },
+    {
+      "file": "sites/madbeauty/prototype/catalogue-page.mjs",
+      "sha256": "d0128dfbea16730036e340e083cfee4e9fdbcff1af358692d1aeb5443382c2fe"
+    },
+    {
+      "file": "sites/madbeauty/prototype/app-server.mjs",
+      "sha256": "9712b6c9c375bcf00f83f783bd8c4820c0c9f26bfd4188cb70eef8616fb4fde0"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/app.mjs",
+      "sha256": "c8477b1d9ba115542ebaac3a30a5c8a2c9946c57bb62b6b82107ed8ff3712708"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/public-views.mjs",
+      "sha256": "17fd0f2b6611d0d38d2d2fd7ab9010263ff02fbf65d449f13d0c5d2c12c53508"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/content.mjs",
+      "sha256": "66372711e201d143a5fea4d20d6f4cce8ca42aeaa93a172c11c3adf407656731"
+    },
+    {
+      "file": "sites/madbeauty/prototype/public/content-render.mjs",
+      "sha256": "ffbfd9ef68723d31195e5e778b250cfb0a95cb9905ecaa687e5c08aaccbc2f15"
+    },
+    {
+      "file": "sites/madbeauty/backend/platform.mjs",
+      "sha256": "9937da0242a1ae967e64ad2085c029ee1d9061d1f2bb2781a9bcfc716ec2ee61"
+    },
+    {
+      "file": "sites/madbeauty/content/adapter.mjs",
+      "sha256": "8bd1988375f30e364d2f156bac2c6786a7a6a10702fac0cfdd4d1c6d785a2da9"
+    },
+    {
+      "file": "sites/madbeauty/content/intake.mjs",
+      "sha256": "7bbaa95d33499e51fc5e7f30342b46bca368167aecb55b3edcad3f7deba9460f"
+    },
+    {
+      "file": "sites/madbeauty/content/v2-projection.mjs",
+      "sha256": "417d14f6f60973eea267a6dc44e858c9e05165daf66abbe337fddeeb8348983b"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/build.mjs",
+      "sha256": "79cef8e41d12e2734f8955ae31e07c3d0df05cbb52d58b7e8cc2608a54b275d4"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/worker.mjs",
+      "sha256": "942110f3cf51908bbae26290d37838821bc8bfaae1a132ae079de8609cfeb944"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/content.mjs",
+      "sha256": "646bb5fe2523d727e2be83ef3292ad26e4d3bdabfc8eba6c451d7989f59053f0"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/public-modules.mjs",
+      "sha256": "96b817651f3638f7ceedfbfb9ca13b3ff7dd2d9a683dc216f1e1c669db0f284d"
+    },
+    {
+      "file": "sites/madbeauty/acceptance/content-foundation.test.mjs",
+      "sha256": "a0547a46ccb50af14ad56bd3316dd07edc24bc14f04e971df84d410871a505c4"
+    },
+    {
+      "file": "sites/madbeauty/cloudflare/runtime.test.mjs",
+      "sha256": "1d9ad7b4186dc9cac5379c43999cabe59369ba6446eb736a7f586f3fd3929f9a"
+    },
+    {
+      "file": "sites/madbeauty/prototype/platform.test.mjs",
+      "sha256": "ee151f54601d657bbbea67288531591c1533930acdd998ffe2c436d1f59329dd"
+    },
+    {
+      "file": "sites/madbeauty/content-foundation-20261006/preview-release.mjs",
+      "sha256": "665aa4cb7b955984cd049b3331a8e0a5e86326e773f2643b35a14b4ec4b25e57"
+    }
+  ],
+  "limitations": [
+    "Private studio plan→CLI→V2 generation/import e2e remains with content-session PR10; structured V2 add/edit available",
+    "Full225-procedure topic-map coverage not accepted by this foundation",
+    "Real editorial review/release and new production deploy/GSC not performed",
+    "Full platform upgrade remains paused"
+  ],
+  "safety": {
+    "state": "PASS",
+    "mode": "exact-staged-blobs",
+    "files": 42,
+    "textFiles": 40,
+    "findings": 0,
+    "checkedBeforeCommit": true
+  }
+}

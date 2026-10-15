@@ -1,0 +1,1151 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-11T08:39:35.673Z",
+  "state": "C0_C2_MAIN_TRIAL_BOOKING_CHANNEL_LIVE_META_REVIEW_DEFERRED",
+  "editions": {
+    "main": {
+      "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+      "version": "87e6c536-aa20-4f9c-a052-62ab21f9526c",
+      "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+      "previousVersion": "d0416bb5-d7d5-4e22-af9d-54572de0f643",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": true,
+      "facebookEnabled": false,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+        },
+        {
+          "name": "ORGANIZATION_STAGING",
+          "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+        }
+      ],
+      "nativeChecks": 100,
+      "hostedChecks": 100,
+      "queryRedaction": true,
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+          "sha256": "e29dafa688b27b784d1f452948edbc45d5b0f41090046904ec31f0e4bbe9ab43"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+          "sha256": "c9c0bb6309b4f7f131e608fd97b502bafe57e99cbd1eca1aa54b5a11de5c9ce3"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        },
+        {
+          "file": "app.css",
+          "previousSha256": "e562f1bd645c310e0b5d2eaa86944b255bfb4a4d118a4e343375b1a47b99765b",
+          "sha256": "0b6c2e5c17aef99209d582b266d16f27fec1cccbcc1fdc54aea673a2850cd6d4"
+        },
+        {
+          "file": "workspace-ui.mjs",
+          "previousSha256": "343f67bb09cb6f169df3b0dcd5b9fb80ba9f205096f6a4c9667e67e471b238a9",
+          "sha256": "03d9a61345bb089cf9b70ebb47569d3f8f2519fa81aa1b7637b555b142cd2064"
+        },
+        {
+          "file": "public-views.mjs",
+          "previousSha256": "f265154808486886892a36ed92225c80e7474625d9d639b1effad1011773f32c",
+          "sha256": "68112e27a10614084712bcc3f621db2dd59e236a0a32883bb291c3df0e9ef692"
+        },
+        {
+          "file": "profile-service-menu.mjs",
+          "previousSha256": "fbb837e9dd8f97ba419ba2516a388f51e2ede372c5fac3ec0378a13cbcbd00ce",
+          "sha256": "4eb4a6a523b93c332d4d3fe4362a99499734a844bdceefbac65d2c0a19a312d3"
+        },
+        {
+          "file": "search-results-ui.mjs",
+          "previousSha256": "737a459a449ea1b5f7ff4dbc33ad7a9cd74c0197e511a473cb5d34752e43fdd0",
+          "sha256": "064fe765821e9652e468cb0fdb73368750afc5a9c5823b1ff16631285f5c6a65"
+        },
+        {
+          "file": "profile-seo.mjs",
+          "previousSha256": "39f64e5a6c22022c8c8d9e445dcc88fc4ef0e3e9d5f784e98161e5541ed0ada9",
+          "sha256": "5d43f3e1b40b093ae94fe11ac862c151a58f9543699ccbfd45486d8fef41b154"
+        },
+        {
+          "file": "booking-ui.mjs",
+          "previousSha256": "430d12f44ad8f22eb1e8bfa77c02fbb8625d285e36acefb8183980b64b78452d",
+          "sha256": "1d74d81fa8a04d06bc2f45e6754ba9ea74f54a4dca37bbf3009b288ce73fad7e"
+        },
+        {
+          "file": "visit-sequence-ui.mjs",
+          "previousSha256": "bfddfc86d966d87e0a5f1ae2b68937705d4bc80bed52f8827be25015f0ca802f",
+          "sha256": "e6be06063a92e6ffc95fb7a3d0633744d91cca481e874a8b5e85c0359554fd29"
+        },
+        {
+          "file": "form-state.mjs",
+          "previousSha256": "e31c9cad55904bd0ef4755e1e1610f8158f4716398572e8c5c0aa90a3b4c5d33",
+          "sha256": "e98b1a2f2dfcb9eb626a6c6035ba2a81fe2ffab57a2fa8a1d01ec6ad8d21ea29"
+        },
+        {
+          "file": "booking-channel-model.mjs",
+          "previousSha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec",
+          "sha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec"
+        },
+        {
+          "file": "booking-channel-ui.mjs",
+          "previousSha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8",
+          "sha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8"
+        }
+      ],
+      "acceptanceAt": "2026-10-11T07:29:04.891Z",
+      "expiresAt": null,
+      "communityNative": {
+        "state": "PASS",
+        "kind": "main",
+        "at": "2026-10-11T08:33:02.719Z",
+        "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+        "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+        "exactCompiledArtifact": true,
+        "productionConfiguration": true,
+        "localIsolatedData": true,
+        "fixtureSeedDenied": true,
+        "emptyCanonicalProviderProjection": true,
+        "facebookDisabled": true,
+        "suites": [
+          "community-runtime.test.mjs",
+          "community-media-runtime.test.mjs"
+        ],
+        "coverage": [
+          "audiences",
+          "friendships",
+          "comments",
+          "albums",
+          "private messages",
+          "replay",
+          "version conflicts",
+          "request rejection",
+          "blocking",
+          "logout",
+          "account erasure",
+          "media ownership",
+          "EXIF removal",
+          "private image access",
+          "SQLite restart",
+          "message retention"
+        ]
+      }
+    },
+    "trial": {
+      "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+      "version": "283f9d36-88a3-44ba-87f0-dbf25e3e0f65",
+      "artifactSha256": "ff9c22835ed8efd4c23a22267112b432966a97c3e76d7fbb06e309f41cfa70ff",
+      "previousVersion": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": true,
+      "facebookEnabled": true,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+        }
+      ],
+      "nativeChecks": 139,
+      "hostedChecks": 139,
+      "queryRedaction": true,
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+          "sha256": "e29dafa688b27b784d1f452948edbc45d5b0f41090046904ec31f0e4bbe9ab43"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+          "sha256": "c9c0bb6309b4f7f131e608fd97b502bafe57e99cbd1eca1aa54b5a11de5c9ce3"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        },
+        {
+          "file": "app.css",
+          "previousSha256": "e562f1bd645c310e0b5d2eaa86944b255bfb4a4d118a4e343375b1a47b99765b",
+          "sha256": "0b6c2e5c17aef99209d582b266d16f27fec1cccbcc1fdc54aea673a2850cd6d4"
+        },
+        {
+          "file": "workspace-ui.mjs",
+          "previousSha256": "343f67bb09cb6f169df3b0dcd5b9fb80ba9f205096f6a4c9667e67e471b238a9",
+          "sha256": "03d9a61345bb089cf9b70ebb47569d3f8f2519fa81aa1b7637b555b142cd2064"
+        },
+        {
+          "file": "public-views.mjs",
+          "previousSha256": "f265154808486886892a36ed92225c80e7474625d9d639b1effad1011773f32c",
+          "sha256": "68112e27a10614084712bcc3f621db2dd59e236a0a32883bb291c3df0e9ef692"
+        },
+        {
+          "file": "profile-service-menu.mjs",
+          "previousSha256": "fbb837e9dd8f97ba419ba2516a388f51e2ede372c5fac3ec0378a13cbcbd00ce",
+          "sha256": "4eb4a6a523b93c332d4d3fe4362a99499734a844bdceefbac65d2c0a19a312d3"
+        },
+        {
+          "file": "search-results-ui.mjs",
+          "previousSha256": "737a459a449ea1b5f7ff4dbc33ad7a9cd74c0197e511a473cb5d34752e43fdd0",
+          "sha256": "064fe765821e9652e468cb0fdb73368750afc5a9c5823b1ff16631285f5c6a65"
+        },
+        {
+          "file": "profile-seo.mjs",
+          "previousSha256": "39f64e5a6c22022c8c8d9e445dcc88fc4ef0e3e9d5f784e98161e5541ed0ada9",
+          "sha256": "5d43f3e1b40b093ae94fe11ac862c151a58f9543699ccbfd45486d8fef41b154"
+        },
+        {
+          "file": "booking-ui.mjs",
+          "previousSha256": "430d12f44ad8f22eb1e8bfa77c02fbb8625d285e36acefb8183980b64b78452d",
+          "sha256": "1d74d81fa8a04d06bc2f45e6754ba9ea74f54a4dca37bbf3009b288ce73fad7e"
+        },
+        {
+          "file": "visit-sequence-ui.mjs",
+          "previousSha256": "bfddfc86d966d87e0a5f1ae2b68937705d4bc80bed52f8827be25015f0ca802f",
+          "sha256": "e6be06063a92e6ffc95fb7a3d0633744d91cca481e874a8b5e85c0359554fd29"
+        },
+        {
+          "file": "form-state.mjs",
+          "previousSha256": "e31c9cad55904bd0ef4755e1e1610f8158f4716398572e8c5c0aa90a3b4c5d33",
+          "sha256": "e98b1a2f2dfcb9eb626a6c6035ba2a81fe2ffab57a2fa8a1d01ec6ad8d21ea29"
+        },
+        {
+          "file": "booking-channel-model.mjs",
+          "previousSha256": null,
+          "sha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec"
+        },
+        {
+          "file": "booking-channel-ui.mjs",
+          "previousSha256": null,
+          "sha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8"
+        }
+      ],
+      "acceptanceAt": "2026-10-11T07:26:34.764Z",
+      "expiresAt": "2026-10-16T21:10:47.982Z",
+      "communityNative": {
+        "state": "PASS",
+        "artifactSha256": "ff9c22835ed8efd4c23a22267112b432966a97c3e76d7fbb06e309f41cfa70ff",
+        "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+        "at": "2026-10-11T08:35:08.517Z",
+        "checks": "45 existing profiles and reviews preserved, 90 paged actors, 45 idempotent posts, actual gallery and service authorization, SQL restart"
+      }
+    }
+  },
+  "communityLive": {
+    "state": "PASS",
+    "at": "2026-10-11T07:26:50.087Z",
+    "checks": 19,
+    "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+    "artifactSha256": "931d085ff7cacc24c291200eaec637f14cd53ce4f6af422983fafaedcb2b4c8c",
+    "seed": {
+      "providers": 45,
+      "members": 90
+    },
+    "photos": true,
+    "albums": true,
+    "comments": true,
+    "friends": true,
+    "salon": true,
+    "moderation": true,
+    "logout": true,
+    "providerProjectionPreserved": true
+  },
+  "trialExpiry": "2026-10-16T21:10:47.982Z",
+  "publicProfiles": {
+    "solo": 40,
+    "salons": 5,
+    "reviews": "11–21 labelled synthetic reviews per existing profile"
+  },
+  "facebook": {
+    "appId": "1827877621543839",
+    "status": "Unpublished",
+    "iconSaved": true,
+    "realOwnerConsent": "completed by owner; actual existing-permission relogin verified in Chrome",
+    "publicExternalLogin": "pending App Review",
+    "ownerTrialAcceptance": {
+      "state": "PASS",
+      "at": "2026-10-11T02:17:26.958Z",
+      "sourceCommit": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+      "trialVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+      "linkedAccount": "demo-client-0@example.com",
+      "scenarios": [
+        "Owner-completed initial Facebook identity present in account UI",
+        "Actual Meta previously-authorized login -> same existing account",
+        "Unlink revokes Facebook session and returns to sign-in",
+        "Fresh OAuth after unlink -> pending identity asks for OTP",
+        "Actual trial OTP completes re-link to same existing account",
+        "Eight existing visit detail IDs preserved"
+      ],
+      "finalState": "Facebook linked; owner session signed in",
+      "screenshot": "cloudflare/output/community-20261011/facebook-owner-linked-final.jpg"
+    },
+    "websitePlatform": {
+      "siteUrl": "https://madbeauty.lt/",
+      "saved": true,
+      "testingInstructionsSaved": true,
+      "testingInstructionsReadback": true,
+      "reviewTarget": "https://bandymas.madbeauty.lt/paskyra",
+      "trialExpiryDisclosed": true
+    },
+    "metaReview": {
+      "submissionId": "1827877654877169",
+      "state": "Not submitted",
+      "updatedAt": "2026-10-11T07:36:04.185Z",
+      "verification": "Connected Memocasting, MB portfolio remains unverified; owner deferred phone/SMS confirmation. No SMS or repeat CAPTCHA attempted.",
+      "pendingOwnerFact": "Owner-deferred Meta phone confirmation; no current request to repeat it",
+      "instructionDraft": "Website test instructions saved with trial expiry disclosure; permanent reviewer access not claimed",
+      "allowedUsage": "Both email and public_profile specific owner-approved agreements saved; both completion/Edit states read back. This does not mean Meta permissions approved",
+      "allowedUsageAccepted": {
+        "email": true,
+        "public_profile": true,
+        "ownerActionTimeConfirmation": true,
+        "savedAndReadBack": true,
+        "screenshot": "cloudflare/output/community-20261011/meta-allowed-usage-confirmed.jpg"
+      },
+      "dataHandling": "Controller corrected to owner-provided Memocasting, MB and reopened readback PASS. Prior owner-provided Lithuania / national-security No / procedures None retained. Processors Yes; names and processing/remote-access countries still incomplete.",
+      "controllerFacts": {
+        "source": "Explicit human reply in this chat",
+        "name": "Memocasting, MB",
+        "country": "Lithuania",
+        "nationalSecurityRequestsInPrior12Months": "No",
+        "publicAuthorityRequestProcedures": "None of the above",
+        "savedAndReadBack": true,
+        "processorListCompleted": false,
+        "nameCorrectionSavedAndReadBack": true
+      },
+      "businessPortfolio": {
+        "id": "900173107610943",
+        "previousName": "animateme.co",
+        "name": "Memocasting, MB",
+        "initialAssets": 0,
+        "reuseExplicitlyAuthorizedByOwner": true,
+        "renameSavedAndReadBack": true,
+        "verificationState": "Unverified",
+        "appConnected": true,
+        "connectState": "CONNECTED_READBACK_INITIATOR_UNVERIFIED",
+        "businessDetailsState": "OWNER_PROVIDED_DETAILS_SAVED_AND_READ_BACK",
+        "newPortfolioCreation": "Meta account creation quota prevented creation; no new portfolio created or existing portfolio deleted",
+        "screenshots": [
+          "cloudflare/output/community-20261011/meta-business-creation-limit.jpg",
+          "cloudflare/output/community-20261011/meta-mb-pinet-connect-ready.jpg",
+          "cloudflare/output/community-20261011/meta-mb-pinet-details-draft.jpg",
+          "cloudflare/output/community-20261011/meta-memocasting-details-saved.jpg",
+          "cloudflare/output/community-20261011/meta-controller-memocasting-saved.jpg",
+          "cloudflare/output/community-20261011/meta-verification-captcha.jpg"
+        ],
+        "intermediateName": "MB Pinet",
+        "registrationCode": "306026827",
+        "verificationWorkflow": "PHONE_CONFIRMATION_DEFERRED_BY_OWNER",
+        "connectClickByAgentConfirmed": false
+      },
+      "pending": [
+        "Owner-deferred business phone verification / later Meta steps",
+        "Provider processing/remote-access country declaration",
+        "Review Chrome OTP login issue unresolved",
+        "Reviewer callback approval, new environment app secret and actual OAuth acceptance",
+        "External account acceptance after Meta approval/publishing"
+      ],
+      "sources": [
+        "https://developers.cloudflare.com/data-localization/how-to/workers/",
+        "https://www.cloudflare.com/privacypolicy/",
+        "https://www.hostinger.com/uk/legal/dpa"
+      ]
+    },
+    "reviewCandidate": {
+      "state": "DEPLOYED_HOSTED_PASS_BROWSER_PARTIAL_FACEBOOK_DISABLED",
+      "sourceCommit": "eb30a67b0fcd6993b896f14f48f37ede372b4835",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "origin": "https://perziura.madbeauty.lt",
+      "expiresAt": "2027-10-12T00:00:00.000Z",
+      "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "compatibilityDate": "2026-05-22",
+      "facebookEnabled": false,
+      "secretsCreated": true,
+      "queryRedaction": true,
+      "nativeAcceptance": {
+        "state": "PASS",
+        "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
+        "at": "2026-10-11T07:29:35.671Z",
+        "scope": "Local isolated review candidate only; no live deployment, provider credentials or actual Facebook OAuth",
+        "scenarios": [
+          "new origin only",
+          "45 synthetic profiles",
+          "noindex/no sitemap",
+          "real email denied",
+          "OTP session",
+          "community post",
+          "persisted session and community restart",
+          "handler and DO expiry",
+          "existing trial expiry preserved"
+        ]
+      },
+      "preparationSources": [
+        "release.mjs",
+        "review-native.test.mjs",
+        "verify.mjs",
+        "live.mjs"
+      ],
+      "deploymentState": "DEPLOYED_BROWSER_PARTIAL",
+      "instructions": "META_REVIEW.md",
+      "version": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
+      "sessionSecretCreated": true,
+      "facebookAppSecretInstalled": false,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "id": "5e656ebc90cc4fe9881363db7b288593"
+        },
+        {
+          "name": "PLATFORM",
+          "id": "70b71d4c3a584b579a007568d8c514ff"
+        }
+      ],
+      "protectedWorkersUnchanged": true,
+      "hostedAcceptance": {
+        "state": "PASS",
+        "kind": "review",
+        "checks": 130,
+        "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
+        "at": "2026-10-11T07:31:08.056Z",
+        "link": "https://verslomatika.lt",
+        "rel": null,
+        "trialRobotsPreserved": true
+      },
+      "communityAcceptance": {
+        "state": "PASS",
+        "at": "2026-10-11T07:31:06.344Z",
+        "checks": 19,
+        "version": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
+        "artifactSha256": "0cb0a0be79d87284286e7dd7022828bc89589e701a889969eeef8ae99df86a74",
+        "seed": {
+          "providers": 45,
+          "members": 90
+        },
+        "photos": true,
+        "albums": true,
+        "comments": true,
+        "friends": true,
+        "salon": true,
+        "moderation": true,
+        "logout": true,
+        "providerProjectionPreserved": true
+      },
+      "browserAcceptance": {
+        "state": "PARTIAL",
+        "at": "2026-10-11T07:36:04.185Z",
+        "origin": "https://perziura.madbeauty.lt",
+        "version": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
+        "iab": {
+          "state": "PASS",
+          "ordinaryHttps": true,
+          "otp": true,
+          "sessionSurvivesReload": true,
+          "feed": true,
+          "existingProfilePreserved": true,
+          "screenshot": "read-budget-browser.jpg"
+        },
+        "chrome": {
+          "state": "UNVERIFIED_ON_CURRENT_VERSION",
+          "lastTestVersion": "b2e96aa4-5788-4403-bc40-35dea865b542",
+          "otpReturnsToLogin": true,
+          "apiDocumentNavigation": "ERR_BLOCKED_BY_CLIENT",
+          "cause": "UNVERIFIED",
+          "securitySettingsChanged": false
+        },
+        "facebook": false
+      },
+      "previousVersion": "b2e96aa4-5788-4403-bc40-35dea865b542",
+      "authAssets": [
+        {
+          "file": "http-adapter.mjs",
+          "previousSha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6",
+          "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+        },
+        {
+          "file": "account-ui.mjs",
+          "previousSha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989",
+          "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+        },
+        {
+          "file": "auth-entry.mjs",
+          "previousSha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142",
+          "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "5-second visible-tab polling with retry backoff; WebSocket transport deferred",
+    "Trial feed limited to 200 discoverable authors, city filtering available",
+    "Canonical community remains disabled during isolated acceptance",
+    "Groups, events and conferences are planned C3–C4"
+  ],
+  "previousAcceptedEditions": {
+    "main": {
+      "sourceCommit": "d539271295c04fe9523795b6b3abd9c40e992c20",
+      "version": "776ac16c-c67b-41bb-8630-3145509fe57c",
+      "artifactSha256": "96d14e3fb2eecaddd82c951c717e68129e0de60a6a97632495884e7cd9c08f49",
+      "previousVersion": "96af1b12-52cc-48cb-820e-1580f4b7c860",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": false,
+      "facebookEnabled": false,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+        },
+        {
+          "name": "ORGANIZATION_STAGING",
+          "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+        }
+      ],
+      "nativeChecks": 84,
+      "hostedChecks": 84,
+      "queryRedaction": true
+    },
+    "trial": {
+      "sourceCommit": "d539271295c04fe9523795b6b3abd9c40e992c20",
+      "version": "5d2173cb-fff3-4902-83b9-021b56f61889",
+      "artifactSha256": "4587dd4ab6ba163f08f1e147102fa7a0f71e4e413d5583c89a6d961a20b91ed2",
+      "previousVersion": "7bad78b7-5b95-4a19-bf92-22492de9095b",
+      "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+      "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+      "communityEnabled": true,
+      "facebookEnabled": true,
+      "bindings": [
+        {
+          "name": "COMMUNITY",
+          "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+        },
+        {
+          "name": "PLATFORM",
+          "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+        }
+      ],
+      "nativeChecks": 130,
+      "hostedChecks": 130,
+      "queryRedaction": true
+    }
+  },
+  "finalBrowser": {
+    "state": "PASS",
+    "at": "2026-10-11T01:39:21.398Z",
+    "trialVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+    "screenshot": "cloudflare/output/community-20261011/trial-chat-desktop-final.jpg",
+    "viewport": 1440,
+    "documentWidth": 1425,
+    "privatePhotoLoaded": true,
+    "ownPhotoAlignedRight": true
+  },
+  "releaseHistory": [
+    {
+      "at": "2026-10-11T02:17:26.958Z",
+      "editions": {
+        "main": {
+          "sourceCommit": "1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9",
+          "version": "90760306-9aec-4af0-a675-9ed747442915",
+          "artifactSha256": "9e4f3738d849c042031bce08da13c3ba603661c7e3e39902409961ec9a81983f",
+          "previousVersion": "09f767e9-9bba-4ddb-96bc-3feaac299535",
+          "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+          "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+          "communityEnabled": false,
+          "facebookEnabled": false,
+          "bindings": [
+            {
+              "name": "COMMUNITY",
+              "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+            },
+            {
+              "name": "ORGANIZATION_STAGING",
+              "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+            },
+            {
+              "name": "PLATFORM",
+              "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+            }
+          ],
+          "nativeChecks": 84,
+          "hostedChecks": 84,
+          "queryRedaction": true,
+          "authAssets": [
+            {
+              "file": "http-adapter.mjs",
+              "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+              "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+            },
+            {
+              "file": "account-ui.mjs",
+              "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+              "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+            },
+            {
+              "file": "auth-entry.mjs",
+              "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+              "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+            }
+          ],
+          "acceptanceAt": "2026-10-11T07:29:04.891Z"
+        },
+        "trial": {
+          "sourceCommit": "1579cf14a31cd2b9e2ce33d9b7ce317a37339ba9",
+          "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+          "artifactSha256": "931d085ff7cacc24c291200eaec637f14cd53ce4f6af422983fafaedcb2b4c8c",
+          "previousVersion": "8e4da6de-9e07-4c4b-8f37-b42bd4474a30",
+          "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+          "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+          "communityEnabled": true,
+          "facebookEnabled": true,
+          "bindings": [
+            {
+              "name": "COMMUNITY",
+              "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+            },
+            {
+              "name": "PLATFORM",
+              "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+            }
+          ],
+          "nativeChecks": 130,
+          "hostedChecks": 130,
+          "queryRedaction": true,
+          "authAssets": [
+            {
+              "file": "http-adapter.mjs",
+              "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+              "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+            },
+            {
+              "file": "account-ui.mjs",
+              "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+              "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+            },
+            {
+              "file": "auth-entry.mjs",
+              "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+              "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+            }
+          ],
+          "acceptanceAt": "2026-10-11T07:26:34.764Z"
+        }
+      },
+      "communityLive": {
+        "state": "PASS",
+        "at": "2026-10-11T01:26:42.116Z",
+        "checks": 19,
+        "version": "5d2173cb-fff3-4902-83b9-021b56f61889",
+        "artifactSha256": "4587dd4ab6ba163f08f1e147102fa7a0f71e4e413d5583c89a6d961a20b91ed2",
+        "seed": {
+          "providers": 45,
+          "members": 90
+        },
+        "photos": true,
+        "albums": true,
+        "comments": true,
+        "friends": true,
+        "salon": true,
+        "moderation": true,
+        "logout": true,
+        "providerProjectionPreserved": true,
+        "carriedForward": {
+          "fromSource": "d539271295c04fe9523795b6b3abd9c40e992c20",
+          "toSource": "ced9559130e41c3cede6288fa9e94308c689ffe8",
+          "reason": "Only app.css photo alignment, deployment query-redaction enforcement and release documentation changed; community runtime and API source unchanged. Exact compiled trial community/native and hosted public checks repeated. The 19 hosted mutation operations remain evidence of their original version, not relabelled as new operations."
+        }
+      },
+      "reviewCandidate": {
+        "state": "DEPLOYED_HOSTED_PASS_BROWSER_PARTIAL_FACEBOOK_DISABLED",
+        "sourceCommit": "cd5e4d024514b058bc62515ca2acd4e6c0cbd313",
+        "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+        "origin": "https://perziura.madbeauty.lt",
+        "expiresAt": "2027-10-12T00:00:00.000Z",
+        "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+        "acceptedTrialArtifactSha256": "f6a477fc9b348da2340899f3f81205cb7e4ca7e42acceabc9b9d46cdf4a8190d",
+        "entrySourceSha256": "218962d620fc24949424d3f0fb1e70b64c7c65ecb0bff34e0f98cbb5eb14c743",
+        "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+        "compatibilityDate": "2026-05-22",
+        "facebookEnabled": false,
+        "secretsCreated": true,
+        "queryRedaction": true,
+        "nativeAcceptance": {
+          "state": "PASS",
+          "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+          "at": "2026-10-11T06:19:23.891Z",
+          "scope": "Isolated native review artifact, not actual Facebook OAuth",
+          "scenarios": [
+            "new origin only",
+            "45 synthetic profiles",
+            "noindex/no sitemap",
+            "real email denied",
+            "OTP session",
+            "community post",
+            "persisted session and community restart",
+            "handler and DO expiry",
+            "existing trial expiry preserved"
+          ]
+        },
+        "preparationSources": [
+          "review-build.mjs",
+          "review-native.test.mjs",
+          "review-release.mjs"
+        ],
+        "deploymentState": "DEPLOYED_BROWSER_PARTIAL",
+        "instructions": "META_REVIEW.md",
+        "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+        "sessionSecretCreated": true,
+        "facebookAppSecretInstalled": false,
+        "bindings": [
+          {
+            "name": "COMMUNITY",
+            "id": "5e656ebc90cc4fe9881363db7b288593"
+          },
+          {
+            "name": "PLATFORM",
+            "id": "70b71d4c3a584b579a007568d8c514ff"
+          }
+        ],
+        "protectedWorkersUnchanged": true,
+        "hostedAcceptance": {
+          "state": "PASS",
+          "kind": "review",
+          "checks": 130,
+          "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+          "at": "2026-10-11T06:27:12.167Z",
+          "link": "https://verslomatika.lt",
+          "rel": null,
+          "trialRobotsPreserved": true
+        },
+        "communityAcceptance": {
+          "state": "PASS",
+          "at": "2026-10-11T06:28:27.424Z",
+          "checks": 19,
+          "version": "b46dfaab-ce7c-4407-a400-bc3ea57cff84",
+          "artifactSha256": "ea02b98aa5e22d90d809f2798820b8301fea24bb326ee85020c3e1f928dc2188",
+          "seed": {
+            "providers": 45,
+            "members": 90
+          },
+          "photos": true,
+          "albums": true,
+          "comments": true,
+          "friends": true,
+          "salon": true,
+          "moderation": true,
+          "logout": true,
+          "providerProjectionPreserved": true
+        },
+        "browserAcceptance": {
+          "state": "PARTIAL",
+          "at": "2026-10-11T06:34:17.340Z",
+          "origin": "https://perziura.madbeauty.lt",
+          "iab": {
+            "ordinaryHttps": true,
+            "otp": true,
+            "profileSettings": true,
+            "feed": true,
+            "sessionSurvivesReload": true,
+            "screenshot": "community-iab.jpg"
+          },
+          "chrome": {
+            "otpReturnsToLogin": true,
+            "attempts": 2,
+            "apiDocumentNavigation": "ERR_BLOCKED_BY_CLIENT",
+            "cause": "UNVERIFIED",
+            "securitySettingsChanged": false
+          },
+          "facebook": false
+        }
+      }
+    },
+    {
+      "at": "2026-10-11T07:36:04.185Z",
+      "state": "C0_C2_TRIAL_ACCEPTED_QUOTA_RECOVERED_PUBLIC_META_REVIEW_PENDING",
+      "editions": {
+        "main": {
+          "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+          "version": "87e6c536-aa20-4f9c-a052-62ab21f9526c",
+          "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+          "previousVersion": "d0416bb5-d7d5-4e22-af9d-54572de0f643",
+          "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+          "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+          "communityEnabled": true,
+          "facebookEnabled": false,
+          "bindings": [
+            {
+              "name": "COMMUNITY",
+              "namespaceId": "c8a5705c5a3d41bd81c191b01bedaa63"
+            },
+            {
+              "name": "ORGANIZATION_STAGING",
+              "namespaceId": "bc3a1745ab314150b06c5ada1a71d125"
+            },
+            {
+              "name": "PLATFORM",
+              "namespaceId": "2faf96eedef1425c8d4fc07444cde2f3"
+            }
+          ],
+          "nativeChecks": 100,
+          "hostedChecks": 100,
+          "queryRedaction": true,
+          "authAssets": [
+            {
+              "file": "http-adapter.mjs",
+              "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+              "sha256": "e29dafa688b27b784d1f452948edbc45d5b0f41090046904ec31f0e4bbe9ab43"
+            },
+            {
+              "file": "account-ui.mjs",
+              "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+              "sha256": "c9c0bb6309b4f7f131e608fd97b502bafe57e99cbd1eca1aa54b5a11de5c9ce3"
+            },
+            {
+              "file": "auth-entry.mjs",
+              "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+              "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+            },
+            {
+              "file": "app.css",
+              "previousSha256": "e562f1bd645c310e0b5d2eaa86944b255bfb4a4d118a4e343375b1a47b99765b",
+              "sha256": "0b6c2e5c17aef99209d582b266d16f27fec1cccbcc1fdc54aea673a2850cd6d4"
+            },
+            {
+              "file": "workspace-ui.mjs",
+              "previousSha256": "343f67bb09cb6f169df3b0dcd5b9fb80ba9f205096f6a4c9667e67e471b238a9",
+              "sha256": "03d9a61345bb089cf9b70ebb47569d3f8f2519fa81aa1b7637b555b142cd2064"
+            },
+            {
+              "file": "public-views.mjs",
+              "previousSha256": "f265154808486886892a36ed92225c80e7474625d9d639b1effad1011773f32c",
+              "sha256": "68112e27a10614084712bcc3f621db2dd59e236a0a32883bb291c3df0e9ef692"
+            },
+            {
+              "file": "profile-service-menu.mjs",
+              "previousSha256": "fbb837e9dd8f97ba419ba2516a388f51e2ede372c5fac3ec0378a13cbcbd00ce",
+              "sha256": "4eb4a6a523b93c332d4d3fe4362a99499734a844bdceefbac65d2c0a19a312d3"
+            },
+            {
+              "file": "search-results-ui.mjs",
+              "previousSha256": "737a459a449ea1b5f7ff4dbc33ad7a9cd74c0197e511a473cb5d34752e43fdd0",
+              "sha256": "064fe765821e9652e468cb0fdb73368750afc5a9c5823b1ff16631285f5c6a65"
+            },
+            {
+              "file": "profile-seo.mjs",
+              "previousSha256": "39f64e5a6c22022c8c8d9e445dcc88fc4ef0e3e9d5f784e98161e5541ed0ada9",
+              "sha256": "5d43f3e1b40b093ae94fe11ac862c151a58f9543699ccbfd45486d8fef41b154"
+            },
+            {
+              "file": "booking-ui.mjs",
+              "previousSha256": "430d12f44ad8f22eb1e8bfa77c02fbb8625d285e36acefb8183980b64b78452d",
+              "sha256": "1d74d81fa8a04d06bc2f45e6754ba9ea74f54a4dca37bbf3009b288ce73fad7e"
+            },
+            {
+              "file": "visit-sequence-ui.mjs",
+              "previousSha256": "bfddfc86d966d87e0a5f1ae2b68937705d4bc80bed52f8827be25015f0ca802f",
+              "sha256": "e6be06063a92e6ffc95fb7a3d0633744d91cca481e874a8b5e85c0359554fd29"
+            },
+            {
+              "file": "form-state.mjs",
+              "previousSha256": "e31c9cad55904bd0ef4755e1e1610f8158f4716398572e8c5c0aa90a3b4c5d33",
+              "sha256": "e98b1a2f2dfcb9eb626a6c6035ba2a81fe2ffab57a2fa8a1d01ec6ad8d21ea29"
+            },
+            {
+              "file": "booking-channel-model.mjs",
+              "previousSha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec",
+              "sha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec"
+            },
+            {
+              "file": "booking-channel-ui.mjs",
+              "previousSha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8",
+              "sha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8"
+            }
+          ],
+          "acceptanceAt": "2026-10-11T07:29:04.891Z",
+          "expiresAt": null,
+          "communityNative": {
+            "state": "PASS",
+            "kind": "main",
+            "at": "2026-10-11T08:33:02.719Z",
+            "artifactSha256": "d6932c2f093402db02f737e4a2ecef28cc5fee0bcaa839de92ae3a9de3392d81",
+            "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+            "exactCompiledArtifact": true,
+            "productionConfiguration": true,
+            "localIsolatedData": true,
+            "fixtureSeedDenied": true,
+            "emptyCanonicalProviderProjection": true,
+            "facebookDisabled": true,
+            "suites": [
+              "community-runtime.test.mjs",
+              "community-media-runtime.test.mjs"
+            ],
+            "coverage": [
+              "audiences",
+              "friendships",
+              "comments",
+              "albums",
+              "private messages",
+              "replay",
+              "version conflicts",
+              "request rejection",
+              "blocking",
+              "logout",
+              "account erasure",
+              "media ownership",
+              "EXIF removal",
+              "private image access",
+              "SQLite restart",
+              "message retention"
+            ]
+          }
+        },
+        "trial": {
+          "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+          "version": "283f9d36-88a3-44ba-87f0-dbf25e3e0f65",
+          "artifactSha256": "ff9c22835ed8efd4c23a22267112b432966a97c3e76d7fbb06e309f41cfa70ff",
+          "previousVersion": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+          "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+          "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+          "communityEnabled": true,
+          "facebookEnabled": true,
+          "bindings": [
+            {
+              "name": "COMMUNITY",
+              "namespaceId": "f05f8135a7b54df5963269e354752e6a"
+            },
+            {
+              "name": "PLATFORM",
+              "namespaceId": "a07857f7b8414eb789f3ff639953ff1b"
+            }
+          ],
+          "nativeChecks": 139,
+          "hostedChecks": 139,
+          "queryRedaction": true,
+          "authAssets": [
+            {
+              "file": "http-adapter.mjs",
+              "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+              "sha256": "e29dafa688b27b784d1f452948edbc45d5b0f41090046904ec31f0e4bbe9ab43"
+            },
+            {
+              "file": "account-ui.mjs",
+              "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+              "sha256": "c9c0bb6309b4f7f131e608fd97b502bafe57e99cbd1eca1aa54b5a11de5c9ce3"
+            },
+            {
+              "file": "auth-entry.mjs",
+              "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+              "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+            },
+            {
+              "file": "app.css",
+              "previousSha256": "e562f1bd645c310e0b5d2eaa86944b255bfb4a4d118a4e343375b1a47b99765b",
+              "sha256": "0b6c2e5c17aef99209d582b266d16f27fec1cccbcc1fdc54aea673a2850cd6d4"
+            },
+            {
+              "file": "workspace-ui.mjs",
+              "previousSha256": "343f67bb09cb6f169df3b0dcd5b9fb80ba9f205096f6a4c9667e67e471b238a9",
+              "sha256": "03d9a61345bb089cf9b70ebb47569d3f8f2519fa81aa1b7637b555b142cd2064"
+            },
+            {
+              "file": "public-views.mjs",
+              "previousSha256": "f265154808486886892a36ed92225c80e7474625d9d639b1effad1011773f32c",
+              "sha256": "68112e27a10614084712bcc3f621db2dd59e236a0a32883bb291c3df0e9ef692"
+            },
+            {
+              "file": "profile-service-menu.mjs",
+              "previousSha256": "fbb837e9dd8f97ba419ba2516a388f51e2ede372c5fac3ec0378a13cbcbd00ce",
+              "sha256": "4eb4a6a523b93c332d4d3fe4362a99499734a844bdceefbac65d2c0a19a312d3"
+            },
+            {
+              "file": "search-results-ui.mjs",
+              "previousSha256": "737a459a449ea1b5f7ff4dbc33ad7a9cd74c0197e511a473cb5d34752e43fdd0",
+              "sha256": "064fe765821e9652e468cb0fdb73368750afc5a9c5823b1ff16631285f5c6a65"
+            },
+            {
+              "file": "profile-seo.mjs",
+              "previousSha256": "39f64e5a6c22022c8c8d9e445dcc88fc4ef0e3e9d5f784e98161e5541ed0ada9",
+              "sha256": "5d43f3e1b40b093ae94fe11ac862c151a58f9543699ccbfd45486d8fef41b154"
+            },
+            {
+              "file": "booking-ui.mjs",
+              "previousSha256": "430d12f44ad8f22eb1e8bfa77c02fbb8625d285e36acefb8183980b64b78452d",
+              "sha256": "1d74d81fa8a04d06bc2f45e6754ba9ea74f54a4dca37bbf3009b288ce73fad7e"
+            },
+            {
+              "file": "visit-sequence-ui.mjs",
+              "previousSha256": "bfddfc86d966d87e0a5f1ae2b68937705d4bc80bed52f8827be25015f0ca802f",
+              "sha256": "e6be06063a92e6ffc95fb7a3d0633744d91cca481e874a8b5e85c0359554fd29"
+            },
+            {
+              "file": "form-state.mjs",
+              "previousSha256": "e31c9cad55904bd0ef4755e1e1610f8158f4716398572e8c5c0aa90a3b4c5d33",
+              "sha256": "e98b1a2f2dfcb9eb626a6c6035ba2a81fe2ffab57a2fa8a1d01ec6ad8d21ea29"
+            },
+            {
+              "file": "booking-channel-model.mjs",
+              "previousSha256": null,
+              "sha256": "b22d16d953a39a46599f166912e0dc79185833ba839681b9857c3dbb8951a3ec"
+            },
+            {
+              "file": "booking-channel-ui.mjs",
+              "previousSha256": null,
+              "sha256": "facde04407b78e0d3ceb6fce45a388e839cadaffea6b2e15bd8386af9d5b1bd8"
+            }
+          ],
+          "acceptanceAt": "2026-10-11T07:26:34.764Z",
+          "expiresAt": "2026-10-16T21:10:47.982Z",
+          "communityNative": {
+            "state": "PASS",
+            "artifactSha256": "ff9c22835ed8efd4c23a22267112b432966a97c3e76d7fbb06e309f41cfa70ff",
+            "sourceCommit": "9dcd67cf1f5bd1500564b47ea6b4a2dbd8ce8f63",
+            "at": "2026-10-11T08:35:08.517Z",
+            "checks": "45 existing profiles and reviews preserved, 90 paged actors, 45 idempotent posts, actual gallery and service authorization, SQL restart"
+          }
+        }
+      },
+      "incrementalBrowser": {
+        "trial": {
+          "state": "PASS",
+          "at": "2026-10-11T07:36:04.185Z",
+          "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+          "origin": "https://bandymas.madbeauty.lt",
+          "iab": {
+            "otp": true,
+            "communityReturnPath": true,
+            "profileSettings": true,
+            "feed": true,
+            "sessionSurvivesReload": true,
+            "screenshot": "read-budget-browser.jpg"
+          },
+          "scope": "Synthetic email login and community journey on IAB; not actual external Facebook OAuth"
+        },
+        "main": {
+          "state": "PASS",
+          "version": "90760306-9aec-4af0-a675-9ed747442915",
+          "chromeHomepage": true,
+          "screenshot": "cloudflare/output/community-20261011/main/read-budget-chrome.jpg",
+          "scope": "Public homepage renders interactively in Chrome; no real customer login attempted"
+        }
+      },
+      "note": "Prior quota recovery and browser proofs retain their versions; not acceptance for new booking-channel release."
+    },
+    {
+      "at": "2026-10-11T08:00:33.956Z",
+      "state": "CANONICAL_COMMUNITY_ACTIVATED",
+      "main": {
+        "at": "2026-10-11T08:00:33.956Z",
+        "state": "DEPLOYED_ACCEPTANCE_PENDING",
+        "version": "d0416bb5-d7d5-4e22-af9d-54572de0f643",
+        "kind": "main",
+        "sourceCommit": "3e8fbf98a0e7543c268bf4a1eb44d4104b071cb4",
+        "coreSource": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+        "artifactSha256": "9e4f3738d849c042031bce08da13c3ba603661c7e3e39902409961ec9a81983f",
+        "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+        "pages": 129,
+        "assets": 883,
+        "expiresAt": null,
+        "mediaProof": [],
+        "authAssets": [
+          {
+            "file": "http-adapter.mjs",
+            "previousSha256": "20cefb1f90af9bb73058bd21b9d9855d5551f4002e26a9659efbcde4a94dd137",
+            "sha256": "d09212e1a104aa7832c9803f166b004bec43d44696f277bd4e5df3614d88b7b6"
+          },
+          {
+            "file": "account-ui.mjs",
+            "previousSha256": "dcabe22ec0e13cf6dc1b7d7ff117be57c3419e40971f9f82001b005176338d7b",
+            "sha256": "1aa2a7277622269be9a09de629d19b02f982d6a9b8fa00e7a14acda69a764989"
+          },
+          {
+            "file": "auth-entry.mjs",
+            "previousSha256": "b6f5bf5f5e437922f7dae6c0ae4eb4ba79b94ab97a1669a60fcbf05b86d7679f",
+            "sha256": "fb3f32de48831bad105df74c0c80718c08c4278f75f9119093c22ffbf7cf7142"
+          }
+        ],
+        "previousVersion": "90760306-9aec-4af0-a675-9ed747442915"
+      },
+      "scope": "Main C0-C2 activation 91 native/hosted and exact main community/media proofs; IAB guest community gate. Full older two-actor browser acceptance belongs to prior trial editions."
+    }
+  ],
+  "incrementalBrowser": {
+    "trial": {
+      "state": "PASS",
+      "at": "2026-10-11T07:36:04.185Z",
+      "version": "f608921e-f68a-4faa-9b13-66aa15c29e4d",
+      "origin": "https://bandymas.madbeauty.lt",
+      "iab": {
+        "otp": true,
+        "communityReturnPath": true,
+        "profileSettings": true,
+        "feed": true,
+        "sessionSurvivesReload": true,
+        "screenshot": "read-budget-browser.jpg"
+      },
+      "scope": "Synthetic email login and community journey on IAB; not actual external Facebook OAuth"
+    },
+    "main": {
+      "state": "PASS",
+      "version": "90760306-9aec-4af0-a675-9ed747442915",
+      "chromeHomepage": true,
+      "screenshot": "cloudflare/output/community-20261011/main/read-budget-chrome.jpg",
+      "scope": "Public homepage renders interactively in Chrome; no real customer login attempted"
+    }
+  },
+  "quotaRecovery": {
+    "state": "SERVICE_RECOVERED",
+    "at": "2026-10-11T07:36:04.185Z",
+    "ownerReportsPlanPaid": true,
+    "financialActionByAgent": false,
+    "planBillingReadback": "Subscription GET connector denied; no access expansion or financial action",
+    "origins": [
+      "https://madbeauty.lt",
+      "https://bandymas.madbeauty.lt",
+      "https://perziura.madbeauty.lt"
+    ],
+    "rootAndSessionStatus": 200,
+    "incident": "QUOTA_INCIDENT.md",
+    "optimizationsDeployed": true
+  },
+  "bookingChannelReceipt": "../booking-channel-20261011/RECEIPT.json",
+  "incrementalBrowserBooking": {
+    "main": {
+      "guestAuthGate": true,
+      "realCustomerLogin": false
+    },
+    "trial": {
+      "version": "283f9d36-88a3-44ba-87f0-dbf25e3e0f65",
+      "actor": "demo-client-5@example.com",
+      "organizationId": "provider_1055642f-0c3b-412d-9c0a-c3aaf4ef8f28",
+      "synthetic": true,
+      "published": false,
+      "createWithTreatwell": true,
+      "missingUrlValidation": true,
+      "externalCalendar": true,
+      "reload": true,
+      "returnRequiresConfirmation": true,
+      "nativeCalendarRestored": true,
+      "finalMode": "treatwell",
+      "finalImage": "../cloudflare/output/booking-channel-20261011/trial-settings-live-final.jpg",
+      "realMailSent": false,
+      "externalUrlClicked": false,
+      "externalDestination": "Synthetic placeholder only; no external appointment was created"
+    }
+  }
+}

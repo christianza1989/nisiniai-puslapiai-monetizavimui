@@ -1,0 +1,30 @@
+{
+  "state": "LIVE_TECHNICAL_PASS_GOOGLE_PROCESSING_PENDING",
+  "version": "c7fe3d2c-bd49-4ab9-8a11-7631f017cc4d",
+  "previousVersion": "fd24248a-9e0b-4bf5-9eb4-c5c4ee1f6131",
+  "runtimeSourceCommit": "814020b5d6203277b38d3acab11ee73ae60fe0f4",
+  "coreSourceCommit": "5661d5d6907d6f5d11514ae69c0decc6130d65e2",
+  "artifactSha256": "f266712ff28cab1554007aac6840801ffdb9e144206e64c2df91edd835f2c271",
+  "packageSha256": "e20c3b95b57ae9f813e55ffd0ef46688a937a7d63fe1c70246a92b8a71e71953",
+  "approvedPackagePages": 129,
+  "declaredAssets": 840,
+  "unitTestsPassed": 14,
+  "exactNativeChecksPassed": 159,
+  "liveChecksPassed": 35,
+  "canonicalPublicProfiles": 0,
+  "sitemapURLs": 34,
+  "backendWrites": 0,
+  "externalTestMailSent": 0,
+  "allBindingsPreserved": true,
+  "qaAndDummyTrialUnchanged": true,
+  "gsc": {
+    "homeLiveIndexingAllowed": true,
+    "homeIndexingRequestAccepted": true,
+    "servicesLiveIndexingAllowed": true,
+    "servicesIndexingRequestAccepted": true,
+    "sitemapResubmissionAccepted": true,
+    "actualIndexingConfirmed": false
+  },
+  "map": "Selected publicly approved location; no invented coordinates or simultaneous multi-marker claim",
+  "gallery": "Existing 24-entry upload, order, caption, service-link and approved-publication workflow"
+}

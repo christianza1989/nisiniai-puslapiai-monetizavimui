@@ -1,0 +1,223 @@
+[
+  {
+    "id": "gift-privacy",
+    "slug": "privatumas",
+    "title": "Privatumo informacija",
+    "description": "Kaip MB Pinet naudoja Dovanos123 užklausų duomenis ir bendrus svetainės naudojimo skaičius.",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Dovanos123 duomenų valdytojas yra MB Pinet. Dėl šios svetainės duomenų tvarkymo ir savo teisių rašykite info@pinet.lt. Informacija atnaujinta 2026 m. spalio 6 d."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Kai pateikiate užklausą"
+      },
+      {
+        "type": "paragraph",
+        "text": "Gauname jūsų vardą, el. paštą, žinutę, pateikimo datą, pradinio puslapio adresą ir formoje pažymėtą sutikimą. Tai būtina užklausai perskaityti, atsakyti ir išsaugoti jos aptarnavimo eigą. Duomenis pateikiate savo pasirinkimu; nepateikę būtinų laukų formos išsiųsti negalėsite. Užklausa nėra rinkodaros prenumerata ar prekės užsakymas. Nesiųskite asmens dokumentų, mokėjimo kortelių, slaptažodžių ar jautrios informacijos."
+      },
+      {
+        "type": "paragraph",
+        "text": "Užklausos apdorojimą grindžiame jūsų formoje duotu sutikimu. Jį galite atšaukti parašę info@pinet.lt; tai nekeičia iki atšaukimo atlikto tvarkymo teisėtumo. Užklausos duomenis svetainės sistemoje saugome iki 180 dienų nuo pateikimo, tada šaliname. Susirašinėjimui pašto dėžutėje taikomas toks pats įprastas terminas; operatorius jį peržiūri. Jei konkretaus susirašinėjimo reikia teisiniam reikalavimui ar ginčui, jį galime saugoti tam reikalingą laiką."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Svetainės naudojimas ir saugumas"
+      },
+      {
+        "type": "paragraph",
+        "text": "Skaičiuojame bendrą puslapio peržiūrų ir kontaktinės nuorodos paspaudimų skaičių pagal dieną ir puslapį. Nenaudojame lankytoją identifikuojančio analitikos slapuko, reklamos pikselių ar sekimo tarp svetainių. Bendrus skaičius saugome iki 365 dienų. Naršyklės „Do Not Track“ ir „Global Privacy Control“ signalai išjungia šį skaičiavimą. Statistika nerodo, kad gavome tikrą užklausą."
+      },
+      {
+        "type": "paragraph",
+        "text": "Svetainės pateikimui ir apsaugai Cloudflare apdoroja ryšio techninius duomenis, įskaitant IP adresą, puslapio užklausą ir saugumo įvykius. IP adresas naudojamas trumpalaikiam užklausų dažnio ribojimui; jo nesaugome užklausų ar bendros statistikos įrašuose. Būtiną ryšio apsaugą grindžiame teisėtu interesu saugiai pateikti svetainę ir riboti piktnaudžiavimą."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Kas apdoroja duomenis"
+      },
+      {
+        "type": "paragraph",
+        "text": "Svetainę ir jos duomenų saugyklą aptarnauja Cloudflare, o el. paštą – Hostinger. Šie paslaugų teikėjai veikia pagal jų duomenų tvarkymo sąlygas; duomenys gali būti apdorojami ir už Europos ekonominės erdvės ribų, taikant atitinkamas perdavimo apsaugos priemones, įskaitant standartines sutarčių sąlygas. Užklausų automatiškai neperduodame prekybininkams ir neparduodame kontaktų. Puslapyje nėra automatizuoto sprendimo, nustatančio jūsų teises ar pirkimo galimybes."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Jūsų teisės"
+      },
+      {
+        "type": "paragraph",
+        "text": "Galite prašyti susipažinti su savo duomenimis, juos patikslinti, ištrinti, apriboti tvarkymą, o kai taikoma – gauti perkeltiną kopiją arba nesutikti su teisėtu interesu grindžiamu tvarkymu. Rašykite info@pinet.lt ir nurodykite užklausai naudotą el. paštą. Prieš atskleisdami duomenis patikriname tapatybę. Jei manote, kad tvarkymas pažeidžia jūsų teises, galite kreiptis į Valstybinę duomenų apsaugos inspekciją. Ištrinti įrašai gali ribotą laiką likti paslaugų teikėjo apsaugotose atsarginėse kopijose."
+      },
+      {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "link",
+            "text": "Slapukai ir naršyklės saugykla",
+            "target": {
+              "kind": "page",
+              "pageId": "gift-cookies"
+            }
+          }
+        ]
+      },
+      {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "link",
+            "text": "Kontaktai ir pataisymai",
+            "target": {
+              "kind": "page",
+              "pageId": "gift-contact"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gift-cookies",
+    "slug": "slapukai",
+    "title": "Slapukai ir naršyklės pasirinkimai",
+    "description": "Dovanos123 naudoja bendrus lankomumo skaičius be identifikuojančių analitikos ar reklamos slapukų.",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Ši Dovanos123 versija nereikalauja paskyros ir nenaudoja reklamos ar lankytoją identifikuojančių analitikos slapukų. Svetainės naudojimo skaičiavimas nesukuria asmeninio lankytojo profilio."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Ką skaičiuojame"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vienai dienai ir puslapio adresui kaupiame bendrą peržiūrų bei kontaktinės nuorodos paspaudimų skaičių. Į statistikos įrašą neįrašome el. pašto, IP adreso ar unikalaus lankytojo identifikatoriaus. Skaičiavimas išjungiamas, kai naršyklė siunčia „Do Not Track“ arba „Global Privacy Control“ signalą. Nenaudojame išorinių reklamos pikselių."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Būtina ryšio apsauga"
+      },
+      {
+        "type": "paragraph",
+        "text": "Cloudflare pateikia svetainę ir saugo ryšį. Jei apsaugai nuo piktnaudžiavimo prireiktų būtino saugumo slapuko, jo paskirtis būtų ryšio apsauga, o ne reklama. Šio leidinio paskyros sesijos ar pirkinių krepšelio slapuko nėra."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Išorinės svetainės"
+      },
+      {
+        "type": "paragraph",
+        "text": "Paspaudę prekybininko nuorodą pereinate į jo svetainę, kur taikomos jos slapukų ir privatumo sąlygos. Dovanos123 jų pasirinkimų jūsų vardu nenustato. Jei ateityje įjungtume neesminius sekiklius, informacija ir pasirinkimo galimybės būtų pateiktos prieš juos naudojant."
+      },
+      {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "link",
+            "text": "Plačiau apie duomenų tvarkymą",
+            "target": {
+              "kind": "page",
+              "pageId": "gift-privacy"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gift-terms",
+    "slug": "taisykles",
+    "title": "Naudojimo taisyklės",
+    "description": "Dovanos123 informacinio portalo paskirtis, turinio ribos ir išorinių prekybininkų atsakomybė.",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Dovanos123 yra MB Pinet valdomas dovanų pasirinkimo informacinis portalas. Kontaktas: info@pinet.lt. Taisyklės taikomos naudojantis portalo turiniu ir kontaktų forma; jos nėra išorinio prekybininko pirkimo sutartis."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Kaip naudoti gidus"
+      },
+      {
+        "type": "paragraph",
+        "text": "Gidai padeda palyginti dovanos tinkamumą gavėjui, progą ir praktinius apribojimus. Jie nėra universali geriausios prekės garantija, asmeninio produkto bandymo įrodymas ar konkretaus gamintojo naudojimo ir saugos instrukcija. Produktų kainos, likučiai, pristatymas ir kuponų sąlygos keičiasi; prieš pirkdami tikrinkite juos pas pardavėją."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Pirkimai ir užklausos"
+      },
+      {
+        "type": "paragraph",
+        "text": "Portalas nepriima mokėjimų ir netvarko užsakymų kitų prekybininkų vardu. Paspaudę išorinę nuorodą, sprendimą dėl pirkimo ir sutartį sudarote su konkrečiu pardavėju. Užklausa redakcijai skirta netikslumui, temai ar konkrečiam poreikiui aptarti; ji negarantuoja prekės tiekimo, kainos pasiūlymo ar atsakymo per nustatytą laiką."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Komerciniai ryšiai ir turinys"
+      },
+      {
+        "type": "paragraph",
+        "text": "Savininko projektų rekomendacijas ir komercinius ryšius atskleidžiame atskirame puslapyje bei prie atitinkamų rekomendacijų. AI naudojamas rengimui ir redakcinei peržiūrai; jis nepateikiamas kaip išgalvotas ekspertas. Teminės iliustracijos nėra pardavėjo prekės ar kliento rezultato fotografijos."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Sąžiningas naudojimas"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nesiųskite klaidinančių užklausų, svetimų kontaktų be teisės juos pateikti ar kenksmingo turinio. Cituodami ir naudodami tekstą laikykitės taikomų autorinių teisių taisyklių. Praneškite redakcijai apie klaidą ir nurodykite konkretų puslapį. Šios taisyklės neriboja įstatymų suteiktų vartotojo teisių."
+      },
+      {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "link",
+            "text": "Komercinių ryšių atskleidimas",
+            "target": {
+              "kind": "page",
+              "pageId": "gift-disclosure"
+            }
+          }
+        ]
+      },
+      {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "link",
+            "text": "Redakcinė politika",
+            "target": {
+              "kind": "page",
+              "pageId": "gift-editorial-policy"
+            }
+          }
+        ]
+      },
+      {
+        "type": "richParagraph",
+        "content": [
+          {
+            "type": "link",
+            "text": "Privatumo informacija",
+            "target": {
+              "kind": "page",
+              "pageId": "gift-privacy"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,4738 @@
+{
+  "schemaVersion": 1,
+  "siteId": "madbeauty",
+  "version": "2026-10-06-v1",
+  "nodes": [
+    {
+      "id": "plaukai",
+      "label": "Plaukai",
+      "kind": "category",
+      "categoryId": "plaukai",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "kirpimai",
+      "label": "Kirpimas",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "kirpimai-moteru-kirpimas",
+      "label": "Moterų kirpimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kirpimai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Kirpimas",
+        "Moterų kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "kirpimai-vyru-kirpimas",
+      "label": "Vyrų kirpimas",
+      "aliases": [
+        "vyriskas kirpimas"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kirpimai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Kirpimas",
+        "Vyrų kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "kirpimai-vaiku-kirpimas",
+      "label": "Vaikų kirpimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kirpimai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Kirpimas",
+        "Vaikų kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "kirpimai-kirpciuku-kirpimas",
+      "label": "Kirpčiukų kirpimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kirpimai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Kirpimas",
+        "Kirpčiukų kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "kirpimai-galiuku-kirpimas",
+      "label": "Galiukų kirpimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kirpimai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Kirpimas",
+        "Galiukų kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas",
+      "label": "Dažymas",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Dažymas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-visu-plauku-dazymas",
+      "label": "Visų plaukų dažymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Visų plaukų dažymas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-saknu-dazymas",
+      "label": "Šaknų dažymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Šaknų dažymas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-sruogeliu-dazymas",
+      "label": "Sruogelių dažymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Sruogelių dažymas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-balayage",
+      "label": "Balayage",
+      "aliases": [
+        "balajazas"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Balayage"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-ombre",
+      "label": "Ombre",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Ombre"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-tonavimas",
+      "label": "Tonavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Tonavimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-sviesinimas",
+      "label": "Šviesinimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Šviesinimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-dazymas-spalvos-korekcija",
+      "label": "Spalvos korekcija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-dazymas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Dažymas",
+        "Spalvos korekcija"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas",
+      "label": "Šukavimas ir šukuosenos",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas-plauku-plovimas-ir-dziovinimas",
+      "label": "Plaukų plovimas ir džiovinimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sukavimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos",
+        "Plaukų plovimas ir džiovinimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas-susukavimas",
+      "label": "Sušukavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sukavimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos",
+        "Sušukavimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas-garbanu-formavimas",
+      "label": "Garbanų formavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sukavimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos",
+        "Garbanų formavimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas-vakarine-sukuosena",
+      "label": "Vakarinė šukuosena",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sukavimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos",
+        "Vakarinė šukuosena"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas-vestuvine-sukuosena",
+      "label": "Vestuvinė šukuosena",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sukavimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos",
+        "Vestuvinė šukuosena"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "sukavimas-kasu-pynimas",
+      "label": "Kasų pynimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sukavimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Šukavimas ir šukuosenos",
+        "Kasų pynimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-proceduros",
+      "label": "Plaukų ir galvos odos priežiūra",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Plaukų ir galvos odos priežiūra"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-proceduros-drekinamoji-plauku-procedura",
+      "label": "Drėkinamoji plaukų procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-proceduros",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Plaukų ir galvos odos priežiūra",
+        "Drėkinamoji plaukų procedūra"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-proceduros-atkuriamoji-plauku-procedura",
+      "label": "Atkuriamoji plaukų procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-proceduros",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Plaukų ir galvos odos priežiūra",
+        "Atkuriamoji plaukų procedūra"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-proceduros-galvos-odos-prieziura",
+      "label": "Galvos odos priežiūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-proceduros",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Plaukų ir galvos odos priežiūra",
+        "Galvos odos priežiūra"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-proceduros-galvos-odos-sveitimas",
+      "label": "Galvos odos šveitimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-proceduros",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Plaukų ir galvos odos priežiūra",
+        "Galvos odos šveitimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-proceduros-plauku-prieziuros-konsultacija",
+      "label": "Plaukų priežiūros konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-proceduros",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Plaukų ir galvos odos priežiūra",
+        "Plaukų priežiūros konsultacija"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-forma",
+      "label": "Tiesinimas ir garbanojimas",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Tiesinimas ir garbanojimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-forma-plauku-tiesinimas",
+      "label": "Plaukų tiesinimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-forma",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Tiesinimas ir garbanojimas",
+        "Plaukų tiesinimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-forma-keratinine-plauku-procedura",
+      "label": "Keratininė plaukų procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-forma",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Tiesinimas ir garbanojimas",
+        "Keratininė plaukų procedūra"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-forma-ilgalaikis-garbanojimas",
+      "label": "Ilgalaikis garbanojimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-forma",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Tiesinimas ir garbanojimas",
+        "Ilgalaikis garbanojimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-priauginimas",
+      "label": "Priauginimas",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Priauginimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-priauginimas-plauku-priauginimas",
+      "label": "Plaukų priauginimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-priauginimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Priauginimas",
+        "Plaukų priauginimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-priauginimas-priauginimo-korekcija",
+      "label": "Priauginimo korekcija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-priauginimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Priauginimas",
+        "Priauginimo korekcija"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "plauku-priauginimas-priaugintu-plauku-nuemimas",
+      "label": "Priaugintų plaukų nuėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-priauginimas",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Priauginimas",
+        "Priaugintų plaukų nuėmimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "barzda",
+      "label": "Barzda ir skutimas",
+      "kind": "group",
+      "parentId": "plaukai",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Plaukai",
+        "Barzda ir skutimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "barzda-barzdos-kirpimas",
+      "label": "Barzdos kirpimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "barzda",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Barzda ir skutimas",
+        "Barzdos kirpimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "barzda-barzdos-modeliavimas",
+      "label": "Barzdos modeliavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "barzda",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Barzda ir skutimas",
+        "Barzdos modeliavimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "barzda-skutimas",
+      "label": "Skutimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "barzda",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Barzda ir skutimas",
+        "Skutimas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "barzda-barzdos-dazymas",
+      "label": "Barzdos dažymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "barzda",
+      "categoryId": "plaukai",
+      "scope": "core",
+      "path": [
+        "Plaukai",
+        "Barzda ir skutimas",
+        "Barzdos dažymas"
+      ],
+      "imageId": "hair"
+    },
+    {
+      "id": "nagai",
+      "label": "Nagai",
+      "kind": "category",
+      "categoryId": "nagai",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "manikiuras",
+      "label": "Manikiūras",
+      "kind": "group",
+      "parentId": "nagai",
+      "categoryId": "nagai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai",
+        "Manikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "manikiuras-klasikinis-manikiuras",
+      "label": "Klasikinis manikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "manikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Manikiūras",
+        "Klasikinis manikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "manikiuras-aparatinis-manikiuras",
+      "label": "Aparatinis manikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "manikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Manikiūras",
+        "Aparatinis manikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "manikiuras-kombinuotas-manikiuras",
+      "label": "Kombinuotas manikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "manikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Manikiūras",
+        "Kombinuotas manikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "manikiuras-manikiuras-be-lakavimo",
+      "label": "Manikiūras be lakavimo",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "manikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Manikiūras",
+        "Manikiūras be lakavimo"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "manikiuras-vyriskas-manikiuras",
+      "label": "Vyriškas manikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "manikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Manikiūras",
+        "Vyriškas manikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "lakavimas",
+      "label": "Lakavimas",
+      "kind": "group",
+      "parentId": "nagai",
+      "categoryId": "nagai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai",
+        "Lakavimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "lakavimas-paprastas-nagu-lakavimas",
+      "label": "Paprastas nagų lakavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "lakavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Lakavimas",
+        "Paprastas nagų lakavimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "lakavimas-gelinis-lakavimas",
+      "label": "Gelinis lakavimas",
+      "aliases": [
+        "ilgalaikis lakavimas"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "lakavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Lakavimas",
+        "Gelinis lakavimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "lakavimas-prancuziskas-lakavimas",
+      "label": "Prancūziškas lakavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "lakavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Lakavimas",
+        "Prancūziškas lakavimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "lakavimas-nagu-lakavimo-nuemimas",
+      "label": "Nagų lakavimo nuėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "lakavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Lakavimas",
+        "Nagų lakavimo nuėmimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas",
+      "label": "Priauginimas ir korekcija",
+      "kind": "group",
+      "parentId": "nagai",
+      "categoryId": "nagai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-nagu-priauginimas-geliu",
+      "label": "Nagų priauginimas geliu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Nagų priauginimas geliu"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-nagu-priauginimas-akrilu",
+      "label": "Nagų priauginimas akrilu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Nagų priauginimas akrilu"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-nagu-priauginimas-poligeliu",
+      "label": "Nagų priauginimas poligeliu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Nagų priauginimas poligeliu"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-priaugintu-nagu-papildymas",
+      "label": "Priaugintų nagų papildymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Priaugintų nagų papildymas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-priaugintu-nagu-nuemimas",
+      "label": "Priaugintų nagų nuėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Priaugintų nagų nuėmimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-nago-taisymas",
+      "label": "Nago taisymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Nago taisymas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-modeliavimas-nagu-stiprinimas",
+      "label": "Nagų stiprinimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-modeliavimas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Priauginimas ir korekcija",
+        "Nagų stiprinimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-dizainas",
+      "label": "Dizainas",
+      "kind": "group",
+      "parentId": "nagai",
+      "categoryId": "nagai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai",
+        "Dizainas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-dizainas-nagu-daile",
+      "label": "Nagų dailė",
+      "aliases": [
+        "nagu dizainas"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-dizainas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Dizainas",
+        "Nagų dailė"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-dizainas-piesimas-ant-nagu",
+      "label": "Piešimas ant nagų",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-dizainas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Dizainas",
+        "Piešimas ant nagų"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "nagu-dizainas-nagu-dekoravimas",
+      "label": "Nagų dekoravimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "nagu-dizainas",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Dizainas",
+        "Nagų dekoravimas"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras",
+      "label": "Pedikiūras",
+      "kind": "group",
+      "parentId": "nagai",
+      "categoryId": "nagai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai",
+        "Pedikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras-klasikinis-pedikiuras",
+      "label": "Klasikinis pedikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pedikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Pedikiūras",
+        "Klasikinis pedikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras-aparatinis-pedikiuras",
+      "label": "Aparatinis pedikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pedikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Pedikiūras",
+        "Aparatinis pedikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras-kombinuotas-pedikiuras",
+      "label": "Kombinuotas pedikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pedikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Pedikiūras",
+        "Kombinuotas pedikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras-pedikiuras-be-lakavimo",
+      "label": "Pedikiūras be lakavimo",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pedikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Pedikiūras",
+        "Pedikiūras be lakavimo"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras-pedikiuras-su-geliniu-lakavimu",
+      "label": "Pedikiūras su geliniu lakavimu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pedikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Pedikiūras",
+        "Pedikiūras su geliniu lakavimu"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "pedikiuras-vyriskas-pedikiuras",
+      "label": "Vyriškas pedikiūras",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pedikiuras",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Pedikiūras",
+        "Vyriškas pedikiūras"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "rankos-pedos",
+      "label": "Rankų ir pėdų priežiūra",
+      "kind": "group",
+      "parentId": "nagai",
+      "categoryId": "nagai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Nagai",
+        "Rankų ir pėdų priežiūra"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "rankos-pedos-ranku-spa",
+      "label": "Rankų SPA",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "rankos-pedos",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Rankų ir pėdų priežiūra",
+        "Rankų SPA"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "rankos-pedos-pedu-spa",
+      "label": "Pėdų SPA",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "rankos-pedos",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Rankų ir pėdų priežiūra",
+        "Pėdų SPA"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "rankos-pedos-parafino-procedura-rankoms",
+      "label": "Parafino procedūra rankoms",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "rankos-pedos",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Rankų ir pėdų priežiūra",
+        "Parafino procedūra rankoms"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "rankos-pedos-parafino-procedura-pedoms",
+      "label": "Parafino procedūra pėdoms",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "rankos-pedos",
+      "categoryId": "nagai",
+      "scope": "core",
+      "path": [
+        "Nagai",
+        "Rankų ir pėdų priežiūra",
+        "Parafino procedūra pėdoms"
+      ],
+      "imageId": "nails-neutral"
+    },
+    {
+      "id": "antakiai",
+      "label": "Antakiai",
+      "kind": "category",
+      "categoryId": "antakiai",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Antakiai"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-korekcija",
+      "label": "Korekcija",
+      "kind": "group",
+      "parentId": "antakiai",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Antakiai",
+        "Korekcija"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-korekcija-antakiu-korekcija-pincetu",
+      "label": "Antakių korekcija pincetu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-korekcija",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Korekcija",
+        "Antakių korekcija pincetu"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-korekcija-antakiu-korekcija-vasku",
+      "label": "Antakių korekcija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-korekcija",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Korekcija",
+        "Antakių korekcija vašku"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-korekcija-antakiu-korekcija-siulu",
+      "label": "Antakių korekcija siūlu",
+      "aliases": [
+        "threading"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-korekcija",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Korekcija",
+        "Antakių korekcija siūlu"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-korekcija-antakiu-formos-konsultacija",
+      "label": "Antakių formos konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-korekcija",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Korekcija",
+        "Antakių formos konsultacija"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-dazymas",
+      "label": "Dažymas",
+      "kind": "group",
+      "parentId": "antakiai",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Antakiai",
+        "Dažymas"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-dazymas-antakiu-dazymas-dazais",
+      "label": "Antakių dažymas dažais",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-dazymas",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Dažymas",
+        "Antakių dažymas dažais"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-dazymas-antakiu-dazymas-chna",
+      "label": "Antakių dažymas chna",
+      "aliases": [
+        "henna"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-dazymas",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Dažymas",
+        "Antakių dažymas chna"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-laminavimas",
+      "label": "Laminavimas",
+      "kind": "group",
+      "parentId": "antakiai",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Antakiai",
+        "Laminavimas"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-laminavimas-antakiu-laminavimas",
+      "label": "Antakių laminavimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-laminavimas",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Laminavimas",
+        "Antakių laminavimas"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "antakiu-laminavimas-antakiu-laminavimas-su-korekcija-ir-dazymu",
+      "label": "Antakių laminavimas su korekcija ir dažymu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "antakiu-laminavimas",
+      "categoryId": "antakiai",
+      "scope": "core",
+      "path": [
+        "Antakiai",
+        "Laminavimas",
+        "Antakių laminavimas su korekcija ir dažymu"
+      ],
+      "imageId": "brows"
+    },
+    {
+      "id": "blakstienos",
+      "label": "Blakstienos",
+      "kind": "category",
+      "categoryId": "blakstienos",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Blakstienos"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-priauginimas",
+      "label": "Priauginimas",
+      "kind": "group",
+      "parentId": "blakstienos",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Blakstienos",
+        "Priauginimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-priauginimas-klasikinis-blakstienu-priauginimas",
+      "label": "Klasikinis blakstienų priauginimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-priauginimas",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Priauginimas",
+        "Klasikinis blakstienų priauginimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-priauginimas-hibridinis-blakstienu-priauginimas",
+      "label": "Hibridinis blakstienų priauginimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-priauginimas",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Priauginimas",
+        "Hibridinis blakstienų priauginimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-priauginimas-volume-blakstienu-priauginimas",
+      "label": "Volume blakstienų priauginimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-priauginimas",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Priauginimas",
+        "Volume blakstienų priauginimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-korekcija",
+      "label": "Korekcija ir nuėmimas",
+      "kind": "group",
+      "parentId": "blakstienos",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Blakstienos",
+        "Korekcija ir nuėmimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-korekcija-blakstienu-papildymas",
+      "label": "Blakstienų papildymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-korekcija",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Korekcija ir nuėmimas",
+        "Blakstienų papildymas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-korekcija-priaugintu-blakstienu-nuemimas",
+      "label": "Priaugintų blakstienų nuėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-korekcija",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Korekcija ir nuėmimas",
+        "Priaugintų blakstienų nuėmimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-prieziura",
+      "label": "Laminavimas ir dažymas",
+      "kind": "group",
+      "parentId": "blakstienos",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Blakstienos",
+        "Laminavimas ir dažymas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-prieziura-blakstienu-laminavimas",
+      "label": "Blakstienų laminavimas",
+      "aliases": [
+        "lash lift"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-prieziura",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Laminavimas ir dažymas",
+        "Blakstienų laminavimas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-prieziura-blakstienu-dazymas",
+      "label": "Blakstienų dažymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-prieziura",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Laminavimas ir dažymas",
+        "Blakstienų dažymas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "blakstienu-prieziura-blakstienu-laminavimas-ir-dazymas",
+      "label": "Blakstienų laminavimas ir dažymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "blakstienu-prieziura",
+      "categoryId": "blakstienos",
+      "scope": "core",
+      "path": [
+        "Blakstienos",
+        "Laminavimas ir dažymas",
+        "Blakstienų laminavimas ir dažymas"
+      ],
+      "imageId": "lashes"
+    },
+    {
+      "id": "makiazas",
+      "label": "Makiažas",
+      "kind": "category",
+      "categoryId": "makiazas",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai",
+      "label": "Makiažo paslaugos",
+      "kind": "group",
+      "parentId": "makiazas",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-dieninis-makiazas",
+      "label": "Dieninis makiažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Dieninis makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-vakarinis-makiazas",
+      "label": "Vakarinis makiažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Vakarinis makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-proginis-makiazas",
+      "label": "Proginis makiažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Proginis makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-nuotakos-makiazas",
+      "label": "Nuotakos makiažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Nuotakos makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-bandomasis-nuotakos-makiazas",
+      "label": "Bandomasis nuotakos makiažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Bandomasis nuotakos makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-makiazas-fotosesijai",
+      "label": "Makiažas fotosesijai",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Makiažas fotosesijai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-tipai-kurybinis-makiazas",
+      "label": "Kūrybinis makiažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-tipai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Makiažo paslaugos",
+        "Kūrybinis makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-mokymai",
+      "label": "Individualūs mokymai",
+      "kind": "group",
+      "parentId": "makiazas",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Makiažas",
+        "Individualūs mokymai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-mokymai-asmenine-makiazo-pamoka",
+      "label": "Asmeninė makiažo pamoka",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-mokymai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Individualūs mokymai",
+        "Asmeninė makiažo pamoka"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "makiazo-mokymai-makiazo-priemoniu-konsultacija",
+      "label": "Makiažo priemonių konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "makiazo-mokymai",
+      "categoryId": "makiazas",
+      "scope": "core",
+      "path": [
+        "Makiažas",
+        "Individualūs mokymai",
+        "Makiažo priemonių konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija",
+      "label": "Depiliacija ir plaukų šalinimas",
+      "kind": "category",
+      "categoryId": "depiliacija",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Depiliacija ir plaukų šalinimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku",
+      "label": "Vašku",
+      "kind": "group",
+      "parentId": "depiliacija",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-koju-depiliacija-vasku",
+      "label": "Kojų depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Kojų depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-ranku-depiliacija-vasku",
+      "label": "Rankų depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Rankų depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-pazastu-depiliacija-vasku",
+      "label": "Pažastų depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Pažastų depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-bikini-depiliacija-vasku",
+      "label": "Bikini depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Bikini depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-braziliska-depiliacija-vasku",
+      "label": "Braziliška depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Braziliška depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-veido-depiliacija-vasku",
+      "label": "Veido depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Veido depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-nugaros-depiliacija-vasku",
+      "label": "Nugaros depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Nugaros depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-vasku-krutines-depiliacija-vasku",
+      "label": "Krūtinės depiliacija vašku",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-vasku",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Vašku",
+        "Krūtinės depiliacija vašku"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi",
+      "label": "Cukrumi",
+      "kind": "group",
+      "parentId": "depiliacija",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi-koju-depiliacija-cukrumi",
+      "label": "Kojų depiliacija cukrumi",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-cukrumi",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi",
+        "Kojų depiliacija cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi-ranku-depiliacija-cukrumi",
+      "label": "Rankų depiliacija cukrumi",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-cukrumi",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi",
+        "Rankų depiliacija cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi-pazastu-depiliacija-cukrumi",
+      "label": "Pažastų depiliacija cukrumi",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-cukrumi",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi",
+        "Pažastų depiliacija cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi-bikini-depiliacija-cukrumi",
+      "label": "Bikini depiliacija cukrumi",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-cukrumi",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi",
+        "Bikini depiliacija cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi-braziliska-depiliacija-cukrumi",
+      "label": "Braziliška depiliacija cukrumi",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-cukrumi",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi",
+        "Braziliška depiliacija cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-cukrumi-veido-depiliacija-cukrumi",
+      "label": "Veido depiliacija cukrumi",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-cukrumi",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Cukrumi",
+        "Veido depiliacija cukrumi"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "plauku-salinimas-aparatu",
+      "label": "Aparatu",
+      "kind": "group",
+      "parentId": "depiliacija",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Aparatu"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "plauku-salinimas-aparatu-plauku-salinimas-lazeriu",
+      "label": "Plaukų šalinimas lazeriu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-salinimas-aparatu",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Aparatu",
+        "Plaukų šalinimas lazeriu"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "plauku-salinimas-aparatu-fotoepiliacija",
+      "label": "Fotoepiliacija",
+      "aliases": [
+        "IPL"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-salinimas-aparatu",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Aparatu",
+        "Fotoepiliacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "plauku-salinimas-aparatu-elektroepiliacija",
+      "label": "Elektroepiliacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "plauku-salinimas-aparatu",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Aparatu",
+        "Elektroepiliacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-kita",
+      "label": "Kiti būdai",
+      "kind": "group",
+      "parentId": "depiliacija",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Kiti būdai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-kita-veido-plaukeliu-salinimas-siulu",
+      "label": "Veido plaukelių šalinimas siūlu",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-kita",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Kiti būdai",
+        "Veido plaukelių šalinimas siūlu"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "depiliacija-kita-plauku-salinimo-konsultacija",
+      "label": "Plaukų šalinimo konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "depiliacija-kita",
+      "categoryId": "depiliacija",
+      "scope": "core",
+      "path": [
+        "Depiliacija ir plaukų šalinimas",
+        "Kiti būdai",
+        "Plaukų šalinimo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "veidas",
+      "label": "Veido priežiūra",
+      "kind": "category",
+      "categoryId": "veidas",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Veido priežiūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-valymas",
+      "label": "Valymas",
+      "kind": "group",
+      "parentId": "veidas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Veido priežiūra",
+        "Valymas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-valymas-mechaninis-veido-valymas",
+      "label": "Mechaninis veido valymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-valymas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Valymas",
+        "Mechaninis veido valymas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-valymas-ultragarsinis-veido-valymas",
+      "label": "Ultragarsinis veido valymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-valymas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Valymas",
+        "Ultragarsinis veido valymas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-valymas-kombinuotas-veido-valymas",
+      "label": "Kombinuotas veido valymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-valymas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Valymas",
+        "Kombinuotas veido valymas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-valymas-veido-valymas-be-mechaninio-poveikio",
+      "label": "Veido valymas be mechaninio poveikio",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-valymas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Valymas",
+        "Veido valymas be mechaninio poveikio"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-kaukes",
+      "label": "Drėkinimas ir priežiūra",
+      "kind": "group",
+      "parentId": "veidas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Veido priežiūra",
+        "Drėkinimas ir priežiūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-kaukes-drekinamoji-veido-procedura",
+      "label": "Drėkinamoji veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-kaukes",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Drėkinimas ir priežiūra",
+        "Drėkinamoji veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-kaukes-maitinamoji-veido-procedura",
+      "label": "Maitinamoji veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-kaukes",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Drėkinimas ir priežiūra",
+        "Maitinamoji veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-kaukes-raminamoji-veido-procedura",
+      "label": "Raminamoji veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-kaukes",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Drėkinimas ir priežiūra",
+        "Raminamoji veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-kaukes-veido-kauke",
+      "label": "Veido kaukė",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-kaukes",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Drėkinimas ir priežiūra",
+        "Veido kaukė"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-kaukes-akiu-srities-prieziura",
+      "label": "Akių srities priežiūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-kaukes",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Drėkinimas ir priežiūra",
+        "Akių srities priežiūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-sveitimas",
+      "label": "Šveitimas",
+      "kind": "group",
+      "parentId": "veidas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Veido priežiūra",
+        "Šveitimas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-sveitimas-pavirsinis-veido-sveitimas",
+      "label": "Paviršinis veido šveitimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-sveitimas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Šveitimas",
+        "Paviršinis veido šveitimas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-sveitimas-rugstinis-veido-sveitimas",
+      "label": "Rūgštinis veido šveitimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-sveitimas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Šveitimas",
+        "Rūgštinis veido šveitimas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-sveitimas-fermentinis-veido-sveitimas",
+      "label": "Fermentinis veido šveitimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-sveitimas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Šveitimas",
+        "Fermentinis veido šveitimas"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-aparatai",
+      "label": "Aparatinė priežiūra",
+      "kind": "group",
+      "parentId": "veidas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Veido priežiūra",
+        "Aparatinė priežiūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-aparatai-led-veido-procedura",
+      "label": "LED veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-aparatai",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Aparatinė priežiūra",
+        "LED veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-aparatai-mikrosroviu-veido-procedura",
+      "label": "Mikrosrovių veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-aparatai",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Aparatinė priežiūra",
+        "Mikrosrovių veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-aparatai-radijo-daznio-veido-procedura",
+      "label": "Radijo dažnio veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-aparatai",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Aparatinė priežiūra",
+        "Radijo dažnio veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-aparatai-aparatine-veido-procedura",
+      "label": "Aparatinė veido procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-aparatai",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Aparatinė priežiūra",
+        "Aparatinė veido procedūra"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-konsultacija",
+      "label": "Konsultacijos",
+      "kind": "group",
+      "parentId": "veidas",
+      "categoryId": "veidas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Veido priežiūra",
+        "Konsultacijos"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-konsultacija-odos-prieziuros-konsultacija",
+      "label": "Odos priežiūros konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-konsultacija",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Konsultacijos",
+        "Odos priežiūros konsultacija"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "veido-konsultacija-veido-proceduros-parinkimo-konsultacija",
+      "label": "Veido procedūros parinkimo konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-konsultacija",
+      "categoryId": "veidas",
+      "scope": "core",
+      "path": [
+        "Veido priežiūra",
+        "Konsultacijos",
+        "Veido procedūros parinkimo konsultacija"
+      ],
+      "imageId": "skincare"
+    },
+    {
+      "id": "kunas",
+      "label": "Kūno priežiūra",
+      "kind": "category",
+      "categoryId": "kunas",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Kūno priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-sveitimas",
+      "label": "Šveitimas ir priežiūra",
+      "kind": "group",
+      "parentId": "kunas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Kūno priežiūra",
+        "Šveitimas ir priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-sveitimas-kuno-sveitimas",
+      "label": "Kūno šveitimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-sveitimas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Šveitimas ir priežiūra",
+        "Kūno šveitimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-sveitimas-kuno-drekinimo-procedura",
+      "label": "Kūno drėkinimo procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-sveitimas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Šveitimas ir priežiūra",
+        "Kūno drėkinimo procedūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-sveitimas-nugaros-odos-prieziura",
+      "label": "Nugaros odos priežiūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-sveitimas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Šveitimas ir priežiūra",
+        "Nugaros odos priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-ivyniojimai",
+      "label": "Įvyniojimai",
+      "kind": "group",
+      "parentId": "kunas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Kūno priežiūra",
+        "Įvyniojimai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-ivyniojimai-kuno-ivyniojimas",
+      "label": "Kūno įvyniojimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-ivyniojimai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Įvyniojimai",
+        "Kūno įvyniojimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-ivyniojimai-purvo-ivyniojimas",
+      "label": "Purvo įvyniojimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-ivyniojimai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Įvyniojimai",
+        "Purvo įvyniojimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-ivyniojimai-dumbliu-ivyniojimas",
+      "label": "Dumblių įvyniojimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-ivyniojimai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Įvyniojimai",
+        "Dumblių įvyniojimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-aparatai",
+      "label": "Aparatinės procedūros",
+      "kind": "group",
+      "parentId": "kunas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Kūno priežiūra",
+        "Aparatinės procedūros"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-aparatai-presoterapija",
+      "label": "Presoterapija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-aparatai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Aparatinės procedūros",
+        "Presoterapija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-aparatai-vakuumine-kuno-procedura",
+      "label": "Vakuuminė kūno procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-aparatai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Aparatinės procedūros",
+        "Vakuuminė kūno procedūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-aparatai-radijo-daznio-kuno-procedura",
+      "label": "Radijo dažnio kūno procedūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-aparatai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Aparatinės procedūros",
+        "Radijo dažnio kūno procedūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kuno-aparatai-aparatine-kuno-proceduros-konsultacija",
+      "label": "Aparatinė kūno procedūros konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-aparatai",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Aparatinės procedūros",
+        "Aparatinė kūno procedūros konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "idegis",
+      "label": "Įdegis",
+      "kind": "group",
+      "parentId": "kunas",
+      "categoryId": "kunas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Kūno priežiūra",
+        "Įdegis"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "idegis-purskiamas-idegis",
+      "label": "Purškiamas įdegis",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "idegis",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Įdegis",
+        "Purškiamas įdegis"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "idegis-soliariumas",
+      "label": "Soliariumas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "idegis",
+      "categoryId": "kunas",
+      "scope": "core",
+      "path": [
+        "Kūno priežiūra",
+        "Įdegis",
+        "Soliariumas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "masazas",
+      "label": "Masažas",
+      "kind": "category",
+      "categoryId": "masazas",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai",
+      "label": "Kūno masažai",
+      "kind": "group",
+      "parentId": "masazas",
+      "categoryId": "masazas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Masažas",
+        "Kūno masažai"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-atpalaiduojantis-masazas",
+      "label": "Atpalaiduojantis masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Atpalaiduojantis masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-klasikinis-masazas",
+      "label": "Klasikinis masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Klasikinis masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-giliuju-audiniu-masazas",
+      "label": "Giliųjų audinių masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Giliųjų audinių masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-sportinis-masazas",
+      "label": "Sportinis masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Sportinis masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-aromaterapinis-masazas",
+      "label": "Aromaterapinis masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Aromaterapinis masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-masazas-karstais-akmenimis",
+      "label": "Masažas karštais akmenimis",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Masažas karštais akmenimis"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-tailandietiskas-masazas",
+      "label": "Tailandietiškas masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Tailandietiškas masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "kuno-masazai-svediskas-masazas",
+      "label": "Švediškas masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "kuno-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Kūno masažai",
+        "Švediškas masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "srities-masazai",
+      "label": "Atskirų sričių masažai",
+      "kind": "group",
+      "parentId": "masazas",
+      "categoryId": "masazas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Masažas",
+        "Atskirų sričių masažai"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "srities-masazai-nugaros-masazas",
+      "label": "Nugaros masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "srities-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Atskirų sričių masažai",
+        "Nugaros masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "srities-masazai-kaklo-ir-peciu-masazas",
+      "label": "Kaklo ir pečių masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "srities-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Atskirų sričių masažai",
+        "Kaklo ir pečių masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "srities-masazai-galvos-masazas",
+      "label": "Galvos masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "srities-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Atskirų sričių masažai",
+        "Galvos masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "srities-masazai-pedu-masazas",
+      "label": "Pėdų masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "srities-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Atskirų sričių masažai",
+        "Pėdų masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "srities-masazai-ranku-masazas",
+      "label": "Rankų masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "srities-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Atskirų sričių masažai",
+        "Rankų masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "veido-masazai",
+      "label": "Veido masažai",
+      "kind": "group",
+      "parentId": "masazas",
+      "categoryId": "masazas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Masažas",
+        "Veido masažai"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "veido-masazai-kobido-veido-masazas",
+      "label": "Kobido veido masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Veido masažai",
+        "Kobido veido masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "veido-masazai-klasikinis-veido-masazas",
+      "label": "Klasikinis veido masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Veido masažai",
+        "Klasikinis veido masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "veido-masazai-bukalinis-veido-masazas",
+      "label": "Bukalinis veido masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Veido masažai",
+        "Bukalinis veido masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "veido-masazai-veido-limfodrenazinis-masazas",
+      "label": "Veido limfodrenažinis masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "veido-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Veido masažai",
+        "Veido limfodrenažinis masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "specialus-masazai",
+      "label": "Specialūs masažai",
+      "kind": "group",
+      "parentId": "masazas",
+      "categoryId": "masazas",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "Masažas",
+        "Specialūs masažai"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "specialus-masazai-limfodrenazinis-kuno-masazas",
+      "label": "Limfodrenažinis kūno masažas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "specialus-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Specialūs masažai",
+        "Limfodrenažinis kūno masažas"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "specialus-masazai-masazas-nesciosioms",
+      "label": "Masažas nėščiosioms",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "specialus-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Specialūs masažai",
+        "Masažas nėščiosioms"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "specialus-masazai-masazas-poroms",
+      "label": "Masažas poroms",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "specialus-masazai",
+      "categoryId": "masazas",
+      "scope": "core",
+      "path": [
+        "Masažas",
+        "Specialūs masažai",
+        "Masažas poroms"
+      ],
+      "imageId": "massage"
+    },
+    {
+      "id": "spa",
+      "label": "SPA ir poilsis",
+      "kind": "category",
+      "categoryId": "spa",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "SPA ir poilsis"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "spa-ritualai",
+      "label": "Ritualai",
+      "kind": "group",
+      "parentId": "spa",
+      "categoryId": "spa",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "SPA ir poilsis",
+        "Ritualai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "spa-ritualai-spa-ritualas",
+      "label": "SPA ritualas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "spa-ritualai",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Ritualai",
+        "SPA ritualas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "spa-ritualai-spa-ritualas-poroms",
+      "label": "SPA ritualas poroms",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "spa-ritualai",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Ritualai",
+        "SPA ritualas poroms"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "spa-ritualai-kuno-ir-veido-spa-ritualas",
+      "label": "Kūno ir veido SPA ritualas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "spa-ritualai",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Ritualai",
+        "Kūno ir veido SPA ritualas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pirtys",
+      "label": "Pirtys ir vanduo",
+      "kind": "group",
+      "parentId": "spa",
+      "categoryId": "spa",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "SPA ir poilsis",
+        "Pirtys ir vanduo"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pirtys-pirtis",
+      "label": "Pirtis",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pirtys",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Pirtys ir vanduo",
+        "Pirtis"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pirtys-hamamas",
+      "label": "Hamamas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pirtys",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Pirtys ir vanduo",
+        "Hamamas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pirtys-garine-pirtis",
+      "label": "Garinė pirtis",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pirtys",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Pirtys ir vanduo",
+        "Garinė pirtis"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pirtys-privatus-spa-apsilankymas",
+      "label": "Privatus SPA apsilankymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "pirtys",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Pirtys ir vanduo",
+        "Privatus SPA apsilankymas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "poilsio-proceduros",
+      "label": "Poilsio procedūros",
+      "kind": "group",
+      "parentId": "spa",
+      "categoryId": "spa",
+      "scope": "core",
+      "reviewRequired": false,
+      "path": [
+        "SPA ir poilsis",
+        "Poilsio procedūros"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "poilsio-proceduros-galvos-spa",
+      "label": "Galvos SPA",
+      "aliases": [
+        "head spa"
+      ],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "poilsio-proceduros",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Poilsio procedūros",
+        "Galvos SPA"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "poilsio-proceduros-aromaterapijos-seansas",
+      "label": "Aromaterapijos seansas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "poilsio-proceduros",
+      "categoryId": "spa",
+      "scope": "core",
+      "path": [
+        "SPA ir poilsis",
+        "Poilsio procedūros",
+        "Aromaterapijos seansas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "ilgalaikis-makiazas",
+      "label": "Ilgalaikis makiažas",
+      "kind": "category",
+      "categoryId": "ilgalaikis-makiazas",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Ilgalaikis makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmentavimas",
+      "label": "Pigmentavimas",
+      "kind": "group",
+      "parentId": "ilgalaikis-makiazas",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Ilgalaikis makiažas",
+        "Pigmentavimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmentavimas-ilgalaikis-antakiu-makiazas",
+      "label": "Ilgalaikis antakių makiažas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmentavimas",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Pigmentavimas",
+        "Ilgalaikis antakių makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmentavimas-ilgalaikis-lupu-makiazas",
+      "label": "Ilgalaikis lūpų makiažas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmentavimas",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Pigmentavimas",
+        "Ilgalaikis lūpų makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmentavimas-ilgalaikis-akiu-makiazas",
+      "label": "Ilgalaikis akių makiažas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmentavimas",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Pigmentavimas",
+        "Ilgalaikis akių makiažas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmentavimas-galvos-odos-mikropigmentacija",
+      "label": "Galvos odos mikropigmentacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmentavimas",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Pigmentavimas",
+        "Galvos odos mikropigmentacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmento-korekcija",
+      "label": "Korekcija ir konsultacijos",
+      "kind": "group",
+      "parentId": "ilgalaikis-makiazas",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Ilgalaikis makiažas",
+        "Korekcija ir konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmento-korekcija-ilgalaikio-makiazo-korekcija",
+      "label": "Ilgalaikio makiažo korekcija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmento-korekcija",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Korekcija ir konsultacijos",
+        "Ilgalaikio makiažo korekcija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmento-korekcija-ilgalaikio-makiazo-konsultacija",
+      "label": "Ilgalaikio makiažo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmento-korekcija",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Korekcija ir konsultacijos",
+        "Ilgalaikio makiažo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "pigmento-korekcija-pigmento-salinimo-konsultacija",
+      "label": "Pigmento šalinimo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "pigmento-korekcija",
+      "categoryId": "ilgalaikis-makiazas",
+      "scope": "core",
+      "path": [
+        "Ilgalaikis makiažas",
+        "Korekcija ir konsultacijos",
+        "Pigmento šalinimo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiruotes",
+      "label": "Tatuiruotės",
+      "kind": "category",
+      "categoryId": "tatuiruotes",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Tatuiruotės"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiravimas",
+      "label": "Tatuiravimas",
+      "kind": "group",
+      "parentId": "tatuiruotes",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Tatuiruotės",
+        "Tatuiravimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiravimas-nauja-tatuiruote",
+      "label": "Nauja tatuiruotė",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "tatuiravimas",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "path": [
+        "Tatuiruotės",
+        "Tatuiravimas",
+        "Nauja tatuiruotė"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiravimas-tatuiruotes-atnaujinimas",
+      "label": "Tatuiruotės atnaujinimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "tatuiravimas",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "path": [
+        "Tatuiruotės",
+        "Tatuiravimas",
+        "Tatuiruotės atnaujinimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiravimas-tatuiruotes-uzdengimas",
+      "label": "Tatuiruotės uždengimas",
+      "aliases": [
+        "cover up"
+      ],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "tatuiravimas",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "path": [
+        "Tatuiruotės",
+        "Tatuiravimas",
+        "Tatuiruotės uždengimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiruociu-konsultacijos",
+      "label": "Konsultacijos",
+      "kind": "group",
+      "parentId": "tatuiruotes",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Tatuiruotės",
+        "Konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiruociu-konsultacijos-tatuiruotes-eskizo-konsultacija",
+      "label": "Tatuiruotės eskizo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "tatuiruociu-konsultacijos",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "path": [
+        "Tatuiruotės",
+        "Konsultacijos",
+        "Tatuiruotės eskizo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "tatuiruociu-konsultacijos-tatuiruotes-salinimo-konsultacija",
+      "label": "Tatuiruotės šalinimo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "tatuiruociu-konsultacijos",
+      "categoryId": "tatuiruotes",
+      "scope": "core",
+      "path": [
+        "Tatuiruotės",
+        "Konsultacijos",
+        "Tatuiruotės šalinimo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "verimas",
+      "label": "Auskarų vėrimas",
+      "kind": "category",
+      "categoryId": "verimas",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Auskarų vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas",
+      "label": "Vėrimas",
+      "kind": "group",
+      "parentId": "verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas-ausu-speneliu-verimas",
+      "label": "Ausų spenelių vėrimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "papuosalu-verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas",
+        "Ausų spenelių vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas-ausies-kremzles-verimas",
+      "label": "Ausies kremzlės vėrimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "papuosalu-verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas",
+        "Ausies kremzlės vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas-nosies-auskaro-verimas",
+      "label": "Nosies auskaro vėrimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "papuosalu-verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas",
+        "Nosies auskaro vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas-antakio-auskaro-verimas",
+      "label": "Antakio auskaro vėrimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "papuosalu-verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas",
+        "Antakio auskaro vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas-lupos-auskaro-verimas",
+      "label": "Lūpos auskaro vėrimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "papuosalu-verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas",
+        "Lūpos auskaro vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "papuosalu-verimas-bambos-auskaro-verimas",
+      "label": "Bambos auskaro vėrimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "papuosalu-verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Vėrimas",
+        "Bambos auskaro vėrimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "verimo-prieziura",
+      "label": "Priežiūra ir konsultacijos",
+      "kind": "group",
+      "parentId": "verimas",
+      "categoryId": "verimas",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Auskarų vėrimas",
+        "Priežiūra ir konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "verimo-prieziura-papuosalo-pakeitimas",
+      "label": "Papuošalo pakeitimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "verimo-prieziura",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Priežiūra ir konsultacijos",
+        "Papuošalo pakeitimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "verimo-prieziura-auskaro-verimo-konsultacija",
+      "label": "Auskaro vėrimo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "verimo-prieziura",
+      "categoryId": "verimas",
+      "scope": "core",
+      "path": [
+        "Auskarų vėrimas",
+        "Priežiūra ir konsultacijos",
+        "Auskaro vėrimo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetika",
+      "label": "Estetinės procedūros",
+      "kind": "category",
+      "categoryId": "estetika",
+      "parentId": null,
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Estetinės procedūros"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-konsultacijos",
+      "label": "Konsultacijos",
+      "kind": "group",
+      "parentId": "estetika",
+      "categoryId": "estetika",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Estetinės procedūros",
+        "Konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-konsultacijos-estetiniu-proceduru-konsultacija",
+      "label": "Estetinių procedūrų konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-konsultacijos",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Konsultacijos",
+        "Estetinių procedūrų konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-konsultacijos-odos-bukles-profesionalus-ivertinimas",
+      "label": "Odos būklės profesionalus įvertinimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-konsultacijos",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Konsultacijos",
+        "Odos būklės profesionalus įvertinimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros",
+      "label": "Procedūros po atskiros kvalifikacijos patikros",
+      "kind": "group",
+      "parentId": "estetika",
+      "categoryId": "estetika",
+      "scope": "core",
+      "reviewRequired": true,
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros-mikroadatine-procedura",
+      "label": "Mikroadatinė procedūra",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-proceduros",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros",
+        "Mikroadatinė procedūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros-mezoterapija",
+      "label": "Mezoterapija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-proceduros",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros",
+        "Mezoterapija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros-biorevitalizacija",
+      "label": "Biorevitalizacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-proceduros",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros",
+        "Biorevitalizacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros-injekciniu-proceduru-konsultacija",
+      "label": "Injekcinių procedūrų konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-proceduros",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros",
+        "Injekcinių procedūrų konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros-estetinio-lazerio-konsultacija",
+      "label": "Estetinio lazerio konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-proceduros",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros",
+        "Estetinio lazerio konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "estetikos-proceduros-randu-prieziuros-konsultacija",
+      "label": "Randų priežiūros konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "estetikos-proceduros",
+      "categoryId": "estetika",
+      "scope": "core",
+      "path": [
+        "Estetinės procedūros",
+        "Procedūros po atskiros kvalifikacijos patikros",
+        "Randų priežiūros konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "fizinis-aktyvumas",
+      "label": "Sportas ir judėjimas",
+      "kind": "category",
+      "categoryId": "fizinis-aktyvumas",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Sportas ir judėjimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sportas",
+      "label": "Treniruotės",
+      "kind": "group",
+      "parentId": "fizinis-aktyvumas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Sportas ir judėjimas",
+        "Treniruotės"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sportas-asmenine-treniruote",
+      "label": "Asmeninė treniruotė",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sportas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Treniruotės",
+        "Asmeninė treniruotė"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sportas-grupine-treniruote",
+      "label": "Grupinė treniruotė",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sportas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Treniruotės",
+        "Grupinė treniruotė"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sportas-pilatesas",
+      "label": "Pilatesas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sportas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Treniruotės",
+        "Pilatesas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sportas-joga",
+      "label": "Joga",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sportas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Treniruotės",
+        "Joga"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sportas-judesio-konsultacija",
+      "label": "Judesio konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sportas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Treniruotės",
+        "Judesio konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sporto-programos",
+      "label": "Programos",
+      "kind": "group",
+      "parentId": "fizinis-aktyvumas",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Sportas ir judėjimas",
+        "Programos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sporto-programos-individualios-treniruociu-programos-konsultacija",
+      "label": "Individualios treniruočių programos konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sporto-programos",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Programos",
+        "Individualios treniruočių programos konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "sporto-programos-mobilumo-uzsiemimas",
+      "label": "Mobilumo užsiėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "sporto-programos",
+      "categoryId": "fizinis-aktyvumas",
+      "scope": "extension",
+      "path": [
+        "Sportas ir judėjimas",
+        "Programos",
+        "Mobilumo užsiėmimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kineziterapija",
+      "label": "Kineziterapija",
+      "kind": "category",
+      "categoryId": "kineziterapija",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Kineziterapija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kineziterapeuto-paslaugos",
+      "label": "Specialisto paslaugos",
+      "kind": "group",
+      "parentId": "kineziterapija",
+      "categoryId": "kineziterapija",
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Kineziterapija",
+        "Specialisto paslaugos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kineziterapeuto-paslaugos-kineziterapeuto-konsultacija",
+      "label": "Kineziterapeuto konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "kineziterapeuto-paslaugos",
+      "categoryId": "kineziterapija",
+      "scope": "extension",
+      "path": [
+        "Kineziterapija",
+        "Specialisto paslaugos",
+        "Kineziterapeuto konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kineziterapeuto-paslaugos-individuali-kineziterapija",
+      "label": "Individuali kineziterapija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "kineziterapeuto-paslaugos",
+      "categoryId": "kineziterapija",
+      "scope": "extension",
+      "path": [
+        "Kineziterapija",
+        "Specialisto paslaugos",
+        "Individuali kineziterapija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kineziterapeuto-paslaugos-kineziterapijos-grupinis-uzsiemimas",
+      "label": "Kineziterapijos grupinis užsiėmimas",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "kineziterapeuto-paslaugos",
+      "categoryId": "kineziterapija",
+      "scope": "extension",
+      "path": [
+        "Kineziterapija",
+        "Specialisto paslaugos",
+        "Kineziterapijos grupinis užsiėmimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "kineziterapeuto-paslaugos-gydomojo-masazo-konsultacija",
+      "label": "Gydomojo masažo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "kineziterapeuto-paslaugos",
+      "categoryId": "kineziterapija",
+      "scope": "extension",
+      "path": [
+        "Kineziterapija",
+        "Specialisto paslaugos",
+        "Gydomojo masažo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "psichologine-pagalba",
+      "label": "Psichologinė pagalba",
+      "kind": "category",
+      "categoryId": "psichologine-pagalba",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Psichologinė pagalba"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "psichologo-paslaugos",
+      "label": "Konsultacijos",
+      "kind": "group",
+      "parentId": "psichologine-pagalba",
+      "categoryId": "psichologine-pagalba",
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Psichologinė pagalba",
+        "Konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "psichologo-paslaugos-psichologo-konsultacija",
+      "label": "Psichologo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "psichologo-paslaugos",
+      "categoryId": "psichologine-pagalba",
+      "scope": "extension",
+      "path": [
+        "Psichologinė pagalba",
+        "Konsultacijos",
+        "Psichologo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "psichologo-paslaugos-psichoterapijos-konsultacija",
+      "label": "Psichoterapijos konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "psichologo-paslaugos",
+      "categoryId": "psichologine-pagalba",
+      "scope": "extension",
+      "path": [
+        "Psichologinė pagalba",
+        "Konsultacijos",
+        "Psichoterapijos konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "psichologo-paslaugos-poru-konsultacija",
+      "label": "Porų konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "psichologo-paslaugos",
+      "categoryId": "psichologine-pagalba",
+      "scope": "extension",
+      "path": [
+        "Psichologinė pagalba",
+        "Konsultacijos",
+        "Porų konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "psichologo-paslaugos-seimos-konsultacija",
+      "label": "Šeimos konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "psichologo-paslaugos",
+      "categoryId": "psichologine-pagalba",
+      "scope": "extension",
+      "path": [
+        "Psichologinė pagalba",
+        "Konsultacijos",
+        "Šeimos konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "savijauta",
+      "label": "Savijautos užsiėmimai",
+      "kind": "category",
+      "categoryId": "savijauta",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Savijautos užsiėmimai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "savijautos-uzsiemimai",
+      "label": "Užsiėmimai",
+      "kind": "group",
+      "parentId": "savijauta",
+      "categoryId": "savijauta",
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Savijautos užsiėmimai",
+        "Užsiėmimai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "savijautos-uzsiemimai-meditacijos-uzsiemimas",
+      "label": "Meditacijos užsiėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "savijautos-uzsiemimai",
+      "categoryId": "savijauta",
+      "scope": "extension",
+      "path": [
+        "Savijautos užsiėmimai",
+        "Užsiėmimai",
+        "Meditacijos užsiėmimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "savijautos-uzsiemimai-kvepavimo-uzsiemimas",
+      "label": "Kvėpavimo užsiėmimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "savijautos-uzsiemimai",
+      "categoryId": "savijauta",
+      "scope": "extension",
+      "path": [
+        "Savijautos užsiėmimai",
+        "Užsiėmimai",
+        "Kvėpavimo užsiėmimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "savijautos-uzsiemimai-garso-atsipalaidavimo-seansas",
+      "label": "Garso atsipalaidavimo seansas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "savijautos-uzsiemimai",
+      "categoryId": "savijauta",
+      "scope": "extension",
+      "path": [
+        "Savijautos užsiėmimai",
+        "Užsiėmimai",
+        "Garso atsipalaidavimo seansas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "savijautos-uzsiemimai-savijautos-uzsiemimo-konsultacija",
+      "label": "Savijautos užsiėmimo konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "savijautos-uzsiemimai",
+      "categoryId": "savijauta",
+      "scope": "extension",
+      "path": [
+        "Savijautos užsiėmimai",
+        "Užsiėmimai",
+        "Savijautos užsiėmimo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "odontologija",
+      "label": "Odontologija",
+      "kind": "category",
+      "categoryId": "odontologija",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Odontologija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "dantu-prieziura",
+      "label": "Burnos priežiūra",
+      "kind": "group",
+      "parentId": "odontologija",
+      "categoryId": "odontologija",
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Odontologija",
+        "Burnos priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "dantu-prieziura-profesionali-burnos-higiena",
+      "label": "Profesionali burnos higiena",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "dantu-prieziura",
+      "categoryId": "odontologija",
+      "scope": "extension",
+      "path": [
+        "Odontologija",
+        "Burnos priežiūra",
+        "Profesionali burnos higiena"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "dantu-prieziura-dantu-balinimo-konsultacija",
+      "label": "Dantų balinimo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "dantu-prieziura",
+      "categoryId": "odontologija",
+      "scope": "extension",
+      "path": [
+        "Odontologija",
+        "Burnos priežiūra",
+        "Dantų balinimo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "odontologo-konsultacijos",
+      "label": "Konsultacijos",
+      "kind": "group",
+      "parentId": "odontologija",
+      "categoryId": "odontologija",
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Odontologija",
+        "Konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "odontologo-konsultacijos-odontologo-konsultacija",
+      "label": "Odontologo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "odontologo-konsultacijos",
+      "categoryId": "odontologija",
+      "scope": "extension",
+      "path": [
+        "Odontologija",
+        "Konsultacijos",
+        "Odontologo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "odontologo-konsultacijos-ortodonto-konsultacija",
+      "label": "Ortodonto konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "odontologo-konsultacijos",
+      "categoryId": "odontologija",
+      "scope": "extension",
+      "path": [
+        "Odontologija",
+        "Konsultacijos",
+        "Ortodonto konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "medicina",
+      "label": "Medicinos specialistai",
+      "kind": "category",
+      "categoryId": "medicina",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Medicinos specialistai"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "medicinos-konsultacijos",
+      "label": "Konsultacijos",
+      "kind": "group",
+      "parentId": "medicina",
+      "categoryId": "medicina",
+      "scope": "extension",
+      "reviewRequired": true,
+      "path": [
+        "Medicinos specialistai",
+        "Konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "medicinos-konsultacijos-dermatologo-konsultacija",
+      "label": "Dermatologo konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "medicinos-konsultacijos",
+      "categoryId": "medicina",
+      "scope": "extension",
+      "path": [
+        "Medicinos specialistai",
+        "Konsultacijos",
+        "Dermatologo konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "medicinos-konsultacijos-medicinos-estetikos-konsultacija",
+      "label": "Medicinos estetikos konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "medicinos-konsultacijos",
+      "categoryId": "medicina",
+      "scope": "extension",
+      "path": [
+        "Medicinos specialistai",
+        "Konsultacijos",
+        "Medicinos estetikos konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "medicinos-konsultacijos-kito-medicinos-specialisto-konsultacija",
+      "label": "Kito medicinos specialisto konsultacija",
+      "aliases": [],
+      "reviewRequired": true,
+      "kind": "treatment",
+      "parentId": "medicinos-konsultacijos",
+      "categoryId": "medicina",
+      "scope": "extension",
+      "path": [
+        "Medicinos specialistai",
+        "Konsultacijos",
+        "Kito medicinos specialisto konsultacija"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunai",
+      "label": "Gyvūnų priežiūra",
+      "kind": "category",
+      "categoryId": "gyvunai",
+      "parentId": null,
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Gyvūnų priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-grozis",
+      "label": "Gyvūnų grožis",
+      "kind": "group",
+      "parentId": "gyvunai",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Gyvūnų priežiūra",
+        "Gyvūnų grožis"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-grozis-sunu-kirpimas",
+      "label": "Šunų kirpimas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "gyvunu-grozis",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "path": [
+        "Gyvūnų priežiūra",
+        "Gyvūnų grožis",
+        "Šunų kirpimas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-grozis-kaciu-kailio-prieziura",
+      "label": "Kačių kailio priežiūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "gyvunu-grozis",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "path": [
+        "Gyvūnų priežiūra",
+        "Gyvūnų grožis",
+        "Kačių kailio priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-grozis-gyvunu-maudymas",
+      "label": "Gyvūnų maudymas",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "gyvunu-grozis",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "path": [
+        "Gyvūnų priežiūra",
+        "Gyvūnų grožis",
+        "Gyvūnų maudymas"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-grozis-gyvunu-nagu-prieziura",
+      "label": "Gyvūnų nagų priežiūra",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "gyvunu-grozis",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "path": [
+        "Gyvūnų priežiūra",
+        "Gyvūnų grožis",
+        "Gyvūnų nagų priežiūra"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-konsultacijos",
+      "label": "Priežiūros konsultacijos",
+      "kind": "group",
+      "parentId": "gyvunai",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "reviewRequired": false,
+      "path": [
+        "Gyvūnų priežiūra",
+        "Priežiūros konsultacijos"
+      ],
+      "imageId": null
+    },
+    {
+      "id": "gyvunu-konsultacijos-gyvuno-kailio-prieziuros-konsultacija",
+      "label": "Gyvūno kailio priežiūros konsultacija",
+      "aliases": [],
+      "reviewRequired": false,
+      "kind": "treatment",
+      "parentId": "gyvunu-konsultacijos",
+      "categoryId": "gyvunai",
+      "scope": "extension",
+      "path": [
+        "Gyvūnų priežiūra",
+        "Priežiūros konsultacijos",
+        "Gyvūno kailio priežiūros konsultacija"
+      ],
+      "imageId": null
+    }
+  ],
+  "legacyTargets": {
+    "manikiuras": "manikiuras",
+    "gelinis-lakavimas": "lakavimas-gelinis-lakavimas",
+    "nagu-dizainas": "nagu-dizainas",
+    "pedikiuras": "pedikiuras",
+    "kirpimas": "kirpimai",
+    "plauku-dazymas": "plauku-dazymas",
+    "antakiai": "antakiai",
+    "blakstienos": "blakstienos",
+    "masazas": "masazas",
+    "veido-prieziura": "veidas"
+  }
+}

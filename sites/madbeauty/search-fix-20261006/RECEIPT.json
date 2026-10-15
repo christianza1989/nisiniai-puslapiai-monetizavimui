@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T18:18:41.888Z",
+  "origin": "https://madbeauty.lt",
+  "status": "deployed-and-hosted-verified",
+  "previousVersion": "277e5fb7-51f0-44b1-bc1b-96bd7ca42a8a",
+  "version": "402a0fb5-bd02-4a78-8a3b-de083aeb68e8",
+  "services": 10,
+  "cities": 103,
+  "automatedTests": {
+    "pass": 83,
+    "fail": 0
+  },
+  "checks": [
+    "All 103 local city and category/city routes resolve; unknown cities remain 404",
+    "All 10 service selections expose a full native select",
+    "New-city registration and approved profile move are reflected in city-scoped catalog",
+    "Local browser: all 10 services submitted in Utena",
+    "Pinned Wrangler dry-run PASS",
+    "Existing immutable approved 7-page release SHA unchanged"
+  ],
+  "data": {
+    "migration": false,
+    "identity": "madbeauty-pilot-v1",
+    "secretsChanged": false
+  },
+  "rollback": "Redeploy previous application version; no data restoration required",
+  "earlySetupFailures": "Fresh isolated worktree initially lacked dependency junction and bootstrap content sandbox; both restored using existing supported sources before 83/83 acceptance.",
+  "hosted": {
+    "pages": 17,
+    "assets": 120,
+    "privateBoundaries": 7,
+    "discovery": 3,
+    "servicesSubmitted": 10,
+    "newCitiesSubmitted": 10,
+    "homepageSearch": "Masažas / Kazlų Rūda → paieska with correct IDs",
+    "viewport": {
+      "requestedWidth": 390,
+      "observedWidth": 1280,
+      "status": "Override did not take effect in IAB; mobile viewport not claimed"
+    }
+  },
+  "screenshots": {
+    "desktop": "desktop.png",
+    "homepageJourney": "home-to-search.png",
+    "versioned": false
+  }
+}

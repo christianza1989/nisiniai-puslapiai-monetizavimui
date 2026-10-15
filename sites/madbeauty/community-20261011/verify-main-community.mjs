@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import path from 'node:path';
+const repo=path.resolve(import.meta.dirname,'../../..'),dir=path.join(repo,'sites/madbeauty/cloudflare/output/community-20261011/main'),artifact=path.join(dir,'worker.mjs');
+const manifest=JSON.parse(await readFile(path.join(dir,'manifest.json'))),hash=()=>readFile(artifact).then(b=>createHash('sha256').update(b).digest('hex'));
+assert.equal(await hash(),manifest.artifactSha256);
+execFileSync(process.execPath,['--test','sites/madbeauty/cloudflare/community-runtime.test.mjs','sites/madbeauty/cloudflare/community-media-runtime.test.mjs'],{cwd:repo,env:{...process.env,MADBEAUTY_COMMUNITY_MAIN_ARTIFACT:artifact},stdio:'inherit'});
+assert.equal(await hash(),manifest.artifactSha256);
+const proof={state:'PASS',kind:'main',at:new Date().toISOString(),artifactSha256:manifest.artifactSha256,sourceCommit:manifest.sourceCommit,exactCompiledArtifact:true,productionConfiguration:true,localIsolatedData:true,fixtureSeedDenied:true,emptyCanonicalProviderProjection:true,facebookDisabled:true,suites:['community-runtime.test.mjs','community-media-runtime.test.mjs'],coverage:['audiences','friendships','comments','albums','private messages','replay','version conflicts','request rejection','blocking','logout','account erasure','media ownership','EXIF removal','private image access','SQLite restart','message retention']};
+await writeFile(path.join(dir,'community-native.json'),JSON.stringify(proof,null,2));console.log(JSON.stringify(proof));

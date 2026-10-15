@@ -47,8 +47,73 @@ def patch_fence(definition, *, downgrade=False):
 
 
 def normalized_check(expression):
-    # PostgreSQL adds text casts and parentheses when deparsing VARCHAR checks.
-    return re.sub(r"[\s()]", "", expression.replace("::text", ""))
+    """Compare the known boolean tree; never erase grouping or literal bytes.
+
+    This deliberately small grammar accepts only the predicates in this CHECK.
+    PostgreSQL's operand parentheses/text casts and associative AND/OR grouping
+    are harmless. Unknown SQL syntax cannot become an eligible migration anchor.
+    """
+    matches = list(re.finditer(r"'(?:[^']|'')*'|::text\b|<>|=|[A-Za-z_][A-Za-z_0-9]*|[()]", expression))
+    end, tokens = 0, []
+    for match in matches:
+        if expression[end:match.start()].strip():
+            return None
+        token = match.group()
+        if token != "::text":
+            tokens.append(token if token.startswith("'") else token.lower())
+        end = match.end()
+    if expression[end:].strip():
+        return None
+    # pg_get_expr also groups individual VARCHAR operands before their casts.
+    while True:
+        shortened, index = [], 0
+        while index < len(tokens):
+            if (index+2 < len(tokens) and tokens[index] == "(" and tokens[index+2] == ")"
+                    and re.fullmatch(r"[a-z_][a-z_0-9]*|'(?:[^']|'')*'", tokens[index+1])):
+                shortened.append(tokens[index+1])
+                index += 3
+            else:
+                shortened.append(tokens[index])
+                index += 1
+        if shortened == tokens:
+            break
+        tokens = shortened
+    index = 0
+
+    def primary():
+        nonlocal index
+        if index < len(tokens) and tokens[index] == "(":
+            index += 1
+            result = chain("or")
+            if index >= len(tokens) or tokens[index] != ")":
+                raise ValueError("unbalanced check")
+            index += 1
+            return result
+        start = index
+        while index < len(tokens) and tokens[index] not in {"and", "or", "(", ")"}:
+            index += 1
+        atom = tuple(tokens[start:index])
+        if not (len(atom) == 3 and atom[1] in {"=", "<>"}
+                or len(atom) == 3 and atom[1:] == ("is", "null")
+                or len(atom) == 4 and atom[1:] == ("is", "not", "null")):
+            raise ValueError("unknown check predicate")
+        return ("atom", atom)
+
+    def chain(operator):
+        nonlocal index
+        child = primary if operator == "and" else lambda: chain("and")
+        parts = [child()]
+        while index < len(tokens) and tokens[index] == operator:
+            index += 1
+            parts.append(child())
+        flat = [item for part in parts for item in (part[1] if part[0] == operator else [part])]
+        return flat[0] if len(flat) == 1 else (operator, tuple(flat))
+
+    try:
+        result = chain("or")
+        return result if index == len(tokens) else None
+    except (ValueError, IndexError):
+        return None
 
 
 def author_check_sql(rows, *, downgrade=False):

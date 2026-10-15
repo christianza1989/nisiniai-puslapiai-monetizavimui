@@ -43,7 +43,14 @@ No Task.result dependency, new event store, runner, model or permission exists.
 
 ## Checks and adoption boundary
 
-10 offline anchor/unknown-branch/invoker checks PASS; scoped Ruff PASS. The new PG
+Initial 10 offline anchor/unknown-branch/invoker checks PASS; scoped Ruff PASS. A
+follow-up uses a strict allowlisted boolean-tree comparator, preserving quoted
+literal bytes and AND/OR precedence instead of stripping every parenthesis/cast
+substring. Two changed-literal collision witnesses failed against the first
+normalizer; an initially equivalent grouping fixture was corrected to a real
+precedence change. All 13 offline checks now PASS. Original failures remain in
+the tool transcript; base c077121 retains the initial source for reproduction.
+The new PG
 file collects 16 selectors covering exact proof, missing/foreign/mismatched
 receipts, role/dual provenance and lease refusal, ordinary role replay, and
 permissions. Execution in a fresh isolated 0041 QA DB is pending root launch.

@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Desktop publication quota ignores API attempts, allowing a mixed transport job to exceed the approved combined daily cap.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/tests/test_facebook_page_api.py::test_browser_limit_includes_completed_api_attempts original assertion claimed != limited (2026-10-14)",
+    "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_service.py",
+    "agent-business-core/runtime/tests/test_facebook_page_api.py",
+    "agent-business-core/FACEBOOK_PAGE_API.md",
+    "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/146",
+  "rollback": "Revert scoped coordinator change only after pausing both transports; preserve attempts and durable receipts.",
+  "id": "upgrade-06e6ba33-e9fb-4262-9576-ed0531b68e1d",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "39cfc288ebd3eb875f6f55e6b295eb2dacc5dec5",
+  "createdAt": "2026-10-14T16:55:38.286Z"
+}

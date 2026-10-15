@@ -1,0 +1,37 @@
+{
+  "siteId": "core",
+  "summary": "Official owned-Page Graph transport is missing: existing send endpoint always returns 503, so Page posts/photos/comments cannot execute through the durable module.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/facebook/routes.py send_disabled",
+    "docs/FACEBOOK_FULL_AUDIT_2026-10-14.md",
+    "https://developers.facebook.com/documentation/pages-api/posts",
+    "https://developers.facebook.com/documentation/pages-api/comments-mentions"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/facebook/page_api_contracts.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/page_api_graph.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/page_api_service.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/page_api_routes.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/page_api_worker.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/routes.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/service.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/tests/test_facebook_page_api.py",
+    "agent-business-core/FACEBOOK_PAGE_API.md",
+    "agent-business-core/FACEBOOK_MODULE.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/facebook-page-api.md",
+    "SKILLS/catalog.json",
+    "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md",
+    "sites/lineage2ai/TOOLS.md",
+    "sites/lineage2ai/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/146",
+  "rollback": "Scoped revert of this upgrade; pause API and preserve uncertain account/receipt records before any transport replacement. No destructive DB migration.",
+  "id": "upgrade-aeaa2ac8-6c85-47e3-81a7-6373e9a829b8",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "39cfc288ebd3eb875f6f55e6b295eb2dacc5dec5",
+  "createdAt": "2026-10-14T16:42:57.006Z"
+}

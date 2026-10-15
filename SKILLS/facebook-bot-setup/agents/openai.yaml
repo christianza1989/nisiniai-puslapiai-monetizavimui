@@ -1,0 +1,4 @@
+interface:
+  display_name: "Facebook boto prijungimas"
+  short_description: "Page API ir Codex Computer Use prijungimas"
+  default_prompt: "Naudok $facebook-bot-setup šio verslo Facebook botui prijungti ir patikrinti pagal esamą savininko pavedimą."

@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Actual Facebook first group comment is accepted for admin review without a provider comment ID; strict published receipt validation cannot represent known moderation and blocks further authorized work.",
+  "category": "code",
+  "evidence": [
+    "Actual UI Your comment is pending review; Facebook says first public group comment requires admin review2026-10-14",
+    "agent-business-core/runtime/tests/test_facebook_browser_extensions.py::test_pending_group_comment_without_provider_id",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_contracts.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_extensions.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_service.py",
+    "agent-business-core/runtime/tests/test_facebook_browser_extensions.py",
+    "agent-business-core/FACEBOOK_BROWSER_WORKER.md",
+    "SKILLS/niche-client-acquisition/references/facebook-browser-worker.md",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md",
+    "sites/lineage2ai/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "rollback": "Pause own live policies then scoped revert; preserve submitted comment and original failure. No resubmission or fabricated provider comment ID.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/142",
+  "id": "upgrade-442058cf-c49f-4682-bc4e-fdd0c8783f0d",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "a3790cde04b47ec8dec68efb658aedcf8505c0ed",
+  "createdAt": "2026-10-14T19:06:41.922Z"
+}

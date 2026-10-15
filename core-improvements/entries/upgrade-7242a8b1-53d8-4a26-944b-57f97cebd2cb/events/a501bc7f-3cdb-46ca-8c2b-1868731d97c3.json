@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Bounded extension locally verified; full live acceptance remains incomplete, actual Facebook posts/comments zero. Main merge, runtime adoption and live publication are separate. Historical failures preserved, final UI language self-edited. Actual 200 percent zoom remains unverified.",
+  "checks": [
+    {
+      "command": "pytest browser extensions/browser/Facebook/audit/workspace/core/policy/Codex lab bounded suite",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_LIVE_TEST_2026-10-14.md: 93 passed in 44.78 seconds"
+    },
+    {
+      "command": "scoped Ruff and final Impeccable detect both HTML",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md: Ruff PASS, detector exit 0 no findings"
+    },
+    {
+      "command": "Actual IAB desktop/mobile 390x844 UI; image chooser/preview/one-click/receipt",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md; docs/FACEBOOK_LIVE_TEST_2026-10-14.md: synthetic visible receipt only, external_sending false"
+    }
+  ],
+  "eventId": "a501bc7f-3cdb-46ca-8c2b-1868731d97c3",
+  "sequence": 3,
+  "at": "2026-10-14T14:25:12.626Z"
+}

@@ -1,0 +1,36 @@
+{
+  "siteId": "core",
+  "summary": "The desktop Facebook bridge only supported text timeline posts and could not execute the owner's bounded group search, actor-specific comments and one-image profile task; clarify Codex-owned review without per-task human approval.",
+  "category": "code",
+  "evidence": [
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md",
+    "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md",
+    "agent-business-core/runtime/tests/test_facebook_browser_extensions.py"
+  ],
+  "paths": [
+    "SKILLS/catalog.json",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/facebook.md",
+    "SKILLS/niche-client-acquisition/references/facebook-browser-worker.md",
+    "WORKSTREAMS.md",
+    "agent-business-core/FACEBOOK_BROWSER_WORKER.md",
+    "agent-business-core/FACEBOOK_MODULE.md",
+    "agent-business-core/runtime/scripts/facebook-browser-acceptance.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_console.html",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_contracts.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_fixture.html",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_routes.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_service.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_extensions.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/desktop_worker.py",
+    "agent-business-core/runtime/tests/test_facebook_browser_extensions.py",
+    "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md",
+    "docs/FACEBOOK_LIVE_TEST_2026-10-14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/142",
+  "rollback": "Scoped revert of this extension and its catalog hash; preserve previous text-only worker and private task/provider evidence. No automated external deletion or live retry.",
+  "id": "upgrade-7242a8b1-53d8-4a26-944b-57f97cebd2cb",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "11ba7b3743ecf94dbebbd5808a71b0a123bd80f2",
+  "createdAt": "2026-10-14T14:24:45.728Z"
+}

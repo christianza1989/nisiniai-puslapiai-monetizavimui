@@ -1,0 +1,26 @@
+{
+  "siteId": "memocasting",
+  "summary": "Preserve verified historical gift article URL after eligible successor publication and replace stale local-test contact copy",
+  "category": "code",
+  "evidence": [
+    "Actual ownerGSC recommends historicalShopify Christmas-gifts-for-women URL; actualsource404 and approvedsameintent successor scheduledtomorrow. Redirect only to eligibletarget, no earlyfuture301 or product-role remapping.",
+    "Actualcontact form persists in dedicatedproductionD1; interface still says localtest despite realdeployment. Correct only4localeUI helpercopy without promisingSMTPdelivery.",
+    "PUBLIC7db0c775b65d5e16c0d6f3e52b363350ea67b92b:119 tests and production build PASS. Actual worker c24e4f55-3694-4014-83f1-202df49625b7 at2026-10-15T13:08:33.956506Z retains exactASSETS/leadsD1/commerce binding and apex/www domains.",
+    "Actual HTTPS contact200 with corrected helper, legacy article404 before tomorrow successor and all3originalproduct301 preserved. No premature redirect.",
+    "2026-10-15T13:09:31Z actual first guide200 visible body/canonical/Article/date/discovery plusall5WebP200; second guide andall5media404, absentlinks/schema/sitemap;86eligibleURLs. All92uploaded,1newvisible. Final one-off content automation deleted afterPASS; pausedlaunchmonitor untouched."
+  ],
+  "paths": [
+    "lib/memocasting-routes.mjs",
+    "tests/memocasting-routes.test.mjs",
+    "lib/memocasting-locales.mjs",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "sites/memocasting/LATEST-RELEASE.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Scoped revert onlytheseUI/aliaschanges. Keep181pages/664assets/all92dates/currentbindings/data/3existingmoves andfutureeligibilityfilter unchanged.",
+  "id": "upgrade-c6dcccc4-0788-4fc4-9098-84b244fa3c58",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "f7644f9e2a567e049403cac13e26efdf08b726ab",
+  "createdAt": "2026-10-15T12:34:53.441Z"
+}

@@ -7,27 +7,27 @@
   "state": "deployed-scheduled",
   "previousReleaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a",
   "deployment": {
-    "at": "2026-10-15T11:51:20.077747Z",
+    "at": "2026-10-15T13:08:33.956506Z",
     "origin": "https://memocasting.lt",
     "worker": "memocasting-site",
-    "workerVersion": "2407731e-54aa-4e77-b5a7-d28a5454c87a",
-    "publicSource": "2eacf419227b67bce0df82e9af2684cf90d1192a",
+    "workerVersion": "c24e4f55-3694-4014-83f1-202df49625b7",
+    "publicSource": "7db0c775b65d5e16c0d6f3e52b363350ea67b92b",
     "profileSource": "05deeee10e902cb87750234dd65abbd334e3c9a0",
-    "status": "public website and interactive gallery hosted; checkout and owner admin still being completed",
+    "status": "Public site, gallery, first scheduled guide and separate owner Access login hosted; checkout connections pending",
     "articlesUploaded": 92,
-    "newArticlesVisibleAtCheck": 0,
+    "newArticlesVisibleAtCheck": 1,
     "hubUploaded": 1,
     "serverTimeFilter": true,
     "liveBeforeBoundary": "first two new guide HTML and media404",
-    "liveAfterBoundary": "pending first actual publication at2026-10-15T13:00:00Z",
+    "liveAfterBoundary": "PASS actual2026-10-15T13:09:31.399Z first200/canonical/Article/discovery/media; secondHTML/media404, sitemap86",
     "mailDnsRecordsPreserved": 7,
-    "previousWorkerVersion": "45ce54ce-7c22-460f-a4e5-2ed08133f451"
+    "previousWorkerVersion": "2407731e-54aa-4e77-b5a7-d28a5454c87a"
   },
   "localAcceptance": {
     "build": "PASS",
-    "coreTests": "118/118 PASS",
+    "coreTests": "119/119 PASS",
     "scheduledBoundaries": "93 exact before/after shared projection PASS",
     "media": "664 native assets;15 new gallery design variants exact byte hashes hosted PASS",
-    "hosted": "new gallery HTML/15 assets/product/cart/sitemap/robots HTTPS PASS; Google sitemap accepted85URLs; actual after-boundary pending"
+    "hosted": "PASS new contact copy, eligible legacy redirects, first actual publication and private owner login on separate backend; no payment acceptance"
   }
 }

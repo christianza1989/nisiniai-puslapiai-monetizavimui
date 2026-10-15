@@ -62,3 +62,7 @@ Metaduomenys ir srautą gaunantys tekstai atnaujinami prasmingai; nesukuriamos n
 ## Įgyvendinta aprėptis
 
 Visi 92 atrinkti nauji gidai ir dovanų indeksas parengti ir patvirtinti leidinyje 7b6bfd6c. Konkretesni klausimai aprašyti jų pilnuose briefuose ir tekstų skyriuose; frazių variantai nekuriami kaip vienodi atskiri URL. Ankstesnis mėnesinis planavimo ciklas nevykdomas; po paketo paleidimo sekanti bendra turinio peržiūra numatyta maždaug po metų. Tai pasirinkto tyrimo korpuso aprėptis, ne pažadas apie visas būsimas Google užklausas.
+
+## Viso paketo įkėlimas · 2026-10-15
+
+Visi92atrinkti nauji gidai ir dovanų indeksas jau hostinge; aktualus leidinys332c8186 ir serverio kalendorius nurodyti CONTENT_PLAN_STATUS bei LATEST-RELEASE. Naujų konkretesnių frazių tyrimų ar naujų rašymo sesijų nereikia tam, kad parengti tekstai pasirodytų. Patikra po pirmos tikros publikavimo ribos liko atskiras baigiamasis veiksmas.

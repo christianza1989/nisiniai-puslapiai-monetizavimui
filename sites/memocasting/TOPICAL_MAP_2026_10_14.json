@@ -1650,7 +1650,7 @@
       "pageId": "7db71eba-3193-4e80-b481-24f0751f84e1",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos: kaip išrinkti tinkamą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "editorial navigation hub with selection guide",
       "proposedMetaDescription": "Ką dovanoti Kalėdoms, kad dovana tiktų žmogui. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -1782,7 +1782,7 @@
       "proposedPublishAt": "2026-10-15T07:00:00.000Z",
       "proposedLocalDate": "2026-10-15",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C01",
@@ -1798,7 +1798,7 @@
       "pageId": "2343efcf-55bf-4aca-9b6a-d55eb4a20ef8",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos moterims pagal jų pomėgius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti dovaną moteriai nepasikliaujant stereotipais. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -1876,7 +1876,7 @@
       "proposedPublishAt": "2026-10-15T13:00:00.000Z",
       "proposedLocalDate": "2026-10-15",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C02",
@@ -1892,7 +1892,7 @@
       "pageId": "2d587e3e-09a3-4fb5-b1fc-0fac3b3bab63",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos mamai: dėmesys, laikas ir prisiminimai",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip parinkti mamai dovaną, kuri atlieptų jos norus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -1969,7 +1969,7 @@
       "proposedPublishAt": "2026-10-16T07:00:00.000Z",
       "proposedLocalDate": "2026-10-16",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C03",
@@ -1985,7 +1985,7 @@
       "pageId": "9bd829a9-fd02-4762-bf8b-3a6e0559c4e9",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos vyrams pagal pomėgius ir gyvenimo būdą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti dovaną vyrui pagal jo interesus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2064,7 +2064,7 @@
       "proposedPublishAt": "2026-10-16T13:00:00.000Z",
       "proposedLocalDate": "2026-10-16",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C04",
@@ -2080,7 +2080,7 @@
       "pageId": "94c34ccb-1514-4dc4-9137-f0eb3b6b0589",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos šeimai: ką veikti kartu",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokia viena dovana galėtų tikti visai šeimai. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2160,7 +2160,7 @@
       "proposedPublishAt": "2026-10-17T07:00:00.000Z",
       "proposedLocalDate": "2026-10-17",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C05",
@@ -2176,7 +2176,7 @@
       "pageId": "ed9ba99d-2f1c-4e33-97d7-43f651b2dbe9",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos porai: bendro laiko idėjos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti porai, kai norisi vienos bendros dovanos. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2255,7 +2255,7 @@
       "proposedPublishAt": "2026-10-17T13:00:00.000Z",
       "proposedLocalDate": "2026-10-17",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C06",
@@ -2271,7 +2271,7 @@
       "pageId": "9540b7b3-3c05-429f-89b8-55db019f8577",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos tėvams: viena bendra ar dvi atskiros?",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada rinktis vieną dovaną abiem tėvams. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2345,7 +2345,7 @@
       "proposedPublishAt": "2026-10-18T13:00:00.000Z",
       "proposedLocalDate": "2026-10-18",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C07",
@@ -2361,7 +2361,7 @@
       "pageId": "ef8aa99f-1df4-4495-86bc-ce2984a206aa",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos tėčiui pagal jo pomėgius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti tėčiui asmenišką dovaną. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2429,7 +2429,7 @@
       "proposedPublishAt": "2026-10-19T07:00:00.000Z",
       "proposedLocalDate": "2026-10-19",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C08",
@@ -2445,7 +2445,7 @@
       "pageId": "3c7cb521-1100-4b96-9d21-6beb78135f89",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos seneliams: artumas ir patogumas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip dovanoti dėmesį seneliams nesukeliant papildomų rūpesčių. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2517,7 +2517,7 @@
       "proposedPublishAt": "2026-10-19T13:00:00.000Z",
       "proposedLocalDate": "2026-10-19",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C09",
@@ -2533,7 +2533,7 @@
       "pageId": "d1fb6182-6fe1-4823-825a-9db049ff0997",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos merginai skirtingais santykių etapais",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip suderinti romantiškumą ir santykių etapą. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2603,7 +2603,7 @@
       "proposedPublishAt": "2026-10-20T07:00:00.000Z",
       "proposedLocalDate": "2026-10-20",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C10",
@@ -2619,7 +2619,7 @@
       "pageId": "6c78ff90-2f9c-48c6-9b64-f97276e471a2",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos vaikinui: asmeniškai ir be spėlionių",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip parinkti vaikinui dovaną pagal jo norus. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2676,7 +2676,7 @@
       "proposedPublishAt": "2026-10-20T13:00:00.000Z",
       "proposedLocalDate": "2026-10-20",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C11",
@@ -2692,7 +2692,7 @@
       "pageId": "a74780e9-7b58-4526-bc4a-32bc606e07d2",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos draugams: asmeninės ir grupinės idėjos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti vienam draugui ar draugų grupei. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2771,7 +2771,7 @@
       "proposedPublishAt": "2026-10-21T07:00:00.000Z",
       "proposedLocalDate": "2026-10-21",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C12",
@@ -2787,7 +2787,7 @@
       "pageId": "da706eda-df2b-4294-b7cd-7b9efbe424cc",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos kolegoms ir slaptam Kalėdų Seneliui",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokia dovana tinka kolegai, kurio gerai nepažįstu. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2864,7 +2864,7 @@
       "proposedPublishAt": "2026-10-21T13:00:00.000Z",
       "proposedLocalDate": "2026-10-21",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C13",
@@ -2880,7 +2880,7 @@
       "pageId": "42839ff5-ecde-4f42-bb75-8b17a9a44a82",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos darbuotojams: atrankos ir organizavimo planas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip organizuoti komandos dovanas išlaikant vienodas sąlygas. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -2936,7 +2936,7 @@
       "proposedPublishAt": "2026-10-22T07:00:00.000Z",
       "proposedLocalDate": "2026-10-22",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C14",
@@ -2952,7 +2952,7 @@
       "pageId": "127fe08d-856c-4488-ba89-8196b17572fe",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos vaikams pagal amžių ir interesus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti vaikui tinkamą kalėdinę dovaną. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -3028,7 +3028,7 @@
       "proposedPublishAt": "2026-10-22T13:00:00.000Z",
       "proposedLocalDate": "2026-10-22",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C15",
@@ -3044,7 +3044,7 @@
       "pageId": "fc1745b3-f2a4-4dc3-b865-fa694a4d44b4",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos paaugliams: kaip išgirsti jų norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti paaugliui dovaną, kurios jis iš tiesų nori. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -3102,7 +3102,7 @@
       "proposedPublishAt": "2026-10-23T07:00:00.000Z",
       "proposedLocalDate": "2026-10-23",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C16",
@@ -3118,7 +3118,7 @@
       "pageId": "38f3e27e-0b2c-498e-9cdf-c8adc6014f06",
       "publicRevisionHash": null,
       "currentDraftTitle": "Originalios kalėdinės dovanos, turinčios asmeninę prasmę",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kuo originali dovana skiriasi nuo tiesiog neįprasto daikto. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -3186,7 +3186,7 @@
       "proposedPublishAt": "2026-10-23T13:00:00.000Z",
       "proposedLocalDate": "2026-10-23",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C17",
@@ -3202,7 +3202,7 @@
       "pageId": "1d7bd5bf-7857-403a-8b97-e1e25ba26b9e",
       "publicRevisionHash": null,
       "currentDraftTitle": "Nebrangios kalėdinės dovanos: kaip pasirinkti ir neviršyti biudžeto",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išsirinkti prasmingą dovaną neišleidžiant per daug. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -3278,7 +3278,7 @@
       "proposedPublishAt": "2026-10-24T07:00:00.000Z",
       "proposedLocalDate": "2026-10-24",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C18",
@@ -3294,7 +3294,7 @@
       "pageId": "aa5dd1fe-62a3-4cd8-ac98-084ee2fedae0",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinės dovanos paskutinę minutę: kas realiai įmanoma",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką galiu paruošti šiandien ir ko nebegaliu pažadėti. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -3358,7 +3358,7 @@
       "proposedPublishAt": "2026-12-21T08:00:00.000Z",
       "proposedLocalDate": "2026-12-21",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C19",
@@ -3374,7 +3374,7 @@
       "pageId": "b0a4ace4-9a33-41c4-b8ae-278eb0e6d901",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kalėdinių dovanų pakavimas: paprastai ir tvarkingai",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip gražiai supakuoti skirtingų formų dovanas. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -3424,7 +3424,7 @@
       "proposedPublishAt": "2026-10-24T13:00:00.000Z",
       "proposedLocalDate": "2026-10-24",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "H00",
@@ -3440,7 +3440,7 @@
       "pageId": "ac6caea7-95af-4e5c-b13c-d060f7c064ae",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanų idėjos pagal žmogų, progą ir biudžetą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "public",
       "parentId": null,
       "format": "editorial navigation hub with selection guide",
       "proposedMetaDescription": "Nuo ko pradėti renkantis dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -3617,7 +3617,7 @@
       "proposedPublishAt": "2026-10-15T07:00:00.000Z",
       "proposedLocalDate": "2026-10-15",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R01",
@@ -3633,7 +3633,7 @@
       "pageId": "c5c5aa8e-b53f-411f-a2ed-c0d7f9d5b067",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos moterims pagal pomėgius ir poreikius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti dovaną moteriai skirtingoms progoms. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -3735,7 +3735,7 @@
       "proposedPublishAt": "2026-10-28T14:00:00.000Z",
       "proposedLocalDate": "2026-10-28",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R02",
@@ -3751,7 +3751,7 @@
       "pageId": "482400a7-e1d3-47ad-91a2-c83d1cea971a",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos vyrams pagal pomėgius ir poreikius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti dovaną vyrui skirtingoms progoms. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -3877,7 +3877,7 @@
       "proposedPublishAt": "2026-10-29T08:00:00.000Z",
       "proposedLocalDate": "2026-10-29",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R03",
@@ -3893,7 +3893,7 @@
       "pageId": "6addee05-19c5-477b-ae4d-d3b310acb4b8",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos mamai: nuo kasdienio dėmesio iki bendros patirties",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip suprasti, kokia dovana pradžiugintų mamą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -3982,7 +3982,7 @@
       "proposedPublishAt": "2026-10-29T14:00:00.000Z",
       "proposedLocalDate": "2026-10-29",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R04",
@@ -3998,7 +3998,7 @@
       "pageId": "ce4fd7f2-afb5-4e73-b376-ea0d93f646c6",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos tėčiui: pomėgiai, patogumas ir laikas kartu",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip parinkti tėčiui dovaną neapsiribojant tipiniu sąrašu. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4067,7 +4067,7 @@
       "proposedPublishAt": "2026-10-30T08:00:00.000Z",
       "proposedLocalDate": "2026-10-30",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R05",
@@ -4215,7 +4215,7 @@
       "pageId": "52239986-e4fd-4b2c-bab4-496387a49216",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovana šeimai: kaip pasirinkti bendrą veiklą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip parinkti vieną dovaną skirtingų poreikių šeimai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4304,7 +4304,7 @@
       "proposedPublishAt": "2026-10-18T07:00:00.000Z",
       "proposedLocalDate": "2026-10-18",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R07",
@@ -4320,7 +4320,7 @@
       "pageId": "afdd055b-b5d4-4cb0-89c5-67d4ab620ee4",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos tėvams: bendras prisiminimas ar individualus pasirinkimas?",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ar dovana tėvams turėtų būti bendra. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4394,7 +4394,7 @@
       "proposedPublishAt": "2026-10-30T14:00:00.000Z",
       "proposedLocalDate": "2026-10-30",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R08",
@@ -4410,7 +4410,7 @@
       "pageId": "79547728-bcb0-49ff-9e25-6ddfa30e872b",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos seneliams: rūpestingas pasirinkimas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti seneliams praktišką ir asmenišką dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4479,7 +4479,7 @@
       "proposedPublishAt": "2026-10-31T08:00:00.000Z",
       "proposedLocalDate": "2026-10-31",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R09",
@@ -4495,7 +4495,7 @@
       "pageId": "09ee95cd-0abd-4d23-916d-a029f5205acf",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos močiutei pagal jos norus ir pomėgius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti močiutei dovaną, skirtą būtent jai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4564,7 +4564,7 @@
       "proposedPublishAt": "2026-11-25T08:00:00.000Z",
       "proposedLocalDate": "2026-11-25",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R10",
@@ -4580,7 +4580,7 @@
       "pageId": "0a184b2c-e317-4a25-b14b-0f02bbeea437",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos seneliui pagal jo pomėgius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti seneliui asmenišką dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4649,7 +4649,7 @@
       "proposedPublishAt": "2026-11-26T08:00:00.000Z",
       "proposedLocalDate": "2026-11-26",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R11",
@@ -4665,7 +4665,7 @@
       "pageId": "3db28bf9-e96f-4381-b414-cf70471aca6c",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos žmonai: kaip prisiminti tai, kas jai svarbu",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti žmonai dėmesingą dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4734,7 +4734,7 @@
       "proposedPublishAt": "2026-10-31T14:00:00.000Z",
       "proposedLocalDate": "2026-10-31",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R12",
@@ -4826,7 +4826,7 @@
       "pageId": "01360d20-de5e-4bdf-bcd2-6409f39835d6",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos merginai skirtingais santykių etapais",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip dovanos pasirinkimą suderinti su santykių artumu. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4903,7 +4903,7 @@
       "proposedPublishAt": "2026-11-01T08:00:00.000Z",
       "proposedLocalDate": "2026-11-01",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R14",
@@ -4919,7 +4919,7 @@
       "pageId": "a74d4442-1500-4c2d-8ed8-4a8df47f9c74",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos vaikinui: nuo pomėgio iki bendros patirties",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti vaikinui asmenišką dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -4975,7 +4975,7 @@
       "proposedPublishAt": "2026-11-02T08:00:00.000Z",
       "proposedLocalDate": "2026-11-02",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R15",
@@ -4991,7 +4991,7 @@
       "pageId": "062ccc0b-12d3-4c0b-8acc-11e6d4acc5bf",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos draugei pagal jos pomėgius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti dovaną artimai draugei. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5074,7 +5074,7 @@
       "proposedPublishAt": "2026-11-27T08:00:00.000Z",
       "proposedLocalDate": "2026-11-27",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R16",
@@ -5090,7 +5090,7 @@
       "pageId": "a34eb96b-6890-4a77-82b2-91ff74f51b0e",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos draugui pagal jo interesus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti draugui, kurio pomėgius pažįstu. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5163,7 +5163,7 @@
       "proposedPublishAt": "2026-11-28T08:00:00.000Z",
       "proposedLocalDate": "2026-11-28",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R17",
@@ -5179,7 +5179,7 @@
       "pageId": "8eef6e4f-055e-4060-bc24-0a854b1a7b19",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos sesei: asmeniškos idėjos pagal jos dabartinius norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti sesei dovaną pagal dabartinį jos gyvenimą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5248,7 +5248,7 @@
       "proposedPublishAt": "2026-11-29T08:00:00.000Z",
       "proposedLocalDate": "2026-11-29",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R18",
@@ -5264,7 +5264,7 @@
       "pageId": "04095447-771e-4b47-b803-7c00475f2f6a",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos broliui: pomėgiai ir bendras laikas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti broliui dovaną, atitinkančią jo interesus. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5334,7 +5334,7 @@
       "proposedPublishAt": "2026-11-30T08:00:00.000Z",
       "proposedLocalDate": "2026-11-30",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R19",
@@ -5350,7 +5350,7 @@
       "pageId": "1467226d-00bf-486c-9320-728e9f810a80",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos mokytojai: dėmesys ir tinkamos ribos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip padėkoti mokytojai neperžengiant mokyklos taisyklių. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5410,7 +5410,7 @@
       "proposedPublishAt": "2026-12-01T08:00:00.000Z",
       "proposedLocalDate": "2026-12-01",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R20",
@@ -5426,7 +5426,7 @@
       "pageId": "aa8d6744-1d62-4a45-a452-00da2dbfe960",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos kolegoms: ką rinktis gimtadieniui ar išleistuvėms",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti kolegai per gimtadienį ar išleistuves. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5499,7 +5499,7 @@
       "proposedPublishAt": "2026-12-02T08:00:00.000Z",
       "proposedLocalDate": "2026-12-02",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R21",
@@ -5515,7 +5515,7 @@
       "pageId": "f340df26-a303-4766-972f-9c31c913949b",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos vadovui: kaip susitarti komandoje",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokia komandos dovana vadovui būtų tinkama. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5572,7 +5572,7 @@
       "proposedPublishAt": "2026-12-03T08:00:00.000Z",
       "proposedLocalDate": "2026-12-03",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R22",
@@ -5588,7 +5588,7 @@
       "pageId": "9c169d89-c8bb-463a-838e-e7ba173853f7",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos vaikams: amžius, interesai ir naudojimo sąlygos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti vaikui tinkamą dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5735,7 +5735,7 @@
       "proposedPublishAt": "2026-12-04T08:00:00.000Z",
       "proposedLocalDate": "2026-12-04",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R23",
@@ -5751,7 +5751,7 @@
       "pageId": "2ea7da9f-a99e-437a-b1bf-4a6b90f11573",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos paaugliams pagal jų pačių norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip įtraukti paauglį į dovanos pasirinkimą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -5817,7 +5817,7 @@
       "proposedPublishAt": "2026-12-05T08:00:00.000Z",
       "proposedLocalDate": "2026-12-05",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O01",
@@ -5833,7 +5833,7 @@
       "pageId": "73c7db89-bc45-445a-8909-6f48c43e5461",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos gimtadienio proga: kaip išsirinkti",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip suderinti dovaną su žmogumi ir gimtadienio formatu. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6062,7 +6062,7 @@
       "proposedPublishAt": "2026-10-27T14:00:00.000Z",
       "proposedLocalDate": "2026-10-27",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O02",
@@ -6205,7 +6205,7 @@
       "pageId": "a2102f3e-f796-40dd-932e-e0d7de464a64",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos vestuvėms: kaip pasirinkti pagal poros norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti vestuvių dovaną pagal poros pageidavimus. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6284,7 +6284,7 @@
       "proposedPublishAt": "2026-10-28T08:00:00.000Z",
       "proposedLocalDate": "2026-10-28",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O04",
@@ -6300,7 +6300,7 @@
       "pageId": "4097e9a2-fdc8-46b8-80b2-44e728fbae00",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos Valentino dienai: asmeniškos bendro laiko idėjos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip paruošti asmenišką Valentino dienos dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6365,7 +6365,7 @@
       "proposedPublishAt": "2026-12-22T08:00:00.000Z",
       "proposedLocalDate": "2026-12-22",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O05",
@@ -6381,7 +6381,7 @@
       "pageId": "1689d929-b88a-493a-9418-6d24ff16e118",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos Mamos dienai: dėmesys pagal jos norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip paruošti mamai dovaną Mamos dienai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6465,7 +6465,7 @@
       "proposedPublishAt": "2027-01-15T08:00:00.000Z",
       "proposedLocalDate": "2027-01-15",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O06",
@@ -6481,7 +6481,7 @@
       "pageId": "eae86b37-68e0-47b3-8210-24b86db0dfc8",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos Tėvo dienai: pomėgiai ir bendras laikas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasiruošti prasmingai Tėvo dienos dovanai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6545,7 +6545,7 @@
       "proposedPublishAt": "2027-01-16T08:00:00.000Z",
       "proposedLocalDate": "2027-01-16",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O07",
@@ -6561,7 +6561,7 @@
       "pageId": "d79006d6-f311-482d-baf7-00ba18c9fd00",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos jubiliejui: viena didesnė ar kelios asmeninės?",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip susitarti dėl jubiliejaus dovanos. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6683,7 +6683,7 @@
       "proposedPublishAt": "2026-11-16T08:00:00.000Z",
       "proposedLocalDate": "2026-11-16",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O08",
@@ -6699,7 +6699,7 @@
       "pageId": "22a25786-1cad-4f2f-b6b6-d79a031c96e6",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos įkurtuvėms: kas tinka naujiems namams",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti įkurtuvėms neapkraunant namų. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6763,7 +6763,7 @@
       "proposedPublishAt": "2026-11-17T08:00:00.000Z",
       "proposedLocalDate": "2026-11-17",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O09",
@@ -6779,7 +6779,7 @@
       "pageId": "25b9f7f1-a581-4216-a54c-c9752492176a",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos krikštynoms: šeimos susitarimai ir prisiminimai",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip parinkti krikštynų dovaną pagal tėvų pageidavimus. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6834,7 +6834,7 @@
       "proposedPublishAt": "2026-11-18T08:00:00.000Z",
       "proposedLocalDate": "2026-11-18",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O10",
@@ -6850,7 +6850,7 @@
       "pageId": "895df14e-2df2-4c6a-ae7c-30c0ddc0fea2",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos sužadėtuvių proga: nedidelis sveikinimas porai",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokia nedidelė dovana tinka sužadėtuvėms. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6913,7 +6913,7 @@
       "proposedPublishAt": "2026-11-19T08:00:00.000Z",
       "proposedLocalDate": "2026-11-19",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O11",
@@ -6929,7 +6929,7 @@
       "pageId": "eda7917e-2d39-4988-836f-0ea836964c0f",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos išeinant į pensiją: padėka už bendrą darbą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip organizuoti atsisveikinimo dovaną kolegai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -6981,7 +6981,7 @@
       "proposedPublishAt": "2026-11-20T08:00:00.000Z",
       "proposedLocalDate": "2026-11-20",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O12",
@@ -6997,7 +6997,7 @@
       "pageId": "7dc342c1-6a75-4e38-9e88-c2ae71579518",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos išleistuvėms: pagalba naujam etapui",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokia dovana tinka baigus mokyklą ar studijas. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7065,7 +7065,7 @@
       "proposedPublishAt": "2026-11-21T08:00:00.000Z",
       "proposedLocalDate": "2026-11-21",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O13",
@@ -7081,7 +7081,7 @@
       "pageId": "602b9b2e-5b8e-480c-9001-6db04a992900",
       "publicRevisionHash": null,
       "currentDraftTitle": "Padėkos dovanos: kaip išreikšti dėkingumą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada ir kokią dovaną tinka įteikti dėkojant. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7146,7 +7146,7 @@
       "proposedPublishAt": "2026-11-22T08:00:00.000Z",
       "proposedLocalDate": "2026-11-22",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O14",
@@ -7162,7 +7162,7 @@
       "pageId": "8d4694cd-2b0e-4915-aee9-a07cfec285e3",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos Boso dienai: kaip susitarti komandoje",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip parinkti bendrą dovaną vadovui Boso dienai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7226,7 +7226,7 @@
       "proposedPublishAt": "2027-08-01T07:00:00.000Z",
       "proposedLocalDate": "2027-08-01",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T01",
@@ -7242,7 +7242,7 @@
       "pageId": "82c42a53-a2f4-45b4-98d5-a92808a69789",
       "publicRevisionHash": null,
       "currentDraftTitle": "Originalios dovanos: kaip išrinkti tai, kas tinka būtent šiam žmogui",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip atpažinti dovaną, kuri žmogui bus originali. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7312,7 +7312,7 @@
       "proposedPublishAt": "2026-11-05T08:00:00.000Z",
       "proposedLocalDate": "2026-11-05",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T02",
@@ -7328,7 +7328,7 @@
       "pageId": "e6f961e7-bf41-42a6-b675-eb5c5edb0b0f",
       "publicRevisionHash": null,
       "currentDraftTitle": "Personalizuotos dovanos: ką patikrinti prieš užsakant",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada personalizavimas pagerina dovaną ir kokios jo ribos. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7396,7 +7396,7 @@
       "proposedPublishAt": "2026-11-06T08:00:00.000Z",
       "proposedLocalDate": "2026-11-06",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T03",
@@ -7412,7 +7412,7 @@
       "pageId": "e275b67f-3730-4088-95f1-19313d65f1cf",
       "publicRevisionHash": null,
       "currentDraftTitle": "Prasmingos dovanos: kaip susieti dovaną su žmogumi",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokia dovana turi asmeninę prasmę. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7475,7 +7475,7 @@
       "proposedPublishAt": "2026-11-07T08:00:00.000Z",
       "proposedLocalDate": "2026-11-07",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T04",
@@ -7491,7 +7491,7 @@
       "pageId": "d7d17239-7967-4471-83ac-b0d8943ea587",
       "publicRevisionHash": null,
       "currentDraftTitle": "Romantiškos dovanos: dėmesys ir santykio artumas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti romantišką dovaną be spaudimo. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7557,7 +7557,7 @@
       "proposedPublishAt": "2026-11-08T08:00:00.000Z",
       "proposedLocalDate": "2026-11-08",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T05",
@@ -7573,7 +7573,7 @@
       "pageId": "e47d9975-838f-4868-976a-6f2619dbbe1e",
       "publicRevisionHash": null,
       "currentDraftTitle": "Praktiškos dovanos: tinkamumas svarbiau už spėjimą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip įsitikinti, kad praktiška dovana bus naudojama. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7638,7 +7638,7 @@
       "proposedPublishAt": "2026-12-16T08:00:00.000Z",
       "proposedLocalDate": "2026-12-16",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T06",
@@ -7654,7 +7654,7 @@
       "pageId": "210f6e28-8fae-4316-a40f-27c9b3e946db",
       "publicRevisionHash": null,
       "currentDraftTitle": "Nebrangios dovanos: idėjos pagal tikrą bendrą biudžetą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip sutalpinti gerą dovaną į ribotą biudžetą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7742,7 +7742,7 @@
       "proposedPublishAt": "2026-11-09T08:00:00.000Z",
       "proposedLocalDate": "2026-11-09",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T07",
@@ -7758,7 +7758,7 @@
       "pageId": "8ad0f36a-518c-42eb-ac95-07c6cf19a212",
       "publicRevisionHash": null,
       "currentDraftTitle": "Rankų darbo dovanos: ką kurti pačiam, ką pirkti",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada rinktis rankų darbo dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7821,7 +7821,7 @@
       "proposedPublishAt": "2026-11-10T08:00:00.000Z",
       "proposedLocalDate": "2026-11-10",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T08",
@@ -7837,7 +7837,7 @@
       "pageId": "54ea557c-bedf-4ed1-89c3-750f42fe745b",
       "publicRevisionHash": null,
       "currentDraftTitle": "Pasidaryk pats dovanos: realistiškas kūrybos planas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokią dovaną galiu pats pagaminti turėdamas ribotą laiką. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -7900,7 +7900,7 @@
       "proposedPublishAt": "2026-11-11T08:00:00.000Z",
       "proposedLocalDate": "2026-11-11",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T09",
@@ -7916,7 +7916,7 @@
       "pageId": "d3264031-a0e3-4654-aedd-cdec5daced84",
       "publicRevisionHash": null,
       "currentDraftTitle": "Patirties dovanos: kaip pasirinkti veiklą gavėjui",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada patirtis tinkamesnė už daiktą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8045,7 +8045,7 @@
       "proposedPublishAt": "2026-11-12T08:00:00.000Z",
       "proposedLocalDate": "2026-11-12",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T10",
@@ -8061,7 +8061,7 @@
       "pageId": "83ba1420-83ae-440e-95b1-3245e657a9b7",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanų rinkiniai: kaip vertinti komplektą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip palyginti dovanų rinkinius. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8159,7 +8159,7 @@
       "proposedPublishAt": "2026-12-17T08:00:00.000Z",
       "proposedLocalDate": "2026-12-17",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T11",
@@ -8175,7 +8175,7 @@
       "pageId": "3848997e-1f9f-4ea9-92be-45a764c6f71d",
       "publicRevisionHash": null,
       "currentDraftTitle": "Lietuviškos dovanos: ką reiškia vietinė kilmė",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip patikrinti lietuviškos dovanos kilmę. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8244,7 +8244,7 @@
       "proposedPublishAt": "2026-12-18T08:00:00.000Z",
       "proposedLocalDate": "2026-12-18",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T12",
@@ -8260,7 +8260,7 @@
       "pageId": "346266ce-e2cf-4729-a21b-eeb5bb5a5103",
       "publicRevisionHash": null,
       "currentDraftTitle": "Valgomos dovanos: skonis, sudėtis ir laikymas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti valgomą dovaną pagal gavėjo poreikius. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8323,7 +8323,7 @@
       "proposedPublishAt": "2026-12-19T08:00:00.000Z",
       "proposedLocalDate": "2026-12-19",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "T13",
@@ -8339,7 +8339,7 @@
       "pageId": "d84163b3-fcaf-4a65-ab22-ceaf291602c9",
       "publicRevisionHash": null,
       "currentDraftTitle": "Tvarios dovanos: kaip vertinti konkrečius teiginius",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti dovaną nesiremiant vien žaliu įvaizdžiu. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8390,7 +8390,7 @@
       "proposedPublishAt": "2026-12-20T08:00:00.000Z",
       "proposedLocalDate": "2026-12-20",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S01",
@@ -8406,7 +8406,7 @@
       "pageId": "ab672f09-7c3f-4e10-a6d2-5caa3709545a",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kaip išrinkti dovaną: klausimai, kurie padeda apsispręsti",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokius klausimus užduoti prieš perkant dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8469,7 +8469,7 @@
       "proposedPublishAt": "2026-11-03T08:00:00.000Z",
       "proposedLocalDate": "2026-11-03",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S02",
@@ -8485,7 +8485,7 @@
       "pageId": "63506c6a-6f60-47a0-8e32-fe406c6d1ba3",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovana žmogui, kuris turi viską: ką rinktis, kai daiktų netrūksta",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti, kai žmogui nieko netrūksta. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8550,7 +8550,7 @@
       "proposedPublishAt": "2026-11-04T08:00:00.000Z",
       "proposedLocalDate": "2026-11-04",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S03",
@@ -8566,7 +8566,7 @@
       "pageId": "403ee09a-abed-4618-94c6-263095eb23e7",
       "publicRevisionHash": null,
       "currentDraftTitle": "Bendra dovana nuo kelių žmonių: susitarimo planas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip susitarti dėl bendros dovanos ir nepalikti rūpesčių vienam. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8629,7 +8629,7 @@
       "proposedPublishAt": "2026-12-09T08:00:00.000Z",
       "proposedLocalDate": "2026-12-09",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S04",
@@ -8645,7 +8645,7 @@
       "pageId": "b4448f3a-e001-49a6-89a1-b1f96bd0f55d",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kaip įteikti dovaną, kad momentas būtų asmeniškas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip suplanuoti dovanos įteikimą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8789,7 +8789,7 @@
       "proposedPublishAt": "2026-12-10T08:00:00.000Z",
       "proposedLocalDate": "2026-12-10",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S05",
@@ -8805,7 +8805,7 @@
       "pageId": "8e384e4a-c05c-44e1-ad0b-db5706d5f5e1",
       "publicRevisionHash": null,
       "currentDraftTitle": "Kaip supakuoti dovaną pagal jos formą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip tvarkingai supakuoti dėžutę, cilindrą ar trapią dovaną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8868,7 +8868,7 @@
       "proposedPublishAt": "2026-12-11T08:00:00.000Z",
       "proposedLocalDate": "2026-12-11",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S06",
@@ -8884,7 +8884,7 @@
       "pageId": "cfce57d1-1e68-48fe-99e4-28bcdc43a828",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanų etiketas: susitarimai ir asmeninės ribos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip dovanoti nesukeliant nepatogumo. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -8947,7 +8947,7 @@
       "proposedPublishAt": "2026-12-12T08:00:00.000Z",
       "proposedLocalDate": "2026-12-12",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S07",
@@ -8963,7 +8963,7 @@
       "pageId": "7e4024b5-9370-453f-b13d-3d9e3adda9b9",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos per atstumą: įteikimo ir bendro laiko planas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip įteikti asmenišką dovaną negalint susitikti. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9026,7 +9026,7 @@
       "proposedPublishAt": "2026-12-13T08:00:00.000Z",
       "proposedLocalDate": "2026-12-13",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S08",
@@ -9042,7 +9042,7 @@
       "pageId": "db39da0e-e1fa-4351-8496-9ac7f8cc5486",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovana ar dovanų kuponas: kada palikti pasirinkimą gavėjui",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada geriau dovanoti pasirinkimą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9116,7 +9116,7 @@
       "proposedPublishAt": "2026-12-14T08:00:00.000Z",
       "proposedLocalDate": "2026-12-14",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S09",
@@ -9132,7 +9132,7 @@
       "pageId": "d994e138-116f-4934-a49a-6d3248573863",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovana ar pinigai: kaip pasirinkti pagal progą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada pinigai naudingesni už daiktą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9195,7 +9195,7 @@
       "proposedPublishAt": "2026-12-15T08:00:00.000Z",
       "proposedLocalDate": "2026-12-15",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "S10",
@@ -9284,7 +9284,7 @@
       "pageId": "a15a13a1-71e4-484d-a031-37954cb760b9",
       "publicRevisionHash": null,
       "currentDraftTitle": "Pasirengimas rankų liejimui: vieta, laikas ir pagalba",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "I00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką pasiruošti prieš pradedant rankų liejimą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9352,7 +9352,7 @@
       "proposedPublishAt": "2026-10-26T08:00:00.000Z",
       "proposedLocalDate": "2026-10-26",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "K02",
@@ -9368,7 +9368,7 @@
       "pageId": "27c62c28-b365-4acd-beaa-2b5ddba9a42c",
       "publicRevisionHash": null,
       "currentDraftTitle": "Rankų pozos liejimui: kaip pasirinkti pagal savo rinkinį",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "I00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kokią rankų pozą rinktis pagal rinkinio ribas. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9436,7 +9436,7 @@
       "proposedPublishAt": "2026-11-13T08:00:00.000Z",
       "proposedLocalDate": "2026-11-13",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "K03",
@@ -9612,7 +9612,7 @@
       "pageId": "53b97d71-e9ef-490c-864d-7cde41689f27",
       "publicRevisionHash": null,
       "currentDraftTitle": "Sulūžęs rankų liejinys: ką patikrinti prieš taisant",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "I00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ar įmanoma pataisyti pažeistą liejinį. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9680,7 +9680,7 @@
       "proposedPublishAt": "2026-11-14T08:00:00.000Z",
       "proposedLocalDate": "2026-11-14",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "K06",
@@ -9696,7 +9696,7 @@
       "pageId": "e323d3fb-f8d7-4257-959d-bc0a6dbb0e1a",
       "publicRevisionHash": null,
       "currentDraftTitle": "Rankų liejinio įteikimas ir eksponavimas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "I00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip įteikti ir eksponuoti jau sukurtą rankų liejinį. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9766,7 +9766,7 @@
       "proposedPublishAt": "2026-10-26T14:00:00.000Z",
       "proposedLocalDate": "2026-10-26",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "K07",
@@ -9782,7 +9782,7 @@
       "pageId": "e9000ba9-b877-4ae7-aa5c-c04bd17705c0",
       "publicRevisionHash": null,
       "currentDraftTitle": "Bendras kūrybos vakaras namuose: pasiruošimo planas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "A00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip suplanuoti bendrą kūrybos vakarą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9850,7 +9850,7 @@
       "proposedPublishAt": "2026-10-27T08:00:00.000Z",
       "proposedLocalDate": "2026-10-27",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "K08",
@@ -9866,7 +9866,7 @@
       "pageId": "fd0a7289-4821-44c0-824a-12e36217b696",
       "publicRevisionHash": null,
       "currentDraftTitle": "Šeimos prisiminimų idėjos: kaip išsaugoti bendras akimirkas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "A00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išsaugoti bendrą šeimos momentą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -9934,7 +9934,7 @@
       "proposedPublishAt": "2026-11-15T08:00:00.000Z",
       "proposedLocalDate": "2026-11-15",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "P00",
@@ -10571,7 +10571,7 @@
       "pageId": "4ffc7862-ca3b-4d53-8171-f7bd2af4eb49",
       "publicRevisionHash": null,
       "currentDraftTitle": "Bendros veiklos porai ir šeimai: kaip pasirinkti ir išsaugoti prisiminimą",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "editorial navigation hub with selection guide",
       "proposedMetaDescription": "Kokią bendrą veiklą pasirinkti porai ar šeimai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -10641,7 +10641,7 @@
       "proposedPublishAt": "2026-10-25T14:00:00.000Z",
       "proposedLocalDate": "2026-10-25",
       "proposedLocalTime": "16:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R24",
@@ -10657,7 +10657,7 @@
       "pageId": "9f43cc84-8b61-4b03-a31f-7d176b673e3c",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos dukrai: kaip išgirsti jos norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip pasirinkti dukrai dovaną pagal jos gyvenimo etapą. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -10726,7 +10726,7 @@
       "proposedPublishAt": "2026-12-06T08:00:00.000Z",
       "proposedLocalDate": "2026-12-06",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R25",
@@ -10742,7 +10742,7 @@
       "pageId": "ba0007ff-17fe-44ff-9bfc-1ab25d2695ec",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos sūnui: pomėgiai ir pasirinkimo laisvė",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išrinkti sūnui dovaną pagal jo realius interesus. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -10811,7 +10811,7 @@
       "proposedPublishAt": "2026-12-07T08:00:00.000Z",
       "proposedLocalDate": "2026-12-07",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "R26",
@@ -10827,7 +10827,7 @@
       "pageId": "5177421e-e094-4ad7-b714-e23d31932696",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos krikšto tėvams: kaip paruošti asmenišką padėką",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip padėkoti krikšto tėvams pagal šeimos tradicijas. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -10891,7 +10891,7 @@
       "proposedPublishAt": "2026-12-08T08:00:00.000Z",
       "proposedLocalDate": "2026-12-08",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O15",
@@ -10907,7 +10907,7 @@
       "pageId": "d7ec10d4-a702-41bb-a275-6601ee7effba",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos gimus vaikui: pagalba tėvams ir vaiko poreikiai",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ką dovanoti šeimai gimus vaikui. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -10956,7 +10956,7 @@
       "proposedPublishAt": "2026-11-23T08:00:00.000Z",
       "proposedLocalDate": "2026-11-23",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O16",
@@ -10972,7 +10972,7 @@
       "pageId": "62c5454d-1e2a-48db-8fca-1770b5d8ffc8",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos Mokytojų dienai: kaip susitarti dėl bendros klasės padėkos",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip susitarti dėl padėkos Mokytojų dienai. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -11021,7 +11021,7 @@
       "proposedPublishAt": "2027-08-02T07:00:00.000Z",
       "proposedLocalDate": "2027-08-02",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O17",
@@ -11037,7 +11037,7 @@
       "pageId": "cda6b57e-4300-4931-9ce4-8dedb8e913f7",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos Moters dienai: dėmesys pagal žmogaus norus",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip išreikšti dėmesį Moters dieną. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -11099,7 +11099,7 @@
       "proposedPublishAt": "2027-01-17T08:00:00.000Z",
       "proposedLocalDate": "2027-01-17",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O18",
@@ -11115,7 +11115,7 @@
       "pageId": "7dfbcb64-8775-47c1-b89c-4a112c3f83fa",
       "publicRevisionHash": null,
       "currentDraftTitle": "Dovanos vardadieniui: simbolinis ir asmeniškas dėmesys",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kada ir kaip dovanoti vardadienio proga. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -11176,7 +11176,7 @@
       "proposedPublishAt": "2026-11-24T08:00:00.000Z",
       "proposedLocalDate": "2026-11-24",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "O19",
@@ -11192,7 +11192,7 @@
       "pageId": "4e316d24-0aa9-4167-801b-c22911787740",
       "publicRevisionHash": null,
       "currentDraftTitle": "Velykų dovanos: šeimos susitarimai ir nedidelis dėmesys",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "H00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Ar ir ką dovanoti per Velykas. Pasirinkimo kriterijai, praktiniai pavyzdžiai ir svarbios naudojimo ribos.",
@@ -11241,7 +11241,7 @@
       "proposedPublishAt": "2027-01-18T08:00:00.000Z",
       "proposedLocalDate": "2027-01-18",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     },
     {
       "id": "C20",
@@ -11257,7 +11257,7 @@
       "pageId": "8c33054b-4d4c-4e2c-8b48-2b2c923e9a14",
       "publicRevisionHash": null,
       "currentDraftTitle": "Advento kalendoriaus dovanos: 24 prasmingų staigmenų planas",
-      "publicState": "approved-local-release-not-deployed",
+      "publicState": "uploaded-scheduled",
       "parentId": "C00",
       "format": "original selection/practical guide",
       "proposedMetaDescription": "Kaip sudaryti advento kalendorių neperkant bereikalingų daiktų. Dovanų atrankos kriterijai, asmeniškos idėjos ir pasiruošimo patarimai.",
@@ -11318,7 +11318,7 @@
       "proposedPublishAt": "2026-10-25T08:00:00.000Z",
       "proposedLocalDate": "2026-10-25",
       "proposedLocalTime": "10:00",
-      "releaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1"
+      "releaseId": "332c8186-8412-4cf1-b3c6-68dbbdde554a"
     }
   ],
   "studioHandoff": {
@@ -11952,16 +11952,34 @@
     ],
     "topicImagesAttached": 93,
     "editorialApproval": "93 exact revision-bound approvals completed",
-    "deployment": "not performed; Stripe/domain gate unchanged",
+    "deployment": {
+      "at": "2026-10-15T09:07:36.266Z",
+      "origin": "https://memocasting.lt",
+      "worker": "memocasting-site",
+      "workerVersion": "45ce54ce-7c22-460f-a4e5-2ed08133f451",
+      "publicSource": "000c6a191a73bf1a36c9e94de259ccfdf7974567",
+      "profileSource": "05deeee",
+      "status": "public website accepted; checkout pending actual Stripe key and business facts",
+      "articlesUploaded": 92,
+      "newArticlesVisibleAtCheck": 0,
+      "hubUploaded": 1,
+      "serverTimeFilter": true,
+      "liveBeforeBoundary": "first two new guide HTML and media404",
+      "liveAfterBoundary": "pending first actual publication at2026-10-15T13:00:00Z",
+      "mailDnsRecordsPreserved": 7
+    },
     "giftHubWritten": 1,
     "release": {
-      "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\7b6bfd6c-841a-4bb0-a611-c82cf281d4b1\\content-package.json",
+      "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\332c8186-8412-4cf1-b3c6-68dbbdde554a\\content-package.json",
       "pages": 181,
       "assets": 649,
-      "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\7b6bfd6c-841a-4bb0-a611-c82cf281d4b1\\release-manifest.json",
-      "packageSha256": "b967a3664651c59f7b13ae39f679e2fa7ab43e1e656877546853a28582922826",
+      "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\332c8186-8412-4cf1-b3c6-68dbbdde554a\\release-manifest.json",
+      "packageSha256": "aae501ef8a821f207bcb6391f5f160ac25e60088c3e65b3da3a67ce4a71c6120",
       "state": "exported-not-deployed"
-    }
+    },
+    "articlesReviewed": 92,
+    "articlesExported": 92,
+    "articlesUploaded": 92
   },
   "cadence": {
     "ownerConfirmedOn": "2026-10-14",
@@ -11982,491 +12000,491 @@
       "id": "C00",
       "date": "2026-10-15",
       "time": "10:00",
-      "publishAt": "2026-10-15T07:00:00.000Z",
+      "publishAt": "2026-10-15T13:00:00.000Z",
       "title": "Kalėdinės dovanos: kaip išrinkti tinkamą",
       "path": "gidai/kaledines-dovanos",
       "pageId": "7db71eba-3193-4e80-b481-24f0751f84e1",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "7db71eba-3193-4e80-b481-24f0751f84e1",
       "localDate": "2026-10-15",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C01",
       "date": "2026-10-15",
       "time": "16:00",
-      "publishAt": "2026-10-15T13:00:00.000Z",
+      "publishAt": "2026-10-16T07:00:00.000Z",
       "title": "Kalėdinės dovanos moterims pagal jų pomėgius",
       "path": "gidai/kaledines-dovanos-moterims",
       "pageId": "2343efcf-55bf-4aca-9b6a-d55eb4a20ef8",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "2343efcf-55bf-4aca-9b6a-d55eb4a20ef8",
-      "localDate": "2026-10-15",
-      "localTime": "16:00"
+      "localDate": "2026-10-16",
+      "localTime": "10:00"
     },
     {
       "id": "C02",
       "date": "2026-10-16",
       "time": "10:00",
-      "publishAt": "2026-10-16T07:00:00.000Z",
+      "publishAt": "2026-10-16T13:00:00.000Z",
       "title": "Kalėdinės dovanos mamai: dėmesys, laikas ir prisiminimai",
       "path": "gidai/kaledines-dovanos-mamai",
       "pageId": "2d587e3e-09a3-4fb5-b1fc-0fac3b3bab63",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "2d587e3e-09a3-4fb5-b1fc-0fac3b3bab63",
       "localDate": "2026-10-16",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C03",
       "date": "2026-10-16",
       "time": "16:00",
-      "publishAt": "2026-10-16T13:00:00.000Z",
+      "publishAt": "2026-10-17T07:00:00.000Z",
       "title": "Kalėdinės dovanos vyrams pagal pomėgius ir gyvenimo būdą",
       "path": "gidai/kaledines-dovanos-vyrams",
       "pageId": "9bd829a9-fd02-4762-bf8b-3a6e0559c4e9",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "9bd829a9-fd02-4762-bf8b-3a6e0559c4e9",
-      "localDate": "2026-10-16",
-      "localTime": "16:00"
+      "localDate": "2026-10-17",
+      "localTime": "10:00"
     },
     {
       "id": "C04",
       "date": "2026-10-17",
       "time": "10:00",
-      "publishAt": "2026-10-17T07:00:00.000Z",
+      "publishAt": "2026-10-17T13:00:00.000Z",
       "title": "Kalėdinės dovanos šeimai: ką veikti kartu",
       "path": "gidai/kaledines-dovanos-seimai",
       "pageId": "94c34ccb-1514-4dc4-9137-f0eb3b6b0589",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "94c34ccb-1514-4dc4-9137-f0eb3b6b0589",
       "localDate": "2026-10-17",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C05",
       "date": "2026-10-17",
       "time": "16:00",
-      "publishAt": "2026-10-17T13:00:00.000Z",
+      "publishAt": "2026-10-18T07:00:00.000Z",
       "title": "Kalėdinės dovanos porai: bendro laiko idėjos",
       "path": "gidai/kaledines-dovanos-porai",
       "pageId": "ed9ba99d-2f1c-4e33-97d7-43f651b2dbe9",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "ed9ba99d-2f1c-4e33-97d7-43f651b2dbe9",
-      "localDate": "2026-10-17",
-      "localTime": "16:00"
+      "localDate": "2026-10-18",
+      "localTime": "10:00"
     },
     {
       "id": "R06",
       "date": "2026-10-18",
       "time": "10:00",
-      "publishAt": "2026-10-18T07:00:00.000Z",
+      "publishAt": "2026-10-18T13:00:00.000Z",
       "title": "Dovana šeimai: kaip pasirinkti bendrą veiklą",
       "path": "gidai/dovana-seimai",
       "pageId": "52239986-e4fd-4b2c-bab4-496387a49216",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "52239986-e4fd-4b2c-bab4-496387a49216",
       "localDate": "2026-10-18",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C06",
       "date": "2026-10-18",
       "time": "16:00",
-      "publishAt": "2026-10-18T13:00:00.000Z",
+      "publishAt": "2026-10-19T07:00:00.000Z",
       "title": "Kalėdinės dovanos tėvams: viena bendra ar dvi atskiros?",
       "path": "gidai/kaledines-dovanos-tevams",
       "pageId": "9540b7b3-3c05-429f-89b8-55db019f8577",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "9540b7b3-3c05-429f-89b8-55db019f8577",
-      "localDate": "2026-10-18",
-      "localTime": "16:00"
+      "localDate": "2026-10-19",
+      "localTime": "10:00"
     },
     {
       "id": "C07",
       "date": "2026-10-19",
       "time": "10:00",
-      "publishAt": "2026-10-19T07:00:00.000Z",
+      "publishAt": "2026-10-19T13:00:00.000Z",
       "title": "Kalėdinės dovanos tėčiui pagal jo pomėgius",
       "path": "gidai/kaledines-dovanos-teciui",
       "pageId": "ef8aa99f-1df4-4495-86bc-ce2984a206aa",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "ef8aa99f-1df4-4495-86bc-ce2984a206aa",
       "localDate": "2026-10-19",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C08",
       "date": "2026-10-19",
       "time": "16:00",
-      "publishAt": "2026-10-19T13:00:00.000Z",
+      "publishAt": "2026-10-20T07:00:00.000Z",
       "title": "Kalėdinės dovanos seneliams: artumas ir patogumas",
       "path": "gidai/kaledines-dovanos-seneliams",
       "pageId": "3c7cb521-1100-4b96-9d21-6beb78135f89",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "3c7cb521-1100-4b96-9d21-6beb78135f89",
-      "localDate": "2026-10-19",
-      "localTime": "16:00"
+      "localDate": "2026-10-20",
+      "localTime": "10:00"
     },
     {
       "id": "C09",
       "date": "2026-10-20",
       "time": "10:00",
-      "publishAt": "2026-10-20T07:00:00.000Z",
+      "publishAt": "2026-10-20T13:00:00.000Z",
       "title": "Kalėdinės dovanos merginai skirtingais santykių etapais",
       "path": "gidai/kaledines-dovanos-merginai",
       "pageId": "d1fb6182-6fe1-4823-825a-9db049ff0997",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d1fb6182-6fe1-4823-825a-9db049ff0997",
       "localDate": "2026-10-20",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C10",
       "date": "2026-10-20",
       "time": "16:00",
-      "publishAt": "2026-10-20T13:00:00.000Z",
+      "publishAt": "2026-10-21T07:00:00.000Z",
       "title": "Kalėdinės dovanos vaikinui: asmeniškai ir be spėlionių",
       "path": "gidai/kaledines-dovanos-vaikinui",
       "pageId": "6c78ff90-2f9c-48c6-9b64-f97276e471a2",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "6c78ff90-2f9c-48c6-9b64-f97276e471a2",
-      "localDate": "2026-10-20",
-      "localTime": "16:00"
+      "localDate": "2026-10-21",
+      "localTime": "10:00"
     },
     {
       "id": "C11",
       "date": "2026-10-21",
       "time": "10:00",
-      "publishAt": "2026-10-21T07:00:00.000Z",
+      "publishAt": "2026-10-21T13:00:00.000Z",
       "title": "Kalėdinės dovanos draugams: asmeninės ir grupinės idėjos",
       "path": "gidai/kaledines-dovanos-draugams",
       "pageId": "a74780e9-7b58-4526-bc4a-32bc606e07d2",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "a74780e9-7b58-4526-bc4a-32bc606e07d2",
       "localDate": "2026-10-21",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C12",
       "date": "2026-10-21",
       "time": "16:00",
-      "publishAt": "2026-10-21T13:00:00.000Z",
+      "publishAt": "2026-10-22T07:00:00.000Z",
       "title": "Kalėdinės dovanos kolegoms ir slaptam Kalėdų Seneliui",
       "path": "gidai/kaledines-dovanos-kolegoms",
       "pageId": "da706eda-df2b-4294-b7cd-7b9efbe424cc",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "da706eda-df2b-4294-b7cd-7b9efbe424cc",
-      "localDate": "2026-10-21",
-      "localTime": "16:00"
+      "localDate": "2026-10-22",
+      "localTime": "10:00"
     },
     {
       "id": "C13",
       "date": "2026-10-22",
       "time": "10:00",
-      "publishAt": "2026-10-22T07:00:00.000Z",
+      "publishAt": "2026-10-22T13:00:00.000Z",
       "title": "Kalėdinės dovanos darbuotojams: atrankos ir organizavimo planas",
       "path": "gidai/kaledines-dovanos-darbuotojams",
       "pageId": "42839ff5-ecde-4f42-bb75-8b17a9a44a82",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "42839ff5-ecde-4f42-bb75-8b17a9a44a82",
       "localDate": "2026-10-22",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C14",
       "date": "2026-10-22",
       "time": "16:00",
-      "publishAt": "2026-10-22T13:00:00.000Z",
+      "publishAt": "2026-10-23T07:00:00.000Z",
       "title": "Kalėdinės dovanos vaikams pagal amžių ir interesus",
       "path": "gidai/kaledines-dovanos-vaikams",
       "pageId": "127fe08d-856c-4488-ba89-8196b17572fe",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "127fe08d-856c-4488-ba89-8196b17572fe",
-      "localDate": "2026-10-22",
-      "localTime": "16:00"
+      "localDate": "2026-10-23",
+      "localTime": "10:00"
     },
     {
       "id": "C15",
       "date": "2026-10-23",
       "time": "10:00",
-      "publishAt": "2026-10-23T07:00:00.000Z",
+      "publishAt": "2026-10-23T13:00:00.000Z",
       "title": "Kalėdinės dovanos paaugliams: kaip išgirsti jų norus",
       "path": "gidai/kaledines-dovanos-paaugliams",
       "pageId": "fc1745b3-f2a4-4dc3-b865-fa694a4d44b4",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "fc1745b3-f2a4-4dc3-b865-fa694a4d44b4",
       "localDate": "2026-10-23",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C16",
       "date": "2026-10-23",
       "time": "16:00",
-      "publishAt": "2026-10-23T13:00:00.000Z",
+      "publishAt": "2026-10-24T07:00:00.000Z",
       "title": "Originalios kalėdinės dovanos, turinčios asmeninę prasmę",
       "path": "gidai/originalios-kaledines-dovanos",
       "pageId": "38f3e27e-0b2c-498e-9cdf-c8adc6014f06",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "38f3e27e-0b2c-498e-9cdf-c8adc6014f06",
-      "localDate": "2026-10-23",
-      "localTime": "16:00"
+      "localDate": "2026-10-24",
+      "localTime": "10:00"
     },
     {
       "id": "C17",
       "date": "2026-10-24",
       "time": "10:00",
-      "publishAt": "2026-10-24T07:00:00.000Z",
+      "publishAt": "2026-10-24T13:00:00.000Z",
       "title": "Nebrangios kalėdinės dovanos: kaip pasirinkti ir neviršyti biudžeto",
       "path": "gidai/nebrangios-kaledines-dovanos",
       "pageId": "1d7bd5bf-7857-403a-8b97-e1e25ba26b9e",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "1d7bd5bf-7857-403a-8b97-e1e25ba26b9e",
       "localDate": "2026-10-24",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "C19",
       "date": "2026-10-24",
       "time": "16:00",
-      "publishAt": "2026-10-24T13:00:00.000Z",
+      "publishAt": "2026-10-25T08:00:00.000Z",
       "title": "Kalėdinių dovanų pakavimas: paprastai ir tvarkingai",
       "path": "gidai/kalediniu-dovanu-pakavimas",
       "pageId": "b0a4ace4-9a33-41c4-b8ae-278eb0e6d901",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "b0a4ace4-9a33-41c4-b8ae-278eb0e6d901",
-      "localDate": "2026-10-24",
-      "localTime": "16:00"
+      "localDate": "2026-10-25",
+      "localTime": "10:00"
     },
     {
       "id": "C20",
       "date": "2026-10-25",
       "time": "10:00",
-      "publishAt": "2026-10-25T08:00:00.000Z",
+      "publishAt": "2026-10-25T14:00:00.000Z",
       "title": "Advento kalendoriaus dovanos: 24 prasmingų staigmenų planas",
       "path": "gidai/advento-kalendoriaus-dovanos",
       "pageId": "8c33054b-4d4c-4e2c-8b48-2b2c923e9a14",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "8c33054b-4d4c-4e2c-8b48-2b2c923e9a14",
       "localDate": "2026-10-25",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "A00",
       "date": "2026-10-25",
       "time": "16:00",
-      "publishAt": "2026-10-25T14:00:00.000Z",
+      "publishAt": "2026-10-26T08:00:00.000Z",
       "title": "Bendros veiklos porai ir šeimai: kaip pasirinkti ir išsaugoti prisiminimą",
       "path": "gidai/bendros-veiklos",
       "pageId": "4ffc7862-ca3b-4d53-8171-f7bd2af4eb49",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "4ffc7862-ca3b-4d53-8171-f7bd2af4eb49",
-      "localDate": "2026-10-25",
-      "localTime": "16:00"
+      "localDate": "2026-10-26",
+      "localTime": "10:00"
     },
     {
       "id": "K01",
       "date": "2026-10-26",
       "time": "10:00",
-      "publishAt": "2026-10-26T08:00:00.000Z",
+      "publishAt": "2026-10-26T14:00:00.000Z",
       "title": "Pasirengimas rankų liejimui: vieta, laikas ir pagalba",
       "path": "gidai/pasirengimas-ranku-liejimui",
       "pageId": "a15a13a1-71e4-484d-a031-37954cb760b9",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "a15a13a1-71e4-484d-a031-37954cb760b9",
       "localDate": "2026-10-26",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "K06",
       "date": "2026-10-26",
       "time": "16:00",
-      "publishAt": "2026-10-26T14:00:00.000Z",
+      "publishAt": "2026-10-27T08:00:00.000Z",
       "title": "Rankų liejinio įteikimas ir eksponavimas",
       "path": "gidai/ranku-liejinio-iteikimas",
       "pageId": "e323d3fb-f8d7-4257-959d-bc0a6dbb0e1a",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "e323d3fb-f8d7-4257-959d-bc0a6dbb0e1a",
-      "localDate": "2026-10-26",
-      "localTime": "16:00"
+      "localDate": "2026-10-27",
+      "localTime": "10:00"
     },
     {
       "id": "K07",
       "date": "2026-10-27",
       "time": "10:00",
-      "publishAt": "2026-10-27T08:00:00.000Z",
+      "publishAt": "2026-10-27T14:00:00.000Z",
       "title": "Bendras kūrybos vakaras namuose: pasiruošimo planas",
       "path": "gidai/bendras-kurybos-vakaras",
       "pageId": "e9000ba9-b877-4ae7-aa5c-c04bd17705c0",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "e9000ba9-b877-4ae7-aa5c-c04bd17705c0",
       "localDate": "2026-10-27",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "O01",
       "date": "2026-10-27",
       "time": "16:00",
-      "publishAt": "2026-10-27T14:00:00.000Z",
+      "publishAt": "2026-10-28T08:00:00.000Z",
       "title": "Dovanos gimtadienio proga: kaip išsirinkti",
       "path": "gidai/dovanos-gimtadienio-proga",
       "pageId": "73c7db89-bc45-445a-8909-6f48c43e5461",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "73c7db89-bc45-445a-8909-6f48c43e5461",
-      "localDate": "2026-10-27",
-      "localTime": "16:00"
+      "localDate": "2026-10-28",
+      "localTime": "10:00"
     },
     {
       "id": "O03",
       "date": "2026-10-28",
       "time": "10:00",
-      "publishAt": "2026-10-28T08:00:00.000Z",
+      "publishAt": "2026-10-28T14:00:00.000Z",
       "title": "Dovanos vestuvėms: kaip pasirinkti pagal poros norus",
       "path": "gidai/dovanos-vestuvems",
       "pageId": "a2102f3e-f796-40dd-932e-e0d7de464a64",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "a2102f3e-f796-40dd-932e-e0d7de464a64",
       "localDate": "2026-10-28",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "R01",
       "date": "2026-10-28",
       "time": "16:00",
-      "publishAt": "2026-10-28T14:00:00.000Z",
+      "publishAt": "2026-10-29T08:00:00.000Z",
       "title": "Dovanos moterims pagal pomėgius ir poreikius",
       "path": "gidai/dovanos-moterims",
       "pageId": "c5c5aa8e-b53f-411f-a2ed-c0d7f9d5b067",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "c5c5aa8e-b53f-411f-a2ed-c0d7f9d5b067",
-      "localDate": "2026-10-28",
-      "localTime": "16:00"
+      "localDate": "2026-10-29",
+      "localTime": "10:00"
     },
     {
       "id": "R02",
       "date": "2026-10-29",
       "time": "10:00",
-      "publishAt": "2026-10-29T08:00:00.000Z",
+      "publishAt": "2026-10-29T14:00:00.000Z",
       "title": "Dovanos vyrams pagal pomėgius ir poreikius",
       "path": "gidai/dovanos-vyrams",
       "pageId": "482400a7-e1d3-47ad-91a2-c83d1cea971a",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "482400a7-e1d3-47ad-91a2-c83d1cea971a",
       "localDate": "2026-10-29",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "R03",
       "date": "2026-10-29",
       "time": "16:00",
-      "publishAt": "2026-10-29T14:00:00.000Z",
+      "publishAt": "2026-10-30T08:00:00.000Z",
       "title": "Dovanos mamai: nuo kasdienio dėmesio iki bendros patirties",
       "path": "gidai/dovanos-mamai",
       "pageId": "6addee05-19c5-477b-ae4d-d3b310acb4b8",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "6addee05-19c5-477b-ae4d-d3b310acb4b8",
-      "localDate": "2026-10-29",
-      "localTime": "16:00"
+      "localDate": "2026-10-30",
+      "localTime": "10:00"
     },
     {
       "id": "R04",
       "date": "2026-10-30",
       "time": "10:00",
-      "publishAt": "2026-10-30T08:00:00.000Z",
+      "publishAt": "2026-10-30T14:00:00.000Z",
       "title": "Dovanos tėčiui: pomėgiai, patogumas ir laikas kartu",
       "path": "gidai/dovanos-teciui",
       "pageId": "ce4fd7f2-afb5-4e73-b376-ea0d93f646c6",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "ce4fd7f2-afb5-4e73-b376-ea0d93f646c6",
       "localDate": "2026-10-30",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "R07",
       "date": "2026-10-30",
       "time": "16:00",
-      "publishAt": "2026-10-30T14:00:00.000Z",
+      "publishAt": "2026-10-31T08:00:00.000Z",
       "title": "Dovanos tėvams: bendras prisiminimas ar individualus pasirinkimas?",
       "path": "gidai/dovanos-tevams",
       "pageId": "afdd055b-b5d4-4cb0-89c5-67d4ab620ee4",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "afdd055b-b5d4-4cb0-89c5-67d4ab620ee4",
-      "localDate": "2026-10-30",
-      "localTime": "16:00"
+      "localDate": "2026-10-31",
+      "localTime": "10:00"
     },
     {
       "id": "R08",
       "date": "2026-10-31",
       "time": "10:00",
-      "publishAt": "2026-10-31T08:00:00.000Z",
+      "publishAt": "2026-10-31T14:00:00.000Z",
       "title": "Dovanos seneliams: rūpestingas pasirinkimas",
       "path": "gidai/dovanos-seneliams",
       "pageId": "79547728-bcb0-49ff-9e25-6ddfa30e872b",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "79547728-bcb0-49ff-9e25-6ddfa30e872b",
       "localDate": "2026-10-31",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "R11",
       "date": "2026-10-31",
       "time": "16:00",
-      "publishAt": "2026-10-31T14:00:00.000Z",
+      "publishAt": "2026-11-01T08:00:00.000Z",
       "title": "Dovanos žmonai: kaip prisiminti tai, kas jai svarbu",
       "path": "gidai/dovanos-zmonai",
       "pageId": "3db28bf9-e96f-4381-b414-cf70471aca6c",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "3db28bf9-e96f-4381-b414-cf70471aca6c",
-      "localDate": "2026-10-31",
-      "localTime": "16:00"
+      "localDate": "2026-11-01",
+      "localTime": "10:00"
     },
     {
       "id": "R13",
       "date": "2026-11-01",
       "time": "10:00",
-      "publishAt": "2026-11-01T08:00:00.000Z",
+      "publishAt": "2026-11-01T14:00:00.000Z",
       "title": "Dovanos merginai skirtingais santykių etapais",
       "path": "gidai/dovanos-merginai",
       "pageId": "01360d20-de5e-4bdf-bcd2-6409f39835d6",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "01360d20-de5e-4bdf-bcd2-6409f39835d6",
       "localDate": "2026-11-01",
-      "localTime": "10:00"
+      "localTime": "16:00"
     },
     {
       "id": "R14",
@@ -12476,8 +12494,8 @@
       "title": "Dovanos vaikinui: nuo pomėgio iki bendros patirties",
       "path": "gidai/dovanos-vaikinui",
       "pageId": "a74d4442-1500-4c2d-8ed8-4a8df47f9c74",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "a74d4442-1500-4c2d-8ed8-4a8df47f9c74",
       "localDate": "2026-11-02",
       "localTime": "10:00"
@@ -12490,8 +12508,8 @@
       "title": "Kaip išrinkti dovaną: klausimai, kurie padeda apsispręsti",
       "path": "gidai/kaip-isrinkti-dovana",
       "pageId": "ab672f09-7c3f-4e10-a6d2-5caa3709545a",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "ab672f09-7c3f-4e10-a6d2-5caa3709545a",
       "localDate": "2026-11-03",
       "localTime": "10:00"
@@ -12504,8 +12522,8 @@
       "title": "Dovana žmogui, kuris turi viską: ką rinktis, kai daiktų netrūksta",
       "path": "gidai/dovana-turinciam-viska",
       "pageId": "63506c6a-6f60-47a0-8e32-fe406c6d1ba3",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "63506c6a-6f60-47a0-8e32-fe406c6d1ba3",
       "localDate": "2026-11-04",
       "localTime": "10:00"
@@ -12518,8 +12536,8 @@
       "title": "Originalios dovanos: kaip išrinkti tai, kas tinka būtent šiam žmogui",
       "path": "gidai/originalios-dovanos",
       "pageId": "82c42a53-a2f4-45b4-98d5-a92808a69789",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "82c42a53-a2f4-45b4-98d5-a92808a69789",
       "localDate": "2026-11-05",
       "localTime": "10:00"
@@ -12532,8 +12550,8 @@
       "title": "Personalizuotos dovanos: ką patikrinti prieš užsakant",
       "path": "gidai/personalizuotos-dovanos",
       "pageId": "e6f961e7-bf41-42a6-b675-eb5c5edb0b0f",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "e6f961e7-bf41-42a6-b675-eb5c5edb0b0f",
       "localDate": "2026-11-06",
       "localTime": "10:00"
@@ -12546,8 +12564,8 @@
       "title": "Prasmingos dovanos: kaip susieti dovaną su žmogumi",
       "path": "gidai/prasmingos-dovanos",
       "pageId": "e275b67f-3730-4088-95f1-19313d65f1cf",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "e275b67f-3730-4088-95f1-19313d65f1cf",
       "localDate": "2026-11-07",
       "localTime": "10:00"
@@ -12560,8 +12578,8 @@
       "title": "Romantiškos dovanos: dėmesys ir santykio artumas",
       "path": "gidai/romantiskos-dovanos",
       "pageId": "d7d17239-7967-4471-83ac-b0d8943ea587",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d7d17239-7967-4471-83ac-b0d8943ea587",
       "localDate": "2026-11-08",
       "localTime": "10:00"
@@ -12574,8 +12592,8 @@
       "title": "Nebrangios dovanos: idėjos pagal tikrą bendrą biudžetą",
       "path": "gidai/nebrangios-dovanos",
       "pageId": "210f6e28-8fae-4316-a40f-27c9b3e946db",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "210f6e28-8fae-4316-a40f-27c9b3e946db",
       "localDate": "2026-11-09",
       "localTime": "10:00"
@@ -12588,8 +12606,8 @@
       "title": "Rankų darbo dovanos: ką kurti pačiam, ką pirkti",
       "path": "gidai/ranku-darbo-dovanos",
       "pageId": "8ad0f36a-518c-42eb-ac95-07c6cf19a212",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "8ad0f36a-518c-42eb-ac95-07c6cf19a212",
       "localDate": "2026-11-10",
       "localTime": "10:00"
@@ -12602,8 +12620,8 @@
       "title": "Pasidaryk pats dovanos: realistiškas kūrybos planas",
       "path": "gidai/pasidaryk-pats-dovanos",
       "pageId": "54ea557c-bedf-4ed1-89c3-750f42fe745b",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "54ea557c-bedf-4ed1-89c3-750f42fe745b",
       "localDate": "2026-11-11",
       "localTime": "10:00"
@@ -12616,8 +12634,8 @@
       "title": "Patirties dovanos: kaip pasirinkti veiklą gavėjui",
       "path": "gidai/patirties-dovanos",
       "pageId": "d3264031-a0e3-4654-aedd-cdec5daced84",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d3264031-a0e3-4654-aedd-cdec5daced84",
       "localDate": "2026-11-12",
       "localTime": "10:00"
@@ -12630,8 +12648,8 @@
       "title": "Rankų pozos liejimui: kaip pasirinkti pagal savo rinkinį",
       "path": "gidai/ranku-pozos",
       "pageId": "27c62c28-b365-4acd-beaa-2b5ddba9a42c",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "27c62c28-b365-4acd-beaa-2b5ddba9a42c",
       "localDate": "2026-11-13",
       "localTime": "10:00"
@@ -12644,8 +12662,8 @@
       "title": "Sulūžęs rankų liejinys: ką patikrinti prieš taisant",
       "path": "gidai/suluzes-ranku-liejinys",
       "pageId": "53b97d71-e9ef-490c-864d-7cde41689f27",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "53b97d71-e9ef-490c-864d-7cde41689f27",
       "localDate": "2026-11-14",
       "localTime": "10:00"
@@ -12658,8 +12676,8 @@
       "title": "Šeimos prisiminimų idėjos: kaip išsaugoti bendras akimirkas",
       "path": "gidai/seimos-prisiminimu-idejos",
       "pageId": "fd0a7289-4821-44c0-824a-12e36217b696",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "fd0a7289-4821-44c0-824a-12e36217b696",
       "localDate": "2026-11-15",
       "localTime": "10:00"
@@ -12672,8 +12690,8 @@
       "title": "Dovanos jubiliejui: viena didesnė ar kelios asmeninės?",
       "path": "gidai/dovanos-jubiliejui",
       "pageId": "d79006d6-f311-482d-baf7-00ba18c9fd00",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d79006d6-f311-482d-baf7-00ba18c9fd00",
       "localDate": "2026-11-16",
       "localTime": "10:00"
@@ -12686,8 +12704,8 @@
       "title": "Dovanos įkurtuvėms: kas tinka naujiems namams",
       "path": "gidai/dovanos-ikurtuvems",
       "pageId": "22a25786-1cad-4f2f-b6b6-d79a031c96e6",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "22a25786-1cad-4f2f-b6b6-d79a031c96e6",
       "localDate": "2026-11-17",
       "localTime": "10:00"
@@ -12700,8 +12718,8 @@
       "title": "Dovanos krikštynoms: šeimos susitarimai ir prisiminimai",
       "path": "gidai/dovanos-krikstynoms",
       "pageId": "25b9f7f1-a581-4216-a54c-c9752492176a",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "25b9f7f1-a581-4216-a54c-c9752492176a",
       "localDate": "2026-11-18",
       "localTime": "10:00"
@@ -12714,8 +12732,8 @@
       "title": "Dovanos sužadėtuvių proga: nedidelis sveikinimas porai",
       "path": "gidai/dovanos-suzadetuviu-proga",
       "pageId": "895df14e-2df2-4c6a-ae7c-30c0ddc0fea2",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "895df14e-2df2-4c6a-ae7c-30c0ddc0fea2",
       "localDate": "2026-11-19",
       "localTime": "10:00"
@@ -12728,8 +12746,8 @@
       "title": "Dovanos išeinant į pensiją: padėka už bendrą darbą",
       "path": "gidai/dovanos-pensijai",
       "pageId": "eda7917e-2d39-4988-836f-0ea836964c0f",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "eda7917e-2d39-4988-836f-0ea836964c0f",
       "localDate": "2026-11-20",
       "localTime": "10:00"
@@ -12742,8 +12760,8 @@
       "title": "Dovanos išleistuvėms: pagalba naujam etapui",
       "path": "gidai/dovanos-isleistuvems",
       "pageId": "7dc342c1-6a75-4e38-9e88-c2ae71579518",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "7dc342c1-6a75-4e38-9e88-c2ae71579518",
       "localDate": "2026-11-21",
       "localTime": "10:00"
@@ -12756,8 +12774,8 @@
       "title": "Padėkos dovanos: kaip išreikšti dėkingumą",
       "path": "gidai/padekos-dovanos",
       "pageId": "602b9b2e-5b8e-480c-9001-6db04a992900",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "602b9b2e-5b8e-480c-9001-6db04a992900",
       "localDate": "2026-11-22",
       "localTime": "10:00"
@@ -12770,8 +12788,8 @@
       "title": "Dovanos gimus vaikui: pagalba tėvams ir vaiko poreikiai",
       "path": "gidai/dovanos-gimus-vaikui",
       "pageId": "d7ec10d4-a702-41bb-a275-6601ee7effba",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d7ec10d4-a702-41bb-a275-6601ee7effba",
       "localDate": "2026-11-23",
       "localTime": "10:00"
@@ -12784,8 +12802,8 @@
       "title": "Dovanos vardadieniui: simbolinis ir asmeniškas dėmesys",
       "path": "gidai/dovanos-vardadieniui",
       "pageId": "7dfbcb64-8775-47c1-b89c-4a112c3f83fa",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "7dfbcb64-8775-47c1-b89c-4a112c3f83fa",
       "localDate": "2026-11-24",
       "localTime": "10:00"
@@ -12798,8 +12816,8 @@
       "title": "Dovanos močiutei pagal jos norus ir pomėgius",
       "path": "gidai/dovanos-mociutei",
       "pageId": "09ee95cd-0abd-4d23-916d-a029f5205acf",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "09ee95cd-0abd-4d23-916d-a029f5205acf",
       "localDate": "2026-11-25",
       "localTime": "10:00"
@@ -12812,8 +12830,8 @@
       "title": "Dovanos seneliui pagal jo pomėgius",
       "path": "gidai/dovanos-seneliui",
       "pageId": "0a184b2c-e317-4a25-b14b-0f02bbeea437",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "0a184b2c-e317-4a25-b14b-0f02bbeea437",
       "localDate": "2026-11-26",
       "localTime": "10:00"
@@ -12826,8 +12844,8 @@
       "title": "Dovanos draugei pagal jos pomėgius",
       "path": "gidai/dovanos-draugei",
       "pageId": "062ccc0b-12d3-4c0b-8acc-11e6d4acc5bf",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "062ccc0b-12d3-4c0b-8acc-11e6d4acc5bf",
       "localDate": "2026-11-27",
       "localTime": "10:00"
@@ -12840,8 +12858,8 @@
       "title": "Dovanos draugui pagal jo interesus",
       "path": "gidai/dovanos-draugui",
       "pageId": "a34eb96b-6890-4a77-82b2-91ff74f51b0e",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "a34eb96b-6890-4a77-82b2-91ff74f51b0e",
       "localDate": "2026-11-28",
       "localTime": "10:00"
@@ -12854,8 +12872,8 @@
       "title": "Dovanos sesei: asmeniškos idėjos pagal jos dabartinius norus",
       "path": "gidai/dovanos-sesei",
       "pageId": "8eef6e4f-055e-4060-bc24-0a854b1a7b19",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "8eef6e4f-055e-4060-bc24-0a854b1a7b19",
       "localDate": "2026-11-29",
       "localTime": "10:00"
@@ -12868,8 +12886,8 @@
       "title": "Dovanos broliui: pomėgiai ir bendras laikas",
       "path": "gidai/dovanos-broliui",
       "pageId": "04095447-771e-4b47-b803-7c00475f2f6a",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "04095447-771e-4b47-b803-7c00475f2f6a",
       "localDate": "2026-11-30",
       "localTime": "10:00"
@@ -12882,8 +12900,8 @@
       "title": "Dovanos mokytojai: dėmesys ir tinkamos ribos",
       "path": "gidai/dovanos-mokytojai",
       "pageId": "1467226d-00bf-486c-9320-728e9f810a80",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "1467226d-00bf-486c-9320-728e9f810a80",
       "localDate": "2026-12-01",
       "localTime": "10:00"
@@ -12896,8 +12914,8 @@
       "title": "Dovanos kolegoms: ką rinktis gimtadieniui ar išleistuvėms",
       "path": "gidai/dovanos-kolegoms",
       "pageId": "aa8d6744-1d62-4a45-a452-00da2dbfe960",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "aa8d6744-1d62-4a45-a452-00da2dbfe960",
       "localDate": "2026-12-02",
       "localTime": "10:00"
@@ -12910,8 +12928,8 @@
       "title": "Dovanos vadovui: kaip susitarti komandoje",
       "path": "gidai/dovanos-vadovui",
       "pageId": "f340df26-a303-4766-972f-9c31c913949b",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "f340df26-a303-4766-972f-9c31c913949b",
       "localDate": "2026-12-03",
       "localTime": "10:00"
@@ -12924,8 +12942,8 @@
       "title": "Dovanos vaikams: amžius, interesai ir naudojimo sąlygos",
       "path": "gidai/dovanos-vaikams",
       "pageId": "9c169d89-c8bb-463a-838e-e7ba173853f7",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "9c169d89-c8bb-463a-838e-e7ba173853f7",
       "localDate": "2026-12-04",
       "localTime": "10:00"
@@ -12938,8 +12956,8 @@
       "title": "Dovanos paaugliams pagal jų pačių norus",
       "path": "gidai/dovanos-paaugliams",
       "pageId": "2ea7da9f-a99e-437a-b1bf-4a6b90f11573",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "2ea7da9f-a99e-437a-b1bf-4a6b90f11573",
       "localDate": "2026-12-05",
       "localTime": "10:00"
@@ -12952,8 +12970,8 @@
       "title": "Dovanos dukrai: kaip išgirsti jos norus",
       "path": "gidai/dovanos-dukrai",
       "pageId": "9f43cc84-8b61-4b03-a31f-7d176b673e3c",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "9f43cc84-8b61-4b03-a31f-7d176b673e3c",
       "localDate": "2026-12-06",
       "localTime": "10:00"
@@ -12966,8 +12984,8 @@
       "title": "Dovanos sūnui: pomėgiai ir pasirinkimo laisvė",
       "path": "gidai/dovanos-sunui",
       "pageId": "ba0007ff-17fe-44ff-9bfc-1ab25d2695ec",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "ba0007ff-17fe-44ff-9bfc-1ab25d2695ec",
       "localDate": "2026-12-07",
       "localTime": "10:00"
@@ -12980,8 +12998,8 @@
       "title": "Dovanos krikšto tėvams: kaip paruošti asmenišką padėką",
       "path": "gidai/dovanos-kriksto-tevams",
       "pageId": "5177421e-e094-4ad7-b714-e23d31932696",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "5177421e-e094-4ad7-b714-e23d31932696",
       "localDate": "2026-12-08",
       "localTime": "10:00"
@@ -12994,8 +13012,8 @@
       "title": "Bendra dovana nuo kelių žmonių: susitarimo planas",
       "path": "gidai/bendra-dovana-nuo-keliu-zmoniu",
       "pageId": "403ee09a-abed-4618-94c6-263095eb23e7",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "403ee09a-abed-4618-94c6-263095eb23e7",
       "localDate": "2026-12-09",
       "localTime": "10:00"
@@ -13008,8 +13026,8 @@
       "title": "Kaip įteikti dovaną, kad momentas būtų asmeniškas",
       "path": "gidai/kaip-iteikti-dovana",
       "pageId": "b4448f3a-e001-49a6-89a1-b1f96bd0f55d",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "b4448f3a-e001-49a6-89a1-b1f96bd0f55d",
       "localDate": "2026-12-10",
       "localTime": "10:00"
@@ -13022,8 +13040,8 @@
       "title": "Kaip supakuoti dovaną pagal jos formą",
       "path": "gidai/kaip-supakuoti-dovana",
       "pageId": "8e384e4a-c05c-44e1-ad0b-db5706d5f5e1",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "8e384e4a-c05c-44e1-ad0b-db5706d5f5e1",
       "localDate": "2026-12-11",
       "localTime": "10:00"
@@ -13036,8 +13054,8 @@
       "title": "Dovanų etiketas: susitarimai ir asmeninės ribos",
       "path": "gidai/dovanu-etiketas",
       "pageId": "cfce57d1-1e68-48fe-99e4-28bcdc43a828",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "cfce57d1-1e68-48fe-99e4-28bcdc43a828",
       "localDate": "2026-12-12",
       "localTime": "10:00"
@@ -13050,8 +13068,8 @@
       "title": "Dovanos per atstumą: įteikimo ir bendro laiko planas",
       "path": "gidai/dovanos-per-atstuma",
       "pageId": "7e4024b5-9370-453f-b13d-3d9e3adda9b9",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "7e4024b5-9370-453f-b13d-3d9e3adda9b9",
       "localDate": "2026-12-13",
       "localTime": "10:00"
@@ -13064,8 +13082,8 @@
       "title": "Dovana ar dovanų kuponas: kada palikti pasirinkimą gavėjui",
       "path": "gidai/dovana-ar-dovanu-kuponas",
       "pageId": "db39da0e-e1fa-4351-8496-9ac7f8cc5486",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "db39da0e-e1fa-4351-8496-9ac7f8cc5486",
       "localDate": "2026-12-14",
       "localTime": "10:00"
@@ -13078,8 +13096,8 @@
       "title": "Dovana ar pinigai: kaip pasirinkti pagal progą",
       "path": "gidai/dovana-ar-pinigai",
       "pageId": "d994e138-116f-4934-a49a-6d3248573863",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d994e138-116f-4934-a49a-6d3248573863",
       "localDate": "2026-12-15",
       "localTime": "10:00"
@@ -13092,8 +13110,8 @@
       "title": "Praktiškos dovanos: tinkamumas svarbiau už spėjimą",
       "path": "gidai/praktiskos-dovanos",
       "pageId": "e47d9975-838f-4868-976a-6f2619dbbe1e",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "e47d9975-838f-4868-976a-6f2619dbbe1e",
       "localDate": "2026-12-16",
       "localTime": "10:00"
@@ -13106,8 +13124,8 @@
       "title": "Dovanų rinkiniai: kaip vertinti komplektą",
       "path": "gidai/dovanu-rinkiniai",
       "pageId": "83ba1420-83ae-440e-95b1-3245e657a9b7",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "83ba1420-83ae-440e-95b1-3245e657a9b7",
       "localDate": "2026-12-17",
       "localTime": "10:00"
@@ -13120,8 +13138,8 @@
       "title": "Lietuviškos dovanos: ką reiškia vietinė kilmė",
       "path": "gidai/lietuviskos-dovanos",
       "pageId": "3848997e-1f9f-4ea9-92be-45a764c6f71d",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "3848997e-1f9f-4ea9-92be-45a764c6f71d",
       "localDate": "2026-12-18",
       "localTime": "10:00"
@@ -13134,8 +13152,8 @@
       "title": "Valgomos dovanos: skonis, sudėtis ir laikymas",
       "path": "gidai/valgomos-dovanos",
       "pageId": "346266ce-e2cf-4729-a21b-eeb5bb5a5103",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "346266ce-e2cf-4729-a21b-eeb5bb5a5103",
       "localDate": "2026-12-19",
       "localTime": "10:00"
@@ -13148,8 +13166,8 @@
       "title": "Tvarios dovanos: kaip vertinti konkrečius teiginius",
       "path": "gidai/tvarios-dovanos",
       "pageId": "d84163b3-fcaf-4a65-ab22-ceaf291602c9",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "d84163b3-fcaf-4a65-ab22-ceaf291602c9",
       "localDate": "2026-12-20",
       "localTime": "10:00"
@@ -13162,8 +13180,8 @@
       "title": "Kalėdinės dovanos paskutinę minutę: kas realiai įmanoma",
       "path": "gidai/kaledines-dovanos-paskutine-minute",
       "pageId": "aa5dd1fe-62a3-4cd8-ac98-084ee2fedae0",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "aa5dd1fe-62a3-4cd8-ac98-084ee2fedae0",
       "localDate": "2026-12-21",
       "localTime": "10:00"
@@ -13176,8 +13194,8 @@
       "title": "Dovanos Valentino dienai: asmeniškos bendro laiko idėjos",
       "path": "gidai/dovanos-valentino-dienai",
       "pageId": "4097e9a2-fdc8-46b8-80b2-44e728fbae00",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "4097e9a2-fdc8-46b8-80b2-44e728fbae00",
       "localDate": "2026-12-22",
       "localTime": "10:00"
@@ -13190,8 +13208,8 @@
       "title": "Dovanos Mamos dienai: dėmesys pagal jos norus",
       "path": "gidai/dovanos-mamos-dienai",
       "pageId": "1689d929-b88a-493a-9418-6d24ff16e118",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "1689d929-b88a-493a-9418-6d24ff16e118",
       "localDate": "2027-01-15",
       "localTime": "10:00"
@@ -13204,8 +13222,8 @@
       "title": "Dovanos Tėvo dienai: pomėgiai ir bendras laikas",
       "path": "gidai/dovanos-tevo-dienai",
       "pageId": "eae86b37-68e0-47b3-8210-24b86db0dfc8",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "eae86b37-68e0-47b3-8210-24b86db0dfc8",
       "localDate": "2027-01-16",
       "localTime": "10:00"
@@ -13218,8 +13236,8 @@
       "title": "Dovanos Moters dienai: dėmesys pagal žmogaus norus",
       "path": "gidai/dovanos-moters-dienai",
       "pageId": "cda6b57e-4300-4931-9ce4-8dedb8e913f7",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "cda6b57e-4300-4931-9ce4-8dedb8e913f7",
       "localDate": "2027-01-17",
       "localTime": "10:00"
@@ -13232,8 +13250,8 @@
       "title": "Velykų dovanos: šeimos susitarimai ir nedidelis dėmesys",
       "path": "gidai/velyku-dovanos",
       "pageId": "4e316d24-0aa9-4167-801b-c22911787740",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "4e316d24-0aa9-4167-801b-c22911787740",
       "localDate": "2027-01-18",
       "localTime": "10:00"
@@ -13246,8 +13264,8 @@
       "title": "Dovanos Boso dienai: kaip susitarti komandoje",
       "path": "gidai/dovanos-boso-dienai",
       "pageId": "8d4694cd-2b0e-4915-aee9-a07cfec285e3",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "8d4694cd-2b0e-4915-aee9-a07cfec285e3",
       "localDate": "2027-08-01",
       "localTime": "10:00"
@@ -13260,8 +13278,8 @@
       "title": "Dovanos Mokytojų dienai: kaip susitarti dėl bendros klasės padėkos",
       "path": "gidai/dovanos-mokytoju-dienai",
       "pageId": "62c5454d-1e2a-48db-8fca-1770b5d8ffc8",
-      "state": "approved immutable release; imported locally; not deployed",
-      "gates": "accepted hosting/Stripe/domain; missed dates shift forward with renewed approval",
+      "state": "reviewed and uploaded; scheduled by server time",
+      "gates": "actual server publishAt filter; checkout admission separate",
       "privatePageId": "62c5454d-1e2a-48db-8fca-1770b5d8ffc8",
       "localDate": "2027-08-02",
       "localTime": "10:00"
@@ -13274,8 +13292,9 @@
     "selectedGuideNodes": 93,
     "publishedHistoryPreserved": 88,
     "completedAt": "2026-10-14T20:55:42.554Z",
-    "state": "approved immutable release; imported locally; not deployed",
+    "state": "all selected content completed and uploaded with future dates",
     "selectedArticleCount": 92,
-    "selectedHubCount": 1
+    "selectedHubCount": 1,
+    "uploadedAt": "2026-10-15T09:07:36.266Z"
   }
 }

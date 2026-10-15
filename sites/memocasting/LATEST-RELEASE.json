@@ -1,16 +1,32 @@
 {
-  "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\7b6bfd6c-841a-4bb0-a611-c82cf281d4b1\\content-package.json",
+  "path": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\332c8186-8412-4cf1-b3c6-68dbbdde554a\\content-package.json",
   "pages": 181,
   "assets": 649,
-  "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\7b6bfd6c-841a-4bb0-a611-c82cf281d4b1\\release-manifest.json",
-  "packageSha256": "b967a3664651c59f7b13ae39f679e2fa7ab43e1e656877546853a28582922826",
-  "state": "exported-not-deployed",
+  "manifestPath": "C:\\Users\\Lenovo\\Documents\\Nisiniai_puslapiai\\memocasting-site-20261012\\nisiniai_puslapiai_monetizavimui\\sites\\memocasting\\studio-output\\releases\\memocasting\\332c8186-8412-4cf1-b3c6-68dbbdde554a\\release-manifest.json",
+  "packageSha256": "aae501ef8a821f207bcb6391f5f160ac25e60088c3e65b3da3a67ce4a71c6120",
+  "state": "deployed-scheduled",
+  "previousReleaseId": "7b6bfd6c-841a-4bb0-a611-c82cf281d4b1",
+  "deployment": {
+    "at": "2026-10-15T09:07:36.266Z",
+    "origin": "https://memocasting.lt",
+    "worker": "memocasting-site",
+    "workerVersion": "45ce54ce-7c22-460f-a4e5-2ed08133f451",
+    "publicSource": "000c6a191a73bf1a36c9e94de259ccfdf7974567",
+    "profileSource": "05deeee",
+    "status": "public website accepted; checkout pending actual Stripe key and business facts",
+    "articlesUploaded": 92,
+    "newArticlesVisibleAtCheck": 0,
+    "hubUploaded": 1,
+    "serverTimeFilter": true,
+    "liveBeforeBoundary": "first two new guide HTML and media404",
+    "liveAfterBoundary": "pending first actual publication at2026-10-15T13:00:00Z",
+    "mailDnsRecordsPreserved": 7
+  },
   "localAcceptance": {
     "build": "PASS",
     "coreTests": "114/114 PASS",
-    "seoSmoke": "88 current local Workers pages PASS",
-    "scheduledBoundaries": "93 exact before/after PASS",
-    "hosted": "not performed"
-  },
-  "previousReleaseId": "4ea58f2e-3057-49ac-8631-b0d87ed8f472"
+    "scheduledBoundaries": "93 exact before/after shared projection PASS",
+    "media": "649files checked",
+    "hosted": "canonical HTTPS sampled routes/redirects/future boundaries PASS; actual after-boundary check pending"
+  }
 }

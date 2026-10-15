@@ -1,6 +1,6 @@
 # Privatus įsigijimo bandymo planas
 
-Neaktyvuotas. Pirkėjus atskirti nuo didmeninio tiekimo / rekomendavimo partnerių. Pirma auditorija — LT dovanos porai pirkėjas, norintis bendros veiklos. Pasiūlymas — patvirtintas poros rinkinys32EUR arba35EUR su baltais dažais. Kainos faktinės, marža nežinoma; naujos rinkos ir B2B neaktyvuotos.
+Neaktyvuotas. Pirkėjus atskirti nuo didmeninio tiekimo / rekomendavimo partnerių. Pirma auditorija — LT dovanos porai pirkėjas, norintis bendros veiklos. Pasiūlymas — patvirtintas poros rinkinys už 32 € su įtrauktais baltais dažais; šeimos rinkinys už 48 € taip pat su dažais. Kainos faktinės, marža nežinoma; naujos rinkos ir B2B neaktyvuotos.
 
 Pirmas kanalas — originalūs, konkrečius sprendimus padedantys priimti gidai ir produkto kelias. Ankstesnis LT paieškos apimties įvertis170 patvirtina tik tyrimo kryptį, ne pirkėjo signalą. Pasirinkimas nereikalauja naujos paslaugos prenumeratos ar šalto kontaktų sąrašo. Mokama reklama būtų atskiras autorizuotas bandymas po mokėjimo, pristatymo, maržos ir produkcijos priėmimo. Facebook grupių ar el. pašto kampanija šiame darbe nevykdoma.
 

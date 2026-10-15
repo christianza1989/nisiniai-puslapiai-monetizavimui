@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Scope reserved before source edits. Reuse public projection/transport, canonical index and explicit local source-ready; lifetime before actor. Current historical source is never replaced. Source/profile UI observations cannot grant session/provider/channel authority.",
+  "eventId": "05f8aa18-0254-48d6-b60f-84e74428e97d",
+  "sequence": 2,
+  "at": "2026-10-11T05:05:23.173Z"
+}

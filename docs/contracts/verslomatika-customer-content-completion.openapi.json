@@ -1,0 +1,597 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Current private native content workflow",
+    "version": "0.1.0",
+    "description": "Authenticated current owner/session/tenant and canonical exact accepted team/intake proof. The fixed shared studio adapter reads current canonical draft hashes, factual notes, source flags, media file presence, internal link counts and actual current editorial receipt. This live observation does not rewrite immutable intake or native job/write snapshots. Media file presence is not visual, rights or quality approval; internal link counts are not a verification certificate. Historical approved revision hashes remain distinct from current drafts and stale reviews remain false. No provider calls or mutation capability: permitted_actions contains only refresh. Private release, SEO/GEO, full F1, launch and language_status remain UNVERIFIED; deployment is not_verified_by_studio. Explicit owner-paused language mode remains visible and is not a language PASS. No filesystem paths, source draft, private trace or account/session credentials in the DTO. The running envelope source_revision and historical accepted_source_revision have separate meanings."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/content-completion": {
+      "get": {
+        "operationId": "getCustomerContentCompletion",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "query",
+            "name": "accepted_revision",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "description": "Optional exact current accepted business revision; stale explicit input returns409."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompletionViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Explicit accepted business revision is stale",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-unknown-query-parameters": "rejected",
+        "x-duplicate-query-parameters": "rejected"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "Page": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "path": {
+            "maxLength": 300,
+            "pattern": "^/(?:[a-z0-9-]+/)*$",
+            "title": "Path",
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "home",
+              "guide",
+              "article",
+              "index",
+              "author",
+              "policy",
+              "about",
+              "contact",
+              "service",
+              "product",
+              "faq",
+              "location"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "planning_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Planning Sha256",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "blocked",
+              "reviewed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "blockers": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 100,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "fact_notes": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Fact Notes",
+            "type": "array"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "maxItems": 20,
+            "title": "Sources",
+            "type": "array"
+          },
+          "media_count": {
+            "maximum": 60,
+            "minimum": 0,
+            "title": "Media Count",
+            "type": "integer"
+          },
+          "media_files_present": {
+            "title": "Media Files Present",
+            "type": "boolean"
+          },
+          "review_current": {
+            "title": "Review Current",
+            "type": "boolean"
+          },
+          "reviewed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed At"
+          },
+          "reviewer": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer"
+          },
+          "has_approved_revision": {
+            "title": "Has Approved Revision",
+            "type": "boolean"
+          },
+          "approved_revision_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved Revision Sha256"
+          },
+          "internal_planned": {
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Internal Planned",
+            "type": "integer"
+          },
+          "internal_attached": {
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Internal Attached",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "page_id",
+          "path",
+          "type",
+          "title",
+          "revision_sha256",
+          "planning_sha256",
+          "state",
+          "blockers",
+          "fact_notes",
+          "sources",
+          "media_count",
+          "media_files_present",
+          "review_current",
+          "reviewed_at",
+          "reviewer",
+          "has_approved_revision",
+          "approved_revision_sha256",
+          "internal_planned",
+          "internal_attached"
+        ],
+        "title": "Page",
+        "type": "object"
+      },
+      "Source": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "maxLength": 2048,
+            "pattern": "^https://",
+            "title": "Url",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "reason": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Reason",
+            "type": "string"
+          },
+          "verified": {
+            "title": "Verified",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "url",
+          "label",
+          "reason",
+          "verified"
+        ],
+        "title": "Source",
+        "type": "object"
+      },
+      "CompletionView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Revision"
+          },
+          "accepted_source_revision": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{40}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Source Revision"
+          },
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Sha256"
+          },
+          "site_id": {
+            "anyOf": [
+              {
+                "pattern": "^creation-[a-f0-9]{32}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Id"
+          },
+          "canonical_host": {
+            "anyOf": [
+              {
+                "maxLength": 253,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host"
+          },
+          "state": {
+            "enum": [
+              "not_imported",
+              "current"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "revision_pending": {
+            "title": "Revision Pending",
+            "type": "boolean"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          },
+          "site_context_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Context Sha256"
+          },
+          "observation_scope": {
+            "const": "current_private_workflow",
+            "default": "current_private_workflow",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "language_review_mode": {
+            "enum": [
+              "required",
+              "paused_local_pilot"
+            ],
+            "title": "Language Review Mode",
+            "type": "string"
+          },
+          "language_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Language Status",
+            "type": "string"
+          },
+          "private_release_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Private Release Status",
+            "type": "string"
+          },
+          "seo_geo_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Seo Geo Status",
+            "type": "string"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not_verified_by_studio",
+            "default": "not_verified_by_studio",
+            "title": "Deployment",
+            "type": "string"
+          },
+          "permitted_actions": {
+            "items": {
+              "const": "refresh",
+              "type": "string"
+            },
+            "maxItems": 1,
+            "title": "Permitted Actions",
+            "type": "array"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/Page"
+            },
+            "maxItems": 200,
+            "title": "Pages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "creation_id",
+          "accepted_revision",
+          "accepted_source_revision",
+          "candidate_sha256",
+          "site_id",
+          "canonical_host",
+          "state",
+          "revision_pending",
+          "observed_at",
+          "site_context_sha256",
+          "language_review_mode",
+          "permitted_actions",
+          "pages"
+        ],
+        "title": "CompletionView",
+        "type": "object"
+      },
+      "CompletionViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "content-completion.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CompletionView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

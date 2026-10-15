@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "evidence": "2 passed in 0.91s; exact POST body, identical GET/POST response and legacy/foreign binding coherence.",
+      "result": "PASS",
+      "command": "pytest offline_tests/test_private_preview_wire.py -q -p no:cacheprovider"
+    }
+  ],
+  "note": "Wire-only checkpoint for Root client generation. Exactly two wire tests PASS; backend/recovery/migration implementation and native adoption still pending. No operational action.",
+  "status": "local-verified",
+  "eventId": "2a4d0cdc-270e-4045-9c90-21601f1a3c88",
+  "sequence": 2,
+  "at": "2026-10-15T16:25:33.970Z"
+}

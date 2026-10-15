@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Scoped PR81 is OPEN and attached, stacked on the parent customer-creation branch. Functional GUIDE source7ba0d05760431ee601c13bbbb724003b9f76173e is separately cherry-pickable; no actual provider or public acceptance is claimed. Parent base advanced to8a9fe74154e60d754be448636adce4985d6ce027: own merge preserves both WORKSTREAMS reservations, with no functional source conflicts. Affected no-provider verification is repeated before final delivery. Parent owns current live trial and source adoption after idle.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/81",
+  "commit": "7ba0d05760431ee601c13bbbb724003b9f76173e",
+  "eventId": "9bf80764-4711-496b-9551-33cc28e39292",
+  "sequence": 4,
+  "at": "2026-10-10T13:50:16.258Z"
+}

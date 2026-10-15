@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Konsultacijos worker praranda faktiškai gautą tokenų kvitą po RunnerError ir galutinio atsakymo validavimo klaidos",
+  "category": "code",
+  "evidence": [
+    "Exact source5196350392970173ecbf6026bce5c86a88401532: tasks/codex.py run returns normalize_answer(value), usage after completed transport; RunnerError output_invalid loses held usage. tasks/worker.py execute_once catches code only and persists usage=None.",
+    "Scope https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6098733475; isolated child worktree, parent live source untouched; private main13c9649c76dd48cdf426604cb721e1ccd58a9854/public mainec8a9c032fe926d1d9722802d8eb26fa8bd02937 freshness PASS."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/offline_tests/test_control_codex.py",
+    "agent-business-core/runtime/tests/test_control_tasks.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of consultation receipt propagation and its tests; no migrations, runtime or history rewrites.",
+  "id": "upgrade-a41fc003-f2d2-42cb-b09a-baa56439539d",
+  "branch": "codex/verslomatika-consult-usage-20261010",
+  "baseSha": "5196350392970173ecbf6026bce5c86a88401532",
+  "createdAt": "2026-10-10T14:50:25.957Z"
+}

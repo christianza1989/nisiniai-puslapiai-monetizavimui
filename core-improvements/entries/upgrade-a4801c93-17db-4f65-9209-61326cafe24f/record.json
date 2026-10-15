@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Dashboard adapter needs a canonical strict domains.v1 HTTP contract derived from actual catalogue models",
+  "category": "code",
+  "evidence": [
+    "Human requested domain dashboard browsing/recommendations; parent integration needs exact three bounded endpoints",
+    "Existing catalogue a22a648 and upgrade-ff5c8b39-4eee-43ac-a999-d70297bbd8cd locally verified; no shared mounts in subagent scope"
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/domain_catalogue_contract.py",
+    "docs/contracts/verslomatika-domain-catalogue.openapi.json",
+    "agent-business-core/runtime/src/pinet_core/domain_catalogue/models.py",
+    "agent-business-core/runtime/offline_tests/test_domain_catalogue.py",
+    "docs/VERSLOMATIKA_DOMAIN_CATALOGUE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/76",
+  "rollback": "Scoped revert of generator/contract/new response models; parent independently removes its HTTP mounts. No source inventory or existing operator/customer-v1 contracts change.",
+  "id": "upgrade-a4801c93-17db-4f65-9209-61326cafe24f",
+  "branch": "codex/verslomatika-domain-catalogue-20261010",
+  "baseSha": "a22a648cab3ebec8720dc3ad5c369de18d88dc6b",
+  "createdAt": "2026-10-10T09:47:13.194Z"
+}

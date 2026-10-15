@@ -1,0 +1,24 @@
+{
+  "siteId": "verslomatika",
+  "summary": "A current source-bound customer profile has no maintained local customer text session or provider/tool lifecycle; static six-site sessions cannot consume a newly registered V2 business.",
+  "category": "code",
+  "evidence": [
+    "Actual customer source/profile bridge PASS receipt SHA256 0ca173f989946e50a92514024dbcb2f2fbd177873055bbe8e6bd97fd7aca0e8b; ProfileView execution flags false and preparation v2_session FAIL retained.",
+    "Clean private2a63e9211f1054151cd461bb41055352bff8c4ee / public5924a2eb858cf45e736bc5e79a2f07cfbbc39af2; shared static PROFILES/start/turn schema are incompatible with registered creation site IDs."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/text_tools.py",
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/tests/test_customer_text.py",
+    "agent-business-core/runtime/offline_tests/test_customer_text.py",
+    "agent-business-core/runtime/docs/CUSTOMER_TEXT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert additive customer-text source/route/helpers; preserve operational Conversation/Event history and old profile/registration/source admissions. No automatic SQL reset.",
+  "id": "upgrade-b585bae9-4736-4b94-a16f-1a38d63ce5c6",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "2a63e9211f1054151cd461bb41055352bff8c4ee",
+  "createdAt": "2026-10-11T05:57:26.144Z"
+}

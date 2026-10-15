@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "commit": "e90e3f1315accaddb459f3ac5934b3befae02bcd",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "note": "Owned local runtime only, schema0020 and all operational rows preserved: source adoption receiptSHA4b7b5b4b49aa0132879f7023053742b1638472201501d2b9378d91bdc67a8574. Explicit local new consumer flags enabled separately, old owner queue/SMTP/voice OFF. Maintained approved V2 source/Profile bridge plus actual HTTP two-turn/correction/UUID replay/history/end receiptSHA7f0722f1cfb580b574a984369cb3cb9c9a90c986ed959a5a84c51e9ea74746d7; language/calibration UNVERIFIED. Separate ordinary ef6161af/buildLf4 capability/explicit consent/start/one send/reload/history/end beforeTTL, DB witnessSHA81231e3414876c575f878f1220018d39a4848d11b81f454c3f56c883aff209e6: one attempt/usage/result, finalized ownerNone, contacts/jobs/outbox0, known token usage/costunknown. Actual UI need remainedempty/revision0; separate upgradeeaac8baf addresses it. No main merge, target-PC/public launch or full platform completion claim. API/studio subsequently held before the next source window.",
+  "eventId": "72e8d6ec-ddd5-401d-9917-f9561f401712",
+  "sequence": 4,
+  "at": "2026-10-11T07:30:28.058Z"
+}

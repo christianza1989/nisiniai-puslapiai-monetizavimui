@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual coordinator-only diagnostic at cleanD1 source rejected the first array-const schema: invalid_json_schema / Unexpected constant value:[f_1] in2.507741s. Original coord34 trace/output-schema/admission retained; customerDBwrites0, original failedJob untouched, fourth separate dispatch conservatively accounted. A prior cwd lookup failed before any dispatch and was corrected. Replace provider-only composite constants with a narrow prose envelope derived from maintained CoordinatorDecision; restore mechanical arrays only from exact validated critic, then enforce existing full v1 postchecks. No verdict/hash/receipt/action/launch waiver.",
+  "eventId": "b23c115a-0db2-4987-85b8-a4630df79b09",
+  "sequence": 4,
+  "at": "2026-10-15T15:12:01.997Z"
+}

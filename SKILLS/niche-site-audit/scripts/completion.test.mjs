@@ -4,8 +4,10 @@ import {readFile,mkdtemp,writeFile,rm} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import os from 'node:os';
+import {createServer} from 'node:http';
+import {gzipSync} from 'node:zlib';
 import {catalogFromMarkdown} from './score-audit.mjs';
-import {articleExpectations,verifySiteCompletion,verifyDiscoveryOutputs} from './verify-site-completion.mjs';
+import {articleExpectations,verifySiteCompletion,verifyDiscoveryOutputs,completionTransportHost,requestCompletion} from './verify-site-completion.mjs';
 
 test('reading verification binds each body to its canonical section and uses exact hidden URLs',()=>{
   const base={type:'guide',contentVersion:2,title:'Useful answer',description:'Description',media:[],editorial:{authors:[],datePublished:'2026-10-07T07:00:00Z',dateModified:null},links:[],externalLinks:[]};
@@ -18,6 +20,38 @@ test('reading verification binds each body to its canonical section and uses exa
   assert.ok(verifyDiscoveryOutputs(pkg,pages,{...outputs,'/llms-full.txt':full.replace('Specific first answer.','Distinct second answer.')} ).includes('READING_BODY_MISSING:a'));
   assert.ok(verifyDiscoveryOutputs(pkg,pages,{...outputs,'/llms.txt':outputs['/llms.txt']+' https://beauty.example/next'}).includes('HIDDEN_URL_IN_DISCOVERY:/llms.txt:hidden'));
   assert.ok(verifyDiscoveryOutputs(pkg,pages,{...outputs,'/llms-full.txt':full.replace('https://evidence.example/source','https://other.example/')}).includes('READING_SOURCE_MISSING:b'));
+});
+
+test('private local preview can use its exact origin Host without changing canonical or hosted defaults',()=>{
+  const origin=new URL('http://127.0.0.1:8897');
+  assert.equal(completionTransportHost(origin,'private-preview.lt'), 'private-preview.lt');
+  assert.equal(completionTransportHost(origin,'private-preview.lt',['--loopback-host','origin']), '127.0.0.1:8897');
+  assert.equal(completionTransportHost(new URL('https://private-preview.lt'),'private-preview.lt'),null);
+  for(const origin of ['https://private-preview.lt','http://foreign.example:8897','http://127.0.0.1'])
+    assert.throws(()=>completionTransportHost(new URL(origin),'private-preview.lt',['--loopback-host','origin']),/explicit HTTP loopback/);
+  assert.throws(()=>completionTransportHost(origin,'private-preview.lt',['--loopback-host','foreign.example']),/Unsupported/);
+});
+
+test('loopback requests send the actual selected Host, do not follow redirects and bound time and response size',async t=>{
+  const received=[];let follow=0;
+  const server=createServer((req,res)=>{
+    received.push(req.headers.host);
+    if(req.url==='/wait')return;
+    if(req.url==='/redirect'){res.writeHead(302,{Location:'/follow'});res.end();return;}
+    if(req.url==='/follow')follow++;
+    if(req.url==='/large'){res.end('x'.repeat(64));return;}
+    if(req.url==='/gzip'){res.setHeader('content-encoding','gzip');res.end(gzipSync('x'.repeat(1024)));return;}
+    res.end('bound');
+  });await new Promise(r=>server.listen(0,'127.0.0.1',r));t.after(()=>{server.closeAllConnections();server.close();});
+  const origin='http://127.0.0.1:'+server.address().port;
+  assert.equal((await requestCompletion(origin,'foundation.example')).data.toString(),'bound');
+  assert.equal((await requestCompletion(origin,new URL(origin).host)).status,200);
+  assert.deepEqual(received,['foundation.example',new URL(origin).host]);
+  assert.equal((await requestCompletion(origin+'/redirect','foundation.example')).status,302);assert.equal(follow,0);
+  await assert.rejects(requestCompletion(origin+'/large','foundation.example',{maxBytes:32}),/bounded inspector/);
+  await assert.rejects(requestCompletion(origin+'/gzip','foundation.example',{maxBytes:64}));
+  await assert.rejects(requestCompletion(origin+'/wait','foundation.example',{timeoutMs:25}),/abort/i);
+  await assert.rejects(requestCompletion('https://foreign.example','foundation.example'),/Invalid loopback/);
 });
 
 test('completion CLI fails for an unverified review item even when all local gates pass',async()=>{

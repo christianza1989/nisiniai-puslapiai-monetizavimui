@@ -1,0 +1,1786 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Current owned private native page read",
+    "version": "0.1.0",
+    "description": "Read-only same current actor/session/Portfolio and exact accepted proof as content completion. Existing canonical native workflow reader supplies current body, page/context hashes and observed time. Original creator candidates and private_write_snapshot remain immutable and separate. Document body uses the shared native V2 block schema; no HTML/script renderer or arbitrary studio URL. Media descriptors exclude filesystem src, original input, prompt and rights metadata. Typed same-site page links resolve through document.links within this current owned inventory; external links are actionable only for exact verified current source URLs. Canonical network/commerce nodes remain lossless body data but render as non-actionable text; no cross-site resolver or purchase authority. document_sha256 is canonical SHA256 of the whitelisted document, distinct from full page revision SHA. Binary media is attached to this page, exact current revision, bytes and SHA; mismatched revision409, foreign/missing scope404 and corrupt adapter503. Auth/source/session are rechecked after subprocess. No provider calls, approval, release, Source/Profile or channel activation. Inherited workflow gates and language UNVERIFIED."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/content-pages/{page_id}": {
+      "get": {
+        "operationId": "getCustomerCurrentPage",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "path",
+            "name": "page_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+            }
+          },
+          {
+            "in": "query",
+            "name": "accepted_revision",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-unknown-query-parameters": "rejected",
+        "x-duplicate-query-parameters": "rejected"
+      }
+    },
+    "/customer/v2/creations/{creation_id}/content-pages/{page_id}/media/{asset_id}": {
+      "get": {
+        "operationId": "getCustomerCurrentPageMedia",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "path",
+            "name": "page_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+            }
+          },
+          {
+            "in": "path",
+            "name": "asset_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]{1,79}$"
+            }
+          },
+          {
+            "in": "query",
+            "name": "accepted_revision",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            }
+          },
+          {
+            "in": "query",
+            "name": "expected_revision_sha256",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-duplicate-query-parameters": "rejected",
+        "responses": {
+          "200": {
+            "description": "Authenticated current page asset; exact descriptor SHA/bytes, no-store/nosniff",
+            "content": {
+              "image/webp": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "image/avif": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Changed idempotency input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "CompletionView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Revision"
+          },
+          "accepted_source_revision": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{40}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Source Revision"
+          },
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Sha256"
+          },
+          "site_id": {
+            "anyOf": [
+              {
+                "pattern": "^creation-[a-f0-9]{32}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Id"
+          },
+          "canonical_host": {
+            "anyOf": [
+              {
+                "maxLength": 253,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host"
+          },
+          "state": {
+            "enum": [
+              "not_imported",
+              "current"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "revision_pending": {
+            "title": "Revision Pending",
+            "type": "boolean"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          },
+          "site_context_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Context Sha256"
+          },
+          "observation_scope": {
+            "const": "current_private_workflow",
+            "default": "current_private_workflow",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "language_review_mode": {
+            "enum": [
+              "required",
+              "paused_local_pilot"
+            ],
+            "title": "Language Review Mode",
+            "type": "string"
+          },
+          "language_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Language Status",
+            "type": "string"
+          },
+          "private_release_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Private Release Status",
+            "type": "string"
+          },
+          "seo_geo_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Seo Geo Status",
+            "type": "string"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not_verified_by_studio",
+            "default": "not_verified_by_studio",
+            "title": "Deployment",
+            "type": "string"
+          },
+          "permitted_actions": {
+            "items": {
+              "const": "refresh",
+              "type": "string"
+            },
+            "maxItems": 1,
+            "title": "Permitted Actions",
+            "type": "array"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/Page"
+            },
+            "maxItems": 200,
+            "title": "Pages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "creation_id",
+          "accepted_revision",
+          "accepted_source_revision",
+          "candidate_sha256",
+          "site_id",
+          "canonical_host",
+          "state",
+          "revision_pending",
+          "observed_at",
+          "site_context_sha256",
+          "language_review_mode",
+          "permitted_actions",
+          "pages"
+        ],
+        "title": "CompletionView",
+        "type": "object"
+      },
+      "Document": {
+        "additionalProperties": false,
+        "properties": {
+          "pageId": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Pageid",
+            "type": "string"
+          },
+          "revisionHash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revisionhash",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "description": {
+            "maxLength": 2200,
+            "title": "Description",
+            "type": "string"
+          },
+          "intent": {
+            "maxLength": 1000,
+            "title": "Intent",
+            "type": "string"
+          },
+          "body": {
+            "items": {
+              "$ref": "#/components/schemas/Native_block"
+            },
+            "maxItems": 1000,
+            "title": "Body",
+            "type": "array"
+          },
+          "media": {
+            "items": {
+              "$ref": "#/components/schemas/Media"
+            },
+            "maxItems": 60,
+            "title": "Media",
+            "type": "array"
+          },
+          "links": {
+            "items": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "maxItems": 200,
+            "title": "Links",
+            "type": "array"
+          }
+        },
+        "required": [
+          "pageId",
+          "revisionHash",
+          "title",
+          "description",
+          "intent",
+          "body",
+          "media",
+          "links"
+        ],
+        "title": "Document",
+        "type": "object"
+      },
+      "Link": {
+        "additionalProperties": false,
+        "properties": {
+          "pageId": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Pageid",
+            "type": "string"
+          },
+          "path": {
+            "maxLength": 300,
+            "pattern": "^/(?:[a-z0-9-]+/)*$",
+            "title": "Path",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pageId",
+          "path",
+          "title"
+        ],
+        "title": "Link",
+        "type": "object"
+      },
+      "Media": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "alt": {
+            "maxLength": 300,
+            "title": "Alt",
+            "type": "string"
+          },
+          "width": {
+            "maximum": 8192,
+            "minimum": 1,
+            "title": "Width",
+            "type": "integer"
+          },
+          "height": {
+            "maximum": 8192,
+            "minimum": 1,
+            "title": "Height",
+            "type": "integer"
+          },
+          "bytes": {
+            "maximum": 12582912,
+            "minimum": 1,
+            "title": "Bytes",
+            "type": "integer"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Sha256",
+            "type": "string"
+          },
+          "credit": {
+            "maxLength": 300,
+            "title": "Credit",
+            "type": "string"
+          },
+          "mime": {
+            "enum": [
+              "image/webp",
+              "image/avif"
+            ],
+            "title": "Mime",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "alt",
+          "width",
+          "height",
+          "bytes",
+          "sha256",
+          "credit",
+          "mime"
+        ],
+        "title": "Media",
+        "type": "object"
+      },
+      "Page": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "path": {
+            "maxLength": 300,
+            "pattern": "^/(?:[a-z0-9-]+/)*$",
+            "title": "Path",
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "home",
+              "guide",
+              "article",
+              "index",
+              "author",
+              "policy",
+              "about",
+              "contact",
+              "service",
+              "product",
+              "faq",
+              "location"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "planning_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Planning Sha256",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "blocked",
+              "reviewed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "blockers": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 100,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "fact_notes": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Fact Notes",
+            "type": "array"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "maxItems": 20,
+            "title": "Sources",
+            "type": "array"
+          },
+          "media_count": {
+            "maximum": 60,
+            "minimum": 0,
+            "title": "Media Count",
+            "type": "integer"
+          },
+          "media_files_present": {
+            "title": "Media Files Present",
+            "type": "boolean"
+          },
+          "review_current": {
+            "title": "Review Current",
+            "type": "boolean"
+          },
+          "reviewed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed At"
+          },
+          "reviewer": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer"
+          },
+          "has_approved_revision": {
+            "title": "Has Approved Revision",
+            "type": "boolean"
+          },
+          "approved_revision_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved Revision Sha256"
+          },
+          "internal_planned": {
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Internal Planned",
+            "type": "integer"
+          },
+          "internal_attached": {
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Internal Attached",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "page_id",
+          "path",
+          "type",
+          "title",
+          "revision_sha256",
+          "planning_sha256",
+          "state",
+          "blockers",
+          "fact_notes",
+          "sources",
+          "media_count",
+          "media_files_present",
+          "review_current",
+          "reviewed_at",
+          "reviewer",
+          "has_approved_revision",
+          "approved_revision_sha256",
+          "internal_planned",
+          "internal_attached"
+        ],
+        "title": "Page",
+        "type": "object"
+      },
+      "Source": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "maxLength": 2048,
+            "pattern": "^https://",
+            "title": "Url",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "reason": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Reason",
+            "type": "string"
+          },
+          "verified": {
+            "title": "Verified",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "url",
+          "label",
+          "reason",
+          "verified"
+        ],
+        "title": "Source",
+        "type": "object"
+      },
+      "PageView": {
+        "additionalProperties": false,
+        "properties": {
+          "observation_scope": {
+            "const": "current_private_page",
+            "default": "current_private_page",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "completion": {
+            "$ref": "#/components/schemas/CompletionView"
+          },
+          "page": {
+            "$ref": "#/components/schemas/Page"
+          },
+          "document": {
+            "$ref": "#/components/schemas/Document"
+          },
+          "document_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Document Sha256",
+            "type": "string"
+          },
+          "permitted_actions": {
+            "items": {
+              "enum": [
+                "refresh",
+                "read_media"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Permitted Actions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "completion",
+          "page",
+          "document",
+          "document_sha256",
+          "permitted_actions"
+        ],
+        "title": "PageView",
+        "type": "object"
+      },
+      "Native_block": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "text"
+            ],
+            "properties": {
+              "type": {
+                "const": "paragraph"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "level",
+              "text"
+            ],
+            "properties": {
+              "type": {
+                "const": "heading"
+              },
+              "level": {
+                "enum": [
+                  2,
+                  3
+                ]
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "items"
+            ],
+            "properties": {
+              "type": {
+                "const": "list"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "assetId"
+            ],
+            "properties": {
+              "type": {
+                "const": "image"
+              },
+              "assetId": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "const": "richParagraph"
+              },
+              "content": {
+                "type": "array",
+                "maxItems": 500,
+                "items": {
+                  "$ref": "#/components/schemas/Native_inline"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "level",
+              "content"
+            ],
+            "properties": {
+              "type": {
+                "const": "richHeading"
+              },
+              "level": {
+                "enum": [
+                  2,
+                  3
+                ]
+              },
+              "content": {
+                "type": "array",
+                "maxItems": 500,
+                "items": {
+                  "$ref": "#/components/schemas/Native_inline"
+                },
+                "minItems": 1
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "ordered",
+              "items"
+            ],
+            "properties": {
+              "type": {
+                "const": "richList"
+              },
+              "ordered": {
+                "type": "boolean"
+              },
+              "items": {
+                "type": "array",
+                "maxItems": 100,
+                "items": {
+                  "type": "array",
+                  "maxItems": 500,
+                  "items": {
+                    "$ref": "#/components/schemas/Native_inline"
+                  },
+                  "minItems": 1
+                },
+                "minItems": 1
+              }
+            }
+          }
+        ]
+      },
+      "Native_media": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "src",
+          "alt",
+          "width",
+          "height",
+          "rights"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "src": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "credit": {
+            "type": "string"
+          },
+          "rights": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "Native_page": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "siteId",
+          "type",
+          "slug",
+          "title",
+          "description",
+          "intent",
+          "body",
+          "publishAt",
+          "revisionHash",
+          "approval",
+          "media",
+          "links",
+          "contentVersion",
+          "editorial",
+          "siteSnapshot"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]{0,99}$"
+          },
+          "siteId": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "home",
+              "service",
+              "product",
+              "guide",
+              "faq",
+              "location",
+              "article",
+              "index",
+              "author",
+              "policy",
+              "about",
+              "contact"
+            ]
+          },
+          "slug": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "intent": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Native_block"
+            },
+            "minItems": 1,
+            "maxItems": 1000
+          },
+          "publishAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$"
+          },
+          "revisionHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "approval": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "revisionHash",
+              "approvedAt",
+              "actorId"
+            ],
+            "properties": {
+              "status": {
+                "const": "approved"
+              },
+              "revisionHash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "approvedAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$"
+              },
+              "actorId": {
+                "type": "string"
+              }
+            }
+          },
+          "media": {
+            "type": "array",
+            "maxItems": 60,
+            "items": {
+              "$ref": "#/components/schemas/Native_media"
+            }
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "targetPageId",
+                "label"
+              ],
+              "properties": {
+                "targetPageId": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "externalLinks": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "url",
+                "label",
+                "reason"
+              ],
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "contentVersion": {
+            "const": 2
+          },
+          "editorial": {
+            "$ref": "#/components/schemas/Native_editorial"
+          },
+          "siteSnapshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "name",
+              "canonicalHost",
+              "locale",
+              "timezone",
+              "brand",
+              "offer",
+              "contact",
+              "renderer",
+              "operatorName"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "canonicalHost": {
+                "type": "string"
+              },
+              "locale": {
+                "type": "string"
+              },
+              "timezone": {
+                "type": "string"
+              },
+              "brand": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "accent"
+                ],
+                "properties": {
+                  "accent": {
+                    "type": "string"
+                  }
+                }
+              },
+              "offer": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "email"
+                ],
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                }
+              },
+              "renderer": {
+                "enum": [
+                  "gift",
+                  "niche"
+                ]
+              },
+              "operatorName": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            }
+          }
+        }
+      },
+      "Native_target": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "pageId"
+            ],
+            "properties": {
+              "kind": {
+                "const": "page"
+              },
+              "pageId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "url"
+            ],
+            "properties": {
+              "kind": {
+                "const": "external"
+              },
+              "url": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2048,
+                "format": "uri",
+                "pattern": "^https://"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "siteId",
+              "pageId"
+            ],
+            "properties": {
+              "kind": {
+                "const": "network"
+              },
+              "siteId": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+              },
+              "pageId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "targetId"
+            ],
+            "properties": {
+              "kind": {
+                "const": "commerce"
+              },
+              "targetId": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              }
+            }
+          }
+        ]
+      },
+      "Native_inline": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "text"
+            ],
+            "properties": {
+              "type": {
+                "const": "text"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12000
+              }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "text",
+              "target"
+            ],
+            "properties": {
+              "type": {
+                "const": "link"
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              },
+              "target": {
+                "$ref": "#/components/schemas/Native_target"
+              }
+            }
+          }
+        ]
+      },
+      "Native_author": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "siteId",
+          "locale",
+          "slug",
+          "name",
+          "role",
+          "bio",
+          "kind",
+          "sameAs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "siteId": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+          },
+          "locale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 30
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 150
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "bio": {
+            "type": "string",
+            "maxLength": 12000
+          },
+          "kind": {
+            "enum": [
+              "person",
+              "organization"
+            ]
+          },
+          "sameAs": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048,
+              "format": "uri",
+              "pattern": "^https://"
+            }
+          }
+        }
+      },
+      "Native_source": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "publisher",
+          "url",
+          "accessedAt",
+          "public"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "publisher": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "accessedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$"
+          },
+          "public": {
+            "const": true
+          }
+        }
+      },
+      "Native_commerceTarget": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "url",
+          "label",
+          "relationship",
+          "verified",
+          "checkedAt"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048,
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "relationship": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "checkedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "Native_editorial": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "category",
+          "readingMinutes",
+          "authors",
+          "sources",
+          "datePublished",
+          "dateModified",
+          "productRecommendation",
+          "featuredImageId",
+          "relatedPageIds",
+          "commerceTargets"
+        ],
+        "properties": {
+          "category": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "readingMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "authors": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/components/schemas/Native_author"
+            }
+          },
+          "sources": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/Native_source"
+            }
+          },
+          "datePublished": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dateModified": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,3})?Z$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "productRecommendation": {
+            "type": "boolean"
+          },
+          "featuredImageId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "relatedPageIds": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          },
+          "commerceTargets": {
+            "type": "array",
+            "maxItems": 30,
+            "items": {
+              "$ref": "#/components/schemas/Native_commerceTarget"
+            }
+          }
+        }
+      },
+      "PageViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "content-page.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PageView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

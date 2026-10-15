@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "59PASS/130.80s combined beforefinaltask-onlyguards; docs/VERSLOMATIKA_LOCAL_CHAT.md",
+      "command": "uv run pytest tests/test_control_tasks.py tests/test_control_portfolio.py tests/test_core.py tests/test_policy.py -q --tb=short"
+    },
+    {
+      "result": "PASS",
+      "evidence": "Final14PostgreSQLtaskPASS/19.40s includingconcurrentSessionFORSHARE/revocation/pause",
+      "command": "uv run pytest tests/test_control_tasks.py -q --tb=short"
+    },
+    {
+      "result": "PASS",
+      "evidence": "Final14PASS/11.13s; actualsynthetic10sno-stdinreaderdeadline/cleanup, normalpumps, earlyauthoritystop; original1FAIL14.91spreserved",
+      "command": "uv run pytest offline_tests/test_control_codex.py -q --tb=short"
+    },
+    {
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_LOCAL_CHAT.md; sameanswerSHAe4ed78750daf73ef20ce0c73b443ed454f10f18c11369780da448e59931e653c/provider_runs1/costunknown",
+      "command": "ActualPostgreSQLbaselineclone/head->0010->head/RLS; loopbackTCPstart/replay/cancel/foreign; core/API/workerrestart andoneactualportalmodelquestion"
+    },
+    {
+      "result": "PASS",
+      "evidence": "Schema6operations unchanged74350c3/digestfb7014faff2a432ed58865cf0fae4d78d58458a511974ec66c0df722d5ed3c6a; source/testblobssafety0findings",
+      "command": "ScopedRuff, deterministiccanonicalchatgenerator, doc_check.py, exactstagedsafety/whitespace"
+    },
+    {
+      "result": "PASS",
+      "evidence": "PeerexecuteddirectorPR64source4e9d7b43893316c0b24a83191eaa044ebdced449; sameanswer/foreign404/binding404/logout401/8focusedtests/typecheck/build; notattributedtoindependentDBtests",
+      "command": "PairedportalproductionBFFgate/browser/desktop/mobile/focus/finalreload"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Bounded local operator I2 task boundary and one actual model answer verified, not wholeplatform/customer/hosted acceptance. Exactsourcebbe86runtime; initialprovideranswer sourcea972, session/DBrestart3140 thenadapter-onlyAPI/workerrestartbbe86 withsameanswer/1run. Original fixture/probe/deadline failures and sourceversions retained in docs/VERSLOMATIKA_LOCAL_CHAT.md. Finalindependent timeoutrecheck pending, noextra providercalls.",
+  "eventId": "135aae42-ce7b-4abf-bc8b-54559cabf025",
+  "sequence": 4,
+  "at": "2026-10-10T01:14:44.786Z"
+}

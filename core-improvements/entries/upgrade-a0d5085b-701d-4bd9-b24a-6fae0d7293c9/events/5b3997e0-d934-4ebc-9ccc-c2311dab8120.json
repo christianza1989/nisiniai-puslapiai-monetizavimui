@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Existing GUIDE wire/export duplicate creator-Luna structural restriction repaired under separately released scope; no DTO fields/client selector. Server projections and SQL require immutable selected profile, default creatorSol still rejected. First wire baseline1FAIL and later receipt failures retained; no model/runtime activation.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_pipeline_execution_profile.py offline_tests/test_creation_review_model.py offline_tests/test_creation_adapter.py offline_tests/test_business_discovery.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md; private profile-final-offline-43bce332.log:85PASS3.60s, actual known creatorSol wire and all-role captured GUIDE failure identity"
+    },
+    {
+      "command": "python artifacts/s8-profile/qa.py test tests/test_pipeline_execution_profile_pg.py tests/test_creation_review_model.py::test_mixed_model_history_and_disabled_ceiling_keep_exact_reservations tests/test_creation_review_model.py::test_changed_execution_profile_stops_before_next_reservation tests/test_creation_review_model.py::test_actual_model_reservation_and_success_or_failure_receipt_agree -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md; private tests-05b5f0c9.log:25PASS140.57s includes actual selected three-stage/nine-role native GUIDE200 projection plus default rejection"
+    },
+    {
+      "command": "python artifacts/s8-profile/verify_exports.py",
+      "result": "PASS",
+      "evidence": "Both canonical existing schema generators equal LF exports; content-work export50495bytes/0851d5f9ef5c157cc036ff3bdcaf6c29736739fd4932290bd9ed663213c57503, committed blob recheck pending"
+    }
+  ],
+  "eventId": "5b3997e0-d934-4ebc-9ccc-c2311dab8120",
+  "sequence": 3,
+  "at": "2026-10-14T18:16:55.257Z"
+}

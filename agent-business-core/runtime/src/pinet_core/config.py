@@ -1,6 +1,7 @@
 from functools import lru_cache
+from typing import Literal
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from . import pricing
@@ -13,7 +14,64 @@ class Settings(BaseSettings):
     edge_secret: str = ""
     worker_secret: str = ""
     operator_secret: str = ""
-    jev_api_key: SecretStr = SecretStr('')
+    # Local-only pilot: never enabled implicitly by legacy operator/worker secrets.
+    control_enabled: bool = False
+    control_mode: str = "local"
+    control_bridge_secret: str = ""
+    control_bridge_host: str = "control.pinet.internal"
+    control_owner_user_id: str = ""
+    control_cursor_secret: str = ""
+    control_source_revision: str = ""
+    control_session_seconds: int = 28800
+    customer_enabled: bool = False
+    workspace_topics_enabled: bool = False
+    workspace_team_enabled: bool = False
+    workspace_team_runner_enabled: bool = False
+    workspace_team_actor_ids: list[str] = []
+    customer_agents_enabled: bool = False
+    xbot_bridge_enabled: bool = False
+    customer_text_enabled: bool = False
+    customer_text_runner_enabled: bool = False
+    customer_portal_origin: str = "http://127.0.0.1:3017"
+    customer_outbox_directory: str = "artifacts/customer-outbox"
+    acquisition_capture_enabled: bool = False
+    acquisition_capture_config: str = ""
+    acquisition_work_enabled: bool = False
+    acquisition_work_config: str = ""
+    acquisition_tasks_enabled: bool = False
+    # Zero disables the optional ceiling; attempts remain durable.
+    acquisition_tasks_daily_limit: int = Field(default=0, ge=0)
+    public_projects_enabled: bool = False
+    creation_enabled: bool = False
+    business_discovery_enabled: bool = False
+    business_discovery_runner_enabled: bool = False
+    site_build_enabled: bool = False
+    site_build_api_runner_enabled: bool = False
+    site_build_actor_ids: list[str] = Field(default_factory=list, max_length=16)
+    business_discovery_research_limit: int = Field(default=0, ge=0)
+    creation_runner_enabled: bool = False
+    creation_execution_profile: Literal["default", "local_sol61_high_v1"] = "default"
+    # Zero disables the operator's daily ceiling; all attempts are still recorded.
+    creation_daily_limit: int = Field(default=0, ge=0)
+    creation_global_daily_limit: int = Field(default=0, ge=0)
+    creation_job_limit: int = Field(default=0, ge=0)
+    creation_runner_seconds: int = 180
+    creation_workspace: str = ""
+    # Operator-owned persistent native data. Empty preserves the legacy release-local root.
+    customer_content_artifacts_root: str = ""
+    creation_web_search_enabled: bool = False
+    creation_language_review_enabled: bool = True
+    chat_enabled: bool = False
+    director_acquisition_enabled: bool = False
+    chat_operator_user_id: str = ""
+    chat_daily_limit: int = 20
+    chat_runner_enabled: bool = False
+    chat_codex_executable: str = ""
+    chat_codex_sha256: str = ""
+    chat_workspace: str = ""
+    chat_runner_seconds: int = 120
+    chat_model: str = "gpt-6-luna"
+    jev_api_key: SecretStr = SecretStr("")
     jev_budget_microusd: int = 150000
     jev_max_calls: int = 50
     jev_timeout_seconds: float = 1.5
@@ -22,7 +80,7 @@ class Settings(BaseSettings):
     facebook_page_credentials_path: str = ""
     allow_simulation: bool = False
     learning_enabled: bool = False
-    learning_namespace: str = ''
+    learning_namespace: str = ""
     voice_enabled: bool = False
     m0_verified: bool = False
     google_api_key: str = ""
@@ -60,10 +118,21 @@ class Settings(BaseSettings):
 
     @property
     def voice_ready(self):
-        return all((self.voice_enabled, self.m0_verified, self.google_api_key,
-                    self.livekit_url, self.livekit_api_key, self.livekit_api_secret, not self.allow_simulation,
-                    self.global_daily_budget_microusd > 0, self.voice_cost_ceiling_microusd > 0,
-                    self.live_model == "gemini-3.8-live", pricing.current()))
+        return all(
+            (
+                self.voice_enabled,
+                self.m0_verified,
+                self.google_api_key,
+                self.livekit_url,
+                self.livekit_api_key,
+                self.livekit_api_secret,
+                not self.allow_simulation,
+                self.global_daily_budget_microusd > 0,
+                self.voice_cost_ceiling_microusd > 0,
+                self.live_model == "gemini-3.8-live",
+                pricing.current(),
+            )
+        )
 
 
 @lru_cache

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Explicit local/test profile source verified only. First failures remain immutable, including retained-binding fallback1PASS3FAIL and GUIDE missing raised receipt3PASS3FAIL; canonical fixes are regression tested. Maintained native review fixtures reproduce2FAIL1PASS with exact7496 base; supplemental root-released fixture-only upgradebfd61acf aligns required model and receipt refs with production constraints. Own QA only, original0032/all counts/restricted-role attributes unchanged; provider/model/channel calls0, ordinary adoption held by root.",
+  "checks": [
+    {
+      "command": "python artifacts/s8-profile/qa.py test offline_tests/test_pipeline_execution_profile.py offline_tests/test_creation_review_model.py offline_tests/test_creation_adapter.py offline_tests/test_content_work_review.py offline_tests/test_business_discovery.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md; private tests-1a79e98e.log:104PASS6.49s; final selected/default/native adapters and all-role success/failure identity"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_pipeline_execution_profile.py offline_tests/test_creation_review_model.py offline_tests/test_creation_adapter.py offline_tests/test_business_discovery.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md; private profile-final-offline-43bce332.log:85PASS3.60s; all-role actual argv/captured failure receipt/default/calibration/hash fences"
+    },
+    {
+      "command": "python artifacts/s8-profile/qa.py test tests/test_pipeline_execution_profile_pg.py tests/test_creation_review_model.py::test_mixed_model_history_and_disabled_ceiling_keep_exact_reservations tests/test_creation_review_model.py::test_changed_execution_profile_stops_before_next_reservation tests/test_creation_review_model.py::test_actual_model_reservation_and_success_or_failure_receipt_agree -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md; private tests-05b5f0c9.log:25PASS140.57s; actual immutable SQL/profile/source/Session admission/fences/default history/downgrade/9-role pipeline"
+    },
+    {
+      "command": "python artifacts/s8-profile/qa.py test tests/test_business_discovery.py tests/test_site_build.py tests/test_site_build_lifecycle_pg.py::test_actual_queue_waits_for_explicit_approval_then_restart_catches_guides tests/test_site_build_lifecycle_pg.py::test_enabled_api_lifespan_automatically_consumes_the_admitted_owner_queue -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md; private tests-c6c203ce.log:10PASS165.46s; maintained default flow/authority/restart/API consumption"
+    },
+    {
+      "command": "python artifacts/s8-profile/verify_exports.py",
+      "result": "PASS",
+      "evidence": "Both canonical generator outputs equal LF working exports; docs/contracts/verslomatika-customer-team.openapi.json and docs/contracts/verslomatika-customer-content-work.openapi.json; exact committed blob receipt follows"
+    }
+  ],
+  "eventId": "62efafd7-0329-4c2b-ae0a-3d0d84d6f921",
+  "sequence": 3,
+  "at": "2026-10-14T18:16:53.351Z"
+}

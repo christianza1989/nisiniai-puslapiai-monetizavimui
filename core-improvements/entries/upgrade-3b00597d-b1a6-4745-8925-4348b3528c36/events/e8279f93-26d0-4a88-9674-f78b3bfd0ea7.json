@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Candidate0.1.1 strict primitive repair. Actual native OTP recipient binding protocol and mounted durable core routes remain dependencies.",
+  "checks": [
+    {
+      "command": "uv run --locked python -m unittest discover -s offline_tests -p test_acquisition_interfaces.py -v",
+      "result": "PASS",
+      "evidence": "11 interface/security tests with added numeric/string/bool/date coercion rejection assertions"
+    },
+    {
+      "command": "node --test ../contracts/acquisition-v1/auth.test.mjs",
+      "result": "PASS",
+      "evidence": "3 Python/Web Crypto signature, tamper and Unicode checks"
+    },
+    {
+      "command": "uv run --locked ruff check src/pinet_core/acquisition/interfaces.py src/pinet_core/acquisition/transport_auth.py offline_tests/test_acquisition_interfaces.py scripts/acquisition_contracts.py",
+      "result": "PASS",
+      "evidence": "Scoped wire/auth/export/test paths"
+    }
+  ],
+  "eventId": "e8279f93-26d0-4a88-9674-f78b3bfd0ea7",
+  "sequence": 4,
+  "at": "2026-10-09T23:45:59.887Z"
+}

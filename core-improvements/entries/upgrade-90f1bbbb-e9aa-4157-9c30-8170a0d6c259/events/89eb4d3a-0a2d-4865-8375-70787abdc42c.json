@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Three actual receiving source P2 fixes. Native37PASS3.14s and backend39PASS3.68s include unchanged34/36 suites and new3/3 regressions. Original failures retained. Combined eight-file run was interrupted after one concurrent-worker stalled; partial logf580367 preserved, separate native/backend final runs PASS. Real normal PG blocked-withdrawal, ordinary UI typography, tasks/mail/Case/director/full local platform remain OPEN; no model/provider/channel calls or live activation.",
+  "checks": [
+    {
+      "command": "node --test four native nonWorkers files",
+      "result": "PASS",
+      "evidence": "37PASS; logSHA2568fc94c8e3806176fe66874a57f2a074f06abd52f251f726014b827e7a5624227"
+    },
+    {
+      "command": "node --test backend.test.mjs booking-consumer.test.mjs reschedule-contract.test.mjs fixture-runtime.test.mjs",
+      "result": "PASS",
+      "evidence": "39PASS; logSHA2560e3e977c62dfbf8524a26e957d9346e69b2639ee1ad357ec948965d07a968072"
+    },
+    {
+      "command": "node --check acceptance_tests/normal_blocked_withdrawal_http.mjs; git diff --check",
+      "result": "PASS",
+      "evidence": "Syntax/diff only. Phased normal loopback driver prepared; actual PG acceptance follows clean frozen source."
+    }
+  ],
+  "eventId": "89eb4d3a-0a2d-4865-8375-70787abdc42c",
+  "sequence": 3,
+  "at": "2026-10-11T23:39:39.263Z"
+}

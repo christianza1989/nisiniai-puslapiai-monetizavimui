@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implement durable canonical synthetic correspondence after PR102. Initial restricted-PG/normal API1FAIL404 reproduced named ORM identity ordering gap (logSHAf32b6a929a2edb9c6ff9efa7c4ecc39c89e68f94af9624db7e8eaf0357e33f78), fixed with named full scope keys. Independent review2P2 reproduced2FAIL: repeated fresh-CAS privacy handoff unique CaseSource and concurrent canonical campaign creation (7f8efe5f7a7d1528e2deae03eefe6212ea05b31c007f555f2a3a516b3dbbedef). Fixed single accepted decision per inbound and canonical campaign lock before module barriers; current read-only correction review no additionalP0-P2 and no QA run by reviewer. Source development19PASS/1warning retainedec1609e8; extra FK fixture type1FAIL4e387644 and created_at1FAIL1b7996f1 retained. Final26restrictedPG/normalAPI PASS54.64s8bef7304169fd7d6f9a494cf1d101c7ef0db311dc45dd895902ab3c94f686ab9.11offline31subtests PASS7.46s; sourceFakeLab no real model/provider/channel/UI claims. Freeze for actual normal process/PG restart + full-chain/rollback/restore/bootstrap repair QA. Operational0023/API8860/studio18861/source25d unchanged/held; full platform and generic daily/ordinaryUI/director remain OPEN.",
+  "eventId": "0362313f-8bea-4477-9aa2-2071969cd73e",
+  "sequence": 2,
+  "at": "2026-10-12T00:30:28.899Z"
+}

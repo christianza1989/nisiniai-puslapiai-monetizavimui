@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Additive safe numeric endpoint/newDTO implemented in reserved scope. New offline fixture original2FAIL26PASS2.85s used nonexistent Attribution.reason instead of canonical explanation, original fixtureSHA521db299678af66e941b0015d9b8fc8649b6f2db7f785790a5114b7ec162e40c archived; corrected only fixture33PASS2.50s, production unchanged. Original route inventory1FAIL23PASS4.33s retained90628cb3adcb2183d77dbe8577e46842db57e82d86224bd75ece2bfd04a19a8e/logdcfafd57eca1b8a2253db0c7de6c4bd4d84b9249062415d9c7981be63b6cb4c0; GitHub scope extended before updating exact5/7 to6/8 inventory in offline_tests/test_customer_agents.py. Frozen382 QA currently236offlinePASS/d361233a, PG pending, no runtime edits until terminal. Old5paths/24components exact wire compatibility3d781234; new wire15a37015. Source tests do not accept actual numeric HTTP/UI/targetPC/public; no providers/channels/opDB writes.",
+  "eventId": "0af3d7f1-76a7-4ed3-9739-f34290c0376f",
+  "sequence": 2,
+  "at": "2026-10-11T20:22:58.093Z"
+}

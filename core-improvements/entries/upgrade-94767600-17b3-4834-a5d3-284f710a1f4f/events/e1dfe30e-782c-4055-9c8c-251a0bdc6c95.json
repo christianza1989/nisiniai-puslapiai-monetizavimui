@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Typed report version repair only. Original actual failure remains; source verification is not actual recalibration, protected learning, activation, ordinary UI or full platform completion.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_customer_typed_checks.py -q",
+      "result": "PASS",
+      "evidence": "26PASS5.55s/log34603737; frozen receipt52b482c0"
+    },
+    {
+      "command": "pytest tests/test_customer_typed_checks.py::test_actual_v2_checkpoints_private_report_and_exact_replay -q (restricted QA PostgreSQL)",
+      "result": "PASS",
+      "evidence": "1PASS20.38s/log3580fbab; source385/everyoperationaltableunchanged; providerchannel0"
+    }
+  ],
+  "eventId": "e1dfe30e-782c-4055-9c8c-251a0bdc6c95",
+  "sequence": 6,
+  "at": "2026-10-11T21:56:00.531Z"
+}

@@ -38,6 +38,11 @@ class Attribution(Strict):
 async def attribute(lab, result, data):
     if result.get('root_cause') != 'knowledge' or not result.get('issues'):
         return result
+    payload = {'quality': result, 'knowledge': data['knowledge'], 'evidence': data['evidence'],
+        'need': data['need'], 'contact_states': contact_states(data),
+        'actual_core_followup': data.get('actual_core_followup')}
+    if 'customer_quality' in data:
+        payload['need_receipts'] = [event for event in data['timeline'] if event['kind'] == 'need_patch']
     assessment = await lab.ask(bound_schema(Attribution, data),
         'Independently classify the cause of the already reported defect. Do not change its score, '
         'outcome or issues. Knowledge means approved sources are missing, incorrect or insufficient '
@@ -45,9 +50,7 @@ async def attribute(lab, result, data):
         'number or claim despite adequate approved information; that calls for a behavior change, '
         'not publication of a new business fact. Tool failures belong to tool/transport. Use only '
         'supplied transcript evidence IDs. If knowledge is genuinely missing, keep knowledge and no scope.',
-        {'quality': result, 'knowledge': data['knowledge'], 'evidence': data['evidence'],
-            'need': data['need'], 'contact_states': contact_states(data),
-            'actual_core_followup': data.get('actual_core_followup')})
+        payload)
     return {**result, 'model_assessment': result, 'root_cause': assessment.root_cause,
         'suggested_scope': assessment.suggested_scope,
         'root_cause_attribution': assessment.model_dump()}

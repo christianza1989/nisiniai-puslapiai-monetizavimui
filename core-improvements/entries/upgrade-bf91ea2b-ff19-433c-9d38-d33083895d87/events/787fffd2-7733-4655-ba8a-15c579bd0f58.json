@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Scoped source accounting boundary only; no provider, live Task dispatch route, real High-profile execution, calibration/admission/activation or serving adoption. Preserve prior fixing event and original failures. Corrected canonical native receipts9PASS89.95s plus concrete TaskFence/first-input/post-lock-clock2PASS17.50s in own restricted0040 QA. The clock regression holds an unchanged Task row past its lease and then refuses. Known text+Quality usage is summed, unknown incomplete, late post-cancel settlement retained; concurrent duplicate reservations roll back. Plan input bindings19PASS1.48s and combined Session/plan48PASS2.85s. Existing ordinary team/task quota38PASS251.66s verifies unchanged non-allocated accounting. Final independent follow-up and helper frozen16+111 PG cohorts are tracked separately; this event does not assert their acceptance.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_workspace_calibration_plan.py offline_tests/test_customer_agent_session.py -q",
+      "result": "PASS",
+      "evidence": "48 passed2.85s; calibration-combined-offline.log"
+    },
+    {
+      "command": "python -m pytest tests/test_workspace_calibration_budget_pg.py -q",
+      "result": "PASS",
+      "evidence": "9 passed89.95s before added concrete tests; agent-calibration-receipts-canonical.log; restricted QA schema0040, original preview preserved"
+    },
+    {
+      "command": "python -m pytest tests/test_workspace_calibration_budget_pg.py::test_concrete_task_fence_consumes_native_slot_and_rejects_changed_first_input tests/test_workspace_calibration_budget_pg.py::test_check_reads_time_after_waiting_for_unchanged_task_row -q",
+      "result": "PASS",
+      "evidence": "2 passed17.50s; agent-calibration-receipts-concrete-fence.log; actual SQL wait/slot/Event fences"
+    },
+    {
+      "command": "python -m pytest tests/test_workspace_team_pg.py tests/test_control_tasks.py -q",
+      "result": "PASS",
+      "evidence": "38 passed251.66s; agent-calibration-native-shared-quota-regression.log; unchanged daily equation for ordinary tasks"
+    },
+    {
+      "command": "ruff check six scoped Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; no whitespace defects"
+    }
+  ],
+  "eventId": "787fffd2-7733-4655-ba8a-15c579bd0f58",
+  "sequence": 3,
+  "at": "2026-10-15T03:58:29.212Z"
+}

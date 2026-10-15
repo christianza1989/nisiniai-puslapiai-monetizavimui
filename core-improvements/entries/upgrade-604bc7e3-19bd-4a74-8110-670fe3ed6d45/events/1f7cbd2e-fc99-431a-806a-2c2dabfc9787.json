@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Single immutable creator policy/hash tuple covers initial and bounded repair profiles. Registration and mail windows remain disjoint; no runtime adoption/provider/new business acceptance.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_creation_adapter.py offline_tests/test_creation_review.py offline_tests/test_creation_language_patch.py -q",
+      "result": "PASS",
+      "evidence": "132PASS8.57s; ignored artifacts/instruction-snapshot-final.private.log. Original baseline1FAIL preserved separately."
+    },
+    {
+      "command": "ruff check src/pinet_core/creation/adapter.py offline_tests/test_creation_adapter.py",
+      "result": "PASS",
+      "evidence": "All checks passed, root scoped source; no live runtime change."
+    }
+  ],
+  "eventId": "1f7cbd2e-fc99-431a-806a-2c2dabfc9787",
+  "sequence": 3,
+  "at": "2026-10-10T17:07:27.990Z"
+}

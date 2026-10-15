@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Current owner membership/grant revocation hides a running Task under forced RLS after an adapter has returned known usage; common worker returns early and leaves the attempt running/unsettled. Preserve terminal failure/cancellation and known accounting without committing unauthorized result/effects or broadening runtime grants.",
+  "category": "code",
+  "evidence": [
+    "Original development20-case PostgreSQL17PASS/3FAIL logSHA85e42143a9fb904e2f98d2a977bd8b53020292efdde52b75973cfc2395c54aba; membership/grant failures retained privately",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py:execute_once",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6117030198"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/director/schema.py",
+    "agent-business-core/runtime/src/pinet_core/director/read.py",
+    "agent-business-core/runtime/migrations/versions/0028_director_read.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/acceptance_tests/test_director_read.py",
+    "agent-business-core/runtime/offline_tests/test_director_read.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert/helper removal only through safe0028 downgrade; original revoked attempts/usage/FAIL and immutable contexts retained. No reset, automatic retry, regrant or acceptance of model results after authority loss.",
+  "id": "upgrade-e5850965-d0d6-440d-8929-5c227f56efce",
+  "branch": "codex/acquisition-director-read-20261012",
+  "baseSha": "26e09018458c92bf119a327751338af67f6f6264",
+  "createdAt": "2026-10-12T03:11:34.041Z"
+}

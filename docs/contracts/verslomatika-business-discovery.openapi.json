@@ -1,0 +1,2560 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ordinary customer business discovery",
+    "version": "business-discovery.v1",
+    "description": "Short idea/no-idea conversation and versioned flexible business/acquisition/tools report. No creation or site before explicit exact-report approval. Uses existing verified customer session/own portfolio; strict body16KiB, durable idempotency and base revision CAS. A ready plan requires two independent role reviews; source/model/tool claims are not independently verified operations. Build approval creates exactly one existing shared creation job, with the full immutable approved report in server context. This first source adapter does not itself certify full website foundation, designer, agents, calibration or public launch. Archives remove test creations from active listing, cancel pending dispatch and retain all history/accounting; own detail/history remains accessible. Held live channels and costs remain separate."
+  },
+  "paths": {
+    "/customer/v2/discoveries": {
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/DiscoveryView"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Start"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Discoveries"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "include_archived",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ]
+      }
+    },
+    "/customer/v2/discoveries/{discovery_id}": {
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/DiscoveryView"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/customer/v2/discoveries/{discovery_id}/messages": {
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/DiscoveryView"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/History"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 20
+            }
+          }
+        ]
+      }
+    },
+    "/customer/v2/discoveries/{discovery_id}/reports": {
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Reports"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 20
+            }
+          }
+        ]
+      }
+    },
+    "/customer/v2/discoveries/{discovery_id}/build": {
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/BuildResult"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Approve"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/discoveries/{discovery_id}/archive": {
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/ArchivedDiscovery"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Archive"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/discoveries/{discovery_id}/execution": {
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Execution"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "discovery_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/customer/v2/creations/{creation_id}/archive": {
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current own scoped result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "contract_version",
+                    "data"
+                  ],
+                  "properties": {
+                    "contract_version": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/ArchiveView"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Current authority, stale state, conflict or unavailable dependency",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoreError"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Archive"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Start": {
+        "additionalProperties": false,
+        "properties": {
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "message": {
+            "maxLength": 2500,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "portfolio_id",
+          "message",
+          "idempotency_key"
+        ],
+        "title": "Start",
+        "type": "object"
+      },
+      "Message": {
+        "additionalProperties": false,
+        "properties": {
+          "base_revision": {
+            "minimum": 0,
+            "title": "Base Revision",
+            "type": "integer"
+          },
+          "message": {
+            "maxLength": 2500,
+            "minLength": 1,
+            "title": "Message",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base_revision",
+          "message",
+          "idempotency_key"
+        ],
+        "title": "Message",
+        "type": "object"
+      },
+      "Approve": {
+        "additionalProperties": false,
+        "properties": {
+          "report_revision": {
+            "minimum": 1,
+            "title": "Report Revision",
+            "type": "integer"
+          },
+          "report_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Report Sha256",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "report_revision",
+          "report_sha256",
+          "idempotency_key"
+        ],
+        "title": "Approve",
+        "type": "object"
+      },
+      "Archive": {
+        "additionalProperties": false,
+        "properties": {
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "idempotency_key"
+        ],
+        "title": "Archive",
+        "type": "object"
+      },
+      "DiscoveryView": {
+        "additionalProperties": false,
+        "properties": {
+          "discovery_id": {
+            "format": "uuid",
+            "title": "Discovery Id",
+            "type": "string"
+          },
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "initial_message": {
+            "title": "Initial Message",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "needs_input",
+              "plan_ready",
+              "failed",
+              "cancelled",
+              "archived",
+              "build_started"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "current_revision": {
+            "minimum": 0,
+            "title": "Current Revision",
+            "type": "integer"
+          },
+          "active_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Job Id"
+          },
+          "linked_creation_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Linked Creation Id"
+          },
+          "latest_report_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Report Sha256"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "can_message": {
+            "title": "Can Message",
+            "type": "boolean"
+          },
+          "can_build": {
+            "title": "Can Build",
+            "type": "boolean"
+          },
+          "foundation_status": {
+            "const": "UNVERIFIED",
+            "title": "Foundation Status",
+            "type": "string"
+          },
+          "can_create_agents": {
+            "const": false,
+            "title": "Can Create Agents",
+            "type": "boolean"
+          },
+          "can_open_designer": {
+            "const": false,
+            "title": "Can Open Designer",
+            "type": "boolean"
+          },
+          "channel_activation": {
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "discovery_id",
+          "portfolio_id",
+          "title",
+          "initial_message",
+          "status",
+          "current_revision",
+          "active_job_id",
+          "linked_creation_id",
+          "latest_report_sha256",
+          "source_revision",
+          "failure_code",
+          "created_at",
+          "updated_at",
+          "can_message",
+          "can_build",
+          "foundation_status",
+          "can_create_agents",
+          "can_open_designer",
+          "channel_activation",
+          "launch_status"
+        ],
+        "title": "DiscoveryView",
+        "type": "object"
+      },
+      "Channel": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "buyer_segment": {
+            "maxLength": 500,
+            "minLength": 5,
+            "title": "Buyer Segment",
+            "type": "string"
+          },
+          "buying_signal": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Buying Signal",
+            "type": "string"
+          },
+          "source_or_discovery_method": {
+            "maxLength": 1000,
+            "minLength": 10,
+            "title": "Source Or Discovery Method",
+            "type": "string"
+          },
+          "useful_offer": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Useful Offer",
+            "type": "string"
+          },
+          "experiment": {
+            "maxLength": 1000,
+            "minLength": 10,
+            "title": "Experiment",
+            "type": "string"
+          },
+          "economics_or_unknowns": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Economics Or Unknowns",
+            "type": "string"
+          },
+          "rights_and_admission": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Rights And Admission",
+            "type": "string"
+          },
+          "stop_rule": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Stop Rule",
+            "type": "string"
+          },
+          "activation": {
+            "const": "not_performed",
+            "title": "Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "buyer_segment",
+          "buying_signal",
+          "source_or_discovery_method",
+          "useful_offer",
+          "experiment",
+          "economics_or_unknowns",
+          "rights_and_admission",
+          "stop_rule",
+          "activation"
+        ],
+        "title": "Channel",
+        "type": "object"
+      },
+      "Deliverable": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^d_[a-z0-9_-]{1,64}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 180,
+            "minLength": 3,
+            "title": "Title",
+            "type": "string"
+          },
+          "purpose": {
+            "maxLength": 1000,
+            "minLength": 10,
+            "title": "Purpose",
+            "type": "string"
+          },
+          "depends_on": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 30,
+            "title": "Depends On",
+            "type": "array"
+          },
+          "acceptance": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Acceptance",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "purpose",
+          "depends_on",
+          "acceptance"
+        ],
+        "title": "Deliverable",
+        "type": "object"
+      },
+      "Plan": {
+        "additionalProperties": false,
+        "properties": {
+          "business_name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Business Name",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 2500,
+            "minLength": 30,
+            "title": "Summary",
+            "type": "string"
+          },
+          "canonical_host_candidate": {
+            "anyOf": [
+              {
+                "maxLength": 253,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host Candidate"
+          },
+          "domain_authority": {
+            "const": "UNVERIFIED",
+            "title": "Domain Authority",
+            "type": "string"
+          },
+          "sections": {
+            "items": {
+              "$ref": "#/components/schemas/Section"
+            },
+            "maxItems": 10,
+            "minItems": 10,
+            "title": "Sections",
+            "type": "array"
+          },
+          "acquisition_channels": {
+            "items": {
+              "$ref": "#/components/schemas/Channel"
+            },
+            "maxItems": 20,
+            "minItems": 1,
+            "title": "Acquisition Channels",
+            "type": "array"
+          },
+          "tools": {
+            "items": {
+              "$ref": "#/components/schemas/Tool"
+            },
+            "maxItems": 30,
+            "minItems": 1,
+            "title": "Tools",
+            "type": "array"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceEvidence"
+            },
+            "maxItems": 60,
+            "title": "Sources",
+            "type": "array"
+          },
+          "deliverables": {
+            "items": {
+              "$ref": "#/components/schemas/Deliverable"
+            },
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Deliverables",
+            "type": "array"
+          },
+          "alternatives": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Alternatives",
+            "type": "array"
+          },
+          "publication_blockers": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 30,
+            "minItems": 1,
+            "title": "Publication Blockers",
+            "type": "array"
+          }
+        },
+        "required": [
+          "business_name",
+          "summary",
+          "canonical_host_candidate",
+          "domain_authority",
+          "sections",
+          "acquisition_channels",
+          "tools",
+          "sources",
+          "deliverables",
+          "alternatives",
+          "publication_blockers"
+        ],
+        "title": "Plan",
+        "type": "object"
+      },
+      "PlanReview": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Candidate Sha256",
+            "type": "string"
+          },
+          "approved": {
+            "title": "Approved",
+            "type": "boolean"
+          },
+          "summary": {
+            "maxLength": 1200,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          },
+          "required_changes": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Required Changes",
+            "type": "array"
+          },
+          "suggestions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Suggestions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "candidate_sha256",
+          "approved",
+          "summary",
+          "required_changes",
+          "suggestions"
+        ],
+        "title": "PlanReview",
+        "type": "object"
+      },
+      "Question": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^q_[a-z0-9_-]{1,50}$",
+            "title": "Id",
+            "type": "string"
+          },
+          "question": {
+            "maxLength": 500,
+            "minLength": 5,
+            "title": "Question",
+            "type": "string"
+          },
+          "reason": {
+            "maxLength": 500,
+            "minLength": 10,
+            "title": "Reason",
+            "type": "string"
+          },
+          "required_for_build": {
+            "title": "Required For Build",
+            "type": "boolean"
+          },
+          "suggestions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 5,
+            "title": "Suggestions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "question",
+          "reason",
+          "required_for_build",
+          "suggestions"
+        ],
+        "title": "Question",
+        "type": "object"
+      },
+      "Reply": {
+        "additionalProperties": false,
+        "properties": {
+          "assistant_message": {
+            "maxLength": 4000,
+            "minLength": 10,
+            "title": "Assistant Message",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "needs_input",
+              "plan_ready"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "questions": {
+            "items": {
+              "$ref": "#/components/schemas/Question"
+            },
+            "maxItems": 5,
+            "title": "Questions",
+            "type": "array"
+          },
+          "plan": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Plan"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "assistant_message",
+          "state",
+          "questions",
+          "plan"
+        ],
+        "title": "Reply",
+        "type": "object"
+      },
+      "Section": {
+        "additionalProperties": false,
+        "properties": {
+          "area": {
+            "enum": [
+              "business",
+              "customers",
+              "acquisition",
+              "fulfilment",
+              "economics",
+              "website",
+              "content_seo_geo",
+              "brand",
+              "agents",
+              "risks"
+            ],
+            "title": "Area",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 120,
+            "minLength": 3,
+            "title": "Title",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 1800,
+            "minLength": 20,
+            "title": "Summary",
+            "type": "string"
+          },
+          "decisions": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "minItems": 1,
+            "title": "Decisions",
+            "type": "array"
+          },
+          "unknowns": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 12,
+            "title": "Unknowns",
+            "type": "array"
+          }
+        },
+        "required": [
+          "area",
+          "title",
+          "summary",
+          "decisions",
+          "unknowns"
+        ],
+        "title": "Section",
+        "type": "object"
+      },
+      "SourceEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "maxLength": 1024,
+            "pattern": "^[hH][tT][tT][pP][sS]://[^\\s?#\\\\]+$",
+            "title": "Url",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "finding": {
+            "maxLength": 1200,
+            "minLength": 10,
+            "title": "Finding",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "candidate",
+              "client_provided",
+              "model_read_claim",
+              "conflict"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "independent_verification": {
+            "const": "UNVERIFIED",
+            "title": "Independent Verification",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "title",
+          "finding",
+          "status",
+          "independent_verification"
+        ],
+        "title": "SourceEvidence",
+        "type": "object"
+      },
+      "Tool": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "purpose": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Purpose",
+            "type": "string"
+          },
+          "capability_key": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Capability Key",
+            "type": "string"
+          },
+          "access": {
+            "enum": [
+              "available",
+              "unavailable",
+              "planned"
+            ],
+            "title": "Access",
+            "type": "string"
+          },
+          "coverage": {
+            "maxLength": 1000,
+            "minLength": 10,
+            "title": "Coverage",
+            "type": "string"
+          },
+          "cost_or_unknowns": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Cost Or Unknowns",
+            "type": "string"
+          },
+          "alternative": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Alternative",
+            "type": "string"
+          },
+          "admission": {
+            "maxLength": 700,
+            "minLength": 10,
+            "title": "Admission",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "purpose",
+          "capability_key",
+          "access",
+          "coverage",
+          "cost_or_unknowns",
+          "alternative",
+          "admission"
+        ],
+        "title": "Tool",
+        "type": "object"
+      },
+      "ReportView": {
+        "additionalProperties": false,
+        "properties": {
+          "discovery_id": {
+            "format": "uuid",
+            "title": "Discovery Id",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "report_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Report Sha256",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "reply": {
+            "$ref": "#/components/schemas/Reply"
+          },
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/PlanReview"
+            },
+            "maxItems": 2,
+            "title": "Reviews",
+            "type": "array"
+          }
+        },
+        "required": [
+          "discovery_id",
+          "revision",
+          "report_sha256",
+          "source_revision",
+          "created_at",
+          "reply",
+          "reviews"
+        ],
+        "title": "ReportView",
+        "type": "object"
+      },
+      "ArchiveView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "archived_at": {
+            "format": "date-time",
+            "title": "Archived At",
+            "type": "string"
+          },
+          "history_preserved": {
+            "const": true,
+            "title": "History Preserved",
+            "type": "boolean"
+          },
+          "provider_calls": {
+            "const": 0,
+            "title": "Provider Calls",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "creation_id",
+          "archived_at",
+          "history_preserved",
+          "provider_calls"
+        ],
+        "title": "ArchiveView",
+        "type": "object"
+      },
+      "Discoveries": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DiscoveryView"
+            },
+            "maxItems": 100,
+            "title": "Items",
+            "type": "array"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "Discoveries",
+        "type": "object"
+      },
+      "Reports": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/ReportView"
+            },
+            "maxItems": 50,
+            "title": "Items",
+            "type": "array"
+          },
+          "offset": {
+            "title": "Offset",
+            "type": "integer"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "items",
+          "offset",
+          "limit",
+          "has_more"
+        ],
+        "title": "Reports",
+        "type": "object"
+      },
+      "BuildResult": {
+        "additionalProperties": false,
+        "properties": {
+          "discovery": {
+            "$ref": "#/components/schemas/DiscoveryView"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "report_revision": {
+            "minimum": 1,
+            "title": "Report Revision",
+            "type": "integer"
+          },
+          "report_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Report Sha256",
+            "type": "string"
+          },
+          "approval_id": {
+            "format": "uuid",
+            "title": "Approval Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "discovery",
+          "creation_id",
+          "report_revision",
+          "report_sha256",
+          "approval_id"
+        ],
+        "title": "BuildResult",
+        "type": "object"
+      },
+      "ArchivedDiscovery": {
+        "additionalProperties": false,
+        "properties": {
+          "discovery": {
+            "$ref": "#/components/schemas/DiscoveryView"
+          },
+          "history_preserved": {
+            "const": true,
+            "title": "History Preserved",
+            "type": "boolean"
+          },
+          "provider_calls": {
+            "const": 0,
+            "title": "Provider Calls",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "discovery",
+          "history_preserved",
+          "provider_calls"
+        ],
+        "title": "ArchivedDiscovery",
+        "type": "object"
+      },
+      "MessageItem": {
+        "additionalProperties": false,
+        "properties": {
+          "message_id": {
+            "format": "uuid",
+            "title": "Message Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "content": {
+            "title": "Content",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "message_id",
+          "role",
+          "content",
+          "revision",
+          "status",
+          "created_at"
+        ],
+        "title": "MessageItem",
+        "type": "object"
+      },
+      "History": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/MessageItem"
+            },
+            "maxItems": 100,
+            "title": "Items",
+            "type": "array"
+          },
+          "offset": {
+            "minimum": 0,
+            "title": "Offset",
+            "type": "integer"
+          },
+          "limit": {
+            "maximum": 50,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "items",
+          "offset",
+          "limit",
+          "has_more"
+        ],
+        "title": "History",
+        "type": "object"
+      },
+      "AttemptView": {
+        "additionalProperties": false,
+        "properties": {
+          "attempt_id": {
+            "format": "uuid",
+            "title": "Attempt Id",
+            "type": "string"
+          },
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 6,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "role": {
+            "enum": [
+              "creator",
+              "critic",
+              "coordinator"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "reserved",
+              "succeeded",
+              "failed",
+              "interrupted"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "round_number": {
+            "maximum": 2,
+            "minimum": 1,
+            "title": "Round Number",
+            "type": "integer"
+          },
+          "model": {
+            "enum": [
+              "gpt-6-luna",
+              "gpt-6.1-sol"
+            ],
+            "title": "Model",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "instruction_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Instruction Hash",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "attempt_id",
+          "job_id",
+          "sequence",
+          "role",
+          "state",
+          "round_number",
+          "model",
+          "source_revision",
+          "instruction_hash",
+          "created_at"
+        ],
+        "title": "AttemptView",
+        "type": "object"
+      },
+      "JobView": {
+        "additionalProperties": false,
+        "properties": {
+          "job_id": {
+            "format": "uuid",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "sequence": {
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "base_revision": {
+            "minimum": 0,
+            "title": "Base Revision",
+            "type": "integer"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "instruction_hash": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Instruction Hash"
+          },
+          "finished_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finished At"
+          }
+        },
+        "required": [
+          "job_id",
+          "sequence",
+          "status",
+          "base_revision",
+          "failure_code",
+          "source_revision",
+          "instruction_hash",
+          "finished_at"
+        ],
+        "title": "JobView",
+        "type": "object"
+      },
+      "SourceRead": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "title": "Url",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "observed",
+              "unavailable"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "http_status": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Http Status"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "body_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body Sha256"
+          },
+          "text_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text Sha256"
+          },
+          "response_bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Response Bytes"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "required": [
+          "url",
+          "status",
+          "http_status",
+          "observed_at",
+          "title",
+          "body_sha256",
+          "text_sha256",
+          "response_bytes",
+          "error"
+        ],
+        "title": "SourceRead",
+        "type": "object"
+      },
+      "Execution": {
+        "additionalProperties": false,
+        "properties": {
+          "jobs": {
+            "items": {
+              "$ref": "#/components/schemas/JobView"
+            },
+            "maxItems": 20,
+            "title": "Jobs",
+            "type": "array"
+          },
+          "attempts": {
+            "items": {
+              "$ref": "#/components/schemas/AttemptView"
+            },
+            "maxItems": 120,
+            "title": "Attempts",
+            "type": "array"
+          },
+          "source_reads": {
+            "items": {
+              "$ref": "#/components/schemas/SourceRead"
+            },
+            "maxItems": 2000,
+            "title": "Source Reads",
+            "type": "array"
+          },
+          "cost_status": {
+            "const": "UNVERIFIED",
+            "title": "Cost Status",
+            "type": "string"
+          },
+          "channel_activation": {
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "jobs",
+          "attempts",
+          "source_reads",
+          "cost_status",
+          "channel_activation"
+        ],
+        "title": "Execution",
+        "type": "object"
+      },
+      "CoreError": {
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "CustomerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

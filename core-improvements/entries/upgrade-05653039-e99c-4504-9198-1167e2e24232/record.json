@@ -1,0 +1,29 @@
+{
+  "siteId": "core",
+  "summary": "Agentų pasirengimo V1 projekcija nemato patvaraus kliento sukūrimo versijos susiejimo ir stebi to paties domeno kandidato runtime",
+  "category": "code",
+  "evidence": [
+    "Clean3d3ecf089814524aa70963ad348893a8dd112f36 agent_preparation/wire.py Mapping.binding not_implemented and service.py same-host BusinessGrant candidate; canonical creation_registration/service.py and RegistrationView current binding are now integrated"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/agent_preparation/service.py",
+    "agent-business-core/runtime/src/pinet_core/agent_preparation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/agent_preparation/v2_wire.py",
+    "agent-business-core/runtime/src/pinet_core/agent_preparation/v2_service.py",
+    "agent-business-core/runtime/offline_tests/test_agent_preparation_v2.py",
+    "agent-business-core/runtime/tests/test_agent_preparation_v2.py",
+    "agent-business-core/runtime/scripts/customer_agent_preparation_v2_contract.py",
+    "docs/contracts/verslomatika-customer-agent-preparation-v2.openapi.json",
+    "docs/VERSLOMATIKA_AGENT_PREPARATION.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6100338474",
+  "rollback": "Scoped additive v2 revert and portal reader rollback to unchanged v1; preserve Registration/history and v1 contract bytes. No operational migration is performed by this package.",
+  "id": "upgrade-05653039-e99c-4504-9198-1167e2e24232",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "3d3ecf089814524aa70963ad348893a8dd112f36",
+  "createdAt": "2026-10-10T17:38:44.245Z"
+}

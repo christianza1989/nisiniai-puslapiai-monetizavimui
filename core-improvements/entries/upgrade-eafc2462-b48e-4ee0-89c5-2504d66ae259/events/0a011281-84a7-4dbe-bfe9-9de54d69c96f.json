@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Source QA only. Existing quality/candidate/static lifecycle reused; current V2 source/receipt/TTL and canonical lock/final time/lease preserved; stable retained Config/Profile behavior/source parent excludes Session/episode/script IDs. Full execution Binding/default-provider denial/V2 learning admission unchanged. All original FAILs retained. Read-only final review closes reproduced P2; no actual customer quality model, protected comparison, activation, ordinary UI/target-PC/public or full platform acceptance. Provider/channel0, operationalDB untouched.",
+  "checks": [
+    {
+      "command": "pytest tests/test_customer_quality.py -q",
+      "result": "PASS",
+      "evidence": "9PASS106.15s logSHA8d95818459042b41d9f15c0cdd60cdfd4aa19d43c2f9c0d6ca3fb721ea348de8; final frozen receipt20261011T141958919794Z"
+    },
+    {
+      "command": "pytest offline_tests/test_customer_quality.py -q",
+      "result": "PASS",
+      "evidence": "26PASS3.34s logSHA24dfc4b52938e9f4f2c60162e0d6c666651653182b90b015882b809653602528; same frozen receipt"
+    },
+    {
+      "command": "pytest tests/test_local_semantics.py tests/test_quality_context.py tests/test_quality_guards.py tests/test_calibration.py tests/test_learning_controller.py -q",
+      "result": "PASS",
+      "evidence": "28PASS18.48s logSHA0f569447d1e5606332ade50ad15138c161fc076e45a47d121a991c595b641fa6; same frozen receipt"
+    },
+    {
+      "command": "pytest tests/test_core.py tests/test_budget.py tests/test_network_profiles.py tests/test_onboarding_readiness.py -q",
+      "result": "PASS",
+      "evidence": "36PASS44.82s logSHAb4155ce0effdd9a6484cea524e674990dacd791ac7a4f66169c05156fe185ceb; shared jobs/semantics/calibration/fingerprint unchanged afterward, only customer parent narrowed"
+    }
+  ],
+  "eventId": "0a011281-84a7-4dbe-bfe9-9de54d69c96f",
+  "sequence": 4,
+  "at": "2026-10-11T14:25:11.303Z"
+}

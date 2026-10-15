@@ -1,0 +1,24 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Nine mandatory supported prose fields exceed arbitrary eight-target helper ceiling, forcing full draft reroll and new language defects.",
+  "category": "code",
+  "evidence": [
+    "Actual d906734c terminal6completed roles/review_limit54charged/noaccepted. Receipt13a6e6a765c48ef094eb8f963ea4ce43010388e8cd4b370b313436c328ac7aa3.",
+    "Independent full normalized candidate/critic/coordinator hashes match events; both required unions9refs. Full reroll changes141scalar leaves and introduces9 real foreign-language fields. Stage calibration no longer produces repeated scope/name/form/guide demands."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/language_patch.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_patch.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only prose capacity and its regressions; retain original8-target behavior, raw failed evidence and54charged calls. No accepted revision/history/quota or shared native GUIDE policy/schema rewrite.",
+  "id": "upgrade-1682b639-b361-4561-9d4f-9199318fe173",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "da871786afa9d05853ca2ecd7d5ea9e7f9fb6561",
+  "createdAt": "2026-10-10T23:38:18.609Z"
+}

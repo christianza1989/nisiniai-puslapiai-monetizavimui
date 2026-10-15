@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Local ordinary customer-clone adoption, not main merge or other-PC adoption. After four queues were proven idle, only owned API18636 was stopped. Its serving branch fast-forwarded fromfb344431 to frozen749bb43587344d4c23645198328315274a3ff1f5; public companion1a26f289 unchanged. Full private backup retained,0041→0042 migrated,84preexisting table hashes/rows and original0032 preserved; two new recovery tables empty.241preexisting files across serving/stable-content artifact roots retained exact hashes. Restricted API18871 child35556 started through successful paired freshness executable gate, no admin or external channel flags. Native preparation action on real accepted case remains pending UI restart. Runtime ceiling29 plus5separate diagnostics within34; owner36/job3 unchanged.",
+  "checks": [
+    {
+      "command": "ordinary-ui-private-preview-adoption.private.py idle,prepare,check; paired git-freshness executable start",
+      "result": "PASS",
+      "evidence": "IDLE0041/84tables; full private dump; migration0042 and all84preexisting table snapshots equal; original0032 counts equal. PreflightPASS/profilelocal_sol61_high_v1/oneactor/noadmin/provider0. API18871 child35556 startup complete on loopback, frozen749bb435."
+    },
+    {
+      "command": "verify private-preview-artifacts-before.private.json after source adoption and migration",
+      "result": "PASS",
+      "evidence": "241of241 original artifact files retain exact SHA256 across both existing artifact owners; none moved/deleted or replaced. New recovery tables remain empty before actual owner HTTP preparation."
+    }
+  ],
+  "eventId": "fb04ebd9-68ae-449e-b759-b5516270dd4d",
+  "sequence": 10,
+  "at": "2026-10-15T17:27:13.297Z"
+}

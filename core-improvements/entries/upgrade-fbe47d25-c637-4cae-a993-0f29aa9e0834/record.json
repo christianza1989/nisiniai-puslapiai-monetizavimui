@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Imported native V2 planning briefs have no maintained context-bound private writer; legacy generator rejects V2 and external prepare/edit would race without atomic CAS.",
+  "category": "code",
+  "evidence": [
+    "source176d45b: content-studio/src/generator.mjs rejects V2 generation; model.mjs editPage has no expected revision/planning/site guard.",
+    "docs/VERSLOMATIKA_CONTENT_INTAKE.md records native writer integration as UNVERIFIED."
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-write.mjs",
+    "content-studio/src/model.mjs",
+    "content-studio/test/customer-content-write.test.mjs",
+    "docs/VERSLOMATIKA_CONTENT_WRITER.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of this writer bridge and optional editPage CAS hunk; immutable intake originals and existing approved snapshots remain intact.",
+  "id": "upgrade-fbe47d25-c637-4cae-a993-0f29aa9e0834",
+  "branch": "codex/verslomatika-content-writer-20261010",
+  "baseSha": "176d45b1ae166421d2d7e6dc29407e356b4df03e",
+  "createdAt": "2026-10-10T12:26:15.470Z"
+}

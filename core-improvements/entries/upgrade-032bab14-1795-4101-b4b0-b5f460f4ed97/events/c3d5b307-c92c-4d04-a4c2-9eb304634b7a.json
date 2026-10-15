@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "commit": "a84957e34c5c6c54b175221645ba8706e7a237cf",
+  "note": "Owned local runtime only, metadata source adoption schema0023/all old operational rows exact SHA85f55ee647fc5481d103b412516e8afacb6ab1aff7f624ff3560a55c224325c2. Actual configured fixed Luna + independent fixed Sol Quality, helpful/issues0, exact replay/all rows unchanged, receiptSHA6acb90bd46a61f4f83f5ed546e3f7e25e1297d2a6f116caa479f141912e00b19. Separate frozen3train/4turns/3Quality/7known calls receiptSHAc1704326f4edf2d77daa7d0c4acba29619c7a47c0d2cac0a0475d17fd751283f,3holdouts withheld/0executions. Original operator correction FAIL retained; sameepisode read-only corrected assertions/0modelrerun. Existing lifecycle/controller/corpus unchanged. Costs UNVERIFIED; calibration/module admission/activation/ordinaryUI/targetPC/public/overall platform OPEN. Adoption is of this branch, not merged source or other PCs.",
+  "eventId": "c3d5b307-c92c-4d04-a4c2-9eb304634b7a",
+  "sequence": 5,
+  "at": "2026-10-11T16:00:03.815Z"
+}

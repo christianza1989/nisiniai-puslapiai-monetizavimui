@@ -17,6 +17,8 @@ Root .gitignore išskiria `.env`, login/passwordTXT, duomenų bazes, data/output
 
 Prieš pirmą push ir commit tikrinti, kad rawcredentials/.env/DB/runtime artifacts nėra staging, nė vienas failas neviršija ribos ir saugos gate PASS. Git apsauga neatšaukia jau nutekėjusio rakto — toks raktas rotuojamas atskirai. Šio perkėlimo metu sekretai neviešinami, jų nekeliame net į private repo.
 
+Exact-staged patikra apima ir Git aptiktus pervadinimus (`R`), įskaitant nepakitusius bei pakeistus failus. Scan naudoja naujo kelio index blob baitus, ne vien darbo katalogą. Source archyvo peržiūroje tikrintų failų skaičius turi sutapti su archyvo failais; tuščias PASS nepakeičia pilnos patikros. Deklaruotas Git `eol=crlf` eksportas tikrinamas kaip tokio commit eksportas, o galutiniai ZIP baitai turi pereiti canonical safety.
+
 ## Companion core ir senas checkout
 
 Esamas `C:/Users/lenovo/Documents/dovanos-memorycasting` origin lieka savo ankstesniame host; istorija ir aktyvūs working pakeitimai neperrašomi. `scripts/export-public-core.mjs` daro read-only pasirinktų source katalogų snapshot į naują TUŠČIĄ katalogą, be .git istorijos, node_modules/output/state. Kopija tada gauna naują GitHub istoriją. Exporto report vietinis `.github-preparation/public-core-snapshot.json`.

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Final additive moduleflags source frozen18restrictedPGPASS150.33s and20offlinePASS3.40s, source unchanged/provider0/channel0/operational DB untouched. Real fullHTTP lifecycle/correction/replay/restart, no paid-call DB lock, current no-write capability, legacy worker events/claim/tools/status/end/usage denied zero mutation,12 in-flight authority loss cases with usage retained, duplicate output terminal cached failure, concurrent pending/restart/cancellation usage and exact prompt/schema bytes verified. Actual-owned synthetic Python child cancellation keeps completed token receipt. Earlier broad93legacyPGPASS223.50s on unchanged shared legacy sources before additive default-OFF fields. Typed canonical/full+portable app routes and64KiB escaped4000Unicode semantic limit pass. Retain initial legacy/events200 and escapedJSON400 repros and earlier test/lint failures; no gate weakened. Independent prior delta noP0-P2, final flags review pending at this event. Scoped Ruff/diff PASS. Clean source delivery/adoption/actual provider/ordinary UI acceptance remain separate; platformOPEN, languagepausedUNVERIFIED/Gemini deferred.",
+  "checks": [
+    {
+      "command": "isolated restricted-PG tests/test_customer_text.py -q",
+      "result": "PASS",
+      "evidence": "18PASS150.33s; final frozen receipt customer-text-qa-20261011T063430990669Z.private.json; logSHA35058229206f59491b709f847179f535a1a5c2fc7b16cb4d50a70bd0192f9a9c"
+    },
+    {
+      "command": "offline_tests/test_customer_text.py offline_tests/test_full_api_routes.py -q",
+      "result": "PASS",
+      "evidence": "20PASS3.40s; logSHA82ee57f312aa95d826b792dcd458e3459950d63e74bdeef62c6f5836789da7b5"
+    },
+    {
+      "command": "isolated restricted-PG tests/test_core.py test_policy.py test_conversation_v2_start.py test_profiles.py test_conversation_mail.py -q",
+      "result": "PASS",
+      "evidence": "93PASS223.50s before default-OFF config delta; shared legacy sources unchanged; logSHA2b92e9b0c07574a9d424ecd276ac439fb300c1c3e6a050a344544fdae3b8f910"
+    },
+    {
+      "command": "scoped Ruff and git diff --check",
+      "result": "PASS",
+      "evidence": "Final source/moduleflags Ruff exit0; diff exit0; no runtime/provider/operational mutation"
+    }
+  ],
+  "eventId": "b312569a-120d-4eb0-b500-ed98a4e1d6ad",
+  "sequence": 3,
+  "at": "2026-10-11T06:38:28.494Z"
+}

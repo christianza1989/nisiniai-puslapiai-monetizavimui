@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_customer_agent_evidence.py offline_tests/test_customer_agents.py -q",
+      "result": "PASS",
+      "evidence": "52PASS7.74s/logSHAeb3431fbbafdc05a5d1aa393ca575c41948c2a6163b4a68f8925b41a7748b489"
+    },
+    {
+      "command": "pytest tests/test_customer_agent_evidence.py -q",
+      "result": "PASS",
+      "evidence": "10restrictedPGPASS149.56s/logSHA89170d90d8017b15dee6582098b0193e9bdb1b687d1632b0f2bab2326865db44"
+    },
+    {
+      "command": "pytest tests/test_customer_agents.py -q",
+      "result": "PASS",
+      "evidence": "25canonicalAgentPGPASS209.47s/logSHAac30f80896f7a01b03938b468c52ab40bf6f112283c3a542c22535ec703a0377"
+    },
+    {
+      "command": "ruff exact seven affected Python files; generated OpenAPI comparison; git diff --check",
+      "result": "PASS",
+      "evidence": "No lint/diff defects; stored OpenAPI exactly matches maintained route/DTO document"
+    }
+  ],
+  "note": "All frozen stages terminal PASS, source/protected inputs exact, receiptSHA84953e403d8b9f5325d5727b9986eb22f629787943e9f9af23b39ea8f8cc27c0; providers/channels0/operationalDB untouched. Final independent read-only review closes both P2, no new P0-P2; review is not a test/model witness. Additive GET preserves previous wire/readiness false; no transcript/contacts/prompts/Session/model-profile output, no GET mutation/source renewal. Current calibration/admission/activation/ordinaryUI/targetPC/public/fullplatform OPEN. Clean own runtime adoption/actual historical HTTP next.",
+  "eventId": "b1f5000e-5d19-4eec-a2ae-780c276b32c9",
+  "sequence": 4,
+  "at": "2026-10-11T16:04:16.599Z"
+}

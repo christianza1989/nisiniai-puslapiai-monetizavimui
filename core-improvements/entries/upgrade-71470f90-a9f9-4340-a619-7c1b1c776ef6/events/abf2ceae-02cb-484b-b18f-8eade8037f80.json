@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original final-TTL and bad receipt-parent repro2FAIL retained SHA212f93dfd5d05f9b0d6169a417deb77bd1947f33d716d886861195122f8e23a0. First broader frozen PG run77PASS8FAIL376.44s, all eight fail on absent historical synthetic M1 fixture (log SHAba479b229dc81e2aabe5b126d1060fc60a8a2e4a3757fd8198216588b9b03873); exact ignored local fixture restored SHA6edfb1d75896b829829b1edafae830e103a423be8ef3bf6b310e854db3a5d342 without original modification or Git inclusion. Additional actual edge repro2FAIL23.71s SHAb588ed5cb1d71723ae0d5378a2e9d8ca3f3662c51c0a4d8cfbae4ee0f94fbf82 proves partial revocation and partial postcommit write. V2-only held source observation now permits remaining active exact admitted pages with TTL reinspection, full revoke still blocked; immutable prepared receipt and separate pre-reserved status record preserve exact result on partial status corruption. Original failures kept; scoped Ruff/nodecheck/diffPASS, final frozen full PG and separate offline pending. Operational API held, existing customer rows/history/providers/channels not mutated by source tests; overall platform OPEN, language paused/UNVERIFIED.",
+  "eventId": "abf2ceae-02cb-484b-b18f-8eade8037f80",
+  "sequence": 3,
+  "at": "2026-10-11T05:38:14.392Z"
+}

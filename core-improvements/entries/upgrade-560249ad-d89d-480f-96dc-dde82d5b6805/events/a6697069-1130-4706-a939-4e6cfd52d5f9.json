@@ -1,0 +1,7 @@
+{
+  "note": "Preserve original failures: first payload-tightening run 1 FAIL/23 PASS (test helper discarded empty mentions payload), first lint 20 findings, CLI explicit app alias gpt-6.1-sol and CLI default rejected. Repairs include fixture correction, sorted imports, module-specific explicit CLI setting. Actual gpt-5.5 draft+review subsequently PASS with no Treg/outbound operation.",
+  "status": "fixing",
+  "eventId": "a6697069-1130-4706-a939-4e6cfd52d5f9",
+  "sequence": 2,
+  "at": "2026-10-11T06:16:57.258Z"
+}

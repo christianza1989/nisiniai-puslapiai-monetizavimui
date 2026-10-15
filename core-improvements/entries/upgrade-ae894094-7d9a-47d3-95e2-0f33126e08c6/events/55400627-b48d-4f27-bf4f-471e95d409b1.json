@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "I2 canonicalchat.v1 checkpoint74350c3. Actual separate DB pg_dump restore/additive0011 upgrade. First22tests run had11offlinePASS/11fixtureERROR because bootstrap receipt business_ids is a list; fixture corrected, rerun22PASS/50.65s. Ruff import/unused issues fixed. CLI139 requestedgpt6luna rejected; pinned side-by-side156.1 actualprobePASS3.91s/0tools/input13509/output23; intermediate wronghoistedbinarypath mislabeled oldCLI receipt preservedinvalid, verified --version before decisive probe. RootI1supplement handled separately; no source/provider fallback.",
+  "eventId": "55400627-b48d-4f27-bf4f-471e95d409b1",
+  "sequence": 2,
+  "at": "2026-10-10T00:56:12.671Z"
+}

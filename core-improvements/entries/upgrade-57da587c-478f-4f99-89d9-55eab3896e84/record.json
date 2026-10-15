@@ -1,0 +1,32 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Customer Quality lacks a durable pre-turn protected case boundary; a held-out communication issue would enter candidate/static tuning",
+  "category": "code",
+  "evidence": [
+    "jobs.complete_in_transaction unconditionally creates calibration_issue/candidate/static or content_review from customer Quality issues",
+    "The retained six-case frozen manifest on a849 executed three train cases; three holdouts were deliberately withheld with zero executions to prevent contamination"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/protection.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/lab.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/quality.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/calibration.py",
+    "agent-business-core/runtime/scripts/network_lab.py",
+    "agent-business-core/runtime/tests/test_customer_agent_protection.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agent_protection.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/AGENT-CALIBRATION-2026-10-11.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6111071103",
+  "rollback": "Scoped revert of the private protection adapter and tuning gates; retain original Conversation, Quality, usage and protection events without history reset",
+  "id": "upgrade-57da587c-478f-4f99-89d9-55eab3896e84",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "43f60ce01ad6d72b145b3235ca58223388bb5bb2",
+  "createdAt": "2026-10-11T16:25:46.924Z"
+}

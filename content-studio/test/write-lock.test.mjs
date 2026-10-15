@@ -43,3 +43,36 @@ test('release refuses changed ownership and preserves the replacement lock',asyn
     assert.equal(await readFile(filename,'utf8'),bytes);
   }finally{await rm(data,{recursive:true,force:true});}
 });
+test('transient Windows exclusive-open errors recover, permanent permission errors retain their identity',async()=>{
+  const data=await mkdtemp(path.join(tmpdir(),'studio-open-lock-'));
+  const lockUrl=new URL('../src/write-lock.mjs',import.meta.url).href;
+  try{
+    const script=`import fs from 'node:fs/promises';
+import {syncBuiltinESMExports} from 'node:module';
+import assert from 'node:assert/strict';
+const data=${JSON.stringify(data)},original=fs.open;
+let calls=0,taskCalls=0,mode='once',fault='EPERM';
+fs.open=async(...args)=>{calls++;if(mode==='always'||calls===1)throw Object.assign(new Error('synthetic Windows sharing denial'),{code:fault});return original(...args);};
+syncBuiltinESMExports();
+const {withStudioWriteLock}=await import(${JSON.stringify(lockUrl)});
+for(const code of ['EPERM','EACCES','EBUSY']){
+  fault=code;calls=0;taskCalls=0;mode='once';
+  const task=async()=>{taskCalls++;assert.equal(taskCalls,1);return 'executed';};
+  if(process.platform==='win32'){
+    assert.equal(await withStudioWriteLock(data,task,150),'executed');
+    assert.equal(calls,2);assert.equal(taskCalls,1);
+  }else{await assert.rejects(withStudioWriteLock(data,task,150),e=>e.code===code);assert.equal(calls,1);assert.equal(taskCalls,0);}
+}
+mode='always';fault='EPERM';calls=0;taskCalls=0;
+const start=Date.now();await assert.rejects(withStudioWriteLock(data,async()=>{taskCalls++;},80),e=>e.code==='EPERM');
+assert.equal(taskCalls,0);assert.ok(Date.now()-start<1500);
+await assert.rejects(fs.stat(data+'/.model-write.lock'),e=>e.code==='ENOENT');
+console.log(JSON.stringify({recovered:process.platform==='win32',permanentErrorPreserved:true,taskCalls}));`;
+    const result=await new Promise((resolve,reject)=>{
+      const child=spawn(process.execPath,['--input-type=module','-e',script],{stdio:['ignore','pipe','pipe'],windowsHide:true});
+      let output='',error='';child.stdout.on('data',c=>output+=c);child.stderr.on('data',c=>error+=c);
+      child.on('error',reject);child.on('exit',code=>code===0?resolve(JSON.parse(output)):reject(Error(error)));
+    });
+    assert.equal(result.recovered,process.platform==='win32');assert.equal(result.permanentErrorPreserved,true);assert.equal(result.taskCalls,0);
+  }finally{await rm(data,{recursive:true,force:true});}
+});

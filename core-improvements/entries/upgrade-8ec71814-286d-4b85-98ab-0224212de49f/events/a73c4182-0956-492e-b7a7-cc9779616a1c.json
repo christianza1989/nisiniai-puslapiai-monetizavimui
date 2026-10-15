@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial5FAIL1PASS7.10s retained. Existing default history/creatorSol refusal passed. Collection same-basename ERROR0.55s, firstRuff2errors and fixture/import assertions retained. Actual4PASS4FAIL34.02s exposed hardcoded failure receipt and invalid fixtures;5PASS3FAIL31.95s exposed canonical parent-only503 orphan, fixed pre-parent selected/schema validation. Additional9PASS1FAIL41.10s correctly preserved shared valid lease; fixture changed only.55offlinePASS9.29s and19PGPASS104.58s passed. Root SQL review actual1PASS3FAIL16.89s (tests-106348a0) showed source filter hiding retained binding/legacy fallback and missing Session match; current fix selects binding independently and validates source/Session explicitly, no fallback. Same reserved source scope, ownQA only/first logs immutable/provider0/original0032/counts/role unchanged. Final new regression pending, no source release/activation.",
+  "eventId": "a73c4182-0956-492e-b7a7-cc9779616a1c",
+  "sequence": 2,
+  "at": "2026-10-14T18:02:17.328Z"
+}

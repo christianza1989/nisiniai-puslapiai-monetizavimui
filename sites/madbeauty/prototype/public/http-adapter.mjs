@@ -16,7 +16,7 @@ export function createHttpAdapter(){
   adapter.demoIdentities=async()=>({organizations:session?.organizations||[],clients:session?.user?[{id:session.user.id,name:session.user.name||session.user.email}]:[]});
   adapter.catalog=input=>rpc('catalog',input);
   adapter.profile=id=>rpc('profile',{id});
-  adapter.option=(id,addons=[])=>rpc('option',{id,addons});
+  adapter.option=(id,addons=[],practitionerId)=>rpc('option',{id,addons,practitionerId});
   adapter.workspace=scope=>rpc('workspace',scope);
   adapter.availability=input=>rpc('availability',input);
   adapter.hold=candidate=>rpc('hold',candidate);

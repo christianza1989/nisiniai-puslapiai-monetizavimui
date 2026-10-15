@@ -1,0 +1,34 @@
+{
+  "siteId": "core",
+  "summary": "Acquisition preparation returns hold/stop/privacy-handoff flags without durable canonical mail or per-recipient policy; connect exact synthetic correspondence and actual operator Case acceptance.",
+  "category": "code",
+  "evidence": [
+    "docs/ACQUISITION_CORE_ADOPTION_HANDOFF_2026-10-11.md",
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/migrations/versions/0026_acquisition_work.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/models.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_models.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/correspondence.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_interfaces.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_config.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_routes.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_correspondence.py",
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_correspondence.py",
+    "agent-business-core/contracts/acquisition-work-v1/README.md",
+    "agent-business-core/contracts/acquisition-work-v1/wire.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert plus empty-only0026 downgrade; populated canonical mail/policy/receipts retained. New feature default OFF; no live channels.",
+  "id": "upgrade-0ade1f98-7340-4cae-b8fc-a81dfc922f1d",
+  "branch": "codex/acquisition-correspondence-20261012",
+  "baseSha": "0986496e10bb00c3da3df91e4ebef7820b83f755",
+  "createdAt": "2026-10-12T00:03:35.534Z"
+}

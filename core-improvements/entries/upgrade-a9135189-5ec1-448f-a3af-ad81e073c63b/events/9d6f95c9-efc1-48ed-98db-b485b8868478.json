@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Current acceptance metadata0df9c599942c4ffb050b0096acb761cf1768160e delivered in existing stacked draftPR104; preserves functional166 and separate frozen servedAPI253/portalce3. Scoped journal/safety/pairedhandoff PASS. Whole platform and ordinary browser/director/authenticated daily producer/target-public gates remain OPEN; no main or operational source adoption.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/104",
+  "commit": "0df9c599942c4ffb050b0096acb761cf1768160e",
+  "eventId": "9d6f95c9-efc1-48ed-98db-b485b8868478",
+  "sequence": 4,
+  "at": "2026-10-12T02:27:39.270Z"
+}

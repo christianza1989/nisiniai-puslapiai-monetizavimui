@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "note": "Second frozena3ee native cohort3PASS1FAIL50.43s retained in editorial-copy-native-corrected.log. Actual canonical write, receipt parsing, exact replay and changed-request refusal completed successfully; positive selector then failed in test-only stale-request construction because model_dump included unset optional patch fields as explicit null, which strict patch correctly rejects. Change only test serialization to exclude_unset=True; no runtime/Node/validator/assertion change. Foreign/revoked owner, historical source/S6 refusal and actual post-write revocation/retained receipt all PASS. Re-freeze and rerun only the affected positive selector; do not add repeats as unique cases. No accepted-case/provider/serving writes.",
+  "checks": [],
+  "eventId": "0735f0c8-439f-4157-b43c-060e4365449d",
+  "sequence": 5,
+  "at": "2026-10-15T07:51:10.266Z"
+}

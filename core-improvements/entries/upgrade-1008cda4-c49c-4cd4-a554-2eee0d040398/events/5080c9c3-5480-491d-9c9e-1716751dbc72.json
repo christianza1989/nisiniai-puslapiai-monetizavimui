@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Source-only safe numeric receipt reader; old exact wire/default path retained. Original fixture/inventory/malformed-root FAILs preserved; final independent read-only review no remaining concreteP0–P2. No provider/channel/opDB write or admission; actual/UI/targetPC/public pending. Full platform OPEN.",
+  "checks": [
+    {
+      "command": "paired freshness -> run_score_evidence_final_qa.private.py",
+      "result": "PASS",
+      "evidence": "frozen382/265offline+11newPG receiptSHAe324c07fcbc7cecf0efb2baf246a4d868160d41eecd5864384abdb6e5246fc14"
+    },
+    {
+      "command": "run_score_evidence_qa.private.py",
+      "result": "PASS",
+      "evidence": "prior236offline+43PG61eef973;35existingPG exact unchanged sources/defaultFalse retained"
+    },
+    {
+      "command": "canonical wire exact old paths/schemas/security equality",
+      "result": "PASS",
+      "evidence": "3d781234868fbcf1824b6df92b76aebde9af3be1a9441904b4da00e81546a7dc/new15a37015"
+    },
+    {
+      "command": "scoped Ruff and final read-only reviewer",
+      "result": "PASS",
+      "evidence": "source-only final delta noP0–P2; no tests/DB/provider/Git by reviewer"
+    }
+  ],
+  "eventId": "5080c9c3-5480-491d-9c9e-1716751dbc72",
+  "sequence": 4,
+  "at": "2026-10-11T20:33:36.759Z"
+}

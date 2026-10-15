@@ -1,0 +1,450 @@
+{
+  "version": 1,
+  "recorded_at": "2026-10-10T06:33:39.543348+00:00",
+  "source_baseline": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+  "scope": "private actual20 copy review and closed synthetic prepare/reply calibration; no live sending",
+  "copy": {
+    "status": "PASS",
+    "final_count": 20,
+    "cli_calls": 24,
+    "exact_content_hash_matches": 20,
+    "original_package_and_expiry_unchanged": true,
+    "campaign_ready": 0,
+    "external_sent": false,
+    "final_packet_sha256": "75e228fc999b880f12440d13070f0edf2b7fe41111652bf2021759e945fdab5b",
+    "final_markdown_sha256": "4ff4a2d7951ec94616d378a895b2ebe9f15fffa5f632dc409299a42d06a77e61"
+  },
+  "original_packages": [
+    {
+      "path": "tmp\\madbeauty-lt-draft-discovery-20261010\\source-backed-candidates-and-manual-drafts.json",
+      "sha256": "00785ef150a55a3e4db2da4902f2ffea1e47e1b2192fa9ce501aae5b684d8367",
+      "original_expires_at": "2026-10-11T05:03:44.774098Z"
+    },
+    {
+      "path": "tmp\\madbeauty-lt-draft-discovery-gap-20261010\\additional-source-candidates-and-manual-drafts.json",
+      "sha256": "d1447cd5658e53e48a8b16d1563adb4feec20301638b0b8a5e005cb0237e7186",
+      "original_expires_at": "2026-10-11T05:17:54.111146Z"
+    }
+  ],
+  "individual_copy_reviews": 20,
+  "operator_copy_reviews": 20,
+  "copy_cli_calls": 24,
+  "first_copy_reviews": {
+    "old_note_leaks": {
+      "checked": 2,
+      "failed": 2
+    },
+    "revised_v1": {
+      "checked": 20,
+      "passed": 19
+    },
+    "revised_v2_corrections": {
+      "checked": 2,
+      "passed": 2
+    }
+  },
+  "selection_counts": {
+    "initial_fit": 11,
+    "conditional_specialist": 7,
+    "research_hold": 2
+  },
+  "model_dialogue_runs": [
+    {
+      "run_id": "copy-source-reply-20261010-a",
+      "report_sha256": "b88a7d56ace236bfbb976dde402c61a3867b34a5405718aed92bc75f9088c656",
+      "source_head": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+      "source_dirty": true,
+      "cases": 6,
+      "passed": 4,
+      "calls": 37,
+      "case_states": [
+        {
+          "id": "a01",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a02",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a03",
+          "passed": false,
+          "state": "incomplete",
+          "failure": "ValueError"
+        },
+        {
+          "id": "a04",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a05",
+          "passed": false,
+          "state": "complete",
+          "failure": "scenario_expectation_mismatch"
+        },
+        {
+          "id": "a06",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        }
+      ],
+      "reply_hash": "453fa9d80f2bd42f8108ff197fff7363569fda2513aa1914eb1ecc0796065fe8",
+      "instruction_hash": "1c3e3b60f4741c072947a17179f07ab16e933d30f350e475b15c5fbe6b3e063b",
+      "reviewer_hash": "e367a53ae2a9f993b0bb4d08467a2fac29ab127a04de5521dff21b37773d87c5",
+      "evaluator_hash": "b52544a20d4efc6f37899d10c4bdb1e165eb44402b014f40610d366e2e21a14a",
+      "corpus_hash": "275a47f5cdcf4a0eaaf1997fd6254992f6d7e36b5bc62d388e68e414abd7811e",
+      "implementation_hashes": {
+        "src\\pinet_core\\acquisition\\__init__.py": "774847dc3414ad1cd43517b66b5ab6aead673d4ab9a4ce344949a171fd70ec9e",
+        "src\\pinet_core\\acquisition\\capture_config.py": "cc0140b25324aefb5bbeda6dca24f0e3d338f1f84e2b82f91e04ce1c9f60368f",
+        "src\\pinet_core\\acquisition\\contracts.py": "41faead7b0281b351c87d83735d9f75951e4de47f4e799e8367592b8ad682401",
+        "src\\pinet_core\\acquisition\\dialogue.py": "9bbe6da9e25ca5059a8432f7bc58de7b06d2d96963136a90c37936ae7181f642",
+        "src\\pinet_core\\acquisition\\dialogue_corpus.py": "0cb06094c4581080b43183ae537fae117df71087a00d093d8eaaea640a01bb48",
+        "src\\pinet_core\\acquisition\\dialogue_lab.py": "6980472749a3797b87edce4433a22b415163b5462c6e280099fb87df6d9ce589",
+        "src\\pinet_core\\acquisition\\discovery_urls.py": "13e7a9e0f3fc855793b02aebbf8d1f32a94085192eaa6cbcfeacfa29270177cb",
+        "src\\pinet_core\\acquisition\\engine.py": "0465fea527f504234fe23a9372f2821dc4ddc535fe1dac10dae800e194b3d965",
+        "src\\pinet_core\\acquisition\\identity.py": "53c1d38cd4f33c19279064c036b09d2f64e7b1ae52e3cc8a67fe23e5043620dc",
+        "src\\pinet_core\\acquisition\\instructions\\common.md": "dbdeffc8608c42a0c616e7edfa74ffadc0eed7e5bfcfae7bf91dbdf404153465",
+        "src\\pinet_core\\acquisition\\instructions\\general.md": "0da25ab8e9fa3378bad3f29a4a3daf8994b325ef102f07cc80197f54c70042a6",
+        "src\\pinet_core\\acquisition\\instructions\\medical_equipment.md": "fc9510dbfb506ce4f6be982471d88930703b96da12ffb46e8156e69f8fc7e22e",
+        "src\\pinet_core\\acquisition\\instructions\\researcher.md": "8cb41ee25676efbaa1332add6d127329548975642aa9b0a08fc08cec0cf83a79",
+        "src\\pinet_core\\acquisition\\instructions\\reviewer.md": "b55ed7eb1ae29b82bfa1aaee16444a8dddb58b0987be208d3aea43643c79033f",
+        "src\\pinet_core\\acquisition\\instructions.py": "dc1a4c7c73ea29f3d0da9b0633ee260c6cd500ad091a71a1f3027dc99f82db1d",
+        "src\\pinet_core\\acquisition\\interfaces.py": "edeb25b2988fbfe8da7f52c5b1bca7c927c358f0cfd83bd297c63101de60d32c",
+        "src\\pinet_core\\acquisition\\ledger.py": "fdce15acda35bad194257de23e7914a64de54c548fc71f19c68c7c25e30251a5",
+        "src\\pinet_core\\acquisition\\ledger_schema.py": "278435f1bf366ef2ace1d3dbd922cd686fde3147fcedd72deab744a736cc869e",
+        "src\\pinet_core\\acquisition\\models.py": "2562b3fbea24c3ea33ff8cbafcb816c610eed339b4dc8f9526ae009fd438a86b",
+        "src\\pinet_core\\acquisition\\projection.py": "515ea182b27d8577b0a07021bcf5cd5028f44cb9602871ad417d5edace325a9e",
+        "src\\pinet_core\\acquisition\\recipient_binding.py": "dd68a28a1bb89a7b4985f958fa2ed0529947dc227de2ea5655d01e29b1bae8f6",
+        "src\\pinet_core\\acquisition\\revocation.py": "0ded1b939c6a05de180d8697a26f583c1dbaeb31beee45dced31cefe5f536a6c",
+        "src\\pinet_core\\acquisition\\routes.py": "b502e34c029774df7d8692ca554a2aafce7d814ede0d83ed4569a962284accf6",
+        "src\\pinet_core\\acquisition\\sources.py": "64fa15dc4da842c90034cdc38e91c157425583861a5c7fe1f0b3b3282a3044c5",
+        "src\\pinet_core\\acquisition\\transport_auth.py": "4d3091422b4666966763c1ac1ec837e22d5b004b653453681027e604ab64850f",
+        "scripts\\acquisition_dialogue_lab.py": "6e4297ae0ac7cbf75b18b3951d8455b34c634575f65d1e941d7b7605b0e23fc4"
+      },
+      "snapshot_unchanged": true,
+      "full_declared_six_cases": true,
+      "blind_holdout": false
+    },
+    {
+      "run_id": "copy-source-reply-20261010-b",
+      "report_sha256": "99e15cab11e2f887ba063253726b4ea06a547184f3932584b828166030e5256c",
+      "source_head": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+      "source_dirty": true,
+      "cases": 6,
+      "passed": 5,
+      "calls": 38,
+      "case_states": [
+        {
+          "id": "a01",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a02",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a03",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a04",
+          "passed": false,
+          "state": "complete",
+          "failure": "dialogue_quality_or_classification"
+        },
+        {
+          "id": "a05",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a06",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        }
+      ],
+      "reply_hash": "5b02811e7b6bcce347359d5306983c20386d7ac5d941747a4396435c9890d085",
+      "instruction_hash": "1c3e3b60f4741c072947a17179f07ab16e933d30f350e475b15c5fbe6b3e063b",
+      "reviewer_hash": "e367a53ae2a9f993b0bb4d08467a2fac29ab127a04de5521dff21b37773d87c5",
+      "evaluator_hash": "6d724809d4faf8638aada708806fb1ede1b421a35a07912f46c80b326d377042",
+      "corpus_hash": "d97d0dc2b4754c3488757ebc4881670215b947096332896add508048e6d1cb9b",
+      "implementation_hashes": {
+        "src\\pinet_core\\acquisition\\__init__.py": "774847dc3414ad1cd43517b66b5ab6aead673d4ab9a4ce344949a171fd70ec9e",
+        "src\\pinet_core\\acquisition\\capture_config.py": "cc0140b25324aefb5bbeda6dca24f0e3d338f1f84e2b82f91e04ce1c9f60368f",
+        "src\\pinet_core\\acquisition\\contracts.py": "41faead7b0281b351c87d83735d9f75951e4de47f4e799e8367592b8ad682401",
+        "src\\pinet_core\\acquisition\\dialogue.py": "1d32f54b75d7d7ce3ed4d9ec67a34ad599cb874962e2e11501eef059d32962a2",
+        "src\\pinet_core\\acquisition\\dialogue_corpus.py": "0cb06094c4581080b43183ae537fae117df71087a00d093d8eaaea640a01bb48",
+        "src\\pinet_core\\acquisition\\dialogue_lab.py": "990175c2f61d27d6f41605a0e9cf7423bbb4d3b81ef088f130e4984c36b457bf",
+        "src\\pinet_core\\acquisition\\discovery_urls.py": "13e7a9e0f3fc855793b02aebbf8d1f32a94085192eaa6cbcfeacfa29270177cb",
+        "src\\pinet_core\\acquisition\\engine.py": "0465fea527f504234fe23a9372f2821dc4ddc535fe1dac10dae800e194b3d965",
+        "src\\pinet_core\\acquisition\\identity.py": "53c1d38cd4f33c19279064c036b09d2f64e7b1ae52e3cc8a67fe23e5043620dc",
+        "src\\pinet_core\\acquisition\\instructions\\common.md": "dbdeffc8608c42a0c616e7edfa74ffadc0eed7e5bfcfae7bf91dbdf404153465",
+        "src\\pinet_core\\acquisition\\instructions\\general.md": "0da25ab8e9fa3378bad3f29a4a3daf8994b325ef102f07cc80197f54c70042a6",
+        "src\\pinet_core\\acquisition\\instructions\\medical_equipment.md": "fc9510dbfb506ce4f6be982471d88930703b96da12ffb46e8156e69f8fc7e22e",
+        "src\\pinet_core\\acquisition\\instructions\\researcher.md": "8cb41ee25676efbaa1332add6d127329548975642aa9b0a08fc08cec0cf83a79",
+        "src\\pinet_core\\acquisition\\instructions\\reviewer.md": "b55ed7eb1ae29b82bfa1aaee16444a8dddb58b0987be208d3aea43643c79033f",
+        "src\\pinet_core\\acquisition\\instructions.py": "dc1a4c7c73ea29f3d0da9b0633ee260c6cd500ad091a71a1f3027dc99f82db1d",
+        "src\\pinet_core\\acquisition\\interfaces.py": "edeb25b2988fbfe8da7f52c5b1bca7c927c358f0cfd83bd297c63101de60d32c",
+        "src\\pinet_core\\acquisition\\ledger.py": "fdce15acda35bad194257de23e7914a64de54c548fc71f19c68c7c25e30251a5",
+        "src\\pinet_core\\acquisition\\ledger_schema.py": "278435f1bf366ef2ace1d3dbd922cd686fde3147fcedd72deab744a736cc869e",
+        "src\\pinet_core\\acquisition\\models.py": "2562b3fbea24c3ea33ff8cbafcb816c610eed339b4dc8f9526ae009fd438a86b",
+        "src\\pinet_core\\acquisition\\projection.py": "515ea182b27d8577b0a07021bcf5cd5028f44cb9602871ad417d5edace325a9e",
+        "src\\pinet_core\\acquisition\\recipient_binding.py": "dd68a28a1bb89a7b4985f958fa2ed0529947dc227de2ea5655d01e29b1bae8f6",
+        "src\\pinet_core\\acquisition\\revocation.py": "0ded1b939c6a05de180d8697a26f583c1dbaeb31beee45dced31cefe5f536a6c",
+        "src\\pinet_core\\acquisition\\routes.py": "b502e34c029774df7d8692ca554a2aafce7d814ede0d83ed4569a962284accf6",
+        "src\\pinet_core\\acquisition\\sources.py": "64fa15dc4da842c90034cdc38e91c157425583861a5c7fe1f0b3b3282a3044c5",
+        "src\\pinet_core\\acquisition\\transport_auth.py": "4d3091422b4666966763c1ac1ec837e22d5b004b653453681027e604ab64850f",
+        "scripts\\acquisition_dialogue_lab.py": "6e4297ae0ac7cbf75b18b3951d8455b34c634575f65d1e941d7b7605b0e23fc4"
+      },
+      "snapshot_unchanged": true,
+      "full_declared_six_cases": true,
+      "blind_holdout": false
+    },
+    {
+      "run_id": "copy-source-reply-20261010-c",
+      "report_sha256": "41b162dc6ec4ea5878c3b66d76028b1e17fc322f74a7012c4148012997d56eab",
+      "source_head": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+      "source_dirty": true,
+      "cases": 6,
+      "passed": 5,
+      "calls": 34,
+      "case_states": [
+        {
+          "id": "a01",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a02",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a03",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a04",
+          "passed": false,
+          "state": "complete",
+          "failure": "scenario_expectation_mismatch"
+        },
+        {
+          "id": "a05",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a06",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        }
+      ],
+      "reply_hash": "c82dd2992fa9e02d7e2d3c3b3d7699630290e000f81abb8e92d1a5a6517ec26f",
+      "instruction_hash": "1c3e3b60f4741c072947a17179f07ab16e933d30f350e475b15c5fbe6b3e063b",
+      "reviewer_hash": "e367a53ae2a9f993b0bb4d08467a2fac29ab127a04de5521dff21b37773d87c5",
+      "evaluator_hash": "ca1b4fec3fa726d4f6d85b1c4bf5c38e5af68d5286e49c0686bf7d94d4b39b0c",
+      "corpus_hash": "d97d0dc2b4754c3488757ebc4881670215b947096332896add508048e6d1cb9b",
+      "implementation_hashes": {
+        "src\\pinet_core\\acquisition\\__init__.py": "774847dc3414ad1cd43517b66b5ab6aead673d4ab9a4ce344949a171fd70ec9e",
+        "src\\pinet_core\\acquisition\\capture_config.py": "cc0140b25324aefb5bbeda6dca24f0e3d338f1f84e2b82f91e04ce1c9f60368f",
+        "src\\pinet_core\\acquisition\\contracts.py": "41faead7b0281b351c87d83735d9f75951e4de47f4e799e8367592b8ad682401",
+        "src\\pinet_core\\acquisition\\dialogue.py": "3d9c602c653fd9ca4d50f0c1edb06324833f5667ae88f7f7cfc8d3aedd7cfc51",
+        "src\\pinet_core\\acquisition\\dialogue_corpus.py": "0cb06094c4581080b43183ae537fae117df71087a00d093d8eaaea640a01bb48",
+        "src\\pinet_core\\acquisition\\dialogue_lab.py": "3494cc65072d5b786b796c3d818f5d0c4c20c907ae975541e143a9c0b664caca",
+        "src\\pinet_core\\acquisition\\discovery_urls.py": "13e7a9e0f3fc855793b02aebbf8d1f32a94085192eaa6cbcfeacfa29270177cb",
+        "src\\pinet_core\\acquisition\\engine.py": "0465fea527f504234fe23a9372f2821dc4ddc535fe1dac10dae800e194b3d965",
+        "src\\pinet_core\\acquisition\\identity.py": "53c1d38cd4f33c19279064c036b09d2f64e7b1ae52e3cc8a67fe23e5043620dc",
+        "src\\pinet_core\\acquisition\\instructions\\common.md": "dbdeffc8608c42a0c616e7edfa74ffadc0eed7e5bfcfae7bf91dbdf404153465",
+        "src\\pinet_core\\acquisition\\instructions\\general.md": "0da25ab8e9fa3378bad3f29a4a3daf8994b325ef102f07cc80197f54c70042a6",
+        "src\\pinet_core\\acquisition\\instructions\\medical_equipment.md": "fc9510dbfb506ce4f6be982471d88930703b96da12ffb46e8156e69f8fc7e22e",
+        "src\\pinet_core\\acquisition\\instructions\\researcher.md": "8cb41ee25676efbaa1332add6d127329548975642aa9b0a08fc08cec0cf83a79",
+        "src\\pinet_core\\acquisition\\instructions\\reviewer.md": "b55ed7eb1ae29b82bfa1aaee16444a8dddb58b0987be208d3aea43643c79033f",
+        "src\\pinet_core\\acquisition\\instructions.py": "dc1a4c7c73ea29f3d0da9b0633ee260c6cd500ad091a71a1f3027dc99f82db1d",
+        "src\\pinet_core\\acquisition\\interfaces.py": "edeb25b2988fbfe8da7f52c5b1bca7c927c358f0cfd83bd297c63101de60d32c",
+        "src\\pinet_core\\acquisition\\ledger.py": "fdce15acda35bad194257de23e7914a64de54c548fc71f19c68c7c25e30251a5",
+        "src\\pinet_core\\acquisition\\ledger_schema.py": "278435f1bf366ef2ace1d3dbd922cd686fde3147fcedd72deab744a736cc869e",
+        "src\\pinet_core\\acquisition\\models.py": "2562b3fbea24c3ea33ff8cbafcb816c610eed339b4dc8f9526ae009fd438a86b",
+        "src\\pinet_core\\acquisition\\projection.py": "515ea182b27d8577b0a07021bcf5cd5028f44cb9602871ad417d5edace325a9e",
+        "src\\pinet_core\\acquisition\\recipient_binding.py": "dd68a28a1bb89a7b4985f958fa2ed0529947dc227de2ea5655d01e29b1bae8f6",
+        "src\\pinet_core\\acquisition\\revocation.py": "0ded1b939c6a05de180d8697a26f583c1dbaeb31beee45dced31cefe5f536a6c",
+        "src\\pinet_core\\acquisition\\routes.py": "b502e34c029774df7d8692ca554a2aafce7d814ede0d83ed4569a962284accf6",
+        "src\\pinet_core\\acquisition\\sources.py": "64fa15dc4da842c90034cdc38e91c157425583861a5c7fe1f0b3b3282a3044c5",
+        "src\\pinet_core\\acquisition\\transport_auth.py": "4d3091422b4666966763c1ac1ec837e22d5b004b653453681027e604ab64850f",
+        "scripts\\acquisition_dialogue_lab.py": "6e4297ae0ac7cbf75b18b3951d8455b34c634575f65d1e941d7b7605b0e23fc4"
+      },
+      "snapshot_unchanged": true,
+      "full_declared_six_cases": true,
+      "blind_holdout": false
+    },
+    {
+      "run_id": "copy-source-reply-20261010-d",
+      "report_sha256": "f78cfa83a32bab11965c1637168c2ad70eb4b758e798f6f814535fd25040c462",
+      "source_head": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+      "source_dirty": true,
+      "cases": 6,
+      "passed": 6,
+      "calls": 40,
+      "case_states": [
+        {
+          "id": "a01",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a02",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a03",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a04",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a05",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        },
+        {
+          "id": "a06",
+          "passed": true,
+          "state": "complete",
+          "failure": null
+        }
+      ],
+      "reply_hash": "ac84f8008dd7a0a65831796ce05c953202e0e6c8dc61f6d6108a5604949bd6c7",
+      "instruction_hash": "1c3e3b60f4741c072947a17179f07ab16e933d30f350e475b15c5fbe6b3e063b",
+      "reviewer_hash": "e367a53ae2a9f993b0bb4d08467a2fac29ab127a04de5521dff21b37773d87c5",
+      "evaluator_hash": "ca1b4fec3fa726d4f6d85b1c4bf5c38e5af68d5286e49c0686bf7d94d4b39b0c",
+      "corpus_hash": "d97d0dc2b4754c3488757ebc4881670215b947096332896add508048e6d1cb9b",
+      "implementation_hashes": {
+        "src\\pinet_core\\acquisition\\__init__.py": "774847dc3414ad1cd43517b66b5ab6aead673d4ab9a4ce344949a171fd70ec9e",
+        "src\\pinet_core\\acquisition\\capture_config.py": "cc0140b25324aefb5bbeda6dca24f0e3d338f1f84e2b82f91e04ce1c9f60368f",
+        "src\\pinet_core\\acquisition\\contracts.py": "41faead7b0281b351c87d83735d9f75951e4de47f4e799e8367592b8ad682401",
+        "src\\pinet_core\\acquisition\\dialogue.py": "8c74b99c53aa36257895ae058e2051cbab63663d0a79008d246e8196fa0f30fb",
+        "src\\pinet_core\\acquisition\\dialogue_corpus.py": "0cb06094c4581080b43183ae537fae117df71087a00d093d8eaaea640a01bb48",
+        "src\\pinet_core\\acquisition\\dialogue_lab.py": "3494cc65072d5b786b796c3d818f5d0c4c20c907ae975541e143a9c0b664caca",
+        "src\\pinet_core\\acquisition\\discovery_urls.py": "13e7a9e0f3fc855793b02aebbf8d1f32a94085192eaa6cbcfeacfa29270177cb",
+        "src\\pinet_core\\acquisition\\engine.py": "0465fea527f504234fe23a9372f2821dc4ddc535fe1dac10dae800e194b3d965",
+        "src\\pinet_core\\acquisition\\identity.py": "53c1d38cd4f33c19279064c036b09d2f64e7b1ae52e3cc8a67fe23e5043620dc",
+        "src\\pinet_core\\acquisition\\instructions\\common.md": "dbdeffc8608c42a0c616e7edfa74ffadc0eed7e5bfcfae7bf91dbdf404153465",
+        "src\\pinet_core\\acquisition\\instructions\\general.md": "0da25ab8e9fa3378bad3f29a4a3daf8994b325ef102f07cc80197f54c70042a6",
+        "src\\pinet_core\\acquisition\\instructions\\medical_equipment.md": "fc9510dbfb506ce4f6be982471d88930703b96da12ffb46e8156e69f8fc7e22e",
+        "src\\pinet_core\\acquisition\\instructions\\researcher.md": "8cb41ee25676efbaa1332add6d127329548975642aa9b0a08fc08cec0cf83a79",
+        "src\\pinet_core\\acquisition\\instructions\\reviewer.md": "b55ed7eb1ae29b82bfa1aaee16444a8dddb58b0987be208d3aea43643c79033f",
+        "src\\pinet_core\\acquisition\\instructions.py": "dc1a4c7c73ea29f3d0da9b0633ee260c6cd500ad091a71a1f3027dc99f82db1d",
+        "src\\pinet_core\\acquisition\\interfaces.py": "edeb25b2988fbfe8da7f52c5b1bca7c927c358f0cfd83bd297c63101de60d32c",
+        "src\\pinet_core\\acquisition\\ledger.py": "fdce15acda35bad194257de23e7914a64de54c548fc71f19c68c7c25e30251a5",
+        "src\\pinet_core\\acquisition\\ledger_schema.py": "278435f1bf366ef2ace1d3dbd922cd686fde3147fcedd72deab744a736cc869e",
+        "src\\pinet_core\\acquisition\\models.py": "2562b3fbea24c3ea33ff8cbafcb816c610eed339b4dc8f9526ae009fd438a86b",
+        "src\\pinet_core\\acquisition\\projection.py": "515ea182b27d8577b0a07021bcf5cd5028f44cb9602871ad417d5edace325a9e",
+        "src\\pinet_core\\acquisition\\recipient_binding.py": "dd68a28a1bb89a7b4985f958fa2ed0529947dc227de2ea5655d01e29b1bae8f6",
+        "src\\pinet_core\\acquisition\\revocation.py": "0ded1b939c6a05de180d8697a26f583c1dbaeb31beee45dced31cefe5f536a6c",
+        "src\\pinet_core\\acquisition\\routes.py": "b502e34c029774df7d8692ca554a2aafce7d814ede0d83ed4569a962284accf6",
+        "src\\pinet_core\\acquisition\\sources.py": "64fa15dc4da842c90034cdc38e91c157425583861a5c7fe1f0b3b3282a3044c5",
+        "src\\pinet_core\\acquisition\\transport_auth.py": "4d3091422b4666966763c1ac1ec837e22d5b004b653453681027e604ab64850f",
+        "scripts\\acquisition_dialogue_lab.py": "6e4297ae0ac7cbf75b18b3951d8455b34c634575f65d1e941d7b7605b0e23fc4"
+      },
+      "snapshot_unchanged": true,
+      "full_declared_six_cases": true,
+      "blind_holdout": false
+    }
+  ],
+  "dialogue_observations": 24,
+  "unique_declared_case_ids": 6,
+  "generator400_completed": false,
+  "blind_holdout": false,
+  "fixed_privacy_replay": {
+    "sha256": "c213849a1593e553e70ce28d47746a733608177862b7afb85a26d2263789e142",
+    "calls": 1,
+    "passed": true
+  },
+  "fixed_price_replay": {
+    "sha256": "62b3b31ed147310539d9dfdfe894e8788b404e2c52434e9692390f48d41363a4",
+    "calls": 1,
+    "passed": true
+  },
+  "fixed_current_question_replay": {
+    "sha256": "3bb9e3c2f1dc5eb4958465535bdc689ef8569af07b15d2750a41fe6dfe9056e7",
+    "calls": 1,
+    "passed": true
+  },
+  "cross_sector_reply": {
+    "sha256": "1e68fc38197cfcc40dc80f5c7b64466b3a988b7326675d9f909a672c24e87da5",
+    "calls": 3,
+    "passed": true
+  },
+  "terminal_status_probe": {
+    "before_sha256": "7c4a8e14ce6b48afa429a82f6c0672f77afb5e3b0cbee812d3d18f9b98c6c4f0",
+    "after_sha256": "1977b204e1ff5f2fc0e10169823f6c382feb26a624438b522aa4f02c5f602cfb",
+    "before_failed": 2,
+    "after_passed": 2,
+    "actual_model_calls": 0
+  },
+  "operator_dialogue_audit": {
+    "sha256": "47e777f4b0c1e46854336dd275f4b7f614533b7809927b8fe308e181d2d3b7c4",
+    "passed": true
+  },
+  "actual_cli_calls": 179,
+  "actual_cli_usage_units": {
+    "input_tokens": 2332288,
+    "cached_input_tokens": 342912,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 38666,
+    "reasoning_output_tokens": 1992
+  },
+  "usd_cost": null,
+  "model_identity": "CLI inherited default; exact ID unexposed",
+  "independent_contexts": true,
+  "independent_model_family": "unverified",
+  "local_checks": {
+    "offline": 78,
+    "subtests": 33,
+    "ruff": "PASS",
+    "skill": "PASS",
+    "four_external_contracts": "PASS"
+  },
+  "source_copy_sha256": "c00811a2a2a41a00b284f5e698152f1a8bbba3b9e4b596892710f828f62df625",
+  "campaign_ready": 0,
+  "real_recipient_addresses": 0,
+  "source_use_verified": false,
+  "normal_runtime_adopted": false,
+  "native_qualification_verified": false,
+  "operator_handoff_executed": false,
+  "resume_authorized": false,
+  "external_sent": false,
+  "full_pipeline_accepted": false,
+  "promotion": "none"
+}

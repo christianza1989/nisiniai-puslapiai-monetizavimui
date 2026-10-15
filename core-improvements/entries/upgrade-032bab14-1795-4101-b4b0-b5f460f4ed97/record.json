@@ -1,0 +1,27 @@
+{
+  "category": "code",
+  "rollback": "Scoped revert of private Quality dispatch only; retained history/usage/evaluation artifacts remain immutable, no reset or live activation",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6110087356",
+  "evidence": [
+    "Functional61197997112c2d35a5952cb8f8630b0ea5c17b89 jobs.evaluate rejects customer input with customer_quality_authority_required; no authorized customer Quality entrypoint",
+    "Existing local_semantics and complete_artifact are reused; source checks are separate from actual model quality"
+  ],
+  "siteId": "verslomatika",
+  "summary": "Customer Quality input is source-verified but independent model execution lacks a durable exact-binding/accounting adapter",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evaluator.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/scripts/network_lab.py",
+    "agent-business-core/runtime/tests/test_customer_review.py",
+    "agent-business-core/runtime/offline_tests/test_customer_review.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "id": "upgrade-032bab14-1795-4101-b4b0-b5f460f4ed97",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "61197997112c2d35a5952cb8f8630b0ea5c17b89",
+  "createdAt": "2026-10-11T14:34:17.707Z"
+}

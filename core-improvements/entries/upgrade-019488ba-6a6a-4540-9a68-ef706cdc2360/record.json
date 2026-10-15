@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Measured High Discovery research and complete Plan synthesis exceed the original combined creator clock; add a versioned bounded local time budget without weakening admission or review",
+  "category": "code",
+  "evidence": [
+    "docs/handoffs/VERSLOMATIKA_WELLNESS_RESUMED_2026_10_15.md",
+    "S30 actual creator timeout404.804487s, six completed web actions, last stdout223.718488s, no terminal/output; original FAIL retained privately",
+    "Separate no-tools full Plan diagnostic324.694985s, actual Sol6.1High, 10sections,36726bytes, outputSHAe3cbe87de2cb4dfd795619d5ec1570d6dea66e0d3a3ba2686004d499a97dc488; natural exit0/EOF before cleanup, no kill, no customer DB writes. This is a timing isolation diagnostic, not an accepted report."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/deadlines.py",
+    "agent-business-core/runtime/offline_tests/test_discovery_deadlines.py",
+    "agent-business-core/runtime/tests/test_discovery_deadlines_pg.py",
+    "agent-business-core/runtime/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of S32 and idle-only rollback to frozen48fe with its original v1 timing. Never rewrite failed jobs or an active instruction snapshot; preserve private diagnostic and original data.",
+  "id": "upgrade-019488ba-6a6a-4540-9a68-ef706cdc2360",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "11d4421a0d3612b9ece6c631f4052109f7578b1c",
+  "createdAt": "2026-10-15T13:28:26.888Z"
+}

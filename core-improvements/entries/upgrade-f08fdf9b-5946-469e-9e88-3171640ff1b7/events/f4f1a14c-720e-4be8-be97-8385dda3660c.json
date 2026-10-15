@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "commit": "62c88d310289e11910d6109166cddf9b3c92e8b2",
+  "checks": [
+    {
+      "command": "node --test --test-name-pattern='prepare hashes and private page data' content-studio/test/customer-content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "Exact concurrent canonical edit baseline 0 PASS/1 FAIL 1.15s; same corrected regression 1 PASS 1.21s. Local tmp/customer-content-workflow-prepare-baseline.log and prepare-final.log retained; immutable intake originals unchanged."
+    },
+    {
+      "command": "node --test --test-name-pattern='v2 validator/hash/schema copies match' content-studio/test/content-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "1 PASS 0.36s after own module normalization to existing eol=lf; exact full module matches parent-owned public export SHA25610c00b2304d01bc599c9eda25cee056623f896ffc95df719f7125d410422fa24. Native schema/publication/hash validators unchanged."
+    },
+    {
+      "command": "node --check content-studio/scripts/customer-content-workflow.mjs; node scripts/repository-safety.mjs --staged; git diff --cached --check; node scripts/git-freshness.mjs --phase handoff --companion C:/Users/lenovo/.codex/worktrees/verslomatika-public-evidence/dovanos-memorycasting",
+      "result": "PASS",
+      "evidence": "Functional exact9source/test blobs181900B, safety no findings; fetch both private7af6/publicec8 PASS2026-10-11T02:34:26Z."
+    }
+  ],
+  "note": "Scoped source window CLOSED. Latest full suite89PASS/1FAIL72.73s: all9workflow subtests passed; remaining unchanged exact mirror failed only WT CRLF vs public LF, fixed according to existing eol=lf then same mirror1PASS0.36s. Earlier final workflow8PASS/1FAIL78.77s Windows EPERM cross-process result remains an actual unresolved external shared-lock finding, never relabelled as fixed by later PASS. Parent independently owns a separate write-lock scope/regression and final combined batch. Original88PASS/1FAIL68.74s and focused37PASS50.25s retained. No test weakened; real media>8MiB/shared12MiB and PNG physical file presence are observations, not quality/readiness certificates. Synthetic full batch proves canonical atomic approval/release mechanics only. No operational data, provider, deployment or full platform/F1 acceptance.",
+  "eventId": "f4f1a14c-720e-4be8-be97-8385dda3660c",
+  "sequence": 3,
+  "at": "2026-10-11T02:36:57.715Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Fixed optional physical case inbox and pre-GUIDE hook implemented; 40 focused offline tests passed, one OS symlink fixture unavailable. First run retained 39PASS/2 fixture setup errors due to oversized generated pytest IDs on Windows; explicit short IDs repaired only the fixture. Ruff import separator repaired. Shared attachment adapter integration and actual runtime adoption remain pending; no provider or accepted data mutation.",
+  "eventId": "6d1806d4-7b7c-481e-804a-8faba166bee6",
+  "sequence": 2,
+  "at": "2026-10-15T02:28:27.166Z"
+}

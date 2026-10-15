@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "New explicit atomic operator CLI reuses maintained sync/admit/source_check/write_receipt, requires strict admit_source=true and exact execution source, preserves original separate APIs/TTL/history/no-provider channels. One DB tx and durable prepared result beforecommit; independent committed marker. Initial Ruff I001/F401 retained tool outputs and corrected before frozen QA. Static test inspection corrected await-in-generator and grant-ID lookup before execution; not product authority changes. Frozen new/whole-sync/ProfileCLI isolated-PG and offlineProfile tests in progress, operationalDB untouched; no PASS claim yet.",
+  "eventId": "6038a8c1-2612-4ec9-8c46-46779cb8467b",
+  "sequence": 2,
+  "at": "2026-10-11T10:23:10.554Z"
+}

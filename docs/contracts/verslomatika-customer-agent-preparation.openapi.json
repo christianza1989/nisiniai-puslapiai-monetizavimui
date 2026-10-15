@@ -1,0 +1,840 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Customer agent preparation observations",
+    "version": "0.1.0",
+    "description": "Own verified current bearer/owner/tenant/session, read-only source-bound readiness. No accepted revision returns truthful blocked200. Exact immutable revision payload and historical intake are distinguished from current registration, config and source-code observations and unobserved channels. Legacy completed private revision identity is retained; team acceptance requires the shared exact-candidate coordinator accept_draft and observed language PASS sidecar, never merely a succeeded Job. Same-host owned registration is a candidate, never durable creation/revision Business binding. V2 indexing is implemented, current session admission is V1 and native V2 learning remains unadmitted. No activation, calibrated/ready claim, default client contact/operator facts, provider, mail, network refresh, SQL/file writes or session extension. Existing wire bytes unchanged; fullF1/launch UNVERIFIED."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/agent-preparation": {
+      "get": {
+        "operationId": "getCustomerAgentPreparation",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "creation_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "in": "query",
+            "name": "accepted_revision",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "description": "Optional exact current accepted revision. Explicit stale input returns409; absent revision returns200 blocked."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Committed safe projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentPreparationViewEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request or token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials/session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Local feature disabled or no current ownership",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No scoped/public object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Explicit accepted revision is stale",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Durable action limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Source unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-unknown-query-parameters": "rejected",
+        "x-duplicate-query-parameters": "rejected"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "Check": {
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "enum": [
+              "accepted_revision",
+              "source_pin",
+              "private_intake",
+              "business_registration",
+              "creation_business_binding",
+              "business_profile",
+              "role_instructions",
+              "v2_knowledge",
+              "v2_session",
+              "site_voice",
+              "acquisition",
+              "email_followup",
+              "email_reply",
+              "calibration"
+            ],
+            "title": "Key",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNVERIFIED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "scope": {
+            "enum": [
+              "source_code",
+              "current_database",
+              "runtime_configuration",
+              "intake_snapshot",
+              "not_observed"
+            ],
+            "title": "Scope",
+            "type": "string"
+          },
+          "code": {
+            "pattern": "^[a-z][a-z0-9_]{1,79}$",
+            "title": "Code",
+            "type": "string"
+          },
+          "summary": {
+            "maxLength": 320,
+            "minLength": 10,
+            "title": "Summary",
+            "type": "string"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          }
+        },
+        "required": [
+          "key",
+          "status",
+          "scope",
+          "code",
+          "summary",
+          "observed_at"
+        ],
+        "title": "Check",
+        "type": "object"
+      },
+      "IntakeObservation": {
+        "additionalProperties": false,
+        "properties": {
+          "state": {
+            "enum": [
+              "not_imported",
+              "private_draft_imported",
+              "intake_failed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "import_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Import Job Id"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          },
+          "page_count": {
+            "maximum": 20,
+            "minimum": 0,
+            "title": "Page Count",
+            "type": "integer"
+          },
+          "approved_page_count": {
+            "maximum": 20,
+            "minimum": 0,
+            "title": "Approved Page Count",
+            "type": "integer"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z_]{1,80}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "observation_scope": {
+            "const": "intake_snapshot",
+            "default": "intake_snapshot",
+            "title": "Observation Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "import_job_id",
+          "observed_at",
+          "page_count",
+          "approved_page_count",
+          "failure_code"
+        ],
+        "title": "IntakeObservation",
+        "type": "object"
+      },
+      "Mapping": {
+        "additionalProperties": false,
+        "properties": {
+          "state": {
+            "enum": [
+              "missing",
+              "candidate_unbound"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "candidate": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RegistrationCandidate"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "confirmed_business_id": {
+            "default": null,
+            "title": "Confirmed Business Id",
+            "type": "null"
+          },
+          "binding": {
+            "const": "not_implemented",
+            "default": "not_implemented",
+            "title": "Binding",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "candidate"
+        ],
+        "title": "Mapping",
+        "type": "object"
+      },
+      "RegistrationCandidate": {
+        "additionalProperties": false,
+        "properties": {
+          "business_id": {
+            "format": "uuid",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "site_id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Site Id",
+            "type": "string"
+          },
+          "canonical_host": {
+            "maxLength": 253,
+            "minLength": 1,
+            "title": "Canonical Host",
+            "type": "string"
+          },
+          "registration_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Registration Source Revision",
+            "type": "string"
+          },
+          "connection_status": {
+            "enum": [
+              "pending",
+              "registered",
+              "connected",
+              "stale",
+              "conflict",
+              "unavailable"
+            ],
+            "title": "Connection Status",
+            "type": "string"
+          },
+          "relationship": {
+            "const": "same_host_owned_grant_candidate",
+            "default": "same_host_owned_grant_candidate",
+            "title": "Relationship",
+            "type": "string"
+          }
+        },
+        "required": [
+          "business_id",
+          "site_id",
+          "canonical_host",
+          "registration_source_revision",
+          "connection_status"
+        ],
+        "title": "RegistrationCandidate",
+        "type": "object"
+      },
+      "RuntimeObservation": {
+        "additionalProperties": false,
+        "properties": {
+          "scope": {
+            "enum": [
+              "unmapped",
+              "owned_registration_candidate"
+            ],
+            "title": "Scope",
+            "type": "string"
+          },
+          "profile_registered": {
+            "title": "Profile Registered",
+            "type": "boolean"
+          },
+          "role_instruction_hashes": {
+            "additionalProperties": {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            "maxProperties": 4,
+            "propertyNames": {
+              "enum": [
+                "conversation",
+                "sales",
+                "supplier",
+                "quality"
+              ]
+            },
+            "title": "Role Instruction Hashes",
+            "type": "object"
+          },
+          "knowledge_state": {
+            "enum": [
+              "not_observed",
+              "missing",
+              "v1",
+              "v2_current",
+              "v2_expired",
+              "v2_revoked",
+              "invalid"
+            ],
+            "title": "Knowledge State",
+            "type": "string"
+          },
+          "knowledge_revision": {
+            "anyOf": [
+              {
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Knowledge Revision"
+          },
+          "knowledge_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Knowledge Sha256"
+          },
+          "knowledge_refreshed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Knowledge Refreshed At"
+          },
+          "knowledge_active_page_count": {
+            "maximum": 1000,
+            "minimum": 0,
+            "title": "Knowledge Active Page Count",
+            "type": "integer"
+          },
+          "source_admitted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Admitted"
+          },
+          "learning_admitted": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Learning Admitted"
+          },
+          "policy_enabled": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Policy Enabled"
+          },
+          "policy_paused": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Policy Paused"
+          },
+          "followup_enabled": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Followup Enabled"
+          },
+          "smtp_enabled": {
+            "title": "Smtp Enabled",
+            "type": "boolean"
+          },
+          "voice_configured": {
+            "title": "Voice Configured",
+            "type": "boolean"
+          },
+          "v2_index_transport": {
+            "const": "implemented",
+            "default": "implemented",
+            "title": "V2 Index Transport",
+            "type": "string"
+          },
+          "v2_session_admission": {
+            "const": "not_implemented",
+            "default": "not_implemented",
+            "title": "V2 Session Admission",
+            "type": "string"
+          },
+          "business_contacts": {
+            "const": "not_verified_for_creation",
+            "default": "not_verified_for_creation",
+            "title": "Business Contacts",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope",
+          "profile_registered",
+          "role_instruction_hashes",
+          "knowledge_state",
+          "knowledge_revision",
+          "knowledge_sha256",
+          "knowledge_refreshed_at",
+          "knowledge_active_page_count",
+          "source_admitted",
+          "learning_admitted",
+          "policy_enabled",
+          "policy_paused",
+          "followup_enabled",
+          "smtp_enabled",
+          "voice_configured"
+        ],
+        "title": "RuntimeObservation",
+        "type": "object"
+      },
+      "TeamReviewObservation": {
+        "additionalProperties": false,
+        "properties": {
+          "state": {
+            "enum": [
+              "no_revision",
+              "unreviewed",
+              "accepted"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "accepted_candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Candidate Sha256"
+          },
+          "observation_scope": {
+            "const": "current_database",
+            "default": "current_database",
+            "title": "Observation Scope",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "accepted_candidate_sha256"
+        ],
+        "title": "TeamReviewObservation",
+        "type": "object"
+      },
+      "AgentPreparationView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Revision"
+          },
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Sha256"
+          },
+          "accepted_source_revision": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{40}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Source Revision"
+          },
+          "canonical_host": {
+            "anyOf": [
+              {
+                "maxLength": 253,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "observation_scope": {
+            "const": "current_readiness",
+            "default": "current_readiness",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "state": {
+            "const": "blocked",
+            "default": "blocked",
+            "title": "State",
+            "type": "string"
+          },
+          "team_review": {
+            "$ref": "#/components/schemas/TeamReviewObservation"
+          },
+          "mapping": {
+            "$ref": "#/components/schemas/Mapping"
+          },
+          "intake": {
+            "$ref": "#/components/schemas/IntakeObservation"
+          },
+          "runtime": {
+            "$ref": "#/components/schemas/RuntimeObservation"
+          },
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/Check"
+            },
+            "maxItems": 14,
+            "minItems": 14,
+            "title": "Checks",
+            "type": "array"
+          },
+          "blocker_keys": {
+            "items": {
+              "enum": [
+                "accepted_revision",
+                "source_pin",
+                "private_intake",
+                "business_registration",
+                "creation_business_binding",
+                "business_profile",
+                "role_instructions",
+                "v2_knowledge",
+                "v2_session",
+                "site_voice",
+                "acquisition",
+                "email_followup",
+                "email_reply",
+                "calibration"
+              ],
+              "type": "string"
+            },
+            "maxItems": 14,
+            "minItems": 1,
+            "title": "Blocker Keys",
+            "type": "array"
+          },
+          "can_activate": {
+            "const": false,
+            "default": false,
+            "title": "Can Activate",
+            "type": "boolean"
+          },
+          "activation": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Activation",
+            "type": "string"
+          },
+          "calibration": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Calibration",
+            "type": "string"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_id",
+          "accepted_revision",
+          "candidate_sha256",
+          "accepted_source_revision",
+          "canonical_host",
+          "observed_at",
+          "team_review",
+          "mapping",
+          "intake",
+          "runtime",
+          "checks",
+          "blocker_keys"
+        ],
+        "title": "AgentPreparationView",
+        "type": "object"
+      },
+      "AgentPreparationViewEnvelope": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "agent-preparation.v1"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ]
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AgentPreparationView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ]
+      }
+    }
+  }
+}

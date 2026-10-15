@@ -1,0 +1,33 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Accepted business chat lacks dashboard catalogue, durable cross-thread task history and execution reports; portable control-only server and signed hosted preparation are missing.",
+  "category": "code",
+  "evidence": [
+    "docs/VERSLOMATIKA_LOCAL_CHAT.md",
+    "agent-business-core/runtime/src/pinet_core/tasks/routes.py at 120a84ac6afc5b642b71735c2cba0d39acdf6650",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/operations.py",
+    "agent-business-core/runtime/src/pinet_core/control/routes.py",
+    "agent-business-core/runtime/src/pinet_core/control/bridge.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/routes.py",
+    "agent-business-core/runtime/scripts/control_operations_contract.py",
+    "agent-business-core/runtime/scripts/control_portable.py",
+    "agent-business-core/runtime/tests/test_control_operations.py",
+    "agent-business-core/runtime/tests/test_control_bridge.py",
+    "docs/contracts/verslomatika-operations.openapi.json",
+    "docs/contracts/verslomatika-portfolio.openapi.json",
+    "docs/contracts/verslomatika-chat.openapi.json",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/70",
+  "rollback": "Scoped revert of this branch; retain accepted I1/I2 services and their existing persisted data. No deployment or database migration in this increment.",
+  "id": "upgrade-fbea2507-21fa-45fd-95c1-ce17c8778a98",
+  "branch": "codex/verslomatika-owner-release-20261010",
+  "baseSha": "120a84ac6afc5b642b71735c2cba0d39acdf6650",
+  "createdAt": "2026-10-10T05:31:10.191Z"
+}

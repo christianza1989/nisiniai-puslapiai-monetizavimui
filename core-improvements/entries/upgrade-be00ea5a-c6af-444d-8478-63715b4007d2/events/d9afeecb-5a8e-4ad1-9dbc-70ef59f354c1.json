@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual post-npmci frozen import still failed ERR_MODULE_NOT_FOUND on static niche-media target despite configured companion. Configured import fixed. Initial3PASS1legacyfallbackFAIL corrected; no server/provider/start/init during regression.",
+  "checks": [
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR configured node --test content-studio/test/public-core.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STUDIO_COMPANION_S12_2026_10_15.md:4PASS264.089ms"
+    },
+    {
+      "command": "node --check server.mjs/public-core.mjs",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STUDIO_COMPANION_S12_2026_10_15.md"
+    }
+  ],
+  "eventId": "d9afeecb-5a8e-4ad1-9dbc-70ef59f354c1",
+  "sequence": 2,
+  "at": "2026-10-14T21:33:43.613Z"
+}

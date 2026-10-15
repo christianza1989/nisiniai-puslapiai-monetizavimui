@@ -1,0 +1,23 @@
+{
+  "category": "code",
+  "summary": "Retained refused/complaint status was reset to new by reply preparation when suppressed boolean was absent, attempting a model call after terminal marketing stop",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_dialogue.py",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json"
+  ],
+  "evidence": [
+    "Actual terminal-reply-before sentinel probe called prepare_reply with retained refused and complaint statuses, suppressed=false, an active permitted synthetic campaign and a repeated incoming body; both attempted a model call instead of stopping",
+    "NoModel sentinel raises model_attempted_after_retained_terminal_status before any actual model or outbound execution; two FAIL records remain private and immutable",
+    "Root cause is unconditional prospect.model_copy(status=new) for reply continuity without a terminal-status early guard; existing primary preparation rejects those statuses correctly"
+  ],
+  "rollback": "Scoped revert terminal-status early guard/instructions only if evidence invalidates it; retain first probe FAIL and stop/replay regression. Never reenable an opted-out marketing sequence from a missing boolean; separate real rights Case processing remains external",
+  "id": "upgrade-5b2a5d54-ad1b-48ba-9fdc-94dd2a382a37",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "3e28b48904dc7a5081ec9676177a2bfe37d75e01",
+  "createdAt": "2026-10-10T06:10:47.050Z"
+}

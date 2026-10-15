@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Two actual300s failures and ten observed calls preserved. High source timing900/600/150/150, sameclock/tworounds/sixcalls/precharge reserves; no provider latency/adoption claim. Current-policy wire does not rewrite historical timing. Peer readonly pin/default review accepted.",
+  "checks": [
+    {
+      "command": "focused offline timing/projection/adapter/observation/Discovery regression",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md:61PASS5.14s"
+    },
+    {
+      "command": "native PG timing and maintained team fixtures; scoped language correction final rerun",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md:4newHigh cases pass; full25PASS afterclock/bound fixes, final6PASS37.19s fixesremaining2; originalFAILpreserved"
+    },
+    {
+      "command": "scoped Ruff and git diff --check",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md:no source/default compensation or weakened acceptance"
+    }
+  ],
+  "eventId": "260b5e13-e34b-4de5-a588-022b9205422c",
+  "sequence": 2,
+  "at": "2026-10-14T22:58:22.404Z"
+}

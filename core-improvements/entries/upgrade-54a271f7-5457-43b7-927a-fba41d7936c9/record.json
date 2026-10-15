@@ -1,0 +1,29 @@
+{
+  "siteId": "core",
+  "summary": "Workspace coordinator cannot persist an explicit owner-requested native agent draft; connect bounded typed preparation through existing TeamTurn/Task worker and canonical Session provisioning without implicit permissions or duplicate execution",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_WORKSPACE_AGENT_PREPARATION_S4_2026_10_14.md",
+    "S3a9 directory remains read-only; maintained TeamHandler supports only internal answer/delegation"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/preparation.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/preparation_wire.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/preparation_contract.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/preparation_schema.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/service.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/routes.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/handler.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/models.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/migrations/versions/0033_workspace_agent_preparation.py",
+    "docs/contracts/verslomatika-workspace-agent-preparation.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert preparation wiring and portal input; retained native Task/Agent/Config/usage preserved;0033 downgrade refuses nonempty preparation intents",
+  "id": "upgrade-54a271f7-5457-43b7-927a-fba41d7936c9",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "4c4174a87c023a73994f1933a5afc15106d16322",
+  "createdAt": "2026-10-14T07:03:13.573Z"
+}

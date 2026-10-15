@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root own0034 SQL defense test reproduced JSON-null acceptance:1FAIL18.84s on first isolated QA67c28f946341; CHECK unknown/null had been accepted although server Pydantic/storage reader rejected it. Canonical receipt SQL now coalesces identity/protocol expressions tofalse and uses IS DISTINCT FROM for approval/native hashes. New separate QAd380ee42bd80 passed14wire+5SQL before explicit immutable command/request DTO binding was added. Both earlier QA/state/logs preserved; third owned QA will validate final controller shape after peer bridge integration. Canonical schema moves from the provisional agent-business-core/contracts filename into docs/contracts/verslomatika-site-foundation.openapi.json for the maintained exact-Git-byte portal importer; no schema loader copy or alternate core. Source/internal checkpoints remain incomplete and unpushed; no original0032/source/runtime/model/calibration adoption claim.",
+  "eventId": "49f11b63-0caa-434a-99ce-974e41e8ee02",
+  "sequence": 2,
+  "at": "2026-10-14T09:58:43.114Z"
+}

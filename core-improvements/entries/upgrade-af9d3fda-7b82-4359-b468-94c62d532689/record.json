@@ -1,0 +1,19 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_wire.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_contract.py"
+  ],
+  "rollback": "Revert the additive wire export only; it registers no routes and starts no worker. Keep old group, native Episode, original source/receipts and actual case untouched.",
+  "summary": "The requested messenger has no server-selected recipient or separate direct history contract; existing Send is topic-group consultation and saved agents are non-executing drafts. Add an independent strict direct wire before runtime/codegen integration.",
+  "category": "code",
+  "siteId": "core",
+  "evidence": [
+    "Canonical3b7 workspace_team/Send accepts no recipient; handler starts coordinator plan and history/context are topic-wide. TaskThread has real mandatory BusinessGrant FK, so creation-only consultation needs a separate authorized workspace execution union, never fake registration.",
+    "New independent contract baseline1FAIL1PASS1.51s: direct_contract missing, original group recipient injection rejected. Private logSHA25689b5676d4838c16738ad16379faa6fe26c36b16dd1753afdff59489c63d0a168. No actual provider/DB/case operation."
+  ],
+  "id": "upgrade-af9d3fda-7b82-4359-b468-94c62d532689",
+  "branch": "codex/verslomatika-direct-messenger-20261016",
+  "baseSha": "3b7ef1baa7d0b11984a7739651041f1c0738e997",
+  "createdAt": "2026-10-15T22:02:17.716Z"
+}

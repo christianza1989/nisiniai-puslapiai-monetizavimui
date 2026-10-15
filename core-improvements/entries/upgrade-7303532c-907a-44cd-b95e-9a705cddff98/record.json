@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "A newer approved build can be selected by the owner keyset yet remain blocked by the legacy approval lookup's internal100-row limit before advance executes it.",
+  "category": "code",
+  "evidence": [
+    "migrations/versions/0030_site_build_candidates.py retains LIMIT100; site_build/service.py filters target after the function",
+    "docs/handoffs/VERSLOMATIKA_EXACT_APPROVAL_LOOKUP_2026_10_14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/approval_selectors.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/selectors.py",
+    "agent-business-core/runtime/migrations/versions/0039_exact_build_approval.py",
+    "agent-business-core/runtime/tests/test_site_build_approval_lookup_pg.py",
+    "docs/decisions/VERSLOMATIKA_EXACT_APPROVAL_LOOKUP_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_EXACT_APPROVAL_LOOKUP_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert before adoption;0039 removes only the new overload, retaining legacy0030 and historical approval rows. Coordinate migration/source as one packet.",
+  "id": "upgrade-7303532c-907a-44cd-b95e-9a705cddff98",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "c26384d5dc5c3a319a71b08edf1a4065d80e89ca",
+  "createdAt": "2026-10-14T18:17:33.037Z"
+}

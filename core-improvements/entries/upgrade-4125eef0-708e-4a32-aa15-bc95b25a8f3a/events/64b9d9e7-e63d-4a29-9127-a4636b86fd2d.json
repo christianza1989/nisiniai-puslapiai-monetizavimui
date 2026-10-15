@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "D retained FAIL had all evaluator criteria true: recipient mixed privacy questions with explicit opt-out, correctly classified refusal/stop, but static question-only expectation failed. Do not rewrite D or lower gates. Split fixtures into informational-privacy first turn and distinct privacy-optout archetype; expand known matrix from384 to400. Add explicit scenario_expectation_mismatch diagnosis while preserving FAIL and test both paths.",
+  "eventId": "64b9d9e7-e63d-4a29-9127-a4636b86fd2d",
+  "sequence": 4,
+  "at": "2026-10-09T21:57:49.407Z"
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Actual RLS-hidden historical owner UUID collides with shared control_tasks unique key and raises23505; serialize all kinds with canonical actor admission and return controlled409 after rollback.",
+  "category": "code",
+  "evidence": [
+    "Private original FAIL3c2a76b892ded721a451cd0c5e2dbae26b9a9afb1bfb676ac3104f6887734f1a (real unique violation after owned former business grant revocation)",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/tasks.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_tasks.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert; no deletion or renewal of hidden historical tasks/mandates.",
+  "id": "upgrade-3c30ec7f-ee23-4786-86b7-f097985ad6c7",
+  "branch": "codex/acquisition-typed-capture-20261012",
+  "baseSha": "2819c5a1eb86e2141968888b646a87b69a2d409f",
+  "createdAt": "2026-10-12T01:06:59.207Z"
+}

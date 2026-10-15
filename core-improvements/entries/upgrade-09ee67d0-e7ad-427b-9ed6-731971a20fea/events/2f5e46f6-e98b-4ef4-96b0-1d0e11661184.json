@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Deterministic transient-open baseline0PASS1FAIL reproduced EPERM before task. Bounded Windows acquisition retry retains exclusive wx, permanent original error and existing token ownership. Original child intermittent EPERM kept; no blind retry acceptance.",
+  "checks": [
+    {
+      "command": "node --test test/write-lock.test.mjs",
+      "result": "PASS",
+      "evidence": "4PASS1.56s, transient sharing faults then real exclusive acquisition, permanent error identity/timeout,30real concurrent additions, abandoned/replacement locks preserved."
+    },
+    {
+      "command": "npm test --prefix content-studio",
+      "result": "PASS",
+      "evidence": "Final91PASS82.14s includes actual concurrent current-site CAS and prepare snapshot regression. Independent review no P0–P2."
+    }
+  ],
+  "eventId": "2f5e46f6-e98b-4ef4-96b0-1d0e11661184",
+  "sequence": 3,
+  "at": "2026-10-11T02:46:13.654Z"
+}

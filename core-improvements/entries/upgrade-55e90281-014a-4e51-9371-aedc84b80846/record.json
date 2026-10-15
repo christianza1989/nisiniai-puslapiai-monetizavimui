@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Expose existing canonical native editorial shape validator for private metadata before public business facts are available; no copied schema engine.",
+  "category": "code",
+  "evidence": [
+    "content-package-v2.mjs private assertSchema already owns native editorial rules; validateV2Draft requires full public site truth and cannot validate unknown-facts private metadata independently."
+  ],
+  "paths": [
+    "content-studio/src/content-package-v2.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6104514568",
+  "rollback": "Scoped revert of only additive export; canonical schema and existing validation remain untouched.",
+  "id": "upgrade-55e90281-014a-4e51-9371-aedc84b80846",
+  "branch": "codex/customer-content-workflow-20261011",
+  "baseSha": "5062b0040a634065e1ef746e7428b5dd8c1a811c",
+  "createdAt": "2026-10-11T02:14:28.214Z"
+}

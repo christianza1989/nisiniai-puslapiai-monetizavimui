@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Frozen functional a4032b0cd49962e624c62f31a4635d925cccf5c6 on PR1020986496e; supplied preparation/decisions are synthetic injected source QA, not authenticated producer or actual model output. Original FAILs retained, including PK ordering f32b6a929a2edb9c6ff9efa7c4ecc39c89e68f94af9624db7e8eaf0357e33f78 and two reviewer regressions 7f8efe5f7a7d1528e2deae03eefe6212ea05b31c007f555f2a3a516b3dbbedef before repair. Other original fixture/harness failures retained privately. Readonly review found no remaining concrete P0-P2 after repair, reviewer ran no QA. Operational0023 all-row fingerprint unchanged; zero provider/model/channel calls, synthetic example.test/external_sent=false. Daily worker, actual models, ordinary portal/director, target-PC/public and whole platform OPEN.",
+  "checks": [
+    {
+      "command": "python artifacts/acq-work-frozen.private.py; pytest acceptance_tests/test_acquisition_correspondence.py -q --tb=short; pytest tests/test_acquisition_adoption.py -q --tb=short; pytest offline_tests/test_acquisition*.py -q --tb=short; four existing acquisition schema --check scripts",
+      "result": "PASS",
+      "evidence": "Clean a403 before/after. 26 actual restricted-PG correspondence cases 38.84s SHA491904b29a58b2c45cace0edb089e9d8402e02bc67ad11888376d2d2a1711cc2; 22 normal foundation 25.53s SHAfaafc7b6fb5b1ee1b8b4fff575c2a0764b648a890212dfc48d7e3819ecb7d747; 93 offline/67 subtests 13.94s SHAb266e57599357f656ab1e003cc514e9c5b5f246d8a3dd401e0a4f675ac8b785c; all4 schemas PASS. Private receipt artifacts/acq-work-frozen-20261012T003716Z/receipt.private.json SHA02ee83edcdb6e590ec571016687ab00c5dd486cc1e0f7eea738c835f163b83e0."
+    },
+    {
+      "command": "python artifacts/acq-work-normal.private.py",
+      "result": "PASS",
+      "evidence": "Actual normal TCP control_api18868 + restricted PostgreSQL15438; canonical outgoing capture/inbound refusal/immediate stop/privacy Case. Own API+PostgreSQL+separate Python worker restart/replay original ACK bytes/watermark/counts unchanged, changed payload409, stopped capture read403, current correspondence read200, no expiry renewal. Private receipt artifacts/acq-work-normal-20261012T003250Z/receipt.private.json SHA22f168d658ba90e554c7b6e7b16fb9b00dec12e587c11b19606f9a8518e2aeae."
+    },
+    {
+      "command": "python artifacts/acq-work-chain.private.py",
+      "result": "PASS",
+      "evidence": "Full0001->0026/bootstrap; isolated empty downgrade/up; populated rollback refuses without row mutation; module-owned overgrant refusal/repair/idempotence without Control privileges; actual pg_dump-Fc/restore exact row fingerprint; partial schema refusal. Operational pinet_customer_creation_20261010 remains0023 with exact all-row fingerprint. Clean a403 before/after. Private receipt artifacts/acq-work-chain-20261012003525/receipt.private.json SHAe2be9bea693b0dcb1dab75dc8fc1c7b643347104eeeb032d89fc2a6d4ba2f07c."
+    }
+  ],
+  "eventId": "83ad787e-7bf6-4614-8177-91fee4d25feb",
+  "sequence": 3,
+  "at": "2026-10-12T00:42:11.096Z"
+}

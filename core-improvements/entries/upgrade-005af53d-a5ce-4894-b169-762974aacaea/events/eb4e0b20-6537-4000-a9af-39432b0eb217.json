@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Required all-role loop and committed-diff provenance checker implemented; original optional routing/fixture-only CI gap and the actual nine-path BLOCKED audit remain in QA. Cross-repo same-filename confusion prevented. Source main/remote agent adoption remain separate.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs",
+      "result": "PASS",
+      "evidence": "Final19/19, no skipped/removed; earlier baseline12 and first expanded18 retained in docs/CORE_EXPERIENCE_LOOP_QA_2026-10-10.md"
+    },
+    {
+      "command": "uv run --no-project --with PyYAML python skill-creator/scripts/quick_validate.py SKILLS/niche-client-acquisition",
+      "result": "PASS",
+      "evidence": "Skill is valid; first default/bundled Python yaml prerequisite FAIL retained, no project dependency mutation"
+    },
+    {
+      "command": "changed Markdown local targets and niche-client-acquisition catalog hash check",
+      "result": "PASS",
+      "evidence": "8 files/86 local links/0 missing; exactly one entry hash changed"
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "6 packaged profiles; input integrity only, no claimed runtime behaviour/knowledge/channels/model calls"
+    }
+  ],
+  "eventId": "eb4e0b20-6537-4000-a9af-39432b0eb217",
+  "sequence": 2,
+  "at": "2026-10-10T00:25:44.846Z"
+}

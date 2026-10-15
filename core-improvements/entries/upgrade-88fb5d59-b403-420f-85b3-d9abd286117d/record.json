@@ -1,0 +1,29 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Exact saved Agent Config has actual local episodes and independent Quality receipts, but the customer dashboard contract exposes no safe retained test-evidence view",
+  "category": "code",
+  "evidence": [
+    "Frozen actual a849/source592 train baseline: three cases/four customer turns/three independent Quality judgments helpful/issues0, receiptSHAc1704326f4edf2d77daa7d0c4acba29619c7a47c0d2cac0a0475d17fd751283f; holdout withheld and calibration UNVERIFIED",
+    "customer_agents/routes.py and strict Detail/Readiness expose only Config/revisions/false calibration capabilities, no existing episode/Quality evidence route"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evidence.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/contract.py",
+    "agent-business-core/runtime/tests/test_customer_agent_evidence.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agent_evidence.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agents.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/AGENT-CALIBRATION-2026-10-11.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6110588654",
+  "rollback": "Scoped revert of additive read-only evidence DTO/route; no database migration or operational-history rewrite",
+  "id": "upgrade-88fb5d59-b403-420f-85b3-d9abd286117d",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "a84957e34c5c6c54b175221645ba8706e7a237cf",
+  "createdAt": "2026-10-11T15:28:11.114Z"
+}

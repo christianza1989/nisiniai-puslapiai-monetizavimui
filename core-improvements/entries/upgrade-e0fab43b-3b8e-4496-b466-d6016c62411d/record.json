@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "The maintained customer-agent draft creation and revision path required a raw bearer and opened its own transaction, preventing a Task worker from applying the same native Session/Registration/Foundation authority atomically. Add a source-pinned session-bound adapter, dry capture and non-locking current verification on the canonical authority/mutations; reject historical UUID receipt rebinding.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_AGENT_PROVISIONING_S4_2026_10_14.md",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/tests/test_customer_agent_provisioning_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/provisioning.py",
+    "agent-business-core/runtime/tests/test_customer_agent_provisioning.py",
+    "agent-business-core/runtime/tests/test_customer_agent_provisioning_pg.py",
+    "docs/decisions/VERSLOMATIKA_AGENT_PROVISIONING_S4_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_AGENT_PROVISIONING_S4_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this adapter/common-helper refactor, restoring prior public service path; no migration or runtime activation to undo.",
+  "id": "upgrade-e0fab43b-3b8e-4496-b466-d6016c62411d",
+  "branch": "codex/verslomatika-s4-agent-provisioning-20261014",
+  "baseSha": "a9aaa671e4fa04514a92167caf780d308cc408f4",
+  "createdAt": "2026-10-14T07:23:17.974Z"
+}

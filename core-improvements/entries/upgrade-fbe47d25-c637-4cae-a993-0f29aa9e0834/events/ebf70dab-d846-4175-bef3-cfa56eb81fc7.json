@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Native V2 private prepare/apply implemented with exact original intake/source/creation/revision/host/page binding; whole planningBrief and canonical editorial/SEO/language snapshots; rich schema and real own-site targets; content/planning/whole-site CAS inside canonical write lock. Original private unknown operator/contact preserved; full public validator unchanged at approval. Existing factChecks and private approved/public release history preserved. Initial7PASS2FAIL plus wrong release fixture field failure retained. No provider, root workspace edits, public schema, generator, customer queue/API, source/media verification or launch acceptance.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-content-write.test.mjs content-studio/test/customer-creation-intake.test.mjs content-studio/test/planning-brief.test.mjs content-studio/test/content-workflow.test.mjs content-studio/test/write-lock.test.mjs content-studio/test/content-package-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "33 actual isolated Node/model tests PASS,0skip: rich private writes, stale content/planning/site, manifest/source tampering, malformed/candidate/foreign claims, canonical real synthetic release bytes and concurrent CAS."
+    },
+    {
+      "command": "npm test --prefix content-studio",
+      "result": "PASS",
+      "evidence": "71 full studio tests PASS,0skip before final additional research binding; native/legacy renderer, V2 generation rejection, private publication, source/media/instruction/queue regressions."
+    },
+    {
+      "command": "node --test content-studio/test/customer-content-write.test.mjs content-studio/test/seo-research.test.mjs",
+      "result": "PASS",
+      "evidence": "Final research snapshot digest binding +11writer/6research tests:17PASS,0skip. Exact research bytes/current states affect prepared context; missing/candidate research never promoted to verification."
+    }
+  ],
+  "eventId": "ebf70dab-d846-4175-bef3-cfa56eb81fc7",
+  "sequence": 4,
+  "at": "2026-10-10T12:39:20.724Z"
+}

@@ -23,6 +23,8 @@ class Business(Base):
     id: Mapped[str] = mapped_column(String, primary_key=True, default=new_id)
     site_id: Mapped[str] = mapped_column(String, unique=True)
     canonical_host: Mapped[str] = mapped_column(String, unique=True)
+    __table_args__ = (UniqueConstraint("id", "site_id", "canonical_host",
+                                      name="uq_registration_business_identity"),)
 
 
 class Scoped:
@@ -49,6 +51,7 @@ class MailMessage(Scoped, Base):
     direction: Mapped[str] = mapped_column(String)
     state: Mapped[str] = mapped_column(String)
     __table_args__ = (
+        UniqueConstraint("id", "business_id", "environment_id", name="uq_mail_message_scope"),
         UniqueConstraint("business_id", "environment_id", "message_id"),
         ForeignKeyConstraint(["case_id", "business_id", "environment_id"],
                              ["cases.id", "cases.business_id", "cases.environment_id"], ondelete="CASCADE"),

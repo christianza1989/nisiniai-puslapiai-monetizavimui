@@ -1,0 +1,24 @@
+{
+  "category": "code",
+  "summary": "Actual full I2 bootstrap widens immutable acquisition receipt grants; exclusion alone fails to repair existing privileges",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/ledger_schema.py",
+    "agent-business-core/runtime/scripts/acquisition_capture_setup.py",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "SKILLS/catalog.json",
+    "docs/ACQUISITION_I2_BOOTSTRAP_PROPOSED.patch"
+  ],
+  "evidence": [
+    "Separate actual PostgreSQL15541 full0001→0010→0011 I2 source120a84 + acquisitionDDL ec99263: bootstrap widened receipt UPDATE/DELETE, actual capture startup BLOCKED_IMMUTABLE_GRANTS",
+    "Owned exclusion-only preview still had original widened UPDATE/DELETE and capture startup remained blocked; baseline/exclusion output files retained",
+    "Original owner bootstrap/control/task/migration source and retained15439 native acceptance data untouched"
+  ],
+  "rollback": "Scoped revert owned module grant helper/setup and unadopted proposal; keep startup refusal and original first-failure/owner-source receipts",
+  "id": "upgrade-c5ebe633-5eb2-44ad-b9fd-5ff417be25ef",
+  "branch": "codex/acquisition-core-20261009",
+  "baseSha": "ec99263ddb1105963d2d58acae8940cf3dfa5e4d",
+  "createdAt": "2026-10-10T04:31:29.700Z"
+}

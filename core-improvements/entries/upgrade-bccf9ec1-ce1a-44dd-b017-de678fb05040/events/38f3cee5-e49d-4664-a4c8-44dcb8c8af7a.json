@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Owned canonical director/context/settlement/final-clock repair. Original17/3FAIL85e42143, revision/Session/downgrade3FAIL50cf14ad, last-worker-clock2FAIL99c95988 retained. Downgrade witness rolled back all temporary ownership/DDL and retained input hash. No old history or fingerprint reset. Also retained expanded fixture1FAIL226cce11 and combined-collection2069ceb0; corrected harness only. Typed regression original9FAIL19PASS eaffeb5b at admission expiry retained; isolated6PASS2a3e60cf and latest full28PASSb4a68246 without production predicate changes. Initial intermittent expiry cause remains UNVERIFIED, not declared fixed.",
+  "eventId": "38f3cee5-e49d-4664-a4c8-44dcb8c8af7a",
+  "sequence": 2,
+  "at": "2026-10-12T04:10:19.767Z"
+}

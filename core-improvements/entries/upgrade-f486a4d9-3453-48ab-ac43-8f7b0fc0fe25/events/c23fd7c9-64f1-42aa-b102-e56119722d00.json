@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Independent read-only review of initial dafd339 found a concrete P2: current and historical approvals lost their distinction when bounded metadata omitted approved_revision_sha256. A controlled in-memory canonical-wire witness held other fields constant to isolate the semantic loss; this is not a hash collision/Foundation bypass. Carry the exact canonical approval hash, retain an intact no-false-review prompt and add missing/current/stale regression.26 targeted unit/boundary PASS0.27s/Ruff. Frozen b8 restricted-PG integration cohort still running; no final native or serving acceptance claimed for the new projection yet.",
+  "eventId": "c23fd7c9-64f1-42aa-b102-e56119722d00",
+  "sequence": 2,
+  "at": "2026-10-15T06:20:36.212Z"
+}

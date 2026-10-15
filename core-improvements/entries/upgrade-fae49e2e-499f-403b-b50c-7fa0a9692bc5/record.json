@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Approved discovery build could bypass UI foundation gate through Registration-only customer-agent writes",
+  "category": "workflow",
+  "evidence": [
+    "docs/VERSLOMATIKA_DISCOVERY_FOUNDATION_GATE_QA_2026-10-13.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/offline_tests/test_business_discovery.py",
+    "agent-business-core/runtime/tests/test_customer_agents.py",
+    "docs/VERSLOMATIKA_BUSINESS_DISCOVERY.md",
+    "docs/VERSLOMATIKA_DISCOVERY_FOUNDATION_GATE_QA_2026-10-13.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert only this follow-up; preserve discovery approvals, all old agent configuration history and charged attempts",
+  "id": "upgrade-fae49e2e-499f-403b-b50c-7fa0a9692bc5",
+  "branch": "codex/discovery-agent-foundation-gate-20261013",
+  "baseSha": "7d5b092950a6ef6ce8519da2026579712fa1155f",
+  "createdAt": "2026-10-12T22:55:18.939Z"
+}

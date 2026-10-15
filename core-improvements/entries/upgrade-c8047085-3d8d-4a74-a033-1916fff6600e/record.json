@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "The async Xbot library lacks a canonical restricted-PG module worker grant, durable ticket and final proposal acceptance bridge.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/xbot/CUSTOMER_AGENTS_HANDOFF.md",
+    "agent-business-core/xbot/QA-ASYNC-CORE.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/service.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/admin.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/worker.py",
+    "agent-business-core/runtime/migrations/versions/0024_xbot_module_flow.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/97",
+  "rollback": "Scoped revert and disable xbot_bridge_enabled; retained populated histories refuse destructive downgrade. No operational migration/adoption performed.",
+  "id": "upgrade-c8047085-3d8d-4a74-a033-1916fff6600e",
+  "branch": "codex/xbot-pg-flow-20261011",
+  "baseSha": "08683305b37a9ac9cfe60ccf0d698e1dfb650231",
+  "createdAt": "2026-10-11T21:05:09.538Z"
+}

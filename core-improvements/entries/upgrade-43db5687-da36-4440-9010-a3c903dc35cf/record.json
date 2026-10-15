@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Actual second-round native GUIDE creator emits an unverified external link despite exact-URL instructions; provider schema still permits any HTTPS target",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md",
+    "ActualGUIDE3 four charged roles/tenEvents failed writer_unverified_external_link, noapply receipt90c287189eb620710cc1d0dd0abaecd8975d847955b489bc5bb15568cde00a7d",
+    "Original scoped schema witness1FAILeff451159adaf19c594ae81051d284677f25a77c9dfc4bf884258fb8383d52d2"
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-write.mjs",
+    "SKILLS/niche-content-planner/references/network-linking.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of per-page provider URL enum and new exact-address instruction; preserve actual strict writer guard, every original failed/succeeded Job, instruction fingerprint and model usage. No alias rewrite, URL verification or authority widening.",
+  "id": "upgrade-43db5687-da36-4440-9010-a3c903dc35cf",
+  "branch": "codex/native-guide-verified-urls-20261012",
+  "baseSha": "65329d0868689261e4bcc3be4b4c30fc0f9e89a6",
+  "createdAt": "2026-10-12T12:53:37.121Z"
+}

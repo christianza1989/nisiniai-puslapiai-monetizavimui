@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Fresh empty DB rehearsal exposed chat-off read usability gap: history/report/events/cancel inherited admission guard. Removed that guard only from current-session/grant/RLS protected reads/cancel; submission/worker authorization unchanged.26 actual PostgreSQL task/operations/bridge regressions PASS in27.57s. Original private rehearsal receipt's empty-history/report404 labels were inaccurate; actual first assertions history403/report not tested, retained as invalid for those fields. Corrected HTTP retest and separate v2 receipt still pending. Portal actual UI continues against pinned8aaa175; no worker/provider call.",
+  "eventId": "bcb3fecd-90c6-49ca-8c64-d9ebd4120d49",
+  "sequence": 3,
+  "at": "2026-10-10T05:47:41.693Z"
+}

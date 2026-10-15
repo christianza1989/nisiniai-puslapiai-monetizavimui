@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Post-e8f4edd exact60-variant no-op reproduced1FAIL3.703s because an already-present primary ID made61 patch inputs. Single Set dedupe preserves the60 cap; real15-family/60-variant regression now1PASS3.346s. Prior source/results immutable. Exact9c-to-e8 scoped coverage2paths/0errors PASS; inherited default main-to-head373-change coverage is BLOCKED and separately reported, foreign journals untouched.",
+  "checks": [
+    {
+      "command": "node --test --test-name-pattern='canonical 60-variant' content-studio/test/customer-content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_NATIVE_MEDIA_ATTACHMENT_2026_10_15.md"
+    }
+  ],
+  "eventId": "de79626a-acd2-4c99-af41-378f692b4978",
+  "sequence": 4,
+  "at": "2026-10-15T02:32:48.423Z"
+}

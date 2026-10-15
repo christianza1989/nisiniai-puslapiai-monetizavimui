@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Source-only native owner Task chain accepted on clean cda4a596e00190e143cdbdfe918e945319a8e227. Seven real restrictedPG API/worker cases PASS129.64s incl exactHighpin/nativeQuality/samechat/provenance/SUM usage/replay/cancel/legacyhistory/nonbusiness/Unicode. Original9583PASS1history503 and later peer findings retained, repaired without gate weakening. Native and old core compatibility separately13+84+57PASS on frozen877; helper owns its own acceptance event. Providers0, no operational DB/serving/fullcalibration/admission claim.",
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_workspace_agent_episode_pg.py",
+      "result": "PASS",
+      "evidence": "7 PASS129.64s; clean cda source; private native-agent-api-final-regression.log, SHA256 b54c8e923d9735a3b515080676ac23bc060d3b1de84cb5e6919641bd7d1925bb"
+    },
+    {
+      "command": "python -m pytest -q offline_tests/test_workspace_agent_episode.py offline_tests/test_workspace_calibration_plan.py tests/test_workspace_team.py tests/test_workspace_agent_preparation.py; ruff check affected source/tests",
+      "result": "PASS",
+      "evidence": "60 PASS0.91s/Ruff PASS; scoped route-only Unicode cap and no widened ordinary call bound; original lazy-router fixture failure retained."
+    },
+    {
+      "command": "python -m pytest -q tests/test_workspace_calibration_budget_pg.py tests/test_workspace_episode_provenance_pg.py",
+      "result": "PASS",
+      "evidence": "27 PASS209.22s on immutable f81ad704e6da064343073e2c7900ba796d802620; existing native ledgers, concrete allowance and original0032 unchanged."
+    }
+  ],
+  "eventId": "c2981770-b728-4e3e-86d7-413c1fa047e5",
+  "sequence": 7,
+  "at": "2026-10-15T05:16:47.427Z"
+}

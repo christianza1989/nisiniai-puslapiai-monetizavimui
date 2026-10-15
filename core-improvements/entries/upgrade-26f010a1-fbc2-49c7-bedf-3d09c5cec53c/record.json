@@ -1,0 +1,19 @@
+{
+  "siteId": "madbeauty",
+  "category": "code",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert with normal/native workers held; preserve original failed tests, outbox bytes/status/ACKs and privacy history. No database erasure, automatic activation or main merge.",
+  "summary": "Clear native provider identity and terminal state in every retained recipient context during trusted erasure after a restart with only one signer loaded",
+  "paths": [
+    "sites/madbeauty/acquisition-native-20261010/native-recipient-privacy.mjs",
+    "sites/madbeauty/acquisition-native-20261010/native-recipient-privacy.test.mjs"
+  ],
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+    "Independent read-only a355 review P2: unloaded-scope provider account_ref/active/terminal state survives fallback recipient erasure; preserve encrypted retirement intent and never invent another scope signer."
+  ],
+  "id": "upgrade-26f010a1-fbc2-49c7-bedf-3d09c5cec53c",
+  "branch": "codex/madbeauty-acquisition-adoption-20261012",
+  "baseSha": "e88a332647d6106a2a9f490c2ad12f7719607e4e",
+  "createdAt": "2026-10-11T23:22:41.583Z"
+}

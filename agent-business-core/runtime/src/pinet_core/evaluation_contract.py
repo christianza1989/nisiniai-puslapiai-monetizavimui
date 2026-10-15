@@ -9,5 +9,8 @@ ROOT = Path(__file__).resolve().parents[2]
 def fingerprint():
     paths = [ROOT / p for p in ['scripts/network_lab.py', 'scripts/client_lab.py', 'scripts/learning_observation.py']]
     paths += sorted((ROOT / 'src/pinet_core').glob('*.py'))
+    # Dynamic evidence/Config/Profile DTO changes also version future judgments.
+    for package in ['customer_agents', 'customer_profile', 'customer_text']:
+        paths += sorted((ROOT / 'src/pinet_core' / package).glob('*.py'))
     paths += sorted((ROOT / 'src/pinet_core/instructions').rglob('*.md'))
     return digest('\n'.join(str(p.relative_to(ROOT)) + ':' + digest(p.read_text(encoding='utf-8')) for p in paths))

@@ -1,0 +1,30 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual compact Sol business review repeatedly terminates before a complete report; restore historical completed Luna review execution profile without changing acceptance gates.",
+  "category": "code",
+  "evidence": [
+    "Exact8958c87 job0f245510 terminal provider_error, compact Sol critic true incomplete/max_output_tokens after first finding began, no completed usage;34charged preserved/noaccepted/intake. Terminal receipt SHA e183158ee7e27b061b5410c090b912f0d580ba27194cb0b38768c28e7e472d48.",
+    "Independent read-only review: historicalf702 Luna medium/default verbosity completed separate critic and coordinator; supported extra Sol budget configuration absent. New compact Luna execution remains unverified."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/config/creation-review-models.json",
+    "agent-business-core/runtime/config/CREATION_REVIEW_MODELS.md",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review_model.py",
+    "agent-business-core/runtime/offline_tests/test_creation_compact_review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "agent-business-core/runtime/tests/test_creation_review_model.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6102282692",
+  "rollback": "Scoped revert review profile/catalogue only; preserve original failed calls, immutable mixed-model history/schema18 and compact/full acceptance gates. No quota reset or partial response acceptance.",
+  "id": "upgrade-be8f6771-bb68-49ec-b8e4-566c1ce6fc15",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "8958c87ab4acfd1ca953dc0501830adab1347c25",
+  "createdAt": "2026-10-10T21:19:12.523Z"
+}

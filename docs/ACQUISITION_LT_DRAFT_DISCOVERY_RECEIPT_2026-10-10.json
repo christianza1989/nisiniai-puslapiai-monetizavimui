@@ -1,0 +1,113 @@
+{
+  "version": "0.1.0",
+  "status": "LOCAL_SOURCE_RESEARCH_AND_GUARD_NOT_LIVE_PIPELINE",
+  "source_baseline": "e8e5bcbfb4d5c962f15d04c0bc5b47e1d77a3fdd",
+  "native_catalogue_source": "2e4d1ea874326f6862e2f45d98a48fdf3463a267",
+  "native_taxonomy_version": "2026-10-06-v1",
+  "native_taxonomy_file_sha256": {
+    "taxonomy.mjs": "e4ca28cbd8b63fd967b5babc692f22658fe5d7da9d9480dd5e0f90e1b204c7ce",
+    "taxonomy-data.mjs": "d0dc5c905d857ca39182de24bacea016b351510494e91621b8a81741540cc06f"
+  },
+  "created_at": "2026-10-10T05:03:44.774098+00:00",
+  "evidence_recheck_after": "2026-10-11T05:03:44.774098+00:00",
+  "search": {
+    "endpoint_id": "tinyfish.web.search",
+    "total_calls": 16,
+    "total_result_rows": 150,
+    "actual_total_cost_usd": 0,
+    "provider_cache": "forbidden",
+    "raw_provider_results_retained": false
+  },
+  "actual_local_guard": {
+    "call_id": "903a58517ea84da1be43ca0534b79bfa",
+    "url_count": 10,
+    "excluded": 3,
+    "primary_read_required": 7,
+    "qualified_provider": 0,
+    "guard_sha256": "13e7a9e0f3fc855793b02aebbf8d1f32a94085192eaa6cbcfeacfa29270177cb"
+  },
+  "source_retrieval": {
+    "accepted_checks": 21,
+    "readable": 17,
+    "unavailable": 4,
+    "initial_failed_wrapper_attempts": 1,
+    "initial_status_retained": false,
+    "raw_bodies_retained": false
+  },
+  "research": {
+    "source_backed_candidates": 15,
+    "manual_review_drafts": 15,
+    "engine_draft_ready": 0,
+    "model_calls": 0,
+    "contacts_collected": 0,
+    "accounts_created": 0,
+    "core_jobs_created": 0,
+    "covered_source_category_ids": [
+      "antakiai",
+      "blakstienos",
+      "depiliacija",
+      "ilgalaikis-makiazas",
+      "kunas",
+      "makiazas",
+      "masazas",
+      "nagai",
+      "plaukai",
+      "spa",
+      "tatuiruotes",
+      "veidas",
+      "verimas"
+    ],
+    "covered_source_cities": [
+      "Alytus",
+      "Kaunas",
+      "Klaipėda",
+      "Marijampolė",
+      "Vilnius",
+      "Šiauliai"
+    ],
+    "missing_core_category_ids": [
+      "estetika"
+    ],
+    "first_party_candidate_city_gaps": [
+      "Panevėžys",
+      "Utena",
+      "Telšiai",
+      "Tauragė"
+    ],
+    "complete_national_or_category_coverage": false,
+    "external_sent": false
+  },
+  "campaign_enabled": false,
+  "source_use_verified": false,
+  "contactability_verified": false,
+  "checks": {
+    "new_offline_tests": 20,
+    "full_acquisition_offline_tests": 70,
+    "offline_subtests": 25,
+    "scoped_ruff": "PASS",
+    "skill_validation": "PASS",
+    "strict_prospects_validated_blocked": 15,
+    "exact_schema_checks": 4,
+    "new_local_postgresql_run": false
+  },
+  "private_evidence_sha256": {
+    "provider-minimal-receipts.json": "6ab6a94c50c2e12770be523f1f219868ee9cd7334b3f68ecc94f1ecadd1af368",
+    "actual-structured-filter-guard.json": "10f58071a13bf565aea23feb79bb3354b74fb42978418928276bbeaa84a5eaaf",
+    "source-backed-candidates-and-manual-drafts.json": "00785ef150a55a3e4db2da4902f2ffea1e47e1b2192fa9ce501aae5b684d8367",
+    "taxonomy-source.json": "e35e866e571928487a520661c8825604a274194745e70c34e1a2475763e3216c",
+    "attempt-01-failure.json": "709454339642ef36d4a23b33bdcbd392542018755e93e36798263de8186114cb",
+    "attempt-02/retrieval-metadata.json": "04719edc2f87e766d1080ddaef136e38f9d50d69f73b21298c2e8e20cf4abd55",
+    "extra-source-checks/s18.json": "7d341d5a5d4a0de063d34dea46da0456725dfb443fe84f18fe3b3f46150fa4f6",
+    "extra-source-checks/s19.json": "aa062179054fa8ed5a0f2a28ae6cb465c631dc68fcb2849c8c48f5e72bc27c31",
+    "extra-source-checks/s20.json": "30e2b5caace66b247c1f90d583a04d25aa290287a1ffbf2c35791b06cfce2fa4",
+    "extra-source-checks/s21.json": "5e7af329621a8173ea318a469c69153058a30114ab268b3f63a9dfa0cf9c2704"
+  },
+  "upgrade_id": "upgrade-e803acd2-763a-4822-aa88-a2a96bee08cf",
+  "remaining": [
+    "Normal owner bootstrap/grant-repair adoption and0012 down0011 window",
+    "Normal scoped API/config and server-authorized portal/director projection adoption",
+    "Generic typed daily execution and full normal vertical acceptance",
+    "Independent draft review/current native eligibility/source-use/contact/transport gates",
+    "National/category discovery gaps and hosted acceptance"
+  ]
+}

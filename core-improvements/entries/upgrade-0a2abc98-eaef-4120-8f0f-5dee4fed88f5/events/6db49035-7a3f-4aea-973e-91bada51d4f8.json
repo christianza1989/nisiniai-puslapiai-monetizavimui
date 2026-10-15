@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual operator preview duplicate baseline0PASS1FAIL785ms retained. First corrected full studio91PASS63179ms, but test-only positional assertion failure before that corrected to exact rich.id. Independent review found responsive helper width dedup can leave reimported IDs; actual repeated-import HTTP regression0PASS1FAIL943ms retained. Candidate-by-candidate singleton family check now uses unchanged shared alt/aspect rules; final91 suite pending. Customer draft/approval/release untouched.",
+  "eventId": "6db49035-7a3f-4aea-973e-91bada51d4f8",
+  "sequence": 2,
+  "at": "2026-10-11T04:43:37.433Z"
+}

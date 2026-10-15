@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Mandatory typography reference is linked by current skills but omitted from creation and shared studio instruction snapshots; no-file-tools JSON jobs cannot read the referenced source",
+  "category": "code",
+  "evidence": [
+    "Fetched main7af6b96 AGENTS/builder/planner/PROJECT_CONTRACT require canonical typography-system.md",
+    "aaf95b8 creation.adapter.INSTRUCTION_FILES and content-studio/src/editorial-skill.mjs omit the reference; native GUIDE prepare reuses loadEditorialSkill"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "content-studio/src/editorial-skill.mjs",
+    "content-studio/test/editorial-skill.test.mjs",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only additive canonical reference loading/tests; keep newly merged skills, historical snapshots and source/rendered acceptance distinctions",
+  "id": "upgrade-f52f070d-52ac-40f6-b447-decc32387b06",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "aaf95b8078d414a4a7e7aa4e6103af051b2539d3",
+  "createdAt": "2026-10-10T16:33:30.229Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original actual HTTP wire FAIL3c2a76b8 retained. Preserve byte-identical old chat/operations schemas and filter old endpoints; additive strict acquisition-tasks.v1 router/shared read/events/report/cancel over same rows, current owner identity/read purpose and keysets. Original tuple serializer FAIL5659843e retained and fixed. Frozen/schema/consumer QA pending; no runtime adoption.",
+  "eventId": "db2bf437-c80d-40f8-ade6-c6c7adc2492c",
+  "sequence": 2,
+  "at": "2026-10-12T01:17:15.417Z"
+}

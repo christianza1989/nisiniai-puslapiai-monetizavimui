@@ -1,0 +1,20 @@
+{
+  "status": "local-verified",
+  "commit": "7ddb1347df64912ee1e637bc57294fd916c9670e",
+  "note": "S6 source7ddb134/public1a is scoped-tested, not original runtime adoption. Final22offline/restrictedPG/nativeHTTP casesPASS113.51s use synthetic role adapters and synthetic execution source values. Real new Session/current-source GUIDE execution preserves original approval/report/revision/intake, replay/no renewal, owner/membership/expiry/source/revision fences, immutable/least-privilege storage/deferred late Session fence, no automatic failed-guide retry. Earlier configured24PASS/1fixtureFAIL176.62s included5existing sitebuild+5Foundationcontroller; recovery17PASS/2incorrect-RLS-exception assertionsFAIL105.92s; initialconfiguration/migration-sequencing10PASS/15FAIL/4teardownERROR103.68s preserved. No source guard weakened. DedicatedQA0035only, original0032/3025/18870 preserved. Broader peer Foundation borrowed-Session transport regression remains separately open; independent review and portal/original adoption pending.",
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_build_continuation.py tests/test_build_continuation_pg.py",
+      "result": "PASS",
+      "evidence": "agent-business-core/runtime/artifacts/workspace-ui/build-continuation-final-source.log: 22PASS113.51s; dedicatedpinet_build_continuation_qa_6d11ba012b48 with explicitpublic1a companion config; actual maintained intake/writer, synthetic roles, provider0."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/site_build/continuation.py tests/test_build_continuation.py tests/test_build_continuation_pg.py",
+      "result": "PASS",
+      "evidence": "Scoped finalRuffAll checks passed; generated canonical continuation contract equality is included in22PASS. Migration preparation confirmed0035restrictedrole and original0032retention."
+    }
+  ],
+  "eventId": "990ff45c-1543-48e6-9593-81d5e03ea716",
+  "sequence": 2,
+  "at": "2026-10-14T13:05:51.450Z"
+}

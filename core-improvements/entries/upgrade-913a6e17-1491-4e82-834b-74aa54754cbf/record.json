@@ -1,0 +1,34 @@
+{
+  "siteId": "core",
+  "summary": "Existing durable control tasks accept only chat.consult and require a browser Session; connect module-authorized daily reviewed synthetic acquisition captures through the existing worker with atomic effect/terminal commit.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/migrations/versions/0011_control_tasks.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "docs/ACQUISITION_CORE_ADOPTION_HANDOFF_2026-10-11.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/migrations/versions/0027_acquisition_tasks.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/task_models.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/task_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/tasks.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/models.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/operations.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/routes.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/correspondence.py",
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_tasks.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_tasks.py",
+    "agent-business-core/contracts/acquisition-tasks-v1/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "DefaultOFF new task kind; scoped revert and empty-only0027 downgrade. Populated task/effect/receipts never reset; old chat session/kind preserved.",
+  "id": "upgrade-913a6e17-1491-4e82-834b-74aa54754cbf",
+  "branch": "codex/acquisition-typed-capture-20261012",
+  "baseSha": "2819c5a1eb86e2141968888b646a87b69a2d409f",
+  "createdAt": "2026-10-12T00:50:01.718Z"
+}

@@ -1,0 +1,473 @@
+{
+  "work_version": "acquisition-work.v1",
+  "schemas": {
+    "InboundCapture": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "work_version": {
+          "const": "acquisition-work.v1",
+          "default": "acquisition-work.v1",
+          "title": "Work Version",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "request_id": {
+          "format": "uuid",
+          "title": "Request Id",
+          "type": "string"
+        },
+        "thread_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Thread Id",
+          "type": "string"
+        },
+        "parent_mail_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Parent Mail Id",
+          "type": "string"
+        },
+        "message_id": {
+          "maxLength": 250,
+          "title": "Message Id",
+          "type": "string"
+        },
+        "in_reply_to": {
+          "maxLength": 250,
+          "title": "In Reply To",
+          "type": "string"
+        },
+        "references": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "References",
+          "type": "array"
+        },
+        "sender": {
+          "pattern": "^[a-z0-9][a-z0-9._+-]{0,63}@example\\.test$",
+          "title": "Sender",
+          "type": "string"
+        },
+        "recipient": {
+          "const": "info@pinet.lt",
+          "title": "Recipient",
+          "type": "string"
+        },
+        "subject": {
+          "maxLength": 200,
+          "title": "Subject",
+          "type": "string"
+        },
+        "body": {
+          "maxLength": 16000,
+          "minLength": 1,
+          "title": "Body",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id",
+        "request_id",
+        "thread_id",
+        "parent_mail_id",
+        "message_id",
+        "in_reply_to",
+        "sender",
+        "recipient",
+        "subject",
+        "body"
+      ],
+      "title": "InboundCapture",
+      "type": "object"
+    },
+    "CorrespondenceReceipt": {
+      "additionalProperties": false,
+      "properties": {
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "work_version": {
+          "const": "acquisition-work.v1",
+          "default": "acquisition-work.v1",
+          "title": "Work Version",
+          "type": "string"
+        },
+        "thread_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Thread Id",
+          "type": "string"
+        },
+        "case_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Case Id",
+          "type": "string"
+        },
+        "mail_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Mail Id",
+          "type": "string"
+        },
+        "revision": {
+          "minimum": 1,
+          "title": "Revision",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "captured",
+            "held",
+            "blocked",
+            "stop",
+            "hold",
+            "privacy_handoff",
+            "reply_ready"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "marketing_state": {
+          "enum": [
+            "active",
+            "hold",
+            "stopped"
+          ],
+          "title": "Marketing State",
+          "type": "string"
+        },
+        "handoff_executed": {
+          "default": false,
+          "title": "Handoff Executed",
+          "type": "boolean"
+        },
+        "reasons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "thread_id",
+        "case_id",
+        "mail_id",
+        "revision",
+        "state",
+        "marketing_state"
+      ],
+      "title": "CorrespondenceReceipt",
+      "type": "object"
+    },
+    "WorkSnapshot": {
+      "$defs": {
+        "Scope": {
+          "additionalProperties": false,
+          "properties": {
+            "business_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Business Id",
+              "type": "string"
+            },
+            "site_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Site Id",
+              "type": "string"
+            },
+            "environment_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Environment Id",
+              "type": "string"
+            },
+            "environment_class": {
+              "enum": [
+                "test",
+                "production"
+              ],
+              "title": "Environment Class",
+              "type": "string"
+            }
+          },
+          "required": [
+            "business_id",
+            "site_id",
+            "environment_id",
+            "environment_class"
+          ],
+          "title": "Scope",
+          "type": "object"
+        },
+        "ThreadSummary": {
+          "additionalProperties": false,
+          "properties": {
+            "thread_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Thread Id",
+              "type": "string"
+            },
+            "case_id": {
+              "maxLength": 100,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "Case Id",
+              "type": "string"
+            },
+            "revision": {
+              "minimum": 1,
+              "title": "Revision",
+              "type": "integer"
+            },
+            "last_inbound_id": {
+              "anyOf": [
+                {
+                  "maxLength": 100,
+                  "minLength": 1,
+                  "pattern": "^[A-Za-z0-9_-]+$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Last Inbound Id"
+            }
+          },
+          "required": [
+            "thread_id",
+            "case_id",
+            "revision",
+            "last_inbound_id"
+          ],
+          "title": "ThreadSummary",
+          "type": "object"
+        },
+        "WorkCounts": {
+          "additionalProperties": false,
+          "properties": {
+            "outbound_captured": {
+              "minimum": 0,
+              "title": "Outbound Captured",
+              "type": "integer"
+            },
+            "inbound_captured": {
+              "minimum": 0,
+              "title": "Inbound Captured",
+              "type": "integer"
+            },
+            "held_recipients": {
+              "minimum": 0,
+              "title": "Held Recipients",
+              "type": "integer"
+            },
+            "stopped_recipients": {
+              "minimum": 0,
+              "title": "Stopped Recipients",
+              "type": "integer"
+            },
+            "operator_privacy_cases": {
+              "minimum": 0,
+              "title": "Operator Privacy Cases",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "outbound_captured",
+            "inbound_captured",
+            "held_recipients",
+            "stopped_recipients",
+            "operator_privacy_cases"
+          ],
+          "title": "WorkCounts",
+          "type": "object"
+        },
+        "WorkWatermark": {
+          "additionalProperties": false,
+          "properties": {
+            "committed_receipts": {
+              "minimum": 0,
+              "title": "Committed Receipts",
+              "type": "integer"
+            },
+            "sha256": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Sha256",
+              "type": "string"
+            }
+          },
+          "required": [
+            "committed_receipts",
+            "sha256"
+          ],
+          "title": "WorkWatermark",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "external_sent": {
+          "const": false,
+          "default": false,
+          "title": "External Sent",
+          "type": "boolean"
+        },
+        "work_version": {
+          "const": "acquisition-work.v1",
+          "default": "acquisition-work.v1",
+          "title": "Work Version",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Scope"
+        },
+        "adapter_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_-]+$",
+          "title": "Adapter Id",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "time_basis": {
+          "const": "all_time",
+          "default": "all_time",
+          "title": "Time Basis",
+          "type": "string"
+        },
+        "synthetic": {
+          "const": true,
+          "default": true,
+          "title": "Synthetic",
+          "type": "boolean"
+        },
+        "marketing_configuration": {
+          "enum": [
+            "configured",
+            "stopped",
+            "expired",
+            "pending",
+            "source_changed"
+          ],
+          "title": "Marketing Configuration",
+          "type": "string"
+        },
+        "counts": {
+          "$ref": "#/$defs/WorkCounts"
+        },
+        "watermark": {
+          "$ref": "#/$defs/WorkWatermark"
+        },
+        "threads": {
+          "items": {
+            "$ref": "#/$defs/ThreadSummary"
+          },
+          "maxItems": 100,
+          "title": "Threads",
+          "type": "array"
+        },
+        "truncated": {
+          "title": "Truncated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "scope",
+        "adapter_id",
+        "observed_at",
+        "marketing_configuration",
+        "counts",
+        "watermark",
+        "threads",
+        "truncated"
+      ],
+      "title": "WorkSnapshot",
+      "type": "object"
+    }
+  }
+}

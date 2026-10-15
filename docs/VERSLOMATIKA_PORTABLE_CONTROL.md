@@ -1,0 +1,229 @@
+# Verslomatika kūrimas ir testavimas kitame PC
+
+2026-10-11 profilio istorijos upgrade7149bcdc reikalauja maintained Alembic migracijų iki `0021_customer_profile_history`. Tik agent-profile.v1 priėmimų sekos lifetime20 riba pašalinta; naudoti naują kanoninį profilio kontraktą su INTEGER maksimumu2147483647. Išsaugoti ankstesnes registracijas, admissions, fingerprint, events ir usage. Siaurinantis downgrade su sequence>20 turi būti atmestas, ne ištrinti istoriją. Izoliuoto PostgreSQL81PASS ir offline67PASS yra source įrodymai; target PC migracija, jo sesija, šaltinis, modelio vykdymas ir UI lieka UNVERIFIED. Customer-text kontraktas nepakitęs; TTL ar paid teisės šiuo pakeitimu nepratęsiamos.
+
+2026-10-11 indexed business-review Sol calibration / upgrade0df19d27, [scope](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103946445), supplements6103970859/6103991218. Actual cleanbb2e84c job17fc4044 completed all6roles, then review_limit:10 charged today, prior54 retained, current_revision null/intake0/artifacts0/GUIDE0. Terminal receipt SHA53efecdacb170750162fc2970cac38aadf9be9b5e2cf94b606b664277cf4b0cb. Read-only reconstruction and independent review matched all candidate/critic hashes: critic1 required a future-channel condition already literally present; critic2 required only language editing despite paused_local_pilot and cited an unrelated paragraph. No manual promotion or suppression of findings.
+
+Only fixed business critic/coordinator model changes to gpt-6.1-sol. Creator/consultation/nativeGUIDE stay Luna; medium effort/default verbosity, unchanged exact public catalogue, indexed schema, nine checks, candidate/critic/profile hashes, semantic acceptance, two rounds/six calls/300seconds and all SQL/HTTP contracts remain. Historical Luna/Sol records keep their original identities. Previous Sol incomplete response preceded the current numeric-index format; this is a new bounded experiment, not established quality improvement or a fallback loop.
+
+Source checks: final334 offline PASS/7optionalCLI SKIP19.49s; first333PASS/1old compact model-expectation FAIL19.40s retained. Installed pinned empty-auth production-argument CLI7PASS16.16s; additional actual3142-byte indexed critic schema probe preserves337references, exact selected indices and all9UNVERIFIED checks with one local POST/no provider. First helper edit had a shell SyntaxError and then stale Luna assertion; original local logs retained, corrected probe PASS. Fresh restricted PostgreSQL final10PASS32.67s, reservation-before-dispatch/success/failure usage/no acceptance, mixed immutable model history, changed profile/catalogue zero-charge stop, current0019 rollback and0017 queue/reserve rejection. First9PASS/1test API-code expectation FAIL35.34s retained; only expected code corrected to existingcreation_unavailable. Safe empty downgrade/reupgrade PASS both runs; frozen source/no operational DB/provider mutation. Scoped Ruff/diff and independent final review noP0–P2. Counts overlap. Clean source adoption and one ordinary UI trial follow separately; effectiveness UNVERIFIED and full platform OPEN.
+
+Rollback between jobs: revert this model selection change, then clean-pin/restart owned API/workers. Preserve0018/19, all historical hashes/models/counters and every original failure. No main merge, Gemini integration, public deployment or full-business acceptance is claimed.
+
+
+2026-10-11 upgrade5b6755be: run maintained migrations through0019_creation_job_history before customer worker dispatch. PINET_CREATION_JOB_LIMIT defaults0/disabled; positive ceilings are optional. It preserves durable job/event rows and current accepted proof in bounded latest windows. Accepted revision20 and native GUIDE20-job bounds remain separate; per-job execution bounds stay. Worker check reports job_limit and rejects old0018 before a charged attempt. Canonical team global event sequence drops its old300 upper bound; use matching reviewed portal contract. Source17offline/321relatedoffline and isolated54PG plus corrected5newPG checks pass as detailed in [review evidence](VERSLOMATIKA_CREATION_REVIEW.md). Actual target-PC adoption remains UNVERIFIED.
+
+
+2026-10-11 upgrade3232f8fb fixes actual local exact-patch schema mismatch: each field now advertises canonical CreatorDraft bounds, including120-character topics and800/500 list items. Paused pilot instruction conflicts are removed only in paused mode. Final321 offline PASS/7optional CLI SKIP14.91s, scoped Ruff/diff and independent review PASS. Required-mode hashes and HTTP/DB contracts are unchanged. Actual new trial, updated source bundle and target-PC acceptance remain separate; see [current review evidence](VERSLOMATIKA_CREATION_REVIEW.md).
+
+
+2026-10-11 CURRENT OWNER STEERING — local development pilot, language review temporarily paused. The owner explicitly asked to stop language-error correction/blocking now, with a Gemini content writer planned later. This supersedes previous mandatory language acceptance only for this private local test. It does not establish language quality, public editorial acceptance, Gemini integration or a complete platform.
+
+Upgrade30501f80 / [mode scope](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103440689), [explicit wire](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103447151), [registration seam](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103497057). PINET_CREATION_LANGUAGE_REVIEW_ENABLED defaults true. The deliberately adopted local non-production pilot sets it false. Detector/redaction and language correction findings are paused for business, critic/coordinator and native GUIDE; prompts, provider finding areas and instruction hashes reflect the mode. Native rich content and all exact hashes/refs/structure/fact/business/source/SEO/publication/auth/RLS/history checks remain. Other FAIL still prevents private acceptance. Existing failed attempts and all54 charged calls remain unchanged; no hidden rerun or manual promotion.
+
+Team EventData and native EventPayload explicitly persist language_review_mode=required|paused_local_pilot; absent historical mode defaults required. A same-candidate language_quality PASS/observed=true remains normal acceptance. Only the stored paused_local_pilot event with same-candidate UNVERIFIED/observed=false may satisfy the private language prerequisite; it never becomes PASS. The business coordinator's own checks/mode and native latest candidate's own checks/mode are authoritative, independent of later env changes. Business registration uses this same predicate; preparation text no longer falsely claims actual language checking. Historical registration coordinator hashes preserve the old normalized fields and omit only the new mode key when absent from original immutable event data.
+
+Source checks:307 offline PASS/7 optional CLI SKIP17.92s; related registration/preparation delta87 PASS13.18s (overlap, not a summed distinct test count). Isolated restricted PostgreSQL business/native suites36 PASS247.07s, including actual persisted paused business acceptance and native Node private write with UNVERIFIED receipts; later re-enabling still reads the same historical exception. No operational DB or provider calls during these checks. Initial new-module collection failure and eight import-order Ruff failures were retained/corrected. Focused registration proof/compatibility checks and final review are recorded in the journal. Clean source adoption and actual customer UI/provider business trial remain separate; full platform OPEN.
+
+Final registration verification:14 isolated restricted PG PASS/24deselected93.85s, source unchanged. The synthetic absent-mode/other-default fixture proves old normalized coordinator hash differs from raw while provision/read/replay preserves the original fingerprint. Independent corrected-diff review no remaining P0-P2; scoped Ruff/diff PASS. Source window CLOSED for clean commit/adoption; actual customer trial remains pending.
+
+Rollback: set PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true, restart only clean-pinned owned API/workers, and use the matching reviewed portal contract. Historical paused receipts remain UNVERIFIED and original fingerprints remain immutable. On another PC apply the same explicit false flag for the owner's development pilot; inspect the worker preflight language_review_mode before dispatch. Public language/editorial gates remain outside this private exception.
+
+
+2026-10-11 exact prose capacity source checkpoint. Actual clean da871786 trial d906734c completed all six roles, then review_limit with 54 charged calls and no accepted revision/intake/artifact/GUIDE. Receipt SHA256 13a6e6a765c48ef094eb8f963ea4ce43010388e8cd4b370b313436c328ac7aa3. Independent exact-hash review confirmed stage calibration no longer repeats working-name/future-form/planned-guide demands. Both mandatory prose unions contain nine fields; the arbitrary eight-field ceiling forced a full reroll, changing 141 scalar values and introducing nine real foreign-language fields. Known FAIL remains genuine.
+
+Upgrade1682b639 / [capacity scope](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6103388414) raises only target capacity to the existing validated critic protocol maximum (12 findings x 6 references). The 32768-byte context budget, 2500-character leaves, exact candidate/critic hashes, all target coverage, whitelist, NFC and independent final review remain. Nine-field omission rejects without original mutation; six-role controller preserves all unrelated fields. Valid oversized correction context still falls back. Source verification:297 offline PASS / 7 optional CLI SKIP in23.52s, scoped Ruff PASS. Initial two nine-field FAIL / three PASS are preserved; one guessed suite path failed collection before any tests, then the discovered seven suites ran. No provider/DB/source-pin change in this window.
+
+Latest human steering supersedes blocking language acceptance for the development pilot: temporarily disable language corrections/checks and later introduce a Gemini content writer. This is a separate explicit mode implementation, not a language PASS or public acceptance. Full platform remains OPEN; current packet does not certify an accepted business or public launch.
+
+
+2026-10-11 business-stage calibration source window CLOSED.
+
+Actual clean1fc2415 trial ba053d50 completed all6 creator/critic/coordinator calls over2rounds, then review_limit48charged/noaccepted/intake0/artifacts0/GUIDE0. Terminal receipt SHA 90be0f3636ed0561200079486ffb1761f5ec189b92d4a51bf76322b5131a114d. Read-only reconstruction matched both immutable candidate and hydrated critic hashes; the second exact language patch changed only business/monetization and preserved all266 other compared values.
+
+Upgrade8060b2be / [business-stage scope](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6102829176) appends private-draft stage guidance only to BUSINESS_CRITIC_POLICY. The second actual critic required working-name, conditional/not-yet-implemented form, comparative-hypothesis and absence-of-demand caveats already explicitly present in unchanged text. Independent full-text review confirmed these duplicated requirements. Required findings must identify a remaining error in the complete referenced text. Real guide-availability ambiguity, unsupported factual claims and known FAIL remain actionable; missing source/launch evidence stays UNVERIFIED, never PASS. New genuine findings remain permitted. Shared native GUIDE policy/schema, hashes, all nine checks, model/CLI/team/worker/DB/HTTP contracts and independent acceptance are unchanged.
+
+Source verification:247offlinePASS7opt-inSKIP24.75s, scoped Ruff/diff PASS and independent final diff review noP0-P2. Existing native GUIDE exact policy/schema regressions passed. First longer prompt wording failed the existing15000-byte fixture bound (15480bytes;1FAIL246PASS7SKIP19.93s); guidance was shortened and the bound was preserved. Static checks do not establish provider effectiveness. OwnedAPI8860 stopped before writes; no provider/DB mutation in this scope. Clean paired UI adoption and the next actual customer trial remain separate; full platform OPEN. Durable continuation of an unaccepted candidate and short foreign critic phrases remain separate unresolved gaps.
+
+Latest prose-repair source window: upgradece6b37ec/scope6102634013 from0def11c. Required mixed language/content exact text leaves reuse the existing repair profile, all identity/coverage/independent review gates unchanged. No new env, service, CLI arguments, schema or migration; source pin still requires a clean deliberately adopted commit. Native GUIDE remains unchanged. Actual previous381147f0 completed6calls but ended review_limit42charged/noaccepted; no target-PC or complete pipeline acceptance is implied. Keep earlier bundles and exact historical SHA. API8860 stopped before this source window.
+
+Source verification:247offlinePASS7opt-inSKIP27.33s, scoped Ruff/diff PASS and independent read-only review found no P0-P2 regression. The controller regression checks all6 role calls, the second exact mixed patch and a new independent second review, preserving every unrelated original field. Initial3FAIL61deselected and final test-import ordering RuffFAIL are preserved; the import-only correction then passed. No provider/DB calls during source checks. Clean adoption and the next actual UI trial remain separate.
+
+Business vertintojo vidinis transportas v2 (`evidence_ref_indices`) yra source-owned serializavimas: klientui ir saugojimui lieka pilnas `creation.critic.v1`, canonical team kontraktas ir0018 schema. Jokio naujo env, CLI token limito, papildomo serverio ar DB migracijos šiai pataisai nereikia. Guide/koordinatoriaus transportas išlieka ankstesnis. Upgrade79078582 source/adoption/actual recovery vertinami atskirai;8b0d317 tikras Luna bandymas9d091aca dar buvo FAILED/36charged/noaccepted. Dar nepriimta viso verslo eiga ir kito PC actual paleidimas. Senų bundle/handoff SHA neperrašyti.
+
+Naujo Luna review profilio pinnedCLI local no-auth užklausos7PASS29.53s ir izoliuota restrictedPG istorijos/schema patikra7PASS47.25s. Perkeliamo source suderinamumas patikrintas; realus target PC ir faktinis modelio rezultatas lieka nepatikrinti.
+
+Aktualus business review pasirinkimas: kūrėjas/kritikas/koordinatorius Luna, medium reasoning, be verbosity override. Originalūs Luna ir Sol metaduomenys pateikiami source kataloge; Sol istorija ir schema0018 išlieka. Ankstesnis8958c87 actual compact Sol bandymas0f245510 nutrūko max_output_tokens/34charged; trumpesnis formatas nepateikė priimto rezultato. Upgradebe8f6771 source regresija216PASS/7opt-inSKIP21.24s; kito PC ir actual modelio sėkmė dar nepatvirtinta. Perkelti galutinį švarų reviewed source, tada paleisti source/hash/schema preflight, o ne istorinių checkpointų profilį.
+
+Final compact source regression216PASS/7opt-inSKIP20.88s ir nepriklausoma peržiūra be likusių P0–P2. BusinessFinding240 ribos patikrintos tiek provider schemoje, tiek hydration; senų saugomų tekstų ir GUIDE profilis nepakitę. Ankstesnis212-run žemiau yra tarpinė patikra, actual naujo formato provider/targetPC sėkmė dar nepatvirtinta.
+
+Naujas verslo kritiko vidinis compact output nekeičia target DB/schema18 ar portalo HTTP sutarties. Perkelti tą patį švarų source; prieš kitą darbą creation preflight turi rodyti naują visos komandos instruction hash. Native GUIDE pilnos peržiūros schema/policy/hash ir jo CLI profilis išlieka tiksliai nepakitę. Source212offlinePASS/7opt-inSKIP yra suderinamumo patikra, ne tikro kito PC ar modelio priėmimas. Paskutinis actual074 job80cdde99 patvirtino katalogo klaidos pašalinimą, bet kritikas vis tiek nutrūko `max_output_tokens`;32charged/noaccepted/intake0. Naujo formato provider sėkmė ir visas perkėlimas lieka nepatikrinti.
+
+Verslo review vykdytojas kartu su source turi `runtime/config/creation-review-models.json` ir jo fiksuotą SHA. Nepakeistą source-owned katalogą parenka adapteris; owner config/auth/cache nekopijuojami. Naujo PC creation preflight patikrina ir katalogą prieš pirmą rezervaciją. Tiksliai įdiegtos CLI0.156.1 production-argument loopback patikra su tuščiu auth katalogu7PASS; actual kito PC autentifikacija ir verslo rezultatas dar nepatikrinti. [Katalogo kilmė ir ribos](../agent-business-core/runtime/config/CREATION_REVIEW_MODELS.md).
+
+Dabartinis source parengimas apima0017 kliento profilio admission ir additive0018 verslo peržiūros modelio CHECK. Naujas target PC vykdo `alembic upgrade head`, ne seną0016 komandą. Visi nauji verslo vaidmenys, konsultacija ir native GUIDE naudoja Luna. Portalas išlaiko išplėstą team kontraktą ir tikrą ankstesnių Sol bandymų skaitymą. Tikras kito PC modelio veikimas, hosted ryšys ir kliento pipeline priėmimas lieka atskiros patikros. Jau esančios Sol istorijos downgrade į0017 atmetamas; istorijos nepervadinti ir netrinti.
+
+2026-10-10 aktualus savininko sprendimas: dar kuriame ir testuojame, tęsiame su PostgreSQL be Supabase. Paruošti kitam PC; viešo paleidimo dabar nėra. Šis dokumentas yra paleidimo eiga, ne jau atlikto perkėlimo ar hosted priėmimo pažyma.
+
+## Kas perkeliama
+
+Kodas ir kontraktai perkeliami per atskiras peržiūrėtas Git šakas / PR. Naujos pataisos dar nėra `main` kol merger jų nepriėmė. Pradžia — [MULTI_MACHINE](MULTI_MACHINE.md) ir [CODEX_GIT_WORKFLOW](CODEX_GIT_WORKFLOW.md). Abiejų core repo naujausias main turi būti patikrintas `git-freshness.mjs`; portalui jo atskiras Git procesas. Nekopijuoti šio PC `.env`, Codex prisijungimo failų, DB dump, testinių klientų ar private task istorijos į Git / viešą paketą.
+
+Kitame PC reikalingi Git, Node pagal bendrą core reikalavimą, Python3.13+, uv ir Docker Desktop/Engine. PostgreSQL17 image ir Python `uv.lock` versijos prisegtos source. Portalo priklausomybės prisegtos jo lockfile. Codex savininkas prisijungia tame PC atskirai; jo autentifikacija automatiškai nepersikelia.
+
+## Nauja izoliuota vietinė bazė
+
+Po peržiūrėtų pataisų gavimo turėti gretimus `nisiniai_puslapiai_monetizavimui` ir `dovanos-memorycasting` checkout. Core šakos šaknis:
+
+```powershell
+node scripts/git-freshness.mjs --phase start --companion ../dovanos-memorycasting
+cd agent-business-core/runtime
+uv sync --frozen
+uv run python scripts/control_local_setup.py --public-core ../../../dovanos-memorycasting --name pinet-dashboard-local --db-port 15438 --api-port 8854
+docker compose --project-name pinet-dashboard-local --env-file .env -f artifacts/control-local/compose.private.yaml up -d --wait
+uv run python scripts/bootstrap.py --role-only
+uv run alembic upgrade head
+uv run python scripts/bootstrap.py
+uv run python scripts/control_bootstrap.py --manifest artifacts/control-local/operator-manifest.private.json --allow-new-businesses
+uv run python scripts/control_portable.py check
+uv run python scripts/control_portable.py api --port 8854
+```
+
+Setup nieko neperrašo: egzistuojanti `.env` ar privatūs setup failai sustabdo. Jei portai užimti, pasirinkti laisvus `--db-port` / `--api-port`, naudoti tuos pačius portalui ir API startui. Serveris klausosi tik `127.0.0.1`, nepripažįsta proxy headers; DB portas taip pat tik loopback. API naudoja atskirą ribotą RLS rolę, ne admin URL. Source turi būti švarus ir HEAD sutapti su `PINET_CONTROL_SOURCE_REVISION`. Atnaujinus kodą, prieš naują procesą patikrinti Git, sustabdyti tik savo procesą ir sąmoningai pakeisti private source pin į ištestuotą commit.
+
+Windows sistemoje apriboti `.env` ir `artifacts/control-local` teises savo paskyrai, pvz. `icacls .env /inheritance:r /grant:r "${env:USERNAME}:(F)"`. Linux/Mac naudoti `chmod600 .env` ir privatus katalogas700. Slaptažodis yra `artifacts/control-local/credentials.private.json`; jo nerodyti ekrano įraše ar Git. Manifestas registruoja source metaduomenis, o ne domenų nuosavybės, gyvo runtime ar verslo rodiklių patvirtinimą. Nauja bazė neturi senų pokalbių ir testinių organizacijų. Seno DB backup/restore yra atskiras private operatoriaus veiksmas, ne šio setup automatinė dalis.
+
+Portalo savininko paruoštas vietinis BFF turi jungtis į `http://127.0.0.1:8854`, dirbti vietiniu režimu ir klausytis loopback. Jo konkreti paleidimo instrukcija saugoma portalo repo. Prisijungus tikrinti: savo portfolio → verslas → katalogas → užduotis → jos istorija / ataskaita → reload → logout. Kito verslo / organizacijos UUID ir atšaukta sesija nesuteikia prieigos.
+
+## Vietinės klientų paskyros ir viešų projektų katalogas
+
+P3/P4 prideda migraciją0012 ir bendros tapatybės klientų paskyras. Po `alembic upgrade head`, švaraus source patikros ir private source pin atnaujinimo sąmoningai įjungti tik vietiniam bandymui:
+
+```text
+PINET_CUSTOMER_ENABLED=true
+PINET_CUSTOMER_PORTAL_ORIGIN=http://127.0.0.1:3017
+PINET_CUSTOMER_OUTBOX_DIRECTORY=artifacts/customer-outbox
+PINET_PUBLIC_PROJECTS_ENABLED=true
+PINET_CHAT_ENABLED=false
+PINET_CHAT_RUNNER_ENABLED=false
+```
+
+Portalas ir BFF turi naudoti tą patį exact loopback origin bei core portą. Šiame PC naujas P3/P4 core yra8855, portalas3017; setup kitame PC leidžia pasirinkti kitus laisvus portus. Kitame PC bazė pradeda be testinių paskyrų, intakes ir viešų projektų. Registracija → private outbox nuoroda → el. pašto patvirtinimas → atskiras login → tuščias portfolio → verslo užklausa → atkūrimas → sena sesija401. Vien domeno įvedimas nesuteikia esamo verslo teisių. Atkūrimo ir patvirtinimo raw token nenurodyti žurnale, URL query, API atsakyme, ekrano įraše ar Git; nuorodos fragmentą portalas pašalina ir veiksmą atlieka same-origin POST.
+
+`artifacts/customer-outbox` yra privati vietinė pranešimų saugykla, ne pristatymas į inbox. Taikyti tokias pačias OS teises kaip `.env`; katalogas turi likti runtime `artifacts` viduje. Neperkelti jo į public assets. Storage gedimas grąžina503 ir paskyros pakeitimo transakcija atšaukiama.
+
+Admin procedūra nėra klientui prieinama HTTP funkcija. Privatus JSON `draft` įvesties failas turi `project`, `evidence`, timezone turintį `publish_at`; `approve` — `slug` ir exact dabartinį `expected_revision`; `revoke` — `slug`. `intake-decision` turi `intake_id`, `approve`, peržiūrėtą `note`, private `evidence_reference` ir tik patvirtinant explicit esamo registruoto `business_id`. Būtina local/test administracinė jungtis. Paleisti vieną pasirinktą veiksmą:
+
+```powershell
+uv run python scripts/customer_public_admin.py draft --input artifacts/private-review/draft.json
+uv run python scripts/customer_public_admin.py approve --input artifacts/private-review/approve.json
+uv run python scripts/customer_public_admin.py revoke --input artifacts/private-review/revoke.json
+uv run python scripts/customer_public_admin.py intake-decision --input artifacts/private-review/intake-decision.json
+```
+
+Tai atskirų veiksmų pavyzdžiai, ne visų keturių iš eilės vykdymo nurodymas. Materialus projekto pakeitimas panaikina ankstesnį approval; public skaitymas grąžina tik patvirtintą, jau publikuotiną, neatšauktą reviziją. Viešo katalogo įrašas neperima private portfolio/grants ir nesuteikia automatizacijos veikimo įrodymo. AI verslo kūrimo vykdytojas nėra šio P3/P4 setup dalis. [Faktiniai bandymai ir ribos](VERSLOMATIKA_CUSTOMER_PUBLIC.md).
+
+## Trijų agentų verslo kūrimas ir native GUIDE
+
+Vėlesnis savininko pavedimas išplečia P3/P4 iki kliento idėjos, kūrėjo/kritiko/koordinatoriaus darbo, peržiūros ir pataisytos versijos. [Kūrimo eiga ir faktiniai bandymai](VERSLOMATIKA_CUSTOMER_CREATION.md), [trijų rolių patikra](VERSLOMATIKA_CREATION_REVIEW.md), [native GUIDE rašymas](VERSLOMATIKA_CONTENT_WORK.md), [pasiruošimo vartai](VERSLOMATIKA_AGENT_PREPARATION.md). Šios papildomos dalys turi būti gautos toje pačioje peržiūrėtoje source šakoje; vien P3/P4 setup jų nesukuria. Source PR nėra kito PC ar viešo paleidimo priėmimas.
+
+Iš core repo šaknies įdiegti prisegtas studijos priklausomybes `npm ci --prefix content-studio`. Native intake turi rasti gretimo `dovanos-memorycasting/config/niche-network.json`; bendro viešo rendererio pataisas ir jų priėmimą tikrinti atskirai pagal jo PR. Toliau vykdyti aukščiau pateiktą restricted-role → `alembic upgrade head` → canonical bootstrap eigą. Dabartinis kūrimo source turi0013creation,0014team,0015GUIDE ir0016 kliento verslo registracijos migracijas. Registracijos source integruotas ir patikrintas atskiroje sintetinėje PostgreSQL bazėje; tai nėra veikiančios kliento bazės ar target PC migracijos priėmimas. Admin-only provision/revoke eiga ir jos neprijungti profile/source/channel vartai aprašyti [registracijos dokumente](../agent-business-core/runtime/docs/CUSTOMER_CREATION_REGISTRATION.md). Naują tik skaitymo [pasirengimo V2 kontraktą](VERSLOMATIKA_AGENT_PREPARATION.md) portal priima atskirai pagal exact source ir READY; seno V1 reader iš karto nekeisti.
+
+Privati target PC konfigūracija, kai pasirinktas konkretus autorizuotas ribotas bandymas:
+
+```text
+PINET_CUSTOMER_ENABLED=true
+PINET_CREATION_ENABLED=true
+PINET_CREATION_RUNNER_ENABLED=true
+PINET_CREATION_WORKSPACE=<esamas absolute katalogas runtime/artifacts viduje>
+PINET_CREATION_RUNNER_SECONDS=300
+PINET_CREATION_DAILY_LIMIT=0
+PINET_CREATION_GLOBAL_DAILY_LIMIT=0
+PINET_CREATION_WEB_SEARCH_ENABLED=true
+PINET_CHAT_MODEL=gpt-6-luna
+PINET_CHAT_CODEX_EXECUTABLE=<patikrintas absolute executable tame PC>
+PINET_CHAT_CODEX_SHA256=<tikras executable 64hex>
+PINET_CHAT_ENABLED=false
+PINET_CHAT_RUNNER_ENABLED=false
+```
+
+Savininkas2026-10-10 aiškiai pašalino dirbtinį dienos testinių kvietimų limitą.0 išjungia atitinkamas dienos lubas; teigiamą reikšmę pasirinkus jos lieka taikomos. Kūrimui ir GUIDE galioja ta pati konfigūracija be ankstesnių20/100 maksimumų, išlaikant30..300s vieno vykdymo terminą. Ankstesni legacy/team/GUIDE vykdymai lieka bendroje apskaitoje ir po nesėkmės; ji nenulinama ir neperkeliama į kitą aplinką ar DB. Esama private `.env` reikšmė turi būti aiškiai atnaujinta: vien naujas source default nepakeičia anksčiau įrašyto20.
+
+Kai source švarus, private pin sutampa su HEAD ir API/portal origin sutampa, runtime kataloge:
+
+```powershell
+uv run python scripts/control_portable.py check
+uv run python scripts/customer_creation_worker.py check
+uv run python scripts/customer_content_work_worker.py check
+```
+
+Šios patikros tikrina tapatybės/RLS/source/binary/instrukcijų ribas ir nekviečia modelio. Po kliento UI užklausos atskirame savo terminale paleisti tik pasirinktą vieno darbo komandą:
+
+```powershell
+uv run python scripts/customer_creation_worker.py once
+```
+
+Priėmus tikslią dabartinę verslo reviziją ir patikrinus jos native intake, klientas gali parengti vieno GUIDE užduotį; tik jai paleisti `uv run python scripts/customer_content_work_worker.py once`. Abiejų komandų `worker` režimas yra aiškiai paleidžiamas tęstinis vykdytojas, ne instaliuojama tarnyba. Shared mutex ir dienos apskaita galioja abiem. Keisti source tik tarp darbų ir sąmoningai sustabdyti savo procesus; senas gyvas darbas instrukcijų pats neatnaujina.
+
+Target PC priėmimo kelias: nauja testinė kliento paskyra → private patvirtinimo nuoroda → login → atskira verslo idėja → tikri trijų rolių kvitai → priimtas juodraštis/peržiūra → kliento kritika → nauja priimta revizija → vienas pilnai parašytas ir peržiūrėtas native GUIDE. Kiekvieno originalo nesėkmė, modelis/instrukcijų hash, usage ir tikslus source išsaugomi. Tai nepatvirtina viešos medijos/editorial/release/SEO-GEO/kontaktų/paklausos ir paleidimo vartų. Dabartinis NEW `mokymai-ai.lt` vis dar neturi priimtos revizijos; kitame PC šio rezultato neišgalvoti.
+
+## Tikras konsultanto worker
+
+Pradinis setup palieka `PINET_CHAT_ENABLED=false` ir `PINET_CHAT_RUNNER_ENABLED=false`. Sustabdytas executor neblokuoja savo istorijos, įvykių ir ataskaitų skaitymo ar queued task atšaukimo; sesija ir aktualūs grants lieka būtini. Viena realizuota capability — `business-planner` / `chat.consult`; kitos agentų rolės nėra sukuriamos katalogo tekstais. Konsultantas teikia planą, neturi tools ir nevykdo klientų sistemų pakeitimų. Katalogo availability aprašo serverio konfigūraciją; worker health yra `unknown`, o ne išgalvotas „online“.
+
+Target PC patikrinti Codex versiją, oficialaus paketo integrity ir faktinio executable SHA256. Ankstesnis vietinis priėmimas naudojo side-by-side CLI0.156.1, gpt-6-luna / medium; global0.139 netiko. To nepakanka kito PC actual priėmimui. Faktinio absolute executable ir SHA256 bei privataus tuščio workspace kelias įrašomi tik jo `.env`:
+
+```text
+PINET_CHAT_ENABLED=true
+PINET_CHAT_RUNNER_ENABLED=true
+PINET_CHAT_OPERATOR_USER_ID=<user_id iš private bootstrap receipt>
+PINET_CHAT_CODEX_EXECUTABLE=<tikras absolute executable tame PC>
+PINET_CHAT_CODEX_SHA256=<tikras 64hex>
+PINET_CHAT_WORKSPACE=<privatus absolute katalogas>
+PINET_CHAT_MODEL=gpt-6-luna
+PINET_CHAT_DAILY_LIMIT=20
+PINET_CHAT_RUNNER_SECONDS=120
+```
+
+Po API restart ir savininko login atskirame terminale:
+
+```powershell
+uv run python scripts/control_portable.py worker
+```
+
+Preflight nieko neklausia modelio, tikrina source, rolę, RLS, savininko registraciją/sesiją ir binary pin. Provider užklausa įvyksta tik paėmus konkrečią leistiną užduotį. Paleisti vieną patikrintą worker. Atšaukimas, logout, narystės panaikinimas, source pin pakeitimas ir lease expiry neleidžia vėlyvo rezultato įrašyti. Nutrauktas provider vykdymas automatiškai nekartojamas. Actual token usage saugomas kai pateiktas; neišmatuota kaina lieka `null`.
+
+## Paruošta būsimo hosted ryšio sąsaja
+
+Dabar nekurti viešo tunnel, Vercel env ar deployment. Būsimam hosted režimui naudoti **tik** `pinet_core.control_api:app` / `control_portable.py api`, kuris nemontuoja legacy balso/pašto/FB/operator API ar viešų docs. Core fixed backend Host `control.pinet.internal`, loopback transportas ir `PINET_CONTROL_MODE=hosted`; production aplinka, atskiras server-only `PINET_CONTROL_BRIDGE_SECRET`≥32 ir `PINET_CONTROL_OWNER_USER_ID` būtini. Core bootstrap kol kas local-only; production owner/DB duomenų migracija dar nepriimta, todėl šis hosted paruošimas nėra įjungimo komanda.
+
+Portalas turi fixed HTTPS backend URL, exact HTTPS portal origin, Secure/HttpOnly/SameSite session cookie ir server-only bridge secret. Kiekvienos HTTP užklausos naujas lowercase UUID nonce, Unix timestamp ir lowercase HMAC-SHA256. `X-Pinet-Control-Timestamp`, `X-Pinet-Control-Nonce`, `X-Pinet-Control-Signature`. UTF8 kanoninė žinutė, newline tarp eilučių ir be paskutinio newline:
+
+```text
+pinet-control-bridge-v1
+<timestamp>
+<nonce>
+<UPPERCASE method>
+<exact encoded path + optional encoded query>
+<SHA256 exact body bytes; empty bytes for no body>
+```
+
+Core priima tik45s laikrodžio langą ir patvariai užregistruoja nonce90s prieš veiksmą. Replay409, netinkamas host/origin/signature403; HMAC nesuteikia aktoriaus teisių: tikra core sesija ir aktuali narystė/grants tikrinami atskirai. Origin/Forwarded/X-Forwarded headers į core neperduodami. Privatūs error details neskelbiami. Actual TLS, restarto atkūrimas, target PC, produkcinė duomenų izoliacija, provider ir hosted naršyklės kelias lieka atskiri būsimo paleidimo vartai.
+
+## Vietinis kliento tekstinis vartotojas
+
+Išsaugotą istoriją nauja patvirtinto savininko login Session gali atrasti per GET text-sessions ir tęsti senesnius įvykius per GET text-sessions/{conversation_id}/events; pilna [sutartis](../agent-business-core/runtime/docs/CUSTOMER_TEXT.md). Sąrašui nereikia žinoti ankstesnio pokalbio UUID. Cursor yra trumpalaikis ir susietas su dabartine sesija; istorija nepriima Profile, nepratęsia mokamo vykdymo TTL ir neveikia kaip start/turn autorizacija. Nauja schema yra papildymas; frontend jos importas, ordinary UI, kitas PC ir viešas paleidimas priimami atskirai.
+
+2026-10-11 vietinis checkpoint: clean private e90e3f1315accaddb459f3ac5934b3befae02bcd/public5924a2e pritaikyti tik savo kompiuteryje, visos operacinės eilutės išsaugotos. Actual authenticated HTTP start/two turns/correction/UUID replay/history/end ir atskiras ordinary portal ef6161af/buildLf4 one-turn/reload/end patvirtinti atskirais kvitais. Pastarasis modelio atsakymas paliko proposed need tuščią; tai išsaugotas defektas, ne pilno efektyvumo PASS. Target PC dar nepaleistas. Current-owner history/end ir konkrečių client need laukų prompt papildymai turi savo atskirą source QA bei actual priėmimą. Istorijos GET/end neturi pratęsti TTL ar sugrąžinti mokamo vykdymo teisės.
+
+Naujas [customer-text.v1](../agent-business-core/runtime/docs/CUSTOMER_TEXT.md) turi atskirus default-OFF `PINET_CUSTOMER_TEXT_ENABLED` ir `PINET_CUSTOMER_TEXT_RUNNER_ENABLED`. Jis nevykdo senos owner konsultacijų eilės, todėl jos `PINET_CHAT_ENABLED` / `PINET_CHAT_RUNNER_ENABLED` gali likti false. Patikrintas `PINET_CHAT_CODEX_EXECUTABLE`/SHA256, privatus absolute `PINET_CHAT_WORKSPACE`, fixed gpt-6-luna ir10..180s bound pernaudojami naujo vartotojo tiesioginiam vykdymui. Nauji jungikliai suteikia tik vietinės konfigūracijos galimybę: aktualus serverinis Registration/Profile/V2 receipt/source/TTL ir aiškus kliento sutikimas vis tiek būtini. Hosted režimas neįjungiamas.
+
+Target PC po atskiro binary/source/schema/auth priėmimo operatorius sąmoningai nustato naujus jungiklius ir bendrus binary/workspace parametrus; pasenęs profilis neatnaujinamas vien skaitymu. Approved V2 šaltiniui ir Profile priimti naudoti maintained customer_knowledge_sync.py/customer_profile_admin.py pagal [bridge sutartį](../agent-business-core/runtime/docs/CUSTOMER_PROFILE_SOURCE_BRIDGE.md). Tada naujas no-write capability → explicit local-test consent start → actual text turn → client correction → cached UUID replay → end. Tokenų usage ir nežinoma kaina saugomi atskirai, aktyvus mokamas kvietimas nelaiko DB užrakto. Minimalus `control_api` montuoja tą patį tekstinį router. Šaltinio QA nėra actual target PC/provider/UI priėmimas; esami local credentials/DB niekur nekopijuojami.
+
+Bendram aiškiam source ir Profile priėmimui yra `scripts/customer_agent_prepare.py --input <privati tiksli įvestis> --receipt <naujas privatus kvitas>`. Jis pernaudoja tuos pačius sync/admit helpers vienoje transakcijoje ir priima privalomus `admit_source=true` bei `execution_source_revision`; tikslus knowledge_ref perduodamas serveryje. Tai palengvina operatoriaus paruošimą, nesuteikia kliento GET rašymo teisių ir nekeičia TTL. Prepared/committed kvito būsenos, faktinė vietinė patikra ir target-PC priėmimas aprašyti bridge sutartyje.
+
+## Supabase vėliau
+
+Esamas PostgreSQL, SQLAlchemy, Alembic ir RLS lieka dabartinis testavimo backend. Supabase CLI nereikalingas šiai eigai. Jei vėliau pasirinksime managed PostgreSQL, reikės ištestuoto restricted-role/private-schema/TLS adapterio ir migracijos bei backup/restore. Vien URL pakeitimas ar CLI buvimas neįrodo tokio priėmimo. Supabase Auth naudotinas tik po atskiro identity adapterio, ne kaip antras nesusietas dashboard login. Duomenų bazės hostingas nepakeičia Python API ir Codex worker.
+
+Oficialios galimybių ribos: [PostgreSQL jungtys](https://supabase.com/docs/guides/database/connecting-to-postgres), [Edge Functions runtime](https://supabase.com/docs/guides/functions). Realus Supabase projektas, jo prieigos ir migracija šiame etape nekurti/nepatikrinti.

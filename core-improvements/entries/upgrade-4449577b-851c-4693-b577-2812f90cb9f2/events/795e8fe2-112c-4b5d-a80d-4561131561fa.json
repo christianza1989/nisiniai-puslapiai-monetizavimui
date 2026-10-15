@@ -1,0 +1,19 @@
+{
+  "status": "fixing",
+  "note": "Independent read-only review reproduced valid native heading level 2.0 requestHash mismatch across Python and JS: Python 4b7608086738fef850d3fd276e9759c83ccfe7e251382583783e88c3ba52c69f versus Node b4c525f0683ed9701f4d9e9e5eb8295f73713185d8e5b708bccba20e6f2ad0d2. Original witness retained; no mutation in reproduction. Reject float leaves (including -0.0), unsafe integers and non-ASCII structural keys before the child. Receipt matching unchanged. New adapter cohort34PASS2.04s includes3new cases, not34additional unique tests. Hard-kill lock recovery remains explicit and is not inferred from injected-throw finally tests. Actual native PG pending helper freeze.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_creation_content_amendment.py -q",
+      "result": "PASS",
+      "evidence": "34 passed in 2.04s, including valid-float2.0/-0.0/unsafe-int pre-child refusal."
+    },
+    {
+      "command": "ruff check src/pinet_core/creation/content_amendment.py src/pinet_core/creation/media.py offline_tests/test_creation_content_amendment.py tests/test_creation_content_amendment_pg.py",
+      "result": "PASS",
+      "evidence": "All checks passed."
+    }
+  ],
+  "eventId": "795e8fe2-112c-4b5d-a80d-4561131561fa",
+  "sequence": 3,
+  "at": "2026-10-15T07:44:04.787Z"
+}

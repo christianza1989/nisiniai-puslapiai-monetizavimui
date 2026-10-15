@@ -1,0 +1,20 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Extend the another-PC runbook to the actual three-role creation and native GUIDE workers and current acceptance status",
+  "category": "workflow",
+  "evidence": [
+    "Sourcef139a05: portable runbook stops at P3/P4 and consultation; creation runbook still says migrate through0013 despite accepted source0014 team and0015 nativeGUIDE. Full GUIDE service requires shared global limit1..20, while draft-only creation allows1..100. Actual dashboard8aeb read passed, newest director public-email6d4d330 differs from stale implementation status."
+  ],
+  "paths": [
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only these new runbook/status paragraphs; retain historical acceptance, original failed test receipts and unchanged runtime/private configuration. No target-PC or hosted acceptance claim.",
+  "id": "upgrade-ba2efc5a-0ef1-4f3f-8d66-5b311d1a5f65",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "f139a057a9c8d05a259a40d22264f8b1cee9ce91",
+  "createdAt": "2026-10-10T17:12:06.441Z"
+}

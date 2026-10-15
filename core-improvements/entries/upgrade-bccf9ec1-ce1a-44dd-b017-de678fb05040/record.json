@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Director contextual provenance, final Session clock and FORCE RLS rollback guards",
+  "category": "code",
+  "evidence": [
+    "Readonly peer source review on development base26e09018458c92bf119a327751338af67f6f6264; three P2 seams, no QA by reviewer.",
+    "Actual owned PostgreSQL original reproduction:3failed1passed24deselected17.68s, SHA50cf14adad6ee2903555a8fb7a3b2832fe7959259ede93bb9cd5ffca225fdc62. Unsafe downgrade witness unconditionally rolled back and original input SHA verified retained; no committed deletion.",
+    "Foreign fixture UUID Bearer token corrected to canonical64characters; valid foreign authenticated Session gets404, not early401. Original expanded fixture FAIL SHA226cce11e8ec217a641cb65cb3eaa9ef43b6db3978001d07c2357fcc2d894d2d retained."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/director",
+    "agent-business-core/runtime/migrations/versions/0028_director_read.py",
+    "agent-business-core/runtime/scripts/bootstrap.py",
+    "agent-business-core/runtime/acceptance_tests/test_director_read.py",
+    "agent-business-core/runtime/offline_tests/test_director_read.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Keep director defaultOFF and retain immutable receipts and prior logs. Never downgrade populated history; changes remain own scoped unmerged PR, frozen253 source/operational0023 unchanged.",
+  "id": "upgrade-bccf9ec1-ce1a-44dd-b017-de678fb05040",
+  "branch": "codex/acquisition-director-read-20261012",
+  "baseSha": "26e09018458c92bf119a327751338af67f6f6264",
+  "createdAt": "2026-10-12T03:39:20.763Z"
+}

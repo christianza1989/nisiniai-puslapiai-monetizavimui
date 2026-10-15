@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "commit": "507128f8728b48e3b9761181013538ce314cb7e5",
+  "note": "Actual OWNED runtime source-only metadata adoption, not merge or other-PC/public acceptance: private receiptSHA292f11f4569df85bf4f0c406e3e7ee6686dacd29f1382a4836df35f0a637cab7 preserves every operational row/schema0023/flags, provider/channel0, API8860/studio18861held. Original listening3/5 retained. One bounded original correction path reserved next; original corpus unchanged, no admission/activation.",
+  "eventId": "b37cf520-c549-4592-8d58-4d306849a472",
+  "sequence": 5,
+  "at": "2026-10-11T19:55:53.517Z"
+}

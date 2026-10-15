@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "New current-source API revision cannot produce the accepted native proof required for source continuation because builder checks historical source first",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_PREACCEPTED_JOB_S14_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/tests/test_current_draft_job_continuation_pg.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of current admitted draft-job branch; retain original approvals/failed Jobs and explicit native S6 continuation",
+  "id": "upgrade-9d964e3b-733d-48bd-bfd6-fb6bf4addc51",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "a5ee8839c3d568b1b55d599dd84ab2ba84a911f2",
+  "createdAt": "2026-10-14T21:55:32.122Z"
+}

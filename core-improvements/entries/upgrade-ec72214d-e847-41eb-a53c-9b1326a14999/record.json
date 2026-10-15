@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Superseded continuation UUID reports current authority; late Account/Membership loss is rejected indirectly as revision loss instead of by an explicit actor fence",
+  "evidence": [
+    "Dedicated restricted-PG baseline build-continuation-review-first.log:1PASS/3FAIL41.25s. Old UUID returns current:true; late Account/Membership COMMIT is already rejected by forced RLS with revision-required. No unauthorized COMMIT or controller fallback observed. ADR VERSLOMATIKA_CONTINUATION_REVIEW_FENCES_2026_10_14 records boundaries and issue66 reservation6172006398."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation_fence_schema.py",
+    "agent-business-core/runtime/migrations/versions/0036_continuation_actor_fence.py",
+    "docs/decisions/VERSLOMATIKA_CONTINUATION_REVIEW_FENCES_2026_10_14.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert after preserving immutable continuations. Additive0036 downgrade refuses retained rows; do not drop or weaken their actor fence or rewrite historical0035/approval/session/intake/source. Original preview remains unchanged during source QA.",
+  "id": "upgrade-ec72214d-e847-41eb-a53c-9b1326a14999",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "5a0591e4f0582576a783b2f925cc693d50aacbd4",
+  "createdAt": "2026-10-14T15:37:02.425Z"
+}

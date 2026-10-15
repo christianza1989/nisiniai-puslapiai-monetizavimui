@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Headless control stops on preserved historical GUIDE failure even after deliberate newer retry, unlike canonical latest-page supervisor",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HEADLESS_GUIDE_HISTORY_S16_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/workspace_pipeline.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_pipeline_guide_history.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of HTTP client latest-job selection; keep all actual source, failed history, saved idempotency and charged receipts",
+  "id": "upgrade-447003cd-bc9d-499d-bf4c-4b7caa696e2e",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "6b917633c0c7dd648319e217ad8a698ffaa617c4",
+  "createdAt": "2026-10-14T23:18:05.891Z"
+}

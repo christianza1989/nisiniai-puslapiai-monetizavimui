@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original source427d actual critic error is preserved as tool_attempted with unknown terminal usage; source replay now provider_error stops at first max-output event. Existing actual tool events remain forbidden; transient network reconnect can complete. Initial targeted45tests PASS16.41s; scoped Ruff found one test import order issue and was corrected. Child owns compact review/native schema follow-up; no provider/quota/acceptance/history mutation.",
+  "eventId": "4207f7bd-3d70-498e-9013-91ff3e61b618",
+  "sequence": 2,
+  "at": "2026-10-10T14:34:22.108Z"
+}

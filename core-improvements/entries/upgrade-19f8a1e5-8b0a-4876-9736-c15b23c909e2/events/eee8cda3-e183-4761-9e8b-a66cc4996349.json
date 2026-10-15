@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual rendered native link defect retained, no original page conversion. Relevant Node and maintained normal worker checks pass; supplemental default/fixture and QA migration guard failures remain separately open, no whole legacy suite claim. Actual new-model recovery still pending.",
+  "checks": [
+    {
+      "command": "node --test customer-content-write customer-content-workflow network-links editorial-skill suites",
+      "result": "PASS",
+      "evidence": "35PASS0SKIP log5a10e4abacb5fe44325a7d3f4e5ae6359862be156718bffff8b2baf37948aef0; original1FAIL644ddb retained"
+    },
+    {
+      "command": "pytest tests/test_native_guide_roles.py tests/test_native_guide_protocol.py",
+      "result": "PASS",
+      "evidence": "24PASS0SKIP log0e0bbc3cac0934d95d7baa3a804366277eddadd14bc132d353ff5eeb6414003d"
+    },
+    {
+      "command": "pytest test_content_work guarded validation-repair, paused projection and stale-before-apply cases",
+      "result": "PASS",
+      "evidence": "3PASS loga1ff7b18c450107a2b647ba9a8ab650d70cebe1a13a13684583ac4450ea9425a; real restricted PG/Node, fake roles/provider0; docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md"
+    }
+  ],
+  "eventId": "eee8cda3-e183-4761-9e8b-a66cc4996349",
+  "sequence": 2,
+  "at": "2026-10-12T08:25:24.070Z"
+}

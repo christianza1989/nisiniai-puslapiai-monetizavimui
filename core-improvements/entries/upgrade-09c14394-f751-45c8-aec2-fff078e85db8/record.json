@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Saved customer-V2 independent Quality execution cannot produce the existing network_lab competence Scores; helpful judgments alone leave measured competence unverified",
+  "category": "code",
+  "evidence": [
+    "f20 actual original three holdouts each helpful/issues0 but no five competence Scores or protected replicated comparison; actual receipt SHA2b9885018ee25c82dc09c88561578faca178fc1d0947c37c8732fed4002cdbd6",
+    "network_lab.py contains canonical existing Scores and 0-5 instruction; customer_agents/review.run invokes Quality/optional attribution only"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/competence.py",
+    "agent-business-core/runtime/scripts/network_lab.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/offline_tests/test_customer_competence.py",
+    "agent-business-core/runtime/tests/test_customer_competence.py",
+    "docs/CUSTOMER_AGENT_LAB.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/AGENT-CALIBRATION-2026-10-11.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert canonical extraction/opt-in review adapter; retain all original Quality/Scores/usage/history, never rewrite old evaluator fingerprints or reset DB",
+  "id": "upgrade-09c14394-f751-45c8-aec2-fff078e85db8",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "c23a76f3f92665c92f84f691a1c1c2982bc4f119",
+  "createdAt": "2026-10-11T18:24:34.448Z"
+}

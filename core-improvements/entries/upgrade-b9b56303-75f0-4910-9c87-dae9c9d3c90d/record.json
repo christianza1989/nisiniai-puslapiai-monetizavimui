@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Common CLI parser treats actual terminal selected-model capacity as generic provider error/reconnect instead of existing model_unavailable",
+  "category": "code",
+  "evidence": [
+    "docs/CUSTOMER_NATIVE_GUIDE_QA_2026-10-12.md",
+    "Actual native coordinator failure receipt5128482f95927f1ea90e44e42a51ab7994d3311572ae6687ae9b45521c56e980, sanitized messageSHA3076d430426648312741c2d400cfe33e8d4d9034224153bc347432151d5ad527",
+    "Original4FAIL229206fc5af94e44d3ce5bda16fb2e3fbe361acda49963842c705a966e9e282f: top/nested trace code and early-stop/known-usage source witnesses"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/offline_tests/test_control_codex.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of exact terminal capacity classification and new witnesses; keep original failed native Job, attempts/events/usage and current accepted business revisions",
+  "id": "upgrade-b9b56303-75f0-4910-9c87-dae9c9d3c90d",
+  "branch": "codex/native-guide-capacity-20261012",
+  "baseSha": "a432a6b37205e557078875917e65a3760001c956",
+  "createdAt": "2026-10-12T06:57:56.161Z"
+}

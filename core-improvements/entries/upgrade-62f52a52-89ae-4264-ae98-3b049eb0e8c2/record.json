@@ -1,0 +1,32 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Owner removes artificial daily test-call ceiling after actual business role review stopped at20charged calls; give creation and native GUIDE a shared explicit disabled ceiling without resetting accounting.",
+  "category": "code",
+  "evidence": [
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6100896596"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/service.py",
+    "agent-business-core/runtime/offline_tests/test_creation_daily_limits.py",
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "agent-business-core/runtime/tests/test_content_work.py",
+    "docs/VERSLOMATIKA_CUSTOMER_CREATION.md",
+    "docs/VERSLOMATIKA_CONTENT_WORK.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of this daily-ceiling source change; preserve original charged calls and immutable failed job history.",
+  "id": "upgrade-62f52a52-89ae-4264-ae98-3b049eb0e8c2",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "52d188ebf34a85c0bf35e0d671472100e7b6b35c",
+  "createdAt": "2026-10-10T18:40:36.687Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual new isolated restricted PostgreSQL/HTTP15PASS99.78s, existing discovery/recovery plus safe state probe; provider0. Two owner-requested synthetic ordinary accounts and owned API18870/source786 with execution held; actual TCP password login/logout/source/gates PASS. No portal/main/public/model acceptance claimed. Original fixture import/origin diagnostic failures and pending signup retained.",
+  "checks": [
+    {
+      "command": "uv run python -m pytest -q tests/test_business_discovery.py tests/test_business_discovery_recovery.py artifacts/workspace-helper/pg_projection_acceptance.py",
+      "result": "PASS",
+      "evidence": "15PASS99.78s; log SHA256ec668ce18a4c3a1d758e1bebf42c64782091b916eb3cfc32007f263c7a87ae6f; docs/handoffs/verslomatika-workspace-core-helper-20261013.md"
+    },
+    {
+      "command": "Canonical setup/bootstrap role-only; uv run python -m alembic upgrade head; full bootstrap and DB role/schema read",
+      "result": "PASS",
+      "evidence": "New owned PostgreSQL15440 schema0030/72tables; pinet_runtime no superuser/bypassRLS/createDB/createRole."
+    },
+    {
+      "command": "Actual TCP ordinary password login/read/source/held-gates/logout check against owned127.0.0.1:18870",
+      "result": "PASS",
+      "evidence": "Both synthetic scenarios; sanitized receiptSHA256b3d0ffba884a3684111e178ab5ed1c22c71648d961ec6c54d27542be198968c4; no credentials printed."
+    }
+  ],
+  "eventId": "e7ad2cb3-20fe-4555-abea-3f14835e9130",
+  "sequence": 3,
+  "at": "2026-10-13T05:59:47.892Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Coordinator/third review identified first-dispatch pin gap; explicitly coordinated required CallIdentity script_sha256/request_input_sha256, native-only script derivation, normalized Turn.message hash and Session-only precommittable Quality intent/job/Dispatch pin. Bearer fingerprint/material unchanged. Offline160PASS3.64s, RuffPASS, new16PG cases collect. Initial mixed-source coordinator PG baseline11PASS2FAIL202.28s retained: our attribution fixture changed from unknown to canonical knowledge trigger while still requiring2 calls; protected replay drift awaits frozen-source rerun, no gate weakened. First-dispatch changed-script/message/valid typed-reference same-ID regressions require zero allocation/providers.",
+  "eventId": "9e57d91e-7a9e-4474-8968-3a960d673fba",
+  "sequence": 4,
+  "at": "2026-10-15T03:47:24.316Z"
+}

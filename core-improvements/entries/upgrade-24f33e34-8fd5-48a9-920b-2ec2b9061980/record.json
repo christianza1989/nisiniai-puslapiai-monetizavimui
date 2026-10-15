@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Turinio planas praranda pilną planningBrief ir sourceQueries virš200 simbolių; canonical modelis neturi revizijos ir privataus plano CAS reconcile sąsajos.",
+  "category": "code",
+  "evidence": [
+    "content-studio/src/model.mjs: makePage ignoruoja planningBrief ir trumpina sourceQueries iki200; editPage nepriima sourceQueries/planningBrief",
+    "content-studio/src/generator.mjs: V2 enqueue aiškiai atmetamas; native writer integration lieka dependency",
+    "SKILLS/niche-content-planner/references/planning-decisions.md:34 reikalauja pilno planningBrief ir konkretaus trūkstamo adapterio įvardijimo"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "content-studio/test/customer-creation-intake.test.mjs",
+    "content-studio/test/planning-brief.test.mjs",
+    "docs/VERSLOMATIKA_CONTENT_INTAKE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert tik additive model planningBrief/CAS sąsajai, intake mapping ir susijusiems testams/doc. Generatorius, schemos, approval/release ir privatūs duomenys neliečiami.",
+  "id": "upgrade-24f33e34-8fd5-48a9-920b-2ec2b9061980",
+  "branch": "codex/verslomatika-creation-intake-20261010",
+  "baseSha": "6506b4a44b7ac6b662c7b22747609adeb8ba0663",
+  "createdAt": "2026-10-10T11:55:18.760Z"
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Immutable code release changes hardcoded native artifact root and loses already accepted site without rewriting original bound paths; add strict deployment-owned stable root",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_STABLE_NATIVE_ARTIFACTS_S18_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/.env.example",
+    "agent-business-core/runtime/offline_tests/test_stable_content_artifacts.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped configuration/source revert; keep stable native artifacts and original intake/approval hashes/paths; never archive data-owning old checkout implicitly",
+  "id": "upgrade-9bb5da4d-0094-41d5-b018-72c7603d88a1",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "325840de64d625fa50cc924964378647e03e9110",
+  "createdAt": "2026-10-15T00:13:54.569Z"
+}

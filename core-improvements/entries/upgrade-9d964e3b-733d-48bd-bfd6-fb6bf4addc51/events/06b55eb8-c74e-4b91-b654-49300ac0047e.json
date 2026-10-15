@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "BaselineSourceblocked1FAIL7.25s, originalNativefixture/missingcompanion/expectation failures retained. Explicit public1a configured actualHTTP/native20case final passes. Historicalapproval/failedjob/source immutable; GUIDE requires fresh explicit S6. No provider/ordinaryadoption yet.",
+  "checks": [
+    {
+      "command": "owned restricted PG/normalHTTP/native current-job/S6 regression",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_PREACCEPTED_JOB_S14_2026_10_15.md:20PASS259.00s provider0 own6d11QA"
+    },
+    {
+      "command": "scoped Ruff/diff and authorized peer readonly code review",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_PREACCEPTED_JOB_S14_2026_10_15.md"
+    }
+  ],
+  "eventId": "06b55eb8-c74e-4b91-b654-49300ac0047e",
+  "sequence": 2,
+  "at": "2026-10-14T22:06:37.999Z"
+}

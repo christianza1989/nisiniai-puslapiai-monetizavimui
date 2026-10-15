@@ -1,0 +1,23 @@
+import {find} from './availability.mjs';
+import {reject} from './primitives.mjs';
+import {publicLocation,staffAtLocation} from './locations-state.mjs';
+const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const merge=rows=>{const out=[];for(const [a,b] of rows.filter(([a,b])=>b>a).sort((x,y)=>x[0]-y[0])){const last=out.at(-1);if(last&&a<=last[1])last[1]=Math.max(last[1],b);else out.push([a,b]);}return out;};
+export function publishedMediaIds(d,o){return [...(o.gallery||[]),o.avatarImageId,...(o.staffPortraits||[]).filter(x=>d.practitioners.some(p=>p.id===x.practitionerId&&p.organizationId===o.id&&p.active)).map(x=>x.mediaId)].filter(Boolean);}
+export function validateGallery(d,organizationId,{galleryEntries=[],staffPortraits=[],avatarImageId=null}){
+ if(!Array.isArray(galleryEntries)||galleryEntries.length>12||new Set(galleryEntries.map(x=>x.mediaId)).size!==galleryEntries.length||!Array.isArray(staffPortraits)||staffPortraits.length>32||new Set(staffPortraits.map(x=>x.practitionerId)).size!==staffPortraits.length||new Set(staffPortraits.map(x=>x.mediaId)).size!==staffPortraits.length)reject('INVALID_INPUT','Galerijoje galima pasirinkti iki 12 skirtingų vaizdų ir po vieną portretą meistrui.');
+ const asset=(id,usage)=>{const a=(d.media||[]).find(a=>a.id===id&&a.organizationId===organizationId&&a.usage===usage);if(a?.moderationState==='restricted')reject('MEDIA_RESTRICTED','Apribotas vaizdas negali būti viešinamas.');if(!a||!a.rights?.trim())reject('INVALID_INPUT','Pasirinkite savo įkeltą vaizdą su patvirtinta viešinimo teise.');return a;};
+ if(avatarImageId)asset(avatarImageId,'portrait');
+ const gallery=galleryEntries.map(x=>{asset(x.mediaId,'gallery');if(x.providerServiceId&&!d.services.some(s=>s.id===x.providerServiceId&&s.organizationId===organizationId&&s.active))reject('INVALID_INPUT','Vaizdo paslauga nepriklauso šiai darbo vietai.');if(typeof (x.caption??'')!=='string'||(x.caption||'').length>180)reject('INVALID_INPUT','Vaizdo aprašas per ilgas.');return {mediaId:x.mediaId,providerServiceId:x.providerServiceId||null,caption:(x.caption||'').trim()};});
+ const portraits=staffPortraits.map(x=>{asset(x.mediaId,'portrait');if(!d.practitioners.some(p=>p.id===x.practitionerId&&p.organizationId===organizationId&&p.active))reject('INVALID_INPUT','Portretą priskirkite aktyviam savo meistrui.');return {practitionerId:x.practitionerId,mediaId:x.mediaId};});
+ return {galleryEntries:gallery,staffPortraits:portraits,avatarImageId:avatarImageId||null};
+}
+export function profileDetails(d,o,schedules,services,now){
+ const rules=o.bookingRules||{},weeklyHours=d.locations.filter(l=>l.organizationId===o.id).map(l=>publicLocation(d,l.id)).filter(Boolean).map(l=>({locationId:l.id,days:DAYS.map(day=>({day,ranges:rules.weekdays&&!rules.weekdays.includes(day)?[]:merge(schedules.filter(s=>d.practitioners.some(p=>p.id===s.practitionerId&&staffAtLocation(d,p,l.id)&&(s.locationId||p.locationId||o.locationId)===l.id)&&(!s.weekdays||s.weekdays.includes(day))).flatMap(s=>s.breakStartMin===null?[[s.startMin,s.endMin]]:[[s.startMin,s.breakStartMin],[s.breakEndMin,s.endMin]]))}))}));
+ const entries=o.galleryEntries||(o.gallery||[]).filter(id=>(d.media||[]).some(a=>a.id===id&&a.usage==='gallery')).map(mediaId=>({mediaId,providerServiceId:null,caption:''}));
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Vilnius',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(now));
+ return {works:entries.filter(x=>o.gallery.includes(x.mediaId)&&(d.media||[]).some(a=>a.id===x.mediaId&&a.moderationState!=='restricted')).map(x=>{const s=services.find(s=>s.id===x.providerServiceId);return {mediaId:x.mediaId,caption:x.caption||'',providerServiceId:s?.id||null,serviceLabel:s?.label||null};}),staffPortraits:(o.staffPortraits||[]).filter(x=>d.practitioners.some(p=>p.id===x.practitionerId&&p.active)&&d.media.some(a=>a.id===x.mediaId&&a.moderationState!=='restricted')),weeklyHours,bookingPolicy:{minLeadTimeMin:o.leadTimeMin??30,maxAdvanceDays:rules.maxAdvanceDays??30,closedDates:(rules.closedDates||[]).filter(day=>day>=today)}};
+}
+export function createProfileTools({mutate,ownOrg,event}){return {
+ saveGallery(user,input){return mutate(d=>{ownOrg(d,user,input.organizationId,'profile');const o=find(d,'organizations',input.organizationId);if(input.version!==o.version)reject('VERSION_CONFLICT','Galerijos pasirinkimas pasikeitė. Atnaujinkite.',409);const value=validateGallery(d,o.id,input);o.draftGallery=value.galleryEntries.map(x=>x.mediaId);o.draftGalleryEntries=value.galleryEntries;o.draftAvatarImageId=value.avatarImageId;o.draftStaffPortraits=value.staffPortraits;o.version++;event(d,'profile-gallery-draft-updated',o.id);return o;});}
+};}

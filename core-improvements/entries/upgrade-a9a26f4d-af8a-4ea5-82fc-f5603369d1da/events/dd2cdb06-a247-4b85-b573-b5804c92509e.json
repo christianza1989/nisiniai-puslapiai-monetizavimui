@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "36offline and7restrictedPG PASS; providers0, operationalDB unchanged. Same-split duplicates rejected before Conversation/Event/Job/Artifact/Outbox writes; distinct shared-first-turn dialogs and original train/holdout lifecycle preserved. Original failures retained; actual clean source adoption/calibration/ordinaryUI remain separate.",
+  "checks": [
+    {
+      "command": "pytest -q offline_tests/test_customer_agent_protection.py",
+      "result": "PASS",
+      "evidence": "36PASS5.44s logb652ceb412c47ef91352d5c7784172e71e76d3a445a135442e7f45855dbca90c"
+    },
+    {
+      "command": "pytest -q tests/test_customer_agent_protection.py -k 'duplicate_scripts_reject or train_uses_existing_lifecycle_holdout_keeps_quality_and_usage_only'",
+      "result": "PASS",
+      "evidence": "7PASS9deselected126.55s log01ceaf76f6211736cc966ffa53161c4e1752367bd39de125a33ca278f107eb81"
+    },
+    {
+      "command": "Scoped Ruff and git diff --check",
+      "result": "PASS",
+      "evidence": "All3changedPythonpaths, no findings"
+    }
+  ],
+  "eventId": "dd2cdb06-a247-4b85-b573-b5804c92509e",
+  "sequence": 3,
+  "at": "2026-10-12T16:14:14.398Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original 3FAIL7PASS separate-worktree configuration regression b47213788df1aa356513a34fbcaa8559666a14e4077023fc9e15548f76cd6479 retained. Deployment-owned explicit companion/network selection only; invalid overrides fail closed and sibling fallback unchanged. Focused17PASS97538e3d. Broader first regression5bd7fb67 retained: existing adapter default-language-profile assertion inherits paused local .env and expects all language reference files; production studio patch does not change instruction loader. Repeat the planned suite with its explicit default feature configuration; dedicated language-mode cases still exercise paused behavior. Customer runtime flag remains false and no model/actual language correction is run.",
+  "eventId": "ad7659df-c7e1-4a65-ab6b-85b110eb13dc",
+  "sequence": 2,
+  "at": "2026-10-12T05:14:24.870Z"
+}

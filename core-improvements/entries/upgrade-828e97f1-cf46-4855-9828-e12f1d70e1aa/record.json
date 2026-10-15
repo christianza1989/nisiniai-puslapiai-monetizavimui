@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Native Creation regression fixtures still use single-role expiry/bounds and legacy reroll for maintained two-round timer and targeted language patch",
+  "category": "workflow",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/tests/test_creation_team.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of fixture changes; preserve original failing regression evidence and production Default behavior",
+  "id": "upgrade-828e97f1-cf46-4855-9828-e12f1d70e1aa",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "de06e60d1d6ebe8d7bd9fba056de8fcb10735a91",
+  "createdAt": "2026-10-14T22:54:06.001Z"
+}

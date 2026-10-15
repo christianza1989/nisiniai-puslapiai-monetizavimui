@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Owned local runtime metadata-only source453 adoption receipt768248295adde764567ca27a0dc629fa75cf29f6dce05a0e204bdc8f6969572a preserves schema0023/every previous row/flags. Same original six-case corpus and identical Snapshot91ffd279/evaluator47f2bb52 executed in two bounded accounted batches: three seen holds6knowncalls/831b59cb84bb628feedcc23e2fb4cc502c3cede94ef20961fd5440b0a38cf285; three original trains7knowncalls/2b0811b6513783c6961188984158575344a066808ae6a6b7b55b1f8c20a0140d. Five competent4–5; correction listening3/needs_review1 communication+clarification with existing issue/candidate/static artifacts3 retained. All13settlements known/input293423/output6398/USD unknown. Exact replay/history preserved/no additional calls; protected holds no tuning. This adopts this adapter only, NOT successful full calibration/protected comparison/learning/module admission/activation/targetPC/public launch. Original3/5 and all previous receipts remain unchanged; language/typed checks UNVERIFIED.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "commit": "45345296a64ebdedb1309248b89cba17eeed4899",
+  "eventId": "3883bfad-3b07-4c9f-8c97-c3f660e47eb4",
+  "sequence": 6,
+  "at": "2026-10-11T19:38:05.541Z"
+}

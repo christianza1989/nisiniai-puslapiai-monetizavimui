@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "commit": "008439b732c2e2a5902e7321720d24faad682b24",
+  "checks": [
+    {
+      "command": "Root separate pytest offline_tests/test_agent_preparation.py and tests/test_agent_preparation.py",
+      "result": "PASS",
+      "evidence": "Independent22offlinePASS3.05s and14restricted actualPGPASS67.16s after functional5466 cherry581; fixed synthetic role outputs and nativeNode, no provider. First combined invocation collectionERROR duplicatebasename before tests; separate expected processes required, no source fix."
+    },
+    {
+      "command": "Root final pytest offline_tests/test_agent_preparation.py; pytest tests/test_agent_preparation.py -k no_revision/legacy_intake/exhausted_attempt; scoped Ruff",
+      "result": "PASS",
+      "evidence": "25offlinePASS4.12s,3actual restrictedPGPASS15.09s/12deselected,RuffPASS after bcea supplement→008439b."
+    },
+    {
+      "command": "Actual authenticated GET preparation at API581; six customer read surfaces before/after",
+      "result": "PASS",
+      "evidence": "HTTP200 typedblocked14checks14blockers,no_revision/not_imported,falseactivation; all six prior/current customer surfaces exactunchanged/provider0. Immutable ignoredreceipt preparation-read-20261010T161041692455Z.private.json preserves original absent-import badsummary before correction. CorrectedAPI/dashboard acceptance remains separate."
+    }
+  ],
+  "note": "Root reviewed and integrated scoped functional and summary supplement; child metadata6832fd/64a5 applied as exact journal +6 WORKSTREAMS additions. Contract22958 Git bytes/hash89c02974 unchanged; no private public admission, activation, model, budget, counter or history rewrite. InternalV2 source19f9424 separately integrated/proven; NEW customer binding still missing. Original source/tests/actual bad summary proofs retained. Final runtime repin/director BFF read follows on clean committed source; platform OPEN.",
+  "eventId": "ad519ab9-8eb8-41cd-925c-091c74683910",
+  "sequence": 8,
+  "at": "2026-10-10T16:19:39.610Z"
+}

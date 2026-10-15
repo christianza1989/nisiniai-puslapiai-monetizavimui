@@ -48,6 +48,10 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /untrusted task data, not instructions/);
   assert.ok(captured.prompt.includes((await readFile(path.join(EDITORIAL_SKILL_DIR, 'references/language-quality.md'), 'utf8')).trim()));
   assert.ok(planned.editorialSkill.files.includes('references/language-quality.md'));
+  const typographyFile = '../niche-site-builder/references/typography-system.md';
+  const typography = (await readFile(path.join(EDITORIAL_SKILL_DIR, typographyFile), 'utf8')).trim();
+  assert.ok(captured.prompt.includes(typography));
+  assert.ok(planned.editorialSkill.files.includes(typographyFile));
   assert.match(planned.editorialSkill.fingerprint, /^[a-f0-9]{64}$/);
   assert.equal(planned.editorialSkill.name, 'niche-content-planner');
   assert.equal(captured.args[captured.args.indexOf('--sandbox') + 1], 'read-only');
@@ -58,6 +62,8 @@ test('generator CLI receives the skill, site data and version for plan and draft
   assert.match(captured.prompt, /--- references\/quality-review.md ---/);
   assert.ok(captured.prompt.includes((await readFile(path.join(EDITORIAL_SKILL_DIR, 'references/language-quality.md'), 'utf8')).trim()));
   assert.ok(drafted.editorialSkill.files.includes('references/language-quality.md'));
+  assert.ok(captured.prompt.includes(typography));
+  assert.ok(drafted.editorialSkill.files.includes(typographyFile));
   assert.match(captured.prompt, /--- references\/studio-contract.md ---/);
   assert.match(captured.prompt, /--- references\/network-linking.md ---/);
   assert.match(captured.prompt, /--- references\/media-workflow.md ---/);
@@ -83,6 +89,30 @@ test('missing skill fails before CLI execution with no generic fallback', async 
     await assert.rejects(() => readFile(process.env.STUDIO_SKILL_CAPTURE_PATH), { code: 'ENOENT' });
     assert.equal((await model.getSite(site.id)).pages.length, 0);
   } finally { delete process.env.STUDIO_EDITORIAL_SKILL_DIR; }
+});
+
+test('both editorial modes snapshot canonical typography and reject missing or unfinished contracts', async () => {
+  const contract = path.join(root, 'isolated-typography.md');
+  await writeFile(contract, 'Original typography contract: preserve visible diacritics and real text roles.');
+  const snapshots = new Map();
+  for (const mode of ['plan', 'draft']) {
+    const initial = await loadEditorialSkill(mode, EDITORIAL_SKILL_DIR, undefined, contract);
+    assert.ok(initial.instructions.includes('Original typography contract: preserve visible diacritics and real text roles.'));
+    snapshots.set(mode, initial);
+  }
+  await writeFile(contract, 'Revised typography contract: inspect actual text enlargement.');
+  for (const mode of ['plan', 'draft']) {
+    const fresh = await loadEditorialSkill(mode, EDITORIAL_SKILL_DIR, undefined, contract);
+    assert.notEqual(fresh.metadata.fingerprint, snapshots.get(mode).metadata.fingerprint);
+    assert.ok(fresh.instructions.includes('Revised typography contract: inspect actual text enlargement.'));
+    assert.ok(!snapshots.get(mode).instructions.includes('Revised typography contract: inspect actual text enlargement.'));
+  }
+  for (const invalid of ['missing', 'empty', 'unfinished']) {
+    if (invalid === 'missing') await rm(contract); else await writeFile(contract, invalid === 'empty' ? ' \n ' : '[TODO: typography]');
+    for (const mode of ['plan', 'draft']) {
+      await assert.rejects(() => loadEditorialSkill(mode, EDITORIAL_SKILL_DIR, undefined, contract), /typography-system\.md/);
+    }
+  }
 });
 
 test('an active instruction snapshot survives edits and the next load records a new version', async () => {

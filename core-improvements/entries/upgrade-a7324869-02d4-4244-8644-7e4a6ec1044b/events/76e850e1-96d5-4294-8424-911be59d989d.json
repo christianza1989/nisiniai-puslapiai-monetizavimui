@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual I1a/I1b implemented. First rehearsal failed on policy dependency downgrade order, repaired and isolated re-upgrade PASS. Source setup canonicalHost field corrected before future config writes. Additional legacy16PASS/6FAIL caused missing expected sibling companion; own junction to fresh public clone, rerun22PASS. Original failures retained in docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md. New14control tests and31core/policy PASS; browser/HTTP acceptance next. No production/paid/channel activation.",
+  "eventId": "76e850e1-96d5-4294-8424-911be59d989d",
+  "sequence": 2,
+  "at": "2026-10-10T00:19:51.744Z"
+}

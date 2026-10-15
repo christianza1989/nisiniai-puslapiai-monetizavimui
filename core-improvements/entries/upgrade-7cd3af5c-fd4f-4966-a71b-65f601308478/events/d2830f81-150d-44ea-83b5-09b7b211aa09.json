@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Created and attached stacked draft PR112. Initial coverage BLOCKED because the helper-created original finding event was omitted from exact staging; original event is preserved and included in this metadata handoff, no journal rewrite. Source34offline/twoisolatedPG/provider0 evidence unchanged. Operational current-owner admission/monitor/UI remain pending; shared monitor scope released after reviewed-source handoff, main not merged.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/112",
+  "commit": "e45d1617fbe279b43c7011565277b23fcf48449f",
+  "eventId": "d2830f81-150d-44ea-83b5-09b7b211aa09",
+  "sequence": 3,
+  "at": "2026-10-12T13:38:44.750Z"
+}

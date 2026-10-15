@@ -9,6 +9,9 @@ test('preserves personal guidance, replaces only managed block, remains idempote
   const original = '# Personal guidance\r\nUse my coding style.\r\n';
   const installed = mergeBlock(original);
   assert(installed.startsWith(original));
+  assert(installed.includes('All agents working with this core'));
+  assert(installed.includes('CORE_IMPROVEMENT.md'));
+  assert(installed.includes('scripts/core-upgrade-check.mjs'));
   assert.equal(mergeBlock(installed), installed);
   const surrounded = original + BLOCK.trimEnd() + '\r\n# More unrelated instructions\r\n';
   assert.equal(mergeBlock(surrounded), surrounded);

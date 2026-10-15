@@ -1,0 +1,21 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Customer draft delivery alone has no strict independent critic/coordinator evidence contract; actual first typed draft falsely claimed Lithuanian self-review despite foreign prose.",
+  "category": "code",
+  "evidence": [
+    "Direct human 2026-10-10 request for actual creator, critic and coordinator roles with customer-visible bounded discussion",
+    "Creation revision1 at source506c048 typed delivery succeeded while actual operator review found mixed Finnish, Estonian and Cyrillic prose; private bytes remain private",
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py Draft has self-authored language_review, not independent observation evidence"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only this new module/tests/docs commit; root runtime/controller integration is separate. Preserve original immutable failed draft and provider receipts.",
+  "id": "upgrade-5cb0501f-2d25-4481-a87f-ec5896fe3154",
+  "branch": "codex/verslomatika-creation-review-20261010",
+  "baseSha": "ec8bd436f9e302f874a8a2bdecb0acb5e4adeda8",
+  "createdAt": "2026-10-10T11:00:49.501Z"
+}

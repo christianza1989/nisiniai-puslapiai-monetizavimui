@@ -1,0 +1,30 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Explicit identical V2 reimport changes Profile receipt/identity and interrupts the maintained source binding; add verified unchanged-content freshness without rewriting admitted history",
+  "category": "code",
+  "evidence": [
+    "Original isolated PostgreSQL baseline1FAIL8.49s; logSHAed1dd54c3f10a680a8f871bcf058836c874acc6f013cb4536975dc05b1a335f1; provider/channel0",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6108862885"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_profile/maintenance.py",
+    "agent-business-core/runtime/src/pinet_core/customer_profile/refresh_models.py",
+    "agent-business-core/runtime/src/pinet_core/customer_profile/service.py",
+    "agent-business-core/runtime/scripts/customer_source_maintain.py",
+    "agent-business-core/runtime/migrations/versions/0023_customer_source_refreshes.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/tests/test_customer_source_maintain.py",
+    "agent-business-core/runtime/offline_tests/test_customer_source_maintain.py",
+    "docs/CUSTOMER_SOURCE_MAINTENANCE.md",
+    "docs/VERSLOMATIKA_CUSTOMER_PROFILE.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped source revert; populated refresh history downgrade refuses data loss. Preserve original receipts/Profile and operating history.",
+  "id": "upgrade-636ddb81-e9ed-49bf-b496-72c978bd6c38",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "a61ebabd57eb48f6151636a972f8ed2862274923",
+  "createdAt": "2026-10-11T12:10:04.551Z"
+}

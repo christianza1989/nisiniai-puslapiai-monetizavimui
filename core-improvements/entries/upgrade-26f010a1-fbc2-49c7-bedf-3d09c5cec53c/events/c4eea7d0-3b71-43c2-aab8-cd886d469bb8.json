@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Unloaded provider scope original account_ref survives erasure FAIL96b0b805b3f150c0cd6edc90e53f37729145e67918032fa60d8c1f5d60277e23. First fixed22PASS1FAIL66b56c0 log preserves overbroad test assertion counting retained unrelated operator candidate; corrected to erased account only.",
+  "eventId": "c4eea7d0-3b71-43c2-aab8-cd886d469bb8",
+  "sequence": 2,
+  "at": "2026-10-11T23:39:40.569Z"
+}

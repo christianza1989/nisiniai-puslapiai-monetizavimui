@@ -5,9 +5,10 @@ import { researchContext } from './seo-research.mjs';
 
 export const EDITORIAL_SKILL_DIR = path.resolve(import.meta.dirname, '..', '..', 'SKILLS', 'niche-content-planner');
 export const SEO_SKILL_DIR = path.resolve(import.meta.dirname, '..', '..', 'SKILLS', 'niche-seo-geo-core');
+export const TYPOGRAPHY_CONTRACT_PATH = path.resolve(import.meta.dirname, '..', '..', 'SKILLS', 'niche-site-builder', 'references', 'typography-system.md');
 
 // Load once per job: a batch must use one instruction snapshot even if files change.
-export async function loadEditorialSkill(mode, directory = process.env.STUDIO_EDITORIAL_SKILL_DIR || EDITORIAL_SKILL_DIR, seoDirectory = process.env.STUDIO_SEO_SKILL_DIR || SEO_SKILL_DIR) {
+export async function loadEditorialSkill(mode, directory = process.env.STUDIO_EDITORIAL_SKILL_DIR || EDITORIAL_SKILL_DIR, seoDirectory = process.env.STUDIO_SEO_SKILL_DIR || SEO_SKILL_DIR, typographyContractPath = TYPOGRAPHY_CONTRACT_PATH) {
   if (!['plan', 'draft'].includes(mode)) throw new Error('Nežinomas redakcinio skill režimas.');
   const files = ['../PROJECT_CONTRACT.md', 'SKILL.md', 'references/studio-contract.md', 'references/language-quality.md', 'references/quality-review.md', 'references/network-linking.md', 'references/media-workflow.md', 'references/content-workflow.md'];
   if (mode === 'plan') files.push('references/planning-decisions.md', 'references/niche-adaptation.md');
@@ -20,6 +21,13 @@ export async function loadEditorialSkill(mode, directory = process.env.STUDIO_ED
       throw new Error(`Nepavyko įkelti niche-content-planner instrukcijos ${file}: ${error.message}`);
     }
   }));
+  // No-file-tools jobs need the actual shared contract, not only its link in SKILL.
+  const typographyFile = '../niche-site-builder/references/typography-system.md';
+  try {
+    const content = (await readFile(typographyContractPath, 'utf8')).trim();
+    if (!content || content.includes('[TODO:')) throw new Error('Tuščia arba neužbaigta instrukcija.');
+    sections.push({ file: typographyFile, content });
+  } catch (error) { throw new Error(`Nepavyko įkelti niche-site-builder instrukcijos ${typographyFile}: ${error.message}`); }
   // The repository is authoritative; a user's optional installed copy is never
   // required by automated jobs or another computer's checkout.
   const seoFiles = ['SKILL.md', 'references/studio-integration.md', 'references/evidence-contract.md', 'references/geo-publishing.md',

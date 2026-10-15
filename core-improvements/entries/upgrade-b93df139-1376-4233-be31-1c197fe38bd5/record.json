@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Actual customer team trial rejected critic dot/bracket references and echoed known foreign prose; schema and model context need precise canonical binding. Private international research queries also require separation from public language screening.",
+  "category": "code",
+  "evidence": [
+    "Actual source176d45b customer UI/worker trial:2 provider attempts, creator language FAIL, critic review_invalid; strict validator reproduced KeyError for dot/bracket reference. Raw candidate/traces retained privately; no accepted revision.",
+    "Private search queries intentionally include international research terms; they are not published reader-facing prose."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/src/pinet_core/creation/renderer.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_content_plan.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert of this repair; preserve original failed private attempts and immutable revisions.",
+  "id": "upgrade-b93df139-1376-4233-be31-1c197fe38bd5",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "176d45b1ae166421d2d7e6dc29407e356b4df03e",
+  "createdAt": "2026-10-10T12:26:52.409Z"
+}

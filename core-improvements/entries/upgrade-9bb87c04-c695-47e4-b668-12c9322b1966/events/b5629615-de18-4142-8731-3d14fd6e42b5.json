@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Native GUIDE role-model source acceptance: initial85 offline PASS0.74s; final affected wire/role/continuation87PASS0.48s; isolated restricted PostgreSQL/native Node31PASS225.98s before wire coherence follow-up, final affected native6PASS49.18s, existing BUSINESS populated-Sol downgrade regression1PASS6.76s on head0020. Empty downgrade/reupgrade/bootstrap PASS; frozen source unchanged, provider0, operational DB untouched. Scoped Ruff/diff and independent whole-source/delta reviews noP0-P2. Native AttemptView schema and Pydantic rejectSolcreator/unknownmodels, retain historicalLunareviewers and currentSolreviewers. Initial6test-only dispatch assertions, importorder and laterUTC-alias lint failure retained and corrected; no acceptance gate weakened. Clean source adoption and ordinary customer UI/provider effectiveness follow separately; third914 accepted body still has editorial doublecount defect, later248/ac514 candidates remain unaccepted. Language paused/UNVERIFIED, Gemini deferred, overall platform OPEN.",
+  "checks": [
+    {
+      "command": "pytest native role/profile/continuation offline selection",
+      "result": "PASS",
+      "evidence": "85 initialPASS0.74s; final affected87PASS0.48s; scoped Ruff finalPASS"
+    },
+    {
+      "command": "isolated restricted PostgreSQL/native Node tests/test_content_work.py and tests/test_native_guide_roles_pg.py",
+      "result": "PASS",
+      "evidence": "31PASS225.98s; guide-model-pg-20261011T035915033746Z.private.json; no operational DB/provider"
+    },
+    {
+      "command": "isolated restricted PG final wire/native regression",
+      "result": "PASS",
+      "evidence": "6PASS49.18s; guide-model-wire-pg-20261011T040641586489Z.private.json; frozen source unchanged"
+    },
+    {
+      "command": "existing BUSINESS populated-Sol rollback regression on migration0020",
+      "result": "PASS",
+      "evidence": "1PASS6.76s; review-model-0020-regression-pg-20261011T040755790148Z.private.json; empty downgrade/reupgrade PASS"
+    },
+    {
+      "command": "independent readonly source and incremental wire coherence review",
+      "result": "PASS",
+      "evidence": "No actionableP0-P2; schema/Pydantic/SQL preserve fixedcreator and historicalreviews"
+    }
+  ],
+  "eventId": "b5629615-de18-4142-8731-3d14fd6e42b5",
+  "sequence": 2,
+  "at": "2026-10-11T04:08:50.436Z"
+}

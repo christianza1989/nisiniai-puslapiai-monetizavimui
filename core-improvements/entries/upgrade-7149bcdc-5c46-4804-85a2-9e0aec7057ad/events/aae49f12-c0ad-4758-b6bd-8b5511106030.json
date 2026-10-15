@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "commit": "ba891b1aaebcc65d72b5248eaaf59e6bf82822a7",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "note": "Adopted only into own held loopback PostgreSQL runtime: maintained Alembic0020→0021, source pin only, every operational table row exact preserved; receipt SHA7f9e414bfc7783fd35ad15b30983b300f630cb646e67ccee519a29f0cf7135da. Maintained minimal control API started on8860 and actual same-account historical GET200/expired paid cap409 with exact original history/Knowledge unchanged, witnessSHA0d2be9ebb98814818885faab19b7bfdb18bd821cce691a9ab9044351cdc06683. Provider/channel0. Portal4101ec9 imports exact canonical profile492901408dd5e8c27d018e71c7551407c1916c77afebfd764ab51f738133c59c with17tests/tsc/build per frontend owner; ordinary updated UI and operational21st admission remainUNVERIFIED. No main merge, target-PC/public deployment, calibrated system or full-platform completion. API8860 held again before subsequent history maintenance scope.",
+  "eventId": "aae49f12-c0ad-4758-b6bd-8b5511106030",
+  "sequence": 5,
+  "at": "2026-10-11T08:21:49.303Z"
+}

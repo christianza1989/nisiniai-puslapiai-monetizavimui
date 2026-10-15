@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Receiving provenance/read-wire/source import only; root two focused actual restrictedPG tests at clean226e5f6 use actual Git verifier and maintained sibling Xbot with fixed fake Draft/Review. Owner34fullPG is separately reported, not root rerun or live/module/calibration/portal acceptance. Four imported paths unchanged, runtime/module flags operationalOFF, no inherited journal edits or coverage weakening.",
+  "checks": [
+    {
+      "command": "Receiving actual frozen Xbot restricted-PG→maintained SQLite→normal owner HTTP/reopen/replay and explicit actual CodexRunner denial tests",
+      "result": "PASS",
+      "evidence": "2PASS; source226e5f6d9544495ff02527e8a1ead02aaa0b8025; private receiptSHA5981027fcf76f8d0d26625c2edacb6c3476bd365a73fec0d094147f7210c0be0; actualGit verifier, before/after HEAD identical/clean, all operationalrows unchanged, providerchannel0, fake models only"
+    },
+    {
+      "command": "Independent exact PR98 library/routes/wire/__init__ source review and normal migration0024 successor compatibility",
+      "result": "PASS",
+      "evidence": "No actionableP0-P2 in corrected4e2d0a/29ca scope; receiving Git imports byte-preserved3ce; actual normal0001→0025 + pg_dumprestore rehearsal d9e1354e, no root operational adoption"
+    }
+  ],
+  "eventId": "405bee02-7f9c-4ba5-a3f0-31255b160a1f",
+  "sequence": 2,
+  "at": "2026-10-11T22:52:34.924Z"
+}

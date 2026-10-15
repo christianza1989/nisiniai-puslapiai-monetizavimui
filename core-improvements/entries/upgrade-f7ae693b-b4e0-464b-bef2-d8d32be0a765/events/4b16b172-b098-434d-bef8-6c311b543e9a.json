@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Documentation/skill correction only; no runtime code/threshold/channel change or new provider call. Existing backend checks retain their exact functional9af0ebb source.",
+  "checks": [
+    {
+      "command": "quick_validate.py SKILLS/niche-client-acquisition",
+      "result": "PASS",
+      "evidence": "Skill is valid! Canonical project entry validated; no global skill installed/updated."
+    },
+    {
+      "command": "exact single catalog-entry SHA/other entries equality/local relative links",
+      "result": "PASS",
+      "evidence": "entry3d9dab24d50be4651d890c5ed315e5897029e1177c0a62e0a26e73b7db7d9100; all other parsed catalog entries unchanged; referenced maintained contracts and local links exist; old runtime/model receipts retained"
+    }
+  ],
+  "eventId": "4b16b172-b098-434d-bef8-6c311b543e9a",
+  "sequence": 3,
+  "at": "2026-10-12T04:33:31.338Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Only strict server-owned stable native artifact root; emptylegacydefault unchanged. Initial3FAIL1PASS preserved; no originalcasepath/hash rewrite, junction, customerpath, model/cap/approval bypass. Immutable6b API remainsidle until actualnewsourceadoption.",
+  "checks": [
+    {
+      "command": "offline stable-root plus maintained studio/dependency preflight regression",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STABLE_NATIVE_ARTIFACTS_S18_2026_10_15.md:45PASS3.64s, relative/missing/wrong-shape/alias rejection and exactoriginalbytes"
+    },
+    {
+      "command": "scoped Ruff and diff check",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_STABLE_NATIVE_ARTIFACTS_S18_2026_10_15.md:initialstylefindingsfixed, deployment-only configuration"
+    }
+  ],
+  "eventId": "094d55f0-07e1-4a61-8428-9f6c8abc67c0",
+  "sequence": 2,
+  "at": "2026-10-15T00:15:01.289Z"
+}

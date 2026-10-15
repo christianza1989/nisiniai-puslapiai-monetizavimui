@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original real immutable revision1 language FAIL preserved; new gate reproduces rejection. No real corrected revision or full editorial/F1 acceptance claimed.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_creation_adapter.py tests/test_customer_creations.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "Actual completed tool receipt24passed92.32s; rejection preserves observed usage without artifacts/revision; scope/immutable/history regression retained"
+    },
+    {
+      "command": ".venv/Scripts/ruff.exe check scoped creation modules and tests",
+      "result": "PASS",
+      "evidence": "Actual all checks passed receipt2026-10-10"
+    },
+    {
+      "command": "language_screening on preserved private original revision1",
+      "result": "PASS",
+      "evidence": "Actual new gate returned language_quality_failed; original bytes unchanged"
+    }
+  ],
+  "eventId": "c92bb0d9-279e-4364-b814-5da41e34d5fc",
+  "sequence": 2,
+  "at": "2026-10-10T10:40:21.115Z"
+}

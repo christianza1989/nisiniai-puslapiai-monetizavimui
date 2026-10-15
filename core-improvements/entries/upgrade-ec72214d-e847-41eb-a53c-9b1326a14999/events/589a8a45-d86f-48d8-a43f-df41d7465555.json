@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Dedicated synthetic/native restricted-PG regression26PASS162.32s; initial1PASS/3FAIL41.25s retained. Late Account/Membership already denied COMMIT through forced RLS;0036 makes actor boundary explicit. Superseded UUID projection repaired, revoked latest never falls back. Historical0035 unchanged; original preview/API/schema0032 preserved; providers0. Runtime adoption and full-platform semantic acceptance remain separate.",
+  "checks": [
+    {
+      "command": "python build-continuation-qa.private.py test build-continuation-review-regression.log tests/test_build_continuation.py tests/test_build_continuation_pg.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "26PASS162.32s in ignored runtime/artifacts/workspace-ui/build-continuation-review-regression.log. Actual restricted INSERT/deferred COMMIT and HTTP replay/history/controller guards; source/public/native drift and archive/failed-guide regression included."
+    },
+    {
+      "command": "python -m ruff check continuation.py continuation_fence_schema.py 0036_continuation_actor_fence.py test_build_continuation_pg.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped Ruff and whitespace check passed; historical0035 has no diff."
+    }
+  ],
+  "eventId": "589a8a45-d86f-48d8-a43f-df41d7465555",
+  "sequence": 2,
+  "at": "2026-10-14T15:41:59.824Z"
+}

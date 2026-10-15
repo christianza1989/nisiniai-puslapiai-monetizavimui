@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "commit": "8f70a80fd9fabb2eebe44de2752a2cb5412f5732",
+  "note": "Own clean local runtime only: source-only adoption keeps all operational tables and schema0021 exact, witness b5da782f1c5c6ac6093ab74ea49726e7d8a1439e287892d5a44b4233f82217bd. Actual maintained CLI through paired freshness wrapper at10:38:47Z performs 9-page source admission plus one exact customer Profile in one transaction; immutable prepared result/committed marker hash verified. Actual authenticated preparation has four current source/profile checks PASS during existing180s knowledgeTTL; no V2 session or activation. Existing Admission rows and every unrelated table/accounting/history exact; one new admission only, provider/channel0. Actual witness SHA8d9758e56ba7caef5ffad71f6b454429ea5051a131aa72323c7d7961701e6cb0. Ordinary browser reload3019 subsequently redirects to expired customer login, so authenticated new UI remains UNVERIFIED; cached old page is not current evidence. Source draft branch-only, no main/targetPC/public adoption. Platform OPEN; TTL subsequently expires normally, no implicit renewal.",
+  "eventId": "08b4dd32-08d2-4707-9d07-812bf38f8e2c",
+  "sequence": 6,
+  "at": "2026-10-11T10:50:02.666Z"
+}

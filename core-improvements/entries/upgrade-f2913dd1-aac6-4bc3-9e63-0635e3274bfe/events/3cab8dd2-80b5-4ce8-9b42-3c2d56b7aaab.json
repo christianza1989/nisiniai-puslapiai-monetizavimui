@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "First actual Host-sensitive transport regression on a4aa746: 7 PASS / 2 FAIL in28.245s, preserved foundation-loopback-transport.log. Canonical Host fixture returned candidate; origin fixture wrongly accepted v1. Independent Nodev24.19.0 request proved fetch silently sends127.0.0.1:port despite explicit Host foundation.example. Shared native bounded loopback transport now uses http.request, with hosted fetch behavior unchanged. No quality/host policy weakened; final full regression follows clean commit.",
+  "eventId": "3cab8dd2-80b5-4ce8-9b42-3c2d56b7aaab",
+  "sequence": 2,
+  "at": "2026-10-14T10:52:21.854Z"
+}

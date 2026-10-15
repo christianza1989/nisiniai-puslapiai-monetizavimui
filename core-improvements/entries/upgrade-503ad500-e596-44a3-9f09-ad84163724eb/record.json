@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Workspace team roster and new-send admission ignore fixed runner executable/workspace/hash readiness; a known-incapable runner consumes an Attempt before adapter refusal. Reuse one maintained team configuration check before admission/reservation without changing model, contract, quota or fences.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_TEAM_RUNNER_READINESS_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/service.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/handler.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert; preserve actual attempts and UNKNOWN/known usage. Root owns missingworkspace private wrapper and service restart. No quota/fence/model changes or retroactive receipt rewrite.",
+  "id": "upgrade-503ad500-e596-44a3-9f09-ad84163724eb",
+  "branch": "codex/verslomatika-team-runner-readiness-20261015",
+  "baseSha": "27fe292424598eb92e3a3a90f71c28c50be2865b",
+  "createdAt": "2026-10-15T05:57:28.250Z"
+}

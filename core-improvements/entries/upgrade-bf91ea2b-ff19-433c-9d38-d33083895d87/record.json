@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Attribute existing native lab and Quality provider reservations to one bounded workspace Task allowance without multiplying the actor/day budget",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/quota.py",
+    "agent-business-core/runtime/tests/test_workspace_calibration_budget_pg.py",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/calibration_plan.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/calibration_budget.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/calibration_budget_schema.py",
+    "agent-business-core/runtime/migrations/versions/0040_workspace_calibration_budget.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_calibration_plan.py",
+    "agent-business-core/runtime/tests/test_workspace_calibration_budget_pg.py",
+    "agent-business-core/runtime/WORKSPACE_AGENT_EPISODE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert the scoped source packet before adoption. Migration downgrade refuses retained allocations; preserve native attribution and private records. No serving source or operational database was changed in this increment.",
+  "id": "upgrade-bf91ea2b-ff19-433c-9d38-d33083895d87",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "51a83116e38f2d4579da59aa88e26ba04951947d",
+  "createdAt": "2026-10-15T03:37:25.693Z"
+}

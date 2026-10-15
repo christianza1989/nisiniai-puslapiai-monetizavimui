@@ -1,0 +1,119 @@
+{
+  "version": "0.1.0",
+  "status": "LOCAL_GAP_RESEARCH_NOT_ENGINE_OR_LIVE_PIPELINE",
+  "source_baseline": "5bddf2fa22613ed8e3471622e6a868d55c25ea3c",
+  "source_ci": {
+    "run_id": 38026646543,
+    "status": "SUCCESS",
+    "acquisition_job_id": 114138787052,
+    "preflight_job_id": 114138787230,
+    "postgresql_tests": 19,
+    "offline_tests": 70,
+    "offline_subtests": 25,
+    "exact_schemas": 4
+  },
+  "created_at": "2026-10-10T05:17:54.111146+00:00",
+  "evidence_recheck_after": "2026-10-11T05:17:54.111146+00:00",
+  "original_research_ttl_unchanged": "2026-10-11T05:03:44.774098+00:00",
+  "original_candidate_sha256": "00785ef150a55a3e4db2da4902f2ffea1e47e1b2192fa9ce501aae5b684d8367",
+  "additional_candidate_sha256": "d1447cd5658e53e48a8b16d1563adb4feec20301638b0b8a5e005cb0237e7186",
+  "search": {
+    "endpoint": "tinyfish.web.search",
+    "actual_cost_usd": 0,
+    "raw_rows": 50,
+    "excluded": 8,
+    "primary_read_required": 42,
+    "qualified_provider": 0,
+    "raw_provider_cached": false
+  },
+  "additional_call_ids": [
+    "56bf8a25c8b3457197ab655889e9191f",
+    "4d1ebb3531f64b6393934ba4f514ee1b",
+    "e13f514d702d4f19b9e3966fdec62554",
+    "08521978c6114d789a6588815011c99e",
+    "4f53728e3d1b41238654e0e6cb87c3e2"
+  ],
+  "combined_treg_search": {
+    "calls": 21,
+    "raw_rows": 200,
+    "actual_cost_usd": 0
+  },
+  "primary_source_checks": {
+    "additional_urls": 9,
+    "additional_readable": 7,
+    "additional_unavailable": 2,
+    "combined_urls": 30,
+    "combined_readable": 24,
+    "combined_unavailable": 6
+  },
+  "research": {
+    "additional_candidates": 5,
+    "additional_manual_drafts": 5,
+    "combined_candidate_count": 20,
+    "combined_source_category_ids": [
+      "antakiai",
+      "blakstienos",
+      "depiliacija",
+      "estetika",
+      "ilgalaikis-makiazas",
+      "kunas",
+      "makiazas",
+      "masazas",
+      "nagai",
+      "plaukai",
+      "spa",
+      "tatuiruotes",
+      "veidas",
+      "verimas"
+    ],
+    "combined_source_cities": [
+      "Alytus",
+      "Kaunas",
+      "Klaipėda",
+      "Marijampolė",
+      "Panevėžys",
+      "Tauragė",
+      "Telšiai",
+      "Utena",
+      "Vilnius",
+      "Šiauliai"
+    ],
+    "remaining_core_category_ids": [],
+    "one_generic_salon_service_list_unverified": true,
+    "complete_national_or_service_leaf_coverage": false,
+    "native_current_eligibility_verified": false,
+    "independent_draft_review_complete": false,
+    "engine_draft_ready": 0,
+    "model_calls": 0,
+    "contacts_collected": 0,
+    "accounts_created": 0,
+    "core_jobs_created": 0,
+    "raw_source_bodies_retained": false,
+    "external_sent": false
+  },
+  "source_use_verified": false,
+  "source_reuse_notice_kept_unverified": true,
+  "strict_schema_authoring_failure": {
+    "first_errors": 6,
+    "candidate_processing_before_failure": 0,
+    "shared_core_failure_claimed": false,
+    "contract_relaxed": false
+  },
+  "private_evidence_sha256": {
+    "additional-source-candidates-and-manual-drafts.json": "d1447cd5658e53e48a8b16d1563adb4feec20301638b0b8a5e005cb0237e7186",
+    "attempt-01-validation-failure.json": "d5fe7e3665e66def67868b24a66f6fcfc066c75fe5a1383d47d69a74322a27e0",
+    "minimal-search-receipts.json": "a8c0d2cf22ea32b053a5dc23502ae36b43f16811a055336d80286dca9125530e",
+    "attempt-01-wrapper.py": "6869228040852710db5fd59d37d422442d01fd5b8f5ba2647a5eab54d9e5fc6e",
+    "primary-receipts/g01.json": "5302a74114187af30ac4c9e268c372ad352d41aff4cff42fbc432d11e8696caa",
+    "primary-receipts/g02.json": "a0de92cafd1b1cc393a8cec9f446fe402403a1fb53573aaa3df2f948a9b212ce",
+    "primary-receipts/g03.json": "416643c6f0207021a65aa8e3cc8634cb2c60bdba529b16e27ed9fa6d3eb77824",
+    "primary-receipts/g04.json": "aaadadba18da3e12d55aee976b370b81382c3af6b156056070bd6cd5f7cb2ecd",
+    "primary-receipts/g05.json": "554f446756bf36c62a778f5d53834c012310aca7e81f8066c6b7c0d471b236a1",
+    "primary-receipts/g06.json": "038ce8d89adc73b97e65d2ccdd545aad70526159bd7ff5ff10d81fbed220f45c",
+    "primary-receipts/g07.json": "d2a9088a72979630d60257c80517dde35f967e8cdc012e6e0f30e172e415e737",
+    "primary-receipts/g08.json": "59330ff2a0697b9b1db5f5b4436a4fe80127dfa883324769de4e4d18d33ab484",
+    "primary-receipts/g09.json": "821b05ff19505d32a399466fe915791f720d9af79a815c12c1d59bac2f4e2e24"
+  },
+  "normal_owner_adoption": "PENDING",
+  "full_pipeline_accepted": false
+}

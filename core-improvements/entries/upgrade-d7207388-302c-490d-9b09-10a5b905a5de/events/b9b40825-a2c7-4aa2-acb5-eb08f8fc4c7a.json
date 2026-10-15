@@ -1,0 +1,21 @@
+{
+  "status": "local-verified",
+  "note": "Primary01a133bf executed final frozen functional6cd16976 in a NEW restricted0041 QA after prior552 tests ended/clean checkout recorded: actual migration/bootstrap including canonical CHECK comparator PASS;16provenancePGPASS182.39s. This peer read the safe result log and hashed it; did not rerun PG or mutate DB. Providers0/sourceclean/original0032preview counts preserved. Schema/proof window closed; caller/High/actual serving and whole-platform acceptance remain separate. Prior offline collision/fixture failures and inherited full-main upgrade coverage BLOCKED remain disclosed.",
+  "commit": "6cd16976d487a2a856c887f320cddde161b3582e",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/153",
+  "checks": [
+    {
+      "command": "python -m pytest -q tests/test_workspace_episode_provenance_pg.py",
+      "result": "PASS",
+      "evidence": "Root-executed16PASS182.39s on frozen6cd/schema0041; coordinator runtime/artifacts/workspace-ui/workspace-episode-schema-initial.log SHA256b775d0292e4345c6184a629f2f426b0441f4bbd6407cda8ee4a973122209b834 inspected by this peer. Includes ordinary roles/replay and scoped native provenance refusal/success."
+    },
+    {
+      "command": "alembic upgrade head and restricted runtime bootstrap on NEW root-owned0041 QA",
+      "result": "PASS",
+      "evidence": "Primary reported actual migration/bootstrap including semantic CHECK comparator PASS, sourceclean/providers0/original0032 previewcounts intact; safe QA context recorded in primary conversation."
+    }
+  ],
+  "eventId": "b9b40825-a2c7-4aa2-acb5-eb08f8fc4c7a",
+  "sequence": 5,
+  "at": "2026-10-15T04:39:34.048Z"
+}

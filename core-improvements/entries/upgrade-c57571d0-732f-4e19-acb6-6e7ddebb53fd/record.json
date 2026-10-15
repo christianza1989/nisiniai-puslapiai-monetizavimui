@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Whole-page Xbot facts block valid long approved pages; preserve exact source/provenance and full qualifier groups within existing limits.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/xbot/PG_BRIDGE.md",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6125047209"
+  ],
+  "paths": [
+    "agent-business-core/xbot/xbot/source_facts.py",
+    "agent-business-core/xbot/xbot/contracts.py",
+    "agent-business-core/xbot/xbot/module.py",
+    "agent-business-core/xbot/xbot/agent.py",
+    "agent-business-core/xbot/xbot/service.py",
+    "agent-business-core/xbot/instructions/AGENT.md",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/admin.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/service.py",
+    "agent-business-core/runtime/src/pinet_core/xbot_bridge/worker.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable Xbot and scoped revert preserving old immutable admissions/Profile/history. Fresh explicit admission required; no automatic deadline renewal or operational adoption.",
+  "id": "upgrade-c57571d0-732f-4e19-acb6-6e7ddebb53fd",
+  "branch": "codex/xbot-pg-flow-20261011",
+  "baseSha": "29ca43411ff0a7f525f6988828371622f02859e0",
+  "createdAt": "2026-10-12T13:55:09.202Z"
+}

@@ -1,0 +1,29 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Approved native site builds stop at media_editorial_renderer_pending and discovery Foundation is always UNVERIFIED: add owner-bound immutable canonical observation receipts and current-source/evidence admission without rewriting historical approvals",
+  "evidence": [
+    "Source4da4045 site_build/service.py terminal page_quality blocker and business_discovery/service.py require_agent_foundation unconditional409; peer783e06a4 supplies fixed maintained Foundation bridge, root persistence/owner projection still absent"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/models.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/receipt_wire.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/receipt_schema.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/receipts.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/routes.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/receipt_contract.py",
+    "agent-business-core/runtime/migrations/versions/0034_foundation_receipts.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/contracts/site-foundation.schema.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert leaves immutable observations/history and original approvals intact; destructive downgrade refuses retained records. Original preview schema/source and external channels stay separate adoption gates.",
+  "id": "upgrade-74173337-3249-4904-9e62-e68cad318128",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "4da4045695ac487fae59f724e9dc319fe3a7132a",
+  "createdAt": "2026-10-14T09:32:01.494Z"
+}

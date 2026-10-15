@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Canonical metadata amendment intentionally refuses body corrections and has no durable amendment receipt. Add a distinct bounded reviewed-copy command over existing editPage/native validators with immutable before evidence and fail-closed prepared/applied reconciliation; preserve old command and all authority gates.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_REVIEWED_COPY_AMENDMENT_2026_10_15.md"
+  ],
+  "paths": [
+    "content-studio/scripts/customer-content-workflow.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped command revert; preserve amendment receipts/before evidence and all native GUIDE/intake/release history. Root owns runtime authority adapter/adoption; no provider/review/approval/serving change by helper.",
+  "id": "upgrade-cb4242e4-4341-40f4-b2d9-1cac8b1c21c1",
+  "branch": "codex/verslomatika-reviewed-copy-amendment-20261015",
+  "baseSha": "36a46074a0b1f52b77879765821149b6634c3c65",
+  "createdAt": "2026-10-15T07:35:28.362Z"
+}

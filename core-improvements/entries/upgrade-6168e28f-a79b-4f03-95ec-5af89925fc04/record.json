@@ -1,0 +1,27 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Production custom-provider Sol arguments omitted the catalogue used by the installed probe, causing metadata fallback and fail-closed termination before review.",
+  "category": "code",
+  "evidence": [
+    "Actual source555026d job0cf86191 creator succeeded/languagePASS, Sol critic stopped at missing model metadata event;30charged preserved, noaccepted/intake. Installed probe previously added model_catalog_json independently. Scope6101939582."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/config/creation-review-models.json",
+    "agent-business-core/runtime/config/CREATION_REVIEW_MODELS.md",
+    "agent-business-core/runtime/offline_tests/test_creation_review_model.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_controller.py",
+    "agent-business-core/runtime/tests/test_creation_review_model.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6101939582",
+  "rollback": "Revert only catalogue execution profile; preserve Sol history/additive0018/model contract. Never restore fallback as a proved working profile or reset attempts.",
+  "id": "upgrade-6168e28f-a79b-4f03-95ec-5af89925fc04",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "555026dcb4d6027194b6473f81aa5496bbaad9df",
+  "createdAt": "2026-10-10T20:39:52.677Z"
+}

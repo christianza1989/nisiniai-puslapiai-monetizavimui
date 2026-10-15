@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/80",
+  "commit": "f20fbc509641f4c9d145e4ad66c0f3111a6e241c",
+  "note": "Remote PR80 actually verified draft/open/unmerged with exact f20 head; shared protected-case boundary and explicit digest-scheme compatibility source delivered. Final154offline/3compatPG and earlier150offline/11protectionPG/5ordinary PG pass, original failures retained. No main merge/otherPC adoption or full calibration claim.",
+  "eventId": "261f8485-c6ce-4f96-a7f2-7b393753b18e",
+  "sequence": 9,
+  "at": "2026-10-11T17:57:41.005Z"
+}

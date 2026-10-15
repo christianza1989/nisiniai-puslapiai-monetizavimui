@@ -1,0 +1,14 @@
+{
+  "status": "fixing",
+  "note": "Preserved intermediate failures: offline 32 PASS / 2 ERROR (2.47 s), caused by a Windows oversized automatic parameter node ID and repaired by explicit bounded test IDs; restricted PG 42 PASS / 2 FAIL (135.95 s), caused by a deleted-original test helper dereference and the fresh worktree missing the maintained synthetic invoice issuer fixture. The original functional missing-MailMessage FAIL remains in event 92326767. Source was frozen before the complete restricted PostgreSQL batch: 52 PASS (183.75 s), exact staged snapshot SHA-256 4ac44d684eae9bda46e4754db664dd278f83f349bca32861d5ac1cbdbcc20599 at ignored tmp/frozen-mail-source.json. Parent review then found ambiguous last-reference fallback. Four new offline cases preserved original 35 PASS / 2 FAIL (1.51 s): explicit unknown In-Reply-To plus known References, and absent In-Reply-To plus multiple known same-case outbound IDs. Repaired only exact parent selection; a known explicit parent wins only after all collision/scope checks, while no parent requires one known message identity. No edits occurred during the frozen full PG run. No real SMTP, IMAP or provider execution occurred.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_mail_thread_matching.py -q",
+      "result": "FAIL",
+      "evidence": "Original strict-parent regression reproduced before implementation: 35 passed, 2 failed in 1.51 s. The two failures are preserved in this event, not recast as passes."
+    }
+  ],
+  "eventId": "979857eb-106a-49a8-a22d-5514bbe7550d",
+  "sequence": 3,
+  "at": "2026-10-10T16:55:22.719Z"
+}

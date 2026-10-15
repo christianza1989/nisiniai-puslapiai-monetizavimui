@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Runtime checkpointdb23aee and follow-up delivery/corrupt-source hardening passed bounded acceptance; first FAIL receipts retained. Actual director BFF customer lifecycle passed while full browser password mutation remains UNVERIFIED. Wider customer creation/revision today remains a separate unimplemented scope.",
+  "checks": [
+    {
+      "command": "pytest customer/portfolio/tasks/operations/bridge + offline codex/portable",
+      "result": "PASS",
+      "evidence": "docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md: actual80PASS prior combined; private sixth-combined retained"
+    },
+    {
+      "command": "pytest tests/test_customer_public.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "Private seventh-security21PASS; docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md"
+    },
+    {
+      "command": "alembic upgrade head; downgrade0011_control_tasks; upgrade head on own rehearsalDB",
+      "result": "PASS",
+      "evidence": "Private migration-rehearsal.json; docs/VERSLOMATIKA_CUSTOMER_PUBLIC.md"
+    },
+    {
+      "command": "scoped ruff; actual loopback8855 owner/public HTTP and portal3017 BFF auth/intake/reset",
+      "result": "PASS",
+      "evidence": "Private actual-http-first.json atdb23aee plus director confirmed actual BFF receipt; browser mutation separateUNVERIFIED"
+    }
+  ],
+  "eventId": "78d75144-152c-4fb0-b6ee-c1a55dc0b61c",
+  "sequence": 2,
+  "at": "2026-10-10T09:25:57.816Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "S3 source/contract only. Canonical saved Agent/Config projection and bounded coordinator context do not grant execution. Original failures and interrupted final run preserved; recovered regression passed. Peer source review corrected final authority and exact importer workflow. Actual model/original-account/runtime/main adoption remain separate.",
+  "checks": [
+    {
+      "command": "workspace-team-qa.py test workspace-team-directory-recovered.log tests/test_workspace_directory_pg.py tests/test_workspace_team.py tests/test_workspace_team_pg.py tests/test_workspace_topics.py tests/test_workspace_topics_pg.py tests/test_workspace_read.py tests/test_workspace_read_pg.py tests/test_workspace_admission.py tests/test_control_tasks.py -q -x",
+      "result": "PASS",
+      "evidence": "108 passed589.22s in dedicated0032pinet_workspace_team_qa_f64f12f37d, restricted ordinary HTTP/PG with injected providers only. Late session/grant/membership, latest revoked registration, actual Config2 beyond first page, malformed NEW Config receipt and unknown schema continuation covered. No new test PASS for the interrupted prior run."
+    },
+    {
+      "command": "ruff check src/pinet_core/workspace_team tests/test_workspace_directory_pg.py and directory_contract.document equality",
+      "result": "PASS",
+      "evidence": "Current scoped source lint and exact canonical JSON equality pass. New directory schema SHA2560e18a90539b8a2f5da8e5b01e9f737a3b5336318d547f94b800e142f96fad41a; S2 schema unchanged."
+    },
+    {
+      "command": "portal scoped workspace unit/Chrome directory/S2 race/build",
+      "result": "PASS",
+      "evidence": "Primary-owned portal46 workspace unit cases,6S3Chrome interaction groups plus7S2races, zero fixture backend/provider calls. Desktop1280x630/phone390x700 captures inspected; private build9Zc2kTK5B9ri0QToi0Nvp. Exact Git manifest import follows committed source, not claimed by this event."
+    }
+  ],
+  "eventId": "add6fb01-f71a-4186-8e0a-640124c9d2f2",
+  "sequence": 2,
+  "at": "2026-10-14T04:56:28.636Z"
+}

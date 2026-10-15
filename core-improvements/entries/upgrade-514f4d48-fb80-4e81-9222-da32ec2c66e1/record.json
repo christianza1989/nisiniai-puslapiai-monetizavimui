@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Minimal discovery jumped to a large unpersonalized plan; a later review stream failure hid all validated candidate work from the customer",
+  "category": "workflow",
+  "evidence": [
+    "docs/VERSLOMATIKA_DISCOVERY_RESPONSE_RECOVERY_QA_2026-10-13.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/worker.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/instructions.md",
+    "agent-business-core/runtime/tests/test_business_discovery_recovery.py",
+    "docs/VERSLOMATIKA_BUSINESS_DISCOVERY.md",
+    "docs/VERSLOMATIKA_DISCOVERY_RESPONSE_RECOVERY_QA_2026-10-13.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert worker/instruction change; preserve existing failed reports, provider originals and all attempt/accounting history; no schema downgrade or purge",
+  "id": "upgrade-514f4d48-fb80-4e81-9222-da32ec2c66e1",
+  "branch": "codex/discovery-response-recovery-20261013",
+  "baseSha": "a29ac129541994d2fdc15a14c1c5a80c8c250b51",
+  "createdAt": "2026-10-13T04:51:24.699Z"
+}

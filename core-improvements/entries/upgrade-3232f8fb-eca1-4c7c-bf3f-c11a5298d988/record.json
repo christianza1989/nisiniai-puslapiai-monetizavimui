@@ -1,0 +1,30 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual local pilot exact prose patch advertises2500 characters for a120-character topic; align provider target constraints with authoritative CreatorDraft and remove conflicting paused language instructions.",
+  "category": "code",
+  "evidence": [
+    "Actual UI job4351e27b ended output_invalid after first three roles succeeded; terminal receipt SHA02bb64596d653dc1bc1b13f9dcda963d7c5c39946c5a49d07ecfaa9452016000,4chargedtoday/noaccepted/intake0/artifacts0/GUIDE0.",
+    "Exact immutable candidate9837143e7d78c8f097315017636b43b8283fdd2b32f5a8c7e49eb393f8c5d1fd/critic3d460a0e407917060ae9957722006b898f6708660acbd44359675876d64e0ea2 reconstruction: five distinct refs/full coverage/NFC/control checks pass; only error primary_topic150>120.",
+    "Paused mode observed honestly UNVERIFIED; old required self-edit/profile language references remain contradictory to direct owner's temporary pause."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/language_patch.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/language_mode.py",
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_patch.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_mode.py",
+    "agent-business-core/runtime/offline_tests/test_creation_adapter.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/CORE_FEEDBACK.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert then adopt exact clean source; retain original failed job, raw output, identities and charged attempts. No final validator/HTTP/DB/model/publication weakening. Required mode policy fingerprints retained; owner pause remains local-only and language UNVERIFIED.",
+  "id": "upgrade-3232f8fb-eca1-4c7c-bf3f-c11a5298d988",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "3805200907c6fbcdb46511b382d8afb440ead365",
+  "createdAt": "2026-10-11T00:18:22.025Z"
+}

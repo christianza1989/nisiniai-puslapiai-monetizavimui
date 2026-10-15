@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Source-only verification. Own operational API remains0fe77a7/schema0017,27charged calls/caps0, no accepted NEW business. Paired canonical portal adoption and actual Sol effectiveness pending. Independent review's P2 old-schema dispatch risk fixed at preflight and reserve; no remaining P0-P2 in scoped delta. All original fixture/catalogue/order failures retained in fixing events/private receipts.",
+  "checks": [
+    {
+      "command": "scoped creation/control/content-plan offline pytest group",
+      "result": "PASS",
+      "evidence": "250 passed/7 opt-in CLI skipped in46.99s; new9 model/profile/receipt/wire regressions included."
+    },
+    {
+      "command": "pinned CLI0.156.1 isolated no-auth loopback role/model probe",
+      "result": "PASS",
+      "evidence": "7 passed/13 deselected27.82s; log SHAba62eee87c5866f902efacd75f474caa5360e2713bfd1bd93753b81e635cb77b. One POST/model/effort/verbosity/incomplete/503/truncated guards; no max-output config/API auth fallback."
+    },
+    {
+      "command": "distinct restricted PostgreSQL migrations/bootstrap and creation-team/model tests",
+      "result": "PASS",
+      "evidence": "24 passed126.48s; pytest log SHA07851e8414cd54965c6f79c9ac5e9e85be7ba4fc0a2ab80393e3a0cab1aa0fdb;8 source hashes unchanged. Empty downgrade/reupgrade PASS, populated downgrade blocked unchanged, actual0017 rejects before any attempt. Provider calls0; operational DB untouched."
+    },
+    {
+      "command": "scoped ruff check and independent read-only model/schema delta review",
+      "result": "PASS",
+      "evidence": "All checks passed; reviewer confirmed P2 fixed, mixed historic Luna/Sol contract and unchanged GUIDE/consultation policy, no further P0-P2 blockers."
+    }
+  ],
+  "eventId": "a6e71d87-39ee-41e3-82a3-07424cb871bc",
+  "sequence": 4,
+  "at": "2026-10-10T20:22:57.449Z"
+}

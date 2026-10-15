@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Current-owner historical authority implemented under scope6106561965; exact retained Registration/Admission/frozen Profile and enabled current account/Session/owner Membership/Grant required, actual registration lifetime before actor locks. Paid current authority untouched. Independent read-only source review noP0-P2. Original isolated32PG batch24PASS/8FAIL logSHAf72bf2e9cbbb258fc5262296b87716bd3c119f149713d8456acd656a5fc70fc4 retained: new HTTP positive tests used forbidden core.test and local_guard correctly rejected; negative tests could falsely PASS at the same guard. Corrected loopback fixture and explicitly reject generic control_unavailable in negative cases. First replacement interrupted before repair of a missed hostname occurrence; no source mutation during the next frozen replacement. API/studio held, provider/channel0, no operational DB writes; QA/actual acceptance pending.",
+  "eventId": "71f0409b-9d9d-4720-b0a4-50a2a2e6b4ed",
+  "sequence": 2,
+  "at": "2026-10-11T07:30:15.073Z"
+}

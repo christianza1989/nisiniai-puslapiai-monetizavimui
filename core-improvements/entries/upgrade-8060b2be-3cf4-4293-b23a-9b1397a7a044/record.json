@@ -1,0 +1,23 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Business critic requires already present working-name, future-form and hypothesis caveats on unchanged draft text, confusing private-draft and later launch scope.",
+  "category": "prompt",
+  "evidence": [
+    "Actual1fc2415 jobba053 completed6calls then review_limit48charged/noaccepted; terminal receipt90be0f3636ed0561200079486ffb1761f5ec189b92d4a51bf76322b5131a114d.",
+    "Exact original candidate/critic hashes reconstructed from immutable events: only business/monetization changed. Second required f3/f4/f5/f9 demand caveats already present; independent full-text review confirms. Homepage guide-availability ambiguity remains a real defect; source verification remains UNVERIFIED."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Revert only appended business-private-stage calibration. Preserve raw failed output, charges, all mandatory corrections/identity/FAIL/unknown receipts and shared native GUIDE policy/schema. No manual acceptance.",
+  "id": "upgrade-8060b2be-3cf4-4293-b23a-9b1397a7a044",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "1fc2415cf79a1f1800197df4a3e3c4ffb038313a",
+  "createdAt": "2026-10-10T22:25:27.176Z"
+}

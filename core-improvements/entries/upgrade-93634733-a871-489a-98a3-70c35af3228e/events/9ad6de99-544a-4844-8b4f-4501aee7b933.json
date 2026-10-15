@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "docs/VERSLOMATIKA_LOCAL_PORTFOLIO.md;68PASS/96.27s and extra1emptyboundaryPASS/1.77s already executed, not rerun for journal-only repair",
+      "result": "PASS",
+      "command": "Prior repaired sourcee466bd1 runtime combined68tests and actualTCP/logout/restart/pg_dump restore"
+    },
+    {
+      "evidence": "Nine omitted source paths included; original upgrade-a7324869 record/events unchanged",
+      "result": "PASS",
+      "command": "Supplemental exact source-path review against original record and root issue66 finding"
+    }
+  ],
+  "note": "Supplemental journal exact-scope repair only; original runtime/source/tests and original failures unchanged. Candidate root checker is explicitly unmerged peer source, not current main enforcement. Existing I1 evidence applies to these exact implementation paths.",
+  "eventId": "9ad6de99-544a-4844-8b4f-4501aee7b933",
+  "sequence": 2,
+  "at": "2026-10-10T00:55:37.777Z"
+}

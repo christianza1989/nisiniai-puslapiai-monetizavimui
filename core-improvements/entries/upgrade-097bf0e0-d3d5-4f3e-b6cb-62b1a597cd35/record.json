@@ -1,0 +1,29 @@
+{
+  "siteId": "core",
+  "summary": "Add canonical business-scoped team turns on maintained Task worker with trusted public authors, current-authority commit fences and shared per-call/queued/revoked usage accounting.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_WORKSPACE_TEAM_S2_2026_10_13.md",
+    "docs/handoffs/VERSLOMATIKA_WORKSPACE_TEAM_S2_2026_10_14.md",
+    "Existing storage-only topics have no customer team execution/child-call contract; new-source regressions reproduced deferred fence, hidden-key quota ordering and retained usage gaps, then97provider-zero cases passed."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/models.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/director/schema.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/migrations/versions/0032_workspace_team.py",
+    "docs/contracts/verslomatika-workspace-team.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable workspace_team_runner_enabled and workspace_team_enabled; restore prior loopback source/portal while retaining charged Task/Run/Attempt/events and backup. Empty-only downgrade refuses retained team data; never reset another checkout or original history.",
+  "id": "upgrade-097bf0e0-d3d5-4f3e-b6cb-62b1a597cd35",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "bfc13a9621a7cc612827560b76113935a7a69ee0",
+  "createdAt": "2026-10-13T22:34:47.773Z"
+}

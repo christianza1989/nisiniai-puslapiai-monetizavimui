@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Active native V2 knowledge cannot start an internal grounded conversation because legacy Start always registers V1 and the intentional downgrade fence rejects V2 state",
+  "category": "code",
+  "evidence": [
+    "2f07cf0:runtime/src/pinet_core/service.py:start always registers V1; knowledge.py:register rejects V2 downgrade",
+    "tests/test_knowledge_index.py:test_v1_change_invalidates_staging_and_v1_cannot_downgrade_active_v2",
+    "Source task limited to internal simulation with existing registered Business/profile and trusted already-public V2 source; no private draft admission"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/contracts.py",
+    "agent-business-core/runtime/src/pinet_core/knowledge.py",
+    "agent-business-core/runtime/src/pinet_core/service.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/tests/test_conversation_v2_start.py",
+    "docs/INTERNAL_V2_CONVERSATION_START.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6099358684",
+  "rollback": "Revert only the additive internal V2 DTO/reference-start hunks; retain V1 downgrade fence, stored snapshots, historical evidence and other agents' work",
+  "id": "upgrade-75d99df3-561b-431f-85ef-b4c4c16734ac",
+  "branch": "codex/verslomatika-v2-source-start-20261010",
+  "baseSha": "2f07cf0c1357b88b2ed1a0c0e1248b79143fea08",
+  "createdAt": "2026-10-10T15:54:10.092Z"
+}

@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Existing media HTTP regression still hardcodes a sibling public checkout and fails despite valid configured companion paths.",
+  "category": "workflow",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_MEDIA_IMPORT_TEST_PORTABILITY_2026_10_15.md"
+  ],
+  "paths": [
+    "content-studio/test/media-import.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the test resolver import; keep the original failed result and do not create companion aliases or copies.",
+  "id": "upgrade-d195793f-c76d-44e3-a5b2-ad83714356c5",
+  "branch": "codex/verslomatika-native-media-connector-20261015",
+  "baseSha": "9c618026bb7f57dadfbe77f4e93e30dbdbf92b8c",
+  "createdAt": "2026-10-15T02:23:07.627Z"
+}

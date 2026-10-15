@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Baseline3 new observation cases failed on missing hook; peer reproduced disk-observation write masking provider_error. Both corrected, original failures preserved; raw diagnostics private, source only and whole platform OPEN.",
+  "checks": [
+    {
+      "command": "owned venv pytest offline CLI/partial-receipt/Discovery/deadline/adapter/HTTP tests",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HEADLESS_PIPELINE_S11_2026_10_14.md:99PASS16.61s; no provider"
+    },
+    {
+      "command": "scoped ruff check",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HEADLESS_PIPELINE_S11_2026_10_14.md"
+    }
+  ],
+  "eventId": "5f740081-7582-439b-bd32-09e58afee373",
+  "sequence": 2,
+  "at": "2026-10-14T20:54:34.209Z"
+}

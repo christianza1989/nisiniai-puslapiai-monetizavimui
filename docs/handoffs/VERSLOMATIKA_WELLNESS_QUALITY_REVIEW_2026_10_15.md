@@ -1,0 +1,27 @@
+# Wellness trial — retained output quality review
+
+2026-10-15. Read-only primary and authorized helper review of the exact original entered brief, Discovery revision2 (`2fe657bae5ae8991ffb03aecb6c71c614af1ede680f9bb5d150b8661acd45639`) and accepted Creation revision1 (`aba1ea384736d680ed619e483d5b96b9936e3bfa8cc2f388dd31dc71a6c45cdf`). All eight page texts were read. Existing manual `sites/wellness-export` analysis was a held-out comparison only; it was not injected as a model input or accepted result. No new external research, provider call or customer write occurred during this review.
+
+The result is a responsible private business hypothesis and a useful project-questionnaire skeleton. It does not yet deliver the requested convincing product-led manufacturer demonstration. Accepted model output, successful intake and PostgreSQL tests do not certify that visual or commercial result.
+
+| Area | What the retained output supports | Gap and next action |
+| --- | --- | --- |
+| Manufacturer | The owner selected Maudis as a candidate, so comparing alternatives is authorized. Marameta advertises B2B/OEM possibilities. | That does not establish acceptance of commission, best products, licensed media or suitable mobile saunas. Compare concrete models, terms, service, territory and media rights. Keep Maudis as a candidate; do not claim a partnership. |
+| Revenue model | Commission is labeled hypothetical; numerical examples are assumptions. | Trade/resale to order needs equivalent comparison. Lack of an owned warehouse does not itself make commission preferable. Obtain actual terms before treating either path as business truth. |
+| First market | Germany is an explicit provisional lodging experiment. | Evidence does not establish it as the best European market. Compare fulfillment, language, economics and a concrete first qualified-visitor route. Researching operators is not buyer-intent evidence. The manual Netherlands choice is also a hypothesis. |
+| Commercial use | Creation research correctly retains the Maudis three-month commercial-warranty and water/chemical restrictions. | Discovery revision2 lacked those specific late clauses. S33 preserves them for future research but does not retroactively improve that report. Resolve actual model/use/maintenance/service fit before a recommendation; one guest group alone does not prove suitability. |
+| Buyer-facing pages | No invented partnership, testimonial, price, contact, performance or safety setting was found. Project preparation is useful. | Much copy describes future work instead of a concrete offer. Home/product pages need real product differentiation and a factual showcase. Private placeholders are honest but unfinished. |
+| Content and language | Five distinct guide briefs exist, three initial. German translation is explicitly pending. | There are no completed guides yet; the guide hub lacks their links. Lithuanian slugs and queries are not a German-ready URL/intent map. Complete and review the real guides through the existing workflow, without padding to a quota. |
+| Author and contact | The draft honestly says operator, responsible person and contact flow are unknown. | `/redakcija/` is a placeholder, not an author profile; it must not simply be retagged. Bind verified project facts and truthful organization attribution. Implement and verify durable inquiry save/delivery. Privacy copy must describe actual processing. Do not substitute manufacturer contacts. |
+| Design and media | Brand rationale proposes composition, fonts and media purposes. | No actual licensed/created product asset kit, responsive crops, final hero or photographic demonstration exists in the export. The long internal project description is not a selected customer brand. Verify real rendered desktop/mobile composition after assets are imported. |
+| Review status | Terminal job usage records critic/coordinator acceptance. | Immutable creator `assistant_reply` and `remaining_gates` still say independent review was not supplied. Preserve the artifact/hash; current UI status must use actual receipts and distinguish the earlier creator summary. Language screening does not imply editorial acceptance. |
+
+## Continuation order
+
+1. Recover the exact accepted material through the explicit private-preview endpoint; retain the original failed import. Complete the normal source-continuation action, without replacing historical approval.
+2. Keep commercial/market choices provisional; assemble the specific model/terms/media evidence needed for a truthful manufacturer demonstration. Missing partnership facts do not prevent independent private visual work.
+3. Finish the product-led native pages, actual initial guides, truthful operator/profile/contact/privacy and target-language plan. Use the maintained media importer and existing editorial/source/rights workflow.
+4. Inspect the full shared renderer and inquiry path, including phone layout, keyboard, zoom, real save/delivery, SEO semantics, performance and applicable Foundation gates.
+5. Calibrate existing agents only against approved facts and authorized channels. Neither this review nor private site preparation authorizes supplier/customer messaging or publication.
+
+The immediate environment dependency is the prepared portal build restart described in [the current continuation handoff](VERSLOMATIKA_WELLNESS_RESUMED_2026_10_15.md). The restricted backend is already running; the real accepted-case recovery and the remaining site work are not claimed complete.

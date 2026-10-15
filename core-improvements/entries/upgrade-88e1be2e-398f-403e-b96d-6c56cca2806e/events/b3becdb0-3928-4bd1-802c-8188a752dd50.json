@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Retrospective provenance correction for initial preparation entrypoints; actual old-head gate BLOCKED9 is retained. No historical model receipt rewritten or new historical model execution claimed.",
+  "checks": [
+    {
+      "command": "uv run --locked python -m unittest discover -s offline_tests -p test_acquisition*.py -q",
+      "result": "PASS",
+      "evidence": "Current42 offline acquisition regressions PASS, docs/CORE_EXPERIENCE_LOOP_QA_2026-10-10.md"
+    },
+    {
+      "command": "uv run --locked ruff check src/pinet_core/acquisition scripts/acquisition_daily.py scripts/acquisition_calibrate.py scripts/acquisition_sources.py scripts/acquisition_contracts.py",
+      "result": "PASS",
+      "evidence": "All checks passed; no runtime source changed by provenance correction"
+    },
+    {
+      "command": "locked Python three acquisition CLI --help imports and acquisition_contracts.py --check",
+      "result": "PASS",
+      "evidence": "Daily/calibrate/source entrypoints load; generated schema/vector exact PASS; no model/discovery/email invoked"
+    }
+  ],
+  "eventId": "b3becdb0-3928-4bd1-802c-8188a752dd50",
+  "sequence": 2,
+  "at": "2026-10-10T00:25:46.797Z"
+}

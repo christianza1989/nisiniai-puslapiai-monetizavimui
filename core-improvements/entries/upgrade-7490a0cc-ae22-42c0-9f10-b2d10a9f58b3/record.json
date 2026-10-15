@@ -1,0 +1,20 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Provide direct observable end-to-end local customer HTTP testing with exact persisted request replay and no replacement executor",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HEADLESS_PIPELINE_S11_2026_10_14.md",
+    "docs/handoffs/VERSLOMATIKA_HEADLESS_PIPELINE_S11_2026_10_14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/scripts/workspace_pipeline.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_pipeline_runner.py",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the thin HTTP test client; maintain worker jobs and historical request/approval receipts",
+  "id": "upgrade-7490a0cc-ae22-42c0-9f10-b2d10a9f58b3",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "51d096da9620159f1e8c5c41e24ae92811a41bbd",
+  "createdAt": "2026-10-14T20:49:33.170Z"
+}

@@ -1,0 +1,19 @@
+{
+  "note": "Frozen clean d98a7ce77aa21b9e3f3a5bf418fcddc6b45eaf49 normal blocked-withdrawal capture-only acceptance PASS for separate stopped and expired synthetic approvals. Each actual maintained native SQLite/OTP/profile approval reaches normal control_api18868 and restricted full0025PG15438; activity409/permanent stays unchanged, withdrawal accepted/current0, actual own API/PostgreSQL/new-native-process restart and byte-identical ACK replay preserve counts/watermark. Authenticated owner read403/409 correctly denied; current projection read is internal scoped evidence, not ordinary UI. No module revival/TTL renewal/provider/channel/model calls; every operational row/source pin/API holds unchanged. Original FAIL d232/29bc plus c209 private helper engine pool crossing closed event loops retained, corrected with engine disposal between synchronous harness loops; no production engine change. Complete tasks/correspondence/Case/portal/director/platform/target/public remains OPEN.",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "Clean normal TCP/native/restrictedPG module-stop interleaving and API/PostgreSQL restart/replay",
+      "evidence": "receiptSHA2568d77f80da3c9ab135259bba0b71595d269ec07176e128453c6c6128f49aa35b8; issue66#6115272509"
+    },
+    {
+      "result": "PASS",
+      "command": "Paired freshness executable wrapper plus clean normal TCP/native/restrictedPG approval-expiry interleaving and restart/replay",
+      "evidence": "receiptSHA2565b03a46a633f37e8453a9e446a476475e59f6a011f53b2641851a5b5906fc706; issue66#6115272509"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "f0e0cb27-cfd7-41c7-8205-d6b53f8c3d5e",
+  "sequence": 5,
+  "at": "2026-10-11T23:49:34.735Z"
+}

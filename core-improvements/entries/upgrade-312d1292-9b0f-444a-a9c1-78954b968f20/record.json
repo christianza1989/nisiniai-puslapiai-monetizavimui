@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Accepted Creator section Markdown links render literally in native pages; resolve bounded known same-site links after actual inventory exists and through exact trusted repair fences",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_NATIVE_INTERNAL_LINKS_S17_2026_10_15.md"
+  ],
+  "paths": [
+    "content-studio/src/internal-rich-links.mjs",
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "content-studio/scripts/customer-content-workflow.mjs",
+    "content-studio/test/internal-rich-links.test.mjs",
+    "content-studio/test/customer-creation-intake.test.mjs",
+    "content-studio/test/customer-content-workflow.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert; retain all original accepted intake/approval/failed-job bytes and actual operator repair history",
+  "id": "upgrade-312d1292-9b0f-444a-a9c1-78954b968f20",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "ff3e5faa2b13fd93aec076bbf19f55e6af04353e",
+  "createdAt": "2026-10-14T23:55:20.796Z"
+}

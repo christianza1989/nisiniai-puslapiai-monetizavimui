@@ -1,0 +1,25 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Mixed language/content string-leaf corrections force a complete draft reroll instead of the maintained exact patch path, reintroducing correctable prose defects.",
+  "category": "code",
+  "evidence": [
+    "Actual source0def11c job381147f0 completed all6 role calls across2rounds, then review_limit42charged/noaccepted; receipt6f3634b1ddef661fd5ec2e0e09f1ff448ba2c785cf6cc525afb878e92d1ca859.",
+    "Original critic round1 targets business interest_test and content_plan primary_topic; final critic targets page items/3, primary_topic and reason. Existing language_patch rejects content area even for supported immutable string-leaf references."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/language_patch.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_patch.py",
+    "WORKSTREAMS.md",
+    "docs/VERSLOMATIKA_CREATION_REVIEW.md",
+    "docs/VERSLOMATIKA_PORTABLE_CONTROL.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "sites/verslomatika/CORE_FEEDBACK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert mixed prose-target eligibility/policy, preserving historical immutable failures/reviews, all hashes/finding/receipt/coverage gates and charged attempts. No manual promotion, source/history overwrite or full-language-quality claim.",
+  "id": "upgrade-ce6b37ec-ac9f-406e-b071-116bf0c1af6b",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "0def11c7be77ad53c559e8176aa827d458a7ee09",
+  "createdAt": "2026-10-10T22:01:07.754Z"
+}

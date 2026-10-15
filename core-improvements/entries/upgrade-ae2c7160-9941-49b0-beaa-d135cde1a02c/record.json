@@ -1,0 +1,31 @@
+{
+  "siteId": "core",
+  "summary": "Registered new customer sites have no trusted immutable profile admission; static six-site profiles cannot safely authorize their facts or agent readiness",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/profiles.py",
+    "agent-business-core/runtime/src/pinet_core/creation_registration/service.py",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77#issuecomment-6100382316"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_profile",
+    "agent-business-core/runtime/src/pinet_core/instructions/customer-profile",
+    "agent-business-core/runtime/src/pinet_core/creation_registration/locks.py",
+    "agent-business-core/runtime/src/pinet_core/creation_registration/admin.py",
+    "agent-business-core/runtime/migrations/versions/0017_customer_profile.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/offline_tests/test_customer_profile.py",
+    "agent-business-core/runtime/tests/test_customer_profile.py",
+    "agent-business-core/runtime/scripts/customer_profile_contract.py",
+    "docs/contracts/verslomatika-customer-profile.openapi.json",
+    "docs/VERSLOMATIKA_CUSTOMER_PROFILE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped revert profile package and revoke barrier hook; never modify legacy profile hashes or live customer data",
+  "id": "upgrade-ae2c7160-9941-49b0-beaa-d135cde1a02c",
+  "branch": "codex/verslomatika-customer-profile-20261010",
+  "baseSha": "3d3ecf089814524aa70963ad348893a8dd112f36",
+  "createdAt": "2026-10-10T17:43:43.120Z"
+}

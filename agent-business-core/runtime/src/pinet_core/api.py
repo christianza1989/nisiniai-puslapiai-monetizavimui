@@ -17,7 +17,15 @@ from . import (
     routing,
     service,
 )
+from .acquisition.control_routes import router as acquisition_control_router
+from .acquisition.routes import acquisition_router
+from .acquisition.task_routes import router as acquisition_task_router
+from .acquisition.work_routes import owner_router as acquisition_work_owner_router
+from .acquisition.work_routes import router as acquisition_work_router
+from .agent_preparation.routes import router as agent_preparation_router
 from .config import settings
+from .content_completion.routes import router as content_completion_router
+from .content_work.routes import router as content_work_router
 from .contracts import (
     Candidate,
     ContactInput,
@@ -26,35 +34,96 @@ from .contracts import (
     PolicyUpdate,
     RoutingUpdate,
     Start,
+    StartV2,
     Strict,
     ToolCall,
     UsageReceipt,
     WorkerEvent,
 )
+from .control.routes import router as control_router
+from .creation.routes import router as creation_router
+from .creation_registration.routes import router as creation_registration_router
+from .customer.routes import router as customer_router
+from .customer_agents.routes import router as customer_agents_router
+from .customer_profile.routes import router as customer_profile_router
+from .customer_text.routes import router as customer_text_router
 from .db import db
+from .director.routes import router as director_read_router
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
 from .order_tests import Confirmation, QuoteInput
+from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
+from .site_build.routes import router as site_foundation_router
+from .tasks.operations import router as operations_router
+from .tasks.routes import router as task_router
+from .workspace_read.routes import router as workspace_read_router
+from .workspace_team.routes import router as workspace_team_router
+from .workspace_topics.routes import router as workspace_topics_router
+from .xbot_bridge.routes import router as xbot_bridge_router
 
 
 @asynccontextmanager
 async def lifespan(app):
     async with db.registry() as tx:
-        role = (await tx.execute(text("SELECT rolsuper, rolbypassrls FROM pg_roles WHERE rolname=current_user"))).one()
+        role = (
+            await tx.execute(text("SELECT rolsuper, rolbypassrls FROM pg_roles WHERE rolname=current_user"))
+        ).one()
         if role.rolsuper or role.rolbypassrls:
             raise RuntimeError("Application must use a restricted RLS role")
     routing.active = routing.Coordinator(settings())
+    from .acquisition import normal as acquisition_normal
+
+    await acquisition_normal.start(app, db)
+    from .acquisition import work_config as acquisition_work
+
+    await acquisition_work.start(app, db)
+    from .director import read as director_read
+
+    await director_read.start(app, db)
+    from .workspace_team import lifecycle as team_lifecycle
+    team_worker = await team_lifecycle.start(app)
+    from .site_build import lifecycle as build_lifecycle
+    build_worker = None
     try:
+        build_worker = await build_lifecycle.start(app)
         yield
     finally:
-        await routing.active.close()
-        routing.active = None
-        await db.engine.dispose()
+        try:
+            await build_lifecycle.stop(build_worker)
+        finally:
+            await team_lifecycle.stop(team_worker)
+            await routing.active.close()
+            routing.active = None
+            await db.engine.dispose()
 
 
 app = FastAPI(title="Pinet business core", lifespan=lifespan)
 app.include_router(facebook_router)
+app.include_router(control_router)
+app.include_router(acquisition_control_router)
+app.include_router(acquisition_router())
+app.include_router(acquisition_work_router)
+app.include_router(acquisition_work_owner_router)
+app.include_router(acquisition_task_router)
+app.include_router(task_router)
+app.include_router(operations_router)
+app.include_router(director_read_router)
+app.include_router(customer_router)
+app.include_router(workspace_read_router)
+app.include_router(workspace_topics_router)
+app.include_router(workspace_team_router)
+app.include_router(creation_router)
+app.include_router(creation_registration_router)
+app.include_router(customer_profile_router)
+app.include_router(customer_text_router)
+app.include_router(customer_agents_router)
+app.include_router(xbot_bridge_router)
+app.include_router(content_work_router)
+app.include_router(content_completion_router)
+app.include_router(agent_preparation_router)
+app.include_router(public_router)
+app.include_router(site_foundation_router)
 
 
 @app.post("/operator/sites/{site_id}/order-tests", dependencies=[Depends(operator_auth)])
@@ -398,6 +467,11 @@ async def ui_ack(site_id: str, cid: str, request: Request, data: UIAck):
 async def simulation(site_id: str, data: Start):
     if not settings().allow_simulation or data.mode != "simulation":
         raise HTTPException(403, "local simulation only")
+    return await service.start(await service.business(site_id), data, simulation=True)
+
+
+@app.post("/internal/sites/{site_id}/simulation/v2", dependencies=[Depends(worker_auth)])
+async def simulation_v2(site_id: str, data: StartV2):
     return await service.start(await service.business(site_id), data, simulation=True)
 
 

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Mixed required language/content whitelisted string targets now reuse the existing compact exact patch, preserving nonprose/other-area/blocker/nonlanguageFAIL fallbacks and all identity/coverage/final independent reviews. Original3FAIL61deselected eligibility regressions and new test import-sort RuffFAIL retained, then corrected. API stopped, provider0,42charged history preserved; foreign critic fragments are a separate unresolved editorial/screening gap.",
+  "eventId": "3c35dea4-4bd2-4fcc-82b5-fa5f59d0ea75",
+  "sequence": 2,
+  "at": "2026-10-10T22:09:57.163Z"
+}

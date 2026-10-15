@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Own source base7341a77 (cbc7 plus fetched private main7af6), companion main ec8/source0b784; functional2b96b338fd29d846fb008055bb789df9315b6cdc. Original offline26PASS/1FAIL13.07s was a test predicate matching CREATE TRIGGER BEFORE UPDATE as forbidden data DML; corrected the predicate, not runtime authority. Root-only isolated QA initially57PASS/15FAIL/16teardownERROR312.35s because canonical new-DB bootstrap was omitted; original receipts retained. Canonical bootstrap in that distinct DB, without control privilege expansion, gave the same frozen source72PASS260.40s. Independent read-only source review found existing Grant could be disabled between its check and registration completion. New actual synthetic race reproduced1FAIL7.27s with exact assertion 'Grant revocation committed before provision completed its current-grant gate'. Approved one admin-only .with_for_update() to existing BusinessGrant SELECT; no restricted reader privilege, reenable, profile/source/channel or provider behavior change. Original root QA/migration/race receipts are preserved privately by root; child never read/copied parent credentials or edited parent runtime.",
+  "eventId": "cb743832-3f68-4691-aea6-f59f36503eb3",
+  "sequence": 3,
+  "at": "2026-10-10T17:28:50.029Z"
+}

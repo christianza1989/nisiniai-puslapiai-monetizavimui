@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Independent caller review found valid nonbusiness Topic had no business/grant and could raise unhandled native target ValidationError before ordinary blockers. Added existing business_anchor_required403 guard after retained reconciliation and before preflight; narrow API regression asserts zero native preflight/Task. Closed no-dispatch error-contract gap without changing authority. Combined native877 immutable cohorts still running separately.",
+  "eventId": "fde9b926-8ab3-471b-8f83-78137f2f4937",
+  "sequence": 5,
+  "at": "2026-10-15T04:58:28.217Z"
+}

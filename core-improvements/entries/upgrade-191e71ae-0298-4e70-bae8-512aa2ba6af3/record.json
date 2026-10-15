@@ -1,0 +1,18 @@
+{
+  "siteId": "verslomatika",
+  "summary": "Actual full API entrypoint omitted maintained content-completion router; ordinary customer dashboard received404 despite control-only API mounting it.",
+  "category": "code",
+  "evidence": [
+    "Director ordinary authenticated current customer UI and fullAPI8860 GET content-completion404; fullapi.py mount inventory excludes router present in control_api.py. Earlier control-only acceptance does not prove full entrypoint."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/offline_tests/test_full_api_routes.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/77",
+  "rollback": "Scoped router import/include revert; no SQL/customer/history/source changes.",
+  "id": "upgrade-191e71ae-0298-4e70-bae8-512aa2ba6af3",
+  "branch": "codex/verslomatika-customer-creation-20261010",
+  "baseSha": "2a63e9211f1054151cd461bb41055352bff8c4ee",
+  "createdAt": "2026-10-11T05:58:46.219Z"
+}

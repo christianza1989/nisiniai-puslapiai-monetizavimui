@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial focused renderer/admission run: 14 PASS / 1 FAIL. Admission guard replacement missed existing whitespace and still rejected niche despite updated message; fix the guard, retain exact receipt/evidence checks. Journal also records initial record helper unsafe_relative_path for public: prefix, corrected relative public paths with public issue/source evidence.",
+  "eventId": "bd60e8b0-06bf-4f36-a28d-d606faa4147e",
+  "sequence": 2,
+  "at": "2026-10-10T12:56:12.404Z"
+}

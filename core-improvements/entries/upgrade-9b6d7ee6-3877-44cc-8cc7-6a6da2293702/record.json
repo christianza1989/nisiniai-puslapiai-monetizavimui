@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Discovery role adapter serializes the full captured primary_sources into every model prompt. The real S29 attempt grew from37752B baseline to139435B creator prompt with14observations and timed out without output. Derive a pinned bounded model-only projection with exact provenance and honest byte/text/URL omission, preserving full capture/S28 and all customer/history/decisions/reviews.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_DISCOVERY_SOURCE_PROJECTION_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/source_projection.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped adapter/projection revert; preserve full original capture/jobusage and frozen historical receipts. No case/provider/deadline/quota/model/service/worker/wire/source_context/DB/serving change; Root owns later paid rerun and adoption.",
+  "id": "upgrade-9b6d7ee6-3877-44cc-8cc7-6a6da2293702",
+  "branch": "codex/verslomatika-discovery-source-projection-20261015",
+  "baseSha": "c1b3a72373b3adc5a881d9c65167180bdf90b1ae",
+  "createdAt": "2026-10-15T09:43:58.082Z"
+}

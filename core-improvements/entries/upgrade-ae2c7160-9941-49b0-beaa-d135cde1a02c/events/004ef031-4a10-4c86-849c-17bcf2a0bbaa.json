@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root original21 synthetic restricted-PG focused regression baseline4FAIL/4PASS104.79s, immutable customer-profile-regression-baseline-20261010T182340995970Z.private.json/log, source unchanged. Three genuine failures: final admin source TTL DID NOT RAISE; final read falsely profile_current=true after expiry; superseded A1/B2/code-rollback-A replay DID NOT RAISE. Fourth test API fixture failure used nonexistent knowledge_index.revoke; both own misuse sites corrected to maintained knowledge.revoke under policy/index locks. Exact replay, precise malformed source, three-party actual pg_blocking_pids bounded progress and completed index.commit exact-receipt replay PASS before correction; no actual deadlock claimed. Minimal source fixes final same-reference/same-receipt TTL recheck, explicit superseded replay rejection, pre-actor Registration lifetime ID+fingerprint pin with fresh409 on identity change. Additional actual pinNone/concurrent provision and unreceipted fresh-time tests preserve histories. Approved Registration model UNIQUE metadata matches0017. Final21 freeze1a218b8598ca8c855bbcc4f926c277ac2b7ef910e3122b25b30da1d325096c37 on3d3/private7af6/publicec8; contract bytes unchanged98020e687e861938e079e6b38d29e5696a42ec97baad908cca578f0ab634db9a. Own66offlinePASS2.56s/RuffPASS,61PG collected not executed by child; root final QA pending. No operational DB/provider/mail/channel/session or budget activation.",
+  "eventId": "004ef031-4a10-4c86-849c-17bcf2a0bbaa",
+  "sequence": 4,
+  "at": "2026-10-10T18:31:13.186Z"
+}

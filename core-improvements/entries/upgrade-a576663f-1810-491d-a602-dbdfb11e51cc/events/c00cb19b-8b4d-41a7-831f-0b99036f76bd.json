@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Reproduced cached enabledUser after external disable:1FAIL/1PASS7.88s. Canonical current_actor now observes fresh User and exact environment/owner Session with populate_existing; disabled/hidden/revoked/expired actors fail native401 before child refresh. Existing User→Session lock order retained, quota and all other source/functions/permissions untouched. No blanket ORM failure-to-revocation conversion. Source repair does not rewrite history, original preview or actual model receipts.",
+  "checks": [
+    {
+      "command": "pytest test_current_actor_pg.py test_foundation_controller_pg.py test_foundation_receipts.py test_foundation_receipts_pg.py test_site_build.py test_workspace_agent_preparation_pg.py",
+      "result": "PASS",
+      "evidence": "44PASS293.85s in root-ownedQA0fb7b702c53d; cached owner/session revocation, Foundation final fences, maintained native site-build and S4 atomic draft/accounting cases. Original sanitized firstfailure retained."
+    },
+    {
+      "command": "ruff check creation/service.py site_build tests/test_current_actor_pg.py plus focused tests; git diff --check",
+      "result": "PASS",
+      "evidence": "Narrow fresh actor/select logic and same native row-lock order; no unrelated quota/body/permission change."
+    }
+  ],
+  "eventId": "c00cb19b-8b4d-41a7-831f-0b99036f76bd",
+  "sequence": 2,
+  "at": "2026-10-14T10:35:42.093Z"
+}

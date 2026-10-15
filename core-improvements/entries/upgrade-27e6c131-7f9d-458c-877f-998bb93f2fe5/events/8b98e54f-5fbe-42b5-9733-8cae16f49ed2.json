@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Source-only local adapter verification and independent source review noP0-P2. New configured actual model/full protected V2 calibration/module admission/ordinaryUI/targetPC/public remain UNVERIFIED; platformOPEN. Provider/channel0 and operationalDB untouched. Existing evaluator fingerprint changes with versioned runner source, historical fingerprints unchanged.",
+  "checks": [
+    {
+      "command": "pytest tests/test_customer_agent_lab.py -q (isolated restricted PG)",
+      "result": "PASS",
+      "evidence": "10passed71.48s SHA17a36f2f1872aadeff2466c1dd85a791af6ac81673416401f0feac5e8d96b3c0; frozen reuse receipt20261011T132642291426Z"
+    },
+    {
+      "command": "pytest existing learning_controller/calibration/agent_instructions/adaptive_instructions/codex_lab suites",
+      "result": "PASS",
+      "evidence": "20passed14.14s SHA47b49b4b827d4aba3fa6fb42f71c1ae1e7efa17a55d0cad5c6e813e6844d9053;87protected files unchanged"
+    },
+    {
+      "command": "pytest offline customer_agent_lab/customer_text/customer_agents/full_api_routes",
+      "result": "PASS",
+      "evidence": "79passed5.43s SHAae6664d0cc3c657173d71b894e0f97dcad85601f1aef1d2895955ab67cac9498; frozen receipt20261011T133025544239Z"
+    },
+    {
+      "command": "pytest existing customer_text/customer_agents PG regression",
+      "result": "PASS",
+      "evidence": "69passed555.39s SHAd0a4ff8fe5c31f835e7526bbc3379baa74076586790e24fa8710993d4c26e5c5; shared execution source unchanged after runner integration"
+    }
+  ],
+  "eventId": "8b98e54f-5fbe-42b5-9733-8cae16f49ed2",
+  "sequence": 3,
+  "at": "2026-10-11T13:32:42.494Z"
+}

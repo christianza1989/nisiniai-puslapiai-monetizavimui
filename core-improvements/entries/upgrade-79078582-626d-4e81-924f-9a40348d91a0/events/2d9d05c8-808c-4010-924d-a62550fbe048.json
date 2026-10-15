@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Scope6102450469/upgrade79078582, source8b0d317. Before source implementation focused new transport tests19FAIL92PASS12.76s retained (v2/current mapping absent). Business-only indexed DTO now passes111focused12.53s; broader checks/independent review/production-schema CLI/actual UI remain. Original9d genuine incomplete/36charged/noaccepted preserved; no provider during edits, API stopped. Numeric server limit unknown, grammar hypothesis unproven.",
+  "eventId": "2d9d05c8-808c-4010-924d-a62550fbe048",
+  "sequence": 2,
+  "at": "2026-10-10T21:42:38.157Z"
+}

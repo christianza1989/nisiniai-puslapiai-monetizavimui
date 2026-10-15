@@ -1,0 +1,459 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Explicit native build continuation",
+    "version": "site-continuation.v1",
+    "description": "Immutable current-owner/source continuation of unchanged accepted material. Uses maintained builder/quota/writer; no historical rewrite, Foundation certification, calibration or live channel activation."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/build-continuations": {
+      "get": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact current-owner continuation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StateEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact current-owner continuation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContinuationEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Denied, stale or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Resume"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Resume": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "accepted_revision",
+          "idempotency_key"
+        ],
+        "title": "Resume",
+        "type": "object"
+      },
+      "ContinuationView": {
+        "additionalProperties": false,
+        "properties": {
+          "continuation_id": {
+            "format": "uuid",
+            "title": "Continuation Id",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "context_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Context Sha256",
+            "type": "string"
+          },
+          "accepted_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Accepted Source Revision",
+            "type": "string"
+          },
+          "execution_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Execution Source Revision",
+            "type": "string"
+          },
+          "public_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Public Source Revision",
+            "type": "string"
+          },
+          "current": {
+            "title": "Current",
+            "type": "boolean"
+          },
+          "foundation_status": {
+            "const": "UNVERIFIED",
+            "title": "Foundation Status",
+            "type": "string"
+          },
+          "channel_activation": {
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not_performed",
+            "title": "Deployment",
+            "type": "string"
+          }
+        },
+        "required": [
+          "continuation_id",
+          "creation_id",
+          "accepted_revision",
+          "idempotency_key",
+          "created_at",
+          "context_sha256",
+          "accepted_source_revision",
+          "execution_source_revision",
+          "public_source_revision",
+          "current",
+          "foundation_status",
+          "channel_activation",
+          "deployment"
+        ],
+        "title": "ContinuationView",
+        "type": "object"
+      },
+      "ContinuationEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "site-continuation.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ContinuationView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "ContinuationEnvelope",
+        "type": "object"
+      },
+      "ContinuationState": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "latest": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ContinuationView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "creation_id",
+          "latest"
+        ],
+        "title": "ContinuationState",
+        "type": "object"
+      },
+      "StateEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "site-continuation.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ContinuationState"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "StateEnvelope",
+        "type": "object"
+      },
+      "Error": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "request_id"
+        ],
+        "title": "Error",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "CustomerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

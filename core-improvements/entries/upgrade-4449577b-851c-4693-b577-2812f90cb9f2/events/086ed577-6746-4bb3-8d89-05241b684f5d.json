@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "S27 exact functional0f28432 verified and adopted locally through existing current-owner/S6 path. Four unique actual restricted-PG/native scenarios accepted across positive1PASS20.08s and authority3PASS39.17s. Original2PASS2FAIL50.21s and3PASS1FAIL50.43s retained; fixture-only richParagraph/explicit-null serialization repairs, validators/assertions unchanged. Independent float2.0 hash witness repaired before child; original hashes retained in fixing event. Actual9text edits5pages preserve f044N1/20assetSHA/25links;83SQLtables unchanged, only1explicitS6row added, original0032 unchanged, provider0. No review/approval/Foundation/admission/channel/main claim; orphan hard-kill recovery remains explicit. Helper36Node acceptance separate.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_creation_media.py offline_tests/test_creation_content_amendment.py -q",
+      "result": "PASS",
+      "evidence": "63 passed in 5.91s on final functional0f; scoped Ruff also PASS."
+    },
+    {
+      "command": "frozen0f PYTHONPATH=src python -m pytest tests/test_creation_content_amendment_pg.py::test_actual_body_write_replay_and_conflict_preserve_intake_and_usage -q",
+      "result": "PASS",
+      "evidence": "1 passed in20.08s, safe editorial-copy-native-positive-final.log SHA22fce574d6b6f19c242c2c9455fedfba18504682734353f58c996531f4b7efe7; real restricted SQL/native Node, no provider."
+    },
+    {
+      "command": "frozen0f PYTHONPATH=src python -m pytest tests/test_creation_content_amendment_pg.py -k 'not actual_body_write_replay_and_conflict' -q",
+      "result": "PASS",
+      "evidence": "3 passed/1deselected39.17s; editorial-copy-native-authority-final.log SHA74bc39aaf342e39a4826c2661561f84d5d4ffa35dac06b9471f4fc2d09699c64; foreign/revoked owner, exact S6 and post-write revocation/retained receipt."
+    },
+    {
+      "command": "ordinary-ui-editorial-copy-adoption.private.py verify-copy --source frozen0f --revision 0f28432fd8fba136fb370b6443a58a28450a00b1",
+      "result": "PASS",
+      "evidence": "Actual existing synthetic case9copyedits5pages,83/84tables unchanged only1S6added;20assetSHA/25links/f044N1 preserved; private before/after/receipts and serving proof retained; provider0."
+    }
+  ],
+  "eventId": "086ed577-6746-4bb3-8d89-05241b684f5d",
+  "sequence": 6,
+  "at": "2026-10-15T08:16:47.797Z"
+}

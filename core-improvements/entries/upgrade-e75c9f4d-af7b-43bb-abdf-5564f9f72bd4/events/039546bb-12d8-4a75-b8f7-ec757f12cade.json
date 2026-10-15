@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Readonly P2 alias refinement in the same Windows path scope: dispatch same resolved workspace used by preflight; original lexical alias assertion FAIL3ac3ef96 retained, no junction privileges or live job mutation.",
+  "checks": [
+    {
+      "command": "PINET_CREATION_LANGUAGE_REVIEW_ENABLED=true python artifacts/director-check.private.py team-time-final offline_tests/test_creation_team_controller.py offline_tests/test_creation_team_wire.py offline_tests/test_creation_adapter.py offline_tests/test_creation_language_mode.py offline_tests/test_creation_language_patch.py -q",
+      "result": "PASS",
+      "evidence": "Resolved-workspace regression included in final d1ced92968e7b2182d4891b6f262b286f9e528e78c0b9b9481f812b34828a643; docs/CUSTOMER_CREATION_WINDOW_QA_2026-10-12.md"
+    }
+  ],
+  "eventId": "039546bb-12d8-4a75-b8f7-ec757f12cade",
+  "sequence": 3,
+  "at": "2026-10-12T05:49:56.705Z"
+}

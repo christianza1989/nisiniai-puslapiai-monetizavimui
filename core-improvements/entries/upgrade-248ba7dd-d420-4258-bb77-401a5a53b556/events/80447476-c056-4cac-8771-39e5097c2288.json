@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual isolated PG/private Node intake plus current own-revision authenticated content projection verified. The first run20PASS/1FAIL preserved: synthetic Python child's platform-default stdin decoding was incompatible with the explicit UTF8 protocol; test child now decodes its binary input as UTF8. Actual Node/PG tests already passed in that first run. Failures preserve good drafts, current authority fences late revisions, corrupted source fails503, foreign404/unauth401. Full real-provider/content writing/media/release/launch remains pending.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest tests/test_creation_team.py tests/test_customer_creations.py tests/test_creation_content.py offline_tests/test_creation_review.py offline_tests/test_creation_adapter.py offline_tests/test_control_codex.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_studio.py offline_tests/test_creation_content_plan.py -q",
+      "result": "PASS",
+      "evidence": "127 passed in137.65s; synthetic provider, actual PG/RLS and real isolated Node/model intake"
+    },
+    {
+      "command": "node --test content-studio/test/customer-creation-intake.test.mjs content-studio/test/content-workflow.test.mjs content-studio/test/write-lock.test.mjs",
+      "result": "PASS",
+      "evidence": "18 tests passed,0skipped; actual isolated shared model and filesystem"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/creation scripts/customer_content_contract.py tests/test_creation_content.py offline_tests/test_creation_content_plan.py offline_tests/test_creation_studio.py",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    }
+  ],
+  "eventId": "80447476-c056-4cac-8771-39e5097c2288",
+  "sequence": 2,
+  "at": "2026-10-10T12:05:12.639Z"
+}

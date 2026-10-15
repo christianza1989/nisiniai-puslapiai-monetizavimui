@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Baseline policy3FAIL2.70s retained. Canonical require_choice enforces selected DEFAULT versus explicit current High at bearer and Session text/reserve boundaries, including post-await checks. Metadata/history/frozen settlement/default argv untouched. Expanded offline56PASS2.74s and Ruff PASS; eight restricted PG policy cases pending separate frozen Root QA, no local-verified claim.",
+  "eventId": "5ef2e790-ffe4-46d1-a04c-b3a15fdf10f3",
+  "sequence": 2,
+  "at": "2026-10-15T05:29:26.306Z"
+}

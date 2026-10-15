@@ -157,6 +157,7 @@ class SessionPrincipal:
     @asynccontextmanager
     async def text_authority(self, creation_id, *, calibration=None):
         expected = self.validated()
+        chat._require_execution_profile(self.execution_profile)
         if str(expected.creation_id) != str(creation_id) or calibration is None:
             raise ControlError(409, "conversation_task_not_current")
         frozen = calibration.get("execution_profile") if isinstance(calibration, dict) else None
@@ -171,10 +172,12 @@ class SessionPrincipal:
             async with chat.transaction_authority(tx, session, creation_id,
                     calibration=calibration, principal=self) as context:
                 yield context
+            chat._require_execution_profile(self.execution_profile)
             self.last_time(session)
 
     async def reserve(self, tx, binding, **fields):
         expected = self.validated()
+        chat._require_execution_profile(self.execution_profile)
         task = binding.get("task_calibration")
         if not isinstance(task, dict):
             raise ControlError(409, "conversation_task_not_current")
@@ -195,6 +198,7 @@ class SessionPrincipal:
             raise ControlError(409, "conversation_task_not_current")
         if await self.fence.reserve(tx, call) is not None:
             raise ControlError(403, "task_fence_required")
+        chat._require_execution_profile(self.execution_profile)
 
     async def start(self, creation_id, value, **options):
         return await chat._start(self, creation_id, value, **options)

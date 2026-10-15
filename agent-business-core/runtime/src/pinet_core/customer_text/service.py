@@ -63,12 +63,23 @@ async def customer_session(tx, token):
 @asynccontextmanager
 async def authority(token, creation_id, *, calibration=None):
     guard()
+    _require_execution_profile()
     if not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "source_unavailable")
     async with scope(token=token_hash(token)) as tx:
         session = await customer_session(tx, token)
         async with transaction_authority(tx, session, creation_id, calibration=calibration) as context:
             yield context
+        _require_execution_profile()
+
+
+def _require_execution_profile(pin=None):
+    try:
+        return execution.require_choice(pin)
+    except RunnerError as error:
+        if error.code == "execution_profile_required":
+            raise ControlError(403, "customer_text_profile_required") from None
+        raise ControlError(503, "runner_unavailable") from None
 
 
 @asynccontextmanager

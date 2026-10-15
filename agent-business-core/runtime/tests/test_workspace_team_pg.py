@@ -1,6 +1,9 @@
 """Ordinary HTTP/restricted PostgreSQL and injected provider-zero worker regression."""
 import asyncio
+import hashlib
+import sys
 from datetime import timedelta
+from pathlib import Path
 from uuid import uuid4
 
 import pytest
@@ -25,10 +28,12 @@ from pinet_core.workspace_topics.models import Message, Topic
 
 
 @pytest.fixture
-async def team(customers, monkeypatch):  # noqa: F811 - imported maintained fixture
+async def team(customers, monkeypatch, tmp_path):  # noqa: F811 - imported maintained fixture
     cfg = settings()
     for key, value in {"workspace_topics_enabled": True, "workspace_team_enabled": True,
-        "workspace_team_runner_enabled": True, "chat_daily_limit": 20, "workspace_team_actor_ids": []}.items():
+        "workspace_team_runner_enabled": True, "chat_daily_limit": 20, "workspace_team_actor_ids": [],
+        "chat_codex_executable": sys.executable, "chat_workspace": str(tmp_path), "chat_runner_seconds": 30,
+        "chat_codex_sha256": hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest()}.items():
         monkeypatch.setattr(cfg, key, value)
     monkeypatch.setattr(service, "source_current", lambda: True)
     customers["topics_business_ids"] = []

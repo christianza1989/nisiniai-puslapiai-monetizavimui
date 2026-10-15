@@ -100,14 +100,24 @@ def public_text(value):
     return answer.answer + ("\n\nNežinomybės:\n" + "\n".join("• " + item for item in answer.limitations) if answer.limitations else "")
 
 
-async def run(role, context, heartbeat):
+def runner_ready():
+    """One fixed team configuration check for admission and actual execution."""
     cfg = settings()
     executable, workspace = Path(cfg.chat_codex_executable), Path(cfg.chat_workspace)
-    if (not cfg.workspace_team_runner_enabled or not source_current() or not executable.is_absolute()
-            or not executable.is_file() or not workspace.is_absolute() or not workspace.is_dir()
-            or not 10 <= cfg.chat_runner_seconds <= 180
-            or hashlib.sha256(executable.read_bytes()).hexdigest() != cfg.chat_codex_sha256):
+    try:
+        return bool(cfg.workspace_team_runner_enabled and executable.is_absolute()
+            and executable.is_file() and workspace.is_absolute() and workspace.is_dir()
+            and 10 <= cfg.chat_runner_seconds <= 180
+            and hashlib.sha256(executable.read_bytes()).hexdigest() == cfg.chat_codex_sha256)
+    except OSError:
+        return False
+
+
+async def run(role, context, heartbeat):
+    if not runner_ready() or not source_current():
         raise codex.RunnerError("runner_unavailable")
+    cfg = settings()
+    executable, workspace = Path(cfg.chat_codex_executable), Path(cfg.chat_workspace)
     model = plan_model(context) if role == "plan" else Answer
     with tempfile.TemporaryDirectory(prefix="workspace-team-", dir=workspace) as temporary:
         run_dir = Path(temporary)

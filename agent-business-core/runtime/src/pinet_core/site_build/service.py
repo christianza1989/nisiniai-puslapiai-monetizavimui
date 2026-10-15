@@ -19,7 +19,7 @@ from ..creation.routes import owned
 from ..creation.service import ACTIVE
 from ..creation_registration.service import accepted_proof
 from ..customer_text.adapter import source_current
-from . import approval_selectors
+from . import approval_selectors, media
 
 NAMESPACE = UUID("8351b9d1-9456-46a7-b7c5-88204aed6c65")
 
@@ -137,6 +137,13 @@ async def advance(creation_id):
             await guides.expire(tx, active[0])
             return observation(identity, "initial_content", active[0].status,
                 code=active[0].failure_code, job_id=active[0].id, page_id=active[0].page_id, total=len(pages))
+        # Only a trusted, exact-case existing artifact receipt can enter this
+        # path. No media inbox means no provider and no change to GUIDE policy.
+        # Never mutate media while any GUIDE prepare/apply can be in flight.
+        attached = await media.advance(tx, session, creation)
+        if attached:
+            return observation(identity, "media_preparation", "updated",
+                               page_id=attached["page_id"], total=len(pages))
         completed = 0
         for page_id in pages:
             matching = [job for job in jobs if job.page_id == page_id]

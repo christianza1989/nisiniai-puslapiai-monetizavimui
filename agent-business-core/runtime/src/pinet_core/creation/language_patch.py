@@ -46,6 +46,8 @@ leidžiamą lauką tik vieną kartą ir visą jo pataisytą tekstą. Kitų lauk�
 žmogaus ar organizacijos pavadinimo neversk ir nekeisk. Išsaugok faktus, skaičius, vienetus, neiginius,
 sąlygas, ribojimus ir nepatvirtintų prielaidų pobūdį. Nepridėk naujų faktų, pažadų ar išvadų.
 Užbaik tik nurodytą nepilną temos ar turinio aprašą pagal esamą užduotį; nekeisk pasiūlymo ar puslapių sistemos.
+Jei leidžiamas brand/rationale, taisyk tik jo paaiškinimo tekstą; nekeisk pasirinktų dizaino parametrų.
+Laikykis kiekvieno lauko value_constraints. Rašyk glaustais užbaigtais sakiniais, nepalik nutrūkusių žodžių.
 Nenaudok vietaženklių, nekurk trūkstamų faktų ir nepakeisk tikro teksto techniniu pranešimu.
 semantic_context yra tik dalinis, nekeičiamas reikšmės kontekstas; jis nesuteikia publikavimo leidimo.
 Rašyk natūralia taisyklinga lietuvių kalba, naudok įprastus vientisus Unicode NFC lietuviškus rašmenis.
@@ -184,7 +186,7 @@ def context(candidate, verified_critic):
         for finding in report.findings:
             if finding.severity == "suggestion":
                 continue
-            if finding.severity != "required" or finding.area not in ("language", "content"):
+            if finding.severity != "required" or finding.area not in ("language", "content", "design"):
                 return None
             found = False
             if len(finding.evidence_refs) != len(set(finding.evidence_refs)):
@@ -192,6 +194,11 @@ def context(candidate, verified_critic):
             for reference in finding.evidence_refs:
                 if reference.startswith("receipt:"):
                     continue
+                # A visual-direction explanation is already an allowed prose
+                # leaf. Design tokens, layout or any other design target still
+                # require the full creator; this never certifies visual quality.
+                if finding.area == "design" and reference != "draft:/brand/rationale":
+                    return None
                 parent, key, value = _leaf(normalized, reference)
                 found = True
                 target = targets.setdefault(reference, {"field": reference, "value": value,
@@ -207,7 +214,7 @@ def context(candidate, verified_critic):
             "stage": report.stage, "round_number": report.round_number,
             "allowed_refs": list(targets), "targets": list(targets.values()),
             "business_context": {key: normalized["business"][key] for key in ("customer", "paid_result", "offer")},
-            "scope": ("private_prose_edits_only" if any(finding.area == "content" and finding.severity == "required"
+            "scope": ("private_prose_edits_only" if any(finding.area in ("content", "design") and finding.severity == "required"
                        for finding in report.findings) else "private_language_edits_only"),
             "semantic_acceptance": "UNVERIFIED"}
         if len(json.dumps(result, ensure_ascii=False).encode("utf-8")) > MAX_CONTEXT_BYTES:

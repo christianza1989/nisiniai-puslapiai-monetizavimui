@@ -1,0 +1,19 @@
+{
+  "evidence": [
+    "Creation04e37746 actual preserved:326.35s creator, strict revise then second full creator run_timeout199.57s; design finding referenced only draft:/brand/rationale alongside two language leaves",
+    "Synthetic regression baseline:3FAIL86PASS7.02s; exact mixed-prose team path should retain six-role independent review, structural design targets stay full-path"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/language_patch.py",
+    "agent-business-core/runtime/offline_tests/test_creation_language_patch.py"
+  ],
+  "category": "code",
+  "siteId": "core",
+  "summary": "Exact design-explanation prose finding forces full draft regeneration and exhausts the bounded second round",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the narrow rationale-prose eligibility and its policy; preserve all historical jobs, artifacts and decision gates",
+  "id": "upgrade-1001f685-6bec-4c54-9995-437ad379c781",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "5f6aef7508a9b5e18e31b24155fb1b8ed3e351e1",
+  "createdAt": "2026-10-15T15:43:39.854Z"
+}

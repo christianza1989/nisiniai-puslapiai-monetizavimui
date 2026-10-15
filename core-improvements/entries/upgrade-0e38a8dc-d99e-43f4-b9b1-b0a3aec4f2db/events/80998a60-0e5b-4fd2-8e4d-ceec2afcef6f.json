@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Preserved initial 2FAIL missing command and broader 21PASS/1FAIL configuration then23PASS/1FAIL static companion test. Final connector74Python PASS and25Node PASS use own synthetic cases only; no provider/runtime/adoption.",
+  "checks": [
+    {
+      "command": "python -B -m pytest offline_tests/test_creation_media.py offline_tests/test_creation_studio.py offline_tests/test_studio_dependency_preflight.py offline_tests/test_stable_content_artifacts.py",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_NATIVE_MEDIA_ATTACHMENT_2026_10_15.md"
+    },
+    {
+      "command": "node --test content-studio/test/customer-content-workflow.test.mjs content-studio/test/image-pipeline.test.mjs content-studio/test/draft-media-metadata.test.mjs content-studio/test/media-import.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_NATIVE_MEDIA_ATTACHMENT_2026_10_15.md"
+    },
+    {
+      "command": "ruff check scoped adapter/tests; node --check customer-content-workflow.mjs; git diff --check",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_NATIVE_MEDIA_ATTACHMENT_2026_10_15.md"
+    }
+  ],
+  "eventId": "80998a60-0e5b-4fd2-8e4d-ceec2afcef6f",
+  "sequence": 2,
+  "at": "2026-10-15T02:25:45.701Z"
+}

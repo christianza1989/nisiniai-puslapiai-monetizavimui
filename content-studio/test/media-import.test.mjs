@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 import {mkdtemp,readFile,readdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {publicCoreDirectory} from '../src/public-core.mjs';
 import sharp from 'sharp';
 const root=await mkdtemp(path.join(os.tmpdir(),'niche-media-test-'));
 process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'output');process.env.STUDIO_PORT='4326';
 const model=await import('../src/model.mjs');const {createServer}=await import('../src/server.mjs');
-const {validateContentPackage}=await import('../../../dovanos-memorycasting/scripts/content-package-core.mjs');
+const {validateContentPackage}=await import(pathToFileURL(path.join(publicCoreDirectory(),'scripts/content-package-core.mjs')).href);
 await model.initialize();
 test('HTTP upload optimizes once, attaching one image includes all variants, and approval/export stay isolated',async()=>{
  const site=await model.createSite({canonicalHost:'media-test.invalid',name:'Privatus media bandymas',offer:'Izoliuotas failų importo testas'});

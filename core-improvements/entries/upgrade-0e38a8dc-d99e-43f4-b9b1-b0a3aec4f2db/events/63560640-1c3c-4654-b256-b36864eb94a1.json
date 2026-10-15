@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "After prior74Python/25Node PASS, final source review closed post-import snapshot drift. All9 attachment tests PASS22.234s on the final exact transition fence, including real writes both immediately after import and before amend. Prior runs retained; no additional broad loop or live provider.",
+  "checks": [
+    {
+      "command": "node --test --test-name-pattern='byte-bound attachment|already imported|first receipt|amendment failure|real model write|immediately after import|prepared ambiguity|receipt context|source digest' content-studio/test/customer-content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_NATIVE_MEDIA_ATTACHMENT_2026_10_15.md"
+    }
+  ],
+  "eventId": "63560640-1c3c-4654-b256-b36864eb94a1",
+  "sequence": 3,
+  "at": "2026-10-15T02:28:47.368Z"
+}

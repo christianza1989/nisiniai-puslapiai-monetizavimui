@@ -342,3 +342,94 @@ That error is neither evidence of schema rejection nor the local 200000-byte out
 Compact projection reduces redundant schema/output; actual provider success still requires
 a later authorized verification. It changes no model, effort, clocks, quotas, retry policy,
 failed/charged history or publication permissions. Never retry a terminal GUIDE implicitly.
+
+## Guarded native editorial preparation
+
+`pinet_core.creation.editorial_preparation` is a trusted server-side operator API.
+It reuses `creation.media.native_mutation_guard` and the maintained Node workflow;
+it is not a customer JSON endpoint, model tool, filesystem executor or new writer.
+The caller must already have an authenticated current Session and an owned
+Creation inside its restricted `control.routes.scope(user=...)` transaction.
+Never construct authority from a caller-supplied user/session UUID alone.
+
+`status(tx, session, creation_id, Status(...))` reads current completion hashes.
+An optional `page_id` also returns only the existing type, publishAt, editorial
+metadata and linkSuggestions. It does not return a second raw-page or media API.
+Both reads and writes require the current owner, source, exact accepted proof,
+current explicit S6 for historical accepted source, and no active Creation/GUIDE.
+The effective host comes from the same accepted-proof/private-intake resolver;
+an explicitly bound UUID.preview.invalid works while Creation.canonical_host
+remains NULL. A host suffix alone grants no authority.
+
+`prepare(tx, session, creation_id, Preparation(...))` accepts one of four actions:
+
+| Action | Explicit fields beyond accepted context, operation_id and expected_site_sha256 |
+|---|---|
+| amend-site | patch: existing name, offer, audience, facts, contact, operatorName, brand.accent |
+| amend-page | page_id, expected_revision_sha256, expected_planning_sha256, patch: type, publishAt, full native editorial metadata, linkSuggestions |
+| resolve-internal-links | page_id, expected_revision_sha256, expected_planning_sha256 |
+| finalize-links | 1–200 unique existing same-site page_ids |
+
+Supply only fields belonging to the selected action. Patches cannot set identity,
+host, stage, scheduling policy, body/copy, media, approval, published snapshots,
+review, paths or executables. Existing copy/media adapters remain their sole
+guarded paths. Native V2 schema and same-site validation remain authoritative.
+The metadata command does not infer facts, professional authors or asset rights.
+A real organization author is supported; the caller must supply truthful data.
+
+For example, inside an existing authenticated operator transaction, with `session`
+and `creation` obtained from the maintained current-owner lookup:
+
+```python
+from uuid import uuid4
+from pinet_core.creation import editorial_preparation as editorial
+from pinet_core.creation_registration.service import accepted_proof
+
+proof = await accepted_proof(tx, creation)
+context = dict(accepted_revision=proof["accepted_revision"],
+    candidate_sha256=proof["candidate_sha256"], canonical_host=proof["canonical_host"])
+observed = await editorial.status(tx, session, creation.id, editorial.Status(**context))
+request = editorial.Preparation(**context, action="finalize-links",
+    operation_id=str(uuid4()),  # retain this UUID and exact request before calling
+    expected_site_sha256=observed["completion"]["site_context_sha256"],
+    page_ids=selected_same_site_page_ids)
+result = await editorial.prepare(tx, session, creation.id, request)
+```
+
+This fixed command uses the existing per-Creation accepted-revision directories.
+Before a mutation, `editorial-preparations/<operation UUID>.before.json` is written
+exclusively and synced with the exact request/hash, full initial site and bounded
+deterministic transition hash. Only `model.editSite`, `model.editPage`, the existing
+rich-link resolver and `model.finalizeInternalLinks` perform preparation. Full
+immutable `.after.json` evidence records the actual site and page hashes. The
+transition projection recognizes an uncertain canonical write; it is not an
+alternate mutation engine. Both receipts remain private and survive SQL rollback.
+
+An unchanged same-UUID/request replay acknowledges the same current after-state
+without another write. A prepared interruption can resume only from the exact
+before-state, or reconcile the exact intended after-state without repeating it.
+Different request, stale hashes, unrelated later edits, missing/partial/tampered
+receipts, revoked owner or active GUIDE refuse. Never substitute fresh hashes into
+an old operation. A timeout or authorization loss is not proof that no file was
+written: preserve the failure and reconcile the SAME UUID/request under renewed
+authority. The adapter never retries automatically or changes SQL job/history.
+
+Operation locks record token/PID/time. A killed child may leave its own operation
+lock or the maintained DATA `.model-write.lock`. Follow the existing explicit
+crash-recovery policy: the owning operator first proves that process is dead,
+preserves the exact lock/receipt evidence, and releases only that owned lock.
+Never steal locks by age, overwrite receipts or delete another process's lock.
+
+Every returned preparation receipt states generation/sourceVerification/
+mediaVerification/editorialReview/approval/release/deployment/channelActivation/
+moduleAdmission `not-performed`. Actual review, approval, immutable release,
+renderer QA and launch remain separate. This module does not complete or change
+the autonomous workspace pipeline, start a server or activate a channel.
+
+Focused checks: `python -m pytest -q -p no:cacheprovider
+agent-business-core/runtime/offline_tests/test_editorial_preparation.py` and
+`node --test content-studio/test/customer-editorial-preparation.test.mjs
+content-studio/test/customer-content-workflow.test.mjs`. The offline suite includes
+real Python/Node/receipt/parser transport in a disposable synthetic case, with an
+explicit fake authority seam and zero provider/DB calls. It does not establish
+actual PostgreSQL RLS, customer-case adoption or serving readiness.

@@ -1,0 +1,30 @@
+{
+  "status": "local-verified",
+  "commit": "ce1f57f01f2a0e271e85cc09585109009223888f",
+  "note": "Owned High sourcece1 verified in clean frozen Root integration87775ef944f30fafe3807db70308f1ddc981e5ee; git diff of both customer packages/High tests/canonical contract is EMPTY.154 unique native PG PASS (149 helper+compatibility,5 callerAPI), distinct restricted QA DBs/provider0/original0032 preserved. Original3726PASS2FAIL retained, negative knowledge helpfulness criterion preserved, no protected/scorer threshold change. Separate new unprofiled bearer/defaultSession deployment policy gap identified READ ONLY; no all-roles/adoption/main/paid/full-calibration claim.",
+  "checks": [
+    {
+      "command": "Root frozen877 pytest tests/test_customer_text.py tests/test_customer_agent_session.py tests/test_customer_agent_lab.py tests/test_customer_text_history.py",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_CUSTOMER_SOL_HIGH_2026_10_15.md: inspected safe native-agent-text-compat-regression.log84PASS1120.85s, exact ownedbytesce1."
+    },
+    {
+      "command": "Root frozen877 pytest tests/test_customer_review.py tests/test_customer_agent_protection.py tests/test_customer_competence.py tests/test_customer_typed_checks.py",
+      "result": "PASS",
+      "evidence": "Same decision: inspected safe native-agent-quality-compat-regression.log57PASS1051.27s, restricted separate QA."
+    },
+    {
+      "command": "Root frozen877 pytest tests/test_customer_sol_high.py plus5 native caller API selectors",
+      "result": "PASS",
+      "evidence": "Same decision: inspected native-agent-final-combined.log13PASS344.94s (newHigh8+caller5); original372failures preserved."
+    },
+    {
+      "command": "python -B -m pytest customer/High offline cohort; separate offline_tests/test_pipeline_execution_profile.py",
+      "result": "PASS",
+      "evidence": "Same decision:391PASS9.52s +21PASS2.72s =412 unique offline; Ruff/safety/contract equality pass,70 public signatures/6request-capability schemas unchanged."
+    }
+  ],
+  "eventId": "54490542-29ec-46c1-8555-802df7cb04f4",
+  "sequence": 4,
+  "at": "2026-10-15T05:19:30.464Z"
+}

@@ -1,6 +1,6 @@
 # Canonical High customer-agent execution pin
 
-Status: source candidate; **High native PostgreSQL acceptance is pending**. This packet starts at coordinator `519df2565036ef9bde1508cf80b584e12f59ce92` in owned `codex/verslomatika-customer-sol-high-20261015`. Paired fetch verified main808581d919d06cb4a2d151cc7f9ec1be1782aba2 and read-only public companion1a26f289092cecadc5799de898e809dc1769498a/main ec8a9c032fe926d1d9722802d8eb26fa8bd02937.
+Status: **locally verified for owned functional source `ce1f57f01f2a0e271e85cc09585109009223888f` in frozen integration `87775ef944f30fafe3807db70308f1ddc981e5ee`**. Complete customer_text/customer_agents packages, High tests and canonical contract are byte-identical between those commits (read-only Git diff empty). Native acceptance is154 unique cases:149 helper/compatibility plus5 caller API cases. Serving adoption and a newly observed unprofiled-write policy gap remain separate. This packet starts at coordinator `519df2565036ef9bde1508cf80b584e12f59ce92` in owned `codex/verslomatika-customer-sol-high-20261015`. Paired fetch verified main808581d919d06cb4a2d151cc7f9ec1be1782aba2 and read-only public companion1a26f289092cecadc5799de898e809dc1769498a/main ec8a9c032fe926d1d9722802d8eb26fa8bd02937.
 
 Source upgrade `upgrade-d27cef34-daee-40f0-90e1-9d89fe1908f6`, issue66/comment6184148785. Separate test-clock repair `upgrade-9f62d97a-5e18-4a79-be2b-aecbc1bbd192` is described below. Original Session552 has separate127-case acceptance and PR154; those results do not verify this new High source.
 
@@ -42,6 +42,22 @@ Root's read-only diagnostic found0 retained failed Artifacts after canonical fix
 
 Adding the existing pipeline-profile regression exposed **404PASS/4FAIL8.55s**. The unchanged creation clock reserves300 seconds for creator and150 for critic, while that old offline argv/receipt fixture supplied30. It therefore correctly raised run_timeout before mocked execute and could not exercise four intended assertions. Root explicitly released only `offline_tests/test_pipeline_execution_profile.py` for this repair. Its two run_role calls now use `deadlines.job_seconds(SOL_HIGH)`; all actual argv, provider-error and captured receipt assertions remain. The complete file reports **21PASS2.72s**. No runtime/deadline/threshold/creation adapter was edited. The389-case and21-case cohorts are410 unique offline passes, not a claim the original failed invocation passed.
 
+## Final frozen native acceptance
+
+Root ran all three cohorts against the same clean frozen integration877 in separate newly isolated restricted QA databases. The owned helper bytes are exactlyce1 as verified above; this is not a claim that the whole integration tree equals the helper branch. Read-only sanitized logs were inspected:
+
+- `native-agent-text-compat-regression.log`: **84PASS1120.85s**, covering default text44, Session16, lab10 and history14.
+- `native-agent-quality-compat-regression.log`: **57PASS1051.27s**, covering independent review15, protected16, competence9 and typed17.
+- `native-agent-final-combined.log`: **13PASS344.94s**, new High8 plus caller API5 (including legacy unprofiled P2 reading).
+
+Total154 unique native cases passed;149 cover the helper and compatibility,5 additionally cover caller integration. Root retained databases8b107/149931/f688 and full sanitized logs under its private workspace-ui artifacts, reported clean frozen877 and preserved original0032, provider0. The original3726PASS/2FAIL94.06s remains failed history. The corrected native rerun confirms both lost-profile accounting/refusal and exact negative helpfulness criterion while keeping all other checks and two High calls.
+
+Offline acceptance is391 customer/High cases in9.52s plus the separate21 pipeline-profile cases in2.72s:412 unique offline PASS. Scoped Ruff, canonical contract export/equality, safety and70 existing public signature/6 request-capability schema invariance complement native acceptance. No helper credentials, operational config or provider were used. Root's later caller-only7-case and UI checks are separate Root evidence, not counted again here.
+
+## Adoption policy dependency
+
+Read-only pre-adoption review found a concrete additional dependency: enabling shared text flags with selectedSOL_HIGH still makes default bearer capability advertise Luna and permits unprofiled bearer/default Session execution. Current ready/guard checks intentionally preserve legacy execution defaults and do not inspect selected profile. High Session itself is correctly pinned and tested. Root explicitly requested a separately coordinated policy repair before flags are enabled: deny new unprofiled execution/capability under SOL_HIGH while preserving DEFAULT bytes, retained history and frozen settlement. No such repair or serving flag edit is included in this verified packet yet. This known deployment gate prevents an all-roles High/adoption claim.
+
 ## Scope and remaining gates
 
-Root owns Task intent/profile/budget matching, progression/heartbeat and portal/UI. This helper owns the execution metadata/adapters/bindings/readers, scoped tests and canonical output contract. No provider call, configuration edit, operational DB mutation, serving activation, clock/lease change or deployment occurred. Module calibration/admission remains UNVERIFIED/not_admitted. High source acceptance requires exact committed frozen-source native regression, original failure preservation, scoped journal/coverage and review; actual High model success and operational adoption are separate.
+Root owns Task intent/profile/budget matching, progression/heartbeat and portal/UI. This helper owns the execution metadata/adapters/bindings/readers, scoped tests and canonical output contract. No provider call, configuration edit, operational DB mutation, serving activation, clock/lease change or deployment occurred. Module calibration/admission remains UNVERIFIED/not_admitted. Source acceptance is complete within this packet; scoped journal/coverage/review delivery follows. Actual High model success, the explicit unprofiled-write policy and operational adoption are separate.

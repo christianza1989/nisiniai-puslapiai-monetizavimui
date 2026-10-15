@@ -211,6 +211,8 @@ async def approve(tx, session, row, value):
     creation = await create_own(tx, session, CreationStart(
         portfolio_id=row.portfolio_id, display_name=plan.business_name, idea=plan.summary,
         canonical_host=plan.canonical_host_candidate, idempotency_key=value.idempotency_key))
+    from .source_context import build
+    build(creation, row, report, await tx.get(DiscoveryJob, report.job_id), plan.model_dump(mode="json"))
     proof = BuildApproval(id=new_id(), discovery_id=row.id, report_id=report.id,
         report_revision=report.revision, report_sha256=report.material_hash,
         creation_id=creation.id, session_id=session.id, idempotency_key=key,
@@ -251,9 +253,14 @@ async def approved_build_context(tx, creation):
     if value["reply"]["state"] != "plan_ready" or len(value["reviews"]) != 2 or not all(
             r["approved"] and r["candidate_sha256"] == digest(value["reply"]) for r in value["reviews"]):
         raise ControlError(503, "invalid_approved_plan")
-    return {"discovery_id": parent.id, "report_revision": report.revision,
+    result = {"discovery_id": parent.id, "report_revision": report.revision,
             "report_sha256": report.material_hash, "source_revision": report.source_revision,
             "plan": value["reply"]["plan"]}
+    from .source_context import build
+    context = build(creation, parent, report, await tx.get(DiscoveryJob, report.job_id), result["plan"])
+    if context is not None:
+        result["sourceContext"] = context
+    return result
 
 
 async def require_agent_foundation(tx, creation, *, session=None):

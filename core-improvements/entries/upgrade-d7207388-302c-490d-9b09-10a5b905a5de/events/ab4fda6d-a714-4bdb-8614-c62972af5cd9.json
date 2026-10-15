@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Bounded source/anchor verification only, before isolated PG launch:10 offline PASS, scoped Ruff PASS and16 PG selectors collected. Actual migration/provenance PG execution is UNVERIFIED/pending root's fresh disposable QA. Initial Ruff fixture-import issues corrected in owned tests; no provider or operational mutation. Not platform/calibration acceptance.",
+  "checks": [
+    {
+      "command": "python -B -m pytest -q offline_tests/test_workspace_episode_schema.py",
+      "result": "PASS",
+      "evidence": "10 passed in0.08s; exact canonical anchors and reversal; changed/ambiguous refusal; invoker proof structure."
+    },
+    {
+      "command": "ruff check src/pinet_core/workspace_team/episode_schema.py migrations/versions/0041_workspace_agent_episode.py offline_tests/test_workspace_episode_schema.py tests/test_workspace_episode_provenance_pg.py",
+      "result": "PASS",
+      "evidence": "All checks passed after fixture-import annotation and import order correction."
+    },
+    {
+      "command": "python -B -m pytest --collect-only -q tests/test_workspace_episode_provenance_pg.py",
+      "result": "PASS",
+      "evidence": "16 selectors collected in0.41s; collection is not execution."
+    }
+  ],
+  "eventId": "ab4fda6d-a714-4bdb-8614-c62972af5cd9",
+  "sequence": 2,
+  "at": "2026-10-15T04:22:57.975Z"
+}

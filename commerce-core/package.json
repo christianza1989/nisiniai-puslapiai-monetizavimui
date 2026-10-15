@@ -1,6 +1,6 @@
 {
   "name": "@pinet/commerce-core",
-  "version": "0.14.1",
+  "version": "0.15.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -10,6 +10,7 @@
     "test": "node --test test/*.test.mjs",
     "dev": "node scripts/dev.mjs",
     "operator:token": "node scripts/operator-token.mjs",
+    "operator:grant": "node scripts/operator-grant.mjs",
     "demo:seed": "node scripts/seed-demo.mjs",
     "business:prepare": "node scripts/prepare-business.mjs",
     "production:migrate": "node scripts/migrate-production-d1.mjs",

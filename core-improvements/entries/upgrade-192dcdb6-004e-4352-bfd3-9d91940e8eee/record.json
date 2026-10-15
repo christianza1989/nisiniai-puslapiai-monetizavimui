@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Production owner admin shows local-only token/demo guidance, while the dev issuer cannot satisfy production identity; prepare scoped expiring production operator grants without creating accounts or changing admissions",
+  "category": "code",
+  "evidence": [
+    "Actual admin HTML always suggests npm operator:token but that script writes only local runtime/operators.json without legalEntityId/environment/issuedAt required by production identity",
+    "Read-only in-memory production proof: valid scoped grant permits overview/catalog/stock200, missingtoken403, stockwrite withoutgrant403; devgrant shape rejected",
+    "Authorized site deployment owner reserved root commerce admin/helper/tests/runbook/package scope and requested separate Cloudflare Access JWT integration analysis without auth source changes"
+  ],
+  "paths": [
+    "commerce-core/public/admin.html",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/scripts/operator-grant.mjs",
+    "commerce-core/test/operator-grant.test.mjs",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/package.json",
+    "commerce-core/package-lock.json",
+    "commerce-core/README.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert. Existing identity.mjs8h limit, runtime/store admissions and buyer bridge unchanged; no account provisioning, secret upload or remote operation.",
+  "id": "upgrade-192dcdb6-004e-4352-bfd3-9d91940e8eee",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "e1dee8ccbeb783f0ea48b14af5fcc74b7b9e280d",
+  "createdAt": "2026-10-15T11:06:09.616Z"
+}

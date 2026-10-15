@@ -11,17 +11,16 @@
   <body>
     <a class="skip" href="#main">Pereiti prie turinio</a>
     <header class="masthead">
-      <strong>Prekybos valdymas</strong><span class="environment">Vietinė bandomoji aplinka</span>
+      <strong>Prekybos valdymas</strong><span class="environment">Administravimas</span>
     </header>
     <main id="main" tabindex="-1">
       <section id="login" class="login">
         <h1>Prisijungti prie administravimo</h1>
         <p>
-          Operatoriaus prieiga siejama su parduotuve ir core teisėmis. Žetono galiojimą tikrina
-          serveris.
+          Prisijunkite jums suteikta parduotuvės prieiga. Galimi veiksmai priklauso nuo jūsų teisių.
         </p>
         <form id="login-form">
-          <label for="token">Operatoriaus žetonas</label>
+          <label for="token">Prieigos žetonas</label>
           <input
             id="token"
             name="token"
@@ -33,7 +32,7 @@
             spellcheck="false"
           />
           <p class="hint">
-            Žetoną išduokite modulio terminale: <code>npm run operator:token</code>.
+            Žetonas galioja ribotą laiką. Jam pasibaigus naudokite naują, saugiai suteiktą žetoną.
           </p>
           <button type="submit" class="primary">Prisijungti</button>
         </form>
@@ -61,10 +60,7 @@
             <button type="button" id="refresh">Atnaujinti</button>
           </div>
           <p id="summary" class="summary"></p>
-          <p class="notice">
-            Tai testiniai duomenys. Tikri mokėjimai ir siuntų registravimas neaktyvūs. Dokumentai
-            skirti vietiniam modulio patikrinimui.
-          </p>
+          <p class="notice">Rodomos serverio patvirtintos užsakymų ir integracijų būsenos.</p>
           <div id="content"></div>
         </section>
       </div>

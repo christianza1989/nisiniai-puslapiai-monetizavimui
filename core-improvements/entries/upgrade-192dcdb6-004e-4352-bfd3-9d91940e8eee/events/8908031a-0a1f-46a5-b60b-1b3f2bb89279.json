@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Plan-only default production operator grant preparation, explicit store/operator/permissions, <=8h, private exclusive files; existing identity/runtime/HTTP/migrations/SDK unchanged. Admin copy no longer directs production owners to dev tokens/demo data. Access JWT path is analysis only, not implemented or provider-inspected. Tests use disposable synthetic metadata/credentials, never real business DB or provider secrets. Initial test fixture's invalid underscore host was repaired; original failure log preserved privately.",
+  "checks": [
+    {
+      "command": "npm run verify (commerce-core0.15.0)",
+      "result": "PASS",
+      "evidence": "Formatting,141Node tests,native workerd/D1/R2/Queue23migrations,dryrun3181.63KiB/gzip768.08KiB/21assets. No real provider operations."
+    },
+    {
+      "command": "npm run check:format && npm test (final strengthened test tree)",
+      "result": "PASS",
+      "evidence": "141testsPASS; operator scope/expiry/revocation/read-only admission, no overwrite/secret output, linked-root rejection and defaultplan covered."
+    },
+    {
+      "command": "impeccable detect --json commerce-core/public/admin.html commerce-core/public/admin.mjs",
+      "result": "PASS",
+      "evidence": "Mechanical findings[]; copy-only change preserves layout. No browser/visual QA performed under site owner's ownership restriction. Existing stale design-sidecar finding was not repaired outside scope."
+    },
+    {
+      "command": "git diff --exit-code e1dee8cc -- identity/runtime/http/migrations/parser/checkout-ui/commerce-client",
+      "result": "PASS",
+      "evidence": "No identity TTL, admissions, provider protocol, migration or buyer SDK changes."
+    }
+  ],
+  "eventId": "8908031a-0a1f-46a5-b60b-1b3f2bb89279",
+  "sequence": 2,
+  "at": "2026-10-15T11:21:28.448Z"
+}

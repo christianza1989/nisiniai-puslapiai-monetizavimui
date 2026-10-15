@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+0.15.0: [savininko administravimas ir prieigos paruošimas](docs/PRODUCTION_CONNECTION.md#owner-admin-and-temporary-production-grants--0150). Produkcinis operatoriaus įrankis numatytai tik parodo planą; pasirinkus `--write`, vietiškai paruošia konkrečios parduotuvės iki 8 val. grant ir privatų žetoną. Administravimo tekstai nebesiūlo vietinių demo komandų. Nuolatinė Access / SSO prieiga aprašyta kaip atskira dar neįgyvendinta sutartis.
+
 0.14.1: [produkcinio prijungimo ir D1 migravimo instrukcija](docs/PRODUCTION_CONNECTION.md). Atskiras operatoriaus įrankis išsaugo istorinius SQL failus, perduoda vientisus trigerius per native D1 binding ir blokuoja neatpažintą schemą. Bendroje Stripe paskyroje pasirašyti kitų projektų Checkout įvykiai saugiai praleidžiami, o žinomos savos sesijos lieka griežtai tikrinamos. Vietiniai testai nėra tikros bazės ar LIVE Stripe prijungimo kvitas.
 
 2026-10-14 papildymas: [Sendparcel v1 patikslinimai](docs/SENDPARCEL_V1_2026_10_14.md) ir [nuolatinės Stripe TEST paskyros prijungimas](docs/STRIPE_TEST_CONNECTION.md). API password, per-raktą D1 ribojimas, paštomatų pakuočių ribos ir privatūs etikečių faktai pakeičia seną JWT interpretaciją. Abu rinkiniai apima baltus dažus už tas pačias 32 / 48 € kainas; naujų pilnų pakuočių matavimai dar nepatvirtinti. Mokėjimų prijungimas lieka aktyvus iki tikro Checkout → webhook bandymo.

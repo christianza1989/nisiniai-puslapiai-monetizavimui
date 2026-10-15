@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "commit": "f9268fb95030ea684edc80f82ac462ae30dc1d2c",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/157",
+  "note": "Created/attached draftPR157; acceptance metadataonlyf926, laterPRreceiptoptional. Exact27fe→f926coverage3shared0uncovered0errors andpairedhandoff06:13ZPASS.24distinctnativecases acceptedacross exactcohorts andfirstfailures preserved; no single24casefinalrun claim. RemotePRbase646/mergeablefalse reported, exactconflictblocksnotinspected. RootownsS26integrationQA/privatewrapper/services; no helperprovider/config/serving/main/fullplatformclaim.",
+  "eventId": "296d4e3d-ce29-4e8a-b2fe-447dad05f939",
+  "sequence": 5,
+  "at": "2026-10-15T06:14:56.369Z"
+}

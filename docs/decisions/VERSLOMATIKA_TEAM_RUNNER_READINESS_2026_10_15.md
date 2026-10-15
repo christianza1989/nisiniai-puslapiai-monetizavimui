@@ -31,3 +31,7 @@ Contracts, model/effort/argv, actor and Task fences, queue/lease logic, quota ar
 - Final Ruff for all three source and four affected test files: PASS. Source signatures and contract/policy/quota checks remain as above; the last change was test fixture configuration only.
 
 Current state: locally verified final candidate `7c4a5be1ba9ca94cdac1f16d3a8be5f329d41b82`. Preserve existing actual failures and receipts. Root will integrate source after its separately owned read-only workflow-context work and perform integration QA. Shared source delivery, integration QA and actual wrapper/service adoption are separate receipts. This helper changed no provider/configuration/local service and claims no main merge or full platform acceptance.
+
+Acceptance metadata only: `f9268fb95030ea684edc80f82ac462ae30dc1d2c`, immutable event `b88d3c89-e0bc-4f6e-b552-a72a4985af64`. Exact owned `27fe2924..f9268fb` coverage PASS: 3 shared paths, zero uncovered/errors. Paired handoff at 2026-10-15T06:13Z PASS against main808/publicec8; own checkout clean.
+
+Created/attached [draft PR 157](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/157). Root has the functional candidate and should take acceptance metadata separately after source integration. This later PR receipt is optional. GitHub creation reported remote base6463878d and mergeable=false; exact conflict blocks were not inspected. Owned scoped coverage is distinct from the broader remote PR history and whole-branch merge readiness.

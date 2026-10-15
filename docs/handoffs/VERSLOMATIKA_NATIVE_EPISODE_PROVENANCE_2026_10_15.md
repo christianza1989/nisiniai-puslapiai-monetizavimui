@@ -48,3 +48,22 @@ shared changes, 44 uncovered legacy paths and 37 foreign journal errors; none
 are this window's paths or upgrade. First legacy uncovered migrations are0013,
 0016,0018,0019; foreign canonical issue URL errors remain preserved. This scoped
 delivery does not rewrite another agent's history or claim whole-branch coverage.
+
+## Actual restricted PG acceptance and source window closure
+
+Primary session executed the 16 selectors on frozen functional source
+`6cd16976d487a2a856c887f320cddde161b3582e`, after its prior frozen 552 test
+processes ended and the clean checkout was recorded. A new branch/database was
+used; actual 0041 migration and bootstrap passed, including the CHECK comparator.
+Result: **16 PASS in 182.39s**, providers 0, frozen source clean, original 0032
+preview counts preserved. This peer inspected the safe two-line result log at
+coordinator `runtime/artifacts/workspace-ui/workspace-episode-schema-initial.log`;
+SHA256 `b775d0292e4345c6184a629f2f426b0441f4bbd6407cda8ee4a973122209b834`.
+It is primary-executed evidence, not this peer rerunning the suite. The pending
+PG status above records the initial delivery stage and is now superseded.
+
+The schema/proof source window is closed. Root may take c077121 + 6cd16976 and
+their subsequent metadata commits, preserving both WORKSTREAMS appends. Do not
+duplicate the already integrated 519df parent history. The root-owned nullable
+model/wire, Task invocation/completion and helper-owned canonical High profile
+remain separate integration/acceptance work; no runtime adoption is claimed here.

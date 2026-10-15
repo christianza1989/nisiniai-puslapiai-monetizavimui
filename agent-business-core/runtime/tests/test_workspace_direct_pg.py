@@ -19,7 +19,7 @@ from pinet_core.config import settings
 from pinet_core.control.models import BusinessGrant, Membership
 from pinet_core.control.routes import scope
 from pinet_core.tasks import worker
-from pinet_core.tasks.models import Task, TaskRun, Thread
+from pinet_core.tasks.models import Task, TaskEvent, TaskRun, Thread
 from pinet_core.workspace_team import adapter, direct
 from pinet_core.workspace_team.models import Attempt, DirectChat, TeamEvent
 from pinet_core.workspace_topics.models import Topic
@@ -223,3 +223,31 @@ async def test_actual_boundary_classifier_exposes_no_foreign_task_or_workspace_s
             {"j": json.dumps(material)}) == "direct"
         assert await tx.scalar(text("SELECT workspace_direct_task_boundary('control_tasks',CAST(:j AS JSONB))"),
             {"j": json.dumps(material | {"environment_id": "test-foreign"})}) is None
+
+
+async def test_actual_claim_fences_each_task_row_type_without_any_provider_dispatch(messenger):
+    c = messenger
+    auth, me, base, _ = await setup(c)
+    chat, _ = await create(c, auth, base)
+    accepted, _ = await send(c, auth, base, chat)
+    claimed = await worker.claim(kind="workspace.direct_turn")
+    assert claimed and claimed["task_id"] == accepted["turn"]["task_id"]
+    async with scope(user=me["user_id"]) as tx:
+        # A real scoped UPDATE fires the same generic deferred trigger for the
+        # TaskRun row type. It writes no invented usage and invokes no provider.
+        await tx.execute(update(TaskRun).where(TaskRun.id == claimed["run_id"]).values(status=TaskRun.status))
+    async with AsyncSession(c["admin"]) as tx:
+        task = await tx.get(Task, claimed["task_id"])
+        thread = await tx.get(Thread, task.thread_id)
+        run = await tx.get(TaskRun, claimed["run_id"])
+        events = list(await tx.scalars(select(TaskEvent).where(TaskEvent.task_id == task.id).order_by(TaskEvent.sequence)))
+        assert thread.business_id is None and thread.last_sequence == 1
+        assert task.status == run.status == "running" and task.business_id is None and run.business_id is None
+        assert [row.status for row in events] == ["queued", "running"] and all(row.business_id is None for row in events)
+        assert run.usage is None and not list(await tx.scalars(select(Attempt).where(Attempt.task_id == task.id)))
+    cancelled = await c["client"].post(base + "/chats/" + chat["chat_id"] + "/turns/" + task.id + "/cancel",
+        headers=auth, json={})
+    assert cancelled.status_code == 200, cancelled.text
+    async with scope(user=me["user_id"]) as tx:
+        current = await tx.get(Task, task.id)
+        await worker.finish_run(tx, current, "cancelled")

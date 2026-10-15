@@ -47,6 +47,13 @@ def test_revoked_direct_accounting_is_failure_only_with_immutable_requests_and_r
     assert "REVOKE ALL ON FUNCTION workspace_direct_task_boundary(VARCHAR,JSONB) FROM PUBLIC" in functions
 
 
+def test_event_only_record_fields_are_resolved_only_inside_the_event_row_branch():
+    guard = next(value for value in direct_schema.guard_functions() if value.startswith("CREATE FUNCTION workspace_direct_task_fence("))
+    assert "IF TG_TABLE_NAME='control_task_events' THEN\n        IF NEW.status<>t.status OR NEW.sequence>t.event_sequence" in guard
+    assert "IF TG_TABLE_NAME='control_task_events' AND" not in guard
+    assert "NEW.failure_code IS DISTINCT FROM t.failure_code" in guard
+
+
 async def test_immutable_chat_lock_option_keeps_parent_authority_without_requesting_update_permission(monkeypatch):
     chat, _ = rows()
     row = SimpleNamespace(id=chat.parent_topic_id, **binding(chat))

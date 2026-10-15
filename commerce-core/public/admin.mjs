@@ -5,6 +5,7 @@ import { renderShipmentCommands } from './shipment-commands-ui.mjs';
 import { renderJobs } from './jobs-ui.mjs';
 import { renderCatalog } from './catalog-ui.mjs';
 import { renderReturns } from './returns-ui.mjs';
+import { usesOnlySimpleStock } from './finished-stock-ui.mjs';
 const $ = (selector) => document.querySelector(selector);
 const state = {
   token: '',
@@ -255,6 +256,9 @@ async function action(button, task, message) {
 }
 async function reload() {
   state.data = await api('/api/operator/overview');
+  const materials = $('[data-view="components"]');
+  materials.hidden = usesOnlySimpleStock(state.data.catalog);
+  if (materials.hidden && state.view === 'components') state.view = 'stock';
   if (state.order) state.order = await api('/api/operator/orders/' + state.order.order.id);
   $('#store-name').textContent = state.data.legalName;
   $('.environment').textContent =
@@ -360,7 +364,7 @@ function renderOrders(content) {
       node(
         'p',
         { class: 'empty' },
-        'Užsakymų dar nėra. Kai pirkėjas sukurs užsakymą, čia matysite jo mokėjimą ir vykdymo būseną. Vietinius testinius įrašus galite sukurti komanda npm run demo:seed.',
+        'Užsakymų dar nėra. Kai pirkėjas sukurs užsakymą, čia matysite jo mokėjimą ir vykdymo būseną.',
       ),
     );
     return;
@@ -923,6 +927,14 @@ function renderRefunds(content, detail) {
 }
 function renderStock(content) {
   const rows = state.data.catalog;
+  if (usesOnlySimpleStock(rows))
+    content.append(
+      node(
+        'p',
+        { class: 'hint' },
+        'Paprasta kiekių apskaita: rodomas nustatytas rinkinių likutis. Užsakymai jį rezervuoja; partijų ir galiojimo duomenys šiems produktams netaikomi.',
+      ),
+    );
   content.append(
     node(
       'p',
@@ -932,14 +944,14 @@ function renderStock(content) {
   );
   content.append(
     table(
-      ['Prekė', 'SKU', 'Fizinis laisvas likutis', 'Galima parduoti', 'Veiksmas'],
+      ['Prekė', 'SKU', 'Laisvas likutis', 'Galima parduoti', 'Veiksmas'],
       rows.map((p) =>
         node(
           'tr',
           {},
           cell(p.title),
           cell(p.sku, 'SKU'),
-          cell(p.available, 'Fizinis laisvas likutis'),
+          cell(p.available, 'Laisvas likutis'),
           cell(p.sellableAvailable, 'Galima parduoti'),
           cell(
             node(
@@ -1112,7 +1124,7 @@ function renderDocuments(content) {
       node(
         'p',
         { class: 'hint' },
-        'Testinių dokumentų numeracija išsaugoma serveryje. Vienam šaltiniui pakartojus veiksmą grąžinamas tas pats dokumentas.',
+        'Dokumentų numeracija išsaugoma serveryje. Pakartojus veiksmą tam pačiam šaltiniui grąžinamas tas pats dokumentas.',
       ),
     );
     if (!state.data.documents.length)
@@ -1120,7 +1132,7 @@ function renderDocuments(content) {
         node(
           'p',
           { class: 'empty' },
-          'Dokumentų dar nėra. Atidarykite apmokėtą užsakymą ir suformuokite testinį pardavimo įrašą.',
+          'Dokumentų dar nėra. Turėdami dokumentų tvarkymo teisę, atidarykite apmokėtą užsakymą ir suformuokite pardavimo dokumentą.',
         ),
       );
     else content.append(documentTable(state.data.documents));

@@ -58,3 +58,90 @@ For a shared merchant account, version0.14.1 scopes Checkout **after** SDK signa
 ## Verification boundaries
 
 `npm run verify` checks formatting, Node regression tests, native local workerd/D1/R2/Queue behavior and a dry-run bundle. The production migrator tests inject disposable databases and never contact Cloudflare or Stripe. The module's test-only demo and fixture checkout must never be imported into production. Record source commit, fetched core/companion SHAs, remote schema receipt, actual account and webhook receipt separately. A real paid acceptance test requires its own specific authorization and limit.
+
+## Owner admin and temporary production grants — 0.15.0
+
+The existing direct admin entry is `https://memocasting-commerce.phonebridger-app.workers.dev/admin`, subject to that exact hostname being present in the actual store configuration. The public buyer bridge intentionally excludes operator routes. `/admin` on the public storefront is not this backend entry unless the site owner adds a deliberate link/redirect. Do not widen the buyer allowlist to make admin work.
+
+The runtime and host/store must be admitted before the admin HTML/API can run. A valid production `read` grant can then show actual empty orders, catalog and stock while checkout, delivery, operational and document gates remain closed. This has been verified with a disposable production-shaped metadata store; it is not an actual deployed credential or owner-login receipt.
+
+The current login accepts a temporary Bearer token kept only in browser memory. It has no email/password account creation, SSO or automatic session renewal. `npm run operator:token` remains a **local dev** issuer: its `runtime/operators.json` records are not read by the production Worker and do not meet its full identity contract. The production login no longer suggests this dev command or synthetic order seeding.
+
+The new helper prepares a production grant using the existing canonical identity contract. Run from `commerce-core/`, using the actual validated **raw store configuration** saved privately; a `prepareBusiness` proposal with unapproved production metadata is not an admitted store. The trusted deployment owner must already have authorized the operator identity and its store membership. The helper validates structure and scope, but does not verify a human, create an account or infer ownership from an email address.
+
+```sh
+npm run operator:grant -- --store-file runtime/store-production.json --confirm-store store_memocasting --operator owner_memocasting
+```
+
+Default output is `PLAN_ONLY_NO_CREDENTIAL_CREATED`: no token generation, files or external operation. Default permission is `read`; default/max lifetime is 480 minutes. `--ttl-minutes` may shorten it to a whole number from 1 to 480. The operator ID in the example must be replaced by the identity admitted by the trusted deployment owner.
+
+After reviewing scope, add explicit permissions and `--write`:
+
+```sh
+npm run operator:grant -- --store-file runtime/store-production.json --confirm-store store_memocasting --operator owner_memocasting --permissions read,stock,catalog,document,pack,ship,operate --write
+```
+
+Only `--write` creates a fresh ignored `runtime/operator-grants/grant-*/` directory containing `operator-token.txt` and hash-only `grant.json`. The token uses 32 random bytes; neither the token nor its hash is printed in the sanitized receipt. Files are exclusive, with private POSIX modes; Windows access follows the account's inherited ACLs. Linked output ancestors are rejected. Independent runs create distinct material and never replace a previous token file. Do not include the directory in backups intended for Git or public site assets.
+
+The receipt is `CREDENTIAL_PREPARED_NOT_DEPLOYED`, not login acceptance. The deployment owner must merge `grant.json` into the **actual existing** `COMMERCE_CORE_GRANTS` array, preserving other valid grants and avoiding duplicate hashes/ambiguous identities. Upload it as a JSON-string secret through the established private deployment path; the helper does not read or replace remote grants, upload secrets, deploy, mutate business data or activate runtime/checkout. Deliver the token privately to the authorized owner, not in chat, URLs, logs or public files. Grant expiry is absolute from preparation time. Reissue through the same trusted process after expiry; revocation means removing the actual grant or setting `revoked:true` in its authoritative loader. Do not make a permanent token by increasing the core limit.
+
+Grants distinguish `read`, `stock`, `catalog`, `document`, `pack`, `ship`, `finance`, `wholesale`, `refund`, `operate` and `restore`. Catalog revisions require **catalog**, finished lots require **stock**. Finance/refund/restore are not default permissions. A grant never supplies missing legal facts, inventory quality, provider credentials or operation admission. Production refund-command creation in the present UI still has sandbox-only presentation guards; backend refund support is a separate protected contract, not a claim that all owner UI flows are complete.
+
+## Long-term owner login: proposed Access integration contract
+
+This is a design analysis only. No Access app, IdP, policy, DNS, JWT adapter, cookie session, library dependency or new identity table was created or inspected in the actual provider account. The current commerce package contains only the scoped Bearer grant adapter; niche-specific auth elsewhere is not an established shared owner identity service.
+
+Cloudflare documents Access as an authentication layer for a self-hosted web application. Its Worker example validates the `Cf-Access-Jwt-Assertion` signature against the team's JWKS, with configured issuer and application audience. The documentation also describes application session expiry and IdP reauthentication. Sources checked 2026-10-15: [JWT validation](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/) and [self-hosted application](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/). These facts support the following **proposed application contract**, not actual account readiness. The preliminary Stripe Directory lookup failed with `Invalid user agent` despite using the installed CLI; no resource was provisioned, and no alternative identity provider was selected.
+
+1. Put the owner interface on a deliberately scoped admin hostname/path with a self-hosted Access app and an explicit owner allow policy. A dedicated `admin.memocasting.lt` is a candidate, not an existing configured hostname. Protect its HTML, modules and operator API together. Keep buyer checkout and Stripe's webhook public under their existing independent authentication contracts; protecting the entire shared backend hostname would also block those callers. The alternate Workers hostname must not become an unintended unverified operator route.
+2. Validate Access JWTs server-side against a **fixed configured** team issuer/JWKS and exact app audience, allowed signing algorithm, signature/key ID and time claims. Reject invalid or missing tokens, spoofed email headers, arbitrary issuer/JWKS URLs and unsupported service identities. Use a maintained JWT implementation with bounded key refresh and failure handling. Do not paste real tokens into external debugging sites. The existing Bearer adapter does not parse JWTs; merely putting Access in front of it is insufficient.
+3. Map a verified stable issuer/subject to an **explicit, revocable core membership** scoped to operator ID, store ID, legal entity, production environment and named permissions. Email is supporting identity information, not an automatic grant to a store. No body/header supplied role, store or legal entity may choose the membership. Cloudflare authentication alone must not replace this authorization layer.
+4. Add a trusted session exchange/loader that issues and enforces commerce grants bounded by both the validated Access session and the existing maximum eight hours. Normal reauthentication may create a new bounded session after rechecking membership; it must not silently extend an expired grant forever. Reuse the current scope/permission/time constraints rather than loosening `identity.mjs`. The current static `COMMERCE_CORE_GRANTS` loader cannot provide durable automatic session issuance by itself; this is missing source work.
+5. If browser sessions use cookies, use a server-controlled Secure/HttpOnly/SameSite session, with explicit CSRF and same-origin checks on mutations. Current memory-only Bearer behavior must remain a distinct, deliberate bootstrap path. Add logout/revocation and disable accidental fallback from failed SSO to another identity method. Private session storage needs expiry/revocation/audit records and bounded retention; no password hashes or long-lived operator tokens need to be exposed to the UI.
+6. Before activation, prove allowed-owner login/relogin/logout, denied owner/nonmember/service identities, revoked memberships, stale/wrong-issuer/wrong-audience/invalid-key JWTs, signing-key rotation/fetch failure, cross-store denial, CSRF, alternate-host denial and unchanged public checkout/webhook delivery. Preserve real authorization in Node and native Worker tests, then obtain actual hosted acceptance. All business/payment/shipping/document gates remain independent.
+
+Missing decisions/evidence: actual Access team issuer, application/AUD and reusable owner policy, chosen IdP and verified owner subject(s), approved core membership authority/permissions, final admin hostname and alternate-origin routing, session/grant storage and revocation ownership, and hosted acceptance. The temporary helper is an initial access path, not completion of this long-term login work.
+
+## Siųsk pigiau naming and current inventory preparation
+
+Siųsk pigiau is the branded account interface for this integration's Sendparcel API. Runtime configuration is `COMMERCE_CONNECTIONS[storeId].sendparcel`; there is no separate `siuskpigiau` adapter or credential alias. The authoritative supported protocol is [the 2026-10-14 v1 correction](SENDPARCEL_V1_2026_10_14.md): `apiPassword` in the password header, not JWT/Bearer. The 2026-10-12 shipping continuation and local `sdk.json` accessToken instructions remain historical evidence and must not override the correction. File absence or static prepared flags do not constitute a current provider credential probe.
+
+Latest owner facts relayed by the website deployment session on 2026-10-15: owner-declared quantity 999 for each kit, registered address Pupinės g. 10-55, Vilnius, couple packed weight 2200 g and dimensions 200×200×170 mm. The owner subsequently clarified family dimensions as 25×25×20 cm, so its package is 4500 g and 250×250×200 mm. This task does not update the business config or real DB on that basis; the deployment owner owns those changes.
+
+Existing `CatalogOperations.revise` accepts a new couple definition with `prices:{LT:3200}`, package above, `enabled:true`, `lotTrackingRequired:true` and `basisHash:null`, without inventing prices for disabled foreign markets. Family likewise accepts `prices:{LT:4800}` and its clarified package. Each creates stock zero. The owner-declared 999 is not a physical quality/batch verification: `FinishedStock.receive` also needs supplier/source provenance, quality confirmation, expiry semantics and quarantine decision. The existing UI specifically attests to physically checking quantity/origin/expiry and labels the provenance as a manufacturer/supplier batch; do not relabel a made-up batch or a display limit as such a check. No complete executable receipt is implied by quantity alone, and no tracking bypass is justified. Preserve unknowns in a non-executable draft until their facts exist.
+
+## Current Memocasting simple counts — 0.16.0
+
+The owner's subsequent explicit instruction on 2026-10-15 **supersedes the preceding lot-receipt preparation for Memocasting**: use temporarily configured balances of 999 couple kits and 999 family kits, without supplier batches, expiry or BOM for this niche. These are owner-configured balances, not a claim of physically counting or inspecting 999 kits. No finished-lot receipt or `qualityChecked` assertion is needed for a simple-count product. Other stores/products retain their tracked mode.
+
+The backend already supports this per-product distinction; version0.16 makes preparation/admin honor it explicitly:
+
+| Product setting | Admin mode | Supported stock path |
+| --- | --- | --- |
+| `lotTrackingRequired:false` | `simple` | Optimistic/idempotent stock adjustments |
+| `lotTrackingRequired:true` | `lots` | Existing traced lots, expiry and quality controls |
+| Field absent in existing data | `legacy` | Existing behavior retained |
+
+The new operator-only `stockMode` field distinguishes explicit simple counts from legacy data. A simple-only active catalog hides the materials/BOM navigation and irrelevant empty lot forms, with neutral balance labels. Mixed catalogs retain tracked/legacy forms and exclude simple products from the new lot-receipt selector. Historical lots, holds and control records remain visible when present. Disabled untracked add-ons do not force a simple-only shop to display materials; disabled tracked products still retain that interface.
+
+`prepareBusiness` preserves an explicit `lotTrackingRequired:false` on each supplied business product, while its default remains true for other customers. It still prepares stock zero and closed live gates. The deployment owner updates the actual business config and applies the declared balances separately; this source change does not seed or modify the real database.
+
+For a **new** SKU, call `CatalogOperations.revise(store,'production',input,actor)` via the protected `POST /api/operator/catalog-revisions` route with a catalog grant. A couple input is:
+
+```json
+{"id":"memo_couple_simple_20261015","basisHash":null,"definition":{"sku":"couple","title":"Rankų liejimo rinkinys porai","enabled":true,"lotTrackingRequired":false,"prices":{"LT":3200},"package":{"weightGrams":2200,"dimensionsMm":[200,200,170]}}}
+```
+
+For family use a separate ID, `sku:'family'`, its actual title, `prices:{LT:4800}` and `package:{weightGrams:4500,dimensionsMm:[250,250,200]}`. Foreign prices need not be invented; leave those markets closed. For an existing SKU, first inspect the actual definition/basis hash and history. Original SQL deliberately prevents disabling an existing tracked policy; do not delete history or force that transition. The last store receipt was metadata-only, not proof that no later catalog write occurred.
+
+After reading actual available zero, an initial `POST /api/operator/stock-adjustments` with a stock grant is:
+
+```json
+{"id":"memo_couple_balance_20261015","sku":"couple","delta":999,"expectedAvailable":0,"reason":"Savininko nustatytas laikinas likutis 999; ne fizinis perskaičiavimas"}
+```
+
+Use a separate family ID/SKU. This is a delta, not a blind set operation: if actual stock differs from zero, recompute from the real read or investigate the conflicting state. Replaying the same ID and identical payload returns the existing result without adding another 999. A changed payload under that ID, stale expected balance or negative final balance is rejected. The actor comes from the trusted grant, not a body field.
+
+Order creation atomically reserves/decrements each SKU. Order replay does not reserve twice. Paid confirmation and packing keep that already-reserved quantity, rather than decrementing it again. Expiration releases unpaid reservations once through the existing expiry job/command; a paid late event must safely reallocate current stock or enter the existing stock-exception path. Failed multi-SKU orders roll back all lines, and concurrent orders cannot reserve the same last unit. Stock expiry processing still needs its admitted job/command; a runtime whose automation is disabled does not suddenly run a scheduler because counts were configured.
+
+Native D1 regression exposed a separate counter issue: its `meta.changes` includes the restoration trigger, so one expired reservation reported two changes. `expire` now counts IDs returned by the guarded update, retaining the Node adapter's direct-change fallback, in the same atomic event batch. Original23 migrations, lot-policy triggers, identity and checkout admissions remain unchanged. Tests cover Node and native simple reserve/payment/packing/expiry/replay, zero fictional lot/BOM rows, plus preserved tracked quarantine/policy guards and legacy/mixed UI.

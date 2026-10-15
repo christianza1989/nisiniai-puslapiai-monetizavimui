@@ -1,0 +1,35 @@
+{
+  "siteId": "memocasting",
+  "summary": "Adopt reviewed commerce0.15 owner-grant helper and0.16 simple stock UI plus native D1 expiration count repair",
+  "category": "code",
+  "evidence": [
+    "Shop PR96 exact0.15source48012686144382951ca7cac49eda95f72465c4e2 and0.16source96bb376eb3fd7519c24ff8fb824d147f12477c27,147Node/native23/dryrun reported and reviewed.",
+    "Owner requested simple kit counts. ActualD1 has2explicitfalseproducts/999each/no lot history. Canonical native expiration changes count included trigger writes; RETURNING counts actual order rows.",
+    "Own adoption focused regression reproduced a stale test-fixture dependency: actual owner simple flags and confirmed packages broke absent-field/default/unknown-facts expectations. Normalize only disposable fixture fields; keep real confirmed businessJSON unchanged."
+  ],
+  "paths": [
+    "commerce-core/README.md",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/package-lock.json",
+    "commerce-core/package.json",
+    "commerce-core/public/admin.html",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/finished-stock-ui.mjs",
+    "commerce-core/scripts/operator-grant.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/src/business-config.mjs",
+    "commerce-core/src/operations.mjs",
+    "commerce-core/src/service.mjs",
+    "commerce-core/test/operator-grant.test.mjs",
+    "commerce-core/test/simple-stock.test.mjs",
+    "WORKSTREAMS.md",
+    "sites/memocasting/DEPLOYMENT_2026_10_14.md",
+    "commerce-core/test/business-config.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert only after actualversion/config/DB review; preserve owner businessJSON, existing inventory and payment data. No DB reset or historical SQL rewrite.",
+  "id": "upgrade-092764e4-6d89-4d13-b5b1-9107d4a45b3b",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "aaf99e293e60f02cddab9c6baab66e287251699e",
+  "createdAt": "2026-10-15T12:07:03.149Z"
+}

@@ -1,5 +1,7 @@
 # Session ID authority over the existing customer-agent lab
 
+Current status: **locally verified for exact functional source `552357a619c1d7543d5a1b6599a5d39293c29015`**. Coordinator's frozen-source native acceptance is complete: **127 unique PostgreSQL cases passed** (16 new Session cases and 111 existing compatibility cases). This result covers the original Luna/default-Medium adapter only. The separately owned Sol High work is not covered by it.
+
 Upgrade `upgrade-a11d021c-30bb-4865-b079-0a1e9aa06ff0`, issue66. Owned helper branch `codex/verslomatika-session-authority-20261015` starts at coordinator `51a83116e38f2d4579da59aa88e26ba04951947d`. Paired freshness fetched core main `808581d919d06cb4a2d151cc7f9ec1be1782aba2` and public main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`; read-only companion source `1a26f289092cecadc5799de898e809dc1769498a`.
 
 ## Problem and scope
@@ -37,8 +39,21 @@ Text and Quality call `reserve` only for a new native provider reservation, afte
 - The direct-executable freshness wrapper cannot launch Windows npm shims; two attempts exited1 without executing npm. Using `-- node <npm-cli.js> ci --prefix content-studio` passed and installed the existing locked five-package dependency set; no manifest/lock change.
 - Restricted PostgreSQL tests are committed for the coordinator's explicitly agreed private QA launcher. They cover Session-only lookup, exact native replay and bearer reconciliation, zero allocation, stale/foreign identities, Task cancellation, logout with usage, existing Quality/protected holdout and Session typed checks. Providers and the allocation fixture are inert. **PostgreSQL execution is pending; this candidate is not fully accepted.** No credentials were copied or probed by the helper.
 
-## Remaining acceptance and limits
+## Final native acceptance
 
-The coordinator must run the exact committed candidate in a newly isolated restricted-role PostgreSQL database, retain original0032 and serving data, and return sanitized source/selectors/results. The helper then fixes actual scoped regressions and completes its journal and PR. Default main-based coverage is known to include inherited foreign journal failures; only exact coordinator-base-to-helper-head coverage describes this packet. No foreign historical journal is rewritten.
+The coordinator used a separate clean managed checkout at exact552 (`agent-session-frozen-qa`) and newly isolated restricted-role schema0039 databases. Source disk/Git stayed clean after dependency setup; no helper credentials were copied/probed and providers were inert. The coordinator reported non-superuser/non-bypass role checks and preserved original0032 preview baseline while the operational APIbef/UI3030 stayed unchanged.
+
+- New16 Session selectors: 14 passed initially; the first two initially failed setup because Sharp was absent. Locked dependency setup was corrected, then both selectors passed in the text cohort. No source requirement or assertion changed.
+- Text/lab cohort plus those two new selectors: 55PASS/1FAIL in664.34s. Its remaining existing `test_legacy_worker_cannot_read_or_mutate_customer_text` failed because the frozen QA checkout had no .env and the worker secret defaulted empty (transport401 versus expected409). The coordinator reran only that selector with a new synthetic process-local QA worker secret: **1PASS in11.38s**. No operational secret or source/gate change.
+- Existing Quality/protection/competence/typed cohort: **57PASS in844.90s**.
+- Unique final accounting: new14+2=16; existing53 text/lab+1 configured retry+57 Quality/etc=111; total **127 unique cases PASS**, not a claim that the original failed invocations passed.
+
+Coordinator retains the sanitized `customer-agent-session-frozen-{text,quality}-regression.log` and single-selector retry receipts under its private `runtime/artifacts/workspace-ui/`, plus the original mixed-source11PASS/2FAIL baseline. Databases are QA-only: initial frozen `pinet_agent_session_qa_5a9160f36f9b`, configured text cohort `pinet_agent_session_qa_19d372d1f5d5`, Quality cohort `pinet_agent_session_qa_e6f59d402c4a`. No raw credentials or runtime/customer data is committed here.
+
+The final offline160PASS, scoped Ruff, staged safety and read-only AST comparison (52 existing public function signatures and3 bearer Request schemas unchanged from51a) complement native acceptance. Coordinator cherry-picked functional commits as48a0d1d/a3cecad/c4d3741 before its519 source handoff; this metadata event closes the previously missing local-verified journal condition. Main merge and operational adoption remain separate.
+
+## Delivery limits
+
+Default main-based coverage is known to include inherited foreign journal failures; only exact coordinator-base-to-helper-head coverage describes this packet. No foreign historical journal is rewritten. Metadata-only delivery must not be described as new runtime execution or as verification of the later Sol High source.
 
 This adapter is not actual Task admission, full calibration, protected learning/adoption, voice/email/UI acceptance or runtime activation. Genuine current Foundation/Profile and the coordinator's durable nested-call allocation remain required. Reverting the scoped adapter source preserves native conversations, attempts, usage and protected receipts.

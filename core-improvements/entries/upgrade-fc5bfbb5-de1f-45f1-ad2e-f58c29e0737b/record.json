@@ -1,0 +1,18 @@
+{
+  "category": "code",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "summary": "Keep explicitly versioned direct preview Conversations out of legacy full-script Episode evidence listings.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evidence.py"
+  ],
+  "evidence": [
+    "Issue66 supplemental scope6203946552; Root informed. Existing query admits all matching saved Config native Conversations; new DM descriptor is not a complete script and needs its own per-prefix Quality history.",
+    "Before repair explicit query boundary regression1FAIL, logSHA256 4bbf3d93fcb75cde833ea7eefca3a9ab5430d6aa89c45e39304f6c2b89fd8ccf. Old serialization, predicates for missing-version historical Episodes and all old receipts must stay unchanged."
+  ],
+  "rollback": "Scoped predicate revert; all native Conversations, immutable scripted Episodes, direct histories and Quality receipts retained. No provider/DB/history rewrite.",
+  "id": "upgrade-fc5bfbb5-de1f-45f1-ad2e-f58c29e0737b",
+  "branch": "codex/verslomatika-direct-messenger-20261016",
+  "baseSha": "ea9244934b627c06158b5ff8f972b965bdda5010",
+  "createdAt": "2026-10-15T22:55:57.843Z"
+}

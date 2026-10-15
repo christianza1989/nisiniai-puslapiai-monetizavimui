@@ -31,6 +31,9 @@ async def event_view(tx, chat, event):
                 or event.native_episode_task_id is not None):
             raise ControlError(503, "direct_history_invalid")
         author = {"kind": "owner", "user_id": chat.user_id}
+    elif chat.mode == "agent_preview":
+        from .direct_preview_views import author as native_author
+        author = await native_author(tx, chat, task, event)
     else:
         recipient = direct_scope.checked(chat)["recipient"]
         if chat.mode != "consultant":
@@ -58,6 +61,9 @@ async def event_view(tx, chat, event):
 async def turn_view(tx, session, row, chat, task):
     if not direct_scope.matches(task, chat) or binding(row) != binding(chat):
         raise ControlError(503, "direct_history_invalid")
+    if chat.mode == "agent_preview":
+        from .direct_preview_views import turn_view as native_turn
+        return await native_turn(tx, session, row, chat, task)
     attempts = list(await tx.scalars(select(Attempt).where(Attempt.task_id == task.id).order_by(Attempt.ordinal)))
     if chat.mode != "consultant" or len(attempts) > 1 or any(
             a.ordinal != 1 or a.phase != "direct" or a.run_id != task.run_id or a.team_thread_id != chat.team_thread_id
@@ -93,12 +99,14 @@ async def recipients(tx, session, portfolio_id, topic_id, *, limit=20, cursor=No
         page = await directory.read(tx, session, row, limit=limit, cursor=cursor)
         next_cursor = page["next_cursor"]
         for item in page["items"]:
+            from .direct_preview import contact_blockers
+            native_reasons = list(dict.fromkeys([*reasons, *await contact_blockers(tx, session, row, item)]))
             items.append(topics.project(DirectContact, recipient={"kind": "saved_agent", **{key: item[key]
                 for key in ("creation_id", "agent_id", "revision_id", "revision", "configuration_sha256")}},
-                name=item["name"], purpose=item["goal"], mode="agent_preview", can_create_chat=False,
-                blockers=list(dict.fromkeys([*reasons, "preview_not_admitted"])),
+                name=item["name"], purpose=item["goal"], mode="agent_preview", can_create_chat=not native_reasons,
+                blockers=native_reasons,
                 native_state={"configuration_state": "draft", "calibration_status": "UNVERIFIED",
-                    "module_admission": "not_admitted", "channel_activation": "not_performed", "preview_admitted": False},
+                    "module_admission": "not_admitted", "channel_activation": "not_performed", "preview_admitted": not native_reasons},
                 execution_scope=direct.execution_for(row), tools=[], external_actions=False))
     elif cursor:
         raise ControlError(400, "invalid_cursor")

@@ -18,6 +18,7 @@ from ..control.routes import ControlError, scope
 from ..creation.service import digest
 from ..creation_registration.models import Registration
 from ..customer_text import service as chat
+from ..models import utcnow
 from . import provisioning
 from . import service as agents
 
@@ -99,6 +100,14 @@ class SessionPrincipal:
         provisioning.source_matches(expected)
         if await self.fence.check(tx) is not None:
             raise ControlError(403, "task_fence_required")
+        provisioning.source_matches(expected)
+
+    @staticmethod
+    def last_time(session):
+        # Native locks protect mutable Session state, but a Task SQL await can
+        # still cross the deadline after the canonical actor observation.
+        if session.revoked_at or session.expires_at <= utcnow():
+            raise ControlError(401, "unauthenticated")
 
     async def bind(self, tx, session, creation, identity):
         expected = self.validated()
@@ -108,6 +117,7 @@ class SessionPrincipal:
         provisioning.native_matches(expected, session, creation, registry)
         provisioning.source_matches(expected)
         await self.check(tx)
+        self.last_time(session)
 
     @asynccontextmanager
     async def agent_authority(self, creation_id, agent_id, *, writing):
@@ -122,6 +132,7 @@ class SessionPrincipal:
                 yield context
             # Canonical source/Foundation waits above cannot hide Task expiry.
             await self.check(tx)
+            self.last_time(session)
 
     @asynccontextmanager
     async def text_authority(self, creation_id, *, calibration=None):
@@ -136,6 +147,7 @@ class SessionPrincipal:
             async with chat.transaction_authority(tx, session, creation_id,
                     calibration=calibration, principal=self) as context:
                 yield context
+            self.last_time(session)
 
     async def reserve(self, tx, binding, **fields):
         expected = self.validated()

@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/170",
+  "note": "Separate default whole-main core-upgrade-check completed BLOCKED at base808581d919d06cb4a2d151cc7f9ec1be1782aba2→functionald905ddd699bb6e7597dcec4594e833b247be1afd,397shared changes. Actual tool output retained in chat: inherited canonical_issue_url_required records including032bab14/05653039/09ee67d0,435d81b9 scope_must_be_exact_path_or_directory,8487ac2f/8b2df3e3/e1ca879a verified_checks_required and inherited uncovered migrations/scripts/wire/init/admin/public_projects/content-package-v2/write-lock paths. Ownbf07 is verified in that report. This is not a full-main PASS. Exact authorized9813833→26ee7d6 coverage independentlyPASS2shared/0uncovered/errors. Concrete dependency sent to Root; historical foreign journal records and metadata intentionally unchanged under explicit source ownership. Production S39 bytes identicald905; no provider/DB/nativecase/serving action.",
+  "eventId": "24bcc30b-ed02-4afa-966f-e176fb27e278",
+  "sequence": 5,
+  "at": "2026-10-15T20:16:24.361Z"
+}

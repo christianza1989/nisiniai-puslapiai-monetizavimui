@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Root actual native PostgreSQL acceptance at clean86814bebb5e0992ee58dc78e3e80b1f3208d3718 (functional73534cf) completed in a newly created dedicated0043 QA database:59 distinct cases passed. Prior9FAIL48PASS941.82s and first repair1FAIL1PASS20.43s remain intact; inherited pre0043 membership lock baseline is separately retained as FAIL. No database was repaired in place. Serving API remains3b7 and UI741; this is native consultant/legacy regression acceptance, not model quality, saved-preview Stage2, browser, production or main adoption. Root journal append reserved with helper; both independently created sequence4 histories remain preserved on their respective source branches.",
+  "checks": [
+    {
+      "evidence": "Migration0043 and bootstrap PASS on a new empty QA database; restricted ordinary operations and admin only for QA migration/bootstrap. No customer fixture database used.",
+      "command": "fresh dedicated PostgreSQL alembic upgrade head and bootstrap at86814be",
+      "result": "PASS"
+    },
+    {
+      "evidence": "1PASS18.12s, actual Thread/Task/Run/Event INSERT paths and scoped Run UPDATE plus cancellation/finish. SHA256 f33e72311e0765b11c7d12ec223601255c03adc27b7c76cca2f57294f0c57e9d.",
+      "command": "pytest tests/test_workspace_direct_pg.py::test_actual_claim_fences_each_task_row_type_without_any_provider_dispatch -q -x",
+      "result": "PASS"
+    },
+    {
+      "evidence": "58PASS1deselected665.21s. The excluded claim case was run separately above, giving59 distinct actual cases. SHA256 6b1f62ff4f7acf111e3083b332eb185983df2c7c44cf9430e5ae86b131b103e9. Includes real SQL/RLS/worker history/replay/quota/current authority and legacy accounting fences; fake bounded answer fixtures, actual external provider calls0.",
+      "command": "pytest direct/team/agent_episode/episode_provenance/calibration_budget native PG cohort -k not_claim_row_type -q -x",
+      "result": "PASS"
+    },
+    {
+      "evidence": "All stored original table counts equal the immutable pre-test snapshot and original schema revision remains0032. No serving/source/customer adoption, outbound channel or actual model call.",
+      "command": "controller original0032 read-only snapshot equality after both native test commands",
+      "result": "PASS"
+    }
+  ],
+  "eventId": "f9f44082-d69e-407e-9d75-05363100ed2f",
+  "sequence": 7,
+  "at": "2026-10-15T23:45:34.009Z"
+}

@@ -160,6 +160,31 @@ diagnostikos disko klaidų nepriklausomumą nuo tikro rezultato. Modelio atsakym
 kokybė, realaus kanalo veikimas ir veikiančio šaltinio pritaikymas vertinami
 atskirai.
 
+## Vietinio High Discovery laiko biudžetas
+
+`local_sol61_high_v1` naudoja versijuotą
+`local-high-discovery-deadline.v2` laiko politiką: kūrėjui iki 660 s,
+kritikui ir koordinatoriui po 90 s, visam darbui vieną 900 s terminą.
+Kūrėjo 180 s ir kritiko 90 s rezervai saugo likusių peržiūrų laiką; šaltinių
+skaitymas, parengimas ir kvotos tikrinimas vartoja tą patį darbo laiką.
+Pasibaigus rezervui naujas mokamas bandymas nepradedamas. Tai ne automatinis
+kartojimas ir ne naujas modelio ar bandymų kvotos leidimas.
+
+Politikos pakeitimą pagrindžia atskirai išsaugoti bandymai: tyrimas su šešiais
+web veiksmais sustojo po 404,80 s be plano; visas planas iš jau surinktų
+šaltinių, be web veiksmų, buvo sugeneruotas per 324,69 s. Šių trukmių suma yra
+orientyras ribotam naujos politikos bandymui, o ne garantuota vieno darbo
+trukmė ar ankstesnės klaidos visos priežasties įrodymas. 660 s suteikia maždaug
+20 % kūrėjo atsargą šiam orientyrui; papildomos 60 s viso darbo biudžete lieka
+parengimui. Kitų profilių laikas, modeliai, kvotos, schema ir kokybės vartai
+nesikeičia.
+
+Politika yra instrukcijų kontrolinės sumos dalis. Naują šaltinį taikyti tik
+sustabdytai savo aplinkai, kai jos eilės tuščios; pradėti darbai ir istoriniai
+FAIL, kvitai bei terminai neperrašomi. Pritaikymą įrodo naujas įprastas UI
+darbas su išsaugotu 900 s terminu ir tikromis peržiūromis; atskiras diagnostinis
+planas negali būti importuotas kaip vartotojo patvirtinta ataskaita.
+
 ## Toliau
 
 Pilnos būsenos ir neįgyvendintų vartų sąrašas: [IMPLEMENTATION](../../voice-agent-plan/IMPLEMENTATION.md); išmatuoti rezultatai: [PRELIVE_QA](../../voice-agent-plan/PRELIVE_QA.md). Visų 30 nišų onboarding, gamybinė D1 reader/reconciliation jungtis, operatoriaus GUI ir asmeninės paskyros, tikras audio/reconnect/coverage/billing patvirtinimas, kryžminė įrenginių tapatybė, pilnas laisvo kontekstinio laiško validatorius, SMTP reconciliation/gavimas, Jev shadow ir apsaugotas semantinis eval/canary/promotion dar lieka. Nė vienas roadmapo etapas nepažymimas baigtu vien šiuo įgyvendinimu.

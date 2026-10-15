@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Bounded v2 source tested offline; native PG and actual UI adoption remain separate pending gates. Initial5FAIL12PASS retained, no original real job rewritten.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_discovery_deadlines.py offline_tests/test_business_discovery.py offline_tests/test_discovery_research_first.py offline_tests/test_discovery_source_projection.py offline_tests/test_discovery_source_context.py -q",
+      "result": "PASS",
+      "evidence": "114PASS3.01s. Includes v1 snapshot refusal before provider dispatch, unchanged default role/job clocks, preserved reviewer reserves, actual adapter budget injection and source/research contracts. Provider0."
+    },
+    {
+      "command": "ruff check src/pinet_core/business_discovery/deadlines.py offline_tests/test_discovery_deadlines.py tests/test_discovery_deadlines_pg.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Three changed Python files clean; diff check clean. Shared models/quota/schema/worker untouched. Native fixture expectations updated for900s and exhausted-reserve simulation800s; native execution not claimed yet."
+    }
+  ],
+  "eventId": "a44d3d7e-a02d-4da0-9182-39bf4e2818b6",
+  "sequence": 3,
+  "at": "2026-10-15T13:32:47.438Z"
+}

@@ -29,6 +29,8 @@ class EpisodePlan(Strict):
     protected_case_sha256: Digest | None
     model: Literal["gpt-6.1-sol"] = "gpt-6.1-sol"
     effort: Literal["high"] = "high"
+    scenario: Literal["owner_scenario", "saved_example"] = Field(default="owner_scenario",
+        exclude_if=lambda value: value == "owner_scenario")
 
     @model_validator(mode="before")
     @classmethod
@@ -64,6 +66,11 @@ class EpisodePlan(Strict):
     def call_matches(self, call):
         """Compare a validated internal CallIdentity, never model-supplied flags."""
         snapshot = self.snapshot
+        # Retained pre-profile plans remain readable, but cannot authorize a
+        # new High call merely because its model name happens to match.
+        pin = snapshot.execution_profile
+        if pin is None:
+            return False
         expected = {
             "creation_id": snapshot.creation_id, "agent_id": snapshot.agent_id,
             "config_revision_id": snapshot.config_revision_id, "config_revision": snapshot.config_revision,
@@ -73,6 +80,8 @@ class EpisodePlan(Strict):
             "protected_case_sha256": self.protected_case_sha256,
             "model": self.model,
             "script_sha256": self.script_sha256,
+            "execution_profile_sha256": pin.fingerprint(),
+            "reasoning_effort": self.effort,
         }
         if any(getattr(call, key, None) != value for key, value in expected.items()):
             return False

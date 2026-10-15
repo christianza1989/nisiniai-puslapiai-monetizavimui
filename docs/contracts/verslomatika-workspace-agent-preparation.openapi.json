@@ -204,6 +204,143 @@
         "title": "ContextReceipt",
         "type": "object"
       },
+      "EpisodeView": {
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "const": "workspace-agent-episode.v1",
+            "default": "workspace-agent-episode.v1",
+            "title": "Version",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "config_revision": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Config Revision",
+            "type": "integer"
+          },
+          "config_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Config Sha256",
+            "type": "string"
+          },
+          "max_calls": {
+            "maximum": 10,
+            "minimum": 3,
+            "title": "Max Calls",
+            "type": "integer"
+          },
+          "reserved_calls": {
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Reserved Calls",
+            "type": "integer"
+          },
+          "settled_calls": {
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Settled Calls",
+            "type": "integer"
+          },
+          "usage_complete": {
+            "title": "Usage Complete",
+            "type": "boolean"
+          },
+          "scenario": {
+            "enum": [
+              "owner_scenario",
+              "saved_example"
+            ],
+            "title": "Scenario",
+            "type": "string"
+          },
+          "model": {
+            "const": "gpt-6.1-sol",
+            "title": "Model",
+            "type": "string"
+          },
+          "reasoning_effort": {
+            "const": "high",
+            "title": "Reasoning Effort",
+            "type": "string"
+          },
+          "execution_profile_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Execution Profile Sha256",
+            "type": "string"
+          },
+          "conversation_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Conversation Id"
+          },
+          "quality_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Quality Job Id"
+          },
+          "calibration_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Calibration Status",
+            "type": "string"
+          },
+          "module_admission": {
+            "const": "not_admitted",
+            "default": "not_admitted",
+            "title": "Module Admission",
+            "type": "string"
+          },
+          "activation": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_id",
+          "agent_id",
+          "config_revision",
+          "config_sha256",
+          "max_calls",
+          "reserved_calls",
+          "settled_calls",
+          "usage_complete",
+          "scenario",
+          "model",
+          "reasoning_effort",
+          "execution_profile_sha256"
+        ],
+        "title": "EpisodeView",
+        "type": "object"
+      },
       "PublicEvent": {
         "additionalProperties": false,
         "properties": {
@@ -272,6 +409,19 @@
               }
             ],
             "title": "Attempt Id"
+          },
+          "native_episode_task_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Native Episode Task Id"
           },
           "kind": {
             "enum": [
@@ -353,6 +503,17 @@
             "minimum": 1,
             "title": "Sequence",
             "type": "integer"
+          },
+          "native_episode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EpisodeView"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
           },
           "idempotency_key": {
             "format": "uuid",

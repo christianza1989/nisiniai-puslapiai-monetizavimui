@@ -28,9 +28,17 @@ Native usage is retained in the original text/Quality event ledgers, including a
 
 Migration `0040_calibration_task_budget` adds only the allowance/link tables, forced RLS and narrow functions. Downgrade refuses retained allocations. Do not drop or rewrite charged history to obtain a clean rollback.
 
+## Coordinator caller implementation (S24, verification in progress)
+
+An explicit owner `team/agent-tests` request now has a strict scenario DTO. It selects only an existing owned agent and exact revision, with one to eight native normalized messages or its first saved example. The caller commits the maintained native snapshot preflight separately before acquiring admission/Task locks. Exact retained request replay is reconciled first. New admission freezes the canonical High execution Pin, script, Quality intent and one native-only allocation on the existing Task worker.
+
+The native fence additionally compares the High profile digest and reasoning effort on every call. Retained unprofiled plans stay readable but cannot grant a new High reservation. A separate heartbeat surrounds existing lab/Quality adapters; it is never called inside native locks. Final completion takes native parents before Task, rechecks the maintained snapshot and evidence judgment, and writes a coordinator answer through additive0041 native receipt provenance, without a fabricated ordinary role Attempt. Parent usage reads the existing native ledger once. The public projection labels this as one scenario, with calibration UNVERIFIED and activation not performed.
+
+This is an implementation awaiting combined restricted-PG/API/worker acceptance and UI integration. Initial immutable helper High native run was six PASS/two FAIL; original failures are retained for the helper's scoped repair. The current serving API/UI remains unchanged. No actual High paid run or full calibration acceptance is claimed.
+
 ## Remaining integration gates
 
-The existing customer text transport/wire still pins Luna. The owner chose 6.1 Sol High for all roles; this plan rejects non-Sol calls, but an immutable canonical text model/effort profile must be connected and verified before actual paid dispatch. A plan field alone is not High-effort execution evidence. Bearer defaults and historical receipts must remain readable and unchanged.
+The separate native High transport path now pins the existing canonical creator/critic profile and validates actual argv. Legacy bearer defaults and historical receipts remain unchanged. Its combined acceptance must pass before actual paid dispatch. A plan field alone is not High-effort execution evidence.
 
 Coordinator intent/worker progression, parent usage projection and UI results still need the final combined integration. The existing three-role deadline must not be silently reused or extended for up to ten native calls. Baseline/protected comparison, V2 Config-bound decision, module admission, adoption/rollback and real channels remain independent acceptance gates. The current nine-page `.test` business still lacks actual Foundation/facts/editorial/release acceptance; this connector cannot manufacture it.
 

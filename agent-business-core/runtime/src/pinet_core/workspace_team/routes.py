@@ -7,6 +7,8 @@ from ..customer.service import customer_guard
 from ..workspace_topics.routes import query_keys
 from . import directory, service
 from .directory_wire import DirectoryEnvelope
+from .episode_wire import VERSION as EPISODE_VERSION
+from .episode_wire import EpisodeEnvelope, TestAgent
 from .preparation_wire import VERSION, PreparationEnvelope, PrepareAgent
 from .wire import Cancel, Envelope, Send
 
@@ -25,6 +27,17 @@ async def roster(portfolio_id: str, topic_id: str, request: Request, context=Dep
     query_keys(request, set())
     tx, session = context
     return envelope(request, await service.roster(tx, session, portfolio_id, topic_id))
+
+
+@router.post("/agent-tests", response_model=EpisodeEnvelope)
+async def test_agent(portfolio_id: str, topic_id: str, value: TestAgent, request: Request,
+    context=Depends(authenticated, scope="function")):
+    query_keys(request, set())
+    tx, session = context
+    data = await service.send_episode(tx, session, portfolio_id, topic_id, value)
+    result = core_envelope(request, data)
+    result["contract_version"] = EPISODE_VERSION
+    return result
 
 
 @router.get("/directory", response_model=DirectoryEnvelope)

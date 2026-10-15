@@ -17,6 +17,11 @@ def data():
     snapshot = {key: scope[key] for key in ("user_id", "session_id", "creation_id", "registration_id",
         "registration_fingerprint", "environment_id")}
     snapshot.update(agent_id=str(uuid4()), admission_id=str(uuid4()), admission_fingerprint="c"*64,
+        execution_profile={"name": "local_sol61_high_v1", "text": {
+            "model": "gpt-6.1-sol", "reasoning_effort": "high", "verbosity": None,
+            "model_catalogue_sha256": "9"*64}, "quality": {
+            "model": "gpt-6.1-sol", "reasoning_effort": "high", "verbosity": None,
+            "model_catalogue_sha256": "9"*64}},
         execution_source_revision=scope["source_revision"], config_revision_id=str(uuid4()),
         config_revision=1, config_sha256="d"*64,
         specification={"name": "Bandymų pagalbininkas", "goal": "Aptarti pateiktą sintetinį poreikį.",
@@ -42,6 +47,7 @@ def call(plan, kind="customer_text"):
         episode_id=plan.episode_id, protected_case_sha256=None, model=plan.model,
         kind=kind, number=1, request_id=request, call_key="attempt:"+str(request),
         script_sha256=plan.script_sha256,
+        execution_profile_sha256=snapshot.execution_profile.fingerprint(), reasoning_effort="high",
         request_input_sha256=digest(plan.messages[0]) if kind == "customer_text" else plan.quality_request_sha256)
 
 
@@ -67,7 +73,8 @@ def test_snapshot_cannot_rebind_the_native_scope(key):
 @pytest.mark.parametrize("key,value", [("source_revision", "f"*40), ("config_sha256", "f"*64),
     ("episode_id", uuid4()), ("request_id", uuid4()), ("model", "gpt-6-luna"),
     ("kind", "send_email"), ("number", 2), ("protected_case_sha256", "f"*64),
-    ("script_sha256", "f"*64), ("request_input_sha256", "f"*64)])
+    ("script_sha256", "f"*64), ("request_input_sha256", "f"*64),
+    ("execution_profile_sha256", "f"*64), ("reasoning_effort", "medium")])
 def test_unplanned_call_is_refused(key, value):
     plan = parsed()
     candidate = call(plan)
@@ -105,3 +112,11 @@ def test_first_script_or_quality_input_cannot_differ_under_the_same_operation_id
     assert not plan.call_matches(quality)
     with pytest.raises(ValidationError):
         parsed(data() | {"script_sha256": "f"*64})
+
+
+def test_retained_unprofiled_plan_is_readable_but_never_a_new_high_permit():
+    raw = data()
+    raw["snapshot"].pop("execution_profile")
+    old = parsed(raw)
+    assert "execution_profile" not in old.model_dump(mode="json")["snapshot"]
+    assert not old.call_matches(call(parsed()))

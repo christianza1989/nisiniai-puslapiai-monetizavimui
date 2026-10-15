@@ -26,6 +26,14 @@ async def release_queue(tx, user_id):
 
 
 async def saved_usage(tx, *, task_id, run_id, user_id, environment_id, source_revision):
+    if await tx.scalar(text("SELECT to_regprocedure('workspace_calibration_run_usage(character varying,character varying,character varying,character varying)') IS NOT NULL")):
+        native = await tx.scalar(text("SELECT workspace_calibration_run_usage(:t,:r,:u,:e)"),
+            {"t": task_id, "r": run_id, "u": user_id, "e": environment_id})
+        if native is not None:
+            # Allocated native-only runs cannot have ordinary role attempts.
+            # This is one view of the deduplicated native ledger, not MAX over
+            # independent calls or an additional monetary usage charge.
+            return native["usage"]
     return await tx.scalar(text("SELECT workspace_team_run_usage(:t,:r,:u,:e,:s)"),
         {"t": task_id, "r": run_id, "u": user_id, "e": environment_id, "s": source_revision})
 

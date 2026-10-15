@@ -150,6 +150,7 @@ async def native_call(tx, user, task_id, run_id, plan, *, event=True, usage=None
         call_key=call_key, model=plan.model, source_revision=plan.scope.source_revision,
         protected_case_sha256=None, prompt_sha256="1"*64, schema_sha256="2"*64)
     material.update(script_sha256=plan.script_sha256,
+        execution_profile_sha256=plan.snapshot.execution_profile.fingerprint(), reasoning_effort="high",
         request_input_sha256=plan.quality_request_sha256 if quality_job else digest(plan.messages[step]))
     material.update(changed or {})
     if fence is not None:

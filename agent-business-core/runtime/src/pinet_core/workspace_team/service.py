@@ -130,11 +130,13 @@ def event_view(event, row):
     return topics.project(PublicEvent, event_id=event.id, topic_id=row.id, task_id=event.task_id,
         sequence=event.sequence, author_type=event.author_type, author_user_id=event.author_user_id,
         participant_id=event.participant_id, attempt_id=event.attempt_id, kind=event.kind,
+        native_episode_task_id=getattr(event, "native_episode_task_id", None),
         reply_to_event_id=event.reply_to_event_id, content=event.content, content_sha256=event.content_sha256,
         source_revision=event.source_revision, created_at=event.created_at)
 
 
 async def turn_view(tx, task, row):
+    from . import episode
     attempts = list(await tx.scalars(select(Attempt).where(Attempt.task_id == task.id)))
     turn = await tx.get(TeamTurn, task.id)
     run = await tx.get(TaskRun, task.run_id) if task.run_id else None
@@ -146,6 +148,7 @@ async def turn_view(tx, task, row):
             "history_cutoff": turn.context_cutoff, "history_event_ids": [item["event"]["event_id"] for item in turn.context["history"]],
             "omitted_history_events": turn.context["omitted_history_events"], "reply_to_event_id": turn.context["reply"]["event_id"] if turn.context["reply"] else None}
     return topics.project(Turn, task_id=task.id, topic_id=row.id, sequence=task.sequence,
+        native_episode=await episode.projection(tx, task),
         idempotency_key=task.idempotency_key, status=task.status, created_at=task.created_at,
         updated_at=task.updated_at, failure_code=task.failure_code, reserved_calls=len(attempts),
         settled_calls=sum(a.state != "reserved" for a in attempts),
@@ -153,7 +156,8 @@ async def turn_view(tx, task, row):
         cost_status="UNVERIFIED", context_receipt=receipt, started_at=run.created_at if run else None, lease_until=task.lease_until)
 
 
-async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id=None, reply=None, attempt=None):
+async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id=None, reply=None, attempt=None,
+        native_episode_task_id=None):
     if thread.event_sequence >= 2147483647:
         raise ControlError(409, "topic_capacity_reached")
     thread.event_sequence += 1
@@ -161,6 +165,7 @@ async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id
         sequence=thread.event_sequence, author_type=author,
         author_user_id=row.user_id if author == "user" else None,
         participant_id=None if author == "user" else participant_id(row, author), attempt_id=attempt,
+        native_episode_task_id=native_episode_task_id,
         kind=kind, reply_to_event_id=reply, content=content,
         content_sha256=hashlib.sha256(content.encode()).hexdigest(), source_revision=settings().control_source_revision,
         **binding(row))
@@ -169,10 +174,10 @@ async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id
     return event
 
 
-async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
+async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None, episode_intent=None):
     try:
         async with tx.begin_nested():
-            return await _send(tx, session, portfolio_id, topic_id, value, preparation=preparation)
+            return await _send(tx, session, portfolio_id, topic_id, value, preparation=preparation, episode_intent=episode_intent)
     except IntegrityError as error:
         queue, seen = [error], set()
         while queue:
@@ -187,22 +192,68 @@ async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
         raise
 
 
-async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None):
+def request_fingerprint(row, value, *, preparation=None, episode_request=None):
+    material = {"kind": KIND, "topic_id": row.id, "binding": binding(row),
+        "request": value.model_dump(mode="json", exclude={"idempotency_key"})}
+    if preparation is not None:
+        material["agent_preparation"] = {"creation_id": str(preparation.creation_id), "purpose": preparation.purpose}
+    if episode_request is not None:
+        material["agent_episode"] = episode_request.model_dump(mode="json", exclude={"idempotency_key"})
+    return digest(material)
+
+
+async def retained(tx, session, portfolio_id, topic_id, row, value, fingerprint):
+    old = await tx.scalar(select(Task).where(Task.idempotency_key == str(value.idempotency_key)))
+    if not old:
+        return None
+    turn = await tx.get(TeamTurn, old.id)
+    if old.kind != KIND or old.fingerprint != fingerprint or not turn or turn.topic_id != row.id:
+        raise ControlError(409, "idempotency_conflict")
+    event = await tx.get(TeamEvent, turn.owner_event_id)
+    await topic(tx, session, portfolio_id, topic_id)
+    return topics.project(Accepted, turn=await turn_view(tx, old, row), event=event_view(event, row))
+
+
+async def send_episode(tx, session, portfolio_id, topic_id, request):
+    """Reconcile history first, then isolated preflight, then atomic admission."""
+    from . import episode
+    from .wire import Send
+    value = Send(idempotency_key=request.idempotency_key, content=request.content,
+        reply_to_event_id=request.reply_to_event_id)
+    row = await topic(tx, session, portfolio_id, topic_id)
+    fingerprint = request_fingerprint(row, value, episode_request=request)
+    old = await retained(tx, session, portfolio_id, topic_id, row, value, fingerprint)
+    if old is not None:
+        return old
+    await episode.schema_ready(tx)
+    from ..tasks.codex import RunnerError
+    try:
+        capture = await episode.preflight(session, row, request)
+        # preflight's entire separate transaction is now committed and closed.
+        return await send(tx, session, portfolio_id, topic_id, value, episode_intent=(request, capture))
+    except RunnerError as error:
+        raise ControlError(429, error.code) if error.code == "task_rate_limited" else ControlError(
+            503, "agent_episode_unavailable") from None
+
+
+async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None, episode_intent=None):
     row = await topic(tx, session, portfolio_id, topic_id)
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
         {"k": "chat-admission:"+row.environment_id+":"+row.user_id})
-    material = {"kind": KIND, "topic_id": row.id, "binding": binding(row), "request": value.model_dump(mode="json", exclude={"idempotency_key"})}
-    if preparation is not None:
-        material["agent_preparation"] = {"creation_id": str(preparation.creation_id), "purpose": preparation.purpose}
-    fingerprint = digest(material)
-    old = await tx.scalar(select(Task).where(Task.idempotency_key == str(value.idempotency_key)))
-    if old:
-        turn = await tx.get(TeamTurn, old.id)
-        if old.kind != KIND or old.fingerprint != fingerprint or not turn or turn.topic_id != row.id:
-            raise ControlError(409, "idempotency_conflict")
-        event = await tx.get(TeamEvent, turn.owner_event_id)
-        await topic(tx, session, portfolio_id, topic_id)
-        return topics.project(Accepted, turn=await turn_view(tx, old, row), event=event_view(event, row))
+    if preparation is not None and episode_intent is not None:
+        raise ControlError(400, "invalid_request")
+    fingerprint = request_fingerprint(row, value, preparation=preparation,
+        episode_request=episode_intent[0] if episode_intent else None)
+    old = await retained(tx, session, portfolio_id, topic_id, row, value, fingerprint)
+    if old is not None:
+        return old
+    episode_plan = None
+    if episode_intent:
+        from . import episode
+        request, capture = episode_intent
+        episode.guard(session.user_id)
+        episode.capture_matches(capture, session, row, request)
+        episode_plan = episode.plan_for(capture, row.id, request)
     if preparation is not None:
         # An exact retained receipt proves prior acceptance only. Reconcile it
         # under current topic authority before applying *new-write* Foundation
@@ -236,6 +287,9 @@ async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None)
     await tx.flush()
     event = await add_event(tx, row, thread, task.id, "user", "owner_message", value.content, event_id=owner_id, reply=reply)
     await append_event(tx, task)
+    if episode_plan is not None:
+        from .calibration_budget import allocate
+        await allocate(tx, task.id, episode_plan)
     # Check the durable request key before quota. Hidden old keys must conflict,
     # even when the next valid queued task already consumes the daily allowance.
     # This new queued turn now holds its three calls inside the same savepoint.
@@ -247,6 +301,8 @@ async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None)
     await topic(tx, session, portfolio_id, topic_id)
     if preparation is not None:
         await capture(tx, session, row, preparation.creation_id, source=task.source_revision)
+    if episode_intent:
+        episode.capture_matches(episode_intent[1], session, row, episode_intent[0])
     return topics.project(Accepted, turn=await turn_view(tx, task, row), event=event_view(event, row))
 
 
@@ -355,13 +411,25 @@ async def context_for(tx, task):
     from . import directory
     session = await tx.get(Session, task.session_id)
     context["configured_agents"] = await directory.context(tx, session, row)
+    from . import episode
+    header = await episode.optional_allocation(tx, task.id)
+    if header is not None:
+        from ..customer_text import execution
+        from .calibration_budget import CONTEXT_KEY, plan_from
+        plan = plan_from(header)
+        execution.current(plan.snapshot.execution_profile)
+        context[CONTEXT_KEY] = header["plan_sha256"]
+        context["_agent_episode_plan"] = plan.model_dump(mode="json")
     if turn.agent_creation_id is not None:
         from .preparation import SCOPE_KEY
         context[SCOPE_KEY] = tx.info["workspace_agent_scopes"][task.id]
         context["agent_preparation"] = {"purpose": turn.agent_purpose, "outcome": "native_draft_only",
             "calibration": "separate_required_checks", "activation": "not_authorized"}
     turn.context, turn.context_sha256, turn.context_cutoff = context, digest(context), thread.event_sequence
-    turn.deadline = min(turn.deadline, utcnow()+timedelta(seconds=3*settings().chat_runner_seconds+30))
+    calls = plan.call_limit if header is not None else 3
+    turn.deadline = min(turn.deadline, utcnow()+timedelta(seconds=calls*settings().chat_runner_seconds+30))
+    if header is not None:
+        turn.deadline = min(turn.deadline, header["expires_at"])
     tx.info["workspace_team_deadlines"][task.id] = turn.deadline
     await tx.flush()
     return {**context, "_task_id": task.id, "_user_id": task.user_id, "_team_context_sha256": turn.context_sha256}

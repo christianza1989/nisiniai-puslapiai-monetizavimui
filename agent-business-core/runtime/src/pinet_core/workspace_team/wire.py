@@ -9,6 +9,7 @@ from pydantic import Field, field_validator, model_validator
 from ..business_discovery.wire import Digest, Source
 from ..creation.wire import Strict
 from ..workspace_topics.wire import Anchor, AppendMessage
+from .episode_types import EpisodeView
 
 Role = Literal["coordinator", "adviser"]
 
@@ -70,6 +71,7 @@ class PublicEvent(Strict):
     author_user_id: UUID | None
     participant_id: UUID | None
     attempt_id: UUID | None
+    native_episode_task_id: UUID | None = Field(default=None, exclude_if=lambda value: value is None)
     kind: Literal["owner_message", "assignment", "answer"]
     reply_to_event_id: UUID | None
     content: str = Field(min_length=1, max_length=8000)
@@ -81,7 +83,11 @@ class PublicEvent(Strict):
     @model_validator(mode="after")
     def trusted_author(self):
         user = self.author_type == "user"
-        if (user != (self.author_user_id is not None) or user == (self.participant_id is not None) or user == (self.attempt_id is not None)
+        native = self.native_episode_task_id is not None
+        provenance = (self.attempt_id is not None and not native or native and self.attempt_id is None
+            and self.author_type == "coordinator" and self.kind == "answer" and self.native_episode_task_id == self.task_id)
+        if (user != (self.author_user_id is not None) or user == (self.participant_id is not None)
+                or user and (self.attempt_id is not None or native) or not user and not provenance
                 or user != (self.kind == "owner_message") or self.kind == "assignment" and self.author_type != "coordinator"
                 or hashlib.sha256(self.content.encode()).hexdigest() != self.content_sha256):
             raise ValueError("Wrong trusted event provenance")
@@ -101,6 +107,7 @@ class Turn(Strict):
     task_id: UUID
     topic_id: UUID
     sequence: int = Field(strict=True, ge=1, le=20)
+    native_episode: EpisodeView | None = Field(default=None, exclude_if=lambda value: value is None)
     idempotency_key: UUID
     status: Literal["queued", "running", "succeeded", "failed", "cancelled"]
     created_at: datetime

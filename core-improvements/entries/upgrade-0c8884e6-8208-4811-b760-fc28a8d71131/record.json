@@ -1,0 +1,37 @@
+{
+  "siteId": "core",
+  "summary": "Connect an explicit owner scenario to the existing native lab and Quality through one Task, with current High profile, receipt provenance and usage",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/WORKSPACE_AGENT_EPISODE.md",
+    "agent-business-core/runtime/tests/test_workspace_agent_episode_pg.py"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "agent-business-core/runtime/WORKSPACE_AGENT_EPISODE.md",
+    "agent-business-core/runtime/offline_tests/test_workspace_calibration_plan.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/calibration_plan.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/handler.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/models.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/quota.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/routes.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/service.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/wire.py",
+    "agent-business-core/runtime/tests/test_workspace_calibration_budget_pg.py",
+    "docs/contracts/verslomatika-workspace-agent-preparation.openapi.json",
+    "docs/contracts/verslomatika-workspace-team.openapi.json",
+    "agent-business-core/runtime/offline_tests/test_workspace_agent_episode.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/episode.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/episode_contract.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/episode_types.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/episode_wire.py",
+    "agent-business-core/runtime/tests/test_workspace_agent_episode_pg.py",
+    "docs/contracts/verslomatika-workspace-agent-episode.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this scoped caller packet before runtime adoption; preserve0040/0041 native allocations and receipts. Current serving source is unchanged.",
+  "id": "upgrade-0c8884e6-8208-4811-b760-fc28a8d71131",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "e80ea949e878ae3cfaabb1e6b64a10ccb85a81ba",
+  "createdAt": "2026-10-15T04:49:11.814Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Caller API/Task/native completion implementation and canonical contract ready for isolated combined PG. 58 offline PASS0.32s and Ruff PASS; four actual API/worker scenarios collected. Root exact profile/input checks reject unprofiled new reservations. Initial independent High6PASS2FAIL retained for helper repair; no serving adoption or paid execution.",
+  "eventId": "3d1cfa30-2fd6-4e6e-87dc-0c8eee9d0b18",
+  "sequence": 2,
+  "at": "2026-10-15T04:49:25.885Z"
+}

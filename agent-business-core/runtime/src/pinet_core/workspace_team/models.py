@@ -105,12 +105,15 @@ class TeamEvent(Owned, Base):
     author_user_id: Mapped[str | None] = mapped_column(String, nullable=True)
     participant_id: Mapped[str | None] = mapped_column(String, nullable=True)
     attempt_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    native_episode_task_id: Mapped[str | None] = mapped_column(String, nullable=True)
     kind: Mapped[str] = mapped_column(String)
     reply_to_event_id: Mapped[str | None] = mapped_column(String, nullable=True)
     content: Mapped[str] = mapped_column(String)
     content_sha256: Mapped[str] = mapped_column(String)
     source_revision: Mapped[str] = mapped_column(String)
     __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("team_thread_id", "sequence"),
+        ForeignKeyConstraint(["native_episode_task_id"], ["control_tasks.id"], ondelete="RESTRICT",
+            name="fk_workspace_native_episode_task"),
         UniqueConstraint("attempt_id"),
         UniqueConstraint("id", "task_id", "team_thread_id", *OWNER), UniqueConstraint("id", "team_thread_id", *OWNER),
         ForeignKeyConstraint(["task_id", "team_thread_id", *OWNER],

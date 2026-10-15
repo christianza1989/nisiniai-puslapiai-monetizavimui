@@ -129,12 +129,30 @@ class TeamHandler:
 
     async def store_context(self, tx, task, run_id, context):
         context["_run_id"] = run_id
+        from . import episode
+        if await episode.optional_allocation(tx, task.id) is not None:
+            from .calibration_budget import bind_run
+            await bind_run(tx, task.id, run_id, context["_team_context_sha256"])
+
+    def revision_for(self, context):
+        from . import episode
+        return episode.ADAPTER if "_agent_episode_plan" in context else self.adapter_revision
 
     async def completion_locks(self, tx, claimed):
         from .preparation import completion_locks
         await completion_locks(tx, claimed)
+        from . import episode
+        await episode.completion_locks(tx, claimed)
 
     async def run(self, context, heartbeat, runner=None):
+        if "_agent_episode_plan" in context:
+            from . import episode
+            try:
+                return await episode.execute(context, heartbeat)
+            except ControlError as error:
+                raise codex.RunnerError(error.code) from None
+            except SQLAlchemyError:
+                raise codex.RunnerError("task_result_unavailable") from None
         usage, messages = [], []
         public = {key: value for key, value in context.items() if not key.startswith("_")}
 
@@ -189,6 +207,9 @@ class TeamHandler:
 
     async def complete(self, tx, task, result):
         row, thread, turn = await service.task_scope(tx, task)
+        from . import episode
+        if await episode.optional_allocation(tx, task.id) is not None:
+            return await episode.complete(tx, task, row, turn, result)
         if turn.agent_creation_id is not None:
             from .preparation import complete
             return await complete(tx, task, row, turn, result)

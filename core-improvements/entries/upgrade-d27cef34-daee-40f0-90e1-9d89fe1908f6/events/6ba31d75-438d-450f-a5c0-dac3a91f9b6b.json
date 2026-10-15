@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/155",
+  "note": "Created/attached draft PR155 for verified High pin packet; exact519→8ec coverage13shared/0uncovered/errors and paired freshness PASS. Coordinator already integrated functional source;8ec metadata closes d27. GitHub reports mergeablefalse against separately cherry-picked remote519; root instructed to take scoped metadata rather than duplicate functional commits. No main/serving/paid/full-calibration claim; separate unprofiled execution policy repair authorized before activation.",
+  "eventId": "6ba31d75-438d-450f-a5c0-dac3a91f9b6b",
+  "sequence": 5,
+  "at": "2026-10-15T05:22:14.231Z"
+}

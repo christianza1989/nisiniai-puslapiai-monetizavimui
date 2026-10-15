@@ -21,7 +21,7 @@ const baseKeys = ['command','creationId','acceptedRevision','sourceHash','canoni
 const commands = {
   status: [], prepare: [], 'read-page': [], 'read-media': ['assetId','expectedRevisionHash'],
   'amend-page': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
-  'amend-page-reviewed-copy': ['operationId','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
+  'amend-page-reviewed-copy': ['operationId','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch','deferUnreadyPageIds'],
   'prepare-editorial': ['operationId','action','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch','pageIds'],
   'resolve-internal-links': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash'],
   'amend-site': ['expectedSiteHash','patch'],
@@ -105,7 +105,7 @@ const amendmentPatchKeys=['title','description','intent','body','factChecks','ex
 const uuid=value=>typeof value==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(value);
 const withoutUpdated=page=>Object.fromEntries(Object.entries(page).filter(([key])=>key!=='updatedAt'));
 const same=(a,b)=>stableV2(a)===stableV2(b);
-function reviewedCopyPlan(patch,site,page) {
+function reviewedCopyPlan(patch,site,page,deferred=undefined) {
   keys(patch,amendmentPatchKeys);
   if(!Object.keys(patch).length||Buffer.byteLength(stableV2(patch))>200000)fail('workflow_invalid_amendment');
   const metadata=Object.fromEntries(Object.entries(patch).filter(([key])=>key!=='body'));
@@ -127,9 +127,25 @@ function reviewedCopyPlan(patch,site,page) {
     }else if(node.target.kind!=='external'||!external.has(node.target.url))fail('writer_unverified_external_link');
   }
   if(body.some(b=>b.type==='image'&&!page.media.some(m=>m.id===b.assetId)))fail('workflow_unknown_asset');
-  const graph=b=>[...new Set([...(page.links??[]).map(l=>l.targetPageId),...inlineNodes({body:b})
+  const graph=(b,links=page.links??[])=>[...new Set([...links.map(l=>l.targetPageId),...inlineNodes({body:b})
     .filter(n=>n.type==='link'&&n.target.kind==='page').map(n=>n.target.pageId)])].sort();
-  if(!same(graph(body),graph(page.body)))fail('workflow_amendment_graph_changed');
+  if(deferred!==undefined) {
+    if(!Array.isArray(deferred)||!deferred.length||deferred.length>20||new Set(deferred).size!==deferred.length
+        ||deferred.some(p=>typeof p!=='string'||!/^page-[a-f0-9]{24}$/.test(p))||!Object.hasOwn(patch,'body'))
+      fail('workflow_invalid_deferred_links');
+    const oldGraph=graph(page.body),removed=new Set(deferred);
+    for(const targetId of deferred) {
+      const target=site.pages.find(p=>p.id===targetId&&p.siteId===site.id);
+      if(!oldGraph.includes(targetId)||!target||target.id===page.id||!['guide','article'].includes(target.type)
+          ||target.status==='revoked'||target.status==='approved'||target.approval||target.publishedRevision
+          ||target.body?.length!==0)fail('workflow_deferred_target_not_unready');
+    }
+    normalized.links=(page.links??[]).filter(l=>!removed.has(l.targetPageId));
+    normalized.linkSuggestions=(page.linkSuggestions??[]).filter(l=>!removed.has(l.targetPageId));
+    normalized.editorial={...page.editorial,relatedPageIds:page.editorial.relatedPageIds.filter(p=>!removed.has(p))};
+    if(!same(graph(body,normalized.links),oldGraph.filter(p=>!removed.has(p)))
+        ||!same(graph(body,[]),graph(page.body,[]).filter(p=>!removed.has(p))))fail('workflow_amendment_graph_changed');
+  } else if(!same(graph(body),graph(page.body)))fail('workflow_amendment_graph_changed');
   if('body'in patch)normalized.body=body;
   // editPage owns the mutation. This frozen projection recognizes only its
   // exact transition after a lost response, never an unrelated current edit.
@@ -152,7 +168,7 @@ async function preserveBefore(file,value) {
 
 function amendmentResult(receipt,replayed,changed) {
   const b=receipt.binding;
-  return {version:amendmentVersion,state:'applied',operationId:b.operationId,creationId:b.creationId,
+  return {version:receipt.version,state:'applied',operationId:b.operationId,creationId:b.creationId,
     acceptedRevision:b.acceptedRevision,sourceHash:b.sourceHash,canonicalHost:b.canonicalHost,
     siteId:receipt.siteId,pageId:b.pageId,requestHash:receipt.requestHash,receiptSha256:digest(receipt),
     beforeSiteHash:b.expectedSiteHash,beforeRevisionHash:b.expectedRevisionHash,beforePlanningHash:b.expectedPlanningHash,
@@ -171,6 +187,8 @@ export async function amendReviewedCopy(context,input) {
   if(!Object.keys(input.patch).length||Buffer.byteLength(stableV2(input.patch))>200000)fail('workflow_invalid_amendment');
   const binding=Object.fromEntries(['operationId','creationId','acceptedRevision','sourceHash','canonicalHost','pageId',
     ...amendmentHashKeys,'patch'].map(k=>[k,input[k]]));
+  const version=Object.hasOwn(input,'deferUnreadyPageIds')?'native-reviewed-copy-amendment.v2':amendmentVersion;
+  if(Object.hasOwn(input,'deferUnreadyPageIds'))binding.deferUnreadyPageIds=input.deferUnreadyPageIds;
   const requestHash=digest(binding),{model}=context,directory=path.join(context.directory,'reviewed-copy-amendments');
   try{await mkdir(directory);}catch(error){if(error.code!=='EEXIST')throw error;}
   await assertArtifactDirectories(context.root,directory);
@@ -181,7 +199,7 @@ export async function amendReviewedCopy(context,input) {
     await lock.writeFile(token);
     let receipt=await readAmendment(file),before=await readAmendment(beforeFile);
     const replayed=Boolean(receipt||before);
-    if(receipt&&(receipt.version!==amendmentVersion||receipt.requestHash!==requestHash||!same(receipt.binding,binding)
+    if(receipt&&(receipt.version!==version||receipt.requestHash!==requestHash||!same(receipt.binding,binding)
         ||!['prepared','applied'].includes(receipt.state)))fail('workflow_amendment_receipt_conflict');
     if(receipt&&!before)fail('workflow_amendment_receipt_invalid');
     if(before&&(before.version!=='native-reviewed-copy-before.v1'||before.requestHash!==requestHash
@@ -194,14 +212,14 @@ export async function amendReviewedCopy(context,input) {
       &&model.planningContextHash(page)===input.expectedPlanningHash&&(!before||same(page,before.page));
     if(!before) {
       if(!exactBefore())fail('workflow_context_stale');
-      reviewedCopyPlan(input.patch,site,page);
+      reviewedCopyPlan(input.patch,site,page,input.deferUnreadyPageIds);
       before={version:'native-reviewed-copy-before.v1',binding,requestHash,siteId:site.id,
         beforePageSha256:digest(page),page:structuredClone(page)};
       await preserveBefore(beforeFile,before);
     }
     const beforeSite={...site,pages:site.pages.map(p=>p.id===input.pageId?before.page:p)};
     if(model.studioContextHash(beforeSite)!==input.expectedSiteHash)fail('workflow_context_stale');
-    const plan=reviewedCopyPlan(input.patch,beforeSite,before.page),plannedPageSha256=digest(withoutUpdated(plan.planned));
+    const plan=reviewedCopyPlan(input.patch,beforeSite,before.page,input.deferUnreadyPageIds),plannedPageSha256=digest(withoutUpdated(plan.planned));
     const changeRequired=!same(withoutUpdated(plan.planned),withoutUpdated(before.page));
     if(receipt&&(receipt.beforeEvidenceSha256!==digest(before)||receipt.beforePageSha256!==before.beforePageSha256
         ||receipt.siteId!==site.id||receipt.plannedPageSha256!==plannedPageSha256||receipt.changeRequired!==changeRequired))
@@ -209,7 +227,7 @@ export async function amendReviewedCopy(context,input) {
     if(!receipt) {
       // Evidence without prepared cannot have performed our mutation.
       if(!exactBefore())fail('workflow_amendment_uncertain');
-      receipt={version:amendmentVersion,binding,requestHash,siteId:site.id,state:'prepared',
+      receipt={version,binding,requestHash,siteId:site.id,state:'prepared',
         beforeEvidenceSha256:digest(before),beforePageSha256:before.beforePageSha256,plannedPageSha256,changeRequired};
       await persistReceipt(file,receipt);
     }

@@ -2,6 +2,8 @@
 
 Šis paketas yra source pataisa. Priimtų klientų bylų, veikiančių API/Studio, provider ar DB nekeičiau. Root valdo orchestratoriaus/UI prijungimą ir tikrą adoption.
 
+Peržiūrai sukurta ir prie šio pokalbio pridėta [draft PR #152](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/152). Functional commit `e8f4eddf34aad180f8ee8a634b1524b357583dbc` ir būtinas mažas follow-up `19d9d63de0f3f53009953fc44c9c37ed7f55b334` yra pushed. Metadata tęsinys nekeičia šių source kvitų. Scoped committed gate iki follow-up: 2 shared paths, 0 uncovered/errors PASS; globali paveldėta main aprėptis lieka atskirai nepriimta.
+
 Sava šaka `codex/verslomatika-native-media-connector-20261015`, bazė `9c618026bb7f57dadfbe77f4e93e30dbdbf92b8c`; paired main `808581d919d06cb4a2d151cc7f9ec1be1782aba2`, public `1a26f289092cecadc5799de898e809dc1769498a` / main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Du atskiri upgrade: `0e38a8dc-d99e-43f4-b9b1-b0a3aec4f2db` ir papildomai suderintas testinio companion importo `d195793f-c76d-44e3-a5b2-ad83714356c5`.
 
 Kvietimas: `await pinet_core.creation.media.attach(tx, session, creation_id, MediaAttachment(...))`. Rezultato kelias yra `result["attachment"]["changed"]`; dabartinis bendras turinio vaizdas yra `result["completion"]`. Kvietėjas valdo SQL transakciją. Adapteris laiko esamus admission actor/Creation užraktus ir atsisako aktyvaus GUIDE, archyvo, source/Session/priimtos revizijos dreifo. Istorinei native medžiagai būtinas dabartinis aiškus S6. Root fiksuotas operatoriaus inbox turi teikti griežtą serverio prašymą, o ne browser pasirinktus kelius ar komandą.

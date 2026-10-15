@@ -4,6 +4,8 @@ Use for a new visual identity or a substantial redesign. A narrow styling repair
 
 ## Build a useful visual brief
 
+When a supplied reference needs deeper structure, script or interaction analysis, use the optional [REA website-reference workflow](../../website-reference-analysis/SKILL.md). It supplies evidence for an original implementation, not a replacement builder or an unseen backend clone. Ordinary visual inspection does not require REA.
+
 Separate business evidence from craft references. Niche shops reveal questions, vocabulary and needed information. Strong contemporary references reveal composition, visual hierarchy and finish. Research both, with screenshots of actual pages where available. Siteinspire and the public portions of Landbook can identify references; inspect the linked website yourself. A dramatic studio portfolio is not automatically the right model for agricultural procurement.
 
 For each adopted reference note the URL, date, screenshot, viewport, precise transferable decision and what does not fit our audience. Examples of meaningful decisions: a compact navigation that prioritizes the selection task; a product silhouette that anchors scale; a typographic index that makes guides scannable; a comparison table that replaces marketing cards. "Looks premium" is not a usable observation. Preserve source copyrights; do not transplant another site's copy, logo, images or complete composition.

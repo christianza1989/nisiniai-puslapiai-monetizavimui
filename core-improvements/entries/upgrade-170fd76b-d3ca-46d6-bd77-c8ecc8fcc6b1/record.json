@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Add the owner-requested REA website-reference capability as a pinned, scoped MCP/CLI adapter instead of leaving reference analysis disconnected from core agent discovery.",
+  "category": "code",
+  "evidence": [
+    "docs/REA_INTEGRATION_ACCEPTANCE_2026_10_15.md",
+    "REA_CORE.md",
+    "Base a109b48e75e090d9c67d83051b37cdfdfb1f1461 had research notes but no callable REA adapter; original exact-origin regression9PASS/1FAIL corrected."
+  ],
+  "paths": [
+    "integrations/rea",
+    "REA_CORE.md",
+    "SKILLS/website-reference-analysis",
+    "SKILLS/catalog.json",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "SKILLS/niche-site-builder/references/art-direction.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this REA change; remove only pinet_rea registration and a verified junction to this checkout. Retain private evidence and all existing runtime/core state.",
+  "id": "upgrade-170fd76b-d3ca-46d6-bd77-c8ecc8fcc6b1",
+  "branch": "codex/verslomatika-rea-integration-20261015",
+  "baseSha": "a109b48e75e090d9c67d83051b37cdfdfb1f1461",
+  "createdAt": "2026-10-15T11:38:16.075Z"
+}

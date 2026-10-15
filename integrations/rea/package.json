@@ -1,0 +1,10 @@
+{
+  "name": "pinet-rea-integration",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Scoped website-reference tools on the maintained REA engine",
+  "engines": {"node": "^22.19.0 || ^24.11.0 || >=26.0.0"},
+  "scripts": {"test": "node --test test/*.test.mjs", "test:integration": "node --test test/upstream.integration.mjs", "doctor": "node cli.mjs doctor"},
+  "dependencies": {"@modelcontextprotocol/sdk": "1.32.1", "rea-agents": "6.5.0"}
+}

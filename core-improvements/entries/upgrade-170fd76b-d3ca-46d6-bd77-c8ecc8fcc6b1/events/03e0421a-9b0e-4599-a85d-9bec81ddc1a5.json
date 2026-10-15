@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Pinned adapter and exact scoped MCP registration locally verified. Original wildcard FAIL, missing system PyYAML, invalid PNG-signature receipt and rejected separate-browser launch retained. Existing Chrome/CUA captured actual PNGs; offline REA comparison succeeded. Direct REA-CDP collection remains UNVERIFIED. No runtime profile admission, model spend, serving adoption or publication.",
+  "checks": [
+    {
+      "command": "npm.cmd test --prefix integrations/rea",
+      "result": "PASS",
+      "evidence": "docs/REA_INTEGRATION_ACCEPTANCE_2026_10_15.md — final12/12PASS, including wildcard/origin/endpoint/artifact/observation and failure-receipt regressions."
+    },
+    {
+      "command": "npm.cmd run test:integration --prefix integrations/rea",
+      "result": "PASS",
+      "evidence": "docs/REA_INTEGRATION_ACCEPTANCE_2026_10_15.md — actual stdio proxy to installed6.5.0,9exposed tools,1pxPNG identity/hash and static JS analysis; final1PASS9.9s."
+    },
+    {
+      "command": "node integrations/rea/cli.mjs doctor",
+      "result": "PASS",
+      "evidence": "Actual engine/catalog handshake;8required upstream schemas found. Browser scope configuration is not direct-browser health."
+    },
+    {
+      "command": "runtime/.venv Python quick_validate.py SKILLS/website-reference-analysis; scoped catalogue digest check",
+      "result": "PASS",
+      "evidence": "Skill is valid; unique catalogue identity/hash and installed canonical junction confirmed."
+    },
+    {
+      "command": "codex mcp get pinet_rea --json",
+      "result": "PASS",
+      "evidence": "Enabled exact-node/absolute-owned-server stdio registration;60sstartup65stool timeouts."
+    }
+  ],
+  "eventId": "03e0421a-9b0e-4599-a85d-9bec81ddc1a5",
+  "sequence": 3,
+  "at": "2026-10-15T11:52:18.855Z"
+}

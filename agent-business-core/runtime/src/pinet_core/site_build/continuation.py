@@ -53,7 +53,9 @@ async def capture(tx, session, creation):
     revision = await tx.get(Revision, proof["revision_id"])
     job = await tx.get(Job, revision.job_id) if revision else None
     try:
-        pages = service.initial_pages(revision.payload, job.usage["content_intake"])
+        from ..creation.private_preview import selected_intake
+        _, intake = await selected_intake(tx, creation, revision, job)
+        pages = service.initial_pages(revision.payload, intake)
     except (ValueError, TypeError, KeyError, AttributeError):
         raise ControlError(503, "invalid_content_source") from None
     result = {"version": "native-build-continuation.v1", **binding(creation), "creation_id": creation.id,

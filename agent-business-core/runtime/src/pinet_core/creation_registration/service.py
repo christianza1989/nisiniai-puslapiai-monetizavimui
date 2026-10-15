@@ -7,8 +7,7 @@ from sqlalchemy import select
 from ..config import settings
 from ..control.models import BusinessGrant
 from ..control.routes import ControlError
-from ..creation import language_mode, studio, team
-from ..creation.models import Job, Revision, TeamEvent
+from ..creation import studio
 from ..creation.service import ACTIVE, binding, current_actor, digest
 from ..customer.service import host
 from ..models import Business, utcnow
@@ -16,7 +15,6 @@ from .models import Registration
 from .wire import RegisteredRevision, RegistrationView
 
 HEX = re.compile(r"^[a-f0-9]{64}$")
-SOURCE = re.compile(r"^[a-f0-9]{40}$")
 PROOF_KEYS = ("revision_id", "accepted_revision", "candidate_sha256", "accepted_source_revision",
     "site_id", "canonical_host", "coordinator_event_id", "coordinator_sha256", "intake_sha256",
     "intake_request_sha256", "intake_importer_sha256", "intake_site_file_sha256")
@@ -27,55 +25,22 @@ def site_id(creation_id):
 
 
 async def accepted_proof(tx, creation):
-    """Reuse the actual team and intake validators, adding only registration identity requirements."""
-    revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
-        Revision.sequence == creation.current_revision)) if creation.current_revision else None
-    job = await tx.get(Job, revision.job_id) if revision else None
-    if not revision or not job:
-        raise ControlError(409, "accepted_revision_missing")
-    if (binding(revision) != binding(creation) or binding(job) != binding(creation)
-            or job.creation_id != creation.id or job.status != "succeeded"
-            or revision.source_revision != job.source_revision or not SOURCE.fullmatch(revision.source_revision)
-            or digest(revision.payload) != revision.material_hash):
-        raise ControlError(503, "invalid_registration_source")
+    """Exact accepted proof plus the maintained selected native intake observation."""
+    from ..creation.accepted_material import accepted_material
+    from ..creation.private_preview import selected_intake
+    revision, job, proof = await accepted_material(tx, creation)
     try:
-        reviewed = await team.projection(tx, creation)
-        if reviewed["accepted_candidate_sha256"] != revision.material_hash:
-            raise ControlError(409, "accepted_team_review_missing")
-        # Selection references the same observed exact-hash acceptance used by the canonical team reader.
-        events = [event for event in reviewed["events"] if event["job_id"] == job.id
-            and event["role"] == "coordinator" and event["state"] == "succeeded"
-            and event["data"]["decision"] == "accept_draft"
-            and event["data"]["candidate_sha256"] == revision.material_hash
-            and all(c["status"] != "FAIL" for c in event["data"]["checks"])
-            and any(language_mode.receipt_satisfies(c,
-                    mode=event["data"].get("language_review_mode", "required"), digest=revision.material_hash)
-                    for c in event["data"]["checks"])]
-        event = events[-1]
-        original_event = await tx.get(TeamEvent, event["event_id"])
-        if not original_event or original_event.job_id != job.id:
-            raise ValueError("Missing immutable coordinator")
-        # Previous proofs hashed the normalized sidecar data. Preserve every old
-        # default, omitting only the new mode when it was absent from stored history.
-        coordinator_data = dict(event["data"])
-        if "language_review_mode" not in original_event.payload:
-            coordinator_data.pop("language_review_mode", None)
         observed = await studio.projection(tx, creation)
         if observed["state"] != "private_draft_imported":
             raise ControlError(409, "private_intake_missing")
-        intake = job.usage["content_intake"]
+        native_host, intake = await selected_intake(tx, creation, revision, job)
         identity = site_id(creation.id)
-        # The shared ContentView already validates creation/revision/hash/host and the full snapshot.
-        # Registration additionally needs the importer-owned native site and immutable manifest hashes.
-        if intake.get("siteId") != identity or not creation.canonical_host or host(creation.canonical_host) != creation.canonical_host:
+        if intake.get("siteId") != identity or not native_host or host(native_host) != native_host:
             raise ValueError("Invalid native site identity")
         for key in ("requestHash", "importerHash", "siteFileHash"):
             if not isinstance(intake.get(key), str) or not HEX.fullmatch(intake[key]):
                 raise ValueError("Invalid native manifest hash")
-        return {"revision_id": revision.id, "accepted_revision": revision.sequence,
-            "candidate_sha256": revision.material_hash, "accepted_source_revision": revision.source_revision,
-            "site_id": identity, "canonical_host": creation.canonical_host,
-            "coordinator_event_id": event["event_id"], "coordinator_sha256": digest(coordinator_data),
+        return {**proof, "site_id": identity, "canonical_host": native_host,
             "intake_sha256": digest(intake), "intake_request_sha256": intake["requestHash"],
             "intake_importer_sha256": intake["importerHash"], "intake_site_file_sha256": intake["siteFileHash"]}
     except (ValueError, TypeError, KeyError, AttributeError, IndexError):

@@ -37,7 +37,18 @@ async def authority(tx, job, creation=None):
     if creation is not None and await archived(tx, creation):
         return False
     return bool(await creation_authority(tx, job) and creation and creation.current_revision == job.accepted_revision
-        and creation.status not in ACTIVE and creation.canonical_host)
+        and creation.status not in ACTIVE and await native_host(tx, creation))
+
+
+async def native_host(tx, creation):
+    if creation.canonical_host is not None:
+        return creation.canonical_host
+    from ..creation.models import Job
+    from ..creation.private_preview import selected_intake
+    revision = await current_revision(tx, creation, creation.current_revision)
+    job = await tx.get(Job, revision.job_id)
+    resolved, intake = await selected_intake(tx, creation, revision, job)
+    return resolved if intake and intake.get("state") == "private-draft-imported" else None
 
 
 async def review_schema_ready(tx):
@@ -226,8 +237,11 @@ async def admit(tx, session, creation, value):
     if sequence > 20:
         raise ControlError(409, "content_work_limit")
     await job_quota(tx)
+    resolved_host = await native_host(tx, creation)
+    if not resolved_host:
+        raise ControlError(409, "private_intake_missing")
     target = SimpleNamespace(creation_id=creation.id, accepted_revision=value.accepted_revision,
-        source_hash=revision.material_hash, page_id=value.page_id, canonical_host=creation.canonical_host)
+        source_hash=revision.material_hash, page_id=value.page_id, canonical_host=resolved_host)
     async def authorized():
         await current_actor(tx, session, creation.portfolio_id)
         return (creation.current_revision == value.accepted_revision and creation.status not in ACTIVE

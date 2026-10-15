@@ -129,7 +129,9 @@ async def advance(creation_id):
             return observation(identity, "source", "blocked", code="site_build_source_stale")
         revision = await guides.current_revision(tx, creation, creation.current_revision)
         import_job = await tx.get(Job, revision.job_id)
-        pages = initial_pages(revision.payload, import_job.usage["content_intake"])
+        from ..creation.private_preview import selected_intake
+        _, intake = await selected_intake(tx, creation, revision, import_job)
+        pages = initial_pages(revision.payload, intake)
         jobs = list(await tx.scalars(select(GuideJob).where(GuideJob.creation_id == identity,
             GuideJob.accepted_revision == creation.current_revision).order_by(GuideJob.sequence)))
         active = [job for job in jobs if job.status in ACTIVE]

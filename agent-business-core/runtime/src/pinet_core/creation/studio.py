@@ -208,7 +208,8 @@ async def projection(tx, creation):
     revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
         Revision.sequence == creation.current_revision))
     job = await tx.get(Job, revision.job_id) if revision else None
-    intake = (job.usage or {}).get("content_intake") if job else None
+    from .private_preview import selected_intake
+    native_host, intake = await selected_intake(tx, creation, revision, job)
     view = {"creation_id": creation.id, "current_revision": creation.current_revision or None,
         "active_job_id": creation.active_job_id, "creation_updated_at": creation.updated_at,
         "import_job_id": job.id if intake else None, "source_revision": revision.source_revision if revision else None,
@@ -224,7 +225,7 @@ async def projection(tx, creation):
             if (intake["version"] != "customer-content-intake.v1" or intake["state"] != "private-draft-imported"
                     or intake["creationId"] != creation.id or intake["acceptedRevision"] != creation.current_revision
                     or intake["sourceHash"] != revision.material_hash or digest(revision.payload) != revision.material_hash
-                    or intake["canonicalHost"] != creation.canonical_host or intake["fullF1"] != "UNVERIFIED"
+                    or intake["canonicalHost"] != native_host or intake["fullF1"] != "UNVERIFIED"
                     or intake["launch"] != "UNVERIFIED" or intake["deployment"] != "not-performed"):
                 raise ValueError("Invalid intake identity")
             paths = {item["pageId"]: item["path"] for item in intake["pageMappings"]}

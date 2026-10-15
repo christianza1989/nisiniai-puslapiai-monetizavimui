@@ -97,8 +97,8 @@ async def test_real_argument_builder_and_private_receipt_keep_captured_sol_high(
         if failed:
             raise adapter.RunnerError("provider_error")
         if role == "creator":
-            from test_creation_content_plan import planned
-            value = planned(draft.__wrapped__())
+            from test_creation_content_plan import planned, typed
+            value = planned(typed(draft.__wrapped__()))
         elif role == "critic":
             from test_creation_compact_review import compact
             value = compact(context["draft"])

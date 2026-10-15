@@ -14,13 +14,15 @@ from uuid import uuid4
 import pytest
 from test_customer_agent_session import text_case  # noqa: F401 - inert authority fixture
 from test_customer_quality import row, saved_task
+from test_customer_typed_checks import bound_case, observations
+from test_customer_typed_checks import result as typed_result
 
 from pinet_core.config import settings
 from pinet_core.contracts import Quality
 from pinet_core.control.routes import ControlError
 from pinet_core.creation import execution_profiles as profiles
 from pinet_core.creation.service import digest
-from pinet_core.customer_agents import evaluator, lab, quality
+from pinet_core.customer_agents import evaluator, lab, quality, typed_checks
 from pinet_core.customer_agents.session import SessionPrincipal
 from pinet_core.customer_text import adapter, execution
 from pinet_core.customer_text import service as chat
@@ -165,6 +167,27 @@ async def test_high_profile_drift_before_first_reservation_consumes_no_permit(hi
     with pytest.raises(RunnerError):
         await chat._prepare(f.principal, f.creation, f.row.id, f.value, calibration={})
     assert not f.fence.calls and "provider_attempt" not in f.log
+
+
+async def test_profile_runner_refusal_is_a_false_authority_check(high, monkeypatch):
+    class Principal:
+        @asynccontextmanager
+        async def text_authority(self, *_, **__):
+            raise RunnerError("instructions_changed")
+            yield  # pragma: no cover - async context-manager protocol
+
+    dispatch = SimpleNamespace(creation_id=str(uuid4()), binding={"task_calibration": {}})
+    assert await chat._authorized(Principal(), dispatch) is False
+
+
+def test_attributed_defect_keeps_independent_helpfulness_failed_without_changing_other_criteria():
+    binding = bound_case([{"after_step": 1, "mode": "fields", "matches": {"budget": ["100"]}},
+        {"after_step": 2, "mode": "fields", "matches": {"budget": ["50"]}}])
+    value = {**typed_result(), "outcome": "needs_review", "issues": ["Synthetic clarification omitted"],
+        "root_cause": "communication", "model_assessment": {"root_cause": "knowledge"}}
+    report = typed_checks.evaluate(binding, observations(), value)
+    assert report["state"] == "FAIL" and not report["checks"]["independent_review_helpful"]
+    assert all(value for key, value in report["checks"].items() if key != "independent_review_helpful")
 
 
 @pytest.mark.parametrize("changed", ["model", "effort"])

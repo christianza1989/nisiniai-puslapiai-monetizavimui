@@ -207,11 +207,15 @@ async def test_high_protected_typed_quality_and_replay_keep_same_frozen_model_pr
     request = review.SessionTypedRequest(conversation_id=episode["conversation"]["conversation_id"],
         request_id=uuid4(), episode=episode["snapshot"], typed_expectations=reference)
     result = await review.run_session(p, request)
-    assert result["status"] == "succeeded" and result["typed_report"]["state"] == "PASS"
+    expected_state = "FAIL" if cause == "knowledge" else "PASS"
+    assert result["status"] == "succeeded" and result["typed_report"]["state"] == expected_state
     events, artifacts, job = await rows(c, str(request.conversation_id))
     assert job.payload["model_profile"]["reasoning_effort"] == "high"
     assert len(text_calls) == 2 and len(review_calls) == expected and len(p.fence.calls) == expected + 2
     assert [a.kind for a in artifacts] == ["quality"]
+    checks = artifacts[0].payload["typed_checks"]["checks"]
+    assert checks["independent_review_helpful"] is (cause != "knowledge")
+    assert all(value for key, value in checks.items() if key != "independent_review_helpful")
     bound = (await stored(c, str(request.conversation_id)))[0].payload["customer_text_binding"]
     assert all(execution.verified({"_execution": e.payload.get("execution")}, bound, "customer_quality")
         for e in events if e.kind == "quality_provider_usage")

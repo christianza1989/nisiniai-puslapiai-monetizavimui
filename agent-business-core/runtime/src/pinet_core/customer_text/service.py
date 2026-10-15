@@ -563,7 +563,7 @@ async def _authorized(principal, dispatch):
             result = binding == dispatch.binding and live(row, dispatch) and await protected_current(tx, row, dispatch)
             await final_authority(tx, session, creation, identity, binding)
             return result
-    except (ControlError, HTTPException, ValueError):
+    except (ControlError, HTTPException, ValueError, RunnerError):
         return False
 
 

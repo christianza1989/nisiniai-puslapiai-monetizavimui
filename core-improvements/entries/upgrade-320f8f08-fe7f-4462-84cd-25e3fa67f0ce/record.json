@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Explicit current-source private preview renewal reuses the strict initial importer after legitimate GUIDE/media evolution, which rejects the mutable site SHA and leaves current accepted-proof/S6 continuity unavailable.",
+  "category": "code",
+  "evidence": [
+    "Root actual renewal57196fb9-7cd7-4d78-8e29-bcddad454445 on sourceeb8fcd67 failed intake_artifact_changed after3successfulGUIDEs and20responsive media variants; original private request/response and immutable acceptance remain Root-owned.",
+    "Isolated real Node regression performs maintained GUIDE apply and media attach; unchanged strict importer still refuses evolvedsite with intake_artifact_changed, then missing readonly continuity helper fails1test1521.464ms. Log SHA256 effe98dd3a6d8b19ca9816ec2a4f697455531715450d58a563e977ffc2def18d. Earlier synthetic planning-brief fixture failures retained separately af3f5b15 and0a6f13ca."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_native_continuity.py",
+    "content-studio/scripts/customer-private-native-continuity.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of continuity admission/reader only, retain all append-only requests/receipts and original source/context/manifest/native content/media. Ordinary initial importer remains unchanged. No destructive history rollback.",
+  "id": "upgrade-320f8f08-fe7f-4462-84cd-25e3fa67f0ce",
+  "branch": "codex/verslomatika-private-native-continuity-20261015",
+  "baseSha": "eb8fcd67fef7bcbce3f7dc47844556ad3d32ff18",
+  "createdAt": "2026-10-15T20:56:56.218Z"
+}

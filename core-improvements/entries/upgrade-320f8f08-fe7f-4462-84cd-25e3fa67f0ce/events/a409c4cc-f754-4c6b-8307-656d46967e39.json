@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "1802 passed,8 skipped,67 subtests,2 existing Pydantic deprecation warnings,87.85s. SHA256 e5a96430c9bc79d28d3b316e97d23075cc363b9b1ccf4770afe89cf7d6ba48bc. Production source unchanged afterward; final focused suite adds one real Python/Node roundtrip test.",
+      "command": "python -X utf8 -B -m pytest -q -p no:cacheprovider agent-business-core/runtime/offline_tests (src/offline_tests PYTHONPATH and synthetic source revision)"
+    },
+    {
+      "result": "PASS",
+      "evidence": "46 passed/0failed41576.6744ms incl7new. SHA256 453ec6c1148a656fd954c2093421ba296c051e915ec48eaabbe707e60f2069e3. Retained original strict replay rejection, original artifact/media corruption, private unknown facts, native scope/partial/anchor failures; no case byte changes.",
+      "command": "node --test content-studio/test/private-native-continuity.test.mjs content-studio/test/customer-creation-intake.test.mjs content-studio/test/customer-editorial-preparation.test.mjs"
+    },
+    {
+      "result": "PASS",
+      "evidence": "53 passed/0failed79034.7718ms. SHA256 9c8c0af0cc739fa73f5eb864a5c4f3aeed790ef96a51ea26b2a08306d9e42b97. Existing canonical writer, immutable reviewed-copy/media receipts and workflow unaffected;99 Node total across disjoint files.",
+      "command": "node --test content-studio/test/customer-content-write.test.mjs content-studio/test/customer-content-workflow.test.mjs"
+    },
+    {
+      "result": "PASS",
+      "evidence": "84 passed3.87s (51 original+33 new). SHA256 41e73419be31a0cdb7df0639dda32614145093925b45ff6f6561ef472f4e3b1b. Current authority, exact original anchor/replay/failure retention, changed fingerprints/owner/source/accepted fences, strict output validation, actual Python-Node observer roundtrip; fake authority seams explicitly not RLS proof.",
+      "command": "python -X utf8 -B -m pytest -q -p no:cacheprovider offline_tests/test_private_native_continuity.py offline_tests/test_private_preview.py"
+    },
+    {
+      "result": "PASS",
+      "evidence": "5 tests collected0.33s SHA256 eb0e38dfaf66c41925942969197f8e21e0300f74098626a01f265c2ad76e777a. Actual dedicated PostgreSQL execution remains Root-owned and was not run by helper.",
+      "command": "python -X utf8 -B -m pytest -p no:cacheprovider --collect-only -q tests/test_private_native_continuity_pg.py with PINET_PRIVATE_PREVIEW_QA=0"
+    },
+    {
+      "result": "PASS",
+      "evidence": "All4 files Ruff clean; whitespace clean. Ruff logSHA256 a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "command": "python -m ruff check (4 scoped Python files); git diff --check"
+    }
+  ],
+  "note": "S40 source-only current-source private-native continuity, original immutable anchor evidence only; ordinary initial importer remains strict and no fallback/reimport. Outer bindingv1 supports existing0042; new observation retains originalsiteFileHash and marks every authority operation not-performed. Root owns actual PG/native-case/normal owner renewal/S6/adoption. No helper provider/DB/current-case/serving/browser actions. Known inherited whole-main journal debt previously reported forS39 remains outside this exact eb8→S40 scope; no whole-branch-main PASS claimed.",
+  "status": "local-verified",
+  "eventId": "a409c4cc-f754-4c6b-8307-656d46967e39",
+  "sequence": 3,
+  "at": "2026-10-15T21:19:01.842Z"
+}

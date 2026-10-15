@@ -225,7 +225,7 @@ export async function attachMedia(context,input) {
     } else {
       if(model.studioContextHash(site)!==receipt.importedSiteHash||model.revisionHash(page)!==input.expectedRevisionHash
           ||model.planningContextHash(page)!==input.expectedPlanningHash)fail('workflow_context_stale');
-      const patch=pagePatch({media:[{id:receipt.assetId},...page.media.map(a=>({id:a.id}))],
+      const patch=pagePatch({media:[...new Set([receipt.assetId,...page.media.map(a=>a.id)])].map(id=>({id})),
         editorial:{...page.editorial,featuredImageId:receipt.assetId}},site,page);
       const alreadyAttached=page.editorial.featuredImageId===receipt.assetId&&family.every(a=>page.media.some(m=>m.id===a.id));
       const updated=alreadyAttached?page:await model.editPage(site.id,page.id,patch,{expectedSiteHash:receipt.importedSiteHash,

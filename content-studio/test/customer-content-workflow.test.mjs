@@ -129,6 +129,21 @@ test('a first receipt for an already featured family preserves current review an
   await f.unchanged();
 });
 
+test('an already featured family at the canonical 60-variant limit stays a no-op',async t=>{
+  const f=await attachmentFixture(t);
+  f.mutate('const {readFile}=await import("node:fs/promises"),input='+JSON.stringify(f.request)+';'
+    +'const bytes=await readFile(input.sourcePath),ids=[];for(let i=0;i<15;i++){'
+    +'const a=await m.saveResponsiveAsset(siteId,{...input.metadata,alt:i?("Other inert family "+i):input.metadata.alt},bytes);ids.push(a.id);}'
+    +'const p=(await m.getSite(siteId)).pages.find(p=>p.id===input.pageId);'
+    +'await m.editPage(siteId,p.id,{media:ids.map(id=>({id})),editorial:{...p.editorial,featuredImageId:ids[0]}});');
+  const s=f.status(),p=s.pages.find(p=>p.pageId===f.request.pageId),before=await readFile(f.file);
+  assert.equal(p.mediaCount,60);
+  const request={...f.request,expectedSiteHash:s.expectedSiteHash,expectedRevisionHash:p.revisionHash,
+    expectedPlanningHash:p.planningHash};
+  assert.equal(f.ok(request).operation.result.changed,false);
+  assert.deepEqual(await readFile(f.file),before);await f.unchanged();
+});
+
 test('an amendment failure retains imported receipt and resumes the same real family',async t=>{
   const f=await attachmentFixture(t),input={...f.input,...f.request};
   const workflow=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;

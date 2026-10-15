@@ -13,4 +13,4 @@ def test_global_event_counter_does_not_bound_history_or_per_job_calls():
 
 def test_team_wire_advertises_overall_two_round_deadline():
     deadline = TeamView.model_json_schema()["properties"]["deadline_seconds"]
-    assert deadline["minimum"] == 30 and deadline["maximum"] == 600
+    assert deadline["minimum"] == 30 and deadline["maximum"] == 900

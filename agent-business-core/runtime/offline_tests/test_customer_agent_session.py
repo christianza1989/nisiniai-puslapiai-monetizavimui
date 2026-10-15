@@ -50,7 +50,8 @@ class Fence(TaskFence):
 
 
 def binding(scope):
-    return {"creation_id": str(scope.creation_id), "task_calibration": {"creation_id": str(scope.creation_id), "agent_id": str(uuid4()),
+    return {"creation_id": str(scope.creation_id), "model": chat.adapter.MODEL,
+        "task_calibration": {"creation_id": str(scope.creation_id), "agent_id": str(uuid4()),
         "config_revision_id": str(uuid4()), "config_revision": 1, "config_sha256": "c" * 64,
         "admission_id": str(uuid4()), "admission_fingerprint": "d" * 64,
         "episode_id": str(uuid4()), "script_sha256": "1" * 64, "execution_source_revision": scope.source_revision,

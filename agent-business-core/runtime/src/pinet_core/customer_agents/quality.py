@@ -6,13 +6,14 @@ from typing import Literal
 from uuid import UUID
 
 from fastapi import HTTPException
-from pydantic import Field
+from pydantic import Field, model_serializer
 
 from .. import knowledge
 from ..creation.service import digest
 from ..customer_profile import instructions
 from ..customer_profile import service as profiles
 from ..customer_profile.wire import AdmittedProfile
+from ..customer_text import execution
 from ..customer_text.adapter import MODEL
 from ..customer_text.adapter import VERSION as TRANSPORT
 from ..customer_text.wire import NeedValue
@@ -34,14 +35,24 @@ class Binding(Strict):
     admission_fingerprint: Digest
     profile: AdmittedProfile
     adapter: Literal[TRANSPORT]
-    model: Literal[MODEL]
+    model: Literal[MODEL, "gpt-6.1-sol"]
     task_calibration: Episode | None = None
+    execution_profile: execution.Pin | None = None
+
+    @model_serializer(mode="wrap")
+    def optional_profile(self, handler):
+        value = handler(self)
+        if self.execution_profile is None:
+            value.pop("execution_profile", None)
+        return value
 
 
 def retained(row):
     if row.payload.get("transport") != TRANSPORT or row.payload.get("test") is not True:
         raise ValueError("customer_quality_transport_conflict")
     value = Binding.model_validate(row.payload.get("customer_text_binding"))
+    if value.model != execution.text_model(value.model_dump(mode="json")):
+        raise ValueError("customer_quality_binding_conflict")
     profile, task = value.profile, value.task_calibration
     if (str(profile.business_id) != row.business_id or value.environment_id != row.environment_id
             or value.admission_id != profile.admission_id or value.registration_id != profile.registration_id
@@ -69,6 +80,8 @@ def parent_binding(binding):
     task = frozen["task_calibration"]
     material["task"] = ({key: task[key] for key in ("agent_id", "config_revision_id", "config_revision",
         "config_sha256", "specification")} if task else None)
+    if frozen.get("execution_profile") is not None:
+        material["execution_profile"] = frozen["execution_profile"]
     return digest({"contract": VERSION, "binding": material})
 
 
@@ -113,6 +126,8 @@ def need_state(fields):
 def need_receipts(row, events):
     """Full server state after each accepted patch; never a transcript or new score."""
     try:
+        frozen = row.payload["customer_text_binding"]
+        pin = execution.binding_pin(frozen)
         keys, sequence = {}, 0
         for event in events:
             if (type(event.sequence) is not int or event.sequence <= sequence or event.event_key in keys):
@@ -133,7 +148,8 @@ def need_receipts(row, events):
                     or not client.sequence < attempt.sequence < usage.sequence < event.sequence < reply.sequence
                     or reply.payload.get("status") != "succeeded"
                     or any(e.payload.get("request_id") != request for e in (attempt, usage, reply))
-                    or attempt.payload.get("model") != MODEL or usage.payload.get("model") != MODEL
+                    or not all(execution.reservation_matches(frozen, e.payload, "customer_text") for e in (attempt, usage))
+                    or pin is not None and not execution.verified({"_execution": usage.payload.get("execution")}, frozen, "customer_text")
                     or not attempt.payload.get("run_id")
                     or attempt.payload["run_id"] != usage.payload.get("run_id")
                     or type(attempt.payload.get("epoch")) is not int

@@ -72,13 +72,15 @@ def freeze(reference, snapshot, messages):
         raise ControlError(409, "protected_manifest_conflict")
     manifest = json.loads(raw.decode("utf-8"))
     frozen = Snapshot.model_validate(snapshot).model_dump(mode="json")
+    from ..customer_text import execution
+    pin = execution.retained(frozen["execution_profile"]) if frozen.get("execution_profile") is not None else None
     cases = manifest.get("cases")
     if (manifest.get("contract") not in {"private_customer_archetype_baseline.v1", "private_customer_archetype_baseline.v2"}
             or manifest.get("snapshot") != frozen or manifest.get("snapshot_sha256") != digest(frozen)
             or manifest.get("source_revision") != frozen["execution_source_revision"]
             or manifest.get("evaluator_sha256") != evaluation_contract.fingerprint()
-            or manifest.get("model_profile") != evaluator.profile()
-            or manifest.get("customer_model") != adapter.MODEL
+            or manifest.get("model_profile") != (evaluator.profile_high(pin) if pin is not None else evaluator.profile())
+            or manifest.get("customer_model") != (pin.text.model if pin is not None else adapter.MODEL)
             or not isinstance(cases, list) or not 6 <= len(cases) <= 100
             or manifest.get("corpus_sha256") != corpus_digest(manifest)):
         raise ControlError(409, "protected_manifest_conflict")

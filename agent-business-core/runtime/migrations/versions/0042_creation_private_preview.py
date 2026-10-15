@@ -59,6 +59,21 @@ def statements():
             f"CREATE POLICY private_intake_scope ON {table} USING({condition}) WITH CHECK({condition})",
             f"REVOKE ALL ON {table} FROM pinet_runtime", f"GRANT SELECT,INSERT ON {table} TO pinet_runtime"])
     sql.extend([f"GRANT UPDATE(run_id,lease_until) ON {REQUESTS} TO pinet_runtime",
+      """CREATE FUNCTION control_private_intake_membership_lock() RETURNS TRIGGER LANGUAGE plpgsql
+      SET search_path=pg_catalog,public AS $$BEGIN
+        -- Owner revocation and private intake commit share the existing User row lock.
+        -- Invoker rights only; no runtime owner-graph UPDATE grant is introduced.
+        IF TG_OP='DELETE' THEN
+          PERFORM 1 FROM public.control_users u WHERE u.id=OLD.user_id AND u.environment_id=OLD.environment_id FOR UPDATE;
+          RETURN OLD;
+        END IF;
+        PERFORM 1 FROM public.control_users u WHERE
+          (u.id=OLD.user_id AND u.environment_id=OLD.environment_id)
+          OR (u.id=NEW.user_id AND u.environment_id=NEW.environment_id)
+          ORDER BY u.environment_id,u.id FOR UPDATE;
+        RETURN NEW;END$$""",
+      "REVOKE ALL ON FUNCTION control_private_intake_membership_lock() FROM PUBLIC",
+      "CREATE TRIGGER private_intake_membership_lock BEFORE UPDATE OR DELETE ON control_memberships FOR EACH ROW EXECUTE FUNCTION control_private_intake_membership_lock()",
       f"""CREATE FUNCTION control_private_intake_request_immutable() RETURNS TRIGGER LANGUAGE plpgsql
       SET search_path=pg_catalog,public AS $$BEGIN
         IF TG_OP='DELETE' OR (to_jsonb(NEW)-ARRAY['run_id','lease_until']) IS DISTINCT FROM
@@ -143,5 +158,7 @@ def downgrade():
         raise RuntimeError("Retained private intake history requires explicit preservation")
     op.execute(f"DROP TABLE {RECEIPTS}")
     op.execute(f"DROP TABLE {REQUESTS}")
-    for function in ("control_private_intake_fence", "control_private_intake_receipt_immutable", "control_private_intake_request_immutable"):
+    op.execute("DROP TRIGGER private_intake_membership_lock ON control_memberships")
+    for function in ("control_private_intake_fence", "control_private_intake_receipt_immutable",
+            "control_private_intake_request_immutable", "control_private_intake_membership_lock"):
         op.execute(f"DROP FUNCTION {function}()")

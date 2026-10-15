@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "commit": "029469cc962c3a0d8dc8d0cce77d060611f836a8",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/156",
+  "note": "Created/attached draftPR156. Exactowned3fa→029coverage3shared0uncovered0errorsPASS and pairedhandoff05:44ZPASS. Root alreadyintegratedfunctional27fe, takeonlymetadata029 andoptionalPRreceipt; no duplicatefunctionalcherrypick. GitHub remote base646/mergeablefalse reported; exactconflictblocks notinspected and wholehistorymerge-readiness notclaimed.29native/431offline actualPASS retained, no helperprovider/serving/main/fullcalibration claim.",
+  "eventId": "fbf798d0-392e-4306-b24d-e1bb766454f4",
+  "sequence": 4,
+  "at": "2026-10-15T05:44:51.421Z"
+}

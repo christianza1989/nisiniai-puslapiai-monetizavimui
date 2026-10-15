@@ -30,3 +30,7 @@ Root owns Task intent/progression, portal integration, configuration and serving
 ## Delivery and adoption
 
 Current state: locally verified source `f8de263b4f86069669701fe5b36e6d0fd5a84411`, integrated and tested as exact owned bytes in Root `27fe2924`. Local verification is separate from PR review, main merge and serving adoption. Root owns operational activation and any later serving receipt. A scoped source revert can restore the previous execution gate; preserve all immutable receipts, first failures and journal history.
+
+Acceptance metadata commit `029469cc962c3a0d8dc8d0cce77d060611f836a8` contains the new immutable local-verified event `87c552d3-97aa-448a-a31f-ef027f46a361`. Exact owned `3fa5b2a..029469c` coverage: PASS, 3 shared paths, zero uncovered/errors. Paired handoff freshness PASS at 2026-10-15T05:44Z against unchanged main808/publicec8; own checkout clean.
+
+Created and attached [draft PR 156](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/156). Root already integrated the functional source: take **only acceptance metadata `029469c`**, and optionally this later PR receipt, avoiding duplicate source cherry-picks. GitHub creation reported remote base `6463878d` and `mergeable=false`; exact conflict blocks were not inspected. This draft records the packet; it is not a declaration that its broader divergent history is ready for a whole-branch merge.

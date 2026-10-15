@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Scoped migration-anchor hardening only: preserve literal bytes and semantic AND/OR tree while accepting PostgreSQL operand casts/grouping. Initial3FAIL transcript retained: two actual literal collisions and an equivalent grouping fixture; grouping fixture corrected to a non-equivalent precedence witness.13offlinePASS after correction, RuffPASS. Proof SQL/DDL/PG selectors unchanged, c077 frozen QA remains valid for native proof execution; actual PG pending. No provider/operational changes.",
+  "checks": [
+    {
+      "command": "python -B -m pytest -q offline_tests/test_workspace_episode_schema.py",
+      "result": "PASS",
+      "evidence": "13 passed in0.08s; exact canonical tree/deparse matching, changed literal/boolean precedence refusal, unknown/ambiguous anchors and reversible legacy branch."
+    },
+    {
+      "command": "ruff check src/pinet_core/workspace_team/episode_schema.py offline_tests/test_workspace_episode_schema.py",
+      "result": "PASS",
+      "evidence": "All checks passed."
+    }
+  ],
+  "eventId": "9d7a9279-ecb5-4c29-b3e8-3875ed25bc42",
+  "sequence": 3,
+  "at": "2026-10-15T04:26:18.733Z"
+}

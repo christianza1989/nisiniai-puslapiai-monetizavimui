@@ -29,7 +29,9 @@ regression and synthetic native metadata under the maintained customer fixture.
 No operational DB, credentials, paid provider, model setting or serving flag is
 part of this window. Root can launch private QA from the frozen source and send
 sanitized diagnostics. Offline anchor checks: 10 PASS; scoped Ruff PASS; actual
-PG execution is pending. Do not describe collected tests as executed acceptance.
+PG execution is pending. The subsequent anchor hardening has 13 offline PASS;
+it preserves literals and semantic boolean grouping, with no proof SQL change.
+Do not describe collected tests as executed acceptance.
 
 Downgrade refuses any retained native answer; otherwise it reverse-patches the
 exact branch and CHECK, then removes only the new helper/FK/column. Historical

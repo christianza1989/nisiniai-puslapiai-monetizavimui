@@ -60,6 +60,17 @@ def test_missing_changed_or_ambiguous_check_is_not_replaced(rows):
         author_check_sql(rows)
 
 
+@pytest.mark.parametrize("changed", [
+    OLD_AUTHOR_CHECK.replace("(author_type='user' AND ", "author_type='user' AND (", 1).replace(
+        "kind='owner_message') OR", "kind='owner_message' OR", 1)+")",
+    OLD_AUTHOR_CHECK.replace("'user'", "'user::text'"),
+    OLD_AUTHOR_CHECK.replace("'owner_message'", "'owner_ message'"),
+])
+def test_check_normalization_never_erases_semantic_grouping_or_literal_content(changed):
+    with pytest.raises(RuntimeError, match="Unknown or ambiguous"):
+        author_check_sql([{"name": "changed", "expression": changed}])
+
+
 def test_proof_uses_only_native_receipts_and_existing_scoped_task_no_task_result_or_grade():
     sql = proof_sql()
     assert "SECURITY INVOKER" in sql and "SECURITY DEFINER" not in sql

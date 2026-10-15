@@ -10,7 +10,7 @@ from ..creation import adapter as shared_adapter
 from ..creation.service import binding, daily_limit_reached, digest, lease_deadline
 from ..models import new_id, utcnow
 from ..tasks.codex_transport import RunnerError
-from . import adapter, service, sources
+from . import adapter, service, source_context, sources
 from .models import DiscoveryAttempt, Report
 from .wire import PlanReview, Reply
 
@@ -158,7 +158,8 @@ async def run_team(claimed, role_runner, *, progress=None):
             row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
             if not row or not job or not await service.authority(tx, job) or job.status != "running":
                 raise RunnerError("authorization_revoked")
-            job.usage = {**(job.usage or {}), "source_reads": observations}
+            job.usage = {**(job.usage or {}), "source_reads": observations,
+                         source_context.MARKER: source_context.VERSION}
     reviews = []
     for round_number in (1, 2):
         sequence, pin, seconds = await reserve(claimed, "creator", round_number)

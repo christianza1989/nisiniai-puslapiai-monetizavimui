@@ -10,6 +10,7 @@ from uuid import UUID
 from sqlalchemy import select
 
 from ..config import settings
+from ..control.routes import ControlError
 from ..tasks.codex_transport import RunnerError, stop_process
 from .adapter import ROOT, RUNTIME
 from .renderer import normalize
@@ -166,20 +167,27 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
             raise asyncio.CancelledError
 
 
-async def import_draft(draft, *, creation_id, revision, canonical_host, still_authorized, seconds=20):
+async def import_draft(draft, *, creation_id, revision, canonical_host, still_authorized, seconds=20, source_context=None):
     if not canonical_host:
         raise RunnerError("studio_domain_required")
     identity = str(UUID(creation_id))
     if not isinstance(revision, int) or isinstance(revision, bool) or revision < 1:
         raise RunnerError("studio_intake_failed")
     draft = normalize(draft)
+    extra = {}
+    if source_context is not None:
+        from ..business_discovery.source_context import validate
+        try:
+            extra["sourceContext"] = validate(source_context, creation_id=identity)
+        except ControlError as error:
+            raise RunnerError(error.code) from None
     node, script, artifacts, environment = configuration()
     revision_dir = artifacts / "customer-content" / identity / f"revision-{revision}"
     # Business contact/facts cannot be inferred from generated claims or an account email.
     value = await _execute([node, script], {"creationId": identity, "acceptedRevision": revision,
         "sourceHash": digest(draft), "draft": draft, "canonicalHost": canonical_host,
         "artifactsRoot": str(artifacts), "dataDir": str(revision_dir / "data"), "outputDir": str(revision_dir / "output"),
-        "verifiedFacts": [], "knownContact": {"email": "", "phone": ""}, "operatorName": ""},
+        "verifiedFacts": [], "knownContact": {"email": "", "phone": ""}, "operatorName": "", **extra},
         environment, still_authorized, min(20, seconds))
     if (not isinstance(value, dict) or value.get("version") != "customer-content-intake.v1"
             or value.get("creationId") != identity or value.get("acceptedRevision") != revision
@@ -187,6 +195,8 @@ async def import_draft(draft, *, creation_id, revision, canonical_host, still_au
             or value.get("fullF1") != "UNVERIFIED" or value.get("launch") != "UNVERIFIED"
             or value.get("deployment") != "not-performed"):
         raise RunnerError("studio_intake_failed")
+    if source_context is not None and value.get("sourceContextSha256") != extra["sourceContext"]["contextSha256"]:
+        raise RunnerError("invalid_discovery_source_context")
     return value
 
 

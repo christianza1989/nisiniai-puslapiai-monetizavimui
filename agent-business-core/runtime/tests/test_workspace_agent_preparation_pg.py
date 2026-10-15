@@ -1,6 +1,9 @@
 """Ordinary owner API, canonical native fixtures and provider-zero atomic effects."""
 import asyncio
+import hashlib
+import sys
 from datetime import timedelta
+from pathlib import Path
 from uuid import uuid4
 
 import pytest
@@ -34,12 +37,14 @@ from pinet_core.workspace_topics.models import Topic
 
 
 @pytest.fixture
-async def prepare_customer(text_customer, monkeypatch):  # noqa: F811
+async def prepare_customer(text_customer, monkeypatch, tmp_path):  # noqa: F811
     c = text_customer
     cfg = settings()
     for key, value in {"workspace_topics_enabled": True, "workspace_team_enabled": True,
             "workspace_team_runner_enabled": True, "workspace_team_actor_ids": [], "chat_daily_limit": 20,
-            "customer_agents_enabled": True}.items():
+            "customer_agents_enabled": True, "chat_codex_executable": sys.executable,
+            "chat_workspace": str(tmp_path), "chat_runner_seconds": 30,
+            "chat_codex_sha256": hashlib.sha256(Path(sys.executable).read_bytes()).hexdigest()}.items():
         monkeypatch.setattr(cfg, key, value)
     monkeypatch.setattr(service, "source_current", lambda: True)
     monkeypatch.setattr(agents, "source_current", lambda: True)

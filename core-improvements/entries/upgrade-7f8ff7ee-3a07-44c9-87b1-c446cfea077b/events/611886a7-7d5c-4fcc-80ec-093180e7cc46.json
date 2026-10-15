@@ -1,0 +1,21 @@
+{
+  "status": "local-verified",
+  "note": "Owner explicitly requested the same bounded action retry after sharing browser permission settings. Same original exec_command path rejected again before process start at 2026-10-14T16:11:35.668Z; no alternate transport or policy weakening. Actual read-only live API confirms both policies false, bindings/jobs zero. Isolated module enable/browser regression passed 40 tests. Host deny-rule and real Facebook publication remain unresolved; this is verification of diagnosis/report only, not full live acceptance.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/135",
+  "commit": "99da1fb978bd5867e0e1c457ae06e32cef31c3aa",
+  "checks": [
+    {
+      "command": "pytest tests/test_facebook_browser.py tests/test_facebook_browser_extensions.py -q",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_LIVE_TEST_2026-10-14.md: 40 passed in 24.02 seconds, isolated synthetic environments"
+    },
+    {
+      "command": "Read-only actual live policy/bindings/jobs after original-path retry",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_LIVE_TEST_2026-10-14.md: module/browser false, bindings 0, jobs 0; retry pre-process denial preserved privately"
+    }
+  ],
+  "eventId": "611886a7-7d5c-4fcc-80ec-093180e7cc46",
+  "sequence": 5,
+  "at": "2026-10-14T16:15:03.833Z"
+}

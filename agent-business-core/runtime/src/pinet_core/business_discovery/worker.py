@@ -10,7 +10,7 @@ from ..creation import adapter as shared_adapter
 from ..creation.service import binding, daily_limit_reached, digest, lease_deadline
 from ..models import new_id, utcnow
 from ..tasks.codex_transport import RunnerError
-from . import adapter, service, sources
+from . import adapter, service, source_context, sources
 from .models import DiscoveryAttempt, Report
 from .wire import PlanReview, Reply
 
@@ -26,13 +26,20 @@ async def claim(discovery_id=None):
                                 {"k": "creation-worker:" + cfg.environment})
         candidates = (await discovery.execute(text("SELECT * FROM control_discovery_candidates(:e)"),
                                                 {"e": cfg.environment})).mappings().all()
-        if any(c["status"] == "running" and c["lease_until"] and c["lease_until"] > utcnow() for c in candidates):
+        global_candidates = candidates
+        if discovery_id is not None:
+            from ..site_build.selectors import selected
+            candidates = await selected(discovery, "discovery", cfg.environment, discovery_id)
+        if any(c["status"] == "running" and c["lease_until"] and c["lease_until"] > utcnow()
+               for c in [*global_candidates, *candidates]):
             return None
         for candidate in candidates:
             async with scope(user=candidate["user_id"]) as tx:
                 row, job = await service.locked(tx, candidate["id"], candidate["user_id"])
                 if not row or not job or discovery_id and row.id != discovery_id:
                     continue
+                from ..creation import execution_profiles as profiles
+                await profiles.ensure_current(tx, "discovery", job)
                 if job.status == "running":
                     await service.fail(tx, row, job, "worker_interrupted")
                     continue
@@ -48,7 +55,7 @@ async def claim(discovery_id=None):
                     "scope": "business_discovery_plan_only", "permitted_web_actions": cfg.business_discovery_research_limit or None}
                 job.status, job.run_id = "running", new_id()
                 job.instruction_hash, job.lease_until = adapter.fingerprint(), lease_deadline()
-                job.deadline_at = utcnow() + timedelta(seconds=min(600, cfg.creation_runner_seconds * 2))
+                job.deadline_at = utcnow() + timedelta(seconds=adapter.deadlines.job_seconds(profiles.selected()))
                 row.status, row.updated_at = "running", utcnow()
                 await tx.flush()
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
@@ -60,6 +67,11 @@ async def heartbeat(claimed):
     async with scope(user=claimed["user_id"]) as tx:
         row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
         if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
+            return False
+        from ..creation import execution_profiles as profiles
+        try:
+            await profiles.ensure_current(tx, "discovery", job)
+        except RunnerError:
             return False
         code = None
         if row.status == "archived" or not await service.authority(tx, job):
@@ -81,10 +93,15 @@ async def reserve(claimed, role, round_number):
         row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
         if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
             raise RunnerError("authorization_revoked")
+        from ..creation import execution_profiles as profiles
+        profile = await profiles.ensure_current(tx, "discovery", job)
         if not await service.authority(tx, job) or not job.deadline_at or job.deadline_at <= utcnow():
             raise RunnerError("authorization_revoked")
         if not job.lease_until or job.lease_until <= utcnow() or job.instruction_hash != adapter.fingerprint():
             raise RunnerError("instructions_changed")
+        if profile == profiles.SOL_HIGH and adapter.deadlines.role_seconds(
+                profile, role, (job.deadline_at - utcnow()).total_seconds()) <= 0:
+            raise RunnerError("run_timeout")
         await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                          {"k": "creation-admission:" + cfg.environment})
         params = {"e": cfg.environment, "s": utcnow().replace(hour=0, minute=0, second=0, microsecond=0)}
@@ -95,10 +112,14 @@ async def reserve(claimed, role, round_number):
         count = await tx.scalar(select(func.count()).select_from(DiscoveryAttempt).where(DiscoveryAttempt.job_id == job.id))
         if count >= 6:
             raise RunnerError("attempt_limit")
+        # Locks/quota reads consume the same persisted clock; never pay for an exhausted role.
+        if profile == profiles.SOL_HIGH and adapter.deadlines.role_seconds(
+                profile, role, (job.deadline_at - utcnow()).total_seconds()) <= 0:
+            raise RunnerError("run_timeout")
         attempt = DiscoveryAttempt(id=new_id(), discovery_id=row.id, job_id=job.id,
             sequence=count + 1, role=role, round_number=round_number, run_id=job.run_id,
             source_revision=job.source_revision, instruction_hash=adapter.instructions(role)[1],
-            model=shared_adapter.role_model(role), **binding(row))
+            model=shared_adapter.pipeline_model(role), **binding(row))
         tx.add(attempt)
         await tx.flush()
         return attempt.sequence, attempt.instruction_hash, (job.deadline_at - utcnow()).total_seconds()
@@ -137,7 +158,8 @@ async def run_team(claimed, role_runner, *, progress=None):
             row, job = await service.locked(tx, claimed["job_id"], claimed["user_id"])
             if not row or not job or not await service.authority(tx, job) or job.status != "running":
                 raise RunnerError("authorization_revoked")
-            job.usage = {**(job.usage or {}), "source_reads": observations}
+            job.usage = {**(job.usage or {}), "source_reads": observations,
+                         source_context.MARKER: source_context.VERSION}
     reviews = []
     for round_number in (1, 2):
         sequence, pin, seconds = await reserve(claimed, "creator", round_number)
@@ -201,6 +223,11 @@ async def execute_once(*, discovery_id=None, role_runner=None):
             if not row or not job or job.status != "running" or job.run_id != claimed["run_id"]:
                 return True
             result_allowed = True
+            from ..creation import execution_profiles as profiles
+            try:
+                await profiles.ensure_current(tx, "discovery", job)
+            except RunnerError:
+                failure, result_allowed = "instructions_changed", False
             if not await service.authority(tx, job) or row.status == "archived":
                 failure = "authorization_revoked"
                 result_allowed = False

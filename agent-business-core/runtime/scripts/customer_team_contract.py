@@ -16,6 +16,8 @@ def contract():
         [("get", "/customer/v2/creations/{creation_id}/team", "getCustomerCreationTeam", "TeamView", 200, None, True)], private=True)
     value["info"]["description"] = ("Actual separate creator/critic/coordinator dispatch reservations and bounded summaries. "
         "No raw reasoning/trace; exact candidate-bound review and observed check receipts. "
+        "Attempt models are source-bound to immutable server admission profiles; a known Sol creator output "
+        "requires an explicitly selected local/test profile. This output enum is not a client model selector. "
         "Two rounds/six calls/overall deadline per job, each call charged before dispatch. "
         "draft_ready is private reviewed draft only; fullF1 and launch remain UNVERIFIED. "
         "needs_review is a sidecar projection; existing creation.v1 remains unchanged. "

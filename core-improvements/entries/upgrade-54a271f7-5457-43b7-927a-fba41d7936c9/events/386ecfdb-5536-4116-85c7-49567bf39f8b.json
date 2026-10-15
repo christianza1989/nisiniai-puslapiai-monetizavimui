@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Reviewed peer canonical Session provisioning integrated; root native Task preparation effect path accepted in isolated provider-zero QA. Existing deferred SQL fence enforced before Task terminal transition inside atomic effect savepoint. Actual uncaught ControlError and post-savepoint ORM expiration failures repaired in maintained worker; original failures and mistaken Foundation test assertion retained in handoff/private sanitized logs. No migration or authority relaxation, original preview mutation, paid model, Foundation/calibration/activation/normal-account or whole-platform acceptance. Portal hookup still in progress.",
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_workspace_agent_preparation_pg.py tests/test_workspace_agent_preparation.py tests/test_workspace_team_pg.py tests/test_control_tasks.py -q -x",
+      "result": "PASS",
+      "evidence": "64PASS250.28s; docs/handoffs/VERSLOMATIKA_WORKSPACE_AGENT_PREPARATION_S4_2026_10_14.md; private sanitized agent-preparation-worker-regression.log"
+    },
+    {
+      "command": "ruff check src/pinet_core/workspace_team src/pinet_core/tasks/worker.py tests/test_workspace_agent_preparation.py tests/test_workspace_agent_preparation_pg.py",
+      "result": "PASS",
+      "evidence": "Current owned source lint passes;11native effect cases and prior20offline/S2baseline retained"
+    }
+  ],
+  "eventId": "386ecfdb-5536-4116-85c7-49567bf39f8b",
+  "sequence": 4,
+  "at": "2026-10-14T08:10:10.503Z"
+}

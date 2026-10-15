@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "S28 nine-path bridge implemented; exact report job/owner/source/succeeded binding, explicit reader9000 code-point clipping, whole entries65536bytes/12, claims UNVERIFIED, frozen heartbeat/intake acceptance and native request/manifest SHA. No legacy backfill, actualcase/provider/serving/DBschema changes. Initial1collectionERROR0.21s; intermediate3FAIL76PASS2ERROR5.25s fixture/diagnostic truncation; then1FAIL79PASS3.97s exposed None source context and was fixed failclosed. Final focused83PASS4.97s/RuffPASS; native5collected0.28s only, Root-owned actual QA pending. Broader4FAIL543PASS7SKIP29.50s retained; same4FAIL2.28s unchanged7e79 baseline, authorized separate3file test-only followup. See narrow decision doc for exact boundaries.",
+  "eventId": "eed203cb-d7aa-4302-96b3-fe765af7fc3c",
+  "sequence": 2,
+  "at": "2026-10-15T09:06:45.799Z"
+}

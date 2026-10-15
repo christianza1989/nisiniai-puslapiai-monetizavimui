@@ -121,6 +121,11 @@ async def enqueue(tx, row, session, message, key, fingerprint):
         raise ControlError(503, "discovery_unavailable")
     from ..creation.service import quota
     await quota(tx, session.user_id)
+    from ..creation import execution_profiles as profiles
+    try:
+        await profiles.admission(tx)
+    except profiles.RunnerError:
+        raise ControlError(503, "discovery_runner_unavailable") from None
     row.job_sequence += 1
     job = DiscoveryJob(id=new_id(), discovery_id=row.id, session_id=session.id,
         sequence=row.job_sequence, base_revision=row.current_revision, message=message,
@@ -206,6 +211,8 @@ async def approve(tx, session, row, value):
     creation = await create_own(tx, session, CreationStart(
         portfolio_id=row.portfolio_id, display_name=plan.business_name, idea=plan.summary,
         canonical_host=plan.canonical_host_candidate, idempotency_key=value.idempotency_key))
+    from .source_context import build
+    build(creation, row, report, await tx.get(DiscoveryJob, report.job_id), plan.model_dump(mode="json"))
     proof = BuildApproval(id=new_id(), discovery_id=row.id, report_id=report.id,
         report_revision=report.revision, report_sha256=report.material_hash,
         creation_id=creation.id, session_id=session.id, idempotency_key=key,
@@ -246,18 +253,22 @@ async def approved_build_context(tx, creation):
     if value["reply"]["state"] != "plan_ready" or len(value["reviews"]) != 2 or not all(
             r["approved"] and r["candidate_sha256"] == digest(value["reply"]) for r in value["reviews"]):
         raise ControlError(503, "invalid_approved_plan")
-    return {"discovery_id": parent.id, "report_revision": report.revision,
+    result = {"discovery_id": parent.id, "report_revision": report.revision,
             "report_sha256": report.material_hash, "source_revision": report.source_revision,
             "plan": value["reply"]["plan"]}
+    from .source_context import build
+    context = build(creation, parent, report, await tx.get(DiscoveryJob, report.job_id), result["plan"])
+    if context is not None:
+        result["sourceContext"] = context
+    return result
 
 
-async def require_agent_foundation(tx, creation):
-    """New approved-plan builds cannot use Registration alone to bypass foundation.
+async def require_agent_foundation(tx, creation, *, session=None):
+    """Registration alone cannot bypass current native Foundation evidence.
 
-    The current build adapter only produces a private draft. Until a maintained
-    actual foundation proof exists, its authoritative state is UNVERIFIED. This
-    gate grants nothing, edits no history and does not migrate legacy businesses.
-    Disabling discovery does not let an already linked build bypass the gate.
+    An immutable complete receipt and current native/source/evidence pins satisfy
+    only the private draft precondition. Runtime/calibration/channel gates remain
+    independent. Historical approvals and legacy businesses are not rewritten.
     """
     if not await schema_ready(tx):
         if settings().business_discovery_enabled:
@@ -268,6 +279,9 @@ async def require_agent_foundation(tx, creation):
         return
     if binding(approval) != binding(creation):
         raise ControlError(503, "invalid_approved_plan")
+    from ..site_build import receipts
+    if await receipts.ready(tx, session, creation):
+        return
     raise ControlError(409, "website_foundation_not_ready")
 
 

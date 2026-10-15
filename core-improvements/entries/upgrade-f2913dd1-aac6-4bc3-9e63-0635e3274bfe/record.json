@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Canonical loopback verifier sends canonical Host while maintained local-preview admission deliberately rejects that host, blocking private native completion transport",
+  "evidence": [
+    "Readonly actual public910 proxy/content-model profile probe: previewqa local-preview canonical Host private-preview.lt404 while loopback route200; canonical verify-site-completion always sends package.canonicalHost. Foundation renderer probe does the same. Headers absent are a separately owned public fix; original host isolation remains correct."
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs",
+    "SKILLS/niche-site-audit/SKILL.md",
+    "SKILLS/catalog.json",
+    "content-studio/scripts/customer-site-foundation.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped transport reversion leaves canonical/default/hosted inspection and all existing proof/audit history intact; retain original mismatch and rerun local-preview/retained evidence tests. No host-policy, quality threshold, runtime or channel expansion.",
+  "id": "upgrade-f2913dd1-aac6-4bc3-9e63-0635e3274bfe",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "8b2f9a8c3b267bc4ed05378692d2c906d87a3d07",
+  "createdAt": "2026-10-14T10:45:32.649Z"
+}

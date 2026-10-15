@@ -6,6 +6,52 @@ import path from 'node:path';
 import os from 'node:os';
 import { spawnSync } from 'node:child_process';
 import { stableV2 } from '../src/content-package-v2.mjs';
+import {sourceFixture,sourceDigest} from './discovery-source-context.fixture.mjs';
+
+test('source context is optional in legacy intake and never silently serialized as null',async t=>{
+  const f=await sandbox(t),result=f.call();assert.equal(result.status,0);
+  const directory=path.dirname(f.input.dataDir),bytes=await readFile(path.join(directory,'intake-context.json'));
+  assert.ok(!Object.hasOwn(JSON.parse(bytes),'sourceContext'));assert.ok(!Object.hasOwn(result.value,'sourceContextSha256'));
+  const replay=f.call({...f.input,sourceContext:undefined});assert.equal(replay.status,0);assert.equal(replay.value.replayed,true);
+  assert.deepEqual(await readFile(path.join(directory,'intake-context.json')),bytes);
+});
+test('source context provenance is hash-bound through native intake and exact replay without business-fact adoption',async t=>{
+  const f=await sandbox(t);f.input.sourceContext=sourceFixture(f.input.creationId,'ą'.repeat(9000));
+  const result=f.call();assert.equal(result.status,0,JSON.stringify(result.value));
+  const directory=path.dirname(f.input.dataDir),context=JSON.parse(await readFile(path.join(directory,'intake-context.json')));
+  assert.deepEqual(context.sourceContext,f.input.sourceContext);assert.equal(result.value.sourceContextSha256,f.input.sourceContext.contextSha256);
+  assert.deepEqual(context.verifiedFacts,[]);assert.deepEqual(context.knownContact,{email:'',phone:''});assert.equal(context.operatorName,'');
+  const site=JSON.parse(await readFile(f.sitePath()));assert.equal(site.facts,'');assert.deepEqual(site.contact,{email:'',phone:''});
+  assert.equal(site.operatorName,'');assert.ok(site.pages.every(p=>!p.approval&&!p.publishedRevision&&p.externalLinks.every(s=>!s.verified)));
+  const paths=['source-draft.json','intake-context.json','intake-manifest.json'];
+  const before=await Promise.all(paths.map(p=>readFile(path.join(directory,p))));
+  assert.equal(f.call().value.replayed,true);
+  const changed=structuredClone(f.input);changed.sourceContext.sources[0].title='Changed source title';
+  changed.sourceContext.contextSha256=sourceDigest(Object.fromEntries(Object.entries(changed.sourceContext).filter(([k])=>k!=='contextSha256')));
+  assert.equal(f.call(changed).value.code,'intake_revision_conflict');
+  for(let i=0;i<paths.length;i++)assert.deepEqual(await readFile(path.join(directory,paths[i])),before[i]);
+});
+test('source context rejects foreign or corrupt provenance before creating accepted native artifacts',async t=>{
+  const f=await sandbox(t);
+  for(const value of [null,sourceFixture(),{...sourceFixture(f.input.creationId),contextSha256:'f'.repeat(64)}]) {
+    assert.equal(f.call({...f.input,sourceContext:value}).value.code,'invalid_discovery_source_context');
+    await assert.rejects(readFile(path.join(path.dirname(f.input.dataDir),'source-draft.json')),e=>e.code==='ENOENT');
+  }
+});
+test('source context loader accepts hash-sealed claims but rejects a mismatching native provenance pin',async t=>{
+  const f=await sandbox(t);f.input.sourceContext=sourceFixture(f.input.creationId);assert.equal(f.call().status,0);
+  const workflow=path.resolve(import.meta.dirname,'../scripts/customer-content-workflow.mjs');
+  const observe=()=>{
+    const r=spawnSync(process.execPath,[workflow],{input:JSON.stringify({...f.input,command:'status',draft:undefined,
+      verifiedFacts:undefined,operatorName:undefined,sourceContext:undefined}),encoding:'utf8',windowsHide:true,
+      env:{...process.env,STUDIO_NETWORK_SETTINGS:path.join(f.directory,'network.json')}});
+    return {status:r.status,value:JSON.parse(r.status===0?r.stdout:r.stderr)};
+  };
+  assert.equal(observe().status,0);
+  const manifestPath=path.join(path.dirname(f.input.dataDir),'intake-manifest.json');
+  const manifest=JSON.parse(await readFile(manifestPath,'utf8'));manifest.sourceContextSha256='f'.repeat(64);
+  await writeFile(manifestPath,JSON.stringify(manifest));assert.equal(observe().value.code,'writer_intake_binding_mismatch');
+});
 
 const script = path.resolve(import.meta.dirname, '../scripts/customer-creation-intake.mjs');
 const digest = value => createHash('sha256').update(stableV2(value), 'utf8').digest('hex');
@@ -32,6 +78,25 @@ function draftFixture() {
     language_review: 'Tekstas peržiūrėtas kaip sintetinis testas; tikra redakcinė peržiūra neatlikta.',
     remaining_gates: ['Patikrinti faktinius mokymo pajėgumus.', 'Parengti tikrus temos vaizdus.', 'Patikrinti kontaktinio laiško pristatymą.'] };
 }
+test('accepted Creator internal Markdown becomes native known-page links at intake',async t=>{
+  const f=await sandbox(t);
+  f.input.draft.pages[0].sections[0].body='Pasiruoškite ir [rinkitės užduotį](/uzduoties-pasirinkimas/).';
+  update(f.input);const result=f.call();assert.equal(result.status,0,JSON.stringify(result.value));
+  const site=JSON.parse(await readFile(f.sitePath()));
+  const block=site.pages[0].body.find(block=>block.type==='richParagraph');
+  assert.equal(block.content[1].target.pageId,site.pages[1].id);
+  assert.equal(block.content[1].text,'rinkitės užduotį');
+  assert.ok(site.pages.every(page=>page.approval===null&&page.publishedRevision===null));
+});
+test('unknown inline destination remains exact original text and blocks native readiness without losing private draft',async t=>{
+  const f=await sandbox(t),text='Palyginkite [nežinomą puslapį](/dar-nera/) prieš sprendimą.';
+  f.input.draft.pages[0].sections[0].body=text;update(f.input);
+  assert.equal(f.call().status,0);
+  const site=JSON.parse(await readFile(f.sitePath())),home=site.pages[0];
+  assert.equal(home.body.find(block=>block.type==='paragraph').text,text);
+  assert.ok(home.factChecks.some(note=>note.includes('neišspręstų vidinių nuorodų')));
+  assert.equal(home.approval,null);assert.equal(home.publishedRevision,null);
+});
 async function sandbox(t) {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'creation-intake-'));
   t.after(async () => { assert.ok(path.basename(directory).startsWith('creation-intake-')); await rm(directory, { recursive: true, force: true }); });

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Closed scenario contract transport gap: legacy CreationRoute16KiB could not accept the declared eight4000-codepoint messages. New route-only subclass512KiB covers bounded Unicode/JSON escapes; all old team routes retain16KiB. Added actual Unicode eight-step admission/cancel and nonbusiness zero-preflight regressions, separated disabled actor403 from unavailable native503. 60offlinePASS0.91s/RuffPASS. Initial test inspector failed on FastAPI lazy IncludedRouter and was corrected to inspect explicit child route; original result retained, no runtime route weakening. Full nativeAPI rerun pending.",
+  "eventId": "4843b811-7048-4164-81fc-d516a74aa278",
+  "sequence": 6,
+  "at": "2026-10-15T05:01:25.272Z"
+}

@@ -1,0 +1,9 @@
+# Continuation review fences
+
+Root reserves issue66 comment6172006398, base5a0591e4f0582576a783b2f925cc693d50aacbd4/public1a26f289092cecadc5799de898e809dc1769498a after paired successful main fetch. Peer review of S6 found two concrete cases. Dedicated restricted-PG baseline1PASS/3FAIL41.25s is retained at runtime/artifacts/workspace-ui/build-continuation-review-first.log; providers0 and original preview/schema0032 unchanged.
+
+Late Account unverification and Membership disable after restricted INSERT already reject COMMIT through forced Creation RLS, with the misleading revision-required boundary. No unauthorized COMMIT was observed. Additive0036 adds an explicit deferred verified-account/enabled-owner-membership actor trigger, retaining0035 bytes, immutable rows, historical authorization/material/source and the original revision/native-proof fence. New POST admission requires that trigger; safe historical reads/controller eligibility continue using the existing table guards, so a missing new trigger cannot create an older-approval fallback.
+
+A superseded UUID reproducibly returned current:true after a newer continuation under another Session. Every current observation now requires the exact latest row before validating its Session/material. Historical UUID identity remains replayable and immutable, but it is never renewed or selected when the latest is revoked/expired/stale. Controller execution already selected latest; no execution fallback defect was observed.
+
+Regression covers restricted INSERT then concurrent actor loss before deferred COMMIT, unchanged history and zero admitted guide on revoked latest, exact superseded replay, existing source/session/revision/archive/retry/foreign-owner cases, and missing new-trigger admission. Downgrade refuses retained rows and never weakens their actor fence. This source fix is separate from ordinary runtime migration/adoption, semantic F1 acceptance, calibration and channel activation.

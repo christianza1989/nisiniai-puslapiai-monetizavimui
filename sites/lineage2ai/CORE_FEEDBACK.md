@@ -1,0 +1,13 @@
+# Facebook API įgyvendinimo patirtis
+
+2026-10-14. Bendrame modulyje nebuvo oficialaus Page siuntėjo: legacy `/actions/{id}/send` visada grąžino 503. Savininko naujai užsakytam API pridėtas bendras, nuo domeno nepriklausomas transportas ir durable eilė. Upgrade `aeaa2ac8-6c85-47e3-81a7-6373e9a829b8`, issue146 / PR135.
+
+Mišraus API / desktop darbo regresija atkūrė bendros kvotos klaidą: po API bandymo desktop dar leido naują claimed užduotį, nors limitas buvo 1. Pataisytas abiejų transportų bandymų skaičiavimas. Originalus FAIL išlaikytas [patikroje](../../docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md); upgrade `06e6ba33-e9fb-4262-9576-ed0531b68e1d`.
+
+Pakeitimai patikrinti izoliuotai; main merge, actual runtime prieiga ir tikra publikacija dar nepriimti. Jokio komercinio rezultato, Page tokeno, žmogaus duomenų ar raw Facebook ekrano čia nėra. [TOOLS](TOOLS.md) atskiria pasirinktą core, katalogo alternatyvas, kainas ir gyvą priklausomybę.
+
+Tikras Meta prijungimas parodė dokumentacijos / platformos scope neatitikimą: suteikiama `pages_read_user_content`, ne guide minėta `pages_read_user_engagement`. Nepriklausomas literal scope testas atkūrė403; pataisytas identifikatorius išlaikant būtinos skaitymo prieigos reikalavimą. Upgrade `e1174029-7ded-4c4a-9651-636c523aa141`; originalus FAIL ir tolesnė patikra API ataskaitoje. Nauja programa sukurta savininko autorizacija; pats sukūrimas dar nėra Page tokeno ar live siuntimo įrodymas.
+
+2026-10-14 actual gyvo penkių užduočių testo tęsinys: API jungtis ir Page įrašas, read-only grupės paieška, Page komentaras po admin review, profilio įrašas su originaliu AI vaizdu ir profilio komentaras turi tikrus kvitus; master/API/browser pristabdyti. `upgrade-442058cf-c49f-4682-bc4e-fdd0c8783f0d` taiso ID dar nerodantį moderavimo kvitą; `upgrade-7c072f48-9736-494e-a14f-99fc075cc7ad` static neprijungta/zero statusą; `upgrade-e48965d5-9c0b-4de5-8239-5e4f9f40eeec` explicit nepradėtos job tęsimą po not_published proof, nekeisdamas unknown-send draudimo ar task kvotos. [Gyvo testo įrodymai](../../docs/FACEBOOK_LIVE_TEST_2026-10-14.md). Main / production / nuolatinio proceso adoption dar nėra.
+
+Savininko2026-10-14 pavedimu parengtas canonical setup skill / pilnas system entrypoint ir Meta prijungimo reference, discovery per AGENTS / catalog / acquisition workflow: `upgrade-283fc45b-2ea9-4cd2-9e53-a1d5235c065e`. [FACEBOOK_SYSTEM](../../agent-business-core/FACEBOOK_SYSTEM.md) atskiria actual patikrintus veiksmus, private credentials, API/desktop, first-comment review, pre-permit resume, cross-PC DB coordination ir neprijungtas capabilities. Šis docs diegimas neaktyvuoja naujų nišų ir neperduoda tokenų.

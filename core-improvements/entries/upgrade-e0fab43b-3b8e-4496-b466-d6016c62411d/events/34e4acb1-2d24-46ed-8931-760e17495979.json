@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Implemented and independently reviewed the reserved adapter/common authority increment. Original setup failure and Ruff fixture-notation failure remain recorded in the fixing event and private logs. Source remains frozen after the 45-test aggregate. Original preview schema/all table counts and restricted role attributes were unchanged; no paid provider, runtime activation or Task adoption is claimed.",
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_customer_agents.py tests/test_customer_agent_provisioning.py tests/test_customer_agent_provisioning_pg.py -q --maxfail=1",
+      "result": "PASS",
+      "evidence": "45 passed in348.23s in a fresh restricted-role S4 QA database; private tests-eaa9845e.log and scoped docs/handoffs/VERSLOMATIKA_AGENT_PROVISIONING_S4_2026_10_14.md. Includes 26 maintained public compatibility and19 new cases."
+    },
+    {
+      "command": "ruff check src/pinet_core/customer_agents/service.py src/pinet_core/customer_agents/provisioning.py tests/test_customer_agent_provisioning.py tests/test_customer_agent_provisioning_pg.py",
+      "result": "PASS",
+      "evidence": "All checks passed on the final scoped source and tests."
+    },
+    {
+      "command": "Compare customer_agents.contract.document() to JSON from git show a9aaa671e4fa04514a92167caf780d308cc408f4:docs/contracts/verslomatika-customer-agents.openapi.json",
+      "result": "PASS",
+      "evidence": "Exact semantic equality; six public paths unchanged. Both core/companion continue gates PASS at2026-10-14T07:36:22Z."
+    }
+  ],
+  "eventId": "34e4acb1-2d24-46ed-8931-760e17495979",
+  "sequence": 3,
+  "at": "2026-10-14T07:38:17.280Z"
+}

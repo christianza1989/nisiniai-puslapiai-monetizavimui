@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Maintained native GUIDE offline fixtures predate required expected_model and exact single receipt references; reproduce2FAIL on reviewed7496 base adapter/review. Align only test fixtures/expectations with retained canonical constraints.",
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/offline_tests/test_content_work_review.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "docs/handoffs/VERSLOMATIKA_LOCAL_SOL_HIGH_PROFILE_S8_2026_10_14.md",
+    "7496b7a5ddf183c080d7d4f05a9128f6ed096cc7:content_work/adapter.py required expected_model and review.py single receipt refs",
+    "Human-authorized root narrowly released fixture-only scope; preserve2FAIL1PASS exact-base evidence/no skip/xfail/production weakening"
+  ],
+  "rollback": "Revert only scoped offline fixture/expectation change; retain original failure evidence and production model/schema constraints. No runtime/DB activation.",
+  "id": "upgrade-bfd61acf-5b9a-46d8-9870-a70de735ce8d",
+  "branch": "codex/verslomatika-local-sol-high-profile-s8-20261014",
+  "baseSha": "7496b7a5ddf183c080d7d4f05a9128f6ed096cc7",
+  "createdAt": "2026-10-14T18:15:16.034Z"
+}

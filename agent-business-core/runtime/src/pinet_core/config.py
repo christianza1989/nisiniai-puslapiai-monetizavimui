@@ -1,4 +1,5 @@
 from functools import lru_cache
+from typing import Literal
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -23,6 +24,10 @@ class Settings(BaseSettings):
     control_source_revision: str = ""
     control_session_seconds: int = 28800
     customer_enabled: bool = False
+    workspace_topics_enabled: bool = False
+    workspace_team_enabled: bool = False
+    workspace_team_runner_enabled: bool = False
+    workspace_team_actor_ids: list[str] = []
     customer_agents_enabled: bool = False
     xbot_bridge_enabled: bool = False
     customer_text_enabled: bool = False
@@ -41,14 +46,19 @@ class Settings(BaseSettings):
     business_discovery_enabled: bool = False
     business_discovery_runner_enabled: bool = False
     site_build_enabled: bool = False
+    site_build_api_runner_enabled: bool = False
+    site_build_actor_ids: list[str] = Field(default_factory=list, max_length=16)
     business_discovery_research_limit: int = Field(default=0, ge=0)
     creation_runner_enabled: bool = False
+    creation_execution_profile: Literal["default", "local_sol61_high_v1"] = "default"
     # Zero disables the operator's daily ceiling; all attempts are still recorded.
     creation_daily_limit: int = Field(default=0, ge=0)
     creation_global_daily_limit: int = Field(default=0, ge=0)
     creation_job_limit: int = Field(default=0, ge=0)
     creation_runner_seconds: int = 180
     creation_workspace: str = ""
+    # Operator-owned persistent native data. Empty preserves the legacy release-local root.
+    customer_content_artifacts_root: str = ""
     creation_web_search_enabled: bool = False
     creation_language_review_enabled: bool = True
     chat_enabled: bool = False
@@ -67,6 +77,7 @@ class Settings(BaseSettings):
     jev_timeout_seconds: float = 1.5
     environment: str = "local"
     core_url: str = "http://127.0.0.1:8840"
+    facebook_page_credentials_path: str = ""
     allow_simulation: bool = False
     learning_enabled: bool = False
     learning_namespace: str = ""

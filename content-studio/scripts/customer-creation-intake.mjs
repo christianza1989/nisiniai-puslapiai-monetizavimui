@@ -4,6 +4,8 @@ import { lstat, mkdir, open, readFile, readdir, realpath, unlink, writeFile } fr
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { stableV2, normalizeV2Blocks } from '../src/content-package-v2.mjs';
+import { resolveInternalRichLinks } from '../src/internal-rich-links.mjs';
+import { validateDiscoverySourceContext } from '../src/discovery-source-context.mjs';
 
 const VERSION = 'customer-content-intake.v1';
 const sha = value => createHash('sha256').update(value).digest('hex');
@@ -73,6 +75,8 @@ function validate(input) {
     }
   }
   const verifiedFacts = input.verifiedFacts ?? [];
+  const sourceContext = Object.hasOwn(input,'sourceContext')
+    ?validateDiscoverySourceContext(input.sourceContext,{creationId:input.creationId}):undefined;
   if (!Array.isArray(verifiedFacts) || verifiedFacts.length > 15 || verifiedFacts.some(item => !text(item, 800)) || verifiedFacts.join('\n').length > 12000) fail('invalid_verified_facts');
   const knownContact = input.knownContact ?? { email: '', phone: '' };
   if (!object(knownContact) || Object.keys(knownContact).some(key => !['email', 'phone'].includes(key))
@@ -91,6 +95,7 @@ function validate(input) {
   const contentPlan = input.contentPlan ?? draft.content_plan ?? [];
   if (!Array.isArray(contentPlan) || contentPlan.length > 24) fail('invalid_content_plan');
   return { draft, bytes, artifactsRoot, revisionDir, dataDir, outputDir, contentPlan, verifiedFacts,
+    ...(sourceContext===undefined?{}:{sourceContext}),
     contact: { email: knownContact.email ?? '', phone: knownContact.phone ?? '' }, operatorName: input.operatorName ?? '',
     siteId: 'creation-' + input.creationId.replaceAll('-', '') };
 }
@@ -139,7 +144,8 @@ export async function intakeCreationDraft(input) {
   const importerHash = sha(await readFile(new URL(import.meta.url)));
   const request = { version: VERSION, importerHash, creationId: input.creationId, acceptedRevision: input.acceptedRevision,
     sourceHash: input.sourceHash, canonicalHost: input.canonicalHost, siteId, dataDir, outputDir,
-    verifiedFacts: context.verifiedFacts, knownContact: context.contact, operatorName: context.operatorName, contentPlan: context.contentPlan };
+    verifiedFacts: context.verifiedFacts, knownContact: context.contact, operatorName: context.operatorName, contentPlan: context.contentPlan,
+    ...(context.sourceContext===undefined?{}:{sourceContext:context.sourceContext}) };
   const requestBytes = json(request), requestHash = sha(requestBytes);
   if (requestBytes.length > 300000) fail('input_too_large');
   await mkdir(revisionDir, { recursive: true });
@@ -181,7 +187,8 @@ export async function intakeCreationDraft(input) {
       const body = page.sections.flatMap(section => [{ type: 'heading', level: 2, text: section.heading },
         { type: 'paragraph', text: section.body }, ...(section.items.length ? [{ type: 'list', items: section.items }] : [])]);
       await model.addPage(siteId, { id: pageId(page.path), type: proposalPageType(page), slug: page.path.slice(1, -1),
-        title: page.title, description: page.meta_description, intent: page.intent, body: normalizeV2Blocks(body), publishAt: importedAt,
+        title: page.title, description: page.meta_description, intent: page.intent,
+        body: normalizeV2Blocks(body), publishAt: importedAt,
         ...(item ? { planningBrief: item, sourceQueries: item.source_queries, reason: item.reason, cluster: item.primary_topic } : {}) });
       pageMappings.push({ path: page.path, pageId: pageId(page.path), origin: 'draft' });
     }
@@ -215,8 +222,11 @@ export async function intakeCreationDraft(input) {
         linkSuggestions.push({ targetPageId: targetPage.id, label: draft.pages.find(candidate => candidate.path === target)?.navigation_label ?? targetPage.title,
           reason: item ? 'Turinio plane numatytas skaitytojo perėjimas; jo kontekstą dar reikia patikrinti.' : 'Pradinis navigacijos kelias padeda rasti pasiūlymą ir jo paaiškinimus; ryšys dar nepatikrintas.' });
       }
+      let unresolvedLinks=0;
+      const resolved=resolveInternalRichLinks(page.body,importedSite.pages,page.id,{onUnresolved:()=>unresolvedLinks++});
+      if(unresolvedLinks)factChecks.push('Tekste yra neišspręstų vidinių nuorodų; originalus žymėjimas paliktas peržiūrai ir negali būti laikomas veikiančia navigacija.');
       if (factChecks.length > 40 || factChecks.some(note => note.length > 600)) fail('intake_notes_overflow');
-      await model.editPage(siteId, page.id, { factChecks, externalLinks, linkSuggestions, ...(item ? { cluster: item.primary_topic } : {}) });
+      await model.editPage(siteId, page.id, { body:resolved,factChecks, externalLinks, linkSuggestions, ...(item ? { cluster: item.primary_topic } : {}) });
     }
     // The typed plan places broad parents before supports; draft inventory can have a different order.
     for (const [pathname, item] of plan.byPath) {
@@ -237,6 +247,7 @@ export async function intakeCreationDraft(input) {
     const workflow = await model.getContentWorkflow(siteId);
     const manifest = { version: VERSION, state: 'private-draft-imported', creationId: input.creationId, acceptedRevision: input.acceptedRevision,
       sourceHash: input.sourceHash, requestHash, importerHash, siteId, canonicalHost: input.canonicalHost, importedAt,
+      ...(context.sourceContext===undefined?{}:{sourceContextSha256:context.sourceContext.contextSha256}),
       siteFileHash: sha(await readFile(path.join(dataDir, 'sites', siteId + '.json'))),
       contentPlanState: plan.state, planItems: context.contentPlan.length, planImported: plan.proposals.length, planIssues: plan.issues,
       planningBriefState: !context.contentPlan.length ? 'not-provided' : plan.issues.length || planningBriefs.some(item => item.state === 'blocked') ? 'partial' : 'attached',

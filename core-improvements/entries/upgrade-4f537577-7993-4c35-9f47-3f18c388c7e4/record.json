@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Canonical CLI partial failures discard bounded stderr and execution timing; preserve private diagnostics without changing transport decisions",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HEADLESS_PIPELINE_S11_2026_10_14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/execution_observation.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_cli_execution_observation.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of opt-in diagnostic hooks; preserve historical private failure files and receipts",
+  "id": "upgrade-4f537577-7993-4c35-9f47-3f18c388c7e4",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "51d096da9620159f1e8c5c41e24ae92811a41bbd",
+  "createdAt": "2026-10-14T20:49:31.225Z"
+}

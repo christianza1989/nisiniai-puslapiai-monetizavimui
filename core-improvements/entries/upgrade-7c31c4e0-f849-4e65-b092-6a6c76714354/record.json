@@ -1,0 +1,20 @@
+{
+  "siteId": "verslomatika-platform",
+  "summary": "Discovery must parse naturally quoted public URLs and perform requested research before optional owner-resource questions",
+  "category": "code",
+  "evidence": [
+    "Ordinary UI discovery e2436912-d0de-4267-9514-cb2fcc56f056 report1: needs_input, plan null, one creator63.81946s, no critic/coordinator; first output and screenshot retained privately on source0f28432fd8fba136fb370b6443a58a28450a00b1.",
+    "Canonical sources.collect includes U+201C in the path of a naturally quoted HTTPS link; focused behavioral reproduction precedes repair.",
+    "Canonical instructions require resource questions before a substantial plan; actual requested public research did not run. Local web_search=false is separately recorded configuration, not a shared default defect."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/sources.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/instructions.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of new source/policy; restart only owned idle local API from preserved prior immutable source/config. Retain all first and subsequent model reports, captured source/usage and adoption backups; do not rewrite approvals/history.",
+  "id": "upgrade-7c31c4e0-f849-4e65-b092-6a6c76714354",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "7aaf8bd214077c4b6c4e9007fe86c7632a0b1389",
+  "createdAt": "2026-10-15T09:15:45.910Z"
+}

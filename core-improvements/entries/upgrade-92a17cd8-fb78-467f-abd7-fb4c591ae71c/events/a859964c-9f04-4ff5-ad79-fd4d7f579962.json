@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Integrated the maintained byte-bound attachment adapter and repaired the independently observed progression bug: completed exact inbox bytes now receive an immutable acknowledgement, so a legitimate later GUIDE edit cannot trigger stale reapplication. Current owner/source/accepted proof remains the outer admission boundary; native primitive guards unchanged. Replaced next.json stays pending and original input is never overwritten/deleted. 103 focused Python checks PASS, one OS symlink-creation fixture SKIP; Ruff PASS. Exact related Foundation capability PG regression1PASS13.00s on a new restricted0039 QA database; initial missing-companion fixture ERROR retained and configuration corrected. First zero-tests invocation with two wrong suite paths also retained; corrected exact paths used. Serving source/current accepted case/provider unchanged; actual adoption remains separate.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_site_build_media_inbox.py offline_tests/test_creation_media.py offline_tests/test_site_build.py offline_tests/test_site_build_lifecycle.py tests/test_customer_agent_foundation_projection.py tests/test_customer_agent_provisioning.py tests/test_foundation_receipts.py -q",
+      "result": "PASS",
+      "evidence": "103PASS1OSsymlinkSKIP1.23s; private native-chain-acknowledgement-tests log, source tests retained in Git. Exact completed operation replay, concurrent pending replacement, foreign accepted proof and corrupt acknowledgement covered."
+    },
+    {
+      "command": "ruff check src/pinet_core/site_build/media.py src/pinet_core/site_build/service.py offline_tests/test_site_build_media_inbox.py",
+      "result": "PASS",
+      "evidence": "All checks passed on the combined source after acknowledgement repair."
+    }
+  ],
+  "eventId": "a859964c-9f04-4ff5-ad79-fd4d7f579962",
+  "sequence": 3,
+  "at": "2026-10-15T02:42:49.129Z"
+}

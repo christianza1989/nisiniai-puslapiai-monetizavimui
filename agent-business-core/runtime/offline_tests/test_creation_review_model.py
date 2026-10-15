@@ -101,7 +101,7 @@ async def test_success_and_failed_private_evidence_match_actual_cli_model(tmp_pa
         assert receipt["model"] == "gpt-6.1-sol"
 
 
-def test_additive_wire_reads_history_but_rejects_sol_creator():
+def test_additive_wire_reads_known_models_with_server_bound_creator_validation():
     from datetime import datetime
     from uuid import uuid4
 
@@ -110,7 +110,6 @@ def test_additive_wire_reads_history_but_rejects_sol_creator():
         model="gpt-6-luna", created_at=datetime.now(UTC))
     assert AttemptView.model_validate(value).model == "gpt-6-luna"
     assert AttemptView.model_validate({**value, "model": "gpt-6.1-sol"}).model == "gpt-6.1-sol"
-    with pytest.raises(ValidationError):
-        AttemptView.model_validate({**value, "role": "creator", "model": "gpt-6.1-sol"})
+    assert AttemptView.model_validate({**value, "role": "creator", "model": "gpt-6.1-sol"}).model == "gpt-6.1-sol"
     with pytest.raises(ValidationError):
         AttemptView.model_validate({**value, "model": "customer-selected"})

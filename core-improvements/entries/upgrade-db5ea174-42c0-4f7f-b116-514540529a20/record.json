@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Add canonical private customer topic/text persistence and durable metadata receipts; fix deferred transaction HTTP failure handling at the maintained SafeRoute ASGI acceptance boundary.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_WORKSPACE_TOPICS_S1_2026_10_13.md",
+    "The prior workspace exposed only legacy topics and browser-local labels; it has no native registered-business topic contract.",
+    "Dedicated PostgreSQL regression workspace-topics-expanded-first.log reproduced a correct deferred authority rollback escaping SafeRoute as uncaught DBAPIError (16PASS/1FAIL)."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_topics",
+    "agent-business-core/runtime/src/pinet_core/control/routes.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/migrations/versions/0031_workspace_topics.py",
+    "docs/contracts/verslomatika-workspace-topics.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable workspace_topics_enabled, restore prior portal/source; retain topic/message/receipt/provenance history. Empty-only downgrade is explicitly refused while topic data remains. No legacy or preview database reset.",
+  "id": "upgrade-db5ea174-42c0-4f7f-b116-514540529a20",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "f24369f8a5ee858092cb6fde96128684c6f4d544",
+  "createdAt": "2026-10-13T19:47:38.482Z"
+}

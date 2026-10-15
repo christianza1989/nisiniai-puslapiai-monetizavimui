@@ -60,7 +60,7 @@ SETTLE = """CREATE FUNCTION director_settle_revoked_task(tid VARCHAR,rid VARCHAR
  BEGIN
  IF u IS DISTINCT FROM current_setting('pinet.control_user',true)
  OR e IS DISTINCT FROM current_setting('pinet.environment',true)
- OR k NOT IN ('chat.consult','acquisition.reviewed_capture') THEN RETURN FALSE; END IF;
+ OR k NOT IN ('chat.consult','acquisition.reviewed_capture','workspace.team_turn') THEN RETURN FALSE; END IF;
  IF j IS NOT NULL THEN
    IF jsonb_typeof(j) <> 'object' OR length(j::text)>2048 THEN RETURN FALSE; END IF;
    IF EXISTS(SELECT 1 FROM jsonb_each(j) x WHERE

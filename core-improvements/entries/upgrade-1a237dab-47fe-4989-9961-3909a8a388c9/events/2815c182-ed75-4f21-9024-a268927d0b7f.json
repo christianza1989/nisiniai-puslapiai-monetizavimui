@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Baseline tests-e30777d1 real4FAIL14.35s proves selected Discovery/Creation UUID exclusion after globalLIMIT20 and missing two API lifecycle hooks. New group tests-e9789257 retained14PASS2FAIL45.82s; diagnostic tests-42c5eda1 retained1FAIL22.54s identifies correct private_intake_missing refusal for inert plan fixture lacking canonical_host_candidate. Only fixture gets explicit unique example.test host; production intake gate is preserved. Second assertion incorrectly took max over None/string cursors; corrected to exact discovery cursor. Scoped initialRuff import-order failure preserved in tool output, corrected without production change. No models/flags/original0032/counts/role mutation. Source WIP pending expanded regression.",
+  "eventId": "2815c182-ed75-4f21-9024-a268927d0b7f",
+  "sequence": 2,
+  "at": "2026-10-14T16:22:07.134Z"
+}

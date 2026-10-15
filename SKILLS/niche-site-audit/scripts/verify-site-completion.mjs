@@ -3,12 +3,51 @@ import {createHash} from 'node:crypto';
 import {spawn,execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {request as httpRequest} from 'node:http';
+import {request as httpsRequest} from 'node:https';
+import {gunzipSync,inflateSync,brotliDecompressSync} from 'node:zlib';
 import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const arg=(name,args)=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
 const required=(name,args)=>{const v=arg(name,args);if(!v||v.startsWith('--'))throw Error(`Missing ${name}`);return v;};
 const isLoopback=u=>['127.0.0.1','localhost','[::1]'].includes(u.hostname);
+export function completionTransportHost(origin,canonicalHost,args=[]){
+  const mode=arg('--loopback-host',args);
+  if(mode!==null&&mode!=='origin')throw Error('Unsupported --loopback-host mode.');
+  if(mode==='origin'&&(!isLoopback(origin)||origin.protocol!=='http:'||!origin.port))throw Error('Origin Host transport requires an explicit HTTP loopback port.');
+  return mode==='origin'?origin.host:isLoopback(origin)?canonicalHost:null;
+}
+export async function requestCompletion(url,transportHost,{maxBytes=8*1024*1024,timeoutMs=20000,probeOnly=false}={}){
+  const target=new URL(url),signal=AbortSignal.timeout(timeoutMs);
+  if(transportHost===null){
+    const response=await fetch(target,{redirect:'manual',signal,headers:{'Cache-Control':'no-cache'}});
+    if(Number(response.headers.get('content-length')||0)>maxBytes){await response.body?.cancel();throw Error('Response exceeds bounded inspector size.');}
+    if(probeOnly){await response.body?.cancel();return {status:response.status,headers:response.headers,data:Buffer.alloc(0)};}
+    const chunks=[];let size=0;
+    for await(const chunk of response.body||[]){size+=chunk.length;if(size>maxBytes)throw Error('Response exceeds bounded inspector size.');chunks.push(chunk);}
+    return {status:response.status,headers:response.headers,data:Buffer.concat(chunks)};
+  }
+  // Native fetch strips Host on supported Node versions. Override it only for
+  // loopback transport; hosted HTTPS retains fetch's normal TLS/Host behavior.
+  if(!isLoopback(target)||!['http:','https:'].includes(target.protocol)||typeof transportHost!=='string'||!/^[a-zA-Z0-9.:[\]-]+$/.test(transportHost))throw Error('Invalid loopback inspector Host.');
+  return new Promise((resolve,reject)=>{
+    const request=(target.protocol==='https:'?httpsRequest:httpRequest)(target,{method:'GET',agent:false,signal,
+      headers:{Host:transportHost,'Cache-Control':'no-cache','Accept-Encoding':'identity'}},response=>{
+      const headers=new Headers();for(let i=0;i<response.rawHeaders.length;i+=2)headers.append(response.rawHeaders[i],response.rawHeaders[i+1]);
+      if(Number(headers.get('content-length')||0)>maxBytes){request.destroy(Error('Response exceeds bounded inspector size.'));return;}
+      if(probeOnly){resolve({status:response.statusCode,headers,data:Buffer.alloc(0)});response.destroy();return;}
+      const chunks=[];let size=0;response.on('error',reject);
+      response.on('data',chunk=>{size+=chunk.length;if(size>maxBytes)request.destroy(Error('Response exceeds bounded inspector size.'));else chunks.push(chunk);});
+      response.on('end',()=>{try{
+        let data=Buffer.concat(chunks);const encoding=headers.get('content-encoding')?.toLowerCase();
+        const decode={gzip:gunzipSync,deflate:inflateSync,br:brotliDecompressSync}[encoding];
+        if(decode)data=decode(data,{maxOutputLength:maxBytes});else if(encoding&&encoding!=='identity')throw Error('Unsupported inspector content encoding.');
+        resolve({status:response.statusCode,headers,data});
+      }catch(error){reject(error);}});
+    });request.on('error',reject);request.end();
+  });
+}
 const urlFor=(pkg,p)=>new URL('/'+p.slug,'https://'+pkg.canonicalHost).href;
 const urlsIn=text=>new Set((text.match(/https?:\/\/[^\s<>\[\]()"']+/g)||[]).map(u=>u.replace(/&amp;/g,'&').split('#')[0]));
 const normalizeReading=text=>String(text).replace(/\\([\\[\]])/g,'$1').replace(/\s+/g,' ').trim();
@@ -65,8 +104,10 @@ export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false){
 export async function verifySiteCompletion(args){
   const packagePath=path.resolve(required('--package',args)),origin=new URL(required('--origin',args)),indexSlug=required('--article-index',args);
   if(origin.pathname!=='/'||origin.search||origin.hash||origin.username||origin.password)throw Error('Origin must have no path, credentials, query or fragment.');
+  completionTransportHost(origin,'',args);
   const core=path.resolve(arg('--core',args)||process.env.PINET_PUBLIC_CORE_PATH||process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../..','dovanos-memorycasting'));
   const bytes=await readFile(packagePath),pkg=JSON.parse(bytes),packageSha256=sha(bytes),nowArg=arg('--now',args);
+  const transportHost=completionTransportHost(origin,pkg.canonicalHost,args);
   if(!isLoopback(origin)&&origin.origin!=='https://'+pkg.canonicalHost)throw Error('Hosted origin must be the exact package canonical HTTPS origin.');
   if(nowArg&&!isLoopback(origin))throw Error('A controlled clock is allowed only against an isolated loopback preview, never a live origin.');
   const now=nowArg?Date.parse(nowArg):Date.now();if(!Number.isFinite(now))throw Error('Invalid --now instant.');
@@ -82,9 +123,8 @@ export async function verifySiteCompletion(args){
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
   const get=async pathname=>{
-    const response=await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(isLoopback(origin)?{Host:pkg.canonicalHost}:{})}});
-    const data=Buffer.from(await response.arrayBuffer());
-    if(data.length>8*1024*1024)throw Error('Response exceeds bounded inspector size: '+pathname);
+    const response=await requestCompletion(new URL(pathname,origin),transportHost);
+    const data=response.data;
     const receipt={path:pathname,status:response.status,contentType:response.headers.get('content-type')||'',sha256:sha(data)};
     const header=arg('--package-header',args);if(header&&response.headers.get(header)!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);
     http.push(receipt);return {...receipt,html:data.toString('utf8')};
@@ -123,7 +163,7 @@ export async function verifySiteCompletion(args){
   }
   let coreCommit=null;try{coreCommit=execFileSync('git',['rev-parse','HEAD'],{cwd:core,encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch{}
   const sourceFiles=['scripts/content-package-core.mjs',projectionFile,...(pkg.schemaVersion===2?['scripts/content-package-v2.mjs','schemas/content-package.v2.schema.json','lib/content-seo-v2.mjs']:['lib/niche-seo.ts','lib/niche-schema-core.mjs'])];
-  const report={version:1,checkedAt:new Date().toISOString(),projectionAt:new Date(now).toISOString(),siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,transportOrigin:origin.origin,
+  const report={version:1,checkedAt:new Date().toISOString(),projectionAt:new Date(now).toISOString(),siteId:pkg.siteId,canonicalHost:pkg.canonicalHost,transportOrigin:origin.origin,transportHost,
     packageSha256,inspector:{scriptSha256:sha(await readFile(import.meta.filename)),htmlParserSha256:sha(await readFile(path.join(import.meta.dirname,'rendered_site.py')))},source:{coreCommit,files:await Promise.all(sourceFiles.map(async file=>({file,sha256:sha(await readFile(path.join(core,file)))})))},
     state:issues.length?'NOT_COMPLETE':args.includes('--render-only')?'RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE':'LOCAL_DELIVERY_CHECKS_PASS',
     publicPages:pages.length,hiddenPages:pkg.pages.length-pages.length,articles:pages.filter(p=>['guide','article'].includes(p.type)).length,rendered,crawlerPolicy,http,auditScore,issues:[...new Set(issues)],

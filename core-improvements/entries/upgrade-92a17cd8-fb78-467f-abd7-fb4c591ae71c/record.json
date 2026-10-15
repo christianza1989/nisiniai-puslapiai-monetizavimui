@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Approved site-build orchestrator has no invoked step that consumes a page-bound existing media artifact before native GUIDE admission; attach existing media through the maintained importer without adding a generator or public mutation endpoint.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py: initial content admission ends at media_editorial_renderer_pending; serving source 4e80258bb18ef3d85ba7c603f64382c519703dd2",
+    "docs/handoffs/VERSLOMATIKA_AI_SITE_LOCAL_DELIVERY_2026-10-15.md: four real images required operator import/attachment; not autonomous media proof"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/media.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/offline_tests/test_site_build_media_inbox.py",
+    "agent-business-core/runtime/SITE_BUILD.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the scoped inbox hook, reader, tests and operator contract. Preserve accepted intake, media sources and attachment receipts; no runtime data deletion or approval reset.",
+  "id": "upgrade-92a17cd8-fb78-467f-abd7-fb4c591ae71c",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "9c618026bb7f57dadfbe77f4e93e30dbdbf92b8c",
+  "createdAt": "2026-10-15T02:15:25.587Z"
+}

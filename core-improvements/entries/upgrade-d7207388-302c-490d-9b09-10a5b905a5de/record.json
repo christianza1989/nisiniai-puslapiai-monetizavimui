@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Native-only allocated Tasks cannot publish verified native episode summaries through an ordinary paid-Attempt-only team provenance rule.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_NATIVE_EPISODE_PROVENANCE_2026_10_15.md",
+    "Canonical 0040 forbids ordinary role Attempts on native allocations; canonical 0032 author CHECK/deferred fence requires them for every nonuser answer."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/episode_schema.py",
+    "agent-business-core/runtime/migrations/versions/0041_workspace_agent_episode.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_episode_schema.py",
+    "agent-business-core/runtime/tests/test_workspace_episode_provenance_pg.py",
+    "docs/decisions/VERSLOMATIKA_NATIVE_EPISODE_PROVENANCE_2026_10_15.md",
+    "docs/handoffs/VERSLOMATIKA_NATIVE_EPISODE_PROVENANCE_2026_10_15.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert before adoption; 0041 downgrade refuses retained native history and otherwise reverses only its exact provenance patch. Never discard retained events.",
+  "id": "upgrade-d7207388-302c-490d-9b09-10a5b905a5de",
+  "branch": "codex/verslomatika-native-episode-proof-20261015",
+  "baseSha": "519df2565036ef9bde1508cf80b584e12f59ce92",
+  "createdAt": "2026-10-15T04:22:23.350Z"
+}

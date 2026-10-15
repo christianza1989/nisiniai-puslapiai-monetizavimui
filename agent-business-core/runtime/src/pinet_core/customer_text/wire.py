@@ -82,7 +82,7 @@ class SessionView(Strict):
     events: Annotated[list[TextEvent], Field(max_length=100)]
     history_truncated: bool
     transport: Literal["customer-text.v1"]
-    model: Literal["gpt-6-luna"]
+    model: Literal["gpt-6-luna", "gpt-6.1-sol"]
     scope: Literal["local_authenticated_test"]
     channel_activation: Literal["not_performed"]
     calibration_status: Literal["UNVERIFIED"]

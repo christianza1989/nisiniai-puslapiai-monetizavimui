@@ -46,14 +46,24 @@ def coordinator(context):
         "full_f1_status": "UNVERIFIED", "launch_status": "UNVERIFIED"}
 
 
-def runner(calls, *, first_bad=False, always_revise=False):
+def runner(calls, *, first_bad=False, always_revise=False, current_graph=False):
     async def run(context, authorized, *, role, seconds):
         # Callback receives the remaining overall two-round Job budget. The
         # production adapter independently clamps each actual CLI to300s.
         assert 0 < seconds <= 2 * settings().creation_runner_seconds and await authorized()
         calls.append(role)
         if role == "creator":
+            if context.get("language_repair"):
+                bound = context["language_patch_context"]
+                assert bound["allowed_refs"] == ["draft:/assistant_reply"]
+                return {"candidate_sha256": bound["candidate_sha256"],
+                    "critic_sha256": bound["critic_sha256"],
+                    "edits": [{"field": "draft:/assistant_reply", "value":
+                        "Patikslinau bandomojo verslo tekstą ir palikau nepatikrintus faktus atvirais klausimais."}]}, {
+                    "usage": {"input_tokens": 100, "output_tokens": 20}, "web_search_count": 0}
             value = draft("Patikslinau bandomojo verslo tekstą ir palikau nepatikrintus faktus atvirais klausimais.")
+            if current_graph:
+                value = graph_candidate(broken=False)
             if first_bad and len(calls) == 1:
                 value["assistant_reply"] = "Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto."
             if len(calls) > 3:
@@ -61,7 +71,14 @@ def runner(calls, *, first_bad=False, always_revise=False):
                 assert "assistant_reply" not in context["current_draft"]
         elif role == "critic":
             failed = any(c["status"] == "FAIL" for c in context["receipts"])
-            value = critic(context, "revise" if failed or always_revise else "accept_draft")
+            # The deterministic screen is not a complete language review. The
+            # independent critic also observes the injected foreign sentence.
+            bad_sentence = first_bad and current_graph and context["round_number"] == 1
+            value = critic(context, "revise" if failed or always_revise or bad_sentence else "accept_draft")
+            if current_graph and context["round_number"] == 2:
+                expected = graph_candidate(broken=False)
+                expected["assistant_reply"] = "Patikslinau bandomojo verslo tekstą ir palikau nepatikrintus faktus atvirais klausimais."
+                assert context["draft"] == renderer.normalize_creator(expected)
         else:
             value = coordinator(context)
         return value, {"usage": {"input_tokens": 100, "output_tokens": 20}, "web_search_count": 0}
@@ -174,7 +191,7 @@ async def test_actual_role_receipts_and_language_correction_accept_exact_candida
     row, _ = await start(c, auth, me)
     cid, calls = row["creation_id"], []
     assert (await team_read(c, auth, cid))["attempts"] == []
-    assert await worker.execute_once(role_runner=runner(calls, first_bad=first_bad))
+    assert await worker.execute_once(role_runner=runner(calls, first_bad=first_bad, current_graph=first_bad))
     view = await team_read(c, auth, cid)
     assert calls == ["creator", "critic", "coordinator"] * (expected_calls // 3), view["events"][-1] if view["events"] else view
     assert view["status"] == "draft_ready" and view["current_revision"] == 1
@@ -321,7 +338,7 @@ async def test_overall_deadline_rejects_late_review_keeps_usage(creation, monkey
     async def slow(context, authorized, *, role, seconds):
         value, receipt = await base(context, authorized, role=role, seconds=seconds)
         if role == "critic":
-            clock[0] = settings().creation_runner_seconds + 1
+            clock[0] = 2 * settings().creation_runner_seconds + 1
         return value, receipt
     await worker.execute_once(role_runner=slow)
     view = await team_read(c, auth, row["creation_id"])
@@ -374,7 +391,7 @@ async def test_final_receipt_storage_delay_cannot_promote_after_deadline(creatio
     async def slow_finish(claimed, attempt_id, state, summary, payload):
         await finish(claimed, attempt_id, state, summary, payload)
         if payload.get("decision") == "accept_draft" and payload.get("next_actions"):
-            clock[0] = settings().creation_runner_seconds + 1
+            clock[0] = 2 * settings().creation_runner_seconds + 1
     monkeypatch.setattr(team, "finish", slow_finish)
     await worker.execute_once(role_runner=runner([]))
     view = await team_read(c, auth, row["creation_id"])
@@ -449,7 +466,7 @@ async def test_targeted_language_round_preserves_unrelated_fields_and_real_revie
     expected["research"][0]["finding"] = "Dalis mokymų gali būti naudingi mažoms komandoms; vykdymas dar nepatvirtintas."
 
     async def run(context, authorized, *, role, seconds):
-        assert await authorized() and 0 < seconds <= settings().creation_runner_seconds
+        assert await authorized() and 0 < seconds <= 2 * settings().creation_runner_seconds
         calls.append(role)
         if role == "creator" and len(calls) == 1:
             value = deepcopy(original)
@@ -473,6 +490,11 @@ async def test_targeted_language_round_preserves_unrelated_fields_and_real_revie
                     correction="Pakeisti svetimą žodį lietuvišku atitikmeniu, išsaugant sakinio prasmę.")
             else:
                 failed = any(check["status"] == "FAIL" for check in context["receipts"])
+                if defect == "foreign":
+                    # Semantic critic rejects the actual injected foreign text
+                    # even when the lightweight whole-draft screen misses it.
+                    assert context["draft"]["research"][0]["finding"].startswith("Ennen julkistamista")
+                    failed = True
                 value = critic(context, "revise" if failed else "accept_draft")
                 if not failed:
                     assert context["draft"] == expected
@@ -541,7 +563,7 @@ async def test_structural_correction_cannot_bypass_current_barriers(creation, mo
             async with AsyncSession(c["admin"]) as tx, tx.begin():
                 await tx.execute(update(Membership).where(Membership.user_id == me["user_id"]).values(enabled=False))
         elif barrier == "deadline":
-            clock[0] = settings().creation_runner_seconds + 1
+            clock[0] = 2 * settings().creation_runner_seconds + 1
         return value, receipt
     assert await worker.execute_once(role_runner=fenced)
     assert calls == ["creator"]

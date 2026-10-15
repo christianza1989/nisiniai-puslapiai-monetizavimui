@@ -7,7 +7,7 @@ from sqlalchemy import or_, select, text
 from sqlalchemy.exc import IntegrityError
 
 from ..config import settings
-from ..control.models import BusinessGrant
+from ..control.models import BusinessGrant, User
 from ..control.routes import ControlError, identifier, open_cursor, scope, seal_cursor, token_hash
 from ..creation.models import Creation
 from ..creation.routes import owned
@@ -50,7 +50,27 @@ async def configuration_current(tx, creation, registry):
         and creation.active_job_id is None and creation.status not in ACTIVE)
 
 
+async def configuration_blocker(tx, session, creation, registry):
+    """Project the maintained write precondition without hiding retained history."""
+    if not await configuration_current(tx, creation, registry):
+        return "agent_business_not_current"
+    from ..business_discovery.service import require_agent_foundation
+    try:
+        await require_agent_foundation(tx, creation, session=session)
+    except ControlError as error:
+        if error.status not in {409, 503}:
+            raise
+        # Evidence may be missing, stale or temporarily unavailable. None of
+        # those states permits a draft write, but the saved specification can
+        # still be read under the surrounding current-owner authority.
+        return "website_foundation_not_ready"
+    return None
+
+
 async def check_binding(tx, session, creation, registry, *, writing=False):
+    if not await tx.scalar(select(User.id).where(User.id == session.user_id,
+            User.environment_id == settings().environment, User.enabled)):
+        raise ControlError(401, "unauthenticated")
     registry = await tx.scalar(select(Registration).where(Registration.id == registry.id)
         .execution_options(populate_existing=True))
     if (not registry or binding(registry) != binding(creation) or registry.creation_id != creation.id
@@ -68,9 +88,51 @@ async def check_binding(tx, session, creation, registry, *, writing=False):
         if not await configuration_current(tx, creation, registry):
             raise ControlError(409, "agent_business_not_current")
         from ..business_discovery.service import require_agent_foundation
-        await require_agent_foundation(tx, creation)
+        await require_agent_foundation(tx, creation, session=session)
     await current_actor(tx, session, creation.portfolio_id)
     return registry
+
+
+@asynccontextmanager
+async def transaction_authority(tx, session, creation_id, agent_id=None, *, writing=False, lock=True):
+    """Canonical authority in an existing transaction; no bearer or new permission."""
+    guard()
+    if not await asyncio.to_thread(source_current):
+        raise ControlError(503, "source_unavailable")
+    creation_id = identifier(creation_id)
+    if not await schema_ready(tx):
+        raise ControlError(503, "customer_agents_schema_unavailable")
+    preliminary = await tx.get(Agent, identifier(agent_id)) if agent_id is not None else None
+    if agent_id is not None and (not preliminary or preliminary.creation_id != creation_id):
+        raise ControlError(404, "not_found")
+    registry = (await tx.get(Registration, preliminary.registration_id) if preliminary else
+        await profiles.registry_row(tx, creation_id))
+    if registry and lock:
+        # Exact registration lifetime precedes actor/session/creation locks, as in the admin path.
+        await lifetime(tx, settings().environment, registry.id)
+    creation = await owned(tx, session, creation_id, lock=lock)
+    # A caller may already have loaded this Creation before its current mutation lock.
+    await tx.refresh(creation)
+    if not registry:
+        raise ControlError(409, "agent_registration_required")
+    registry = await check_binding(tx, session, creation, registry, writing=writing)
+    agent = None
+    if preliminary:
+        statement = select(Agent).where(Agent.id == preliminary.id)
+        if lock:
+            statement = statement.with_for_update()
+        agent = await tx.scalar(statement.execution_options(populate_existing=True))
+        if (not agent or binding(agent) != binding(creation)
+                or agent.registration_id != registry.id or agent.registration_fingerprint != registry.fingerprint
+                or any(getattr(agent, key) != getattr(registry, key) for key in REGISTRATION_KEYS)):
+            raise ControlError(404, "not_found")
+    yield tx, session, creation, registry, agent
+    guard()
+    if not await asyncio.to_thread(source_current):
+        raise ControlError(503, "source_unavailable")
+    # Source waits cannot hide a changed parent, session, owner or grant.
+    await tx.refresh(creation)
+    await check_binding(tx, session, creation, registry, writing=writing)
 
 
 @asynccontextmanager
@@ -80,35 +142,23 @@ async def authority(token, creation_id, agent_id=None, *, writing=False):
         raise ControlError(503, "source_unavailable")
     async with scope(token=token_hash(token)) as tx:
         session = await customer_session(tx, token)
-        creation_id = identifier(creation_id)
-        if not await schema_ready(tx):
-            raise ControlError(503, "customer_agents_schema_unavailable")
-        preliminary = await tx.get(Agent, identifier(agent_id)) if agent_id is not None else None
-        if agent_id is not None and (not preliminary or preliminary.creation_id != creation_id):
-            raise ControlError(404, "not_found")
-        registry = (await tx.get(Registration, preliminary.registration_id) if preliminary else
-            await profiles.registry_row(tx, creation_id))
-        if registry:
-            # Match the canonical admin lock order: exact registration lifetime before actor/creation.
-            await lifetime(tx, settings().environment, registry.id)
-        creation = await owned(tx, session, creation_id, lock=True)
-        if not registry:
-            raise ControlError(409, "agent_registration_required")
-        registry = await check_binding(tx, session, creation, registry, writing=writing)
-        agent = None
-        if preliminary:
-            agent = await tx.scalar(select(Agent).where(Agent.id == preliminary.id)
-                .with_for_update().execution_options(populate_existing=True))
-            if (not agent or binding(agent) != binding(creation)
-                    or agent.registration_id != registry.id or agent.registration_fingerprint != registry.fingerprint
-                    or any(getattr(agent, key) != getattr(registry, key) for key in REGISTRATION_KEYS)):
-                raise ControlError(404, "not_found")
-        yield tx, session, creation, registry, agent
-        guard()
-        if not await asyncio.to_thread(source_current):
-            raise ControlError(503, "source_unavailable")
-        # Session expiry and mutable owner/grant checks occur after the final Git wait.
-        await check_binding(tx, session, creation, registry, writing=writing)
+        async with transaction_authority(tx, session, creation_id, agent_id, writing=writing) as context:
+            yield context
+
+
+def write_conflict(error):
+    """Only the canonical retained UUID invariant is a permanent conflict."""
+    queue, seen = [error], set()
+    while queue:
+        item = queue.pop()
+        if id(item) in seen:
+            continue
+        seen.add(id(item))
+        if (getattr(item, "constraint_name", None) == "uq_customer_agent_request_key"
+                and getattr(item, "sqlstate", None) == "23505"):
+            raise ControlError(409, "idempotency_conflict") from None
+        queue.extend(x for x in (getattr(item, "orig", None), item.__cause__, item.__context__) if x is not None)
+    raise error
 
 
 @asynccontextmanager
@@ -117,14 +167,7 @@ async def write_authority(token, creation_id, agent_id=None):
         async with authority(token, creation_id, agent_id, writing=True) as context:
             yield context
     except IntegrityError as error:
-        # The retained UUID can be hidden by a revoked grant. Translate only this exact
-        # unique invariant after scope has rolled back, without reading any hidden row.
-        original = error.orig
-        causes = (original, getattr(original, "__cause__", None), getattr(original, "__context__", None))
-        if any(getattr(cause, "constraint_name", None) == "uq_customer_agent_request_key"
-                and getattr(cause, "sqlstate", None) == "23505" for cause in causes):
-            raise ControlError(409, "idempotency_conflict") from None
-        raise
+        write_conflict(error)
 
 
 def config_material(agent, config):
@@ -159,17 +202,17 @@ async def current_config(tx, agent):
     return await tx.scalar(select(Config).where(Config.agent_id == agent.id, Config.revision == agent.current_revision))
 
 
-async def detail(tx, agent, selected=None):
+async def detail(tx, agent, selected=None, *, session):
     current = await current_config(tx, agent)
     creation = await tx.get(Creation, agent.creation_id)
     registry = await tx.get(Registration, agent.registration_id)
-    editable = await configuration_current(tx, creation, registry)
+    blocker = await configuration_blocker(tx, session, creation, registry)
     return {"agent": agent_view(agent, current), "configuration": config_view(agent, selected or current),
-        "readiness": {"configuration_saved": True, "can_edit_configuration": editable, "calibration_status": "UNVERIFIED",
+        "readiness": {"configuration_saved": True, "can_edit_configuration": blocker is None, "calibration_status": "UNVERIFIED",
             "module_admission": "not_admitted", "can_calibrate": False, "can_activate": False,
             "channel_activation": "not_performed", "provider_execution": False,
             "blockers": ["calibration_not_implemented", "module_admission_missing"]
-                + ([] if editable else ["agent_business_not_current"])}}
+                + ([blocker] if blocker else [])}}
 
 
 def request_fingerprint(creation_id, value, agent_id=None):
@@ -191,46 +234,56 @@ async def append_config(tx, agent, value, fingerprint, session):
 
 async def create(token, creation_id, value):
     async with write_authority(token, creation_id) as (tx, session, creation, registry, _):
-        fingerprint = request_fingerprint(creation.id, value)
-        old = await tx.scalar(select(Config).where(Config.idempotency_key == str(value.request_id)))
-        if old:
-            if old.request_fingerprint != fingerprint:
-                raise ControlError(409, "idempotency_conflict")
-            agent = await tx.get(Agent, old.agent_id)
-            if not agent or agent.creation_id != creation.id:
-                raise ControlError(404, "not_found")
-            return {**await detail(tx, agent, old), "action": "replayed", "request_id": str(value.request_id)}
-        agent = Agent(id=new_id(), **{key: getattr(registry, key) for key in REGISTRATION_KEYS},
-            registration_id=registry.id, registration_fingerprint=registry.fingerprint,
-            purpose=value.purpose, current_revision=1)
-        tx.add(agent)
-        await tx.flush()
-        config = await append_config(tx, agent, value, fingerprint, session)
-        return {**await detail(tx, agent, config), "action": "created", "request_id": str(value.request_id)}
+        return await create_in_transaction(tx, session, creation, registry, value)
+
+
+async def create_in_transaction(tx, session, creation, registry, value):
+    """Mutation only; public and internal callers enter canonical authority first."""
+    fingerprint = request_fingerprint(creation.id, value)
+    old = await tx.scalar(select(Config).where(Config.idempotency_key == str(value.request_id)))
+    if old:
+        if old.request_fingerprint != fingerprint:
+            raise ControlError(409, "idempotency_conflict")
+        agent = await tx.get(Agent, old.agent_id)
+        if not agent or agent.creation_id != creation.id:
+            raise ControlError(404, "not_found")
+        return {**await detail(tx, agent, old, session=session), "action": "replayed", "request_id": str(value.request_id)}
+    agent = Agent(id=new_id(), **{key: getattr(registry, key) for key in REGISTRATION_KEYS},
+        registration_id=registry.id, registration_fingerprint=registry.fingerprint,
+        purpose=value.purpose, current_revision=1)
+    tx.add(agent)
+    await tx.flush()
+    config = await append_config(tx, agent, value, fingerprint, session)
+    return {**await detail(tx, agent, config, session=session), "action": "created", "request_id": str(value.request_id)}
 
 
 async def revise(token, creation_id, agent_id, value):
     async with write_authority(token, creation_id, agent_id) as (tx, session, creation, _, agent):
-        fingerprint = request_fingerprint(creation.id, value, agent.id)
-        old = await tx.scalar(select(Config).where(Config.idempotency_key == str(value.request_id)))
-        if old:
-            if old.request_fingerprint != fingerprint or old.agent_id != agent.id:
-                raise ControlError(409, "idempotency_conflict")
-            return {**await detail(tx, agent, old), "action": "replayed", "request_id": str(value.request_id)}
-        if value.expected_revision != agent.current_revision:
-            raise ControlError(409, "agent_revision_conflict")
-        if agent.current_revision >= 2147483647:
-            raise ControlError(409, "agent_revision_exhausted")
-        agent.current_revision += 1
-        agent.updated_at = utcnow()
-        await tx.flush()
-        config = await append_config(tx, agent, value, fingerprint, session)
-        return {**await detail(tx, agent, config), "action": "revised", "request_id": str(value.request_id)}
+        return await revise_in_transaction(tx, session, creation, agent, value)
+
+
+async def revise_in_transaction(tx, session, creation, agent, value):
+    """The same immutable append and optimistic UUID replay as the public route."""
+    fingerprint = request_fingerprint(creation.id, value, agent.id)
+    old = await tx.scalar(select(Config).where(Config.idempotency_key == str(value.request_id)))
+    if old:
+        if old.request_fingerprint != fingerprint or old.agent_id != agent.id:
+            raise ControlError(409, "idempotency_conflict")
+        return {**await detail(tx, agent, old, session=session), "action": "replayed", "request_id": str(value.request_id)}
+    if value.expected_revision != agent.current_revision:
+        raise ControlError(409, "agent_revision_conflict")
+    if agent.current_revision >= 2147483647:
+        raise ControlError(409, "agent_revision_exhausted")
+    agent.current_revision += 1
+    agent.updated_at = utcnow()
+    await tx.flush()
+    config = await append_config(tx, agent, value, fingerprint, session)
+    return {**await detail(tx, agent, config, session=session), "action": "revised", "request_id": str(value.request_id)}
 
 
 async def get(token, creation_id, agent_id):
-    async with authority(token, creation_id, agent_id) as (tx, _, _, _, agent):
-        return await detail(tx, agent)
+    async with authority(token, creation_id, agent_id) as (tx, session, _, _, agent):
+        return await detail(tx, agent, session=session)
 
 
 async def revision(token, creation_id, agent_id, sequence):
@@ -268,9 +321,9 @@ async def listing(token, creation_id, *, limit=20, cursor=None):
                 (Agent.created_at == anchor.created_at) & (Agent.id < anchor.id)))
         rows = list(await tx.scalars(statement.order_by(Agent.created_at.desc(), Agent.id.desc()).limit(limit + 1)))
         items = [agent_view(row, await current_config(tx, row)) for row in rows[:limit]]
-        editable = await configuration_current(tx, creation, registry)
+        blocker = await configuration_blocker(tx, session, creation, registry)
         return {"creation_id": creation.id, "items": items,
-            "can_create_draft": editable, "configuration_blockers": [] if editable else ["agent_business_not_current"],
+            "can_create_draft": blocker is None, "configuration_blockers": [blocker] if blocker else [],
             "purposes": [{"purpose": item,
             "configuration_supported": True, "calibration_supported": False, "activation_supported": False}
             for item in PURPOSES], "has_more": len(rows) > limit,

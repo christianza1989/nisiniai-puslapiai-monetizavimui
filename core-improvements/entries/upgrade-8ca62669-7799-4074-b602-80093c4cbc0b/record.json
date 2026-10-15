@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Exact Discovery report source observations do not reach Creation/native intake. Add optional claims-only sourceContext from the report's own succeeded/owner/source-bound job, frozen hashes and native provenance, preserving legacy omission and blank facts/contact/operator. Explicit9000-character reader clipping and whole-entry bounded coverage prevent false full-catalog claims.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_DISCOVERY_SOURCE_CONTEXT_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/source_context.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/worker.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/creation/prompt_projection.py",
+    "content-studio/scripts/customer-creation-intake.mjs",
+    "content-studio/scripts/customer-content-context.mjs",
+    "content-studio/src/discovery-source-context.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped additive bridge revert; retain source/role/intake evidence, optional contexts and historical hashes. No automatic source/profile/approval/admission, no serving or actualcase change; Root owns later integration/adoption.",
+  "id": "upgrade-8ca62669-7799-4074-b602-80093c4cbc0b",
+  "branch": "codex/verslomatika-discovery-source-context-20261015",
+  "baseSha": "d3d9c9fd84482c0cc1696f6b25ebbf8d87a8b12f",
+  "createdAt": "2026-10-15T08:39:00.123Z"
+}

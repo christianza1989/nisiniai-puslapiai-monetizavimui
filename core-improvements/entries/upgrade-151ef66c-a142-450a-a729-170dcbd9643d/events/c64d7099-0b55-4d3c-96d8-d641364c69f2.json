@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Producer WIP protocol5PASS4.89s; initial4PASS/1FAIL process guardian retained in site-preview-protocol-next.log and site-preview-process-absolute-stop.log. Confirmed guardian had been removed on module-import completion while asynchronous work continued. Now IPC is unrefed but disconnect guardian remains; success/timeout/disconnect all terminate owned process. No leftover owned runners observed. Actual public build/HTTP/native wrapper regression pending peer proof header source; no semantic Foundation or localhost adoption claimed.",
+  "eventId": "c64d7099-0b55-4d3c-96d8-d641364c69f2",
+  "sequence": 2,
+  "at": "2026-10-14T11:09:00.651Z"
+}

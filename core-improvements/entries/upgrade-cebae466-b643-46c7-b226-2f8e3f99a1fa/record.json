@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Native V2 niche rendering omits the maintained inquiry/interest interface and rejects all POSTs before existing D1 handlers, blocking honest local Foundation inquiry acceptance",
+  "category": "code",
+  "evidence": [
+    "Public source5924a2e proxy.ts native-niche405 at44 and gift-only endpoint routing at48; native-content-site.tsx has mailto only; peer S5 Foundation inventory confirms native inquiry gap"
+  ],
+  "paths": [
+    "proxy.ts",
+    "components/niche/native-content-site.tsx",
+    "components/niche/native-content-site.module.css",
+    "components/niche/native-contact-form.tsx"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/34",
+  "rollback": "Scoped public source revert preserves D1 lead/interest history, existing host/publication/consent rules, gift routes and source admission; no deployment or channel activation",
+  "id": "upgrade-cebae466-b643-46c7-b226-2f8e3f99a1fa",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "faea0e75ca4bad441b8905898f052fef020acc17",
+  "createdAt": "2026-10-14T09:00:18.121Z"
+}

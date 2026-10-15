@@ -6,6 +6,7 @@ from test_content_work_review import coordinator as native_decision
 from test_content_work_review import critic as native_critic
 from test_content_work_review import output as native_output
 from test_creation_content_plan import planned
+from test_creation_language_patch import inert_team_actor as inert_team_actor_fixture
 from test_creation_review import decision, report
 from test_creation_review import draft as draft_fixture
 
@@ -16,6 +17,7 @@ from pinet_core.creation import adapter, language_mode, renderer, review, team
 from pinet_core.tasks.codex_transport import RunnerError
 
 draft = draft_fixture
+inert_team_actor = inert_team_actor_fixture
 FOREIGN = "Ennen julkistamista tarvitaan tosiasialliset yhteystiedot ja toimiva kyselyiden vastaanotto."
 
 
@@ -117,13 +119,15 @@ def test_native_guide_keeps_full_text_and_honest_unverified_receipt(paused, monk
     assert first_hash != native_adapter.instruction_hash("creator", prepared)
 
 
-async def test_paused_business_uses_three_roles_without_language_repair(paused, draft, monkeypatch):
+async def test_paused_business_uses_three_roles_without_language_repair(paused, draft, monkeypatch, inert_team_actor):
     value = renderer.normalize_creator(planned(draft))
     value["assumptions"][0] = FOREIGN
     calls, events = [], []
 
-    async def reserve(*args, **kwargs):
-        return "synthetic-attempt"
+    async def reserve(claimed, role, round_number, **flags):
+        attempt_id = "synthetic-attempt-" + role
+        inert_team_actor[0](attempt_id, role, **flags)
+        return attempt_id
 
     async def finish(*args):
         events.append(args[-1])
@@ -134,6 +138,8 @@ async def test_paused_business_uses_three_roles_without_language_repair(paused, 
     async def runner(data, authorized, *, role, seconds):
         calls.append(role)
         assert not data.get("language_repair")
+        assert data["_expected_execution"] == {"model": adapter.role_model(role), "reasoning_effort": "medium",
+            "instruction_hash": adapter.role_instruction_hash(role)}
         if role == "creator":
             result = deepcopy(value)
         elif role == "critic":
@@ -147,8 +153,10 @@ async def test_paused_business_uses_three_roles_without_language_repair(paused, 
 
     monkeypatch.setattr(team, "reserve", reserve)
     monkeypatch.setattr(team, "finish", finish)
-    result, evidence = await team.run({"context": {"permitted_web_actions": 0}}, authorized, role_runner=runner)
+    result, evidence = await team.run({"user_id": "synthetic-owner", "job_id": "synthetic-job",
+        "context": {"permitted_web_actions": 0}}, authorized, role_runner=runner)
     assert calls == ["creator", "critic", "coordinator"] and result == value
+    assert inert_team_actor[1] == ["synthetic-attempt-" + role for role in calls]
     assert evidence["language_review_mode"] == "paused_local_pilot"
     assert all(event["language_review_mode"] == "paused_local_pilot" for event in events)
     assert evidence["language_screening"]["status"] == "UNVERIFIED"

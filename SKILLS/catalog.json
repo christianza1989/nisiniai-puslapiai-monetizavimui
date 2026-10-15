@@ -699,7 +699,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "3d9dab24d50be4651d890c5ed315e5897029e1177c0a62e0a26e73b7db7d9100"
+      "entrySha256": "16c5d9bc4b10a6b9dd67f15c61b5e9f7e313569f9b42d0b62de718e19b59b032"
     },
     {
       "id": "niche-content-planner",
@@ -732,7 +732,7 @@
       "sourceUrl": null,
       "originalOrigin": "local-project",
       "archives": [],
-      "entrySha256": "c0b2707c25649b8845a9e3c781d5a00460ad0e9fc5c8cc5e2ebdba4cbc01f84e"
+      "entrySha256": "25300af9a0a03f891e29fe055c751390a98c71ddaa1bdfebc9575a35c5d17c7b"
     },
     {
       "id": "niche-site-builder",
@@ -1469,6 +1469,17 @@
       "originalOrigin": "local-project",
       "archives": [],
       "entrySha256": "4dab7f24f1cca912c71664575ec75509890c5db25a5e5dbad7936d29544856c5"
+    },
+    {
+      "id": "facebook-bot-setup",
+      "role": "core",
+      "entry": "facebook-bot-setup/SKILL.md",
+      "prompt": null,
+      "discovery": "installed-junction",
+      "sourceUrl": null,
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "c0600b3329f85bf96079668196c41ff994e1b24e7c362934fa38e5e6ea4d948d"
     }
   ]
 }

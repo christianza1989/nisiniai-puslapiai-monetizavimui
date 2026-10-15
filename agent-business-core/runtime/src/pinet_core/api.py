@@ -54,8 +54,12 @@ from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, ut
 from .order_tests import Confirmation, QuoteInput
 from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
+from .site_build.routes import router as site_foundation_router
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
+from .workspace_read.routes import router as workspace_read_router
+from .workspace_team.routes import router as workspace_team_router
+from .workspace_topics.routes import router as workspace_topics_router
 from .xbot_bridge.routes import router as xbot_bridge_router
 
 
@@ -77,12 +81,21 @@ async def lifespan(app):
     from .director import read as director_read
 
     await director_read.start(app, db)
+    from .workspace_team import lifecycle as team_lifecycle
+    team_worker = await team_lifecycle.start(app)
+    from .site_build import lifecycle as build_lifecycle
+    build_worker = None
     try:
+        build_worker = await build_lifecycle.start(app)
         yield
     finally:
-        await routing.active.close()
-        routing.active = None
-        await db.engine.dispose()
+        try:
+            await build_lifecycle.stop(build_worker)
+        finally:
+            await team_lifecycle.stop(team_worker)
+            await routing.active.close()
+            routing.active = None
+            await db.engine.dispose()
 
 
 app = FastAPI(title="Pinet business core", lifespan=lifespan)
@@ -97,6 +110,9 @@ app.include_router(task_router)
 app.include_router(operations_router)
 app.include_router(director_read_router)
 app.include_router(customer_router)
+app.include_router(workspace_read_router)
+app.include_router(workspace_topics_router)
+app.include_router(workspace_team_router)
 app.include_router(creation_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
@@ -107,6 +123,7 @@ app.include_router(content_work_router)
 app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)
+app.include_router(site_foundation_router)
 
 
 @app.post("/operator/sites/{site_id}/order-tests", dependencies=[Depends(operator_auth)])

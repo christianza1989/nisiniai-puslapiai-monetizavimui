@@ -5,7 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from ..config import settings
 from ..control.models import Session, User
-from ..control.routes import scope
+from ..control.routes import ControlError, scope
 from ..models import new_id, utcnow
 from . import adapter, renderer
 from .models import Artifact, Creation, Job, Revision
@@ -63,8 +63,13 @@ async def claim(*, team_enabled=True, creation_id=None):
         await discovery.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                                 {"k": "creation-worker:" + cfg.environment})
         candidates = (await discovery.execute(text("SELECT * FROM control_creation_candidates(:e)"), {"e": cfg.environment})).mappings().all()
+        global_candidates = candidates
+        if creation_id is not None:
+            from ..site_build.selectors import selected
+            candidates = await selected(discovery, "creation", cfg.environment, creation_id)
         # One actual provider process across cooperating workers, including a just-revoked lease.
-        if any(row["status"] == "running" and row["lease_until"] and row["lease_until"] > utcnow() for row in candidates):
+        if any(row["status"] == "running" and row["lease_until"] and row["lease_until"] > utcnow()
+               for row in [*global_candidates, *candidates]):
             return None
         for candidate in candidates:
             async with scope(user=candidate["user_id"]) as tx:
@@ -73,6 +78,8 @@ async def claim(*, team_enabled=True, creation_id=None):
                     continue
                 if creation_id is not None and creation.id != creation_id:
                     continue
+                from . import execution_profiles as profiles
+                profile_name = await profiles.ensure_current(tx, "creation", job)
                 if job.status == "running":
                     await fail(tx, creation, job, "worker_interrupted")
                     continue
@@ -81,23 +88,49 @@ async def claim(*, team_enabled=True, creation_id=None):
                     continue
                 instruction_hash = adapter.team_instruction_hash() if team_enabled else adapter.instructions()[1]
                 job.status, job.run_id, job.lease_until = "running", new_id(), lease_deadline()
-                job.instruction_hash, job.model, job.adapter_revision = instruction_hash, "gpt-6-luna", (
+                job.instruction_hash, job.model, job.adapter_revision = instruction_hash, adapter.pipeline_model("creator"), (
                     "codex-business-team.v1" if team_enabled else adapter.ADAPTER_REVISION)
                 creation.status, creation.stage = "running", "drafting"
                 await event(tx, creation, job, "AI rengia verslo pasiūlymą ir svetainės juodraštį.")
+                try:
+                    context = await context_for(tx, creation, job)
+                except ControlError as error:
+                    if error.code != "invalid_discovery_source_context":
+                        raise
+                    await fail(tx, creation, job, error.code)
+                    continue
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
                         "creation_id": creation.id, "revision": creation.current_revision + 1,
-                        "context": await context_for(tx, creation, job)}
+                        "execution_profile": profile_name,
+                        "context": context}
     return None
 
 
-async def heartbeat(job_id, user_id, run_id):
+async def source_matches(tx, creation, expected):
+    from ..business_discovery.service import approved_build_context
+    try:
+        current = await approved_build_context(tx, creation)
+        context = current.get("sourceContext") if isinstance(current, dict) else None
+        return bool(isinstance(context, dict) and context.get("contextSha256") == expected)
+    except (ControlError, ValueError, TypeError):
+        return False
+
+
+async def heartbeat(job_id, user_id, run_id, *, expected_source_sha256=None):
     async with scope(user=user_id) as tx:
         creation, job = await locked(tx, job_id, user_id)
         if not creation or not job or job.status != "running" or job.run_id != run_id:
             return False
+        from . import execution_profiles as profiles
+        try:
+            await profiles.ensure_current(tx, "creation", job)
+        except adapter.RunnerError:
+            return False
         if not job.lease_until or job.lease_until <= utcnow() or not await authority(tx, job):
             await fail(tx, creation, job, "authorization_revoked")
+            return False
+        if expected_source_sha256 is not None and not await source_matches(tx, creation, expected_source_sha256):
+            await fail(tx, creation, job, "source_context_changed")
             return False
         job.lease_until = lease_deadline()
         return True
@@ -121,14 +154,22 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None, cr
     if not claimed:
         return False
     result, receipt, failure, outputs = None, {}, None, []
+    frozen_source = (claimed["context"].get("approved_business_plan") or {}).get("sourceContext")
+    if frozen_source is not None:
+        from ..business_discovery.source_context import validate
+        frozen_source = validate(frozen_source, creation_id=claimed["creation_id"])
+    source_sha = frozen_source["contextSha256"] if frozen_source is not None else None
     try:
-        authorized = lambda: heartbeat(claimed["job_id"], claimed["user_id"], claimed["run_id"])  # noqa: E731
+        heartbeat_options = {"expected_source_sha256": source_sha} if source_sha is not None else {}
+        authorized = lambda: heartbeat(claimed["job_id"], claimed["user_id"], claimed["run_id"], **heartbeat_options)  # noqa: E731
         if runner:
             result, receipt = await runner(claimed["context"], authorized)
         else:
             from .team import run
             result, receipt = await run(claimed, authorized, role_runner)
         result = renderer.normalize(result)
+        if source_sha is not None:
+            receipt["source_context_sha256"] = source_sha
         from . import language_mode
         receipt["language_screening"] = language_mode.draft_observation(result)
         receipt["language_review_mode"] = language_mode.mode()
@@ -137,9 +178,15 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None, cr
             from .team import monotonic
             remaining = receipt.get("deadline_monotonic", monotonic() + 20) - monotonic()
             try:
+                intake_options = {"source_context": frozen_source} if frozen_source is not None else {}
+                if source_sha is not None and not await authorized():
+                    raise adapter.RunnerError("authorization_revoked", receipt)
                 receipt["content_intake"] = await (intake_runner or import_draft)(result,
                     creation_id=claimed["creation_id"], revision=claimed["revision"],
-                    canonical_host=claimed["context"]["canonical_host"], still_authorized=authorized, seconds=remaining)
+                    canonical_host=claimed["context"]["canonical_host"], still_authorized=authorized, seconds=remaining,
+                    **intake_options)
+                if source_sha is not None and not await authorized():
+                    raise adapter.RunnerError("authorization_revoked", receipt)
             except adapter.RunnerError as error:
                 if error.code in {"authorization_revoked", "run_timeout"}:
                     raise
@@ -161,6 +208,11 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None, cr
         job.usage, job.cost_microusd = receipt or None, None
         if job.status != "running" or job.run_id != claimed["run_id"]:
             return True
+        from . import execution_profiles as profiles
+        try:
+            await profiles.ensure_current(tx, "creation", job)
+        except adapter.RunnerError:
+            failure = "instructions_changed"
         if not await authority(tx, job):
             failure = "authorization_revoked"
         if not job.lease_until or job.lease_until <= utcnow():
@@ -173,6 +225,9 @@ async def _execute_once(runner=None, *, role_runner=None, intake_runner=None, cr
                 failure = "run_timeout"
         if failure:
             await fail(tx, creation, job, failure)
+            return True
+        if source_sha is not None and not await source_matches(tx, creation, source_sha):
+            await fail(tx, creation, job, "source_context_changed")
             return True
         creation.stage = "validation"
         await event(tx, creation, job, ("Patikrinta juodraščio struktūra; kalbos patikra laikinai išjungta. Ruošiami peržiūros failai."

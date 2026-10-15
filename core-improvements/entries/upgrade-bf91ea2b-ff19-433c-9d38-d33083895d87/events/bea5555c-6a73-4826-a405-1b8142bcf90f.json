@@ -1,0 +1,19 @@
+{
+  "status": "fixing",
+  "note": "Budget source is not activated or adopted. Retain original 10 failed/6 passed malformed example fixture; subsequent16 passed. Migration first failed on a PL/pgSQL CASE expression and then Alembic's32-character revision column; both retained and corrected to0040_calibration_task_budget. Initial PG collection had3 missing-fixture errors; configured admission3 passed. First native6 passed and mixed2 passed used a flat usage fixture: independent review correctly found it did not match maintained chat.usage_receipt. Real nested known/unknown receipts reproduced2 failures in16.42s against the prior own QA DB. Aggregation and tests now use actual native receipt known/tokens, exact kind/model/request/run or job/number, unknown remains incomplete. New separate QA DB tests this corrected schema; no prior DB/source failure overwritten. Plan input hashing expansion briefly exposed strict tuple conversion on JSON revalidation, corrected19 passed1.48s. Existing team/task quota regression38 passed251.66s. Fresh post-lock DB clock sampling fixed; concrete Session-fence lock-wait regression remains pending helper integration.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_workspace_calibration_plan.py -q",
+      "result": "PASS",
+      "evidence": "19 passed1.48s; private calibration-plan-input-pins-final.log"
+    },
+    {
+      "command": "python -m pytest tests/test_workspace_team_pg.py tests/test_control_tasks.py -q",
+      "result": "PASS",
+      "evidence": "38 passed251.66s in own restricted QA; private agent-calibration-native-shared-quota-regression.log; no provider"
+    }
+  ],
+  "eventId": "bea5555c-6a73-4826-a405-1b8142bcf90f",
+  "sequence": 2,
+  "at": "2026-10-15T03:47:26.547Z"
+}

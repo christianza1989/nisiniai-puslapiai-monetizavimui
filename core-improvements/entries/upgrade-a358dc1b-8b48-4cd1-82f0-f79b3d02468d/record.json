@@ -1,0 +1,20 @@
+{
+  "rollback": "Scoped revert of the capability projection, enum and canonical export; no migrations or runtime data changed",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "siteId": "core",
+  "category": "code",
+  "summary": "Customer-agent GET advertises draft create/edit while the canonical Foundation write gate denies the same owner",
+  "evidence": [
+    "agent-business-core/runtime/tests/test_customer_agent_foundation_projection.py",
+    "docs/decisions/VERSLOMATIKA_FOUNDATION_CAPABILITY_PROJECTION_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/wire.py",
+    "docs/contracts/verslomatika-customer-agents.openapi.json"
+  ],
+  "id": "upgrade-a358dc1b-8b48-4cd1-82f0-f79b3d02468d",
+  "branch": "codex/verslomatika-completion-review-20261015",
+  "baseSha": "9c618026bb7f57dadfbe77f4e93e30dbdbf92b8c",
+  "createdAt": "2026-10-15T02:23:06.983Z"
+}

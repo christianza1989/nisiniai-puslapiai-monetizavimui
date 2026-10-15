@@ -118,6 +118,13 @@ async def _submit_chat(tx, session, *, target, message, key, start):
         if previous.kind != "chat.consult" or previous.fingerprint != digest:
             raise ControlError(409, "idempotency_conflict")
         return previous
+    if settings().workspace_team_enabled:
+        from ..workspace_team.quota import call_slot
+        from .codex import RunnerError
+        try:
+            await call_slot(tx, user_id, additional=1)
+        except RunnerError as error:
+            raise ControlError(429, error.code) from None
     since = utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
     count = await tx.scalar(select(func.count()).select_from(Task).where(Task.created_at >= since, Task.kind == "chat.consult"))
     if count >= settings().chat_daily_limit:

@@ -3,7 +3,7 @@ import asyncio
 import hashlib
 from uuid import UUID, uuid5
 
-from sqlalchemy import select, text
+from sqlalchemy import select
 
 from ..business_discovery.models import BuildApproval
 from ..business_discovery.service import approved_build_context
@@ -19,6 +19,7 @@ from ..creation.routes import owned
 from ..creation.service import ACTIVE
 from ..creation_registration.service import accepted_proof
 from ..customer_text.adapter import source_current
+from . import approval_selectors, media
 
 NAMESPACE = UUID("8351b9d1-9456-46a7-b7c5-88204aed6c65")
 
@@ -69,24 +70,51 @@ async def advance(creation_id):
     if not await asyncio.to_thread(source_current):
         raise ControlError(503, "source_unavailable")
     async with scope() as registry:
-        ready = await registry.scalar(text("SELECT to_regprocedure('control_site_build_candidates(varchar)') IS NOT NULL"))
+        ready = await approval_selectors.ready(registry)
         if not ready:
             raise ControlError(503, "site_build_schema_unavailable")
-        target = (await registry.execute(text(
-            "SELECT * FROM control_site_build_candidates(:e) WHERE creation_id=:id"),
-            {"e": settings().environment, "id": identity})).mappings().first()
+        target = await approval_selectors.selected(registry, settings().environment, identity)
     if not target:
         return observation(identity, "approval", "blocked", code="build_approval_unavailable")
     async with scope(user=target["user_id"]) as tx:
+        from ..creation.models import Creation
+        from . import continuation
+        continuing = None
+        creation = await tx.get(Creation, identity)
+        # A separately admitted current-source revision is the authority to produce
+        # its new private draft. S6 requires that accepted proof and cannot renew a
+        # failed base0 job. Historical approval/source/session rows stay unchanged.
+        admitted = await tx.get(Job, creation.active_job_id, populate_existing=True) if (
+            creation and creation.status in ACTIVE and creation.active_job_id) else None
+        if admitted and admitted.status in ACTIVE and admitted.source_revision == settings().control_source_revision:
+            from ..creation import execution_profiles as profiles
+            from ..creation.service import authority, binding
+            if admitted.creation_id != identity or binding(admitted) != binding(creation) or not await authority(tx, admitted):
+                return observation(identity, "authority", "blocked", code="authorization_revoked")
+            await profiles.ensure_current(tx, "creation", admitted)
+            admitted_session = await tx.get(Session, admitted.session_id, populate_existing=True)
+            creation = await owned(tx, admitted_session, identity, lock=True)
+            if creation.active_job_id != admitted.id or creation.status not in ACTIVE:
+                return observation(identity, "business_draft", "blocked", code="creation_job_stale")
+            if await approved_build_context(tx, creation) is None:
+                return observation(identity, "approval", "blocked", code="build_approval_unavailable")
+            if await guides.archived(tx, creation):
+                return observation(identity, "authority", "blocked", code="creation_archived")
+            return observation(identity, "business_draft", admitted.status, job_id=admitted.id)
+        if creation and await continuation.schema_ready(tx):
+            continuing = await continuation.latest(tx, creation)
         approval = await tx.scalar(select(BuildApproval).where(BuildApproval.creation_id == identity))
-        session = await tx.get(Session, approval.session_id) if approval else None
+        session = (await tx.get(Session, continuing.session_id, populate_existing=True) if continuing
+                   else await tx.get(Session, approval.session_id) if approval else None)
         if not approval or not session:
             return observation(identity, "authority", "blocked", code="authorization_revoked")
         creation = await owned(tx, session, identity, lock=True)
+        if continuing and not await continuation.current(tx, creation, continuing):
+            return observation(identity, "source", "blocked", code="build_continuation_stale")
         approved = await approved_build_context(tx, creation)
         if approved is None:
             return observation(identity, "approval", "blocked", code="build_approval_unavailable")
-        if (approved["source_revision"] != settings().control_source_revision
+        if not continuing and (approved["source_revision"] != settings().control_source_revision
                 or creation.source_revision != settings().control_source_revision):
             return observation(identity, "source", "blocked", code="site_build_source_stale")
         if await guides.archived(tx, creation):
@@ -97,7 +125,7 @@ async def advance(creation_id):
             return observation(identity, "business_draft", "blocked",
                                code=creation.failure_code or "accepted_revision_missing")
         proof = await accepted_proof(tx, creation)
-        if proof["accepted_source_revision"] != settings().control_source_revision:
+        if not continuing and proof["accepted_source_revision"] != settings().control_source_revision:
             return observation(identity, "source", "blocked", code="site_build_source_stale")
         revision = await guides.current_revision(tx, creation, creation.current_revision)
         import_job = await tx.get(Job, revision.job_id)
@@ -109,6 +137,13 @@ async def advance(creation_id):
             await guides.expire(tx, active[0])
             return observation(identity, "initial_content", active[0].status,
                 code=active[0].failure_code, job_id=active[0].id, page_id=active[0].page_id, total=len(pages))
+        # Only a trusted, exact-case existing artifact receipt can enter this
+        # path. No media inbox means no provider and no change to GUIDE policy.
+        # Never mutate media while any GUIDE prepare/apply can be in flight.
+        attached = await media.advance(tx, session, creation, proof)
+        if attached:
+            return observation(identity, "media_preparation", "updated",
+                               page_id=attached["page_id"], total=len(pages))
         completed = 0
         for page_id in pages:
             matching = [job for job in jobs if job.page_id == page_id]

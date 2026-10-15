@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Initial High private website drafting sends full operator-stage instructions despite an exact reviewed business plan; project complete applicable refs while retaining full canonical snapshot invalidation",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HIGH_CREATOR_PROMPT_S13_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/prompt_projection.py",
+    "agent-business-core/runtime/offline_tests/test_creator_prompt_projection.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of initial High prompt profile; preserve all failed jobs, model charges and source-bound receipts",
+  "id": "upgrade-1a72f4a6-c634-4b5d-862a-4c7de769457a",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "a5ee8839c3d568b1b55d599dd84ab2ba84a911f2",
+  "createdAt": "2026-10-14T21:55:29.168Z"
+}

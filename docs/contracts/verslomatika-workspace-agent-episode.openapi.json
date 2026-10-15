@@ -1,0 +1,791 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Explicit native agent scenario",
+    "version": "workspace-agent-episode.v1",
+    "description": "One explicit owner scenario on the maintained team Task worker and native lab/Quality. Frozen Foundation, agent revision and canonical High profile are required. One scenario is not full calibration, module admission or activation."
+  },
+  "paths": {
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/team/agent-tests": {
+      "post": {
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestAgent"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Native owner receipt",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EpisodeEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid/denied/conflicting/limited/unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Accepted": {
+        "additionalProperties": false,
+        "properties": {
+          "turn": {
+            "$ref": "#/components/schemas/Turn"
+          },
+          "event": {
+            "$ref": "#/components/schemas/PublicEvent"
+          }
+        },
+        "required": [
+          "turn",
+          "event"
+        ],
+        "title": "Accepted",
+        "type": "object"
+      },
+      "ContextReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "context_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Context Sha256",
+            "type": "string"
+          },
+          "roster_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Roster Sha256",
+            "type": "string"
+          },
+          "history_cutoff": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "History Cutoff",
+            "type": "integer"
+          },
+          "history_event_ids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 20,
+            "title": "History Event Ids",
+            "type": "array"
+          },
+          "omitted_history_events": {
+            "minimum": 0,
+            "title": "Omitted History Events",
+            "type": "integer"
+          },
+          "reply_to_event_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reply To Event Id"
+          }
+        },
+        "required": [
+          "context_sha256",
+          "roster_sha256",
+          "history_cutoff",
+          "history_event_ids",
+          "omitted_history_events",
+          "reply_to_event_id"
+        ],
+        "title": "ContextReceipt",
+        "type": "object"
+      },
+      "EpisodeView": {
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "const": "workspace-agent-episode.v1",
+            "default": "workspace-agent-episode.v1",
+            "title": "Version",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "config_revision": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Config Revision",
+            "type": "integer"
+          },
+          "config_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Config Sha256",
+            "type": "string"
+          },
+          "max_calls": {
+            "maximum": 10,
+            "minimum": 3,
+            "title": "Max Calls",
+            "type": "integer"
+          },
+          "reserved_calls": {
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Reserved Calls",
+            "type": "integer"
+          },
+          "settled_calls": {
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Settled Calls",
+            "type": "integer"
+          },
+          "usage_complete": {
+            "title": "Usage Complete",
+            "type": "boolean"
+          },
+          "scenario": {
+            "enum": [
+              "owner_scenario",
+              "saved_example"
+            ],
+            "title": "Scenario",
+            "type": "string"
+          },
+          "model": {
+            "const": "gpt-6.1-sol",
+            "title": "Model",
+            "type": "string"
+          },
+          "reasoning_effort": {
+            "anyOf": [
+              {
+                "const": "high",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reasoning Effort"
+          },
+          "execution_profile_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Execution Profile Sha256"
+          },
+          "conversation_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Conversation Id"
+          },
+          "quality_job_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Quality Job Id"
+          },
+          "calibration_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Calibration Status",
+            "type": "string"
+          },
+          "module_admission": {
+            "const": "not_admitted",
+            "default": "not_admitted",
+            "title": "Module Admission",
+            "type": "string"
+          },
+          "activation": {
+            "const": "not_performed",
+            "default": "not_performed",
+            "title": "Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_id",
+          "agent_id",
+          "config_revision",
+          "config_sha256",
+          "max_calls",
+          "reserved_calls",
+          "settled_calls",
+          "usage_complete",
+          "scenario",
+          "model",
+          "reasoning_effort",
+          "execution_profile_sha256"
+        ],
+        "title": "EpisodeView",
+        "type": "object"
+      },
+      "PublicEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "format": "uuid",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "topic_id": {
+            "format": "uuid",
+            "title": "Topic Id",
+            "type": "string"
+          },
+          "task_id": {
+            "format": "uuid",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "author_type": {
+            "enum": [
+              "user",
+              "coordinator",
+              "adviser"
+            ],
+            "title": "Author Type",
+            "type": "string"
+          },
+          "author_user_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author User Id"
+          },
+          "participant_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Participant Id"
+          },
+          "attempt_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Attempt Id"
+          },
+          "native_episode_task_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Native Episode Task Id"
+          },
+          "kind": {
+            "enum": [
+              "owner_message",
+              "assignment",
+              "answer"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "reply_to_event_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reply To Event Id"
+          },
+          "content": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "content_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "topic_id",
+          "task_id",
+          "sequence",
+          "author_type",
+          "author_user_id",
+          "participant_id",
+          "attempt_id",
+          "kind",
+          "reply_to_event_id",
+          "content",
+          "content_sha256",
+          "source_revision",
+          "created_at"
+        ],
+        "title": "PublicEvent",
+        "type": "object"
+      },
+      "Turn": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "format": "uuid",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "topic_id": {
+            "format": "uuid",
+            "title": "Topic Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "native_episode": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EpisodeView"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z_]{1,64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "reserved_calls": {
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Reserved Calls",
+            "type": "integer"
+          },
+          "settled_calls": {
+            "maximum": 10,
+            "minimum": 0,
+            "title": "Settled Calls",
+            "type": "integer"
+          },
+          "usage_complete": {
+            "title": "Usage Complete",
+            "type": "boolean"
+          },
+          "cost_status": {
+            "const": "UNVERIFIED",
+            "title": "Cost Status",
+            "type": "string"
+          },
+          "context_receipt": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ContextReceipt"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "started_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started At"
+          },
+          "lease_until": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lease Until"
+          }
+        },
+        "required": [
+          "task_id",
+          "topic_id",
+          "sequence",
+          "idempotency_key",
+          "status",
+          "created_at",
+          "updated_at",
+          "failure_code",
+          "reserved_calls",
+          "settled_calls",
+          "usage_complete",
+          "cost_status",
+          "context_receipt",
+          "started_at",
+          "lease_until"
+        ],
+        "title": "Turn",
+        "type": "object"
+      },
+      "EpisodeEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-agent-episode.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Accepted"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "EpisodeEnvelope",
+        "type": "object"
+      },
+      "TestAgent": {
+        "additionalProperties": false,
+        "properties": {
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "expected_revision": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "content": {
+            "maxLength": 2500,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "messages": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Messages"
+          },
+          "reply_to_event_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reply To Event Id"
+          }
+        },
+        "required": [
+          "idempotency_key",
+          "creation_id",
+          "agent_id",
+          "expected_revision",
+          "content"
+        ],
+        "title": "TestAgent",
+        "type": "object"
+      },
+      "Error": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "request_id"
+        ],
+        "title": "Error",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "CustomerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

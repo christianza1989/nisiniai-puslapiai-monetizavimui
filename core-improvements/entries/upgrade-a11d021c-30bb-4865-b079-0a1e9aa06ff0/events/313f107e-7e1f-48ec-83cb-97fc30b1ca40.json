@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Final callback review of candidatea4a6d23 reproduced Session expiry during awaited TaskFence.check: targeted2PASS1FAIL DID NOT RAISE. Scoped Session principal now performs a non-awaiting held Session deadline check after Task/native completion and source check after callback. Full same offline group153PASS6.23s, Ruff6filesPASS; original failure preserved. Root informed while its first a4 baseline run was active; only final frozen-source rerun may establish PG acceptance.",
+  "eventId": "313f107e-7e1f-48ec-83cb-97fc30b1ca40",
+  "sequence": 3,
+  "at": "2026-10-15T03:41:54.026Z"
+}

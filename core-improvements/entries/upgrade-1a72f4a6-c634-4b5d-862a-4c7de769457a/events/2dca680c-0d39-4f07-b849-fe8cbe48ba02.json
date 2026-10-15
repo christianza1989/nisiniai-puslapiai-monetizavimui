@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual161278B High Creation300 timeout preserved; narrower complete10reference phase projection only, full16snapshot invalidation retained. Peer reviewed scope; no model outcome/cost/capraise asserted.",
+  "checks": [
+    {
+      "command": "pytest projection/maintained adapter/maintained dependency preflight offline suite",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATOR_PROMPT_S13_2026_10_15.md:49PASS2.41s; default/repairs/footer/hash/sources"
+    },
+    {
+      "command": "scoped Ruff/diff and numeric source footprint",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_HIGH_CREATOR_PROMPT_S13_2026_10_15.md:82844/full130511 bytes; no context/schema truncation"
+    }
+  ],
+  "eventId": "2dca680c-0d39-4f07-b849-fe8cbe48ba02",
+  "sequence": 2,
+  "at": "2026-10-14T22:06:36.360Z"
+}

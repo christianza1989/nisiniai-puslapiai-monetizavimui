@@ -28,7 +28,7 @@ from ..db import db
 from ..models import Business, Case, CaseSource, Conversation, Event, new_id, utcnow
 from ..tasks.codex_transport import RunnerError
 from ..text_tools import core_arguments
-from . import adapter
+from . import adapter, execution
 
 # Match the existing HTTP TextEvent wire. Private Quality/protection receipts
 # remain available through their dedicated evidence adapter, never this DTO.
@@ -63,40 +63,93 @@ async def customer_session(tx, token):
 @asynccontextmanager
 async def authority(token, creation_id, *, calibration=None):
     guard()
+    _require_execution_profile()
     if not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "source_unavailable")
     async with scope(token=token_hash(token)) as tx:
         session = await customer_session(tx, token)
-        identity = await profiles.pin_registration(tx, creation_id)
-        creation = await owned(tx, session, creation_id, lock=True)
-        task = None
-        if calibration is not None:
-            from ..customer_agents import lab
-            task = await lab.observe(tx, session, creation, identity, calibration)
-        current = await profiles.projection(tx, session, creation, registration_identity=identity)
-        if not current["profile_current"]:
-            raise ControlError(409, "customer_profile_not_current")
-        admitted = current["admission"]
-        registry = await tx.get(Registration, admitted["registration_id"])
-        admission = await tx.get(Admission, admitted["admission_id"])
-        business = await tx.get(Business, admitted["business_id"])
-        if not registry or not admission or not business:
-            raise ControlError(409, "customer_profile_not_current")
-        if task:
-            lab.profile_matches(task, admission)
-        await tx.execute(text("SELECT set_config('pinet.business', :b, true)"), {"b": business.id})
-        # Explicit local testing authority, separate from live channel activation.
-        await policy.require(tx, simulation=True, tool="knowledge.resolve")
-        await policy.require(tx, simulation=True, tool="need.patch")
-        binding = {"creation_id": creation.id, "user_id": session.user_id, "session_id": session.id,
-            "environment_id": settings().environment, "registration_id": registry.id,
-            "registration_fingerprint": registry.fingerprint,
-            "admission_id": admission.id, "admission_fingerprint": admission.fingerprint,
-            "profile": admitted, "adapter": adapter.VERSION,
-            "model": adapter.MODEL}
-        if task:
-            binding["task_calibration"] = task
-        yield tx, session, creation, identity, business, binding
+        async with transaction_authority(tx, session, creation_id, calibration=calibration) as context:
+            yield context
+        _require_execution_profile()
+
+
+def _require_execution_profile(pin=None):
+    try:
+        return execution.require_choice(pin)
+    except RunnerError as error:
+        if error.code == "execution_profile_required":
+            raise ControlError(403, "customer_text_profile_required") from None
+        raise ControlError(503, "runner_unavailable") from None
+
+
+@asynccontextmanager
+async def transaction_authority(tx, session, creation_id, *, calibration=None, principal=None):
+    """One native binding body; caller has already authenticated its principal."""
+    identity = await profiles.pin_registration(tx, creation_id)
+    creation = await owned(tx, session, creation_id, lock=True)
+    if principal is not None:
+        await principal.bind(tx, session, creation, identity)
+    task = None
+    if calibration is not None:
+        from ..customer_agents import lab
+        task = await lab.observe(tx, session, creation, identity, calibration)
+    current = await profiles.projection(tx, session, creation, registration_identity=identity)
+    if not current["profile_current"]:
+        raise ControlError(409, "customer_profile_not_current")
+    admitted = current["admission"]
+    registry = await tx.get(Registration, admitted["registration_id"])
+    admission = await tx.get(Admission, admitted["admission_id"])
+    business = await tx.get(Business, admitted["business_id"])
+    if not registry or not admission or not business:
+        raise ControlError(409, "customer_profile_not_current")
+    if task:
+        lab.profile_matches(task, admission)
+    await tx.execute(text("SELECT set_config('pinet.business', :b, true)"), {"b": business.id})
+    await policy.require(tx, simulation=True, tool="knowledge.resolve")
+    await policy.require(tx, simulation=True, tool="need.patch")
+    binding = {"creation_id": creation.id, "user_id": session.user_id, "session_id": session.id,
+        "environment_id": settings().environment, "registration_id": registry.id,
+        "registration_fingerprint": registry.fingerprint,
+        "admission_id": admission.id, "admission_fingerprint": admission.fingerprint,
+        "profile": admitted, "adapter": adapter.VERSION, "model": adapter.MODEL}
+    if task:
+        binding["task_calibration"] = task
+        if task.get("execution_profile") is not None:
+            pin = execution.current(execution.retained(task["execution_profile"]))
+            binding.update(execution_profile=pin.model_dump(mode="json"), model=pin.text.model)
+    yield tx, session, creation, identity, business, binding
+    if principal is not None:
+        await principal.check(tx)
+
+
+@dataclass(frozen=True)
+class _BearerPrincipal:
+    """Ephemeral compatibility wrapper; never stored in a native receipt."""
+    token: str
+
+    def text_authority(self, creation_id, *, calibration=None):
+        if isinstance(calibration, dict) and calibration.get("execution_profile") is not None:
+            raise ControlError(409, "conversation_task_not_current")
+        return authority(self.token, creation_id, calibration=calibration)
+
+    def agent_authority(self, creation_id, agent_id, *, writing):
+        from ..customer_agents import service as agents
+        return agents.authority(self.token, creation_id, agent_id, writing=writing)
+
+    async def reserve(self, tx, binding, **fields):
+        # Existing public/operator bearer policy is unchanged. Only the new
+        # internal Session principal requires a claimed Task allocation.
+        return None
+
+    async def start(self, creation_id, value, **options):
+        return await start(self.token, creation_id, value, **options)
+
+    async def turn(self, creation_id, conversation_id, value, **options):
+        return await turn(self.token, creation_id, conversation_id, value, **options)
+
+
+def _bearer(token):
+    return _BearerPrincipal(token)
 
 
 async def historical_identity(tx, session, creation, row, frozen):
@@ -138,10 +191,14 @@ async def historical_business(tx, session, creation, registry):
 
 def retained_binding(row, creation_id, session):
     frozen = row.payload.get("customer_text_binding") if row else None
+    try:
+        expected_model = execution.text_model(frozen) if isinstance(frozen, dict) else None
+    except ValueError:
+        raise ControlError(404, "not_found") from None
     if (not row or row.payload.get("transport") != adapter.VERSION
             or not isinstance(frozen, dict) or frozen.get("creation_id") != creation_id
             or frozen.get("user_id") != session.user_id or frozen.get("environment_id") != settings().environment
-            or frozen.get("adapter") != adapter.VERSION or frozen.get("model") != adapter.MODEL
+            or frozen.get("adapter") != adapter.VERSION or frozen.get("model") != expected_model
             or not all(key in frozen for key in ("registration_id", "registration_fingerprint",
                 "admission_id", "admission_fingerprint", "profile"))):
         raise ControlError(404, "not_found")
@@ -322,14 +379,19 @@ async def view(tx, row):
     return {"conversation_id": row.id, "creation_id": row.payload["customer_text_binding"]["creation_id"],
         "state": row.state, "need_revision": row.need_revision, "need": row.payload["need"],
         "events": events, "history_truncated": more, "transport": adapter.VERSION,
-        "model": adapter.MODEL, "scope": "local_authenticated_test", "channel_activation": "not_performed",
+        "model": row.payload["customer_text_binding"]["model"], "scope": "local_authenticated_test", "channel_activation": "not_performed",
         "calibration_status": "UNVERIFIED"}
 
 
 async def start(token, creation_id, value, *, calibration=None, protection=None):
-    if not adapter.runner_ready() or not await asyncio.to_thread(adapter.source_current):
+    return await _start(_bearer(token), creation_id, value, calibration=calibration, protection=protection)
+
+
+async def _start(principal, creation_id, value, *, calibration=None, protection=None):
+    pin = getattr(principal, "execution_profile", None)
+    if not (adapter.runner_ready_high(pin) if pin is not None else adapter.runner_ready()) or not await asyncio.to_thread(adapter.source_current):
         raise ControlError(503, "runner_unavailable")
-    async with authority(token, creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
+    async with principal.text_authority(creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
         if str(value.admission_id) != binding["admission_id"]:
             raise ControlError(409, "profile_admission_conflict")
         from ..customer_agents import protection as protected
@@ -424,7 +486,11 @@ async def result_event(tx, row, key):
 
 
 async def prepare(token, creation_id, conversation_id, value, *, calibration=None):
-    async with authority(token, creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
+    return await _prepare(_bearer(token), creation_id, conversation_id, value, calibration=calibration)
+
+
+async def _prepare(principal, creation_id, conversation_id, value, *, calibration=None):
+    async with principal.text_authority(creation_id, calibration=calibration) as (tx, session, creation, identity, business, binding):
         row = await locked(tx, conversation_id, binding)
         from ..customer_agents import protection
         await protection.turn(tx, row, value)
@@ -454,7 +520,8 @@ async def prepare(token, creation_id, conversation_id, value, *, calibration=Non
             raise ControlError(409, "customer_text_busy")
         if value.base_need_revision != row.need_revision:
             raise ControlError(409, "stale_need_revision")
-        if not adapter.runner_ready() or not await asyncio.to_thread(adapter.source_current):
+        pin = execution.binding_pin(binding)
+        if not (adapter.runner_ready_high(pin) if pin is not None else adapter.runner_ready()) or not await asyncio.to_thread(adapter.source_current):
             raise ControlError(503, "runner_unavailable")
         event = await core.add_event(tx, row, "client:" + request, "client_transcript", {"text": value.message})
         resolved = await knowledge.resolve(tx, KnowledgeQuery(query=value.message[:500]))
@@ -471,11 +538,17 @@ async def prepare(token, creation_id, conversation_id, value, *, calibration=Non
         row.lease_until = utcnow() + timedelta(seconds=settings().chat_runner_seconds + 10)
         _, input_text, schema_text = adapter.material(context, event.id, row.need_revision)
         attempt = {"request_id": request, "fingerprint": fingerprint, "run_id": row.owner, "epoch": row.epoch,
-            "need_revision": row.need_revision, "deadline": row.lease_until.isoformat(), "model": adapter.MODEL,
+            "need_revision": row.need_revision, "deadline": row.lease_until.isoformat(), "model": binding["model"],
             "binding_sha256": digest(binding),
             "prompt_sha256": hashlib.sha256(input_text.encode("utf-8")).hexdigest(),
             "schema_sha256": hashlib.sha256(schema_text.encode("utf-8")).hexdigest()}
         attempt.update(proof_material)
+        attempt.update(execution.call_fields(binding, "customer_text"))
+        await principal.reserve(tx, binding, kind="customer_text", conversation_id=row.id,
+            request_id=request, call_key="attempt:" + request, number=1, model=binding["model"],
+            prompt_sha256=attempt["prompt_sha256"], schema_sha256=attempt["schema_sha256"],
+            request_input_sha256=digest(value.message),
+            protected_case_sha256=proof_material.get("protected_case_sha256"))
         await core.add_event(tx, row, "attempt:" + request, "provider_attempt", attempt)
         await final_authority(tx, session, creation, identity, binding)
         return Dispatch(business.id, settings().environment, row.id, creation.id, request, row.owner,
@@ -489,15 +562,19 @@ def live(row, dispatch):
 
 
 async def authorized(token, dispatch):
+    return await _authorized(_bearer(token), dispatch)
+
+
+async def _authorized(principal, dispatch):
     try:
         if not await asyncio.to_thread(adapter.source_current):
             return False
-        async with authority(token, dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
+        async with principal.text_authority(dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
             row = await locked(tx, dispatch.conversation_id, binding)
             result = binding == dispatch.binding and live(row, dispatch) and await protected_current(tx, row, dispatch)
             await final_authority(tx, session, creation, identity, binding)
             return result
-    except (ControlError, HTTPException, ValueError):
+    except (ControlError, HTTPException, ValueError, RunnerError):
         return False
 
 
@@ -529,12 +606,18 @@ async def settle(dispatch, usage, failure):
         if not attempt or attempt.payload["run_id"] != dispatch.run_id or attempt.payload["epoch"] != dispatch.epoch:
             raise ControlError(409, "text_attempt_unavailable")
         await core.add_event(tx, row, "usage:" + dispatch.request_id, "provider_usage",
-            {"request_id": dispatch.request_id, "run_id": dispatch.run_id, "model": adapter.MODEL,
-                "usage": usage_receipt(usage), "failure_code": failure})
+            {"request_id": dispatch.request_id, "run_id": dispatch.run_id, "model": dispatch.binding["model"],
+                "usage": usage_receipt(usage), "failure_code": failure,
+                **execution.retained_fields(dispatch.binding, "customer_text"),
+                **({"execution": execution.observation(usage)} if execution.binding_pin(dispatch.binding) is not None else {})})
 
 
 async def finish(token, dispatch, output, failure):
-    async with authority(token, dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
+    return await _finish(_bearer(token), dispatch, output, failure)
+
+
+async def _finish(principal, dispatch, output, failure):
+    async with principal.text_authority(dispatch.creation_id, calibration=dispatch.binding.get("task_calibration")) as (tx, session, creation, identity, _, binding):
         row = await locked(tx, dispatch.conversation_id, binding)
         if binding != dispatch.binding or not live(row, dispatch) or not await protected_current(tx, row, dispatch):
             raise ControlError(409, "stale_text_attempt")
@@ -554,21 +637,28 @@ async def finish(token, dispatch, output, failure):
 
 
 async def turn(token, creation_id, conversation_id, value, *, calibration=None):
-    reserved = await prepare(token, creation_id, conversation_id, value, calibration=calibration)
+    return await _turn(_bearer(token), creation_id, conversation_id, value, calibration=calibration)
+
+
+async def _turn(principal, creation_id, conversation_id, value, *, calibration=None):
+    reserved = await _prepare(principal, creation_id, conversation_id, value, calibration=calibration)
     if not isinstance(reserved, Dispatch):
         return reserved
     output, usage, failure = None, None, None
     try:
-        if not await authorized(token, reserved):
+        if not await _authorized(principal, reserved):
             raise RunnerError("authorization_revoked")
-        output, usage = await adapter.run(reserved.context, reserved.event_id, reserved.revision,
-            lambda: authorized(token, reserved))
+        pin = execution.binding_pin(reserved.binding)
+        args = (reserved.context, reserved.event_id, reserved.revision, lambda: _authorized(principal, reserved))
+        output, usage = await adapter.run_high(pin, *args) if pin is not None else await adapter.run(*args)
+        if pin is not None and not execution.verified(usage, reserved.binding, "customer_text"):
+            raise RunnerError("instructions_changed", usage)
     except RunnerError as error:
         usage, failure = error.receipt, error.code
     except asyncio.CancelledError as error:
         await asyncio.shield(settle(reserved, getattr(error, "receipt", None), "request_interrupted"))
         raise
     await settle(reserved, usage, failure)
-    if not await authorized(token, reserved):
+    if not await _authorized(principal, reserved):
         raise ControlError(409, "text_authorization_changed")
-    return await finish(token, reserved, output, failure)
+    return await _finish(principal, reserved, output, failure)

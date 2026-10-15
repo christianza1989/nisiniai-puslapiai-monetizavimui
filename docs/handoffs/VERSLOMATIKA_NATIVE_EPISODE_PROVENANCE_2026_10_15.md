@@ -1,0 +1,69 @@
+# Scoped native episode schema handoff
+
+Base519df2565036ef9bde1508cf80b584e12f59ce92; own branch
+`codex/verslomatika-native-episode-proof-20261015` in `work/episode-proof`.
+Ownership and rationale: [decision](../decisions/VERSLOMATIKA_NATIVE_EPISODE_PROVENANCE_2026_10_15.md).
+
+New migration `0041_workspace_agent_episode` follows `0040_calibration_task_budget`.
+It adds `control_workspace_team_events.native_episode_task_id VARCHAR NULL`, FK
+to `control_tasks.id`, exact author CHECK alternative and a narrow current-fence
+patch. `workspace_team_native_episode(tid VARCHAR, src VARCHAR) RETURNS BOOLEAN`
+is SECURITY INVOKER, PUBLIC execute revoked, runtime execute allowed. Set the
+existing business GUC before native proof reads; hold native parents before Task.
+
+Root must add the nullable mapped column and omitted-for-legacy wire field in its
+owned code. It must supply this event's own Task ID only for coordinator/answer,
+no Attempt, and retain a real coordinator participant. Flush and `SET CONSTRAINTS
+workspace_team_fence IMMEDIATE` before marking Task terminal, then restore the
+normal deferred mode as current preparation completion does. Exact native
+receipts and typed output must be reconciled by that handler before summary.
+
+Planned restricted PostgreSQL command from runtime in a NEW disposable 0041 DB:
+
+```text
+python -m pytest -q tests/test_workspace_episode_provenance_pg.py
+```
+
+The 16 collected selectors include an injected-provider-zero ordinary role
+regression and synthetic native metadata under the maintained customer fixture.
+No operational DB, credentials, paid provider, model setting or serving flag is
+part of this window. Root can launch private QA from the frozen source and send
+sanitized diagnostics. Offline anchor checks: 10 PASS; scoped Ruff PASS; actual
+PG execution is pending. The subsequent anchor hardening has 13 offline PASS;
+it preserves literals and semantic boolean grouping, with no proof SQL change.
+Do not describe collected tests as executed acceptance.
+
+Downgrade refuses any retained native answer; otherwise it reverse-patches the
+exact branch and CHECK, then removes only the new helper/FK/column. Historical
+old rows and old role provenance remain unchanged.
+
+## Git delivery checks
+
+Draft [PR153](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/153)
+targets the coordinator feature branch. Source6cd16976 contains the final anchor
+hardening; subsequent delivery records do not alter functional source. Paired
+freshness and exact519df256→HEAD committed coverage PASS (2 shared changes,
+0 uncovered, 0 errors). Full origin/main→eb8ce1c coverage is BLOCKED with 381
+shared changes, 44 uncovered legacy paths and 37 foreign journal errors; none
+are this window's paths or upgrade. First legacy uncovered migrations are0013,
+0016,0018,0019; foreign canonical issue URL errors remain preserved. This scoped
+delivery does not rewrite another agent's history or claim whole-branch coverage.
+
+## Actual restricted PG acceptance and source window closure
+
+Primary session executed the 16 selectors on frozen functional source
+`6cd16976d487a2a856c887f320cddde161b3582e`, after its prior frozen 552 test
+processes ended and the clean checkout was recorded. A new branch/database was
+used; actual 0041 migration and bootstrap passed, including the CHECK comparator.
+Result: **16 PASS in 182.39s**, providers 0, frozen source clean, original 0032
+preview counts preserved. This peer inspected the safe two-line result log at
+coordinator `runtime/artifacts/workspace-ui/workspace-episode-schema-initial.log`;
+SHA256 `b775d0292e4345c6184a629f2f426b0441f4bbd6407cda8ee4a973122209b834`.
+It is primary-executed evidence, not this peer rerunning the suite. The pending
+PG status above records the initial delivery stage and is now superseded.
+
+The schema/proof source window is closed. Root may take c077121 + 6cd16976 and
+their subsequent metadata commits, preserving both WORKSTREAMS appends. Do not
+duplicate the already integrated 519df parent history. The root-owned nullable
+model/wire, Task invocation/completion and helper-owned canonical High profile
+remain separate integration/acceptance work; no runtime adoption is claimed here.

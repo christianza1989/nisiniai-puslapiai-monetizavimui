@@ -1,0 +1,25 @@
+{
+  "status": "local-verified",
+  "commit": "49ea61ef98b804cb7cff74d1a5056597743d326c",
+  "note": "PureNodehelper source49ea frozen/handedofftoRoot242adapterintegration. Actualwholeworkflow36PASS80911.46ms=14new+22existing; implementationunchangedafterfullrun, test-onlyshadowvariabletarget1PASS2090.81ms. Original1FAIL2602.79ms retained. Strictoldmetadataamendbodyrefusal/media/review/releasecompatibility retained; immutablebefore/peroplock/prepared-applied reconciliation/strictrestsite matches tested. ThrowfinallytestsNOThardkillproof, crashlocksneverstolen. RootownsPythonPG/source-S6authority/actualadoption; no helperacceptedcase/provider/DB/serving/mainclaim.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/decisions/VERSLOMATIKA_REVIEWED_COPY_AMENDMENT_2026_10_15.md: actualexit0,36PASS80911.46ms,14new+22existing; no implementationchangeafterfullrun."
+    },
+    {
+      "command": "node --test --test-name-pattern=reviewed-copy-invalidates-current-editorial-review content-studio/test/customer-content-workflow.test.mjs (actual quoted selector recorded in decision)",
+      "result": "PASS",
+      "evidence": "Same decision: actualselector reviewed-copy invalidates an actual,1PASS2090.81ms after test-onlyvariableshadowingcorrection; initial1FAILretained."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged; git diff --cached --check",
+      "result": "PASS",
+      "evidence": "Same decision/sourcepacket:7stagedfiles0findings, diffcheckPASS, no actualcase/runtimeartefacts staged; ownscopeoneJS/focusedtests/doc/journal/WORKSTREAMS."
+    }
+  ],
+  "eventId": "de3fa25e-82ec-4f5f-9f73-31ef8ea3e164",
+  "sequence": 3,
+  "at": "2026-10-15T07:48:03.582Z"
+}

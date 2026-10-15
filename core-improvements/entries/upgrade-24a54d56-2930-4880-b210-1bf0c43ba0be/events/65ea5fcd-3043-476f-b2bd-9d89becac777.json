@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "S10 source-only verification; root reviewed current production/test diff with no actionable finding. First7FAIL5PASS/165PASS4FAIL7SKIP and40PASS2strict-QA-refusals remain immutable. Only separately released fixture alignment; no timeout/allowlist weakening. Original0032/all counts/restricted-role attributes unchanged; own0038 QA only, provider0. Unknown usage/cost and actual error preserved; silent High synthesis vs provider stall and actual new timing completion UNVERIFIED. Frozen798/S9/UI/ordinary adoption unchanged.",
+  "checks": [
+    {
+      "command": ".venv/Scripts/python.exe -m pytest offline_tests/test_partial_cli_receipts.py offline_tests/test_discovery_deadlines.py offline_tests/test_control_codex.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_adapter.py offline_tests/test_business_discovery.py offline_tests/test_content_work_review.py offline_tests/test_pipeline_execution_profile.py offline_tests/test_creation_review_model.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md; private offline-final-b5f7b04e.log:172PASS7opt-inSKIP42.37s; inert partial timeout/provider/tool/model/authority errors/known-unknown usage/exact prefix/default and420/90/90 timing"
+    },
+    {
+      "command": "python artifacts/s10-deadlines/qa.py test tests/test_discovery_deadlines_pg.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md; private tests-a2b73309.log:8PASS44.65s; actual restricted new job deadlines/heartbeat/no reset/precharge lock delay/review reserve/six limit/old source and instruction identity refusal"
+    },
+    {
+      "command": "python artifacts/s8-profile/qa.py test tests/test_pipeline_execution_profile_pg.py::test_retained_selected_profile_blocks_downgrade_without_history_change tests/test_pipeline_execution_profile_pg.py::test_additive_schema_and_rollback_preserve_physical_default_rows -q --tb=short",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md; private s8-profile/tests-3363ddcc.log:2PASS25.90s; original ownership guard retained, only existing explicitly owned profile-prefix QA"
+    },
+    {
+      "command": "PYTHONPATH=src .venv/Scripts/python.exe artifacts/s10-deadlines/verify_identity.py",
+      "result": "PASS",
+      "evidence": "docs/handoffs/VERSLOMATIKA_DISCOVERY_DEADLINES_S10_2026_10_14.md; private identity-10f606cd.log:exact798 source comparison; default Discovery hash unchanged/both-profile CreationGUIDE hashes and argv unchanged/stop_process exact source unchanged"
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m ruff check src/pinet_core/tasks/codex_transport.py src/pinet_core/creation/adapter.py src/pinet_core/business_discovery/adapter.py src/pinet_core/business_discovery/worker.py src/pinet_core/business_discovery/deadlines.py src/pinet_core/content_work/adapter.py offline_tests/test_partial_cli_receipts.py offline_tests/test_discovery_deadlines.py offline_tests/test_creation_team_controller.py offline_tests/test_pipeline_execution_profile.py tests/test_discovery_deadlines_pg.py",
+      "result": "PASS",
+      "evidence": "Full final scoped Ruff PASS; source/test scope and whitespace reviewed, intermediate syntax/import errors preserved separately"
+    }
+  ],
+  "eventId": "65ea5fcd-3043-476f-b2bd-9d89becac777",
+  "sequence": 3,
+  "at": "2026-10-14T19:34:34.841Z"
+}

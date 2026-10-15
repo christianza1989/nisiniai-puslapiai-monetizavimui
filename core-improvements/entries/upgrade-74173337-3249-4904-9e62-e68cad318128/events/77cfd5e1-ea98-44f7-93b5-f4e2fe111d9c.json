@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Integrated peer frozen6e/7baa asd923/f354, independent readonly peer review complete. Root own first NULL identity1FAIL18.84 and strict decoded-UUID5FAIL/39PASS135.23 retained; null-safe SQL/UUID-specific parsing corrected. Canonical schema now one docs/contracts/verslomatika-site-foundation.openapi.json, explicit request command/UUID/revision binding. Current source45S5 testsPASS108.28, followed canonical cached-actor correction44 relevant native testsPASS293.85. Candidate/blocked observer seam and synthetic bridge fixtures are not actual business Foundation/manual quality acceptance. Core actor repair has separatea576 journal; real producer/runtimeheaders, old-case resume, ordinary owner, calibration/live/source adoption remain outstanding.",
+  "checks": [
+    {
+      "command": "pytest test_foundation_receipts.py test_foundation_receipts_pg.py test_foundation_controller_pg.py test_foundation_bridge.py test_foundation_bridge_pg.py",
+      "result": "PASS",
+      "evidence": "45PASS108.28s on isolated0034QA0fb7b702c53d; controller-final safe log, one deliberate corrupted-UUID serialization warning. Strict wire, actual forcedRLS/immutable/null/late-revoke constraints, fixed owner HTTP/exact replay/concurrent sameUUID/archive/revocation/source drift and reviewed bridge tests. Not ordinary account/semantic Foundation acceptance."
+    },
+    {
+      "command": "pytest test_current_actor_pg.py test_foundation_controller_pg.py test_foundation_receipts.py test_foundation_receipts_pg.py test_site_build.py test_workspace_agent_preparation_pg.py",
+      "result": "PASS",
+      "evidence": "44PASS293.85s after canonical actor correction in separate owned0034QA. Native creation/site-build/S4 effects and late authorization/accounting regressions; original0032 untouched."
+    },
+    {
+      "command": "scoped Ruff and git diff --check",
+      "result": "PASS",
+      "evidence": "Current receipt/schema/router/actor/controller/native fixtures clean; updated Check UUID alone accepts native HTTP JSON without coercing revision/bool or unknown fields."
+    }
+  ],
+  "eventId": "77cfd5e1-ea98-44f7-93b5-f4e2fe111d9c",
+  "sequence": 3,
+  "at": "2026-10-14T10:35:40.672Z"
+}

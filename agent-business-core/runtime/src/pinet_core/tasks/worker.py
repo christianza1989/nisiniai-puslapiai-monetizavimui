@@ -46,6 +46,11 @@ class ChatHandler:
 
         return await prepare(tx, task, await context_for(tx, task))
 
+    async def reserve_root(self, tx, task):
+        if settings().workspace_team_enabled:
+            from ..workspace_team.quota import call_slot
+            await call_slot(tx, task.user_id)
+
     def revision_for(self, context):
         from ..director.read import ADAPTER_REVISION
 
@@ -68,8 +73,9 @@ class ChatHandler:
 def handlers():
     # Source-fixed registry, never a browser-selected import/tool/executable.
     from ..acquisition.tasks import CaptureHandler
+    from ..workspace_team.handler import TeamHandler
 
-    return (ChatHandler(), CaptureHandler())
+    return (ChatHandler(), CaptureHandler(), TeamHandler())
 
 
 def handler_for(kind):
@@ -86,7 +92,13 @@ async def finish_run(tx, task, status, *, usage=None):
         else None
     )
     if run:
+        if task.kind == "workspace.team_turn":
+            from ..workspace_team.quota import merge_usage, saved_usage
+            usage = merge_usage(usage, await saved_usage(tx, task_id=task.id, run_id=run.id, user_id=task.user_id,
+                environment_id=task.environment_id, source_revision=task.source_revision))
         run.status, run.finished_at, run.usage = status, utcnow(), usage
+        if task.kind == "workspace.team_turn" and task.status in {"succeeded", "failed", "cancelled"}:
+            task.lease_until = None
         run.cost_microusd = None  # CLI usage is not an authoritative USD invoice.
 
 
@@ -105,6 +117,11 @@ async def claim(*, kind=None):
                     text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                     {"k": "chat-claim:" + settings().environment + ":" + user_id},
                 )
+                if settings().workspace_team_enabled:
+                    from ..workspace_team.quota import release_queue
+                    await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
+                        {"k": "chat-admission:"+settings().environment+":"+user_id})
+                    await release_queue(tx, user_id)
                 running = list(
                     await tx.scalars(select(Task).where(Task.status == "running").with_for_update())
                 )
@@ -117,9 +134,14 @@ async def claim(*, kind=None):
                         await finish_run(tx, task, "failed")
                 if busy:
                     continue
+                if settings().workspace_team_enabled and await tx.scalar(
+                    text("SELECT workspace_team_actor_busy(:u,:e)"), {"u": user_id, "e": settings().environment}
+                ):
+                    continue
                 task = await tx.scalar(
                     select(Task)
                     .where(Task.status == "queued", Task.kind == handler.kind)
+                    .where(handler.queue_filter() if hasattr(handler, "queue_filter") else True)
                     .order_by(Task.created_at, Task.id)
                     .limit(1)
                     .with_for_update()
@@ -131,6 +153,8 @@ async def claim(*, kind=None):
                     await append_event(tx, task)
                     continue
                 try:
+                    if hasattr(handler, "reserve_root"):
+                        await handler.reserve_root(tx, task)
                     context = await handler.context(tx, task)
                 except (ControlError, LedgerError, codex.RunnerError):
                     task.status, task.failure_code = "failed", "task_context_unavailable"
@@ -192,6 +216,30 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
         return True
 
 
+async def settle_hidden_task(tx, claimed, usage):
+    """Existing accounting-only fallback; hidden output never becomes public."""
+    if not await tx.scalar(text(
+        "SELECT to_regprocedure('public.director_settle_revoked_task(character varying,character varying,character varying,character varying,character varying,character varying,jsonb,character varying)') IS NOT NULL"
+    )):
+        return
+    if claimed["kind"] == "workspace.team_turn":
+        from ..workspace_team.quota import merge_usage, saved_usage
+        usage = merge_usage(usage, await saved_usage(tx, task_id=claimed["task_id"], run_id=claimed["run_id"],
+            user_id=claimed["user_id"], environment_id=claimed["environment_id"],
+            source_revision=claimed["source_revision"]))
+    observed = {
+        key: value for key, value in (usage or {}).items()
+        if isinstance(key, str)
+        and (key.endswith("_tokens") or (
+            claimed["kind"] == "acquisition.reviewed_capture" and key == "model_calls" and value == 0))
+        and type(value) is int and 0 <= value <= 1_000_000_000
+    } if isinstance(usage, dict) else None
+    await tx.scalar(text("SELECT director_settle_revoked_task(:t,:r,:u,:e,:s,:k,CAST(:j AS JSONB),:event)"), {
+        "t": claimed["task_id"], "r": claimed["run_id"], "u": claimed["user_id"],
+        "e": claimed["environment_id"], "s": claimed["source_revision"], "k": claimed["kind"],
+        "j": json.dumps(observed) if observed else None, "event": new_id()})
+
+
 async def execute_once(adapter=None, *, kind=None):
     claimed = await claim(kind=kind)
     if not claimed:
@@ -220,46 +268,17 @@ async def execute_once(adapter=None, *, kind=None):
     except Exception:
         failure = "provider_error"  # No private provider/OS diagnostic text.
     async with scope(user=actor) as tx:
+        # Native effect adapters lock their parent/actor before the Task row.
+        # No provider runs while these completion locks are held.
+        if not failure and hasattr(handler, "completion_locks"):
+            try:
+                await handler.completion_locks(tx, claimed)
+            except (ControlError, LedgerError, codex.RunnerError) as error:
+                failure = error.code
         task = await tx.scalar(select(Task).where(Task.id == task_id).with_for_update())
         if not task:
             # Losing a current grant must discard output, not lose already observed accounting.
-            if await tx.scalar(
-                text(
-                    "SELECT to_regprocedure('public.director_settle_revoked_task(character varying,character varying,character varying,character varying,character varying,character varying,jsonb,character varying)') IS NOT NULL"
-                )
-            ):
-                observed = (
-                    {
-                        key: value
-                        for key, value in (usage or {}).items()
-                        if isinstance(key, str)
-                        and (
-                            key.endswith("_tokens")
-                            or (
-                                claimed["kind"] == "acquisition.reviewed_capture"
-                                and key == "model_calls"
-                                and value == 0
-                            )
-                        )
-                        and type(value) is int
-                        and 0 <= value <= 1_000_000_000
-                    }
-                    if isinstance(usage, dict)
-                    else None
-                )
-                await tx.scalar(
-                    text("SELECT director_settle_revoked_task(:t,:r,:u,:e,:s,:k,CAST(:j AS JSONB),:event)"),
-                    {
-                        "t": task_id,
-                        "r": run_id,
-                        "u": actor,
-                        "e": claimed["environment_id"],
-                        "s": claimed["source_revision"],
-                        "k": claimed["kind"],
-                        "j": json.dumps(observed) if observed else None,
-                        "event": new_id(),
-                    },
-                )
+            await settle_hidden_task(tx, claimed, usage)
             return True
         if task.status != "running" or task.run_id != run_id:
             await finish_run(tx, task, task.status, usage=usage)
@@ -284,10 +303,22 @@ async def execute_once(adapter=None, *, kind=None):
                         raise LedgerError(409, "authorization_revoked")
                     if not task.lease_until or task.lease_until <= now:
                         raise LedgerError(409, "worker_interrupted")
-            except (LedgerError, codex.RunnerError) as error:
+            except (ControlError, LedgerError, codex.RunnerError) as error:
                 failure = error.code
             except SQLAlchemyError:
                 failure = "task_effect_failed"
+        if failure:
+            # Rolling back a modified ORM Task expires its attributes. Reload
+            # explicitly before terminal settlement; never perform implicit IO
+            # or reuse a run that current RLS/status no longer admits.
+            task = await tx.scalar(select(Task).where(Task.id == task_id).with_for_update()
+                .execution_options(populate_existing=True))
+            if not task:
+                await settle_hidden_task(tx, claimed, usage)
+                return True
+            if task.status != "running" or task.run_id != run_id:
+                await finish_run(tx, task, task.status, usage=usage)
+                return True
         task.status, task.failure_code = ("failed", failure) if failure else ("succeeded", None)
         task.result = result if not failure else None
         task.lease_until = None

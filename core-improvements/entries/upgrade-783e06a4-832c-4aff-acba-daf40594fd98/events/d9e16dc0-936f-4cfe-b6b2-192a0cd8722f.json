@@ -1,0 +1,7 @@
+{
+  "note": "Implemented fixed native Foundation capture/verify/observe and read-only retained checker over canonical workflow, immutable release and full local verifier. Preserved initial Windows test-path failure, Node fixture/loader and missing social-image metadata failures, and PG incorrect DTO-field failure in own ignored artifacts. Corrected fixture assertions/metadata only. Peer review found generic RunnerError classification could mislabel process unavailability as stale evidence: now only trusted invalid retained evidence is409; process/source failures503 and revocation401. Final tests use separate public910; originals untouched. Exact no-write tests and paused-language/synthetic/source fencing added.",
+  "status": "fixing",
+  "eventId": "d9e16dc0-936f-4cfe-b6b2-192a0cd8722f",
+  "sequence": 2,
+  "at": "2026-10-14T09:55:02.480Z"
+}

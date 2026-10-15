@@ -14,6 +14,7 @@ from ..config import settings
 from ..contracts import Quality
 from ..control.routes import ControlError
 from ..creation.service import digest
+from ..customer_text import execution
 from ..customer_text import service as chat
 from ..db import db
 from ..models import Artifact, Contact, Conversation, Event, Job, new_id, utcnow
@@ -39,11 +40,36 @@ class TypedRequest(ScoredRequest):
     typed_expectations: protection.Reference
 
 
+class SessionReviewRequest(Strict):
+    conversation_id: UUID
+    request_id: UUID
+    episode: lab.Episode
+
+
+class SessionScoredRequest(SessionReviewRequest):
+    score_competence: bool = Field(default=True, strict=True)
+
+
+class SessionTypedRequest(SessionScoredRequest):
+    typed_expectations: protection.Reference
+
+
+def parse_session_request(value):
+    schema = (SessionTypedRequest if isinstance(value, dict) and "typed_expectations" in value else
+              SessionScoredRequest if isinstance(value, dict) and "score_competence" in value else SessionReviewRequest)
+    return schema.model_validate(value)
+
+
 def parse_request(value):
     # Preserve the original four-field Request and its strict capabilities boundary.
     schema = (TypedRequest if isinstance(value, dict) and "typed_expectations" in value else
               ScoredRequest if isinstance(value, dict) and "score_competence" in value else Request)
     return schema.model_validate(value)
+
+
+def request_intent_sha256(request):
+    """Precommittable native Quality intent; Conversation is bound separately."""
+    return digest(request.model_dump(mode="json", exclude={"bearer", "conversation_id"}))
 
 
 @dataclass(frozen=True)
@@ -57,6 +83,8 @@ class Dispatch:
     protection_sha256: str | None = None
     score_competence: bool = False
     typed: dict | None = None
+    request_input_sha256: str | None = None
+    execution_profile: execution.Pin | None = None
 
 
 async def input_data(tx, row):
@@ -94,6 +122,10 @@ def current_job(job, dispatch):
         and job.payload.get("model_profile") == dispatch.model_profile
         and job.payload.get("competence_contract") == (competence.VERSION if dispatch.score_competence else None)
         and job.payload.get("protected_case_sha256") == dispatch.protection_sha256
+        and job.payload.get("request_input_sha256") == dispatch.request_input_sha256
+        and job.payload.get("execution_profile_sha256") == (
+            dispatch.execution_profile.fingerprint() if dispatch.execution_profile is not None else None)
+        and job.payload.get("reasoning_effort") == ("high" if dispatch.execution_profile is not None else None)
         and job.payload.get("typed_binding_sha256") == (digest(dispatch.typed) if dispatch.typed is not None else None))
 
 
@@ -105,28 +137,37 @@ def last_time(session, row):
 
 
 async def prepare(request):
+    return await _prepare(chat._bearer(request.bearer), request)
+
+
+async def _prepare(principal, request):
     lab.guard()
-    model_profile = evaluator.profile()  # validated before DB/paid reservation
+    pin = request.episode.execution_profile
+    model_profile = evaluator.profile_high(pin) if pin is not None else evaluator.profile()
     frozen = request.episode.model_dump(mode="json")
     material = {"version": VERSION, "conversation_id": str(request.conversation_id),
         "request_id": str(request.request_id), "episode": frozen}
-    scored = isinstance(request, ScoredRequest) and request.score_competence
-    if isinstance(request, TypedRequest) and not scored:
+    session_material = ({"request_input_sha256": request_intent_sha256(request)}
+                        if isinstance(request, SessionReviewRequest) else {})
+    material.update(session_material)
+    scored = isinstance(request, (ScoredRequest, SessionScoredRequest)) and request.score_competence
+    if isinstance(request, (TypedRequest, SessionTypedRequest)) and not scored:
         raise ControlError(409, "typed_competence_required")
     score_material = {"competence_contract": competence.VERSION} if scored else {}
     material.update(score_material)
-    async with chat.authority(request.bearer, frozen["creation_id"], calibration=frozen) as (
+    async with principal.text_authority(frozen["creation_id"], calibration=frozen) as (
             tx, session, creation, identity, business, binding):
         row = await chat.locked(tx, str(request.conversation_id), binding)
         protection_sha256 = await protection.review_proof(tx, row)
         typed = None
-        if isinstance(request, TypedRequest):
+        if isinstance(request, (TypedRequest, SessionTypedRequest)):
             typed = {"reference": request.typed_expectations.model_dump(mode="json"),
                      "binding": typed_checks.bound(request.typed_expectations, await protection.observe(tx, row)),
                      "observed": await typed_checks.capture(tx, row)}
         typed_material = {"typed_binding_sha256": digest(typed)} if typed is not None else {}
         proof_material = {"protected_case_sha256": protection_sha256} if protection_sha256 is not None else {}
-        fingerprint = digest({**material, **proof_material, **typed_material})
+        execution_material = execution.call_fields(binding, "customer_quality")
+        fingerprint = digest({**material, **proof_material, **typed_material, **execution_material})
         job = await tx.scalar(select(Job).where(Job.conversation_id == row.id, Job.kind == "quality",
             Job.business_id == business.id, Job.environment_id == settings().environment).with_for_update())
         if job:
@@ -147,7 +188,7 @@ async def prepare(request):
             payload={"dispatch": VERSION, "request_id": str(request.request_id), "fingerprint": fingerprint,
                 "binding_sha256": digest(binding), "input_sha256": digest(data),
                 "evaluator_sha256": evaluator_sha256, "model": evaluator.MODEL, "model_profile": model_profile,
-                **proof_material, **score_material, **typed_material})
+                **proof_material, **score_material, **typed_material, **session_material, **execution_material})
         tx.add(job)
         await tx.flush()
         await core.add_event(tx, row, "quality-request:" + str(request.request_id), "quality_request",
@@ -156,7 +197,7 @@ async def prepare(request):
         task = {"id": job.id, "conversation_id": row.id, "kind": "quality", "generation": 1,
             "owner": job.owner, "attempts": 1, "business_id": business.id, "environment_id": row.environment_id}
         dispatch = Dispatch(task, binding, data, fingerprint, evaluator_sha256, model_profile,
-                            protection_sha256, scored, typed)
+                            protection_sha256, scored, typed, session_material.get("request_input_sha256"), pin)
         last_time(session, row)
         if not current_job(job, dispatch):
             raise ControlError(409, "quality_authorization_changed")
@@ -168,7 +209,8 @@ async def observe(tx, row, dispatch):
     if (not current_job(job, dispatch) or job.business_id != row.business_id
             or job.environment_id != row.environment_id or job.conversation_id != row.id
             or evaluation_contract.fingerprint() != dispatch.evaluator_sha256
-            or evaluator.profile() != dispatch.model_profile
+            or (evaluator.profile_high(dispatch.execution_profile) if dispatch.execution_profile is not None
+                else evaluator.profile()) != dispatch.model_profile
             or await protection.review_proof(tx, row) != dispatch.protection_sha256
             or digest(await input_data(tx, row)) != digest(dispatch.data)):
         raise ControlError(409, "quality_authorization_changed")
@@ -182,9 +224,13 @@ async def observe(tx, row, dispatch):
 
 
 async def authorized(token, dispatch):
+    return await _authorized(chat._bearer(token), dispatch)
+
+
+async def _authorized(principal, dispatch):
     try:
         binding = dispatch.binding
-        async with chat.authority(token, binding["creation_id"], calibration=binding["task_calibration"]) as (
+        async with principal.text_authority(binding["creation_id"], calibration=binding["task_calibration"]) as (
                 tx, session, creation, identity, _, current):
             row = await chat.locked(tx, dispatch.task["conversation_id"], current)
             if current != binding:
@@ -198,8 +244,12 @@ async def authorized(token, dispatch):
 
 
 async def reserve_call(token, dispatch, number, prompt, wire):
+    return await _reserve_call(chat._bearer(token), dispatch, number, prompt, wire)
+
+
+async def _reserve_call(principal, dispatch, number, prompt, wire):
     binding = dispatch.binding
-    async with chat.authority(token, binding["creation_id"], calibration=binding["task_calibration"]) as (
+    async with principal.text_authority(binding["creation_id"], calibration=binding["task_calibration"]) as (
             tx, session, creation, identity, _, current):
         row = await chat.locked(tx, dispatch.task["conversation_id"], current)
         if current != binding:
@@ -208,11 +258,16 @@ async def reserve_call(token, dispatch, number, prompt, wire):
         key = "quality-attempt:" + job.id + ":" + str(number)
         if await tx.scalar(select(Event.id).where(Event.conversation_id == row.id, Event.event_key == key)):
             raise ControlError(409, "quality_call_already_reserved")
+        await principal.reserve(tx, binding, kind="customer_quality", conversation_id=row.id,
+            request_id=job.payload["request_id"], call_key=key, number=number, model=evaluator.MODEL,
+            request_input_sha256=dispatch.request_input_sha256,
+            **evaluator.hashes(prompt, wire), protected_case_sha256=dispatch.protection_sha256)
         await core.add_event(tx, row, key, "quality_provider_attempt", {
             "job_id": job.id, "number": number, "model": evaluator.MODEL, "fingerprint": dispatch.fingerprint,
             "model_profile": dispatch.model_profile,
             "binding_sha256": digest(binding), "input_sha256": digest(dispatch.data),
             "evaluator_sha256": dispatch.evaluator_sha256, **evaluator.hashes(prompt, wire),
+            **execution.call_fields(binding, "customer_quality"),
             **({"protected_case_sha256": dispatch.protection_sha256} if dispatch.protection_sha256 is not None else {})})
         await chat.final_authority(tx, session, creation, identity, current)
         last_time(session, row)
@@ -248,6 +303,8 @@ async def settle(dispatch, number, usage, failure, result=None):
         await core.add_event(tx, row, "quality-usage:" + key, "quality_provider_usage", {
             "job_id": job.id, "number": number, "model": evaluator.MODEL,
             "usage": chat.usage_receipt(usage), "failure_code": failure,
+            **execution.retained_fields(dispatch.binding, "customer_quality"),
+            **({"execution": execution.observation(usage)} if dispatch.execution_profile is not None else {}),
             "output_sha256": digest(result.model_dump()) if result is not None else None})
 
 
@@ -277,8 +334,29 @@ async def settle_known(*args):
 class AccountedLab:
     def __init__(self, token, dispatch):
         self.token, self.dispatch = token, dispatch
+        self.principal = chat._bearer(token)
+        self._initialize()
+
+    @classmethod
+    def for_principal(cls, principal, dispatch):
+        value = cls.__new__(cls)
+        value.token, value.dispatch, value.principal = None, dispatch, principal
+        value._initialize()
+        return value
+
+    def _initialize(self):
         self.calls, self.usage, self.timeout_recoveries = 0, [], []
         self.scores = None
+
+    async def _reserve(self, number, prompt, wire):
+        if self.token is not None:
+            return await reserve_call(self.token, self.dispatch, number, prompt, wire)
+        return await _reserve_call(self.principal, self.dispatch, number, prompt, wire)
+
+    async def _authorized(self):
+        if self.token is not None:
+            return await authorized(self.token, self.dispatch)
+        return await _authorized(self.principal, self.dispatch)
 
     async def ask(self, schema, instruction, data):
         # Existing Quality plus its optional independent attribution: no retry.
@@ -294,11 +372,15 @@ class AccountedLab:
                 + competence.customer_instruction())
         prompt, wire = evaluator.material(schema, instruction, data)
         number = self.calls + 1
-        await reserve_call(self.token, self.dispatch, number, prompt, wire)
+        await self._reserve(number, prompt, wire)
         self.calls = number
         result, usage, failure = None, None, None
         try:
-            result, usage = await evaluator.run(schema, prompt, wire, lambda: authorized(self.token, self.dispatch))
+            pin = getattr(self.dispatch, "execution_profile", None)
+            args = (schema, prompt, wire, self._authorized)
+            result, usage = await evaluator.run_high(pin, *args) if pin is not None else await evaluator.run(*args)
+            if pin is not None and not execution.verified(usage, self.dispatch.binding, "customer_quality"):
+                raise RunnerError("instructions_changed", usage)
         except RunnerError as error:
             usage, failure = error.receipt, error.code
         except asyncio.CancelledError as error:
@@ -308,7 +390,7 @@ class AccountedLab:
         self.usage.append(chat.usage_receipt(usage))
         if failure:
             raise RunnerError(failure, usage)
-        if not await authorized(self.token, self.dispatch):
+        if not await self._authorized():
             raise RunnerError("authorization_revoked", usage)
         if scored:
             self.scores = competence.report(result.scores)
@@ -317,8 +399,12 @@ class AccountedLab:
 
 
 async def finish(token, dispatch, result):
+    return await _finish(chat._bearer(token), dispatch, result)
+
+
+async def _finish(principal, dispatch, result):
     binding = dispatch.binding
-    async with chat.authority(token, binding["creation_id"], calibration=binding["task_calibration"]) as (
+    async with principal.text_authority(binding["creation_id"], calibration=binding["task_calibration"]) as (
             tx, session, creation, identity, _, current):
         row = await chat.locked(tx, dispatch.task["conversation_id"], current)
         if current != binding:
@@ -342,17 +428,31 @@ async def finish(token, dispatch, result):
 
 
 async def run(request):
-    dispatch = await prepare(request)
+    return await _run(chat._bearer(request.bearer), request)
+
+
+async def run_session(principal, request):
+    from .session import required
+    principal = required(principal)
+    if not isinstance(request, SessionReviewRequest):
+        raise ControlError(400, "invalid_request")
+    request = parse_session_request(request.model_dump(mode="json"))
+    return await _run(principal, request)
+
+
+async def _run(principal, request):
+    dispatch = await _prepare(principal, request)
     if not isinstance(dispatch, Dispatch):
         return dispatch
     try:
-        accounted = AccountedLab(request.bearer, dispatch)
+        accounted = (AccountedLab(principal.token, dispatch) if isinstance(principal, chat._BearerPrincipal)
+                     else AccountedLab.for_principal(principal, dispatch))
         result = await local_semantics.evaluate("quality", dispatch.data, accounted)
         if dispatch.score_competence:
             if accounted.scores is None:
                 raise RunnerError("competence_scores_missing")
             result["competence"] = accounted.scores
-        return await finish(request.bearer, dispatch, result)
+        return await _finish(principal, dispatch, result)
     except asyncio.CancelledError:
         await asyncio.shield(fail(dispatch, "request_interrupted"))
         raise

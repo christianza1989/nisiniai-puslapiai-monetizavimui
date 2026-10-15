@@ -155,7 +155,12 @@ def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding
     schema = review.output_schema(role, ctx)
     expected = model_output_schema(role)
     if role == "critic":
+        from pinet_core.creation import language_mode
+        language_mode.constrain_findings(expected, "Finding")
         expected["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = ctx["allowed_finding_refs"]
+        refs = expected["$defs"]["ReviewCheck"]["properties"]["evidence_refs"]
+        refs.update(minItems=1, maxItems=1)
+        refs["items"]["enum"] = [receipt["id"] for receipt in ctx["receipts"]]
         finding = schema["$defs"]["Finding"]["properties"]
         assert finding["explanation"]["maxLength"] == finding["correction"]["maxLength"] == 240
         assert schema["$defs"]["ReviewCheck"]["properties"]["summary"]["maxLength"] == 100
@@ -195,7 +200,8 @@ async def test_guide_adapter_uses_fixed_no_tools_transport_and_native_schema(tmp
     async def authorized():
         return True
     value, receipt = await adapter.run_role({"prepared": prepared,
-        "expected_instruction_hash": adapter.instruction_hash("creator", prepared)}, authorized, role="creator", seconds=20)
+        "expected_instruction_hash": adapter.instruction_hash("creator", prepared),
+        "expected_model": "gpt-6-luna"}, authorized, role="creator", seconds=20)
     assert value["body"][0]["type"] == "richParagraph" and receipt["model"] == "gpt-6-luna"
     assert len(calls) == 1
     with pytest.raises(RunnerError) as error:

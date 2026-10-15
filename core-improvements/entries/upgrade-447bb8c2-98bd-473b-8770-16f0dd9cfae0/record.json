@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "High website creator times out twice at300s without output; add source-bound600/150/150 role allocation on one900s job clock with pre-charge review reserve",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_HIGH_CREATION_CLOCK_S15_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/deadlines.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team_wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/prompt_projection.py",
+    "agent-business-core/runtime/offline_tests/test_creation_deadlines.py",
+    "agent-business-core/runtime/tests/test_creation_deadlines_pg.py",
+    "docs/contracts/verslomatika-customer-team.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of High timing policy, retaining failed jobs, immutable source, charged history and all original receipts",
+  "id": "upgrade-447bb8c2-98bd-473b-8770-16f0dd9cfae0",
+  "branch": "codex/verslomatika-workspace-ui-coordination-20261013",
+  "baseSha": "de06e60d1d6ebe8d7bd9fba056de8fcb10735a91",
+  "createdAt": "2026-10-14T22:54:03.949Z"
+}

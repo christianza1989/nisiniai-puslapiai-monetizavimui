@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Peer canonical provisioning c9994be and metadata68b3ff8 integrated as385964b/daf465e with both WORKSTREAMS additions retained. Original own QA first start failed because owned PostgreSQL container was stopped after PC restart; same preserved container restarted on127.0.0.1:15440. First native-fixture test ERROR17.78s before preparation because companion configuration was absent; only process-local explicit maintained companion paths corrected. Configured first S4effect test FAIL20.16s: deferred workspace_team_fence observed Task already succeeded/leaseNULL after same-transaction event insertion and rejected current settled phase. Existing SQLphaseplan is already allowed. Repair preserves original migration/SQLauthority: preparation.complete flushes and forces maintained team constraints IMMEDIATE then DEFERRED while Task is still running, within outer effect savepoint; Config/event/finalTask remain atomic. Source regression running; anticipated canonical ControlError completion terminal/accounting gap remains separately pending actual reproduction. Private sanitized logs agent-preparation-first-integration.log and agent-preparation-configured-integration.log retained, no raw traces in Git, no original preview schema/data migration or provider/channel activation.",
+  "eventId": "f69311db-8417-466e-a0cf-0583a619e478",
+  "sequence": 3,
+  "at": "2026-10-14T07:57:12.018Z"
+}

@@ -5,7 +5,9 @@ import { initialize, ROOT, getSite, listSites, listCalendar, createSite, editSit
 import { enqueue } from './generator.mjs';
 import { listNetworkLinks } from './model.mjs';
 import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
-import { imageSrcSet, responsiveImageVariants, visibleImageCredit } from '../../../dovanos-memorycasting/lib/niche-media.mjs';
+import { publicMedia } from './public-core.mjs';
+
+const { imageSrcSet, responsiveImageVariants, visibleImageCredit } = await publicMedia();
 
 const PORT = Number(process.env.STUDIO_PORT || 4317);
 const PUBLIC = path.join(ROOT, 'public');

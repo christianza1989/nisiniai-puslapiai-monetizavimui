@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Final fresh dedicated PostgreSQL schema0031 plus canonical bootstrap passes source-matched S1/S0/control regression; actual preview DB/schema0030 and counts remain unchanged. Original failures are preserved. No running S1 or human UI acceptance yet.",
+  "checks": [
+    {
+      "command": "workspace-topics-qa.py prepare (fresh schema0031 and canonical bootstrap on dedicated QA7f0)",
+      "result": "PASS",
+      "evidence": "Preview schema0030/five domain counts unchanged; fresh QA migration/bootstrap and restricted role checks pass."
+    },
+    {
+      "command": "workspace-topics-qa.py test workspace-topics-bootstrapped-regression.log tests/test_safe_route_commit.py tests/test_workspace_topics.py tests/test_workspace_topics_pg.py tests/test_workspace_read.py tests/test_workspace_read_pg.py tests/test_control_portfolio.py tests/test_control_bridge.py -q -x",
+      "result": "PASS",
+      "evidence": "73passed231.17s; own ignored safe log and source tests; original16PASS/1FAIL late ownership and first effective-app wrapper failure preserved."
+    },
+    {
+      "command": "qa-venv python -m ruff check workspace_topics control/routes.py S1/SafeRoute tests migration0031",
+      "result": "PASS",
+      "evidence": "All scoped checks passed after final source; no dependency manifest/lock change."
+    }
+  ],
+  "eventId": "278efc68-38ad-45e8-9a81-8e0d12626a93",
+  "sequence": 2,
+  "at": "2026-10-13T19:56:31.205Z"
+}

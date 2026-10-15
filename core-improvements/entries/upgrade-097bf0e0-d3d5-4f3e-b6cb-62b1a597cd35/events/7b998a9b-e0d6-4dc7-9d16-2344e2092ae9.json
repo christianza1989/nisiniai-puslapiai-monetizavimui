@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "New S2 scoped source only; original preview0031 and97 provider-zero regression evidence preserved. Independent authorized peer reviewed admission/accounting. No actual model/UI/original DB adoption accepted at this checkpoint.",
+  "checks": [
+    {
+      "command": "workspace-team-qa.py prepare-fresh",
+      "result": "PASS",
+      "evidence": "Dedicated schema0032f64f12f37d, trusted migration/bootstrap, runtime nonsuper/non-BYPASS; preview0031/five domain counts unchanged."
+    },
+    {
+      "command": "workspace-team-qa.py test workspace-team-final-regression.log tests/test_workspace_team.py tests/test_workspace_team_pg.py tests/test_workspace_topics.py tests/test_workspace_topics_pg.py tests/test_workspace_read.py tests/test_workspace_read_pg.py tests/test_workspace_admission.py tests/test_control_tasks.py -q -x",
+      "result": "PASS",
+      "evidence": "97 passed436.18s; ordinary HTTP/restricted PostgreSQL with injected providers only. Original FAILs kept in separate safe logs."
+    },
+    {
+      "command": "scoped ruff check S2 module/tests/tasks/api/config/migration/director and document()==canonical schema",
+      "result": "PASS",
+      "evidence": "Current source/import order and canonical wire equality pass; no token/DB/trace material in tracked files."
+    }
+  ],
+  "eventId": "7b998a9b-e0d6-4dc7-9d16-2344e2092ae9",
+  "sequence": 2,
+  "at": "2026-10-13T22:35:06.919Z"
+}

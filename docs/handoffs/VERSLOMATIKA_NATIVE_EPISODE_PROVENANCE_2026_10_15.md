@@ -36,3 +36,15 @@ Do not describe collected tests as executed acceptance.
 Downgrade refuses any retained native answer; otherwise it reverse-patches the
 exact branch and CHECK, then removes only the new helper/FK/column. Historical
 old rows and old role provenance remain unchanged.
+
+## Git delivery checks
+
+Draft [PR153](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/153)
+targets the coordinator feature branch. Source6cd16976 contains the final anchor
+hardening; subsequent delivery records do not alter functional source. Paired
+freshness and exact519df256→HEAD committed coverage PASS (2 shared changes,
+0 uncovered, 0 errors). Full origin/main→eb8ce1c coverage is BLOCKED with 381
+shared changes, 44 uncovered legacy paths and 37 foreign journal errors; none
+are this window's paths or upgrade. First legacy uncovered migrations are0013,
+0016,0018,0019; foreign canonical issue URL errors remain preserved. This scoped
+delivery does not rewrite another agent's history or claim whole-branch coverage.

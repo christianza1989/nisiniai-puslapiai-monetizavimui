@@ -14,6 +14,9 @@ from pinet_core.business_discovery import sources
     ('`https://supplier.example.test/catalogue/`', 'https://supplier.example.test/catalogue/'),
     ('https://supplier.example.test/model%28v2%29%22%27/;',
      'https://supplier.example.test/model%28v2%29%22%27/'),
+    ("Research https://supplier.example.test/owners'guide/.",
+     "https://supplier.example.test/owners'guide/"),
+    ("https://supplier.example.test/owners'", "https://supplier.example.test/owners'"),
 ])
 async def test_naturally_quoted_url_reaches_guarded_reader_without_prose(monkeypatch, message, expected):
     observed = []

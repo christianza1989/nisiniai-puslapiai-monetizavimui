@@ -155,8 +155,11 @@ async def collect(message, authorized, *, seconds=24, snapshot_dir=None):
     roots = []
     # Quotes/code delimiters in ordinary prose are not part of a supplied URL.
     # Percent-encoded punctuation stays intact; all existing public URL/DNS gates remain.
-    for candidate in re.findall(r'''https://[^\s<>"'`„“”«»‹›‘’]+''', message):
-        candidate = candidate.rstrip(".,;!)]")
+    for match in re.finditer(r'''https://[^\s<>"`„“”«»‹›‘’]+''', message):
+        # A raw apostrophe is legal within a URI path. Remove it only as the
+        # closing delimiter of a URL actually introduced by a single quote.
+        closing_quote = "'" if match.start() and message[match.start() - 1] == "'" else ""
+        candidate = match.group().rstrip(".,;!)]" + closing_quote)
         try:
             public_url(candidate)
             roots.append(candidate)

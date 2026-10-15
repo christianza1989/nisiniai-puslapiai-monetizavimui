@@ -7,6 +7,7 @@ from uuid import UUID, uuid4
 
 import pytest
 from pydantic import ValidationError
+from test_customer_quality import row, saved_task
 
 from pinet_core.config import settings
 from pinet_core.control.routes import ControlError
@@ -34,11 +35,14 @@ def target():
 class Fence(TaskFence):
     def __init__(self, available=10):
         self.available, self.checks, self.calls = available, [], []
+        self.expected = None
 
     async def check(self, tx):
         self.checks.append(tx)
 
     async def reserve(self, tx, call):
+        if self.expected and any(getattr(call, k) != v for k, v in self.expected.items()):
+            raise ControlError(409, "task_call_identity_changed")
         if not self.available:
             raise ControlError(429, "task_rate_limited")
         self.available -= 1
@@ -49,7 +53,7 @@ def binding(scope):
     return {"creation_id": str(scope.creation_id), "task_calibration": {"creation_id": str(scope.creation_id), "agent_id": str(uuid4()),
         "config_revision_id": str(uuid4()), "config_revision": 1, "config_sha256": "c" * 64,
         "admission_id": str(uuid4()), "admission_fingerprint": "d" * 64,
-        "episode_id": str(uuid4()), "execution_source_revision": scope.source_revision,
+        "episode_id": str(uuid4()), "script_sha256": "1" * 64, "execution_source_revision": scope.source_revision,
         "specification": {"name": "Synthetic task", "goal": "Discuss a synthetic request"}}}
 
 
@@ -57,7 +61,8 @@ def call_fields():
     request = uuid4()
     return {"kind": "customer_text", "conversation_id": str(uuid4()), "request_id": str(request),
         "call_key": "attempt:" + str(request), "number": 1, "model": "gpt-6.1-sol",
-        "prompt_sha256": "e" * 64, "schema_sha256": "f" * 64, "protected_case_sha256": None}
+        "prompt_sha256": "e" * 64, "schema_sha256": "f" * 64, "request_input_sha256": "2" * 64,
+        "protected_case_sha256": None}
 
 
 @pytest.mark.parametrize("value", [None, {}, object()])
@@ -139,7 +144,7 @@ async def test_call_identity_is_native_byte_bound_and_delivered_in_same_transact
 
 
 @pytest.mark.parametrize("field,value", [("number", 2), ("call_key", "attempt:foreign"),
-    ("bearer", "secret"), ("source_revision", "forged"), ("number", True)])
+    ("bearer", "secret"), ("source_revision", "forged"), ("number", True), ("script_sha256", "8" * 64)])
 async def test_invalid_native_identity_never_consumes_root_allocation(field, value):
     scope, fence = target(), Fence()
     principal = SessionPrincipal(scope, fence)
@@ -149,11 +154,39 @@ async def test_invalid_native_identity_never_consumes_root_allocation(field, val
     assert not fence.calls
 
 
+@pytest.mark.parametrize("missing", ["script_sha256", "request_input_sha256"])
+async def test_precommittable_script_and_input_hashes_are_required_before_allocation(missing):
+    scope, fence, fields = target(), Fence(), call_fields()
+    bound = binding(scope)
+    if missing == "script_sha256":
+        del bound["task_calibration"][missing]
+    else:
+        del fields[missing]
+    with pytest.raises(ControlError, match="invalid_call_identity"):
+        await SessionPrincipal(scope, fence).reserve(object(), bound, **fields)
+    assert not fence.calls
+
+
 def test_internal_quality_request_does_not_accept_a_bearer_or_activation():
     fields = {"conversation_id": uuid4(), "request_id": uuid4(), "episode": {}}
     for extra in ({"bearer": "a" * 64}, {"enabled": True}):
         with pytest.raises(ValidationError):
             review.parse_session_request({**fields, **extra})
+
+
+def test_quality_intent_excludes_only_bearer_and_dynamic_conversation():
+    episode = lab.Episode.model_validate(saved_task(row()))
+    request = review.SessionTypedRequest(conversation_id=uuid4(), request_id=uuid4(), episode=episode,
+        typed_expectations={"manifest_path": "C:/inert/protected.private.json",
+            "manifest_sha256": "4" * 64, "case_id": "case3"})
+    original = review.request_intent_sha256(request)
+    assert review.request_intent_sha256(request.model_copy(update={"conversation_id": uuid4()})) == original
+    bearer = review.TypedRequest(bearer="a" * 64, **request.model_dump())
+    assert review.request_intent_sha256(bearer) == original
+    for change in ({"request_id": uuid4()}, {"score_competence": False},
+            {"episode": episode.model_copy(update={"script_sha256": "5" * 64})},
+            {"typed_expectations": request.typed_expectations.model_copy(update={"case_id": "case4"})}):
+        assert review.request_intent_sha256(request.model_copy(update=change)) != original
 
 
 @pytest.fixture
@@ -246,17 +279,32 @@ async def test_completed_native_uuid_replay_never_consumes_another_permit(text_c
     assert result["turn"]["status"] == "succeeded" and not f.fence.calls
 
 
+@pytest.mark.parametrize("changed", ["script", "message"])
+async def test_first_text_dispatch_refuses_changed_pinned_content_with_same_ids(text_case, changed):
+    f = text_case
+    f.fence.expected = {"script_sha256": f.bound["task_calibration"]["script_sha256"],
+        "request_input_sha256": chat.digest(f.value.message)}
+    if changed == "script":
+        f.bound["task_calibration"]["script_sha256"] = "9" * 64
+    else:
+        f.value = Turn(**{**f.value.model_dump(), "message": "  Changed first input  "})
+    with pytest.raises(ControlError, match="task_call_identity_changed"):
+        await chat._prepare(f.principal, f.creation, f.row.id, f.value, calibration={})
+    assert not f.fence.calls and "provider_attempt" not in f.log
+
+
 @pytest.fixture
 def quality_case(text_case, monkeypatch):
     f = text_case
     job_id, owner = str(uuid4()), str(uuid4())
     dispatch = review.Dispatch({"id": job_id, "conversation_id": f.row.id, "owner": owner, "generation": 1},
-        f.bound, {}, "e" * 64, "f" * 64, {"fixture": "inert"})
+        f.bound, {}, "e" * 64, "f" * 64, {"fixture": "inert"}, request_input_sha256="3" * 64)
     job = SimpleNamespace(id=job_id, state="running", owner=owner, generation=1,
         lease_until=f.row.expires_at, payload={"request_id": str(uuid4()), "dispatch": review.VERSION,
             "fingerprint": dispatch.fingerprint, "model": review.evaluator.MODEL,
             "binding_sha256": review.digest(f.bound), "input_sha256": review.digest({}),
             "evaluator_sha256": dispatch.evaluator_sha256, "model_profile": dispatch.model_profile})
+    job.payload["request_input_sha256"] = dispatch.request_input_sha256
 
     async def observe(*_):
         return job
@@ -274,6 +322,8 @@ async def test_quality_reserves_actual_material_once_before_event_and_never_on_p
     assert tx is f.tx and call.kind == "customer_quality" and call.request_id == UUID(job.payload["request_id"])
     assert call.call_key == "quality-attempt:" + job.id + ":1"
     assert call.model == review.evaluator.MODEL
+    assert call.script_sha256 == f.bound["task_calibration"]["script_sha256"]
+    assert call.request_input_sha256 == dispatch.request_input_sha256
     assert {k: getattr(call, k) for k in ("prompt_sha256", "schema_sha256")} == review.evaluator.hashes(
         "Exact inert Quality prompt", "Exact inert schema")
     assert await review._authorized(f.principal, dispatch) and len(f.fence.calls) == 1
@@ -292,6 +342,15 @@ async def test_quality_zero_allocation_creates_no_provider_event(quality_case):
     f.fence.available = 0
     with pytest.raises(ControlError, match="task_rate_limited"):
         await review._reserve_call(f.principal, dispatch, 1, "Exact prompt", "Exact schema")
+    assert not f.fence.calls and not f.log
+
+
+async def test_first_quality_dispatch_compares_precommitted_input_before_reservation(quality_case):
+    f, _, dispatch = quality_case
+    f.fence.expected = {"script_sha256": f.bound["task_calibration"]["script_sha256"],
+        "request_input_sha256": "8" * 64}
+    with pytest.raises(ControlError, match="task_call_identity_changed"):
+        await review._reserve_call(f.principal, dispatch, 1, "Native prompt", "Native schema")
     assert not f.fence.calls and not f.log
 
 

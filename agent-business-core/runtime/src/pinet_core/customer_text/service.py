@@ -524,6 +524,7 @@ async def _prepare(principal, creation_id, conversation_id, value, *, calibratio
         await principal.reserve(tx, binding, kind="customer_text", conversation_id=row.id,
             request_id=request, call_key="attempt:" + request, number=1, model=adapter.MODEL,
             prompt_sha256=attempt["prompt_sha256"], schema_sha256=attempt["schema_sha256"],
+            request_input_sha256=digest(value.message),
             protected_case_sha256=proof_material.get("protected_case_sha256"))
         await core.add_event(tx, row, "attempt:" + request, "provider_attempt", attempt)
         await final_authority(tx, session, creation, identity, binding)

@@ -37,6 +37,7 @@ class CallIdentity(BaseModel):
     admission_id: UUID
     admission_fingerprint: Hash
     episode_id: UUID
+    script_sha256: Hash
     conversation_id: UUID
     request_id: UUID
     call_key: str = Field(min_length=1, max_length=150)
@@ -45,6 +46,7 @@ class CallIdentity(BaseModel):
     source_revision: str = Field(pattern=r"^[a-f0-9]{40}$")
     prompt_sha256: Hash
     schema_sha256: Hash
+    request_input_sha256: Hash
     protected_case_sha256: Hash | None = None
 
     @model_validator(mode="after")
@@ -155,9 +157,12 @@ class SessionPrincipal:
         if not isinstance(task, dict):
             raise ControlError(409, "conversation_task_not_current")
         try:
+            if set(fields) - {"kind", "conversation_id", "request_id", "call_key", "number", "model",
+                    "prompt_sha256", "schema_sha256", "request_input_sha256", "protected_case_sha256"}:
+                raise ValueError("native_call_binding_is_not_overrideable")
             call = CallIdentity.model_validate_json(json.dumps({
                 **{k: task[k] for k in ("creation_id", "agent_id", "config_revision_id", "config_revision",
-                                      "config_sha256", "admission_id", "admission_fingerprint", "episode_id")},
+                                      "config_sha256", "admission_id", "admission_fingerprint", "episode_id", "script_sha256")},
                 "source_revision": task["execution_source_revision"], **fields}))
         except (ValueError, TypeError, KeyError, ValidationError):
             raise ControlError(400, "invalid_call_identity") from None

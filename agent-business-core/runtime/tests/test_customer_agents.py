@@ -134,7 +134,13 @@ async def test_plan_linked_registered_business_cannot_skip_foundation(text_custo
             historical = await client.get(path(c, "/" + aid), headers=c["auth"])
             assert historical.status_code == 200, historical.text
             assert historical.json()["data"]["configuration"] == old["configuration"]
-            assert (await client.get(path(c), headers=c["auth"])).status_code == 200
+            readiness = historical.json()["data"]["readiness"]
+            assert not readiness["can_edit_configuration"]
+            assert "website_foundation_not_ready" in readiness["blockers"]
+            listed = await client.get(path(c), headers=c["auth"])
+            assert listed.status_code == 200, listed.text
+            assert not listed.json()["data"]["can_create_draft"]
+            assert listed.json()["data"]["configuration_blockers"] == ["website_foundation_not_ready"]
             assert await counts(c) == old_count
 
 

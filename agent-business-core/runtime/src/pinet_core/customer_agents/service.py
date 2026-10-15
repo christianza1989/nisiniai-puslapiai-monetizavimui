@@ -50,6 +50,23 @@ async def configuration_current(tx, creation, registry):
         and creation.active_job_id is None and creation.status not in ACTIVE)
 
 
+async def configuration_blocker(tx, session, creation, registry):
+    """Project the maintained write precondition without hiding retained history."""
+    if not await configuration_current(tx, creation, registry):
+        return "agent_business_not_current"
+    from ..business_discovery.service import require_agent_foundation
+    try:
+        await require_agent_foundation(tx, creation, session=session)
+    except ControlError as error:
+        if error.status not in {409, 503}:
+            raise
+        # Evidence may be missing, stale or temporarily unavailable. None of
+        # those states permits a draft write, but the saved specification can
+        # still be read under the surrounding current-owner authority.
+        return "website_foundation_not_ready"
+    return None
+
+
 async def check_binding(tx, session, creation, registry, *, writing=False):
     if not await tx.scalar(select(User.id).where(User.id == session.user_id,
             User.environment_id == settings().environment, User.enabled)):
@@ -185,17 +202,17 @@ async def current_config(tx, agent):
     return await tx.scalar(select(Config).where(Config.agent_id == agent.id, Config.revision == agent.current_revision))
 
 
-async def detail(tx, agent, selected=None):
+async def detail(tx, agent, selected=None, *, session):
     current = await current_config(tx, agent)
     creation = await tx.get(Creation, agent.creation_id)
     registry = await tx.get(Registration, agent.registration_id)
-    editable = await configuration_current(tx, creation, registry)
+    blocker = await configuration_blocker(tx, session, creation, registry)
     return {"agent": agent_view(agent, current), "configuration": config_view(agent, selected or current),
-        "readiness": {"configuration_saved": True, "can_edit_configuration": editable, "calibration_status": "UNVERIFIED",
+        "readiness": {"configuration_saved": True, "can_edit_configuration": blocker is None, "calibration_status": "UNVERIFIED",
             "module_admission": "not_admitted", "can_calibrate": False, "can_activate": False,
             "channel_activation": "not_performed", "provider_execution": False,
             "blockers": ["calibration_not_implemented", "module_admission_missing"]
-                + ([] if editable else ["agent_business_not_current"])}}
+                + ([blocker] if blocker else [])}}
 
 
 def request_fingerprint(creation_id, value, agent_id=None):
@@ -230,14 +247,14 @@ async def create_in_transaction(tx, session, creation, registry, value):
         agent = await tx.get(Agent, old.agent_id)
         if not agent or agent.creation_id != creation.id:
             raise ControlError(404, "not_found")
-        return {**await detail(tx, agent, old), "action": "replayed", "request_id": str(value.request_id)}
+        return {**await detail(tx, agent, old, session=session), "action": "replayed", "request_id": str(value.request_id)}
     agent = Agent(id=new_id(), **{key: getattr(registry, key) for key in REGISTRATION_KEYS},
         registration_id=registry.id, registration_fingerprint=registry.fingerprint,
         purpose=value.purpose, current_revision=1)
     tx.add(agent)
     await tx.flush()
     config = await append_config(tx, agent, value, fingerprint, session)
-    return {**await detail(tx, agent, config), "action": "created", "request_id": str(value.request_id)}
+    return {**await detail(tx, agent, config, session=session), "action": "created", "request_id": str(value.request_id)}
 
 
 async def revise(token, creation_id, agent_id, value):
@@ -252,7 +269,7 @@ async def revise_in_transaction(tx, session, creation, agent, value):
     if old:
         if old.request_fingerprint != fingerprint or old.agent_id != agent.id:
             raise ControlError(409, "idempotency_conflict")
-        return {**await detail(tx, agent, old), "action": "replayed", "request_id": str(value.request_id)}
+        return {**await detail(tx, agent, old, session=session), "action": "replayed", "request_id": str(value.request_id)}
     if value.expected_revision != agent.current_revision:
         raise ControlError(409, "agent_revision_conflict")
     if agent.current_revision >= 2147483647:
@@ -261,12 +278,12 @@ async def revise_in_transaction(tx, session, creation, agent, value):
     agent.updated_at = utcnow()
     await tx.flush()
     config = await append_config(tx, agent, value, fingerprint, session)
-    return {**await detail(tx, agent, config), "action": "revised", "request_id": str(value.request_id)}
+    return {**await detail(tx, agent, config, session=session), "action": "revised", "request_id": str(value.request_id)}
 
 
 async def get(token, creation_id, agent_id):
-    async with authority(token, creation_id, agent_id) as (tx, _, _, _, agent):
-        return await detail(tx, agent)
+    async with authority(token, creation_id, agent_id) as (tx, session, _, _, agent):
+        return await detail(tx, agent, session=session)
 
 
 async def revision(token, creation_id, agent_id, sequence):
@@ -304,9 +321,9 @@ async def listing(token, creation_id, *, limit=20, cursor=None):
                 (Agent.created_at == anchor.created_at) & (Agent.id < anchor.id)))
         rows = list(await tx.scalars(statement.order_by(Agent.created_at.desc(), Agent.id.desc()).limit(limit + 1)))
         items = [agent_view(row, await current_config(tx, row)) for row in rows[:limit]]
-        editable = await configuration_current(tx, creation, registry)
+        blocker = await configuration_blocker(tx, session, creation, registry)
         return {"creation_id": creation.id, "items": items,
-            "can_create_draft": editable, "configuration_blockers": [] if editable else ["agent_business_not_current"],
+            "can_create_draft": blocker is None, "configuration_blockers": [blocker] if blocker else [],
             "purposes": [{"purpose": item,
             "configuration_supported": True, "calibration_supported": False, "activation_supported": False}
             for item in PURPOSES], "has_more": len(rows) > limit,

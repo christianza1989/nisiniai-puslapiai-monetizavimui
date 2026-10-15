@@ -9,6 +9,7 @@ from pydantic import Field, model_validator
 from ..creation_registration.wire import Source, Strict
 
 Purpose = Literal["site_chat", "customer_research", "email", "custom"]
+ConfigurationBlocker = Literal["agent_business_not_current", "website_foundation_not_ready"]
 Revision = Annotated[int, Field(strict=True, ge=1, le=2147483647)]
 Text = Annotated[str, Field(min_length=1, max_length=1000)]
 Digest = Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
@@ -98,7 +99,7 @@ class Readiness(Strict):
     can_activate: Literal[False] = False
     channel_activation: Literal["not_performed"] = "not_performed"
     provider_execution: Literal[False] = False
-    blockers: list[Literal["calibration_not_implemented", "module_admission_missing", "agent_business_not_current"]] = Field(min_length=2, max_length=3)
+    blockers: list[Literal["calibration_not_implemented", "module_admission_missing", "agent_business_not_current", "website_foundation_not_ready"]] = Field(min_length=2, max_length=3)
 
 
 class Detail(Strict):
@@ -124,7 +125,7 @@ class Listing(Strict):
     items: list[Agent] = Field(max_length=50)
     purposes: list[PurposeCapability] = Field(min_length=4, max_length=4)
     can_create_draft: bool
-    configuration_blockers: list[Literal["agent_business_not_current"]] = Field(max_length=1)
+    configuration_blockers: list[ConfigurationBlocker] = Field(max_length=1)
     has_more: bool
     next_cursor: str | None = Field(default=None, max_length=2048)
 

@@ -1,0 +1,24 @@
+{
+  "note": "Inert baseline after fixture correction: 9 FAIL / 1 PASS. Corrected projection and unchanged dependent provisioning/receipt suites: 28 PASS. Scoped Ruff and canonical export match PASS. Existing PG assertion extended but not run here by explicit primary instruction; primary owns disposable restricted-role integration QA and portal sync/adoption. No provider or operational data.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "28 passed in 0.37s; docs/decisions/VERSLOMATIKA_FOUNDATION_CAPABILITY_PROJECTION_2026_10_15.md",
+      "command": "python -m pytest tests/test_customer_agent_foundation_projection.py tests/test_customer_agent_provisioning.py tests/test_foundation_receipts.py -q"
+    },
+    {
+      "result": "PASS",
+      "evidence": "All checks passed",
+      "command": "python -m ruff check src/pinet_core/customer_agents/service.py src/pinet_core/customer_agents/wire.py tests/test_customer_agent_foundation_projection.py tests/test_customer_agents.py"
+    },
+    {
+      "result": "PASS",
+      "evidence": "Canonical customer-agents export matches maintained routes and DTOs",
+      "command": "Compare maintained customer_agents.contract.document() with canonical customer-agents OpenAPI JSON"
+    }
+  ],
+  "eventId": "5d166c0c-6522-43c0-b073-f361ca4f6d37",
+  "sequence": 2,
+  "at": "2026-10-15T02:26:36.650Z"
+}

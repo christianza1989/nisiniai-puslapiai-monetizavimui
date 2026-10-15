@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "A server-admitted Sol High workspace Task cannot freeze and dispatch the maintained customer text/independent Quality path with canonical High profile identity: text is fixed Luna, critic default Medium and retained evidence assumes Luna. Add an internal immutable profile pin while preserving all legacy default bytes and signatures.",
+  "category": "code",
+  "evidence": [
+    "docs/decisions/VERSLOMATIKA_CUSTOMER_SOL_HIGH_2026_10_15.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_text/execution.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/contract.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/lab.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/session.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evaluator.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/protection.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/quality.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/typed_checks.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/evidence.py",
+    "docs/contracts/verslomatika-customer-text.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert; preserve original Luna and new High Conversations/attempts/usage/manifests as immutable historical receipts. Disable new High dispatch through admitted runtime policy, never relabel stored profiles or fallback.",
+  "id": "upgrade-d27cef34-daee-40f0-90e1-9d89fe1908f6",
+  "branch": "codex/verslomatika-customer-sol-high-20261015",
+  "baseSha": "519df2565036ef9bde1508cf80b584e12f59ce92",
+  "createdAt": "2026-10-15T04:06:56.857Z"
+}

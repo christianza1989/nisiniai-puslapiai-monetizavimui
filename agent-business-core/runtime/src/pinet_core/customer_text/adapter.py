@@ -10,10 +10,12 @@ from pydantic import Field, ValidationError, create_model
 
 from ..config import settings
 from ..contracts import NeedPatch, Strict
+from ..creation import adapter as canonical
 from ..customer_profile import instructions
 from ..tasks.codex import arguments, check_trace_event, child_environment, parse_trace
 from ..tasks.codex_transport import RunnerError, execute
 from ..text_tools import core_arguments, need_call_schema
+from . import execution
 
 VERSION = "customer-text.v1"
 MODEL = "gpt-6-luna"
@@ -44,6 +46,14 @@ def runner_ready():
         and workspace.is_absolute() and workspace.is_dir()
         and 10 <= cfg.chat_runner_seconds <= 180
         and hashlib.sha256(binary.read_bytes()).hexdigest() == cfg.chat_codex_sha256)
+
+
+def runner_ready_high(pin):
+    try:
+        execution.current(pin)
+    except RunnerError:
+        return False
+    return runner_ready()
 
 
 def schema(event_id, revision):
@@ -96,11 +106,19 @@ def normalize(value, typed, usage):
 
 
 async def run(context, event_id, revision, still_authorized):
-    if not runner_ready() or not await asyncio.to_thread(source_current):
+    return await _run(context, event_id, revision, still_authorized)
+
+
+async def run_high(pin, context, event_id, revision, still_authorized):
+    return await _run(context, event_id, revision, still_authorized, pin=pin)
+
+
+async def _run(context, event_id, revision, still_authorized, *, pin=None):
+    if not (runner_ready_high(pin) if pin is not None else runner_ready()) or not await asyncio.to_thread(source_current):
         raise RunnerError("runner_unavailable")
     cfg = settings()
     typed, input_text, schema_text = material(context, event_id, revision)
-    observed_usage = None
+    observed_usage, capture = None, None
 
     def observed(event):
         nonlocal observed_usage
@@ -113,10 +131,20 @@ async def run(context, event_id, revision, still_authorized):
         wire, output = directory / "turn.schema.json", directory / "turn.private.json"
         wire.write_bytes(schema_text.encode("utf-8"))
         try:
-            value, usage = await execute(arguments(cfg.chat_codex_executable, directory, wire, output),
+            argv = (canonical.arguments(cfg.chat_codex_executable, directory, wire, output,
+                        web=False, role="creator", execution_profile=pin.name) if pin is not None else
+                    arguments(cfg.chat_codex_executable, directory, wire, output))
+            if pin is not None:
+                capture = execution.captured(argv, pin, "customer_text")
+            value, usage = await execute(argv,
                 prompt=input_text, cwd=directory, env=child_environment(), output=output,
                 seconds=cfg.chat_runner_seconds, still_authorized=still_authorized,
                 parse_trace=parse_trace, on_event=observed)
         except asyncio.CancelledError:
-            raise RequestInterrupted(observed_usage) from None
+            raise RequestInterrupted(execution.decorate(observed_usage, capture)) from None
+        except RunnerError as error:
+            if pin is not None:
+                error.receipt = execution.decorate(error.receipt or observed_usage, capture)
+            raise
+        usage = execution.decorate(usage, capture)
         return normalize(value, typed, usage), usage

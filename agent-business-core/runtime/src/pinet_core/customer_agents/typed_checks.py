@@ -12,6 +12,7 @@ from .. import competence
 from ..control.routes import ControlError
 from ..creation.service import digest
 from ..customer_profile.instructions import NEED_FIELDS
+from ..customer_text import execution
 from ..models import Artifact, Contact, Event, Job, Outbox
 from . import protection, quality
 from .wire import Digest, Strict
@@ -186,7 +187,11 @@ async def capture(tx, row):
             or usage.kind != "provider_usage"
             or not client.sequence < attempt.sequence < usage.sequence < reply.sequence
             or any(e.payload.get("request_id") != request for e in (attempt, usage, reply))
-            or any(e.payload.get("model") != "gpt-6-luna" for e in (attempt, usage))
+            or not all(execution.reservation_matches(row.payload["customer_text_binding"], e.payload,
+                "customer_text") for e in (attempt, usage))
+            or execution.binding_pin(row.payload["customer_text_binding"]) is not None
+                and not execution.verified({"_execution": usage.payload.get("execution")},
+                    row.payload["customer_text_binding"], "customer_text")
             or not isinstance(attempt.payload.get("run_id"), str)
             or not attempt.payload["run_id"]
             or attempt.payload["run_id"] != usage.payload.get("run_id")

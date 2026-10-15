@@ -12,11 +12,12 @@ from dataclasses import dataclass
 from typing import Annotated, Literal
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_serializer, model_validator
 
 from ..control.routes import ControlError, scope
 from ..creation.service import digest
 from ..creation_registration.models import Registration
+from ..customer_text import execution
 from ..customer_text import service as chat
 from ..models import utcnow
 from . import provisioning
@@ -48,9 +49,13 @@ class CallIdentity(BaseModel):
     schema_sha256: Hash
     request_input_sha256: Hash
     protected_case_sha256: Hash | None = None
+    execution_profile_sha256: Hash | None = None
+    reasoning_effort: Literal["high"] | None = None
 
     @model_validator(mode="after")
     def native_key(self):
+        if (self.execution_profile_sha256 is None) != (self.reasoning_effort is None):
+            raise ValueError("execution_profile_conflict")
         if self.kind == "customer_text":
             if self.number != 1 or self.call_key != "attempt:" + str(self.request_id):
                 raise ValueError("text_call_identity_conflict")
@@ -59,6 +64,14 @@ class CallIdentity(BaseModel):
             if prefix != "quality-attempt" or str(UUID(job)) != job or number != str(self.number):
                 raise ValueError("quality_call_identity_conflict")
         return self
+
+    @model_serializer(mode="wrap")
+    def optional_profile(self, handler):
+        value = handler(self)
+        if self.execution_profile_sha256 is None:
+            value.pop("execution_profile_sha256", None)
+            value.pop("reasoning_effort", None)
+        return value
 
     def fingerprint(self):
         return digest(self.model_dump(mode="json"))
@@ -85,6 +98,7 @@ class TaskFence(ABC):
 class SessionPrincipal:
     scope: provisioning.ProvisioningScope
     fence: TaskFence
+    execution_profile: execution.Pin | None = None
 
     def validated(self):
         if (not isinstance(self.scope, provisioning.ProvisioningScope)
@@ -92,6 +106,8 @@ class SessionPrincipal:
                 or not inspect.iscoroutinefunction(self.fence.check)
                 or not inspect.iscoroutinefunction(self.fence.reserve)):
             raise ControlError(403, "task_fence_required")
+        if self.execution_profile is not None:
+            execution.current(self.execution_profile)
         try:
             return provisioning.ProvisioningScope.model_validate_json(self.scope.model_dump_json())
         except (ValueError, TypeError, ValidationError):
@@ -103,6 +119,8 @@ class SessionPrincipal:
         if await self.fence.check(tx) is not None:
             raise ControlError(403, "task_fence_required")
         provisioning.source_matches(expected)
+        if self.execution_profile is not None:
+            execution.current(self.execution_profile)
 
     @staticmethod
     def last_time(session):
@@ -141,6 +159,10 @@ class SessionPrincipal:
         expected = self.validated()
         if str(expected.creation_id) != str(creation_id) or calibration is None:
             raise ControlError(409, "conversation_task_not_current")
+        frozen = calibration.get("execution_profile") if isinstance(calibration, dict) else None
+        chosen = self.execution_profile.model_dump(mode="json") if self.execution_profile is not None else None
+        if frozen != chosen:
+            raise ControlError(409, "conversation_task_not_current")
         chat.guard()
         if not await asyncio.to_thread(chat.adapter.source_current):
             raise ControlError(503, "source_unavailable")
@@ -157,13 +179,16 @@ class SessionPrincipal:
         if not isinstance(task, dict):
             raise ControlError(409, "conversation_task_not_current")
         try:
+            if execution.binding_pin(binding) != self.execution_profile:
+                raise ControlError(409, "conversation_task_not_current")
             if set(fields) - {"kind", "conversation_id", "request_id", "call_key", "number", "model",
                     "prompt_sha256", "schema_sha256", "request_input_sha256", "protected_case_sha256"}:
                 raise ValueError("native_call_binding_is_not_overrideable")
             call = CallIdentity.model_validate_json(json.dumps({
                 **{k: task[k] for k in ("creation_id", "agent_id", "config_revision_id", "config_revision",
                                       "config_sha256", "admission_id", "admission_fingerprint", "episode_id", "script_sha256")},
-                "source_revision": task["execution_source_revision"], **fields}))
+                "source_revision": task["execution_source_revision"],
+                **execution.call_fields(binding, fields.get("kind")), **fields}))
         except (ValueError, TypeError, KeyError, ValidationError):
             raise ControlError(400, "invalid_call_identity") from None
         if call.creation_id != expected.creation_id or call.source_revision != expected.source_revision:

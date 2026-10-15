@@ -1478,7 +1478,10 @@
           "configuration_blockers": {
             "items": {
               "type": "string",
-              "const": "agent_business_not_current"
+              "enum": [
+                "agent_business_not_current",
+                "website_foundation_not_ready"
+              ]
             },
             "type": "array",
             "maxItems": 1,
@@ -1695,7 +1698,8 @@
               "enum": [
                 "calibration_not_implemented",
                 "module_admission_missing",
-                "agent_business_not_current"
+                "agent_business_not_current",
+                "website_foundation_not_ready"
               ]
             },
             "type": "array",

@@ -21,6 +21,8 @@ Vertė pirkėjui — pagal jo objektą parengtas trumpas poreikio aprašas ir ti
 
 [Landal 4ELW](https://www.landal.com/parks/berger-duinen/accommodations/4elw) — tik naudojimo atvejis, ne mūsų prospectas su patvirtinta pirkimo intencija. Jau turimas kubilas nebūtinai reiškia poreikį jį pirkti. Didelei grandinei reikia kito sprendimų ir tiekimo modelio, todėl pirmam bandymui ji neprioritetinė.
 
+Papildoma [nedidelė oficialių puslapių imtis](BUYER_RESEARCH.md) išlaiko tikras peržiūros ribas: du perskaityti tinkamo segmento puslapiai, vienas neprieinamas straipsnis, nė vienos patvirtintos pirkimo intencijos. Prieštaringa atidarymo data ir neapibrėžtas „nauja“ nėra kvalifikuoto poreikio pakaitalas.
+
 Kiekvienam būsimam tyrimo įrašui išsaugoti tik organizacijos pavadinimą, oficialų URL, šalį / vietą, konkretų poreikio signalą ir jo datą, viešą organizacijos kontaktavimo kelią bei atskirus `fit`, `intent`, `recency`, `contactability`, `fulfilment` sprendimus. Asmeninių el. paštų nespėti; pakankamai naudingo organizacijos kontakto nekeisti pertekliniu asmens praturtinimu. Duomenis laikyti privačiai, susieti su šiuo siteId ir numatyti peržiūrą / pašalinimą po bandymo.
 
 Atmesti netinkamą šalį, neveikiantį objektą, buitinį poreikį už pasirinktos B2B apimties, tiekėjo neaptarnaujamą vietą ar neįgyvendinamą naudojimo scenarijų. Jei nežinomas kontaktavimo pagrindas arba tiekimo galimybė, aukštas tinkamumas jų nepakeičia.

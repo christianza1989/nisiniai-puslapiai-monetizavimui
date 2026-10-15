@@ -9,6 +9,7 @@ Vėlesnis savininko patikslinimas: su Maudis kol kas tik išsirinktas kandidatas
 - [Verslo sprendimas ir bandymas](wellness-export/BUSINESS.md).
 - [Maudis atranka, gaminiai, šaltiniai ir klausimų juodraštis](wellness-export/SUPPLIER_RESEARCH.md).
 - [Klientų paieškos planas](wellness-export/ACQUISITION.md).
+- [Maža realių apgyvendinimo puslapių imtis](wellness-export/BUYER_RESEARCH.md).
 - [Esamo core ir įrankių atranka](wellness-export/TOOLS.md).
 - [Faktų perdavimo į svetainės kūrimą ribos](wellness-export/INTEGRATION.md).
 - [Uždaros demonstracijos ir vėlesnės plėtros apimtis](wellness-export/SHOWCASE.md).

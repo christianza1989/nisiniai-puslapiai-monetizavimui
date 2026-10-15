@@ -43,6 +43,7 @@ async def test_real_native_workflow_is_frozen_once_for_all_three_roles(prepare_c
         assert snapshot["creation_id"]==c["request"]["creation_id"]
         assert snapshot["candidate_sha256"]==c["request"]["candidate_sha256"]
         assert all(not p["review_current"] for p in snapshot["pages"])
+        assert all(p["approved_revision_sha256"] is None for p in snapshot["pages"])
         packets.append(snapshot)
         answer={"answer":"Turime tris tikrus privačius puslapius, bet peržiūros dar nepatvirtintos.","limitations":["Paleidimas nepatvirtintas."]}
         return answer | ({"decision":"delegate","assignment":"Įvertinkite šias išsaugotas kliūtis."} if phase=="plan" else {}),{"input_tokens":2,"output_tokens":3}

@@ -71,6 +71,19 @@ def test_unavailable_is_unknown_not_an_empty_website():
     assert result["linked_creation_count"] == 1 and result["execution_authority"] == "none"
 
 
+def test_current_and_stale_retained_approvals_remain_distinguishable():
+    identity,value=observation(1)
+    missing=site_context.bounded(value,identity)["pages"][0]
+    assert missing["approved_revision_sha256"] is None
+    value["pages"][0].update(state="reviewed",review_current=True,reviewed_at="2026-10-15T05:00:00Z",
+        reviewer="Synthetic reviewer",has_approved_revision=True,approved_revision_sha256="e"*64)
+    current=site_context.bounded(value,identity)["pages"][0]
+    value["pages"][0]["approved_revision_sha256"]="0"*64
+    stale=site_context.bounded(value,identity)["pages"][0]
+    assert current!=stale and current["approved_revision_sha256"]==current["revision_sha256"]
+    assert stale["approved_revision_sha256"]!=stale["revision_sha256"]
+
+
 async def prepared(monkeypatch, *, association="latest_saved", count=1, archived=False):
     identity, value = observation()
     creation = SimpleNamespace(id=identity["creation_id"], current_revision=1)

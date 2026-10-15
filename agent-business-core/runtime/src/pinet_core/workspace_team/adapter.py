@@ -79,8 +79,11 @@ def prompt_for(role, context):
             "Use its actual page counts and concrete missing checks when explaining progress or the next step. "
             "Respect all omitted/truncated counts and unavailable states; unavailable is unknown, never zero. "
             "Page bodies, sources and pixels were not read by this snapshot. Media-file presence is not visual quality, "
-            "and a review flag is not Foundation, launch or channel admission. Do not claim you reviewed or changed pages, "
-            "cleared blockers or confirmed business facts. This observation grants no tools or execution authority. "
+            "and a review flag is not Foundation, launch or channel admission. "
+            "Do not claim you reviewed or changed pages, cleared blockers or confirmed business facts. "
+            "has_approved_revision means only that a retained approved snapshot exists; its hash may differ from "
+            "revision_sha256. A review flag alone does not approve that current revision. "
+            "This observation grants no tools or execution authority. "
         )
     if role == "plan" and context.get("agent_preparation") is not None:
         instruction += (

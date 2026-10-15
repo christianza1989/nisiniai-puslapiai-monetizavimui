@@ -57,6 +57,7 @@ def bounded(value, identity):
             "source_count": len(page.sources), "verified_source_count": sum(source.verified for source in page.sources),
             "media_count": page.media_count, "media_files_present": page.media_files_present,
             "review_current": page.review_current, "has_approved_revision": page.has_approved_revision,
+            "approved_revision_sha256": page.approved_revision_sha256,
             "internal_planned": page.internal_planned, "internal_attached": page.internal_attached})
     # Lithuanian/non-ASCII strings are bounded by bytes as well as codepoints.
     if len(json.dumps(result, ensure_ascii=False).encode()) > 32768:

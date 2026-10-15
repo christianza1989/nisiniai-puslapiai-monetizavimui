@@ -8,11 +8,12 @@ from types import SimpleNamespace
 from uuid import uuid4
 
 import pytest
+from sqlalchemy.dialects.postgresql.asyncpg import dialect
 
 from pinet_core.config import settings
 from pinet_core.control.routes import ControlError
 from pinet_core.creation import private_preview as service
-from pinet_core.creation.models import Job, PrivateIntakeRequest, Revision
+from pinet_core.creation.models import Job, PrivateIntakeReceipt, PrivateIntakeRequest, Revision
 from pinet_core.creation.private_preview_wire import PreparePrivateIntake
 from pinet_core.creation.service import binding, digest
 from pinet_core.models import utcnow
@@ -27,6 +28,15 @@ async def yes(*args, **kwargs):
 
 async def no(*args, **kwargs):
     return False
+
+
+def test_failed_receipt_binds_sql_null_for_the_strict_postgresql_failure_check():
+    # PostgreSQL's intake IS NULL check deliberately excludes JSON literal null.
+    # Exercise the real dialect serializer rather than the fake transaction fixture.
+    selected = dialect()
+    processor = PrivateIntakeReceipt.__table__.c.intake.type.dialect_impl(selected).bind_processor(selected)
+    assert processor(None) is None
+    assert processor({"state": "private-draft-imported"}) == '{"state": "private-draft-imported"}'
 
 
 @pytest.fixture

@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+import {Server} from '@modelcontextprotocol/sdk/server/index.js';
+import {StdioServerTransport} from '@modelcontextprotocol/sdk/server/stdio.js';
+import {ListToolsRequestSchema, CallToolRequestSchema} from '@modelcontextprotocol/sdk/types.js';
+import {connect, call, policy, VERSION} from './client.mjs';
+import {projectTool} from './tool-schema.mjs';
+
+export async function start() {
+  const upstream = await connect();
+  const server = new Server({name: 'pinet-rea', version: '1.0.0'}, {capabilities: {tools: {}}});
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({tools: [
+    {name: 'rea_status', description: 'Read REA readiness and the explicit website reference scope.',
+      inputSchema: {type: 'object', properties: {}, additionalProperties: false},
+      annotations: {readOnlyHint: true, destructiveHint: false, openWorldHint: false}},
+    ...upstream.catalogue.map(projectTool),
+  ]}));
+  server.setRequestHandler(CallToolRequestSchema, async request => {
+    try {
+      const scope = await policy();
+      if (request.params.name === 'rea_status') return {content: [{type: 'text', text: JSON.stringify({
+        engine: 'rea-agents', version: VERSION, browserConfigured: Boolean(scope?.allowedOrigins.length),
+        allowedOrigins: scope?.allowedOrigins ?? [], artifactConfigured: Boolean(scope),
+        tools: upstream.catalogue.map(t => 'rea_' + t.name),
+      })}]};
+      if (!request.params.name.startsWith('rea_')) throw Error('rea_tool_not_allowed');
+      return await call(upstream, request.params.name.slice(4), request.params.arguments ?? {}, scope);
+    } catch (e) { return {isError: true, content: [{type: 'text', text: e.message}]}; }
+  });
+  let closing;
+  const close = () => closing ??= Promise.allSettled([server.close(), upstream.close()]);
+  process.once('SIGTERM', close);
+  process.once('SIGINT', close);
+  process.stdin.once('end', close);
+  try { await server.connect(new StdioServerTransport()); }
+  catch (e) { await close(); throw e; }
+  return {server, close};
+}
+start().catch(e => {console.error(e.message); process.exitCode = 1;});

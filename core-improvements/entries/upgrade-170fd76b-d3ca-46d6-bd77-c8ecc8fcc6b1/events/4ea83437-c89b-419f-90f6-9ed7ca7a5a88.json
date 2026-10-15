@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial unit run9PASS/1FAIL reproduced wildcard origin admission; validator corrected. Automatic review rejected separate Chrome launch before command execution; no alternative launch attempted. First real-screen comparison rejected Invalid PNG signature because ordinary browser screenshot bytes were JPEG despite the chosen .png filename; original failure receipt2d620d62b7f1c322184eb8b92f45942804d93c2dacebca9fd6dd5b94f9036fb5 retained. Current12unit/real-MCP integration PASS; dedicated live CDP remains unverified.",
+  "eventId": "4ea83437-c89b-419f-90f6-9ed7ca7a5a88",
+  "sequence": 2,
+  "at": "2026-10-15T11:45:05.167Z"
+}

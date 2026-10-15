@@ -1,0 +1,230 @@
+{
+  "type": "object",
+  "properties": {
+    "cdp_endpoint": {
+      "$ref": "#/$defs/__schema1",
+      "description": "Literal loopback CDP endpoint: http://127.0.0.1:PORT, or ws://127.0.0.1:PORT/devtools/browser/ID."
+    },
+    "allowed_origins": {
+      "$ref": "#/$defs/__schema2"
+    },
+    "target_id": {
+      "$ref": "#/$defs/__schema3",
+      "description": "Exact CDP target identifier selected from the endpoint's target listing."
+    },
+    "observation_ms": {
+      "$ref": "#/$defs/__schema4"
+    },
+    "include_accessibility_text": {
+      "$ref": "#/$defs/__schema5",
+      "description": "Whether to include accessibility text in the result."
+    },
+    "include_console_text": {
+      "$ref": "#/$defs/__schema6",
+      "description": "Whether to include console text in the result."
+    },
+    "include_json_body_shapes": {
+      "$ref": "#/$defs/__schema7",
+      "description": "Whether to include json body shapes in the result."
+    },
+    "include_websocket_shapes": {
+      "$ref": "#/$defs/__schema8",
+      "description": "Whether to include websocket shapes in the result."
+    },
+    "include_storage_keys": {
+      "$ref": "#/$defs/__schema9",
+      "description": "Whether to include storage keys in the result."
+    },
+    "include_storage_fingerprints": {
+      "$ref": "#/$defs/__schema10",
+      "description": "Whether to include storage fingerprints in the result."
+    },
+    "include_script_sources": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/__schema11"
+        },
+        {
+          "$ref": "#/$defs/__schema13"
+        }
+      ],
+      "description": "Whether to include script sources in the result."
+    }
+  },
+  "required": [
+    "cdp_endpoint",
+    "target_id"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "__schema0": {
+      "type": "object",
+      "properties": {
+        "cdp_endpoint": {
+          "$ref": "#/$defs/__schema1",
+          "description": "Literal loopback CDP endpoint: http://127.0.0.1:PORT, or ws://127.0.0.1:PORT/devtools/browser/ID."
+        },
+        "allowed_origins": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "target_id": {
+          "$ref": "#/$defs/__schema3",
+          "description": "Exact CDP target identifier selected from the endpoint's target listing."
+        },
+        "observation_ms": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "include_accessibility_text": {
+          "$ref": "#/$defs/__schema5",
+          "description": "Whether to include accessibility text in the result."
+        },
+        "include_console_text": {
+          "$ref": "#/$defs/__schema6",
+          "description": "Whether to include console text in the result."
+        },
+        "include_json_body_shapes": {
+          "$ref": "#/$defs/__schema7",
+          "description": "Whether to include json body shapes in the result."
+        },
+        "include_websocket_shapes": {
+          "$ref": "#/$defs/__schema8",
+          "description": "Whether to include websocket shapes in the result."
+        },
+        "include_storage_keys": {
+          "$ref": "#/$defs/__schema9",
+          "description": "Whether to include storage keys in the result."
+        },
+        "include_storage_fingerprints": {
+          "$ref": "#/$defs/__schema10",
+          "description": "Whether to include storage fingerprints in the result."
+        },
+        "include_script_sources": {
+          "$ref": "#/$defs/__schema11",
+          "description": "Whether to include script sources in the result."
+        }
+      },
+      "required": [
+        "cdp_endpoint",
+        "target_id"
+      ],
+      "additionalProperties": false
+    },
+    "__schema1": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Literal loopback CDP endpoint: http://127.0.0.1:PORT, or ws://127.0.0.1:PORT/devtools/browser/ID."
+    },
+    "__schema2": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "__schema3": {
+      "type": "string",
+      "minLength": 1
+    },
+    "__schema4": {
+      "default": 500,
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "__schema5": {
+      "default": false,
+      "type": "boolean"
+    },
+    "__schema6": {
+      "default": false,
+      "type": "boolean"
+    },
+    "__schema7": {
+      "default": false,
+      "type": "boolean"
+    },
+    "__schema8": {
+      "default": false,
+      "type": "boolean"
+    },
+    "__schema9": {
+      "default": false,
+      "type": "boolean"
+    },
+    "__schema10": {
+      "default": false,
+      "type": "boolean"
+    },
+    "__schema11": {
+      "default": false,
+      "type": "boolean",
+      "const": false
+    },
+    "__schema12": {
+      "type": "object",
+      "properties": {
+        "cdp_endpoint": {
+          "$ref": "#/$defs/__schema1",
+          "description": "Literal loopback CDP endpoint: http://127.0.0.1:PORT, or ws://127.0.0.1:PORT/devtools/browser/ID."
+        },
+        "allowed_origins": {
+          "$ref": "#/$defs/__schema2"
+        },
+        "target_id": {
+          "$ref": "#/$defs/__schema3",
+          "description": "Exact CDP target identifier selected from the endpoint's target listing."
+        },
+        "observation_ms": {
+          "$ref": "#/$defs/__schema4"
+        },
+        "include_accessibility_text": {
+          "$ref": "#/$defs/__schema5",
+          "description": "Whether to include accessibility text in the result."
+        },
+        "include_console_text": {
+          "$ref": "#/$defs/__schema6",
+          "description": "Whether to include console text in the result."
+        },
+        "include_json_body_shapes": {
+          "$ref": "#/$defs/__schema7",
+          "description": "Whether to include json body shapes in the result."
+        },
+        "include_websocket_shapes": {
+          "$ref": "#/$defs/__schema8",
+          "description": "Whether to include websocket shapes in the result."
+        },
+        "include_storage_keys": {
+          "$ref": "#/$defs/__schema9",
+          "description": "Whether to include storage keys in the result."
+        },
+        "include_storage_fingerprints": {
+          "$ref": "#/$defs/__schema10",
+          "description": "Whether to include storage fingerprints in the result."
+        },
+        "include_script_sources": {
+          "$ref": "#/$defs/__schema13",
+          "description": "Whether to include script sources in the result."
+        }
+      },
+      "required": [
+        "cdp_endpoint",
+        "target_id",
+        "include_script_sources"
+      ],
+      "additionalProperties": false
+    },
+    "__schema13": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "description": "Provide a complete input group: cdp_endpoint + target_id + [allowed_origins] + [observation_ms] + [include_accessibility_text] + [include_console_text] + [include_json_body_shapes] + [include_websocket_shapes] + [include_storage_keys] + [include_storage_fingerprints] + [include_script_sources]; cdp_endpoint + target_id + include_script_sources + [allowed_origins] + [observation_ms] + [include_accessibility_text] + [include_console_text] + [include_json_body_shapes] + [include_websocket_shapes] + [include_storage_keys] + [include_storage_fingerprints].",
+  "minProperties": 2,
+  "additionalProperties": false,
+  "examples": [
+    {
+      "cdp_endpoint": "http://127.0.0.1:9222",
+      "target_id": "TARGET_ID_FROM_LIST_BROWSER_TARGETS"
+    }
+  ]
+}

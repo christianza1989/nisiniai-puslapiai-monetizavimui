@@ -1480,6 +1480,17 @@
       "originalOrigin": "local-project",
       "archives": [],
       "entrySha256": "c0600b3329f85bf96079668196c41ff994e1b24e7c362934fa38e5e6ea4d948d"
+    },
+    {
+      "id": "website-reference-analysis",
+      "role": "core",
+      "entry": "website-reference-analysis/SKILL.md",
+      "prompt": null,
+      "discovery": "installed-junction",
+      "sourceUrl": "https://github.com/morluto/rea",
+      "originalOrigin": "local-project",
+      "archives": [],
+      "entrySha256": "98230c4ad9b69ce8954a8bd5126c53a687cd5c34f423888a014204afd5108868"
     }
   ]
 }

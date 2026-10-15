@@ -245,8 +245,10 @@ def guard_functions():
           (to_jsonb(OLD)-ARRAY['status','finished_at','usage','cost_microusd'])
           THEN RAISE EXCEPTION 'immutable direct run binding' USING ERRCODE='23514';END IF;
       END IF;
-      IF TG_TABLE_NAME='control_task_events' AND (NEW.status<>t.status OR NEW.sequence>t.event_sequence OR NEW.failure_code IS DISTINCT FROM t.failure_code)
-        THEN RAISE EXCEPTION 'exact direct task state event required' USING ERRCODE='23514';END IF;
+      IF TG_TABLE_NAME='control_task_events' THEN
+        IF NEW.status<>t.status OR NEW.sequence>t.event_sequence OR NEW.failure_code IS DISTINCT FROM t.failure_code
+          THEN RAISE EXCEPTION 'exact direct task state event required' USING ERRCODE='23514';END IF;
+      END IF;
       RETURN NEW;END$$"""
     team_guard = f"""CREATE FUNCTION workspace_direct_team_check(tbl VARCHAR,j JSONB) RETURNS VOID
       LANGUAGE plpgsql SECURITY INVOKER SET search_path=pg_catalog,public AS $$

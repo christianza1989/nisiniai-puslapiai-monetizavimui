@@ -33,3 +33,9 @@ tests collected only. No helper PostgreSQL, provider, customer-case or serving
 operation. Root runs fresh dedicated QA0043 and the legacy native/Episode cohort
 before any serving adoption. Stage2 preview WIP stays paused in its separate
 worktree. Source repair is not actual DB/adoption/main acceptance.
+
+Full offline follow-up at functional eff5b585:1876PASS8SKIP67subtests84.87s; two inherited Pydantic deprecation warnings. Actual Python-to-Node isolated fixtures included through ignored installed-dependency junction. No database/provider/serving adoption proof.
+
+Second actual Root fresh915 cohort:1PASS1FAIL20.43s; create passes, live TaskRun INSERT reaches missing NEW.sequence (and would also miss failure_code). A procedural Event-only outer IF now guards both fields, retaining exact comparisons. Every other distinct NEW field audited for procedural row-type dispatch. Focused87PASS0.91s; nativecollect25 only. New real claim/no-op Run UPDATE/cancel/finish-run case exercises all four Task row types, pending Root actual QA. Root independently confirmed pre0043/3b7 nested membership baseline2s LockNotAvailable; that failure remains preserved.
+
+Root integration retains its separately committed actual fixing event at sequence4. The helper's independently appended sequence4 event remains preserved on metadata-only commit16027ee, which is not cherry-picked here; the full offline result above still refers to that exact functional source and evidence. Subsequent helper events5/6 follow the Root event without renumbering or rewriting either original history.

@@ -74,14 +74,22 @@ export class CommerceOperations {
       'SELECT i.sku,i.available,p.definition_json FROM inventory i JOIN products p ON p.store_id=i.store_id AND p.sku=i.sku WHERE i.store_id=?',
       store,
     );
-    const catalog = (await this.s.catalog(store, environment)).map((p) => ({
-      ...p,
-      sellableAvailable: p.available,
-      available: inventory.find((i) => i.sku === p.sku).available,
-      lotTrackingRequired:
-        JSON.parse(inventory.find((i) => i.sku === p.sku).definition_json).lotTrackingRequired ===
-        true,
-    }));
+    const catalog = (await this.s.catalog(store, environment)).map((p) => {
+      const row = inventory.find((i) => i.sku === p.sku),
+        definition = JSON.parse(row.definition_json);
+      return {
+        ...p,
+        sellableAvailable: p.available,
+        available: row.available,
+        lotTrackingRequired: definition.lotTrackingRequired === true,
+        stockMode:
+          definition.lotTrackingRequired === false
+            ? 'simple'
+            : definition.lotTrackingRequired === true
+              ? 'lots'
+              : 'legacy',
+      };
+    });
     return {
       storeId: store,
       environment,

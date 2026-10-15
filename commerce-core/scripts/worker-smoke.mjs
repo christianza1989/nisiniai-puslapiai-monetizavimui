@@ -1278,6 +1278,93 @@ try {
     ).n,
     1,
   );
+  // Explicit per-product simple balances use the same native reservation triggers.
+  let simpleTime = Date.now();
+  const simpleService = new CommerceService(db, { now: () => simpleTime }),
+    simpleStore = 'store_counts',
+    simpleConfig = fixtureStore(simpleStore);
+  await simpleService
+    .stmt(
+      'INSERT INTO stores(id,environment,config_json) VALUES(?,?,?)',
+      simpleStore,
+      'sandbox',
+      JSON.stringify(simpleConfig),
+    )
+    .run();
+  const simpleCatalog = new CatalogOperations(simpleService),
+    simpleOps = new CommerceOperations(simpleService);
+  for (const product of fixtureProducts(0).slice(0, 2)) {
+    await simpleCatalog.revise(
+      simpleStore,
+      'sandbox',
+      {
+        id: 'native_simple_' + product.sku,
+        basisHash: null,
+        definition: { ...product, enabled: true, lotTrackingRequired: false },
+      },
+      'fixture_operator',
+    );
+    const adjustment = {
+      id: 'native_balance_' + product.sku,
+      sku: product.sku,
+      delta: 999,
+      expectedAvailable: 0,
+      reason: 'Owner configured temporary balance; not a physical count',
+    };
+    await simpleOps.adjustStock(simpleStore, 'sandbox', adjustment, 'fixture_operator');
+    assert.equal(
+      (await simpleOps.adjustStock(simpleStore, 'sandbox', adjustment, 'fixture_operator'))
+        .replayed,
+      true,
+    );
+  }
+  const simpleOrder = (
+    await simpleService.createOrder(simpleStore, 'sandbox', cart('couple', 2), key(9901))
+  ).order;
+  assert.equal(
+    (await simpleService.catalog(simpleStore, 'sandbox')).find((p) => p.sku === 'couple').available,
+    997,
+  );
+  await simpleService.checkout(simpleStore, 'sandbox', simpleOrder.id, fakeCheckout);
+  const simpleEvent = payment(
+    await simpleService.getOrder(simpleStore, 'sandbox', simpleOrder.id),
+    simpleStore,
+    'evt_simple_native',
+  );
+  await simpleService.acceptPayment(simpleStore, 'sandbox', simpleEvent);
+  await simpleService.acceptPayment(simpleStore, 'sandbox', simpleEvent);
+  await simpleService.markPacked(simpleStore, 'sandbox', simpleOrder.id, 'fixture_operator');
+  await simpleService.createOrder(simpleStore, 'sandbox', cart('family', 3), key(9902));
+  simpleTime += 3600000;
+  assert.equal(await simpleService.expire(simpleStore, 'sandbox'), 1);
+  assert.equal(await simpleService.expire(simpleStore, 'sandbox'), 0);
+  assert.equal(
+    (await simpleService.catalog(simpleStore, 'sandbox')).find((p) => p.sku === 'couple').available,
+    997,
+  );
+  assert.equal(
+    (await simpleService.catalog(simpleStore, 'sandbox')).find((p) => p.sku === 'family').available,
+    999,
+  );
+  assert.equal(
+    (await simpleService.one('SELECT COUNT(*) n FROM finished_lots WHERE store_id=?', simpleStore))
+      .n,
+    0,
+  );
+  assert.equal(
+    (
+      await simpleService.one(
+        'SELECT COUNT(*) n FROM finished_allocations WHERE store_id=?',
+        simpleStore,
+      )
+    ).n,
+    0,
+  );
+  assert.ok(
+    (await simpleOps.overview(simpleStore, 'sandbox')).catalog.every(
+      (p) => p.stockMode === 'simple',
+    ),
+  );
   await mf.dispose();
   mf = undefined;
   await start('src/worker.mjs', { COMMERCE_ENV: 'production' });

@@ -6,13 +6,21 @@ export function prepareBusiness(
   requireValue(
     identifier(id) &&
       business.amountUnit === 'EUR_cents' &&
-      /^\d{9}$/.test(business.legal.companyCode),
+      /^\d{9}$/.test(business.legal.companyCode) &&
+      business.products.every(
+        (p) => p.lotTrackingRequired === undefined || typeof p.lotTrackingRequired === 'boolean',
+      ),
     'business_facts_invalid',
   );
   const missing = [
     ...(!registeredAddress ? ['registered_address'] : []),
     ...business.products.filter((p) => !p.package).map((p) => p.sku + '_packed_measurements'),
-    'actual_inventory_and_lots',
+    ...(business.products.some((p) => p.lotTrackingRequired !== false)
+      ? ['actual_inventory_and_lots']
+      : []),
+    ...(business.products.some((p) => p.lotTrackingRequired === false)
+      ? ['apply_owner_configured_stock_balances']
+      : []),
     'optional_extras_package_measurements',
     'foreign_market_price_and_language_approval',
     'supplier_safety_and_instructions',
@@ -85,7 +93,7 @@ export function prepareBusiness(
       title: p.title,
       enabled: true,
       stock: 0,
-      lotTrackingRequired: true,
+      lotTrackingRequired: p.lotTrackingRequired !== false,
       prices: Object.fromEntries(business.markets.map((c) => [c, p.baseAmountEur])),
       package: p.package,
       included: p.included,

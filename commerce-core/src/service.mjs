@@ -440,7 +440,7 @@ export class CommerceService {
     for (const o of due) {
       const results = await this.db.batch([
         this.stmt(
-          "UPDATE orders SET stock_state='released' WHERE store_id=? AND id=? AND payment_state='pending' AND stock_state='reserved' AND expires_at<=?",
+          "UPDATE orders SET stock_state='released' WHERE store_id=? AND id=? AND payment_state='pending' AND stock_state='reserved' AND expires_at<=? RETURNING id",
           store,
           o.id,
           this.now(),
@@ -456,7 +456,9 @@ export class CommerceService {
           },
         ),
       ]);
-      count += results[0].meta.changes;
+      // Native D1 changes includes restoration triggers; count affected orders.
+      // The Node adapter reports direct changes and does not return batch rows.
+      count += results[0].results?.length ?? results[0].meta.changes;
     }
     return count;
   }

@@ -109,3 +109,39 @@ Siųsk pigiau is the branded account interface for this integration's Sendparcel
 Latest owner facts relayed by the website deployment session on 2026-10-15: owner-declared quantity 999 for each kit, registered address Pupinės g. 10-55, Vilnius, couple packed weight 2200 g and dimensions 200×200×170 mm. The owner subsequently clarified family dimensions as 25×25×20 cm, so its package is 4500 g and 250×250×200 mm. This task does not update the business config or real DB on that basis; the deployment owner owns those changes.
 
 Existing `CatalogOperations.revise` accepts a new couple definition with `prices:{LT:3200}`, package above, `enabled:true`, `lotTrackingRequired:true` and `basisHash:null`, without inventing prices for disabled foreign markets. Family likewise accepts `prices:{LT:4800}` and its clarified package. Each creates stock zero. The owner-declared 999 is not a physical quality/batch verification: `FinishedStock.receive` also needs supplier/source provenance, quality confirmation, expiry semantics and quarantine decision. The existing UI specifically attests to physically checking quantity/origin/expiry and labels the provenance as a manufacturer/supplier batch; do not relabel a made-up batch or a display limit as such a check. No complete executable receipt is implied by quantity alone, and no tracking bypass is justified. Preserve unknowns in a non-executable draft until their facts exist.
+
+## Current Memocasting simple counts — 0.16.0
+
+The owner's subsequent explicit instruction on 2026-10-15 **supersedes the preceding lot-receipt preparation for Memocasting**: use temporarily configured balances of 999 couple kits and 999 family kits, without supplier batches, expiry or BOM for this niche. These are owner-configured balances, not a claim of physically counting or inspecting 999 kits. No finished-lot receipt or `qualityChecked` assertion is needed for a simple-count product. Other stores/products retain their tracked mode.
+
+The backend already supports this per-product distinction; version0.16 makes preparation/admin honor it explicitly:
+
+| Product setting | Admin mode | Supported stock path |
+| --- | --- | --- |
+| `lotTrackingRequired:false` | `simple` | Optimistic/idempotent stock adjustments |
+| `lotTrackingRequired:true` | `lots` | Existing traced lots, expiry and quality controls |
+| Field absent in existing data | `legacy` | Existing behavior retained |
+
+The new operator-only `stockMode` field distinguishes explicit simple counts from legacy data. A simple-only active catalog hides the materials/BOM navigation and irrelevant empty lot forms, with neutral balance labels. Mixed catalogs retain tracked/legacy forms and exclude simple products from the new lot-receipt selector. Historical lots, holds and control records remain visible when present. Disabled untracked add-ons do not force a simple-only shop to display materials; disabled tracked products still retain that interface.
+
+`prepareBusiness` preserves an explicit `lotTrackingRequired:false` on each supplied business product, while its default remains true for other customers. It still prepares stock zero and closed live gates. The deployment owner updates the actual business config and applies the declared balances separately; this source change does not seed or modify the real database.
+
+For a **new** SKU, call `CatalogOperations.revise(store,'production',input,actor)` via the protected `POST /api/operator/catalog-revisions` route with a catalog grant. A couple input is:
+
+```json
+{"id":"memo_couple_simple_20261015","basisHash":null,"definition":{"sku":"couple","title":"Rankų liejimo rinkinys porai","enabled":true,"lotTrackingRequired":false,"prices":{"LT":3200},"package":{"weightGrams":2200,"dimensionsMm":[200,200,170]}}}
+```
+
+For family use a separate ID, `sku:'family'`, its actual title, `prices:{LT:4800}` and `package:{weightGrams:4500,dimensionsMm:[250,250,200]}`. Foreign prices need not be invented; leave those markets closed. For an existing SKU, first inspect the actual definition/basis hash and history. Original SQL deliberately prevents disabling an existing tracked policy; do not delete history or force that transition. The last store receipt was metadata-only, not proof that no later catalog write occurred.
+
+After reading actual available zero, an initial `POST /api/operator/stock-adjustments` with a stock grant is:
+
+```json
+{"id":"memo_couple_balance_20261015","sku":"couple","delta":999,"expectedAvailable":0,"reason":"Savininko nustatytas laikinas likutis 999; ne fizinis perskaičiavimas"}
+```
+
+Use a separate family ID/SKU. This is a delta, not a blind set operation: if actual stock differs from zero, recompute from the real read or investigate the conflicting state. Replaying the same ID and identical payload returns the existing result without adding another 999. A changed payload under that ID, stale expected balance or negative final balance is rejected. The actor comes from the trusted grant, not a body field.
+
+Order creation atomically reserves/decrements each SKU. Order replay does not reserve twice. Paid confirmation and packing keep that already-reserved quantity, rather than decrementing it again. Expiration releases unpaid reservations once through the existing expiry job/command; a paid late event must safely reallocate current stock or enter the existing stock-exception path. Failed multi-SKU orders roll back all lines, and concurrent orders cannot reserve the same last unit. Stock expiry processing still needs its admitted job/command; a runtime whose automation is disabled does not suddenly run a scheduler because counts were configured.
+
+Native D1 regression exposed a separate counter issue: its `meta.changes` includes the restoration trigger, so one expired reservation reported two changes. `expire` now counts IDs returned by the guarded update, retaining the Node adapter's direct-change fallback, in the same atomic event batch. Original23 migrations, lot-policy triggers, identity and checkout admissions remain unchanged. Tests cover Node and native simple reserve/payment/packing/expiry/replay, zero fictional lot/BOM rows, plus preserved tracked quarantine/policy guards and legacy/mixed UI.

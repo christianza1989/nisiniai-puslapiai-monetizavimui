@@ -113,8 +113,15 @@ selection by the report's own job. They check foreign-owner404, unchanged report
 bytes/hash, private intake provenance, blank business facts and exact replay.
 Two drift cases remove the marker before/after native intake and require no SQL
 Revision/Artifact, retaining the already returned native receipt after writing.
-**Collection is not native execution. Root's distinct disposable0041 database
-and private credential-owning launcher must execute the frozen commit.**
+Root subsequently executed exact frozen functional
+`4f75b54fecae922a6a5aca4c017313e4286a9fde` through its private credential-owning
+launcher on the distinct restricted disposable0041 QA database with explicit
+companion/network settings: **5PASS49.47s**, all five selectors above. Roles and
+sources were inert, providers0. Root preserved private safe logs and transmitted
+the exact source, selector cohort and result to this helper; this helper did not
+independently rerun or read credentials. The nine functional paths have an empty
+4f75-to-58e2 diff; later test-only/metadata changes do not replace that frozen
+source evidence. Actual operational adoption remains Root-owned.
 
 Retained initial failures: missing new module caused1collectionERROR0.21s;
 intermediate suite3FAIL76PASS2ERROR5.25s included a missing fixture timedelta and
@@ -131,7 +138,13 @@ expects600s while the maintained wire advertises900s; three language-team cases
 use old incomplete inert claimed fixtures without user identity/current actor
 test seam. Root subsequently authorized only these three test files, separately
 from S28 runtime. Their repair and evidence belong to a distinct test-only commit;
-SQL actor fencing must remain intact.
+SQL actor fencing remains intact. That authorized compatibility repair is now
+separately committed as `58e2db11bb22cbf44c86637ba194db21b1260b52`: targeted
+89PASS3.53s, final full Creation/Discovery cohort **548PASS7SKIP21.90s**, Ruff and
+exact five-file staging safety PASS. See
+[separate fixture evidence](VERSLOMATIKA_DISCOVERY_LEGACY_FIXTURES_2026_10_15.md)
+for the unchanged-base witnesses and first Ruff failure. These counts are not
+additive with the focused S28 cohort; skipped cases are not PASS.
 
 ## Delivery and acceptance boundaries
 

@@ -12,7 +12,13 @@ from ..tasks.codex import check_trace_event, child_environment
 from ..tasks.codex import parse_trace as consult_trace
 from ..tasks.codex_transport import RunnerError, execute
 from . import deadlines, language_mode, language_patch
-from .renderer import CreatorDraft, normalize, normalize_creator, structural_repair_context
+from .renderer import (
+    TypedCreatorDraft,
+    creator_schema_contract,
+    normalize,
+    normalize_creator,
+    structural_repair_context,
+)
 
 ROOT = Path(__file__).resolve().parents[5]
 RUNTIME = Path(__file__).resolve().parents[3]
@@ -61,7 +67,12 @@ Only reference paths in pages or content_plan; no cycles, self-links, invented t
 Use month='' and seasonal_hook='' for unscheduled evergreen briefs. A nonempty month is a provisional local
 YYYY-MM planning hypothesis, never a real publish date. Do not invent weekly/monthly cadence or promise indexing.
 An initial brief is not a written/reviewed guide, generated image, verified source or approved publication.
-The active schema is this server's private business-draft.v2, not legacy studio plan/draft-result JSON.
+The active schema is this server's private business-draft.v3, not legacy studio plan/draft-result JSON.
+Return schema_version=business-draft.v3 and an explicit maintained type for every page. A type describes
+the page's editorial purpose only. Use author only for a genuine proposed author/editorial profile page;
+never relabel a guide/about page or invent identity, credentials, expertise or business facts to fill a gate.
+Keep unknown authorship explicit. Types, paths and the version are structural data, never prose repairs.
+Only the root page has type home. Content-plan guide tasks may target only guide/article pages.
 The server maps these private briefs to the maintained studio; do not emit studio-only fields or claim file writes.
 Write useful specific sections, not generic empty cards, fake quotes, placeholders or fake 'working' buttons.
 Separate client-provided facts, assumptions and unknown fulfilment/cost/credentials/contacts/domain ownership.
@@ -107,6 +118,7 @@ def instructions(*, structure_repair=False, language_repair=False):
             value = language_mode.policy(value)
         return value, hashlib.sha256(value.encode()).hexdigest()
     fragments = [POLICY]
+    fragments.append("PRIVATE_DRAFT_OUTPUT_CONTRACT_JSON\n" + json.dumps(creator_schema_contract(), sort_keys=True))
     paused = language_mode.mode() == "paused_local_pilot"
     if paused:
         start = POLICY.index("Do full language self-edit")
@@ -360,7 +372,7 @@ async def run_role(context, still_authorized, *, role, seconds):
         if language_repair and context.get("permitted_web_actions") != 0:
             raise RunnerError("review_invalid")
         prompt = policy + "\n\nUNTRUSTED_CONTEXT_JSON\n" + json.dumps(context, ensure_ascii=False)
-        schema_model = CreatorDraft
+        schema_model = TypedCreatorDraft
     else:
         instruction_hash = role_instruction_hash(role, structure_repair=structure_repair,
             language_repair=language_repair, execution_profile=name)
@@ -409,7 +421,7 @@ async def run_role(context, still_authorized, *, role, seconds):
         receipt["prior_context_projection"] = context.get("prior_context_projection")
         try:
             if role == "creator" and not language_repair:
-                result = normalize_creator(result)
+                result = normalize_creator(result, require_typed=True)
             elif role == "critic":
                 from .review import hydrate_business_critic
                 result = hydrate_business_critic(result, context)

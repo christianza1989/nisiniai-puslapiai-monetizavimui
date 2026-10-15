@@ -7,7 +7,7 @@ from copy import deepcopy
 from types import SimpleNamespace
 
 import pytest
-from test_creation_content_plan import planned
+from test_creation_content_plan import planned, typed
 from test_creation_review import decision, receipt, report
 from test_creation_review import draft as draft_fixture
 
@@ -20,6 +20,59 @@ from pinet_core.tasks.codex_transport import RunnerError
 draft = draft_fixture
 FIELD = "draft:/research/6/finding"
 FIXED = "Dalis mokymų skirta įmonių komandoms; kainos ir mūsų vykdymo galimybės dar nepatvirtintos."
+
+
+def test_typed_prose_patch_uses_selected_schema_and_preserves_all_page_roles(candidate):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value)
+    bound = language_patch.context(value, verified)
+    assert bound['draft_schema_version'] == 'business-draft.v3'
+    assert language_patch.output_schema(bound)['properties']['candidate_sha256']['const'] == review.draft_sha256(value)
+    before = deepcopy(value)
+    updated = language_patch.apply(value, verified, response(bound))
+    assert updated['schema_version'] == before['schema_version']
+    assert [p['type'] for p in updated['pages']] == [p['type'] for p in before['pages']]
+    assert updated['research'][6]['finding'] == FIXED
+    expected = deepcopy(before)
+    expected['research'][6]['finding'] = FIXED
+    assert updated == expected and value == before
+
+
+@pytest.mark.parametrize('reference', ['draft:/schema_version', 'draft:/pages/1/type'])
+def test_typed_structural_metadata_cannot_be_changed_by_prose_patch(candidate, reference):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value, fields=(reference,))
+    assert language_patch.context(value, verified) is None
+
+
+def test_typed_design_rationale_patch_keeps_s36_exact_scope(candidate):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value, fields=('draft:/brand/rationale',))
+    verified['findings'][0]['area'] = 'design'
+    bound = language_patch.context(value, verified)
+    assert bound and bound['allowed_refs'] == ['draft:/brand/rationale']
+    result = response(bound, {'draft:/brand/rationale':
+        'Pasirinkta aiški redakcinė kryptis padeda skaitytojui suprasti pasiūlymą ir jo ribas.'})
+    updated = language_patch.apply(value, verified, result)
+    assert updated['brand']['accent'] == value['brand']['accent']
+    assert updated['brand']['composition'] == value['brand']['composition']
+    assert updated['pages'] == value['pages'] and updated['schema_version'] == value['schema_version']
+    verified['findings'][0]['evidence_refs'].append('draft:/pages/1/type')
+    assert language_patch.context(value, verified) is None
+
+
+def test_typed_patch_does_not_accept_unknown_schema_selection_or_changed_candidate_roles(candidate):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value)
+    bound = language_patch.context(value, verified)
+    bad = deepcopy(bound)
+    bad['draft_schema_version'] = 'business-draft.v2'
+    with pytest.raises(RunnerError, match='output_invalid'):
+        language_patch.output_schema(bad)
+    value['pages'][1]['type'] = 'about'
+    assert language_patch.context(value, verified) is None
+    with pytest.raises(RunnerError, match='output_invalid'):
+        language_patch.apply(value, verified, response(bound))
 
 
 @pytest.fixture

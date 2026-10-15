@@ -9,7 +9,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from ..tasks.codex_transport import RunnerError
 from . import language_mode
-from .renderer import Draft
+from .renderer import parse_draft
 
 Stage = Literal[
     "private_draft", "discovery", "research", "business", "drafting", "content_plan", "content", "design",
@@ -180,7 +180,7 @@ def canonical_sha256(value):
 
 
 def draft_sha256(draft):
-    return canonical_sha256(Draft.model_validate(draft).model_dump(mode="json"))
+    return canonical_sha256(parse_draft(draft).model_dump(mode="json"))
 
 
 def critic_sha256(critic):
@@ -235,7 +235,7 @@ def _check_evidence(check, receipts):
 
 
 def _normalize_critic(value, draft, stage, round_number, receipts):
-    draft = Draft.model_validate(draft).model_dump(mode="json")
+    draft = parse_draft(draft).model_dump(mode="json")
     digest = canonical_sha256(draft)
     report = CriticReview.model_validate(value)
     if report.draft_sha256 != digest or report.stage != stage or report.round_number != round_number:
@@ -284,7 +284,7 @@ def normalize_coordinator(value, *, draft, critic, expected_stage, expected_roun
                 or set(decision.remaining_checks) != unresolved
                 or decision.decision != review.verdict):
             raise ValueError("Coordinator cannot conceal corrections or unverified checks")
-        validated = Draft.model_validate(draft)
+        validated = parse_draft(draft)
         names = [validated.business_name, *[item.title for item in validated.research],
                  *[item.tool for item in validated.tools]]
         language_mode.screen([decision.summary, *decision.next_actions], names=names)
@@ -463,7 +463,7 @@ def _review_projection(normalized):
              *[t["tool"] for t in normalized["tools"]]]
     omitted, references = [], []
     excluded = {"business_name", "url", "tool", "path", "accent", "composition", "phase", "layout",
-                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority"}
+                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority", "schema_version", "type"}
 
     def project(item, pointer="", prose=True):
         if pointer and item not in (None, "", [], {}):
@@ -491,7 +491,7 @@ def _review_projection(normalized):
 
 
 def _prompt_context(draft, stage, round_number, receipts):
-    normalized = Draft.model_validate(draft).model_dump(mode="json")
+    normalized = parse_draft(draft).model_dump(mode="json")
     digest = canonical_sha256(normalized)
     observations = _receipts(receipts, digest)
     # Validate authoritative context even before a provider is called.

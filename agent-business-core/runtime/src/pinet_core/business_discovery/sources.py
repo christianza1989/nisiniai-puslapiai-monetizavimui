@@ -153,7 +153,9 @@ def read(url, deadline, snapshot_dir=None):
 
 async def collect(message, authorized, *, seconds=24, snapshot_dir=None):
     roots = []
-    for candidate in re.findall(r'https://[^\s<>"]+', message):
+    # Quotes/code delimiters in ordinary prose are not part of a supplied URL.
+    # Percent-encoded punctuation stays intact; all existing public URL/DNS gates remain.
+    for candidate in re.findall(r'''https://[^\s<>"'`„“”«»‹›‘’]+''', message):
         candidate = candidate.rstrip(".,;!)]")
         try:
             public_url(candidate)

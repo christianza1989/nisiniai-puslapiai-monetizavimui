@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Generic URL regression and canonical research-first policy repaired locally; actual paid UI quality benchmark remains pending clean adoption, not inferred from offline PASS. First6FAIL and actual report1 remain preserved.",
+  "checks": [
+    {
+      "command": "qa-venv python -m pytest offline_tests/test_discovery_research_first.py offline_tests/test_business_discovery.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "32PASS4.48s after6FAIL2PASS1.39s before fix; private s29-url-before/after logs retained."
+    },
+    {
+      "command": "qa-venv python -m ruff check src/pinet_core/business_discovery/sources.py offline_tests/test_discovery_research_first.py",
+      "result": "PASS",
+      "evidence": "All checks passed; no source authorization/network/budget gates changed."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Exact Root S29 source/test/policy/decision scope clean of whitespace errors."
+    }
+  ],
+  "eventId": "f6e56875-00c5-45a0-b2ff-0e8fccfb0112",
+  "sequence": 2,
+  "at": "2026-10-15T09:25:12.742Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final URL extraction also preserves legal raw URI apostrophes; the added witness first failed1FAIL8PASS2.24s and was repaired. Actual S29 second model run still timed out/no new plan; this event is source regression evidence, not model quality acceptance.",
+  "checks": [
+    {
+      "command": "qa-venv python -m pytest offline_tests/test_discovery_research_first.py offline_tests/test_business_discovery.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "Final34PASS1.52s, including internal/unquoted-final raw apostrophe preservation and existing source authorization/budget/DNS regression. Original6FAIL and added1FAIL retained privately."
+    },
+    {
+      "command": "qa-venv python -m ruff check src/pinet_core/business_discovery/sources.py offline_tests/test_discovery_research_first.py",
+      "result": "PASS",
+      "evidence": "All checks passed on final source/test."
+    }
+  ],
+  "eventId": "b79af7f5-1201-4b56-a661-cc8c9c625761",
+  "sequence": 3,
+  "at": "2026-10-15T09:45:21.295Z"
+}

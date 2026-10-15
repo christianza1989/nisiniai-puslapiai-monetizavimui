@@ -1,0 +1,15 @@
+# Hero composition — one team
+
+Mode: Persuade. Scope only hero-concept.html and the supplied avatar series. Inherit the owner's pinned Codex neutral charcoal/off-white/blue palette. Use the supplied transparent PNG alpha directly. Coordinator in foreground, six specialists staggered behind, one coherent team rather than seven equal cards. A quiet editable-looking customer request demonstrates the mechanism; every status is explicitly an illustrative example.
+
+Typography plan before implementation: one system UI family (Segoe UI, the explicit Codex-style reference takes precedence over the generic own-world display-face warning), actual400/600/700 weights. Display clamp2.65rem–4.6rem/1.04/-0.035em; body1.0625rem/1.65/max39ch; nav/control0.9375rem/1.3; scene captions0.8125rem/1.4, the deliberate small-label exception. Neutral readable foreground #fcfcfc and secondary #b9b9bc on opaque #111111/#202020; essential buttons at least44px. Strong heading and primary CTA remain the focal point. No gradients in text, unverified metrics, franchise branding, celebrity likeness, fake controls or body copy hidden to fit.
+
+Desktop two columns; at980px and below stack explanation and scene. At520px a compact team scene keeps all seven portraits, with role selection accessible below; text reflows independently. Inspect desktop/mobile, active role selection, pause/resume/reduced-motion and text enlargement. One coordinated task sequence (not separate infinite bobbing animations), user-controllable pause; reduced motion starts paused. No runtime status is inferred from the animation.
+
+Agent-selected concept, not owner acceptance. Browser evidence and any limitations are recorded after actual inspection. No homepage deployment or existing design replacement.
+
+## Actual concept inspection
+
+All seven PNGs are1254×1254 with actual alpha range0–255; exact original bytes/digests are in manifest.json. Ordinary Chrome page loads all seven successfully. Default viewport reported1422×639 CSS px; the requested390px device override actually reported433 CSS px under this browser's current zoom, and320px override reported355 CSS px. Both narrow layouts reflowed and document scrollWidth did not exceed viewport width. Role selection (Finance) updated the selected accessible button and visible title; pause/resume and reduced-motion CSS are provided. Temporary viewport override was reset. Browser screenshots are in this thread's durable visualization folder.
+
+The first inspection found a three-line desktop heading and portrait bottoms covering the role controls in the compact-height layout. The heading constraint was removed and the intentional portrait stage now clips lower-body overflow, leaving role controls outside it. Actual confirmation follows the scoped fix. Full-page capture timed out twice in the browser backend; normal viewport capture worked. Actual200% browser zoom/text-spacing overrides are UNVERIFIED for this concept; no full accessibility/production-readiness certification is claimed.

@@ -120,6 +120,41 @@ function update(input) {
   input.dataDir = path.join(base, 'data'); input.outputDir = path.join(base, 'output');
 }
 
+test('explicit v3 profile purpose survives intake without author or fact admission and replays exactly', async t => {
+  const {input,call,sitePath}=await sandbox(t);
+  input.draft.schema_version='business-draft.v3';
+  for(const [i,p]of input.draft.pages.entries())p.type=['home','author','service'][i];
+  const profile=input.draft.pages[1];
+  profile.path='/testinio-leidinio-profilis/';profile.title='Testinio leidinio redakcinis profilis';
+  profile.intent='Paaiškinti sintetinio leidinio redakcinę tapatybę ir jos nepatvirtintas ribas.';
+  profile.sections[0].body='Tai sintetinio leidinio profilio tekstas. Jokia tikro žmogaus kvalifikacija, ekspertinė patirtis ar vykdymo galimybė netvirtinama.';
+  update(input);const result=call();assert.equal(result.status,0,JSON.stringify(result.value));
+  const bytes=await readFile(sitePath()),site=JSON.parse(bytes),p=site.pages.find(p=>p.type==='author');
+  assert.equal('/'+p.slug+'/',profile.path);assert.equal(p.title,profile.title);
+  assert.equal(p.editorial.authors.length,0);assert.ok(p.factChecks.length>0);
+  assert.equal(site.facts,'');assert.equal(site.contact.email,'');assert.equal(site.operatorName,'');
+  assert.ok(site.pages.every(p=>p.approval===null&&p.publishedRevision===null));
+  assert.equal(result.value.fullF1,'UNVERIFIED');assert.equal(result.value.deployment,'not-performed');
+  assert.equal(call().status,0);assert.deepEqual(await readFile(sitePath()),bytes);
+});
+
+test('v3 missing unknown or inconsistent roles fail before private intake artifacts', async t => {
+  const {input,call}=await sandbox(t);
+  input.draft.schema_version='business-draft.v3';
+  for(const [i,p]of input.draft.pages.entries())p.type=['home','author','service'][i];
+  const original=structuredClone(input.draft);
+  for(const defect of ['version','missing','unknown','home','plan']){
+    input.draft=structuredClone(original);
+    if(defect==='version')input.draft.schema_version='business-draft.v2';
+    if(defect==='missing')delete input.draft.pages[1].type;
+    if(defect==='unknown')input.draft.pages[1].type='verified-expert';
+    if(defect==='home')input.draft.pages[1].type='home';
+    if(defect==='plan')input.draft.content_plan=[{path:input.draft.pages[1].path}];
+    update(input);assert.notEqual(call().status,0,defect);
+    assert.equal((await readdir(input.artifactsRoot)).length,0,defect);
+  }
+});
+
 test('native proposal contact/about/index types retain exact URLs without inheriting guide image or author gates', async t => {
   const { input, call, sitePath } = await sandbox(t);
   const template = input.draft.pages[1];

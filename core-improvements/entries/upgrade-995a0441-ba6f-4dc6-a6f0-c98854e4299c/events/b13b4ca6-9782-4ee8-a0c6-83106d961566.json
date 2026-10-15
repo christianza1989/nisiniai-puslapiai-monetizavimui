@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Local source verification only; no provider/web/SQL/nativePG/runtime/current-case/serving/adoption. Original failures and frozen S36 renderer reference remain private. Typed roles state editorial purpose only, not verified identity/facts; author snapshots and Foundation gates unchanged.",
+  "checks": [
+    {
+      "command": "Paired freshness continue wrapper → python -X utf8 -B -m pytest -p no:cacheprovider [all test_creation*.py,test_discovery*.py,test_content_work*.py,test_business_discovery.py,test_partial_cli_receipts.py,test_control_codex.py] -q --tb=short",
+      "result": "PASS",
+      "evidence": "692 passed,7 skipped in59.11s; ignored artifacts/typed-pages/full-offline-first.private.log. Strict new provider rejects legacy output; historical five full schema SHA/legacy and planned normalized/package SHA exact; unknown/missing/mixed roles/version/home/plan mismatch, critic hash mutation, structural metadata projection and version-selected S36 prose repair tested."
+    },
+    {
+      "command": "node --test content-studio/test/customer-creation-intake.test.mjs content-studio/test/customer-content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "58 passed0failed90681.4883ms; ignored artifacts/typed-pages/node-regression-first.private.log. Supersedes earlier22intake cases. New explicit arbitrary-path profile preserves role, native replay exact bytes; invalid roles/version fail before files. Author snapshots, facts, operator/contact and approvals remain empty/unverified. Existing revision-bound review, attachment, amend/replay, atomic batch and release negatives remain."
+    },
+    {
+      "command": "ruff check [7 exact owned Python source/test paths]; git diff --check; AST comparison against fb3444310fa975df8edd753fdc2e6ebb3a29394f",
+      "result": "PASS",
+      "evidence": "Ruff/diff PASS. Page,DraftFields,Draft,CreatorCandidate,CreatorDraft class AST all identical. Nine S34 models/helpers AST unchanged; draft_sha256,_normalize_critic,normalize_coordinator,_prompt_context differ only in direct version-aware parser callsites; two authorized technical metadata exclusions additional. No Foundation/model/clock/quota/wire/permission change. Node deps reused only through ignored own junction after exact lockfile equality."
+    }
+  ],
+  "eventId": "b13b4ca6-9782-4ee8-a0c6-83106d961566",
+  "sequence": 3,
+  "at": "2026-10-15T16:05:58.905Z"
+}

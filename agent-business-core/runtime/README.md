@@ -245,3 +245,27 @@ Tikrinant pokytį būtini vėlyvos neigiamos sąlygos, Unicode koordinačių / b
 tikrų nuorodų prioritetų, saugos, neperskaitytos eilės ir nekintamo capture testai.
 Jie vykdomi esamuose `test_discovery_research_first.py` ir
 `test_discovery_source_projection.py`, be tiekėjo, web, DB ar mokamo modelio kvietimų.
+
+
+## Versijuoti Creation puslapių tipai
+
+Naujo pilno kūrėjo privatus formatas yra `business-draft.v3`: jis aiškiai pateikia
+`schema_version` ir kiekvieno puslapio `type`. Tai puslapio paskirtis, o ne autoriaus
+tapatybės, kvalifikacijos ar verslo faktų patvirtinimas. Autoriaus profilis negali
+būti nustatomas iš adreso, antraštės ar įprasto gido autorystės eilutės.
+
+Esami nevėrsijuoti `Page`, `Draft`, `CreatorCandidate` ir `CreatorDraft` modeliai
+lieka istoriniams duomenims su tomis pačiomis schemomis, normalizuotais laukais ir
+hash. Vienas griežtas parseris parenka seną arba v3 modelį; naujo pilno provider
+atsakymo tikrinimas v1 atsakymo nepriima. Trūkstamas tipas nėra tyliai pakeičiamas
+numatytuoju. V3 tipas įtrauktas į juodraščio, kritiko ir intake hash; gido užduotis
+negali perrašyti autoriaus ar kitos paskirties puslapio. Tikslus teksto pataisymas
+naudoja pasirinktos versijos apribojimus, bet nekeičia tipų ar versijos žymos.
+S34 koordinatoriaus patikros ir S36 dizaino paaiškinimo pataisos išlieka.
+
+Native importas išlaiko aiškų tipą ir visus faktų, autoriaus snapshot, kontaktų,
+medijos, redakcinės peržiūros bei publikavimo vartus. Tipas `author` savaime
+nesukuria autoriaus duomenų ir nepatvirtina Foundation. Esamos redakcijos bei jų
+source/schema kvitai neperrašomi. Reikalingos regresijos: tikslios senų schemų ir
+artefaktų SHA, netinkama ar dalinė v3 struktūra, tipo pakeitimo hash konfliktas,
+S36 ribotos pataisos, native importo replay ir jokių teisių / faktų pripažinimas.

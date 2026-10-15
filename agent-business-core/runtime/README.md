@@ -116,6 +116,50 @@ Testai naudoja tikrą vietinį PostgreSQL ir atskiras atsitiktines testų aplink
 
 Viešo core kataloge vykdomi TypeScript, siauras ESLint, `npm run test:core`, `npm run test:seo-smoke` ir `node tests/voice-web-smoke.mjs`; smoke testai reikalauja veikiančios 5187 peržiūros. Pastarasis skirtas išjungtam M0 ir neturi skambinti tiekėjui.
 
+## Privati CLI proceso diagnostika
+
+Adapterio pasirinktinai įjungta `cli-execution-observation.v2` diagnostika saugoma
+tik jo nuosavame privačiame vykdymo kataloge. Ji nekeičia proceso paleidimo,
+terminų, stabdymo, modelio, teisių ar grąžinamo kvito. Prompto, argumentų ir
+galutinės išvesties turinys į šį JSON nepatenka; lieka dydžiai, argumentų SHA ir
+proceso būsenų metaduomenys. Ankstesni v1 failai neperrašomi.
+
+- `parent_returncode_before_cleanup` fiksuojamas prieš stabdymą. `null` reiškia,
+  kad tuo metu parent baigtis dar nepastebėta. Galutinis `exit_code` gali būti
+  priverstinio stabdymo rezultatas ir nepakeičia šio ankstesnio stebėjimo.
+- `wait_done_before_cleanup`, `stdout_done_before_cleanup`,
+  `stderr_done_before_cleanup` ir `feed_done_before_cleanup` rodo užduočių
+  būsenas prieš valymą. Užduoties baigtis savaime neįrodo EOF: tam skirti atskiri
+  `stdout_eof_before_cleanup` ir `stderr_eof_before_cleanup` laukai.
+- `stdin_closed_seconds`, `stdout_eof_seconds`, `stderr_eof_seconds` ir
+  `process_wait_done_seconds` yra pastebėjimo laikai nuo diagnostikos pradžios,
+  ne tikslūs OS signalų laikai. Jie gali būti po `cleanup_started_seconds`;
+  būsenos prieš valymą dėl to atgaline data nekeičiamos.
+- `output_exists_before_cleanup`, `output_is_file_before_cleanup` ir
+  `output_bytes_before_cleanup` naudoja tik failo metaduomenis. Nepavykus jų
+  perskaityti būsena lieka nežinoma, didinamas `diagnostic_read_errors`.
+  Diagnostikos rašymo klaidos didina `diagnostic_write_errors`; jos nepakeičia
+  tikro vykdymo rezultato.
+- `cleanup_kill_requested` žymi esamą stabdymo kelią, kai parent baigtis dar
+  nepastebėta. `cleanup_completed` neįrodo, kad visi palikuonys sustojo: esamam
+  kodui jau pasibaigęs parent netrukdo palikuoniui dar laikyti atvirą stdout.
+
+`draining` yra paskutinės I/O veiklos žyma, o ne įrodymas, kad CLI vis dar gyvas.
+Vien v1 `draining` ir galutinis kodas neatskiria gyvo proceso nuo pasibaigusio
+parent su atviru paveldėtu pipe. Inertinio testo atkūrimas taip pat neįrodo, kad
+tokį pat gedimą patyrė ankstesnis tikras modelio kvietimas.
+
+Siaura patikra be tiekėjo ar DB kvietimų:
+
+```powershell
+uv run pytest -q offline_tests/test_cli_execution_observation.py offline_tests/test_partial_cli_receipts.py offline_tests/test_control_codex.py offline_tests/test_creation_team_controller.py
+```
+
+Ji tikrina sėkmę, klaidą, tylų gyvą procesą, paveldėtą stdout, atšaukimą ir
+diagnostikos disko klaidų nepriklausomumą nuo tikro rezultato. Modelio atsakymo
+kokybė, realaus kanalo veikimas ir veikiančio šaltinio pritaikymas vertinami
+atskirai.
+
 ## Toliau
 
 Pilnos būsenos ir neįgyvendintų vartų sąrašas: [IMPLEMENTATION](../../voice-agent-plan/IMPLEMENTATION.md); išmatuoti rezultatai: [PRELIVE_QA](../../voice-agent-plan/PRELIVE_QA.md). Visų 30 nišų onboarding, gamybinė D1 reader/reconciliation jungtis, operatoriaus GUI ir asmeninės paskyros, tikras audio/reconnect/coverage/billing patvirtinimas, kryžminė įrenginių tapatybė, pilnas laisvo kontekstinio laiško validatorius, SMTP reconciliation/gavimas, Jev shadow ir apsaugotas semantinis eval/canary/promotion dar lieka. Nė vienas roadmapo etapas nepažymimas baigtu vien šiuo įgyvendinimu.

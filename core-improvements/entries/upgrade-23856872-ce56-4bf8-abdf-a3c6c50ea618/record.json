@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Private CLI observationv1 records draining and only post-cleanup exitcode, conflating live CLI and exited parent with inherited stdout. Both real S29/S30 timeouts have no terminal/output and remain unproven pipe cases. Add metadata-only pre-cleanup parent code, wait/EOF/feed states/times, output existence/bytes and kill-request indication without changing transport behavior.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/README.md",
+    "agent-business-core/runtime/offline_tests/test_cli_execution_observation.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/execution_observation.py",
+    "agent-business-core/runtime/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped optional diagnostic metadata revert; retain historical v1/failure traces unchanged. No subprocess/deadline/model/profile/policy/caps/receipt/serving/case behavior changes; Root owns later integration and separate accounted diagnostic.",
+  "id": "upgrade-23856872-ce56-4bf8-abdf-a3c6c50ea618",
+  "branch": "codex/verslomatika-cli-process-observation-20261015",
+  "baseSha": "48fe7b8720c23ae32b79dc4f954d6fcf6cbe1f49",
+  "createdAt": "2026-10-15T13:09:00.117Z"
+}

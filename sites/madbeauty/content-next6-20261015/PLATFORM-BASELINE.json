@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-15T06:28:41.177Z",
+  "state": "READ_ONLY_CURRENT_PLATFORM_OBSERVED",
+  "canonical": "https://madbeauty.lt",
+  "packageSha256": "86c7595036970f905cec196d9090d712bfa11c113f09e4cd645c25611ed47509",
+  "currentEligiblePages": 11,
+  "workers": [
+    {
+      "worker": "madbeauty-platform-preview",
+      "versions": [
+        {
+          "version_id": "f68008dd-5ceb-446b-8113-d68bd1631919",
+          "percentage": 100
+        }
+      ],
+      "settingsSha256": "681dd6349bf8400bab03b9782f0462a396685d8a639ceb8a82a2d4245c239479"
+    },
+    {
+      "worker": "madbeauty-ui-acceptance-20261009",
+      "versions": [
+        {
+          "version_id": "de3c8d4f-3f3e-4d4d-81ef-8ba3ed1116dc",
+          "percentage": 100
+        }
+      ],
+      "settingsSha256": "67b10418603d403805612b0de29dc1536209e142eb50c1c865609ec48bf86fc4"
+    },
+    {
+      "worker": "madbeauty-temporary-test-20261010",
+      "versions": [
+        {
+          "version_id": "bf048234-6008-4b47-96d3-b1f44f0cdb58",
+          "percentage": 100
+        }
+      ],
+      "settingsSha256": "0fd1d5493006931212b1565efce91724b176c8b82d9775d29378f519a4fe3905"
+    },
+    {
+      "worker": "madbeauty-meta-review-20261011",
+      "versions": [
+        {
+          "version_id": "cd397c44-6eb8-4e2f-8d2c-e3ad954371fd",
+          "percentage": 100
+        }
+      ],
+      "settingsSha256": "c513f73abbe727af5c781225bdd46cc89ca43e9088306eb653094417e26802bd"
+    },
+    {
+      "worker": "madbeauty-calendar-acceptance-20261009",
+      "versions": [
+        {
+          "version_id": "b3767d00-6e86-4656-86ed-d85070758c24",
+          "percentage": 100
+        }
+      ],
+      "settingsSha256": "58ab6b417e9a03b6dedae6806285fbf64f081c43b311e9802a27225a7555facc"
+    }
+  ],
+  "domains": [
+    {
+      "hostname": "madbeauty.lt",
+      "service": "madbeauty-platform-preview",
+      "environment": "production"
+    },
+    {
+      "hostname": "www.madbeauty.lt",
+      "service": "madbeauty-platform-preview",
+      "environment": "production"
+    }
+  ],
+  "canonicalWriteLease": "NOT_REQUESTED_NO_THREAD_TOOL_AVAILABLE",
+  "scope": "Read-only actual provider/HTTPS snapshot, not permission or acceptance of a new deployment."
+}

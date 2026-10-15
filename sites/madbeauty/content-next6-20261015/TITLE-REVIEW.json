@@ -1,0 +1,17 @@
+{
+  "reviewedAt": "2026-10-15T07:16:49.126Z",
+  "pageId": "bb61c8c0-bb54-47a7-8dfd-69a2ed6478b8",
+  "title": "Bikinio depiliacijos pavadinimai: klasikinė, gili ir braziliška",
+  "revisionHash": "262cb66e6445d571ae41b123e2b4206946a758d161e86e0c8177f17c1d9599ca",
+  "bodyAndFactsUnchanged": true,
+  "actualMobileScreenshot": "screenshots/DP-bikini-mobile.png",
+  "supersedesExportSha256": "4377fd5fe33ef1309ae1fc4545eda91011f27ca975d33a0fb2351d966aff7889",
+  "evidence": {
+    "usefulness": "Skiria metodo, zonos ir paketo apimtį; vieno meniu ir aiškiai iliustracinis palyginimas paaiškina, kodėl vien klasikinė/gili/braziliška etiketė nepakankama. Privatumo ir pertraukos klausimai padeda pasiruošti pokalbiui.",
+    "facts": "R208 DEPEXA patvirtina konkrečius higieninio/viso bikinio ir vaško/cukraus variantus, ne visų salonų terminų standartą. Jokios konkretaus teikėjo privatumo tvarkos ar veiksmų sekos neteigiama; tai aiškiai klausimai, ne garantijos. Nėra temperatūrų, nuskausminimo, rezultato, kainos ar trukmės pažadų.",
+    "sources": "Realiai perskaitytas DEPEXA moterų meniu ir abu metodai kiekvienai apimčiai. Šaltinio ribos išlaikytos SOURCE-NOTES.json ir viešame tekste; intymios zonos ribos nesuapsoliutintos pagal pavadinimą.",
+    "media": "IMAGE-REVIEW.json ir IMPORTED-MEDIA.json: atskira originali ImageGen nuotrauka realiai peržiūrėta, visa responsive šeima importuota. AV/BL papildomai originalios SVG schemos; tikri galutiniai mobilūs schemų pikseliai peržiūrėti, žymos įskaitomos. Nuotraukos iliustracinės, ne mūsų atliktų klientų darbų įrodymai. RENDER-CHECK.json abiejų dydžių tikros įkeltos šeimos be broken images.",
+    "links": "Tikri dvylika nacionalinių procedūrų/kategorijų ID iš CATALOGUE-TARGETS.json su tikru HTTPS200/canonical; miesto pasiūla neišgalvota. LINK-PLAN.json ir RELEASE-LINKS.json atskiria6 parengtus ryšius nuo1 atidėto. Vidinės nuorodos tik į to paties site patvirtintas revizijas; runtime laiko/host tinkamumo riba lieka privaloma.",
+    "presentation": "Perskaitytas visas galutinis šio gido tekstas, antraštės/aprašas ir šaltinių bei nuorodų sakiniai; saviredakcija COPYEDIT.json/ANCHOR-COPYEDIT.json išsaugo faktus, skaičius, ID ir publishAt. Tikra privati Chrome desktop1440/mobile390 peržiūra po paskutinių teksto pataisų RENDER-CHECK.json; peržiūrėti vaizdai ir kontaktiniai lakštai, nėra horizontalaus persipildymo. Tai common studio private native preview su aiškiai deklaruotu adapteriu, ne canonical schema/OG ar viešas future puslapis; tikrą hosted vartotojo priėmimą privalo atlikti consumer. Po pirminio eksporto atskirai pataisytas šio gido pavadinimo giminės derinimas; visas nepakitęs tekstas perskaitytas, tikras naujos antraštės desktop/mobile Chrome atvaizdavimas pakartotas ir visas mobilus straipsnio vaizdas faktiškai peržiūrėtas. Sena4377revizija neįdiegta ir jos immutable eksportas išliko."
+  }
+}

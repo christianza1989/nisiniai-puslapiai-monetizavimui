@@ -1,0 +1,316 @@
+{
+  "state": "PASS_PRIVATE_NATIVE_RENDER",
+  "checkedAt": "2026-10-15T07:15:40.364Z",
+  "scope": "Private actual common studio previews using the declared presentation adapter; not a canonical runtime or deployment claim.",
+  "browser": "Actual installed Chrome through Playwright",
+  "views": [
+    {
+      "planId": "VP-drekinimas",
+      "device": "desktop",
+      "checkedAt": "2026-10-15T07:15:35.657Z",
+      "revisionHash": "395d6e2890ee3c78cbe73cf6ee71450e6277a0a3ab7b39b201b13e3e256d986d",
+      "htmlSha256": "9a9208ff55c18795a1085945725d2c060faaedc0e519057b4345556a3bd6888e",
+      "screenshot": "screenshots/VP-drekinimas-desktop.png",
+      "title": "Drėkinamoji veido procedūra: valymas, kaukė ir kiti paketo komponentai",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Trys skirtingų tekstūrų kosmetinės priemonės ant žydrų lėkštelių prie lango.",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/d0a70aa7-f8f6-47dc-9917-985e1b6482b4.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "AN-laminavimas",
+      "device": "desktop",
+      "checkedAt": "2026-10-15T07:15:36.045Z",
+      "revisionHash": "828d70c5332dcf893340506168e0fd23bdd310aa1193f96b6d46ba8c9ea496d5",
+      "htmlSha256": "a46479cdba3d7b9f393353894a0bba2be58ac12ec974148fa66bc4fbcf84671e",
+      "screenshot": "screenshots/AN-laminavimas-desktop.png",
+      "title": "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Antakio plaukelių kryptis moters portrete, šalia padėtas antakių šepetėlis.",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/eba5a9a3-0afa-41cc-b8e0-75fd21fa578d.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "AV-vietos",
+      "device": "desktop",
+      "checkedAt": "2026-10-15T07:15:36.478Z",
+      "revisionHash": "7dd541a68b4e1384ebc11461ea719431b872cdd51d3bbb66c9f529cda15a3cc1",
+      "htmlSha256": "88117308637ed7b9c949058074df5342759e00fb3614af93ad9897ff27ab8f2e",
+      "screenshot": "screenshots/AV-vietos-desktop.png",
+      "title": "Auskarų vėrimo vietos: ausies spenelis, kremzlė ir kitos sritys",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Ausies spenelio auskaras ir mažas lankelis išoriniame ausies krašte.",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/0a1035a5-a06b-43dd-9dbc-4fd49e9625d3.webp",
+          "renderWidth": 780
+        },
+        {
+          "alt": "Ausies spenelio, kremzlės ir veido sričių orientyras be dūrio taškų.",
+          "naturalWidth": 780,
+          "naturalHeight": 909,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/dcd40035-10ed-40f9-86a9-0860891876ce.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "BL-efektai",
+      "device": "desktop",
+      "checkedAt": "2026-10-15T07:15:36.847Z",
+      "revisionHash": "f94b2c40ac513544ab65c833b4e4faa24cd6f5d638ed0b18a5b9dd5bfb5c2f47",
+      "htmlSha256": "e85ead7ce649e7ad7585522a3a346f9515a46b4ff03c34dd91ac2b1820077917",
+      "screenshot": "screenshots/BL-efektai-desktop.png",
+      "title": "Natūralus, „cat-eye“ ir „doll-eye“ blakstienų efektas: kuo skiriasi jų išdėstymas?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Trys dekoratyvinių blakstienų juostelės ant violetinio pagrindo.",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/3f62e1d4-c31c-4fdd-813c-5f4de12e3e72.webp",
+          "renderWidth": 780
+        },
+        {
+          "alt": "Vienodo mastelio natūralaus, doll-eye ir cat-eye ilgio akcentų schema be matmenų.",
+          "naturalWidth": 780,
+          "naturalHeight": 974,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/baedfaef-52ca-4d9e-a5e3-da7adb0b3510.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "BR-paketas",
+      "device": "desktop",
+      "checkedAt": "2026-10-15T07:15:37.187Z",
+      "revisionHash": "7c36250da6d42b513fd043a6e36d22676190ef1c37d1b4bb64c5f6ca4f0f1c8d",
+      "htmlSha256": "4bd1a2365a22175e3b3eda145ae5bdf3b46d7010ab0ac957c1a71428e8268fd8",
+      "screenshot": "screenshots/BR-paketas-desktop.png",
+      "title": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Vyras ir barzdaskutys aptaria kirpimą prie salono veidrodžio.",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/b08bc956-a564-4787-8d7f-f908e5813d75.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "DP-bikini",
+      "device": "desktop",
+      "checkedAt": "2026-10-15T07:15:37.545Z",
+      "revisionHash": "262cb66e6445d571ae41b123e2b4206946a758d161e86e0c8177f17c1d9599ca",
+      "htmlSha256": "070e2b44639eda6c7c3a1305c4e187c26c7397505b9f1297ba1abf4a39cc0e2e",
+      "screenshot": "screenshots/DP-bikini-desktop.png",
+      "title": "Bikinio depiliacijos pavadinimai: klasikinė, gili ir braziliška",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "images": [
+        {
+          "alt": "Privati salono patalpa su širma, užklota kušete ir nepermatomu chalatu.",
+          "naturalWidth": 780,
+          "naturalHeight": 519,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/f810107d-9b15-431f-ba3f-b34d125f6aaa.webp",
+          "renderWidth": 780
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "VP-drekinimas",
+      "device": "mobile",
+      "checkedAt": "2026-10-15T07:15:38.074Z",
+      "revisionHash": "395d6e2890ee3c78cbe73cf6ee71450e6277a0a3ab7b39b201b13e3e256d986d",
+      "htmlSha256": "9a9208ff55c18795a1085945725d2c060faaedc0e519057b4345556a3bd6888e",
+      "screenshot": "screenshots/VP-drekinimas-mobile.png",
+      "title": "Drėkinamoji veido procedūra: valymas, kaukė ir kiti paketo komponentai",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Trys skirtingų tekstūrų kosmetinės priemonės ant žydrų lėkštelių prie lango.",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/dfaa8476-c7b8-40b3-b030-0b2c1d384eef.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "AN-laminavimas",
+      "device": "mobile",
+      "checkedAt": "2026-10-15T07:15:38.275Z",
+      "revisionHash": "828d70c5332dcf893340506168e0fd23bdd310aa1193f96b6d46ba8c9ea496d5",
+      "htmlSha256": "a46479cdba3d7b9f393353894a0bba2be58ac12ec974148fa66bc4fbcf84671e",
+      "screenshot": "screenshots/AN-laminavimas-mobile.png",
+      "title": "Antakių laminavimas: kaip keičiama plaukelių kryptis ir kas įeina?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Antakio plaukelių kryptis moters portrete, šalia padėtas antakių šepetėlis.",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/f5498ca6-d742-4896-a7bf-74a556983a9c.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "AV-vietos",
+      "device": "mobile",
+      "checkedAt": "2026-10-15T07:15:38.598Z",
+      "revisionHash": "7dd541a68b4e1384ebc11461ea719431b872cdd51d3bbb66c9f529cda15a3cc1",
+      "htmlSha256": "88117308637ed7b9c949058074df5342759e00fb3614af93ad9897ff27ab8f2e",
+      "screenshot": "screenshots/AV-vietos-mobile.png",
+      "title": "Auskarų vėrimo vietos: ausies spenelis, kremzlė ir kitos sritys",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Ausies spenelio auskaras ir mažas lankelis išoriniame ausies krašte.",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/1a50adde-d4d3-4a07-8a7e-7bfd3f7eadbf.webp",
+          "renderWidth": 342
+        },
+        {
+          "alt": "Ausies spenelio, kremzlės ir veido sričių orientyras be dūrio taškų.",
+          "naturalWidth": 342,
+          "naturalHeight": 399,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/083ba883-be36-4ccb-bcd7-36752d578e2e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "BL-efektai",
+      "device": "mobile",
+      "checkedAt": "2026-10-15T07:15:38.939Z",
+      "revisionHash": "f94b2c40ac513544ab65c833b4e4faa24cd6f5d638ed0b18a5b9dd5bfb5c2f47",
+      "htmlSha256": "e85ead7ce649e7ad7585522a3a346f9515a46b4ff03c34dd91ac2b1820077917",
+      "screenshot": "screenshots/BL-efektai-mobile.png",
+      "title": "Natūralus, „cat-eye“ ir „doll-eye“ blakstienų efektas: kuo skiriasi jų išdėstymas?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Trys dekoratyvinių blakstienų juostelės ant violetinio pagrindo.",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/fa816fc7-e8be-4a32-bf93-1b9a4c9edaa2.webp",
+          "renderWidth": 342
+        },
+        {
+          "alt": "Vienodo mastelio natūralaus, doll-eye ir cat-eye ilgio akcentų schema be matmenų.",
+          "naturalWidth": 342,
+          "naturalHeight": 427,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/4eaec654-a129-4f09-94b8-b3fd3e4ac41e.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "BR-paketas",
+      "device": "mobile",
+      "checkedAt": "2026-10-15T07:15:39.171Z",
+      "revisionHash": "7c36250da6d42b513fd043a6e36d22676190ef1c37d1b4bb64c5f6ca4f0f1c8d",
+      "htmlSha256": "4bd1a2365a22175e3b3eda145ae5bdf3b46d7010ab0ac957c1a71428e8268fd8",
+      "screenshot": "screenshots/BR-paketas-mobile.png",
+      "title": "Kirpimas ir barzda vienu vizitu: kaip palyginti paketo apimtį?",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Vyras ir barzdaskutys aptaria kirpimą prie salono veidrodžio.",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/ad7b046b-9d68-4919-afc7-19c7a3686d63.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    },
+    {
+      "planId": "DP-bikini",
+      "device": "mobile",
+      "checkedAt": "2026-10-15T07:15:39.407Z",
+      "revisionHash": "262cb66e6445d571ae41b123e2b4206946a758d161e86e0c8177f17c1d9599ca",
+      "htmlSha256": "070e2b44639eda6c7c3a1305c4e187c26c7397505b9f1297ba1abf4a39cc0e2e",
+      "screenshot": "screenshots/DP-bikini-mobile.png",
+      "title": "Bikinio depiliacijos pavadinimai: klasikinė, gili ir braziliška",
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "alt": "Privati salono patalpa su širma, užklota kušete ir nepermatomu chalatu.",
+          "naturalWidth": 342,
+          "naturalHeight": 228,
+          "currentSrc": "file:///C:/Users/Lenovo/Documents/Nisiniai_puslapiai/madbeauty-next6-20261015/sites/madbeauty/content-next6-20261015/assets/75a9e6b6-e87c-4f8f-9aa9-f7f759052d7c.webp",
+          "renderWidth": 342
+        }
+      ],
+      "foreign": [],
+      "rawMarkdown": false,
+      "author": true
+    }
+  ],
+  "sheets": [
+    "SCREENS-desktop.jpg",
+    "SCREENS-mobile.jpg"
+  ]
+}

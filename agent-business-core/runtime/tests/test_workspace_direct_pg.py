@@ -11,7 +11,7 @@ from uuid import uuid4
 
 import pytest
 from sqlalchemy import delete, func, select, text, update
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_customer_public import customers, verified  # noqa: F401
 
@@ -172,10 +172,13 @@ async def test_actual_restricted_null_scope_cannot_be_used_by_legacy_or_foreign_
         task = await tx.get(Task, accepted["turn"]["task_id"])
         original = task.thread_id
     for change in ({"kind": "chat.consult"}, {"kind": "workspace.team_turn"}, {"thread_id": str(uuid4())}):
-        with pytest.raises(IntegrityError):
+        # Either the typed CHECK/fence or the current RLS WITH CHECK may reject
+        # first. Both are valid denials; connection/unknown SQL failures are not.
+        with pytest.raises(DBAPIError) as denied:
             async with scope(user=me["user_id"]) as tx:
                 await tx.execute(update(Task).where(Task.id == accepted["turn"]["task_id"]).values(**change))
                 await tx.execute(text("SET CONSTRAINTS ALL IMMEDIATE"))
+        assert getattr(denied.value.orig, "sqlstate", None) in {"23514", "42501"}
     async with scope(user=me["user_id"]) as tx:
         assert (await tx.get(Task, accepted["turn"]["task_id"])).thread_id == original
 

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Desktop publishing locally accepted; no live Facebook post, hosted adapter or main adoption. First helper print encoding failure preserved in private log, no duplicate claim; final source imports fixed after lint error.",
+  "checks": [
+    {
+      "command": "pytest full bounded core + Facebook package",
+      "result": "PASS",
+      "evidence": "research/facebook-browser-worker-2026-10-14/QA.md: 80 passed; final affected FB re-run 48 passed"
+    },
+    {
+      "command": "Actual Codex desktop CUA Page and profile acceptance",
+      "result": "PASS",
+      "evidence": "research/facebook-browser-worker-2026-10-14/QA.md: two actual fixture UI/permit/click/receipt cycles"
+    },
+    {
+      "command": "Ruff scoped browser sources; impeccable detect both HTML; actual desktop/mobile UI",
+      "result": "PASS",
+      "evidence": "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md; actual 200 percent zoom remains UNVERIFIED"
+    }
+  ],
+  "eventId": "219e6792-84c9-42ff-9bf2-4d7c7bf8fe2e",
+  "sequence": 2,
+  "at": "2026-10-14T09:58:27.300Z"
+}

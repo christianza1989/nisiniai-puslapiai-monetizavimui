@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Two original product failures are preserved in EVIDENCE.json. Workspace config precedence and action replay were repaired only in the private Facebook preparation module. Historical payloads/migrations and live transports unchanged; isolated tests contain synthetic data only.",
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_facebook.py tests/test_facebook_audit.py offline_tests/test_facebook_workspace.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "research/facebook-full-audit-2026-10-14/EVIDENCE.json; final 21 passed in 10.38s"
+    },
+    {
+      "command": "ruff check src/pinet_core/facebook/service.py tests/test_facebook_audit.py offline_tests/test_facebook_workspace.py",
+      "result": "PASS",
+      "evidence": "All checks passed; exact source and commands reviewed in docs/FACEBOOK_FULL_AUDIT_2026-10-14.md"
+    }
+  ],
+  "eventId": "d1b0198a-c245-4951-a785-95b5825daaa2",
+  "sequence": 2,
+  "at": "2026-10-14T08:57:47.112Z"
+}

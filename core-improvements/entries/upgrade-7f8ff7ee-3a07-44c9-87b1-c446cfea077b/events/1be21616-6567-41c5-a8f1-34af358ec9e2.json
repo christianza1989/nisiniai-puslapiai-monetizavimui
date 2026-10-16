@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original two CreateProcess rejected: blocked by policy events preserved. Actual turn used never/user/danger-full-access/disabled permission profile, so standard Auto-review attribution is unverified. Local config and scoped logs disclosed no deny-rule/rationale; no active protection changed or rejected activation retried via workaround. Actual profile and Page empty comment composers observed despite Join button. Chrome DOM timeout repaired through documented browser AX alternative, starting personal actor restored. Full live acceptance and host denial repair remain incomplete.",
+  "eventId": "1be21616-6567-41c5-a8f1-34af358ec9e2",
+  "sequence": 2,
+  "at": "2026-10-14T15:10:01.209Z"
+}

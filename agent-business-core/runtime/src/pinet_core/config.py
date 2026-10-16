@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     jev_timeout_seconds: float = 1.5
     environment: str = "local"
     core_url: str = "http://127.0.0.1:8840"
+    facebook_page_credentials_path: str = ""
     allow_simulation: bool = False
     learning_enabled: bool = False
     learning_namespace: str = ''

@@ -1,0 +1,40 @@
+{
+  "siteId": "core",
+  "summary": "Existing FB preparation core had no usable Codex desktop Page/profile publisher; add fenced browser bridge and prevent expired/uncertain browser leases being stolen across niches.",
+  "category": "code",
+  "evidence": [
+    "research/facebook-browser-worker-2026-10-14/QA.md",
+    "agent-business-core/FACEBOOK_BROWSER_WORKER.md"
+  ],
+  "paths": [
+    "FB_ACQUISITION_PLAN.md",
+    "SKILLS/catalog.json",
+    "SKILLS/niche-client-acquisition/PROMPT.md",
+    "SKILLS/niche-client-acquisition/SKILL.md",
+    "SKILLS/niche-client-acquisition/references/facebook.md",
+    "WORKSTREAMS.md",
+    "agent-business-core/FACEBOOK_MODULE.md",
+    "agent-business-core/runtime/src/pinet_core/facebook/console.html",
+    "agent-business-core/runtime/src/pinet_core/facebook/routes.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/service.py",
+    "SKILLS/niche-client-acquisition/references/facebook-browser-worker.md",
+    "agent-business-core/FACEBOOK_BROWSER_WORKER.md",
+    "agent-business-core/runtime/scripts/facebook-browser-acceptance.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_console.html",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_contracts.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_fixture.html",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_routes.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/browser_service.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/desktop_worker.py",
+    "agent-business-core/runtime/src/pinet_core/facebook/route_types.py",
+    "agent-business-core/runtime/tests/test_facebook_browser.py",
+    "docs/FACEBOOK_BROWSER_UI_CHECK_2026-10-14.md",
+    "research/facebook-browser-worker-2026-10-14/QA.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/136",
+  "rollback": "Scoped revert of this desktop increment; preserve private receipts and original audit repairs.",
+  "id": "upgrade-413a797d-ff33-437f-b55b-248821ed456f",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "ffa6fee18cd1ae532ae892ff12674abf8290ac6c",
+  "createdAt": "2026-10-14T09:56:57.027Z"
+}

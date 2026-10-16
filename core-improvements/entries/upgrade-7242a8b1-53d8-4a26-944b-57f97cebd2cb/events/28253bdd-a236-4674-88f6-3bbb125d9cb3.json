@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Verified open PR135 head c87d198720489dea3941fbe461a71aba1999bcda contains the extension source; not merged or adopted. Repository safety/staged catalog hash and handoff freshness/committed upgrade coverage passed. Final read-only localhost check confirms lineage2ai module/browser disabled, zero bindings/jobs; no actual Facebook post or comment. Own previews stopped and private persistent volume retained.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/135",
+  "commit": "c87d198720489dea3941fbe461a71aba1999bcda",
+  "eventId": "28253bdd-a236-4674-88f6-3bbb125d9cb3",
+  "sequence": 4,
+  "at": "2026-10-14T14:28:37.916Z"
+}

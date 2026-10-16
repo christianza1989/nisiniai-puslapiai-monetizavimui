@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Root actual clean-source PostgreSQL acceptance at caeedef5949cec7806c50bd6e8f28f5076edbcbf: a new dedicated empty database migrated through0044 and bootstrapped, then7 native preview cases PASS242.28s and67 direct/team/Episode/provenance/budget/High cases PASS664.24s (74 distinct, not added to prior59). The controller compared original0032 read-only counts after both commands and returned PASS. Prior failed first0044 migration, repaired-source20.11s partial-autoflush failure, all failed databases/logs and original usage remain preserved. Real SQL/RLS/native lifecycle, mocked external transport, actual external provider0. Serving3b7/UI741 and all real customer data remain unchanged; no model calibration, ordinary browser, deployment, main merge or other-PC adoption claimed.",
+  "checks": [
+    {
+      "command": "Dedicated empty PostgreSQL: alembic upgrade head; scripts/bootstrap.py; pytest tests/test_workspace_direct_preview_pg.py -q -x -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "7PASS242.28s; private raw log SHA25615d343b3463021e6ab9a21c47ae4bb479f508802f9e831a8e38ea990328d9f25"
+    },
+    {
+      "command": "pytest tests/test_workspace_direct_pg.py tests/test_workspace_team_pg.py tests/test_workspace_agent_episode_pg.py tests/test_workspace_episode_provenance_pg.py tests/test_workspace_calibration_budget_pg.py tests/test_customer_sol_high.py -q -x -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "67PASS664.24s; private raw log SHA25629c7df3ed21e73537b0d167b355544e5ada7027264e65b6b480d7280e0bbc096; original0032 preserved by final controller comparison."
+    }
+  ],
+  "eventId": "823b7d01-d4e4-4ffa-b2b2-53a04ebf50e7",
+  "sequence": 6,
+  "at": "2026-10-16T00:42:14.228Z"
+}

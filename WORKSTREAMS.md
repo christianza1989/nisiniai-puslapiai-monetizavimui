@@ -1068,6 +1068,18 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
 # S42 direct messenger consultant checkpoint — 2026-10-16
 
+2026-10-17 helper CUSTOMER LIVE PREVIEW WIRE/LIFECYCLE RESERVED issue66/comment6224996410:
+fresh codex/customer-live-preview-20261017 from exactRoot8cdf8d99c5e548fa27662f84a34c93d00809be38,
+paired public255fea0813bf1aabeaeea2f2de0b29564118f2fc and start gate PASS. ONLY NEW
+site_build/live_preview_wire.py/live_preview.py/live_preview_routes.py, standalone
+contract script, fixed Node live-preview bridge, focused tests/docs/new journal.
+Wire first for Root codegen. Canonical Foundation capture/verify/prepare and
+withPreparedCandidatePreview/studio guarded transport remain the sole producer.
+Central router/shutdown hunks await Root coordination; no edits there yet. No
+DB/provider/current-case/process/browser/migration/globalconfig/portal/public
+actions. Root owns frontend/BFF/actual runtime acceptance/adoption; old proofs,
+failures and journals stay frozen. Lifecycle/wire proposal sent before source.
+
 2026-10-17 Root browser recovery: CUA/normal Chrome login restored; unchanged
 API62abbed/public255 freshly prepared native scope25a95e98/package713875fd after
 normal owner session/intake/S6 renewal.11 page openings320/1280 no observed

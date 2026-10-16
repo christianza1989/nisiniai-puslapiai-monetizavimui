@@ -1,0 +1,790 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Authenticated bounded customer live preview",
+    "version": "customer-live-preview.v1",
+    "description": "Read-only availability never starts or prepares a server. Explicit start binds current accepted revision and Results site context, current owner/Session/source/native/S6. Canonical opaque preparation is not a URL. Only a freshly verified ready owned loopback lease exposes preview_url; all other states clear it. Same UUID cannot rebase or resurrect terminal work. Current authority alone renews its short heartbeat. Close, expiry, revocation, source/native drift or shutdown close exact owned children. No caller origin/path/command/proof, paid work, channel activation or full-site/launch promotion."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/live-previews": {
+      "get": {
+        "operationId": "getCustomerLivePreviewAvailability",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-body-byte-limit": 4096,
+        "responses": {
+          "200": {
+            "description": "Bounded current projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvailabilityEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-request-body": "rejected"
+      },
+      "post": {
+        "operationId": "startCustomerLivePreview",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-body-byte-limit": 4096,
+        "responses": {
+          "202": {
+            "description": "Bounded current projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeaseEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Start"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/live-previews/{lease_id}": {
+      "get": {
+        "operationId": "getCustomerLivePreview",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "lease_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-body-byte-limit": 4096,
+        "responses": {
+          "200": {
+            "description": "Bounded current projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeaseEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-request-body": "rejected"
+      },
+      "delete": {
+        "operationId": "closeCustomerLivePreview",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "lease_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-body-byte-limit": 4096,
+        "responses": {
+          "200": {
+            "description": "Bounded current projection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeaseEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "x-request-body": "rejected"
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "Start": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "site_context_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Site Context Sha256",
+            "type": "string"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          }
+        },
+        "required": [
+          "accepted_revision",
+          "site_context_sha256",
+          "idempotency_key"
+        ],
+        "title": "Start",
+        "type": "object"
+      },
+      "LeaseView": {
+        "additionalProperties": false,
+        "properties": {
+          "lease_id": {
+            "format": "uuid",
+            "title": "Lease Id",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "preparing",
+              "starting",
+              "ready",
+              "closing",
+              "closed",
+              "expired",
+              "revoked",
+              "failed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "scope_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Scope Sha256",
+            "type": "string"
+          },
+          "execution_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Execution Source Revision",
+            "type": "string"
+          },
+          "public_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Public Source Revision",
+            "type": "string"
+          },
+          "site_context_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Site Context Sha256",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "expires_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expires At"
+          },
+          "preview_url": {
+            "anyOf": [
+              {
+                "pattern": "^http://127\\.0\\.0\\.1:[1-9][0-9]{0,4}/$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preview Url"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z][a-z0-9_]{0,79}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "local_preview_only": {
+            "const": true,
+            "title": "Local Preview Only",
+            "type": "boolean"
+          },
+          "full_site_status": {
+            "const": "UNVERIFIED",
+            "title": "Full Site Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not_performed",
+            "title": "Deployment",
+            "type": "string"
+          }
+        },
+        "required": [
+          "lease_id",
+          "creation_id",
+          "state",
+          "accepted_revision",
+          "scope_sha256",
+          "execution_source_revision",
+          "public_source_revision",
+          "site_context_sha256",
+          "created_at",
+          "expires_at",
+          "preview_url",
+          "failure_code",
+          "local_preview_only",
+          "full_site_status",
+          "launch_status",
+          "deployment"
+        ],
+        "title": "LeaseView",
+        "type": "object"
+      },
+      "LeaseEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "customer-live-preview.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/LeaseView"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "LeaseEnvelope",
+        "type": "object"
+      },
+      "Availability": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "can_start": {
+            "title": "Can Start",
+            "type": "boolean"
+          },
+          "current_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Revision"
+          },
+          "site_context_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Context Sha256"
+          },
+          "blocked_reasons": {
+            "items": {
+              "pattern": "^[a-z0-9_:-]{1,160}$",
+              "type": "string"
+            },
+            "maxItems": 1024,
+            "title": "Blocked Reasons",
+            "type": "array"
+          },
+          "latest_lease": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LeaseView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "local_preview_only": {
+            "const": true,
+            "title": "Local Preview Only",
+            "type": "boolean"
+          },
+          "full_site_status": {
+            "const": "UNVERIFIED",
+            "title": "Full Site Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_id",
+          "can_start",
+          "current_revision",
+          "site_context_sha256",
+          "blocked_reasons",
+          "latest_lease",
+          "local_preview_only",
+          "full_site_status",
+          "launch_status"
+        ],
+        "title": "Availability",
+        "type": "object"
+      },
+      "AvailabilityEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "customer-live-preview.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Availability"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "AvailabilityEnvelope",
+        "type": "object"
+      }
+    }
+  }
+}

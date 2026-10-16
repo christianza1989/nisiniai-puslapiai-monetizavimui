@@ -1,5 +1,23 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current local integration — 2026-10-16
+
+**Whole local platform OPEN.** User-facing entry is `http://127.0.0.1:3030/dashboard`; existing API18871 remains clean3b7ef1baa7d0b11984a7739651041f1c0738e997 and UI741d045/buildpBmCae9BzQOC9eld58MkO. Root owns integration/current native case; authorized01a13440 owns the new real-Session editorial review/approval bridge and01a13d30 owns candidate-preview preparation. Revoked01a133c2 is not contacted. Homepage work remains separate.
+
+The real Wellness case has an accepted Discovery report and Creation revision,11 nonempty native pages plus2 deferred future guides,20 WebP files from4 original concept families and34 guarded editorial operations. Original failed jobs, accepted candidate/usage, supplier uncertainty and zero public approvals are retained. Root asset/editorial actions are not claimed as autonomous model execution. [Current handoff](../../docs/handoffs/VERSLOMATIKA_WELLNESS_RESUMED_2026_10_15.md) records exact pins and limits; the older active checkpoints below are historical.
+
+| Work | Current evidence / next action |
+| --- | --- |
+| Direct consultants and saved-agent continuation | Source-only native74 distinct PG cases PASS atcaeedef:7new saved-preview plus67regression. Real SQL/RLS/Conversation/Task/Quality/accounting, mocked provider0; no ordinary messenger UI/model acceptance. Portal49tests/isolated build prepared, defaultoff and not running. |
+| Stable guide URL and hub | Root integrated coree9dc4e9/public255fea;8focused/73public/TypeScript/build PASS. Actual SEO HTTP smoke passed for the existing approved7-page greitossvetaines package, not Wellness. Temporary owned32919 stopped. Wellness Foundation still pending. |
+| Current copy | Independent read of11bodies,3 exact guarded corrections, desktop draft-reader inspection and390px selection-guide proof. This is not full NativeContentSite acceptance. |
+| Native review + batch approval | Concrete missing authenticated bridge is now being implemented; reuse current owner/Session/S6 guard and canonical review/atomic approval. Preparation retains no approval authority. No invented review/fact clearance. |
+| Full-site preview bootstrap | Separate candidate-preview preparation is being implemented before final audit certification, reusing real approved release and maintained renderer/owned runner. Existing verify-local certification gates stay intact. |
+| Backed-up source adoption | Fresh-empty74 suite did not prove old-schema migration. An exact restored86-table ordinary copy reproduced0044 enum deparser incompatibility; scoped fix67181d0 has31focusedPASS and a NEW full restore/migration0044PASS: all86old tables exact/2new empty, restricted readinessPASS. Initial artifact snapshot0 was unmeasured; separate site hash and20media SHA checks PASS. Original served DB/source and0032 stay unchanged; no new API started. |
+| Full result | Actual rendered desktop/mobile/enlargement, final review, private approved release/Foundation, inquiry persistence/measurement and new ordinary messenger journey remain executable work. SMTP inbox, supplier partnership/photo rights, deployment, outreach and launch remain separate unknown/disabled stages. |
+
+Next: complete both authenticated bridges and their real PG checks, verify the restored-data migration and preserved native bytes, then make one coordinated local backend/portal update. Automatic portal starts remain prohibited by its existing project rule; prepare the concrete final build before a single manual start. Do not repeat original paid generation or silently treat a UTC quota reset as a new paid batch.
+
 ## Active headless pipeline instruction — 2026-10-14
 
 The owner explicitly requested direct end-to-end API testing and continuous stage/error logging instead of more UI-driven trials. Root owns S11: a thin loopback HTTP client using normal synthetic customer authentication, persisted exact idempotency keys and the maintained Discovery → reviewed approval → Creation → GUIDE → Foundation contracts. Existing workers remain the only executors. The client must stop on a real failure or missing gate, preserve the first failure and expose which stage/role failed; it must never fabricate a plan, quality approval or successful Foundation.

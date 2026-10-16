@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root actual migration at clean67181d0a190b24b759a940743148042b9652fb85/public255fea: full ordinary0042 dump restored into another NEW dedicated private staging database, all86 table snapshots equal before migration, then0044 succeeds. All86 pre-existing table row-count+content hashes remain identical; exactly2 new direct tables are empty. Separate restricted-runtime readiness passes both direct and native-preview schema guards. Original0032, served ordinary0042/source3b7/API18871 and all old failures remain unchanged. No source adoption or API start; provider0. Initial clone helper's cfg-derived artifact count0 was unmeasured and is not file preservation evidence; separate current stable site hash equals prior guarded a9d98035 and all20media bytes match saved asset SHA records,117 case files observed now.",
+  "checks": [
+    {
+      "command": "Full private pg_dump/restore into new DB; alembic upgrade head; read-only all-table before/after comparisons",
+      "result": "PASS",
+      "evidence": "Actual0042->0044;86old tables exact/2new empty/original0032 and served DB unchanged. Private verified receiptSHA256766d1b5c8e4173ddfd2a880330ccb2b0569558b08cc1bcc0ca7c0202f9ba5f55. Original failed schema-only diagnosticSHA2569e5f86875a1b2915156267d3c042146f179d9dc72e2cf2b31b82b75443a386b9 retained."
+    },
+    {
+      "command": "Read-only restricted pinet_runtime direct.schema_ready and direct_preview_budget.schema_ready on migrated copy",
+      "result": "PASS",
+      "evidence": "Runtime role not superuser/bypassRLS; both readiness guardsPASS, no writes/provider. ReceiptSHA256759ff7335b0ebf7f6a9539badda496fc37f5c93821859a6ddcd2a774c6b127e5."
+    },
+    {
+      "command": "Current stable native site/media byte verification against preceding guarded revision and saved20asset records",
+      "result": "PASS",
+      "evidence": "Physical sitea9d98035f6f1cc1cfc3c7a10330825a5c5663a9106006cb56308ddd27d1ab850 unchanged;20 media SHA exact. Separate receiptSHA25668df7615ec90d1d423fd2d2860d7cb1f190b2baa8349db0d2cfc2387a12e7e37. Not a before/after hash of every private file."
+    }
+  ],
+  "eventId": "e5032826-68d2-4097-9a7c-f7605e442bd8",
+  "sequence": 3,
+  "at": "2026-10-16T01:13:09.998Z"
+}

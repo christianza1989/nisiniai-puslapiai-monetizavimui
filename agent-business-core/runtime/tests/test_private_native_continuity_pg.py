@@ -197,7 +197,7 @@ async def paired_native(preview, monkeypatch, tmp_path):  # noqa: F811
     # maintained modules. This synthetic prior identity never executes old code.
     importer = tmp_path / "synthetic-prior-importer.mjs"
     original_script = studio.ROOT / "content-studio/scripts/customer-creation-intake.mjs"
-    importer.write_text(original_script.read_text().replace("'../src/", "'" + (studio.ROOT / "content-studio/src").as_uri() + "/")
+    importer.write_text(original_script.read_text(encoding="utf-8").replace("'../src/", "'" + (studio.ROOT / "content-studio/src").as_uri() + "/")
         + "\n// Isolated synthetic prior importer identity.\n", encoding="utf-8")
     configuration = studio.configuration
     phase = SimpleNamespace(original=True)

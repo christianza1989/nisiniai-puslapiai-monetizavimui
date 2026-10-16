@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Root recognizes only one exact author enum CHECK matching either of two fixed predecessor expressions compiled by the actual PostgreSQL server: original IN form and pg_dump/restore per-literal VARCHAR-to-TEXT cast form. Unknown/extra/duplicate enum and unknown global Job unique constraint stay denied. No broad normalization, dropped fence, rewritten row or authority expansion. Source-only tests; actual restored migration repeat follows in a new private database, not in-place on the failed copy. Serving3b7/original0032 unchanged; provider0.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_direct_preview_schema.py offline_tests/test_direct_schema.py offline_tests/test_direct_preview_fence.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "31PASS8.57s, including exact fresh/restored predecessor acceptance and unknown/duplicate rejection. Initial new test1FAIL9deselected2.19s is retained privately; actual original restored migration RuntimeError is separately preserved."
+    },
+    {
+      "command": "ruff check migrations/versions/0044_direct_native_preview.py src/pinet_core/workspace_team/direct_preview_schema.py offline_tests/test_direct_preview_schema.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped Ruff and whitespace checks passed after keeping both canonical imports before definitions."
+    }
+  ],
+  "eventId": "dce258c8-6e83-467a-9e29-e6eef93bbfe0",
+  "sequence": 2,
+  "at": "2026-10-16T01:08:05.285Z"
+}

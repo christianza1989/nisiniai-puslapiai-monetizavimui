@@ -2,6 +2,25 @@
 from . import direct_schema
 from .episode_schema import NEW_AUTHOR_CHECK, normalized_check
 
+
+def author_enum_probes():
+    # pg_dump emits explicit element casts; restoring that DDL retains a
+    # different expression tree from a freshly parsed IN list. Let this server
+    # compile both exact, fixed predecessor forms instead of erasing casts.
+    return (
+        "CREATE TEMP TABLE pinet_direct_author_probe(author_type VARCHAR CHECK(author_type IN('user','coordinator','adviser'))) ON COMMIT DROP",
+        "CREATE TEMP TABLE pinet_direct_author_restore_probe(author_type VARCHAR CHECK(author_type::TEXT=ANY(ARRAY[('user'::VARCHAR)::TEXT,('coordinator'::VARCHAR)::TEXT,('adviser'::VARCHAR)::TEXT]))) ON COMMIT DROP",
+    )
+
+
+def author_enum_constraint(rows, expected_expressions):
+    if (len(expected_expressions) != 2 or any(not isinstance(v, str) or not v for v in expected_expressions)):
+        raise RuntimeError("Missing exact PostgreSQL-compiled author enum predecessors")
+    matches = [row for row in rows if row["expression"] in expected_expressions]
+    if len(matches) != 1 or not isinstance(matches[0]["name"], str) or not matches[0]["name"]:
+        raise RuntimeError("Unknown/ambiguous old author enum constraint")
+    return matches[0]["name"]
+
 TABLE = "control_workspace_direct_previews"
 VERSION = "workspace-native-preview-turn.v1"
 NATIVE = "customer-agent-direct-preview.v1"

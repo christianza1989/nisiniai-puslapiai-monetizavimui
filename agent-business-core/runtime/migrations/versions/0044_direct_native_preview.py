@@ -24,17 +24,18 @@ def upgrade():
     checks = tx.execute(text("""SELECT conname AS name,pg_get_expr(conbin,conrelid) AS expression FROM pg_constraint
       WHERE conrelid='public.control_workspace_team_events'::regclass AND contype='c'""")).mappings().all()
     authors = schema.author_sql(checks)
-    # Ask this PostgreSQL version to compile the exact old enum expression; no
-    # erased literal/cast AST and no guessed generated constraint name.
-    tx.execute(text("CREATE TEMP TABLE pinet_direct_author_probe(author_type VARCHAR CHECK(author_type IN('user','coordinator','adviser'))) ON COMMIT DROP"))
-    expected = tx.scalar(text("SELECT pg_get_expr(conbin,conrelid) FROM pg_constraint WHERE conrelid='pinet_direct_author_probe'::regclass AND contype='c'"))
-    enum = [row for row in checks if row["expression"] == expected]
+    # Compile the fixed original and pg_dump/restore predecessors on this
+    # PostgreSQL version. Keep exact expression matching and reject ambiguity.
+    for statement in schema.author_enum_probes():
+        tx.execute(text(statement))
+    expected = list(tx.scalars(text("SELECT pg_get_expr(conbin,conrelid) FROM pg_constraint WHERE conrelid IN('pinet_direct_author_probe'::regclass,'pinet_direct_author_restore_probe'::regclass) AND contype='c'")))
+    enum_name = schema.author_enum_constraint(checks, expected)
     unique = tx.execute(text("""SELECT c.conname AS name FROM pg_constraint c
       WHERE c.conrelid='public.jobs'::regclass AND c.contype='u' AND ARRAY(
         SELECT a.attname::text FROM unnest(c.conkey) WITH ORDINALITY k(attnum,n)
         JOIN pg_attribute a ON a.attrelid=c.conrelid AND a.attnum=k.attnum ORDER BY k.n)=ARRAY['conversation_id','kind']""")).mappings().all()
-    if len(enum) != 1 or len(unique) != 1:
-        raise RuntimeError("Unknown/ambiguous old author enum or global Job unique constraint")
+    if len(unique) != 1:
+        raise RuntimeError("Unknown/ambiguous global Job unique constraint")
     def quoted(value):
         return '"' + value.replace('"', '""') + '"'
     for statement in schema.extra_sql():
@@ -44,8 +45,8 @@ def upgrade():
         op.execute(statement)
     for statement in authors:
         op.execute(statement)
-    op.execute("ALTER TABLE control_workspace_team_events DROP CONSTRAINT " + quoted(enum[0]["name"]))
-    op.execute("ALTER TABLE control_workspace_team_events ADD CONSTRAINT " + quoted(enum[0]["name"]) + " CHECK(author_type IN('user','coordinator','adviser','saved_agent'))")
+    op.execute("ALTER TABLE control_workspace_team_events DROP CONSTRAINT " + quoted(enum_name))
+    op.execute("ALTER TABLE control_workspace_team_events ADD CONSTRAINT " + quoted(enum_name) + " CHECK(author_type IN('user','coordinator','adviser','saved_agent'))")
     for statement in functions.values():
         op.execute(statement)
 

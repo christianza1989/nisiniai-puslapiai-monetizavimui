@@ -101,6 +101,24 @@ def test_native_allocation_dispatch_casts_actual_postgresql_trigger_name():
     assert "workspace_direct_preview_budget_check(TG_TABLE_NAME::VARCHAR,to_jsonb(NEW)" in patched
 
 
+def test_restored_author_enum_accepts_only_one_exact_server_compiled_predecessor():
+    fresh = "((author_type)::text = ANY ((ARRAY['user'::character varying, 'coordinator'::character varying, 'adviser'::character varying])::text[]))"
+    restored = "((author_type)::text = ANY (ARRAY[('user'::character varying)::text, ('coordinator'::character varying)::text, ('adviser'::character varying)::text]))"
+    expected = [fresh, restored]
+    for expression in expected:
+        rows = [{"name": 'actual"enum', "expression": expression}, {"name": "unrelated", "expression": "length(content)>0"}]
+        assert direct_preview_schema.author_enum_constraint(rows, expected) == 'actual"enum'
+    for rows in ([], [{"name": "unknown", "expression": restored.replace("'adviser'", "'support'")}],
+                 [{"name": "a", "expression": fresh}, {"name": "b", "expression": restored}],
+                 [{"name": "a", "expression": fresh}, {"name": "b", "expression": fresh}]):
+        with pytest.raises(RuntimeError):
+            direct_preview_schema.author_enum_constraint(rows, expected)
+    probes = direct_preview_schema.author_enum_probes()
+    assert len(probes) == 2 and all("CREATE TEMP TABLE" in s and "ON COMMIT DROP" in s for s in probes)
+    assert "author_type IN('user','coordinator','adviser')" in probes[0]
+    assert "('user'::VARCHAR)::TEXT" in probes[1] and "('adviser'::VARCHAR)::TEXT" in probes[1]
+
+
 @pytest.mark.parametrize("name,patcher,comparison", [
     ("workspace_direct_task_fence", direct_preview_schema.task_patch, "NEW.adapter_revision<>"),
     ("workspace_direct_task_boundary", direct_preview_schema.boundary_patch, "j->>'adapter_revision'="),

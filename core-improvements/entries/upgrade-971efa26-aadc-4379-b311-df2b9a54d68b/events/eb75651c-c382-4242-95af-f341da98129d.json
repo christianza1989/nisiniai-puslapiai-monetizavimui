@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original actual local persistent request sequence400→503→400 preserved. Shared body reader now drains modest rejected content types, retainsatmost10KB and cancels beyond64KB.7actual negative HTTP cases pass with notification flags off; one marked UI request persisted locally and exact QA rows cleaned. No real client/email/production writes.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-form-body.test.mjs",
+      "result": "PASS",
+      "evidence": "10stream/UTF-8/MIME/byte-boundary/body-consumption/cancellation regressions against the actual imported shared reader."
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "65/65public-core tests passed."
+    },
+    {
+      "command": "TypeScript noEmit and production build",
+      "result": "PASS",
+      "evidence": "Companion final extraction typecheck and vinext production build completed successfully."
+    }
+  ],
+  "eventId": "eb75651c-c382-4242-95af-f341da98129d",
+  "sequence": 2,
+  "at": "2026-10-16T07:11:57.235Z"
+}

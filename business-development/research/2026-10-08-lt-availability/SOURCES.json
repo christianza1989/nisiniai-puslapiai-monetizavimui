@@ -1,0 +1,40 @@
+{
+  "checkedOn": "2026-10-08",
+  "primaryOpenedUsed": 4,
+  "sources": [
+    {
+      "url": "https://www.domreg.lt/duk/domenu-turetojams/kas-yra-karantinas/",
+      "claim": "30 calendar day quarantine counted from next day; nonwork end extends; prior holder/legal successor right,not third-party purchase",
+      "limit": "No actual domain state or release date verified"
+    },
+    {
+      "url": "https://www.domreg.lt/duk/domenu-turetojams/kada-domeno-vardas-po-karantino-patenka-i-apyvarta/",
+      "claim": "After deletion following unclaimed quarantine,release randomly within24h",
+      "limit": "No guaranteed precise drop time or registration right"
+    },
+    {
+      "url": "https://www.domreg.lt/duk/paslaugu-teikejams/kaip-gauti-informacija-apie-domenus/",
+      "claim": "DAS status TCP4343 get1.0 format; WHOIS TCP43 capped100queries/30min thenIPblock",
+      "limit": "No TCP query or account executed; publication is not measured service capacity"
+    },
+    {
+      "url": "https://www.domreg.lt/duk/domenu-turetojams/kaip-perleisti-teises-i-domena-kitam-asmeniui/",
+      "claim": "30calendar days from creation,last trade,quarantine recreation; recipient provider completes initiated procedure in7calendar days",
+      "limit": "No registrar account,exception,transfer or actual trade checked"
+    }
+  ],
+  "localDedup": [
+    "VISION.md",
+    "../domain-sorter/README.md",
+    "../agent-business-core/ROADMAP.md",
+    "research/2026-10-03-transfer/PILOT.md",
+    "research/2026-10-07-sale-channel-cost/RESEARCH.md"
+  ],
+  "ownerReview": {
+    "method": "Known root/core local JSONL last16MiB,only user response_item messages,exclude tool output/config",
+    "rootLatestFound": "2026-10-07T06:12:54.302Z",
+    "coreLatestFound": "2026-10-07T06:32:25.564Z",
+    "limits": "Thread tools unavailable this cycle; bounded tail not complete history; no new registry approval found"
+  },
+  "scope": "Read-only sources/private proposal; no buying,TCP,DB,worker,DNS,account or inbox"
+}

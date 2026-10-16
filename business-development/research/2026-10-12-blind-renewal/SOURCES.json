@@ -1,0 +1,11 @@
+{
+  "checkedOn":"2026-10-12",
+  "sources":[
+    {"id":"S1","url":"https://www.lauresta.lt/remontas/","status":"read_primary_html","supports":"Fabric replacement, repair/parts and object-dependent scope","limit":"Vendor claims, no confirmed compatibility, partner or our savings"},
+    {"id":"S2","url":"https://www.roletai.domremus.lt/rolet371-kainos.html","status":"read_primary_html","supports":"Klaipeda fabric replacement alongside new blinds","limit":"Undated rates and relative discounts not adopted as quote or current capacity"},
+    {"id":"S3","url":"https://paslaugos.lt/roletu-ir-zaliuziu-meistrai/roletu-remontas/klaipedoje","status":"read_primary_platform_html","supports":"Five visible historical requests classified as one fabric/control, one roller mechanism/site visit, three other blind repairs","limit":"Newest displayed request 2026-07-01; period/authenticity/current volume and actual sales unknown; no private names/contact data retained"},
+    {"id":"S4","url":"https://content.blinds-2go.co.uk/contact-support","status":"read_primary_html","supports":"Order-related spare parts support precedent","limit":"Not universal compatibility, LT supply or our paid demand"}
+  ],
+  "tools":{"catalogueSearches":1,"catalogueGets":1,"selectedEndpoint":"branddev.brand.ai.products","usdPerSuccessCatalogue":0.02534,"overflowUsdPerCallCatalogue":0.03,"cataloguePriceCheckedOn":"2026-08-20","providerCalls":0,"paidCalls":0,"ltSemanticCoverage":"UNVERIFIED","status":"deferred"},
+  "scope":"Bounded primary-source research, no raw customer requests, outreach, carts or subscriptions"
+}

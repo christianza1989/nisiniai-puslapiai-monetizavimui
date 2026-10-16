@@ -1,0 +1,35 @@
+{
+  "checkedOn": "2026-10-07",
+  "method": "Primary HTML opened via web; bounded targeted reads; no account, checkout or contact",
+  "sources": [
+    {
+      "url": "https://flippa.com/pricing",
+      "claim": "Sub10K section: Entry USD29 flat fee,60 days,10% success; no specific asset checkout verified",
+      "limit": "Dynamic tiers; locale=en also opened but not counted separately; fees/taxes/category/renewal before actual purchase unknown"
+    },
+    {
+      "url": "https://flippa.com/terms-of-service/",
+      "claim": "Sections10-12: exclusivity/circumvention; listing fee even without sale; buyer-contact refund request and seven-day conditions; success fee",
+      "limit": "Provider published terms, not acceptance or legal applicability determination; contact is not sale"
+    },
+    {
+      "url": "https://support.flippa.com/hc/en-us/articles/12856932906767-Listing-sale-pricing",
+      "publishedOn": "2025-05-29",
+      "claim": "Starter/non-revenue asking or reserve ceiling USD9999; Projects & Concepts separate",
+      "limit": "Ceiling is not valuation, sale price, eligibility or demand"
+    },
+    {
+      "url": "https://empireflippers.com/business-listing-requirements/",
+      "publishedOn": "2025-08-04",
+      "claim": "USD2000 monthly net profit averaged over last12months and minimum12months revenue history",
+      "limit": "Selected necessary requirements only; no complete eligibility audit or application"
+    }
+  ],
+  "dedup": [
+    "research/2026-10-01-first-path/RESEARCH.md",
+    "research/2026-10-03-transfer/PILOT.md",
+    "VISION.md",
+    "../agent-business-core/ROADMAP.md"
+  ],
+  "unUsedSearchResults": "Acquire current/FAQ and third-party snippets not used as new evidence; bounded study narrowed to unstudied channel costs"
+}

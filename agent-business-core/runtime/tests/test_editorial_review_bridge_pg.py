@@ -188,8 +188,19 @@ async def test_real_lost_response_reconciles_retained_receipt_without_repeating_
 async def test_real_changed_execution_source_requires_existing_s6_before_any_native_write(editorial_case, monkeypatch):
     case = editorial_case
     body = await request(case)
-    before = case.file.read_bytes()
+    files = {str(p.relative_to(case.directory)): p.read_bytes() for p in case.directory.rglob("*") if p.is_file()}
     monkeypatch.setattr(settings(), "control_source_revision", "b" * 40)
     response = await post(case, body)
+    # Accepted proof first requires current-source private intake continuity.
+    # Renew through the maintained HTTP path; never skip it or weaken S6.
+    assert response.status_code == 409 and response.json()["code"] == "private_intake_missing", response.text
+    assert {str(p.relative_to(case.directory)): p.read_bytes() for p in case.directory.rglob("*") if p.is_file()} == files
+    renewed = await case.c["client"].post(f"/customer/v2/creations/{case.cid}/private-preview-intake",
+        headers=case.auth, json={"accepted_revision": body["accepted_revision"],
+            "candidate_sha256": body["candidate_sha256"], "idempotency_key": str(uuid4())})
+    assert renewed.status_code == 200 and renewed.json()["data"]["state"] == "private_draft_imported", renewed.text
+    assert renewed.json()["data"]["latest"]["source_revision"] == "b" * 40
+    assert {str(p.relative_to(case.directory)): p.read_bytes() for p in case.directory.rglob("*") if p.is_file()} == files
+    response = await post(case, body)
     assert response.status_code == 409 and response.json()["code"] == "build_continuation_stale", response.text
-    assert case.file.read_bytes() == before
+    assert {str(p.relative_to(case.directory)): p.read_bytes() for p in case.directory.rglob("*") if p.is_file()} == files

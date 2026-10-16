@@ -114,6 +114,33 @@ async def test_later_renewal_anchors_original_import_not_a_chain_of_current_obse
     assert s.receipts[0].intake.get("nativeContinuity") is None
 
 
+async def test_explicit_paired_source_upgrade_retains_original_importer_and_current_execution_pins(continuity):
+    s = continuity
+    await imported(s)
+    original = copy.deepcopy((s.requests[0].context, s.receipts[0].intake, s.job.usage))
+    s.pins.update(public_source_revision="0" * 40, importer_sha256="1" * 64)
+    value = await service.prepare("token", s.creation.id, request(s), intake_runner=forbidden, continuity_runner=s.reader)
+    assert value["state"] == "private_draft_imported"
+    marker = s.requests[-1].context["continuity"]
+    assert marker["version"] == "private-native-anchor.v2"
+    assert marker["origin_native_sources"] == original[0]["native_sources"]
+    assert marker["execution_native_sources"] == s.pins
+    assert marker["origin_source_revision"] == original[0]["source_revision"]
+    assert marker["execution_source_revision"] == settings().control_source_revision
+    assert s.receipts[-1].intake["importerHash"] == original[1]["importerHash"] != s.pins["importer_sha256"]
+    assert (s.requests[0].context, s.receipts[0].intake, s.job.usage) == original
+    assert s.calls == s.reads == 1
+    replay = request(s, idempotency_key=s.requests[-1].idempotency_key)
+    await service.prepare("token", s.creation.id, replay, intake_runner=forbidden, continuity_runner=forbidden)
+    assert s.reads == 1 and len(s.requests) == len(s.receipts) == 2
+    settings().control_source_revision = "d" * 40
+    await service.prepare("token", s.creation.id, request(s), intake_runner=forbidden, continuity_runner=s.reader)
+    assert s.requests[-1].context["continuity"]["recovery_id"] == s.requests[0].id
+    assert s.requests[-1].context["continuity"]["origin_native_sources"] == original[0]["native_sources"]
+    assert (s.requests[0].context, s.receipts[0].intake, s.job.usage) == original
+    assert s.calls == 1 and s.reads == 2
+
+
 async def test_expired_historical_session_is_evidence_only_new_verified_session_owns_renewal(continuity):
     s = continuity
     await imported(s)
@@ -145,16 +172,18 @@ async def test_retained_failure_is_not_retried_and_new_explicit_uuid_may_read_or
 
 
 @pytest.mark.parametrize("key", ["public_source_revision", "importer_sha256", "network_sha256"])
-async def test_changed_native_fingerprint_never_reimports_or_accepts_history(continuity, key):
+async def test_native_drift_without_explicit_new_source_or_with_network_change_never_reads(continuity, key):
     s = continuity
     await imported(s)
     s.pins[key] = "0" * (40 if key.endswith("revision") else 64)
+    if key != "network_sha256":
+        settings().control_source_revision = s.requests[0].context["source_revision"]
     with pytest.raises(ControlError, match="private_intake_anchor_stale"):
         await service.prepare("token", s.creation.id, request(s), intake_runner=forbidden, continuity_runner=forbidden)
     assert s.calls == 1 and s.reads == 0 and len(s.requests) == len(s.receipts) == 1
 
 
-@pytest.mark.parametrize("change", ["candidate", "coordinator", "owner", "revoked"])
+@pytest.mark.parametrize("change", ["candidate", "coordinator", "owner", "revoked", "source_context", "creation_source", "host"])
 async def test_changed_accepted_scope_or_revoked_owner_cannot_reuse_anchor(continuity, change):
     s = continuity
     await imported(s)
@@ -164,6 +193,12 @@ async def test_changed_accepted_scope_or_revoked_owner_cannot_reuse_anchor(conti
         s.changed = True
     elif change == "owner":
         s.creation.user_id = str(uuid4())
+    elif change == "source_context":
+        s.context_extra = {"contextSha256": "0" * 64}
+    elif change == "creation_source":
+        s.creation.source_revision = "0" * 40
+    elif change == "host":
+        s.creation.canonical_host = "foreign.invalid"
     else:
         s.revoked = True
     with pytest.raises(ControlError):
@@ -181,7 +216,7 @@ async def test_explicit_anchor_cannot_cross_an_accepted_revision_identity(contin
     assert s.reads == 0
 
 
-@pytest.mark.parametrize("change", ["revoked", "source", "active", "anchor"])
+@pytest.mark.parametrize("change", ["revoked", "source", "active", "anchor", "public_source_revision", "importer_sha256", "network_sha256"])
 async def test_authority_or_anchor_change_after_read_cannot_commit_new_receipt(continuity, change):
     s = continuity
     await imported(s)
@@ -194,13 +229,48 @@ async def test_authority_or_anchor_change_after_read_cannot_commit_new_receipt(c
             settings().control_source_revision = "d" * 40
         elif change == "active":
             s.creation.active_job_id = str(uuid4())
-        else:
+        elif change == "anchor":
             s.receipts[0].intake_sha256 = "0" * 64
+        else:
+            s.pins[change] = "0" * (40 if change.endswith("revision") else 64)
         return value
 
     with pytest.raises(ControlError):
         await service.prepare("token", s.creation.id, request(s), intake_runner=forbidden, continuity_runner=changed)
     assert len(s.requests) == 2 and len(s.receipts) == 1
+
+
+@pytest.mark.parametrize("change", ["origin_importer", "origin_public", "execution_importer", "execution_source", "extra"])
+async def test_paired_upgrade_marker_cannot_relabel_origin_or_execution(continuity, change):
+    s = continuity
+    await imported(s)
+    s.pins.update(public_source_revision="0" * 40, importer_sha256="1" * 64)
+    await service.prepare("token", s.creation.id, request(s), intake_runner=forbidden, continuity_runner=s.reader)
+    marker = copy.deepcopy(s.requests[-1].context["continuity"])
+    if change == "origin_importer":
+        marker["origin_native_sources"]["importer_sha256"] = s.pins["importer_sha256"]
+    elif change == "origin_public":
+        marker["origin_native_sources"]["public_source_revision"] = "f" * 40
+    elif change == "execution_importer":
+        marker["execution_native_sources"]["importer_sha256"] = "f" * 64
+    elif change == "execution_source":
+        marker["execution_source_revision"] = "f" * 40
+    else:
+        marker["approval"] = "approved"
+    with pytest.raises(ControlError):
+        await service.retained_anchor(s.tx, s.creation, s.requests[-1].context, marker)
+    assert len(s.requests) == len(s.receipts) == 2 and s.reads == 1
+
+
+async def test_paired_upgrade_cannot_mislabel_original_intake_importer(continuity):
+    s = continuity
+    await imported(s)
+    s.pins.update(public_source_revision="0" * 40, importer_sha256="1" * 64)
+    s.requests[0].context["native_sources"]["importer_sha256"] = "2" * 64
+    s.requests[0].context_sha256 = digest(s.requests[0].context)
+    with pytest.raises(ControlError, match="private_intake_anchor_stale"):
+        await service.prepare("token", s.creation.id, request(s), intake_runner=forbidden, continuity_runner=forbidden)
+    assert s.reads == 0 and len(s.requests) == len(s.receipts) == 1
 
 
 async def test_continuity_marker_receipt_corruption_never_becomes_current(continuity):

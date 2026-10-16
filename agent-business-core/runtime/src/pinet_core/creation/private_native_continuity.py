@@ -16,8 +16,10 @@ from .service import digest
 
 VERSION = "private-native-continuity.v1"
 MARKER_VERSION = "private-native-anchor.v1"
+UPGRADE_MARKER_VERSION = "private-native-anchor.v2"
 TRANSPORT = {"manifestPath", "dataDir", "outputDir", "replayed", "workflow"}
 MARKER_KEYS = {"version", "recovery_id", "receipt_id", "context_sha256", "intake_sha256", "manifest_sha256", "observer_sha256"}
+UPGRADE_KEYS = {"origin_source_revision", "execution_source_revision", "origin_native_sources", "execution_native_sources"}
 AUTHORITY = {"import", "generation", "sourceVerification", "mediaVerification", "editorialReview", "approval",
              "release", "deployment", "channelActivation"}
 
@@ -35,9 +37,20 @@ def manifest_hash(intake):
     return digest({k: v for k, v in intake.items() if k not in TRANSPORT})
 
 
+def checked_sources(value):
+    if (not isinstance(value, dict) or set(value) != {"public_source_revision", "importer_sha256", "network_sha256"}
+            or any(not isinstance(v, str) or not re.fullmatch(r"[a-f0-9]{40}" if k == "public_source_revision"
+                else r"[a-f0-9]{64}", v) for k, v in value.items())):
+        raise ControlError(503, "invalid_private_intake_source")
+    return value
+
+
 def checked_marker(value):
     try:
-        if not isinstance(value, dict) or set(value) != MARKER_KEYS or value["version"] != MARKER_VERSION:
+        if not isinstance(value, dict) or value.get("version") not in {MARKER_VERSION, UPGRADE_MARKER_VERSION}:
+            raise ValueError("exact anchor marker required")
+        upgrade = value["version"] == UPGRADE_MARKER_VERSION
+        if set(value) != MARKER_KEYS | (UPGRADE_KEYS if upgrade else set()):
             raise ValueError("exact anchor marker required")
         for key in ("recovery_id", "receipt_id"):
             if str(UUID(value[key])) != value[key]:
@@ -45,9 +58,29 @@ def checked_marker(value):
         for key in MARKER_KEYS - {"version", "recovery_id", "receipt_id"}:
             if not isinstance(value[key], str) or not re.fullmatch(r"[a-f0-9]{64}", value[key]):
                 raise ValueError("anchor digest required")
+        if upgrade:
+            origin, execution = (checked_sources(value[k]) for k in ("origin_native_sources", "execution_native_sources"))
+            if (any(not isinstance(value[k], str) or not re.fullmatch(r"[a-f0-9]{40}", value[k])
+                    for k in ("origin_source_revision", "execution_source_revision"))
+                    or value["origin_source_revision"] == value["execution_source_revision"]
+                    or origin == execution or origin["network_sha256"] != execution["network_sha256"]):
+                raise ValueError("explicit paired source upgrade with unchanged network required")
         return value
     except (ValueError, TypeError, KeyError, AttributeError):
         raise ControlError(503, "invalid_private_intake_source") from None
+
+
+def importer_sha256(context):
+    """Original import provenance is separate from fresh execution authority."""
+    marker = context.get("continuity")
+    if marker is not None:
+        checked_marker(marker)
+        if marker["version"] == UPGRADE_MARKER_VERSION:
+            if (marker["execution_source_revision"] != context["source_revision"]
+                    or marker["execution_native_sources"] != context["native_sources"]):
+                raise ControlError(503, "invalid_private_intake_source")
+            return marker["origin_native_sources"]["importer_sha256"]
+    return context["native_sources"]["importer_sha256"]
 
 
 def check_recorded(value, marker, context):
@@ -63,7 +96,7 @@ def check_recorded(value, marker, context):
                 or note["source_draft_sha256"] != context["accepted"]["candidate_sha256"]
                 or note["intake_context_sha256"] != value["requestHash"]
                 or note["manifest_sha256"] != marker["manifest_sha256"]
-                or value["importerHash"] != context["native_sources"]["importer_sha256"]
+                or value["importerHash"] != importer_sha256(context)
                 or value["replayed"] is not True or any(note[k] != "not-performed" for k in AUTHORITY)
                 or observed_at.tzinfo is None or observed_at.utcoffset() != UTC.utcoffset(observed_at)
                 or observed_at > datetime.now(UTC)
@@ -84,6 +117,7 @@ async def observe(*, context, anchor_intake, still_authorized, seconds=20):
     """One fixed read-only Node invocation, outside SQL; no importer fallback."""
     marker = checked_marker(context["continuity"])
     if (digest(anchor_intake) != marker["intake_sha256"] or manifest_hash(anchor_intake) != marker["manifest_sha256"]
+            or anchor_intake.get("importerHash") != importer_sha256(context)
             or observer_sha256() != marker["observer_sha256"]):
         raise RunnerError("private_continuity_anchor_changed")
     node, _, artifacts, environment = studio.configuration()

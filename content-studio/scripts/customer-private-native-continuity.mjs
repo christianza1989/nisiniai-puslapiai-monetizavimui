@@ -1,6 +1,7 @@
 // Server-owned, read-only continuity of an already imported private native case.
 // Initial intake/replay, review/approval and public admission remain separate.
 import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
 import {readFile} from 'node:fs/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
@@ -22,6 +23,29 @@ const types=new Set(['home','service','product','guide','faq','location','articl
 const transport=['manifestPath','dataDir','outputDir','replayed','workflow'];
 const flags={import:'not-performed',generation:'not-performed',sourceVerification:'not-performed',mediaVerification:'not-performed',
   editorialReview:'not-performed',approval:'not-performed',release:'not-performed',deployment:'not-performed',channelActivation:'not-performed'};
+
+async function executionProof(anchor){
+  const currentImporter=sha(await readArtifactBytes(new URL('./customer-creation-intake.mjs',import.meta.url),1000000));
+  if(anchor.version==='private-native-anchor.v1')return currentImporter;
+  for(const sources of [anchor.origin_native_sources,anchor.execution_native_sources]){
+    exact(sources,['public_source_revision','importer_sha256','network_sha256']);
+    if(!/^[a-f0-9]{40}$/.test(sources.public_source_revision)||!hex(sources.importer_sha256)||!hex(sources.network_sha256))fail('private_continuity_anchor_changed');
+  }
+  const original=anchor.origin_native_sources,current=anchor.execution_native_sources;
+  if(!/^[a-f0-9]{40}$/.test(anchor.origin_source_revision)||!/^[a-f0-9]{40}$/.test(anchor.execution_source_revision)
+      ||anchor.origin_source_revision===anchor.execution_source_revision||stableV2(original)===stableV2(current)
+      ||original.network_sha256!==current.network_sha256||current.importer_sha256!==currentImporter)fail('private_continuity_anchor_changed');
+  const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR,network=process.env.STUDIO_NETWORK_SETTINGS;
+  if(typeof publicRoot!=='string'||!path.isAbsolute(publicRoot)||typeof network!=='string'||!path.isAbsolute(network))fail('private_continuity_anchor_changed');
+  let revision,dirty;
+  try{
+    const options={cwd:publicRoot,encoding:'utf8',timeout:10000,windowsHide:true,stdio:['ignore','pipe','pipe']};
+    revision=execFileSync('git',['rev-parse','HEAD'],options).trim();
+    dirty=execFileSync('git',['status','--porcelain'],options).trim();
+  }catch{fail('private_continuity_anchor_changed');}
+  if(dirty||revision!==current.public_source_revision||sha(await readArtifactBytes(network,1000000))!==current.network_sha256)fail('private_continuity_anchor_changed');
+  return original.importer_sha256;
+}
 
 function privateSite(site,identity,snapshot=false){
   if(snapshot)exact(site,['id','name','canonicalHost','locale','timezone','brand','offer','contact','renderer','operatorName']);
@@ -93,17 +117,19 @@ function nativePages(site,model){
 export async function observeRetainedNative(input){
   exact(input,['version','creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir','anchorIntake','anchor']);
   const a=input.anchor,r=input.anchorIntake;
-  exact(a,['version','recovery_id','receipt_id','context_sha256','intake_sha256','manifest_sha256','observer_sha256']);
-  if(input.version!=='private-native-continuity-request.v1'||a.version!=='private-native-anchor.v1'
+  exact(a,['version','recovery_id','receipt_id','context_sha256','intake_sha256','manifest_sha256','observer_sha256',
+    ...(a.version==='private-native-anchor.v2'?['origin_source_revision','execution_source_revision','origin_native_sources','execution_native_sources']:[])]);
+  if(input.version!=='private-native-continuity-request.v1'||!['private-native-anchor.v1','private-native-anchor.v2'].includes(a.version)
       ||!uuid(input.creationId)||input.canonicalHost!==input.creationId.replaceAll('-','')+'.preview.invalid'
       ||!uuid(a.recovery_id)||!uuid(a.receipt_id)||!hex(a.context_sha256)||!hex(a.intake_sha256)||!hex(a.manifest_sha256)||!hex(a.observer_sha256)
       ||a.observer_sha256!==sha(await readFile(import.meta.filename))||!object(r)||digest(r)!==a.intake_sha256
       ||Object.hasOwn(r,'nativeContinuity'))fail('private_continuity_anchor_changed');
+  const originalImporter=await executionProof(a);
   if(r.version!=='customer-content-intake.v1'||r.state!=='private-draft-imported'||r.creationId!==input.creationId
       ||r.acceptedRevision!==input.acceptedRevision||r.sourceHash!==input.sourceHash||r.canonicalHost!==input.canonicalHost
       ||r.fullF1!=='UNVERIFIED'||r.launch!=='UNVERIFIED'||r.deployment!=='not-performed'
       ||typeof r.replayed!=='boolean'||!object(r.workflow)||!hex(r.requestHash)||!hex(r.importerHash)||!hex(r.siteFileHash)
-      ||r.importerHash!==sha(await readFile(new URL('./customer-creation-intake.mjs',import.meta.url))))fail('private_continuity_anchor_changed');
+      ||r.importerHash!==originalImporter)fail('private_continuity_anchor_changed');
   const context=await loadCustomerContentContext(input),{site,model}=context;
   const manifestPath=path.join(context.directory,'intake-manifest.json'),sitePath=path.join(context.data,'sites',context.siteId+'.json');
   if(r.siteId!==context.siteId||r.manifestPath!==manifestPath||r.dataDir!==context.data||r.outputDir!==context.output)fail('private_continuity_anchor_changed');
@@ -136,6 +162,7 @@ export async function observeRetainedNative(input){
   }
   const workflow=workflowOverview(site,model.revisionHash);
   for(const [key,file]of Object.entries(files))if(!(await readArtifactBytes(file,limits[key])).equals(raw[key]))fail('private_continuity_artifact_changed');
+  if(await executionProof(a)!==originalImporter)fail('private_continuity_anchor_changed');
   return {...r,replayed:true,workflow,nativeContinuity:{version:VERSION,anchor:a,observed_at:new Date().toISOString(),
     source_draft_sha256:sha(raw.source),intake_context_sha256:sha(raw.intake),manifest_sha256:sha(raw.manifest),
     site_sha256:sha(raw.site),assets_sha256:assets,native_state:'private-v2',...flags}};

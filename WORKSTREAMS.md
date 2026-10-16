@@ -1060,6 +1060,23 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
 # S42 direct messenger consultant checkpoint — 2026-10-16
 
+2026-10-16 helper PAIRED PRIVATE NATIVE UPGRADE RESERVED issue66/comment6206646677:
+fresh private-native-upgrade branch codex/private-native-upgrade-20261016 from
+exact Root136a8149836162b7a648103f91421e4aa2dd79d9 paired public255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Own private_preview.py/private_native_continuity.py, separate Node observer,
+focused offline/Node/nativePG tests, narrow protocol docs and new unique upgrade.
+Strict original-versus-current source binding; original receipt/manifests retained,
+current observer only, no reimport/autoapproval/S6 bypass. Network drift still
+refused.0042 fences reviewed; no migration change planned. Root owns DB/provider/
+operational files/serving and actual acceptance; frozen journals remain untouched.
+
+2026-10-16 paired native source packet verified locally:1991offlinePASS/8skipped/
+67subtests151.48s,9continuityNodePASS43.97s+78existingNodePASS154.99s,
+v2replay/later-original-anchor focusedPASS,10nativePGcollect-only3.66s.
+Upgrade847a65ac owns3exactsharedsourcepaths;0042source unchanged. Root actual
+PG/operational acceptance/adoption remain UNVERIFIED by helper. Source window
+closes with scoped handoff; Root receives new-journal continuation ownership.
+
 2026-10-16 helper NATIVE EDITORIAL REVIEW BRIDGE RESERVED from exact Root
 7eb21e241625d46fb8a0770db94f12be4fd931d4 in own editorial-review-bridge worktree,
 branch codex/verslomatika-editorial-review-bridge-20261016. Scope: NEW creation

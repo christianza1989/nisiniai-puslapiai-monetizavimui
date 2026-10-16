@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Page guide spells pages_read_user_engagement but actual Meta Pages permission is pages_read_user_content; copied gate rejects a correctly scoped real Page connection.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/tests/test_facebook_page_api.py::test_actual_meta_permission_name_is_accepted original403 facebook_page_scopes_missing",
+    "Actual Meta Pages use-case permission panel observed2026-10-14",
+    "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/facebook/page_api_graph.py",
+    "agent-business-core/runtime/tests/test_facebook_page_api.py",
+    "agent-business-core/FACEBOOK_PAGE_API.md",
+    "SKILLS/niche-client-acquisition/references/facebook-page-api.md",
+    "docs/FACEBOOK_PAGE_API_CHECK_2026-10-14.md",
+    "sites/lineage2ai/CORE_FEEDBACK.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/146",
+  "rollback": "Scoped revert only after API pause; preserve original failure, receipts and private connection proof. No removing required read permission to obtain PASS.",
+  "id": "upgrade-e1174029-7ded-4c4a-9651-636c523aa141",
+  "branch": "codex/facebook-full-audit-20261014",
+  "baseSha": "a3790cde04b47ec8dec68efb658aedcf8505c0ed",
+  "createdAt": "2026-10-14T17:44:38.908Z"
+}

@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "date": "2026-10-14",
+  "auditCriteria": 28,
+  "uniqueCriteria": 28,
+  "brokenNewAuditLocalLinks": [],
+  "evidenceJsonValid": true,
+  "sourceHashes": [
+    {
+      "file": "agent-business-core/runtime/src/pinet_core/facebook/service.py",
+      "baselineSha256": "a9981fb3a19a92d654accf98ae6f4c9915bdc55acb546fb99380b260b4292500",
+      "reviewedWorkingSha256": "189aa10282482dab85aac9db6d8d974c7b61315604f9b34dbcf581d0791f2ce8"
+    },
+    {
+      "file": "agent-business-core/runtime/src/pinet_core/facebook/routes.py",
+      "baselineSha256": "076084f211ea5f180c056014707e54f9177a8d0dd601473fb8d3189bbb78963a",
+      "reviewedWorkingSha256": "076084f211ea5f180c056014707e54f9177a8d0dd601473fb8d3189bbb78963a"
+    },
+    {
+      "file": "agent-business-core/runtime/src/pinet_core/facebook/agent.py",
+      "baselineSha256": "2a9323fd7708107a751cadbe6c6edf863b421a1e1469308c28349e29dba7ad6f",
+      "reviewedWorkingSha256": "2a9323fd7708107a751cadbe6c6edf863b421a1e1469308c28349e29dba7ad6f"
+    },
+    {
+      "file": "agent-business-core/runtime/src/pinet_core/facebook/worker.py",
+      "baselineSha256": "83d20cb32ea9aaa4b1e78bfa04129eb6c07320e230047e704c9b0a6877efe4d9",
+      "reviewedWorkingSha256": "83d20cb32ea9aaa4b1e78bfa04129eb6c07320e230047e704c9b0a6877efe4d9"
+    },
+    {
+      "file": "agent-business-core/runtime/src/pinet_core/facebook/console.html",
+      "baselineSha256": "a05e441ed36c695018877366ece612bc45210ee8326a9078610a79def11da937",
+      "reviewedWorkingSha256": "ea3a35636a267ebe3cf1de301ccb79ebb6fa1b5464517af1f42327150263a388"
+    },
+    {
+      "file": "agent-business-core/runtime/tests/test_facebook.py",
+      "baselineSha256": "690516d1bbe0b87b2851fd298bb6d6d5e490ec3e6b05e298117920d8b6475198",
+      "reviewedWorkingSha256": "690516d1bbe0b87b2851fd298bb6d6d5e490ec3e6b05e298117920d8b6475198"
+    }
+  ],
+  "tooling": {
+    "checkoutHead": "df3c055afbfa99260970b61e38fce7ed95d617f2",
+    "helper": "scripts/core-upgrade-check.mjs",
+    "sha256": "a18c4beebab41b1da6d11efe6a50272cc18398cc3f0362ed9e45fb6af7046990",
+    "mainHasHelper": false,
+    "note": "Read-only existing core helper used with explicit --root; not copied or represented as merged main source."
+  },
+  "limitations": "Document structure, source identity and links only; not GUI/live/platform access acceptance."
+}

@@ -1,0 +1,34 @@
+{
+  "generator": "Built-in ImageGen for raster edits; existing approved holder masters reused; SVG icons authored from existing brand geometry",
+  "date": "2026-10-05",
+  "approvedConcept": "../../website/concepts/shop-setup-v1/conversion-section-v8-hybrid.png",
+  "newMasters": [
+    {
+      "file": "software-package.png",
+      "prompt": "Use case: background-extraction.\nAsset type: premium transparent PNG master for the APPROVED PhoneBridger conversion-section software-package photograph.\nImage 1 is the EDIT TARGET: the owner's selected full software package on white. Image 2 is the approved full-section design ONLY as a lighting/context reference, do not include any of its UI, cards, headings, product holders or background.\nChange ONLY the background of Image 1 to genuinely transparent alpha. Extract the ONE COMPLETE open black software package faithfully. Preserve EXACT camera, perspective, open cover position, chamfer/corner geometry, visible tray and frame, artwork, every logo and English label, all edges, proportions and internal screen UI. Do NOT redesign the box or fix its chosen geometry. Preserve legible text \"PhoneBridger\", \"WINDOWS APP\", \"One mouse. More screens.\", \"DIGITAL DOWNLOAD\", the pink TWO equal overlapping rounded square logo, and the existing visible Devices UI. Preserve neutral matte black and subtle sharp highlights, hot pink graphics, lime badge only. No additional graphics or claims.\nVery clean anti-aliased cutout edges with zero white fringe or gray matte: all pixels OUTSIDE the box are fully transparent, including upper angled silhouette gaps. The interior/UI and box surfaces remain fully opaque. Remove white studio background AND its external ground shadow; do not leave a rectangular white/gray patch or opaque floor. No new shadow baked into alpha; grounding will be done separately with CSS in the webpage.\nKeep entire object uncropped with 8% transparent margin on all sides. High-quality master: target around 2048 pixels tall, detailed readable brand artwork, natural satin texture, clean rim without excess sharpening. One isolated object only, no fake checkerboard, no text overlay, no backdrop, no background reflection or floor, no phone, no holder. Transparent PNG asset, never a complete section screenshot.",
+      "references": [
+        "C:/Users/Lenovo/Downloads/ChatGPT Image 5 Oct 2026, 22_36_18.png",
+        "../../website/concepts/shop-setup-v1/conversion-section-v8-hybrid.png"
+      ]
+    },
+    {
+      "file": "pink-flow.png",
+      "prompt": "Use case: precise-object-edit.\nAsset type: standalone transparent decorative HOT PINK FLOW RIBBON for the approved PhoneBridger conversion section.\nImage 1 is the owner's approved section, an ART DIRECTION REFERENCE only. Extract/re-create ONLY the soft flowing magenta wave graphics visible BEHIND the software box, as an independent high-quality transparent PNG. Do not extract the software box or any section content.\nOne wide elegant airy abstract pair of gently intersecting semi-transparent pink ribbons forming a broad shallow sine-wave curve, sweeping horizontally from lower-left to middle-right then gently rising. A long continuous curved silhouette with just two layers, softly tapering ends, luminous thin pink edges, delicate translucent satin-like shading and soft feathered magenta bloom. Rich hot pink #ff2d9a and deep rose, restrained light, premium smooth curves, fine gradient detail with no banding, edges fading into FULLY TRANSPARENT alpha. It should blend naturally onto a dark charcoal webpage without a visible rectangle. Main curve lives near the vertical middle; plenty of transparent space above/below. Wide landscape around 2200x850 composition. The wave is a BACKGROUND ACCENT and must not overpower products.\nAll non-ribbon areas genuinely transparent including upper/lower left/right corners, soft glow represented by PARTIAL alpha, not black pixels. No charcoal or black background, no floor, reflection, stage, black opaque plane, white halo, checkerboard or rectangle. No box, holders, product, laptop, phone, text, logos, UI, icons, cards, particles, lasers, geometric hard triangles, multiple tangled swirls. ONLY the one calm wide two-layer magenta wave on true transparent alpha. This is a single decorative cutout asset, not a new website section.",
+      "references": [
+        "../../website/concepts/shop-setup-v1/conversion-section-v8-hybrid.png"
+      ]
+    }
+  ],
+  "reusedMasters": [
+    {
+      "file": "holder-black.png",
+      "source": "../../website/concepts/holder-front-v1/holder-black-metal-side-laser.png",
+      "originalPromptFile": "../../website/concepts/holder-front-v1/black-prompts.json"
+    },
+    {
+      "file": "holder-silver.png",
+      "source": "../../website/concepts/holder-front-v1/holder-metal-side-laser.png",
+      "originalPromptFile": "../../website/concepts/holder-front-v1/laser-prompts.json"
+    }
+  ]
+}

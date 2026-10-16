@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped local verification only. Main merge and adoption are not claimed; full commerce/payout, legal and native release gates remain open.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "130/130 core tests; account profile deletion, consent origin/privacy and legacy schema checks passed."
+    }
+  ],
+  "eventId": "c4b2602e-a743-4441-bd28-fdf5d50c46a1",
+  "sequence": 2,
+  "at": "2026-10-13T09:08:41.966Z"
+}

@@ -1,0 +1,19 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Actual canonical Lighthouse attributes 960ms main-thread work to reviews. render() read stage width inside every card after style writes. Sample identical fixed stage spacing once per render; no animation timing, wheel/drag rules, card geometry or native input changes.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124",
+    "Canonical Lighthouse 13.5 reviews main-thread 960ms; isolated actual browser compares all 24 initial card offsets at 1440/390 and instruments width reads."
+  ],
+  "paths": [
+    "sites/phonebridger/production/reviews-v2/section.js",
+    "sites/phonebridger/launch-audit-20261013/PHASE-1-AUDIT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124",
+  "rollback": "Revert width-sampling cache only; preserve reviewed interaction rules and accepted native movement baseline.",
+  "id": "upgrade-56115bb2-befd-4c7e-9ec9-668ae5db3896",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "8e3e61dcdfac46543a93544664e775d2ba2fe4a8",
+  "createdAt": "2026-10-13T09:24:21.307Z"
+}

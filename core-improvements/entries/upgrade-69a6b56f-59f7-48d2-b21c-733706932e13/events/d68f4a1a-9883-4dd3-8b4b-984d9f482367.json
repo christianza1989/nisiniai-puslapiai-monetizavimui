@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped local verification only. Main merge and adoption are not claimed; full commerce/payout, legal and native release gates remain open.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "Actual committed temporary Git regressions: uncovered paths and wrong-repository records rejected; dirty work excluded."
+    }
+  ],
+  "eventId": "d68f4a1a-9883-4dd3-8b4b-984d9f482367",
+  "sequence": 2,
+  "at": "2026-10-13T09:08:41.978Z"
+}

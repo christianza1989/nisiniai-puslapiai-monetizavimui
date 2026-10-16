@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/33",
+  "note": "16 October later checkpoint: owner completed Stripe email and authenticator challenges. Exactly one approved restricted backend key was created. Merchant/balance read succeed; V2 account list and retrieval still return403, so no creator credential was installed in Cloudflare. Connect dashboard separately exposed initial platform setup; selected previously approved buyer-to-platform flow, stopped before explicit liability/compliance/Radar-fee acknowledgement. Specific legal/fee confirmation pending. Actual creator record is approved but email, terms and provider onboarding remain incomplete. Preserve original failed requests; no transfer or native source change.",
+  "eventId": "9cde0067-b033-4110-b24c-e372b149879e",
+  "sequence": 4,
+  "at": "2026-10-16T09:37:42.439Z"
+}

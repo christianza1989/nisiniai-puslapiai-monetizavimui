@@ -1,0 +1,20 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Mobile launch audit measured heavy raster assets and twenty blocking homepage stylesheets. Preserve stylesheet cascade and relative URL meaning while publishing a single content-hashed stylesheet; reject conditional or missing inputs. Site-specific responsive images remain outside shared helper.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/32",
+    "Canonical baseline Lighthouse mobile 52, LCP 8.5s, total 5143 KiB. Local preview improved to 66; target 90 still not met. Tests verify ordered cascade, relative URL query/fragment semantics, data masks and rejected conditional/missing styles."
+  ],
+  "paths": [
+    "deploy/phonebridger/home-styles.mjs",
+    "tests/phonebridger-home-styles.test.mjs",
+    "deploy/phonebridger/build.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/32",
+  "rollback": "Revert only stylesheet bundling helper and its build call; preserve original attested prototype, optional referral consent, public approval history and frozen native mouse.",
+  "id": "upgrade-ab8fe2ed-31e2-4533-83ca-76545879fa1a",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "dc620666f184e53f584f9b5ffc90daa23aabd21b",
+  "createdAt": "2026-10-13T08:59:47.498Z"
+}

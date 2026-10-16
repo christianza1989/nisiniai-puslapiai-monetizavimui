@@ -1,0 +1,11 @@
+# Evidence boundaries
+
+`final-home-390`, `final-privacy-390`, `final-editorial-390` and `final-referral-preferences-390` are actual canonical-domain captures after the final published release. `guide-final-*` are the visually inspected local candidate guide captures with an explicit fixture banner; the final canonical browser matrix independently checks those four guide URLs after deployment.
+
+`browser.json` records 32 real canonical route/viewport combinations (1440, 768, 390 and 320px), keyboard menu/Escape/focus, skip-link main focus and native referral decline. It does not certify the entire simulator, all interactive errors, physical phones or actual browser zoom. `live-verification.json` records canonical HTTP/namespace/auth/download checks with a disposable test account deleted by the test. No password, customer row or secret is included.
+
+`performance.json` contains exact Lighthouse 13.5.0 default mobile summaries before and after the release: performance 52 → 71; accessibility 96 → 100; SEO 100 → 100; LCP 8.5 → 6.3s; TBT 430 → 100ms; total transfer 5143 → 1549 KiB. Target 90 remains failed. Raw Lighthouse and baseline viewport/fragment evidence stay in the local ignored core `output/launch-audit/` directory; raw private provider and owner probes are not published.
+
+The 32-case browser matrix, canonical captures and authentication/download run were made against version `028a75ec-40db-4619-84e6-39c532f3ed39`. The subsequent two-line carousel performance fix changed its JS only; approved HTML revisions and other source remain the same. `reviews-layout-final.json` exercises that changed carousel on final canonical version `f6ca95ba-bb81-4052-b4b4-0260bc13479a`: both 1440/390px, all 24 initial offsets match the original formula, 11 stage-width reads per initial render sequence, pause works. The final Lighthouse measurement follows this focused verification.
+
+`core-tests.txt` is the 130-test public core run from the fresh-main integration. Current shared build, all nine niche SEO smoke, Studio identity/locale, original prototype simulator 60-test run, missing-checker Git regression and actual committed path coverage were checked separately. No tests claim bank arrival, seller KYC, human creator terms acceptance, native commercial activation, production Windows signing, backup restoration or qualified demand.

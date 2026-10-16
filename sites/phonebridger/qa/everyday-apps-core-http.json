@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "scope": "actual core preview middleware on isolated loopback HTTP server; index and all everyday-apps runtime assets; existing vinext server not restarted",
+  "records": [
+    {
+      "file": "assets/everyday-apps-v1/android-chat-demo-v1.svg",
+      "status": 200,
+      "bytes": 5584
+    },
+    {
+      "file": "assets/everyday-apps-v1/audio-handoff.svg",
+      "status": 200,
+      "bytes": 1988
+    },
+    {
+      "file": "assets/everyday-apps-v1/cursor-transition.svg",
+      "status": 200,
+      "bytes": 474
+    },
+    {
+      "file": "assets/everyday-apps-v1/gmail-inbox-demo-v1.svg",
+      "status": 200,
+      "bytes": 23009
+    },
+    {
+      "file": "assets/everyday-apps-v1/icons.svg",
+      "status": 200,
+      "bytes": 1926
+    },
+    {
+      "file": "assets/everyday-apps-v1/icons/app-drive.svg",
+      "status": 200,
+      "bytes": 223
+    },
+    {
+      "file": "assets/everyday-apps-v1/icons/app-gmail.svg",
+      "status": 200,
+      "bytes": 316
+    },
+    {
+      "file": "assets/everyday-apps-v1/icons/app-sheets.svg",
+      "status": 200,
+      "bytes": 250
+    },
+    {
+      "file": "assets/everyday-apps-v1/icons/app-whatsapp.svg",
+      "status": 200,
+      "bytes": 369
+    },
+    {
+      "file": "assets/everyday-apps-v1/keycaps-hello.svg",
+      "status": 200,
+      "bytes": 2698
+    },
+    {
+      "file": "assets/everyday-apps-v1/laptop-shell-1280.webp",
+      "status": 200,
+      "bytes": 422394
+    },
+    {
+      "file": "assets/everyday-apps-v1/laptop-shell-1536.webp",
+      "status": 200,
+      "bytes": 623202
+    },
+    {
+      "file": "assets/everyday-apps-v1/laptop-shell-640.webp",
+      "status": 200,
+      "bytes": 114164
+    },
+    {
+      "file": "assets/everyday-apps-v1/laptop-shell-960.webp",
+      "status": 200,
+      "bytes": 254750
+    },
+    {
+      "file": "assets/everyday-apps-v1/link-handoff.svg",
+      "status": 200,
+      "bytes": 1050
+    },
+    {
+      "file": "assets/everyday-apps-v1/phone-shell-240.webp",
+      "status": 200,
+      "bytes": 22364
+    },
+    {
+      "file": "assets/everyday-apps-v1/phone-shell-480.webp",
+      "status": 200,
+      "bytes": 49776
+    },
+    {
+      "file": "assets/everyday-apps-v1/phone-shell-720.webp",
+      "status": 200,
+      "bytes": 102032
+    },
+    {
+      "file": "assets/everyday-apps-v1/phone-shell-866.webp",
+      "status": 200,
+      "bytes": 334472
+    },
+    {
+      "file": "assets/everyday-apps-v1/section.css",
+      "status": 200,
+      "bytes": 7721
+    },
+    {
+      "file": "assets/everyday-apps-v1/surface-grain.svg",
+      "status": 200,
+      "bytes": 323
+    },
+    {
+      "file": "assets/everyday-apps-v1/workspace-background-1280.webp",
+      "status": 200,
+      "bytes": 740280
+    },
+    {
+      "file": "assets/everyday-apps-v1/workspace-background-1672.webp",
+      "status": 200,
+      "bytes": 1167356
+    },
+    {
+      "file": "assets/everyday-apps-v1/workspace-background-640.webp",
+      "status": 200,
+      "bytes": 192466
+    },
+    {
+      "file": "assets/everyday-apps-v1/workspace-background-960.webp",
+      "status": 200,
+      "bytes": 424174
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 62138
+    }
+  ]
+}

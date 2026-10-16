@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "mode": "exact-staged-blobs",
+  "files": 120,
+  "textFiles": 64,
+  "bytes": 11296120,
+  "findings": [],
+  "largest": [
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/lighthouse-homepage-frozen.json",
+      "bytes": 898837
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/lighthouse-permissions.json",
+      "bytes": 756813
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/lighthouse-permissions-final.json",
+      "bytes": 753538
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/lighthouse-permissions-inline-final.json",
+      "bytes": 752798
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/lighthouse-guides.json",
+      "bytes": 619523
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/lighthouse-guides-final.json",
+      "bytes": 612988
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/guides-usb-wifi-desktop.png",
+      "bytes": 504826
+    },
+    {
+      "file": "sites/phonebridger/qa/knowledge-v1/guides-android-permissions-desktop.png",
+      "bytes": 467612
+    }
+  ],
+  "limitations": "Pattern checks and exact local-secret matches; not a proof that arbitrary customer data is absent. Ignore-policy and scope review are separate."
+}

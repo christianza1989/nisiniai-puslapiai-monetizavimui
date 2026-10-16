@@ -1,0 +1,142 @@
+[
+  {
+    "route": "shop",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "contact",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "login",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "register",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "help",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "downloads",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "about",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "privacy",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "terms",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "recover",
+    "requestedWidth": 1280,
+    "broken": [],
+    "scroll": 1270,
+    "width": 1280
+  },
+  {
+    "route": "shop",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "contact",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "login",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "register",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "help",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "downloads",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "about",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "privacy",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "terms",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  },
+  {
+    "route": "recover",
+    "requestedWidth": 390,
+    "broken": [],
+    "scroll": 380,
+    "width": 390
+  }
+]

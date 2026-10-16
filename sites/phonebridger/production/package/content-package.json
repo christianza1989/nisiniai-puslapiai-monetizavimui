@@ -1,0 +1,1718 @@
+{
+  "schemaVersion": 1,
+  "siteId": "phonebridger",
+  "canonicalHost": "phonebridger.com",
+  "locale": "en",
+  "site": {
+    "id": "phonebridger",
+    "name": "PhoneBridger",
+    "canonicalHost": "phonebridger.com",
+    "locale": "en",
+    "timezone": "Europe/Kiev",
+    "brand": {
+      "accent": "#ff2d9a"
+    },
+    "offer": "Use your Windows mouse and keyboard in your own Android apps, on the phone beside your PC.",
+    "contact": {
+      "email": "hello@phonebridger.com",
+      "phone": ""
+    }
+  },
+  "pages": [
+    {
+      "siteId": "phonebridger",
+      "type": "home",
+      "slug": "",
+      "title": "Your mouse. On your phone, too.",
+      "description": "Use your Windows mouse and keyboard in your own Android apps. Connect through USB or Wi-Fi.",
+      "intent": "Understand what PhoneBridger does before choosing a setup.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Use your Windows mouse and keyboard in your own Android apps, on the phone beside your PC."
+        },
+        {
+          "type": "paragraph",
+          "text": "Control up to three Android phones from the Windows app. Use saved pairing, choose a screen edge and work in your own phone apps. The live browser demo is an interactive simulation. The current beta prefers USB automatically and uses Wi-Fi as a fallback. Paid orders are not open."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "311df081-e4bb-4ced-bbba-d456301d2319",
+          "label": "Your desk. Your setup."
+        },
+        {
+          "targetPageId": "e736b026-a06c-414c-bf6c-17d20d693ef7",
+          "label": "A small setup. A better flow."
+        }
+      ],
+      "id": "eb95d158-e80a-4bd2-9551-f7ca12e047ef",
+      "revisionHash": "65b0f2eac26a4711c2cc9fc59ec7eed42e2d226cd3a6f0aebbe7baea73577861",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "65b0f2eac26a4711c2cc9fc59ec7eed42e2d226cd3a6f0aebbe7baea73577861",
+        "approvedAt": "2026-10-06T10:59:31.166Z",
+        "actorId": "owner-authorized-production-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "product",
+      "slug": "shop",
+      "title": "Your desk. Your setup.",
+      "description": "Compare PhoneBridger Windows app setups with one, two or three optional magnetic holders. Check compatibility, delivery and purchase terms.",
+      "intent": "Understand PhoneBridger shop information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Use your Windows mouse and keyboard in your own Android apps. Add a home for your phones."
+        },
+        {
+          "type": "paragraph",
+          "text": "Same finish for every holder in your setup."
+        },
+        {
+          "type": "paragraph",
+          "text": "Orders are not open yet. Delivery, applicable taxes and final purchase terms will be confirmed before sales begin."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Your familiar apps. A more connected desk."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your phone keeps running its own apps. You keep using the mouse and keyboard you know."
+        },
+        {
+          "type": "paragraph",
+          "text": "Cross your chosen screen edge to control your phone. Click and scroll in its own Android apps."
+        },
+        {
+          "type": "paragraph",
+          "text": "Reply to a message or write an email with the PC keyboard already on your desk."
+        },
+        {
+          "type": "paragraph",
+          "text": "USB takes priority after its one-time setup. Wi-Fi keeps your paired workspace connected."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Close to your screen. Clear of your desk."
+        },
+        {
+          "type": "paragraph",
+          "text": "The optional magnetic holder places a compatible phone beside your laptop screen. Its hinged design lets you adjust the physical arrangement and fold it away."
+        },
+        {
+          "type": "paragraph",
+          "text": "Magnetic phone attachment Check that your phone or case has a compatible magnetic ring."
+        },
+        {
+          "type": "paragraph",
+          "text": "Match your chosen screen edge Set the app position to the side where your phone sits."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your choice of one, two or three The holder count changes your desk arrangement. App features stay the same."
+        },
+        {
+          "type": "paragraph",
+          "text": "Check your mounting surface and phone or case fit. Product imagery is illustrative; the PhoneBridger engraving is a branding mockup. No phone or computer is included."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A good fit starts here."
+        },
+        {
+          "type": "paragraph",
+          "text": "Software support and physical holder fit are separate. Let us help if you are unsure."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Honest experiences. Helpful details."
+        },
+        {
+          "type": "paragraph",
+          "text": "Completed purchasers can share what worked, what did not and how PhoneBridger fits their day. We publish genuine reviews after moderation, including critical ones."
+        },
+        {
+          "type": "paragraph",
+          "text": "Verified purchase means the review is linked to a paid, fulfilled PhoneBridger order. Reviews from other retailers are not shown as our customers’ experiences."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A few things worth knowing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Still deciding? Tell us about your desk."
+        },
+        {
+          "type": "paragraph",
+          "text": "No. Use an existing phone stand or another suitable arrangement. The optional magnetic holders change where your phones sit, not what the app can do."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is a one-time V1 licence for one Windows PC and up to three Android phones. A future paid major version is a separate offer. The beta remains free to try; buying does not unlock extra beta features. After confirmed payment, your purchase and licence record appear in your account."
+        },
+        {
+          "type": "paragraph",
+          "text": "Software is downloaded, not supplied in a physical software box. A hardware bundle includes your selected number of foldable magnetic holders in the chosen finish, sent directly by our supplier. The software-box image is a digital-product illustration; no physical software box is shipped."
+        },
+        {
+          "type": "paragraph",
+          "text": "We offer free worldwide shipping to destinations available at Checkout. Hardware is sent directly by our supplier after we arrange your order. Delivery time depends on destination and the carrier; tracking appears in your account after dispatch. Import duties or local charges, if applicable, are separate from our shipping charge."
+        },
+        {
+          "type": "paragraph",
+          "text": "App-only purchases can be cancelled within 14 days of purchase. A hardware bundle can be returned within 14 days of receiving it. Ordinary change-of-mind return postage is paid by you. See our purchase terms for the withdrawal form, instructions and faulty-goods rights."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your seller is MB Memocasting. Available purchases are paid on Stripe-hosted Checkout. No card details are entered or stored on this shop page."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Try the flow. Then make it yours."
+        },
+        {
+          "type": "paragraph",
+          "text": "The free beta lets you explore PhoneBridger with your own desk and devices."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "311df081-e4bb-4ced-bbba-d456301d2319",
+      "revisionHash": "d98817b2a6493d31f5d19d2cc525ca746dece71e97d6bcc6a6a776b76bcb52af",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "d98817b2a6493d31f5d19d2cc525ca746dece71e97d6bcc6a6a776b76bcb52af",
+        "approvedAt": "2026-10-06T20:09:55.987Z",
+        "actorId": "owner-authorized-production-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "service",
+      "slug": "contact",
+      "title": "A question? Let’s connect.",
+      "description": "Get help with PhoneBridger or ask about a setup.",
+      "intent": "Understand PhoneBridger contact information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "A little context helps us point you in the right direction."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Talk to PhoneBridger."
+        },
+        {
+          "type": "paragraph",
+          "text": "For setup help, compatibility questions and the setup you have in mind."
+        },
+        {
+          "type": "paragraph",
+          "text": "The guide covers pairing, permissions and a one-time USB setup."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What can we help with?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Please leave out passwords, payment details and private messages from your apps."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your enquiry is stored securely so we can respond. Please do not include sensitive information."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+      "revisionHash": "43d3ca6eabd1c1e0bf331e790c584c37cd72e88bb4f53f80c78c649edc6a7cb4",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "43d3ca6eabd1c1e0bf331e790c584c37cd72e88bb4f53f80c78c649edc6a7cb4",
+        "approvedAt": "2026-10-06T10:45:38.116Z",
+        "actorId": "owner-authorized-production-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "service",
+      "slug": "help",
+      "title": "A small setup. A better flow.",
+      "description": "Pair Windows and Android, prepare USB and understand PhoneBridger permissions.",
+      "intent": "Understand PhoneBridger help information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Find your next step, from the first pairing to your everyday connection."
+        },
+        {
+          "type": "paragraph",
+          "text": "Windows + Android"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Pair once over Wi-Fi."
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the same reachable Wi-Fi network for the first pairing. Install the Windows app and Android companion, then open both."
+        },
+        {
+          "type": "paragraph",
+          "text": "Open pairing on your PC. Find the PC’s pairing QR code in PhoneBridger."
+        },
+        {
+          "type": "paragraph",
+          "text": "Scan from the Android companion. Use the companion’s QR scanner, then approve your computer on the phone."
+        },
+        {
+          "type": "paragraph",
+          "text": "Choose your phone’s screen edge. Place it left, right or above your PC. Enable mouse control on Android and set the matching position and transition zone."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your pairing is saved for next time. Ordinary disconnection or a USB/Wi-Fi switch does not remove it. Choosing Forget computer removes saved trust and requires pairing again."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prefer a cable? Prepare USB once."
+        },
+        {
+          "type": "paragraph",
+          "text": "First finish the Wi-Fi pairing above. Then use a data-capable USB cable and Android’s USB debugging authorization."
+        },
+        {
+          "type": "paragraph",
+          "text": "Enable developer options and USB debugging. Android’s settings labels vary by phone. Use your device’s developer options to enable USB debugging."
+        },
+        {
+          "type": "paragraph",
+          "text": "Connect and authorize this PC. Approve the Android authorization prompt only for a computer you trust."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep PhoneBridger open. After preparation, USB is preferred automatically. Unplugging restores Wi-Fi when your saved phone is reachable."
+        },
+        {
+          "type": "paragraph",
+          "text": "The current beta discovers one physical USB phone at a time. Additional phones can connect over Wi-Fi. The two transports share the same feature engine."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Your permissions. Your choice."
+        },
+        {
+          "type": "paragraph",
+          "text": "Accessibility access allows the Android companion to perform mouse and keyboard actions. The companion guides you to the relevant setting."
+        },
+        {
+          "type": "paragraph",
+          "text": "Phone audio sharing has a separate Android system approval. It requires Android 10 or newer and an app that permits audio capture; not all apps do. Enable it when you want to listen through the PC."
+        },
+        {
+          "type": "paragraph",
+          "text": "Allow camera access when using the QR scanner. Do not share a pairing QR or authorize an unfamiliar computer."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What’s in this beta?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Mouse and keyboard control for up to three paired Android phones."
+        },
+        {
+          "type": "paragraph",
+          "text": "Supported phone audio through the PC, with separate permission."
+        },
+        {
+          "type": "paragraph",
+          "text": "Supported Google links handed to the phone’s installed app, with browser fallback."
+        },
+        {
+          "type": "paragraph",
+          "text": "Automatic USB preference and Wi-Fi fallback."
+        },
+        {
+          "type": "paragraph",
+          "text": "Chrome tab handoff uses the extension included in the Windows ZIP. Follow its included setup instructions. Native file dragging, macOS/iPhone companions, production Windows signing and Google Play distribution are not included."
+        },
+        {
+          "type": "paragraph",
+          "text": "The website’s sample apps do not connect to your real accounts. They illustrate the workflow with local sample data."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Something still feels stuck?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tell us the step, Windows version and Android version."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prefer a step-by-step answer?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pairing, connections, permissions and phone placement."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "58053a3b-c5de-40d2-bfec-13541e794e83",
+          "label": "Your next workspace. Starts here."
+        },
+        {
+          "targetPageId": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+          "label": "A question? Let’s connect."
+        }
+      ],
+      "id": "e736b026-a06c-414c-bf6c-17d20d693ef7",
+      "revisionHash": "f19c0deab516a6176f1950a17010b49daa104bdd31dba3900d16dd2e670c0a8b",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "f19c0deab516a6176f1950a17010b49daa104bdd31dba3900d16dd2e670c0a8b",
+        "approvedAt": "2026-10-06T05:41:33.152Z",
+        "actorId": "codex-editorial-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "service",
+      "slug": "downloads",
+      "title": "Your next workspace. Starts here.",
+      "description": "Get the Windows beta and Android companion, then pair your devices.",
+      "intent": "Understand PhoneBridger downloads information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Install both apps. Pair once. Keep your phones in the flow."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "PhoneBridger for PC"
+        },
+        {
+          "type": "paragraph",
+          "text": "Your mouse and keyboard, ready for your connected phones."
+        },
+        {
+          "type": "paragraph",
+          "text": "Extract the whole ZIP. Keep PhoneBridger.exe beside its _internal folder."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Your phone’s companion"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pair with your PC. Keep using the Android apps you know."
+        },
+        {
+          "type": "paragraph",
+          "text": "Install on your phone, then follow the pairing steps. Updating keeps your saved pairing."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is a beta. Windows production signing and Google Play distribution are pending. Windows application control may block the unsigned package. If you are unsure about an installation prompt, ask for help ."
+        },
+        {
+          "type": "paragraph",
+          "text": "Phone audio needs Android 10+ and a source app that allows capture. Native file dragging is planned and is not included."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Installed both?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Your next step is to pair and approve your computer."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "58053a3b-c5de-40d2-bfec-13541e794e83",
+      "revisionHash": "b57121573294455403961340e2fecf74b58810f0ecce1641b8bd053e5c1a03a5",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "b57121573294455403961340e2fecf74b58810f0ecce1641b8bd053e5c1a03a5",
+        "approvedAt": "2026-10-06T05:41:32.838Z",
+        "actorId": "codex-editorial-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "service",
+      "slug": "about",
+      "title": "Your phone stays yours. Your desk gets closer.",
+      "description": "PhoneBridger keeps your physical Android apps beside your Windows workspace.",
+      "intent": "Understand PhoneBridger about information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "A Windows mouse and keyboard for the Android apps you already use."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A bridge between screens."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is built around a simple desk habit: your phone is beside your PC, and your mouse is already in your hand."
+        },
+        {
+          "type": "paragraph",
+          "text": "Move through the chosen edge of your Windows screen to control your physical Android phone. Type with the keyboard on your desk. Move back to continue on your PC."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The apps you know. The workspace you choose."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep your phone’s own Android apps and choose where each phone belongs: left, right or above. Optional holders help with the physical arrangement; the software works without them."
+        },
+        {
+          "type": "paragraph",
+          "text": "The current release is a beta. Try the local website demo, read the setup guide and see whether the beta fits your device."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "2e64c8a0-56b3-400a-a6d1-0b310109928b",
+      "revisionHash": "3ac314648dfd7451e18977acf61cb228b171ed39948b1df303605d73703fe1ef",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "3ac314648dfd7451e18977acf61cb228b171ed39948b1df303605d73703fe1ef",
+        "approvedAt": "2026-10-06T05:41:32.867Z",
+        "actorId": "codex-editorial-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "service",
+      "slug": "privacy",
+      "title": "Your data. Clear boundaries.",
+      "description": "How MB Memocasting handles PhoneBridger accounts, support, optional referral cookies, creator payouts, purchases and limited measurement.",
+      "intent": "Understand PhoneBridger privacy information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "What this website stores, and what it does not."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Who operates this website"
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is operated by MB Memocasting. For privacy, access or deletion requests, use our contact form. This notice covers this website and its account service."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Website demonstration"
+        },
+        {
+          "type": "paragraph",
+          "text": "The interactive demo uses fictional sample apps and data. Demo edits stay in page memory and clear on reset or reload. Sample reviews are illustrations, not verified customer testimonials. The demo does not sign in to your Google or other accounts."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Saved setup"
+        },
+        {
+          "type": "paragraph",
+          "text": "When you choose Save my setup, your chosen package and holder finish are saved only in this browser’s local storage. Clear this site’s browser data to remove that choice."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Enquiries"
+        },
+        {
+          "type": "paragraph",
+          "text": "We store your name, email, message, enquiry topic, source page and consent time to answer your request. Your enquiry is passed to our Hostinger mailbox so we can answer it. Form records are retained for up to 180 days; correspondence needed for a continuing matter may require a separate record. The form is not a marketing subscription."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Accounts"
+        },
+        {
+          "type": "paragraph",
+          "text": "We store your email, creation date and salted password hash, never a readable password. A first-party Secure, HttpOnly, SameSite session cookie expires after eight hours; logging out revokes the session. Email verification and password recovery use expiring, single-use links sent to your email address. We store token hashes, not readable tokens. Resetting your password revokes existing sessions. Deleting your login removes its email, password, sessions, profile and verification records; financial records may remain for the purposes explained below. Creating an account does not itself make a purchase. Your account connects you to your own order history when Checkout is available."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Account settings and support"
+        },
+        {
+          "type": "paragraph",
+          "text": "Account settings store your display name, manual setup checklist and choice to receive support reply notifications. Support records include your subject, message, related order reference and replies. Diagnostic details are included only if you choose to send them and are filtered before storage. Reply notifications require a verified email and your explicit choice in Account settings. Verification and password recovery messages are service messages, not marketing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Service mail is queued with encrypted content. Content is cleared after its send attempt or expiry; delivery records are removed after 30 days. Support correspondence may be retained while handling your request or a related dispute. Contact us to request access, correction or deletion; necessary financial and legal records may need to remain."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Creator referrals and commissions"
+        },
+        {
+          "type": "paragraph",
+          "text": "The creator program stores applications, submitted public channel links, audience descriptions, approval decisions, accepted program terms, referral links and codes, performance totals, commission events and payout references. Creators see masked referral information, not buyer email addresses or delivery details. Financial records remain available for refunds, disputes and accounting after a login is deleted; that deletion suspends its creator access."
+        },
+        {
+          "type": "paragraph",
+          "text": "Referral links ask for your choice before setting first-party referral cookies. If you allow tracking, pb_ref remembers the referral and pb_visitor recognizes repeat visits for up to 30 days. We store a keyed hash of the visitor identifier in referral click records and remove those click records after 90 days. We remember your allow or decline choice in pb_ref_choice for 30 days. You can change your referral preference at any time; declining clears referral cookies and stops cookie-based attribution. Do Not Track and Global Privacy Control are respected. You can shop without referral tracking and still enter an eligible creator code at checkout."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Creator payout setup"
+        },
+        {
+          "type": "paragraph",
+          "text": "Stripe hosts creator identity and bank verification. We store the connected Stripe account reference, country, environment, capability status and transfer or reversal references. Identity documents and bank details are supplied directly to Stripe rather than stored by this website. Stripe processes this information under its own privacy practices. A confirmed transfer to a Stripe balance does not itself confirm receipt in a bank account."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Purchases and delivery"
+        },
+        {
+          "type": "paragraph",
+          "text": "When you buy, we store your account reference, email, selected package and finish, price, accepted policy version, order and payment references, status and timestamps. Stripe hosts the payment form; we do not store your card number or security code. Stripe processes payment, billing and security information under its own privacy practices. For hardware, we store the delivery details you enter at Checkout. MB Memocasting arranges fulfilment through its supplier and shares the recipient name and delivery address needed for shipping with that supplier and carrier, including outside the EEA where applicable. Delivery records contain tracking and dispatch information. Payment and order records may need to remain after account deletion for accounting, refunds, disputes and legal obligations."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Reviews"
+        },
+        {
+          "type": "paragraph",
+          "text": "Submitting a review authorizes publication of your chosen public name, rating, text and purchased setup. We do not publish your email or delivery address. Reviews are linked to paid, fulfilled orders and moderated for spam, privacy, relevance and abuse; a critical rating is not a rejection reason. Contact us to request correction or withdrawal."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Hosting and limited measurement"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cloudflare hosts this website; application records use a dedicated D1 database with an EU jurisdiction setting. Cloudflare and Hostinger may process network and security data according to their service practices. Our application stores daily totals for page views and contact-link clicks, not browsing profiles. It respects Do Not Track and Global Privacy Control. Totals expire after 395 days. Temporary keyed rate-limit records expire after their rate windows; raw IP addresses are not stored in those records."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Your choices and requests"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the contact form for access, correction or deletion of your enquiry or account, or questions about these practices. We may need to confirm ownership before acting. Where applicable, you may object to processing or complain to your data protection authority."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Current scope"
+        },
+        {
+          "type": "paragraph",
+          "text": "No advertising trackers or marketing subscription is included. Checkout availability is shown on the shop; purchase processing starts only when you choose to buy. The downloaded apps have their own permissions and pairing settings; this website notice does not replace their setup information. Updated 13 October 2026."
+        },
+        {
+          "type": "paragraph",
+          "text": "Ask a privacy or account question ."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "b82b4bbf-cafa-4f4a-a47e-aed706fea3d4",
+      "revisionHash": "c0d4472abcbae2bcd69a4d88d2bcdfce368205a668a38e0051bcb16c0d2a31ac",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "c0d4472abcbae2bcd69a4d88d2bcdfce368205a668a38e0051bcb16c0d2a31ac",
+        "approvedAt": "2026-10-13T07:13:13.998Z",
+        "actorId": "codex-owner-authorized-launch-polish-20261013"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "service",
+      "slug": "terms",
+      "title": "Before you start. A few clear details.",
+      "description": "PhoneBridger purchase, licence, free shipping and cancellation terms from MB Memocasting.",
+      "intent": "Understand PhoneBridger terms information and its current beta boundaries.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Your purchase, delivery and cancellation terms in one place."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Your seller"
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger purchases are sold by MB Memocasting, company number 306026827, registered in Lithuania at Pupinės g. 10-55, LT-02206 Vilnius. Contact hello@phonebridger.com or company support on +370 691 08251. MB Memocasting is not VAT registered."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What you are buying"
+        },
+        {
+          "type": "paragraph",
+          "text": "App only is USD 29; App + 1 holder is USD 49; App + 2 holders is USD 65; App + 3 holders is USD 79. Each includes the same one-time Windows V1 licence for one PC and up to three Android phones, with the Android companion. No subscription is added. The licence covers personal or business use of V1 and available V1 maintenance updates; a future paid major version is a separate offer. You may reinstall on a replacement PC, but not redistribute or resell the software."
+        },
+        {
+          "type": "paragraph",
+          "text": "The current beta remains free to try. Buying does not unlock extra beta features. Your purchase and licence record appear after confirmed payment; the record is not an activation key entered into the current apps. Download the apps from the Downloads page. Review compatibility and required Android permissions before buying. The beta is still in development; future features and release dates are not promised."
+        },
+        {
+          "type": "paragraph",
+          "text": "Hardware bundles add the selected count of foldable magnetic holders in Black or Silver. No laptop, phone or physical software box is included. Images are illustrations; the depicted PhoneBridger engraving is a branding mockup. Check magnetic-ring or case fit and a suitable mounting surface before attachment. Do not strain your laptop hinge or screen."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Payment and confirmation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Checkout availability is shown on the shop. Saving a setup or contacting us does not place an order. When Checkout is available, accept these terms, sign in to keep your order connected to your account, then pay on Stripe-hosted Checkout. Review the final payable amount before payment. We do not add VAT under our current non-VAT-registered status. Import duties or destination charges, where applicable, may be collected locally."
+        },
+        {
+          "type": "paragraph",
+          "text": "Your order becomes paid only after payment is verified. Status, downloadable order confirmation and licence record appear in your account. The confirmation retains the terms accepted for that order. Card statements may show MB MEMOCASTING. Payment method availability is determined at Checkout. If payment is pending, refresh your order or contact us before paying again."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Free shipping and supplier fulfilment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shipping is free to destinations offered at Checkout. MB Memocasting arranges hardware orders manually with its supplier, which sends goods directly to the recipient. We remain your seller for delivery and returns. No local warehouse stock is claimed. Tracking appears in your account after dispatch."
+        },
+        {
+          "type": "paragraph",
+          "text": "Transit time varies. Unless a different period is agreed before purchase, the statutory delivery deadline is 30 days. We notify you and refund an order we cannot fulfil. Contact us about late or damaged goods; supplier policies do not replace your legal rights."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Cancellation and returns"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cancel app-only purchases within 14 days of purchase; downloading does not waive this right. Withdraw from an entire hardware bundle within 14 days of receiving the goods. Notify us online, by email or by post; no reason is required. For a partial cancellation, tell us which items you are returning."
+        },
+        {
+          "type": "paragraph",
+          "text": "Return hardware within 14 days of notification. You pay ordinary change-of-mind return postage; contact us for instructions before sending. Excessive use may reduce the refund. Refunds use the original payment method within 14 days of notification; we may wait for goods or proof of sending. A cancelled licence is revoked. Faulty or incorrect goods retain their statutory remedies."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Withdraw from your contract"
+        },
+        {
+          "type": "paragraph",
+          "text": "Withdraw from contract"
+        },
+        {
+          "type": "paragraph",
+          "text": "The online form takes your name, email, order reference and withdrawal statement, and provides a dated confirmation to download after submission. You may instead email hello@phonebridger.com with “I withdraw from my PhoneBridger order”, your order reference, name, address and purchase or receipt date. Sign only if sending on paper. This wording is optional."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Support and disputes"
+        },
+        {
+          "type": "paragraph",
+          "text": "Contact us about downloads, setup, delivery, cancellation or faults. Lithuanian law applies without removing mandatory consumer protections in your country. Unresolved consumer complaints may be referred to Lithuania’s State Consumer Rights Protection Authority, vvtat.lrv.lt. Creator commissions and a creator dashboard are not included."
+        },
+        {
+          "type": "paragraph",
+          "text": "Terms version phonebridger-v1-20261006. Updated 6 October 2026."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [],
+      "id": "ba1b41d1-e831-48ed-bf1c-7734865d4882",
+      "revisionHash": "7ab01ddbf726d36dead14db6cfac5fd829bbfef1b4191ca8dbbe2b5771d442f3",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "7ab01ddbf726d36dead14db6cfac5fd829bbfef1b4191ca8dbbe2b5771d442f3",
+        "approvedAt": "2026-10-06T20:09:56.046Z",
+        "actorId": "owner-authorized-production-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "faq",
+      "slug": "guides",
+      "title": "A clear start. A smoother everyday setup.",
+      "description": "PhoneBridger guides for first pairing, USB and Wi-Fi, Android permissions and phone placement.",
+      "intent": "Find the right setup answer and its known limitations.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Practical guides for the phone beside your PC. Start with pairing, then choose the connection and position that fit your desk."
+        },
+        {
+          "type": "paragraph",
+          "text": "These guides explain the current Windows and Android beta. Product instructions are checked against release documentation; platform requirements link to primary sources. Illustrations show context, not a certified device test."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
+          "label": "setup guide"
+        },
+        {
+          "targetPageId": "21266ff0-7a65-4a82-8497-690ac3f549eb",
+          "label": "USB or Wi-Fi?"
+        },
+        {
+          "targetPageId": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
+          "label": "Android permissions explained"
+        },
+        {
+          "targetPageId": "761a09b5-ace2-4371-bca6-29dceed59240",
+          "label": "Put your phone in the right place: positions and transition zones"
+        }
+      ],
+      "id": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+      "revisionHash": "594c1382514d212cdb33ad88d0f137a29a368bc8c36327ae5fa77683ffdd9c08",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "594c1382514d212cdb33ad88d0f137a29a368bc8c36327ae5fa77683ffdd9c08",
+        "approvedAt": "2026-10-06T06:08:11.499Z",
+        "actorId": "codex-editorial-review-20261006"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "guide",
+      "slug": "guides/getting-started",
+      "title": "Set up PhoneBridger on Windows and Android",
+      "description": "Install both beta apps, pair your own PC, approve it on Android and check your first screen-edge transition.",
+      "intent": "How do I complete my first PhoneBridger setup without confusing installation, permission and pairing?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Install the Windows app and Android companion, enable mouse control on the phone, then scan the PC’s pairing code and approve your computer. Use the same reachable Wi-Fi network for this first pairing."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger controls apps on your physical Android screen. It does not turn a browser demo into a connection to your phone. Keep your phone beside the PC so you can see both screens while you set up."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Before you start"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Have your own Windows PC and an Android phone available. The current download is a 64-bit Windows ZIP; the Android companion requires Android 8 or later.",
+            "Keep both devices on the same reachable Wi-Fi network for the first pairing. A guest network can prevent devices from reaching each other.",
+            "Use the beta files from the Downloads page. The Windows beta is unsigned and Android is distributed as an APK. If you cannot establish the source of a file or understand an installation warning, stop and ask for help."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "1. Install both apps"
+        },
+        {
+          "type": "paragraph",
+          "text": "Extract the entire Windows ZIP into one folder. Keep PhoneBridger.exe next to its _internal folder; running only a copied EXE can leave its dependencies behind. Close an older running PC instance before opening this version."
+        },
+        {
+          "type": "paragraph",
+          "text": "Install the Android companion on your phone. Updating the existing app with the current compatible package retains the saved pairing. Read the system installation prompts rather than accepting an unrelated app or a file sent by a stranger."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "2. Enable mouse control on Android"
+        },
+        {
+          "type": "paragraph",
+          "text": "Open PhoneBridger on the phone and use its mouse-control setup. Review the explanation before opening Android’s accessibility settings, then enable the PhoneBridger service if you choose to grant that access. Android menu labels can differ by manufacturer."
+        },
+        {
+          "type": "paragraph",
+          "text": "This permission and pairing are separate steps. An installed app is not automatically allowed to control other apps, and an enabled accessibility service does not automatically trust a PC. Read Android permissions explained if the setting is unavailable."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "3. Scan and approve your PC"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Open the pairing screen in the Windows app.",
+            "Open the pairing scanner in PhoneBridger on Android and scan the code displayed by your own PC. Use the app’s scanner, not an unrelated QR reader.",
+            "Check that this is the computer you intend to trust, then approve it on the phone.",
+            "Wait for the connected status before trying to enter the phone. The illustration on this website is not a working pairing code."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "4. Match the phone’s position"
+        },
+        {
+          "type": "paragraph",
+          "text": "Put the phone left, right or above your PC screen. Choose the corresponding position and transition zone in the Windows app. The selected zone is the part of the screen edge you cross to enter the phone; it should agree with the desk arrangement."
+        },
+        {
+          "type": "paragraph",
+          "text": "Start with one phone. Open a harmless screen on it, move through your chosen PC screen edge and check that you can click and scroll. Use Ctrl + Alt + S to return to Windows. Ctrl + Alt + Q exits the PC app. Do not use this first check to alter private or consequential information."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "If the first connection does not complete"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Check that both apps are open, the phone is unlocked and the PC’s pairing code is current.",
+            "Check that the devices can reach one another on the network. Being connected to similarly named networks is not proof of reachability.",
+            "Confirm the PC approval on the phone and mouse-control permission separately.",
+            "If you are upgrading, close the older PC app before starting the new one.",
+            "Record the exact visible status and your app/OS versions for support; leave passwords, pairing codes and private app messages out of an email."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What happens next time?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Saved pairing is reused when the phone is reachable. A normal disconnect preserves that trust; forgetting the phone or computer revokes it. If you change device trust, approve your own PC again rather than trying to bypass the warning."
+        },
+        {
+          "type": "paragraph",
+          "text": "After the initial pairing, you can keep using Wi-Fi or prepare USB once. The current beta prefers an authorized physical USB phone automatically and falls back to Wi-Fi when the cable is removed. Native file dragging is planned and is not part of this setup."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [
+        {
+          "id": "4b891ab1-8a36-4e6a-9b5a-a2b83c0412d0",
+          "src": "/content-assets/phonebridger/4b891ab1-8a36-4e6a-9b5a-a2b83c0412d0.webp",
+          "alt": "An illustrative dark laptop and phone beside it on a softly lit desk.",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "9eca6d72-03ef-41fd-9b64-635b1866cf92",
+          "src": "/content-assets/phonebridger/9eca6d72-03ef-41fd-9b64-635b1866cf92.webp",
+          "alt": "An illustrative dark laptop and phone beside it on a softly lit desk.",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "c75ffcfd-eb4c-4fbc-a3e1-5ad009960397",
+          "src": "/content-assets/phonebridger/c75ffcfd-eb4c-4fbc-a3e1-5ad009960397.webp",
+          "alt": "An illustrative dark laptop and phone beside it on a softly lit desk.",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "72549c48-a8d1-456f-897a-b03eb71c6d07",
+          "src": "/content-assets/phonebridger/72549c48-a8d1-456f-897a-b03eb71c6d07.webp",
+          "alt": "An illustrative dark laptop and phone beside it on a softly lit desk.",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "c5bb18a0-f84e-45f2-b797-988420a35deb",
+          "src": "/content-assets/phonebridger/c5bb18a0-f84e-45f2-b797-988420a35deb.webp",
+          "alt": "An illustrative dark laptop and phone beside it on a softly lit desk.",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
+          "label": "Android permissions explained"
+        },
+        {
+          "targetPageId": "761a09b5-ace2-4371-bca6-29dceed59240",
+          "label": "Put your phone in the right place: positions and transition zones"
+        },
+        {
+          "targetPageId": "21266ff0-7a65-4a82-8497-690ac3f549eb",
+          "label": "USB or Wi-Fi?"
+        },
+        {
+          "targetPageId": "58053a3b-c5de-40d2-bfec-13541e794e83",
+          "label": "Your next workspace. Starts here."
+        },
+        {
+          "targetPageId": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+          "label": "A question? Let’s connect."
+        }
+      ],
+      "id": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
+      "revisionHash": "ab05ce79477de5111b43564292b51153e33038f5c4d7d973148b6933c59c56f0",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "ab05ce79477de5111b43564292b51153e33038f5c4d7d973148b6933c59c56f0",
+        "approvedAt": "2026-10-13T09:04:09.358Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "guide",
+      "slug": "guides/usb-wifi",
+      "title": "USB or Wi-Fi? Set up the connection that fits your desk",
+      "description": "Understand automatic USB priority, Wi-Fi fallback, data-cable requirements and the current one-USB-phone limit.",
+      "intent": "When should I use USB or Wi-Fi in PhoneBridger, and what must I prepare?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Pair over the same reachable Wi-Fi network first. After one-time USB debugging authorization, connecting a data cable makes the beta prefer USB automatically; unplugging it restores Wi-Fi when the saved phone is reachable."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Choose for your desk, not a different feature tier"
+        },
+        {
+          "type": "paragraph",
+          "text": "Wi-Fi keeps the desk free of a cable. USB is useful when your phone already sits beside a wired PC. PhoneBridger uses the same mouse, keyboard, supported audio and link features on either transport. Neither choice adds native file dragging to the current beta."
+        },
+        {
+          "type": "paragraph",
+          "text": "There is no universal latency or reliability promise here. Network conditions, cable quality and the phone matter. Start with the arrangement you can maintain comfortably, then confirm the active connection in both apps."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Start with Wi-Fi pairing"
+        },
+        {
+          "type": "paragraph",
+          "text": "Follow Set up PhoneBridger on Windows and Android. Keep both devices on the same reachable Wi-Fi network, scan the PC pairing code in the Android companion and approve your own PC. PhoneBridger’s ordinary Wi-Fi connection does not require Android wireless debugging."
+        },
+        {
+          "type": "paragraph",
+          "text": "A guest or isolated network may let both devices access the internet while preventing them from communicating with each other. If pairing waits, check the network policy or try your own permitted network; do not disable a managed network’s protections."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prepare USB once"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Use a data-capable cable that fits your phone and PC. A charging-only cable cannot provide this connection.",
+            "On your Android phone, enable Developer options using the manufacturer’s applicable instructions, then enable USB debugging. Android’s official instructions explain where these settings live; menu locations vary.",
+            "Connect the phone to your own PC and review the debugging authorization prompt on the phone. Authorize only a computer you trust.",
+            "Keep PhoneBridger running and look for USB as the active connection. No separate USB launcher or PC app restart is required by the current beta."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "USB debugging grants development access to the authorized computer. It is different from approving the computer inside PhoneBridger. If your device or workplace policy does not permit debugging, use Wi-Fi instead. Turn off debugging or revoke debugging authorizations when you no longer want that access."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What happens when you unplug?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Control returns to Windows while the transport changes. If the saved phone is reachable over Wi-Fi, PhoneBridger reconnects with the saved pairing. Cross the configured screen edge again to enter the phone; the switch itself does not silently repeat your previous action."
+        },
+        {
+          "type": "paragraph",
+          "text": "If Wi-Fi is unavailable, the app waits for a reachable saved phone. A disconnection does not erase the pairing. Forgetting a phone or computer is the deliberate trust-revocation action."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Using more than one phone"
+        },
+        {
+          "type": "paragraph",
+          "text": "The beta supports up to three configured phone positions, but USB discovery supports one physical USB debugging phone at a time. Keep one such phone connected by cable; other paired phones can use Wi-Fi. Multiple USB debugging devices can make selection ambiguous, so do not assume that three cables give three USB sessions."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "If USB does not take over"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Check that the cable carries data, not only power.",
+            "Unlock the phone and check whether debugging authorization is waiting for your decision.",
+            "Keep only the intended physical USB debugging phone attached.",
+            "Check the active USB/Wi-Fi status in the apps rather than assuming a plugged-in cable is active.",
+            "If Windows does not detect the Android device, official Android documentation notes that an applicable manufacturer USB driver may be needed. Do not install an unknown driver from a search advertisement."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "A simple arrangement to try"
+        },
+        {
+          "type": "paragraph",
+          "text": "For example, connect one desk phone by USB and keep a second paired phone on Wi-Fi. This illustrates a supported arrangement; it is not a claim that a particular phone, dock or cable has been tested. If you ask for help, include the phone model, Windows/Android versions, visible connection status and whether the cable transfers data."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [
+        {
+          "id": "a779aa23-ae3d-461a-a405-69e3544d26fe",
+          "src": "/content-assets/phonebridger/a779aa23-ae3d-461a-a405-69e3544d26fe.webp",
+          "alt": "An illustrative USB-A to USB-C data cable on a charcoal desk.",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "b5b69843-09fc-4df7-9008-7d4bcf87ef54",
+          "src": "/content-assets/phonebridger/b5b69843-09fc-4df7-9008-7d4bcf87ef54.webp",
+          "alt": "An illustrative USB-A to USB-C data cable on a charcoal desk.",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "968770d6-8a91-4d9d-ba64-256c4f38f9f2",
+          "src": "/content-assets/phonebridger/968770d6-8a91-4d9d-ba64-256c4f38f9f2.webp",
+          "alt": "An illustrative USB-A to USB-C data cable on a charcoal desk.",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "16feb108-327c-4d7c-a268-6f2b1dd83a86",
+          "src": "/content-assets/phonebridger/16feb108-327c-4d7c-a268-6f2b1dd83a86.webp",
+          "alt": "An illustrative USB-A to USB-C data cable on a charcoal desk.",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "6c50338f-d349-4ff9-b9ad-cf2f77b4ec93",
+          "src": "/content-assets/phonebridger/6c50338f-d349-4ff9-b9ad-cf2f77b4ec93.webp",
+          "alt": "An illustrative USB-A to USB-C data cable on a charcoal desk.",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
+          "label": "setup guide"
+        },
+        {
+          "targetPageId": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
+          "label": "Android permissions explained"
+        },
+        {
+          "targetPageId": "58053a3b-c5de-40d2-bfec-13541e794e83",
+          "label": "Your next workspace. Starts here."
+        },
+        {
+          "targetPageId": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+          "label": "A question? Let’s connect."
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://developer.android.com/studio/run/device",
+          "label": "Android Developers: connect a hardware device",
+          "reason": "USB debugging, computer authorization context and applicable Windows USB driver requirements; retrieved 2026-10-06."
+        },
+        {
+          "url": "https://developer.android.com/studio/debug/dev-options",
+          "label": "Android Developers: Developer options",
+          "reason": "Official platform settings context; retrieved 2026-10-06. PhoneBridger Wi-Fi does not use Android wireless debugging."
+        }
+      ],
+      "id": "21266ff0-7a65-4a82-8497-690ac3f549eb",
+      "revisionHash": "925a5ff3bf137f00de14a237545c225022800fd19a5681f3862d69906842695e",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "925a5ff3bf137f00de14a237545c225022800fd19a5681f3862d69906842695e",
+        "approvedAt": "2026-10-13T09:04:09.394Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "guide",
+      "slug": "guides/android-permissions",
+      "title": "Android permissions explained: mouse control, pairing and audio",
+      "description": "Know which permission enables which PhoneBridger feature, what restricted settings mean and when to stop rather than grant access.",
+      "intent": "Why does PhoneBridger request Android permissions, and which permissions do I need for my chosen feature?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Mouse control uses Android accessibility access. Pairing separately approves your PC. Phone audio asks for Android capture consent, and USB needs debugging authorization only if you choose a cable."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "One feature, one reason for access"
+        },
+        {
+          "type": "paragraph",
+          "text": "A connection is not a blanket permission. Install the companion, read its explanation and choose access for the feature you intend to use. You can use the setup guide to distinguish a missing app permission from a PC that has not been approved."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Mouse and keyboard control"
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger’s mouse-control setup opens Android’s accessibility service settings. Accessibility access can let an app read screen content and interact with other apps on your behalf. Grant it only after you understand that capability and trust the app source."
+        },
+        {
+          "type": "paragraph",
+          "text": "Open the permission flow in PhoneBridger, review the explanation and choose the PhoneBridger service in Android settings if you wish to enable it. Return to the companion and check its status. A saved switch and a service that is still starting are not always the same state; give the app’s status a chance to update before repeatedly toggling settings."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "When Android shows a restricted setting"
+        },
+        {
+          "type": "paragraph",
+          "text": "Some Android 13-and-later settings can be restricted for installed apps. Google’s guidance describes a route through Settings → Apps → the app → More → Allow restricted settings, with on-screen confirmation. Availability and wording vary by device."
+        },
+        {
+          "type": "paragraph",
+          "text": "That is a sensitive choice, not a routine error to bypass. Google advises allowing it only when you trust the developer. If the option is absent, managed by your organization or unclear, stop and ask for help. Do not install another tool simply to defeat Android’s protection."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Camera access for pairing"
+        },
+        {
+          "type": "paragraph",
+          "text": "The in-app pairing scanner uses the camera to read the code on your own PC. Review the camera request in that context. The sample QR illustration on the website cannot pair a device. Approving the PC is a separate confirmation after scanning."
+        },
+        {
+          "type": "paragraph",
+          "text": "If scanning is unsuccessful, check the current PC code, lighting and scanner framing before changing unrelated permissions. Do not share a pairing code in a public post or send it to an unsolicited helper."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Listening through your PC"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phone audio requires Android 10 or later and Android’s capture consent. The source app must also permit playback capture; some apps or content do not. Silent audio does not by itself mean mouse control or pairing failed."
+        },
+        {
+          "type": "paragraph",
+          "text": "Start audio sharing from the app and review the system prompt. Declining audio consent leaves that audio feature unavailable. Check the source app and PC volume before retrying; repeatedly granting unrelated permissions will not make protected audio capturable."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "USB authorization"
+        },
+        {
+          "type": "paragraph",
+          "text": "USB debugging is needed only for the current physical USB transport. It approves development access for a computer, while PhoneBridger’s own approval establishes application trust. Use USB or Wi-Fi? for the cable preparation steps. Ordinary PhoneBridger Wi-Fi does not require wireless debugging."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "How to stop or revoke access"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Use the PC app’s pause control or return to Windows with Ctrl + Alt + S when you want to stop controlling the phone.",
+            "Disable the PhoneBridger accessibility service in Android settings if you no longer want that service access.",
+            "Use the app’s forget action to revoke the saved phone/computer pairing rather than treating an unplugged cable as revocation.",
+            "Review or revoke Android debugging authorizations separately when you no longer trust that PC for debugging."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What to send support"
+        },
+        {
+          "type": "paragraph",
+          "text": "Describe the feature you are enabling, the exact visible prompt, your Android version and the app version. A cropped screenshot of the setting can help if it contains no personal content. Do not include a password, pairing token, private app messages or a full settings export."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [
+        {
+          "id": "46ddb88c-f7bc-4354-bad3-39fe79611ca5",
+          "src": "/content-assets/phonebridger/46ddb88c-f7bc-4354-bad3-39fe79611ca5.webp",
+          "alt": "An illustrative smartphone beside a small physical padlock.",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "1d515fcf-0f49-4626-9e80-e4305f5fd85e",
+          "src": "/content-assets/phonebridger/1d515fcf-0f49-4626-9e80-e4305f5fd85e.webp",
+          "alt": "An illustrative smartphone beside a small physical padlock.",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "bc89d038-6393-4b8f-a52b-891b78176475",
+          "src": "/content-assets/phonebridger/bc89d038-6393-4b8f-a52b-891b78176475.webp",
+          "alt": "An illustrative smartphone beside a small physical padlock.",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "577abb05-2f7e-4761-b400-e357eb67d210",
+          "src": "/content-assets/phonebridger/577abb05-2f7e-4761-b400-e357eb67d210.webp",
+          "alt": "An illustrative smartphone beside a small physical padlock.",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "51557432-771e-4207-a991-f37a532cfa8a",
+          "src": "/content-assets/phonebridger/51557432-771e-4207-a991-f37a532cfa8a.webp",
+          "alt": "An illustrative smartphone beside a small physical padlock.",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
+          "label": "setup guide"
+        },
+        {
+          "targetPageId": "21266ff0-7a65-4a82-8497-690ac3f549eb",
+          "label": "USB or Wi-Fi?"
+        },
+        {
+          "targetPageId": "58053a3b-c5de-40d2-bfec-13541e794e83",
+          "label": "Your next workspace. Starts here."
+        },
+        {
+          "targetPageId": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+          "label": "A question? Let’s connect."
+        }
+      ],
+      "externalLinks": [
+        {
+          "url": "https://support.google.com/android/answer/12623953?hl=en",
+          "label": "Google Android Help: restricted settings",
+          "reason": "Restricted settings, accessibility capability and trusted-developer warning; retrieved 2026-10-06."
+        },
+        {
+          "url": "https://developer.android.com/media/platform/av-capture",
+          "label": "Android Developers: playback capture",
+          "reason": "Android 10 playback capture, system consent and source-app capture policy; retrieved 2026-10-06."
+        }
+      ],
+      "id": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
+      "revisionHash": "378233c1a2fa9e590125f740fcd556c211964dad4496f8830a1155abad1e8dc2",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "378233c1a2fa9e590125f740fcd556c211964dad4496f8830a1155abad1e8dc2",
+        "approvedAt": "2026-10-13T09:04:09.412Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "guide",
+      "slug": "guides/phone-position",
+      "title": "Put your phone in the right place: positions and transition zones",
+      "description": "Match left, right or above in PhoneBridger to the phone on your desk, then check entry, return and a comfortable multi-phone arrangement.",
+      "intent": "How should I match the physical phone position and screen-edge transition zone?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "Choose Left, Right or Above to match where the phone actually sits beside your PC. Then set the matching screen-edge transition zone and check entry and return with one phone before adding more."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Start from the physical arrangement"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the phone screen visible and within a comfortable viewing position. If it sits on the left of the PC screen, select Left; if it sits on the right, select Right; if it sits above the PC screen, select Above. The setting describes your desk arrangement, not the phone’s USB port or its Wi-Fi address."
+        },
+        {
+          "type": "paragraph",
+          "text": "A magnetic holder is optional. A suitable existing phone stand can work too. Mount compatibility, attachment and stability depend on your actual phone, case and laptop; do not assume the website illustration guarantees a particular fit."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Position and transition zone are different choices"
+        },
+        {
+          "type": "paragraph",
+          "text": "Position chooses the side of the PC associated with that phone. The transition zone chooses the area of that screen edge you cross to enter it. Use the Windows app’s zone editor and test the visible area rather than treating the entire edge as an accidental trigger."
+        },
+        {
+          "type": "paragraph",
+          "text": "Leave a zone that makes sense alongside other windows or monitors you use. This guide does not prescribe new sensitivity, movement timing or cursor tuning; it uses the app’s existing controls."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Make one simple check"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Connect one approved phone and open a harmless app screen on it.",
+            "Check the phone’s actual placement and choose the matching Left, Right or Above position in Windows.",
+            "Check the selected transition zone.",
+            "Move deliberately through that part of the PC screen edge. Verify that the phone is the screen you intended to enter.",
+            "Use Ctrl + Alt + S to return to Windows. Make one click and one scroll in a harmless screen before using your normal apps."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "If you enter the wrong place or cannot enter"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Check that the phone is connected and approved; a saved position is not evidence of an active connection.",
+            "Check which phone you selected in the Windows device view.",
+            "Check the chosen position against the actual desk, then check the transition-zone area.",
+            "Check mouse-control permission on Android separately.",
+            "If the phone was rotated, compare its visible orientation and the app’s current state. Describe an unresolved mismatch to support instead of experimenting with unrelated settings."
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Adding a second or third phone"
+        },
+        {
+          "type": "paragraph",
+          "text": "Add one phone at a time and give each its intended place. For example, a portrait phone on the left and a landscape phone above the PC are two different positions. The illustration is an arrangement example, not a statement that your device orientation or mount has been tested."
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the same basic check for every phone: connected status, correct selected device, matching physical position and intended transition zone. The beta can configure up to three Android phones; one may use physical USB while others use Wi-Fi. Three positions do not imply three physical USB connections."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Returning after a connection switch"
+        },
+        {
+          "type": "paragraph",
+          "text": "USB and Wi-Fi share the same settings. When the connection changes, control returns to Windows; cross the configured edge again when the saved phone reconnects. An unavailable Wi-Fi network after unplugging a cable cannot be solved by changing the phone’s position."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Make the arrangement comfortable"
+        },
+        {
+          "type": "paragraph",
+          "text": "Choose a stable surface and keep the phone visible without covering the laptop’s vents or controls. Avoid a placement that pulls on the cable or makes the screen difficult to read. The right arrangement is the one you can use consistently; the app-only option lets you start with the stand you already have."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you need help, include the phone position, orientation, app versions and a simple sketch of the desk. Leave account credentials and private phone screens out of that sketch."
+        },
+        {
+          "type": "paragraph",
+          "text": "PhoneBridger is published by MB Memocasting. This guide describes the current beta; the browser demonstration does not connect to your physical phone."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [
+        {
+          "id": "db9cb59e-a6c0-4eeb-88c3-e6764b6084c4",
+          "src": "/content-assets/phonebridger/db9cb59e-a6c0-4eeb-88c3-e6764b6084c4.webp",
+          "alt": "An illustrative laptop with phones placed to its left and above.",
+          "width": 1536,
+          "height": 1024,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "f0128636-c25b-43e1-bcf8-c1081bff5db5",
+          "src": "/content-assets/phonebridger/f0128636-c25b-43e1-bcf8-c1081bff5db5.webp",
+          "alt": "An illustrative laptop with phones placed to its left and above.",
+          "width": 1200,
+          "height": 800,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "6b27bc52-7261-48f3-ab35-8567fc2ced66",
+          "src": "/content-assets/phonebridger/6b27bc52-7261-48f3-ab35-8567fc2ced66.webp",
+          "alt": "An illustrative laptop with phones placed to its left and above.",
+          "width": 800,
+          "height": 533,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "a79749fb-63e5-4dfb-b158-0e425422ef53",
+          "src": "/content-assets/phonebridger/a79749fb-63e5-4dfb-b158-0e425422ef53.webp",
+          "alt": "An illustrative laptop with phones placed to its left and above.",
+          "width": 640,
+          "height": 427,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        },
+        {
+          "id": "28b2c372-f22d-450f-848f-7e50c862a474",
+          "src": "/content-assets/phonebridger/28b2c372-f22d-450f-848f-7e50c862a474.webp",
+          "alt": "An illustrative laptop with phones placed to its left and above.",
+          "width": 360,
+          "height": 240,
+          "credit": "",
+          "rights": "Original AI-assisted contextual illustration commissioned for PhoneBridger; not documentary evidence."
+        }
+      ],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "cdc9c8a9-cc3a-47e1-88af-b74b16660140",
+          "label": "setup guide"
+        },
+        {
+          "targetPageId": "21266ff0-7a65-4a82-8497-690ac3f549eb",
+          "label": "USB or Wi-Fi?"
+        },
+        {
+          "targetPageId": "ea1bb6f5-9177-4e57-aac8-fe18be02a2d0",
+          "label": "Android permissions explained"
+        },
+        {
+          "targetPageId": "58053a3b-c5de-40d2-bfec-13541e794e83",
+          "label": "Your next workspace. Starts here."
+        },
+        {
+          "targetPageId": "e198ff57-66e8-4bf6-b7c9-793cf4e2ff51",
+          "label": "A question? Let’s connect."
+        }
+      ],
+      "id": "761a09b5-ace2-4371-bca6-29dceed59240",
+      "revisionHash": "1b9f6d5ef018b1f71c2989e255fce8d1e8be0b591cdeff2a4d05cf671d43a2ed",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "1b9f6d5ef018b1f71c2989e255fce8d1e8be0b591cdeff2a4d05cf671d43a2ed",
+        "approvedAt": "2026-10-13T09:04:09.431Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
+      }
+    },
+    {
+      "siteId": "phonebridger",
+      "type": "faq",
+      "slug": "editorial",
+      "title": "Who prepares the PhoneBridger guides",
+      "description": "Our guide scope, organizational attribution, source checks, illustration method and correction contact.",
+      "intent": "Who is responsible for this guidance and how are product claims checked?",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "The organizational attribution for these guides is MB Memocasting, the operator of PhoneBridger. PhoneBridger’s guide contact is hello@phonebridger.com. We do not list a fictional individual expert, customer test or independent certification."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "How these guides are prepared"
+        },
+        {
+          "type": "paragraph",
+          "text": "AI assists research, drafting and layout. Product instructions are checked against the current release documentation; platform requirements are checked against linked primary Android or Microsoft sources. An agent’s editorial review is not an independent human expert review."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What the illustrations mean"
+        },
+        {
+          "type": "paragraph",
+          "text": "Original contextual illustrations show a plausible desk, cable or permission theme. They do not document a customer installation, stocked product, exact device compatibility or a measured test. Precise controls and diagrams are provided as editable text and vector graphics. Required third-party credits are retained where applicable."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Versions and dates"
+        },
+        {
+          "type": "paragraph",
+          "text": "These guides were first published on 6 October 2026 for the beta described on Downloads. Their operator attribution and publication wording were reviewed on 13 October 2026. Original publication dates are retained; a calendar change alone does not update the product guidance."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Scope and corrections"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use the guides to understand setup and feature limits. They do not replace Android’s own permission explanation, your organization’s policy or the manufacturer’s hardware requirements. Send the page URL, the inaccurate sentence and a supporting source to hello@phonebridger.com. Do not send passwords, pairing codes or private messages."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What we do not claim"
+        },
+        {
+          "type": "paragraph",
+          "text": "There is no measured latency guarantee, supported-device certification, independent product review or proof of demand in these guides. The website supports customer accounts and paid orders. Purchasing records an entitlement in your account; it does not supply an activation key for the current beta. Native file dragging is planned and remains unavailable in this release."
+        }
+      ],
+      "publishAt": "2026-10-06T00:00:00.000Z",
+      "media": [],
+      "links": [
+        {
+          "targetPageId": "8a8f7d1c-ab43-447e-8cd6-4914411aea79",
+          "label": "A clear start. A smoother everyday setup."
+        },
+        {
+          "targetPageId": "2e64c8a0-56b3-400a-a6d1-0b310109928b",
+          "label": "Your phone stays yours. Your desk gets closer."
+        }
+      ],
+      "id": "14e8eb39-e0e3-4944-88df-dced524fb6a6",
+      "revisionHash": "a0197a9e0d8d6b8537fa04cd66c9b59743f8c73d4553b88f90033db9822e11f6",
+      "approval": {
+        "status": "approved",
+        "revisionHash": "a0197a9e0d8d6b8537fa04cd66c9b59743f8c73d4553b88f90033db9822e11f6",
+        "approvedAt": "2026-10-13T09:07:05.321Z",
+        "actorId": "codex-owner-authorized-publication-fix-20261013"
+      }
+    }
+  ],
+  "generatedAt": "2026-10-13T09:07:05.327Z"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "130 core tests and dedicated build pass. New key/merchant V2 acceptance and hosted KYC remain pending; no claim of full payout readiness.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "130/130 core suite retained; private release log mail-identity-tests-20261013.log; dedicated build preserves both accepted download hashes."
+    }
+  ],
+  "eventId": "f2366432-285e-400b-b463-68ff1b9468dc",
+  "sequence": 2,
+  "at": "2026-10-13T18:03:47.191Z"
+}

@@ -1,0 +1,44 @@
+/* Homepage conversion section only. Reuses the reviewed asset-kit surfaces. */
+.conversion-section.cv-kit{font-family:inherit;background:#101114;padding:64px 32px 78px;max-width:1320px;margin:auto;scroll-margin-top:96px}
+.conversion-section *{box-sizing:border-box}
+.conversion-heading{text-align:center;margin:0 auto 36px;max-width:1100px}
+.conversion-heading .conversion-eyebrow{color:#ff279b;font-size:12px;font-weight:800;letter-spacing:.24em;margin:0 0 14px}
+.conversion-heading h2{font-size:clamp(32px,4.2vw,58px);line-height:1.13;letter-spacing:-.05em;margin:0 0 14px;color:#f7f7f9}
+.conversion-heading>p:last-child{font-size:clamp(15px,1.55vw,20px);line-height:1.6;color:#b9bac4;margin:0}
+.conversion-section .cv-composition{grid-template-columns:1.06fr 1.12fr;gap:20px}
+.conversion-section .cv-scene{aspect-ratio:1;align-self:center}
+.conversion-section .cv-offer{min-height:240px}
+.conversion-section .cv-offer-art{display:flex;flex-direction:column;align-items:center;justify-content:center;top:35px;bottom:88px;gap:0}
+.conversion-section .cv-offer-art>img{width:min(100%,160px);height:80px;max-height:none;flex:none;object-fit:contain}
+.conversion-section .cv-offer-art>img+img{margin-top:-26px}
+.conversion-section .cv-app-art>img{max-height:110px;align-self:center}
+.conversion-section .cv-scene-features{bottom:19px}
+.conversion-footer{display:flex;align-items:center;gap:28px;padding:25px 30px;margin-top:20px;border:1px solid #654251;border-radius:18px;background:radial-gradient(ellipse at 18% 0,#ffffff08,transparent 65%),linear-gradient(125deg,#191b1e,#111315 70%)}
+.conversion-footer-copy{flex:1;min-width:0}
+.conversion-footer h3{font-size:clamp(21px,2.1vw,28px);letter-spacing:-.04em;line-height:1.25;margin:0 0 5px}
+.conversion-footer p{font-size:13px;color:#b9bac4;margin:0;line-height:1.6}
+.conversion-finishes{display:flex;gap:22px;align-items:center;flex:none}
+.conversion-finishes>span{display:flex;align-items:center;gap:11px;font-size:13px;color:#d7d8df}
+.conversion-finishes .cv-swatch{width:40px;height:40px}
+.conversion-cta{display:flex;align-items:center;justify-content:center;gap:14px;flex:1;max-width:350px;min-height:56px;padding:15px 23px;border:1px solid #ff279b;border-radius:999px;background:#ff279b;color:#101114;font-family:inherit;font-size:16px;font-weight:800;cursor:pointer;transition:background .2s,box-shadow .2s}
+.conversion-cta:hover{background:#ff50ad;box-shadow:0 0 25px #ff279b25}
+.conversion-cta:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.conversion-cta .cv-icon{width:23px;height:23px;filter:brightness(0)}
+.conversion-dialog{color:#f7f7f9;background:linear-gradient(140deg,#242027,#14161a);border:1px solid #6d465a;border-radius:22px;width:min(620px,calc(100% - 32px));max-height:calc(100dvh - 40px);overflow:auto;padding:28px;box-shadow:0 24px 100px #0009;font-family:inherit}
+.conversion-dialog::backdrop{background:#08090dcb;backdrop-filter:blur(6px)}
+.conversion-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.conversion-dialog h2{margin:0;font-size:28px;letter-spacing:-.04em}
+.conversion-close{width:44px;height:44px;flex:none;border:1px solid #59525d;border-radius:50%;background:transparent;color:inherit;cursor:pointer;font:24px/1 inherit}
+.conversion-summary{display:grid;grid-template-columns:145px 1fr;align-items:center;gap:22px;margin:26px 0}
+.conversion-summary>img{width:145px;height:145px;object-fit:contain;border-radius:15px}
+.conversion-summary h3{font-size:24px;line-height:1.25;margin:0 0 10px}
+.conversion-summary p,.conversion-dialog-note{color:#c0bec9;font-size:14px;line-height:1.65;margin:0}
+.conversion-dialog-note{border-top:1px solid #ffffff14;padding-top:20px}
+.conversion-dialog-actions{display:flex;gap:14px;margin-top:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.conversion-dialog-actions .conversion-cta{max-width:none;flex:0 1 auto;font-size:14px;min-height:46px}
+.conversion-dialog-actions a{color:#dbd6e0;font-size:14px;text-decoration:underline;text-underline-offset:4px;padding:10px 0}
+.conversion-dialog button:focus-visible,.conversion-dialog a:focus-visible{outline:2px solid #ff7cbe;outline-offset:4px}
+@media(max-width:1000px){.conversion-section .cv-composition{grid-template-columns:1fr}.conversion-section .cv-scene{width:100%;max-width:620px}.conversion-section .cv-offer{min-height:275px}.conversion-footer{flex-wrap:wrap;gap:22px}.conversion-footer-copy{flex:1 1 45%}.conversion-cta{flex:1 1 100%;max-width:none}.conversion-section .cv-offer-title{font-size:22px}}
+@media(max-width:640px){.conversion-section.cv-kit{padding:46px 16px 56px}.conversion-heading{margin-bottom:26px}.conversion-heading .conversion-eyebrow{font-size:10px;letter-spacing:.2em}.conversion-section .cv-composition{gap:20px}.conversion-section .cv-offer{padding:15px;min-height:235px}.conversion-section .cv-offer-title{font-size:17px}.conversion-section .cv-offer-description{font-size:11px;line-height:1.5}.conversion-section .cv-offer-art{left:23%;right:9%;top:33px;bottom:91px}.conversion-section .cv-scene-features{bottom:12px}.conversion-footer{padding:22px 20px;gap:20px}.conversion-footer-copy{flex-basis:100%}.conversion-finishes{gap:28px}.conversion-cta{min-height:52px;font-size:15px}.conversion-summary{grid-template-columns:100px 1fr;gap:15px}.conversion-summary>img{width:100px;height:100px}.conversion-summary h3{font-size:20px}.conversion-dialog{padding:23px}.conversion-dialog h2{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.conversion-cta{transition:none}}
+@media(max-width:640px){.conversion-section .cv-offer-art>img{width:min(100%,120px);height:60px}.conversion-section .cv-offer-art>img+img{margin-top:-18px}.conversion-section .cv-app-art>img{height:90px}}

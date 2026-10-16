@@ -1,0 +1,445 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen",
+  "reference": ".impeccable/experience-v1/approved-section-concept.png",
+  "headline": "Go ahead. Make it your workspace.",
+  "subtitle": "Six little ways to make your desk feel more connected.",
+  "note": "Interactive demo · Sample data",
+  "interactionStatus": "Not wired to the homepage; asset preparation only",
+  "cards": [
+    {
+      "id": "01-move-screens",
+      "title": "Move across screens",
+      "description": "One mouse. A little more freedom.",
+      "cta": "Try moving",
+      "icon": "mouse",
+      "alt": "Laptop and Android phone linked by a pink cursor path",
+      "master": {
+        "file": "01-move-screens.png",
+        "width": 1536,
+        "height": 1024,
+        "mime": "image/png",
+        "hasAlpha": true,
+        "bytes": 1418847,
+        "sha256": "6a6e8576914947fc62988eea339817af85e2a7e52317ec24f92ff2b9b4398444"
+      },
+      "policy": "responsive-webp-v1",
+      "variants": [
+        {
+          "file": "01-move-screens-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 94438,
+          "sha256": "4105fb2ad884388e46a4601d87199f09aa7affb81895b1222d03cdffeb2353db"
+        },
+        {
+          "file": "01-move-screens-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 67412,
+          "sha256": "76ee03150f2581f129a034feb4cb4d6b32dd2ab3162f4956a43c32dffa8b2b9f"
+        },
+        {
+          "file": "01-move-screens-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 34968,
+          "sha256": "a9c867da128e909f5e1aa6aa48434241727bd8f41f46fbe26ed2dd68cda62421"
+        },
+        {
+          "file": "01-move-screens-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 25234,
+          "sha256": "f72e56d153e439e4f9db4d6ff0d580a4dda687f545472949c09108af81ba9c92"
+        },
+        {
+          "file": "01-move-screens-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 11444,
+          "sha256": "23127a1802e80ce48b7297b6bd1deb2fafe51a851f250cd4817119a29d77e232"
+        }
+      ],
+      "srcset": "01-move-screens-360.webp 360w, 01-move-screens-640.webp 640w, 01-move-screens-800.webp 800w, 01-move-screens-1200.webp 1200w, 01-move-screens-1536.webp 1536w",
+      "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc((100vw - 64px) / 2), 420px"
+    },
+    {
+      "id": "02-type-reply",
+      "title": "Reply without reaching",
+      "description": "Your keyboard follows you.",
+      "cta": "Try typing",
+      "icon": "keyboard",
+      "alt": "Two chat messages above physical keyboard keys",
+      "master": {
+        "file": "02-type-reply.png",
+        "width": 1536,
+        "height": 1024,
+        "mime": "image/png",
+        "hasAlpha": true,
+        "bytes": 1587380,
+        "sha256": "10d0d5c7247c65c7b8ee11b99230e07034ed388eb3aef5cd634b4fbf62867da0"
+      },
+      "policy": "responsive-webp-v1",
+      "variants": [
+        {
+          "file": "02-type-reply-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 117162,
+          "sha256": "91edbacbb567cc7e34fb21cf895d839e6ca245a36866e6e0de02871ff0edd3a2"
+        },
+        {
+          "file": "02-type-reply-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 81388,
+          "sha256": "da3e7fb36ee0f65b955ab907302425b846df5dfbfa4ea3bbb7418c0bb699907c"
+        },
+        {
+          "file": "02-type-reply-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 40910,
+          "sha256": "0112c14708c57009f5be309ec114b6c300a937d5401961fc89db88640454f114"
+        },
+        {
+          "file": "02-type-reply-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 29424,
+          "sha256": "bcd6620b090b7d5f582a05600264d6d424e5a379cad01f5d5b4c2f4e1f9693c0"
+        },
+        {
+          "file": "02-type-reply-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 13718,
+          "sha256": "fdc4a74b75a40120976d9fed3f06b2b8a02534626fc41f72a0b67057f716d880"
+        }
+      ],
+      "srcset": "02-type-reply-360.webp 360w, 02-type-reply-640.webp 640w, 02-type-reply-800.webp 800w, 02-type-reply-1200.webp 1200w, 02-type-reply-1536.webp 1536w",
+      "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc((100vw - 64px) / 2), 420px"
+    },
+    {
+      "id": "03-send-tab",
+      "title": "Take your tab with you",
+      "description": "Continue right where you left off.",
+      "cta": "Try sending a tab",
+      "icon": "link",
+      "alt": "The same Q2 Plan spreadsheet in Chrome and on an Android phone",
+      "master": {
+        "file": "03-send-tab.png",
+        "width": 1536,
+        "height": 1024,
+        "mime": "image/png",
+        "hasAlpha": true,
+        "bytes": 1182663,
+        "sha256": "901539f799188dfba1fc101c3d2ca54262d04e7fce117c1ce1a30286bef7164a"
+      },
+      "policy": "responsive-webp-v1",
+      "variants": [
+        {
+          "file": "03-send-tab-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 95860,
+          "sha256": "d9e7bed9263e29adb524abbea0ef73af6c2badb87812750c52817463b34bbc3a"
+        },
+        {
+          "file": "03-send-tab-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 68646,
+          "sha256": "0a99dc626424ea66e67cb3d0b30fe6d214f3082c88db831ddb54c82a8d96b01c"
+        },
+        {
+          "file": "03-send-tab-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 35132,
+          "sha256": "56f3a1265eda75b597c79cafb46a369e4e1d96d330b3e8951a93076a9b66071f"
+        },
+        {
+          "file": "03-send-tab-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 25372,
+          "sha256": "9db8875868774d32d555ba0f6aeae2b7d0dc5877c0fc4e88e89c5a3c2535ec8a"
+        },
+        {
+          "file": "03-send-tab-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 11656,
+          "sha256": "7d20406a9696f7a68a995145b5f4ab06510eaae1c33bfaa27548a6456ef74dae"
+        }
+      ],
+      "srcset": "03-send-tab-360.webp 360w, 03-send-tab-640.webp 640w, 03-send-tab-800.webp 800w, 03-send-tab-1200.webp 1200w, 03-send-tab-1536.webp 1536w",
+      "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc((100vw - 64px) / 2), 420px"
+    },
+    {
+      "id": "04-file-transfer",
+      "title": "Drop it. Choose a folder.",
+      "description": "From your desktop to your phone.",
+      "cta": "Try a transfer",
+      "icon": "folder-open",
+      "alt": "Desktop photo dragged to a phone beside its PhoneBridger folder picker",
+      "master": {
+        "file": "04-file-transfer.png",
+        "width": 1536,
+        "height": 1024,
+        "mime": "image/png",
+        "hasAlpha": true,
+        "bytes": 1398446,
+        "sha256": "e24b0a51e5aff5adac426947667559003c4619ab2c5c3ee765fb4dcc530edd6b"
+      },
+      "policy": "responsive-webp-v1",
+      "variants": [
+        {
+          "file": "04-file-transfer-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 105458,
+          "sha256": "7caff48dac27ef62612fd0fc560154750c7eb0ecf0a6ac4c1c8191fa8aa9c646"
+        },
+        {
+          "file": "04-file-transfer-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 75164,
+          "sha256": "89c3edee0bacbb305b0298be4f200855f016c3fd78e93cb11d20294f87d095d4"
+        },
+        {
+          "file": "04-file-transfer-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 39878,
+          "sha256": "72a28e379994b0fe18903788da3f30a4e11dc5deafef5ce3f5810e65d248de32"
+        },
+        {
+          "file": "04-file-transfer-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 29348,
+          "sha256": "4f7458b7333453f13bb24eed660af1d1867e70fb20dc8ca6673aca21b0bd8246"
+        },
+        {
+          "file": "04-file-transfer-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 13064,
+          "sha256": "9832fdda91719c62a94aa98e1d4a76993e22ef42a88150e214cebd23caf5b5b3"
+        }
+      ],
+      "srcset": "04-file-transfer-360.webp 360w, 04-file-transfer-640.webp 640w, 04-file-transfer-800.webp 800w, 04-file-transfer-1200.webp 1200w, 04-file-transfer-1536.webp 1536w",
+      "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc((100vw - 64px) / 2), 420px"
+    },
+    {
+      "id": "05-pc-audio",
+      "title": "Listen through your PC",
+      "description": "Your phone's sound. Your PC's speakers.",
+      "cta": "Try audio",
+      "icon": "speaker",
+      "alt": "Android nature video connected to PC speakers and a volume slider",
+      "master": {
+        "file": "05-pc-audio.png",
+        "width": 1536,
+        "height": 1024,
+        "mime": "image/png",
+        "hasAlpha": true,
+        "bytes": 1939728,
+        "sha256": "01313bab9d7695dbb81326c37890d2dd8e7a5bc2ac31a72308d22aa2b1133b3c"
+      },
+      "policy": "responsive-webp-v1",
+      "variants": [
+        {
+          "file": "05-pc-audio-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 164064,
+          "sha256": "62a2cb2286a14ec10348e150e9e1944a54c4e7b1fc98ce9bf7873a5815d45251"
+        },
+        {
+          "file": "05-pc-audio-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 110602,
+          "sha256": "f7aac91a8e2dea1d4c6762157aca6512c7d5d8c170f4eb748e7fd21de29884e1"
+        },
+        {
+          "file": "05-pc-audio-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 53396,
+          "sha256": "766466472563adb4720e69e9e8c2b53ecf91d6343b03aecd438091073ab08a01"
+        },
+        {
+          "file": "05-pc-audio-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 37810,
+          "sha256": "25d0a51aec8f486514ee66aba7a772a8b6bd4532f730f8a1ba67894cea32aabc"
+        },
+        {
+          "file": "05-pc-audio-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 16350,
+          "sha256": "bb7ff2e59e6d1422db80efc502cbcd0a8ad8d371e3ea8c959266735d42f75e25"
+        }
+      ],
+      "srcset": "05-pc-audio-360.webp 360w, 05-pc-audio-640.webp 640w, 05-pc-audio-800.webp 800w, 05-pc-audio-1200.webp 1200w, 05-pc-audio-1536.webp 1536w",
+      "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc((100vw - 64px) / 2), 420px"
+    },
+    {
+      "id": "06-phonebridger",
+      "title": "Make it yours",
+      "description": "A workspace that feels like you.",
+      "cta": "Explore PhoneBridger",
+      "icon": "settings",
+      "alt": "PhoneBridger app illustration with three phones and two settings",
+      "master": {
+        "file": "06-phonebridger-v2.png",
+        "width": 1536,
+        "height": 1024,
+        "mime": "image/png",
+        "hasAlpha": true,
+        "bytes": 1371235,
+        "sha256": "d6d0303774e16a3354686371302974c8a0f33de46e8b6db56aeb1d97fbee62f1"
+      },
+      "policy": "responsive-webp-v1",
+      "variants": [
+        {
+          "file": "06-phonebridger-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 64826,
+          "sha256": "0e4cdbd7b98fca94464fe2938d0e45c6ced7dd928468b1ef51e827b7a553eaf6"
+        },
+        {
+          "file": "06-phonebridger-1200.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 46224,
+          "sha256": "b09b58a5624bbb6ea54a62e0dfc8996ea8e18e67f4fd7e11076d021b45a75cd1"
+        },
+        {
+          "file": "06-phonebridger-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 26796,
+          "sha256": "e0b63b673fd5816d2e56315f5b82b684ea71e1406a37aad97c0e1c06f6dc5d76"
+        },
+        {
+          "file": "06-phonebridger-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 20350,
+          "sha256": "d0b8221b2310909061ef862fc3bb02c132a4c77ab8396cf12ea862d3d9585ce8"
+        },
+        {
+          "file": "06-phonebridger-360.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 9532,
+          "sha256": "0af146a8c231f5522ea69d21cf71910600fb8719a03d8eccbb5eb578fdd4fc38"
+        }
+      ],
+      "srcset": "06-phonebridger-360.webp 360w, 06-phonebridger-640.webp 640w, 06-phonebridger-800.webp 800w, 06-phonebridger-1200.webp 1200w, 06-phonebridger-1536.webp 1536w",
+      "sizes": "(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc((100vw - 64px) / 2), 420px"
+    }
+  ],
+  "icons": [
+    {
+      "file": "icons/app-sheets.svg",
+      "bytes": 250,
+      "sha256": "74e64d84e10160ed737354b64cb79b8a9a0669611b0c9051defa733b4a040d4b",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/arrow-up-right.svg",
+      "bytes": 228,
+      "sha256": "9ea236cb4793beb67fb81b05e8630b57e8c3b4f446ea8c21008ffaf0b683c1c4",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/check.svg",
+      "bytes": 212,
+      "sha256": "3ebeea038cd0d989ec0a9240543557d3f43019c2f38acfc2f9b82e6e8e6a04d2",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/close.svg",
+      "bytes": 218,
+      "sha256": "7f849a7d134e28e71b4a0ffa6ad8e4c497825dc9807a0a75dc5db585dfad856a",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/cursor.svg",
+      "bytes": 230,
+      "sha256": "1bbc4baed8cac91a47acdedda966df636b0287696a46d4114df1b40e77499412",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/folder-open.svg",
+      "bytes": 236,
+      "sha256": "bdea0765609c7fdb7cc9f12c89051ea26415afa34732823cfe5954f26fe5ad76",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/keyboard.svg",
+      "bytes": 332,
+      "sha256": "e7dc69e7e8e8353b80ebd56c95eae85ed463a734a2da1f22a495e8d9a1352245",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/link.svg",
+      "bytes": 289,
+      "sha256": "fe6d820c5bfd3e431c23cc001e9e2115e69d38db497214afb0bd0c43cbdf6ff1",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/monitor.svg",
+      "bytes": 265,
+      "sha256": "41ea1081049f69a010c7561578a9bf760341e603e46b9d9d91b340f9639008e2",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/mouse.svg",
+      "bytes": 254,
+      "sha256": "7e88aecb683086c143a3792f237a8c5e56a5f10c120279abb2d7c3008ce01dfb",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/phone.svg",
+      "bytes": 262,
+      "sha256": "affe0c8c0b498c180a4b582ecfdfe12268f7e0b86ec1e4ee30d7298ce40d4962",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/phonebridger.svg",
+      "bytes": 460,
+      "sha256": "e0f3893c5a9c13661610d2d47a5d46a43f0e42aa08153644d5f00e050b9ee4b0",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/settings.svg",
+      "bytes": 337,
+      "sha256": "2bcdaad4c534a10c61688e9696ece12cd93e8656d48e5eaa9b6df632dddc3931",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/speaker.svg",
+      "bytes": 273,
+      "sha256": "ef2ea3a4fee5d462cf68132a9cbb9bc355342a306693fa51377da5a79087c960",
+      "origin": "existing PhoneBridger SVG system"
+    },
+    {
+      "file": "icons/transfer.svg",
+      "bytes": 241,
+      "sha256": "acf3350a23bb7a135065343876be44267ae878a53059712fae4f22a41673e2d7",
+      "origin": "existing PhoneBridger SVG system"
+    }
+  ]
+}

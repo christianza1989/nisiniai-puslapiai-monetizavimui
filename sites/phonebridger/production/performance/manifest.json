@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "source": "assets/surface-photo-frame-lossless-v1.svg",
+      "sourceSha256": "61440e0a862fc7dba3f7a378c8db10de7f1c32bbb7a4f7c8804eea8d6c115ac1",
+      "policy": "responsive-webp-v1",
+      "svgPreprocessing": "Existing embedded WebP decoded to lossless PNG for the SVG rasterizer; original vector mask and aspect preserved before shared raster import. Original unchanged.",
+      "variants": [
+        {
+          "file": "surface-photo-frame-lossless-v1-1600-57775b97bebe.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 21564
+        },
+        {
+          "file": "surface-photo-frame-lossless-v1-1200-04ec972c2086.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 15344
+        },
+        {
+          "file": "surface-photo-frame-lossless-v1-800-9dc93599c6ad.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 9150
+        },
+        {
+          "file": "surface-photo-frame-lossless-v1-640-fc4c3f9efac4.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 6954
+        },
+        {
+          "file": "surface-photo-frame-lossless-v1-360-430b05c6da7a.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 3544
+        }
+      ]
+    },
+    {
+      "source": "assets/app-ui-v1/devices-group-v1.png",
+      "sourceSha256": "5a9f0f36cfa8c60c0f59387175a1ca272708fc1807258e79b45df38ecb258243",
+      "policy": "responsive-webp-v1",
+      "svgPreprocessing": null,
+      "variants": [
+        {
+          "file": "devices-group-v1-1536-32d5bf130c0c.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 66274
+        },
+        {
+          "file": "devices-group-v1-1200-acfed40e5dad.webp",
+          "width": 1200,
+          "height": 800,
+          "bytes": 51566
+        },
+        {
+          "file": "devices-group-v1-800-7d6dc44b3de9.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 28920
+        },
+        {
+          "file": "devices-group-v1-640-66c158f06923.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 21484
+        },
+        {
+          "file": "devices-group-v1-360-686ef5a03ee3.webp",
+          "width": 360,
+          "height": 240,
+          "bytes": 11040
+        }
+      ]
+    },
+    {
+      "source": "assets/phone-frame-v1.webp",
+      "sourceSha256": "5b4de1be26f6c686d5ac16726ed81e9ac7af99cd8de14d7c210e9e78670b7572",
+      "policy": "responsive-webp-v1",
+      "svgPreprocessing": null,
+      "variants": [
+        {
+          "file": "phone-frame-v1-1024-9652ed29d7e9.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 33692
+        },
+        {
+          "file": "phone-frame-v1-800-381e942591d8.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 24910
+        },
+        {
+          "file": "phone-frame-v1-640-db0cede6796e.webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 17666
+        },
+        {
+          "file": "phone-frame-v1-360-9c8a82753fa5.webp",
+          "width": 360,
+          "height": 540,
+          "bytes": 7654
+        }
+      ]
+    },
+    {
+      "source": "assets/reference-pink-background-v1.webp",
+      "sourceSha256": "847d20969c053d3f2181ee89409bbc9e841da332e6e14619691156ca0bc88633",
+      "policy": "responsive-webp-v1",
+      "svgPreprocessing": null,
+      "variants": [
+        {
+          "file": "reference-pink-background-v1-1463-fd5f70969ce8.webp",
+          "width": 1463,
+          "height": 1075,
+          "bytes": 51512
+        },
+        {
+          "file": "reference-pink-background-v1-1200-b6d1bf9a443d.webp",
+          "width": 1200,
+          "height": 882,
+          "bytes": 33196
+        },
+        {
+          "file": "reference-pink-background-v1-800-ab21f6bed820.webp",
+          "width": 800,
+          "height": 588,
+          "bytes": 17396
+        },
+        {
+          "file": "reference-pink-background-v1-640-a014e715b04e.webp",
+          "width": 640,
+          "height": 470,
+          "bytes": 11972
+        },
+        {
+          "file": "reference-pink-background-v1-360-42bdf96db125.webp",
+          "width": 360,
+          "height": 265,
+          "bytes": 4488
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "base": "https://phonebridger.com",
+  "at": "2026-10-13T09:18:10.456Z",
+  "publicPages": [
+    {
+      "path": "/",
+      "status": 200,
+      "revision": "65b0f2eac26a4711c2cc9fc59ec7eed42e2d226cd3a6f0aebbe7baea73577861"
+    },
+    {
+      "path": "/shop",
+      "status": 200,
+      "revision": "d98817b2a6493d31f5d19d2cc525ca746dece71e97d6bcc6a6a776b76bcb52af"
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "revision": "43d3ca6eabd1c1e0bf331e790c584c37cd72e88bb4f53f80c78c649edc6a7cb4"
+    },
+    {
+      "path": "/help",
+      "status": 200,
+      "revision": "f19c0deab516a6176f1950a17010b49daa104bdd31dba3900d16dd2e670c0a8b"
+    },
+    {
+      "path": "/downloads",
+      "status": 200,
+      "revision": "b57121573294455403961340e2fecf74b58810f0ecce1641b8bd053e5c1a03a5"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "revision": "3ac314648dfd7451e18977acf61cb228b171ed39948b1df303605d73703fe1ef"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "revision": "c0d4472abcbae2bcd69a4d88d2bcdfce368205a668a38e0051bcb16c0d2a31ac"
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "revision": "7ab01ddbf726d36dead14db6cfac5fd829bbfef1b4191ca8dbbe2b5771d442f3"
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "revision": "594c1382514d212cdb33ad88d0f137a29a368bc8c36327ae5fa77683ffdd9c08"
+    },
+    {
+      "path": "/guides/getting-started",
+      "status": 200,
+      "revision": "ab05ce79477de5111b43564292b51153e33038f5c4d7d973148b6933c59c56f0"
+    },
+    {
+      "path": "/guides/usb-wifi",
+      "status": 200,
+      "revision": "925a5ff3bf137f00de14a237545c225022800fd19a5681f3862d69906842695e"
+    },
+    {
+      "path": "/guides/android-permissions",
+      "status": 200,
+      "revision": "378233c1a2fa9e590125f740fcd556c211964dad4496f8830a1155abad1e8dc2"
+    },
+    {
+      "path": "/guides/phone-position",
+      "status": 200,
+      "revision": "1b9f6d5ef018b1f71c2989e255fce8d1e8be0b591cdeff2a4d05cf671d43a2ed"
+    },
+    {
+      "path": "/editorial",
+      "status": 200,
+      "revision": "a0197a9e0d8d6b8537fa04cd66c9b59743f8c73d4553b88f90033db9822e11f6"
+    }
+  ],
+  "privateNamespace": "PASS",
+  "authAndCsrf": "PASS",
+  "shopCatalogAndOrderGuards": "PASS",
+  "commerceMode": "live",
+  "downloadHashes": "PASS",
+  "crossPartRange": "PASS",
+  "counterEndpoint": "PASS",
+  "preview": false
+}

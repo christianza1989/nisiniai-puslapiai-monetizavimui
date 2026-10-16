@@ -1,0 +1,59 @@
+{
+  "environment": "actual local production Worker build on own 8789; not production deployment",
+  "results": [
+    {
+      "siteId": "akmenas",
+      "status": "PASS",
+      "output": "SEO core smoke passed: akmenas, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "auksarankiams",
+      "status": "PASS",
+      "output": "SEO core smoke passed: auksarankiams, 13 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "autoelektrikaivilniuje",
+      "status": "PASS",
+      "output": "SEO core smoke passed: autoelektrikaivilniuje, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "fasadopastoliai",
+      "status": "PASS",
+      "output": "SEO core smoke passed: fasadopastoliai, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "greitossvetaines",
+      "status": "PASS",
+      "output": "SEO core smoke passed: greitossvetaines, 7 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "laiptucentras",
+      "status": "PASS",
+      "output": "SEO core smoke passed: laiptucentras, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "miniekskavatoriai",
+      "status": "PASS",
+      "output": "SEO core smoke passed: miniekskavatoriai, 12 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "roletaiklaipedoje",
+      "status": "PASS",
+      "output": "SEO core smoke passed: roletaiklaipedoje, 9 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    },
+    {
+      "siteId": "traktoriupadangos",
+      "status": "PASS",
+      "output": "SEO core smoke passed: traktoriupadangos, 11 public pages, robots, sitemap, llms, schemas, host isolation and 404.",
+      "error": ""
+    }
+  ]
+}

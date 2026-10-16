@@ -1,0 +1,20 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Contact email explicitly remains hello@phonebridger.com and creator remains original Gmail. Dedicated inquiry sender and full LLM export still inherited MB Pinet despite corrected public seller identity. Use PhoneBridger sender and accepted seller in dedicated Worker. Prepare optional separate creator integration key without replacing checkout key; old environment retained until actual key is approved and validated.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/32",
+    "User confirmed mailbox and approved ongoing Stripe work 2026-10-13. Existing Agent-tagged key V1 list succeeds, V2 list reports missing v2_account_storer_read; selected legacy Write scopes are not proof of V2 access. No new credential or transfer created."
+  ],
+  "paths": [
+    "deploy/phonebridger/worker.mjs",
+    "lib/phonebridger-payout-provider.mjs",
+    "deploy/phonebridger/STRIPE_MAIL_SIGNING_2026_10_13.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/32",
+  "rollback": "Revert only dedicated sender/LLM identity and optional creator key selection. Do not rotate old keys, change immutable purchase policy, financial ledgers, accepted installers or native input.",
+  "id": "upgrade-ad00618c-b585-4905-ac1a-8f07a5f4d3fa",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "50c6b6b7e517e0acdeb0e6e83f46404fd0b32a6d",
+  "createdAt": "2026-10-13T18:03:47.173Z"
+}

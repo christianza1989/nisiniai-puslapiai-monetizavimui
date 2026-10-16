@@ -1,0 +1,42 @@
+{
+  "state": "PASS",
+  "scope": "Private website and local account adapter; no production launch",
+  "routes": 11,
+  "browserViews": {
+    "desktop": 1280,
+    "mobile": 390,
+    "additionalWidths": [
+      320,
+      768,
+      1024
+    ]
+  },
+  "localLinksChecked": 176,
+  "sourceFrozenFiles": 471,
+  "generatorStableFiles": 13,
+  "runtimeManifestFiles": 282,
+  "privateVerificationFiles": 7,
+  "snapshotBytes": 80270387,
+  "accountTests": 12,
+  "existingSimulatorTests": 60,
+  "coreTests": 48,
+  "actualCorePluginIntegrationTests": 1,
+  "coreBuild": "PASS with existing warnings",
+  "typeScript": "PASS",
+  "scopedESLint": "PASS",
+  "productionPreviewFilesAbsent": true,
+  "publicPhoneBridgerPackageAbsent": true,
+  "approvedPublicPackages": 9,
+  "independentFinishReview": {
+    "firstDisposition": "fix",
+    "finalDisposition": "ship",
+    "findings": [
+      "terms internal authorship",
+      "unsupported recovery team wording",
+      "stale account captures"
+    ],
+    "allResolved": true,
+    "browserOrAuthCertification": false
+  },
+  "detector": "One initial source scan retained; repaired findings; no second scan or clean-scan claim"
+}

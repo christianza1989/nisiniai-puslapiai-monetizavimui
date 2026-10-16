@@ -1,0 +1,145 @@
+{
+  "environment": "Lighthouse default mobile simulation on local core-backed loopback preview; not production field evidence",
+  "rows": [
+    {
+      "file": "lighthouse-guides-final.json",
+      "version": "13.5.0",
+      "date": "2026-10-06T06:04:01.208Z",
+      "url": "http://127.0.0.1:4187/__projects/phonebridger/guides/",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "lcp": 2640.8824499999996,
+      "cls": 0.0002079556152653125,
+      "tbt": 0,
+      "failures": [
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-guides.json",
+      "version": "13.5.0",
+      "date": "2026-10-06T05:51:12.063Z",
+      "url": "http://127.0.0.1:4187/__projects/phonebridger/guides/",
+      "scores": {
+        "performance": 96,
+        "accessibility": 95,
+        "best-practices": 100
+      },
+      "lcp": 2642.62095,
+      "cls": 0.0002079556152653125,
+      "tbt": 0,
+      "failures": [
+        {
+          "id": "link-in-text-block",
+          "title": "Links rely on color to be distinguishable."
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-homepage-frozen.json",
+      "version": "13.5.0",
+      "date": "2026-10-06T06:04:29.924Z",
+      "url": "http://127.0.0.1:4187/__projects/phonebridger/",
+      "scores": {
+        "performance": 62,
+        "accessibility": 96,
+        "best-practices": 96
+      },
+      "lcp": 15326.76635725587,
+      "cls": 0.001643634968010484,
+      "tbt": 106,
+      "failures": [
+        {
+          "id": "errors-in-console",
+          "title": "Browser errors were logged to the console"
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "title": "Elements use prohibited ARIA attributes"
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "title": "Elements with visible text labels do not have matching accessible names."
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-permissions-final.json",
+      "version": "13.5.0",
+      "date": "2026-10-06T06:04:15.709Z",
+      "url": "http://127.0.0.1:4187/__projects/phonebridger/guides/android-permissions/",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "lcp": 2406.1317,
+      "cls": 0.01052816153776613,
+      "tbt": 0,
+      "failures": [
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-permissions.json",
+      "version": "13.5.0",
+      "date": "2026-10-06T05:54:24.948Z",
+      "url": "http://127.0.0.1:4187/__projects/phonebridger/guides/android-permissions/",
+      "scores": {
+        "performance": 97,
+        "accessibility": 96,
+        "best-practices": 100
+      },
+      "lcp": 2409.6657,
+      "cls": 0.01052816153776613,
+      "tbt": 0,
+      "failures": [
+        {
+          "id": "link-in-text-block",
+          "title": "Links rely on color to be distinguishable."
+        },
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    },
+    {
+      "file": "lighthouse-permissions-inline-final.json",
+      "version": "13.5.0",
+      "date": "2026-10-06T06:16:33.893Z",
+      "url": "http://127.0.0.1:4187/__projects/phonebridger/guides/android-permissions/",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100
+      },
+      "lcp": 2567.9883,
+      "cls": 0.01052816153776613,
+      "tbt": 0,
+      "failures": [
+        {
+          "id": "bf-cache",
+          "title": "Page prevented back/forward cache restoration"
+        }
+      ]
+    }
+  ]
+}

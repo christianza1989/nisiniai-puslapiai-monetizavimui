@@ -1,0 +1,19 @@
+{
+  "siteId": "phonebridger",
+  "summary": "Keyboard audit found skip action follows base-relative hash navigation and leaves focus on body. Shared public shell now explicitly focuses the existing main region with tabindex -1 and scrolls to it without page reload; menu Escape focus behavior preserved.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124",
+    "Isolated Chrome keyboard inspection on editorial: skip href #main, main exists, activeElement body after navigation. Final acceptance checks actual main focus rather than URL hash."
+  ],
+  "paths": [
+    "sites/phonebridger/production/shared-shell/shell.js",
+    "sites/phonebridger/launch-audit-20261013/PHASE-1-AUDIT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/124",
+  "rollback": "Revert scoped skip listener only; retain existing menu/Escape state, public shell, native input baseline and approved content revisions.",
+  "id": "upgrade-a61daeb2-aab6-4c99-9529-e6c822340ea1",
+  "branch": "codex/phonebridger-launch-audit-20261013",
+  "baseSha": "4a8ad897eab72ea798145bd30ce5630f6320aab4",
+  "createdAt": "2026-10-13T09:16:31.590Z"
+}

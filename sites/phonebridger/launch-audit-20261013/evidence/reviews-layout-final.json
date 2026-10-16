@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-13T09:25:41.703Z",
+  "base": "https://phonebridger.com",
+  "results": [
+    {
+      "width": 1440,
+      "initialReads": 11,
+      "cards": 24,
+      "geometryUnchanged": true,
+      "pauseControlWorks": true
+    },
+    {
+      "width": 390,
+      "initialReads": 11,
+      "cards": 24,
+      "geometryUnchanged": true,
+      "pauseControlWorks": true
+    }
+  ]
+}

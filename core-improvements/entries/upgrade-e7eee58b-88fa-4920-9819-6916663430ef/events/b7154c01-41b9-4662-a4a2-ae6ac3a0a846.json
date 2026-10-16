@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped local verification only. Main merge and adoption are not claimed; full commerce/payout, legal and native release gates remain open.",
+  "checks": [
+    {
+      "command": "node sites/phonebridger/production/check-shell.mjs ../dovanos-memorycasting/.sites-runtime/phonebridger-production",
+      "result": "PASS",
+      "evidence": "20 routes, three intentionally private layouts, one public header/footer version; missing-source errors still rejected."
+    }
+  ],
+  "eventId": "b7154c01-41b9-4662-a4a2-ae6ac3a0a846",
+  "sequence": 2,
+  "at": "2026-10-13T09:08:41.989Z"
+}

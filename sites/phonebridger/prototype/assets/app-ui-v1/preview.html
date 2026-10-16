@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhoneBridger — UI asset kit</title>
+<link rel="stylesheet" href="controls.css">
+<style>
+@font-face{font-family:Manrope;src:url('../fonts/manrope-400.ttf')}@font-face{font-family:Manrope;src:url('../fonts/manrope-800.ttf');font-weight:800}
+body{margin:0;background:#16161c;color:#f7f7fb}main{max-width:1320px;margin:auto;padding:32px}header{display:flex;align-items:center;gap:18px;margin-bottom:28px}header img{width:48px;height:48px}header h1{font-size:36px;margin:0}header p{margin:4px 0 0;font-size:18px;color:#b5b9ca}
+nav{display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap}.asset-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:24px}.asset-grid figure{margin:0;padding:24px;border:1px solid #3d3f4c;border-radius:18px;background:linear-gradient(135deg,#23252e,#1c1e25)}.asset-grid h2{font-size:28px;margin:0 0 18px}.asset-grid img{width:100%;height:100%;object-fit:contain;display:block}.alpha-board{background:conic-gradient(#292b35 25%,#20212a 0 50%,#292b35 0 75%,#20212a 0) 0 0/24px 24px;border-radius:12px;padding:16px;aspect-ratio:3/2}.alpha-board.wide{aspect-ratio:3/1}.asset-stack{display:grid;gap:24px}.controls-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.button-row{display:flex;gap:14px;flex-wrap:wrap}.pb-ui .pb-row output{font-size:32px;font-weight:800}.files-image{width:100%;display:block;border-radius:16px;border:1px solid #3d3f4c}.view-note{font-size:18px;color:#b5b9ca;margin-top:20px}.demo-feedback{min-height:30px;color:#d0ff63;margin:18px 0 0;font-size:18px}.icons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:12px;margin-top:28px}.icon-sample{display:flex;align-items:center;flex-direction:column;gap:12px;padding:16px;background:#202129;border:1px solid #3d3f4c;border-radius:12px}.icon-sample span{font-size:14px;text-align:center}.icon-sample .pb-icon{width:32px;height:32px}
+@media(max-width:800px){main{padding:20px}.asset-grid,.controls-grid{grid-template-columns:1fr}header h1{font-size:26px}.pb-ui{font-size:18px}.pb-ui .pb-card{padding:20px}.pb-ui .pb-row{gap:12px}.pb-ui .pb-select{width:100%}.pb-ui .pb-segment span{padding:8px}.pb-ui .pb-button{font-size:18px}.pb-ui .pb-card h2{font-size:26px}}
+</style>
+<script src="preview.js" defer></script>
+</head>
+<body class="pb-ui">
+<aside id="integration-preview" style="padding:12px 20px;background:#23232b;color:#eee;text-align:center;font:14px system-ui">Private project preview · Paid orders are not open. Beta installers remain in the application repository.</aside><main>
+<header><img src="icons/brand.svg" alt=""><div><h1>PhoneBridger UI assets</h1><p>Approved concept style · local demonstration controls</p></div></header>
+<nav aria-label="Asset kit sections">
+<button class="pb-button" data-view="assets" aria-pressed="true">Transparent assets</button>
+<button class="pb-button" data-view="controls" aria-pressed="false">Controls & icons</button>
+<button class="pb-button" data-view="files" aria-pressed="false">Files concept</button>
+</nav>
+<section data-panel="assets" aria-label="Transparent illustrations">
+<div class="asset-grid">
+<figure><h2>Devices — one asset</h2><div class="alpha-board"><img src="devices-group-v1.png" alt="Monitor with left, right and upper phones in one transparent composition"></div></figure>
+<div class="asset-stack"><figure><h2>Audio — one asset</h2><div class="alpha-board wide"><img src="audio-flow-v1.png" alt="Phone, arrow and speakers in one transparent composition"></div></figure>
+<figure><h2>Mouse preview</h2><div class="alpha-board wide"><img src="phone-preview-green-v1.png" alt="Green landscape phone for the Mouse and keyboard preview"></div></figure></div>
+</div>
+</section>
+<section data-panel="controls" hidden aria-label="Interactive control components">
+<div class="controls-grid">
+<article class="pb-card"><h2>Mouse & keyboard</h2><label class="pb-row" for="speed"><span>Pointer speed</span><output for="speed" id="speed-value">150%</output></label><input class="pb-range" id="speed" type="range" min="10" max="400" value="150" data-output="speed-value" style="--pb-progress:35.9%">
+<div class="button-row"><button class="pb-button" data-speed="100">100%</button><button class="pb-button" data-speed="150" aria-pressed="true">150%</button><button class="pb-button" data-speed="200">200%</button></div>
+<div class="pb-row"><span id="keyboard-label">Use PC keyboard</span><label class="pb-switch"><input type="checkbox" checked aria-labelledby="keyboard-label"><span class="pb-switch-track"></span></label></div>
+<div class="pb-row"><span>Return to PC</span><span><kbd class="pb-key">Ctrl</kbd> + <kbd class="pb-key">Alt</kbd> + <kbd class="pb-key">S</kbd></span></div>
+</article>
+<article class="pb-card"><h2>Audio</h2><div class="pb-row"><span id="audio-label">Audio to PC</span><label class="pb-switch"><input type="checkbox" checked aria-labelledby="audio-label"><span class="pb-switch-track"></span></label></div>
+<label class="pb-row" for="volume"><span>Volume</span><output for="volume" id="volume-value">72%</output></label><input class="pb-range" id="volume" type="range" min="0" max="100" value="72" data-output="volume-value" style="--pb-progress:72%">
+<div class="pb-row"><span id="mute-label">Mute phone media</span><label class="pb-switch"><input type="checkbox" checked aria-labelledby="mute-label"><span class="pb-switch-track"></span></label></div>
+<fieldset style="border:0;padding:0;margin:20px 0 0"><legend style="margin-bottom:12px">Playback</legend><div class="pb-segment"><label><input type="radio" name="playback" value="low"><span>Low latency</span></label><label><input type="radio" name="playback" value="balanced" checked><span>Balanced</span></label><label><input type="radio" name="playback" value="stable"><span>Stable</span></label></div></fieldset>
+</article>
+<article class="pb-card"><h2>Browser</h2><fieldset style="border:0;padding:0;margin:0"><legend>Open links on phone</legend><label class="pb-radio"><input type="radio" name="browser" value="default" checked><span>Default browser</span></label><label class="pb-radio"><input type="radio" name="browser" value="chrome"><span>Always use Chrome</span></label></fieldset>
+<div class="pb-row"><span id="google-label">Open Google links in apps</span><label class="pb-switch"><input type="checkbox" checked aria-labelledby="google-label"><span class="pb-switch-track"></span></label></div><button class="pb-button pb-button-primary" data-demo="Demo link opened on Main phone.">Test link</button>
+</article>
+<article class="pb-card"><h2>File transfer</h2><label for="phone">Selected phone</label><select class="pb-select" id="phone" style="width:100%;margin:12px 0 20px"><option>Main phone</option><option>Left phone</option><option>Right phone</option></select>
+<label for="destination">PC → phone · Save to</label><select class="pb-select" id="destination" style="width:100%;margin:12px 0"><option>Downloads</option><option>Documents</option><option>Photos</option></select>
+<div class="pb-row"><span id="overwrite-label">Ask before overwrite</span><label class="pb-switch"><input type="checkbox" checked aria-labelledby="overwrite-label"><span class="pb-switch-track"></span></label></div>
+<div class="pb-row"><span id="open-label">Open folder after transfer</span><label class="pb-switch"><input type="checkbox" checked aria-labelledby="open-label"><span class="pb-switch-track"></span></label></div>
+<div class="pb-progress" id="transfer-progress" role="progressbar" aria-label="Demo phone to PC transfer" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="--pb-progress:68%;margin:18px 0"><div class="pb-progress-fill"></div></div>
+<div class="button-row"><button class="pb-button pb-button-primary" id="demo-download">Download selected</button><button class="pb-button" id="demo-pause" disabled>Pause</button><button class="pb-button" id="demo-cancel" disabled>Cancel</button></div>
+</article>
+</div><p class="demo-feedback" id="demo-feedback" role="status">Demo controls change local preview state only.</p><div class="icons-grid" id="icons-grid" aria-label="SVG icon library"></div>
+</section>
+<section data-panel="files" hidden aria-label="Files phone manager concept"><img class="files-image" src="files-concept-v2.png" alt="Files concept: selected phone file manager, downloads to PC and settings for PC to phone drag and drop"><p class="view-note">Design concept. Phone files belong to the selected phone; downloads go to PC. PC files are dragged onto a phone.</p></section>
+</main></body></html>

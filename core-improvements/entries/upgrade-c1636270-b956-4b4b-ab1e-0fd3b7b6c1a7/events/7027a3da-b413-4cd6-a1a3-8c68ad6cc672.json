@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scoped local verification only. Main merge and adoption are not claimed; full commerce/payout, legal and native release gates remain open.",
+  "checks": [
+    {
+      "command": "node .sites-runtime/audit-guide-final.cjs",
+      "result": "PASS",
+      "evidence": "Four actual guide renders: corrected byline/Organization, original publication date, 13 October review date, one H1, no narrow overflow and loaded images."
+    }
+  ],
+  "eventId": "7027a3da-b413-4cd6-a1a3-8c68ad6cc672",
+  "sequence": 2,
+  "at": "2026-10-13T09:08:41.994Z"
+}

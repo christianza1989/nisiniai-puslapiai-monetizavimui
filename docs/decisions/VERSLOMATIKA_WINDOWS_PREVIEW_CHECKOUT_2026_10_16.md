@@ -21,6 +21,14 @@ Existing guardian/source/environment/admission tests remain applicable. This is
 checkout transport correctness; full visual, language, inquiry, measurement and
 launch acceptance remain separate.
 
+The generated public compiler also invokes Git inside the restricted child.
+Its owned per-child Git environment must carry longpaths alongside the one exact
+DATA exclusion; the transport's own command flag cannot propagate into that
+independent compiler. A later27case run reproduced null source proof in the real
+deep compiler fixture (25PASS/2FAIL55.30s); its other failure was the unchanged5s
+disconnect fixture reaching its timeout under resource pressure. Only child Git
+path configuration changes; no deadline, dirty-source rule or assertion is relaxed.
+
 Actual adoption of83d9de4 preserved88tables/222native files and all11approved page
 bytes; normal owner current-source intake/S6 succeeded. The generated site
 compiled. Retained retry identified a separate storage mismatch: Wrangler emits

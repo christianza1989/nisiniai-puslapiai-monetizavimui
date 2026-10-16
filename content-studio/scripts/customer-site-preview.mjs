@@ -61,7 +61,8 @@ export async function previewStorageGitEnvironment(checkout){
   if(checkout!==path.join(publicCore,'output/foundation-preview',owner.scopeSha256,'repo'))fail('foundation_preview_foreign_checkout');
   await previewSource(checkout,owner.publicSourceRevision,true);
   await storageInput(checkout,HOSTING,HOSTING_BYTES);await storageInput(checkout,EXCLUDES,EXCLUDES_BYTES);
-  return {GIT_CONFIG_COUNT:'1',GIT_CONFIG_KEY_0:'core.excludesFile',GIT_CONFIG_VALUE_0:path.join(checkout,EXCLUDES)};
+  return {GIT_CONFIG_COUNT:'2',GIT_CONFIG_KEY_0:'core.excludesFile',GIT_CONFIG_VALUE_0:path.join(checkout,EXCLUDES),
+    GIT_CONFIG_KEY_1:'core.longpaths',GIT_CONFIG_VALUE_1:'true'};
 }
 
 export async function previewStorageConfig(checkout,siteId){

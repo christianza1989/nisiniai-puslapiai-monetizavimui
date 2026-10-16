@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "The later27case run retained25PASS2FAIL55.30s: actual deep public compiler fixture returned null without child Git longpaths; unchanged5s disconnect assertion also hit timeout under resource pressure. Extend command-scoped longpaths into the existing exact per-child Git config alongside fixed hosting DATA exclusion. No global/local config, source allowance, deadline or assertion changes. Serial file execution reduces resource contention; all original cases/thresholds retained. Next actual fresh-checkout build will test adoption.",
+  "checks": [
+    {
+      "command": "PINET_PUBLIC_CORE_PATH=<owned255fea> node --experimental-test-module-mocks --test-concurrency=1 --test content-studio/test/customer-site-preview.test.mjs content-studio/test/preview-local-storage.test.mjs content-studio/test/candidate-preview-preparation.test.mjs",
+      "result": "PASS",
+      "evidence": "27PASS0FAIL0SKIP46.55s; actual deep checkout/public compiler, unchanged local core.longpaths=false, foreign-source refusals, exact owned DATA exclusion, storage/default binding negatives, revocation/timeout/cleanup and prepared scope checks."
+    }
+  ],
+  "eventId": "befb219e-ed16-4b10-879d-92fb84e308a8",
+  "sequence": 3,
+  "at": "2026-10-16T10:13:57.998Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Only authorized router import/include_router additions in both central APIs. Bounded strict authenticated actions use the same reviewed service; actual serving remains Root-owned.",
+  "checks": [
+    {
+      "command": "python -m pytest -q agent-business-core/runtime/offline_tests",
+      "result": "PASS",
+      "evidence": "1951passed8skipped67subtests107.98s. Route tests assert both exact central mounts, strict/extra/body bounds, and contract parity; logSHA2566844be5e862bb4e17e8a62df05b964f428414969d0fadc5585be07107ed6fce0."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/src/pinet_core/api.py agent-business-core/runtime/src/pinet_core/control_api.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Exact API mounts pass Ruff and diff checks. Each central file diff is only one import and one include_router; no other API changes. Native HTTP/RLS6cases collect-only, actual acceptance deferred to Root."
+    }
+  ],
+  "eventId": "99e08f5e-760d-4ecb-b88f-46e632fd3e35",
+  "sequence": 2,
+  "at": "2026-10-16T01:24:52.179Z"
+}

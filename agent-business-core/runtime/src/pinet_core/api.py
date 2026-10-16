@@ -41,6 +41,7 @@ from .contracts import (
     WorkerEvent,
 )
 from .control.routes import router as control_router
+from .creation.editorial_review_routes import router as editorial_review_router
 from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
@@ -114,6 +115,7 @@ app.include_router(workspace_read_router)
 app.include_router(workspace_topics_router)
 app.include_router(workspace_team_router)
 app.include_router(creation_router)
+app.include_router(editorial_review_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
 app.include_router(customer_text_router)

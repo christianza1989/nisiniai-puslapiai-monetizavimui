@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Add a separate current-Session native editorial review and atomic batch approval bridge with strict revision pins, server-bound actor identity and immutable operation receipt reconciliation.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/editorial_review.py",
+    "agent-business-core/runtime/src/pinet_core/creation/editorial_review_routes.py",
+    "agent-business-core/runtime/scripts/customer_editorial_review_contract.py",
+    "content-studio/scripts/customer-content-workflow.mjs",
+    "content-studio/scripts/customer-editorial-review.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root explicit scope from7eb21e241625d46fb8a0770db94f12be4fd931d4; issue66 reservation6205626286. Existing content_completion only reads; editorial_preparation expressly excludes review/approval and its generic invoke is not reused. Canonical Node model recordEditorialReview/approveReviewedBatch already owns review/readiness/fact/media/source/link and atomic write gates.",
+    "Before new bridge, focused import regression1FAIL0.17s ModuleNotFoundError pinet_core.creation.editorial_review. Private baseline logSHA2560580248ed4b8dbe38c1a9001d11a059740108501473f93e0dff92e1cdd02ee47. Real actual reviews/PASS are not fabricated; root supplies evidence only after its actual review.",
+    "Source-only helper scope. Native_mutation_guard real current Session/owner/S6/accepted candidate/source/host and no active Creation/GUIDE reused. Root owns actual PostgreSQL/provider/customer/serving/adoption/portal. UI peer Foundation/candidate-preview files and frozen S42 journals remain disjoint. Central API mounting is coordinated separately with Root."
+  ],
+  "rollback": "Scoped source revert before adoption; retain immutable before/dispatch/applied native operation evidence and existing reviews/approvals/releases. Never rebase uncertain operations, overwrite receipts, clear facts or rewrite historical approval. Foundation retains its existing authenticated release path.",
+  "id": "upgrade-2d0b8a5a-631c-4387-8617-6473189d7529",
+  "branch": "codex/verslomatika-editorial-review-bridge-20261016",
+  "baseSha": "7eb21e241625d46fb8a0770db94f12be4fd931d4",
+  "createdAt": "2026-10-16T01:03:15.185Z"
+}

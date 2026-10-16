@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root3357222 integrated as41d32e7, actual bridge/source checks atcc532113b5a4fca62a74fa1a555cd6a6913c3fbf. Native HTTP/RLS/Node cohort first5PASS1FAIL217.07s; original raw SHAa404acc3e81486bf59de6236174633bee8c93ff24e7609b4d485e3c8c3ddee49 retained. Only failure was test setup expecting S6 before required current-source private intake continuity. Test-only0c0dde3 integrated as5605f4191c7870c32f0585a0b4b154308eafa112; no production code change, targeted scenario1PASS5deselected30.62s. Thus six distinct actual cases across the two pinned commands, not a claim of one clean six-case run or erased firstFAIL. Both private-intake-missing and then S6-stale boundaries preserve native case bytes. Root35Python/9NodePASS; earlier standalone collection lacked runtime/tests PYTHONPATH and was corrected without source edits. Original0032 preserved/provider0, dedicated empty native QA only, no operational-case review/approval or serving adoption.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_editorial_review_bridge.py offline_tests/test_editorial_review_contract.py -q -p no:cacheprovider with canonical runtime/src/tests paths",
+      "result": "PASS",
+      "evidence": "Root35PASS6.98s, strict DTO/actor/Session/authority/contract behavior; no fabricated evidence or default PASS values."
+    },
+    {
+      "command": "PINET_PUBLIC_CORE_PATH and STUDIO_PUBLIC_CORE_DIR=<exact255fea> node --test content-studio/test/customer-editorial-review.test.mjs",
+      "result": "PASS",
+      "evidence": "Root9PASS63.978s: real synthetic canonical model review/atomic approval, exact replay, stale current facts, sources/link/media readiness, lost/uncertain/busy/corrupt/history boundaries; no customer data/provider."
+    },
+    {
+      "command": "Dedicated PostgreSQL six editorial HTTP/RLS cases then corrected source-continuity case with -k changed_execution_source",
+      "result": "PASS",
+      "evidence": "Five non-source casesPASS atcc532; corrected distinct sixthPASS30.62s at5605 after explicit unchanged native intake continuity, then S6 denial. First5PASS1FAIL remains. Original0032 snapshot equalityPASS; actual source/mount code identical between these pins (test-only diff)."
+    }
+  ],
+  "eventId": "374ec007-08a0-4f19-9d50-2b440ea7ed92",
+  "sequence": 3,
+  "at": "2026-10-16T01:55:07.767Z"
+}

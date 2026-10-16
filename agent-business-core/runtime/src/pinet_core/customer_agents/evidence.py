@@ -17,6 +17,13 @@ from .models import Config
 EVENT_LIMIT = 1000
 
 
+def scripted_runs_only():
+    # Missing-version historical Episodes stay eligible. Incremental DM preview
+    # has its own transcript-prefix evidence and never claims a complete script.
+    return Conversation.payload["customer_text_binding"]["task_calibration"]["version"].astext.is_distinct_from(
+        "customer-agent-direct-preview.v1")
+
+
 def usage(events, *, truncated=False):
     return _usage(events, truncated=truncated)
 
@@ -213,7 +220,8 @@ async def listing(token, creation_id, agent_id, *, revision=None, limit=20, curs
             Conversation.payload["customer_text_binding"]["user_id"].astext == session.user_id,
             Conversation.payload["customer_text_binding"]["creation_id"].astext == creation.id,
             Conversation.payload["customer_text_binding"]["task_calibration"]["agent_id"].astext == agent.id,
-            Conversation.payload["customer_text_binding"]["task_calibration"]["config_revision_id"].astext == config.id)
+            Conversation.payload["customer_text_binding"]["task_calibration"]["config_revision_id"].astext == config.id,
+            scripted_runs_only())
         expires = int(utcnow().timestamp()) + 300
         if cursor:
             after, expires = open_cursor(cursor, session, scope_id,

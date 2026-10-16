@@ -1055,4 +1055,16 @@ setup repair16PASS. Five actual PostgreSQL tests collected only. No helper DB,
 provider, current-case, serving, browser or portal work. Root owns actual QA/adoption.
 Saved-agent incremental preview remains a required following source packet.
 
+2026-10-16 helper S42 NATIVE PREVIEW DELIVERY: isolated
+`codex/verslomatika-direct-native-preview-20261016` starts from Root
+`bfa8c6cd4f4c572aa507da408af596361b5b4099`, retaining its actual 59-case
+consultant/legacy acceptance event. Only assigned direct-preview/native hooks,
+Job indexes, additive0044, offline/native-QA tests and the two new Stage2 journals
+are transferred as one net commit. Original WIP40516cd and repaired lineage97e53ef
+remain in the original direct-messenger worktree. All runtime/source/test/migration
+bytes match that fully tested original tree:1908 offline PASS,8 SKIP,67 subtests,
+86.75s. Seven native cases are prepared/collected only. Frozen upgrade158 and
+Root Wellness handoff are unchanged. Root owns actual0044 DB/model/serving/UI
+acceptance; helper DB/provider/current-case/serving operations remain0.
+
 S42 actual-PG repair2026-10-16: helper own branch codex/verslomatika-direct-consultant-repair-20261016 fromea924493; Stage2 WIP paused/separate. Root retained9FAIL48PASS941.82s plusfirst50342883 diagnostic. Exactdirect.py/direct_schema.py +direct/teamPGtests scopedissue66 comment6204095479, upgrade158981cf. Triggernamecast, narrowlegacy/terminalaccountingapplicability, immutableMapnolock/noUPDATE; inheritedS37testordering correctedwithboundedtwo-transactionproof. Focused86PASS/Ruff/nativecollect24only; helperDB/provider/case/serving0. RootactualfreshPG/adoptionpending.

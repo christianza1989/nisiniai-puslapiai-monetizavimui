@@ -71,7 +71,8 @@ async def blockers(tx, session, row, *, chat=None):
     if chat is not None:
         observed = direct_scope.checked(chat)
         if chat.mode != "consultant":
-            result.append("preview_not_admitted")
+            from .direct_preview import blockers as native_blockers
+            result.extend(await native_blockers(tx, session, row, chat))
         elif observed["recipient"].model_dump(mode="json") != direct_policy.recipient(row, observed["recipient"].role):
             result.append("recipient_not_current")
         child = await tx.get(Topic, chat.child_topic_id, populate_existing=True)
@@ -105,11 +106,15 @@ async def chat_view(tx, session, row, chat):
     reasons = await blockers(tx, session, row, chat=chat)
     native = await tx.get(Thread, chat.task_thread_id, populate_existing=True)
     preview = chat.mode == "agent_preview"
+    conversation_id = None
+    if preview:
+        from .direct_preview_budget import binding_row
+        conversation_id = (await binding_row(tx, chat)).conversation_id
     return topics.project(ChatView, chat_id=chat.id, portfolio_id=row.portfolio_id, parent_topic_id=row.id,
         anchor=topics.anchor_of(row), execution_scope=observed["execution"], recipient=observed["recipient"], mode=chat.mode,
         native_state={"configuration_state": "draft", "calibration_status": "UNVERIFIED", "module_admission": "not_admitted",
-            "channel_activation": "not_performed", "preview_admitted": False} if preview else None,
-        native_conversation_id=None, can_send=not reasons, blockers=reasons, turn_count=native.last_sequence, turn_limit=20,
+            "channel_activation": "not_performed", "preview_admitted": not reasons} if preview else None,
+        native_conversation_id=conversation_id, can_send=not reasons, blockers=reasons, turn_count=native.last_sequence, turn_limit=20,
         created_at=chat.created_at, created_source_revision=chat.source_revision, tools=[], external_actions=False)
 
 
@@ -126,6 +131,9 @@ def create_fingerprint(row, value):
 
 
 async def create(tx, session, portfolio_id, topic_id, value):
+    if value.mode == "agent_preview":
+        from .direct_preview import create as native_create
+        return await native_create(tx, session, portfolio_id, topic_id, value)
     async with tx.begin_nested():
         row = await parent(tx, session, portfolio_id, topic_id, lock=True)
         if not await schema_ready(tx):
@@ -145,35 +153,39 @@ async def create(tx, session, portfolio_id, topic_id, value):
             raise ControlError(409, "preview_not_admitted")
         if value.recipient.model_dump(mode="json") != direct_policy.recipient(row, value.recipient.role):
             raise ControlError(409, "recipient_not_current")
-        child = await topics.create(tx, session, row.portfolio_id, Create(idempotency_key=uuid5(NAMESPACE,
-            digest([binding(row), row.id, str(value.idempotency_key)])), anchor=topics.anchor_of(row),
-            title=CAPABILITIES[value.recipient.role][1]))
-        child_id = child["current_topic"]["topic_id"]
-        native_id, team_id = new_id(), new_id()
-        recipient = value.recipient.model_dump(mode="json")
-        execution = execution_for(row)
-        chat = DirectChat(id=new_id(), **binding(row), parent_topic_id=row.id, child_topic_id=child_id,
-            task_thread_id=native_id, team_thread_id=team_id, business_id=row.business_id if execution["kind"] == "business" else None,
-            grant_id=row.grant_id if execution["kind"] == "business" else None, mode=value.mode,
-            recipient=recipient, recipient_sha256=digest(recipient), execution_scope=execution, execution_sha256=digest(execution),
-            session_id=session.id, source_revision=settings().control_source_revision, idempotency_key=str(value.idempotency_key),
-            request_fingerprint=fingerprint)
-        tx.add(chat)
-        await tx.flush()  # RLS sees the owned mapping before inserting nullable task parents.
-        tx.add(Thread(id=native_id, business_id=chat.business_id, organization_id=row.organization_id,
-            user_id=row.user_id, environment_id=row.environment_id, last_sequence=0))
-        await tx.flush()
-        tx.add(TeamThread(id=team_id, **binding(row), topic_id=child_id, task_thread_id=native_id,
-            business_id=chat.business_id, grant_id=chat.grant_id, event_sequence=0))
-        await tx.flush()
-        child_row = await tx.get(Topic, child_id)
-        for role, capability in CAPABILITIES.items():
-            tx.add(Member(id=participant_id(child_row, role), **binding(row), team_thread_id=team_id,
-                role=role, capability_id=capability[0]))
-        await tx.flush()
+        chat = await persist_chat(tx, session, row, value)
         await parent(tx, session, portfolio_id, topic_id, lock=True)
         return await chat_view(tx, session, row, chat)
 
+
+async def persist_chat(tx, session, row, value, *, chat_id=None):
+    child = await topics.create(tx, session, row.portfolio_id, Create(idempotency_key=uuid5(NAMESPACE,
+        digest([binding(row), row.id, str(value.idempotency_key)])), anchor=topics.anchor_of(row),
+        title=CAPABILITIES[value.recipient.role][1] if value.mode == "consultant" else "Agento peržiūra"))
+    child_id = child["current_topic"]["topic_id"]
+    native_id, team_id = new_id(), new_id()
+    recipient = value.recipient.model_dump(mode="json")
+    execution = execution_for(row)
+    chat = DirectChat(id=chat_id or new_id(), **binding(row), parent_topic_id=row.id, child_topic_id=child_id,
+        task_thread_id=native_id, team_thread_id=team_id, business_id=row.business_id if execution["kind"] == "business" else None,
+        grant_id=row.grant_id if execution["kind"] == "business" else None, mode=value.mode,
+        recipient=recipient, recipient_sha256=digest(recipient), execution_scope=execution, execution_sha256=digest(execution),
+        session_id=session.id, source_revision=settings().control_source_revision, idempotency_key=str(value.idempotency_key),
+        request_fingerprint=create_fingerprint(row, value))
+    tx.add(chat)
+    await tx.flush()  # RLS sees the owned mapping before inserting nullable task parents.
+    tx.add(Thread(id=native_id, business_id=chat.business_id, organization_id=row.organization_id,
+        user_id=row.user_id, environment_id=row.environment_id, last_sequence=0))
+    await tx.flush()
+    tx.add(TeamThread(id=team_id, **binding(row), topic_id=child_id, task_thread_id=native_id,
+        business_id=chat.business_id, grant_id=chat.grant_id, event_sequence=0))
+    await tx.flush()
+    child_row = await tx.get(Topic, child_id)
+    for role, capability in CAPABILITIES.items():
+        tx.add(Member(id=participant_id(child_row, role), **binding(row), team_thread_id=team_id,
+            role=role, capability_id=capability[0]))
+    await tx.flush()
+    return chat
 
 def send_fingerprint(chat, value):
     return digest({"kind": direct_scope.KIND, "chat_id": chat.id, "parent_topic_id": chat.parent_topic_id,
@@ -189,16 +201,23 @@ async def add_event(tx, chat, task, author, content, *, event_id=None, reply=Non
     thread.event_sequence += 1
     event = TeamEvent(id=event_id or new_id(), **binding(chat), task_id=task.id, team_thread_id=thread.id,
         sequence=thread.event_sequence, author_type=author, author_user_id=chat.user_id if author == "user" else None,
-        participant_id=None if author == "user" else participant_id(child, author), attempt_id=attempt,
-        native_episode_task_id=None, kind="owner_message" if author == "user" else "answer", reply_to_event_id=reply,
+        participant_id=None if author in {"user", "saved_agent"} else participant_id(child, author), attempt_id=attempt,
+        native_episode_task_id=task.id if author == "saved_agent" else None,
+        kind="owner_message" if author == "user" else "answer", reply_to_event_id=reply,
         content=content, content_sha256=hashlib.sha256(content.encode()).hexdigest(), source_revision=task.source_revision)
     tx.add(event)
     await tx.flush()
     return event
 
 
-async def send(tx, session, portfolio_id, topic_id, chat_id, value):
+async def send(tx, session, portfolio_id, topic_id, chat_id, value, *, _preview_scope=None):
     from .direct_projection import event_view, turn_view
+    if _preview_scope is None:
+        row, chat = await owned(tx, session, portfolio_id, topic_id, chat_id)
+        old = await tx.scalar(select(Task.id).where(Task.idempotency_key == str(value.idempotency_key)))
+        if chat.mode == "agent_preview" and old is None:
+            from .direct_preview import preflight_send
+            _preview_scope = await preflight_send(session, row, chat)
     try:
         async with tx.begin_nested():
             row, chat = await owned(tx, session, portfolio_id, topic_id, chat_id, lock=True)
@@ -218,7 +237,7 @@ async def send(tx, session, portfolio_id, topic_id, chat_id, value):
                 raise ControlError(409, reasons[0])
             from ..tasks.codex import RunnerError
             try:
-                await call_slot(tx, row.user_id, additional=1)
+                await call_slot(tx, row.user_id, additional=3 if chat.mode == "agent_preview" else 1)
             except RunnerError as error:
                 raise ControlError(429, error.code) from None
             native = await tx.scalar(select(Thread).where(Thread.id == chat.task_thread_id).with_for_update())
@@ -243,6 +262,11 @@ async def send(tx, session, portfolio_id, topic_id, chat_id, value):
                 deadline=utcnow()+timedelta(hours=24)))
             await tx.flush()
             event = await add_event(tx, chat, task, "user", value.content, event_id=owner_id, reply=reply)
+            if chat.mode == "agent_preview":
+                from .direct_preview_budget import allocate, binding_row
+                if _preview_scope is None:
+                    raise ControlError(409, "preview_not_admitted")
+                await allocate(tx, task, chat, await tx.get(TeamTurn, task.id), await binding_row(tx, chat), _preview_scope)
             await append_event(tx, task)
             await parent(tx, session, portfolio_id, topic_id, lock=True)
             return topics.project(DirectAccepted, chat_id=chat.id, turn=await turn_view(tx, session, row, chat, task),
@@ -286,5 +310,12 @@ async def task_scope(tx, task, *, lock=False):
 
 
 async def saved_usage(tx, task_id, run_id, user_id, environment_id, source_revision):
+    # Retained accounting must survive a revoked grant hiding Task/allocation
+    # rows from RLS. The existing narrow definer checks the exact run and actor;
+    # a visibility probe cannot decide which immutable ledger owns this charge.
+    native = await tx.scalar(text("SELECT workspace_calibration_run_usage(:t,:r,:u,:e)"),
+        {"t": task_id, "r": run_id, "u": user_id, "e": environment_id})
+    if native is not None:
+        return native["usage"]
     return await tx.scalar(text("SELECT workspace_direct_run_usage(:t,:r,:u,:e,:s)"),
         {"t": task_id, "r": run_id, "u": user_id, "e": environment_id, "s": source_revision})

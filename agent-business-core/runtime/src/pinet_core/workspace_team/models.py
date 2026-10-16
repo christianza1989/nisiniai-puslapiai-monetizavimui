@@ -160,3 +160,19 @@ class DirectChat(Owned, Base):
         ForeignKeyConstraint(["session_id", "user_id", "environment_id"],
             [f"control_sessions.{key}" for key in ("id", "user_id", "environment_id")], ondelete="RESTRICT"),
     )
+
+
+class DirectPreview(Owned, Base):
+    """Immutable actual native Conversation binding, separate from direct chat intent."""
+    __tablename__ = "control_workspace_direct_previews"
+    business_id: Mapped[str] = mapped_column(String)
+    grant_id: Mapped[str] = mapped_column(String)
+    conversation_id: Mapped[str] = mapped_column(String)
+    snapshot: Mapped[dict] = mapped_column(JSONB)
+    snapshot_sha256: Mapped[str] = mapped_column(String)
+    native_scope: Mapped[dict] = mapped_column(JSONB)
+    native_scope_sha256: Mapped[str] = mapped_column(String)
+    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("conversation_id"),
+        ForeignKeyConstraint(BINDING, [f"{DirectChat.__tablename__}.{key}" for key in BINDING], ondelete="RESTRICT"),
+        ForeignKeyConstraint(["conversation_id", "business_id", "environment_id"],
+            [f"conversations.{key}" for key in ("id", "business_id", "environment_id")], ondelete="RESTRICT"))

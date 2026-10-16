@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Prepare and retain an authenticated approved native candidate preview before final audit certification, with an opaque proof and separately bounded owned inspection callback.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation_wire.py",
+    "content-studio/scripts/customer-site-foundation.mjs",
+    "content-studio/scripts/customer-site-preview.mjs",
+    "agent-business-core/runtime/offline_tests/test_candidate_preview_preparation.py",
+    "content-studio/test/candidate-preview-preparation.test.mjs",
+    "docs/decisions/VERSLOMATIKA_CANDIDATE_PREVIEW_PREPARATION_2026_10_16.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Bounded committed-source review at root7eb21e241625d46fb8a0770db94f12be4fd931d4/public255fea found localCompletion requires PHASE-1-AUDIT and eight package-bound PASS review areas before its only native preview producer call. Candidate only exports; no authenticated preparation operation exists. Root assigned this distinct bridge, while peer owns actual review/batch approval.",
+    "Original focused offline baseline: missing maintained foundation.prepare_preview operation, 1FAIL1.68s; no database, build, server, original case or provider calls. Final certify gates must remain unchanged; no fake review or approval unlock."
+  ],
+  "rollback": "Scoped source revert before adoption; keep original failed fixtures, all historical journals, approved packages and actual customer evidence unchanged. Root owns actual build/PG/browser/adoption; no helper live operation.",
+  "id": "upgrade-b7002131-38ad-446d-9fdb-b35cb2ff63cc",
+  "branch": "codex/verslomatika-candidate-preview-20261016",
+  "baseSha": "7eb21e241625d46fb8a0770db94f12be4fd931d4",
+  "createdAt": "2026-10-16T01:02:50.113Z"
+}

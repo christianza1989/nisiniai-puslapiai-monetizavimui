@@ -206,6 +206,14 @@ export async function checkCustomerSitePreview(context,scope,release,buildSha256
   return {state:'retained-current',buildSha256};
 }
 
+export async function retainedCustomerSitePreview(context,scope,release,buildSha256){
+  await checkCustomerSitePreview(context,scope,release,buildSha256);
+  const parent=path.join(process.env.STUDIO_PUBLIC_CORE_DIR,'output/foundation-preview',digest(scope));
+  return {checkout:path.join(parent,'repo'),parent,scopeSha256:digest(scope),
+    packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision,
+    siteId:context.siteId,releaseId:release.evidence.release_id,buildSha256};
+}
+
 async function availablePort(wanted=0){
   const server=createServer();await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(wanted,'127.0.0.1',resolve);});
   const port=server.address().port;await new Promise(resolve=>server.close(resolve));return port;

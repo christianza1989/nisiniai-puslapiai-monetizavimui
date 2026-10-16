@@ -87,6 +87,9 @@ async def test_real_owner_s6_inspection_and_blocked_preview_with_workers_held(bu
 
     async def authorized():
         async with scope(token=token_hash(token)) as tx:
+            # A token-scoped transaction must authenticate before owner RLS reads.
+            # Foundation.verify deliberately does not grant that actor identity.
+            await customer_session(tx, token)
             await foundation.verify(tx, pin)
             return True
 

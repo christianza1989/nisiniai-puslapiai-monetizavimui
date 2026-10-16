@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/33",
+  "note": "Source 51118722bca13225bba7dd0defd27862182fe625 deployed 13 October as 6c68c0a4-7519-401b-85a5-73bcf462b8a3. On 16 October canonical full LLM seller passes; merchant charge/payout flags true, existing key V2 list still 403. Owner approved separate scoped backend key; submission reached owner-authentication gate, no captured/uploaded key or transfer. Hostinger exact own-inbox query 200 confirms existing message, no new message sent. Companion main808581d integrated, 2 affected regression tests pass. PR remains draft; no main merge or completed payout acceptance claimed.",
+  "eventId": "83697d20-4a9c-44ce-a02e-708ec1aa5e71",
+  "sequence": 3,
+  "at": "2026-10-16T09:23:29.583Z"
+}

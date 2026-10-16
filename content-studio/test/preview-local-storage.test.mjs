@@ -50,7 +50,7 @@ async function fixture(t){
   const owner={version:1,scopeSha256,packageSha256:'b'.repeat(64),releaseId:'00000000-0000-4000-8000-000000000001',publicSourceRevision:source,nativeContextSha256:'c'.repeat(64)};
   await writeFile(path.join(parent,'owner.json'),JSON.stringify(owner));
   const siteId='creation-'+'d'.repeat(32),database={binding:'DB',database_name:'site-creator-d1',database_id:'00000000-0000-4000-8000-000000000000'};
-  const config={main:'index.js',assets:{binding:'ASSETS'},vars:{NICHE_DEV_SITE_ID:siteId},d1_databases:[database]};
+  const config={main:'index.js',assets:{binding:'ASSETS'},vars:{NICHE_DEV_SITE_ID:siteId},d1_databases:[database],queues:{producers:[],consumers:[]}};
   async function build(){
     await preview.installPreviewStorage(checkout,owner);await mkdir(path.join(checkout,'dist/server'),{recursive:true});
     await writeFile(path.join(checkout,'dist/server/wrangler.json'),JSON.stringify(config));await writeFile(path.join(checkout,'dist/server/index.js'),'// inert compiled fixture');
@@ -111,7 +111,9 @@ test('ASSETS-only, remote or mail/R2 generated bindings fail before runtime init
   for(const patch of [{d1_databases:[]},{d1_databases:[{...f.config.d1_databases[0],remote:true}]},
     {d1_databases:[{...f.config.d1_databases[0],database_id:'ffffffff-ffff-4fff-8fff-ffffffffffff'}]},
     {send_email:[{name:'LEAD_EMAIL'}]},{r2_buckets:[{binding:'STORE'}]},{vars:{NICHE_DEV_SITE_ID:'foreign'}},
-    {vars:{NICHE_DEV_SITE_ID:f.siteId,LEAD_SMTP_ENABLED:'1'}}]){
+    {vars:{NICHE_DEV_SITE_ID:f.siteId,LEAD_SMTP_ENABLED:'1'}},
+    {queues:{producers:[{binding:'EXTERNAL',queue:'outbound'}],consumers:[]}},{queues:{producers:[],consumers:[{queue:'outbound'}]}},
+    {queues:{producers:[],consumers:[],unknown:[]}},{queues:[]},{queues:null}]){
     await writeFile(file,JSON.stringify({...f.config,...patch}));
     await assert.rejects(preview.previewStorageConfig(f.checkout,f.siteId),{code:'foundation_preview_storage_binding_invalid'});
   }

@@ -67,12 +67,16 @@ export async function previewStorageGitEnvironment(checkout){
 export async function previewStorageConfig(checkout,siteId){
   const raw=await readArtifactBytes(path.join(checkout,'dist/server/wrangler.json'),1048576),config=JSON.parse(raw);
   const databases=config.d1_databases;
+  // Wrangler emits empty producers/consumers even when no queues are bound.
+  // Accept exactly that inert default, never a queue binding or unknown option.
+  const queues=config.queues,emptyQueues=queues===undefined||(queues!==null&&typeof queues==='object'&&!Array.isArray(queues)
+    &&Object.entries(queues).every(([key,value])=>['producers','consumers'].includes(key)&&Array.isArray(value)&&value.length===0));
   if(!Array.isArray(databases)||databases.length!==1||!databases[0]
       ||Object.entries(DATABASE).some(([k,v])=>databases[0][k]!==v)
       ||databases[0].remote!==undefined&&databases[0].remote!==false
       ||databases[0].preview_database_id!==undefined&&databases[0].preview_database_id!==DATABASE.database_id
       ||stableV2(config.vars)!==stableV2({NICHE_DEV_SITE_ID:siteId})||config.assets?.binding!=='ASSETS'
-      ||['send_email','r2_buckets','kv_namespaces','services','queues','hyperdrive','vectorize','mtls_certificates','analytics_engine_datasets','unsafe']
+      ||!emptyQueues||['send_email','r2_buckets','kv_namespaces','services','hyperdrive','vectorize','mtls_certificates','analytics_engine_datasets','unsafe']
         .some(k=>config[k]&&Object.keys(config[k]).length))fail('foundation_preview_storage_binding_invalid');
   return {version:1,sha256:hash(raw),database:DATABASE};
 }

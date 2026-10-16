@@ -99,3 +99,15 @@ def test_native_allocation_dispatch_casts_actual_postgresql_trigger_name():
         if value.startswith("CREATE FUNCTION workspace_calibration_insert("))
     patched = direct_preview_schema.allocation_patch(public(source, "workspace_calibration_insert"))
     assert "workspace_direct_preview_budget_check(TG_TABLE_NAME::VARCHAR,to_jsonb(NEW)" in patched
+
+
+@pytest.mark.parametrize("name,patcher,comparison", [
+    ("workspace_direct_task_fence", direct_preview_schema.task_patch, "NEW.adapter_revision<>"),
+    ("workspace_direct_task_boundary", direct_preview_schema.boundary_patch, "j->>'adapter_revision'="),
+])
+def test_native_adapter_case_is_parenthesized_inside_plpgsql_if(name, patcher, comparison):
+    source = next(value for value in direct_schema.guard_functions() if value.startswith("CREATE FUNCTION " + name + "("))
+    patched = patcher(public(source, name))
+    # PL/pgSQL reads IF conditions until a top-level THEN, including a CASE's
+    # inner THEN unless its SQL expression is protected by parentheses.
+    assert comparison + "(CASE c.mode WHEN 'agent_preview' THEN 'workspace-native-direct-preview.v1' ELSE 'codex-workspace-direct.v1' END)" in patched

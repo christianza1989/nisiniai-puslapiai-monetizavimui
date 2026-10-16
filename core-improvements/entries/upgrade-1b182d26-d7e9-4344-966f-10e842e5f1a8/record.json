@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Parenthesize incremental native-preview adapter CASE expressions so PL/pgSQL IF reads the complete SQL condition instead of stopping at the inner THEN.",
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_preview_schema.py",
+    "agent-business-core/runtime/offline_tests/test_direct_preview_schema.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root integrated Stage2 as cef15af4a122d23bfb8c3b10bad724c242cc5ea6. First actual fresh0044 migration failed before bootstrap/tests with syntax error at end of input in workspace_direct_task_fence. Only the explicitly authorized failed-task-fence.private.sql was read; SHA256306fb7e4af3db08ce1a771a2a48926382d831d951bc554f97a64cd784981c735. Failed database/raw prepare result remain Root-owned and retained; serving3b7 unchanged/provider0.",
+    "New focused regression before repair2FAIL7deselected0.57s; private logSHA2568a0fd184d08195d043750cc73c70e3d4304107400094a915144ae90f078683a5. The boundary expression was already nested in coalesce; it is also parenthesized consistently. No permission/fence semantics or final delimiter change.",
+    "CPU-only pglast8.6/PostgreSQL18.6 parser reproduces exact original DDL failure and parses the same DDL after only CASE parentheses. All11 generated function definitions parse. PostgreSQL REL_17_STABLE pl_gram.y read_sql_construct stops at top-level THEN. Optional parser installed only in ignored own artifacts; runtime/dependency manifests and Root QA venv unchanged. No helper DB/model calls; actual migration acceptance remains Root-owned."
+  ],
+  "rollback": "Scoped source revert before any Stage2 serving adoption; retain failed QA/migration receipts and immutable conversations/usage. Never rewrite historical journals or customer metadata. Root must repeat migration in a fresh dedicated QA database.",
+  "id": "upgrade-1b182d26-d7e9-4344-966f-10e842e5f1a8",
+  "branch": "codex/verslomatika-direct-native-preview-20261016",
+  "baseSha": "c610499706478aaff8f82e3234b9699323dd917c",
+  "createdAt": "2026-10-16T00:06:13.451Z"
+}

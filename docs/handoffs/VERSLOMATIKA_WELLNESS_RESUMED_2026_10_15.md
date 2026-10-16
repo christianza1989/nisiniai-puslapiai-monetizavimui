@@ -1,5 +1,13 @@
 # Kubilų verslas — atnaujintas darbas platformoje
 
+## Current actual continuation — 2026-10-16 09:24 UTC
+
+Same operational0044 database now runs clean core834df57bb3dacbe8b5c6aebbb985628287e1f2c5/public255fea0813bf1aabeaeea2f2de0b29564118f2fc. Hidden API18871 PID29224/supervisor42892 replaced the vanished old30932; full backup, all88tables and163native files verified before source-only cutover. All paid workers and external channels remain held. Normal owner current-source intake/S6 succeeded200. Inspection guard fix is integrated; actual restricted PG2PASS50.22s after test-only callback authentication repair, original failed401 preserved.
+
+All11real nonempty pages now have canonical session-bound editorial reviews and atomic approval through the normal owner HTTP APIs. Two empty future guides remain drafts. Physical native file SHA015c3074a972c3c568154bdc5eecd353a1907a0c39261fa1d5bb3032ea8cf10e; older058c83 is historical. Six review areas contain specific evidence, with full renderer/form/visual/language acceptance expressly pending. Maudis remains a candidate, no agreement or factory-photo rights inferred.
+
+Actual native prepare failed before compile: private Git Trace2 proves Filename too long. Restricted subprocess lacks user Git profile/core.longpaths. Root fixes command-scoped preview Git configuration under PR164/comment6212313869 and upgrade04b93433; regression26PASS20.26s, actual source adoption/build next. No new provider calls, deployment or full Foundation PASS. Browser CUA independently fails writing kernel assets (os error3) even after reset; native apps are disabled. Preserve browser/visual UNVERIFIED and continue genuine HTTP/form/storage checks when build is available. C free space approximately2GB after Windows pagefile growth; no cleanup deletion bypass.
+
 ## Latest bounded recovery — 2026-10-16
 
 The SAME owned PostgreSQL container9cb5d646 was started after current identity/loopback checks and reached real `pg_isready`/healthy status. A fresh read-only integrity check again passed original0032, old0042 all86 tables, current0044 all86 inherited tables/two empty direct tables and163 native files. No operational DB copy was created. Two exact owned historical preview Node processes3028/3029 were retired; active3030/PID2100 is preserved. API18871 is now clean1fb/public255, **PID30932 / exec46485**, with all five paid worker flags held. A new normal-owner login succeeded and explicit upgraded private-intake returned200/private_draft_imported/current1fb; physical058c83/contextab170a remain exact. Evidence is private `direct44-operational-upgrade-20261016/continuity-after-cleanup` and `post-cleanup-integrity.private.json`.

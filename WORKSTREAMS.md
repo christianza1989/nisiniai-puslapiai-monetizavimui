@@ -1,3 +1,7 @@
+## Windows preview checkout — Root 2026-10-16
+
+Root reserves customer-site-preview.mjs, its focused test, narrow documentation and unique journal under PR164/comment6212313869. Real 834df57/public255fea attempt retained: sanitized child Git lacked user core.longpaths and failed checkout with Filename too long before compile. Use command-scoped longpaths only; same owner/source/package/Session/storage gates. Actual case, failed logs and other checkouts preserved; no provider or publication permission added.
+
 ## Preview local storage — supervision 2026-10-16
 
 SOURCE WINDOW RELEASED for Root handoff; issue66#6206035681, owner01a13d30, own codex/verslomatika-preview-local-storage-20261016 fromcc532113b5a4fca62a74fa1a555cd6a6913c3fbf, read-only public255fea. Private customer-site-preview.mjs + one-line Foundation authorization passthrough, new focused tests/docs/upgrade-c1634f35 only. Fixed owned DATA input and separately hashed generated DB/schema/build, per-child exact DATA exclusion with public compiler still refusing other source changes. Canonical drizzle0004+0005 init uses same short owned state as serve, preserves attempt evidence and existing files, total150s init+inspection and startup revocation. Final9new mocked-storage/7preparation/9existing guardian tests PASS; no helper actual DB/build/server/customer/provider operations. All earlier39b/b700 and semantic/messenger journals frozen. Root owns actual build/form/aggregate/row-retention adoption; full-site and launch UNVERIFIED.

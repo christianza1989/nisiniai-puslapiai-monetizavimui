@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Make maintained Windows preview checkout and strict source reads independent of user-profile Git longpath configuration in sanitized subprocesses.",
+  "paths": [
+    "content-studio/scripts/customer-site-preview.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "evidence": [
+    "Real private preparation at core834df57bb3dacbe8b5c6aebbb985628287e1f2c5/public255fea0813bf1aabeaeea2f2de0b29564118f2fc failed before build. Retained private Git Trace2 identifies Filename too long in generated detached checkout; ordinary source/owner/Session guard remained active and provider calls were zero.",
+    "Root PR164 reservation comment6212313869 and WORKSTREAMS. Command-scoped core.longpaths preserves sanitized environment and exact source checks. First isolated checkout-only fix retained9PASS1FAIL because subsequent Git source reads also needed command-scoped configuration; correction applies it to maintained preview Git helper.",
+    "New real detached deep-checkout regression verifies beyond260-character tracked file bytes with absent global config and local longpaths=false, exact source validation and unchanged local config. Existing source/guardian/admission/storage/preparation tests remain separate from actual site acceptance."
+  ],
+  "rollback": "Scoped source/test revert before adoption; preserve original failed attempts, approvals, private immutable releases and owned preview/state files. Do not change global Git config, publish, or enable provider runners.",
+  "id": "upgrade-04b93433-5d7d-4b69-9f3c-4fb4bcd4e62d",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "834df57bb3dacbe8b5c6aebbb985628287e1f2c5",
+  "createdAt": "2026-10-16T09:22:52.922Z"
+}

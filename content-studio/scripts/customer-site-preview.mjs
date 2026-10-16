@@ -12,12 +12,19 @@ import {requestCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-si
 
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex'),digest=value=>hash(stableV2(value));
 const fail=code=>{throw Object.assign(new Error(code),{code});};
-const git=(root,args,raw=false)=>{try{const value=execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],timeout:10000,maxBuffer:1048576,windowsHide:true});return raw?value:value.trim();}catch{fail('foundation_preview_source_unavailable');}};
+const git=(root,args,raw=false)=>{try{const value=execFileSync('git',['-c','core.longpaths=true',...args],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],timeout:10000,maxBuffer:1048576,windowsHide:true});return raw?value:value.trim();}catch{fail('foundation_preview_source_unavailable');}};
 const allowedData=file=>/^(content-packages\/|content-staging\/|public\/content-assets\/)/.test(file)||['lib/generated/content-packages.json','lib/generated/content-admissions.json'].includes(file);
 const HOSTING='.openai/hosting.json',EXCLUDES='.sites-runtime/preview-storage.gitignore';
 const HOSTING_BYTES='{"d1":"DB"}\n',EXCLUDES_BYTES='/.openai/hosting.json\n';
 const DATABASE={binding:'DB',database_name:'site-creator-d1',database_id:'00000000-0000-4000-8000-000000000000'};
 const SCHEMAS=['drizzle/0004_niche_leads.sql','drizzle/0005_niche_interest_daily.sql'];
+
+export function createPreviewWorktree(root,checkout,source){
+  if(!path.isAbsolute(root)||!path.isAbsolute(checkout)||!/^[a-f0-9]{40}$/.test(source))fail('foundation_preview_source_unavailable');
+  // The restricted child environment deliberately excludes the user's Git
+  // profile. Generated preview paths must not depend on its core.longpaths.
+  git(root,['worktree','add','--detach',checkout,source]);
+}
 
 async function storageInput(checkout,file,expected){
   await assertArtifactDirectories(checkout,path.dirname(path.join(checkout,file)));
@@ -221,7 +228,7 @@ export async function prepareCustomerSitePreview(context,scope,release){
       publicSourceRevision:source,nativeContextSha256:hash(context.directory)};
     const ownerFile=path.join(parent,'owner.json');
     try{await writeFile(ownerFile,JSON.stringify(owner)+'\n',{flag:'wx'});}catch(error){if(error.code!=='EEXIST')throw error;if(stableV2(JSON.parse(await readArtifactBytes(ownerFile,16384)))!==stableV2(owner))fail('foundation_preview_foreign_checkout');}
-    try{await lstat(checkout);}catch(error){if(error.code!=='ENOENT')throw error;git(publicCore,['worktree','add','--detach',checkout,source]);}
+    try{await lstat(checkout);}catch(error){if(error.code!=='ENOENT')throw error;createPreviewWorktree(publicCore,checkout,source);}
     await previewSource(checkout,source,true);
     const dependencies=await previewDependencies(publicCore,checkout),link=path.join(checkout,'node_modules');
     try{const info=await lstat(link);if(!info.isSymbolicLink()||await realpath(link)!==await realpath(path.join(publicCore,'node_modules')))fail('foundation_preview_dependencies_changed');}

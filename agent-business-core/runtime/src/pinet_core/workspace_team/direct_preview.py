@@ -198,12 +198,18 @@ async def context_for(tx, task, row, chat, turn):
     context = {budget.CONTEXT_KEY: header["plan_sha256"], "native_base_revision": revision,
         "native_base_sha256": preview.transcript_hash(events), "native_need_revision": conversation.need_revision}
     context["quality_request_sha256"] = review.request_intent_sha256(quality_request(plan, context))
-    turn.context, turn.context_sha256 = context, digest(context)
-    # The owner event already advanced the direct clock; no group history is imported.
+    # Finish query-triggered autoflush observations before mutating the one-time
+    # context/hash/cutoff bundle protected by the unchanged immediate SQL CHECK.
     owner = await tx.get(TeamEvent, turn.owner_event_id)
-    turn.context_cutoff = owner.sequence
-    turn.deadline = min(turn.deadline, header["expires_at"], conversation.expires_at,
+    if (not owner or owner.id != turn.owner_event_id or owner.task_id != task.id
+            or owner.team_thread_id != chat.team_thread_id or binding(owner) != binding(chat)
+            or owner.author_type != "user" or owner.kind != "owner_message" or owner.author_user_id != task.user_id
+            or owner.content != task.message or owner.source_revision != task.source_revision
+            or type(owner.sequence) is not int or owner.sequence < 1):
+        raise ControlError(503, "direct_history_invalid")
+    deadline = min(turn.deadline, header["expires_at"], conversation.expires_at,
         utcnow() + timedelta(seconds=3 * settings().chat_runner_seconds + 30))
+    turn.context, turn.context_sha256, turn.context_cutoff, turn.deadline = context, digest(context), owner.sequence, deadline
     tx.info["direct_deadlines"][task.id] = turn.deadline
     await tx.flush()
     return {**context, "_task_id": task.id, "_user_id": task.user_id, "_chat_id": chat.id,

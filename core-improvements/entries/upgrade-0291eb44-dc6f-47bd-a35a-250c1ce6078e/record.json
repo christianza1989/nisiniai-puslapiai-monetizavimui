@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Observe and validate the native owner event before atomically freezing the existing Turn context/hash/cutoff/deadline bundle, avoiding query-invoked autoflush of an invalid partial tuple.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_preview.py",
+    "agent-business-core/runtime/offline_tests/test_direct_preview_fence.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root7e1e1ffc54d8866096dbf82f176561310d236da4 fresh0044 migration/bootstrap PASS, then first native lifecycle case FAIL20.11s before remaining cases; exact reported query-invoked autoflush violation control_workspace_team_turns_check1, provider0 and serving unchanged. No Root raw log/customer files were read for this repair.",
+    "Canonical workspace_team/schema.py CHECK requires context/context_sha256/context_cutoff allNULL or allpopulated with valid hash/cutoff. The native path assigned context+hash before tx.get(TeamEvent), which could flush a partial tuple. Consultant freeze already assigns all3 after observations. No new context JSON acceptance or SQL/schema relaxation is required.",
+    "Autoflush-aware no-DB regression initially6FAIL10deselected3.30s across valid/missing/foreign task/foreign chat/wrong author/invalid clock cases; baseline logSHA2561737f6aff21d81ce51b83fb32b9e3d444dee1183ac5c75313e284b2ff05b92ad. Strengthened final test uses the actual mapped TeamTurn and rejects repeated mutation. Existing Task/allocation/native context and immutable SQL fences remain unchanged."
+  ],
+  "rollback": "Scoped source revert only before adoption; keep previous failed QA/database/usage/migration evidence intact. Root repeats in a fresh dedicated QA database. No in-place DB repair or frozen journal edits.",
+  "id": "upgrade-0291eb44-dc6f-47bd-a35a-250c1ce6078e",
+  "branch": "codex/verslomatika-direct-native-preview-20261016",
+  "baseSha": "94f53212c5aaf4a5d984a3a05747e1f1e78b9331",
+  "createdAt": "2026-10-16T00:14:39.626Z"
+}

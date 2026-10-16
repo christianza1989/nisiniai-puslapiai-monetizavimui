@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Feature/generation guard split implemented in only service.py/lifecycle.py. advance and lifecycle actors select strict generation_enabled preserving all prior worker gates; router/Foundation/receipts unchanged and retain auth/source/S6/native checks. Existing allowlist test seam now mocks generation_enabled; no assertion weakened. Baseline1FAIL12.22s retained SHAa6e0e909033b5de74d1a414b2c63e0fe857ba4c52b1da23e7e75098998981356. First native collection failed missing offline_tests package because runtime root omitted; corrected invocation only to src;tests;runtime. Broad offline2003PASS8SKIP67subtests+2FAIL1ERROR203.68s retained SHA44b2ae4d622abccef611ee02dfbef9c30a02ecec9dfb1f62a13fb73254bd9b77: Windows1450 insufficient-system-resources temp path and two unchanged1s/6s process deadlines. Exactly3cases passed2.82s unchanged (SHAa3f299766240d5c8104e0310e9ce507d9d435d842076f44de8aa3a500acbaf66). No cleanfullsuitePASS claimed; no runtime cleanup/threshold/deadline/operational change.",
+  "eventId": "92ee7c6c-9b36-4763-afe5-d6c232f84e61",
+  "sequence": 2,
+  "at": "2026-10-16T08:24:31.057Z"
+}

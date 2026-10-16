@@ -1050,6 +1050,26 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
 # S42 direct messenger consultant checkpoint — 2026-10-16
 
+2026-10-16 helper NATIVE EDITORIAL REVIEW BRIDGE RESERVED from exact Root
+7eb21e241625d46fb8a0770db94f12be4fd931d4 in own editorial-review-bridge worktree,
+branch codex/verslomatika-editorial-review-bridge-20261016. Scope: NEW creation
+editorial_review service/strict DTO/router, standalone contract, NEW
+customer-editorial-review.mjs and exact review-editorial command hunks in
+customer-content-workflow.mjs, focused offline/Node/native-PG tests, docs/new
+upgrade. Root explicitly authorized the two central router import/mount hunks;
+they are included with no other central API edits. Canonical native_mutation_guard and model review/atomic approval own
+all gates; editorial_preparation authority is unchanged. Server-bound actor,
+exact site/page/revision/planning pins, immutable operation receipts and uncertain
+dispatch refusal; no independent release. Root owns actual DB/provider/customer/
+serving/adoption/portal. UI peer owns Foundation candidate-preview paths. S42
+source/journals and those peer paths stay untouched.
+
+2026-10-16 helper source packet verified:1951 offline PASS/8skipped/67subtests,
+48 Node PASS (existing workflow plus9 new cases),6 native HTTP/RLS cases collected
+only. Contract parity, exact Python Ruff and diff checks PASS. Upgrade2d0b8a5a
+and mount93e6d016 remain helper-owned until source handoff; Root owns actual PG,
+operational review evidence and coordinated adoption. No helper DB/provider calls.
+
 Helper chat01a13440 owns `codex/verslomatika-direct-messenger-20261016` from Root3b7;
 wire9bea/b237/393 already handed to Root. Functional consultant packet reserves
 workspace_team direct helpers/models/routes/quota/adapter, tasks models/worker/

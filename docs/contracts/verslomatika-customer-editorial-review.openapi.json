@@ -1,0 +1,1094 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Native editorial review and atomic approval",
+    "version": "editorial-review.v1",
+    "description": "Current authenticated owner/Session/S6/accepted candidate/source/host and idle Creation/GUIDE. Explicit revision-bound six-area evidence only; reviewer/actor comes from the real server user. Canonical model writers preserve fact/media/source/link/current-review/atomic-batch gates. Immutable operation receipts support exact replay; ambiguous dispatched writes fail closed. No generic commands, preparation authority expansion, fact clearing, independent release, deployment, model calls or invented review/PASS. Full-site and launch stay UNVERIFIED."
+  },
+  "paths": {
+    "/customer/v2/creations/{creation_id}/editorial-reviews": {
+      "post": {
+        "operationId": "recordCustomerEditorialReview",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-body-byte-limit": 131072,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecordReview"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Committed safe result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditorialResultEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/creations/{creation_id}/editorial-approvals": {
+      "post": {
+        "operationId": "approveCustomerEditorialBatch",
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "x-unknown-query-parameters": "rejected",
+        "x-body-byte-limit": 131072,
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveBatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Committed safe result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditorialResultEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Safe refusal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id"
+        ]
+      },
+      "Evidence": {
+        "additionalProperties": false,
+        "properties": {
+          "usefulness": {
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Usefulness",
+            "type": "string"
+          },
+          "facts": {
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Facts",
+            "type": "string"
+          },
+          "sources": {
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Sources",
+            "type": "string"
+          },
+          "media": {
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Media",
+            "type": "string"
+          },
+          "links": {
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Links",
+            "type": "string"
+          },
+          "presentation": {
+            "maxLength": 4000,
+            "minLength": 20,
+            "title": "Presentation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "usefulness",
+          "facts",
+          "sources",
+          "media",
+          "links",
+          "presentation"
+        ],
+        "title": "Evidence",
+        "type": "object"
+      },
+      "PagePin": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "planning_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Planning Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "page_id",
+          "revision_sha256",
+          "planning_sha256"
+        ],
+        "title": "PagePin",
+        "type": "object"
+      },
+      "RecordReview": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "candidate_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Candidate Sha256",
+            "type": "string"
+          },
+          "canonical_host": {
+            "maxLength": 253,
+            "minLength": 1,
+            "title": "Canonical Host",
+            "type": "string"
+          },
+          "operation_id": {
+            "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "expected_site_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Site Sha256",
+            "type": "string"
+          },
+          "page": {
+            "$ref": "#/components/schemas/PagePin"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Evidence"
+          }
+        },
+        "required": [
+          "accepted_revision",
+          "candidate_sha256",
+          "canonical_host",
+          "operation_id",
+          "expected_site_sha256",
+          "page",
+          "evidence"
+        ],
+        "title": "RecordReview",
+        "type": "object"
+      },
+      "ApproveBatch": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_revision": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Accepted Revision",
+            "type": "integer"
+          },
+          "candidate_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Candidate Sha256",
+            "type": "string"
+          },
+          "canonical_host": {
+            "maxLength": 253,
+            "minLength": 1,
+            "title": "Canonical Host",
+            "type": "string"
+          },
+          "operation_id": {
+            "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "expected_site_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Expected Site Sha256",
+            "type": "string"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/PagePin"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Pages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "accepted_revision",
+          "candidate_sha256",
+          "canonical_host",
+          "operation_id",
+          "expected_site_sha256",
+          "pages"
+        ],
+        "title": "ApproveBatch",
+        "type": "object"
+      },
+      "CompletionView": {
+        "additionalProperties": false,
+        "properties": {
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "accepted_revision": {
+            "anyOf": [
+              {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Revision"
+          },
+          "accepted_source_revision": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{40}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted Source Revision"
+          },
+          "candidate_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Sha256"
+          },
+          "site_id": {
+            "anyOf": [
+              {
+                "pattern": "^creation-[a-f0-9]{32}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Id"
+          },
+          "canonical_host": {
+            "anyOf": [
+              {
+                "maxLength": 253,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonical Host"
+          },
+          "state": {
+            "enum": [
+              "not_imported",
+              "current"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "revision_pending": {
+            "title": "Revision Pending",
+            "type": "boolean"
+          },
+          "observed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed At"
+          },
+          "site_context_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Site Context Sha256"
+          },
+          "observation_scope": {
+            "const": "current_private_workflow",
+            "default": "current_private_workflow",
+            "title": "Observation Scope",
+            "type": "string"
+          },
+          "language_review_mode": {
+            "enum": [
+              "required",
+              "paused_local_pilot"
+            ],
+            "title": "Language Review Mode",
+            "type": "string"
+          },
+          "language_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Language Status",
+            "type": "string"
+          },
+          "private_release_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Private Release Status",
+            "type": "string"
+          },
+          "seo_geo_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Seo Geo Status",
+            "type": "string"
+          },
+          "full_f1_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Full F1 Status",
+            "type": "string"
+          },
+          "launch_status": {
+            "const": "UNVERIFIED",
+            "default": "UNVERIFIED",
+            "title": "Launch Status",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not_verified_by_studio",
+            "default": "not_verified_by_studio",
+            "title": "Deployment",
+            "type": "string"
+          },
+          "permitted_actions": {
+            "items": {
+              "const": "refresh",
+              "type": "string"
+            },
+            "maxItems": 1,
+            "title": "Permitted Actions",
+            "type": "array"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/Page"
+            },
+            "maxItems": 200,
+            "title": "Pages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "creation_id",
+          "accepted_revision",
+          "accepted_source_revision",
+          "candidate_sha256",
+          "site_id",
+          "canonical_host",
+          "state",
+          "revision_pending",
+          "observed_at",
+          "site_context_sha256",
+          "language_review_mode",
+          "permitted_actions",
+          "pages"
+        ],
+        "title": "CompletionView",
+        "type": "object"
+      },
+      "Operation": {
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "const": "native-editorial-review.v1",
+            "title": "Version",
+            "type": "string"
+          },
+          "state": {
+            "const": "applied",
+            "title": "State",
+            "type": "string"
+          },
+          "operation_id": {
+            "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$",
+            "title": "Operation Id",
+            "type": "string"
+          },
+          "action": {
+            "enum": [
+              "record-review",
+              "approve-batch"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "actor_id": {
+            "pattern": "^session-user:[a-f0-9-]{36}$",
+            "title": "Actor Id",
+            "type": "string"
+          },
+          "request_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Request Sha256",
+            "type": "string"
+          },
+          "before_site_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Before Site Sha256",
+            "type": "string"
+          },
+          "applied_site_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Applied Site Sha256",
+            "type": "string"
+          },
+          "before_evidence_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Before Evidence Sha256",
+            "type": "string"
+          },
+          "receipt_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Receipt Sha256",
+            "type": "string"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/PageReceipt"
+            },
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Pages",
+            "type": "array"
+          },
+          "changed": {
+            "title": "Changed",
+            "type": "boolean"
+          },
+          "replayed": {
+            "title": "Replayed",
+            "type": "boolean"
+          },
+          "editorial_review": {
+            "enum": [
+              "recorded",
+              "not-performed"
+            ],
+            "title": "Editorial Review",
+            "type": "string"
+          },
+          "approval": {
+            "enum": [
+              "approved",
+              "not-performed"
+            ],
+            "title": "Approval",
+            "type": "string"
+          },
+          "release": {
+            "const": "not-performed",
+            "title": "Release",
+            "type": "string"
+          },
+          "deployment": {
+            "const": "not-performed",
+            "title": "Deployment",
+            "type": "string"
+          },
+          "full_site": {
+            "const": "UNVERIFIED",
+            "title": "Full Site",
+            "type": "string"
+          },
+          "launch": {
+            "const": "UNVERIFIED",
+            "title": "Launch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "version",
+          "state",
+          "operation_id",
+          "action",
+          "actor_id",
+          "request_sha256",
+          "before_site_sha256",
+          "applied_site_sha256",
+          "before_evidence_sha256",
+          "receipt_sha256",
+          "pages",
+          "changed",
+          "replayed",
+          "editorial_review",
+          "approval",
+          "release",
+          "deployment",
+          "full_site",
+          "launch"
+        ],
+        "title": "Operation",
+        "type": "object"
+      },
+      "Page": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "path": {
+            "maxLength": 300,
+            "pattern": "^/(?:[a-z0-9-]+/)*$",
+            "title": "Path",
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "home",
+              "guide",
+              "article",
+              "index",
+              "author",
+              "policy",
+              "about",
+              "contact",
+              "service",
+              "product",
+              "faq",
+              "location"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "title": "Title",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "planning_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Planning Sha256",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "blocked",
+              "reviewed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "blockers": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 100,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "fact_notes": {
+            "items": {
+              "maxLength": 600,
+              "minLength": 1,
+              "type": "string"
+            },
+            "maxItems": 40,
+            "title": "Fact Notes",
+            "type": "array"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "maxItems": 20,
+            "title": "Sources",
+            "type": "array"
+          },
+          "media_count": {
+            "maximum": 60,
+            "minimum": 0,
+            "title": "Media Count",
+            "type": "integer"
+          },
+          "media_files_present": {
+            "title": "Media Files Present",
+            "type": "boolean"
+          },
+          "review_current": {
+            "title": "Review Current",
+            "type": "boolean"
+          },
+          "reviewed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed At"
+          },
+          "reviewer": {
+            "anyOf": [
+              {
+                "maxLength": 120,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewer"
+          },
+          "has_approved_revision": {
+            "title": "Has Approved Revision",
+            "type": "boolean"
+          },
+          "approved_revision_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved Revision Sha256"
+          },
+          "internal_planned": {
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Internal Planned",
+            "type": "integer"
+          },
+          "internal_attached": {
+            "maximum": 30,
+            "minimum": 0,
+            "title": "Internal Attached",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "page_id",
+          "path",
+          "type",
+          "title",
+          "revision_sha256",
+          "planning_sha256",
+          "state",
+          "blockers",
+          "fact_notes",
+          "sources",
+          "media_count",
+          "media_files_present",
+          "review_current",
+          "reviewed_at",
+          "reviewer",
+          "has_approved_revision",
+          "approved_revision_sha256",
+          "internal_planned",
+          "internal_attached"
+        ],
+        "title": "Page",
+        "type": "object"
+      },
+      "PageReceipt": {
+        "additionalProperties": false,
+        "properties": {
+          "page_id": {
+            "pattern": "^[a-z0-9][a-z0-9-]{1,79}$",
+            "title": "Page Id",
+            "type": "string"
+          },
+          "revision_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Revision Sha256",
+            "type": "string"
+          },
+          "planning_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Planning Sha256",
+            "type": "string"
+          },
+          "review_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Review Sha256",
+            "type": "string"
+          },
+          "reviewer": {
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Reviewer",
+            "type": "string"
+          },
+          "approved_revision_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved Revision Sha256"
+          },
+          "approval_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approval Sha256"
+          }
+        },
+        "required": [
+          "page_id",
+          "revision_sha256",
+          "planning_sha256",
+          "review_sha256",
+          "reviewer",
+          "approved_revision_sha256",
+          "approval_sha256"
+        ],
+        "title": "PageReceipt",
+        "type": "object"
+      },
+      "Result": {
+        "additionalProperties": false,
+        "properties": {
+          "completion": {
+            "$ref": "#/components/schemas/CompletionView"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/Operation"
+          }
+        },
+        "required": [
+          "completion",
+          "operation"
+        ],
+        "title": "Result",
+        "type": "object"
+      },
+      "Source": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "maxLength": 2048,
+            "pattern": "^https://",
+            "title": "Url",
+            "type": "string"
+          },
+          "label": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Label",
+            "type": "string"
+          },
+          "reason": {
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Reason",
+            "type": "string"
+          },
+          "verified": {
+            "title": "Verified",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "url",
+          "label",
+          "reason",
+          "verified"
+        ],
+        "title": "Source",
+        "type": "object"
+      },
+      "EditorialResultEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "editorial-review.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Result"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "EditorialResultEnvelope",
+        "type": "object"
+      }
+    }
+  }
+}

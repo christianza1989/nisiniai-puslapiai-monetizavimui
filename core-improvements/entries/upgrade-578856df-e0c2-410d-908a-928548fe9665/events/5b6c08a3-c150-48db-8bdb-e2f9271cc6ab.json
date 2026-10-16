@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Companion255fea0813bf1aabeaeea2f2de0b29564118f2fc is a clean3-file commit over source-compatible1a26f289 and fetched mainec8a9c03. Native index grid and CollectionPage already cover the guide; shared projected semantic hub now fixes its visible/JSON-LD breadcrumb. Preserve nearest nested hub, index self identity and standalone unrelated rejection. Added relation modes attached/related/rich paragraph/heading/list plus foreign-host/site, hidden/revoked/future and reverse-only negative cases. PR40 is pinned to OWN base ref1a26f289 because the foreign remote native branch remains9100673; no foreign branch/file changed. No server/release/HTTP/model/provider/DB/customer operation. Public source first, then paired core; actual adoption remains Root-owned.",
+  "checks": [
+    {
+      "command": "node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "All73 public core tests PASS19.596s, including10 actual maintained native SSR tests. Original8PASS/1FAIL reproduction retained."
+    },
+    {
+      "command": "node ../CORE_SHARED/scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Exact3 staged public files/26449 bytes, zero findings."
+    },
+    {
+      "command": "node ../CORE_SHARED/scripts/git-freshness.mjs --repo . --companion ../CORE_SHARED --phase handoff",
+      "result": "PASS",
+      "evidence": "Fetched private main808581d9 and public mainec8a9c03 are ancestors; own bases bfa8c6cd/1a26f289, all foreign checkouts preserved."
+    }
+  ],
+  "eventId": "5b6c08a3-c150-48db-8bdb-e2f9271cc6ab",
+  "sequence": 3,
+  "at": "2026-10-16T00:16:26.357Z"
+}

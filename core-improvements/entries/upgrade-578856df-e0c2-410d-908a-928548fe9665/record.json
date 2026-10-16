@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Companion native guide breadcrumbs omit an explicitly linked guide index when the guide has a stable URL outside its prefix",
+  "category": "code",
+  "evidence": [
+    "Public repository christianza1989/niche-public-core, exact base 1a26f289092cecadc5799de898e809dc1769498a over fetched main ec8a9c032fe926d1d9722802d8eb26fa8bd02937. Main does not yet contain the native renderer/fixture chain; source-compatible own worktree preserves that dependency.",
+    "Real maintained NativeContentSite synthetic SSR baseline: existing8 PASS, new explicit index-to-guide cross-prefix breadcrumb case FAIL; actual index already discovers the guide. No HTTP/release/customer operation.",
+    "Root explicitly assigned the bounded companion dependency under shared issue66; exact public PR and commit will be included in the delivery event. These paths refer to the public companion, not private source."
+  ],
+  "paths": [
+    "lib/content-projection-v2.mjs",
+    "components/niche/native-content-site.tsx",
+    "tests/native-niche-v2.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped public commit revert; deploy/activate neither repository from this record. Core consumer requires the matching public helper and fails closed without it.",
+  "id": "upgrade-578856df-e0c2-410d-908a-928548fe9665",
+  "branch": "codex/verslomatika-foundation-index-20261016",
+  "baseSha": "bfa8c6cd4f4c572aa507da408af596361b5b4099",
+  "createdAt": "2026-10-16T00:11:03.459Z"
+}

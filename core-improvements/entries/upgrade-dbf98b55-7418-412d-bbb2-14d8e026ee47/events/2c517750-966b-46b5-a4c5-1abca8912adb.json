@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Private core selector uses the actual companion projection + contentArticleHubV2; immutable schema/revision, required same-site index, publication time and common rendered hub remain mandatory. Core8 focused pure tests PASS0.885s. Actual companion source255fea0813bf1aabeaeea2f2de0b29564118f2fc / PR40 is required FIRST; old companion without the helper fails foundation_source_unavailable. Parent core exactbfa8c6cd, private main808581d9. No native case, release, HTTP, browser, DB/provider/model/serving or final Foundation acceptance. Original predicate failure and dependency setup failure remain in fixing event.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-site-foundation-index.test.mjs",
+      "result": "PASS",
+      "evidence": "8 pure focused cases; stable outside-prefix guide stays a guide at the same URL; nested index and missing/wrong/foreign/unready/omitted-required-hub cases; input bytes unchanged."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Only scoped source/test/journal/WORKSTREAM metadata; no whitespace error."
+    }
+  ],
+  "eventId": "2c517750-966b-46b5-a4c5-1abca8912adb",
+  "sequence": 3,
+  "at": "2026-10-16T00:16:20.801Z"
+}

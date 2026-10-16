@@ -42,6 +42,8 @@ def patch(definition, name, changes):
 
 
 def task_patch(value):
+    # PL/pgSQL's IF scanner stops at a top-level THEN. Protect the SQL CASE's
+    # inner THEN with parentheses rather than changing the function delimiter.
     return patch(value, "workspace_direct_task_fence", [(
         "OR c.mode<>'consultant' OR c.recipient->>'kind'<>'consultant'",
         """OR NOT((c.mode='consultant' AND c.recipient->>'kind'='consultant')
@@ -50,7 +52,7 @@ def task_patch(value):
             AND EXISTS(SELECT 1 FROM public.control_workspace_calibration_allocations a WHERE a.task_id=t.id
               AND a.plan->>'version'='workspace-native-preview-turn.v1' AND a.plan->>'task_id'=t.id
               AND a.plan->>'chat_id'=c.id AND a.business_id=c.business_id AND a.session_id=t.session_id)))"""),
-        ("OR NEW.adapter_revision<>'codex-workspace-direct.v1'", "OR NEW.adapter_revision<>CASE c.mode WHEN 'agent_preview' THEN 'workspace-native-direct-preview.v1' ELSE 'codex-workspace-direct.v1' END")])
+        ("OR NEW.adapter_revision<>'codex-workspace-direct.v1'", "OR NEW.adapter_revision<>(CASE c.mode WHEN 'agent_preview' THEN 'workspace-native-direct-preview.v1' ELSE 'codex-workspace-direct.v1' END)")])
 
 
 def boundary_patch(value):
@@ -71,7 +73,7 @@ def boundary_patch(value):
             AND a.session_id=t.session_id AND a.source_revision=t.source_revision))),FALSE)
         OR c.business_id IS DISTINCT FROM t.business_id"""), (
         "AND j->>'adapter_revision'='codex-workspace-direct.v1'",
-        "AND j->>'adapter_revision'=CASE c.mode WHEN 'agent_preview' THEN 'workspace-native-direct-preview.v1' ELSE 'codex-workspace-direct.v1' END")])
+        "AND j->>'adapter_revision'=(CASE c.mode WHEN 'agent_preview' THEN 'workspace-native-direct-preview.v1' ELSE 'codex-workspace-direct.v1' END)")])
 
 
 def team_patch(value):

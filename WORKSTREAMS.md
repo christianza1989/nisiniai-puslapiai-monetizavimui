@@ -1099,6 +1099,14 @@ Private screenshots/DOM/receipts retained; owned previews closed, viewport resto
 UI3030 stays741; full product preview/premium design/200%/Foundation remain OPEN.
 Only own handoff metadata changed; no new helper, frontend start or policy bypass.
 
+2026-10-17 Root LIVE PREVIEW SOURCE CHECKPOINT: helper1684e7f integrated over frozen
+b059995 wire; Root portal5651f0e adds fixed BFF and current-ready preview controls,
+43 source checks/TypeScript PASS, two peer P2 repairs source-confirmed. Incremental
+core8cdf-to1684 coverage PASS nine shared paths. Source only: serving62abbed/741d
+unchanged, no new build, SQL acceptance or child. C approximately0.76GB free;
+human-run checked obsolete-output cleanup pending, no deletion/policy bypass.
+Root owns further actual acceptance and both handed-off live-preview journals.
+
 2026-10-16 helper SITE INSPECTION GUARD RESERVED issue66/comment6211107441:
 new codex/site-inspection-guard-20261016 branch in clean OWN helper worktree from
 exactRoot1fb549619c7f1bc5d9b4f8b523e3f2af1329ae27/public255fea0813bf1aabeaeea2f2de0b29564118f2fc,

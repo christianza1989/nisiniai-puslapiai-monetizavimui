@@ -1,5 +1,16 @@
 # Kubilų verslas — atnaujintas darbas platformoje
 
+## Customer preview source checkpoint — 2026-10-17
+
+Root integration now includes functional core1684e7f and portal5651f0e source for
+explicit native website preview start/open/expiry/close. Helper pure/mock checks,
+43 portal checks, TypeScript and bounded independent source review passed; actual
+PG/lease/browser acceptance and production build are pending. Serving62abbed/API
+18871 and741d/UI3030 remain unchanged. C free space is approximately0.76GB; the
+checked human-run obsolete-build cleanup remains pending, with no deletion or
+policy bypass. Exact pins, checks and recovery order are in
+[the live-preview checkpoint](VERSLOMATIKA_LIVE_PREVIEW_CHECKPOINT_2026_10_17.md).
+
 ## Browser recovery — 2026-10-17 local time
 
 Chrome control and ordinary UI login recovered. Current unchanged62abbed/public255

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Bind the owned native preview build to fixed local D1 configuration and canonical lead/interest schema, initialize only its scoped persistence through the existing process guardian.",
+  "paths": [
+    "content-studio/scripts/customer-site-preview.mjs",
+    "content-studio/scripts/customer-site-foundation.mjs",
+    "content-studio/test/preview-local-storage.test.mjs",
+    "docs/decisions/VERSLOMATIKA_PREVIEW_LOCAL_STORAGE_2026_10_16.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root reported actual public255 build/server32919 exposed ASSETS only; missing env.DB makes maintained lead503 and interest503. No helper private case/build/server/database operation. Committed source confirms Vite hosting.json absent in generated checkout, canonical drizzle0004_niche_leads.sql and0005_niche_interest_daily.sql are idempotent CREATE-only schema.",
+    "Separate Root-assigned repair atcc532113b5a4fca62a74fa1a555cd6a6913c3fbf/public255, paired start main808581d/publicec8PASS. Existing39b/b700 frozen; keep current source/host/owner/Session/build guards and150s process lifetime. Installed Wrangler4.92 source/config-schema and official D1 documentation verify explicit local file/persist/config options."
+  ],
+  "rollback": "Scoped source revert before adoption; preserve every old preview/build/database row/failed state and original receipts. New source scope owns a fresh fixed config, rejects incompatible prior records, never resets/purges/migrates foreign runtime. Root owns actual full build and native inquiry/measurement persistence acceptance.",
+  "id": "upgrade-c1634f35-789b-4977-ae0b-d289ef8c7315",
+  "branch": "codex/verslomatika-preview-local-storage-20261016",
+  "baseSha": "cc532113b5a4fca62a74fa1a555cd6a6913c3fbf",
+  "createdAt": "2026-10-16T01:40:02.096Z"
+}

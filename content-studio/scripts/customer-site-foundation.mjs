@@ -209,7 +209,7 @@ export async function withPreparedCandidatePreview(input,proof,operation,stillAu
   const retained=await retainedPreparation(context,scope,release,directory,proof);
   if(proof===null||proof===undefined)fail('foundation_preview_preparation_stale');
   await fresh();
-  const result=await withCustomerSitePreview(retained.prepared,started=>authorizedInspection(()=>operation(started),stillAuthorized));
+  const result=await withCustomerSitePreview(retained.prepared,started=>authorizedInspection(()=>operation(started),stillAuthorized),null,stillAuthorized);
   await fresh();
   await retainedPreparation(context,scope,release,directory,proof);
   return result;

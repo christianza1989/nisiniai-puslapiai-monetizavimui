@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Rendered HTML auditor inserts spaces at inline link/punctuation and word-fragment boundaries, falsely reporting intact approved article text missing.",
+  "category": "code",
+  "evidence": [
+    "SKILLS/niche-site-audit/scripts/rendered_site.py Element.text joins all children with spaces: See <a>guide</a>. becomes See guide .; browser/native exact DOM text remains intact."
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "SKILLS/niche-site-audit/scripts/rendered_site_test.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/181",
+  "rollback": "Scoped revert of Element.text and its regression file; original failed audit retained. No runtime deployment or acceptance threshold change.",
+  "id": "upgrade-d1194751-7231-4c92-9a41-81dd64022aa6",
+  "branch": "codex/geraskvapas-market-20261015",
+  "baseSha": "dc920fc00d6208a89cd3dfbbd2b189944750c1b1",
+  "createdAt": "2026-10-16T06:46:32.303Z"
+}

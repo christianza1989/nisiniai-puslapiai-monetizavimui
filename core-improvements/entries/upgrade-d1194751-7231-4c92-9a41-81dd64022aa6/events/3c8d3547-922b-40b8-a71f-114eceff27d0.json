@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original9-test baseline had4inline-boundary failures. Fixed semantic text reconstruction passes9tests while genuine missing/hidden text and missing modified date still fail. Actual current24page HTML inspector has0page errors; private sitemap remains intentionally not admitted.",
+  "checks": [
+    {
+      "command": "python SKILLS/niche-site-audit/scripts/rendered_site_test.py",
+      "result": "PASS",
+      "evidence": "9standard-library regressions, including punctuation, fragmented words, blocks/BR/cells, Unicode, hidden/missing content and same-day date instants."
+    },
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/verify-site-completion.test.mjs",
+      "result": "PASS",
+      "evidence": "6existing routing/host/redirect/size inspector regressions passed."
+    }
+  ],
+  "eventId": "3c8d3547-922b-40b8-a71f-114eceff27d0",
+  "sequence": 2,
+  "at": "2026-10-16T07:11:55.542Z"
+}

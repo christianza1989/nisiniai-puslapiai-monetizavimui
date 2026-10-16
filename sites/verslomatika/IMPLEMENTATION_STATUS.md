@@ -1,6 +1,24 @@
 # Verslomatika customer accounts, public projects and dashboard
 
-## Current local integration — 2026-10-16
+## Latest bounded recovery — 2026-10-16
+
+**Whole local platform OPEN; normal-owner login and explicit private-source intake now work.** Same owned PostgreSQL recovered with original0032/old0042/current0044/163 native files verified exact. API18871 source1fb/public255 nowPID30932; all paid workers held. Historical3028/3029 previews retired, active3030 retained. Actual private-intake returned200/current1fb without native content changes. S6 GET503/site_build_unavailable occurs before any S6 POST because its feature guard requires the paused creation worker. Backend peer owns the narrow guard repair; generation/lifecycle and all S6/owner/source checks remain required. Root actual isolated PG/adoption, genuine11-page review/approval and rendered site/form checks follow. Native058c83/contextab170a still has reviews0/approvals0/release0. C free space fluctuates3–9.5GB due Windows virtual-memory allocation; no paid retry or new operational DB copy.
+
+## Latest disk-space maintenance — 2026-10-16
+
+**Whole local platform OPEN; API18871 deliberately stopped.** The first owned-PG recovery/integrity check passed, followed by another full-C event and PG exit139 at03:43:46Z. Root stopped only verified API36804. No backend health is claimed until the same container/current operational DB passes a new check.
+
+Owner-requested cleanup measured34 obsolete UI builds plus one cache:9.27GB logical. Automatic tool review blocked recursive removal before execution; no deletion bypass was attempted. A separate checked manual cleanup script is portal `web/.local/cleanup-obsolete-builds.ps1` (inspect by default, explicit manual `-Apply`). Reversible Windows NTFS compression completed instead on all35 targets:54,473 before/after file hashes unchanged, approximately5.45GB stored/about3.82GB saved against logical content. C now reports about13.4GB free; the whole observed free-space increase is not attributed to this operation. No code, DB, native history, evidence, active preview or prepared direct build was deleted. Native site058c83 and source1fb/public255 remain exact. Exact private receipt: portal `web/.local/ntfs-compression-20261016/`. Managed old-worktree archival was refused by pinned-task/workspace protection; no worktree was removed. Preserve the existing DBs and paused native-review plan; do not create another DB or restart paid work for cleanup.
+
+## Current local recovery — 2026-10-16
+
+**Whole local platform OPEN; database availability is down.** Strict paired native source upgrade3fe integrated asb328; one-line UTF8 fixture fix983e as1fb5496. Root46Python/9Node and10 distinct actual PG cases across5+5 commands PASS, original fixture error retained/original0032 preserved/provider0. Source1fb/public255 is prepared in Root's own serving checkout. A fresh ordinary copy/migration0044 preserved86old tables/2newempty and163native files, restricted preflight and cutover checks passed.
+
+API18871 now belongs to owned1fb/PID36804/exec10290, with paid workers/channels held. Its normal login500 occurred before any native POST: C disk had0free and Docker PostgreSQL exited139, filesystemread-only. Regenerable cache prune completed; C now3–3.6GBfree, original databases/backups/files retained. Official Docker Desktop recovery is stillstarting after a60s CLI timeout; owned-container health and post-crash integrity need verification. No actual v2/S6/customer review/approval/fullsite is claimed yet. UI3030 remains741/pBmC; its backend-dependent reads are unavailable until PG recovery.
+
+Native content remains11 nonempty pages/2future,20WebP,56editorial operations/reviews0/approvals0/release0. Eleven specific review-note sets are privately prepared against the exact current native baseline, not applied. Next: restore the existing owned PG and check the SAME current operational DB/source, then NEW ordinary-owner continuity/S6, genuine review/approval, actual NativeContentSite/form/interest/retention and the separately prepared messenger UI. Do not create another copy or repeat model work to bypass an infrastructure outage. No deployment/outreach/mail/provider operation.
+
+## Prior local integration checkpoint — 2026-10-16
 
 **Whole local platform OPEN.** User-facing entry is `http://127.0.0.1:3030/dashboard`; API18871 is safely restored to clean3b7ef1baa7d0b11984a7739651041f1c0738e997/PID7572 and original ordinary0042 DB; UI741d045/buildpBmCae9BzQOC9eld58MkO stays unchanged. Paid workers/external channels are held during current compatibility repair. Root owns integration/current native case. Authorized01a13440 delivered the editorial bridge and now owns explicit native-source-upgrade continuity;01a13d30 delivered candidate preparation and local D1 storage. Revoked01a133c2 is not contacted. Homepage work remains separate.
 

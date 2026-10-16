@@ -22,6 +22,21 @@ test('reading verification binds each body to its canonical section and uses exa
   assert.ok(verifyDiscoveryOutputs(pkg,pages,{...outputs,'/llms-full.txt':full.replace('https://evidence.example/source','https://other.example/')}).includes('READING_SOURCE_MISSING:b'));
 });
 
+test('reading preserves projected inline text and its URL while HTML expects the visible sentence',()=>{
+  const guide={id:'guide',type:'guide',contentVersion:2,slug:'guide',title:'Choice',description:'Useful answer',media:[],links:[],externalLinks:[],
+    editorial:{authors:[],datePublished:'2026-10-07T07:00:00Z',dateModified:null},body:[
+      {type:'richParagraph',content:[{type:'text',text:'Palyginkite '},{type:'link',text:'sąlygas',href:'https://facts.example/terms'},{type:'text',text:', tada rinkitės.'}]},
+      {type:'richList',items:[[{type:'text',text:'Patikrinkite '},{type:'link',text:'garantiją',href:'https://facts.example/warranty'},{type:'text',text:'.'}]]}]};
+  const pkg={canonicalHost:'equipment.example',locale:'lt-LT',pages:[guide]},pages=[guide];
+  assert.equal(articleExpectations(pkg,pages,'guides')[0].bodyTexts[0],'Palyginkite sąlygas, tada rinkitės.');
+  const full='## Choice\n\nURL: https://equipment.example/guide\n2026-10-07T07:00:00Z\nPalyginkite sąlygas (https://facts.example/terms), tada rinkitės.\nPatikrinkite garantiją (https://facts.example/warranty).';
+  const outputs={'/sitemap.xml':'https://equipment.example/guide','/llms.txt':'https://equipment.example/guide','/llms-full.txt':full};
+  assert.deepEqual(verifyDiscoveryOutputs(pkg,pages,outputs),[]);
+  for(const changed of [full.replace('sąlygas (',' (').replace('  ',' '),full.replace(' (https://facts.example/terms)',''),full.replace('https://facts.example/warranty','https://foreign.example/'),full.replace(', tada rinkitės.','.')]){
+    assert.ok(verifyDiscoveryOutputs(pkg,pages,{...outputs,'/llms-full.txt':changed}).includes('READING_BODY_MISSING:guide'));
+  }
+});
+
 test('private local preview can use its exact origin Host without changing canonical or hosted defaults',()=>{
   const origin=new URL('http://127.0.0.1:8897');
   assert.equal(completionTransportHost(origin,'private-preview.lt'), 'private-preview.lt');

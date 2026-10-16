@@ -85,6 +85,24 @@ test('fixed hosting and excludes are owned DATA; public compiler still rejects e
   assert.equal(cleanBuildSource(f.checkout),null);
 });
 
+test('public compiler proves a deep generated checkout without profile or local longpaths config',async t=>{
+  const f=await fixture(t),relative='migration/'+('retained-source-'.repeat(5))+'/original.txt';
+  assert.ok(path.join(f.checkout,relative).length>260);
+  await mkdir(path.dirname(path.join(f.checkout,relative)),{recursive:true});await writeFile(path.join(f.checkout,relative),'synthetic original source');
+  const git=args=>childProcess.execFileSync('git',['-c','core.longpaths=true',...args],{cwd:f.checkout,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+  git(['add','.']);git(['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-m','deep synthetic source']);
+  const source=git(['rev-parse','HEAD']);git(['update-ref','refs/remotes/origin/main',source]);git(['config','core.longpaths','false']);
+  f.owner.publicSourceRevision=source;await writeFile(path.join(f.parent,'owner.json'),JSON.stringify(f.owner));
+  await preview.installPreviewStorage(f.checkout,f.owner);
+  const env={...await preview.previewStorageGitEnvironment(f.checkout),GIT_CONFIG_GLOBAL:path.join(f.temp,'absent-global-config')},old={};
+  try{
+    for(const [k,v]of Object.entries(env)){old[k]=process.env[k];process.env[k]=v;}
+    assert.equal(cleanBuildSource(f.checkout),source);
+    await writeFile(path.join(f.checkout,'foreign.mjs'),'// foreign source');assert.equal(cleanBuildSource(f.checkout),null);
+    assert.equal(git(['config','--local','--get','core.longpaths']),'false');
+  }finally{for(const [k,v]of Object.entries(old)){if(v===undefined)delete process.env[k];else process.env[k]=v;}}
+});
+
 test('foreign ownership, changed fixed excludes or symlink hosting never overwrite files',async t=>{
   const f=await fixture(t);await preview.installPreviewStorage(f.checkout,f.owner);
   const file=path.join(f.checkout,'.openai/hosting.json'),original=await readFile(file);

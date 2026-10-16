@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Independent baseline2PythonFAIL9PASS and1NodeFAIL6PASS retained. Corrected checker preserves inline characters and separates block boundaries; reading stream expects exact projected URL beside label while HTML expects visible text. No customer/native/approval/package or public renderer changes. Current guarded HTTP recheck using new independent checker returned0issues for same package1b6f54,11pages/4articles; backend remains frozen95f and new checker runtime adoption/full Foundation/browser/launch pending.",
+  "checks": [
+    {
+      "command": "qa-venv python -X utf8 SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "11PASS0FAIL0.031s; punctuation, split words/block separators and missing/changed/hidden body, identity/date/schema negative cases."
+    },
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/completion.test.mjs SKILLS/niche-site-audit/scripts/score-audit.test.mjs",
+      "result": "PASS",
+      "evidence": "12PASS0FAIL0.911s; literal rich reading output plus missing word/URL, foreign URL, truncated text, independent source/date/profile and strict audit negatives."
+    },
+    {
+      "command": "wellness-native-rendered-recheck.private.py inspect with maintained live guarded preview",
+      "result": "PASS",
+      "evidence": "Current HTTP11pages/4articles, exact package1b6f54/public255fea, all rendered metadata/body/schema and sitemap/llms indexes0issues, private/unknown404. Backend95f unchanged/new checker independently applied; browser/full-site/launch UNVERIFIED/provider0."
+    }
+  ],
+  "eventId": "633752c3-6477-43e4-9b3f-39aacb3492c8",
+  "sequence": 2,
+  "at": "2026-10-16T10:08:53.832Z"
+}

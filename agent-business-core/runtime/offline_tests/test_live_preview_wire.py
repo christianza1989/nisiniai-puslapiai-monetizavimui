@@ -21,7 +21,7 @@ def start():
 
 
 def ready():
-    return {"lease_id": str(uuid4()), "creation_id": str(uuid4()), "state": "ready", "accepted_revision": 1,
+    return {"lease_id": str(uuid4()), "creation_id": str(uuid4()), "idempotency_key": str(uuid4()), "state": "ready", "accepted_revision": 1,
         "scope_sha256": "a" * 64, "execution_source_revision": "b" * 40, "public_source_revision": "c" * 40,
         "site_context_sha256": "d" * 64, "created_at": "2026-10-17T00:00:00Z", "expires_at": "2026-10-17T00:01:00Z",
         "preview_url": "http://127.0.0.1:12345/", "failure_code": None, "local_preview_only": True,
@@ -117,3 +117,62 @@ def test_standalone_contract_matches_snapshot_and_exposes_only_four_bounded_oper
         assert row["x-unknown-query-parameters"] == "rejected"
     assert set(doc["components"]["schemas"]["Start"]["properties"]) == set(wire.Start.model_fields)
     assert doc["components"]["schemas"]["Start"]["additionalProperties"] is False
+
+
+def envelope(data):
+    return {"contract_version": wire.CONTRACT, "environment": "test", "source_revision": "b" * 40,
+        "observed_at": "2026-10-17T00:00:30Z", "request_id": str(uuid4()), "data": data}
+
+
+def test_required_idempotency_acknowledgement_cannot_be_omitted():
+    value = ready()
+    value.pop("idempotency_key", None)
+    with pytest.raises(ValidationError):
+        validate(wire.LeaseView, value)
+
+
+@pytest.mark.parametrize("state", ["preparing", "starting", "ready", "closing"])
+def test_active_envelope_coherence_rejects_an_old_execution_source(state):
+    value = ready() | {"state": state}
+    if state != "ready":
+        value["preview_url"] = None
+    with pytest.raises(ValidationError):
+        validate(wire.LeaseEnvelope, envelope(value) | {"source_revision": "f" * 40})
+
+
+@pytest.mark.parametrize("patch", [{"created_at": "2026-10-17T00:00:50Z"}, {"expires_at": "2026-10-17T00:02:01Z"}])
+def test_active_envelope_coherence_rejects_future_creation_or_excess_visible_lifetime(patch):
+    with pytest.raises(ValidationError):
+        validate(wire.LeaseEnvelope, envelope(ready() | patch))
+
+
+@pytest.mark.parametrize("patch", [{"current_revision": 2}, {"site_context_sha256": "e" * 64}])
+def test_ready_availability_matches_the_current_accepted_native_context(patch):
+    with pytest.raises(ValidationError):
+        validate(wire.AvailabilityEnvelope, envelope(available(ready()) | patch))
+
+
+@pytest.mark.parametrize("state", ["closed", "expired", "revoked", "failed"])
+def test_inactive_history_keeps_its_original_source_but_no_url(state):
+    value = ready() | {"state": state, "preview_url": None, "execution_source_revision": "e" * 40}
+    assert validate(wire.LeaseEnvelope, envelope(value)).data.preview_url is None
+    projected = validate(wire.AvailabilityEnvelope, envelope(available(value)))
+    assert projected.data.latest_lease.execution_source_revision == "e" * 40
+
+
+@pytest.mark.parametrize("state", ["preparing", "starting", "ready", "closing"])
+def test_availability_active_lease_cannot_hide_old_source_or_future_creation(state):
+    value = ready() | {"state": state}
+    if state != "ready":
+        value["preview_url"] = None
+    for patch in ({"execution_source_revision": "e" * 40}, {"created_at": "2026-10-17T00:00:50Z"}):
+        with pytest.raises(ValidationError):
+            validate(wire.AvailabilityEnvelope, envelope(available(value | patch)))
+
+
+def test_lease_acknowledges_exact_request_uuid_and_visible_90second_boundary():
+    key = str(uuid4())
+    value = ready() | {"idempotency_key": key, "expires_at": "2026-10-17T00:02:00Z"}
+    assert str(validate(wire.LeaseEnvelope, envelope(value)).data.idempotency_key) == key
+    with pytest.raises(ValidationError):
+        validate(wire.LeaseView, value | {"idempotency_key": "invalid"})

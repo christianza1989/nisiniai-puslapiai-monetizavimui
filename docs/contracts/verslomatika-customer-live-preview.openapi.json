@@ -3,7 +3,7 @@
   "info": {
     "title": "Authenticated bounded customer live preview",
     "version": "customer-live-preview.v1",
-    "description": "Read-only availability never starts or prepares a server. Explicit start binds current accepted revision and Results site context, current owner/Session/source/native/S6. Canonical opaque preparation is not a URL. Only a freshly verified ready owned loopback lease exposes preview_url; all other states clear it. Same UUID cannot rebase or resurrect terminal work. Current authority alone renews its short heartbeat. Close, expiry, revocation, source/native drift or shutdown close exact owned children. No caller origin/path/command/proof, paid work, channel activation or full-site/launch promotion."
+    "description": "Read-only availability never starts or prepares a server. Explicit start binds current accepted revision and Results site context, current owner/Session/source/native/S6. Canonical opaque preparation is not a URL. Lease acknowledges the immutable Start UUID. Active states bind the envelope's current source and creation time. Only a freshly verified ready owned loopback lease exposes preview_url for at most90seconds; all other states clear it. Same UUID cannot rebase or resurrect terminal work. Current authority alone renews its short heartbeat. Close, expiry, revocation, source/native drift or shutdown close exact owned children. No caller origin/path/command/proof, paid work, channel activation or full-site/launch promotion."
   },
   "paths": {
     "/customer/v2/creations/{creation_id}/live-previews": {
@@ -484,6 +484,11 @@
             "title": "Creation Id",
             "type": "string"
           },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
           "state": {
             "enum": [
               "preparing",
@@ -589,6 +594,7 @@
         "required": [
           "lease_id",
           "creation_id",
+          "idempotency_key",
           "state",
           "accepted_revision",
           "scope_sha256",

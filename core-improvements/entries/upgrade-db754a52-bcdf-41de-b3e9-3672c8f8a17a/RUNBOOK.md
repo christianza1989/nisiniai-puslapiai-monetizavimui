@@ -28,3 +28,19 @@ working-file hash. Wire/model version and paths are frozen before frontend
 codegen; later schema changes require coordinated new verification. This wire
 commit is not actual runtime acceptance or adoption. Preserve original opaque
 proofs, expired-session refusals and immutable failures; no history is migrated.
+
+## Independent pre-freeze review
+
+Root found missing Start UUID acknowledgement and envelope/current-ready
+coherence before codegen freeze. Initial e5e492d is retained. Nine new negative
+regressions first failed0.36s against it; that baseline log is retained. Follow-up
+requires immutable idempotency_key in LeaseView, active execution source matching
+its envelope, created_at<=observed_at and ready expiry in(observed_at,observed_at+90s].
+Availability's ready lease also matches current revision and native context hash.
+Inactive historical records may retain old source only without a URL.
+
+135 pure wire/Foundation/candidate-preview checks passed1.62s after correction;
+this includes the exact90-second boundary, inactive history and both envelope
+variants. Three new Python files pass Ruff. No runtime/route/server/SQL action
+was added to the wire packet. Root receives the final follow-up pin and Git-byte
+hashes before consumer generation; the earlier pin is historical, not final wire.

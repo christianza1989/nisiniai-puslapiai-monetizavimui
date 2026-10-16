@@ -34,7 +34,8 @@ def contract():
     return {"openapi": "3.1.0", "info": {"title": "Authenticated bounded customer live preview", "version": CONTRACT,
         "description": "Read-only availability never starts or prepares a server. Explicit start binds current accepted revision "
             "and Results site context, current owner/Session/source/native/S6. Canonical opaque preparation is not a URL. "
-            "Only a freshly verified ready owned loopback lease exposes preview_url; all other states clear it. "
+            "Lease acknowledges the immutable Start UUID. Active states bind the envelope's current source and creation time. "
+            "Only a freshly verified ready owned loopback lease exposes preview_url for at most90seconds; all other states clear it. "
             "Same UUID cannot rebase or resurrect terminal work. Current authority alone renews its short heartbeat. "
             "Close, expiry, revocation, source/native drift or shutdown close exact owned children. "
             "No caller origin/path/command/proof, paid work, channel activation or full-site/launch promotion."},

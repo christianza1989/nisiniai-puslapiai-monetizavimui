@@ -24,11 +24,15 @@ the candidate producer or making the frontend infer admission. Other customers'
 leases or busy metadata are never projected.
 
 Lease states are preparing,starting,ready,closing,closed,expired,revoked,failed.
+Every lease acknowledges the original Start idempotency_key. Active states must
+match the envelope's current execution source; created_at cannot be in its future.
+Inactive history can retain its old source with no URL. A current-ready latest
+lease also matches availability's current revision and native context hash.
 Only freshly verified ready state exposes preview_url: exact
 http://127.0.0.1:PORT/ with a valid nonzero TCP port. Inactive, expired, task-done or
 invalid-context state must clear it immediately, even before terminal cleanup is
 recorded. expires_at is conservative; failure can remove a URL earlier. The wire
-also rejects a ready URL already expired at its envelope observation time.
+also rejects a ready URL expired or over90seconds beyond its envelope observation.
 
 The runtime will capture/verify normal owner/Session/source/native/S6 authority,
 prepare through canonical Foundation, then own the existing

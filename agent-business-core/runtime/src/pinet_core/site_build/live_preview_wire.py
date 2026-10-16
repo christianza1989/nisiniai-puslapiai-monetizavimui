@@ -1,4 +1,5 @@
 """Current customer live-preview capability, separate from opaque preparation."""
+from datetime import timedelta
 from typing import Annotated, Literal
 from urllib.parse import urlsplit
 from uuid import UUID
@@ -11,6 +12,7 @@ Source = Annotated[str, Field(pattern=r"^[a-f0-9]{40}$")]
 Reason = Annotated[str, Field(pattern=r"^[a-z0-9_:-]{1,160}$")]
 Failure = Annotated[str, Field(pattern=r"^[a-z][a-z0-9_]{0,79}$")]
 State = Literal["preparing", "starting", "ready", "closing", "closed", "expired", "revoked", "failed"]
+ACTIVE_STATES = frozenset({"preparing", "starting", "ready", "closing"})
 
 
 class Strict(BaseModel):
@@ -33,6 +35,7 @@ class Start(Strict):
 class LeaseView(Strict):
     lease_id: UUID
     creation_id: UUID
+    idempotency_key: UUID
     state: State
     accepted_revision: int = Field(ge=1, le=20)
     scope_sha256: Digest
@@ -86,7 +89,20 @@ class Availability(Strict):
             raise ValueError("unavailable projection requires an explicit reason")
         if self.latest_lease is not None and self.latest_lease.creation_id != self.creation_id:
             raise ValueError("only this owned Creation's lease can be projected")
+        if self.latest_lease is not None and self.latest_lease.state == "ready" and (
+                self.latest_lease.accepted_revision != self.current_revision
+                or self.latest_lease.site_context_sha256 != self.site_context_sha256):
+            raise ValueError("ready lease must match current accepted native context")
         return self
+
+
+def current_projection(lease, source, observed):
+    if lease.created_at > observed:
+        raise ValueError("future lease creation is not a current projection")
+    if lease.state in ACTIVE_STATES and lease.execution_source_revision != source:
+        raise ValueError("active lease must use the current execution source")
+    if lease.state == "ready" and not observed < lease.expires_at <= observed + timedelta(seconds=90):
+        raise ValueError("ready URL requires an unexpired visible lease of at most90seconds")
 
 
 class Envelope(Strict):
@@ -102,8 +118,7 @@ class LeaseEnvelope(Envelope):
 
     @model_validator(mode="after")
     def unexpired_projection(self):
-        if self.data.state == "ready" and self.data.expires_at <= self.observed_at:
-            raise ValueError("expired preview URL must be cleared before projection")
+        current_projection(self.data, self.source_revision, self.observed_at)
         return self
 
 
@@ -113,6 +128,6 @@ class AvailabilityEnvelope(Envelope):
     @model_validator(mode="after")
     def unexpired_latest(self):
         lease = self.data.latest_lease
-        if lease is not None and lease.state == "ready" and lease.expires_at <= self.observed_at:
-            raise ValueError("expired latest preview URL must be cleared before projection")
+        if lease is not None:
+            current_projection(lease, self.source_revision, self.observed_at)
         return self

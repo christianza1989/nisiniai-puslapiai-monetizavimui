@@ -55,6 +55,8 @@ from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, ut
 from .order_tests import Confirmation, QuoteInput
 from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
+from .site_build.live_preview import close_service as close_live_previews
+from .site_build.live_preview_routes import router as live_preview_router
 from .site_build.routes import router as site_foundation_router
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
@@ -91,7 +93,10 @@ async def lifespan(app):
         yield
     finally:
         try:
-            await build_lifecycle.stop(build_worker)
+            try:
+                await close_live_previews(app)
+            finally:
+                await build_lifecycle.stop(build_worker)
         finally:
             await team_lifecycle.stop(team_worker)
             await routing.active.close()
@@ -126,6 +131,7 @@ app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)
 app.include_router(site_foundation_router)
+app.include_router(live_preview_router)
 
 
 @app.post("/operator/sites/{site_id}/order-tests", dependencies=[Depends(operator_auth)])

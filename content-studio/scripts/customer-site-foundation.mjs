@@ -94,6 +94,7 @@ function readiness(status,details){
   if(!details.some(p=>['guide','article'].includes(p.type)))blockers.push('first_delivery_missing_article');
   return blockers;
 }
+export {current as inspectFoundationContext,readiness as foundationReadiness,currentMedia as inspectFoundationMedia};
 async function releaseEvidence(context,scope,releaseId,details){
   if(!uuid(releaseId))fail('foundation_invalid_release');
   const directory=path.join(context.output,'releases',context.siteId,releaseId);

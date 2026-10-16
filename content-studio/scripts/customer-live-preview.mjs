@@ -1,0 +1,100 @@
+// Fixed trusted bridge only. Canonical code owns readiness/renderer/processes.
+import {createHash,randomUUID} from 'node:crypto';
+import {open,link,unlink} from 'node:fs/promises';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {stableV2} from '../src/content-package-v2.mjs';
+import {loadCustomerContentContext,assertArtifactDirectories,readArtifactBytes} from './customer-content-context.mjs';
+import {validateScope,inspectFoundationContext,foundationReadiness,inspectFoundationMedia,withPreparedCandidatePreview,previewBinding} from './customer-site-foundation.mjs';
+
+const sha=v=>createHash('sha256').update(v).digest('hex'),digest=v=>sha(stableV2(v));
+const fail=code=>{throw Object.assign(Error(code),{code});};
+const hex=v=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v);
+const uuid=v=>typeof v==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(v);
+const baseKeys=['creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir'];
+function exact(value,keys){if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).length!==keys.length||keys.some(k=>!Object.hasOwn(value,k)))fail('live_preview_input_invalid');}
+function checked(input){
+  const extras=input?.action==='serve'?['prepared','lease_id','instance_id','nonce','request_sha256']:[];
+  exact(input,['action','scope',...baseKeys,...extras]);
+  if(!['inspect','serve'].includes(input.action))fail('live_preview_input_invalid');
+  validateScope(input.scope);
+  const p=input.scope.accepted;
+  if(input.creationId!==input.scope.creation_id||input.acceptedRevision!==p.accepted_revision||input.sourceHash!==p.candidate_sha256||input.canonicalHost!==p.canonical_host)fail('live_preview_input_invalid');
+  if(extras.length&&(!uuid(input.lease_id)||!uuid(input.instance_id)||!hex(input.nonce)||!hex(input.request_sha256)))fail('live_preview_input_invalid');
+  return Object.fromEntries(baseKeys.map(k=>[k,input[k]]));
+}
+
+export async function inspectLivePreview(input,deps={}){
+  const base=checked(input);
+  if(input.action!=='inspect')fail('live_preview_input_invalid');
+  const context=await (deps.loadContext||loadCustomerContentContext)(base);
+  const {status,details}=await (deps.inspectContext||inspectFoundationContext)(context,base,input.scope);
+  const blockers=foundationReadiness(status,details);
+  if(!blockers.length)try{await (deps.inspectMedia||inspectFoundationMedia)(context,details);}
+  catch(error){if(['foundation_current_media_invalid','ENOENT'].includes(error.code))blockers.push('foundation_current_media_invalid');else throw error;}
+  return {version:'customer-live-preview-inspection.v1',scope_sha256:digest(input.scope),
+    site_context_sha256:input.scope.site_context_sha256,can_start:blockers.length===0,
+    blocked_reasons:[...new Set(blockers)].sort()};
+}
+
+async function publish(file,value){
+  const temporary=path.join(path.dirname(file),randomUUID()+'.tmp'),raw=Buffer.from(stableV2(value));
+  let handle;
+  try{
+    handle=await open(temporary,'wx',0o600);await handle.writeFile(raw);await handle.sync();await handle.close();handle=null;
+    await link(temporary,file); // exclusive atomic publication; never overwrite a previous ready proof
+  }finally{if(handle)await handle.close();await unlink(temporary).catch(error=>{if(error.code!=='ENOENT')throw error;});}
+}
+
+export async function serveLivePreview(input,deps={}){
+  const base=checked(input);
+  if(input.action!=='serve')fail('live_preview_input_invalid');
+  const directory=path.join(base.artifactsRoot,'customer-live-previews'),scopeHash=digest(input.scope);
+  const hardEnd=Date.now()+139000;
+  await (deps.assertDirectories||assertArtifactDirectories)(base.artifactsRoot,directory);
+  const json=async file=>JSON.parse((await (deps.readBytes||readArtifactBytes)(path.join(directory,file),16384)).toString('utf8'));
+  const signal=async()=>{
+    const claim=await json('active.json'),pulse=await json(input.lease_id+'.heartbeat.json');
+    exact(claim,['lease_id','instance_id','nonce','request_sha256']);
+    exact(pulse,['version','lease_id','nonce','scope_sha256','expires_ms']);
+    if(claim.lease_id!==input.lease_id||claim.instance_id!==input.instance_id||claim.nonce!==input.nonce||claim.request_sha256!==input.request_sha256
+        ||pulse.version!=='customer-live-preview-heartbeat.v1'||pulse.lease_id!==input.lease_id||pulse.nonce!==input.nonce||pulse.scope_sha256!==scopeHash
+        ||!Number.isSafeInteger(pulse.expires_ms)||pulse.expires_ms<=Date.now()||pulse.expires_ms>Date.now()+3100||Date.now()>=hardEnd)fail('authorization_revoked');
+  };
+  const authorized=async()=>{
+    try{
+      await signal();
+      const context=await (deps.loadContext||loadCustomerContentContext)(base);
+      const {status,details}=await (deps.inspectContext||inspectFoundationContext)(context,base,input.scope);
+      if(foundationReadiness(status,details).length)return false;
+      await (deps.inspectMedia||inspectFoundationMedia)(context,details);
+      await signal();return true;
+    }catch{return false;}
+  };
+  const invoke=deps.withPreview||withPreparedCandidatePreview;
+  let waitTimer;
+  try{return await invoke({command:'prepare-preview',scope:input.scope,...base},input.prepared,async preview=>{
+    if(!await authorized())fail('authorization_revoked');
+    const origin=previewBinding(preview,input.scope,input.prepared.release);
+    if(!/^http:\/\/127\.0\.0\.1:[1-9][0-9]{0,4}$/.test(origin))fail('live_preview_origin_invalid');
+    const expires=Math.min(hardEnd,Date.now()+89000);
+    if(expires-Date.now()<1000)fail('live_preview_expired');
+    const ready={version:'customer-live-preview-ready.v1',lease_id:input.lease_id,nonce:input.nonce,scope_sha256:scopeHash,
+      prepared_sha256:input.prepared.artifact_sha256,preview_url:origin+'/',expires_at:new Date(expires).toISOString()};
+    await (deps.publish||publish)(path.join(directory,input.lease_id+'.ready.json'),ready);
+    // No detached producer: returning, rejection, expiry or authority loss always
+    // returns through the canonical callback's owned child-tree cleanup.
+    await (deps.wait||((ms)=>new Promise(resolve=>{waitTimer=setTimeout(resolve,ms);}))) (expires-Date.now());
+    return {version:'customer-live-preview-completed.v1',state:'expired'};
+  },authorized);}finally{clearTimeout(waitTimer);}
+}
+
+if(process.argv[1]&&pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url){
+  try{
+    const chunks=[];let bytes=0;
+    for await(const chunk of process.stdin){bytes+=chunk.length;if(bytes>1000000)fail('live_preview_input_limit');chunks.push(chunk);}
+    const input=JSON.parse(Buffer.concat(chunks).toString('utf8'));
+    const result=await(input.action==='inspect'?inspectLivePreview(input):serveLivePreview(input));
+    process.stdout.write(JSON.stringify(result)+'\n');
+  }catch(error){process.stderr.write(JSON.stringify({code:/^[a-z][a-z0-9_]{0,79}$/.test(error.code||'')?error.code:'live_preview_failed'})+'\n');process.exitCode=1;}
+}

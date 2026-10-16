@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Implement bounded authenticated live-preview leases on canonical Foundation capture/verification and owned callback transport, with readonly availability, exact replay, fail-closed audit/claim ownership and shutdown cleanup.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview_store.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview_routes.py",
+    "content-studio/scripts/customer-live-preview.mjs",
+    "content-studio/scripts/customer-site-foundation.mjs",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root approved refined customer-live-preview.v1, exact3readonly Foundation aliases, and central router/mount/close_service-beforeDB hooks; no producer logic/threshold change. Wire finalb059995 schemaGitSHA256d25040f6f7a279ca04bd5f2a9ed90eef8ab48e787a5eaf551c353686b37b6016 frozen for Root codegen.",
+    "Existing withPreparedCandidatePreview already revalidates retained proof/native/media/source and owns callback/child cleanup (120s callback,150s producer). studio._execute supplies real authority monitoring, bounded output and cancellation-safe owned tree cleanup; new helper only connects ready/heartbeat/registry lifecycle, never another renderer or process transport.",
+    "Read-only aliases inspected: current→workflow status→model.getSite is readJson only, noinitialize; readiness pure; currentMedia read/hash/assertexistingdirectories only. GET must not call candidate/preparation producer. No helper actualDB/provider/current-case/process/browser, migration/globalconfig/portal/public changes; Root owns actual acceptance/adoption."
+  ],
+  "rollback": "Scoped source revert before runtime adoption; close/join only leases owned by this service through canonical transport. Preserve all original proofs and expired-session refusals, private request/ready/terminal audit, unknown crash locks and historical failures. Never adopt PID/URL or steal unproved locks; paid workers/channels remain held.",
+  "id": "upgrade-78c575e9-d2b9-470a-97a4-5948552d4bb9",
+  "branch": "codex/customer-live-preview-20261017",
+  "baseSha": "b059995fda183ad38749016b7d14e12d704cb78d",
+  "createdAt": "2026-10-16T21:42:26.941Z"
+}

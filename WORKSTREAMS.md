@@ -1080,6 +1080,17 @@ DB/provider/current-case/process/browser/migration/globalconfig/portal/public
 actions. Root owns frontend/BFF/actual runtime acceptance/adoption; old proofs,
 failures and journals stay frozen. Lifecycle/wire proposal sent before source.
 
+2026-10-17 helper LIVE PREVIEW FUNCTIONAL source over frozenb059995: Root approved
+the exact readonly-export line and central router/close-beforeDB hooks; added
+new Service/Store/router/Node adapter with original callback/transport as sole
+producer. Runtimejournal78c575e9 separate from wiredb754a52.209pure/mockPASS21.09s,
+19Node mockPASS329.94ms,Ruff7PASS;6PGauthority collected only0.62s. Original
+3FAIL22PASS shutdown/claim/owner baseline retained and fixed. No helper actual
+DB/native/current-case/preview-server/child/browser/provider or consumer changes.
+Wire Git blobs remain frozen. Root receives exact functional pin before actual
+renderer/port/new-tab/expiry/revocation/shutdown adoption; journals helper-owned
+until that handoff. Private artifacts/unknown crash locks/history preserved.
+
 2026-10-17 Root browser recovery: CUA/normal Chrome login restored; unchanged
 API62abbed/public255 freshly prepared native scope25a95e98/package713875fd after
 normal owner session/intake/S6 renewal.11 page openings320/1280 no observed

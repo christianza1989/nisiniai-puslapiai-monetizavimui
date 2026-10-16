@@ -1060,6 +1060,24 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
 # S42 direct messenger consultant checkpoint — 2026-10-16
 
+2026-10-16 helper SITE INSPECTION GUARD RESERVED issue66/comment6211107441:
+new codex/site-inspection-guard-20261016 branch in clean OWN helper worktree from
+exactRoot1fb549619c7f1bc5d9b4f8b523e3f2af1329ae27/public255fea0813bf1aabeaeea2f2de0b29564118f2fc,
+pairedstartPASS. Own site_build/service.py feature/generation guard and exact
+lifecycle.py actor admission call, focused offline/nativePG tests/docs/new upgrade.
+Router/Foundation/receipts keep feature guards; advance/lifecycle keep all existing
+worker gates. No S6/owner/Session/source/approval/native pin bypass, paid runner
+activation, operational DB/container/API/native/portal/public/provider edits.
+Root owns actual acceptance/adoption; previous journals and failures stay frozen.
+
+2026-10-16 inspection guard source verified:104 focused PASS8.62s;2 native PG cases
+collect-only PASS2.18s;5 exact Python files Ruff/diff PASS. Broad run preserved:
+2003PASS/8SKIP/67subtests,2FAIL+1ERROR203.68s (Windows1450/temp path and unchanged
+subprocess deadlines); exact3 replay PASS2.82s with no code/deadline change. No
+clean full-suite PASS claimed. Upgradeb8bdb6fe owns2sharedpaths. Root receives
+actual PG/source adoption/new ordinary intake+S6/UI acceptance and journal ownership
+at handoff. Helper DB/API/container/native/provider actions remain0.
+
 2026-10-16 helper PAIRED PRIVATE NATIVE UPGRADE RESERVED issue66/comment6206646677:
 fresh private-native-upgrade branch codex/private-native-upgrade-20261016 from
 exact Root136a8149836162b7a648103f91421e4aa2dd79d9 paired public255fea0813bf1aabeaeea2f2de0b29564118f2fc.

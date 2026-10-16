@@ -169,16 +169,39 @@ async function renderer(origin,scope,release,originHost=false){
   if(response.status!==200||response.headers.get('x-niche-package-sha256')!==release.package_sha256
       ||response.headers.get('x-niche-source-revision')!==scope.sources.public_source_revision)fail('foundation_renderer_unbound');
 }
+/** A native hub is an eligible required index that the maintained renderer actually selects.
+ * Use the companion's shared projected membership, never URL shape as an admission rule. */
+export async function foundationArticleIndex(pkg,requiredIds,now=Date.now()){
+  if(!Array.isArray(requiredIds)||!requiredIds.length||new Set(requiredIds).size!==requiredIds.length
+      ||pkg?.schemaVersion!==2||pkg.site?.renderer!=='niche')fail('foundation_article_index_unavailable');
+  try{validateV2Package(pkg);}catch{fail('foundation_article_index_unavailable');}
+  const required=pkg.pages.filter(page=>requiredIds.includes(page.id));
+  const articles=required.filter(page=>['guide','article'].includes(page.type));
+  if(required.length!==requiredIds.length||!articles.length||!required.some(page=>page.type==='index'))fail('foundation_article_index_unavailable');
+  if(required.some(page=>!Number.isFinite(Date.parse(page.publishAt))||Date.parse(page.publishAt)>now))fail('foundation_publication_pending');
+  const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
+  if(typeof publicCore!=='string'||!path.isAbsolute(publicCore))fail('foundation_source_unavailable');
+  let projection;
+  try{projection=await import(pathToFileURL(path.join(publicCore,'lib/content-projection-v2.mjs')).href);}catch{fail('foundation_source_unavailable');}
+  if(typeof projection.projectContentPagesV2!=='function'||typeof projection.contentArticleHubV2!=='function')fail('foundation_source_unavailable');
+  const visible=projection.projectContentPagesV2(pkg,[pkg],{},{targets:[]},now);
+  const hubs=articles.map(page=>{
+    const current=visible.find(item=>item.id===page.id&&item.siteId===pkg.siteId);
+    return current?projection.contentArticleHubV2(current,visible):null;
+  });
+  const index=hubs[0];
+  if(!index||index.type!=='index'||index.siteId!==pkg.siteId
+      ||!required.some(page=>page.id===index.id&&page.type==='index')||hubs.some(hub=>hub?.id!==index.id))fail('foundation_article_index_unavailable');
+  return index;
+}
 async function localCompletion(context,scope,release,directory,usingPrepared=false){
   const auditPath=path.join(directory,'PHASE-1-AUDIT.json'),auditRaw=await readArtifactBytes(auditPath,2000000),audit=JSON.parse(auditRaw);
   if(audit.siteId!==context.siteId||audit.canonicalHost!==scope.accepted.canonical_host||audit.version?.packageSha256!==release.evidence.package_sha256
       ||audit.version?.sourceVersion!==scope.sources.public_source_revision)fail('foundation_audit_binding_invalid');
   const reviewSha=await reviews(directory,scope,release.evidence);
   if(scope.language_review_mode!=='required')fail('foundation_language_review_paused');
-  const required=release.pkg.pages.filter(p=>scope.required_page_ids.includes(p.id)),articles=required.filter(p=>['guide','article'].includes(p.type));
-  const indexes=required.filter(p=>p.type==='index'&&articles.every(a=>a.slug.startsWith(p.slug+'/'))).sort((a,b)=>a.slug.length-b.slug.length);
-  if(!indexes.length)fail('foundation_article_index_unavailable');
-  if(required.some(p=>!Number.isFinite(Date.parse(p.publishAt))||Date.parse(p.publishAt)>Date.now()))fail('foundation_publication_pending');
+  const required=release.pkg.pages.filter(p=>scope.required_page_ids.includes(p.id));
+  const index=await foundationArticleIndex(release.pkg,scope.required_page_ids);
   let previewRaw=null,preview=null;
   try{previewRaw=await readArtifactBytes(path.join(directory,'preview.json'),16384);preview=JSON.parse(previewRaw);}catch(error){if(error.code!=='ENOENT')throw error;}
   const markerPath=path.join(directory,'preview-producer.json'),binding={version:2,scopeSha256:digest(scope),releaseId:release.evidence.release_id,packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision};
@@ -205,7 +228,7 @@ async function localCompletion(context,scope,release,directory,usingPrepared=fal
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
   const python=path.join(ROOT,'agent-business-core/runtime/.venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
   const report=await verifySiteCompletion(['--package',path.join(release.directory,'content-package.json'),'--origin',origin,
-    '--core',publicCore,'--article-index',indexes[0].slug,'--audit',auditPath,'--package-header','x-niche-package-sha256','--python',python,...(originHost?['--loopback-host','origin']:[])]);
+    '--core',publicCore,'--article-index',index.slug,'--audit',auditPath,'--package-header','x-niche-package-sha256','--python',python,...(originHost?['--loopback-host','origin']:[])]);
   await renderer(origin,scope,release.evidence,originHost);
   // Preserve actual inspection failures as immutable private receipts, not prose or a fabricated PASS.
   const reportBytes=Buffer.from(JSON.stringify(report)+'\n');if(reportBytes.length>5000000)fail('foundation_evidence_limit');

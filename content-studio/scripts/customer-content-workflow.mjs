@@ -9,6 +9,7 @@ import { stableV2, validateV2Editorial, normalizeV2Blocks, inlineNodes, bodyPlai
 import { workflowOverview, reviewCurrent, draftLinks } from '../src/content-workflow.mjs';
 import { IMAGE_POLICY } from '../src/image-pipeline.mjs';
 import { resolveInternalRichLinks } from '../src/internal-rich-links.mjs';
+import { reviewEditorial } from './customer-editorial-review.mjs';
 
 const VERSION = 'customer-content-workflow.v1';
 const object = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -23,6 +24,7 @@ const commands = {
   'amend-page': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
   'amend-page-reviewed-copy': ['operationId','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch','deferUnreadyPageIds'],
   'prepare-editorial': ['operationId','action','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch','pageIds'],
+  'review-editorial': ['operationId','action','expectedSiteHash','pages','evidence','actorId','authorizingSessionId','sourceRevision'],
   'resolve-internal-links': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash'],
   'amend-site': ['expectedSiteHash','patch'],
   'import-media': ['expectedSiteHash','sourcePath','metadata','expectedSourceSha256'],
@@ -637,6 +639,10 @@ export async function customerContentWorkflow(input) {
     return value;
   }
   if (!hash(input.expectedSiteHash)) fail('workflow_expected_context_required');
+  if(input.command==='review-editorial'){
+    const result=await reviewEditorial(context,input);
+    return {...await current(context,input,await model.getSite(site.id)),operation:{command:input.command,result,deployment:'not-performed'}};
+  }
   if(input.command==='prepare-editorial'){
     const result=await prepareEditorial(context,input);
     return {...await current(context,input,await model.getSite(site.id)),operation:{command:input.command,result,deployment:'not-performed'}};

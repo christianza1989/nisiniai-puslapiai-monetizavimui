@@ -15,6 +15,7 @@ from .business_discovery.routes import router as business_discovery_router
 from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
 from .control.routes import router as control_router
+from .creation.editorial_review_routes import router as editorial_review_router
 from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
@@ -82,6 +83,7 @@ app.include_router(workspace_team_router)
 app.include_router(customer_agents_router)
 app.include_router(xbot_bridge_router)
 app.include_router(creation_router)
+app.include_router(editorial_review_router)
 app.include_router(business_discovery_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)

@@ -5,15 +5,23 @@ import {mkdtemp,mkdir,readFile,readdir,writeFile,rm,unlink} from 'node:fs/promis
 import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import os from 'node:os';
+import {pathToFileURL} from 'node:url';
 import sharp from 'sharp';
 import {stableV2} from '../src/content-package-v2.mjs';
 
 const digest=v=>createHash('sha256').update(stableV2(v)).digest('hex');
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const script=name=>path.resolve(import.meta.dirname,'../scripts/'+name+'.mjs');
-async function fixture(t){
+async function fixture(t,{legacyImporter=false}={}){
   const dir=await mkdtemp(path.join(os.tmpdir(),'private-native-continuity-'));
-  t.after(async()=>{assert.ok(dir.startsWith(path.join(os.tmpdir(),'private-native-continuity-')));await rm(dir,{recursive:true,force:true});});
+  t.after(async()=>{const target=path.resolve(dir);assert.equal(path.dirname(target),path.resolve(os.tmpdir()));assert.ok(path.basename(target).startsWith('private-native-continuity-'));await rm(target,{recursive:true,force:true});});
+  let historicalScript;
+  if(legacyImporter){
+    historicalScript=path.join(dir,'synthetic-prior-importer.mjs');
+    const modules=pathToFileURL(path.resolve(import.meta.dirname,'../src')).href+'/';
+    await writeFile(historicalScript,(await readFile(script('customer-creation-intake'),'utf8')).replaceAll("'../src/","'"+modules)
+      +'\n// Isolated synthetic prior importer identity.\n');
+  }
   const artifactsRoot=path.join(dir,'runtime/artifacts');await mkdir(artifactsRoot,{recursive:true});
   const network=path.join(dir,'network.json');await writeFile(network,JSON.stringify({defaultEmail:'unused@example.invalid',operatorName:'Synthetic operator',contactsBySite:{}}));
   const section={heading:'Synthetic private content',body:'This isolated synthetic fixture represents a private draft only. It makes no claims about an actual customer, product, professional author, delivery or public launch.',items:[]};
@@ -22,9 +30,10 @@ async function fixture(t){
     pages:['/','/gidai/','/kontaktai/'].map(p=>({path:p,title:'Synthetic private page',navigation_label:'Test',meta_description:'A private synthetic continuity fixture.',intent:'Inspect exact private native continuity.',sections:[section,section]})),content_plan:[brief]};
   const creationId=randomUUID(),revision=path.join(artifactsRoot,'customer-content',creationId,'revision-1');
   const input={creationId,acceptedRevision:1,sourceHash:digest(draft),canonicalHost:creationId.replaceAll('-','')+'.preview.invalid',artifactsRoot,dataDir:path.join(revision,'data'),outputDir:path.join(revision,'output')};
-  const env={...process.env,STUDIO_NETWORK_SETTINGS:network};
+  const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||process.env.PINET_PUBLIC_CORE_PATH||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
+  const env={...process.env,STUDIO_NETWORK_SETTINGS:network,STUDIO_PUBLIC_CORE_DIR:publicRoot};
   function call(name,value){
-    const r=spawnSync(process.execPath,[script(name)],{input:JSON.stringify(value),encoding:'utf8',timeout:20000,windowsHide:true,env});assert.equal(r.error,undefined);
+    const r=spawnSync(process.execPath,[historicalScript&&name==='customer-creation-intake'?historicalScript:script(name)],{input:JSON.stringify(value),encoding:'utf8',timeout:20000,windowsHide:true,env});assert.equal(r.error,undefined);
     let result;try{result=JSON.parse(r.status===0?r.stdout:r.stderr);}catch{result={code:'node_script_unavailable'};}
     return {status:r.status,value:result};
   }
@@ -51,8 +60,32 @@ async function fixture(t){
     const entries={};async function walk(folder){for(const e of await readdir(folder,{withFileTypes:true})){const f=path.join(folder,e.name);if(e.isDirectory())await walk(f);else entries[path.relative(revision,f)]=sha(await readFile(f));}}
     await walk(revision);return entries;
   }
-  return {input,anchor,marker,revision,file,call,ok,observe,evolve,files,status};
+  async function pairedMarker(){
+    const r=spawnSync('git',['rev-parse','HEAD'],{cwd:publicRoot,encoding:'utf8',windowsHide:true});assert.equal(r.status,0);
+    const original={public_source_revision:'0'.repeat(40),importer_sha256:anchor.importerHash,network_sha256:sha(await readFile(network))};
+    return {...marker,version:'private-native-anchor.v2',origin_source_revision:'a'.repeat(40),execution_source_revision:'b'.repeat(40),
+      origin_native_sources:original,execution_native_sources:{...original,public_source_revision:r.stdout.trim(),importer_sha256:sha(await readFile(script('customer-creation-intake')))}};
+  }
+  return {input,anchor,marker,revision,file,call,ok,observe,evolve,files,status,pairedMarker};
 }
+
+test('paired upgrade executes the current observer and retains the different prior importer and native artifacts',async t=>{
+  const f=await fixture(t,{legacyImporter:true});await f.evolve();const anchor=await f.pairedMarker(),before=await f.files();
+  assert.notEqual(anchor.origin_native_sources.importer_sha256,anchor.execution_native_sources.importer_sha256);
+  assert.notEqual(f.observe().status,0); // unchanged strict v1 refuses a different importer
+  const r=f.observe({anchor});assert.equal(r.status,0,JSON.stringify(r.value));
+  assert.equal(r.value.importerHash,f.anchor.importerHash);assert.deepEqual(r.value.nativeContinuity.anchor,anchor);
+  assert.deepEqual(await f.files(),before);assert.equal(r.value.nativeContinuity.approval,'not-performed');
+});
+
+test('paired upgrade rejects forged origin/current importer, consumer, network and source bindings',async t=>{
+  const f=await fixture(t,{legacyImporter:true});const anchor=await f.pairedMarker(),before=await f.files();
+  const mutations=[a=>a.origin_native_sources.importer_sha256='f'.repeat(64),a=>a.execution_native_sources.importer_sha256='f'.repeat(64),
+    a=>a.execution_native_sources.public_source_revision='f'.repeat(40),a=>a.origin_native_sources.network_sha256='f'.repeat(64),
+    a=>{a.origin_native_sources.network_sha256=a.execution_native_sources.network_sha256='f'.repeat(64);},
+    a=>a.execution_source_revision=a.origin_source_revision,a=>a.origin_source_revision='invalid',a=>a.execution_native_sources.extra=true];
+  for(const mutate of mutations){const changed=structuredClone(anchor);mutate(changed);assert.notEqual(f.observe({anchor:changed}).status,0);assert.deepEqual(await f.files(),before);}
+});
 
 test('source renewal observes legitimate GUIDE/media evolution without weakening strict initial replay',async t=>{
   const f=await fixture(t);await f.evolve();

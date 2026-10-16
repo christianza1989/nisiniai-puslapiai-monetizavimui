@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 import subprocess
+from types import SimpleNamespace
 from uuid import uuid4
 
 import pytest
@@ -172,3 +173,97 @@ async def test_real_owner_revoked_after_read_cannot_commit_current_source_contin
         assert await tx.scalar(select(func.count()).select_from(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == cid)) == 2
         assert await tx.scalar(select(func.count()).select_from(PrivateIntakeReceipt).join(PrivateIntakeRequest,
             PrivateIntakeRequest.id == PrivateIntakeReceipt.recovery_id).where(PrivateIntakeRequest.creation_id == cid)) == 1
+
+
+@pytest.fixture
+async def paired_native(preview, monkeypatch, tmp_path):  # noqa: F811
+    """Physical synthetic Git consumer/importer identities, not source-current proof."""
+    public = tmp_path / "synthetic-public"
+    (public / "config").mkdir(parents=True)
+    network = public / "config/niche-network.json"
+    network.write_text(json.dumps({"defaultEmail": "fixture@example.invalid", "operatorName": "Synthetic operator", "contactsBySite": {}}))
+
+    def git(*args):
+        return subprocess.check_output(["git", "-c", "user.name=Synthetic QA", "-c", "user.email=qa@example.invalid", *args],
+            cwd=public, stderr=subprocess.DEVNULL, text=True).strip()
+
+    git("init")
+    git("add", "config/niche-network.json")
+    git("commit", "-m", "synthetic original consumer")
+    original_public = git("rev-parse", "HEAD")
+    monkeypatch.setenv("PINET_PUBLIC_CORE_PATH", str(public))
+    monkeypatch.setenv("STUDIO_NETWORK_SETTINGS", str(network))
+    # Copy only maintained importer text; point its source imports to current
+    # maintained modules. This synthetic prior identity never executes old code.
+    importer = tmp_path / "synthetic-prior-importer.mjs"
+    original_script = studio.ROOT / "content-studio/scripts/customer-creation-intake.mjs"
+    importer.write_text(original_script.read_text().replace("'../src/", "'" + (studio.ROOT / "content-studio/src").as_uri() + "/")
+        + "\n// Isolated synthetic prior importer identity.\n", encoding="utf-8")
+    configuration = studio.configuration
+    phase = SimpleNamespace(original=True)
+
+    def configured():
+        node, script, artifacts, environment = configuration()
+        return node, importer if phase.original else script, artifacts, environment
+
+    monkeypatch.setattr(studio, "configuration", configured)
+    cid, auth, body, directory = await prepared(preview, monkeypatch)
+    original_importer = hashlib.sha256(importer.read_bytes()).hexdigest()
+    phase.original = False
+    (public / "consumer-version.txt").write_text("Explicit synthetic paired upgrade, unchanged network.")
+    git("add", "consumer-version.txt")
+    git("commit", "-m", "synthetic current consumer")
+    monkeypatch.setattr(settings(), "control_source_revision", "b" * 40)
+    return SimpleNamespace(c=preview, cid=cid, auth=auth, body=body, directory=directory, network=network,
+        original_public=original_public, current_public=git("rev-parse", "HEAD"), original_importer=original_importer, git=git)
+
+
+async def test_real_paired_upgrade_keeps_original_receipt_files_and_current_source_s6(paired_native):
+    p = paired_native
+    files = {str(f.relative_to(p.directory)): f.read_bytes() for f in p.directory.rglob("*") if f.is_file()}
+    result = await p.c["client"].post(path(p.cid), headers=p.auth, json={**p.body, "idempotency_key": str(uuid4())})
+    assert result.status_code == 200 and result.json()["data"]["state"] == "private_draft_imported", result.text
+    async with AsyncSession(p.c["admin"]) as tx:
+        requests = list(await tx.scalars(select(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == p.cid).order_by(PrivateIntakeRequest.created_at)))
+        receipts = list(await tx.scalars(select(PrivateIntakeReceipt).join(PrivateIntakeRequest,
+            PrivateIntakeRequest.id == PrivateIntakeReceipt.recovery_id).where(PrivateIntakeRequest.creation_id == p.cid).order_by(PrivateIntakeReceipt.created_at)))
+        assert len(requests) == len(receipts) == 2
+        marker = requests[1].context["continuity"]
+        assert marker["version"] == "private-native-anchor.v2"
+        assert marker["origin_native_sources"]["public_source_revision"] == p.original_public
+        assert marker["execution_native_sources"]["public_source_revision"] == p.current_public
+        assert marker["origin_native_sources"]["importer_sha256"] == p.original_importer != marker["execution_native_sources"]["importer_sha256"]
+        assert "nativeContinuity" not in receipts[0].intake
+        assert receipts[0].intake["importerHash"] == receipts[1].intake["importerHash"] == p.original_importer
+        assert receipts[0].intake_sha256 == marker["intake_sha256"]
+    token = p.auth["Authorization"].split()[1]
+    async with scope(token=token_hash(token)) as tx:
+        session = await customer_session(tx, token)
+        creation = await owned(tx, session, p.cid, lock=True)
+        proof = await accepted_proof(tx, creation)
+        request = editorial_preparation.Status(accepted_revision=1, candidate_sha256=proof["candidate_sha256"], canonical_host=proof["canonical_host"])
+        with pytest.raises(ControlError, match="build_continuation_stale"):
+            await editorial_preparation.status(tx, session, p.cid, request)
+    assert {str(f.relative_to(p.directory)): f.read_bytes() for f in p.directory.rglob("*") if f.is_file()} == files
+
+
+@pytest.mark.parametrize("artifact", ["source-draft.json", "intake-context.json", "intake-manifest.json"])
+async def test_real_paired_upgrade_does_not_repair_tampered_original_artifacts(paired_native, artifact):
+    p = paired_native
+    target = p.directory / artifact
+    target.write_bytes(target.read_bytes() + b"\n")
+    files = {str(f.relative_to(p.directory)): f.read_bytes() for f in p.directory.rglob("*") if f.is_file()}
+    result = await p.c["client"].post(path(p.cid), headers=p.auth, json={**p.body, "idempotency_key": str(uuid4())})
+    assert result.status_code == 200 and result.json()["data"]["state"] == "failed", result.text
+    assert {str(f.relative_to(p.directory)): f.read_bytes() for f in p.directory.rglob("*") if f.is_file()} == files
+
+
+async def test_real_paired_upgrade_network_change_is_refused_before_new_request(paired_native):
+    p = paired_native
+    p.network.write_text(p.network.read_text() + "\n")
+    p.git("add", "config/niche-network.json")
+    p.git("commit", "-m", "synthetic network drift must be refused")
+    result = await p.c["client"].post(path(p.cid), headers=p.auth, json={**p.body, "idempotency_key": str(uuid4())})
+    assert result.status_code == 409 and result.json()["code"] == "private_intake_anchor_stale", result.text
+    async with AsyncSession(p.c["admin"]) as tx:
+        assert await tx.scalar(select(func.count()).select_from(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == p.cid)) == 1

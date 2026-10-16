@@ -150,8 +150,15 @@ async def retained_anchor(tx, creation, captured, marker=None):
     previous = stored(row)
     receipt = await terminal(tx, row)
     intake = result(row, receipt)
+    origin = continuity.checked_sources(previous["native_sources"])
+    execution = continuity.checked_sources(captured["native_sources"])
+    upgraded = origin != execution
+    if upgraded and (previous["source_revision"] == captured["source_revision"]
+            or origin["network_sha256"] != execution["network_sha256"]):
+        raise ControlError(409, "private_intake_anchor_stale")
     def stable(value):
-        return {k: v for k, v in value.items() if k not in {"source_revision", "session_id", "continuity"}}
+        # Native drift is admitted only by the explicit, exact v2 proof below.
+        return {k: v for k, v in value.items() if k not in {"source_revision", "session_id", "continuity", "native_sources"}}
     if (binding(row) != binding(creation) or "continuity" in previous or row.revision_id != captured["accepted"]["revision_id"]
             or stable(previous) != stable(captured) or not receipt or receipt.state != "private_draft_imported"
             or not isinstance(intake, dict) or intake.get("version") != "customer-content-intake.v1"
@@ -159,11 +166,16 @@ async def retained_anchor(tx, creation, captured, marker=None):
             or intake.get("acceptedRevision") != captured["accepted"]["accepted_revision"]
             or intake.get("sourceHash") != captured["accepted"]["candidate_sha256"]
             or intake.get("canonicalHost") != captured["native_host"]
-            or intake.get("importerHash") != captured["native_sources"]["importer_sha256"]):
+            or intake.get("importerHash") != origin["importer_sha256"]):
         raise ControlError(409, "private_intake_anchor_stale")
     observed = {"version": continuity.MARKER_VERSION, "recovery_id": row.id, "receipt_id": receipt.id,
         "context_sha256": row.context_sha256, "intake_sha256": receipt.intake_sha256,
         "manifest_sha256": continuity.manifest_hash(intake), "observer_sha256": continuity.observer_sha256()}
+    if upgraded:
+        observed.update(version=continuity.UPGRADE_MARKER_VERSION, origin_source_revision=previous["source_revision"],
+            execution_source_revision=captured["source_revision"], origin_native_sources=origin,
+            execution_native_sources=execution)
+    continuity.checked_marker(observed)
     if marker is not None and observed != marker:
         raise ControlError(409, "private_intake_anchor_stale")
     return observed, intake
@@ -374,7 +386,7 @@ async def prepare(token, creation_id, value, *, intake_runner=None, continuity_r
             intake = await (intake_runner or studio.import_draft)(payload, creation_id=creation_id,
                 revision=value.accepted_revision, canonical_host=captured["native_host"],
                 still_authorized=authorized, seconds=20, **options)
-        if not isinstance(intake, dict) or intake.get("importerHash") != captured["native_sources"]["importer_sha256"]:
+        if not isinstance(intake, dict) or intake.get("importerHash") != continuity.importer_sha256(captured):
             raise RunnerError("studio_intake_failed")
         if not await authorized():
             raise ControlError(409, "private_intake_binding_stale")

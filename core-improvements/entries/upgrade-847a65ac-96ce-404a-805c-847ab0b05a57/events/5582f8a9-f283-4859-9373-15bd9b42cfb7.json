@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Strict anchor.v2 implemented in exact3ownedsourcepaths; original/source and execution/source separated, network equality and explicit new core source required. Original importer/manifest stays unchanged; Node verifies actual current importer/network/clean publicHEAD twice and original artifacts/current native state. No SQL/source importer/model changes or S6/review/approval bypass. Baseline1FAIL8.23s SHA256bf7e6cf5e7ef4d3a28916b1eb4ad68dcee7a4c6404c13f6e8130330b161a1e1c retained. First postchange2FAIL31PASS3.34s SHA2568474147a5f1998ced69a783400b6a1db2107b2cdea2378d0091a20035786b6af were old every-fingerprint-drift refusal expectations; updated to still reject drift absent explicit new core source and network drift always. First fullsuite collection2ERROR8.53s SHA256891501239a9c5f76e418180c4b55a46a6ffd7ce5b3435a47a9acb9beefc906ee was helper missing runtime/tests PYTHONPATH; fixed invocation only.97focusedPASS4.92s,9NodePASS19.07s; latest9NodePASS43.97s additionally matches nativePG copied-current-importer fixture (absolute current modules, no old code);10nativePGcollectonly3.66s. Broad final checks and source handoff follow; no actual helper DB/provider/customer/serving or frozenjournal mutation.",
+  "eventId": "5582f8a9-f283-4859-9373-15bd9b42cfb7",
+  "sequence": 2,
+  "at": "2026-10-16T02:36:54.834Z"
+}

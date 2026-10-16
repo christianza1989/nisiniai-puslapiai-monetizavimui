@@ -23,7 +23,7 @@ from ..creation.service import ACTIVE, binding, digest
 from ..customer_text.adapter import source_current
 from ..tasks.codex_transport import RunnerError
 from . import service as builds
-from .foundation_wire import FoundationScope, Observation, RetainedCheck, Sources
+from .foundation_wire import FoundationScope, Observation, PreparedPreview, RetainedCheck, Sources
 
 SCRIPT = ROOT / "content-studio/scripts/customer-site-foundation.mjs"
 VERIFIER = ROOT / "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs"
@@ -187,6 +187,65 @@ async def observe(scope, *, command="candidate", still_authorized):
     await guard()
     if await asyncio.to_thread(source_pins) != expected.sources:
         raise ControlError(503, "source_unavailable")
+    if not await still_authorized():
+        raise ControlError(401, "unauthenticated")
+    return result
+
+
+def parse_prepared_preview(value, scope):
+    expected = checked(scope)
+    try:
+        result = PreparedPreview.model_validate_json(json.dumps(value))
+        if (result.scope_sha256 != expected.fingerprint() or result.sources != expected.sources
+                or result.site_context_sha256 != expected.site_context_sha256
+                or result.page_snapshot_sha256 != expected.page_snapshot_sha256
+                or result.required_page_ids != expected.required_page_ids
+                or result.synthetic != (expected.environment_id.startswith("test-")
+                    or expected.accepted.canonical_host.endswith((".example", ".test", ".invalid", ".localhost")))):
+            raise ValueError("expected_scope_required")
+        return result
+    except (ValueError, TypeError, ValidationError):
+        raise ControlError(503, "invalid_prepared_preview") from None
+
+
+async def prepare_preview(scope, *, still_authorized):
+    """Prepare only. Caller captures a real Session scope and freshly verifies it.
+
+    Reuse receipts.check's token-scope capture/verify callback. No authority is
+    inferred from a proof, and this operation neither serves nor certifies it.
+    """
+    expected = checked(scope)
+    await guard()
+    if not await still_authorized():
+        raise ControlError(401, "unauthenticated")
+    if (expected.environment_id != settings().environment
+            or language_mode.mode() != expected.language_review_mode):
+        raise ControlError(409, "foundation_context_stale")
+    if await asyncio.to_thread(source_pins) != expected.sources:
+        raise ControlError(503, "source_unavailable")
+    try:
+        node, _, artifacts, environment = studio.configuration()
+        directory = artifacts / "customer-content" / str(expected.creation_id) / f"revision-{expected.accepted.accepted_revision}"
+        payload = {"command": "prepare-preview", "scope": expected.model_dump(mode="json"),
+            "creationId": str(expected.creation_id), "acceptedRevision": expected.accepted.accepted_revision,
+            "sourceHash": expected.accepted.candidate_sha256, "canonicalHost": expected.accepted.canonical_host,
+            "artifactsRoot": str(artifacts), "dataDir": str(directory / "data"), "outputDir": str(directory / "output")}
+        value = await studio._execute([node, SCRIPT], payload, environment, still_authorized, 180)
+    except RunnerError as error:
+        if error.code == "authorization_revoked":
+            raise ControlError(401, "unauthenticated") from None
+        if error.code in {"foundation_source_unavailable", "foundation_source_stale"}:
+            raise ControlError(503, "source_unavailable") from None
+        if error.code in {"foundation_preview_content_blocked", "foundation_context_stale"}:
+            raise ControlError(409, error.code) from None
+        raise ControlError(503, "foundation_bridge_unavailable") from None
+    result = parse_prepared_preview(value, expected)
+    await guard()
+    if await asyncio.to_thread(source_pins) != expected.sources:
+        raise ControlError(503, "source_unavailable")
+    if (expected.environment_id != settings().environment
+            or language_mode.mode() != expected.language_review_mode):
+        raise ControlError(409, "foundation_context_stale")
     if not await still_authorized():
         raise ControlError(401, "unauthenticated")
     return result

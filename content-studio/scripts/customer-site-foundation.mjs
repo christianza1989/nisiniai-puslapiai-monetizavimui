@@ -9,7 +9,7 @@ import {customerContentWorkflow} from './customer-content-workflow.mjs';
 import {stableV2,validateV2Package} from '../src/content-package-v2.mjs';
 import {verifyContentRelease} from '../src/content-release.mjs';
 import {verifySiteCompletion,requestCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-site-completion.mjs';
-import {prepareCustomerSitePreview,withCustomerSitePreview,checkCustomerSitePreview} from './customer-site-preview.mjs';
+import {prepareCustomerSitePreview,withCustomerSitePreview,checkCustomerSitePreview,retainedCustomerSitePreview} from './customer-site-preview.mjs';
 
 const ROOT=path.resolve(import.meta.dirname,'../..'),VERSION='native-foundation-evidence.v1';
 const VERIFIER=path.join(ROOT,'SKILLS/niche-site-audit/scripts/verify-site-completion.mjs');
@@ -134,6 +134,87 @@ async function candidate(context,base,scope,details,directory){
   await writeFile(file,JSON.stringify({version:1,scopeSha256:digest(scope),release:actual.evidence})+'\n',{flag:'wx'});
   return actual;
 }
+const PREPARED_VERSION='native-candidate-preview.v1';
+function preparedBody(scope,release,buildSha256){
+  if(!hex(buildSha256,64))fail('foundation_preview_build_changed');
+  return {version:PREPARED_VERSION,state:'prepared',scope_sha256:digest(scope),sources:scope.sources,
+    site_context_sha256:scope.site_context_sha256,page_snapshot_sha256:scope.page_snapshot_sha256,
+    required_page_ids:scope.required_page_ids,release:release.evidence,build_sha256:buildSha256,
+    synthetic:scope.environment_id.startsWith('test-')||/\.(example|test|invalid|localhost)$/.test(scope.accepted.canonical_host),
+    server:'not_started',full_site_status:'UNVERIFIED',launch_status:'UNVERIFIED',admission:'not_performed',
+    deployment:'not_performed',channel_activation:'not_performed',calibration_status:'UNVERIFIED'};
+}
+function preparedProof(body){return {...body,artifact_sha256:digest(body)};}
+async function retainedPreparation(context,scope,release,directory,proof=null){
+  const raw=await readArtifactBytes(path.join(directory,'candidate-preview.json'),1000000),body=JSON.parse(raw);
+  const expected=preparedBody(scope,release,body.build_sha256);
+  if(!raw.equals(Buffer.from(stableV2(expected)+'\n'))
+      ||proof!==null&&stableV2(proof)!==stableV2(preparedProof(expected)))fail('foundation_preview_preparation_stale');
+  return {proof:preparedProof(expected),prepared:await retainedCustomerSitePreview(context,scope,release,body.build_sha256)};
+}
+async function preparePreview(context,scope,release,directory){
+  let exists=false;
+  try{await readArtifactBytes(path.join(directory,'candidate-preview.json'),1000000);exists=true;}
+  catch(error){if(error.code!=='ENOENT')throw error;}
+  if(exists)return (await retainedPreparation(context,scope,release,directory)).proof;
+  const prepared=await prepareCustomerSitePreview(context,scope,release);
+  await checkCustomerSitePreview(context,scope,release,prepared.buildSha256);
+  const body=preparedBody(scope,release,prepared.buildSha256);
+  await writeFile(path.join(directory,'candidate-preview.json'),stableV2(body)+'\n',{flag:'wx'});
+  return preparedProof(body);
+}
+
+async function authorizedInspection(operation,stillAuthorized){
+  const check=async()=>{let permitted=false;try{permitted=await stillAuthorized();}catch{}if(permitted!==true)fail('authorization_revoked');};
+  await check();
+  let finished=false,tick,wake,deadline;
+  const monitor=(async()=>{
+    while(!finished){await new Promise(resolve=>{wake=resolve;tick=setTimeout(resolve,1000);});if(!finished)await check();}
+  })();
+  try{
+    const expired=new Promise((_,reject)=>{deadline=setTimeout(()=>reject(Object.assign(Error('foundation_preview_inspection_expired'),{code:'foundation_preview_inspection_expired'})),120000);});
+    const result=await Promise.race([Promise.resolve().then(operation),monitor,expired]);
+    finished=true;clearTimeout(tick);wake?.();await monitor;
+    await check();return result;
+  }finally{finished=true;clearTimeout(deadline);clearTimeout(tick);wake?.();await monitor.catch(()=>{});}
+}
+
+// Trusted server-owned invocation only. No caller-supplied URL, command or path
+// reaches the process producer; its callback owns the bounded inspection window.
+export async function withPreparedCandidatePreview(input,proof,operation,stillAuthorized){
+  if(typeof operation!=='function'||typeof stillAuthorized!=='function')fail('foundation_invalid_scope');
+  exact(input,['command','scope','creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir']);
+  if(input.command!=='prepare-preview')fail('foundation_invalid_command');
+  const scope=validateScope(input.scope),native=scope.accepted;
+  if(input.creationId!==scope.creation_id||input.acceptedRevision!==native.accepted_revision
+      ||input.sourceHash!==native.candidate_sha256||input.canonicalHost!==native.canonical_host)fail('foundation_invalid_scope');
+  const base=Object.fromEntries(['creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir'].map(k=>[k,input[k]]));
+  const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
+  if(!publicCore||!path.isAbsolute(publicCore))fail('foundation_source_unavailable');
+  const fresh=async()=>{
+    if(await stillAuthorized()!==true)fail('authorization_revoked');
+    if(stableV2(await sources(publicCore))!==stableV2(scope.sources))fail('foundation_source_stale');
+    const context=await loadCustomerContentContext(base),{status,details}=await current(context,base,scope);
+    if(readiness(status,details).length)fail('foundation_preview_content_blocked');
+    await currentMedia(context,details);
+    return {context,details};
+  };
+  const {context,details}=await fresh(),directory=path.join(context.directory,'foundation',digest(scope));
+  await assertArtifactDirectories(context.root,directory);
+  const cached=await json(path.join(directory,'candidate.json'));
+  exact(cached,['version','scopeSha256','release']);
+  if(cached.version!==1||cached.scopeSha256!==digest(scope))fail('foundation_candidate_stale');
+  const release=await releaseEvidence(context,scope,cached.release.release_id,details);
+  if(stableV2(release.evidence)!==stableV2(cached.release))fail('foundation_candidate_stale');
+  const retained=await retainedPreparation(context,scope,release,directory,proof);
+  if(proof===null||proof===undefined)fail('foundation_preview_preparation_stale');
+  await fresh();
+  const result=await withCustomerSitePreview(retained.prepared,started=>authorizedInspection(()=>operation(started),stillAuthorized));
+  await fresh();
+  await retainedPreparation(context,scope,release,directory,proof);
+  return result;
+}
+
 export function previewBinding(value,scope,release){
   exact(value,['version','scopeSha256','packageSha256','releaseId','publicSourceRevision','origin',...(value.version>=2?['transportHost']:[]),...(value.version===3?['producerSha256']:[])]);
   if(![1,2,3].includes(value.version)||(value.version>=2&&value.transportHost!=='origin')||(value.version===3&&!hex(value.producerSha256,64))||value.scopeSha256!==digest(scope)||value.packageSha256!==release.package_sha256
@@ -309,7 +390,7 @@ function baseFor(context,scope){return {creationId:scope.creation_id,acceptedRev
 export async function customerSiteFoundation(input){
   const retainedCommand=input?.command==='check-retained';
   exact(input,['command','scope','creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir',...(retainedCommand?['observation']:[])]);
-  if(!['candidate','verify-local','check-retained'].includes(input.command))fail('foundation_invalid_command');
+  if(!['candidate','prepare-preview','verify-local','check-retained'].includes(input.command))fail('foundation_invalid_command');
   const scope=validateScope(input.scope),p=scope.accepted;
   if(input.creationId!==scope.creation_id||input.acceptedRevision!==p.accepted_revision||input.sourceHash!==p.candidate_sha256||input.canonicalHost!==p.canonical_host)fail('foundation_invalid_scope');
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR;
@@ -329,7 +410,7 @@ export async function customerSiteFoundation(input){
   }
   const context=await loadCustomerContentContext(base),{status,details}=await current(context,base,scope);
   const blockers=readiness(status,details);
-  if(blockers.length)return observation(scope,'blocked',blockers);
+  if(blockers.length){if(input.command==='prepare-preview')fail('foundation_preview_content_blocked');return observation(scope,'blocked',blockers);}
   await currentMedia(context,details);
   const parent=path.join(context.directory,'foundation');
   // Validate every existing parent before any write; recursive mkdir could follow an alias.
@@ -345,6 +426,13 @@ export async function customerSiteFoundation(input){
   try{
     let release;
     try{release=await candidate(context,base,scope,details,directory);}catch(error){if(error.code?.startsWith('foundation_'))throw error;return observation(scope,'blocked',['foundation_release_unavailable']);}
+    if(input.command==='prepare-preview'){
+      const proof=await preparePreview(context,scope,release,directory);
+      await current(context,base,scope);await currentMedia(context,details);
+      const after=await releaseEvidence(context,scope,release.evidence.release_id,details);
+      if(stableV2(after.evidence)!==stableV2(release.evidence)||stableV2(await sources(publicCore))!==stableV2(scope.sources))fail('foundation_source_stale');
+      return proof;
+    }
     let completion=null,remaining=['local_evidence_pending'];
     if(input.command==='verify-local'){
       try{completion=await localCompletion(context,scope,release,directory);remaining=[];}

@@ -86,6 +86,37 @@ class Release(Strict):
         return self
 
 
+class PreparedPreview(Strict):
+    """Opaque private build proof, never a URL, command or certification."""
+
+    version: Literal["native-candidate-preview.v1"]
+    state: Literal["prepared"]
+    scope_sha256: Digest
+    sources: Sources
+    site_context_sha256: Digest
+    page_snapshot_sha256: Digest
+    required_page_ids: list[PageId] = Field(min_length=1, max_length=200)
+    release: Release
+    build_sha256: Digest
+    artifact_sha256: Digest
+    synthetic: bool
+    server: Literal["not_started"]
+    full_site_status: Literal["UNVERIFIED"]
+    launch_status: Literal["UNVERIFIED"]
+    admission: Literal["not_performed"]
+    deployment: Literal["not_performed"]
+    channel_activation: Literal["not_performed"]
+    calibration_status: Literal["UNVERIFIED"]
+
+    @model_validator(mode="after")
+    def bound_artifact(self):
+        if (self.required_page_ids != sorted(set(self.required_page_ids))
+                or not set(self.required_page_ids) <= self.release.page_revisions.keys()
+                or self.artifact_sha256 != digest(self.model_dump(mode="json", exclude={"artifact_sha256"}))):
+            raise ValueError("exact_prepared_artifact_required")
+        return self
+
+
 class Completion(Strict):
     state: Literal["LOCAL_DELIVERY_CHECKS_PASS"]
     checked_at: datetime

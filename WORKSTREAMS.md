@@ -1068,6 +1068,14 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
 # S42 direct messenger consultant checkpoint — 2026-10-16
 
+2026-10-17 Root browser recovery: CUA/normal Chrome login restored; unchanged
+API62abbed/public255 freshly prepared native scope25a95e98/package713875fd after
+normal owner session/intake/S6 renewal.11 page openings320/1280 no observed
+horizontal overflow;390 views and empty-form validation,0submitted forms/models.
+Private screenshots/DOM/receipts retained; owned previews closed, viewport restored.
+UI3030 stays741; full product preview/premium design/200%/Foundation remain OPEN.
+Only own handoff metadata changed; no new helper, frontend start or policy bypass.
+
 2026-10-16 helper SITE INSPECTION GUARD RESERVED issue66/comment6211107441:
 new codex/site-inspection-guard-20261016 branch in clean OWN helper worktree from
 exactRoot1fb549619c7f1bc5d9b4f8b523e3f2af1329ae27/public255fea0813bf1aabeaeea2f2de0b29564118f2fc,

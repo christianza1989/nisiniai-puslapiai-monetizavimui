@@ -1,5 +1,15 @@
 # Kubilų verslas — atnaujintas darbas platformoje
 
+## Browser recovery — 2026-10-17 local time
+
+Chrome control and ordinary UI login recovered. Current unchanged62abbed/public255
+prepared a fresh session-bound native scope; all11 page openings were captured at
+320px/1280px with no observed horizontal overflow, plus390px views and empty-form
+validation without submission. Both guarded windows closed;3030 remains its old741
+reader. Actual200% zoom, premium design, full product preview, complete audit and
+Foundation/agent acceptance remain OPEN. Exact pins, original refusals and evidence
+are recorded in [the new recovery checkpoint](VERSLOMATIKA_BROWSER_RECOVERY_2026_10_17.md).
+
 ## Current adopted milestone — 2026-10-16 10:22 UTC
 
 Backend18871 now runs clean `62abbed947a7653c938526ea35fdf804581cd3eb`, PID3184/hidden supervisor11676, public255fea unchanged, same0044 database. Final source-only full backup/cutover preserved88tables/269native files and original0032. Normal owner private-intake/S6 returned200current; physical approved native015c3074 remains exact. Previously prepared fb423 adoption packet was never switched; preserve it as history. All paid workers/external channels stay off; original paid37 accounting is unchanged.

@@ -1,5 +1,4 @@
 """Typed domain adapter on the existing bounded CLI transport, no executable selection."""
-import hashlib
 import json
 import tempfile
 from pathlib import Path
@@ -10,6 +9,7 @@ from pydantic import Field, ValidationError, field_validator, model_validator
 from ..config import settings
 from ..creation.wire import Strict
 from ..customer_text.adapter import source_current
+from ..file_hash import sha256_file
 from ..tasks import codex
 from ..workspace_topics.wire import AppendMessage
 from .policy import EFFORT, MODEL
@@ -132,7 +132,7 @@ def runner_ready():
         return bool(cfg.workspace_team_runner_enabled and executable.is_absolute()
             and executable.is_file() and workspace.is_absolute() and workspace.is_dir()
             and 10 <= cfg.chat_runner_seconds <= 180
-            and hashlib.sha256(executable.read_bytes()).hexdigest() == cfg.chat_codex_sha256)
+            and sha256_file(executable) == cfg.chat_codex_sha256)
     except OSError:
         return False
 

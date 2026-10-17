@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Before any production edit on exact07d8, strict synthetic whole-executable allocation guard caused all four canonical callers to raise MemoryError:4FAIL24deselected1.82s, logSHA2561fd0088bdc26a8049894e6e49e196be62b12704f5737b3c49a0004badeb07dad. Fixture uses an inert temporary binary and mocks consult transport; no installed341MB executable was executed/read and no provider or operating process changed. This reproduces the canonical read_bytes call cause under an explicit allocation refusal; Root's actual private-loader MemoryError and streaming recovery remain separately reported operating evidence.",
+  "eventId": "4a6cf7b3-90d3-409c-8bb5-19859bf5aca3",
+  "sequence": 2,
+  "at": "2026-10-17T20:11:52.219Z"
+}

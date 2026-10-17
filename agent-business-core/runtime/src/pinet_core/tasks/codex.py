@@ -1,6 +1,5 @@
 """Single owner consultation adapter. No browser-selected executable or tool arguments."""
 
-import hashlib
 import json
 import os
 import tempfile
@@ -9,6 +8,7 @@ from pathlib import Path
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from ..config import settings
+from ..file_hash import sha256_file
 from .codex_transport import RunnerError, execute, stop_process  # noqa: F401
 
 DISABLED = ("shell_tool", "unified_exec", "apps", "plugins", "hooks", "browser_use", "browser_use_external",
@@ -148,7 +148,7 @@ async def run(context, still_authorized):
         or len(cfg.chat_codex_sha256) != 64
     ):
         raise RunnerError("runner_unavailable")
-    if hashlib.sha256(executable.read_bytes()).hexdigest() != cfg.chat_codex_sha256:
+    if sha256_file(executable) != cfg.chat_codex_sha256:
         raise RunnerError("runner_unavailable")
     # A private context receipt is consumed by the worker, never transmitted to the model.
     context = {key: value for key, value in context.items() if not key.startswith("_")}

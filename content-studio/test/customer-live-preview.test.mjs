@@ -103,7 +103,7 @@ for(const change of ['nonce','claim','expiry','unbounded-heartbeat','scope','rea
     return operation(f.preview);
   };
   await assert.rejects(serveLivePreview(f.input,f.deps),{code:change==='origin'?'live_preview_origin_invalid':'authorization_revoked'});
-  assert.deepEqual(await readdir(f.directory),[]);
+  assert.deepEqual(await readdir(f.directory),change==='origin'?[]:[f.input.lease_id+'.guard-failure.json']);
 });
 
 test('producer revocation clears the callback wait timer so it cannot retain the bridge after child cleanup',async t=>{
@@ -124,4 +124,136 @@ test('producer revocation clears the callback wait timer so it cannot retain the
     await assert.rejects(serveLivePreview(f.input,f.deps),{code:'authorization_revoked'});
     assert.equal(cleared,true);
   }finally{globalThis.setTimeout=originalSet;globalThis.clearTimeout=originalClear;}
+});
+
+async function refuse(f){
+  f.deps.withPreview=async(body,proof,operation,authorized)=>{
+    assert.equal(await authorized(),false);
+    throw Object.assign(Error('authorization_revoked'),{code:'authorization_revoked'});
+  };
+  await assert.rejects(serveLivePreview(f.input,f.deps),{code:'authorization_revoked'});
+}
+const diagnosticFile=f=>path.join(f.directory,f.input.lease_id+'.guard-failure.json');
+
+for(const [change,stage,code] of [
+  ['claim','claim','claim_binding_mismatch'],
+  ['expired','heartbeat','heartbeat_expired'],
+  ['pulse-binding','heartbeat','heartbeat_binding_mismatch'],
+  ['context','context','foundation_context_stale'],
+  ['readiness','context','foundation_preview_content_blocked'],
+  ['media','media','media_unavailable'],
+  ['unsafe-error','context','context_check_failed'],
+])test('first-refusal receipt identifies '+change+' without exposing authority or customer fields',async t=>{
+  const f=await serving(t);
+  if(change==='claim')f.claim.nonce='0'.repeat(64);
+  if(change==='expired')f.pulse.expires_ms=Date.now()-50;
+  if(change==='pulse-binding')f.pulse.nonce='0'.repeat(64);
+  if(change==='context')f.deps.inspectContext=async()=>{throw Object.assign(Error('/private/customer-data TOKEN'),{code:'foundation_context_stale'});};
+  if(change==='readiness')f.details[0].reviewCurrent=false;
+  if(change==='media')f.deps.inspectMedia=async()=>{throw Object.assign(Error('/private/customer-media TOKEN'),{code:'ENOENT'});};
+  if(change==='unsafe-error')f.deps.loadContext=async()=>{throw Object.assign(Error('/private/customer-data TOKEN'),{code:'private_customer_name'});};
+  await refuse(f);
+  const receipt=JSON.parse(await readFile(diagnosticFile(f)));
+  assert.deepEqual(Object.keys(receipt).sort(),['version','lease_id','scope_sha256','stage','code','observed_at','elapsed_ms','pulse_margin_ms','checkpoint'].sort());
+  assert.equal(receipt.version,'customer-live-preview-guard-failure.v1');
+  assert.equal(receipt.lease_id,f.input.lease_id);assert.equal(receipt.scope_sha256,digest(f.input.scope));
+  assert.equal(receipt.stage,stage);assert.equal(receipt.code,code);assert.equal(receipt.checkpoint,'before_context');
+  assert.ok(Number.isFinite(Date.parse(receipt.observed_at)));assert.ok(receipt.elapsed_ms>=0&&receipt.elapsed_ms<=150000);
+  if(change==='expired')assert.ok(receipt.pulse_margin_ms<0);
+  if(['claim','pulse-binding'].includes(change))assert.equal(receipt.pulse_margin_ms,null);
+  const bytes=await readFile(diagnosticFile(f),'utf8');assert.ok(Buffer.byteLength(bytes)<1024);
+  for(const secret of [f.input.nonce,f.input.prepared.artifact_sha256,'customer-data','customer-media','private_customer_name','TOKEN',f.input.artifactsRoot])assert.equal(bytes.includes(secret),false);
+  assert.deepEqual(await readdir(f.directory),[path.basename(diagnosticFile(f))]);
+});
+
+test('first refusal is retained even after pulse refresh and a different later refusal',async t=>{
+  const f=await serving(t);f.pulse.expires_ms=Date.now()-50;let original;
+  f.deps.withPreview=async(body,proof,operation,authorized)=>{
+    assert.equal(await authorized(),false);original=await readFile(diagnosticFile(f));
+    f.pulse.expires_ms=Date.now()+3000;f.claim.nonce='0'.repeat(64);
+    assert.equal(await authorized(),false);
+    assert.deepEqual(await readFile(diagnosticFile(f)),original);
+    throw Object.assign(Error('authorization_revoked'),{code:'authorization_revoked'});
+  };
+  await assert.rejects(serveLivePreview(f.input,f.deps),{code:'authorization_revoked'});
+  assert.equal(JSON.parse(original).code,'heartbeat_expired');
+});
+
+test('diagnostic write failure never permits or overrides the original refusal',async t=>{
+  const f=await serving(t);f.claim.nonce='0'.repeat(64);let writes=0;
+  f.deps.publish=async()=>{writes++;throw Error('/private/path TOKEN');};
+  await refuse(f);
+  assert.equal(writes,1);assert.deepEqual(await readdir(f.directory),[]);
+});
+
+test('successful guard writes no diagnostic or other ledger file',async t=>{
+  const f=await serving(t);
+  f.deps.withPreview=async(body,proof,operation,authorized)=>{assert.equal(await authorized(),true);return {guard:'accepted'};};
+  assert.deepEqual(await serveLivePreview(f.input,f.deps),{guard:'accepted'});
+  assert.deepEqual(await readdir(f.directory),[]);
+});
+
+test('an existing first receipt survives a later serve invocation for the same lease',async t=>{
+  const f=await serving(t);f.pulse.expires_ms=Date.now()-50;
+  await refuse(f);const original=await readFile(diagnosticFile(f));
+  f.pulse.expires_ms=Date.now()+3000;f.claim.nonce='0'.repeat(64);
+  await refuse(f);assert.deepEqual(await readFile(diagnosticFile(f)),original);
+});
+
+test('expired pulse margin is captured before a newer pulse overwrites its private source',async t=>{
+  const f=await serving(t);f.pulse.expires_ms=Date.now()-50;let captured;
+  f.deps.publish=async(file,receipt)=>{captured=structuredClone(receipt);f.pulse.expires_ms=Date.now()+3000;};
+  await refuse(f);
+  assert.equal(captured.code,'heartbeat_expired');assert.ok(captured.pulse_margin_ms<0);
+  assert.ok(f.pulse.expires_ms>Date.now());
+});
+
+for(const kind of ['after_media','deadline'])test('receipt distinguishes '+kind+' from the initial heartbeat check',async t=>{
+  const f=await serving(t),originalNow=Date.now;let clock=originalNow();Date.now=()=>clock;
+  if(kind==='after_media')f.deps.inspectMedia=async()=>{clock+=3001;};
+  else f.deps.assertDirectories=async()=>{clock+=139001;f.pulse.expires_ms=clock+3000;};
+  try{
+    await refuse(f);
+    const receipt=JSON.parse(await readFile(diagnosticFile(f)));
+    assert.equal(receipt.stage,kind==='deadline'?'deadline':'heartbeat');
+    assert.equal(receipt.code,kind==='deadline'?'preview_deadline_elapsed':'heartbeat_expired');
+    assert.equal(receipt.checkpoint,kind==='deadline'?'before_context':'after_media');
+  }finally{Date.now=originalNow;}
+});
+
+test('concurrent refusals publish once and retain only the first observed code',async t=>{
+  const f=await serving(t);f.claim.nonce='0'.repeat(64);let writes=0;
+  f.deps.publish=async()=>{writes++;};
+  f.deps.withPreview=async(body,proof,operation,authorized)=>{
+    assert.deepEqual(await Promise.all([authorized(),authorized(),authorized()]),[false,false,false]);
+    throw Object.assign(Error('authorization_revoked'),{code:'authorization_revoked'});
+  };
+  await assert.rejects(serveLivePreview(f.input,f.deps),{code:'authorization_revoked'});assert.equal(writes,1);
+});
+
+test('a stalled diagnostic publication cannot stall or change guard refusal',async t=>{
+  const f=await serving(t),originalSet=globalThis.setTimeout,originalClear=globalThis.clearTimeout;
+  const handle={synthetic:true};let budget;
+  globalThis.setTimeout=(callback,ms,...args)=>{if(ms===100){budget=ms;queueMicrotask(callback);return handle;}return originalSet(callback,ms,...args);};
+  globalThis.clearTimeout=timer=>{if(timer!==handle)originalClear(timer);};
+  f.claim.nonce='0'.repeat(64);f.deps.publish=async()=>new Promise(()=>{});
+  try{await refuse(f);assert.equal(budget,100);}finally{globalThis.setTimeout=originalSet;globalThis.clearTimeout=originalClear;}
+});
+
+for(const [kind,stage,code] of [
+  ['claim-read','claim','claim_read_failed'],['claim-shape','claim','claim_shape_invalid'],
+  ['pulse-read','heartbeat','heartbeat_read_failed'],['pulse-shape','heartbeat','heartbeat_shape_invalid'],
+  ['pulse-range','heartbeat','heartbeat_expiry_unbounded'],['pulse-type','heartbeat','heartbeat_expiry_invalid'],
+  ['code-getter','context','context_check_failed'],
+])test('receipt uses a fixed safe reason for '+kind,async t=>{
+  const f=await serving(t),read=f.deps.readBytes;
+  if(kind==='claim-read')f.deps.readBytes=async file=>{if(path.basename(file)==='active.json')throw Error('PRIVATE/path TOKEN');return read(file);};
+  if(kind==='claim-shape')f.claim.extra='PRIVATE/token';
+  if(kind==='pulse-read')f.deps.readBytes=async file=>{if(path.basename(file)!=='active.json')throw Error('PRIVATE/path TOKEN');return read(file);};
+  if(kind==='pulse-shape')f.pulse.extra='PRIVATE/token';
+  if(kind==='pulse-range')f.pulse.expires_ms=Date.now()+10000;
+  if(kind==='pulse-type')f.pulse.expires_ms='PRIVATE/customer';
+  if(kind==='code-getter')f.deps.loadContext=async()=>{throw Object.defineProperty(Error('PRIVATE/customer'),'code',{get(){throw Error('TOKEN');}});};
+  await refuse(f);const raw=await readFile(diagnosticFile(f),'utf8'),receipt=JSON.parse(raw);
+  assert.equal(receipt.stage,stage);assert.equal(receipt.code,code);assert.equal(raw.includes('PRIVATE'),false);assert.equal(raw.includes('TOKEN'),false);
 });

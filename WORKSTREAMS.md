@@ -1198,3 +1198,14 @@ Root Wellness handoff are unchanged. Root owns actual0044 DB/model/serving/UI
 acceptance; helper DB/provider/current-case/serving operations remain0.
 
 S42 actual-PG repair2026-10-16: helper own branch codex/verslomatika-direct-consultant-repair-20261016 fromea924493; Stage2 WIP paused/separate. Root retained9FAIL48PASS941.82s plusfirst50342883 diagnostic. Exactdirect.py/direct_schema.py +direct/teamPGtests scopedissue66 comment6204095479, upgrade158981cf. Triggernamecast, narrowlegacy/terminalaccountingapplicability, immutableMapnolock/noUPDATE; inheritedS37testordering correctedwithboundedtwo-transactionproof. Focused86PASS/Ruff/nativecollect24only; helperDB/provider/case/serving0. RootactualfreshPG/adoptionpending.
+
+2026-10-17 helper FIRST-REFUSAL DIAGNOSTIC RESERVED issue66/comment6231789228:
+own clean ff53967fa321a0b2a2369a0fee3c17db3dbb292693/public255, new branch
+codex/live-preview-first-refusal-20261017, paired continuePASS. Exact shared
+content-studio/scripts/customer-live-preview.mjs only; existing Node mock test,
+NEWdocs/LIVE_PREVIEW_GUARD_DIAGNOSTIC.md and separatejournalbc755d18. One private
+exclusive firstreceipt preserves safe stage/code/time/pulse sample; all original
+checks/publicfalse and3/20/120/150 bounds retained.42mockNodePASS513.68ms; original
+9FAIL baseline retained. No actualDB/Nodeproducer/server/provider/currentcase/
+serving/adoption, no Rootfiles or oldjournal533 changes. Root reviews completepin
+before actual retry and owns receipt interpretation/optimization/adoption.

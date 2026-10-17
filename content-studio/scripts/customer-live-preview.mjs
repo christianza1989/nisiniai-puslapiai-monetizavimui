@@ -12,6 +12,11 @@ const fail=code=>{throw Object.assign(Error(code),{code});};
 const hex=v=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v);
 const uuid=v=>typeof v==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(v);
 const baseKeys=['creationId','acceptedRevision','sourceHash','canonicalHost','artifactsRoot','dataDir','outputDir'];
+const contextFailureCodes=new Set(['foundation_native_intake_changed','foundation_context_stale','foundation_page_binding_invalid',
+  'writer_unsafe_artifact','writer_path_outside_artifacts','writer_invalid_identity','writer_absolute_paths_required',
+  'writer_runtime_artifacts_required','writer_revision_directory_mismatch','writer_artifacts_alias','writer_intake_busy',
+  'writer_intake_binding_mismatch','writer_original_hash_mismatch','writer_studio_context_conflict','writer_page_binding_mismatch']);
+const diagnosticNumber=value=>Math.max(-150000,Math.min(150000,Math.trunc(value)));
 function exact(value,keys){if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).length!==keys.length||keys.some(k=>!Object.hasOwn(value,k)))fail('live_preview_input_invalid');}
 function checked(input){
   const extras=input?.action==='serve'?['prepared','lease_id','instance_id','nonce','request_sha256']:[];
@@ -50,26 +55,59 @@ export async function serveLivePreview(input,deps={}){
   const base=checked(input);
   if(input.action!=='serve')fail('live_preview_input_invalid');
   const directory=path.join(base.artifactsRoot,'customer-live-previews'),scopeHash=digest(input.scope);
-  const hardEnd=Date.now()+139000;
+  const hardEnd=Date.now()+139000,started=performance.now();
   await (deps.assertDirectories||assertArtifactDirectories)(base.artifactsRoot,directory);
   const json=async file=>JSON.parse((await (deps.readBytes||readArtifactBytes)(path.join(directory,file),16384)).toString('utf8'));
-  const signal=async()=>{
-    const claim=await json('active.json'),pulse=await json(input.lease_id+'.heartbeat.json');
+  let firstRefusal;
+  const recordRefusal=trace=>{
+    if(!firstRefusal)firstRefusal=(async()=>{
+      const observed=trace.observed??Date.now();
+      const receipt={version:'customer-live-preview-guard-failure.v1',lease_id:input.lease_id,scope_sha256:scopeHash,
+        stage:trace.stage,code:trace.code,checkpoint:trace.checkpoint,observed_at:new Date(observed).toISOString(),
+        elapsed_ms:diagnosticNumber(performance.now()-started),
+        pulse_margin_ms:trace.pulseExpires===null?null:diagnosticNumber(trace.pulseExpires-observed)};
+      const writing=Promise.resolve().then(()=>(deps.publish||publish)(path.join(directory,input.lease_id+'.guard-failure.json'),receipt)).catch(()=>{});
+      let timer;
+      try{await Promise.race([writing,new Promise(resolve=>{timer=setTimeout(resolve,100);})]);}
+      finally{clearTimeout(timer);}
+    })();
+    return firstRefusal; // at most one bounded best-effort attempt; never overwrite/retry
+  };
+  const refuse=(trace,code)=>{trace.code=code;trace.observed=Date.now();fail('authorization_revoked');};
+  const signal=async trace=>{
+    trace.stage='claim';trace.code='claim_read_failed';trace.pulseExpires=null;
+    const claim=await json('active.json');trace.code='claim_shape_invalid';
     exact(claim,['lease_id','instance_id','nonce','request_sha256']);
+    if(claim.lease_id!==input.lease_id||claim.instance_id!==input.instance_id||claim.nonce!==input.nonce||claim.request_sha256!==input.request_sha256)refuse(trace,'claim_binding_mismatch');
+    trace.stage='heartbeat';trace.code='heartbeat_read_failed';
+    const pulse=await json(input.lease_id+'.heartbeat.json');trace.code='heartbeat_shape_invalid';
     exact(pulse,['version','lease_id','nonce','scope_sha256','expires_ms']);
-    if(claim.lease_id!==input.lease_id||claim.instance_id!==input.instance_id||claim.nonce!==input.nonce||claim.request_sha256!==input.request_sha256
-        ||pulse.version!=='customer-live-preview-heartbeat.v1'||pulse.lease_id!==input.lease_id||pulse.nonce!==input.nonce||pulse.scope_sha256!==scopeHash
-        ||!Number.isSafeInteger(pulse.expires_ms)||pulse.expires_ms<=Date.now()||pulse.expires_ms>Date.now()+3100||Date.now()>=hardEnd)fail('authorization_revoked');
+    if(pulse.version!=='customer-live-preview-heartbeat.v1'||pulse.lease_id!==input.lease_id||pulse.nonce!==input.nonce||pulse.scope_sha256!==scopeHash)refuse(trace,'heartbeat_binding_mismatch');
+    if(!Number.isSafeInteger(pulse.expires_ms))refuse(trace,'heartbeat_expiry_invalid');
+    trace.pulseExpires=pulse.expires_ms;
+    if(pulse.expires_ms<=Date.now())refuse(trace,'heartbeat_expired');
+    if(pulse.expires_ms>Date.now()+3100)refuse(trace,'heartbeat_expiry_unbounded');
+    trace.stage='deadline';
+    if(Date.now()>=hardEnd)refuse(trace,'preview_deadline_elapsed');
   };
   const authorized=async()=>{
+    const trace={stage:'claim',code:'claim_read_failed',checkpoint:'before_context',pulseExpires:null};
     try{
-      await signal();
+      await signal(trace);trace.stage='context';trace.code='context_check_failed';
       const context=await (deps.loadContext||loadCustomerContentContext)(base);
       const {status,details}=await (deps.inspectContext||inspectFoundationContext)(context,base,input.scope);
-      if(foundationReadiness(status,details).length)return false;
+      if(foundationReadiness(status,details).length)refuse(trace,'foundation_preview_content_blocked');
+      trace.stage='media';trace.code='media_check_failed';
       await (deps.inspectMedia||inspectFoundationMedia)(context,details);
-      await signal();return true;
-    }catch{return false;}
+      trace.checkpoint='after_media';await signal(trace);return true;
+    }catch(error){
+      let code;try{code=error?.code;}catch{}
+      if(trace.stage==='context'&&contextFailureCodes.has(code))trace.code=code;
+      if(trace.stage==='media'&&code==='foundation_current_media_invalid')trace.code=code;
+      if(trace.stage==='media'&&code==='ENOENT')trace.code='media_unavailable';
+      try{await recordRefusal(trace);}catch{} // diagnostics cannot override the original refusal
+      return false;
+    }
   };
   const invoke=deps.withPreview||withPreparedCandidatePreview;
   let waitTimer;

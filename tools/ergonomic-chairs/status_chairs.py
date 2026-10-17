@@ -15,12 +15,19 @@ def main():
     for f in (source/'source').glob('*/RESULT.json'):
         r=read(f);observed+=1;known_pending+=len(r['graph']['missingEdges'])
     total=state['scope']['activeVariantJobs']
+    published=set(state.get('technicalDraftModelStates',{}))
+    exceptions=read(a.root/'PABAIGAI.json').get('draftTransportDeferred',[])
+    deferred_keys={m['key'] for m in exceptions}
+    jobs={j['job']:j for j in read(a.root/'INVENTORY.json')['queue']}
+    upload_pending=[r['job'] for r in offline.get('rows',[]) if r['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY'
+        and any(key not in published|deferred_keys for key in jobs[r['job']]['modelKeys'])]
     result={'at':now(),'scope':{'activeChairs':272,'unchangedXilium':11,'missingInitialSource':2,'sourceJobs':total},
         'sourceClosed':closed,'remainingSourceJobs':total-closed,'observedJobs':observed,'observedPendingEdges':known_pending,'unknownGraphs':total-observed,
         'sourcePhase':queue['phase'],'sourceTail':len(queue['tail']),'deferredGrowing':len(queue.get('deferredQueue',[])),
         'geometryRuntimePass':sum(r['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' for r in offline.get('rows',[])),
         'offlinePhase':offline.get('phase'),'offlineErrors':[{'job':r['job'],'error':r.get('error')} for r in offline.get('rows',[]) if r['result']=='REVIEW_REQUIRED'],
         'acceptedModels':state['acceptedThisTask'],'draftPublished':state['draftPublishedThisTask'],'launchPublished':state['launchPublishedThisTask'],
+        'technicalDraftUploadPending':len(upload_pending),'technicalDraftUploadPendingJobs':upload_pending,'draftTransportDeferred':len(deferred_keys),
         'processes':selected,'actualNativeLeafCount':sum(not any(c['ParentProcessId']==r['ProcessId'] for c in workers) for r in workers),'measuredNative':queue.get('measuredNative'),
         'freeGB':round(shutil.disk_usage(a.root).free/1e9,2),'belowReserve':shutil.disk_usage(a.root).free<101000000000,
         'blockers':state.get('textAndBrowserBlocked'),'wholeTaskComplete':False}

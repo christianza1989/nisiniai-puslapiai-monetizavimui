@@ -283,7 +283,8 @@ class Service:
             payload = self.payload(lease.scope, artifacts, "serve") | {"prepared": lease.proof.model_dump(mode="json"),
                 "lease_id": lease.view["lease_id"], "instance_id": self.instance_id,
                 "nonce": lease.record["nonce"], "request_sha256": digest(lease.record)}
-            runner = asyncio.create_task(studio._execute([node, SCRIPT], payload, environment, lambda: self.permitted(lease), 149))
+            runner = asyncio.create_task(studio._execute([node, SCRIPT], payload, environment,
+                lambda: self.permitted(lease), 149, authorization_interval=.2))
             while not runner.done():
                 if lease.view["state"] == "starting":
                     await self.ready(lease)

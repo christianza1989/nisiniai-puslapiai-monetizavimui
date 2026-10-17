@@ -1274,3 +1274,12 @@ current_actor and rechecks lifetime/identity after await. Same3PASS6a6757d5.
 Final combined428PASS67.15s (1actual-process deselected,1existing UUIDwarning),
 hashb08aa6a62e62bbed66938ad49803c59291f3b5a71239842d87874b3528bf02f6;
 12PythonRuff/diffPASS. Historical389PASS is not completeness; no Source11.
+
+2026-10-17 Root cadence source window after frozen60e7 handoff: upgrade
+c3cf73e6-9aeb-4596-aedc-50594f4802f3, issue66/comment6232426094. Only studio
+_execute internal interval validation/wait, fixed live-preview serve caller and
+their offline tests/docs. Other callers keep1s; serve selects0.2s. Original
+1FAIL1PASS baseline retained; focused61PASS and real inert-child cleanup8PASS,
+1SQL test deselected. No actual serving adoption yet. Helper's late-P follow-up
+owns only authority_observation/test plus its new journal/docs; those files are
+not edited by Root in parallel. No new provider calls, TTL or deadline changes.

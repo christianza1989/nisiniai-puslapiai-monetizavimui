@@ -46,15 +46,17 @@ async def fixture(tmp_path, monkeypatch):
             raise ControlError(401, "unauthenticated")
         state.prepared += 1
         return SimpleNamespace(artifact_sha256="b"*64, model_dump=lambda **_: {"artifact_sha256": "b"*64})
-    async def execute(args, body, env, permitted, seconds):
+    async def execute(args, body, env, permitted, seconds, *, authorization_interval=1.0):
         assert args[1] == live.SCRIPT and await permitted()
         if body["action"] == "inspect":
             state.inspected += 1
             assert seconds == 20
+            assert authorization_interval == 1
             return {"version": "customer-live-preview-inspection.v1", "scope_sha256": state.pin.fingerprint(),
                 "site_context_sha256": state.pin.site_context_sha256, "can_start": not state.blocked,
                 "blocked_reasons": ["review_missing:page-one"] if state.blocked else []}
         state.served += 1
+        assert authorization_interval == .2
         assert seconds == 149 and '"session"' not in json.dumps(body)
         assert set(body) == {"action", "scope", "creationId", "acceptedRevision", "sourceHash", "canonicalHost",
             "artifactsRoot", "dataDir", "outputDir", "prepared", "lease_id", "instance_id", "nonce", "request_sha256"}
@@ -300,9 +302,9 @@ async def test_capacity_is_bounded_and_old_uuid_tombstones_are_never_evicted(fix
 async def test_uncertain_transport_cleanup_keeps_claim_and_url_hidden(fixture, monkeypatch):
     f = fixture
     original = live.studio._execute
-    async def broken(*args):
+    async def broken(*args, **kwargs):
         if args[1]["action"] == "inspect":
-            return await original(*args)
+            return await original(*args, **kwargs)
         raise OSError("synthetic cleanup failure; never disclose")
     monkeypatch.setattr(live.studio, "_execute", broken)
     value = await f.manager.start("session", f.cid, f.request)
@@ -545,8 +547,8 @@ async def test_shutdown_joins_the_exact_owned_inflight_authority_before_returnin
 async def test_unknown_producer_cleanup_still_joins_inflight_authority_and_retains_claim(fixture, monkeypatch):
     f = fixture
     original = live.studio._execute
-    async def uncertain(*args):
-        result = await original(*args)
+    async def uncertain(*args, **kwargs):
+        result = await original(*args, **kwargs)
         if args[1]["action"] == "serve":
             raise OSError("synthetic uncertain producer cleanup")
         return result

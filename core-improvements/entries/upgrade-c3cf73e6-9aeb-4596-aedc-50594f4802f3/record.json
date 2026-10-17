@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Long-lived preview monitor waits one second after every full authorization, leaving too little jitter margin inside its three-second heartbeat; use a fixed faster fresh-check cadence only for serving",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_monitor_cadence.py",
+    "docs/LIVE_PREVIEW_AUTH_CADENCE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Actual d904 full callbacks1.3912-1.5267s plus existing1s monitor wait leave less than0.61s within3s; sampled heartbeat expiries at-62ms before ready and-124ms after ready are retained. Whole preview acceptance remains fixing. Root source window starts only after the current helper packet is transferred."
+  ],
+  "rollback": "Revert only the optional internal interval and fixed serve caller; retain all authority checks, heartbeat lifetime, time limits, first failures, UUID tombstones, DB and native data.",
+  "id": "upgrade-c3cf73e6-9aeb-4596-aedc-50594f4802f3",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "7c12cfe66ef2df33194aff5991fd0d409f9d8e2d",
+  "createdAt": "2026-10-17T09:43:51.915Z"
+}

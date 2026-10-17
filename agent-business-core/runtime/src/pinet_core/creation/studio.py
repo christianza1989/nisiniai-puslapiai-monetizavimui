@@ -73,11 +73,17 @@ async def preflight_dependencies(still_authorized):
     return value
 
 
-async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576):
+async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576,
+                   authorization_interval=1.0):
     # Only fixed server-owned media reads opt into the larger bounded payload.
     # Model/intake/writer callers retain their existing one-MiB default.
     if type(output_limit) is not int or not 1048576 <= output_limit <= 20 * 1048576:
         raise RunnerError("studio_output_limit")
+    # Only a fixed server-owned caller selects a shorter serial check interval.
+    # Validate before authorization or process creation; never run a pulse timer
+    # independently of the fresh authorization callback.
+    if type(authorization_interval) not in (int, float) or not .05 <= authorization_interval <= 1:
+        raise RunnerError("studio_authorization_interval")
     async def bounded(stream, limit):
         chunks, size = [], 0
         while chunk := await stream.read(8192):
@@ -94,7 +100,7 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
             if not await still_authorized():
                 raise RunnerError("authorization_revoked")
             try:
-                await asyncio.wait_for(finishing.wait(), 1)
+                await asyncio.wait_for(finishing.wait(), authorization_interval)
             except TimeoutError:
                 pass
 

@@ -1,0 +1,26 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Match canonical workspace Error DTO to actual bounded SafeRoute code/message/request_id body",
+  "category": "code",
+  "evidence": [
+    "Root-confirmed P1 portal3a4ff35: client requires2 keys but core SafeRoute always returns3 keys, so real409/429 becomes503.",
+    "Historical workflow protocol0b182dc omitted SafeRoute message; preserve that checkpoint and correct additively."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team/wire.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_error_envelope.py",
+    "docs/contracts/verslomatika-workspace-team.openapi.json",
+    "docs/contracts/verslomatika-workspace-directory.openapi.json",
+    "docs/contracts/verslomatika-workspace-agent-preparation.openapi.json",
+    "docs/contracts/verslomatika-workspace-agent-episode.openapi.json",
+    "docs/contracts/verslomatika-workspace-agent-workflow.openapi.json",
+    "docs/WORKSPACE_ERROR_ENVELOPE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this additive DTO/generated-contract correction before adoption. Never change SafeRoute bodies, workflow/runtime/SQL, historical0b/19de or another journal.",
+  "id": "upgrade-fd5b06ae-3ad7-459a-8ee4-79b3dae7c7d1",
+  "branch": "codex/workspace-error-envelope-20261017",
+  "baseSha": "19de88e80fb1350ba7bfac29e3cdff2386284f4d",
+  "createdAt": "2026-10-17T20:45:59.764Z"
+}

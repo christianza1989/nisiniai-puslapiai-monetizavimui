@@ -180,3 +180,11 @@ class Envelope(Strict):
 class Error(Strict):
     code: str
     request_id: UUID
+    message: str | None = Field(default=None, max_length=80, exclude_if=lambda value: value is None,
+        description="Optional SafeRoute code echo. When present it must equal code; explicit null or arbitrary prose is invalid.")
+
+    @model_validator(mode="after")
+    def code_echo_only(self):
+        if "message" in self.model_fields_set and self.message != self.code:
+            raise ValueError("Error message must be the same public code")
+        return self

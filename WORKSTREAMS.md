@@ -1,3 +1,20 @@
+## Workspace SafeRoute error contract — helper 2026-10-17
+
+Root-confirmed portal3a4ff35 P1: actual core SafeRoute emits code/message/request_id
+(message echoes code); canonical shared Error omitted message and new portal transport
+assumed2keys. Own clean codex/workspace-error-envelope-20261017 from frozen
+19de88e, start paired main533/publicec8PASS20:44:53/55UTC. Only shared Error DTO,
+its five generated workspace projections, new pure in-process SafeRoute/DTO
+regression, own docs/journal/workstream. Root owns portal client/tests. Preserve
+0b protocol and19de runtime/SQL byte-for-byte; no DB/provider/services/models.
+
+Upgrade-fd5b06ae-3ad7-459a-8ee4-79b3dae7c7d1: actual in-process SafeRoute
+baseline7FAIL8PASS57bf2336; corrected shared Error adds only optional bounded
+same-code message and keeps old2-key serialization. Final310purePASS3.22s
+135e941e77b202ae7f04288d0fbbdbf8522f3ec5987fe85d9bcda176c0a4753d.
+Boundary AST/JSON confirms only Error across5contracts; all success/runtime/SQL
+unchanged. Root owns portal three-key parsing and actual adoption.
+
 ## Durable preparation to single native test — helper 2026-10-17
 
 Root-authorized separate codex/agent-preparation-join-20261017 from frozen

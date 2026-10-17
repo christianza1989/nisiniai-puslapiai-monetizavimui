@@ -1,0 +1,22 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Provide a bounded privileged current-owner writer for the existing synthetic acquisition ModuleBinding instead of untracked fixture SQL",
+  "category": "code",
+  "evidence": [
+    "Actual canonical Business registration succeeded, but acquisition.normal.start requires acquisition_modules while the runtime has only SELECT and maintained scripts contain no ModuleBinding writer. Headless model/Case QA is a separate existing path."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/module_admin.py",
+    "agent-business-core/runtime/scripts/acquisition_module_admin.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_module_admin.py",
+    "agent-business-core/runtime/tests/test_acquisition_module_admin_pg.py",
+    "docs/ACQUISITION_MODULE_ADMIN.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert the unused writer/CLI and its dedicated tests/docs. Preserve existing module rows, canonical correspondence and private operation receipts. No schema or runtime activation.",
+  "id": "upgrade-d32f9944-8626-474b-bf0a-4d5a6065168f",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "2486fb02501363a7d27bfc27250f4b9cc423be37",
+  "createdAt": "2026-10-17T22:59:16.414Z"
+}

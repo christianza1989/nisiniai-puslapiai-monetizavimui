@@ -1,3 +1,16 @@
+## Explicit synthetic acquisition module administration — Root 2026-10-18
+
+Issue66/comment6242709325, upgrade-d32f9944-8626-474b-bf0a-4d5a6065168f,
+base2486fb0/main533/public255 (main ec8). New acquisition/module_admin.py,
+scripts/acquisition_module_admin.py, dedicated offline/PG tests and
+docs/ACQUISITION_MODULE_ADMIN.md only, plus this entry/own journal. Reuse existing
+ModuleBinding, exact native Registration/current verified owner Session and
+privileged local/test transaction. Bounded DB-clock lease, explicit CAS approval/
+stop and private prepared/committed receipt; no automatic renewal/replay, model,
+transport, scheduler, API, DTO, schema, operating admission or channel activation.
+Existing acquisition engine/headless/correspondence remains acquisition-owned;
+Registration source remains helper-owned. No source path overlap.
+
 ## Owned mail display and Lithuanian sidecars — Root 2026-10-18
 
 Issue66/comment6241311809, upgrade519c758b, paired30071/main533/publicec8.

@@ -1,3 +1,12 @@
+## Synthetic team clock — Root 2026-10-17
+
+Issue66/comment6232001781: only shared test_creation_team.runner, focused helper
+regression and docs/PIPELINE_TEST_ROLE_CLOCK.md; upgrade39777fcd. Actual High PG
+case retained1FAIL6PASS247.27s; unchanged numeric diagnostic899.786s vs default360
+and canonicalHigh900. Focused baseline1FAIL5PASS; repaired helper23PASS including
+profile-batch regression. Production clocks/roles/models/authority unchanged.
+Root owns isolated PG retry, same-DB adoption and browser; original tests retained.
+
 ## Rich text inspection — Root 2026-10-16
 
 Root reserves canonical audit rendered_site.py/verify-site-completion.mjs and their existing tests under PR164/comment6213008506, upgrade1014b905. Actual95f/public255 guarded11page/20asset/form/measurement/retention passed; old inspector falsely rejected3rich HTML guides/6reading pages. Independent baseline Python2FAIL9PASS and Node1FAIL6PASS. Preserve inline character boundaries with block separators, and separate HTML label text from reading label+URL expectations. Missing text/URL/hidden body/schema/date/source refusals retained. New11Python+12Node PASS and current guarded HTTP recheck0issues with independent new checker, same immutable package1b6f54/no content changes. Running backend stays frozen95f; new checker source adoption is separate. Browser, full A–Z/Foundation, launch and agents remain UNVERIFIED/held.

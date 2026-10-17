@@ -11,7 +11,7 @@ def main():
     rows={r['job']:r for r in offline.get('rows',[])}
     closed=set(queue['completedSource']);tail={r['job']:r for r in queue['tail']}
     state.update(updatedAt=now(),sourceClosedThisTask=len(closed),offlineGeometryRuntimePassThisTask=sum(r['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' for r in rows.values()),
-        frozenBuild=str(ROOT/'runtime-v3/BUILD.json'),offlineRuntime=str(ROOT/'offline-v2/prepare_closed.py'),measuredNative=queue.get('measuredNative'),
+        frozenBuild=str(ROOT/'runtime-v3/BUILD.json'),offlineRuntime=str(ROOT/'offline-v3/prepare_closed.py'),measuredNative=queue.get('measuredNative'),
         remainingSourceJobs=259-len(closed),nextSteps=['Continue active chair construction sources and separate offline queue','Resolve Gemini/browser availability before full text/UI acceptance','Activate only fully accepted draft candidates; no owner approvals or launch release'])
     state['policy']['maxOwnedNative']=1
     state['policy']['touchNonchairFilesOrProcesses']=False

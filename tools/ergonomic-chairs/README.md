@@ -22,6 +22,11 @@ and the actual catalogue runtime checker in a separate, finite offline queue.
 It never starts Native, authors text, approves a model or publishes anything.
 Unchanged offline results can be reused only with matching source/tool/artifact
 hashes. Failed checks preserve their logs and do not stop independent models.
+The cached compiler hashes every complete input buffer before lookup and runs
+the unchanged full geometry/PBR inspection once per distinct SHA-256. Byte
+changes and truncation cannot reuse a prior inspection. Rebuilding archives
+previous proof files; tool drift prevents a PASS. This changes inspection cost,
+not source capture, geometry bytes, graph coverage or acceptance requirements.
 
 `export_text_tasks.py` exports factual Gemini inputs in admin priority order. It
 does not simulate Gemini authoring. Text import still requires an original

@@ -37,15 +37,22 @@ def main():
     statusfile=a.prepared/'OFFLINE-STATUS.json'
     prior=read(statusfile) if statusfile.exists() else None
     priorrows={r['job']:r for r in prior.get('rows',[])} if prior else {}
-    compiler=a.web/'scripts/prepare-chair-structure.mjs'
+    # Keep later model checkpoints visible if this invocation is interrupted
+    # while revalidating an earlier model under a new pinned compiler.
+    status['rows']=[priorrows[key] for key in queue['completedSource'] if key in priorrows]
+    compiler=a.web/'scripts/prepare-chair-structure-cached.mjs'
     runtime=a.web/'scripts/check-chair-structure-runtime.ts'
-    sourcepins={str(f):sha(f.read_bytes()) for f in [Path(__file__),Path(__file__).with_name('verify_structure_wire.py'),compiler,runtime]}
+    toolfiles=[Path(__file__),Path(__file__).with_name('verify_structure_wire.py'),compiler,runtime,
+        a.web/'scripts/verified-inspection-cache.mjs',a.web/'scripts/configurator-geometry.mjs',
+        a.web/'content/seed.json',a.web/'package-lock.json',*sorted((a.web/'src/lib').glob('*.ts'))]
+    sourcepins={str(f):sha(f.read_bytes()) for f in toolfiles}
     if prior and [r['job'] for r in prior.get('rows',[])]==queue['completedSource'] and all(r.get('tools')==sourcepins and r.get('result')=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and r.get('artifacts') for r in prior.get('rows',[])):
         if all(r['checkpointSha256']==sha((a.root/'source'/r['job']/'CHECKPOINT.json').read_bytes()) and all((a.prepared/r['job']/f).is_file() and sha((a.prepared/r['job']/f).read_bytes())==digest for f,digest in r['artifacts'].items()) for r in prior['rows']):
             print(json.dumps({'phase':'UNCHANGED_SEALED_OFFLINE_PROOFS','rows':len(prior['rows']),'nativeRequests':0}));return
     if prior:save(a.prepared/('OFFLINE-HISTORY-'+now().replace(':','').replace('+','')+'.json'),prior)
     for key in queue['completedSource']:
         if shutil.disk_usage(a.root).free<101000000000:raise ValueError('DISK_RESERVE')
+        if any(sha(f.read_bytes())!=sourcepins[str(f)] for f in toolfiles):raise ValueError('OFFLINE_TOOL_BYTES_CHANGED')
         source=a.root/'source'/key
         output=a.prepared/key
         output.mkdir(parents=True,exist_ok=True)
@@ -53,9 +60,17 @@ def main():
         old=priorrows.get(key)
         if old and old['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and old['checkpointSha256']==row['checkpointSha256'] and old.get('tools')==sourcepins and old.get('artifacts'):
             if all((output/f).is_file() and sha((output/f).read_bytes())==digest for f,digest in old['artifacts'].items()):
-                status['rows'].append(old);continue
+                continue
+        status['rows']=[r for r in status['rows'] if r['job']!=key]
         status['rows'].append(row);save(statusfile,status)
         try:
+            # Preserve previous independent proof bytes before rebuilding; raw
+            # source/GLB files are never removed or duplicated by this archive.
+            previous=[output/f for f in ['GEOMETRY-PBR-PROOF.json','RUNTIME-PROOF.json'] if (output/f).is_file()]
+            if previous:
+                archive=output/('PRIOR-PROOFS-'+now().replace(':','').replace('+',''))
+                archive.mkdir(exist_ok=False)
+                for f in previous:shutil.copy2(f,archive/f.name)
             proof=verify(source,jobs[key],a.session)
             save(source/'WIRE-PROOF.json',proof)
             log=output/('OFFLINE-'+now().replace(':','').replace('+','')+'.log')
@@ -65,6 +80,7 @@ def main():
             for file in ['GEOMETRY-PBR-PROOF.json','RUNTIME-PROOF.json']:
                 if read(output/file)['result']!='PASS':raise ValueError('INDEPENDENT_PROOF_NOT_PASS:'+file)
             if row['checkpointSha256']!=sha((source/'CHECKPOINT.json').read_bytes()):raise ValueError('CLOSED_CHECKPOINT_CHANGED_DURING_OFFLINE')
+            if any(sha(f.read_bytes())!=sourcepins[str(f)] for f in toolfiles):raise ValueError('OFFLINE_TOOL_BYTES_CHANGED')
             row.update(result='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY',wire=proof,runtimeSha256=sha((output/'runtime.json').read_bytes()),textAccepted=False,browserAccepted=False)
             row['artifacts']={str(f.relative_to(output)):sha(f.read_bytes()) for f in [output/'runtime.json',output/'GEOMETRY-PBR-PROOF.json',output/'RUNTIME-PROOF.json',*sorted((output/'assets').glob('*.glb'))]}
         except Exception as error:

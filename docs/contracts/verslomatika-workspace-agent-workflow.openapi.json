@@ -1177,6 +1177,20 @@
             "format": "uuid",
             "title": "Request Id",
             "type": "string"
+          },
+          "message": {
+            "anyOf": [
+              {
+                "maxLength": 80,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Optional SafeRoute code echo. When present it must equal code; explicit null or arbitrary prose is invalid.",
+            "title": "Message"
           }
         },
         "required": [

@@ -1643,3 +1643,13 @@ model attempts,2unknownusage retained,0external mail. New remaining-time/cancel
 cleanup and exact outbound replay/source binding tested. OperatingBusiness/native,
 workers,37/40 and Root Serving unchanged. Clean scoped handoff to Root for review;
 source delivery is not operating admission or SMTP/inbox acceptance.
+## Active website revision must not block module containment — Root 2026-10-18
+
+Issue66/comment6242920034, from integrated e4f306c. Helper read-only P2
+reproduced through ordinary owner revision POST202 then inspect failure.
+Narrow creation_registration/admin.py optional idle precondition keeps defaultTrue;
+only module_admin stop/inspect passFalse. All current owner/account/Session/tenant
+checks and row locks remain; approve still refuses pending Creation. Dedicated
+module PG test/docs and own journal only. No source window remains with helper;
+its service.py fix is integrated separately and unchanged. No model, schema,
+channels, task dispatch or operating data changed.

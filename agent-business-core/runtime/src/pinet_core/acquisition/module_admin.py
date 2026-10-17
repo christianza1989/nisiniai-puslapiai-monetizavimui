@@ -79,7 +79,7 @@ async def authority(tx, value, *, containment=False):
     if row is None or digest(registrations.stored_material(row)) != row.fingerprint:
         raise ValueError("exact_registration_required")
     creation, session = await registrations_admin.actor(tx, environment=cfg.environment,
-        creation_id=row.creation_id, session_id=str(value.authorizing_session_id))
+        creation_id=row.creation_id, session_id=str(value.authorizing_session_id), require_idle=not containment)
     if binding(row) != binding(creation):
         raise ValueError("current_creation_owner_required")
     if not containment:

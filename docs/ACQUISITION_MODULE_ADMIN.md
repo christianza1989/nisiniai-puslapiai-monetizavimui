@@ -34,10 +34,13 @@ only `enabled` to false, preserving approval metadata and retained correspondenc
 Containment (`stop`/`inspect`) retains the exact historical Registration, current
 verified owner, immutable tenant/Business/Grant identity and clean operator source
 checks. It does not require a fresh native intake, current Registration revision,
-unrevoked Registration or enabled Grant, so expired upstream admission cannot
+unrevoked Registration, idle website Creation or enabled Grant, so expired upstream admission cannot
 prevent disabling an existing module. A misconfigured module can be stopped
 without rewriting its metadata. SMTP/voice configuration cannot block containment;
 these actions perform no channel I/O and cannot grant or renew a lease.
+The shared Registration actor keeps its default idle-Creation precondition for
+all existing writers. Only these containment calls opt out; owner/Session/account,
+tenant checks and the actor-before-Creation lock order stay unchanged.
 `inspect` writes no database state. No action starts the API or enables global
 capture/work flags, a private transport registration, channels or workers.
 

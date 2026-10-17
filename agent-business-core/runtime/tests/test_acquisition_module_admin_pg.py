@@ -1,6 +1,7 @@
 """Real restricted PostgreSQL; synthetic owner/source fixture, no models or transport."""
 import json
 from types import SimpleNamespace
+from uuid import uuid4
 
 import pytest
 from sqlalchemy import delete, select, update
@@ -175,3 +176,20 @@ async def test_receipt_write_failure_distinguishes_rollback_from_committed_state
         assert json.loads(output.read_text())["status"] == "prepared"
     with pytest.raises(ValueError, match="new_private_module_receipt_required"):
         await cli.execute("approve", value, output)
+
+
+async def test_containment_during_ordinary_revision_does_not_require_idle_creation(module_pilot):
+    c, registered, value, auth = module_pilot
+    first = await operation(c, "approve", value)
+    async with AsyncSession(c["admin"]) as tx:
+        registry = await tx.get(Registration, registered["registration_id"])
+        creation_id = registry.creation_id
+    response = await c["client"].post(f"/customer/v2/creations/{creation_id}/revisions", headers=auth,
+        json={"base_revision": 1, "message": "Patikslinkite pasiūlymo ribas.", "idempotency_key": str(uuid4())})
+    assert response.status_code == 202, response.text
+    with pytest.raises(ValueError, match="creation_revision_pending"):
+        await operation(c, "approve", value | {"expected_fingerprint": first["fingerprint"]})
+    authority = {key: value[key] for key in ("registration_id", "authorizing_session_id", "execution_source_revision")}
+    assert (await operation(c, "inspect", authority))["after"] == first["after"]
+    stopped = await operation(c, "stop", authority | {"expected_fingerprint": first["fingerprint"]})
+    assert stopped["after"] == first["after"] | {"enabled": False}

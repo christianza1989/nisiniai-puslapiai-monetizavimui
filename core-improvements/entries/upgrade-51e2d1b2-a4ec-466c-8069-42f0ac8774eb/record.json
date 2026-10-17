@@ -1,0 +1,28 @@
+{
+  "siteId": "core",
+  "summary": "Repeated fresh private-current checkpoints perform separate Session, actor, Creation and archive-schema SQL reads in each authority graph",
+  "category": "code",
+  "evidence": [
+    "Root-approved issue66 scope on Source57a2e6857352c22f84422f8d67d1c8a68d7bba5f and read-only companion ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "Owner passive timing metadata:86 Authority.verify spans each contain10 private_preview.current and10 capture calls in the same task; whole-verify global SQL deltas188x70,194x14,193x2. The737 most common isolated hot current spans report6SQL and capture4SQL; overlapping wrappers are not summed",
+    "Current code reads P Session then canonical nonlocking actor then refreshes Creation then probes discovery schema and archive before unchanged material/source/continuity checks. Baseline and exact offline counts will be preserved before production mutation"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/authority_observation.py",
+    "agent-business-core/runtime/offline_tests/test_private_parent_checkpoint.py",
+    "agent-business-core/runtime/offline_tests/test_current_actor_observation.py",
+    "agent-business-core/runtime/offline_tests/test_authority_observation.py",
+    "agent-business-core/runtime/offline_tests/test_private_preview.py",
+    "docs/PRIVATE_PARENT_CHECKPOINT.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this scoped SQL checkpoint commit; immutable baseline/results remain. Root owns actual integration/adoption and preserves Source57 serving until separately validated",
+  "id": "upgrade-51e2d1b2-a4ec-466c-8069-42f0ac8774eb",
+  "branch": "codex/private-parent-checkpoint-20261017",
+  "baseSha": "57a2e6857352c22f84422f8d67d1c8a68d7bba5f",
+  "createdAt": "2026-10-17T15:28:29.662Z"
+}

@@ -1,5 +1,5 @@
 """Current verified owner and exact immutable plan bind every discovery action."""
-from sqlalchemy import func, select, text
+from sqlalchemy import func, literal_column, select, text
 
 from ..config import settings
 from ..control.models import Session, User
@@ -17,8 +17,13 @@ def enabled():
         raise ControlError(503, "discovery_unavailable")
 
 
+def schema_ready_expression():
+    return literal_column("to_regclass('control_business_discoveries') IS NOT NULL "
+        "AND to_regclass('control_business_discovery_attempts') IS NOT NULL")
+
+
 async def schema_ready(tx):
-    return bool(await tx.scalar(text("SELECT to_regclass('control_business_discoveries') IS NOT NULL AND to_regclass('control_business_discovery_attempts') IS NOT NULL")))
+    return bool(await tx.scalar(text("SELECT " + str(schema_ready_expression()))))
 
 
 async def owned(tx, session, discovery_id, *, lock=False):

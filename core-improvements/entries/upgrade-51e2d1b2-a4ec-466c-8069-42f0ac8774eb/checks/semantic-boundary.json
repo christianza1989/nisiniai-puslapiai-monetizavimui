@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "base": "57a2e6857352c22f84422f8d67d1c8a68d7bba5f",
+  "production_paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/service.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/authority_observation.py"
+  ],
+  "source_paths": 8,
+  "old_unmodified_validators": true,
+  "locking_actor_branch_unchanged": true,
+  "private_capture_tail_and_current_refusal_tail_unchanged": true,
+  "other_phase_methods_unchanged": true,
+  "schema_sql_predicate_identical": true,
+  "no_live_preview_store_cadence_node_changes": true,
+  "limitations": "AST/source scope check only; actual PostgreSQL/UI/3second liveness requires Root execution."
+}

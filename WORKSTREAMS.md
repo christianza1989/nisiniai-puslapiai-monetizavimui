@@ -1,3 +1,22 @@
+## RUNNING workflow-cancel PG source case — helper 2026-10-17
+
+Root-requested isolated test-source/collection scope, own clean branch
+codex/workflow-running-cancel-20261017 from frozene49d4bdf769e56d834bb7867d5e94cef6a73983a;
+paired start main533/publicec8PASS20:48:49/51UTC. Only one new function/import in
+test_workspace_agent_workflow_pg.py, own docs/journal/workstream. Adapt maintained
+S5 after-actual-reservation cancellation to /agent-workflows/{id}/cancel:
+RUNNING child, original S4 result unchanged, one native usage receipt, no reply
+or Quality dispatch, explicit cancellation/replay. Author/collect only; no helper
+DB/provider/model/CLI/service execution. All e49/19de runtime/schema/contracts
+and original12 workflow cases remain unchanged.
+
+Upgrade-6af127f0-ed88-4ea2-b4d6-c5f9e2ba08ee adds one RUNNING native late-return
+workflow-cancel PG case; file now13cases COLLECTED ONLY1.40s,
+b40a9e5c3ea9058d6e954d15b4d3f96e7c715cf128a53541dc626c34647c45d1.
+AST29299d28 proves every original declaration unchanged; zero runtime/schema/
+contract diff. Not an actual PG/provider/drain PASS. Root executes the one new
+case under its own isolated native acceptance gate.
+
 ## Workspace SafeRoute error contract — helper 2026-10-17
 
 Root-confirmed portal3a4ff35 P1: actual core SafeRoute emits code/message/request_id

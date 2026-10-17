@@ -30,6 +30,7 @@ from pinet_core.config import settings
 from pinet_core.control.models import Session
 from pinet_core.control.routes import scope
 from pinet_core.customer_agents.models import Agent
+from pinet_core.customer_text import adapter as native_adapter
 from pinet_core.models import utcnow
 from pinet_core.tasks import worker
 from pinet_core.tasks.codex import RunnerError
@@ -283,3 +284,51 @@ async def test_preflight_or_admission_refusal_leaves_no_child_event_or_allowance
         assert await tx.get(TeamEvent, intent.origin_event_id) is None
         assert await tx.scalar(text(f"SELECT count(*) FROM {ALLOCATION} WHERE task_id=:t"),
             {"t": intent.planned_child_task_id}) == 0
+
+
+async def test_running_workflow_route_cancel_after_native_reservation_keeps_usage_and_discards_reply(workflow_customer, monkeypatch):
+    """Maintained S5 late-return test, through the new owner workflow route."""
+    c, p, _ = workflow_customer
+    base = await setup(c)
+    accepted, _ = await submit(c, base)
+    assert await worker.execute_once(plan, kind=KIND)
+    intent = await stored_intent(c, accepted["workflow_id"])
+    parent, _, _, _, _ = await saved(c, intent.parent_task_id)
+    parent_result = dict(parent.result)
+    text_calls, quality_calls, cancellations = [], [], []
+    text_transport(monkeypatch, c, text_calls)
+    quality_transport(monkeypatch, c, p.execution_profile, quality_calls)
+    original = native_adapter.execute
+    cancel_url = base+"/team/agent-workflows/"+intent.id+"/cancel"
+
+    async def late(argv, **options):
+        # Real native ledger reservation precedes the inert transport; this is
+        # a running Task, not the already-covered queued-child cancellation.
+        value = await original(argv, **options)
+        current = await observed(c, base, intent.id)
+        assert current["status"] == "testing" and current["test"]["status"] == "running"
+        assert current["test"]["task_id"] == intent.planned_child_task_id
+        response = await c["client"].post(cancel_url, headers=c["auth"], json={})
+        assert response.status_code == 200, response.text
+        result = response.json()["data"]
+        assert result["status"] == "cancelled" and result["cancel_requested"]
+        assert result["test"]["status"] == "cancelled"
+        cancellations.append(result)
+        return value  # Deliberately late reply/usage; native fence must refuse it.
+
+    monkeypatch.setattr(native_adapter, "execute", late)
+    assert await worker.execute_once(kind=KIND)
+    child, _, events, attempts, runs = await saved(c, intent.planned_child_task_id)
+    assert child.status == "cancelled" and child.result is None and len(text_calls) == len(cancellations) == 1
+    assert not quality_calls and not attempts and len(events) == len(runs) == 1
+    assert events[0].kind == "assignment" and events[0].native_workflow_intent_id == intent.id
+    assert events[0].author_type == "coordinator" and events[0].attempt_id is None
+    assert runs[0].usage == {"input_tokens": 9, "output_tokens": 5} and runs[0].cost_microusd is None
+    retained, _, _, _, _ = await saved(c, intent.parent_task_id)
+    assert retained.status == "succeeded" and retained.result == parent_result
+    current = await observed(c, base, intent.id)
+    assert current["status"] == "cancelled" and current["test"]["status"] == "cancelled"
+    assert current["calibration_status"] == "UNVERIFIED" and current["channel_activation"] == "not_performed"
+    replay = await c["client"].post(cancel_url, headers=c["auth"], json={})
+    assert replay.status_code == 200 and replay.json()["data"] == current
+    assert not await workflow.reconcile(intent.user_id)

@@ -1,0 +1,20 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Add root-requested PG source coverage for RUNNING native S5 cancellation through workflow route",
+  "category": "workflow",
+  "evidence": [
+    "Root explicitly requested the missing running workflow-cancel route case; existing maintained episode cancellation test only targets team/turns/task/cancel.",
+    "No helper DB/provider execution; this is test source/collection coverage, not a reproduced runtime failure or actual cancellation proof."
+  ],
+  "paths": [
+    "agent-business-core/runtime/tests/test_workspace_agent_workflow_pg.py",
+    "docs/WORKSPACE_RUNNING_CANCEL_TEST.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this test/docs-only increment if needed; preserve e49/19de/0b runtime/schema/contracts and all operational history.",
+  "id": "upgrade-6af127f0-ed88-4ea2-b4d6-c5f9e2ba08ee",
+  "branch": "codex/workflow-running-cancel-20261017",
+  "baseSha": "e49d4bdf769e56d834bb7867d5e94cef6a73983a",
+  "createdAt": "2026-10-17T20:50:05.156Z"
+}

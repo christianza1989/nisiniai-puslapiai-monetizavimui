@@ -124,6 +124,10 @@ async def latest(tx, creation):
 async def terminal(tx, row):
     receipt = await tx.scalar(select(PrivateIntakeReceipt).where(PrivateIntakeReceipt.recovery_id == row.id)
         .execution_options(populate_existing=True))
+    return _pin_receipt(tx, row, receipt)
+
+
+def _pin_receipt(tx, row, receipt):
     from ..site_build.authority_observation import active
     observed = active(tx)
     if observed:
@@ -138,24 +142,32 @@ async def retained_anchor(tx, creation, captured, marker=None):
     non-continuity receipt; renewals never form a recursive chain of snapshots.
     Current owner/source/accepted context is independently captured by the caller.
     """
+    statement = select(PrivateIntakeRequest, PrivateIntakeReceipt)
     if marker is not None:
         continuity.checked_marker(marker)
-        row = await tx.get(PrivateIntakeRequest, marker["recovery_id"], populate_existing=True)
+        # Keep the parent visible if its receipt is absent/RLS-hidden. Validation
+        # below retains the original missing/corrupt-receipt refusal semantics.
+        statement = statement.outerjoin(PrivateIntakeReceipt,
+            PrivateIntakeReceipt.recovery_id == PrivateIntakeRequest.id).where(
+                PrivateIntakeRequest.id == marker["recovery_id"])
     else:
-        row = await tx.scalar(select(PrivateIntakeRequest).join(PrivateIntakeReceipt,
+        statement = (statement.join(PrivateIntakeReceipt,
             PrivateIntakeReceipt.recovery_id == PrivateIntakeRequest.id).where(
                 PrivateIntakeRequest.creation_id == creation.id,
                 PrivateIntakeRequest.revision_id == captured["accepted"]["revision_id"],
                 PrivateIntakeReceipt.state == "private_draft_imported",
                 ~PrivateIntakeRequest.context.has_key("continuity"))  # noqa: W601
-            .order_by(PrivateIntakeRequest.created_at.desc(), PrivateIntakeRequest.id.desc()).limit(1)
-            .execution_options(populate_existing=True))
+            .order_by(PrivateIntakeRequest.created_at.desc(), PrivateIntakeRequest.id.desc()).limit(1))
+    # One fresh RLS snapshot for both ORM entities; never reuse an identity-map
+    # value or a permission result from an earlier anchor/current invocation.
+    pair = (await tx.execute(statement.execution_options(populate_existing=True))).one_or_none()
+    row, receipt = pair if pair is not None else (None, None)
     if row is None:
         if marker is not None:
             raise ControlError(409, "private_intake_anchor_stale")
         return None
     previous = stored(row)
-    receipt = await terminal(tx, row)
+    receipt = _pin_receipt(tx, row, receipt)
     intake = result(row, receipt)
     origin = continuity.checked_sources(previous["native_sources"])
     execution = continuity.checked_sources(captured["native_sources"])

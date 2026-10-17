@@ -17,9 +17,11 @@ await fs.mkdir(stage,{recursive:false});
 const assets=path.join(stage,'assets/models/configurator/structure');await fs.mkdir(assets,{recursive:true});
 const prior=await read('content/chair-structure-candidates.json');
 const manifest={schemaVersion:1,models:{...prior.models}},report={at:new Date().toISOString(),mode:'TECHNICAL_DRAFT',models:[],deferred:[],nativeRequests:0,geminiAuthored:0,fullAcceptanceImplied:false,launchRelease:false};
-async function seal(source,target,sha){
+async function seal(source,target,sha,copy=false){
  const raw=await fs.readFile(source);assert.equal(hash(raw),sha,'Changed staged asset '+source);
- try{await fs.link(source,target);}catch(e){if(e.code!=='EEXIST')throw e;assert.equal(hash(await fs.readFile(target)),sha);}
+ // prepared/runtime.json is mutable across compiler revisions. It must never
+ // share an inode with the immutable content-addressed release copy.
+ try{if(copy)await fs.writeFile(target,raw,{flag:'wx'});else await fs.link(source,target);}catch(e){if(e.code!=='EEXIST')throw e;assert.equal(hash(await fs.readFile(target)),sha);}
  return raw;
 }
 for(const row of status.rows){
@@ -51,7 +53,7 @@ for(const row of status.rows){
  }
  if(oversized.length||bytes.length>8_000_000){report.deferred.push({key,code:job.code,reason:oversized.length?'CURRENT_STATIC_TRANSPORT_FILE_LIMIT':'RUNTIME_SIZE_LIMIT',files:[...new Set(oversized)],sourcePreserved:true});continue;}
  const runtimeSha=hash(bytes),runtimeFile=job.code+'-'+runtimeSha.slice(0,20)+'.json';
- await seal(path.join(prepared,'runtime.json'),path.join(assets,runtimeFile),runtimeSha);
+ await seal(path.join(prepared,'runtime.json'),path.join(assets,runtimeFile),runtimeSha,true);
  for(const anchor of runtime.family.anchors){const file=path.basename(anchor.geometry.asset);await seal(path.join(prepared,'assets',file),path.join(assets,file),anchor.geometry.assetSha256);}
  const sourceGeometryRuntime=hash(JSON.stringify({job:row.job,checkpointSha256:row.checkpointSha256,tools:row.tools,artifacts:row.artifacts,wire:row.wire}));
  manifest.models[key]={key,productId:model.productId,sample:model.configurationId,code:job.code,familyId:runtime.family.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:runtime.family.anchors.some(a=>Object.keys(a.choices).length>0),runtime:{asset:'/models/configurator/structure/'+runtimeFile,sha256:runtimeSha},proofs:{sourceGeometryRuntime}};

@@ -6,6 +6,8 @@ Privatus kelių verslų projektas: nišų tyrimai ir dokumentacija, turinio stud
 
 **Pradėti:** [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md), [WORKSTREAMS.md](WORKSTREAMS.md). Madbeauty kūrimas: [projekto roadmap](sites/madbeauty/PROJECT_ROADMAP.md).
 
+Dokumentų paskirtys, išsaugota istorija ir tiksliai atkuriamas seno SEO MVP plano karantinas: [2026-10-17 inventorius](docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md). Naujos svetainės darbą apibrėžia [pirmos fazės vykdymo sutartis](CORE_BUILD_CONTRACT.md).
+
 ## Du gretimi projektai
 
 ```text

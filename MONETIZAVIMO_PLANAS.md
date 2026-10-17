@@ -2,7 +2,7 @@
 
 Parengta 2026-09-29. Tai verslo hipotezės ir siūlomas bandymų planas, ne pajamų prognozė.
 
-Vėlesnis vartotojo patikslinimas: pradžioje paleidžiame visų 20 domenų SEO, aprašymų ir kontaktų svetaines. Partnerius bei pilnas sistemas jungiame pagal srautą ir realias užklausas. Ankstesni pasiūlymai pradėti tik nuo trijų verslų ar iš anksto turėti tiekėjus nėra dabartinio etapo sąlygos. Pirmą etapą apibrėžia [20 svetainių SEO MVP planas](C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/20_SVETAINIU_SEO_MVP.md).
+Vėlesnis vartotojo patikslinimas: pradžioje paleidžiame visų 20 domenų SEO, aprašymų ir kontaktų svetaines. Partnerius bei pilnas sistemas jungiame pagal srautą ir realias užklausas. Ankstesni pasiūlymai pradėti tik nuo trijų verslų ar iš anksto turėti tiekėjus nėra dabartinio etapo sąlygos. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md).
 
 ## Ką turime
 

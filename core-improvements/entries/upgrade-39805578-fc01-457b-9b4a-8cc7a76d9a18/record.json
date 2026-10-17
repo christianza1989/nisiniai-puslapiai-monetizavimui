@@ -1,0 +1,28 @@
+{
+  "siteId": "core",
+  "summary": "Quarantine the superseded current-plan SEO MVP summary and route its five remaining documentation references to the maintained phase-one contract",
+  "category": "cleanup",
+  "evidence": [
+    "Fresh source/base 808581d919d06cb4a2d151cc7f9ec1be1782aba2; 20_SVETAINIU_SEO_MVP.md is a prescriptive 2026-09-29 summary without test or approval receipts, still headed current plan.",
+    "AGENTS.md and README.md route actual work through START_HERE.md and CORE_BUILD_CONTRACT.md; the newer maintained contracts cover business validation, site-scoped contacts, design diversity, publication and full acceptance.",
+    "Full tracked reference search finds five root-document links only; explicit editorial loader, packaged runtime instruction loader, package scripts, CI and export/discovery paths inspected. No programmatic MVP consumer found.",
+    "docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md records baseline counts, retained duplicate/history/script candidates, limits, dependency evidence, source hash and exact restoration."
+  ],
+  "paths": [
+    "20_SVETAINIU_SEO_MVP.md",
+    "20_SVETAINIU_MODULIAI_IR_TEMU_PLANAS.md",
+    "BENDRA_30_SVETAINIU_SISTEMA.md",
+    "TOP_20_DOMENU.md",
+    "MONETIZAVIMO_PLANAS.md",
+    "FABRIKO_IR_20_SVETAINIU_ARCHITEKTURA.md",
+    "README.md",
+    "WORKSTREAMS.md",
+    "docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/193",
+  "rollback": "Canonical node scripts/core-upgrade.mjs restore --id <record.id> recreates the original exact bytes only at an absent path. Scoped revert restores the five original pointers; never overwrite new work.",
+  "id": "upgrade-39805578-fc01-457b-9b4a-8cc7a76d9a18",
+  "branch": "codex/core-docs-quarantine-20261017",
+  "baseSha": "808581d919d06cb4a2d151cc7f9ec1be1782aba2",
+  "createdAt": "2026-10-17T11:59:22.274Z"
+}

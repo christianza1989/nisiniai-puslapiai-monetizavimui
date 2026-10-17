@@ -50,3 +50,33 @@ Stripe Directory pirmo discovery kelias šiame PC nebuvo prieinamas: Stripe CLI 
 ## Peržiūros rezultatas
 
 Parinktos priemonės atitinka mažą pirmo verslo bandymą ir vėlesnį visą pirkėjo kelią. Katalogo discovery atliktas, mokamas provider vykdymas neįrodytas ir neaktyvuotas. Pagrindinės nežinomybės: B2B sąlygos, tinkama komplektacija, tikros rinkos aptarnavimas, medijos teisės, mūsų marža ir tikros užklausos. Kelios svetainės vėliau naudos tą patį core, kiekviena savo siteId / faktų / kanalų ribose.
+
+## Faktinis headless pratęsimas — 2026-10-18
+
+Savininko atskiras pavedimas papildė tyrimą klientų paieškos ir el. pašto rolėmis.
+Treg catalog_search/get patikrino web.search alternatyvas; pasirinktas
+`tinyfish.web.search` GET su query/domain_type/language ir caller exclusions.
+Aktualus katalogas nurodė USD0, 30requests/min ir500/hour; abi faktinės paieškos
+kainavo USD0. Provider raw cache draudžiamas: saugomi tik patikrinti pirmos šalies
+URL/faktai ir mūsų atranka. Exclusions rezultatuose nėra patikima teisių ar
+geografijos kontrolė; source kvalifikavimas lieka atskiras. Mokamų Treg calls0.
+
+Bendras `acquisition_sources.py` gavo5/5aiškiai pasirinktų NL puslapių; native
+atsarginio web skaitymo šiame etape neprireikė. Kaina0mokamų duomenų API, PC/tinklo
+savikaina nematuota. Kontaktai ir source kvitai privatūs, peržiūra iki2026-11-17.
+Pirkimo poreikio ir leidimų negalima išvesti iš veiklos kategorijos ar adreso.
+
+Esamas CodexLab ir acquisition engine dabar turi atskirą kvalifikavimą, rašymą,
+peržiūrą bei atsakymų koordinavimą; gpt-6.1-sol/high,174/180rezervacijų ir pradinis
+120minučių deadline be reset.2naudojimai nežinomi; tikroji USD kaina neatskleista.
+Modeliai testuoti EN/DE ir atskirtuose hospitality kontekstuose; tai baigtinis
+scoped-test, ne visų Europos kalbų/nišų priėmimas. Po šio rato naujų calls nėra.
+
+HeadlessMail naudoja tuos pačius Case/MailMessage/MailBinding/ContactPolicy;
+atskiras actual5-call modelio ir PostgreSQL kelias PASS. SMTP/IMAP ir operacinis
+ModuleBinding admission nepatvirtinti. Alternatyva dabar — privati peržiūrėta
+kandidatų partija ir tikslūs juodraščiai, ne nauja prenumerata ar šalto siuntimo
+workaround. Tikras kontroliuojamas pristatymas galimas tik su veikiančia prieiga,
+nuosavu gavėju ir tikrais kvitais; gyva kampanija papildomai reikalauja dabartinių
+kontaktavimo/provider/pasiūlymo faktų. Savininkas: šio pavedimo acquisition scope;
+Root valdo operacinį prijungimą. Žr. HEADLESS-RUNBOOK ir AGENT-CALIBRATION ataskaitą.

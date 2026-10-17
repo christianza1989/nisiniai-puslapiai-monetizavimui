@@ -1,6 +1,59 @@
 # Live preview stability checkpoint — 2026-10-17
 
-## Actual state
+## Latest checkpoint — Source a7, startup repair not yet adopted
+
+API18871 serves a7a8688919dec61a8c3499a4b5b01e2b9e67e0e4, owned PID14620,
+supervisor38748. Public source255fea0813bf1aabeaeea2f2de0b29564118f2fc and
+human-started portal3030/buildXQj0CKDsHM1ob-y_fdcsD/PID21956 are unchanged.
+No automatic frontend launch or policy bypass was attempted.
+
+Integrated source checks passed481 tests64.78s, SHA256
+37c4f660918073a98f64804af7d64724864b3cf4e72afd468d0bf6aa808e0241,
+including the actual inert Python-to-Node child check. The combined real isolated
+PostgreSQL run passed26 tests223.31s, SHA256
+3996eeddc143aa530ca9393e9c3ebaa98595991301e6a439f5dd4e84329d37fd.
+Backed-up same-DB source adoption preserved all88 operational tables, original0032,
+653 native files and physical site015c3074a972c3c568154bdc5eecd353a1907a0c39261fa1d5bb3032ea8cf10e.
+The first owner continuity V2 assertion failed without an identified cause; its
+failure is retained. V3 separately passed normal HTTP login, owner reads, private
+intake and explicitS6 with CURRENT source bindings. These receipts are not one run.
+
+Actual lifecycle close-cce2ed7096534e7781d68ef5eaf81c6f passed Ready, native HTTP200,
+Chrome homepage and a real clicked guide, manual close, listener closure and
+same-UUID terminal replay. Screenshots are private in
+`wellness-live-preview-20261017/source-a7-lifecycle` under the task visualization
+directory. The next natural-expiry scenario b74be8b9bce9412a9e27569c058a3a35 failed
+BEFORE Ready: leasee502ef39-f624-4d20-a8f6-e818ac20acb6 refused heartbeat_expired at
+2026-10-17T16:47:04.268Z, before_context, elapsed17207ms, margin-582ms. Exact guard
+SHA256d9f26015a1dfc122fb969700aa915c73a4a5e06c047ff94be18e78ca3576abaf.
+One full fresh verification took10.47928s, of which6.88196s were SQL. Collection
+GET ended over a minute before that refusal; it is not established as its cause.
+Quiet read-only query profiling did not identify a single slow query/index cause.
+
+The a7 changes defer native Sharp initialization for metadata-only reads and
+reduce the parent observation's fresh SQL work without removing any of the ten
+authority checkpoints. One successful close does not establish stable startup,
+natural expiry, actual revocation, complete site acceptance or agent calibration.
+
+Root upgrade4646eda5 now implements source-only bounded unpublished startup
+recovery: one fully joined first refusal, exact private cleanup witness, no Ready,
+drained old authority task, new full fresh verification, then repeated fences.
+One original149s outer deadline and a stricter shared first-serve+120s Node cap
+cover both attempts; heartbeat/permission checks are unchanged. See
+[the contract](../LIVE_PREVIEW_STARTUP_RECOVERY.md). Source regression passed189
+Python checks12.40s and52 Node checks658.9705ms. Python logSHA256
+4b4635eb16bc98d6b35d684617bd0c58c9da08cef624bc32326519eef6b1e8ad;
+Node logSHA2568f6cf6dd9786b4f039cb00dd996b995df7f18df17b614827f50dbad27eecc31c.
+The original old-source baseline1FAIL and a later own test timing assertion
+(185PASS/1FAIL, entered before Ready polling) remain retained; the latter was
+corrected by awaiting the canonical Ready fence. Final peer review and actual
+adoption/lifecycle acceptance of this new packet remain pending at this checkpoint.
+
+Paid accounting remains37/40, with0provider calls in this continuation. Five paid
+workers and external channels stay held. The candidate manufacturer, rights,
+publication and whole-platform acceptance limits below still apply.
+
+## Historical Source57 state
 
 The private11-page site remains intact, physical site file015c3074a972c3c568154bdc5eecd353a1907a0c39261fa1d5bb3032ea8cf10e.
 Native data is not published. Maudis is only a candidate; no agreement, stock,

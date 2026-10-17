@@ -303,6 +303,48 @@ class Service:
             lease.pulse_tasks.add(check)
         return True
 
+    def startup_retryable(self, lease, error, began, hard_end_ms):
+        """Only a trusted, completely closed first unpublished producer may retry."""
+        if (not isinstance(error, RunnerError) or error.code != "authorization_revoked"
+                or lease.view["state"] != "starting" or not self.current(lease)
+                or int(now().timestamp() * 1000) >= hard_end_ms):
+            return False
+        try:
+            ledger = self.ledger()
+            if not ledger.owns(lease.record) or ledger.read(ledger.file(lease.view["lease_id"], "ready")) is not None:
+                return False
+            # The UUID was validated by ledger.file above. These are private
+            # diagnostics, outside the ledger's public lifecycle suffixes.
+            identity = lease.view["lease_id"]
+            guard = ledger.read(ledger.directory / (identity + ".guard-failure.json"))
+            closed = ledger.read(ledger.directory / (identity + ".startup-closed.json"))
+            if not isinstance(guard, dict) or not isinstance(closed, dict):
+                return False
+            expected = {"version": "customer-live-preview-startup-closed.v1", "lease_id": lease.view["lease_id"],
+                "instance_id": self.instance_id, "nonce": lease.record["nonce"],
+                "request_sha256": digest(lease.record), "scope_sha256": lease.scope.fingerprint(),
+                "prepared_sha256": lease.proof.artifact_sha256, "hard_end_ms": hard_end_ms,
+                "attempt_index": 0, "guard_sha256": digest(guard), "cause": "heartbeat_expired"}
+            if (set(closed) != set(expected) | {"closed_at"}
+                    or type(closed.get("attempt_index")) is not int or type(closed.get("hard_end_ms")) is not int
+                    or any(closed[k] != v for k, v in expected.items())):
+                return False
+            if (set(guard) != {"version", "lease_id", "scope_sha256", "stage", "code", "checkpoint",
+                    "observed_at", "elapsed_ms", "pulse_margin_ms"}
+                    or guard.get("version") != "customer-live-preview-guard-failure.v1"
+                    or guard.get("lease_id") != lease.view["lease_id"]
+                    or guard.get("scope_sha256") != lease.scope.fingerprint()
+                    or guard.get("stage") != "heartbeat" or guard.get("code") != "heartbeat_expired"
+                    or guard.get("checkpoint") not in {"before_context", "after_media"}
+                    or type(guard.get("elapsed_ms")) is not int or not 0 <= guard["elapsed_ms"] <= 150000
+                    or type(guard.get("pulse_margin_ms")) is not int or not -150000 <= guard["pulse_margin_ms"] <= 0):
+                return False
+            observed = datetime.fromisoformat(guard["observed_at"].replace("Z", "+00:00"))
+            finished = datetime.fromisoformat(closed["closed_at"].replace("Z", "+00:00"))
+            return began <= observed <= finished <= now()
+        except (ControlError, OSError, ValueError, TypeError, KeyError, AttributeError):
+            return False
+
     async def drive(self, lease):
         lease.entered = True
         runner = None
@@ -314,16 +356,51 @@ class Service:
                 raise RunnerError("authorization_revoked")
             lease.view["state"] = "starting"
             node, _, artifacts, environment = studio.configuration()
+            began = now()
+            # Both attempts fit within the original serve and inspection bounds.
+            # No attempt receives a renewed lifetime or a longer ready window.
+            hard_end_ms = int((began + timedelta(seconds=120)).timestamp() * 1000)
             payload = self.payload(lease.scope, artifacts, "serve") | {"prepared": lease.proof.model_dump(mode="json"),
                 "lease_id": lease.view["lease_id"], "instance_id": self.instance_id,
-                "nonce": lease.record["nonce"], "request_sha256": digest(lease.record)}
-            runner = asyncio.create_task(studio._execute([node, SCRIPT], payload, environment,
-                lambda: self.permitted(lease), 149, authorization_interval=.2))
-            while not runner.done():
-                if lease.view["state"] == "starting":
-                    await self.ready(lease)
-                await asyncio.sleep(0.05)
-            await runner
+                "nonce": lease.record["nonce"], "request_sha256": digest(lease.record), "hard_end_ms": hard_end_ms}
+            loop, attempt = asyncio.get_running_loop(), 0
+            deadline = loop.time() + 149
+            try:
+                async with asyncio.timeout(149):
+                    while True:
+                        seconds = 149 if attempt == 0 else max(0., deadline - loop.time())
+                        runner = asyncio.create_task(studio._execute([node, SCRIPT], payload | {"attempt_index": attempt},
+                            environment, lambda: self.permitted(lease), seconds, authorization_interval=.2))
+                        while not runner.done():
+                            if lease.view["state"] == "starting":
+                                await self.ready(lease)
+                            await asyncio.sleep(0.05)
+                        try:
+                            await runner  # canonical transport has joined its process/callback cleanup
+                            break
+                        except RunnerError as error:
+                            if attempt or not self.startup_retryable(lease, error, began, hard_end_ms):
+                                raise
+                            # A shielded authority task belongs to the lease, not
+                            # the transport. Never discard its result or denial.
+                            if lease.auth_task is not None:
+                                try:
+                                    await asyncio.shield(lease.auth_task)
+                                except ControlError as denied:
+                                    self.stop(lease, "revoked", denied.code, cancel=False)
+                                    raise
+                                except asyncio.CancelledError:
+                                    if asyncio.current_task().cancelling():
+                                        raise
+                                    self.stop(lease, "revoked", "authorization_revoked", cancel=False)
+                                    raise RunnerError("authorization_revoked") from None
+                            if not await self.verify_lease(lease, fresh=True):
+                                raise
+                            if not self.startup_retryable(lease, error, began, hard_end_ms):
+                                raise
+                            attempt = 1
+            except TimeoutError:
+                raise RunnerError("studio_timeout") from None
             clean = True
             self.stop(lease, "expired", "live_preview_expired", cancel=False)
         except asyncio.CancelledError:

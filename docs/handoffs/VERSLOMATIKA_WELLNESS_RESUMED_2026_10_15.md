@@ -4,12 +4,15 @@
 
 Read [the latest checkpoint](VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md)
 before the historical entries below; it records the current source/process IDs
-and original mixed outcomes. The portal build is manually running. Source57 now
+and original mixed outcomes. The portal build is manually running. Sourcea7 now
 serves the backed-up same operational database; current native content is intact.
-An observed run reached Ready and expired, but another actual UI start still
-failed the heartbeat. Earlier Source948 natural-expiry/replay and11desktop plus
-one mobile guide openings are historical evidence. Stable current-source browser,
-manual close/revocation and full-site/agent acceptance are open. Source checks, current
+Its source481 and actual PostgreSQL26 checks passed. Actual Chrome home/guide and
+manual-close/replay passed, but the following scenario failed the heartbeat before
+Ready. Root's bounded unpublished startup-recovery source passed189 Python and52
+Node checks; peer review and actual adoption are pending. Earlier Source948
+natural-expiry/replay and11desktop plus one mobile guide openings remain historical.
+Stable current-source startup, natural expiry/revocation and full-site/agent
+acceptance are open. Source checks, current
 runtime adoption, main delivery and overall acceptance are distinct. No provider
 calls were made in this continuation; production limits remain unchanged.
 

@@ -1,3 +1,17 @@
+## Bounded unpublished preview recovery — Root 2026-10-17
+
+Root issue66/comment6237331697, upgrade4646eda5, clean a7/public255 paired with
+main533/ec8. Only live_preview.py drive/startup recovery and the trusted
+customer-live-preview.mjs internal hard deadline; existing fixture/Node tests,
+new startup recovery test and contract plus Root checkpoint. One serial attempt
+may follow a fully joined, exact heartbeat-expired PRE-READY refusal after an
+entirely fresh authority check, with unchanged active UUID/scope and one shared
+original149s deadline and a shared first-serve+120s Node cap (stricter than139s).
+Never retry after any Ready, actual denial, close,
+expiry, uncertain cleanup or malformed evidence; do not change pulse/thresholds.
+First baseline/failures retained. Helper reviews read-only; bded/51e2 and a7
+serving, DB, providers and portal stay unchanged during source development.
+
 ## Metadata-only media import — Root 2026-10-17
 
 Root reserves issue66/comment6235745750 from clean Source57/public255 with paired

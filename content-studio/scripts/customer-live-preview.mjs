@@ -1,6 +1,6 @@
 // Fixed trusted bridge only. Canonical code owns readiness/renderer/processes.
 import {createHash,randomUUID} from 'node:crypto';
-import {open,link,unlink} from 'node:fs/promises';
+import {open,link,unlink,lstat} from 'node:fs/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {stableV2} from '../src/content-package-v2.mjs';
@@ -19,13 +19,15 @@ const contextFailureCodes=new Set(['foundation_native_intake_changed','foundatio
 const diagnosticNumber=value=>Math.max(-150000,Math.min(150000,Math.trunc(value)));
 function exact(value,keys){if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).length!==keys.length||keys.some(k=>!Object.hasOwn(value,k)))fail('live_preview_input_invalid');}
 function checked(input){
-  const extras=input?.action==='serve'?['prepared','lease_id','instance_id','nonce','request_sha256']:[];
+  const extras=input?.action==='serve'?['prepared','lease_id','instance_id','nonce','request_sha256','hard_end_ms','attempt_index']:[];
   exact(input,['action','scope',...baseKeys,...extras]);
   if(!['inspect','serve'].includes(input.action))fail('live_preview_input_invalid');
   validateScope(input.scope);
   const p=input.scope.accepted;
   if(input.creationId!==input.scope.creation_id||input.acceptedRevision!==p.accepted_revision||input.sourceHash!==p.candidate_sha256||input.canonicalHost!==p.canonical_host)fail('live_preview_input_invalid');
-  if(extras.length&&(!uuid(input.lease_id)||!uuid(input.instance_id)||!hex(input.nonce)||!hex(input.request_sha256)))fail('live_preview_input_invalid');
+  if(extras.length&&(!uuid(input.lease_id)||!uuid(input.instance_id)||!hex(input.nonce)||!hex(input.request_sha256)
+      ||!Number.isSafeInteger(input.hard_end_ms)||input.hard_end_ms<1||input.hard_end_ms>Date.now()+139000
+      ||![0,1].includes(input.attempt_index)))fail('live_preview_input_invalid');
   return Object.fromEntries(baseKeys.map(k=>[k,input[k]]));
 }
 
@@ -55,10 +57,10 @@ export async function serveLivePreview(input,deps={}){
   const base=checked(input);
   if(input.action!=='serve')fail('live_preview_input_invalid');
   const directory=path.join(base.artifactsRoot,'customer-live-previews'),scopeHash=digest(input.scope);
-  const hardEnd=Date.now()+139000,started=performance.now();
+  const hardEnd=Math.min(Date.now()+139000,input.hard_end_ms),started=performance.now();
   await (deps.assertDirectories||assertArtifactDirectories)(base.artifactsRoot,directory);
   const json=async file=>JSON.parse((await (deps.readBytes||readArtifactBytes)(path.join(directory,file),16384)).toString('utf8'));
-  let firstRefusal;
+  let firstRefusal,firstRefusalReceipt;
   const recordRefusal=trace=>{
     if(!firstRefusal)firstRefusal=(async()=>{
       const observed=trace.observed??Date.now();
@@ -66,6 +68,7 @@ export async function serveLivePreview(input,deps={}){
         stage:trace.stage,code:trace.code,checkpoint:trace.checkpoint,observed_at:new Date(observed).toISOString(),
         elapsed_ms:diagnosticNumber(performance.now()-started),
         pulse_margin_ms:trace.pulseExpires===null?null:diagnosticNumber(trace.pulseExpires-observed)};
+      firstRefusalReceipt=receipt;
       const writing=Promise.resolve().then(()=>(deps.publish||publish)(path.join(directory,input.lease_id+'.guard-failure.json'),receipt)).catch(()=>{});
       let timer;
       try{await Promise.race([writing,new Promise(resolve=>{timer=setTimeout(resolve,100);})]);}
@@ -124,7 +127,22 @@ export async function serveLivePreview(input,deps={}){
     // returns through the canonical callback's owned child-tree cleanup.
     await (deps.wait||((ms)=>new Promise(resolve=>{waitTimer=setTimeout(resolve,ms);}))) (expires-Date.now());
     return {version:'customer-live-preview-completed.v1',state:'expired'};
-  },authorized);}finally{clearTimeout(waitTimer);}
+  },authorized);}catch(error){
+    // Only the canonical producer's settled rejection is a cleanup witness.
+    // Unknown cleanup or any published/ambiguous Ready file cannot mint this
+    // proof. It proves producer cleanup, not the later CLI exit mechanism.
+    // Keep the original refusal and never overwrite it.
+    if(input.attempt_index===0&&error?.code==='authorization_revoked'&&firstRefusalReceipt?.code==='heartbeat_expired')try{
+      let absent=false;
+      try{await lstat(path.join(directory,input.lease_id+'.ready.json'));}catch(missing){if(missing.code==='ENOENT')absent=true;}
+      if(absent)await (deps.publish||publish)(path.join(directory,input.lease_id+'.startup-closed.json'),{
+        version:'customer-live-preview-startup-closed.v1',lease_id:input.lease_id,instance_id:input.instance_id,
+        nonce:input.nonce,request_sha256:input.request_sha256,scope_sha256:scopeHash,
+        prepared_sha256:input.prepared.artifact_sha256,hard_end_ms:input.hard_end_ms,attempt_index:0,
+        guard_sha256:digest(firstRefusalReceipt),cause:'heartbeat_expired',closed_at:new Date().toISOString()});
+    }catch{} // no receipt means no retry; diagnostics never replace the refusal
+    throw error;
+  }finally{clearTimeout(waitTimer);}
 }
 
 if(process.argv[1]&&pathToFileURL(path.resolve(process.argv[1])).href===import.meta.url){

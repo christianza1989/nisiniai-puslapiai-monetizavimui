@@ -59,7 +59,9 @@ async def fixture(tmp_path, monkeypatch):
         assert authorization_interval == .2
         assert seconds == 149 and '"session"' not in json.dumps(body)
         assert set(body) == {"action", "scope", "creationId", "acceptedRevision", "sourceHash", "canonicalHost",
-            "artifactsRoot", "dataDir", "outputDir", "prepared", "lease_id", "instance_id", "nonce", "request_sha256"}
+            "artifactsRoot", "dataDir", "outputDir", "prepared", "lease_id", "instance_id", "nonce", "request_sha256",
+            "hard_end_ms", "attempt_index"}
+        assert body["attempt_index"] == 0 and type(body["hard_end_ms"]) is int
         state.body = body
         state.entered.set()
         try:

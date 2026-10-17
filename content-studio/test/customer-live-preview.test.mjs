@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash,randomUUID} from 'node:crypto';
-import {mkdtemp,mkdir,readFile,readdir,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,readFile,readdir,rm,writeFile} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {stableV2} from '../src/content-package-v2.mjs';
@@ -57,7 +57,8 @@ async function serving(t){
   const directory=path.join(root,'customer-live-previews');await mkdir(directory);
   const release={release_id:randomUUID(),package_sha256:'1'.repeat(64)};
   const input={...f.input,action:'serve',artifactsRoot:root,prepared:{release,artifact_sha256:'2'.repeat(64)},
-    lease_id:randomUUID(),instance_id:randomUUID(),nonce:'3'.repeat(64),request_sha256:'4'.repeat(64)};
+    lease_id:randomUUID(),instance_id:randomUUID(),nonce:'3'.repeat(64),request_sha256:'4'.repeat(64),
+    hard_end_ms:Date.now()+120000,attempt_index:0};
   const claim={lease_id:input.lease_id,instance_id:input.instance_id,nonce:input.nonce,request_sha256:input.request_sha256};
   const pulse={version:'customer-live-preview-heartbeat.v1',lease_id:input.lease_id,nonce:input.nonce,scope_sha256:digest(input.scope),expires_ms:Date.now()+3000};
   const preview={version:3,scopeSha256:digest(input.scope),packageSha256:release.package_sha256,releaseId:release.release_id,
@@ -103,7 +104,8 @@ for(const change of ['nonce','claim','expiry','unbounded-heartbeat','scope','rea
     return operation(f.preview);
   };
   await assert.rejects(serveLivePreview(f.input,f.deps),{code:change==='origin'?'live_preview_origin_invalid':'authorization_revoked'});
-  assert.deepEqual(await readdir(f.directory),change==='origin'?[]:[f.input.lease_id+'.guard-failure.json']);
+  assert.deepEqual((await readdir(f.directory)).sort(),change==='origin'?[]:[f.input.lease_id+'.guard-failure.json',
+    ...(change==='expiry'?[f.input.lease_id+'.startup-closed.json']:[])].sort());
 });
 
 test('producer revocation clears the callback wait timer so it cannot retain the bridge after child cleanup',async t=>{
@@ -163,7 +165,8 @@ for(const [change,stage,code] of [
   if(['claim','pulse-binding'].includes(change))assert.equal(receipt.pulse_margin_ms,null);
   const bytes=await readFile(diagnosticFile(f),'utf8');assert.ok(Buffer.byteLength(bytes)<1024);
   for(const secret of [f.input.nonce,f.input.prepared.artifact_sha256,'customer-data','customer-media','private_customer_name','TOKEN',f.input.artifactsRoot])assert.equal(bytes.includes(secret),false);
-  assert.deepEqual(await readdir(f.directory),[path.basename(diagnosticFile(f))]);
+  assert.deepEqual((await readdir(f.directory)).sort(),[path.basename(diagnosticFile(f)),
+    ...(change==='expired'?[f.input.lease_id+'.startup-closed.json']:[])].sort());
 });
 
 test('first refusal is retained even after pulse refresh and a different later refusal',async t=>{
@@ -202,7 +205,7 @@ test('an existing first receipt survives a later serve invocation for the same l
 
 test('expired pulse margin is captured before a newer pulse overwrites its private source',async t=>{
   const f=await serving(t);f.pulse.expires_ms=Date.now()-50;let captured;
-  f.deps.publish=async(file,receipt)=>{captured=structuredClone(receipt);f.pulse.expires_ms=Date.now()+3000;};
+  f.deps.publish=async(file,receipt)=>{if(file.endsWith('.guard-failure.json'))captured=structuredClone(receipt);f.pulse.expires_ms=Date.now()+3000;};
   await refuse(f);
   assert.equal(captured.code,'heartbeat_expired');assert.ok(captured.pulse_margin_ms<0);
   assert.ok(f.pulse.expires_ms>Date.now());
@@ -256,4 +259,48 @@ for(const [kind,stage,code] of [
   if(kind==='code-getter')f.deps.loadContext=async()=>{throw Object.defineProperty(Error('PRIVATE/customer'),'code',{get(){throw Error('TOKEN');}});};
   await refuse(f);const raw=await readFile(diagnosticFile(f),'utf8'),receipt=JSON.parse(raw);
   assert.equal(receipt.stage,stage);assert.equal(receipt.code,code);assert.equal(raw.includes('PRIVATE'),false);assert.equal(raw.includes('TOKEN'),false);
+});
+
+test('startup witness follows settled producer cleanup and binds the exact first refusal and fixed deadline',async t=>{
+  const f=await serving(t);f.pulse.expires_ms=Date.now()-1;let cleaned=false;
+  f.deps.withPreview=async(body,proof,operation,authorized)=>{
+    try{assert.equal(await authorized(),false);throw Object.assign(Error('authorization_revoked'),{code:'authorization_revoked'});}
+    finally{cleaned=true;}
+  };
+  await assert.rejects(serveLivePreview(f.input,f.deps),{code:'authorization_revoked'});
+  const file=path.join(f.directory,f.input.lease_id+'.startup-closed.json'),raw=await readFile(file);
+  const closed=JSON.parse(raw),guard=JSON.parse(await readFile(diagnosticFile(f)));
+  assert.ok(cleaned);assert.deepEqual(closed,{
+    version:'customer-live-preview-startup-closed.v1',lease_id:f.input.lease_id,instance_id:f.input.instance_id,
+    nonce:f.input.nonce,request_sha256:f.input.request_sha256,scope_sha256:digest(f.input.scope),
+    prepared_sha256:f.input.prepared.artifact_sha256,hard_end_ms:f.input.hard_end_ms,attempt_index:0,
+    guard_sha256:digest(guard),cause:'heartbeat_expired',closed_at:closed.closed_at});
+  assert.ok(Date.parse(closed.closed_at)>=Date.parse(guard.observed_at));
+  await assert.rejects(serveLivePreview({...f.input,attempt_index:1},f.deps),{code:'authorization_revoked'});
+  assert.deepEqual(await readFile(file),raw);
+});
+
+for(const change of ['cleanup-error','ready','invalid-ready','second-attempt'])test('startup witness is absent after '+change,async t=>{
+  const f=await serving(t);f.pulse.expires_ms=Date.now()-1;
+  if(change==='second-attempt')f.input.attempt_index=1;
+  f.deps.withPreview=async(body,proof,operation,authorized)=>{
+    assert.equal(await authorized(),false);
+    if(change==='ready'||change==='invalid-ready')await writeFile(path.join(f.directory,f.input.lease_id+'.ready.json'),change==='ready'?'{}':'invalid');
+    throw Object.assign(Error(change==='cleanup-error'?'cleanup_failed':'authorization_revoked'),{code:change==='cleanup-error'?'cleanup_failed':'authorization_revoked'});
+  };
+  await assert.rejects(serveLivePreview(f.input,f.deps),{code:change==='cleanup-error'?'cleanup_failed':'authorization_revoked'});
+  await assert.rejects(readFile(path.join(f.directory,f.input.lease_id+'.startup-closed.json')),{code:'ENOENT'});
+});
+
+for(const [field,value] of [['hard_end_ms',true],['hard_end_ms',Date.now()+200000],['attempt_index',false],['attempt_index',2]])
+test('trusted startup protocol rejects invalid '+field+' '+value,async t=>{
+  const f=await serving(t);await assert.rejects(serveLivePreview({...f.input,[field]:value},f.deps),{code:'live_preview_input_invalid'});
+  assert.deepEqual(await readdir(f.directory),[]);
+});
+
+test('the shared original deadline also caps the ready expiry',async t=>{
+  const f=await serving(t);f.input.hard_end_ms=Date.now()+5000;
+  await serveLivePreview(f.input,f.deps);
+  const ready=JSON.parse(await readFile(path.join(f.directory,f.input.lease_id+'.ready.json')));
+  assert.equal(Date.parse(ready.expires_at),f.input.hard_end_ms);
 });

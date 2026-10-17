@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Preserved old-source recovery baseline 1FAIL/3.75s (ff1b90aab93f5b9e529def263c391dc02ead159a9c22afe9ca8482a2a90d4ea3). Initial implementation regression had185PASS/1FAIL (edaa66d15c3d035c56697f800881a12731037aac7da1299cb6aa18a426380fe4): own test observed producer entry before canonical Ready polling. Corrected test by awaiting the canonical Ready fence; no relaxed production check. Scope refined to original149s outer timeout plus stricter first-serve+120s shared Node cap and private bound cleanup witness. Witness proves canonical producer cleanup, not the later CLI exit mechanism. Actual serving remains a7 while source is reviewed.",
+  "eventId": "883cd2eb-c9dc-4283-b173-689ce1f0f1f9",
+  "sequence": 2,
+  "at": "2026-10-17T17:29:51.904Z"
+}

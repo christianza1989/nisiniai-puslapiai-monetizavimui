@@ -1,5 +1,7 @@
 # Bendras maždaug 30 svetainių planas
 
+**Dokumento paskirtis, 2026-10-17:** išsaugotas 2026-09-29 architektūros ir tuometinių bandymų aprašas. Žemiau pateikti skaičiai, rekomendacijos ir būsenos priklauso tam etapui. Naują darbą pradėk nuo [AGENTS](AGENTS.md), [START_HERE](START_HERE.md) ir [CORE_BUILD_CONTRACT](CORE_BUILD_CONTRACT.md); konkrečios nišos sprendimus tikrink jos dokumentuose. Šis planas nepatvirtina dabartinio kodo, hostingo ar paleidimo būsenos.
+
 Data: 2026-09-29. Būsena: architektūros planas ir įgyvendinimo eiga. Vietinė turinio studija sukurta; viešos svetainės variklio darbai vyksta atskiroje Dovanos sesijoje. Produkcija, domenų DNS ir paskyrų planai nekeičiami.
 
 ## Įgyvendinta šiame etape

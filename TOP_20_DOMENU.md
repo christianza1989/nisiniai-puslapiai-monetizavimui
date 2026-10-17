@@ -1,5 +1,7 @@
 # TOP 20 domenų pirkimo ir svetainių kūrimo sąrašas
 
+**Dokumento paskirtis, 2026-10-17:** išsaugota 2026-09-29 atranka ir tuometinės verslo hipotezės. Domenų lentelė nėra dabartinės nuosavybės, pirkimo kainos, darbų eilės ar patvirtintų pasiūlymų registras. Naujam darbui taikomi [AGENTS](AGENTS.md), [START_HERE](START_HERE.md), [CORE_BUILD_CONTRACT](CORE_BUILD_CONTRACT.md) ir atitinkamos nišos faktai. Ankstesni šaltiniai, sumos ir variantai palikti su jų istorine data.
+
 2026-09-29. Pagal vartotojo nurodytą 5 Eur kainą: 20 domenų = 100 Eur už įsigijimą. Pratęsimas ir projektų veiklos sąnaudos neįskaičiuoti.
 
 Tai rekomenduojamas verslo idėjų portfelis. Paklausa, pelningumas ir dabartinis domenų prieinamumas nėra patvirtinti. Eilė sudaryta pagal pasiūlymo aiškumą, monetizavimo galimybę ir nedidelio testo įgyvendinimą, o ne vien DR.

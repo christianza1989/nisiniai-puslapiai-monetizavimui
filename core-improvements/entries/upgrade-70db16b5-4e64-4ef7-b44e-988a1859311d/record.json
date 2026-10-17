@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Dokumentacijos pradžios taškai nesuteikia modulio ir istorijos paskirties žemėlapio; START_HERE vis dar nurodo vieno seno PC absoliučius checkout kelius kaip darbo vietą.",
+  "category": "workflow",
+  "evidence": [
+    "Main9a46650a033d283dfb559d7b835a26384e3225fe: START_HERE.md po skaitymo sąrašo įvardija C:/Users/lenovo/Documents checkout vietas, nors docs/MULTI_MACHINE.md jau leidžia gretimus portable checkout.",
+    "README.md pradžioje nukreipia į vienos nišos roadmap ir datuotus handoffus be bendro dokumentų paskirties žemėlapio. PROJECT_STATUS ir agent-business-core/README.md turi ankstesnių etapų santraukas; jos nėra visos dabartinės sistemos priėmimas.",
+    "Bazės README/START_HERE santykinių Markdown nuorodų patikra: 33 taikiniai egzistuoja, trūkstamų0. Klaida yra paskirties ir senų kelių aiškumas, ne išgalvotas neveikiančių nuorodų skaičius."
+  ],
+  "paths": [
+    "README.md",
+    "START_HERE.md",
+    "docs/DOCUMENTATION_MAP.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/196",
+  "rollback": "Scoped revert tik šio navigation PR; jokių runtime ar istorinių įrodymų duomenų nekeičia.",
+  "id": "upgrade-70db16b5-4e64-4ef7-b44e-988a1859311d",
+  "branch": "codex/core-documentation-map-20261017",
+  "baseSha": "9a46650a033d283dfb559d7b835a26384e3225fe",
+  "createdAt": "2026-10-17T14:27:46.388Z"
+}

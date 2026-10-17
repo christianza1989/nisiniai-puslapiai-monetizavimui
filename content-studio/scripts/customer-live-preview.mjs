@@ -93,7 +93,7 @@ export async function serveLivePreview(input,deps={}){
     trace.stage='deadline';
     if(Date.now()>=hardEnd)refuse(trace,'preview_deadline_elapsed');
   };
-  const authorized=async()=>{
+  const check=async()=>{
     const trace={stage:'claim',code:'claim_read_failed',checkpoint:'before_context',pulseExpires:null};
     try{
       await signal(trace);trace.stage='context';trace.code='context_check_failed';
@@ -111,6 +111,17 @@ export async function serveLivePreview(input,deps={}){
       try{await recordRefusal(trace);}catch{} // diagnostics cannot override the original refusal
       return false;
     }
+  };
+  // The producer and inspection monitors can overlap. Share only their live
+  // fixed-scope read, never a completed permission. Every waiter rechecks the
+  // current claim, pulse and deadline after joining the native read.
+  let checking;
+  const authorized=async()=>{
+    checking??=check().finally(()=>{checking=undefined;});
+    if(!await checking)return false;
+    const trace={stage:'claim',code:'claim_read_failed',checkpoint:'after_media',pulseExpires:null};
+    try{await signal(trace);return true;}
+    catch{try{await recordRefusal(trace);}catch{}return false;}
   };
   const invoke=deps.withPreview||withPreparedCandidatePreview;
   let waitTimer;

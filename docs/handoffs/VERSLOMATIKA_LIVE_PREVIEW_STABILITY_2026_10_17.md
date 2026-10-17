@@ -1,6 +1,66 @@
 # Live preview stability checkpoint — 2026-10-17
 
-## Latest checkpoint — Source a7, startup repair not yet adopted
+## Latest checkpoint — Source219 mixed lifecycle, next native guard packet
+
+The bounded startup-recovery packet is committed as
+2199266b2afc7456e012a67840170070ff068db8. Scoped a7→219 upgrade coverage passed:
+2shared changes,0uncovered paths. Its exact13 staged files/698672 bytes passed
+repository safety with0findings. Two independent read-only source reviews found
+no additional correctness defect. This is not a main delivery or stability PASS.
+
+Actual Source219 isolated PostgreSQL authority checks passed6 tests212.62s,
+logSHA25689fa647bd8cefef07b0a3d3762d7b5f94ba0d1ddcedfa9a3af84e289c05f99fb.
+Original0032, all88 operational tables and private native content stayed exact.
+The same-DB backup/cutover preserved701 native files and physical site015c3074.
+No migration/copy/provider call occurred. Serving fast-forwarded to219; its first
+API was37456/supervisor22356. Normal owner continuityV3 separately passed login,
+private intake and explicitS6 CURRENT under219. Historical a7 evidence below stays.
+
+Actual close70f6ca57f7374926a7cda52f66482b77/leasefd7a7cfc-2b09-478d-a20f-7d01d5ee4482
+reached Ready/native HTTP200, Chrome homepage, manual close, independently absent
+listener and same-UUID terminal replay. HOWEVER the guard refused after Ready at
+17:41:11.023Z: heartbeat_expired/after_media, margin-8161ms, exactSHA256
+3469e1f15354cb92316cd0c8259c5e90658775598830e6961d40155ab788bad8. A fresh authority
+check took11.44363s/4.91068SQLs/152directSQL; pulse gap11.4774s. The close harness
+PASS must not be described as stable60s. Startup retry was unused, with no startup
+refusal/witness. The attempted guide click showed only a home card; later browser
+control timed out near closure. No Source219 guide PASS. The screenshot named
+guide-desktop.png in source-219-startup is that home-card view, not a guide proof.
+Current-source natural expiry/revocation and overall stability remain OPEN.
+
+After interruption at19:42UTC, frontend3030/PID21956 remained but the owned API
+and database container were stopped. Original container9cb5d646 was exited255,
+OOMKilled=false, same127.0.0.1:15440 configuration; it was restarted unchanged and
+became healthy. The first resume failed before mutation because a stopped
+container had no active5432 mapping; the second failed at the old private
+operator's immutable Codex binary pin. App update removed the old9614 binary.
+Current signed OpenAI binary896a0166b774037a is version0.163.0-alpha.10.2/SHA256
+f6dbf48cb70f62649c645f26c87dc9bf84cc36986202dfad8e12fb5b8ca70312. These are local
+operator recovery findings, not evidence of a platform model attempt. All failed
+resume logs are retained; no frontend auto-launch or provider call was attempted.
+
+Root upgrade778ba9ee, issue66/comment6239824916, narrows the next source change to
+overlapping native Node checks. The producer and inspection have two actual1s
+monitors wired to the same callback; browser document/image GETs do NOT directly
+call it. An earlier browser-fanout hypothesis is retracted. Two-monitor-style
+baseline failed2reads≠1 (SHA256b7590c7f0bd54ce6742491b754cc52ac28722b8d899de4a674ca94d17fa16d13).
+The current source shares only an ongoing exact-scope read, clears it in its own
+finally and independently fences each waiter on current claim/pulse/deadline.
+No completed permission cache or threshold change. Full Node regression passed60
+tests987.5581ms, SHA2562c98f24efe17aa2542c1fcc8f773e5e388f03f9ff660ba8432cda82237c210a5.
+An earlier60-run had54PASS/6FAIL under host pressure: tests observed still-pending
+best-effort diagnostic temp files. Test observation now awaits their publication
+separately; the production100ms refusal budget is unchanged and its stalled-write
+test still passes. Original failureSHA256f0e4c98bdc55d0e08d11a899b3ab06cc8a38b93a4ade0d735c6bf74a9bb344b7.
+Measured host load87%CPU/freeRAM2.88of14.83GB/Cfree4.32GB and a helper paging-file
+OOM remain separate host evidence, not an attributed cause of the SQL stall.
+
+Helper owns a separate execution_profiles schema-observation fusion packet in
+its own branch/worktree; Root has not adopted it here. The four protected old UI
+builds and active live-preview build remain intact; no further cleanup was done.
+Paid accounting37/40, five paid workers held and0provider calls remain unchanged.
+
+## Historical a7 checkpoint — startup repair not yet adopted there
 
 API18871 serves a7a8688919dec61a8c3499a4b5b01e2b9e67e0e4, owned PID14620,
 supervisor38748. Public source255fea0813bf1aabeaeea2f2de0b29564118f2fc and

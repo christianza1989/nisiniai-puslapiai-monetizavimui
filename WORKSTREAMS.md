@@ -1,3 +1,18 @@
+## Concurrent Node preview guards — Root 2026-10-17
+
+Root issue66/comment6239824916, upgrade778ba9ee from clean219/public255,
+paired gate19:42 PASS main533/ec8. Only customer-live-preview.mjs, its existing
+Node test, new LIVE_PREVIEW_CONCURRENT_GUARDS contract and own checkpoint/journal.
+Two canonical one-second monitors share this callback; browser GETs do not call
+it directly. Preserve the failing two-monitor-style baseline (two native reads
+instead of one). Share only an ongoing exact-scope check, clear before waiters
+resume, and independently fence each successful waiter on claim/pulse/deadline.
+No completed permission cache, removed fresh check or threshold change. Source219
+actual close/home/replay passed but afterReady guard failed; stability is open.
+Serving219/data/providers/frontend stay unchanged during this source packet;
+owned API stopped after interruption and must be restored through checked source
+adoption. Helper is a read-only reviewer; no foreign worktree edits.
+
 ## Bounded unpublished preview recovery — Root 2026-10-17
 
 Root issue66/comment6237331697, upgrade4646eda5, clean a7/public255 paired with

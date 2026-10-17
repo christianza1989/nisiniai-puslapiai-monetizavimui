@@ -2,7 +2,7 @@
 
 2026-09-29. Tai architektūros ir turinio planavimo hipotezės pagal pasirinktus verslo modelius. Lentelė nėra patvirtintas raktažodžių tyrimas, paieškų apimčių prognozė ar galutinis turinio kalendorius.
 
-Patikslinta apimtis: visoms 20 svetainių pirmiausia kuriame landing page, SEO puslapius, prekių / paslaugų aprašymus, kontaktus ir matavimą. Lentelėje išvardytos individualios funkcijos yra vėlesnio vystymo idėjos, diegiamos tik projektui parodžius paklausą. Dabartinis planas: [20 svetainių SEO MVP](C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/20_SVETAINIU_SEO_MVP.md).
+Patikslinta apimtis: visoms 20 svetainių pirmiausia kuriame landing page, SEO puslapius, prekių / paslaugų aprašymus, kontaktus ir matavimą. Lentelėje išvardytos individualios funkcijos yra vėlesnio vystymo idėjos, diegiamos tik projektui parodžius paklausą. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md).
 
 Naudojame penkias bendras kompozicijų šeimas. Kiekvienai svetainei parenkame savą pasiūlymą, dizainą ir tekstus. Informacinis hub kuriamas tame pačiame domene, pavyzdžiui, `/gidas/`; paslaugų ir straipsnių turinys atskiriamas pagal paskirtį.
 

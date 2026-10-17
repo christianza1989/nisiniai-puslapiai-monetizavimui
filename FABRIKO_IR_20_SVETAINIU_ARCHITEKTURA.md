@@ -6,7 +6,7 @@
 
 Naujausia techninė kryptis: remtis esamu Dovanos123 pagrindu ir atskiru lengvu turinio planuotoju/generatoriumi. Fabriko prijungimas neprivalomas. Sujungimas aprašytas [bendrame maždaug 30 svetainių plane](C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/BENDRA_30_SVETAINIU_SISTEMA.md); žemiau esantis Fabriko auditas lieka informacine medžiaga.
 
-Vartotojas patikslino: pradžioje paleidžiame visus 20 domenų tik su landing page, SEO turiniu, prekių / paslaugų aprašymais, kontaktais ir matavimu. Tiekėjų integracijos bei individualios sistemos kuriamos tik pagal susidomėjimo rezultatus. Dabartinį darbą apibrėžia [20 svetainių SEO MVP planas](C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/20_SVETAINIU_SEO_MVP.md). Šiam etapui rekomendacija supaprastinta iki bendro svetainių variklio ir vieno diegimo su atskirtomis domenų konfigūracijomis; vienas techninis pilotas skirtas patikrinti šabloną prieš pritaikant jį visiems 20.
+Vartotojas patikslino: pradžioje paleidžiame visus 20 domenų tik su landing page, SEO turiniu, prekių / paslaugų aprašymais, kontaktais ir matavimu. Tiekėjų integracijos bei individualios sistemos kuriamos tik pagal susidomėjimo rezultatus. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md). Šiam etapui rekomendacija supaprastinta iki bendro svetainių variklio ir vieno diegimo su atskirtomis domenų konfigūracijomis; vienas techninis pilotas skirtas patikrinti šabloną prieš pritaikant jį visiems 20.
 
 Toliau pateikta kodo analizė lieka aktuali. Pilnos platformos, PostgreSQL, atskirų Vercel projektų ir verslo modulių pasiūlymai yra vėlesnio vystymo variantai, ne pirmo etapo reikalavimai.
 

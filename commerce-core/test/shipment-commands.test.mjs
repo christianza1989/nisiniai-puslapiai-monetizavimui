@@ -19,6 +19,60 @@ const origin = {
   isCompany: true,
   reason: 'Fixture complete sender',
 };
+test('booking reconciliation accepts provider LT street accent normalization but rejects changed delivery facts', () => {
+  const adapter = new SendparcelBookingAdapter({
+    environment: 'sandbox',
+    accountRef: 'fixture',
+    apiPassword: 'fixture_key',
+    rateLimiter: { run: (_scope, perform) => perform() },
+    bookingAdmission: {
+      approved: true,
+      protocol: 'legacy_single_attempt',
+      contractReference: 'EXPLICIT TEST FIXTURE',
+      pricingProtocol: 'v1_fresh_quote_no_insurance',
+      serviceIds: ['42'],
+    },
+  });
+  const sender = { ...origin, line1: 'Ąžuolų g. 10-55' };
+  const recipient = { ...origin, line1: 'Beržų g. 2C' };
+  const payload = {
+    sender,
+    recipient,
+    parcels: [{ weightGrams: 2200, dimensionsMm: [200, 200, 170] }],
+  };
+  const fact = {
+    sender: { ...sender, line1: 'Azuolu g. 10-55' },
+    recipient: { ...recipient, line1: 'Berzu g. 2C' },
+    parcels: payload.parcels,
+  };
+  assert.equal(adapter.verifyBooking(payload, fact), true);
+  assert.equal(
+    adapter.verifyBooking(
+      { ...payload, sender: { ...sender, country: 'EE' } },
+      { ...fact, sender: { ...fact.sender, country: 'EE' } },
+    ),
+    false,
+  );
+  for (const change of [
+    { line1: 'Azuolu g. 10-56' },
+    { line1: 'Azuolu g. 11-55' },
+    { line1: 'Azuolu g. 10-55A' },
+    { line2: '56' },
+    { name: 'Another company' },
+    { country: 'EE' },
+  ])
+    assert.equal(
+      adapter.verifyBooking(payload, { ...fact, sender: { ...fact.sender, ...change } }),
+      false,
+    );
+  assert.equal(
+    adapter.verifyBooking(payload, {
+      ...fact,
+      parcels: [{ weightGrams: 2300, dimensionsMm: [200, 200, 170] }],
+    }),
+    false,
+  );
+});
 async function setup(tracked = false) {
   let clock = Date.now(),
     creates = 0,

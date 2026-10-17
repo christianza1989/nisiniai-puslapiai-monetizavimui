@@ -20,3 +20,8 @@ Memocasting abu 32 / 48 € rinkiniai dabar apima baltus dažus, atskiro dažų 
 ## Testinės paskyros prieiga · 2026-10-17
 
 Tiekėjas suteikė atskirą staging API raktą ir patvirtino testinį automatinį apmokėjimą bei 500 testinio kredito. Raktas saugomas tik privačiai, ne šiame dokumente. Sukurtas užsakymas nėra iš karto galutinės būsenos: staging registravimo ciklas maždaug 5 min., production maždaug 1 min.. Tikrinti būseną vėliau, nekartoti create dėl laikinos būsenos. Testinės kainos ir paslaugų ID negali tapti production politika. Production raktas išduodamas atskirai po bandymų; šis laiškas neįjungia mokamų siuntų, paskyros papildymo ar kredito sutarties.
+
+
+### Vėlesnio adresų atsakymo palyginimas
+
+Tikras staging create atsakymas grąžino originalias lietuviškas gatvių raides, tačiau vėlesnis infos tas pačias gatves grąžino be diakritikų. Tik LT adreso line1 palyginime leidžiama tiksli lietuviškų raidžių transliteracija; originalus įvesties ir tiekėjo atsakymo tekstas išsaugomi. Namo, korpuso, buto numeriai, line2, gavėjo vardas, šalis, miestas, telefonas ir pakuotės lieka tikrinami kaip anksčiau. Kitoje šalyje ši išimtis negalioja. Tai ne leidimas ignoruoti nesutampantį adresą.

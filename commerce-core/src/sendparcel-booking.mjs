@@ -6,6 +6,16 @@ const text = (value) =>
   value.length >= 3 &&
   value.length <= 500 &&
   !/[\x00-\x1f\x7f]/.test(value);
+// Actual v1 infos transliterates LT street accents after create echoed them.
+// Normalize only those letters; building/apartment digits and all other fields
+// stay exact, and original inputs/provider responses remain unchanged.
+const ltStreetLetters = Object.fromEntries(
+  [...'ąčęėįšųūžĄČĘĖĮŠŲŪŽ'].map((letter, i) => [letter, 'aceeisuuzACEEISUUZ'[i]]),
+);
+const comparableStreet = (address) =>
+  address.country === 'LT' && typeof address.line1 === 'string'
+    ? address.line1.replace(/[ąčęėįšųūžĄČĘĖĮŠŲŪŽ]/g, (letter) => ltStreetLetters[letter])
+    : address.line1;
 export class SendparcelBookingAdapter extends SendparcelAdapter {
   constructor(options) {
     super(options);
@@ -190,7 +200,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       name: a.name,
       country: a.country,
       city: a.city,
-      line1: a.line1,
+      line1: comparableStreet(a),
       line2: a.line2 || '',
       postalCode: a.postalCode.replace(/^(LT-|LV-)/, ''),
       phone: a.phone,

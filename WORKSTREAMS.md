@@ -1229,3 +1229,15 @@ checks/publicfalse and3/20/120/150 bounds retained.42mockNodePASS513.68ms; origi
 9FAIL baseline retained. No actualDB/Nodeproducer/server/provider/currentcase/
 serving/adoption, no Rootfiles or oldjournal533 changes. Root reviews completepin
 before actual retry and owns receipt interpretation/optimization/adoption.
+
+2026-10-17 helper ACCEPTED-PROOF INTAKE OBSERVATION RESERVED issue66/comment6232048798:
+own clean412735e1f7694e7e82a31dcc8316b9eb2968dbcb/public255 after pairedcontinue,
+new codex/accepted-proof-intake-observation-20261017. Exact creation_registration/
+service.py +creation/studio.py only, new focusedmocktests/narrowdoc/newjournaldb8860f5.
+Fresh canonical studio view/native/revision observation removes accepted_proof's
+second selected_intake; standaloneprojection and all original validations stay.
+Initialmaterial and selector currentguard retained; no cache/S6/Foundation redesign.
+Original4FAIL26PASS count/coherence and revision-IDFAIL preserved; final197pure/
+offlinePASS1.93s,1actualprocess test deselected,1existing UUIDwarning. No Rootfiles/
+journals/DB/Nodeproducer/server/provider/currentcase/serving/adoption or guardlimit/
+historicalfingerprint changes. Root reviews completepin and owns actual QA/adoption.

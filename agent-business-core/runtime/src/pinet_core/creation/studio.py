@@ -200,8 +200,8 @@ async def import_draft(draft, *, creation_id, revision, canonical_host, still_au
     return value
 
 
-async def projection(tx, creation):
-    """An explicit historical intake observation, never an inferred live publication state."""
+async def intake_observation(tx, creation):
+    """One fresh canonical intake/view pair, internal only; never an authority cache."""
     from ..control.routes import ControlError
     from .content_wire import ContentView
     from .models import Job, Revision
@@ -236,6 +236,12 @@ async def projection(tx, creation):
                 "hidden_blocker_count": max(0, len(page["blockers"]) - 12)} for page in intake["workflow"]["pages"]]
             view.update(state="private_draft_imported", observed_at=intake["importedAt"], pages=pages,
                 content_plan_state=intake["contentPlanState"].replace("-", "_"), plan_issues=intake["planIssues"])
-        return ContentView.model_validate(view).model_dump(mode="json")
+        return ContentView.model_validate(view).model_dump(mode="json"), native_host, intake, revision.id if revision else None
     except (ValueError, TypeError, KeyError):
         raise ControlError(503, "invalid_content_source") from None
+
+
+async def projection(tx, creation):
+    """An explicit historical intake observation, never an inferred live publication state."""
+    view, _, _, _ = await intake_observation(tx, creation)
+    return view

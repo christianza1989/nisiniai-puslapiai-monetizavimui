@@ -5,7 +5,7 @@ import { ProviderPacing } from '../src/provider-pacing.mjs';
 import { SendparcelAdapter } from '../src/sendparcel-adapter.mjs';
 import { digest } from '../src/validation.mjs';
 
-test('shared durable per-key pacing separates starts, retains only hashes and applies across adapters while quotes remain exempt', async () => {
+test('shared durable per-key pacing separates every REST start including quotes across adapters and retains only hashes', async () => {
   const db = new NodeDatabase();
   db.migrate();
   const starts = [];
@@ -27,9 +27,9 @@ test('shared durable per-key pacing separates starts, retains only hashes and ap
     b.request('/rest-api/services'),
     a.request('/rest-api/quotes', {}),
   ]);
-  const limited = starts.filter((s) => s.path.endsWith('/services'));
-  assert.equal(limited.length, 2);
-  assert.ok(limited[1].at - limited[0].at >= 1000);
+  assert.equal(starts.length, 3);
+  for (let i = 1; i < starts.length; i++)
+    assert.ok(starts[i].at - starts[i - 1].at >= 1000, 'every REST path shares the pacing gate');
   assert.equal(starts.filter((s) => s.path.endsWith('/quotes')).length, 1);
   const rows = (await db.prepare('SELECT * FROM provider_request_pacing').all()).results;
   assert.equal(rows.length, 1);

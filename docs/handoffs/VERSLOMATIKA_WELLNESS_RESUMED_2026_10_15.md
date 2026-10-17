@@ -1,5 +1,20 @@
 # Kubilų verslas — atnaujintas darbas platformoje
 
+## Manual cleanup recovered; live preview repair — 2026-10-17
+
+The human removed35 checked obsolete targets, about5.48GB observed physical space;
+all protected builds remain. UI5651f0e production buildXQj0CKDsHM1ob-y_fdcsD passed,
+not started. Six actual isolated PG authority cases passed103.79s, preserving
+original0032/operational0044/native content. Backed-up same-DB adoption now serves
+da578030 onAPI18871/PID42604; current owner intake/S6 renewed, physical015 unchanged.
+Real GET can_start=true, but first POST failed503studio_timeout before any claim or
+server. Canonical full verification repeats expensive source checks;176Git calls
+were measured. Rootec1b27d source fixes concurrent authority/lifetime (215 adjacent
+and41 final runtime checks passed); helper owns separate source-observation repair.
+Neither new actual lease nor UI controller acceptance is claimed. Exact failures,
+pins, current source-coverage BLOCKED state and next steps are in
+[the recovery record](VERSLOMATIKA_LIVE_PREVIEW_RECOVERY_2026_10_17.md).
+
 ## Customer preview source checkpoint — 2026-10-17
 
 Root integration now includes functional core1684e7f and portal5651f0e source for

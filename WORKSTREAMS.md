@@ -52,6 +52,14 @@ Owner thread01a13d30; own core branch codex/verslomatika-foundation-index-202610
 
 # Lygiagrečios sesijos
 
+2026-10-17 Root source-frame window: issue66/comment6233705540 and upgrade
+a4d4abab-d331-4814-b3d6-5acab58c8646. Only source_observation.py native Git
+HEAD/dirty observation becomes one porcelain-v2 NUL frame, with matching source
+fixtures/new actual inert-Git tests/docs; runtime heartbeat/fences/authority and
+all deadlines stay unchanged. Baseline2vs1 preserved;35focused and328related PASS.
+Helper issue193 owns disjoint main-based documentation quarantine. Root owns
+actual source adoption, current case and runtime/cadence journal continuation.
+
 2026-10-15 issue66 NATIVE MEDIA INBOX RESERVED: coordinator 9c618026 / fetched main808581d9, public1a26f289 / mainec8a9c03. Own site_build/media.py, site_build/service.py hook before initial GUIDE admission, offline_tests/test_site_build_media_inbox.py, runtime/SITE_BUILD.md and upgrade92a17cd8. Existing helper owns creation/media.py, attach-media workflow and its separate tests/journal on own branch. Fixed trusted operator inbox only; no provider, browser mutation route, new optimizer, approvals or channel activation. Serving4e80258/stable6b case remain immutable during source work. New review session01a13d30 has human-authorized read-only Foundation-to-team audit; no shared writes reserved there yet.
 
 2026-10-11 issue77 CONFIGURED CONVERSATION LAB RESERVED: scope6109307081, cleanbasedfeeaad/public5924/fetched7af6/ec8. Latesthumanstatusrequestprioritizesnewconversationagent. New customer_agents/lab.py, internaloptionalcalibrationbinding customer_text/service.py +dataframingadapter.py, privateoperatorCLI, realPG/offline andown labdocs/status/feedback/journal. Current savedimmutableConfig+Registration+Profile+Session currentchecked perdispatch/acceptance; noDBlockacrossmodelawait, no source/TTLrenewal oractivation. PublicHTTP/DTO/wire/SQL/portal/public/Xbot unchanged. API8860/studio18861 HELD. Fullautomaticscenarioevaluation/critique/decision/activation/UI/targetPC/public andplatformOPEN.

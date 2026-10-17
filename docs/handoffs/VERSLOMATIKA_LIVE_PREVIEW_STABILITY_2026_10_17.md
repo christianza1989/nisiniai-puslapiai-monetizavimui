@@ -9,18 +9,57 @@ remains37/40; this continuation made0provider calls. All five paid workers and
 external channels remain held.
 
 Restricted API18871 now runs
-`11f2dcacb8af04e3afe078efbe7384b42487ad44`; owned API PID34020, hidden
-supervisor29420. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+`f53e06678fc7dc2c63c38bfaf701b622d816ef0c`; owned API PID37516, hidden
+supervisor12152. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
 Latest source-only backed-up adoption preserved all88 operational tables and
-413 native files. Earlier adoptions preserved341/365/389 files. No migration or operational database copy was performed.
+437 native files. Earlier adoptions preserved341/365/389/413 files. No migration or operational database copy was performed.
 Normal owner HTTP renewed private intake and explicit S6 for each exact source.
 Original0032 remains intact.
 
 Portal production build XQj0CKDsHM1ob-y_fdcsD is prepared in
 `.local/workspace-live-preview-next` from functional5651f0e8c0104c4ba59fcd8e9a1d13fededcf33f.
-It is not serving:3030 still uses old741d045. Automatic frontend launch was not
-retried or bypassed. Do not ask the human for another restart until the backend
-has a stable ready/close path.
+The human manually started it on3030; owned Node PID21956 and its BUILD_ID were
+checked. Chrome loaded the existing ordinary test account and current creation,
+including current page text/media and the full-site prepare/refresh controls.
+Automatic frontend launch was not retried or bypassed. No new restart is pending.
+
+## Current f53 actual observations
+
+Active-inspection sourcef53 passed the seven relevant real PostgreSQL cases in
+85.37s, logd881cf4d8a4c7aed993c3f7e12166ffc9081e5f633324700055281b5d43d48f6.
+The same-DB backed-up adoption and ordinary owner intake/S6 refresh kept site015
+unchanged. No migration, provider call or channel activation occurred.
+
+Leaseae0a3c3e reached ready/native HTTP200 and remained available for approximately
+60seconds before its scheduled explicit DELETE. DELETE returned200/closed/noURL.
+Chrome desktop/mobile homepage screenshots were saved. A later guide click was
+after that intentional close and is not navigation acceptance. Windows returned
+ConnectTimeout rather than ConnectError to the stopped origin, so the original
+V2 harness failed its transport assertion despite an independently working OS
+listener inventory proving zero listeners for that exact target port. Preserve
+both that first FAIL and the supplemental partial-observation receipt. The V2
+test stopped before terminal UUID replay; that replay is still UNVERIFIED.
+
+The next expiry attempt829d9b9d failed before an observable ready response with
+studio_intake_failed and no Node guard-failure receipt. This separate failure
+remains unexplained; do not relabel it heartbeat expiry. A private exception-only
+Python diagnostic of unchanged f53 then reproduced authorization_revoked instead:
+lease7437fc70, heartbeat_expired/before_context, margin-4950ms at11:40:48.096Z.
+No raw customer payload, stderr or exception message was emitted by that monitor.
+
+A later timed diagnostic on unchanged f53 DID pass actual production ASGI lifespan:
+normal owner admission, ready, native HTTP200, real application lifespan exit
+without DELETE, owned task joined, closed/noURL, exact target listener absent and
+native site015 unchanged. Private verified receiptSHA256
+94d9c1c557849a0291609a8d3f9e3c3c85210a84673413cc1e04bb9850633c6c,
+attemptc1e5941df38647b58237caf52a52ded4. This does not test OS signal handling or
+prove intermittent failures fixed. Sampled authority checks still exceeded3s
+under load; heartbeat writes themselves were milliseconds. Expiry/revocation,
+full UUID replay, current guide navigation and stable portal initiation remain
+open. The later unchanged-source expiry attempt374f347d reached ready/native200
+but failed before natural expiry: heartbeat_expired/before_context at12:05:16.675Z,
+margin-54ms. Preserve its FAIL, attemptac09b7c9f2244014b32ebc1eaa3b3e4a. No new
+source patch is considered adopted until its own backup/cutover and checks.
 
 ## Source repairs and meaningful checks
 
@@ -109,7 +148,8 @@ Real project/inspect baseline reproduced concurrent2; only unique live exact
 token/fullScope may share an unfinished lease observation. Explicit post-output
 fence must drain any older task then require a fresh observation. Original WIP
 post-output failure is retained. Independent review found no remaining P0–P2 in
-the final source; actual adoption/acceptance remains pending. Initial collection
+the final source; it was subsequently adopted asf53, with actual mixed outcomes
+reported above. Initial collection
 capture stays independent; do not claim all observation concurrency is eliminated.
 
 Focused80PASS7.13s f6fd3d913c3cf8395651c99bda6b98b9008d32ef1b079480df2cbef78814ddad.
@@ -139,8 +179,8 @@ profile reads. Material/private-selector grouping reduced its own counts, but fr
 mutable authority reads offset it. Do not present local test counts or ready from
 the older source as acceptance of this version. No new provider calls;37/40 held.
 
-Existing helper now owns a new narrow canonical current_actor nonlocking read
-repair in creation/service.py, from cleanbe557, with its own new journal/tests.
+Following that failure, helper implemented the narrow canonical current_actor
+nonlocking read repair in creation/service.py from cleanbe557, with its own journal/tests.
 The lock=True User/Session lock order must remain unchanged; no completed
 permission cache, schema, roles, TTL or deadline relaxation. Root owns actual
 QA/adoption/current case and only its original runtime/cadence failure events.

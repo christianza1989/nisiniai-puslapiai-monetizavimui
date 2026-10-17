@@ -56,13 +56,29 @@ def _fresh(repo):
     try:
         if _repository(repo.path) != repo:
             raise SourceObservationError()
-        def command(*args):
-            return subprocess.check_output(["git", *args], cwd=repo.path,
-                stderr=subprocess.DEVNULL, text=True, timeout=10).strip()
-        value = GitObservation(command("rev-parse", "HEAD"), command("status", "--porcelain"))
-        if not re.fullmatch(r"[a-f0-9]{40}", value.head) or value.porcelain or _repository(repo.path) != repo:
+        # Porcelain v2 provides the checked HEAD and dirty inventory in one
+        # native frame. NUL records prevent path newlines from masquerading as
+        # branch metadata. Each operation still reads fresh entry AND exit.
+        raw = subprocess.check_output(["git", "-c", "status.showStash=false", "status",
+            "--porcelain=v2", "--branch", "-z", "--untracked-files=normal"], cwd=repo.path,
+            stderr=subprocess.DEVNULL, text=True, timeout=10)
+        records = raw.split("\0")
+        if not records or records.pop() != "":
             raise SourceObservationError()
-        return value
+        heads, branches = [], []
+        for record in records:
+            if re.fullmatch(r"# branch.oid [a-f0-9]{40}", record):
+                heads.append(record.removeprefix("# branch.oid "))
+            elif re.fullmatch(r"# branch.head [^\r\n\0]+", record):
+                branches.append(record)
+            elif not (re.fullmatch(r"# branch.upstream [^\r\n\0]+", record)
+                    or re.fullmatch(r"# branch.ab \+[0-9]+ -[0-9]+", record)):
+                # Every tracked/untracked/rename/conflict/submodule record,
+                # unknown metadata and unborn/malformed HEAD fails closed.
+                raise SourceObservationError()
+        if len(heads) != 1 or len(branches) != 1 or _repository(repo.path) != repo:
+            raise SourceObservationError()
+        return GitObservation(heads[0], "")
     except (OSError, subprocess.SubprocessError, ValueError, TypeError):
         raise SourceObservationError() from None
 

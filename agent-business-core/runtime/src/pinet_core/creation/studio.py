@@ -203,11 +203,16 @@ async def import_draft(draft, *, creation_id, revision, canonical_host, still_au
 async def intake_observation(tx, creation):
     """One fresh canonical intake/view pair, internal only; never an authority cache."""
     from ..control.routes import ControlError
+    from ..site_build.authority_observation import active
     from .content_wire import ContentView
     from .models import Job, Revision
-    revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
-        Revision.sequence == creation.current_revision))
-    job = await tx.get(Job, revision.job_id) if revision else None
+    observed = active(tx, creation)
+    if observed:
+        revision, job, _ = await observed.material(creation)
+    else:
+        revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
+            Revision.sequence == creation.current_revision))
+        job = await tx.get(Job, revision.job_id) if revision else None
     from .private_preview import selected_intake
     native_host, intake = await selected_intake(tx, creation, revision, job)
     view = {"creation_id": creation.id, "current_revision": creation.current_revision or None,

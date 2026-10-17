@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root first-focused review reproduced9 additional FAIL before lifetime fixes: actor/owned/intake can return after canonical leaf await closes operation; same Session UUID with changed user/environment accepted by owned/node signature; nested phase accepted; no-loop check raised RuntimeError. Canonical leaf gates run original reader then close during awaited Future. lifetime-baseline.log9FAIL11deselected11.32s SHA256dd27e89b0b18c1d16ef6670b11742f0049d4ecb7eac9a74644c96ddb90834806 retained. No source fix before this baseline.",
+  "eventId": "7ee32a1d-6ad9-47ff-ad85-68f7d8c2dcf1",
+  "sequence": 4,
+  "at": "2026-10-17T09:39:41.620Z"
+}

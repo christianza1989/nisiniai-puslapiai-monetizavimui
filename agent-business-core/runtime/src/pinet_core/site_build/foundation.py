@@ -68,6 +68,8 @@ def checked(expected):
 
 async def capture(tx, session, creation_id):
     """Current observation, not implicit approval-session renewal or source adoption."""
+    from .authority_observation import active
+    observed = active(tx)
     await guard()
     session = await tx.scalar(select(Session).where(Session.id == session.id,
         Session.user_id == session.user_id, Session.environment_id == settings().environment)
@@ -79,7 +81,8 @@ async def capture(tx, session, creation_id):
         "current_setting('pinet.environment',true)"))).one()
     if tuple(actor) != (session.user_id, settings().environment):
         raise ControlError(401, "unauthenticated")
-    creation = await owned(tx, session, identifier(creation_id))
+    creation = (await observed.owned(session, identifier(creation_id)) if observed
+        else await owned(tx, session, identifier(creation_id)))
     await tx.refresh(creation)
     if creation.status in ACTIVE or creation.active_job_id or await archived(tx, creation):
         raise ControlError(409, "foundation_revision_unavailable")
@@ -87,7 +90,9 @@ async def capture(tx, session, creation_id):
         .execution_options(populate_existing=True))
     if not approval or binding(approval) != binding(creation):
         raise ControlError(409, "build_approval_unavailable")
-    await approved_build_context(tx, creation)
+    if observed:
+        await observed.material(creation)
+    await observed.approved(creation) if observed else await approved_build_context(tx, creation)
     proof, current = await read_current_node(tx, session, creation)
     revision = await tx.get(Revision, proof["revision_id"], populate_existing=True)
     job = await tx.get(Job, revision.job_id) if revision else None
@@ -115,7 +120,7 @@ async def capture(tx, session, creation_id):
     except (ValueError, TypeError, KeyError, AttributeError):
         raise ControlError(503, "invalid_foundation_source") from None
     await guard()
-    await owned(tx, session, creation.id)
+    await observed.owned(session, creation.id) if observed else await owned(tx, session, creation.id)
     await tx.refresh(creation)
     if (creation.current_revision != expected.accepted.accepted_revision
             or creation.status in ACTIVE or creation.active_job_id or await archived(tx, creation)):

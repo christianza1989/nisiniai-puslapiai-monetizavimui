@@ -7,18 +7,19 @@ import secrets
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from functools import wraps
-from types import SimpleNamespace
 from uuid import UUID, uuid4
 
 from ..config import settings
 from ..control.routes import ControlError, scope, token_hash
-from ..creation import media, studio
+from ..creation import media as media  # Preserve the existing module seam for native-guard callers.
+from ..creation import studio
 from ..creation.routes import owned
 from ..creation.service import digest
 from ..customer_text.service import customer_session
 from ..source_observation import SourceObservationError, git_source_operation
 from ..tasks.codex_transport import RunnerError
 from . import foundation
+from .authority_observation import Observation, native_guard
 from .live_preview_store import LIMIT, Store
 from .live_preview_wire import ACTIVE_STATES, Availability, LeaseView, Start
 
@@ -61,19 +62,25 @@ class Authority:
     async def capture(self):
         async with scope(token=token_hash(self.token)) as tx:
             session = await customer_session(tx, self.token)
-            creation = await owned(tx, session, self.identity)
-            expected = await foundation.capture(tx, session, self.identity)
-            await self.native(tx, session, expected)
+            with Observation(tx, session, self.identity) as observation:
+                with observation.phase() as phase:
+                    await phase.owned(session, self.identity)
+                    expected = await foundation.capture(tx, session, self.identity)
+                    if not phase.native_checked:
+                        await self.native(tx, session, expected)
+                with observation.phase():
+                    final = await foundation.capture(tx, session, self.identity)
+                    await self.native(tx, session, final)
+                if final != expected:
+                    raise ControlError(409, "live_preview_context_stale")
             self.owner = {"user_id": session.user_id, "session_id": session.id,
-                "environment": creation.environment_id, "creation_id": self.identity}
+                "environment": expected.environment_id, "creation_id": self.identity}
         return expected
 
     async def native(self, tx, session, expected):
         pin = expected.accepted
-        request = SimpleNamespace(accepted_revision=pin.accepted_revision,
-            candidate_sha256=pin.candidate_sha256, canonical_host=pin.canonical_host)
-        await media.native_mutation_guard(tx, session, self.identity, request,
-            unavailable_code="live_preview_revision_unavailable", stale_code="live_preview_context_stale")()
+        await native_guard(tx, session, self.identity, {"accepted_revision": pin.accepted_revision,
+            "candidate_sha256": pin.candidate_sha256, "canonical_host": pin.canonical_host})
 
     @source_checked
     async def verify(self, expected):
@@ -81,8 +88,13 @@ class Authority:
             session = await customer_session(tx, self.token)
             if str(session.id) != str(expected.session_id) or str(session.user_id) != str(expected.user_id):
                 raise ControlError(401, "unauthenticated")
-            await self.native(tx, session, expected)
-            await foundation.verify(tx, expected)
+            with Observation(tx, session, self.identity) as observation:
+                with observation.phase():
+                    await self.native(tx, session, expected)
+                    await foundation.verify(tx, expected)
+                with observation.phase():
+                    await self.native(tx, session, expected)
+                    await foundation.verify(tx, expected)
 
 
 @dataclass

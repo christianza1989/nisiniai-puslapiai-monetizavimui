@@ -1,0 +1,26 @@
+{
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/authority_observation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation.py",
+    "agent-business-core/runtime/src/pinet_core/creation/media.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/creation_registration/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_completion/service.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this nine-file source packet before Root adoption. No migration/data/history/wire/runtime operation. Preserve original baseline failures and all prior journals; Root owns actual DB/provider/serving acceptance.",
+  "evidence": [
+    "Root-approved source scope from d904b08c6b2dcef5a4c83eadacb188063e2277a4. Static private+historicalS6 graph has8 material/team,3 proof,5 selected-intake traversals; Root measured306SQL per capture and40 profile SQL. Helper will retain an executed fakeTx canonical counter/mutation baseline before source edits.",
+    "Root actual ready lease later failed heartbeat_expired before_context; diagnostic retained by Root. This source-only optimization does not change3/20/120/150 limits or establish actual serving acceptance. Distinct U/P/S Sessions, mutable ownership/status/archive/Guide/source/approval/private/S6/language/native/final fences remain."
+  ],
+  "summary": "Flatten repeated accepted material/private intake/S6/Foundation dependency reads within one Authority observation while retaining fresh entry/final graphs and native callback authorization.",
+  "category": "code",
+  "siteId": "core",
+  "id": "upgrade-93226de5-b71a-42ce-b4d0-62277193a1f7",
+  "branch": "codex/authority-observation-20261017",
+  "baseSha": "d904b08c6b2dcef5a4c83eadacb188063e2277a4",
+  "createdAt": "2026-10-17T09:26:06.505Z"
+}

@@ -1,0 +1,7 @@
+{
+  "note": "First bounded focused source packet for Root review, not final handoff/adoption. Original canonical graph1FAIL10PASS6.92s retained. Current focused11PASS12.65s, logSHA2569df8810894e372a79cd3ad6d09d63fb9448b4f1f7317e19e14687564da91437f. Actual canonical material/selector counters now2/2 and one mocked native output. No broader regression yet; fresh final graph, distinct Session error mappings and scoped private ContextVar owner/tx/creation/closed lifetime implemented within exactly9 source paths. Pending Root review before expanding mutation/regression coverage.",
+  "status": "fixing",
+  "eventId": "798ecaa9-3d9f-48e2-b07c-7bba3105cc5c",
+  "sequence": 3,
+  "at": "2026-10-17T09:32:53.740Z"
+}

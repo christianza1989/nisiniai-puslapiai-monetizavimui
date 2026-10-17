@@ -2,7 +2,6 @@
 import asyncio
 import hashlib
 import json
-import subprocess
 from pathlib import Path
 
 from pydantic import ValidationError
@@ -21,6 +20,7 @@ from ..creation.models import Job, Revision
 from ..creation.routes import owned
 from ..creation.service import ACTIVE, binding, digest
 from ..customer_text.adapter import source_current
+from ..source_observation import SourceObservationError, git_source_observation
 from ..tasks.codex_transport import RunnerError
 from . import service as builds
 from .foundation_wire import FoundationScope, Observation, PreparedPreview, RetainedCheck, Sources
@@ -40,16 +40,14 @@ def source_pins():
     try:
         _, _, _, environment = studio.configuration()
         public = Path(environment["STUDIO_PUBLIC_CORE_DIR"])
-        revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=public,
-            stderr=subprocess.DEVNULL, text=True, timeout=10).strip()
-        if subprocess.check_output(["git", "status", "--porcelain"], cwd=public,
-                stderr=subprocess.DEVNULL, text=True, timeout=10).strip():
-            raise ControlError(503, "source_unavailable")
+        revision = git_source_observation(public).head
         return Sources.model_validate_json(json.dumps({
             "execution_source_revision": settings().control_source_revision,
             "public_source_revision": revision, "bridge_sha256": sha(SCRIPT),
             "verifier_sha256": sha(VERIFIER), "parser_sha256": sha(PARSER)}))
-    except (OSError, subprocess.SubprocessError, ValueError, RunnerError):
+    except SourceObservationError:
+        raise ControlError(503, "source_unavailable") from None
+    except (OSError, ValueError, RunnerError):
         raise ControlError(503, "foundation_bridge_unavailable") from None
 
 
@@ -109,7 +107,7 @@ async def capture(tx, session, creation_id):
             "approval_fingerprint": approval.fingerprint, "approval_session_id": approval.session_id,
             "discovery_id": approval.discovery_id, "report_id": approval.report_id,
             "report_revision": approval.report_revision, "report_sha256": approval.report_sha256,
-            "accepted": proof, "sources": source_pins().model_dump(mode="json"),
+            "accepted": proof, "sources": (await asyncio.to_thread(source_pins)).model_dump(mode="json"),
             "language_review_mode": language_mode.mode(),
             "site_context_sha256": current["expectedSiteHash"],
             "page_snapshot_sha256": digest(sorted(current["pages"], key=lambda p: p["pageId"])),
@@ -124,7 +122,7 @@ async def capture(tx, session, creation_id):
         raise ControlError(409, "foundation_context_stale")
     if not await tx.scalar(select(User.id).where(User.id == session.user_id, User.enabled)):
         raise ControlError(401, "unauthenticated")
-    if source_pins() != expected.sources or language_mode.mode() != expected.language_review_mode:
+    if await asyncio.to_thread(source_pins) != expected.sources or language_mode.mode() != expected.language_review_mode:
         raise ControlError(503, "source_unavailable")
     return expected
 

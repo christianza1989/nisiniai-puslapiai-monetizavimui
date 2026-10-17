@@ -3,7 +3,6 @@ import asyncio
 import hashlib
 import json
 import re
-import subprocess
 from datetime import timedelta
 from pathlib import Path
 from uuid import UUID
@@ -16,6 +15,7 @@ from ..control.routes import ControlError, scope, token_hash
 from ..customer_text.adapter import source_current
 from ..customer_text.service import customer_session
 from ..models import new_id, utcnow
+from ..source_observation import SourceObservationError, git_source_observation
 from ..tasks.codex_transport import RunnerError
 from . import private_native_continuity as continuity
 from .accepted_material import accepted_material
@@ -51,16 +51,13 @@ def native_sources():
     try:
         _, script, _, environment = studio.configuration()
         public = Path(environment["STUDIO_PUBLIC_CORE_DIR"])
-        source = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=public,
-            stderr=subprocess.DEVNULL, text=True, timeout=10).strip()
-        dirty = subprocess.check_output(["git", "status", "--porcelain"], cwd=public,
-            stderr=subprocess.DEVNULL, text=True, timeout=10).strip()
+        source = git_source_observation(public).head
         network = Path(environment["STUDIO_NETWORK_SETTINGS"])
-        if dirty or not re.fullmatch("[a-f0-9]{40}", source) or script.is_symlink() or network.is_symlink():
+        if not re.fullmatch("[a-f0-9]{40}", source) or script.is_symlink() or network.is_symlink():
             raise ControlError(503, "source_unavailable")
         return {"public_source_revision": source, "importer_sha256": hashlib.sha256(script.read_bytes()).hexdigest(),
             "network_sha256": hashlib.sha256(network.read_bytes()).hexdigest()}
-    except (OSError, subprocess.SubprocessError, RunnerError):
+    except (OSError, SourceObservationError, RunnerError):
         raise ControlError(503, "source_unavailable") from None
 
 

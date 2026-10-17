@@ -27,3 +27,13 @@ Mūsų svetainės dizainas, domeno istorija, URL žemėlapis, tekstai, nuotrauk�
 ## Toliau
 
 Užbaigti ribotą šaltinių kilmės perdavimą esamoje Discovery → Creation → native intake grandinėje. Tada pradėti atskirą tikro verslo bylą su atrinktais šaltiniais ir aiškiais nežinomais faktais. Vizualinę kryptį rinkti pagal šio verslo auditoriją; gamintojo nuotraukas importuoti tik gavus reikiamas teises. Viešą pasiūlymą ir klientų kontaktavimą grįsti tik patvirtintomis galimybėmis.
+
+## 2026-10-18: atskiras headless agentų pavedimas
+
+[Vykdymo eiga](wellness-export/HEADLESS-RUNBOOK.md),
+[kalibravimo ir priėmimo ataskaita](wellness-export/AGENT-CALIBRATION-2026-10-18.md)
+ir [tikslūs sintetiniai laiškų pavyzdžiai](wellness-export/SAMPLE-EMAILS-2026-10-18.md).
+Įgyvendintas vietinis tyrimo, peržiūrėto laiško ir to paties Case atsakymų kelias.
+174/180 modelio rezervacijų, gyvas siuntimas0. Tikri kandidatų kontaktai ir laiškai
+saugomi privačiai. Gamintojo susitarimas, siuntėjo prieiga, kampanijos teisės ir
+operacinio modulio admission lieka atskiri nepatvirtinti vartai.

@@ -124,10 +124,13 @@ async def daily(campaign, prospects, lab, root: Path, now: datetime):
         raise RuntimeError('campaign_already_running_or_interrupted_lock') from None
     os.close(descriptor)
     journal_path = folder / f'{day}.json'
-    input_hash = fingerprint({'campaign': campaign.model_dump(mode='json'),
+    input_value = {'campaign': campaign.model_dump(mode='json'),
                               'prospects': [p.model_dump(mode='json') for p in prospects],
                               'instruction_hash': compose(campaign.sector)[1],
-                              'reviewer_hash': compose(campaign.sector, 'reviewer')[1]})
+                              'reviewer_hash': compose(campaign.sector, 'reviewer')[1]}
+    if hasattr(lab, 'instruction_fingerprint'):
+        input_value['execution_adapter_hash'] = lab.instruction_fingerprint
+    input_hash = fingerprint(input_value)
     try:
         if journal_path.exists():
             journal = json.loads(journal_path.read_text(encoding='utf-8'))
@@ -151,7 +154,7 @@ async def daily(campaign, prospects, lab, root: Path, now: datetime):
                    'external_sent': False}
             if prospect.organization_key in previous:
                 row.update(state='duplicate', reasons=['prior_draft_or_uncertain'])
-            elif lab.calls - start_calls + 2 > campaign.max_model_calls:
+            elif lab.calls - start_calls + getattr(lab, 'max_prepare_calls', 2) > campaign.max_model_calls:
                 row.update(state='blocked', reasons=['daily_model_budget'])
             else:
                 journal['records'].append(row)

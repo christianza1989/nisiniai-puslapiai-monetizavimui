@@ -1,5 +1,7 @@
 # Bendras prekybos modulis
 
+2026-10-17: priimtos [tikrais Sendparcel bandymais pagrįstos pataisos](docs/SENDPARCEL_V1_2026_10_14.md): visų REST užklausų ribojimas, tikslus lietuviškų gatvių diakritinių raidžių palyginimas ir sekimo atsakymas iki pirmo skenavimo. Svetainės sesija testinėje aplinkoje patikrino vieną dviejų pakuočių siuntą, du lipdukus ir manifestą. Tikrų siuntų API raktas dar negautas; bendro modulio šaka nepakeičia veikiančios parduotuvės konfigūracijos ar siuntimo leidimų.
+
 0.17.0: [Access savininko sesijos](docs/PRODUCTION_CONNECTION.md#access-owner-sessions--source-0170). Patikrintas JWT ir tikslus core membership leidžia administravimui prisijungti be kartotinio žetono įklijavimo. Išsaugotos iki 8 val. teisių ribos ir Bearer suderinamumas; yra tos pačios kilmės patikra, atsijungimas ir hash revokacija naujoje0024 migracijoje. Tikra Access organizacija, AUD, savininko subject ir hosted prisijungimo priėmimas lieka diegimo savininko darbas; šaltinio testai jų neaktyvuoja.
 
 0.16.0: [Memocasting paprasti likučiai](docs/PRODUCTION_CONNECTION.md#current-memocasting-simple-counts--0160). Pagal naują savininko nurodymą produktams galima aiškiai parinkti kiekių režimą be partijų, galiojimo ir BOM; 999 yra nustatytas laikinas balansas. Admin neberodo šiam režimui netaikomų formų. Kitų produktų lot/legacy režimai ir rezervavimo, grąžinimo, mokėjimo bei pakartojimo apsaugos išsaugotos.

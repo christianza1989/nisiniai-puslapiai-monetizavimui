@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Reviewed three provider-evidenced repairs, preserving original source records and failures. Actual staging receipt was produced by the site-owner session; root performed no provider, browser, Gmail, credentials, remote DB or production operation and did not repeat create. Root158 tests exclude the site-owner's separate admin-root routing addition, hence differ from that checkout159 without dropping a test. Documentation self-review checked confirmed package facts, provider limits and distinct preparation-template/deployed-config ownership; no product UI changed.",
+  "checks": [
+    {
+      "command": "node scripts/git-freshness.mjs --phase continue --companion <actual companion> -- node --run verify (commerce-core cwd)",
+      "result": "PASS",
+      "evidence": "commerce-core/tmp/sendparcel-adoption-verify-20261017.log: fetched-main current; format,158 Node, native workerd/D1/R2/Queue with24 migrations, dry-run3226.26KiB/gzip779.82KiB/21assets; exit0. Ignored local log, not an actual provider receipt."
+    },
+    {
+      "command": "node --test commerce-core/test/provider-pacing.test.mjs; node --test commerce-core/test/shipment-commands.test.mjs; node --test commerce-core/test/shipping.test.mjs",
+      "result": "PASS",
+      "evidence": "3+8+8 focused tests. All REST calls including quotes use durable shared gate; LT street accent comparison preserves delivery/parcel mismatches; exact no-scan response accepted while malformed/error shapes still reject."
+    },
+    {
+      "command": "git diff --exit-code 68e3148cf8aa35d05ea6fc7a7fb0da3f2f1098e5 -- <five reviewed source/test files>",
+      "result": "PASS",
+      "evidence": "Root sendparcel-adapter,sendparcel-booking,provider-pacing.test,shipment-commands.test,shipping.test byte-equivalent to reviewed site source."
+    },
+    {
+      "command": "git diff --exit-code e23b2befc792f755d6eb3ca3ce9f2f5ba7032cf3 -- commerce-core/config commerce-core/migrations commerce-core/sdk commerce-core/src/runtime.mjs commerce-core/src/identity.mjs",
+      "result": "PASS",
+      "evidence": "Original24 migrations, old preparation config, SDK and runtime/identity untouched. Each source adoption commit passed exact-staged safety and its original upgrade coverage check."
+    }
+  ],
+  "eventId": "7cea59e0-f926-4b0a-b472-bcde44cdf17b",
+  "sequence": 2,
+  "at": "2026-10-17T08:48:48.168Z"
+}

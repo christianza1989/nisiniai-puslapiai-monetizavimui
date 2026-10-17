@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Root read-only review found no actionable P0-P2 in bounded source. Only creation_registration/service.py changes runtime source: preserve exact historical full Registration intake identity through validated same-origin immutable history AFTER current native selected-intake validation, with final latest/current recheck. No arbitrary continuity dictionary stripping, historical row/fingerprint rewrite, new admission or gate relaxation. Source delivery and actual runtime adoption remain separate. Own exact container7a3de46ae59a4e8fbf1d03b81cbb5d6f1f35e174ac354bdeee395d151f59c2d4 was stopped after tests; synthetic DB/profile/files/logs retained. No original/operating DB/files/process/provider/SMTP/portal access.",
+  "checks": [
+    {
+      "command": "Existing qa-venv Python, dedicated own loopback15548 profile and PINET_PRIVATE_PREVIEW_QA=1: python -m pytest -o pythonpath=tests -p pytest_asyncio.plugin -q -p no:cacheprovider tests/test_registration_private_continuity_pg.py tests/test_creation_registration.py tests/test_private_native_continuity_pg.py",
+      "result": "PASS",
+      "evidence": "53 actual restricted PostgreSQL/HTTP/Node tests PASS412.16s:5new/48maintained. Original/prior-renewal Registration, physical paired-source upgrade, exact old rows/native files, stale/failed/tampered-current refusal and real-clock late Session expiry covered. .github-preparation/registration-qa/pg-regression-1.log SHA256111a15ff504e6231e643a70ed054b1f0b8d5ef2290b09a93820335fbf0aa155b. NEW official cached PostgreSQL18.6 image74935e72241653ca55e0414067e6d8763aceb8a810eb51b452253ec3dcfc4336, loopback127.0.0.1:15548, fresh private credentials, canonical0045/89runtime tables, runtime NOSUPERUSER/NOBYPASSRLS/NOCREATEDB/NOCREATEROLE; synthetic role outputs,0paid/model/channel calls."
+    },
+    {
+      "command": "python -m pytest -o pythonpath=tests -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_registration_private_continuity.py offline_tests/test_creation_registration.py offline_tests/test_private_native_continuity.py offline_tests/test_private_preview.py",
+      "result": "PASS",
+      "evidence": "143purePASS4.73s:19new/124maintained. Exact full payload retention and foreign/self-consistent counterfeit origin/context/intake/authority/receipt refusals; history does not make stale source or revoked Session current. .github-preparation/registration-qa/offline-first.log SHA2567c5430cfa883c4ed14394854154362da6913cb1179ddafbdf00145b5e5e650a3."
+    },
+    {
+      "command": "Existing qa-venv python -m ruff check creation_registration/service.py and the two new dedicated test files; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; .github-preparation/registration-qa/ruff-final.log SHA256a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0. No production source changes after native/pure regression or Root source review."
+    },
+    {
+      "command": "Read-only exact Git boundary assertions against2d429c1fea873babe179223ddc13315374ae021d",
+      "result": "PASS",
+      "evidence": "Only runtime source change is creation_registration/service.py. admin.py, native private preview/continuity state machine, Profile, mail, acquisition, wire, migrations remain identical. .github-preparation/registration-qa/boundary.log SHA256cb49740a9cf7221066224783c9444c2cb8051b89caa0aa6dc760892e809b800d."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Initial exact-staged7files/0findings; .github-preparation/registration-qa/safety-initial.log SHA2565b6266fd5423414cb5f7b05b2413d15c07790bc6387d7ceda0f15f1d2dad81aa. Final exact staging rechecks own WORKSTREAMS status and two added immutable journal events before commit. Private QA secrets, databases and logs are ignored/untracked."
+    },
+    {
+      "command": "node scripts/git-freshness.mjs --phase handoff --companion C:/Users/Lenovo/.codex/worktrees/private-native-upgrade/dovanos-memorycasting",
+      "result": "PASS",
+      "evidence": "Successful paired fetch23:03:53/57UTC; corebase2d429c1fea873babe179223ddc13315374ae021d includes main533597c10e290a2a09a522ad348e19c9968aa9d5; clean companionHEAD255fea0813bf1aabeaeea2f2de0b29564118f2fc includes mainec8a9c032fe926d1d9722802d8eb26fa8bd02937. .github-preparation/registration-qa/handoff-freshness.log SHA2563832d46fa8e6823ca9cfb1ea9e43d70c04c793cbfa1dee9e7b0bfce0cb2755de."
+    }
+  ],
+  "eventId": "b5877e86-8abe-4a25-9d8a-7d2cc95840f5",
+  "sequence": 3,
+  "at": "2026-10-17T23:05:03.571Z"
+}

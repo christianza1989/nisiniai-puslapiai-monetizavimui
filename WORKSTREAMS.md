@@ -1,3 +1,25 @@
+## Pure dynamic V2 learning adapters — helper 2026-10-18
+
+Root-authorized first source-only increment, issue66/comment6241343169.
+Own codex/v2-learning-adapters-20261018 worktree from frozen
+30071c65de2d5cf786a2a29c9c0ebb8f006ff351; paired main533/publicec8
+startPASS21:27:23/25UTC. Exact NEW source only customer_agents/learning_target.py
+and learning_adapter.py, NEW offline test_customer_learning_target.py and
+test_customer_learning_adapter.py, docs/CUSTOMER_V2_LEARNING_ADAPTERS.md,
+own unique journal and this paragraph. Pure detached metadata/same-parent and
+report/replicate adapters reuse existing protected_compare; diagnostic reports
+remain explicitly non-adoptable/UNVERIFIED. No actual receipt or Quality PASS is
+created. All existing readiness/admission, workflow, static controller/adaptive,
+lab/quality/typed/customer_text, DTO/schema/worker/budget/provider code frozen.
+No DB/provider/paid/Serving/UI/acquisition/email/foreign process changes.
+Root owns mail_view and all actual execution/later shared integration windows.
+Verification: 273 pure PASS14.52s (110 new/163 maintained), log SHA256
+a16340c4d521f9462a6b60877eb81208fa167f54326e9d4e80ac6156d00001ef;
+Ruff four owned Python files PASS. Initial missing-module and cross-arm replay
+FAIL evidence retained. Canonical journal upgrade-0c10d3ac-687f-4583-b177-4dce6c26ef7d
+supersedes the privately preserved uncommitted invalid-URL draft. Source window
+closes at scoped commit; actual native execution/adoption remains Root-owned.
+
 ## Concurrent Node preview guards — Root 2026-10-17
 
 Root issue66/comment6239824916, upgrade778ba9ee from clean219/public255,

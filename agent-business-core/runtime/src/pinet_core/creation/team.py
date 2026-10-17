@@ -280,12 +280,13 @@ async def projection(tx, creation):
                                   .order_by(TeamEvent.sequence)))
     by_attempt, job_by_id = {a.id: a for a in attempts}, {j.id: j for j in jobs}
     views = []
+    try:
+        await profiles.validate_attempts(tx, "creation",
+            [(job_by_id[a.job_id], a.role, a.model) for a in attempts])
+    except adapter.RunnerError:
+        from ..control.routes import ControlError
+        raise ControlError(503, "invalid_content_source") from None
     for attempt in attempts:
-        try:
-            await profiles.validate_attempt(tx, "creation", job_by_id[attempt.job_id], attempt.role, attempt.model)
-        except adapter.RunnerError:
-            from ..control.routes import ControlError
-            raise ControlError(503, "invalid_content_source") from None
         final = [e.state for e in events if e.attempt_id == attempt.id and e.state != "reserved"]
         state = final[-1] if final else "reserved" if job_by_id[attempt.job_id].status == "running" else "interrupted"
         views.append(AttemptView(attempt_id=attempt.id, job_id=attempt.job_id, sequence=attempt.sequence, role=attempt.role,

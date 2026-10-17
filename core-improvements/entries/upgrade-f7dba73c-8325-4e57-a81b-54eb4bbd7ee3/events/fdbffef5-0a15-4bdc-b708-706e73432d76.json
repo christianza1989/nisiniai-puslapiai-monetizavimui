@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Metadata-only imports now avoid loading native Sharp; raster operations still load the same backend with unchanged responsive-webp-v1 parameters. Original native-unavailable child baseline failed as expected (9fdc44e4cb64e45490650b7cb3507935abc88847b092e990f612fda3a87d5f5f). The test uses node:module register, available throughout the declared Node 22 family; the actual run used Node 24.19.0. All 43 real raster and existing workflow checks passed, no skipped tests. Cold policy imports measured 0.905/1.142/1.023 ms without native Sharp versus prior 223.878/88.868/81.434 ms with it; workflow import 24.124 ms versus prior 90.45 ms. These local timings are not an end-to-end preview bound. No dependency, pixel settings, permission, deadline, native site, provider or serving change; actual adoption and preview stability remain separate.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/image-pipeline.test.mjs content-studio/test/customer-content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "43 tests passed, 0 skipped, 73.6298016 seconds. Private workflow-regression-v2.log SHA256 2705aecf513be47875a7ca9493a267086bf5243f3699d01b968ef50ab629860a. Includes actual alpha WebP, EXIF orientation/privacy, MIME/dimension/size refusals, synthetic import/approval/release/snapshot integrity and metadata-only import with native resolver unavailable."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped source/test/contract diff checked; IMAGE_POLICY and all existing raster validation and transform parameters remain unchanged."
+    }
+  ],
+  "eventId": "fdbffef5-0a15-4bdc-b708-706e73432d76",
+  "sequence": 2,
+  "at": "2026-10-17T15:31:00.813Z"
+}

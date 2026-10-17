@@ -1,3 +1,21 @@
+## Metadata-only media import — Root 2026-10-17
+
+Root reserves issue66/comment6235745750 from clean Source57/public255 with paired
+freshness against private main533/public mainec8. Exact production path is
+content-studio/src/image-pipeline.mjs; only its existing test and MEDIA_CORE note
+are changed alongside new upgrade f7dba73c and Root checkpoint evidence. Defer
+native Sharp initialization until raster processing, preserving the one pipeline
+and exact policy/output. Save a native-unavailable metadata import baseline and
+run actual raster plus workflow regressions. Helper owns a disjoint four-file
+private parent SQL observation packet. Serving, data, providers, dependencies,
+permissions, guards and deadlines stay untouched by this source window.
+
+Metadata import source window released after verification: original isolated
+import failure retained (9fdc44e4); final43 raster/workflow PASS73.63s (2705aecf).
+Native-backend loading is now deferred, with all pixel policy/validations retained.
+Cold import improvement is local evidence only; actual serving adoption and full
+preview stability remain Root-owned follow-up, separate from helper SQL work.
+
 ## Historical team clock — Root 2026-10-17
 
 Issue66/comment6232048518; upgrade870ed381: team.py/execution_profiles.py fresh

@@ -4,12 +4,20 @@
 
 Read [the latest checkpoint](VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md)
 before the historical entries below; it records the current source/process IDs
-and original mixed outcomes. The portal build is manually running. Source948 has
-one complete natural-expiry/replay PASS and all11 desktop page openings plus a
-mobile guide, but later startup timeout/heartbeat failures remain. Stable manual
-close/revocation and full-site/agent acceptance are open. Source checks, current
+and original mixed outcomes. The portal build is manually running. Source57 now
+serves the backed-up same operational database; current native content is intact.
+An observed run reached Ready and expired, but another actual UI start still
+failed the heartbeat. Earlier Source948 natural-expiry/replay and11desktop plus
+one mobile guide openings are historical evidence. Stable current-source browser,
+manual close/revocation and full-site/agent acceptance are open. Source checks, current
 runtime adoption, main delivery and overall acceptance are distinct. No provider
 calls were made in this continuation; production limits remain unchanged.
+
+Bounded documentation cleanup is complete on main533597c: PR194 quarantined one
+obsolete plan, PR198 added the documentation map/current entry navigation, and
+PR199 clarified historical plans/legacy CLI limits and quarantined one redundant
+entry alias. Original quarantined bytes and historical receipts were retained.
+This is not a claim that all old code or every PC folder has been deleted.
 
 ## Manual cleanup recovered; live preview repair — 2026-10-17
 

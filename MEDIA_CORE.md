@@ -16,6 +16,11 @@ Komanda grąžina primary `assetId`, visų variantų ID, tikrus matmenis ir bait
 
 ## Vykdoma politika
 
+`IMAGE_POLICY` galima skaityti neįkeliant vaizdų apdorojimo bibliotekos. Bendras
+`optimizeRaster` įkelia „Sharp“ tik gavęs tinkamo dydžio duomenis; pats vaizdo
+apdorojimas ir jo patikros lieka privalomi. Vien metaduomenų skaitymas nereikalauja
+inicijuoti vaizdų apdorojimo ir nepakeičia šios politikos versijos.
+
 - `responsive-webp-v1`: 360 / 640 / 800 / 1200 / 1600 px kandidatai, tik iki tikro originalo dydžio. Jei originalas mažesnis, paskutinis dydis yra jo tikras plotis; nedidinama ir nedubliuojama. Maksimalus viešo vaizdo kraštas 1600 px; proporcijos išlaikomos.
 - WebP quality 75, alphaQuality 100, effort 6. Skaidrus PNG išlaiko alpha; tai nėra PNG fono užliejimas. JPEG EXIF orientacija pritaikoma prieš resize.
 - Viešuose variantuose nelieka originalo EXIF/XMP/GPS. Originalas ir tikslus pateiktas prompt/provenance įrašas laikomi ignoruojamame `content-studio/data/media-originals/<siteId>/`, be viešo endpointo.

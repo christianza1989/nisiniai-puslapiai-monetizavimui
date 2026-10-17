@@ -9,10 +9,12 @@ remains37/40; this continuation made0provider calls. All five paid workers and
 external channels remain held.
 
 Restricted API18871 now runs
-`90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0`; owned API PID14464, hidden
-supervisor18044. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+`57a2e6857352c22f84422f8d67d1c8a68d7bba5f`; owned API PID37332, hidden
+supervisor48328. This process has passive private timing wrappers; canonical
+guards and deadlines are unchanged. Public renderer remains
+255fea0813bf1aabeaeea2f2de0b29564118f2fc.
 Latest source-only backed-up adoption preserved all88 operational tables and
-605 native files. Earlier adoptions preserved341/365/389/413/437/557 files. No migration or operational database copy was performed.
+629 native files. Earlier adoptions preserved341/365/389/413/437/557/605 files. No migration or operational database copy was performed.
 Normal owner HTTP renewed private intake and explicit S6 for each exact source.
 Original0032 remains intact.
 
@@ -23,7 +25,58 @@ checked. Chrome loaded the existing ordinary test account and current creation,
 including current page text/media and the full-site prepare/refresh controls.
 Automatic frontend launch was not retried or bypassed. No new restart is pending.
 
-## Current90c observations
+## Current Source57 observations
+
+Source57 integrates main533 documentation cleanup into Root435; runtime code is
+identical to435. The integrated Python source suite on435 passed476 tests45.97s,
+logSHA256e0ac4f301c568072433f0ce88f692d78ea6d35426db2c267db50a6a2a5ce24d4,
+including the actual inert Python-to-Node child test with existing dependencies.
+This is source regression, not whole-platform acceptance.
+
+The combined15-case actual PostgreSQL run retained14PASS and one last fixture
+setupERROR274.42s, SHA2565d79a6dc6ba110c2b3d44f40597b1aeb8e9459ee7019bd0a6ca3f2fb63f6be25.
+The final test later passed alone on Source57 in7.95s, logSHA256
+4710ca0fc28c531de0877355f8cc44d01cdf138d7b27d844e8dbf686c79fea72.
+These separate runs are not one complete15PASS run; the original setup503 remains
+unattributed. The isolated observer recorded no HTTP failures on the passing retry.
+All88 operational tables, original0032 and629 native files stayed exact.
+
+The owned PostgreSQL container exited after the combined run, OOMKilled=false.
+It was restarted unchanged at14:48:56UTC and returned healthy; independent
+preparation rechecked the prior table/native snapshots before any test. There is
+no evidence proving that this later container exit caused the earlier setup503.
+Same-DB backup/cutover to Source57 completed, and ordinary owner private-intake
+and explicitS6 were CURRENT. The physical site015 remains exact.
+
+Plain Source57 API UI lease84a7e68d-5fae-4db5-a4f2-ac52c7a48347 failed beforeReady
+with heartbeat_expired/before_context, margin-302ms; original guardSHA256
+1d8123ec3c2672d1ddc3250bcc481493bc5602670e445ee4c826c57f42e5f3e3.
+After passive instrumentation, leasef09945bd-9fc7-4ea2-b021-8840fb17820c reached
+Ready and naturally expired. Its browser opening was missed within the lifetime,
+so there is no current-source browser HTTP or stability PASS from that run.
+
+The following actual Chrome UI attempt16fa1a2e-f181-4dc4-b418-0393f84c05bc failed
+beforeReady with heartbeat_expired/before_context at15:26:34.830UTC,
+elapsed11825ms/margin-575ms. GuardSHA256
+7808ba8d904821ce498e1b193f7137291bb117e6c77528405286817fd8d0b0f0;
+terminalfailed/authorization_revoked. Passive trace recorded18pulses, maxgap4.5068s,
+max durable-write17.53ms and no event-loop delay over350ms. Slowest verification
+4.49451s/197globalSQL; nested/concurrent SQL counts cannot be added. Earlier
+quieter observed callbacks were usually1.28–1.42s/188SQL. The unchanged3s native
+heartbeat still fails closed under the slower authorization. Full stability,
+current-source manual close/revocation/browser checks and agent readiness stay open.
+
+Root now separately defers native Sharp initialization for metadata-only workflow
+imports (upgradef7dba73c). Original isolated native-unavailable import failed;
+43 raster/workflow checks passed73.63s, SHA256
+2705aecf513be47875a7ca9493a267086bf5243f3699d01b968ef50ab629860a.
+Cold policy imports measured about1ms without Sharp, versus81–224ms with it;
+workflow import24.124ms versus90.45ms. Pixel policy and validation are unchanged.
+This is an unadopted source optimization, not proof of a3s end-to-end bound.
+The existing helper owns a separate fresh private-parent SQL checkpoint reduction;
+no completed authorization cache or removed checkpoint is authorized.
+
+## Previous90c observations
 
 Frozen90c passed7 actual PostgreSQL authority/SQL-drain tests158.02s,
 logSHA256cad119afc8d57be69ea0a7ef984a266bf3644a87a28e7a2e3414c064745b6bf6.
@@ -51,9 +104,9 @@ P.current53calls411SQL/2.8349s, P.capture53calls252SQL/1.7885s. Nested durations
 overlap and must not be added as independent elapsed time. Earlier loaded948
 10.7056s callback remains evidence; no stable3s bound established.
 
-Helper owns a separate retained-anchor joined-read repair. Root owns a separate
-Foundation entry actor3→1 statement repair (upgrade32ddbea6), source169PASS and
-three collected PostgreSQL cases, actual execution/adoption pending. No skipped
+At the90c checkpoint, helper retained-anchor and Root Foundation entry actor3→1
+statement repairs were pending. Both are now integrated on Source57; their
+source and actual PostgreSQL outcomes are recorded above. No skipped
 authority checkpoint, TTL/deadline change, model call or channel activation.
 
 ## Previous948 progress

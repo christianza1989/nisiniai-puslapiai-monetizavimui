@@ -12,7 +12,7 @@ def main():
     closed=set(queue['completedSource']);tail={r['job']:r for r in queue['tail']}
     state.update(updatedAt=now(),sourceClosedThisTask=len(closed),offlineGeometryRuntimePassThisTask=sum(r['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' for r in rows.values()),
         frozenBuild=str(ROOT/'runtime-v3/BUILD.json'),offlineRuntime=str(ROOT/'offline-v3/prepare_closed.py'),measuredNative=queue.get('measuredNative'),
-        remainingSourceJobs=259-len(closed),nextSteps=['Continue active chair construction sources and separate offline queue','Resolve Gemini/browser availability before full text/UI acceptance','Activate only fully accepted draft candidates; no owner approvals or launch release'])
+        remainingSourceJobs=259-len(closed),nextSteps=['Continue active chair construction sources and separate offline queue','Upload sealed technical drafts before Gemini copy under the owner technical-draft policy','Resolve Gemini/browser availability before full text/UI acceptance; no owner approvals or launch release'])
     state['policy']['maxOwnedNative']=1
     state['policy']['touchNonchairFilesOrProcesses']=False
     state['policyTests']={'passed':27,'nativeProof':'First variable KATM006WW001 2states/2edges independent full offline PASS; fixed and other models have their own evidence','command':'python -B -m unittest discover -s tools/ergonomic-chairs -p test_*.py'}

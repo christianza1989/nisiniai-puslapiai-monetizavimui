@@ -11,6 +11,7 @@ import {createExpandedEngine} from '../src/lib/expanded-configurator';
 import ExpandedProductDetail from '../src/components/expanded-product-detail';
 import {QuoteProvider} from '../src/components/quote-provider';
 import type {CatalogRuntime} from '../src/lib/catalog-configurator';
+import {blockers,transition,release,type Workflow} from '../src/lib/publication-workflow';
 
 const hash=(s:string)=>createHash('sha256').update(s).digest('hex');
 function fixture(){
@@ -48,6 +49,21 @@ test('tampered bytes, finish selectors and cross-model saved tokens fail closed'
  assert.equal((await loader(parent,{family:runtime.family.id}))?.family.sample,product.modelConfigurationId);
  assert.equal((await loader(parent,{family:runtime.family.id,anchor:runtime.family.anchors[0].id}))?.family.sample,product.modelConfigurationId);
  assert.equal(await loader(parent),undefined);
+});
+
+test('technical drafts load on draft only and cannot be reviewed, approved or released',async()=>{
+ const {product,entries,bytes,key}=fixture();const entry=entries.models[key];
+ entry.acceptance='TECHNICAL_DRAFT';entry.proofs={sourceGeometryRuntime:entry.proofs.sourceGeometryRuntime};
+ const loader=createChairCandidateLoader(entries,async()=>Buffer.from(bytes));assert(await loader(product));
+ const previous=process.env.LAUNCH_SITE;
+ try{process.env.LAUNCH_SITE='true';assert.equal(await loader(product),undefined);}finally{if(previous===undefined)delete process.env.LAUNCH_SITE;else process.env.LAUNCH_SITE=previous;}
+ const row={key,revisionHash:'a'.repeat(64),name:'TEST technical draft',active:true,sourceReady:true,geometryAccepted:true,optionsReady:true,geminiReady:true,image:'/TEST.jpg',paragraphs:['TEST'],technicalDraft:true} as any;
+ assert(blockers(row).some(b=>b.includes('Techninis draft')));
+ const models=new Map([[key,row]]),empty=():Workflow=>({version:1,models:{},released:{},releaseId:null});
+ assert.throws(()=>transition(empty(),key,row.revisionHash,'review',{desktop:true,mobile:true},'TEST',models),/Techninis draft/);
+ assert.throws(()=>transition(empty(),key,row.revisionHash,'approve',{},'TEST',models),/Techninis draft/);
+ const forged=empty();forged.models[key]={revisionHash:row.revisionHash,approval:{actor:'TEST',at:'TEST'}};
+ assert.throws(()=>release(forged,models),/priėmimas paseno/);
 });
 test('fixed construction-only presentation retains request/PDF and explains the fixed finish',()=>{
  const {product,runtime}=fixture();

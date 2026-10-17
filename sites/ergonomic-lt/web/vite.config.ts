@@ -5,6 +5,9 @@ import {fileURLToPath} from 'node:url';
 
 const file=(name:string)=>fileURLToPath(new URL(name,import.meta.url));
 export default defineConfig({
+  // A reviewed release can reuse its exact immutable assets via hard links.
+  // The explicit stager restores them after building; originals stay intact.
+  publicDir:process.env.ERGONOMIC_REUSE_RELEASE_ASSETS==='1'?false:undefined,
   envDir:file('./.cloudflare-env'),
   environments:{rsc:{build:{rolldownOptions:{output:{banner:"import { createRequire as __createRequire } from 'node:module'; const require = __createRequire('/bundle/worker.js');"}}}}},
   plugins:[vinext(),cloudflare({configPath:process.env.LAUNCH_SITE==='true'?'wrangler.launch.json':'wrangler.jsonc',viteEnvironment:{name:'rsc',childEnvironments:['ssr']}})],

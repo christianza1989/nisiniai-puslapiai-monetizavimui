@@ -4,7 +4,8 @@ import {catalogModelVisible} from './catalog-consolidation';
 import type {Product} from './types';
 import type {CatalogRuntime} from './catalog-configurator';
 
-export type ChairCandidate={key:string;productId:string;sample:string;code:string;familyId:string;collectionMode:'structure-only';acceptance:'DRAFT_READY';optionsRequired:boolean;runtime:{asset:string;sha256:string};proofs:{sourceGeometryRuntime:string;optionsGemini:string;generalGemini:string;factualReview:string;desktop:string;mobile:string}};
+type ChairProofs={sourceGeometryRuntime:string;optionsGemini?:string;generalGemini?:string;factualReview?:string;desktop?:string;mobile?:string};
+export type ChairCandidate={key:string;productId:string;sample:string;code:string;familyId:string;collectionMode:'structure-only';acceptance:'TECHNICAL_DRAFT'|'DRAFT_READY';optionsRequired:boolean;runtime:{asset:string;sha256:string};proofs:ChairProofs};
 export type ChairCandidates={schemaVersion:1;models:Record<string,ChairCandidate>};
 export const chairCandidates=data as ChairCandidates;
 const digest=(value:Uint8Array|string)=>createHash('sha256').update(value).digest('hex');
@@ -13,7 +14,11 @@ export function candidateForModel(product:Product,entries=chairCandidates):Chair
  const c=product.configurations.find(c=>c.id===product.modelConfigurationId);
  const entry=entries.models[product.id+':'+product.modelConfigurationId];if(!entry)return;
  if(!c||!catalogModelVisible(product.id,c)||entry.key!==product.id+':'+c.id||entry.productId!==product.id||entry.sample!==c.id||entry.code!==c.code)throw Error('Chair candidate identity mismatch');
- if(entry.collectionMode!=='structure-only'||entry.acceptance!=='DRAFT_READY'||typeof entry.optionsRequired!=='boolean'||!/^cfg-[a-f0-9]{12}$/.test(entry.familyId)||!/^K[A-Z0-9]+$/.test(entry.code)||!entry.proofs||Object.keys(entry.proofs).sort().join(',')!=='desktop,factualReview,generalGemini,mobile,optionsGemini,sourceGeometryRuntime'||Object.values(entry.proofs).some(v=>!v||!/^[a-f0-9]{64}$/.test(v)))throw Error('Chair candidate acceptance missing');
+ const technical=entry.acceptance==='TECHNICAL_DRAFT';
+ if(entry.collectionMode!=='structure-only'||!['DRAFT_READY','TECHNICAL_DRAFT'].includes(entry.acceptance)||typeof entry.optionsRequired!=='boolean'||!/^cfg-[a-f0-9]{12}$/.test(entry.familyId)||!/^K[A-Z0-9]+$/.test(entry.code)||!entry.proofs||Object.keys(entry.proofs).sort().join(',')!==(technical?'sourceGeometryRuntime':'desktop,factualReview,generalGemini,mobile,optionsGemini,sourceGeometryRuntime')||Object.values(entry.proofs).some(v=>!v||!/^[a-f0-9]{64}$/.test(v)))throw Error('Chair candidate acceptance missing');
+ // Owner permits technical previews before Gemini copy. These entries cannot
+ // be loaded on the launch host or inherit editorial acceptance.
+ if(technical&&process.env.LAUNCH_SITE==='true')return;
  if(entry.runtime.asset!=='/models/configurator/structure/'+entry.code+'-'+entry.runtime.sha256.slice(0,20)+'.json'||!/^[a-f0-9]{64}$/.test(entry.runtime.sha256))throw Error('Chair candidate asset binding mismatch');
  return entry;
 }

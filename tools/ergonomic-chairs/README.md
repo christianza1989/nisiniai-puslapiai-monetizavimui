@@ -33,8 +33,11 @@ does not simulate Gemini authoring. Text import still requires an original
 Gemini App / 4 Argon / low conversation, original response and factual review.
 
 The web candidate manifest is separate from the immutable legacy index. It is
-currently empty. Every eventual entry requires the exact model and six sealed
-proof references; incomplete candidates cannot become active through a token.
+initially empty. The owner's later instruction permits TECHNICAL_DRAFT entries
+after full sealed source/geometry/runtime PASS, before Gemini descriptions.
+These entries load on draft only and cannot pass review, approve or release.
+DRAFT_READY still requires the exact model and all six sealed proof references.
+Incomplete source graphs cannot become active through a token.
 Legacy saved tokens fall back to their own loader, and Xilium is excluded.
 Launch release still requires the owner's exact-revision review and Approve.
 

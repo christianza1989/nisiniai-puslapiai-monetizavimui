@@ -1,3 +1,22 @@
+## Streaming CLI pin checks — helper 2026-10-17
+
+Root-authorized issue66/comment6240204250, own codex/streaming-cli-pins-20261017
+from frozen07d8e577f9df78d7d5057cd625004a4d6d9f180a; paired main533/publicec8
+freshness PASS20:09:00/01UTC. Exact4caller paths: creation/adapter.py,
+customer_text/adapter.py, tasks/codex.py, workspace_team/adapter.py; one shared
+file_hash.py helper, related pin/runner tests, CLI_BINARY_PIN_HASHING contract
+and unique own upgrade. Preserve original whole-buffer MemoryError reproduction
+before source edits. Fresh bounded streaming hash only: no cache, pin/permission
+weakening, model/timeout/argv changes or unrelated JSON/image read changes.
+Root owns141/140/Serving/API recovery; no DB/provider/operating-process actions.
+
+Local source verification complete: upgrade67361e0f, original4MemoryError FAIL
+retained; focused28PASS, final135PASS/7explicit actual-child cases deselected.
+One-MiB streaming helper, four exact callers, repeat/no-cache/error/virtual341MB
+guards PASS; AST proves all other caller logic unchanged. Source handoff does
+not adopt the installed binary/runtime or certify latency. Window released to
+Root after scoped committed safety/coverage/freshness handoff.
+
 ## Profile schema observation — helper 2026-10-17
 
 Issue66/comment6239903853; own codex/profile-schema-observation-20261017 from

@@ -7,6 +7,7 @@ from time import monotonic
 from uuid import uuid4
 
 from ..config import settings
+from ..file_hash import sha256_file
 from ..tasks.codex import arguments as consult_arguments
 from ..tasks.codex import check_trace_event, child_environment
 from ..tasks.codex import parse_trace as consult_trace
@@ -288,7 +289,7 @@ def available():
             or not workspace.resolve().is_relative_to((RUNTIME / "artifacts").resolve())
             or not _role_paths_fit(workspace.resolve())
             or not 30 <= cfg.creation_runner_seconds <= 300 or len(cfg.chat_codex_sha256) != 64
-            or hashlib.sha256(binary.read_bytes()).hexdigest() != cfg.chat_codex_sha256):
+            or sha256_file(binary) != cfg.chat_codex_sha256):
         raise RunnerError("runner_unavailable")
     return binary, workspace.resolve()
 

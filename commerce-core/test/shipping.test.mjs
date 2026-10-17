@@ -362,6 +362,22 @@ test('SP documents are private PDF bytes, tracking retains unknown timezone and 
     });
   await assert.rejects(adapter.tracking('123'), /carrier_tracking_invalid/);
 });
+test('SP route-only no-scan tracking is empty history while errors and malformed bodies remain invalid', async () => {
+  const { adapter } = connector(() => ({ from: 'Vilnius, Lithuania', to: 'Kaunas, Lithuania' }));
+  assert.deepEqual(await adapter.tracking('123'), []);
+  for (const row of [
+    {},
+    { from: 'Vilnius' },
+    { from: '', to: 'Kaunas' },
+    { from: 'Vilnius', to: 'Kaunas', error: 'private provider error' },
+    { from: 'Vilnius', to: 'Kaunas', info: null },
+    { from: 'Vilnius', to: 'Kaunas', info: {} },
+  ]) {
+    adapter.fetch = async () => Response.json(row);
+    await assert.rejects(adapter.tracking('123'), /carrier_tracking_invalid/);
+  }
+});
+
 test('shipping HTTP mutations require ship grant, same origin and test environment; missing provider blocks only quotes', async () => {
   const { db, s, order } = await setup();
   let grants = ['read'];

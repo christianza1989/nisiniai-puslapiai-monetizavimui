@@ -25,3 +25,10 @@ Tiekėjas suteikė atskirą staging API raktą ir patvirtino testinį automatin�
 ### Vėlesnio adresų atsakymo palyginimas
 
 Tikras staging create atsakymas grąžino originalias lietuviškas gatvių raides, tačiau vėlesnis infos tas pačias gatves grąžino be diakritikų. Tik LT adreso line1 palyginime leidžiama tiksli lietuviškų raidžių transliteracija; originalus įvesties ir tiekėjo atsakymo tekstas išsaugomi. Namo, korpuso, buto numeriai, line2, gavėjo vardas, šalis, miestas, telefonas ir pakuotės lieka tikrinami kaip anksčiau. Kitoje šalyje ši išimtis negalioja. Tai ne leidimas ignoruoti nesutampantį adresą.
+
+
+### Patikrintas testinis atsakymas · 2026-10-17
+
+Vienas testinis dviejų pakuočių siuntimas po asinchroninio apdorojimo grąžino status2, dviejų puslapių Stickers.pdf ir vieno puslapio Manifest.pdf. PDF parašas ir visas formatas patikrinti, abu etikečių puslapiai perskaityti ir atvaizduoti. Tai tik staging kainų ir dokumentų įrodymas. Bendras tracking_number yra dviejų numerių kableliais atskirta eilutė, o parcels atskirų numerių neturi. Seka neperkeliama į trackingNumbers be tiekėjo patvirtinimo; bendras etikečių failas saugomas kaip etikečių rinkinys, dokumentų skaičius nėra pakuočių skaičius. Tiekėjo paprašyta patvirtinti šią tvarką ir suteikti atskirą production raktą.
+
+Kai /tracks grąžina tik netuščius from ir to tekstus, be kitų laukų, tai priimama kaip tuščia nuskaitymų istorija. info:null, netaisyklingi įvykiai, error ar kiti netikėti laukai neatleidžiami nuo patikros. Šis pakeitimas nekuria fiktyvaus nuskaitymo ar pristatymo įvykio.

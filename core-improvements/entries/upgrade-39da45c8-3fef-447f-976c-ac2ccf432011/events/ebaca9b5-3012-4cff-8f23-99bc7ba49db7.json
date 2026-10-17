@@ -1,0 +1,19 @@
+{
+  "note": "Late-P follow-up only authority_observation.py: copy exact immutable pinned request once per phase, actually await canonical private.current on every cached intake and proof use. It selects historical P Session and calls fresh current_actor, with post-await/lifetime/source checks. No copied revoked/expiry logic and no permission cache. Canonical gated3FAIL965d82cb50d1d20d3d4d1e1c1ce8a000cffd2922eae26dbedb421eacff325652 retained;5focusedPASS4bae8306052dada7ffb22d77b4070628ec1d6f8da487b2145098a9f16f69e3c5 retained. First85-run82PASS3statusFAIL713fd2ccb85f9a4029e1eb1fc222b66ba6ac35279a0ef0bda6302861237a35ae retained; restored canonical former-read ordering yields original503invalid_foundation_source for per-nativeP revoke/expiry and native anchor, accepted explicitly by Root. No blanketcatch, no denied mutant admitted. Material2/private_latest2 retained. Source window excludes private_preview/studio/live_preview, no Source11. Old932/fd journals untouched; actual/integrated/full-regression/cadence Root-owned.",
+  "checks": [
+    {
+      "evidence": "85canonicalgraph+31accepted-proof cases,116PASS18.39s using existing QA Python and PYTHONPATH src;tests;scripts. late-p-final-focused.log SHA256877cb469a47d9cc6d37e0de03b369548ddfa801b284b88e9f17b49c4bc86aeb7. No actualDB/native/process/provider/serving operation.",
+      "command": "python -m pytest offline_tests/test_authority_observation.py offline_tests/test_accepted_proof_observation.py -q --tb=short",
+      "result": "PASS"
+    },
+    {
+      "evidence": "Both changed Python files clean; git diff --check alsoPASS. docs/AUTHORITY_OBSERVATION.md records late-P baseline, strict reached503 path and restoration of timing-specific statuses.",
+      "command": "python -m ruff check src/pinet_core/site_build/authority_observation.py offline_tests/test_authority_observation.py",
+      "result": "PASS"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "ebaca9b5-3012-4cff-8f23-99bc7ba49db7",
+  "sequence": 3,
+  "at": "2026-10-17T10:18:31.957Z"
+}

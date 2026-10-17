@@ -1,7 +1,7 @@
 """Two fresh, sequential dependency graphs belonging to one Authority invocation.
 
 The context variable carries only a private invocation pointer. Named readers call
-the canonical validators; no SQL, authorization or validation is reimplemented.
+the canonical validators; authorization and validation are never reimplemented.
 Native transport authorization deliberately never consults this module.
 """
 import asyncio
@@ -163,7 +163,35 @@ class Phase:
             self.pin("proof", value)
             self.check(self.operation.tx, creation)
             self.values["proof"] = value
+        elif not await self.private_current(creation):
+            raise ControlError(409, "private_intake_missing")
+        self.check(self.operation.tx, creation)
         return self.copied(self.values["proof"], creation)
+
+    async def private_current(self, creation):
+        """Share immutable request data, never the selected P Session's authority."""
+        self.check(self.operation.tx, creation)
+        pin = self.pins.get("private_latest")
+        if pin is None:
+            return True  # Legacy canonical-host intake has no historical P role.
+        if "private_request" not in self.values:
+            from ..creation.models import PrivateIntakeRequest
+            row = await self.operation.tx.get(PrivateIntakeRequest, pin[0], populate_existing=True)
+            self.check(self.operation.tx, creation)
+            if row is None:
+                return False
+            value = snapshot(row)
+            self.check(self.operation.tx, creation)
+            self.values["private_request"] = value
+        from ..creation.private_preview import current
+        row = self.copied(self.values["private_request"], creation)
+        permitted = await current(self.operation.tx, creation, row)
+        self.check(self.operation.tx, creation)
+        if not permitted:
+            from .foundation import guard
+            await guard()
+            self.check(self.operation.tx, creation)
+        return permitted
 
     async def intake(self, creation, revision, job, reader):
         self.check(self.operation.tx, creation)
@@ -176,6 +204,10 @@ class Phase:
             self.check(self.operation.tx, creation)
             value = self.copied(value, creation)
             self.values["intake"] = key, value
+        elif not await self.private_current(creation):
+            legacy = (job.usage or {}).get("content_intake") if job else None
+            return self.copied((None, legacy), creation)
+        self.check(self.operation.tx, creation)
         if key != self.values["intake"][0]:
             raise ControlError(503, "invalid_registration_source")
         return self.copied(self.values["intake"][1], creation)

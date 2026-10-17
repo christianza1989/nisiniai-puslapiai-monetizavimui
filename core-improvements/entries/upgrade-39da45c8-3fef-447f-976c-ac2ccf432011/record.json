@@ -1,0 +1,18 @@
+{
+  "category": "code",
+  "siteId": "core",
+  "rollback": "Scoped successor commit revert after60e7; preserve late-P baseline and original frozen journals. Root owns actual acceptance/adoption. No data/schema/wire/role/model/deadline/cadence change.",
+  "summary": "Revalidate the historical private-intake Session at cached proof/intake use after final native authorization, instead of treating an earlier selected-intake result as current P authority.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/authority_observation.py"
+  ],
+  "evidence": [
+    "Root independent review holds adoption of60e7/PR191 and requests canonical late-P revoke/expiry/clock gates after final before_node at retained-output authorization. Scope is existing authority_observation.py only, tests/docs/new journal; no Source11 and no studio/live_preview/cadence collision.",
+    "Root-owned prior93226de5/fd868d05 records and events remain immutable. First preserve actual canonical gated3case baseline, then use existing private.current/current_actor validators rather than copying Session/expiry logic. No actual DB/native/provider/serving operation."
+  ],
+  "id": "upgrade-39da45c8-3fef-447f-976c-ac2ccf432011",
+  "branch": "codex/authority-observation-20261017",
+  "baseSha": "60e7fb904e0d7c53b8a8b6740d56093d6a6b62aa",
+  "createdAt": "2026-10-17T10:10:05.573Z"
+}

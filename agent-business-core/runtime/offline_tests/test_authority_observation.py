@@ -160,6 +160,9 @@ async def graph(monkeypatch):
         async def get(self, model, identity, **kwargs):
             f.sql[model.__name__] += 1
             if model is PrivateIntakeRequest:
+                row = f.rows.get("private")
+                if row and row.id == identity:
+                    return row
                 row = f.rows.get("anchor")
                 return row if row and row.id == identity else None
             value = {Job: f.job, Revision: f.revision, TeamEvent: f.event,
@@ -461,7 +464,7 @@ def mutate(f, change):
 
 
 @pytest.mark.parametrize("change,status", [("u_revoke", 401), ("u_expiry", 401),
-    ("p_revoke", 409), ("p_expiry", 409), ("s_revoke", 409), ("s_expiry", 409),
+    ("p_revoke", 503), ("p_expiry", 503), ("s_revoke", 409), ("s_expiry", 409),
     ("selector", 409), ("receipt", 409), ("s6_selector", 409), ("s6_session", 409),
     ("schema_profiles", 503), ("schema_private", 409), ("schema_s6", 409),
     ("approval", 503), ("source", 503), ("language", 409)])
@@ -580,7 +583,8 @@ async def test_retained_anchor_mutation_cannot_renew_historical_authority(graph,
     setattr(f, "mutation" if timing == "native" else "final_mutation", lambda: mutate(f, "anchor"))
     with pytest.raises(ControlError) as error:
         await f.authority.capture()
-    assert (error.value.status, error.value.code) == (409, "private_intake_missing")
+    expected = (503, "invalid_foundation_source") if timing == "native" else (409, "private_intake_missing")
+    assert (error.value.status, error.value.code) == expected
 
 
 async def test_current_private_and_s6_roles_may_share_exact_same_session_without_cross_call_cache(graph):
@@ -704,3 +708,33 @@ async def test_newly_selected_s_session_mid_final_phase_is_never_authorized_by_e
         await f.authority.capture()
     assert mutated
     assert (error.value.status, error.value.code) == (409, "build_continuation_stale")
+
+
+@pytest.mark.parametrize("change", ["revoke", "expiry", "clock"])
+async def test_late_p_after_final_before_node_cannot_use_cached_intake(graph, monkeypatch, change):
+    from pinet_core.content_completion import service as completion
+    from pinet_core.creation import service as creation_service
+    f = graph
+    canonical = completion.current_actor
+    f.clock = utcnow()
+    mutated = False
+    if change == "clock":
+        f.p.expires_at = f.clock+timedelta(seconds=1)
+        monkeypatch.setattr(creation_service, "utcnow", lambda: f.clock)
+    async def gated(*args):
+        nonlocal mutated
+        result = await canonical(*args)
+        if f.counts["material"] == 2 and f.counts["node"] == 1 and not mutated:
+            mutated = True
+            if change == "clock":
+                f.clock += timedelta(seconds=2)
+            elif change == "revoke":
+                f.p.revoked_at = utcnow()
+            else:
+                f.p.expires_at = utcnow()-timedelta(seconds=1)
+        return result
+    monkeypatch.setattr(completion, "current_actor", gated)
+    with pytest.raises(ControlError) as error:
+        await f.authority.capture()
+    assert mutated
+    assert (error.value.status, error.value.code) == (503, "invalid_foundation_source")

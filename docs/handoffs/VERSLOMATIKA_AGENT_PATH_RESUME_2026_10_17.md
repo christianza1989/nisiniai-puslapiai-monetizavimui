@@ -1,5 +1,60 @@
 # Agent path: current continuation
 
+## Owned mail display continuation — 2026-10-18
+
+The human requested future acquisition agents to connect and owner UI to display
+sent/received letters in Lithuanian. New additive `mail_view` reuses canonical
+MailMessage/Case with current normal owner Session/grant and tenant RLS. Two GET
+routes provide bounded headers, Case filtering/cursor and complete original with
+optional exact-content Lithuanian sidecar. No GET provider/send/sync, original
+payload mutation, migration, new transport or calibration engine. The explicit
+one-mail `mail_display_translate.py` batch uses shared bounded no-tools CLI and
+durable source claim. Automatic post-capture translation is not yet connected.
+
+Source packet a371211719aaf6ff505e5b67b436e8e5c5f3fd56; canonical journal URL
+correction b866c035741d850179ba60e936c9bcf5ec4a1325. Upgrade519c758b and scoped
+30071→b866 coverage11 shared/0 uncovered PASS.86 related pure tests13.41s,
+final mail21PASS1.40s, actual isolated PG2PASS3.23s with normal owner/cursor/
+translation/original preservation/cross-tenant/revoked grant. Original0032,
+operating0045 and current native files preserved. PG log SHA
+a5d2c96aba1a069538e20842b0496a2c4f78f13e1c6a14a9d6a117b075b4109a.
+One separately bounded synthetic Sol61High display call12352 input409 output
+(226 reasoning) preserved all paragraphs/conditions/negations/numbers/address;
+retained sidecar4bfc347f2a36ab8f264c0a19bf0face4929b13e7fdc1cdc9017d43adc46481e1.
+This is one adapter example, not full translation calibration; USD unmeasured.
+
+Actual owned Serving is NOW b866c035741d850179ba60e936c9bcf5ec4a1325, schema0045,
+API18871 PID40908 at verification (active exec64203). Normal owner me200,
+unauthenticated mail401, foreign404, owned list200/0 messages. All operating
+tables and771 current native files remained exact across source-only adoption;
+all paid workers/external channels held and original37/40 accounting unchanged.
+Private evidence: operator `mail-view-adoption-a371211/verified.private.json`.
+API/batch display root: operator `mail-display-copies`; no operating translations
+or test letters were inserted. Old PID8360 was verified and stopped before FF.
+
+The prior candidate audit Session retained in
+`hot-tub-foundation-audit-20261018-a9eeaec3042246df8c366e8dab0d3cce` exported
+Foundation scope531e0287fd267f523f9a3d967e1912fba1e1b3a736e5c12cc92708d024f4a79d,
+package2cda0d01c98fdb1ed8a21819c13c911a5b2eab1fb8867b7e49401c22be5a33ce.
+All11 approved bodies were read and85 audit criteria initialized UNVERIFIED.
+That capture was made on9ca and is historical after the new Serving adoption;
+do not call it a complete/current Foundation receipt. Registration/Profile and
+full dynamic saved-Agent protected calibration remain outstanding.
+
+Portal source now adds business Laiškai navigation, center translated/original
+reader, right message/Case list, bounded BFF, safe denial/epoch handling and honest
+states.25 related tests and76 workspace/mail tests passed; TypeScript and final
+`.local/workspace-mail-view-reviewed-next` build passed. User was asked for one
+manual3030 restart due prior frontend rejection/AGENTS no-bypass. New browser
+acceptance remains pending. Exact UI checkpoint:
+`docs/handoffs/workspace-mail-view-ui.md` in portal. No alternate frontend launch.
+
+Existing authorized helper has a separate bounded PURE V2 target/report adapter
+increment in progress in `v2-learning-adapters-20261018`, base30071. No controller,
+native binding, worker, budget, DTO/migration or readiness change is authorized
+in that increment. New acquisition chat remains independently user-owned; no
+cross-chat messaging permission was inferred.
+
 The owner requested priority for actual agent creation and calibration. Universal
 creation/calibration is still incomplete. Do not infer acceptance from the older
 UI approval, roadmap, number of tests or one Quality scenario.

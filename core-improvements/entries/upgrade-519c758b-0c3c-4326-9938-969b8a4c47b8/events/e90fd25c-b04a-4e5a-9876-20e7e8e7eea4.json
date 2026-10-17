@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Local owned Serving source-only FF from9ca to b866c035741d850179ba60e936c9bcf5ec4a1325, unchanged0045 schema. Verified own prior API PID8360 before stopping; API18871 PID40908. Normal owner me200, unauth mail401, foreign404, owned listing200 with0 mail. Original0032/operating0045 and771 native files exact; providers0 during adoption, paid workers/external channels held. Translation directory configured but no operating test mail/copy inserted. Portal source/build prepared, manual frontend/browser adoption pending. Draft PR164 is not main merge or other-PC adoption.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "commit": "b866c035741d850179ba60e936c9bcf5ec4a1325",
+  "eventId": "e90fd25c-b04a-4e5a-9876-20e7e8e7eea4",
+  "sequence": 3,
+  "at": "2026-10-17T21:42:54.394Z"
+}

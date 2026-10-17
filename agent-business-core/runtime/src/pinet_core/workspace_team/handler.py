@@ -116,6 +116,10 @@ class TeamHandler:
         return ~exists(select(earlier.id).where(earlier.thread_id == Task.thread_id, earlier.kind == KIND,
             earlier.sequence < Task.sequence, earlier.status.in_(["queued", "running"])))
 
+    async def reconcile(self, user_id):
+        from .workflow import reconcile
+        return await reconcile(user_id)
+
     async def authority(self, tx, task):
         try:
             await service.task_scope(tx, task)

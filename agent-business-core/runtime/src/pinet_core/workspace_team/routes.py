@@ -12,6 +12,7 @@ from .episode_wire import VERSION as EPISODE_VERSION
 from .episode_wire import EpisodeEnvelope, TestAgent
 from .preparation_wire import VERSION, PreparationEnvelope, PrepareAgent
 from .wire import Cancel, Envelope, Send
+from .workflow_routes import router as workflow_router
 
 router = APIRouter(prefix="/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/team",
     route_class=CreationRoute, dependencies=[Depends(customer_guard)])
@@ -102,4 +103,5 @@ router.include_router(episode_router)
 combined_router = APIRouter()
 combined_router.include_router(router)
 combined_router.include_router(direct_router)
+combined_router.include_router(workflow_router)
 router = combined_router

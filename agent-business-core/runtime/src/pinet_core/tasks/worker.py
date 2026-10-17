@@ -117,6 +117,10 @@ async def claim(*, kind=None):
         except LedgerError:
             continue
         for user_id in actors:
+            if hasattr(handler, "reconcile"):
+                # The fixed handler may resume an explicit durable intent.
+                # Complete metadata preflight BEFORE actor/Task claim locks.
+                await handler.reconcile(user_id)
             async with scope(user=user_id) as tx:
                 # Existing actor lock: all kinds share one running slot.
                 await tx.execute(

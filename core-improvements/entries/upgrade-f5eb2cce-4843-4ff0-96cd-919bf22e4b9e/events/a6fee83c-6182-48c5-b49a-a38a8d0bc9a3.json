@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Exact local no-domain S37 identity may reach the unchanged complete current Foundation checks. Synthetic marker, reserved-host refusal outside this exact scope, language/native/retained/current actor/archive/busy/final verification, channel/calibration/deployment states remain. This does not certify the current customer candidate: its actual local evidence and Registration/Profile are still missing. Original1FAIL1PASS20deselected retained. First extended regression had81PASS1FAIL from misplaced test-only monkeypatch setup (NameError); source unchanged while that test function boundary was corrected. Serving4650 and customer data remain unchanged.",
+  "checks": [
+    {
+      "command": "pytest new private Foundation eligibility + existing actor checkpoint, strict receipts and Foundation bridge suites",
+      "result": "PASS",
+      "evidence": "82PASS1expected malformed-model serializer warning0.90s; logSHA256a95b65997ab296a190e492920916c6f70d66372358848d9f0cada1bcd4d7c292. Exact private success traverses capture/retained/current actor/refresh/final verify; other-case/reserved/public/assigned-private/control/environment/scope mismatches, incomplete/language/stale revision/source/pages/owner and revoked/archive/busy/final refusal covered. Historical evidence uses the new actual Session for final verify. Existing real inert monitor-child cancellation test ran. Initial extended test-only NameError logSHA256252b1fdcbeaeb960d26be5c8fdcb119b1f0517da2510c1c4b09403faa28eb3bc retained."
+    },
+    {
+      "command": "ruff check receipts.py and new regression; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; only13production lines changed, no schema, dependency, contract DTO or runtime setting change."
+    }
+  ],
+  "eventId": "a6fee83c-6182-48c5-b49a-a38a8d0bc9a3",
+  "sequence": 2,
+  "at": "2026-10-17T20:25:45.985Z"
+}

@@ -1481,3 +1481,13 @@ Current-actor focused packet: original5FAIL19PASS1.66s05f91fcf retained; first24
 1ERROR7d6aaf20 retained then test-only SQL leaf adapted without stubbingactor.
 ActualPG11cases collected only974e2e3b; Root executes. Production+30/-0 in one
 function, original locking block unchanged. Newjournal7f80fded owns this packet.
+## Exact private Foundation eligibility — Root 2026-10-17
+
+Issue66, source4650/public255 with paired freshness20:22 main533/ec8. Root owns
+only site_build/receipts.py, a new offline private-eligibility regression,
+PRIVATE_FOUNDATION_AGENT_ELIGIBILITY contract and own journal/checkpoint. Preserve
+the synthetic observation; allow only exact UUID.preview.invalid for a no-domain
+Creation in local, after all complete current native/retained/source/actor checks.
+No domain, runtime, calibration or channel admission. Other reserved hosts stay
+refused. Save the original failure before editing production. Helper owns the
+disjoint durable workflow/worker/0045 packet; Serving4650 and data stay unchanged.

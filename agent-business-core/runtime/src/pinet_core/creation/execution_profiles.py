@@ -115,7 +115,7 @@ async def validate_attempts(tx, kind, attempts):
     before a successful batch returns.
     """
     if not attempts:
-        return
+        return {}
     state = await schema_state(tx)
     if state not in {"ready", "absent"}:
         raise RunnerError("runner_unavailable")
@@ -135,3 +135,4 @@ async def validate_attempts(tx, kind, attempts):
         validate_model(chosen[job.id], kind, role, actual_model)
     if await schema_state(tx) != state:
         raise RunnerError("runner_unavailable")
+    return chosen

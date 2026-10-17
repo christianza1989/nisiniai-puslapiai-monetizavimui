@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Historical TeamView deadline follows currently selected profile rather than immutable latest job profile, changing an unchanged legacy projection after profile selection",
+  "category": "code",
+  "evidence": [
+    "Actual isolated PostgreSQL at412735e1f7694e7e82a31dcc8316b9eb2968dbcb1FAIL8PASS103.97s, logSHA59335a79fde5f0091ed6dac2ec5a9cb5fa23223f39adf7375869564e7675a082: onlydeadline_seconds360vs900 differs; original/operational/native integrity exact. Focused2FAIL17PASS1.54s reproduces both directions."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/src/pinet_core/creation/execution_profiles.py",
+    "agent-business-core/runtime/offline_tests/test_execution_profile_batch.py",
+    "docs/PIPELINE_HISTORY_CLOCK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert display selection; preserve jobs/attempts/model profiles and first failures. No database migration or production execution-clock change.",
+  "id": "upgrade-870ed381-ff95-4af2-9c12-49833cad435a",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "412735e1f7694e7e82a31dcc8316b9eb2968dbcb",
+  "createdAt": "2026-10-17T09:01:27.587Z"
+}

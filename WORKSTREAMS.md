@@ -1,3 +1,14 @@
+## Historical team clock — Root 2026-10-17
+
+Issue66/comment6232048518; upgrade870ed381: team.py/execution_profiles.py fresh
+batch metadata, existing test_execution_profile_batch.py, narrowdocs only.
+Actual PG4121FAIL8PASS103.97s retained, unchanged88tables/original/native;
+deadline alone360to900 after selected-profilechange. Both-direction unit baseline
+2FAIL17PASS retained. Fixed display uses immutable latestjobprofile from same
+fresh bounded observation, or fresh stored read without attempts; no production
+clock/role/model/admission change. Focused26PASS, related72PASS7SKIP, RuffPASS.
+Actual retry/serving and helper's separate accepted-proof optimization remain open.
+
 ## Synthetic team clock — Root 2026-10-17
 
 Issue66/comment6232001781: only shared test_creation_team.runner, focused helper

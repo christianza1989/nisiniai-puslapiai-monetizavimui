@@ -47,7 +47,9 @@ def history(monkeypatch):
             sql = str(query)
             if 'control_pipeline_model_profiles' in sql:
                 state.profile_reads += 1
-                return list(state.rows.values())
+                identities = set(query.compile().params['creation_job_id_1'])
+                assert identities == {attempt.job_id for attempt in attempts}
+                return [row for row in state.rows.values() if row.creation_job_id in identities]
             if 'control_creation_jobs' in sql:
                 return list(reversed(jobs))
             if 'control_creation_attempts' in sql:
@@ -129,3 +131,31 @@ async def test_duplicate_profile_source_cannot_silently_select_one_row(history):
     state.rows['duplicate'] = next(iter(state.rows.values()))
     with pytest.raises(ControlError):
         await team.projection(tx, creation)
+
+
+@pytest.mark.parametrize('historical', [profiles.DEFAULT, profiles.SOL_HIGH])
+async def test_history_clock_is_bound_to_observed_job_instead_of_new_config(history, monkeypatch, historical):
+    state, tx, creation, attempts = history
+    monkeypatch.setattr(settings(), 'creation_execution_profile', historical)
+    if historical == profiles.DEFAULT:
+        state.rows = {}
+        for attempt in attempts:
+            if attempt.role == 'creator':
+                attempt.model = 'gpt-6-luna'
+    first = await team.projection(tx, creation)
+    monkeypatch.setattr(settings(), 'creation_execution_profile',
+        profiles.DEFAULT if historical == profiles.SOL_HIGH else profiles.SOL_HIGH)
+    assert await team.projection(tx, creation) == first
+    assert first['deadline_seconds'] == (900 if historical == profiles.SOL_HIGH else 2*settings().creation_runner_seconds)
+
+
+async def test_latest_job_without_attempts_has_a_freshly_checked_historical_clock(history, monkeypatch):
+    state, tx, creation, attempts = history
+    del attempts[-6:]
+    monkeypatch.setattr(settings(), 'creation_execution_profile', profiles.DEFAULT)
+    assert (await team.projection(tx, creation))['deadline_seconds'] == 900
+    assert state.profile_reads == 2  # one batch plus this not-yet-attempted job
+    list(state.rows.values())[-1].source_revision = 'c'*40
+    with pytest.raises(ControlError) as error:
+        await team.projection(tx, creation)
+    assert error.value.code == 'invalid_content_source'

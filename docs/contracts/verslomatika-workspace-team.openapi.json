@@ -903,6 +903,19 @@
             "default": null,
             "title": "Native Episode Task Id"
           },
+          "native_workflow_intent_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Native Workflow Intent Id"
+          },
           "kind": {
             "enum": [
               "owner_message",

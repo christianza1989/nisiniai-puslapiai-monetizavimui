@@ -9,10 +9,10 @@ remains37/40; this continuation made0provider calls. All five paid workers and
 external channels remain held.
 
 Restricted API18871 now runs
-`948c69350bac7155aef85b376138acd25020fcb5`; owned API PID34096, hidden
-supervisor36256. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+`90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0`; owned API PID14464, hidden
+supervisor18044. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
 Latest source-only backed-up adoption preserved all88 operational tables and
-557 native files. Earlier adoptions preserved341/365/389/413/437 files. No migration or operational database copy was performed.
+605 native files. Earlier adoptions preserved341/365/389/413/437/557 files. No migration or operational database copy was performed.
 Normal owner HTTP renewed private intake and explicit S6 for each exact source.
 Original0032 remains intact.
 
@@ -23,7 +23,40 @@ checked. Chrome loaded the existing ordinary test account and current creation,
 including current page text/media and the full-site prepare/refresh controls.
 Automatic frontend launch was not retried or bypassed. No new restart is pending.
 
-## Current948 progress
+## Current90c observations
+
+Frozen90c passed7 actual PostgreSQL authority/SQL-drain tests158.02s,
+logSHA256cad119afc8d57be69ea0a7ef984a266bf3644a87a28e7a2e3414c064745b6bf6.
+Both preparation commands and final test preserved all88 operational tables,
+original0032 and native files. Same-DB full backup/cutover then retained605files;
+normal owner private-intake and explicitS6 bothCURRENT for90c, site015 unchanged.
+Scoped948→90c upgrade coverage PASS2shared/0uncovered. The first checker command
+used HEAD instead of a fullSHA and refused; the corrected fullSHA invocationPASS.
+Initial commit lacked configured Git identity; command-scoped existing Codex
+identity completed it without changing global/user settings.
+
+Actual Chrome portal3030 UI prepared lease55d34ee6-1e04-4a27-a17e-f8081b770488.
+It progressed preparing→starting, but failed before ready. Original native refusal
+is heartbeat_expired/after_media at13:31:58.930UTC, elapsed15752ms, margin-770ms.
+Terminal failed/authorization_revoked/noURL at13:32:15. No ready evidence,
+manual close, revocation or lifespan PASS may be inferred. UI displayed
+Peržiūros paruošti nepavyko; screenshot serial-pulse-ui-failed.png retained.
+Intermittent Chrome CDP timeout was recovered using its documented AX read;
+no alternate UI mechanism or frontend restart. Preparing screenshot also saved.
+
+Read-only90c leaf trace4a09acff/log564ada126a7e9813c9596085be49337a98becf2da622d072868c81c2d6e35c23:
+capture3.0362s/238SQL; inspect6.8692s; full traced callbacks1.5916/1.5441/1.6923s
+on this quieter run. Retained-anchor53 marker-present calls use106SQL/.7330s;
+P.current53calls411SQL/2.8349s, P.capture53calls252SQL/1.7885s. Nested durations
+overlap and must not be added as independent elapsed time. Earlier loaded948
+10.7056s callback remains evidence; no stable3s bound established.
+
+Helper owns a separate retained-anchor joined-read repair. Root owns a separate
+Foundation entry actor3→1 statement repair (upgrade32ddbea6), source169PASS and
+three collected PostgreSQL cases, actual execution/adoption pending. No skipped
+authority checkpoint, TTL/deadline change, model call or channel activation.
+
+## Previous948 progress
 
 Main documentation cleanup PR194 was independently reviewed and merged at
 12:17:25UTC as9a46650a033d283dfb559d7b835a26384e3225fe. Exactly one superseded

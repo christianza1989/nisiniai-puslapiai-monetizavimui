@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Observe Foundation capture's Session, enabled User and transaction actor in one fresh populated SQL checkpoint instead of three serial roundtrips.",
+  "category": "code",
+  "evidence": [
+    "Root issue66 reservation6234533284 from clean90c after mixed actual outcomes. Prefix baseline1FAIL8PASS6.39s e05789a8a6bbb8bfb59837ed59a5b748880f7233ead94c1112f240f499f16e1d proves three queries at this exact checkpoint.",
+    "Intermediate51FAIL118PASS12.32s a93aa7f00b64e8f1861537d2bb8592fbb3f545b099341877845da3a3e30ab109 retained: initial execute form mismatched old fake shape; final scalar avoids graph-fixture edits. One old Git source fixture updated to actual v2dirtyframe/single command with same native503.",
+    "Actual90c7PGPASS158.02s/all88originalnativeexact, followed by true Chrome start55d34ee6 before-ready heartbeat FAIL after_media15.752s/margin-770ms. No source check count substitutes for native stability acceptance; providers0."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/offline_tests/test_foundation_actor_checkpoint.py",
+    "agent-business-core/runtime/tests/test_foundation_actor_pg.py",
+    "agent-business-core/runtime/tests/test_foundation_bridge.py",
+    "docs/FOUNDATION_ACTOR_CHECKPOINT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this entry SQL leaf with original failures and all authority graph tests retained. No data, schema, native/source/owned checkpoint, clock, role or permission-cache change.",
+  "id": "upgrade-32ddbea6-0066-4137-b69e-00a9038dc461",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0",
+  "createdAt": "2026-10-17T13:42:24.609Z"
+}

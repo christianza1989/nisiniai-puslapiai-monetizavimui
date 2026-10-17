@@ -222,11 +222,13 @@ def test_public_dirty_source_unavailability_and_reserved_host_synthetic_marker(m
     calls = []
     def git(arguments, **kwargs):
         calls.append(arguments)
-        return "f"*40 if arguments[1] == "rev-parse" else " M config/niche-network.json"
+        return ("# branch.oid "+"f"*40+"\0# branch.head main\0"
+            +"1 .M N... 100644 100644 100644 "+"e"*40+" "+"e"*40+" config/niche-network.json\0")
     monkeypatch.setattr(source_observation.subprocess, "check_output", git)
     with pytest.raises(ControlError) as error:
         foundation.source_pins()
-    assert calls == [["git", "rev-parse", "HEAD"], ["git", "status", "--porcelain"]]
+    assert calls == [["git", "-c", "status.showStash=false", "status", "--porcelain=v2",
+        "--branch", "-z", "--untracked-files=normal"]]
     assert error.value.status == 503 and error.value.code == "source_unavailable"
     pin = scope()
     pin = FoundationScope.model_validate_json(json.dumps(pin.model_dump(mode="json") | {

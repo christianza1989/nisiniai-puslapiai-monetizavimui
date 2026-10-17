@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from pydantic import ValidationError
-from sqlalchemy import select, text
+from sqlalchemy import literal_column, select
 
 from ..business_discovery.models import BuildApproval
 from ..business_discovery.service import approved_build_context
@@ -71,15 +71,17 @@ async def capture(tx, session, creation_id):
     from .authority_observation import active
     observed = active(tx)
     await guard()
-    session = await tx.scalar(select(Session).where(Session.id == session.id,
-        Session.user_id == session.user_id, Session.environment_id == settings().environment)
+    # One fresh RLS snapshot at this checkpoint; independent ownership/native
+    # checks below and the later capture remain fresh and unchanged.
+    session = await tx.scalar(select(Session)
+        .join(User, User.id == Session.user_id)
+        .where(Session.id == session.id, Session.user_id == session.user_id,
+            Session.environment_id == settings().environment,
+            User.environment_id == settings().environment, User.enabled,
+            literal_column("current_setting('pinet.control_user',true)") == Session.user_id,
+            literal_column("current_setting('pinet.environment',true)") == settings().environment)
         .execution_options(populate_existing=True))
-    if not session or not await tx.scalar(select(User.id).where(User.id == session.user_id,
-            User.environment_id == settings().environment, User.enabled)):
-        raise ControlError(401, "unauthenticated")
-    actor = (await tx.execute(text("SELECT current_setting('pinet.control_user',true), "
-        "current_setting('pinet.environment',true)"))).one()
-    if tuple(actor) != (session.user_id, settings().environment):
+    if session is None:
         raise ControlError(401, "unauthenticated")
     creation = (await observed.owned(session, identifier(creation_id)) if observed
         else await owned(tx, session, identifier(creation_id)))

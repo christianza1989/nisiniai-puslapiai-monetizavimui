@@ -52,6 +52,15 @@ Owner thread01a13d30; own core branch codex/verslomatika-foundation-index-202610
 
 # Lygiagrečios sesijos
 
+2026-10-17 Root Foundation actor window: issue66/comment6234533284, fromclean90c,
+pairedfreshmain9a/publicec8. Only site_build/foundation.py capture entry's three
+Session/User/transaction-actor statements become one populated atomic observation,
+new focused offline/actual-PG tests and narrow contract/journal/checkpoint. Every
+guard/owned/native/P/S/entry-final checkpoint, typed401 and deadline remains.
+Helper01a13440 owns disjoint private_preview.py retained-anchor leaf. Actual90c
+7PGPASS158.02s and UI55d34ee6 after_media heartbeat-expired−770ms FAIL preserved.
+Root owns all actual DB/native/browser/adoption; providers0, no frontend restart.
+
 2026-10-17 Root scheduling/publication window: issue66/comment6234266836,
 from948c69350bac7155aef85b376138acd25020fcb5, fetchedmain9a46650a/publicec8.
 Only creation/studio.py fast serial start pacing, site_build/live_preview.py

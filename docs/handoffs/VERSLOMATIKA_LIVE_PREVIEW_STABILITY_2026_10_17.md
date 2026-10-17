@@ -8,11 +8,11 @@ photo rights, outreach or public launch has been established. Paid accounting
 remains37/40; this continuation made0provider calls. All five paid workers and
 external channels remain held.
 
-Root code and restricted API18871 now run
-`be557654161c8124b01547fe67efd3b63bc29c55`; owned API PID20184, hidden
-supervisor24868. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Restricted API18871 now runs
+`11f2dcacb8af04e3afe078efbe7384b42487ad44`; owned API PID34020, hidden
+supervisor29420. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
 Latest source-only backed-up adoption preserved all88 operational tables and
-389 native files. Earlier adoptions preserved341then365 files. No migration or operational database copy was performed.
+413 native files. Earlier adoptions preserved341/365/389 files. No migration or operational database copy was performed.
 Normal owner HTTP renewed private intake and explicit S6 for each exact source.
 Original0032 remains intact.
 
@@ -86,7 +86,37 @@ Thus ready/open is partially observed, but stable close/expiry/Session-revocatio
 production-lifespan and new portal controls are NOT accepted. Do not reuse the
 earlier operator preview's successful navigation/inquiry evidence as this lease.
 
-## Latest combined-source actual failure
+## Latest actor source and inspection follow-up
+
+Canonical nonlocking actor read8413cfb is integrated in11f2. Production change is
+one fresh outer-joined SELECT, preserving the original locking branch. Root478
+tests passed28.90s, with two exclusions/one existing deliberate UUID warning,
+loga50c7d4636b997b0472c0ecfa3c422f4883f4c60d59bfdd70c6030d7ed7890e8.
+All22 isolated PostgreSQL tests passed176.36s, including11 actual actor cases,
+logcb0daaed66157ebcc675851bb2622368c93b65739b5b8a0ba33ec1aa1c52a64a.
+Original0032,88 operational tables and native data remained exact. Same-DB
+source-only adoption preserved413 files; owner intake/S6 CURRENT/site015 exact.
+
+Quiet measured capture238SQL/1.7582s, verification1.3154/1.4155/1.2822s,
+inspection5.3321s and total1051SQL. This is an improvement over the prior measured
+source, not proof of robustness under load. Actual lease61ad29b0 reached ready
+and native HTTP200, then FAILED heartbeat after_media with margin−1153ms at
+2026-10-17T10:57:20.971Z. Chrome subsequently received connection refused;
+close assertion failed. Preserve live-lifecycle-v2-close-0046d138e0ac442b9d90c27190ba5969.
+
+Root now owns upgrade16c3fde4 active-inspection delegation in live_preview.py.
+Real project/inspect baseline reproduced concurrent2; only unique live exact
+token/fullScope may share an unfinished lease observation. Explicit post-output
+fence must drain any older task then require a fresh observation. Original WIP
+post-output failure is retained. Independent review found no remaining P0–P2 in
+the final source; actual adoption/acceptance remains pending. Initial collection
+capture stays independent; do not claim all observation concurrency is eliminated.
+
+Focused80PASS7.13s f6fd3d913c3cf8395651c99bda6b98b9008d32ef1b079480df2cbef78814ddad.
+Full495PASS/1 inert-child timeoutFAIL/2excluded is retained separately from an
+unchanged exact-case rerun1PASS0.41s; no deadline or studio transport change.
+
+## Earlier combined-source failure
 
 Root integrated the frozen ten-path observation packet60e7 and late-P successor
 fa002cf with the separate0.2s serving cadence. Exact integration sourcebe557 passed

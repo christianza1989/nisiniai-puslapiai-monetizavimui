@@ -1,0 +1,19 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_inspection_authority.py",
+    "docs/LIVE_PREVIEW_INSPECTION_AUTHORITY.md"
+  ],
+  "evidence": [
+    "Actual11f2 lease61ad29b0 reachedready/HTTP200 but failed heartbeat after_media at10:57:20.971Z margin-1153ms; Chrome subsequently connectionrefused. Quiet verify1.28–1.42s is not stable active inspection acceptance. Record original runtime and source test failures separately."
+  ],
+  "rollback": "Revert only call-local active-inspection delegation and typed canonical verifier refactor; preserve all checks, original lifetime/deadlines, DB/native files, source pins and lease tombstones.",
+  "siteId": "core",
+  "summary": "Active native inspection competes with its live lease authorization instead of joining the exact in-flight observation",
+  "id": "upgrade-16c3fde4-81e7-4d19-98ae-2b3e58826aa3",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "11f2dcacb8af04e3afe078efbe7384b42487ad44",
+  "createdAt": "2026-10-17T11:04:01.831Z"
+}

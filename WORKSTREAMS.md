@@ -1295,6 +1295,15 @@ Late-P scoped verification116PASS18.39s (85canonicalgraph+31proof), hash877cb469
 503 restorations documented, first3FAIL and status-expectationFAIL preserved.
 Root owns integratedfullregression/cadence/actual/adoption; no helper428 rerun.
 
+2026-10-17 Root active-inspection window: issue66/comment6233142946,
+upgrade16c3fde4-81e7-4d19-98ae-2b3e58826aa3. Only live_preview.py inspection/
+existing lease verifier composition, new offline test and docs/journal. Unique
+live exact token/fullScope only, original typed errors/false/cancel preserved;
+explicit final drains any older observation then starts a new one. No completed
+permission cache, TTL/deadline/roles/schema change. First concurrent2 baseline
+1a67b5be and WIP post-output failure01600d04 retained. Existing helper reviews
+read-only; Root owns source and actual seven-case PG/real preview follow-up.
+
 2026-10-17 helper CURRENT ACTOR JOINED OBSERVATION reserved issue66/comment6232873051
 from exactRootbe557654161c8124b01547fe67efd3b63bc29c55/public255, branch
 codex/current-actor-joined-observation-20261017. Production scope only

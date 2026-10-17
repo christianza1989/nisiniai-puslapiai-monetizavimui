@@ -1,0 +1,6 @@
+{
+  "original": "D:/ergonomic.lt_svetaine/collect_configurator.py",
+  "copy": "legacy_capture.py",
+  "sha256": "95f5c9dab9cec2fd81016fad3d6f4942b401b228c0edc81803367b94c8ef5b84",
+  "purpose": "Unmodified existing SOAP parser/export adapter; new policy forbids FINISHES setters and session creation."
+}

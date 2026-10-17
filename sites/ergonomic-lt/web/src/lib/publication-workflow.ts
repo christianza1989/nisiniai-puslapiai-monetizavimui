@@ -9,8 +9,9 @@ import type {Product} from './types';
 import {applyDrafts} from './publication-copy';
 import type {Drafts} from './publication-copy';
 import {currentTechnicalSourceHash} from './publication-geometry';
+import {candidateForModel,candidateRevision} from './chair-structure-candidates';
 export const stages=['Trūksta šaltinio info','Reikia 3D priėmimo','Reikia opcijų aprašymų','Reikia Gemini teksto','Laukia peržiūros','Patvirtinta','Paleidimo svetainėje'];
-export type ModelSource=Omit<typeof sourceData.models[number],'image'|'gemini'>&{image:string|null;gemini:{conversation:string;responseSha256:string;valueSha256:string}|null};
+export type ModelSource=Omit<typeof sourceData.models[number],'image'|'gemini'>&{image:string|null;gemini:{conversation:string;responseSha256:string;valueSha256:string}|null;withoutColors?:boolean};
 export const sourceModels=sourceData.models as ModelSource[];
 export const sourceByKey=new Map(sourceModels.map(m=>[m.key,m]));
 export function bindSourceModels(products:Product[],drafts?:Drafts,technicalHash=currentTechnicalSourceHash):ModelSource[]{
@@ -19,9 +20,9 @@ export function bindSourceModels(products:Product[],drafts?:Drafts,technicalHash
  return sourceModels.map(m=>{
   const p=current.get(m.key);if(!p)return {...m,sourceReady:false,revisionHash:createHash('sha256').update(m.revisionHash+':missing').digest('hex')};
   const c=p.configurations.find(c=>c.id===p.modelConfigurationId),article=p.modelArticle;
-  const draft=drafts?.models[m.key];
-  const revisionHash=createHash('sha256').update(JSON.stringify({source:m.revisionHash,technicalHash,product:{name:p.name,description:p.description,sourceDescription:p.sourceDescription,image:p.image,gallery:p.gallery,documents:p.documents},configuration:c,article,draftProof:draft?{responseSha256:draft.responseSha256,factualReview:draft.factualReview}:null})).digest('hex');
-  return {...m,geometryAccepted:m.geometryAccepted&&sameGeometryRelease,name:p.name,image:p.image,summary:article?.summary||p.description,paragraphs:article?.paragraphs?.length?article.paragraphs:[p.description,c?.description||''].filter(Boolean),geminiReady:!!draft||m.geminiReady,gemini:draft?{conversation:draft.gemini.conversation,responseSha256:draft.responseSha256,valueSha256:createHash('sha256').update(JSON.stringify(draft.copy)).digest('hex')}:m.gemini,revisionHash};
+  const draft=drafts?.models[m.key],chair=candidateForModel(p),chairRevision=candidateRevision(p);
+  const revisionHash=createHash('sha256').update(JSON.stringify({source:m.revisionHash,technicalHash,...(chairRevision?{chairRevision}:{}),product:{name:p.name,description:p.description,sourceDescription:p.sourceDescription,image:p.image,gallery:p.gallery,documents:p.documents},configuration:c,article,draftProof:draft?{responseSha256:draft.responseSha256,factualReview:draft.factualReview}:null})).digest('hex');
+  return {...m,...(chair?{withoutColors:true,optionsReady:!chair.optionsRequired||!!article?.configurable}:{}),geometryAccepted:!!chair||m.geometryAccepted&&sameGeometryRelease,name:p.name,image:p.image,summary:article?.summary||p.description,paragraphs:article?.paragraphs?.length?article.paragraphs:[p.description,c?.description||''].filter(Boolean),geminiReady:chair?draft?.responseSha256===chair.proofs.generalGemini:!!draft||m.geminiReady,gemini:draft?{conversation:draft.gemini.conversation,responseSha256:draft.responseSha256,valueSha256:createHash('sha256').update(JSON.stringify(draft.copy)).digest('hex')}:m.gemini,revisionHash};
  });
 }
 type Review={revisionHash:string;[key:string]:unknown};

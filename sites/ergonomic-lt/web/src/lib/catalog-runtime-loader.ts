@@ -4,6 +4,7 @@ import {configuratorRuntimeAsset} from './configurator-runtime-assets';
 import type {CatalogRuntime,CatalogAnchor} from './catalog-configurator';
 import type {Product} from './types';
 import {shareCatalogRuntimeData} from './catalog-runtime-sharing';
+import {chairCandidates,createChairCandidateLoader} from './chair-structure-candidates';
 
 export type CatalogRuntimeIndex={schemaVersion:number;articles:Record<string,{asset:string;sha256:string}>;products:Record<string,{id:string;articles:{code:string;sample:string;name:string;id?:string}[]}>};
 type Shard={article:{code:string;sample:string;name:string};anchors:CatalogAnchor[];palettes:CatalogRuntime['palettes']};
@@ -35,4 +36,8 @@ return async function loadCatalogRuntime(product:Product,input?:unknown):Promise
  return shareCatalogRuntimeData<CatalogRuntime>({family:{id:familyId,kind:'catalog',productId:product.id,baseArticle:code!,sample,articles:[{...article,sample}],anchors:shard.anchors.map(a=>({...a,sample}))},palettes:shard.palettes});
 };
 }
-export const loadCatalogRuntime=createCatalogRuntimeLoader(indexData as CatalogRuntimeIndex,configuratorRuntimeAsset);
+const loadLegacyRuntime=createCatalogRuntimeLoader(indexData as CatalogRuntimeIndex,configuratorRuntimeAsset);
+const loadChairRuntime=createChairCandidateLoader(chairCandidates,configuratorRuntimeAsset);
+export async function loadCatalogRuntime(product:Product,input?:unknown){
+ return await loadChairRuntime(product,input)||await loadLegacyRuntime(product,input);
+}

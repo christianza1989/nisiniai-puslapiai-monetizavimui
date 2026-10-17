@@ -35,6 +35,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const fieldLabels={...baseFieldLabels,...Object.fromEntries(Object.entries(catalogRuntime?.palettes._fieldLabels||{}).map(([key,label])=>[key,label.text])),...articleFieldLabels(product)};
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
+ const structureOnly=catalog?.collectionMode==='structure-only'&&!product.id.toLowerCase().includes('xilium');
  const model=selectedModelConfiguration(product);
  const builderFirstPreview=true;
  const [customized,setCustomized]=useState(initialCustomized);
@@ -61,11 +62,13 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const article=engine.selectionArticle(product,selected.state);
  const summaryDetails=product.id.includes('xilium-swivel')?selected.configuration.details?.filter(d=>['Mechanizmas','Galvos atrama','Porankiai','Pagrindas','Ratukai'].includes(d.label)):selected.configuration.details?.slice(0,4);
  const activeMaterials=catalogAnchor(selection)?.materials;
- const missingFinish=catalog&&Object.entries(selection.values).some(([k,v])=>/COLOR|CHCOL/.test(k)&&!/PLASTIC|FRAME/.test(k)&&!hasSourceMaterial(v)&&!activeMaterials?.[k]?.[v]&&!palettes[k]?.[v]?.color);
+ const missingFinish=!structureOnly&&catalog&&Object.entries(selection.values).some(([k,v])=>/COLOR|CHCOL/.test(k)&&!/PLASTIC|FRAME/.test(k)&&!hasSourceMaterial(v)&&!activeMaterials?.[k]?.[v]&&!palettes[k]?.[v]?.color);
  const assembly=useMemo(()=>{
   const values=Object.fromEntries((selected.configuration.supplierOptions||[]).map(option=>{const [field,value]=option.split('=');return [field.split('.').at(-1)!,value];}));
-  return {...selected.assets,finishes:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{...palettes[k]?.[v],material:activeMaterials?.[k]?.[v],code:v,group:values[finishGroup[k]]||(k==='CUPHSEATCOLOR'?values.CSEATUPHGROUP:k==='CUPHCOLOR'?values.CUPHGROUP:k==='CHEADRESTUPHCOLOR'?values.CHEADRESTUPHGROUP:undefined)}]))};
- },[selected,palettes,activeMaterials]);
+  // Literal structure-only assets already contain the complete measured PBR
+  // materials. Recolouring them through a generic palette would change proof.
+  return {...selected.assets,finishes:structureOnly?{}:Object.fromEntries(Object.entries(values).map(([k,v])=>[k,{...palettes[k]?.[v],material:activeMaterials?.[k]?.[v],code:v,group:values[finishGroup[k]]||(k==='CUPHSEATCOLOR'?values.CSEATUPHGROUP:k==='CUPHCOLOR'?values.CUPHGROUP:k==='CHEADRESTUPHCOLOR'?values.CHEADRESTUPHGROUP:undefined)}]))};
+ },[selected,palettes,activeMaterials,structureOnly]);
  const variant={...selected.variant,...selected.assets.base} as PilotVariant;
  const token=stateToken(selection);
  const pdf=expandedProductCardPath(product,token,!!article);
@@ -87,7 +90,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const gallery=<div key="gallery" className="gallery">
   <div className="product-view-switch" role="group" aria-label={copyText("ui.b9442465d0b687df4540","Produkto peržiūra")}><button aria-pressed={!photo} onClick={()=>setPhoto(false)}>{copyText("ui.f8e94106288faa882ee7","3D konfigūratorius")}</button><button aria-pressed={photo} onClick={()=>setPhoto(true)}>{copyText("ui.12ef5d8d56f194f5cbd4","Nuotraukos")}</button></div>
   {photo?<ProductGallery key={model?.id||selected.configuration.id} primary={product.modelConfigurationId?product.image:selected.configuration.image} images={(model||product.configurations.find(c=>c.id===selected.configuration.id))?.gallery||[]} name={product.name} specificCount={product.modelGalleryCount} backdrops={product.galleryBackdrops}/>:<Viewer3D variant={variant} name={product.name} assembly={assembly} fullscreen={fullscreen} onFullscreen={()=>void openFullscreen()}/>}
-  <p className="visualization-note">{copyText("ui.1f86445eb42b83be0ee5","Spalvos ekrane orientacinės. Nuotrauka — modelio pavyzdys; individualią komplektaciją žymi jūsų pasirinkimai.")}</p>
+  <p className="visualization-note">{structureOnly?'Rodoma šio varianto apdaila. Dėl kitų spalvų teiraukitės.':copyText("ui.1f86445eb42b83be0ee5","Spalvos ekrane orientacinės. Nuotrauka — modelio pavyzdys; individualią komplektaciją žymi jūsų pasirinkimai.")}</p>
   {photo&&article&&<p className="visualization-note">{article.photoNote}</p>}
   {missingFinish&&<p className="form-note" role="status">{copyText("ui.3d2d0a1dccfd3cf4986c","Gamintojas nepateikia pasirinktos apdailos vaizdo. Jos spalvą patvirtinsime pasiūlyme; pasirinktas kodas išsaugomas užklausoje.")}</p>}
   {message&&<p className="configuration-status" role="status">{message}</p>}

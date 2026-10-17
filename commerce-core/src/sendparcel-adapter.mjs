@@ -335,6 +335,15 @@ export class SendparcelAdapter {
   }
   async tracking(id) {
     const row = await this.request('/rest-api/tracks', { orderTrack: { id: this.providerId(id) } });
+    // V1 returns only route endpoints until the first carrier scan. Accept that
+    // observed shape as no events, without swallowing errors or malformed info.
+    if (
+      row?.info === undefined &&
+      shortText(row?.from, 500) &&
+      shortText(row?.to, 500) &&
+      Object.keys(row).every((key) => key === 'from' || key === 'to')
+    )
+      return [];
     requireValue(
       Array.isArray(row.info) && row.info.length <= 1000,
       'carrier_tracking_invalid',

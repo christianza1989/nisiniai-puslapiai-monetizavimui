@@ -457,3 +457,115 @@ async def test_malformed_readonly_bridge_reply_is_safe_503(fixture, monkeypatch,
     with pytest.raises(ControlError, match="live_preview_inspection_invalid") as error:
         await f.manager.availability("session", f.cid)
     assert error.value.status == 503 and not f.manager.store.directory.exists()
+
+
+async def delayed_authority(f, lease, monkeypatch):
+    entered, proceed = asyncio.Event(), asyncio.Event()
+    original = lease.authority.verify
+    calls = []
+    async def verify(expected):
+        calls.append(expected)
+        entered.set()
+        await proceed.wait()
+        return await original(expected)
+    monkeypatch.setattr(lease.authority, "verify", verify)
+    return entered, proceed, calls
+
+
+async def test_concurrent_same_lease_authority_is_inflight_only_not_a_finished_result_cache(fixture, monkeypatch):
+    f = fixture
+    lease = await ready(f)
+    entered, proceed, calls = await delayed_authority(f, lease, monkeypatch)
+    first = asyncio.create_task(f.manager.permitted(lease))
+    await entered.wait()
+    second = asyncio.create_task(f.manager.permitted(lease))
+    await asyncio.sleep(0)
+    proceed.set()
+    assert await asyncio.gather(first, second) == [True, True]
+    assert len(calls) == 1
+    assert await f.manager.permitted(lease)
+    assert len(calls) == 2, "A completed observation cannot authorize a subsequent call"
+
+
+async def test_cancelling_one_waiter_cannot_cancel_another_same_lease_authority_check(fixture, monkeypatch):
+    f = fixture
+    lease = await ready(f)
+    entered, proceed, calls = await delayed_authority(f, lease, monkeypatch)
+    first = asyncio.create_task(f.manager.permitted(lease))
+    await entered.wait()
+    second = asyncio.create_task(f.manager.permitted(lease))
+    await asyncio.sleep(0)
+    first.cancel()
+    with pytest.raises(asyncio.CancelledError):
+        await first
+    proceed.set()
+    assert await second
+    assert len(calls) == 1
+
+
+@pytest.mark.parametrize("change", ["stop", "expiry", "revoked"])
+async def test_authority_completion_never_renews_a_stopped_expired_or_revoked_lease(fixture, monkeypatch, change):
+    f = fixture
+    lease = await ready(f)
+    entered, proceed, _ = await delayed_authority(f, lease, monkeypatch)
+    pulses = []
+    monkeypatch.setattr(f.manager.store, "heartbeat", lambda *args, **kwargs: pulses.append(True))
+    pending = asyncio.create_task(f.manager.permitted(lease))
+    await entered.wait()
+    if change == "stop":
+        f.manager.stop(lease, "closed", cancel=False)
+    elif change == "expiry":
+        lease.view["expires_at"] = (live.now()-timedelta(seconds=1)).isoformat()
+    else:
+        f.valid = False
+    pulses.clear()  # Earlier authorized work is not a late post-stop heartbeat.
+    proceed.set()
+    assert not await pending
+    assert not pulses
+
+
+async def test_shutdown_joins_the_exact_owned_inflight_authority_before_returning(fixture, monkeypatch):
+    f = fixture
+    lease = await ready(f)
+    entered, proceed, _ = await delayed_authority(f, lease, monkeypatch)
+    pending = asyncio.create_task(f.manager.permitted(lease))
+    await entered.wait()
+    closing = asyncio.create_task(f.manager.close())
+    for _ in range(8):
+        await asyncio.sleep(0)
+    premature = closing.done()
+    proceed.set()
+    await closing
+    assert not await pending
+    assert not premature
+
+
+async def test_unknown_producer_cleanup_still_joins_inflight_authority_and_retains_claim(fixture, monkeypatch):
+    f = fixture
+    original = live.studio._execute
+    async def uncertain(*args):
+        result = await original(*args)
+        if args[1]["action"] == "serve":
+            raise OSError("synthetic uncertain producer cleanup")
+        return result
+    monkeypatch.setattr(live.studio, "_execute", uncertain)
+    lease = await ready(f)
+    entered, proceed, _ = await delayed_authority(f, lease, monkeypatch)
+    exited = asyncio.Event()
+    verify = lease.authority.verify
+    async def tracked(expected):
+        try:
+            return await verify(expected)
+        finally:
+            exited.set()
+    monkeypatch.setattr(lease.authority, "verify", tracked)
+    pending = asyncio.create_task(f.manager.permitted(lease))
+    await entered.wait()
+    f.finish.set()
+    await asyncio.wait_for(lease.task, 3)
+    joined = exited.is_set()
+    proceed.set()
+    assert not await pending
+    assert joined, "Unknown producer cleanup cannot orphan its authority read"
+    assert f.manager.store.busy() and lease.view["preview_url"] is None
+    assert lease.view["failure_code"] == "live_preview_cleanup_unavailable"

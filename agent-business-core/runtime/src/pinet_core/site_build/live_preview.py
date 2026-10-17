@@ -81,7 +81,7 @@ class Lease:
     failure: str | None = None
     proof: object = None
     entered: bool = False
-    auth_lock: object = field(default_factory=asyncio.Lock)
+    auth_task: object = None
 
 
 class Service:
@@ -208,21 +208,39 @@ class Service:
         if cancel and lease.task is not None and not lease.task.done():
             lease.task.cancel()
 
+    def current(self, lease):
+        if lease.stop_reason is not None or self.closing:
+            return False
+        expiry = lease.view["expires_at"]
+        if expiry and datetime.fromisoformat(expiry.replace("Z", "+00:00")) <= now():
+            self.stop(lease, "expired", "live_preview_expired", cancel=False)
+            return False
+        return True
+
     async def permitted(self, lease):
-        async with lease.auth_lock:
-            if lease.stop_reason is not None or self.closing:
-                return False
-            expiry = lease.view["expires_at"]
-            if expiry and datetime.fromisoformat(expiry.replace("Z", "+00:00")) <= now():
-                self.stop(lease, "expired", "live_preview_expired", cancel=False)
-                return False
-            try:
-                await lease.authority.verify(lease.scope)
-                self.ledger().heartbeat(lease.record, expires_ms=int((now() + timedelta(seconds=3)).timestamp() * 1000))
-                return True
-            except ControlError as error:
-                self.stop(lease, "revoked", error.code, cancel=False)
-                return False
+        if not self.current(lease):
+            return False
+        # Share only a currently executing observation of this exact immutable
+        # lease/scope. A finished result never authorizes another invocation.
+        check = lease.auth_task
+        if check is None or check.done():
+            check = lease.auth_task = asyncio.create_task(lease.authority.verify(lease.scope))
+        try:
+            await asyncio.shield(check)
+        except asyncio.CancelledError:
+            if asyncio.current_task().cancelling():
+                raise
+            self.stop(lease, "revoked", "authorization_revoked", cancel=False)
+            return False
+        except ControlError as error:
+            self.stop(lease, "revoked", error.code, cancel=False)
+            return False
+        # Close, expiry or shutdown may have happened while authority was being
+        # read. They cannot be undone by the late completion of that read.
+        if not self.current(lease):
+            return False
+        self.ledger().heartbeat(lease.record, expires_ms=int((now() + timedelta(seconds=3)).timestamp() * 1000))
+        return True
 
     async def drive(self, lease):
         lease.entered = True
@@ -259,12 +277,22 @@ class Service:
         finally:
             async def joined():
                 nonlocal clean
+                cleanup_uncertain = False
                 if runner is not None:
                     if not runner.done():
                         runner.cancel()
                     result = await asyncio.gather(runner, return_exceptions=True)
                     if any(isinstance(item, (OSError, RuntimeError)) for item in result):
-                        return
+                        cleanup_uncertain = True
+                check = lease.auth_task
+                if check is not None:
+                    if not check.done():
+                        check.cancel()
+                    checked = await asyncio.gather(check, return_exceptions=True)
+                    if any(isinstance(item, (OSError, RuntimeError)) for item in checked):
+                        cleanup_uncertain = True
+                if cleanup_uncertain:
+                    return
                 clean = not uncertain  # unknown failures never permit releasing an unproved claim
             cleanup = asyncio.create_task(joined())
             while not cleanup.done():

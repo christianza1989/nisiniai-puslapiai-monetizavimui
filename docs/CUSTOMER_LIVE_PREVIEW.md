@@ -74,6 +74,14 @@ never grants renewed authority. Paid runners/external channels stay held; previe
 does not approve content, certify a complete site, deploy publicly or promote
 full_site_status/launch_status beyond UNVERIFIED.
 
+Concurrent callbacks for one exact lease may share its currently running full
+authority verification. A completed result is never cached or reused by a later
+invocation, and different leases do not share authority. Cancelling one waiter
+cannot cancel another waiter's observation. The lease owner cancels and joins its
+in-flight verification during cleanup, including uncertain producer failures.
+Stop, expiry and service-closing state are checked again after verification and
+before any heartbeat write; a late successful read cannot renew a closed lease.
+
 Shutdown marks the service closing, drains in-flight admission, then joins all
 owned tasks through cancellation-safe canonical transport cleanup before DB
 disposal in both maintained APIs. Repeated cancellation cannot skip that drain.

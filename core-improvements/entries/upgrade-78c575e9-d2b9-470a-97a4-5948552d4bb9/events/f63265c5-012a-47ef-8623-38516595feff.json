@@ -1,0 +1,14 @@
+{
+  "status": "fixing",
+  "note": "Root actual6isolated PostgreSQL authority cases PASS103.79s atda578030/source1684. Initial private harness used an invalid artifacts-root shape and failed at private_intake_missing; corrected only that harness path, original FAIL retained. Both operational88tables and original0032/native files remained exact before/after. Full source-only0044 backup/cutover preserved317nativefiles, then normal owner intake/S6 renewed with approved physical015c3074 unchanged. Actual GET can_start=true. First actual POST failed503studio_timeout before claim/ledger/server, so ready/expiry/revocation/shutdown/browser acceptance remains OPEN. Unchanged instrumented capture/inspect performed176Git calls/22.4728s; nested full authorization amplification under canonical20s deadline is being repaired in separately owned source scopes. Provider calls0; all paid workers/external channels remain held.",
+  "checks": [
+    {
+      "command": "PINET_LIVE_PREVIEW_QA=1 PYTHONPATH=src;tests;scripts pytest tests/test_live_preview_authority_pg.py -q -x -p no:cacheprovider (dedicated migrated QA database)",
+      "result": "PASS",
+      "evidence": "6PASS103.79s; private logSHA25622a599306ddddbbf1cd627bcf0514dae52e571c4dc9e8735083c56c54daf7ed5. Original/operational/native snapshots remained exact. This is actual RLS/HTTP/native authority with synthetic generation adapters, not renderer lease acceptance."
+    }
+  ],
+  "eventId": "f63265c5-012a-47ef-8623-38516595feff",
+  "sequence": 5,
+  "at": "2026-10-17T08:03:59.854Z"
+}

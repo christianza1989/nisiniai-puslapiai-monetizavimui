@@ -23,6 +23,121 @@ from pinet_core.tasks.codex_transport import RunnerError
 draft = draft_fixture
 
 
+def typed(draft):
+    value = planned(draft)
+    value['schema_version'] = 'business-draft.v3'
+    for page, kind in zip(value['pages'], ('home', 'author', 'service'), strict=True):
+        page['type'] = kind
+    value['pages'][1]['title'] = 'Testinio leidinio redakcinis profilis'
+    value['pages'][1]['intent'] = 'Paaiškinti sintetinio testinio leidinio redakcinę tapatybę ir jos ribas.'
+    value['pages'][1]['sections'][0]['body'] = 'Tai sintetinio testinio leidinio redakcinis profilis. Jokia tikro žmogaus ekspertinė kvalifikacija šiame teste netvirtinama.'
+    return value
+
+
+def test_new_explicit_typed_profile_survives_normalization_without_authority(draft):
+    value = typed(draft)
+    assert normalize(value) == value
+    assert normalize_creator(value) == value
+    package = artifacts(value, creation_id='00000000-0000-4000-8000-000000000001', revision=1, receipt={})
+    import json
+    decoded = json.loads(next(a['content'] for a in package if a['kind'] == 'content_package'))
+    assert decoded['schemaVersion'] == 'verslomatika.business-draft.v3'
+    assert decoded['draft']['pages'][1]['type'] == 'author'
+    assert decoded['publicationApproved'] is False and not value['confirmed_facts']
+
+
+def test_historical_model_schemas_and_material_hashes_remain_exact(draft):
+    import hashlib
+    import json
+
+    from pinet_core.creation import renderer
+
+    def digest(value):
+        return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    expected = {'Page': '2528fd65d6bce4a2e8a214cdf8ad78820aef09b1b8f369eb5b407056271a2b32',
+        'DraftFields': 'cd6e6eb968e2b19c1fe2233309ff4d3d358efa0c9bcce1c6ee02682315de78f1',
+        'Draft': '69f6423c043b1845f1f552e99f291fad50f9bb5af9fa8005e2cd8f17be8bc158',
+        'CreatorCandidate': 'cb309d6bc9beb6c599d8ce3b725f0221187bb0911b8d657a37821167027cee10',
+        'CreatorDraft': '9b88e03ad7a4134fd54be33bf1bb948c5ee4b056d47d6eec868300365aed051b'}
+    assert {name: digest(getattr(renderer, name).model_json_schema()) for name in expected} == expected
+    for value, expected_hash, artifact_hash in [
+        (draft, '413657dac71caafd3b9634c146f400af2ecd9bb140f1e13cde7a284eceda280b', '22675db3f6e39390ea9f1a5115f9af7ce779c95f6ec6f3b65e184c4df5c4a6c0'),
+        (planned(draft), '2d93276287ada4c8c32932e9852c92c1143948502607a5a841acb458c01af80b', 'b3d1df77616fa9c8f5ce51c6453e53b8c5b481e59eebe76f488f6e69020a6a01')]:
+        normalized = normalize(value)
+        assert digest(normalized) == expected_hash and 'schema_version' not in normalized
+        assert all('type' not in p for p in normalized['pages'])
+        result = artifacts(value, creation_id='00000000-0000-4000-8000-000000000001', revision=1, receipt={})
+        assert next(a['sha256'] for a in result if a['kind'] == 'content_package') == artifact_hash
+
+
+@pytest.mark.parametrize('mutation', ['missing-version', 'unknown-version', 'missing-role', 'unknown-role', 'home-mismatch', 'profile-in-plan'])
+def test_typed_contract_rejects_partial_forged_or_inconsistent_role_metadata(draft, mutation):
+    value = typed(draft)
+    if mutation == 'missing-version':
+        del value['schema_version']
+    elif mutation == 'unknown-version':
+        value['schema_version'] = 'business-draft.v2'
+    elif mutation == 'missing-role':
+        del value['pages'][1]['type']
+    elif mutation == 'unknown-role':
+        value['pages'][1]['type'] = 'verified-expert'
+    elif mutation == 'home-mismatch':
+        value['pages'][1]['type'] = 'home'
+    else:
+        value['content_plan'][0]['path'] = value['pages'][1]['path']
+    with pytest.raises(RunnerError, match='output_invalid'):
+        normalize(value)
+
+
+def test_typed_role_changes_are_covered_by_exact_critic_hash_binding(draft):
+    from test_creation_review import report
+
+    from pinet_core.creation.review import draft_sha256, normalize_critic
+    value = typed(draft)
+    critic = report(value)
+    before = draft_sha256(value)
+    value['pages'][1]['type'] = 'about'
+    assert draft_sha256(value) != before
+    with pytest.raises(RunnerError, match='review_invalid'):
+        normalize_critic(critic, draft=value, expected_stage='private_draft', expected_round=1)
+
+
+def test_new_provider_contract_requires_typed_pages_without_downgrading_legacy_reads(draft):
+    import json
+    from pathlib import Path
+
+    from pinet_core.creation import renderer
+    legacy = planned(draft)
+    assert normalize_creator(legacy) == legacy
+    with pytest.raises(RunnerError, match='output_invalid'):
+        normalize_creator(legacy, require_typed=True)
+    assert normalize_creator(typed(draft), require_typed=True) == typed(draft)
+    schema = renderer.TypedCreatorDraft.model_json_schema()
+    assert schema['properties']['schema_version']['const'] == 'business-draft.v3'
+    assert 'schema_version' in schema['required'] and 'type' in schema['$defs']['TypedPage']['required']
+    package = json.loads((Path(__file__).resolve().parents[3] / 'content-studio/schemas/content-package.v2.schema.json').read_text('utf-8'))
+    assert set(schema['$defs']['TypedPage']['properties']['type']['enum']) == set(package['$defs']['page']['properties']['type']['enum'])
+
+
+def test_typed_graph_repair_and_review_context_retain_structural_role_metadata(draft):
+    from test_creation_review import report
+
+    from pinet_core.creation.review import coordinator_prompt, critic_prompt
+
+    value = typed(draft)
+    projected, _ = context_projection(value)
+    assert projected['schema_version'] == value['schema_version']
+    assert projected['pages'][1]['type'] == 'author'
+    critic = report(value)
+    assert 'business-draft.v3' in critic_prompt(draft=value, stage='private_draft', round_number=1)
+    assert '"type": "author"' in coordinator_prompt(draft=value, critic=critic, stage='private_draft', round_number=1)
+    value['pages'][1]['type'] = 'home'
+    repair = structural_repair_context(value)
+    assert repair['check'] == 'creator-graph.v3'
+    assert repair['candidate']['pages'][1]['type'] == 'home'
+    assert repair['issues'][0]['field'] == 'draft:/pages/1/type'
+
+
 @pytest.mark.parametrize('url', ['https://example.com/event?autoRsvp=true', 'https://example.com/event#join',
                                 'http://example.com/event', 'https://example.com/a b'])
 def test_provider_source_schema_exposes_existing_url_shape_rejections(url):
@@ -202,7 +317,8 @@ def test_actual_creator_snapshot_contains_canonical_planner_and_common_handover(
     assert "SKILLS/niche-content-planner/SKILL.md" in INSTRUCTION_FILES
     for reference in ("planning-decisions.md", "studio-contract.md", "media-workflow.md", "studio-integration.md", "geo-publishing.md"):
         assert reference in value
-    assert "month=''" in value and "business-draft.v2" in value
+    assert "month=''" in value and "business-draft.v3" in value
+    assert 'PRIVATE_DRAFT_OUTPUT_CONTRACT_JSON' in value
 
 
 def test_private_international_search_queries_are_not_lithuanian_public_prose(draft):

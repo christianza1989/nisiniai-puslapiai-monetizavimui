@@ -1,3 +1,272 @@
+## Explicit synthetic acquisition module administration — Root 2026-10-18
+
+Issue66/comment6242709325, upgrade-d32f9944-8626-474b-bf0a-4d5a6065168f,
+base2486fb0/main533/public255 (main ec8). New acquisition/module_admin.py,
+scripts/acquisition_module_admin.py, dedicated offline/PG tests and
+docs/ACQUISITION_MODULE_ADMIN.md only, plus this entry/own journal. Reuse existing
+ModuleBinding, exact native Registration/current verified owner Session and
+privileged local/test transaction. Bounded DB-clock lease, explicit CAS approval/
+stop and private prepared/committed receipt; no automatic renewal/replay, model,
+transport, scheduler, API, DTO, schema, operating admission or channel activation.
+Existing acquisition engine/headless/correspondence remains acquisition-owned;
+Registration source remains helper-owned. No source path overlap.
+
+## Registration identity across private intake continuity — helper 2026-10-18
+
+Issue66/comment6242540528, own codex/registration-intake-continuity-20261018
+from Root2d429c1fea873babe179223ddc13315374ae021d/public255fea0;
+paired startPASS22:44:35/36UTC (fetched mains533/ec8). Confirmed in NEW isolated
+loopback15548 PostgreSQL18.6 QA, maintained S37 fixture, provider0. Runtime source
+change only creation_registration/service.py; admin.py remains unchanged.
+NEW tests/test_registration_private_continuity_pg.py,
+offline_tests/test_registration_private_continuity.py,
+docs/REGISTRATION_PRIVATE_CONTINUITY.md, own journal and this paragraph.
+Original actual2FAIL22.71s SHA576876e1 retained before source repair. Final53native
+PGPASS412.16s SHA111a15ff504e6231e643a70ed054b1f0b8d5ef2290b09a93820335fbf0aa155b;
+143purePASS4.73s SHA7c5430cfa883c4ed14394854154362da6913cb1179ddafbdf00145b5e5e650a3,
+RuffPASS. Root reviewed source with no actionable P0-P2. Unique journal
+upgrade-cdce8ae3-618b-4277-8a2e-c3f90bc71259 preserves first and intermediate FAIL.
+Historical Registration/request/receipt/fingerprints immutable;
+same-origin lineage is identity only, fresh owner/source/native/files remain
+authority. No schema/DTO/0045/mail/acquisition/portal/operating DB or runtime
+changes. Source window closes at scoped commit. Root alone operates actual b866;
+helper source will not hot-load there. Runtime adoption remains separate.
+
+## Owned mail display and Lithuanian sidecars — Root 2026-10-18
+
+Issue66/comment6241311809, upgrade519c758b, paired30071/main533/publicec8.
+Reserved mail_view/*, mail_display_translate.py, dedicated offline/PG tests,
+canonical contract, config field and router imports only. Existing Case/MailMessage,
+current Session/owner BusinessGrant and tenant RLS remain authoritative. GET never
+dispatches, sends, syncs inbox or changes mail. Private Lithuanian display sidecars
+bind exact original content; original sealed payloads stay unchanged. Portal owns
+its new BFF/view. No acquisition, calibration, migrations, operating DB/case,
+Serving, existing workers or transport changes in this source window.
+Continuation on paired e260/main533/publicec8: fix the explicit translation
+batch's raw environment binding (public envelope normalizes test-* to test).
+Existing owned batch/offline/PG paths only; no wire/DTO or portal change. Preserve
+legacy attempt claims and reject wrong scope before model IO. Running Serving
+and original/operating data remain unchanged during isolated regression.
+
+## Pure dynamic V2 learning adapters — helper 2026-10-18
+
+Root-authorized first source-only increment, issue66/comment6241343169.
+Own codex/v2-learning-adapters-20261018 worktree from frozen
+30071c65de2d5cf786a2a29c9c0ebb8f006ff351; paired main533/publicec8
+startPASS21:27:23/25UTC. Exact NEW source only customer_agents/learning_target.py
+and learning_adapter.py, NEW offline test_customer_learning_target.py and
+test_customer_learning_adapter.py, docs/CUSTOMER_V2_LEARNING_ADAPTERS.md,
+own unique journal and this paragraph. Pure detached metadata/same-parent and
+report/replicate adapters reuse existing protected_compare; diagnostic reports
+remain explicitly non-adoptable/UNVERIFIED. No actual receipt or Quality PASS is
+created. All existing readiness/admission, workflow, static controller/adaptive,
+lab/quality/typed/customer_text, DTO/schema/worker/budget/provider code frozen.
+No DB/provider/paid/Serving/UI/acquisition/email/foreign process changes.
+Root owns mail_view and all actual execution/later shared integration windows.
+Verification: 273 pure PASS14.52s (110 new/163 maintained), log SHA256
+a16340c4d521f9462a6b60877eb81208fa167f54326e9d4e80ac6156d00001ef;
+Ruff four owned Python files PASS. Initial missing-module and cross-arm replay
+FAIL evidence retained. Canonical journal upgrade-0c10d3ac-687f-4583-b177-4dce6c26ef7d
+supersedes the privately preserved uncommitted invalid-URL draft. Source window
+closes at scoped commit; actual native execution/adoption remains Root-owned.
+
+## Concurrent Node preview guards — Root 2026-10-17
+
+Root issue66/comment6239824916, upgrade778ba9ee from clean219/public255,
+paired gate19:42 PASS main533/ec8. Only customer-live-preview.mjs, its existing
+Node test, new LIVE_PREVIEW_CONCURRENT_GUARDS contract and own checkpoint/journal.
+Two canonical one-second monitors share this callback; browser GETs do not call
+it directly. Preserve the failing two-monitor-style baseline (two native reads
+instead of one). Share only an ongoing exact-scope check, clear before waiters
+resume, and independently fence each successful waiter on claim/pulse/deadline.
+No completed permission cache, removed fresh check or threshold change. Source219
+actual close/home/replay passed but afterReady guard failed; stability is open.
+Serving219/data/providers/frontend stay unchanged during this source packet;
+owned API stopped after interruption and must be restored through checked source
+adoption. Helper is a read-only reviewer; no foreign worktree edits.
+
+## RUNNING workflow-cancel PG source case — helper 2026-10-17
+
+Root-requested isolated test-source/collection scope, own clean branch
+codex/workflow-running-cancel-20261017 from frozene49d4bdf769e56d834bb7867d5e94cef6a73983a;
+paired start main533/publicec8PASS20:48:49/51UTC. Only one new function/import in
+test_workspace_agent_workflow_pg.py, own docs/journal/workstream. Adapt maintained
+S5 after-actual-reservation cancellation to /agent-workflows/{id}/cancel:
+RUNNING child, original S4 result unchanged, one native usage receipt, no reply
+or Quality dispatch, explicit cancellation/replay. Author/collect only; no helper
+DB/provider/model/CLI/service execution. All e49/19de runtime/schema/contracts
+and original12 workflow cases remain unchanged.
+
+Upgrade-6af127f0-ed88-4ea2-b4d6-c5f9e2ba08ee adds one RUNNING native late-return
+workflow-cancel PG case; file now13cases COLLECTED ONLY1.40s,
+b40a9e5c3ea9058d6e954d15b4d3f96e7c715cf128a53541dc626c34647c45d1.
+AST29299d28 proves every original declaration unchanged; zero runtime/schema/
+contract diff. Not an actual PG/provider/drain PASS. Root executes the one new
+case under its own isolated native acceptance gate.
+
+## Workspace SafeRoute error contract — helper 2026-10-17
+
+Root-confirmed portal3a4ff35 P1: actual core SafeRoute emits code/message/request_id
+(message echoes code); canonical shared Error omitted message and new portal transport
+assumed2keys. Own clean codex/workspace-error-envelope-20261017 from frozen
+19de88e, start paired main533/publicec8PASS20:44:53/55UTC. Only shared Error DTO,
+its five generated workspace projections, new pure in-process SafeRoute/DTO
+regression, own docs/journal/workstream. Root owns portal client/tests. Preserve
+0b protocol and19de runtime/SQL byte-for-byte; no DB/provider/services/models.
+
+Upgrade-fd5b06ae-3ad7-459a-8ee4-79b3dae7c7d1: actual in-process SafeRoute
+baseline7FAIL8PASS57bf2336; corrected shared Error adds only optional bounded
+same-code message and keeps old2-key serialization. Final310purePASS3.22s
+135e941e77b202ae7f04288d0fbbdbf8522f3ec5987fe85d9bcda176c0a4753d.
+Boundary AST/JSON confirms only Error across5contracts; all success/runtime/SQL
+unchanged. Root owns portal three-key parsing and actual adoption.
+
+## Durable preparation to single native test — helper 2026-10-17
+
+Root-authorized separate codex/agent-preparation-join-20261017 from frozen
+e4794c59e19d533b1673e408e38fbe104157d6f6; paired main533/publicec8
+start PASS20:17UTC. Upgrade-a3f791c5-1fce-46ec-943b-5e2917b7a6c0.
+Explicit additive prepare-and-test workflow, native intent/outbox0045, exact
+Agent/Config receipt, deterministic postcommit S5 through existing Tasks worker.
+Reserved workspace_team workflow files plus narrow routes/service/preparation/
+handler/models/wire and tasks/worker reconcile hook, migration0045, generated
+contracts and new offline/PG-source tests. Existing native S5/lab/Quality and
+budget stay authoritative. No fake human child message, terminal result rewrite,
+browser-driven dispatch, permission cache, old-note dispatch or calibration PASS.
+Root owns all actual DB/migration/adoption/UI; helper only source/offline tests
+and PG collection. Root confirmed0045 free; serving/139/140 untouched.
+
+Protocol checkpoint0b182dc pushed separately (13wirePASS, exact Git-byte JSON
+deb7e964); final source adds native outbox/worker join without changing wire.
+Final pure regression295PASS2.66s a5ebaaf91d79b378604dab304eae4a62ed03736aa8555317ec71155a809b8794;
+12PGcases COLLECTED ONLY1.80s6370e50be2a9acf870cdc58de7532441b17d284c92d34fa9575c03f866bd0422.
+Expected88→89tables is source expectation, not actualDB proof. Root owns migration
+and runtime gates; hard process-death/DBrestart/running-provider cancel and actual
+completion/cancel interleaving remain unobserved. Parent results, source/session/
+Foundation/Profile/native budget/cancel/replay boundaries are preserved.
+
+## Streaming CLI pin checks — helper 2026-10-17
+
+Root-authorized issue66/comment6240204250, own codex/streaming-cli-pins-20261017
+from frozen07d8e577f9df78d7d5057cd625004a4d6d9f180a; paired main533/publicec8
+freshness PASS20:09:00/01UTC. Exact4caller paths: creation/adapter.py,
+customer_text/adapter.py, tasks/codex.py, workspace_team/adapter.py; one shared
+file_hash.py helper, related pin/runner tests, CLI_BINARY_PIN_HASHING contract
+and unique own upgrade. Preserve original whole-buffer MemoryError reproduction
+before source edits. Fresh bounded streaming hash only: no cache, pin/permission
+weakening, model/timeout/argv changes or unrelated JSON/image read changes.
+Root owns141/140/Serving/API recovery; no DB/provider/operating-process actions.
+
+Local source verification complete: upgrade67361e0f, original4MemoryError FAIL
+retained; focused28PASS, final135PASS/7explicit actual-child cases deselected.
+One-MiB streaming helper, four exact callers, repeat/no-cache/error/virtual341MB
+guards PASS; AST proves all other caller logic unchanged. Source handoff does
+not adopt the installed binary/runtime or certify latency. Window released to
+Root after scoped committed safety/coverage/freshness handoff.
+
+## Profile schema observation — helper 2026-10-17
+
+Issue66/comment6239903853; own codex/profile-schema-observation-20261017 from
+exact Root2199266b2afc7456e012a67840170070ff068db8. Paired start gate PASS
+19:47:38/44 UTC, main533597c/publicec8; the previous bded worktree is frozen.
+Only creation/execution_profiles.py:schema_state, related profile/Authority tests,
+docs/EXECUTION_PROFILE_SCHEMA_OBSERVATION.md and own unique upgrade journal.
+Fuse catalog reads inside one schema observation; retain absent/invalid/ready,
+broad absent-trigger semantics, ready RLS/7trigger/4FK, both validate_attempts
+schema invocations and all ten private-current checkpoints. Preserve original
+query-count failure before production edits. No cache, model, role, deadline,
+DB/provider/UI/serving changes. Root owns disjoint Node packet778ba9ee and actual
+PG/lifecycle; synthetic PG execution requires quiet-window coordination first.
+
+Source verification complete for Root: unique upgrade2100a3cc, one production
+function only. Original8FAIL54PASS and first broader1FAIL273PASS retained;
+final274PASS17.31s, catalog observation2to1, full modeled Tx136to132 with
+10P/2material/1native and hotP3 unchanged. Ruff/semantic boundary PASS; one new
+restricted PG case collected only. No PG/provider/serving adoption; scoped
+source handoff remains separate from Root's Node packet and lifecycle evidence.
+
+## Bounded unpublished preview recovery — Root 2026-10-17
+
+Root issue66/comment6237331697, upgrade4646eda5, clean a7/public255 paired with
+main533/ec8. Only live_preview.py drive/startup recovery and the trusted
+customer-live-preview.mjs internal hard deadline; existing fixture/Node tests,
+new startup recovery test and contract plus Root checkpoint. One serial attempt
+may follow a fully joined, exact heartbeat-expired PRE-READY refusal after an
+entirely fresh authority check, with unchanged active UUID/scope and one shared
+original149s deadline and a shared first-serve+120s Node cap (stricter than139s).
+Never retry after any Ready, actual denial, close,
+expiry, uncertain cleanup or malformed evidence; do not change pulse/thresholds.
+First baseline/failures retained. Helper reviews read-only; bded/51e2 and a7
+serving, DB, providers and portal stay unchanged during source development.
+
+## Metadata-only media import — Root 2026-10-17
+
+Root reserves issue66/comment6235745750 from clean Source57/public255 with paired
+freshness against private main533/public mainec8. Exact production path is
+content-studio/src/image-pipeline.mjs; only its existing test and MEDIA_CORE note
+are changed alongside new upgrade f7dba73c and Root checkpoint evidence. Defer
+native Sharp initialization until raster processing, preserving the one pipeline
+and exact policy/output. Save a native-unavailable metadata import baseline and
+run actual raster plus workflow regressions. Helper owns a disjoint four-file
+private parent SQL observation packet. Serving, data, providers, dependencies,
+permissions, guards and deadlines stay untouched by this source window.
+
+Metadata import source window released after verification: original isolated
+import failure retained (9fdc44e4); final43 raster/workflow PASS73.63s (2705aecf).
+Native-backend loading is now deferred, with all pixel policy/validations retained.
+Cold import improvement is local evidence only; actual serving adoption and full
+preview stability remain Root-owned follow-up, separate from helper SQL work.
+
+## Private parent checkpoint — 2026-10-17
+
+Issue66 scope reserved before mutation: codex/private-parent-checkpoint-20261017 from exact Root57a2e6857352c22f84422f8d67d1c8a68d7bba5f; own companion codex/private-parent-public-20261017 at ec8a9c032fe926d1d9722802d8eb26fa8bd02937. Paired freshness PASS 15:26:56/58 UTC against main533597c/ec8. Only runtime creation/service.py, business_discovery/service.py, creation/private_preview.py and site_build/authority_observation.py; focused offline_tests/test_private_parent_checkpoint.py, related test_current_actor_observation.py/test_authority_observation.py/test_private_preview.py SQL fakes if required, docs/PRIVATE_PARENT_CHECKPOINT.md and unique own journal. Preserve an original baseline before production edits, all ten fresh P checkpoints, typed refusal order, entry/final/native/S6/cancellation/task fences. No completed authority cache, TTL/cadence/Node changes. Root exclusively owns image-pipeline and its tests/MEDIA_CORE, actual PostgreSQL, UI and serving. Old helper branches, source, journals, DB and processes remain untouched. Scoped commit/PR to Root after offline regression; 3-second stability is unverified.
+
+Local verification complete for Root review: upgrade51e2d1b2, same4production files plus one existing graph fake shape adapter/new focused tests. Hot private current6→3, full offline Tx166→136 with10checkpoints/2material phases/1native status. Original baseline1FAIL1PASS and141PASS preserved; exact portfolio Source57PASS/newvariantFAIL preserved then scalar Bundle correction. Final402PythonPASS/1explicit native smoke deselected22.28s; no helper DB/Node/model/serving action. Contract docs/PRIVATE_PARENT_CHECKPOINT.md distinguishes measured offline data from actual PG/UI/3second stability. Scope releases after committed safety/coverage/freshness handoff; Root owns actual adoption and independent Sharp changes.
+
+## Historical team clock — Root 2026-10-17
+
+Issue66/comment6232048518; upgrade870ed381: team.py/execution_profiles.py fresh
+batch metadata, existing test_execution_profile_batch.py, narrowdocs only.
+Actual PG4121FAIL8PASS103.97s retained, unchanged88tables/original/native;
+deadline alone360to900 after selected-profilechange. Both-direction unit baseline
+2FAIL17PASS retained. Fixed display uses immutable latestjobprofile from same
+fresh bounded observation, or fresh stored read without attempts; no production
+clock/role/model/admission change. Focused26PASS, related72PASS7SKIP, RuffPASS.
+Actual retry/serving and helper's separate accepted-proof optimization remain open.
+
+## Synthetic team clock — Root 2026-10-17
+
+Issue66/comment6232001781: only shared test_creation_team.runner, focused helper
+regression and docs/PIPELINE_TEST_ROLE_CLOCK.md; upgrade39777fcd. Actual High PG
+case retained1FAIL6PASS247.27s; unchanged numeric diagnostic899.786s vs default360
+and canonicalHigh900. Focused baseline1FAIL5PASS; repaired helper23PASS including
+profile-batch regression. Production clocks/roles/models/authority unchanged.
+Root owns isolated PG retry, same-DB adoption and browser; original tests retained.
+
+## Rich text inspection — Root 2026-10-16
+
+Root reserves canonical audit rendered_site.py/verify-site-completion.mjs and their existing tests under PR164/comment6213008506, upgrade1014b905. Actual95f/public255 guarded11page/20asset/form/measurement/retention passed; old inspector falsely rejected3rich HTML guides/6reading pages. Independent baseline Python2FAIL9PASS and Node1FAIL6PASS. Preserve inline character boundaries with block separators, and separate HTML label text from reading label+URL expectations. Missing text/URL/hidden body/schema/date/source refusals retained. New11Python+12Node PASS and current guarded HTTP recheck0issues with independent new checker, same immutable package1b6f54/no content changes. Running backend stays frozen95f; new checker source adoption is separate. Browser, full A–Z/Foundation, launch and agents remain UNVERIFIED/held.
+
+## Windows preview checkout — Root 2026-10-16
+
+Root reserves customer-site-preview.mjs, its focused test, narrow documentation and unique journal under PR164/comment6212313869. Real 834df57/public255fea attempt retained: sanitized child Git lacked user core.longpaths and failed checkout with Filename too long before compile. Use command-scoped longpaths only; same owner/source/package/Session/storage gates. Actual case, failed logs and other checkouts preserved; no provider or publication permission added.
+
+## Preview local storage — supervision 2026-10-16
+
+SOURCE WINDOW RELEASED for Root handoff; issue66#6206035681, owner01a13d30, own codex/verslomatika-preview-local-storage-20261016 fromcc532113b5a4fca62a74fa1a555cd6a6913c3fbf, read-only public255fea. Private customer-site-preview.mjs + one-line Foundation authorization passthrough, new focused tests/docs/upgrade-c1634f35 only. Fixed owned DATA input and separately hashed generated DB/schema/build, per-child exact DATA exclusion with public compiler still refusing other source changes. Canonical drizzle0004+0005 init uses same short owned state as serve, preserves attempt evidence and existing files, total150s init+inspection and startup revocation. Final9new mocked-storage/7preparation/9existing guardian tests PASS; no helper actual DB/build/server/customer/provider operations. All earlier39b/b700 and semantic/messenger journals frozen. Root owns actual build/form/aggregate/row-retention adoption; full-site and launch UNVERIFIED.
+
+## Candidate preview preparation — supervision 2026-10-16
+
+SOURCE WINDOW RELEASED for Root handoff; issue66#6205603581, owner01a13d30, own codex/verslomatika-candidate-preview-20261016 from7eb21e241625d46fb8a0770db94f12be4fd931d4, read-only companion255fea0813bf1aabeaeea2f2de0b29564118f2fc. Exact foundation.py/foundation_wire.py and customer-site-foundation.mjs/customer-site-preview.mjs, new tests/docs/upgrade-b7002131. Root accepted preparation+opaque proof and bounded owned inspection callback; final59 Python/7 new inert Node/7 existing pure guard checks PASS, 2 SQL cases collected only. Peer owns customer-content-workflow.mjs and review/approval modules/routes. Every existing journal and serving/customer state preserved. No helper actual DB/build/provider/server operations; Root owns actual adoption and browser QA. Five existing scope/release/readiness/final-certification functions remain byte-identical. Full-site/launch UNVERIFIED.
+
+## Foundation semantic guide index — supervision 2026-10-16
+
+2026-10-16 Root RESTORED0044 MIGRATION COMPATIBILITY RESERVED: restored exact ordinary0042 backup in a NEW private staging DB fails0044 known enum recognition although fresh-empty74 passed. Actual author CHECK from pg_restore has explicit per-literal VARCHAR-to-TEXT casts; jobs unique pair is unchanged. Root owns only0044 migration, direct_preview_schema enum recognizer/probes, focused schema test, canonical unique journal and status/docs. Two exact PostgreSQL-compiled predecessor forms, no erased casts/regex, unknown/ambiguous remains denied. Helper review/approval owns creation review/new Node wrapper and two router mount hunks; preview helper owns foundation only. Failed clone/log preserved, served3b7/original0032 untouched/provider0. No in-place repair of failed DB.
+
+2026-10-16 Root actual Stage2 QA checkpoint: clean caeedef/native0044 fresh empty database7PASS242.28s+67PASS664.24s=74 distinct, original0032 read-only equality preserved, external provider0/mock transport. Previous CASE-migration and partial-autoflush failures retained; actual events Root-owned in adc83c2c/1b182d26/0291eb44, no helper sequence collision. Source-only semantic consumer e160 integrated as e9dc4e9 with own public255fea; Root8 focused/73 public/tsc PASS. Serving3b7/UI741 unchanged. Privacy-only guarded operation f22a79ca brings editorial total34; actual 12other revisions/planning and media counts unchanged. No approval/release/ordinary messenger/model/public acceptance inferred. Scope remains Root integration/adoption and original native case; helper source windows frozen.
+
+Owner thread01a13d30; own core branch codex/verslomatika-foundation-index-20261016 from bfa8c6cd4f4c572aa507da408af596361b5b4099, public branch codex/verslomatika-semantic-article-hub-20261016 from source-compatible1a26f289092cecadc5799de898e809dc1769498a (current main lacks the native renderer chain). Paired fresh private main808581d9/public mainec8a9c03. Issue66 comments6204825170/6204947684 authorize core customer-site-foundation.mjs + focused index tests, public lib/content-projection-v2.mjs semantic hub, NativeContentSite and existing focused native tests; two unique canonical upgrades dbf98b55/578856df. Shared projected index-to-guide membership fixes stable-URL coverage and actual article breadcrumbs, preserving nearest nested/own-index identity, unrelated/foreign/unready rejection and all publication/source/review fences. Original8PASS/1FAIL SSR baseline retained; final public73PASS, core8PASS. Source window released with separate scoped Git delivery; public helper must be adopted before core consumer. Pure synthetic checks only, no customer bytes copied, DB/provider/model/server/release/serving operation. HTTP/SEO smoke and actual native acceptance remain Root-owned and UNVERIFIED here.
+
 2026-10-03T19:12:31.341Z fasadopastoliai shared langas baigtas / atlaisvintas. 11approved puslapių,3originalūs gidai,4peržiūrėti kontekstai/20WebP, savas documentrenderer/geometrijos/nativeworksheet/ArchivoSourceSans3. Izoliuotas production8911 PASS,24/24core,9/9SEOcurrentpackages,11URL/39HTTP0findings,39finalrender1440/390/320+768primary,18nativeHTTP/D1/counter ir13UIcases su exactsyntheticcleanup. FinalmobileLHhome97/guide91,A100/BP100,localSEO69noindex. Fresh review F1/F2 ship tik bounded scope, pradinis craft8.0/ribotas8.2, ne9/10claim. A–Z local68/72=9.44 gateReadyfalse R2/S2/U2/U3unknown; launch0/10 operations0/2. FIRST-RUN335failai visųSHA patikrinti. SMTP/voice/FB/outreach/DNS/liveOFF. AutoFIRST-RUN nekito. Pagal savininko „Metalo-tvoros.lt nedaryk kolkas“ trečia niša atidėta, rezervacija atlaisvinta; analizė nebuvo skaityta ir site/core/studio build nepradėti. Jokių likusių aktyvių sharedrašo langų šiame pavedime.
 
 2026-10-03T18:45:14.841Z savininkas tiesiogiai nurodė „Metalo-tvoros.lt nedaryk kolkas“. Metalo-tvoros kūrimas atidėtas, jo rezervuotos rašymo ribos atlaisvinamos. Analizė nebuvo skaityta; svetainė/studija/paketas/core šaka nepradėti. Paliekamas tik ankstesnis rezervacijos kilmės įrašas su aiškiai pataisyta būsena. Tęsiamos tik fasadopastoliai baigiamosios vietinės patikros; autoelektrikaivilniuje FIRST-RUN nekinta.
@@ -7,6 +276,40 @@
 2026-10-03 autoelektrikaivilniuje shared prijungimo langas baigtas / atlaisvintas: 11 approved puslapių / 20 WebP, savas renderer/CSS/worksheet/font/ženklas, tik dvi dispatch/favicon šakos, oficialus import/compile8packages. Izoliuota production peržiūra8910 veikia, SMTP/voice OFF. 24/24 core, 8/8 SEO, 39 HTML requests be findings, 39 final renders, own D1/native/noJS ir matavimas patikrinti. A–Z local9.44 (68/72), R2/S2/U2/U3 UNVERIFIED; bounded fresh craft8.6, ne10/9 claim. FIRST-RUN301failų kopija / SHA patikrinta, analysis-informed ne benchmark. Gyvas paleidimas ir paklausa neįrodyti. Toliau pagal jau rezervuotas ribas tik fasadopastoliai verslo/istorijos/dizaino tyrimas; naujas shared langas bus registruojamas prieš prijungimą.
 
 # Lygiagrečios sesijos
+
+2026-10-17 Root Foundation actor window: issue66/comment6234533284, fromclean90c,
+pairedfreshmain9a/publicec8. Only site_build/foundation.py capture entry's three
+Session/User/transaction-actor statements become one populated atomic observation,
+new focused offline/actual-PG tests and narrow contract/journal/checkpoint. Every
+guard/owned/native/P/S/entry-final checkpoint, typed401 and deadline remains.
+Helper01a13440 owns disjoint private_preview.py retained-anchor leaf. Actual90c
+7PGPASS158.02s and UI55d34ee6 after_media heartbeat-expired−770ms FAIL preserved.
+Root owns all actual DB/native/browser/adoption; providers0, no frontend restart.
+
+2026-10-17 Root scheduling/publication window: issue66/comment6234266836,
+from948c69350bac7155aef85b376138acd25020fcb5, fetchedmain9a46650a/publicec8.
+Only creation/studio.py fast serial start pacing, site_build/live_preview.py
+per-check successful heartbeat publication, their focused regressions and
+LIVE_PREVIEW_AUTH_CADENCE contract plus own journal/checkpoints. Helper01a13440
+reviewed read-only; its late A/B/A finding reproduced before WeakSet correction.
+No authorization-result reuse, TTL/deadline change or detached renewal. Actual
+948 expiry PASS and later start503/heartbeat FAIL remain; Root owns same-DB
+backup/adoption/normal owner lifecycle/browser. Providers0, serving948 frozen
+during source changes; no foreign checkout, frontend restart or channel change.
+
+2026-10-17 Root source-frame window: issue66/comment6233705540 and upgrade
+a4d4abab-d331-4814-b3d6-5acab58c8646. Only source_observation.py native Git
+HEAD/dirty observation becomes one porcelain-v2 NUL frame, with matching source
+fixtures/new actual inert-Git tests/docs; runtime heartbeat/fences/authority and
+all deadlines stay unchanged. Baseline2vs1 preserved;35focused and328related PASS.
+Helper issue193 owns disjoint main-based documentation quarantine. Root owns
+actual source adoption, current case and runtime/cadence journal continuation.
+
+2026-10-17 Root peer follow-up ca5d2ea3-e9b1-4046-a606-4ea900eca306:
+same source-frame window, four literal-dot grammar fixes and four preserved
+malformed-key negatives (baseline4FAIL99510e37, final332PASS25.34se3b3a930).
+SOURCE_OBSERVATION checkpoint restored exactly tof53; current contract routed
+through GIT_OBSERVATION_FRAME.md. No checker/archive-rule or deadline change.
 
 2026-10-15 issue66 NATIVE MEDIA INBOX RESERVED: coordinator 9c618026 / fetched main808581d9, public1a26f289 / mainec8a9c03. Own site_build/media.py, site_build/service.py hook before initial GUIDE admission, offline_tests/test_site_build_media_inbox.py, runtime/SITE_BUILD.md and upgrade92a17cd8. Existing helper owns creation/media.py, attach-media workflow and its separate tests/journal on own branch. Fixed trusted operator inbox only; no provider, browser mutation route, new optimizer, approvals or channel activation. Serving4e80258/stable6b case remain immutable during source work. New review session01a13d30 has human-authorized read-only Foundation-to-team audit; no shared writes reserved there yet.
 
@@ -56,6 +359,18 @@
 2026-10-10 issue66 GitHub koordinavimas VERIFIED (paskelbimas): perskaityti core PR65 head 21a59d594bd9e6934487b1d557c78c12e0e67119 ir Verslomatika PR62 head 7b3885edd866e79cba4dc3ae4cad55b402c5039d; jų dokumentai patvirtina 01a122ec core planavimo ir 01a0dcf8 portalo „Kordinatorius A“ roles. Madbeauty PR26 remote head 8dafd2c679527e06efdca70144d16f6de228d52c skiriasi nuo sesijos naujiau pranešto 14d49f8; naujas full SHA/push dar laukiamas. Root own scope tik docs/AGENT_INTEGRATION_COORDINATION_2026-10-10.md ir ši sava eilutė; issue66 body atnaujintas ir nukreipiančios žinutės paskelbtos PR65/PR62/PR26/PR59. Canonical portfolio.v1 lieka PR65, acquisition 0.1.1 source f629b76c; generic control/registry/task/chat implementation ownership dar rezervuojamas prieš rašymą. Kito PC issue66 read/adoption atsakymo ar HTTP/DB/hosted integration šis receipt nedeklaruoja; GitHub automatiškai nepažadina sesijų. Svetimo runtime/checkout ir main nekeista.
 
 2026-10-10 issue66 acquisition integracijos langas RESERVED: root thread 01a1225a-4db6-7aa1-a679-67d01d7cb104, savas codex/acquisition-core-20261009 nuo87fcf4c / fresh main d4ea8bf. Nauji agent-business-core/contracts/acquisition-v1/**, runtime/src/pinet_core/acquisition/interfaces.py ir transport_auth.py, runtime/offline_tests/test_acquisition_interfaces.py, runtime/scripts/acquisition_contracts.py, docs/AGENT_INTEGRATION_COORDINATION_2026-10-10.md, savas UUID upgrade ir ši sava pastraipa; sites/madbeauty/ACQUISITION_PILOT_PLAN.md tik aktuali visos Lietuvos pastaba. Madbeauty sesija valdo savo backend/Workers/registracijų adapterį; Verslomatika issue64 portfolio/identity pasiūlymo failai ir abu kito PC checkout neliečiami. Bendro registry/chat ar jų šakų neperimame. Tolimesnę acquisition DB migraciją / API mount rezervuoti konkrečiai issue66 prieš rašymą. Pirmas kontraktas ir testas capture-only; esamas transactional SMTP purpose guard neplečiamas. Kito PC thread pasiekiamumas nepatvirtintas; koordinacija GitHub issue66, actual kodo/kontrakto SHA ir atskiros adoption patikros.
+
+2026-10-17 issue197 documentation authority cleanup RESERVED: codex/core-docs-authority-20261017, fresh main9a46650a033d283dfb559d7b835a26384e3225fe. Scope: BENDRA_30_SVETAINIU_SISTEMA.md, FABRIKO_IR_20_SVETAINIU_ARCHITEKTURA.md, 20_SVETAINIU_MODULIAI_IR_TEMU_PLANAS.md, MONETIZAVIMO_PLANAS.md, TOP_20_DOMENU.md, exact PIRMAS_PILOTAS_GREITOS_SVETAINES.md alias quarantine, agent-business-core/README.md, PROJECT_STATUS.md, agent-business-core/runtime/README.md and MAIL_CORE.md authority/evidence annotations, new docs/LEGACY_CLI_REFERENCE.md, append-only docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md, own new journals and this paragraph. Root issue196 exclusively owns root README.md, START_HERE.md and docs/DOCUMENTATION_MAP.md. Preserve substantive historical plans, manual migrations, facts, old journals and all runtime/source; no DB/providers/process/native/Chrome execution. Separate PR to main for Root review, no self-merge.
+
+Issue197 LOCAL VERIFIED: main8664 integrated via own be6943d, both WORKSTREAMS reservations preserved. Upgrades69e3747f/cbb19e1b: five root plans and agent overview/status explicitly dated, six private receipts labeled with original paths, seven CLI purposes/legacy limits documented, one 264byte redundant pilot alias quarantined with exact restore payload. Nine original bodies and inventory prefix preserved; 99 affected relative links/0 missing, new missing0; all13declared source paths checked. Root navigation and site facts unchanged. No actual restore, runtime/DB/native/browser/model/CLI migration execution. Scope released for Root PR review after exact stage/committed handoff checks; main merge/adoption separate.
+
+2026-10-17 Root documentation navigation RESERVED: [issue196](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/196), own `codex/core-documentation-map-20261017` from freshly fetched main `9a46650a033d283dfb559d7b835a26384e3225fe`. Only README.md, START_HERE.md, new docs/DOCUMENTATION_MAP.md, this coordination paragraph and one new upgrade record/events. Clarify maintained contracts versus dated evidence and replace obsolete single-PC checkout assumptions; check affected relative links and commands. Helper owns separate legacy-plan/CLI review and may update the inventory, not these three navigation files. No runtime, DB, process, provider, per-site facts, historical approval/fingerprint/SOURCE edits or blanket deletion. Scope ends at reviewed documentation PR; platform Source435 stays frozen separately.
+
+Navigation scope RELEASED after [PR198](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/198) handoff: source `1d8ea02bb19357d441c935297b678e6b97471d99`, upgrade70db16b5; 76 affected relative targets/0 missing, 7 exact staged blobs safety/0 findings, diff and source peer review without P0–P2. Pinned Root435 committed checker PASS1shared/0uncovered, with manual all3source-path coverage. Main merge and actual platform adoption remain separate; no runtime/DB test is claimed by this docs packet.
+
+2026-10-17 documentation inventory RESERVED: issue193, own codex/core-docs-quarantine-20261017 from freshly fetched main808581d919d06cb4a2d151cc7f9ec1be1782aba2. Own new docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md, this paragraph and unique new cleanup journal entries. Read-only tracked-file/reference/import/CLI/build/job inventory first; exact quarantine candidates and necessary entrypoint edits will be reserved in issue193 before mutation. One clean tracked text file per canonical record/plan/apply. Preserve Root runtime/source/journals, all active plans/handoffs, historical evidence/approvals/SOURCE archives, data/dependencies and foreign checkouts. No providers, DB, processes or deployment; small PR to main, no self-merge.
+
+2026-10-17 issue193 LOCAL VERIFIED / handoff: upgrade39805578-fc01-457b-9b4a-8cc7a76d9a18; only superseded20_SVETAINIU_SEO_MVP.md quarantined with exact7976bytes/SHA preserved. Five root-doc pointers changed one line each to canonical CORE_BUILD_CONTRACT; README links bounded inventory.12byte-identical historical/manifest groups and ambiguous manual CLI scripts retained.36local links, no new missing targets,7quarantine regressions,6calibration inputs and diff PASS. No runtime/source/old journals or foreign checkout mutations. Main lacks newer core-upgrade-check and its ACM safety selection skips rename payload; Root-owned8413cfb fixes remain separate, both pinned tools used read-only against own objects/stage with exact coverage, no adoption claim. Scope released for review after PR handoff; no self-merge.
 
 2026-10-10 tipografikos sistemos taisyklių įgyvendinimo langas baigtas / atlaisvintas pagal [issue83](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/83), own branch `codex/typography-system-20261010`, fresh core main `13c9649c76dd48cdf426604cb721e1ccd58a9854`. Tik AGENTS, PROJECT_CONTRACT, builder/planner/audit SKILL ir trys jų catalog entry SHA, vienas canonical builder `references/typography-system.md`, savas core-upgrade UUID ir research/typography-system-2026-10-10/REVIEW.md. Savininkas pavedė nuolatinę visos tekstų stilių sistemos priežiūrą. 3/3 skill struktūra, 101 vietinė nuoroda, staged safety12/12 ir fresh handoff PASS. Nėra runtime/public renderer/schema/package sąsajų ar companion pakeitimų; kitų sesijų failai, svetainių turinys ir istoriniai auditai neliečiami. Patikrintas scoped PR perduodamas atskiram reviewer/merger; source merge nėra kitų PC adoption ar svetainių peržiūros įrodymas.
 
@@ -1012,3 +1327,329 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-15 root REAR-FOUR HERO REPLACEMENT reserved issue66: human-forwarded handoff from 01a13932-061d-7392-ae71-085a551bbfb2. Own design/agent-avatars/black-suit-v1/hero-concept.html, four new full-body PNG copies, scoped replacement manifest/DESIGN notes and this log only. Preserve original seven assets, foreground three, original button coordinates, copy, JS animation and layout. Match original visible head/shoulder scale with image-only offsets and extend downward behind foreground; no contain-in-torso-box. Verify actual Chrome desktop/mobile and role interaction. No sender worktree, backend, paid generation, REA, publishing or paused wellness job changes. Base7ec99360, paired freshness main808581d9/publicec8a9c03 PASS2026-10-15T10:38Z.
 
 2026-10-15 root REAR-FOUR HERO REPLACEMENT complete / source window released issue66: four byte-exact supplied1024x1536 PNGs, image-only landmark placement; original seven PNGs, all anchors, foreground3, body copy and JS unchanged. Chrome actual1422x701/390x844/320x844 verified, no horizontal spill, controls clear, Finance selection and pause/resume/autoplay retained. Separate before/after screenshots saved. Initial buffer-size check and narrow screenshot timeout preserved in DESIGN; corrected checks PASS. Local concept only, no paid generation/publication/backend or paused wellness activity.
+
+2026-10-15 peer S30 DISCOVERY MODEL SOURCE PROJECTION RESERVED issue66/comment6189151161: newmanageddiscovery-source-projection codex/verslomatika-discovery-source-projection-20261015 exactc1b3a723, pairedstart09:39Zmain808/publicec8/companion1a26PASS. ONLY business_discovery/adapter.py +newsource_projection.py, focusedoffline tests/narrowrule-doc/uniquejournal. Model-only boundedUTF8 primary_sources with exact provenance/reader-versus-projection clipping/omitted-unreadURLmetadata; sameallroles andversion/implementationinstructionpin. Fullcapture/jobusage/S28 retained; customer/history/decisions/reply/reviews neverclipped. Root realS29 prompt139435B/14observations/6webcalls/timeouterror preserved; no helperprovider/case/serving/DB/worker/service/wire/source_context/deadline/quota/profile changes. Rootowns nextactualmodelrerun/adoption andseparateavatarassets.
+
+2026-10-15 root WELLNESS RESUMED reserved issue66/comment6191794136: owner explicitly resumed platform business task. Own new wellness-platform-resume branch/worktree from48fe; frozen compact48fe API18871 is immutable while trial runs. Only relevant Discovery continuation/diagnosis and new resume handoff/pointer, own journal/source repair if reproduced. Original Maudis private benchmark remains held out. S30 integration111PASS/Ruff, new84table-preserving backup/provider0preflight/adoption PASS. Ordinary UI thirdJob9903840d, same original brief/case/base1, Highallroles, actual67585Bprompt; no hidden quota/deadline/channel changes. REA PR162 P2 fixed separately70d8378 with13offline+1actual MCP PASS. Scope remains private platform result, no supplier/outreach/publish authorization.
+2026-10-15 peer S31 CLI PROCESS OBSERVATION RESERVED issue66/comments6192765823/6192779198: NEWcli-process-observation branch codex/verslomatika-cli-process-observation-20261015 exact48fe7b8720c23ae32b79dc4f954d6fcf6cbe1f49, pairedstart13:05Z808/ec8/1a26PASS; active48fe/API untouched. ONLY tasks/codex_transport.py/execution_observation.py, existing offline_tests/test_cli_execution_observation.py, narrowruntimeREADMEQArule, uniquejournal/WORKSTREAMS. Metadata-only precleanup parentreturncode/wait/EOF/feedstates-times/outputexists-bytes/no-content/killrequested. No behavior/deadline/model/args/profile/policy/receipt changes, providers0. Inertsuccess/failure/quiet/inheritedpipe/cancel/diskfailure checks; realS29/S30originalno-terminal/no-outputFAILs preserved, notpipeproof. Rootowns separate trackedfullPlan diagnostic/serving/case, REAexcluded.
+
+2026-10-15 root S32 MEASURED HIGH DISCOVERY BUDGET RESERVED issue66/comment6193225455: own wellness-platform-resume from11d4421, pairedfresh13:26Z808/ec8PASS. ONLY business_discovery/deadlines.py, existingoffline/nativePGdeadlinetests, narrowruntimeREADME, resumehandoff/WORKSTREAMS/uniquejournal019488ba. Original S30 timeout404.804s/6web/last223.718s preserved; separate no-tools fullPlan succeeded324.695s/36726B/10areas, nativecode0+EOF+outputbeforecleanup/nokill, DBwrites0. v2proposed660creator/90critic/90coord/one900job/reserves180/90, roughly20percent above combined observation with60setupslack; this is a measured trial hypothesis, not proven UI success. No profile/model/quota/schema/quality/channel changes. Original5FAIL12PASS2.06s baseline retained; Root owns source/adoption/normalUI retry, helper read-only plan critique, no manual-plan import.
+
+2026-10-15 root S34 COORDINATOR EXACT SETS RESERVED issue66/comment6194921106: ownwellness-resume frombbd258e, pairedcontinue14:47Z808/ec8PASS. ONLY creation/review.py andcontent_work/review.py, actualCOORDINATOR_POLICY,3existingofflinereviewtestmodules (addedcompacthistoricalpolicycompatcheck), ownhandoff/WORKSTREAMS/upgradeb18069ec. ActualCreation96ddfromapprovedreport2generated8pages/3briefs431s, criticrequires600charbrandrationalecompletion; coordinatorsaidrevisebutextra9thlanguage_quality remainingcheck vs8verifiedcheckskilled beforeexistingnarrowlanguage_patch. Exactreadonlyreproductionpreservesoriginalreview_invalid. Providerconstexactcorrection/checklists derivedfromverifiedcritic; postvalidators/wire/models/quotas/admission unchanged. 12FAILbaseline then240PASS1FAIL7SKIPhistoricalhashcompat preserved; final241PASS7SKIP40.62s/Ruff. S33helper ownsdisjointDiscovery/README, frozen736/API andcustomerjobs untoucheduntilidleverifiedadoption; nomanualoldresultrewrite.
+2026-10-15 peer S33 COMMERCIAL EVIDENCE RESERVED issue66/comment6194702768: NEWmanageddiscovery-commercial-evidence branch codex/verslomatika-discovery-commercial-evidence-20261015 exact73658777948da00741f9e54cd78ca9efa15cb3e6, pairedstart14:38Zmain808/publicec8/companion1a26PASS. ONLY business_discovery/sources.py/source_projection.py/instructions.md, existing offline_tests/test_discovery_research_first.py/test_discovery_source_projection.py, narrowruntimeREADME, uniquejournal. Generic actualsame-host commercialdocqueue and bounded exact late-text spans with offsets/hash/cut/provenance; preserve rawcapture/S28/24s/100k/28k/URL-DNS-TLS-robots/model/profile/quota/wire. Original Job4 captures and v1 projection remain read-only references. No supplier-specific paths/facts or rawthirdpartysite text inGit; provider/DB/case/serving0, frozen736/activeCreation/RootREA untouched. Rootowns lateradoption.
+
+2026-10-15 root S36 EXACT DESIGN EXPLANATION PROSE RESERVED issue66/comment6196054582: ownwellness-resume5f6aef7 pairedcontinue15:41Z808/ec8PASS. ONLY creation/language_patch.py and existingtest_creation_language_patch.py, ownhandoff/uniquejournal. ActualCreation04e37746 strictS34coordrevise succeeded; designfinding on exactbrand/rationale forced full8pagereroll and199.57s timeout. Baseline3FAIL86PASS7.02s. Permit design ONLY for exactrationale prose; substantive/mixed structuraldesign staysfullpath. Same schemas/quotas/model/900s/sixroles/independentreviews; nooldresultimport or approvalwaiver. Helperownsdisjointauthor-intake proposal; frozen1dd/API staysunchangeduntilidleadoption.
+
+2026-10-15 helper VERSIONED TYPED PAGE BRIDGE RESERVED issue66/comments6196183316/6196204563: NEWtyped-page-bridge branch codex/verslomatika-typed-page-bridge-20261015 fast-forwarded to exactRootS36fb3444310fa975df8edd753fdc2e6ebb3a29394f before edits; pairedstart15:48Z808/ec8/1a26PASS. ONLY creation/renderer.py/adapter.py/language_patch.py, directparsercalls+2technicalmetadatakeys in creation/review.py, customer-creation-intake.mjs, existingfocusedtests/narrowdocs/uniquejournal. New explicitbusiness-draft.v3 typed candidate with exacthistoricalunversionedmodel/schema/hash compatibility, nooptionaltype/default/inferredauthor. RootS34prose andS36design-rationale repair preserved. Nocurrentcasefixture/provider/DB/runtime/serving/approval/launch/RootUI-workflow edits. Rootowns lateradoption.
+2026-10-15 peer S37 EXPLICIT PRIVATE PREVIEW INTAKE SOURCE WINDOW issue66/comment6196841961: own codex/verslomatika-private-preview-intake-20261015 from exact Rootd68843c8, pairedfreshmain808581d9/publicec8a9c03. Wire-only2e0ac2e released first for Root codegen. Scoped accepted-material extraction, ONE selected-intake/effective-host resolver, creation models/routes/studio, exact content-work admit/authority/claim and site-build receipt readers; additive0042 append-only receipts/pending lease; no Node changes. Root owns portal/BFF/client/live case, actual native PG and serving adoption. Unknown public canonical staysNULL, explicit UUID.preview.invalid is private metadata only. Original failed Job usage, accepted/coordinator/source hashes and non-null legacy branch preserved. Final1691offlinePASS8SKIP112.05s (67subtests; includes52newfocused), Ruff/diffPASS. First28FAIL retained:27 missing test source env dependencies (no same-baseline execution claim),1 stale S35 typed-output fixture corrected only in profile test. Earlier newfixture26FAIL10PASS retained; missing synthetic Session lookup fixed in fixture, then52PASS. New8native QA cases collect-onlyPASS; not executed by helper and not proof of PG/Node/HTTP/adoption. No helper DB/provider/customer/serving actions. Upgradec9c45ed5 journal tracks wire and implementation separately; actual integration evidence remains Root-owned.
+2026-10-15 peer S37 PRE-ADOPTION OWNER FENCE FOLLOW-UP: original2465 postfreezegrant review found m/p FOR SHARE requires unavailableUPDATE. dd058 removed that invalidlock; Root correctly keptadoptionheld until current-owner-at-commit ordering is explicit.0042 nowadds invoker-only membershipUPDATE/DELETE trigger taking existing affectedUserFORUPDATE in deterministicorder; finalprivateintake alreadyholdsUserlock. No newgrants/SECURITYDEFINER. Deferredownerpredicate remains, readinessrequiresrevoke-locktrigger. NativeQA adds membership-revoke-afterNode plus realpg_blocking_pids demonstration of revoke-after-finalcheck waitingbeforecommit. Helperonlyrunsfocusedoffline/collectchecks; actualPostgreSQLordering remainsRoot-owned and not yet claimed. Original1FAIL2.19s SQLgrantregression retained SHA bcb87c7ac9242e42af5bb55cda74542a4b4930291cd92101dd85f346c186a85f; previousfull1691 is historicalsourcecohort, not rewritten for followups.
+2026-10-15 peer S38 NATIVE GUIDE COMPACT CRITIC RESERVED issue66/comment6200135760: own codex/verslomatika-guide-critic-schema-20261015 from frozen749bb43587344d4c23645198328315274a3ff1f5, pairedstartmain808581d9/publicec8a9c03. Reused own helperworktree afterS37closure. Actualcritic d39dbf65 failed provider_error/max_output_tokens6.922s vs164.711sdeadline, nooutput; providerbudgetunknown, notschemarejectionorlocalbytecapproof. Own content_work/review.py+adapter.py/tests/README/upgrade-de299866-eace-49bc-9168-08130b7d5a86. Newprivatecriticv2 uses sharedcompactfieldmodels, numericexactrefcatalog andserver-restoredtrustedreceiptmechanics thenunchangedfullnativeCriticReview gates. Fullstored/HTTP/historicalreviews unchanged. CoordinatoralreadyS34prose/hydration; addedexplicitregressiononly. Actualsavedcreator825e792f hash matchesoriginalschema,238refs; schema9199→3424B offline. RootownsUIguideOptions/privatebinding, sourceadoption, explicitfailedGUIDEcontinuation andactualproviderchecks. No helperDB/provider/Node/nativecase/servingactions; no model/effort/clock/quota/trace/error/retry/historicalstate changes.
+
+2026-10-15 peer S39 EDITORIAL PREPARATION RESERVED issue66/comment6200993779: fresh managededitorial-preparation branch codex/verslomatika-editorial-preparation-20261015 exact9813833b6bcb8f3fa7a970f125f6c170ba22566b, pairedstart19:54Zmain808/publicec8/companion1a26PASS. Own NEW creation/editorial_preparation.py and focusedoffline/Node tests, customer-content-workflow.mjs only strict deterministic metadata/site/link receipt command, narrowruntimeREADME and uniquejournal. Reuse current native_mutation_guard + canonical model primitives; no duplicated copy/media adapter, review/approval/release, generic HTTP endpoint, provider/DB/nativecase/serving/model/quota/publicschema changes. Root owns workspace_pipeline.py, UI/assets/actualadoption/providers. Baseline realisolatedNode1FAIL1018.59ms workflow_invalid_command preserved SHA a2bfc853949550f426d66d10d3855edc1ff346629cbba49a49fd03dacf90e0e6; initialfixturemissingsecondsection1FAIL retained separately1754dce4. UUID-bound immutable fullbefore/after evidence and exactreconciliation; no automatic crashlockstealing. Effectivepreviewhost staysproofbound with Creation.canonical_host NULL.
+2026-10-15 Root S41 DEFER EMPTY FUTURE LINKS reserved issue66/comment6202066348: own existing content_amendment.py/customer-content-workflow.mjs + focused tests/upgrade3102ec4d only. Explicit v2 deferred empty unapproved GUIDE targets, exact old graph minus named targets, native UUID/before/after/owner/source/S6 guards unchanged; v1 hashes/history preserved. Helper S40 private-intake continuity uses disjoint observer/source files. Actual native data and serving source remain untouched during implementation.
+
+2026-10-15 peer S40 PRIVATE NATIVE CONTINUITY RESERVED issue66/comment6201981331: fresh managedprivate-native-continuity branch codex/verslomatika-private-native-continuity-20261015 exactRooteb8fcd67fef7bcbce3f7dc47844556ad3d32ff18, pairedstart20:50Zmain808/publicec8/companion1a26PASS. Own creation/private_preview.py + narrowNEWPythonobserverhelper/NEWseparateNodefilename and focusedoffline/Node/nativeQA tests, uniquejournal/ownscope. Ordinary customer-creation-intake.mjs strictinitial/replay artifactSHA remainsunchanged; no customer-content-workflow.mjs/editorial_preparation.py/README edits. Rootactualfailed57196fb9 intake_artifact_changed follows legitimate3GUIDE/20variants vs initialsiteFileHash; actualcase readonlyevidenceownedRoot. Newexplicitcurrentowner/source append-onlycontinuity from exactsameacceptedmaterial/privatehost/nativefingerprints and successfulimmutableinitialanchor; readexisting source/context/manifest/currentnativeV2 only, no reimport/overwrite. Current-source owner and explicitS6 remainseparate; no historicalreceiptnewauthority. Rootowns future-guidegraphfix/workflow/copy/UI/metadata/nativePG/adoption/runtime/providers. HelpernoDB/provider/currentcase/browser/servingactions; no ChromeCDP workaround.
+2026-10-15 peer S40 baseline: isolated maintainedGUIDEapply+mediaattach evolves siteSHA; unchanged ordinary importer correctly fails intake_artifact_changed. Missingnewreader then1FAIL1521.464ms SHAeffe98dd3a6d8b19ca9816ec2a4f697455531715450d58a563e977ffc2def18d. Initialfixtureplanningmedia_briefmin40 failures retained af3f5b15/0a6f13ca; onlyfixture corrected. No currentcase read/write or actualDB/provider execution.
+2026-10-15 peer S40 SOURCE FREEZE: scoped reader/admission ready from eb8, initial importer/workflow/editorial/README untouched. Full offline1802PASS8SKIP67subtests87.85s; final84focusedPASS3.87s adds realPython-Node observer roundtrip with explicit fakeauthority seam (33new+51legacy). Node99PASS across5disjointfiles (46/41.58s +53/79.03s), Ruff4files/diffPASS; nativePG5collect-only0.33s, not executed byhelper. Original firstFAILs and fixtures recorded in own upgrade320f8f08; Root owns actualPG/native-case/currentownerPOST/S6/adoption. Helper DB/provider/case/serving/browser0. Source window released after scoped commit; queued S41 ae76 readonly review next. Inherited whole-main coverage debt remains separately reported, not claimed fixed.
+2026-10-16 peer S42 DIRECT MESSENGER BACKEND RESERVED: freshmanageddirect-messenger codex/verslomatika-direct-messenger-20261016 exactRoot3b7ef1baa7d0b11984a7739651041f1c0738e997; pairedstartmain808581d9/publicec8a9c03/companion1a26PASS. Wirefirst NEWworkspace_team/direct_wire.py/direct_contract.py andoffline_tests/test_direct_messenger_contract.py, ownjournal. Then NEWdirect*.py +narrowworkspace_team models/routes/service/handler/adapter/policy/quota andadditive0043 (currentlyfree, recheckbeforewrite) for immutable recipient/chat/owner binding, serverhistory/context isolation and1calltools-disabledsourceconsultants; preservelegacyv1. Savedagentincrementalnativepreview secondboundedpacket, actualConversation/Config/Profile/Quality/usage/fence, oldEpisodePlanimmutable. RootownsOpenAPI/codegen/UI/BFF/actualDB/providers/case/API18871/adoption. No helperDB/provider/serving/browser/currentcase action. NonbusinessTaskFKrealgrant constraint sentRoot; no inventedBusiness/Grant/arbitraryportfolio grant andno broaderTaskschema writebeforeexplicitnarrowchoice. OldS40windowclosed; source3b7actual15nativePGPASS reportedRoot, nothelperclaim.
+2026-10-16 peer S42 WIRE CHECKPOINT: issue66/comments6203127387+6203188865; NEWdirect_wire.py/direct_contract.py +focusedcontracttest only, no runtime registration/migration. workspace-direct.v1 has immutabletypedrecipient, consultantworkspaceVSactualbusinessscope, opaquechat, separatehistory/status/realusage, savedpreviewtruthfulstate. 50PASS0.26s (27new+18Episode+5legacy), Ruff3files/export/diffPASS; baseline1FAIL1PASS1.51s SHA89b5676d retained. Ownupgradeaf9d3fda. Rootcodegensfromwirepin; actualbackend/privateCreationconsultant scopeunion andsavedincrementalnativepreview remain active nextpackets. Source3b7/API18871/nativecase unchanged. No helperDB/provider/process/browser actions.
+2026-10-16 peer S42 WIRE REFINEMENT beforeRootcodegen: Rootexplicitcan_cancel projection +owneddiscovery workspaceanchor added; fixedrecipient/nativebusinessonly unchanged. New52PASS0.36s/Ruff3files/standaloneexportPASS; priorwire9bea immutablehistory retained. Runtime/Taskschema still untouched; frozenrevisedpin next, thenauthorizedworkspaceTaskunion implementation.
+2026-10-16 peer S42 WIRE CONVERSATION REPAIR: independentfrontendb237DTOreproconfirmed1FAIL29deselected1.41s SHA936846f11f retained; admitted/sendablesavedpreview musthaveactualnativeConversation, blockedunstartednullallowed, consultantnullunchanged. Final53PASS0.54s/Ruff3/exportPASS; Source-onlywirefix separatefromdirtyruntimeSQLwork, Rootserving3b7untouched. Wirejournalaf9d3fda appendedevents, nohistoricaloverwrite.
+
+2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
+# S42 direct messenger consultant checkpoint — 2026-10-16
+
+2026-10-17 helper SOURCE OBSERVATION RESERVED issue66/comment6231542941,
+PR185/comment6231543121: own clean1684 ff-only toRootda578030f7c9afd5c4dd2d411edfa67e74c77c7b,
+paired public255 unchanged/continuePASS. Exact NEWsource_observation.py plus
+customer_text/adapter.py source_current, creation/private_preview.py native_sources,
+site_build/foundation.py source_pins/to_thread and continuation.py two offloads;
+new mockedtests/docs/SOURCE_OBSERVATION.md and separatejournal53349649. Root owns
+live_preview.py/test_live_preview_runtime.py/CUSTOMER_LIVE_PREVIEW.md/journal5c757425;
+untouched. Original200-vs4mockGitFAIL and cancellation-lockFAIL retained;213pure/mock
+PASS2.19s,2actualprocess tests deselected. No DB/Nodechild/server/provider/currentcase/
+adoption or TTL/deadline/wire/historical-fingerprint changes. Root adds Authority
+scope/coalescing and actual acceptance only after exact scoped pin review.
+
+2026-10-17 helper CUSTOMER LIVE PREVIEW WIRE/LIFECYCLE RESERVED issue66/comment6224996410:
+fresh codex/customer-live-preview-20261017 from exactRoot8cdf8d99c5e548fa27662f84a34c93d00809be38,
+paired public255fea0813bf1aabeaeea2f2de0b29564118f2fc and start gate PASS. ONLY NEW
+site_build/live_preview_wire.py/live_preview.py/live_preview_routes.py, standalone
+contract script, fixed Node live-preview bridge, focused tests/docs/new journal.
+Wire first for Root codegen. Canonical Foundation capture/verify/prepare and
+withPreparedCandidatePreview/studio guarded transport remain the sole producer.
+Central router/shutdown hunks await Root coordination; no edits there yet. No
+DB/provider/current-case/process/browser/migration/globalconfig/portal/public
+actions. Root owns frontend/BFF/actual runtime acceptance/adoption; old proofs,
+failures and journals stay frozen. Lifecycle/wire proposal sent before source.
+
+2026-10-17 helper LIVE PREVIEW FUNCTIONAL source over frozenb059995: Root approved
+the exact readonly-export line and central router/close-beforeDB hooks; added
+new Service/Store/router/Node adapter with original callback/transport as sole
+producer. Runtimejournal78c575e9 separate from wiredb754a52.209pure/mockPASS21.09s,
+19Node mockPASS329.94ms,Ruff7PASS;6PGauthority collected only0.62s. Original
+3FAIL22PASS shutdown/claim/owner baseline retained and fixed. No helper actual
+DB/native/current-case/preview-server/child/browser/provider or consumer changes.
+Wire Git blobs remain frozen. Root receives exact functional pin before actual
+renderer/port/new-tab/expiry/revocation/shutdown adoption; journals helper-owned
+until that handoff. Private artifacts/unknown crash locks/history preserved.
+
+2026-10-17 Root browser recovery: CUA/normal Chrome login restored; unchanged
+API62abbed/public255 freshly prepared native scope25a95e98/package713875fd after
+normal owner session/intake/S6 renewal.11 page openings320/1280 no observed
+horizontal overflow;390 views and empty-form validation,0submitted forms/models.
+Private screenshots/DOM/receipts retained; owned previews closed, viewport restored.
+UI3030 stays741; full product preview/premium design/200%/Foundation remain OPEN.
+Only own handoff metadata changed; no new helper, frontend start or policy bypass.
+
+2026-10-17 Root LIVE PREVIEW SOURCE CHECKPOINT: helper1684e7f integrated over frozen
+b059995 wire; Root portal5651f0e adds fixed BFF and current-ready preview controls,
+43 source checks/TypeScript PASS, two peer P2 repairs source-confirmed. Incremental
+core8cdf-to1684 coverage PASS nine shared paths. Source only: serving62abbed/741d
+unchanged, no new build, SQL acceptance or child. C approximately0.76GB free;
+human-run checked obsolete-output cleanup pending, no deletion/policy bypass.
+Root owns further actual acceptance and both handed-off live-preview journals.
+
+2026-10-16 helper SITE INSPECTION GUARD RESERVED issue66/comment6211107441:
+new codex/site-inspection-guard-20261016 branch in clean OWN helper worktree from
+exactRoot1fb549619c7f1bc5d9b4f8b523e3f2af1329ae27/public255fea0813bf1aabeaeea2f2de0b29564118f2fc,
+pairedstartPASS. Own site_build/service.py feature/generation guard and exact
+lifecycle.py actor admission call, focused offline/nativePG tests/docs/new upgrade.
+Router/Foundation/receipts keep feature guards; advance/lifecycle keep all existing
+worker gates. No S6/owner/Session/source/approval/native pin bypass, paid runner
+activation, operational DB/container/API/native/portal/public/provider edits.
+Root owns actual acceptance/adoption; previous journals and failures stay frozen.
+
+2026-10-16 inspection guard source verified:104 focused PASS8.62s;2 native PG cases
+collect-only PASS2.18s;5 exact Python files Ruff/diff PASS. Broad run preserved:
+2003PASS/8SKIP/67subtests,2FAIL+1ERROR203.68s (Windows1450/temp path and unchanged
+subprocess deadlines); exact3 replay PASS2.82s with no code/deadline change. No
+clean full-suite PASS claimed. Upgradeb8bdb6fe owns2sharedpaths. Root receives
+actual PG/source adoption/new ordinary intake+S6/UI acceptance and journal ownership
+at handoff. Helper DB/API/container/native/provider actions remain0.
+
+2026-10-16 helper PAIRED PRIVATE NATIVE UPGRADE RESERVED issue66/comment6206646677:
+fresh private-native-upgrade branch codex/private-native-upgrade-20261016 from
+exact Root136a8149836162b7a648103f91421e4aa2dd79d9 paired public255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Own private_preview.py/private_native_continuity.py, separate Node observer,
+focused offline/Node/nativePG tests, narrow protocol docs and new unique upgrade.
+Strict original-versus-current source binding; original receipt/manifests retained,
+current observer only, no reimport/autoapproval/S6 bypass. Network drift still
+refused.0042 fences reviewed; no migration change planned. Root owns DB/provider/
+operational files/serving and actual acceptance; frozen journals remain untouched.
+
+2026-10-16 paired native source packet verified locally:1991offlinePASS/8skipped/
+67subtests151.48s,9continuityNodePASS43.97s+78existingNodePASS154.99s,
+v2replay/later-original-anchor focusedPASS,10nativePGcollect-only3.66s.
+Upgrade847a65ac owns3exactsharedsourcepaths;0042source unchanged. Root actual
+PG/operational acceptance/adoption remain UNVERIFIED by helper. Source window
+closes with scoped handoff; Root receives new-journal continuation ownership.
+
+2026-10-16 helper NATIVE EDITORIAL REVIEW BRIDGE RESERVED from exact Root
+7eb21e241625d46fb8a0770db94f12be4fd931d4 in own editorial-review-bridge worktree,
+branch codex/verslomatika-editorial-review-bridge-20261016. Scope: NEW creation
+editorial_review service/strict DTO/router, standalone contract, NEW
+customer-editorial-review.mjs and exact review-editorial command hunks in
+customer-content-workflow.mjs, focused offline/Node/native-PG tests, docs/new
+upgrade. Root explicitly authorized the two central router import/mount hunks;
+they are included with no other central API edits. Canonical native_mutation_guard and model review/atomic approval own
+all gates; editorial_preparation authority is unchanged. Server-bound actor,
+exact site/page/revision/planning pins, immutable operation receipts and uncertain
+dispatch refusal; no independent release. Root owns actual DB/provider/customer/
+serving/adoption/portal. UI peer owns Foundation candidate-preview paths. S42
+source/journals and those peer paths stay untouched.
+
+2026-10-16 helper source packet verified:1951 offline PASS/8skipped/67subtests,
+48 Node PASS (existing workflow plus9 new cases),6 native HTTP/RLS cases collected
+only. Contract parity, exact Python Ruff and diff checks PASS. Upgrade2d0b8a5a
+and mount93e6d016 remain helper-owned until source handoff; Root owns actual PG,
+operational review evidence and coordinated adoption. No helper DB/provider calls.
+
+Helper chat01a13440 owns `codex/verslomatika-direct-messenger-20261016` from Root3b7;
+wire9bea/b237/393 already handed to Root. Functional consultant packet reserves
+workspace_team direct helpers/models/routes/quota/adapter, tasks models/worker/
+direct_scope and workspace_topics/service, additive0043, source/offline/native-QA
+tests only, under issue66 comments6203127387/6203188865/6203398904. Parent group and
+old immutable native Episode provenance remain independent. Focused82PASS, broad
+1870PASS8SKIP67subtests plus2 dependency-only failures retained; ignored dependency
+setup repair16PASS. Five actual PostgreSQL tests collected only. No helper DB,
+provider, current-case, serving, browser or portal work. Root owns actual QA/adoption.
+Saved-agent incremental preview remains a required following source packet.
+
+2026-10-16 helper S42 NATIVE PREVIEW DELIVERY: isolated
+`codex/verslomatika-direct-native-preview-20261016` starts from Root
+`bfa8c6cd4f4c572aa507da408af596361b5b4099`, retaining its actual 59-case
+consultant/legacy acceptance event. Only assigned direct-preview/native hooks,
+Job indexes, additive0044, offline/native-QA tests and the two new Stage2 journals
+are transferred as one net commit. Original WIP40516cd and repaired lineage97e53ef
+remain in the original direct-messenger worktree. All runtime/source/test/migration
+bytes match that fully tested original tree:1908 offline PASS,8 SKIP,67 subtests,
+86.75s. Seven native cases are prepared/collected only. Frozen upgrade158 and
+Root Wellness handoff are unchanged. Root owns actual0044 DB/model/serving/UI
+acceptance; helper DB/provider/current-case/serving operations remain0.
+
+S42 actual-PG repair2026-10-16: helper own branch codex/verslomatika-direct-consultant-repair-20261016 fromea924493; Stage2 WIP paused/separate. Root retained9FAIL48PASS941.82s plusfirst50342883 diagnostic. Exactdirect.py/direct_schema.py +direct/teamPGtests scopedissue66 comment6204095479, upgrade158981cf. Triggernamecast, narrowlegacy/terminalaccountingapplicability, immutableMapnolock/noUPDATE; inheritedS37testordering correctedwithboundedtwo-transactionproof. Focused86PASS/Ruff/nativecollect24only; helperDB/provider/case/serving0. RootactualfreshPG/adoptionpending.
+
+2026-10-17 helper FIRST-REFUSAL DIAGNOSTIC RESERVED issue66/comment6231789228:
+own clean ff53967fa321a0b2a2369a0fee3c17db3dbb292693/public255, new branch
+codex/live-preview-first-refusal-20261017, paired continuePASS. Exact shared
+content-studio/scripts/customer-live-preview.mjs only; existing Node mock test,
+NEWdocs/LIVE_PREVIEW_GUARD_DIAGNOSTIC.md and separatejournalbc755d18. One private
+exclusive firstreceipt preserves safe stage/code/time/pulse sample; all original
+checks/publicfalse and3/20/120/150 bounds retained.42mockNodePASS513.68ms; original
+9FAIL baseline retained. No actualDB/Nodeproducer/server/provider/currentcase/
+serving/adoption, no Rootfiles or oldjournal533 changes. Root reviews completepin
+before actual retry and owns receipt interpretation/optimization/adoption.
+
+2026-10-17 helper ACCEPTED-PROOF INTAKE OBSERVATION RESERVED issue66/comment6232048798:
+own clean412735e1f7694e7e82a31dcc8316b9eb2968dbcb/public255 after pairedcontinue,
+new codex/accepted-proof-intake-observation-20261017. Exact creation_registration/
+service.py +creation/studio.py only, new focusedmocktests/narrowdoc/newjournaldb8860f5.
+Fresh canonical studio view/native/revision observation removes accepted_proof's
+second selected_intake; standaloneprojection and all original validations stay.
+Initialmaterial and selector currentguard retained; no cache/S6/Foundation redesign.
+Original4FAIL26PASS count/coherence and revision-IDFAIL preserved; final197pure/
+offlinePASS1.93s,1actualprocess test deselected,1existing UUIDwarning. No Rootfiles/
+journals/DB/Nodeproducer/server/provider/currentcase/serving/adoption or guardlimit/
+historicalfingerprint changes. Root reviews completepin and owns actual QA/adoption.
+
+2026-10-17 helper AUTHORITY OBSERVATION RESERVED issue66 after explicit Root plan
+approval, clean d904b08c6b2dcef5a4c83eadacb188063e2277a4/public255, paired freshness
+PASS. Branch codex/authority-observation-20261017; upgrade93226de5 owns exactly NEW
+site_build/authority_observation.py, site_build/{live_preview,foundation,continuation}.py,
+creation/{media,private_preview,studio}.py, creation_registration/service.py,
+content_completion/service.py. One call-local entry/final graph, canonical validators,
+distinct U/P/S Sessions and fresh native callbacks/final Git fence. First canonical
+fakeTx counters/mutation baseline before source changes; first focused diff to Root
+before broad regression. No actual DB/provider/process/serving/browser/Root files,
+new sessions, schema/wire/model/role/quota/deadline edits; prior journals frozen.
+
+Root-approved tenth source extension2026-10-17 issue66/comment6232499276: only
+business_discovery/service.py approved_build_context existing select/get freshness.
+Separate upgrade-fd868d05-f4d3-449b-b2e8-510855bf5207;93226de5 record unchanged.
+Identity-map fakeTx1FAIL baseline1588c826 retained; no eleventh source, canonical
+validators/signatures/RLS/error mapping/other discovery functions unchanged.
+
+Authority observation final source verification:389 pure/offline PASS24.35s,
+one actual-process test explicitly deselected, one existing invalid-UUID serializer
+warning; separate36 approved-context PASS4.05s;12Python Ruff/diff PASS. Canonical
+private+S6 counters8material/5selector→2/2 with1mocked native status output per
+Authority invocation. Lifetime, identity-map and first entry-S6 FAIL retained;
+three Root-approved late-private503→409 classifications documented explicitly.
+Upgrades93226de5 andfd868d05 transfer only at complete scoped handoff. Root owns
+actual DB/native/HTTP/browser acceptance, cadence follow-up and serving adoption.
+
+Late-S review retained3FAIL0f08a526 (revoke/expiry/clock-only after final S6
+validation). Actor facts removed completely; Phase.actor always calls canonical
+current_actor and rechecks lifetime/identity after await. Same3PASS6a6757d5.
+Final combined428PASS67.15s (1actual-process deselected,1existing UUIDwarning),
+hashb08aa6a62e62bbed66938ad49803c59291f3b5a71239842d87874b3528bf02f6;
+12PythonRuff/diffPASS. Historical389PASS is not completeness; no Source11.
+
+2026-10-17 Root cadence source window after frozen60e7 handoff: upgrade
+c3cf73e6-9aeb-4596-aedc-50594f4802f3, issue66/comment6232426094. Only studio
+_execute internal interval validation/wait, fixed live-preview serve caller and
+their offline tests/docs. Other callers keep1s; serve selects0.2s. Original
+1FAIL1PASS baseline retained; focused61PASS and real inert-child cleanup8PASS,
+1SQL test deselected. No actual serving adoption yet. Helper's late-P follow-up
+owns only authority_observation/test plus its new journal/docs; those files are
+not edited by Root in parallel. No new provider calls, TTL or deadline changes.
+Late-P HOLD follow-up Root-owned cadence disjoint: helper reopens only
+authority_observation.py, test_authority_observation.py, docs/newjournal39da45c8
+after60e7. Canonical3FAIL965d82cb retained (P revoke/expiry/clock after final
+before_node at retained-output callback). New current-P check uses exact immutable
+request data plus canonical private.current at each cached proof/intake use;
+no studio/live_preview/private_preview edits or Source11.932/fd journals frozen.
+
+Late-P scoped verification116PASS18.39s (85canonicalgraph+31proof), hash877cb469a47d9cc6d37e0de03b369548ddfa801b284b88e9f17b49c4bc86aeb7;
+2PythonRuff/diffPASS; material2/private_latest2 retained.3canonical per-native
+503 restorations documented, first3FAIL and status-expectationFAIL preserved.
+Root owns integratedfullregression/cadence/actual/adoption; no helper428 rerun.
+
+2026-10-17 Root active-inspection window: issue66/comment6233142946,
+upgrade16c3fde4-81e7-4d19-98ae-2b3e58826aa3. Only live_preview.py inspection/
+existing lease verifier composition, new offline test and docs/journal. Unique
+live exact token/fullScope only, original typed errors/false/cancel preserved;
+explicit final drains any older observation then starts a new one. No completed
+permission cache, TTL/deadline/roles/schema change. First concurrent2 baseline
+1a67b5be and WIP post-output failure01600d04 retained. Existing helper reviews
+read-only; Root owns source and actual seven-case PG/real preview follow-up.
+
+2026-10-17 helper CURRENT ACTOR JOINED OBSERVATION reserved issue66/comment6232873051
+from exactRootbe557654161c8124b01547fe67efd3b63bc29c55/public255, branch
+codex/current-actor-joined-observation-20261017. Production scope only
+creation/service.py current_actor nonlocking fresh single SELECT; original
+locking path/order unchanged. Unique/RLS DDL0010/0012 inspected. New offline
+SQL/count/identity-map baseline and current_actor_pg source/collect only; Root
+reviews first focused diff before broad tests. Journal7f80fded; all older journals
+frozen. No actualDB/process/provider/serving/browser, schema/roles/TTL/cadence edits.
+
+2026-10-17 helper RETAINED ANCHOR JOIN reserved issue66/comment6234520268 from
+Root frozen90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0/publicec8a9c032fe926d1d9722802d8eb26fa8bd02937,
+own codex/retained-anchor-join-20261017. Only production private_preview.py
+retained_anchor fresh Request/Receipt joined read and shared receipt-pin helper;
+both populate_existing, marker LEFT JOIN, no-marker selection unchanged. New
+focused offline/PG-source tests, docs/RETAINED_ANCHOR_OBSERVATION.md and unique
+own upgrade. Baseline before production edit; keep P/S, expected-pin-before-Node,
+entry/final guards/callback counts and typed refusal semantics. Root owns actual
+DB/QA/adoption/88/native/browser/providers and live_preview/studio/status files.
+Previous helper branches and all other journals remain frozen.
+
+Retained-anchor packet LOCAL VERIFIED / handoff: upgrade93afd2d3 baseline
+3FAIL17PASS1464d376; first20PASS9d6d1548 reviewed by Root. Final204PythonPASS/
+1explicit native-smoke deselection16.38sc2e26c5a; original smokeFAILadf4aa75
+and all intermediate failures retained, not proven pre-existing. Root's separate
+parent smokePASS is not imported as helper acceptance. FivePGcases collected only
+76a8a56c, no DB fixture. Only terminal/retained_anchor/new shared receipt-pin
+helper production AST changed; validation tail and all P/S/current/capture guard
+functions unchanged. Ruff5files/diff/pairedfreshness PASS; scoped commit/safety
+and coverage transferred to Root for actual integration/QA. Common recovery and
+Authority SQL fakes adapted without weakening assertions; continuity test file
+unchanged. No new edge-case/source expansion, dependency install or self-merge.
+
+Current-actor focused packet: original5FAIL19PASS1.66s05f91fcf retained; first24PASS
+1.10s5db6026b reviewed/approved by Root before related regression. Related140PASS
+10.09sa69dd443 (24newactor+85canonicalAuthority+31proof); legacyfakejoined-shape
+1ERROR7d6aaf20 retained then test-only SQL leaf adapted without stubbingactor.
+ActualPG11cases collected only974e2e3b; Root executes. Production+30/-0 in one
+function, original locking block unchanged. Newjournal7f80fded owns this packet.
+## Exact private Foundation eligibility — Root 2026-10-17
+
+Issue66, source4650/public255 with paired freshness20:22 main533/ec8. Root owns
+only site_build/receipts.py, a new offline private-eligibility regression,
+PRIVATE_FOUNDATION_AGENT_ELIGIBILITY contract and own journal/checkpoint. Preserve
+the synthetic observation; allow only exact UUID.preview.invalid for a no-domain
+Creation in local, after all complete current native/retained/source/actor checks.
+No domain, runtime, calibration or channel admission. Other reserved hosts stay
+refused. Save the original failure before editing production. Helper owns the
+disjoint durable workflow/worker/0045 packet; Serving4650 and data stay unchanged.
+
+## Wellness headless acquisition/email — 2026-10-17
+
+Independent human-requested chat; issue200, branch codex/wellness-headless-acquisition-20261017.
+Base1c6f1f59b88e997df1efa746b2f43c69e6149acd, paired freshness main533597c/publicec8a9c PASS.
+Own acquisition headless/mail/wellness-corpus adapters, acquisition runner and narrowly necessary
+engine/dialogue/instruction changes, new offline tests, wellness acquisition/calibration/runbook docs,
+new unique upgrade journal and this entry. Existing Case/mail/outbox/inbox reused; no second CRM.
+Reserved exclusions: workspace_team, tasks/worker,0045, live/private preview, authority, portal,
+Serving, operating DB/case/native files and all previous journals. Current Creation37/40 held.
+Separate lab ceiling180 attempts/120minutes/3turns, gpt-6.1-sol high; no automatic reset/retry.
+Discovery paid calls0. External prospect transportOFF; controlled own-inbox test only with actual
+configured identity and gates. Private source/contact/model/.eml records remain ignored artifacts.
+
+Wellness headless source packet completed2026-10-18:68offlinePASS,41PGPASS,
+separate actual5-call Case journeyPASS, owned90table restart exact;174/180 lifetime
+model attempts,2unknownusage retained,0external mail. New remaining-time/cancel
+cleanup and exact outbound replay/source binding tested. OperatingBusiness/native,
+workers,37/40 and Root Serving unchanged. Clean scoped handoff to Root for review;
+source delivery is not operating admission or SMTP/inbox acceptance.
+## Active website revision must not block module containment — Root 2026-10-18
+
+Issue66/comment6242920034, from integrated e4f306c. Helper read-only P2
+reproduced through ordinary owner revision POST202 then inspect failure.
+Narrow creation_registration/admin.py optional idle precondition keeps defaultTrue;
+only module_admin stop/inspect passFalse. All current owner/account/Session/tenant
+checks and row locks remain; approve still refuses pending Creation. Dedicated
+module PG test/docs and own journal only. No source window remains with helper;
+its service.py fix is integrated separately and unchanged. No model, schema,
+channels, task dispatch or operating data changed.

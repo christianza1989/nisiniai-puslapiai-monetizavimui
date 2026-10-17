@@ -1,0 +1,7 @@
+{
+  "note": "Executed unchanged d904 canonical Python graph over fake SQL/native data before runtime edits:1FAIL10PASS6.92s. Counter FAIL observed material8/private_latest5/nativeNodeStub1, target2/2/1. Existing revoked current/private/S6 Sessions, disabled User, missing verified account/member, archive, Guidebusy, source and payload mutations all refused. First log SHA2569b6264e9699825f2599cad07248d06f62c99a7a84e13b1a9b4736aaa00df2970. Leaf source bytes/report projection/native transport are mocked; no actual DB/process/provider/serving operations. Baseline failures are retained.",
+  "status": "fixing",
+  "eventId": "1d02a544-6b34-4593-b681-47876dd76df6",
+  "sequence": 2,
+  "at": "2026-10-17T09:29:13.938Z"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actualteamprojection negative1FAIL12PASS2.23s (30profileSQLfor30attempts) preserved; fresh set-based observer nowreads bounded jobprofiles once and validates every row/attempt with original rules plus finalschema fence. Single-attempt APIs/legacy defaults and allhistory remain unchanged; no resultcache or authority/native/S6/profile/model/quota/schema/timeout change. Earlier nonexistent-test-path invocation ran0tests and is preserved separately. ActualPG/performance/lease acceptance pending before539serving adoption.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;tests;scripts pytest offline_tests/test_execution_profile_batch.py offline_tests/test_pipeline_execution_profile.py offline_tests/test_creation_review.py offline_tests/test_creation_registration.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_team_wire.py -q -p no:cacheprovider; ruff check exact3Pythonfiles",
+      "result": "PASS",
+      "evidence": "162PASS7SKIP44.71s;7require explicit no-provider CLI pin/catalogue and are not claimed. LogSHA256debbfa911ebb79aa41a57020016b1bf7dbb12aab76f27c2f67030b7cef1b2fc0. Includes binding/source/schema/default/current-read/duplicate and query-count cases; no DB/provider. RuffPASS."
+    }
+  ],
+  "eventId": "0b9712f9-cfa7-43c6-87f8-405f44469fb7",
+  "sequence": 2,
+  "at": "2026-10-17T08:44:23.553Z"
+}

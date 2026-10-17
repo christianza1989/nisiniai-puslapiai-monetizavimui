@@ -40,7 +40,7 @@ async def test_disabled_start_does_not_probe_or_start_work(monkeypatch):
     [str(uuid4()) for _ in range(17)]])
 def test_allowlist_rejects_empty_invalid_duplicates_or_overflow(monkeypatch, values):
     from pinet_core.site_build import lifecycle
-    monkeypatch.setattr(lifecycle.service, "enabled", lambda: None)
+    monkeypatch.setattr(lifecycle.service, "generation_enabled", lambda: None)
     monkeypatch.setattr(lifecycle, "settings", lambda: SimpleNamespace(
         control_enabled=True, site_build_api_runner_enabled=True,
         business_discovery_runner_enabled=True, site_build_actor_ids=values))

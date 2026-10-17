@@ -9,12 +9,14 @@ from .acquisition.control_routes import router as acquisition_control_router
 from .acquisition.routes import acquisition_router
 from .acquisition.task_routes import router as acquisition_task_router
 from .acquisition.work_routes import owner_router as acquisition_work_owner_router
+from .mail_view.routes import router as mail_view_router
 from .acquisition.work_routes import router as acquisition_work_router
 from .agent_preparation.routes import router as agent_preparation_router
 from .business_discovery.routes import router as business_discovery_router
 from .content_completion.routes import router as content_completion_router
 from .content_work.routes import router as content_work_router
 from .control.routes import router as control_router
+from .creation.editorial_review_routes import router as editorial_review_router
 from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
@@ -24,6 +26,8 @@ from .customer_text.routes import router as customer_text_router
 from .db import db
 from .director.routes import router as director_read_router
 from .public_projects.routes import router as public_router
+from .site_build.live_preview import close_service as close_live_previews
+from .site_build.live_preview_routes import router as live_preview_router
 from .site_build.routes import router as site_foundation_router
 from .tasks.operations import router as operations_router
 from .tasks.routes import router as task_router
@@ -59,7 +63,10 @@ async def lifespan(app):
         yield
     finally:
         try:
-            await build_lifecycle.stop(build_worker)
+            try:
+                await close_live_previews(app)
+            finally:
+                await build_lifecycle.stop(build_worker)
         finally:
             await team_lifecycle.stop(team_worker)
             await db.engine.dispose()
@@ -71,6 +78,7 @@ app.include_router(acquisition_control_router)
 app.include_router(acquisition_router())
 app.include_router(acquisition_work_router)
 app.include_router(acquisition_work_owner_router)
+app.include_router(mail_view_router)
 app.include_router(acquisition_task_router)
 app.include_router(task_router)
 app.include_router(operations_router)
@@ -82,6 +90,7 @@ app.include_router(workspace_team_router)
 app.include_router(customer_agents_router)
 app.include_router(xbot_bridge_router)
 app.include_router(creation_router)
+app.include_router(editorial_review_router)
 app.include_router(business_discovery_router)
 app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
@@ -91,3 +100,4 @@ app.include_router(content_completion_router)
 app.include_router(agent_preparation_router)
 app.include_router(public_router)
 app.include_router(site_foundation_router)
+app.include_router(live_preview_router)

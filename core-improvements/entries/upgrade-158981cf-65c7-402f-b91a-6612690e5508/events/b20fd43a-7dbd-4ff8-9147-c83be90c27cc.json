@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Repair source only, freshQA0043 generator. Originalea andactual9FAIL48PASS941.82s retained; helper DB/provider/case/serving0. ActualRootrerun required; no RLS/adoption PASS claimed. Stage2 remains paused/separate.",
+  "checks": [
+    {
+      "command": "pytest focused direct repair/scope/schema/wire/execution + legacy Episode/team/topics units",
+      "result": "PASS",
+      "evidence": "86PASS0.81s; finalSHA256 7d095fa9453e1d4165c6ec1c7bdf744a785d1bc2c36eb02f6fd9dd8b04194039; four new regressions cover explicitPostgreSQLname cast, scopedlegacyapplicability, immutablefailure-onlyaccounting andimmutablemapreadwithoutUPDATEpermission."
+    },
+    {
+      "command": "ruff check direct.py direct_schema.py test_direct_fence_repair.py test_workspace_direct_pg.py test_workspace_team_pg.py; git diff --check",
+      "result": "PASS",
+      "evidence": "All5files clean, whitespace clean; no broad dependency/codegen/serving changes."
+    },
+    {
+      "command": "pytest --collect-only tests/test_workspace_direct_pg.py tests/test_workspace_team_pg.py",
+      "result": "PASS",
+      "evidence": "24 tests collected0.38s, direct6(includingforeignclassificationdeny)+legacyteam18 including boundedS37serializationtest; no fixtures/databaseexecuted. CollectlogSHA256 1105350480fb0eda67ee00ccfa8787737bf8330b3db2d1fa4fb401f35bc90be9"
+    }
+  ],
+  "eventId": "b20fd43a-7dbd-4ff8-9147-c83be90c27cc",
+  "sequence": 3,
+  "at": "2026-10-15T23:09:57.335Z"
+}

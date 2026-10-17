@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Admit only the exact explicit no-domain private Creation host to complete current Foundation evidence for local agent-draft preparation",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/receipts.py",
+    "agent-business-core/runtime/offline_tests/test_private_foundation_eligibility.py",
+    "docs/PRIVATE_FOUNDATION_AGENT_ELIGIBILITY.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Source4650 receipts.current rejects every local synthetic observation before native capture, including the exact S37 UUID.preview.invalid identity supported by explicit private intake. New canonical entry test retained1FAIL1PASS20deselected1.88s, logSHA256eda20b6179340f430f625af55800707529864f9056c1ad6fac5ee6bbb6882afa. Current ordinary-owner case observations independently show missing Foundation/Registration; that live candidate has not completed local evidence and is not itself a verified-local acceptance."
+  ],
+  "rollback": "Scoped revert of the local eligibility predicate. Preserve historical observations and first failures; do not alter public hosts, data, approval, source, channel, calibration or runtime admission.",
+  "id": "upgrade-f5eb2cce-4843-4ff0-96cd-919bf22e4b9e",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "4650ae77b6951190dbb0eedf4a216c2163b3ccff",
+  "createdAt": "2026-10-17T20:23:47.235Z"
+}

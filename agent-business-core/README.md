@@ -1,6 +1,10 @@
 # Agentinių verslų core planas
 
+**Kur pradėti, 2026-10-17:** šiame faile išsaugotas pradinis architektūros planas. Įgyvendinto Python/PostgreSQL modulio instrukcijos ir datuotų patikrų ribos yra [runtime README](runtime/README.md); verslo agento kūrimo ir kalibravimo eiga – [canonical skill](../SKILLS/business-agent-calibration/SKILL.md), Facebook modulis – [FACEBOOK_SYSTEM](FACEBOOK_SYSTEM.md). Konkrečią būseną tikrink savo HEAD, modulio šaltinyje ir atitinkamos datos įrodymuose. Kodo buvimas savaime nepatvirtina gyvų kanalų ar visų planuotų etapų priėmimo.
+
 **Aktualu 2026-10-10:** [Verslomatika.lt platformos planas](verslomatika-plan/README.md) konkretina vieną visų verslų valdymo aplinką, esamų ir būsimų agentų registrą, direktoriaus pokalbį su kiekvienu agentu, faktais pagrįstas ataskaitas ir buhalteriui paruoštą apskaitos paketą. [Faktinis inventorius](verslomatika-plan/AUDIT.md) atskiria jau sukurtas runtime dalis nuo neįgyvendinto dashboardo bei viso gyvo klientų paieškos pipeline. Žemiau esantis 2026-09-30 tekstas yra istorinis pradinis planas; jo „runtime dar nėra“ statusas neaprašo vėlesnių dalinių įgyvendinimų.
+
+## Istorinis architektūros planas – 2026-09-30
 
 Parengta 2026-09-30. Tai įgyvendinimo planas vieno savininko prižiūrimai nišinių verslų grupei: keturi skirtingi simuliuojami verslai, jų direktoriai ir specialistai, bendros paslaugos ir automatinis sistemos tobulinimas. Šiame kataloge dar nėra veikiančio core, paleistų simuliacijų ar realių verslo operacijų.
 

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Root independently reviewed helper3b77dd99 and integrated only that packet asffb3d70640012e615027b4b2699adc496fa6cdb7 over own source894bf22. Parent/public source cleanliness and separately hashed producer-owned local storage data remain distinct. Actual native site/review/approval/build/SQLite/form/measurement adoption is still pending; no serving or customer-state change was performed by this test batch.",
+  "checks": [
+    {
+      "command": "Paired freshness wrapper atffb3d706/public255fea then node --experimental-test-module-mocks --test content-studio/test/preview-local-storage.test.mjs content-studio/test/candidate-preview-preparation.test.mjs content-studio/test/customer-site-preview.test.mjs",
+      "result": "PASS",
+      "evidence": "Root25PASS0FAIL0SKIP23546.592ms:9new storage plus7candidate-preparation plus9existing inert process/source cases. Fixed config/schema/build binding, true public cleanBuildSource negative dirty-source checks, same persistence args, preserved synthetic sentinels/failed attempts, revocation and total150s bound. DB/server transports mocked; real native rows and website not accepted by this result. Original helper failures retained in prior event."
+    }
+  ],
+  "eventId": "fb2f6c23-62a0-4ecb-a18f-9f5721168c68",
+  "sequence": 3,
+  "at": "2026-10-16T02:11:25.710Z"
+}

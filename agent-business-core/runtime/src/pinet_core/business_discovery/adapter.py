@@ -10,7 +10,7 @@ from ..config import settings
 from ..creation import adapter as shared
 from ..tasks.codex import child_environment
 from ..tasks.codex_transport import RunnerError, execute
-from . import deadlines
+from . import deadlines, source_projection
 from .wire import PlanReview, Reply
 
 ROOT = shared.ROOT
@@ -40,6 +40,7 @@ def instructions(role):
     if role not in {"creator", "critic", "coordinator"}:
         raise RunnerError("review_invalid")
     parts = [POLICY_FILE.read_text("utf-8")]
+    parts.append(source_projection.DIRECTIVE)
     parts.append("Your specific team role is " + role + ".")
     for relative in REFERENCES:
         parts.append("\n\nCANONICAL_REFERENCE " + relative + "\n" + (ROOT / relative).read_text("utf-8-sig"))
@@ -53,7 +54,7 @@ def instructions(role):
         profile = {**profile, "timing_policy": timing}
     material = "\n".join(parts)
     pin = hashlib.sha256(json.dumps({"role": role, "instructions": material, "schema": schema.model_json_schema(),
-                                     "execution": profile}, sort_keys=True).encode()).hexdigest()
+                                     "execution": profile, "source_projection": source_projection.contract()}, sort_keys=True).encode()).hexdigest()
     return material, pin
 
 
@@ -91,7 +92,8 @@ async def run_role(context, authorized, *, role, seconds):
     if pin != context["expected_instruction_hash"]:
         raise RunnerError("instructions_changed")
     schema_model = Reply if role == "creator" else PlanReview
-    prompt = policy + "\n\nUNTRUSTED_CUSTOMER_AND_SOURCE_CONTEXT_JSON\n" + json.dumps(context, ensure_ascii=False)
+    model_context, projection_receipt = source_projection.model_context(context)
+    prompt = policy + "\n\nUNTRUSTED_CUSTOMER_AND_SOURCE_CONTEXT_JSON\n" + json.dumps(model_context, ensure_ascii=False)
     if len(prompt.encode()) > 262144:
         raise RunnerError("context_limit")
     folder = workspace / ("discovery-" + role + "-" + str(uuid4()))
@@ -103,7 +105,7 @@ async def run_role(context, authorized, *, role, seconds):
     schema.write_text(json.dumps(output_schema), encoding="utf-8")
     inputs = {"role": role, "model": model, "reasoning_effort": profile["reasoning_effort"],
               "instruction_hash": pin, "prompt_bytes": len(prompt.encode()),
-              "context_bytes": len(json.dumps(context, ensure_ascii=False).encode()),
+              "context_bytes": len(json.dumps(model_context, ensure_ascii=False).encode()), **projection_receipt,
               "output_schema_sha256": hashlib.sha256(json.dumps(output_schema, sort_keys=True).encode()).hexdigest()}
     (folder / "input.private.json").write_text(json.dumps(inputs), encoding="utf-8")
     permitted = context.get("permitted_web_actions", 0)

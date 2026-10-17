@@ -1,7 +1,26 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import sharp from 'sharp';
+import {spawnSync} from 'node:child_process';
 import {optimizeRaster} from '../src/image-pipeline.mjs';
+
+test('metadata workflow is usable without loading the native raster backend',()=>{
+ const pipelineUrl=new URL('../src/image-pipeline.mjs',import.meta.url).href;
+ const workflowUrl=new URL('../scripts/customer-content-workflow.mjs',import.meta.url).href;
+ const result=spawnSync(process.execPath,['--input-type=module','--eval',`
+  import assert from 'node:assert/strict';
+  import {register} from 'node:module';
+  register('data:text/javascript,'+encodeURIComponent("export function resolve(specifier,context,nextResolve){if(specifier==='sharp')throw Object.assign(new Error('Native raster backend unavailable'),{code:'TEST_RASTER_UNAVAILABLE'});return nextResolve(specifier,context);}"),import.meta.url);
+  const {IMAGE_POLICY,optimizeRaster}=await import(${JSON.stringify(pipelineUrl)});
+  await import(${JSON.stringify(workflowUrl)});
+  assert.equal(IMAGE_POLICY.version,'responsive-webp-v1');
+  assert.equal(IMAGE_POLICY.maxInputBytes,12*1024*1024);
+  await assert.rejects(()=>optimizeRaster(Buffer.alloc(0),'image/png'),/12 MB/);
+  await assert.rejects(()=>optimizeRaster(Buffer.from('Raster operation needs its backend'),'image/png'),{code:'TEST_RASTER_UNAVAILABLE'});
+ `],{encoding:'utf8',timeout:15000});
+ assert.equal(result.error,undefined);
+ assert.equal(result.status,0,result.stderr);
+});
 
 test('responsive WebP preserves alpha and never upscales a small source',async()=>{
  const source=await sharp({create:{width:1000,height:500,channels:4,background:{r:20,g:80,b:40,alpha:0}}}).png().toBuffer();

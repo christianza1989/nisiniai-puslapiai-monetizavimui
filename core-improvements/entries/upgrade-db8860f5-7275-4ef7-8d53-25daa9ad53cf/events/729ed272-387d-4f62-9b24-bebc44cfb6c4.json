@@ -1,0 +1,7 @@
+{
+  "note": "Factored existing studio projection body into fresh internal intake_observation, kept standalone publicwrapper, removed duplicate selected_intake in accepted_proof. Initialproof pins revisionID/sequence/source/candidate/job across await; exact selectedtuple drives projection/native/digest. Original4FAIL26PASS and addedrevisionID1FAIL retained; selector itself/currentguard and private/S6/Foundation files untouched.",
+  "status": "fixing",
+  "eventId": "729ed272-387d-4f62-9b24-bebc44cfb6c4",
+  "sequence": 2,
+  "at": "2026-10-17T09:08:05.583Z"
+}

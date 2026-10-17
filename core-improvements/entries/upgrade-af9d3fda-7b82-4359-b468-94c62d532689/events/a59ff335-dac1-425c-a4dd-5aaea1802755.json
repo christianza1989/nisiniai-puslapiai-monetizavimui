@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "WIRE ONLY checkpoint for Root codegen; no routes, worker, database schema or provider dispatch registered. Frontend/API/adoption remains Root-owned. Functional consultant runtime and native preview are next bounded packets, not accepted by this wire evidence.",
+  "checks": [
+    {
+      "evidence": "50PASS0.26s (27new+18existingEpisode+5legacyteam), no DB fixtures/paidcalls. LogSHA256 364fc9fb689281ec6135c34fcf5f3975470cde40c67aaccd9cc256801502c5bd. Scope/recipient/author/idempotency payload guards, ordered chat history, native-only-business union, truthful Quality currentness vs old Task status, legacy wire preserved.",
+      "result": "PASS",
+      "command": "python -X utf8 -B -m pytest -p no:cacheprovider -q offline_tests/test_direct_messenger_contract.py offline_tests/test_workspace_agent_episode.py tests/test_workspace_team.py"
+    },
+    {
+      "evidence": "Standalone OpenAPI3.1 seven operations exported without runtime startup; all refs resolved in focused tests. ExportSHA256 3b2d667cf17260e866f849c8cdf0799284a40f845114bb95c25d80d4d2d09294. No public generated file written by helper.",
+      "result": "PASS",
+      "command": "python -X utf8 -B -m pinet_core.workspace_team.direct_contract --output private-direct-openapi.json"
+    },
+    {
+      "evidence": "All3files Ruff clean; whitespace clean. Existing group/directory/Task/Episode/source schema files untouched.",
+      "result": "PASS",
+      "command": "python -m ruff check direct_wire.py direct_contract.py test_direct_messenger_contract.py; git diff --check"
+    }
+  ],
+  "eventId": "a59ff335-dac1-425c-a4dd-5aaea1802755",
+  "sequence": 3,
+  "at": "2026-10-15T22:03:59.949Z"
+}

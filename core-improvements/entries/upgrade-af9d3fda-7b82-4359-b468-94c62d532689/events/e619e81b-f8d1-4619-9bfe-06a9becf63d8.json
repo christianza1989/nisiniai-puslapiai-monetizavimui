@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "52PASS0.36s (29new+18Episode+5legacy). LogSHA256 378ab8961745435ff8785d6e0afe5200c05bcd470cd5cc48d5bb00d225698470. Added exact ownedDiscovery-vsforeignscope and terminalTaskcannotcan_cancel tests.",
+      "result": "PASS",
+      "command": "python -X utf8 -B -m pytest -p no:cacheprovider -q offline_tests/test_direct_messenger_contract.py offline_tests/test_workspace_agent_episode.py tests/test_workspace_team.py"
+    },
+    {
+      "evidence": "Standalone export and Ruff3files clean. Revised exportSHA256 5f66f3a941e8d081a68491c6084111833e386dbcefd1b8a48c52d0a39721df89. Seven operations/versionworkspace-direct.v1 unchanged; no API registration.",
+      "result": "PASS",
+      "command": "python -m pinet_core.workspace_team.direct_contract --output private-direct-openapi.json; python -m ruff check direct_wire.py direct_contract.py test_direct_messenger_contract.py"
+    }
+  ],
+  "note": "Root explicitly requested two pre-codegen wire refinements: server-projected can_cancel and owned discovery in the workspace-only consultant anchor union. Frozen9bea retained as first checkpoint; this is an additive follow-up before serving integration. Saved native preview still requires actual business/grant; no Task/DB/runtime files changed. No provider or DB execution.",
+  "eventId": "e619e81b-f8d1-4619-9bfe-06a9becf63d8",
+  "sequence": 4,
+  "at": "2026-10-15T22:09:04.420Z"
+}

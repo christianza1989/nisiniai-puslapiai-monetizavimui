@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "id": "upgrade-cbb19e1b-1cef-4a9a-b6ed-5ab933768301",
+  "file": "PIRMAS_PILOTAS_GREITOS_SVETAINES.md",
+  "reason": "Three-line root alias has no unique facts or evidence; supported sites/greitossvetaines.md remains unchanged, explicit loaders and registries do not consume alias, original bytes retained for restore.",
+  "sha256": "f1d916272fde48a591183a4851278549a23075dde242c27053fc6e36995dc293",
+  "baseSha": "9a46650a033d283dfb559d7b835a26384e3225fe",
+  "createdAt": "2026-10-17T14:32:05.730Z",
+  "bytes": 264
+}

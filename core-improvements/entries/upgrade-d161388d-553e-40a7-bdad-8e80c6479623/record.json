@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Discovery product-only traversal and prefix-only model projection omit actual commercial documents and late adverse business-use terms. Preserve exact bounded evidence, provenance and original capture.",
+  "category": "code",
+  "evidence": [
+    "Base 73658777948da00741f9e54cd78ca9efa15cb3e6; Root-authorized S33 issue66 scope comment6194702768.",
+    "Retained private capture SHA256 c53877641390b3f786bbbc89d0c578b9e1b7ffff39a3cac6cc91aaf26d085337: all five captured business-use restriction clauses omitted by exact v1 projection 50efa3f5eac590a70e94b9e56f2659dc82fb2a4ee987748a5ae8528f70ab4683. Actual commercial document link existed but was neither queued nor projected.",
+    "Original synthetic baseline 4FAIL1PASS7.50s and intermediate 1FAIL41PASS9.57s retained in ignored artifacts/s33; no provider/web/DB/case/serving action."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/sources.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/source_projection.py",
+    "agent-business-core/runtime/src/pinet_core/business_discovery/instructions.md",
+    "agent-business-core/runtime/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of S33 functional commit; retain historical captures, v1 projection hashes and original failures. No automatic runtime adoption or data migration.",
+  "id": "upgrade-d161388d-553e-40a7-bdad-8e80c6479623",
+  "branch": "codex/verslomatika-discovery-commercial-evidence-20261015",
+  "baseSha": "73658777948da00741f9e54cd78ca9efa15cb3e6",
+  "createdAt": "2026-10-15T14:46:59.623Z"
+}

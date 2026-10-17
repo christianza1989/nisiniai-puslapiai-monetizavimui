@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Canonical synthetic helper correction confirmed by actual High profile success and critic-failure scenarios; unchanged900s profile policy, default limits and authorization checks. First failed helper assertion/logs retained. Whole preview stability remains unaccepted.",
+  "checks": [
+    {
+      "command": "Root isolated PostgreSQL533 targeted pipeline execution profile tests",
+      "result": "PASS",
+      "evidence": "Part of10PASS146.23s SHA278409c955d0d1fea025d3f4ec6fd3f921c5c072f73f273780ae0f91fc74fd7f; both High role-runner variants, olddefault rows and source/parent refusal pass; provider0, original/operational/native exact."
+    }
+  ],
+  "eventId": "ce014571-1dd3-49ee-9db6-0a000e81b4e2",
+  "sequence": 3,
+  "at": "2026-10-17T09:21:18.370Z"
+}

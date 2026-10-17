@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Exact-lease in-flight coalescing and lifetime source repair only. Every invocation after a completed result starts a fresh full verification; no timed or cross-lease cache. Individual cancellation is shielded, owner cleanup joins authority even after unknown producer failure, and no late heartbeat survives stop/expiry. Original4FAIL2PASS and intermediate39PASS1FAIL are retained in RUNBOOK. Separate shared Git observation repair and actual renderer/API/UI acceptance remain pending; servingda578 is unchanged.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;tests;scripts pytest offline_tests/test_live_preview_runtime.py offline_tests/test_live_preview_wire.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py offline_tests/test_site_build_lifecycle.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py -q -k not_real_studio_monitor -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "215PASS5.54s,1deliberate actual-process deselection/1existing invalidUUID warning. Private logSHA2567a435c6bbdf7196286b1f71b7c02d58a9309e6dc0a1059886bd7c58361921d13."
+    },
+    {
+      "command": "pytest offline_tests/test_live_preview_runtime.py -q -p no:cacheprovider; ruff check src/pinet_core/site_build/live_preview.py offline_tests/test_live_preview_runtime.py",
+      "result": "PASS",
+      "evidence": "Final41PASS6.80s includes extra unknown-producer/inflight-authority cleanup test; Ruff PASS. Private logSHA256b99532387945f93336116b16a61e612b5d32043633ea5c5a2b4f3048a910559c. No DB/child/browser/provider actions."
+    }
+  ],
+  "eventId": "31fe02f8-a496-47dc-b760-65ca1288603b",
+  "sequence": 3,
+  "at": "2026-10-17T08:08:30.393Z"
+}

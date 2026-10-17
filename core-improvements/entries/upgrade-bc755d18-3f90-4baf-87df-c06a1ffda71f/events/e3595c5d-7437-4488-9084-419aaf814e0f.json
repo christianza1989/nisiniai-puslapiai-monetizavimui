@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-live-preview.test.mjs",
+      "evidence": "42PASS513.68ms,19existing+23new,0skip/fail. Accurate claim/heartbeat/context/media/deadline reasons, before/afterMedia, earlierpulse vs laterrefresh, first retention/concurrency/laterinvocation, privacy, writeerror/stall refusal and successnone. Private logSHA2562ee6496b130d71aeeec9e178100310432c89c1aea59b5ade5f84ebfd7dd5639c. Original9FAIL2.016865s SHAd52afa902b58db54a58a0c6ea96e5e971a4e1712eb3b4089d0d7093c8819fcb7 preserved.",
+      "result": "PASS"
+    },
+    {
+      "command": "node --check content-studio/scripts/customer-live-preview.mjs; git diff --check",
+      "evidence": "Syntax/whitespace PASS. Only scoped Node source plus mocktest/newdiagnosticdoc/newjournal/ownWORKSTREAMS appendix; no Python/wire/schema/threshold/history/dependency or Rootreservedfile modifications.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Source and pure/mock Node only, no actualDB/Nodeproducer/server/provider/currentcase/browser/adoption or Rootfiles/oldjournal changes. All guard checks/publicfalse/auth_revoked and existing3/20/120/150 bounds unchanged; Root owns actual receipt/retry/rootcause/optimization/adoption.",
+  "eventId": "e3595c5d-7437-4488-9084-419aaf814e0f",
+  "sequence": 3,
+  "at": "2026-10-17T08:39:24.781Z"
+}

@@ -32,7 +32,23 @@ class Element:
     def text(self, visible=True):
         if visible and self.hidden():
             return ''
-        return ' '.join(c.text(visible) if isinstance(c, Element) else c for c in self.children)
+        # Inline boundaries do not insert characters: "word<a>,</a>" stays
+        # "word," and adjacent spans can form one word. Block/line boundaries
+        # still separate independent text. This is structural, not CSS layout.
+        blocks = {'address', 'article', 'aside', 'blockquote', 'body', 'br',
+                  'caption', 'dd', 'details', 'dialog', 'div', 'dl', 'dt',
+                  'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1',
+                  'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr', 'li', 'main',
+                  'nav', 'ol', 'p', 'pre', 'section', 'table', 'tbody', 'td',
+                  'tfoot', 'th', 'thead', 'tr', 'ul'}
+        parts = []
+        for child in self.children:
+            if isinstance(child, Element):
+                text = child.text(visible)
+                parts.append(' ' + text + ' ' if child.tag in blocks else text)
+            else:
+                parts.append(child)
+        return ''.join(parts)
 
 
 class Document(HTMLParser):

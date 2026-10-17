@@ -9,7 +9,8 @@ from pinet_core.creation import execution_profiles as profiles
 from pinet_core.tasks.codex_transport import RunnerError
 
 
-@pytest.mark.parametrize("role,remaining,expected", [("creator", 600, 420), ("critic", 600, 90),
+@pytest.mark.parametrize("role,remaining,expected", [("creator", 900, 660), ("creator", 800, 620),
+    ("creator", 600, 420), ("critic", 600, 90),
     ("coordinator", 600, 90), ("creator", 400, 220), ("critic", 100, 10), ("coordinator", 40, 40)])
 async def test_high_discovery_dispatch_clips_to_one_deadline_with_review_reserves(tmp_path, monkeypatch, role, remaining, expected):
     cfg = settings()
@@ -72,7 +73,31 @@ def test_only_high_discovery_fingerprint_includes_timing_policy(monkeypatch):
 
 
 @pytest.mark.parametrize("profile,seconds,expected", [(profiles.DEFAULT, 180, 360),
-    (profiles.DEFAULT, 300, 600), (profiles.SOL_HIGH, 180, 600), (profiles.SOL_HIGH, 300, 600)])
+    (profiles.DEFAULT, 300, 600), (profiles.SOL_HIGH, 180, 900), (profiles.SOL_HIGH, 300, 900)])
 def test_job_budget_preserves_default_and_fixes_only_selected_discovery(profile, seconds, expected, monkeypatch):
     monkeypatch.setattr(settings(), "creation_runner_seconds", seconds)
     assert adapter.deadlines.job_seconds(profile) == expected
+
+
+async def test_old_v1_high_snapshot_cannot_dispatch_under_measured_v2_policy(tmp_path, monkeypatch):
+    cfg = settings()
+    monkeypatch.setattr(cfg, "creation_execution_profile", profiles.SOL_HIGH)
+    monkeypatch.setattr(adapter, "available", lambda: (sys.executable, tmp_path))
+    current = adapter.deadlines.policy
+    def historical(profile):
+        value = current(profile)
+        return {**value, "revision": "local-high-discovery-deadline.v1", "job_seconds": 600,
+                "creator_seconds": 420} if value else None
+    monkeypatch.setattr(adapter.deadlines, "policy", historical)
+    old_pin = adapter.instructions("creator")[1]
+    monkeypatch.setattr(adapter.deadlines, "policy", current)
+    dispatched = []
+    async def execute(*args, **kwargs):
+        dispatched.append(True)
+        raise AssertionError("An old timing snapshot must fail before provider dispatch")
+    monkeypatch.setattr(adapter, "execute", execute)
+    async def authorized():
+        return True
+    with pytest.raises(RunnerError, match="instructions_changed"):
+        await adapter.run_role({"expected_instruction_hash": old_pin}, authorized, role="creator", seconds=900)
+    assert not dispatched

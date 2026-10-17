@@ -1,0 +1,9 @@
+{
+  "sourceBase": "07d8e577f9df78d7d5057cd625004a4d6d9f180a",
+  "result": "4 FAIL, 24 deselected, 1.82s",
+  "logSha256": "1fd0088bdc26a8049894e6e49e196be62b12704f5737b3c49a0004badeb07dad",
+  "cases": ["creation.available", "customer_text.adapter.runner_ready", "workspace_team.adapter.runner_ready", "tasks.codex.run"],
+  "failure": "MemoryError from synthetic guard forbidding Path.read_bytes on the inert temporary executable",
+  "actualInstalledBinaryBytesReportedByRoot": 341312816,
+  "classification": "Synthetic source reproduction; separate from Root's actual operator MemoryError/recovery. No provider, DB, installed binary dispatch or operating process change"
+}

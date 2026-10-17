@@ -1,0 +1,28 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Explicit durable native draft-to-single-scenario workflow on maintained Tasks worker",
+  "category": "workflow",
+  "evidence": [
+    "Source e479: preparation.complete saves canonical Config but no durable S5 continuation; episode path exists behind a separate explicit owner action."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/migrations/versions/0045_workspace_agent_workflow.py",
+    "agent-business-core/runtime/offline_tests/test_workspace_agent_workflow.py",
+    "agent-business-core/runtime/tests/test_workspace_agent_workflow_pg.py",
+    "agent-business-core/runtime/scripts/workspace_agent_workflow_contract.py",
+    "docs/contracts/verslomatika-workspace-agent-workflow.openapi.json",
+    "docs/contracts/verslomatika-workspace-team.openapi.json",
+    "docs/contracts/verslomatika-workspace-agent-episode.openapi.json",
+    "docs/contracts/verslomatika-workspace-agent-preparation.openapi.json",
+    "docs/WORKSPACE_AGENT_WORKFLOW.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Before adoption revert own scoped commits. Migration downgrade refuses retained workflow rows/events; never delete operational history.",
+  "id": "upgrade-a3f791c5-1fce-46ec-943b-5e2917b7a6c0",
+  "branch": "codex/agent-preparation-join-20261017",
+  "baseSha": "e4794c59e19d533b1673e408e38fbe104157d6f6",
+  "createdAt": "2026-10-17T20:23:26.290Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "S31 exact48fe newownedbranch: originalbaseline2FAIL5PASS3.83s missingprecleanupfields preserved. Added privateobservationv2 fields only: observedparentcode BEFOREexistingstop, wait/stdinclosed/stdoutEOF/stderrEOF observedtimes andprecleanupTask/EOFstates, outputstat-onlyexists/type/bytes, cleanupkillrequested. RealS29 creator139435B/timeout408.6575s/laststdout153.2103 andS30 compact67585B/timeout403.863s/laststdout223.7185 originalv1 FAILs unchanged, notretroclassifiedaspipe failures. Separate no-provider in-memory inertprobe proved parent0/waitdone withstdoutnotEOF can stillproduce oldrun_timeout; notrealCLIproof. No sharedexecutor behavior, limits, flags, role/model/profile, receipts, permissions, case/DB/serving changes. ExistingruntimeREADME narrowly definesv2/unknown/time semantics.",
+  "eventId": "01bb86c9-df81-4842-9533-1919ed356ed4",
+  "sequence": 2,
+  "at": "2026-10-15T13:15:25.237Z"
+}

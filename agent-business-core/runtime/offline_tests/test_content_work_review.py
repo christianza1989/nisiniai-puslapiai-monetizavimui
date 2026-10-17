@@ -8,7 +8,6 @@ from pinet_core.creation.review import (
     CoordinatorDecision,
     CriticReview,
     canonical_sha256,
-    model_output_schema,
 )
 from pinet_core.tasks.codex_transport import RunnerError
 
@@ -128,7 +127,8 @@ def test_native_schema_pins_exact_refs_hash_round_and_instructions():
         "pageData": {"planningBrief": {"head_query": "Kaip pasirinkti užduotį?"}}, "siteData": {}}
     ctx = review.context(candidate, 1, receipts, prepared)
     schema = review.output_schema("critic", ctx)
-    assert "draft:/body/0/content/0/text" in schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"]
+    assert "draft:/body/0/content/0/text" in ctx["allowed_finding_refs"]
+    assert schema["$defs"]["BusinessFinding"]["properties"]["evidence_ref_indices"]["items"]["maximum"] == len(ctx["allowed_finding_refs"])-1
     assert schema["properties"]["draft_sha256"]["const"] == canonical_sha256(candidate)
     modified = deepcopy(prepared)
     modified["instructionHash"] = "b" * 64
@@ -143,6 +143,28 @@ def test_native_schema_pins_exact_refs_hash_round_and_instructions():
     assert len(choices) == 9  # One correction plus eight factually unverified checks.
 
 
+@pytest.mark.parametrize("verdict", ["accept_draft", "revise"])
+def test_native_provider_exact_sets_keep_required_repairs_and_known_check_status(verdict):
+    candidate = output()
+    receipts = review.observations(candidate)
+    report = review.critic(critic(candidate, receipts, verdict), output=candidate, round_number=1, receipts=receipts)
+    prepared = {"pageData": {"planningBrief": {}}, "siteData": {}}
+    ctx = review.context(candidate, 1, receipts, prepared, report)
+    schema = review.output_schema("coordinator", ctx)
+    value = coordinator(candidate, report)
+    value.pop("correction_ids")
+    value.pop("remaining_checks")
+    value["schema_version"] = schema["properties"]["schema_version"]["const"]
+    value["next_actions"] = ctx["allowed_next_actions"][:5]
+    restored = review.coordinator(value, output=candidate, critic_value=report, round_number=1, receipts=receipts)
+    assert restored["decision"] == verdict and restored["correction_ids"] == (["f_1"] if verdict == "revise" else [])
+    assert "language_quality" not in restored["remaining_checks"] and len(restored["remaining_checks"]) == 8
+    value["remaining_checks"] = ["language_quality"]
+    with pytest.raises(RunnerError, match="review_invalid"):
+        review.coordinator(value, output=candidate, critic_value=report, round_number=1, receipts=receipts)
+    assert "verified_coordinator_sets" in ctx
+
+
 @pytest.mark.parametrize("role", ["critic", "coordinator"])
 def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding(role):
     original_models = (CriticReview.model_json_schema(), CoordinatorDecision.model_json_schema())
@@ -153,18 +175,15 @@ def test_native_schema_inherits_compact_shared_limits_with_original_rich_binding
     prepared = {"pageData": {"planningBrief": {"head_query": "Kaip pasirinkti užduotį?"}}, "siteData": {}}
     ctx = review.context(candidate, 1, receipts, prepared, report if role == "coordinator" else None)
     schema = review.output_schema(role, ctx)
-    expected = model_output_schema(role)
+    expected = review.NativeCriticOutput.model_json_schema() if role == "critic" else review.shared.coordinator_provider_schema()
     if role == "critic":
         from pinet_core.creation import language_mode
-        language_mode.constrain_findings(expected, "Finding")
-        expected["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = ctx["allowed_finding_refs"]
-        refs = expected["$defs"]["ReviewCheck"]["properties"]["evidence_refs"]
-        refs.update(minItems=1, maxItems=1)
-        refs["items"]["enum"] = [receipt["id"] for receipt in ctx["receipts"]]
-        finding = schema["$defs"]["Finding"]["properties"]
+        language_mode.constrain_findings(expected, "BusinessFinding")
+        expected["$defs"]["BusinessFinding"]["properties"]["evidence_ref_indices"]["items"]["maximum"] = len(ctx["allowed_finding_refs"])-1
+        finding = schema["$defs"]["BusinessFinding"]["properties"]
         assert finding["explanation"]["maxLength"] == finding["correction"]["maxLength"] == 240
-        assert schema["$defs"]["ReviewCheck"]["properties"]["summary"]["maxLength"] == 100
-        assert "draft:/body/0/content/0/text" in finding["evidence_refs"]["items"]["enum"]
+        assert schema["$defs"]["CheckSummaries"]["properties"]["source"]["maxLength"] == 100
+        assert "draft:/body/0/content/0/text" in ctx["allowed_finding_refs"]
     else:
         expected["properties"]["critic_sha256"]["const"] = canonical_sha256(report)
         expected["properties"]["decision"]["const"] = "revise"

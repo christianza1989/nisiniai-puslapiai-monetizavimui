@@ -1,0 +1,21 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Keep module stop and inspect available to the exact current owner during an active website revision",
+  "category": "code",
+  "evidence": [
+    "Read-only helper P2 reproduced through ordinary owner revision POST202: inspect/stop failed creation_revision_pending; first isolated PostgreSQL FAIL8.25s log6f5c73fa0a5a4feafa8b7104792d61783f79391ab800c0f535c3b3a904f6ca77, original/operating/native exact and no provider/channel IO."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation_registration/admin.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/module_admin.py",
+    "agent-business-core/runtime/tests/test_acquisition_module_admin_pg.py",
+    "docs/ACQUISITION_MODULE_ADMIN.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this narrow containment call and optional actor idle precondition; default idle behavior remains for all existing writers. Preserve module state and private receipts; no schema or operating activation.",
+  "id": "upgrade-f51603c8-0050-42f4-aa02-276df54300b5",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "e4f306c26c9938107e121e968f3203a4f07b9b9f",
+  "createdAt": "2026-10-17T23:15:16.995Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "A further fresh CURRENT operational0042 dump/restore/migration at reviewed Root136a814/public255 preserved86 pre-existing tables and163 actual native case files, not the earlier stale-session staging clone. Original0032 unchanged. Restricted lifecycle/direct/native-preview preflight passed; exact cutover recheck passed after stopping the old idle API. This proves restored-schema compatibility only. The subsequent explicit current-source private intake correctly exposed a SEPARATE retained-anchor public/importer incompatibility409; original failure/newDB retained, no S6/review/approval/release attempted. Root safely restored prior3b7/original0042 read service; normal login/current13-page completion200/site058/contextab17 exact. Paid workers/channel delivery held, provider0. New upgrade-continuity cause is delegated to a separately owned record, not silently covered by this migration fix.",
+  "checks": [
+    {
+      "command": "Owned wellness-direct-final-adoption.private.py prepare then verify-cutover under paired source136a814/public255 freshness",
+      "result": "PASS",
+      "evidence": "Fresh full backup/restore0042→0044; all86old row/content hashes equal,2new direct tables empty,163actual case files equal, restricted schema/lifecycle preflightPASS, final oldDB/native exact cutover checkPASS, original0032 preserved. No model call."
+    },
+    {
+      "command": "Owned safe rollback after retained original409, then ordinary HTTP owner login and content-completion read",
+      "result": "PASS",
+      "evidence": "Only exact owned newAPI stopped. Restored prior3b7/original0042/public1a on18871/PID7572 with paid workers held; HTTP200/current13records, physical058c83 and canonical contextab170a exact. Failed0044 copy/backup/request retained, original jobs/usage untouched. This is rollback/read availability, not new-source customer adoption."
+    }
+  ],
+  "eventId": "72902ef2-3bb0-4d66-8864-13ef4a2f8adb",
+  "sequence": 4,
+  "at": "2026-10-16T02:30:28.098Z"
+}

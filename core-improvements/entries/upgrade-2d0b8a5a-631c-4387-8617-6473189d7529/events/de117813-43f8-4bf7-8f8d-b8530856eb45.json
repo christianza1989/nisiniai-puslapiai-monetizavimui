@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Canonical bridge added without changing preparation/model/readiness/release authority. Preserved original missing-service1FAIL0580248e, ASGI fixture1FAIL32PASS783f75a0 and synthetic operatorName1FAIL4PASS43334d65 (diagnosticaf5c40ac). New edited-draft history regression first failed63016e66: receipt projected current cleared approval instead of retained publishedRevision.approval. Corrected only new receipt projection; retained historical snapshot/facts unchanged. Targeted history1PASS3.20s66ea95f0. Full SHA256 and reproduction commands in RUNBOOK; ignored private logs retained.",
+  "eventId": "de117813-43f8-4bf7-8f8d-b8530856eb45",
+  "sequence": 2,
+  "at": "2026-10-16T01:24:48.149Z"
+}

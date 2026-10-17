@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Private coordinator prose wire replaces unsupported composite consts. Stored/public CoordinatorDecision unchanged; original bad legacy full output still rejects. Actual new wire provider compatibility and UI retry remain pending.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_creation_review.py offline_tests/test_content_work_review.py offline_tests/test_creation_compact_review.py offline_tests/test_creation_language_patch.py offline_tests/test_creation_team_controller.py -q",
+      "result": "PASS",
+      "evidence": "245PASS7SKIP15.91s before an additional focused composite-constant compatibility assertion. All9known-PASS/unknown combinations, exact empty sets, malicious compact arrays/extra fields, wrong hashes/verdict/actions/launch flags, unchanged legacy strict postchecks, public schema hashes and original critic policy preserved. Provider0."
+    },
+    {
+      "command": "pytest offline_tests/test_discovery_research_first.py -q; ruff check five changed Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "22PASS3.28s for the integrated S33 collector; scopedRuff and diff clean. Separate integrated projection/review/patch cohort265PASS9.39s preceded the new prose delta; not claimed as final full-cohort proof."
+    }
+  ],
+  "eventId": "e6e9a6ac-ca10-4e94-bbde-d90f825bc93d",
+  "sequence": 5,
+  "at": "2026-10-15T15:12:10.903Z"
+}

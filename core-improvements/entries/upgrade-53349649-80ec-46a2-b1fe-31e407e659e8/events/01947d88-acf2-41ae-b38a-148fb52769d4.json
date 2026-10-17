@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "214PASS2.60s;2actualprocess tests explicitly deselected;1existing deliberate UUIDwarning.20new operation cases; Root cached-return baseline nowrefused. LogSHA256b89d36b2b0c6439a1e71e314a436e63f1cf119937b26a1c8530eef559826e1b0.",
+      "command": "PYTHONPATH=src;tests;scripts python -m pytest offline_tests/test_source_observation.py offline_tests/test_private_preview.py offline_tests/test_private_native_continuity.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py tests/test_build_continuation.py -k \"not real_studio_monitor and not actual_python_node_observer\" -q --tb=short"
+    },
+    {
+      "result": "PASS",
+      "evidence": "BothPythonfiles and whitespace PASS. Source diff over d779 only one phase/invalid condition change; test/runbook/ownnewjournal events accompany it.",
+      "command": "ruff check source_observation.py and test_source_observation.py; git diff --check"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Root review P2 cached-return closing race corrected in separate followup over historical d779. No helperactual DB/Nodechild/server/provider/currentcase/adoption or limit/wire/history change. Root journal5c/oldruntimejournals and reserved live_preview files untouched; own533journal appended only under explicit renewed ownership.",
+  "eventId": "01947d88-acf2-41ae-b38a-148fb52769d4",
+  "sequence": 6,
+  "at": "2026-10-17T08:18:29.117Z"
+}

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Allow explicit same-owner paired core/public upgrades to observe an immutable private native import through strict original-versus-current source pins; preserve original importer provenance and current observer/S6 authority.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_native_continuity.py",
+    "content-studio/scripts/customer-private-native-continuity.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root normal current-owner source136/public255 request409private_intake_anchor_stale before S6; operational DB/currentcustomer files preserved; no retry. S40 source-only drift tests never changed actual importer/public consumer; four source boundaries incorrectly require historical importer to equal current.",
+    "Reproduced on isolated offline synthetic fixture from exact136a8149836162b7a648103f91421e4aa2dd79d9 paired255fea0813bf1aabeaeea2f2de0b29564118f2fc: new positive paired-upgrade case1FAIL33deselected8.23s, private baseline log retained. Issue66 reservation6206646677; Root explicitly accepted strict v2 source design.",
+    "0042 original SQL fences remain exact owner/currentSession/host/accepted material/immutable rows; additive context marker supported without migration. v1 marker/history remain exact; v2 permits only explicit changed core source with public/importer drift, unchanged network, current physical source checks and immutable original manifest. No old code executed, reimport, approval or S6 bypass. Root owns actual PG/adoption, serving/customer data/provider; frozen prior journals untouched."
+  ],
+  "rollback": "Scoped source revert before adoption. Retain original and new append-only SQL requests/receipts plus native source/context/manifest/site/media files. Failed continuity remains failure; no receipt rewriting, importer fallback, retry of retained UUID, S6 or approval bypass.",
+  "id": "upgrade-847a65ac-96ce-404a-805c-847ab0b05a57",
+  "branch": "codex/private-native-upgrade-20261016",
+  "baseSha": "136a8149836162b7a648103f91421e4aa2dd79d9",
+  "createdAt": "2026-10-16T02:27:47.269Z"
+}

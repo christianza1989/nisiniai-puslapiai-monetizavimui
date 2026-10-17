@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Source-only local D1 producer capability on exactcc532/public255, separate c1634f35 upgrade. Initial missing validator baseline1FAIL169ms preserved; first fake-clock lifetime fixture stalled because mock headers lacked standard get(), corrected to real Headers without relaxing production. Only own test processes stopped. Actual data/build/server/provider acceptance remains Root-owned; no helper actual operation. Windows denied file-symlink creation, so path rejection was exercised with an owned directory junction instead. Old journals/content/public source untouched.",
+  "checks": [
+    {
+      "command": "node --experimental-test-module-mocks --test content-studio/test/preview-local-storage.test.mjs",
+      "result": "PASS",
+      "evidence": "Final9PASS45.19s with mocked DB/server/port/HTTP/process transports. Real canonical SQL bytes and actual public cleanBuildSource show only fixed hosting DATA exclusion; any other dirty/untracked code fails. Foreign owner/config/junction/remote/mail/R2/SMTP changes reject; fixed local command args, same scoped persistence, immutable failed-attempt/sentinel preservation, startup and pre-dispatch revocation, total150s including simulated20s init verified. Actual database rows not tested."
+    },
+    {
+      "command": "node --experimental-test-module-mocks --test content-studio/test/candidate-preview-preparation.test.mjs",
+      "result": "PASS",
+      "evidence": "Existing7preparation scenarios PASS as part of15case run21.09s; genuine synthetic canonical release and opaque preparation preserved, no actual build/server. Later change only tightens initializer pre-dispatch authorization and adds its9th focused storage regression."
+    },
+    {
+      "command": "node --test content-studio/test/customer-site-preview.test.mjs",
+      "result": "PASS",
+      "evidence": "Existing9guard/source/dependency/build/state/IPC/CJS fixture tests PASS6.40s. Compiler/server executables are inert fixtures; no real framework build/server/database operation."
+    },
+    {
+      "command": "node --check two affected mjs; git diff --check; compare exactcc532 five Foundation certification function bodies",
+      "result": "PASS",
+      "evidence": "Syntax/whitespace PASS; validateScope/readiness/releaseEvidence/reviews/localCompletion byte-identical. Only Foundation helper change passes current authorization into existing preview startup. Paired continue freshness main808581d/publicec8 with actual companion255 clean; no shared Git config, public code or fetch/authority environment override."
+    }
+  ],
+  "eventId": "b9971211-b2ae-451c-9a4e-3a4de0e9d736",
+  "sequence": 2,
+  "at": "2026-10-16T02:00:31.374Z"
+}

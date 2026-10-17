@@ -17,6 +17,9 @@ from ..tasks.codex import RunnerError
 PAGE_PATH_PATTERN = r"^/(?:[a-z0-9]+(?:[-/][a-z0-9]+)*/?)?$"
 GUIDE_PATH_PATTERN = r"^/[a-z0-9]+(?:[-/][a-z0-9]+)*/?$"
 CanonicalPath = Annotated[str, Field(pattern=PAGE_PATH_PATTERN, max_length=150)]
+TYPED_DRAFT_VERSION = "business-draft.v3"
+NativePageType = Literal["home", "service", "product", "guide", "faq", "location", "article", "index",
+                         "author", "policy", "about", "contact"]
 # Provider schema only: historical readers retain the exact authoritative public_url validation.
 PublicSourceURL = Annotated[str, Field(json_schema_extra={"pattern": r"^[hH][tT][tT][pP][sS]://[^\s?#\\]+$"})]
 
@@ -174,12 +177,18 @@ def graph_issues(draft):
     paths = [page.path for page in draft.pages]
     if paths[0] != "/" or len(paths) != len(set(paths)):
         issue("pages", "Pirmas puslapis turi būti pradžios puslapis; kiekvienas puslapis turi turėti atskirą adresą.")
+    for index, page in enumerate(draft.pages):
+        if hasattr(page, "type") and (page.type == "home") != (page.path == "/"):
+            issue(f"pages/{index}/type", "Pradžios puslapio tipas turi sutapti su pradžios adresu; kiti puslapiai negali būti pradžios puslapiai.")
     plan_paths = [item.path for item in draft.content_plan]
     if len(plan_paths) != len(set(plan_paths)):
         issue("content_plan", "Kiekvienam skirtingam gidui reikia atskiro pilno adreso; vieno adreso kartoti negalima.")
     known = set(paths + plan_paths)
     positions = {path: index for index, path in enumerate(plan_paths)}
     for index, item in enumerate(draft.content_plan):
+        existing = next((page for page in draft.pages if page.path == item.path), None)
+        if existing is not None and hasattr(existing, "type") and existing.type not in {"guide", "article"}:
+            issue(f"content_plan/{index}/path", "Gido užduotis negali perrašyti autoriaus profilio, pasitikėjimo ar kitos paskirties puslapio.")
         if any(target not in known for target in item.internal_links):
             issue(f"content_plan/{index}/internal_links", "Nuorodos turi vesti į tikrai pateiktą puslapį arba planuojamą gidą.")
         parent = item.pillar_path
@@ -206,16 +215,57 @@ class CreatorDraft(Draft):
     content_plan: list[ContentPlanItem] = Field(min_length=3, max_length=12)
 
 
+class TypedPage(Page):
+    """Declared editorial purpose, never verified identity, expertise or business facts."""
+    type: NativePageType
+
+
+class TypedDraft(Draft):
+    schema_version: Literal["business-draft.v3"]
+    pages: list[TypedPage] = Field(min_length=3, max_length=8)
+
+
+class TypedCreatorCandidate(CreatorCandidate):
+    schema_version: Literal["business-draft.v3"]
+    pages: list[TypedPage] = Field(min_length=3, max_length=8)
+
+
+class TypedCreatorDraft(TypedDraft):
+    content_plan: list[ContentPlanItem] = Field(min_length=3, max_length=12)
+
+
+def parse_draft(value, *, creator=False, candidate=False):
+    """One strict version dispatch; never add defaults to historical material.
+
+    A missing/unknown version cannot smuggle typed fields through the legacy model.
+    New provider output uses normalize_creator(require_typed=True); legacy reads
+    and exact prose repairs retain their original maintained models/schemas.
+    """
+    version = value.get("schema_version") if isinstance(value, dict) else getattr(value, "schema_version", None)
+    if version == TYPED_DRAFT_VERSION:
+        model = TypedCreatorCandidate if candidate else TypedCreatorDraft if creator else TypedDraft
+    else:
+        model = CreatorCandidate if candidate else CreatorDraft if creator else Draft
+    return model.model_validate(value)
+
+
+def creator_schema_contract():
+    schema = json.dumps(TypedCreatorDraft.model_json_schema(), ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return {"version": TYPED_DRAFT_VERSION, "schema_sha256": hashlib.sha256(schema.encode()).hexdigest()}
+
+
 def normalize(value):
     try:
-        return Draft.model_validate(value).model_dump(mode="json")
+        return parse_draft(value).model_dump(mode="json")
     except (ValueError, TypeError):
         raise RunnerError("output_invalid") from None
 
 
-def normalize_creator(value):
+def normalize_creator(value, *, require_typed=False):
     try:
-        return CreatorDraft.model_validate(value).model_dump(mode="json")
+        if require_typed and (not isinstance(value, dict) or value.get("schema_version") != TYPED_DRAFT_VERSION):
+            raise ValueError("New provider output requires the exact typed contract")
+        return parse_draft(value, creator=True).model_dump(mode="json")
     except (ValueError, TypeError):
         raise RunnerError("output_invalid") from None
 
@@ -230,10 +280,10 @@ def language_detector():
 
 
 def language_screening(value):
-    draft = Draft.model_validate(value)
+    draft = parse_draft(value)
     names = [draft.business_name, *[r.title for r in draft.research], *[t.tool for t in draft.tools]]
     excluded = {"business_name", "url", "title", "tool", "path", "accent", "composition", "phase", "layout",
-                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority"}
+                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority", "schema_version", "type"}
 
     def prose(item, key=""):
         if isinstance(item, dict):
@@ -274,17 +324,18 @@ def screen_language(texts, names=()):
 
 def context_projection(value):
     """Partial model context, never an edited replacement for immutable source."""
-    return _context_projection(Draft.model_validate(value))
+    return _context_projection(parse_draft(value))
 
 
 def structural_repair_context(value):
     """Only a well-shaped candidate with graph issues qualifies for one bounded correction."""
     try:
-        candidate = CreatorCandidate.model_validate(value)
+        candidate = parse_draft(value, candidate=True)
         if not (issues := graph_issues(candidate)):
             return None
         projected, projection = _context_projection(candidate)
-        return {"check": "creator-graph.v1", "issues": issues, "candidate": projected, "projection": projection,
+        return {"check": "creator-graph.v3" if isinstance(candidate, TypedCreatorCandidate) else "creator-graph.v1",
+                "issues": issues, "candidate": projected, "projection": projection,
                 "unaccepted_candidate_sha256": hashlib.sha256(json.dumps(candidate.model_dump(mode="json"),
                     ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()}
     except (ValueError, TypeError):
@@ -312,7 +363,7 @@ def _context_projection(draft):
             return [result for i, child in enumerate(item) if (result := project(child, path + f"[{i}]")) is not None]
         if isinstance(item, str):
             # These are official names, identifiers or validated URLs, not prose.
-            if (".source_queries[" in path or path.endswith((".business_name", ".title", ".tool", ".path", ".url", ".accent", ".composition", ".phase", ".layout"))):
+            if (".source_queries[" in path or path.endswith((".business_name", ".title", ".tool", ".path", ".url", ".accent", ".composition", ".phase", ".layout", ".schema_version", ".type"))):
                 return item
             try:
                 language_mode.screen([item], names)
@@ -347,7 +398,7 @@ footer{max-width:1160px;margin:auto;padding:35px 30px;color:#606562;font-size:14
 
 
 def preview(value):
-    draft = Draft.model_validate(value)
+    draft = parse_draft(value)
     e = html.escape
     csp = "default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'"
     nav = "".join(f'<a href="#page-{i}">{e(p.navigation_label)}</a>' for i, p in enumerate(draft.pages))
@@ -373,7 +424,7 @@ def preview(value):
 
 
 def plan_markdown(value, research_receipt):
-    draft = Draft.model_validate(value)
+    draft = parse_draft(value)
     b = draft.business
     parts = ["# " + draft.business_name, draft.assistant_reply]
     for title, content in (("Klientas", b.customer), ("Mokamas rezultatas", b.paid_result), ("Kas mokės", b.payer),
@@ -408,7 +459,9 @@ def plan_markdown(value, research_receipt):
 def artifacts(value, *, creation_id, revision, receipt):
     value = normalize(value)
     research = ("Atlikta " + str(receipt.get("web_search_count", 0)) + " paieškos veiksmų. Atskirų šaltinių pilna peržiūra nepatvirtinta.") if receipt.get("web_search_count") else "Šiame vykdyme interneto tyrimas neatliktas; šaltinių teiginius reikia patikrinti."
-    package = {"schemaVersion": "verslomatika.business-draft.v2" if value["content_plan"] else "verslomatika.business-draft.v1", "creationId": creation_id, "revision": revision,
+    version = ("verslomatika.business-draft.v3" if value.get("schema_version") == TYPED_DRAFT_VERSION else
+               "verslomatika.business-draft.v2" if value["content_plan"] else "verslomatika.business-draft.v1")
+    package = {"schemaVersion": version, "creationId": creation_id, "revision": revision,
                "publicationApproved": False, "draft": value, "researchReceipt": research}
     outputs = [("business_plan", "Verslo pasiūlymas.md", "text/markdown", plan_markdown(value, research)),
                ("website_preview", "Svetainės peržiūra.html", "text/html", preview(value)),

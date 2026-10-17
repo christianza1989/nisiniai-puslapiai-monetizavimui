@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final cancellation follow-up: retained1fake-subprocess FAIL;68offlinePASS39subtests. CancelledError retains semantics, calls charged unknown, same owned-tree cleanup as timeout. Paid phase already ended;174/180 unchanged, no new provider call or budget extension.41PG PASS and actual5-call journey earlier unchanged.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_acquisition.py offline_tests/test_acquisition_headless.py offline_tests/test_acquisition_lab_budget.py offline_tests/test_acquisition_dialogue.py offline_tests/test_acquisition_correspondence.py -q",
+      "result": "PASS",
+      "evidence": "68PASS39subtests; private offline-final-cancellation.txt SHA256 3fb702d2d10b751f1f869afb07e52777f0e3e008e6fc2a055299c93c1333c671"
+    }
+  ],
+  "eventId": "cc6a12d4-48a9-41fd-983d-463d49f94de0",
+  "sequence": 3,
+  "at": "2026-10-17T22:58:56.031Z"
+}

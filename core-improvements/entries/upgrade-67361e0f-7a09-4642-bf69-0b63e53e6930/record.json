@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Four canonical CLI pin checks buffer the entire executable with Path.read_bytes and can fail MemoryError on the 341312816-byte installed CLI",
+  "category": "code",
+  "evidence": [
+    "Root reported an actual private loader MemoryError on the installed341312816-byte CLI; streaming private loader recovered. That operator recovery is separate from this canonical source repair",
+    "Exact07d8 source creation/adapter.py:291, customer_text/adapter.py:46, tasks/codex.py:151, workspace_team/adapter.py:135 all use hashlib.sha256(Path.read_bytes()) for fresh binary pin checks",
+    "Before production mutation, synthetic whole-buffer allocation refusal will reproduce the four canonical failures; bounded-read/digest/repeat-call/typed-error tests will verify one shared helper without cache"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/file_hash.py",
+    "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/adapter.py",
+    "agent-business-core/runtime/offline_tests/test_cli_pin_streaming.py",
+    "agent-business-core/runtime/offline_tests/test_team_runner_readiness.py",
+    "docs/CLI_BINARY_PIN_HASHING.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this scoped streaming pin-check commit; keep original failure receipts. Root separately owns source integration/actual operator or serving adoption",
+  "id": "upgrade-67361e0f-7a09-4642-bf69-0b63e53e6930",
+  "branch": "codex/streaming-cli-pins-20261017",
+  "baseSha": "07d8e577f9df78d7d5057cd625004a4d6d9f180a",
+  "createdAt": "2026-10-17T20:11:18.155Z"
+}

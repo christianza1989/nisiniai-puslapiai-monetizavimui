@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Observe fresh Git HEAD and dirty inventory with one NUL-framed native status process per repository boundary, preserving entry/exit source fences under the actual live-preview heartbeat budget.",
+  "category": "code",
+  "evidence": [
+    "Actual unchanged f53 timed ASGI observation c1e5941df38647b58237caf52a52ded4 measured eight Git processes per two-repository verification; authority samples exceeded3s while Store.heartbeat writes were milliseconds. Lifespan PASS is partial feature evidence, not stability acceptance.",
+    "Canonical baseline one-process requirement failed2vs1, with14negative/actualGit cases passing; logSHA25664264b3e79892ca5f4bba1088ab633ac6e6df9c33812d44c9978b53e410bf2c7.",
+    "Original expiry374f347d failedheartbeat_expired/before_context/margin-54ms and original generic studio_intake_failed829d9b9d remain preserved; no deadline or authority relaxation."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/source_observation.py",
+    "agent-business-core/runtime/offline_tests/test_source_observation.py",
+    "agent-business-core/runtime/offline_tests/test_source_status_frame.py",
+    "docs/SOURCE_OBSERVATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the one-process source observation and matching fixtures/docs; preserve all original runtime receipts and rerun source fences. No DB/schema/provider changes.",
+  "id": "upgrade-a4d4abab-d331-4814-b3d6-5acab58c8646",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "f53e06678fc7dc2c63c38bfaf701b622d816ef0c",
+  "createdAt": "2026-10-17T12:12:05.387Z"
+}

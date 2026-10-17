@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "One sequential unpublished retry now requires trusted transport join, exact original heartbeat-expired diagnostic, bound canonical cleanup witness, same active lease/claim/scope/prepared proof, no Ready file, drained prior authority result and an entirely new full successful authority observation followed by repeated fences. Old done exception/cancellation revokes; original149s timeout covers drain/fresh authorization and both attempts. Shared firstServe+120s Node cap is stricter than139s and prevents renewing inspection/Ready lifetime. Original3s/3100ms pulse guards and all ten fresh checkpoints remain. Baseline and test timing failure are retained separately. This source-only result does not establish actual adoption or post-Ready liveness; actual sourcea7 mixed lifecycle outcomes remain open, no provider calls or serving/data changes.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/run-startup.py via canonical paired git-freshness wrapper",
+      "result": "PASS",
+      "evidence": "189 Python preview protocol/authority/pulse/cadence/startup tests, 0 skipped,12.40s. LogSHA2564b4635eb16bc98d6b35d684617bd0c58c9da08cef624bc32326519eef6b1e8ad. Includes joined cleanup/new verification, same immutable payload/deadline, malformed/missing/denied/lost-claim/Ready refusal, late Ready/close/deadline races, done task exception/cancellation, second failure/terminal replay and outer timeout during drain/fresh check."
+    },
+    {
+      "command": "node --test content-studio/test/customer-live-preview.test.mjs",
+      "result": "PASS",
+      "evidence": "52 bridge tests,0skipped,658.9705ms. LogSHA2568f6cf6dd9786b4f039cb00dd996b995df7f18df17b614827f50dbad27eecc31c. Exact immutable cleanup witness, absent on uncertain cleanup/Ready/second attempt, bounded internal fields and shared Ready-expiry cap; all existing first-refusal/context/media/binding tests remain."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped runtime/bridge/tests/contract/checkpoint diff; serving remains clean a7 and public255. Peer review is separate and pending."
+    }
+  ],
+  "eventId": "89f572d1-7644-40fe-bbc5-366d3e80b2a6",
+  "sequence": 3,
+  "at": "2026-10-17T17:29:54.079Z"
+}

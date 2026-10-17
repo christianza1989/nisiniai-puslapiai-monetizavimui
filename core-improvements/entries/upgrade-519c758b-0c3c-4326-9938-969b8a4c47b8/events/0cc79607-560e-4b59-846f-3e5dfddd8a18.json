@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Reproduced accepted legacy mailbox test prefix+Case suffix exceeding new read projection200-char bound: first1FAIL21PASS preserved. Broaden only read subject256 and LT display subject512, without clipping, changing original mail or widening compose/send authority. Final22PASS2.46s. Source repair prepared for next combined adoption; current Servingb866 and manually started reviewed UI preserved.",
+  "checks": [
+    {
+      "command": "pytest agent-business-core/runtime/offline_tests/test_mail_view.py -q",
+      "result": "PASS",
+      "evidence": "First FAIL96d5e0b4bee70405b48cf9235aa4247dd8ca0db7070237267da81e2e40dcb17d retained. After bound repair22 passed2.46s, loge0a994d2da207a5807d9410b015ac5082da6bea3490f52bc09c02241134f6f14. Actual219-character legacy subject preserved. Provider/SMTP/IMAP0."
+    }
+  ],
+  "eventId": "0cc79607-560e-4b59-846f-3e5dfddd8a18",
+  "sequence": 4,
+  "at": "2026-10-17T21:50:41.812Z"
+}

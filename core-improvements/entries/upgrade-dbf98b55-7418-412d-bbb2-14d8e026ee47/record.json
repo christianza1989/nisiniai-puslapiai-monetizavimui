@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Foundation rejects a required guide outside an index URL prefix even though the maintained native guide grid includes it",
+  "category": "code",
+  "evidence": [
+    "Synthetic stable-URL guide outside the index prefix is rendered in NativeContentSite's same-site projected guide grid; original Foundation prefix gate yields no candidate.",
+    "Companion 1a26f289092cecadc5799de898e809dc1769498a: native-content-site.tsx guide grid uses contentArticles(livePages, article/guide); prefix-only article breadcrumbs remain a separately reported Root dependency."
+  ],
+  "paths": [
+    "content-studio/scripts/customer-site-foundation.mjs",
+    "content-studio/test/customer-site-foundation-index.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this scoped Foundation selector and focused tests; no customer state, publication records or companion source are changed.",
+  "id": "upgrade-dbf98b55-7418-412d-bbb2-14d8e026ee47",
+  "branch": "codex/verslomatika-foundation-index-20261016",
+  "baseSha": "bfa8c6cd4f4c572aa507da408af596361b5b4099",
+  "createdAt": "2026-10-16T00:03:24.247Z"
+}

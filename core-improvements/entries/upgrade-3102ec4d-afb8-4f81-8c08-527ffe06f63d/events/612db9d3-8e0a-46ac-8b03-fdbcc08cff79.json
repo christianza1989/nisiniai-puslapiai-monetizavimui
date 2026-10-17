@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual v2 amendment used normal owner login/real Session/restricted transaction on3b7. Only two promised future-guide links removed from selection guide, final technical caveat preserved. No provider/review/approval/release/deployment.",
+  "checks": [
+    {
+      "command": "Canonical content_amendment.amend with explicit two deferred empty guide IDs and original CAS",
+      "result": "PASS",
+      "evidence": "Immutable request/result/verification retained privately. Body35 to34; other12 records and all20 assets unchanged; both future drafts retained. After-site SHAa38fe2c6fc4cd995b369e9ce53a053776bbad13a3a1b9e39b8d4c8bbac4241d5."
+    },
+    {
+      "command": "Read-only SQL accepted Job usage and GUIDE history after real amendment",
+      "result": "PASS",
+      "evidence": "Original usage unchanged; failed/succeeded/succeeded/failed/succeeded history retained; charged runtime32. No new model attempt."
+    }
+  ],
+  "eventId": "612db9d3-8e0a-46ac-8b03-fdbcc08cff79",
+  "sequence": 3,
+  "at": "2026-10-15T22:23:44.228Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original Source219 production function unchanged, SHA256f83109de53c9cebff029c637efbb10f8516931e09a81e5b983bf6f7a419d36a6. New pure modeled-catalog/real Authority fixture baseline:8FAIL54PASS6.43s; all eight failures are expected catalog round-trip bounds (single observation2not1, batch4not2, repeat calls8not4, full Authority136not132). All10private checkpoints/2material/1native assertions passed before the full count failure. Log SHA256058d1366b522ece16ee94ae431e6abd6175c87db05d5ca9a9e3bd3fc529b105c. Tests use own source and existing QA libraries, no PG/server/provider; catalog SQL is evaluated on stdlib SQLite in-memory modeled catalogs, not actual PG/RLS proof. Host setup failures are separately retained: companion add printed Out of memory then exited-532462766; bundled PowerShell CoreCLR failed0x800705AF paging file too small. Native Windows PowerShell worked; exact disposable companion target does not exist and is not registered, so no deletion/recovery was needed. No foreign process/files were changed. Fresh frozen companionec8 remains read-only.",
+  "eventId": "ba766377-dca0-47de-9b4f-13c1c29d5009",
+  "sequence": 2,
+  "at": "2026-10-17T19:50:52.275Z"
+}

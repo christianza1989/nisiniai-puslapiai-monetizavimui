@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual generated Wrangler config reproduced old storage binding refusal and passed new validator read-only with identical SHA2678f2ac75bc329d53d1f128d0e7607443a2e8746e074ad4986051fbbf208c92. Empty known producers/consumers admitted only; no binding or live queue activated. All original attempts preserved. Source adoption and actual guarded serve/form/retention still pending.",
+  "checks": [
+    {
+      "command": "PINET_PUBLIC_CORE_PATH=<owned255fea> node --experimental-test-module-mocks --test content-studio/test/customer-site-preview.test.mjs content-studio/test/preview-local-storage.test.mjs content-studio/test/candidate-preview-preparation.test.mjs",
+      "result": "PASS",
+      "evidence": "26PASS0FAIL0SKIP18.451s; fixtures reproduce generated empty queue shape; actual producer/consumer entries, unknown fields, null and arrays refused with other guards retained."
+    },
+    {
+      "command": "node wellness-generated-storage-diagnostic.private.mjs",
+      "result": "PASS",
+      "evidence": "Actual config unchanged; serving83d validator rejects foundation_preview_storage_binding_invalid; corrected pure validator accepts exact same file. Read-only comparison/provider0."
+    }
+  ],
+  "eventId": "ecfda56d-74fe-4a3b-b31d-99229184ee60",
+  "sequence": 2,
+  "at": "2026-10-16T09:35:49.900Z"
+}

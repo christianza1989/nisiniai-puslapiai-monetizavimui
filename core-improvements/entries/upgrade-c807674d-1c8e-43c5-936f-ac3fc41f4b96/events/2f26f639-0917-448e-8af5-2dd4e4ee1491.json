@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original actual profile/helper and legacy-deadline failures retained and repaired by separate upgrades39777fcd/870ed381. Final isolated533 profile/admission/history/source tests pass; actual13-attempt team projection before/after exactSHA7fef6da18c163060c93342587e3b3ff23b99798e20ee63c15fc851c7ec9c5fc4. No provider calls, model/role/quota/RLS/time-bound change. Whole live preview remains fixing after real heartbeat failures; this event verifies profile grouping only.",
+  "checks": [
+    {
+      "command": "Root isolated PostgreSQL533: live-preview authority6 plus pipeline profile admission2, legacy exact rows1, source/parent refusal1",
+      "result": "PASS",
+      "evidence": "10PASS146.23s SHA278409c955d0d1fea025d3f4ec6fd3f921c5c072f73f273780ae0f91fc74fd7f; original0032, operational88tables, native exact."
+    },
+    {
+      "command": "Root normal owner GET creation team before/after source adoption",
+      "result": "PASS",
+      "evidence": "13attempts and complete team data byte-exact SHA7fef6da18c163060c93342587e3b3ff23b99798e20ee63c15fc851c7ec9c5fc4; credentials not recorded in source."
+    }
+  ],
+  "eventId": "2f26f639-0917-448e-8af5-2dd4e4ee1491",
+  "sequence": 3,
+  "at": "2026-10-17T09:21:16.992Z"
+}

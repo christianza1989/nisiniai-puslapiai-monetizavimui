@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual90c Chrome UI lease55d34ee6-1e04-4a27-a17e-f8081b770488 progressed preparing-to-starting then failed before ready. Original guard receipt heartbeat_expired/after_media at2026-10-17T13:31:58.930Z elapsed15752ms/margin-770ms; terminalfailed/authorization_revoked/noURL. Preparing/failure screenshots retained. No close/revocation/lifespan PASS inferred. Source90c7actualPGPASS158.02s cad119af/all88originalnativeexact and same-DB605file adoption are separate successful checks, not full runtime acceptance. Read-only leaf timing quieter callbacks1.59/1.54/1.69s, capture238SQL/3.0362s,53retained-anchor calls106SQL; new disjoint atomic SQL leaf repairs underway. Original948/f53 failures remain. Provider0, paid37/40, all workers/channels held, no frontend restart or deadline/TTL relaxation.",
+  "eventId": "ad2c93d3-af18-48ab-aedc-45e1bf62dfb0",
+  "sequence": 10,
+  "at": "2026-10-17T13:43:46.165Z"
+}

@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Concurrent full preview-authority checks serialize repeated observation work, a cancelled waiter can interrupt another check, and authority finishing after stop or expiry can still renew the lease heartbeat.",
+  "category": "code",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6231505995",
+    "Actual pre-claim HTTP503 studio_timeout preserved; unchanged capture/inspection diagnostic performed176Git subprocess calls/22.4728s. No lease/server admitted. New exact-scope concurrent/lifetime regression baseline is retained privately."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_runtime.py",
+    "docs/CUSTOMER_LIVE_PREVIEW.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "rollback": "Revert this scoped source repair before serving adoption; retain the original HTTP/timeouts and prior compiled frontend. Never relax the existing deadlines, heartbeat expiry or authority checks.",
+  "id": "upgrade-5c757425-196d-4aef-933c-e4bb5caf90df",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "da578030f7c9afd5c4dd2d411edfa67e74c77c7b",
+  "createdAt": "2026-10-17T08:03:56.503Z"
+}

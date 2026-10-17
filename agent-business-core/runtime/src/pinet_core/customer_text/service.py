@@ -114,6 +114,10 @@ async def transaction_authority(tx, session, creation_id, *, calibration=None, p
         "profile": admitted, "adapter": adapter.VERSION, "model": adapter.MODEL}
     if task:
         binding["task_calibration"] = task
+        if task.get("version") == "customer-agent-direct-preview.v1":
+            # Only the explicit v2-like preview protocol separates historical
+            # binding identity from the principal's freshly authorized Session.
+            binding["session_id"] = task["session_id"]
         if task.get("execution_profile") is not None:
             pin = execution.current(execution.retained(task["execution_profile"]))
             binding.update(execution_profile=pin.model_dump(mode="json"), model=pin.text.model)

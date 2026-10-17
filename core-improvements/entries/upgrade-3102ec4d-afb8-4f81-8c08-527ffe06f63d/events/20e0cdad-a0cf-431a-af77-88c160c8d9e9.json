@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Opt-in reviewed-copy amendment v2 now binds a nonempty unique explicit list of empty/unapproved same-site guide/article targets. It removes only these edges from actual body, planned links/suggestions and related metadata through existing model.editPage. Every other body/native edge is preserved; no arbitrary graph editor or review/approval/media mutation. Legacy v1 request/receipt hashes remain unchanged. Original new baseline3NodeFAIL6.64s and1PythonFAIL3PASS3.82s retained. First implementation2PASS1FAIL caught planned links masking an extra body-edge removal; explicit body-graph equality repaired it. Real Node lost-response replay, receipt/v1 downgrade refusal, ready-target and extra-graph refusal pass on disposable synthetic cases. No actual customer-case amendment/adoption or provider is claimed.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-content-workflow.test.mjs content-studio/test/customer-editorial-preparation.test.mjs",
+      "result": "PASS",
+      "evidence": "Root56PASS94.326s; private tmp/s41-node-regression.log, original baseline/intermediate logs retained."
+    },
+    {
+      "command": "python -m pytest -q -p no:cacheprovider agent-business-core/runtime/offline_tests/test_creation_content_amendment.py agent-business-core/runtime/offline_tests/test_editorial_preparation.py",
+      "result": "PASS",
+      "evidence": "Root95PASS6.09s, private tmp/s41-python-regression.log; authority/source/S6/receipt and actual Python/Node S39 transport compatibility. No actual PostgreSQL/provider."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/src/pinet_core/creation/content_amendment.py agent-business-core/runtime/offline_tests/test_creation_content_amendment.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Both scoped Python files and current diff clean; only WORKSTREAMS CRLF normalization notice."
+    }
+  ],
+  "eventId": "20e0cdad-a0cf-431a-af77-88c160c8d9e9",
+  "sequence": 2,
+  "at": "2026-10-15T21:05:47.362Z"
+}

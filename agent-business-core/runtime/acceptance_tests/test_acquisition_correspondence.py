@@ -75,11 +75,13 @@ async def lane(monkeypatch):
     admin_url, runtime_url = (
         state["urls"][key] for key in ("PINET_ADMIN_DATABASE_URL", "PINET_DATABASE_URL")
     )
+    owned_port = state.get('owned_loopback_port', 15438)
+    assert type(owned_port) is int and 1024 <= owned_port <= 65535
     for url in (admin_url, runtime_url):
         parsed = make_url(url)
         assert (
             parsed.host == "127.0.0.1"
-            and parsed.port == 15438
+            and parsed.port == owned_port
             and re.fullmatch(r"pinet_acq_work_\d{14}", parsed.database)
         )
     cfg, environment = settings(), "test-acq-work-" + uuid4().hex

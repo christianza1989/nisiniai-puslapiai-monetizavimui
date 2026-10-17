@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "TEST SOURCE/COLLECTION ONLY. Added requested RUNNING workflow-route cancellation late-return case. No DB/provider execution or actual cancellation/drain proof; prior12 cases and runtime/schema/contracts unchanged.",
+  "checks": [
+    {
+      "command": "pytest --collect-only tests/test_workspace_agent_workflow_pg.py",
+      "result": "PASS",
+      "evidence": "13cases collected1.40s; SHA256b40a9e5c3ea9058d6e954d15b4d3f96e7c715cf128a53541dc626c34647c45d1; no fixture/test execution."
+    },
+    {
+      "command": "existing-test AST and runtime/schema/contract boundary check",
+      "result": "PASS",
+      "evidence": "Only one new test/adapter import; all old declarations unchanged. Zero runtime/schema/contracts diff frome49. SHA25629299d280ab96e9fe7a28949a3dd134b72c26db7e04fd40dcb25ffda5fe60665."
+    },
+    {
+      "command": "ruff PG source and git diff --check",
+      "result": "PASS",
+      "evidence": "Source syntax/style clean; no existing test weakened."
+    }
+  ],
+  "eventId": "38681748-9462-4ca3-802d-f113436731fc",
+  "sequence": 2,
+  "at": "2026-10-17T20:51:21.981Z"
+}

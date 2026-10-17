@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Team-history projection repeats immutable job-profile and schema SQL for every attempt, multiplying full authority captures into hundreds of statements. Use a fresh bounded RLS set-based profile observation while preserving all historical binding/model/schema checks.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/execution_profiles.py",
+    "agent-business-core/runtime/src/pinet_core/creation/team.py",
+    "agent-business-core/runtime/offline_tests/test_execution_profile_batch.py",
+    "docs/PIPELINE_PROFILE_OBSERVATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6231838957",
+    "Read-only actual539 capture789SQL; capture+inspection2571SQL including477profile-row lookups. Private trace3defe26fb8a645eb81c70cd1aa0ae539 retains deidentified counters only. Meaningful projection baseline1FAIL12PASS2.23s:30rows read for30attempts vs required1; no missing-function surrogate."
+  ],
+  "rollback": "Scoped source revert before serving adoption; retain immutable jobs, attempts, model profiles, old default receipts, all performance failures and exact same-DB backups. No RLS/schema/model/quota or timeout change.",
+  "id": "upgrade-c807674d-1c8e-43c5-936f-ac3fc41f4b96",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "53967fa321a0b2a2369a0fee3c17db3dbb292693",
+  "createdAt": "2026-10-17T08:40:56.397Z"
+}

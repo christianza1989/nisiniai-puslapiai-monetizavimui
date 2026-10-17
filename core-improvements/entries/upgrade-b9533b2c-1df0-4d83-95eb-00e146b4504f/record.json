@@ -1,0 +1,24 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Make existing acquisition email execution portable across sectors, independently reviewed and bounded with explicit model provenance",
+  "category": "code",
+  "evidence": [
+    "src/pinet_core/acquisition/dialogue_lab.py hardcodes beauty-service persona; dialogue.prepare_reply returns unreviewed customer copy; codex_lab.py inherits unspecified CLI model"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition",
+    "agent-business-core/runtime/src/pinet_core/codex_lab.py",
+    "agent-business-core/runtime/scripts/acquisition_dialogue_lab.py",
+    "agent-business-core/runtime/scripts/acquisition_headless.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_headless.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_lab_budget.py",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "agent-business-core/acquisition-plan/CALIBRATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/200",
+  "rollback": "Revert scoped source commit; preserve original private ledgers/reports. No active operating services or DB modified.",
+  "id": "upgrade-b9533b2c-1df0-4d83-95eb-00e146b4504f",
+  "branch": "codex/wellness-headless-acquisition-20261017",
+  "baseSha": "1c6f1f59b88e997df1efa746b2f43c69e6149acd",
+  "createdAt": "2026-10-17T20:56:38.116Z"
+}

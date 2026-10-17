@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Mount only the two explicit authenticated editorial review/approval routes in maintained runtime APIs.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root accepted the precise bridge plan and explicitly authorized ONLY new router import/include_router hunks in api.py/control_api.py; no other writer owns these central paths. The main immutable bridge record2d0b8a5a was created just before this authorization, so this separate exact supplemental scope preserves its record unchanged.",
+    "Routes use existing SafeRoute/customer_guard/function-scoped authenticated Session with bounded strict DTOs and the separate native mutation authority. No generic Node command, preparation authority expansion, portal or Foundation peer changes. Actual HTTP/RLS tests are prepared for Root, helper DB/provider/customer/serving remain0."
+  ],
+  "rollback": "Remove only the editorial_review_router imports/mounts; retain existing APIs and all durable native review/approval operation evidence.",
+  "id": "upgrade-93e6d016-cc68-4dd6-b35d-d9123d5ad811",
+  "branch": "codex/verslomatika-editorial-review-bridge-20261016",
+  "baseSha": "7eb21e241625d46fb8a0770db94f12be4fd931d4",
+  "createdAt": "2026-10-16T01:07:43.091Z"
+}

@@ -22,7 +22,7 @@ async def guard(tx, environment):
     await administrative(tx, environment)
 
 
-async def actor(tx, *, environment, creation_id, session_id):
+async def actor(tx, *, environment, creation_id, session_id, require_idle=True):
     creation = await tx.scalar(select(Creation).where(Creation.id == creation_id, Creation.environment_id == environment))
     session = await tx.scalar(select(Session).where(Session.id == session_id, Session.environment_id == environment))
     if not creation or not session or session.user_id != creation.user_id:
@@ -38,7 +38,7 @@ async def actor(tx, *, environment, creation_id, session_id):
     # Match the customer writers' actor-before-Creation lock order.
     creation = await tx.scalar(select(Creation).where(Creation.id == creation_id,
         Creation.environment_id == environment).with_for_update().execution_options(populate_existing=True))
-    if creation.status in ACTIVE or creation.active_job_id is not None:
+    if require_idle and (creation.status in ACTIVE or creation.active_job_id is not None):
         raise ValueError("creation_revision_pending")
     return creation, session
 

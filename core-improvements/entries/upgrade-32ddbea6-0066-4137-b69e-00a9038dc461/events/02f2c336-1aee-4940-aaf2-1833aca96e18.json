@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Narrow source verification, actual new PostgreSQL/native adoption pending. Retain baseline1FAIL8PASS and intermediate51FAIL118PASS. Final scalar leaf keeps existing authority graph fixture and lateP/S/mutation assertions untouched. Missing Session/User, disabled User, foreign user/environment, transaction-actor mismatch and next-call freshness covered; populated Session and exact SQL structure checked. Source90c actual UI failure remains unresolved, not hidden by this local PASS.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_foundation_actor_checkpoint.py tests/test_foundation_bridge.py offline_tests/test_authority_observation.py offline_tests/test_live_preview_inspection_authority.py offline_tests/test_current_actor_observation.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "169PASS12.56s f9c006dd49bc59cf70398eb89255c5d380149e31cf9992d3e9ba16daf538f024; one existing intentional Pydantic invalid-constructed-object warning retained."
+    },
+    {
+      "command": "python -m ruff check foundation.py test_foundation_actor_checkpoint.py test_foundation_actor_pg.py test_foundation_bridge.py; pytest tests/test_foundation_actor_pg.py --collect-only -q",
+      "result": "PASS",
+      "evidence": "All four files clean; three actual PostgreSQL cases collected0.10s only, not executed or runtime accepted."
+    }
+  ],
+  "eventId": "02f2c336-1aee-4940-aaf2-1833aca96e18",
+  "sequence": 2,
+  "at": "2026-10-17T13:43:18.815Z"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Net Stage2 delivery is isolated on Rootbfa8c6cd4f4c572aa507da408af596361b5b4099. All tracked runtime source/tests/migrations exactly SHA256-match the fully tested preserved original97e53ef tree; no runtime differences. Root actual59-case eventseq7, all frozen upgrade158 files and Wellness handoff are retained unchanged. No helper actual PostgreSQL/provider/serving operations.",
+  "checks": [
+    {
+      "command": "isolated delivery focused direct/native/legacy Episode/High pytest11files",
+      "result": "PASS",
+      "evidence": "139 passed10.79s in direct-native-delivery. Private log runtime/artifacts/native-delivery-focused.private.log."
+    },
+    {
+      "command": "SHA256 parity of all tracked runtime src/offline_tests/tests/migrations versus tested original97e53ef",
+      "result": "PASS",
+      "evidence": "No differing/missing files. Original full offline1908PASS8SKIP67subtests86.75s logSHA2561f642c21f501dfa0d67a244c6ffe381af82500b837d42567d615bb4b26c5fc23.23 assigned Python files and8 new Stage2 journal/runbook files copied explicitly."
+    },
+    {
+      "command": "native pytest --collect-only preview/direct/team/agent_episode/episode_provenance/calibration_budget/High",
+      "result": "PASS",
+      "evidence": "74 tests collected4.23s:7 new native cases,59 prerequisite/regression cases plus8 canonical High cases. Collection only, not DB execution."
+    },
+    {
+      "command": "git diff Rootbfa -- frozen upgrade158 and Root Wellness handoff",
+      "result": "PASS",
+      "evidence": "Empty diff. No duplicate prerequisite code or acceptance events in net delivery; one scoped commit planned."
+    }
+  ],
+  "eventId": "874d1a6d-bb81-4280-962b-1deb594b5929",
+  "sequence": 4,
+  "at": "2026-10-15T23:54:40.422Z"
+}

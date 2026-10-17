@@ -1,4 +1,5 @@
 """Append-only explicit adoption of unchanged native material by a current owner."""
+import asyncio
 import json
 
 from sqlalchemy import select, text
@@ -39,12 +40,14 @@ def fingerprint(creation_id, value):
 
 async def capture(tx, session, creation):
     from . import foundation, service
+    from .authority_observation import active
+    observed = active(tx, creation)
     await foundation.guard()
-    await current_actor(tx, session, creation.portfolio_id)
+    await observed.actor(session, creation) if observed else await current_actor(tx, session, creation.portfolio_id)
     await tx.refresh(creation)
     if creation.status != "draft_ready" or creation.active_job_id or await archived(tx, creation):
         raise ControlError(409, "build_continuation_unavailable")
-    approved = await approved_build_context(tx, creation)
+    approved = await observed.approved(creation) if observed else await approved_build_context(tx, creation)
     approval = await tx.scalar(select(BuildApproval).where(BuildApproval.creation_id == creation.id)
         .execution_options(populate_existing=True))
     if not approved or not approval:
@@ -53,7 +56,9 @@ async def capture(tx, session, creation):
     revision = await tx.get(Revision, proof["revision_id"])
     job = await tx.get(Job, revision.job_id) if revision else None
     try:
-        pages = service.initial_pages(revision.payload, job.usage["content_intake"])
+        from ..creation.private_preview import selected_intake
+        _, intake = await selected_intake(tx, creation, revision, job)
+        pages = service.initial_pages(revision.payload, intake)
     except (ValueError, TypeError, KeyError, AttributeError):
         raise ControlError(503, "invalid_content_source") from None
     result = {"version": "native-build-continuation.v1", **binding(creation), "creation_id": creation.id,
@@ -62,15 +67,15 @@ async def capture(tx, session, creation):
         "approval_session_id": approval.session_id, "report_id": approval.report_id,
         "report_revision": approval.report_revision, "report_sha256": approval.report_sha256,
         "report_source_revision": approved["source_revision"], "accepted": proof,
-        "sources": foundation.source_pins().model_dump(mode="json"),
+        "sources": (await asyncio.to_thread(foundation.source_pins)).model_dump(mode="json"),
         "language_review_mode": language_mode.mode(), "initial_page_ids": pages}
-    await current_actor(tx, session, creation.portfolio_id)
+    await observed.actor(session, creation) if observed else await current_actor(tx, session, creation.portfolio_id)
     await tx.refresh(creation)
     if (creation.current_revision != proof["accepted_revision"] or creation.status in ACTIVE
             or creation.active_job_id or await archived(tx, creation)):
         raise ControlError(409, "stale_revision")
     await foundation.guard()
-    if foundation.source_pins().model_dump(mode="json") != result["sources"]:
+    if (await asyncio.to_thread(foundation.source_pins)).model_dump(mode="json") != result["sources"]:
         raise ControlError(503, "source_unavailable")
     return result
 
@@ -94,6 +99,12 @@ def stored(row):
 
 
 async def latest(tx, creation):
+    from .authority_observation import active
+    observed = active(tx, creation)
+    return await observed.continuation(creation, _latest) if observed else await _latest(tx, creation)
+
+
+async def _latest(tx, creation):
     return await tx.scalar(select(BuildContinuation).where(BuildContinuation.creation_id == creation.id)
         .order_by(BuildContinuation.created_at.desc(), BuildContinuation.id.desc()).limit(1)
         .execution_options(populate_existing=True))

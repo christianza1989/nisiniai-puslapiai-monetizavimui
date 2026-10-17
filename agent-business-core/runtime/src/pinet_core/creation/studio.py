@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 from pathlib import Path
+from time import monotonic
 from uuid import UUID
 
 from sqlalchemy import select
@@ -73,11 +74,17 @@ async def preflight_dependencies(still_authorized):
     return value
 
 
-async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576):
+async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576,
+                   authorization_interval=1.0):
     # Only fixed server-owned media reads opt into the larger bounded payload.
     # Model/intake/writer callers retain their existing one-MiB default.
     if type(output_limit) is not int or not 1048576 <= output_limit <= 20 * 1048576:
         raise RunnerError("studio_output_limit")
+    # Only a fixed server-owned caller selects a shorter serial check interval.
+    # Validate before authorization or process creation; never run a pulse timer
+    # independently of the fresh authorization callback.
+    if type(authorization_interval) not in (int, float) or not .05 <= authorization_interval <= 1:
+        raise RunnerError("studio_authorization_interval")
     async def bounded(stream, limit):
         chunks, size = [], 0
         while chunk := await stream.read(8192):
@@ -91,10 +98,20 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
 
     async def monitor():
         while not finishing.is_set():
+            started = monotonic() if authorization_interval < 1 else None
             if not await still_authorized():
                 raise RunnerError("authorization_revoked")
+            delay = authorization_interval
+            if started is not None:
+                # Fixed fast callers pace serial starts, not completion plus
+                # an idle gap. A slow check never queues catch-up work or
+                # overlaps another check; yield before the next fresh call.
+                delay = max(0., delay - (monotonic() - started))
+                if not delay:
+                    await asyncio.sleep(0)
+                    continue
             try:
-                await asyncio.wait_for(finishing.wait(), 1)
+                await asyncio.wait_for(finishing.wait(), delay)
             except TimeoutError:
                 pass
 
@@ -200,15 +217,21 @@ async def import_draft(draft, *, creation_id, revision, canonical_host, still_au
     return value
 
 
-async def projection(tx, creation):
-    """An explicit historical intake observation, never an inferred live publication state."""
+async def intake_observation(tx, creation):
+    """One fresh canonical intake/view pair, internal only; never an authority cache."""
     from ..control.routes import ControlError
+    from ..site_build.authority_observation import active
     from .content_wire import ContentView
     from .models import Job, Revision
-    revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
-        Revision.sequence == creation.current_revision))
-    job = await tx.get(Job, revision.job_id) if revision else None
-    intake = (job.usage or {}).get("content_intake") if job else None
+    observed = active(tx, creation)
+    if observed:
+        revision, job, _ = await observed.material(creation)
+    else:
+        revision = await tx.scalar(select(Revision).where(Revision.creation_id == creation.id,
+            Revision.sequence == creation.current_revision))
+        job = await tx.get(Job, revision.job_id) if revision else None
+    from .private_preview import selected_intake
+    native_host, intake = await selected_intake(tx, creation, revision, job)
     view = {"creation_id": creation.id, "current_revision": creation.current_revision or None,
         "active_job_id": creation.active_job_id, "creation_updated_at": creation.updated_at,
         "import_job_id": job.id if intake else None, "source_revision": revision.source_revision if revision else None,
@@ -224,7 +247,7 @@ async def projection(tx, creation):
             if (intake["version"] != "customer-content-intake.v1" or intake["state"] != "private-draft-imported"
                     or intake["creationId"] != creation.id or intake["acceptedRevision"] != creation.current_revision
                     or intake["sourceHash"] != revision.material_hash or digest(revision.payload) != revision.material_hash
-                    or intake["canonicalHost"] != creation.canonical_host or intake["fullF1"] != "UNVERIFIED"
+                    or intake["canonicalHost"] != native_host or intake["fullF1"] != "UNVERIFIED"
                     or intake["launch"] != "UNVERIFIED" or intake["deployment"] != "not-performed"):
                 raise ValueError("Invalid intake identity")
             paths = {item["pageId"]: item["path"] for item in intake["pageMappings"]}
@@ -235,6 +258,12 @@ async def projection(tx, creation):
                 "hidden_blocker_count": max(0, len(page["blockers"]) - 12)} for page in intake["workflow"]["pages"]]
             view.update(state="private_draft_imported", observed_at=intake["importedAt"], pages=pages,
                 content_plan_state=intake["contentPlanState"].replace("-", "_"), plan_issues=intake["planIssues"])
-        return ContentView.model_validate(view).model_dump(mode="json")
+        return ContentView.model_validate(view).model_dump(mode="json"), native_host, intake, revision.id if revision else None
     except (ValueError, TypeError, KeyError):
         raise ControlError(503, "invalid_content_source") from None
+
+
+async def projection(tx, creation):
+    """An explicit historical intake observation, never an inferred live publication state."""
+    view, _, _, _ = await intake_observation(tx, creation)
+    return view

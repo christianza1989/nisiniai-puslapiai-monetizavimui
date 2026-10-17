@@ -1,0 +1,20 @@
+{
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/adapter.py",
+    "agent-business-core/runtime/README.md"
+  ],
+  "evidence": [
+    "Frozen749bb435 actualGUIDE d39dbf65 critic trace6b789729...: provider_error/max_output_tokens6.922s, timeout164.711s, nooutputfile; budget itselfunknown, not schema-rejection proof.",
+    "Actual output.schema9199bytes/238findingrefs/9checkIDs; prompt45790bytes. Firstfocusedregression5FAIL14PASS3.11s; retained private log."
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "siteId": "core",
+  "summary": "Native GUIDE critic still returns repeated receipt mechanics and large literal reference enums; actual High dispatch exhausted provider output token budget before any final output. Extend compact provider projection with unchanged native strict stored review gates.",
+  "rollback": "Scoped revert before source adoption; preserve original failed/charged GUIDE, accepted Creation and original provider trace; no automatic replay or model/clock/quota changes.",
+  "id": "upgrade-de299866-eace-49bc-9168-08130b7d5a86",
+  "branch": "codex/verslomatika-guide-critic-schema-20261015",
+  "baseSha": "749bb43587344d4c23645198328315274a3ff1f5",
+  "createdAt": "2026-10-15T19:10:23.788Z"
+}

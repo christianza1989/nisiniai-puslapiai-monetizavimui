@@ -4,7 +4,9 @@
 
 Privatus kelių verslų projektas: nišų tyrimai ir dokumentacija, turinio studija, SEO/GEO sutartys, agentų runtime, projektui pritaikyti skills ir Madbeauty platformos prototipas.
 
-**Pradėti:** [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md), [WORKSTREAMS.md](WORKSTREAMS.md). Madbeauty kūrimas: [projekto roadmap](sites/madbeauty/PROJECT_ROADMAP.md).
+**Pradėti:** [AGENTS.md](AGENTS.md), [dokumentacijos žemėlapis](docs/DOCUMENTATION_MAP.md) ir [WORKSTREAMS.md](WORKSTREAMS.md). Žemėlapis nukreipia į atitinkamo darbo sutartį, modulio instrukcijas ir būsenos įrodymus. Naujos nišinės svetainės eiga – [START_HERE.md](START_HERE.md); didesnės platformos – [PLATFORM_BUILD_CONTRACT.md](PLATFORM_BUILD_CONTRACT.md).
+
+Dokumentų valymo apimtis, išsaugota istorija ir tiksliai atkuriamas seno SEO MVP plano karantinas: [2026-10-17 inventorius](docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md). Inventorius nėra visos sistemos priėmimas. Konkrečios platformos darbus vertink pagal jos šakos, PR ir naujausių bandymų įrodymus.
 
 ## Du gretimi projektai
 

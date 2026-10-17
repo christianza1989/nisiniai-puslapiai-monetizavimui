@@ -9,8 +9,8 @@ def policy(profile):
         return None  # Preserve default execution identity, including historical hashes.
     if profile != profiles.SOL_HIGH:
         raise RunnerError("review_invalid")
-    return {"revision": "local-high-discovery-deadline.v1", "job_seconds": 600,
-        "creator_seconds": 420, "critic_seconds": 90, "coordinator_seconds": 90,
+    return {"revision": "local-high-discovery-deadline.v2", "job_seconds": 900,
+        "creator_seconds": 660, "critic_seconds": 90, "coordinator_seconds": 90,
         "creator_reserve_seconds": 180, "critic_reserve_seconds": 90}
 
 

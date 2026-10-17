@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "python -m pytest offline_tests/test_live_preview_monitor_cadence.py offline_tests/test_live_preview_runtime.py tests/test_studio_authorization_cleanup.py -k not_success_eof -q --tb=short",
+      "evidence": "Actual argv uses -k not success_eof as one argument.70PASS20.04s/1SQLtest deselected. Log content-studio/tmp/preview-cadence-final.private.log SHA256234912fcd6493da89be3fcfd95773bae94a3b3410ea66fc871409e6fcce0d6b5. NoDB/provider."
+    },
+    {
+      "result": "PASS",
+      "command": "python -m ruff check exact four changed Python files; git diff --check",
+      "evidence": "Initial Ruff4paths PASS; final same paths rerun before scoped stage. docs/LIVE_PREVIEW_AUTH_CADENCE.md records source vs actual-runtime acceptance."
+    }
+  ],
+  "status": "local-verified",
+  "note": "Separate Root cadence repair after frozen60e7 transfer. Strict numeric0.05–1s interval validated before auth/spawn; fixed serve only0.2/default1. No pulse timer/cache/concurrentcallback/TTL/deadline changes. Original1FAIL1PASS baseline0d5b554e retained, intermediate fake-kwargs1FAIL60PASS4c600bc4 retained. Final70PASS20.04s,1actualSQLtest deselected, includes existing actual inertchild EOF/timeout/cancel cleanup; actual native/DB/browser feature adoption remains OPEN. Root helper lateP followup independent; whole runtime feature78 remains fixing.",
+  "eventId": "ba0ce160-16e9-44ad-8758-727326602442",
+  "sequence": 3,
+  "at": "2026-10-17T10:11:51.526Z"
+}

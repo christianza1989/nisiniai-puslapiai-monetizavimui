@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "PYTHONPATH=src;tests;scripts python -m pytest offline_tests/test_source_observation.py offline_tests/test_private_preview.py offline_tests/test_private_native_continuity.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py tests/test_build_continuation.py -k \"not real_studio_monitor and not actual_python_node_observer\" -q --tb=short",
+      "evidence": "213PASS2.19s;2actualprocess tests explicitly deselected;1existing deliberate UUID warning.19new operation cases and canonical private/S6/Foundation regressions. SHA2560e07eb953ca7a07df6ca0ab3676923509a74a015fd75925414c64225e3ab0b26."
+    },
+    {
+      "result": "PASS",
+      "command": "ruff check exact5sharedPython sources plus test_source_observation.py and test_foundation_bridge.py; git diff --check",
+      "evidence": "All7Python files PASS and whitespace PASS. Only existing related test mock target changed; original assertions and failures preserved. Root reserved live_preview.py/runtime test/CUSTOMER_LIVE_PREVIEW.md/journals unchanged."
+    }
+  ],
+  "status": "local-verified",
+  "note": "Scoped mock/source regression only; Root separately integrates git_source_operation around Authority and measures actual latency/heartbeat. No actual DB/Git-subprocess-under-test/Node-child/server/provider/currentcase/adoption, historical journal mutation or deadline/TTL/wire change.",
+  "eventId": "a934614c-021b-4c2a-8fb8-ef92a90b3e15",
+  "sequence": 3,
+  "at": "2026-10-17T08:12:37.600Z"
+}

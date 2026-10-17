@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Root integrated separately reviewed helperd779895/a4f925e and bound each full Authority.capture/verify to a fresh Git source operation. All-repo exit fence finishes before the method/sharedtask result and heartbeat; safe503source_unavailable mapping preserves ordinary401/404/409. Root source review found one cached-return CLOSING race in the helper; its meaningful negative regression and a4 correction were reviewed before integration. No TTL/timeout/native/S6/SQL/file-hash/proof/wire checks changed. Current servingda578 is unchanged and old runtime journal remains fixing until actual lease recheck; these are source checks only.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;tests;scripts pytest offline_tests/test_live_preview_runtime.py offline_tests/test_live_preview_wire.py offline_tests/test_source_observation.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py offline_tests/test_site_build_lifecycle.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py -q -k not_real_studio_monitor -p no:cacheprovider; ruff check exact2RootPythonfiles",
+      "result": "PASS",
+      "evidence": "242PASS6.76s;1actual-process monitor deliberately deselected/1existing invalidUUID warning. Private logSHA256687d57087e02475a1d47717ebd0ce44061f900bae58b6d5031d28870d072e27b. Includes exact caller source-scope/error/heartbeat ordering and original ownership/lease/cancellation/claim guards. Ruff PASS."
+    }
+  ],
+  "eventId": "c1611892-6183-4202-8f9d-4df79cf06da5",
+  "sequence": 4,
+  "at": "2026-10-17T08:22:49.149Z"
+}

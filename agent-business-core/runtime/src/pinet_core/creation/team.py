@@ -280,12 +280,17 @@ async def projection(tx, creation):
                                   .order_by(TeamEvent.sequence)))
     by_attempt, job_by_id = {a.id: a for a in attempts}, {j.id: j for j in jobs}
     views = []
+    try:
+        observed_profiles = await profiles.validate_attempts(tx, "creation",
+            [(job_by_id[a.job_id], a.role, a.model) for a in attempts])
+        # Historical metadata follows the job's immutable profile, independent
+        # of a new selection. A latest job without attempts is freshly observed.
+        latest_profile = (observed_profiles[jobs[-1].id] if jobs and jobs[-1].id in observed_profiles
+            else await profiles.stored(tx, "creation", jobs[-1]) if jobs else profiles.selected())
+    except adapter.RunnerError:
+        from ..control.routes import ControlError
+        raise ControlError(503, "invalid_content_source") from None
     for attempt in attempts:
-        try:
-            await profiles.validate_attempt(tx, "creation", job_by_id[attempt.job_id], attempt.role, attempt.model)
-        except adapter.RunnerError:
-            from ..control.routes import ControlError
-            raise ControlError(503, "invalid_content_source") from None
         final = [e.state for e in events if e.attempt_id == attempt.id and e.state != "reserved"]
         state = final[-1] if final else "reserved" if job_by_id[attempt.job_id].status == "running" else "interrupted"
         views.append(AttemptView(attempt_id=attempt.id, job_id=attempt.job_id, sequence=attempt.sequence, role=attempt.role,
@@ -303,5 +308,5 @@ async def projection(tx, creation):
         scope="private_business_and_website_draft", current_revision=creation.current_revision or None,
         active_job_id=creation.active_job_id, latest_job_id=jobs[-1].id if jobs else None, creation_updated_at=creation.updated_at,
         accepted_candidate_sha256=revision.material_hash if reviewed else None, max_rounds=2, max_calls_per_job=6,
-        deadline_seconds=adapter.deadlines.job_seconds(profiles.selected()), full_f1_status="UNVERIFIED", launch_status="UNVERIFIED",
+        deadline_seconds=adapter.deadlines.job_seconds(latest_profile), full_f1_status="UNVERIFIED", launch_status="UNVERIFIED",
         attempts=views, events=timeline).model_dump(mode="json")

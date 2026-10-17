@@ -1,5 +1,5 @@
 // Trusted local build transport; not editorial, business or launch acceptance.
-import {createHash} from 'node:crypto';
+import {createHash,randomUUID} from 'node:crypto';
 import {execFileSync,spawn} from 'node:child_process';
 import {appendFile,lstat,mkdir,open,readFile,readdir,realpath,symlink,unlink,writeFile} from 'node:fs/promises';
 import path from 'node:path';
@@ -12,10 +12,77 @@ import {requestCompletion} from '../../SKILLS/niche-site-audit/scripts/verify-si
 
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex'),digest=value=>hash(stableV2(value));
 const fail=code=>{throw Object.assign(new Error(code),{code});};
-const git=(root,args,raw=false)=>{try{const value=execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],timeout:10000,maxBuffer:1048576,windowsHide:true});return raw?value:value.trim();}catch{fail('foundation_preview_source_unavailable');}};
+const git=(root,args,raw=false)=>{try{const value=execFileSync('git',['-c','core.longpaths=true',...args],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],timeout:10000,maxBuffer:1048576,windowsHide:true});return raw?value:value.trim();}catch{fail('foundation_preview_source_unavailable');}};
 const allowedData=file=>/^(content-packages\/|content-staging\/|public\/content-assets\/)/.test(file)||['lib/generated/content-packages.json','lib/generated/content-admissions.json'].includes(file);
+const HOSTING='.openai/hosting.json',EXCLUDES='.sites-runtime/preview-storage.gitignore';
+const HOSTING_BYTES='{"d1":"DB"}\n',EXCLUDES_BYTES='/.openai/hosting.json\n';
+const DATABASE={binding:'DB',database_name:'site-creator-d1',database_id:'00000000-0000-4000-8000-000000000000'};
+const SCHEMAS=['drizzle/0004_niche_leads.sql','drizzle/0005_niche_interest_daily.sql'];
 
-export async function previewSource(root,expected){
+export function createPreviewWorktree(root,checkout,source){
+  if(!path.isAbsolute(root)||!path.isAbsolute(checkout)||!/^[a-f0-9]{40}$/.test(source))fail('foundation_preview_source_unavailable');
+  // The restricted child environment deliberately excludes the user's Git
+  // profile. Generated preview paths must not depend on its core.longpaths.
+  git(root,['worktree','add','--detach',checkout,source]);
+}
+
+async function storageInput(checkout,file,expected){
+  await assertArtifactDirectories(checkout,path.dirname(path.join(checkout,file)));
+  const bytes=await readArtifactBytes(path.join(checkout,file),16384);
+  if(bytes.toString('utf8')!==expected)fail('foundation_preview_storage_config_changed');
+  return hash(bytes);
+}
+
+export async function installPreviewStorage(checkout,owner){
+  const publicCore=path.resolve(checkout,'../../../..'),parent=path.dirname(checkout);
+  if(checkout!==path.join(publicCore,'output/foundation-preview',owner.scopeSha256,'repo')
+      ||stableV2(JSON.parse(await readArtifactBytes(path.join(parent,'owner.json'),16384)))!==stableV2(owner))fail('foundation_preview_foreign_checkout');
+  await previewSource(checkout,owner.publicSourceRevision,true);
+  for(const [name,value]of [[HOSTING,HOSTING_BYTES],[EXCLUDES,EXCLUDES_BYTES]]){
+    const file=path.join(checkout,name);await safeDirectories(checkout,path.dirname(file));
+    try{await storageInput(checkout,name,value);}catch(error){if(error.code!=='ENOENT')throw error;await writeFile(file,value,{flag:'wx',mode:0o600});}
+  }
+  return previewStorageInputs(checkout);
+}
+
+export async function previewStorageInputs(checkout){
+  const hostingSha256=await storageInput(checkout,HOSTING,HOSTING_BYTES),excludesSha256=await storageInput(checkout,EXCLUDES,EXCLUDES_BYTES),schemas=[];
+  for(const file of SCHEMAS){
+    await assertArtifactDirectories(checkout,path.dirname(path.join(checkout,file)));
+    const raw=await readArtifactBytes(path.join(checkout,file),65536),statements=raw.toString('utf8').split(';').map(v=>v.trim()).filter(Boolean);
+    if(!statements.length||statements.some(v=>!/^CREATE (?:TABLE|INDEX) IF NOT EXISTS [`]?(?:niche_leads|niche_leads_site_created_idx|niche_interest_daily)[`]?\s/i.test(v)))fail('foundation_preview_storage_schema_changed');
+    schemas.push({file,sha256:hash(raw)});
+  }
+  return {version:1,database:DATABASE,hostingSha256,excludesSha256,schemas};
+}
+
+export async function previewStorageGitEnvironment(checkout){
+  const publicCore=path.resolve(checkout,'../../../..'),owner=JSON.parse(await readArtifactBytes(path.join(path.dirname(checkout),'owner.json'),16384));
+  if(checkout!==path.join(publicCore,'output/foundation-preview',owner.scopeSha256,'repo'))fail('foundation_preview_foreign_checkout');
+  await previewSource(checkout,owner.publicSourceRevision,true);
+  await storageInput(checkout,HOSTING,HOSTING_BYTES);await storageInput(checkout,EXCLUDES,EXCLUDES_BYTES);
+  return {GIT_CONFIG_COUNT:'2',GIT_CONFIG_KEY_0:'core.excludesFile',GIT_CONFIG_VALUE_0:path.join(checkout,EXCLUDES),
+    GIT_CONFIG_KEY_1:'core.longpaths',GIT_CONFIG_VALUE_1:'true'};
+}
+
+export async function previewStorageConfig(checkout,siteId){
+  const raw=await readArtifactBytes(path.join(checkout,'dist/server/wrangler.json'),1048576),config=JSON.parse(raw);
+  const databases=config.d1_databases;
+  // Wrangler emits empty producers/consumers even when no queues are bound.
+  // Accept exactly that inert default, never a queue binding or unknown option.
+  const queues=config.queues,emptyQueues=queues===undefined||(queues!==null&&typeof queues==='object'&&!Array.isArray(queues)
+    &&Object.entries(queues).every(([key,value])=>['producers','consumers'].includes(key)&&Array.isArray(value)&&value.length===0));
+  if(!Array.isArray(databases)||databases.length!==1||!databases[0]
+      ||Object.entries(DATABASE).some(([k,v])=>databases[0][k]!==v)
+      ||databases[0].remote!==undefined&&databases[0].remote!==false
+      ||databases[0].preview_database_id!==undefined&&databases[0].preview_database_id!==DATABASE.database_id
+      ||stableV2(config.vars)!==stableV2({NICHE_DEV_SITE_ID:siteId})||config.assets?.binding!=='ASSETS'
+      ||!emptyQueues||['send_email','r2_buckets','kv_namespaces','services','hyperdrive','vectorize','mtls_certificates','analytics_engine_datasets','unsafe']
+        .some(k=>config[k]&&Object.keys(config[k]).length))fail('foundation_preview_storage_binding_invalid');
+  return {version:1,sha256:hash(raw),database:DATABASE};
+}
+
+export async function previewSource(root,expected,ownedStorage=false){
   if(!path.isAbsolute(root)||!/^[a-f0-9]{40}$/.test(expected))fail('foundation_preview_source_unavailable');
   const absolute=path.resolve(root);
   if(await realpath(absolute)!==absolute||await realpath(git(absolute,['rev-parse','--show-toplevel']))!==absolute
@@ -26,7 +93,10 @@ export async function previewSource(root,expected){
   // Git's NUL format keeps quoting and spaces from disguising a changed source.
   const changed=git(absolute,['diff','--name-only','-z','HEAD','--'],true).split('\0').filter(Boolean);
   const untracked=git(absolute,['ls-files','--others','--exclude-standard','-z'],true).split('\0').filter(Boolean);
-  if([...changed,...untracked].some(file=>!allowedData(file)))fail('foundation_preview_source_dirty');
+  if(ownedStorage){
+    try{await storageInput(absolute,HOSTING,HOSTING_BYTES);}catch(error){if(error.code!=='ENOENT')throw error;}
+  }
+  if([...changed,...untracked].some(file=>!allowedData(file)&&!(ownedStorage===true&&file===HOSTING)))fail('foundation_preview_source_dirty');
   return expected;
 }
 
@@ -81,9 +151,9 @@ async function terminateOwned(child){
 }
 
 export function previewProcess(root,mode,args,siteId,log,timeoutMs=140000){
-  if(!['import','compile','build','serve'].includes(mode)||!path.isAbsolute(root)||!path.isAbsolute(log)||!Array.isArray(args)||!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>150000)fail('foundation_preview_process_invalid');
+  if(!['import','compile','build','init-storage','serve'].includes(mode)||!path.isAbsolute(root)||!path.isAbsolute(log)||!Array.isArray(args)||!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>150000)fail('foundation_preview_process_invalid');
   const child=spawn(process.execPath,[import.meta.filename,'--owned-runner',root,mode,...args],{cwd:root,
-    env:previewEnvironment(siteId,mode==='serve'&&args[1]?args[1]:null),windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe','ipc']});
+    env:previewEnvironment(siteId,mode==='serve'&&args[1]?args[1]:mode==='init-storage'?args[0]:null),windowsHide:true,detached:process.platform!=='win32',stdio:['ignore','pipe','pipe','ipc']});
   let size=0,error=null,finished=false;
   const timer=setTimeout(()=>{error=Object.assign(new Error('foundation_preview_timeout'),{code:'foundation_preview_timeout'});void terminateOwned(child);},timeoutMs);
   const writes=[];
@@ -95,7 +165,8 @@ export function previewProcess(root,mode,args,siteId,log,timeoutMs=140000){
   const ready=new Promise((resolve,reject)=>{child.once('message',value=>{if(value?.kind==='owned-preview-ready'&&value.mode===mode)resolve();else reject(Error('foundation_preview_process_invalid'));});child.once('exit',()=>reject(Error('foundation_preview_build_failed')));child.once('error',reject);});
   // A server lives until its owning operation's finally block, not until stdout EOF.
   done.catch(()=>{});ready.catch(()=>{});
-  return {child,done,ready,get finished(){return finished;},close:()=>terminateOwned(child)};
+  let closing;
+  return {child,done,ready,get finished(){return finished;},close:()=>closing??=terminateOwned(child)};
 }
 
 export async function previewBuildDigest(checkout){
@@ -162,29 +233,32 @@ export async function prepareCustomerSitePreview(context,scope,release){
       publicSourceRevision:source,nativeContextSha256:hash(context.directory)};
     const ownerFile=path.join(parent,'owner.json');
     try{await writeFile(ownerFile,JSON.stringify(owner)+'\n',{flag:'wx'});}catch(error){if(error.code!=='EEXIST')throw error;if(stableV2(JSON.parse(await readArtifactBytes(ownerFile,16384)))!==stableV2(owner))fail('foundation_preview_foreign_checkout');}
-    try{await lstat(checkout);}catch(error){if(error.code!=='ENOENT')throw error;git(publicCore,['worktree','add','--detach',checkout,source]);}
-    await previewSource(checkout,source);
+    try{await lstat(checkout);}catch(error){if(error.code!=='ENOENT')throw error;createPreviewWorktree(publicCore,checkout,source);}
+    await previewSource(checkout,source,true);
     const dependencies=await previewDependencies(publicCore,checkout),link=path.join(checkout,'node_modules');
     try{const info=await lstat(link);if(!info.isSymbolicLink()||await realpath(link)!==await realpath(path.join(publicCore,'node_modules')))fail('foundation_preview_dependencies_changed');}
     catch(error){if(error.code!=='ENOENT')throw error;await symlink(path.join(publicCore,'node_modules'),link,process.platform==='win32'?'junction':'dir');}
-    const buildRecord=path.join(parent,'build.json'),expected={...owner,dependencies};
+    const buildRecord=path.join(parent,'build.json');
     let saved=null;try{saved=JSON.parse(await readArtifactBytes(buildRecord,16384));}catch(error){if(error.code!=='ENOENT')throw error;}
-    if(saved&&(stableV2(saved.binding)!==stableV2(expected)||stableV2(saved.build)!==stableV2(await previewBuildDigest(checkout))))fail('foundation_preview_build_changed');
+    if(!saved)await installPreviewStorage(checkout,owner);
+    const expected={...owner,dependencies,storage:await previewStorageInputs(checkout)};
+    if(saved&&(stableV2(saved.binding)!==stableV2(expected)||stableV2(saved.build)!==stableV2(await previewBuildDigest(checkout))
+        ||stableV2(saved.storage)!==stableV2(await previewStorageConfig(checkout,pkg.siteId))))fail('foundation_preview_build_changed');
     if(!saved){
       const admissionFile=path.join(parent,'local-admission.json');await previewAdmission(admissionFile,pkg,hash(packageBytes));
       const log=path.join(parent,'build.private.log');
       const imported=await previewImportedRelease(checkout,pkg,packageBytes,release.evidence.asset_sha256,admissionFile);
       for(const [mode,args]of [...(imported?[]:[['import',[native,admissionFile]]]),['compile',[]],['build',[]]]){
         const run=previewProcess(checkout,mode,args,pkg.siteId,log);try{await run.done;}finally{await run.close();}
-        await previewSource(checkout,source);
+        await previewSource(checkout,source,true);
       }
     }
     const admissions=JSON.parse(await readArtifactBytes(path.join(checkout,'lib/generated/content-admissions.json'),1048576)),bound=admissions[pkg.siteId];
     if(bound?.packageSha256!==hash(packageBytes)||bound?.buildSourceRevision!==source||bound?.scope!=='local-preview'||bound?.testOnly!==true)fail('foundation_preview_build_unbound');
-    await readArtifactBytes(path.join(checkout,'dist/server/wrangler.json'),1048576);
-    if(!saved)await writeFile(buildRecord,JSON.stringify({binding:expected,build:await previewBuildDigest(checkout)})+'\n',{flag:'wx'});
+    const storage=await previewStorageConfig(checkout,pkg.siteId);
+    if(!saved)await writeFile(buildRecord,JSON.stringify({binding:expected,build:await previewBuildDigest(checkout),storage})+'\n',{flag:'wx'});
     if(stableV2(await previewDependencies(publicCore,checkout))!==stableV2(dependencies))fail('foundation_preview_dependencies_changed');
-    await previewSource(publicCore,source);await previewSource(checkout,source);
+    await previewSource(publicCore,source);await previewSource(checkout,source,true);
     if(hash(await readArtifactBytes(path.join(native,'content-package.json'),5*1048576))!==hash(packageBytes))fail('foundation_preview_release_changed');
     return {checkout,parent,scopeSha256:scopeSha,packageSha256:hash(packageBytes),publicSourceRevision:source,siteId:pkg.siteId,releaseId:release.evidence.release_id,buildSha256:hash(await readArtifactBytes(buildRecord,16384))};
   }finally{await lock.close();await unlink(path.join(parent,'operation.lock'));}
@@ -194,16 +268,25 @@ export async function checkCustomerSitePreview(context,scope,release,buildSha256
   const publicCore=process.env.STUDIO_PUBLIC_CORE_DIR,source=scope.sources.public_source_revision;
   if(typeof publicCore!=='string'||!/^[a-f0-9]{64}$/.test(buildSha256))fail('foundation_preview_build_changed');
   const scopeSha=digest(scope),parent=path.join(publicCore,'output/foundation-preview',scopeSha),checkout=path.join(parent,'repo');
-  await assertArtifactDirectories(publicCore,checkout);await previewSource(publicCore,source);await previewSource(checkout,source);
+  await assertArtifactDirectories(publicCore,checkout);await previewSource(publicCore,source);await previewSource(checkout,source,true);
   const owner={version:1,scopeSha256:scopeSha,packageSha256:release.evidence.package_sha256,releaseId:release.evidence.release_id,publicSourceRevision:source,nativeContextSha256:hash(context.directory)};
   if(stableV2(JSON.parse(await readArtifactBytes(path.join(parent,'owner.json'),16384)))!==stableV2(owner))fail('foundation_preview_foreign_checkout');
   const buildRaw=await readArtifactBytes(path.join(parent,'build.json'),16384);
   if(hash(buildRaw)!==buildSha256)fail('foundation_preview_build_changed');
-  const expected={binding:{...owner,dependencies:await previewDependencies(publicCore,checkout)},build:await previewBuildDigest(checkout)};
+  const expected={binding:{...owner,dependencies:await previewDependencies(publicCore,checkout),storage:await previewStorageInputs(checkout)},
+    build:await previewBuildDigest(checkout),storage:await previewStorageConfig(checkout,context.siteId)};
   if(stableV2(JSON.parse(buildRaw))!==stableV2(expected))fail('foundation_preview_build_changed');
   const packageBytes=await readArtifactBytes(path.join(release.directory,'content-package.json'),5*1048576),pkg=JSON.parse(packageBytes);
   if(hash(packageBytes)!==release.evidence.package_sha256||!await previewImportedRelease(checkout,pkg,packageBytes,release.evidence.asset_sha256,path.join(parent,'local-admission.json')))fail('foundation_preview_release_changed');
   return {state:'retained-current',buildSha256};
+}
+
+export async function retainedCustomerSitePreview(context,scope,release,buildSha256){
+  await checkCustomerSitePreview(context,scope,release,buildSha256);
+  const parent=path.join(process.env.STUDIO_PUBLIC_CORE_DIR,'output/foundation-preview',digest(scope));
+  return {checkout:path.join(parent,'repo'),parent,scopeSha256:digest(scope),
+    packageSha256:release.evidence.package_sha256,publicSourceRevision:scope.sources.public_source_revision,
+    siteId:context.siteId,releaseId:release.evidence.release_id,buildSha256};
 }
 
 async function availablePort(wanted=0){
@@ -223,16 +306,85 @@ export async function previewRuntimeState(publicCore,owner){
   return root;
 }
 
-export async function withCustomerSitePreview(prepared,operation,retainedOrigin=null){
-  await previewSource(prepared.checkout,prepared.publicSourceRevision);
+function runtimeOwner(saved,buildSha256){return {...saved.binding,buildSha256,storageConfigSha256:saved.storage.sha256};}
+
+export async function previewStorageState(prepared,runtimeRoot){
+  const publicCore=path.resolve(prepared.checkout,'../../../..');
+  if(prepared.parent!==path.dirname(prepared.checkout)||!/^[a-f0-9]{64}$/.test(prepared.scopeSha256)
+      ||prepared.checkout!==path.join(publicCore,'output/foundation-preview',prepared.scopeSha256,'repo')
+      ||path.resolve(runtimeRoot)!==path.join(publicCore,'output/foundation-state',prepared.scopeSha256.slice(0,16)))fail('foundation_preview_foreign_state');
+  await assertArtifactDirectories(publicCore,runtimeRoot);
+  const raw=await readArtifactBytes(path.join(prepared.parent,'build.json'),16384),saved=JSON.parse(raw);
+  if(hash(raw)!==prepared.buildSha256||saved.binding.scopeSha256!==prepared.scopeSha256
+      ||saved.binding.packageSha256!==prepared.packageSha256||saved.binding.publicSourceRevision!==prepared.publicSourceRevision
+      ||stableV2(saved.binding.storage)!==stableV2(await previewStorageInputs(prepared.checkout))
+      ||stableV2(saved.storage)!==stableV2(await previewStorageConfig(prepared.checkout,prepared.siteId))
+      ||stableV2(saved.build)!==stableV2(await previewBuildDigest(prepared.checkout)))fail('foundation_preview_build_changed');
+  const owner=runtimeOwner(saved,prepared.buildSha256);
+  if(stableV2(JSON.parse(await readArtifactBytes(path.join(runtimeRoot,'owner.json'),16384)))!==stableV2(owner))fail('foundation_preview_foreign_state');
+  return {owner,saved};
+}
+
+export function previewStorageCommandArgs(checkout,runtimeRoot){
+  if(!path.isAbsolute(checkout)||!path.isAbsolute(runtimeRoot))fail('foundation_preview_path_invalid');
+  return SCHEMAS.map(file=>['d1','execute','DB','--local','--config',path.join(checkout,'dist/server/wrangler.json'),
+    '--persist-to',path.join(runtimeRoot,'state'),'--file',path.join(checkout,file),'--yes']);
+}
+
+export async function initializePreviewStorage(prepared,runtimeRoot,onProcess=()=>{},timeoutMs=140000,beforeStart=async()=>{}){
+  const {owner,saved}=await previewStorageState(prepared,runtimeRoot);
+  await safeDirectories(runtimeRoot,path.join(runtimeRoot,'state'));
+  const binding={version:'native-preview-local-storage.v1',owner,storage:saved.binding.storage,config:saved.storage};
+  const marker=path.join(runtimeRoot,'local-storage.json');
+  try{if(stableV2(JSON.parse(await readArtifactBytes(marker,32768)))!==stableV2(binding))fail('foundation_preview_foreign_state');}
+  catch(error){if(error.code!=='ENOENT')throw error;await writeFile(marker,stableV2(binding)+'\n',{flag:'wx',mode:0o600});}
+  const id=randomUUID(),file=state=>path.join(runtimeRoot,'storage-'+id+'.'+state+'.json');
+  const attempt={version:binding.version,ownerSha256:digest(owner),bindingSha256:digest(binding),startedAt:new Date().toISOString()};
+  await writeFile(file('started'),stableV2(attempt)+'\n',{flag:'wx',mode:0o600});
+  let run;
+  try{
+    await beforeStart();
+    run=previewProcess(prepared.checkout,'init-storage',[runtimeRoot],prepared.siteId,path.join(runtimeRoot,'storage.private.log'),timeoutMs);
+    onProcess(run);await run.done;
+    await previewStorageState(prepared,runtimeRoot);
+    await writeFile(file('completed'),stableV2({...attempt,state:'local-schema-initialized',completedAt:new Date().toISOString()})+'\n',{flag:'wx',mode:0o600});
+  }catch(error){
+    await writeFile(file('failed'),stableV2({...attempt,state:'failed',code:/^[a-z_]{1,100}$/.test(error.code||'')?error.code:'foundation_preview_storage_failed'})+'\n',{flag:'wx',mode:0o600});
+    throw error;
+  }finally{if(run)await run.close();}
+}
+
+export async function withCustomerSitePreview(prepared,operation,retainedOrigin=null,stillAuthorized=null){
+  await previewSource(prepared.checkout,prepared.publicSourceRevision,true);
   const saved=JSON.parse(await readArtifactBytes(path.join(prepared.parent,'build.json'),16384));
   if(hash(await readArtifactBytes(path.join(prepared.parent,'build.json'),16384))!==prepared.buildSha256||saved.binding.scopeSha256!==prepared.scopeSha256||saved.binding.packageSha256!==prepared.packageSha256
-      ||stableV2(saved.build)!==stableV2(await previewBuildDigest(prepared.checkout)))fail('foundation_preview_build_changed');
+      ||stableV2(saved.build)!==stableV2(await previewBuildDigest(prepared.checkout))
+      ||stableV2(saved.binding.storage)!==stableV2(await previewStorageInputs(prepared.checkout))
+      ||stableV2(saved.storage)!==stableV2(await previewStorageConfig(prepared.checkout,prepared.siteId)))fail('foundation_preview_build_changed');
   let wanted=0;
   if(retainedOrigin!==null){const url=new URL(retainedOrigin);if(url.protocol!=='http:'||url.hostname!=='127.0.0.1'||!url.port||url.origin!==retainedOrigin)fail('foundation_preview_origin_invalid');wanted=Number(url.port);}
-  const runtimeRoot=await previewRuntimeState(process.env.STUDIO_PUBLIC_CORE_DIR,saved.binding);
-  const port=await availablePort(wanted),origin='http://127.0.0.1:'+port,run=previewProcess(prepared.checkout,'serve',[String(port),runtimeRoot],prepared.siteId,path.join(prepared.parent,'server.private.log'),150000);
+  if(stillAuthorized!==null&&typeof stillAuthorized!=='function')fail('foundation_preview_scope_invalid');
+  let active=null,finished=false,revoked=false,expired=false,tick,wake,lifetimeTimer;
+  const deadline=Date.now()+150000;
+  const authorize=async()=>{
+    if(expired)fail('foundation_preview_timeout');
+    if(revoked)fail('authorization_revoked');
+    if(stillAuthorized){let allowed=false;try{allowed=await stillAuthorized();}catch{}if(revoked||allowed!==true){revoked=true;fail('authorization_revoked');}if(expired)fail('foundation_preview_timeout');}
+  };
+  await authorize();
+  const monitor=stillAuthorized?(async()=>{
+    while(!finished){await new Promise(resolve=>{wake=resolve;tick=setTimeout(resolve,1000);});if(!finished)try{await authorize();}catch(error){if(active)await active.close();throw error;}}
+  })():new Promise(()=>{});
+  monitor.catch(()=>{});
+  const lifetime=new Promise((_,reject)=>{lifetimeTimer=setTimeout(()=>{expired=true;if(active)void active.close();reject(Object.assign(Error('foundation_preview_timeout'),{code:'foundation_preview_timeout'}));},150000);});
+  lifetime.catch(()=>{});
   try{
+    const runtimeRoot=await previewRuntimeState(process.env.STUDIO_PUBLIC_CORE_DIR,runtimeOwner(saved,prepared.buildSha256));
+    await authorize();await initializePreviewStorage(prepared,runtimeRoot,run=>{active=run;if(expired||revoked)void run.close();},Math.max(1,Math.min(140000,deadline-Date.now())),authorize);active=null;
+    await authorize();
+    const port=await availablePort(wanted),origin='http://127.0.0.1:'+port;
+    await authorize();
+    const run=active=previewProcess(prepared.checkout,'serve',[String(port),runtimeRoot],prepared.siteId,path.join(prepared.parent,'server.private.log'),Math.max(1,Math.min(150000,deadline-Date.now())));
     let ready=false;
     for(let attempt=0;attempt<40&&!run.finished;attempt++){
       try{const response=await requestCompletion(origin+'/',new URL(origin).host,{timeoutMs:500,maxBytes:1000000,probeOnly:true});
@@ -243,15 +395,18 @@ export async function withCustomerSitePreview(prepared,operation,retainedOrigin=
     if(!ready)fail('foundation_preview_start_failed');
     const preview={version:2,scopeSha256:prepared.scopeSha256,packageSha256:prepared.packageSha256,releaseId:prepared.releaseId,
       publicSourceRevision:prepared.publicSourceRevision,origin,transportHost:'origin'};
-    return await operation(preview);
-  }finally{await run.close();}
+    await authorize();
+    const result=await Promise.race([Promise.resolve().then(()=>operation(preview)),monitor,lifetime]);
+    await authorize();return result;
+  }catch(error){if(revoked)fail('authorization_revoked');if(expired)fail('foundation_preview_timeout');throw error;}
+  finally{finished=true;clearTimeout(lifetimeTimer);clearTimeout(tick);wake?.();if(stillAuthorized)await monitor.catch(()=>{});if(active)await active.close();if(revoked)fail('authorization_revoked');}
 }
 
 // IPC disconnect guards survive a killed parent on Unix. On Windows the
 // maintained studio additionally stops the entire owned process tree.
 if(process.argv[2]==='--owned-runner'){
   const [root,mode,...args]=process.argv.slice(3);
-  const entry={import:'scripts/import-content-package.mjs',compile:'scripts/compile-content-packages.mjs',build:'scripts/run-framework.mjs',serve:'node_modules/wrangler/bin/wrangler.js'}[mode];
+  const entry={import:'scripts/import-content-package.mjs',compile:'scripts/compile-content-packages.mjs',build:'scripts/run-framework.mjs',serve:'node_modules/wrangler/bin/wrangler.js','init-storage':'node_modules/wrangler/bin/wrangler.js'}[mode];
   if(!entry||!process.connected||!path.isAbsolute(root)||path.resolve(git(root,['rev-parse','--show-toplevel']))!==path.resolve(root))process.exit(2);
   const stop=()=>{if(process.platform==='win32'){
     const killer=spawn(path.join(process.env.SYSTEMROOT,'System32/taskkill.exe'),['/PID',String(process.pid),'/T','/F'],{windowsHide:true,stdio:'ignore'});
@@ -260,12 +415,31 @@ if(process.argv[2]==='--owned-runner'){
   process.once('disconnect',stop);setTimeout(stop,150000).unref();
   process.send({kind:'owned-preview-ready',mode});
   process.channel.unref();
+  if(['import','compile','build'].includes(mode)){
+    // Only the fixed owned DATA file is hidden from public compiler provenance.
+    // The parent independently validates and hashes it outside this Git env.
+    const parent=path.dirname(root);
+    if(path.basename(root)==='repo'&&/^[a-f0-9]{64}$/.test(path.basename(parent))&&path.basename(path.dirname(parent))==='foundation-preview')
+      Object.assign(process.env,await previewStorageGitEnvironment(root));
+  }
   const fixedArgs=mode==='import'?[args[0],'--acceptance',args[1]]:mode==='build'?['build']:mode==='serve'?['dev','--config','dist/server/wrangler.json','--local','--persist-to',args[1]?path.join(args[1],'state'):'.sites-runtime/preview-state','--ip','127.0.0.1','--port',args[0],'--inspector-port','0']:[];
   const file=path.join(root,entry);process.argv=[process.execPath,file,...fixedArgs];
-  if(mode==='serve'){
+  if(mode==='serve'||mode==='init-storage'){
     // Wrangler's CJS entry runs only as require.main; dynamic import silently
     // exits without starting a Worker. Keep it inside this guarded child tree.
-    const server=spawn(process.execPath,['--import',pathToFileURL(path.join(root,'scripts/sites-env.mjs')).href,file,...fixedArgs],{cwd:root,env:process.env,windowsHide:true,stdio:'inherit'});
-    process.exitCode=await new Promise((resolve,reject)=>{server.once('error',reject);server.once('exit',code=>resolve(code??2));});
+    let commands=[fixedArgs];
+    if(mode==='init-storage'){
+      if(args.length!==1||!path.isAbsolute(args[0]))fail('foundation_preview_foreign_state');
+      const parent=path.dirname(root),raw=await readArtifactBytes(path.join(parent,'build.json'),16384),saved=JSON.parse(raw);
+      const prepared={checkout:root,parent,scopeSha256:saved.binding.scopeSha256,packageSha256:saved.binding.packageSha256,
+        publicSourceRevision:saved.binding.publicSourceRevision,siteId:process.env.NICHE_DEV_SITE_ID,buildSha256:hash(raw)};
+      await previewSource(root,prepared.publicSourceRevision,true);await previewStorageState(prepared,args[0]);
+      commands=previewStorageCommandArgs(root,args[0]);
+    }
+    for(const command of commands){
+      const server=spawn(process.execPath,['--import',pathToFileURL(path.join(root,'scripts/sites-env.mjs')).href,file,...command],{cwd:root,env:process.env,windowsHide:true,stdio:'inherit'});
+      const code=await new Promise((resolve,reject)=>{server.once('error',reject);server.once('exit',value=>resolve(value??2));});
+      process.exitCode=code;if(code!==0)break;
+    }
   }else await import(pathToFileURL(file));
 }

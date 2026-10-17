@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Each fresh execution-profile schema observation performs two catalog round trips although all predicates can be read atomically at the same checkpoint",
+  "category": "code",
+  "evidence": [
+    "Root-authorized issue66/comment6239903853, exact base2199266b2afc7456e012a67840170070ff068db8 and read-only companionec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "execution_profiles.schema_state reads profile table presence then either broad orphan-trigger presence or ready RLS/seven-trigger/four-FK predicates; validate_attempts calls it independently at entry and final",
+    "Original failing query-count evidence will be preserved before the production mutation. No claim that fewer catalog reads guarantees the three-second preview heartbeat"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/execution_profiles.py",
+    "agent-business-core/runtime/offline_tests/test_execution_profile_schema_observation.py",
+    "agent-business-core/runtime/offline_tests/test_pipeline_execution_profile.py",
+    "agent-business-core/runtime/offline_tests/test_execution_profile_batch.py",
+    "agent-business-core/runtime/offline_tests/test_authority_observation.py",
+    "agent-business-core/runtime/tests/test_pipeline_execution_profile_pg.py",
+    "docs/EXECUTION_PROFILE_SCHEMA_OBSERVATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this scoped schema_state fusion commit only; retain immutable original failures. Source integration and actual runtime/PG adoption remain Root-owned",
+  "id": "upgrade-2100a3cc-940f-4a2a-9542-c767f365cc89",
+  "branch": "codex/profile-schema-observation-20261017",
+  "baseSha": "2199266b2afc7456e012a67840170070ff068db8",
+  "createdAt": "2026-10-17T19:49:35.140Z"
+}

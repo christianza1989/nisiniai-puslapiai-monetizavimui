@@ -73,9 +73,10 @@ class ChatHandler:
 def handlers():
     # Source-fixed registry, never a browser-selected import/tool/executable.
     from ..acquisition.tasks import CaptureHandler
+    from ..workspace_team.direct_handler import DirectHandler
     from ..workspace_team.handler import TeamHandler
 
-    return (ChatHandler(), CaptureHandler(), TeamHandler())
+    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler())
 
 
 def handler_for(kind):
@@ -96,8 +97,13 @@ async def finish_run(tx, task, status, *, usage=None):
             from ..workspace_team.quota import merge_usage, saved_usage
             usage = merge_usage(usage, await saved_usage(tx, task_id=task.id, run_id=run.id, user_id=task.user_id,
                 environment_id=task.environment_id, source_revision=task.source_revision))
+        elif task.kind == "workspace.direct_turn":
+            from ..workspace_team.direct import saved_usage
+            from ..workspace_team.quota import merge_usage
+            usage = merge_usage(usage, await saved_usage(tx, task.id, run.id, task.user_id,
+                task.environment_id, task.source_revision))
         run.status, run.finished_at, run.usage = status, utcnow(), usage
-        if task.kind == "workspace.team_turn" and task.status in {"succeeded", "failed", "cancelled"}:
+        if task.kind in {"workspace.team_turn", "workspace.direct_turn"} and task.status in {"succeeded", "failed", "cancelled"}:
             task.lease_until = None
         run.cost_microusd = None  # CLI usage is not an authoritative USD invoice.
 
@@ -111,6 +117,10 @@ async def claim(*, kind=None):
         except LedgerError:
             continue
         for user_id in actors:
+            if hasattr(handler, "reconcile"):
+                # The fixed handler may resume an explicit durable intent.
+                # Complete metadata preflight BEFORE actor/Task claim locks.
+                await handler.reconcile(user_id)
             async with scope(user=user_id) as tx:
                 # Existing actor lock: all kinds share one running slot.
                 await tx.execute(
@@ -227,6 +237,11 @@ async def settle_hidden_task(tx, claimed, usage):
         usage = merge_usage(usage, await saved_usage(tx, task_id=claimed["task_id"], run_id=claimed["run_id"],
             user_id=claimed["user_id"], environment_id=claimed["environment_id"],
             source_revision=claimed["source_revision"]))
+    elif claimed["kind"] == "workspace.direct_turn":
+        from ..workspace_team.direct import saved_usage
+        from ..workspace_team.quota import merge_usage
+        usage = merge_usage(usage, await saved_usage(tx, claimed["task_id"], claimed["run_id"], claimed["user_id"],
+            claimed["environment_id"], claimed["source_revision"]))
     observed = {
         key: value for key, value in (usage or {}).items()
         if isinstance(key, str)

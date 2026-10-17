@@ -1,0 +1,22 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root actual unchanged source timings preserved: capture5.3567s, inspect13.7414s with Authority.verify4.39/4.92/4.41s. Second capture13.6722s and176Gitcalls total22.4728s; outerinspection503studio_timeout26.3614s while drainingauthorization. Individual rawGit0.04-0.19s and innerNode0.22-0.48s; repeated source observations dominate. Actual traces remain Root private; helper has not executed them.",
+    "Source inspection confirms repeated source_current/private_preview.native_sources/Foundation.source_pins through private/S6/continuation and full Foundation capture; fresh ContextVar operation scope approved. Existing caller checks, actual source equality, file SHA/native/S6/current Session and all timeouts stay intact. Root owns separate Authority/coalescing integration and actual acceptance."
+  ],
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/source_observation.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/adapter.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation.py"
+  ],
+  "siteId": "core",
+  "rollback": "Scoped revert before Root adoption; default unscoped source observations remain fresh. No migration, DB/history/proof rewrite, cache persistence, TTL/deadline increase, process/preview/provider/adoption or foreign file changes. Preserve original failures and Root actual traces.",
+  "summary": "Bound exact identical raw Git source observations to one authority operation, with fresh all-repository exit validation, closed/cancelled context isolation and no authority/native/proof/filehash caching.",
+  "id": "upgrade-53349649-80ec-46a2-b1fe-31e407e659e8",
+  "branch": "codex/customer-live-preview-20261017",
+  "baseSha": "da578030f7c9afd5c4dd2d411edfa67e74c77c7b",
+  "createdAt": "2026-10-17T08:06:31.931Z"
+}

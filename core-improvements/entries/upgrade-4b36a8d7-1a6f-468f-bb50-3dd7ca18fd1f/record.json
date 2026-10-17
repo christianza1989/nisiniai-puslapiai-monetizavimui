@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Allow explicit independently owned loopback QA port for canonical acquisition mail capture integration tests",
+  "category": "workflow",
+  "evidence": [
+    "Existing acceptance fixture fixes15438 despite current services owning other ports; independent headless QA uses a fresh pinet_acq_work timestamp database at127.0.0.1:15547"
+  ],
+  "paths": [
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_correspondence.py",
+    "agent-business-core/runtime/acceptance_tests/test_acquisition_headless.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/200",
+  "rollback": "Revert QA-only scoped changes; stop only exact owned wellness-acq-qa-20261018 after retaining QA data. Operating source/DB unchanged.",
+  "id": "upgrade-4b36a8d7-1a6f-468f-bb50-3dd7ca18fd1f",
+  "branch": "codex/wellness-headless-acquisition-20261017",
+  "baseSha": "1c6f1f59b88e997df1efa746b2f43c69e6149acd",
+  "createdAt": "2026-10-17T21:56:47.965Z"
+}

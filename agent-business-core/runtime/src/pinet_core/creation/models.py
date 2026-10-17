@@ -143,3 +143,40 @@ class TeamEvent(Owned, Base):
     __table_args__ = (UniqueConstraint("creation_id", "sequence"), UniqueConstraint("attempt_id", "state"),
         parent("control_creations", "creation_id"), parent("control_creation_jobs", "job_id"),
         parent("control_creation_attempts", "attempt_id"))
+
+
+class PrivateIntakeRequest(Owned, Base):
+    """Immutable explicit binding; only an unfinished execution lease may change."""
+    __tablename__ = "control_creation_private_intake_requests"
+    creation_id: Mapped[str] = mapped_column(String)
+    revision_id: Mapped[str] = mapped_column(String)
+    accepted_revision: Mapped[int] = mapped_column(Integer)
+    session_id: Mapped[str] = mapped_column(String)
+    idempotency_key: Mapped[str] = mapped_column(String)
+    request_fingerprint: Mapped[str] = mapped_column(String)
+    context: Mapped[dict] = mapped_column(JSONB)
+    context_sha256: Mapped[str] = mapped_column(String)
+    run_id: Mapped[str] = mapped_column(String)
+    lease_until: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("user_id", "environment_id", "idempotency_key"),
+        ForeignKeyConstraint(["creation_id", *BINDING[1:]],
+            [f"control_creations.{c}" for c in BINDING], ondelete="RESTRICT"),
+        ForeignKeyConstraint(["revision_id", *BINDING[1:]],
+            [f"control_creation_revisions.{c}" for c in BINDING], ondelete="RESTRICT"),
+        ForeignKeyConstraint(["session_id", "user_id", "environment_id"],
+            ["control_sessions.id", "control_sessions.user_id", "control_sessions.environment_id"], ondelete="RESTRICT"))
+
+
+class PrivateIntakeReceipt(Owned, Base):
+    """Append-only terminal result; original Creation Job usage is never replaced."""
+    __tablename__ = "control_creation_private_intake_receipts"
+    recovery_id: Mapped[str] = mapped_column(String)
+    run_id: Mapped[str] = mapped_column(String)
+    state: Mapped[str] = mapped_column(String)
+    failure_code: Mapped[str | None] = mapped_column(String, nullable=True)
+    # Failed receipts require SQL NULL; JSON literal null must not satisfy that check.
+    intake: Mapped[dict | None] = mapped_column(JSONB(none_as_null=True), nullable=True)
+    intake_sha256: Mapped[str] = mapped_column(String)
+    __table_args__ = (UniqueConstraint("recovery_id"),
+        ForeignKeyConstraint(["recovery_id", *BINDING[1:]],
+            [f"control_creation_private_intake_requests.{c}" for c in BINDING], ondelete="RESTRICT"))

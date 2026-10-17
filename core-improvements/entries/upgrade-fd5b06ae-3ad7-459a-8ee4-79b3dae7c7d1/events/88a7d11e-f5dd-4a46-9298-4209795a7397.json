@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Narrow additive canonical Error code echo only. Actual SafeRoute ASGI baseline7FAIL8PASS retained; no sockets/DB/auth/model/services. Historical0b/19de and runtime/SQL untouched. Root owns portal parser/adoption.",
+  "checks": [
+    {
+      "command": "pytest17 explicit pure Error/workflow/native/direct files",
+      "result": "PASS",
+      "evidence": "310PASS3.22s; SHA256135e941e77b202ae7f04288d0fbbdbf8522f3ec5987fe85d9bcda176c0a4753d;15new actual in-process SafeRoute/legacy/malformed DTO cases."
+    },
+    {
+      "command": "Error AST/schema/runtime boundary audit",
+      "result": "PASS",
+      "evidence": "Only Error declaration and5components.schemas.Error differ; success paths/DTOs/runtime/SQL unchanged from19de. SHA256d09bf72909e92cb84d83208154bd13381afadaa2b1edaf49ff83db89b56b906f."
+    },
+    {
+      "command": "ruff wire.py/test_workspace_error_envelope.py and git diff --check",
+      "result": "PASS",
+      "evidence": "2files clean; no behavior change to SafeRoute."
+    }
+  ],
+  "eventId": "88a7d11e-f5dd-4a46-9298-4209795a7397",
+  "sequence": 2,
+  "at": "2026-10-17T20:48:12.154Z"
+}

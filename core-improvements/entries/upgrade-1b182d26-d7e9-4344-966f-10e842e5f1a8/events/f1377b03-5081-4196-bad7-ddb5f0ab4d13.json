@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Narrow CASE grouping repair only; frozen Stage2/consultant journals unchanged. Root actual migration failure and failed QA DB retained. Local parsing does not establish catalog/RLS/migration acceptance; no helper DB/provider calls.",
+  "checks": [
+    {
+      "command": "pytest focused direct/native/legacy Episode/High11files",
+      "result": "PASS",
+      "evidence": "141PASS3.98s, including new two-selector regression. Prior2FAIL7deselected0.57s remains private baseline."
+    },
+    {
+      "command": "CPU pglast8.6 parse_plpgsql on exact authorized Root failed DDL and all11 generated functions",
+      "result": "PASS",
+      "evidence": "Original exact DDL reproduces syntax error at end of input; same DDL with CASE parentheses parses, with unchanged final delimiter. All11 current function definitions pass parse_sql and parse_plpgsql on PostgreSQL18.6 parser. Corrected proof log artifacts/native44-parser-repair-2.private.log; no DB connection."
+    },
+    {
+      "command": "ruff check direct_preview_schema.py test_direct_preview_schema.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Two changed Python files clean; only grouped adapter CASE expressions and regression added."
+    }
+  ],
+  "eventId": "f1377b03-5081-4196-bad7-ddb5f0ab4d13",
+  "sequence": 2,
+  "at": "2026-10-16T00:06:48.401Z"
+}

@@ -1,0 +1,33 @@
+{
+  "rollback": "Scoped source revert before adoption; append-only recovery rows and original failed Job usage retained, never rewritten.",
+  "summary": "Accepted Creation with unknown public domain cannot enter native private intake; add explicit owner-bound preview host and immutable accepted-revision recovery without changing original Job usage.",
+  "siteId": "core",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview_wire.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview_contract.py",
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/src/pinet_core/creation/accepted_material.py",
+    "agent-business-core/runtime/src/pinet_core/creation/models.py",
+    "agent-business-core/runtime/src/pinet_core/creation/routes.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/creation_registration/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/service.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/worker.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/foundation.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/continuation.py",
+    "agent-business-core/runtime/migrations/versions/0042_creation_private_preview.py",
+    "agent-business-core/runtime/README.md",
+    "docs/contracts/verslomatika-private-preview-intake.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "d68843c8c60d7494ee9ded7d28e360920e4ff386: creation/studio.py import_draft rejects NULL host with studio_domain_required before native writes; accepted model material remains available.",
+    "Issue66 scope comment6196841961; wire-only tests 2 PASS 0.91s; service implementation pending."
+  ],
+  "category": "code",
+  "id": "upgrade-c9c45ed5-0a9a-4f6c-acb6-1252280a7e4a",
+  "branch": "codex/verslomatika-private-preview-intake-20261015",
+  "baseSha": "d68843c8c60d7494ee9ded7d28e360920e4ff386",
+  "createdAt": "2026-10-15T16:25:21.497Z"
+}

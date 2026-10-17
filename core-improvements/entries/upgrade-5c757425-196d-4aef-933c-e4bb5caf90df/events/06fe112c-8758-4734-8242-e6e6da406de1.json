@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root meaningful concurrency/lifetime baseline4FAIL2PASS17.38s, SHA186132c6bda6090646c8050ddc329a164b3c10c283ce010635519025ccace3b6. Reproduces duplicate same-lease in-flight observations, cancelled-waiter interference and late heartbeat after stop/expiry. Initial full repair39PASS1FAIL35.46s retained: the spy also counted an earlier still-authorized heartbeat; corrected measurement by clearing only pre-stop observations before releasing the blocked verification. No timing/authority expectation weakened. Producer cleanup now joins owned authority even if producer cleanup returns an unknown error. Actual HTTP pre-claim503studio_timeout and full-verification Git amplification are a separate coordinated canonical source-observation repair; no renderer/lease acceptance inferred from these mocks.",
+  "eventId": "06fe112c-8758-4734-8242-e6e6da406de1",
+  "sequence": 2,
+  "at": "2026-10-17T08:07:05.980Z"
+}

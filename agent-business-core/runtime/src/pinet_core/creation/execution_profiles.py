@@ -33,11 +33,13 @@ def effort(profile):
 
 
 async def schema_state(tx):
-    if not await tx.scalar(text("SELECT to_regclass(:table) IS NOT NULL"), {"table": TABLE}):
-        guards = await tx.scalar(text("SELECT EXISTS(SELECT 1 FROM pg_trigger WHERE NOT tgisinternal "
-            "AND tgname IN('pipeline_model_profile_capture','pipeline_model_attempt_fence'))"))
-        return "invalid" if guards else "absent"
-    ready = await tx.scalar(text("""SELECT EXISTS(SELECT 1 FROM pg_class WHERE oid=to_regclass(:table)
+    # One fresh catalog snapshot at this checkpoint. NULL represents the legacy
+    # absent schema; orphan capture/fence triggers still make that state invalid.
+    ready = await tx.scalar(text("""SELECT CASE WHEN to_regclass(:table) IS NULL THEN
+      CASE WHEN EXISTS(SELECT 1 FROM pg_trigger WHERE NOT tgisinternal
+        AND tgname IN('pipeline_model_profile_capture','pipeline_model_attempt_fence'))
+        THEN FALSE ELSE NULL END
+      ELSE EXISTS(SELECT 1 FROM pg_class WHERE oid=to_regclass(:table)
       AND relrowsecurity AND relforcerowsecurity)
       AND (SELECT count(*)=7 FROM pg_trigger WHERE NOT tgisinternal AND tgenabled<>'D' AND
         ((tgrelid=to_regclass(:table) AND tgname='pipeline_model_profile_immutable')
@@ -45,9 +47,10 @@ async def schema_state(tx):
            to_regclass('control_content_work_jobs')) AND tgname='pipeline_model_profile_capture')
          OR (tgrelid IN(to_regclass('control_creation_attempts'),to_regclass('control_business_discovery_attempts'),
            to_regclass('control_content_work_attempts')) AND tgname='pipeline_model_attempt_fence')))
-      AND (SELECT count(*)=4 FROM pg_constraint WHERE conrelid=to_regclass(:table) AND contype='f' AND convalidated)"""),
+      AND (SELECT count(*)=4 FROM pg_constraint WHERE conrelid=to_regclass(:table) AND contype='f' AND convalidated)
+      END"""),
       {"table": TABLE})
-    return "ready" if ready else "invalid"
+    return "absent" if ready is None else "ready" if ready else "invalid"
 
 
 async def require_schema(tx):
@@ -75,6 +78,10 @@ async def stored(tx, kind, job):
         return DEFAULT
     field = PARENTS[kind][2]
     row = await tx.scalar(select(PipelineModelProfile).where(getattr(PipelineModelProfile, field) == job.id))
+    return row_profile(row, job)
+
+
+def row_profile(row, job):
     if row is None:
         return DEFAULT
     if (row.profile != SOL_HIGH or binding(row) != binding(job) or row.session_id != job.session_id
@@ -93,7 +100,42 @@ async def ensure_current(tx, kind, job):
 
 async def validate_attempt(tx, kind, job, role, actual_model):
     profile = await stored(tx, kind, job)
+    validate_model(profile, kind, role, actual_model)
+
+
+def validate_model(profile, kind, role, actual_model):
     allowed = (actual_model == "gpt-6.1-sol" if profile == SOL_HIGH else
         actual_model in {"gpt-6-luna", "gpt-6.1-sol"} and (kind == "discovery" or role != "creator" or actual_model == "gpt-6-luna"))
     if not allowed:
         raise RunnerError("instructions_changed")
+
+
+async def validate_attempts(tx, kind, attempts):
+    """One fresh set-based profile observation; validate every historical attempt.
+
+    No result survives this call. Existing owner/source/session/profile checks
+    are identical to single-attempt validation, and schema loss is fenced again
+    before a successful batch returns.
+    """
+    if not attempts:
+        return {}
+    state = await schema_state(tx)
+    if state not in {"ready", "absent"}:
+        raise RunnerError("runner_unavailable")
+    jobs = {job.id: job for job, _, _ in attempts}
+    chosen = {identity: DEFAULT for identity in jobs}
+    if state == "ready":
+        field = PARENTS[kind][2]
+        rows = await tx.scalars(select(PipelineModelProfile).where(getattr(PipelineModelProfile, field).in_(jobs)))
+        seen = set()
+        for row in rows:
+            identity = getattr(row, field)
+            if identity not in jobs or identity in seen:
+                raise RunnerError("instructions_changed")
+            seen.add(identity)
+            chosen[identity] = row_profile(row, jobs[identity])
+    for job, role, actual_model in attempts:
+        validate_model(chosen[job.id], kind, role, actual_model)
+    if await schema_state(tx) != state:
+        raise RunnerError("runner_unavailable")
+    return chosen

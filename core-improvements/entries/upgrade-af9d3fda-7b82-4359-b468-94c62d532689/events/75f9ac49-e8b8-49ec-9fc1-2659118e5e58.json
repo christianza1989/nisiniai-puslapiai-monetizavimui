@@ -1,0 +1,7 @@
+{
+  "note": "Wire baseline retained1FAIL1PASS1.51s SHA89b5676d4838c16738ad16379faa6fe26c36b16dd1753afdff59489c63d0a168: missing independent contract; legacy recipient injection refused. First wire2PASS1.40s then27newPASS0.99s; strict source recipient/execution-scope unions and author/hash/count projection checks added. Self-review corrected only new DTO history semantics: a later transcript can make old Quality non-current without rewriting a historically successful Task; fresh completion still needs actual successful artifact evidence and runtime current-transcript checks. No old receipts/contracts changed. Root explicitly authorized workspace-only consultant Task union; native preview stays business-only and not activated.",
+  "status": "fixing",
+  "eventId": "75f9ac49-e8b8-49ec-9fc1-2659118e5e58",
+  "sequence": 2,
+  "at": "2026-10-15T22:03:58.467Z"
+}

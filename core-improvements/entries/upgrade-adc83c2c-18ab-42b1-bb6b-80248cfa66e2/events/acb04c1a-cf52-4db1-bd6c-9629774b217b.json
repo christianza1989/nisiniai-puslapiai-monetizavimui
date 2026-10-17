@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Preserved original Stage2 WIP40516cd, integrated accepted Root0043 prerequisite without editing frozen upgrade158. Repaired0044 compatibility baseline2FAIL0.93s SHA256addded53622419f25365d3585163f93dbd16fc5329ad102581c896ff01e5e88a: missing exact native terminal boundary patch and NAME-to-VARCHAR allocation dispatch. Separate hidden-accounting baseline2FAIL2.74s SHA2560adb6a4c796508ff9e705caae549530441a2234b80c14347675a4e30f9d1829c: RLS allocation probe cannot choose a retained native ledger after revoke. Scope remains Stage2 code; no actual helper DB/provider operations. Initial missing-preview1FAIL and evidence-query1FAIL remain original findings.",
+  "eventId": "acb04c1a-cf52-4db1-bd6c-9629774b217b",
+  "sequence": 2,
+  "at": "2026-10-15T23:51:26.518Z"
+}

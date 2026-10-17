@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Command-scoped longpaths applies to checkout and exact source reads; no global/local Git config changed. First9PASS1FAIL checkout-only regression and missing experimental module-mocks invocation retained. Correct maintained Node invocation passed26cases; actual Wellness preview adoption pending, language/browser/full-site/launch UNVERIFIED.",
+  "checks": [
+    {
+      "command": "PINET_PUBLIC_CORE_PATH=<owned255fea> node --experimental-test-module-mocks --test content-studio/test/customer-site-preview.test.mjs content-studio/test/preview-local-storage.test.mjs content-studio/test/candidate-preview-preparation.test.mjs",
+      "result": "PASS",
+      "evidence": "26PASS0FAIL0SKIP20.2647s; real deep detached checkout without global config, unchanged local core.longpaths=false, exact source guard and existing mocked storage/preparation guardian cases."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "No whitespace errors."
+    }
+  ],
+  "eventId": "e82a19b8-abd6-4f7f-aa56-22425e64a499",
+  "sequence": 2,
+  "at": "2026-10-16T09:24:25.100Z"
+}

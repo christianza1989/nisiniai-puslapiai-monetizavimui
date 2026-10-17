@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root reviewed c322's exact2-source packet and integratedd904. Real restricted same-DB ordinary owner private-intake/S6 renewal succeeds; protected site015 unchanged. Read-only capture306SQL1.8088s, fullverify1.39-1.53s, inspect5.8139s. Actual live preview reaches ready/home pixels but later heartbeat expires with sampled-124ms; NOT stable close/expiry/revocation/portal acceptance. No continued-result/proof cache or timeout change.",
+  "checks": [
+    {
+      "command": "Root combined d904 source/offline accepted-proof, registration, private-intake, content-completion, Foundation/S6, profile/history, lease and Git-observation regression",
+      "result": "PASS",
+      "evidence": "290PASS12.15s,1actual-process monitor deselected,1existing invalidUUIDwarning; SHA02aea6156146462564916b153044d5057de7330511007f23faf3d5ecd0fa7fb9."
+    },
+    {
+      "command": "Root fresh isolated PostgreSQL d904 tests/test_live_preview_authority_pg.py",
+      "result": "PASS",
+      "evidence": "6PASS90.51s SHAd94ffd1ced5b7ef3f27d4d5e40df684cf9d7fe3d00acd75964179630af60281c; original0032/operational88tables/native exact,0provider."
+    },
+    {
+      "command": "Root ordinary current-source HTTP private intake and explicit S6",
+      "result": "PASS",
+      "evidence": "Both CURRENT atd904b08c6b2dcef5a4c83eadacb188063e2277a4, native physical015c3074a972c3c568154bdc5eecd353a1907a0c39261fa1d5bb3032ea8cf10e unchanged, public canonical_host null, provider0."
+    }
+  ],
+  "eventId": "8970e0b6-3fa4-41c5-8414-ee7bc24b9d21",
+  "sequence": 4,
+  "at": "2026-10-17T09:21:20.973Z"
+}

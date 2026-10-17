@@ -1,0 +1,29 @@
+{
+  "note": "Source protocol regression only. No helper actual DB/current-case/native mutation/preview-server/child/browser/provider or adoption;6opt-in PostgreSQL tests collected only. Frozen wire unchanged; Root owns real renderer/UI/current-Session/expiry/revocation/shutdown acceptance.",
+  "checks": [
+    {
+      "evidence": "209PASS21.09s;1existing actual-process monitor explicitly deselected;1existing invalidUUID serializerwarning. Private logSHA256dab6c10ab8134ed027cc9288c22110c3384d7827569eae66a1d95615a2eb7496.",
+      "result": "PASS",
+      "command": "PYTHONPATH=src;tests;scripts pytest offline_tests/test_live_preview_runtime.py offline_tests/test_live_preview_wire.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py offline_tests/test_site_build_lifecycle.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py -q -k not_real_studio_monitor"
+    },
+    {
+      "evidence": "19mock-onlyPASS329.94ms; no child/server/provider. Exclusive ready publication, readonly readiness, claim/heartbeat/media/origin and producer timer cleanup. LogSHA2567fe9ef19a5daf070d6d789555eb3535e20f8b8159c4df036fab45c6200fd1991.",
+      "result": "PASS",
+      "command": "node --test content-studio/test/customer-live-preview.test.mjs"
+    },
+    {
+      "evidence": "6collected only0.62s, no SQL execution. LogSHA256131361f6e156759d87b7e71eb6fd67f1bea4697b3acd6f279b3c23f6c8fc9f44.",
+      "result": "PASS",
+      "command": "pytest tests/test_live_preview_authority_pg.py --collect-only -q"
+    },
+    {
+      "evidence": "All checks passed; only approved central hooks and one readonly export alias line; no wire/schema/companion/dependency/migration/portal change.",
+      "result": "PASS",
+      "command": "ruff check exact7 new/changed Python files; git diff --check"
+    }
+  ],
+  "status": "local-verified",
+  "eventId": "130660f2-e593-4d64-a34e-57bdb72c0456",
+  "sequence": 3,
+  "at": "2026-10-16T21:58:15.552Z"
+}

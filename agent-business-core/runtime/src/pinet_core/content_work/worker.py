@@ -66,7 +66,7 @@ async def claim(*, creation_id=None):
                 return {"job_id": job.id, "user_id": job.user_id, "run_id": job.run_id,
                     "execution_hash": execution_hash,
                     "target": SimpleNamespace(creation_id=creation.id, accepted_revision=job.accepted_revision,
-                        page_id=job.page_id, source_hash=job.source_hash, canonical_host=creation.canonical_host),
+                        page_id=job.page_id, source_hash=job.source_hash, canonical_host=await service.native_host(owned, creation)),
                     "binding": dict(job.binding), "deadline_at": job.deadline_at}
     return None
 

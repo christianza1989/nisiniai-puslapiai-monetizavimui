@@ -7,11 +7,12 @@ import json
 import re
 import socket
 import ssl
+import unicodedata
 from datetime import UTC, datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from time import monotonic
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
 from urllib.robotparser import RobotFileParser
 
 from ..public_projects.projection import public_url
@@ -19,6 +20,40 @@ from ..public_projects.projection import public_url
 AGENT = "VerslomatikaResearch/0.1"
 PAGE_BYTES = 800000
 CONTEXT_BYTES = 100000
+
+# Selection hints only: no supplier facts, URL invention or completeness claim.
+COMMERCIAL_SIGNALS = (
+    ("commercial", "komerc", "gewerb", "rental", "b2b", "professional"),
+    ("terms", "condition", "warrant", "guarant", "garant", "salyg", "pirkimo", "return", "refund",
+     "shipping", "delivery", "pristat", "grazin", "agb", "gewahr", "widerruf", "liefer", "retour"),
+    ("business", "partner", "wholesale", "didmen", "reseller", "dealer", "trade", "company",
+     "about", "contact", "kontakt", "faq", "duk", "apie", "versl", "unternehmen"),
+)
+NON_DOCUMENT_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".ico", ".mp4", ".mp3",
+                         ".zip", ".css", ".js", ".woff", ".woff2"}
+ACTION_SEGMENTS = {"cart", "checkout", "basket", "login", "logout", "my-account", "wp-admin", "xmlrpc.php"}
+
+
+def signal_priority(value):
+    """Language-limited lexical hint, never a factual or semantic classification."""
+    folded = "".join(c for c in unicodedata.normalize("NFKD", value.casefold()) if not unicodedata.combining(c))
+    words = re.findall(r"[^\W_]+", folded)
+    return min((rank for rank, prefixes in enumerate(COMMERCIAL_SIGNALS)
+                if any(len(word) <= 64 and word.startswith(prefixes) for word in words)), default=3)
+
+
+def link_priority(url):
+    # Decode only for ranking. The exact observed URL remains the destination/evidence.
+    path = unquote(urlsplit(url).path).casefold()
+    if (set(path.strip("/").split("/")) & ACTION_SEGMENTS
+            or any(path.endswith(suffix) for suffix in NON_DOCUMENT_SUFFIXES)):
+        return 4
+    rank = signal_priority(path)
+    if rank < 2:
+        return 0
+    if rank == 2:
+        return 1
+    return 2 if path.startswith(("/product/", "/product-category/")) else 3
 
 
 class Document(HTMLParser):
@@ -188,10 +223,18 @@ async def collect(message, authorized, *, seconds=24, snapshot_dir=None):
         seen.add(result["url"])
         total += size
         output.append(result)
-        # Follow actual same-host catalogue/model links, not guessed URLs or contacts.
+        # Actual commercial documents precede deeper catalogue fanout. Raw DOM links
+        # stay unchanged; opaque paths/unsupported languages remain a coverage limit.
         for link in result["links"]:
-            if link not in seen and link not in queue and urlsplit(link).path.startswith(("/product/", "/product-category/")):
+            try:
+                public_url(link)
+                eligible = (urlsplit(link).hostname == urlsplit(result["url"]).hostname
+                            and link_priority(link) <= 2)
+            except ValueError:
+                eligible = False
+            if eligible and link not in seen and link not in queue:
                 queue.append(link)
+        queue.sort(key=lambda value: (-1 if value in roots else link_priority(value)))
     if not await authorized():
         raise RuntimeError("source_authority_revoked")
     return {"pages": output, "remaining_urls": queue,

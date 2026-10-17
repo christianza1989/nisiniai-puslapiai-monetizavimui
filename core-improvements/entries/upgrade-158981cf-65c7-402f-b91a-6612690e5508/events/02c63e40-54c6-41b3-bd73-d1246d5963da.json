@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root actual native PostgreSQL acceptance at clean 9150406c2940e268894ff9e579f35417e2b2916b (functional eff5): NEW empty0043 migration/bootstrap PASS; fail-fast first case test_actual_one_call_chosen_role_history_restart_replay_and_separate_chat FAIL at worker commit, UndefinedColumnError SQLSTATE42703, record NEW has no field sequence. Creation now proceeds; deferred TaskRun trigger still plans Event-only sequence/failure_code references. Original 9FAIL48PASS941.82s and this failed run retained, no serving adoption or provider call. Independent frozen3b7/0042 single nested-revocation baseline fails with LockNotAvailableError at a2s diagnostic lock bound, confirming inherited ordering but not acceptance. After failures, original0032 row-count snapshots compared across original/repaired/baseline QA: PASS unchanged. Owner supplied Chrome screenshot shows unrelated ChatGPT extension side panel; Chrome control subsequently recovered and normal conversation navigation was restored. No claim that new messenger pixels are tested.",
+  "eventId": "02c63e40-54c6-41b3-bd73-d1246d5963da",
+  "sequence": 4,
+  "at": "2026-10-15T23:26:21.262Z"
+}

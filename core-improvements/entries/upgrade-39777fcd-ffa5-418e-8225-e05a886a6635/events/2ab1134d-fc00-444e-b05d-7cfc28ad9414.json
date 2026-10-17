@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Changed only shared synthetic test helper to the unchanged profile-specific canonical whole-job cap. Actual original PG1FAIL6PASS247.27s retained; unchanged numeric replay899.7864705 vs360/900 retainedSHA f188b6283e94610c60f00bfec43dcd35f16f5fdecac4b2ad934b1bd91dd85852. Focused helper baseline1FAIL5PASS8.99s SHA486a6c4548fe0e35fd6c9de46b897f58b80f404ec3585cdf84fb2bb8bc8ceee1. Isolated QA original0032 and native files unchanged; operational integrity delta was exactly own normal login buckets/sessions while QA ran, so original wrapper correctly refused all-tables-exact. No stale integrity claim; final retry uses a fresh snapshot without operational actions. Runtime/profile PG acceptance remains pending.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_creation_team_test_clock.py offline_tests/test_execution_profile_batch.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "23PASS9.24s SHA babd62f798538102cb8686a563074a4475d555c0dfcd3226cfe17625402044e7; default/High canonical bounds, excess and false authority remain refused."
+    },
+    {
+      "command": "python -m ruff check tests/test_creation_team.py offline_tests/test_creation_team_test_clock.py",
+      "result": "PASS",
+      "evidence": "Two exact files checked after import-order correction; production files unchanged."
+    }
+  ],
+  "eventId": "2ab1134d-fc00-444e-b05d-7cfc28ad9414",
+  "sequence": 2,
+  "at": "2026-10-17T08:57:59.346Z"
+}

@@ -1,0 +1,2469 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Direct workspace messenger",
+    "version": "workspace-direct.v1",
+    "description": "Opaque persisted chat and immutable recipient; current owner/anchor/source admission is server-owned. Consultant turns are one tools-disabled call. Native preview is explicit and separately admitted, never module/channel activation. Legacy group and immutable Episode contracts remain unchanged."
+  },
+  "paths": {
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/direct/recipients": {
+      "get": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectRecipientsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/direct/chats": {
+      "get": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectChatsEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectChatEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectCreate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/direct/chats/{chat_id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "chat_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectChatEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/direct/chats/{chat_id}/events": {
+      "get": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "chat_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 20
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2048
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectHistoryEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/direct/chats/{chat_id}/turns": {
+      "post": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "chat_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectAcceptedEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectSend"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/v2/portfolios/{portfolio_id}/workspace-topics/{topic_id}/direct/chats/{chat_id}/turns/{task_id}/cancel": {
+      "post": {
+        "parameters": [
+          {
+            "name": "portfolio_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "topic_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "chat_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "security": [
+          {
+            "CustomerSession": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exact owner-bound direct chat",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectTurnEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Invalid, denied, changed, limited or unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectError"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectCancel"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DirectConsultant": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "consultant",
+            "title": "Kind",
+            "type": "string"
+          },
+          "participant_id": {
+            "format": "uuid",
+            "title": "Participant Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "coordinator",
+              "adviser"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "capability_id": {
+            "enum": [
+              "workspace.consult_coordinator.v1",
+              "workspace.business_adviser.v1"
+            ],
+            "title": "Capability Id",
+            "type": "string"
+          },
+          "configuration_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Configuration Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "participant_id",
+          "role",
+          "capability_id",
+          "configuration_sha256"
+        ],
+        "title": "DirectConsultant",
+        "type": "object"
+      },
+      "DirectSavedAgent": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "saved_agent",
+            "title": "Kind",
+            "type": "string"
+          },
+          "creation_id": {
+            "format": "uuid",
+            "title": "Creation Id",
+            "type": "string"
+          },
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "revision_id": {
+            "format": "uuid",
+            "title": "Revision Id",
+            "type": "string"
+          },
+          "revision": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "configuration_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Configuration Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "creation_id",
+          "agent_id",
+          "revision_id",
+          "revision",
+          "configuration_sha256"
+        ],
+        "title": "DirectSavedAgent",
+        "type": "object"
+      },
+      "DirectCreate": {
+        "additionalProperties": false,
+        "properties": {
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "consultant",
+              "agent_preview"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "recipient": {
+            "discriminator": {
+              "mapping": {
+                "consultant": "#/components/schemas/DirectConsultant",
+                "saved_agent": "#/components/schemas/DirectSavedAgent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DirectConsultant"
+              },
+              {
+                "$ref": "#/components/schemas/DirectSavedAgent"
+              }
+            ],
+            "title": "Recipient"
+          }
+        },
+        "required": [
+          "idempotency_key",
+          "mode",
+          "recipient"
+        ],
+        "title": "DirectCreate",
+        "type": "object"
+      },
+      "DirectSend": {
+        "additionalProperties": false,
+        "properties": {
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "content": {
+            "maxLength": 2500,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "reply_to_event_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Reply To Event Id"
+          }
+        },
+        "required": [
+          "idempotency_key",
+          "content"
+        ],
+        "title": "DirectSend",
+        "type": "object"
+      },
+      "DirectCancel": {
+        "additionalProperties": false,
+        "properties": {},
+        "title": "DirectCancel",
+        "type": "object"
+      },
+      "Anchor": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "portfolio",
+              "discovery",
+              "creation",
+              "business"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "selection_id": {
+            "format": "uuid",
+            "title": "Selection Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "selection_id"
+        ],
+        "title": "Anchor",
+        "type": "object"
+      },
+      "DirectBusinessScope": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "business",
+            "title": "Kind",
+            "type": "string"
+          },
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "parent_topic_id": {
+            "format": "uuid",
+            "title": "Parent Topic Id",
+            "type": "string"
+          },
+          "business_id": {
+            "format": "uuid",
+            "title": "Business Id",
+            "type": "string"
+          },
+          "grant_id": {
+            "format": "uuid",
+            "title": "Grant Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "portfolio_id",
+          "parent_topic_id",
+          "business_id",
+          "grant_id"
+        ],
+        "title": "DirectBusinessScope",
+        "type": "object"
+      },
+      "DirectContact": {
+        "additionalProperties": false,
+        "properties": {
+          "recipient": {
+            "discriminator": {
+              "mapping": {
+                "consultant": "#/components/schemas/DirectConsultant",
+                "saved_agent": "#/components/schemas/DirectSavedAgent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DirectConsultant"
+              },
+              {
+                "$ref": "#/components/schemas/DirectSavedAgent"
+              }
+            ],
+            "title": "Recipient"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Name",
+            "type": "string"
+          },
+          "purpose": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Purpose",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "consultant",
+              "agent_preview"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "can_create_chat": {
+            "title": "Can Create Chat",
+            "type": "boolean"
+          },
+          "blockers": {
+            "items": {
+              "enum": [
+                "execution_disabled",
+                "workspace_execution_binding_required",
+                "recipient_not_current",
+                "recipient_not_admitted",
+                "preview_not_admitted",
+                "topic_archived",
+                "chat_archived",
+                "chat_full",
+                "schema_unavailable",
+                "configuration_changed",
+                "unsupported_anchor"
+              ],
+              "type": "string"
+            },
+            "maxItems": 10,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "native_state": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DirectNativeState"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "execution_scope": {
+            "anyOf": [
+              {
+                "discriminator": {
+                  "mapping": {
+                    "business": "#/components/schemas/DirectBusinessScope",
+                    "workspace": "#/components/schemas/DirectWorkspaceScope"
+                  },
+                  "propertyName": "kind"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/DirectWorkspaceScope"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DirectBusinessScope"
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Execution Scope"
+          },
+          "tools": {
+            "items": {},
+            "maxItems": 0,
+            "title": "Tools",
+            "type": "array"
+          },
+          "external_actions": {
+            "const": false,
+            "title": "External Actions",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "recipient",
+          "name",
+          "purpose",
+          "mode",
+          "can_create_chat",
+          "blockers",
+          "native_state",
+          "execution_scope",
+          "tools",
+          "external_actions"
+        ],
+        "title": "DirectContact",
+        "type": "object"
+      },
+      "DirectNativeState": {
+        "additionalProperties": false,
+        "properties": {
+          "configuration_state": {
+            "const": "draft",
+            "title": "Configuration State",
+            "type": "string"
+          },
+          "calibration_status": {
+            "const": "UNVERIFIED",
+            "title": "Calibration Status",
+            "type": "string"
+          },
+          "module_admission": {
+            "const": "not_admitted",
+            "title": "Module Admission",
+            "type": "string"
+          },
+          "channel_activation": {
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "type": "string"
+          },
+          "preview_admitted": {
+            "title": "Preview Admitted",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "configuration_state",
+          "calibration_status",
+          "module_admission",
+          "channel_activation",
+          "preview_admitted"
+        ],
+        "title": "DirectNativeState",
+        "type": "object"
+      },
+      "DirectRecipients": {
+        "additionalProperties": false,
+        "properties": {
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "parent_topic_id": {
+            "format": "uuid",
+            "title": "Parent Topic Id",
+            "type": "string"
+          },
+          "anchor": {
+            "$ref": "#/components/schemas/Anchor"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DirectContact"
+            },
+            "maxItems": 52,
+            "title": "Items",
+            "type": "array"
+          },
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "portfolio_id",
+          "parent_topic_id",
+          "anchor",
+          "items",
+          "has_more",
+          "next_cursor"
+        ],
+        "title": "DirectRecipients",
+        "type": "object"
+      },
+      "DirectWorkspaceAnchor": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "portfolio",
+              "creation",
+              "discovery"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "selection_id": {
+            "format": "uuid",
+            "title": "Selection Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "selection_id"
+        ],
+        "title": "DirectWorkspaceAnchor",
+        "type": "object"
+      },
+      "DirectWorkspaceScope": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "workspace",
+            "title": "Kind",
+            "type": "string"
+          },
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "parent_topic_id": {
+            "format": "uuid",
+            "title": "Parent Topic Id",
+            "type": "string"
+          },
+          "anchor": {
+            "$ref": "#/components/schemas/DirectWorkspaceAnchor"
+          }
+        },
+        "required": [
+          "kind",
+          "portfolio_id",
+          "parent_topic_id",
+          "anchor"
+        ],
+        "title": "DirectWorkspaceScope",
+        "type": "object"
+      },
+      "DirectRecipientsEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-direct.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectRecipients"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectRecipientsEnvelope",
+        "type": "object"
+      },
+      "DirectChat": {
+        "additionalProperties": false,
+        "properties": {
+          "chat_id": {
+            "format": "uuid",
+            "title": "Chat Id",
+            "type": "string"
+          },
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "parent_topic_id": {
+            "format": "uuid",
+            "title": "Parent Topic Id",
+            "type": "string"
+          },
+          "anchor": {
+            "$ref": "#/components/schemas/Anchor"
+          },
+          "execution_scope": {
+            "discriminator": {
+              "mapping": {
+                "business": "#/components/schemas/DirectBusinessScope",
+                "workspace": "#/components/schemas/DirectWorkspaceScope"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DirectWorkspaceScope"
+              },
+              {
+                "$ref": "#/components/schemas/DirectBusinessScope"
+              }
+            ],
+            "title": "Execution Scope"
+          },
+          "recipient": {
+            "discriminator": {
+              "mapping": {
+                "consultant": "#/components/schemas/DirectConsultant",
+                "saved_agent": "#/components/schemas/DirectSavedAgent"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DirectConsultant"
+              },
+              {
+                "$ref": "#/components/schemas/DirectSavedAgent"
+              }
+            ],
+            "title": "Recipient"
+          },
+          "mode": {
+            "enum": [
+              "consultant",
+              "agent_preview"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "native_state": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DirectNativeState"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "native_conversation_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Native Conversation Id"
+          },
+          "can_send": {
+            "title": "Can Send",
+            "type": "boolean"
+          },
+          "blockers": {
+            "items": {
+              "enum": [
+                "execution_disabled",
+                "workspace_execution_binding_required",
+                "recipient_not_current",
+                "recipient_not_admitted",
+                "preview_not_admitted",
+                "topic_archived",
+                "chat_archived",
+                "chat_full",
+                "schema_unavailable",
+                "configuration_changed",
+                "unsupported_anchor"
+              ],
+              "type": "string"
+            },
+            "maxItems": 10,
+            "title": "Blockers",
+            "type": "array"
+          },
+          "turn_count": {
+            "maximum": 20,
+            "minimum": 0,
+            "title": "Turn Count",
+            "type": "integer"
+          },
+          "turn_limit": {
+            "const": 20,
+            "title": "Turn Limit",
+            "type": "integer"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "created_source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Created Source Revision",
+            "type": "string"
+          },
+          "tools": {
+            "items": {},
+            "maxItems": 0,
+            "title": "Tools",
+            "type": "array"
+          },
+          "external_actions": {
+            "const": false,
+            "title": "External Actions",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "chat_id",
+          "portfolio_id",
+          "parent_topic_id",
+          "anchor",
+          "execution_scope",
+          "recipient",
+          "mode",
+          "native_state",
+          "native_conversation_id",
+          "can_send",
+          "blockers",
+          "turn_count",
+          "turn_limit",
+          "created_at",
+          "created_source_revision",
+          "tools",
+          "external_actions"
+        ],
+        "title": "DirectChat",
+        "type": "object"
+      },
+      "DirectChats": {
+        "additionalProperties": false,
+        "properties": {
+          "portfolio_id": {
+            "format": "uuid",
+            "title": "Portfolio Id",
+            "type": "string"
+          },
+          "parent_topic_id": {
+            "format": "uuid",
+            "title": "Parent Topic Id",
+            "type": "string"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DirectChat"
+            },
+            "maxItems": 50,
+            "title": "Items",
+            "type": "array"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "portfolio_id",
+          "parent_topic_id",
+          "items",
+          "next_cursor"
+        ],
+        "title": "DirectChats",
+        "type": "object"
+      },
+      "DirectChatsEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-direct.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectChats"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectChatsEnvelope",
+        "type": "object"
+      },
+      "DirectChatEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-direct.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectChat"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectChatEnvelope",
+        "type": "object"
+      },
+      "DirectAgentAuthor": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "saved_agent",
+            "title": "Kind",
+            "type": "string"
+          },
+          "agent_id": {
+            "format": "uuid",
+            "title": "Agent Id",
+            "type": "string"
+          },
+          "configuration_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Configuration Sha256",
+            "type": "string"
+          },
+          "conversation_id": {
+            "format": "uuid",
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "native_event_id": {
+            "format": "uuid",
+            "title": "Native Event Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "agent_id",
+          "configuration_sha256",
+          "conversation_id",
+          "native_event_id"
+        ],
+        "title": "DirectAgentAuthor",
+        "type": "object"
+      },
+      "DirectConsultantAuthor": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "consultant",
+            "title": "Kind",
+            "type": "string"
+          },
+          "participant_id": {
+            "format": "uuid",
+            "title": "Participant Id",
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "coordinator",
+              "adviser"
+            ],
+            "title": "Role",
+            "type": "string"
+          },
+          "attempt_id": {
+            "format": "uuid",
+            "title": "Attempt Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "participant_id",
+          "role",
+          "attempt_id"
+        ],
+        "title": "DirectConsultantAuthor",
+        "type": "object"
+      },
+      "DirectEvent": {
+        "additionalProperties": false,
+        "properties": {
+          "event_id": {
+            "format": "uuid",
+            "title": "Event Id",
+            "type": "string"
+          },
+          "chat_id": {
+            "format": "uuid",
+            "title": "Chat Id",
+            "type": "string"
+          },
+          "task_id": {
+            "format": "uuid",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "author": {
+            "discriminator": {
+              "mapping": {
+                "consultant": "#/components/schemas/DirectConsultantAuthor",
+                "owner": "#/components/schemas/DirectOwnerAuthor",
+                "saved_agent": "#/components/schemas/DirectAgentAuthor"
+              },
+              "propertyName": "kind"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DirectOwnerAuthor"
+              },
+              {
+                "$ref": "#/components/schemas/DirectConsultantAuthor"
+              },
+              {
+                "$ref": "#/components/schemas/DirectAgentAuthor"
+              }
+            ],
+            "title": "Author"
+          },
+          "reply_to_event_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reply To Event Id"
+          },
+          "content": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Content",
+            "type": "string"
+          },
+          "content_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id",
+          "chat_id",
+          "task_id",
+          "sequence",
+          "author",
+          "reply_to_event_id",
+          "content",
+          "content_sha256",
+          "source_revision",
+          "created_at"
+        ],
+        "title": "DirectEvent",
+        "type": "object"
+      },
+      "DirectHistory": {
+        "additionalProperties": false,
+        "properties": {
+          "chat": {
+            "$ref": "#/components/schemas/DirectChat"
+          },
+          "events": {
+            "items": {
+              "$ref": "#/components/schemas/DirectEvent"
+            },
+            "maxItems": 50,
+            "title": "Events",
+            "type": "array"
+          },
+          "turns": {
+            "items": {
+              "$ref": "#/components/schemas/DirectTurn"
+            },
+            "maxItems": 20,
+            "title": "Turns",
+            "type": "array"
+          },
+          "cutoff_sequence": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "title": "Cutoff Sequence",
+            "type": "integer"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "maxLength": 2048,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "chat",
+          "events",
+          "turns",
+          "cutoff_sequence",
+          "next_cursor"
+        ],
+        "title": "DirectHistory",
+        "type": "object"
+      },
+      "DirectOwnerAuthor": {
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "const": "owner",
+            "title": "Kind",
+            "type": "string"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "user_id"
+        ],
+        "title": "DirectOwnerAuthor",
+        "type": "object"
+      },
+      "DirectPreviewEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "conversation_id": {
+            "format": "uuid",
+            "title": "Conversation Id",
+            "type": "string"
+          },
+          "configuration_sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Configuration Sha256",
+            "type": "string"
+          },
+          "transcript_revision": {
+            "minimum": 0,
+            "title": "Transcript Revision",
+            "type": "integer"
+          },
+          "quality_state": {
+            "enum": [
+              "not_requested",
+              "running",
+              "failed",
+              "succeeded",
+              "UNVERIFIED"
+            ],
+            "title": "Quality State",
+            "type": "string"
+          },
+          "quality_current": {
+            "title": "Quality Current",
+            "type": "boolean"
+          },
+          "quality_artifact_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quality Artifact Id"
+          },
+          "quality_artifact_sha256": {
+            "anyOf": [
+              {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quality Artifact Sha256"
+          },
+          "module_admission": {
+            "const": "not_admitted",
+            "title": "Module Admission",
+            "type": "string"
+          },
+          "activation": {
+            "const": "not_performed",
+            "title": "Activation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id",
+          "configuration_sha256",
+          "transcript_revision",
+          "quality_state",
+          "quality_current",
+          "quality_artifact_id",
+          "quality_artifact_sha256",
+          "module_admission",
+          "activation"
+        ],
+        "title": "DirectPreviewEvidence",
+        "type": "object"
+      },
+      "DirectTurn": {
+        "additionalProperties": false,
+        "properties": {
+          "task_id": {
+            "format": "uuid",
+            "title": "Task Id",
+            "type": "string"
+          },
+          "chat_id": {
+            "format": "uuid",
+            "title": "Chat Id",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "consultant",
+              "agent_preview"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "sequence": {
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Sequence",
+            "type": "integer"
+          },
+          "idempotency_key": {
+            "format": "uuid",
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed",
+              "cancelled"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "can_cancel": {
+            "title": "Can Cancel",
+            "type": "boolean"
+          },
+          "failure_code": {
+            "anyOf": [
+              {
+                "pattern": "^[a-z_]{1,80}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Code"
+          },
+          "call_limit": {
+            "enum": [
+              1,
+              3
+            ],
+            "title": "Call Limit",
+            "type": "integer"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/DirectUsage"
+          },
+          "preview": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DirectPreviewEvidence"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "updated_at": {
+            "format": "date-time",
+            "title": "Updated At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "chat_id",
+          "mode",
+          "sequence",
+          "idempotency_key",
+          "status",
+          "can_cancel",
+          "failure_code",
+          "call_limit",
+          "usage",
+          "preview",
+          "source_revision",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "DirectTurn",
+        "type": "object"
+      },
+      "DirectUsage": {
+        "additionalProperties": false,
+        "properties": {
+          "reserved_calls": {
+            "maximum": 3,
+            "minimum": 0,
+            "title": "Reserved Calls",
+            "type": "integer"
+          },
+          "settled_calls": {
+            "maximum": 3,
+            "minimum": 0,
+            "title": "Settled Calls",
+            "type": "integer"
+          },
+          "usage_complete": {
+            "title": "Usage Complete",
+            "type": "boolean"
+          },
+          "input_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Tokens"
+          },
+          "output_tokens": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Output Tokens"
+          },
+          "cost_status": {
+            "const": "UNVERIFIED",
+            "title": "Cost Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "reserved_calls",
+          "settled_calls",
+          "usage_complete",
+          "input_tokens",
+          "output_tokens",
+          "cost_status"
+        ],
+        "title": "DirectUsage",
+        "type": "object"
+      },
+      "DirectHistoryEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-direct.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectHistory"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectHistoryEnvelope",
+        "type": "object"
+      },
+      "DirectAccepted": {
+        "additionalProperties": false,
+        "properties": {
+          "chat_id": {
+            "format": "uuid",
+            "title": "Chat Id",
+            "type": "string"
+          },
+          "turn": {
+            "$ref": "#/components/schemas/DirectTurn"
+          },
+          "event": {
+            "$ref": "#/components/schemas/DirectEvent"
+          }
+        },
+        "required": [
+          "chat_id",
+          "turn",
+          "event"
+        ],
+        "title": "DirectAccepted",
+        "type": "object"
+      },
+      "DirectAcceptedEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-direct.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectAccepted"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectAcceptedEnvelope",
+        "type": "object"
+      },
+      "DirectTurnEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "contract_version": {
+            "const": "workspace-direct.v1",
+            "title": "Contract Version",
+            "type": "string"
+          },
+          "environment": {
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "source_revision": {
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision",
+            "type": "string"
+          },
+          "observed_at": {
+            "format": "date-time",
+            "title": "Observed At",
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/DirectTurn"
+          }
+        },
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "source_revision",
+          "observed_at",
+          "data"
+        ],
+        "title": "DirectTurnEnvelope",
+        "type": "object"
+      },
+      "DirectError": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "request_id": {
+            "format": "uuid",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "request_id"
+        ],
+        "title": "DirectError",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "CustomerSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

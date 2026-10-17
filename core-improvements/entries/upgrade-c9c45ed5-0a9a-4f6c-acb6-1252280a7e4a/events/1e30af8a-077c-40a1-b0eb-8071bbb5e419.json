@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "evidence": "124passed5.43s; includes53S37 and71legacy subset, not additive to earlier full1691.",
+      "result": "PASS",
+      "command": "python -m pytest offline_tests/test_private_preview.py offline_tests/test_private_preview_wire.py offline_tests/test_creation_studio.py offline_tests/test_creation_registration.py offline_tests/test_content_work_review.py -q -p no:cacheprovider"
+    },
+    {
+      "evidence": "All checks passed; only new receipt mapper SQLNULL behavior plus regression/rule/journal.",
+      "result": "PASS",
+      "command": "python -m ruff check src/pinet_core/creation/models.py offline_tests/test_private_preview.py; git diff --check"
+    }
+  ],
+  "note": "Actual Root isolated native PostgreSQL on de40f81314060b7608105be17935a1c390622834:9PASS1FAIL82.49s/provider0; failed first terminal-failure POST returned503 source_unavailable. Original private native log preserved SHA08cae4d5ed57b425880e72fbf354e21842ced9deca1584fe3ad47ac94f65a4ec. Canonical cause is receipt JSONB default PythonNone→JSON literalnull while0042 failure CHECK requires SQL intake IS NULL. Added asyncpg dialect bind regression reproduced1FAIL50deselected1.89s SHA3acd92b914b6e89d2c51523b197c76d33f093014c64740c97db6f48d0cbdab76; initial generic-dialect harnessTypeError retained separately. Minimal receipt.intake JSONB(none_as_null=True) binds SQLNULL. SQL constraint/migration, wire/source/importer/hash/actor fences unchanged. No helper DB/Node/provider/customer/serving actions; Root will rerun actual isolated native suite.",
+  "status": "local-verified",
+  "eventId": "1e30af8a-077c-40a1-b0eb-8071bbb5e419",
+  "sequence": 8,
+  "at": "2026-10-15T17:06:12.480Z"
+}

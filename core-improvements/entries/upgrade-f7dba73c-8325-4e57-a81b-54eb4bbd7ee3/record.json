@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Metadata-only workflow imports eagerly initialize the native raster backend; load Sharp only when optimizeRaster needs it",
+  "category": "code",
+  "evidence": [
+    "Source 57a2e6857352c22f84422f8d67d1c8a68d7bba5f: content-studio/scripts/customer-content-workflow.mjs imports only IMAGE_POLICY from image-pipeline.mjs, whose static import loads Sharp. Actual local cold imports loaded native Sharp in 81.434 to 223.878 ms; these measurements alone do not establish live-preview stability."
+  ],
+  "paths": [
+    "content-studio/src/image-pipeline.mjs",
+    "content-studio/test/image-pipeline.test.mjs",
+    "MEDIA_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the scoped deferred Sharp import, its focused regression and media contract note; preserve original assets and all historical runtime failures.",
+  "id": "upgrade-f7dba73c-8325-4e57-a81b-54eb4bbd7ee3",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "57a2e6857352c22f84422f8d67d1c8a68d7bba5f",
+  "createdAt": "2026-10-17T15:26:57.319Z"
+}

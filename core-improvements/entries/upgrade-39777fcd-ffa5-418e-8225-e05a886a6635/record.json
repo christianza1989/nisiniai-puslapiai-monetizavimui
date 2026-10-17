@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Shared synthetic PG team runner incorrectly applies default360s job bound to canonical900s High profile, aborting profile regressions before critic/coordinator",
+  "category": "workflow",
+  "evidence": [
+    "Actual dedicated PostgreSQL test1FAIL6PASS247.27s at7e53cc82823d81951ad41e126230e23fb3098280; numeric-only unchanged replay observed899.7864705s, defaultbound360s, canonicalHigh900s; logSHA f188b6283e94610c60f00bfec43dcd35f16f5fdecac4b2ad934b1bd91dd85852"
+  ],
+  "paths": [
+    "agent-business-core/runtime/tests/test_creation_team.py",
+    "agent-business-core/runtime/offline_tests/test_creation_team_test_clock.py",
+    "docs/PIPELINE_TEST_ROLE_CLOCK.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this test-helper compatibility change and its focused regression; production clocks remain untouched.",
+  "id": "upgrade-39777fcd-ffa5-418e-8225-e05a886a6635",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "7e53cc82823d81951ad41e126230e23fb3098280",
+  "createdAt": "2026-10-17T08:55:59.751Z"
+}

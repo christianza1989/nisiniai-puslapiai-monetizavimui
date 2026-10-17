@@ -16,7 +16,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from ..tasks.codex_transport import RunnerError
 from . import language_mode
-from .renderer import CreatorDraft, normalize_creator
+from .renderer import TYPED_DRAFT_VERSION, CreatorDraft, TypedCreatorDraft, normalize_creator
 from .review import CriticReview, canonical_sha256
 
 ROOT = Path(__file__).resolve().parents[5]
@@ -46,8 +46,11 @@ leidžiamą lauką tik vieną kartą ir visą jo pataisytą tekstą. Kitų lauk�
 žmogaus ar organizacijos pavadinimo neversk ir nekeisk. Išsaugok faktus, skaičius, vienetus, neiginius,
 sąlygas, ribojimus ir nepatvirtintų prielaidų pobūdį. Nepridėk naujų faktų, pažadų ar išvadų.
 Užbaik tik nurodytą nepilną temos ar turinio aprašą pagal esamą užduotį; nekeisk pasiūlymo ar puslapių sistemos.
+Jei leidžiamas brand/rationale, taisyk tik jo paaiškinimo tekstą; nekeisk pasirinktų dizaino parametrų.
+Laikykis kiekvieno lauko value_constraints. Rašyk glaustais užbaigtais sakiniais, nepalik nutrūkusių žodžių.
 Nenaudok vietaženklių, nekurk trūkstamų faktų ir nepakeisk tikro teksto techniniu pranešimu.
 semantic_context yra tik dalinis, nekeičiamas reikšmės kontekstas; jis nesuteikia publikavimo leidimo.
+schema_version ir puslapių type yra nekintami struktūriniai duomenys; jų nekeisk ir negrąžink kaip pataisų.
 Rašyk natūralia taisyklinga lietuvių kalba, naudok įprastus vientisus Unicode NFC lietuviškus rašmenis.
 Po pataisų atskirai perskaityk visą kiekvieno grąžinamo lauko tekstą ir palygink prasmę su originalu.
 Jokių įrankių, interneto, naujo tyrimo, viso juodraščio perrašymo ar tariamo patvirtinimo. Grąžink tik
@@ -88,19 +91,21 @@ def instructions():
     return value, hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-@lru_cache(maxsize=1)
-def _creator_schema():
-    return CreatorDraft.model_json_schema()
+@lru_cache(maxsize=2)
+def _creator_schema(version=None):
+    if version not in (None, TYPED_DRAFT_VERSION):
+        raise ValueError("Unknown draft contract")
+    return (TypedCreatorDraft if version == TYPED_DRAFT_VERSION else CreatorDraft).model_json_schema()
 
 
-def _value_constraints(reference):
+def _value_constraints(reference, version=None):
     """Derive exact string bounds from the maintained creator model, never a customer limit."""
     if not isinstance(reference, str) or not reference.startswith("draft:/"):
         raise ValueError("Exact draft pointer required")
     path = reference[7:]
     if not PROSE_PATH.fullmatch(path):
         raise ValueError("Only supported prose leaves can be changed")
-    schema = _creator_schema()
+    schema = _creator_schema(version)
     node = schema
     for key in path.split("/"):
         while "$ref" in node:
@@ -184,7 +189,7 @@ def context(candidate, verified_critic):
         for finding in report.findings:
             if finding.severity == "suggestion":
                 continue
-            if finding.severity != "required" or finding.area not in ("language", "content"):
+            if finding.severity != "required" or finding.area not in ("language", "content", "design"):
                 return None
             found = False
             if len(finding.evidence_refs) != len(set(finding.evidence_refs)):
@@ -192,10 +197,15 @@ def context(candidate, verified_critic):
             for reference in finding.evidence_refs:
                 if reference.startswith("receipt:"):
                     continue
+                # A visual-direction explanation is already an allowed prose
+                # leaf. Design tokens, layout or any other design target still
+                # require the full creator; this never certifies visual quality.
+                if finding.area == "design" and reference != "draft:/brand/rationale":
+                    return None
                 parent, key, value = _leaf(normalized, reference)
                 found = True
                 target = targets.setdefault(reference, {"field": reference, "value": value,
-                    "value_constraints": _value_constraints(reference),
+                    "value_constraints": _value_constraints(reference, normalized.get("schema_version")),
                     "semantic_context": _siblings(parent, key), "corrections": []})
                 target["corrections"].append({"finding_id": finding.id, "explanation": finding.explanation,
                                              "correction": finding.correction})
@@ -207,9 +217,11 @@ def context(candidate, verified_critic):
             "stage": report.stage, "round_number": report.round_number,
             "allowed_refs": list(targets), "targets": list(targets.values()),
             "business_context": {key: normalized["business"][key] for key in ("customer", "paid_result", "offer")},
-            "scope": ("private_prose_edits_only" if any(finding.area == "content" and finding.severity == "required"
+            "scope": ("private_prose_edits_only" if any(finding.area in ("content", "design") and finding.severity == "required"
                        for finding in report.findings) else "private_language_edits_only"),
             "semantic_acceptance": "UNVERIFIED"}
+        if normalized.get("schema_version") == TYPED_DRAFT_VERSION:
+            result["draft_schema_version"] = TYPED_DRAFT_VERSION
         if len(json.dumps(result, ensure_ascii=False).encode("utf-8")) > MAX_CONTEXT_BYTES:
             return None
         return result
@@ -231,7 +243,7 @@ def output_schema(bound_context):
             raise ValueError("Invalid patch context")
         groups = {}
         for reference in refs:
-            limits = _value_constraints(reference)
+            limits = _value_constraints(reference, bound_context.get("draft_schema_version"))
             key = (limits["minLength"], limits["maxLength"])
             groups.setdefault(key, {"limits": limits, "refs": []})["refs"].append(reference)
         branches = [{"type": "object", "additionalProperties": False, "required": ["field", "value"],

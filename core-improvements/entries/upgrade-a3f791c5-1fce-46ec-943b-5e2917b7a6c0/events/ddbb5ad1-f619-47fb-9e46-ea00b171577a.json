@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Source/offline completion of explicit durable S4-to-single-S5 join. Frozen protocol0b182dc bytes unchanged. Original missing-provenance FAIL retained. No DB/provider/service/CLI execution. Actual PG/RLS/migration and running-provider races remain Root-only; expected table count88->89 is not observed proof.",
+  "checks": [
+    {
+      "command": "pytest16 explicit pure workflow/ordinary/native/direct files",
+      "result": "PASS",
+      "evidence": "295PASS2.66s; SHA256 a5ebaaf91d79b378604dab304eae4a62ed03736aa8555317ec71155a809b8794; includes92workflow cases and actual scalar CHECK with SQL NULL semantics under offline SQLite, not PG."
+    },
+    {
+      "command": "pytest --collect-only tests/test_workspace_agent_workflow_pg.py",
+      "result": "PASS",
+      "evidence": "12cases collected1.80s ONLY; SHA2566370e50be2a9acf870cdc58de7532441b17d284c92d34fa9575c03f866bd0422; no fixtures or DB executed."
+    }
+  ],
+  "eventId": "ddbb5ad1-f619-47fb-9e46-ea00b171577a",
+  "sequence": 3,
+  "at": "2026-10-17T20:41:57.511Z"
+}

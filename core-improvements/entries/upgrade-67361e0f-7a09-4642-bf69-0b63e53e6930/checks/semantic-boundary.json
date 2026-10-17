@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "base": "07d8e577f9df78d7d5057cd625004a4d6d9f180a",
+  "callers": [
+    {
+      "path": "agent-business-core/runtime/src/pinet_core/creation/adapter.py",
+      "sha256": "9ff5bce5e0183a8fef4ddbc2c4e314cd40a4960773dc10a47b36e2b9b7e63af3"
+    },
+    {
+      "path": "agent-business-core/runtime/src/pinet_core/customer_text/adapter.py",
+      "sha256": "d30bf835fef5c152f11228ef073c2c756abee570288cda9875aedadf1cb483c8"
+    },
+    {
+      "path": "agent-business-core/runtime/src/pinet_core/tasks/codex.py",
+      "sha256": "9da3de258f33431ae39415ae1e3da19d7624a81d6990945811684bd6e726cad7"
+    },
+    {
+      "path": "agent-business-core/runtime/src/pinet_core/workspace_team/adapter.py",
+      "sha256": "7e0f987886e058dd4cd0f53ffd582c8fe84d21b25dfe894af3b4f2b051409a36"
+    }
+  ],
+  "onlyPinDigestCallsAndNecessaryImportsChanged": true,
+  "guardsComparisonsErrorHandlersAndOtherHashingUnchanged": true,
+  "helperSha256": "a7333b0a3b2e35e5748cbcb0641b94206a6938c29a52f080729e8beadc19ee3e",
+  "perReadLimitBytes": 1048576,
+  "cache": "none"
+}

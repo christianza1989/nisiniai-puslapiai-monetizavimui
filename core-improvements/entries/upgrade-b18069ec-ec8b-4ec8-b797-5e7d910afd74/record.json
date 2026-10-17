@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Coordinator model guessed server-known unresolved-check arrays and prevented an existing exact prose repair; bind validated reference sets before provider dispatch",
+  "category": "code",
+  "evidence": [
+    "Actual sealed Creation96dd217a coordinator returned9remaining checks vs8from validated critic because automatic language-mixing receipt wasPASS. Original normalization reproduces review_invalid with extra language_quality, and existing language_patch resolves draft:/brand/rationale. RawfailedJob and provider outputs retained privately; no acceptance or mutation of historical evidence."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/review.py",
+    "agent-business-core/runtime/src/pinet_core/content_work/review.py",
+    "agent-business-core/runtime/offline_tests/test_creation_review.py",
+    "agent-business-core/runtime/offline_tests/test_content_work_review.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert and idle-only source rollback; keep strict post-validation, original failed job/outputs and all usage. Never rewrite a model result to match derived constraints or retag an active job.",
+  "id": "upgrade-b18069ec-ec8b-4ec8-b797-5e7d910afd74",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "bbd258e16fb1a1b41ec442eb848e662f82b0fb39",
+  "createdAt": "2026-10-15T14:48:30.966Z"
+}

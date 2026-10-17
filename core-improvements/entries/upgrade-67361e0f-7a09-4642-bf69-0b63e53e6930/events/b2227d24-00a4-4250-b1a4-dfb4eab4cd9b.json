@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "One fresh bounded file-hash helper replaces exactly four whole-executable buffer allocations. No cached digest, pin/configuration/permission weakening, model/argv/timeout or unrelated hashing changes. Original4FAIL retained before source mutation; Root's private installed-binary MemoryError is a separate report. No DB/provider/operating-process adoption or latency guarantee. First Ruff check found one now-unused hashlib import; removed only that import. Existing unreadable team readiness test injects the same OSError at Path.open instead of obsolete Path.read_bytes.",
+  "checks": [
+    {
+      "command": "Own-source pure pytest CLI pin, team readiness, creation adapter, control codex, customer text and workspace pipeline runner; seven actual-child cases explicitly deselected",
+      "result": "PASS",
+      "evidence": "135PASS7deselected5.19s, logSHA25603c052d3adfaca1e19e0f281ec8c4075e385f97b7707b9b709edbe4a788291c2. Four pin callers pass whole-buffer allocation refusal; pin mismatch refuses before inert transport; each invocation rehashes changed file and new pin; read errors and disabled short circuits preserve behavior. Known real-file boundary digests, partial-read failure close, virtual341312816-byte bounded stream with independent64KiB digest feed covered. Focused28PASS1.51s SHA256c0e68d82e88b40ed5c1b805a1c84dbd45b84eb493f8f2a8c879062e59a908ea5."
+    },
+    {
+      "command": "ruff check five production files and two tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; no dependency or formatter change."
+    },
+    {
+      "command": "AST/source comparison of four caller modules against exact07d8e577f9df78d7d5057cd625004a4d6d9f180a",
+      "result": "PASS",
+      "evidence": "checks/semantic-boundary.json canonicalLF SHA2566dd7ba58fea9e621dad62cb1850abc50457434894322f95e38190f0dd67e9425. Only pin digest expression and necessary imports differ. Guards/comparisons/error handlers/other hashing unchanged. Shared helperSHA256a7333b0a3b2e35e5748cbcb0641b94206a6938c29a52f080729e8beadc19ee3e; per-read bound1048576, no cache."
+    }
+  ],
+  "eventId": "b2227d24-00a4-4250-b1a4-dfb4eab4cd9b",
+  "sequence": 3,
+  "at": "2026-10-17T20:13:58.768Z"
+}

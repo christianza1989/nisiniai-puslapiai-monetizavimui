@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Independent Root pre-freeze review found missing Start UUID acknowledgement and current envelope/native coherence. Initial e5e492d retained;9negativecases firstFAIL0.36s SHA25689b5b02317ee01371e374db94f0c52eefd62464d1a92b5fd8e59bbb26abbbc2e. Added required LeaseView.idempotency_key, active execution source=envelope source, creation<=observation, ready expiry>(observed) and<=observed+90s, availability ready revision/nativehash matching. Inactive historical source allowed only URLnull. No runtime route/server/SQL or previous-proof mutation.",
+  "eventId": "be2e2d2b-eaaa-4650-aec4-ed6c24491e96",
+  "sequence": 4,
+  "at": "2026-10-16T21:38:28.204Z"
+}

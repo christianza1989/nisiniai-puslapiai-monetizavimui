@@ -66,10 +66,10 @@ def test_fixed_runner_config_refuses_incapable_values(capable, monkeypatch, key,
 
 
 def test_unreadable_binary_is_closed_readiness_not_an_api_error(capable, monkeypatch):
-    def unreadable(_):
+    def unreadable(_, *args, **kwargs):
         raise OSError("Inert binary unavailable")
 
-    monkeypatch.setattr(Path, "read_bytes", unreadable)
+    monkeypatch.setattr(Path, "open", unreadable)
     assert not adapter.runner_ready()
 
 

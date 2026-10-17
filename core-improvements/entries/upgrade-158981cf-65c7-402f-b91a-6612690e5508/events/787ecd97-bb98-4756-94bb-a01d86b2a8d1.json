@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Second source repair only; helper never executes PG/provider. Stage2 still paused. Runtime row-type coverage is PREPARED/COLLECTED; Root must run it in a newly migrated QA database before acceptance. Previous failures/915 snapshot remain intact.",
+  "checks": [
+    {
+      "command": "pytest focused direct repair/scope/schema/wire/execution + maintained Episode/team/topics units",
+      "result": "PASS",
+      "evidence": "87PASS0.91s including exact Event-only procedural field branch; logSHA256 044da41a7d2a13006957b792b29e764de60396966dc35d9525531544d10da716"
+    },
+    {
+      "command": "pytest --collect-only tests/test_workspace_direct_pg.py tests/test_workspace_team_pg.py; ruff affected3files; git diff --check",
+      "result": "PASS",
+      "evidence": "25 native cases collected0.31s; new claim-only test fires real Thread/Task/Run/Event INSERT paths plus scoped no-op Run UPDATE and existing cancel/finish_run, with no invented usage or provider. No DB fixtures executed by helper. LogSHA256 59e3b691957674b2516eb3fe1267fb4159dba5bb0637a9ea194c5366ea936250"
+    }
+  ],
+  "eventId": "787ecd97-bb98-4756-94bb-a01d86b2a8d1",
+  "sequence": 6,
+  "at": "2026-10-15T23:27:10.255Z"
+}

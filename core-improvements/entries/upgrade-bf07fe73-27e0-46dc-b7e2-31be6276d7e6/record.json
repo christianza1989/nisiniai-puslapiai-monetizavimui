@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Native customer editorial metadata and internal-link preparation have no current-owner guarded durable operator bridge; the existing pipeline stops at media_editorial_renderer_pending.",
+  "category": "code",
+  "evidence": [
+    "Source 9813833b6bcb8f3fa7a970f125f6c170ba22566b: site_build/service.py and workspace_pipeline.py explicitly retain media_editorial_renderer_pending; no editorial preparation adapter exists.",
+    "Isolated native Node baseline: 1 FAIL, workflow_invalid_command, 1018.5886ms; log SHA256 a2bfc853949550f426d66d10d3855edc1ff346629cbba49a49fd03dacf90e0e6. Initial fixture invalid_server_page failure retained separately SHA256 1754dce45f5c6396fbb8ea9da9922a4db7732cd3e35cc7d34c55e73e149aaeab."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/editorial_preparation.py",
+    "content-studio/scripts/customer-content-workflow.mjs",
+    "agent-business-core/runtime/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this adapter, strict Node preparation command, focused tests and documentation; retain actual private receipts, original accepted material and historical jobs.",
+  "id": "upgrade-bf07fe73-27e0-46dc-b7e2-31be6276d7e6",
+  "branch": "codex/verslomatika-editorial-preparation-20261015",
+  "baseSha": "9813833b6bcb8f3fa7a970f125f6c170ba22566b",
+  "createdAt": "2026-10-15T19:57:48.592Z"
+}

@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "evidence": "80PASS7.13s finalfocusedlog f6fd3d913c3cf8395651c99bda6b98b9008d32ef1b079480df2cbef78814ddad; realproject/inspect composition withonlynativeleaf fake; noSQL/provider/process.",
+      "result": "PASS",
+      "command": "python -m pytest offline_tests/test_live_preview_inspection_authority.py offline_tests/test_live_preview_runtime.py offline_tests/test_live_preview_monitor_cadence.py -q --tb=short"
+    },
+    {
+      "evidence": "Exact unchanged failinginertcase rerun1PASS0.41s9459a7d273f5dc2761dee270a3ace79b1c9eccb1111157c448cdbd69b14743f3; previousfailure stillrecorded, no transport/testdeadlineedit.",
+      "result": "PASS",
+      "command": "python -m pytest tests/test_studio_authorization_cleanup.py::test_final_authorization_stays_under_deadline_and_is_joined[timeout] -q --tb=short"
+    },
+    {
+      "evidence": "One productionpath only; expectedShadow/Token/Scope/cancel/finalFalse cases retained. Canonical actualbackend tests deferredtoexactcommittedpin.",
+      "result": "PASS",
+      "command": "python -m ruff check exact source and new offline test; git diff --check"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Root-owned single-source active-inspection repair. Canonical realproject/inspect concurrency baseline1FAIL4.06s1a67b5be80c0239881761f3e352ee3479b45abca00eccb7a873479954b9d8a04 retained. First WIPpost-output gate1FAIL1.70s01600d0497d7108206aa931978aebaa8418e6774ecb63e08e03ec4108f0aad58 retained; explicitfresh barrier now drains priorinflight thenrequiresnewobservation. Unique live task/ACTIVE/current/nonemptyexacttoken/fullScope; standalone/foreign/ambiguous/completed/inactive remainindependent. Same nativeControlErrorobject, False atcallback/final refused, publicboolbehavior/shield/cancel/pulseorder unchanged. Final80PASS7.13s f6fd3d913c3cf8395651c99bda6b98b9008d32ef1b079480df2cbef78814ddad. Full495PASS1inert-timeoutFAIL/2excluded/warningb0a5a8783f2d2201e3148bec34f7e84c3794c5d51f648576927b8dd8d760f729 retained; exactunchangedonecase rerunPASS0.41s9459a7d273f5dc2761dee270a3ace79b1c9eccb1111157c448cdbd69b14743f3. No single496PASSclaim. NativeModule unchanged, noRoot DB/provider/adoptionfornewpatchyet; availability.capture independent/wholefeatureremainsfixing.",
+  "eventId": "2f589956-c8c3-412a-a515-722965ef13d4",
+  "sequence": 2,
+  "at": "2026-10-17T11:13:33.154Z"
+}

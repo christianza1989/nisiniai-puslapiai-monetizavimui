@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final reviewed regression after strengthening the existing dirty-source fixture: real isolated directory plus exact two mocked Git command assertions ensure the test exercises dirty observation rather than a missing fictional /public path. Original refusal/synthetic-marker assertions retained. No Root file/journal/runtime/adoption change.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;tests;scripts python -m pytest offline_tests/test_source_observation.py offline_tests/test_private_preview.py offline_tests/test_private_native_continuity.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py tests/test_build_continuation.py -k \"not real_studio_monitor and not actual_python_node_observer\" -q --tb=short",
+      "result": "PASS",
+      "evidence": "213PASS2.31s;2actualprocess tests explicitly deselected;1existing deliberate UUID warning; final privateSHA256e8132806394b0e603f93f6b871990fa5eb7bd1bbf271c8196b5161b2c6a74da9.100wrappercalls now4mockGitcommands, twoRoots8, all exit/cancel/closed/thread/source-error regressions pass."
+    },
+    {
+      "command": "ruff check exact5sharedPython sources and2related test files; git diff --check",
+      "result": "PASS",
+      "evidence": "All7Pythonfiles PASS; exact source scope only, no TTL/deadline/fingerprint/wire/native/auth result caching or actual Node/DB/provider acceptance."
+    }
+  ],
+  "eventId": "c7a5731f-fe9a-47aa-9ae5-9fa0a5c8fb36",
+  "sequence": 4,
+  "at": "2026-10-17T08:13:39.777Z"
+}

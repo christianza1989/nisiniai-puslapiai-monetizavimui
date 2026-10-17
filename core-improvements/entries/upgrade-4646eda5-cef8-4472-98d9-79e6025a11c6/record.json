@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "A transient expired pulse permanently ends an unpublished readonly preview; permit one fully joined, freshly authorized pre-ready attempt within the original shared deadline",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "content-studio/scripts/customer-live-preview.mjs",
+    "agent-business-core/runtime/offline_tests/test_live_preview_runtime.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_startup_recovery.py",
+    "content-studio/test/customer-live-preview.test.mjs",
+    "docs/LIVE_PREVIEW_STARTUP_RECOVERY.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Sourcea7: real manual-close/Chrome home+guide PASS, then never-ready e502 heartbeat_expired/before_context at16:47:04.268Z with margin-582ms; exact guardSHA d9f26015a1dfc122fb969700aa915c73a4a5e06c047ff94be18e78ca3576abaf. Actual full verify10.47928s/6.88196SQL seconds. Original failure and source/PG successes remain separate; this is not a post-ready liveness guarantee."
+  ],
+  "rollback": "Scoped revert before adoption; retain original failed and successful lease evidence, tombstones, all ready receipts, data and the original fixed heartbeat/operation deadlines. Never retry or reopen a terminal/ready/uncertain lease.",
+  "id": "upgrade-4646eda5-cef8-4472-98d9-79e6025a11c6",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "a7a8688919dec61a8c3499a4b5b01e2b9e67e0e4",
+  "createdAt": "2026-10-17T17:12:09.839Z"
+}

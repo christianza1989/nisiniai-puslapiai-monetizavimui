@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Expose the independently reviewed additive direct messenger wire as an immutable generated OpenAPI snapshot for exact portal codegen; the prior maintained public contracts contain only topic-group Send with no recipient or isolated DM history.",
+  "category": "workflow",
+  "evidence": [
+    "Source3b7 legacy workspace-team Send has no recipient; S42b237819 adds strict workspace-direct.v1 export without routes or execution. A portal must consume that exact generated wire instead of handwritten endpoints or group-event filtering.",
+    "Independent root review of9bea46e+b237819 and root focused regression47PASS1.94s (direct contract plus unchanged native Episode). No API/schema/customer/provider adoption."
+  ],
+  "paths": [
+    "docs/contracts/verslomatika-workspace-direct.openapi.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert the additive exported OpenAPI snapshot and portal consumer sync; preserve existing group/native contracts. No runtime route, worker, DB migration, provider or customer data is activated by this snapshot.",
+  "id": "upgrade-6da78d38-9abf-4444-95a4-ae50bb0d3369",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "b237819daf0f4f87978037c92cb05c541e14977d",
+  "createdAt": "2026-10-15T22:15:41.594Z"
+}

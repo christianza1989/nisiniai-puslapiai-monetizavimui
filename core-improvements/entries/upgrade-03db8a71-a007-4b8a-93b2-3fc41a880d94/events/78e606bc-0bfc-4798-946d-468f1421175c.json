@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Supplemental exact regression-path scope for paired1014b905 implementation. Coverage classifier remains unchanged; old BLOCKED report and immutable record retained. No new feature or waived assertion.",
+  "checks": [
+    {
+      "command": "qa-venv python -X utf8 SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "11PASS0FAIL0.031s, including new visible inline punctuation/split-word positives and omitted/changed/hidden word negatives. Initial2FAIL9PASS retained before implementation fix;12Node and real11page0issue recheck recorded under1014b905."
+    }
+  ],
+  "eventId": "78e606bc-0bfc-4798-946d-468f1421175c",
+  "sequence": 2,
+  "at": "2026-10-16T10:14:00.048Z"
+}

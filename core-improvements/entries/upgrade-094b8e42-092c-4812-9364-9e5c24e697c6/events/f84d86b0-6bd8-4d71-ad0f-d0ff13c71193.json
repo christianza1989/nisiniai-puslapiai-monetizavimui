@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Provider IT confirms v1 final tax-inclusive quote/no-insurance protocol but create has no accepted price field. The inherited absolute costCeilingGuaranteed requirement would make the supported provider protocol unconfigurable. Add explicitly admitted fresh-quote pricing without claiming an absolute final-charge guarantee; keep real operation gates closed. DPD EE multiparcel exception must bind the selected service to the verified courier, not trust only the locker DTO.",
+  "eventId": "f84d86b0-6bd8-4d71-ad0f-d0ff13c71193",
+  "sequence": 3,
+  "at": "2026-10-13T22:05:07.653Z"
+}

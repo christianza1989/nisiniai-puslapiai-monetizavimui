@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Continuing full-foundation checkpoint 0.7: host-aware Worker assets and core credential scopes, private Node/R2 PDF storage, Unicode numbered document export, operational production policy gates, buyer browser module with stable lost-response/reload recovery and four UI languages. Actual browser exposed a fetch receiver bug, fixed before acceptance. Owner supplied legal/contact/addon facts recorded with registered address pending clarification. No live grants/providers/money/mail/DNS/deploy. This is not full-foundation completion; shipping commands/jobs/backup/operations and website integration continue.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "68 Node tests; native workerd/D1/R2/core credential/private Unicode PDF export; dry-run gzip744.92KiB. Contract commerce-core/docs/STOREFRONT_CONTRACT_0_7.md"
+    },
+    {
+      "command": "Actual local browser 8795 buyer and operator fixtures",
+      "result": "PASS",
+      "evidence": "Order54D973F0 persistent create/reload, disabled unconnected payment,320px no overflow; private sandbox PDF13KB upload/download/hash equality; two rendered LT/PL/LV PDFs visually checked. Ignored local proof commerce-core/tmp/ui-review and tmp/pdfs."
+    }
+  ],
+  "eventId": "a995d381-b241-4708-9c91-e38b162fa007",
+  "sequence": 18,
+  "at": "2026-10-12T02:13:51.800Z"
+}

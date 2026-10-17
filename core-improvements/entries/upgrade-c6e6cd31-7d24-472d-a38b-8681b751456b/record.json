@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Actual Wrangler4.149 remote D1 migration0001 failed with Cloudflare7500 incomplete input; preserve whole trigger statements through canonical native binding migrator and preflight partial schema without altering historical SQL",
+  "category": "code",
+  "evidence": [
+    "Authorized Memocasting deployment session reported real remote7500 incomplete input on original0001_commerce.sql,2026-10-15",
+    "commerce-core/src/migrations.mjs already preserves trigger statements and native batch transaction",
+    "https://developers.cloudflare.com/workers/wrangler/api/#getplatformproxy"
+  ],
+  "paths": [
+    "commerce-core/src/node-production-d1.mjs",
+    "commerce-core/scripts/migrate-production-d1.mjs",
+    "commerce-core/test/production-d1.test.mjs",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/package.json",
+    "commerce-core/package-lock.json",
+    "commerce-core/README.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert; no automatic remote reset, migration hash rewriting or destructive cleanup. Parent owns actual remote adoption.",
+  "id": "upgrade-c6e6cd31-7d24-472d-a38b-8681b751456b",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "797b450fca2e96ecdb380b202c21a089b9b3270c",
+  "createdAt": "2026-10-14T21:45:09.696Z"
+}

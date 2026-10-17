@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual status2 test shipment had printable label bundle and manifest but tracking from/to-only caused carrier_tracking_invalid. Original failing no-scan regression retained. Strict narrow shape repair, no fabricated scan; provider CSV ordering confirmation still pending.",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "159tests0fail including route-only no-scan, malformed/error/nullinfo and existing calendar/date cases."
+    },
+    {
+      "command": "npm run test:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "Native workerd/D1 smoke with ordered migrations and concurrency passed."
+    },
+    {
+      "command": "prettier scoped check and npm run build:worker",
+      "result": "PASS",
+      "evidence": "FormattingPASS; dry-run3226.85KiB/gzip779.90KiB; no production upload."
+    },
+    {
+      "command": "node sites/memocasting/qa/sendparcel-staging-status-20261017.private.mjs",
+      "result": "PASS",
+      "evidence": "Actual infos/documents/tracks200,status2,verified addresses/packages,private printable labels and manifest,0events. RawCSV not guessed into parcel mapping."
+    }
+  ],
+  "eventId": "624420f5-b1b1-47e3-b43f-c27fadb5d03f",
+  "sequence": 2,
+  "at": "2026-10-17T08:42:11.845Z"
+}

@@ -1,0 +1,36 @@
+{
+  "siteId": "core",
+  "summary": "Owner needs persistent browser admin sign-in without recurring pasted bearer; extend canonical <=8h authorization with verified Cloudflare Access application JWT plus exact trusted issuer/subject membership and hashed logout revocation",
+  "category": "code",
+  "evidence": [
+    "Authorized deployment owner explicitly requests separate0.17 generic Access/JWT source while actual organization/app/AUD/subjects remain pending; no provider/browser/DB/secrets operations allowed",
+    "Existing core identity is scoped Bearer only; Madbeauty auth is niche-specific NodeSQLite OTP/SMTP and not a shared Workers owner service",
+    "Current official Cloudflare docs require server signature/JWKS/issuer/audience checks and distinguish user app tokens from service tokens; Access refresh/logout provided by provider",
+    "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/",
+    "https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/application-token/",
+    "https://developers.cloudflare.com/cloudflare-one/access-controls/access-settings/session-management/"
+  ],
+  "paths": [
+    "commerce-core/src/access-identity.mjs",
+    "commerce-core/src/identity.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/migrations/0024_operator_access.sql",
+    "commerce-core/test/access-identity.test.mjs",
+    "commerce-core/test/access-worker-harness.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/docs/API.md",
+    "commerce-core/README.md",
+    "commerce-core/package.json",
+    "commerce-core/package-lock.json",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert; never rewrite original23 migration hashes or reset remote data. Remove/hold Access config and use deliberately admitted legacy Bearer path if needed. Actual Access organization/policies/subjects and remote migration remain site-owner actions.",
+  "id": "upgrade-5d447e6d-ca61-43e4-a7fa-eefb3de30c99",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "b090e2a70a8c984245fa4e00fb8723d1b177fc6a",
+  "createdAt": "2026-10-15T12:08:08.534Z"
+}

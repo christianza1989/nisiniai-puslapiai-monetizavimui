@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Fresh commerce branch lacks the mandatory committed upgrade coverage checker; adopt the closed canonical helper window from exact reviewed-source commit7d98088 without altering foreign checkout",
+  "category": "workflow",
+  "evidence": [
+    "git ls-tree origin/main scripts/core-upgrade-check.mjs empty on7af6b964",
+    "Versioned source7d98088b1c6c7da53233d154535040d485424aee; owner WORKSTREAMS helper window closed"
+  ],
+  "paths": [
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "commerce-core",
+    "WORKSTREAMS.md",
+    "core-improvements/entries/upgrade-094b8e42-092c-4812-9364-9e5c24e697c6",
+    "core-improvements/entries/upgrade-a7f33641-ee43-478d-abc5-179dbf994524"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped revert of the imported helper/test; journal and independent historical orders preserved",
+  "id": "upgrade-363486c4-c809-4797-91b7-d646504114f2",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "27927a7d5a74ed356e7c2f4c93863d53214d1a8b",
+  "createdAt": "2026-10-13T21:51:08.155Z"
+}

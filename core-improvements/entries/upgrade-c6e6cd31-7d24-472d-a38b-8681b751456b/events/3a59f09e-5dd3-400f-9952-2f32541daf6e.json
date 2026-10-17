@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "2b755fde6ed1a1edc30d740aa2c52ad0a7505bfc",
+  "note": "Candidate source pushed to PR96; not main merged. Authorized site deployment owner reported actual remote native-binding SCHEMA_VERIFIED at~21:55UTC: before0/pending23/wrangler0,after23/pending0/wrangler0,customerDataCreated:false,storeCreated:false on exact confirmed production D1 target; deployed owner's reviewed branch source e614b030c802583869bb6288bcc6fd5e8c57502f. This is owner-supplied remote adoption evidence, not a remote operation by this task, not main adoption, paid acceptance or launch. Original CLI and HTTP Cloudflare7500 failures remain preserved.",
+  "eventId": "3a59f09e-5dd3-400f-9952-2f32541daf6e",
+  "sequence": 3,
+  "at": "2026-10-14T21:56:48.611Z"
+}

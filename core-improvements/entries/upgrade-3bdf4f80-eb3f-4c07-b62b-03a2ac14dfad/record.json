@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Adopt three provider-evidenced Sendparcel compatibility repairs into the root commerce branch and make business-configuration provenance explicit instead of treating the older preparation template as the deployed owner catalog",
+  "category": "workflow",
+  "evidence": [
+    "Reviewed source commits959bf490b7fe01e09c2713ae3b0d538024f41a4c,95102ec6a2da061719b9e59e581dddc6dcebe213,68e3148cf8aa35d05ea6fc7a7fb0da3f2f1098e5 from deployment owner PR101",
+    "Root scoped adoption commitsdd7803e2f71e5522bf082a12fb3c496fb29c368a,6f96089e65f5e6daafc3f15361fb86c8a2913c38,ff0ab69d9be184bf6312739a5f81cbc95c0e6ae9 preserve the three original upgrade records; focused3+8+8 tests and per-commit safety/coverage PASS",
+    "Root config/memocasting-business.json deliberately retains earlier preparation unknowns while actual production business facts and credentials are deployment-owned; shared runbook should name that boundary",
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96#issuecomment-6231904776"
+  ],
+  "paths": [
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "commerce-core/README.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped documentation/journal revert. Original three provider repair records and original24 migrations remain immutable; actual provider resources, business config, credentials and deployment are untouched.",
+  "id": "upgrade-3bdf4f80-eb3f-4c07-b62b-03a2ac14dfad",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "ff0ab69d9be184bf6312739a5f81cbc95c0e6ae9",
+  "createdAt": "2026-10-17T08:47:13.071Z"
+}

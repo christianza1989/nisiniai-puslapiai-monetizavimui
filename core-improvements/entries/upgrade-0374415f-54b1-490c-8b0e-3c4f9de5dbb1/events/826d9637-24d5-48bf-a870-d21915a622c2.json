@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Explicit owner simple-count policy uses existing false+canonical catalogue/adjustment path without lot/expiry/quality fabrication. Business preparer defaults other products to tracked; operator UI distinguishes simple/lots/legacy and preserves history. Native regression exposed expire metadata2vs1; affected service update now returns IDs to count actual orders in same atomic batch. Original failure preserved privately. No actual config/DB/provider/browser/secret operation; actual Memo business updates belong to site owner.",
+  "checks": [
+    {
+      "command": "npm run verify (commerce-core0.16.0 final)",
+      "result": "PASS",
+      "evidence": "Formatting147Node tests,native workerd/D1/R2/Queue23 ordered migrations including explicit simple999reserve/payment/packing/expire/replay andzero lot records; dryrun3181.84KiB/gzip768.15KiB/21assets."
+    },
+    {
+      "command": "node --test test/simple-stock.test.mjs",
+      "result": "PASS",
+      "evidence": "6tests: CAS/replay/negative rejection; reserve once/paid+packing no second decrement; concurrent lastunit/expiry/latepaid; multiSKUrollback and trackedquarantine/immutablepolicy; defaults; mixed/legacy/historyUI."
+    },
+    {
+      "command": "impeccable detect --json admin.mjs finished-stock-ui.mjs",
+      "result": "PASS",
+      "evidence": "Mechanical findings[]; no browser QA under owner restriction. Original SQL/identity/public checkout gates not changed."
+    }
+  ],
+  "eventId": "826d9637-24d5-48bf-a870-d21915a622c2",
+  "sequence": 2,
+  "at": "2026-10-15T11:59:47.719Z"
+}

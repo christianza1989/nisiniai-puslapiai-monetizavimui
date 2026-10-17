@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+body {
+  margin: 0;
+  font:
+    1rem/1.5 'Segoe UI',
+    Arial,
+    sans-serif;
+  color: #182822;
+  background: #fff;
+}
+main {
+  max-width: 760px;
+  padding: 32px;
+  margin: auto;
+}
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+h2 {
+  font-size: 1.25rem;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 18px;
+}
+input,
+select,
+button {
+  font: inherit;
+  min-height: 44px;
+  border: 1px solid #8c9b93;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  color: inherit;
+  max-width: 100%;
+  min-width: 0;
+}
+input[type='checkbox'] {
+  align-self: flex-start;
+  width: 24px;
+  min-height: 24px;
+}
+button {
+  cursor: pointer;
+  background: #165b42;
+  color: #fff;
+  padding: 10px 16px;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+:focus-visible {
+  outline: 3px solid #126da6;
+  outline-offset: 3px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+p {
+  overflow-wrap: anywhere;
+}
+[role='alert'] {
+  color: #a12828;
+}
+a {
+  color: #165b42;
+}
+@media (max-width: 760px) {
+  main {
+    padding: 20px;
+  }
+}

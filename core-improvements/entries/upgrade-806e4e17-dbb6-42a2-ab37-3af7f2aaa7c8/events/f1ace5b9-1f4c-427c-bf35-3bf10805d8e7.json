@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Owner continued on 2026-10-12. Same PR96 scope extends persistent contacts/delivery, audited stock adjustments, numbered immutable sandbox documents, signed refund event inbox and actual local operator UI. Prior package receipts/history remain intact; no live account operation, carrier activation, storefront or agent activation.",
+  "eventId": "f1ace5b9-1f4c-427c-bf35-3bf10805d8e7",
+  "sequence": 5,
+  "at": "2026-10-11T21:30:26.268Z"
+}

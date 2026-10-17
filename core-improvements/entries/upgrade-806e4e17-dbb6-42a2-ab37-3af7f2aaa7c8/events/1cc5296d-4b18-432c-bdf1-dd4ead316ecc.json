@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Commerce0.5 durable sandbox refund commands and isolated real Stripe API path verified. Same issue95/PR96, parent module only; website owner remains active. Not entire marketplace or MB production admission. Anonymous test account expires2026-10-18; diagnostic key mask omission and all unsuccessful attempts retained in receipt, no live key or customer data in source.",
+  "checks": [
+    {
+      "command": "npm run verify in commerce-core",
+      "result": "PASS",
+      "evidence": "53Node/native workerdD1 all7migrations/concurrent budget/lease/execution/cancel/immutability and existing regression; format; dry-run97.70KiB/gzip19.28."
+    },
+    {
+      "command": "git archive staged tree43c7d16443edb10592c19b3969e8248c412ac72d commerce-core; npm ci --ignore-scripts; npm run verify",
+      "result": "PASS",
+      "evidence": "Clean source restore without DB/provider keys;36packages/audit0;53tests/nativeD1/build PASS. Final docs/journal additions do not alter tested runtime."
+    },
+    {
+      "command": "Stripe CLI sandbox/listen + actual hosted Checkout + private operator API + stripe-sandbox-verify --prove-idempotency",
+      "result": "PASS",
+      "evidence": "Separate anonymous test-only account, complete/paid32EUR, signed webhook paid/allocated,2succeeded test refunds5EUR/3EUR, repeated same POSTs returnedsameproviderIDs,800centslocal/API. No MB account or live financial operation. HTTPSreturn/real async methods remain unverified."
+    },
+    {
+      "command": "Actual IAB desktop/mobile/forms/budget conflict/cancel/recovery/restart/32pxspacing/keyboard",
+      "result": "PASS",
+      "evidence": "Screenshots in ignored UI-review;320normal265px,390spacing335px form/table widths no container overflow, Tabtosubmit,console[]. Ordinary long input scroll retained. Actual pending/review scenarios and fullWCAG/zoom unverified."
+    },
+    {
+      "command": "git-freshness handoff; scoped diff/staged source safety; docs/detector/audit",
+      "result": "PASS",
+      "evidence": "Fresh main7af6b964 ancestor,0missing;26initial exact-staged paths no secretfindings;20Markdown50locallinks;static detector exit0 no findingsprinted; audit0. Cwd mistakes corrected; provider secrets/private raw/claim URL untracked."
+    }
+  ],
+  "eventId": "1cc5296d-4b18-432c-bdf1-dd4ead316ecc",
+  "sequence": 12,
+  "at": "2026-10-11T23:41:56.284Z"
+}

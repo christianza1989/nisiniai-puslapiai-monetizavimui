@@ -1,0 +1,910 @@
+import { CommerceError, requireValue, identifier } from './validation.mjs';
+import { CommerceOperations } from './operations.mjs';
+import { Backoffice } from './backoffice.mjs';
+import { Wholesale } from './wholesale.mjs';
+import { RefundCommands } from './refunds.mjs';
+import { ShippingOperations } from './shipping.mjs';
+import { PrivateFiles, limitedBytes } from './private-storage.mjs';
+import { DocumentFiles } from './document-pdf.mjs';
+import { ShipmentCommands } from './shipment-commands.mjs';
+import { CommerceJobs } from './jobs.mjs';
+import { documentPolicy } from './admission.mjs';
+import { FinanceIO } from './finance-io.mjs';
+import { CatalogOperations } from './catalog.mjs';
+import { BuyerDeliveryQuotes } from './buyer-delivery.mjs';
+import { ReturnOperations } from './returns.mjs';
+import { CustomerNotifications } from './notifications.mjs';
+import { PaymentDisputes } from './disputes.mjs';
+import { FinishedStock } from './finished-stock.mjs';
+const json = (value, status = 200) =>
+  Response.json(value, {
+    status,
+    headers: {
+      'cache-control': 'no-store',
+      'x-robots-tag': 'noindex, nofollow',
+      'x-content-type-options': 'nosniff',
+    },
+  });
+export async function boundedBody(request, max = 65536) {
+  const reader = request.body?.getReader();
+  if (!reader) return '';
+  const chunks = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      requireValue(size <= max, 'body_too_large', 413);
+      chunks.push(value);
+    }
+  } finally {
+    await reader.cancel().catch(() => {});
+  }
+  const bytes = new Uint8Array(size);
+  let offset = 0;
+  for (const c of chunks) {
+    bytes.set(c, offset);
+    offset += c.byteLength;
+  }
+  return new TextDecoder().decode(bytes);
+}
+export function createHandler({
+  service,
+  environment,
+  paymentAdapters = {},
+  shippingAdapters = {},
+  shippingReadAdapters = {},
+  notificationAdapters = {},
+  publicAbuseGuard,
+  privateStorage,
+  loadDocumentFont,
+  operatorAuthorize,
+  operatorSessions,
+}) {
+  const operations = new CommerceOperations(service);
+  const backoffice = new Backoffice(service);
+  const finishedStock = new FinishedStock(service);
+  const wholesale = new Wholesale(service, { shippingReadAdapters });
+  const refunds = new RefundCommands(service);
+  const shipping = new ShippingOperations(service);
+  const files = new PrivateFiles(service, privateStorage);
+  const documentFiles = new DocumentFiles(service, privateStorage, loadDocumentFont);
+  const shipmentCommands = new ShipmentCommands(service, privateStorage);
+  const jobs = new CommerceJobs(service, {
+    privateStorage,
+    loadDocumentFont,
+    shippingAdapters,
+    shippingReadAdapters,
+    notificationAdapters,
+  });
+  const notifications = new CustomerNotifications(service, notificationAdapters);
+  const financeIO = new FinanceIO(service);
+  const catalogOperations = new CatalogOperations(service);
+  const buyerDeliveryQuotes = new BuyerDeliveryQuotes(service);
+  const returns = new ReturnOperations(service);
+  const disputes = new PaymentDisputes(service);
+  const pdfResponse = (result) =>
+    new Response(result.bytes, {
+      headers: {
+        'content-type': 'application/pdf',
+        'content-disposition': 'attachment; filename="' + result.file.filename + '"',
+        'cache-control': 'no-store',
+        'x-robots-tag': 'noindex, nofollow',
+        'x-content-type-options': 'nosniff',
+        'content-security-policy': "sandbox; default-src 'none'",
+      },
+    });
+  const context = async (store) => {
+    const payment = paymentAdapters[store.id],
+      carrier = shippingAdapters[store.id];
+    let verification;
+    try {
+      verification = payment?.verifyAccount ? await payment.verifyAccount() : null;
+    } catch {
+      verification = { ready: false, verified: false };
+    }
+    const paymentConnected = Boolean(
+      payment &&
+      payment.environment === environment &&
+      payment.accountRef === store.paymentAccountRef &&
+      (verification
+        ? verification.ready === true
+        : typeof payment.isReady !== 'function' || (await payment.isReady()) === true),
+    );
+    const shippingConnected = Boolean(
+      carrier &&
+      carrier.environment === environment &&
+      carrier.accountRef === store.shippingAccountRef &&
+      carrier.supportsBooking === true,
+    );
+    let documentReady = false;
+    try {
+      documentReady = Boolean(loadDocumentFont && documentPolicy(store, environment));
+    } catch {
+      /* Invalid private legal/tax policy must never publish an offer. */
+    }
+    const productionReady =
+      environment === 'production' &&
+      store.testOnly !== true &&
+      store.productionAdmission?.approved === true &&
+      documentReady &&
+      store.operationalAdmission?.approved === true &&
+      paymentConnected &&
+      shippingConnected &&
+      Boolean(privateStorage) &&
+      Boolean(publicAbuseGuard);
+    const eligibleCountries = productionReady
+      ? store.markets
+          .filter(
+            (m) =>
+              m.checkoutEnabled !== false &&
+              m.delivery.some(
+                (d) =>
+                  d.enabled !== false &&
+                  (d.pricing !== 'carrier' ||
+                    shippingReadAdapters[store.id]?.accountRef === store.shippingAccountRef),
+              ),
+          )
+          .map((m) => m.country)
+      : [];
+    return {
+      schemaVersion: 1,
+      storeId: store.id,
+      environment,
+      testOnly: store.testOnly === true,
+      legalName: store.legalSnapshot.name,
+      paymentConnected,
+      paymentProvider: paymentConnected
+        ? payment?.fixture === true
+          ? 'fixture'
+          : payment?.provider || null
+        : null,
+      paymentEnvironment:
+        paymentConnected && payment?.provider === 'stripe' && verification?.verified === true
+          ? environment === 'sandbox'
+            ? 'test'
+            : 'live'
+          : null,
+      paymentAccountVerified: paymentConnected && verification?.verified === true,
+      shippingConnected,
+      documentReady,
+      shippingQuotesConnected: Boolean(shippingReadAdapters[store.id]),
+      productionReady,
+      publishOffers: productionReady && eligibleCountries.length > 0,
+      eligibleCountries,
+      canCreateTestOrder: environment === 'sandbox' && store.testOnly === true,
+      fixtureCheckout:
+        environment === 'sandbox' && store.testOnly === true && payment?.fixture === true,
+    };
+  };
+  return async (request) => {
+    try {
+      const url = new URL(request.url);
+      const store = await service.resolveHost(url.host, environment);
+      if (request.method !== 'GET' && url.pathname !== '/api/stripe/webhook') {
+        const origin = request.headers.get('origin');
+        requireValue(!origin || origin === url.origin, 'origin_forbidden', 403);
+      }
+      const path = url.pathname;
+      if (
+        request.method === 'POST' &&
+        ['/api/quote', '/api/delivery-quotes', '/api/orders'].includes(path)
+      ) {
+        requireValue(
+          environment !== 'production' || publicAbuseGuard,
+          'public_guard_not_configured',
+          503,
+        );
+        if (publicAbuseGuard)
+          await publicAbuseGuard(
+            request,
+            store,
+            { '/api/quote': 'quote', '/api/delivery-quotes': 'delivery', '/api/orders': 'order' }[
+              path
+            ],
+          );
+      }
+      if (request.method === 'GET' && path === '/api/storefront-context')
+        return json(await context(store));
+      const read = async () => {
+        try {
+          return JSON.parse(await boundedBody(request));
+        } catch (error) {
+          if (error instanceof CommerceError) throw error;
+          throw new CommerceError('invalid_json');
+        }
+      };
+      const authorize = async (action) => {
+        const principal = operatorAuthorize && (await operatorAuthorize(request, store, action));
+        requireValue(
+          principal &&
+            identifier(principal.id) &&
+            principal.storeId === store.id &&
+            Array.isArray(principal.permissions) &&
+            principal.permissions.includes(action),
+          'operator_forbidden',
+          403,
+        );
+        return principal;
+      };
+      if (request.method === 'GET' && path === '/api/markets')
+        return json(await operations.markets(store.id, environment));
+      if (request.method === 'POST' && path === '/api/delivery-quotes')
+        return json(
+          await buyerDeliveryQuotes.create(
+            store.id,
+            environment,
+            await read(),
+            shippingReadAdapters[store.id],
+          ),
+        );
+      if (path.startsWith('/api/operator/')) {
+        if (request.method === 'GET' && path === '/api/operator/session') {
+          const principal = await authorize('read');
+          return json({
+            authenticated: true,
+            method: principal.authentication === 'access' ? 'access' : 'bearer',
+            operatorId: principal.id,
+            permissions: principal.permissions,
+            expiresAt: principal.expiresAt ?? null,
+          });
+        }
+        if (request.method === 'POST' && path === '/api/operator/logout') {
+          requireValue(operatorSessions?.isConfigured(store), 'operator_forbidden', 403);
+          return json(await operatorSessions.logout(request, store));
+        }
+        const financialOriginal = path.match(
+          /^\/api\/operator\/financial-files\/([a-zA-Z0-9_-]+)$/,
+        );
+        if (financialOriginal && request.method === 'GET') {
+          await authorize('finance');
+          return json(await financeIO.original(store.id, environment, financialOriginal[1]));
+        }
+        const partnerCheckout = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/wholesale-checkout$/,
+        );
+        if (partnerCheckout && request.method === 'POST') {
+          const actor = await authorize('wholesale');
+          requireValue(
+            await service.one(
+              'SELECT order_id FROM wholesale_orders WHERE store_id=? AND order_id=?',
+              store.id,
+              partnerCheckout[1],
+            ),
+            'wholesale_order_required',
+            404,
+          );
+          if (environment === 'production')
+            requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
+          const adapter = paymentAdapters[store.id];
+          requireValue(
+            adapter &&
+              adapter.accountRef === store.paymentAccountRef &&
+              adapter.environment === environment,
+            'stripe_not_connected',
+            503,
+          );
+          const session = await service.checkout(
+            store.id,
+            environment,
+            partnerCheckout[1],
+            adapter,
+          );
+          await service.db.batch(
+            service.event(store.id, 'WholesaleCheckoutPrepared', partnerCheckout[1], {
+              actorRef: actor.id,
+            }),
+          );
+          return json(session);
+        }
+        const mailCommand = path.match(
+          /^\/api\/operator\/notifications\/([a-zA-Z0-9_-]+)(?:\/(execute))?$/,
+        );
+        if (mailCommand && request.method === 'GET') {
+          await authorize('read');
+          return json(await notifications.preview(store.id, environment, mailCommand[1]));
+        }
+        if (mailCommand?.[2] === 'execute' && request.method === 'POST') {
+          const actor = await authorize('operate');
+          return json(await notifications.execute(store.id, environment, mailCommand[1], actor.id));
+        }
+        const receiveReturn = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/return-receipts$/,
+        );
+        const unshipped = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/cancel-unshipped$/,
+        );
+        if (unshipped && request.method === 'POST') {
+          const actor = await authorize('stock');
+          return json(
+            await returns.cancelUnshipped(
+              store.id,
+              environment,
+              unshipped[1],
+              await read(),
+              actor.id,
+            ),
+          );
+        }
+        if (receiveReturn && request.method === 'POST') {
+          const actor = await authorize('stock');
+          return json(
+            await returns.receive(store.id, environment, receiveReturn[1], await read(), actor.id),
+          );
+        }
+        const reads = {
+          '/api/operator/finished-stock': () => finishedStock.list(store.id, environment),
+          '/api/operator/components': () => backoffice.inventory(store.id, environment),
+          '/api/operator/financials': () => backoffice.financials(store.id, environment),
+          '/api/operator/wholesale': () => wholesale.overview(store.id, environment),
+          '/api/operator/automation': () => jobs.overview(store.id, environment),
+          '/api/operator/catalog': () => catalogOperations.list(store.id, environment),
+          '/api/operator/disputes': () => disputes.list(store.id, environment),
+        };
+        if (request.method === 'GET' && reads[path]) {
+          await authorize('read');
+          return json(await reads[path]());
+        }
+        const writes = {
+          '/api/operator/finished-lots': [
+            'stock',
+            (input, actor) => finishedStock.receive(store.id, environment, input, actor),
+          ],
+          '/api/operator/finished-controls': [
+            'stock',
+            (input, actor) => finishedStock.control(store.id, environment, input, actor),
+          ],
+          '/api/operator/shipping-origins': [
+            'ship',
+            (input, actor) => shipping.origin(store.id, environment, input, actor),
+          ],
+          '/api/operator/shipping-lockers': [
+            'ship',
+            (input, actor) =>
+              shipping.lockers(store.id, environment, input, shippingReadAdapters[store.id], actor),
+          ],
+          '/api/operator/lot-controls': [
+            'stock',
+            (input, actor) => backoffice.controlLot(store.id, environment, input, actor),
+          ],
+          '/api/operator/wholesale-approvals': [
+            'wholesale',
+            (input, actor) => wholesale.approval(store.id, environment, input, actor),
+          ],
+          '/api/operator/components': [
+            'stock',
+            (input, actor) => backoffice.component(store.id, environment, input, actor),
+          ],
+          '/api/operator/lots': [
+            'stock',
+            (input, actor) => backoffice.receive(store.id, environment, input, actor),
+          ],
+          '/api/operator/recipes': [
+            'stock',
+            (input, actor) => backoffice.recipe(store.id, environment, input, actor),
+          ],
+          '/api/operator/assemblies': [
+            'stock',
+            (input, actor) => backoffice.assemble(store.id, environment, input, actor),
+          ],
+          '/api/operator/financial-imports': [
+            'finance',
+            (input, actor) => backoffice.importSources(store.id, environment, input, actor),
+          ],
+          '/api/operator/financial-csv': [
+            'finance',
+            (input, actor) => financeIO.import(store.id, environment, input, actor),
+          ],
+          '/api/operator/financial-stripe': [
+            'finance',
+            (input, actor) =>
+              financeIO.importStripe(
+                store.id,
+                environment,
+                input,
+                paymentAdapters[store.id],
+                actor,
+              ),
+          ],
+          '/api/operator/catalog-revisions': [
+            'catalog',
+            (input, actor) => catalogOperations.revise(store.id, environment, input, actor),
+          ],
+          '/api/operator/reconciliations': [
+            'finance',
+            (input, actor) => backoffice.reconcile(store.id, environment, input, actor),
+          ],
+          '/api/operator/wholesale-price-lists': [
+            'wholesale',
+            (input, actor) => wholesale.priceList(store.id, environment, input, actor),
+          ],
+          '/api/operator/wholesale-partners': [
+            'wholesale',
+            (input, actor) => wholesale.partner(store.id, environment, input, actor),
+          ],
+          '/api/operator/wholesale-quotes': [
+            'wholesale',
+            (input, actor) => wholesale.quote(store.id, environment, input, actor),
+          ],
+          '/api/operator/wholesale-reorders': [
+            'wholesale',
+            (input, actor) => wholesale.reorder(store.id, environment, input, actor),
+          ],
+        };
+        if (request.method === 'POST' && writes[path]) {
+          const [grant, run] = writes[path],
+            principal = await authorize(grant);
+          return json(await run(await read(), principal.id));
+        }
+        if (request.method === 'POST' && path === '/api/operator/automation/run') {
+          await authorize('operate');
+          return json(await jobs.scheduled(store.id, environment));
+        }
+        const financialExport = path.match(
+          /^\/api\/operator\/financial-exports\/(financials|documents|journals)$/,
+        );
+        if (financialExport && request.method === 'GET') {
+          await authorize('finance');
+          const result = await financeIO.export(
+            store.id,
+            environment,
+            financialExport[1],
+            url.searchParams.has('from') || url.searchParams.has('to')
+              ? {
+                  from: url.searchParams.has('from')
+                    ? Number(url.searchParams.get('from'))
+                    : undefined,
+                  to: url.searchParams.has('to') ? Number(url.searchParams.get('to')) : undefined,
+                }
+              : {},
+          );
+          return new Response(result.text, {
+            headers: {
+              'content-type': 'text/csv; charset=utf-8',
+              'content-disposition': 'attachment; filename="' + result.filename + '"',
+              'cache-control': 'no-store',
+              'x-robots-tag': 'noindex, nofollow',
+              'x-content-type-options': 'nosniff',
+            },
+          });
+        }
+        const retryJob = path.match(/^\/api\/operator\/automation\/([a-zA-Z0-9_-]+)\/retry$/);
+        if (request.method === 'POST' && retryJob) {
+          const actor = await authorize('operate');
+          await jobs.retry(store.id, environment, retryJob[1], actor.id);
+          return json({ queued: true });
+        }
+        const wholesaleAccept = path.match(
+          /^\/api\/operator\/wholesale-quotes\/([a-zA-Z0-9_-]+)\/accept$/,
+        );
+        if (request.method === 'POST' && wholesaleAccept) {
+          const principal = await authorize('wholesale');
+          return json(
+            await wholesale.accept(store.id, environment, wholesaleAccept[1], principal.id),
+          );
+        }
+        if (request.method === 'GET' && path === '/api/operator/overview') {
+          const principal = await authorize('read');
+          return json({
+            ...(await operations.overview(store.id, environment)),
+            permissions: principal.permissions || [],
+            integrations: {
+              payments: Boolean(paymentAdapters[store.id]),
+              refunds: Boolean(paymentAdapters[store.id]?.createRefund),
+              shipping: shippingAdapters[store.id]?.supportsIdempotentCreate === true,
+              shippingQuotes: Boolean(shippingReadAdapters[store.id]?.quote),
+              shippingBooking: shippingAdapters[store.id]?.supportsBooking === true,
+            },
+          });
+        }
+        if (request.method === 'GET' && path === '/api/operator/orders') {
+          await authorize('read');
+          return json(
+            await operations.ordersPage(store.id, environment, {
+              ...(url.searchParams.has('before')
+                ? { before: Number(url.searchParams.get('before')) }
+                : {}),
+              ...(url.searchParams.has('beforeId')
+                ? { beforeId: url.searchParams.get('beforeId') }
+                : {}),
+            }),
+          );
+        }
+        if (request.method === 'POST' && path === '/api/operator/stock-adjustments') {
+          const principal = await authorize('stock');
+          return json(
+            await operations.adjustStock(store.id, environment, await read(), principal.id),
+          );
+        }
+        const detail = path.match(/^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)(?:\/(documents))?$/);
+        if (detail && request.method === 'GET') {
+          await authorize('read');
+          const order = await service.getOrder(store.id, environment, detail[1]);
+          return json({
+            order,
+            stockQuality: await finishedStock.order(store.id, environment, order.id),
+            files: await files.list(store.id, environment, order.id),
+            shippingPreparation:
+              (environment === 'sandbox' && store.testOnly === true) ||
+              store.operationalAdmission?.approved === true
+                ? await shipping.detail(store.id, environment, order.id)
+                : undefined,
+            refundCommands: await refunds.list(store.id, environment, order.id),
+            returnReceipts: await returns.list(store.id, environment, order.id),
+            disputes: await disputes.list(store.id, environment, order.id),
+            shipmentCommands: await shipmentCommands.list(store.id, environment, order.id),
+            tracking: (
+              await service.rows(
+                "SELECT o.payload_json FROM shipment_observations o JOIN shipment_commands c ON c.store_id=o.store_id AND c.id=o.command_id WHERE c.store_id=? AND c.order_id=? AND o.kind='tracking' ORDER BY o.received_at,o.id LIMIT 100",
+                store.id,
+                order.id,
+              )
+            ).map((r) => JSON.parse(r.payload_json)),
+            documents: await operations.listDocuments(store.id, environment, order.id),
+            refunds: await service.rows(
+              'SELECT * FROM refunds WHERE store_id=? AND order_id=?',
+              store.id,
+              order.id,
+            ),
+            shipment: await service.one(
+              'SELECT * FROM shipments WHERE store_id=? AND order_id=?',
+              store.id,
+              order.id,
+            ),
+          });
+        }
+        if (detail?.[2] === 'documents' && request.method === 'POST') {
+          const principal = await authorize('document');
+          return json(
+            await operations.issueDocument(
+              store.id,
+              environment,
+              detail[1],
+              await read(),
+              principal.id,
+            ),
+          );
+        }
+        const document = path.match(/^\/api\/operator\/documents\/([a-zA-Z0-9_-]+)(?:\/(pdf))?$/);
+        const file = path.match(/^\/api\/operator\/files\/([a-zA-Z0-9_-]+)$/);
+        if (file && request.method === 'GET') {
+          await authorize('read');
+          const result = await files.get(store.id, environment, file[1]);
+          return new Response(result.bytes, {
+            headers: {
+              'content-type': 'application/pdf',
+              'content-disposition': 'attachment; filename="' + result.file.filename + '"',
+              'cache-control': 'no-store',
+              'x-robots-tag': 'noindex, nofollow',
+              'x-content-type-options': 'nosniff',
+              'content-security-policy': "sandbox; default-src 'none'",
+            },
+          });
+        }
+        const upload = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/files\/([a-zA-Z0-9_-]+)$/,
+        );
+        if (upload && request.method === 'POST') {
+          const actor = await authorize('document');
+          requireValue(
+            request.headers.get('content-type') === 'application/pdf',
+            'invalid_private_file',
+          );
+          return json(
+            await files.put(
+              store.id,
+              environment,
+              upload[1],
+              {
+                id: upload[2],
+                bytes: await limitedBytes(request.body),
+                filename: request.headers.get('x-file-name') || 'attachment.pdf',
+              },
+              actor.id,
+            ),
+          );
+        }
+        if (document && request.method === 'GET') {
+          const actor = await authorize('read');
+          const record = await operations.getDocument(store.id, environment, document[1]);
+          if (document[2]) {
+            const file = await documentFiles.ensure(store.id, environment, record, actor.id);
+            return pdfResponse(await files.get(store.id, environment, file.id));
+          }
+          return json(record);
+        }
+        const prepareRefund = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/refund-commands$/,
+        );
+        const prepareShipment = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/shipment-commands$/,
+        );
+        if (prepareShipment && request.method === 'POST') {
+          const actor = await authorize('ship');
+          return json(
+            await shipmentCommands.prepare(
+              store.id,
+              environment,
+              prepareShipment[1],
+              await read(),
+              actor.id,
+            ),
+          );
+        }
+        const shipmentAction = path.match(
+          /^\/api\/operator\/shipment-commands\/([a-zA-Z0-9_-]+)\/(execute|reconcile|refresh|cancel)$/,
+        );
+        if (shipmentAction && request.method === 'POST') {
+          const actor = await authorize('ship'),
+            id = shipmentAction[1],
+            adapter = shippingAdapters[store.id];
+          if (shipmentAction[2] === 'execute')
+            return json(
+              await shipmentCommands.execute(store.id, environment, id, adapter, actor.id),
+            );
+          if (shipmentAction[2] === 'reconcile')
+            return json(
+              await shipmentCommands.reconcile(
+                store.id,
+                environment,
+                id,
+                await read(),
+                adapter,
+                actor.id,
+              ),
+            );
+          if (shipmentAction[2] === 'refresh')
+            return json(
+              await shipmentCommands.refresh(store.id, environment, id, adapter, actor.id),
+            );
+          return json(await shipmentCommands.cancel(store.id, environment, id, actor.id));
+        }
+        const prepareShipping = path.match(
+          /^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/shipping-plans$/,
+        );
+        if (prepareShipping && request.method === 'POST') {
+          const principal = await authorize('ship');
+          return json(
+            await shipping.prepare(
+              store.id,
+              environment,
+              prepareShipping[1],
+              await read(),
+              principal.id,
+            ),
+          );
+        }
+        const quoteShipping = path.match(
+          /^\/api\/operator\/shipping-plans\/([a-zA-Z0-9_-]+)\/quotes$/,
+        );
+        if (quoteShipping && request.method === 'POST') {
+          const principal = await authorize('ship');
+          return json(
+            await shipping.quote(
+              store.id,
+              environment,
+              quoteShipping[1],
+              await read(),
+              shippingReadAdapters[store.id],
+              principal.id,
+            ),
+          );
+        }
+        if (prepareRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(
+            await refunds.prepare(
+              store.id,
+              environment,
+              prepareRefund[1],
+              await read(),
+              principal.id,
+            ),
+          );
+        }
+        const executeRefund = path.match(
+          /^\/api\/operator\/refund-commands\/([a-zA-Z0-9_-]+)\/execute$/,
+        );
+        if (executeRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(
+            await refunds.execute(
+              store.id,
+              environment,
+              executeRefund[1],
+              paymentAdapters[store.id],
+              principal.id,
+            ),
+          );
+        }
+        const cancelRefund = path.match(
+          /^\/api\/operator\/refund-commands\/([a-zA-Z0-9_-]+)\/cancel$/,
+        );
+        if (cancelRefund && request.method === 'POST') {
+          const principal = await authorize('refund');
+          return json(await refunds.cancel(store.id, environment, cancelRefund[1], principal.id));
+        }
+      }
+      if (request.method === 'GET' && path === '/api/catalog')
+        return json(await service.catalog(store.id, environment));
+      if (request.method === 'POST' && path === '/api/quote')
+        return json(await service.quote(store.id, environment, await read()));
+      if (request.method === 'POST' && path === '/api/orders') {
+        if (environment === 'production')
+          requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
+        const token = request.headers.get('order-access-token');
+        requireValue(
+          typeof token === 'string' && /^[a-zA-Z0-9_-]{32,128}$/.test(token),
+          'invalid_order_token',
+        );
+        const result = await service.createOrder(
+          store.id,
+          environment,
+          await read(),
+          request.headers.get('idempotency-key'),
+          token,
+        );
+        return json(result, result.replayed ? 200 : 201);
+      }
+      if (request.method === 'POST' && path === '/api/stripe/webhook') {
+        const adapter = paymentAdapters[store.id];
+        requireValue(adapter, 'stripe_not_connected', 503);
+        const event = await adapter.verifyEvent(
+          await boundedBody(request),
+          request.headers.get('stripe-signature'),
+          {
+            checkoutInScope: async (session) => {
+              if (session.metadata?.store_id === store.id) return true;
+              const reference = (value) =>
+                typeof value === 'string' && value.length <= 200 ? value : null;
+              const own = await service.one(
+                'SELECT o.id FROM orders o JOIN stores s ON s.id=o.store_id WHERE o.store_id=? AND s.environment=? AND (o.checkout_id=? OR o.id=? OR o.id=? OR o.payment_id=?) LIMIT 1',
+                store.id,
+                environment,
+                reference(session.id),
+                reference(session.metadata?.order_id),
+                reference(session.client_reference_id),
+                reference(session.payment_intent),
+              );
+              // A known own session with removed/conflicting metadata must not be hidden.
+              requireValue(!own, 'stripe_store_mismatch', 403);
+              if (session.metadata?.store_id !== undefined) {
+                requireValue(identifier(session.metadata.store_id), 'stripe_metadata_invalid');
+                return false;
+              }
+              // Unscoped sessions carrying our core markers are ambiguous, not foreign.
+              requireValue(
+                session.metadata?.environment === undefined &&
+                  session.metadata?.order_id === undefined,
+                'stripe_metadata_invalid',
+              );
+              return false;
+            },
+          },
+        );
+        if (event) {
+          if (event.kind === 'dispute') {
+            await disputes.accept(store.id, environment, event);
+          } else if (event.kind === 'refund') {
+            await operations.acceptRefundEvent(store.id, environment, event);
+            await refunds.observe(store.id, environment, event);
+          } else {
+            requireValue(event.storeId === store.id, 'stripe_store_mismatch', 403);
+            await service.acceptPayment(store.id, environment, event);
+            await operations.applyPendingRefunds(store.id, environment);
+          }
+        }
+        return json({ received: true });
+      }
+      const buyerPdf = path.match(/^\/api\/orders\/([a-zA-Z0-9_-]+)\/documents\/([a-zA-Z0-9_-]+)$/);
+      if (buyerPdf && request.method === 'GET') {
+        const token = request.headers.get('authorization')?.replace(/^Bearer /, '');
+        const order = await service.authorizeOrder(store.id, environment, buyerPdf[1], token);
+        const record = await operations.getDocument(store.id, environment, buyerPdf[2]);
+        requireValue(
+          record.order_id === order.id && ['sale', 'credit'].includes(record.kind),
+          'document_not_found',
+          404,
+        );
+        const file = await documentFiles.ensure(
+          store.id,
+          environment,
+          record,
+          'buyer_document_export',
+        );
+        return pdfResponse(await files.get(store.id, environment, file.id));
+      }
+      const match = path.match(
+        /^\/api\/orders\/([a-zA-Z0-9_-]+)(?:\/(checkout|withdrawal|receipt))?$/,
+      );
+      if (match) {
+        const token = request.headers.get('authorization')?.replace(/^Bearer /, '');
+        const order = await service.authorizeOrder(store.id, environment, match[1], token);
+        if (request.method === 'GET' && !match[2]) return json(order);
+        if (request.method === 'GET' && match[2] === 'receipt') {
+          const shipment = await service.one(
+            "SELECT state,tracking FROM shipments WHERE store_id=? AND order_id=? AND (first_attempt_at IS NOT NULL OR state='registered')",
+            store.id,
+            order.id,
+          );
+          const documents = await operations.listDocuments(store.id, environment, order.id);
+          return json({
+            orderId: order.id,
+            paymentState: order.payment_state,
+            fulfillmentState: order.fulfillment_state,
+            fulfillmentBlocked:
+              !shipment &&
+              ['pending', 'ready', 'stock_exception'].includes(order.fulfillment_state) &&
+              (order.fulfillment_state === 'stock_exception' ||
+                (await finishedStock.order(store.id, environment, order.id)).blocked),
+            shipment: shipment || null,
+            tracking: (
+              await service.rows(
+                "SELECT o.payload_json FROM shipment_observations o JOIN shipment_commands c ON c.store_id=o.store_id AND c.id=o.command_id WHERE c.store_id=? AND c.order_id=? AND o.kind='tracking' ORDER BY o.received_at,o.id LIMIT 100",
+                store.id,
+                order.id,
+              )
+            ).map((r) => JSON.parse(r.payload_json)),
+            documents: documents.map((d) => ({
+              id: d.id,
+              kind: d.kind,
+              number: d.series + '-' + d.year + '-' + d.number,
+              testOnly: d.payload.internalTestDocument === true,
+            })),
+            withdrawalRequested: Boolean(
+              await service.one(
+                'SELECT order_id FROM withdrawals WHERE store_id=? AND order_id=?',
+                store.id,
+                order.id,
+              ),
+            ),
+          });
+        }
+        if (request.method === 'POST' && match[2] === 'checkout') {
+          if (environment === 'production')
+            requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
+          requireValue(paymentAdapters[store.id], 'stripe_not_connected', 503);
+          return json(
+            await service.checkout(store.id, environment, order.id, paymentAdapters[store.id]),
+          );
+        }
+        if (request.method === 'POST' && match[2] === 'withdrawal')
+          return json(await service.requestWithdrawal(store.id, environment, order.id), 202);
+      }
+      const admin = path.match(/^\/api\/operator\/orders\/([a-zA-Z0-9_-]+)\/(pack|ship)$/);
+      if (request.method === 'POST' && admin) {
+        const actor = await authorize(admin[2]);
+        if (admin[2] === 'pack')
+          return json(await service.markPacked(store.id, environment, admin[1], actor.id));
+        requireValue(shippingAdapters[store.id], 'shipping_not_connected', 503);
+        requireValue(
+          shippingAdapters[store.id].supportsIdempotentCreate === true &&
+            typeof shippingAdapters[store.id].create === 'function',
+          'legacy_shipping_not_supported',
+          503,
+        );
+        return json(
+          await service.registerShipment(
+            store.id,
+            environment,
+            admin[1],
+            shippingAdapters[store.id],
+          ),
+        );
+      }
+      return json({ error: 'route_not_found' }, 404);
+    } catch (error) {
+      if (error instanceof CommerceError) return json({ error: error.code }, error.status);
+      const guarded = [
+        'stock_quality_hold',
+        'stock_policy_immutable',
+        'stock_tracking_transition_requires_empty',
+      ];
+      const code = guarded.find((code) => String(error.message).includes(code));
+      if (code) return json({ error: code }, 409);
+      // Do not expose provider errors, SQL, webhook secrets or customer data.
+      return json({ error: 'operation_failed' }, 500);
+    }
+  };
+}

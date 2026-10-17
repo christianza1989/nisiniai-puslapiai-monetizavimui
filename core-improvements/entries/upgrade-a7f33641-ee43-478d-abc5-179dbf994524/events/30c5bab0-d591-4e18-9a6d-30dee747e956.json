@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Initial native checkout503 after genuine account verification exposed an implicit SDK fixture; fixture is now explicit and cannot claim verified TEST. Actual permanent sandbox is selected, restricted-key draft prepared; human action-time approval pending. Source/local secret-input security tests PASS, genuine merchant Checkout/webhook acceptance remains pending.",
+  "checks": [
+    {
+      "command": "npm --prefix commerce-core run verify",
+      "result": "PASS",
+      "evidence": "126Node; native workerd/D1/R2/Queue including shared pacing and fixture identity;23 migrations; Worker dry-run767.56KiB gzip/21assets. Private logcommerce-core/tmp/verify2-20261014.txt"
+    },
+    {
+      "command": "npm --prefix commerce-core run check:format",
+      "result": "PASS",
+      "evidence": "After0.13.0 metadata-only version bump; source unchanged from full verify"
+    }
+  ],
+  "eventId": "30c5bab0-d591-4e18-9a6d-30dee747e956",
+  "sequence": 2,
+  "at": "2026-10-13T21:53:13.872Z"
+}

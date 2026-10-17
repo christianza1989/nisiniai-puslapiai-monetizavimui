@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "note": "Code sourcebd67c8d preflightSUCCESS and final0.13.1 regression127PASS. Human action-time authorized TEST restrictedkey; actual accounts.retrieveCurrent confirms selected permanent MB sandbox and private key entry succeeded. CLIlisten403 revealed DebuggingToolsWrite dependency; human authorized exactly this additional TEST permission, Stripe save awaits human authenticator2FA. Signing secret and actual merchant Checkout/webhook still pending. No LIVE security grant/charge or publication by root.",
+  "eventId": "7c7109ad-5ac0-40b3-badc-86029568c5c3",
+  "sequence": 3,
+  "at": "2026-10-13T22:13:45.932Z"
+}

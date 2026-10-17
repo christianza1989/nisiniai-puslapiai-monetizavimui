@@ -4,6 +4,67 @@ The owner requested priority for actual agent creation and calibration. Universa
 creation/calibration is still incomplete. Do not infer acceptance from the older
 UI approval, roadmap, number of tests or one Quality scenario.
 
+## Latest adopted increment — 2026-10-17 20:58 UTC
+
+This section supersedes the older4650 serving checkpoint below. Clean Serving
+now uses `9ca476b7f4db6cf1acd6fa5bed47453b7317bc97`, public255fea0, API18871
+PID31448, hidden launcher16448. Additive0045 was applied to the SAME operational
+database after a private pg_dump and exact idle cutover. All88 pre-existing
+tables preserve their rows (the new nullable event marker is excluded only from
+the old-row JSON projection), the one new workflow table is empty, original0032
+counts and all748 native files are preserved. The approved site remains015c3074
+with no public host. All five paid workers and external channels remain held;
+the existing global40 cap is retained. Zero provider calls were made here.
+
+The explicit native workflow now joins S4 Agent/Config save→durable outbox→one
+deterministic S5 saved-example/native Quality→same-chat coordinator result.
+Existing preparation-only tasks and old notes never gain automatic dispatch.
+This is still ONE scenario, calibrationUNVERIFIED/not_admitted/not_performed.
+
+Actual isolated PostgreSQL gates:19 workflow+maintained native episode cases
+PASS351.38s atb1feb30, log SHA256
+`61f2970b2c240ccf543c6d96c6c844760fdb5ee0e8f2b6fe2239f146df37313b`.
+The separate new RUNNING workflow-route cancellation case passed1/31.47s at9ca,
+log SHA256 `6bd1b5d656912d9d4b564e83a552aa3f926519a769c5cb50048310f6c2396b43`.
+Both gates preserved operating88/original0032/native bytes and used inert model
+transports. The latter proves late reply discard with retained9input/5output
+usage, no Quality dispatch and immutable S4 result; it is not a forced OS-kill or
+DB-restart proof. Root's combined offline workflow/error/private-Foundation
+regression passed132/2.91s, hash
+`87b8de73b7600976034da0461227a67b444982ccefd7adee351a2fab8512a790`.
+One initial log redirection used a nonexistent parent and ran no tests; the
+corrected preserved run above is the actual evidence.
+
+Canonical error follow-upe49d4bd was integrated as1c6f1f5. Actual SafeRoute's
+three-key code echo is now represented, and portal9018ef32b5081e5987a11c549a575de5773ca662
+parses it without turning401/409/429 into503. A real no-auth18871 workflow read
+through the new portal transport returned the correct401/unauthenticated.
+Normal owner HTTP login/Creation/content/private-intake/S6 reads passed after
+adoption, both native projections CURRENT, source9ca and native015c unchanged.
+
+Portal's original workflow source3a4ff35 plus reviewed error fix9018ef3 passed90
+related tests and production build `DnZOhoB-S1NWigbl5VuzA` at
+`.local/workspace-agent-workflow-reviewed-next`. Its complete handoff is
+`C:/Users/Lenovo/Documents/verslomatika-workspace-ui/docs/handoffs/workspace-agent-workflow-ui.md`.
+The running3030 build remains the old manually launched version. No frontend
+launch was attempted to bypass the earlier policy rejection. New UI/browser
+acceptance and full protected calibration remain pending; do not claim otherwise.
+
+The human additionally requested an independent HEADLESS hot-tub acquisition/
+email-agent chat. Created `01a14ba2-e492-7ce1-86a8-b3fe5b981149`, title
+"Kubilų verslo klientų paieška ir laiškų agentai". Its assignment requires a separate
+worktree and disjoint acquisition/email/nišos calibration scope, buyer research, multi-turn
+archetypes and actual mail acceptance. It must not touch Root's UI/workflow/
+0045/Serving/case or reset creation accounting. No new cross-chat messaging
+permission was inferred in its initial prompt. Maudis remains an unconfirmed
+supplier candidate. This parallel scope need not wait for portal UI.
+
+Next platform work: complete current hot-tub Foundation evidence and
+Registration/Profile without fake PASS; then protected calibration/correction/
+adoption on the existing core. Do not resume broad preview optimization merely
+because its older afterReady stability gate remains open. These local source
+adoptions are not a main merge, other-PC adoption or complete platform acceptance.
+
 ## Restored local operation
 
 The original owned PostgreSQL container was restarted unchanged. API recovery

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Protocol checkpoint only: strict workflow DTO/generator and additive PublicEvent provenance. Production outbox/worker/migration remain uncommitted WIP and untested, no DB/provider/adoption claim. Initial missing-provenance 1FAIL/10PASS retained.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_workspace_agent_workflow.py",
+      "result": "PASS",
+      "evidence": "13 protocol cases; generated JSON equality and malicious provenance/purpose refusals. Final log/hash recorded at checkpoint."
+    }
+  ],
+  "eventId": "604d03db-00b4-4227-a0ff-57cc304dc702",
+  "sequence": 2,
+  "at": "2026-10-17T20:27:13.580Z"
+}

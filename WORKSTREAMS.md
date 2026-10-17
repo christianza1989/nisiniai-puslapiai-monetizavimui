@@ -13,6 +13,21 @@ Serving219/data/providers/frontend stay unchanged during this source packet;
 owned API stopped after interruption and must be restored through checked source
 adoption. Helper is a read-only reviewer; no foreign worktree edits.
 
+## Durable preparation to single native test — helper 2026-10-17
+
+Root-authorized separate codex/agent-preparation-join-20261017 from frozen
+e4794c59e19d533b1673e408e38fbe104157d6f6; paired main533/publicec8
+start PASS20:17UTC. Upgrade-a3f791c5-1fce-46ec-943b-5e2917b7a6c0.
+Explicit additive prepare-and-test workflow, native intent/outbox0045, exact
+Agent/Config receipt, deterministic postcommit S5 through existing Tasks worker.
+Reserved workspace_team workflow files plus narrow routes/service/preparation/
+handler/models/wire and tasks/worker reconcile hook, migration0045, generated
+contracts and new offline/PG-source tests. Existing native S5/lab/Quality and
+budget stay authoritative. No fake human child message, terminal result rewrite,
+browser-driven dispatch, permission cache, old-note dispatch or calibration PASS.
+Root owns all actual DB/migration/adoption/UI; helper only source/offline tests
+and PG collection. Root confirmed0045 free; serving/139/140 untouched.
+
 ## Streaming CLI pin checks — helper 2026-10-17
 
 Root-authorized issue66/comment6240204250, own codex/streaming-cli-pins-20261017

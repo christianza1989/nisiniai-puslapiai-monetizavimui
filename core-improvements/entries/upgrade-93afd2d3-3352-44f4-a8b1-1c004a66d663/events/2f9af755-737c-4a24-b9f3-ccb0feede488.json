@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original baseline3FAIL17PASS1464d376 retained. Intermediate failures retained: indentation collectionERROR6.36s/e261457c; compiler alias-based fake mismatch15FAIL5PASS6.26s/951a9003; old canonical graph joined-result fake2FAIL65PASS13.92s/95e310fc. First focused20PASS2.15s/9d6d1548 then reviewed read-only by Root. Expanded run150PASS1FAIL15.62s/adf4aa75 unintentionally included existing inert real Python-Node observer smoke (intake_failed). No helper baseline proves that failure pre-existing; Root separately reported parentb035 smokePASS/c8399f09 with its installed dependencies and will rerun after integration. Helper did not retry smoke or install dependencies; final Python-only scope explicitly deselects it. Next expanded Python run203PASS1FAIL1deselected53.07s/f0a98fef found base private-preview recovery SQL fake still returnedNone for joined shape. Added only result-shape support in test_private_preview.py (focused test-scope extension); removed redundant continuity-fixture adapter, leaving that source file unchanged. No original validator/assertion/refusal gate weakened. Initial log-directory setup did not run pytest; optional wrong empty-directory cleanup was automatically rejected with generic blocked-by-policy and not retried. No customer/DB/serving/browser/provider operation occurred.",
+  "eventId": "2f9af755-737c-4a24-b9f3-ccb0feede488",
+  "sequence": 2,
+  "at": "2026-10-17T13:52:34.692Z"
+}

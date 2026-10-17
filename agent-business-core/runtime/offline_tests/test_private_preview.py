@@ -9,6 +9,8 @@ from uuid import uuid4
 
 import pytest
 from sqlalchemy.dialects.postgresql.asyncpg import dialect
+from sqlalchemy.sql import visitors
+from sqlalchemy.sql.elements import BinaryExpression, BindParameter
 
 from pinet_core.config import settings
 from pinet_core.control.routes import ControlError
@@ -85,7 +87,23 @@ def recovery(monkeypatch):
                     and not any(receipt.recovery_id == row.id for receipt in state.receipts)), None)
             return None
 
-        async def execute(self, *args, **kwargs):
+        async def execute(self, statement, *args, **kwargs):
+            columns = getattr(statement, "column_descriptions", ())
+            if [column["entity"] for column in columns] == [PrivateIntakeRequest, PrivateIntakeReceipt]:
+                bound = {(part.left.table.name, part.left.name): part.right.value
+                    for part in visitors.iterate(statement) if isinstance(part, BinaryExpression)
+                    and isinstance(part.right, BindParameter) and getattr(part.left, "table", None) is not None}
+                table = PrivateIntakeRequest.__tablename__
+                if (table, "id") in bound:
+                    row = next((row for row in state.requests if row.id == bound[table, "id"]), None)
+                else:
+                    row = next((row for row in reversed(state.requests) if "continuity" not in row.context
+                        and row.creation_id == bound[table, "creation_id"] and row.revision_id == bound[table, "revision_id"]
+                        and any(item.recovery_id == row.id and item.state == "private_draft_imported"
+                            for item in state.receipts)), None)
+                receipt = next((item for item in state.receipts if row is not None and item.recovery_id == row.id), None)
+                assert statement.get_execution_options()["populate_existing"] is True
+                return SimpleNamespace(one_or_none=lambda: (row, receipt) if row is not None else None)
             return None
 
         async def get(self, model, identity, **kwargs):

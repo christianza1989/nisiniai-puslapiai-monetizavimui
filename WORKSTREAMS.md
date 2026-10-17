@@ -1341,6 +1341,29 @@ SQL/count/identity-map baseline and current_actor_pg source/collect only; Root
 reviews first focused diff before broad tests. Journal7f80fded; all older journals
 frozen. No actualDB/process/provider/serving/browser, schema/roles/TTL/cadence edits.
 
+2026-10-17 helper RETAINED ANCHOR JOIN reserved issue66/comment6234520268 from
+Root frozen90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0/publicec8a9c032fe926d1d9722802d8eb26fa8bd02937,
+own codex/retained-anchor-join-20261017. Only production private_preview.py
+retained_anchor fresh Request/Receipt joined read and shared receipt-pin helper;
+both populate_existing, marker LEFT JOIN, no-marker selection unchanged. New
+focused offline/PG-source tests, docs/RETAINED_ANCHOR_OBSERVATION.md and unique
+own upgrade. Baseline before production edit; keep P/S, expected-pin-before-Node,
+entry/final guards/callback counts and typed refusal semantics. Root owns actual
+DB/QA/adoption/88/native/browser/providers and live_preview/studio/status files.
+Previous helper branches and all other journals remain frozen.
+
+Retained-anchor packet LOCAL VERIFIED / handoff: upgrade93afd2d3 baseline
+3FAIL17PASS1464d376; first20PASS9d6d1548 reviewed by Root. Final204PythonPASS/
+1explicit native-smoke deselection16.38sc2e26c5a; original smokeFAILadf4aa75
+and all intermediate failures retained, not proven pre-existing. Root's separate
+parent smokePASS is not imported as helper acceptance. FivePGcases collected only
+76a8a56c, no DB fixture. Only terminal/retained_anchor/new shared receipt-pin
+helper production AST changed; validation tail and all P/S/current/capture guard
+functions unchanged. Ruff5files/diff/pairedfreshness PASS; scoped commit/safety
+and coverage transferred to Root for actual integration/QA. Common recovery and
+Authority SQL fakes adapted without weakening assertions; continuity test file
+unchanged. No new edge-case/source expansion, dependency install or self-merge.
+
 Current-actor focused packet: original5FAIL19PASS1.66s05f91fcf retained; first24PASS
 1.10s5db6026b reviewed/approved by Root before related regression. Related140PASS
 10.09sa69dd443 (24newactor+85canonicalAuthority+31proof); legacyfakejoined-shape

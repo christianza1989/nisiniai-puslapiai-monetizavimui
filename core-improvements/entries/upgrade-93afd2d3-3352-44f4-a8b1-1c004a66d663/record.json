@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "Read each retained private-intake anchor Request and Receipt in one fresh RLS snapshot while preserving every authority checkpoint and receipt pin",
+  "category": "code",
+  "evidence": [
+    "Frozen Root source90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0; public companionec8a9c032fe926d1d9722802d8eb26fa8bd02937; paired successful start fetch current main9a46650a033d283dfb559d7b835a26384e3225fe.",
+    "Before production edit, canonical retained_anchor leaf baseline3FAIL17PASS3.17s, log SHA2561464d37604a5ef8e985c450fc94275c3056aef41a1fade8d3e0f56ce58b523f5. V1/V2 marker and no-marker successful observations each execute2SQL calls instead of1; corruption/missing/pins/laterphase semantics already pass.",
+    "Root independently reported53marker-present calls/106SQL in private trace564ada126a7e9813c9596085be49337a98becf2da622d072868c81c2d6e35c23; actual timing and adoption are Root-owned, not helper measurements.",
+    "Canonical0042 DDL and ORM enforce Receipt.recovery_id UNIQUE and forced RLS on both tables; query must retain parent visibility with LEFT JOIN for explicit marker and populate_existing both entities.",
+    "docs/RETAINED_ANCHOR_OBSERVATION.md will document unchanged validators/callbacks, one fresh SELECT invariant, exact tests and separate actual-PG/serving limitations."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/private_preview.py",
+    "agent-business-core/runtime/offline_tests/test_retained_anchor_observation.py",
+    "agent-business-core/runtime/offline_tests/test_authority_observation.py",
+    "agent-business-core/runtime/offline_tests/test_private_native_continuity.py",
+    "agent-business-core/runtime/tests/test_retained_anchor_pg.py",
+    "docs/RETAINED_ANCHOR_OBSERVATION.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this leaf/pin-helper packet to frozen90c; preserve append-only journal, original failures, private intake history and all Root runtime/adoption records.",
+  "id": "upgrade-93afd2d3-3352-44f4-a8b1-1c004a66d663",
+  "branch": "codex/retained-anchor-join-20261017",
+  "baseSha": "90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0",
+  "createdAt": "2026-10-17T13:42:10.587Z"
+}

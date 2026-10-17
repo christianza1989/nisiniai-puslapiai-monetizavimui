@@ -1,5 +1,61 @@
 # Agent path: current continuation
 
+## Actual hot-tub Registration — 2026-10-18
+
+This supersedes the older missing-Registration statements below. The interrupted
+API process was recovered on the SAME clean b866 source/0045 schema, public255fea0,
+with all paid workers/external channels still held. API18871 PID47524 at verification,
+active exec3812. The manually launched frontend3030 remained running and unchanged.
+
+First canonical accepted_proof probe refused private_intake_missing and rolled
+back; all original/operating tables and771 native files stayed exact. This was
+the stale private-intake source fence, not absent page files. Negative proof is
+retained in operator hot-tub-registration-probe-20261018. Normal owner S37
+private-preview-intake then renewed the exact retained source on b866: one new
+request and one receipt, no reimport/generation/model call, old rows and native
+files exact. Witness SHA
+bd52afabff150e7ca74b6ca9e3c6059362cced06a43b04fa7a6248e806dc4faf.
+
+Canonical creation_registration.admin.provision then used its own fresh accepted
+proof and current verified owner's native Session; no unbound bootstrap Business.
+Creation85fb2b31-512e-4ee1-8904-fb6166ad594b/revision1 now has:
+- Business917e1d81-afe7-4549-bac4-33f2464c1391
+- Registration014d46b4-c99d-4e39-bca1-a6d12374b344
+- Sitecreation-85fb2b31512e4ee18904fb6166ad594b, environmentlocal.
+
+Exactly one Business, Grant and Registration were added. All pre-existing rows,
+all other operating tables, original database,37/40 creation accounting and771
+native files remain exact; native JSON015c3074 remains unchanged. Both operations
+have private pg_dump backups and before/after per-row/hash witnesses. Provision
+witness SHAaad45e3a1a7e3d15b5ca228a2baba665226dda89a91a9677a5a0fa825bc5323a.
+Normal owner Registration/Business/mail GETs all200: current/binding_currenttrue,
+0mail. Public source/Profile/F1/launch/channel admission remain unverified or
+not_performed. No synthetic mail was inserted into operating data.
+
+Private receipts: operator hot-tub-renew-intake-20261018,
+hot-tub-provision-20261018 and hot-tub-registration-owner-verification-20261018.
+The old mail adoption before-snapshot predates these five legitimate added rows;
+do not reuse it as a current restart baseline. The latest restart witness is
+operator hot-tub-backend-resume-20261018/before.private.json, prepared from the
+verified post-provision snapshot. Use owned wellness-backend-resume-bootstrap.py
+after an idle/current-source check; do not launch over the live listener.
+
+New ordinary Chrome verification could not proceed because the documented
+Chrome control connection timed out during focus setup. No alternate browser
+mechanism was used and no new-business screenshot/visual PASS is claimed.
+The prior empty-mail desktop/390px evidence remains historical and separate.
+
+Headless acquisition lab remains independent of website Foundation. The helper's
+read-only map confirms saved customer Agent native S5 currently supports only
+site_chat; email/research draft purpose is not an executable acquisition adapter.
+The remaining platform gap is a trusted current-owner ModuleBinding/private
+registration and durable Task/model link to the existing acquisition engine.
+Do not weaken Foundation, coerce email to site_chat or relabel capture as model
+calibration. The headless chat's fixed180-attempt/23:00:11UTC budget and its unknown
+interrupted reservation remain intact. A separate helper is reproducing possible
+Registration lineage instability across future S37 source renewal in its own
+isolated QA; no such source fix is adopted here.
+
 ## Owned mail display continuation — 2026-10-18
 
 The human requested future acquisition agents to connect and owner UI to display

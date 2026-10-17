@@ -17,7 +17,7 @@
     "docs/contracts/CUSTOMER_MAIL_VIEW.md",
     "WORKSTREAMS.md"
   ],
-  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6241311809",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
   "rollback": "Revert scoped router/projection packet; preserve native mail and private display receipts. No database migration or channel activation.",
   "id": "upgrade-519c758b-0c3c-4326-9938-969b8a4c47b8",
   "branch": "codex/verslomatika-wellness-resume-20261015",

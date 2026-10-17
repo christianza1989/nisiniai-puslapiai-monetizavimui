@@ -36,3 +36,22 @@ are claimed. Root must integrate the independently reviewed source-observation
 repair, wrap full Authority operations, repeat relevant regression and adopt
 through the same-DB backup/cutover before actual acceptance. Retain original
 HTTP/diagnostic failures. No new provider call or channel activation.
+
+## Source-operation integration
+
+Root integrated the separately owned source observation commitsd779895/a4f925e
+and wrapped each complete Authority.capture/verify in its own fresh source scope.
+The final all-repository fence finishes before the method can return or a shared
+authority task can resolve. SourceObservationError maps to503source_unavailable;
+ordinary owner/session refusals remain unchanged. Additional caller integration
+tests cover separate capture/verify scopes, both exit refusals, heartbeat ordering
+and preservation of401. Native, SQL, S6, file hashes and proof checks are unchanged.
+
+Root's independent source review reproduced one helper cached-return CLOSING race;
+the helper's followupa4f925e rechecks phase/invalid state before cached return.
+Its original failure is retained under helper upgrade53349649. Final combined
+Root242 source checks PASS6.76s (one actual-process test deliberately deselected,
+one existing invalid-UUID warning), plus Ruff for the two changed Python files.
+Private log SHA256687d57087e02475a1d47717ebd0ce44061f900bae58b6d5031d28870d072e27b.
+No new actual renderer/runtime claim follows; retiming and current-case lease
+acceptance still must run after source-only adoption.

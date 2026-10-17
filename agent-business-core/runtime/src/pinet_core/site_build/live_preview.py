@@ -6,6 +6,7 @@ import re
 import secrets
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
+from functools import wraps
 from types import SimpleNamespace
 from uuid import UUID, uuid4
 
@@ -15,6 +16,7 @@ from ..creation import media, studio
 from ..creation.routes import owned
 from ..creation.service import digest
 from ..customer_text.service import customer_session
+from ..source_observation import SourceObservationError, git_source_operation
 from ..tasks.codex_transport import RunnerError
 from . import foundation
 from .live_preview_store import LIMIT, Store
@@ -31,6 +33,17 @@ def parsed(model, data):
     return model.model_validate_json(json.dumps(data)).model_dump(mode="json")
 
 
+def source_checked(operation):
+    @wraps(operation)
+    async def checked(*args, **kwargs):
+        try:
+            async with git_source_operation():
+                return await operation(*args, **kwargs)
+        except SourceObservationError:
+            raise ControlError(503, "source_unavailable") from None
+    return checked
+
+
 class Authority:
     def __init__(self, token, identity):
         self.token, self.identity = token, str(UUID(identity))  # private memory only; never persisted
@@ -44,6 +57,7 @@ class Authority:
                 "environment": settings().environment, "creation_id": self.identity}
         return self.owner
 
+    @source_checked
     async def capture(self):
         async with scope(token=token_hash(self.token)) as tx:
             session = await customer_session(tx, self.token)
@@ -61,6 +75,7 @@ class Authority:
         await media.native_mutation_guard(tx, session, self.identity, request,
             unavailable_code="live_preview_revision_unavailable", stale_code="live_preview_context_stale")()
 
+    @source_checked
     async def verify(self, expected):
         async with scope(token=token_hash(self.token)) as tx:
             session = await customer_session(tx, self.token)

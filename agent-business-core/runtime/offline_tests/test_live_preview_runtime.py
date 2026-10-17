@@ -569,3 +569,88 @@ async def test_unknown_producer_cleanup_still_joins_inflight_authority_and_retai
     assert joined, "Unknown producer cleanup cannot orphan its authority read"
     assert f.manager.store.busy() and lease.view["preview_url"] is None
     assert lease.view["failure_code"] == "live_preview_cleanup_unavailable"
+
+
+def source_authority(f, monkeypatch, *, fail_exit=False, reject=False):
+    events = []
+    session = SimpleNamespace(id=str(f.pin.session_id), user_id=str(f.pin.user_id))
+    creation = SimpleNamespace(environment_id=f.pin.environment_id)
+    @asynccontextmanager
+    async def source_operation():
+        events.append("source-enter")
+        try:
+            yield
+            events.append("source-fence")
+            if fail_exit:
+                raise live.SourceObservationError()
+        finally:
+            events.append("source-closed")
+    @asynccontextmanager
+    async def transaction(**kwargs):
+        yield object()
+    async def current(*args):
+        return session
+    async def owned(*args):
+        return creation
+    async def capture(*args):
+        events.append("native-capture")
+        return f.pin
+    async def verify(*args):
+        events.append("native-verify")
+    async def native(*args):
+        events.append("native-authority")
+        if reject:
+            raise ControlError(401, "unauthenticated")
+    monkeypatch.setattr(live, "git_source_operation", source_operation)
+    monkeypatch.setattr(live, "scope", transaction)
+    monkeypatch.setattr(live, "customer_session", current)
+    monkeypatch.setattr(live, "owned", owned)
+    monkeypatch.setattr(live.foundation, "capture", capture)
+    monkeypatch.setattr(live.foundation, "verify", verify)
+    authority = live.Authority("session", f.cid)
+    monkeypatch.setattr(authority, "native", native)
+    return authority, events
+
+
+async def test_each_actual_authority_capture_and_verify_has_its_own_completed_source_fence(fixture, monkeypatch):
+    f = fixture
+    authority, events = source_authority(f, monkeypatch)
+    assert await authority.capture() == f.pin
+    await authority.verify(f.pin)
+    assert events == ["source-enter", "native-capture", "native-authority", "source-fence", "source-closed",
+        "source-enter", "native-authority", "native-verify", "source-fence", "source-closed"]
+
+
+@pytest.mark.parametrize("operation", ["capture", "verify"])
+async def test_source_exit_refusal_cannot_escape_as_a_successful_authority_result(fixture, monkeypatch, operation):
+    f = fixture
+    authority, events = source_authority(f, monkeypatch, fail_exit=True)
+    with pytest.raises(ControlError) as error:
+        if operation == "capture":
+            await authority.capture()
+        else:
+            await authority.verify(f.pin)
+    assert error.value.status == 503 and error.value.code == "source_unavailable"
+    assert events[-1] == "source-closed"
+
+
+@pytest.mark.parametrize("fail_exit", [False, True])
+async def test_actual_authority_source_exit_must_finish_before_any_lease_heartbeat(fixture, monkeypatch, fail_exit):
+    f = fixture
+    lease = await ready(f)
+    authority, events = source_authority(f, monkeypatch, fail_exit=fail_exit)
+    lease.authority = authority
+    monkeypatch.setattr(f.manager.store, "heartbeat", lambda *args, **kwargs: events.append("heartbeat"))
+    assert await f.manager.permitted(lease) is not fail_exit
+    assert ("heartbeat" in events) is not fail_exit
+    if not fail_exit:
+        assert events[-2:] == ["source-closed", "heartbeat"]
+
+
+async def test_original_owner_refusal_is_preserved_by_the_source_operation(fixture, monkeypatch):
+    f = fixture
+    authority, events = source_authority(f, monkeypatch, reject=True)
+    with pytest.raises(ControlError) as error:
+        await authority.verify(f.pin)
+    assert error.value.status == 401 and error.value.code == "unauthenticated"
+    assert "source-fence" not in events and events[-1] == "source-closed"

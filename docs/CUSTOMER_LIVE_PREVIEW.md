@@ -82,6 +82,14 @@ in-flight verification during cleanup, including uncertain producer failures.
 Stop, expiry and service-closing state are checked again after verification and
 before any heartbeat write; a late successful read cannot renew a closed lease.
 
+Each full Authority.capture and Authority.verify opens a separate
+[operation-scoped source observation](SOURCE_OBSERVATION.md). Only repeated raw
+Git HEAD/status reads within that one check are shared. Every observed repository
+is freshly fenced at normal exit before the Authority result or heartbeat can
+escape. Source fence errors map to503source_unavailable; ordinary owner/Session
+refusals retain their original codes. Native/media, file SHA, accepted/private/S6
+and SQL checks stay in the canonical paths and are never cached.
+
 Shutdown marks the service closing, drains in-flight admission, then joins all
 owned tasks through cancellation-safe canonical transport cleanup before DB
 disposal in both maintained APIs. Repeated cancellation cannot skip that drain.

@@ -1,0 +1,3808 @@
+{
+  "schemaVersion": 1,
+  "sourceSeedSha256": "5b23dad0ec7c077f0e2613531d670fceea33b68c81c7c85dfcd7af07e22b5df7",
+  "reviewedAt": "2026-10-16T09:55:10.298Z",
+  "selectionRule": "working3D_then_headrest_then_stable_id",
+  "groups": [
+    {
+      "productId": "product_aero-desks_03e9c72f",
+      "code": "KAER001WW001",
+      "keeperId": "29001605",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/aero-rasomieji-stalai-modelis-29001605/",
+      "members": [
+        {
+          "id": "29001605",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/aero-rasomieji-stalai-modelis-29001605/"
+        },
+        {
+          "id": "29001609",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/aero-rasomieji-stalai-modelis-29001609/"
+        },
+        {
+          "id": "29001610",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/aero-rasomieji-stalai-modelis-29001610/"
+        },
+        {
+          "id": "29001615",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/aero-rasomieji-stalai-modelis-29001615/"
+        },
+        {
+          "id": "29001616",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/aero-rasomieji-stalai-modelis-29001616/"
+        }
+      ]
+    },
+    {
+      "productId": "product_altum-swivel-chairs_509cc655",
+      "code": "KALT001WW002",
+      "keeperId": "20502904",
+      "keeperPath": "/produktai/kedes/altum-darbo-kedes-modelis-20502904/",
+      "members": [
+        {
+          "id": "20502904",
+          "path": "/produktai/kedes/altum-darbo-kedes-modelis-20502904/"
+        },
+        {
+          "id": "20502905",
+          "path": "/produktai/kedes/altum-darbo-kedes-modelis-20502905/"
+        }
+      ]
+    },
+    {
+      "productId": "product_aplo-cabinets-sideboards_99123fb6",
+      "code": "KAPL022WW001",
+      "keeperId": "32269080",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/aplo-spintos-ir-komodos-modelis-32269080/",
+      "members": [
+        {
+          "id": "32269080",
+          "path": "/produktai/daiktu-laikymo-baldai/aplo-spintos-ir-komodos-modelis-32269080/"
+        },
+        {
+          "id": "32269082",
+          "path": "/produktai/daiktu-laikymo-baldai/aplo-spintos-ir-komodos-modelis-32269082/"
+        },
+        {
+          "id": "32269088",
+          "path": "/produktai/daiktu-laikymo-baldai/aplo-spintos-ir-komodos-modelis-32269088/"
+        }
+      ]
+    },
+    {
+      "productId": "product_arn-meeting-chairs_0bcdd58a",
+      "code": "KARN003WW004",
+      "keeperId": "29497493",
+      "keeperPath": "/produktai/kedes/arn-susitikimu-ir-lankytoju-kedes-modelis-29497493/",
+      "members": [
+        {
+          "id": "29497493",
+          "path": "/produktai/kedes/arn-susitikimu-ir-lankytoju-kedes-modelis-29497493/"
+        },
+        {
+          "id": "29497496",
+          "path": "/produktai/kedes/arn-susitikimu-ir-lankytoju-kedes-modelis-29497496/"
+        }
+      ]
+    },
+    {
+      "productId": "product_arn-meeting-tables_195bc35e",
+      "code": "KARN002WW004",
+      "keeperId": "29514587",
+      "keeperPath": "/produktai/stalai/arn-susitikimu-stalai-modelis-29514587/",
+      "members": [
+        {
+          "id": "29514587",
+          "path": "/produktai/stalai/arn-susitikimu-stalai-modelis-29514587/"
+        },
+        {
+          "id": "29514593",
+          "path": "/produktai/stalai/arn-susitikimu-stalai-modelis-29514593/"
+        }
+      ]
+    },
+    {
+      "productId": "product_arn-meeting-tables_195bc35e",
+      "code": "KARN001WW006",
+      "keeperId": "29514588",
+      "keeperPath": "/produktai/stalai/arn-susitikimu-stalai-modelis-29514588/",
+      "members": [
+        {
+          "id": "29514588",
+          "path": "/produktai/stalai/arn-susitikimu-stalai-modelis-29514588/"
+        },
+        {
+          "id": "29514592",
+          "path": "/produktai/stalai/arn-susitikimu-stalai-modelis-29514592/"
+        }
+      ]
+    },
+    {
+      "productId": "product_arn-stools-bar-stools_436f06c0",
+      "code": "KARN007WW004",
+      "keeperId": "29507407",
+      "keeperPath": "/produktai/kedes/arn-taburetes-ir-baro-kedes-modelis-29507407/",
+      "members": [
+        {
+          "id": "29507407",
+          "path": "/produktai/kedes/arn-taburetes-ir-baro-kedes-modelis-29507407/"
+        },
+        {
+          "id": "29507408",
+          "path": "/produktai/kedes/arn-taburetes-ir-baro-kedes-modelis-29507408/"
+        },
+        {
+          "id": "29507409",
+          "path": "/produktai/kedes/arn-taburetes-ir-baro-kedes-modelis-29507409/"
+        }
+      ]
+    },
+    {
+      "productId": "product_axo-meeting-chairs_b971c8e1",
+      "code": "KAXO001WW002",
+      "keeperId": "19837275",
+      "keeperPath": "/produktai/kedes/axo-susitikimu-ir-lankytoju-kedes-modelis-19837275/",
+      "members": [
+        {
+          "id": "19837275",
+          "path": "/produktai/kedes/axo-susitikimu-ir-lankytoju-kedes-modelis-19837275/"
+        },
+        {
+          "id": "19837276",
+          "path": "/produktai/kedes/axo-susitikimu-ir-lankytoju-kedes-modelis-19837276/"
+        }
+      ]
+    },
+    {
+      "productId": "product_axo-meeting-tables_d16b7ca2",
+      "code": "KAXO004WW001",
+      "keeperId": "19839567",
+      "keeperPath": "/produktai/stalai/axo-susitikimu-stalai-modelis-19839567/",
+      "members": [
+        {
+          "id": "19839567",
+          "path": "/produktai/stalai/axo-susitikimu-stalai-modelis-19839567/"
+        },
+        {
+          "id": "19839569",
+          "path": "/produktai/stalai/axo-susitikimu-stalai-modelis-19839569/"
+        }
+      ]
+    },
+    {
+      "productId": "product_barrique-armchairs-leg-rests_f2af7ce1",
+      "code": "KBAR001WW001",
+      "keeperId": "27593293",
+      "keeperPath": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27593293/",
+      "members": [
+        {
+          "id": "27593293",
+          "path": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27593293/"
+        },
+        {
+          "id": "27594845",
+          "path": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27594845/"
+        },
+        {
+          "id": "27594921",
+          "path": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27594921/"
+        }
+      ]
+    },
+    {
+      "productId": "product_barrique-armchairs-leg-rests_f2af7ce1",
+      "code": "KBAR002WW001",
+      "keeperId": "27594929",
+      "keeperPath": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27594929/",
+      "members": [
+        {
+          "id": "27594929",
+          "path": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27594929/"
+        },
+        {
+          "id": "27594969",
+          "path": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27594969/"
+        },
+        {
+          "id": "27594976",
+          "path": "/produktai/minksti-baldai/barrique-foteliai-ir-koju-atramos-modelis-27594976/"
+        }
+      ]
+    },
+    {
+      "productId": "product_belise-stools-bar-stools_8dea8493",
+      "code": "KBLS001WW002",
+      "keeperId": "19783110",
+      "keeperPath": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783110/",
+      "members": [
+        {
+          "id": "19783110",
+          "path": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783110/"
+        },
+        {
+          "id": "19783112",
+          "path": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783112/"
+        }
+      ]
+    },
+    {
+      "productId": "product_belise-stools-bar-stools_8dea8493",
+      "code": "KBLS001WW001",
+      "keeperId": "19783109",
+      "keeperPath": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783109/",
+      "members": [
+        {
+          "id": "19783109",
+          "path": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783109/"
+        },
+        {
+          "id": "19783111",
+          "path": "/produktai/kedes/belise-taburetes-ir-baro-kedes-modelis-19783111/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bewise-meeting-chairs_b0450844",
+      "code": "KBEW001WW006",
+      "keeperId": "26143408",
+      "keeperPath": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143408/",
+      "members": [
+        {
+          "id": "26143408",
+          "path": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143408/"
+        },
+        {
+          "id": "26143412",
+          "path": "/produktai/kedes/bewise-susitikimu-ir-lankytoju-kedes-modelis-26143412/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bjarg-swivel-chairs_93f6f6da",
+      "code": "KBJA003WW002",
+      "keeperId": "15722414",
+      "keeperPath": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722414/",
+      "members": [
+        {
+          "id": "15722414",
+          "path": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722414/"
+        },
+        {
+          "id": "15722415",
+          "path": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722415/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bjarg-swivel-chairs_93f6f6da",
+      "code": "KBJA001WW002",
+      "keeperId": "15722418",
+      "keeperPath": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722418/",
+      "members": [
+        {
+          "id": "15722419",
+          "path": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722419/"
+        },
+        {
+          "id": "15722418",
+          "path": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722418/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bjarg-swivel-chairs_93f6f6da",
+      "code": "KBJA002WW002",
+      "keeperId": "15722416",
+      "keeperPath": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722416/",
+      "members": [
+        {
+          "id": "15722416",
+          "path": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722416/"
+        },
+        {
+          "id": "15722417",
+          "path": "/produktai/kedes/bjarg-darbo-kedes-modelis-15722417/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bound-armchairs-leg-rests_adab0454",
+      "code": "KBOU001WW002",
+      "keeperId": "24718410",
+      "keeperPath": "/produktai/minksti-baldai/bound-foteliai-ir-koju-atramos-modelis-24718410/",
+      "members": [
+        {
+          "id": "24718410",
+          "path": "/produktai/minksti-baldai/bound-foteliai-ir-koju-atramos-modelis-24718410/"
+        },
+        {
+          "id": "24718411",
+          "path": "/produktai/minksti-baldai/bound-foteliai-ir-koju-atramos-modelis-24718411/"
+        },
+        {
+          "id": "24718412",
+          "path": "/produktai/minksti-baldai/bound-foteliai-ir-koju-atramos-modelis-24718412/"
+        },
+        {
+          "id": "24718413",
+          "path": "/produktai/minksti-baldai/bound-foteliai-ir-koju-atramos-modelis-24718413/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bound-cafe-lounge-tables_6b0efbfe",
+      "code": "KBOU003WW002",
+      "keeperId": "24703881",
+      "keeperPath": "/produktai/stalai/bound-kavines-ir-poilsio-zonu-stalai-modelis-24703881/",
+      "members": [
+        {
+          "id": "24703881",
+          "path": "/produktai/stalai/bound-kavines-ir-poilsio-zonu-stalai-modelis-24703881/"
+        },
+        {
+          "id": "24703882",
+          "path": "/produktai/stalai/bound-kavines-ir-poilsio-zonu-stalai-modelis-24703882/"
+        },
+        {
+          "id": "24703883",
+          "path": "/produktai/stalai/bound-kavines-ir-poilsio-zonu-stalai-modelis-24703883/"
+        },
+        {
+          "id": "24703884",
+          "path": "/produktai/stalai/bound-kavines-ir-poilsio-zonu-stalai-modelis-24703884/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bound-sofas_000b9cda",
+      "code": "KBOU002WW002",
+      "keeperId": "24717886",
+      "keeperPath": "/produktai/minksti-baldai/bound-sofos-modelis-24717886/",
+      "members": [
+        {
+          "id": "24717886",
+          "path": "/produktai/minksti-baldai/bound-sofos-modelis-24717886/"
+        },
+        {
+          "id": "24717887",
+          "path": "/produktai/minksti-baldai/bound-sofos-modelis-24717887/"
+        },
+        {
+          "id": "24717888",
+          "path": "/produktai/minksti-baldai/bound-sofos-modelis-24717888/"
+        },
+        {
+          "id": "24717889",
+          "path": "/produktai/minksti-baldai/bound-sofos-modelis-24717889/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bspace-desks_3cf8f926",
+      "code": "KBSP006WW001",
+      "keeperId": "20495594",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/bspace-rasomieji-stalai-modelis-20495594/",
+      "members": [
+        {
+          "id": "20495594",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/bspace-rasomieji-stalai-modelis-20495594/"
+        },
+        {
+          "id": "20495595",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/bspace-rasomieji-stalai-modelis-20495595/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bspace-desks_3cf8f926",
+      "code": "KBSP001WW001",
+      "keeperId": "16087946",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/bspace-rasomieji-stalai-modelis-16087946/",
+      "members": [
+        {
+          "id": "16087946",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/bspace-rasomieji-stalai-modelis-16087946/"
+        },
+        {
+          "id": "16087948",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/bspace-rasomieji-stalai-modelis-16087948/"
+        }
+      ]
+    },
+    {
+      "productId": "product_bzoom-meeting-chairs_aa445386",
+      "code": "KBZM001WW001",
+      "keeperId": "31132658",
+      "keeperPath": "/produktai/kedes/bzoom-susitikimu-ir-lankytoju-kedes-modelis-31132658/",
+      "members": [
+        {
+          "id": "31132658",
+          "path": "/produktai/kedes/bzoom-susitikimu-ir-lankytoju-kedes-modelis-31132658/"
+        },
+        {
+          "id": "31132659",
+          "path": "/produktai/kedes/bzoom-susitikimu-ir-lankytoju-kedes-modelis-31132659/"
+        },
+        {
+          "id": "31132660",
+          "path": "/produktai/kedes/bzoom-susitikimu-ir-lankytoju-kedes-modelis-31132660/"
+        }
+      ]
+    },
+    {
+      "productId": "product_cadeira-meeting-chairs_4071871a",
+      "code": "KCAD001WW001",
+      "keeperId": "16088241",
+      "keeperPath": "/produktai/kedes/cadeira-susitikimu-ir-lankytoju-kedes-modelis-16088241/",
+      "members": [
+        {
+          "id": "16088242",
+          "path": "/produktai/kedes/cadeira-susitikimu-ir-lankytoju-kedes-modelis-16088242/"
+        },
+        {
+          "id": "16088241",
+          "path": "/produktai/kedes/cadeira-susitikimu-ir-lankytoju-kedes-modelis-16088241/"
+        }
+      ]
+    },
+    {
+      "productId": "product_cafe-cafe-lounge-tables_d524df81",
+      "code": "KCAF039WW001",
+      "keeperId": "25651158",
+      "keeperPath": "/produktai/stalai/cafe-kavines-ir-poilsio-zonu-stalai-modelis-25651158/",
+      "members": [
+        {
+          "id": "25651158",
+          "path": "/produktai/stalai/cafe-kavines-ir-poilsio-zonu-stalai-modelis-25651158/"
+        },
+        {
+          "id": "25651159",
+          "path": "/produktai/stalai/cafe-kavines-ir-poilsio-zonu-stalai-modelis-25651159/"
+        },
+        {
+          "id": "25651160",
+          "path": "/produktai/stalai/cafe-kavines-ir-poilsio-zonu-stalai-modelis-25651160/"
+        }
+      ]
+    },
+    {
+      "productId": "product_cafe-meeting-chairs_62165973",
+      "code": "KCAF003WW001",
+      "keeperId": "19840265",
+      "keeperPath": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-19840265/",
+      "members": [
+        {
+          "id": "19840265",
+          "path": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-19840265/"
+        },
+        {
+          "id": "19840266",
+          "path": "/produktai/kedes/cafe-susitikimu-ir-lankytoju-kedes-modelis-19840266/"
+        }
+      ]
+    },
+    {
+      "productId": "product_calado-meeting-chairs_a5916e5a",
+      "code": "KCAL001WW005",
+      "keeperId": "28425985",
+      "keeperPath": "/produktai/kedes/calado-susitikimu-ir-lankytoju-kedes-modelis-28425985/",
+      "members": [
+        {
+          "id": "28425985",
+          "path": "/produktai/kedes/calado-susitikimu-ir-lankytoju-kedes-modelis-28425985/"
+        },
+        {
+          "id": "28425987",
+          "path": "/produktai/kedes/calado-susitikimu-ir-lankytoju-kedes-modelis-28425987/"
+        }
+      ]
+    },
+    {
+      "productId": "product_calado-stools-bar-stools_e1a988ca",
+      "code": "KCAL004WW002",
+      "keeperId": "28427625",
+      "keeperPath": "/produktai/kedes/calado-taburetes-ir-baro-kedes-modelis-28427625/",
+      "members": [
+        {
+          "id": "28427628",
+          "path": "/produktai/kedes/calado-taburetes-ir-baro-kedes-modelis-28427628/"
+        },
+        {
+          "id": "28427625",
+          "path": "/produktai/kedes/calado-taburetes-ir-baro-kedes-modelis-28427625/"
+        },
+        {
+          "id": "28427626",
+          "path": "/produktai/kedes/calado-taburetes-ir-baro-kedes-modelis-28427626/"
+        },
+        {
+          "id": "28427627",
+          "path": "/produktai/kedes/calado-taburetes-ir-baro-kedes-modelis-28427627/"
+        }
+      ]
+    },
+    {
+      "productId": "product_chico-stools-bar-stools_ffaa8b98",
+      "code": "KCHI001WW002",
+      "keeperId": "24800027",
+      "keeperPath": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-24800027/",
+      "members": [
+        {
+          "id": "24800027",
+          "path": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-24800027/"
+        },
+        {
+          "id": "24800028",
+          "path": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-24800028/"
+        },
+        {
+          "id": "24800029",
+          "path": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-24800029/"
+        },
+        {
+          "id": "24800030",
+          "path": "/produktai/kedes/chico-taburetes-ir-baro-kedes-modelis-24800030/"
+        }
+      ]
+    },
+    {
+      "productId": "product_classic-armchairs-leg-rests_b1ee7641",
+      "code": "KCLA001WW001",
+      "keeperId": "21049942",
+      "keeperPath": "/produktai/minksti-baldai/classic-foteliai-ir-koju-atramos-modelis-21049942/",
+      "members": [
+        {
+          "id": "21049942",
+          "path": "/produktai/minksti-baldai/classic-foteliai-ir-koju-atramos-modelis-21049942/"
+        },
+        {
+          "id": "21049943",
+          "path": "/produktai/minksti-baldai/classic-foteliai-ir-koju-atramos-modelis-21049943/"
+        },
+        {
+          "id": "21049944",
+          "path": "/produktai/minksti-baldai/classic-foteliai-ir-koju-atramos-modelis-21049944/"
+        }
+      ]
+    },
+    {
+      "productId": "product_classic-cafe-lounge-tables_481bb013",
+      "code": "KCLA004WW001",
+      "keeperId": "25365109",
+      "keeperPath": "/produktai/stalai/classic-kavines-ir-poilsio-zonu-stalai-modelis-25365109/",
+      "members": [
+        {
+          "id": "25365109",
+          "path": "/produktai/stalai/classic-kavines-ir-poilsio-zonu-stalai-modelis-25365109/"
+        },
+        {
+          "id": "25365110",
+          "path": "/produktai/stalai/classic-kavines-ir-poilsio-zonu-stalai-modelis-25365110/"
+        }
+      ]
+    },
+    {
+      "productId": "product_classic-cafe-lounge-tables_481bb013",
+      "code": "KCLA004WW002",
+      "keeperId": "25365111",
+      "keeperPath": "/produktai/stalai/classic-kavines-ir-poilsio-zonu-stalai-modelis-25365111/",
+      "members": [
+        {
+          "id": "25365111",
+          "path": "/produktai/stalai/classic-kavines-ir-poilsio-zonu-stalai-modelis-25365111/"
+        },
+        {
+          "id": "25365112",
+          "path": "/produktai/stalai/classic-kavines-ir-poilsio-zonu-stalai-modelis-25365112/"
+        }
+      ]
+    },
+    {
+      "productId": "product_classic-sofas_a13ec82c",
+      "code": "KCLA002WW001",
+      "keeperId": "21051899",
+      "keeperPath": "/produktai/minksti-baldai/classic-sofos-modelis-21051899/",
+      "members": [
+        {
+          "id": "21051899",
+          "path": "/produktai/minksti-baldai/classic-sofos-modelis-21051899/"
+        },
+        {
+          "id": "21051900",
+          "path": "/produktai/minksti-baldai/classic-sofos-modelis-21051900/"
+        }
+      ]
+    },
+    {
+      "productId": "product_classic-sofas_a13ec82c",
+      "code": "KCLA003WW001",
+      "keeperId": "21051901",
+      "keeperPath": "/produktai/minksti-baldai/classic-sofos-modelis-21051901/",
+      "members": [
+        {
+          "id": "21051901",
+          "path": "/produktai/minksti-baldai/classic-sofos-modelis-21051901/"
+        },
+        {
+          "id": "21051902",
+          "path": "/produktai/minksti-baldai/classic-sofos-modelis-21051902/"
+        }
+      ]
+    },
+    {
+      "productId": "product_club-armchairs-leg-rests_fbc46481",
+      "code": "KCLU008WW002",
+      "keeperId": "23358772",
+      "keeperPath": "/produktai/minksti-baldai/club-foteliai-ir-koju-atramos-modelis-23358772/",
+      "members": [
+        {
+          "id": "23358772",
+          "path": "/produktai/minksti-baldai/club-foteliai-ir-koju-atramos-modelis-23358772/"
+        },
+        {
+          "id": "23358773",
+          "path": "/produktai/minksti-baldai/club-foteliai-ir-koju-atramos-modelis-23358773/"
+        }
+      ]
+    },
+    {
+      "productId": "product_club-sofas_d94530e7",
+      "code": "KCLU004WW001",
+      "keeperId": "20678960",
+      "keeperPath": "/produktai/minksti-baldai/club-sofos-modelis-20678960/",
+      "members": [
+        {
+          "id": "20678960",
+          "path": "/produktai/minksti-baldai/club-sofos-modelis-20678960/"
+        },
+        {
+          "id": "20678961",
+          "path": "/produktai/minksti-baldai/club-sofos-modelis-20678961/"
+        }
+      ]
+    },
+    {
+      "productId": "product_colani-armchairs-leg-rests_9d6cd263",
+      "code": "KCLI001WW002",
+      "keeperId": "30506759",
+      "keeperPath": "/produktai/minksti-baldai/colani-foteliai-ir-koju-atramos-modelis-30506759/",
+      "members": [
+        {
+          "id": "30506759",
+          "path": "/produktai/minksti-baldai/colani-foteliai-ir-koju-atramos-modelis-30506759/"
+        },
+        {
+          "id": "30506761",
+          "path": "/produktai/minksti-baldai/colani-foteliai-ir-koju-atramos-modelis-30506761/"
+        }
+      ]
+    },
+    {
+      "productId": "product_colani-armchairs-leg-rests_9d6cd263",
+      "code": "KCLI002WW002",
+      "keeperId": "30506760",
+      "keeperPath": "/produktai/minksti-baldai/colani-foteliai-ir-koju-atramos-modelis-30506760/",
+      "members": [
+        {
+          "id": "30506760",
+          "path": "/produktai/minksti-baldai/colani-foteliai-ir-koju-atramos-modelis-30506760/"
+        },
+        {
+          "id": "30506762",
+          "path": "/produktai/minksti-baldai/colani-foteliai-ir-koju-atramos-modelis-30506762/"
+        }
+      ]
+    },
+    {
+      "productId": "product_conect-ii-armchairs-leg-rests_0febdc73",
+      "code": "KCNC001WW002",
+      "keeperId": "20975608",
+      "keeperPath": "/produktai/minksti-baldai/conect-ii-foteliai-ir-koju-atramos-modelis-20975608/",
+      "members": [
+        {
+          "id": "20975608",
+          "path": "/produktai/minksti-baldai/conect-ii-foteliai-ir-koju-atramos-modelis-20975608/"
+        },
+        {
+          "id": "23380416",
+          "path": "/produktai/minksti-baldai/conect-ii-foteliai-ir-koju-atramos-modelis-23380416/"
+        }
+      ]
+    },
+    {
+      "productId": "product_conect-ii-armchairs-leg-rests_0febdc73",
+      "code": "KCNC001WW001",
+      "keeperId": "23380417",
+      "keeperPath": "/produktai/minksti-baldai/conect-ii-foteliai-ir-koju-atramos-modelis-23380417/",
+      "members": [
+        {
+          "id": "23380417",
+          "path": "/produktai/minksti-baldai/conect-ii-foteliai-ir-koju-atramos-modelis-23380417/"
+        },
+        {
+          "id": "23380418",
+          "path": "/produktai/minksti-baldai/conect-ii-foteliai-ir-koju-atramos-modelis-23380418/"
+        }
+      ]
+    },
+    {
+      "productId": "product_conect-ii-cafe-lounge-tables_9b75c4a6",
+      "code": "KCNC002WW001",
+      "keeperId": "20977109",
+      "keeperPath": "/produktai/stalai/conect-ii-kavines-ir-poilsio-zonu-stalai-modelis-20977109/",
+      "members": [
+        {
+          "id": "20977109",
+          "path": "/produktai/stalai/conect-ii-kavines-ir-poilsio-zonu-stalai-modelis-20977109/"
+        },
+        {
+          "id": "20977110",
+          "path": "/produktai/stalai/conect-ii-kavines-ir-poilsio-zonu-stalai-modelis-20977110/"
+        },
+        {
+          "id": "20977111",
+          "path": "/produktai/stalai/conect-ii-kavines-ir-poilsio-zonu-stalai-modelis-20977111/"
+        }
+      ]
+    },
+    {
+      "productId": "product_convenio-meeting-tables_793270c4",
+      "code": "KCON002WW001",
+      "keeperId": "16088552",
+      "keeperPath": "/produktai/stalai/convenio-susitikimu-stalai-modelis-16088552/",
+      "members": [
+        {
+          "id": "16088552",
+          "path": "/produktai/stalai/convenio-susitikimu-stalai-modelis-16088552/"
+        },
+        {
+          "id": "16088554",
+          "path": "/produktai/stalai/convenio-susitikimu-stalai-modelis-16088554/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-armchairs-leg-rests_561f91ed",
+      "code": "KCRE004WW001",
+      "keeperId": "24827802",
+      "keeperPath": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827802/",
+      "members": [
+        {
+          "id": "24827802",
+          "path": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827802/"
+        },
+        {
+          "id": "24827806",
+          "path": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827806/"
+        },
+        {
+          "id": "24827805",
+          "path": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827805/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-armchairs-leg-rests_561f91ed",
+      "code": "KCRE073WW001",
+      "keeperId": "24827803",
+      "keeperPath": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827803/",
+      "members": [
+        {
+          "id": "24827803",
+          "path": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827803/"
+        },
+        {
+          "id": "24827804",
+          "path": "/produktai/minksti-baldai/creva-foteliai-ir-koju-atramos-modelis-24827804/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-cafe-lounge-tables_7c348ed3",
+      "code": "KCRE009WW001",
+      "keeperId": "24830226",
+      "keeperPath": "/produktai/stalai/creva-kavines-ir-poilsio-zonu-stalai-modelis-24830226/",
+      "members": [
+        {
+          "id": "24830226",
+          "path": "/produktai/stalai/creva-kavines-ir-poilsio-zonu-stalai-modelis-24830226/"
+        },
+        {
+          "id": "24830227",
+          "path": "/produktai/stalai/creva-kavines-ir-poilsio-zonu-stalai-modelis-24830227/"
+        },
+        {
+          "id": "24830228",
+          "path": "/produktai/stalai/creva-kavines-ir-poilsio-zonu-stalai-modelis-24830228/"
+        },
+        {
+          "id": "24830229",
+          "path": "/produktai/stalai/creva-kavines-ir-poilsio-zonu-stalai-modelis-24830229/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-high-tables_a59924c5",
+      "code": "KCRE040WW004",
+      "keeperId": "24861610",
+      "keeperPath": "/produktai/stalai/creva-auksti-stalai-modelis-24861610/",
+      "members": [
+        {
+          "id": "24861610",
+          "path": "/produktai/stalai/creva-auksti-stalai-modelis-24861610/"
+        },
+        {
+          "id": "24861614",
+          "path": "/produktai/stalai/creva-auksti-stalai-modelis-24861614/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-meeting-tables_a706cc33",
+      "code": "KCRE039WW004",
+      "keeperId": "24860117",
+      "keeperPath": "/produktai/stalai/creva-susitikimu-stalai-modelis-24860117/",
+      "members": [
+        {
+          "id": "24860117",
+          "path": "/produktai/stalai/creva-susitikimu-stalai-modelis-24860117/"
+        },
+        {
+          "id": "24860119",
+          "path": "/produktai/stalai/creva-susitikimu-stalai-modelis-24860119/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-pouffes_df65941f",
+      "code": "KCRE001WW001",
+      "keeperId": "24810032",
+      "keeperPath": "/produktai/minksti-baldai/creva-pufai-modelis-24810032/",
+      "members": [
+        {
+          "id": "24810032",
+          "path": "/produktai/minksti-baldai/creva-pufai-modelis-24810032/"
+        },
+        {
+          "id": "24810034",
+          "path": "/produktai/minksti-baldai/creva-pufai-modelis-24810034/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-pouffes_df65941f",
+      "code": "KCRE002WW001",
+      "keeperId": "24810031",
+      "keeperPath": "/produktai/minksti-baldai/creva-pufai-modelis-24810031/",
+      "members": [
+        {
+          "id": "24810031",
+          "path": "/produktai/minksti-baldai/creva-pufai-modelis-24810031/"
+        },
+        {
+          "id": "24810035",
+          "path": "/produktai/minksti-baldai/creva-pufai-modelis-24810035/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-pouffes_df65941f",
+      "code": "KCRE003WW001",
+      "keeperId": "24810033",
+      "keeperPath": "/produktai/minksti-baldai/creva-pufai-modelis-24810033/",
+      "members": [
+        {
+          "id": "24810033",
+          "path": "/produktai/minksti-baldai/creva-pufai-modelis-24810033/"
+        },
+        {
+          "id": "24810036",
+          "path": "/produktai/minksti-baldai/creva-pufai-modelis-24810036/"
+        }
+      ]
+    },
+    {
+      "productId": "product_creva-walls_c745cc46",
+      "code": "KCRE047WW003",
+      "keeperId": "24809037",
+      "keeperPath": "/produktai/akustiniai-sprendimai/creva-pertvaros-modelis-24809037/",
+      "members": [
+        {
+          "id": "24809037",
+          "path": "/produktai/akustiniai-sprendimai/creva-pertvaros-modelis-24809037/"
+        },
+        {
+          "id": "24809040",
+          "path": "/produktai/akustiniai-sprendimai/creva-pertvaros-modelis-24809040/"
+        }
+      ]
+    },
+    {
+      "productId": "product_cs5040-orga-towers-pedestals_27c8a4b1",
+      "code": "KC54119WW001",
+      "keeperId": "19773883",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/cs5040-stalciu-blokai-ir-organizavimo-spinteles-modelis-19773883/",
+      "members": [
+        {
+          "id": "19773883",
+          "path": "/produktai/daiktu-laikymo-baldai/cs5040-stalciu-blokai-ir-organizavimo-spinteles-modelis-19773883/"
+        },
+        {
+          "id": "19773885",
+          "path": "/produktai/daiktu-laikymo-baldai/cs5040-stalciu-blokai-ir-organizavimo-spinteles-modelis-19773885/"
+        }
+      ]
+    },
+    {
+      "productId": "product_dallas-armchairs-leg-rests_ec0890ec",
+      "code": "KDAL001WW001",
+      "keeperId": "20908179",
+      "keeperPath": "/produktai/minksti-baldai/dallas-foteliai-ir-koju-atramos-modelis-20908179/",
+      "members": [
+        {
+          "id": "20908179",
+          "path": "/produktai/minksti-baldai/dallas-foteliai-ir-koju-atramos-modelis-20908179/"
+        },
+        {
+          "id": "20908181",
+          "path": "/produktai/minksti-baldai/dallas-foteliai-ir-koju-atramos-modelis-20908181/"
+        },
+        {
+          "id": "20908180",
+          "path": "/produktai/minksti-baldai/dallas-foteliai-ir-koju-atramos-modelis-20908180/"
+        }
+      ]
+    },
+    {
+      "productId": "product_dallas-cafe-lounge-tables_0b54220d",
+      "code": "KDAL004WW001",
+      "keeperId": "20949684",
+      "keeperPath": "/produktai/stalai/dallas-kavines-ir-poilsio-zonu-stalai-modelis-20949684/",
+      "members": [
+        {
+          "id": "20949684",
+          "path": "/produktai/stalai/dallas-kavines-ir-poilsio-zonu-stalai-modelis-20949684/"
+        },
+        {
+          "id": "20949686",
+          "path": "/produktai/stalai/dallas-kavines-ir-poilsio-zonu-stalai-modelis-20949686/"
+        }
+      ]
+    },
+    {
+      "productId": "product_dallas-sofas_ce35c19f",
+      "code": "KDAL002WW001",
+      "keeperId": "20912390",
+      "keeperPath": "/produktai/minksti-baldai/dallas-sofos-modelis-20912390/",
+      "members": [
+        {
+          "id": "20912390",
+          "path": "/produktai/minksti-baldai/dallas-sofos-modelis-20912390/"
+        },
+        {
+          "id": "20912391",
+          "path": "/produktai/minksti-baldai/dallas-sofos-modelis-20912391/"
+        },
+        {
+          "id": "20912392",
+          "path": "/produktai/minksti-baldai/dallas-sofos-modelis-20912392/"
+        }
+      ]
+    },
+    {
+      "productId": "product_dotto-pouffes_8cfb9de2",
+      "code": "KDOT002WW001",
+      "keeperId": "19629347",
+      "keeperPath": "/produktai/minksti-baldai/dotto-pufai-modelis-19629347/",
+      "members": [
+        {
+          "id": "19629347",
+          "path": "/produktai/minksti-baldai/dotto-pufai-modelis-19629347/"
+        },
+        {
+          "id": "19629349",
+          "path": "/produktai/minksti-baldai/dotto-pufai-modelis-19629349/"
+        }
+      ]
+    },
+    {
+      "productId": "product_ecomo-desks_b8d134c6",
+      "code": "KECM001WW002",
+      "keeperId": "28937748",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/ecomo-rasomieji-stalai-modelis-28937748/",
+      "members": [
+        {
+          "id": "28937748",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/ecomo-rasomieji-stalai-modelis-28937748/"
+        },
+        {
+          "id": "28937749",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/ecomo-rasomieji-stalai-modelis-28937749/"
+        },
+        {
+          "id": "28937750",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/ecomo-rasomieji-stalai-modelis-28937750/"
+        },
+        {
+          "id": "28937751",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/ecomo-rasomieji-stalai-modelis-28937751/"
+        },
+        {
+          "id": "28937752",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/ecomo-rasomieji-stalai-modelis-28937752/"
+        }
+      ]
+    },
+    {
+      "productId": "product_eggy-swivel-chairs_fb6c8067",
+      "code": "KEGG001WW001",
+      "keeperId": "20537349",
+      "keeperPath": "/produktai/kedes/eggy-darbo-kedes-modelis-20537349/",
+      "members": [
+        {
+          "id": "20537349",
+          "path": "/produktai/kedes/eggy-darbo-kedes-modelis-20537349/"
+        },
+        {
+          "id": "20537350",
+          "path": "/produktai/kedes/eggy-darbo-kedes-modelis-20537350/"
+        },
+        {
+          "id": "20537351",
+          "path": "/produktai/kedes/eggy-darbo-kedes-modelis-20537351/"
+        }
+      ]
+    },
+    {
+      "productId": "product_elovie-swivel-chairs_77c77abd",
+      "code": "KELO001WW001",
+      "keeperId": "30470553",
+      "keeperPath": "/produktai/kedes/elovie-darbo-kedes-modelis-30470553/",
+      "members": [
+        {
+          "id": "30470553",
+          "path": "/produktai/kedes/elovie-darbo-kedes-modelis-30470553/"
+        },
+        {
+          "id": "30470555",
+          "path": "/produktai/kedes/elovie-darbo-kedes-modelis-30470555/"
+        }
+      ]
+    },
+    {
+      "productId": "product_elovie-swivel-chairs_77c77abd",
+      "code": "KELO001WW002",
+      "keeperId": "30470552",
+      "keeperPath": "/produktai/kedes/elovie-darbo-kedes-modelis-30470552/",
+      "members": [
+        {
+          "id": "30470552",
+          "path": "/produktai/kedes/elovie-darbo-kedes-modelis-30470552/"
+        },
+        {
+          "id": "30470554",
+          "path": "/produktai/kedes/elovie-darbo-kedes-modelis-30470554/"
+        }
+      ]
+    },
+    {
+      "productId": "product_emodel-3-0-desks_3b24c072",
+      "code": "KEM3001WW002",
+      "keeperId": "26651529",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-rasomieji-stalai-modelis-26651529/",
+      "members": [
+        {
+          "id": "26651529",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-rasomieji-stalai-modelis-26651529/"
+        },
+        {
+          "id": "26651530",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-rasomieji-stalai-modelis-26651530/"
+        },
+        {
+          "id": "26651531",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-rasomieji-stalai-modelis-26651531/"
+        },
+        {
+          "id": "26651533",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-rasomieji-stalai-modelis-26651533/"
+        }
+      ]
+    },
+    {
+      "productId": "product_emodel-3-0-meeting-tables_9bead989",
+      "code": "KEM3004WW002",
+      "keeperId": "26638434",
+      "keeperPath": "/produktai/stalai/emodel-3-0-susitikimu-stalai-modelis-26638434/",
+      "members": [
+        {
+          "id": "26638434",
+          "path": "/produktai/stalai/emodel-3-0-susitikimu-stalai-modelis-26638434/"
+        },
+        {
+          "id": "26638435",
+          "path": "/produktai/stalai/emodel-3-0-susitikimu-stalai-modelis-26638435/"
+        },
+        {
+          "id": "26638436",
+          "path": "/produktai/stalai/emodel-3-0-susitikimu-stalai-modelis-26638436/"
+        }
+      ]
+    },
+    {
+      "productId": "product_emodel-3-0-workbenches_b36350fa",
+      "code": "KEM3003WW002",
+      "keeperId": "26675432",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-bendri-darbo-stalai-modelis-26675432/",
+      "members": [
+        {
+          "id": "26675432",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-bendri-darbo-stalai-modelis-26675432/"
+        },
+        {
+          "id": "26675434",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-bendri-darbo-stalai-modelis-26675434/"
+        },
+        {
+          "id": "26675433",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-bendri-darbo-stalai-modelis-26675433/"
+        },
+        {
+          "id": "26675435",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/emodel-3-0-bendri-darbo-stalai-modelis-26675435/"
+        }
+      ]
+    },
+    {
+      "productId": "product_erange-desks_e908d3d0",
+      "code": "KERG021WW001",
+      "keeperId": "25302336",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/erange-rasomieji-stalai-modelis-25302336/",
+      "members": [
+        {
+          "id": "25302336",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/erange-rasomieji-stalai-modelis-25302336/"
+        },
+        {
+          "id": "25302339",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/erange-rasomieji-stalai-modelis-25302339/"
+        }
+      ]
+    },
+    {
+      "productId": "product_erange-desks_e908d3d0",
+      "code": "KERG020WW001",
+      "keeperId": "25302337",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/erange-rasomieji-stalai-modelis-25302337/",
+      "members": [
+        {
+          "id": "25302337",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/erange-rasomieji-stalai-modelis-25302337/"
+        },
+        {
+          "id": "25302338",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/erange-rasomieji-stalai-modelis-25302338/"
+        }
+      ]
+    },
+    {
+      "productId": "product_erange-meeting-tables_b48cc9db",
+      "code": "KERG029WW001",
+      "keeperId": "22084190",
+      "keeperPath": "/produktai/stalai/erange-susitikimu-stalai-modelis-22084190/",
+      "members": [
+        {
+          "id": "22084190",
+          "path": "/produktai/stalai/erange-susitikimu-stalai-modelis-22084190/"
+        },
+        {
+          "id": "22084193",
+          "path": "/produktai/stalai/erange-susitikimu-stalai-modelis-22084193/"
+        }
+      ]
+    },
+    {
+      "productId": "product_erange-orga-towers-pedestals_42809c62",
+      "code": "KERG030WW001",
+      "keeperId": "22087793",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/erange-stalciu-blokai-ir-organizavimo-spinteles-modelis-22087793/",
+      "members": [
+        {
+          "id": "22087793",
+          "path": "/produktai/daiktu-laikymo-baldai/erange-stalciu-blokai-ir-organizavimo-spinteles-modelis-22087793/"
+        },
+        {
+          "id": "22087794",
+          "path": "/produktai/daiktu-laikymo-baldai/erange-stalciu-blokai-ir-organizavimo-spinteles-modelis-22087794/"
+        },
+        {
+          "id": "22087795",
+          "path": "/produktai/daiktu-laikymo-baldai/erange-stalciu-blokai-ir-organizavimo-spinteles-modelis-22087795/"
+        },
+        {
+          "id": "22087796",
+          "path": "/produktai/daiktu-laikymo-baldai/erange-stalciu-blokai-ir-organizavimo-spinteles-modelis-22087796/"
+        }
+      ]
+    },
+    {
+      "productId": "product_eup-workbenches_589a9fc3",
+      "code": "KEUP011WW002",
+      "keeperId": "15842554",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/eup-bendri-darbo-stalai-modelis-15842554/",
+      "members": [
+        {
+          "id": "15842554",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/eup-bendri-darbo-stalai-modelis-15842554/"
+        },
+        {
+          "id": "15842556",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/eup-bendri-darbo-stalai-modelis-15842556/"
+        }
+      ]
+    },
+    {
+      "productId": "product_eup-workbenches_589a9fc3",
+      "code": "KEUP011WW003",
+      "keeperId": "15842555",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/eup-bendri-darbo-stalai-modelis-15842555/",
+      "members": [
+        {
+          "id": "15842555",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/eup-bendri-darbo-stalai-modelis-15842555/"
+        },
+        {
+          "id": "15842557",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/eup-bendri-darbo-stalai-modelis-15842557/"
+        }
+      ]
+    },
+    {
+      "productId": "product_flesco-meeting-chairs_de313ca1",
+      "code": "KFLS001WW001",
+      "keeperId": "27215084",
+      "keeperPath": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27215084/",
+      "members": [
+        {
+          "id": "27215084",
+          "path": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27215084/"
+        },
+        {
+          "id": "27339064",
+          "path": "/produktai/kedes/flesco-susitikimu-ir-lankytoju-kedes-modelis-27339064/"
+        }
+      ]
+    },
+    {
+      "productId": "product_flib-meeting-tables_09cd294d",
+      "code": "KFLI004WW001",
+      "keeperId": "24460500",
+      "keeperPath": "/produktai/stalai/flib-susitikimu-stalai-modelis-24460500/",
+      "members": [
+        {
+          "id": "24460500",
+          "path": "/produktai/stalai/flib-susitikimu-stalai-modelis-24460500/"
+        },
+        {
+          "id": "24460502",
+          "path": "/produktai/stalai/flib-susitikimu-stalai-modelis-24460502/"
+        }
+      ]
+    },
+    {
+      "productId": "product_flib-meeting-tables_09cd294d",
+      "code": "KFLI005WW001",
+      "keeperId": "24460501",
+      "keeperPath": "/produktai/stalai/flib-susitikimu-stalai-modelis-24460501/",
+      "members": [
+        {
+          "id": "24460501",
+          "path": "/produktai/stalai/flib-susitikimu-stalai-modelis-24460501/"
+        },
+        {
+          "id": "24460503",
+          "path": "/produktai/stalai/flib-susitikimu-stalai-modelis-24460503/"
+        }
+      ]
+    },
+    {
+      "productId": "product_fondo-stools-bar-stools_455226e5",
+      "code": "KFON003WW001",
+      "keeperId": "19857765",
+      "keeperPath": "/produktai/kedes/fondo-taburetes-ir-baro-kedes-modelis-19857765/",
+      "members": [
+        {
+          "id": "19857766",
+          "path": "/produktai/kedes/fondo-taburetes-ir-baro-kedes-modelis-19857766/"
+        },
+        {
+          "id": "19857765",
+          "path": "/produktai/kedes/fondo-taburetes-ir-baro-kedes-modelis-19857765/"
+        }
+      ]
+    },
+    {
+      "productId": "product_granite-armchairs-leg-rests_ee9ff4ec",
+      "code": "KGRN001WW001",
+      "keeperId": "21131205",
+      "keeperPath": "/produktai/minksti-baldai/granite-foteliai-ir-koju-atramos-modelis-21131205/",
+      "members": [
+        {
+          "id": "21131205",
+          "path": "/produktai/minksti-baldai/granite-foteliai-ir-koju-atramos-modelis-21131205/"
+        },
+        {
+          "id": "21131207",
+          "path": "/produktai/minksti-baldai/granite-foteliai-ir-koju-atramos-modelis-21131207/"
+        },
+        {
+          "id": "21131206",
+          "path": "/produktai/minksti-baldai/granite-foteliai-ir-koju-atramos-modelis-21131206/"
+        }
+      ]
+    },
+    {
+      "productId": "product_granite-sofas_fcafac4d",
+      "code": "KGRN002WW001",
+      "keeperId": "21132152",
+      "keeperPath": "/produktai/minksti-baldai/granite-sofos-modelis-21132152/",
+      "members": [
+        {
+          "id": "21132152",
+          "path": "/produktai/minksti-baldai/granite-sofos-modelis-21132152/"
+        },
+        {
+          "id": "21132153",
+          "path": "/produktai/minksti-baldai/granite-sofos-modelis-21132153/"
+        }
+      ]
+    },
+    {
+      "productId": "product_hello-sofas_8d3a1df5",
+      "code": "KHEL006WW001",
+      "keeperId": "19901700",
+      "keeperPath": "/produktai/minksti-baldai/hello-sofos-modelis-19901700/",
+      "members": [
+        {
+          "id": "19901700",
+          "path": "/produktai/minksti-baldai/hello-sofos-modelis-19901700/"
+        },
+        {
+          "id": "19901702",
+          "path": "/produktai/minksti-baldai/hello-sofos-modelis-19901702/"
+        }
+      ]
+    },
+    {
+      "productId": "product_hola-meeting-chairs_1e0db3ce",
+      "code": "KHOL001WW002",
+      "keeperId": "26629733",
+      "keeperPath": "/produktai/kedes/hola-susitikimu-ir-lankytoju-kedes-modelis-26629733/",
+      "members": [
+        {
+          "id": "26629733",
+          "path": "/produktai/kedes/hola-susitikimu-ir-lankytoju-kedes-modelis-26629733/"
+        },
+        {
+          "id": "26629734",
+          "path": "/produktai/kedes/hola-susitikimu-ir-lankytoju-kedes-modelis-26629734/"
+        },
+        {
+          "id": "26629736",
+          "path": "/produktai/kedes/hola-susitikimu-ir-lankytoju-kedes-modelis-26629736/"
+        },
+        {
+          "id": "26629737",
+          "path": "/produktai/kedes/hola-susitikimu-ir-lankytoju-kedes-modelis-26629737/"
+        }
+      ]
+    },
+    {
+      "productId": "product_hola-stools-benches_4d342dcb",
+      "code": "KHOL004WW002",
+      "keeperId": "26630713",
+      "keeperPath": "/produktai/kedes/hola-taburetes-ir-baro-kedes-modelis-26630713/",
+      "members": [
+        {
+          "id": "26630713",
+          "path": "/produktai/kedes/hola-taburetes-ir-baro-kedes-modelis-26630713/"
+        },
+        {
+          "id": "26630714",
+          "path": "/produktai/kedes/hola-taburetes-ir-baro-kedes-modelis-26630714/"
+        },
+        {
+          "id": "26630715",
+          "path": "/produktai/kedes/hola-taburetes-ir-baro-kedes-modelis-26630715/"
+        },
+        {
+          "id": "26630716",
+          "path": "/produktai/kedes/hola-taburetes-ir-baro-kedes-modelis-26630716/"
+        }
+      ]
+    },
+    {
+      "productId": "product_inta-meeting-chairs_7adfdd79",
+      "code": "KITA001WW001",
+      "keeperId": "20624634",
+      "keeperPath": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624634/",
+      "members": [
+        {
+          "id": "20624634",
+          "path": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624634/"
+        },
+        {
+          "id": "22663651",
+          "path": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-22663651/"
+        },
+        {
+          "id": "20624635",
+          "path": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624635/"
+        }
+      ]
+    },
+    {
+      "productId": "product_inta-meeting-chairs_7adfdd79",
+      "code": "KITA001WW002",
+      "keeperId": "20624632",
+      "keeperPath": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624632/",
+      "members": [
+        {
+          "id": "20624632",
+          "path": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624632/"
+        },
+        {
+          "id": "22663650",
+          "path": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-22663650/"
+        },
+        {
+          "id": "20624633",
+          "path": "/produktai/kedes/inta-susitikimu-ir-lankytoju-kedes-modelis-20624633/"
+        }
+      ]
+    },
+    {
+      "productId": "product_intrata-meeting-chairs_5dfff5ae",
+      "code": "KINT011WW001",
+      "keeperId": "25324228",
+      "keeperPath": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324228/",
+      "members": [
+        {
+          "id": "25324228",
+          "path": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324228/"
+        },
+        {
+          "id": "25324230",
+          "path": "/produktai/kedes/intrata-susitikimu-ir-lankytoju-kedes-modelis-25324230/"
+        }
+      ]
+    },
+    {
+      "productId": "product_jupiter-swivel-chairs_30e91383",
+      "code": "KJUP001WW002",
+      "keeperId": "22413781",
+      "keeperPath": "/produktai/kedes/jupiter-darbo-kedes-modelis-22413781/",
+      "members": [
+        {
+          "id": "22413781",
+          "path": "/produktai/kedes/jupiter-darbo-kedes-modelis-22413781/"
+        },
+        {
+          "id": "22413782",
+          "path": "/produktai/kedes/jupiter-darbo-kedes-modelis-22413782/"
+        },
+        {
+          "id": "22413783",
+          "path": "/produktai/kedes/jupiter-darbo-kedes-modelis-22413783/"
+        },
+        {
+          "id": "22413784",
+          "path": "/produktai/kedes/jupiter-darbo-kedes-modelis-22413784/"
+        },
+        {
+          "id": "22413785",
+          "path": "/produktai/kedes/jupiter-darbo-kedes-modelis-22413785/"
+        }
+      ]
+    },
+    {
+      "productId": "product_k40-lockers_95bae9d5",
+      "code": "KK40136WW001",
+      "keeperId": "23553487",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/k40-rakinamos-spinteles-modelis-23553487/",
+      "members": [
+        {
+          "id": "23553487",
+          "path": "/produktai/daiktu-laikymo-baldai/k40-rakinamos-spinteles-modelis-23553487/"
+        },
+        {
+          "id": "23559905",
+          "path": "/produktai/daiktu-laikymo-baldai/k40-rakinamos-spinteles-modelis-23559905/"
+        }
+      ]
+    },
+    {
+      "productId": "product_kanu-armchairs-leg-rests_5ea59730",
+      "code": "KKNU002WW003",
+      "keeperId": "25389521",
+      "keeperPath": "/produktai/minksti-baldai/kanu-foteliai-ir-koju-atramos-modelis-25389521/",
+      "members": [
+        {
+          "id": "25389521",
+          "path": "/produktai/minksti-baldai/kanu-foteliai-ir-koju-atramos-modelis-25389521/"
+        },
+        {
+          "id": "25389525",
+          "path": "/produktai/minksti-baldai/kanu-foteliai-ir-koju-atramos-modelis-25389525/"
+        }
+      ]
+    },
+    {
+      "productId": "product_kanu-armchairs-leg-rests_5ea59730",
+      "code": "KKNU001WW004",
+      "keeperId": "25389522",
+      "keeperPath": "/produktai/minksti-baldai/kanu-foteliai-ir-koju-atramos-modelis-25389522/",
+      "members": [
+        {
+          "id": "25389522",
+          "path": "/produktai/minksti-baldai/kanu-foteliai-ir-koju-atramos-modelis-25389522/"
+        },
+        {
+          "id": "25389526",
+          "path": "/produktai/minksti-baldai/kanu-foteliai-ir-koju-atramos-modelis-25389526/"
+        }
+      ]
+    },
+    {
+      "productId": "product_kanu-cafe-lounge-tables_d1f337f1",
+      "code": "KKNU003WW003",
+      "keeperId": "27835322",
+      "keeperPath": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27835322/",
+      "members": [
+        {
+          "id": "27835322",
+          "path": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27835322/"
+        },
+        {
+          "id": "27837108",
+          "path": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27837108/"
+        },
+        {
+          "id": "27837710",
+          "path": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27837710/"
+        }
+      ]
+    },
+    {
+      "productId": "product_kanu-cafe-lounge-tables_d1f337f1",
+      "code": "KKNU003WW004",
+      "keeperId": "27836682",
+      "keeperPath": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27836682/",
+      "members": [
+        {
+          "id": "27836682",
+          "path": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27836682/"
+        },
+        {
+          "id": "27837333",
+          "path": "/produktai/stalai/kanu-kavines-ir-poilsio-zonu-stalai-modelis-27837333/"
+        }
+      ]
+    },
+    {
+      "productId": "product_levitate-meeting-tables_91cfdc0e",
+      "code": "KLEV029WW002",
+      "keeperId": "16597869",
+      "keeperPath": "/produktai/stalai/levitate-susitikimu-stalai-modelis-16597869/",
+      "members": [
+        {
+          "id": "16597869",
+          "path": "/produktai/stalai/levitate-susitikimu-stalai-modelis-16597869/"
+        },
+        {
+          "id": "16597876",
+          "path": "/produktai/stalai/levitate-susitikimu-stalai-modelis-16597876/"
+        }
+      ]
+    },
+    {
+      "productId": "product_levitate-meeting-tables_91cfdc0e",
+      "code": "KLEV030WW002",
+      "keeperId": "16597871",
+      "keeperPath": "/produktai/stalai/levitate-susitikimu-stalai-modelis-16597871/",
+      "members": [
+        {
+          "id": "16597871",
+          "path": "/produktai/stalai/levitate-susitikimu-stalai-modelis-16597871/"
+        },
+        {
+          "id": "16597873",
+          "path": "/produktai/stalai/levitate-susitikimu-stalai-modelis-16597873/"
+        }
+      ]
+    },
+    {
+      "productId": "product_levitate-workbenches_b54960e3",
+      "code": "KLEV025WW002",
+      "keeperId": "16384526",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/levitate-bendri-darbo-stalai-modelis-16384526/",
+      "members": [
+        {
+          "id": "16384526",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/levitate-bendri-darbo-stalai-modelis-16384526/"
+        },
+        {
+          "id": "16384632",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/levitate-bendri-darbo-stalai-modelis-16384632/"
+        }
+      ]
+    },
+    {
+      "productId": "product_levitate-workbenches_b54960e3",
+      "code": "KLEV026WW002",
+      "keeperId": "16384635",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/levitate-bendri-darbo-stalai-modelis-16384635/",
+      "members": [
+        {
+          "id": "16384635",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/levitate-bendri-darbo-stalai-modelis-16384635/"
+        },
+        {
+          "id": "16384679",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/levitate-bendri-darbo-stalai-modelis-16384679/"
+        }
+      ]
+    },
+    {
+      "productId": "product_linkup-armchairs-leg-rests_850520d6",
+      "code": "KLUP002WW001",
+      "keeperId": "19868013",
+      "keeperPath": "/produktai/minksti-baldai/linkup-foteliai-ir-koju-atramos-modelis-19868013/",
+      "members": [
+        {
+          "id": "19868013",
+          "path": "/produktai/minksti-baldai/linkup-foteliai-ir-koju-atramos-modelis-19868013/"
+        },
+        {
+          "id": "19868015",
+          "path": "/produktai/minksti-baldai/linkup-foteliai-ir-koju-atramos-modelis-19868015/"
+        }
+      ]
+    },
+    {
+      "productId": "product_lupino-stools-bar-stools_80f304cd",
+      "code": "KLPN019WW002",
+      "keeperId": "29764556",
+      "keeperPath": "/produktai/kedes/lupino-taburetes-ir-baro-kedes-modelis-29764556/",
+      "members": [
+        {
+          "id": "29764556",
+          "path": "/produktai/kedes/lupino-taburetes-ir-baro-kedes-modelis-29764556/"
+        },
+        {
+          "id": "29764557",
+          "path": "/produktai/kedes/lupino-taburetes-ir-baro-kedes-modelis-29764557/"
+        }
+      ]
+    },
+    {
+      "productId": "product_lynx-meeting-chairs_4798c9c2",
+      "code": "KLYN003WW002",
+      "keeperId": "28758854",
+      "keeperPath": "/produktai/kedes/lynx-susitikimu-ir-lankytoju-kedes-modelis-28758854/",
+      "members": [
+        {
+          "id": "28758854",
+          "path": "/produktai/kedes/lynx-susitikimu-ir-lankytoju-kedes-modelis-28758854/"
+        },
+        {
+          "id": "28758855",
+          "path": "/produktai/kedes/lynx-susitikimu-ir-lankytoju-kedes-modelis-28758855/"
+        },
+        {
+          "id": "28758856",
+          "path": "/produktai/kedes/lynx-susitikimu-ir-lankytoju-kedes-modelis-28758856/"
+        },
+        {
+          "id": "28758857",
+          "path": "/produktai/kedes/lynx-susitikimu-ir-lankytoju-kedes-modelis-28758857/"
+        }
+      ]
+    },
+    {
+      "productId": "product_lynx-swivel-chairs_e27b3014",
+      "code": "KLYN002WW002",
+      "keeperId": "28430087",
+      "keeperPath": "/produktai/kedes/lynx-darbo-kedes-modelis-28430087/",
+      "members": [
+        {
+          "id": "28430087",
+          "path": "/produktai/kedes/lynx-darbo-kedes-modelis-28430087/"
+        },
+        {
+          "id": "28430088",
+          "path": "/produktai/kedes/lynx-darbo-kedes-modelis-28430088/"
+        }
+      ]
+    },
+    {
+      "productId": "product_lynx-swivel-chairs_e27b3014",
+      "code": "KLYN001WW002",
+      "keeperId": "28430089",
+      "keeperPath": "/produktai/kedes/lynx-darbo-kedes-modelis-28430089/",
+      "members": [
+        {
+          "id": "28430089",
+          "path": "/produktai/kedes/lynx-darbo-kedes-modelis-28430089/"
+        },
+        {
+          "id": "28430090",
+          "path": "/produktai/kedes/lynx-darbo-kedes-modelis-28430090/"
+        }
+      ]
+    },
+    {
+      "productId": "product_meethink-cafe-lounge-tables_9196c75c",
+      "code": "KMTK003WW003",
+      "keeperId": "25311191",
+      "keeperPath": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311191/",
+      "members": [
+        {
+          "id": "25311191",
+          "path": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311191/"
+        },
+        {
+          "id": "25311194",
+          "path": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311194/"
+        }
+      ]
+    },
+    {
+      "productId": "product_meethink-cafe-lounge-tables_9196c75c",
+      "code": "KMTK003WW001",
+      "keeperId": "25311192",
+      "keeperPath": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311192/",
+      "members": [
+        {
+          "id": "25311192",
+          "path": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311192/"
+        },
+        {
+          "id": "25311195",
+          "path": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311195/"
+        }
+      ]
+    },
+    {
+      "productId": "product_meethink-cafe-lounge-tables_9196c75c",
+      "code": "KMTK003WW002",
+      "keeperId": "25311193",
+      "keeperPath": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311193/",
+      "members": [
+        {
+          "id": "25311193",
+          "path": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311193/"
+        },
+        {
+          "id": "25311196",
+          "path": "/produktai/stalai/meethink-kavines-ir-poilsio-zonu-stalai-modelis-25311196/"
+        }
+      ]
+    },
+    {
+      "productId": "product_meethink-high-tables_7be8d12d",
+      "code": "KMTK002WW001",
+      "keeperId": "25324622",
+      "keeperPath": "/produktai/stalai/meethink-auksti-stalai-modelis-25324622/",
+      "members": [
+        {
+          "id": "25324622",
+          "path": "/produktai/stalai/meethink-auksti-stalai-modelis-25324622/"
+        },
+        {
+          "id": "25324623",
+          "path": "/produktai/stalai/meethink-auksti-stalai-modelis-25324623/"
+        },
+        {
+          "id": "25324624",
+          "path": "/produktai/stalai/meethink-auksti-stalai-modelis-25324624/"
+        },
+        {
+          "id": "25324625",
+          "path": "/produktai/stalai/meethink-auksti-stalai-modelis-25324625/"
+        }
+      ]
+    },
+    {
+      "productId": "product_meethink-meeting-tables_a4ba13ad",
+      "code": "KMTK004WW002",
+      "keeperId": "25316262",
+      "keeperPath": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316262/",
+      "members": [
+        {
+          "id": "25316262",
+          "path": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316262/"
+        },
+        {
+          "id": "25316263",
+          "path": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316263/"
+        },
+        {
+          "id": "25316265",
+          "path": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316265/"
+        }
+      ]
+    },
+    {
+      "productId": "product_meethink-meeting-tables_a4ba13ad",
+      "code": "KMTK001WW001",
+      "keeperId": "25316266",
+      "keeperPath": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316266/",
+      "members": [
+        {
+          "id": "25316266",
+          "path": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316266/"
+        },
+        {
+          "id": "25316267",
+          "path": "/produktai/stalai/meethink-susitikimu-stalai-modelis-25316267/"
+        }
+      ]
+    },
+    {
+      "productId": "product_mollen-armchairs-leg-rests_f79cc8b6",
+      "code": "KMLN001WW001",
+      "keeperId": "25635258",
+      "keeperPath": "/produktai/minksti-baldai/mollen-foteliai-ir-koju-atramos-modelis-25635258/",
+      "members": [
+        {
+          "id": "25635258",
+          "path": "/produktai/minksti-baldai/mollen-foteliai-ir-koju-atramos-modelis-25635258/"
+        },
+        {
+          "id": "25635259",
+          "path": "/produktai/minksti-baldai/mollen-foteliai-ir-koju-atramos-modelis-25635259/"
+        },
+        {
+          "id": "25635260",
+          "path": "/produktai/minksti-baldai/mollen-foteliai-ir-koju-atramos-modelis-25635260/"
+        },
+        {
+          "id": "25635261",
+          "path": "/produktai/minksti-baldai/mollen-foteliai-ir-koju-atramos-modelis-25635261/"
+        }
+      ]
+    },
+    {
+      "productId": "product_mollen-cafe-lounge-tables_e9876a94",
+      "code": "KMLN004WW002",
+      "keeperId": "25640766",
+      "keeperPath": "/produktai/stalai/mollen-kavines-ir-poilsio-zonu-stalai-modelis-25640766/",
+      "members": [
+        {
+          "id": "25640766",
+          "path": "/produktai/stalai/mollen-kavines-ir-poilsio-zonu-stalai-modelis-25640766/"
+        },
+        {
+          "id": "25640767",
+          "path": "/produktai/stalai/mollen-kavines-ir-poilsio-zonu-stalai-modelis-25640767/"
+        }
+      ]
+    },
+    {
+      "productId": "product_mollen-cafe-lounge-tables_e9876a94",
+      "code": "KMLN004WW001",
+      "keeperId": "25640764",
+      "keeperPath": "/produktai/stalai/mollen-kavines-ir-poilsio-zonu-stalai-modelis-25640764/",
+      "members": [
+        {
+          "id": "25640764",
+          "path": "/produktai/stalai/mollen-kavines-ir-poilsio-zonu-stalai-modelis-25640764/"
+        },
+        {
+          "id": "25640765",
+          "path": "/produktai/stalai/mollen-kavines-ir-poilsio-zonu-stalai-modelis-25640765/"
+        }
+      ]
+    },
+    {
+      "productId": "product_mollen-sofas_a213bbf2",
+      "code": "KMLN003WW001",
+      "keeperId": "25638804",
+      "keeperPath": "/produktai/minksti-baldai/mollen-sofos-modelis-25638804/",
+      "members": [
+        {
+          "id": "25638804",
+          "path": "/produktai/minksti-baldai/mollen-sofos-modelis-25638804/"
+        },
+        {
+          "id": "25638805",
+          "path": "/produktai/minksti-baldai/mollen-sofos-modelis-25638805/"
+        }
+      ]
+    },
+    {
+      "productId": "product_motion-meeting-chairs_a2ec7ac6",
+      "code": "KATM006WW001",
+      "keeperId": "15693705",
+      "keeperPath": "/produktai/kedes/motion-susitikimu-ir-lankytoju-kedes-modelis-15693705/",
+      "members": [
+        {
+          "id": "15693705",
+          "path": "/produktai/kedes/motion-susitikimu-ir-lankytoju-kedes-modelis-15693705/"
+        },
+        {
+          "id": "23529011",
+          "path": "/produktai/kedes/motion-susitikimu-ir-lankytoju-kedes-modelis-23529011/"
+        },
+        {
+          "id": "23529012",
+          "path": "/produktai/kedes/motion-susitikimu-ir-lankytoju-kedes-modelis-23529012/"
+        }
+      ]
+    },
+    {
+      "productId": "product_motion-swivel-chairs_028d8ff8",
+      "code": "KATM004WW005",
+      "keeperId": "23549349",
+      "keeperPath": "/produktai/kedes/motion-darbo-kedes-modelis-23549349/",
+      "members": [
+        {
+          "id": "21288728",
+          "path": "/produktai/kedes/motion-darbo-kedes-modelis-21288728/"
+        },
+        {
+          "id": "23549349",
+          "path": "/produktai/kedes/motion-darbo-kedes-modelis-23549349/"
+        }
+      ]
+    },
+    {
+      "productId": "product_motion-swivel-chairs_028d8ff8",
+      "code": "KATM004WW004",
+      "keeperId": "21288726",
+      "keeperPath": "/produktai/kedes/motion-darbo-kedes-modelis-21288726/",
+      "members": [
+        {
+          "id": "21288726",
+          "path": "/produktai/kedes/motion-darbo-kedes-modelis-21288726/"
+        },
+        {
+          "id": "21288729",
+          "path": "/produktai/kedes/motion-darbo-kedes-modelis-21288729/"
+        }
+      ]
+    },
+    {
+      "productId": "product_motion-swivel-chairs_028d8ff8",
+      "code": "KATM004WW006",
+      "keeperId": "23549350",
+      "keeperPath": "/produktai/kedes/motion-darbo-kedes-modelis-23549350/",
+      "members": [
+        {
+          "id": "23549350",
+          "path": "/produktai/kedes/motion-darbo-kedes-modelis-23549350/"
+        },
+        {
+          "id": "23549351",
+          "path": "/produktai/kedes/motion-darbo-kedes-modelis-23549351/"
+        }
+      ]
+    },
+    {
+      "productId": "product_nadir-meeting-chairs_4efad3a3",
+      "code": "KNAD003WW002",
+      "keeperId": "28433477",
+      "keeperPath": "/produktai/kedes/nadir-susitikimu-ir-lankytoju-kedes-modelis-28433477/",
+      "members": [
+        {
+          "id": "28433477",
+          "path": "/produktai/kedes/nadir-susitikimu-ir-lankytoju-kedes-modelis-28433477/"
+        },
+        {
+          "id": "28433478",
+          "path": "/produktai/kedes/nadir-susitikimu-ir-lankytoju-kedes-modelis-28433478/"
+        }
+      ]
+    },
+    {
+      "productId": "product_nadir-office-chairs_3eff0da5",
+      "code": "KNAD001WW002",
+      "keeperId": "28434501",
+      "keeperPath": "/produktai/kedes/nadir-darbo-kedes-modelis-28434501/",
+      "members": [
+        {
+          "id": "28434501",
+          "path": "/produktai/kedes/nadir-darbo-kedes-modelis-28434501/"
+        },
+        {
+          "id": "28434503",
+          "path": "/produktai/kedes/nadir-darbo-kedes-modelis-28434503/"
+        },
+        {
+          "id": "28434502",
+          "path": "/produktai/kedes/nadir-darbo-kedes-modelis-28434502/"
+        }
+      ]
+    },
+    {
+      "productId": "product_nexter-swivel-chairs_f0d8cedf",
+      "code": "KNXT001WW002",
+      "keeperId": "20491029",
+      "keeperPath": "/produktai/kedes/nexter-darbo-kedes-modelis-20491029/",
+      "members": [
+        {
+          "id": "20491029",
+          "path": "/produktai/kedes/nexter-darbo-kedes-modelis-20491029/"
+        },
+        {
+          "id": "20491031",
+          "path": "/produktai/kedes/nexter-darbo-kedes-modelis-20491031/"
+        }
+      ]
+    },
+    {
+      "productId": "product_nexter-swivel-chairs_f0d8cedf",
+      "code": "KNXT002WW002",
+      "keeperId": "20491028",
+      "keeperPath": "/produktai/kedes/nexter-darbo-kedes-modelis-20491028/",
+      "members": [
+        {
+          "id": "20491028",
+          "path": "/produktai/kedes/nexter-darbo-kedes-modelis-20491028/"
+        },
+        {
+          "id": "20491030",
+          "path": "/produktai/kedes/nexter-darbo-kedes-modelis-20491030/"
+        }
+      ]
+    },
+    {
+      "productId": "product_njord-armchairs-leg-rests_58fac32d",
+      "code": "KNJO002WW002",
+      "keeperId": "25866647",
+      "keeperPath": "/produktai/minksti-baldai/njord-foteliai-ir-koju-atramos-modelis-25866647/",
+      "members": [
+        {
+          "id": "25866647",
+          "path": "/produktai/minksti-baldai/njord-foteliai-ir-koju-atramos-modelis-25866647/"
+        },
+        {
+          "id": "25866648",
+          "path": "/produktai/minksti-baldai/njord-foteliai-ir-koju-atramos-modelis-25866648/"
+        },
+        {
+          "id": "25866649",
+          "path": "/produktai/minksti-baldai/njord-foteliai-ir-koju-atramos-modelis-25866649/"
+        },
+        {
+          "id": "25866650",
+          "path": "/produktai/minksti-baldai/njord-foteliai-ir-koju-atramos-modelis-25866650/"
+        }
+      ]
+    },
+    {
+      "productId": "product_njord-cafe-lounge-tables_0624f00b",
+      "code": "KNJO001WW002",
+      "keeperId": "25867159",
+      "keeperPath": "/produktai/stalai/njord-kavines-ir-poilsio-zonu-stalai-modelis-25867159/",
+      "members": [
+        {
+          "id": "25867159",
+          "path": "/produktai/stalai/njord-kavines-ir-poilsio-zonu-stalai-modelis-25867159/"
+        },
+        {
+          "id": "25867160",
+          "path": "/produktai/stalai/njord-kavines-ir-poilsio-zonu-stalai-modelis-25867160/"
+        },
+        {
+          "id": "25867161",
+          "path": "/produktai/stalai/njord-kavines-ir-poilsio-zonu-stalai-modelis-25867161/"
+        },
+        {
+          "id": "25867162",
+          "path": "/produktai/stalai/njord-kavines-ir-poilsio-zonu-stalai-modelis-25867162/"
+        }
+      ]
+    },
+    {
+      "productId": "product_offa-cabinets-sideboards_e345b53b",
+      "code": "KOFA003WW001",
+      "keeperId": "19512550",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/offa-spintos-ir-komodos-modelis-19512550/",
+      "members": [
+        {
+          "id": "19512550",
+          "path": "/produktai/daiktu-laikymo-baldai/offa-spintos-ir-komodos-modelis-19512550/"
+        },
+        {
+          "id": "19512551",
+          "path": "/produktai/daiktu-laikymo-baldai/offa-spintos-ir-komodos-modelis-19512551/"
+        }
+      ]
+    },
+    {
+      "productId": "product_offa-high-tables_a811f6b6",
+      "code": "KOFA006WW001",
+      "keeperId": "19455540",
+      "keeperPath": "/produktai/stalai/offa-auksti-stalai-modelis-19455540/",
+      "members": [
+        {
+          "id": "19455540",
+          "path": "/produktai/stalai/offa-auksti-stalai-modelis-19455540/"
+        },
+        {
+          "id": "19455541",
+          "path": "/produktai/stalai/offa-auksti-stalai-modelis-19455541/"
+        }
+      ]
+    },
+    {
+      "productId": "product_offa-orga-towers-pedestals_438939e5",
+      "code": "KOFA005WW001",
+      "keeperId": "19455896",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/offa-stalciu-blokai-ir-organizavimo-spinteles-modelis-19455896/",
+      "members": [
+        {
+          "id": "19455896",
+          "path": "/produktai/daiktu-laikymo-baldai/offa-stalciu-blokai-ir-organizavimo-spinteles-modelis-19455896/"
+        },
+        {
+          "id": "23767945",
+          "path": "/produktai/daiktu-laikymo-baldai/offa-stalciu-blokai-ir-organizavimo-spinteles-modelis-23767945/"
+        }
+      ]
+    },
+    {
+      "productId": "product_offa-pouffes_24d6360e",
+      "code": "KOFA008WW001",
+      "keeperId": "19557053",
+      "keeperPath": "/produktai/minksti-baldai/offa-pufai-modelis-19557053/",
+      "members": [
+        {
+          "id": "19557053",
+          "path": "/produktai/minksti-baldai/offa-pufai-modelis-19557053/"
+        },
+        {
+          "id": "19557055",
+          "path": "/produktai/minksti-baldai/offa-pufai-modelis-19557055/"
+        },
+        {
+          "id": "19557054",
+          "path": "/produktai/minksti-baldai/offa-pufai-modelis-19557054/"
+        }
+      ]
+    },
+    {
+      "productId": "product_otuli-armchairs-leg-rests_b22fe9a8",
+      "code": "KPMA001WW001",
+      "keeperId": "27378908",
+      "keeperPath": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27378908/",
+      "members": [
+        {
+          "id": "27378908",
+          "path": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27378908/"
+        },
+        {
+          "id": "27379958",
+          "path": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27379958/"
+        },
+        {
+          "id": "27380167",
+          "path": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27380167/"
+        }
+      ]
+    },
+    {
+      "productId": "product_otuli-armchairs-leg-rests_b22fe9a8",
+      "code": "KPMA002WW001",
+      "keeperId": "27380871",
+      "keeperPath": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27380871/",
+      "members": [
+        {
+          "id": "27380871",
+          "path": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27380871/"
+        },
+        {
+          "id": "27381174",
+          "path": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27381174/"
+        },
+        {
+          "id": "27381219",
+          "path": "/produktai/minksti-baldai/otuli-foteliai-ir-koju-atramos-modelis-27381219/"
+        }
+      ]
+    },
+    {
+      "productId": "product_perfect-swivel-chairs_e1093def",
+      "code": "KPER001WW003",
+      "keeperId": "27061805",
+      "keeperPath": "/produktai/kedes/perfect-darbo-kedes-modelis-27061805/",
+      "members": [
+        {
+          "id": "27061805",
+          "path": "/produktai/kedes/perfect-darbo-kedes-modelis-27061805/"
+        },
+        {
+          "id": "27061807",
+          "path": "/produktai/kedes/perfect-darbo-kedes-modelis-27061807/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-cafe-lounge-tables_39f6ba7f",
+      "code": "KPWK064WW001",
+      "keeperId": "26443793",
+      "keeperPath": "/produktai/stalai/play-work-kavines-ir-poilsio-zonu-stalai-modelis-26443793/",
+      "members": [
+        {
+          "id": "26443793",
+          "path": "/produktai/stalai/play-work-kavines-ir-poilsio-zonu-stalai-modelis-26443793/"
+        },
+        {
+          "id": "26443794",
+          "path": "/produktai/stalai/play-work-kavines-ir-poilsio-zonu-stalai-modelis-26443794/"
+        },
+        {
+          "id": "26443795",
+          "path": "/produktai/stalai/play-work-kavines-ir-poilsio-zonu-stalai-modelis-26443795/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-high-tables_5c59297e",
+      "code": "KPW2026WW001",
+      "keeperId": "24045074",
+      "keeperPath": "/produktai/stalai/play-work-auksti-stalai-modelis-24045074/",
+      "members": [
+        {
+          "id": "24045074",
+          "path": "/produktai/stalai/play-work-auksti-stalai-modelis-24045074/"
+        },
+        {
+          "id": "24045075",
+          "path": "/produktai/stalai/play-work-auksti-stalai-modelis-24045075/"
+        },
+        {
+          "id": "24045076",
+          "path": "/produktai/stalai/play-work-auksti-stalai-modelis-24045076/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-modular-systems_d771d519",
+      "code": "KPWK070WW001",
+      "keeperId": "26973439",
+      "keeperPath": "/produktai/minksti-baldai/play-work-modulines-sistemos-modelis-26973439/",
+      "members": [
+        {
+          "id": "26973439",
+          "path": "/produktai/minksti-baldai/play-work-modulines-sistemos-modelis-26973439/"
+        },
+        {
+          "id": "26973440",
+          "path": "/produktai/minksti-baldai/play-work-modulines-sistemos-modelis-26973440/"
+        },
+        {
+          "id": "26973441",
+          "path": "/produktai/minksti-baldai/play-work-modulines-sistemos-modelis-26973441/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-orga-towers-pedestals_e9851b35",
+      "code": "KPW2028WW001",
+      "keeperId": "24049462",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/play-work-stalciu-blokai-ir-organizavimo-spinteles-modelis-24049462/",
+      "members": [
+        {
+          "id": "24049462",
+          "path": "/produktai/daiktu-laikymo-baldai/play-work-stalciu-blokai-ir-organizavimo-spinteles-modelis-24049462/"
+        },
+        {
+          "id": "24049463",
+          "path": "/produktai/daiktu-laikymo-baldai/play-work-stalciu-blokai-ir-organizavimo-spinteles-modelis-24049463/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-pouffes_e8494720",
+      "code": "KPWK068WW001",
+      "keeperId": "27042154",
+      "keeperPath": "/produktai/minksti-baldai/play-work-pufai-modelis-27042154/",
+      "members": [
+        {
+          "id": "27042154",
+          "path": "/produktai/minksti-baldai/play-work-pufai-modelis-27042154/"
+        },
+        {
+          "id": "27042156",
+          "path": "/produktai/minksti-baldai/play-work-pufai-modelis-27042156/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-pouffes_e8494720",
+      "code": "KPWK066WW001",
+      "keeperId": "27042157",
+      "keeperPath": "/produktai/minksti-baldai/play-work-pufai-modelis-27042157/",
+      "members": [
+        {
+          "id": "27042157",
+          "path": "/produktai/minksti-baldai/play-work-pufai-modelis-27042157/"
+        },
+        {
+          "id": "27042158",
+          "path": "/produktai/minksti-baldai/play-work-pufai-modelis-27042158/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-sofas_c1c8fb7e",
+      "code": "KPWK061WW001",
+      "keeperId": "27300852",
+      "keeperPath": "/produktai/minksti-baldai/play-work-sofos-modelis-27300852/",
+      "members": [
+        {
+          "id": "27300852",
+          "path": "/produktai/minksti-baldai/play-work-sofos-modelis-27300852/"
+        },
+        {
+          "id": "27300854",
+          "path": "/produktai/minksti-baldai/play-work-sofos-modelis-27300854/"
+        },
+        {
+          "id": "27300858",
+          "path": "/produktai/minksti-baldai/play-work-sofos-modelis-27300858/"
+        }
+      ]
+    },
+    {
+      "productId": "product_play-work-sofas_c1c8fb7e",
+      "code": "KPWK059WW001",
+      "keeperId": "27300855",
+      "keeperPath": "/produktai/minksti-baldai/play-work-sofos-modelis-27300855/",
+      "members": [
+        {
+          "id": "27300855",
+          "path": "/produktai/minksti-baldai/play-work-sofos-modelis-27300855/"
+        },
+        {
+          "id": "27300856",
+          "path": "/produktai/minksti-baldai/play-work-sofos-modelis-27300856/"
+        }
+      ]
+    },
+    {
+      "productId": "product_prado-swivel-chairs_09889ecc",
+      "code": "KPRA001WW002",
+      "keeperId": "24888548",
+      "keeperPath": "/produktai/kedes/prado-darbo-kedes-modelis-24888548/",
+      "members": [
+        {
+          "id": "24888548",
+          "path": "/produktai/kedes/prado-darbo-kedes-modelis-24888548/"
+        },
+        {
+          "id": "24888550",
+          "path": "/produktai/kedes/prado-darbo-kedes-modelis-24888550/"
+        }
+      ]
+    },
+    {
+      "productId": "product_privi-panels_636a82bf",
+      "code": "KPRV001WW001",
+      "keeperId": "21694144",
+      "keeperPath": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694144/",
+      "members": [
+        {
+          "id": "21694144",
+          "path": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694144/"
+        },
+        {
+          "id": "21694145",
+          "path": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694145/"
+        }
+      ]
+    },
+    {
+      "productId": "product_privi-panels_636a82bf",
+      "code": "KPRV003WW001",
+      "keeperId": "21694146",
+      "keeperPath": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694146/",
+      "members": [
+        {
+          "id": "21694146",
+          "path": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694146/"
+        },
+        {
+          "id": "21694147",
+          "path": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694147/"
+        }
+      ]
+    },
+    {
+      "productId": "product_privi-panels_636a82bf",
+      "code": "KPRV002WW001",
+      "keeperId": "21694148",
+      "keeperPath": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694148/",
+      "members": [
+        {
+          "id": "21694148",
+          "path": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694148/"
+        },
+        {
+          "id": "21694149",
+          "path": "/produktai/akustiniai-sprendimai/privi-akustines-paneles-modelis-21694149/"
+        }
+      ]
+    },
+    {
+      "productId": "product_privi-walls_50590b83",
+      "code": "KPRV004WW001",
+      "keeperId": "13834346",
+      "keeperPath": "/produktai/akustiniai-sprendimai/privi-pertvaros-modelis-13834346/",
+      "members": [
+        {
+          "id": "13834346",
+          "path": "/produktai/akustiniai-sprendimai/privi-pertvaros-modelis-13834346/"
+        },
+        {
+          "id": "13834349",
+          "path": "/produktai/akustiniai-sprendimai/privi-pertvaros-modelis-13834349/"
+        },
+        {
+          "id": "13834348",
+          "path": "/produktai/akustiniai-sprendimai/privi-pertvaros-modelis-13834348/"
+        },
+        {
+          "id": "13834347",
+          "path": "/produktai/akustiniai-sprendimai/privi-pertvaros-modelis-13834347/"
+        }
+      ]
+    },
+    {
+      "productId": "product_prox-swivel-chairs_2cc6664f",
+      "code": "KPOX002WW001",
+      "keeperId": "32241864",
+      "keeperPath": "/produktai/kedes/prox-darbo-kedes-modelis-32241864/",
+      "members": [
+        {
+          "id": "32241864",
+          "path": "/produktai/kedes/prox-darbo-kedes-modelis-32241864/"
+        },
+        {
+          "id": "32241865",
+          "path": "/produktai/kedes/prox-darbo-kedes-modelis-32241865/"
+        }
+      ]
+    },
+    {
+      "productId": "product_puzlo-cabinets-sideboards_18afc598",
+      "code": "KPUZ006WW001",
+      "keeperId": "13482545",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-13482545/",
+      "members": [
+        {
+          "id": "13482545",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-13482545/"
+        },
+        {
+          "id": "23776127",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-23776127/"
+        },
+        {
+          "id": "13482546",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-13482546/"
+        }
+      ]
+    },
+    {
+      "productId": "product_puzlo-cabinets-sideboards_18afc598",
+      "code": "KPUZ007WW001",
+      "keeperId": "23776128",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-23776128/",
+      "members": [
+        {
+          "id": "23776128",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-23776128/"
+        },
+        {
+          "id": "23776129",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-23776129/"
+        },
+        {
+          "id": "23776130",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-spintos-ir-komodos-modelis-23776130/"
+        }
+      ]
+    },
+    {
+      "productId": "product_puzlo-lockers_75ec2c81",
+      "code": "KPUZ003WW001",
+      "keeperId": "23784198",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784198/",
+      "members": [
+        {
+          "id": "23784198",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784198/"
+        },
+        {
+          "id": "23784199",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784199/"
+        }
+      ]
+    },
+    {
+      "productId": "product_puzlo-lockers_75ec2c81",
+      "code": "KPUZ004WW001",
+      "keeperId": "23784200",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784200/",
+      "members": [
+        {
+          "id": "23784200",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784200/"
+        },
+        {
+          "id": "23784201",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784201/"
+        },
+        {
+          "id": "23784203",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784203/"
+        },
+        {
+          "id": "23784204",
+          "path": "/produktai/daiktu-laikymo-baldai/puzlo-rakinamos-spinteles-modelis-23784204/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sail-meeting-chairs_8baf56a0",
+      "code": "KSAI004WW002",
+      "keeperId": "19640461",
+      "keeperPath": "/produktai/kedes/sail-susitikimu-ir-lankytoju-kedes-modelis-19640461/",
+      "members": [
+        {
+          "id": "19640461",
+          "path": "/produktai/kedes/sail-susitikimu-ir-lankytoju-kedes-modelis-19640461/"
+        },
+        {
+          "id": "19640463",
+          "path": "/produktai/kedes/sail-susitikimu-ir-lankytoju-kedes-modelis-19640463/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sail-swivel-chairs_5c919239",
+      "code": "KSAI001WW002",
+      "keeperId": "19629916",
+      "keeperPath": "/produktai/kedes/sail-darbo-kedes-modelis-19629916/",
+      "members": [
+        {
+          "id": "19629915",
+          "path": "/produktai/kedes/sail-darbo-kedes-modelis-19629915/"
+        },
+        {
+          "id": "19629916",
+          "path": "/produktai/kedes/sail-darbo-kedes-modelis-19629916/"
+        },
+        {
+          "id": "19629917",
+          "path": "/produktai/kedes/sail-darbo-kedes-modelis-19629917/"
+        },
+        {
+          "id": "19629918",
+          "path": "/produktai/kedes/sail-darbo-kedes-modelis-19629918/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sail-swivel-chairs_5c919239",
+      "code": "KSAI008WW002",
+      "keeperId": "19629920",
+      "keeperPath": "/produktai/kedes/sail-darbo-kedes-modelis-19629920/",
+      "members": [
+        {
+          "id": "19629919",
+          "path": "/produktai/kedes/sail-darbo-kedes-modelis-19629919/"
+        },
+        {
+          "id": "19629920",
+          "path": "/produktai/kedes/sail-darbo-kedes-modelis-19629920/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sand-pouffes_68dfea59",
+      "code": "KSAN049WW001",
+      "keeperId": "28037521",
+      "keeperPath": "/produktai/minksti-baldai/sand-pufai-modelis-28037521/",
+      "members": [
+        {
+          "id": "28037521",
+          "path": "/produktai/minksti-baldai/sand-pufai-modelis-28037521/"
+        },
+        {
+          "id": "28037522",
+          "path": "/produktai/minksti-baldai/sand-pufai-modelis-28037522/"
+        },
+        {
+          "id": "28037523",
+          "path": "/produktai/minksti-baldai/sand-pufai-modelis-28037523/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sand-sofas_5d12af40",
+      "code": "KSAN050WW001",
+      "keeperId": "28038441",
+      "keeperPath": "/produktai/minksti-baldai/sand-sofos-modelis-28038441/",
+      "members": [
+        {
+          "id": "28038441",
+          "path": "/produktai/minksti-baldai/sand-sofos-modelis-28038441/"
+        },
+        {
+          "id": "28038443",
+          "path": "/produktai/minksti-baldai/sand-sofos-modelis-28038443/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sand-sofas_5d12af40",
+      "code": "KSAN051WW001",
+      "keeperId": "28038442",
+      "keeperPath": "/produktai/minksti-baldai/sand-sofos-modelis-28038442/",
+      "members": [
+        {
+          "id": "28038442",
+          "path": "/produktai/minksti-baldai/sand-sofos-modelis-28038442/"
+        },
+        {
+          "id": "28038444",
+          "path": "/produktai/minksti-baldai/sand-sofos-modelis-28038444/"
+        }
+      ]
+    },
+    {
+      "productId": "product_scadio-armchairs-leg-rests_9409664e",
+      "code": "KSCA001WW001",
+      "keeperId": "25703664",
+      "keeperPath": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-25703664/",
+      "members": [
+        {
+          "id": "25703664",
+          "path": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-25703664/"
+        },
+        {
+          "id": "25703666",
+          "path": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-25703666/"
+        }
+      ]
+    },
+    {
+      "productId": "product_scadio-armchairs-leg-rests_9409664e",
+      "code": "KSCA004WW001",
+      "keeperId": "26734033",
+      "keeperPath": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-26734033/",
+      "members": [
+        {
+          "id": "26734033",
+          "path": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-26734033/"
+        },
+        {
+          "id": "26734034",
+          "path": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-26734034/"
+        }
+      ]
+    },
+    {
+      "productId": "product_scadio-armchairs-leg-rests_9409664e",
+      "code": "KSCA003WW001",
+      "keeperId": "25703665",
+      "keeperPath": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-25703665/",
+      "members": [
+        {
+          "id": "25703665",
+          "path": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-25703665/"
+        },
+        {
+          "id": "25703667",
+          "path": "/produktai/minksti-baldai/scadio-foteliai-ir-koju-atramos-modelis-25703667/"
+        }
+      ]
+    },
+    {
+      "productId": "product_semu-cafe-lounge-tables_b85b9ca3",
+      "code": "KSEM002WW001",
+      "keeperId": "25701353",
+      "keeperPath": "/produktai/stalai/semu-kavines-ir-poilsio-zonu-stalai-modelis-25701353/",
+      "members": [
+        {
+          "id": "25701353",
+          "path": "/produktai/stalai/semu-kavines-ir-poilsio-zonu-stalai-modelis-25701353/"
+        },
+        {
+          "id": "25702053",
+          "path": "/produktai/stalai/semu-kavines-ir-poilsio-zonu-stalai-modelis-25702053/"
+        }
+      ]
+    },
+    {
+      "productId": "product_semu-cafe-lounge-tables_b85b9ca3",
+      "code": "KSEM001WW001",
+      "keeperId": "25702051",
+      "keeperPath": "/produktai/stalai/semu-kavines-ir-poilsio-zonu-stalai-modelis-25702051/",
+      "members": [
+        {
+          "id": "25702051",
+          "path": "/produktai/stalai/semu-kavines-ir-poilsio-zonu-stalai-modelis-25702051/"
+        },
+        {
+          "id": "25702052",
+          "path": "/produktai/stalai/semu-kavines-ir-poilsio-zonu-stalai-modelis-25702052/"
+        }
+      ]
+    },
+    {
+      "productId": "product_smile-meeting-chairs_80d1ed69",
+      "code": "KSML002WW002",
+      "keeperId": "25628157",
+      "keeperPath": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628157/",
+      "members": [
+        {
+          "id": "25628157",
+          "path": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628157/"
+        },
+        {
+          "id": "25628160",
+          "path": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628160/"
+        }
+      ]
+    },
+    {
+      "productId": "product_smile-meeting-chairs_80d1ed69",
+      "code": "KSML006WW002",
+      "keeperId": "25628158",
+      "keeperPath": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628158/",
+      "members": [
+        {
+          "id": "25628158",
+          "path": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628158/"
+        },
+        {
+          "id": "25628161",
+          "path": "/produktai/kedes/smile-susitikimu-ir-lankytoju-kedes-modelis-25628161/"
+        }
+      ]
+    },
+    {
+      "productId": "product_so-one-meeting-chairs_c95e8fdb",
+      "code": "KSOO003WW001",
+      "keeperId": "23374286",
+      "keeperPath": "/produktai/kedes/so-one-susitikimu-ir-lankytoju-kedes-modelis-23374286/",
+      "members": [
+        {
+          "id": "23374286",
+          "path": "/produktai/kedes/so-one-susitikimu-ir-lankytoju-kedes-modelis-23374286/"
+        },
+        {
+          "id": "23374287",
+          "path": "/produktai/kedes/so-one-susitikimu-ir-lankytoju-kedes-modelis-23374287/"
+        },
+        {
+          "id": "23374288",
+          "path": "/produktai/kedes/so-one-susitikimu-ir-lankytoju-kedes-modelis-23374288/"
+        }
+      ]
+    },
+    {
+      "productId": "product_so-one-swivel-chairs_1004dc49",
+      "code": "KSOO004WW002",
+      "keeperId": "23374292",
+      "keeperPath": "/produktai/kedes/so-one-darbo-kedes-modelis-23374292/",
+      "members": [
+        {
+          "id": "23374292",
+          "path": "/produktai/kedes/so-one-darbo-kedes-modelis-23374292/"
+        },
+        {
+          "id": "23374294",
+          "path": "/produktai/kedes/so-one-darbo-kedes-modelis-23374294/"
+        },
+        {
+          "id": "23374296",
+          "path": "/produktai/kedes/so-one-darbo-kedes-modelis-23374296/"
+        }
+      ]
+    },
+    {
+      "productId": "product_so-one-swivel-chairs_1004dc49",
+      "code": "KSOO005WW002",
+      "keeperId": "23374293",
+      "keeperPath": "/produktai/kedes/so-one-darbo-kedes-modelis-23374293/",
+      "members": [
+        {
+          "id": "23374293",
+          "path": "/produktai/kedes/so-one-darbo-kedes-modelis-23374293/"
+        },
+        {
+          "id": "23374295",
+          "path": "/produktai/kedes/so-one-darbo-kedes-modelis-23374295/"
+        }
+      ]
+    },
+    {
+      "productId": "product_souly-swivel-chairs_e1805fc7",
+      "code": "KSOU001WW003",
+      "keeperId": "23664987",
+      "keeperPath": "/produktai/kedes/souly-darbo-kedes-modelis-23664987/",
+      "members": [
+        {
+          "id": "16088654",
+          "path": "/produktai/kedes/souly-darbo-kedes-modelis-16088654/"
+        },
+        {
+          "id": "23664986",
+          "path": "/produktai/kedes/souly-darbo-kedes-modelis-23664986/"
+        },
+        {
+          "id": "23664987",
+          "path": "/produktai/kedes/souly-darbo-kedes-modelis-23664987/"
+        }
+      ]
+    },
+    {
+      "productId": "product_souly-swivel-chairs_e1805fc7",
+      "code": "KSOU001WW004",
+      "keeperId": "16088659",
+      "keeperPath": "/produktai/kedes/souly-darbo-kedes-modelis-16088659/",
+      "members": [
+        {
+          "id": "16088657",
+          "path": "/produktai/kedes/souly-darbo-kedes-modelis-16088657/"
+        },
+        {
+          "id": "16088659",
+          "path": "/produktai/kedes/souly-darbo-kedes-modelis-16088659/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sqart-desks_345c2715",
+      "code": "KSQA127WW001",
+      "keeperId": "24972413",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/sqart-rasomieji-stalai-modelis-24972413/",
+      "members": [
+        {
+          "id": "24972413",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/sqart-rasomieji-stalai-modelis-24972413/"
+        },
+        {
+          "id": "24972415",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/sqart-rasomieji-stalai-modelis-24972415/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sqart-high-tables_888d7e84",
+      "code": "KSQA173WW001",
+      "keeperId": "24759296",
+      "keeperPath": "/produktai/stalai/sqart-auksti-stalai-modelis-24759296/",
+      "members": [
+        {
+          "id": "24759296",
+          "path": "/produktai/stalai/sqart-auksti-stalai-modelis-24759296/"
+        },
+        {
+          "id": "24759297",
+          "path": "/produktai/stalai/sqart-auksti-stalai-modelis-24759297/"
+        },
+        {
+          "id": "24759298",
+          "path": "/produktai/stalai/sqart-auksti-stalai-modelis-24759298/"
+        },
+        {
+          "id": "24759299",
+          "path": "/produktai/stalai/sqart-auksti-stalai-modelis-24759299/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sqart-stools-bar-stools_a49af8c6",
+      "code": "KSQA176WW001",
+      "keeperId": "24758701",
+      "keeperPath": "/produktai/kedes/sqart-taburetes-ir-baro-kedes-modelis-24758701/",
+      "members": [
+        {
+          "id": "24758701",
+          "path": "/produktai/kedes/sqart-taburetes-ir-baro-kedes-modelis-24758701/"
+        },
+        {
+          "id": "24758702",
+          "path": "/produktai/kedes/sqart-taburetes-ir-baro-kedes-modelis-24758702/"
+        },
+        {
+          "id": "24758703",
+          "path": "/produktai/kedes/sqart-taburetes-ir-baro-kedes-modelis-24758703/"
+        },
+        {
+          "id": "24758704",
+          "path": "/produktai/kedes/sqart-taburetes-ir-baro-kedes-modelis-24758704/"
+        }
+      ]
+    },
+    {
+      "productId": "product_studio-armchairs-leg-rests_3f13d552",
+      "code": "KSTU001WW002",
+      "keeperId": "20731342",
+      "keeperPath": "/produktai/minksti-baldai/studio-foteliai-ir-koju-atramos-modelis-20731342/",
+      "members": [
+        {
+          "id": "20731342",
+          "path": "/produktai/minksti-baldai/studio-foteliai-ir-koju-atramos-modelis-20731342/"
+        },
+        {
+          "id": "20731344",
+          "path": "/produktai/minksti-baldai/studio-foteliai-ir-koju-atramos-modelis-20731344/"
+        },
+        {
+          "id": "20731343",
+          "path": "/produktai/minksti-baldai/studio-foteliai-ir-koju-atramos-modelis-20731343/"
+        }
+      ]
+    },
+    {
+      "productId": "product_studio-cafe-lounge-tables_83abbb75",
+      "code": "KSTU008WW001",
+      "keeperId": "22915491",
+      "keeperPath": "/produktai/stalai/studio-kavines-ir-poilsio-zonu-stalai-modelis-22915491/",
+      "members": [
+        {
+          "id": "22915491",
+          "path": "/produktai/stalai/studio-kavines-ir-poilsio-zonu-stalai-modelis-22915491/"
+        },
+        {
+          "id": "22915492",
+          "path": "/produktai/stalai/studio-kavines-ir-poilsio-zonu-stalai-modelis-22915492/"
+        }
+      ]
+    },
+    {
+      "productId": "product_studio-sofas_63f787ae",
+      "code": "KSTU003WW002",
+      "keeperId": "20832526",
+      "keeperPath": "/produktai/minksti-baldai/studio-sofos-modelis-20832526/",
+      "members": [
+        {
+          "id": "20832526",
+          "path": "/produktai/minksti-baldai/studio-sofos-modelis-20832526/"
+        },
+        {
+          "id": "20832527",
+          "path": "/produktai/minksti-baldai/studio-sofos-modelis-20832527/"
+        }
+      ]
+    },
+    {
+      "productId": "product_styl-meeting-chairs_60fdacb4",
+      "code": "KSTY001WW004",
+      "keeperId": "20929369",
+      "keeperPath": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929369/",
+      "members": [
+        {
+          "id": "20929369",
+          "path": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929369/"
+        },
+        {
+          "id": "20929370",
+          "path": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929370/"
+        }
+      ]
+    },
+    {
+      "productId": "product_styl-meeting-chairs_60fdacb4",
+      "code": "KSTY001WW003",
+      "keeperId": "20929371",
+      "keeperPath": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929371/",
+      "members": [
+        {
+          "id": "20929371",
+          "path": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929371/"
+        },
+        {
+          "id": "20929372",
+          "path": "/produktai/kedes/styl-susitikimu-ir-lankytoju-kedes-modelis-20929372/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sylwia-s-meeting-chairs_12123440",
+      "code": "KSYL001WW003",
+      "keeperId": "27819538",
+      "keeperPath": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819538/",
+      "members": [
+        {
+          "id": "27819538",
+          "path": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819538/"
+        },
+        {
+          "id": "27819540",
+          "path": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819540/"
+        }
+      ]
+    },
+    {
+      "productId": "product_sylwia-s-meeting-chairs_12123440",
+      "code": "KSYL001WW004",
+      "keeperId": "27819537",
+      "keeperPath": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819537/",
+      "members": [
+        {
+          "id": "27819537",
+          "path": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819537/"
+        },
+        {
+          "id": "27819541",
+          "path": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819541/"
+        },
+        {
+          "id": "27819539",
+          "path": "/produktai/kedes/sylwia-s-susitikimu-ir-lankytoju-kedes-modelis-27819539/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tapa-cafe-lounge-tables_d613d36e",
+      "code": "KTAP006WW001",
+      "keeperId": "16088183",
+      "keeperPath": "/produktai/stalai/tapa-kavines-ir-poilsio-zonu-stalai-modelis-16088183/",
+      "members": [
+        {
+          "id": "16088183",
+          "path": "/produktai/stalai/tapa-kavines-ir-poilsio-zonu-stalai-modelis-16088183/"
+        },
+        {
+          "id": "16088185",
+          "path": "/produktai/stalai/tapa-kavines-ir-poilsio-zonu-stalai-modelis-16088185/"
+        },
+        {
+          "id": "16088186",
+          "path": "/produktai/stalai/tapa-kavines-ir-poilsio-zonu-stalai-modelis-16088186/"
+        },
+        {
+          "id": "16088184",
+          "path": "/produktai/stalai/tapa-kavines-ir-poilsio-zonu-stalai-modelis-16088184/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tauko-cafe-lounge-tables_de16e263",
+      "code": "KTAU006WW002",
+      "keeperId": "16088332",
+      "keeperPath": "/produktai/stalai/tauko-kavines-ir-poilsio-zonu-stalai-modelis-16088332/",
+      "members": [
+        {
+          "id": "16088332",
+          "path": "/produktai/stalai/tauko-kavines-ir-poilsio-zonu-stalai-modelis-16088332/"
+        },
+        {
+          "id": "16088333",
+          "path": "/produktai/stalai/tauko-kavines-ir-poilsio-zonu-stalai-modelis-16088333/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tauko-meeting-chairs_92ce2bfd",
+      "code": "KTAU003WW002",
+      "keeperId": "16088380",
+      "keeperPath": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088380/",
+      "members": [
+        {
+          "id": "16088380",
+          "path": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088380/"
+        },
+        {
+          "id": "16088381",
+          "path": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088381/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tauko-meeting-chairs_92ce2bfd",
+      "code": "KTAU001WW002",
+      "keeperId": "16088374",
+      "keeperPath": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088374/",
+      "members": [
+        {
+          "id": "16088374",
+          "path": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088374/"
+        },
+        {
+          "id": "16088375",
+          "path": "/produktai/kedes/tauko-susitikimu-ir-lankytoju-kedes-modelis-16088375/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tauko-meeting-tables_c2a9ba4a",
+      "code": "KTAU005WW002",
+      "keeperId": "15837617",
+      "keeperPath": "/produktai/stalai/tauko-susitikimu-stalai-modelis-15837617/",
+      "members": [
+        {
+          "id": "15837617",
+          "path": "/produktai/stalai/tauko-susitikimu-stalai-modelis-15837617/"
+        },
+        {
+          "id": "15837618",
+          "path": "/produktai/stalai/tauko-susitikimu-stalai-modelis-15837618/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tento-2-0-orga-towers-pedestals_1980317f",
+      "code": "KTE2001WW001",
+      "keeperId": "30589087",
+      "keeperPath": "/produktai/daiktu-laikymo-baldai/tento-2-0-stalciu-blokai-ir-organizavimo-spinteles-modelis-30589087/",
+      "members": [
+        {
+          "id": "30589087",
+          "path": "/produktai/daiktu-laikymo-baldai/tento-2-0-stalciu-blokai-ir-organizavimo-spinteles-modelis-30589087/"
+        },
+        {
+          "id": "30589089",
+          "path": "/produktai/daiktu-laikymo-baldai/tento-2-0-stalciu-blokai-ir-organizavimo-spinteles-modelis-30589089/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tepee-armchairs-leg-rests_4230e8a7",
+      "code": "KTEP015WW002",
+      "keeperId": "14770946",
+      "keeperPath": "/produktai/minksti-baldai/tepee-foteliai-ir-koju-atramos-modelis-14770946/",
+      "members": [
+        {
+          "id": "14770946",
+          "path": "/produktai/minksti-baldai/tepee-foteliai-ir-koju-atramos-modelis-14770946/"
+        },
+        {
+          "id": "14770949",
+          "path": "/produktai/minksti-baldai/tepee-foteliai-ir-koju-atramos-modelis-14770949/"
+        },
+        {
+          "id": "14770948",
+          "path": "/produktai/minksti-baldai/tepee-foteliai-ir-koju-atramos-modelis-14770948/"
+        },
+        {
+          "id": "14770947",
+          "path": "/produktai/minksti-baldai/tepee-foteliai-ir-koju-atramos-modelis-14770947/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tepee-cafe-lounge-tables_7e2f6744",
+      "code": "KTEP003WW004",
+      "keeperId": "15284629",
+      "keeperPath": "/produktai/stalai/tepee-kavines-ir-poilsio-zonu-stalai-modelis-15284629/",
+      "members": [
+        {
+          "id": "15284629",
+          "path": "/produktai/stalai/tepee-kavines-ir-poilsio-zonu-stalai-modelis-15284629/"
+        },
+        {
+          "id": "15284630",
+          "path": "/produktai/stalai/tepee-kavines-ir-poilsio-zonu-stalai-modelis-15284630/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tepee-sofas_59860fc0",
+      "code": "KTEP008WW001",
+      "keeperId": "14403528",
+      "keeperPath": "/produktai/minksti-baldai/tepee-sofos-modelis-14403528/",
+      "members": [
+        {
+          "id": "14403528",
+          "path": "/produktai/minksti-baldai/tepee-sofos-modelis-14403528/"
+        },
+        {
+          "id": "14403529",
+          "path": "/produktai/minksti-baldai/tepee-sofos-modelis-14403529/"
+        },
+        {
+          "id": "14403531",
+          "path": "/produktai/minksti-baldai/tepee-sofos-modelis-14403531/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tiger-up-meeting-chairs_2418d1bc",
+      "code": "KTGU008WW002",
+      "keeperId": "26117950",
+      "keeperPath": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117950/",
+      "members": [
+        {
+          "id": "26117950",
+          "path": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117950/"
+        },
+        {
+          "id": "26117953",
+          "path": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117953/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tiger-up-meeting-chairs_2418d1bc",
+      "code": "KTGU007WW002",
+      "keeperId": "26117951",
+      "keeperPath": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117951/",
+      "members": [
+        {
+          "id": "26117951",
+          "path": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117951/"
+        },
+        {
+          "id": "26117952",
+          "path": "/produktai/kedes/tiger-up-susitikimu-ir-lankytoju-kedes-modelis-26117952/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tiger-up-swivel-chairs_af889fe3",
+      "code": "KTGU004WW002",
+      "keeperId": "26117038",
+      "keeperPath": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117038/",
+      "members": [
+        {
+          "id": "26117038",
+          "path": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117038/"
+        },
+        {
+          "id": "26117040",
+          "path": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117040/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tiger-up-swivel-chairs_af889fe3",
+      "code": "KTGU001WW002",
+      "keeperId": "26117039",
+      "keeperPath": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117039/",
+      "members": [
+        {
+          "id": "26117039",
+          "path": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117039/"
+        },
+        {
+          "id": "26117041",
+          "path": "/produktai/kedes/tiger-up-darbo-kedes-modelis-26117041/"
+        }
+      ]
+    },
+    {
+      "productId": "product_timmi-stools-bar-stools_5d9910dd",
+      "code": "KTIM001WW001",
+      "keeperId": "20501895",
+      "keeperPath": "/produktai/kedes/timmi-taburetes-ir-baro-kedes-modelis-20501895/",
+      "members": [
+        {
+          "id": "20501895",
+          "path": "/produktai/kedes/timmi-taburetes-ir-baro-kedes-modelis-20501895/"
+        },
+        {
+          "id": "20501897",
+          "path": "/produktai/kedes/timmi-taburetes-ir-baro-kedes-modelis-20501897/"
+        },
+        {
+          "id": "20501900",
+          "path": "/produktai/kedes/timmi-taburetes-ir-baro-kedes-modelis-20501900/"
+        }
+      ]
+    },
+    {
+      "productId": "product_trofi-swivel-chairs_d94e6c58",
+      "code": "KTRF001WW001",
+      "keeperId": "30682750",
+      "keeperPath": "/produktai/kedes/trofi-darbo-kedes-modelis-30682750/",
+      "members": [
+        {
+          "id": "30682750",
+          "path": "/produktai/kedes/trofi-darbo-kedes-modelis-30682750/"
+        },
+        {
+          "id": "30682751",
+          "path": "/produktai/kedes/trofi-darbo-kedes-modelis-30682751/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tulipan-meeting-chairs_230e271e",
+      "code": "KTUL001WW002",
+      "keeperId": "26075291",
+      "keeperPath": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075291/",
+      "members": [
+        {
+          "id": "26075291",
+          "path": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075291/"
+        },
+        {
+          "id": "26075292",
+          "path": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075292/"
+        }
+      ]
+    },
+    {
+      "productId": "product_tulipan-meeting-chairs_230e271e",
+      "code": "KTUL002WW002",
+      "keeperId": "26075293",
+      "keeperPath": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075293/",
+      "members": [
+        {
+          "id": "26075293",
+          "path": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075293/"
+        },
+        {
+          "id": "26075294",
+          "path": "/produktai/kedes/tulipan-susitikimu-ir-lankytoju-kedes-modelis-26075294/"
+        }
+      ]
+    },
+    {
+      "productId": "product_v-care-meeting-chairs_45980132",
+      "code": "KVCR001WW003",
+      "keeperId": "24865526",
+      "keeperPath": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865526/",
+      "members": [
+        {
+          "id": "24865526",
+          "path": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865526/"
+        },
+        {
+          "id": "24865528",
+          "path": "/produktai/kedes/v-care-susitikimu-ir-lankytoju-kedes-modelis-24865528/"
+        }
+      ]
+    },
+    {
+      "productId": "product_vapaa-stools-bar-stools_23af9e28",
+      "code": "KVAP004WW002",
+      "keeperId": "26875026",
+      "keeperPath": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26875026/",
+      "members": [
+        {
+          "id": "26875026",
+          "path": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-26875026/"
+        },
+        {
+          "id": "27405118",
+          "path": "/produktai/kedes/vapaa-taburetes-ir-baro-kedes-modelis-27405118/"
+        }
+      ]
+    },
+    {
+      "productId": "product_versi-pouffes_cf3f458c",
+      "code": "KVRS001WW001",
+      "keeperId": "23257294",
+      "keeperPath": "/produktai/minksti-baldai/versi-pufai-modelis-23257294/",
+      "members": [
+        {
+          "id": "23257294",
+          "path": "/produktai/minksti-baldai/versi-pufai-modelis-23257294/"
+        },
+        {
+          "id": "23257295",
+          "path": "/produktai/minksti-baldai/versi-pufai-modelis-23257295/"
+        },
+        {
+          "id": "23257296",
+          "path": "/produktai/minksti-baldai/versi-pufai-modelis-23257296/"
+        },
+        {
+          "id": "23257297",
+          "path": "/produktai/minksti-baldai/versi-pufai-modelis-23257297/"
+        }
+      ]
+    },
+    {
+      "productId": "product_viden-swivel-chairs_90d56840",
+      "code": "KVID008WW001",
+      "keeperId": "22841933",
+      "keeperPath": "/produktai/kedes/viden-darbo-kedes-modelis-22841933/",
+      "members": [
+        {
+          "id": "22841933",
+          "path": "/produktai/kedes/viden-darbo-kedes-modelis-22841933/"
+        },
+        {
+          "id": "22841937",
+          "path": "/produktai/kedes/viden-darbo-kedes-modelis-22841937/"
+        }
+      ]
+    },
+    {
+      "productId": "product_x-line-swivel-chairs_19b207ad",
+      "code": "KXLI002WW002",
+      "keeperId": "15680150",
+      "keeperPath": "/produktai/kedes/x-line-darbo-kedes-modelis-15680150/",
+      "members": [
+        {
+          "id": "15680149",
+          "path": "/produktai/kedes/x-line-darbo-kedes-modelis-15680149/"
+        },
+        {
+          "id": "15680150",
+          "path": "/produktai/kedes/x-line-darbo-kedes-modelis-15680150/"
+        },
+        {
+          "id": "15680151",
+          "path": "/produktai/kedes/x-line-darbo-kedes-modelis-15680151/"
+        },
+        {
+          "id": "15680152",
+          "path": "/produktai/kedes/x-line-darbo-kedes-modelis-15680152/"
+        }
+      ]
+    },
+    {
+      "productId": "product_x-line-swivel-chairs_19b207ad",
+      "code": "KXLI001WW002",
+      "keeperId": "15680148",
+      "keeperPath": "/produktai/kedes/x-line-darbo-kedes-modelis-15680148/",
+      "members": [
+        {
+          "id": "15680147",
+          "path": "/produktai/kedes/x-line-darbo-kedes-modelis-15680147/"
+        },
+        {
+          "id": "15680148",
+          "path": "/produktai/kedes/x-line-darbo-kedes-modelis-15680148/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xenium-swivel-chairs_5c29c487",
+      "code": "KXEN034WW001",
+      "keeperId": "23567099",
+      "keeperPath": "/produktai/kedes/xenium-darbo-kedes-modelis-23567099/",
+      "members": [
+        {
+          "id": "23567099",
+          "path": "/produktai/kedes/xenium-darbo-kedes-modelis-23567099/"
+        },
+        {
+          "id": "23567102",
+          "path": "/produktai/kedes/xenium-darbo-kedes-modelis-23567102/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xilium-meeting-chairs_0d207af2",
+      "code": "KXIL051WW002",
+      "keeperId": "23631554",
+      "keeperPath": "/produktai/kedes/xilium-susitikimu-ir-lankytoju-kedes-modelis-23631554/",
+      "members": [
+        {
+          "id": "23631554",
+          "path": "/produktai/kedes/xilium-susitikimu-ir-lankytoju-kedes-modelis-23631554/"
+        },
+        {
+          "id": "23631560",
+          "path": "/produktai/kedes/xilium-susitikimu-ir-lankytoju-kedes-modelis-23631560/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xilium-swivel-chairs_0fe4091b",
+      "code": "KXIL044WW001",
+      "keeperId": "23636148",
+      "keeperPath": "/produktai/kedes/xilium-darbo-kedes-modelis-23636148/",
+      "members": [
+        {
+          "id": "23636152",
+          "path": "/produktai/kedes/xilium-darbo-kedes-modelis-23636152/"
+        },
+        {
+          "id": "23636148",
+          "path": "/produktai/kedes/xilium-darbo-kedes-modelis-23636148/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xilium-swivel-chairs_0fe4091b",
+      "code": "KXIL045WW001",
+      "keeperId": "23636153",
+      "keeperPath": "/produktai/kedes/xilium-darbo-kedes-modelis-23636153/",
+      "members": [
+        {
+          "id": "23636149",
+          "path": "/produktai/kedes/xilium-darbo-kedes-modelis-23636149/"
+        },
+        {
+          "id": "23636153",
+          "path": "/produktai/kedes/xilium-darbo-kedes-modelis-23636153/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xilium-swivel-chairs_0fe4091b",
+      "code": "KXIL046WW001",
+      "keeperId": "23636151",
+      "keeperPath": "/produktai/kedes/xilium-darbo-kedes-modelis-23636151/",
+      "members": [
+        {
+          "id": "23636150",
+          "path": "/produktai/kedes/xilium-darbo-kedes-modelis-23636150/"
+        },
+        {
+          "id": "23636151",
+          "path": "/produktai/kedes/xilium-darbo-kedes-modelis-23636151/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xio20-desks_c7ca56f6",
+      "code": "KXI2001WW003",
+      "keeperId": "28627494",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-rasomieji-stalai-modelis-28627494/",
+      "members": [
+        {
+          "id": "28627494",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-rasomieji-stalai-modelis-28627494/"
+        },
+        {
+          "id": "28627498",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-rasomieji-stalai-modelis-28627498/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xio20-meeting-tables_cf305a87",
+      "code": "KXI2011WW002",
+      "keeperId": "13856126",
+      "keeperPath": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-13856126/",
+      "members": [
+        {
+          "id": "13856126",
+          "path": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-13856126/"
+        },
+        {
+          "id": "13856129",
+          "path": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-13856129/"
+        },
+        {
+          "id": "13856128",
+          "path": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-13856128/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xio20-meeting-tables_cf305a87",
+      "code": "KXI2018WW001",
+      "keeperId": "20257927",
+      "keeperPath": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-20257927/",
+      "members": [
+        {
+          "id": "20257927",
+          "path": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-20257927/"
+        },
+        {
+          "id": "20257929",
+          "path": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-20257929/"
+        },
+        {
+          "id": "20257928",
+          "path": "/produktai/stalai/xio-2-0-susitikimu-stalai-modelis-20257928/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xio20-workbenches_a07036de",
+      "code": "KXI2013WW002",
+      "keeperId": "16088673",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-bendri-darbo-stalai-modelis-16088673/",
+      "members": [
+        {
+          "id": "16088673",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-bendri-darbo-stalai-modelis-16088673/"
+        },
+        {
+          "id": "16088674",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-bendri-darbo-stalai-modelis-16088674/"
+        }
+      ]
+    },
+    {
+      "productId": "product_xio20-workbenches_a07036de",
+      "code": "KXI2002WW002",
+      "keeperId": "16088671",
+      "keeperPath": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-bendri-darbo-stalai-modelis-16088671/",
+      "members": [
+        {
+          "id": "16088671",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-bendri-darbo-stalai-modelis-16088671/"
+        },
+        {
+          "id": "16088672",
+          "path": "/produktai/rasomieji-stalai-ir-darbo-vietos/xio-2-0-bendri-darbo-stalai-modelis-16088672/"
+        }
+      ]
+    },
+    {
+      "productId": "product_youteam-swivel-chairs_3886a3db",
+      "code": "KYOU001WW003",
+      "keeperId": "28689863",
+      "keeperPath": "/produktai/kedes/youteam-darbo-kedes-modelis-28689863/",
+      "members": [
+        {
+          "id": "28689863",
+          "path": "/produktai/kedes/youteam-darbo-kedes-modelis-28689863/"
+        },
+        {
+          "id": "28689864",
+          "path": "/produktai/kedes/youteam-darbo-kedes-modelis-28689864/"
+        }
+      ]
+    },
+    {
+      "productId": "product_youteam-swivel-chairs_3886a3db",
+      "code": "KYOU001WW001",
+      "keeperId": "28689861",
+      "keeperPath": "/produktai/kedes/youteam-darbo-kedes-modelis-28689861/",
+      "members": [
+        {
+          "id": "28689861",
+          "path": "/produktai/kedes/youteam-darbo-kedes-modelis-28689861/"
+        },
+        {
+          "id": "28689865",
+          "path": "/produktai/kedes/youteam-darbo-kedes-modelis-28689865/"
+        }
+      ]
+    },
+    {
+      "productId": "product_yuni-meeting-chairs_f1ee6ae3",
+      "code": "KYUN001WW001",
+      "keeperId": "28958404",
+      "keeperPath": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958404/",
+      "members": [
+        {
+          "id": "28958404",
+          "path": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958404/"
+        },
+        {
+          "id": "28958405",
+          "path": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958405/"
+        }
+      ]
+    },
+    {
+      "productId": "product_yuni-meeting-chairs_f1ee6ae3",
+      "code": "KYUN001WW002",
+      "keeperId": "28958406",
+      "keeperPath": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958406/",
+      "members": [
+        {
+          "id": "28958406",
+          "path": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958406/"
+        },
+        {
+          "id": "28958407",
+          "path": "/produktai/kedes/yuni-susitikimu-ir-lankytoju-kedes-modelis-28958407/"
+        }
+      ]
+    },
+    {
+      "productId": "product_z-body-meeting-chairs_285fd747",
+      "code": "KZBO002WW001",
+      "keeperId": "24893026",
+      "keeperPath": "/produktai/kedes/z-body-susitikimu-ir-lankytoju-kedes-modelis-24893026/",
+      "members": [
+        {
+          "id": "24893026",
+          "path": "/produktai/kedes/z-body-susitikimu-ir-lankytoju-kedes-modelis-24893026/"
+        },
+        {
+          "id": "24893027",
+          "path": "/produktai/kedes/z-body-susitikimu-ir-lankytoju-kedes-modelis-24893027/"
+        },
+        {
+          "id": "24893028",
+          "path": "/produktai/kedes/z-body-susitikimu-ir-lankytoju-kedes-modelis-24893028/"
+        }
+      ]
+    },
+    {
+      "productId": "product_z-body-swivel-chairs_690761ed",
+      "code": "KZBO004WW001",
+      "keeperId": "24892065",
+      "keeperPath": "/produktai/kedes/z-body-darbo-kedes-modelis-24892065/",
+      "members": [
+        {
+          "id": "24892065",
+          "path": "/produktai/kedes/z-body-darbo-kedes-modelis-24892065/"
+        },
+        {
+          "id": "24892066",
+          "path": "/produktai/kedes/z-body-darbo-kedes-modelis-24892066/"
+        },
+        {
+          "id": "24892067",
+          "path": "/produktai/kedes/z-body-darbo-kedes-modelis-24892067/"
+        }
+      ]
+    },
+    {
+      "productId": "product_zeta-stools-bar-stools_c6c42cbd",
+      "code": "KZET001WW002",
+      "keeperId": "25038984",
+      "keeperPath": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038984/",
+      "members": [
+        {
+          "id": "25038984",
+          "path": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038984/"
+        },
+        {
+          "id": "25038985",
+          "path": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038985/"
+        }
+      ]
+    },
+    {
+      "productId": "product_zeta-stools-bar-stools_c6c42cbd",
+      "code": "KZET002WW002",
+      "keeperId": "25038986",
+      "keeperPath": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038986/",
+      "members": [
+        {
+          "id": "25038986",
+          "path": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038986/"
+        },
+        {
+          "id": "25038987",
+          "path": "/produktai/kedes/zeta-taburetes-ir-baro-kedes-modelis-25038987/"
+        }
+      ]
+    },
+    {
+      "productId": "product_zone-armchairs-leg-rests_4fd1c1c1",
+      "code": "KZON001WW001",
+      "keeperId": "23523200",
+      "keeperPath": "/produktai/minksti-baldai/zone-foteliai-ir-koju-atramos-modelis-23523200/",
+      "members": [
+        {
+          "id": "23523200",
+          "path": "/produktai/minksti-baldai/zone-foteliai-ir-koju-atramos-modelis-23523200/"
+        },
+        {
+          "id": "23523202",
+          "path": "/produktai/minksti-baldai/zone-foteliai-ir-koju-atramos-modelis-23523202/"
+        },
+        {
+          "id": "23523201",
+          "path": "/produktai/minksti-baldai/zone-foteliai-ir-koju-atramos-modelis-23523201/"
+        }
+      ]
+    },
+    {
+      "productId": "product_zone-sofas_be804c30",
+      "code": "KZON002WW001",
+      "keeperId": "20352443",
+      "keeperPath": "/produktai/minksti-baldai/zone-sofos-modelis-20352443/",
+      "members": [
+        {
+          "id": "20352443",
+          "path": "/produktai/minksti-baldai/zone-sofos-modelis-20352443/"
+        },
+        {
+          "id": "20352445",
+          "path": "/produktai/minksti-baldai/zone-sofos-modelis-20352445/"
+        },
+        {
+          "id": "20352446",
+          "path": "/produktai/minksti-baldai/zone-sofos-modelis-20352446/"
+        }
+      ]
+    }
+  ]
+}

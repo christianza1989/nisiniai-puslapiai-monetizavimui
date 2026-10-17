@@ -1,0 +1,27 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {parseHTML} from 'linkedom';
+import {visibleProductsAsync,visibleModelsAsync,productPath} from '../src/lib/catalog';
+import manifest from '../content/catalog-consolidation.json';
+import {optimizedProductImage} from '../src/lib/product-media';
+import {resolveCatalogProduct} from '../src/lib/product-models';
+import {modelSeo} from '../src/lib/model-seo';
+const origin=process.env.CHECK_ORIGIN!,out='D:/Core/output/ergonomic-catalog-dedupe-20261016',mode=origin.startsWith('https')?'public':'local',metadataOnly=process.env.CHECK_SCOPE==='metadata';
+assert(origin);const parents=await visibleProductsAsync(),active=await visibleModelsAsync(),models=new Set(active.map(productPath)),retired=manifest.groups.flatMap(g=>g.members.filter(m=>m.id!==g.keeperId).map(m=>({...m,keeperPath:g.keeperPath,productId:g.productId}))),retiredPaths=new Set(retired.map(m=>m.path));
+const results:any[]=[];let done=0;
+async function pool<T>(items:T[],job:(item:T)=>Promise<void>){let i=0;await Promise.all(Array.from({length:3},async()=>{while(i<items.length){const item=items[i++];await job(item);done++;if(done%50===0){fs.writeFileSync(out+'/'+mode+'-HTTP-PROGRESS.json',JSON.stringify({at:new Date().toISOString(),done}));console.log('checked',done);}}}));}
+async function html(route:string){const r=await fetch(origin+route,{redirect:'manual',signal:AbortSignal.timeout(60000)});assert.equal(r.status,200,route);const text=await r.text();assert(!text.includes('Nepavyko įkelti puslapio.'),route);return parseHTML(text).document;}
+function common(d:Document,route:string){assert.equal(d.querySelectorAll('h1').length,1,route);assert.equal(d.querySelectorAll('header.site-header-matched').length,1,route);assert.equal(d.querySelectorAll('footer').length,1,route);for(const a of Array.from(d.querySelectorAll('a[href]'))){const h=a.getAttribute('href')!;if(h.startsWith('/produktai/'))assert(!retiredPaths.has(h.split('?')[0].split('#')[0]),route+' stale link '+h);}}
+if(!metadataOnly)await pool(Array.from({length:40},(_,i)=>i+1),async page=>{const route='/produktai/'+(page>1?'?puslapis='+page:''),d=await html(route);common(d,route);const cards=Array.from(d.querySelectorAll('.product-card'));assert.equal(cards.length,page===40?17:20,route);for(const card of cards){const href=card.querySelector('a')?.getAttribute('href')||card.getAttribute('href');assert(models.has(href!),String(href));}results.push({route,status:200,cards:cards.length});});
+await pool(retired,async old=>{const response=await fetch(origin+old.path+'?v=dedupe-check',{redirect:'manual',signal:AbortSignal.timeout(30000)});assert.equal(response.status,308,old.path);const target=new URL(response.headers.get('location')!,origin);assert.equal(target.pathname,old.keeperPath);assert.equal(target.searchParams.get('pavyzdys'),old.id);assert.equal(target.searchParams.get('v'),'dedupe-check');
+ const d=await html(target.pathname+target.search);common(d,old.path);assert.equal(d.querySelector('link[rel="canonical"]')?.getAttribute('href'),'https://ergonomic.lt'+old.keeperPath);assert.match(d.querySelector('meta[name="robots"]')?.getAttribute('content')||'',/noindex/);
+ const parent=parents.find(p=>p.id===old.productId)!,slug=old.keeperPath.split('/').at(-2)!,preset=resolveCatalogProduct([parent],parent.categorySlug,slug,old.id)!;
+ assert(preset);const primary=optimizedProductImage(preset.image);if(primary)assert(d.documentElement.outerHTML.includes(primary),'Historical image missing '+old.id);
+ const seo=modelSeo(preset);assert.equal(d.querySelector('title')?.textContent,seo.title+(preset.modelArticle?'':' | Ergonomic.lt'),'Historical metadata '+old.id);
+ results.push({route:old.path,status:308,to:target.pathname+target.search,presetId:old.id,restored:200});});
+if(!metadataOnly)await pool(active,async p=>{const route=productPath(p),d=await html(route);common(d,route);assert.equal(d.querySelector('link[rel="canonical"]')?.getAttribute('href'),'https://ergonomic.lt'+route);assert(d.querySelector('main')?.textContent?.trim());results.push({route,status:200});});
+for(const route of ['/','/ergonomines-kedes/','/ergonominiai-stalai/','/shop/balansines-kedes/','/shop/priedai/','/gidai/']){const d=await html(route);common(d,route);results.push({route,status:200});}
+for(const route of ['/llms.txt','/llms-full.txt']){const response=await fetch(origin+route,{signal:AbortSignal.timeout(120000)});assert.equal(response.status,200);const text=await response.text();for(const old of retired)assert(!text.includes('https://ergonomic.lt'+old.path),route+' stale URL '+old.id);results.push({route,status:200,bytes:Buffer.byteLength(text)});}
+const csv=await fetch(origin+'/konfiguratoriu-modeliai.csv'),bytes=Buffer.from(await csv.arrayBuffer());assert.equal(csv.status,200);assert.equal(createHash('sha256').update(bytes).digest('hex'),createHash('sha256').update(fs.readFileSync('public/konfiguratoriu-modeliai.csv')).digest('hex'));
+const report={at:new Date().toISOString(),result:'PASS',origin,scope:metadataOnly?'final-historical-metadata':'all-pages',active:797,retired:314,pages:results.length,results};fs.writeFileSync(out+'/'+mode+'-HTTP-VERIFICATION'+(metadataOnly?'-FINAL-METADATA':'')+'.json',JSON.stringify(report,null,2));console.log(JSON.stringify({result:'PASS',active:797,redirects:314,pages:results.length}));

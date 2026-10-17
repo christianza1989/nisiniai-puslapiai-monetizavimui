@@ -1,0 +1,236 @@
+{
+  "/wp-content/uploads/2021/06/ergonomika-kas-tai.jpg": {
+    "src": "/media/seo-articles/d238f0f3e5415651/800.webp",
+    "alt": "Darbo vietos įrengimo iliustracija.",
+    "width": 950,
+    "height": 635,
+    "srcSet": "/media/seo-articles/d238f0f3e5415651/400.webp 400w, /media/seo-articles/d238f0f3e5415651/800.webp 800w, /media/seo-articles/d238f0f3e5415651/950.webp 950w",
+    "sourceSha256": "d238f0f3e541565122bff8dfed03aefb4fe1929b6c246cee2ebcd3489aca57c0",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/d238f0f3e5415651/400.webp",
+        "bytes": 21010,
+        "sha256": "d01573c99d08b81cbcd23ecf044848215ba15c8d5687c1232b3ceada7f3492d3"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/d238f0f3e5415651/800.webp",
+        "bytes": 60680,
+        "sha256": "1bb5b469fedc587a5d2da0f9ba33acac6bb77c872b9b1af7493bbcd41437e679"
+      },
+      {
+        "width": 950,
+        "path": "/media/seo-articles/d238f0f3e5415651/950.webp",
+        "bytes": 80486,
+        "sha256": "e8b2adc7234ff1adb8ac8aff68dceb4e25f8b095178a78e1ba0771794d0f017b"
+      }
+    ]
+  },
+  "/wp-content/uploads/2021/06/ergonomika-darbo-vietoje-reikalavimai.png": {
+    "src": "/media/seo-articles/19d1ba82e5a4ae7b/800.webp",
+    "alt": "Darbo vietos ergonomikos iliustracija.",
+    "width": 1149,
+    "height": 415,
+    "srcSet": "/media/seo-articles/19d1ba82e5a4ae7b/400.webp 400w, /media/seo-articles/19d1ba82e5a4ae7b/800.webp 800w, /media/seo-articles/19d1ba82e5a4ae7b/1149.webp 1149w",
+    "sourceSha256": "19d1ba82e5a4ae7b9283223a582c7de9926ed7bebed3e8219bb036b5491d470e",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/19d1ba82e5a4ae7b/400.webp",
+        "bytes": 7686,
+        "sha256": "8f0a5a74d004185898c3ac1eaec852fa9c4836a43108133a1688dc830a0207e2"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/19d1ba82e5a4ae7b/800.webp",
+        "bytes": 17836,
+        "sha256": "0c57fb433a3e0a368bbcda1101ebaecf2f3d4f1c2f772bc64a8d6669158c8611"
+      },
+      {
+        "width": 1149,
+        "path": "/media/seo-articles/19d1ba82e5a4ae7b/1149.webp",
+        "bytes": 32064,
+        "sha256": "7e5c014350f8bba8cee024940f988fff509bc5341a7c6938026786d7979c0e7b"
+      }
+    ]
+  },
+  "/wp-content/uploads/2023/03/Mokykliniai-baldai.jpg": {
+    "src": "/media/seo-articles/11bcc3bc748398b4/800.webp",
+    "alt": "Mokymo klasė su mediniais stalais ir kėdėmis.",
+    "width": 900,
+    "height": 437,
+    "srcSet": "/media/seo-articles/11bcc3bc748398b4/400.webp 400w, /media/seo-articles/11bcc3bc748398b4/800.webp 800w, /media/seo-articles/11bcc3bc748398b4/900.webp 900w",
+    "sourceSha256": "11bcc3bc748398b49566f22766e0981e2cf8e0a40a3ff95083116d07f4e9118a",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/11bcc3bc748398b4/400.webp",
+        "bytes": 19944,
+        "sha256": "208b263cff7a16361510d93ecf80f2d48b508c000ef9ab11a79208035bd7a1d9"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/11bcc3bc748398b4/800.webp",
+        "bytes": 68920,
+        "sha256": "d34bdd7ca46e6ed64a99f498a65153f66c555dc3d2f6e9c2bc9b4a7e7c0983be"
+      },
+      {
+        "width": 900,
+        "path": "/media/seo-articles/11bcc3bc748398b4/900.webp",
+        "bytes": 84758,
+        "sha256": "bf064119d18dc4d1973e337fae26dfea1f713a04e51e397e91c61a408f5afc3a"
+      }
+    ]
+  },
+  "/wp-content/uploads/2023/03/Modernus-mokykliniai-baldai.png": {
+    "src": "/media/seo-articles/267cf23ced4990fd/800.webp",
+    "alt": "Mokyklinio stalo ir kėdės aukščių parinkimo pagal mokinio ūgį lentelė.",
+    "width": 2048,
+    "height": 499,
+    "srcSet": "/media/seo-articles/267cf23ced4990fd/400.webp 400w, /media/seo-articles/267cf23ced4990fd/800.webp 800w, /media/seo-articles/267cf23ced4990fd/1600.webp 1600w",
+    "sourceSha256": "267cf23ced4990fd0c3746dfe9ee6c9d3d5eba431cc3f06fa222c6d0c16abc8b",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/267cf23ced4990fd/400.webp",
+        "bytes": 4064,
+        "sha256": "d137012e5f28592aede22dc1930fb4ab6a8490b8362a16eabd5c28a46fcb5417"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/267cf23ced4990fd/800.webp",
+        "bytes": 10070,
+        "sha256": "e53840fae32be2fe385d8e1ad1b40c6466e5e6d417ac25fbdcd11a2d21b3c78f"
+      },
+      {
+        "width": 1600,
+        "path": "/media/seo-articles/267cf23ced4990fd/1600.webp",
+        "bytes": 21812,
+        "sha256": "3474c2e6b6c474c5e6eb6c2c1458d0f8249959aed9ca2cf188e9d030f3abe6eb"
+      }
+    ]
+  },
+  "/wp-content/uploads/2023/03/Nestandartiniai-mokykliniai-baldai.png": {
+    "src": "/media/seo-articles/15c6a99496c18c61/800.webp",
+    "alt": "Nestandartinės mokymo erdvės baldų pavyzdys.",
+    "width": 1920,
+    "height": 574,
+    "srcSet": "/media/seo-articles/15c6a99496c18c61/400.webp 400w, /media/seo-articles/15c6a99496c18c61/800.webp 800w, /media/seo-articles/15c6a99496c18c61/1600.webp 1600w",
+    "sourceSha256": "15c6a99496c18c618df283ff767c16a8fc67bdc9bdf855186a1a57fc71c35658",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/15c6a99496c18c61/400.webp",
+        "bytes": 2710,
+        "sha256": "c0f30b01b30653eff2d0959372d5b22aba271a978a3081dbcbced3d55663be6d"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/15c6a99496c18c61/800.webp",
+        "bytes": 6256,
+        "sha256": "aad088c751786af96371d03995c344de54abc02da755da9dc5183c0d9f0df476"
+      },
+      {
+        "width": 1600,
+        "path": "/media/seo-articles/15c6a99496c18c61/1600.webp",
+        "bytes": 14008,
+        "sha256": "e27bbb11ad461299a0832e232ce12436d69b8cbe316b33ea4879aa07e4c9e093"
+      }
+    ]
+  },
+  "/wp-content/uploads/2021/06/aktyvus_sedejimas.jpg": {
+    "src": "/media/seo-articles/addf3a48d0a0147d/789.webp",
+    "alt": "Aktyvaus sėdėjimo judėjimo pavyzdys.",
+    "width": 789,
+    "height": 426,
+    "srcSet": "/media/seo-articles/addf3a48d0a0147d/400.webp 400w, /media/seo-articles/addf3a48d0a0147d/789.webp 789w",
+    "sourceSha256": "addf3a48d0a0147dd597dd1db805f49bed78d8861ca75b347388e37b7f956cc2",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/addf3a48d0a0147d/400.webp",
+        "bytes": 18578,
+        "sha256": "6675eba22e4c2a25ac936efd488973b06c0a38f76125d7510ba7f62dc6a73b8e"
+      },
+      {
+        "width": 789,
+        "path": "/media/seo-articles/addf3a48d0a0147d/789.webp",
+        "bytes": 58750,
+        "sha256": "c89c3455a7fb773128e25ac40d632a4c2f5cbe9bcc0abd788592aefa5cfaa20f"
+      }
+    ]
+  },
+  "/wp-content/uploads/2021/12/Elektrinis-ar-mechaninis3.jpg": {
+    "src": "/media/seo-articles/5f221b441fc7cf7d/800.webp",
+    "alt": "Darbo vietos įrengimo iliustracija.",
+    "width": 1134,
+    "height": 449,
+    "srcSet": "/media/seo-articles/5f221b441fc7cf7d/400.webp 400w, /media/seo-articles/5f221b441fc7cf7d/800.webp 800w, /media/seo-articles/5f221b441fc7cf7d/1134.webp 1134w",
+    "sourceSha256": "5f221b441fc7cf7dc9da9b476200f80c2783556aa3d1141eafa017b6d3427b03",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/5f221b441fc7cf7d/400.webp",
+        "bytes": 7608,
+        "sha256": "a2b34951df2185f19cb9434a8330d8326196c63ff47ca0e83c26783a98fd6fb9"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/5f221b441fc7cf7d/800.webp",
+        "bytes": 18854,
+        "sha256": "44e3ea0298204b38a42dc81c0f382458348b8f3ca835aa0ca3a5a19357b3bbee"
+      },
+      {
+        "width": 1134,
+        "path": "/media/seo-articles/5f221b441fc7cf7d/1134.webp",
+        "bytes": 28124,
+        "sha256": "f7768a1dd99b4ccd1b4e025f37d2118290a1e90b2ca3d7e815920b038252559e"
+      }
+    ]
+  },
+  "/wp-content/uploads/2021/11/Ergonominio-stalo-aukstis.jpg": {
+    "src": "/media/seo-articles/9f877e7801424cd4/800.webp",
+    "alt": "Darbo stalo aukščio ir padėties parinkimo iliustracija.",
+    "width": 800,
+    "height": 600,
+    "srcSet": "/media/seo-articles/9f877e7801424cd4/400.webp 400w, /media/seo-articles/9f877e7801424cd4/800.webp 800w",
+    "sourceSha256": "9f877e7801424cd4920d1aebd8c11cc9002e4630ead2d88126fe4e850172b2e9",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/9f877e7801424cd4/400.webp",
+        "bytes": 11582,
+        "sha256": "8325670833bb7984e9b41bffa5afe02b20bca6f6556fb1c152966611eb66dd11"
+      },
+      {
+        "width": 800,
+        "path": "/media/seo-articles/9f877e7801424cd4/800.webp",
+        "bytes": 25748,
+        "sha256": "8ab5d7858df38187caee37faeccc3e2a584a842878db600171ae0ce471bed00c"
+      }
+    ]
+  },
+  "/wp-content/uploads/2023/04/ergonomines-biuro-kedes.png": {
+    "src": "/media/seo-articles/06cdd9caa7bea89e/445.webp",
+    "alt": "Ergonominės kėdės reguliavimo ir atramos elementai.",
+    "width": 445,
+    "height": 502,
+    "srcSet": "/media/seo-articles/06cdd9caa7bea89e/400.webp 400w, /media/seo-articles/06cdd9caa7bea89e/445.webp 445w",
+    "sourceSha256": "06cdd9caa7bea89efe2915962dea91ce240357cb9a70c3a46415066350f146c8",
+    "renditions": [
+      {
+        "width": 400,
+        "path": "/media/seo-articles/06cdd9caa7bea89e/400.webp",
+        "bytes": 15488,
+        "sha256": "4dafcf44897abbeacc01b0722f5304e172894997ba0177c1c10e6d14c64c24de"
+      },
+      {
+        "width": 445,
+        "path": "/media/seo-articles/06cdd9caa7bea89e/445.webp",
+        "bytes": 19476,
+        "sha256": "dfe509b9210eef17ac38861836d72e3644a771b1caa4862ca94a57a63df01820"
+      }
+    ]
+  }
+}

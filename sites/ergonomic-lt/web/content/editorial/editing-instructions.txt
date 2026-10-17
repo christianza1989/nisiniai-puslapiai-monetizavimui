@@ -1,0 +1,24 @@
+ERGONOMIC.LT LIETUVIŠKŲ TEKSTŲ REDAGAVIMAS SU ANTIGRAVITY
+
+Redaguok tik perduoto content-package.json laukų fields[].value reikšmes.
+Grąžink vieną pilną content-package.json ir atskirą neaiskus-faktai.txt.
+Nekeisk ID, binding, original, protected, baselineId, modelių vardų, kodų ar failų struktūros. Nevykdyk svetainės kodo, nerediaguok aplikacijos failų, nepaleisk deployment.
+
+Svetainė: ergonomic.lt. Viešas vardas: Ergonomic.lt. Juridinis asmuo UAB A-Z Prekyba viešai rodomas. Tikslūs kontaktai pateikti facts.json.
+Prekiaujame baldais; pagal užsakymą gaminame kietuosius baldus, įskaitant STEAM stalus ir spintas. Katalogas skirtas pasiūlymo užklausoms, ne automatiniam apmokėjimui.
+
+Rašyk natūraliai, taisyklingai ir aiškiai lietuviškai. Mažink pasikartojimus, vertimo kalkes ir tuščius reklaminius sakinius. Išlaikyk lauko paskirtį. Mygtukai trumpi, klaidos aiškina taisymą, sėkmė žymi išsaugotą užklausą, o ne nepatvirtintą laiško pristatymą. Ilgus straipsnius redaguok išsamiai, ne tik keisdamas sinonimus.
+SEO temos: ergonominiai baldai, ergonominiai stalai, ergonominės kėdės, biuro kėdės. Papildomi raktažodžiai pateikti facts.json, jų esamų adresų žemėlapis – seo-temos.txt. Vartok taisyklingas formas natūraliai, neperkrauk raktažodžiais. Nekurk ir nekeisk puslapių adresų.
+
+[[openN]], [[closeN]], [[voidN]] žymi išsaugotą maketą, nuorodas ir iliustracijas. {{pN}} žymi dinaminę reikšmę. Visi tokie žymenys turi likti tiek pat kartų ir ta pačia tvarka. Nerašyk HTML. Įprastą tekstą tarp žymenų gali visiškai perrašyti.
+Homepage H1 yra ir page lauke, ir home-hero rich tekste: jų žodžiai turi sutapti, išsaugant rich žymenis.
+protectedTerms privalo likti tiksliai. preserveNumbers laukuose išsaugok originalo skaičius. Jei yra sourceNumberTokens, papildomai galima naudoti tik ten išvardytus angliško šaltinio skaičius; dešimtainį tašką galima lietuvinti į kablelį. Naujos specifikacijos, dydžiai ar vienetų perskaičiavimai neleidžiami. Jei taisyklė neleidžia reikalingos pataisos, įrašyk klausimą į neaiskus-faktai.txt; nekeisk taisyklės.
+
+PRIVALOMAS VISŲ PRODUKTŲ ANGLIŠKŲ APRAŠYMŲ VERTIMAS
+Neapsiribok trumpų lietuviškų įvadų redagavimu. Kiekvieno product ir configuration lauko translationSource yra pilnas vidinis angliškas šaltinis. Išversk visą jo prasminį turinį taisyklingai lietuviškai ir įrašyk į to paties lauko value. Produktą su šaltiniu susiek pagal productId, komplektaciją – pagal productId ir configurationId; vien pavadinimo neužtenka. source-references.json pateikia papildomą ryšį ir faktus. translationSource nekeisk ir į viešą tekstą nekopijuok gamintojų vardų ar techninių katalogo nuotrupų. Tikras savybes išsaugok, tačiau reklaminį šaltinio tekstą natūraliai redaguok ir nepatvirtintus pažadus pažymėk. Netaikyk vienos komplektacijos savybių visai šeimai. Jei nėra angliško šaltinio, redaguok esamą tekstą ir trūkumą pažymėk, neišgalvok. Tai taikoma visoms šeimoms ir visiems atskiriems modeliams. Papildomai grąžink translation-report.json: kiekvieno vertimo lauko id, productId, configurationId (jei yra), status ir pastabos. Laukų sąrašą ir trūkstamus šaltinius rasi product-translation-inventory.json. translationSource/sourceNumberTokens yra tik skaitomi, ne nauji redaguojami laukai.
+
+Gamintojų vardų Nowy Styl, SOHOS, Kusch+Co ir originalių tiekėjų nuorodų nerašyk į viešus tekstus. source-references.json yra tik vidinis faktų šaltinis. Ergonomic.lt nepristatyk kaip visų katalogo gaminių gamintojo. Modelių vardai ir produktų / komplektacijų kodai lieka tikri.
+Nepridėk nepagrįstų kainų, likučių, terminų, sertifikatų, klientų, patirties metų ar sveikatos pažadų. Senuose straipsniuose esantys medicininiai ar teisės teiginiai savaime nėra patvirtinti faktai: neaiškius teiginius pažymėk arba suformuluok be nepatvirtinto pažado. Nesugalvok naujų savybių ir nepriskirk visai modelių linijai to, ką turi tik viena komplektacija.
+
+Bendrą tekstą redaguok vieną kartą. uses ir htmlBindings rodo jo naudojimo vietas. Produktų aprašymai ir komplektacijų aprašymai atskirti; tikri reguliavimo mechanizmai, matmenys ir kodai nėra literatūrinė medžiaga.
+Nenaudok private-runtime, .env, slaptažodžių, klientų užklausų ar administravimo duomenų. Jie į redagavimo paketą neįtraukti.

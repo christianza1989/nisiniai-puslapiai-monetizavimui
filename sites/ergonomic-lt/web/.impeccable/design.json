@@ -1,0 +1,2083 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T15:34:18.019Z",
+  "title": "Design System: Ergonomic.lt",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Forest",
+        "tonalRamp": [
+          "oklch(15% 0.0471 173.70)",
+          "oklch(26% 0.0471 173.70)",
+          "oklch(38% 0.0471 173.70)",
+          "oklch(49% 0.0471 173.70)",
+          "oklch(61% 0.0471 173.70)",
+          "oklch(72% 0.0471 173.70)",
+          "oklch(84% 0.0471 173.70)",
+          "oklch(95% 0.0471 173.70)"
+        ],
+        "canonical": "#193f35",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "body-ink": {
+        "displayName": "Body Forest",
+        "canonical": "#314c43",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0363 171.49)",
+          "oklch(26% 0.0363 171.49)",
+          "oklch(38% 0.0363 171.49)",
+          "oklch(49% 0.0363 171.49)",
+          "oklch(61% 0.0363 171.49)",
+          "oklch(72% 0.0363 171.49)",
+          "oklch(84% 0.0363 171.49)",
+          "oklch(95% 0.0363 171.49)"
+        ],
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Secondary Green",
+        "tonalRamp": [
+          "oklch(15% 0.0309 165.70)",
+          "oklch(26% 0.0309 165.70)",
+          "oklch(38% 0.0309 165.70)",
+          "oklch(49% 0.0309 165.70)",
+          "oklch(61% 0.0309 165.70)",
+          "oklch(72% 0.0309 165.70)",
+          "oklch(84% 0.0309 165.70)",
+          "oklch(95% 0.0309 165.70)"
+        ],
+        "canonical": "#50665c",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "tonalRamp": [
+          "oklch(15% 0.0054 117.92)",
+          "oklch(26% 0.0054 117.92)",
+          "oklch(38% 0.0054 117.92)",
+          "oklch(49% 0.0054 117.92)",
+          "oklch(61% 0.0054 117.92)",
+          "oklch(72% 0.0054 117.92)",
+          "oklch(84% 0.0054 117.92)",
+          "oklch(95% 0.0054 117.92)"
+        ],
+        "canonical": "#f5f6f2",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Sage",
+        "tonalRamp": [
+          "oklch(15% 0.0136 134.90)",
+          "oklch(26% 0.0136 134.90)",
+          "oklch(38% 0.0136 134.90)",
+          "oklch(49% 0.0136 134.90)",
+          "oklch(61% 0.0136 134.90)",
+          "oklch(72% 0.0136 134.90)",
+          "oklch(84% 0.0136 134.90)",
+          "oklch(95% 0.0136 134.90)"
+        ],
+        "canonical": "#e4eae1",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "sage": {
+        "displayName": "Soft Green",
+        "canonical": "#dfe8de",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0165 142.55)",
+          "oklch(26% 0.0165 142.55)",
+          "oklch(38% 0.0165 142.55)",
+          "oklch(49% 0.0165 142.55)",
+          "oklch(61% 0.0165 142.55)",
+          "oklch(72% 0.0165 142.55)",
+          "oklch(84% 0.0165 142.55)",
+          "oklch(95% 0.0165 142.55)"
+        ],
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Structural Green",
+        "tonalRamp": [
+          "oklch(15% 0.0181 159.01)",
+          "oklch(26% 0.0181 159.01)",
+          "oklch(38% 0.0181 159.01)",
+          "oklch(49% 0.0181 159.01)",
+          "oklch(61% 0.0181 159.01)",
+          "oklch(72% 0.0181 159.01)",
+          "oklch(84% 0.0181 159.01)",
+          "oklch(95% 0.0181 159.01)"
+        ],
+        "canonical": "#b5c2ba",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Forest Accent",
+        "tonalRamp": [
+          "oklch(15% 0.0471 173.70)",
+          "oklch(26% 0.0471 173.70)",
+          "oklch(38% 0.0471 173.70)",
+          "oklch(49% 0.0471 173.70)",
+          "oklch(61% 0.0471 173.70)",
+          "oklch(72% 0.0471 173.70)",
+          "oklch(84% 0.0471 173.70)",
+          "oklch(95% 0.0471 173.70)"
+        ],
+        "canonical": "#193f35",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Green",
+        "tonalRamp": [
+          "oklch(15% 0.0685 165.07)",
+          "oklch(26% 0.0685 165.07)",
+          "oklch(38% 0.0685 165.07)",
+          "oklch(49% 0.0685 165.07)",
+          "oklch(61% 0.0685 165.07)",
+          "oklch(72% 0.0685 165.07)",
+          "oklch(84% 0.0685 165.07)",
+          "oklch(95% 0.0685 165.07)"
+        ],
+        "canonical": "#356b55",
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "white": {
+        "displayName": "White",
+        "canonical": "#fff",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ],
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "field": {
+        "displayName": "Pale Entry",
+        "canonical": "#fafbf8",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0041 121.56)",
+          "oklch(26% 0.0041 121.56)",
+          "oklch(38% 0.0041 121.56)",
+          "oklch(49% 0.0041 121.56)",
+          "oklch(61% 0.0041 121.56)",
+          "oklch(72% 0.0041 121.56)",
+          "oklch(84% 0.0041 121.56)",
+          "oklch(95% 0.0041 121.56)"
+        ],
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "header-search": {
+        "displayName": "Search Ground",
+        "canonical": "#edf0e9",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0098 125.68)",
+          "oklch(26% 0.0098 125.68)",
+          "oklch(38% 0.0098 125.68)",
+          "oklch(49% 0.0098 125.68)",
+          "oklch(61% 0.0098 125.68)",
+          "oklch(72% 0.0098 125.68)",
+          "oklch(84% 0.0098 125.68)",
+          "oklch(95% 0.0098 125.68)"
+        ],
+        "scope": "historical superseded inner-header search ground; current matched-header field ground is in DESIGN.md components.header-search",
+        "source": "src/app/site-theme.css"
+      },
+      "product-image": {
+        "role": "neutral",
+        "displayName": "Product Field Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ],
+        "canonical": "#f4f4f4",
+        "scope": "active shared system",
+        "source": "src/app/product-images.css"
+      },
+      "action-hover": {
+        "displayName": "Action Hover",
+        "canonical": "#285748",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15% 0.0579 170.24)",
+          "oklch(26% 0.0579 170.24)",
+          "oklch(38% 0.0579 170.24)",
+          "oklch(49% 0.0579 170.24)",
+          "oklch(61% 0.0579 170.24)",
+          "oklch(72% 0.0579 170.24)",
+          "oklch(84% 0.0579 170.24)",
+          "oklch(95% 0.0579 170.24)"
+        ],
+        "scope": "active shared system",
+        "source": "src/app/site-theme.css"
+      },
+      "error": {
+        "role": "secondary",
+        "displayName": "Shared Error Red",
+        "tonalRamp": [
+          "oklch(15% 0.1440 28.69)",
+          "oklch(26% 0.1440 28.69)",
+          "oklch(38% 0.1440 28.69)",
+          "oklch(49% 0.1440 28.69)",
+          "oklch(61% 0.1440 28.69)",
+          "oklch(72% 0.1440 28.69)",
+          "oklch(84% 0.1440 28.69)",
+          "oklch(95% 0.1440 28.69)"
+        ],
+        "canonical": "#992e25",
+        "scope": "active shared system",
+        "source": "src/app/globals.css"
+      },
+      "approved-forest": {
+        "role": "primary",
+        "displayName": "Homepage Forest",
+        "tonalRamp": [
+          "oklch(15% 0.0471 173.70)",
+          "oklch(26% 0.0471 173.70)",
+          "oklch(38% 0.0471 173.70)",
+          "oklch(49% 0.0471 173.70)",
+          "oklch(61% 0.0471 173.70)",
+          "oklch(72% 0.0471 173.70)",
+          "oklch(84% 0.0471 173.70)",
+          "oklch(95% 0.0471 173.70)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#193f35"
+      },
+      "approved-body-ink": {
+        "role": "neutral",
+        "displayName": "Homepage Body Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0363 171.49)",
+          "oklch(26% 0.0363 171.49)",
+          "oklch(38% 0.0363 171.49)",
+          "oklch(49% 0.0363 171.49)",
+          "oklch(61% 0.0363 171.49)",
+          "oklch(72% 0.0363 171.49)",
+          "oklch(84% 0.0363 171.49)",
+          "oklch(95% 0.0363 171.49)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#314c43"
+      },
+      "approved-paper": {
+        "role": "neutral",
+        "displayName": "Homepage Chalk",
+        "tonalRamp": [
+          "oklch(15% 0.0054 117.92)",
+          "oklch(26% 0.0054 117.92)",
+          "oklch(38% 0.0054 117.92)",
+          "oklch(49% 0.0054 117.92)",
+          "oklch(61% 0.0054 117.92)",
+          "oklch(72% 0.0054 117.92)",
+          "oklch(84% 0.0054 117.92)",
+          "oklch(95% 0.0054 117.92)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#f5f6f2"
+      },
+      "approved-sage": {
+        "role": "neutral",
+        "displayName": "Homepage Sage",
+        "tonalRamp": [
+          "oklch(15% 0.0136 134.90)",
+          "oklch(26% 0.0136 134.90)",
+          "oklch(38% 0.0136 134.90)",
+          "oklch(49% 0.0136 134.90)",
+          "oklch(61% 0.0136 134.90)",
+          "oklch(72% 0.0136 134.90)",
+          "oklch(84% 0.0136 134.90)",
+          "oklch(95% 0.0136 134.90)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#e4eae1"
+      },
+      "approved-category-paper": {
+        "role": "neutral",
+        "displayName": "Category Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#f4f4f4"
+      },
+      "approved-configurator-surface": {
+        "role": "neutral",
+        "displayName": "Configurator Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0041 121.56)",
+          "oklch(26% 0.0041 121.56)",
+          "oklch(38% 0.0041 121.56)",
+          "oklch(49% 0.0041 121.56)",
+          "oklch(61% 0.0041 121.56)",
+          "oklch(72% 0.0041 121.56)",
+          "oklch(84% 0.0041 121.56)",
+          "oklch(95% 0.0041 121.56)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#f3f4f1"
+      },
+      "approved-contact-surface": {
+        "role": "neutral",
+        "displayName": "Botanical Green",
+        "tonalRamp": [
+          "oklch(15% 0.0165 142.55)",
+          "oklch(26% 0.0165 142.55)",
+          "oklch(38% 0.0165 142.55)",
+          "oklch(49% 0.0165 142.55)",
+          "oklch(61% 0.0165 142.55)",
+          "oklch(72% 0.0165 142.55)",
+          "oklch(84% 0.0165 142.55)",
+          "oklch(95% 0.0165 142.55)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#dfe8de"
+      },
+      "approved-workspace-surface": {
+        "role": "neutral",
+        "displayName": "Workspace Pale",
+        "tonalRamp": [
+          "oklch(15% 0.0074 132.42)",
+          "oklch(26% 0.0074 132.42)",
+          "oklch(38% 0.0074 132.42)",
+          "oklch(49% 0.0074 132.42)",
+          "oklch(61% 0.0074 132.42)",
+          "oklch(72% 0.0074 132.42)",
+          "oklch(84% 0.0074 132.42)",
+          "oklch(95% 0.0074 132.42)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#edf0eb"
+      },
+      "approved-rule": {
+        "role": "neutral",
+        "displayName": "Homepage Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0181 159.01)",
+          "oklch(26% 0.0181 159.01)",
+          "oklch(38% 0.0181 159.01)",
+          "oklch(49% 0.0181 159.01)",
+          "oklch(61% 0.0181 159.01)",
+          "oklch(72% 0.0181 159.01)",
+          "oklch(84% 0.0181 159.01)",
+          "oklch(95% 0.0181 159.01)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#b5c2ba"
+      },
+      "approved-divider": {
+        "role": "neutral",
+        "displayName": "Section Divider",
+        "tonalRamp": [
+          "oklch(15% 0.0121 145.47)",
+          "oklch(26% 0.0121 145.47)",
+          "oklch(38% 0.0121 145.47)",
+          "oklch(49% 0.0121 145.47)",
+          "oklch(61% 0.0121 145.47)",
+          "oklch(72% 0.0121 145.47)",
+          "oklch(84% 0.0121 145.47)",
+          "oklch(95% 0.0121 145.47)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#d7ded7"
+      },
+      "approved-outline-stroke": {
+        "role": "neutral",
+        "displayName": "Outline Stroke",
+        "tonalRamp": [
+          "oklch(15% 0.0365 170.09)",
+          "oklch(26% 0.0365 170.09)",
+          "oklch(38% 0.0365 170.09)",
+          "oklch(49% 0.0365 170.09)",
+          "oklch(61% 0.0365 170.09)",
+          "oklch(72% 0.0365 170.09)",
+          "oklch(84% 0.0365 170.09)",
+          "oklch(95% 0.0365 170.09)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#79968b"
+      },
+      "approved-focus": {
+        "role": "primary",
+        "displayName": "Homepage Focus Green",
+        "tonalRamp": [
+          "oklch(15% 0.0685 165.07)",
+          "oklch(26% 0.0685 165.07)",
+          "oklch(38% 0.0685 165.07)",
+          "oklch(49% 0.0685 165.07)",
+          "oklch(61% 0.0685 165.07)",
+          "oklch(72% 0.0685 165.07)",
+          "oklch(84% 0.0685 165.07)",
+          "oklch(95% 0.0685 165.07)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#356b55"
+      },
+      "approved-field": {
+        "role": "neutral",
+        "displayName": "Contact Field",
+        "tonalRamp": [
+          "oklch(15% 0.0041 121.56)",
+          "oklch(26% 0.0041 121.56)",
+          "oklch(38% 0.0041 121.56)",
+          "oklch(49% 0.0041 121.56)",
+          "oklch(61% 0.0041 121.56)",
+          "oklch(72% 0.0041 121.56)",
+          "oklch(84% 0.0041 121.56)",
+          "oklch(95% 0.0041 121.56)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#f8f9f6"
+      },
+      "approved-placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder Green",
+        "tonalRamp": [
+          "oklch(15% 0.0453 141.56)",
+          "oklch(26% 0.0453 141.56)",
+          "oklch(38% 0.0453 141.56)",
+          "oklch(49% 0.0453 141.56)",
+          "oklch(61% 0.0453 141.56)",
+          "oklch(72% 0.0453 141.56)",
+          "oklch(84% 0.0453 141.56)",
+          "oklch(95% 0.0453 141.56)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#52674f"
+      },
+      "approved-handwriting": {
+        "role": "neutral",
+        "displayName": "Handwriting Green",
+        "tonalRamp": [
+          "oklch(15% 0.0337 142.05)",
+          "oklch(26% 0.0337 142.05)",
+          "oklch(38% 0.0337 142.05)",
+          "oklch(49% 0.0337 142.05)",
+          "oklch(61% 0.0337 142.05)",
+          "oklch(72% 0.0337 142.05)",
+          "oklch(84% 0.0337 142.05)",
+          "oklch(95% 0.0337 142.05)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#61715f"
+      },
+      "approved-field-hover": {
+        "role": "neutral",
+        "displayName": "Field Hover Stroke",
+        "tonalRamp": [
+          "oklch(15% 0.0329 149.64)",
+          "oklch(26% 0.0329 149.64)",
+          "oklch(38% 0.0329 149.64)",
+          "oklch(49% 0.0329 149.64)",
+          "oklch(61% 0.0329 149.64)",
+          "oklch(72% 0.0329 149.64)",
+          "oklch(84% 0.0329 149.64)",
+          "oklch(95% 0.0329 149.64)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#99ad9c"
+      },
+      "approved-error": {
+        "role": "secondary",
+        "displayName": "Homepage Invalid Red",
+        "tonalRamp": [
+          "oklch(15% 0.1259 31.52)",
+          "oklch(26% 0.1259 31.52)",
+          "oklch(38% 0.1259 31.52)",
+          "oklch(49% 0.1259 31.52)",
+          "oklch(61% 0.1259 31.52)",
+          "oklch(72% 0.1259 31.52)",
+          "oklch(84% 0.1259 31.52)",
+          "oklch(95% 0.1259 31.52)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#963b2c"
+      },
+      "approved-submit-hover": {
+        "role": "neutral",
+        "displayName": "Submit Hover Forest",
+        "tonalRamp": [
+          "oklch(15% 0.0616 168.66)",
+          "oklch(26% 0.0616 168.66)",
+          "oklch(38% 0.0616 168.66)",
+          "oklch(49% 0.0616 168.66)",
+          "oklch(61% 0.0616 168.66)",
+          "oklch(72% 0.0616 168.66)",
+          "oklch(84% 0.0616 168.66)",
+          "oklch(95% 0.0616 168.66)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#285a49"
+      },
+      "approved-submit-active": {
+        "role": "neutral",
+        "displayName": "Submit Active Forest",
+        "tonalRamp": [
+          "oklch(15% 0.0454 172.03)",
+          "oklch(26% 0.0454 172.03)",
+          "oklch(38% 0.0454 172.03)",
+          "oklch(49% 0.0454 172.03)",
+          "oklch(61% 0.0454 172.03)",
+          "oklch(72% 0.0454 172.03)",
+          "oklch(84% 0.0454 172.03)",
+          "oklch(95% 0.0454 172.03)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "#11352b"
+      },
+      "approved-outline-ground": {
+        "role": "neutral",
+        "displayName": "Translucent Outline Ground",
+        "tonalRamp": [
+          "oklch(15% 0.0041 121.56)",
+          "oklch(25% 0.0041 121.56)",
+          "oklch(35% 0.0041 121.56)",
+          "oklch(45% 0.0041 121.56)",
+          "oklch(55% 0.0041 121.56)",
+          "oklch(65% 0.0041 121.56)",
+          "oklch(80% 0.0041 121.56)",
+          "oklch(95% 0.0041 121.56)"
+        ],
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css",
+        "rampPurpose": "Synthesized panel sample, not an implementation palette",
+        "canonical": "rgb(250 251 248 / 93%)"
+      },
+      "footer-ground": {
+        "role": "primary",
+        "displayName": "Footer Forest",
+        "tonalRamp": [
+          "oklch(15% 0.0471 173.70)",
+          "oklch(26% 0.0471 173.70)",
+          "oklch(38% 0.0471 173.70)",
+          "oklch(49% 0.0471 173.70)",
+          "oklch(61% 0.0471 173.70)",
+          "oklch(72% 0.0471 173.70)",
+          "oklch(84% 0.0471 173.70)",
+          "oklch(95% 0.0471 173.70)"
+        ],
+        "canonical": "#193f35"
+      },
+      "footer-ink": {
+        "role": "neutral",
+        "displayName": "Footer Chalk",
+        "tonalRamp": [
+          "oklch(15% 0.0054 117.92)",
+          "oklch(26% 0.0054 117.92)",
+          "oklch(38% 0.0054 117.92)",
+          "oklch(49% 0.0054 117.92)",
+          "oklch(61% 0.0054 117.92)",
+          "oklch(72% 0.0054 117.92)",
+          "oklch(84% 0.0054 117.92)",
+          "oklch(95% 0.0054 117.92)"
+        ],
+        "canonical": "#f5f6f2"
+      },
+      "footer-secondary": {
+        "role": "neutral",
+        "displayName": "Footer Soft Green",
+        "tonalRamp": [
+          "oklch(15% 0.0186 155.77)",
+          "oklch(26% 0.0186 155.77)",
+          "oklch(38% 0.0186 155.77)",
+          "oklch(49% 0.0186 155.77)",
+          "oklch(61% 0.0186 155.77)",
+          "oklch(72% 0.0186 155.77)",
+          "oklch(84% 0.0186 155.77)",
+          "oklch(95% 0.0186 155.77)"
+        ],
+        "canonical": "#cedbd2"
+      },
+      "footer-rule": {
+        "role": "neutral",
+        "displayName": "Footer Rule",
+        "tonalRamp": [
+          "oklch(15% 0.0376 174.39)",
+          "oklch(26% 0.0376 174.39)",
+          "oklch(38% 0.0376 174.39)",
+          "oklch(49% 0.0376 174.39)",
+          "oklch(61% 0.0376 174.39)",
+          "oklch(72% 0.0376 174.39)",
+          "oklch(84% 0.0376 174.39)",
+          "oklch(95% 0.0376 174.39)"
+        ],
+        "canonical": "#55736a"
+      },
+      "footer-back-top-stroke": {
+        "role": "neutral",
+        "displayName": "Footer Back-to-top Stroke",
+        "tonalRamp": [
+          "oklch(15% 0.0344 163.81)",
+          "oklch(26% 0.0344 163.81)",
+          "oklch(38% 0.0344 163.81)",
+          "oklch(49% 0.0344 163.81)",
+          "oklch(61% 0.0344 163.81)",
+          "oklch(72% 0.0344 163.81)",
+          "oklch(84% 0.0344 163.81)",
+          "oklch(95% 0.0344 163.81)"
+        ],
+        "canonical": "#90aa9d"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Current display role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Current headline role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "section-heading": {
+        "displayName": "Section Heading",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current section-heading role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Current title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "card": {
+        "displayName": "Card",
+        "purpose": "Current card role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "card-mobile": {
+        "displayName": "Card Mobile",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current card-mobile role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "collection-title": {
+        "displayName": "Collection Title",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current collection-title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "product-display": {
+        "displayName": "Product Display",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current product-display role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "guide-title": {
+        "displayName": "Guide Title",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current guide-title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "guide-title-mobile": {
+        "displayName": "Guide Title Mobile",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current guide-title-mobile role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "inquiry-heading": {
+        "displayName": "Inquiry Heading",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current inquiry-heading role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "contact-link": {
+        "displayName": "Contact Link",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current contact-link role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "contact-link-mobile": {
+        "displayName": "Contact Link Mobile",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current contact-link-mobile role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "contact-title": {
+        "displayName": "Contact Title",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current contact-title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "quote-title": {
+        "displayName": "Quote Title",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current quote-title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "quote-item-title": {
+        "displayName": "Quote Item Title",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current quote-item-title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "page-intro": {
+        "displayName": "Page Intro",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current page-intro role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Current body role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "editorial": {
+        "displayName": "Editorial",
+        "purpose": "Current editorial role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "editorial-mobile": {
+        "displayName": "Editorial Mobile",
+        "purpose": "Current editorial-mobile role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "editorial-heading": {
+        "displayName": "Editorial Heading",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current editorial-heading role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "editorial-title": {
+        "displayName": "Editorial Title",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current editorial-title role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "editorial-subtitle": {
+        "displayName": "Editorial Subtitle",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current editorial-subtitle role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Current label role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Current button role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "input": {
+        "displayName": "Input",
+        "purpose": "Current input role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior.",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "scope": "active shared inner templates"
+      },
+      "field-label": {
+        "displayName": "Field Label",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current field-label role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "header-navigation": {
+        "displayName": "Header Navigation",
+        "scope": "shared homepage-matched header on every route",
+        "source": "src/app/site-header.css",
+        "purpose": "Original homepage navigation: 16px/600/1.5; 15px at 901–1200px; always visible, wrapped at ≤900px."
+      },
+      "header-search-entry": {
+        "displayName": "Header Search Entry",
+        "scope": "shared homepage-matched header on every route",
+        "source": "src/app/site-header.css",
+        "purpose": "Original homepage search entry: 15px/400/1.4; native GET search, full row at ≤560px."
+      },
+      "header-quote": {
+        "displayName": "Header Quote",
+        "scope": "historical superseded inner-header role; unused by current SiteHeader",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Retained historical token; current shared header reproduces the original homepage without a quote control."
+      },
+      "header-count": {
+        "displayName": "Header Count",
+        "scope": "historical superseded inner-header role; unused by current SiteHeader",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Retained historical token; current shared header reproduces the original homepage without a quote badge."
+      },
+      "catalog-category": {
+        "displayName": "Catalog Category",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current catalog-category role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "catalog-label": {
+        "displayName": "Catalog Label",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current catalog-label role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "configuration-summary": {
+        "displayName": "Configuration Summary",
+        "scope": "active shared inner templates",
+        "source": "src/app/typography.css + src/app/site-theme.css",
+        "purpose": "Current configuration-summary role; DESIGN.md hierarchy specifies literal style, measure, contrast pairing and responsive behavior."
+      },
+      "approved-display": {
+        "displayName": "Approved Display",
+        "purpose": "Protected two-span homepage H1, including colon; px clamp and nowrap spans are approved local exceptions.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-section-label": {
+        "displayName": "Approved Section Label",
+        "purpose": "Category/popular uppercase label; other home bands use their observed tracking and responsive overrides.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-category-title": {
+        "displayName": "Approved Category Title",
+        "purpose": "Category-card names, with 14px compact-desktop override.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-popular-title": {
+        "displayName": "Approved Popular Title",
+        "purpose": "Stationary popular-model names; 16px at max-width 560px.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-action": {
+        "displayName": "Approved Action",
+        "purpose": "Hero actions; 14px at max-width 900px. Collection/demo/submit have documented local variants.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-contact-title": {
+        "displayName": "Approved Contact Title",
+        "purpose": "Botanical contact heading; 18px at max-width 1000px.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-contact-field": {
+        "displayName": "Approved Contact Field",
+        "purpose": "Contact entry at desktop: 14px, square fields.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-contact-field-mobile": {
+        "displayName": "Approved Contact Field Mobile",
+        "purpose": "Contact entry at max-width 700px: 16px.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-contact-handwriting": {
+        "displayName": "Approved Contact Handwriting",
+        "purpose": "Decorative left SVG Caveat text remains 33px; responsive container transforms scale it. No right inscription.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "approved-consent": {
+        "displayName": "Approved Consent",
+        "purpose": "12px required-consent copy; scoped approved exception.",
+        "scope": "approved homepage only",
+        "source": "src/app/homepage-approved.css"
+      },
+      "footer-copy": {
+        "displayName": "Footer Copy",
+        "purpose": "Contacts, supporting copy and catalog/ergonomics links; 14px/400/1.65 at all footer breakpoints.",
+        "scope": "shared footer on all routes",
+        "source": "src/app/footer.css"
+      },
+      "footer-heading": {
+        "displayName": "Footer Heading",
+        "purpose": "Column headings; 14px/650/1.5 with normal tracking.",
+        "scope": "shared footer on all routes",
+        "source": "src/app/footer.css"
+      },
+      "footer-end": {
+        "displayName": "Footer End",
+        "purpose": "Copyright, social/privacy/admin links and back-to-top row; 14px/1.5.",
+        "scope": "shared footer on all routes",
+        "source": "src/app/footer.css"
+      },
+      "inner-page": {
+        "displayName": "Inner Page",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: clamp(1.75rem,2.7vw,2.375rem)/650/1.16/-.025em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-section": {
+        "displayName": "Inner Section",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: clamp(1.375rem,2vw,1.75rem)/650/1.2/-.025em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-body": {
+        "displayName": "Inner Body",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: .9375rem/400/1.6/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-reading": {
+        "displayName": "Inner Reading",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 1rem/400/1.65/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-label": {
+        "displayName": "Inner Label",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: .8125rem/400/1.6/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-action": {
+        "displayName": "Inner Action",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: .9rem/600/1.5/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-card": {
+        "displayName": "Inner Card",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 16px/650/1.35/-.015em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-card-copy": {
+        "displayName": "Inner Card Copy",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 13px/400/1.5/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-collection-title": {
+        "displayName": "Inner Collection Title",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 16px/650/1.3/-.015em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-guide-title": {
+        "displayName": "Inner Guide Title",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 19px/650/1.35/-.025em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-product": {
+        "displayName": "Inner Product",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: clamp(26px,2.5vw,34px)/650/1.16/-.025em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-contact-link": {
+        "displayName": "Inner Contact Link",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 22px/400/1.5/-.015em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-contact-link-mobile": {
+        "displayName": "Inner Contact Link Mobile",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 20px/400/1.5/-.015em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-contact-title": {
+        "displayName": "Inner Contact Title",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 19px/650/1.2/-.025em; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-field-label": {
+        "displayName": "Inner Field Label",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: .8125rem/550/1.5/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-entry": {
+        "displayName": "Inner Entry",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: .9375rem/400/1.5/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-entry-touch": {
+        "displayName": "Inner Entry Touch",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 16px/400/1.5/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      },
+      "inner-filter-entry": {
+        "displayName": "Inner Filter Entry",
+        "scope": "inner content only; main.site-content excluding .approved-home",
+        "source": "src/app/site-theme.css; inherited semantics in src/app/typography.css",
+        "purpose": "2026-10-13 density role: 14px/400/1.45/normal; DESIGN.md and inner-density.md define application and responsive limits."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "background-color .15s,color .15s",
+        "purpose": "Regular button hover; default ease, disabled for reduced motion."
+      },
+      {
+        "name": "retained-category-image-transition",
+        "value": "transform .25s",
+        "purpose": "Existing inner-page category tile hover scale 1.04; product cards stay still."
+      },
+      {
+        "name": "gallery-reveal",
+        "value": ".42s cubic-bezier(.16,1,.3,1) both",
+        "purpose": "Retained image reveal from blur(2px)/opacity .65 to clear/opaque; disabled for reduced motion."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "smooth",
+        "purpose": "Shared document anchors and manual approved carousel steps; instant under reduced motion."
+      },
+      {
+        "name": "approved-category-autoplay",
+        "value": "40px/s",
+        "purpose": "28 original category links with five aria-hidden non-Tab seam copies; owner requires automatic start even under reduced motion. Persistent Pause and hover/focus/pointer/offscreen/hidden-document guards remain; reduced motion makes manual steps instant and never blocks Play.",
+        "scope": "approved homepage"
+      },
+      {
+        "name": "approved-guide-autoplay",
+        "value": "40px/s",
+        "purpose": "Three original article/index links with three aria-hidden non-Tab seam copies; owner requires automatic start even under reduced motion. Same persistent Pause and hover/focus/pointer/offscreen/hidden-document guards; manual steps instant under reduced motion, Play remains usable.",
+        "scope": "approved homepage"
+      },
+      {
+        "name": "approved-category-arrow-hover",
+        "value": "transform 180ms ease-out, translateX(4px)",
+        "purpose": "Category title arrow only; transition removed under reduced motion.",
+        "scope": "approved homepage"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "shared-sidebar-max",
+        "value": "1100px",
+        "scope": "catalog/TOC"
+      },
+      {
+        "name": "shared-stack-max",
+        "value": "800px",
+        "scope": "product, quote, editorial and inherited contact layout"
+      },
+      {
+        "name": "shared-template-stack-max",
+        "value": "650px",
+        "scope": "guides/configuration/card changes"
+      },
+      {
+        "name": "shared-narrow-max",
+        "value": "380px",
+        "scope": "filters, form/quote item"
+      },
+      {
+        "name": "approved-compact-desktop-max",
+        "value": "1200px",
+        "scope": "homepage hero and shared header; lower bound 901px"
+      },
+      {
+        "name": "approved-category-compact-max",
+        "value": "1100px",
+        "scope": "homepage compact category labels; collection"
+      },
+      {
+        "name": "approved-guide-contact-max",
+        "value": "1000px",
+        "scope": "homepage guides/contact and shared header; header lower bound 901px"
+      },
+      {
+        "name": "approved-demo-compact-max",
+        "value": "960px",
+        "scope": "homepage demo/process"
+      },
+      {
+        "name": "approved-hero-flow-max",
+        "value": "900px",
+        "scope": "homepage hero/categories/popular and shared header flow/navigation"
+      },
+      {
+        "name": "approved-collection-intermediate-max",
+        "value": "800px",
+        "scope": "homepage workspace/collection"
+      },
+      {
+        "name": "approved-demo-contact-stack-max",
+        "value": "700px",
+        "scope": "homepage demo/process/contact"
+      },
+      {
+        "name": "approved-workspace-collection-stack-max",
+        "value": "600px",
+        "scope": "homepage workspace/collection"
+      },
+      {
+        "name": "approved-carousel-phone-max",
+        "value": "560px",
+        "scope": "shared header search row and homepage categories/popular/guides"
+      },
+      {
+        "name": "approved-action-stack-max",
+        "value": "520px",
+        "scope": "homepage hero actions"
+      },
+      {
+        "name": "approved-narrow-phone-max",
+        "value": "360px",
+        "scope": "shared header navigation and homepage hero visual"
+      },
+      {
+        "name": "footer-two-column-max",
+        "value": "1050px",
+        "scope": "shared footer"
+      },
+      {
+        "name": "footer-full-row-brand-contacts-max",
+        "value": "600px",
+        "scope": "shared footer"
+      }
+    ],
+    "scope": {
+      "authority": "Owner request extends approved homepage identity to all remaining pages; 2026-10-13 correction specifically makes the original homepage header identical on every route.",
+      "homepage": "src/app/page.tsx",
+      "sharedChanges": [
+        "src/app/site-theme.css active shared colors, 4px actions/fields and template typography/layout",
+        "src/components/site-header.tsx one server header with original homepage logo/navigation and native search",
+        "src/app/site-header.css original homepage geometry on every route and stable scrollbar gutter",
+        "src/app/layout.tsx main.site-content and stylesheet cascade",
+        "src/app/gidai/page.tsx shared ruled guides index"
+      ],
+      "protectedBehavior": [
+        "catalog/model routes",
+        "protected original SEO content",
+        "configuration options, material/scene state, URL/storage/PDF/quote",
+        "admin authorization",
+        "approved homepage composition",
+        "one shared dark footer",
+        "source photographs/asset bytes"
+      ],
+      "referenceAuthority": "Approved final contact-solid-20261012-6 provides root composition and shared identity; its original header is the authority on every route. site-style.md and shared-header.md record the whole-site extension and 2026-10-13 header correction.",
+      "approvedSelectors": [
+        ".approved-home",
+        ".approved-home .hp-*"
+      ],
+      "innerSelectors": [
+        ".site-content:not(:has(.approved-home))"
+      ],
+      "sharedHeaderSelectors": [
+        ".site-header-matched",
+        ".header-wordmark",
+        ".header-navigation",
+        ".header-search-form"
+      ],
+      "provenanceManifest": "content/home-final-provenance.json",
+      "historicalHomepageReview": {
+        "scope": "local integration",
+        "captures": [
+          ".impeccable/review/home-integration-20261012/desktop-full.png",
+          ".impeccable/review/home-integration-20261012/mobile-full.png",
+          ".impeccable/review/home-integration-20261012/demo-desktop.png",
+          ".impeccable/review/home-integration-20261012/contact-success.png"
+        ],
+        "checks": {
+          "providedBy": "parent implementation task",
+          "testsPassed": 57,
+          "typecheck": "passed",
+          "cloudflareBuild": "passed",
+          "protectedPages": 8,
+          "protectedSeoBlocks": 76,
+          "localSeo": ".impeccable/review/home-integration-20261012/seo-local.json",
+          "savedRequest": ".impeccable/review/home-integration-20261012/form-local.json",
+          "deliveryStatus": "awaiting_configuration",
+          "deliveryAttempts": 0,
+          "mechanicalDetector": ".impeccable/review/home-integration-20261012/detector.json",
+          "mechanicalDetectorResult": [],
+          "publicDeployment": "not verified in this documentation pass",
+          "trueBrowserZoom": "not newly verified"
+        },
+        "historical": true
+      },
+      "historicalEvidence": "Selected-01, Framery/03, typography and prior homepage/footer releases remain historical, not this style-release certification."
+    },
+    "homepage": {
+      "reference": "../research/header-hero-html-2026-10-10/site/index.html",
+      "revision": "contact-solid-20261012-6",
+      "authority": "Approved homepage composition remains final contact-solid-20261012-6; latest request extends its identity to inner pages while preserving that composition.",
+      "selectors": [
+        ".approved-home",
+        ".approved-home .hp-*"
+      ],
+      "source": "src/app/homepage-approved.css",
+      "markup": "src/lib/approved-home-markup.ts",
+      "importer": "scripts/import-approved-home.mjs",
+      "logo": "public/media/home-final/assets/ergonomic-logo.png",
+      "protectedH1": "ERGONOMINIAI BALDAI IR PRIEDAI:",
+      "responsive": {
+        "h1": {
+          "default": "clamp(40px,4.1vw,66px)/1.06, weight 800, -.014em; two nowrap block spans with real whitespace boundary",
+          "min901Max1200": "4.1vw",
+          "max900": "clamp(28px,6.5vw,44px)/1.08, -.025em"
+        },
+        "container": {
+          "maxWidth": "none",
+          "gutter": "6%",
+          "min901Max1200Gutter": "5%"
+        },
+        "hero": {
+          "aspectRatio": "1276/660",
+          "minHeight": "560px",
+          "max900": "normal-flow sections; visual clamp(260px,44vw,380px)",
+          "max360Visual": "255px"
+        },
+        "header": {
+          "sharedSource": "src/components/site-header.tsx + src/app/site-header.css; RootLayout once on every route",
+          "position": "relative",
+          "height": "clamp(66px,5.35vw,88px)",
+          "max900": "wrapped visible navigation",
+          "max560Search": "full row"
+        },
+        "categories": {
+          "originalCount": 28,
+          "visibleCardWidths": 5,
+          "gap": "16px",
+          "max900": {
+            "cardBasis": "calc((100% - 14px)/2.2)",
+            "gap": "14px"
+          },
+          "max560": {
+            "cardBasis": "82%"
+          },
+          "autoplay": "40px/s",
+          "seamCopies": 5,
+          "autoplayBehavior": "Owner requires automatic start at 40px/s on both rails, including reduced motion; manual steps instant, Play never blocked, persistent Pause and hover/focus/pointer/visibility guards retained."
+        },
+        "popular": {
+          "models": [
+            "Xilium",
+            "Altum",
+            "4ME",
+            "2ME",
+            "Bound"
+          ],
+          "columns": 5,
+          "max900Columns": 2,
+          "autoplay": false
+        },
+        "workspace": {
+          "columns": 3,
+          "max600Columns": 1,
+          "imageRatio": "1.65",
+          "destinations": [
+            "/produktai/rasomieji-stalai-ir-darbo-vietos/",
+            "/produktai/stalai/?tipas=www_conferencetables",
+            "/produktai/minksti-baldai/"
+          ]
+        },
+        "collection": {
+          "columns": "38.4% minmax(0,1fr)",
+          "max800": "42% minmax(0,1fr)",
+          "max600": "single column",
+          "destination": "/kolekcijos/"
+        },
+        "demo": {
+          "columns": 3,
+          "max700Columns": 1,
+          "stageHeight": "clamp(280px,23vw,350px)",
+          "max960Stage": "290px",
+          "max700Stage": "300px"
+        },
+        "process": {
+          "columns": 4,
+          "headingColumns": 1,
+          "steps": 3,
+          "max700": "vertical heading and steps"
+        },
+        "guides": {
+          "originalCount": 3,
+          "columns": 3,
+          "max1000Columns": 2,
+          "max560CardBasis": "88%",
+          "autoplay": "40px/s",
+          "seamCopies": 3,
+          "destinations": [
+            "/biuro-kedes/",
+            "/ergonominiai-stalai/",
+            "/gidai/"
+          ],
+          "autoplayBehavior": "Owner requires automatic start at 40px/s on both rails, including reduced motion; manual steps instant, Play never blocked, persistent Pause and hover/focus/pointer/visibility guards retained."
+        },
+        "contact": {
+          "columns": "40% 45%",
+          "gap": "5%",
+          "max1000": {
+            "columns": "44% 52%",
+            "gap": "4%"
+          },
+          "max700": "block",
+          "pairedNameFields": "repeat(2,minmax(0,1fr)) at all widths",
+          "desktopFieldFont": "14px",
+          "max700FieldFont": "16px",
+          "consentFont": "12px"
+        }
+      },
+      "demo": {
+        "illustrative": true,
+        "colorCount": 5,
+        "armrestCount": 3,
+        "headrestStates": 2,
+        "exampleCount": 30,
+        "headrestColor": "follows backrest upholstery",
+        "sideProfileColor": "VL4041",
+        "rotationControl": "360 degree icon",
+        "lazyWebGL": true,
+        "independentMountState": true,
+        "cleanup": true,
+        "writesProductState": false,
+        "writesUrl": false,
+        "writesBrowserStorage": false,
+        "writesQuoteItems": false,
+        "cta": "/produktai/kedes/xilium-darbo-kedes/"
+      },
+      "contact": {
+        "fields": [
+          "name",
+          "company",
+          "email",
+          "message"
+        ],
+        "required": [
+          "name",
+          "email",
+          "message",
+          "consent"
+        ],
+        "api": "POST /api/quotes/",
+        "guards": [
+          "honeypot",
+          "startedAt",
+          "submissionKey",
+          "busy/error/saved",
+          "AbortController cleanup"
+        ],
+        "savedIdDisplay": "first eight returned ID characters",
+        "smtp": "unconfigured",
+        "rightInscription": false,
+        "leftInscription": "Geresnės darbo erdvės prasideda nuo pokalbio"
+      },
+      "provenanceManifest": "content/home-final-provenance.json",
+      "globalFooter": "One shared dark green SiteFooter on every route; separate hp-legacy-contacts removed. See extensions.footer.",
+      "review": {
+        "providedBy": "parent implementation task",
+        "testsPassed": 57,
+        "typecheck": "passed",
+        "cloudflareBuild": "passed",
+        "protectedPages": 8,
+        "protectedSeoBlocks": 76,
+        "localSeo": ".impeccable/review/home-integration-20261012/seo-local.json",
+        "savedRequest": ".impeccable/review/home-integration-20261012/form-local.json",
+        "deliveryStatus": "awaiting_configuration",
+        "deliveryAttempts": 0,
+        "mechanicalDetector": ".impeccable/review/home-integration-20261012/detector.json",
+        "mechanicalDetectorResult": [],
+        "publicDeployment": "not verified in this documentation pass",
+        "trueBrowserZoom": "not newly verified",
+        "historical": true
+      }
+    },
+    "typographySystem": {
+      "authority": "typography.css semantic roles followed by site-theme.css intentional inner variants, isolated homepage-approved.css, homepage-matched shared site-header.css and final shared footer.css.",
+      "importOrder": "globals.css → homepage.css → homepage-selected.css → brand-logo.css → typography.css → product-images.css → site-theme.css → homepage-approved.css → site-header.css → footer.css",
+      "fontResource": "public/fonts/manrope.ttf",
+      "fontDefinition": "src/app/globals.css: one local variable family, wght 200–800, font-display:swap; Arial/sans-serif fallback.",
+      "semanticWeights": [
+        400,
+        500,
+        550,
+        600,
+        650,
+        700,
+        750,
+        800
+      ],
+      "brandingException": "Owner-supplied raster logo is artwork. Caveat is used only for decorative left homepage inscription.",
+      "rootFontSize": "100% of the user preference",
+      "readingMeasure": "68ch",
+      "maintenance": "Assign role/family/size/weight/leading/tracking/measure/contrast to new text; reuse shared roles and intentional site-theme variants. Align source/frontmatter/sidecar. Preserve home local microtype/footer roles. Check desktop/intermediate/mobile, longer Lithuanian copy, 320px reflow, enlargement/zoom, user spacing and focus before claiming coverage.",
+      "normalizationCount": 103,
+      "removedSupersededDeclarationCount": 203,
+      "approvedHomeExceptions": {
+        "bodyBase": "16px/normal leading/400/normal tracking",
+        "display": "px clamp and two nowrap block spans",
+        "smallCopy": "12–13px scoped notes/consent/controls",
+        "field": "14px desktop; 16px max-width 700px",
+        "sectionLabels": "13–15px with local positive tracking",
+        "source": "src/app/homepage-approved.css"
+      },
+      "historicalAudit": "../research/typography-audit-2026-10-10/review/documentation.md"
+    },
+    "footer": {
+      "authority": "Owner-requested one dark green footer on all routes; latest whole-site extension preserves source and stylesheet.",
+      "source": "src/app/footer.css",
+      "component": "src/components/site-footer.tsx",
+      "layout": "src/app/layout.tsx",
+      "selectors": [
+        ".site-footer.footer-unified",
+        ".footer-unified *"
+      ],
+      "allRoutes": true,
+      "footerCount": 1,
+      "separateHomepageContactBand": false,
+      "palette": {
+        "ground": "{colors.footer-ground}",
+        "ink": "{colors.footer-ink}",
+        "secondary": "{colors.footer-secondary}",
+        "rule": "{colors.footer-rule}"
+      },
+      "logo": {
+        "component": "BrandLogo",
+        "treatment": "brightness(0) invert(1)",
+        "rasterBytes": "unchanged",
+        "width": "min(100%,260px)",
+        "max600Width": "250px"
+      },
+      "responsive": {
+        "maxWidth": "none",
+        "gutter": "{spacing.footer-gutter}",
+        "grid": {
+          "columns": "1.2fr .95fr 1fr 1.25fr",
+          "gap": "{spacing.footer-column-gap}",
+          "padding": "38px var(--footer-gutter) 30px"
+        },
+        "max1050": {
+          "columns": "repeat(2,minmax(0,1fr))",
+          "gap": "30px 40px"
+        },
+        "max600": {
+          "brand": "full row",
+          "contacts": "full row",
+          "catalogAndErgonomics": "two columns",
+          "gap": "28px 20px",
+          "paddingBlock": "30px 26px"
+        },
+        "end": {
+          "minHeight": "74px",
+          "paddingBlock": "14px",
+          "gap": "16px 28px",
+          "wrap": true,
+          "max600": {
+            "gap": "8px 20px",
+            "copyright": "full row",
+            "social": "full row",
+            "backToTop": "right aligned"
+          }
+        }
+      },
+      "links": {
+        "catalog": [
+          {
+            "text": "Ergonominiai stalai",
+            "href": "/ergonominiai-stalai/"
+          },
+          {
+            "text": "Ergonominės kėdės",
+            "href": "/ergonomines-kedes/"
+          },
+          {
+            "text": "Balansinės kėdės",
+            "href": "/shop/balansines-kedes/"
+          },
+          {
+            "text": "Priedai",
+            "href": "/uzklausa/?tema=Priedai"
+          },
+          {
+            "text": "Biuro kėdės",
+            "href": "/biuro-kedes/"
+          },
+          {
+            "text": "Visas katalogas",
+            "href": "/produktai/"
+          }
+        ],
+        "ergonomics": [
+          {
+            "text": "Ergonomika darbo vietoje",
+            "href": "/ergonomika-darbo-vietoje-reikalavimai/"
+          },
+          {
+            "text": "Aktyvus sėdėjimas",
+            "href": "/aktyvus-sedejimas/"
+          },
+          {
+            "text": "Mokykliniai baldai",
+            "href": "/mokykliniai-baldai/"
+          },
+          {
+            "text": "Gidai ir patarimai",
+            "href": "/gidai/"
+          },
+          {
+            "text": "Produktų kolekcijos",
+            "href": "/kolekcijos/"
+          }
+        ],
+        "inquiry": "/uzklausa/",
+        "privacy": "/privatumas/",
+        "administration": "/admin/",
+        "facebook": "https://www.facebook.com/ergonomic.lt",
+        "instagram": "https://www.instagram.com/ergonomic.lt/"
+      },
+      "contacts": {
+        "heading": "KONTAKTAI",
+        "company": "UAB A-Z Prekyba",
+        "address": "Buivydiškių g. 22, Vilnius, LT- 07195",
+        "legacyPhone": "+37069199833",
+        "legacyEmail": "ergonomic@azprekyba.lt",
+        "primaryEmail": "info@ergonomic.lt"
+      },
+      "backToTop": {
+        "href": "#top",
+        "target": "body id=\"top\"",
+        "nativeAnchor": true,
+        "size": "44px",
+        "shape": "circle",
+        "stroke": "{colors.footer-back-top-stroke}",
+        "hover": "#285a49"
+      },
+      "states": {
+        "hover": "footer-ink and underline; underline-offset 5px",
+        "focus": "3px solid #dfe8de; 4px outline offset",
+        "linkWrapping": "overflow-wrap:anywhere"
+      },
+      "targetHeights": {
+        "catalogAndContact": "29px",
+        "primaryEmail": "38px",
+        "inquiryAndEnd": "44px"
+      },
+      "review": {
+        "providedBy": "parent implementation task",
+        "scope": "local footer consolidation",
+        "captures": [
+          ".impeccable/review/footer-unified-20261012/desktop.png",
+          ".impeccable/review/footer-unified-20261012/mobile-top.png",
+          ".impeccable/review/footer-unified-20261012/mobile-bottom.png"
+        ],
+        "captureInspection": "opened and validated by parent implementation task; documentation agent read source only",
+        "desktop": {
+          "viewportWidth": 1265,
+          "footerHeight": 364
+        },
+        "mobile": {
+          "viewportWidth": 375,
+          "footerHeight": 836.25
+        },
+        "horizontalOverflow": false,
+        "backToTopScrollY": 0,
+        "protectedPages": 8,
+        "protectedSeoBlocks": 76,
+        "localSeo": "passed",
+        "homepageOriginalTextScope": "main plus single footer per owner-requested consolidation",
+        "otherProtectedTextScope": "strict main unchanged",
+        "cloudflareBuild": "pending at documentation time",
+        "publicDeployment": "not completed at documentation time",
+        "trueBrowserZoom": "not newly verified",
+        "historical": true
+      },
+      "historicalPreviewRelease": {
+        "version": "0eb4ba22-bd27-4e37-98e4-470b209c43c3",
+        "date": "2026-10-12",
+        "seoPages": 8,
+        "seoBlocks": 76,
+        "links": 47,
+        "assetSha256": 89,
+        "footerCount": 1,
+        "backToTopScrollY": 0
+      }
+    },
+    "sharedLayout": {
+      "maxWidth": "1800px",
+      "gutter": "{spacing.gutter}",
+      "actionRadius": "{rounded.action}",
+      "header": {
+        "authority": "Original approved homepage header; identical across all routes per owner 2026-10-13",
+        "source": "src/components/site-header.tsx + src/app/site-header.css",
+        "render": "one server SiteHeader in RootLayout; imported homepage header removed",
+        "position": "relative, non-sticky",
+        "desktopHeight": "clamp(66px,5.35vw,88px)",
+        "inlinePadding": "5.8%",
+        "logoWidth": "clamp(220px,23vw,300px)",
+        "navigation": "49% center; clamp(24px,2.65vw,42px) gap; 16px/600/1.5",
+        "desktopSearchWidth": "250px",
+        "min901Max1200": "logo 200px; nav 15px/gap 14px; search 220px",
+        "min901Max1000": "logo 180px; nav 47% center/gap 12px",
+        "max900": "normal flow, wrapping, ≥70px; padding-block 18px 14px; 16px gap; logo min(240px,calc(100% - 60px)); visible nav 16px/gap 12px 24px; search clamp(180px,30vw,240px)",
+        "max560": "logo min(240px,100%); search full row",
+        "max360": "navigation gap 10px 22px",
+        "composition": "desktop homepage and header share first grid row; ≤900px homepage and all-width inner content use second row",
+        "scrollbarGutter": "html stable",
+        "destinations": ["/produktai/", "/#darbo-erdves", "/gidai/", "/#kontaktai"],
+        "nativeSearch": "GET /produktai/?paieska=",
+        "superseded": "separate homepage/inner headers; sticky 100px header; hamburger menu; active-link variant; header quote/count"
+      },
+      "readingMeasure": "68ch",
+      "productImages": "Contain, zero padding, normal blend; source-specific backdrop preserved.",
+      "threeD": "Chrome shares world; scene background/lighting and model materials remain user-controlled."
+    },
+    "innerDensity": {
+      "date": "2026-10-13",
+      "authority": "Owner requests reduced information scale, spacing and controls across inner pages, five catalog products per row, homepage unchanged.",
+      "source": "src/app/site-theme.css",
+      "surfaceBrief": ".impeccable/surfaces/inner-density.md",
+      "documentation": ".impeccable/review/site-density-20261013/documentation.md",
+      "selector": ".site-content:not(:has(.approved-home))",
+      "precedence": "inner-* records override retained global/default and earlier site-style role records only within inner content. Existing tokens, ramps, component previews, generatedAt and previous-phase evidence are retained.",
+      "container": {
+        "maxWidth": "1640px",
+        "gutter": "{spacing.inner-gutter}",
+        "max650Gutter": "20px",
+        "productMaxWidth": "1440px"
+      },
+      "typography": {
+        "roles": [
+          "inner-page",
+          "inner-section",
+          "inner-body",
+          "inner-reading",
+          "inner-label",
+          "inner-action",
+          "inner-card",
+          "inner-card-copy",
+          "inner-collection-title",
+          "inner-guide-title",
+          "inner-product",
+          "inner-contact-link",
+          "inner-contact-link-mobile",
+          "inner-contact-title",
+          "inner-field-label",
+          "inner-entry",
+          "inner-entry-touch",
+          "inner-filter-entry"
+        ],
+        "readingMeasure": "68ch",
+        "pageIntro": "15px/400/1.6; heading wrapper ≤780px",
+        "catalogCategory": "13px/400/1.5; selected 700",
+        "catalogAndTocTitle": "15px/600/1.5",
+        "editorialHeadings": "H2 clamp(24px,2.2vw,28px)/650/1.25; H3 20px/650/1.3; H4 17px/650/1.4; -.025em",
+        "quoteHeadings": "H2 20px/650/1.2; H3 17px/650/1.3; -.025em",
+        "textLink": "15px/550/1.6; ≥44px",
+        "deliberateRoles": [
+          "13px supporting/card/category text",
+          "19px guide/contact headings"
+        ]
+      },
+      "grids": {
+        "productsAndCollections": {
+          "min1200": 5,
+          "min1001Max1199": 4,
+          "min651Max1000": 3,
+          "max650": 2,
+          "productGap": "{spacing.inner-product-grid-gap}",
+          "collectionGap": "{spacing.inner-collection-grid-gap}",
+          "max650Gap": "{spacing.inner-grid-gap-mobile}"
+        },
+        "filters": {
+          "desktop": "minmax(160px,1.25fr) repeat(4,minmax(0,1fr)) auto",
+          "max1199": 3,
+          "max800": 2,
+          "max650": "search and action span full row; padding 10px",
+          "max380": 1,
+          "gap": "8px",
+          "padding": "12px"
+        },
+        "pagination": {
+          "pageSize": 20,
+          "source": "src/components/catalog-page.tsx"
+        },
+        "imageSizes": {
+          "sources": [
+            "src/components/product-card.tsx",
+            "src/app/kolekcijos/page.tsx"
+          ],
+          "rules": "≤650px 46vw; ≤1000px 30vw; ≤1199px 23vw; otherwise 18vw"
+        }
+      },
+      "controls": {
+        "button": "≥42px desktop; 9px 18px padding; 10px gap; 4px corners",
+        "field": "≥42px desktop; 8px 10px padding; 5px label gap; 14px field bottom margin; textarea ≥112px",
+        "filter": "≥38px desktop; 14px/1.45; 6px select/button vertical padding",
+        "max900": "ordinary input/select/textarea/search and filter input/select/button text 16px; buttons/input/select/search and filter controls ≥44px",
+        "unchangedTargets": "text links, pagination, gallery arrows and switches, viewer toolbar ≥44px; finish trigger ≥46px"
+      },
+      "product": {
+        "detail": "non-fullscreen 1fr/1.12fr, 32px gap, 8px 28px padding; ≤800px one column/24px gap",
+        "galleryMaxWidth": "520px",
+        "familyGalleryMaxWidth": "620px",
+        "viewerHeight": "380px; 340px at ≤650px",
+        "thumbnails": "60px, 8px gap",
+        "cardInformationPadding": "10px",
+        "configuration": "12px section/grid spacing; summary ≥42px with 15px/650; select ≥42px desktop/≥44px at ≤900px; finish sample 32px"
+      },
+      "reading": {
+        "guideIndex": "two columns/32px gap; 20px row padding; one column at ≤650px",
+        "editorialGap": "36px; 24px at ≤800px",
+        "toc": "210px/16px padding; ≤1100px 190px/14px; ≤800px in flow and two link columns; ≤650px one link column",
+        "paragraphBottomMargin": "16px"
+      },
+      "contactAndQuote": {
+        "contact": "28px padding/32px gap; ≤650px 20px/24px; inherited stack ≤800px",
+        "quote": "32px gap; item plane 24px padding; item 76px/16px gap; stack ≤800px; ≤380px item 65px/14px"
+      },
+      "detector": {
+        "source": ".impeccable/review/site-density-20261013/detector.json",
+        "advisories": 5,
+        "meaning": "Original typography advisories for intentional 13px and 19px roles; retained byte-for-byte.",
+        "rerun": false
+      },
+      "review": {
+        "documentationOnly": true,
+        "sourceRead": true,
+        "contextRun": false,
+        "browserRun": false,
+        "buildRun": false,
+        "testsRun": false,
+        "publicDeployment": "No new density version certified by this documentation pass; release/QA belongs to the implementation task.",
+        "priorPublicHeaderVersion": "295713e8-1b51-43a0-acb6-dce96e57b5b6; historical prior-phase receipt",
+        "historicalEvidence": "Existing homepage, footer, site-style and header receipts remain their original phase records."
+      }
+    },
+    "siteStyleReview": {
+      "historicalHeaderEvidence": "2026-10-12 menu focus describes the superseded header; current header evidence is headerMatchReview",
+      "source": ".impeccable/review/site-style-20261012/finish-review.md",
+      "scope": "local current template/style handoff",
+      "sourceInspectedBy": "fresh documentation subagent",
+      "visualInspection": "Separate finish reviewer opened 29 supplied captures; documenter did not run a browser review.",
+      "tests": {
+        "source": ".impeccable/review/site-style-20261012/tests.log",
+        "pass": 57,
+        "fail": 0
+      },
+      "seo": {
+        "source": ".impeccable/review/site-style-20261012/seo-local.json",
+        "protectedPages": 8,
+        "protectedBlocks": 76,
+        "descriptionFalse": "Preserved missing descriptions on /aktyvus-sedejimas/ and /shop/balansines-kedes/."
+      },
+      "builds": {
+        "next": ".impeccable/review/site-style-20261012/build-next-final.log",
+        "cloudflare": ".impeccable/review/site-style-20261012/build-cloudflare-final.log",
+        "status": "Both final builds and Cloudflare typecheck passed after the final one-line inquiry-hover correction, confirmed by parent; local source logs inspected."
+      },
+      "menuFocus": {
+        "source": ".impeccable/review/site-style-20261012/menu-focus-confirmation.json",
+        "width": 1050,
+        "status": "passed; Katalogas inside menu → menu closed, Atidaryti meniu active, aria-expanded=false, focus-visible=true"
+      },
+      "inquiryHover": {
+        "source": ".impeccable/review/site-style-20261012/inquiry-hover-confirmation.json",
+        "status": "Passed by parent native confirmation; last source correction inspected.",
+        "background": "{colors.action-hover}",
+        "text": "{colors.paper}"
+      },
+      "detector": {
+        "source": ".impeccable/review/site-style-20261012/detector.json",
+        "advisories": 9,
+        "meaning": "Old ramp advisories; current roles now documented.",
+        "rerun": false
+      },
+      "publicDeployment": "pending for whole-site style release",
+      "productionDomain": "unchanged",
+      "smtp": "unconfigured; no email sent",
+      "limits": [
+        "Template/principal journey coverage, not every model",
+        "No new screen-reader/zoom/320px/user-spacing audit by documenter",
+        "Private admin data not opened"
+      ]
+    },
+    "headerMatchReview": {
+      "date": "2026-10-13",
+      "source": ".impeccable/review/header-match-20261013/QA.md",
+      "measurements": ".impeccable/review/header-match-20261013/measurements.json",
+      "surfaceBrief": ".impeccable/surfaces/shared-header.md",
+      "authority": "Original homepage header and owner request for identical header on all pages",
+      "routes": ["/", "/produktai/", "/gidai/"],
+      "widths": [1440, 390, 766, 1000, 1920],
+      "providedEvidence": "Implementation task reports identical header/brand/nav/search bounding boxes per width, one header, no document overflow; saved original homepage baseline and inspected captures.",
+      "documentation": "Narrow merge from source and provided QA; no new context/detector/browser/build or UI changes. Existing generatedAt and tonal ramps preserved.",
+      "publicDeployment": {
+        "providedBy": "parent implementation task; QA.md updated after deployment",
+        "version": "295713e8-1b51-43a0-acb6-dce96e57b5b6",
+        "status": "both builds/typechecks passed; public native home↔catalog header/logo/nav/search equality at desktop and 390px; no console errors; SEO 8/76, links 47, asset SHA256 89 passed",
+        "documenterVerification": "Source and supplied receipt only; no independent browser or deployment run"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared forest/chalk inquiry and add-to-quote action; 4px corners, 15px/600 role.",
+      "html": "<button class=\"ds-button-primary\" type=\"button\">Pridėti prie užklausos<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-button-primary{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;max-width:100%;padding:13px 24px;border:1px solid var(--ink,#193f35);border-radius:var(--action-radius,4px);font-family:Manrope,Arial,sans-serif;font-size:.9375rem;font-weight:600;line-height:1.5;letter-spacing:normal;cursor:pointer;background:var(--ink,#193f35);color:var(--paper,#f5f6f2);transition:background-color .15s,color .15s}.ds-button-primary:hover{background:#285748;border-color:#285748}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#356b55);outline-offset:4px}.ds-button-primary:disabled{opacity:.55;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Shared outlined secondary action with soft-green hover and 4px corners.",
+      "html": "<button class=\"ds-button-outline\" type=\"button\">Gauti pasiūlymą<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-button-outline{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;max-width:100%;padding:13px 24px;border:1px solid var(--line,#b5c2ba);border-radius:var(--action-radius,4px);font-family:Manrope,Arial,sans-serif;font-size:.9375rem;font-weight:600;line-height:1.5;letter-spacing:normal;cursor:pointer;background:transparent;color:var(--ink,#193f35);transition:background-color .15s,color .15s}.ds-button-outline:hover{background:var(--sage,#dfe8de);border-color:var(--line,#b5c2ba)}.ds-button-outline:focus-visible{outline:3px solid var(--focus,#356b55);outline-offset:4px}.ds-button-outline:disabled{opacity:.55;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button-outline{transition:none}}"
+    },
+    {
+      "name": "Article Inquiry Button",
+      "kind": "button",
+      "refersTo": "button-inquiry",
+      "description": "Forest/chalk action in the article soft-green inquiry band; explicit forest hover preserves contrast.",
+      "html": "<button class=\"ds-button-light\" type=\"button\">Pateikti užklausą<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-button-light{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;max-width:100%;padding:13px 24px;border:1px solid var(--ink,#193f35);border-radius:var(--action-radius,4px);font-family:Manrope,Arial,sans-serif;font-size:.9375rem;font-weight:600;line-height:1.5;letter-spacing:normal;cursor:pointer;background:var(--ink,#193f35);color:var(--paper,#f5f6f2);transition:background-color .15s,color .15s}.ds-button-light:hover{background:#285748;border-color:#285748}.ds-button-light:focus-visible{outline:3px solid var(--focus,#356b55);outline-offset:4px}.ds-button-light:disabled{opacity:.55;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-button-light{transition:none}}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Shared pale 4px field, external 14px/550 label and 16px entry.",
+      "html": "<label class=\"ds-field\">Vardas ir pavardė *<input class=\"ds-input\" name=\"name\" autocomplete=\"name\" required></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;font-size:.875rem;font-weight:550;line-height:1.5;margin-bottom:20px;color:var(--ink,#193f35);font-family:Manrope,Arial,sans-serif;letter-spacing:normal}.ds-input{width:100%;min-width:0;border:1px solid var(--line,#b5c2ba);background:#fafbf8;border-radius:var(--action-radius,4px);padding:13px;min-height:48px;font-family:Manrope,Arial,sans-serif;font-size:1rem;font-weight:400;line-height:1.5;letter-spacing:normal;color:var(--body-ink,#314c43);caret-color:var(--accent,#193f35)}.ds-input::placeholder{color:var(--muted,#50665c);opacity:1}.ds-input:focus-visible{outline:3px solid var(--focus,#356b55);outline-offset:4px}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Original homepage navigation shared by every route: 16px/600/1.5, 15px at 901–1200px; always visible and wrapped at ≤900px. Full SiteHeader adds the original raster logo and native GET search.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"Pagrindinė navigacija\"><a class=\"ds-nav-link\" href=\"/produktai/\">Katalogas</a><a class=\"ds-nav-link\" href=\"/#darbo-erdves\">Darbo erdvės</a><a class=\"ds-nav-link\" href=\"/gidai/\">Ergonomika</a><a class=\"ds-nav-link\" href=\"/#kontaktai\">Kontaktai</a></nav>",
+      "css": ".ds-navigation{display:flex;align-items:center;gap:clamp(24px,2.65vw,42px);color:var(--ink,#193f35);font-family:Manrope,sans-serif;font-size:16px;font-weight:600;line-height:1.5;letter-spacing:normal;white-space:nowrap}.ds-nav-link{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none}.ds-nav-link:hover{text-decoration:underline;text-underline-offset:5px}.ds-nav-link:focus-visible{outline:3px solid var(--focus,#356b55);outline-offset:5px}@media(max-width:1200px) and (min-width:901px){.ds-navigation{gap:14px;font-size:15px}}@media(max-width:1000px) and (min-width:901px){.ds-navigation{gap:12px}}@media(max-width:900px){.ds-navigation{flex-wrap:wrap;gap:12px 24px;font-size:16px}}@media(max-width:360px){.ds-navigation{gap:10px 22px}}"
+    },
+    {
+      "name": "New Badge",
+      "kind": "chip",
+      "refersTo": "new-badge",
+      "description": "Existing catalog status text on a sage 4px badge.",
+      "html": "<span class=\"ds-new-badge\">Nauja</span>",
+      "css": ".ds-new-badge{display:inline-block;background:var(--sage,#dfe8de);color:var(--ink,#193f35);padding:4px 8px;font-size:.875rem;font-weight:400;line-height:1.6;letter-spacing:normal;border-radius:4px;font-family:Manrope,Arial,sans-serif}"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Open genuine product card with 18–21px/650 model title and 14px metadata. Existing genuine embedded Xilium raster retained; source-specific backdrops remain authoritative.",
+      "html": "<article class=\"ds-product-card\"><a class=\"ds-product-image\" href=\"#xilium\" aria-label=\"Xilium\"><img class=\"ds-product-photo\" src=\"data:image/jpeg;base64,/9j//gFqaW1wZWNjYWJsZTpwcm9tcHQAU291cmNlZCBhc3NldC4gT3JpZ2luOiBodHRwczovL3d3dy5ub3d5c3R5bC5jb20vZ2V0bWVkaWEvNjNmYzM1NTItNDZmNi00YmYwLWI1MGYtMDUyZjU3ZjRhNGNhL3hpbGl1bS1zd2l2ZWwtY2hhaXItZHVvLWJhY2stdXBocC1nc2ItaHJ1YS12bDAwMzQtdmw0MDQxLXI1NS1wb2wtdHMzMDAwMC0yNzc0Ni0wLmpwZz9oZWlnaHQ9MTYwMC4gU291cmNlIGRvd25sb2FkIFNIQTI1NjogYTJiOTBkNjAwMmYyOTUwMjUwMjVmMGI2OTU3MjI1MzRkNDZjOTE2OWYyODYxNDVjODRjNWQ4MmE4YWUxMjQ2NC4gT3JpZ2luYWwgYXNzZXQgc3VwcGxpZWQgYnkgaXRzIHNvdXJjZTsgbm8gZ2VuZXJhdGVkIGNvbnRlbnQu/+AAEEpGSUYAAQEAAAEAAQAA/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxERExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgGQAZAAwEiAAIRAQMRAf/EAB0AAQACAgMBAQAAAAAAAAAAAAABAgMEBQYIBwn/xABnEAEAAQIDBQQFBQYNDBAGAgMAAQIRAwQhBQYSMUEHUWFxCBOBkaEUIjKxwRVSYnKy0RYjM0JzgpKis8LS4fAXJCU0NTdDU1ZjlaMYJic2RFVkdHWDhJOU0+LxRUZUZcPjKLTEhaT/xAAYAQEAAwEAAAAAAAAAAAAAAAAAAQMEAv/EACMRAQABBAIDAQEBAQEAAAAAAAABAgMRExIxITJRQSIEYRT/2gAMAwEAAhEDEQA/APXQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABjxKb6wyIBgpp15ExaeTLwk02BitPcmabRey9kxToClFN6tWWEU02WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==\" alt=\"Xilium\"></a><div class=\"ds-product-info\"><h3 class=\"ds-product-title\"><a class=\"ds-product-link\" href=\"#xilium\">Xilium<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></a></h3><p class=\"ds-product-type\">Darbo kėdės</p><p class=\"ds-product-brand\">Nowy Styl</p><p class=\"ds-product-price\">Kaina pagal užklausą</p></div></article>",
+      "css": ".ds-product-card{min-width:0;color:var(--body-ink,#314c43);font-family:Manrope,Arial,sans-serif;line-height:1.65}.ds-product-image{display:block;position:relative;aspect-ratio:1;background:#f4f4f4;overflow:hidden}.ds-product-photo{display:block;width:100%;height:100%;object-fit:contain;padding:0;mix-blend-mode:normal}.ds-product-info{padding-top:14px}.ds-product-title{font-size:clamp(18px,1.6vw,21px);font-weight:650;line-height:1.3;letter-spacing:-.015em;margin:0 0 7px;color:var(--ink,#193f35)}.ds-product-link{display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none}.ds-product-link svg{align-self:center}.ds-product-type,.ds-product-brand,.ds-product-price{font-size:14px;font-weight:400;line-height:1.65;letter-spacing:normal;color:var(--muted,#50665c);margin:0}.ds-product-type{color:var(--ink,#193f35);margin:10px 0 4px}.ds-product-brand{margin-bottom:4px}.ds-product-price{color:var(--ink,#193f35);margin-top:8px;font-weight:550}.ds-product-image:focus-visible,.ds-product-link:focus-visible{outline:3px solid var(--focus,#356b55);outline-offset:4px}@media(max-width:650px){.ds-product-title{font-size:18px}}@media(max-width:520px){.ds-product-link svg{width:15px}}"
+    },
+    {
+      "name": "Approved homepage primary action",
+      "kind": "button",
+      "refersTo": "approved-button-primary",
+      "description": "48px/4px approved hero link; 46px at max-width 900px. No extra hover transform is defined in source.",
+      "html": "<a class=\"ds-approved-action ds-approved-primary\" href=\"/uzklausa/\">Gauti pasiūlymą<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-approved-action{display:inline-flex;justify-content:center;align-items:center;gap:15px;min-height:48px;padding:11px 27px;border:1px solid transparent;border-radius:4px;font:600 15px/1.4 Manrope,sans-serif;white-space:nowrap;cursor:default;text-decoration:none}.ds-approved-action svg{flex-shrink:0}.ds-approved-action:focus-visible{outline:3px solid #356b55;outline-offset:5px}@media(max-width:900px){.ds-approved-action{padding-inline:17px;min-height:46px;font-size:14px;gap:10px}}.ds-approved-primary,.ds-approved-primary:hover,.ds-approved-primary:active{background:#193f35;color:#fff}"
+    },
+    {
+      "name": "Approved homepage outline action",
+      "kind": "button",
+      "refersTo": "approved-button-outline",
+      "description": "Pale translucent catalog link, outline stroke and approved 4px corners.",
+      "html": "<a class=\"ds-approved-action ds-approved-outline\" href=\"/produktai/\">Atidaryti katalogą<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-approved-action{display:inline-flex;justify-content:center;align-items:center;gap:15px;min-height:48px;padding:11px 27px;border:1px solid transparent;border-radius:4px;font:600 15px/1.4 Manrope,sans-serif;white-space:nowrap;cursor:default;text-decoration:none}.ds-approved-action svg{flex-shrink:0}.ds-approved-action:focus-visible{outline:3px solid #356b55;outline-offset:5px}@media(max-width:900px){.ds-approved-action{padding-inline:17px;min-height:46px;font-size:14px;gap:10px}}.ds-approved-outline,.ds-approved-outline:hover,.ds-approved-outline:active{color:#193f35;background:rgb(250 251 248 / 93%);border-color:#79968b}"
+    },
+    {
+      "name": "Approved homepage contact field",
+      "kind": "input",
+      "refersTo": "approved-input",
+      "description": "Square botanical field: 14px desktop, 16px at max-width 700px, 44px minimum. Label is visually hidden in the approved form.",
+      "html": "<label class=\"ds-approved-field\"><span class=\"ds-approved-sr\">El. paštas (privalomas)</span><input type=\"email\" placeholder=\"El. paštas\" autocomplete=\"email\" required></label>",
+      "css": ".ds-approved-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.ds-approved-field{display:block;min-width:0}.ds-approved-field input{display:block;width:100%;min-width:0;margin:0;padding:11px 14px;border:1px solid transparent;border-radius:0;background:#f8f9f6;color:#193f35;caret-color:#193f35;font:400 14px/1.5 Manrope,sans-serif;min-height:44px}.ds-approved-field input::placeholder{color:#52674f;opacity:1}.ds-approved-field input:hover{border-color:#99ad9c}.ds-approved-field input:focus-visible{border-color:#356b55;outline:2px solid #356b55;outline-offset:2px}.ds-approved-field input:user-invalid{border-color:#963b2c}@media(max-width:700px){.ds-approved-field input{font-size:16px;padding-inline:12px}}"
+    },
+    {
+      "name": "Approved category carousel controls",
+      "kind": "custom",
+      "refersTo": "approved-carousel-control",
+      "description": "Persistent Play/Pause and 44px arrows. Actual carousel autoplays 28 original categories at 40px/s with pause/hover/focus/visibility guards; reduced-motion manual steps stay instant.",
+      "html": "<div class=\"ds-approved-carousel\"><button class=\"ds-approved-play\" type=\"button\" aria-label=\"Sustabdyti automatinį kategorijų slinkimą\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M9 6v12M15 6v12\"/></svg>Sustabdyti</button><button class=\"ds-approved-arrow\" type=\"button\" aria-label=\"Ankstesnės kategorijos\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M19 12H5m6 6-6-6 6-6\"/></svg></button><button class=\"ds-approved-arrow\" type=\"button\" aria-label=\"Kitos kategorijos\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button></div>",
+      "css": ".ds-approved-carousel{display:flex;align-items:center;gap:8px;color:#193f35;font-family:Manrope,sans-serif}.ds-approved-carousel button{cursor:pointer;color:inherit}.ds-approved-play{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;margin-right:10px;border:0;background:transparent;font:600 13px/1.5 Manrope,sans-serif}.ds-approved-play:hover{text-decoration:underline;text-underline-offset:4px}.ds-approved-arrow{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #79968b;border-radius:4px;background:transparent}.ds-approved-arrow:hover:not(:disabled){background:#193f35;color:#f5f6f2;border-color:#193f35}.ds-approved-arrow:disabled{opacity:.35;cursor:default}.ds-approved-carousel button:focus-visible{outline:3px solid #356b55;outline-offset:5px}@media(max-width:560px){.ds-approved-play{margin-right:0;padding-inline:6px;font-size:12px}}"
+    },
+    {
+      "name": "Illustrative homepage demo choices",
+      "kind": "custom",
+      "refersTo": "approved-demo-choice",
+      "description": "44px minimum/4px segmented controls with aria-pressed selection; illustrative state remains separate from real product configuration.",
+      "html": "<div class=\"ds-approved-demo-choice\" role=\"group\" aria-label=\"Porankiai\"><button type=\"button\" aria-pressed=\"false\">2D</button><button type=\"button\" aria-pressed=\"false\">3D</button><button type=\"button\" aria-pressed=\"true\">4D</button></div>",
+      "css": ".ds-approved-demo-choice{display:flex;justify-content:center;gap:8px}.ds-approved-demo-choice button{min-width:64px;min-height:44px;padding:10px 16px;border:1px solid #79968b;border-radius:4px;background:transparent;color:#193f35;font:600 14px/1.5 Manrope,sans-serif;cursor:pointer}.ds-approved-demo-choice button[aria-pressed=\"true\"]{border-color:#193f35;background:#193f35;color:#f5f6f2}.ds-approved-demo-choice button:hover:not([aria-pressed=\"true\"]){background:#e4eae1}.ds-approved-demo-choice button:focus-visible{outline:3px solid #356b55;outline-offset:5px}.ds-approved-demo-choice button:disabled{opacity:.5;cursor:wait}"
+    },
+    {
+      "name": "Unified shared footer contacts and lower bar",
+      "kind": "custom",
+      "refersTo": "unified-footer",
+      "description": "Representative contact group and utility row from the one dark green footer shared by all routes; raster branding and both navigation groups live in the full component.",
+      "html": "<footer class=\"ds-unified-footer\"><div class=\"ds-footer-grid\"><div class=\"ds-footer-contacts\"><h2>KONTAKTAI</h2><p>UAB A-Z Prekyba</p><address><span>Buivydiškių g. 22, Vilnius, LT- 07195</span><a href=\"tel:+37069199833\">+37069199833</a><a href=\"mailto:ergonomic@azprekyba.lt\">ergonomic@azprekyba.lt</a></address><a class=\"ds-footer-primary-email\" href=\"mailto:info@ergonomic.lt\">info@ergonomic.lt</a></div></div><div class=\"ds-footer-end\"><span class=\"ds-footer-copyright\">© 2026 Ergonomic.lt</span><a href=\"/privatumas/\">Privatumas</a><a href=\"/admin/\">Administravimas</a><a class=\"ds-footer-back-top\" href=\"#top\" aria-label=\"Grįžti į puslapio viršų\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 7-7 7 7M12 19V5\"/></svg></a></div></footer>",
+      "css": ".ds-unified-footer{color:#f5f6f2;background:#193f35;font-family:Manrope,Arial,sans-serif}.ds-footer-grid{padding:38px clamp(22px,5.9vw,112px) 30px;font-size:14px;line-height:1.65}.ds-footer-grid h2{margin:0 0 12px;color:#f5f6f2;font-size:14px;font-weight:650;line-height:1.5;letter-spacing:normal}.ds-footer-grid p{margin:0 0 14px;color:#cedbd2;font-size:14px;line-height:1.65}.ds-unified-footer a{color:#cedbd2;overflow-wrap:anywhere;text-decoration:none}.ds-unified-footer a:hover{color:#f5f6f2;text-decoration:underline;text-underline-offset:5px}.ds-unified-footer a:focus-visible{outline:3px solid #dfe8de;outline-offset:4px}.ds-footer-contacts address{display:flex;flex-direction:column;font-style:normal;color:#cedbd2}.ds-footer-contacts address a{display:block;min-height:29px}.ds-unified-footer .ds-footer-primary-email{display:inline-flex;align-items:center;gap:8px;min-height:38px;margin-top:10px;color:#f5f6f2}.ds-footer-end{display:flex;align-items:center;flex-wrap:wrap;gap:16px 28px;min-height:74px;padding:14px clamp(22px,5.9vw,112px);border-top:1px solid #55736a;font-size:14px;line-height:1.5;color:#cedbd2}.ds-footer-copyright{margin-right:auto}.ds-footer-end a{display:inline-flex;align-items:center;min-height:44px}.ds-unified-footer .ds-footer-back-top{justify-content:center;width:44px;height:44px;border:1px solid #90aa9d;border-radius:50%;color:#f5f6f2}.ds-unified-footer .ds-footer-back-top:hover{background:#285a49;text-decoration:none}@media(max-width:600px){.ds-footer-grid{padding-block:30px 26px}.ds-footer-end{gap:8px 20px;padding-block:14px}.ds-footer-copyright{flex-basis:100%}.ds-footer-back-top{margin-left:auto}}"
+    },
+    {
+      "name": "SEO article local text roles",
+      "kind": "custom",
+      "description": "2026-10-13 article-scoped specimen from seo-surfaces.css, typography.css and site-theme.css: intentional 32–50px hero, 36px at ≤800px, 32px at ≤500px; 16px reading and 13px visualization caption. Existing global tokens and previous-phase previews remain unchanged.",
+      "html": "<section class=\"ds-seo-text\"><h1 class=\"ds-seo-title\">Ergonominiai stalai</h1><p class=\"ds-seo-lead\">Baldai jūsų darbo vietai</p><article class=\"ds-seo-body\"><h2>Darbo vietos ergonomika</h2><p>Galimos funkcijos ir pasirinkimai pateikiami konkrečių modelių puslapiuose.</p><h3>Susiję modeliai</h3><h4>Pasirinkimas</h4></article><p class=\"ds-seo-caption\">Biuro aplinkos vizualizacija.</p></section>",
+      "css": ".ds-seo-text{font-family:Manrope,Arial,sans-serif;font-weight:400;line-height:1.6;letter-spacing:normal;color:var(--body-ink,#314c43);background:var(--paper,#f5f6f2)}.ds-seo-text h1,.ds-seo-text h2,.ds-seo-text h3,.ds-seo-text h4{color:var(--ink,#193f35);font-weight:650;letter-spacing:-.025em;text-wrap:balance;overflow-wrap:anywhere}.ds-seo-title{font-size:clamp(32px,3.5vw,50px);line-height:1.12;margin:0 0 24px}.ds-seo-lead{font-size:17px;line-height:1.75;max-width:48ch;margin:0 0 26px}.ds-seo-body{font-size:16px;line-height:1.8;max-width:72ch}.ds-seo-body h2{font-size:clamp(24px,2.2vw,30px);line-height:1.25;margin:40px 0 18px}.ds-seo-body>:first-child{margin-top:0}.ds-seo-body h3{font-size:21px;line-height:1.35;margin:34px 0 14px}.ds-seo-body h4{font-size:18px;line-height:1.4;margin:30px 0 12px}.ds-seo-body p{margin:0 0 22px}.ds-seo-caption{font-size:13px;line-height:1.6;letter-spacing:normal;color:var(--muted,#50665c);margin:10px 0 0}@media(max-width:1000px){.ds-seo-lead{font-size:16px}}@media(max-width:800px){.ds-seo-title{font-size:36px;margin-bottom:18px}.ds-seo-lead{max-width:65ch}}@media(max-width:500px){.ds-seo-title{font-size:32px}.ds-seo-body{line-height:1.75}.ds-seo-body h3{font-size:20px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Bright office showroom",
+    "overview": "The approved homepage establishes a bright B2B furniture showroom: the supplied bronze raster logo, forest Manrope, complete furniture silhouettes and chalk, sage and quiet gray planes. Compact rectangular actions and restrained rules carry this identity through discovery, reading, configuration and a real inquiry.\n\nThe owner's latest 2026-10-12 instruction — “dabar pagal home page perdaryk stiliu visos likusios svetaines, kad jie sutaptu. Headeris, footeris, šriftai išdestymai ir visa kita” — extends this world to the remaining site. It supersedes the former homepage-only palette and retained inner pill rules. The approved homepage composition remains the root-route authority; inner layouts adapt the same world to their actual tasks. The [whole-site brief](.impeccable/surfaces/site-style.md) and [homepage brief](.impeccable/surfaces/src-app-page-tsx.md) own those surface contracts.\n\nThe owner's 2026-10-13 density refinement reduces information scale, spacing and visible controls across inner pages and establishes five catalog products per desktop row. The [inner-density brief](.impeccable/surfaces/inner-density.md) owns this scoped refinement; the approved homepage, shared header/footer and global defaults retain their values.\n\nEarlier selected-01 and Framery/03 directions, the 2026-10-10 typography audit, homepage integration and footer release receipts remain historical evidence. Current local style checks and the separate finish review are in [.impeccable/review/site-style-20261012/](.impeccable/review/site-style-20261012/); this documentation does not certify a new public deployment.",
+    "keyCharacteristics": [
+      "Supplied raster branding, forest Manrope and chalk/sage planes across public and operational routes.",
+      "4px actions and ordinary fields; straight image frames and genuine furniture silhouettes.",
+      "Clear page headings and task-specific catalog, product, quote and reading layouts.",
+      "One shared header using the original approved homepage geometry, raster logo, visible navigation and native search on every route.",
+      "One dark green footer with original contacts, protected links and lower-bar actions.",
+      "Approved homepage composition and local type exceptions retained independently.",
+      "Product photographs, material samples and user-selected 3D scenes preserve their visual truth."
+    ],
+    "rules": [
+      {
+        "name": "The Shared World Rule",
+        "body": "Use the forest/chalk/sage primitives and 4px actions throughout active inner templates. Preserve the approved homepage composition and its scoped text exceptions; do not restore the superseded inner palette or pill actions.",
+        "section": "colors"
+      },
+      {
+        "name": "The Furniture First Rule",
+        "body": "Keep complete product silhouettes on their documented source backgrounds and let real furniture supply the material color. Room visualizations do not establish an exact available configuration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Text Role Rule",
+        "body": "Assign every new text style a role, family, size or fluid bounds, weight, leading, tracking, measure and contrast pairing before adding it. Reuse documented shared roles or intentional site-theme variants, then keep frontmatter, sidecar and source aligned. Shared supporting copy starts at 14px and ordinary entry stays 16px; the homepage-matched 15px header search and approved homepage exceptions are explicit roles. Header-quote and header-count frontmatter tokens remain historical, unused by the shared header.",
+        "section": "typography"
+      },
+      {
+        "name": "The Approved Type Override Rule",
+        "body": "Preserve the observed typography of the approved homepage inside .approved-home. Its px-based display, 12–13px notes, desktop 14px contact entry and local tracking remain scoped exceptions; palette and action geometry are now shared across the site.",
+        "section": "typography"
+      },
+      {
+        "name": "The Name Then Context Rule",
+        "body": "Put the model name first, then category/type, code and manufacturer context. Keep attribution below product headings and retain the source text case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Separate UI surfaces with open space, tonal grounds and thin rules; keep cards and controls free of cast shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Saved Means Saved Rule",
+        "body": "Show “Užklausa išsaugota.” and the first eight characters of the returned request ID only after a successful API response. Do not turn stored-request success into an email-delivery claim; SMTP remains unconfigured.",
+        "section": "components"
+      },
+      {
+        "name": "The One Footer Rule",
+        "body": "Keep original contacts and protected legacy links in the single shared dark green footer; do not restore a second homepage contact/SEO band.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do extend the approved forest/chalk/sage identity to active inner templates through site-theme.css.",
+      "Do keep approved homepage composition and local type exceptions independent from inner layouts.",
+      "Do preserve exact legacy H1, colon, metadata, original contacts and protected SEO routes.",
+      "Do retain complete silhouettes, source photograph backgrounds, samples and real 3D scene preferences.",
+      "Do define role, type, weight, leading, tracking, measure and contrast for all new text; verify responsive and keyboard states before claiming completion.",
+      "Do retain the original homepage header geometry on every route, visible navigation, native search and configuration/quote behavior.",
+      "Do identify room imagery as visualization and keep the illustrative 3D note visible.",
+      "Do keep both homepage rails starting at 40px/s with persistent Pause and interaction/visibility guards.",
+      "Do keep original contacts, protected links and utilities in one dark green footer.",
+      "Do distinguish local checks, historical releases, current deployment and actual inquiry delivery."
+    ],
+    "donts": [
+      "Don't restore former inner palette, pill actions, pale footer or separate homepage contact/SEO band.",
+      "Don't transplant homepage hero composition or small text exceptions into every catalog or reading page.",
+      "Don't restore selected 01, Framery or 03 as current homepage authority.",
+      "Don't treat generated rooms as customer projects or exact configuration photographs.",
+      "Don't invent prices, availability, delivery promises, credentials or configuration coverage.",
+      "Don't expose seam copies as extra accessible categories or guides.",
+      "Don't transfer illustrative choices into product, URL, storage or quote state.",
+      "Don't call saved-request success email delivery or claim deployment from a local build.",
+      "Don't claim 320px reflow, zoom, user spacing or screen-reader coverage without corresponding evidence."
+    ]
+  }
+}

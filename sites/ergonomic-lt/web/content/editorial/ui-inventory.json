@@ -1,0 +1,312 @@
+{
+  "files": [
+    "src\\app\\api\\produkto-kortele\\route.ts",
+    "src\\app\\api\\quotes\\route.ts",
+    "src\\app\\biuro-baldu-gamyba\\page.tsx",
+    "src\\app\\error.tsx",
+    "src\\app\\gidai\\page.tsx",
+    "src\\app\\kolekcijos\\page.tsx",
+    "src\\app\\kolekcijos\\[line]\\page.tsx",
+    "src\\app\\kontaktai\\page.tsx",
+    "src\\app\\not-found.tsx",
+    "src\\app\\page.tsx",
+    "src\\app\\privatumas\\page.tsx",
+    "src\\app\\produktai\\page.tsx",
+    "src\\app\\produktai\\[category]\\page.tsx",
+    "src\\app\\produktai\\[category]\\[product]\\page.tsx",
+    "src\\app\\robots.ts",
+    "src\\app\\sitemap.ts",
+    "src\\app\\steam-baldai\\page.tsx",
+    "src\\app\\uzklausa\\page.tsx",
+    "src\\app\\[...slug]\\page.tsx",
+    "src\\components\\admin.tsx",
+    "src\\components\\approved-home-contact.tsx",
+    "src\\components\\approved-home-interactive.tsx",
+    "src\\components\\approved-home-page.tsx",
+    "src\\components\\brand-logo.tsx",
+    "src\\components\\catalog-page.tsx",
+    "src\\components\\chair-rail.tsx",
+    "src\\components\\custom-furniture-page.tsx",
+    "src\\components\\expanded-product-detail.tsx",
+    "src\\components\\finish-select.tsx",
+    "src\\components\\home-inquiry.tsx",
+    "src\\components\\home-showcase.tsx",
+    "src\\components\\json-ld.tsx",
+    "src\\components\\legacy-page.tsx",
+    "src\\components\\product-card.tsx",
+    "src\\components\\product-detail.tsx",
+    "src\\components\\product-gallery.tsx",
+    "src\\components\\product-image.tsx",
+    "src\\components\\quote-form.tsx",
+    "src\\components\\quote-provider.tsx",
+    "src\\components\\seo-breadcrumbs.tsx",
+    "src\\components\\seo-faq.tsx",
+    "src\\components\\seo-selection.tsx",
+    "src\\components\\site-footer.tsx",
+    "src\\components\\site-header.tsx",
+    "src\\components\\viewer-3d.tsx",
+    "src\\lib\\catalog-configurator.ts",
+    "src\\lib\\category-labels.ts",
+    "src\\lib\\configuration-labels.ts",
+    "src\\lib\\configurator.ts",
+    "src\\lib\\expanded-configurator.ts",
+    "src\\lib\\legacy-article.ts",
+    "src\\lib\\model-seo.ts",
+    "src\\lib\\product-card-pdf.ts",
+    "src\\lib\\quotes.ts",
+    "src\\lib\\seo-collections.ts",
+    "src\\lib\\seo-page-content.ts",
+    "scripts\\home-final-demo\\configurator-demo.js",
+    "scripts\\home-final-demo\\carousels-source.js"
+  ],
+  "wiredFiles": 50,
+  "changedFiles": 3,
+  "fields": 656,
+  "protectedLiterals": [
+    {
+      "file": "src\\app\\error.tsx",
+      "value": "Bandykite dar kartą arba susisiekite el. paštu info@ergonomic.lt.",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\gidai\\page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\kontaktai\\page.tsx",
+      "value": "info@ergonomic.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\kontaktai\\page.tsx",
+      "value": "+370 691 99833",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\kontaktai\\page.tsx",
+      "value": "UAB A-Z Prekyba",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\kontaktai\\page.tsx",
+      "value": "Buivydiškių g. 22",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\privatumas\\page.tsx",
+      "value": "Užklausos duomenis tvarko UAB A-Z Prekyba, Buivydiškių g. 22, Vilnius. Susisiekti galite el. paštu ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\privatumas\\page.tsx",
+      "value": "info@ergonomic.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\privatumas\\page.tsx",
+      "value": ".",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\privatumas\\page.tsx",
+      "value": "info@ergonomic.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\produktai\\[category]\\[product]\\page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\produktai\\[category]\\[product]\\page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\produktai\\[category]\\[product]\\page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\app\\produktai\\[category]\\[product]\\page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\admin.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\admin.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\admin.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\approved-home-contact.tsx",
+      "value": ".",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\approved-home-contact.tsx",
+      "value": "info@ergonomic.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\approved-home-contact.tsx",
+      "value": ".",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\catalog-page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\catalog-page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\catalog-page.tsx",
+      "value": "/ ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\custom-furniture-page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\custom-furniture-page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\expanded-product-detail.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\expanded-product-detail.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\expanded-product-detail.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\home-inquiry.tsx",
+      "value": "UAB A-Z Prekyba",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\home-inquiry.tsx",
+      "value": "Buivydiškių g. 22, Vilnius, LT- 07195",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\home-inquiry.tsx",
+      "value": "+37069199833",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\home-inquiry.tsx",
+      "value": "ergonomic@azprekyba.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\home-inquiry.tsx",
+      "value": ".",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\legacy-page.tsx",
+      "value": "/",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\product-detail.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\product-detail.tsx",
+      "value": "· ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\product-gallery.tsx",
+      "value": "/ ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\quote-form.tsx",
+      "value": "(",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\quote-form.tsx",
+      "value": ")",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\quote-form.tsx",
+      "value": "info@ergonomic.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\seo-selection.tsx",
+      "value": ")",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\seo-selection.tsx",
+      "value": ")",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "UAB A-Z Prekyba",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "Buivydiškių g. 22, Vilnius, LT- 07195",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "+37069199833",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "ergonomic@azprekyba.lt",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "info@ergonomic.lt ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "© ",
+      "reason": "contact or brand"
+    },
+    {
+      "file": "src\\components\\site-footer.tsx",
+      "value": "Ergonomic.lt",
+      "reason": "contact or brand"
+    }
+  ]
+}

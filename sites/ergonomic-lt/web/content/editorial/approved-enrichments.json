@@ -1,0 +1,881 @@
+{
+  "configuration.product_xilium-swivel-chairs_0fe4091b.23636148": {
+    "fieldId": "configuration.product_xilium-swivel-chairs_0fe4091b.23636148",
+    "productId": "product_xilium-swivel-chairs_0fe4091b",
+    "configurationId": "23636148",
+    "baseCode": "KXIL044WW001",
+    "valueSha256": "de1c166221941e24b0b12f3f0910142ba7847a848d398a4cfcdcdcb973af0c4e",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "8b3e627c2ed38a3a135057352afe35fa719b77a34346dbbb9286d72b07428889",
+    "reviewedCopySha256": "de1c166221941e24b0b12f3f0910142ba7847a848d398a4cfcdcdcb973af0c4e",
+    "expectedRows": 42,
+    "maxLength": 60000,
+    "seoReview": {
+      "scope": "SEO title only; Gemini narrative, conditional JSON and all technical values preserved",
+      "previousTitle": "Xilium DUO-BACK – ergonominė kėdė su galvos atrama | Ergonomic.lt",
+      "title": "Ergonominė biuro kėdė Xilium DUO-BACK · KXIL044WW001 · Balta (WHITEEDITION)"
+    },
+    "formatVersion": 2,
+    "conditionFields": [
+      "CMECHANISM",
+      "CBACKRESTMOVEMECH",
+      "CBACKRESTCONNECTOR",
+      "CHEADREST",
+      "CARMRESTS",
+      "CBASE",
+      "CCASTORS",
+      "CPLASTICCOLORVERSION2"
+    ],
+    "componentSourcePages": [
+      190,
+      191,
+      192,
+      193
+    ],
+    "configurableSha256": "5bead69a88215a7c6bd90d3c1af649abc26d68cd5ec757bf642c64cffb44b6d0",
+    "implementationReview": {
+      "scope": "Bind existing reviewed KXIL044WW001 conditional component facts to model 23636148; no new component facts or other model edits",
+      "conditionalSourceFieldId": "configuration.product_xilium-swivel-chairs_0fe4091b.23636152",
+      "conditionalSourceSha256": "440c6f3fcc39b9383eacfb2048f0dcb86c841099fdaaa5e5bdb1ebca5229fbca",
+      "staticCopySeoAnd42RowsUnchanged": true,
+      "originalNarrativeAuthor": "preserved",
+      "conditionalBindingAuthor": "Codex",
+      "ownerVisualAcceptance": "pending"
+    }
+  },
+  "configuration.product_4me-swivel-chairs_d3eabb4a.20402097": {
+    "fieldId": "configuration.product_4me-swivel-chairs_d3eabb4a.20402097",
+    "productId": "product_4me-swivel-chairs_d3eabb4a",
+    "configurationId": "20402097",
+    "baseCode": "K4ME002WW004",
+    "valueSha256": "ec194fded3b2e1409cca35f6f685c26cd6cf950eff7fbbf9ddb132d60174e05e",
+    "reviewedCopySha256": "ec194fded3b2e1409cca35f6f685c26cd6cf950eff7fbbf9ddb132d60174e05e",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "54a38556289549776a39dbe7f2d06c9b7e12de31dfc1b2c243ffb6976bd7b1f7",
+    "expectedRows": 23,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "46ef35bee5214bc7d8e1f3ec24132e49146413c23af1cb4fb6efd750ba594694",
+    "componentSourcePages": [
+      265,
+      266,
+      267,
+      269,
+      270
+    ],
+    "conditionFields": [
+      "CMECHANISM",
+      "CGASLIFT",
+      "CLUMBARSUPPORT",
+      "CARMRESTS",
+      "CBASE",
+      "CCASTORS"
+    ],
+    "seoReview": {
+      "scope": "SEO title only; Gemini narrative, conditional JSON and all technical values preserved",
+      "previousTitle": "4ME MESH WHITE darbo kėdė su galvos atrama | Ergonomic.lt",
+      "title": "Ergonominė biuro kėdė 4ME MESH WHITE · K4ME002WW004"
+    }
+  },
+  "configuration.product_bjarg-swivel-chairs_93f6f6da.15722415": {
+    "fieldId": "configuration.product_bjarg-swivel-chairs_93f6f6da.15722415",
+    "productId": "product_bjarg-swivel-chairs_93f6f6da",
+    "configurationId": "15722415",
+    "baseCode": "KBJA003WW002",
+    "valueSha256": "9377179b9cecf641877725eac2a15c0f8e0fd29a953537bb88fa34344f279764",
+    "reviewedCopySha256": "9377179b9cecf641877725eac2a15c0f8e0fd29a953537bb88fa34344f279764",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "3f117f09b069ba08df838948b5885e61589a73c4884e369ebb777abbd269bbb3",
+    "expectedRows": 23,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "e33e3ede16277b889ac1e00c8123783d22ccb5e5caa30c81312aaa1011eb1d60",
+    "componentSourcePages": [
+      240,
+      241,
+      242,
+      243
+    ],
+    "conditionFields": [
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CMECHANISM",
+      "CLUMBARSUPPORT",
+      "CHEADREST",
+      "CARMRESTS",
+      "CBASE",
+      "CCASTORS"
+    ],
+    "seoReview": {
+      "scope": "SEO title only; Gemini narrative, conditional JSON and all technical values preserved",
+      "previousTitle": "Bjarg HB UPH pasukama darbo kėdė aukštu atlošu | Ergonomic.lt",
+      "title": "Ergonominė biuro kėdė Bjarg HB UPH · KBJA003WW002 · Be šio elemento (NONE)"
+    }
+  },
+  "configuration.product_bjarg-swivel-chairs_93f6f6da.15722414": {
+    "fieldId": "configuration.product_bjarg-swivel-chairs_93f6f6da.15722414",
+    "productId": "product_bjarg-swivel-chairs_93f6f6da",
+    "configurationId": "15722414",
+    "baseCode": "KBJA003WW002",
+    "valueSha256": "9dd776995b2a1556db918c8a76b7ce7f8b13edb29e6a4d898df94697598759ed",
+    "reviewedCopySha256": "9dd776995b2a1556db918c8a76b7ce7f8b13edb29e6a4d898df94697598759ed",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "831d4e7cbb997f9f332f4f3a23048b98da8ac6051b11a894f22fedca085fd380",
+    "expectedRows": 27,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "68b2e2c4e922541f0f775759072444f7e910ce2d96fb5a5953c491f8cbbb57f9",
+    "componentSourcePages": [
+      240,
+      241,
+      242,
+      243
+    ],
+    "conditionFields": [
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CMECHANISM",
+      "CLUMBARSUPPORT",
+      "CHEADREST",
+      "CARMRESTS",
+      "CBASE",
+      "CCASTORS"
+    ],
+    "seoReview": {
+      "scope": "SEO title only; Gemini narrative, conditional JSON and all technical values preserved",
+      "previousTitle": "Bjarg HB UPH darbo kėdė su aukštu atlošu | Ergonomic.lt",
+      "title": "Ergonominė biuro kėdė Bjarg HB UPH · KBJA003WW002 · HRUA"
+    }
+  },
+  "configuration.product_bjarg-swivel-chairs_93f6f6da.15722419": {
+    "fieldId": "configuration.product_bjarg-swivel-chairs_93f6f6da.15722419",
+    "productId": "product_bjarg-swivel-chairs_93f6f6da",
+    "configurationId": "15722419",
+    "baseCode": "KBJA001WW002",
+    "valueSha256": "0f838f01f209e10054085047964215e4c70fa3dba1d2184d8b8a060cb24eac86",
+    "reviewedCopySha256": "0f838f01f209e10054085047964215e4c70fa3dba1d2184d8b8a060cb24eac86",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "1c8484c087012da6c453acdd7394c60cf42bcfd937f0de36878d22cde13e5614",
+    "expectedRows": 22,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "4296ea55babd20a93503c51446782453048fad1c8dda5771f2646c2ed2549f21",
+    "componentSourcePages": [
+      240,
+      241,
+      242,
+      243
+    ],
+    "conditionFields": [
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CMECHANISM",
+      "CLUMBARSUPPORT",
+      "CARMRESTS",
+      "CBASE",
+      "CCASTORS"
+    ],
+    "seoReview": {
+      "scope": "SEO title only; Gemini narrative, conditional JSON and all technical values preserved",
+      "previousTitle": "Bjarg LB UPH darbo kėdė su žemu atlošu | Ergonomic.lt",
+      "title": "Ergonominė biuro kėdė Bjarg LB UPH · KBJA001WW002 · R35K3"
+    }
+  },
+  "configuration.product_cadeira-meeting-chairs_4071871a.16088247": {
+    "fieldId": "configuration.product_cadeira-meeting-chairs_4071871a.16088247",
+    "productId": "product_cadeira-meeting-chairs_4071871a",
+    "configurationId": "16088247",
+    "baseCode": "KCAD001WW005",
+    "valueSha256": "b07ca6e5352fd901307b835033d2657cd8726a05613d36d02d399ebef7c58223",
+    "reviewedCopySha256": "b07ca6e5352fd901307b835033d2657cd8726a05613d36d02d399ebef7c58223",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "1dd99680b818c270d8392af69fccd7490f1fbee358f31843597259378b92051d",
+    "expectedRows": 15,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "a23643eb8bb90745b3508e27bafaa46e7429eaefd61bf32fc5ac347ef0b2888e",
+    "componentSourcePages": [
+      345,
+      346
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CSHELLFOAM",
+      "CCONNECTOR",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Konferencinė kėdė Cadeira 4L-ARM FRONT | Ergonomic.lt",
+      "title": "Konferencinė kėdė Cadeira 4L-ARM FRONT · KCAD001WW005"
+    }
+  },
+  "configuration.product_cadeira-meeting-chairs_4071871a.16088246": {
+    "fieldId": "configuration.product_cadeira-meeting-chairs_4071871a.16088246",
+    "productId": "product_cadeira-meeting-chairs_4071871a",
+    "configurationId": "16088246",
+    "baseCode": "KCAD001WW002",
+    "valueSha256": "e2d668ff10b1347128b55b31380b9d8fa73072b77c885de863769010790bff56",
+    "reviewedCopySha256": "e2d668ff10b1347128b55b31380b9d8fa73072b77c885de863769010790bff56",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "f636c552598020f3d222e182b0da28a627dc6cff99c0656d42f31afa15fea920",
+    "expectedRows": 15,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "5ede65c1b123f9cee11f7af744fc94f540fc91888a4e2648b437d63e8dfcf111",
+    "componentSourcePages": [
+      345,
+      346
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CARMPAD",
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CSHELLFOAM",
+      "CCONNECTOR",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cadeira 4L-ARM konferencinė kėdė su porankiais | Ergonomic.lt",
+      "title": "Cadeira 4L-ARM konferencinė kėdė su porankiais · KCAD001WW002"
+    }
+  },
+  "configuration.product_cadeira-meeting-chairs_4071871a.16088241": {
+    "fieldId": "configuration.product_cadeira-meeting-chairs_4071871a.16088241",
+    "productId": "product_cadeira-meeting-chairs_4071871a",
+    "configurationId": "16088241",
+    "baseCode": "KCAD001WW001",
+    "valueSha256": "1fd0db3c6e2d57d722dcff253b1bb898a018adb6723753365da06f853a9873b5",
+    "reviewedCopySha256": "1fd0db3c6e2d57d722dcff253b1bb898a018adb6723753365da06f853a9873b5",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "7de09af72c62a5067f089f0730bddeb6cdb826e5636ef2e5d9d68d76244751e5",
+    "expectedRows": 12,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "2e05a541e809817b106e54cb2f24ae218a108a380755f43dbc30068635c387d8",
+    "componentSourcePages": [
+      345,
+      346
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CSHELLFOAM",
+      "CCONNECTOR",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Konferencinė kėdė Cadeira 4L | Ergonomic.lt",
+      "title": "Konferencinė kėdė Cadeira 4L · KCAD001WW001 · 16088241"
+    }
+  },
+  "configuration.product_cadeira-meeting-chairs_4071871a.16088242": {
+    "fieldId": "configuration.product_cadeira-meeting-chairs_4071871a.16088242",
+    "productId": "product_cadeira-meeting-chairs_4071871a",
+    "configurationId": "16088242",
+    "baseCode": "KCAD001WW001",
+    "valueSha256": "035a2bc1a83ea6c19439f29fd70f1881a10285ad2c7a1d043e09950f6a460c8d",
+    "reviewedCopySha256": "035a2bc1a83ea6c19439f29fd70f1881a10285ad2c7a1d043e09950f6a460c8d",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "ed0427ba90994e3b4f0a08e0d02d1bf73ed7e292d37e6cb01f19d2a6f5a281a4",
+    "expectedRows": 14,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "dc6ba74cdfe31840dbe428b5d95036e1872a4b53bd97a08522cb137923764fdc",
+    "componentSourcePages": [
+      345,
+      346
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CSEATFOAM",
+      "CBACKRESTFOAM",
+      "CSHELLFOAM",
+      "CCONNECTOR",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cadeira 4L konferencinė kėdė be porankių | Ergonomic.lt",
+      "title": "Cadeira 4L konferencinė kėdė be porankių · KCAD001WW001 · 16088242"
+    }
+  },
+  "configuration.product_cafe-meeting-chairs_62165973.19840262": {
+    "fieldId": "configuration.product_cafe-meeting-chairs_62165973.19840262",
+    "productId": "product_cafe-meeting-chairs_62165973",
+    "configurationId": "19840262",
+    "baseCode": "KCAF005WW001",
+    "valueSha256": "45c9c34be68443f9577b57393ca5a93226e63c6db9e06ac266f07b966fe911c0",
+    "reviewedCopySha256": "45c9c34be68443f9577b57393ca5a93226e63c6db9e06ac266f07b966fe911c0",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "eebb1761c86f3189fe35d8630dfef8c585b7255b15c544dd62dc2a7bad98e2e3",
+    "expectedRows": 9,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "08824c98d72bca8475abbc1f6459464202aef40dcaf222e4b26a6f58dfaa0925",
+    "componentSourcePages": [
+      364,
+      365
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CFRAMEMETALMATERIAL",
+      "CCONNECTOR",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VII 4L kavinės ir susitikimų kėdė | Ergonomic.lt",
+      "title": "Cafe VII 4L kavinės ir susitikimų kėdė · KCAF005WW001"
+    }
+  },
+  "configuration.product_cafe-meeting-chairs_62165973.23530295": {
+    "fieldId": "configuration.product_cafe-meeting-chairs_62165973.23530295",
+    "productId": "product_cafe-meeting-chairs_62165973",
+    "configurationId": "23530295",
+    "baseCode": "KCAF016WW001",
+    "valueSha256": "75a53b5134016b4ea4129ca8c7a7348e5b721fff78470eb5f114502b5d972ee7",
+    "reviewedCopySha256": "75a53b5134016b4ea4129ca8c7a7348e5b721fff78470eb5f114502b5d972ee7",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "8b5bbf9f5675db3c2cf1c00dc4c0ce9b9de0d50239235ec73834b398718d3a78",
+    "expectedRows": 12,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "06ca39d2f3aa37d78861e4c732da95ec8db042bbb9a05dcf163d0f57ac84cdff",
+    "componentSourcePages": [
+      364,
+      365
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CSHELLWOODMATERIAL",
+      "CFRAMEWOODMATERIAL",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VII LGW kėdė medinėmis kojomis | Ergonomic.lt",
+      "title": "Cafe VII LGW kėdė medinėmis kojomis · KCAF016WW001"
+    }
+  },
+  "configuration.product_cafe-meeting-chairs_62165973.19840263": {
+    "fieldId": "configuration.product_cafe-meeting-chairs_62165973.19840263",
+    "productId": "product_cafe-meeting-chairs_62165973",
+    "configurationId": "19840263",
+    "baseCode": "KCAF005WW002",
+    "valueSha256": "b9af17b670cdcfc26355a21691a031532b6f10f6224d1401a24283763640d9ea",
+    "reviewedCopySha256": "b9af17b670cdcfc26355a21691a031532b6f10f6224d1401a24283763640d9ea",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "bc7679e54cfcc4890c94a2547651cd6e8c447d390ff44c3960b343220065232b",
+    "expectedRows": 15,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "14f247ef8c9eba52790e6ecc4e5b5e5c7d8ec4ef0bd470573df046aa595cd6c6",
+    "componentSourcePages": [
+      364,
+      365
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VII 4L-ARM kėdė su porankiais | Ergonomic.lt",
+      "title": "Cafe VII 4L-ARM kėdė su porankiais · KCAF005WW002"
+    }
+  },
+  "configuration.product_cafe-meeting-chairs_62165973.19840265": {
+    "fieldId": "configuration.product_cafe-meeting-chairs_62165973.19840265",
+    "productId": "product_cafe-meeting-chairs_62165973",
+    "configurationId": "19840265",
+    "baseCode": "KCAF003WW001",
+    "valueSha256": "7b375254e329b3159a58bf95b9fa25605815687adb77b4f74e177ad4e7fe4f70",
+    "reviewedCopySha256": "7b375254e329b3159a58bf95b9fa25605815687adb77b4f74e177ad4e7fe4f70",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "4b5becf29da2defd33fffc6e03a4161ec784a23209408a43f1c3bd948f838a95",
+    "expectedRows": 8,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "d0d4fdabb6344e523c3c439e9d27c075e9545ba45d6d1cc69e92ac3abb44a218",
+    "componentSourcePages": [
+      366,
+      367,
+      368
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VI 4L konferencinė ir susitikimų kėdė | Ergonomic.lt",
+      "title": "Cafe VI 4L konferencinė ir susitikimų kėdė · KCAF003WW001 · RAL7016"
+    }
+  },
+  "configuration.product_cafe-meeting-chairs_62165973.19840266": {
+    "fieldId": "configuration.product_cafe-meeting-chairs_62165973.19840266",
+    "productId": "product_cafe-meeting-chairs_62165973",
+    "configurationId": "19840266",
+    "baseCode": "KCAF003WW001",
+    "valueSha256": "0db60eecf51cf50e60dc4daed13b62829c283791528afa9f2abf267295faa6c7",
+    "reviewedCopySha256": "0db60eecf51cf50e60dc4daed13b62829c283791528afa9f2abf267295faa6c7",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "80005b75943d43cd9b2758b1969cda4144ab32ce5dad0a280e00addd5634ffd1",
+    "expectedRows": 12,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "646b5692b921e629186f6b0a9e2fb1619a197ca73862129c3d363288f81690fa",
+    "componentSourcePages": [
+      366,
+      367,
+      368
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VI 4L kavinės ir susitikimų kėdė | Ergonomic.lt",
+      "title": "Cafe VI 4L kavinės ir susitikimų kėdė · KCAF003WW001 · RAL9005"
+    }
+  },
+  "configuration.product_cafe-meeting-chairs_62165973.23530297": {
+    "fieldId": "configuration.product_cafe-meeting-chairs_62165973.23530297",
+    "productId": "product_cafe-meeting-chairs_62165973",
+    "configurationId": "23530297",
+    "baseCode": "KCAF014WW001",
+    "valueSha256": "79fa29a2c05c2a92cb4f421d39c81e0c697692b590d442d25b24fc4e9121a08d",
+    "reviewedCopySha256": "79fa29a2c05c2a92cb4f421d39c81e0c697692b590d442d25b24fc4e9121a08d",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "24a1e30001ed6797cc8754749a9b2e027d6ecfc10f9a13ce773dfef9b64b06d0",
+    "expectedRows": 10,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "91d5dfe3b1ea4cb7b70319d336f699cff60fc5ea4c51b1e43d6ef9cdb8666631",
+    "componentSourcePages": [
+      366,
+      367,
+      368
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CSHELLWOODMATERIAL",
+      "CFRAMEWOODMATERIAL",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe IV LGW kavinės ir pasitarimų kėdė | Ergonomic.lt",
+      "title": "Cafe IV LGW kavinės ir pasitarimų kėdė · KCAF014WW001"
+    }
+  },
+  "configuration.product_cafe-stools-bar-stools_16b90484.19868169": {
+    "fieldId": "configuration.product_cafe-stools-bar-stools_16b90484.19868169",
+    "productId": "product_cafe-stools-bar-stools_16b90484",
+    "configurationId": "19868169",
+    "baseCode": "KCAF007WW001",
+    "valueSha256": "15396f55cc64cf83be89f8d21aa1b3376450f6c60fbe5f4219ffb020ed142e38",
+    "reviewedCopySha256": "15396f55cc64cf83be89f8d21aa1b3376450f6c60fbe5f4219ffb020ed142e38",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "54aae17630f93f0cda2b4a17276b5ba81817cde80445ee6f619b253121f92b59",
+    "expectedRows": 11,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "95b0b4037855bdb7447ec5a6bf5c576b9ac5398701b8447e70738a087730a743",
+    "componentSourcePages": [
+      364,
+      365
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VII HOCKER CFS baro kėdė ant pavažinio rėmo | Ergonomic.lt",
+      "title": "Cafe VII HOCKER CFS baro kėdė ant pavažinio rėmo · KCAF007WW001"
+    }
+  },
+  "configuration.product_cafe-stools-bar-stools_16b90484.19868167": {
+    "fieldId": "configuration.product_cafe-stools-bar-stools_16b90484.19868167",
+    "productId": "product_cafe-stools-bar-stools_16b90484",
+    "configurationId": "19868167",
+    "baseCode": "KCAF008WW001",
+    "valueSha256": "96245a14c848eedb7ee97b8cb8166ee8817d60f53d23d33b090c88f296dba999",
+    "reviewedCopySha256": "96245a14c848eedb7ee97b8cb8166ee8817d60f53d23d33b090c88f296dba999",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "71486f8ee1210737d8c272f971ebb60545f95f3e9887b3c133b924ba0f45c3dd",
+    "expectedRows": 11,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "c2396afcc185c85de4e13a29dca030876dd8cfaefd2bcf714f21aa73ef2c4965",
+    "componentSourcePages": [
+      364,
+      365
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CWOODMATERIAL"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Cafe VII UP&DOWN reguliuojamo aukščio baro kėdė | Ergonomic.lt",
+      "title": "Cafe VII UP&DOWN reguliuojamo aukščio baro kėdė · KCAF008WW001"
+    }
+  },
+  "configuration.product_calado-meeting-chairs_a5916e5a.28425984": {
+    "fieldId": "configuration.product_calado-meeting-chairs_a5916e5a.28425984",
+    "productId": "product_calado-meeting-chairs_a5916e5a",
+    "configurationId": "28425984",
+    "baseCode": "KCAL001WW008",
+    "valueSha256": "26e514435378520829e754dd676526396f675157b07864c6b4e40c841bed8b74",
+    "reviewedCopySha256": "26e514435378520829e754dd676526396f675157b07864c6b4e40c841bed8b74",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "0437e97ae9bebb671c7cce8e42f7216d1188ff5bbf90dc18e39d924cafa54f11",
+    "expectedRows": 13,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "3bd0a5aec80e813e76e3fd8bfdbc1afb70506d3d6860e9150420784864f079fe",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado 4L konferencinė ir susitikimų kėdė | Ergonomic.lt",
+      "title": "Calado 4L konferencinė ir susitikimų kėdė · KCAL001WW008"
+    }
+  },
+  "configuration.product_calado-meeting-chairs_a5916e5a.28425985": {
+    "fieldId": "configuration.product_calado-meeting-chairs_a5916e5a.28425985",
+    "productId": "product_calado-meeting-chairs_a5916e5a",
+    "configurationId": "28425985",
+    "baseCode": "KCAL001WW005",
+    "valueSha256": "4242a1d3bf86cd5f970cd33658e46a0dc85fb11454a419777eb47422002447ba",
+    "reviewedCopySha256": "4242a1d3bf86cd5f970cd33658e46a0dc85fb11454a419777eb47422002447ba",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "af3cc07fc4b8c1540c30b1360dc0c769d75c4d82c26d076ee3499bf343c8aa36",
+    "expectedRows": 12,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "67f9fac342db82bc0a04938c93c6e8f1c8b69ac4d43cc149350e9d115780accf",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CTABLET"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado 4L-ARM konferencinė kėdė su porankiais | Ergonomic.lt",
+      "title": "Calado 4L-ARM konferencinė kėdė su porankiais · KCAL001WW005 · Be šio elemento (NONE)"
+    }
+  },
+  "configuration.product_calado-meeting-chairs_a5916e5a.28425986": {
+    "fieldId": "configuration.product_calado-meeting-chairs_a5916e5a.28425986",
+    "productId": "product_calado-meeting-chairs_a5916e5a",
+    "configurationId": "28425986",
+    "baseCode": "KCAL002WW002",
+    "valueSha256": "e85a4e769250bddc5e08534903c4e3c638ccbb04f6e2be91b9c067a4a8098e7a",
+    "reviewedCopySha256": "e85a4e769250bddc5e08534903c4e3c638ccbb04f6e2be91b9c067a4a8098e7a",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "87f596efb4414e45ff361d8f52cadd288cf53198f9836246b434a39870f415d2",
+    "expectedRows": 14,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "92632421fa9d1cb5a69c3b0cd374804678807445ea67492da373f7ec0ec56bc8",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CGLIDES"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado CFS konferencinė ir susitikimų kėdė | Ergonomic.lt",
+      "title": "Calado CFS konferencinė ir susitikimų kėdė · KCAL002WW002"
+    }
+  },
+  "configuration.product_calado-meeting-chairs_a5916e5a.28425987": {
+    "fieldId": "configuration.product_calado-meeting-chairs_a5916e5a.28425987",
+    "productId": "product_calado-meeting-chairs_a5916e5a",
+    "configurationId": "28425987",
+    "baseCode": "KCAL001WW005",
+    "valueSha256": "3224a36578d762196401d371ca1b8c81cb5bc2a98dad1885b9d4d4d922a3e8e6",
+    "reviewedCopySha256": "3224a36578d762196401d371ca1b8c81cb5bc2a98dad1885b9d4d4d922a3e8e6",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "f6918e8c6bec397090d95c3e1d545c1c036170aac02871a5ecb980149dda6dd1",
+    "expectedRows": 9,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "d8277ce0f6b8353fbc743e017950f3cc4116f607b90dbb363054341feba7005a",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CTABLET"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Konferencinė kėdė Calado 4L-ARM su porankiais | Ergonomic.lt",
+      "title": "Konferencinė kėdė Calado 4L-ARM su porankiais · KCAL001WW005 · TRPLASTIC"
+    }
+  },
+  "configuration.product_calado-stools-bar-stools_e1a988ca.28427625": {
+    "fieldId": "configuration.product_calado-stools-bar-stools_e1a988ca.28427625",
+    "productId": "product_calado-stools-bar-stools_e1a988ca",
+    "configurationId": "28427625",
+    "baseCode": "KCAL004WW002",
+    "valueSha256": "e5e2dea476f318e129701b6db172121354a3489f24a92e9fe0921ca95b99ec16",
+    "reviewedCopySha256": "e5e2dea476f318e129701b6db172121354a3489f24a92e9fe0921ca95b99ec16",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "80dff2dc1a2777462848e622e97cbb1c7efc110dfdee07e2be6fa422c286026e",
+    "expectedRows": 13,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "5f0552c337fac53619977d10ac96f118f56c95b15702c00a0ceb328b7e547f0b",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado HOCKER aukšta baro kėdė | Ergonomic.lt",
+      "title": "Calado HOCKER aukšta baro kėdė · KCAL004WW002 · CPP02"
+    }
+  },
+  "configuration.product_calado-stools-bar-stools_e1a988ca.28427626": {
+    "fieldId": "configuration.product_calado-stools-bar-stools_e1a988ca.28427626",
+    "productId": "product_calado-stools-bar-stools_e1a988ca",
+    "configurationId": "28427626",
+    "baseCode": "KCAL004WW002",
+    "valueSha256": "b553ad13d5a9dcaf011dcb6a1edd5273a42b6122933daffffca3dd642989aa4c",
+    "reviewedCopySha256": "b553ad13d5a9dcaf011dcb6a1edd5273a42b6122933daffffca3dd642989aa4c",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "0bef3b371cb1c22f849b38972d386876a2b76bde7991e41baab213fea94444e0",
+    "expectedRows": 13,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "bcb86de115e5e3b94bad7763d0eed1e707bd972ac5322411fd4b2fa9113ded31",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado HOCKER aukšta baro kėdė | Ergonomic.lt",
+      "title": "Calado HOCKER aukšta baro kėdė · KCAL004WW002 · CPP01"
+    }
+  },
+  "configuration.product_calado-stools-bar-stools_e1a988ca.28427627": {
+    "fieldId": "configuration.product_calado-stools-bar-stools_e1a988ca.28427627",
+    "productId": "product_calado-stools-bar-stools_e1a988ca",
+    "configurationId": "28427627",
+    "baseCode": "KCAL004WW002",
+    "valueSha256": "02a0c358c89ba20a73e9447576c007c483c27fd51e31002c4af49872f8233824",
+    "reviewedCopySha256": "02a0c358c89ba20a73e9447576c007c483c27fd51e31002c4af49872f8233824",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "3627d329e0431bb4d94718c7f942911419d4803bc677736e41f382d7e7874e8b",
+    "expectedRows": 12,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "10ec64c85af1701c9712576d42a560931f74c9bb3edbcdae34efc7ad30367a4e",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado HOCKER aukšta baro kėdė su atlošu | Ergonomic.lt",
+      "title": "Calado HOCKER aukšta baro kėdė su atlošu · KCAL004WW002 · SY"
+    }
+  },
+  "configuration.product_calado-stools-bar-stools_e1a988ca.28427628": {
+    "fieldId": "configuration.product_calado-stools-bar-stools_e1a988ca.28427628",
+    "productId": "product_calado-stools-bar-stools_e1a988ca",
+    "configurationId": "28427628",
+    "baseCode": "KCAL004WW002",
+    "valueSha256": "cbf468d535ecaf3402d93aada50f81ff4c699451648cd2c4fa6c29bb5f26aef5",
+    "reviewedCopySha256": "cbf468d535ecaf3402d93aada50f81ff4c699451648cd2c4fa6c29bb5f26aef5",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "10dcf81eb8c09869a9ea27cd6334f5ea92d53862133f43e9bc026e9201aa079f",
+    "expectedRows": 12,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "62a6bb99d8ec001fecca89510e39e35e1fcca42a1f344a0b42f123c1ffb6190b",
+    "componentSourcePages": [
+      358,
+      359
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Calado HOCKER aukšta baro kėdė | Ergonomic.lt",
+      "title": "Calado HOCKER aukšta baro kėdė · KCAL004WW002 · ST"
+    }
+  },
+  "configuration.product_fondo-meeting-chairs_fe13d4ac.23530747": {
+    "fieldId": "configuration.product_fondo-meeting-chairs_fe13d4ac.23530747",
+    "productId": "product_fondo-meeting-chairs_fe13d4ac",
+    "configurationId": "23530747",
+    "baseCode": "KFON001WW001",
+    "valueSha256": "755603075b7efe9fd86ed364e1a96db56497e34009169faadb9cd535f85387cf",
+    "reviewedCopySha256": "755603075b7efe9fd86ed364e1a96db56497e34009169faadb9cd535f85387cf",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "e4a8e0151696fcd9a5ec935c65eeb1d26d0437c6bcdb303a14ca118eab2c9956",
+    "expectedRows": 11,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "beb93e61ad62927e7a5c2accaff2d9ef4d9ebe6d15247326184268ff34963f42",
+    "componentSourcePages": [
+      371
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Konferencinė kėdė Fondo 4L PP | Ergonomic.lt",
+      "title": "Konferencinė kėdė Fondo 4L PP · KFON001WW001"
+    }
+  },
+  "configuration.product_fondo-stools-bar-stools_455226e5.19857766": {
+    "fieldId": "configuration.product_fondo-stools-bar-stools_455226e5.19857766",
+    "productId": "product_fondo-stools-bar-stools_455226e5",
+    "configurationId": "19857766",
+    "baseCode": "KFON003WW001",
+    "valueSha256": "0b593bf7cf4cb7132d4829b0d0b5c95cb6d5afdf244c057e9b7d1399fda1b2d4",
+    "reviewedCopySha256": "0b593bf7cf4cb7132d4829b0d0b5c95cb6d5afdf244c057e9b7d1399fda1b2d4",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "2511a35071a942f7034bb5fe8c589b5387e74501250b3ce2c260a3290507c310",
+    "expectedRows": 13,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "40448f9e2b3cbfd862903e66b38c64030142bb801ca770b8acdb5caf4b06ab4b",
+    "componentSourcePages": [
+      371
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Fondo HOCKER PP aukšta baro kėdė | Ergonomic.lt",
+      "title": "Fondo HOCKER PP aukšta baro kėdė · KFON003WW001 · RAL9006"
+    }
+  },
+  "configuration.product_fondo-stools-bar-stools_455226e5.19857765": {
+    "fieldId": "configuration.product_fondo-stools-bar-stools_455226e5.19857765",
+    "productId": "product_fondo-stools-bar-stools_455226e5",
+    "configurationId": "19857765",
+    "baseCode": "KFON003WW001",
+    "valueSha256": "8dbee7e11737ad792ce0de8f834fae3e1822ac2ccbbbde34a0f7c0e8a1473cc9",
+    "reviewedCopySha256": "8dbee7e11737ad792ce0de8f834fae3e1822ac2ccbbbde34a0f7c0e8a1473cc9",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "5eb4b66bca2c66b53edabafbf452096a0440b0e9ca91b339ce36c2dcb5cc6a66",
+    "expectedRows": 15,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "31b26738bc191ebe81e7a6ee779735ad1514e96cd9dfae9ec355a8dfca9874e5",
+    "componentSourcePages": [
+      371
+    ],
+    "conditionFields": [
+      "CUPHOLSTERINGTYPE",
+      "CFRAMEMETALMATERIAL",
+      "CGLIDES",
+      "CSTACKINGPROTECTION"
+    ],
+    "seoReview": {
+      "scope": "Original human purpose retained; exact code/finish distinguishes the example; all narrative/technical/conditional copy unchanged",
+      "previousTitle": "Fondo HOCKER PP aukšta baro kėdė | Ergonomic.lt",
+      "title": "Fondo HOCKER PP aukšta baro kėdė · KFON003WW001 · RAL9005"
+    }
+  },
+  "configuration.product_xilium-swivel-chairs_0fe4091b.23636152": {
+    "fieldId": "configuration.product_xilium-swivel-chairs_0fe4091b.23636152",
+    "productId": "product_xilium-swivel-chairs_0fe4091b",
+    "configurationId": "23636152",
+    "baseCode": "KXIL044WW001",
+    "valueSha256": "205c380c08bd9ac46bb7f91bf745d9900392beb425649a7bf6c66b42d0b26824",
+    "reviewedCopySha256": "205c380c08bd9ac46bb7f91bf745d9900392beb425649a7bf6c66b42d0b26824",
+    "sourcePdfSha256": "d5090698ba5a29e8c4b955e790d4391105005123dcc6775fb91a10344f364238",
+    "selectedOptionsSha256": "8525bc36bb698afbc04ca44a08a81f9fa4fadcc1e91fc985d30c46da45a8907d",
+    "expectedRows": 28,
+    "maxLength": 60000,
+    "formatVersion": 2,
+    "configurableSha256": "440c6f3fcc39b9383eacfb2048f0dcb86c841099fdaaa5e5bdb1ebca5229fbca",
+    "componentSourcePages": [
+      190,
+      191,
+      192,
+      193
+    ],
+    "conditionFields": [
+      "CMECHANISM",
+      "CBACKRESTMOVEMECH",
+      "CBACKRESTCONNECTOR",
+      "CHEADREST",
+      "CARMRESTS",
+      "CBASE",
+      "CCASTORS",
+      "CPLASTICCOLORVERSION2"
+    ],
+    "seoReview": {
+      "scope": "SEO title only, final coordinated Xilium pass",
+      "previousTitle": "Xilium DUO-BACK darbo kėdė su dviejų dalių atlošu | Ergonomic.lt",
+      "title": "Ergonominė biuro kėdė Xilium DUO-BACK · KXIL044WW001",
+      "narrativeAndConditionalUnchanged": true
+    }
+  }
+}

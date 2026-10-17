@@ -52,6 +52,17 @@ Owner thread01a13d30; own core branch codex/verslomatika-foundation-index-202610
 
 # Lygiagrečios sesijos
 
+2026-10-17 Root scheduling/publication window: issue66/comment6234266836,
+from948c69350bac7155aef85b376138acd25020fcb5, fetchedmain9a46650a/publicec8.
+Only creation/studio.py fast serial start pacing, site_build/live_preview.py
+per-check successful heartbeat publication, their focused regressions and
+LIVE_PREVIEW_AUTH_CADENCE contract plus own journal/checkpoints. Helper01a13440
+reviewed read-only; its late A/B/A finding reproduced before WeakSet correction.
+No authorization-result reuse, TTL/deadline change or detached renewal. Actual
+948 expiry PASS and later start503/heartbeat FAIL remain; Root owns same-DB
+backup/adoption/normal owner lifecycle/browser. Providers0, serving948 frozen
+during source changes; no foreign checkout, frontend restart or channel change.
+
 2026-10-17 Root source-frame window: issue66/comment6233705540 and upgrade
 a4d4abab-d331-4814-b3d6-5acab58c8646. Only source_observation.py native Git
 HEAD/dirty observation becomes one porcelain-v2 NUL frame, with matching source

@@ -9,10 +9,10 @@ remains37/40; this continuation made0provider calls. All five paid workers and
 external channels remain held.
 
 Restricted API18871 now runs
-`f53e06678fc7dc2c63c38bfaf701b622d816ef0c`; owned API PID37516, hidden
-supervisor12152. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+`948c69350bac7155aef85b376138acd25020fcb5`; owned API PID34096, hidden
+supervisor36256. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
 Latest source-only backed-up adoption preserved all88 operational tables and
-437 native files. Earlier adoptions preserved341/365/389/413 files. No migration or operational database copy was performed.
+557 native files. Earlier adoptions preserved341/365/389/413/437 files. No migration or operational database copy was performed.
 Normal owner HTTP renewed private intake and explicit S6 for each exact source.
 Original0032 remains intact.
 
@@ -22,6 +22,74 @@ The human manually started it on3030; owned Node PID21956 and its BUILD_ID were
 checked. Chrome loaded the existing ordinary test account and current creation,
 including current page text/media and the full-site prepare/refresh controls.
 Automatic frontend launch was not retried or bypassed. No new restart is pending.
+
+## Current948 progress
+
+Main documentation cleanup PR194 was independently reviewed and merged at
+12:17:25UTC as9a46650a033d283dfb559d7b835a26384e3225fe. Exactly one superseded
+root plan was quarantined with its original7976bytes/SHA retained, five pointers
+updated and a bounded inventory added. Root merged that main into its own branch,
+preserving both WORKSTREAMS sections. This is separate from platform feature
+main delivery and actual runtime acceptance.
+
+The Git process-count repair uses one strict NUL-framed porcelain-v2 branch/status
+response at each repository boundary, retaining fresh entry/exit and every
+authority check. Initial2vs1 baseline, all earlier failures and the peer-found
+four malformed-key failures are preserved. Literal-dot correction and final
+332relatedPASS25.34s e3b3a9307e8e8e47ebe377b349953a44122efdd1648154b272c763b47b6bf189;
+independent source review found no remaining actionable P0-P2 in that narrow diff.
+Parent8df seven real PostgreSQL tests passed170.15s with all88/original0032/native
+exact; this is parent evidence, not an exact948 SQL-run claim. Current maintained
+frame documentation is GIT_OBSERVATION_FRAME.md; SOURCE_OBSERVATION remains at
+its originalf53 bytes. The archive rule/checker was not weakened.
+
+Restricted same-DB adoption948 preserved88tables/557files and site015. Ordinary
+owner intake and explicit S6 both returned CURRENT for948, no public host. First
+cutover refused safely while the old API was still running after PowerShell7
+could not load NetTCPIP; the checked Windows PowerShell5 path then stopped the
+exact owned idle API and verified equality before ff-only source adoption. No
+foreign process or system setting changed. A later child launch hit Windows
+memory-resource error8 before execution; retry after checking resources started
+normally, with the same held workers and0provider calls.
+
+Actual948 expiry lease3af9ceef PASSED: normal owner start/replay, ready/native
+HTTP200, natural expired/noURL, exact origin stopped, same terminal UUID replay
+without a new child and site015 unchanged. ReceiptSHA256
+70bf30f55b356640e3c326d4f1edff0d0b02725cb86df2cd96e01fdbba94513d,
+attempt204b7f47dc664118aafc74ae5c2e4c56. No guard-failure receipt for this lease.
+Chrome opened the home and all ten linked internal pages at1280px; their h1
+titles were present, document widths1265. One actual guide at390px had width375
+and its image loaded; screenshots saved. A later all-mobile navigation began
+after natural12:56:28.733UTC expiry and was refused. It is not a second runtime
+failure and is not an all-mobile PASS. Viewport reset, expired owned tab closed.
+
+CurrentSource manual close/revocation/lifespan and portal start/close are still
+being checked. Do not promote the runtime/cadence journals or overall platform
+to accepted from expiry alone. Existing first f53 failures below remain evidence.
+
+Subsequent948 revocation trials did NOT reach logout acceptance. Attempt512cf746
+returned initial POST503studio_timeout before a claim. A fresh unchanged-source
+trial5711ea46 (attempt4e280fc49ec3453596e417bf22a9bb6d) failed before observable
+ready, heartbeat_expired/after_media at13:00:39.266UTC, elapsed17052ms, margin-122ms.
+Both original FAIL receipts remain. The successful expiry must not hide these
+remaining failures; no completed permission result, TTL extension or independent
+pulse timer is introduced. Root/helper are reviewing the remaining scheduling
+margin. Revocation remains UNVERIFIED, not PASS or an exercised logout failure.
+
+## Scheduling/publication source follow-up
+
+Upgrade4cbb0d61-714e-4660-9bbf-150b739b1db1 removes the fast monitor's redundant
+post-callback idle gap and deduplicates successful pulse publication by exact
+weak task identity. The three-second lease, default transport interval, every
+authority check and fresh final/cancellation cleanup remain. Source948 baseline
+4FAIL3PASS and intermediate last-marker A/B/A1FAIL are retained; final88focused
+PASS14.50s eb0bc3d3. Independent read-only peer review found no new P0-P2.
+
+Broader run1FAIL251PASS1deselected25.64s b1bb2413 is preserved: the unchanged
+default-path250ms inert-child fixture did not reach final callback before its
+deadline. No assertion/deadline changed. Separate unchanged cleanup module
+8PASS1deselected7.93s d0247d86; the actual SQL test remains for isolated QA.
+These source checks do not supersede the mixed actual948 outcomes above.
 
 ## Current f53 actual observations
 

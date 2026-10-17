@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Remove redundant fast-monitor idle gaps and publish one durable lease pulse for each exact successful shared check, including delayed old waiters.",
+  "category": "code",
+  "evidence": [
+    "Source948 baseline4FAIL3PASS5.12s: three fast cadence waits include already elapsed callback time and16waiters synchronously write16pulses for one check. LogSHA2569821fb91f68a19ed062edc66ef97aa5752936db4ae1f8a739892c6537a0b815c.",
+    "Peer finding reproduced against intermediate single-task marker: A publishes, B publishes, then a suspended A waiter writes again;1FAIL11.17s, logSHA2567597abf68feda5373f75ee0017561a1fb3735a668994e0e66fbcd50e5f5a36bb. Final weak identity set retains A while its waiter holds the task.",
+    "Actual948 expiry succeeded but subsequent start503 and before-ready heartbeat expiry remain preserved; this narrow source repair does not establish full runtime stability. Issue66 reservation comment6234266836; helper reviewed read-only."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/offline_tests/test_studio_start_cadence.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_pulse_publication.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_monitor_cadence.py",
+    "docs/LIVE_PREVIEW_AUTH_CADENCE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert to948 while preserving every original failure and native lease tombstone. No database, authority topology, TTL, deadline, provider, frontend or channel change.",
+  "id": "upgrade-4cbb0d61-714e-4660-9bbf-150b739b1db1",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "948c69350bac7155aef85b376138acd25020fcb5",
+  "createdAt": "2026-10-17T13:18:50.782Z"
+}

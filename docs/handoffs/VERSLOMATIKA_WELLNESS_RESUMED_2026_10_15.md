@@ -3,12 +3,13 @@
 ## Actual stability checkpoint — 2026-10-17
 
 Read [the latest checkpoint](VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md)
-before the historical entries below. Current backend d904 reaches a real native
-homepage in Chrome at desktop/mobile widths, but its heartbeat later expires.
-Stable close/expiry/revocation, the prepared new portal build and full-site
-acceptance remain open. Original failures and all data are preserved; no provider
-calls were made in this continuation. Root and the existing helper are reviewing
-a smaller single-operation observation path; production limits remain unchanged.
+before the historical entries below; it records the current source/process IDs
+and original mixed outcomes. The portal build is manually running. Source948 has
+one complete natural-expiry/replay PASS and all11 desktop page openings plus a
+mobile guide, but later startup timeout/heartbeat failures remain. Stable manual
+close/revocation and full-site/agent acceptance are open. Source checks, current
+runtime adoption, main delivery and overall acceptance are distinct. No provider
+calls were made in this continuation; production limits remain unchanged.
 
 ## Manual cleanup recovered; live preview repair — 2026-10-17
 

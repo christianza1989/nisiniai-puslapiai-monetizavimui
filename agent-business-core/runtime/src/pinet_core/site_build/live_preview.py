@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from functools import wraps
 from uuid import UUID, uuid4
+from weakref import WeakSet
 
 from ..config import settings
 from ..control.routes import ControlError, scope, token_hash
@@ -109,6 +110,7 @@ class Lease:
     proof: object = None
     entered: bool = False
     auth_task: object = None
+    pulse_tasks: object = field(default_factory=WeakSet)
 
 
 class Service:
@@ -293,7 +295,12 @@ class Service:
         # read. They cannot be undone by the late completion of that read.
         if not self.current(lease):
             return False
-        self.ledger().heartbeat(lease.record, expires_ms=int((now() + timedelta(seconds=3)).timestamp() * 1000))
+        # Waiters share only the in-flight check. After their own current()
+        # fence, publish once for that exact successful task, synchronously.
+        # Mark only after the durable write succeeds; no detached renewal.
+        if check not in lease.pulse_tasks:
+            self.ledger().heartbeat(lease.record, expires_ms=int((now() + timedelta(seconds=3)).timestamp() * 1000))
+            lease.pulse_tasks.add(check)
         return True
 
     async def drive(self, lease):

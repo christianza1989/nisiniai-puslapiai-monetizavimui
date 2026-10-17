@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Confirmed on dedicated owned PostgreSQL18.6/loopback15548, canonical0045 schema89runtime tables, restricted runtime role. Original pre-repair2FAIL22.71s: unchanged accepted revision Registration GET503 invalid_registration_source after successful maintained S37 source renewal, both Registration-from-original and Registration-from-prior-continuity. Log .github-preparation/registration-qa/baseline-1.log SHA256576876e1ef7ee443ed38b3f1b6bf930c8de11a612084ab417e6a07aed52e00bf retained. First repair2PASS23.55s SHA852866e1a0d19598f88854fd96aa2201b250ca09ec9d36aafb6139d71168ccbf. Expanded intermediate4PASS/1new-test-authoringFAIL101.43s SHA64a3a226006c20d33ee5a0634d879d47e6e1ce466c4bce5e4880bcd874e62bfd retained: administrative Session UPDATE blocked behind canonical actor locks; canceled only own container's exact blocked query, then changed owned test to real-clock expiry after pre-request setup. Production locks/authority unchanged. Existing Registration/request/receipt/full fingerprints remain exact. No operating DB/files/process/provider/channel access; source-only repair awaits Root review/adoption.",
+  "eventId": "7799aff2-a73f-4bfa-af85-989d327bde58",
+  "sequence": 2,
+  "at": "2026-10-17T23:05:02.016Z"
+}

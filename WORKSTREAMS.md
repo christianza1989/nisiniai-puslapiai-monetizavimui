@@ -11,6 +11,27 @@ transport, scheduler, API, DTO, schema, operating admission or channel activatio
 Existing acquisition engine/headless/correspondence remains acquisition-owned;
 Registration source remains helper-owned. No source path overlap.
 
+## Registration identity across private intake continuity — helper 2026-10-18
+
+Issue66/comment6242540528, own codex/registration-intake-continuity-20261018
+from Root2d429c1fea873babe179223ddc13315374ae021d/public255fea0;
+paired startPASS22:44:35/36UTC (fetched mains533/ec8). Confirmed in NEW isolated
+loopback15548 PostgreSQL18.6 QA, maintained S37 fixture, provider0. Runtime source
+change only creation_registration/service.py; admin.py remains unchanged.
+NEW tests/test_registration_private_continuity_pg.py,
+offline_tests/test_registration_private_continuity.py,
+docs/REGISTRATION_PRIVATE_CONTINUITY.md, own journal and this paragraph.
+Original actual2FAIL22.71s SHA576876e1 retained before source repair. Final53native
+PGPASS412.16s SHA111a15ff504e6231e643a70ed054b1f0b8d5ef2290b09a93820335fbf0aa155b;
+143purePASS4.73s SHA7c5430cfa883c4ed14394854154362da6913cb1179ddafbdf00145b5e5e650a3,
+RuffPASS. Root reviewed source with no actionable P0-P2. Unique journal
+upgrade-cdce8ae3-618b-4277-8a2e-c3f90bc71259 preserves first and intermediate FAIL.
+Historical Registration/request/receipt/fingerprints immutable;
+same-origin lineage is identity only, fresh owner/source/native/files remain
+authority. No schema/DTO/0045/mail/acquisition/portal/operating DB or runtime
+changes. Source window closes at scoped commit. Root alone operates actual b866;
+helper source will not hot-load there. Runtime adoption remains separate.
+
 ## Owned mail display and Lithuanian sidecars — Root 2026-10-18
 
 Issue66/comment6241311809, upgrade519c758b, paired30071/main533/publicec8.

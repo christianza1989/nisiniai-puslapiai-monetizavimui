@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual combined-sourcebe557 successfully adopted same0044DB after88table exactcutover/native389 checks. Integrated454PASS62.58scdd1cb5b6592588cb4f60d5f2cdfda3ea6c557af2703bb3e42f34c85a345e318; isolated11PostgreSQLPASS153.29s3dce4f4085d7682ff6657ca1400af03c91e037e96192c5b037279351e5cf4ae1, old0032/operational88/nativeexact/provider0. Ownerprivate-intake/S6CURRENT/native015exact. Actuallease7dfdf728-3f0e-41fd-a2f3-8027c20f90ba STILLFAILED before ready: heartbeat_expired/before_context elapsed16956ms margin-110 at2026-10-17T10:30:07.792Z, statefailed/authorization_revoked105.607s. Attemptlive-lifecycle-v2-close-ee7caedb7cec4033a648ce0d8fa550c8 retained; no browser/close/expiry/revocation acceptance. No further lease replay/providerdispatch. New actualtiming capture346SQL2.7351s; verify2.0467/2.0049/1.8885s; inspect7.7916s, total1518SQL, profile10. Material dedup/Pfresh checks do not establish end-to-end speedup; cadence0.2 alone insufficient. Helper owns new singlecanonicalcurrent_actor nonlocking fresh-joined-read repair, original lock=True path untouched; no permissioncache/TTL/deadline relaxation. Fivepaidworkers/externalchannelsheld; paidbudget37/40unchanged.",
+  "eventId": "69a4d794-8cbf-4464-bca4-40b9dff15f1d",
+  "sequence": 7,
+  "at": "2026-10-17T10:32:06.913Z"
+}

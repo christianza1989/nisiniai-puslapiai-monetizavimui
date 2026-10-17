@@ -9,10 +9,10 @@ remains37/40; this continuation made0provider calls. All five paid workers and
 external channels remain held.
 
 Root code and restricted API18871 now run
-`d904b08c6b2dcef5a4c83eadacb188063e2277a4`; owned API PID34104, hidden
-supervisor2500. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
-Two source-only, backed-up adoptions preserved all88 operational tables and
-341then365 native files. No migration or operational database copy was performed.
+`be557654161c8124b01547fe67efd3b63bc29c55`; owned API PID20184, hidden
+supervisor24868. Public renderer remains255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Latest source-only backed-up adoption preserved all88 operational tables and
+389 native files. Earlier adoptions preserved341then365 files. No migration or operational database copy was performed.
 Normal owner HTTP renewed private intake and explicit S6 for each exact source.
 Original0032 remains intact.
 
@@ -86,7 +86,36 @@ Thus ready/open is partially observed, but stable close/expiry/Session-revocatio
 production-lifespan and new portal controls are NOT accepted. Do not reuse the
 earlier operator preview's successful navigation/inquiry evidence as this lease.
 
-## Measured remaining cost and next work
+## Latest combined-source actual failure
+
+Root integrated the frozen ten-path observation packet60e7 and late-P successor
+fa002cf with the separate0.2s serving cadence. Exact integration sourcebe557 passed
+454 tests in62.58s, two explicit deselections and one existing intentional invalid
+UUID warning; logcdd1cb5b6592588cb4f60d5f2cdfda3ea6c557af2703bb3e42f34c85a345e318.
+An empty isolated QA database then passed11 real PostgreSQL tests in153.29s,
+including the SQL callback EOF drain; log3dce4f4085d7682ff6657ca1400af03c91e037e96192c5b037279351e5cf4ae1.
+Before/after original0032, all88 operational tables and native files matched.
+Owner HTTP refreshed private intake/S6 to CURRENT for this source; site015 exact.
+
+Actual lease7dfdf728-3f0e-41fd-a2f3-8027c20f90ba FAILED before ready. First refusal
+heartbeat_expired/before_context at2026-10-17T10:30:07.792Z, elapsed16956ms,
+pulse margin−110ms. Terminal failed/authorization_revoked at105.607s overall.
+No browser/close/expiry/revocation acceptance. Preserve attempt
+live-lifecycle-v2-close-ee7caedb7cec4033a648ce0d8fa550c8 and its first receipt.
+
+Read-only be557 timing did NOT show end-to-end improvement: capture346SQL/2.7351s;
+full verification2.0467/2.0049/1.8885s; inspection7.7916s. Combined1518SQL and10
+profile reads. Material/private-selector grouping reduced its own counts, but fresh
+mutable authority reads offset it. Do not present local test counts or ready from
+the older source as acceptance of this version. No new provider calls;37/40 held.
+
+Existing helper now owns a new narrow canonical current_actor nonlocking read
+repair in creation/service.py, from cleanbe557, with its own new journal/tests.
+The lock=True User/Session lock order must remain unchanged; no completed
+permission cache, schema, roles, TTL or deadline relaxation. Root owns actual
+QA/adoption/current case and only its original runtime/cadence failure events.
+
+## Earlier d904 measurement and source history
 
 Read-only d904 timing: capture306SQL/1.8088s versus prior789SQL; full verifications
 1.3912–1.5267s, inspection5.8139s, capture+inspection1510SQL including40profile
@@ -111,7 +140,8 @@ cleanup; log234912fcd6493da89be3fcfd95773bae94a3b3410ea66fc871409e6fcce0d6b5.
 The original caller failure and intermediate fixture failure remain retained.
 No separate heartbeat timer, completed permission cache, callback overlap, TTL
 or deadline relaxation. No permission, completed result or accepted proof may
-survive into another callback/heartbeat. Serving still remains cleand904.
+survive into another callback/heartbeat. Serving is now cleanbe557 as above;
+the later failure supersedes this intermediate source-only checkpoint.
 
 Active ready inspection also bypasses the lease's coalescer, but no HTTP poll ran
 between the second ready response and its failure; changing that path alone

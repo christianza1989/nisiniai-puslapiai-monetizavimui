@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Navigation paketas: aiškūs sutarčių, modulio paleidimo, projekto būsenos ir datuotų įrodymų įėjimai; START_HERE portable checkout vietoj seno PC kelio. Istorinių turinių ir runtime pakeitimų nėra. Pirmas naujo žemėlapio draft turėjo neegzistuojančią domain-history/README nuorodą; pataisyta į tikrą builderio reference prieš galutinę patikrą. Main neturi naujesnio core-upgrade-check; committed provenance bus tikrinamas pinned Root435 įrankiu read-only, tai nėra šio įrankio pristatymas į main.",
+  "checks": [
+    {
+      "command": "node .local/docs-cleanup/check-links.mjs README.md START_HERE.md docs/DOCUMENTATION_MAP.md",
+      "result": "PASS",
+      "evidence": "3 paveikti dokumentai,76 santykiniai Markdown taikiniai egzistuoja;0 trūkstamų,0 absoliučių nuorodų,0 template taikinių. Bazė2files33links0missing. Tikrina failo egzistavimą, ne viso teksto/heading semantiką ar HTTP runtime."
+    },
+    {
+      "command": "Manual final Lithuanian copy, entrypoint/command and scope review; git diff --check",
+      "result": "PASS",
+      "evidence": "Naujo žemėlapio ir README/START diff saviredakcija atlikta. Naujos paleidimo komandos nepridėtos; senų absoliučių checkout vietų reikalavimas pakeistas nuoroda į esamą MULTI_MACHINE. Runtime/public schema/skills/SOURCE/approvals/per-site faktų diff nėra. Platesnė26aktualių dokumentų244nuorodų patikra aptiko5 istorinių privačių įrodymų taikinius; jie perduoti atskiro helper paketo sričiai, nevadinami šio paketo PASS."
+    }
+  ],
+  "eventId": "33ba088b-b887-4826-86e8-cf92f19b8e90",
+  "sequence": 2,
+  "at": "2026-10-17T14:30:21.100Z"
+}

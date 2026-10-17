@@ -1,0 +1,26 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Expose retained tenant mail through normal owner auth with immutable original and content-bound Lithuanian display translation",
+  "category": "code",
+  "evidence": [
+    "Current acquisition WorkSnapshot exposes synthetic counts/IDs only; legacy mailbox requires operator secret; no customer mail body or translation read path exists."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_view",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/scripts/mail_display_translate.py",
+    "agent-business-core/runtime/offline_tests/test_mail_view.py",
+    "agent-business-core/runtime/tests/test_mail_view_pg.py",
+    "docs/contracts/customer-mail-view.openapi.json",
+    "docs/contracts/CUSTOMER_MAIL_VIEW.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66#issuecomment-6241311809",
+  "rollback": "Revert scoped router/projection packet; preserve native mail and private display receipts. No database migration or channel activation.",
+  "id": "upgrade-519c758b-0c3c-4326-9938-969b8a4c47b8",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "30071c65de2d5cf786a2a29c9c0ebb8f006ff351",
+  "createdAt": "2026-10-17T21:23:38.736Z"
+}

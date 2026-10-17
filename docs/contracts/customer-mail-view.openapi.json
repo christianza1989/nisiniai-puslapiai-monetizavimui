@@ -1,0 +1,546 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Owned mail and Lithuanian display translation",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/operator/v2/businesses/{business_id}/mail": {
+      "get": {
+        "summary": "Listing",
+        "operationId": "listing_operator_v2_businesses__business_id__mail_get",
+        "parameters": [
+          {
+            "name": "business_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Business Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageEnvelope"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
+    "/operator/v2/businesses/{business_id}/mail/{mail_id}": {
+      "get": {
+        "summary": "Detail",
+        "operationId": "detail_operator_v2_businesses__business_id__mail__mail_id__get",
+        "parameters": [
+          {
+            "name": "business_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Business Id"
+            }
+          },
+          {
+            "name": "mail_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Mail Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetailEnvelope"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DetailEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "mail-view.v1",
+            "title": "Contract Version",
+            "default": "mail-view.v1"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test",
+              "production"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/MailDetail"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "DetailEnvelope"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "MailDetail": {
+        "properties": {
+          "mail_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Mail Id"
+          },
+          "case_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Case Id"
+          },
+          "message_id": {
+            "type": "string",
+            "maxLength": 250,
+            "title": "Message Id"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "inbound",
+              "outbound"
+            ],
+            "title": "Direction"
+          },
+          "state": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "State"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "sender": {
+            "type": "string",
+            "maxLength": 320,
+            "title": "Sender"
+          },
+          "recipient": {
+            "type": "string",
+            "maxLength": 320,
+            "title": "Recipient"
+          },
+          "subject": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Subject"
+          },
+          "synthetic": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Synthetic"
+          },
+          "business_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Business Id"
+          },
+          "body": {
+            "type": "string",
+            "maxLength": 16000,
+            "title": "Body"
+          },
+          "translation": {
+            "$ref": "#/components/schemas/Translation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mail_id",
+          "case_id",
+          "message_id",
+          "direction",
+          "state",
+          "created_at",
+          "sender",
+          "recipient",
+          "subject",
+          "synthetic",
+          "business_id",
+          "body",
+          "translation"
+        ],
+        "title": "MailDetail"
+      },
+      "MailPage": {
+        "properties": {
+          "business_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Business Id"
+          },
+          "case_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Case Id"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/MailSummary"
+            },
+            "type": "array",
+            "maxItems": 25,
+            "title": "Items"
+          },
+          "next_before": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Before"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "business_id",
+          "case_id",
+          "items",
+          "next_before"
+        ],
+        "title": "MailPage"
+      },
+      "MailSummary": {
+        "properties": {
+          "mail_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Mail Id"
+          },
+          "case_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Case Id"
+          },
+          "message_id": {
+            "type": "string",
+            "maxLength": 250,
+            "title": "Message Id"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "inbound",
+              "outbound"
+            ],
+            "title": "Direction"
+          },
+          "state": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "State"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "sender": {
+            "type": "string",
+            "maxLength": 320,
+            "title": "Sender"
+          },
+          "recipient": {
+            "type": "string",
+            "maxLength": 320,
+            "title": "Recipient"
+          },
+          "subject": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Subject"
+          },
+          "synthetic": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Synthetic"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mail_id",
+          "case_id",
+          "message_id",
+          "direction",
+          "state",
+          "created_at",
+          "sender",
+          "recipient",
+          "subject",
+          "synthetic"
+        ],
+        "title": "MailSummary"
+      },
+      "PageEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "mail-view.v1",
+            "title": "Contract Version",
+            "default": "mail-view.v1"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test",
+              "production"
+            ],
+            "title": "Environment"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "request_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$",
+            "title": "Request Id"
+          },
+          "data": {
+            "$ref": "#/components/schemas/MailPage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "environment",
+          "source_revision",
+          "observed_at",
+          "request_id",
+          "data"
+        ],
+        "title": "PageEnvelope"
+      },
+      "Translation": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "missing",
+              "unavailable"
+            ],
+            "title": "Status"
+          },
+          "target_language": {
+            "type": "string",
+            "const": "lt",
+            "title": "Target Language",
+            "default": "lt"
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Source Sha256"
+          },
+          "subject": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 400
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subject"
+          },
+          "body": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 32000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Body"
+          },
+          "translated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Translated At"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 80
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "source_sha256"
+        ],
+        "title": "Translation"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "CoreSession": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

@@ -34,6 +34,8 @@ class Settings(BaseSettings):
     customer_text_runner_enabled: bool = False
     customer_portal_origin: str = "http://127.0.0.1:3017"
     customer_outbox_directory: str = "artifacts/customer-outbox"
+    # Optional private display copies; mail GET never dispatches a model.
+    mail_display_directory: str = ""
     acquisition_capture_enabled: bool = False
     acquisition_capture_config: str = ""
     acquisition_work_enabled: bool = False

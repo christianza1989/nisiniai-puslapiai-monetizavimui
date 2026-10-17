@@ -52,6 +52,7 @@ from .db import db
 from .director.routes import router as director_read_router
 from .facebook.routes import router as facebook_router
 from .models import Artifact, CostReservation, Event, PolicyRevision, new_id, utcnow
+from .mail_view.routes import router as mail_view_router
 from .order_tests import Confirmation, QuoteInput
 from .public_projects.routes import router as public_router
 from .security import digest, operator_auth, signed_edge, worker_auth
@@ -111,6 +112,7 @@ app.include_router(acquisition_control_router)
 app.include_router(acquisition_router())
 app.include_router(acquisition_work_router)
 app.include_router(acquisition_work_owner_router)
+app.include_router(mail_view_router)
 app.include_router(acquisition_task_router)
 app.include_router(task_router)
 app.include_router(operations_router)

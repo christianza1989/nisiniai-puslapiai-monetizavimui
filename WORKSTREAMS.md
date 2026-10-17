@@ -1,3 +1,14 @@
+## Owned mail display and Lithuanian sidecars — Root 2026-10-18
+
+Issue66/comment6241311809, upgrade519c758b, paired30071/main533/publicec8.
+Reserved mail_view/*, mail_display_translate.py, dedicated offline/PG tests,
+canonical contract, config field and router imports only. Existing Case/MailMessage,
+current Session/owner BusinessGrant and tenant RLS remain authoritative. GET never
+dispatches, sends, syncs inbox or changes mail. Private Lithuanian display sidecars
+bind exact original content; original sealed payloads stay unchanged. Portal owns
+its new BFF/view. No acquisition, calibration, migrations, operating DB/case,
+Serving, existing workers or transport changes in this source window.
+
 ## Concurrent Node preview guards — Root 2026-10-17
 
 Root issue66/comment6239824916, upgrade778ba9ee from clean219/public255,

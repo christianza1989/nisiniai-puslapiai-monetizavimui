@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "New read-only owner MailMessage/Case projection and immutable content-bound Lithuanian display sidecar. No migration, acquisition/transport/calibration activation or operating write. Existing PG QA lane reused with exact original/operating/native preservation. One bounded synthetic Sol61High display call, not actual owner/UI or broad calibration acceptance; USD unmeasured, original creation allowance unchanged.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_mail_view.py offline_tests/test_mail_thread_matching.py offline_tests/test_control_codex.py -q",
+      "result": "PASS",
+      "evidence": "86 passed13.41s; final changed mail-only branch21 passed1.40s. Earlier wrong-CWD collection-only failure preserved separately."
+    },
+    {
+      "command": "Root private run-mail-pg.py first, maintained isolated0045 DB; tests/test_mail_view_pg.py",
+      "result": "PASS",
+      "evidence": "2 passed3.23s; log SHA256 a5d2c96aba1a069538e20842b0496a2c4f78f13e1c6a14a9d6a117b075b4109a; original0032/operating0045/current native exact, provider/SMTP/IMAP0."
+    },
+    {
+      "command": "freshness wrapped private run-mail-model.py",
+      "result": "PASS",
+      "evidence": "One gpt-6.1-sol/high synthetic call,12352 input409 output226 reasoning tokens; complete output self-review and exact protected token preservation; retained sidecar4bfc347f2a36ab8f264c0a19bf0face4929b13e7fdc1cdc9017d43adc46481e1. No email or current owner/UI claim."
+    }
+  ],
+  "eventId": "7fb96303-1ca4-49b2-8cb5-2040e397c876",
+  "sequence": 2,
+  "at": "2026-10-17T21:37:21.819Z"
+}

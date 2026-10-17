@@ -1,0 +1,317 @@
+{
+  "files": [
+    {
+      "path": "content/editorial/approved-enrichments.json",
+      "sha256": "981ffd5b9f3d1bb80e3479df49adb353cc75a9a64c0705039e1418e1cc0ae423"
+    },
+    {
+      "path": "content/legacy-additions.json",
+      "sha256": "d2d40a9e6b6b38c2f4dff0c42d972ac54efd4455f179374f3d5377391c42e150"
+    },
+    {
+      "path": "content/seed.json",
+      "sha256": "5b23dad0ec7c077f0e2613531d670fceea33b68c81c7c85dfcd7af07e22b5df7"
+    },
+    {
+      "path": "scripts/editorial/enrichments.mjs",
+      "sha256": "1c346de4823b1835685b576daade3de917f2e5015077b3896f1584558e9c0452"
+    },
+    {
+      "path": "scripts/home-final-demo/carousels-source.js",
+      "sha256": "49f5c4c207cbb957c3337005d4b916029d524078312a53449dd3c96939e25f53"
+    },
+    {
+      "path": "scripts/home-final-demo/configurator-demo.js",
+      "sha256": "a0a5b66a789feface04ec330ee62aa457dfb21751b0e5b25e81934ba6b218fbf"
+    },
+    {
+      "path": "src/app/[...slug]/page.tsx",
+      "sha256": "686ca49b142b8b2cf6b2f9d406c707484f02d637276ce329644b201f0eeb6278"
+    },
+    {
+      "path": "src/app/api/produkto-kortele/route.ts",
+      "sha256": "d4c3e16826f7fc246d57343b3973ffeb797912d6bf1f9285d5f8cfad750a9cd7"
+    },
+    {
+      "path": "src/app/api/quotes/route.ts",
+      "sha256": "a44e1d14cd626758bcaf16fc9c591cba3445b8733eddfb6c72c7098c6d7f8779"
+    },
+    {
+      "path": "src/app/biuro-baldu-gamyba/page.tsx",
+      "sha256": "61ec48a679a2f298cf8d46159fc55ef3c010e4715319d170fd3c0f76f3162803"
+    },
+    {
+      "path": "src/app/error.tsx",
+      "sha256": "dac7b6d4bf3af67d343769719c4d334bc493c88999785e89161917651a39cd22"
+    },
+    {
+      "path": "src/app/gidai/page.tsx",
+      "sha256": "7730b06c24f02324caae77a4473d3c9c8c75a00f2065d4242e9804d65e567db3"
+    },
+    {
+      "path": "src/app/kolekcijos/[line]/page.tsx",
+      "sha256": "4a5d459d0f7f0c02a69af08f59e266f7c459f002ad303d03d377fdea8c76bd58"
+    },
+    {
+      "path": "src/app/kolekcijos/page.tsx",
+      "sha256": "4d1d69c4e217a29730314fa18d8e3be5b19a8f8fb40d5b8824c69f98d3b495a1"
+    },
+    {
+      "path": "src/app/kontaktai/page.tsx",
+      "sha256": "2cd6d0a2df6f97403bdc22cc16ba2345be6cb3e5503c30a3699a26ce5f946dea"
+    },
+    {
+      "path": "src/app/llms-full.txt/route.ts",
+      "sha256": "1ed73cc955fe20beda4149d7f447feed5cdabe37d80b891d7fc685e9388d89aa"
+    },
+    {
+      "path": "src/app/llms.txt/route.ts",
+      "sha256": "e369e40acde410d7209b899772898b93c22aa262394b4fb8d46cd4284928f011"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "sha256": "889d06fe73763a47a332d9b444ba0df8cdc4329282fc9e697fd7a67548111027"
+    },
+    {
+      "path": "src/app/perziura/aprasai/page.tsx",
+      "sha256": "d18007c7c20ac63b5f6e64be753e44eb5f673b04f4960651c654323fecc7b7ad"
+    },
+    {
+      "path": "src/app/privatumas/page.tsx",
+      "sha256": "4ec8949ee7ebeb8ac912e8d3ae3e807e4de83e5427a2ae3b50ca87c8c1ee31b6"
+    },
+    {
+      "path": "src/app/produktai/[category]/[product]/page.tsx",
+      "sha256": "ac96ca9464c5b52db916b06137e0750df476ba5d3195594f5ece6d994d9c8c7d"
+    },
+    {
+      "path": "src/app/produktai/[category]/page.tsx",
+      "sha256": "643451de5ddbf34da8b15924b53c97d15ccfd8ca7bb6ca52a534e11984a707fc"
+    },
+    {
+      "path": "src/app/produktai/page.tsx",
+      "sha256": "95ffa9e429b4b64a767a85e825b31a1cf4592969322648015ee635b25df8838b"
+    },
+    {
+      "path": "src/app/steam-baldai/page.tsx",
+      "sha256": "54a311072dc216fead4384fa03fa8f2a31cbbd9ea9e9aed215e5c661e0b09a51"
+    },
+    {
+      "path": "src/app/uzklausa/page.tsx",
+      "sha256": "41e991bedafdedf7bd7cc2b8b006b9c96ede89793d37863a92d13a68f1e7e52e"
+    },
+    {
+      "path": "src/components/admin.tsx",
+      "sha256": "4c1508d7cf5f177da785d9b0ed323bb46363c094a8c76c7ea004238db5728b8c"
+    },
+    {
+      "path": "src/components/approved-home-contact.tsx",
+      "sha256": "94163d2d4966cd1e89dd548f69fd444a4af176d50e89682370adc75a9c41fb11"
+    },
+    {
+      "path": "src/components/approved-home-interactive.tsx",
+      "sha256": "dab821a8a211a9c06d2c9e870504a6d6a3e8f22b7e0d922f174eaa36e4f94d65"
+    },
+    {
+      "path": "src/components/catalog-page.tsx",
+      "sha256": "3312f9028079d0e5b6c661db41ccb47fd8e9e094e53b1f12817cc5b331a87318"
+    },
+    {
+      "path": "src/components/chair-rail.tsx",
+      "sha256": "5ce377d4b0289f863ef8242080ecb3efdc4b0a72e31c643bbf5e55a19a6e0428"
+    },
+    {
+      "path": "src/components/configuration-article.tsx",
+      "sha256": "7c567c75f94fc295b453d99cd0684e6d47e4d6e41ea5066ec93dd747f8e0dd94"
+    },
+    {
+      "path": "src/components/custom-furniture-page.tsx",
+      "sha256": "3f540d1da6075f1487fc6d5aac313a57697e3b30c90bd7c8f177b58f87ceb2ac"
+    },
+    {
+      "path": "src/components/duo-back-builder.tsx",
+      "sha256": "1b8cc52d833fecffec5a0cc98895df1360bbaab400bc94a1475479ac11ddd1b5"
+    },
+    {
+      "path": "src/components/duo-product-reading.tsx",
+      "sha256": "07a5f2857e2a2052e6d6390b76be45159fc05702e659f8dcb26c050511e5ad86"
+    },
+    {
+      "path": "src/components/expanded-product-detail.tsx",
+      "sha256": "244a1bdb02e398a47d10f6043160522c0ef2337166be0f3f11a3c3155d0de0b1"
+    },
+    {
+      "path": "src/components/home-inquiry.tsx",
+      "sha256": "e0fb88c668128f0585d3d7f0d8a948130d0993796ea9f3ed00e653dcf7398b7e"
+    },
+    {
+      "path": "src/components/home-showcase.tsx",
+      "sha256": "692aae3ca58f092a85f18a3b71258285b51ae83287caff31bbe3462ce1f97ccb"
+    },
+    {
+      "path": "src/components/legacy-page.tsx",
+      "sha256": "5bdebc918b347d20e039fa9ea6ca9ced8705ce5c4dd920731488d73345e667d0"
+    },
+    {
+      "path": "src/components/product-article.tsx",
+      "sha256": "706e6c3093fca88b4ada5875b4188f5508884f578779418eb1fe9903ed13544a"
+    },
+    {
+      "path": "src/components/product-card.tsx",
+      "sha256": "5dca8001f0f8d8f6ee6fd9a4038b206e69979bc7e8948f9fb0f56c108bc11d1e"
+    },
+    {
+      "path": "src/components/product-detail.tsx",
+      "sha256": "95d84a62b9c01b1075431f427b0377fc6abaf5339ea74ca47aacb8fad973ca61"
+    },
+    {
+      "path": "src/components/product-gallery.tsx",
+      "sha256": "290734027a741af5ef362f275e56b2b5d2b6bdcf1ef189196b9c57307043d7b3"
+    },
+    {
+      "path": "src/components/quote-form.tsx",
+      "sha256": "7ec68b01e66f067810d7365f2c5cd0477b2f519e89fd1df68d9b8dfa54302914"
+    },
+    {
+      "path": "src/components/quote-provider.tsx",
+      "sha256": "9eac52582e544486c00638b365e8ee302284c0ebe15f815cd58dc730d67875b8"
+    },
+    {
+      "path": "src/components/seo-faq.tsx",
+      "sha256": "b3390a2b875e8aa7ec918e5d5f8ac983cef7c263da12fb4634c34862e11084db"
+    },
+    {
+      "path": "src/components/seo-selection.tsx",
+      "sha256": "c317c5ccb1ad1d6709e8964a60a2a7c4ed2adf3d5fe67ff631d44cda43e26a27"
+    },
+    {
+      "path": "src/components/site-footer.tsx",
+      "sha256": "8a26037034ee68723a41e6d3ce9b7152a980422cbafb388eccdefc9a50d833c5"
+    },
+    {
+      "path": "src/components/site-header.tsx",
+      "sha256": "2f6e89141c9037b03e148a302388bb2fe42964d05d57c3a9944547d3220895b4"
+    },
+    {
+      "path": "src/components/viewer-3d.tsx",
+      "sha256": "ba833fe2515375ac9e5b298e9d7ba98d8bd8d321f6f000b1f1a879ef2c7dbfc2"
+    },
+    {
+      "path": "src/lib/approved-home-markup.ts",
+      "sha256": "dae813c8ea359bde612b9cf28a9e01ae70a5f841224ef85158c4632aebe4c2c9"
+    },
+    {
+      "path": "src/lib/catalog-configurator.ts",
+      "sha256": "48088a196f9d12d4cf6de285e5e464b3de4088dac229149ad9b7e2d659797065"
+    },
+    {
+      "path": "src/lib/category-labels.ts",
+      "sha256": "4ef48d8eebcef0de86eb160274ad4e248a82be5abe969d7005cb7e1d2ae98abd"
+    },
+    {
+      "path": "src/lib/configuration-article.ts",
+      "sha256": "ea86ff21c8f4bf51a76cf020905c29c3f7eb3887cee974d4ff27c20dc6b15d1b"
+    },
+    {
+      "path": "src/lib/configuration-labels.ts",
+      "sha256": "7bc49ce86cd7f41056bd1140ce71dce880bd3d0c8e4b47910172191998bd1f04"
+    },
+    {
+      "path": "src/lib/configurator.ts",
+      "sha256": "a8a1da2d64350b288af6251f09091948a1fa99f5c496efdfc64a73f98ba89ff9"
+    },
+    {
+      "path": "src/lib/core-reading.mjs",
+      "sha256": "78aa9737edf75e478386cc9a569cd44eedd061efe7c84c1a987b9d4c2cb889ab"
+    },
+    {
+      "path": "src/lib/duo-builder.ts",
+      "sha256": "0af57f1653a2ac03f301040aa028b931ec567f4e5851be787bc8ee8828be7f76"
+    },
+    {
+      "path": "src/lib/expanded-configurator.ts",
+      "sha256": "e5eb8797a2e4c973f9aa3299a26af553c1ffc790f0903b6fc7ea0ea66ab6376b"
+    },
+    {
+      "path": "src/lib/legacy-article.ts",
+      "sha256": "60474f3d8f886d4cf7e1744017dd18e6732c6ccdbceb676bed830b4e9242634e"
+    },
+    {
+      "path": "src/lib/model-seo.ts",
+      "sha256": "d8b4d9b0d4244ef676d9a2d822fdc50ce826ef2f6edd627367b1568e90e3bff0"
+    },
+    {
+      "path": "src/lib/product-card-pdf.ts",
+      "sha256": "c317b478b05252ba09ac25590d3361666f49dc731c59c36bbaab774da036a70a"
+    },
+    {
+      "path": "src/lib/product-models.ts",
+      "sha256": "3af76be37e6241cd1d0248a223d80681ffa095b886b41cb246852f4bf7485350"
+    },
+    {
+      "path": "src/lib/product-reading-runtime.ts",
+      "sha256": "6d95aac5871746e3bd09a3f861512bbfa97b7451ed2ff1e2fbdf6c907cef20ba"
+    },
+    {
+      "path": "src/lib/product-reading.ts",
+      "sha256": "a4a3503d2db376fff02c5016bfe052543d62fb2be539701083d9680902b6aa59"
+    },
+    {
+      "path": "src/lib/product-schema-images.ts",
+      "sha256": "81910e1778b1f2aff48e39175d35b7c6f80d3e9894b014e892024def6cc315f0"
+    },
+    {
+      "path": "src/lib/public-product-copy.ts",
+      "sha256": "b31ea2a2b767d864ed997b3995fc8da839ba261d0d761f7f3845518a13b0c73e"
+    },
+    {
+      "path": "src/lib/quotes.ts",
+      "sha256": "6f20678f530e1b8bfbb65c2f61d647d89d71b63d28fa325e77ce604be3549912"
+    },
+    {
+      "path": "src/lib/seo-collections.ts",
+      "sha256": "e6b1951fcc5bf336eb1c574e267fa3cbc3c435986b6bf7ee8621d2defb3b1c5f"
+    },
+    {
+      "path": "src/lib/seo-page-content.ts",
+      "sha256": "7c044c40e9029ba0ce4800b9ceaa5e1626480fe4738dcee49d72d1616581a2ae"
+    },
+    {
+      "path": "src/lib/types.ts",
+      "sha256": "fbd32c4c7e847af7c8623aa9ec4ab5f65e3ad8b8acd0023c68128c8a9cefe03d"
+    },
+    {
+      "path": "content/seo-collection-membership.json",
+      "sha256": "f4beb415d0763391540cf98765ac05cf4dcb042b332286dd217fae3cc44ce20f"
+    },
+    {
+      "path": "content/product-taxonomy.json",
+      "sha256": "26f10c8a2a1a9b0ec8a320388c503da3c8eab4c00f89a954d57e7754563b9e62"
+    },
+    {
+      "path": "content/custom-furniture-copy.json",
+      "sha256": "fa1668ff9d0a2ae25d8c6c090e48d2e1b48a5c3d9620a40458a4f6eea5b7b7d3"
+    },
+    {
+      "path": "content/privacy-copy.json",
+      "sha256": "d385ba1cedd310b097f2ade992ca853823e4e4c847fe74fb2e6b3de395cb6da3"
+    },
+    {
+      "path": "src/lib/product-presentation.ts",
+      "sha256": "8952a79d9b0faed23581d0462a317d2518e2a14b39c9282efe777ae9f6cade0f"
+    },
+    {
+      "path": "src/lib/seo-faq-copy.ts",
+      "sha256": "83f4407e2b48ddc5ce3cd213d985d2081e38897c7bbc82baa2bcfbf6aa34dd02"
+    },
+    {
+      "path": "src/lib/custom-furniture-copy.ts",
+      "sha256": "83dcab6dd5f3359f34f4ce0d1d817167e812e6c1d7f9a32fe803cf63026c0852"
+    },
+    {
+      "path": "src/lib/privacy-copy.ts",
+      "sha256": "520af8df0d922c23b3a1b4785bf353de35d67bdec5844c4265dfc7a23d7d7ff3"
+    }
+  ],
+  "catalogueHash": "9ddba005b001b81c31551fe97f287a50df60647a184295998c3f36123b0a13dd"
+}

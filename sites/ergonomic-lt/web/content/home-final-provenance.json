@@ -1,0 +1,356 @@
+{
+  "source": "../research/header-hero-html-2026-10-10/",
+  "approvedAt": "2026-10-12",
+  "generatedInteriors": true,
+  "unchangedAssetBytes": true,
+  "assets": [
+    {
+      "path": "/media/home-final/assets/2me-supplier-original.jpg",
+      "sha256": "a6f4c56c12885fc188cd081903263101a6dc7a11125799505dcc3449f5be11fd"
+    },
+    {
+      "path": "/media/home-final/assets/arrow-right.svg",
+      "sha256": "df62566573ca150209f6e2b5006aa053457054b3f9c917f35fa47c1514b0ba7b"
+    },
+    {
+      "path": "/media/home-final/assets/ergonomic-logo.png",
+      "sha256": "57102ad6dd34a105cff0cc5cdea05d6eb7cde626d71e94b9024c1f7fc0a1d365"
+    },
+    {
+      "path": "/media/home-final/assets/manrope.ttf",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    },
+    {
+      "path": "/media/home-final/assets/OFL.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "/media/home-final/assets/search.svg",
+      "sha256": "b29c5a3f842b3cf72916b8a8ff6f6cbe4c37cc6c71a2b80379ddc5d0af12e698"
+    },
+    {
+      "path": "/media/home-final/assets/THREE-LICENSE.txt",
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "/media/home-final/assets/categories/293c566e-be4e-4866-aece-e52d047e9f1c.webp",
+      "sha256": "b8f65f61ff49a26abe01d93d9b4abda7f226ab4ad580664fbaca98e89f3aae37"
+    },
+    {
+      "path": "/media/home-final/assets/categories/293c566e-be4e-4866-aece-e52d047e9f1c.webp.json",
+      "sha256": "021322988edcd1d617c7bb8d360eccc5b74a93a6419cc0438dca2a8680e5f009"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_acousticpods.webp",
+      "sha256": "579752ea614ea031b5f391b91bd6c7a0018c0adac0605c86c6867cd635e2b55c"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_acousticpods.webp.json",
+      "sha256": "5a4eea5d88faa3273defb14cf55bd4daef62488974da1ffa5716280e38962fbd"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_beamseating.webp",
+      "sha256": "1fe9c33e8d7f68d0671ab2ddd9f6d8f12e46ca242a36862e44bd8df5907b4a10"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_beamseating.webp.json",
+      "sha256": "580fe6e3964c0881bf2c04ad0091ca5f40fa618bc0c818ca9369d9a0148a168e"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_beamseatingns.webp",
+      "sha256": "3bdb4c0b15d701f2a569a895845a3f72e6d3891e9092e817c48a99c3c64a5ca2"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_beamseatingns.webp.json",
+      "sha256": "fe89b740031fae73b9574844245274cb81ab3412cfb2886a6994cd3b7071f111"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_cabinetsandwardrobes.webp",
+      "sha256": "e34824d768f200e6b954c7137065cfb086eb1c5228034bea9b081fd0d9b5d7f1"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_cabinetsandwardrobes.webp.json",
+      "sha256": "e090b3a96d9965f03696244b6ed4aa66180a5388441f561715d486e97eeef6fb"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_cafeandsidetables.webp",
+      "sha256": "65b44427d7d483ce5f7c359be02e12801ed27503ee2927737fb9e67ab0e2c7d3"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_cafeandsidetables.webp.json",
+      "sha256": "292ed6e52b26cd6be10f0afd16e6ab6c0bbe4885e609e348961466b6a524629b"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_chairs.webp",
+      "sha256": "49f0b92c891d6356ff70e94f99daaaf982d2f7e22e7b8c49970d3916f679b7f8"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_chairs.webp.json",
+      "sha256": "7f251a9fcfe9e3aea917551f599dfa945aac699b5259eb614d34d6c632130916"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_coatstand.webp",
+      "sha256": "81671ee0b6c60472716570df7ec7f6cd0bc87483984d95df0104a3114139282f"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_coatstand.webp.json",
+      "sha256": "0a73d5eacf7b9d741e4df4b7701cfeb58eceb843185ddc8e43cd728d44e7568d"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_conferencechairs.webp",
+      "sha256": "1129f9162f7428a03df43f4f07ebfa08457cbdd202aae38618ef78497c8221b7"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_conferencechairs.webp.json",
+      "sha256": "cd9e476b13bd762be190984491ac9a8ec067efde2d1a3a4a040adbef9b14f0d3"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_conferencetables.webp",
+      "sha256": "85bf0dc13216e6496127f5525775f0f0bc255dfd7c91db21a10274c88119c9b8"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_conferencetables.webp.json",
+      "sha256": "8be2ca9d1f4cde942730dec3773d57a3a822523cb974b84043c714876f3fddfc"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_desks.webp",
+      "sha256": "3935265a2386ff261a93d07ce2d78ebc17be84ba0250697e6c5ba980eb785077"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_desks.webp.json",
+      "sha256": "93488db18880a7641f20c81c8fa8e7486ea1b08f16514c289fb1ad2ee86fae02"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_hightables.webp",
+      "sha256": "aa3b3e54bfb2a60f96d34ed19d6a625e3052684809dd75eda37e454e1fde9434"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_hightables.webp.json",
+      "sha256": "2ea26270f03ffdabfdd049ad4765a6a5ef6f5451e72c3058fcf44a208d35bbb9"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_lockers.webp",
+      "sha256": "33f700e32de6614e8d84d1d9e76104f5f36e88f8592beacb8cc5e644ba0907c2"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_lockers.webp.json",
+      "sha256": "50cd98df646a5fec51ca2062884f18707fe0c1bed8dd45397149c9df8b5c69b7"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_loungechairs.webp",
+      "sha256": "804a32923d251e89af5d803de8fffe3bbdd14dd6b0f253554ab0334f1948c7da"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_loungechairs.webp.json",
+      "sha256": "3dbd3fddd736420d080d4cb864d3ddb172ff429990f479ce7fd8d2d88747a52d"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_modular.webp",
+      "sha256": "50fdc36443dc2b8a8f240cac7fdc10a8aff1111c28d97e074c50e155c4d10d6a"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_modular.webp.json",
+      "sha256": "738f20615c787e0d6070d9a509e427f95c156272c1739d5252b690e1115ab13e"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_officechairs.webp",
+      "sha256": "002fa41ec9707065211d8756b8fe16efa3a748c0c21f66c5ebf0db7db712dd0f"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_officechairs.webp.json",
+      "sha256": "0f16fe459c3306159f0eab05f055f1525aef6db55d3590d24e0f4ea596148401"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_panel.webp",
+      "sha256": "ce906488a1e4b6ee8f8e61dbe84b9f7848133847fa924821aa5349e1c7d14aa0"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_panel.webp.json",
+      "sha256": "75155ba4869acdfe69951b6976c87572aa14341628025072b5cd3da9bec907b6"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_panels.webp",
+      "sha256": "3106d1397c7f6dc7a0111aacbaa7c7a3aee8866d73d5b93b4d30107073758343"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_panels.webp.json",
+      "sha256": "5d456420158dd85d944ba14fa20973712a4532ad7e0461b27f3dbdfacb2f8e1e"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_pedestals.webp",
+      "sha256": "04359323c97b47d62e3dd6dd483522cc0895aa6cc4b2049b9832bce613820288"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_pedestals.webp.json",
+      "sha256": "bf60062fd3dc5989d92c3eaeb11dcfe8403f8ab42304e5feef93c08f97c1d0dd"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_pouffe.webp",
+      "sha256": "a89e56d029452e65bd1e0279e991e42a6d81e04e5e5ad712d905cc3119f6dc92"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_pouffe.webp.json",
+      "sha256": "415ca62a2735d896f40aff2d3063ee45c958898def5552e504c336976098a844"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_singledesks.webp",
+      "sha256": "3341169c449989a48d58e22ed3295b8c81bd6f4834035655ff0992dcde0d34a9"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_singledesks.webp.json",
+      "sha256": "9faf675433a8b0dd521f931184156b92b84a557e39c4f9d0c86f0bda228f38dd"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_sofas.webp",
+      "sha256": "8946408ed605b98b663bd635159dccab73631907f27ac1f3c430a11f29c8fb5e"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_sofas.webp.json",
+      "sha256": "fee4d3394fd57cc13ed3f3d1042fc2bf9b3b0c2194cab895e0dafc3a65d75caf"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_softseating.webp",
+      "sha256": "63ee87d7feb51177f7704550aa2370fa198d00864c7f5fe48446fd58592d11b8"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_softseating.webp.json",
+      "sha256": "5868f640cbbbebd250a088252224c14977d97b233720555e237e8d9009d1096b"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_stoolsandbenches.webp",
+      "sha256": "8db97fb1bac8a363dae50146ee753242f8522f73977f5c7bca426c61435786da"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_stoolsandbenches.webp.json",
+      "sha256": "c00c9303392806f415a67cb7471797e3fe23c0bb9b9d79e2123e4b26d3696bc4"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_storage.webp",
+      "sha256": "8feadd4a6dd76e2bcccd97c9fa2416543c476537bf7eeebe516b89866255d748"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_storage.webp.json",
+      "sha256": "1bb129e2f96f5231f25adcb91b4b96bfdff912791fc029cf2b8e6521c6fdc2dc"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_tables.webp",
+      "sha256": "a77fbbacad154e858e5f8aad1b69a60d21a20a99c2399a56be0825d91fc3dfa0"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_tables.webp.json",
+      "sha256": "0b7dc782ba30cc5158651a06ddb0d304ca2cbc43c45108a7c121b27501ead34d"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_wall.webp",
+      "sha256": "3dd0f24101055a40064be2920e67d7c4eb0bf5f5226234bc089b4ac5d4d5eeeb"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_wall.webp.json",
+      "sha256": "7e69f518c5f9d1f68b8db2406b9f3bef71032aab33fe5d27efa551ad3214e23e"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_workbenches.webp",
+      "sha256": "fe91c773a97515057038e77aa25742893ca81046af751c1c728ff4acfc3b738c"
+    },
+    {
+      "path": "/media/home-final/assets/categories/www_workbenches.webp.json",
+      "sha256": "c9751c32477189d1021bf7d5c9c5d37df55ef941c085d69b35651f4d498458b0"
+    },
+    {
+      "path": "/media/home-final/assets/popular/altum.webp",
+      "sha256": "3d74eed6a172e95d3a92cb654cd70f385efea1fc5e02779f0dd1b4669be5c8df"
+    },
+    {
+      "path": "/media/home-final/assets/popular/altum.webp.prompt.txt",
+      "sha256": "f7ddfd6b7cc6af77f28a721867b39e1a7898a2b7340a7d7b5eeab03b6eeb4538"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/collection.json",
+      "sha256": "54f2b4877fd81072db6451a1194616ac1ac6c893744d4b790798937d602b7c38"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/collection.prompt.txt",
+      "sha256": "04b11bb447e249d1bc21085886f056fb4a523c16328198e9bb20e81689650284"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/collection.webp",
+      "sha256": "a71da84403fe076ece3f0362546e2bea6884b2b2ca9fe6c4494e4339a32498ec"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/focus.json",
+      "sha256": "54acc62a2319a48215575fdecde3ff7f60d3196e775426a2c6bc4aeebdec17ff"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/focus.prompt.txt",
+      "sha256": "7765c26d286417343a9ca7e46470dc34ca80eb36ccb191bdf99632fc8eae3b1a"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/focus.webp",
+      "sha256": "cd6e1483a692b1daf445eb4ba670931f2d742a632539f7c12174d3a2ecf59d8f"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/lounge.json",
+      "sha256": "4782d9917596a28554d70db8fb47c6039924580765258c414369ed210acdacae"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/lounge.prompt.txt",
+      "sha256": "114af6461f7bf9d5571fe9e193c999893fff220c28f9edad52132021fb0d3f4d"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/lounge.webp",
+      "sha256": "29a615ad6d46c4cc45ef8ba8aa511fc4138bd685bd85911602a8fad1fa6782ba"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/meetings.json",
+      "sha256": "e7c279713bd2f4567ebe6372355d222c6c366a52a9f9b116b328da5d5f201a4a"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/meetings.prompt.txt",
+      "sha256": "488d327ee69028a2860f0ab0081f9514265dcc1c1c5aebeacb199f01525d14ff"
+    },
+    {
+      "path": "/media/home-final/assets/workspaces/meetings.webp",
+      "sha256": "3c2d467c5d3c139caeebeaddf5eacbb004b8f272927e4d7068a62570a787c3e3"
+    },
+    {
+      "path": "/media/home-final/assets/guides/chair-guide.webp",
+      "sha256": "63594ca4783a71f263c7ce6028d1afb3018c14d645223868ea7f527657dae6bf"
+    },
+    {
+      "path": "/media/home-final/assets/guides/chair-guide.webp.json",
+      "sha256": "4b4877857927742fb8f42f2ca45c196186500551bd6b57d016a36d8637e5ebf9"
+    },
+    {
+      "path": "/media/home-final/assets/guides/desk-guide.webp",
+      "sha256": "617455196c85e6935e07c875ce0f27e26e6771711289eefe32f4a58d05ee64d6"
+    },
+    {
+      "path": "/media/home-final/assets/guides/desk-guide.webp.json",
+      "sha256": "a1baba2c702ad11e6bffaafc0f42491fbf198fe0282c015718744b961aaaf34b"
+    },
+    {
+      "path": "/media/home-final/assets/guides/meeting-guide.webp",
+      "sha256": "e87373281ca81813bc817c3c0a43b72130d4b83acd37c81b1411355269ac2209"
+    },
+    {
+      "path": "/media/home-final/assets/guides/meeting-guide.webp.json",
+      "sha256": "0745ba7d82663c8e04683f2bb8b7edb732addbf2bf421d74109edc0bcd5c5b35"
+    },
+    {
+      "path": "/media/home-final/assets/contact/caveat.ttf",
+      "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988"
+    },
+    {
+      "path": "/media/home-final/assets/contact/OFL.txt",
+      "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
+    },
+    {
+      "path": "/media/home-final/assets/contact/plant-clean.png",
+      "sha256": "ad7d4463afbe0066c229c5a9ab7f19713ed3ba5f88810e1380ad1fd90641c420"
+    },
+    {
+      "path": "/media/home-final/assets/plates/room.png",
+      "sha256": "43ad1036c13175ae0009473a820b27ea50469eaa01272bc2f480860725ae8d15"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "folder": "D:/Core/output/ergonomic-antigravity-preparation-20261013/ANTIGRAVITY",
+  "baselineId": "8150d5362f47844540dcabcf1714adc500527995bb36ecf78ece4da2cec51e45",
+  "fields": 2350,
+  "manifest": [
+    {
+      "name": "TECHNICAL.txt",
+      "bytes": 4331,
+      "sha256": "5b5808bd64bd608541a71682cf61b9d22f5ddbb416dab35ca75677e5bf3e192b"
+    },
+    {
+      "name": "content-package.json",
+      "bytes": 1694630,
+      "sha256": "21edfa5d439bd3d5cc3ed1d57331abd93238930552105429545e52a6a8494949"
+    },
+    {
+      "name": "content-package.schema.json",
+      "bytes": 2230,
+      "sha256": "fc4b8224bf14474df35d7474ebe101c1f88d47a2a158912268455dc5d6dc1e7d"
+    },
+    {
+      "name": "editing-instructions.txt",
+      "bytes": 4462,
+      "sha256": "af66ac6fb8fee89fa27a6836786c6cabb960877984ee1fa1df15d5f5026255a4"
+    },
+    {
+      "name": "facts.json",
+      "bytes": 1581,
+      "sha256": "1e82cbe0c9760f766d68b594d4a531ccace66e0f3a33d16d2d442ea00e127e60"
+    },
+    {
+      "name": "product-translation-inventory.json",
+      "bytes": 494300,
+      "sha256": "e7a3a28fbe6bcc8469b87e963ce6ee63ab1d0821459b43fc36258d402ec91209"
+    },
+    {
+      "name": "seo-temos.txt",
+      "bytes": 1422,
+      "sha256": "1fa211a712ac28fb113ce4bfceadbd68b059027c91193f90cf67d1443aba6920"
+    },
+    {
+      "name": "source-references.json",
+      "bytes": 435519,
+      "sha256": "3a068b312b504cd88b4c4a1faab0f89ec0a119c816bd9d236b73aa9c16bd694e"
+    },
+    {
+      "name": "terminai.txt",
+      "bytes": 533,
+      "sha256": "cd1588ee5cd433c1f344236e648fe5c313fae704457a54ebad7ee052d93ca48b"
+    }
+  ]
+}

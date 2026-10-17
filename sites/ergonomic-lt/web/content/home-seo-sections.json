@@ -1,0 +1,65 @@
+{
+  "cards": [
+    {
+      "label": "Ergonominės kėdės",
+      "href": "/ergonomines-kedes/",
+      "image": "/media/home-office/k01-50374bb66317/800.webp",
+      "alt": "Ergonominė darbo kėdė šviesiame biure su ąžuoliniu stalu ir augalais.",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "assetId": "K01"
+    },
+    {
+      "label": "Balansinės kėdės",
+      "href": "/shop/balansines-kedes/",
+      "image": "/media/home-office/b01-59a6759ae837/800.webp",
+      "alt": "Balansinė taburetė prie reguliuojamo aukščio stalo šviesiame biure.",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "assetId": "B01"
+    },
+    {
+      "label": "Priedai darbo vietai",
+      "href": "/shop/priedai/",
+      "image": "/media/home-office/p01-954de2012efd/800.webp",
+      "alt": "Monitoriaus laikiklis ir akustinė stalo panelė jaukioje biuro darbo vietoje.",
+      "width": 1586,
+      "height": 992,
+      "widths": [
+        400,
+        800,
+        1586
+      ],
+      "assetId": "P01"
+    }
+  ],
+  "large": {
+    "label": "ERGONOMINIAI STALAI",
+    "href": "/ergonominiai-stalai/",
+    "description": "Reguliuojamo aukščio stalai biurui ir jūsų darbo vietai. Elektrinės, rankinės ir pneumatinės komplektacijos.",
+    "cta": "Rinktis ergonominį stalą",
+    "image": "/media/home-office/s03-42386639740a/1586.webp",
+    "alt": "Elektriniai stalai skirtingose aukščio padėtyse šviesiame biure.",
+    "width": 1586,
+    "height": 992,
+    "widths": [
+      400,
+      800,
+      1586
+    ],
+    "assetId": "S03"
+  },
+  "kind": "ai-office-visualization",
+  "disclosure": "Biuro aplinkos vizualizacijos",
+  "ownerInstruction": "2026-10-13 final choice K01; B01; P01; S03"
+}

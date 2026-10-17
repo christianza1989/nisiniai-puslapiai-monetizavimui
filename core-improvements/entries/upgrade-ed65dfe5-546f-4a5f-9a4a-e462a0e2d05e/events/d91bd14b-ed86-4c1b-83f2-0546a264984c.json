@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Exact Core body accessors are shared without eager filesystem schema loading. Package exports, hash semantics, review and release predicates are unchanged. Used successfully by the new Worker admin.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/content-body-runtime.test.mjs content-studio/test/content-v2.test.mjs content-studio/test/content-workflow.test.mjs",
+      "result": "PASS",
+      "evidence": "sites/ergonomic-lt/IMPLEMENTATION_STATUS.md: 13 scoped Core regressions PASS; Cloudflare build and remote authenticated admin PASS."
+    }
+  ],
+  "eventId": "d91bd14b-ed86-4c1b-83f2-0546a264984c",
+  "sequence": 2,
+  "at": "2026-10-17T05:29:05.380Z"
+}

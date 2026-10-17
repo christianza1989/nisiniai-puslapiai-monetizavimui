@@ -1,0 +1,21 @@
+{
+  "category": "code",
+  "siteId": "ergonomic-lt",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/186",
+  "paths": [
+    "content-studio/src/content-body.mjs",
+    "content-studio/src/content-workflow.mjs",
+    "content-studio/src/content-package-v2.mjs",
+    "content-studio/test/content-body-runtime.test.mjs"
+  ],
+  "evidence": [
+    "sites/ergonomic-lt/IMPLEMENTATION_STATUS.md",
+    "content-studio/test/content-body-runtime.test.mjs"
+  ],
+  "summary": "Runtime editorial review imports a filesystem schema at evaluation and fails in Next/Workers bundles. Extract the identical body accessors into a pure shared module, preserving package byte parity and review hashes.",
+  "rollback": "Scoped revert of the pure body extraction in both own branches; keep exact body functions and original package validation.",
+  "id": "upgrade-ed65dfe5-546f-4a5f-9a4a-e462a0e2d05e",
+  "branch": "codex/ergonomic-admin-launch-20261017",
+  "baseSha": "808581d919d06cb4a2d151cc7f9ec1be1782aba2",
+  "createdAt": "2026-10-17T04:39:32.524Z"
+}

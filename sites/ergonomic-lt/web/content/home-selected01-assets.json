@@ -1,0 +1,137 @@
+{
+  "reference": "https://ergonomic-preview.pinet-azprekyba.workers.dev/pavyzdziai-biurams/variants/01-sviesus-biuras",
+  "largeImages": [
+    {
+      "image": "/media/home-selected01/room-01.jpg",
+      "line": "2ME",
+      "origin": {
+        "productId": "product_2me-meeting-chairs_adb396de",
+        "productName": "2ME",
+        "brand": "Nowy Styl",
+        "route": "/produktai/kedes/2me-susitikimu-ir-lankytoju-kedes/",
+        "supplierProductUrl": "https://www.nowystyl.com/en/2me/meeting-chairs/",
+        "seedPublished": false,
+        "localFile": "D:/ergonomic.lt_svetaine/web/public/media/office-interior.jpg",
+        "sourceUrl": "https://www.nowystyl.com/getmedia/6a867ce7-c8af-4b8d-9761-c0ee447f194d/ns-britenet-poland-06-13021.jpg?width=1800",
+        "sha256": "863f71b3657e296d7cd6d234da6a6118435832a68f6df6a77108c8f9af10da19",
+        "kind": "manufacturer-photo",
+        "generatedByUs": false,
+        "sourceEvidenceFile": "D:/ergonomic.lt_svetaine/web/content/asset-provenance.json",
+        "sourceSha256Matches": true,
+        "visualInspection": true,
+        "id": "01",
+        "title": "2ME — etalono konferencinis biuras",
+        "width": 1800,
+        "height": 1080,
+        "mobilePosition": "62% 67%",
+        "desktopPosition": "50% 63%",
+        "referenceExactSceneMatch": true,
+        "notes": "Exact room scene used in the supplied reference: mustard/grey/green 2ME chairs with curved white arm frames, large table, panoramic windows. Manufacturer image filename ns-britenet-poland-06-13021.jpg. This is the supplier Britenet scene, not an Ergonomic client-project claim.",
+        "assetName": "room-01.jpg"
+      },
+      "sha256": "863f71b3657e296d7cd6d234da6a6118435832a68f6df6a77108c8f9af10da19"
+    },
+    {
+      "image": "/media/home-selected01/room-03.jpg",
+      "line": "Play&Work",
+      "origin": {
+        "id": "03",
+        "productId": "product_play-work-cabinets-sideboards_6806276b",
+        "productName": "Play&Work",
+        "brand": "Nowy Styl",
+        "route": "/produktai/daiktu-laikymo-baldai/play-work-spintos-ir-komodos/",
+        "supplierProductUrl": "https://www.nowystyl.com/en/play-work/cabinets-sideboards/",
+        "seedPublished": false,
+        "title": "Play&Work + Navigo — darbo vietos prie miesto langų",
+        "localFile": "D:/ergonomic.lt_svetaine/research/homepage-10-reference-2026-10-10/rooms/play-work-navigo.jpg",
+        "sourceUrl": "https://www.nowystyl.com/getmedia/bbe0f723-f9f3-4391-a4ef-6e9932ec627b/play-work-navigo-nowy-styl-arrangement-02-23411.jpg",
+        "width": 2500,
+        "height": 1500,
+        "sha256": "18a8d5cbf46db2c3f33c2b480fb1005dff039db0c9428e6b9bc5a75a085e9b36",
+        "kind": "manufacturer-photo",
+        "generatedByUs": false,
+        "sourceEvidenceFile": "D:/ergonomic.lt_svetaine/data/assets.json",
+        "sourceAssetId": "1936878efaeddd808192",
+        "receiptFile": "D:/ergonomic.lt_svetaine/research/homepage-10-reference-2026-10-10/rooms/play-work-navigo.jpg.json",
+        "mobilePosition": "67% 68%",
+        "desktopPosition": "50% 62%",
+        "visualInspection": true,
+        "notes": "Bright panorama with white storage towers, desks, Navigo chairs and blue soft-seating elements. Main catalog link targets the visible Play&Work storage family record associated with this exact source image.",
+        "sourceTechnique": "Manufacturer gallery asset; photographic vs manufacturer CGI production technique is not independently verified.",
+        "assetName": "room-03.jpg"
+      },
+      "sha256": "7479eeb1453ded36583197a4686b690f8e7f82f736c434fdb99dc29b66a5ccd3"
+    },
+    {
+      "image": "/media/home-selected01/lounge.webp",
+      "line": "Creva",
+      "origin": {
+        "prompt": "Use case: product-mockup, editorial architectural photography.\r\nAsset type: furniture homepage lounge scene, landscape 16:10, no text or UI.\r\nPrimary request: create a premium workplace lounge photograph using the supplied Creva modular sofa reference. Preserve the exact sofa's recognizable geometry: lightly upholstered beige three-seat corner composition, slim rectangular pale oak feet, low straight arms and separate soft rectangular back cushions. Do not turn it into a generic rounded sofa. The sofa is the primary subject, rendered at believable real scale with fine woven upholstery.\r\nScene: a quiet office social area in a contemporary European interior. Warm white plaster wall, pale stone floor, light oak wall section, very restrained muted sage fabric acoustic panel. A small low light oak coffee table with a single ceramic vessel, a floor plant in the far corner. Large unseen window at left provides soft morning daylight, natural physical contact shadows under all sofa feet. No people, no busy decor, no chairs.\r\nComposition: landscape 16:10, sofa centered slightly right, all feet and the entire corner shape visible. Camera at normal eye level, 45mm lens, careful architectural framing, no wide-angle distortion. Slightly closer view than the workspace image but roomy margins around the sofa. Harmonize with a warm white, cream, sage, graphite and natural oak website; keep the background calm and furniture clear. Photoreal editorial architectural photography with subtle material texture, no fake logos, watermark, lettering, model codes or unrealistic bent geometry. This is an interior inspiration visualization, not a completed client project.",
+        "createdAt": "2026-10-10T09:36:10.808Z"
+      },
+      "sha256": "5a37445bdaf46f88c5903ac03e378e90e2c194d33ab9030e137015cf9276eb01"
+    }
+  ],
+  "categoryImages": [
+    {
+      "image": "/media/home-selected01/category-meeting.jpg",
+      "line": "CX 3200",
+      "origin": {
+        "id": "meeting",
+        "productId": "product_cx-3200-meeting-tables_667fd26e",
+        "productName": "CX 3200",
+        "brand": "Nowy Styl",
+        "route": "/produktai/stalai/cx-3200-susitikimu-stalai/",
+        "supplierProductUrl": "https://www.nowystyl.com/en/cx-3200/meeting-tables/",
+        "seedPublished": false,
+        "title": "CX 3200 su Xilium kėdėmis — konferencinis stalas",
+        "localFile": "D:/ergonomic.lt_svetaine/research/homepage-10-reference-2026-10-10/rooms/xilium-cx3200-sqart.jpg",
+        "sourceUrl": "https://www.nowystyl.com/getmedia/fd66b868-be20-432a-a2a3-f3ebc9c24946/xilium-cx3200-sqart-3609.jpg",
+        "width": 2500,
+        "height": 1500,
+        "sha256": "8ad4a51aa5e4dd145cd75f770452ea3b7f320c28dded3ec1e3081b31f430dd45",
+        "kind": "manufacturer-photo",
+        "generatedByUs": false,
+        "sourceEvidenceFile": "D:/ergonomic.lt_svetaine/data/assets.json",
+        "sourceAssetId": "2de35bb3af9d9f2596be",
+        "receiptFile": "D:/ergonomic.lt_svetaine/research/homepage-10-reference-2026-10-10/rooms/xilium-cx3200-sqart.jpg.json",
+        "mobilePosition": "65% 66%",
+        "desktopPosition": "50% 62%",
+        "visualInspection": true,
+        "notes": "Large conference table and meeting chairs visible. Table model CX 3200 is named explicitly in source filename xilium-cx3200-sqart-3609.jpg; local route is the real CX 3200 meeting-table seed record.",
+        "sourceTechnique": "Manufacturer gallery asset; photographic vs manufacturer CGI production technique is not independently verified.",
+        "assetName": "category-meeting.jpg"
+      },
+      "sha256": "46d40dd3e1820332799ad6e2fdb7394b276a068c7419fdbcd207cffee4c65765"
+    },
+    {
+      "image": "/media/home-selected01/category-storage.jpg",
+      "line": "Aplo",
+      "origin": {
+        "productId": "product_aplo-cabinets-sideboards_99123fb6",
+        "productName": "Aplo",
+        "brand": "Nowy Styl",
+        "route": "/produktai/daiktu-laikymo-baldai/aplo-spintos-ir-komodos/",
+        "supplierProductUrl": "https://www.nowystyl.com/en/aplo/cabinets-sideboards/",
+        "seedPublished": false,
+        "localFile": "D:/ergonomic.lt_svetaine/web/public/media/bd21973b17ccf77eb175.jpg",
+        "sourceUrl": "https://www.nowystyl.com/getmedia/ff258bfa-9035-4b61-a3ea-c7e8622018ef/aplo-nowy-styl-detail-01-57922.jpg",
+        "sha256": "1613a287412554e36e11391a8b6a2b700556071e2236052465eb0517f4b3eabb",
+        "kind": "manufacturer-photo",
+        "generatedByUs": false,
+        "sourceEvidenceFile": "D:/ergonomic.lt_svetaine/web/content/asset-provenance.json",
+        "sourceSha256Matches": true,
+        "visualInspection": true,
+        "id": "storage",
+        "width": 2500,
+        "height": 1500,
+        "title": "Aplo — tikros spintos ir lentynos",
+        "mobilePosition": "52% 52%",
+        "notes": "Actual Aplo storage close-up with wood cabinet doors and open shelving. Suitable storage-category tile; not a sofa or acoustic product.",
+        "assetName": "category-storage.jpg"
+      },
+      "sha256": "1613a287412554e36e11391a8b6a2b700556071e2236052465eb0517f4b3eabb"
+    }
+  ],
+  "uniqueLargeFurnitureLines": true
+}

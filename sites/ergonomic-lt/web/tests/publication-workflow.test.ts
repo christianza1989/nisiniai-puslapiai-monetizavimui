@@ -17,13 +17,13 @@ const models=new Map(sourceModels.map(m=>[m.key,m]));
 const transition=(w:Workflow,key:string,hash:string,action:string,input:any,actor:string)=>transitionOriginal(w,key,hash,action,input,actor,models);
 const release=(w:Workflow)=>releaseOriginal(w,models);
 const empty=():Workflow=>({version:1,models:{},released:{},releaseId:null});
-const model=sourceModels.find(m=>!m.active&&blockers(m).length===0)!;
+const model=sourceModels.find(m=>m.active&&blockers(m).length===0)!;
 const review={desktop:true,mobile:true,evidence:Object.fromEntries(['usefulness','facts','sources','media','links','presentation'].map(a=>[a,'TEST ONLY: independent fixture evidence for '+a]))};
 test('original inventory is unique and stages do not manufacture owner approvals',()=>{
  assert.equal(sourceModels.length,1111);assert.equal(new Set(sourceModels.map(m=>m.key)).size,1111);assert.equal(stages.length,7);assert.ok(model);assert.deepEqual(release(empty()).released,{});
 });
 test('only actual original IDs may enter the priority document, in exact order',()=>{
- const ids=sourceModels.slice(0,3).map(m=>m.key).reverse();assert.deepEqual(priorities(ids).order,ids);assert.throws(()=>priorities([ids[0],ids[0]]));assert.throws(()=>priorities(['invented']));assert.throws(()=>priorities('all'));assert.equal(priorities([]).writer.thinking,'low');
+ const ids=sourceModels.filter(m=>m.active).slice(0,3).map(m=>m.key).reverse();assert.deepEqual(priorities(ids).order,ids);assert.throws(()=>priorities([ids[0],ids[0]]));assert.throws(()=>priorities(['invented']));assert.throws(()=>priorities([sourceModels.find(m=>!m.active)!.key]));assert.throws(()=>priorities('all'));assert.equal(priorities([]).writer.thinking,'low');
 });
 test('review → approve → release is required and stale revisions fail closed',()=>{
  assert.throws(()=>transition(empty(),model.key,model.revisionHash,'approve',{},'TEST'));
@@ -36,6 +36,14 @@ test('review → approve → release is required and stale revisions fail closed
 });
 test('unprepared candidates cannot bypass model evidence by supplying review fields',()=>{
  const m=sourceModels.find(m=>!m.geminiReady)!;assert.throws(()=>transition(empty(),m.key,m.revisionHash,'review',review,'TEST'));assert.throws(()=>transition(empty(),model.key,model.revisionHash,'return',{comment:''},'TEST'));
+});
+
+test('hidden historical rows cannot be prioritized, reviewed or released',()=>{
+ const hidden=sourceModels.find(m=>!m.active)!;
+ assert.ok(blockers(hidden).some(b=>b.includes('paslėptas')));
+ assert.throws(()=>transition(empty(),hidden.key,hidden.revisionHash,'review',review,'TEST'));
+ const w=empty();w.models[hidden.key]={revisionHash:hidden.revisionHash,approval:{actor:'TEST historical approval',at:'2026-10-17'}};
+ assert.deepEqual(release(w).released,{});
 });
 test('review tampering invalidates Core readiness and old release hashes never transfer',()=>{
  let w=transition(empty(),model.key,model.revisionHash,'review',review,'TEST');w.models[model.key].review!.binding='tampered';assert.throws(()=>transition(w,model.key,model.revisionHash,'approve',{},'TEST'));
@@ -83,7 +91,7 @@ test('SQLite/D1-compatible CAS, atomic audit and launch projection preserve IDs/
  const compact=await publicationOne<{payload:string}>("SELECT payload FROM admin_documents WHERE name='workflow.json'");assert.deepEqual(JSON.parse(compact!.payload).models,{},'Model reviews use individual rows, not a growing singleton');
  process.env.LAUNCH_SITE='true';const projection=await launchProjection(seed as any);const models=allProductModels(projection.products);
  assert.equal(models.length,1);assert.equal(models[0].modelConfigurationId,model.configurationId);assert.equal(`/produktai/${models[0].categorySlug}/${models[0].slug}/`,model.path);
- assert.equal(productModels(projection.products).length,1,'An explicitly approved original example must remain visible in launch even if the public draft consolidates it');
+ assert.equal(productModels(projection.products).length,1,'Only the explicitly approved active model enters launch');
  const original=seed.products.find(p=>p.id===model.productId)!;assert.equal(original.configurations.length,(projection.products[0] as any).publicationOriginalCount);
  process.env.LAUNCH_SITE='false';assert.equal((await launchProjection(seed as any)).products.length,seed.products.length);
  const removed=transition(w,model.key,model.revisionHash,'remove',{comment:'TEST rollback'},'TEST');await saveDocument('workflow.json',1,removed,'TEST','remove',model.key);

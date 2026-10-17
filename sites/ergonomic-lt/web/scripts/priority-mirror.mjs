@@ -1,6 +1,7 @@
 import {spawnSync} from 'node:child_process';
 import {mkdirSync,writeFileSync,renameSync,readFileSync} from 'node:fs';
 import path from 'node:path';
+import {activePriorityOrder,textQueue} from '../src/lib/publication-scope.ts';
 const directory='D:/Core/output/ergonomic-admin-launch-20261017';
 const target=path.join(directory,'PRIORITETAI.json');
 const interval=process.argv.includes('--watch');mkdirSync(directory,{recursive:true});
@@ -10,12 +11,12 @@ function sync(){
  const parsed=JSON.parse(r.stdout),rows=parsed.flatMap(x=>x.results||[]);const row=rows.find(r=>r.name==='priorities.json');
  if(!row)throw Error('Prioritetų dokumentas nerastas.');const data=JSON.parse(row.payload);
  const old=JSON.parse(readFileSync('content/admin-source-status.json','utf8'));const map=new Map(old.models.map(m=>[m.key,m]));
- const output={...data,models:data.order.map(key=>{const m=map.get(key);return {key,productId:m.productId,configurationId:m.configurationId,code:m.code};}),revision:row.revision,updatedAt:row.updated_at,syncedAt:new Date().toISOString(),source:'ergonomic-publication/admin_documents/priorities.json',readOnlyMirror:true};
+ const activeOrder=activePriorityOrder(old.models,data.order);
+ const output={...data,order:activeOrder,deferredHiddenOrder:data.order.filter(key=>map.has(key)&&!map.get(key).active),scope:'active-catalogue-only',models:activeOrder.map(key=>{const m=map.get(key);return {key,productId:m.productId,configurationId:m.configurationId,code:m.code};}),revision:row.revision,updatedAt:row.updated_at,syncedAt:new Date().toISOString(),source:'ergonomic-publication/admin_documents/priorities.json',readOnlyMirror:true};
  const temp=target+'.tmp';writeFileSync(temp,JSON.stringify(output,null,2)+'\n');renameSync(temp,target);
  const drafts=JSON.parse(rows.find(r=>r.name==='drafts.json')?.payload||'{"models":{}}');
  for(const r of rows)if(r.name.startsWith('draft:'))drafts.models[r.name.slice(6)]=true;
- const order=[...data.order,...old.models.map(m=>m.key).filter(k=>!data.order.includes(k))];
- const writer=order.map(key=>map.get(key)).filter(m=>m&&m.geometryAccepted&&!m.geminiReady&&!drafts.models[m.key]).map(m=>({key:m.key,productId:m.productId,configurationId:m.configurationId,code:m.code,sourceInventoryHash:m.revisionHash,path:m.path}));
+ const writer=textQueue(old.models,activeOrder,Object.keys(drafts.models)).map(m=>({key:m.key,productId:m.productId,configurationId:m.configurationId,code:m.code,sourceInventoryHash:m.revisionHash,path:m.path}));
  writeFileSync(path.join(directory,'GEMINI-EILE.json'),JSON.stringify({version:1,priorityRevision:row.revision,provider:'Gemini App',model:'4 Argon',thinking:'low',execution:'Codex-operated existing signed-in browser; no API model alias and no unattended browser robot',jobs:writer},null,2)+'\n');
  writeFileSync(path.join(directory,'PRIORITY-MIRROR-STATUS.json'),JSON.stringify({at:output.syncedAt,pid:process.pid,phase:interval?'WATCHING':'SYNCED',priorityRevision:row.revision,entries:data.order.length,writerJobs:writer.length,target}));
  return {revision:row.revision,entries:data.order.length,writerJobs:writer.length,target};

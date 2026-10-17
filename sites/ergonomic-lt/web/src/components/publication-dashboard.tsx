@@ -1,20 +1,22 @@
 'use client';
 import {useEffect,useMemo,useState} from 'react';
 import type {ModelSource,Workflow,Priorities} from '@/lib/publication-workflow';
+import {activeModels,visibleModels,activePriorityOrder} from '@/lib/publication-scope';
 import './publication-dashboard.css';
 type Row=ModelSource&{stage:number;blockers:string[]};
 type Data={queue:{revision:number;payload:Priorities;updatedAt:string};workflow:{revision:number;payload:Workflow};draftsRevision:number;stages:string[];models:Row[]};
 const areas={usefulness:'Aprašymas aiškiai paaiškina modelį',facts:'Faktai, matmenys ir opcijų kodai sutampa',sources:'Patikrinti šaltiniai ir 3D priėmimo įrodymas',media:'Nuotraukos ir 3D priklauso šiam modeliui',links:'Veikia modelio nuorodos ir pasirinkimai',presentation:'Patikrintas kompiuterio ir telefono vaizdas'};
 export default function PublicationDashboard(){
  const [data,setData]=useState<Data>(),[error,setError]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false);
- const [query,setQuery]=useState(''),[category,setCategory]=useState(''),[stage,setStage]=useState(''),[page,setPage]=useState(0),[onlyPriority,setOnlyPriority]=useState(false);
+ const [query,setQuery]=useState(''),[category,setCategory]=useState(''),[stage,setStage]=useState(''),[page,setPage]=useState(0),[onlyPriority,setOnlyPriority]=useState(false),[showHidden,setShowHidden]=useState(false);
  const [selected,setSelected]=useState<string>(),[viewport,setViewport]=useState<'desktop'|'mobile'>('desktop'),[comment,setComment]=useState(''),[checks,setChecks]=useState<string[]>([]),[seen,setSeen]=useState<string[]>([]);
  async function load(){setError('');try{const r=await fetch('/valdymas/api/',{cache:'no-store'}),d=await r.json();if(!r.ok)throw Error(d.error);setData(d);}catch(e){setError((e as Error).message);}}
  useEffect(()=>{void load();},[]);
  async function mutate(body:unknown,url='/valdymas/api/'){setBusy(true);setError('');setNotice('');try{const r=await fetch(url,{method:'POST',headers:{'content-type':'application/json','x-ergonomic-action':'1'},body:JSON.stringify(body)}),d=await r.json();if(!r.ok)throw Error(d.error);await load();setNotice(d.message||'Pakeitimai išsaugoti.');return true;}catch(e){setError((e as Error).message);return false;}finally{setBusy(false);}}
- const order=data?.queue.payload.order||[];
+ const order=activePriorityOrder(data?.models||[],data?.queue.payload.order||[]);
+ const active=data?activeModels(data.models):[];
  const categories=useMemo(()=>[...new Set(data?.models.map(m=>m.category)||[])].sort((a,b)=>a.localeCompare(b,'lt')),[data]);
- const filtered=useMemo(()=>data?.models.filter(m=>(!category||m.category===category)&&(!stage||m.stage===Number(stage))&&(!onlyPriority||order.includes(m.key))&&(!query||`${m.name} ${m.code} ${m.configurationId}`.toLocaleLowerCase('lt').includes(query.toLocaleLowerCase('lt')))).sort((a,b)=>{const x=order.indexOf(a.key),y=order.indexOf(b.key);return (x<0?9999:x)-(y<0?9999:y)||a.name.localeCompare(b.name,'lt');})||[],[data,query,category,stage,onlyPriority]);
+ const filtered=useMemo(()=>visibleModels(data?.models||[],showHidden).filter(m=>(!category||m.category===category)&&(!stage||m.stage===Number(stage))&&(!onlyPriority||order.includes(m.key))&&(!query||`${m.name} ${m.code} ${m.configurationId}`.toLocaleLowerCase('lt').includes(query.toLocaleLowerCase('lt')))).sort((a,b)=>{const x=order.indexOf(a.key),y=order.indexOf(b.key);return (x<0?9999:x)-(y<0?9999:y)||a.name.localeCompare(b.name,'lt');}),[data,query,category,stage,onlyPriority,showHidden]);
  const model=data?.models.find(m=>m.key===selected);
  async function queue(next:string[]){await mutate({action:'priorities',version:data!.queue.revision,order:next});}
  function move(key:string,delta:number){const next=[...order],i=next.indexOf(key),j=i+delta;if(i<0||j<0||j>=next.length)return;[next[i],next[j]]=[next[j],next[i]];void queue(next);}
@@ -26,8 +28,9 @@ export default function PublicationDashboard(){
   {error&&<div className="pub-error" role="alert">{error} <button onClick={()=>void load()}>Atnaujinti duomenis</button></div>}
   {notice&&<p role="status" className="pub-notice">{notice}</p>}
   {!data&&!error&&<p role="status">Skaitomos modelių būsenos…</p>}
-  {data&&<><div className="pub-summary"><div><strong>{data.models.length}</strong><span>Originalių modelių</span><small>{data.models.filter(m=>m.active).length} aktyvios kortelės</small></div>{data.stages.map((s,i)=><button key={s} onClick={()=>{setStage(String(i));setPage(0);}} aria-pressed={stage===String(i)}><strong>{data.models.filter(m=>m.stage===i).length}</strong><span>{s}</span></button>)}<div><strong>{data.models.filter(m=>m.stage<6).length}</strong><span>Liko iki paleidimo</span></div></div>
+  {data&&<><div className="pub-summary"><div><strong>{active.length}</strong><span>Aktyvių modelių</span><small>{data.models.length-active.length} paslėpti istoriniai įrašai</small></div>{data.stages.map((s,i)=><button key={s} onClick={()=>{setStage(String(i));setPage(0);}} aria-pressed={stage===String(i)}><strong>{active.filter(m=>m.stage===i).length}</strong><span>{s}</span></button>)}<div><strong>{active.filter(m=>m.stage<6).length}</strong><span>Liko iki paleidimo</span></div></div>
   <div className="pub-toolbar"><label>Paieška<input value={query} onChange={e=>{setQuery(e.target.value);setPage(0);}} placeholder="Modelis, kodas arba ID"/></label><label>Kategorija<select value={category} onChange={e=>{setCategory(e.target.value);setPage(0);}}><option value="">Visos kategorijos</option>{categories.map(c=><option key={c}>{c}</option>)}</select></label><label>Etapas<select value={stage} onChange={e=>{setStage(e.target.value);setPage(0);}}><option value="">Visi etapai</option>{data.stages.map((s,i)=><option key={s} value={i}>{s}</option>)}</select></label><label className="pub-checkbox"><input type="checkbox" checked={onlyPriority} onChange={e=>{setOnlyPriority(e.target.checked);setPage(0);}}/> Tik „Daryti pirma“</label></div>
+  <label className="pub-checkbox pub-hidden-filter"><input type="checkbox" checked={showHidden} onChange={e=>{setShowHidden(e.target.checked);setPage(0);}}/>Rodyti paslėptus <span>({data.models.length-active.length})</span></label>
   <div className="pub-list-title"><p><b>{filtered.length}</b> modelių · {order.length} prioritetų eilėje</p><button className="button dark" disabled={busy||!Object.values(data.workflow.payload.models).some(m=>m.approval)} onClick={()=>void mutate({action:'release',version:data.workflow.revision})}>Paskelbti patvirtintus</button></div>
   <p className="pub-caption">Grafo kaina – stebėtų perėjimų apimtis, kai ji žinoma. Nežinomas dydis nėra nulinė kaina. Tekstų eilė: Gemini App · 4 Argon · low. {data.queue.updatedAt&&`Eilė atnaujinta ${new Date(data.queue.updatedAt).toLocaleString('lt')}.`}</p>
   {!filtered.length&&<p className="pub-empty">Pagal šiuos filtrus modelių nėra. Pakeiskite etapą arba paiešką.</p>}
@@ -36,7 +39,7 @@ export default function PublicationDashboard(){
    <div className="pub-card-copy"><p className="pub-code">{m.code||'Be bazinio kodo'} · {m.configurationId}</p><h2><button onClick={()=>open(m)}>{m.name}</button></h2><p className="pub-caption">{m.category}{!m.active?' · originalus pavyzdys':''}</p>
    <ol className="pub-stages" aria-label="Parengimo etapai">{data.stages.map((s,i)=><li key={s} title={s} className={i<m.stage?'done':i===m.stage?'current':''}><span>{i+1}</span><span className="sr-only">{s}{i===m.stage?' – dabartinis etapas':''}</span></li>)}</ol>
    <p className="pub-current">{data.stages[m.stage]}</p><p className="pub-cost">{m.geometryAccepted?(m.optionsReady&&m.geminiReady?'Liko peržiūra ir paskelbimas':'3D priimtas · liko tekstų etapas'):m.effort.observedPendingEdges!==null?`Bent ${m.effort.observedPendingEdges} stebėtų likusių perėjimų`:'Grafo dydis dar nežinomas'}</p>
-   <label className="pub-checkbox"><input disabled={busy} type="checkbox" checked={rank>=0} onChange={()=>void queue(rank<0?[...order,m.key]:order.filter(k=>k!==m.key))}/>Daryti pirma</label>
+   {m.active?<label className="pub-checkbox"><input disabled={busy} type="checkbox" checked={rank>=0} onChange={()=>void queue(rank<0?[...order,m.key]:order.filter(k=>k!==m.key))}/>Daryti pirma</label>:<p className="pub-caption">Paslėptas · į darbų eilę neįtrauktas</p>}
    {rank>=0&&<div className="pub-order"><button disabled={busy||rank===0} aria-label={`Pakelti ${m.name}`} onClick={()=>move(m.key,-1)}>↑ Aukščiau</button><button disabled={busy||rank===order.length-1} aria-label={`Nuleisti ${m.name}`} onClick={()=>move(m.key,1)}>↓ Žemiau</button></div>}
    <button className="button outline" onClick={()=>open(m)}>Peržiūrėti modelį →</button></div>
   </article>;})}</div>

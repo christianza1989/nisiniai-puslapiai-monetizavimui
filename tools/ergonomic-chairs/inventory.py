@@ -73,18 +73,22 @@ def inventory(web, sources, priorities):
         ranks = [order.index(m['key']) for m in members if m['key'] in order]
         known = [m['initialSelectableConstructionTransitions'] for m in members if m['initialSelectableConstructionTransitions'] is not None]
         return (min(ranks) if ranks else len(order), min(known) if known else 10**12, members[0]['name'], members[0]['configurationId'])
-    queue = [dict(job=job, modelKeys=[m['key'] for m in members], series=members[0]['series'], code=members[0]['code'],
+    all_jobs = [dict(job=job, modelKeys=[m['key'] for m in members if m['active']], historicalModelKeys=[m['key'] for m in members if not m['active']], series=members[0]['series'], code=members[0]['code'],
                   originalVariant=members[0]['originalVariant'], observedInitialDegree=min((m['initialSelectableConstructionTransitions'] for m in members if m['initialSelectableConstructionTransitions'] is not None), default=None)) for job, members in sorted(jobs.items(), key=rank)]
+    queue = [j for j in all_jobs if j['modelKeys']]
+    deferred_hidden = [j for j in all_jobs if not j['modelKeys']]
     known_jobs = [j for j in queue if j['observedInitialDegree'] is not None]
     return dict(at=datetime.now(timezone.utc).isoformat(), policy='original-variant-default-finishes-options-dimensions-only-v1',
                 counts=dict(originalChairs=len(rows)+len(excluded), excludedXilium=len(excluded), scopedOriginalModels=len(rows),
                             scopedActiveCards=sum(r['active'] for r in rows), distinctInitialVariantJobs=len(jobs),
                             exactInitialSources=sum(r['initialSource'] is not None for r in rows),
+                            activeVariantJobs=len(queue), hiddenOnlyVariantJobs=len(deferred_hidden),
                             jobsWithInitialDomains=len(known_jobs), observedInitialTransitions=sum(j['observedInitialDegree'] for j in known_jobs),
+                            hiddenOnlyObservedInitialTransitions=sum(j['observedInitialDegree'] for j in deferred_hidden if j['observedInitialDegree'] is not None),
                             missingOriginalVariant=sum(r['job'] is None for r in rows)),
                 estimate=dict(totalTransitions=None, nativeTransitionsPerHour=None, totalDurationHours=None,
                               explanation='Initial degree is an observed lower bound only. Reachable dependencies and full closure require true Native measurement.'),
-                priorityFile=str(priorities), queue=queue, models=rows, excludedXilium=excluded)
+                priorityFile=str(priorities), queue=queue, deferredHiddenQueue=deferred_hidden, models=rows, excludedXilium=excluded)
 
 
 if __name__ == '__main__':

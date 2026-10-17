@@ -64,6 +64,7 @@ export function modelPage(m:ModelSource,review?:Review){return {id:m.key,type:'p
 export const editorialSite={id:'ergonomic-lt',name:'Ergonomic.lt',offer:'Biuro baldai ir komplektacijos parinkimas',facts:'UAB A-Z Prekyba. Buivydiškių g. 22, Vilnius, LT-07195.',audience:'Įmonės ir darbo erdvės',contact:{email:'info@ergonomic.lt',phone:'+37069199833'},canonicalHost:'ergonomic.lt',timezone:'Europe/Vilnius',locale:'lt',brand:'Ergonomic.lt',operatorName:'UAB A-Z Prekyba'};
 export function blockers(m:ModelSource){
  const result:string[]=[];
+ if(!m.active)result.push('Istorinis modelis paslėptas; į aktyvaus katalogo darbų eilę neįtrauktas.');
  if(!m.sourceReady)result.push('Trūksta susieto originalaus šaltinio.');
  if(!m.geometryAccepted)result.push('Trūksta pilno 3D priėmimo įrodymo arba patvirtintos nuotraukų išimties.');
  if(!m.optionsReady)result.push('Opcijų aprašymai neparengti arba nepatikrinti.');
@@ -104,7 +105,7 @@ export function transition(w:Workflow,key:string,revisionHash:string,action:stri
 export function release(w:Workflow,models=sourceByKey){
  const next=structuredClone(w),at=new Date().toISOString();next.released={};
  for(const [key,d] of Object.entries(next.models)){
-  const m=models.get(key);if(!m||!d.approval||d.revisionHash!==m.revisionHash)continue;
+  const m=models.get(key);if(!m||!m.active||!d.approval||d.revisionHash!==m.revisionHash)continue;
   const ready=pageReadiness(editorialSite,modelPage(m,d.review),m.revisionHash);
   if(blockers(m).length||ready.blockers.length)throw new Conflict(`Modelio ${m.name} priėmimas paseno.`);
   next.released[key]={revisionHash:m.revisionHash,at};
@@ -112,6 +113,6 @@ export function release(w:Workflow,models=sourceByKey){
  next.releaseId=createHash('sha256').update(JSON.stringify(next.released)).digest('hex');return next;
 }
 export function priorities(input:unknown):Priorities{
- if(!Array.isArray(input)||input.length>sourceModels.length||input.some(x=>typeof x!=='string'||!sourceByKey.has(x))||new Set(input).size!==input.length)throw new Error('Eilėje turi būti tik unikalūs originalių modelių ID.');
+ if(!Array.isArray(input)||input.length>sourceModels.length||input.some(x=>typeof x!=='string'||!sourceByKey.get(x)?.active)||new Set(input).size!==input.length)throw new Error('Eilėje turi būti tik unikalūs aktyvaus katalogo modelių ID.');
  return {version:1,order:input,writer:{provider:'Gemini App',model:'4 Argon',thinking:'low'}};
 }

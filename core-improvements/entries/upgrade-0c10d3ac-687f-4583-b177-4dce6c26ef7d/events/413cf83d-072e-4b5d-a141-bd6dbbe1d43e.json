@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Frozen base30071c65. Original missing-adapter baseline2FAIL/1PASS1.99s retained privately: .github-preparation/v2-adapter-baseline.log SHA2567709b5c096d48b42058552b6408aff402acfaec03182cd2e3f663eeb57acf187. Initial104PASS7.13s log81934fdfe7c564d07f6a3be503ccdf860daa855d89fccc7d36b58c0f3de93304 had one synthetic model_construct warning. New cross-arm replay tests initially3FAIL9.57s, SHA2562f02e20fdaac1c859b7337cfa4c865a9c87b71426c4f4cdb6080a0b37705ccc6; narrow metadata replay rejection added. Intermediate2FAIL/108PASS12.41s SHA256d2ac52d9285ecdd2b929c1af7564592a733807d97595700bc928b787f027f132 were new-test authoring errors (strict native UUID parsing and existing reason restricted_patch), corrected in owned tests only. All originals remain; these are synthetic offline source checks, not native model/PG failures. Invalid uncommitted journal draft preserved privately byte-identically as described in record; only this canonical entry is delivered. No providers, DB, paid CLI, operational processes, private corpus or existing source changed.",
+  "eventId": "413cf83d-072e-4b5d-a141-bd6dbbe1d43e",
+  "sequence": 2,
+  "at": "2026-10-17T21:44:41.546Z"
+}

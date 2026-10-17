@@ -1,0 +1,21 @@
+{
+  "status": "merged",
+  "note": "GitHub get_pr_info independently verified PR194 merged=true, closed, merged_at2026-10-17T12:17:25Z, merge_commit_sha9a46650a033d283dfb559d7b835a26384e3225fe; source head8717564b8c454c014895ab49bd9595fbe3161bfb. Successful origin/main fetch contains that exact squash merge. Own cleanup branch integrated current main without conflicts; no document/code changes introduced by integration. Root reported independent exact-blob review in comment6233782017. This event records only the cleanup package's main delivery; it makes no platform, Root integration branch, runtime or other-PC adoption claim. Prior events, first scanner coverage limitation and pending tool-adoption dependencies remain unchanged.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/194",
+  "commit": "9a46650a033d283dfb559d7b835a26384e3225fe",
+  "checks": [
+    {
+      "command": "GitHub get_pr_info(repository_full_name=christianza1989/nisiniai-puslapiai-monetizavimui,pr_number=194)",
+      "result": "PASS",
+      "evidence": "merged=true; merged_at2026-10-17T12:17:25Z; exact merge commit9a46650a033d283dfb559d7b835a26384e3225fe and original PR head8717564b8c454c014895ab49bd9595fbe3161bfb."
+    },
+    {
+      "command": "git diff --exit-code origin/main HEAD; node scripts/git-freshness.mjs --phase continue",
+      "result": "PASS",
+      "evidence": "After own-branch integration, tree equals fetched main9a46650a033d283dfb559d7b835a26384e3225fe. Fresh continue2026-10-17T12:19:20.338Z passed,0missing main commits, clean own worktree before this event. Canonical AGENTS/CORE_IMPROVEMENT/Git contracts read after integration; their bytes unchanged from previous baseline."
+    }
+  ],
+  "eventId": "69b9ac9e-63d3-409a-a72a-70d5dbd5e0a7",
+  "sequence": 5,
+  "at": "2026-10-17T12:20:17.403Z"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "67 offline PASS;41 restricted-PG PASS plus1explicit paid test skipped; separate actual5-call Case journey PASS; owned server90table restart exact. Original4source FAIL,2bounce FAIL,2deadline FAIL,4missing adapter FAIL,1replay drift FAIL, fixture/native/interruption model failures retained.174/180 lifetime reservations;6and116usage unknown. No operating adoption, SMTP/IMAP or external sending.",
+  "checks": [
+    {
+      "command": "offline-final.txt",
+      "result": "PASS",
+      "evidence": "private artifact SHA256 991dcb837c0bbb917f9b2545ebf037401c4fa5acce0720780e62435c30a67681"
+    },
+    {
+      "command": "qa/final-related.txt",
+      "result": "PASS",
+      "evidence": "private artifact SHA256 85f632b8c0fcf278a78752aec840ec1a7ea4c3351552d0b8abaf86abdc18ea6d"
+    },
+    {
+      "command": "qa/actual-model-journey.txt",
+      "result": "PASS",
+      "evidence": "private artifact SHA256 dd6cf7990877c9ddf87e247f985da9ccc5439745b11e605ede1699601c34bbb6"
+    },
+    {
+      "command": "qa/restart-report.json",
+      "result": "PASS",
+      "evidence": "private artifact SHA256 22105b6c34abf147f87ec523482f68d4c6b925117131ad031b39d5df5285f36d"
+    }
+  ],
+  "eventId": "9e3f7c70-47f7-4cb9-92b3-de3af4dd35e1",
+  "sequence": 2,
+  "at": "2026-10-17T22:57:28.211Z"
+}

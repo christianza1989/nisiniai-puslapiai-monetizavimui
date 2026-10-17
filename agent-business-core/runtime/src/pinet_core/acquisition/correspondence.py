@@ -422,14 +422,14 @@ class Correspondence:
         request_id,
         decision: ReplyDecision,
         instruction_hash,
+        reviewed_reply=None,
     ):
         """Trusted worker commit. Stale model results cannot replace newer inbound.
 
         This slice persists containment and actual privacy Case acknowledgement.
         Reply-ready means prepared only: no outbound/sending or automatic resume.
         """
-        body_hash = seal(
-            {
+        input_value = {
                 "thread_id": thread_id,
                 "inbound_id": inbound_id,
                 "revision": revision,
@@ -437,7 +437,22 @@ class Correspondence:
                 "decision": decision.model_dump(),
                 "instruction_hash": instruction_hash,
             }
-        )
+        review = None
+        if reviewed_reply is not None:
+            try:
+                review = Review.model_validate(reviewed_reply['review'])
+                valid = (reviewed_reply['state'] == decision.action and not reviewed_reply['reasons']
+                    and reviewed_reply['external_sent'] is False
+                    and reviewed_reply['decision'] == decision.model_dump()
+                    and reviewed_reply['instruction_hash'] == instruction_hash
+                    and all(getattr(review, key) for key in ('factual', 'relevant', 'one_clear_next_step',
+                        'no_unverified_promises', 'no_source_instructions')))
+            except (KeyError, TypeError, ValueError):
+                valid = False
+            if not valid:
+                raise LedgerError(409, 'exact_reviewed_reply_required')
+            input_value['reviewed_reply'] = reviewed_reply
+        body_hash = seal(input_value)
         async with self.database.transaction(scope.business_id, scope.environment_id) as tx:
             campaign_id = None
             if decision.action in {"reply", "invite", "privacy_reply"}:
@@ -483,6 +498,8 @@ class Correspondence:
             expected = fingerprint([compose(campaign.sector)[0], REPLY_INSTRUCTION])
             if instruction_hash != expected:
                 raise LedgerError(409, "correspondence_instructions_changed")
+            if reviewed_reply is not None and reviewed_reply.get('reviewer_hash') != compose(campaign.sector, 'reviewer')[1]:
+                raise LedgerError(409, 'correspondence_reviewer_changed')
             reasons = reply_blocks(campaign, decision, prospect, mail.payload["body"])
             policy = await tx.get(
                 ContactPolicy, {**values, "recipient_hash": thread.recipient_hash}, with_for_update=True
@@ -564,6 +581,23 @@ class Correspondence:
             policy.revision += 1
             policy.updated_at = now
             thread.revision += 1
+            if state == 'reply_ready' and review is not None:
+                outbound = MailMessage(id=new_id(), business_id=scope.business_id,
+                    environment_id=scope.environment_id, case_id=case.id,
+                    message_id=f'<{new_id()}@pinet.lt>', direction='outbound', state='captured',
+                    payload={'sender': 'info@pinet.lt', 'recipient': mail.payload['sender'],
+                        'subject': decision.subject, 'body': decision.body,
+                        'in_reply_to': mail.message_id,
+                        'references': list(dict.fromkeys(mail.payload.get('references', []) + [mail.message_id]))[-20:],
+                        'source_ref': 'acquisition_reply_capture', 'synthetic': True, 'customer_facing': False,
+                        'external_sent': False, 'reviewed_input_sha256': body_hash,
+                        'decision_request_id': str(request_id), 'reply_to_mail_id': inbound_id,
+                        'source_revision': thread.source_revision, 'instruction_hash': instruction_hash,
+                        'reviewer_hash': reviewed_reply['reviewer_hash']})
+                tx.add(outbound)
+                await tx.flush()
+                tx.add(MailBinding(**values, mail_id=outbound.id, thread_id=thread_id, direction='outbound',
+                    payload_sha256=seal(outbound.payload), input_sha256=body_hash, created_at=now))
             case.payload = {
                 **case.payload,
                 "acquisition": {

@@ -1589,3 +1589,23 @@ Creation in local, after all complete current native/retained/source/actor check
 No domain, runtime, calibration or channel admission. Other reserved hosts stay
 refused. Save the original failure before editing production. Helper owns the
 disjoint durable workflow/worker/0045 packet; Serving4650 and data stay unchanged.
+
+## Wellness headless acquisition/email — 2026-10-17
+
+Independent human-requested chat; issue200, branch codex/wellness-headless-acquisition-20261017.
+Base1c6f1f59b88e997df1efa746b2f43c69e6149acd, paired freshness main533597c/publicec8a9c PASS.
+Own acquisition headless/mail/wellness-corpus adapters, acquisition runner and narrowly necessary
+engine/dialogue/instruction changes, new offline tests, wellness acquisition/calibration/runbook docs,
+new unique upgrade journal and this entry. Existing Case/mail/outbox/inbox reused; no second CRM.
+Reserved exclusions: workspace_team, tasks/worker,0045, live/private preview, authority, portal,
+Serving, operating DB/case/native files and all previous journals. Current Creation37/40 held.
+Separate lab ceiling180 attempts/120minutes/3turns, gpt-6.1-sol high; no automatic reset/retry.
+Discovery paid calls0. External prospect transportOFF; controlled own-inbox test only with actual
+configured identity and gates. Private source/contact/model/.eml records remain ignored artifacts.
+
+Wellness headless source packet completed2026-10-18:68offlinePASS,41PGPASS,
+separate actual5-call Case journeyPASS, owned90table restart exact;174/180 lifetime
+model attempts,2unknownusage retained,0external mail. New remaining-time/cancel
+cleanup and exact outbound replay/source binding tested. OperatingBusiness/native,
+workers,37/40 and Root Serving unchanged. Clean scoped handoff to Root for review;
+source delivery is not operating admission or SMTP/inbox acceptance.

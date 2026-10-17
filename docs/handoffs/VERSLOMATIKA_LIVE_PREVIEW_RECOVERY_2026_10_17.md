@@ -1,5 +1,9 @@
 # Live preview recovery after manual cleanup — 2026-10-17
 
+**Later checkpoint:** read [actual stability status](VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md)
+before using the historical PIDs/source/next steps below. Currentd904 reaches
+ready/home pixels but still loses its heartbeat; close/expiry are not accepted.
+
 ## Current state
 
 The human completed the checked cleanup. Its private receipt reports35 obsolete

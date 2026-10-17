@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual legacy transition and private13-attempt current history now retain exact projection; source/profile selected values are not used to rewrite historical job metadata. Original1FAIL8PASS103.97s and focused bidirectional failures remain. No database/execution-clock/model change.",
+  "checks": [
+    {
+      "command": "Root isolated PostgreSQL533 targeted profile admission/legacy/source tests",
+      "result": "PASS",
+      "evidence": "10PASS146.23s SHA278409c955d0d1fea025d3f4ec6fd3f921c5c072f73f273780ae0f91fc74fd7f includes olddefault profile-change full TeamView equality and immutable row fingerprint; provider0,88tables/original/native exact."
+    },
+    {
+      "command": "Root actual ordinary owner team projection before/after533",
+      "result": "PASS",
+      "evidence": "13attempts, complete stable projectionSHA7fef6da18c163060c93342587e3b3ff23b99798e20ee63c15fc851c7ec9c5fc4 exact."
+    }
+  ],
+  "eventId": "0ef128bf-ef63-48b2-b5b8-c861a5c80cfb",
+  "sequence": 3,
+  "at": "2026-10-17T09:21:19.700Z"
+}

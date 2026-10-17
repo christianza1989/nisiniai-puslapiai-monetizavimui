@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual533 normal202 reaches starting but first Node refusal is heartbeat_expired/before_context at09:09:27.410Z, elapsed7426ms, sampled margin-62ms; no ready proof. Actuald904 normal202 reaches ready, nativeHTTP200, Chrome homepage1280/390 widths1265/375, but loses heartbeat at09:16:46.217Z, elapsed38531ms, sampled margin-124ms; terminal failedauthorization_revoked09:16:53.673Z. Intended guide navigation and DELETEclose failed. Incorrect guideNavigation:true in a close-control marker has an explicit retained private correction; no guide/closePASS. Actual53310PGPASS146.23s andd9046PGPASS90.51s preserve88operational tables/original0032/native; provider0. d904 capture306SQL1.8088s, verify1.39-1.53s, inspection5.8139s; still not robust under3s heartbeat. Current API34104/supervisor2500 uses restricted same0044DB, all five paid workers held, physical015 unchanged. Portal build XQj0CKDsHM1ob-y_fdcsD remains unstarted. Larger one-operation observation plan is pending review; no timeout increase, no stable close/expiry/revocation/lifespan or portal acceptance claim. See docs/handoffs/VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md.",
+  "eventId": "fef959f7-4ef2-4284-b200-33ae24fe9803",
+  "sequence": 6,
+  "at": "2026-10-17T09:21:15.684Z"
+}

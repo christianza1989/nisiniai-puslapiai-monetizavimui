@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "First-refusal diagnostic now observed in actual canonical Node invocations:533 before-ready sampled-62ms atelapsed7426ms, d904 after-ready sampled-124ms atelapsed38531ms, both heartbeat_expired/before_context. Private receipts retain the defined nine-field safe shape and actual sampled expiry; no nonce/token/proof/path/rawerror exposed by the receipt. No success inference from a missing receipt and no stable preview acceptance; runtime journal remains fixing.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-live-preview.test.mjs",
+      "result": "PASS",
+      "evidence": "Root integrated42PASS3859.93ms SHAdeb197ca0bef9e169975c9c96ab49c09602609b88975e7fab4004d0ee3e8a03f; original helper baseline failures retained."
+    },
+    {
+      "command": "Root actual533/d904 first-refusal receipt inspection",
+      "result": "PASS",
+      "evidence": "Two fixed-shape receipts identify before_context heartbeat expiry with sampled-62/-124ms while original authorization_revoked and owned cleanup remain; no timeout/permission/wire change,0provider."
+    }
+  ],
+  "eventId": "41074c74-946a-49f3-adc5-2522d0c59c0d",
+  "sequence": 4,
+  "at": "2026-10-17T09:21:22.289Z"
+}

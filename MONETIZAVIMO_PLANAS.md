@@ -1,5 +1,7 @@
 # Nišinių verslų portfelis: idėjos ir pirmųjų testų planas
 
+**Dokumento paskirtis, 2026-10-17:** istorinis 2026-09-29 idėjų ir bandymų planas. Toliau išsaugotos kainų prielaidos, pirminiai prioritetai ir modelių hipotezės nėra dabartinės paklausos, pajamų ar konkrečios nišos krypties patvirtinimas. Naują sprendimą pagrįsk pagal [AGENTS](AGENTS.md), [START_HERE](START_HERE.md), [CORE_BUILD_CONTRACT](CORE_BUILD_CONTRACT.md) ir konkrečios nišos BUSINESS; pradinės analizės čia neperrašytos.
+
 Parengta 2026-09-29. Tai verslo hipotezės ir siūlomas bandymų planas, ne pajamų prognozė.
 
 Vėlesnis vartotojo patikslinimas: pradžioje paleidžiame visų 20 domenų SEO, aprašymų ir kontaktų svetaines. Partnerius bei pilnas sistemas jungiame pagal srautą ir realias užklausas. Ankstesni pasiūlymai pradėti tik nuo trijų verslų ar iš anksto turėti tiekėjus nėra dabartinio etapo sąlygos. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md).

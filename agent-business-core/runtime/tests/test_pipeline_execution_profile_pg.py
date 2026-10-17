@@ -2,7 +2,7 @@
 from uuid import uuid4
 
 import pytest
-from sqlalchemy import func, select, text, update
+from sqlalchemy import event, func, select, text, update
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_creation_team import runner, team_read
@@ -25,6 +25,23 @@ build = build_fixture
 async def test_new_pipeline_profile_binding_storage_is_available(creation):
     async with scope() as tx:
         assert await tx.scalar(text("SELECT to_regclass('control_pipeline_model_profiles') IS NOT NULL"))
+
+
+async def test_schema_state_reads_one_fresh_catalog_statement_per_invocation(creation):
+    async with scope() as tx:
+        connection = await tx.connection()
+        observed = []
+        def statement(conn, cursor, sql, parameters, context, executemany):
+            observed.append(sql)
+        event.listen(connection.sync_connection, "before_cursor_execute", statement)
+        try:
+            assert await profiles.schema_state(tx) == "ready"
+            assert len(observed) == 1
+            observed.clear()
+            assert await profiles.schema_state(tx) == "ready"
+            assert len(observed) == 1, "A completed catalog result cannot authorize the next observation"
+        finally:
+            event.remove(connection.sync_connection, "before_cursor_execute", statement)
 
 
 @pytest.mark.parametrize("failed_role", [None, "critic"])

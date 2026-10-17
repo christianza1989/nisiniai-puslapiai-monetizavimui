@@ -1,0 +1,10 @@
+{
+  "source": "2199266b2afc7456e012a67840170070ff068db8",
+  "sourceFileSha256": "f83109de53c9cebff029c637efbb10f8516931e09a81e5b983bf6f7a419d36a6",
+  "testFile": "agent-business-core/runtime/offline_tests/test_execution_profile_schema_observation.py",
+  "result": "8 FAIL, 54 PASS, 6.43s",
+  "logSha256": "058d1366b522ece16ee94ae431e6abd6175c87db05d5ca9a9e3bd3fc529b105c",
+  "observed": {"schemaStatements": 2, "batchSchemaStatements": 4, "fullAuthorityTxCalls": 136,
+    "privateCheckpoints": 10, "materialPhases": 2, "nativeOutputs": 1},
+  "classification": "Source/mock regression over in-memory modeled catalogs and real Python validator graph; no PostgreSQL, serving, latency or adoption acceptance"
+}

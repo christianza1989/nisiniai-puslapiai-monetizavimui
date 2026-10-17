@@ -33,11 +33,13 @@ def effort(profile):
 
 
 async def schema_state(tx):
-    if not await tx.scalar(text("SELECT to_regclass(:table) IS NOT NULL"), {"table": TABLE}):
-        guards = await tx.scalar(text("SELECT EXISTS(SELECT 1 FROM pg_trigger WHERE NOT tgisinternal "
-            "AND tgname IN('pipeline_model_profile_capture','pipeline_model_attempt_fence'))"))
-        return "invalid" if guards else "absent"
-    ready = await tx.scalar(text("""SELECT EXISTS(SELECT 1 FROM pg_class WHERE oid=to_regclass(:table)
+    # One fresh catalog snapshot at this checkpoint. NULL represents the legacy
+    # absent schema; orphan capture/fence triggers still make that state invalid.
+    ready = await tx.scalar(text("""SELECT CASE WHEN to_regclass(:table) IS NULL THEN
+      CASE WHEN EXISTS(SELECT 1 FROM pg_trigger WHERE NOT tgisinternal
+        AND tgname IN('pipeline_model_profile_capture','pipeline_model_attempt_fence'))
+        THEN FALSE ELSE NULL END
+      ELSE EXISTS(SELECT 1 FROM pg_class WHERE oid=to_regclass(:table)
       AND relrowsecurity AND relforcerowsecurity)
       AND (SELECT count(*)=7 FROM pg_trigger WHERE NOT tgisinternal AND tgenabled<>'D' AND
         ((tgrelid=to_regclass(:table) AND tgname='pipeline_model_profile_immutable')
@@ -45,9 +47,10 @@ async def schema_state(tx):
            to_regclass('control_content_work_jobs')) AND tgname='pipeline_model_profile_capture')
          OR (tgrelid IN(to_regclass('control_creation_attempts'),to_regclass('control_business_discovery_attempts'),
            to_regclass('control_content_work_attempts')) AND tgname='pipeline_model_attempt_fence')))
-      AND (SELECT count(*)=4 FROM pg_constraint WHERE conrelid=to_regclass(:table) AND contype='f' AND convalidated)"""),
+      AND (SELECT count(*)=4 FROM pg_constraint WHERE conrelid=to_regclass(:table) AND contype='f' AND convalidated)
+      END"""),
       {"table": TABLE})
-    return "ready" if ready else "invalid"
+    return "absent" if ready is None else "ready" if ready else "invalid"
 
 
 async def require_schema(tx):

@@ -1,0 +1,21 @@
+{
+  "sourceBase": "2199266b2afc7456e012a67840170070ff068db8",
+  "sourceFileSha256": "3849d7e2632353ba91b7fbe780023cad18a41c76e0fe426283c49f5f9dc9a7e5",
+  "result": "274 PASS, 17.31s",
+  "regressionLogSha256": "16f16e721841e1fa2b2f559ef10dfe7e06a194b52d0d7e73a3fee633ad06b06c",
+  "focusedResult": "62 PASS, 7.39s",
+  "focusedLogSha256": "0722895f94c9176423dd35735e8567a00f7ec54aea1d196ef552b4be6462d40e",
+  "originalResult": "8 FAIL, 54 PASS, 6.43s",
+  "intermediateResult": "1 FAIL, 273 PASS, 17.23s: previous count10 becomes explicit2profile+4catalog",
+  "intermediateLogSha256": "c38da5cdfa143060ef35511a4503f60b975a069371e6a0248979a3a7bf1f4c2e",
+  "observed": {"schemaStatements": 1, "batchSchemaStatements": 2, "fullAuthorityTxCalls": 132,
+    "privateCheckpoints": 10, "materialPhases": 2, "nativeOutputs": 1, "hotPrivateStatements": 3},
+  "pgCollection": "1 test, 0.91s; not executed",
+  "pgCollectionLogSha256": "d5ce51a1b93b56cc026f6c03ba180bd2e4e171328b72744ebf5779a07a426188",
+  "ruff": "PASS",
+  "semanticBoundary": "PASS; all other production functions/imports and original ready/absent predicates unchanged",
+  "semanticBoundaryGitSha256": "3ed42abe78284521539228d7502b44bbc30be9890811a550751a3a5e7652649e",
+  "semanticBoundaryOriginalWindowsCrLfSha256": "38ac02341ba5415ab58ca7b97e71f7e58fb5e1c8b3152e55a871cf4062ca5236",
+  "actualPostgres": "NOT_RUN: Root-owned quiet QA window required",
+  "runtimeAdoption": "NOT_PERFORMED"
+}

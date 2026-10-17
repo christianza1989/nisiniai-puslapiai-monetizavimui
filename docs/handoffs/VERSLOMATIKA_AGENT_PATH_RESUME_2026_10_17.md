@@ -95,6 +95,29 @@ The owner requested priority for actual agent creation and calibration. Universa
 creation/calibration is still incomplete. Do not infer acceptance from the older
 UI approval, roadmap, number of tests or one Quality scenario.
 
+### Exact mail environment repair — 2026-10-18
+
+Tracing the acquisition IDs exposed an owned batch defect: control.envelope
+normalizes test-* to public test, but native display digest/path uses the full
+environment ID. The batch had reused that public family and could retain an
+invisible copy. Two failing fake-provider cases were preserved with log SHA
+0c25217bc23208d62add8c3bbbdcb8e6d23d5cd50eb980212dcbfb3d446abbc4.
+The explicit batch now requires --environment-id and verifies its original
+digest against the server before any claim/provider call. It also checks the
+business ID and refuses an older normalized-path copy/attempt without deleting
+or automatically replaying it. No wire/DTO, portal or migration changed.
+
+Offline25 cases passed1.97s (logb0a7da4fd65dc217f4e6f177ba13808936922426dfbb896d38b0663d9eb6a901)
+and the final real isolated PostgreSQL suite passed3/13.19s,
+including normal-owner API -> batch -> sidecar -> API Lithuanian/original read
+with an inert model. PG log SHA
+9efdc60a9d609377185f6d85c455fb29df2a47662c6fd8888c1b6d19ee891e35.
+The earlier3/5.55s evidence is retained separately. Three owned Python files
+pass Ruff after correcting the observed import/fixture/inline-statement findings.
+Original0032/operating0045 and native files remained exact; provider/SMTP/IMAP0.
+This source fix is pending combined adoption. API18871 remainsb866 and frontend
+3030 remains the manually adopted reviewed build; no restart is requested here.
+
 ## Latest adopted increment — 2026-10-17 20:58 UTC
 
 This section supersedes the older4650 serving checkpoint below. Clean Serving

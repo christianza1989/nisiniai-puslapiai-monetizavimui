@@ -7,6 +7,7 @@ import argparse
 import asyncio
 import json
 import os
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 from uuid import UUID
@@ -29,6 +30,9 @@ async def run(value):
             or base.username or base.password or base.query or base.fragment or base.path not in {"", "/"}):
         raise ValueError("loopback_api_required")
     business_id, mail_id = str(UUID(value.business_id)), str(UUID(value.mail_id))
+    environment = value.environment_id
+    if not isinstance(environment, str) or not re.fullmatch(r"[a-zA-Z0-9_-]{1,80}", environment):
+        raise ValueError("mail_environment_binding_mismatch")
     binary = Path(value.executable)
     if not binary.is_absolute() or sha256_file(binary) != value.executable_sha256:
         raise ValueError("cli_pin_mismatch")
@@ -47,30 +51,41 @@ async def run(value):
             response = await client.get(path)
             response.raise_for_status()
             envelope = DetailEnvelope.model_validate(response.json())
-            if envelope.source_revision != source.head or envelope.data.mail_id != mail_id:
+            if (envelope.source_revision != source.head or envelope.data.mail_id != mail_id
+                    or envelope.data.business_id != business_id):
                 raise ValueError("mail_source_changed")
+            # The public envelope normalizes test-* to "test". Only the actual
+            # tenant environment can reproduce the server's exact source digest.
+            if source_digest(business_id, environment, envelope.data.model_dump(mode="json")) != envelope.data.translation.source_sha256:
+                raise ValueError("mail_environment_binding_mismatch")
             return envelope
 
         first = await current()
         original = first.data.model_dump(mode="json")
-        digest = source_digest(business_id, first.environment, original)
-        final = record_path(value.output_root, business_id, first.environment, mail_id, digest)
+        digest = source_digest(business_id, environment, original)
+        final = record_path(value.output_root, business_id, environment, mail_id, digest)
+        if first.environment != environment:
+            legacy_digest = source_digest(business_id, first.environment, original)
+            legacy = record_path(value.output_root, business_id, first.environment, mail_id, legacy_digest)
+            if legacy.exists() or legacy.with_suffix(".attempt.json").exists():
+                raise ValueError("mail_legacy_environment_attempt_requires_review")
         final.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
         # One durable source-bound claim. An uncertain/failed call is never retried automatically.
         claim = final.with_suffix(".attempt.json")
         with os.fdopen(os.open(claim, os.O_CREAT | os.O_EXCL | os.O_WRONLY, 0o600), "w", encoding="utf-8") as handle:
-            json.dump({"mail_id": mail_id, "source_sha256": digest, "max_calls": 1,
+            json.dump({"business_id": business_id, "environment_id": environment,
+                       "mail_id": mail_id, "source_sha256": digest, "max_calls": 1,
                        "model": "gpt-6.1-sol", "reasoning_effort": "high", "source_revision": source.head,
                        "started_at": datetime.now(UTC).isoformat()}, handle)
 
         async def authorized():
             try:
                 envelope = await current()
-                return source_digest(business_id, envelope.environment, envelope.data.model_dump(mode="json")) == digest
+                return source_digest(business_id, environment, envelope.data.model_dump(mode="json")) == digest
             except Exception:
                 return False
 
-        record = await translate_once(original, business_id=business_id, environment=first.environment,
+        record = await translate_once(original, business_id=business_id, environment=environment,
             binary=binary, binary_sha256=value.executable_sha256, private_directory=final.parent,
             still_authorized=authorized)
         retain(value.output_root, record, original)
@@ -79,6 +94,6 @@ async def run(value):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ("api-base", "session-file", "business-id", "mail-id", "output-root", "executable", "executable-sha256"):
+    for name in ("api-base", "session-file", "business-id", "environment-id", "mail-id", "output-root", "executable", "executable-sha256"):
         parser.add_argument("--" + name, required=True)
     asyncio.run(run(parser.parse_args()))

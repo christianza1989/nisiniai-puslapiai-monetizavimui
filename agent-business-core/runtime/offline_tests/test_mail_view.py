@@ -9,7 +9,8 @@ import pytest
 from fastapi import FastAPI
 
 from pinet_core.control.routes import authenticated
-from pinet_core.mail_view import routes, service, translations as tr
+from pinet_core.mail_view import routes, service
+from pinet_core.mail_view import translations as tr
 from pinet_core.mail_view.contract import document
 
 B, M, C = [str(uuid4()) for _ in range(3)]
@@ -49,11 +50,16 @@ def test_changed_or_untrusted_sidecar_cannot_appear_as_translation(tmp_path, cha
     value = original()
     path = tr.retain(tmp_path, record(), value)
     data = json.loads(path.read_bytes())
-    if change == "source": data["source_sha256"] = "0" * 64
-    elif change == "instruction": data["instruction_sha256"] = "0" * 64
-    elif change == "future": data["translated_at"] = (datetime.now(UTC) + timedelta(days=1)).isoformat()
-    elif change == "foreign": data["business_id"] = str(uuid4())
-    elif change == "numbers": data["text"]["body"] = data["text"]["body"].replace("5,000", "6,000")
+    if change == "source":
+        data["source_sha256"] = "0" * 64
+    elif change == "instruction":
+        data["instruction_sha256"] = "0" * 64
+    elif change == "future":
+        data["translated_at"] = (datetime.now(UTC) + timedelta(days=1)).isoformat()
+    elif change == "foreign":
+        data["business_id"] = str(uuid4())
+    elif change == "numbers":
+        data["text"]["body"] = data["text"]["body"].replace("5,000", "6,000")
     path.write_text("bad" if change == "corrupt" else "x" * 200001 if change == "oversized" else json.dumps(data))
     assert tr.read_translation(tmp_path, B, "test", value).status == "unavailable"
 
@@ -113,6 +119,60 @@ async def test_route_rejects_query_body_before_data_access(monkeypatch):
 
 async def _nothing():
     return None
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("supplied_environment,legacy_attempt", [("test-mail-source", False), ("test", False), ("test-mail-source", True)])
+async def test_operator_batch_binds_actual_environment_before_provider(monkeypatch, tmp_path, supplied_environment, legacy_attempt):
+    import importlib.util
+    from pathlib import Path
+
+    from pinet_core.file_hash import sha256_file
+
+    path = Path(__file__).resolve().parents[1] / "scripts/mail_display_translate.py"
+    spec = importlib.util.spec_from_file_location("mail_display_batch_test", path)
+    batch = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(batch)
+    environment = "test-mail-source"
+    value = {**original(), "business_id": B, "state": "captured", "synthetic": True,
+             "created_at": datetime.now(UTC).isoformat()}
+    digest = tr.source_digest(B, environment, value)
+    wire = {"contract_version": "mail-view.v1", "environment": "test", "source_revision": "a" * 40,
+        "observed_at": datetime.now(UTC).isoformat(), "request_id": str(uuid4()),
+        "data": {**value, "translation": {"status": "missing", "source_sha256": digest}}}
+    client_type = httpx.AsyncClient
+    monkeypatch.setattr(batch.httpx, "AsyncClient", lambda **kwargs: client_type(
+        **kwargs, transport=httpx.MockTransport(lambda request: httpx.Response(200, json=wire))))
+    monkeypatch.setattr(batch, "git_source_observation", lambda root: SimpleNamespace(porcelain="", head="a" * 40))
+    calls = []
+    async def translate(source, **kwargs):
+        calls.append(kwargs["environment"])
+        assert kwargs["environment"] == environment
+        assert await kwargs["still_authorized"]()
+        return record(source).model_copy(update={"environment": environment, "source_sha256": digest})
+    monkeypatch.setattr(batch, "translate_once", translate)
+    binary, session, output = tmp_path / "fake-cli", tmp_path / "session.json", tmp_path / "copies"
+    binary.write_bytes(b"synthetic-never-executed")
+    session.write_text(json.dumps({"access_token": "z" * 64}))
+    arguments = SimpleNamespace(api_base="http://127.0.0.1:1234", business_id=B, mail_id=M,
+        environment_id=supplied_environment, executable=str(binary), executable_sha256=sha256_file(binary),
+        session_file=str(session), output_root=str(output))
+    if legacy_attempt:
+        old = tr.record_path(output, B, "test", M, tr.source_digest(B, "test", value)).with_suffix(".attempt.json")
+        old.parent.mkdir(parents=True)
+        old.write_text('{"max_calls":1,"usage":null}')
+        with pytest.raises(ValueError, match="mail_legacy_environment_attempt_requires_review"):
+            await batch.run(arguments)
+        assert calls == [] and old.read_text() == '{"max_calls":1,"usage":null}'
+    elif supplied_environment == environment:
+        await batch.run(arguments)
+        assert calls == [environment]
+        assert tr.read_translation(output, B, environment, value).status == "ready"
+    else:
+        with pytest.raises(ValueError, match="mail_environment_binding_mismatch"):
+            await batch.run(arguments)
+        assert calls == []
+        assert not output.exists()
 
 
 @pytest.mark.asyncio

@@ -32,6 +32,12 @@ from creation accounting; this does not reset or consume its old37/40 allowance.
 
 Configure `PINET_MAIL_DISPLAY_DIRECTORY` as an absolute private operator-owned
 directory shared by API and explicit batch. Keep it outside Git/public artifacts.
+Pass the exact canonical environment ID using `--environment-id`; the envelope's
+public `environment: test` label is not the raw `test-*` tenant environment.
+The batch must reproduce the server's original-content digest with that explicit
+ID before creating an attempt claim or making a provider call. A wrong ID is
+rejected. Existing copies/attempts under the old normalized path require operator
+review; the repair never silently retries or deletes their unknown usage.
 Later authorized acquisition integration can call this same display adapter
 after durable mail capture. Automatic dispatch is not implemented by this read
 packet. Mail bodies, translations, contact data, Session and CLI traces stay

@@ -8,6 +8,11 @@ dispatches, sends, syncs inbox or changes mail. Private Lithuanian display sidec
 bind exact original content; original sealed payloads stay unchanged. Portal owns
 its new BFF/view. No acquisition, calibration, migrations, operating DB/case,
 Serving, existing workers or transport changes in this source window.
+Continuation on paired e260/main533/publicec8: fix the explicit translation
+batch's raw environment binding (public envelope normalizes test-* to test).
+Existing owned batch/offline/PG paths only; no wire/DTO or portal change. Preserve
+legacy attempt claims and reject wrong scope before model IO. Running Serving
+and original/operating data remain unchanged during isolated regression.
 
 ## Pure dynamic V2 learning adapters — helper 2026-10-18
 

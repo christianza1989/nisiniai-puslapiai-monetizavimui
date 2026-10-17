@@ -27,13 +27,14 @@ def site_id(creation_id):
 async def accepted_proof(tx, creation):
     """Exact accepted proof plus the maintained selected native intake observation."""
     from ..creation.accepted_material import accepted_material
-    from ..creation.private_preview import selected_intake
-    revision, job, proof = await accepted_material(tx, creation)
+    _, job, proof = await accepted_material(tx, creation)
     try:
-        observed = await studio.projection(tx, creation)
+        pinned = (proof["revision_id"], proof["accepted_revision"], proof["candidate_sha256"], proof["accepted_source_revision"], job.id)
+        observed, native_host, intake, revision_id = await studio.intake_observation(tx, creation)
         if observed["state"] != "private_draft_imported":
             raise ControlError(409, "private_intake_missing")
-        native_host, intake = await selected_intake(tx, creation, revision, job)
+        if (revision_id, observed["current_revision"], observed["candidate_sha256"], observed["source_revision"], observed["import_job_id"]) != pinned:
+            raise ValueError("Accepted material changed during intake observation")
         identity = site_id(creation.id)
         if intake.get("siteId") != identity or not native_host or host(native_host) != native_host:
             raise ValueError("Invalid native site identity")

@@ -1,0 +1,19 @@
+{
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation_registration/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py"
+  ],
+  "siteId": "core",
+  "rollback": "Scoped two-source revert before Root adoption. No durable state, migration, request/wire/history/fingerprint or actual runtime operation. Preserve first countFAIL and mutation refusals, original Root actual traces and all transferred journals. Root integrates/retests only after reviewing complete stablepin.",
+  "evidence": [
+    "Root measured789SQL/fullcapture, and readonly source expansion shows accepted_proof calls accepted_material then studio.projection→selected_intake and selected_intake again. On private path each selected_intake recaptures accepted_material/team.projection; task is limited to removing this direct duplicate. Root retains actual traces/QA and exclusively owns DB/serving/currentcase/browser.",
+    "Minimal2module server-only observation factor retains all studio ContentView/state/version/source/native/digest/workflow checks and fresh standalone APIs. Accepted proof must remain bound to its initial accepted material across the await; mutation-between-phases and error parity negatives required. No shared cache or private/S6/Foundation/transport/deadline/model/quota/role change."
+  ],
+  "summary": "Use one canonical fresh intake observation inside accepted_proof while retaining the existing studio projection validators, standalone freshness and exact material binding; remove the duplicated selected_intake traversal only.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "id": "upgrade-db8860f5-7275-4ef7-8d53-25daa9ad53cf",
+  "branch": "codex/accepted-proof-intake-observation-20261017",
+  "baseSha": "412735e1f7694e7e82a31dcc8316b9eb2968dbcb",
+  "createdAt": "2026-10-17T09:01:30.479Z"
+}

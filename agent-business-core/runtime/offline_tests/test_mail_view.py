@@ -84,6 +84,14 @@ def test_projection_preserves_original_and_does_not_claim_unknown_synthetic():
     assert "body" not in result.model_dump()
 
 
+def test_legacy_test_subject_suffix_is_readable_without_clipping():
+    # mailbox.prepare accepts200 characters, then adds a test prefix/Case suffix.
+    subject = "[TESTAS] " + "x" * 200 + " · abcdefgh"
+    row = SimpleNamespace(id=M, case_id=C, message_id="<safe@pinet.lt>", direction="outbound",
+        state="draft", created_at=datetime.now(UTC), payload={"subject": subject, "synthetic": True})
+    assert service.summary(row).subject == subject
+
+
 def test_contract_exposes_only_two_owner_reads():
     paths = document()["paths"]
     assert len(paths) == 2 and all(set(value) == {"get"} for value in paths.values())

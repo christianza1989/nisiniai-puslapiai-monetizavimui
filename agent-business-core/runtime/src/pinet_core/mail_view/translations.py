@@ -22,7 +22,7 @@ POLICY_SHA = hashlib.sha256(POLICY.encode()).hexdigest()
 
 
 class TranslatedText(Strict):
-    subject: str = Field(max_length=400)
+    subject: str = Field(max_length=512)
     body: str = Field(min_length=1, max_length=32000)
 
 

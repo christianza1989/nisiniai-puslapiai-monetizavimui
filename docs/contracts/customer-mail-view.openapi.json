@@ -193,7 +193,7 @@
           },
           "subject": {
             "type": "string",
-            "maxLength": 200,
+            "maxLength": 256,
             "title": "Subject"
           },
           "synthetic": {
@@ -338,7 +338,7 @@
           },
           "subject": {
             "type": "string",
-            "maxLength": 200,
+            "maxLength": 256,
             "title": "Subject"
           },
           "synthetic": {
@@ -442,7 +442,7 @@
             "anyOf": [
               {
                 "type": "string",
-                "maxLength": 400
+                "maxLength": 512
               },
               {
                 "type": "null"

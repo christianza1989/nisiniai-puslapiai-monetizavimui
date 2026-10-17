@@ -15,7 +15,8 @@ class MailSummary(Strict):
     created_at: AwareDatetime
     sender: str = Field(max_length=320)
     recipient: str = Field(max_length=320)
-    subject: str = Field(max_length=200)
+    # Legacy mailbox.prepare adds a test prefix/Case suffix to a200-char subject.
+    subject: str = Field(max_length=256)
     synthetic: bool | None
 
 
@@ -23,7 +24,7 @@ class Translation(Strict):
     status: Literal["ready", "missing", "unavailable"]
     target_language: Literal["lt"] = "lt"
     source_sha256: Digest
-    subject: str | None = Field(default=None, max_length=400)
+    subject: str | None = Field(default=None, max_length=512)
     body: str | None = Field(default=None, max_length=32000)
     translated_at: AwareDatetime | None = None
     model: str | None = Field(default=None, max_length=80)

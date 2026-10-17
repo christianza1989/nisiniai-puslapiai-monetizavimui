@@ -1,0 +1,7 @@
+{
+  "note": "Unchanged be557 current_actor baseline:5FAIL19PASS1.66s. Actual canonical fakeSQL trace shows3queries withoutportfolio and5withportfolio; target1. Modeled identity-map Account/Portfolio fresh-return defects and cachedPortfolioorg falseauthorization reproduced. User/Session/account/member typedrefusals and exact locking order PASS. baseline.log SHA25605f91fcf9ce8c00b1011ecc538019156c483d05833422c9b3ae3c58832a54ac7 retained before production edits. Modeled SQL/ORM proof only, no helper actualDB/process/provider.",
+  "status": "fixing",
+  "eventId": "50dfa593-e562-4dd2-9b58-242901f7e604",
+  "sequence": 2,
+  "at": "2026-10-17T10:37:14.762Z"
+}

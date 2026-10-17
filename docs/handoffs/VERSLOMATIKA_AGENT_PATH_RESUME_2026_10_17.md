@@ -1,5 +1,91 @@
 # Agent path: current continuation
 
+## Integrated headless mail and actual source adoption — 2026-10-18
+
+This section supersedes the older source/runtime/missing-writer observations
+below. Frozen helper6a7e234 is integrated as475c772; frozen acquisition0d7b009/
+ea3ca681 as60431bf/e4f306c, preserving authors. Own bounded ModuleBinding writer
+2230866 and active-Creation containment repair ba16e225 complete this source batch.
+Frozen Serving code is ba16e225b9c9b25095b8cc8265848fd53d816801;
+public255fea0/main ec8, core main533. Reviewed code is not a main merge.
+
+The maintained acquisition engine now has separate bounded High researcher,
+writer, exact-copy reviewer and reply coordinator. HeadlessMail captures initial,
+inbound and reviewed reply MailMessage/MailBinding in the same canonical Case;
+the original inbound decision receipt is preserved. Reply replay performs no new
+model call/mail write; stale inbound, stop, source/reviewer drift and uncertain
+delivery prevent capture. After-commit display candidates contain exact IDs;
+automatic translation dispatch remains unconnected. The separate fixed lab
+ledger is CLOSED:174/180 attempts, two unknown-usage reservations retained,
+deadline2026-10-17T23:00:11.502833Z expired. No new paid call/reset in this batch.
+Its real five-call synthetic Case journey remains separate from final source
+hardening and genuine transport/inbox acceptance.
+
+Explicit scripts/acquisition_module_admin.py now administers the EXISTING
+ModuleBinding using exact native Registration/current verified owner and clean
+execution source. Approval uses current native material/enabled Grant, a30–3600s
+DB-clock lease, stable adapter, explicit permissions and CAS. Private prepared/
+committed receipts prohibit blind replay/renewal. Stop/inspect can contain after
+upstream revocation/native loss and during an ordinary queued website revision;
+all owner/Session/account/tenant identities and locks remain. Other Registration
+writers keep the default idle-Creation precondition. New journals d32f9944/f51603c8.
+No operating ModuleBinding/private acquisition registration or model worker was
+admitted merely because the writer exists.
+
+Root verification after integration:
+
+- 345 offline PASS+67 subtests32.81s, SHA98f3f9224cfc8e54b2e94814529805d33bc33d1ae129d0bb16bc28f0e21d4a39.
+- 13 real module PostgreSQL PASS85.99s, SHAef8eb1ef75c88603c0d2e86a20441d1648ab4f60f6d0c6d5adf81826ee551dd3.
+- 8 real Registration continuity/mail PostgreSQL+HTTP/Node PASS81.73s,
+ SHAd6c060a963a3587725db685279719c66b8a00a36dddc00f072617ce54750b6c5.
+- 42 real correspondence/headless/mail-view PostgreSQL+HTTP PASS45.37s,
+ SHAdcee0159324e8b29f46fe66aba17e6371ac618198cd4a9c1a57d711c8b2f1d7b.
+ One paid acceptance test explicitly SKIPPED; no provider/SMTP/IMAP call by Root.
+ The NEW mail-view integration follows all three bound messages through normal
+ owner HTTP, exact LT fixture sidecars/originals, replay and grant revocation.
+ These are inert translation/model fixtures, not populated ordinary-browser QA.
+
+All original/operating tables and771 native files stayed exact around isolated
+tests. First fixture/import errors, actual pending-row autoflush FAIL and the
+helper's reproduced active-Creation containment FAIL are retained. A first fresh
+QA migration-only setup missed the documented post-migration bootstrap and
+returned42501 businesses; canonical scripts/bootstrap.py fixed ONLY the new QA
+DB grants/default mappings. No ad-hoc grant or production predicate relaxation.
+One preliminary Registration collection was skipped without the explicit QA flag;
+the final eight-case run enabled it on Root's new dedicated QA database.
+
+Actual local API18871 is now Serving ba16/0045, PID24180 at verification,
+active exec94390; all five paid workers/external channels remain held.
+Old owned API47524 was identity-verified and stopped, Serving FF-only advanced;
+private pg_dump/snapshots precede adoption. Owner me/mail200, unauthenticated401,
+foreign404, operating mail counts[0,0]. Frontend3030 remains the manually started
+reviewed build and was not restarted.
+
+Normal owner S37 renewal on ba16 appended one request+one receipt, no importer or
+model call. All historical rows, Registration fingerprint, Business/Grant,
+37/40 accounting and771 native files remain exact. Normal owner Registration,
+Business and mail GETs are200; Registration014d46b4-c99d-4e39-bca1-a6d12374b344
+is still current/binding_current and Business917e1d81-afe7-4549-bac4-33f2464c1391
+unchanged. Profile/public/F1/launch/channel acceptance remains separate.
+No synthetic operating mail or sidecar was inserted.
+
+Private operator evidence: platform-agent-adoption-ba16e225,
+platform-ba16-renew-intake-20261018 and
+platform-ba16-registration-owner-verification-20261018. Old pre-renewal snapshots
+must not be reused for restart. Current same-source restart baseline is
+platform-ba16-backend-resume-20261018/before.private.json, with the owned Root
+platform-backend-resume-bootstrap.py wrapper; check current idle/source/data and
+listener before using it. Future legitimate writes require a fresh witness.
+
+Remaining work: connect a current-owner saved acquisition purpose and bounded
+model dispatch to maintained durable Task/Run accounting, then attach automatic
+display translation and actual authenticated outbound/inbox transport. Saved
+native S5 site_chat is not an email adapter; do not bypass Foundation or create
+another calibration/core. No SMTP credentials/controlled lab recipient have yet
+been admitted. Maudis remains a candidate supplier, not confirmed fulfilment or
+photo/pricing authority. Chrome ordinary-control focus timeout still prevents new
+business/populated/200% visual proof; do not bypass it with another executor.
+
 ## Actual hot-tub Registration — 2026-10-18
 
 This supersedes the older missing-Registration statements below. The interrupted

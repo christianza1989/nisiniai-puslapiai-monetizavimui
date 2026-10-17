@@ -44,5 +44,6 @@
     "source_paths": 13,
     "only_declared_source_and_own_two_journals": true,
     "old_journals_and_runtime_code_unchanged": true
-  }
+  },
+  "mechanism": "Read-only Python stdlib: original text recovery comparison, Markdown target resolution against Git base/current tracked source, declared path scope and canonical plan/payload hash. The local checker is ignored administrative scratch, not a product module."
 }

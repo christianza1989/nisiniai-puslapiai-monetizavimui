@@ -1,5 +1,9 @@
 # Agentinių verslų core planas
 
+**Kur pradėti, 2026-10-17:** šiame faile išsaugotas pradinis architektūros planas. Įgyvendinto Python/PostgreSQL modulio instrukcijos ir datuotų patikrų ribos yra [runtime README](runtime/README.md); verslo agento kūrimo ir kalibravimo eiga – [canonical skill](../SKILLS/business-agent-calibration/SKILL.md), Facebook modulis – [FACEBOOK_SYSTEM](FACEBOOK_SYSTEM.md). Konkrečią būseną tikrink savo HEAD, modulio šaltinyje ir atitinkamos datos įrodymuose. Kodo buvimas savaime nepatvirtina gyvų kanalų ar visų planuotų etapų priėmimo.
+
+## Istorinis architektūros planas – 2026-09-30
+
 Parengta 2026-09-30. Tai įgyvendinimo planas vieno savininko prižiūrimai nišinių verslų grupei: keturi skirtingi simuliuojami verslai, jų direktoriai ir specialistai, bendros paslaugos ir automatinis sistemos tobulinimas. Šiame kataloge dar nėra veikiančio core, paleistų simuliacijų ar realių verslo operacijų.
 
 Rekomenduojama kurti vieną Python core su patvaria PostgreSQL būsena, atskirais vykdytojais ir įrankių valdymu. MD failai aprašo agentų darbą; duomenų bazė, programinės taisyklės ir izoliuota vykdymo aplinka užtikrina veiksmų teises. Kiekvienas verslas turi savo direktorių, specialistus ir duomenis. Apskaita, programavimas, integracijos ir vertinimas aptarnauja visą portfelį.

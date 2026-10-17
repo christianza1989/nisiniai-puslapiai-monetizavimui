@@ -1,10 +1,12 @@
 # Fabrikas ir 20 nišinių verslų: techninė analizė ir rekomenduojama architektūra
 
+**Dokumento paskirtis, 2026-10-17:** istorinis 2026-09-29 vietinio Fabriko eksporto auditas ir architektūros variantai. Žemiau esantys žodžiai „naujausia“, „aktuali“ ir rekomendacijos aprašo to etapo sprendimus. Audito rezultatai ir originalūs vietiniai keliai išsaugoti; eksportas neįtrauktas į Git clone. Dabartinį darbą nustato [AGENTS](AGENTS.md), [START_HERE](START_HERE.md) ir [CORE_BUILD_CONTRACT](CORE_BUILD_CONTRACT.md), o ne ši analizė.
+
 2026-09-29. Analizuotas vietinis `fabrikas-github-upload` eksportas. Tai architektūros pasiūlymas; veikiančios sistemos, publikavimo grafikai ir portalai nekeisti.
 
 ## Patikslinta pirmo etapo apimtis
 
-Naujausia techninė kryptis: remtis esamu Dovanos123 pagrindu ir atskiru lengvu turinio planuotoju/generatoriumi. Fabriko prijungimas neprivalomas. Sujungimas aprašytas [bendrame maždaug 30 svetainių plane](C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/BENDRA_30_SVETAINIU_SISTEMA.md); žemiau esantis Fabriko auditas lieka informacine medžiaga.
+Naujausia techninė kryptis: remtis esamu Dovanos123 pagrindu ir atskiru lengvu turinio planuotoju/generatoriumi. Fabriko prijungimas neprivalomas. Sujungimas aprašytas [bendrame maždaug 30 svetainių plane](BENDRA_30_SVETAINIU_SISTEMA.md); žemiau esantis Fabriko auditas lieka informacine medžiaga.
 
 Vartotojas patikslino: pradžioje paleidžiame visus 20 domenų tik su landing page, SEO turiniu, prekių / paslaugų aprašymais, kontaktais ir matavimu. Tiekėjų integracijos bei individualios sistemos kuriamos tik pagal susidomėjimo rezultatus. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md). Šiam etapui rekomendacija supaprastinta iki bendro svetainių variklio ir vieno diegimo su atskirtomis domenų konfigūracijomis; vienas techninis pilotas skirtas patikrinti šabloną prieš pritaikant jį visiems 20.
 

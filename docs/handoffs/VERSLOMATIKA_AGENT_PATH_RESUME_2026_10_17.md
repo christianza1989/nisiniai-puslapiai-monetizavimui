@@ -43,17 +43,53 @@ full dynamic saved-Agent protected calibration remain outstanding.
 
 Portal source now adds business Laiškai navigation, center translated/original
 reader, right message/Case list, bounded BFF, safe denial/epoch handling and honest
-states.25 related tests and76 workspace/mail tests passed; TypeScript and final
-`.local/workspace-mail-view-reviewed-next` build passed. User was asked for one
-manual3030 restart due prior frontend rejection/AGENTS no-bypass. New browser
-acceptance remains pending. Exact UI checkpoint:
+states.25 related tests and76 workspace/mail tests passed; TypeScript and
+`.local/workspace-mail-view-reviewed-next` build passed. The human manually
+adopted that build on3030. Ordinary owner Chrome checks passed empty-mail desktop,
+refresh/direction filters and separate reader/list navigation at390x844; viewport
+override reset. The registered synthetic furniture business had0 mail. Populated
+Lithuanian/original/Case history and200% browser acceptance remain unverified.
+Exact UI checkpoint:
 `docs/handoffs/workspace-mail-view-ui.md` in portal. No alternate frontend launch.
 
-Existing authorized helper has a separate bounded PURE V2 target/report adapter
-increment in progress in `v2-learning-adapters-20261018`, base30071. No controller,
-native binding, worker, budget, DTO/migration or readiness change is authorized
-in that increment. New acquisition chat remains independently user-owned; no
-cross-chat messaging permission was inferred.
+Follow-up source-only commit2e1362ef02a97b8764dd0b0f59b77db4712c9129 fixes a
+reproduced mail contract incompatibility: existing legacy test-prefix/Case suffix
+can exceed200 characters. Original subjects now allow256 and Lithuanian display
+subjects512 without truncation. Initial1FAIL/21PASS is retained; corrected22PASS
+2.46s, loge0a994d2da207a5807d9410b015ac5082da6bea3490f52bc09c02241134f6f14.
+Portal schema is pinned tocd524c5 and7 focused tests plus isolated final build
+passed. The browser-observed empty-state native-button styling is also corrected
+in that pending portal source. Neither this core fix nor final portal build is
+adopted into the currently running API/UI; b866/reviewed remains preserved.
+
+The authorized helper completed pure V2 learning target/report adapters at
+19f0d650ac4b6260cb9d705dcf568c224d81c784; Root cherry-picked as
+cd524c5ab6421e732281e9fbabbebb4d57567de3. Only WORKSTREAMS required a prefix
+conflict resolution, retaining both owners' reservations. Root read-only review
+found no actionable P0-P2. Integrated110 adapter+22 mail tests passed132/15.01s,
+log1acebe76b6a67cd26ec076ae0c3c238ef44691f27c484fb69c943b964b94b8b2.
+The adapters are unused pure metadata; comparisons remain diagnostic/rejected,
+calibrationUNVERIFIED/not_admitted/not_performed. They do not bind native trials,
+execute a controller, change budgets or implement adoption/rollback. Future
+manifests capture the new evaluator fingerprint; historical ones are unchanged.
+
+The human explicitly authorized resuming acquisition chat
+01a14ba2-e492-7ce1-86a8-b3fe5b981149 and cross-chat work messages. It is active on
+its own branch/worktree, preserving first FAIL and durable180-call/time bounds.
+Its initial missing-need-signal scenario had an incorrect draft expectation;
+Case01 is a fixture/oracle defect, not proof that withholding the letter failed.
+Case02 includes one CLI infrastructure failure with unknown usage, not zero.
+Acquisition reuses canonical Business/site/environment -> Case -> MailMessage,
+ContactPolicy/MailBinding/WorkReceipt. It must not infer a real business mapping
+from this unregistered Creation or its example.test calibration fixtures.
+
+Current private operator configuration has no SMTP user/password or controlled
+lab recipient and lab mail remains disabled. Only absence was communicated;
+credentials were not exposed. Actual authenticated inbox/controlled recipient,
+registered business grant and applicable transport/contact/campaign gates remain
+external dependencies for live correspondence. Automatic post-capture display
+translation is still unconnected. Headless calibration proceeds independently;
+there is no second CRM, send transport or calibration engine.
 
 The owner requested priority for actual agent creation and calibration. Universal
 creation/calibration is still incomplete. Do not infer acceptance from the older

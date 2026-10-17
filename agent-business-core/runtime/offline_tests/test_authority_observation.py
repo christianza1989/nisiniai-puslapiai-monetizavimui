@@ -204,6 +204,15 @@ async def graph(monkeypatch):
                             environment_id=cfg.environment) if f.member and bound.get(
                                 (Portfolio.__tablename__, "id")) == f.creation.portfolio_id else None
                         result.extend([portfolio, "synthetic-member" if portfolio and f.member else None])
+                    if any(column["name"] == "private_parent" for column in columns):
+                        parent = f.creation if (bound.get((Creation.__tablename__, "id")) == f.creation.id
+                            and f.creation.environment_id == cfg.environment) else None
+                        ready = f.schema
+                        for fragment, allowed in f.schema_flags.items():
+                            if fragment in str(statement):
+                                ready = allowed
+                        values = tuple(getattr(parent, c.key, None) if parent else None for c in Creation.__table__.c)
+                        result.extend([values, ready])
                 assert statement.get_execution_options()["populate_existing"] is True
                 return Row(one_or_none=lambda: tuple(result) if result is not None else None)
             if columns and [column["entity"] for column in columns] == [PrivateIntakeRequest, PrivateIntakeReceipt]:
@@ -264,6 +273,8 @@ async def graph(monkeypatch):
             f.post_mutation()
         return copy.deepcopy(f.native)
     monkeypatch.setattr(studio, "_execute", execute)
+    # Model SQLAlchemy's committed scalar refresh for the fixture's simple rows.
+    monkeypatch.setattr(private_preview, "set_committed_value", setattr)
     _, context = await private_preview.capture(f.tx, f.p, f.creation)
     key = str(uuid4())
     request = Row(id=str(uuid4()), revision_id=f.revision.id, accepted_revision=1, session_id=f.p.id,

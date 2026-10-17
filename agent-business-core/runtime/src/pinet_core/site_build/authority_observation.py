@@ -212,16 +212,23 @@ class Phase:
             raise ControlError(503, "invalid_registration_source")
         return self.copied(self.values["intake"][1], creation)
 
-    async def actor(self, session, creation):
+    async def actor(self, session, creation, *, parent_reader=None):
         self.check(self.operation.tx, creation)
         key = (*session_binding(session), str(creation.portfolio_id))
         self.check(self.operation.tx, creation)
         from ..creation.service import current_actor
-        await current_actor(self.operation.tx, session, creation.portfolio_id)
+        value = None
+        if parent_reader is None:
+            await current_actor(self.operation.tx, session, creation.portfolio_id)
+        else:
+            # One fresh canonical actor/parent query for this checkpoint only.
+            # Never retain its result in phase.values or another invocation.
+            value = await parent_reader()
         self.check(self.operation.tx, creation)
         if key != (*session_binding(session), str(creation.portfolio_id)):
             raise ControlError(503, "source_unavailable")
         self.check(self.operation.tx, creation)
+        return value
 
     async def owned(self, session, identity):
         self.check(self.operation.tx)

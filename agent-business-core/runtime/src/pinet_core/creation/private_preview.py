@@ -5,9 +5,12 @@ import json
 import re
 from datetime import timedelta
 from pathlib import Path
+from types import SimpleNamespace
 from uuid import UUID
 
 from sqlalchemy import select, text
+from sqlalchemy.orm import Bundle
+from sqlalchemy.orm.attributes import set_committed_value
 
 from ..config import settings
 from ..control.models import Session
@@ -19,7 +22,7 @@ from ..source_observation import SourceObservationError, git_source_observation
 from ..tasks.codex_transport import RunnerError
 from . import private_native_continuity as continuity
 from .accepted_material import accepted_material
-from .models import Job, PrivateIntakeReceipt, PrivateIntakeRequest, Revision
+from .models import Creation, Job, PrivateIntakeReceipt, PrivateIntakeRequest, Revision
 from .private_preview_wire import PrivateIntakeView
 from .service import ACTIVE, binding, current_actor, digest
 
@@ -204,17 +207,59 @@ async def retained_anchor(tx, creation, captured, marker=None):
     return observed, intake
 
 
-async def capture(tx, session, creation, *, admission=False):
+async def _current_parent(tx, session, creation):
+    from ..business_discovery.service import schema_ready_expression
+    from .service import actor_result, actor_statement
+    statement = (actor_statement(session, creation.portfolio_id, session_environment=session.environment_id)
+        .add_columns(Bundle("private_parent", *Creation.__table__.c),
+            schema_ready_expression().label("archive_schema_ready"))
+        .outerjoin(Creation, Creation.id == creation.id)
+        .execution_options(populate_existing=True))
+    row = (await tx.execute(statement)).one_or_none()
+    actor_result(row[:5] if row is not None else None, creation.portfolio_id)
+    parent = dict(zip((column.key for column in Creation.__table__.c), row[5], strict=True))
+    return row[1], parent if parent["id"] is not None else None, bool(row[6])
+
+
+async def _populate_parent(tx, creation, parent):
+    if parent is None:
+        # Preserve the original refresh failure only after native actor checks.
+        await tx.refresh(creation)
+    else:
+        # Apply the fresh scalar row at the original refresh checkpoint, after
+        # Phase.actor's post-await binding fence. A joined ORM Creation would
+        # overwrite that caller object too early and change refusal priority.
+        for key, value in parent.items():
+            set_committed_value(creation, key, value)
+    return creation
+
+
+async def capture(tx, session, creation, *, admission=False, _private_current=False):
     """No import precondition: the exact team acceptance is the bootstrap authority."""
     from ..business_discovery.service import approved_build_context
     from ..content_work.models import GuideJob
     from ..content_work.service import archived
     from ..site_build.authority_observation import active
     observed = active(tx, creation)
-    await observed.actor(session, creation) if observed else await current_actor(tx, session, creation.portfolio_id)
-    await tx.refresh(creation)
+    parent = None
+    if _private_current:
+        if observed is None or admission:
+            raise ControlError(503, "source_unavailable")
+        parent = await observed.actor(session, creation,
+            parent_reader=lambda: _current_parent(tx, session, creation))
+        session, snapshot, archive_schema = parent
+        creation = await _populate_parent(tx, creation, snapshot)
+    else:
+        await observed.actor(session, creation) if observed else await current_actor(tx, session, creation.portfolio_id)
+        await tx.refresh(creation)
+    async def is_archived():
+        if parent is None:
+            return await archived(tx, creation)
+        from ..business_discovery.models import CreationArchive
+        return bool(archive_schema and await tx.scalar(select(CreationArchive.id).where(
+            CreationArchive.creation_id == creation.id)))
     if (creation.status != "draft_ready" or creation.active_job_id or creation.canonical_host is not None
-            or await archived(tx, creation) or admission and await tx.scalar(select(GuideJob.id).where(
+            or await is_archived() or admission and await tx.scalar(select(GuideJob.id).where(
                 GuideJob.creation_id == creation.id, GuideJob.status.in_(ACTIVE)).limit(1))):
         raise ControlError(409, "private_intake_revision_unavailable")
     revision, job, proof = await observed.material(creation) if observed else await accepted_material(tx, creation)
@@ -239,13 +284,20 @@ async def current(tx, creation, row):
     if (binding(row) != binding(creation) or expected["source_revision"] != settings().control_source_revision
             or not await asyncio.to_thread(source_current)):
         return False
-    session = await tx.scalar(select(Session).where(Session.id == row.session_id,
-        Session.user_id == row.user_id, Session.environment_id == row.environment_id)
-        .execution_options(populate_existing=True))
-    if not session:
-        return False
+    from ..site_build.authority_observation import active
+    observed_phase = active(tx, creation)
+    if observed_phase is not None:
+        # This is an immutable lookup key, never permission or a cached Session.
+        # The current actor, Session and parent are read together inside capture.
+        session = SimpleNamespace(id=row.session_id, user_id=row.user_id, environment_id=row.environment_id)
+    else:
+        session = await tx.scalar(select(Session).where(Session.id == row.session_id,
+            Session.user_id == row.user_id, Session.environment_id == row.environment_id)
+            .execution_options(populate_existing=True))
+        if not session:
+            return False
     try:
-        _, observed = await capture(tx, session, creation)
+        _, observed = await capture(tx, session, creation, _private_current=observed_phase is not None)
         if "continuity" in expected:
             marker, _ = await retained_anchor(tx, creation, observed, expected["continuity"])
             observed = {**observed, "continuity": marker}

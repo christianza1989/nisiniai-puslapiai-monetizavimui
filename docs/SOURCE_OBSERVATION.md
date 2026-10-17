@@ -2,12 +2,7 @@
 
 The maintained Python source readers share one fixed primitive:
 `pinet_core.source_observation.git_source_observation(root)`. It reads HEAD and
-`status --porcelain=v2 --branch -z --untracked-files=normal` from a server-owned
-absolute repository path, with stash display disabled. One NUL-framed native
-response contains the40hex HEAD and dirty inventory. Exactly one HEAD and branch
-record are required; dirty entries, unborn HEAD, unknown metadata, malformed or
-unterminated frames refuse. Filename newlines cannot impersonate branch fields.
-Its immutable
+`status --porcelain` from a server-owned absolute repository path. Its immutable
 result contains only raw Git observations. A dirty/unavailable/path-replaced
 repository raises `SourceObservationError`, whose fixed public-safe `code` and
 message are `source_unavailable`. It contains no path, Git output or stderr.
@@ -18,11 +13,9 @@ Only helper reads within that currently active operation reuse its entry Git
 observations. The current topology is bounded to two repositories: execution core
 and companion. Repo identity includes requested/resolved absolute path and filesystem
 identity; path replacement invalidates the operation. Each first repository read
-performs one fixed Git command. On normal exit, every observed repository
+performs the same two fixed Git commands. On normal exit, every observed repository
 is freshly read again, bypassing the map, and must match its clean entry state.
-Thus two repositories cost at most four successful raw commands per operation,
-versus the prior eight. Both boundary observations remain fresh; no successful
-authorization or completed source result is reused by the next invocation.
+Thus two repositories cost at most eight successful raw commands per operation.
 Failure can stop the exit fence early; a successful result cannot escape until
 all observed repositories passed their fresh exit fence.
 
@@ -73,21 +66,3 @@ structured threads/tasks, independent/nested operations, retained closed context
 bounded roots and cancellation during entry and final revalidation. All Git
 commands are replaced by test doubles; no actual Git subprocess, Node child,
 server, DB or provider is exercised by these tests.
-
-## One native frame follow-up — 2026-10-17
-
-Actual f53 timing retained eight Git subprocesses per two-repository verification
-and authority samples exceeding the unchanged3s heartbeat budget. Each repository
-boundary now reads the maintained Git porcelain-v2 branch/status frame once,
-cutting those eight processes to four without relaxing a boundary or authority.
-This is a process-count improvement, not a guaranteed end-to-end latency result.
-
-The original one-process regression failed2vs1, with14other cases passing;
-baseline log64264b3e79892ca5f4bba1088ab633ac6e6df9c33812d44c9978b53e410bf2c7.
-The final related regression passed328tests in22.80s, including real owned inert
-Git repositories for clean HEAD, dirty tracked files, untracked paths, rename
-and unborn repository refusal; log8eb76e7d191e515b8dbbc7a2f03c9e1e923dea5b4b449f0dfbab5d169b6d93ac.
-All older cancellation/path/fresh-exit/independent-operation assertions remain.
-This new test module includes actual Git processes; the older mock-only module
-described above still does not. No SQL, renderer, provider, current-case stability
-or new source adoption acceptance follows from that source regression.

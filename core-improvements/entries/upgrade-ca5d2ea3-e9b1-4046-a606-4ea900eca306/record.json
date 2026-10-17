@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Reject malformed porcelain-v2 branch metadata keys by matching literal dots; preserve the SOURCE checkpoint and route current frame documentation separately.",
+  "category": "code",
+  "evidence": [
+    "Independent read-only review of8df2f91 source found unescaped regex dots accepting branchXhead and other malformed keys. Root reproduced all4cases as4FAIL1.12s; log99510e37a872d0f8096415e37e5e0dd8921fecd0edb6a4ea10b3b637aa2c2f43. This is not an observed actual-Git dirty bypass.",
+    "Incremental f53-to023 coverage BLOCKED protected docs/SOURCE_OBSERVATION.md edit; restore its exactf53bytes and put current contract in docs/GIT_OBSERVATION_FRAME.md, without changing the checker or old journal history."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/source_observation.py",
+    "agent-business-core/runtime/offline_tests/test_source_status_frame.py",
+    "docs/GIT_OBSERVATION_FRAME.md",
+    "docs/SOURCE_OBSERVATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert with malformed-key4case regression; keep the protected SOURCE checkpoint at originalf53bytes and preserve first failures. No DB, provider or authority/deadline changes.",
+  "id": "upgrade-ca5d2ea3-e9b1-4046-a606-4ea900eca306",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "8df2f91c055a39bcc454804526ca221ac358822f",
+  "createdAt": "2026-10-17T12:27:22.944Z"
+}

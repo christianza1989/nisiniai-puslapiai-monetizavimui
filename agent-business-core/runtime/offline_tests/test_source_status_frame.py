@@ -45,6 +45,15 @@ def test_valid_branch_and_optional_tracking_metadata(tmp_path, monkeypatch, bran
     assert source.git_source_observation(tmp_path).head == 'a'*40
 
 
+@pytest.mark.parametrize('key', ['oid', 'head', 'upstream', 'ab'])
+def test_malformed_branch_key_is_refused(tmp_path, monkeypatch, key):
+    frame = '# branch.oid '+'a'*40+'\0# branch.head main\0# branch.upstream origin/main\0# branch.ab +2 -1\0'
+    frame = frame.replace('branch.'+key, 'branchX'+key)
+    monkeypatch.setattr(subprocess, 'check_output', lambda *args, **kwargs: frame)
+    with pytest.raises(source.SourceObservationError):
+        source.git_source_observation(tmp_path)
+
+
 @pytest.mark.parametrize('dirty', ['tracked', 'untracked-newline', 'rename', 'unborn'])
 def test_real_git_clean_head_and_supported_dirty_states(tmp_path, dirty):
     def git(*args):

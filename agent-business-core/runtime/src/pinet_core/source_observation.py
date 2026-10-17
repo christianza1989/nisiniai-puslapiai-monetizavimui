@@ -67,12 +67,12 @@ def _fresh(repo):
             raise SourceObservationError()
         heads, branches = [], []
         for record in records:
-            if re.fullmatch(r"# branch.oid [a-f0-9]{40}", record):
+            if re.fullmatch(r"# branch\.oid [a-f0-9]{40}", record):
                 heads.append(record.removeprefix("# branch.oid "))
-            elif re.fullmatch(r"# branch.head [^\r\n\0]+", record):
+            elif re.fullmatch(r"# branch\.head [^\r\n\0]+", record):
                 branches.append(record)
-            elif not (re.fullmatch(r"# branch.upstream [^\r\n\0]+", record)
-                    or re.fullmatch(r"# branch.ab \+[0-9]+ -[0-9]+", record)):
+            elif not (re.fullmatch(r"# branch\.upstream [^\r\n\0]+", record)
+                    or re.fullmatch(r"# branch\.ab \+[0-9]+ -[0-9]+", record)):
                 # Every tracked/untracked/rename/conflict/submodule record,
                 # unknown metadata and unborn/malformed HEAD fails closed.
                 raise SourceObservationError()

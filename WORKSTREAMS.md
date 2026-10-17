@@ -60,6 +60,12 @@ all deadlines stay unchanged. Baseline2vs1 preserved;35focused and328related PAS
 Helper issue193 owns disjoint main-based documentation quarantine. Root owns
 actual source adoption, current case and runtime/cadence journal continuation.
 
+2026-10-17 Root peer follow-up ca5d2ea3-e9b1-4046-a606-4ea900eca306:
+same source-frame window, four literal-dot grammar fixes and four preserved
+malformed-key negatives (baseline4FAIL99510e37, final332PASS25.34se3b3a930).
+SOURCE_OBSERVATION checkpoint restored exactly tof53; current contract routed
+through GIT_OBSERVATION_FRAME.md. No checker/archive-rule or deadline change.
+
 2026-10-15 issue66 NATIVE MEDIA INBOX RESERVED: coordinator 9c618026 / fetched main808581d9, public1a26f289 / mainec8a9c03. Own site_build/media.py, site_build/service.py hook before initial GUIDE admission, offline_tests/test_site_build_media_inbox.py, runtime/SITE_BUILD.md and upgrade92a17cd8. Existing helper owns creation/media.py, attach-media workflow and its separate tests/journal on own branch. Fixed trusted operator inbox only; no provider, browser mutation route, new optimizer, approvals or channel activation. Serving4e80258/stable6b case remain immutable during source work. New review session01a13d30 has human-authorized read-only Foundation-to-team audit; no shared writes reserved there yet.
 
 2026-10-11 issue77 CONFIGURED CONVERSATION LAB RESERVED: scope6109307081, cleanbasedfeeaad/public5924/fetched7af6/ec8. Latesthumanstatusrequestprioritizesnewconversationagent. New customer_agents/lab.py, internaloptionalcalibrationbinding customer_text/service.py +dataframingadapter.py, privateoperatorCLI, realPG/offline andown labdocs/status/feedback/journal. Current savedimmutableConfig+Registration+Profile+Session currentchecked perdispatch/acceptance; noDBlockacrossmodelawait, no source/TTLrenewal oractivation. PublicHTTP/DTO/wire/SQL/portal/public/Xbot unchanged. API8860/studio18861 HELD. Fullautomaticscenarioevaluation/critique/decision/activation/UI/targetPC/public andplatformOPEN.

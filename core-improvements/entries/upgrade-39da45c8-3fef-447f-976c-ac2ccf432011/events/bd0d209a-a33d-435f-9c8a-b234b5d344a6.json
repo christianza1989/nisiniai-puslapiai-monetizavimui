@@ -1,0 +1,7 @@
+{
+  "note": "Canonical gated late-P baseline on frozen60e7:3FAIL82deselected10.89s. P revoke/expiry/clock-only after final before_node, during retained-output original current_actor callback, before later cached intake. All three wrongly accepted. LogSHA256965d82cb50d1d20d3d4d1e1c1ce8a000cffd2922eae26dbedb421eacff325652 retained. Runtime follow-up restricted to authority_observation.py; no private_preview/studio/live_preview edits or Source11, old journals frozen.",
+  "status": "fixing",
+  "eventId": "bd0d209a-a33d-435f-9c8a-b234b5d344a6",
+  "sequence": 2,
+  "at": "2026-10-17T10:12:03.949Z"
+}

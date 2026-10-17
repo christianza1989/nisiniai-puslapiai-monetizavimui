@@ -118,3 +118,39 @@ checks cover the ten runtime files and two changed test files.
 
 Root owns actual DB/native/HTTP/renderer/browser acceptance and serving adoption;
 pure test success is not platform acceptance.
+
+## Late-P successor after the60e7 freeze
+
+Root held adoption after independent review found an equivalent late-P hole.
+The retained-output original authorization callback revoked P, expired P or
+advanced only the clock after final `before_node` had already validated P/S.
+The later selected-intake lookup reused its result without rechecking P.
+Canonical baseline3FAIL82deselected10.89s SHA256
+`965d82cb50d1d20d3d4d1e1c1ce8a000cffd2922eae26dbedb421eacff325652`
+is preserved by separate upgrade`39da45c8-3fef-447f-976c-ac2ccf432011`.
+
+Only `authority_observation.py` changes at runtime. It loads a copy of the exact
+immutable private request by the already pinned ID once per phase, then actually
+awaits canonical `private.current` on every cached intake and cached proof use.
+That validator selects P's own Session and calls fresh canonical `current_actor`;
+there is no copied Session/expiry validator or cached permission. Post-await and
+return lifetime checks remain, and a false result rechecks canonical source guard.
+The material2/private-latest2 counters remain; extra current-P reads are deliberate.
+Standalone APIs and Root's disjoint cadence files stay untouched.
+
+At the former later selected-intake checkpoint, a missing P returns canonical
+legacy fallback, causing503`invalid_foundation_source`. Therefore native-time P
+revoke/expiry and invalid-anchor cases return that existing Foundation503 again;
+the interim60e7 P409 classification described above is superseded for this timing.
+The final-material checkpoint still yields409`private_intake_missing`; cached
+proof refusal uses that same canonical409. This is checkpoint-specific behavior,
+with no general error catch/translation and no previously blocked case admitted.
+The first85-case successor run retained82PASS/3status-expectationFAIL18.54s,
+SHA256`713fd2ccb85f9a4029e1eb1fc222b66ba6ac35279a0ef0bda6302861237a35ae`.
+
+Successor focused validation:85 canonical graph cases plus31 accepted-proof cases,
+116PASS18.39s, SHA256
+`877cb469a47d9cc6d37e0de03b369548ddfa801b284b88e9f17b49c4bc86aeb7`.
+Root explicitly accepted restoration of these original503 classifications; only
+strict timing-specific expected statuses changed. Root runs the integrated full
+suite, cadence tests and actual QA after merging this narrow successor.

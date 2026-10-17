@@ -1283,3 +1283,14 @@ their offline tests/docs. Other callers keep1s; serve selects0.2s. Original
 1SQL test deselected. No actual serving adoption yet. Helper's late-P follow-up
 owns only authority_observation/test plus its new journal/docs; those files are
 not edited by Root in parallel. No new provider calls, TTL or deadline changes.
+Late-P HOLD follow-up Root-owned cadence disjoint: helper reopens only
+authority_observation.py, test_authority_observation.py, docs/newjournal39da45c8
+after60e7. Canonical3FAIL965d82cb retained (P revoke/expiry/clock after final
+before_node at retained-output callback). New current-P check uses exact immutable
+request data plus canonical private.current at each cached proof/intake use;
+no studio/live_preview/private_preview edits or Source11.932/fd journals frozen.
+
+Late-P scoped verification116PASS18.39s (85canonicalgraph+31proof), hash877cb469a47d9cc6d37e0de03b369548ddfa801b284b88e9f17b49c4bc86aeb7;
+2PythonRuff/diffPASS; material2/private_latest2 retained.3canonical per-native
+503 restorations documented, first3FAIL and status-expectationFAIL preserved.
+Root owns integratedfullregression/cadence/actual/adoption; no helper428 rerun.

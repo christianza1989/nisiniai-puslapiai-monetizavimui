@@ -281,3 +281,40 @@ async def test_cancellation_during_exit_fence_closes_inherited_context_without_a
     assert await asyncio.to_thread(finished.wait, 3)
     async with source.git_source_operation():
         assert source.git_source_observation(git.repo).head == "a"*40
+
+
+async def test_cached_lookup_cannot_return_after_path_read_overlaps_closing(source, git, monkeypatch):
+    entered, release, closing = threading.Event(), threading.Event(), threading.Event()
+    outcomes, children, returned, saved = [], [], [], []
+    repository, finish = source._repository, source._Operation.finish
+    def gated_repository(root):
+        if not entered.is_set():
+            entered.set()
+            assert release.wait(3)
+        return repository(root)
+    def finishing(operation):
+        closing.set()
+        return finish(operation)
+    monkeypatch.setattr(source._Operation, "finish", finishing)
+    def repeated_lookup():
+        try:
+            outcomes.append(source.git_source_observation(git.repo))
+        except source.SourceObservationError as error:
+            outcomes.append(error)
+    async def operation():
+        async with source.git_source_operation():
+            source.git_source_observation(git.repo)  # seed a successful entry
+            saved.append(contextvars.copy_context())
+            monkeypatch.setattr(source, "_repository", gated_repository)
+            children.append(asyncio.create_task(asyncio.to_thread(repeated_lookup)))
+            assert await asyncio.to_thread(entered.wait, 3)
+        returned.append(True)
+    pending = asyncio.create_task(operation())
+    assert await asyncio.to_thread(closing.wait, 3)  # CLOSING while reader holds the lock in path IO
+    release.set()
+    result = await asyncio.gather(pending, return_exceptions=True)
+    await asyncio.gather(*children)
+    assert isinstance(outcomes[0], source.SourceObservationError), "Cached data cannot escape a closing operation"
+    assert isinstance(result[0], source.SourceObservationError) and not returned
+    with pytest.raises(source.SourceObservationError):
+        saved[0].run(source.git_source_observation, git.repo)

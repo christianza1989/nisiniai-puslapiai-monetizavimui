@@ -1,0 +1,7 @@
+{
+  "note": "Root P2 review of d779 cached-return path reproduced: inherited thread blocked in repository identity IO while normal operation exit set CLOSING, then returned stale cached value.1FAIL1.25s logSHA25632b237e2586525f1ca2b9ce201134c35f1037346860d6c57195e1d884d2d4c1c preserved. Added phase/invalid recheck before cached return, keeping closed fast refusal and post-fresh publication fence; no Rootfiles edited.",
+  "status": "fixing",
+  "eventId": "72875be1-546d-48c7-bcc8-8843c78ba343",
+  "sequence": 5,
+  "at": "2026-10-17T08:18:26.738Z"
+}

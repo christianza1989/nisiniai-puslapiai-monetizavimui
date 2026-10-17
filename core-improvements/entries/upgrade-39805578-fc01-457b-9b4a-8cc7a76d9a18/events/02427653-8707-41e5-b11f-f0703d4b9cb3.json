@@ -1,0 +1,21 @@
+{
+  "status": "pr",
+  "note": "Draft PR194 created against main and attached to the task; no merge. Cleanup source pin07cc18b2c0b3889f5ac845a73271a95410a0ca58; this event is delivery metadata only. Final pre-source-commit pinned ACMR scanner checked all15exact staged blobs including rename payload,0findings. Committed checker from immutable8413cfb tool source PASS with1verified upgrade/shared_changes0; extra explicit source-path coverage verified all9declared paths. Fresh handoff2026-10-17T12:06:06.351Z PASS, source checkout clean, fetchedmain808581d unchanged. Main scanner/checker adoption dependencies remain separate and were acknowledged by Root. Historical12duplicate groups/manual CLI uncertainties retained, no runtime or provider activity.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/194",
+  "commit": "07cc18b2c0b3889f5ac845a73271a95410a0ca58",
+  "checks": [
+    {
+      "command": "Pinned8413cfb repository-safety.mjs . --staged before cleanup source commit",
+      "result": "PASS",
+      "evidence": "15text blobs,253970bytes,0findings; includes actual7976byte quarantine payload. Scannerblob2644b57413b113d6a3203ae1e645b3d6bed063cf."
+    },
+    {
+      "command": "Pinned8413cfb core-upgrade-check.mjs --root own-worktree --base808581d919d06cb4a2d151cc7f9ec1be1782aba2 --head07cc18b2c0b3889f5ac845a73271a95410a0ca58",
+      "result": "PASS",
+      "evidence": "1verified upgrade,0uncovered/0errors. shared_changes0because classifier excludes this docs scope; all9sourcepaths independently checked against record.paths. Toolblob4f782e96b5275108b332655e579feb0a8c40abe8, no toolsource copied to main-based branch."
+    }
+  ],
+  "eventId": "02427653-8707-41e5-b11f-f0703d4b9cb3",
+  "sequence": 4,
+  "at": "2026-10-17T12:07:02.134Z"
+}

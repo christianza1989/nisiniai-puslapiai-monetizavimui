@@ -4,7 +4,7 @@
 
 Tai rekomenduojamas verslo idėjų portfelis. Paklausa, pelningumas ir dabartinis domenų prieinamumas nėra patvirtinti. Eilė sudaryta pagal pasiūlymo aiškumą, monetizavimo galimybę ir nedidelio testo įgyvendinimą, o ne vien DR.
 
-Patikslintas sprendimas: visiems 20 domenų kuriame SEO ir kontaktų svetaines paklausai testuoti. Lentelės bangos lieka techninio darbų eiliškumo žymomis; IV bangos domenų nepaliekame vien rezerve. Individualias funkcijas ir tiekėjų integracijas kuriame tik pagal testų rezultatus. Dabartinę apimtį apibrėžia [20 svetainių SEO MVP planas](C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui/20_SVETAINIU_SEO_MVP.md).
+Patikslintas sprendimas: visiems 20 domenų kuriame SEO ir kontaktų svetaines paklausai testuoti. Lentelės bangos lieka techninio darbų eiliškumo žymomis; IV bangos domenų nepaliekame vien rezerve. Individualias funkcijas ir tiekėjų integracijas kuriame tik pagal testų rezultatus. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md).
 
 | Nr. | Domenas | Banga | Konkreti idėja | Pajamų modelis |
 |---|---|---|---|---|

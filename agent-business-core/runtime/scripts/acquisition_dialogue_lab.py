@@ -21,6 +21,7 @@ from pinet_core.acquisition.dialogue_lab import (
     validate_synthetic,
 )
 from pinet_core.acquisition.engine import atomic, fingerprint
+from pinet_core.acquisition.headless import DurableBudget, HeadlessRoles, role_labs
 from pinet_core.acquisition.instructions import compose
 from pinet_core.codex_lab import CodexLab
 
@@ -39,6 +40,7 @@ async def main():
     parser.add_argument('--timeout', type=int, default=120)
     parser.add_argument('--list', action='store_true')
     parser.add_argument('--patch-file', type=Path, help='Private candidate reply/research behavior supplement')
+    parser.add_argument('--budget-ledger', type=Path, help='Existing cross-batch180-attempt/120min headless budget')
     args = parser.parse_args()
     data = json.loads(args.corpus.read_text(encoding='utf-8')) if args.corpus else corpus()
     if data.get('synthetic') is not True:
@@ -79,8 +81,15 @@ async def main():
     output = ROOT / 'artifacts/acquisition-dialogue' / args.run_id
     output.mkdir(parents=True, exist_ok=False)
     budget = SharedBudget(args.max_calls)
-    labs = {role: CodexLab(max_calls=args.max_calls, timeout=args.timeout) for role in ('agent', 'persona', 'evaluator')}
-    adapters = {role: RoleLab(lab, budget) for role, lab in labs.items()}
+    if args.budget_ledger:
+        durable = DurableBudget(args.budget_ledger)
+        labs = role_labs(durable, args.run_id, output / 'calls', timeout=args.timeout)
+        session_roles = {role: RoleLab(lab, budget) for role, lab in labs.items()}
+        adapters = {'agent': HeadlessRoles(session_roles), 'persona': session_roles['persona'],
+                    'evaluator': session_roles['evaluator']}
+    else:
+        labs = {role: CodexLab(max_calls=args.max_calls, timeout=args.timeout) for role in ('agent', 'persona', 'evaluator')}
+        adapters = {role: RoleLab(lab, budget) for role, lab in labs.items()}
     if patch:
         original = adapters['agent']
 
@@ -99,10 +108,16 @@ async def main():
             if path.suffix in {'.py', '.md'}}}
     snapshot['implementation_hashes'][str(Path(__file__).relative_to(ROOT))] = hashlib.sha256(
         Path(__file__).read_bytes()).hexdigest()
+    snapshot['implementation_hashes']['src/pinet_core/codex_lab.py'] = hashlib.sha256(
+        (ROOT / 'src/pinet_core/codex_lab.py').read_bytes()).hexdigest()
     report = {**snapshot, 'source_head': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT,
             text=True).strip(), 'source_dirty': bool(subprocess.check_output(['git', 'status', '--porcelain'],
             cwd=ROOT, text=True).strip()), 'started_at': datetime.now(UTC).isoformat(),
-        'synthetic': True, 'external_sent': False, 'model_identity': 'CLI inherited default; exact ID unexposed',
+        'synthetic': True, 'external_sent': False,
+        'model_identity': 'gpt-6.1-sol requested, high; provider returned ID unexposed' if args.budget_ledger else 'CLI inherited default; exact ID unexposed',
+        'budget_ledger': str(args.budget_ledger) if args.budget_ledger else None,
+        'knowledge_hash': fingerprint([fact.model_dump(mode='json') for fact in campaign.facts]),
+        'config_hash': fingerprint(campaign.model_dump(mode='json')),
         'protected_input_hash_verified': protected, 'blind_holdout': False,
         'blindness_status': 'UNVERIFIED: separation/hash checks do not prove scenario novelty',
         'available_cases': len(data['cases']), 'selected_cases': len(cases), 'max_calls': args.max_calls,

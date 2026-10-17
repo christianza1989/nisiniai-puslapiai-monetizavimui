@@ -40,3 +40,23 @@ Pirmas parengiamasis bandymas po reikalingų leidimų — iki 20 įmonių oficia
 Kliento laiško juodraštis turės vieną realų signalą iš jo puslapio, trumpą tikslų pasiūlymą ir vieną klausimą dėl objekto poreikio. Jo dar nerašome fiktyviam adresatui ir nesiunčiame vien dėl viešai nurodyto kontakto. Gamintojo partnerystės juodraštis yra [atskirame tyrime](SUPPLIER_RESEARCH.md).
 
 Matavimas: ištirtos įmonės ≠ kvalifikuotas poreikis ≠ gauta užklausa ≠ išsiųstas pasiūlymas ≠ apmokėtas / pristatytas gaminys. Kiekvienam įvykiui reikės tikro kvito, datos, siteId ir aktualios pasiūlymo versijos. Jei nėra patikimų gaminio sąlygų, tinkamo kanalo, teisių ar teigiamos ekonomikos, tęsti tik tyrimą arba keisti pasiūlymą. Atsisakymas stabdo rinkodarą ir negali būti pamirštas kuriant naują giją ar svetainę.
+
+## Headless pavedimas ir faktinė nauja apimtis — 2026-10-18
+
+Savininkas atskirai užsakė klientų paieškos ir el. pašto agentus be platformos UI
+priklausomybės. Įgyvendinta canonical CLI rolėms, atskirai teksto peržiūrai ir
+sintetiniam Case/MailMessage tęstinumui; [vykdymo eiga](HEADLESS-RUNBOOK.md).
+Tai nekeičia BUSINESS faktų, neįjungia balso, viešo paleidimo ar siuntimo.
+
+Atnaujinta 5 oficialių Nyderlandų apgyvendinimo puslapių imtis; visi 5 gauti bendru
+skaitytuvu,5 publikuoti organizacijų kontaktai patikrinti šaltiniuose.2 kandidatams
+parengti ir atskirai modelio bei autoriaus peržiūrėti konkretūs laiškai. Tikri
+kontaktai, šaltinių kvitai ir visas tikslus tekstas saugomi privačiai runtime
+artifacts/wellness-headless/BUYER-BATCH.md; į Git ar viešą paketą neperkeliami.
+Nežinomas pirkimo poreikis, siuntimo teisė ir tiekimas lieka nepatvirtinti.
+Išsiųsta 0, pristatyta 0, tikrų atsakymų 0, kvalifikuotų pirkimo poreikių 0.
+
+Bendra eksperimentinė modelio riba 180 rezervuotų bandymų / 120 minučių nuo pirmo
+kvietimo, gpt-6.1-sol/high, be automatinio kartojimo ar skaitiklio atstatymo.
+Galutinė naudojimo ir scenarijų ataskaita pateikiama atskirai; sintetinis PASS
+nėra dabartinės veikiančios kampanijos ar pardavimų įrodymas.

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "One exact document quarantined with preserved original bytes; five dependent root pointers now route to the canonical phase-one contract. Inventory distinguishes protected historical duplicates, manual CLI dependencies and unresolved candidates. No runtime/code removal or adoption claim. Main808581d lacks the newer committed-coverage checker; Root informed and pinned8413cfb read-only checker will target this branch's committed objects separately.",
+  "checks": [
+    {
+      "command": "Canonical core-upgrade.mjs record -> plan -> reviewed plan -> apply; compare payload against git show 808581d919d06cb4a2d151cc7f9ec1be1782aba2:20_SVETAINIU_SEO_MVP.md",
+      "result": "PASS",
+      "evidence": "Exact Git blob bytes retained:7976, SHA25659d2076c956ac506a7eb12cd09111a2b521c21211cc27ab72cf27869352f2875; plan/source/payload equal, state quarantined, original path absent."
+    },
+    {
+      "command": "Verify all five reference-file diffs and local Markdown targets in the seven affected documents; compare full tracked/untracked own Markdown targets with baseline",
+      "result": "PASS",
+      "evidence": "Five reference files each have exactly one changed line.36relative links resolve. Baseline696MD/2672tracked/2766relative links had905unavailable relative targets and1420machine-local links. After includes new inventory/journal:905unavailable, introduced0; machine-local1416. Structural scan excludes external/heading semantics and does not relabel old evidence FAIL."
+    },
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs",
+      "result": "PASS",
+      "evidence": "7passed,0failed,0skipped in14222.3569ms; exact bytes/restore, protected dirty/untracked/traversal, stale-plan/collision/tamper, append-only events, interrupted recovery, cloned CRLF restore, symlink boundaries."
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "6profiles PASS_INPUTS,0issues, model_calls0, private_data_read=false; no channel, behavioural, DB or runtime acceptance asserted."
+    },
+    {
+      "command": "git diff --check; manual source/reference/registry review",
+      "result": "PASS",
+      "evidence": "Diff whitespace clean.12identical-byte groups retained for source/history/manifest roles; manual seed/contact/export scripts retained because no safe supported replacement/migration completion proof. Full docs inventory records exact loaders/package/CI/discovery surfaces and remaining limits."
+    }
+  ],
+  "eventId": "0444d88c-f7d4-468d-82a4-1301d7302247",
+  "sequence": 2,
+  "at": "2026-10-17T12:03:34.160Z"
+}

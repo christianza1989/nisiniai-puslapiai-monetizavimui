@@ -1,0 +1,18 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "category": "code",
+  "rollback": "Scoped source revert before Root actual adoption; preserve original synthetic count/stale-map failures and separate actual failure evidence. No permission cache/schema/role/TTL/deadline/cadence/model change. All prior journals frozen.",
+  "siteId": "core",
+  "evidence": [
+    "Root actual be557 adoption retained failure beforeReady heartbeat_expired/before_context; actual capture346SQL2.7351s versus d904306SQL1.8088s, so prior source optimization is not a latency improvement claim. Root owns all actual traces/DB/serving.",
+    "Inspected DDL0010/0012, User/Session/PortfolioPKs, Account(user,environment) and Membership(user,organization,environment) uniqueness and forcedRLS boolean policies. Scopefunction current_actor only; lock=True sequential UserFORUPDATE→SessionFORSHARE path unchanged. Preserve fresh reads and actor401 before account/portfolio/member404."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/service.py"
+  ],
+  "summary": "Read nonlocking current actor prerequisites in one fresh RLS-bound outerjoined canonical SELECT, keeping strict401-before404, identity-map freshness and original locking order.",
+  "id": "upgrade-7f80fded-435f-4150-a029-0389e85adfcd",
+  "branch": "codex/current-actor-joined-observation-20261017",
+  "baseSha": "be557654161c8124b01547fe67efd3b63bc29c55",
+  "createdAt": "2026-10-17T10:34:53.480Z"
+}

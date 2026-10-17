@@ -1294,3 +1294,19 @@ Late-P scoped verification116PASS18.39s (85canonicalgraph+31proof), hash877cb469
 2PythonRuff/diffPASS; material2/private_latest2 retained.3canonical per-native
 503 restorations documented, first3FAIL and status-expectationFAIL preserved.
 Root owns integratedfullregression/cadence/actual/adoption; no helper428 rerun.
+
+2026-10-17 helper CURRENT ACTOR JOINED OBSERVATION reserved issue66/comment6232873051
+from exactRootbe557654161c8124b01547fe67efd3b63bc29c55/public255, branch
+codex/current-actor-joined-observation-20261017. Production scope only
+creation/service.py current_actor nonlocking fresh single SELECT; original
+locking path/order unchanged. Unique/RLS DDL0010/0012 inspected. New offline
+SQL/count/identity-map baseline and current_actor_pg source/collect only; Root
+reviews first focused diff before broad tests. Journal7f80fded; all older journals
+frozen. No actualDB/process/provider/serving/browser, schema/roles/TTL/cadence edits.
+
+Current-actor focused packet: original5FAIL19PASS1.66s05f91fcf retained; first24PASS
+1.10s5db6026b reviewed/approved by Root before related regression. Related140PASS
+10.09sa69dd443 (24newactor+85canonicalAuthority+31proof); legacyfakejoined-shape
+1ERROR7d6aaf20 retained then test-only SQL leaf adapted without stubbingactor.
+ActualPG11cases collected only974e2e3b; Root executes. Production+30/-0 in one
+function, original locking block unchanged. Newjournal7f80fded owns this packet.

@@ -10,6 +10,8 @@ from types import SimpleNamespace as Row
 from uuid import uuid4
 
 import pytest
+from sqlalchemy.sql import visitors
+from sqlalchemy.sql.elements import BinaryExpression, BindParameter
 from test_customer_creations import draft
 
 from pinet_core.business_discovery import service as discovery
@@ -178,6 +180,32 @@ async def graph(monkeypatch):
             f.sql["refresh"] += 1
         async def execute(self, statement, *args, **kwargs):
             f.sql["execute"] += 1
+            columns = getattr(statement, "column_descriptions", ())
+            if columns and columns[0]["entity"] is User:
+                # Execute the joined SQL leaf, not a stub of current_actor. Read
+                # literal IDs/env from its actual predicates and model fresh RLS.
+                bound = {(part.left.table.name, part.left.name): part.right.value
+                    for part in visitors.iterate(statement) if isinstance(part, BinaryExpression)
+                    and isinstance(part.right, BindParameter) and getattr(part.left, "table", None) is not None}
+                f.sql["actor_join"] += 1
+                f.sql["Session"] += 1  # Fresh Session columns observed in this one SQL statement.
+                user = Row(id=f.u.user_id, environment_id=cfg.environment, enabled=f.enabled)
+                result = None
+                if bound.get((User.__tablename__, "id")) == user.id:
+                    current = f.sessions.get(bound.get((Session.__tablename__, "id")))
+                    if current and (current.user_id != user.id or current.environment_id != bound.get(
+                            (Session.__tablename__, "environment_id"))):
+                        current = None
+                    account = Row(id="synthetic-account", user_id=user.id,
+                        environment_id=cfg.environment, verified_at=utcnow()) if f.verified else None
+                    result = [user, current, account]
+                    if any(column["entity"] is Portfolio for column in columns):
+                        portfolio = Row(id=f.creation.portfolio_id, organization_id=f.creation.organization_id,
+                            environment_id=cfg.environment) if f.member and bound.get(
+                                (Portfolio.__tablename__, "id")) == f.creation.portfolio_id else None
+                        result.extend([portfolio, "synthetic-member" if portfolio and f.member else None])
+                assert statement.get_execution_options()["populate_existing"] is True
+                return Row(one_or_none=lambda: tuple(result) if result is not None else None)
             return Row(one=lambda: (f.u.user_id, cfg.environment))
     f.tx = Tx()
     @asynccontextmanager

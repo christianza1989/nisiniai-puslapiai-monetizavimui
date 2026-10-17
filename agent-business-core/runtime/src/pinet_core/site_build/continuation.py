@@ -1,4 +1,5 @@
 """Append-only explicit adoption of unchanged native material by a current owner."""
+import asyncio
 import json
 
 from sqlalchemy import select, text
@@ -64,7 +65,7 @@ async def capture(tx, session, creation):
         "approval_session_id": approval.session_id, "report_id": approval.report_id,
         "report_revision": approval.report_revision, "report_sha256": approval.report_sha256,
         "report_source_revision": approved["source_revision"], "accepted": proof,
-        "sources": foundation.source_pins().model_dump(mode="json"),
+        "sources": (await asyncio.to_thread(foundation.source_pins)).model_dump(mode="json"),
         "language_review_mode": language_mode.mode(), "initial_page_ids": pages}
     await current_actor(tx, session, creation.portfolio_id)
     await tx.refresh(creation)
@@ -72,7 +73,7 @@ async def capture(tx, session, creation):
             or creation.active_job_id or await archived(tx, creation)):
         raise ControlError(409, "stale_revision")
     await foundation.guard()
-    if foundation.source_pins().model_dump(mode="json") != result["sources"]:
+    if (await asyncio.to_thread(foundation.source_pins)).model_dump(mode="json") != result["sources"]:
         raise ControlError(503, "source_unavailable")
     return result
 

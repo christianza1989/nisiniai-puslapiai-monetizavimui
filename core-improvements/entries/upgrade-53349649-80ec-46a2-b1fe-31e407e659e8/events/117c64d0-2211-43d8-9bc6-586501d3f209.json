@@ -1,0 +1,7 @@
+{
+  "note": "Implemented exact5shared-path operation-only raw Git primitive/caller integrations and all4async source_pins offloads. Preserved original200vs4command baseline and cancellation-during-exit1FAIL212PASS baseline; fixed CLOSED lookup waiting on still-running Git thread lock with phase fast refusal before lock, keeping in-lock/after-read checks. Root files/journals/runtime remain untouched.",
+  "status": "fixing",
+  "eventId": "117c64d0-2211-43d8-9bc6-586501d3f209",
+  "sequence": 2,
+  "at": "2026-10-17T08:12:35.752Z"
+}

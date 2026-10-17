@@ -1068,6 +1068,18 @@ Root owns the reproducible late Account/Membership deferred-commit fence and sup
 2026-10-16 root S42 WIRE CONSUMER: reviewed9bea+b237 and independent frontend admitted-native/null-Conversation finding; helper393db128 repair integrated as f05acab, actual API remains3b7. Root owns NEW docs/contracts/verslomatika-workspace-direct.openapi.json and portal existing core:sync workspace-direct kind/generated files only. Exact generated mirror7ops and independent root48PASS1.94s; export no router/runtime/DB/provider/admission. Supplemental export upgrade6da78d38; corrected consumer pin follows scoped commit. Frontend owner ec78196+50ef942 source reviewed separately; real pixels and DM runtime pending.
 # S42 direct messenger consultant checkpoint — 2026-10-16
 
+2026-10-17 helper SOURCE OBSERVATION RESERVED issue66/comment6231542941,
+PR185/comment6231543121: own clean1684 ff-only toRootda578030f7c9afd5c4dd2d411edfa67e74c77c7b,
+paired public255 unchanged/continuePASS. Exact NEWsource_observation.py plus
+customer_text/adapter.py source_current, creation/private_preview.py native_sources,
+site_build/foundation.py source_pins/to_thread and continuation.py two offloads;
+new mockedtests/docs/SOURCE_OBSERVATION.md and separatejournal53349649. Root owns
+live_preview.py/test_live_preview_runtime.py/CUSTOMER_LIVE_PREVIEW.md/journal5c757425;
+untouched. Original200-vs4mockGitFAIL and cancellation-lockFAIL retained;213pure/mock
+PASS2.19s,2actualprocess tests deselected. No DB/Nodechild/server/provider/currentcase/
+adoption or TTL/deadline/wire/historical-fingerprint changes. Root adds Authority
+scope/coalescing and actual acceptance only after exact scoped pin review.
+
 2026-10-17 helper CUSTOMER LIVE PREVIEW WIRE/LIFECYCLE RESERVED issue66/comment6224996410:
 fresh codex/customer-live-preview-20261017 from exactRoot8cdf8d99c5e548fa27662f84a34c93d00809be38,
 paired public255fea0813bf1aabeaeea2f2de0b29564118f2fc and start gate PASS. ONLY NEW

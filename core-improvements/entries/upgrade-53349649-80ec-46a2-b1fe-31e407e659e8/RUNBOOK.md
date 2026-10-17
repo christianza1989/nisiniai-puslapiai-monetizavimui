@@ -61,6 +61,29 @@ coalescing cannot reuse a completed result. Source commit, main merge/fetch,
 actual QA and serving adoption are separate; no timing/heartbeat acceptance is
 claimed from mocked command counts.
 
+## Root review: cached return during closing
+
+Root reviewed historical source pin d7798956050cce7ab18e98882ef5a581778a8638
+before integration and identified a missing phase/invalid recheck on the cached
+return branch after filesystem repository identity IO. New deterministic mocked
+regression seeds a cached repo, blocks an inherited thread in repository lookup,
+then starts normal scope exit (CLOSING) before releasing the thread. The original
+cached observation escaped:1FAIL1.25s, preserved private log SHA256
+32b237e2586525f1ca2b9ce201134c35f1037346860d6c57195e1d884d2d4c1c.
+Cancellation's CLOSED dictionary clearing already refused; this test exercises
+the additional CLOSING window without relying on thread scheduling or latency.
+
+The follow-up checks phase and invalidation again immediately before cached
+return, retaining the fast CLOSED refusal, in-lock checks and post-raw-read
+publication fence. Same regression now refuses the cached return and poisons the
+normal exit, so no result is authorized or old context repopulated. Original
+d779 pin, prior events/failures and Root files remain unchanged.
+Final214pure/mockedPASS2.60s,2actual-process tests deselected,1existing UUID warning;
+private log SHA256b89d36b2b0c6439a1e71e314a436e63f1cf119937b26a1c8530eef559826e1b0.
+Twenty new operation cases now cover the initial and independently reviewed
+races. Root's ec1b27d lifecycle patch was reviewed from Git objects only and was
+not integrated into this branch or executed by the helper.
+
 Rollback is a scoped source revert before adoption. There is no durable state,
 schema or migration to undo. Preserve all Root actual and helper initial failures,
 historical hashes/receipts/private data and existing transferred journals. Do not

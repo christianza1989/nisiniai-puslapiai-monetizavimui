@@ -90,7 +90,7 @@ class _Operation:
                 key = os.path.normcase(str(repo.path))
                 previous = self.entries.get(key)
                 if previous is not None:
-                    if previous[0] != repo:
+                    if previous[0] != repo or self.phase != "open" or self.invalid:
                         raise SourceObservationError()
                     return previous[1]
                 if len(self.entries) >= MAX_REPOSITORIES:

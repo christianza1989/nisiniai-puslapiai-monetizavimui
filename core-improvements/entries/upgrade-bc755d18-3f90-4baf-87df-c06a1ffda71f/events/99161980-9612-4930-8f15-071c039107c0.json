@@ -1,0 +1,7 @@
+{
+  "note": "Implemented one bounded exclusive private first-refusal receipt in existing Node guard only. Captures fixed stage/code/time/checkpoint/pulse margin before later pulse refresh; no raw nonce/token/proof/customerdata/path/error text. One shared first attempt,100ms diagnostic wait cap, errors/stalls still originalfalse. Original9FAIL baseline retained; old ledger-empty assertions adapted only to requested privatefile while original public refusal assertions unchanged.",
+  "status": "fixing",
+  "eventId": "99161980-9612-4930-8f15-071c039107c0",
+  "sequence": 2,
+  "at": "2026-10-17T08:39:22.930Z"
+}

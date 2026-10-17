@@ -52,6 +52,31 @@ Owner thread01a13d30; own core branch codex/verslomatika-foundation-index-202610
 
 # Lygiagrečios sesijos
 
+2026-10-17 Root scheduling/publication window: issue66/comment6234266836,
+from948c69350bac7155aef85b376138acd25020fcb5, fetchedmain9a46650a/publicec8.
+Only creation/studio.py fast serial start pacing, site_build/live_preview.py
+per-check successful heartbeat publication, their focused regressions and
+LIVE_PREVIEW_AUTH_CADENCE contract plus own journal/checkpoints. Helper01a13440
+reviewed read-only; its late A/B/A finding reproduced before WeakSet correction.
+No authorization-result reuse, TTL/deadline change or detached renewal. Actual
+948 expiry PASS and later start503/heartbeat FAIL remain; Root owns same-DB
+backup/adoption/normal owner lifecycle/browser. Providers0, serving948 frozen
+during source changes; no foreign checkout, frontend restart or channel change.
+
+2026-10-17 Root source-frame window: issue66/comment6233705540 and upgrade
+a4d4abab-d331-4814-b3d6-5acab58c8646. Only source_observation.py native Git
+HEAD/dirty observation becomes one porcelain-v2 NUL frame, with matching source
+fixtures/new actual inert-Git tests/docs; runtime heartbeat/fences/authority and
+all deadlines stay unchanged. Baseline2vs1 preserved;35focused and328related PASS.
+Helper issue193 owns disjoint main-based documentation quarantine. Root owns
+actual source adoption, current case and runtime/cadence journal continuation.
+
+2026-10-17 Root peer follow-up ca5d2ea3-e9b1-4046-a606-4ea900eca306:
+same source-frame window, four literal-dot grammar fixes and four preserved
+malformed-key negatives (baseline4FAIL99510e37, final332PASS25.34se3b3a930).
+SOURCE_OBSERVATION checkpoint restored exactly tof53; current contract routed
+through GIT_OBSERVATION_FRAME.md. No checker/archive-rule or deadline change.
+
 2026-10-15 issue66 NATIVE MEDIA INBOX RESERVED: coordinator 9c618026 / fetched main808581d9, public1a26f289 / mainec8a9c03. Own site_build/media.py, site_build/service.py hook before initial GUIDE admission, offline_tests/test_site_build_media_inbox.py, runtime/SITE_BUILD.md and upgrade92a17cd8. Existing helper owns creation/media.py, attach-media workflow and its separate tests/journal on own branch. Fixed trusted operator inbox only; no provider, browser mutation route, new optimizer, approvals or channel activation. Serving4e80258/stable6b case remain immutable during source work. New review session01a13d30 has human-authorized read-only Foundation-to-team audit; no shared writes reserved there yet.
 
 2026-10-11 issue77 CONFIGURED CONVERSATION LAB RESERVED: scope6109307081, cleanbasedfeeaad/public5924/fetched7af6/ec8. Latesthumanstatusrequestprioritizesnewconversationagent. New customer_agents/lab.py, internaloptionalcalibrationbinding customer_text/service.py +dataframingadapter.py, privateoperatorCLI, realPG/offline andown labdocs/status/feedback/journal. Current savedimmutableConfig+Registration+Profile+Session currentchecked perdispatch/acceptance; noDBlockacrossmodelawait, no source/TTLrenewal oractivation. PublicHTTP/DTO/wire/SQL/portal/public/Xbot unchanged. API8860/studio18861 HELD. Fullautomaticscenarioevaluation/critique/decision/activation/UI/targetPC/public andplatformOPEN.
@@ -100,6 +125,9 @@ Owner thread01a13d30; own core branch codex/verslomatika-foundation-index-202610
 2026-10-10 issue66 GitHub koordinavimas VERIFIED (paskelbimas): perskaityti core PR65 head 21a59d594bd9e6934487b1d557c78c12e0e67119 ir Verslomatika PR62 head 7b3885edd866e79cba4dc3ae4cad55b402c5039d; jų dokumentai patvirtina 01a122ec core planavimo ir 01a0dcf8 portalo „Kordinatorius A“ roles. Madbeauty PR26 remote head 8dafd2c679527e06efdca70144d16f6de228d52c skiriasi nuo sesijos naujiau pranešto 14d49f8; naujas full SHA/push dar laukiamas. Root own scope tik docs/AGENT_INTEGRATION_COORDINATION_2026-10-10.md ir ši sava eilutė; issue66 body atnaujintas ir nukreipiančios žinutės paskelbtos PR65/PR62/PR26/PR59. Canonical portfolio.v1 lieka PR65, acquisition 0.1.1 source f629b76c; generic control/registry/task/chat implementation ownership dar rezervuojamas prieš rašymą. Kito PC issue66 read/adoption atsakymo ar HTTP/DB/hosted integration šis receipt nedeklaruoja; GitHub automatiškai nepažadina sesijų. Svetimo runtime/checkout ir main nekeista.
 
 2026-10-10 issue66 acquisition integracijos langas RESERVED: root thread 01a1225a-4db6-7aa1-a679-67d01d7cb104, savas codex/acquisition-core-20261009 nuo87fcf4c / fresh main d4ea8bf. Nauji agent-business-core/contracts/acquisition-v1/**, runtime/src/pinet_core/acquisition/interfaces.py ir transport_auth.py, runtime/offline_tests/test_acquisition_interfaces.py, runtime/scripts/acquisition_contracts.py, docs/AGENT_INTEGRATION_COORDINATION_2026-10-10.md, savas UUID upgrade ir ši sava pastraipa; sites/madbeauty/ACQUISITION_PILOT_PLAN.md tik aktuali visos Lietuvos pastaba. Madbeauty sesija valdo savo backend/Workers/registracijų adapterį; Verslomatika issue64 portfolio/identity pasiūlymo failai ir abu kito PC checkout neliečiami. Bendro registry/chat ar jų šakų neperimame. Tolimesnę acquisition DB migraciją / API mount rezervuoti konkrečiai issue66 prieš rašymą. Pirmas kontraktas ir testas capture-only; esamas transactional SMTP purpose guard neplečiamas. Kito PC thread pasiekiamumas nepatvirtintas; koordinacija GitHub issue66, actual kodo/kontrakto SHA ir atskiros adoption patikros.
+2026-10-17 documentation inventory RESERVED: issue193, own codex/core-docs-quarantine-20261017 from freshly fetched main808581d919d06cb4a2d151cc7f9ec1be1782aba2. Own new docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md, this paragraph and unique new cleanup journal entries. Read-only tracked-file/reference/import/CLI/build/job inventory first; exact quarantine candidates and necessary entrypoint edits will be reserved in issue193 before mutation. One clean tracked text file per canonical record/plan/apply. Preserve Root runtime/source/journals, all active plans/handoffs, historical evidence/approvals/SOURCE archives, data/dependencies and foreign checkouts. No providers, DB, processes or deployment; small PR to main, no self-merge.
+
+2026-10-17 issue193 LOCAL VERIFIED / handoff: upgrade39805578-fc01-457b-9b4a-8cc7a76d9a18; only superseded20_SVETAINIU_SEO_MVP.md quarantined with exact7976bytes/SHA preserved. Five root-doc pointers changed one line each to canonical CORE_BUILD_CONTRACT; README links bounded inventory.12byte-identical historical/manifest groups and ambiguous manual CLI scripts retained.36local links, no new missing targets,7quarantine regressions,6calibration inputs and diff PASS. No runtime/source/old journals or foreign checkout mutations. Main lacks newer core-upgrade-check and its ACM safety selection skips rename payload; Root-owned8413cfb fixes remain separate, both pinned tools used read-only against own objects/stage with exact coverage, no adoption claim. Scope released for review after PR handoff; no self-merge.
 
 2026-10-10 tipografikos sistemos taisyklių įgyvendinimo langas baigtas / atlaisvintas pagal [issue83](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/83), own branch `codex/typography-system-20261010`, fresh core main `13c9649c76dd48cdf426604cb721e1ccd58a9854`. Tik AGENTS, PROJECT_CONTRACT, builder/planner/audit SKILL ir trys jų catalog entry SHA, vienas canonical builder `references/typography-system.md`, savas core-upgrade UUID ir research/typography-system-2026-10-10/REVIEW.md. Savininkas pavedė nuolatinę visos tekstų stilių sistemos priežiūrą. 3/3 skill struktūra, 101 vietinė nuoroda, staged safety12/12 ir fresh handoff PASS. Nėra runtime/public renderer/schema/package sąsajų ar companion pakeitimų; kitų sesijų failai, svetainių turinys ir istoriniai auditai neliečiami. Patikrintas scoped PR perduodamas atskiram reviewer/merger; source merge nėra kitų PC adoption ar svetainių peržiūros įrodymas.
 
@@ -1294,3 +1322,51 @@ Late-P scoped verification116PASS18.39s (85canonicalgraph+31proof), hash877cb469
 2PythonRuff/diffPASS; material2/private_latest2 retained.3canonical per-native
 503 restorations documented, first3FAIL and status-expectationFAIL preserved.
 Root owns integratedfullregression/cadence/actual/adoption; no helper428 rerun.
+
+2026-10-17 Root active-inspection window: issue66/comment6233142946,
+upgrade16c3fde4-81e7-4d19-98ae-2b3e58826aa3. Only live_preview.py inspection/
+existing lease verifier composition, new offline test and docs/journal. Unique
+live exact token/fullScope only, original typed errors/false/cancel preserved;
+explicit final drains any older observation then starts a new one. No completed
+permission cache, TTL/deadline/roles/schema change. First concurrent2 baseline
+1a67b5be and WIP post-output failure01600d04 retained. Existing helper reviews
+read-only; Root owns source and actual seven-case PG/real preview follow-up.
+
+2026-10-17 helper CURRENT ACTOR JOINED OBSERVATION reserved issue66/comment6232873051
+from exactRootbe557654161c8124b01547fe67efd3b63bc29c55/public255, branch
+codex/current-actor-joined-observation-20261017. Production scope only
+creation/service.py current_actor nonlocking fresh single SELECT; original
+locking path/order unchanged. Unique/RLS DDL0010/0012 inspected. New offline
+SQL/count/identity-map baseline and current_actor_pg source/collect only; Root
+reviews first focused diff before broad tests. Journal7f80fded; all older journals
+frozen. No actualDB/process/provider/serving/browser, schema/roles/TTL/cadence edits.
+
+2026-10-17 helper RETAINED ANCHOR JOIN reserved issue66/comment6234520268 from
+Root frozen90c5409157eeeb0d6b41d30395cbbe4aa8c11dd0/publicec8a9c032fe926d1d9722802d8eb26fa8bd02937,
+own codex/retained-anchor-join-20261017. Only production private_preview.py
+retained_anchor fresh Request/Receipt joined read and shared receipt-pin helper;
+both populate_existing, marker LEFT JOIN, no-marker selection unchanged. New
+focused offline/PG-source tests, docs/RETAINED_ANCHOR_OBSERVATION.md and unique
+own upgrade. Baseline before production edit; keep P/S, expected-pin-before-Node,
+entry/final guards/callback counts and typed refusal semantics. Root owns actual
+DB/QA/adoption/88/native/browser/providers and live_preview/studio/status files.
+Previous helper branches and all other journals remain frozen.
+
+Retained-anchor packet LOCAL VERIFIED / handoff: upgrade93afd2d3 baseline
+3FAIL17PASS1464d376; first20PASS9d6d1548 reviewed by Root. Final204PythonPASS/
+1explicit native-smoke deselection16.38sc2e26c5a; original smokeFAILadf4aa75
+and all intermediate failures retained, not proven pre-existing. Root's separate
+parent smokePASS is not imported as helper acceptance. FivePGcases collected only
+76a8a56c, no DB fixture. Only terminal/retained_anchor/new shared receipt-pin
+helper production AST changed; validation tail and all P/S/current/capture guard
+functions unchanged. Ruff5files/diff/pairedfreshness PASS; scoped commit/safety
+and coverage transferred to Root for actual integration/QA. Common recovery and
+Authority SQL fakes adapted without weakening assertions; continuity test file
+unchanged. No new edge-case/source expansion, dependency install or self-merge.
+
+Current-actor focused packet: original5FAIL19PASS1.66s05f91fcf retained; first24PASS
+1.10s5db6026b reviewed/approved by Root before related regression. Related140PASS
+10.09sa69dd443 (24newactor+85canonicalAuthority+31proof); legacyfakejoined-shape
+1ERROR7d6aaf20 retained then test-only SQL leaf adapted without stubbingactor.
+ActualPG11cases collected only974e2e3b; Root executes. Production+30/-0 in one
+function, original locking block unchanged. Newjournal7f80fded owns this packet.

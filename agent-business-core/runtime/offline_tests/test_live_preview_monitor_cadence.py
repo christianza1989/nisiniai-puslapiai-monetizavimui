@@ -13,6 +13,7 @@ from pinet_core.tasks.codex_transport import RunnerError
 
 @pytest.fixture
 def transport(monkeypatch):
+    monkeypatch.setattr(studio, 'monotonic', lambda: 0., raising=False)
     stopped = asyncio.Event()
     state = SimpleNamespace(intervals=[], stopped=0)
     class Stream:
@@ -68,6 +69,7 @@ async def test_invalid_interval_is_rejected_before_authorization_or_spawn(monkey
 
 
 async def test_fast_monitor_drains_inflight_callback_then_checks_final_authority_serially(monkeypatch):
+    monkeypatch.setattr(studio, 'monotonic', lambda: 0., raising=False)
     entered, release, eof = (asyncio.Event() for _ in range(3))
     state = SimpleNamespace(checks=0, active=0, maximum=0, stopped=0, events=[])
     class Output:

@@ -27,7 +27,7 @@ def git(tmp_path, monkeypatch):
         state.calls.append((str(kwargs["cwd"]), tuple(arguments)))
         if state.fail:
             raise subprocess.CalledProcessError(1, arguments, stderr="must never escape")
-        return state.head if arguments[1:] == ["rev-parse", "HEAD"] else state.dirty
+        return "# branch.oid "+state.head+"\0# branch.head main\0"+(state.dirty+"\0" if state.dirty else "")
     monkeypatch.setattr(subprocess, "check_output", raw)
     monkeypatch.setattr(adapter, "ROOT", repo)
     monkeypatch.setattr(adapter, "settings", lambda: SimpleNamespace(control_source_revision="a"*40))
@@ -43,7 +43,7 @@ async def test_repeated_source_checks_are_bounded_by_entry_and_fresh_exit_not_ca
     async with operation():
         for _ in range(100):
             assert adapter.source_current()
-    assert len(git.calls) == 4  # two fixed commands at first observation and again at normal exit
+    assert len(git.calls) == 2  # one fixed frame at first observation and again at normal exit
 
 
 @pytest.fixture
@@ -60,11 +60,11 @@ async def test_two_roots_are_fenced_fresh_and_next_operation_has_no_memory(sourc
             for _ in range(20):
                 assert source.git_source_observation(git.repo).head == "a"*40
                 assert source.git_source_observation(public).head == "a"*40
-        assert len(git.calls)-before == 8
+        assert len(git.calls)-before == 4
     git.calls.clear()
     source.git_source_observation(git.repo)
     source.git_source_observation(git.repo)
-    assert len(git.calls) == 4  # default unscoped behavior remains freshly observed
+    assert len(git.calls) == 2  # default unscoped behavior remains freshly observed
 
 
 @pytest.mark.parametrize("change", ["head", "dirty", "failure", "path"])
@@ -106,7 +106,7 @@ async def test_expected_revision_is_compared_on_every_existing_wrapper_call(sour
         assert adapter.source_current()
         cfg.control_source_revision = "b"*40
         assert not adapter.source_current()
-    assert len(git.calls) == 4
+    assert len(git.calls) == 2
 
 
 async def test_structured_child_and_to_thread_share_only_the_active_operation(source, git):
@@ -115,7 +115,7 @@ async def test_structured_child_and_to_thread_share_only_the_active_operation(so
         async def child():
             return await asyncio.to_thread(source.git_source_observation, git.repo)
         assert await asyncio.create_task(child()) == first
-    assert len(git.calls) == 4
+    assert len(git.calls) == 2
 
 
 async def test_explicit_nested_operation_is_always_fresh_and_restores_outer_context(source, git):
@@ -124,7 +124,7 @@ async def test_explicit_nested_operation_is_always_fresh_and_restores_outer_cont
         async with source.git_source_operation():
             source.git_source_observation(git.repo)
         source.git_source_observation(git.repo)
-    assert len(git.calls) == 8
+    assert len(git.calls) == 4
 
 
 async def test_concurrent_independent_operations_are_isolated(source, git):
@@ -139,7 +139,7 @@ async def test_concurrent_independent_operations_are_isolated(source, git):
                 admitted.set()
             await admitted.wait()
     await asyncio.gather(operation(), operation())
-    assert len(git.calls) == 8
+    assert len(git.calls) == 4
 
 
 @pytest.mark.parametrize("cancel", [False, True])
@@ -225,7 +225,7 @@ async def test_existing_source_wrappers_share_only_git_and_keep_file_hashes_fres
         for field in ("bridge_sha256", "verifier_sha256", "parser_sha256"):
             assert getattr(first, field) != getattr(second, field)
         assert second.execution_source_revision == "b"*40
-    assert len(git.calls) == 8
+    assert len(git.calls) == 4
 
 
 async def test_dirty_failure_is_not_a_reusable_result_and_is_safe_through_existing_wrapper(source, git):
@@ -239,14 +239,14 @@ async def test_dirty_failure_is_not_a_reusable_result_and_is_safe_through_existi
     before = len(git.calls)
     async with source.git_source_operation():
         assert adapter.source_current()
-    assert len(git.calls)-before == 4
+    assert len(git.calls)-before == 2
 
 
 async def test_simultaneous_thread_reads_do_not_repeat_the_entry_commands(source, git):
     async with source.git_source_operation():
         values = await asyncio.gather(*(asyncio.to_thread(source.git_source_observation, git.repo) for _ in range(20)))
         assert all(value == values[0] for value in values)
-    assert len(git.calls) == 4
+    assert len(git.calls) == 2
 
 
 async def test_cancellation_during_exit_fence_closes_inherited_context_without_authorizing(source, git, monkeypatch):
@@ -257,13 +257,13 @@ async def test_cancellation_during_exit_fence_closes_inherited_context_without_a
     def delayed(*args, **kwargs):
         nonlocal calls
         calls += 1
-        if calls == 3:  # exit revalidation's first fresh command
+        if calls == 2:  # exit revalidation's fresh frame
             entered.set()
             assert proceed.wait(3)
         try:
             return raw(*args, **kwargs)
         finally:
-            if calls >= 4:
+            if calls >= 2:
                 finished.set()
     monkeypatch.setattr(subprocess, "check_output", delayed)
     async def operation():

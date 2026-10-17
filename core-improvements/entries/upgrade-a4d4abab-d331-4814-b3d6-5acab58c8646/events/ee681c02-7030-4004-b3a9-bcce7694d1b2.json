@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original f53 baseline1FAIL14PASS2.82s64264b3e79892ca5f4bba1088ab633ac6e6df9c33812d44c9978b53e410bf2c7 preserved. First focused35PASS6.11s281a5c0123823eeaab7ef08852baeb6ee781353cbe96bf4fc8ab3a657a612fd4. Corrected source-related harness PYTHONPATH after preserved collection3ERRORae08c54f10c973b88610b68c38c86c8b4974fb1fa9278fe50172ac6519e55bc7 and327PASS1missing-script-pathFAILf510ce17794a6c051404855e086f4d04f4c5ec9b2117e38d1f9c27aabd529535; no source/test assertion relaxed for those environment errors. Final328PASS22.80s8eb76e7d191e515b8dbbc7a2f03c9e1e923dea5b4b449f0dfbab5d169b6d93ac. Exactly one Git frame per fresh repository observation; strictNUL/HEAD/metadata/dirty refusal, unchanged identity/cancel/freshfinal/sourcehash/authority/TTL. Actual new-source SQL/renderer stability/adoption remain pending; prior generic intake failure and heartbeat failures retained.",
+  "checks": [
+    {
+      "command": "python -m pytest nine source/authority/actor/live-preview/customer-text modules with runtime src/tests/offline_tests/scripts on PYTHONPATH -q --tb=short",
+      "result": "PASS",
+      "evidence": "328PASS22.80s; logSHA2568eb76e7d191e515b8dbbc7a2f03c9e1e923dea5b4b449f0dfbab5d169b6d93ac; includes4actualownedinertGitcases, noSQL/providers."
+    },
+    {
+      "command": "python -m ruff check source_observation.py test_source_observation.py test_source_status_frame.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Threefiles clean; no deadline/schema/roles/activation/provider change."
+    }
+  ],
+  "eventId": "ee681c02-7030-4004-b3a9-bcce7694d1b2",
+  "sequence": 2,
+  "at": "2026-10-17T12:13:56.873Z"
+}

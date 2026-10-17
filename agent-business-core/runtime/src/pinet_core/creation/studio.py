@@ -5,6 +5,7 @@ import os
 import re
 import shutil
 from pathlib import Path
+from time import monotonic
 from uuid import UUID
 
 from sqlalchemy import select
@@ -97,10 +98,20 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
 
     async def monitor():
         while not finishing.is_set():
+            started = monotonic() if authorization_interval < 1 else None
             if not await still_authorized():
                 raise RunnerError("authorization_revoked")
+            delay = authorization_interval
+            if started is not None:
+                # Fixed fast callers pace serial starts, not completion plus
+                # an idle gap. A slow check never queues catch-up work or
+                # overlaps another check; yield before the next fresh call.
+                delay = max(0., delay - (monotonic() - started))
+                if not delay:
+                    await asyncio.sleep(0)
+                    continue
             try:
-                await asyncio.wait_for(finishing.wait(), authorization_interval)
+                await asyncio.wait_for(finishing.wait(), delay)
             except TimeoutError:
                 pass
 

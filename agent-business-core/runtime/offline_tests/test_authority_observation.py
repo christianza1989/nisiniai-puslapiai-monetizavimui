@@ -10,6 +10,8 @@ from types import SimpleNamespace as Row
 from uuid import uuid4
 
 import pytest
+from sqlalchemy.sql import visitors
+from sqlalchemy.sql.elements import BinaryExpression, BindParameter
 from test_customer_creations import draft
 
 from pinet_core.business_discovery import service as discovery
@@ -178,6 +180,51 @@ async def graph(monkeypatch):
             f.sql["refresh"] += 1
         async def execute(self, statement, *args, **kwargs):
             f.sql["execute"] += 1
+            columns = getattr(statement, "column_descriptions", ())
+            if columns and columns[0]["entity"] is User:
+                # Execute the joined SQL leaf, not a stub of current_actor. Read
+                # literal IDs/env from its actual predicates and model fresh RLS.
+                bound = {(part.left.table.name, part.left.name): part.right.value
+                    for part in visitors.iterate(statement) if isinstance(part, BinaryExpression)
+                    and isinstance(part.right, BindParameter) and getattr(part.left, "table", None) is not None}
+                f.sql["actor_join"] += 1
+                f.sql["Session"] += 1  # Fresh Session columns observed in this one SQL statement.
+                user = Row(id=f.u.user_id, environment_id=cfg.environment, enabled=f.enabled)
+                result = None
+                if bound.get((User.__tablename__, "id")) == user.id:
+                    current = f.sessions.get(bound.get((Session.__tablename__, "id")))
+                    if current and (current.user_id != user.id or current.environment_id != bound.get(
+                            (Session.__tablename__, "environment_id"))):
+                        current = None
+                    account = Row(id="synthetic-account", user_id=user.id,
+                        environment_id=cfg.environment, verified_at=utcnow()) if f.verified else None
+                    result = [user, current, account]
+                    if any(column["entity"] is Portfolio for column in columns):
+                        portfolio = Row(id=f.creation.portfolio_id, organization_id=f.creation.organization_id,
+                            environment_id=cfg.environment) if f.member and bound.get(
+                                (Portfolio.__tablename__, "id")) == f.creation.portfolio_id else None
+                        result.extend([portfolio, "synthetic-member" if portfolio and f.member else None])
+                assert statement.get_execution_options()["populate_existing"] is True
+                return Row(one_or_none=lambda: tuple(result) if result is not None else None)
+            if columns and [column["entity"] for column in columns] == [PrivateIntakeRequest, PrivateIntakeReceipt]:
+                # New atomic SQL leaf only; all canonical P/S/anchor validators
+                # and the graph's original mutation/assertion gates stay real.
+                bound = {(part.left.table.name, part.left.name): part.right.value
+                    for part in visitors.iterate(statement) if isinstance(part, BinaryExpression)
+                    and isinstance(part.right, BindParameter) and getattr(part.left, "table", None) is not None}
+                table = PrivateIntakeRequest.__tablename__
+                rows = {row.id: row for key in ("private", "anchor") if (row := f.rows.get(key)) is not None}
+                receipts = {row.recovery_id: row for key in ("receipt", "anchor_receipt")
+                    if (row := f.rows.get(key)) is not None}
+                if (table, "id") in bound:
+                    row = rows.get(bound[table, "id"])
+                else:
+                    row = next((row for row in rows.values() if row.creation_id == bound[table, "creation_id"]
+                        and row.revision_id == bound[table, "revision_id"] and "continuity" not in row.context
+                        and row.id in receipts and receipts[row.id].state == "private_draft_imported"), None)
+                f.sql["anchor_join"] += 1
+                assert statement.get_execution_options()["populate_existing"] is True
+                return Row(one_or_none=lambda: (row, receipts.get(row.id)) if row is not None else None)
             return Row(one=lambda: (f.u.user_id, cfg.environment))
     f.tx = Tx()
     @asynccontextmanager

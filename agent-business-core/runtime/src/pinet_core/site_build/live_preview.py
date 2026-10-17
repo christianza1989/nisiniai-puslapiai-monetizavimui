@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from functools import wraps
 from uuid import UUID, uuid4
+from weakref import WeakSet
 
 from ..config import settings
 from ..control.routes import ControlError, scope, token_hash
@@ -109,6 +110,7 @@ class Lease:
     proof: object = None
     entered: bool = False
     auth_task: object = None
+    pulse_tasks: object = field(default_factory=WeakSet)
 
 
 class Service:
@@ -125,11 +127,25 @@ class Service:
     async def inspect(self, authority, expected):
         node, _, artifacts, environment = studio.configuration()
         problem = None
+        # A native read of an already owned scope must not compete with that
+        # lease's running authorization. Select only one exact live binding;
+        # standalone, foreign or ambiguous observations stay independent.
+        token = getattr(authority, "token", None)
+        matches = [lease for lease in self.leases.values() if token and self.current(lease)
+            and lease.task is not None and not lease.task.done() and lease.view["state"] in ACTIVE_STATES
+            and lease.authority.token == token and lease.scope == expected]
+        lease = matches[0] if len(matches) == 1 else None
+
+        async def verified(*, fresh=False):
+            if lease is not None:
+                return await self.verify_lease(lease, fresh=fresh)
+            await authority.verify(expected)
+            return True
+
         async def permitted():
             nonlocal problem
             try:
-                await authority.verify(expected)
-                return True
+                return await verified()
             except ControlError as error:
                 problem = error
                 return False
@@ -139,7 +155,8 @@ class Service:
             if problem is not None:
                 raise problem
             raise ControlError(409 if error.code == "authorization_revoked" else 503, error.code) from None
-        await authority.verify(expected)
+        if not await verified(fresh=True):
+            raise ControlError(409, "authorization_revoked")
         if (not isinstance(value, dict)
                 or set(value) != {"version", "scope_sha256", "site_context_sha256", "can_start", "blocked_reasons"}
                 or value["version"] != "customer-live-preview-inspection.v1" or value["scope_sha256"] != expected.fingerprint()
@@ -245,6 +262,18 @@ class Service:
         return True
 
     async def permitted(self, lease):
+        try:
+            return await self.verify_lease(lease)
+        except ControlError:
+            return False
+
+    async def verify_lease(self, lease, *, fresh=False):
+        if fresh and lease.auth_task is not None and not lease.auth_task.done():
+            # The explicit post-output fence cannot use an observation that
+            # started before output. Drain it serially, then require another
+            # fresh observation; never run a competing SQL/native graph.
+            if not await self.verify_lease(lease):
+                return False
         if not self.current(lease):
             return False
         # Share only a currently executing observation of this exact immutable
@@ -261,12 +290,17 @@ class Service:
             return False
         except ControlError as error:
             self.stop(lease, "revoked", error.code, cancel=False)
-            return False
+            raise
         # Close, expiry or shutdown may have happened while authority was being
         # read. They cannot be undone by the late completion of that read.
         if not self.current(lease):
             return False
-        self.ledger().heartbeat(lease.record, expires_ms=int((now() + timedelta(seconds=3)).timestamp() * 1000))
+        # Waiters share only the in-flight check. After their own current()
+        # fence, publish once for that exact successful task, synchronously.
+        # Mark only after the durable write succeeds; no detached renewal.
+        if check not in lease.pulse_tasks:
+            self.ledger().heartbeat(lease.record, expires_ms=int((now() + timedelta(seconds=3)).timestamp() * 1000))
+            lease.pulse_tasks.add(check)
         return True
 
     async def drive(self, lease):

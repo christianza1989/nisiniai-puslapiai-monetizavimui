@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Preserve Source948 baseline4FAIL3PASS9821fb91 and intermediate last-marker1FAIL7597abf6. Broader final-source run returned1FAIL251PASS1deselected25.64s, logSHA256b1bb24138fdc9722346d6e15705abec5e188e7fd0e7b52bdd55c9b6e69716220: unchanged default-path inert-child250ms final-authorization fixture did not reach its third callback before deadline. Do not call this whole run PASS. No test/deadline changed. Separate unchanged cleanup module then8PASS1deselected7.93s d0247d86a55d19ff2749d6e5809ada815136443cb5425b8993149278602a953e. Actual SQL case is explicitly deferred to isolated QA. Source948 real start503/heartbeat failures remain; narrow code verification is separate from runtime acceptance.",
+  "eventId": "f89fba9c-1488-4cb9-bca2-ba834dc914b9",
+  "sequence": 2,
+  "at": "2026-10-17T13:19:57.677Z"
+}

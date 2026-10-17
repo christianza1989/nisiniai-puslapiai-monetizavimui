@@ -41,3 +41,31 @@ The final combined cadence/lease/inert-child run passed 70 tests in 20.04 second
 with the one actual SQL cleanup test explicitly deselected. This includes rejection
 of arbitrarily large integer intervals without numeric conversion exceptions.
 Log SHA256: `234912fcd6493da89be3fcfd95773bae94a3b3410ea66fc871409e6fcce0d6b5`.
+
+## Serial start pacing and publication identity
+
+The fixed fast caller now measures each callback with the monotonic clock and
+subtracts its elapsed time from the next wait. A callback taking at least its
+interval yields once and starts the next serial check without another idle gap.
+It never queues missed ticks or overlaps callbacks. The original one-second
+default remains completion-relative. The existing validation, finishing check,
+EOF drain, fresh final check, cancellation cleanup and deadlines are retained.
+
+Waiters joining one in-flight lease authorization publish its durable heartbeat
+only once after their own current-lease fence. A per-lease weak set records the
+exact successfully published task identity, after the synchronous write succeeds.
+An old suspended waiter keeps its task alive, so a newer check cannot evict its
+publication marker. Failed writes can be retried by another live waiter; if all
+waiters cancel, the shielded read cannot independently publish. Each new operation
+still replaces a completed task with a fresh authorization read. This set stores
+publication identity, not a reusable permission result.
+
+The unmodified948 source failed four of the first seven new cases (three clock
+gaps and sixteen writes for one shared check). An intermediate single-last-task
+marker then failed a gated A/B/A continuation case: the old A waiter republished
+after B. Both failures are preserved. The weak-set version passed88 focused cases
+in14.50s, logSHA256
+`eb0bc3d39190503e4c6c63096ef6f4f232fb60454304e9a7e76dcb4c8d445347`.
+Independent read-only review found the reported marker issue addressed, with no
+new actionable P0-P2 in these two production hunks. This is source verification;
+actual adoption and repeatable native lifecycle acceptance remain separate.

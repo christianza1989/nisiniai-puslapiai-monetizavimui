@@ -94,13 +94,24 @@ lookups versus prior477. Source trace suffix3a2a40065582428a8acfb1e9d3536866.
 These are separate real measurements under variable PC load, not a guaranteed
 speedup or evidence that the3s heartbeat is robust.
 
-Existing authorized helper is preparing a READ-ONLY plan for one server-owned
-observation within a full Authority operation, removing recursive accepted-proof/
-private-intake/S6/Foundation reads while retaining fresh entry/final mutable,
-selector, historical-Session, native/media and Git fences. No implementation of
-that larger plan is authorized until Root reviews its exact scope. No data,
-permission, completed result or proof may survive into another callback/heartbeat.
-Do not increase the heartbeat lifetime to hide the failure.
+The reviewed ten-runtime-path observation packet is now source-integrated from
+helper60e7fb904e0d7c53b8a8b6740d56093d6a6b62aa, together with Root's separate
+cadence repair3b14fc008fb46f17ef72a36fbf6575f2539a0235. Helper's source-only
+428-test result is historical, not stable runtime acceptance. A later gated
+review reproduced three late-P Session failures after final before_node; helper
+owns that narrow follow-up in authority_observation.py/test/docs/new journal
+39da45c8-3fef-447f-976c-ac2ccf432011. Actual adoption is held until its final
+scoped pin, integrated checks and isolated PostgreSQL acceptance.
+
+Root cadence upgradec3cf73e6-9aeb-4596-aedc-50594f4802f3 keeps the existing
+one-second default and selects0.2s only for the fixed serve caller, with strict
+numeric0.05–1s bounds before authorization/spawn. Final combined70PASS20.04s,
+one actualSQL test deselected, includes inert-child EOF/timeout/cancellation
+cleanup; log234912fcd6493da89be3fcfd95773bae94a3b3410ea66fc871409e6fcce0d6b5.
+The original caller failure and intermediate fixture failure remain retained.
+No separate heartbeat timer, completed permission cache, callback overlap, TTL
+or deadline relaxation. No permission, completed result or accepted proof may
+survive into another callback/heartbeat. Serving still remains cleand904.
 
 Active ready inspection also bypasses the lease's coalescer, but no HTTP poll ran
 between the second ready response and its failure; changing that path alone

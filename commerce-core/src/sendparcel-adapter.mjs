@@ -1,6 +1,6 @@
 import { CommerceError, requireValue, integer, identifier, digest } from './validation.mjs';
 
-// V1 REST API: official OpenAPI2.0.1 plus provider IT clarification 2026-10-14.
+// V1 REST API: official OpenAPI2.0.1 plus provider IT clarification 2026-10-16.
 // The v2 JWT and quote IDs do not belong to this integration.
 const STAGING = 'https://staging.sendparcel.com';
 export const SENDPARCEL_PRODUCTION = 'https://api.sendparcel.com';
@@ -70,8 +70,7 @@ export class SendparcelAdapter {
     const paths = this.allowedPaths();
     requireValue(paths[path], 'carrier_operation_not_admitted', 403);
     const perform = () => this.performRequest(path, body, query, maxBytes, timeoutMs);
-    // /quotes is the sole exception to the provider's one-request-per-second rule.
-    if (path === '/rest-api/quotes') return perform();
+    // The latest provider policy covers every REST path, including quotes.
     const scope = await digest(this.baseUrl + '\n' + this.apiPassword);
     return this.rateLimiter.run(scope, perform);
   }

@@ -133,6 +133,7 @@ def event_view(event, row):
         sequence=event.sequence, author_type=event.author_type, author_user_id=event.author_user_id,
         participant_id=event.participant_id, attempt_id=event.attempt_id, kind=event.kind,
         native_episode_task_id=getattr(event, "native_episode_task_id", None),
+        native_workflow_intent_id=getattr(event, "native_workflow_intent_id", None),
         reply_to_event_id=event.reply_to_event_id, content=event.content, content_sha256=event.content_sha256,
         source_revision=event.source_revision, created_at=event.created_at)
 
@@ -164,7 +165,7 @@ async def turn_view(tx, task, row):
 
 
 async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id=None, reply=None, attempt=None,
-        native_episode_task_id=None):
+        native_episode_task_id=None, native_workflow_intent_id=None):
     if thread.event_sequence >= 2147483647:
         raise ControlError(409, "topic_capacity_reached")
     thread.event_sequence += 1
@@ -173,6 +174,7 @@ async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id
         author_user_id=row.user_id if author == "user" else None,
         participant_id=None if author == "user" else participant_id(row, author), attempt_id=attempt,
         native_episode_task_id=native_episode_task_id,
+        native_workflow_intent_id=native_workflow_intent_id,
         kind=kind, reply_to_event_id=reply, content=content,
         content_sha256=hashlib.sha256(content.encode()).hexdigest(), source_revision=settings().control_source_revision,
         **binding(row))
@@ -181,10 +183,12 @@ async def add_event(tx, row, thread, task_id, author, kind, content, *, event_id
     return event
 
 
-async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None, episode_intent=None):
+async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None, episode_intent=None,
+        workflow=False, continuation=None):
     try:
         async with tx.begin_nested():
-            return await _send(tx, session, portfolio_id, topic_id, value, preparation=preparation, episode_intent=episode_intent)
+            return await _send(tx, session, portfolio_id, topic_id, value, preparation=preparation,
+                episode_intent=episode_intent, workflow=workflow, continuation=continuation)
     except IntegrityError as error:
         queue, seen = [error], set()
         while queue:
@@ -199,13 +203,17 @@ async def send(tx, session, portfolio_id, topic_id, value, *, preparation=None, 
         raise
 
 
-def request_fingerprint(row, value, *, preparation=None, episode_request=None):
+def request_fingerprint(row, value, *, preparation=None, episode_request=None, workflow=False, continuation=None):
     material = {"kind": KIND, "topic_id": row.id, "binding": binding(row),
         "request": value.model_dump(mode="json", exclude={"idempotency_key"})}
     if preparation is not None:
         material["agent_preparation"] = {"creation_id": str(preparation.creation_id), "purpose": preparation.purpose}
     if episode_request is not None:
         material["agent_episode"] = episode_request.model_dump(mode="json", exclude={"idempotency_key"})
+    if workflow:
+        material["agent_workflow"] = "workspace-agent-workflow.v1"
+    if continuation is not None:
+        material["workflow_continuation"] = continuation.id
     return digest(material)
 
 
@@ -245,14 +253,20 @@ async def send_episode(tx, session, portfolio_id, topic_id, request):
             503, "agent_episode_unavailable") from None
 
 
-async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None, episode_intent=None):
+async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None, episode_intent=None,
+        workflow=False, continuation=None):
     row = await topic(tx, session, portfolio_id, topic_id)
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
         {"k": "chat-admission:"+row.environment_id+":"+row.user_id})
-    if preparation is not None and episode_intent is not None:
+    if (preparation is not None and episode_intent is not None
+            or workflow and (preparation is None or continuation is not None)
+            or continuation is not None and (episode_intent is None or preparation is not None)):
         raise ControlError(400, "invalid_request")
     fingerprint = request_fingerprint(row, value, preparation=preparation,
-        episode_request=episode_intent[0] if episode_intent else None)
+        episode_request=episode_intent[0] if episode_intent else None, workflow=workflow, continuation=continuation)
+    if continuation is not None:
+        from .workflow import assert_continuation
+        await assert_continuation(tx, continuation, session, row, episode_intent[1])
     old = await retained(tx, session, portfolio_id, topic_id, row, value, fingerprint)
     if old is not None:
         return old
@@ -280,21 +294,25 @@ async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None,
     if reply and not await tx.scalar(select(TeamEvent.id).where(TeamEvent.id == reply, TeamEvent.team_thread_id == thread.id)):
         raise ControlError(404, "not_found")
     native.last_sequence += 1
-    task = Task(id=new_id(), business_id=row.business_id, organization_id=row.organization_id,
+    task = Task(id=continuation.planned_child_task_id if continuation is not None else new_id(),
+        business_id=row.business_id, organization_id=row.organization_id,
         user_id=row.user_id, environment_id=row.environment_id, thread_id=native.id, session_id=session.id,
         sequence=native.last_sequence, idempotency_key=str(value.idempotency_key), fingerprint=fingerprint,
         message=value.content, kind=KIND, source_revision=settings().control_source_revision,
         status="queued", event_sequence=0)
     tx.add(task)
     await tx.flush()
-    owner_id = new_id()
+    owner_id = continuation.origin_event_id if continuation is not None else new_id()
     tx.add(TeamTurn(id=task.id, team_thread_id=thread.id, topic_id=row.id, task_thread_id=native.id, business_id=row.business_id,
         task_kind=KIND, owner_event_id=owner_id, roster_sha256=roster_hash(roster_items(row, admitted=True)),
         agent_creation_id=str(preparation.creation_id) if preparation is not None else None,
         agent_purpose=preparation.purpose if preparation is not None else None,
-        deadline=utcnow()+timedelta(hours=24), **binding(row)))
+        deadline=continuation.deadline if continuation is not None else utcnow()+timedelta(hours=24), **binding(row)))
     await tx.flush()
-    event = await add_event(tx, row, thread, task.id, "user", "owner_message", value.content, event_id=owner_id, reply=reply)
+    event = await add_event(tx, row, thread, task.id,
+        "coordinator" if continuation is not None else "user",
+        "assignment" if continuation is not None else "owner_message", value.content, event_id=owner_id, reply=reply,
+        native_workflow_intent_id=continuation.id if continuation is not None else None)
     await append_event(tx, task)
     if episode_plan is not None:
         from .calibration_budget import allocate
@@ -312,6 +330,10 @@ async def _send(tx, session, portfolio_id, topic_id, value, *, preparation=None,
         await capture(tx, session, row, preparation.creation_id, source=task.source_revision)
     if episode_intent:
         episode.capture_matches(episode_intent[1], session, row, episode_intent[0])
+    if continuation is not None:
+        await assert_continuation(tx, continuation, session, row, episode_intent[1])
+        # Internal child receipt is deliberately NOT Accepted's human-input DTO.
+        return {"turn": await turn_view(tx, task, row), "event": event_view(event, row)}
     return topics.project(Accepted, turn=await turn_view(tx, task, row), event=event_view(event, row))
 
 
@@ -383,8 +405,13 @@ async def task_scope(tx, task):
     if turn.roster_sha256 != roster_hash(roster_items(row, admitted=True)):
         raise ControlError(403, "authorization_revoked")
     owner = await tx.get(TeamEvent, turn.owner_event_id, populate_existing=True)
-    if (not owner or owner.task_id != task.id or owner.author_type != "user" or owner.kind != "owner_message"
-            or owner.content != task.message or owner.source_revision != task.source_revision):
+    if (not owner or owner.task_id != task.id or owner.content != task.message
+            or owner.source_revision != task.source_revision):
+        raise ControlError(503, "source_unavailable")
+    if getattr(owner, "native_workflow_intent_id", None) is not None:
+        from .workflow import verify_child
+        await verify_child(tx, task, turn, owner)
+    elif owner.author_type != "user" or owner.kind != "owner_message":
         raise ControlError(503, "source_unavailable")
     tx.info.setdefault("workspace_team_deadlines", {})[task.id] = min(turn.deadline, session.expires_at)
     if turn.agent_creation_id is not None:

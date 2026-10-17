@@ -28,6 +28,15 @@ browser-driven dispatch, permission cache, old-note dispatch or calibration PASS
 Root owns all actual DB/migration/adoption/UI; helper only source/offline tests
 and PG collection. Root confirmed0045 free; serving/139/140 untouched.
 
+Protocol checkpoint0b182dc pushed separately (13wirePASS, exact Git-byte JSON
+deb7e964); final source adds native outbox/worker join without changing wire.
+Final pure regression295PASS2.66s a5ebaaf91d79b378604dab304eae4a62ed03736aa8555317ec71155a809b8794;
+12PGcases COLLECTED ONLY1.80s6370e50be2a9acf870cdc58de7532441b17d284c92d34fa9575c03f866bd0422.
+Expected88→89tables is source expectation, not actualDB proof. Root owns migration
+and runtime gates; hard process-death/DBrestart/running-provider cancel and actual
+completion/cancel interleaving remain unobserved. Parent results, source/session/
+Foundation/Profile/native budget/cancel/replay boundaries are preserved.
+
 ## Streaming CLI pin checks — helper 2026-10-17
 
 Root-authorized issue66/comment6240204250, own codex/streaming-cli-pins-20261017

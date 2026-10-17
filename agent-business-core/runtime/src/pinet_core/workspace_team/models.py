@@ -106,12 +106,16 @@ class TeamEvent(Owned, Base):
     participant_id: Mapped[str | None] = mapped_column(String, nullable=True)
     attempt_id: Mapped[str | None] = mapped_column(String, nullable=True)
     native_episode_task_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    native_workflow_intent_id: Mapped[str | None] = mapped_column(String, nullable=True)
     kind: Mapped[str] = mapped_column(String)
     reply_to_event_id: Mapped[str | None] = mapped_column(String, nullable=True)
     content: Mapped[str] = mapped_column(String)
     content_sha256: Mapped[str] = mapped_column(String)
     source_revision: Mapped[str] = mapped_column(String)
     __table_args__ = (UniqueConstraint(*BINDING), UniqueConstraint("team_thread_id", "sequence"),
+        ForeignKeyConstraint(["native_workflow_intent_id", *OWNER],
+            [f"control_workspace_agent_workflows.{c}" for c in BINDING], ondelete="RESTRICT",
+            name="fk_workspace_workflow_origin"),
         ForeignKeyConstraint(["native_episode_task_id"], ["control_tasks.id"], ondelete="RESTRICT",
             name="fk_workspace_native_episode_task"),
         UniqueConstraint("attempt_id"),

@@ -59,11 +59,15 @@ def native_mutation_guard(tx, session, identity, request, *, still_authorized=No
 
     async def guard(*, lock=False):
         nonlocal original_proof
+        from ..site_build.authority_observation import active
+        observed = active(tx)
+        if observed and lock:
+            raise ControlError(503, "source_unavailable")  # Never share an admission observation.
         enabled()
         if (settings().control_source_revision != source_pin
                 or not await asyncio.to_thread(source_current)):
             raise ControlError(503, "source_unavailable")
-        creation = await owned(tx, session, identity, lock=lock)
+        creation = await observed.owned(session, identity) if observed else await owned(tx, session, identity, lock=lock)
         await tx.refresh(creation)
         if (creation.status != "draft_ready" or creation.active_job_id
                 or creation.current_revision != request.accepted_revision or await archived(tx, creation)):

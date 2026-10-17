@@ -75,6 +75,10 @@ def parse_node(value, creation, proof):
 
 async def read_current_node(tx, session, creation, requested_revision=None, *, command="status", page_id=None,
                             asset_id=None, expected_revision=None):
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    if observed and (command != "status" or page_id is not None or asset_id is not None or expected_revision is not None):
+        raise ControlError(503, "source_unavailable")
     enabled()
     if requested_revision is not None and requested_revision != creation.current_revision:
         raise ControlError(409, "stale_revision")
@@ -83,6 +87,8 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     if command not in {"status", "read-page", "read-media"}:
         raise ControlError(503, "content_completion_unavailable")
     proof = await accepted_proof(tx, creation)
+    if observed:
+        await observed.before_node(session, creation, proof)
     node, _, artifacts, environment = studio.configuration()
     script = ROOT / "content-studio/scripts/customer-content-workflow.mjs"
     if not script.is_file():
@@ -105,6 +111,13 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
         payload["pageId"] = page_id
     if command == "read-media":
         payload.update(assetId=asset_id, expectedRevisionHash=expected_revision)
+    retained = observed.node_result(session, creation, proof) if observed else None
+    if retained is not None:
+        # This is native output from THIS invocation, not permission or SQL data.
+        # The final SQL graph and fresh post-output authorization still run.
+        if not await authorized():
+            raise ControlError(503, "content_completion_unavailable")
+        return proof, retained
     try:
         kwargs = {"output_limit": 20 * 1048576} if command == "read-media" else {}
         value = await studio._execute([node, script], payload, environment, authorized, 20, **kwargs)
@@ -117,6 +130,8 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     # Final ownership/session/source read, after subprocess output.
     if not await authorized():
         raise ControlError(503, "content_completion_unavailable")
+    if observed:
+        observed.record_node(session, creation, proof, value)
     return proof, value
 
 

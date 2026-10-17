@@ -26,8 +26,16 @@ def site_id(creation_id):
 
 async def accepted_proof(tx, creation):
     """Exact accepted proof plus the maintained selected native intake observation."""
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    return await observed.proof(creation, _accepted_proof) if observed else await _accepted_proof(tx, creation)
+
+
+async def _accepted_proof(tx, creation):
     from ..creation.accepted_material import accepted_material
-    _, job, proof = await accepted_material(tx, creation)
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    _, job, proof = await observed.material(creation) if observed else await accepted_material(tx, creation)
     try:
         pinned = (proof["revision_id"], proof["accepted_revision"], proof["candidate_sha256"], proof["accepted_source_revision"], job.id)
         observed, native_host, intake, revision_id = await studio.intake_observation(tx, creation)

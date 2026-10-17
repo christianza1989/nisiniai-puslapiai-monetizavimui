@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root late-S boundary review reproduced3FAIL79deselected13.89s on current source before final freeze: canonical post-output actor callback gate revokes/expires S or advances only the clock after final before_node S6 validation, before final self.native. continuation.current selects the now revoked/expired S, but phase actor facts skipped current_actor and Authority wrongly succeeds. Baseline late-s-actor-baseline.log SHA2560f08a526c085f70c0f5f2e6d03a5bbbab560bcaf48bcf1df035110611da293b4 retained. Earlier389PASS remains history, not completeness. Root directs Phase.actor always call canonical current_actor, retaining material8→2/selector5→2 grouping and post-await lifetime checks.",
+  "eventId": "050fd3d3-c894-4fa8-81cf-0b99e32ba5e1",
+  "sequence": 6,
+  "at": "2026-10-17T09:59:43.196Z"
+}

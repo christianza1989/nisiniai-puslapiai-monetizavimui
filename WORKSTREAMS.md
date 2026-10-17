@@ -1241,3 +1241,36 @@ Original4FAIL26PASS count/coherence and revision-IDFAIL preserved; final197pure/
 offlinePASS1.93s,1actualprocess test deselected,1existing UUIDwarning. No Rootfiles/
 journals/DB/Nodeproducer/server/provider/currentcase/serving/adoption or guardlimit/
 historicalfingerprint changes. Root reviews completepin and owns actual QA/adoption.
+
+2026-10-17 helper AUTHORITY OBSERVATION RESERVED issue66 after explicit Root plan
+approval, clean d904b08c6b2dcef5a4c83eadacb188063e2277a4/public255, paired freshness
+PASS. Branch codex/authority-observation-20261017; upgrade93226de5 owns exactly NEW
+site_build/authority_observation.py, site_build/{live_preview,foundation,continuation}.py,
+creation/{media,private_preview,studio}.py, creation_registration/service.py,
+content_completion/service.py. One call-local entry/final graph, canonical validators,
+distinct U/P/S Sessions and fresh native callbacks/final Git fence. First canonical
+fakeTx counters/mutation baseline before source changes; first focused diff to Root
+before broad regression. No actual DB/provider/process/serving/browser/Root files,
+new sessions, schema/wire/model/role/quota/deadline edits; prior journals frozen.
+
+Root-approved tenth source extension2026-10-17 issue66/comment6232499276: only
+business_discovery/service.py approved_build_context existing select/get freshness.
+Separate upgrade-fd868d05-f4d3-449b-b2e8-510855bf5207;93226de5 record unchanged.
+Identity-map fakeTx1FAIL baseline1588c826 retained; no eleventh source, canonical
+validators/signatures/RLS/error mapping/other discovery functions unchanged.
+
+Authority observation final source verification:389 pure/offline PASS24.35s,
+one actual-process test explicitly deselected, one existing invalid-UUID serializer
+warning; separate36 approved-context PASS4.05s;12Python Ruff/diff PASS. Canonical
+private+S6 counters8material/5selector→2/2 with1mocked native status output per
+Authority invocation. Lifetime, identity-map and first entry-S6 FAIL retained;
+three Root-approved late-private503→409 classifications documented explicitly.
+Upgrades93226de5 andfd868d05 transfer only at complete scoped handoff. Root owns
+actual DB/native/HTTP/browser acceptance, cadence follow-up and serving adoption.
+
+Late-S review retained3FAIL0f08a526 (revoke/expiry/clock-only after final S6
+validation). Actor facts removed completely; Phase.actor always calls canonical
+current_actor and rechecks lifetime/identity after await. Same3PASS6a6757d5.
+Final combined428PASS67.15s (1actual-process deselected,1existing UUIDwarning),
+hashb08aa6a62e62bbed66938ad49803c59291f3b5a71239842d87874b3528bf02f6;
+12PythonRuff/diffPASS. Historical389PASS is not completeness; no Source11.

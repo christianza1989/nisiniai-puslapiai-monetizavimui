@@ -111,14 +111,24 @@ def result(row, receipt):
 
 
 async def latest(tx, creation):
-    return await tx.scalar(select(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == creation.id)
+    row = await tx.scalar(select(PrivateIntakeRequest).where(PrivateIntakeRequest.creation_id == creation.id)
         .order_by(PrivateIntakeRequest.created_at.desc(), PrivateIntakeRequest.id.desc()).limit(1)
         .execution_options(populate_existing=True))
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    if observed:
+        observed.pin("private_latest", None if row is None else [row.id, row.context_sha256, row.session_id])
+    return row
 
 
 async def terminal(tx, row):
-    return await tx.scalar(select(PrivateIntakeReceipt).where(PrivateIntakeReceipt.recovery_id == row.id)
+    receipt = await tx.scalar(select(PrivateIntakeReceipt).where(PrivateIntakeReceipt.recovery_id == row.id)
         .execution_options(populate_existing=True))
+    from ..site_build.authority_observation import active
+    observed = active(tx)
+    if observed:
+        observed.pin("private_receipt:"+row.id, None if receipt is None else [receipt.id, receipt.intake_sha256, receipt.state])
+    return receipt
 
 
 async def retained_anchor(tx, creation, captured, marker=None):
@@ -175,6 +185,10 @@ async def retained_anchor(tx, creation, captured, marker=None):
     continuity.checked_marker(observed)
     if marker is not None and observed != marker:
         raise ControlError(409, "private_intake_anchor_stale")
+    from ..site_build.authority_observation import active
+    phase = active(tx, creation)
+    if phase:
+        phase.pin("private_anchor", observed)
     return observed, intake
 
 
@@ -183,19 +197,21 @@ async def capture(tx, session, creation, *, admission=False):
     from ..business_discovery.service import approved_build_context
     from ..content_work.models import GuideJob
     from ..content_work.service import archived
-    await current_actor(tx, session, creation.portfolio_id)
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    await observed.actor(session, creation) if observed else await current_actor(tx, session, creation.portfolio_id)
     await tx.refresh(creation)
     if (creation.status != "draft_ready" or creation.active_job_id or creation.canonical_host is not None
             or await archived(tx, creation) or admission and await tx.scalar(select(GuideJob.id).where(
                 GuideJob.creation_id == creation.id, GuideJob.status.in_(ACTIVE)).limit(1))):
         raise ControlError(409, "private_intake_revision_unavailable")
-    revision, job, proof = await accepted_material(tx, creation)
+    revision, job, proof = await observed.material(creation) if observed else await accepted_material(tx, creation)
     if (job.usage or {}).get("content_intake", {}).get("state") == "private-draft-imported":
         raise ControlError(409, "private_intake_already_imported")
     expected = (job.usage or {}).get("source_context_sha256")
     context = None
     if expected is not None:
-        approved = await approved_build_context(tx, creation)
+        approved = await observed.approved(creation) if observed else await approved_build_context(tx, creation)
         context = approved.get("sourceContext") if approved else None
         if not context or context.get("contextSha256") != expected:
             raise ControlError(409, "source_context_changed")
@@ -230,6 +246,13 @@ async def current(tx, creation, row):
 
 async def selected_intake(tx, creation, revision, job):
     """The sole effective-native-host resolver. Legacy non-null semantics are exact."""
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    return (await observed.intake(creation, revision, job, _selected_intake) if observed
+        else await _selected_intake(tx, creation, revision, job))
+
+
+async def _selected_intake(tx, creation, revision, job):
     legacy = (job.usage or {}).get("content_intake") if job else None
     if creation.canonical_host is not None:
         return creation.canonical_host, legacy

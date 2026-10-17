@@ -314,8 +314,9 @@ async def test_uncertain_transport_cleanup_keeps_claim_and_url_hidden(fixture, m
 
 
 async def test_authority_reuses_current_token_scope_owned_native_s6_and_foundation(monkeypatch):
+    from pinet_core.creation import routes as creation_routes
     pin = scope()
-    session = SimpleNamespace(id=str(pin.session_id), user_id=str(pin.user_id))
+    session = SimpleNamespace(id=str(pin.session_id), user_id=str(pin.user_id), environment_id=pin.environment_id)
     calls, tx = [], object()
     @asynccontextmanager
     async def transaction(**kwargs):
@@ -329,7 +330,7 @@ async def test_authority_reuses_current_token_scope_owned_native_s6_and_foundati
     async def owned(actual, actor, identity):
         assert actual is tx and actor is session and identity == str(pin.creation_id)
         calls.append("owned")
-        return SimpleNamespace(environment_id=pin.environment_id)
+        return SimpleNamespace(id=str(pin.creation_id), portfolio_id=str(pin.portfolio_id), environment_id=pin.environment_id)
     async def capture(actual, actor, identity):
         assert actual is tx and actor is session
         calls.append("capture")
@@ -347,6 +348,7 @@ async def test_authority_reuses_current_token_scope_owned_native_s6_and_foundati
     monkeypatch.setattr(live, "scope", transaction)
     monkeypatch.setattr(live, "customer_session", customer)
     monkeypatch.setattr(live, "owned", owned)
+    monkeypatch.setattr(creation_routes, "owned", owned)
     monkeypatch.setattr(live.foundation, "capture", capture)
     monkeypatch.setattr(live.foundation, "verify", verify)
     monkeypatch.setattr(live.media, "native_mutation_guard", native)
@@ -355,7 +357,7 @@ async def test_authority_reuses_current_token_scope_owned_native_s6_and_foundati
     assert await authority.capture() is pin
     await authority.verify(pin)
     assert calls == ["scope", "session", "owned", "scope", "session", "owned", "capture", "native_s6",
-        "scope", "session", "native_s6", "verify"]
+        "capture", "native_s6", "scope", "session", "native_s6", "verify", "native_s6", "verify"]
     session.id = str(uuid4())
     with pytest.raises(ControlError, match="unauthenticated"):
         await authority.verify(pin)
@@ -572,9 +574,10 @@ async def test_unknown_producer_cleanup_still_joins_inflight_authority_and_retai
 
 
 def source_authority(f, monkeypatch, *, fail_exit=False, reject=False):
+    from pinet_core.creation import routes as creation_routes
     events = []
-    session = SimpleNamespace(id=str(f.pin.session_id), user_id=str(f.pin.user_id))
-    creation = SimpleNamespace(environment_id=f.pin.environment_id)
+    session = SimpleNamespace(id=str(f.pin.session_id), user_id=str(f.pin.user_id), environment_id=f.pin.environment_id)
+    creation = SimpleNamespace(id=f.cid, portfolio_id=str(f.pin.portfolio_id), environment_id=f.pin.environment_id)
     @asynccontextmanager
     async def source_operation():
         events.append("source-enter")
@@ -605,6 +608,7 @@ def source_authority(f, monkeypatch, *, fail_exit=False, reject=False):
     monkeypatch.setattr(live, "scope", transaction)
     monkeypatch.setattr(live, "customer_session", current)
     monkeypatch.setattr(live, "owned", owned)
+    monkeypatch.setattr(creation_routes, "owned", owned)
     monkeypatch.setattr(live.foundation, "capture", capture)
     monkeypatch.setattr(live.foundation, "verify", verify)
     authority = live.Authority("session", f.cid)
@@ -617,8 +621,9 @@ async def test_each_actual_authority_capture_and_verify_has_its_own_completed_so
     authority, events = source_authority(f, monkeypatch)
     assert await authority.capture() == f.pin
     await authority.verify(f.pin)
-    assert events == ["source-enter", "native-capture", "native-authority", "source-fence", "source-closed",
-        "source-enter", "native-authority", "native-verify", "source-fence", "source-closed"]
+    assert events == ["source-enter", "native-capture", "native-authority", "native-capture", "native-authority",
+        "source-fence", "source-closed", "source-enter", "native-authority", "native-verify",
+        "native-authority", "native-verify", "source-fence", "source-closed"]
 
 
 @pytest.mark.parametrize("operation", ["capture", "verify"])

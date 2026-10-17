@@ -317,7 +317,9 @@ async def test_canonical_historical_private_graph_uses_one_material_and_selector
     assert f.counts["material"] == 2, dict(f.counts)
     assert f.counts["private_latest"] == 2, dict(f.counts)
     assert f.counts["node"] == 1
-    assert f.sql["PipelineModelProfile"]+f.sql["profile_catalog"] == 10
+    assert f.sql["PipelineModelProfile"] == 2
+    assert f.sql["profile_catalog"] == 4  # Entry/final schema observations in each of the two phases.
+    assert f.sql["PipelineModelProfile"]+f.sql["profile_catalog"] == 6
     assert all(reads > 0 for reads in f.callback_reads)
 
 

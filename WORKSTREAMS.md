@@ -13,6 +13,27 @@ Serving219/data/providers/frontend stay unchanged during this source packet;
 owned API stopped after interruption and must be restored through checked source
 adoption. Helper is a read-only reviewer; no foreign worktree edits.
 
+## Profile schema observation — helper 2026-10-17
+
+Issue66/comment6239903853; own codex/profile-schema-observation-20261017 from
+exact Root2199266b2afc7456e012a67840170070ff068db8. Paired start gate PASS
+19:47:38/44 UTC, main533597c/publicec8; the previous bded worktree is frozen.
+Only creation/execution_profiles.py:schema_state, related profile/Authority tests,
+docs/EXECUTION_PROFILE_SCHEMA_OBSERVATION.md and own unique upgrade journal.
+Fuse catalog reads inside one schema observation; retain absent/invalid/ready,
+broad absent-trigger semantics, ready RLS/7trigger/4FK, both validate_attempts
+schema invocations and all ten private-current checkpoints. Preserve original
+query-count failure before production edits. No cache, model, role, deadline,
+DB/provider/UI/serving changes. Root owns disjoint Node packet778ba9ee and actual
+PG/lifecycle; synthetic PG execution requires quiet-window coordination first.
+
+Source verification complete for Root: unique upgrade2100a3cc, one production
+function only. Original8FAIL54PASS and first broader1FAIL273PASS retained;
+final274PASS17.31s, catalog observation2to1, full modeled Tx136to132 with
+10P/2material/1native and hotP3 unchanged. Ruff/semantic boundary PASS; one new
+restricted PG case collected only. No PG/provider/serving adoption; scoped
+source handoff remains separate from Root's Node packet and lifecycle evidence.
+
 ## Bounded unpublished preview recovery — Root 2026-10-17
 
 Root issue66/comment6237331697, upgrade4646eda5, clean a7/public255 paired with

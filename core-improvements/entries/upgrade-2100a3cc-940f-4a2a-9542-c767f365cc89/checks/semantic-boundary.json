@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "base": "2199266b2afc7456e012a67840170070ff068db8",
+  "productionPaths": [
+    "agent-business-core/runtime/src/pinet_core/creation/execution_profiles.py"
+  ],
+  "baseSourceBlobSha256": "f83109de53c9cebff029c637efbb10f8516931e09a81e5b983bf6f7a419d36a6",
+  "currentFileSha256": "3849d7e2632353ba91b7fbe780023cad18a41c76e0fe426283c49f5f9dc9a7e5",
+  "allOtherProductionFunctionsAndImportsUnchanged": true,
+  "readyPredicateUnchanged": true,
+  "broadAbsentTriggerPredicateUnchanged": true,
+  "catalogSqlStatementsPerCheckpoint": 1,
+  "referencesNoOptionalRuntimeTables": true,
+  "validateAttemptsEntryAndFinalUnchanged": true,
+  "existingPgTestsUnchanged": true
+}

@@ -50,7 +50,9 @@ def prompt(instruction, data):
 
 
 async def run_role(role, schema, instruction, data, still_authorized, deadline):
-    if (role not in ROLES or schema is not (Review if role == "reviewer" else Assessment)
+    from .dialogue import ReplyDecision
+    expected = Review if role == "reviewer" else ReplyDecision if role == "reply_coordinator" else Assessment
+    if (role not in (*ROLES, "reply_coordinator") or schema is not expected
             or not isinstance(instruction, str) or not instruction.strip()):
         raise codex.RunnerError("acquisition_model_role_invalid")
     if not runner_ready() or not await still_authorized():

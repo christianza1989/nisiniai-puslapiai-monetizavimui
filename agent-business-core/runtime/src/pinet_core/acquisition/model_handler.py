@@ -24,7 +24,17 @@ from .engine import prepare, validate_assessment
 from .headless import HeadlessRoles
 from .instructions import compose
 from .ledger import LedgerError
-from .model_contract import ADAPTER, EFFORT, KIND, MODEL, PrepareModel, next_role, observed_usage
+from .model_contract import (
+    ADAPTER,
+    EFFORT,
+    KIND,
+    MODEL,
+    REPLY_KIND,
+    PrepareModel,
+    ReplyInput,
+    next_role,
+    observed_usage,
+)
 from .model_models import ModelAttempt, ModelTaskBinding
 
 DENIED = (ControlError, LedgerError, RunnerError, ValueError, SourceObservationError)
@@ -51,12 +61,12 @@ async def schema_ready(tx):
 
 async def binding(tx, task):
     bound = await tx.get(ModelTaskBinding, task.id, populate_existing=True)
-    if (not bound or task.kind != KIND or not task.session_id
+    if (not bound or task.kind not in {KIND, REPLY_KIND} or not task.session_id
             or (bound.business_id, bound.organization_id, bound.user_id, bound.environment_id, bound.kind)
             != (task.business_id, task.organization_id, task.user_id, task.environment_id, task.kind)
             or digest(bound.input) != bound.input_sha256):
         raise RunnerError("acquisition_model_task_invalid")
-    value = PrepareModel.model_validate(bound.input)
+    value = (ReplyInput if task.kind == REPLY_KIND else PrepareModel).model_validate(bound.input)
     if str(value.authorization_id) != bound.authorization_id or str(value.request_id) != task.idempotency_key:
         raise RunnerError("acquisition_model_task_invalid")
     return bound, value
@@ -70,9 +80,22 @@ async def preflight(tx, task):
                 or (task.business_id, task.user_id, task.organization_id, task.environment_id, task.source_revision)
                 != (policy.business_id, policy.user_id, policy.organization_id, policy.environment_id, policy.source_revision)):
             raise RunnerError("acquisition_model_task_invalid")
-        await authority.target(tx, work, value)
-        tx.info.setdefault("acquisition_model_deadlines", {})[task.id] = min(policy.expires_at, work.session.expires_at)
-        return bound, value, work
+        if value.native is not None:
+            from .native_chain import check_pair, handoff
+            tx.info.setdefault("acquisition_native_pairs", {})[task.id] = await check_pair(tx, value, work)
+            if getattr(value, "stage", None) == "email":
+                tx.info.setdefault("acquisition_qualifications", {})[task.id] = await handoff(tx, value)
+        if task.kind == REPLY_KIND:
+            from .model_reply import reply_context
+            await reply_context(tx, work, value)
+        else:
+            await authority.target(tx, work, value)
+        tx.info.setdefault("acquisition_model_deadlines", {})[task.id] = min(policy.expires_at, work.session.expires_at,
+            tx.info.get("acquisition_native_deadline", policy.expires_at))
+    if value.native is not None:
+        from .native_chain import final_fence
+        await final_fence(tx, value, work)
+    return bound, value, work
 
 
 async def usage_for(tx, task_id, run_id, user_id, environment_id, source_revision):
@@ -103,7 +126,8 @@ class TaskRole:
                 raise RunnerError("authorization_revoked")
             prior = list(await tx.scalars(select(ModelAttempt).where(ModelAttempt.task_id == task.id)
                 .order_by(ModelAttempt.ordinal)))
-            if not next_role([{"role": row.role, "state": row.state} for row in prior], self.role):
+            if not next_role([{"role": row.role, "state": row.state} for row in prior], self.role,
+                    context.get("_stage")):
                 raise RunnerError("acquisition_model_attempt_invalid")
             await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"), {
                 "key": "acquisition-model-campaign:"+task.environment_id+":"+task.business_id+":"+value.campaign.campaign_id})
@@ -149,7 +173,8 @@ class TaskRole:
                 await preflight(tx, task)
 
     async def ask(self, schema, instruction, data):
-        expected = Review if self.role == "reviewer" else Assessment
+        from .dialogue import ReplyDecision
+        expected = Review if self.role == "reviewer" else ReplyDecision if self.role == "reply_coordinator" else Assessment
         if schema is not expected:
             raise RunnerError("acquisition_model_role_invalid")
         packet = {**data, "agent_specification": self.context["specification"]}
@@ -192,7 +217,7 @@ class ModelHandler:
         return actors
 
     async def claim_task(self, tx):
-        task = await tx.scalar(select(Task).where(Task.kind == KIND, Task.status == "queued")
+        task = await tx.scalar(select(Task).where(Task.kind == self.kind, Task.status == "queued")
             .order_by(Task.created_at, Task.id).limit(1))
         if task is None:
             return None
@@ -204,7 +229,7 @@ class ModelHandler:
                 current.status, current.failure_code = "failed", "authorization_revoked"
                 await append_event(tx, current)
             return None
-        return await tx.scalar(select(Task).where(Task.id == task.id, Task.kind == KIND, Task.status == "queued")
+        return await tx.scalar(select(Task).where(Task.id == task.id, Task.kind == self.kind, Task.status == "queued")
             .with_for_update().execution_options(populate_existing=True))
 
     async def authority_locks(self, tx, task_id):
@@ -233,9 +258,14 @@ class ModelHandler:
             raise RunnerError("runner_unavailable")
         bound, value, work = await preflight(tx, task)
         now = await tx.scalar(text("SELECT clock_timestamp()"))
-        return {"_task_id": task.id, "_user_id": task.user_id, "_authorization_id": bound.authorization_id,
+        context = {"_task_id": task.id, "_user_id": task.user_id, "_authorization_id": bound.authorization_id,
             "request": value.model_dump(mode="json"), "specification": work.specification,
-            "now": now.isoformat(), "deadline": work.authorization.expires_at.isoformat()}
+            "now": now.isoformat(), "deadline": tx.info["acquisition_model_deadlines"][task.id].isoformat()}
+        if value.stage is not None:
+            context["_stage"] = value.stage
+        if value.stage == "email":
+            context["_qualification"] = tx.info["acquisition_qualifications"][task.id].model_dump(mode="json")
+        return context
 
     async def store_context(self, tx, task, run_id, context):
         context["_run_id"] = run_id
@@ -247,7 +277,9 @@ class ModelHandler:
         roles = {name: TaskRole(context, name, heartbeat, adapter or model_adapter.run_role)
             for name in ("researcher", "writer", "reviewer")}
         try:
-            prepared = await prepare(value.campaign, value.prospect, HeadlessRoles(roles), datetime.fromisoformat(context["now"]))
+            qualification = Assessment.model_validate(context["_qualification"]) if "_qualification" in context else None
+            prepared = await prepare(value.campaign, value.prospect, HeadlessRoles(roles, qualification=qualification),
+                datetime.fromisoformat(context["now"]))
             return prepared, observed_total(context)
         except (RunnerError, ControlError, LedgerError) as error:
             raise RunnerError(error.code, observed_total(context)) from None
@@ -269,7 +301,11 @@ class ModelHandler:
                 or validate_assessment(value.campaign, value.prospect, Assessment.model_validate(assessment))):
             raise RunnerError("acquisition_model_result_unverified")
         if result.get("state") != "draft_ready":
-            return {"state": result["state"], "prepared": result, "external_sent": False, "synthetic": True}
+            response = {"state": result["state"], "prepared": result, "external_sent": False, "synthetic": True}
+            if value.stage == "research":
+                response["handoff"] = {"task_id": task.id, "run_id": task.run_id,
+                    "output_sha256": digest([row.output for row in attempts])}
+            return response
 
         async def before_effect(transaction):
             await preflight(transaction, task)
@@ -279,4 +315,7 @@ class ModelHandler:
         reply = await Correspondence(db).capture_reviewed(scope=work.scope, adapter_id=work.authorization.adapter_id,
             request_id=value.request_id, recipient=value.recipient, campaign=value.campaign,
             prospect=value.prospect, prepared=result, transaction=tx, before_effect=before_effect)
-        return {"state": "captured", **json.loads(reply.body), "external_sent": False, "synthetic": True}
+        captured = {"state": "captured", **json.loads(reply.body), "external_sent": False, "synthetic": True}
+        if value.stage == "email":
+            captured["prepared"] = result
+        return captured

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Local WIP checkpoint during Root low-disk containment; tests incomplete and not verified. Development migration/source/fixture/lease failures retained privately. Last full path reached R2/E2/reply2 and oneCase/threeMail plus replay checks, but run10 FAILED final denial-code regex; corrected test not rerun to completion. Subsequent owned QA Python tree contained; no open DB transactions; no paid/operating/old174ledger action. See docs/ACQUISITION_NATIVE_CHAIN.md for exact remaining work.",
+  "eventId": "da2cf90d-f6bc-4075-a611-1cc5b76a49bd",
+  "sequence": 2,
+  "at": "2026-10-18T03:35:24.785Z"
+}

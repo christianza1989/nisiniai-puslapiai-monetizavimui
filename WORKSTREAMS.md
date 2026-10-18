@@ -1846,3 +1846,16 @@ rollback; separately prove500ms membership contention, completed Config commit,
 then owner revocation and next-admission denial with immutable history retained.
 Original10PASS/1FAIL314.47s, exact blocker witness and scoped QA cancellation
 remain retained. No production permission, migration or lock change.
+
+## Native acquisition chain — 2026-10-18, wellness headless agent
+
+Issue66/comment6245040472; branch codex/wellness-native-chain-20261018 from
+97d8c756f01a172bf844464a03a0e6eda848b8eb. Start freshness03:07:31Z main533597c
+PASS. Exact file scope in that comment and upgrade-681076b1-7851-493d-8cde-76fd7775d9a3.
+Own acquisition typed research/email handoff, native reply task and atomic canonical
+Correspondence completion, common-worker/config hooks, additive0048, one existing
+calibration engine's native hooks, tests/docs. Original0046/0047 installers retained.
+Root keeps customer_agents readiness/UI/operating adoption. All runtime flags default
+off; isolated inert PG only. No paid calls, source holdout authoring, old174ledger
+access/reset, live channels or operating DB writes. Historical fixtures are never
+reparented to the Root's actual Business or saved Configs.

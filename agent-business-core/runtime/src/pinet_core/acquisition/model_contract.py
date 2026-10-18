@@ -18,6 +18,33 @@ Purpose = Literal["customer_research", "email"]
 Role = Literal["researcher", "writer", "reviewer"]
 ROLES = ("researcher", "writer", "reviewer")
 Usage = Annotated[int, Field(strict=True, ge=0, le=1_000_000_000)]
+REPLY_KIND = "acquisition.model_reply"
+REPLY_ADAPTER = "acquisition-model-reply.v1"
+
+
+class NativePair(Strict):
+    research_authorization_id: UUID
+    research_fingerprint: Digest
+    email_authorization_id: UUID
+    email_fingerprint: Digest
+
+    @model_validator(mode="after")
+    def distinct(self):
+        if self.research_authorization_id == self.email_authorization_id:
+            raise ValueError("distinct_native_agents_required")
+        return self
+
+
+class ResearchHandoff(Strict):
+    task_id: UUID
+    run_id: UUID
+    output_sha256: Digest
+
+
+class CalibrationReference(Strict):
+    manifest_path: str = Field(min_length=1, max_length=1024)
+    manifest_sha256: Digest
+    case_id: str = Field(pattern=r"^[a-z0-9-]{1,120}$")
 
 
 class ApproveModel(Authority):
@@ -48,9 +75,22 @@ class PrepareModel(Strict):
     recipient: str = Field(min_length=1, max_length=80)
     campaign: Campaign
     prospect: Prospect
+    stage: Literal["research", "email"] | None = Field(default=None, exclude_if=lambda v: v is None)
+    native: NativePair | None = Field(default=None, exclude_if=lambda v: v is None)
+    handoff: ResearchHandoff | None = Field(default=None, exclude_if=lambda v: v is None)
+    calibration: CalibrationReference | None = Field(default=None, exclude_if=lambda v: v is None)
 
     @model_validator(mode="after")
     def bounded(self):
+        if self.stage is None:
+            if self.native is not None or self.handoff is not None or self.calibration is not None:
+                raise ValueError("native_stage_required")
+        elif self.native is None or (
+            self.stage == "research" and (self.handoff is not None or self.campaign.mode != "research_only"
+                or self.authorization_id != self.native.research_authorization_id)
+        ) or (self.stage == "email" and (self.handoff is None or self.campaign.mode != "draft_only"
+                or self.authorization_id != self.native.email_authorization_id)):
+            raise ValueError("exact_native_stage_required")
         recipient_hash(self.recipient)
         if self.campaign.mode not in {"research_only", "draft_only"}:
             raise ValueError("preparation_only")
@@ -63,6 +103,31 @@ class PrepareModel(Strict):
         return self
 
 
+class ReplyRequest(Strict):
+    request_id: UUID
+    authorization_id: UUID
+    native: NativePair
+    prepare_task_id: UUID
+    thread_id: UUID
+    inbound_id: UUID
+    revision: int = Field(strict=True, ge=1)
+    input_sha256: Digest
+    calibration: CalibrationReference | None = Field(default=None, exclude_if=lambda v: v is None)
+
+    @model_validator(mode="after")
+    def email_owner(self):
+        if self.authorization_id != self.native.email_authorization_id:
+            raise ValueError("email_authorization_required")
+        return self
+
+
+class ReplyInput(ReplyRequest):
+    stage: Literal["reply"] = "reply"
+    recipient: str
+    campaign: Campaign
+    prospect: Prospect
+
+
 def observed_usage(value):
     if not isinstance(value, dict):
         return None
@@ -72,11 +137,14 @@ def observed_usage(value):
     return saved or None
 
 
-def next_role(previous, role):
+def next_role(previous, role, stage=None):
     """A non-fitting qualification may skip writer; no failed/pending replay."""
-    if role not in ROLES or any(row["state"] != "succeeded" for row in previous):
+    if role not in (*ROLES, "reply_coordinator") or any(row["state"] != "succeeded" for row in previous):
         return False
     names = [row["role"] for row in previous]
+    if stage in {"research", "email", "reply"}:
+        first = {"research": "researcher", "email": "writer", "reply": "reply_coordinator"}[stage]
+        return (names == [] and role == first) or (names == [first] and role == "reviewer")
     return ((names == [] and role == "researcher")
         or (names == ["researcher"] and role in {"writer", "reviewer"})
         or (names == ["researcher", "writer"] and role == "reviewer"))

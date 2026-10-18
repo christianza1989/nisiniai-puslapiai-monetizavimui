@@ -607,3 +607,14 @@ async def test_projection_recognizes_only_strict_legacy_no_run_marker_across_own
     async with AsyncSession(c["admin"]) as tx:
         assert await tx.scalar(select(func.count()).select_from(TaskRun).where(TaskRun.task_id==task_id))==0
         assert await tx.scalar(select(func.count()).select_from(DisplayJob).where(DisplayJob.task_id==task_id))==0
+
+
+async def test_projection_never_treats_an_existing_job_as_a_legacy_marker(display_case):
+    c=display_case
+    task=await queue(c,digest="0"*64)
+    marker=dict(state="legacy_retained",mail_id=c["mail_id"],source_sha256=c["source_sha"],instruction_sha256=POLICY_SHA,target_language="lt")
+    async with actor(c) as tx:
+        await tx.execute(update(Task).where(Task.id==task).values(status="cancelled",failure_code="mail_display_legacy_retained",result=marker))
+    assert await projection(c,None)==dict(state="claimed",record=None)
+    assert await projection(c,"0"*64)==dict(state="unavailable",record=None)
+    assert await projection(c,c["source_sha"]) is None  # No legacy fallback for a Task that owns any Job.

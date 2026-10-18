@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Scoped followup to29542b9: strict legacy marker requires NOTEXISTS any attached Job, as Root noRun/noJob contract states. NoRun alone could mislabel a cancelled/unreserved Job with differing SHA as legacy_retained. Original29542b9 projection replayed only in own15551 QA yields1FAIL4.74s, wronglegacy_retained instead ofNULL, rawSHA7e044bf8c4f1f7f8ec4575a2addddf0a481fa9f359e03502fc9c0165f1e1cfe5. Current function restored in finally; target1PASS4.42s7e54fb32d22430fb6f2e8093041679b2263b179462cbb01af2660fc00740b7ff. No source checkout/history rewrite or data mutation used to reproduce. All2tables/5helpers/signatures/permissions unchanged. Root integration source not touched.",
+  "checks": [
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider tests/test_mail_display_schema_pg.py -k 'projection or schema_columns or global_queue_cap'",
+      "result": "PASS",
+      "evidence": "6passed30deselected34.63s rawSHAb2f3871be25ad111c43e186c2836e53f61a6e1b9ce7bab2464200b044713ee63. New adverse cancelled/noRun task with attached different-SHA Job cannot get legacyfallback; realnoJob marker and twoOwner/currentGrant/privateRLS/usageNULL projection cases stillgreen. Namedsourceconstraintcap/dedup and9functionACL remain green. Four execution helpers unchanged from31PG/1intentionalSKIP141.01s acceptance."
+    },
+    {
+      "command": "python -m pytest strict-marker target after restoring current function; Ruff; git diff --check",
+      "result": "PASS",
+      "evidence": "1passed4.42s after exactpre-guard29542b9 RED reproduction, rawSHA7e54fb32d22430fb6f2e8093041679b2263b179462cbb01af2660fc00740b7ff. Source-only oneSQLpredicate plus test/docs/WS/journal; no runtime/provider/operating changes."
+    }
+  ],
+  "eventId": "3e683e3a-3835-4abb-96ec-d53f03a727a0",
+  "sequence": 6,
+  "at": "2026-10-18T01:29:17.524Z"
+}

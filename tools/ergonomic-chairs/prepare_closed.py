@@ -10,6 +10,26 @@ from capture_structure import read, save, now, sha
 from verify_structure_wire import verify
 
 
+def proof_signature(row):
+    return sha(json.dumps(row,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode('utf8'))
+
+
+def preserved_proof_matches(row,current_tools,certificate):
+    return bool(certificate and certificate.get('currentTools')==current_tools
+        and row.get('tools')==certificate.get('previousTools')
+        and certificate.get('rows',{}).get(row.get('job'))==proof_signature(row))
+
+
+def load_preserved_certificate():
+    here=Path(__file__).resolve().parent;path=here/'PRESERVED-SEALED-PROOFS.json'
+    if not path.exists():return None
+    build=read(here/'BUILD.json')
+    if path.name not in build['files']:raise ValueError('UNPINNED_PRESERVED_PROOFS_CERTIFICATE')
+    for name,digest in build['files'].items():
+        if sha((here/name).read_bytes())!=digest:raise ValueError('FROZEN_OFFLINE_BUILD_CHANGED')
+    return read(path)
+
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--root',type=Path,required=True)
@@ -46,7 +66,9 @@ def main():
         a.web/'scripts/verified-inspection-cache.mjs',a.web/'scripts/configurator-geometry.mjs',
         a.web/'content/seed.json',a.web/'package-lock.json',*sorted((a.web/'src/lib').glob('*.ts'))]
     sourcepins={str(f):sha(f.read_bytes()) for f in toolfiles}
-    if prior and [r['job'] for r in prior.get('rows',[])]==queue['completedSource'] and all(r.get('tools')==sourcepins and r.get('result')=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and r.get('artifacts') for r in prior.get('rows',[])):
+    certificate=load_preserved_certificate()
+    def compatible(row):return row.get('tools')==sourcepins or preserved_proof_matches(row,sourcepins,certificate)
+    if prior and [r['job'] for r in prior.get('rows',[])]==queue['completedSource'] and all(compatible(r) and r.get('result')=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and r.get('artifacts') for r in prior.get('rows',[])):
         if all(r['checkpointSha256']==sha((a.root/'source'/r['job']/'CHECKPOINT.json').read_bytes()) and all((a.prepared/r['job']/f).is_file() and sha((a.prepared/r['job']/f).read_bytes())==digest for f,digest in r['artifacts'].items()) for r in prior['rows']):
             print(json.dumps({'phase':'UNCHANGED_SEALED_OFFLINE_PROOFS','rows':len(prior['rows']),'nativeRequests':0}));return
     if prior:save(a.prepared/('OFFLINE-HISTORY-'+now().replace(':','').replace('+','')+'.json'),prior)
@@ -58,7 +80,7 @@ def main():
         output.mkdir(parents=True,exist_ok=True)
         row={'job':key,'code':jobs[key]['code'],'at':now(),'result':'RUNNING','checkpointSha256':sha((source/'CHECKPOINT.json').read_bytes()),'tools':sourcepins,'modelPrepared':False}
         old=priorrows.get(key)
-        if old and old['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and old['checkpointSha256']==row['checkpointSha256'] and old.get('tools')==sourcepins and old.get('artifacts'):
+        if old and old['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and old['checkpointSha256']==row['checkpointSha256'] and compatible(old) and old.get('artifacts'):
             if all((output/f).is_file() and sha((output/f).read_bytes())==digest for f,digest in old['artifacts'].items()):
                 continue
         status['rows']=[r for r in status['rows'] if r['job']!=key]

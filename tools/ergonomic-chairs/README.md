@@ -85,3 +85,9 @@ geometry origins, session/item ownership and construction setters are checked.
 This avoids model-sized memory growth without skipping any byte/readback gate.
 Adopt a new offline freeze only at a safe boundary, with tamper/memory tests,
 old/new real-source parity and a complete affected-model proof.
+
+When adopting an equivalent verifier, an optional freeze-pinned certificate
+can preserve exact prior sealed rows under their original tool fingerprints.
+It lists complete row hashes and both exact tool sets. Changed rows, current
+compiler dependencies, checkpoints or prepared artifact hashes cannot use it;
+new/unlisted models must pass the current independent verification chain.

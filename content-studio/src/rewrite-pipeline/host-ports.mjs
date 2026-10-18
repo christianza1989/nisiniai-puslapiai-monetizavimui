@@ -35,8 +35,23 @@ export function collectRetainedAuthorRejections({pageIds,records}) {
 }
 
 /** The exact same correction-bearing prompt is sent and later tied to promptRef. */
-export function buildGenerationPayload({batch,pipeline,authorTasks,examples,commonMistakes}) {
+export async function buildGenerationPayload({batch,pipeline,authorTasks,examples,commonMistakes}) {
   const previousRejections=collectRetainedAuthorRejections({pageIds:batch.pages.map(p=>p.pageId),records:pipeline.pages});
+  for(const rejection of previousRejections){
+    const captureBytes=await verifyPin(rejection.captureRef);if(rejection.rawRef)await verifyPin(rejection.rawRef);
+    if(rejection.kind!=='review')continue;
+    const record=pipeline.pages.find(p=>p.pageId===rejection.pageId),candidate=record.candidates.find(c=>c.candidateId===rejection.candidateId).candidate;
+    const spec=batch.pages.find(p=>p.pageId===rejection.pageId).capturePage;
+    assert.deepEqual(candidate.captureSelection?.pages.find(p=>p.pageId===rejection.pageId),spec,'Repair capture belongs to another page/spec');
+    const parsed=selectCapturedPages(JSON.parse(captureBytes.toString('utf8')),candidate.captureSelection);
+    const actual=parsed.outcomes.find(p=>p.pageId===rejection.pageId);
+    assert.equal(actual?.status,'captured','Review repair requires a valid own actual original');
+    for(const key of ['original','orderedBodyLinks','slice','responseId','responseIndex'])
+      assert.deepEqual(candidate[key],actual.candidate[key],'Repair candidate differs from retained actual '+key);
+    const prior=actual.candidate;
+    rejection.priorActual={candidateId:rejection.candidateId,captureRef:rejection.captureRef,responseId:prior.responseId,responseIndex:prior.responseIndex,
+      slice:prior.slice,original:prior.original,orderedBodyLinks:prior.orderedBodyLinks};
+  }
   const pages=batch.pages.map(page=>({...authorTasks[page.pageId],id:page.pageId,h1:page.capturePage.title}));
   const prompt=buildAuthorPrompt({batchId:batch.batchId,pages,examples,commonMistakes,previousRejections});
   return{batchId:batch.batchId,prompt,pages:batch.pages.map(p=>p.capturePage),previousRejections};
@@ -70,8 +85,7 @@ export async function createPorts({store,bridge,config}) {
       const completed=new Set(Object.entries((await read(config.checkpoints[0])).work).filter(([k])=>k.endsWith('WrittenDraft')).map(([,v])=>v.pageId));
       for(const page of batch.pages){assert(!completed.has(page.pageId),'Completed page cannot be sent again');assert(!config.heldPageIds.includes(page.pageId),'Held page cannot be sent');await verifyPin(page.factsRef);}
       const authorTasks=Object.fromEntries(await Promise.all(batch.pages.map(async page=>[page.pageId,(await read(page.factsRef.path)).authorTask])));
-      const payload=buildGenerationPayload({batch,pipeline,authorTasks,examples:config.acceptedExamples,commonMistakes:config.commonMistakes});
-      for(const rejection of payload.previousRejections){await verifyPin(rejection.captureRef);if(rejection.rawRef)await verifyPin(rejection.rawRef);}
+      const payload=await buildGenerationPayload({batch,pipeline,authorTasks,examples:config.acceptedExamples,commonMistakes:config.commonMistakes});
       const {pages:specs,prompt}=payload;
       const answer=await bridge.request('GEMINI_GENERATE',payload,ctx);
       assert(answer.send?.status==='COMPLETED_RETAINED'&&!answer.send.uncertain,'A query acknowledgement alone is not a retained response');

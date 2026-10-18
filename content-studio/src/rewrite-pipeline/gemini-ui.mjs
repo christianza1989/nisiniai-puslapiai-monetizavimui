@@ -316,7 +316,10 @@ export function buildAuthorPrompt({ batchId, pages, examples, commonMistakes, pr
       const latest = retained.at(-1);
       if (!latest) continue;
       if (!latest.captureRef?.path || !/^[a-f0-9]{64}$/.test(latest.captureRef.sha256 ?? '') || typeof latest.reason !== 'string' || !latest.reason.trim() || latest.reason.length > 4000) throw new Error('Correction requires retained own capture and concrete rejection reason');
-      corrections.push({ h1: job.h1, kind, reason: latest.reason });
+      if (latest.priorActual && (kind !== 'review' || latest.priorActual.candidateId !== latest.candidateId ||
+          latest.priorActual.original?.title !== job.h1 || latest.priorActual.captureRef?.sha256 !== latest.captureRef.sha256 ||
+          latest.priorActual.captureRef?.path !== latest.captureRef.path)) throw new Error('Repair baseline must match its own retained candidate/capture');
+      corrections.push({ h1: job.h1, kind, reason: latest.reason, ...(latest.priorActual ? { priorActual: latest.priorActual } : {}) });
     }
   }
   return [
@@ -328,6 +331,7 @@ export function buildAuthorPrompt({ batchId, pages, examples, commonMistakes, pr
     'Šios užduoties BATCH_ID, PAGE_ID ir id, redakcinės ribos ir tikrinimo instrukcijos yra privatūs: jų neperkelk į atsakymą, aprašymą ar pagrindinį tekstą. Pavyzdžiai rodo kalbos kokybę, jų faktų ir formuluočių nekopijuok į kitus modelius.',
     `ANKSTESNIŲ KLAIDŲ TAISYKLĖS:\n${commonMistakes.map((m) => `- ${m}`).join('\n')}`,
     ...(corrections.length ? [`ŠIŲ PUSLAPIŲ ANKSTESNIŲ IŠSAUGOTŲ VARIANTŲ ATMETIMO PRIEŽASTYS:\n${JSON.stringify(corrections, null, 2)}\nIštaisyk konkretaus H1 ankstesnę klaidą, nekartok atmestos formuluotės ar per ilgo aprašymo. Faktų pataisas tikrink pagal šio puslapio faktus ir pirminius šaltinius; ankstesnio varianto klaida nėra užrakintas faktas. Šios pastabos yra privati užduotis, jų neperkelk į viešą tekstą.`] : []),
+    ...(corrections.some(c => c.priorActual) ? ['Taisomam puslapiui pateiktas priorActual.original yra jo ankstesnis tikras Gemini tekstas, o orderedBodyLinks išlaiko tikrą URL ir etikečių tvarką. Taisyk tik surinktose šio H1 pastabose nurodytas vietas; už šių taisymų ribų išsaugok visas ankstesnes antraštės, aprašymo, pastraipų ir sourceItems formuluotes žodis į žodį. Jei pastaba liečia tik aprašymą ar konkretų reason, neperrašyk pagrindinio teksto ar kitų reasons. Nekeisk kitų skaičių, sąlygų, modelių, URL ar nuorodų tvarkos ir nepridėk naujų detalių. Grąžink visą pilną naują puslapio versiją su visomis pastraipomis ir PRIVATE_SOURCE_JSON, ne vien pataisas ar diff. priorActual ir jo techniniai įrodymai yra privati užduotis, jų į atsakymą nekelk.'] : []),
     `DU PRIIMTI PAVYZDŽIAI:\n${examples.map((e, i) => `PAVYZDYS ${i + 1} (${e.reference}):\n${e.text}`).join('\n\n')}`,
     `KONKREČIOS UŽDUOTYS:\n${JSON.stringify(jobs, null, 2)}`,
     'Prieš grąžindamas pats perskaityk visus tekstus: patikrink kalbą, faktų ribas, aprašymų ilgį ir kiekvieną šaltinio reason. Grąžink visus puslapius užduočių eilės tvarka, kiekvieną pradėdamas tikslia jo H1 antrašte. Šaltinių JSON nelaikyk pagrindinio teksto dalimi.',

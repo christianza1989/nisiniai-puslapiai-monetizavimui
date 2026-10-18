@@ -3,7 +3,10 @@ import assert from 'node:assert/strict';
 import {mkdir,mkdtemp,readFile,writeFile,rm,access} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
 import {createPrivateImporter,prepareReviewedPage,assertPrivateSiteInvariant} from '../src/rewrite-pipeline/core-adapter.mjs';
+import {JsonPipelineStore,createPipelineState} from '../src/rewrite-pipeline/runner.mjs';
+import {validateImportKey,effectiveImportKey,repairImportKey} from '../src/rewrite-pipeline/import-key.mjs';
 const parent=path.resolve(import.meta.dirname,'../output/pipeline-tests');await mkdir(parent,{recursive:true});
 const root=await mkdtemp(path.join(parent,'run-'));process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'out');
 const model=await import('../src/model.mjs'),workflow=await import('../src/content-workflow.mjs'),registry=await import('../src/text-provenance.mjs');
@@ -39,6 +42,71 @@ async function fixture(name='one',sourceCounts=[1,1]){
  const config={siteId:'promedical',publication:'paused_by_owner',newPublicReleaseAllowed:false,nativePath,checkpoints,outputDir:path.join(dir,'result'),sharedLockPath:path.join(dir,'writer.lock'),previewOrigin:'http://127.0.0.1:9130',inventory:1909,legacyFullGuides:2,prepared:336};return{site,records,config};
 }
 const dom=async(request,bad)=>{const site=await model.getSite('promedical');return{nativeInput:request.nativeInput,pages:request.pages.filter(p=>p.pageId!==bad).map(item=>{const p=site.pages.find(p=>p.id===item.pageId);return{pageId:p.id,canonicalRevision:item.canonicalRevision,viewports:[1440,390].map(w=>({at:new Date().toISOString(),url:item.url,innerWidth:w,innerHeight:1000,dpr:1,clientWidth:w,scrollWidth:w,overflowX:0,h1:p.title,description:p.description,body:p.body.map(b=>b.text),sourceItems:p.externalLinks.map(({url,label,reason})=>({url,label,reason})),orderedLinks:[{url:'mailto:info@promedical.lt',label:'Teirautis el. paštu'},...p.externalLinks.map(({url,label})=>({url,label}))],images:[]}))};})};};
+const keyFailure='The expression evaluated to a falsy value:\n\n  assert(/WrittenDraft$/.test(p.key))\n';
+async function keyFixture(name,{queued=false}={}){
+ const f=await fixture('key-'+name),filename=path.join(f.config.outputDir,'state.json');
+ const store=new JsonPipelineStore(filename);await store.init(createPipelineState({siteId:'promedical',pages:[f.records[0].input]}));
+ await store.update(doc=>{
+  const p=doc.pipeline.pages[0];p.input.key='synthetic_snake_case';
+  if(!queued){p.attempts=[{attemptId:'original-attempt'}];p.candidates=clone(f.records[0].candidates);p.reviews=clone(f.records[0].reviews);p.status='HELD_IMPORT';p.imports=[{status:'failed',error:keyFailure,candidateId:p.candidates[0].candidateId}];}
+ });
+ return{...f,store,filename,input:{pageId:f.records[0].pageId,candidateId:queued?undefined:f.records[0].candidates[0].candidateId,actor:'synthetic-operator',reason:'Repair only the invalid checkpoint key suffix; no authored word changes.'}};
+}
+
+test('invalid import keys fail enqueue before any author work and leave state bytes unchanged',async()=>{
+ for(const key of ['snake_case','',null,'bad keyWrittenDraft'])assert.throws(()=>validateImportKey(key),/INVALID_IMPORT_KEY/);
+ assert.equal(validateImportKey('snake_caseWrittenDraft'),'snake_caseWrittenDraft');
+ assert.throws(()=>createPipelineState({siteId:'promedical',pages:[{pageId:'a',key:'bad'}]}),/INVALID_IMPORT_KEY/);
+ const f=await keyFixture('enqueue',{queued:true}),input=path.join(f.config.outputDir,'bad-enqueue.json');
+ const before=await readFile(f.filename);await writeFile(input,JSON.stringify({pages:[{pageId:'new-page',key:'invalid_key'}]}));
+ const result=spawnSync(process.execPath,[path.resolve(import.meta.dirname,'../scripts/rewrite-pipeline.mjs'),'enqueue','--state',f.filename,'--input',input],{encoding:'utf8'});
+ assert.notEqual(result.status,0);assert.match(result.stderr,/INVALID_IMPORT_KEY/);assert.deepEqual(await readFile(f.filename),before);
+});
+
+test('explicit key-only repair preserves accepted originals/history then imports without another author or review',async()=>{
+ const f=await keyFixture('accepted'),before=await f.store.read(),shared=await Promise.all([f.config.nativePath,...f.config.checkpoints].map(file=>readFile(file)));
+ const receipt=await repairImportKey(f.store,f.input,{model,config:f.config}),after=await f.store.read(),record=after.pipeline.pages[0];
+ assert.equal(record.status,'ACCEPTED');assert.equal(record.imports.length,2);assert.deepEqual(record.imports[0],before.pipeline.pages[0].imports[0]);
+ for(const key of ['input','attempts','candidates','reviews','generationResults'])assert.deepEqual(record[key],before.pipeline.pages[0][key]);
+ assert.equal(receipt.after,'synthetic_snake_caseWrittenDraft');assert.equal(effectiveImportKey(record),receipt.after);assert.equal(receipt.actor,'synthetic-operator');
+ assert.deepEqual(await Promise.all([f.config.nativePath,...f.config.checkpoints].map(file=>readFile(file))),shared);
+ await assert.rejects(repairImportKey(f.store,f.input,{model,config:f.config}));
+ const wrong=clone(record);wrong.candidates.at(-1).candidateId='other-candidate';assert.throws(()=>effectiveImportKey(wrong),/another candidate/);
+ const run=createPrivateImporter({model,workflow,registry,config:f.config,captureDom:r=>dom(r),guardEpoch:async()=>{},refreshReaders:async()=>{}});
+ const result=await run([record],{runId:'synthetic-repair'});assert.equal(result.outcomes[0].status,'complete');
+ for(const file of f.config.checkpoints)assert.equal(JSON.parse(await readFile(file)).work[receipt.after].pageId,record.pageId);
+});
+
+test('key repair refuses UNKNOWN, COMPLETE, other errors, stale reviews and every partial-native signal',async()=>{
+ const scenarios={
+  unknown:async f=>f.store.update(d=>{d.pipeline.pages[0].status='UNKNOWN';}),
+  unknownImport:async f=>f.store.update(d=>{d.pipeline.pages[0].status='UNKNOWN_IMPORT';}),
+  complete:async f=>f.store.update(d=>{d.pipeline.pages[0].status='COMPLETE';}),
+  alreadyImported:async f=>{const d=await f.store.read();d.pipeline.pages[0].imports[0].error='Already imported; do not repeat';await writeFile(f.filename,JSON.stringify(d));},
+  staleReview:async f=>{const d=await f.store.read();d.pipeline.pages[0].reviews[0].candidateId='other';await writeFile(f.filename,JSON.stringify(d));},
+  nativeChanged:async f=>{const s=JSON.parse(await readFile(f.config.nativePath));s.pages[0].title='Changed after partial intake';await writeFile(f.config.nativePath,JSON.stringify(s));},
+  checkpointEntry:async f=>{const c=JSON.parse(await readFile(f.config.checkpoints[1]));c.work.anyKey={pageId:f.input.pageId};await writeFile(f.config.checkpoints[1],JSON.stringify(c));},
+  intakeAttempted:async f=>writeFile(path.join(f.config.outputDir,'RESULT.json'),JSON.stringify({epochs:[{status:'PARTIAL',pages:[{pageId:f.input.pageId,status:'INTAKE_ATTEMPTED'}]}]})),
+  unresolvedEpoch:async f=>writeFile(path.join(f.config.outputDir,'RESULT.json'),JSON.stringify({epochs:[{status:'NEEDS_INSPECTION',pages:[]}]})),
+  otherImporter:async f=>writeFile(f.config.sharedLockPath,JSON.stringify({token:'other-owner'})),
+ };
+ for(const[name,change]of Object.entries(scenarios)){
+  const f=await keyFixture(name);await change(f);const before=await f.store.read(),native=await readFile(f.config.nativePath);
+  await assert.rejects(repairImportKey(f.store,f.input,{model,config:f.config}),undefined,name);
+  assert.deepEqual(await f.store.read(),before,name);assert.deepEqual(await readFile(f.config.nativePath),native,name);
+  if(name==='otherImporter')assert.equal(JSON.parse(await readFile(f.config.sharedLockPath)).token,'other-owner');
+ }
+});
+
+test('unattempted QUEUED key repair stays queued and cannot affect an allocated or uncertain author request',async()=>{
+ const f=await keyFixture('queued',{queued:true}),before=await f.store.read();
+ const receipt=await repairImportKey(f.store,f.input,{model,config:f.config}),after=await f.store.read(),record=after.pipeline.pages[0];
+ assert.equal(receipt.phase,'before_author');assert.equal(record.status,'QUEUED');assert.deepEqual(record.input,before.pipeline.pages[0].input);
+ assert.equal(record.attempts.length,0);assert.equal(record.candidates.length,0);assert.equal(effectiveImportKey(record),receipt.after);
+ const busy=await keyFixture('queued-waiting',{queued:true}),waiting=await busy.store.read();waiting.requests=[{kind:'GEMINI_GENERATE',status:'WAITING',payload:{pages:[{pageId:busy.input.pageId}]}}];await writeFile(busy.filename,JSON.stringify(waiting));
+ const preserved=await busy.store.read();await assert.rejects(repairImportKey(busy.store,busy.input,{model,config:busy.config}),/author request/);assert.deepEqual(await busy.store.read(),preserved);
+});
+
 test('one command imports real isolated Core pages, binds reviews and both checkpoints',async()=>{
  const f=await fixture('complete'),guards=[],readers=[];
  const run=createPrivateImporter({model,workflow,registry,config:f.config,captureDom:r=>dom(r),guardEpoch:async p=>guards.push(p.phase),refreshReaders:async p=>readers.push(p)});

@@ -10,6 +10,7 @@ import { buildAuthorPrompt, normalizeGeminiPrompt, validateGeminiProof } from '.
 import { selectCapturedPages } from './capture.mjs';
 import { prepareFactGroups } from './fact-preparation.mjs';
 import { measurePipelineThroughput } from './throughput.mjs';
+import { validateImportKey, effectiveImportKey, repairImportKey } from './import-key.mjs';
 
 const read=async file=>JSON.parse(await readFile(file,'utf8'));
 const execute=promisify(execFile);
@@ -108,9 +109,12 @@ export async function createPorts({store,bridge,config}) {
   };
   const importer=createPrivateImporter({model,workflow,registry,config,captureDom:(request,ctx)=>bridge.request('NATIVE_DOM',request,ctx),refreshReaders,guardEpoch});
   return {
+    repairImportKey: input => repairImportKey(store, input, { model, config }),
     cancelUnclaimedGeneration:(batchId,reason,ctx)=>bridge.cancelUnclaimedGeneration(batchId,reason,ctx),
     async generate(batch,ctx){
       const document=await store.read(),pipeline=document.pipeline;
+      try { for (const page of batch.pages) effectiveImportKey(pipeline.pages.find(p => p.pageId === page.pageId)); }
+      catch (error) { error.code = 'HOST_NOT_SENT'; throw error; }
       const completed=new Set(Object.entries((await read(config.checkpoints[0])).work).filter(([k])=>k.endsWith('WrittenDraft')).map(([,v])=>v.pageId));
       for(const page of batch.pages){assert(!completed.has(page.pageId),'Completed page cannot be sent again');assert(!config.heldPageIds.includes(page.pageId),'Held page cannot be sent');await verifyPin(page.factsRef);}
       const authorTasks=Object.fromEntries(await Promise.all(batch.pages.map(async page=>[page.pageId,(await read(page.factsRef.path)).authorTask])));
@@ -131,6 +135,7 @@ export async function createPorts({store,bridge,config}) {
         await mkdir(fp.outputDir,{recursive:true});const bytes=JSON.stringify(pack,null,2)+'\n';
         try{await writeFile(file,bytes,{flag:'wx',flush:true});}catch(error){if(error.code!=='EEXIST')throw error;assert.equal(await readFile(file,'utf8'),bytes,'Reviewed fact pack is immutable');}
         const factsRef={path:file,sha256:createHash('sha256').update(bytes).digest('hex')};
+        validateImportKey(task.pageInput.key);
         await store.update(doc=>{const p=doc.pipeline.pages.find(p=>p.pageId===pack.pageId);assert(p?.status==='FACTS_WAIT');p.input={...p.input,...task.pageInput,factsRef,factsReady:true};p.status='QUEUED';});
       };
       const prepared=await prepareFactGroups({tasks:fp.tasks,existingArtifacts:fp.existingArtifacts,signal:ctx.signal,concurrency:2,

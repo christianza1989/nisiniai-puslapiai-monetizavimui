@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual current clean source79a81ee6 operator CLI completed its first finite Treg discovery batch:2Google requests,18rows,1000microUSD,4primary read attempts,1retrieved and3unavailable retained. No contact qualification, CRM import, scheduler or send. This proves the shared CLI/provider/normalizer/localURLguard/existingreader path, not production autopilot. Windows UTF8 preserved German text; prior500microUSD CP1252 parse failure remains separate.",
+  "checks": [
+    {
+      "command": "python scripts/acquisition_discover.py --plan PRIVATE_PINNED_PLAN --plan-sha256 EXACT_SHA --treg-executable PINNED_TREG --treg-sha256 EXACT_SHA",
+      "result": "PASS",
+      "evidence": "Actual source79a81ee6b496ce189d1b52b222777b2f84ad5e81; run f61daff4-cea1-4c8f-aaeb-398df63a57c3; output log SHA2560a20f3f3c30d4c7b6250e52791d65ad294cab953059ab9e9c85eacea0a200a15.1retrieved/3unavailable, no invented replacement or private source text in Git."
+    }
+  ],
+  "eventId": "a9eff05c-d6c1-472e-b2bb-75217dd048da",
+  "sequence": 3,
+  "at": "2026-10-18T19:29:41.029Z"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "pr",
+  "note": "Guarded checkpoint-key suffix repair can now recognize a single fully retained response rejected for required post-response model UI evidence. It validates the original claiming host, exact request/query/capture and immutable pins, refuses uncertain or advanced histories, and appends metadata only. UNKNOWN status, all author history and original input remain intact; a new author revision still requires a separate explicit operator decision. HTTPS Gemini origin is checked explicitly. No live repair or author dispatch was performed for this source change.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "commit": "5d440b4537193d66c1b1baf5e7b784e9380ad1ea",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 content-studio/test/rewrite-pipeline-import.test.mjs content-studio/test/rewrite-pipeline-capture.test.mjs content-studio/test/rewrite-pipeline-bridge.test.mjs content-studio/test/rewrite-pipeline-reconcile.test.mjs",
+      "result": "PASS",
+      "evidence": "71 isolated regression tests passed; rejected-response, ambiguous history, pin tampering, cross-origin and mutation-race cases included. Synthetic fixtures do not claim actual Gemini authorship."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs --staged",
+      "result": "PASS",
+      "evidence": "Exactly two staged source/test blobs checked; no sensitive-data findings."
+    }
+  ],
+  "eventId": "241ad9c9-c706-450c-82a5-61b9502e772c",
+  "sequence": 15,
+  "at": "2026-10-18T19:44:42.317Z"
+}

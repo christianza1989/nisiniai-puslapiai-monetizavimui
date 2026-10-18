@@ -1,5 +1,48 @@
 # Vietinė Gmail jungtis ir tikro savininko bandymas
 
+## Faktinis vietinis priėmimas — 2026-10-18
+
+Ankstesniame šio dokumento įgyvendinimo apraše išvardytos dar laukusios
+Gmail savitikros patikros jau atliktos. Ši išvada taikoma tik toliau
+aprašytai vietinei savitikrai:
+
+- Savininkas Google lange patvirtino OAuth ir tik Gmail skaitymo bei siuntimo
+  leidimus. Užšifruota jungtis šiame PC veikia; paslaptys į Git neperkeltos.
+- Platforma išsiuntė pažymėtą bandymo laišką savininkui. Autentifikuota Gmail API
+  parodė tą patį pranešimą su SENT ir INBOX žymomis; savininkas ir Chrome
+  atskirai patvirtino gavimą. Serverio priėmimas ir šis konkretus gavimas
+  išlieka atskiri įrodymai.
+- Chrome išsiųstas vokiškas atsakymas į tą pačią giją buvo įrašytas į tą patį
+  Case. Pakartotinis gavimas nedubliavo laiško. Pirmas nesėkmingas atsakymo
+  susiejimas bei jo RFC identifikatoriaus pataisa išsaugoti.
+- Dvi atskiros bendros `mail_display` užduotys sėkmingai sukūrė lietuviškas
+  naujo angliško bandymo laiško ir naujo vokiško atsakymo kopijas. Abu
+  vykdymai turi užbaigtą žetonų apskaitą, be nežinomos sąnaudos. Jų vienkartiniai
+  vykdymo leidimai po bandymo išjungti. Ankstesni nesėkmingi vertimo bandymai
+  neperrašyti ir nepriskirti prie šių sėkmingų rezultatų.
+- Įprastu prisijungimu atvertas UI per Chrome rodo šių laiškų lietuvišką tekstą
+  ir leidžia perjungti originalą. Patikrintas kiekis, nepatvirtintos kainos bei
+  terminai ir užsakymo bei mokėjimo nebuvimas. UI žymi „Gmail priėmė“ ir
+  nevadina priėmimo pristatymu ar perskaitymu.
+
+Faktinis išsiuntimas ir RFC susiejimas patikrinti su `ef21926a`, o naujo vokiško
+atsakymo importas bei jo vertimas — su `3d266a99`. Bendras šaltinis vėliau
+integruotas į `a7d5befd` ir pritaikytas vietiniame API; schema0050, ankstesnių
+duomenų ir privačių failų išsaugojimas patikrinti atskirai. Šios vietinės
+versijos nėra `main` sujungimo ar viešo diegimo įrodymas. Portalas naudoja
+`615144b` UI šaltinio kompiliaciją, kurią savininkas paleido rankiniu būdu.
+
+Laiškų tekstai, tokenai, paskyros adresas, teikėjo identifikatoriai, ekrano
+nuotraukos ir pilni vykdymo kvitai laikomi tik privačiuose vietiniuose
+artefaktuose. Faktinė siauro telefono lango ir 200% mastelio patikra šiame
+pakete neatlikta; darbastalio peržiūra jų nepakeičia.
+
+**Kas dar nepriimta:** šešių išsaugotų verslo agentų bendras kalibravimas,
+komercinės Gmail kampanijos siuntimas ir automatinis atsakymas, nuolatinė
+kontaktų paieška bei visa kampanijos įvykių statistika. Savitikros gateway
+leidžia siųsti tik sau. Jo negalima paversti kampanijos adapteriu pakeitus
+gavėją ar perkvalifikavus sintetinius laiškus.
+
 **Tikro Gmail RFC identifikatoriaus susiejimas.** Gmail priėmė vieną platformos
 bandymo laišką ir grąžino tą patį message/thread ID; tikras API metadata bei
 Chrome patvirtino SENT ir INBOX. Gmail pakeitė jo RFC Message-ID. Pradinis

@@ -1,4 +1,21 @@
-## Current-owner Gmail local adapter — Root2026-10-18 in progress
+## Current-owner Gmail actual local checkpoint — Root2026-10-18
+
+Actual OAuth, owner self-send/Gmail SENT+INBOX/Chrome receipt, exact rewrittenRFC
+reply import, two successful one-attempt LT display Tasks and normal customer
+Chrome LT/original toggles verified. Sourceef/3d proofs retained; integrateda7
+operating API/schema50 adopted with all prior rows/files preserved. Portal615
+compiled build manually adopted by owner. See docs/GMAIL_LOCAL_OWNER_TEST.md;
+source/actual local adoption/main merge/public deployment remain separate.
+Six-role source integration is present but actual calibration NOT accepted.
+First private controller loop failure0calls retained; corrected-loop run then
+exposed missing customer_session before a protected binding read, also0provider
+calls/0budget reservations/onequeuedTask. Exact six grants/module canonically
+stopped; original120/3600 ledger and both failures unchanged. Windows/Git/
+PowerShell OOM observed separately. Helper owns scoped dispatch read-boundary
+repair/regression in its own branch; Root keeps Gmail/UI/integration ownership.
+No customer campaign sends or full-mailbox import were activated.
+
+## Current-owner Gmail local adapter — Root2026-10-18 implementation history
 
 Human explicitly requested all-six calibration, Gmail send/reply and Lithuanian
 UI. Own codex/verslomatika-gmail-owner-20261018 frombe6d7d30; paired freshness

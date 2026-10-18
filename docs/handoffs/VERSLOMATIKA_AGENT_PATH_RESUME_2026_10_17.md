@@ -1,5 +1,48 @@
 # Agent path: current continuation
 
+## First native pilot stopped; both authorizations contained — 2026-10-18
+
+The current native pair was separately admitted and bound to the independent
+six-case packet (2 train/4 protected holdout), unchanged saved Configs, Sol6.1/high,
+research12/email24 attempts and a separate auxiliary12/2400-second budget.
+Fresh-process canonical authority/pin/clock/disk preflight passed05:52:05UTC;
+the one run started05:52:06. The first TRAIN case stopped before preparation
+completed: research attempts2, one succeeded/known and one failed/unknown;
+email0, auxiliary0, channels0. No behavioral calibration result was produced.
+All four holdouts remain unexecuted/unexposed. There was no retry or reset.
+
+The researcher reservation ran05:52:29.640120–05:53:01.424564UTC; the reviewer
+failed05:53:07.656611–05:53:13.871971, only6.215 seconds. Task failure is
+authorization_revoked. Auth/Session windows were still valid; this is not an
+observed90-second role timeout. The possible15-second common-worker lease across
+repeated native proofs is delegated for an offline reproduction, not yet a proven
+predicate witness. The transient native CLI adapter lacks a persistent raw reviewer
+error; do not invent its exception, complete usage or cost. TaskRun retains2 calls,
+2 settled,1 unknown,usage_complete:false. Only the known part observed15734 input/
+455 output/268 reasoning tokens. Original report state running is historical after
+observer cancellation; separate safe receipts record STOPPED_INCOMPLETE_NO_RETRY.
+
+Author confirmed no pilot/provider process remains. Root then used the canonical
+model-admin stop operation for both exact Auths. Only their enabled state changed;
+all attempt history and794 native files remained exact. Caps, expiry, IDs and
+unknown usage were not renewed/refunded. The old174/180 ledger stays closed.
+API18871/source1a751d0/schema48 and portal3030/final build remain unchanged.
+
+Private safe STOP receipt SHAf4c272c116a8b460ac0e3e8e9b001aa76a180f79f84e85e5fe35accf771b9961;
+technical timeline SHA33c2392dd93a78aecf2a82e3994b9a8e7b1c1335e71fee21c8fc9fe6830a436b;
+containment log SHA3d555dbb41a7e1609cfe1c0ee86107284e0effdef19de425645940daafe7a9c6.
+Exact private IDs/inputs/Session/receipts are excluded from Git. The new finding
+also makes current17-path committed coverage BLOCKED until a verified repair;
+the earlier scoped PASS below is historical. Inherited main-wide debt remains a
+separate BLOCKED result. Whole platform and channel acceptance remain OPEN.
+
+After pilot terminal, ordinary Chrome used the existing "Tęsti po sistemos
+atnaujinimo" action. A fresh S6 continuation restored the full-site preview
+without changing Registration, Config or Module. The existing preview action
+prepared a preview from13 current native pages; Chrome visibly opened its homepage/images/
+navigation/guides on loopback62946. This is an expiring private preview, not a
+published domain, final visual acceptance or completed full Website audit.
+
 ## Native chain integrated and held operating48 — 2026-10-18
 
 Current clean Serving1a751d0c12c128468f63fb22d7d4e75d57ef901b/public255fea08,

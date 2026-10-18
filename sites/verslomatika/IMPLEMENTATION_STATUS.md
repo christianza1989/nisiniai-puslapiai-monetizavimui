@@ -1,5 +1,15 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+> 2026-10-18 native pilot: the first train case stopped on infrastructure failure,
+> not a behavioral score. Research2 attempts (1 known success/1 failed unknown),
+> email0/auxiliary0/channels0; remaining cases and all4 holdouts unexecuted.
+> Both exact native Auths canonically stopped afterward; history/counters retained.
+> Focused common-worker lease/guard reproduction is in progress. Ordinary Chrome
+> S6 renewal restored the13-page expiring private site preview; homepage visibly
+> opened. Same Serving1a751d0/schema48 and portal final build; no main/public launch.
+> New finding also blocks current17-path upgrade coverage until a verified repair;
+> earlier scoped PASS is historical. Inherited main-wide debt remains separate.
+
 ## Current executable continuation — 2026-10-18
 
 **Whole local platform OPEN.** The human accepted the workspace UI and explicitly

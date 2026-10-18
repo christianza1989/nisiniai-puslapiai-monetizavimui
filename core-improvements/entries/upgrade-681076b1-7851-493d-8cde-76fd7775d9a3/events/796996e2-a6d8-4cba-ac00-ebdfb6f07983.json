@@ -1,0 +1,7 @@
+{
+  "status": "finding",
+  "note": "Actual bounded native pilot started after successful current canonical preflight, then STOPPED_INCOMPLETE_NO_RETRY in first TRAIN case: research2 charged attempts(1 known success/1 failed unknown), email0,auxiliary0,channels0; four holdouts unexecuted/unexposed. Safe STOP receipt SHA f4c272c116a8b460ac0e3e8e9b001aa76a180f79f84e85e5fe35accf771b9961; timeline SHA33c2392dd93a78aecf2a82e3994b9a8e7b1c1335e71fee21c8fc9fe6830a436b. Reviewer failed after6.215sec, not observed90sec timeout/auth expiry. Possible15sec lease/proof latency delegated for offline reproduction, not claimed proven. Both exact Auths canonically disabled afterward; only Auth table changed, all attempt history/794files exact; containment log SHA3d555dbb41a7e1609cfe1c0ee86107284e0effdef19de425645940daafe7a9c6. No reset/renewal. Ordinary Chrome S6 renewal restored13-page expiring private preview and visibly opened homepage, separate from calibration/fullF1/launch. Inherited main-wide coverage remains BLOCKED.",
+  "eventId": "796996e2-a6d8-4cba-ac00-ebdfb6f07983",
+  "sequence": 6,
+  "at": "2026-10-18T06:00:47.435Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Schema0046 frozen helper packet2424268 integrated as0a2b3a5 after local WIP90d7408. Initial Root fixture error (wrong work_config.ROOT import) corrected only in the fixture; original log946efb retained. Six native owner/Task/Run/Case cases PASS98.60s (cb929563); expanded12 PASS230.07s (cbb64939), pure165 PASS3.90s (7ec21450). Original operating/native content exact throughout. Read-only peer review led to two real shared reproductions: visible late accounting changed finished_at (1FAIL18.73s SHA539bef3979de4fe9ad9a09609c4c089c5554f4621ee6c495b76370a42a29312b); expired-A/queued-B claim held A Task into parent locking and deadlocked heartbeat (1FAIL43.80s SHAeb4eebed568eea3345e16a7704bac88b1bcd63d21fde643c14f07eddfff8bc64). Visible terminal accounting now preserves time; recovery commits Task/Run cleanup before next parent locks; focused concurrent fix1PASS19.60s SHA345a50cae2280feab338076080602dc1f749316d4e3d0ea4d2ff6621a812ac9c. A strengthened cancellation test showed Task/Run retained running after CancelledError (1FAIL19.99s SHAa359f8079e9fe63e0082389b2ee8689d0f58b6d2a4d786dfa9299f2c50cf5245); new-kind shielded typed terminal accounting added. Final expanded/cancellation/legacy regression pending. Native transport already-observed cancellation receipt is a separate helper-owned upgrade-a3b0d819. No operating0046/model/channel adoption or paid call performed.",
+  "eventId": "3d872af4-107d-4646-9804-2104233ac37d",
+  "sequence": 3,
+  "at": "2026-10-18T00:33:00.372Z"
+}

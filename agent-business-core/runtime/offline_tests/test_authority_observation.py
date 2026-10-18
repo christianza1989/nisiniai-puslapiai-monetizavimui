@@ -39,6 +39,7 @@ from pinet_core.creation.models import (
     TeamEvent,
 )
 from pinet_core.creation.service import digest
+from pinet_core.creation_registration.models import Registration
 from pinet_core.customer.models import Account
 from pinet_core.models import utcnow
 from pinet_core.site_build import continuation, foundation, live_preview
@@ -154,6 +155,13 @@ async def graph(monkeypatch):
                 return row if row and query.get("recovery_id_1") == row.recovery_id else f.rows.get("receipt")
             if model is BuildContinuation:
                 return f.rows.get("continuation")
+            if model is Registration:
+                # This authority graph has no registered Business yet. Model
+                # the new exact-revision lookup, not a stub of its validator.
+                assert query == {"creation_id_1": f.creation.id, "environment_id_1": cfg.environment,
+                    "accepted_revision_1": f.creation.current_revision}
+                assert statement.get_execution_options()["populate_existing"] is True
+                return f.rows.get("registration")
             raise AssertionError((model, sql))
         async def scalars(self, statement):
             model = statement.column_descriptions[0]["entity"]
@@ -631,6 +639,7 @@ async def anchored(f, monkeypatch):
     renewed.intake_sha256 = digest(renewed.intake)
     f.rows.update(private=row, receipt=renewed)
     context = await continuation.capture(f.tx, f.s, f.creation)
+    assert f.sql["Registration"] > 0
     f.rows["continuation"].context = context
     f.rows["continuation"].context_sha256 = digest(context)
     f.counts.clear()

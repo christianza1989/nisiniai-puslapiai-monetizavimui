@@ -107,12 +107,42 @@ async def finish_run(tx, task, status, *, usage=None):
         elif task.kind == "acquisition.model_prepare":
             from ..acquisition.model_handler import usage_for
             from ..workspace_team.quota import merge_usage
-            usage = merge_usage(usage, await usage_for(tx, task.id, run.id, task.user_id,
-                task.environment_id, task.source_revision))
+            saved = await usage_for(tx, task.id, run.id, task.user_id,
+                task.environment_id, task.source_revision)
+            usage = merge_usage(usage, saved)
+            if run.status == "succeeded":
+                return  # A late result cannot rewrite a successful run.
+            if run.status in {"failed", "cancelled"}:
+                # The visible path has the same terminal-history rule as the
+                # revoked/hidden accounting helper: enrich knowledge only.
+                usage = merge_usage(run.usage, usage)
+                if saved is not None:
+                    usage.update({key: saved[key] for key in (
+                        "model_calls", "settled_calls", "unknown_usage_calls", "usage_complete")})
+                if run.usage != usage:
+                    run.usage = usage
+                if run.cost_microusd is not None:
+                    run.cost_microusd = None
+                if task.lease_until is not None:
+                    task.lease_until = None
+                return
         run.status, run.finished_at, run.usage = status, utcnow(), usage
         if task.kind in {"workspace.team_turn", "workspace.direct_turn"} and task.status in {"succeeded", "failed", "cancelled"}:
             task.lease_until = None
         run.cost_microusd = None  # CLI usage is not an authoritative USD invoice.
+
+
+async def reap_running(user_id):
+    # Recovery locks Task/Run only. Commit these locks before the next queued
+    # handler takes owner/Creation/Agent parents, matching heartbeat's order.
+    async with scope(user=user_id) as tx:
+        await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
+            {"k": "chat-claim:" + settings().environment + ":" + user_id})
+        running = list(await tx.scalars(select(Task).where(Task.status == "running").with_for_update()))
+        for task in running:
+            await expire_run(tx, task)
+            if task.status != "running":
+                await finish_run(tx, task, "failed")
 
 
 async def claim(*, kind=None):
@@ -128,6 +158,7 @@ async def claim(*, kind=None):
                 # The fixed handler may resume an explicit durable intent.
                 # Complete metadata preflight BEFORE actor/Task claim locks.
                 await handler.reconcile(user_id)
+            await reap_running(user_id)
             async with scope(user=user_id) as tx:
                 # Existing actor lock: all kinds share one running slot.
                 await tx.execute(
@@ -139,17 +170,9 @@ async def claim(*, kind=None):
                     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:k,0))"),
                         {"k": "chat-admission:"+settings().environment+":"+user_id})
                     await release_queue(tx, user_id)
-                running = list(
-                    await tx.scalars(select(Task).where(Task.status == "running").with_for_update())
-                )
-                busy = False
-                for task in running:
-                    await expire_run(tx, task)
-                    if task.status == "running":
-                        busy = True
-                    else:
-                        await finish_run(tx, task, "failed")
-                if busy:
+                # Actor admission serializes claims. A fresh read also sees a
+                # different worker that claimed between recovery and this tx.
+                if await tx.scalar(select(Task.id).where(Task.status == "running").limit(1)):
                     continue
                 if settings().workspace_team_enabled and await tx.scalar(
                     text("SELECT workspace_team_actor_busy(:u,:e)"), {"u": user_id, "e": settings().environment}
@@ -295,6 +318,20 @@ async def execute_once(adapter=None, *, kind=None):
         result, usage = await handler.run(
             claimed["context"], lambda: heartbeat(task_id, run_id, user_id=actor, kind=handler.kind), adapter
         )
+    except asyncio.CancelledError:
+        if handler.kind == "acquisition.model_prepare":
+            from ..acquisition.model_handler import observed_total
+
+            async def retain_cancelled():
+                async with scope(user=actor) as tx:
+                    await settle_hidden_task(tx, claimed, observed_total(claimed["context"]))
+
+            try:
+                await asyncio.shield(retain_cancelled())
+            except (SQLAlchemyError, codex.RunnerError):
+                # A retained reservation remains charged if the DB is unavailable.
+                pass
+        raise  # Cancellation is never success, a retry, or a provider error.
     except codex.RunnerError as error:
         failure = error.code
         if isinstance(error.receipt, dict):

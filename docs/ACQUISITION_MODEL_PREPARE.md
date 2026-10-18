@@ -45,9 +45,15 @@ No new HTTP write route or model dispatch from GET/polling is added.
 
 The worker uses its existing actor slot, lease, TaskRun and events. Parent owner,
 Session, Creation and saved Config locks precede Task/Run and the authorization
-budget barrier. Conditional hooks apply only to this new handler; legacy kind
-paths remain unchanged. Each role reserves an immutable charged attempt BEFORE
+budget barrier. The new authority hooks apply only to this handler; common
+recovery transaction ordering also serves the existing kinds. Each role reserves an immutable charged attempt BEFORE
 possible CLI IO. A pending/failed predecessor cannot be retried in the same Task.
+
+Common worker recovery first expires interrupted runs in its own committed actor
+transaction. It releases those Task/Run locks before acquiring the next queued
+task's parent locks. The subsequent actor-serialized claim checks again for a
+running task, including one claimed between the two transactions. This prevents
+expired-A/queued-B recovery from deadlocking with A's parent-first heartbeat.
 
 The existing HeadlessRoles/prepare engine selects researcher, writer and exact
 independent reviewer. A non-fitting research assessment may skip writer. Each
@@ -85,6 +91,15 @@ no row, task result or event count. Later observed knowledge may monotonically
 refresh only the same failed/cancelled Run's accounting projection, with counts
 derived from immutable reservations. It cannot revive work or modify a successful
 result. Ordinary reads remain behind the current grant.
+
+Cancellation propagates as cancellation. Before propagating it, the new model
+kind makes a shielded accounting-only terminal settlement under the same typed
+helper, including when current ownership has been revoked. The model output
+stays null, a reserved call is never replayed, and unavailable usage stays unknown.
+If the database itself is unavailable, the immutable charged reservation remains
+the recovery evidence; no successful settlement is invented. Visible late
+accounting also preserves terminal status/time, while enriching known token sums
+and refreshing reservation-derived counts without reviving the task.
 
 ## Adoption and remaining paths
 

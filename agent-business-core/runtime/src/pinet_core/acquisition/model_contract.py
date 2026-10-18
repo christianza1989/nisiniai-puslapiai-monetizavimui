@@ -8,11 +8,12 @@ from ..contracts import Strict
 from ..customer_agents.wire import Revision
 from .contracts import Campaign, Prospect
 from .correspondence import recipient_hash
+from .model_schema import ADAPTER as ADAPTER
+from .model_schema import EFFORT as EFFORT
+from .model_schema import KIND as KIND
+from .model_schema import MODEL as MODEL
 from .module_admin import Authority, Digest
 
-KIND = "acquisition.model_prepare"
-MODEL, EFFORT = "gpt-6.1-sol", "high"
-ADAPTER = "acquisition-model-prepare.v1"
 Purpose = Literal["customer_research", "email"]
 Role = Literal["researcher", "writer", "reviewer"]
 ROLES = ("researcher", "writer", "reviewer")

@@ -1690,3 +1690,10 @@ site_chat and public DTOs unchanged. Helper01a13440 independently owns new
 model_schema.py/model_models.py/migration0046/env import/schema tests/doc.
 No paid calls, old lab budget reset, operating migration/admission or live
 channels in this source window; inert full-chain regression first.
+
+Root continuation: helper schema2424268 integrated as0a2b3a5. Shared worker
+recovery now commits expired Task/Run cleanup before queued parent locks; model
+cancellation uses typed accounting-only settlement and terminal time stays fixed.
+Additional Root-only dependency: offline_tests/test_authority_observation.py SQL
+fake exact Registration lookup, separate workflow journal. Existing native/final
+mutation assertions and all production authority validators are preserved.

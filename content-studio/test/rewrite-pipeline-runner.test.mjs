@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { createPipelineState, JsonPipelineStore, runRewritePipeline } from '../src/rewrite-pipeline/runner.mjs';
+import { HostBridge } from '../src/rewrite-pipeline/host-bridge.mjs';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const deferred = () => { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; };
@@ -412,4 +413,44 @@ test('CLI shares configured poll interval with host and rejects invalid interval
     if(pollMs===undefined||pollMs===13)assert.equal(child.status,0,child.stderr);
     else{assert.notEqual(child.status,0);assert.match(child.stderr,/pollMs must be a positive integer/);}
   }
+});
+test('default state lock tolerates a writer beyond five seconds without stealing its lock or history', {timeout:10000}, async t=>{
+  const {store,filename}=await fixture(t,[],{legacy:{requests:[{id:'original',status:'UNKNOWN'}]}});
+  assert.equal(store.lockTimeoutMs,30000);await writeFile(store.lockFile,JSON.stringify({token:'slow-writer',pid:123}));
+  const work=store.update(doc=>{doc.pipeline.checked=true;});
+  await delay(5200);assert.equal(JSON.parse(await readFile(store.lockFile,'utf8')).token,'slow-writer');
+  await rm(store.lockFile);await work;
+  const doc=JSON.parse(await readFile(filename,'utf8'));assert.deepEqual(doc.requests,[{id:'original',status:'UNKNOWN'}]);assert.equal(doc.pipeline.checked,true);
+});
+test('a cancelled unclaimed host request is held as NOT_SENT rather than authored UNKNOWN',async()=>{
+  const store=memoryStore(['a']);let calls=0;
+  const result=await runRewritePipeline({store,pollMs:1,ports:ports({generate:async()=>{calls++;throw Object.assign(new Error('Never claimed'),{code:'HOST_NOT_SENT'});}})});
+  assert.equal(calls,1);assert.equal(result.batches[0].status,'NOT_SENT');assert.equal(result.pages[0].status,'HELD');
+  assert.equal(result.pages[0].generationResults[0].status,'NOT_SENT');assert.equal(result.pages[0].candidates.length,0);
+});
+test('real runner abort race atomically closes an unclaimed HostBridge request as NOT_SENT',async t=>{
+  const {store}=await fixture(t,['a']),bridge=new HostBridge(store,{pollMs:2}),controller=new AbortController();let external;
+  const work=runRewritePipeline({store,pollMs:1,signal:controller.signal,ports:ports({
+    generate:(batch,ctx)=>{external=bridge.request('GEMINI_GENERATE',{batchId:batch.batchId},ctx);return external;},
+    cancelUnclaimedGeneration:(batchId,reason,ctx)=>bridge.cancelUnclaimedGeneration(batchId,reason,ctx),
+  })});
+  let request;while(!(request=(await bridge.pending())[0]))await delay(2);
+  controller.abort(new Error('Internal pipeline lock failure'));
+  const result=await work;await assert.rejects(external,error=>error.code==='HOST_NOT_SENT');
+  const doc=await store.read(),saved=doc.requests.find(r=>r.id===request.id);
+  assert.equal(saved.status,'NOT_SENT');assert.equal(saved.actor,undefined);assert.equal(saved.sendIntent,undefined);
+  assert.equal(result.batches[0].status,'NOT_SENT');assert.equal(result.pages[0].status,'HELD');assert.equal(result.pages[0].generationResults[0].status,'NOT_SENT');
+  assert.match(result.batches[0].error,/Internal pipeline lock failure/);assert.doesNotMatch(JSON.stringify(doc),/Owner paused pipeline|Owner pause before/);
+  await assert.rejects(bridge.claim(request.id,'late-host'));
+});
+test('real runner cancellation keeps an already claimed HostBridge outcome UNKNOWN and never replayable',async t=>{
+  const {store}=await fixture(t,['a']),bridge=new HostBridge(store,{pollMs:2}),controller=new AbortController();let external;
+  const work=runRewritePipeline({store,pollMs:1,signal:controller.signal,ports:ports({
+    generate:(batch,ctx)=>{external=bridge.request('GEMINI_GENERATE',{batchId:batch.batchId},ctx);return external;},
+    cancelUnclaimedGeneration:(batchId,reason,ctx)=>bridge.cancelUnclaimedGeneration(batchId,reason,ctx),
+  })});
+  let request;while(!(request=(await bridge.pending())[0]))await delay(2);await bridge.claim(request.id,'actual-fixture-host');
+  controller.abort(new Error('Internal import failure'));const result=await work;await assert.rejects(external,/unknown/);
+  const saved=(await store.read()).requests.find(r=>r.id===request.id);assert.equal(saved.status,'UNKNOWN');assert.equal(result.pages[0].status,'UNKNOWN');
+  assert.match(saved.reason,/Internal import failure/);assert.doesNotMatch(saved.reason,/Owner pause/);await assert.rejects(bridge.claim(request.id,'actual-fixture-host'));
 });

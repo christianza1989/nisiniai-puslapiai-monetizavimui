@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Committed literal bracketed Git scope paths are rejected as globs, preventing valid Next.js route provenance; keep wildcard coverage closed.",
+  "category": "code",
+  "evidence": [
+    "Two committed-Git fixtures fail before the fix: literal bracketed blob/tree coverage and exact deleted bracketed blob provenance are BLOCKED instead of PASS. Original output retained privately.",
+    "scripts/core-upgrade-check.mjs rejects every bracket, while core-upgrade.mjs already preserves safe literal relative paths."
+  ],
+  "paths": [
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "scripts/core-upgrade.test.mjs",
+    "core-improvements/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/215",
+  "rollback": "Revert the scoped checker fix and its new fixtures; preserve all journal/source history. No runtime adoption or main delivery slice is included.",
+  "id": "upgrade-e5ccc33f-99de-4574-8a20-90eacae22217",
+  "branch": "codex/core-literal-scope-patch-20261019",
+  "baseSha": "533f8f2d70b0c24ef5d718858afd3ad7bd3af5f7",
+  "createdAt": "2026-10-18T21:42:37.518Z"
+}

@@ -155,3 +155,54 @@ test('noncanonical issue URLs fail closed instead of reclassifying public record
     assert(result.errors.some(e => e.reason === 'canonical_issue_url_required'), suffix);
   }
 });
+
+test('literal bracketed committed blob and tree scopes pass without matching neighbouring paths', async t => {
+  const f = await fixture(t);
+  const file = 'scripts/app/[siteId]/[[...slug]]/page.tsx';
+  await f.write(file, 'export const route = 1;\n');
+  const r = await f.record([file]); await f.verify(r);
+  assert.deepEqual(JSON.parse(await fs.readFile(path.join(f.root,
+    `core-improvements/entries/${r.id}/record.json`), 'utf8')).paths, [file]);
+  const blobHead = f.commit();
+  assert.equal(checkUpgradeCoverage(f.root, f.base, blobHead).status, 'PASS');
+  const tree = await f.record(['scripts/app/[siteId]/[[...slug]]']); await f.verify(tree);
+  const outside = 'scripts/app/[siteId]/[[...slug]]-other/page.tsx';
+  await f.write(file, 'export const route = 2;\n');
+  await f.write(outside, 'export const unrelated = 1;\n');
+  const result = checkUpgradeCoverage(f.root, blobHead, f.commit());
+  assert.equal(result.status, 'BLOCKED');
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.uncovered_paths, [outside]);
+});
+
+test('literal bracketed deleted blob keeps exact committed deletion provenance', async t => {
+  const f = await fixture(t), file = 'scripts/[param]/obsolete.mjs';
+  await f.write(file, 'export const old = 1;\n');
+  const base = f.commit();
+  await fs.unlink(path.join(f.root, file));
+  const r = await f.record([file]); await f.verify(r);
+  assert.equal(checkUpgradeCoverage(f.root, base, f.commit()).status, 'PASS');
+});
+
+test('bracket patterns, wildcards and working-tree-only scope never broaden committed coverage', async t => {
+  for (const scope of ['scripts/**', 'scripts/app/*/page.mjs', 'scripts/tool?.mjs',
+    'scripts/app/[ab]/page.mjs', 'scripts/app/[missing]/page.mjs']) {
+    const f = await fixture(t);
+    const actual = 'scripts/app/a/page.mjs';
+    await f.write(actual, 'export const actual = 1;\n');
+    const r = await f.record([scope]); await f.verify(r);
+    const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+    assert.equal(result.status, 'BLOCKED', scope);
+    assert.deepEqual(result.uncovered_paths, [actual], scope);
+    assert(result.errors.some(e => e.reason === 'scope_must_be_exact_path_or_directory'), scope);
+  }
+  const f = await fixture(t), file = 'scripts/[uncommitted]/tool.mjs';
+  await f.write('scripts/tool.mjs', 'export const changed = 1;\n');
+  f.commit();
+  await f.write(file, 'working tree only\n');
+  const r = await f.record([file]); await f.verify(r);
+  f.git('add', 'core-improvements'); f.git('commit', '-m', 'journal only');
+  const result = checkUpgradeCoverage(f.root, f.base, f.git('rev-parse', 'HEAD'));
+  assert(result.errors.some(e => e.reason === 'scope_must_be_exact_path_or_directory'));
+  assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+});

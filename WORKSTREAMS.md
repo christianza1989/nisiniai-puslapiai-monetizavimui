@@ -2403,3 +2403,13 @@ the separately accepted three actual LT translations preserved.
 Local verification:43offline and8restricted0051PG PASS; independent new7-case
 offline/source review PASS. Upgradef61ae09b-c9a2-4335-8618-5d34fa98fa6a;
 fresh actual model admission remains separate from these inert checks.
+2026-10-19 literal Git scope repair RESERVED: issue215, own
+codex/core-literal-scope-patch-20261019 from fetched533f8f2d. Scope only
+scripts/core-upgrade-check.mjs and its committed-Git fixtures, helper regression,
+core-improvements/README.md and a unique upgrade entry. Resolve bracketed scope
+against exact committed Git blobs/trees; no wildcard expansion. Root/Serving,
+old journals, runtime/schema/provider/model work and main delivery are excluded.
+Local verification: 20 committed-Git/helper tests PASS, including literal blob,
+tree and deletion provenance, wildcard/pattern/uncommitted rejection and exact
+directory boundaries. Upgrade e5ccc33f-99de-4574-8a20-90eacae22217; reserved
+source window CLOSED for this patch-only handoff. Main delivery stays separate.

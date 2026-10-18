@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Patch-only branch based on fetched 533f8f2d. Real committed blob/tree/deletion scopes are literal, neighbouring paths remain uncovered and wildcard/pattern/working-tree-only scopes remain blocked. Helper already stores safe relative brackets literally; no production helper change needed. Original RED output and first assertion failure retained. No main merge/runtime adoption claimed.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "20/20 PASS, zero skipped; retained .local/literal-scope/after-fix-v2.log SHA256 2d88d42876eb3a48563c8f6a60ae3e61cebc322293133708fbb93c1cfee7ed73. Includes unchanged history/issue/public-vs-private/fresh-verification and quarantine boundaries."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "No whitespace errors after scoped code/test/docs/window update."
+    }
+  ],
+  "eventId": "7fa024a6-fd3e-439e-9823-6442edf24194",
+  "sequence": 3,
+  "at": "2026-10-18T21:45:57.132Z"
+}

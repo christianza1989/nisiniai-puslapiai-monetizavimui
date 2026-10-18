@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "This verification accepts the scoped shared transport/diagnostic retention increment only. Actual six-role evaluation remains INCOMPLETE: the sole new diagnostic timed out300s, its charge/unknown usage remain, and no grade/campaign/main/operating acceptance is inferred. The prior fixing event intentionally preserves that live failure. At checkpointf1aa the latest fixing state correctly blocked scoped coverage and was pushed before that result was inspected; this intermediate mistake is retained, not rewritten. Runtime source is byte-identical to the167-test64d snapshot. New read-only assertions establish the original failed request unchanged, one reserved failed attempt/unknown usage, exact two start events101bytes, closed stdin/no output/live parent at timeout, and completed owned cleanup. No paid request was repeated to obtain this verification.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/verify-evaluator-diagnostic-64d926b6.py",
+      "result": "PASS",
+      "evidence": "Read-only completed safe output diagnostic_retention=PASS/evaluation=INCOMPLETE/attempts1/usageUNKNOWN/whole_suite_acceptancefalse/externalsentfalse. Exact observationSHAf5aac79dbb0c4633a830156422857c9b3085db561f2dd269c38ba91a8f6e509d; ledgerSHA69cac379bfad741f0148d609a9e1233595c16258b26516be20967e5551b6f591. Runtime src diff64d->f1aa is empty. This is not a model grade PASS."
+    },
+    {
+      "command": "python -m pytest offline_tests/test_acquisition_evidence.py offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_runtime_clock.py offline_tests/test_acquisition_native_chain.py offline_tests/test_acquisition_discovery.py offline_tests/test_acquisition_discovery_treg.py offline_tests/test_acquisition_discovery_urls.py offline_tests/test_codex_lab_transport.py offline_tests/test_acquisition_lab_budget.py tests/test_codex_lab.py tests/test_codex_timeout_recovery.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "Actual integrated source64d run167passed9.77s, logSHA882bcc2ba83017f50c08ce7496f26de0b65a5be8a138915a50e3b09163b08ade. Preceding full75transport/observation regressions33.06s logSHAb056c04225370c7b91940047b8b9d592a04daa5ec6ec19d3cb75c2fd39e238df. No source change since either applicable check; no unnecessary paid rerun."
+    }
+  ],
+  "eventId": "aae1f3d9-1f00-4b61-a925-21501b77e3cb",
+  "sequence": 4,
+  "at": "2026-10-18T22:55:03.034Z"
+}

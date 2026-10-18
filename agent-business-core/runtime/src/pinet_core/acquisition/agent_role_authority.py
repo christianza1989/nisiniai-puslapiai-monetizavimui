@@ -263,12 +263,14 @@ async def observe(tx, value, work):
         now = await tx.scalar(text("SELECT clock_timestamp()"))
         if gates(value.campaign, value.prospect.model_copy(update={"status": "new"}), now):
             raise RunnerError("agent_role_campaign_unavailable")
+    checked_at = await tx.scalar(text("SELECT clock_timestamp()"))
     if value.calibration is not None:
         from .agent_role_calibration import verify_reference
 
         verify_reference(value, bindings, work.authorization.source_revision,
-                         now=await tx.scalar(text("SELECT clock_timestamp()")), until=deadline)
-    return {"bindings": bindings, "parents": parents, "mail": mail, "deadline": deadline, "initial": initial}
+                         now=checked_at, until=deadline)
+    return {"bindings": bindings, "parents": parents, "mail": mail, "deadline": deadline,
+            "initial": initial, "checked_at": checked_at}
 
 
 async def final_fence(tx, value, work, context):

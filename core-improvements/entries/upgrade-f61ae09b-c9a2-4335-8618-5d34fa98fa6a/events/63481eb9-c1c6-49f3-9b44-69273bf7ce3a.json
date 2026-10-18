@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual fd4 known smoke stopped after4known calls when two roles treated unexpired UTC facts as expired after local midnight. All exact grants/module stopped, all142historical native charges/102six-role retained. Supply only the actual DB temporal snapshot after admission; common instruction deliberately changes, Config2/cases/grader/expiry do not. No threshold change or provider retry. Independent helper reviewed source and reran7new offline cases PASS. Actual model acceptance remains a fresh bounded source-pinned stage; no operating adoption claimed by this code verification.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_runtime_clock.py offline_tests/test_acquisition_business_projection.py offline_tests/test_acquisition_context_delivery.py offline_tests/test_acquisition_agent_roles.py",
+      "result": "PASS",
+      "evidence": "43 cases PASS2.12s; midnight+03/prior-dayUTC future offer, missing/naive/elapsed clocks, caller-clock override refusal and existing source-context/role projections. No DB/provider."
+    },
+    {
+      "command": "python -m pytest -q tests/test_acquisition_agent_roles_pg.py::test_six_exact_configs_one_reply_case_and_no_role_alias tests/test_acquisition_agent_roles_pg.py::test_held_initial_copy_does_not_authorize_an_unrelated_offer tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade",
+      "result": "PASS",
+      "evidence": "8 restricted retained0051 cases PASS271.90s; log SHA2560d0aa513ba19eea4067e6cf077028d0a31341d769d1efc494a2799ccddc608d1. All real common-worker role packets carry aware UTC checked_at no later than actual DB clock, bounded by exact role deadline. Same-case reply/hold and3whole-window0Task/attempt/provider negatives remain correct. Inert adapters only; operating DB untouched."
+    },
+    {
+      "command": "ruff check acquisition/runtime_clock.py agent_role_authority.py agent_role_handler.py and exact changed tests; git diff --check",
+      "result": "PASS",
+      "evidence": "Exact five Python paths clean; no source/corpus/grader/expiry rewrite."
+    }
+  ],
+  "eventId": "63481eb9-c1c6-49f3-9b44-69273bf7ce3a",
+  "sequence": 2,
+  "at": "2026-10-18T21:27:03.456Z"
+}

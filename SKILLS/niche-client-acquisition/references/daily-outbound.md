@@ -65,3 +65,7 @@ leave marketing held; only the exact same capture receipt may finish its atomic
 Task. An authenticated requested reply remains separate from another offer or
 follow-up. Preserve all failed states; do not turn copy approval into consent.
 See [communication scope](../../../docs/REVIEWED_DRAFT_COMMUNICATION_SCOPE.md).
+
+Use the server's UTC temporal context for expiry interpretation when supplied;
+local midnight does not expire a still-valid UTC fact. This context never grants
+contact rights. See [runtime clock](../../../docs/AGENT_RUNTIME_UTC_CONTEXT.md).

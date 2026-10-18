@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Six business roles received expiry timestamps without the server UTC check time; after local midnight valid UTC facts were falsely treated as expired. Supply a server-only temporal snapshot without granting contact or factual authority.",
+  "category": "code",
+  "evidence": [
+    "docs/AGENT_RUNTIME_UTC_CONTEXT.md records the actual known-smoke failure and the missing model-context boundary. Four known calls, no writer/send, all six grants and module canonically stopped; original case, grader and accounting retained.",
+    "agent-business-core/runtime/offline_tests/test_acquisition_runtime_clock.py covers next local calendar day while UTC facts remain valid, invalid/elapsed context and refusal of a caller-supplied clock.",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py checks all role packets against the actual database clock and the existing exact execution deadline."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/runtime_clock.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/instructions/common.md",
+    "agent-business-core/runtime/offline_tests/test_acquisition_runtime_clock.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "docs/AGENT_RUNTIME_UTC_CONTEXT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this scoped context/helper/instruction change together after stopping its exact model grants. Retain all original failures, UTC/fact timestamps, source snapshots, tasks and accounting; do not extend historical expiry or change the grader.",
+  "id": "upgrade-f61ae09b-c9a2-4335-8618-5d34fa98fa6a",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "fd4ed0dabe620e8e4441cd92f01e31ce55ecb023",
+  "createdAt": "2026-10-18T21:23:35.345Z"
+}

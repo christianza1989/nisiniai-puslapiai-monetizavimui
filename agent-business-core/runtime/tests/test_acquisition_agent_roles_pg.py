@@ -95,8 +95,17 @@ class Roles:
         self.wrong_artifact, self.accepted, self.cancel = wrong_artifact, accepted, cancel
 
     async def __call__(self, role, schema, instruction, data, heartbeat, deadline):
+        from datetime import datetime, timedelta
+
         assert await heartbeat()
         assert schema is OUTPUT[role]
+        clock = data["runtime_time"]
+        checked = datetime.fromisoformat(clock["checked_at_utc"])
+        assert clock["clock"] == "database_utc" and checked.utcoffset() == timedelta(0)
+        async with db.registry() as clock_tx:
+            database_now = await clock_tx.scalar(select(func.clock_timestamp()))
+        assert checked <= database_now < datetime.fromisoformat(clock["execution_deadline_utc"]) == deadline
+        assert clock["campaign_and_evidence_time_checks_passed"] is True
         assert data["agent_specification"]["name"] == "Exact saved " + role
         assert data["reviewed_business_source"]["facts"][0]["id"] == "pilot"
         self.calls.append(role)

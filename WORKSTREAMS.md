@@ -2391,3 +2391,15 @@ migration preserves all 6,599 pre-existing rows across 95 tables; 16 new recover
 PG, 21 existing display PG and 23 offline cases PASS using inert adapters. QA
 lease returned to Root after serial tests. Initial draft failures retained.
 Source/journal handoff only; no main merge or operating adoption is claimed.
+
+2026-10-19 Root UTC context repair, issue66 comment6255279844, fromfd4ed0da.
+Known smoke stopped after4known calls: local midnight caused two roles to call
+UTC facts expired despite successful server gates. Own agent_role_authority/
+handler, small runtime_clock helper, common instruction, focused offline/PG
+tests and temporal docs/journal. Canonical server checked-at UTC is model-visible;
+no caller clock/permission or historical case/grade/fact changes. All six grants
+and module stopped,142native historical charges retained (102six-role), with
+the separately accepted three actual LT translations preserved.
+Local verification:43offline and8restricted0051PG PASS; independent new7-case
+offline/source review PASS. Upgradef61ae09b-c9a2-4335-8618-5d34fa98fa6a;
+fresh actual model admission remains separate from these inert checks.

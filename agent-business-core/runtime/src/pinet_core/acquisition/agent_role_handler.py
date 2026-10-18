@@ -22,6 +22,7 @@ from .headless_mail import HeadlessMail
 from .instructions import compose
 from .model_handler import ModelHandler, TaskRole, observed_total
 from .model_models import ModelAttempt
+from .runtime_clock import model_context
 
 ROLE_RULES = {
     "research": "Research evidence only. Separate fit from purchase intent. Empty subject/body; next_action research/exclude/stop. No invented discovery or consent.",
@@ -171,6 +172,7 @@ class AgentRoleHandler(ModelHandler):
         bound, value, work = await preflight(tx, task)
         observation = tx.info["acquisition_agent_role_context"][task.id]
         data = business_context(value, parents=observation["parents"], mail=observation["mail"])
+        data["runtime_time"] = model_context(observation["checked_at"], observation["deadline"])
         return {
             "_task_id": task.id,
             "_user_id": task.user_id,

@@ -50,7 +50,7 @@ def payload_sql():
       END LOOP;
       IF(SELECT count(*)<>count(DISTINCT value->>'id') FROM jsonb_array_elements(j->'facts'))
         THEN RETURN FALSE;END IF;
-      FOR v IN SELECT value#>>'{}' FROM jsonb_path_query(j,'strict $.** ? (@.type() == "string")') LOOP
+      FOR v IN SELECT value#>>'{}' FROM jsonb_path_query(j,'strict $.** ? (@.type() == "string")') AS item(value) LOOP
         IF v !~ '[^[:space:]]' OR v ~ E'[\x01-\x08\x0B-\x1F\x7F]' THEN RETURN FALSE;END IF;
       END LOOP;RETURN TRUE;END$$"""
 

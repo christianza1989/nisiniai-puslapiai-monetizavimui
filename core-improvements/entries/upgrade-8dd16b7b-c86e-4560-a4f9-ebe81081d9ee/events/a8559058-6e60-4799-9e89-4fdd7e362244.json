@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Scoped payload alias correction with retained synthetic PG regression. Current source is ad402 composition plus own change. No operating/paid/protected adoption. Defaultmain core-upgrade coverage remains blocked by inherited records; own653-to046 coverage PASS.",
+  "checks": [
+    {
+      "command": "PINET_BUSINESS_ATTACHMENT_QA=retained-isolated python -m pytest tests/test_business_attachment_pg.py -x -q --tb=short",
+      "result": "PASS",
+      "evidence": "Own PostgreSQL18.6 port15559; Rootcomposed49 + canonical scoped payload alias correction + unchanged bootstrap; run5 private retained XML/log, 11 passed in6.48s"
+    },
+    {
+      "command": "python -m pytest tests/test_business_attachment.py -q",
+      "result": "PASS",
+      "evidence": "2026-10-18 own checkout, existing QA Python3.13; 19 passed in0.26s; no provider"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/business_attachment scripts/business_attachment_admin.py tests/test_business_attachment.py tests/test_business_attachment_pg.py",
+      "result": "PASS",
+      "evidence": "Owned paths only; existing QA Ruff"
+    },
+    {
+      "command": "node scripts/core-upgrade-check.mjs --base 653d1bcc66af0a3d77a01af650bd1fdbbb72672c --head 046472f20afe78a07d8822bc864fa6db3eba2c47",
+      "result": "PASS",
+      "evidence": "7 shared changes covered only by own upgrade; no uncovered paths/errors. Defaultmain inherited record failures kept distinct."
+    }
+  ],
+  "eventId": "a8559058-6e60-4799-9e89-4fdd7e362244",
+  "sequence": 4,
+  "at": "2026-10-18T07:38:43.513Z"
+}

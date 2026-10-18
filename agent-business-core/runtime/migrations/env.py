@@ -32,7 +32,9 @@ from pinet_core.workspace_topics import models as workspace_topic_models  # noqa
 
 
 def run(connection):
-    context.configure(connection=connection, target_metadata=Base.metadata)
+    # Revision-local ON COMMIT DROP probes must end before the next installer.
+    # A failed revision rolls back its own DDL/data; prior version commits remain.
+    context.configure(connection=connection, target_metadata=Base.metadata, transaction_per_migration=True)
     with context.begin_transaction():
         context.run_migrations()
 

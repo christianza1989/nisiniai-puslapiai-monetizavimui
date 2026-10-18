@@ -231,8 +231,20 @@ async def write_authority(token, creation_id, agent_id=None, *, purpose=None,
 
 
 def config_material(agent, config):
-    return {"agent_id": agent.id, "registration_fingerprint": agent.registration_fingerprint,
+    external = getattr(agent, "external_binding_id", None) is not None
+    source_id = getattr(config, "external_binding_id", None)
+    source_fingerprint = getattr(config, "external_binding_fingerprint", None)
+    if external != (source_id is not None and source_fingerprint is not None):
+        raise ValueError("Invalid configuration source provenance")
+    value = {"agent_id": agent.id,
+        "registration_fingerprint": source_fingerprint if external else agent.registration_fingerprint,
         "purpose": agent.purpose, "revision": config.revision, "specification": config.payload}
+    if external:
+        value["source_origin"] = {"kind": "external", "binding_id": source_id, "fingerprint": source_fingerprint}
+    if getattr(config, "import_provenance", None) is not None:
+        from .import_wire import ImportProvenance
+        value["import_provenance"] = ImportProvenance.model_validate(config.import_provenance).model_dump(mode="json")
+    return value
 
 
 def config_view(agent, config):
@@ -244,9 +256,15 @@ def config_view(agent, config):
             raise ValueError("Invalid immutable config")
     except (ValidationError, ValueError, TypeError):
         raise ControlError(503, "invalid_agent_config") from None
-    return {"revision_id": config.id, "agent_id": agent.id, "revision": config.revision,
+    result = {"revision_id": config.id, "agent_id": agent.id, "revision": config.revision,
         "specification": value, "sha256": config.config_sha256, "saved_at": config.created_at,
         "saved_source_revision": config.saved_source_revision}
+    if getattr(config, "import_provenance", None) is not None:
+        result["import_provenance"] = config.import_provenance
+    if getattr(config, "external_binding_id", None) is not None:
+        result["source_origin"] = {"kind": "external", "binding_id": config.external_binding_id,
+            "fingerprint": config.external_binding_fingerprint}
+    return result
 
 
 def agent_view(agent, config):
@@ -263,6 +281,9 @@ async def current_config(tx, agent):
 
 
 async def detail(tx, agent, selected=None, *, session):
+    if getattr(agent, "external_binding_id", None) is not None:
+        from .business import detail as business_detail
+        return await business_detail(tx, agent, selected, session=session)
     current = await current_config(tx, agent)
     creation = await tx.get(Creation, agent.creation_id)
     registry = await tx.get(Registration, agent.registration_id)
@@ -282,15 +303,28 @@ def request_fingerprint(creation_id, value, agent_id=None):
     return digest({"creation_id": creation_id, "agent_id": agent_id, "request": material})
 
 
-async def append_config(tx, agent, value, fingerprint, session):
+async def append_config(tx, agent, value, fingerprint, session, *, import_provenance=None):
     config = Config(id=new_id(), agent_id=agent.id, revision=agent.current_revision,
         payload=value.configuration.model_dump(mode="json"), saved_source_revision=settings().control_source_revision,
         idempotency_key=str(value.request_id), request_fingerprint=fingerprint,
-        authorizing_session_id=session.id, **binding(agent))
+        authorizing_session_id=session.id, import_provenance=import_provenance,
+        external_binding_id=agent.external_binding_id,
+        external_binding_fingerprint=agent.registration_fingerprint if agent.external_binding_id else None,
+        **binding(agent))
     config.config_sha256 = digest(config_material(agent, config))
     tx.add(config)
     await tx.flush()
     return config
+
+
+@asynccontextmanager
+async def business_transaction_authority(tx, session, business_id, agent_id=None, *, writing=False,
+        lock=True, purpose=None, source_binding_id=None):
+    """One Agent/Config authority with genuine Creation or external provenance."""
+    from .business import transaction_authority as business_authority
+    async with business_authority(tx, session, business_id, agent_id, writing=writing,
+            lock=lock, purpose=purpose, source_binding_id=source_binding_id) as context:
+        yield context
 
 
 async def create(token, creation_id, value):

@@ -1,5 +1,19 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Active account attachment implementation — 2026-10-18
+
+The owner explicitly requested completed business/agent attachment while building
+the new dealer website in a separate chat. Root now owns the account adapter,
+business-scoped Agent/Config API/import/history, stable Agent/source version
+adoption, directory and portal integration. Existing reviewed claim/BusinessGrant
+remains ownership; no fakeCreation/Profile or second core is introduced.
+
+Current0049 draft is not operating adoption. Source backbone and native adapter
+are separate owned helper windows, then composed isolated PG/RLS/HTTP and browser
+acceptance. Root's preserved local API remains119/schema48/paid+channels held.
+Old pilot and allowances stay closed. Current contract:
+[existing-business agent attachment](../../docs/VERSLOMATIKA_EXISTING_BUSINESS_AGENT_CONTRACT.md).
+
 ## Current owner assignment — platform only, 2026-10-18
 
 The owner resumed this chat's platform work after the pause. A separate chat will

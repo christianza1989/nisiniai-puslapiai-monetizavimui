@@ -1,0 +1,21 @@
+{
+  "status": "pr",
+  "note": "Idle polling of a22MB state consumed about1.2s per no-op. Cheap snapshots now serialize file handles with atomic writers without cloning and validating mutation history. Claims still recheck current owner/pause/status under guarded update. Exact H1 siblings are isolated; explicit reconciliation reuses an identical stored answer, preserving original history and avoiding duplicate author sends. Actual read path1.207s to0.257s; this does not establish the50texts/hour target. New publication remains paused, product descriptions deferred.",
+  "commit": "b32953954736340a77828374991b4944f6c6301a",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-capture.test.mjs content-studio/test/rewrite-pipeline-host-prompt.test.mjs content-studio/test/rewrite-pipeline-reconcile.test.mjs",
+      "result": "PASS",
+      "evidence": "56focused parser/host/reconcile tests. Actual retained capture read-onlyparse yields2exact own slices and1format rejection; live explicit reconciliation writes only state with all6non-state bindings unchanged."
+    },
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-runner.test.mjs; node --test content-studio/test/rewrite-pipeline-bridge.test.mjs; node --test content-studio/test/rewrite-pipeline-reconcile.test.mjs",
+      "result": "PASS",
+      "evidence": "Separate sequential runs38runner+6bridge+9reconcile=53tests, with overlap against parser checks. Original5sdeadlines unchanged. Root post-integration repeated3parser+6idle/race/history checks."
+    }
+  ],
+  "eventId": "eed4ad45-86e0-44af-b230-02707acc07d3",
+  "sequence": 14,
+  "at": "2026-10-18T16:50:40.158Z"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "pr",
+  "note": "Invalid checkpoint keys previously reached authorship and failed only at intake. Validate before enqueue/facts/generation, and explicitly repair only key metadata after original canonical/bothCP/no-intake proof. Original inputs, Gemini text and genuine reviews are preserved; UNKNOWN, partial and already-imported records are refused. Sixteen actual accepted pages requeued with zero native/CP/TES/RESULT/pointer/index byte changes and zero author sends. New publication remains paused.",
+  "commit": "11357bec6c358c4d4a566a9abbff6fad6a4b8d24",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-import.test.mjs content-studio/test/rewrite-pipeline-cli.test.mjs content-studio/test/rewrite-pipeline-host-prompt.test.mjs content-studio/test/rewrite-pipeline-facts.test.mjs",
+      "result": "PASS",
+      "evidence": "33tests passed on isolated source branch, plus8targetedrunner regressions. Root integration repeated all4new key tests including real isolatedCore repair/intake/DOM/finalize roundtrip;4PASS."
+    }
+  ],
+  "eventId": "3e241057-b573-44b4-a9a3-65c743d64e97",
+  "sequence": 13,
+  "at": "2026-10-18T15:25:26.740Z"
+}

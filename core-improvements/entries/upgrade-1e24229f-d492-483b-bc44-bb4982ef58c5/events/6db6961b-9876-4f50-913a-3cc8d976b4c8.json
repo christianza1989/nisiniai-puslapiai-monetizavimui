@@ -1,0 +1,16 @@
+{
+  "status": "pr",
+  "note": "Targeted repair prompt now carries the verified immutable own Gemini original and exact ordered links, asking for collected corrections only. Stops unnecessary whole-page rewrites during description/reason repairs. Private runner drained before source adoption. Main has not adopted this branch; no publication. 50 completed texts/hour remains unachieved.",
+  "commit": "78289c6",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 content-studio/test/rewrite-pipeline-*.test.mjs",
+      "result": "PASS",
+      "evidence": "207/207 tests passed, zero failures, 58.829 seconds; own literal baseline and links, no cross-page prose, capture/candidate tamper rejection, parser-only behavior, existing runner/import/DOM/provenance guards."
+    }
+  ],
+  "eventId": "6db6961b-9876-4f50-913a-3cc8d976b4c8",
+  "sequence": 10,
+  "at": "2026-10-18T12:53:13.412Z"
+}

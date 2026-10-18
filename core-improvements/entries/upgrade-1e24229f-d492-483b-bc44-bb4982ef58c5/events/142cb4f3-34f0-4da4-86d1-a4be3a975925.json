@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Follow-up: require visible document before each new Enter; file-backed host intent writes exact official MCP dispatch source without oversized shell payload or stdin waiting; preserve actual query lines separately from screen-reader summary and acknowledge UI history before URL allocation. Prior uncertain live pilot is not replayed. Chrome extension regrouping remains an actual window-layout blocker, not a backend failure.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-*.test.mjs",
+      "result": "PASS",
+      "evidence": "182 isolated tests passed, including 250k-character file transport, no-overwrite/no-retry, hidden blocking and covered-visible focus independence. Subsequent URL transition binding refinement passed focused tests; live covered-window pilot is not claimed."
+    }
+  ],
+  "eventId": "142cb4f3-34f0-4da4-86d1-a4be3a975925",
+  "sequence": 4,
+  "at": "2026-10-18T07:39:04.015Z"
+}

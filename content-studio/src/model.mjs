@@ -7,7 +7,7 @@ import { optimizeRaster } from './image-pipeline.mjs';
 import {v2RevisionPayload,v2RevisionHash,normalizeV2Blocks,validateV2Draft,validateV2Package,bodyPlainText} from './content-package-v2.mjs';
 import { withStudioWriteLock } from './write-lock.mjs';
 import { contentPolicy, scheduledPlan } from './content-schedule.mjs';
-import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent } from './content-workflow.mjs';
+import { editorialReview, draftLinks, pageReadiness, workflowOverview, reviewCurrent, reviewBinding } from './content-workflow.mjs';
 
 export const ROOT = path.resolve(import.meta.dirname, '..');
 export const DATA = path.resolve(process.env.STUDIO_DATA_DIR || path.join(ROOT, 'data'));
@@ -463,6 +463,8 @@ export async function finalizeInternalLinks(siteId, pageIds) {
 export async function recordEditorialReview(siteId, pageId, input) {
   return locked(async () => {
     const site = await getSite(siteId), [page] = selectedPages(site, [pageId]);
+    if (input.expectedBinding !== undefined && input.expectedBinding !== reviewBinding(site, page, revisionHash(page)))
+      throw new Error('Review context changed; inspect the current page before recording a review.');
     page.editorialReview = editorialReview(site, page, revisionHash(page), input);
     await writeJson(siteFile(siteId), site);
     return page.editorialReview;

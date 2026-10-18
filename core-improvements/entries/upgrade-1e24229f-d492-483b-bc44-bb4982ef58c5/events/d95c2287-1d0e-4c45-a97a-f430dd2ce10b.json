@@ -1,0 +1,16 @@
+{
+  "status": "pr",
+  "note": "Bounded atomic state replacement now tolerates transient Windows sharing denial for30seconds with25-250msbackoff and45seconddefaultlock wait. Permanent failure preserves the old destination and removes only its own temporary file. Specific Windows locking process remains unknown. Source reviewed and adopted locally only after runner drained; publication remains paused.",
+  "commit": "2bc4e604fede5885eaa570c5fe870b8dda3972be",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-runner.test.mjs content-studio/test/rewrite-pipeline-bridge.test.mjs content-studio/test/rewrite-pipeline-reconcile.test.mjs",
+      "result": "PASS",
+      "evidence": "46/46 regressions passed in isolated source branch, including three new deterministic real-file tests for transient sharing failure beyond5seconds, permanent denial with original bytes/foreign temp preserved, and immediate nonsharing failure. Root integration reran all three new tests:3/3PASS."
+    }
+  ],
+  "eventId": "d95c2287-1d0e-4c45-a97a-f430dd2ce10b",
+  "sequence": 12,
+  "at": "2026-10-18T14:32:43.617Z"
+}

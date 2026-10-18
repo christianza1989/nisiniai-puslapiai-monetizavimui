@@ -1,0 +1,16 @@
+{
+  "status": "pr",
+  "note": "Source follow-up41ae6c6 adopted in the private runner after draining active work: default1000ms host/runner/pause polling and explicit public-label word/unit spacing instruction. Existing literal provenance, protected facts, per-page acceptance,140/160 descriptions and1..10 own source reasons remain. The50 completed texts/hour target remains unachieved; the main branch has not adopted this PR.",
+  "commit": "41ae6c670c6d91cc08af89e738a3b7f2abca48aa",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "checks": [
+    {
+      "command": "Relevant pipeline CLI/host/runner/prompt tests; isolated unchanged bridge rerun after transient Windows EPERM rename",
+      "result": "PASS",
+      "evidence": "Initial integrated run76/77 passed; one Windows rename EPERM. The unchanged bridge isolated rerun passed3/3. All changed assertions pass; no claim of an uninterrupted77/77 first run. Existing201-test baseline was verified before this delta. Private actual author/whole-review/DOM/finalize cycles continue with this source."
+    }
+  ],
+  "eventId": "c0dbfd14-1f4d-4a5d-bcf1-3a88addae9ed",
+  "sequence": 9,
+  "at": "2026-10-18T11:31:00.837Z"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Final integrated pipeline81a7509: explicit1–10per-page manufacturer-source counts preserve legitimate4/4/3 briefs through Core; accepted-page coalescing defaults3000ms,max5000ms to match measured2.546s serial reviews. Own raw/URL-label/exactcount/provenance/UNKNOWN/catalogue/public guards unchanged. Full root201testsPASS. Live149newcurrent-reviewed,14rolling-hour,50/hNOTachieved; one later acknowledged/no-response query remainsUNKNOWN/noresend. Safe sourceadoption occurred only after priorrunneridle and no pendingnative/author work.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline*.test.mjs",
+      "result": "PASS",
+      "evidence": "201/201 on integrated root81a7509,51.67s; mixed4/4/3 isolatedCore/provenance/currentreview roundtrip, exactmismatch/10bound,3secondcoalescing,cancellation/unknown-replay checks."
+    }
+  ],
+  "eventId": "2658e2cc-ab58-4a48-bf27-177a2d2d629a",
+  "sequence": 8,
+  "at": "2026-10-18T10:19:09.987Z"
+}

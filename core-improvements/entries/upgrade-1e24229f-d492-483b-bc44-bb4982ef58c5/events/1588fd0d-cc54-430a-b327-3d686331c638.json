@@ -1,0 +1,16 @@
+{
+  "status": "pr",
+  "note": "Fixed claim-based response timeout and bounded state-lock wait; explicit operator reconciliation attaches verified retained replies to original attempts while preserving UNKNOWN history and never resending. Actual three-page retained reply reconciled locally after runner drained. New unclaimed cancellations are truthfully NOT_SENT; claimed unknown outcomes remain held. Adopted only in the private Promedical checkout/runtime; branch is not merged to main and publication remains paused.",
+  "commit": "bb8e31bac02c322abdeda28592218f08720b10b0",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/204",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline*.test.mjs",
+      "result": "PASS",
+      "evidence": "221/221 pipeline tests, zero failures,61.032 seconds; claim timing, timeout/answer race, real runner cancellation classification, retained evidence tamper rejection/idempotency, real slow-writer lock, existing catalogue/provenance/import/DOM safeguards."
+    }
+  ],
+  "eventId": "1588fd0d-cc54-430a-b327-3d686331c638",
+  "sequence": 11,
+  "at": "2026-10-18T14:12:17.254Z"
+}

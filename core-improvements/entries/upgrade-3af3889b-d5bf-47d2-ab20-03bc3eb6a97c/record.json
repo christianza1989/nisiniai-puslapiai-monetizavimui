@@ -1,0 +1,27 @@
+{
+  "siteId": "core",
+  "summary": "A reviewed initial private correspondence capture must not create future marketing authority; preserve a held recipient state while allowing only its exact atomic capture to finish.",
+  "category": "code",
+  "evidence": [
+    "docs/REVIEWED_DRAFT_COMMUNICATION_SCOPE.md describes the deterministic capture defect, exact canonical receipt predicate and preserved original protected FAIL; no evaluator or actor change.",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py verifies held initial capture, genuine requested reply, exact role Configs and rejection of an unrelated campaign before another Task/model call.",
+    "Restricted retained-QA compatibility log SHA256 b3a3b8f5278364583efe6e3fe9347726866f181db061d4da8bdc0b550d0333c1: old native paired path and single-model path both PASS after furnishing their required companion source context; no operating DB or external provider."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/correspondence.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/tasks.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/native_chain.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue_lab.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md",
+    "docs/REVIEWED_DRAFT_COMMUNICATION_SCOPE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this scoped source change and its documentation together; preserve immutable failures, canonical held contact rows, accounting and all stopped grants. Never restore a previously active contact state through a data rewrite.",
+  "id": "upgrade-3af3889b-d5bf-47d2-ab20-03bc3eb6a97c",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "a531811a821e270af4b9ba0a9a3751eb61f00703",
+  "createdAt": "2026-10-18T20:51:24.299Z"
+}

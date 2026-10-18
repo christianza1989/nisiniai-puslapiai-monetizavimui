@@ -12,7 +12,7 @@ from ..tasks.codex import RunnerError
 from ..tasks.models import Task, TaskRun
 from . import model_authority as authority
 from .agent_role_contract import KIND, OUTPUT, PURPOSE, ROLES, RoleRequest
-from .correspondence import recipient_hash
+from .correspondence import own_capture_condition, recipient_hash
 from .engine import gates
 from .headless_mail import HeadlessMail
 from .ledger import conditions, scope_values
@@ -303,6 +303,7 @@ async def final_fence(tx, value, work, context):
                 ContactPolicy.state != "active",
             )
             .exists()
+            | own_capture_condition(values, value.request_id, value.recipient, value.campaign, value.prospect)
         )
     current = func.acquisition_agent_role_input_current(
         cast(value.model_dump(mode='json'), JSONB), work.authorization.id

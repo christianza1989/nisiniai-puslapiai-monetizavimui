@@ -23,7 +23,7 @@ from ..models import new_id
 from ..tasks.models import Task, Thread
 from ..tasks.service import append_event, grant_for
 from .contracts import Campaign, Prospect
-from .correspondence import Correspondence, recipient_hash, reviewed_copy, seal
+from .correspondence import Correspondence, own_capture_condition, recipient_hash, reviewed_copy, seal
 from .engine import gates
 from .interfaces import NoExternalSend, OpaqueId, Scope
 from .ledger import LedgerError, apply_scope, conditions, scope_values
@@ -132,7 +132,9 @@ async def available_target(tx, service, value):
         ContactPolicy, {**values, "recipient_hash": recipient_hash(value.recipient)}, with_for_update=True
     )
     if policy and policy.state != "active":
-        raise LedgerError(409, "recipient_marketing_contained")
+        if not await tx.scalar(select(own_capture_condition(values, getattr(value, "request_id", None),
+                value.recipient, value.campaign, value.prospect))):
+            raise LedgerError(409, "recipient_marketing_contained")
     # The row barriers above may wait. Admission uses the final DB clock.
     now, _ = await service.admission(tx, value.scope, value.adapter_id)
     if gates(value.campaign, value.prospect, now):

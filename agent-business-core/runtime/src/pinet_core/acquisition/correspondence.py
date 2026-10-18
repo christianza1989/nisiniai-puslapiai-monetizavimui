@@ -11,7 +11,7 @@ from contextlib import asynccontextmanager
 from types import SimpleNamespace
 
 from pydantic import TypeAdapter, ValidationError
-from sqlalchemy import cast, select, text
+from sqlalchemy import cast, false, select, text
 from sqlalchemy.dialects.postgresql import JSONB
 
 from ..models import Business, Case, CaseSource, MailMessage, new_id
@@ -27,6 +27,7 @@ from .work_interfaces import CorrespondenceReceipt, InboundCapture, SyntheticAdd
 from .work_models import ContactPolicy, CorrespondenceThread, MailBinding, WorkReceipt
 
 _SYNTHETIC_ADDRESS = TypeAdapter(SyntheticAddress)
+REVIEWED_CAPTURE_HOLD = "initial_reviewed_capture_no_marketing"
 
 
 def seal(value):
@@ -75,6 +76,33 @@ def reviewed_copy(campaign, prospect, prepared):
     if not valid:
         raise LedgerError(409, "exact_reviewed_copy_required")
     return assessment
+
+
+def own_capture_condition(values, request_id, recipient, campaign, prospect):
+    """Only the exact capture may finish its own atomic held draft.
+
+    This is not a new contact approval. A different request/campaign, later
+    inbound, changed policy or reused recipient cannot satisfy this predicate.
+    No caller-supplied boolean can substitute for canonical retained rows.
+    """
+    if request_id is None:
+        return false()
+    return select(WorkReceipt.thread_id).where(
+        *conditions(WorkReceipt, values), *conditions(CorrespondenceThread, values),
+        *conditions(ContactPolicy, values), WorkReceipt.operation == "capture",
+        WorkReceipt.request_id == str(request_id),
+        WorkReceipt.thread_id == CorrespondenceThread.thread_id,
+        CorrespondenceThread.recipient_hash == recipient_hash(recipient),
+        CorrespondenceThread.recipient_hash == ContactPolicy.recipient_hash,
+        CorrespondenceThread.campaign_id == campaign.campaign_id,
+        CorrespondenceThread.prospect_id == prospect.organization_key,
+        CorrespondenceThread.campaign == campaign.model_dump(mode="json"),
+        CorrespondenceThread.prospect == prospect.model_dump(mode="json"),
+        CorrespondenceThread.revision == 1, CorrespondenceThread.last_inbound_id.is_(None),
+        ContactPolicy.state == "hold", ContactPolicy.reason == REVIEWED_CAPTURE_HOLD,
+        ContactPolicy.updated_at == WorkReceipt.created_at,
+        CorrespondenceThread.created_at == WorkReceipt.created_at,
+    ).exists()
 
 
 class Correspondence:
@@ -196,18 +224,6 @@ class Correspondence:
             policy = await tx.get(ContactPolicy, {**values, "recipient_hash": identity}, with_for_update=True)
             if policy and policy.state != "active":
                 raise LedgerError(409, "recipient_marketing_contained")
-            if not policy:
-                policy = ContactPolicy(
-                    **values,
-                    recipient_hash=identity,
-                    state="active",
-                    revision=1,
-                    reason="initial_reviewed_capture",
-                    resume_condition_quote="",
-                    updated_at=now,
-                )
-                tx.add(policy)
-                await tx.flush()
             existing = await tx.scalar(
                 select(CorrespondenceThread).where(
                     *conditions(CorrespondenceThread, values),
@@ -224,6 +240,18 @@ class Correspondence:
                 raise LedgerError(409, "correspondence_offer_unavailable")
             if before_effect is not None:
                 await before_effect(tx)
+            # Copy quality never grants future outreach. Defer this effect
+            # until the fresh before_effect fence has observed the old state.
+            if policy is None:
+                policy = ContactPolicy(**values, recipient_hash=identity, state="hold", revision=1,
+                    reason=REVIEWED_CAPTURE_HOLD, resume_condition_quote="", updated_at=now)
+                tx.add(policy)
+            else:
+                policy.state, policy.reason = "hold", REVIEWED_CAPTURE_HOLD
+                policy.resume_condition_quote = ""
+                policy.revision += 1
+                policy.updated_at = now
+            await tx.flush()
             case = Case(
                 id=new_id(),
                 business_id=scope.business_id,

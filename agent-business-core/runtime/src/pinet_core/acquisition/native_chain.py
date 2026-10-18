@@ -114,8 +114,10 @@ async def final_fence(tx, value, work):
     else:
         target = ~select(AcquisitionCampaign.campaign_id).where(*conditions(AcquisitionCampaign, values),
             AcquisitionCampaign.campaign_id == value.campaign.campaign_id, AcquisitionCampaign.stopped).exists()
-        target &= ~select(ContactPolicy.recipient_hash).where(*conditions(ContactPolicy, values),
+        from .correspondence import own_capture_condition
+        target &= (~select(ContactPolicy.recipient_hash).where(*conditions(ContactPolicy, values),
             ContactPolicy.recipient_hash == recipient_hash(value.recipient), ContactPolicy.state != "active").exists()
+            | own_capture_condition(values, value.request_id, value.recipient, value.campaign, value.prospect))
     # JSONB-typed binds serialize an object themselves. A pre-serialized string
     # becomes a JSON string and would hit the function's legacy no-native branch.
     pair = func.acquisition_native_pair_current(cast({

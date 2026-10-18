@@ -59,3 +59,9 @@ must not call a model or create another mail, and stale inbound/current stop or
 delivery state must prevent capture. These are synthetic private records, not
 live transport, broad campaign rights or production admission. See maintained
 [calibration details](../../../agent-business-core/acquisition-plan/CALIBRATION.md).
+
+Reviewed copy is not permission for future outreach. Private initial captures
+leave marketing held; only the exact same capture receipt may finish its atomic
+Task. An authenticated requested reply remains separate from another offer or
+follow-up. Preserve all failed states; do not turn copy approval into consent.
+See [communication scope](../../../docs/REVIEWED_DRAFT_COMMUNICATION_SCOPE.md).

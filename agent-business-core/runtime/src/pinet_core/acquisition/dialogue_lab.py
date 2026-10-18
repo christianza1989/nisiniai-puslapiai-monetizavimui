@@ -123,7 +123,7 @@ class RoleLab:
         return await self.lab.ask(schema, instruction, data)
 
 
-def capture(root: Path, case, number, subject, body, purpose='marketing'):
+def capture(root: Path, case, number, subject, body, purpose='reviewed_draft'):
     """Actual private .eml file, never an email submission."""
     if not case.recipient.rsplit('@', 1)[-1].endswith('.test'):
         raise ValueError('test_recipient_required')

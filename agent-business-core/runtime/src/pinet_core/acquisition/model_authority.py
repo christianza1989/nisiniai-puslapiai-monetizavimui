@@ -218,5 +218,6 @@ async def target(tx, work, value):
             raise ControlError(409, "acquisition_model_campaign_facts_changed")
     # The maintained helper needs these trusted attributes, not a supplied reviewed body.
     target = type("Target", (), {"scope": work.scope, "adapter_id": work.authorization.adapter_id,
-        "recipient": value.recipient, "campaign": value.campaign, "prospect": value.prospect})()
+        "recipient": value.recipient, "campaign": value.campaign, "prospect": value.prospect,
+        "request_id": value.request_id})()
     return await available_target(tx, Correspondence(db), target)

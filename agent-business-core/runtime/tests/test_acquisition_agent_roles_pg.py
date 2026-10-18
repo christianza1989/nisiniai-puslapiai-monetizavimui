@@ -183,6 +183,7 @@ async def test_six_exact_configs_one_reply_case_and_no_role_alias(six):
     p, fake = six, Roles()
     quality = await initial(p, fake)
     assert quality.result["correspondence"]["state"] == "captured"
+    assert quality.result["correspondence"]["marketing_state"] == "hold"
     # Use the maintained synthetic inbound capture, with genuine native Case/Mail.
     standin = type("InitialMail", (), {"id": quality.id, "result": quality.result["correspondence"]})()
     inbound = await incoming(p, standin)
@@ -214,6 +215,50 @@ async def test_six_exact_configs_one_reply_case_and_no_role_alias(six):
     async with db.transaction(p["scope"].business_id, p["scope"].environment_id) as tx:
         assert await tx.scalar(select(func.count()).select_from(Case)) == 1
         assert await tx.scalar(select(func.count()).select_from(MailMessage)) == 3
+
+
+@pytest.mark.parametrize("existing_active", [False, True])
+async def test_held_initial_copy_does_not_authorize_an_unrelated_offer(six, existing_active):
+    from pinet_core.acquisition.correspondence import REVIEWED_CAPTURE_HOLD, Correspondence, recipient_hash
+    from pinet_core.acquisition.ledger import LedgerError
+    from pinet_core.acquisition.work_models import ContactPolicy
+    from pinet_core.tasks.models import Task
+
+    p, fake = six, Roles()
+    if existing_active:
+        from datetime import UTC, datetime
+
+        from pinet_core.acquisition.ledger import scope_values
+
+        async with scope(token=token_hash(p["token"])) as tx:
+            await customer_session(tx, p["token"])
+            await Correspondence(db).locked(tx, p["scope"], "synthetic-model-native")
+            tx.add(ContactPolicy(**scope_values(p["scope"], "synthetic-model-native"),
+                recipient_hash=recipient_hash(p["request"]["recipient"]),
+                state="active", revision=2, reason="prior_explicit_resume",
+                resume_condition_quote="A previous exchange had a different condition.",
+                updated_at=datetime.now(UTC)))
+    reviewed = await initial(p, fake)
+    assert reviewed.status == "succeeded" and reviewed.result["correspondence"]["marketing_state"] == "hold"
+    async with scope(token=token_hash(p["token"])) as tx:
+        await customer_session(tx, p["token"])
+        await Correspondence(db).locked(tx, p["scope"], "synthetic-model-native")
+        policy = await tx.scalar(select(ContactPolicy).where(
+            ContactPolicy.recipient_hash == recipient_hash(p["request"]["recipient"])))
+        assert policy.state == "hold" and policy.reason == REVIEWED_CAPTURE_HOLD
+        assert not policy.resume_condition_quote
+        before = await tx.scalar(select(func.count()).select_from(Task))
+        assert before == 5
+    unrelated = deepcopy(request(p))
+    unrelated["campaign"]["campaign_id"] = "unrelated-new-offer"
+    unrelated["prospect"]["organization_key"] = "same-contact-other-offer"
+    with pytest.raises(LedgerError, match="recipient_marketing_contained"):
+        await submit(p, unrelated)
+    async with scope(token=token_hash(p["token"])) as tx:
+        await customer_session(tx, p["token"])
+        await Correspondence(db).locked(tx, p["scope"], "synthetic-model-native")
+        assert await tx.scalar(select(func.count()).select_from(Task)) == before
+    assert len(fake.calls) == 5
 
 
 async def test_bare_custom_purpose_and_mismatched_role_never_gain_authority(six):

@@ -2363,3 +2363,15 @@ Root protected model batch stays unchanged2485. A requested-reply plan must be
 usable as next accepted parent with bounded sealed resolution; keep current
 inbound/tenant/source/owner/intent/thread/unknown/quota gates. No schema, send
 permissions, actor/corpus changes or autonomous follow-up/scheduler.
+
+2026-10-18 Root draft/marketing boundary, issue66 comment6254870178. Own
+acquisition/correspondence.py/tasks.py/model_authority.py/agent_role_authority.py/
+native_chain.py/dialogue_lab.py, focused capture/native regressions, outbound
+reference/doc/journal. Approved private copy must leave marketing held. Only its
+exact receipt/thread/policy allows that same Task's atomic completion/replay;
+another task/campaign cannot bypass containment. Preserve first protected FAIL,
+all98six-role charges, evaluator/corpus/Config/actor instruction bytes. No schema
+or commercial transport. Helper owns separate LT0051 mail_view scope.
+Local source verification:54offline/39subtests,5restrictedPG,2older native
+compatibility cases PASS; upgrade3af3889b-d5bf-47d2-ab20-03bc3eb6a97c.
+No main/adoption/new model acceptance claimed by this source handoff.

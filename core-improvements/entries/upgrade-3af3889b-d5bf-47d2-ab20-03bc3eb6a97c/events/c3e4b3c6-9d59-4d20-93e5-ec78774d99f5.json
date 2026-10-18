@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Deterministic reviewed-capture effect repaired without changing actor/Config/corpus/evaluator/thresholds. Old first protected FAIL and all charges retained; that exposed case is regression evidence, two others remain unseen. Initial test fixture omitted acquisition RLS context; later older native fixtures lacked required companion source context; their first failed logs remain SHA7688448aafec904a66e4225349c9549fecb9da4b03e588e3e333bb3cbc18fdd1 and34eb8b7cd9f013d9b3247e20a040354c9ba4618c7b47ce588a157fc971dddc09. Corrected fixtures/context and final code pass actual restricted retained PG. Final5PG run used dedicated QA migrated0051, not operating DB; old native paired/single paths passed their earlier isolated0050 checks. No provider/model/send calls in these code checks. New source-pinned model acceptance still required.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_correspondence.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_dialogue.py",
+      "result": "PASS",
+      "evidence": "54 tests plus39subtests PASS5.24s, log SHA256ead3ffa173b9f19e6af9834a7612d96b69576c45b95e82e6227d292f76c1f0d3; no DB/provider/model."
+    },
+    {
+      "command": "python -m pytest -q tests/test_acquisition_agent_roles_pg.py::test_held_initial_copy_does_not_authorize_an_unrelated_offer tests/test_acquisition_agent_roles_pg.py::test_after_provider_peer_stop_retains_known_charge_no_effect tests/test_acquisition_agent_roles_pg.py::test_own_quality_reply_effect_rolls_back_atomically_with_task_failure tests/test_acquisition_agent_roles_pg.py::test_six_exact_configs_one_reply_case_and_no_role_alias",
+      "result": "PASS",
+      "evidence": "5 restricted retainedPG cases PASS171.47s (two initial-state parameters); log SHA256b1ce197851611e846ad7b37fc1d0a717bb7fc0e70fd71496c04b6299e20910a7. Prior active policy loses obsolete resume quote; exact own capture/reply succeeds, unrelated new Task is refused, peer loss and atomic rollback remain contained."
+    },
+    {
+      "command": "python -m pytest -q tests/test_acquisition_native_chain_pg.py::test_exact_two_config_native_chain_one_case_and_replay tests/test_acquisition_model_prepare_pg.py::test_native_saved_purpose_task_model_receipts_and_same_case_mail",
+      "result": "PASS",
+      "evidence": "2 compatibility cases PASS74.35s on retained0050; log SHA256b3a3b8f5278364583efe6e3fe9347726866f181db061d4da8bdc0b550d0333c1; no operating DB/provider."
+    },
+    {
+      "command": "ruff check exact seven changed Python paths; git diff --check; node scripts/repository-safety.mjs",
+      "result": "PASS",
+      "evidence": "Ruff and diff clean; repository candidate scanner PASS5443files/4487text files, no findings. Exact scoped paths in record; private corpus, accounting and OAuth configuration excluded."
+    }
+  ],
+  "eventId": "c3e4b3c6-9d59-4d20-93e5-ec78774d99f5",
+  "sequence": 2,
+  "at": "2026-10-18T21:03:04.831Z"
+}

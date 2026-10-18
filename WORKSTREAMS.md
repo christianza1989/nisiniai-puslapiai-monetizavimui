@@ -1911,3 +1911,18 @@ tests/docs/portal integration. Existing claim/grant and Agent/Config remain the
 engines; no fakeCreation, second core or calibration system. Native acquisition
 helper window is pending exact contract agreement; it must not edit Root migration
 or these paths. Independent reviewer remains read-only. All runtime flags held.
+
+## External native acquisition adapter — 2026-10-18, wellness helper
+
+Root delegated exact scope from653d1bcc66af0a3d77a01af650bd1fdbbb72672c to
+codex/external-native-adapter-20261018. Own acquisition/model_models.py,
+model_authority.py, model_admin.py, module_admin.py, native_chain.py,
+new external_schema.py, only TaskRole.ask/ModelHandler.context in model_handler.py
+and ReplyHandler.context in model_reply.py; focused new offline/PG tests,
+own upgrade journal and docs/ACQUISITION_EXTERNAL_BINDING.md. Root owns Agent/Config
+origin model, business wrappers,0049 composition and operating adoption; source
+author owns business_attachment. Reuse current Task/Run/Case/accounting engines.
+Genuine external source binding, immutable Config source epoch and current Agent
+pointer remain exact. Legacy bytes/hashes stay unchanged. Original disk hold
+lifted by Root after byte-preserving compression; require1.5GiB before each batch.
+No paid/old calibration/protected payload/site/Serving or operating DB work.

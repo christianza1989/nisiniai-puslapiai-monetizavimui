@@ -222,6 +222,8 @@ class TaskRole:
         if schema is not expected:
             raise RunnerError("acquisition_model_role_invalid")
         packet = {**data, "agent_specification": self.context["specification"]}
+        if self.context.get("reviewed_business_source") is not None:
+            packet["reviewed_business_source"] = self.context["reviewed_business_source"]
         receipt = await self.reserve(schema, instruction, packet)
         observed = None
         try:
@@ -329,6 +331,7 @@ class ModelHandler:
         now = await tx.scalar(text("SELECT clock_timestamp()"))
         context = {"_task_id": task.id, "_user_id": task.user_id, "_authorization_id": bound.authorization_id,
             "request": value.model_dump(mode="json"), "specification": work.specification,
+            **authority.context_fields(work),
             "now": now.isoformat(), "deadline": tx.info["acquisition_model_deadlines"][task.id].isoformat()}
         if value.stage is not None:
             context["_stage"] = value.stage

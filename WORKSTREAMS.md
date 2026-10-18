@@ -2180,3 +2180,9 @@ legacy no-native branch; wrong-peer-fingerprint negative test FAILED before fix.
 Root confirmed exact native_chain.py repair/new native_json_fence_pg test scope.
 Upgradec8b44c68 binds an object; same negative+legacy native chain+legacy sealedlab
 3PG PASS. Earlier Python checks remain; no DDL/permission/budget expansion.
+
+2026-10-18 final controller transport preflight found actual strict_schema made
+SixRoleGrade's dynamic6map an impossible empty closed object. Root reserved only
+its fixed6property wire representation, actual-converter regression/docs and own
+upgrade; no evaluator instruction/hash, thresholds or protected cases changed.
+Before1FAIL/6nativeOUTPUTPASS retained; after54focusedPASS,0DB/provider calls.

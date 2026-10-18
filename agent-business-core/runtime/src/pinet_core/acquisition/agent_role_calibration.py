@@ -46,9 +46,32 @@ not template wording. No candidate/controller may receive hidden text or labels.
 )
 
 
+def fixed_grade_map_schema(schema, *, statuses):
+    # CodexLab closes every object schema. A dynamic dict would become an empty
+    # closed object, making six statuses (and any NA explanation) impossible.
+    schema.update(
+        properties={
+            role: ({"type": "string", "enum": ["PASS", "FAIL", "NA"]} if statuses else {"type": "string"})
+            for role in ROLES
+        },
+        required=list(ROLES),
+        additionalProperties=False,
+    )
+    for key in ("propertyNames", "minProperties", "maxProperties"):
+        schema.pop(key, None)
+
+
 class SixRoleGrade(DialogueGrade):
-    role_status: dict[RoleName, Literal["PASS", "FAIL", "NA"]] = Field(min_length=6, max_length=6)
-    na_reasons: dict[RoleName, str] = Field(default_factory=dict, max_length=6)
+    role_status: dict[RoleName, Literal["PASS", "FAIL", "NA"]] = Field(
+        min_length=6,
+        max_length=6,
+        json_schema_extra=lambda schema: fixed_grade_map_schema(schema, statuses=True),
+    )
+    na_reasons: dict[RoleName, str] = Field(
+        default_factory=dict,
+        max_length=6,
+        json_schema_extra=lambda schema: fixed_grade_map_schema(schema, statuses=False),
+    )
 
 
 def validate_corpus(source):

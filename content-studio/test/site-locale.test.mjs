@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtemp,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+const root=await mkdtemp(path.join(os.tmpdir(),'pinet-locale-'));
+process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'output');
+const model=await import('../src/model.mjs');await model.initialize();
+test.after(()=>rm(root,{recursive:true,force:true}));
+test('supported locale input preserves a stable identity and legacy defaults',async()=>{const en=await model.createSite({siteId:'locale-business',canonicalHost:'locale-business.example',name:'Locale fixture',locale:'en-gb'});assert.equal(en.locale,'en-GB');assert.equal((await model.editSite(en.id,{locale:'de-de'})).locale,'de-DE');assert.equal((await model.getSite(en.id)).id,en.id);const lt=await model.createSite({canonicalHost:'legacy-locale.example',name:'Legacy fixture'});assert.equal(lt.locale,'lt-LT');await assert.rejects(()=>model.createSite({canonicalHost:'invalid-locale.example',locale:'not a locale'}));assert.equal((await model.getSite(en.id)).locale,'de-DE');});

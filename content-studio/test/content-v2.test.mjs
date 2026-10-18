@@ -19,7 +19,9 @@ test('v2 validator/hash/schema copies match; v1 packages remain readable unchang
   assert.equal(await readFile(new URL('../src/content-package-v2.mjs',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'scripts/content-package-v2.mjs'),'utf8'));
   assert.equal(await readFile(new URL('../schemas/content-package.v2.schema.json',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json'),'utf8'));
   const packages=JSON.parse(await readFile(path.join(publicRoot,'lib/generated/content-packages.json'),'utf8'));
-  assert.equal(packages.length,9);
+  // New sites must not invalidate this compatibility regression. Keep the
+  // original inventory explicitly present, then validate every current site.
+  for(const siteId of ['akmenas','auksarankiams','autoelektrikaivilniuje','fasadopastoliai','greitossvetaines','laiptucentras','miniekskavatoriai','roletaiklaipedoje','traktoriupadangos'])assert.ok(packages.some(p=>p.siteId===siteId),siteId);
   for(const p of packages){assert.equal(p.schemaVersion,1);assert.equal(publicCore.validateContentPackage(p),p);for(const page of p.pages)assert.equal(model.revisionHash(page),publicCore.pageRevisionHash(page));}
   const pkg=v2Fixture();assert.equal(validateV2Package(pkg),pkg);assert.equal(publicCore.validateContentPackage(pkg),pkg);
 });

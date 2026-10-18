@@ -1,0 +1,23 @@
+{
+  "siteId": "wildtubs-europe",
+  "summary": "The shared V1 60-variant media ceiling prevented the explicitly requested full photo configurators. Raise V1 studio/schema/public validator capacity to a bounded 1024, preserve V2's 60 limit, and keep exact immutable media families. Also remove the compatibility test's fixed nine-site count so a genuine new site does not fail the legacy regression.",
+  "category": "code",
+  "evidence": [
+    "Owner explicitly requested full professional photo configurators on 2026-10-18",
+    "Source catalogue has up to 179 unique option illustrations on one model; observed 60-variant ceiling in studio and public validator",
+    "Original content-v2 regression failed 10 !== 9 after the tenth valid site was compiled"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/schemas/content-package.schema.json",
+    "content-studio/test/media-import.test.mjs",
+    "content-studio/test/content-v2.test.mjs",
+    "MEDIA_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/205",
+  "rollback": "Revert paired shared media-cap commits before importing a package above 60 V1 variants; do not rewrite an existing release. Keep site assets/packages local until rights are confirmed.",
+  "id": "upgrade-16680ad7-20b5-477c-a779-6ee6c7f37f05",
+  "branch": "codex/wildtubs-europe-20261018",
+  "baseSha": "533597c10e290a2a09a522ad348e19c9968aa9d5",
+  "createdAt": "2026-10-18T07:35:48.042Z"
+}

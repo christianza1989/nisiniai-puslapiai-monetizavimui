@@ -4,6 +4,8 @@ import {spawn,execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
+import {request as requestHttp} from 'node:http';
+import {request as requestHttps} from 'node:https';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const arg=(name,args)=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
@@ -12,6 +14,13 @@ const isLoopback=u=>['127.0.0.1','localhost','[::1]'].includes(u.hostname);
 const urlFor=(pkg,p)=>new URL('/'+p.slug,'https://'+pkg.canonicalHost).href;
 const urlsIn=text=>new Set((text.match(/https?:\/\/[^\s<>\[\]()"']+/g)||[]).map(u=>u.replace(/&amp;/g,'&').split('#')[0]));
 const normalizeReading=text=>String(text).replace(/\\([\\[\]])/g,'$1').replace(/\s+/g,' ').trim();
+// Node fetch may replace a supplied Host header. Use the native transport for
+// canonical-host loopback audits, keeping redirects manual and the byte bound.
+export function canonicalLoopbackGet(target,host){return new Promise((resolve,reject)=>{
+ const client=target.protocol==='https:'?requestHttps:requestHttp;
+ const req=client(target,{headers:{Host:host,'Cache-Control':'no-cache'}},res=>{const chunks=[];let size=0;res.on('data',chunk=>{size+=chunk.length;if(size>8*1024*1024){res.destroy(Error('Response exceeds bounded inspector size'));return;}chunks.push(chunk);});res.on('error',reject);res.on('end',()=>resolve({status:res.statusCode,headers:new Headers(Object.entries(res.headers).flatMap(([k,v])=>v===undefined?[]:[[k,Array.isArray(v)?v.join(', '):v]])),data:Buffer.concat(chunks)}));});
+ req.setTimeout(20000,()=>req.destroy(Error('Loopback audit timeout')));req.on('error',reject);req.end();
+});}
 export function verifyDiscoveryOutputs(pkg,pages,outputs){
   const issues=[],eligible=new Set(pages.map(p=>p.id));
   for(const [pathname,text] of Object.entries(outputs)){
@@ -47,7 +56,7 @@ function pythonInspect(observations,python='python'){
     child.stdin.on('error',reject);child.stdin.end(JSON.stringify(observations));
   });
 }
-export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false){
+export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false,languages={}){
   const origin='https://'+pkg.canonicalHost,publicUrls=pages.map(p=>urlFor(pkg,p));
   return pages.map(p=>{
     const authors=(p.editorial?.authors||[]).map(a=>{
@@ -55,8 +64,9 @@ export function articleExpectations(pkg,pages,indexSlug,allowNoindex=false){
       return {name:a.name,kind:a.kind==='organization'?'Organization':'Person',url:profiles.length===1?urlFor(pkg,profiles[0]):''};
     });
     const bodyTexts=p.body.flatMap(b=>b.text?[b.text]:b.content?[b.content.map(n=>n.text).join('')]:b.items?b.items.map(row=>typeof row==='string'?row:row.map(n=>n.text).join('')):[]);
-    return {id:p.id,type:p.type,contentVersion:p.contentVersion||1,title:p.title,description:p.description,locale:pkg.locale,origin,url:urlFor(pkg,p),
-      isArticleIndex:p.slug===indexSlug,articleIndexUrl:origin+'/'+indexSlug,publicUrls,authors,allowNoindex,
+    const hub=languages.localizedRolePage?.(pkg,'guides',p,pages),home=languages.localizedRolePage?.(pkg,'home',p,pages);
+    return {id:p.id,type:p.type,contentVersion:p.contentVersion||1,title:p.title,description:p.description,locale:languages.pageLanguage?.(pkg,p)||pkg.locale,origin,url:urlFor(pkg,p),
+      isArticleIndex:p.slug===indexSlug||languages.pageRole?.(pkg,p)==='guides',articleIndexUrl:hub?urlFor(pkg,hub):origin+'/'+indexSlug,homeUrl:home?urlFor(pkg,home):origin+'/',publicUrls,authors,allowNoindex,
       hiddenUrls:pkg.pages.filter(p=>!pages.some(l=>l.id===p.id)).map(p=>urlFor(pkg,p)),
       datePublished:p.editorial?.datePublished||null,dateModified:p.editorial?.dateModified||null,
       mediaUrls:p.media.map(m=>new URL(m.src,origin).href),bodyTexts};
@@ -77,13 +87,14 @@ export async function verifySiteCompletion(args){
   const settings=JSON.parse(await readFile(path.join(core,'config/niche-network.json'),'utf8'));
   // Eligibility is imported from the active core, never reimplemented here.
   const pages=pkg.schemaVersion===2?projection.projectContentPagesV2(pkg,[pkg],settings,{targets:[]},now):projection.projectPublicPages(pkg,[pkg],settings,now);
-  const expected=articleExpectations(pkg,pages,indexSlug,isLoopback(origin)),publicIds=new Set(pages.map(p=>p.id)),http=[],issues=[];
+  let languages={};try{languages=await import(pathToFileURL(path.join(core,'lib/niche-languages.mjs')));}catch(error){if(error.code!=='ERR_MODULE_NOT_FOUND')throw error;}
+  const expected=articleExpectations(pkg,pages,indexSlug,isLoopback(origin),languages),publicIds=new Set(pages.map(p=>p.id)),http=[],issues=[];
   if(!pages.some(p=>p.type==='home'))issues.push('NO_PUBLIC_HOME');
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
   const get=async pathname=>{
-    const response=await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(isLoopback(origin)?{Host:pkg.canonicalHost}:{})}});
-    const data=Buffer.from(await response.arrayBuffer());
+    const response=isLoopback(origin)?await canonicalLoopbackGet(new URL(pathname,origin),pkg.canonicalHost):await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}});
+    const data=response.data||Buffer.from(await response.arrayBuffer());
     if(data.length>8*1024*1024)throw Error('Response exceeds bounded inspector size: '+pathname);
     const receipt={path:pathname,status:response.status,contentType:response.headers.get('content-type')||'',sha256:sha(data)};
     const header=arg('--package-header',args);if(header&&response.headers.get(header)!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);

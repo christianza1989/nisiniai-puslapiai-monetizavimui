@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import http from 'node:http';
+import {readFile} from 'node:fs/promises';
+import {articleExpectations,canonicalLoopbackGet} from './verify-site-completion.mjs';
+import * as languages from '../../../../dovanos-memorycasting/lib/niche-languages.mjs';
+test('loopback transport preserves the canonical Host and does not follow redirects',async()=>{const server=http.createServer((req,res)=>{res.writeHead(302,{Location:'/should-not-follow','X-Observed-Host':req.headers.host});res.end('bounded receipt');});await new Promise(r=>server.listen(0,'127.0.0.1',r));try{const r=await canonicalLoopbackGet(new URL(`http://127.0.0.1:${server.address().port}/`),'catalogue.example');assert.equal(r.status,302);assert.equal(r.headers.get('x-observed-host'),'catalogue.example');assert.equal(r.data.toString(),'bounded receipt');}finally{await new Promise(r=>server.close(r));}});
+test('current public locale adapter supplies each real guide hub/home without changing legacy defaults',async()=>{const pkg=JSON.parse(await readFile(new URL('../../../../dovanos-memorycasting/content-packages/wildtubs-europe/content-package.json',import.meta.url)));const e=articleExpectations(pkg,pkg.pages,'en/guides',true,languages);const de=e.find(p=>p.url==='https://hotube.eu/de/ratgeber/badezuber-auswaehlen');assert.equal(de.locale,'de-DE');assert.equal(de.articleIndexUrl,'https://hotube.eu/de/ratgeber');assert.equal(de.homeUrl,'https://hotube.eu/de');assert.equal(e.find(p=>p.url==='https://hotube.eu/pl/poradniki').isArticleIndex,true);const legacy=articleExpectations({...pkg,siteId:'legacy',locale:'lt-LT'},pkg.pages,'gidai');assert.equal(legacy[0].locale,'lt-LT');assert.equal(legacy[0].homeUrl,'https://hotube.eu/');});

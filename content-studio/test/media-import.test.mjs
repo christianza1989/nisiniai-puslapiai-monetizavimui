@@ -41,12 +41,15 @@ test('HTTP upload optimizes once, attaching one image includes all variants, and
   const richExport=await model.exportPackage(site.id),richPackage=JSON.parse(await readFile(richExport.path,'utf8'));
   validateContentPackage(richPackage);assert.equal(richPackage.pages[1].media.length,25);assert.equal(richExport.assets,25);
   const schema=JSON.parse(await readFile(new URL('../schemas/content-package.schema.json',import.meta.url),'utf8'));
-  assert.equal(schema.$defs.page.properties.media.maxItems,model.MAX_PAGE_MEDIA);assert.equal(model.MAX_PAGE_MEDIA,60);
+  assert.equal(schema.$defs.page.properties.media.maxItems,model.MAX_PAGE_MEDIA);assert.equal(model.MAX_PAGE_MEDIA,1024);
   const richHash=richPackage.pages[1].revisionHash;
   for(let i=0;i<8;i++)extra.push(await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:`Ribos kompozicija ${i}`,rights:'Synthetic test only'},bytes));
-  await assert.rejects(()=>model.editPage(site.id,rich.id,{media:[{id:imported.id},...extra.map(a=>({id:a.id}))]}),/60/);
-  assert.equal((await model.getSite(site.id)).pages[1].media.length,25);
-  assert.equal(model.packageForSite(await model.getSite(site.id)).pages[1].revisionHash,richHash);
+  await model.editPage(site.id,rich.id,{media:[{id:imported.id},...extra.map(a=>({id:a.id}))]});
+  assert.equal((await model.getSite(site.id)).pages[1].media.length,65);
+  assert.equal(model.packageForSite(await model.getSite(site.id)).pages.find(p=>p.id===rich.id).revisionHash,richHash);
+  assert.equal((await model.getSite(site.id)).pages[1].status,'review');
+  await model.approvePage(site.id,rich.id,'test-catalogue-media-review');
+  validateContentPackage(model.packageForSite(await model.getSite(site.id)));
  }finally{await new Promise(r=>server.close(r));}
 });
 test.after(async()=>{await rm(root,{recursive:true,force:true});});

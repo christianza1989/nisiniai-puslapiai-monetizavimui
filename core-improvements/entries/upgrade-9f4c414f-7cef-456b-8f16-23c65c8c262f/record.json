@@ -1,0 +1,22 @@
+{
+  "siteId": "wildtubs-europe",
+  "summary": "The completion inspector assumed Lithuanian language/home/guide hub for every page, and Node fetch ignored the canonical Host on loopback. Add the optional current public locale adapter and native bounded HTTP transport; retain legacy fallback and parser semantics.",
+  "category": "code",
+  "evidence": [
+    "Original SITE_COMPLETION.initial.json retained with 189 issues including LANGUAGE and BREADCRUMB_HUB",
+    "Node fetch loopback header did not route sitemap to the canonical niche; native HTTP passes Host correctly",
+    "111 pages, nine guides and 1461 assets passed 1579 HTTP checks after the repair"
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs",
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "SKILLS/niche-site-audit/scripts/multilingual-verifier.test.mjs",
+    "docs/MULTILINGUAL_CATALOGUES.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/205",
+  "rollback": "Revert optional locale/transport adapter together; preserve original failing report. Do not change another owner's inline-text parser repair or historical approval.",
+  "id": "upgrade-9f4c414f-7cef-456b-8f16-23c65c8c262f",
+  "branch": "codex/wildtubs-europe-20261018",
+  "baseSha": "533597c10e290a2a09a522ad348e19c9968aa9d5",
+  "createdAt": "2026-10-18T07:35:49.795Z"
+}

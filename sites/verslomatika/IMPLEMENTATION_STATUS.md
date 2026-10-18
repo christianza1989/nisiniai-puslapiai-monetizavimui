@@ -1,30 +1,44 @@
 # Verslomatika customer accounts, public projects and dashboard
 
-## Current local result —2026-10-18 12:31 UTC
+## Current local checkpoint —2026-10-18 13:41 UTC
 
-The first complete current-source Hotube native research/email baseline passed
-3/3 independently held scenarios, including two client replies per scenario:
-33 complete/known-usage model calls, 12 native Task receipts and 12 TaskRun
-receipts, zero infrastructure failures and zero external sends. The original
-closed seven-call ledger remains byte-exact; aggregate usage is 40, not a reset.
-Root stopped both V6 model grants and the module, retaining research3Tasks/6attempts
-and email9Tasks/18attempts. No candidate/promotion or adaptive release changed.
-See [the scoped calibration report](../wildtubs-europe/AGENT-CALIBRATION-2026-10-18.md).
-This accepts the bounded native text workflow; six saved descriptions, actual
-Gmail/voice/production channels and the full platform have separate acceptance.
+**Package accepted; whole local platform remains OPEN.** The owned API18871 is
+clean `3245a9aca13961a0fc814b6a4571052c298e1f5a`, schema49. Bounded actual native
+preview now passes natural expiry,65.368s continuousReady/manual close, normal
+own Session revocation and normal ASGI shutdown plus same-source restart replay.
+Chrome opened the real homepage and guide. No TTL, deadline, fresh actor/source
+or final-check fence changed. The original shutdown HTTP-only harness remains
+FAIL; separate ASGI/task/OS witnesses and restart replay establish its qualified
+shutdown PASS. All original failures remain in
+[the stability record](../../docs/handoffs/VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md).
 
-Owned API18871 now runs clean `182e2936b2b021e092deb8a8f6c571a6874ba48f`,
-schema49. Source-only adoption retained a fresh1,971,640-byte backup, all96
-table-row snapshots and890 native files. Ordinary account continuity passed;
-human-started3030 build remains unchanged. The callback SQL and read-only GET
-locking repairs passed15 unique restricted-PG cases and132 offline checks.
+The approved-plan read now uses two fresh SQL statements instead of five. Five
+new restricted-PG and four existing source-context/real-Node cases pass, plus185
+related offline cases and Ruff. Earlier callback/GET repairs remain separately
+tested. Default API restoration preserves all96 table-row snapshots and1010
+existing native files, with a2,237,928-byte backup. Human-started3030 build remains
+unchanged; all paid/channel workers are held.
 
-Actual182 live-preview natural expiry still FAILED before Ready. The retained
-native first refusal is after_media/heartbeat_expired, pulse margin−3956ms;
-passive timing shows a9.44984s pulse gap and9.41167s fresh authority verification
-with170 task SQL statements against the unchanged3s TTL. SQL fusion did not
-complete lifecycle acceptance. The previous78/c3 main-preflight blockers remain
-open; draft feature source is not main or hosted adoption.
+Model evidence remains frozen on source182:3/3 protected native research/email
+scenarios, two client replies each,33 known-usage calls,12 Task/Run receipts,
+zero infrastructure failures/external sends. Parent7 plus child33 equals40,
+both ledgers byte-exact. Six saved Config revision2 descriptions are not six
+independently executable/calibrated workers. No candidate/promotion changed.
+[Calibration scope](../wildtubs-europe/AGENT-CALIBRATION-2026-10-18.md).
+
+Whole PR-base coverage at060ee0a7eadda5d8c465d61b02cea62c5e907bfd passes194
+shared paths/105 verified upgrades,0 uncovered paths/errors after append-only
+78/c3/8822 verification. That resolves the earlier provenance blockers; live
+[PR164 checks](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164/checks)
+remain authoritative for its final head. Reviewed main, another-PC and hosted
+adoption are separate and have not occurred here.
+
+Remaining executable local group: implement the email-plan provider/ingestion/
+event-statistics boundary on the existing Mail/Case/Task core and verify its local
+fixtures. Populated original/Lithuanian mail UI, actual Gmail OAuth/send/inbox and
+full platform acceptance remain open. Actual Gmail requires reauthentication and
+the platform adapter; the earlier browser self-email proves only that mailbox.
+No further paid calibration or live-channel action is part of this preview phase.
 
 ## Earlier autonomous local business/email checkpoint —2026-10-18
 

@@ -2116,3 +2116,13 @@ anchor moved across native_sources I/O, permission caching or TTL/paid change.
 The new joined leaf also requires an owned test-only adaptation in
 offline_tests/test_authority_observation.py; preserve every original mutation,
 source/actor/refusal assertion and the first101PASS/84setup-error evidence.
+
+Root bounded native lifecycle accepted on clean owned Serving3245/schema49:
+expiry,65.368s continuousReady/manualclose, normal ownSessionrevocation and
+normalASGIshutdown+sameSourceRestartReplay; Chrome home/guide actually observed.
+Original shutdown HTTP-only assertionFAIL remains;20ConnectTimeout phase events,
+exact OS0listeners/processgone + normalASGI0pending and later replay are separate
+supplemental evidence. New append-only events78/c3/8822 under issue66comment6250556797;
+all previous records/failures/model182ledgers preserved, all paid/channelsheld.
+Current060ee0 PR-base coverage194shared/105verified/0errors passes; finalheadCI,
+reviewedmain/otherPC/hosted and remaining mail/provider/fullUI acceptance separate.

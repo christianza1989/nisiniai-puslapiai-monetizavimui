@@ -1900,3 +1900,14 @@ passes acrossrun29 first5/run30 last2,9offline and scopedRuff/safety PASS; origi
 run29 E2setupFAIL preserved and specific guard cause not invented. Root recovered
 the existing Docker/PG host after pause; own two pending nodes passed146.84s.
 Window closes at source-local handoff; no paid/Serving/site/business changes.
+
+# Existing business / agent account attachment — Root2026-10-18
+
+Explicit owner request: finish business and agent attachment to account while a
+separate chat builds the dealer site. Base55c209e; Root owns new business_attachment/
+and customer_agents/business* modules, customer_agents/models.py/service.py,
+workspace_team/directory.py/directory_wire.py, api.py, migration0049 and scoped
+tests/docs/portal integration. Existing claim/grant and Agent/Config remain the
+engines; no fakeCreation, second core or calibration system. Native acquisition
+helper window is pending exact contract agreement; it must not edit Root migration
+or these paths. Independent reviewer remains read-only. All runtime flags held.

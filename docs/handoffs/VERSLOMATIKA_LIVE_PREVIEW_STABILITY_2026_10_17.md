@@ -588,3 +588,48 @@ joined-row leaf changed, with original fences and assertion gates intact.
 [Read semantics and evidence](../LIVE_PREVIEW_APPROVED_PLAN_READS.md).
 No operating adoption or expiry/close/revoke/shutdown acceptance follows from
 these source checks; the earlier78/c3 main blockers remain open.
+
+### Bounded operating3245 lifecycle acceptance —2026-10-18 13:27 UTC
+
+Root adopted clean3245a9aca13961a0fc814b6a4571052c298e1f5a into the owned
+Serving/API18871, schema49, with no frontend rebuild, schema migration or paid
+runner activation. Initial source adoption preserved96 table-row snapshots and
+914 native files with a2,220,088-byte backup. Ordinary owner200/foreign404 and
+six unchanged Config revision2 records were checked before the existing test
+token's normal expiry. Explicit current intake/S6 continuity preserved the exact
+015c3074a972c3c568154bdc5eecd353a1907a0c39261fa1d5bb3032ea8cf10e site bytes.
+
+| Actual current-source boundary | Result / safe result SHA256 |
+| --- | --- |
+| Natural expiry | PASS: Ready/native200, expired, origin closed, same UUID terminal/no new child;70bf30f55b356640e3c326d4f1edff0d0b02725cb86df2cd96e01fdbba94513d |
+| Manual close | PASS:65.368s continuousReady/native200, closed and stopped origin, terminal replay;fef913aef86961893af2532d1b8c91cfed9f55ec8fd66f5335c44e4015162018 |
+| Normal own Session logout | PASS: detail/replay401, revoked/unauthenticated and stopped origin;25f8e3fb143d7ed7516698e25475e09e03eebf79330c512d9c01bece8c03a1c4 |
+| Normal ASGI shutdown, supplemental OS witness | PASS separately: one owned lease closed/service_closing,0 pending owned/authority/pulse tasks, ASGI shutdown complete, API22584 absent and API18871/native63573 listeners0;56f992e58a44030c8c805833af8f3a1ca553878d9bcdb8ea4e27a8eec346eff2 |
+| Same-source restart replay after shutdown | PASS:202/same closed lease+UUID/null URL, all lease records byte-exact, no new child;7798b0befccbf694b09ee2e9418e66fbc5d9e9633b330c081eaee5174609b29d |
+
+Actual Chrome tab358295081 opened the current native homepage and followed the
+guide link before expiry. Saved screenshot SHA256: home5c751b0bc4190afa7f7b0bda39c605869c8768ec17aa4cf4e4445184d659048f,
+guide2b12cc16f476e0d2a3350481ae6b16071a72bea821f16a35bd2173b06de74fd1.
+An operator control marker is not this navigation proof.
+
+The original HTTP-only shutdown harness **remains FAIL**, SHA256
+282ab932ba09c8f895e10a49117544f2e3ddd072066185ac70d0b90400cae6f4.
+Its retained phases record20 ConnectTimeout probes; phase-stream SHA256
+73ec393ba95aa999cea94b20a6abf42da109b60b63a1c36a541d85adfa1dad6b.
+The network cause is UNVERIFIED. The separate PASS above uses normal Uvicorn
+Server(Config).run/should_exit, the unmodified ASGI hook and delegated original
+Service.close, joined-task metadata, exact OS cleanup and later restart replay.
+It does not relabel the failed HTTP command or rerun its lease. Read-only peer
+review accepted this distinction and its bounded scope.
+
+The private shutdown control was removed from the running bootstrap on restore.
+The default API runs the same clean3245, all96 table-row snapshots and1010 then
+existing native files exact,2,237,928-byte backup, no paid/channel workers.
+Original model source182/parent7/child33 hashes remain exact; no new model,
+provider, corpus, prompt, candidate or channel work occurred in this phase.
+
+New append-only local verification events on78/c3/8822 record this current-source
+package. Their earlier fixing/FAIL events and the latest3245 CI preflight failure
+remain historical evidence. Whole PR-base committed coverage and CI must now be
+rechecked; this local result is not main merge, another-PC/hosted/provider/fullUI
+or full-platform acceptance, nor a guarantee against arbitrary load.

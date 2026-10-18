@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual clean owned Serving3245/schema49 bounded native lifecycle accepted after the approved-plan query repair: expiry,65.368s continuousReady/manualclose, normal ownSession revocation and normalASGI shutdown with supplemental OS witness/restart replay. Original HTTP-only shutdown harness remains FAIL; retained phase log records 20 ConnectTimeout probes, underlying network cause UNVERIFIED. Do not relabel that command PASS. No TTL/deadline/permission waiver or further modelcalls. Restored defaultAPI3245 with all96table rows/1010files exact and paid/channel flagsheld; source182 model parent7/child33 byte-exact. This is featurebranch/local evidence, not reviewed main/otherPC/hosted/fullUI/provider acceptance.",
+  "checks": [
+    {
+      "command": "qa-python .local/sharp-policy/preview-current-lifecycle.py expiry --source 3245a9aca13961a0fc814b6a4571052c298e1f5a",
+      "result": "PASS",
+      "evidence": "Actual nativeHTTP200, expired+originclosed, same UUID terminal/no new child; resultSHA70bf30f55b356640e3c326d4f1edff0d0b02725cb86df2cd96e01fdbba94513d"
+    },
+    {
+      "command": "qa-python .local/sharp-policy/preview-current-lifecycle.py close --source 3245a9aca13961a0fc814b6a4571052c298e1f5a",
+      "result": "PASS",
+      "evidence": "65.368s continuousReady/nativeHTTP200 thenclosed/originclosed and terminalUUIDreplay; resultSHAfef913aef86961893af2532d1b8c91cfed9f55ec8fd66f5335c44e4015162018; actualChrome home+guide proof, not control marker"
+    },
+    {
+      "command": "qa-python .local/sharp-policy/preview-current-lifecycle.py revocation --source 3245a9aca13961a0fc814b6a4571052c298e1f5a",
+      "result": "PASS",
+      "evidence": "Own normalSessionlogout; detail/replay401, revoked/unauthenticated terminal and originclosed; SHA25f8e3fb143d7ed7516698e25475e09e03eebf79330c512d9c01bece8c03a1c4"
+    },
+    {
+      "command": "qa-python .local/sharp-policy/verify-preview3245-lifecycle.py",
+      "result": "PASS",
+      "evidence": "Existing receipts only; Source3245 four bounded gates; aggregateSHA261a9f2df68fca2ccc94b83af69adeadfd6fceb035f77fa84e43a5efb162a0ac. Shutdown originalHTTP assertionFAIL remainsSHA282ab932ba09c8f895e10a49117544f2e3ddd072066185ac70d0b90400cae6f4; supplemental normalASGI0pending+exactOSPID/ports0 SHA56f992e58a44030c8c805833af8f3a1ca553878d9bcdb8ea4e27a8eec346eff2; sameSource restart replay SHA7798b0befccbf694b09ee2e9418e66fbc5d9e9633b330c081eaee5174609b29d. No repeated lease/new model."
+    }
+  ],
+  "eventId": "315e407f-a077-4375-aeb9-68e3cb2dd865",
+  "sequence": 3,
+  "at": "2026-10-18T13:37:45.128Z"
+}

@@ -47,6 +47,6 @@ else if(command==='run'){
   const {createPorts}=await import(pathToFileURL(config.portsModule.path));
   const controller=new AbortController();for(const sig of ['SIGINT','SIGTERM'])process.once(sig,()=>controller.abort());
   const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort();}catch{controller.abort();}},250);
-  try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3}));}
+  try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3,importCoalesceMs:config.importCoalesceMs??500}));}
   finally{clearInterval(timer);}
 }else throw new Error('Commands: init, enqueue, run, next, claim, send-intent, reply, status, pause, resume. Real host tools answer requests; no automated Gemini retry.');

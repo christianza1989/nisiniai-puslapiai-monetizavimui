@@ -113,10 +113,11 @@ export class JsonPipelineStore {
  * This runner creates no automation and never publishes. Existing in-flight send/import work
  * is held for inspection on restart instead of replayed. */
 export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatches = 2,
-  maxAttemptsPerPage = 2, signal, pollMs = 200 }) {
-  for (const [name, value] of Object.entries({ batchSize, maxBatches, maxAttemptsPerPage, pollMs })) {
+  maxAttemptsPerPage = 2, signal, pollMs = 200, importCoalesceMs = 500 }) {
+  for (const [name, value] of Object.entries({ batchSize, maxBatches, maxAttemptsPerPage, pollMs, importCoalesceMs })) {
     if (!Number.isInteger(value) || value < 1) throw new Error(`${name} must be a positive integer`);
   }
+  if (importCoalesceMs > 1000) throw new Error('importCoalesceMs must not exceed 1000ms');
   if (batchSize > 3) throw new Error('Importer and generation batch limit is three');
   for (const name of ['generate', 'review', 'importPages']) if (typeof ports?.[name] !== 'function') throw new Error(`Missing real pipeline port: ${name}`);
   const internalStop = new AbortController();
@@ -253,8 +254,16 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
   }
   async function importLane() {
     while (!cancelled()) {
+      let available;
+      await mutate(p => { available = p.pages.filter(page => page.status === 'ACCEPTED').length; });
+      if (!available) { if (reviewDone && generationDone && factsDone) break; await sleep(pollMs); continue; }
+      // Briefly collect independently accepted pages to amortize one serial import
+      // epoch. This is never a barrier waiting for rejected/held siblings or a batch.
+      if (available < batchSize && !(reviewDone && generationDone && factsDone)) await sleep(importCoalesceMs);
+      if (cancelled()) break;
       let records;
       await mutate(p => {
+        if (cancelled()) return;
         const pages = p.pages.filter(page => page.status === 'ACCEPTED').slice(0, batchSize);
         if (pages.length) { pages.forEach(page => { page.status = 'IMPORTING'; }); records = clone(pages); }
       });

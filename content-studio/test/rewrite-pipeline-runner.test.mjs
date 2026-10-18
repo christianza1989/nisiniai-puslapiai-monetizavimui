@@ -3,10 +3,18 @@ import assert from 'node:assert/strict';
 import { mkdir, mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+import { spawnSync } from 'node:child_process';
 import { createPipelineState, JsonPipelineStore, runRewritePipeline } from '../src/rewrite-pipeline/runner.mjs';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const deferred = () => { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; };
+// Scheduling tests use an in-memory atomic store so the coalescing deadline is
+// measured independently of Windows filesystem/antivirus latency. Disk tests below remain unchanged.
+function memoryStore(pages) {
+  const document = { pipeline: createPipelineState({ siteId: 'promedical', pages: pages.map(pageId => ({ pageId })) }) };
+  return { read: async () => structuredClone(document), update: async mutator => { mutator(document); return structuredClone(document); } };
+}
 const temporaryRoot = fileURLToPath(new URL('../tmp/rewrite-pipeline-tests/', import.meta.url));
 async function fixture(t, pages, { legacy } = {}) {
   await mkdir(temporaryRoot, { recursive: true });
@@ -72,6 +80,74 @@ test('accepted page imports immediately while sibling review is pending; rejecte
   assert.deepEqual(requests, [['a', 'b', 'c'], ['b']]);
   assert.deepEqual(imports[0], ['a']);
   assert.equal(result.pages.find(page => page.pageId === 'b').candidates.length, 2);
+});
+
+test('short coalescing window groups three independently accepted pages into one import epoch', { timeout: 5000 }, async t => {
+  const store = memoryStore(['a', 'b', 'c']);
+  const normal = ports(), imports = [];
+  let active = 0, maximum = 0;
+  const result = await runRewritePipeline({ store, pollMs: 2, importCoalesceMs: 200, ports: ports({
+    review: async record => { await delay(15); return normal.review(record); },
+    importPages: async records => {
+      active++; maximum = Math.max(maximum, active);
+      imports.push(records.map(record => record.pageId));
+      try { return await normal.importPages(records); } finally { active--; }
+    },
+  }) });
+  assert.equal(result.status, 'COMPLETE');
+  assert.deepEqual(imports, [['a', 'b', 'c']]);
+  assert.equal(maximum, 1);
+});
+
+test('default coalescing deadline imports one page without waiting for a subsequently held sibling', { timeout: 5000 }, async t => {
+  const store = memoryStore(['a', 'b']);
+  const normal = ports(), imported = deferred(), imports = [];
+  let acceptedAt, importedAt;
+  const result = await runRewritePipeline({ store, pollMs: 2, ports: ports({
+    review: async record => {
+      if (record.pageId === 'a') { acceptedAt = Date.now(); return normal.review(record); }
+      await imported.promise;
+      return { decision: 'held', reason: 'Separate factual issue; not accepted' };
+    },
+    importPages: async records => {
+      importedAt = Date.now(); imports.push(records.map(record => record.pageId));
+      imported.resolve(); return normal.importPages(records);
+    },
+  }) });
+  assert.deepEqual(imports, [['a']]);
+  assert.deepEqual(result.pages.map(page => page.status), ['COMPLETE', 'HELD']);
+  // The configured wait is 500ms; allow ordinary scheduler overhead.
+  assert.ok(importedAt - acceptedAt >= 400 && importedAt - acceptedAt < 1200, `elapsed ${importedAt - acceptedAt}ms`);
+});
+
+test('owner pause during coalescing leaves accepted page unclaimed and performs no native import', { timeout: 5000 }, async t => {
+  const store = memoryStore(['a', 'b']);
+  const normal = ports(), controller = new AbortController();
+  let imports = 0;
+  const result = await runRewritePipeline({ store, pollMs: 2, signal: controller.signal, ports: ports({
+    review: async record => {
+      if (record.pageId === 'b') { await delay(20); controller.abort(); await delay(5); }
+      return normal.review(record);
+    },
+    importPages: async records => { imports++; return normal.importPages(records); },
+  }) });
+  assert.equal(result.status, 'PAUSED');
+  assert.equal(result.pages[0].status, 'ACCEPTED');
+  assert.equal(result.pages[0].imports.length, 0);
+  assert.equal(imports, 0);
+});
+
+test('coalesced uncertain native epoch stays unknown and cannot replay after restart', { timeout: 5000 }, async t => {
+  const store = memoryStore(['a', 'b', 'c']);
+  let imports = 0;
+  const first = await runRewritePipeline({ store, pollMs: 2, importCoalesceMs: 200, ports: ports({
+    importPages: async () => { imports++; throw new Error('Native write outcome unknown'); },
+  }) });
+  assert.equal(imports, 1);
+  assert.ok(first.pages.every(page => page.status === 'UNKNOWN_IMPORT'));
+  const restarted = await runRewritePipeline({ store, pollMs: 2, ports: ports({ importPages: async () => { imports++; } }) });
+  assert.equal(imports, 1);
+  assert.ok(restarted.pages.every(page => page.status === 'UNKNOWN_IMPORT'));
 });
 
 test('max attempts holds rejected page; candidate and attempt originals remain immutable', async t => {
@@ -293,4 +369,21 @@ test('publication cannot be activated and inputs/limits are explicit', async () 
   assert.throws(() => createPipelineState({ siteId: 'promedical', pages: [], publication: 'active' }), /paused/);
   assert.throws(() => createPipelineState({ siteId: 'promedical', pages: [{ pageId: 'a' }, { pageId: 'a' }] }), /Unique/);
   await assert.rejects(runRewritePipeline({ batchSize: 4, ports: ports() }), /limit is three/);
+  for (const importCoalesceMs of [0, -1, 1.5, NaN])
+    await assert.rejects(runRewritePipeline({ importCoalesceMs, ports: ports() }), /importCoalesceMs must be a positive integer/);
+  await assert.rejects(runRewritePipeline({ importCoalesceMs: 1001, ports: ports() }), /must not exceed 1000ms/);
+});
+
+test('CLI forwards importer coalescing config through the same bounded validation', async t => {
+  const { filename, directory } = await fixture(t, []);
+  const source = 'export function createPorts(){return {generate(){},review(){},importPages(){}};}';
+  const modulePath = path.join(directory, 'fixture-ports.mjs'), configPath = path.join(directory, 'config.json');
+  await writeFile(modulePath, source);
+  for (const importCoalesceMs of [0, 1001]) {
+    await writeFile(configPath, JSON.stringify({ portsModule: { path: modulePath, sha256: createHash('sha256').update(source).digest('hex') }, importCoalesceMs }));
+    const child = spawnSync(process.execPath, [fileURLToPath(new URL('../scripts/rewrite-pipeline.mjs', import.meta.url)),
+      'run', '--state', filename, '--config', configPath], { encoding: 'utf8', timeout: 10000 });
+    assert.notEqual(child.status, 0);
+    assert.match(child.stderr, /importCoalesceMs must/);
+  }
 });

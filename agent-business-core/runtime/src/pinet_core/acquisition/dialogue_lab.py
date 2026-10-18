@@ -234,6 +234,7 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
              'transcript': row['transcript'], 'events': row['events']}
         if workflow is not None:
             evaluation['native_receipts'] = list(workflow.receipts)
+            evaluation['native_provenance'] = workflow.provenance
         grade = await evaluator.ask(DialogueGrade, GRADE_INSTRUCTION, evaluation)
         row['grade'] = grade.model_dump()
         labels_pass = bool(set(seen) & set(case.expected_classifications)) if case.expected_classifications else not seen
@@ -253,5 +254,6 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
     finally:
         if workflow is not None:
             row['native_receipts'] = list(workflow.receipts)
+            row['native_provenance'] = workflow.provenance
         atomic(root / 'report.json', row)
     return row

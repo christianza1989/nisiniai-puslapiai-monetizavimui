@@ -54,6 +54,43 @@ sessions/transactions in the owned DB. Files and committed synthetic history sta
 
 ## Exact remaining work after external recovery
 
+### Native calibration protocol
+
+The runtime manifest is `acquisition-native-calibration.v1`, with exact
+source_revision, native pair, derived bindings, runtime campaign, original cases,
+cases fingerprint (`corpus_sha256`), current evaluator hash, and
+`protected_source: {path, sha256}`. The latter references original raw JSON with
+exact keys synthetic/now/campaign/cases. Both files must be bounded private runtime
+artifacts, with no symlink or Windows reparse path. The raw source hash, original
+cases, original aware timestamp and campaign facts stay unchanged. Only an
+explicit new runtime campaign ID may differ. A manifest is not paid authority.
+
+The author freezes actual Registration site IDs before sealing. The trusted
+binder may copy original bytes and verify hashes without printing or presenting
+protected payload to the proposer/controller. Native Task admission rederives both
+actual Config/Auth/Module/owner/source bindings before reserving a model attempt.
+Agent role prompts receive campaign/prospect/transcript, never persona or labels.
+
+An exact episode reuses deterministic request UUIDs; existing whole-run output
+directories cannot be overwritten. A new episode in the same campaign/target is
+rejected by the normal retained-stage barrier. A different runtime manifest cannot
+reuse an authorization already bound to an earlier manifest. New experiments need
+fresh explicit campaign/authorization/private-registration admission and a new
+runtime manifest; original protected bytes/seal remain intact, with raw/cases/runtime
+campaign hashes and original source time recorded in native provenance. Reusing
+those cases is regression evidence, not a newly blind corpus.
+
+Within a campaign, scenarios need distinct organization targets. Contact policy is
+shared by recipient across campaigns in the exact private adapter scope: repeated
+recipients can require a fresh explicitly admitted experiment scope. Never clear
+retained policy/history, alter protected cases, or invent aliases to avoid dedup.
+
+`NativeWorkflow` supplies the existing `run_case(..., workflow=...)` hook. Its
+trusted dispatcher targets the exact common Task; no second model engine exists.
+The CLI's `--native-binding --list` only inspects metadata and refuses native model
+dispatch. Persona/evaluator execution requires separate explicit allowance and a
+trusted caller; the closed historical ledger is never implicitly reused.
+
 Resume checkpoint 04:14 UTC: disk containment lifted; ongoing groups still require
 at least1.5GiB free and run sequentially. Run11 reached3PASS/1 fixture-default FAIL;
 offline run12 has13PASS. Run13 has3PASS/6FAIL: five usage-shape test oracle errors

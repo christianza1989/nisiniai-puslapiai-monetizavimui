@@ -74,6 +74,12 @@ async def check_pair(tx, value, work):
         for role, row in (("research", r), ("email", e))}
     if value.calibration is not None:
         from .native_calibration import verify_reference
+        reference = value.calibration.model_dump(mode="json", exclude={"case_id"})
+        retained = list(await tx.scalars(select(ModelTaskBinding.input).where(
+            ModelTaskBinding.authorization_id.in_((r.id, e.id)))))
+        if any(not isinstance(item.get("calibration"), dict)
+                or {key: item["calibration"].get(key) for key in reference} != reference for item in retained):
+            raise RunnerError("native_calibration_authorization_retained")
         verify_reference(value, observed, primary.source_revision)
     return observed
 

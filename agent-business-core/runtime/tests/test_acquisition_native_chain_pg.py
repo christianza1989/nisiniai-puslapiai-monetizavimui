@@ -460,6 +460,10 @@ async def test_known_lab_workflow_uses_native_tasks_and_independent_auxiliaries(
         "corpus_sha256": fingerprint(cases), "evaluator_hash": fingerprint(GRADE_INSTRUCTION)}
     folder = native_calibration.ROOT/("known-native-"+uuid4().hex)
     folder.mkdir()
+    source = folder/"known-protected-source.json"
+    source.write_text(json.dumps({"synthetic": True, "now": utcnow().isoformat(),
+        "campaign": p["request"]["campaign"], "cases": cases}), encoding="utf-8")
+    frozen["protected_source"] = {"path": str(source), "sha256": hashlib.sha256(source.read_bytes()).hexdigest()}
     path = folder/"known-manifest.json"
     path.write_text(json.dumps(frozen), encoding="utf-8")
     ref = {"manifest_path": str(path), "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "case_id": "known-0"}
@@ -486,3 +490,21 @@ async def test_known_lab_workflow_uses_native_tasks_and_independent_auxiliaries(
     before = len(fake.calls)
     await workflow.prepare(Campaign.model_validate(frozen["campaign"]), workflow.case, utcnow())
     assert len(fake.calls) == before
+    from pinet_core.control.routes import ControlError
+    fresh_episode = native_calibration.NativeWorkflow(token=p["token"], reference=ref, episode_id=uuid4(), dispatch=dispatch)
+    with pytest.raises(ControlError, match="acquisition_native_stage_retained"):
+        await fresh_episode.prepare(Campaign.model_validate(frozen["campaign"]), workflow.case, utcnow())
+    assert len(fake.calls) == before
+    assert row["native_provenance"]["protected_raw_sha256"] == frozen["protected_source"]["sha256"]
+    changed = deepcopy(frozen)
+    changed["campaign"]["campaign_id"] = "explicit-second-experiment"
+    changed_path = folder/"new-runtime-manifest.json"
+    changed_path.write_text(json.dumps(changed), encoding="utf-8")
+    changed_ref = {**ref, "manifest_path": str(changed_path),
+        "manifest_sha256": hashlib.sha256(changed_path.read_bytes()).hexdigest()}
+    changed_workflow = native_calibration.NativeWorkflow(token=p["token"], reference=changed_ref,
+        episode_id=uuid4(), dispatch=dispatch)
+    with pytest.raises(RunnerError, match="native_calibration_authorization_retained"):
+        await changed_workflow.prepare(Campaign.model_validate(changed["campaign"]), changed_workflow.case, utcnow())
+    assert len(fake.calls) == before
+    assert changed_workflow.provenance["protected_raw_sha256"] == workflow.provenance["protected_raw_sha256"]

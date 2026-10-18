@@ -5,6 +5,8 @@ the source-owned caller; private persona/expected labels never enter Task inputs
 """
 import hashlib
 import json
+import stat
+from datetime import datetime
 from email.message import EmailMessage
 from pathlib import Path
 from uuid import UUID, uuid5
@@ -28,17 +30,25 @@ from .work_models import MailBinding
 ROOT = Path(__file__).resolve().parents[3]/"artifacts"
 
 
-def manifest(reference):
-    ref = CalibrationReference.model_validate(reference)
-    path = Path(ref.manifest_path)
+def sealed_private_json(path, expected_sha256, *, changed):
+    path = Path(path)
     if (not path.is_absolute() or path.is_symlink() or any(p.is_symlink() for p in path.parents)
             or not path.resolve().is_relative_to(ROOT.resolve()) or not path.is_file() or path.stat().st_size > 1048576):
         raise RunnerError("private_native_manifest_required")
+    if any(getattr(p.lstat(), "st_file_attributes", 0) & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0x400)
+            for p in (path, *path.parents)):
+        raise RunnerError("private_native_manifest_required")
     raw = path.read_bytes()
-    if hashlib.sha256(raw).hexdigest() != ref.manifest_sha256:
-        raise RunnerError("native_manifest_changed")
-    value = json.loads(raw)
-    if (set(value) != {"version", "source_revision", "native", "bindings", "campaign", "cases", "corpus_sha256", "evaluator_hash"}
+    if hashlib.sha256(raw).hexdigest() != expected_sha256:
+        raise RunnerError(changed)
+    return json.loads(raw)
+
+
+def manifest(reference):
+    ref = CalibrationReference.model_validate(reference)
+    value = sealed_private_json(ref.manifest_path, ref.manifest_sha256, changed="native_manifest_changed")
+    if (set(value) != {"version", "source_revision", "native", "bindings", "campaign", "cases", "corpus_sha256",
+            "evaluator_hash", "protected_source"}
             or value["version"] != "acquisition-native-calibration.v1"
             or value["corpus_sha256"] != fingerprint(value["cases"])
             or value["evaluator_hash"] != fingerprint(GRADE_INSTRUCTION)
@@ -46,6 +56,18 @@ def manifest(reference):
         raise RunnerError("native_manifest_invalid")
     NativePair.model_validate(value["native"])
     campaign = Campaign.model_validate(value["campaign"])
+    protected = value["protected_source"]
+    if not isinstance(protected, dict) or set(protected) != {"path", "sha256"}:
+        raise RunnerError("native_protected_source_required")
+    source_ref = CalibrationReference(manifest_path=protected["path"], manifest_sha256=protected["sha256"], case_id="source")
+    source = sealed_private_json(source_ref.manifest_path, source_ref.manifest_sha256,
+        changed="native_protected_source_changed")
+    if (not isinstance(source, dict) or set(source) != {"synthetic", "now", "campaign", "cases"}
+            or source["synthetic"] is not True or datetime.fromisoformat(source["now"]).tzinfo is None
+            or source.get("cases") != value["cases"]
+            or Campaign.model_validate(source.get("campaign")).model_dump(mode="json", exclude={"campaign_id"})
+                != campaign.model_dump(mode="json", exclude={"campaign_id"})):
+        raise RunnerError("native_protected_source_changed")
     cases = [LabCase.model_validate(case) for case in value["cases"]]
     for case in cases:
         # Native site identity is the real registered Business, not a synthetic
@@ -79,6 +101,12 @@ class NativeWorkflow:
         self.frozen, self.case = manifest(self.reference)
         self.episode = UUID(str(episode_id))
         self.dispatch, self.receipts, self.initial, self.parent, self.turn = dispatch, [], None, None, 0
+        self.provenance = {"episode_id": str(self.episode), "manifest_sha256": self.reference.manifest_sha256,
+            "protected_raw_sha256": self.frozen["protected_source"]["sha256"],
+            "cases_sha256": self.frozen["corpus_sha256"], "runtime_campaign_sha256": fingerprint(self.frozen["campaign"]),
+            "source_revision": self.frozen["source_revision"], "bindings": self.frozen["bindings"]}
+        self.provenance["protected_source_now"] = sealed_private_json(self.frozen["protected_source"]["path"],
+            self.frozen["protected_source"]["sha256"], changed="native_protected_source_changed")["now"]
 
     def validate(self, campaign, case):
         frozen, selected = manifest(self.reference)

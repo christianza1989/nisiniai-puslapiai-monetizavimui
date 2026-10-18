@@ -100,6 +100,10 @@ def known_manifest(tmp_path, monkeypatch):
     value = {"version": "acquisition-native-calibration.v1", "source_revision": "a"*40, "native": pair,
         "bindings": {"research": {}, "email": {}}, "campaign": raw["campaign"], "cases": cases,
         "corpus_sha256": fingerprint(cases), "evaluator_hash": fingerprint(GRADE_INSTRUCTION)}
+    source = tmp_path/"known-source.json"
+    source.write_text(json.dumps({"synthetic": True, "now": "2026-10-18T00:00:00Z",
+        "campaign": raw["campaign"], "cases": cases}), encoding="utf-8")
+    value["protected_source"] = {"path": str(source), "sha256": hashlib.sha256(source.read_bytes()).hexdigest()}
     path = tmp_path/"known-inert.json"
     path.write_text(json.dumps(value), encoding="utf-8")
     monkeypatch.setattr(native_calibration, "ROOT", tmp_path)
@@ -154,10 +158,40 @@ def test_native_manifest_keeps_real_site_binding_and_test_only_data(tmp_path, mo
     path.write_text(json.dumps(value), encoding="utf-8")
     ref = {"manifest_path": str(path), "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "case_id": "known-0"}
     if change == "exact-native":
+        source = tmp_path/"known-source.json"
+        source.write_text(json.dumps({"synthetic": True, "now": "2026-10-18T00:00:00Z",
+            "campaign": value["campaign"], "cases": value["cases"]}), encoding="utf-8")
+        value["protected_source"] = {"path": str(source), "sha256": hashlib.sha256(source.read_bytes()).hexdigest()}
+        path.write_text(json.dumps(value), encoding="utf-8")
+        ref["manifest_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
         with pytest.raises(ValueError, match="synthetic_site_required"):
             validate_synthetic(Campaign.model_validate(value["campaign"]), LabCase.model_validate(value["cases"][0]))
         frozen, selected = native_calibration.manifest(ref)
         assert frozen["campaign"]["site_id"] == selected.prospect.site_id == identity
     else:
         with pytest.raises((RunnerError, ValueError)):
+            native_calibration.manifest(ref)
+
+
+@pytest.mark.parametrize("change", ["runtime-campaign-id", "campaign-fact", "protected-raw", "outside-source"])
+def test_new_runtime_manifest_preserves_original_protected_source(tmp_path, monkeypatch, change):
+    value, path = known_manifest(tmp_path, monkeypatch)
+    raw_hash = value["protected_source"]["sha256"]
+    if change == "runtime-campaign-id":
+        value["campaign"]["campaign_id"] = "explicit-new-experiment"
+    elif change == "campaign-fact":
+        value["campaign"]["facts"][0]["text"] = "Changed experimental fact"
+    elif change == "protected-raw":
+        source = tmp_path/"known-source.json"
+        source.write_text(source.read_text()+" ", encoding="utf-8")
+    else:
+        value["protected_source"]["path"] = str(tmp_path.parent/"unowned-source.json")
+    path.write_text(json.dumps(value), encoding="utf-8")
+    ref = {"manifest_path": str(path), "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "case_id": "known-0"}
+    if change == "runtime-campaign-id":
+        frozen, _ = native_calibration.manifest(ref)
+        assert frozen["protected_source"]["sha256"] == raw_hash
+        assert frozen["campaign"]["campaign_id"] == "explicit-new-experiment"
+    else:
+        with pytest.raises(RunnerError):
             native_calibration.manifest(ref)

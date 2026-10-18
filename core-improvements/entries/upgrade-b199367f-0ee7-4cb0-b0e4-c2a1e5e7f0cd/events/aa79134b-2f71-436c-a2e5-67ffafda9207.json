@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual minimal and full API entrypoint gap plus Creation-only direct preview projection repaired. Same source-derived business contract and nullable-origin directory contract exported. Local source/PG checks only; browser and operating49 pending.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_business_agent_attachment.py offline_tests/test_business_agent_entrypoints.py tests/test_business_attachment.py -q",
+      "result": "PASS",
+      "evidence": "34PASS4.72s on composed source; Root config material legacy bytes and per-Config external source hashes protected; both actual API entrypoints expose5paths/7operations."
+    },
+    {
+      "command": "Retained Root QA migration0048→0049 then pytest tests/test_business_agent_attachment_pg.py",
+      "result": "PASS",
+      "evidence": "Migrationfe82183 preserves94oldtables326oldrows via exact old-column projection; original/operating and818nativefiles exact. Actual API51a08b3:4PASS32.19s, realGit/source fencing, verified owner/import/replay/foreign404, stableAgent/sourceadoption/historyCAS, concurrentrevoke/adoption no lockcycle, directory/external-origin separation. LogSHA256 eb8407db767e0ac85f59bc2ed49afccb78ccca58904a3cff1fe68aa9fe344695;0provider/SMTP/IMAP."
+    }
+  ],
+  "eventId": "aa79134b-2f71-436c-a2e5-67ffafda9207",
+  "sequence": 2,
+  "at": "2026-10-18T08:03:38.196Z"
+}

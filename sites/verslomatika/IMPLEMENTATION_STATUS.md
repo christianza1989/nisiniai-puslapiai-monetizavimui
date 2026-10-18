@@ -8,9 +8,15 @@ business-scoped Agent/Config API/import/history, stable Agent/source version
 adoption, directory and portal integration. Existing reviewed claim/BusinessGrant
 remains ownership; no fakeCreation/Profile or second core is introduced.
 
-Current0049 draft is not operating adoption. Source backbone and native adapter
-are separate owned helper windows, then composed isolated PG/RLS/HTTP and browser
-acceptance. Root's preserved local API remains119/schema48/paid+channels held.
+Composed0049 passed retained migration and four actual account API PG cases;
+the external native research/email/reply adapter passed its separate inert QA.
+Portal typed BFF/forms/import/history and20 focused tests/TypeScript are implemented.
+Independent review fixes passed the final two-worker production build; browser
+confirmation is pending. Exact automatic old-build cleanup was rejected; the
+human executed the scoped script and removed12 obsolete builds with fallback
+and current builds preserved. Free space recovered to about3GB.
+These source checks are not operating adoption. Root's preserved local API
+remains119/schema48/paid+channels held.
 Old pilot and allowances stay closed. Current contract:
 [existing-business agent attachment](../../docs/VERSLOMATIKA_EXISTING_BUSINESS_AGENT_CONTRACT.md).
 

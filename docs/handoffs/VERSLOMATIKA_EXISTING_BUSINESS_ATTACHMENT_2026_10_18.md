@@ -2,6 +2,40 @@
 
 ## Current assignment
 
+Current source checkpoint,2026-10-18: the external adapter is implemented on
+Root's feature branch. The same Agent/Config tables now accept genuine reviewed
+external Business sources, bounded idempotent import, stable Agent identity,
+explicit source adoption and immutable per-Config source/history hashes. Both
+actual API entrypoints expose the source-derived business-agent contract.
+This is source-local acceptance, not merged-main or operating adoption.
+
+Root's retained48→49 migration preserves94 old tables/326 old rows by exact old
+column projection, with original/operating databases and818 native files intact.
+Four actual customer API PG cases pass32.19s under real current Git fencing:
+verified owner/import/replay/foreign denial; source adoption/history/CAS;
+concurrent old-source revocation/adoption; directory/Creation-preview separation.
+LogSHA256 eb8407db767e0ac85f59bc2ed49afccb78ccca58904a3cff1fe68aa9fe344695.
+Native helper's separate retained QA proves external research→email→two replies
+in one Case, reviewed-fact denial, source adoption, known/unknown source-loss
+accounting and legacy compatibility. Its original failed fixture observations
+remain retained; do not claim a clean combined five-node run.
+
+Portal has a source-derived typed BFF and business agent list/form/import/history
+at `/dashboard/verslai/<businessId>/agentai`. Twenty focused adapter/legacy tests
+and TypeScript passed. Independent review found and Root repaired exact response
+correlation, stale historical replay editing, readiness coherence and asynchronous
+file selection. The first production build passed before the last review fixes;
+the final rebuild then passed with two bounded build workers. Desktop/mobile
+browser acceptance and operating49 adoption remain pending. No external dealer
+facts/agents are imported by this checkpoint.
+
+Disk note: reproduced automatic old-build removal was rejected before execution
+(`blocked by policy`). Lossless owned-file compression retained exact hashes.
+The human executed the syntax-checked portal cleanup script:12 exact obsolete
+builds removed, latest/fallback BUILD_ID hashes unchanged, about3GB free. No
+rejected deletion was retried through another executor. Future local builds use
+two workers and the existing review directory instead of accumulating new copies.
+
 2026-10-18: the owner will start a separate chat to build the new kubilų dealer
 website/business, then new agents. This platform chat continues the shared
 integration. The independent builder can start now; attachment is not yet an
@@ -58,7 +92,7 @@ role-lease repair; it does not add the missing external-agent import boundary.
 Public portfolio approval and content-package import are separate operations.
 Publishing `/musu-verslai` content grants no account ownership.
 
-## Remaining platform adapter
+## Historical gap observed before this implementation
 
 Saved customer `Agent`/`Config` objects currently require genuine
 `CreationRegistration` provenance. Their routes are Creation-scoped, their

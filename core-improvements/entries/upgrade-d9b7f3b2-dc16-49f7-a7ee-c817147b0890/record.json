@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Private six-role controller omitted authenticated actor setup before reading a retained binding; add an owned typed request-read boundary and document same-transaction customer_session use.",
+  "category": "code",
+  "evidence": [
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md: authenticated request-read contract and exact controller root cause",
+    "agent-business-core/runtime/tests/test_acquisition_agent_role_reads_pg.py: actual pinet_runtime token-only hidden binding, authenticated existing read PASS before helper addition; original missing-helper FAIL retained privately",
+    "Existing PostgreSQL owner RLS correctly requires control_user, not pinet.business; no SQL policy or GUC change"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_tasks.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_role_reads_pg.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/214",
+  "rollback": "Scoped revert of this helper/test/documentation commit; preserve existing source, retained failure logs, stopped operating grants and all budget/corpus bytes. Private controller rollback requires retaining same-transaction authentication, not reopening the failing bare-token read.",
+  "id": "upgrade-d9b7f3b2-dc16-49f7-a7ee-c817147b0890",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "f1949ac2e5ae31f09d9dfb89a108199b2ba0b664",
+  "createdAt": "2026-10-18T16:32:03.341Z"
+}

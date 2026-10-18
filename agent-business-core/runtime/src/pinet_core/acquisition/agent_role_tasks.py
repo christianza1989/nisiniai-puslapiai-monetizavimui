@@ -1,9 +1,12 @@
 """Owned submission/read on the maintained common Task/Run; no model or send."""
 
+from pydantic import ValidationError
 from sqlalchemy import select
 
+from ..config import settings
 from ..control.routes import ControlError
 from ..creation.service import digest
+from ..customer_agents import service as agents
 from ..models import new_id, utcnow
 from ..tasks.models import Task, TaskRun, Thread
 from ..tasks.service import append_event, task_view
@@ -99,14 +102,50 @@ async def submit(tx, session, request):
         return task
 
 
-async def read(tx, session, task_id):
-    task = await tx.scalar(select(Task).where(Task.id == str(task_id), Task.kind == KIND))
-    if task is None:
+async def _read_request(tx, session, task_id):
+    # The caller must authenticate with customer_session in this transaction.
+    # Token-only scope intentionally cannot enumerate private model bindings.
+    task = await tx.scalar(select(Task).where(
+        Task.id == str(task_id), Task.kind == KIND, Task.user_id == session.user_id,
+        Task.environment_id == settings().environment,
+    ))
+    if task is None or task.business_id is None:
         raise ControlError(404, "not_found")
-    bound = await tx.get(ModelTaskBinding, task.id)
-    if bound is None:
-        raise ControlError(503, "agent_role_task_invalid")
-    await authority.historical(tx, bound.authorization_id, session)
+    async with agents.business_transaction_authority(
+        tx, session, task.business_id, writing=False, lock=True,
+    ):
+        bound = await tx.get(ModelTaskBinding, task.id)
+        keys = ("business_id", "organization_id", "user_id", "environment_id")
+        if (bound is None or bound.kind != KIND
+                or any(getattr(bound, key) != getattr(task, key) for key in keys)
+                or digest(bound.input) != bound.input_sha256):
+            raise ControlError(503, "agent_role_task_invalid")
+        policy = await authority.historical(tx, bound.authorization_id, session)
+        if (any(getattr(policy, key) != getattr(task, key) for key in keys)
+                or task.source_revision != policy.source_revision
+                or task.fingerprint != digest({
+                    "request": bound.input, "authorization_fingerprint": policy.fingerprint,
+                })):
+            raise ControlError(503, "agent_role_task_invalid")
+        try:
+            value = RoleRequest.model_validate(bound.input)
+        except ValidationError as error:
+            raise ControlError(503, "agent_role_task_invalid") from error
+        if (str(value.authorization_id) != bound.authorization_id
+                or value.role != policy.execution_role
+                or getattr(value.team, value.role).fingerprint != policy.fingerprint):
+            raise ControlError(503, "agent_role_task_invalid")
+        return task, value
+
+
+async def read_request(tx, session, task_id):
+    """Typed owned historical input; never reserves, renews or permits execution."""
+    _, value = await _read_request(tx, session, task_id)
+    return value
+
+
+async def read(tx, session, task_id):
+    task, _ = await _read_request(tx, session, task_id)
     run = await tx.get(TaskRun, task.run_id) if task.run_id else None
     return {
         "task": task_view(task),

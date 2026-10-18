@@ -171,3 +171,33 @@ Gmail OAuth/send/inbox, ordinary browser operation, Lithuanian correspondence
 display and actual model quality are separate acceptance evidence owned by the
 integrating task. Local inert QA does not establish them, main merge, adoption on
 another PC or hosted acceptance.
+
+Authenticated request reads use `agent_role_tasks.read_request(tx, session,
+task_id)`. The caller first runs `customer_session(tx, token)` in the same
+`scope(token=token_hash(token))` transaction. A bare token scope deliberately has
+no authenticated `pinet.control_user`; its model binding is hidden by the existing
+owner RLS. The private calibration controller omitted this step before reserving
+its first native attempt. Actual restricted PostgreSQL reproduced hidden binding
+before authentication, visible binding afterwards, and a successful existing
+canonical `read` before this addition. This was a controller context defect, not
+a broken authenticated read or a missing `pinet.business` setting.
+
+The typed helper proves the owned Task's business through the maintained
+read-only business authority, checks binding scope/kind/input hash, historical
+authorization and request fingerprint, then validates `RoleRequest`. Metadata
+`read` uses the same boundary. Missing/foreign ownership remains 404; inconsistent
+retained data is 503. Stopped or expired execution grants remain readable as
+history by a current owner. Neither helper reserves budget, dispatches work,
+renews a grant nor replaces the worker's current execution checks. No SQL policy,
+GUC setup, schema, campaign, Config, evaluator or transport changes are required.
+
+Focused retained0050 restricted PostgreSQL verification passed nine cases,
+including an ordinary foreign owner and revoked business 404, explicit
+read-identity corruption seams (not persisted corrupt rows), stopped history,
+genuine 30-second grant expiry with unchanged historical fingerprints, current
+execution refusal, legacy two-agent reads, and the complete eight native
+Task/Run/attempt workflow with inert responses. The initial missing-helper FAIL,
+first implementation's `NativeTeam` indexing error and rejected immutable SQL
+test rewrites are retained separately. Corrected tests never disable SQL fences.
+Fifty-four offline six-role/strict-grade checks and 22 private controller tests
+also pass. These checks authorize no paid retry or reset of the stopped stage.

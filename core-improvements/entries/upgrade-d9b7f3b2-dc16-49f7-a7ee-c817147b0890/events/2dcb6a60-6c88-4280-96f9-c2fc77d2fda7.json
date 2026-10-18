@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Actual pinet_runtime PG proves the private controller omitted customer_session; original authenticated canonical read passed before helper addition. No pre-existing canonical read/RLS/business-GUC defect is claimed. Added typed read boundary and private controller authentication before reservation. Before missing-helper FAIL retained; first implementation NativeTeam indexing error and immutable SQL fixture rewrite refusals retained (8FAIL/1PASS); corrected integrity tests use explicit read-only ORM identity seams, no persisted mutation or SQL-fence bypass. All operating grants remain stopped, no stage retry/reset, paid/provider calls0.",
+  "checks": [
+    {
+      "command": "qa_final.py test tests/test_acquisition_agent_role_reads_pg.py tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade --label read-request-corrected-20261018",
+      "result": "PASS",
+      "evidence": "9 passed in151.83s on dedicated pinet_hotube_six_roles_20261018_47be_final only, restricted pinet_runtime. Owner context, foreign owner/revoked business404, identity integrity503, stopped and genuine30s expired grant history/current execution refusal, legacy kind read, complete8 native Tasks/Runs/attempts with inert roles. No provider calls."
+    },
+    {
+      "command": "pytest offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_six_grade_transport.py -q",
+      "result": "PASS",
+      "evidence": "54 passed; six saved Config roles, fixed strict grading transport and calibration semantics preserved."
+    },
+    {
+      "command": "pytest private test_controller.py test_controller_loop.py test_controller_actor.py test_stage_budget.py -q --asyncio-mode=auto",
+      "result": "PASS",
+      "evidence": "22 passed, including executing real dispatch prefix with inert authenticated-owner and canonical read/refusal boundaries before any reservation, plus prior loop/disposal and deadline/budget checks. Private controller/old failure bytes retained, no old corpus/budget read or rewrite."
+    },
+    {
+      "command": "ruff check touched Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "Tracked runtime/read PG files and ignored controller/actor regression lint PASS; diff whitespace PASS. No handlers, DDL, SQL policies, GUC setup, Configs, evaluator or dependencies changed."
+    }
+  ],
+  "eventId": "2dcb6a60-6c88-4280-96f9-c2fc77d2fda7",
+  "sequence": 2,
+  "at": "2026-10-18T16:34:48.416Z"
+}

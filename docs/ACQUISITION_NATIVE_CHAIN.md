@@ -9,9 +9,11 @@ It does not claim paid calibration, channel delivery, F1 or operating acceptance
 Frozen implementation base: `97d8c756f01a172bf844464a03a0e6eda848b8eb`.
 Private main: `533597c10e290a2a09a522ad348e19c9968aa9d5`.
 Read-only companion: `255fea0813bf1aabeaeea2f2de0b29564118f2fc`, based on public
-main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Final runtime source is commit
+main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Initial runtime verification used
 `0ef135fa9c1e1d1716e951e41409e4ddbe8f6246`; the later handoff adds the sustained
-heartbeat regression, this document and verification events.
+heartbeat regression, this document and verification events. The subsequent
+role-boundary lease repair has its own source/evidence section below; the initial
+test counts remain evidence for their named historical snapshot.
 
 ## Behavior and authority
 
@@ -153,6 +155,63 @@ unreproduced source observation failure.
 Earlier machine-wide disk containment paused the owned QA Python tree only.
 Subsequent test/write groups required at least 1.5GiB free and ran sequentially.
 No foreign processes, databases or original closed budget history were changed.
+
+## Role-boundary lease repair — 2026-10-18
+
+Upgrade `e97897e8-231c-4b30-9a53-ff3f78c85bbb`, issue66/comment6246342906;
+branch `codex/native-role-lease-20261018`, base frozen Serving
+`1a751d0c12c128468f63fb22d7d4e75d57ef901b`. Root retains integration/adoption.
+No paid retry, Serving change, authorization renewal or protected payload read.
+
+Actual TRAIN metadata recorded a successful known-usage researcher followed by a
+failed unknown-usage reviewer after6.215s, while Auth and Session remained current.
+The historical specific guard was not retained. Its90s per-role cap was not the
+expired deadline. The following inert reproduction demonstrates a matching lease
+gap class; it cannot retrospectively prove the unrecorded historical cause.
+
+Baseline run27, on unchanged1a751d0, used real DB time/default15s lease and bounded
+native-proof return latency at4/8/12/16s after the last researcher heartbeat. The
+reviewer reservation still had2.984s lease; its first heartbeat reached-1.022s.
+Result: researcher succeeded/known, reviewer failed/unknown, Task failed with
+generic authorization_revoked. Run27 failed as intended; original log SHA256
+`599033f3e31d02965158504a0e0326ffc0be7121d2b425af4745c75e7c3ff85a`.
+
+The fix performs ordinary lease renewal at successful role reservation and before
+and after successful settlement, after full canonical preflight and Task lock.
+Exact running Task/Run, STILL unexpired old lease and current min(Auth/pair/Session)
+deadline are required. Renewal remains at most15s and is capped by that authority
+deadline. Expired or revoked work is never revived. Failed settlement retains
+known/unknown accounting without renewal. No authority/native proof was removed.
+
+Identical first correction run28 passed35.69s, both roles known,2calls/0unknown;
+each4/8/12/16s checkpoint retained roughly11s lease. Original log SHA256
+`cca34266364b4a14290c43ae6bd4afc7db3c5fb920e3e0a452bb2cffde53bf7a`.
+A single proof that outlives the currently valid lease must still be denied.
+
+`acquisition_model_guard_observation_enabled` defaults false. When explicitly
+enabled, private `runtime/artifacts/acquisition-model-guards/<task-id>/` keeps
+first-per-run/phase/role JSON metadata: fixed allowlisted cause, Task/Run/source,
+clock, lease/deadline and prior failure/usage-known flag. Fixed phase/role names
+bound file count. Original execution error and later completion denial have
+separate immutable records. No prompt, corpus, persona, expected label, email,
+exception text or raw CLI log is serialized. I/O failure has no authority or
+accounting effect; public Task failure codes and receipt schemas are unchanged.
+
+Current bounded checks: scoped Ruff PASS;9 metadata/privacy/default-off/offline
+tests PASS. Run29 has5PASS/1FAIL/18deselected283.91s: new expired-lease and revoked
+Auth negatives, controlled latency, existing full native/replay and known cancel
+passed. The unknown-cancel parameter failed during its initial E2 setup with
+authorization_revoked, before its unknown-cancel scenario; rollback was not
+reached under-x. First log SHA256
+`15259391178daff4e4d3db1c16418ff638e45ea2d67c02f28653ea4df6b25495`.
+Do not represent that invocation as PASS or infer its unrecorded guard cause.
+
+After a user pause/resume the prior process was gone and this exact terminal
+result was recovered from its retained log. Docker's Linux-engine pipe was absent
+at06:26UTC; no uncertain operation was replayed and no shared engine restart was
+attempted. Focused unknown-cancel/rollback verification remains pending owned QA
+availability. This is a reviewable repair checkpoint, not full source/operating
+or paid calibration acceptance. Root owns shared-host recovery and later adoption.
 
 ## Review and adoption
 

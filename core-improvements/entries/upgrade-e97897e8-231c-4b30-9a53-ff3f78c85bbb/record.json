@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Preserve valid native role-boundary leases and retain safe canonical guard causes",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_adapter.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_observation.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/tests/test_acquisition_role_lease_pg.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_model_observation.py",
+    "docs/ACQUISITION_NATIVE_CHAIN.md",
+    "WORKSTREAMS.md"
+  ],
+  "evidence": [
+    "FrozenServing1a751d0: actual TRAIN technical metadata SHA33c2392dd93a78aecf2a82e3994b9a8e7b1c1335e71fee21c8fc9fe6830a436b records known researcher success then reviewer failed/unknown6.215s and generic authorization_revoked while Auth/session remain unexpired. Specific historical guard cause was not retained; lease gap remains a candidate pending inert reproduction. Scope issue66/comment6246342906."
+  ],
+  "rollback": "Scoped source revert; preserve original pilot and inert first failures, retained reservations and unknown usage. No operating adoption or new model authorization.",
+  "id": "upgrade-e97897e8-231c-4b30-9a53-ff3f78c85bbb",
+  "branch": "codex/native-role-lease-20261018",
+  "baseSha": "1a751d0c12c128468f63fb22d7d4e75d57ef901b",
+  "createdAt": "2026-10-18T06:02:06.710Z"
+}

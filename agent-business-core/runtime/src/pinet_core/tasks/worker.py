@@ -276,6 +276,10 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
             or not admitted
             or not handler.deadline_valid(tx, task, now)
         ):
+            if hasattr(handler, "observe_guard"):
+                reason = ("lease_missing" if not task.lease_until else "lease_expired" if task.lease_until <= now
+                    else "authority_denied" if not admitted else "authority_deadline_expired")
+                handler.observe_guard(tx, task, "heartbeat", reason, now=now)
             if hasattr(handler, "terminal_failure"):
                 await handler.terminal_failure(tx, task, None, "authorization_revoked")
                 return False
@@ -402,11 +406,19 @@ async def execute_once(adapter=None, *, kind=None, task_id=None):
             return True
         admitted = await handler.authority(tx, task)
         if not admitted:
+            if hasattr(handler, "observe_guard"):
+                handler.observe_guard(tx, task, "completion_authority", "authority_denied", prior_failure=failure)
             failure = "authorization_revoked"
         now = await tx.scalar(text("SELECT clock_timestamp()"))
         if admitted and not handler.deadline_valid(tx, task, now):
+            if hasattr(handler, "observe_guard"):
+                handler.observe_guard(tx, task, "completion_deadline", "authority_deadline_expired", now=now,
+                    prior_failure=failure)
             failure = "authorization_revoked"
         if not task.lease_until or task.lease_until <= now:
+            if hasattr(handler, "observe_guard"):
+                handler.observe_guard(tx, task, "completion_lease", "lease_expired" if task.lease_until else "lease_missing",
+                    now=now, prior_failure=failure)
             failure = "worker_interrupted"
         if not failure:
             try:

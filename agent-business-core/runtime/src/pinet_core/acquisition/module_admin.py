@@ -122,6 +122,11 @@ async def external_authority(tx, value, *, containment=False):
     session = await tx.get(Session, str(value.authorizing_session_id), populate_existing=True)
     if row is None or session is None:
         raise ControlError(404, "not_found")
+    # A privileged CLI transaction has no bearer-derived ambient scope. Pin the
+    # actual consumer; the canonical source guard still verifies its live owner.
+    await tx.execute(text("SELECT set_config('pinet.control_user',:user,true), "
+        "set_config('pinet.environment',:environment,true)"),
+        {"user": session.user_id, "environment": settings().environment})
     async with sources.transaction_authority(tx, session, row.business_id, row.id,
             writing=not containment, lock=True) as current:
         await execution_current(value)

@@ -1927,6 +1927,15 @@ pointer remain exact. Legacy bytes/hashes stay unchanged. Original disk hold
 lifted by Root after byte-preserving compression; require1.5GiB before each batch.
 No paid/old calibration/protected payload/site/Serving or operating DB work.
 
+External adapter handoff: a33c705 initial runtime integrated by Root; composed
+Rootad402+backbone299773f then proved on own retained15549 QA.94 old tables/5518
+rows preserved across48→49; new external native5 items have split3+2 PASS evidence,
+legacy native1PASS47.72s and final122 pure tests/Ruff PASS. Only follow-up runtime
+change pins admin transaction GUC from the actual Session before source authority.
+Original fixture failures retained; details in docs/ACQUISITION_EXTERNAL_BINDING.md.
+Source/test window closes after scoped frozen handoff; Root retains platform UI,
+serving/operating adoption and actual dealer-agent creation/calibration.
+
 ## Business source backbone transfer — helper2026-10-18
 
 Root transferred only new `business_attachment/`, `scripts/business_attachment_admin.py`,

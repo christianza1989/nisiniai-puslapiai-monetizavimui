@@ -1,7 +1,8 @@
 # External business source authority for native acquisition
 
-Source checkpoint for the Root-owned existing-business/account attachment work,
-2026-10-18. This adapter reuses the current research/email/reply Tasks, Runs,
+Local implementation and isolated native verification for the Root-owned
+existing-business/account attachment work,2026-10-18. Operating/account UI adoption
+and the actual dealer calibration remain separate. This adapter reuses the current research/email/reply Tasks, Runs,
 reservations, accounting and canonical Case/mail engine. It does not register a
 dealer business, calibrate its agents or enable a model or transport.
 
@@ -63,7 +64,7 @@ after the last Git/private-file observation; native effects use the existing
 runtime-granted pair fence. Losing authority does not erase known or unknown
 usage from already charged reservations.
 
-## Source checkpoint verification
+## Original source checkpoint (a33c705)
 
 Base653d1bcc66af0a3d77a01af650bd1fdbbb72672c; private main533597c,
 companion HEAD255fea0/public mainec8a9c0, paired freshness PASS07:18Z.
@@ -89,3 +90,40 @@ Scoped653d1→a33 coverage passes8 shared paths with zero errors/uncovered paths
 The default origin/main audit is separately BLOCKED:489 inherited shared changes,
 37 uncovered paths and38 errors. Its debt is not this adapter's scoped PASS.
 No composed0049 or real external native acceptance is implied by the source PR.
+
+## Composed isolated acceptance
+
+Merged Rootad402cb and backbone correction299773f. Applied0049 only to the owned
+retained QA container8f8488, loopback15549, databasepinet_acq_work_20261018042000.
+Before any new test data, every old column value in94 tables/5518 rows matched
+the pre48 snapshot, also after the corrected payload helper was replaced in place.
+The private snapshot SHA256 is
+e4a402f1c5e22d2e9b9797bf02f06b79b139b3ce9540cdb36fc58a4e5862a267.
+
+The actual privileged CLI needs consumer scope before the common source SQL
+guard. Its follow-up now sets transaction-local user/environment from the freshly
+loaded server Session/settings, then retains the full live Session/owner/grant
+checks. It accepts no caller-supplied owner or broader execution grant.
+
+Five new PG items have split PASS evidence: run34 first3 items prove real verified
+external ownership with zero Creation/Registration rows, actual customer HTTP
+research/email configurations, R2→E2→reply2→reply2 in one Case with5 captured mail
+records, exact replay and stale-source containment, unreviewed-fact denial and
+stable Agent UUID/old Config hash after source adoption with old Auth denial.
+Run35 passes the two remaining items17.41s: source revocation after the inert
+provider retains the exact known/unknown charged reservation and creates no
+Case/mail effect. Run36 passes the old Creation-based native chain47.72s on49.
+Final related pure tests pass122 cases0.92s, including30 new external unit cases;
+final scoped Ruff passes.
+
+Original failures remain retained: run32 supplied the wrong fixture campaign mode;
+run33 used the inbound decision receipt ID as an outbound parent; run34's two
+negative metadata observations omitted customer_session and correctly saw no RLS
+row. Those test errors were corrected without weakening a runtime guard. The
+run34 aggregate command FAILED and is not represented as a clean five-case run.
+The five item outcomes are supported by the explicit3+2 split above.
+
+All provider roles were inert and all mail was synthetic captured data. The
+actual dealer facts, model calibration/protected cases, scheduling/discovery,
+live transport, operating migration and account UI acceptance were not performed
+by this scope. Root owns the final platform integration/adoption.

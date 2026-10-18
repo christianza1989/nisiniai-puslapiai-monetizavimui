@@ -221,6 +221,10 @@ async def graph(monkeypatch):
                                 ready = allowed
                         values = tuple(getattr(parent, c.key, None) if parent else None for c in Creation.__table__.c)
                         result.extend([values, ready])
+                    if any(column["name"] == "current_revision" and column["entity"] is Creation for column in columns):
+                        parent = f.creation if (bound.get((Creation.__tablename__, "id")) == f.creation.id
+                            and f.creation.environment_id == cfg.environment) else None
+                        result.append(parent.current_revision if parent else None)
                 assert statement.get_execution_options()["populate_existing"] is True
                 return Row(one_or_none=lambda: tuple(result) if result is not None else None)
             if columns and [column["entity"] for column in columns] == [PrivateIntakeRequest, PrivateIntakeReceipt]:
@@ -752,15 +756,15 @@ async def test_newly_selected_s_session_mid_final_phase_is_never_authorized_by_e
     from pinet_core.content_completion import service as completion
     from pinet_core.creation import service as creation_service
     f = graph
-    canonical = completion.current_actor
+    canonical = completion._node_authorized
     f.clock = utcnow()
     mutated = False
     if change == "clock":
         f.s.expires_at = f.clock+timedelta(seconds=1)
         monkeypatch.setattr(creation_service, "utcnow", lambda: f.clock)
-    async def gated(*args):
+    async def gated(*args, **kwargs):
         nonlocal mutated
-        result = await canonical(*args)
+        result = await canonical(*args, **kwargs)
         # This canonical post-output callback occurs after final's before_node
         # native guard has validated S, before Authority's last native guard.
         if f.counts["material"] == 2 and f.counts["node"] == 1 and not mutated:
@@ -772,7 +776,7 @@ async def test_newly_selected_s_session_mid_final_phase_is_never_authorized_by_e
             else:
                 f.s.expires_at = utcnow()-timedelta(seconds=1)
         return result
-    monkeypatch.setattr(completion, "current_actor", gated)
+    monkeypatch.setattr(completion, "_node_authorized", gated)
     with pytest.raises(ControlError) as error:
         await f.authority.capture()
     assert mutated
@@ -784,15 +788,15 @@ async def test_late_p_after_final_before_node_cannot_use_cached_intake(graph, mo
     from pinet_core.content_completion import service as completion
     from pinet_core.creation import service as creation_service
     f = graph
-    canonical = completion.current_actor
+    canonical = completion._node_authorized
     f.clock = utcnow()
     mutated = False
     if change == "clock":
         f.p.expires_at = f.clock+timedelta(seconds=1)
         monkeypatch.setattr(creation_service, "utcnow", lambda: f.clock)
-    async def gated(*args):
+    async def gated(*args, **kwargs):
         nonlocal mutated
-        result = await canonical(*args)
+        result = await canonical(*args, **kwargs)
         if f.counts["material"] == 2 and f.counts["node"] == 1 and not mutated:
             mutated = True
             if change == "clock":
@@ -802,7 +806,7 @@ async def test_late_p_after_final_before_node_cannot_use_cached_intake(graph, mo
             else:
                 f.p.expires_at = utcnow()-timedelta(seconds=1)
         return result
-    monkeypatch.setattr(completion, "current_actor", gated)
+    monkeypatch.setattr(completion, "_node_authorized", gated)
     with pytest.raises(ControlError) as error:
         await f.authority.capture()
     assert mutated

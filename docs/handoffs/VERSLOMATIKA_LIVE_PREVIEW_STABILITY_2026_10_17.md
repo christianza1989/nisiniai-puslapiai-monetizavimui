@@ -490,3 +490,73 @@ recheck passes. Source delivery is separate from main merge and runtime adoption
 Full site language/A–Z/SITE_COMPLETION,200% enlargement, premium business design,
 Foundation/agent acceptance, real notification delivery and public launch remain
 open. Preserve every first failure, all DB/native copies and the previous build.
+
+## Fresh content-node authorization SQL —2026-10-18
+
+The separate e839 natural-expiry attempt still failed before observable Ready.
+Its first retained native refusal was heartbeat_expired, pulse margin -243ms,
+after an 8.25455s pulse gap; one fresh Authority.verify measured 8.03539s and 176
+task-local SQL statements. The subsequent generic completion503 is not proof of
+database or source revocation. Earlier close acceptance remains separate.
+
+Read-only peer review found three SQL statements in each native content-node
+transport callback: the canonical joined current_actor, a duplicate enabled User
+selection and a separate Creation revision selection. A new restricted-PG test
+reproduced 3/3/3 callback queries (one intentional FAIL; log SHA256
+d2e14d91e746b63bd92f7f91b9abb5a1a2444c327e627ba5d43f810a25d546a4).
+The first setup attempt lacked its explicit companion configuration and failed
+before that assertion; its original log is retained, not counted as a baseline.
+
+The maintained callback now uses the existing actor_statement plus a nullable
+Creation revision LEFT JOIN. Existing actor_result runs first on the actor
+columns, retaining 401/404 priority over a missing or RLS-hidden child. Each
+pre-launch, monitor, post-output and retained-node callback still performs fresh
+SQL with populate_existing; enabled/source/revision checks remain. There is no
+cross-callback permission cache, removed fence or heartbeat/deadline change.
+
+Four restricted PostgreSQL cases passed in 44.10s, log SHA256
+085379becd6e2a062ff6a1dbf43b144773ab2e6413d200d6d0e55f292b846919:
+1/1/1 transport queries; independently committed disabled User, revoked/expired
+Session, unverified Account and disabled owner Membership; missing/foreign child
+and Portfolio; current revision/source drift; final post-output Session revoke
+and revision change. The two final-fence cases were added after peer review to
+ensure removing that caller fence would fail a test. The operating DB was not
+used, and roles/providers/SMTP/IMAP were not invoked.
+
+The 132 relevant offline graph/transport/completion checks passed in 12.22s. The
+six intermediate failures were fixture hooks targeting the removed imported alias;
+the same late S/P mutation points and refusal assertions now wrap the maintained
+callback. Ruff passes the changed Python paths. Upgrade 1477a212 owns this
+narrow repair. These checks establish the SQL boundary and fresh refusal behavior;
+they do not prove that the whole graph fits the 3s native heartbeat under load.
+Actual current-source lifecycle and the older 78/c3 acceptance remain open.
+
+## Nonlocking read routes —2026-10-18
+
+The existing real-Node post-output membership revocation test then exposed a
+separate locking defect. An admin UPDATE waited on the request's transaction:
+all three read-only completion/page/media GET routes called owned(lock=True),
+holding User/Session/Creation locks while waiting for the subprocess. The exact
+blocked query was cancelled only in the dedicated QA database; the retained run
+finished with one FAIL and four PASS in 177.63s. Its log SHA256 is
+b3d394f20cb00f2e85677f7ae6e832aacc67e3e60770981af4a12227da389f4d.
+
+The regression now bounds its admin transaction with a 2s lock timeout and
+requires that the mutation actually committed, before checking the expected
+response. This prevents a generic503 caused by lock timeout from falsely passing
+the revision-drift case. All three bounded baseline cases failed in 36.67s;
+log SHA256 4d0bbcadd30b2ac7cd438bd0e1d24eb38315cf7f94546f94b94a5ed6d7c130f6.
+
+Only those three GET routes now use the existing nonlocking owned reader.
+Mutating endpoints, RLS, transaction isolation and all accepted-proof/native/
+source/final authority checks are unchanged. Seven real-Node completion cases
+passed in 68.05s, including committed membership revoke404, Session revoke401 and
+revision drift503; log SHA256
+7fbdddf854aa0f3ff409bb93c5e1cd621adc5985761327a94cfb6e0bf5cf6496.
+Four further page/media cases passed in 43.73s, log SHA256
+d0a8f949180a5dfd11e3f5a226cf2143ee90427f43e1440f4c329ec91144b09e:
+two subordinate-route final revocation tests with explicit inert native output,
+plus the existing real Node page mutation/read-only test and actual generated
+PNG→imported WebP bytes/hash/foreign-page/expiry test. Neither route-only inert
+output test is presented as a native document or renderer test. Upgrade 91e54a8a
+owns this separate repair. Actual operating adoption/lifecycle remains pending.

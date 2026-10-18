@@ -20,11 +20,20 @@ First known-case execution stopped correctly at unqualified research, contrary
 to an underconstrained fixture oracle. A distinct reviewed inbound case reached
 research→email→Case/MailMessage, then stopped at a second synthetic-address DTO
 incompatibility before reply dispatch. Both originals remain FAIL/incomplete.
-Current common paid ledger has7 charged attempts, no refunds/retries and its
-original60-attempt/3600s boundary; all affected native grants explicitly stopped.
-No protected case or external customer/supplier send has run. Product-description
-coverage and the canonical MIME→inbound boundary are being repaired before another
-snapshot; do not declare the business agents calibrated or activated.
+The common paid ledger has seven charged attempts and its original 60-attempt /
+3600s boundary, now expired. All affected native grants are explicitly stopped.
+A new protected baseline did not reach dispatch: a noncanonical private
+snapshot assertion and a separate MemoryError with unknown frame were retained.
+Root's SQL audit confirms its research/email grants each have zero Tasks/Attempts;
+both and the module are disabled. No protected case or external customer/supplier
+send has run. The same original seven charged calls and deadline remain unchanged.
+
+Product-description coverage is now adopted as the second SourceBinding version:
+34 facts include 24 description-derived model summaries and six explicit wood-fired
+models. All six existing Agent IDs now have immutable Config revision 2, with the
+first revision hashes preserved. Chrome and account API show all six descriptions. The
+canonical MIME→inbound namespace repair passed a real restricted-PG two-reply path
+with inert roles; actual model dialogue/calibration and activation remain open.
 
 Owned API18871 runs cleanE839/schema49, human-started3030 build is unchanged.
 Actual live-preview close passed72.708s continuousReady, HTTP200, Chrome home/
@@ -34,6 +43,14 @@ an8.25455s pulse gap/8.035s fresh authority graph (176SQL) against unchanged3s T
 Its later generic content_completion_unavailable/revoked label is not proof of
 database/source revocation. Previous78/c3 main preflight blockers remain open.
 No permission/TTL waiver, automatic frontend launch or reviewed-main claim.
+After Desktop restart, Docker and the same existing PostgreSQL container were
+restarted. API e839 resumed with a fresh 1,971,640-byte backup and exact 96-table
+pre-start row snapshot; no schema migration, data restore or paid runner enabled.
+Account API verified 200 for owner, 401 unauthenticated and 404 foreign Business.
+The next narrow preview repair reduces each content-node callback from three SQL
+queries to one; four restricted-PG and 132 offline checks pass. A separate GET
+locking repair passes seven real-Node completion and four page/media cases. Neither
+repair is yet operating-source adoption or full lifecycle acceptance.
 
 ## Local business/agent account attachment accepted —2026-10-18
 

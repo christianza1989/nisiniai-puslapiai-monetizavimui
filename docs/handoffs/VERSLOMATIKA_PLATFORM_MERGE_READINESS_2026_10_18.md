@@ -1,5 +1,33 @@
 # Platform merge readiness —2026-10-18
 
+## Later owner steering and actual local state
+
+The owner subsequently authorized unattended testing/calibration and the existing
+signed-in Gmail. This supersedes the earlier assignment's no-new-calibration
+sentence below for explicitly bounded local tests; it does not activate campaigns,
+public deployment or automatic frontend launch. The new 60-attempt/3600s ledger
+closed at its original deadline with seven complete charged attempts. Known03 remains
+FAIL and known07 incomplete. A protected baseline never reached Task/model
+dispatch; original snapshot/MemoryError failures remain. Root SQL confirmed zero
+Tasks/Attempts for both unused grants, then disabled them and the module. No allowance
+refund, hidden-case rerun or wall-clock renewal occurred.
+
+Local QA account now has an attached dealer Business with 34 source facts and six
+Config revision 2 descriptions. These are saved/versioned specifications, not six calibrated
+workers or verified production ownership. One Gmail browser self-email was actually
+sent/received; platform Gmail OAuth/ingestion/delivery remains separate and pending.
+The professional email plan is docs/VERSLOMATIKA_EMAIL_SYSTEM_PLAN.md.
+
+After Desktop restart, Root resumed the same owned PG container and clean API e839,
+schema 49, preserving the database and unchanged human-started 3030 build. All paid/
+channel runners remain held. Current native close acceptance is 72.708s Ready plus
+actual Chrome home/guide, close/listener stop and same-UUID terminal replay. A
+separate expiry attempt failed heartbeat_expired before observable Ready. A focused
+callback SQL repair now passes four restricted-PG and 132 offline checks; a separate
+GET locking repair passes seven completion and four page/media cases. Actual
+adoption/lifecycle verification remains the next step. Older 78/c3 main-preflight
+blockers are not waived. Historical source pins and evidence below remain historical.
+
 ## Active owner assignment
 
 The human explicitly requested fixing the preview-module blockers and continuing

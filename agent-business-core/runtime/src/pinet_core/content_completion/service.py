@@ -5,16 +5,13 @@ import json
 import re
 from uuid import UUID
 
-from sqlalchemy import select
-
 from ..config import settings
-from ..control.models import User
 from ..control.routes import ControlError
 from ..creation import language_mode, studio
 from ..creation.adapter import ROOT
 from ..creation.models import Creation
 from ..creation.review import canonical_sha256
-from ..creation.service import ACTIVE, current_actor
+from ..creation.service import ACTIVE, actor_result, actor_statement
 from ..creation_registration.service import accepted_proof
 from ..tasks.codex_transport import RunnerError
 from .page_wire import Document, Media, PageView
@@ -97,11 +94,7 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     revision = creation.current_revision
 
     async def authorized():
-        enabled()
-        await current_actor(tx, session, creation.portfolio_id)
-        user = await tx.scalar(select(User.id).where(User.id == session.user_id, User.enabled))
-        current = await tx.scalar(select(Creation.current_revision).where(Creation.id == creation.id))
-        return bool(user and current == revision and settings().control_source_revision == source_pin)
+        return await _node_authorized(tx, session, creation, revision=revision, source_pin=source_pin)
 
     directory = artifacts / "customer-content" / str(UUID(creation.id)) / f"revision-{revision}"
     payload = {"command": command, "creationId": creation.id, "acceptedRevision": revision,
@@ -133,6 +126,19 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     if observed:
         observed.record_node(session, creation, proof, value)
     return proof, value
+
+
+async def _node_authorized(tx, session, creation, *, revision, source_pin):
+    """One fresh actor/nullable-child observation at each transport fence."""
+    enabled()
+    statement = (actor_statement(session, creation.portfolio_id)
+        .add_columns(Creation.current_revision)
+        .outerjoin(Creation, Creation.id == creation.id)
+        .execution_options(populate_existing=True))
+    row = (await tx.execute(statement)).one_or_none()
+    # Preserve the canonical actor401/404 before a missing or RLS-hidden child.
+    actor_result(row[:5] if row is not None else None, creation.portfolio_id)
+    return bool(row[5] == revision and settings().control_source_revision == source_pin)
 
 
 async def projection(tx, session, creation, requested_revision=None):

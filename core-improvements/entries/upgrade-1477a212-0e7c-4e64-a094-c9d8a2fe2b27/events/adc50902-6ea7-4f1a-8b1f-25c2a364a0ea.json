@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Three fresh SQL statements per native callback reduced to one canonical actor/nullable-child join. Preserve typed actor priority and every callback. Actual lifecycle remains unverified; first fixture setup failure,3-query baseline and six intermediate moved-fixture-hook failures remain retained.",
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_content_node_authority_pg.py -q (dedicated retained0049 PG)",
+      "result": "PASS",
+      "evidence": "4PASS44.10s, logSHA256085379becd6e2a062ff6a1dbf43b144773ab2e6413d200d6d0e55f292b846919;3→1 query count, fresh cached-ORM revocation/visibility/revision/source matrix and two independent post-output mutation fences. No operating DB or providers."
+    },
+    {
+      "command": "python -m pytest offline_tests/test_authority_observation.py offline_tests/test_live_preview_monitor_cadence.py offline_tests/test_studio_monitor_headroom.py tests/test_content_completion.py -q",
+      "result": "PASS",
+      "evidence": "132PASS12.22s; original S/P mutation points and refusal assertions preserved after moving fixture hook to maintained callback."
+    },
+    {
+      "command": "python -m ruff check scoped content completion source and regression tests",
+      "result": "PASS",
+      "evidence": "All five changed Python paths pass."
+    }
+  ],
+  "eventId": "adc50902-6ea7-4f1a-8b1f-25c2a364a0ea",
+  "sequence": 2,
+  "at": "2026-10-18T11:51:04.587Z"
+}

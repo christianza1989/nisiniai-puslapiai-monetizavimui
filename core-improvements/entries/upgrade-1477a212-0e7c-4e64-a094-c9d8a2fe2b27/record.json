@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Native content completion re-reads an enabled User already checked by current_actor and separately selects the Creation revision at every transport authorization, multiplying fresh SQL during live-preview heartbeat work.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_completion/service.py",
+    "agent-business-core/runtime/tests/test_content_node_authority_pg.py",
+    "agent-business-core/runtime/offline_tests/test_authority_observation.py",
+    "docs/handoffs/VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Operating e839 expiry attempt retained heartbeat_expired with pulse margin -243ms; a fresh verification measured8.03539s/176 task-local SQL. This timing is failure evidence, not proof a small query reduction alone cures lifecycle stability.",
+    "Read-only canonical source review: the transport callback calls current_actor then repeats enabled User and Creation revision scalar queries. The existing actor_statement/actor_result already validates User/Session/verified Account/Portfolio/owner Membership."
+  ],
+  "rollback": "Revert only the fresh callback SQL fusion and its focused fixture/doc changes. Preserve all first failures, authority checkpoints, current3s heartbeat, time limits, source and native integrity evidence; do not restore an old database or refund calibration attempts.",
+  "id": "upgrade-1477a212-0e7c-4e64-a094-c9d8a2fe2b27",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "5daa4fa5b00d311c63ad94cc4abecca23096c493",
+  "createdAt": "2026-10-18T11:34:20.218Z"
+}

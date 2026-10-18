@@ -1776,3 +1776,14 @@ alignment under upgrade-7fc8d6a3-7cbb-4d3d-aabd-5e49dbc4b1ad. Retain dated
 legacy adapter proof; current instructions route the old filename to durable
 Task/Run rather than a direct paid filesystem batch. No operating adoption is
 implied by a documentation update.
+
+## Local0046/0047 held adoption — Root 2026-10-18
+
+Root owns final docs/status alignment under83f71d03. Actual clean Serving76db483,
+public255fea0/schema0047/API18871 adopted after21display PG and58 serial old-
+worker/native/model/mail PG PASS.89 old data tables/771native exact before
+legitimate source-intake renewal (1request+1receipt) and same-UUID Foundation
+observation (1receipt,old771exact+23derived). SameRegistration remains current;
+Foundationcandidate/local_evidence_missing,0agents, no activation. New flags,
+actors/policies/authorizations and all external channels stay held. Source,
+actual code/schema adoption, model admission and overall acceptance are distinct.

@@ -59,9 +59,20 @@ Authority, expiry and budget errors still stop materialization.
 ## Current implementation scope
 
 Schema0047 and the runtime adapter are a separate source increment after the
-verified acquisition-model packet d415c87. They are not operating adoption,
-actual translation quality acceptance, populated browser proof or authenticated
-outbound/inbox admission. The operating API remains ba16/0045 with workers held.
+verified acquisition-model packet d415c87. Clean local Serving76db483/public255fea0
+now runs schema0047 on18871. Both new model/display controls remain off, actor
+lists empty, authorizations/policies absent and channels held. This is code/schema
+adoption, not actual translation quality, populated browser or live-mail acceptance.
+Normal owner me/business/mail returned200; unauthenticated401 and foreign404.
+Migration retained89 prior data tables exactly and added5 empty typed tables;
+the original771 native files stayed exact. Later legitimate intake/Foundation
+observations are recorded separately in the agent-path handoff.
+
+Root final21 display PG/HTTP/common-worker scenarios passed162.79s. The serial
+regression of existing worker/Direct/native workflow/model/mail passed58 cases
+575.41s;378 offline cases/67 subtests passed30.10s. An earlier overlapping PG run
+had39PASS/1late-usage failure; its isolated case and the complete serial run passed.
+That first failure remains retained; no unrelated runtime fix is claimed for it.
 The earlier174/180 acquisition ledger remains closed and is not a display budget.
 This source increment implements the durable-display link listed as subsequent
 work in ACQUISITION_MODEL_PREPARE.md; its remaining model-reply, UI-action and

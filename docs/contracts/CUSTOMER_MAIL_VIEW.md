@@ -52,6 +52,16 @@ display flags. Source implementation is separate from operating adoption and
 actual provider/channel acceptance. Mail bodies, translations, contact data,
 Session and CLI traces stay private; the API returns an owned bounded projection.
 
+## Current durable-source adoption — 2026-10-18
+
+Local API76db483/public255fea0/schema0047 is adopted with all new model/display
+flags off and no new authorizations/policies. Actual owner mail reads returned200,
+unauthenticated401/foreign404; operating mail remains empty. Root21 inert display
+PG/HTTP scenarios and58 serial old-worker/native/model/mail cases passed. This
+does not establish operating populated LT display, browser quality, model
+calibration or real inbox/sending. The earlier closed174 acquisition budget is
+unchanged. Current details: [durable display](../MAIL_DISPLAY_TASKS.md).
+
 ## Earlier read/explicit-batch evidence — 2026-10-18
 
 The related pure regression passed86 cases in13.41s. The two real PostgreSQL

@@ -6,22 +6,25 @@
 requested continuing platform/agent integration. Root owns UI/integration and
 the operating adapter; authorized helper chats own separately scoped schema and
 acquisition work in their own branches/worktrees. Current frozen local API18871
-is ba16e225/public255fea0 on0045, with the human-started reviewed frontend3030.
+is76db483/public255fea0 on0047, with the human-started reviewed frontend3030.
 Kubilų Creation85fb2b31 has current Registration014d46b4/Business917e1d81.
-Normal owner source renewal preserved the same identity,37/40 accounting and771
-native files. Paid workers/channels remain held; operating mail is empty.
+Normal owner source renewal preserved the same identity and37/40 accounting.
+All original771 native files remain exact; a new Foundation observation added23
+derived candidate/release files (794 total). Paid workers/channels remain held;
+operating mail is empty. Current owner Registration/Business/mail reads200.
 
-Completed source/adoption batch: native preparation and owner mail view,
+Earlier completed source/adoption batch: native preparation and owner mail view,
 bounded explicit ModuleBinding writer, Registration continuity and headless
 reviewed same-Case capture/reply. Root345 pure+67 subtests and63 real PG/API/Node
 checks passed. Ordinary populated browser/200% proof is still unverified.
 [Exact checkpoint](../../docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md).
 
-The next source packet provides separately typed acquisition.model_prepare over maintained
+The new source packet provides separately typed acquisition.model_prepare over maintained
 Task/Run/Event accounting, using the current saved acquisition purpose and an
 explicit privileged bounded model budget. Schema0046/helper is integrated as
 0a2b3a5; Root native handler/authority/CLI and accounting/lock-order corrections
-are9d2df5b, shared cancellation receipt repair ab0604b. None is adopted into operating.
+are9d2df5b, shared cancellation receipt repair ab0604b. These are now adopted as
+held code/schema in76db483; no model authorization or activation is inferred.
 Root final15 new-model PG tests PASS260.22s,40 existing common-worker/Direct/native
 workflow PG tests PASS410.54s,29 model-free capture/mail PG/API tests PASS44.24s,
 and combined363 pure/inert-child tests PASS71.23s with7 unpinned actual-CLI probes
@@ -30,16 +33,37 @@ exact. Real model calls, full Foundation, protected calibration, populated UI an
 authenticated channels remain separate acceptance gates.
 [Contract](../../docs/ACQUISITION_MODEL_PREPARE.md).
 
+Separately bounded durable Lithuanian display is implemented on common Task/Run
+and schema0047. Root final21 owner/API/worker PG cases passed162.79s,58 serial
+old-worker/Direct/native/model/mail cases passed575.41s and378 offline cases/
+67subtests passed30.10s. The first overlapping PG run's39PASS/1late-usage failure
+is retained; its isolated target and full serial rerun passed. Current code/schema
+adoption retained89 prior data tables exactly plus5 empty new tables. Model/display
+flags remain false, actors/policies/authorizations absent; original mail stays
+unchanged. [Display contract](../../docs/MAIL_DISPLAY_TASKS.md).
+
+Actual private business remains at0agents and Foundationcandidate/UNVERIFIED.
+After one legitimate current-source intake refresh, the same verify-local UUID
+returned200/local_evidence_missing, adding exactly1 Foundation receipt. Current
+Registration binding is true; Profile and fullF1 remain unadmitted/UNVERIFIED.
+The baseline has72 local,11 launch and2 operations items still UNVERIFIED.
+Read-only evidence mapping found reusable editorial/HTTP/inquiry proof and missing
+current native visual/enlargement/performance and site-specific mail proof.
+Keep the full delivery result honest; evaluate a separate purpose-specific
+private-preparation boundary for internal research/draft-only agents before
+requiring unrelated public-delivery capability. No such gate change is accepted
+or implemented by this status.
+
 Remaining executable order:
 
-1. Finish the reviewed source handoff and separately adopt schema0046/handler
-   while workers remain held. Preserve exact native identity and historical
-   accounting; a source packet does not approve a new model budget or live mail.
-2. Add durable, deduplicated post-commit Lithuanian display translation with its
-   explicit model/accounting boundary, then model reply Task and UI integration.
-3. Complete current business Foundation/saved-purpose and protected calibration
-   acceptance under their maintained contracts; headless/fixture evidence is
+1. Resolve private purpose-specific preparation/readiness honestly, then save
+   the requested internal research/email configurations. No new model budget or
+   live-mail authority is inferred from code/schema adoption.
+2. Complete protected calibration and applicable Foundation/Profile/knowledge
+   acceptance under their maintained contracts; configuration/model drafts are
    separate. Existing native S5 site_chat is not coerced into an email worker.
+3. Connect model reply Task and current owner UI actions/read integration;
+   durable post-commit display is implemented but remains unadmitted.
 4. Admit an authenticated controlled outbound/inbox path and prove real delivery/
    reply. SMTP credentials/controlled lab recipient and live contact/source/
    provider permissions are not currently admitted; Maudis remains a candidate.

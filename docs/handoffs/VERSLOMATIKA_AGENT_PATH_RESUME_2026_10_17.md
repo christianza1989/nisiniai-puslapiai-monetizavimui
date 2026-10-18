@@ -425,13 +425,50 @@ translation. Initial17 integrated scenarios passed94.19s; related49 pure cases
 passed3.00s and the broader source packet378 cases/67 subtests passed30.10s.
 Original baseline failures are retained for legacy-page starvation, second-owner
 deduplication, malformed-original starvation and the stale four-handler fixture.
-Current final21-display and57-old-worker/model/mail regressions are separate
-pending evidence until their results are recorded. No provider/SMTP/IMAP IO.
+Final21-display PG passed162.79s, raw SHA
+`90b0bac8477b1641f46cba352f437956f14e63852f19b4ca2154827622e6ff5b`.
+The serial existing worker/Direct/native workflow/model/mail packet passed58
+cases575.41s (the private attempt label retained its earlier57 estimate), raw SHA
+`362416fe205dc01bb99d623aa5173ab131768a1a378fd5ae7f1f966f8fa12cdc`.
+An earlier overlapping same-QA run had39PASS/1late-usage failure422.98s; the exact
+target then passed25.80s and the full serial run passed. All first logs remain;
+no unsupported runtime repair or cause certainty is claimed. Provider/SMTP/IMAP0.
 
-Operating adoption is still ba16e225/0045, not this source increment. Five paid
-workers and external channels remain held. The original/operating table hashes
-and771 native file witnesses were exact during the completed QA runs. The old
+Operating source is now clean76db483db8213a5ec6eb8283e71ccd52e7b79c01,
+public255fea0813bf1aabeaeea2f2de0b29564118f2fc/schema0047, API18871/PID11068,
+owned exec39027. Backup SHA26db4b0302ad2ca7e3cb88ff929e2e6a9d28f7098b81de9ae66974f957b12a9d,
+1636931 bytes. Migration preserved89 prior data tables and771 native files,
+adding5 empty typed tables and changing only migration metadata. Normal owner
+me/business/mail200, unauth401/foreign404. All new model/display flags are false,
+actor lists empty, policies/authorizations absent, five paid workers and channels
+held. Actual adoption is not model dispatch/calibration or ordinary populated UI.
+
+The normal-owner current-source S37 renewal added exactly1 request+1 receipt,
+retained all old rows/native files and the same Business/Registration identity.
+One verify-local UUID first returned409private_intake_missing before observation;
+after that renewal the same UUID returned200candidate/local_evidence_missing.
+Exactly1 new Foundation receipt; all prior771 native file hashes exact, with23
+new derived candidate/release files (794 total). New scope is
+8018c82d2a337004514187644d0ccb964686084b62ff715cdd607398dc05b231,
+release5e9cb3a8-33a8-4739-bf40-531f74d87819. Profile remains unadmitted,
+FoundationUNVERIFIED and agents0. Owner Registration/Business/mail200, current
+binding true. Preserve the refreshed private evidence; old resume witnesses are
+superseded by these legitimate additions and must not be used to restore data.
+
+The audit baseline has72 local/11launch/2operations UNVERIFIED; helper read-only
+map locates retained facts/editorial/HTTP/inquiry evidence and missing actual
+native visual/enlargement/performance and site-specific SMTP/inbox proof.
+Full delivery gates remain truthful. Check separately whether internal research/
+draft-only preparation needs a purpose-specific private readiness contract;
+do not waive full local delivery or use read authority for Config writes.
+
+The old
 174/180 acquisition ledger remains CLOSED with both unknown reservations; this
 feature cannot mint a continuation of it. Model replies, current owner UI actions,
 actual scoped model calibration and authenticated live mail/inbox remain distinct
 remaining links. See MAIL_DISPLAY_TASKS.md and MAIL_DISPLAY_SCHEMA.md.
+
+Six obsolete Root previews were reversibly NTFS-compressed:13738 before/after
+file hashes exact,0deleted. Recursive removal was rejected before execution;
+no removal bypass. Keep active reviewed and prepared final builds. C free space
+remains low/variable; no whole observed increase is attributed to compression.

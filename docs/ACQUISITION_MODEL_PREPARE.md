@@ -103,13 +103,18 @@ and refreshing reservation-derived counts without reviving the task.
 
 ## Adoption and remaining paths
 
-Schema0046 and these source handlers are under isolated review; the operating
-API remains frozen ba16/0045 with workers/channels held. Inert tests are not
+Schema0046 and these source handlers are adopted as code into the local operating
+API76db483/public255fea0/schema0047. Model flags remain off, actor lists empty
+and no model authorization/module activation is inferred. Workers/channels are
+held. The new display/source packet passed58 serial existing worker/native/model/
+mail PG cases; the earlier independent15 model-specific cases remain retained.
+Inert tests are not
 actual model calibration, complete Foundation, ordinary UI or real mail proof.
 Protected learning/adoption and a real bounded-call acceptance stay separate.
 
-The captured mail can be read through the existing owner mail view. Automatic
-durable display translation after commit, model reply tasks, UI action/read
-integration and authenticated live transport/inbox admission are subsequent
-bounded links. No translation is charged as a hidden fourth preparation role.
+The captured mail can be read through the existing owner mail view. Separately
+bounded durable display translation after commit is now implemented in schema0047;
+see MAIL_DISPLAY_TASKS.md. Its policy/flags are held and it is never a hidden fourth
+preparation role. Model reply tasks, UI action/read integration and authenticated
+live transport/inbox admission remain subsequent bounded links.
 No marketing, manufacturer fulfilment or photo-rights authority is inferred.

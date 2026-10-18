@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Retained pre-fix reproduction: two real committed bracketed-path fixtures fail BLOCKED vs PASS, SHA256 f72b27438773dcc38bc7ee40e2ad15c84e0e1a0c30ab2c703e1e866b7ee46646. First post-fix run was 19/20: my new helper test incorrectly expected paths in the listRecords summary; no product defect was inferred. That failure is retained SHA256 760bf4f0611b12c4dce8ed40f49bd145e7d71f773d4488b8c830c603e1e1e135. Corrected assertion reads the actual returned/stored record. Exact Git object guard preserves wildcard, issue, verification and append-only boundaries. No historical journal changed.",
+  "eventId": "4ad4f189-7282-4034-b4b9-e8569a2635c4",
+  "sequence": 2,
+  "at": "2026-10-18T21:45:46.424Z"
+}

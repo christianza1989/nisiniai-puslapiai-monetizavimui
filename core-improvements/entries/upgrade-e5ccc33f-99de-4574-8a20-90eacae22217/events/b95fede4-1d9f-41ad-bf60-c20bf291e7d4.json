@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Draft patch PR targets codex/verslomatika-gmail-owner-20261018, not main. Source commit 2657df113a9646fbbe7290c46b9d127458dcd4f3 based on 533f8f2d; scoped coverage PASS (one shared source file), exact staged repository safety PASS and paired handoff freshness PASS. Parent independently reviewed the narrow source diff without a blocking finding. Main delivery and runtime adoption remain separate.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/216",
+  "commit": "2657df113a9646fbbe7290c46b9d127458dcd4f3",
+  "eventId": "b95fede4-1d9f-41ad-bf60-c20bf291e7d4",
+  "sequence": 4,
+  "at": "2026-10-18T21:49:04.034Z"
+}

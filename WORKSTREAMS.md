@@ -2423,3 +2423,14 @@ private live diagnostics and terminal usage retention on failed timeout/cancel.
 No new runner, grade/corpus/business fact change or external send. All six grants
 and module stopped before source changes; historical failed/unknown charges stay.
 Helper separately owns recipient-less evidence admission PR218 and checker PR216.
+
+2026-10-19 literal Git scope repair RESERVED: issue215, own
+codex/core-literal-scope-patch-20261019 from fetched533f8f2d. Scope only
+scripts/core-upgrade-check.mjs and its committed-Git fixtures, helper regression,
+core-improvements/README.md and a unique upgrade entry. Resolve bracketed scope
+against exact committed Git blobs/trees; no wildcard expansion. Root/Serving,
+old journals, runtime/schema/provider/model work and main delivery are excluded.
+Local verification: 20 committed-Git/helper tests PASS, including literal blob,
+tree and deletion provenance, wildcard/pattern/uncommitted rejection and exact
+directory boundaries. Upgrade e5ccc33f-99de-4574-8a20-90eacae22217; reserved
+source window CLOSED for this patch-only handoff. Main delivery stays separate.

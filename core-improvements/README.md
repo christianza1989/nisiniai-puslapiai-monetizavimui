@@ -28,6 +28,13 @@ Prieš taisymą reserve issue / WORKSTREAMS, skaityti naujausią šaltinį. Savo
 
 Committed-diff checker reikalauja canonical `https://github.com/christianza1989/<vienas-iš-dviejų-core-repo>/issues/<id>` arba `/pull/<id>` be papildomo slash/query/fragment. Valid public issue nepadengia private failo tuo pačiu vardu. Core root, content-studio ir runtime dependency manifests / locks taip pat turi patekti į tikslų upgrade scope ir prasmingą patikrą. Jei senas record jų neįvardijo, pridėti naują teisingą papildantį įrašą, neperrašyti istorijos. Tai dvi actual peer review pamokos, ne deklaracija, kad visi ankstesni PR jau perpatikrinti.
 
+Scope su `[]`, pavyzdžiui `app/niche/[siteId]/[[...slug]]/page.tsx`, yra tik
+literal Git kelias: checker tikrina tikslų blob/tree pasirinktame commit, o ne
+plečia glob ar pathspec. Tikslus ištrintas failas gali remtis merge-base blob;
+dingęs katalogas ar vien working tree esantis kelias nesuteikia coverage.
+`*` ir `?` scope neleidžiami. Journal helper išsaugo literal kelią; pats įrašymas
+dar neįrodo committed scope ar patikros. Senų record ir event taisyti negalima.
+
 `node scripts/core-upgrade.mjs event --id <ID> --input <event.json>` prideda įvykį. Statusai finding / fixing / local-verified / pr / merged / adopted. local-verified reikalauja `checks: [{command, result:"PASS", evidence}]`; ankstesnį FAIL palikti fixing įvykio note / atskirame kvite. PR ir vėlesniems įvykiams reikalingas tikras GitHub PR URL; merged/adopted ir tikslus40hex commit. Helperis nepatvirtina GitHub būsenos: prieš įrašant patikrinti faktinį merge, o adoption turi įvardyti konkretų checkout / adapterį ir bandymą. Nebūtinas „adopted“ visiems PC.
 
 ## Tikslus karantinas

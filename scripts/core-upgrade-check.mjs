@@ -54,6 +54,19 @@ function covers(root, head, scope, file) {
   return file.startsWith(scope + '/') && git(root, ['cat-file', '-t', `${head}:${scope}`], true)?.trim() === 'tree';
 }
 
+function literalScope(root, ancestor, head, modifications, scope) {
+  if (/[*?]/.test(scope)) return false;
+  if (!/[\[\]]/.test(scope)) return true;
+  // Revision:path is an exact Git object lookup, never a pathspec/glob. Brackets
+  // may name literal routes only when that exact committed blob/tree exists.
+  const type = git(root, ['cat-file', '-t', `${head}:${scope}`], true)?.trim();
+  if (type === 'blob' || type === 'tree') return true;
+  // Preserve the existing exact-file deletion rule without admitting a missing
+  // directory or a pattern that merely matches other committed descendants.
+  return modifications.some(m => m.status === 'D' && m.file === scope)
+    && git(root, ['cat-file', '-t', `${ancestor}:${scope}`], true)?.trim() === 'blob';
+}
+
 export function checkUpgradeCoverage(root, base, head) {
   if (!shaPattern.test(base ?? '') || !shaPattern.test(head ?? '')) throw new Error('full_commit_sha_required');
   root = path.resolve(root);
@@ -85,7 +98,8 @@ export function checkUpgradeCoverage(root, base, head) {
       const repository = issueMatch[1];
       if (storedId !== id || !branch || branch === 'main' || !shaPattern.test(baseSha ?? '')
           || !Number.isFinite(Date.parse(createdAt))) throw new Error('invalid_record_identity');
-      if (record.paths.some(p => /[*?\[\]]/.test(p))) throw new Error('scope_must_be_exact_path_or_directory');
+      if (record.paths.some(p => !literalScope(root, ancestor, head, modifications, p)))
+        throw new Error('scope_must_be_exact_path_or_directory');
       const paths = git(root, ['ls-tree', '-r', '--name-only', head, '--', `${directory}/events`])
         .trim().split('\n').filter(Boolean);
       const events = paths.map(file => {

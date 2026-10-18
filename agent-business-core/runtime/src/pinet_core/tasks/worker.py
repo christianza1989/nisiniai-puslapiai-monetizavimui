@@ -159,7 +159,10 @@ async def reap_running(user_id):
                 await finish_run(tx, task, "failed")
 
 
-async def claim(*, kind=None):
+async def claim(*, kind=None, task_id=None):
+    if task_id is not None:
+        from ..control.routes import identifier
+        task_id = identifier(task_id)
     for handler in handlers():
         if kind is not None and handler.kind != kind:
             continue
@@ -192,7 +195,12 @@ async def claim(*, kind=None):
                     text("SELECT workspace_team_actor_busy(:u,:e)"), {"u": user_id, "e": settings().environment}
                 ):
                     continue
-                task = await handler.claim_task(tx) if hasattr(handler, "claim_task") else await tx.scalar(
+                if task_id is not None:
+                    if not hasattr(handler, "claim_exact_task"):
+                        continue
+                    task = await handler.claim_exact_task(tx, task_id)
+                else:
+                    task = await handler.claim_task(tx) if hasattr(handler, "claim_task") else await tx.scalar(
                     select(Task)
                     .where(Task.status == "queued", Task.kind == handler.kind)
                     .where(handler.queue_filter() if hasattr(handler, "queue_filter") else True)
@@ -328,8 +336,8 @@ async def settle_hidden_task(tx, claimed, usage):
         "j": json.dumps(observed) if observed else None, "event": new_id()})
 
 
-async def execute_once(adapter=None, *, kind=None):
-    claimed = await claim(kind=kind)
+async def execute_once(adapter=None, *, kind=None, task_id=None):
+    claimed = await claim(kind=kind, task_id=task_id)
     if not claimed:
         return False
     task_id, run_id = claimed["task_id"], claimed["run_id"]

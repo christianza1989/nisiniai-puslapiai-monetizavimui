@@ -84,6 +84,9 @@ async def final_fence(tx, value, work):
     authority.guard(execution=True)
     if work.authorization.source_revision != settings().control_source_revision:
         raise RunnerError("acquisition_native_pair_changed")
+    _, private_hash = authority.read_registration(settings())
+    if private_hash != work.authorization.work_registration_sha256:
+        raise RunnerError("acquisition_model_private_registration_changed")
     accepted = await tx.scalar(text("SELECT acquisition_native_pair_current(CAST(:j AS JSONB),:a)"),
         {"j": json.dumps({"native": value.native.model_dump(mode="json"), "stage": value.stage}),
          "a": work.authorization.id})
@@ -98,7 +101,10 @@ async def handoff(tx, value):
     run = await tx.get(TaskRun, str(ref.run_id), populate_existing=True)
     if (task is None or bound is None or run is None or task.kind != KIND or task.status != "succeeded"
             or task.run_id != run.id or run.task_id != task.id or run.status != "succeeded"
-            or digest(bound.input) != bound.input_sha256):
+            or bound.kind != KIND or bound.authorization_id != str(value.native.research_authorization_id)
+            or digest(bound.input) != bound.input_sha256
+            or task.fingerprint != digest({"request": bound.input,
+                "authorization_fingerprint": value.native.research_fingerprint})):
         raise RunnerError("acquisition_research_handoff_invalid")
     upstream = PrepareModel.model_validate(bound.input)
     if (upstream.stage != "research" or upstream.native != value.native or upstream.calibration != value.calibration

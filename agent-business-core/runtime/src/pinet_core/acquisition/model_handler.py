@@ -74,6 +74,34 @@ async def binding(tx, task):
 
 async def preflight(tx, task):
     bound, value = await binding(tx, task)
+    # Completion already holds the canonical owner/Creation/Agent locks from a
+    # full proof. Reuse only that immutable proof in this exact root transaction;
+    # never cache a lease, stop, file observation, Git check or SQL admission.
+    proof = tx.info.get("acquisition_native_completion", {}).get(task.id)
+    if value.native is not None and proof is not None and proof[0] is tx.sync_session.get_transaction():
+        work = proof[1]
+        if (work.authorization.id != bound.authorization_id
+                or work.authorization.user_id not in settings().acquisition_model_actor_ids
+                or task.fingerprint != digest({"request": bound.input,
+                    "authorization_fingerprint": work.authorization.fingerprint})
+                or (task.business_id, task.user_id, task.organization_id, task.environment_id, task.source_revision)
+                != (work.authorization.business_id, work.authorization.user_id, work.authorization.organization_id,
+                    work.authorization.environment_id, work.authorization.source_revision)):
+            raise RunnerError("acquisition_model_task_invalid")
+        from .native_chain import check_pair, final_fence, handoff
+        _, private_hash = authority.read_registration(settings())
+        if private_hash != work.authorization.work_registration_sha256:
+            raise RunnerError("acquisition_model_private_registration_changed")
+        await check_pair(tx, value, work)
+        if task.kind == REPLY_KIND:
+            from .model_reply import reply_context
+            await reply_context(tx, work, value)
+        else:
+            await authority.target(tx, work, value)
+            if value.stage == "email":
+                await handoff(tx, value)
+        await final_fence(tx, value, work)
+        return bound, value, work
     async with authority.current(tx, bound.authorization_id, task.session_id, execution=True) as work:
         policy = work.authorization
         if (task.fingerprint != digest({"request": bound.input, "authorization_fingerprint": policy.fingerprint})
@@ -216,8 +244,12 @@ class ModelHandler:
                 return []
         return actors
 
-    async def claim_task(self, tx):
+    async def claim_exact_task(self, tx, task_id):
+        return await self.claim_task(tx, task_id=task_id)
+
+    async def claim_task(self, tx, *, task_id=None):
         task = await tx.scalar(select(Task).where(Task.kind == self.kind, Task.status == "queued")
+            .where(Task.id == task_id if task_id is not None else True)
             .order_by(Task.created_at, Task.id).limit(1))
         if task is None:
             return None
@@ -239,7 +271,13 @@ class ModelHandler:
         await preflight(tx, task)
 
     async def completion_locks(self, tx, claimed):
-        await self.authority_locks(tx, claimed["task_id"])
+        task = await tx.get(Task, claimed["task_id"], populate_existing=True)
+        if task is None:
+            raise RunnerError("authorization_revoked")
+        _, value, work = await preflight(tx, task)
+        if value.native is not None:
+            tx.info.setdefault("acquisition_native_completion", {})[task.id] = (
+                tx.sync_session.get_transaction(), work)
 
     async def authority(self, tx, task):
         try:

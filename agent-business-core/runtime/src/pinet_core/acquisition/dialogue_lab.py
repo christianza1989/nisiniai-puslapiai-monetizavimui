@@ -72,6 +72,11 @@ Agentas neturi private persona ar expected labels. Vertink tekstą IR užfiksuot
 def validate_synthetic(campaign, case):
     if not campaign.site_id.startswith('synthetic-') or not case.prospect.site_id.startswith('synthetic-'):
         raise ValueError('synthetic_site_required')
+    validate_synthetic_data(campaign, case)
+
+
+def validate_synthetic_data(campaign, case):
+    """Data bounds also used by the separately server-admitted native workflow."""
     if '@' not in case.recipient or not case.recipient.rsplit('@', 1)[1].endswith('.test'):
         raise ValueError('test_recipient_required')
     for evidence in case.prospect.evidence:
@@ -137,7 +142,10 @@ def capture(root: Path, case, number, subject, body, purpose='marketing'):
 
 
 async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator, root, now, max_turns=3, *, workflow=None):
-    validate_synthetic(campaign, case)
+    if workflow is None:
+        validate_synthetic(campaign, case)
+    else:
+        workflow.validate(campaign, case)
     if not 1 <= max_turns <= 6:
         raise ValueError('bounded_turns_required')
     root.mkdir(parents=True, exist_ok=False)

@@ -32,7 +32,11 @@ async def reply_context(tx, work, value):
     bound = await tx.get(ModelTaskBinding, str(value.prepare_task_id), populate_existing=True)
     if (not task or not bound or task.kind != KIND or task.status != "succeeded"
             or not isinstance(task.result, dict) or task.result.get("case_id") != context["thread"].case_id
-            or digest(bound.input) != bound.input_sha256):
+            or bound.kind != KIND or bound.authorization_id != work.authorization.id
+            or task.source_revision != work.authorization.source_revision
+            or digest(bound.input) != bound.input_sha256
+            or task.fingerprint != digest({"request": bound.input,
+                "authorization_fingerprint": value.native.email_fingerprint})):
         raise RunnerError("acquisition_reply_parent_invalid")
     upstream = PrepareModel.model_validate(bound.input)
     if (upstream.stage != "email" or upstream.native != value.native or upstream.calibration != value.calibration

@@ -28,7 +28,8 @@ async def owner_action(action, session_file, request=None, task_id=None):
         task, result = value["task"], value["task"]["result"] or {}
         return {"status": task["status"], "task_id": task["task_id"], "kind": task["kind"],
             "failure_code": task["failure_code"], "result_state": result.get("state"),
-            "case_id": result.get("case_id"), "mail_id": result.get("mail_id"),
+            "case_id": result.get("case_id") or result.get("receipt", {}).get("case_id"),
+            "mail_id": result.get("mail_id") or result.get("outbound_mail_id"),
             "execution": value["execution"], "channel_activation": "not_performed"}
 
 

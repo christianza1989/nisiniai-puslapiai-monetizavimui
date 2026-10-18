@@ -106,11 +106,13 @@ async def submit_reply(tx, session, request):
     if old is not None:
         bound = await tx.get(ModelTaskBinding, old.id)
         if (old.kind != REPLY_KIND or bound is None
+                or bound.authorization_id != policy.id or bound.kind != REPLY_KIND
+                or digest(bound.input) != bound.input_sha256
+                or old.fingerprint != digest({"request": bound.input, "authorization_fingerprint": policy.fingerprint})
                 or ReplyRequest.model_validate({key: bound.input[key] for key in ReplyRequest.model_fields if key in bound.input}) != value):
             raise ControlError(409, "acquisition_model_request_conflict")
         return old
     async with authority.current(tx, policy.id, session.id) as work:
-        await check_pair(tx, value, work)
         context = await reply_context(tx, work, value)
         if await tx.scalar(select(ModelTaskBinding.task_id).where(ModelTaskBinding.kind == REPLY_KIND,
                 ModelTaskBinding.business_id == policy.business_id, ModelTaskBinding.environment_id == policy.environment_id,
@@ -119,6 +121,7 @@ async def submit_reply(tx, session, request):
             raise ControlError(409, "acquisition_reply_inbound_retained")
         resolved = ReplyInput(**value.model_dump(), recipient=context["recipient"],
             campaign=context["campaign"], prospect=context["prospect"])
+        await check_pair(tx, resolved, work)
         material = resolved.model_dump(mode="json")
         now = utcnow()
         thread = Thread(id=new_id(), business_id=policy.business_id, organization_id=policy.organization_id,

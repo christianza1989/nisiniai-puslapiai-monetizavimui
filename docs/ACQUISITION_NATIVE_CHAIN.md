@@ -54,6 +54,23 @@ sessions/transactions in the owned DB. Files and committed synthetic history sta
 
 ## Exact remaining work after external recovery
 
+Resume checkpoint 04:14 UTC: disk containment lifted; ongoing groups still require
+at least1.5GiB free and run sequentially. Run11 reached3PASS/1 fixture-default FAIL;
+offline run12 has13PASS. Run13 has3PASS/6FAIL: five usage-shape test oracle errors
+were corrected; rollback reached worker_interrupted because completion repeated
+full accepted-proof/Node checks under the unchanged15s lease. The implementation
+now reuses only already-locked immutable parents within the exact root completion
+transaction, retaining fresh private-file/Git/pair SQL/target/inbound checks.
+This checkpoint is WIP, with fresh regressions still required.
+
+Native manifests now retain the actual registered Creation site identity. The
+legacy synthetic-site prefix gate is preserved; only the source-owned native
+workflow uses matching manifest site identity and the same .test data bounds.
+Every native Task still proves both actual current Config/authorization bindings
+through normal-owner admission before model reservation. CLI native mode remains
+metadata-only until a separate auxiliary persona/evaluator allowance is admitted.
+No fresh protected corpus has been authored/read by this implementation agent.
+
 1. Fresh fetch/ancestry and current contracts; inspect preserved WIP and own QA
    identity before reusing it. Do not touch old174 ledger or foreign services.
 2. Harden replay fingerprint/current lineage checks and precise caller-owned

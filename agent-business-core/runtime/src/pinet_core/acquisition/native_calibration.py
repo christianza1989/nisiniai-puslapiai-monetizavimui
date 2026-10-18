@@ -18,7 +18,7 @@ from ..models import MailMessage
 from ..tasks.codex import RunnerError
 from . import model_authority, model_tasks
 from .contracts import Campaign
-from .dialogue_lab import GRADE_INSTRUCTION, LabCase, validate_synthetic
+from .dialogue_lab import GRADE_INSTRUCTION, LabCase, validate_synthetic_data
 from .engine import fingerprint
 from .headless_mail import HeadlessMail
 from .model_contract import KIND, REPLY_KIND, CalibrationReference, NativePair
@@ -48,7 +48,11 @@ def manifest(reference):
     campaign = Campaign.model_validate(value["campaign"])
     cases = [LabCase.model_validate(case) for case in value["cases"]]
     for case in cases:
-        validate_synthetic(campaign, case)
+        # Native site identity is the real registered Business, not a synthetic
+        # alias. Exact current server bindings are verified by every admission.
+        if case.prospect.site_id != campaign.site_id:
+            raise RunnerError("native_protected_binding_changed")
+        validate_synthetic_data(campaign, case)
     if (len({case.id for case in cases}) != len(cases)
             or len({fingerprint(case.persona) for case in cases}) != len(cases)
             or sum(case.split == "train" for case in cases) < 1
@@ -76,13 +80,20 @@ class NativeWorkflow:
         self.episode = UUID(str(episode_id))
         self.dispatch, self.receipts, self.initial, self.parent, self.turn = dispatch, [], None, None, 0
 
+    def validate(self, campaign, case):
+        frozen, selected = manifest(self.reference)
+        if frozen != self.frozen or selected != case or campaign != Campaign.model_validate(frozen["campaign"]):
+            raise RunnerError("native_protected_case_invalid")
+
     async def _submit(self, request, *, reply=False):
         async with scope(token=token_hash(self._token)) as tx:
             actor = await customer_session(tx, self._token)
             task = await (model_tasks.submit_reply if reply else model_tasks.submit)(tx, actor, request)
             identity = task.id
+            status = task.status
         self.receipts.append({"task_id": identity, "request_id": request["request_id"], "phase": "reply" if reply else request["stage"]})
-        await self.dispatch(identity, REPLY_KIND if reply else KIND)
+        if status == "queued":
+            await self.dispatch(identity, REPLY_KIND if reply else KIND)
         async with scope(token=token_hash(self._token)) as tx:
             actor = await customer_session(tx, self._token)
             view = await model_tasks.read(tx, actor, identity)
@@ -93,8 +104,7 @@ class NativeWorkflow:
         return identity, result
 
     async def prepare(self, campaign, case, now):
-        if case != self.case or campaign != Campaign.model_validate(self.frozen["campaign"]):
-            raise RunnerError("native_protected_case_invalid")
+        self.validate(campaign, case)
         base = {"native": self.frozen["native"], "calibration": self.reference.model_dump(mode="json"),
             "recipient": case.recipient, "prospect": case.prospect.model_dump(mode="json")}
         research = {**base, "request_id": str(uuid5(self.episode, "research")), "stage": "research",

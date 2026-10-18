@@ -73,6 +73,15 @@ Scenarijams po pokalbio atskirai išbandyk reviewed laišką, kliento atsakymą 
 
 ## 5. Mokymosi stebėjimas
 
+Saved šešių rolių bandymui prieš Task ir mokamą kvietimą patikrinti viso
+užantspauduoto korpuso vykdymo langą pagal
+[CALIBRATION_EXECUTION_WINDOW](../../../docs/CALIBRATION_EXECUTION_WINDOW.md).
+Kampanija, visi faktai ir visų atvejų evidence turi galioti ilgiau už ankstyviausią
+šešių leidimų / savininko sesijos pabaigą; vien dabartinis galiojimas nepakanka.
+Pasibaigusį sintetinį langą atnaujinti tik atskira užantspauduota versija,
+išsaugant originalą, visus kvietimus ir pirmą FAIL. Scenarijų, faktų tekstų ar
+vertinimo nekeisti; toks datos atnaujinimas nėra naujas tiekėjo faktų patvirtinimas.
+
 Užfiksuok prieš ratą bazinių MD ir adaptive pointer hash, tada atlik šviežią stebėjimo run:
 
 ```powershell

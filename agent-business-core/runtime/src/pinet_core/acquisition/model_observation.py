@@ -28,7 +28,8 @@ CODES = frozenset(("guard_error_unclassified", "authorization_revoked", "authori
     "acquisition_model_attempt_invalid", "acquisition_model_accounting_failed",
     "correspondence_decision_stale", "acquisition_reply_already_decided",
     "native_manifest_changed", "native_protected_source_changed", "native_manifest_invalid",
-    "native_protected_binding_changed", "native_calibration_authorization_retained"))
+    "native_protected_binding_changed", "native_calibration_authorization_retained",
+    "agent_role_calibration_window_too_short"))
 
 
 def safe_code(value):

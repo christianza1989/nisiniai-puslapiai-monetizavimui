@@ -199,7 +199,27 @@ def manifest(reference):
         raise RunnerError("agent_role_manifest_invalid") from None
 
 
-def verify_reference(value, bindings, source_revision):
+def validate_execution_window(frozen, *, now, until):
+    """Whole sealed corpus must outlive the admitted team/session, before work.
+
+    Check all cases, including protected evidence without exporting its text.
+    This never renews facts, changes seals or grants additional authority.
+    """
+    try:
+        if (not isinstance(now, datetime) or not isinstance(until, datetime)
+                or now.utcoffset() is None or until.utcoffset() is None or now >= until):
+            raise ValueError()
+        campaign = Campaign.model_validate(frozen["campaign"])
+        cases = [LabCase.model_validate(row) for row in frozen["cases"]]
+        expiries = [campaign.expires_at, *(fact.expires_at for fact in campaign.facts),
+                    *(item.expires_at for case in cases for item in case.prospect.evidence)]
+        if not cases or min(expiries) <= until:
+            raise ValueError()
+    except (ValidationError, ValueError, TypeError, KeyError):
+        raise RunnerError("agent_role_calibration_window_too_short") from None
+
+
+def verify_reference(value, bindings, source_revision, *, now, until):
     frozen, case = manifest(value.calibration)
     if (
         frozen["source_revision"] != source_revision
@@ -210,6 +230,7 @@ def verify_reference(value, bindings, source_revision):
         or Campaign.model_validate(frozen["campaign"]) != value.campaign
     ):
         raise RunnerError("agent_role_manifest_binding_changed")
+    validate_execution_window(frozen, now=now, until=until)
 
 
 class SixRoleWorkflow:

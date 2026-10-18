@@ -429,10 +429,13 @@ async def test_queued_six_role_work_honors_shared_native_feature_stop(six, monke
     assert task.status == "failed" and run is None and not attempts and not fake.calls
 
 
-@pytest.mark.parametrize("recipient_namespace", [None, "265b8165-b293-4991-bace-65aa6d543f7c"])
-async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade(six, recipient_namespace):
+@pytest.mark.parametrize("recipient_namespace,short_window", [
+    (None, None), ("265b8165-b293-4991-bace-65aa6d543f7c", None),
+    (None, "campaign"), (None, "fact"), (None, "unselected_holdout_evidence")])
+async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade(six, recipient_namespace, short_window):
     import hashlib
     import json
+    from datetime import timedelta
 
     from pinet_core.acquisition import agent_role_calibration, native_calibration
     from pinet_core.acquisition.contracts import Campaign
@@ -498,6 +501,16 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
         }
         for n in range(6)
     ]
+    if short_window:
+        # Still currently valid, but expires before the five-minute team grant.
+        short = (utcnow() + timedelta(seconds=90)).isoformat()
+        cases = deepcopy(cases)
+        if short_window == "campaign":
+            p["request"]["campaign"]["expires_at"] = short
+        elif short_window == "fact":
+            p["request"]["campaign"]["facts"][0]["expires_at"] = short
+        else:
+            cases[-1]["prospect"]["evidence"][0]["expires_at"] = short
     async with AsyncSession(p["admin"]) as tx:
         bindings = {
             role: {
@@ -554,6 +567,20 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
     workflow = agent_role_calibration.SixRoleWorkflow(
         token=p["token"], reference=ref, episode_id=uuid4(), dispatch=dispatch
     )
+    if short_window:
+        from pinet_core.acquisition.model_models import ModelAttempt
+        from pinet_core.tasks.models import Task
+        async with db.transaction(p["scope"].business_id, p["scope"].environment_id) as tx:
+            tasks_before = await tx.scalar(select(func.count()).select_from(Task))
+            attempts_before = await tx.scalar(select(func.count()).select_from(ModelAttempt))
+        original_source, original_manifest = source.read_bytes(), path.read_bytes()
+        with pytest.raises(RunnerError, match="agent_role_calibration_window_too_short"):
+            await workflow.prepare(Campaign.model_validate(workflow.frozen["campaign"]), workflow.case, utcnow())
+        async with db.transaction(p["scope"].business_id, p["scope"].environment_id) as tx:
+            assert await tx.scalar(select(func.count()).select_from(Task)) == tasks_before
+            assert await tx.scalar(select(func.count()).select_from(ModelAttempt)) == attempts_before
+        assert not fake.calls and source.read_bytes() == original_source and path.read_bytes() == original_manifest
+        return
 
     class Persona:
         calls = 0

@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Reject a sealed six-role calibration corpus before Task admission when any campaign/fact/evidence expires before the admitted team/session window",
+  "category": "code",
+  "evidence": [
+    "docs/CALIBRATION_EXECUTION_WINDOW.md",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_calibration.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_observation.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_calibration_window.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "SKILLS/business-agent-calibration/references/runbook.md",
+    "docs/CALIBRATION_EXECUTION_WINDOW.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop the exact stage grants and revert only this admission fix. Preserve failed expiry/unknown attempt, all prior ledgers and raw original/renewed corpus versions. Do not extend consumed grants or rewrite historical acceptance.",
+  "id": "upgrade-14de7305-8a83-4e95-9c49-3a7f2a522101",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "bbd63ac24e4e227e45288011d2422251de1192bd",
+  "createdAt": "2026-10-18T20:17:39.573Z"
+}

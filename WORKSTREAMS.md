@@ -2345,3 +2345,13 @@ shared account caps, post-send acceptance and source/owner fences. Self-only
 owner_acceptance retains test provenance and cannot become a commercial parent.
 No new CRM/calibration/scheduler or external campaign activation. Root paid
 model/protected batch remains frozen on unchangeded934 source.
+
+2026-10-18 Root whole-corpus calibration-window admission, issue66
+comment6254604425: own agent_role_calibration.py/agent_role_authority.py/
+model_observation.py, focused offline and sealed-PG checks, calibration
+runbook/doc and own journal. Four known ed934 cases PASS; first protected task
+crossed campaign/fact expiry20:00UTC before CLI launch. Keep41attempts including
+1conservative unknown, stopped grants, corpus/grade/Config2/common hashes.
+Require campaign/allfacts/allcase evidence beyond admitted team/session deadline
+before first Task. Independent custodian renews synthetic operational timestamps
+in a separate immutable source, without supplier-fact approval/unseen-case claim.

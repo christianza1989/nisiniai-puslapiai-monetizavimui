@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual ed934 four known cases passed, first protected task crossed campaign/fact20:00UTC boundary before CLI dispatch; its conservative unknown charge is retained. Independent read-only code review confirmed deadline=min(six grants, session) and check before new Task. First test run1fixture failure/36PASS; acceptance fixture omitted required LabCase fields, so negative offline tests were not yet evidence. Corrected inert fixture then12/12offline PASS; unchanged canonical source and all5sealed restrictedPG cases passed (2positive legacy/namespace and3short-window zeroTask/attempt/provider negatives). No threshold/corpus/grade/Config/actor instruction changes. No paid/provider or operatingDB in code checks.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_calibration_window.py offline_tests/test_acquisition_calibration_namespace.py offline_tests/test_acquisition_agent_role_calibration.py tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade",
+      "result": "PASS",
+      "evidence": "37distinct checks: first run36PASS with12newwindow tests including1bad fixture; corrected newwindow suite12PASS1.79s. RetainedPG5/5PASS and other20offline PASS in137.26s. First log0d3c5a6dfb692ec5fffef6c6110b0d26863894b4d171cf1ac7f373aef6f1c69c; corrected logafb93a932c2b8893fc3481397e2f45e14ed8c5feb8539eb4f9f98aa232f579a9."
+    },
+    {
+      "command": "ruff check exact window source/tests; git diff --check",
+      "result": "PASS",
+      "evidence": "Exact changed Python paths; static checks and diff clean."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs .",
+      "result": "PASS",
+      "evidence": "No private corpus/operating mail/OAuth values committed; safety scanner no findings."
+    }
+  ],
+  "eventId": "cf4dc6e3-dafb-432e-89ae-b65356c78d8d",
+  "sequence": 2,
+  "at": "2026-10-18T20:17:51.668Z"
+}

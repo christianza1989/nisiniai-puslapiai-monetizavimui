@@ -1,0 +1,8 @@
+{
+  "status": "fixing",
+  "note": "Own15559 first0-to-head migration failed before0049 on inherited duplicate pinet_display_kind_old_probe; handed Root dependency, preserved original failure. Canonical incremental0001..0049 then passed. First real INSERT exposed own payload_sql UndefinedColumn value because jsonb_path_query result had no value alias; fixed with AS item(value). Retained run2:1PASS then fixture identity_issuer mismatch blocked User locking; corrected to pinet-customer. Run3:1PASS then new QA missed canonical bootstrap/business SELECT; applied unchanged canonical bootstrap. No foreign source files or historical results modified.",
+  "checks": [],
+  "eventId": "4d801ca8-bf25-48ba-ab19-498f4b4fff78",
+  "sequence": 3,
+  "at": "2026-10-18T07:38:41.554Z"
+}

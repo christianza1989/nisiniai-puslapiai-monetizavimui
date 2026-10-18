@@ -1,5 +1,40 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Autonomous local business/email work —2026-10-18
+
+The owner explicitly authorized unattended calibration/testing using the already
+signed-in Gmail. The complete email plan is now
+[VERSLOMATIKA_EMAIL_SYSTEM_PLAN](../../docs/VERSLOMATIKA_EMAIL_SYSTEM_PLAN.md).
+One harmless browser self-email was sent/received by the same authenticated
+account; this is not platform Gmail OAuth/ingestion/delivery adoption. The Gmail
+connector requests reauthentication, and the platform OAuth adapter remains pending.
+
+An independently built business is attached through reviewed Intake/Business/
+Grant/source and six immutable Agent/Config descriptions, with34 admitted facts.
+Actual ordinary Chrome shows all six descriptions. This is the existing clearly
+local QA account, not verified production ownership. No fake Creation or legacy
+voice Profile was added. Only the native research/email modules were exercised;
+the other saved descriptions are not automatically six executable workers.
+
+First known-case execution stopped correctly at unqualified research, contrary
+to an underconstrained fixture oracle. A distinct reviewed inbound case reached
+research→email→Case/MailMessage, then stopped at a second synthetic-address DTO
+incompatibility before reply dispatch. Both originals remain FAIL/incomplete.
+Current common paid ledger has7 charged attempts, no refunds/retries and its
+original60-attempt/3600s boundary; all affected native grants explicitly stopped.
+No protected case or external customer/supplier send has run. Product-description
+coverage and the canonical MIME→inbound boundary are being repaired before another
+snapshot; do not declare the business agents calibrated or activated.
+
+Owned API18871 runs cleanE839/schema49, human-started3030 build is unchanged.
+Actual live-preview close passed72.708s continuousReady, HTTP200, Chrome home/
+guide, closed child/listener and terminal same-UUID replay. A separate natural
+expiry run FAILED before observableReady: first native heartbeat_expired followed
+an8.25455s pulse gap/8.035s fresh authority graph (176SQL) against unchanged3s TTL.
+Its later generic content_completion_unavailable/revoked label is not proof of
+database/source revocation. Previous78/c3 main preflight blockers remain open.
+No permission/TTL waiver, automatic frontend launch or reviewed-main claim.
+
 ## Local business/agent account attachment accepted —2026-10-18
 
 This supersedes the earlier pending-adoption/current119 descriptions below.

@@ -4,12 +4,23 @@ import re
 from typing import Annotated, Literal
 from uuid import UUID
 
-from pydantic import AwareDatetime, Field, field_validator
+from pydantic import AfterValidator, AwareDatetime, Field, field_validator
 
 from ..conversation_mail import valid_message_id
 from .interfaces import NoExternalSend, OpaqueId, Scope, Wire
 
-SyntheticAddress = Annotated[str, Field(pattern=r"^[a-z0-9][a-z0-9._+-]{0,63}@example\.test$")]
+
+def synthetic_local_part(value):
+    if ".." in value or value.split("@")[0].endswith("."):
+        raise ValueError("synthetic_address_invalid")
+    return value
+
+
+# The same type validates native inbound and the correspondence identity key.
+# This reserved namespace grants no real recipient or transport authority.
+SyntheticAddress = Annotated[str, Field(strict=True, max_length=254,
+    pattern=r"^[a-z0-9][a-z0-9._+-]{0,63}@(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*example\.test$"),
+    AfterValidator(synthetic_local_part)]
 Digest = Annotated[str, Field(pattern=r"^[a-f0-9]{64}$")]
 
 
@@ -27,13 +38,6 @@ class InboundCapture(NoExternalSend):
     recipient: Literal["info@pinet.lt"]
     subject: str = Field(max_length=200)
     body: str = Field(min_length=1, max_length=16000)
-
-    @field_validator("sender")
-    @classmethod
-    def address(cls, value):
-        if ".." in value or value.split("@")[0].endswith("."):
-            raise ValueError("synthetic_address_invalid")
-        return value
 
     @field_validator("message_id", "in_reply_to")
     @classmethod

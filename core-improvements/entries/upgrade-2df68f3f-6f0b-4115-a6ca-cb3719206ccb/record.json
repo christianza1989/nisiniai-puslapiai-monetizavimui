@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "The first reserved recipient correction left InboundCapture's separate SyntheticAddress exact-host-only, so an actual reviewed native email could not accept its first reserved-subdomain reply.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/work_interfaces.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/correspondence.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_synthetic_recipient.py",
+    "agent-business-core/runtime/tests/test_acquisition_inbound_address_pg.py",
+    "docs/ACQUISITION_SYNTHETIC_RECIPIENT_NAMESPACE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Actual161 known positive case created2successfulTaskRuns/4nativeattempts and one capturedCase/MailMessage; InboundCapture rejected sender's reserved subdomain before inbound/reply Task. Global7charged retained, grants explicitly stopped. No full-dialogue/model-quality acceptance.",
+    "New MIME→parse_bound_reply→InboundCapture and shared alias cases reproduced4FAIL32PASS; combined correspondence/native/dialogue/headless/interfaces final115PASS64subtests3.53s, scopedRuffPASS. One retained SQL MIME/two-reply common-worker test separately checks actual canonical links with inert roles."
+  ],
+  "rollback": "Revert only unified synthetic address type and consumers/tests/doc. Keep all original failures, hashes, calls, Case/mail and grant histories. No real recipient, digest, schema or budget-counter migration.",
+  "id": "upgrade-2df68f3f-6f0b-4115-a6ca-cb3719206ccb",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "16199341177f5e33aa88822638ba0b7f3557cdc9",
+  "createdAt": "2026-10-18T10:56:47.262Z"
+}

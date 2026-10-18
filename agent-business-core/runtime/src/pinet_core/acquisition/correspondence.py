@@ -10,6 +10,7 @@ import re
 from contextlib import asynccontextmanager
 from types import SimpleNamespace
 
+from pydantic import TypeAdapter, ValidationError
 from sqlalchemy import cast, select, text
 from sqlalchemy.dialects.postgresql import JSONB
 
@@ -22,8 +23,10 @@ from .ledger import AcquisitionLedger, LedgerError, Reply, apply_scope, conditio
 from .models import AcquisitionCampaign
 from .module_models import ModuleBinding
 from .normal import authorize_fresh_command
-from .work_interfaces import CorrespondenceReceipt, InboundCapture
+from .work_interfaces import CorrespondenceReceipt, InboundCapture, SyntheticAddress
 from .work_models import ContactPolicy, CorrespondenceThread, MailBinding, WorkReceipt
+
+_SYNTHETIC_ADDRESS = TypeAdapter(SyntheticAddress)
 
 
 def seal(value):
@@ -34,14 +37,10 @@ def seal(value):
 
 def recipient_hash(value):
     # Private synthetic identity key, shared across campaigns in one exact scope.
-    if (
-        not isinstance(value, str) or len(value) > 254
-        or not re.fullmatch(r"[a-z0-9][a-z0-9._+-]{0,63}@"
-            r"(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*example\.test", value)
-        or ".." in value
-        or value.split("@")[0].endswith(".")
-    ):
-        raise LedgerError(422, "synthetic_recipient_required")
+    try:
+        _SYNTHETIC_ADDRESS.validate_python(value)
+    except ValidationError:
+        raise LedgerError(422, "synthetic_recipient_required") from None
     return seal(["acquisition-correspondence-recipient.v1", value])
 
 

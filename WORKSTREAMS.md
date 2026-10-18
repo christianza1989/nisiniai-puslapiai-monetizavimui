@@ -2080,3 +2080,12 @@ R2/E6 have0TaskBinding/0ModelAttempt and explicitly stopped them before source
 edits. New code permits only valid DNS subdomains of the existing reserved host,
 preserves legacy hashes, rejects real domains. Next source/admission is explicit;
 no old paid pilot, used/unknown allowance or protected payload is reopened.
+
+Root inbound synthetic namespace follow-up2026-10-18 under issue66/comment6248941912
+reserves acquisition/work_interfaces.py SyntheticAddress, correspondence.py
+recipient_hash, existing/new offline regression, one retained PG MIME/native test
+and the namespace doc under a separate upgrade. Actual known07 created a reviewed
+native Case/mail but sender DTO rejected the reserved subdomain before inbound
+persist/reply Task. Stop preserves4native attempts/2Tasks for07 and common7/60
+including earlier known03/persona. Consolidate one address type; no schema change,
+real recipients, digest migration, grant refund or rerun of the paid failed case.

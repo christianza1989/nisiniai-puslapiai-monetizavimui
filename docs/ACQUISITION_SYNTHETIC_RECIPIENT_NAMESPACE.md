@@ -27,3 +27,27 @@ combined80 tests and39 subtests with maintained correspondence, native-chain and
 dialogue suites (3.63s). Legacy hash, distinct subdomain identities and denial of
 live domains are covered. Actual sealed native validation and model execution
 remain separate evidence.
+
+## Native inbound follow-up
+
+The first paid positive known case at16199341 passed research and email review,
+and committed one native Case/original outbound MailMessage. Its first reply
+then failed BEFORE inbound persistence or reply Task dispatch: the separate
+`work_interfaces.SyntheticAddress` still rejected reserved subdomains. The
+boundary-only first correction did not prove that actual MIME→DTO bridge.
+Original failure and charged calls remain; no successful full dialogue is claimed.
+
+The maintained SyntheticAddress type now contains the bounded pattern, strict
+string/254-character limit and local-part checks. Both InboundCapture and
+recipient_hash consume this same type. The compiled TypeAdapter is a schema
+validator, never a permission/proof cache. No digest, persisted original,
+transport authority or migration changes. New actual MIME→parse_bound_reply→DTO
+tests reproduced4FAIL/32PASS before repair; the combined maintained selection
+then passed115 tests/64subtests. Real domains and malformed sender values remain
+denied at both entry points. A retained PostgreSQL two-reply regression separately
+exercises canonical Case/MailBinding/common Task/Run with inert model roles.
+That retained SQL test passes1/18.40s: one Case, five originals, two MIME inbound
+captures and two completed native reply Tasks. Its first helper-signature miss
+and then an unpinned test work-scope SELECT are retained separately; correcting
+only the test's canonical scope pin exposed the committed row, without changing
+runtime RLS. Operating data and paid calls were excluded from this regression.

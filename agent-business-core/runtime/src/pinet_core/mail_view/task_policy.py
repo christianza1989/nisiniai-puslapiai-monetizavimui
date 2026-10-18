@@ -8,7 +8,7 @@ from ..control.models import Session
 from ..control.routes import ControlError
 from ..creation.service import digest
 from . import task_authority as authority
-from .task_contract import EFFORT, MODEL, Approve, Stop
+from .task_contract import EFFORT, MODEL, Approve, Reauthorize, Stop
 from .task_models import DisplayPolicy
 from .translations import POLICY_SHA
 
@@ -64,6 +64,9 @@ async def contain(tx, action, request):
 
 
 async def operate(tx, action, request):
+    if action == "reauthorize":
+        from .task_reauthorization import reauthorize
+        return await reauthorize(tx, request)
     if action == "approve":
         return await approve(tx, request)
     if action in {"inspect", "stop"}:
@@ -72,8 +75,8 @@ async def operate(tx, action, request):
 
 
 async def verify(tx, request, result):
-    if result["action"] == "approve":
-        value = Approve.model_validate(request)
+    if result["action"] in {"approve", "reauthorize"}:
+        value = (Reauthorize if result["action"] == "reauthorize" else Approve).model_validate(request)
         async with authority.current(tx, value.policy_id, value.authorizing_session_id) as (row, _):
             if view(row) != result["after"]:
                 raise ControlError(409, "mail_display_policy_changed")

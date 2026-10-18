@@ -16,7 +16,7 @@ renew under the same UUID; containment can only disable it. Private prepared and
 committed receipts use the maintained helper and require reconciliation on an
 uncertain commit. Flags/actor allowlist and policy are independent controls.
 
-Each DisplayJob binds one common Task and its single TaskRun. The deduplication
+Each DisplayJob binds one common Task and its single TaskRun. The root deduplication
 key is business/environment/mail/source digest/instruction hash/lt, independent
 of policy UUID or executable source. Changing a policy cannot replay an existing
 mail. Queued slots and charged reservations stay within the policy cap. A durable
@@ -77,3 +77,55 @@ The earlier174/180 acquisition ledger remains closed and is not a display budget
 This source increment implements the durable-display link listed as subsequent
 work in ACQUISITION_MODEL_PREPARE.md; its remaining model-reply, UI-action and
 authenticated transport/inbox links are still separate.
+
+## Explicit zero-dispatch reauthorization (0051)
+
+A stopped policy cannot be enabled or approved again. Ordinary enqueue continues
+returning the retained source's latest Job; it does not renew authority. The
+canonical fixed `mail_display_task.py run-one` accepts no task ID. A private
+operator passing an exact task ID to the common worker exercised an unsupported
+mode, not a demonstrated worker defect. Retain that zero-call failure.
+
+The privileged `mail_display_policy.py reauthorize --input <private-json>
+--receipt <new-private-receipt>` accepts the existing explicit approval fields
+plus `version: mail-display-zero-dispatch-reauthorization.v1` and `jobs`, each with
+`previous_task_id` and `expected_source_sha256`. At most three distinct named
+sources are allowed; `maximum_calls` must equal that count. A current verified
+OWNER Session, fresh policy UUID/source, explicit paid authorization and the
+existing privileged policy flow remain required. There is no browser budget API.
+
+The entire batch creates its fresh policy and successor Task/Job bindings in one
+transaction. Every ancestor must be queued without a failure marker, or contained
+by the canonical worker as failed with exactly `authorization_revoked`, under a
+stopped policy with no TaskRun, run ID, reservation, lease, result, translation
+Record or legacy sidecar/attempt claim. Current Mail/Case ownership and the exact original,
+instruction hash and language are rechecked. Any uncertainty refuses the batch
+and rolls back the new policy. Even a Run with no provider reservation refuses
+reauthorization. Every other failure and all charged/unknown work is refused. The
+exact pre-dispatch containment state remains immutable when its successor is created.
+
+Each successor retains its predecessor link and generation; the prepared receipt
+links prior policy/task fingerprints, source revision and original digest. No
+original Task/Job/Policy/Mail or stop receipt is rewritten. One child per parent
+and generation-aware source uniqueness prevent branching. Enqueue and GET resolve
+the latest generation; fixed claiming skips superseded ancestors, including a
+selection that waited across reauthorization. The common worker/TaskRun and
+shared actor slot remain the only execution path. A recovery policy stays limited
+to its named successors even when an unreserved successor later fails; automatic
+materialization and ordinary enqueue cannot spend its freed slots elsewhere.
+
+Reauthorization itself performs no model, provider, Gmail or sending operation.
+Actual translation and UI acceptance require a separately permitted fixed worker
+run after source/schema adoption. Source delivery is not operating adoption or a
+main-merge claim. Keep all first failures and immutable historical evidence.
+
+0051 validation used a dedicated retained PostgreSQL QA database: 16 new recovery
+cases and 21 existing display cases passed, alongside 23 offline cases. Both queued
+and canonically contained predecessors completed three inert fixed-worker runs
+with old Task/Job/Policy/Mail snapshots unchanged. Other failure codes, any Run,
+unknown usage, legacy claims, changed original, foreign owner, competing batches,
+stale claiming, unnamed capacity expansion and runtime-forged successor context
+were refused. Migration retained 95 existing tables / 6,599 old rows by hashes,
+excluding only the two additive Job fields. Initial migration identifier-length
+and conservative draft-fence failures remain retained; they are not acceptance
+results. No real provider, Gmail or operating-database operation was performed.

@@ -1,4 +1,5 @@
 """Explicit display-only authority; no acquisition, send, or reply permission."""
+from typing import Literal
 from uuid import UUID
 
 from pydantic import AwareDatetime, Field, model_validator
@@ -39,3 +40,20 @@ class Stop(Strict):
 class Enqueue(Strict):
     policy_id: UUID
     mail_id: UUID
+
+
+class PreviousDisplay(Strict):
+    previous_task_id: UUID
+    expected_source_sha256: Digest
+
+
+class Reauthorize(Approve):
+    version: Literal["mail-display-zero-dispatch-reauthorization.v1"]
+    maximum_calls: int = Field(strict=True, ge=1, le=3)
+    jobs: list[PreviousDisplay] = Field(min_length=1, max_length=3)
+
+    @model_validator(mode="after")
+    def exact_batch(self):
+        if self.maximum_calls != len(self.jobs) or len({item.previous_task_id for item in self.jobs}) != len(self.jobs):
+            raise ValueError("exact_named_display_reauthorization_required")
+        return self

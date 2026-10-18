@@ -2375,3 +2375,19 @@ or commercial transport. Helper owns separate LT0051 mail_view scope.
 Local source verification:54offline/39subtests,5restrictedPG,2older native
 compatibility cases PASS; upgrade3af3889b-d5bf-47d2-ab20-03bc3eb6a97c.
 No main/adoption/new model acceptance claimed by this source handoff.
+2026-10-18 Root-authorized explicit LT zero-dispatch reauthorization: helper owns
+codex/mail-display-zero-dispatch-reauth-20261018 from2485b762, issue66. Scope
+mail_view/task_contract,task_models,task_service,task_handler,task_policy and new
+task_reauthorization/task_reauthorization_schema; migration0051; policy CLI,
+focused offline/retained-QA PG tests, display docs and unique upgrade. Original
+private operator invoked an unsupported exact-task mode; canonical fixed
+run-one is unchanged. New product path uses explicit fresh bounded owner policy
+and append-only named zero-dispatch successors; old rows/mail/stop receipts stay.
+No operating DB/provider/model/Gmail/acquisition/worker source changes. QA DB
+lease coordinated with Root; no migration while foreign QA lease is active.
+
+2026-10-18 LT helper scoped implementation complete on its own branch: 0051 QA
+migration preserves all 6,599 pre-existing rows across 95 tables; 16 new recovery
+PG, 21 existing display PG and 23 offline cases PASS using inert adapters. QA
+lease returned to Root after serial tests. Initial draft failures retained.
+Source/journal handoff only; no main merge or operating adoption is claimed.

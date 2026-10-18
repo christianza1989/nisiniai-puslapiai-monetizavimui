@@ -28,9 +28,12 @@ async def schema_ready(tx):
         "control_mail_display_jobs": (True, True, True, True, False, False)}
     if len(rows) != 2 or not all(tuple(row[1:]) == expected[row[0]] for row in rows):
         return False
-    return bool(await tx.scalar(text("SELECT coalesce(has_function_privilege(current_user,to_regprocedure("
+    ready = bool(await tx.scalar(text("SELECT coalesce(has_function_privilege(current_user,to_regprocedure("
         "'public.mail_display_projection(character varying,character varying,character varying,character varying,character varying,character varying)'),"
         "'EXECUTE'),false)")))
+    return ready and bool(await tx.scalar(text("""SELECT to_regprocedure('public.mail_display_reauthorization_fence()') IS NOT NULL
+        AND (SELECT count(*)=2 FROM pg_attribute WHERE attrelid='control_mail_display_jobs'::regclass
+        AND attname IN ('previous_task_id','generation') AND NOT attisdropped)""")))
 
 
 async def shared_projection(tx, business_id, mail_id, sha):
@@ -77,6 +80,10 @@ def predicate(value):
     return tuple(getattr(DisplayJob, key) == expected for key, expected in value.items())
 
 
+def execution_identity(job, key):
+    return key if job.generation == 0 else {**key, "previous_task_id": job.previous_task_id, "generation": job.generation}
+
+
 async def new_task(tx, policy, session, key, *, legacy=False):
     now = utcnow()
     thread = Thread(id=new_id(), business_id=policy.business_id, organization_id=policy.organization_id,
@@ -108,7 +115,7 @@ async def enqueue(tx, session, request):
     await tx.execute(text("SELECT set_config('pinet.business',:b,true)"), {"b": policy.business_id})
     mail, original, sha = await authority.original(tx, policy, value.mail_id)
     key = identity(policy.business_id, policy.environment_id, mail.id, sha)
-    old = await tx.scalar(select(DisplayJob).where(*predicate(key)))
+    old = await tx.scalar(select(DisplayJob).where(*predicate(key)).order_by(DisplayJob.generation.desc()).limit(1))
     if old is not None:
         task = await tx.get(Task, old.task_id)
         if task is None:
@@ -122,6 +129,9 @@ async def enqueue(tx, session, request):
         marker = await new_task(tx, policy, session, key, legacy=True)
         await append_event(tx, marker)
         return {"state": "legacy_retained", "task_id": None, "status": "not_queued"}
+    if await tx.scalar(select(DisplayJob.task_id).where(DisplayJob.policy_id == policy.id,
+            DisplayJob.previous_task_id.is_not(None)).limit(1)):
+        raise ControlError(409, "mail_display_reauthorization_named_sources_only")
     async with authority.current(tx, policy.id, session.id) as (policy, _):
         # Recheck after all source/actor waits; no user supplied body or scope.
         mail, original, fresh = await authority.original(tx, policy, value.mail_id)
@@ -161,6 +171,8 @@ async def reconcile(user_id):
             DisplayPolicy.environment_id == settings().environment, DisplayPolicy.enabled,
             DisplayPolicy.source_revision == settings().control_source_revision,
             DisplayPolicy.instruction_sha256 == POLICY_SHA, DisplayPolicy.expires_at > now)
+            .where(~select(DisplayJob.task_id).where(DisplayJob.policy_id == DisplayPolicy.id,
+                DisplayJob.previous_task_id.is_not(None)).exists())
             .order_by(DisplayPolicy.approved_at.desc(), DisplayPolicy.id).limit(32)))
         seen = set()
         for policy in policies:

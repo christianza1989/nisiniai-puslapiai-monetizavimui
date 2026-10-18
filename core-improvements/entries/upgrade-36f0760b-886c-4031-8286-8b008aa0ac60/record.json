@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Six-role workflow dispatch exceptions discarded the canonical failed Task/Run receipt from the report although native and aggregate accounting retained known usage; capture bounded historical metadata while preserving the original error/cancellation.",
+  "category": "code",
+  "evidence": [
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md: failed dispatch receipt contract and diagnostic limits",
+    "Before local offline regression2FAIL/2PASS: failed receipt lacked status despite readable known execution; original dispatch/cancellation identity already preserved",
+    "Canonical actual writer Task failed after a succeeded settled ModelAttempt; ModelRun and aggregate ledger already retain known usage. Historical completion cause remains unproved; no lost-accounting repair is claimed."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_calibration.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_failed_receipt.py",
+    "agent-business-core/runtime/tests/test_acquisition_failed_receipts_pg.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/214",
+  "rollback": "Scoped revert of workflow report helper/tests/docs only. Preserve all existing Tasks/Runs/attempts/ledger rows/frozen harness/old reports; no retry, usage refund, authority change or stage extension.",
+  "id": "upgrade-36f0760b-886c-4031-8286-8b008aa0ac60",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "ba4d1c6317e67300f8ffb0ed98102608d37ecf75",
+  "createdAt": "2026-10-18T17:41:29.830Z"
+}

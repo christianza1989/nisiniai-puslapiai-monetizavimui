@@ -4,6 +4,7 @@ No authority, allowance, provider or worker is created here. The admitted caller
 supplies targeted common-worker dispatch and independently sealed private input.
 """
 
+import asyncio
 from datetime import datetime
 from email.message import EmailMessage
 from typing import Literal
@@ -228,6 +229,23 @@ class SixRoleWorkflow:
     def recipient_input(self, case, transcript, turn):
         return recipient_context(case, transcript, turn)
 
+    async def _read_receipt(self, task_id, receipt, *, include_result=True):
+        async with scope(token=token_hash(self.token)) as tx:
+            actor = await customer_session(tx, self.token)
+            view = await agent_role_tasks.read(tx, actor, task_id)
+            receipt.update(
+                status=view["task"]["status"], failure_code=view["task"]["failure_code"],
+                execution=view["execution"],
+            )
+            retained = await agent_role_tasks.read_request(tx, actor, task_id)
+        receipt.update(
+            input_sha256=digest(retained.model_dump(mode="json")),
+            consumed_parents=[parent.model_dump(mode="json") for parent in retained.parents],
+        )
+        if include_result and view["task"]["status"] == "succeeded":
+            receipt["result"] = view["task"]["result"]
+        return view
+
     async def _submit(self, role, campaign, case, parent=None, mail=None):
         self.sequence += 1
         request = {
@@ -248,22 +266,24 @@ class SixRoleWorkflow:
             actor = await customer_session(tx, self.token)
             task = await agent_role_tasks.submit(tx, actor, request)
             task_id, state = task.id, task.status
-        self.receipts.append({"task_id": task_id, "role": role})
-        if state == "queued":
-            await self.dispatch(task_id, KIND)
-        async with scope(token=token_hash(self.token)) as tx:
-            actor = await customer_session(tx, self.token)
-            view = await agent_role_tasks.read(tx, actor, task_id)
-            retained = await agent_role_tasks.read_request(tx, actor, task_id)
+        receipt = {"task_id": task_id, "role": role}
+        self.receipts.append(receipt)
+        try:
+            if state == "queued":
+                await self.dispatch(task_id, KIND)
+        except BaseException:
+            try:
+                # Historical metadata only: never retry dispatch or replace its
+                # original error/cancellation if history is unavailable/slow.
+                async with asyncio.timeout(5):
+                    await self._read_receipt(task_id, receipt, include_result=False)
+            except BaseException:
+                pass
+            raise
+        view = await self._read_receipt(task_id, receipt)
         if view["task"]["status"] != "succeeded":
             raise RunnerError("agent_role_calibration_task_incomplete")
-        result = view["task"]["result"]
-        self.receipts[-1].update(
-            execution=view["execution"], result=result,
-            input_sha256=digest(retained.model_dump(mode="json")),
-            consumed_parents=[parent.model_dump(mode="json") for parent in retained.parents],
-        )
-        return result
+        return view["task"]["result"]
 
     async def prepare(self, campaign, case, now):
         self.validate(campaign, case)

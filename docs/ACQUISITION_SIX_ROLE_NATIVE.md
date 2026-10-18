@@ -236,3 +236,19 @@ fresh grants use remaining role caps. Only the new phase/SQL-grant comparison us
 the sealed post-prefix suffix. A new source, exact parent STOP/GO/prefix proof,
 no-dispatch preflight and manual Root GO are required; unknown usage is never
 resumed or refunded. These private controller gates create no new budget.
+
+Failed dispatches now receive one best-effort historical receipt read, bounded
+to five seconds, before the identical original exception or cancellation is
+re-raised. Task status/failure code and ModelRun execution/usage are attached as
+soon as the canonical read succeeds; typed input SHA/consumed parents follow.
+Normal reads attach this metadata before the success-status check. Unavailable,
+slow or cancelled cleanup cannot replace the original error. The fallback never
+promotes a result, even if it observes a succeeded Task, and never retries work.
+
+This repairs workflow-report visibility only. Canonical ModelAttempt/ModelRun and
+the aggregate ledger already retained the actual writer's known token usage.
+The underlying completion failure's historical cause remains unproved because
+its optional guard trace was not enabled. An explicitly injected completion
+denial in isolated PG verifies failed receipts after real inert settlement; it
+does not establish that injection as the historical cause. No authority, worker,
+lease, provider, frozen controller, old receipt or stage accounting is changed.

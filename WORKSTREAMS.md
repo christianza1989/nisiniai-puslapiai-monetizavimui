@@ -2244,3 +2244,13 @@ canonical typed inputSHA/consumed parent hashes. No protected body read: custodi
 reported protectedpersona3/cue-present0 only. Own source/inert QA has0paid calls.
 Ignored controller explicit fixed4 continuation retains global120/native96/role
 use and original17:45:00.815856UTC wholewall; Root owns final merge/admission/GO.
+
+2026-10-18 failed-workflow receipt observability window: Root authorized only
+agent_role_calibration.py, focused offline/retainedPG tests and docs/journal.
+Actual knownwriter ModelAttempt/Run AND ledger usage are completeknown; report
+lost failedTask status/Runreceipt when dispatch raised. Preserve original error
+or cancellation, bounded best-effort canonical historical read, no result
+promotion/retry/authority or accounting change. Actual completion cause remains
+UNPROVED; guard observation was off. All frozen source6246/controller/stage and
+8charged calls stay history; no further paid admission. Dedicated47be_final QA
+only injects explicit post-settlement completion denial with inert provider.

@@ -1,3 +1,18 @@
+## Current-owner Gmail local adapter — Root2026-10-18 in progress
+
+Human explicitly requested all-six calibration, Gmail send/reply and Lithuanian
+UI. Own codex/verslomatika-gmail-owner-20261018 frombe6d7d30; paired freshness
+PASS14:33UTC main533/publicec8 companion255fea0. Issue66/comment6250917480
+reserves new mail_provider/, gmail_owner.py CLI, config flag, canonical mailbox
+sender/reply source seams, direct cryptography manifest/lock, focused offline/PG
+tests and separate journal. No helper-owned acquisition/0050/dialogue files.
+Defaultoff local current-owner self-test; encrypted private tokens, no second
+CRM/calibration/provider task engine, no personal inbox-wide import or campaign.
+Owner approved Google policy and Desktop OAuth client creation; access grant and
+actual send/reply/LT UI remain separate. Inert provider29offline+7PG PASS; existing
+mail regressions40PASS. First fixture errors retained. Source-only until clean
+commit, actual adoption and independent live acceptance; no main merge claim.
+
 ## Durable LT mail display schema — helper 2026-10-18 source complete
 
 Root-assigned issue66/comment6243877013; own NEW managed worktree/branch

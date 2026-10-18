@@ -1,5 +1,11 @@
 # Bendras nišinių svetainių paštas
 
+2026-10-18 naujas vietinis adapteris: [Gmail savininko bandymo sutartis](docs/GMAIL_LOCAL_OWNER_TEST.md).
+Jis pakartotinai naudoja Case/MailMessage ir dabartinio savininko teises;
+OAuth prieiga nesuteikia kampanijų, masinio inbox importo ar automatinio atsakymo
+leidimo. Priėmimą, neaiškų siuntimo rezultatą, tikrą gavimą ir lietuvišką rodymą
+tikrinti atskirai. Ankstesni SMTP/D1 įrodymai žemiau lieka su savo data ir apimtimi.
+
 2026-09-30 savininko patvirtintas bendras kontaktas **info@pinet.lt**, operatoriaus pavadinimas **MB Pinet**. Naudojama jau egzistuojanti Hostinger dėžutė; nauja pašto paskyra nesukurta ir papildoma mokama siuntimo paslauga neprijungta. Viešos užklausos nepaverčiamos pardavimo ar tiekimo pažadu.
 
 ## Įgyvendinta

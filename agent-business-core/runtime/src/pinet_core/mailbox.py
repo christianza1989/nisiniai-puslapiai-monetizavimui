@@ -9,7 +9,7 @@ import smtplib
 from urllib.parse import urlsplit
 
 from fastapi import HTTPException
-from pydantic import EmailStr, Field, field_validator
+from pydantic import EmailStr, Field, TypeAdapter, field_validator
 from sqlalchemy import select, text
 
 from .config import settings
@@ -50,7 +50,10 @@ def fingerprint(payload):
     return digest(json.dumps(fields, sort_keys=True))
 
 
-async def prepare(tx, item, value: DraftInput):
+async def prepare(tx, item, value: DraftInput, *, verified_sender=None):
+    # Only a trusted transport adapter supplies an authenticated account identity.
+    # Browser DraftInput has no sender override; legacy SMTP keeps its exact default.
+    sender = str(TypeAdapter(EmailStr).validate_python(verified_sender)) if verified_sender is not None else settings().sender_email
     if not value.synthetic:
         raise HTTPException(409, "production_commercial_mail_not_enabled")
     if value.customer_facing:
@@ -67,7 +70,7 @@ async def prepare(tx, item, value: DraftInput):
                     payload={"source": "owner_text_lab", "test": True})
         tx.add(case)
         await tx.flush()
-    payload = {"recipient": str(value.recipient), "sender": settings().sender_email,
+    payload = {"recipient": str(value.recipient), "sender": sender,
                "sender_name": settings().sender_name,
                "subject": value.subject if value.customer_facing else "[TESTAS] " + value.subject + " · " + case.id[:8],
                "body": value.body if value.customer_facing else "SINTETINIS BANDYMAS. Mokėti nereikia; užsakymo nėra.\n\n" + value.body,
@@ -175,10 +178,15 @@ async def send_test(business_id, message_id):
         return public(message)
 
 
-async def receive_reply(tx, original, provider_id, sender, subject, body, *, references=None, recipient=None):
+async def receive_reply(tx, original, provider_id, sender, subject, body, *, references=None, recipient=None,
+                        source_ref="authenticated_imap_reply"):
     """Called only by authenticated mailbox connector after header/thread matching."""
     from . import conversation_mail
+    if source_ref not in {"authenticated_imap_reply", "authenticated_gmail_reply"}:
+        raise ValueError("reply_transport_source_invalid")
     if original and conversation_mail.binding(original.payload):
+        if source_ref != "authenticated_imap_reply":
+            raise ValueError("conversation_gmail_binding_not_supported")
         return await conversation_mail.receive_reply(tx, original, provider_id, sender, subject, body,
             references=references, recipient=recipient)
     if not original or not conversation_mail.valid_message_id(provider_id):
@@ -193,7 +201,7 @@ async def receive_reply(tx, original, provider_id, sender, subject, body, *, ref
             "body": body[:16000], "in_reply_to": original.message_id,
             "synthetic": original.payload["synthetic"],
             "customer_facing": original.payload.get("customer_facing", False),
-            "source_ref": "authenticated_imap_reply"}
+            "source_ref": source_ref}
         if (existing.direction != "inbound" or existing.case_id != original.case_id
                 or any(existing.payload.get(k) != v for k, v in expected.items())):
             raise ValueError("reply_idempotency_conflict")
@@ -203,7 +211,7 @@ async def receive_reply(tx, original, provider_id, sender, subject, body, *, ref
         payload={"sender": sender, "recipient": original.payload["sender"], "subject": subject[:200],
                  "body": body[:16000], "in_reply_to": original.message_id, "synthetic": original.payload["synthetic"],
                  "customer_facing": original.payload.get("customer_facing", False),
-                 "source_ref": "authenticated_imap_reply"})
+                 "source_ref": source_ref})
     tx.add(message)
     await tx.flush()
     case = await tx.get(Case, original.case_id, with_for_update=True)

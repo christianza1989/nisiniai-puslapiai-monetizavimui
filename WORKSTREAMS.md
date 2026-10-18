@@ -1859,3 +1859,12 @@ Root keeps customer_agents readiness/UI/operating adoption. All runtime flags de
 off; isolated inert PG only. No paid calls, source holdout authoring, old174ledger
 access/reset, live channels or operating DB writes. Historical fixtures are never
 reparented to the Root's actual Business or saved Configs.
+
+2026-10-18 handoff: runtime frozen at0ef135f; current22 native cases have split
+PASS evidence (first12 run23, remaining10 run25), including real-heartbeat18s
+under unchanged15s lease. Current256offline+67subtests and migrated0048 legacy
+99PASS/1explicit0045skip/1paidcase-deselected. Fresh47→48 retained full-row hashes.
+First source_unavailable pre-admission failure preserved; see
+docs/ACQUISITION_NATIVE_CHAIN.md. Implementation window closes with scoped draft
+PR to Root's integration branch; review/integration and actual adoption remain
+Root-owned. No live/paid/protected run or operating migration was performed.

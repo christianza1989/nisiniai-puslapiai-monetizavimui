@@ -508,3 +508,35 @@ async def test_known_lab_workflow_uses_native_tasks_and_independent_auxiliaries(
         await changed_workflow.prepare(Campaign.model_validate(changed["campaign"]), changed_workflow.case, utcnow())
     assert len(fake.calls) == before
     assert changed_workflow.provenance["protected_raw_sha256"] == workflow.provenance["protected_raw_sha256"]
+
+
+async def test_native_role_outlives_default_lease_with_real_heartbeat(native):
+    from time import monotonic
+
+    from pinet_core.models import utcnow
+    from pinet_core.tasks.service import lease_deadline
+    p, fake, windows, elapsed = native, ReplyRoles(), [], []
+    assert 14.5 < (lease_deadline()-utcnow()).total_seconds() <= 15
+    async def sustained(role, schema, instruction, data, heartbeat, deadline):
+        if role == "writer":
+            started = monotonic()
+            while monotonic()-started < 18:
+                assert await heartbeat()
+                async with scope(user=p["user_id"]) as tx:
+                    lease, now = (await tx.execute(select(Task.lease_until, func.clock_timestamp()).where(
+                        Task.kind == KIND, Task.status == "running"))).one()
+                    windows.append((lease-now).total_seconds())
+                await asyncio.sleep(2)
+            elapsed.append(monotonic()-started)
+        return await fake(role, schema, instruction, data, heartbeat, deadline)
+    initial, _ = await email(p, sustained)
+    task, run, attempts = await retained(p, initial.id)
+    assert elapsed[0] >= 18 and len(windows) >= 2 and all(0 < seconds <= 15.5 for seconds in windows)
+    assert task.status == run.status == "succeeded" and task.result["state"] == "captured"
+    assert [a.role for a in attempts] == ["writer", "reviewer"] and all(a.state == "succeeded" for a in attempts)
+    assert (attempts[0].finished_at-attempts[0].reserved_at).total_seconds() >= 18
+    assert run.usage["model_calls"] == 2 and run.usage["input_tokens"] == 10 and run.usage["unknown_usage_calls"] == 0
+    assert fake.calls == ["researcher", "reviewer", "writer", "reviewer"]
+    async with db.transaction(p["scope"].business_id, p["scope"].environment_id) as tx:
+        assert await tx.scalar(select(func.count()).select_from(Case)) == 1
+        assert await tx.scalar(select(func.count()).select_from(MailMessage)) == 1

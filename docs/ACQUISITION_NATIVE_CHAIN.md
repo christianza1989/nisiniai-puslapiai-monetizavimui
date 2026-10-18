@@ -1,129 +1,164 @@
-# Native acquisition chain — WIP checkpoint
+# Native acquisition chain — source handoff
 
-2026-10-18. NOT VERIFIED / NOT DELIVERED. Local checkpoint requested during
-machine-wide low-disk containment. No push, paid model, channel, operating DB or
-closed174/180 ledger changes. Root owns actual operating adoption and the two real
-saved Configs; tests use separate newly created synthetic owner/config identities.
+2026-10-18. Source-local implementation for issue 66, scope comment 6245040472,
+upgrade681076b1-7851-493d-8cde-76fd7775d9a3. Root owns customer-agent readiness,
+portal UI, actual saved Configs and operating adoption. This packet uses newly
+created synthetic owner/config identities in an isolated owned PostgreSQL server.
+It does not claim paid calibration, channel delivery, F1 or operating acceptance.
 
-Base97d8c756f01a172bf844464a03a0e6eda848b8eb; private main533597c10e290a2a09a522ad348e19c9968aa9d5.
-Companion255fea0813bf1aabeaeea2f2de0b29564118f2fc/main ec8a9c032fe926d1d9722802d8eb26fa8bd02937.
-Scope issue66/comment6245040472, upgrade681076b1-7851-493d-8cde-76fd7775d9a3.
+Frozen implementation base: `97d8c756f01a172bf844464a03a0e6eda848b8eb`.
+Private main: `533597c10e290a2a09a522ad348e19c9968aa9d5`.
+Read-only companion: `255fea0813bf1aabeaeea2f2de0b29564118f2fc`, based on public
+main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Final runtime source is commit
+`0ef135fa9c1e1d1716e951e41409e4ddbe8f6246`; the later handoff adds the sustained
+heartbeat regression, this document and verification events.
 
-## Implemented but incomplete
+## Behavior and authority
 
-- Optional typed research/email stages preserve omitted legacy wire fields.
-- One current Config/authorization per phase; shared parent proof is reused only
-  with exact common scope. Peer Agent/Config/auth are freshly derived. After the
-  last Git/provenance wait, both authorizations receive a fresh SQL fence.
-- Research runs researcher/reviewer and creates no mail/Case. Email consumes its
-  exact immutable handoff, then writer/reviewer. Campaign/prospect remain the same.
-- Additive0048 keeps0046/0047 installers unchanged; phase and per-inbound indexes,
-  fixed reply role/adapter, current-pair fences, retained known/unknown accounting.
-- Reply uses the common worker and caller-owned Correspondence transaction.
-  Standalone apply_decision remains supported; original inbound WorkReceipt stays.
-- Frozen acquisition manifest validation and optional hooks reuse run_case.
-  Fresh protected cases have NOT been authored/read. Native CLI supports metadata
-  inspection only; it refuses paid native calibration dispatch.
-- All new flags default off. No site_chat/Profile/full-F1 gate changes.
+The existing normal-owner Task/Run flow now supports three typed phases:
 
-## Actual development evidence
+1. Research runs researcher/reviewer under the current customer_research Config
+   and authorization. It creates no canonical mail or Case.
+2. Email consumes that exact successful immutable Task/Run/output handoff, then
+   runs writer/reviewer under the distinct current email Config/authorization.
+   Successful capture uses the existing canonical Case and MailMessage surfaces.
+3. Reply resolves the canonical initial email Task, Case, latest inbound, revision
+   and body fingerprint, then runs reply_coordinator/reviewer through the common
+   worker. Its decision, captured mail, Task result and Run completion share the
+   caller-owned transaction. Standalone Correspondence callers remain supported.
 
-Own retained container wellness-native-chain-qa-20261018, id
-8f8488391a79447ab3bd8effc15b446de817a7097d32e14b8125faae2e4aabdd,
-loopback15549, database pinet_native_chain_20261018. Private configuration and logs
-are under this worktree's runtime/artifacts/native-chain-qa; never copy to Git.
-0047→0048 applied after preserved development failures. Native helper definitions
-were subsequently refreshed in this owned development DB; fresh final migration
-acceptance remains required. No operating migration was performed.
+Both Configs must share the exact owner/Creation/Registration/Module/private
+registration/source scope. Peer Config identity and expiry are checked freshly.
+Completion reuses only the already-locked immutable parent proof in the same root
+transaction; it never caches Git, private-file, target, lease or SQL admission.
+After the final Git wait, fresh sealed bytes and current pair/target/inbound SQL
+are checked before effects. Campaign stop, recipient containment, configuration,
+authorization, grant and source drift prevent stale effects.
 
-Retained run0/1: initial migration CASE/literal bind failures; run3: SQL JSON
-operator precedence regression affecting legacy binding; run4: missing fixture
-import; run5: redundant parent proof exceeded15s lease (2 charged known calls,
-retained10 input/4 output tokens). Lease was not widened. Later failures preserve
-fixture RLS context, private-function privilege and receipt-field corrections.
+The common worker retains its 15-second lease. Exact-task dispatch is optional;
+existing no-argument polling is preserved. Known and unknown model usage remains
+charged on cancellation, denial and rollback. Campaign limits cover research,
+email and reply together. Exact request replay returns retained results without
+new dispatch; new requests cannot spend again for retained phase/target/inbound.
 
-Last full-path run10 reached exact R2/E2/reply2, one Case/three MailMessage rows,
-phase-own authorization, known reply accounting and exact replay assertions. It
-FAILED the final new-request denial-code regex: actual correspondence_decision_stale
-was too narrowly expected as acquisition_reply_*. Test oracle corrected. This is
-not a passing test claim. No final full native/legacy/offline suite has passed.
+Additive migration0048 extends recognized0047 function definitions, Task kinds,
+role barriers and phase/inbound unique indexes. Original0046/0047 migrations and
+installers are unchanged. Historical rows are retained. Downgrade intentionally
+refuses to erase native history; source rollback requires retained-schema-aware
+code. All new activation flags default off.
 
-The subsequent batch was contained under Root's low-space instruction by stopping
-only owned QA Python tree33832 and descendants. PostgreSQL then showed no open
-sessions/transactions in the owned DB. Files and committed synthetic history stay.
+## Protected native calibration protocol
 
-## Exact remaining work after external recovery
+`NativeWorkflow` supplies an optional hook to the existing maintained
+`dialogue_lab.run_case`; it does not create a second model engine. Its trusted
+caller uses normal-owner admission and dispatches the exact common Task. Role
+prompts receive campaign/prospect/transcript, never persona or expected labels.
+Evaluator reports include actual Task/Run receipts and native provenance.
 
-### Native calibration protocol
-
-The runtime manifest is `acquisition-native-calibration.v1`, with exact
+A runtime manifest has version `acquisition-native-calibration.v1`, exact
 source_revision, native pair, derived bindings, runtime campaign, original cases,
-cases fingerprint (`corpus_sha256`), current evaluator hash, and
-`protected_source: {path, sha256}`. The latter references original raw JSON with
-exact keys synthetic/now/campaign/cases. Both files must be bounded private runtime
-artifacts, with no symlink or Windows reparse path. The raw source hash, original
-cases, original aware timestamp and campaign facts stay unchanged. Only an
-explicit new runtime campaign ID may differ. A manifest is not paid authority.
+`corpus_sha256`, current evaluator hash and `protected_source: {path, sha256}`.
+Both files must be bounded private runtime artifacts without symlink or Windows
+reparse paths. Original protected JSON has exactly synthetic/now/campaign/cases,
+synthetic=true, an aware original timestamp and unchanged cases/campaign facts.
+Only an explicitly admitted new runtime campaign ID may differ. Malformed input
+diagnostics are sanitized to avoid printing protected persona or labels.
 
-The author freezes actual Registration site IDs before sealing. The trusted
-binder may copy original bytes and verify hashes without printing or presenting
-protected payload to the proposer/controller. Native Task admission rederives both
-actual Config/Auth/Module/owner/source bindings before reserving a model attempt.
-Agent role prompts receive campaign/prospect/transcript, never persona or labels.
+The author freezes actual Registration site identity before sealing. Native
+manifests accept that matching identity with strict canonical .test recipients
+and synthetic evidence/fact bounds; legacy standalone synthetic-site validation
+is preserved. A trusted binder may copy original bytes and verify hashes without
+presenting the payload to the implementation agent. Every native admission
+rederives current Config/Auth/Module/owner/source bindings. Original source time
+is provenance; actual admission and expiry use current database time.
 
-An exact episode reuses deterministic request UUIDs; existing whole-run output
-directories cannot be overwritten. A new episode in the same campaign/target is
-rejected by the normal retained-stage barrier. A different runtime manifest cannot
-reuse an authorization already bound to an earlier manifest. New experiments need
-fresh explicit campaign/authorization/private-registration admission and a new
-runtime manifest; original protected bytes/seal remain intact, with raw/cases/runtime
-campaign hashes and original source time recorded in native provenance. Reusing
-those cases is regression evidence, not a newly blind corpus.
+An exact episode reuses deterministic request UUIDs. Existing report directories
+cannot be overwritten. A new episode for the same campaign/target encounters the
+retained-stage barrier. An authorization bound to one manifest cannot authorize a
+different manifest. A new experiment needs fresh explicit campaign/authorization
+and private-registration admission plus a new manifest; original bytes/seal stay
+intact. Reusing those cases is regression evidence, not a newly blind corpus.
+Contact policy is shared by recipient within the exact private adapter scope;
+retained history must never be cleared or case aliases invented to evade it.
 
-Within a campaign, scenarios need distinct organization targets. Contact policy is
-shared by recipient across campaigns in the exact private adapter scope: repeated
-recipients can require a fresh explicitly admitted experiment scope. Never clear
-retained policy/history, alter protected cases, or invent aliases to avoid dedup.
+The CLI `--native-binding --list` inspects metadata only and refuses native model
+dispatch. Persona/evaluator execution needs a separately admitted allowance and a
+trusted caller. No new allowance is implied here; the closed historical174/180
+ledger stays untouched. The independently authored fresh six-case corpus has not
+been opened or executed by this implementation agent. Known unit fixtures marked
+holdout are synthetic fixtures, not fresh protected quality evidence.
 
-`NativeWorkflow` supplies the existing `run_case(..., workflow=...)` hook. Its
-trusted dispatcher targets the exact common Task; no second model engine exists.
-The CLI's `--native-binding --list` only inspects metadata and refuses native model
-dispatch. Persona/evaluator execution requires separate explicit allowance and a
-trusted caller; the closed historical ledger is never implicitly reused.
+## Verification evidence
 
-Resume checkpoint 04:14 UTC: disk containment lifted; ongoing groups still require
-at least1.5GiB free and run sequentially. Run11 reached3PASS/1 fixture-default FAIL;
-offline run12 has13PASS. Run13 has3PASS/6FAIL: five usage-shape test oracle errors
-were corrected; rollback reached worker_interrupted because completion repeated
-full accepted-proof/Node checks under the unchanged15s lease. The implementation
-now reuses only already-locked immutable parents within the exact root completion
-transaction, retaining fresh private-file/Git/pair SQL/target/inbound checks.
-This checkpoint is WIP, with fresh regressions still required.
+Owned retained container: `wellness-native-chain-qa-20261018`, id
+`8f8488391a79447ab3bd8effc15b446de817a7097d32e14b8125faae2e4aabdd`, loopback15549.
+Final acceptance database: `pinet_acq_work_20261018042000`. Earlier development
+DB `pinet_native_chain_20261018` used helper refreshes and is not the final
+migration proof. Private URLs, passwords, source observations and raw logs remain
+ignored in `agent-business-core/runtime/artifacts/native-chain-qa/`.
 
-Native manifests now retain the actual registered Creation site identity. The
-legacy synthetic-site prefix gate is preserved; only the source-owned native
-workflow uses matching manifest site identity and the same .test data bounds.
-Every native Task still proves both actual current Config/authorization bindings
-through normal-owner admission before model reservation. CLI native mode remains
-metadata-only until a separate auxiliary persona/evaluator allowance is admitted.
-No fresh protected corpus has been authored/read by this implementation agent.
+- Fresh schema 0047: 15 legacy preparation PG tests passed (run19).
+- Fresh 0047→0048 migration: full-row hashes and counts unchanged for 15
+  authorizations, 16 bindings, 24 attempts, 16 Tasks and 13 Runs. No helper refresh
+  was applied to this acceptance DB after migration.
+- Current source 0ef: 256 acquisition/mail offline tests plus 67 subtests passed
+  (run22). Native offline cases are included.
+- Current source 0ef: all 22 native PG cases have passing evidence across run23
+  first 12 and run25 remaining 10 (350.75s). This is split evidence, not a claim
+  that a single uninterrupted 22-case invocation passed.
+- Native coverage includes exact R2→E2→reply2, one Case/three captured messages,
+  normal-owner mail-view list/detail and Case correspondence projections,
+  foreign-owner404, missing/unavailable translation without invented text,
+  immutable handoff tampering, late Config/auth/grant/source drift, stale inbound,
+  failed review, stop/privacy containment, cancellation known/unknown usage,
+  rollback, queued email, shared campaign limit, exact dispatch and last-Git
+  drift, sealed native lab/replay and retained-manifest denial.
+- Sustained writer test passed with actual common-worker heartbeats for at least
+  18 seconds, database lease windows in (0,15.5] seconds, unchanged 15-second default,
+  four exact R2/E2 calls, one Case/mail and no unknown usage (run25).
+- Legacy regression on migrated 0048: 99 passed, 1 skipped, 1 deselected in
+  616.40s (run26). This covers model preparation/schema, common control Tasks,
+  mail-view, canonical correspondence and standalone headless mail. The skipped
+  case is explicit 0045 predecessor reproduction; the deselected case is the
+  paid provider test. No existing test source was changed to obtain this result.
+- Scoped Ruff over every changed Python file passed. Original 0046/0047
+  migration/installers have an empty diff against the frozen base.
 
-1. Fresh fetch/ancestry and current contracts; inspect preserved WIP and own QA
-   identity before reusing it. Do not touch old174 ledger or foreign services.
-2. Harden replay fingerprint/current lineage checks and precise caller-owned
-   completion rollback; inspect source once more before accepting it.
-3. Finish and exercise native manifest/workflow hooks through the existing lab;
-   no new engine, no fresh holdout authorship by the implementing agent. Ensure
-   dispatch targets the intended Task, and persona/evaluator have an independent
-   separately authorized future allowance. No model permission follows this file.
-4. Add offline tests plus PG negatives: late peer Config/auth/grant/source drift
-   after final proof/IO; failed independent review; stale inbound; stop/privacy;
-   replay/dedup; cancellation and unknown usage; rollback of canonical effects
-   with known accounting retained; shared campaign ceiling including reply.
-5. Run a fresh0047→0048 migration, the full native suite, and relevant old model,
-   correspondence/worker/mail tests. Preserve every first FAIL and raw log.
-6. Update this WIP status only with actual evidence, append journal verification,
-   exact-stage safety, committed coverage, freshness and scoped Git/PR handoff.
+All model adapters in these checks are inert. No provider, SMTP, IMAP, discovery,
+scheduler, live recipient or operating data was used. No manual browser/provider
+or actual native calibration acceptance follows from these checks.
 
-Machine restart/recovery is outside this source packet. Temporary containment is
-not completion or cancellation of the authorized implementation.
+### Preserved failures and limits
+
+Raw run0–10 preserve migration CASE/bind and SQL-precedence failures, fixture/RLS,
+private-function privilege and receipt-field corrections. Repeated expensive
+parent proofs exceeded the existing 15-second lease; correction reuses only locked
+immutable parents within exact completion transaction, without widening lease.
+Run11/13 retained fixture-default and usage-oracle failures. Run14 passed rollback,
+last-proof revoke and known native lab cases; run15 passed the then-current 21
+native cases. Run17 failed from missing scripts PYTHONPATH; corrected run18
+passed 255 offline tests plus 67 subtests. These older passes do not replace current
+source evidence.
+
+Run21 reached the positive chain and owner GET assertions but failed the final
+negative denial-code expectation. Commit0ef moved transcript ordering validation
+after retained-decision detection, preserving the established stale/decided code.
+Run23 then passed 12 cases and stopped on native_sources/source_unavailable during
+normal-owner proof before the next Task/attempt admission. Three identical fresh
+read-only source observations passed afterward (run24); no gate or timeout was
+weakened. Run25 passed the remaining nine cases plus sustained heartbeat test.
+Original failure logs remain unchanged; no root cause is asserted for that one
+unreproduced source observation failure.
+
+Earlier machine-wide disk containment paused the owned QA Python tree only.
+Subsequent test/write groups required at least 1.5GiB free and ran sequentially.
+No foreign processes, databases or original closed budget history were changed.
+
+## Review and adoption
+
+This is a scoped source handoff to Root's integration branch, not main delivery
+or operating adoption. Root must review/integrate it and separately record any
+actual native Config/Auth allowance, protected-run execution, UI/provider proof
+and deployment. Preserve the initial/final protected byte hashes and first
+failures when admitting a later experiment. Do not retarget synthetic fixtures to
+Root's saved business/config identities. No companion source changes are needed.

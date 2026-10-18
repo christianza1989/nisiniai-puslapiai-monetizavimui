@@ -94,55 +94,17 @@ async def test_mail_owner_revocation_cross_tenant_and_scope_cursors(mail_pilot):
     assert (await client.get(base+"/"+p["rows"][0].id, headers=headers)).status_code == 404
 
 
-async def test_operator_batch_roundtrip_binds_full_test_environment(mail_pilot, monkeypatch, tmp_path):
-    import importlib.util
-    import json
-    from pathlib import Path
-    from types import SimpleNamespace
-
-    import httpx
-
-    from pinet_core.file_hash import sha256_file
-
+async def test_original_digest_binds_raw_environment_despite_public_test_normalization(mail_pilot):
     p = mail_pilot
     headers = await login(p)
-    path = Path(__file__).resolve().parents[1] / "scripts/mail_display_translate.py"
-    spec = importlib.util.spec_from_file_location("mail_display_batch_pg", path)
-    batch = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(batch)
-    client_type = httpx.AsyncClient
-    async def request_to_api(request):
-        return await p["client"].get(request.url.path, headers=dict(request.headers))
-    monkeypatch.setattr(batch.httpx, "AsyncClient", lambda **kwargs: client_type(
-        **kwargs, transport=httpx.MockTransport(request_to_api)))
-    monkeypatch.setattr(batch, "git_source_observation", lambda root: SimpleNamespace(porcelain="", head="a" * 40))
-    calls = []
-    async def translate(original, **kwargs):
-        calls.append(kwargs["environment"])
-        assert kwargs["environment"] == settings().environment
-        assert await kwargs["still_authorized"]()
-        return Record(version="mail-display-translation.v1", business_id=p["business_id"],
-            environment=settings().environment, mail_id=original["mail_id"],
-            source_sha256=source_digest(p["business_id"], settings().environment, original),
-            target_language="lt", translated_at=utcnow(), model="gpt-6.1-sol", reasoning_effort="high",
-            instruction_sha256=POLICY_SHA, text=TranslatedText(subject="2 kubilai", body="Nepatvirtinta: 2 kubilai."),
-            usage={"input_tokens": 1, "output_tokens": 2})
-    monkeypatch.setattr(batch, "translate_once", translate)
-    binary, session = tmp_path / "fake-cli", tmp_path / "session.json"
-    binary.write_bytes(b"synthetic-never-executed")
-    session.write_text(json.dumps({"access_token": headers["Authorization"][7:]}))
     row = p["rows"][-1]
     before = deepcopy(row.payload)
-    args = SimpleNamespace(api_base="http://127.0.0.1", business_id=p["business_id"], mail_id=row.id,
-        environment_id=settings().environment, executable=str(binary), executable_sha256=sha256_file(binary),
-        session_file=str(session), output_root=str(p["root"]))
-    await batch.run(args)
     response = await p["client"].get(f"/operator/v2/businesses/{p['business_id']}/mail/{row.id}", headers=headers)
     assert response.status_code == 200, response.text
     assert response.json()["environment"] == "test"
-    assert response.json()["data"]["translation"]["status"] == "ready"
-    assert response.json()["data"]["translation"]["body"] == "Nepatvirtinta: 2 kubilai."
-    assert response.json()["data"]["body"] == before["body"]
-    assert calls == [settings().environment]
+    data = response.json()["data"]
+    assert data["translation"]["source_sha256"] == source_digest(p["business_id"], settings().environment, data)
+    assert data["translation"]["source_sha256"] != source_digest(p["business_id"], "test", data)
+    assert data["body"] == before["body"]
     async with db.transaction(p["business_id"], settings().environment) as tx:
         assert (await tx.get(MailMessage, row.id)).payload == before

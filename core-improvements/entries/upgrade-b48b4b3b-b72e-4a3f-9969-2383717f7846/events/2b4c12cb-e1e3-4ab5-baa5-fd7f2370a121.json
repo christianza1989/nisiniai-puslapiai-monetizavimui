@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root source fromd415c87 now has default-off display controls; separate explicit policy/authority/CLI; common-worker materialization, one charged Job/Run and atomic DB-Record projection; compatibility CLI routed to the same job, legacy sidecars/claims retained. Helper owns0047 schema in separate clean worktree. The original runner failure was reproduced1FAIL0.51s (post-execute authority rejection lost known11/5 usage), raw SHA5e154e25ca6b371cb213b7def0cffdee08f3b10d7c6eb3de959b41904f1f346c. Fixed runner retains bounded observed receipts on validation/final-authority rejection, accepts unknown usage asNone, and supports bounded remaining seconds. Initial29 display/legacy pure tests PASS1.41s raw SHA430260e6ccb9b2207387dec94e9fd34ae8beb3a42f8fd1cf0e452e8aa77dc656 before later task integration/CLI retirement; this is not current whole-link acceptance. New integrated tests cover normal register/verify owner, no GET dispatch, one-task dedup/retained paid claims, known/unknown call, stop/grant/source/binding failure, commit visibility, cancellation and latest explicit cap. Schema-model imports remain a helper-owned frozen dependency; full isolated0047 PG is pending. Source-only, no provider/SMTP/IMAP/operating writes or old174 ledger renewal.",
+  "eventId": "2b4c12cb-e1e3-4ab5-baa5-fd7f2370a121",
+  "sequence": 2,
+  "at": "2026-10-18T01:05:35.371Z"
+}

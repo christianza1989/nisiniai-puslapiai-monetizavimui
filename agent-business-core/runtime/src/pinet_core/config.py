@@ -36,6 +36,10 @@ class Settings(BaseSettings):
     customer_outbox_directory: str = "artifacts/customer-outbox"
     # Optional private display copies; mail GET never dispatches a model.
     mail_display_directory: str = ""
+    mail_display_tasks_enabled: bool = False
+    mail_display_runner_enabled: bool = False
+    mail_display_actor_ids: list[str] = Field(default_factory=list, max_length=16)
+    mail_display_runner_seconds: int = Field(default=90, ge=10, le=120)
     acquisition_capture_enabled: bool = False
     acquisition_capture_config: str = ""
     acquisition_work_enabled: bool = False

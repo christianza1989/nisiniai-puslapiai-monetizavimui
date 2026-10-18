@@ -7,7 +7,9 @@ import tempfile
 from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
+
 from pydantic import AwareDatetime, Field, ValidationError
+
 from ..contracts import Strict
 from .wire import Digest, Identifier, Translation
 
@@ -38,7 +40,16 @@ class Record(Strict):
     reasoning_effort: str = Field(pattern=r"^high$")
     instruction_sha256: Digest
     text: TranslatedText
-    usage: dict[str, int]
+    usage: dict[str, int] | None
+
+
+def observed_usage(value):
+    if not isinstance(value, dict):
+        return None
+    known = {key: number for key, number in value.items() if key in {
+        "input_tokens", "output_tokens", "cached_input_tokens", "reasoning_output_tokens"}
+        and type(number) is int and 0 <= number <= 1_000_000_000}
+    return known or None
 
 
 def source_digest(business_id, environment, value):

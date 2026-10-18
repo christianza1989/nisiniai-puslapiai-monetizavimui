@@ -1,0 +1,53 @@
+# Durable Lithuanian mail display
+
+This link uses the maintained common Task/Run/Event worker, canonical MailMessage/
+Case and existing display POLICY/source_digest/Record/validate_text helpers.
+It creates no sending channel, second queue or calibration system. The separate
+mail.display_translate kind never uses acquisition's three-role authorization.
+
+## Explicit policy and one source-bound call
+
+An operator supplies a new policy UUID, exact business and current verified
+owner Session, clean execution source, explicit model-execution marker,
+maximum1–30 calls,30–3600s duration and an immutable mail-created-after cutoff.
+Approval derives tenant/portfolio/current Grant, current translation instruction
+hash and fixed gpt-6.1-sol/high. Expiry is capped by the Session. Metadata cannot
+renew under the same UUID; containment can only disable it. Private prepared and
+committed receipts use the maintained helper and require reconciliation on an
+uncertain commit. Flags/actor allowlist and policy are independent controls.
+
+Each DisplayJob binds one common Task and its single TaskRun. The deduplication
+key is business/environment/mail/source digest/instruction hash/lt, independent
+of policy UUID or executable source. Changing a policy cannot replay an existing
+mail. Queued slots and charged reservations stay within the policy cap. A durable
+reservation precedes possible CLI IO, and a reserved Job never dispatches twice.
+Known usage stays known; missing usage remains null/unknown, not an invented0.
+Failed, interrupted and revoked work remains charged where a reservation exists.
+
+## Post-commit materialization and atomic display
+
+The common worker's reconcile hook discovers only committed eligible messages
+under a current policy, before normal Task claim. A crash after original mail
+commit is repaired by the same source-bound deduplication. GET only reads; owner
+polling, reopening mail or refreshing a page cannot enqueue a job or call a model.
+
+The existing original message is never rewritten. Translation validation retains
+protected numbers, addresses, links, conditions and complete text. The validated
+private Record is stored in DisplayJob in the same transaction as terminal common
+Task/Run/Event. The owner mail API projects it only after both Task and Run have
+succeeded and the exact original digest/instruction hash still match. There is no
+filesystem publish/DB rollback gap. Failure cannot hide or undo the original mail.
+
+Existing sidecars and one-call claim files remain historical evidence. Only an
+unclaimed source may fall back to its legacy sidecar. A queued/failed/new Job
+cannot be bypassed by a sidecar; legacy retained attempts block new model work.
+Automatic discovery handles unseen immutable messages; a changed legacy original
+requires explicit source-bound enqueue and is never an automatic paid retry.
+
+## Current implementation scope
+
+Schema0047 and the runtime adapter are a separate source increment after the
+verified acquisition-model packet d415c87. They are not operating adoption,
+actual translation quality acceptance, populated browser proof or authenticated
+outbound/inbox admission. The operating API remains ba16/0045 with workers held.
+The earlier174/180 acquisition ledger remains closed and is not a display budget.

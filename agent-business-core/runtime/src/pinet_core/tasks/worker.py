@@ -75,10 +75,11 @@ def handlers():
     # Source-fixed registry, never a browser-selected import/tool/executable.
     from ..acquisition.model_handler import ModelHandler
     from ..acquisition.tasks import CaptureHandler
+    from ..mail_view.task_handler import DisplayHandler
     from ..workspace_team.direct_handler import DirectHandler
     from ..workspace_team.handler import TeamHandler
 
-    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler(), ModelHandler())
+    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler(), ModelHandler(), DisplayHandler())
 
 
 def handler_for(kind):
@@ -104,6 +105,15 @@ async def finish_run(tx, task, status, *, usage=None):
             from ..workspace_team.quota import merge_usage
             usage = merge_usage(usage, await saved_usage(tx, task.id, run.id, task.user_id,
                 task.environment_id, task.source_revision))
+        elif task.kind == "mail.display_translate":
+            from ..mail_view.task_handler import usage_for
+            if run.status == "succeeded":
+                return
+            if run.status in {"failed", "cancelled"}:
+                await handler_for(task.kind).terminal_failure(tx, task, usage, "worker_interrupted")
+                return
+            # Provider usage is durably checkpointed before Handler.run returns.
+            usage = await usage_for(tx, task.id, run.id, task.user_id, task.environment_id, task.source_revision)
         elif task.kind == "acquisition.model_prepare":
             from ..acquisition.model_handler import usage_for
             from ..workspace_team.quota import merge_usage
@@ -140,6 +150,9 @@ async def reap_running(user_id):
             {"k": "chat-claim:" + settings().environment + ":" + user_id})
         running = list(await tx.scalars(select(Task).where(Task.status == "running").with_for_update()))
         for task in running:
+            if task.lease_until and task.lease_until <= utcnow() and hasattr(handler_for(task.kind), "terminal_failure"):
+                await handler_for(task.kind).terminal_failure(tx, task, None, "worker_interrupted")
+                continue
             await expire_run(tx, task)
             if task.status != "running":
                 await finish_run(tx, task, "failed")
@@ -254,6 +267,9 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
             or not admitted
             or not handler.deadline_valid(tx, task, now)
         ):
+            if hasattr(handler, "terminal_failure"):
+                await handler.terminal_failure(tx, task, None, "authorization_revoked")
+                return False
             task.status, task.failure_code, task.lease_until = "failed", "authorization_revoked", None
             await finish_run(tx, task, "failed")
             await append_event(tx, task)
@@ -264,6 +280,10 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
 
 async def settle_hidden_task(tx, claimed, usage):
     """Existing accounting-only fallback; hidden output never becomes public."""
+    if claimed["kind"] == "mail.display_translate":
+        from ..mail_view.task_handler import settle_in_transaction
+        await settle_in_transaction(tx, claimed, usage, "authorization_revoked")
+        return
     if claimed["kind"] == "acquisition.model_prepare":
         # This kind has a separately typed sink. The legacy Director whitelist
         # deliberately remains unchanged and must never silently discard it.
@@ -330,6 +350,13 @@ async def execute_once(adapter=None, *, kind=None):
                 await asyncio.shield(retain_cancelled())
             except (SQLAlchemyError, codex.RunnerError):
                 # A retained reservation remains charged if the DB is unavailable.
+                pass
+        elif handler.kind == "mail.display_translate":
+            from ..mail_view.task_handler import settle_accounting
+            try:
+                await asyncio.shield(settle_accounting(claimed,
+                    claimed["context"].get("_observed_usage"), "worker_interrupted"))
+            except (SQLAlchemyError, codex.RunnerError):
                 pass
         raise  # Cancellation is never success, a retry, or a provider error.
     except codex.RunnerError as error:
@@ -400,6 +427,9 @@ async def execute_once(adapter=None, *, kind=None):
             if task.status != "running" or task.run_id != run_id:
                 await finish_run(tx, task, task.status, usage=usage)
                 return True
+        if failure and hasattr(handler, "terminal_failure"):
+            await handler.terminal_failure(tx, task, usage, failure)
+            return True
         task.status, task.failure_code = ("failed", failure) if failure else ("succeeded", None)
         task.result = result if not failure else None
         task.lease_until = None

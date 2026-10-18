@@ -1716,3 +1716,15 @@ cancellation uses typed accounting-only settlement and terminal time stays fixed
 Additional Root-only dependency: offline_tests/test_authority_observation.py SQL
 fake exact Registration lookup, separate workflow journal. Existing native/final
 mutation assertions and all production authority validators are preserved.
+
+## Durable mail display translation — Root 2026-10-18
+
+From verified/pushed d415c87, paired freshness00:43Z mains533/ec8 and companion255.
+Root owns new mail_view/task_contract,task_authority,task_policy,task_service,
+task_handler, policy/task scripts/tests/docs and narrow config/worker/runner/
+translations/service/old explicit CLI integration. Helper01a13440 owns only
+new task_models/task_schema/0047/env import/schema tests/doc in a separate branch.
+Common Task/Run remains the only queue/attempt; each explicit DisplayPolicy owns
+its one-call-per-Job lifetime cap. Atomically committed DB Record supplies display,
+GET never dispatches, original mail and all historical claims stay unchanged.
+All provider/channel/operating flags remain held during source implementation.

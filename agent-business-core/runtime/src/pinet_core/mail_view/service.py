@@ -1,5 +1,6 @@
 """Fresh owner authority and tenant predicates over canonical MailMessage/Case."""
 from sqlalchemy import and_, or_, select, text
+
 from ..config import settings
 from ..control.routes import ControlError
 from ..models import Case, MailMessage
@@ -53,5 +54,10 @@ async def detail(tx, session, business_id, mail_id):
     if not row:
         raise ControlError(404, "not_found")
     original = {**summary(row).model_dump(mode="json"), "body": row.payload.get("body", "")}
-    translation = read_translation(settings().mail_display_directory, business_id, settings().environment, original)
+    translation = None
+    if settings().mail_display_tasks_enabled:
+        from .task_service import projection
+        translation = await projection(tx, business_id, original)
+    if translation is None:
+        translation = read_translation(settings().mail_display_directory, business_id, settings().environment, original)
     return MailDetail(**original, business_id=business_id, translation=translation)

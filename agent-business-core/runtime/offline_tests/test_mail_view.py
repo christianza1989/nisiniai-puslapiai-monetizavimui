@@ -122,57 +122,19 @@ async def _nothing():
 
 
 @pytest.mark.asyncio
-@pytest.mark.parametrize("supplied_environment,legacy_attempt", [("test-mail-source", False), ("test", False), ("test-mail-source", True)])
-async def test_operator_batch_binds_actual_environment_before_provider(monkeypatch, tmp_path, supplied_environment, legacy_attempt):
-    import importlib.util
-    from pathlib import Path
-
-    from pinet_core.file_hash import sha256_file
-
-    path = Path(__file__).resolve().parents[1] / "scripts/mail_display_translate.py"
-    spec = importlib.util.spec_from_file_location("mail_display_batch_test", path)
-    batch = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(batch)
-    environment = "test-mail-source"
-    value = {**original(), "business_id": B, "state": "captured", "synthetic": True,
-             "created_at": datetime.now(UTC).isoformat()}
-    digest = tr.source_digest(B, environment, value)
-    wire = {"contract_version": "mail-view.v1", "environment": "test", "source_revision": "a" * 40,
-        "observed_at": datetime.now(UTC).isoformat(), "request_id": str(uuid4()),
-        "data": {**value, "translation": {"status": "missing", "source_sha256": digest}}}
-    client_type = httpx.AsyncClient
-    monkeypatch.setattr(batch.httpx, "AsyncClient", lambda **kwargs: client_type(
-        **kwargs, transport=httpx.MockTransport(lambda request: httpx.Response(200, json=wire))))
-    monkeypatch.setattr(batch, "git_source_observation", lambda root: SimpleNamespace(porcelain="", head="a" * 40))
-    calls = []
-    async def translate(source, **kwargs):
-        calls.append(kwargs["environment"])
-        assert kwargs["environment"] == environment
-        assert await kwargs["still_authorized"]()
-        return record(source).model_copy(update={"environment": environment, "source_sha256": digest})
-    monkeypatch.setattr(batch, "translate_once", translate)
-    binary, session, output = tmp_path / "fake-cli", tmp_path / "session.json", tmp_path / "copies"
-    binary.write_bytes(b"synthetic-never-executed")
-    session.write_text(json.dumps({"access_token": "z" * 64}))
-    arguments = SimpleNamespace(api_base="http://127.0.0.1:1234", business_id=B, mail_id=M,
-        environment_id=supplied_environment, executable=str(binary), executable_sha256=sha256_file(binary),
-        session_file=str(session), output_root=str(output))
-    if legacy_attempt:
-        old = tr.record_path(output, B, "test", M, tr.source_digest(B, "test", value)).with_suffix(".attempt.json")
-        old.parent.mkdir(parents=True)
-        old.write_text('{"max_calls":1,"usage":null}')
-        with pytest.raises(ValueError, match="mail_legacy_environment_attempt_requires_review"):
-            await batch.run(arguments)
-        assert calls == [] and old.read_text() == '{"max_calls":1,"usage":null}'
-    elif supplied_environment == environment:
-        await batch.run(arguments)
-        assert calls == [environment]
-        assert tr.read_translation(output, B, environment, value).status == "ready"
-    else:
-        with pytest.raises(ValueError, match="mail_environment_binding_mismatch"):
-            await batch.run(arguments)
-        assert calls == []
-        assert not output.exists()
+@pytest.mark.parametrize("retained_environment,blocked", [("test-mail-source", True), ("test", True), ("test-other", False)])
+async def test_legacy_source_claims_are_retained_before_any_task_dispatch(monkeypatch, tmp_path, retained_environment, blocked):
+    from pinet_core.config import settings
+    from pinet_core.mail_view.task_service import legacy_claim
+    value = original()
+    monkeypatch.setattr(settings(), "mail_display_directory", str(tmp_path))
+    old = tr.record_path(tmp_path, B, retained_environment, M,
+        tr.source_digest(B, retained_environment, value)).with_suffix(".attempt.json")
+    old.parent.mkdir(parents=True)
+    old.write_text('{"max_calls":1,"usage":null}')
+    assert legacy_claim(B, "test-mail-source", value) is blocked
+    assert old.read_text() == '{"max_calls":1,"usage":null}'
+    assert not list(tmp_path.rglob("*.lt.json"))
 
 
 @pytest.mark.asyncio
@@ -200,6 +162,7 @@ async def test_runner_has_no_tools_one_fixed_call_and_rejects_revoked_result(mon
         authority = False
         return record().text.model_dump(), {"input_tokens": 11}
     monkeypatch.setattr(runner, "execute", late)
-    with pytest.raises(ValueError, match="mail_authority_changed"):
+    with pytest.raises(runner.RunnerError, match="mail_authority_changed") as revoked:
         await runner.translate_once(original(), business_id=B, environment="test", binary=binary,
             binary_sha256="a"*64, private_directory=tmp_path, still_authorized=allowed)
+    assert revoked.value.receipt == {"input_tokens": 11}

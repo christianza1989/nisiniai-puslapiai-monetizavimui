@@ -1,5 +1,10 @@
 # Bendras nišinių svetainių paštas
 
+2026-10-18 atskiras numatytai išjungtas [peržiūrėtos Gmail kampanijos adapteris](docs/GMAIL_REVIEWED_CAMPAIGN.md)
+kuria tik naujus tikrus laiškus pagal konkretų operatoriaus patvirtintą planą.
+Ankstesni savitikros ir acquisition įrašai neperklasifikuojami. Vien kodo ar
+izoliuotų bandymų priėmimas neįjungia kampanijos ir nepakeičia gyvo siuntimo vartų.
+
 2026-10-18 naujas vietinis adapteris: [Gmail savininko bandymo sutartis](docs/GMAIL_LOCAL_OWNER_TEST.md).
 Jis pakartotinai naudoja Case/MailMessage ir dabartinio savininko teises;
 OAuth prieiga nesuteikia kampanijų, masinio inbox importo ar automatinio atsakymo

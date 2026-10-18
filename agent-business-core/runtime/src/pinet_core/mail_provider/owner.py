@@ -34,10 +34,15 @@ def guard():
 
 
 @asynccontextmanager
-async def owned(token, business_id):
+async def owned(token, business_id, *, source_lock=False):
     guard()
     await execution_current(SimpleNamespace(execution_source_revision=settings().control_source_revision))
     async with scope(token=token_hash(token)) as tx:
+        if source_lock:
+            # Canonical source admin takes business lifetime BEFORE User/Grant.
+            # Use the same transaction/order when consuming that source.
+            from ..business_attachment.service import lifetime
+            await lifetime(tx, business_id, exclusive=True)
         session = await customer_session(tx, token)
         admitted = await grant(tx, session, str(UUID(business_id)))
         await tx.execute(text("SELECT set_config('pinet.business',:b,true)"), {"b": business_id})
@@ -177,6 +182,12 @@ class OwnerGmail:
             return await self.settle(mail_id, attempt, state, evidence)
 
     async def sync_self_test(self, mail_id):
+        return await self._sync_known(mail_id, require_self=True)
+
+    async def reply_received(self, tx, original, reply):
+        """Adapters may hold an existing Case after a committed known reply."""
+
+    async def _sync_known(self, mail_id, *, require_self):
         async with owned(self.token, self.business_id) as (tx, _):
             original = await self.message(tx, mail_id)
             if original.state != "accepted_by_gmail":
@@ -190,7 +201,7 @@ class OwnerGmail:
             "sender": saved["sender"], "recipient": saved["recipient"]}}
         imported = []
         async with self.client() as (client, account):
-            if saved["sender"].casefold() != account or saved["recipient"].casefold() != account:
+            if saved["sender"].casefold() != account or require_self and saved["recipient"].casefold() != account:
                 raise GmailError("gmail_self_test_only")
             provider_ids = await client.thread_ids(saved["receipt"]["provider_thread_id"])
             if saved["receipt"]["provider_message_id"] not in provider_ids:
@@ -231,6 +242,7 @@ class OwnerGmail:
                         raise GmailError("gmail_reply_identity_conflict")
                     row.payload = {**row.payload, "gmail_provider_message_id": provider_id,
                         "gmail_provider_thread_id": saved["receipt"]["provider_thread_id"], **headers}
+                    await self.reply_received(tx, original, row)
                     imported.append(row.id)
         return {"case_id": saved["case_id"], "mail_id": saved["id"], "inbound_mail_ids": imported,
                 "mailbox_wide_import": False, "automated_reply_dispatched": False}

@@ -122,6 +122,7 @@ class Settings(BaseSettings):
     lab_mail_recipient: str = ""
     # Explicit local owner self-test only; never a campaign or SMTP permission.
     gmail_owner_enabled: bool = False
+    gmail_campaign_enabled: bool = False
     imap_host: str = "imap.hostinger.com"
     imap_port: int = 993
     retention_days: int = 30

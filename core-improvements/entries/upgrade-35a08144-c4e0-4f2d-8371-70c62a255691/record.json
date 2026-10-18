@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Add a default-off reviewed initial Gmail campaign path on canonical mail with one durable attempt, current source authority and accepted-thread reply containment",
+  "category": "code",
+  "evidence": [
+    "docs/GMAIL_REVIEWED_CAMPAIGN.md",
+    "agent-business-core/runtime/tests/test_gmail_campaign_pg.py",
+    "agent-business-core/runtime/offline_tests/test_gmail_campaign.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/mail_provider/campaign.py",
+    "agent-business-core/runtime/src/pinet_core/mail_provider/owner.py",
+    "agent-business-core/runtime/scripts/gmail_campaign.py",
+    "agent-business-core/runtime/tests/test_gmail_campaign_pg.py",
+    "agent-business-core/runtime/offline_tests/test_gmail_campaign.py",
+    "docs/GMAIL_REVIEWED_CAMPAIGN.md",
+    "MAIL_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Keep the campaign feature disabled and revert this scoped increment; retain canonical intents, original mail, accepted receipts and all historical calibration failures. Never retry an uncertain initial intent.",
+  "id": "upgrade-35a08144-c4e0-4f2d-8371-70c62a255691",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "2831e5f813981c729fa12da10560e537ade6f110",
+  "createdAt": "2026-10-18T18:20:23.238Z"
+}

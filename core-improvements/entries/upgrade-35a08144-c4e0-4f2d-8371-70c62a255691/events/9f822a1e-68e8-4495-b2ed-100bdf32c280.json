@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Default-off source acceptance only. First private runner overbroad collection failed on an unrelated Windows PyAV policy import before execution; two new-fixture cleanup failures retained, then moved to the existing immutable-history retained lane. Peer findings reproduced as 3 PG FAIL before fixes and 3 PASS after. A later integrated run was interrupted during system OOM and has no PASS receipt; the complete resumed run passed 25 tests. No provider/model/operating calls, campaign activation, protected input or old calibration ledger changes.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_gmail_campaign.py offline_tests/test_gmail_provider.py offline_tests/test_gmail_sent_identity.py offline_tests/test_gmail_callback.py offline_tests/test_gmail_oauth_issuer.py",
+      "result": "PASS",
+      "evidence": "55 passed in 2.03s; private log SHA256 6383824bcf0f20ac76fd6ac77efcbb00f4a6849c169ce525990ed701aa93dcdd"
+    },
+    {
+      "command": "python -m pytest -q tests/test_gmail_campaign_pg.py tests/test_gmail_owner_pg.py",
+      "result": "PASS",
+      "evidence": "25 passed in 122.22s, restricted retained QA only; private log SHA256 656218ed03c72fb0c2b353b05fa644e519ea10e2bc91fd49670078a171810598"
+    },
+    {
+      "command": "ruff check campaign.py owner.py gmail_campaign.py test_gmail_campaign_pg.py test_gmail_campaign.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Focused files lint and diff clean. Independent read-only review found no remaining concrete blocker in the three repaired paths; live activation not asserted."
+    }
+  ],
+  "eventId": "9f822a1e-68e8-4495-b2ed-100bdf32c280",
+  "sequence": 2,
+  "at": "2026-10-18T18:28:19.204Z"
+}

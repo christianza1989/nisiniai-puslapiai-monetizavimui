@@ -1,3 +1,20 @@
+## Current-owner reviewed Gmail campaign increment — Root2026-10-18
+
+Issue66/comment6253324360, own Gmail branch from2831e5f8. Own mail_provider/campaign.py,
+owner.py known-thread helper only, config.gmail_campaign_enabled, new campaign
+CLI/offline/retained-PG tests, docs/GMAIL_REVIEWED_CAMPAIGN.md and unique upgrade.
+Defaultoff exact owner-reviewed initial-letter plan, canonical current SourceBinding,
+Case/MailMessage/Vault, committed intent/onePOST/limits, accepted-thread reply/hold.
+No capture promotion, schema/CRM/scheduler, operating adoption or live activation.
+First functional campaign PG passed; old destructive customer teardown incompatible
+with immutable source history, switched to existing retained preview QA fixture.
+Original failed QA logs retained.55 offline/25 restrictedPG PASS; all3 peer findings
+reproduced RED then repaired GREEN (post-POST acceptance, canonical lock order,
+same-account quota across OAuth UUIDs). System OOM interrupted one later run;
+the complete resumed run passed. Old8call ledger/stages/protected remain closed.
+Helper separately owns two fixed Gmail/sending statistics counts; custodian read-only
+reviews this campaign diff. See new source contract for acceptance limits.
+
 ## Current-owner natural role context and stopped runtime checkpoint — Root2026-10-18
 
 Serving 0adf9fb3/schema 0050 adopted after backup: 96 old table projections and 1010

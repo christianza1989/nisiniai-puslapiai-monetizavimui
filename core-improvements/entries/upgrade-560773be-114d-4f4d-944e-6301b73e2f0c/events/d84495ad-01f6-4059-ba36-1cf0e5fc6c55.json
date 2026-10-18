@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Source-only bounded MailMessage snapshot. First missing-owner-endpoint404 remains FAIL, SHA256aa7f6c682389c577f0347da5bcd13ec6b74c497d803b1008ec6c09c1821964d3. Counts use record creation time/current state, not send-event/campaign attribution. Explicit synthetic JSON booleans separated from malformed provenance; provider metrics remain unavailable/null. Two initial Ruff import-order findings fixed. No provider/model/operating/protected-case read or source adoption.",
+  "checks": [
+    {
+      "command": "qa-python .local/sharp-policy/mail-statistics-pg.py regression",
+      "result": "PASS",
+      "evidence": "5 restricted-PG PASS6.84s, SHA256cd6cef03a0bc0e8067371c616efb93a626f3b0ac5d352a7dd9a7d40c28ded2b3. Exact window edges, alternate environment, JSONstring/number/null/list/object separation, foreign/current revoked grant denial, new pool persistence and immutable original payloads; includes3existing mail-view cases. Dedicated retained QA only."
+    },
+    {
+      "command": "qa-python .local/sharp-policy/mail-statistics-pg.py offline",
+      "result": "PASS",
+      "evidence": "35PASS1.51s, SHA256188917ef39cbc61ddbdcdc2ea2f19231f716200756f2b2a4652748344a559400; bounded/malformed request, aware UTC windows, exact totals, no invented KPI, fixed content-free SQL and existing translation/source identity tests."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/src/pinet_core/mail_view/statistics.py agent-business-core/runtime/src/pinet_core/mail_view/statistics_wire.py agent-business-core/runtime/src/pinet_core/mail_view/routes.py agent-business-core/runtime/tests/test_mail_statistics_pg.py agent-business-core/runtime/offline_tests/test_mail_statistics.py",
+      "result": "PASS",
+      "evidence": "All checks passed on the scoped source/tests after two import-order fixes."
+    }
+  ],
+  "eventId": "d84495ad-01f6-4059-ba36-1cf0e5fc6c55",
+  "sequence": 2,
+  "at": "2026-10-18T13:56:00.849Z"
+}

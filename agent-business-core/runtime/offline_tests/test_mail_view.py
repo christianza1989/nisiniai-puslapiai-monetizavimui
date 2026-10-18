@@ -98,9 +98,10 @@ def test_legacy_test_subject_suffix_is_readable_without_clipping():
     assert service.summary(row).subject == subject
 
 
-def test_contract_exposes_only_two_owner_reads():
+def test_contract_exposes_three_read_only_owner_paths():
     paths = document()["paths"]
-    assert len(paths) == 2 and all(set(value) == {"get"} for value in paths.values())
+    assert len(paths) == 3 and all(set(value) == {"get"} for value in paths.values())
+    assert "/operator/v2/businesses/{business_id}/mail-statistics" in paths
 
 
 @pytest.mark.asyncio

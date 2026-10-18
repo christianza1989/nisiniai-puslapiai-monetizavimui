@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends, Request
 from pydantic import ValidationError
+
 from ..control.routes import ControlError, SafeRoute, authenticated, envelope, identifier
-from . import service
+from . import service, statistics
+from .statistics_wire import StatisticsEnvelope, Window
 from .wire import DetailEnvelope, PageEnvelope
 
 router = APIRouter(prefix="/operator/v2/businesses", route_class=SafeRoute)
@@ -9,6 +11,24 @@ router = APIRouter(prefix="/operator/v2/businesses", route_class=SafeRoute)
 
 def response(request, data):
     return {**envelope(request, data), "contract_version": "mail-view.v1"}
+
+
+@router.get("/{business_id}/mail-statistics", response_model=StatisticsEnvelope)
+async def mail_statistics(business_id: str, request: Request, context=Depends(authenticated, scope="function")):
+    params = request.query_params
+    if (await request.body() or set(params) != {"start", "end"}
+            or any(len(params.getlist(key)) != 1 or len(params[key]) > 64 or "T" not in params[key] for key in params)):
+        raise ControlError(400, "invalid_request")
+    try:
+        window = Window.model_validate(dict(params))
+    except ValidationError:
+        raise ControlError(400, "invalid_request") from None
+    tx, session = context
+    try:
+        data = await statistics.read(tx, session, identifier(business_id), window)
+    except (ValidationError, TypeError, ValueError):
+        raise ControlError(503, "mail_source_unavailable") from None
+    return {**envelope(request, data.model_dump(mode="json")), "contract_version": "mail-statistics.v1"}
 
 
 @router.get("/{business_id}/mail", response_model=PageEnvelope)

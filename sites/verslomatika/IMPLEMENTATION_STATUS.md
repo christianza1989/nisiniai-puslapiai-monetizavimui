@@ -1,5 +1,27 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current local checkpoint —2026-10-18 13:55 UTC
+
+**Preview/attachment source package is ready for review; whole platform OPEN.**
+PR164 atc684c1ad has both final-head GitHub CI checks PASS and is now ready for
+review, still stacked on its coordination branch and not merged into main.
+Owned API remains3245/schema49; all paid/channel workers remain held and the
+human-started3030 frontend is unchanged. The bounded source182 model result
+below is unchanged; no new calibration or provider call occurred.
+
+In a separate owned follow-up branch, the new read-only mail-record statistics
+API passes5restricted-PG and35offline checks. It preserves exact environment,
+current owner grants, originals and strict boolean test provenance; unavailable
+delivery/open/bounce/reply-rate data stays null. These are creation-time/current-
+state database counts, not provider-event/campaign KPIs. Source contract and
+limits: [MAIL_RECORD_STATISTICS](../../docs/MAIL_RECORD_STATISTICS.md). This new
+source has not yet been adopted into API18871 or the UI.
+
+Next executable source group remains the common provider/ingestion/events and
+cursor boundary; actual Gmail OAuth requires reauthentication. Campaign/suppression
+and populated original/Lithuanian UI acceptance remain open. Readiness of a source
+packet is not whole-platform completion, live-channel activation or main adoption.
+
 ## Current local checkpoint —2026-10-18 13:41 UTC
 
 **Package accepted; whole local platform remains OPEN.** The owned API18871 is

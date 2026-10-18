@@ -310,6 +310,31 @@ test('prompt includes unique batch, two referenced accepted examples, own facts 
   assert.doesNotMatch(result, /Grąžink visus puslapius su jų PAGE_ID/);
   assert.match(result, /"h1": "Gipsavimo vežimėliai"/);
   assert.match(result, /eilė gali skirtis/);
+  assert.match(result, /siek iki 140 UTF16 kodo vienetų, absoliuti riba 160 UTF16/);
+  assert.match(result, /„patikrintas“, „išnagrinėtas“, „apjungia“/);
+});
+
+test('prompt contains latest retained own-page parser and review corrections, not unrelated or UNKNOWN text', () => {
+  const input = promptInput(), captureRef = { path: 'retained/raw.json', sha256: 'a'.repeat(64) };
+  input.previousRejections = [
+    { pageId: 'page1', kind: 'parser', status: 'REJECTED', reason: 'OLD_PARSE_SHOULD_NOT_REPEAT', captureRef },
+    { pageId: 'other', kind: 'review', status: 'rejected', reason: 'UNRELATED_PAGE_TEXT', captureRef },
+    { pageId: 'page1', kind: 'parser', status: 'UNKNOWN', reason: 'UNKNOWN_AUTHOR_TEXT', captureRef },
+    { pageId: 'page1', kind: 'parser', status: 'REJECTED', reason: 'Own description has 161 UTF16; shorten below target.', captureRef },
+    { pageId: 'page1', kind: 'review', status: 'rejected', reason: 'Apkrova priklauso vienai lentynai, ne visam gaminiui.', captureRef },
+  ];
+  const prompt = buildAuthorPrompt(input);
+  assert.ok(prompt.includes('Own description has 161 UTF16; shorten below target.'));
+  assert.ok(prompt.includes('Apkrova priklauso vienai lentynai, ne visam gaminiui.'));
+  assert.doesNotMatch(prompt, /OLD_PARSE_SHOULD_NOT_REPEAT|UNRELATED_PAGE_TEXT|UNKNOWN_AUTHOR_TEXT/);
+  assert.match(prompt, /ankstesnio varianto klaida nėra užrakintas faktas/);
+  assert.deepEqual(input.pages[0].facts, ['SKU01 50 kg'], 'fact pack is unchanged by correction formatting');
+});
+
+test('unretained own correction cannot be smuggled into author prompt', () => {
+  const input = promptInput();
+  input.previousRejections = [{ pageId: 'page1', kind: 'review', status: 'rejected', reason: 'Changed prose without captured original', captureRef: { path: 'raw.json', sha256: 'not-a-pin' } }];
+  assert.throws(() => buildAuthorPrompt(input), /retained own capture/);
 });
 test('prompt rejects unaccepted examples, duplicates and incomplete primary sources', () => {
   for (const mutate of [(i) => { i.examples[0].accepted = false; }, (i) => { i.examples.pop(); }, (i) => { i.pages.push(i.pages[0]); }, (i) => { delete i.pages[0].sources[0].documentRole; }, (i) => { i.pages[0].paragraphCount = 0; }, (i) => { i.pages[0].paragraphCount = 3; }, (i) => { delete i.pages[0].h1; }, (i) => { i.pages[0].h1 = ' '; }, (i) => { i.pages.push({ ...i.pages[0], id: 'page2' }); }]) {

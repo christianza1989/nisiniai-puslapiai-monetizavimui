@@ -14,6 +14,34 @@ import { measurePipelineThroughput } from './throughput.mjs';
 const read=async file=>JSON.parse(await readFile(file,'utf8'));
 const execute=promisify(execFile);
 
+/** Only retained parser/reviewer corrections belonging to this queued batch.
+ * UNKNOWN outcomes and other pages never supply authoring prose or corrections. */
+export function collectRetainedAuthorRejections({pageIds,records}) {
+  const selected=new Set(pageIds),pin=value=>value&&typeof value.path==='string'&&value.path.trim()&&/^[a-f0-9]{64}$/.test(value.sha256??'');
+  const concrete=value=>typeof value==='string'&&value.trim()&&value.length<=4000;
+  const result=[];
+  for(const record of records??[]){
+    if(!selected.has(record.pageId)||record.status==='UNKNOWN')continue;
+    const parser=(record.generationResults??[]).filter(g=>g.status==='REJECTED'&&g.rejection?.status==='rejected'&&g.rejection.pageId===record.pageId&&concrete(g.rejection.reason)&&pin(g.captureRef)).at(-1);
+    if(parser)result.push({pageId:record.pageId,kind:'parser',status:'REJECTED',reason:parser.rejection.reason,captureRef:parser.captureRef,...(pin(parser.rawRef)?{rawRef:parser.rawRef}:{}),attemptId:parser.attemptId,at:parser.at});
+    const review=(record.reviews??[]).filter(r=>{
+      if(r.decision!=='rejected'||!concrete(r.reason))return false;
+      const candidate=(record.candidates??[]).find(c=>c.candidateId===r.candidateId);
+      return candidate&&pin(candidate.captureRef)&&(!candidate.candidate?.pageId||candidate.candidate.pageId===record.pageId)&&!(record.generationResults??[]).some(g=>g.attemptId&&g.attemptId===candidate.attemptId&&g.status==='UNKNOWN');
+    }).at(-1);
+    if(review){const candidate=record.candidates.find(c=>c.candidateId===review.candidateId);result.push({pageId:record.pageId,kind:'review',status:'rejected',reason:review.reason,candidateId:review.candidateId,captureRef:candidate.captureRef,at:review.at});}
+  }
+  return result;
+}
+
+/** The exact same correction-bearing prompt is sent and later tied to promptRef. */
+export function buildGenerationPayload({batch,pipeline,authorTasks,examples,commonMistakes}) {
+  const previousRejections=collectRetainedAuthorRejections({pageIds:batch.pages.map(p=>p.pageId),records:pipeline.pages});
+  const pages=batch.pages.map(page=>({...authorTasks[page.pageId],id:page.pageId,h1:page.capturePage.title}));
+  const prompt=buildAuthorPrompt({batchId:batch.batchId,pages,examples,commonMistakes,previousRejections});
+  return{batchId:batch.batchId,prompt,pages:batch.pages.map(p=>p.capturePage),previousRejections};
+}
+
 /** Actual Gemini/review/DOM actions are host requests. Everything from accepted
  * page intake through final review and reader updates runs in this one process. */
 export async function createPorts({store,bridge,config}) {
@@ -41,8 +69,11 @@ export async function createPorts({store,bridge,config}) {
       const document=await store.read(),pipeline=document.pipeline;
       const completed=new Set(Object.entries((await read(config.checkpoints[0])).work).filter(([k])=>k.endsWith('WrittenDraft')).map(([,v])=>v.pageId));
       for(const page of batch.pages){assert(!completed.has(page.pageId),'Completed page cannot be sent again');assert(!config.heldPageIds.includes(page.pageId),'Held page cannot be sent');await verifyPin(page.factsRef);}
-      const specs=batch.pages.map(p=>p.capturePage),prompt=buildAuthorPrompt({batchId:batch.batchId,pages:await Promise.all(batch.pages.map(async page=>({...((await read(page.factsRef.path)).authorTask),id:page.pageId,h1:page.capturePage.title}))),examples:config.acceptedExamples,commonMistakes:config.commonMistakes});
-      const answer=await bridge.request('GEMINI_GENERATE',{batchId:batch.batchId,prompt,pages:specs,previousRejections:pipeline.pages.filter(p=>batch.pages.some(b=>b.pageId===p.pageId)).flatMap(p=>p.reviews.filter(r=>r.decision==='rejected'))},ctx);
+      const authorTasks=Object.fromEntries(await Promise.all(batch.pages.map(async page=>[page.pageId,(await read(page.factsRef.path)).authorTask])));
+      const payload=buildGenerationPayload({batch,pipeline,authorTasks,examples:config.acceptedExamples,commonMistakes:config.commonMistakes});
+      for(const rejection of payload.previousRejections){await verifyPin(rejection.captureRef);if(rejection.rawRef)await verifyPin(rejection.rawRef);}
+      const {pages:specs,prompt}=payload;
+      const answer=await bridge.request('GEMINI_GENERATE',payload,ctx);
       assert(answer.send?.status==='COMPLETED_RETAINED'&&!answer.send.uncertain,'A query acknowledgement alone is not a retained response');
       for(const pin of [answer.captureRef,answer.promptRef,answer.modelProofRef])await verifyPin(pin);
       assert.equal((await readFile(answer.promptRef.path,'utf8')),prompt,'Actual sent prompt differs');

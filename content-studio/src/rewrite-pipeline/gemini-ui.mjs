@@ -290,7 +290,7 @@ export async function observeGeminiResponse(page, request) {
   return { status: 'RESPONSE_PENDING_OR_UNCERTAIN', retryAllowed: false, observed: last };
 }
 
-export function buildAuthorPrompt({ batchId, pages, examples, commonMistakes }) {
+export function buildAuthorPrompt({ batchId, pages, examples, commonMistakes, previousRejections = [] }) {
   if (!/^[A-Za-z0-9][A-Za-z0-9_.:-]{2,119}$/.test(batchId ?? '')) throw new Error('Unique batchId required');
   if (!Array.isArray(pages) || !pages.length || pages.length > 3) throw new Error('One to three independent page jobs required');
   if (!Array.isArray(examples) || examples.length !== 2 || examples.some((e) => e.accepted !== true || typeof e.text !== 'string' || !e.text.trim() || !e.reference)) throw new Error('Exactly two referenced accepted examples required');
@@ -308,13 +308,25 @@ export function buildAuthorPrompt({ batchId, pages, examples, commonMistakes }) 
     for (const link of p.links) { if (!/^https?:\/\//.test(link.url) || !link.label) throw new Error('Exact URL and label required'); }
     return { id: p.id, h1: p.h1, readerJob: p.readerJob, paragraphCount: p.paragraphCount, facts: p.facts, limits: p.limits, sources: p.sources, links: p.links };
   });
+  if (!Array.isArray(previousRejections)) throw new Error('Previous rejections must be retained own-page records');
+  const corrections = [];
+  for (const job of jobs) {
+    for (const kind of ['parser', 'review']) {
+      const retained = previousRejections.filter((r) => r?.pageId === job.id && r.kind === kind && r.status === (kind === 'parser' ? 'REJECTED' : 'rejected'));
+      const latest = retained.at(-1);
+      if (!latest) continue;
+      if (!latest.captureRef?.path || !/^[a-f0-9]{64}$/.test(latest.captureRef.sha256 ?? '') || typeof latest.reason !== 'string' || !latest.reason.trim() || latest.reason.length > 4000) throw new Error('Correction requires retained own capture and concrete rejection reason');
+      corrections.push({ h1: job.h1, kind, reason: latest.reason });
+    }
+  }
   return [
     `BATCH_ID: ${batchId}`,
-    'Parašyk savarankiškus lietuviškus katalogo tekstus patyrusiam medicinos darbuotojui ar įrangos pirkėjui. Kiekvienas puslapis atsako tik į savo skaitytojo klausimą. Rašyk natūraliai, rišliai, be bendrinių procedūrinių įvadų.',
-    'Kiekvieno puslapio vienintelis skirtukas yra tikslus užduoties h1 tekstas kaip H1 antraštė (Markdown #). Po jos pateik vieną paprastą metaaprašymo pastraipą iki 160 simbolių, tada tikslų paragraphCount nurodytą vienos arba dviejų pagrindinio teksto pastraipų skaičių. Po jų atskiroje paprastoje pastraipoje pateik PRIVATE_SOURCE_JSON: [{"url":"...","label":"...","reason":"..."}]. Nenaudok papildomų antraščių, skiriamųjų linijų, kodų blokų ar atskirų PAGE_ID, DESCRIPTION, BODY žymų. Reason iki 60 žodžių apibūdina tik to dokumento turinį. Techninius duomenis priskirk individualiai produkto kortelei, kategorijos sąrašą naudok asortimentui. Nuorodų aibės tekste ir šaltinių sąraše turi sutapti; eilė gali skirtis.',
+    'Parašyk savarankiškus lietuviškus katalogo tekstus patyrusiam medicinos darbuotojui ar įrangos pirkėjui. Kiekvienas puslapis atsako tik į savo skaitytojo klausimą. Rašyk natūraliai, rišliai, be bendrinių procedūrinių įvadų. Neaiškink rašymo ar šaltinių tikrinimo proceso, nevartok redakcinio vertinimo frazių „patikrintas“, „išnagrinėtas“, „apjungia“ vietoje konkretaus gaminio paaiškinimo.',
+    'Kiekvieno puslapio vienintelis skirtukas yra tikslus užduoties h1 tekstas kaip H1 antraštė (Markdown #). Po jos pateik vieną paprastą metaaprašymo pastraipą: siek iki 140 UTF16 kodo vienetų, absoliuti riba 160 UTF16 kodo vienetų. Tada pateik tikslų paragraphCount nurodytą vienos arba dviejų pagrindinio teksto pastraipų skaičių. Po jų atskiroje paprastoje pastraipoje pateik PRIVATE_SOURCE_JSON: [{"url":"...","label":"...","reason":"..."}]. Nenaudok papildomų antraščių, skiriamųjų linijų, kodų blokų ar atskirų PAGE_ID, DESCRIPTION, BODY žymų. Reason iki 60 žodžių apibūdina tik to dokumento turinį. Techninius duomenis priskirk individualiai produkto kortelei, kategorijos sąrašą naudok asortimentui. Nuorodų aibės tekste ir šaltinių sąraše turi sutapti; eilė gali skirtis.',
     'Skaičius, vienetus, modelius, URL ir faktų sąlygas išsaugok. Komponento apkrova nėra viso gaminio apkrova; šeimos pavyzdys nėra nekintamas komplektas; matomas priedas neįrodo įtraukimo į kainą. „Vienduris/viendurė“ keisk į „vienų durų“. „Bėgeliai“ tinka laikymo/stalčių dalims, ne ratukų krypties fiksavimui.',
     'Šios užduoties BATCH_ID, PAGE_ID ir id, redakcinės ribos ir tikrinimo instrukcijos yra privatūs: jų neperkelk į atsakymą, aprašymą ar pagrindinį tekstą. Pavyzdžiai rodo kalbos kokybę, jų faktų ir formuluočių nekopijuok į kitus modelius.',
     `ANKSTESNIŲ KLAIDŲ TAISYKLĖS:\n${commonMistakes.map((m) => `- ${m}`).join('\n')}`,
+    ...(corrections.length ? [`ŠIŲ PUSLAPIŲ ANKSTESNIŲ IŠSAUGOTŲ VARIANTŲ ATMETIMO PRIEŽASTYS:\n${JSON.stringify(corrections, null, 2)}\nIštaisyk konkretaus H1 ankstesnę klaidą, nekartok atmestos formuluotės ar per ilgo aprašymo. Faktų pataisas tikrink pagal šio puslapio faktus ir pirminius šaltinius; ankstesnio varianto klaida nėra užrakintas faktas. Šios pastabos yra privati užduotis, jų neperkelk į viešą tekstą.`] : []),
     `DU PRIIMTI PAVYZDŽIAI:\n${examples.map((e, i) => `PAVYZDYS ${i + 1} (${e.reference}):\n${e.text}`).join('\n\n')}`,
     `KONKREČIOS UŽDUOTYS:\n${JSON.stringify(jobs, null, 2)}`,
     'Prieš grąžindamas pats perskaityk visus tekstus: patikrink kalbą, faktų ribas, aprašymų ilgį ir kiekvieną šaltinio reason. Grąžink visus puslapius užduočių eilės tvarka, kiekvieną pradėdamas tikslia jo H1 antrašte. Šaltinių JSON nelaikyk pagrindinio teksto dalimi.',

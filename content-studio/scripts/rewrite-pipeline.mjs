@@ -5,6 +5,7 @@ import { pathToFileURL } from 'node:url';
 import { createPipelineState, JsonPipelineStore, runRewritePipeline } from '../src/rewrite-pipeline/runner.mjs';
 import { HostBridge } from '../src/rewrite-pipeline/host-bridge.mjs';
 import { geminiBrowserFunctionsSource } from '../src/rewrite-pipeline/gemini-ui.mjs';
+import { validateImportKey } from '../src/rewrite-pipeline/import-key.mjs';
 
 const [command,...args]=process.argv.slice(2);
 const option=name=>{const i=args.indexOf('--'+name);return i<0?undefined:args[i+1];};
@@ -16,11 +17,19 @@ const payload=async()=>option('input')?JSON.parse(await readFile(option('input')
 const output=value=>process.stdout.write(JSON.stringify(value,null,2)+'\n');
 if(command==='init'){
   const input=JSON.parse(await readFile(option('input'),'utf8'));
+  for (const page of input.pages) if (page.factsReady !== false) validateImportKey(page.key);
   output((await store.init(createPipelineState(input))).pipeline);
 }else if(command==='enqueue'){
   const input=JSON.parse(await readFile(option('input'),'utf8'));
+  for (const page of input.pages) if (page.factsReady !== false) validateImportKey(page.key);
   await store.update(doc=>{const next=createPipelineState({siteId:doc.pipeline.siteId,pages:input.pages,publication:doc.pipeline.publication});const existing=new Set(doc.pipeline.pages.map(p=>p.pageId));for(const p of next.pages)assert(!existing.has(p.pageId),'Page already queued/attempted/completed; preserve its history');doc.pipeline.pages.push(...next.pages);});
   output({queued:input.pages.length});
+}else if(command==='repair-import-key'){
+  const config=JSON.parse(await readFile(option('config'),'utf8'));
+  const {verifyPin}=await import('../src/rewrite-pipeline/core-adapter.mjs');await verifyPin(config.portsModule);
+  const {createPorts}=await import(pathToFileURL(config.portsModule.path));
+  const ports=await createPorts({store,bridge,config});assert.equal(typeof ports.repairImportKey,'function');
+  output(await ports.repairImportKey({pageId:option('page'),candidateId:option('candidate'),actor:option('actor'),reason:option('reason')}));
 }else if(command==='next')output(await bridge.pending());
 else if(command==='claim')output(await bridge.claim(option('request'),option('actor')));
 else if(command==='reply'){const value=await payload();await bridge.reply(option('request'),option('actor'),value.payloadSha256,value.response);output({saved:true});}
@@ -54,4 +63,4 @@ else if(command==='run'){
   const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort(new Error('Owner pause requested'));}catch(error){controller.abort(error);}},pollMs);
   try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3,pollMs,importCoalesceMs:config.importCoalesceMs??3000}));}
   finally{clearInterval(timer);}
-}else throw new Error('Commands: init, enqueue, run, next, claim, send-intent, reply, reconcile-retained, status, pause, resume. Real host tools answer requests; no automated Gemini retry.');
+}else throw new Error('Commands: init, enqueue, repair-import-key, run, next, claim, send-intent, reply, reconcile-retained, status, pause, resume. Real host tools answer requests; no automated Gemini retry.');

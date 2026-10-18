@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { mkdir, open, readFile, rename, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { validateImportKey } from './import-key.mjs';
 
 const clone = value => structuredClone(value);
 const now = () => new Date().toISOString();
@@ -14,6 +15,7 @@ export function createPipelineState({ siteId, pages, publication = 'paused_by_ow
   if (!populated(siteId) || !Array.isArray(pages) || publication !== 'paused_by_owner') throw new Error('A site, pages and paused publication are required');
   const ids = pages.map(page => page.pageId);
   if (ids.some(id => !populated(id)) || new Set(ids).size !== ids.length) throw new Error('Unique page IDs are required');
+  for (const page of pages) if (Object.hasOwn(page, 'key')) validateImportKey(page.key);
   return { version: 1, siteId, publication, status: 'IDLE', batches: [], pages: pages.map(input => ({
     pageId: input.pageId, input: clone(input), status: input.factsReady === false ? 'FACTS_WAIT' : 'QUEUED',
     attempts: [], generationResults: [], candidates: [], reviews: [], imports: [],

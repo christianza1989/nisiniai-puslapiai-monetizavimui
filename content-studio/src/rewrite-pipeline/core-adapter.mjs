@@ -5,6 +5,7 @@ import path from 'node:path';
 import { applyBodyEdits, sha256Body } from './bounded-edits.mjs';
 import { validateGeminiProof } from './gemini-ui.mjs';
 import { selectCapturedPages, MAX_SOURCE_REASONS } from './capture.mjs';
+import { effectiveImportKey } from './import-key.mjs';
 
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const copy = value => structuredClone(value);
@@ -71,7 +72,7 @@ export function prepareReviewedPage(record, site, model) {
     intent: exactString(input.intent, 300, 'reader question'), body: edited.body.map(text => ({type:'paragraph',text:exactString(text,3000,'paragraph')})),
     externalLinks: sources.map(s => ({...s,verified:true})), links: copy(prior.links), linkSuggestions: copy(suggestions), media,
     factChecks: ['Private rewrite awaits actual desktop/mobile DOM verification. Publication paused.'] };
-  return { pageId: prior.id, key: input.key, prior, patch, original, candidate, capture, review, input,
+  return { pageId: prior.id, key: effectiveImportKey(record), prior, patch, original, candidate, capture, review, input,
     audits: edited.audits, canonicalRevision: model.revisionHash({...prior,...patch}) };
 }
 
@@ -138,6 +139,7 @@ export function createPrivateImporter({model,workflow,registry,config,captureDom
       const prepared=[],outcomes=[];
       for(const record of records)try{
         const p=prepareReviewedPage(record,before,model);
+        assert(!prepared.some(other=>other.key===p.key),'Duplicate effective import key');
         assert(/WrittenDraft$/.test(p.key));for(const cp of cps)assert(!cp.work[p.key]&&!Object.entries(cp.work).some(([k,v])=>k.endsWith('WrittenDraft')&&v.pageId===p.pageId),'Already imported; do not repeat');
         for(const pin of [p.capture.captureRef,p.candidate.promptRef,p.input.factsRef,p.candidate.modelProofRef])await verifyPin(pin);
         assert.deepEqual(p.candidate.captureSelection.pages.find(x=>x.pageId===p.pageId),p.input.capturePage);
@@ -150,7 +152,7 @@ export function createPrivateImporter({model,workflow,registry,config,captureDom
         assert.match(p.candidate.identity.accountPath,/^\/u\/[2-6]$/);assert.equal(p.candidate.identity.modelUi,'4 Argon');assert(['Low','Žema'].includes(p.candidate.identity.thinkingUi));assert.equal(p.candidate.identity.backendModelId,null);
         assert.equal(proof.proofs[0].accountPath,p.candidate.identity.accountPath);assert.equal(proof.proofs[1].accountPath,p.candidate.identity.accountPath);
         prepared.push(p);
-      }catch(error){outcomes.push({pageId:record.pageId,status:'failed',error:error.message});}
+      }catch(error){outcomes.push({pageId:record.pageId,status:'failed',error:error.message,...(error.message.startsWith('INVALID_IMPORT_KEY:')?{code:'INVALID_IMPORT_KEY',nativeMutationAttempted:false}:{})});}
       if(!prepared.length)return{outcomes};
       const epochId=randomUUID();resultPath=path.join(config.outputDir,'RESULT.json');
       try{consolidated=await read(resultPath);assert(Array.isArray(consolidated.epochs));}catch(error){if(error.code!=='ENOENT')throw error;consolidated={version:1,publication:'paused_by_owner',epochs:[]};}

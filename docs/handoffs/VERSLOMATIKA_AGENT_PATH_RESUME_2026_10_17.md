@@ -1,5 +1,16 @@
 # Agent path: current continuation
 
+## Owner resumed platform lane; new business belongs to separate chat
+
+2026-10-18: continue platform/runtime/UI integration here. The owner will create
+a new chat for the kubilų dealer site, product facts/localizations and new agents;
+that business is intended for later account attachment. Do not continue the
+rejected informational site or its business calibration as the commercial result.
+Preserve all historical data/receipts. The current next action is the existing
+helper's narrow lease/metadata diagnostic repair, followed by source review,
+same-schema adoption and platform mail/Lithuanian view acceptance. No second core,
+queue, catalog, calibration engine or unsolicited new chat is introduced.
+
 ## First native pilot stopped; both authorizations contained — 2026-10-18
 
 The current native pair was separately admitted and bound to the independent

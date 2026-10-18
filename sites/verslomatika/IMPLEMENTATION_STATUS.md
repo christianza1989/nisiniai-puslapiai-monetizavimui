@@ -1,5 +1,22 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current owner assignment — platform only, 2026-10-18
+
+The owner resumed this chat's platform work after the pause. A separate chat will
+rebuild the kubilų business/site and create its new agents, then attach that whole
+business to a Verslomatika account later. Root does not rebuild its Maudis catalog,
+site design, translations or business agents in this lane. Preserve the previous
+Creation, content and failed calibration history; do not treat them as the new
+business's approved products or calibrated agents.
+
+Next platform milestone: finish the reproduced inter-role lease repair, review
+and integrate it, adopt the same-schema source with all operating history exact,
+then verify native agent/mail integration and Lithuanian correspondence display.
+A minimal explicitly bounded technical smoke is separate from the deferred
+business calibration. Existing common Task/Run, native Agent/Config, mail,
+knowledge and calibration contracts remain the only engines. Future attachment
+must preserve the new site's stable identity, current source and owner mapping.
+
 > 2026-10-18 native pilot: the first train case stopped on infrastructure failure,
 > not a behavioral score. Research2 attempts (1 known success/1 failed unknown),
 > email0/auxiliary0/channels0; remaining cases and all4 holdouts unexecuted.

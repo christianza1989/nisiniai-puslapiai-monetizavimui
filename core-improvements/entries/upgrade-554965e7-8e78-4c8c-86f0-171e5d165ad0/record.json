@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "A single fresh Alembic upgrade spans revisions0047 and0048, retaining same-named ON COMMIT DROP probes and failing before0049",
+  "category": "code",
+  "evidence": [
+    "docs/BUSINESS_ATTACHMENT_BACKBONE.md retained fresh0-to-head DuplicateTableError pinet_display_kind_old_probe; unchanged0047/0048 both invoke mail_view.task_schema.probe_sql; env.py uses default whole-series transaction at911c6e611648584a33e960a082bffcf4ec9c275f"
+  ],
+  "paths": [
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/tests/test_migration_transactions_pg.py",
+    "docs/MIGRATION_TRANSACTION_BOUNDARIES.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped env.py revert; preserve already committed successful revisions and retained QA databases. Never downgrade or replay committed migrations manually.",
+  "id": "upgrade-554965e7-8e78-4c8c-86f0-171e5d165ad0",
+  "branch": "codex/migration-transaction-boundaries-20261018",
+  "baseSha": "911c6e611648584a33e960a082bffcf4ec9c275f",
+  "createdAt": "2026-10-18T08:05:39.109Z"
+}

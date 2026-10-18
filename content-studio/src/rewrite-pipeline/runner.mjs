@@ -20,11 +20,43 @@ export function createPipelineState({ siteId, pages, publication = 'paused_by_ow
   })) };
 }
 
+// Normal delivery and explicit retained reconciliation attach the same parsed
+// result to existing page attempts. Neither path creates an author attempt here.
+export function attachGenerationResult(p, batch, result, { maxAttemptsPerPage = 2, reconciliation } = {}) {
+  const responsePages=result?.pages??[],rejections=result?.rejections??[];
+  const ids=Array.isArray(responsePages)&&Array.isArray(rejections)?[...responsePages,...rejections].map(page=>page?.pageId):[];
+  const valid=retainedPin(result?.captureRef)&&retainedPin(result?.rawRef??result?.captureRef)&&
+    Array.isArray(responsePages)&&Array.isArray(rejections)&&new Set(ids).size===ids.length&&ids.every(id=>batch.pageIds.includes(id))&&
+    rejections.every(page=>page.status==='rejected'&&populated(page.reason)&&page.reason.length<=4000)&&
+    !/unknown|uncertain|not.?sent|failed/i.test(String(result.send?.status))&&result.send?.uncertain!==true;
+  if(reconciliation&&!valid)throw new Error('Reconciliation requires a verified retained result');
+  const saved=p.batches.find(item=>item.batchId===batch.batchId);
+  if(reconciliation)saved.lateRetained=clone(reconciliation);
+  else{
+    saved.status=valid?'OBSERVED':'UNKNOWN';saved.finishedAt=now();
+    if(result?.captureRef)saved.captureRef=clone(result.captureRef);
+    if(result?.send)saved.send=clone(result.send);
+  }
+  for(const page of p.pages.filter(item=>batch.pageIds.includes(item.pageId))){
+    const matches=Array.isArray(responsePages)?responsePages.filter(item=>item?.pageId===page.pageId):[];
+    const candidate=matches.length===1?matches[0]:undefined,rejection=valid&&rejections.find(item=>item.pageId===page.pageId),attempt=page.attempts.at(-1);
+    page.generationResults.push({attemptId:attempt.attemptId,at:now(),status:valid&&candidate?'OBSERVED':rejection?'REJECTED':'UNKNOWN',
+      ...(result?.captureRef?{captureRef:clone(result.captureRef),rawRef:clone(result.rawRef??result.captureRef)}:{}),
+      ...(rejection?{rejection:clone(rejection)}:{}),...(reconciliation?{reconciliation:clone(reconciliation)}:{})});
+    if(candidate){
+      page.candidates.push({candidateId:randomUUID(),attemptId:attempt.attemptId,batchId:batch.batchId,
+        captureRef:result.captureRef?clone(result.captureRef):null,candidate:clone(candidate),...(reconciliation?{reconciliation:clone(reconciliation)}:{})});
+      page.status=valid?'GENERATED':'UNKNOWN';
+    }else page.status=rejection?!reconciliation&&page.attempts.length<maxAttemptsPerPage?'RETRY':'HELD':'UNKNOWN';
+  }
+  return valid;
+}
+
 /** A short exclusive file lock protects each read/modify/rename. No stale-lock deletion:
  * ambiguous abandoned locks require inspection. Only document.pipeline may be mutated;
  * CURRENT_LEAN_BATCH legacy fields and other requests/responses remain untouched. */
 export class JsonPipelineStore {
-  constructor(stateFile, { lockTimeoutMs = 5000 } = {}) {
+  constructor(stateFile, { lockTimeoutMs = 30000 } = {}) {
     this.stateFile = path.resolve(stateFile);
     this.lockFile = `${this.stateFile}.pipeline.lock`;
     this.lockTimeoutMs = lockTimeoutMs;
@@ -40,7 +72,7 @@ export class JsonPipelineStore {
         // Windows may report EPERM/EACCES while another short lock is delete-pending.
         if (!['EEXIST', 'EPERM', 'EACCES'].includes(error.code)) throw error;
         if (Date.now() - started >= this.lockTimeoutMs) throw new Error('Pipeline state lock busy; inspect owner before recovery');
-        await sleep(10);
+        await sleep(Math.min(100,10+Math.floor((Date.now()-started)/100))+Math.floor(Math.random()*10));
       }
     }
     try { await handle.writeFile(JSON.stringify({ token, pid: process.pid })); return await work(); }
@@ -150,12 +182,13 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
   });
   const read = async () => (await store.read()).pipeline;
   const cancelled = () => signal?.aborted === true;
+  const cancellationError = () => Object.assign(new Error(message(signal?.reason??'Pipeline cancelled')+'; inspect external outcome'),{name:'AbortError',cause:signal?.reason});
   async function invoke(callback) {
-    if (cancelled()) throw Object.assign(new Error('Owner paused pipeline'), { name: 'AbortError' });
+    if (cancelled()) throw cancellationError();
     if (!signal) return callback();
     let listener;
     const abort = new Promise((_, reject) => {
-      listener = () => reject(Object.assign(new Error('Owner paused pipeline during external work; inspect outcome'), { name: 'AbortError' }));
+      listener = () => reject(cancellationError());
       signal.addEventListener('abort', listener, { once: true });
     });
     try { return await Promise.race([Promise.resolve().then(callback), abort]); }
@@ -184,40 +217,17 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
         const before = await read(), records = before.pages.filter(page => batch.pageIds.includes(page.pageId));
         try {
           const result = await invoke(() => ports.generate({ batchId: batch.batchId, pages: records.map(page => clone(page.input)) }, ctx({ batchId: batch.batchId })));
-          const responsePages = result?.pages ?? [], rejections = result?.rejections ?? [];
-          const ids = Array.isArray(responsePages) && Array.isArray(rejections)
-            ? [...responsePages, ...rejections].map(page => page?.pageId) : [];
-          const valid = retainedPin(result?.captureRef) && retainedPin(result?.rawRef ?? result?.captureRef) &&
-            Array.isArray(responsePages) && Array.isArray(rejections) &&
-            new Set(ids).size === ids.length && ids.every(id => batch.pageIds.includes(id)) &&
-            rejections.every(page => page.status === 'rejected' && populated(page.reason) && page.reason.length <= 4000) &&
-            !/unknown|uncertain|not.?sent|failed/i.test(String(result.send?.status)) && result.send?.uncertain !== true;
-          await mutate(p => {
-            const saved = p.batches.find(item => item.batchId === batch.batchId);
-            saved.status = valid ? 'OBSERVED' : 'UNKNOWN'; saved.finishedAt = now();
-            if (result?.captureRef) saved.captureRef = clone(result.captureRef);
-            if (result?.send) saved.send = clone(result.send);
-            for (const page of p.pages.filter(item => batch.pageIds.includes(item.pageId))) {
-              const matches = Array.isArray(responsePages) ? responsePages.filter(item => item?.pageId === page.pageId) : [];
-              const candidate = matches.length === 1 ? matches[0] : undefined;
-              const rejection = valid && rejections.find(item => item.pageId === page.pageId);
-              const attempt = page.attempts.at(-1);
-              page.generationResults.push({ attemptId: attempt.attemptId, at: now(), status: valid && candidate ? 'OBSERVED' : rejection ? 'REJECTED' : 'UNKNOWN',
-                ...(result?.captureRef ? { captureRef: clone(result.captureRef), rawRef: clone(result.rawRef ?? result.captureRef) } : {}),
-                ...(rejection ? { rejection: clone(rejection) } : {}) });
-              if (candidate) {
-                page.candidates.push({ candidateId: randomUUID(), attemptId: attempt.attemptId, batchId: batch.batchId,
-                  captureRef: result.captureRef ? clone(result.captureRef) : null, candidate: clone(candidate) });
-                page.status = valid ? 'GENERATED' : 'UNKNOWN';
-              } else page.status = rejection ? page.attempts.length < maxAttemptsPerPage ? 'RETRY' : 'HELD' : 'UNKNOWN';
-            }
-          });
+          await mutate(p => attachGenerationResult(p,batch,result,{maxAttemptsPerPage}));
         } catch (error) {
+          let notSent=error?.code==='HOST_NOT_SENT';
+          if(cancelled()&&typeof ports.cancelUnclaimedGeneration==='function'){
+            try{notSent=await ports.cancelUnclaimedGeneration(batch.batchId,message(error),ctx({batchId:batch.batchId}));}catch{/* Unproven delivery remains UNKNOWN. */}
+          }
           await mutate(p => {
             const saved = p.batches.find(item => item.batchId === batch.batchId);
-            saved.status = 'UNKNOWN'; saved.error = message(error); saved.finishedAt = now();
+            saved.status = notSent?'NOT_SENT':'UNKNOWN'; saved.error = message(error); saved.finishedAt = now();
             for (const page of p.pages.filter(item => batch.pageIds.includes(item.pageId))) {
-              page.status = 'UNKNOWN'; page.generationResults.push({ attemptId: page.attempts.at(-1).attemptId, status: 'UNKNOWN', at: now(), error: message(error) });
+              page.status = notSent?'HELD':'UNKNOWN'; page.generationResults.push({ attemptId: page.attempts.at(-1).attemptId, status: saved.status, at: now(), error: message(error) });
             }
           });
         }

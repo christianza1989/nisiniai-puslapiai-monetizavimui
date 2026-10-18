@@ -24,6 +24,10 @@ if(command==='init'){
 }else if(command==='next')output(await bridge.pending());
 else if(command==='claim')output(await bridge.claim(option('request'),option('actor')));
 else if(command==='reply'){const value=await payload();await bridge.reply(option('request'),option('actor'),value.payloadSha256,value.response);output({saved:true});}
+else if(command==='reconcile-retained'){
+  const value=await payload(),{reconcileRetainedGeneration}=await import('../src/rewrite-pipeline/retained-reconciliation.mjs');
+  output(await reconcileRetainedGeneration(store,{requestId:option('request'),actor:option('actor'),payloadSha256:value.payloadSha256,response:value.response}));
+}
 else if(command==='send-intent'){
   const prepared=await payload(),dispatchFile=option('dispatch-file');
   if(dispatchFile){
@@ -47,7 +51,7 @@ else if(command==='run'){
   const {verifyPin}=await import('../src/rewrite-pipeline/core-adapter.mjs');await verifyPin(config.portsModule);
   const {createPorts}=await import(pathToFileURL(config.portsModule.path));
   const controller=new AbortController();for(const sig of ['SIGINT','SIGTERM'])process.once(sig,()=>controller.abort());
-  const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort();}catch{controller.abort();}},pollMs);
+  const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort(new Error('Owner pause requested'));}catch(error){controller.abort(error);}},pollMs);
   try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3,pollMs,importCoalesceMs:config.importCoalesceMs??3000}));}
   finally{clearInterval(timer);}
-}else throw new Error('Commands: init, enqueue, run, next, claim, send-intent, reply, status, pause, resume. Real host tools answer requests; no automated Gemini retry.');
+}else throw new Error('Commands: init, enqueue, run, next, claim, send-intent, reply, reconcile-retained, status, pause, resume. Real host tools answer requests; no automated Gemini retry.');

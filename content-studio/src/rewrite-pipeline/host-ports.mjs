@@ -6,13 +6,36 @@ import { pathToFileURL } from 'node:url';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createPrivateImporter, verifyPin } from './core-adapter.mjs';
-import { buildAuthorPrompt } from './gemini-ui.mjs';
+import { buildAuthorPrompt, normalizeGeminiPrompt, validateGeminiProof } from './gemini-ui.mjs';
 import { selectCapturedPages } from './capture.mjs';
 import { prepareFactGroups } from './fact-preparation.mjs';
 import { measurePipelineThroughput } from './throughput.mjs';
 
 const read=async file=>JSON.parse(await readFile(file,'utf8'));
 const execute=promisify(execFile);
+
+/** Shared retained-original validation, also used by explicit late reconciliation.
+ * This reads pinned evidence only; it never sends, reviews or writes native data. */
+export async function parseRetainedGenerationAnswer(payload,answer,{attemptId}={}) {
+  assert(answer.send?.status==='COMPLETED_RETAINED'&&!answer.send.uncertain,'A query acknowledgement alone is not a retained response');
+  if(attemptId)assert.equal(answer.send.attemptId,attemptId,'Retained response belongs to another host attempt');
+  const [capture,prompt,proofBytes]=await Promise.all([answer.captureRef,answer.promptRef,answer.modelProofRef].map(verifyPin));
+  assert.equal(prompt.toString('utf8'),payload.prompt,'Actual sent prompt differs');
+  const raw=JSON.parse(capture.toString('utf8')),proof=JSON.parse(proofBytes.toString('utf8'));
+  const selection={...answer.captureSelection,pages:payload.pages},parsed=selectCapturedPages(raw,selection);
+  const query=raw.queries[selection.responseIndex];
+  assert.equal(normalizeGeminiPrompt(typeof query==='string'?query:query?.text??''),normalizeGeminiPrompt(payload.prompt),'Actual retained query differs from this request');
+  assert.equal(answer.send.at,raw.at,'Retained response timestamp differs');
+  assert.equal(proof.proofs?.length,2);assert.deepEqual(proof.proofs.map(p=>p.stage),['PRE','POST']);
+  for(const stage of proof.proofs){
+    validateGeminiProof(stage,{expectedAccount:answer.identity.email},raw.url,Date.parse(stage.at));
+    assert.equal(stage.accountPath,answer.identity.accountPath);assert(stage.artifacts?.length>=3,'Actual AX/DOM/PNG pins required');
+    for(const pin of stage.artifacts)await verifyPin(pin);
+  }
+  assert(Date.parse(proof.proofs[0].at)<=Date.parse(raw.at)&&Date.parse(raw.at)<=Date.parse(proof.proofs[1].at),'Retained PRE/raw/POST chronology differs');
+  assert.equal(answer.identity.modelUi,'4 Argon');assert(['Low','Žema'].includes(answer.identity.thinkingUi));assert.equal(answer.identity.backendModelId,null);
+  return{captureRef:answer.captureRef,send:answer.send,pages:parsed.outcomes.filter(o=>o.status==='captured').map(o=>({...o.candidate,pageId:o.pageId,captureSelection:selection,promptRef:answer.promptRef,modelProofRef:answer.modelProofRef,identity:answer.identity,authoredAt:raw.at,conversationUrl:raw.url})),rejections:parsed.outcomes.filter(o=>o.status==='rejected')};
+}
 
 /** Only retained parser/reviewer corrections belonging to this queued batch.
  * UNKNOWN outcomes and other pages never supply authoring prose or corrections. */
@@ -27,7 +50,12 @@ export function collectRetainedAuthorRejections({pageIds,records}) {
     const review=(record.reviews??[]).filter(r=>{
       if(r.decision!=='rejected'||!concrete(r.reason))return false;
       const candidate=(record.candidates??[]).find(c=>c.candidateId===r.candidateId);
-      return candidate&&pin(candidate.captureRef)&&(!candidate.candidate?.pageId||candidate.candidate.pageId===record.pageId)&&!(record.generationResults??[]).some(g=>g.attemptId&&g.attemptId===candidate.attemptId&&g.status==='UNKNOWN');
+      const late=candidate?.reconciliation;
+      const latest=(record.generationResults??[]).filter(g=>g.attemptId===candidate?.attemptId).at(-1);
+      const resolved=late&&latest?.status==='OBSERVED'&&latest.reconciliation?.receiptId===late.receiptId&&
+        latest.reconciliation.requestId===late.requestId&&latest.captureRef?.sha256===candidate.captureRef?.sha256;
+      return candidate&&pin(candidate.captureRef)&&(!candidate.candidate?.pageId||candidate.candidate.pageId===record.pageId)&&
+        (!(record.generationResults??[]).some(g=>g.attemptId&&g.attemptId===candidate.attemptId&&g.status==='UNKNOWN')||resolved);
     }).at(-1);
     if(review){const candidate=record.candidates.find(c=>c.candidateId===review.candidateId);result.push({pageId:record.pageId,kind:'review',status:'rejected',reason:review.reason,candidateId:review.candidateId,captureRef:candidate.captureRef,at:review.at});}
   }
@@ -80,6 +108,7 @@ export async function createPorts({store,bridge,config}) {
   };
   const importer=createPrivateImporter({model,workflow,registry,config,captureDom:(request,ctx)=>bridge.request('NATIVE_DOM',request,ctx),refreshReaders,guardEpoch});
   return {
+    cancelUnclaimedGeneration:(batchId,reason,ctx)=>bridge.cancelUnclaimedGeneration(batchId,reason,ctx),
     async generate(batch,ctx){
       const document=await store.read(),pipeline=document.pipeline;
       const completed=new Set(Object.entries((await read(config.checkpoints[0])).work).filter(([k])=>k.endsWith('WrittenDraft')).map(([,v])=>v.pageId));
@@ -88,11 +117,7 @@ export async function createPorts({store,bridge,config}) {
       const payload=await buildGenerationPayload({batch,pipeline,authorTasks,examples:config.acceptedExamples,commonMistakes:config.commonMistakes});
       const {pages:specs,prompt}=payload;
       const answer=await bridge.request('GEMINI_GENERATE',payload,ctx);
-      assert(answer.send?.status==='COMPLETED_RETAINED'&&!answer.send.uncertain,'A query acknowledgement alone is not a retained response');
-      for(const pin of [answer.captureRef,answer.promptRef,answer.modelProofRef])await verifyPin(pin);
-      assert.equal((await readFile(answer.promptRef.path,'utf8')),prompt,'Actual sent prompt differs');
-      const selection={...answer.captureSelection,pages:specs},raw=await read(answer.captureRef.path),parsed=selectCapturedPages(raw,selection);
-      return{captureRef:answer.captureRef,send:answer.send,pages:parsed.outcomes.filter(o=>o.status==='captured').map(o=>({...o.candidate,pageId:o.pageId,captureSelection:selection,promptRef:answer.promptRef,modelProofRef:answer.modelProofRef,identity:answer.identity,authoredAt:raw.at,conversationUrl:raw.url})),rejections:parsed.outcomes.filter(o=>o.status==='rejected')};
+      return parseRetainedGenerationAnswer({pages:specs,prompt},answer);
     },
     async review(record,ctx){
       return bridge.request('REVIEW_PAGE',{pageId:record.pageId,input:record.input,candidate:record.candidates.at(-1),requirements:'Read the complete H1, description, every body paragraph and own source reason against pinned primary facts. Accept this page independently; return all necessary corrections together. Eight-word edits are relative to immutable Gemini paragraphs; no fact/number/model/URL/label changes. Truthfully name actual reviewer ID.'},ctx);

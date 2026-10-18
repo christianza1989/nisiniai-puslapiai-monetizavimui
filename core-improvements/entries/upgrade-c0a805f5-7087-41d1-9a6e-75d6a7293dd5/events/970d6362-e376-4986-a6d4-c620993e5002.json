@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Typed acquisition.model_prepare over maintained common Task/Run/Event is source verified on Rootab0604b, schema0046 integrated0a2b3a5, Root lock/terminal/cancellation fixes9d2df5b. It derives current native Registration and saved customer_research/email Config under canonical Foundation readiness, requires a separate explicit UUID/source/module/config bounded model authorization, reserves each fixed High role before IO, and atomically captures a reviewed draft in the canonical Case/mail. Current purpose/source/private config drift, budget exhaustion, reviewer/provider failure, process cancellation and grant revocation fence outputs. Actual expired-A/queued-B deadlock and mutable terminal-time failures were reproduced and fixed; cancellation now terminalizes through accounting-only typed settlement while preserving charged unknown or observed known usage and cancellation propagation. Schema/transport peer source packets are integrated, no parallel queue/calibration was created. Operating remains ba16/0045 with held workers/channels, actual model/provider/SMTP/IMAP0; old174/180 deadline ledger unchanged. Original failure logs and scope distinctions retained; no main merge, other-PC adoption or business/channel acceptance claimed.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/run-model-prepare-pg.py final-model-15",
+      "result": "PASS",
+      "evidence": "15 real isolated native-owner/Registration/AgentConfig/Task/Run/attempt/Case/mail PG+HTTP cases PASS260.22s; raw SHAa9da89d66e0e3a3e5daacd7911bbf7ffbe7f5dcca1e76dd68283a6215f4b8820. Covers duplicate UUID/budget no renewal, normal-owner resulting mail, exact 3 roles/accounting, failure/stop/campaign cap, source/config/private drift before IO, visible/hidden late accounting, cancelled unknown/known/revoked and deterministic two-session lock order. Model roles are inert; actual provider0."
+    },
+    {
+      "command": "python .local/sharp-policy/run-model-prepare-pg.py legacy-worker-01 tests/test_control_tasks.py tests/test_workspace_direct_pg.py tests/test_workspace_agent_workflow_pg.py",
+      "result": "PASS",
+      "evidence": "40 real existing common-worker/Direct/native workflow PG/API cases PASS410.54s; raw SHAcaffd6ae1214e957cdd2071b91030c5155e1e93e50220887a94f2a8e9b7ea645. Tests the shared recovery transaction change. All original/operating/native snapshots exact; no provider/channel calls."
+    },
+    {
+      "command": "python .local/sharp-policy/run-acquisition-integration-pg.py model-none-regression acceptance_tests/test_acquisition_tasks.py acceptance_tests/test_acquisition_mail_view.py",
+      "result": "PASS",
+      "evidence": "29 existing model=none capture/common worker/canonical owner mail PG+HTTP cases PASS44.24s on retained owned0045 QA; raw SHAd8ba4cba7720f7d2ca9c2358947658a9b808a0a2a5ffa82876bf4ea670ded53e. New model flags off; no0046 table dependency leaks into old capture. Original/operating/native exact; provider/SMTP/IMAP0."
+    },
+    {
+      "command": "python .local/sharp-policy/run-model-prepare-pg.py combined-source-regression [15 explicit acquisition/native authority/shared transport offline test files]",
+      "result": "PASS",
+      "evidence": "363PASS/7 explicitly skipped unpinned actual-CLI probes71.23s; raw SHA88e2793e6d8fad82cdaed5f95a6f5e02c540459d902c0add4aa316477f7018db. Includes Root Registration fake SQL compatibility repair and all84 authority-observation cases, plus helper's8 real inert-child cancellation/cleanup/known-unknown receipt cases. No actual Codex/model/network/provider calls; original/operating/native exact."
+    },
+    {
+      "command": "python -m ruff check [all Python files changed since60c6518]; git diff --check",
+      "result": "PASS",
+      "evidence": "Changed source/CLI/schema/tests lint and whitespace reviewed; staged safety and committed coverage are separate handoff steps."
+    }
+  ],
+  "eventId": "970d6362-e376-4986-a6d4-c620993e5002",
+  "sequence": 4,
+  "at": "2026-10-18T00:40:41.164Z"
+}

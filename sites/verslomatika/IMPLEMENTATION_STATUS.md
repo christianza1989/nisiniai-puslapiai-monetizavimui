@@ -17,18 +17,24 @@ reviewed same-Case capture/reply. Root345 pure+67 subtests and63 real PG/API/Nod
 checks passed. Ordinary populated browser/200% proof is still unverified.
 [Exact checkpoint](../../docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md).
 
-Current source work is separately typed acquisition.model_prepare over maintained
+The next source packet provides separately typed acquisition.model_prepare over maintained
 Task/Run/Event accounting, using the current saved acquisition purpose and an
-explicit privileged bounded model budget. Schema0046/helper and Root handler/
-authority/CLI are in progress from60c6518; none is adopted into operating.
-The21 initial contract/native-adapter tests passed with inert IO. Native PG
-end-to-end, revocation/hidden accounting and integration regressions remain to
-run after the schema package freezes. [Contract](../../docs/ACQUISITION_MODEL_PREPARE.md).
+explicit privileged bounded model budget. Schema0046/helper is integrated as
+0a2b3a5; Root native handler/authority/CLI and accounting/lock-order corrections
+are9d2df5b, shared cancellation receipt repair ab0604b. None is adopted into operating.
+Root final15 new-model PG tests PASS260.22s,40 existing common-worker/Direct/native
+workflow PG tests PASS410.54s,29 model-free capture/mail PG/API tests PASS44.24s,
+and combined363 pure/inert-child tests PASS71.23s with7 unpinned actual-CLI probes
+explicitly skipped. Original/operating data and771 case-native files remained
+exact. Real model calls, full Foundation, protected calibration, populated UI and
+authenticated channels remain separate acceptance gates.
+[Contract](../../docs/ACQUISITION_MODEL_PREPARE.md).
 
 Remaining executable order:
 
-1. Finish typed model preparation and real isolated owner/Task/Run/Case tests.
-   This can proceed now; no paid call or transport is required for source work.
+1. Finish the reviewed source handoff and separately adopt schema0046/handler
+   while workers remain held. Preserve exact native identity and historical
+   accounting; a source packet does not approve a new model budget or live mail.
 2. Add durable, deduplicated post-commit Lithuanian display translation with its
    explicit model/accounting boundary, then model reply Task and UI integration.
 3. Complete current business Foundation/saved-purpose and protected calibration

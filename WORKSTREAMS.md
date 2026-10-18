@@ -1948,3 +1948,12 @@ helper keeps acquisition. All three composite UNIQUE binding targets and narrow
 runtime SELECT/pin functions are shared API. No existing source/holdout packet,
 paid call, operating DB, actual business/site or runtime activation in this scope.
 Disk recovery was acknowledged before resumed writes; >=1.5GiB free guard applies.
+
+Helper backbone window closes at source299773f9c4aab80789616a1d3c6a5aa4ba41ce6b:
+19offline/11retainedPG cases, actual CLI4-operation durable receipts, Ruff,
+exact-staged safety and own-base upgrade coverage PASS. First SQL alias failure,
+QA setup misses and inherited single-batch temp-probe collision are preserved in
+the scoped backbone doc/journal. Root received two concrete adoption/readiness
+findings and reports fixes in its own scope. Root keeps review, full49/legacy
+regression, source/schema/actual-business adoption. Own15559 retained synthetic
+DB and private receipts remain preserved; no operating, paid or channel changes.

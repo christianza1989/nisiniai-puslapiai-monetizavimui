@@ -44,6 +44,9 @@ async def reply_context(tx, work, value):
             or upstream.campaign != context["campaign"] or upstream.prospect != context["prospect"]):
         raise RunnerError("acquisition_reply_parent_invalid")
     applied = str(value.request_id) in tx.info.get("acquisition_reply_applied", set())
+    if not applied and (not context["transcript"] or context["transcript"][-1]["role"] != "recipient"
+            or context["transcript"][-1]["body"] != context["inbound"].payload["body"]):
+        raise RunnerError("headless_context_order_invalid")
     if (context["binding"].input_sha256 != value.input_sha256
             or (not applied and context["thread"].revision != value.revision)):
         raise RunnerError("correspondence_decision_stale")

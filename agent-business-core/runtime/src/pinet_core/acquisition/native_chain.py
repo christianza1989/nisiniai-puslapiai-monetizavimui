@@ -1,7 +1,8 @@
 """Current two-Config lineage; private JSON is a reference, never authority."""
 import json
 
-from sqlalchemy import select, text
+from sqlalchemy import cast, func, select, text
+from sqlalchemy.dialects.postgresql import JSONB
 
 from ..config import settings
 from ..creation.service import digest
@@ -9,8 +10,13 @@ from ..tasks.codex import RunnerError
 from ..tasks.models import Task, TaskRun
 from . import model_authority as authority
 from .contracts import Assessment, Review
+from .correspondence import recipient_hash
+from .engine import gates
+from .ledger import conditions, scope_values
 from .model_contract import KIND, PrepareModel
 from .model_models import ModelAttempt, ModelTaskBinding
+from .models import AcquisitionCampaign
+from .work_models import ContactPolicy, CorrespondenceThread
 
 SCOPE = ("business_id", "organization_id", "user_id", "environment_id", "portfolio_id", "site_id",
     "creation_id", "registration_id", "registration_fingerprint", "session_id", "source_revision",
@@ -87,10 +93,25 @@ async def final_fence(tx, value, work):
     _, private_hash = authority.read_registration(settings())
     if private_hash != work.authorization.work_registration_sha256:
         raise RunnerError("acquisition_model_private_registration_changed")
-    accepted = await tx.scalar(text("SELECT acquisition_native_pair_current(CAST(:j AS JSONB),:a)"),
-        {"j": json.dumps({"native": value.native.model_dump(mode="json"), "stage": value.stage}),
-         "a": work.authorization.id})
-    if not accepted:
+    values = scope_values(work.scope, work.authorization.adapter_id)
+    if value.stage == "reply":
+        applied = str(value.request_id) in tx.info.get("acquisition_reply_applied", set())
+        target = select(CorrespondenceThread.thread_id).where(*conditions(CorrespondenceThread, values),
+            CorrespondenceThread.thread_id == str(value.thread_id),
+            CorrespondenceThread.last_inbound_id == str(value.inbound_id),
+            CorrespondenceThread.revision == value.revision + int(applied),
+            CorrespondenceThread.source_revision == work.authorization.source_revision).exists()
+    else:
+        target = ~select(AcquisitionCampaign.campaign_id).where(*conditions(AcquisitionCampaign, values),
+            AcquisitionCampaign.campaign_id == value.campaign.campaign_id, AcquisitionCampaign.stopped).exists()
+        target &= ~select(ContactPolicy.recipient_hash).where(*conditions(ContactPolicy, values),
+            ContactPolicy.recipient_hash == recipient_hash(value.recipient), ContactPolicy.state != "active").exists()
+    pair = func.acquisition_native_pair_current(cast(json.dumps({
+        "native": value.native.model_dump(mode="json"), "stage": value.stage}), JSONB),
+        work.authorization.id)
+    accepted, now = (await tx.execute(select(pair & target, func.clock_timestamp()))).one()
+    if not accepted or gates(value.campaign, value.prospect.model_copy(update={"status": "new"})
+            if value.stage == "reply" else value.prospect, now):
         raise RunnerError("acquisition_native_pair_changed")
 
 

@@ -136,3 +136,28 @@ def test_native_feature_default_off(monkeypatch):
     monkeypatch.setattr(settings(), "acquisition_native_chain_enabled", False)
     with pytest.raises(RunnerError, match="acquisition_native_chain_disabled"):
         guard()
+
+
+@pytest.mark.parametrize("change", ["exact-native", "foreign-site", "external-recipient"])
+def test_native_manifest_keeps_real_site_binding_and_test_only_data(tmp_path, monkeypatch, change):
+    from pinet_core.acquisition.dialogue_lab import LabCase, validate_synthetic
+    value, path = known_manifest(tmp_path, monkeypatch)
+    identity = "creation-"+str(uuid4())
+    value["campaign"]["site_id"] = identity
+    for case in value["cases"]:
+        case["prospect"]["site_id"] = identity
+    if change == "foreign-site":
+        value["cases"][0]["prospect"] = {**value["cases"][0]["prospect"], "site_id": "foreign-creation"}
+    elif change == "external-recipient":
+        value["cases"][0]["recipient"] = "owner@example.com"
+    value["corpus_sha256"] = fingerprint(value["cases"])
+    path.write_text(json.dumps(value), encoding="utf-8")
+    ref = {"manifest_path": str(path), "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "case_id": "known-0"}
+    if change == "exact-native":
+        with pytest.raises(ValueError, match="synthetic_site_required"):
+            validate_synthetic(Campaign.model_validate(value["campaign"]), LabCase.model_validate(value["cases"][0]))
+        frozen, selected = native_calibration.manifest(ref)
+        assert frozen["campaign"]["site_id"] == selected.prospect.site_id == identity
+    else:
+        with pytest.raises((RunnerError, ValueError)):
+            native_calibration.manifest(ref)

@@ -155,6 +155,8 @@ async def test_exact_two_config_native_chain_one_case_and_replay(native):
         assert row["translation"]["body"] is None
     assert (await p["client"].get(base+"?case_id="+str(uuid4()), headers=p["auth"])).status_code == 404
     assert (await p["client"].get(base+"/"+str(uuid4()), headers=p["auth"])).status_code == 404
+    foreign = f"/operator/v2/businesses/{uuid4()}/mail"
+    assert (await p["client"].get(foreign+"/"+initial.result["mail_id"], headers=p["auth"])).status_code == 404
     from pinet_core.acquisition import work_config
     from pinet_core.control_api import app
     await work_config.start(app, db)
@@ -363,6 +365,10 @@ async def test_native_stop_and_privacy_keep_one_case_without_outbound(native, ac
         assert await tx.scalar(select(func.count()).select_from(MailMessage)) == 2
         policy = await tx.scalar(select(ContactPolicy))
         assert policy.state == ("stopped" if action == "stop" else "hold")
+        case = await tx.get(Case, initial.result["case_id"])
+        if action == "privacy_handoff":
+            assert case.payload["privacy_request"]["status"] == "operator_required"
+            assert case.payload["privacy_request"]["request_quote"] == body
 
 
 async def test_campaign_limit_counts_research_email_and_reply(native):

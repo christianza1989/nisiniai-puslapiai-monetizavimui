@@ -7,11 +7,11 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { JsonPipelineStore, createPipelineState, runRewritePipeline } from '../src/rewrite-pipeline/runner.mjs';
 import { reconcileRetainedGeneration } from '../src/rewrite-pipeline/retained-reconciliation.mjs';
-import { collectRetainedAuthorRejections } from '../src/rewrite-pipeline/host-ports.mjs';
+import { collectRetainedAuthorRejections, parseRetainedGenerationAnswer } from '../src/rewrite-pipeline/host-ports.mjs';
 
 // Synthetic captured UI shapes only: these fixtures assert no live Gemini proof.
 const hash=value=>createHash('sha256').update(typeof value==='string'?value:JSON.stringify(value)).digest('hex');
-async function fixture(t,{invalidPage=false}={}){
+async function fixture(t,{invalidPage=false,unknownTitle=false,answered=false}={}){
   const parent=path.resolve(import.meta.dirname,'../tmp/rewrite-pipeline-reconcile');await mkdir(parent,{recursive:true});
   const dir=await mkdtemp(path.join(parent,'fixture-'));t.after(()=>rm(dir,{recursive:true,force:true}));
   const put=async(name,value)=>{const file=path.join(dir,name),bytes=typeof value==='string'?value:JSON.stringify(value);await writeFile(file,bytes);return{path:file,sha256:hash(bytes)};};
@@ -19,7 +19,7 @@ async function fixture(t,{invalidPage=false}={}){
   const escape=text=>text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
   const block=(tag,text,anchors=[])=>({tag,text,html:`<${tag}>${anchors.length?escape(text).replace(anchors[0].label,`<a href="${anchors[0].url}">${anchors[0].label}</a>`):escape(text)}</${tag}>`,anchors});
   const blocks=specs.flatMap(s=>{const link={url:'https://manufacturer.example/'+s.pageId,label:'Gaminio kortelė'},sources=[{...link,reason:'Dokumente aprašomas šis konkretus gaminys.'}];return[
-    block('h1',s.title),block('p',invalidPage&&s.pageId==='b'?'x'.repeat(161):'Trumpas aprašymas '+s.pageId+'.'),
+    block('h1',unknownTitle&&s.pageId==='c'?'Nežinomas puslapis':s.title),block('p',invalidPage&&s.pageId==='b'?'x'.repeat(161):'Trumpas aprašymas '+s.pageId+'.'),
     block('p','Pirmoji pastraipa '+s.pageId+'. Gaminio kortelė.',[link]),block('p','Antroji pastraipa '+s.pageId+'.'),block('p','PRIVATE_SOURCE_JSON: '+JSON.stringify(sources))];});
   const payload={batchId:'retained-batch',prompt:'BATCH_ID: retained-batch\nSynthetic original prompt.',pages:specs};
   const raw={at:'2026-10-18T12:00:01.000Z',url:'https://gemini.google.com/u/4/app/synthetic-retained',responseIndex:0,responseId:'retained-original',queryCount:1,responseCount:1,queries:[{text:payload.prompt}],stopControls:[],blocks,text:blocks.map(b=>b.text).join('\n\n'),html:blocks.map(b=>b.html).join(''),orderedAnchors:blocks.flatMap(b=>b.anchors)};
@@ -30,6 +30,7 @@ async function fixture(t,{invalidPage=false}={}){
   }
   const response={send:{status:'COMPLETED_RETAINED',uncertain:false,attemptId:'host-attempt',at:raw.at},captureRef:await put('raw.json',raw),promptRef:await put('prompt.txt',payload.prompt),modelProofRef:await put('proof.json',{proofs}),captureSelection:{responseIndex:0,responseId:raw.responseId,pages:specs},identity:{email:'fixture@example.test',name:'Synthetic fixture',accountPath:'/u/4',modelUi:'4 Argon',thinkingUi:'Žema',backendModelId:null}};
   const request={id:'original-request',kind:'GEMINI_GENERATE',payload,payloadSha256:hash(payload),status:'UNKNOWN',actor:'fixture-host',claimedAt:'2026-10-18T12:00:00.000Z',attemptId:'host-attempt',reason:'Historical timeout',unknownAt:'2026-10-18T12:00:03.000Z',sendIntent:{receipt:{durable:true,state:'ATTEMPTED',attemptId:'host-attempt',batchId:payload.batchId}}};
+  if(answered){request.status='ANSWERED';request.response=structuredClone(response);request.answeredAt='2026-10-18T12:00:03.000Z';delete request.reason;delete request.unknownAt;}
   const pipeline=createPipelineState({siteId:'promedical',pages:specs.map(capturePage=>({pageId:capturePage.pageId,capturePage}))});
   pipeline.status='IDLE_WITH_BLOCKERS';pipeline.runner={status:'IDLE'};pipeline.batches=[{batchId:payload.batchId,pageIds:specs.map(s=>s.pageId),status:'UNKNOWN',error:'Historical timeout',finishedAt:request.unknownAt}];
   for(const p of pipeline.pages){p.status='UNKNOWN';p.attempts=[{attemptId:'page-attempt-'+p.pageId,batchId:payload.batchId,startedAt:request.claimedAt}];p.generationResults=[{attemptId:p.attempts[0].attemptId,status:'UNKNOWN',at:request.unknownAt,error:'Historical timeout'}];}
@@ -69,6 +70,32 @@ test('parser-invalid late page is held without author retry while valid siblings
   const f=await fixture(t,{invalidPage:true});const receipt=await reconcileRetainedGeneration(f.store,f.input);
   assert.deepEqual(receipt.pages.map(p=>p.status),['GENERATED','HELD','GENERATED']);const p=(await f.store.read()).pipeline.pages[1];
   assert.equal(p.attempts.length,1);assert.equal(p.candidates.length,0);assert.equal(p.generationResults[1].status,'REJECTED');
+});
+
+test('answered capture with one unknown H1 yields two own candidates and one rejection through host parsing and explicit reconciliation',async t=>{
+  const f=await fixture(t,{unknownTitle:true,answered:true}),before=await f.store.read();
+  const parsed=await parseRetainedGenerationAnswer(f.request.payload,f.response,{attemptId:f.request.attemptId});
+  assert.deepEqual(parsed.pages.map(p=>p.pageId),['a','b']);assert.deepEqual(parsed.rejections.map(p=>p.pageId),['c']);
+  assert.match(parsed.rejections[0].reason,/expected H1 missing/);
+  const receipt=await reconcileRetainedGeneration(f.store,f.input),after=await f.store.read();
+  assert.deepEqual(receipt.pages.map(p=>p.status),['GENERATED','GENERATED','HELD']);
+  const {lateRetained,...oldRequest}=after.requests[0];assert.deepEqual(oldRequest,before.requests[0]);
+  const {lateRetained:link,...oldBatch}=after.pipeline.batches[0];assert.deepEqual(oldBatch,before.pipeline.batches[0]);
+  for(const [i,p]of after.pipeline.pages.entries()){
+    assert.deepEqual(p.attempts,before.pipeline.pages[i].attempts);assert.deepEqual(p.generationResults[0],before.pipeline.pages[i].generationResults[0]);
+    assert.equal(p.generationResults[1].status,i===2?'REJECTED':'OBSERVED');assert.equal(p.candidates.length,i===2?0:1);assert.equal(p.reviews.length,0);assert.equal(p.imports.length,0);
+  }
+  const bytes=await readFile(f.file,'utf8');assert.deepEqual(await reconcileRetainedGeneration(f.store,f.input),receipt);assert.equal(await readFile(f.file,'utf8'),bytes);
+});
+
+test('answered reconciliation refuses any replacement of the exact stored response or advanced state',async t=>{
+  const f=await fixture(t,{answered:true}),before=await readFile(f.file,'utf8');
+  const raw={...f.raw,responseId:'replacement-original'},response={...f.response,captureRef:await f.put('replacement.json',raw),captureSelection:{...f.response.captureSelection,responseId:raw.responseId}};
+  await assert.rejects(reconcileRetainedGeneration(f.store,{...f.input,response}),/exact stored answer/);assert.equal(await readFile(f.file,'utf8'),before);
+  for(const change of [d=>{d.requests[0].status='WAITING';},d=>{d.requests[0].status='NOT_SENT';},d=>{const p=d.pipeline.pages[0];p.candidates.push({candidateId:'existing',attemptId:p.attempts[0].attemptId});},d=>{d.pipeline.runner.status='RUNNING';}]){
+    const document=JSON.parse(before);change(document);await writeFile(f.file,JSON.stringify(document));const unchanged=await readFile(f.file,'utf8');
+    await assert.rejects(reconcileRetainedGeneration(f.store,f.input));assert.equal(await readFile(f.file,'utf8'),unchanged);
+  }
 });
 
 test('actor, payload, host attempt, selected response and proof tampering reject without state mutation',async t=>{

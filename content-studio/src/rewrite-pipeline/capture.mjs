@@ -114,10 +114,14 @@ export function selectCapturedPages(raw, selection) {
   if (!headings.length || headings[0].index !== 0) fail('unmapped response prefix/no H1');
   const seenTitles = new Set();
   for (const heading of headings) {
-    if (!titles.has(heading.text) || seenTitles.has(heading.text)) fail('extra, unmapped or duplicate actual H1');
+    if (seenTitles.has(heading.text)) fail('duplicate actual H1');
     seenTitles.add(heading.text);
     if (heading.anchors.length) fail('unexpected H1 anchors');
   }
+  // A same-count unknown title is an unassigned section, never a positional or
+  // fuzzy match. Exact known headings still delimit their own original slices.
+  if (headings.some(heading => !titles.has(heading.text)) && headings.length !== selection.pages.length)
+    fail('extra or unmapped actual H1 count mismatch');
   const outcomes = selection.pages.map(spec => {
     try {
       const h = headings.find(block => block.text === spec.title);

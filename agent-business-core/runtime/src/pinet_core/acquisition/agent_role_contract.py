@@ -172,3 +172,12 @@ OUTPUT = {
     "quality": ArtifactReview,
     "coordinator": RouteDecision,
 }
+
+
+def parse_request(value):
+    # Existing synthetic v1 stays byte-compatible; evidence is a strict separate
+    # shape, never a nullable recipient added to the correspondence contract.
+    from .evidence_contract import VERSION, EvidenceRequest
+
+    version = value.get("version") if isinstance(value, dict) else getattr(value, "version", None)
+    return (EvidenceRequest if version == VERSION else RoleRequest).model_validate(value)

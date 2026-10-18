@@ -12,12 +12,13 @@ from ..tasks.models import Task, TaskRun, Thread
 from ..tasks.service import append_event, task_view
 from . import model_authority as authority
 from .agent_role_authority import observe
-from .agent_role_contract import KIND, RoleRequest
+from .agent_role_contract import KIND, parse_request
+from .evidence_contract import evidence_work
 from .model_models import ModelTaskBinding
 
 
 async def submit(tx, session, request):
-    value = RoleRequest.model_validate(request)
+    value = parse_request(request)
     policy = await authority.historical(tx, value.authorization_id, session)
     material = value.model_dump(mode="json")
     fingerprint = digest({"request": material, "authorization_fingerprint": policy.fingerprint})
@@ -72,7 +73,7 @@ async def submit(tx, session, request):
             status="queued",
             idempotency_key=str(value.request_id),
             fingerprint=fingerprint,
-            message="Testinis konkretaus verslo agento darbas",
+            message="Viešų šaltinių tyrimas" if evidence_work(value) else "Testinis konkretaus verslo agento darbas",
             source_revision=policy.source_revision,
             business_id=policy.business_id,
             organization_id=policy.organization_id,
@@ -128,7 +129,7 @@ async def _read_request(tx, session, task_id):
                 })):
             raise ControlError(503, "agent_role_task_invalid")
         try:
-            value = RoleRequest.model_validate(bound.input)
+            value = parse_request(bound.input)
         except ValidationError as error:
             raise ControlError(503, "agent_role_task_invalid") from error
         if (str(value.authorization_id) != bound.authorization_id

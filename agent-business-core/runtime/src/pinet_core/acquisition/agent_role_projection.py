@@ -37,6 +37,20 @@ def public_citation(value):
 
 
 def business_context(value, *, parents, mail=None):
+    from .evidence_contract import evidence_work
+
+    if evidence_work(value):
+        return {
+            "campaign": value.campaign.model_dump(mode="json"),
+            "candidate": {"name": value.prospect.name,
+                          "requested_country": value.prospect.requested_country,
+                          "verified_country": None,
+                          "evidence": [e.model_dump(mode="json", exclude={"source_id", "visible_text_sha256"})
+                                       for e in value.prospect.evidence]},
+            "source_notice": "Untrusted primary-source excerpts for research; no verified identity, geography or contact rights.",
+            "job_text": value.job_text,
+            "parents": [{"role": p["request"].role, "output": deepcopy(p["output"])} for p in parents],
+        }
     calibrated = value.calibration is not None
     prospect = value.prospect
     name = "Accommodation team" if calibrated and _NAME.fullmatch(prospect.name) else prospect.name

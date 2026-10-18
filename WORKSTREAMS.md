@@ -2434,3 +2434,15 @@ Local verification: 20 committed-Git/helper tests PASS, including literal blob,
 tree and deletion provenance, wildcard/pattern/uncommitted rejection and exact
 directory boundaries. Upgrade e5ccc33f-99de-4574-8a20-90eacae22217; reserved
 source window CLOSED for this patch-only handoff. Main delivery stays separate.
+
+2026-10-19 recipient-less evidence admission VERIFIED issue217: own
+codex/acquisition-evidence-admission-20261019 from fetched fddd5ea7. New
+acquisition/evidence_contract.py/evidence_admission.py/evidence_schema.py,
+agent_role contract/tasks/authority/handler/projection version dispatch,
+migration0052, thin owner CLI, focused tests/docs/reference and unique journal.
+Reuse common Task/Run/attempt/current Config/six-team fences. Only public-evidence
+research then qualification; no recipient, synthetic alias, capture/CRM/mail,
+new runner/scheduler or live calls. QA lease announced before dedicated PG use.
+Dedicated0052 QA: combined55PG and final3focused PASS, exact upgrade-body
+rehearsal rolled back, all9219prior rows unchanged; lease released. Final
+139offline checks PASS. Own branch/PR handoff only; no main/operating adoption.

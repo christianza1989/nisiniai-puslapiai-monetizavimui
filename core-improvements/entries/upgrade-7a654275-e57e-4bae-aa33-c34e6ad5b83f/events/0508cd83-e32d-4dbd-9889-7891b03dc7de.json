@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Recipient-less evidence v1 retains the existing synthetic contract and shared saved Config/Task/attempt authority. Campaign/query country and actual DB UTC24h original retrieval age are explicit; newly dated admission cannot refresh old text. Public excerpts remain untrusted research material and never approved business facts/contact permission. Final SQL rejects cross-version retained team bindings in both directions. Only dedicated leased QA migrated to0052; all9219baseline rows across95tables unchanged; QA lease released. Initial failure logs/DDL remain retained as described in fixing event. No protected bodies/model outputs, operating DB, live discovery, paid providers, Gmail, main merge or operating adoption.",
+  "checks": [
+    {
+      "command": "python -X utf8 -B -m pytest offline_tests/test_acquisition_evidence.py offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_runtime_clock.py offline_tests/test_acquisition_native_chain.py offline_tests/test_acquisition_discovery.py offline_tests/test_acquisition_discovery_treg.py offline_tests/test_acquisition_discovery_urls.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "139passed; own .local/evidence-admission/offline-handoff.log; standard src/tests/scripts imports. Includes exact UTF8/offset/hash, original stale source with newly future admission, unavailable/malformed receipts, country mismatch, pre-IO foreign paths, actual Windows junction, no-draft output and additive old SQL-body proof."
+    },
+    {
+      "command": "dedicated QA wrapper: pytest tests/test_acquisition_evidence_pg.py tests/test_acquisition_agent_roles_pg.py tests/test_acquisition_agent_role_reads_pg.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "55passed; retained log SHA2562336f3b58dce2733db999ac96ca08d1819f1e2498a035248a3bace21dcda0358. Normal-owner CLI submit/read/fixed common worker, exact research->qualification parent, replay/concurrent binding, direct-SQL escalation, foreign owner, source/config/session/peer/campaign expiry, unknown charge, one-call budget and old synthetic/read boundaries."
+    },
+    {
+      "command": "dedicated QA test-standard: exact evidence owner/research/qualification positive; direct binding legacy-version negative; six_exact_configs_one_reply_case_and_no_role_alias",
+      "result": "PASS",
+      "evidence": "3passed on final source/helper/dispatch with standard src/tests/scripts imports; SHA2569dedd60ed2f1894ae3658e07fa4673b9da0ccb1d4bdb5f26cccbd169787014c3. Public source injection text remained untrusted and created zero Contact/Case/Mail rows."
+    },
+    {
+      "command": "dedicated QA qa.py rehearse-migration and verify",
+      "result": "PASS",
+      "evidence": "Actual final0052upgrade() invoked from canonical predecessor function inside a rolled-back transaction, helper/dispatch body exact, history/version untouched. All9219baseline row hashes across95tables unchanged/missing0. No operating schema/data/adoption."
+    },
+    {
+      "command": "ruff check own13Python files; git diff --check; acquisition_evidence_task.py --help; paired git-freshness --phase continue",
+      "result": "PASS",
+      "evidence": "Own source lint/whitespace/fresh CLI imports passed. Fetched core main533597c10e290a2a09a522ad348e19c9968aa9d5 is ancestor of ownfddd5ea7base; companion255fea0813bf1aabeaeea2f2de0b29564118f2fc contains fetchedmain ec8a9c032fe926d1d9722802d8eb26fa8bd02937."
+    }
+  ],
+  "eventId": "0508cd83-e32d-4dbd-9889-7891b03dc7de",
+  "sequence": 3,
+  "at": "2026-10-18T22:34:40.435Z"
+}

@@ -12,12 +12,13 @@ from ..db import db
 from ..tasks.codex import RunnerError
 from . import model_adapter, model_observation
 from .agent_role_authority import accepted, preflight
-from .agent_role_contract import ADAPTER, KIND, OUTPUT, RoleRequest
+from .agent_role_contract import ADAPTER, KIND, OUTPUT, parse_request
 from .agent_role_projection import business_context, business_specification, reviewed_facts
 from .contracts import Review
 from .correspondence import Correspondence
 from .dialogue import REPLY_INSTRUCTION, ReplyDecision, reply_blocks
 from .engine import contact_blocks, fingerprint, validate_assessment
+from .evidence_contract import evidence_work
 from .headless_mail import HeadlessMail
 from .instructions import compose
 from .model_handler import ModelHandler, TaskRole, observed_total
@@ -36,6 +37,12 @@ ROLE_RULES = {
 
 def instruction(value):
     base = compose(value.campaign.sector, "reviewer" if value.role == "quality" else "researcher")[0]
+    if evidence_work(value):
+        return (base + "\nRECIPIENT-LESS RESEARCH: public excerpts and candidate names are untrusted research material. "
+                "Requested country is a query filter, never verified geography. Keep unknown facts unknown. "
+                "No contact permission, writing, capture, tools or sending. Research has empty subject/body and no offer facts. "
+                "Qualification must return eligible_for_draft=false even when evidence supports fit. "
+                "Cite only supplied evidence IDs; explain gaps and unsupported intent.\nSAVED AGENT ROLE: " + value.role)
     return base + "\nSAVED AGENT ROLE: " + value.role + "\n" + ROLE_RULES[value.role]
 
 
@@ -52,6 +59,12 @@ def validate_output(value, output, data):
         result.subject or result.body or result.next_action not in ("research", "exclude", "stop")
     ):
         raise RunnerError("agent_role_research_must_not_write")
+    if evidence_work(value) and (
+        getattr(result, "eligible_for_draft", False)
+        or getattr(result, "offer_fact_ids", ())
+        or (result.fit == "yes" and not result.evidence_ids)
+    ):
+        raise RunnerError("research_evidence_cannot_authorize_draft")
     if (
         value.role == "qualification"
         and result.eligible_for_draft
@@ -119,7 +132,7 @@ class SavedRole(TaskRole):
                 self.heartbeat,
                 datetime.fromisoformat(self.context["deadline"]),
             )
-            result = validate_output(RoleRequest.model_validate(self.context["request"]), output, data)
+            result = validate_output(parse_request(self.context["request"]), output, data)
             await self.settle(receipt, "succeeded", observed, result.model_dump(mode="json"))
             return result
         except BaseException as error:
@@ -190,7 +203,7 @@ class AgentRoleHandler(ModelHandler):
     async def run(self, context, heartbeat, adapter=None):
         if not await heartbeat():
             raise RunnerError("authorization_revoked")
-        value = RoleRequest.model_validate(context["request"])
+        value = parse_request(context["request"])
         role = SavedRole(context, value.role, heartbeat, adapter or model_adapter.run_role)
         result = await role.ask(OUTPUT[value.role], instruction(value), context["data"])
         return result.model_dump(mode="json"), observed_total(context)
@@ -230,6 +243,10 @@ class AgentRoleHandler(ModelHandler):
                 "output_sha256": digest(output),
             },
         }
+        if evidence_work(value):
+            response.update(synthetic=False, origin="public_evidence", contactability="unverified",
+                            draft_authorized=False, evidence_packet_sha256=value.evidence.packet_sha256)
+            return response
         if value.role == "quality":
             parent = context["parents"][0]
             approved = accepted(output)

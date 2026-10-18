@@ -77,3 +77,14 @@ For fixed High native roles, an explicitly configured execution ceiling can be
 absolute authority deadline, continuous revocation checks and zero automatic
 retries. A timed-out dispatch without a terminal usage receipt stays charged
 and unknown. See [bounded execution](../../../docs/ACQUISITION_MODEL_EXECUTION_WINDOW.md).
+
+## Recipient-less evidence research
+
+Use the strict [evidence admission](../../../docs/ACQUISITION_EVIDENCE_ADMISSION.md)
+to connect pinned primary discovery receipts to existing saved-agent research
+and qualification. Original retrieval is at most 24 hours old against DB UTC;
+fresh research-use admission cannot renew old text. Requested geography stays
+unverified until supported by source evidence. No recipient/contact permission,
+writer/capture/CRM/mail effect or synthetic alias is admitted by this version.
+Retain source, Task/Run, exact parent and attempt proof; live adoption and actual
+research acceptance remain separate from inert checks.

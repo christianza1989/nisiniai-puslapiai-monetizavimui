@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Admit pinned real discovery excerpts into recipient-less saved-agent research/qualification while retaining synthetic capture and all common authority/attempt fences.",
+  "category": "code",
+  "evidence": [
+    "Existing RoleRequest requires a SyntheticAddress and initial target/contact gates for every research Task; discovery's EVIDENCE_READY receipt explicitly leaves native research unconnected.",
+    "Owner reviewed and authorized a separate strict evidence version; no real contact may be masked as a synthetic recipient and research-use admission must not become fact/contact approval."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/evidence_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/evidence_admission.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/evidence_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_tasks.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_projection.py",
+    "agent-business-core/runtime/migrations/versions/0052_acquisition_evidence_roles.py",
+    "agent-business-core/runtime/scripts/acquisition_evidence_task.py",
+    "docs/LIVE_ACQUISITION_DISCOVERY.md",
+    "docs/ACQUISITION_EVIDENCE_ADMISSION.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/217",
+  "rollback": "Stop exact evidence grants and source-pinned worker; revert the scoped source while retaining additive0052 functions, all Task/Run/attempt/source receipts and prior synthetic history. No destructive downgrade or operating adoption is implied.",
+  "id": "upgrade-7a654275-e57e-4bae-aa33-c34e6ad5b83f",
+  "branch": "codex/acquisition-evidence-admission-20261019",
+  "baseSha": "fddd5ea7f3448640dc1ff7b32e652082cd155ab4",
+  "createdAt": "2026-10-18T22:02:50.763Z"
+}

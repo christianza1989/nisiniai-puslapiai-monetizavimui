@@ -10,7 +10,7 @@ from .service import authorize, predicates
 from .statistics_wire import MailStatistics, RecordCounts
 
 GROUPS = ("non_synthetic", "synthetic", "unclassified")
-OUTBOUND = ("draft", "accepted_by_smtp", "rejected", "delivery_unknown")
+OUTBOUND = ("draft", "sending", "accepted_by_smtp", "accepted_by_gmail", "rejected", "delivery_unknown")
 INBOUND = ("received", "captured")
 
 
@@ -31,7 +31,7 @@ def statement(business_id, window):
         (MailMessage.direction == "inbound", "inbound_other"),
         else_="other_direction")
     # Group only fixed labels, never user state/subject/body/address text. Even
-    # arbitrarily many unknown states yield at most3*9aggregate result rows.
+    # arbitrarily many unknown states yield at most3*11aggregate result rows.
     return select(provenance, kind, func.count()).where(
         *predicates(business_id), MailMessage.created_at >= window.start,
         MailMessage.created_at < window.end).group_by(provenance, kind)

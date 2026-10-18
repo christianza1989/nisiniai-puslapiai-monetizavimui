@@ -82,3 +82,8 @@ Final run5 passes11 PG cases in6.48s, adding raw SQL wrong hash, untyped payload
 sequence gap, foreign grant rejection and consumer Session expiry after yield.
 Offline19 cases and scoped Ruff also pass. These are source-local checks under
 synthetic Git observation; Root still owns current source/0049/actual adoption.
+An additional actual CLI run at frozen299773f9c4aab80789616a1d3c6a5aa4ba41ce6b
+used real Git observation against own15559: approve → exact replay → inspect →
+revoke passed. All4 private status markers were committed and matched receipt
+SHA-256, replay preserved expiry, and stdout excluded payload/Session. This is
+the synthetic metadata administrative path, not actual-business adoption.

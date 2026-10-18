@@ -7,7 +7,7 @@ const batchId = 'TEST-BATCH-001';
 const prompt = `BATCH_ID: ${batchId}\nParašyk tris tekstus.`;
 const selectors = { editor: '.editor', query: '.query', queryText: '.query-text', response: '.response', responseText: '.response-text', stop: '.stop', blocks: 'h1,p,pre', responseComplete: '.copy-response', accountControl: '.account' };
 const proof = () => ({ mechanism: 'ACTUAL_PLAYWRIGHT_UI', at: new Date().toISOString(), accountPath: '/u/4', accountIdentity: 'test-account', model: { label: '4 Argon', selected: true, enabled: true, expanded: true }, thinking: { label: 'Žema', selected: true, enabled: true, expanded: true }, refs: { ax: 'fixture/pre.ax', dom: 'fixture/pre.dom', png: 'fixture/pre.png' } });
-const start = () => ({ at: new Date().toISOString(), url: 'https://gemini.google.com/u/4/app', visibilityState: 'visible', hasFocus: true, accountControl: { count: 1, text: 'Google account: test-account' }, editor: { count: 1, text: prompt, visible: true, enabled: true }, stopCount: 0, queries: [], responses: [] });
+const start = () => ({ at: new Date().toISOString(), url: 'https://gemini.google.com/u/4/app', visibilityState: 'visible', hasFocus: true, accountControl: { count: 1, text: 'Google account: test-account' }, editor: { count: 1, text: prompt, visible: true, enabled: true }, stopControls: [], stopCount: 0, queries: [], responses: [] });
 function response(overrides = {}) {
   return { index: 0, id: 'actual-response-id', text: 'H1\nVisas tikras tekstas.', html: '<h1>H1</h1><p>Visas tikras tekstas.</p>', responseHtml: '<model-response>actual</model-response>', blocks: [{ tag: 'h1', text: 'H1', html: '<h1>H1</h1>' }, { tag: 'p', text: 'Visas tikras tekstas.', html: '<p>Visas tikras tekstas.</p>' }], orderedAnchors: [{ url: 'https://example.com/product', label: 'gaminio kortelė' }, { url: 'https://example.com/group', label: 'grupės sąrašas' }], completionMarker: true, ...overrides };
 }
@@ -188,6 +188,11 @@ test('new response captured before wait; stable text + completion marker + post-
   assert.equal(result.authorshipAccepted, false);
   assert.equal(result.raw.responseId, 'actual-response-id');
   assert.equal(result.raw.responseIndex, 0);
+  assert.equal(result.raw.url, ack.conversationUrl);
+  assert.equal(result.raw.queryCount, 1);
+  assert.equal(result.raw.responseCount, 1);
+  assert.deepEqual(result.raw.queries, f.get().queries);
+  assert.deepEqual(result.raw.stopControls, []);
   assert.equal(f.captured.length, 1);
   assert.deepEqual(result.raw.orderedAnchors, response().orderedAnchors, 'all actual source/body anchors retained in original order');
   assert.equal(result.postflightProof.backendModelId, null, 'must not invent backend ID');
@@ -241,8 +246,8 @@ test('actual changing early versions are retained separately before completion',
 });
 
 test('DOM read executes the actual page-only collector and preserves exact body/footer anchor order', async () => {
-  const block = { tagName: 'P', innerText: 'Visas tekstas.', outerHTML: '<p>Visas tekstas.</p>' };
-  const anchors = [{ href: 'https://example.com/b', innerText: 'B' }, { href: 'https://example.com/a', innerText: 'A' }];
+  const anchors = [{ href: 'https://example.com/b', innerText: 'B', textContent: ' B ' }, { href: 'https://example.com/a', innerText: 'A', textContent: ' A ' }];
+  const block = { tagName: 'P', innerText: 'Visas tekstas.', outerHTML: '<p>Visas tekstas.</p>', querySelectorAll: () => anchors };
   const content = { id: 'actual-content-id', innerText: 'Visas tekstas.', innerHTML: '<p>Visas tekstas.</p>', querySelectorAll: (s) => s === 'a[href]' ? anchors : [block] };
   const model = { id: '', outerHTML: '<model-response/>', querySelector: (s) => s === selectors.responseText ? content : {} };
   const query = { id: '', outerHTML: '<user-query/>', getAttribute: () => null, querySelector: () => ({ innerText: prompt }) };
@@ -255,6 +260,8 @@ test('DOM read executes the actual page-only collector and preserves exact body/
   assert.equal(actual.responses[0].id, 'actual-content-id');
   assert.equal(actual.queries[0].id, null, 'do not invent query IDs when DOM has none');
   assert.deepEqual(JSON.parse(JSON.stringify(actual.responses[0].orderedAnchors)), [{ url: 'https://example.com/b', label: 'B' }, { url: 'https://example.com/a', label: 'A' }]);
+  assert.deepEqual(JSON.parse(JSON.stringify(actual.responses[0].blocks[0].anchors)), [{ url: 'https://example.com/b', label: 'B' }, { url: 'https://example.com/a', label: 'A' }]);
+  assert.deepEqual(JSON.parse(JSON.stringify(actual.stopControls)), []);
 });
 
 test('browser bundle is pasteable without imports, fs, fetch, launch, CDP or hidden profile', () => {
@@ -265,7 +272,7 @@ test('browser bundle is pasteable without imports, fs, fetch, launch, CDP or hid
   assert.doesNotMatch(source, /\bimport\s|\bfetch\s*\(|require\(|connectOverCDP|launchPersistentContext/);
 });
 
-const promptInput = () => ({ batchId, pages: [{ id: 'page1', readerJob: 'Palyginti du modelius', facts: ['SKU01 50 kg'], limits: ['Komponentas nėra visas gaminys'], paragraphCount: 2, sources: [{ url: 'https://example.com/product', label: 'Kortelė', documentRole: 'individual technical card' }], links: [{ url: 'https://example.com/contact', label: 'Susisiekite' }] }], examples: [{ accepted: true, text: 'Priimtas tekstas vienas.', reference: 'approved/page-a' }, { accepted: true, text: 'Priimtas tekstas du.', reference: 'approved/page-b' }], commonMistakes: ['Techninius duomenis priskirk produkto kortelei, ne kategorijos sąrašui.'] });
+const promptInput = () => ({ batchId, pages: [{ id: 'page1', h1: 'Gipsavimo vežimėliai', readerJob: 'Palyginti du modelius', facts: ['SKU01 50 kg'], limits: ['Komponentas nėra visas gaminys'], paragraphCount: 2, sources: [{ url: 'https://example.com/product', label: 'Kortelė', documentRole: 'individual technical card' }], links: [{ url: 'https://example.com/contact', label: 'Susisiekite' }] }], examples: [{ accepted: true, text: 'Priimtas tekstas vienas.', reference: 'approved/page-a' }, { accepted: true, text: 'Priimtas tekstas du.', reference: 'approved/page-b' }], commonMistakes: ['Techninius duomenis priskirk produkto kortelei, ne kategorijos sąrašui.'] });
 test('prompt includes unique batch, two referenced accepted examples, own facts and separate source footer', () => {
   const result = buildAuthorPrompt(promptInput());
   assert.match(result, /BATCH_ID: TEST-BATCH-001/);
@@ -274,13 +281,26 @@ test('prompt includes unique batch, two referenced accepted examples, own facts 
   assert.match(result, /PAVYZDYS 2 \(approved\/page-b\)/);
   assert.match(result, /"paragraphCount": 2/);
   assert.match(result, /"facts": \[\n\s+"SKU01 50 kg"/);
-  assert.match(result, /jų neperkelk į viešą BODY/);
+  assert.match(result, /jų neperkelk į atsakymą/);
+  assert.match(result, /vienintelis skirtukas yra tikslus užduoties h1 tekstas/);
+  assert.match(result, /Nenaudok papildomų antraščių.*PAGE_ID, DESCRIPTION, BODY žymų/);
+  assert.doesNotMatch(result, /Grąžink visus puslapius su jų PAGE_ID/);
+  assert.match(result, /"h1": "Gipsavimo vežimėliai"/);
   assert.match(result, /eilė gali skirtis/);
 });
 test('prompt rejects unaccepted examples, duplicates and incomplete primary sources', () => {
-  for (const mutate of [(i) => { i.examples[0].accepted = false; }, (i) => { i.examples.pop(); }, (i) => { i.pages.push(i.pages[0]); }, (i) => { delete i.pages[0].sources[0].documentRole; }, (i) => { i.pages[0].paragraphCount = 0; }]) {
+  for (const mutate of [(i) => { i.examples[0].accepted = false; }, (i) => { i.examples.pop(); }, (i) => { i.pages.push(i.pages[0]); }, (i) => { delete i.pages[0].sources[0].documentRole; }, (i) => { i.pages[0].paragraphCount = 0; }, (i) => { i.pages[0].paragraphCount = 3; }, (i) => { delete i.pages[0].h1; }, (i) => { i.pages[0].h1 = ' '; }, (i) => { i.pages.push({ ...i.pages[0], id: 'page2' }); }]) {
     const input = promptInput(); mutate(input); assert.throws(() => buildAuthorPrompt(input));
   }
+});
+
+test('prompt supports at most three independent exact H1s and one or two body paragraphs', () => {
+  const input = promptInput();
+  input.pages.push({ ...input.pages[0], id: 'page2', h1: 'Drabužių kabinimo skersiniai', paragraphCount: 1 }, { ...input.pages[0], id: 'page3', h1: 'Sandėlio vežimėliai vaistinėms' });
+  const result = buildAuthorPrompt(input);
+  for (const p of input.pages) assert.ok(result.includes(`"h1": "${p.h1}"`));
+  input.pages.push({ ...input.pages[0], id: 'page4', h1: 'Ketvirtas puslapis' });
+  assert.throws(() => buildAuthorPrompt(input), /One to three/);
 });
 test('Chrome flags are a plan, never falsely effective on an already running process', () => {
   const plan = buildChromeLaunchPlan({ existingSignedInProfile: true, nonMinimized: true, chromeAlreadyRunning: true });

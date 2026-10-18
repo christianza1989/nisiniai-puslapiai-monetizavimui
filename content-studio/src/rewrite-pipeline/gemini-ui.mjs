@@ -58,8 +58,8 @@ export async function readGeminiUi(page, selectors) {
       return {
         index, id: content?.id || node.id || null,
         text: content?.innerText ?? '', html: content?.innerHTML ?? '', responseHtml: node.outerHTML,
-        blocks: content ? [...content.querySelectorAll(s.blocks)].map((b) => ({ tag: b.tagName.toLowerCase(), text: b.innerText, html: b.outerHTML })) : [],
-        orderedAnchors: content ? [...content.querySelectorAll('a[href]')].map((a) => ({ url: a.href, label: a.innerText })) : [],
+        blocks: content ? [...content.querySelectorAll(s.blocks)].map((b) => ({ tag: b.tagName.toLowerCase(), text: b.innerText, html: b.outerHTML, anchors: [...b.querySelectorAll('a[href]')].map((a) => ({ url: a.href, label: a.textContent.trim() })) })) : [],
+        orderedAnchors: content ? [...content.querySelectorAll('a[href]')].map((a) => ({ url: a.href, label: a.textContent.trim() })) : [],
         completionMarker: !!node.querySelector(s.responseComplete),
       };
     });
@@ -72,7 +72,9 @@ export async function readGeminiUi(page, selectors) {
         visible: !!editor && rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.right > 0 && rect.top < innerHeight && rect.left < innerWidth && style.display !== 'none' && style.visibility === 'visible' && Number(style.opacity) > 0,
         enabled: !!editor && !editor.disabled && editor.getAttribute('aria-disabled') !== 'true' && (isInput || editor.isContentEditable),
       },
-      queries, responses, stopCount: document.querySelectorAll(s.stop).length,
+      queries, responses,
+      stopControls: [...document.querySelectorAll(s.stop)].map((node) => ({ label: node.getAttribute('aria-label'), text: node.innerText })),
+      stopCount: document.querySelectorAll(s.stop).length,
     };
   }, selectors);
 }
@@ -246,7 +248,7 @@ export async function observeGeminiResponse(page, request) {
     if (actual.queries.length !== ack.queryIndex + 1 || candidates.length > 1) return { status: 'RESPONSE_ASSOCIATION_AMBIGUOUS', retryAllowed: false, observed: actual };
     const current = candidates[0];
     if (current) {
-      const raw = { kind: 'ACTUAL_RENDERED_GEMINI_RESPONSE', at: actual.at, conversationUrl: actual.url, batchId: ack.batchId, intentId: ack.intentId, responseIndex: current.index, responseId: current.id, queryIndex: ack.queryIndex, queryId: query.id, queryText: query.text, queryCount: actual.queries.length, responseCount: actual.responses.length, text: current.text, html: current.html, responseHtml: current.responseHtml, blocks: current.blocks, orderedAnchors: current.orderedAnchors, stopCount: actual.stopCount, completionMarker: current.completionMarker };
+      const raw = { kind: 'ACTUAL_RENDERED_GEMINI_RESPONSE', at: actual.at, url: actual.url, conversationUrl: actual.url, batchId: ack.batchId, intentId: ack.intentId, responseIndex: current.index, responseId: current.id, queryIndex: ack.queryIndex, queryId: query.id, queryText: query.text, queries: actual.queries, queryCount: actual.queries.length, responseCount: actual.responses.length, text: current.text, html: current.html, responseHtml: current.responseHtml, blocks: current.blocks, orderedAnchors: current.orderedAnchors, stopControls: actual.stopControls, stopCount: actual.stopCount, completionMarker: current.completionMarker };
       const signature = JSON.stringify([current.id, current.text, current.html, current.blocks, current.orderedAnchors]);
       // Save each new actual version immediately, before further waits or dialogs.
       if (signature !== lastCaptured) {
@@ -273,30 +275,32 @@ export async function observeGeminiResponse(page, request) {
 
 export function buildAuthorPrompt({ batchId, pages, examples, commonMistakes }) {
   if (!/^[A-Za-z0-9][A-Za-z0-9_.:-]{2,119}$/.test(batchId ?? '')) throw new Error('Unique batchId required');
-  if (!Array.isArray(pages) || !pages.length || pages.length > 12) throw new Error('One to twelve independent page jobs required');
+  if (!Array.isArray(pages) || !pages.length || pages.length > 3) throw new Error('One to three independent page jobs required');
   if (!Array.isArray(examples) || examples.length !== 2 || examples.some((e) => e.accepted !== true || typeof e.text !== 'string' || !e.text.trim() || !e.reference)) throw new Error('Exactly two referenced accepted examples required');
   if (!Array.isArray(commonMistakes) || commonMistakes.length < 1 || commonMistakes.length > 12 || commonMistakes.some((m) => typeof m !== 'string' || !m.trim() || m.length > 500)) throw new Error('One to twelve concise factual/language corrections required');
   const ids = new Set();
+  const headings = new Set();
   const jobs = pages.map((p) => {
-    if (!p.id || ids.has(p.id) || !p.readerJob || !Array.isArray(p.facts) || !p.facts.length || !Array.isArray(p.limits) || !Array.isArray(p.sources) || !p.sources.length || !Array.isArray(p.links) || ![1, 2, 3].includes(p.paragraphCount)) throw new Error('Each distinct page needs id/readerJob/facts/limits/sources/links/paragraphCount');
+    if (!p.id || ids.has(p.id) || typeof p.h1 !== 'string' || !p.h1.trim() || /[\r\n]/.test(p.h1) || headings.has(p.h1.trim()) || !p.readerJob || !Array.isArray(p.facts) || !p.facts.length || !Array.isArray(p.limits) || !Array.isArray(p.sources) || !p.sources.length || !Array.isArray(p.links) || ![1, 2].includes(p.paragraphCount)) throw new Error('Each distinct page needs id/exact unique h1/readerJob/facts/limits/sources/links and one or two paragraphs');
     ids.add(p.id);
+    headings.add(p.h1.trim());
     for (const source of p.sources) {
       const url = new URL(source.url);
       if (!['https:', 'http:'].includes(url.protocol) || !source.label || !source.documentRole) throw new Error('Each primary source needs URL, label and its own document role');
     }
     for (const link of p.links) { if (!/^https?:\/\//.test(link.url) || !link.label) throw new Error('Exact URL and label required'); }
-    return { id: p.id, h1: p.h1 ?? null, readerJob: p.readerJob, paragraphCount: p.paragraphCount, facts: p.facts, limits: p.limits, sources: p.sources, links: p.links };
+    return { id: p.id, h1: p.h1, readerJob: p.readerJob, paragraphCount: p.paragraphCount, facts: p.facts, limits: p.limits, sources: p.sources, links: p.links };
   });
   return [
     `BATCH_ID: ${batchId}`,
     'Parašyk savarankiškus lietuviškus katalogo tekstus patyrusiam medicinos darbuotojui ar įrangos pirkėjui. Kiekvienas puslapis atsako tik į savo skaitytojo klausimą. Rašyk natūraliai, rišliai, be bendrinių procedūrinių įvadų.',
-    'Kiekvienam PAGE_ID grąžink H1, DESCRIPTION iki 160 simbolių ir tikslų užduotyje nurodytą BODY pastraipų skaičių. Po BODY atskirai pateik PRIVATE_SOURCE_JSON: [{"url":"...","label":"...","reason":"..."}]. Reason iki 60 žodžių apibūdina tik to dokumento turinį. Techninius duomenis priskirk individualiai produkto kortelei, kategorijos sąrašą naudok asortimentui. Nuorodų aibės tekste ir šaltinių sąraše turi sutapti; eilė gali skirtis.',
+    'Kiekvieno puslapio vienintelis skirtukas yra tikslus užduoties h1 tekstas kaip H1 antraštė (Markdown #). Po jos pateik vieną paprastą metaaprašymo pastraipą iki 160 simbolių, tada tikslų paragraphCount nurodytą vienos arba dviejų pagrindinio teksto pastraipų skaičių. Po jų atskiroje paprastoje pastraipoje pateik PRIVATE_SOURCE_JSON: [{"url":"...","label":"...","reason":"..."}]. Nenaudok papildomų antraščių, skiriamųjų linijų, kodų blokų ar atskirų PAGE_ID, DESCRIPTION, BODY žymų. Reason iki 60 žodžių apibūdina tik to dokumento turinį. Techninius duomenis priskirk individualiai produkto kortelei, kategorijos sąrašą naudok asortimentui. Nuorodų aibės tekste ir šaltinių sąraše turi sutapti; eilė gali skirtis.',
     'Skaičius, vienetus, modelius, URL ir faktų sąlygas išsaugok. Komponento apkrova nėra viso gaminio apkrova; šeimos pavyzdys nėra nekintamas komplektas; matomas priedas neįrodo įtraukimo į kainą. „Vienduris/viendurė“ keisk į „vienų durų“. „Bėgeliai“ tinka laikymo/stalčių dalims, ne ratukų krypties fiksavimui.',
-    'Šios užduoties BATCH_ID, PAGE_ID, redakcinės ribos ir tikrinimo instrukcijos yra privatūs: jų neperkelk į viešą BODY ar DESCRIPTION. Pavyzdžiai rodo kalbos kokybę, jų faktų ir formuluočių nekopijuok į kitus modelius.',
+    'Šios užduoties BATCH_ID, PAGE_ID ir id, redakcinės ribos ir tikrinimo instrukcijos yra privatūs: jų neperkelk į atsakymą, aprašymą ar pagrindinį tekstą. Pavyzdžiai rodo kalbos kokybę, jų faktų ir formuluočių nekopijuok į kitus modelius.',
     `ANKSTESNIŲ KLAIDŲ TAISYKLĖS:\n${commonMistakes.map((m) => `- ${m}`).join('\n')}`,
     `DU PRIIMTI PAVYZDŽIAI:\n${examples.map((e, i) => `PAVYZDYS ${i + 1} (${e.reference}):\n${e.text}`).join('\n\n')}`,
     `KONKREČIOS UŽDUOTYS:\n${JSON.stringify(jobs, null, 2)}`,
-    'Prieš grąžindamas pats perskaityk visus tekstus: patikrink kalbą, faktų ribas, aprašymų ilgį ir kiekvieną šaltinio reason. Grąžink visus puslapius su jų PAGE_ID; šaltinių JSON nelaikyk BODY dalimi.',
+    'Prieš grąžindamas pats perskaityk visus tekstus: patikrink kalbą, faktų ribas, aprašymų ilgį ir kiekvieną šaltinio reason. Grąžink visus puslapius užduočių eilės tvarka, kiekvieną pradėdamas tikslia jo H1 antrašte. Šaltinių JSON nelaikyk pagrindinio teksto dalimi.',
   ].join('\n\n');
 }
 

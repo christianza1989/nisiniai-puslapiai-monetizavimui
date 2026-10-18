@@ -1,5 +1,49 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current executable continuation — 2026-10-18
+
+**Whole local platform OPEN.** The human accepted the workspace UI and explicitly
+requested continuing platform/agent integration. Root owns UI/integration and
+the operating adapter; authorized helper chats own separately scoped schema and
+acquisition work in their own branches/worktrees. Current frozen local API18871
+is ba16e225/public255fea0 on0045, with the human-started reviewed frontend3030.
+Kubilų Creation85fb2b31 has current Registration014d46b4/Business917e1d81.
+Normal owner source renewal preserved the same identity,37/40 accounting and771
+native files. Paid workers/channels remain held; operating mail is empty.
+
+Completed source/adoption batch: native preparation and owner mail view,
+bounded explicit ModuleBinding writer, Registration continuity and headless
+reviewed same-Case capture/reply. Root345 pure+67 subtests and63 real PG/API/Node
+checks passed. Ordinary populated browser/200% proof is still unverified.
+[Exact checkpoint](../../docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md).
+
+Current source work is separately typed acquisition.model_prepare over maintained
+Task/Run/Event accounting, using the current saved acquisition purpose and an
+explicit privileged bounded model budget. Schema0046/helper and Root handler/
+authority/CLI are in progress from60c6518; none is adopted into operating.
+The21 initial contract/native-adapter tests passed with inert IO. Native PG
+end-to-end, revocation/hidden accounting and integration regressions remain to
+run after the schema package freezes. [Contract](../../docs/ACQUISITION_MODEL_PREPARE.md).
+
+Remaining executable order:
+
+1. Finish typed model preparation and real isolated owner/Task/Run/Case tests.
+   This can proceed now; no paid call or transport is required for source work.
+2. Add durable, deduplicated post-commit Lithuanian display translation with its
+   explicit model/accounting boundary, then model reply Task and UI integration.
+3. Complete current business Foundation/saved-purpose and protected calibration
+   acceptance under their maintained contracts; headless/fixture evidence is
+   separate. Existing native S5 site_chat is not coerced into an email worker.
+4. Admit an authenticated controlled outbound/inbox path and prove real delivery/
+   reply. SMTP credentials/controlled lab recipient and live contact/source/
+   provider permissions are not currently admitted; Maudis remains a candidate.
+5. Finish ordinary populated UI/responsive/200% checks once Chrome control focus
+   connection recovers. Its timeout does not block the independent source work.
+   Preserve the frontend launch rejection/AGENTS boundary; use no alternate start.
+
+No new human continue message is required between executable source packages.
+Older sections below retain their own source/date and do not override this state.
+
 ## Latest bounded recovery — 2026-10-16
 
 **Whole local platform OPEN; normal-owner login and explicit private-source intake now work.** Same owned PostgreSQL recovered with original0032/old0042/current0044/163 native files verified exact. API18871 source1fb/public255 nowPID30932; all paid workers held. Historical3028/3029 previews retired, active3030 retained. Actual private-intake returned200/current1fb without native content changes. S6 GET503/site_build_unavailable occurs before any S6 POST because its feature guard requires the paused creation worker. Backend peer owns the narrow guard repair; generation/lifecycle and all S6/owner/source checks remain required. Root actual isolated PG/adoption, genuine11-page review/approval and rendered site/form checks follow. Native058c83/contextab170a still has reviews0/approvals0/release0. C free space fluctuates3–9.5GB due Windows virtual-memory allocation; no paid retry or new operational DB copy.

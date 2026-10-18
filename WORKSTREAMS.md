@@ -1653,3 +1653,15 @@ checks and row locks remain; approve still refuses pending Creation. Dedicated
 module PG test/docs and own journal only. No source window remains with helper;
 its service.py fix is integrated separately and unchanged. No model, schema,
 channels, task dispatch or operating data changed.
+## Typed acquisition model preparation — Root 2026-10-18
+
+Issue66/comment6243261241, clean60c6518/main533/public255 (main ec8).
+Root reserves NEW acquisition/model_contract.py, model_admin.py,
+model_authority.py, model_tasks.py, model_handler.py, model_adapter.py,
+new operator/submit scripts and dedicated tests/contract/checkpoint/journal.
+Only shared config.py default-off flags and tasks/worker.py fixed registry/usage
+integration. Existing reviewed_capture remains model=none, existing saved S5
+site_chat and public DTOs unchanged. Helper01a13440 independently owns new
+model_schema.py/model_models.py/migration0046/env import/schema tests/doc.
+No paid calls, old lab budget reset, operating migration/admission or live
+channels in this source window; inert full-chain regression first.

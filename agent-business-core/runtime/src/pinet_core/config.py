@@ -43,6 +43,11 @@ class Settings(BaseSettings):
     acquisition_tasks_enabled: bool = False
     # Zero disables the optional ceiling; attempts remain durable.
     acquisition_tasks_daily_limit: int = Field(default=0, ge=0)
+    # Separate privileged model authorization; capture/work rights do not enable it.
+    acquisition_model_enabled: bool = False
+    acquisition_model_runner_enabled: bool = False
+    acquisition_model_actor_ids: list[str] = Field(default_factory=list, max_length=16)
+    acquisition_model_runner_seconds: int = Field(default=90, ge=10, le=120)
     public_projects_enabled: bool = False
     creation_enabled: bool = False
     business_discovery_enabled: bool = False

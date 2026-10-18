@@ -10,6 +10,7 @@ from ..acquisition.ledger import LedgerError
 from ..config import settings
 from ..control.routes import ControlError, scope
 from ..models import new_id, utcnow
+from ..source_observation import SourceObservationError
 from . import codex
 from .models import Task, TaskRun
 from .service import append_event, authority, context_for, expire_run, lease_deadline
@@ -72,11 +73,12 @@ class ChatHandler:
 
 def handlers():
     # Source-fixed registry, never a browser-selected import/tool/executable.
+    from ..acquisition.model_handler import ModelHandler
     from ..acquisition.tasks import CaptureHandler
     from ..workspace_team.direct_handler import DirectHandler
     from ..workspace_team.handler import TeamHandler
 
-    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler())
+    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler(), ModelHandler())
 
 
 def handler_for(kind):
@@ -101,6 +103,11 @@ async def finish_run(tx, task, status, *, usage=None):
             from ..workspace_team.direct import saved_usage
             from ..workspace_team.quota import merge_usage
             usage = merge_usage(usage, await saved_usage(tx, task.id, run.id, task.user_id,
+                task.environment_id, task.source_revision))
+        elif task.kind == "acquisition.model_prepare":
+            from ..acquisition.model_handler import usage_for
+            from ..workspace_team.quota import merge_usage
+            usage = merge_usage(usage, await usage_for(tx, task.id, run.id, task.user_id,
                 task.environment_id, task.source_revision))
         run.status, run.finished_at, run.usage = status, utcnow(), usage
         if task.kind in {"workspace.team_turn", "workspace.direct_turn"} and task.status in {"succeeded", "failed", "cancelled"}:
@@ -148,7 +155,7 @@ async def claim(*, kind=None):
                     text("SELECT workspace_team_actor_busy(:u,:e)"), {"u": user_id, "e": settings().environment}
                 ):
                     continue
-                task = await tx.scalar(
+                task = await handler.claim_task(tx) if hasattr(handler, "claim_task") else await tx.scalar(
                     select(Task)
                     .where(Task.status == "queued", Task.kind == handler.kind)
                     .where(handler.queue_filter() if hasattr(handler, "queue_filter") else True)
@@ -207,10 +214,16 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
     handler = handler_for(kind)
     actor = user_id or settings().chat_operator_user_id
     async with scope(user=actor) as tx:
+        parent_admitted = True
+        if hasattr(handler, "authority_locks"):
+            try:
+                await handler.authority_locks(tx, task_id)
+            except (ControlError, LedgerError, codex.RunnerError, ValueError, SourceObservationError):
+                parent_admitted = False
         task = await tx.scalar(select(Task).where(Task.id == task_id, Task.kind == kind).with_for_update())
         if not task or task.status != "running" or task.run_id != run_id:
             return False
-        admitted = await handler.authority(tx, task)
+        admitted = parent_admitted and await handler.authority(tx, task)
         now = await tx.scalar(text("SELECT clock_timestamp()"))
         if (
             not task.lease_until
@@ -228,6 +241,22 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
 
 async def settle_hidden_task(tx, claimed, usage):
     """Existing accounting-only fallback; hidden output never becomes public."""
+    if claimed["kind"] == "acquisition.model_prepare":
+        # This kind has a separately typed sink. The legacy Director whitelist
+        # deliberately remains unchanged and must never silently discard it.
+        from ..acquisition.model_handler import usage_for
+        from ..workspace_team.quota import merge_usage
+        usage = merge_usage(usage, await usage_for(tx, claimed["task_id"], claimed["run_id"], claimed["user_id"],
+            claimed["environment_id"], claimed["source_revision"]))
+        tokens = {key: number for key, number in (usage or {}).items() if key in {
+            "input_tokens", "output_tokens", "cached_input_tokens", "reasoning_output_tokens"}
+            and type(number) is int and 0 <= number <= 30_000_000_000}
+        saved = await tx.scalar(text("SELECT acquisition_model_settle_task(:t,:r,:u,:e,:s,CAST(:j AS JSONB),:event)"), {
+            "t": claimed["task_id"], "r": claimed["run_id"], "u": claimed["user_id"], "e": claimed["environment_id"],
+            "s": claimed["source_revision"], "j": json.dumps(tokens) if tokens else None, "event": new_id()})
+        if not saved:
+            raise codex.RunnerError("acquisition_model_accounting_failed", tokens)
+        return
     if not await tx.scalar(text(
         "SELECT to_regprocedure('public.director_settle_revoked_task(character varying,character varying,character varying,character varying,character varying,character varying,jsonb,character varying)') IS NOT NULL"
     )):
@@ -285,10 +314,10 @@ async def execute_once(adapter=None, *, kind=None):
     async with scope(user=actor) as tx:
         # Native effect adapters lock their parent/actor before the Task row.
         # No provider runs while these completion locks are held.
-        if not failure and hasattr(handler, "completion_locks"):
+        if (not failure or getattr(handler, "always_completion_locks", False)) and hasattr(handler, "completion_locks"):
             try:
                 await handler.completion_locks(tx, claimed)
-            except (ControlError, LedgerError, codex.RunnerError) as error:
+            except (ControlError, LedgerError, codex.RunnerError, SourceObservationError) as error:
                 failure = error.code
         task = await tx.scalar(select(Task).where(Task.id == task_id).with_for_update())
         if not task:

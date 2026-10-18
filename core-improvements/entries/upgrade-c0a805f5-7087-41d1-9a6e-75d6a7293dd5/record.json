@@ -1,0 +1,31 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Connect an explicitly approved saved acquisition purpose to bounded model preparation on common durable Task/Run accounting",
+  "category": "code",
+  "evidence": [
+    "Current maintained acquisition.reviewed_capture handler is deliberately model=none with model_calls0; headless model preparation and after-commit mail candidates are independent, so a saved email/research purpose has no common Task/model execution link. Preserve that old non-model kind rather than overloading its capture permission."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_admin.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_tasks.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_adapter.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/scripts/acquisition_model_admin.py",
+    "agent-business-core/runtime/scripts/acquisition_model_task.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_model_contract.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_model_adapter.py",
+    "agent-business-core/runtime/tests/test_acquisition_model_prepare_pg.py",
+    "docs/ACQUISITION_MODEL_PREPARE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable new default-off model flags/actor list, retain immutable approvals/Tasks/attempts and unknown usage, revert the new handler/CLI and registry branch after idle checks. Existing reviewed capture/model-none and closed old lab budget remain unchanged. Schema0046 is helper-owned with populated downgrade refused; no automatic operating adoption.",
+  "id": "upgrade-c0a805f5-7087-41d1-9a6e-75d6a7293dd5",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "60c651895bc6a7a4233641121b5d44466469d000",
+  "createdAt": "2026-10-17T23:48:16.890Z"
+}

@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Expose purpose-specific private configuration readiness through a separate strict GET without widening legacy customer-agents.v1 wire capabilities",
+  "category": "code",
+  "evidence": [
+    "Root76db483 customer_agents/service.py:53 and :70 couple all draft writes to full Website Foundation; the approved narrow correction requires an additive wire because strict legacy portal DTOs cannot accept new fields or blocker enums.",
+    "Root explicitly delegated only wire/routes/contract, generated golden, new offline wire tests and the two existing contract inventory counts; authoritative readiness and actual S37/PG/operating acceptance remain Root-owned."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/contract.py",
+    "docs/contracts/verslomatika-customer-agents.openapi.json",
+    "agent-business-core/runtime/offline_tests/test_private_agent_preparation_wire.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agents.py",
+    "docs/PRIVATE_AGENT_PREPARATION_WIRE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the scoped additive wire commit; coordinate removal of the new route with Root's service implementation. Preserve every old v1 DTO, audit, receipt and native artifact.",
+  "id": "upgrade-04708fb5-b1c1-457f-9b2c-f768436870e0",
+  "branch": "codex/private-agent-preparation-wire-20261018",
+  "baseSha": "76db483db8213a5ec6eb8283e71ccd52e7b79c01",
+  "createdAt": "2026-10-18T02:06:26.061Z"
+}

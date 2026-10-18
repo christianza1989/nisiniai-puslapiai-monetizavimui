@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Own wire-only packet on Root76db483. Three new schemas and one GET; legacy complete canonical OpenAPI projection remains exactly equal after removing only additions (sorted-JSON SHA25693b1be9ee6660f0a15ce6dd88ad58ff6b3c7bfcf8f116b5462e1cc21f1fb48b9). First missing-route FAIL remains retained in the preceding event. No Website/F1/Source/Profile/calibration/channel readiness or actual adoption asserted; Root's authoritative service dependency is separate.",
+  "checks": [
+    {
+      "command": "pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_private_agent_preparation_wire.py offline_tests/test_customer_agents.py",
+      "result": "PASS",
+      "evidence": "Actual60PASS6.48s, private wire-target.log SHA256192c4bd9d533ab1b9c94dd60bf7bdae6fef4b97690af731f575e9befb30b4f95. New wire36cases: exact ordered purposes and scopes, strict booleans/blockers, no other admission claims, fixed path precedence, exact legacy golden equivalence, both app mounts, in-process private headers/delegation/safe errors and missing bearer; maintained old24configuration checks retain every semantic/security assertion."
+    },
+    {
+      "command": "pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_private_agent_preparation_wire.py offline_tests/test_customer_agents.py offline_tests/test_customer_agent_evidence.py offline_tests/test_customer_agent_lab.py offline_tests/test_customer_agent_session.py offline_tests/test_customer_agent_protection.py tests/test_customer_agent_foundation_projection.py",
+      "result": "PASS",
+      "evidence": "Actual190PASS4.09s, private related.log SHA2569a317b95cacdd80c1cf26e41eed8cafde1ff807b296c7ea16bff3caeaea8ca71. Pure/in-process only; no PostgreSQL/server/browser/provider. Root's current-S37/native/owner authority and operating acceptance were not executed here."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/customer_agents/wire.py src/pinet_core/customer_agents/routes.py src/pinet_core/customer_agents/contract.py offline_tests/test_private_agent_preparation_wire.py offline_tests/test_customer_agents.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped five-file Ruff reports All checks passed; exact diff whitespace verified before delivery. No manifest/dependency, old v1 enum/field, service or SQL mutation."
+    }
+  ],
+  "eventId": "aac5aedb-8e9a-46d9-9c29-1ba678c2c0d9",
+  "sequence": 3,
+  "at": "2026-10-18T02:09:10.668Z"
+}

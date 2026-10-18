@@ -130,6 +130,42 @@ class Listing(Strict):
     next_cursor: str | None = Field(default=None, max_length=2048)
 
 
+PreparationBlocker = Literal["agent_business_not_current", "website_foundation_not_ready", "private_preparation_not_ready"]
+
+
+class PreparationPurposeReadiness(Strict):
+    purpose: Purpose
+    readiness_scope: Literal["full_website", "private_preparation"]
+    can_create_draft: bool = Field(strict=True)
+    configuration_blockers: list[PreparationBlocker] = Field(max_length=1)
+
+    @model_validator(mode="after")
+    def configuration_only(self):
+        if self.readiness_scope == "private_preparation" and self.purpose not in {"customer_research", "email"}:
+            raise ValueError("private_preparation_purpose_unavailable")
+        if self.can_create_draft != (not self.configuration_blockers):
+            raise ValueError("configuration_readiness_blocker_mismatch")
+        return self
+
+
+class PreparationReadiness(Strict):
+    """Current configuration eligibility, never Website or execution admission."""
+
+    creation_id: UUID
+    purposes: list[PreparationPurposeReadiness] = Field(min_length=4, max_length=4)
+    operation: Literal["agent_configuration_only"] = "agent_configuration_only"
+    provider_execution: Literal[False] = False
+    can_calibrate: Literal[False] = False
+    can_activate: Literal[False] = False
+    channel_activation: Literal["not_performed"] = "not_performed"
+
+    @model_validator(mode="after")
+    def canonical_purposes(self):
+        if tuple(item.purpose for item in self.purposes) != ("site_chat", "customer_research", "email", "custom"):
+            raise ValueError("four_ordered_purposes_required")
+        return self
+
+
 class RevisionSummary(Strict):
     revision_id: UUID
     revision: Revision
@@ -160,6 +196,11 @@ class SavedEnvelope(Envelope):
 
 class ListingEnvelope(Envelope):
     data: Listing
+
+
+class PreparationReadinessEnvelope(Envelope):
+    contract_version: Literal["customer-agent-preparation-readiness.v1"]
+    data: PreparationReadiness
 
 
 class RevisionsEnvelope(Envelope):

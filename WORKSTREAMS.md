@@ -2334,3 +2334,14 @@ human_handoff, no external mail.29known charges and all failures retained; six
 grants/module stopped before source integration. Add one common factual-scope
 rule; do not alter Config2, knowledge, original corpus/labels/grade or quality
 thresholds. Native model acceptance requires a new explicit source snapshot.
+
+2026-10-18 Root requested Gmail replies, issue66 comments6254279295/6254355300/
+6254419916, secondary branch codex/gmail-reviewed-replies-20261018 ated934d19.
+Own mail_provider/campaign.py, new conversation.py, campaign CLI helper/new
+conversation CLI, focused offline/PG tests, mail docs and own journal. Two RED
+receive defects preserve terminal stop/latest inbound; final53checks PASS with
+inert HTTP. Exact requested reply/current inbound hash, one intent per inbound,
+shared account caps, post-send acceptance and source/owner fences. Self-only
+owner_acceptance retains test provenance and cannot become a commercial parent.
+No new CRM/calibration/scheduler or external campaign activation. Root paid
+model/protected batch remains frozen on unchangeded934 source.

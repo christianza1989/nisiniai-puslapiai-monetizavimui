@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Add exact reviewed Gmail conversation replies and preserve terminal contact/latest-inbound state during receiving/replay",
+  "category": "code",
+  "evidence": [
+    "docs/GMAIL_REVIEWED_CONVERSATIONS.md",
+    "agent-business-core/runtime/tests/test_gmail_conversation_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_provider/campaign.py",
+    "agent-business-core/runtime/src/pinet_core/mail_provider/conversation.py",
+    "agent-business-core/runtime/scripts/gmail_campaign.py",
+    "agent-business-core/runtime/scripts/gmail_conversation.py",
+    "agent-business-core/runtime/offline_tests/test_gmail_conversation.py",
+    "agent-business-core/runtime/tests/test_gmail_conversation_pg.py",
+    "docs/GMAIL_REVIEWED_CONVERSATIONS.md",
+    "docs/GMAIL_REVIEWED_CAMPAIGN.md",
+    "MAIL_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Keep channel runners held and revert only this source. Retain all initial/reply intents, unknown outcomes and accepted provider IDs, original stop/latest-pointer failures and private test receipts. Do not resume marketing or reclassify self-test records as commercial mail.",
+  "id": "upgrade-595b60bf-1193-44b8-a58e-f6edb1564bec",
+  "branch": "codex/gmail-reviewed-replies-20261018",
+  "baseSha": "ed934d19a6ab8a96ac0fa6ca52d5e3be60a599dc",
+  "createdAt": "2026-10-18T20:00:22.296Z"
+}

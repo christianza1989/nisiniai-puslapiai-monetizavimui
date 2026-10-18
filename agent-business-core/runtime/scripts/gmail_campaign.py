@@ -16,7 +16,7 @@ from pinet_core.mail_provider.gmail import GmailError
 from pinet_core.mail_provider.vault import Vault
 
 
-async def execute(args):
+async def execute(args, *, gateway_type=CampaignGmail):
     path = private_path(args.output, exists=False)
     with path.open("x", encoding="utf-8") as output:
         os.chmod(path, 0o600)
@@ -27,7 +27,7 @@ async def execute(args):
     token = session.get("access_token")
     if not isinstance(token, str) or not 1 <= len(token) <= 8192:
         raise GmailError("gmail_private_session_required")
-    gateway = CampaignGmail(Vault(args.vault, private_path(args.key_file).read_bytes().strip()),
+    gateway = gateway_type(Vault(args.vault, private_path(args.key_file).read_bytes().strip()),
         args.connection_id, token, args.business_id, plan_path=args.plan, plan_sha256=args.plan_sha256)
     if args.action == "prepare":
         result = await gateway.prepare_letter(args.identity)
@@ -43,13 +43,13 @@ async def execute(args):
     return {"status": "complete", "action": args.action, "automatic_reply_dispatched": False}
 
 
-async def main():
+async def main(*, gateway_type=CampaignGmail):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("prepare", "send", "sync"))
     for name in ("identity", "business-id", "connection-id", "session-file", "vault", "key-file", "plan", "plan-sha256", "output"):
         parser.add_argument("--" + name, required=True)
     try:
-        print(json.dumps(await execute(parser.parse_args())))
+        print(json.dumps(await execute(parser.parse_args(), gateway_type=gateway_type)))
     finally:
         await db.engine.dispose()
 

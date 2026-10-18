@@ -6,6 +6,13 @@ authority, business source binding, Case, MailMessage and Lithuanian display
 pipeline. It adds no database tables, CRM, model runner or scheduler. Source
 tests are separate from actual transport adoption and campaign activation.
 
+The default purpose remains `campaign`. Optional `owner_acceptance` admits only
+the actual Gmail sender as recipient and retains test provenance in fresh
+records; those messages are excluded from default campaign statistics. It cannot
+promote old captures. Exact reviewed responses to a current authenticated inbound
+use the separate [conversation adapter](GMAIL_REVIEWED_CONVERSATIONS.md), which
+shares these authorities, quotas and no-retry transport semantics.
+
 ## Admission
 
 `mail_provider/campaign.py` accepts a private, operator-controlled JSON plan pinned

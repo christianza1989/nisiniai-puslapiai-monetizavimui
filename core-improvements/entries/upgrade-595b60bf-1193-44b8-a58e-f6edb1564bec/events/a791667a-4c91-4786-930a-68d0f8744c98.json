@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Two actual retained-PG regressions first failed on terminal-stop erasure and stale replay replacing latest inbound (red log d475e9d4ac6190940d635263335b656302f6d5a586e5ab001ff4fa56013ca34e); repaired hook then2PASS. Initial requested-reply run7PASS/1fixture changed a plan hash under old IDs, correctly rejected; fresh plan/letter fixture identity fixed. Final53checks PASS covers38offline+15restrictedPG/inertHTTP. No operating mailbox/model work; actual transport acceptance still separate. Owner-only acceptance purpose keeps synthetic=true, must match parent, cannot send elsewhere or convert old captures. Current Root model/protected stage remains unchangeded934.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_gmail_conversation.py offline_tests/test_gmail_campaign.py offline_tests/test_gmail_provider.py tests/test_gmail_conversation_pg.py tests/test_gmail_campaign_pg.py::test_new_real_draft_single_post_concurrency_and_capture_unchanged tests/test_gmail_campaign_pg.py::test_bound_buyer_reply_same_case_replay_and_pause_hold tests/test_gmail_campaign_pg.py::test_observed_acceptance_survives_post_send_authority_loss tests/test_gmail_campaign_pg.py::test_quota_serializes_different_contacts",
+      "result": "PASS",
+      "evidence": "53passed in94.45s; final log SHA2564ec444bbf50e7a72aed757fc5551b509fcb2f696424958d94f386cf351c705c1. Own restricted retained QA DB only, no provider calls."
+    },
+    {
+      "command": "ruff check exact changed mail source/CLI/tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; standard thread ID, exact incoming subject and RFC reply headers checked against official Gmail thread documentation."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs .",
+      "result": "PASS",
+      "evidence": "5431candidatefiles,0findings. No OAuth/actual mail/corpus/private plans in source."
+    }
+  ],
+  "eventId": "a791667a-4c91-4786-930a-68d0f8744c98",
+  "sequence": 2,
+  "at": "2026-10-18T20:01:21.568Z"
+}

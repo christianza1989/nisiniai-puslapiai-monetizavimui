@@ -9,6 +9,7 @@ import re
 from contextlib import asynccontextmanager
 from datetime import UTC, timedelta
 from pathlib import Path
+from typing import Literal
 from uuid import UUID, uuid4
 
 from pydantic import AwareDatetime, EmailStr, Field, field_validator, model_validator
@@ -63,6 +64,7 @@ class ReviewedLetter(Strict):
 
 class CampaignPlan(Strict):
     id: UUID
+    purpose: Literal["campaign", "owner_acceptance"] = "campaign"
     enabled: bool
     connection_id: UUID
     business_id: UUID
@@ -86,10 +88,12 @@ class CampaignPlan(Strict):
                 or len({v.id for v in self.letters}) != len(self.letters)
                 or len({str(v.recipient).casefold() for v in self.letters}) != len(self.letters)):
             raise ValueError("bounded_unique_campaign_plan_required")
+        if self.purpose == "owner_acceptance" and any(str(v.recipient).casefold() != str(self.sender).casefold() for v in self.letters):
+            raise ValueError("owner_acceptance_recipient_required")
         return self
 
 
-def read_plan(path, expected_sha256):
+def read_plan(path, expected_sha256, *, model=CampaignPlan):
     """Pinned operator input, outside browser/API/model-controlled arguments."""
     path = Path(path)
     try:
@@ -100,7 +104,7 @@ def read_plan(path, expected_sha256):
         raw = path.read_bytes()
         if hashlib.sha256(raw).hexdigest() != expected_sha256:
             raise ValueError()
-        return CampaignPlan.model_validate(json.loads(raw.decode("utf-8-sig")))
+        return model.model_validate(json.loads(raw.decode("utf-8-sig")))
     except (OSError, ValueError, TypeError):
         raise GmailError("gmail_campaign_plan_unavailable") from None
 
@@ -188,7 +192,8 @@ class CampaignGmail(OwnerGmail):
                    for url in re.findall(r"https?://[^\s<>]+", letter.body, flags=re.IGNORECASE)):
                 raise ControlError(409, "external_supplier_link_in_customer_letter")
             payload = {"sender": account, "sender_name": settings().sender_name, "recipient": str(letter.recipient),
-                "subject": letter.subject, "body": letter.body, "source_ref": source, "synthetic": False,
+                "subject": letter.subject, "body": letter.body, "source_ref": source,
+                "synthetic": plan.purpose == "owner_acceptance", "gmail_campaign_purpose": plan.purpose,
                 "customer_facing": True, "language": letter.language, "gmail_connection_id": self.id,
                 "gmail_account_key": self.contact_key(account),
                 "gmail_campaign_id": str(plan.id), "gmail_plan_sha256": self.plan_sha256,
@@ -206,7 +211,8 @@ class CampaignGmail(OwnerGmail):
             MailMessage.business_id == self.business_id, MailMessage.environment_id == settings().environment)
         row = await tx.scalar((query.with_for_update() if lock else query).execution_options(populate_existing=True))
         letter = self.letter(row.payload.get("gmail_letter_id")) if row and row.payload.get("gmail_letter_id") else None
-        if (row is None or row.direction != "outbound" or row.payload.get("synthetic") is not False or letter is None
+        if (row is None or row.direction != "outbound" or row.payload.get("synthetic") is not (self.plan.purpose == "owner_acceptance") or letter is None
+                or row.payload.get("gmail_campaign_purpose", "campaign") != self.plan.purpose
                 or row.payload.get("gmail_connection_id") != self.id
                 or row.payload.get("gmail_account_key") != self.contact_key(self.plan.sender)
                 or row.payload.get("gmail_campaign_id") != str(self.plan.id)
@@ -286,6 +292,13 @@ class CampaignGmail(OwnerGmail):
 
     async def reply_received(self, tx, original, reply):
         case = await tx.get(Case, original.case_id, with_for_update=True, populate_existing=True)
-        if case.payload.get("gmail_last_inbound_id") != reply.id:
-            case.payload = {**case.payload, "gmail_contact_state": "hold",
-                "gmail_contact_reason": "incoming_reply_pending_review", "gmail_last_inbound_id": reply.id}
+        previous_id = case.payload.get("gmail_last_inbound_id")
+        if previous_id == reply.id:
+            return
+        previous = await tx.get(MailMessage, previous_id) if previous_id else None
+        if previous is not None and previous.created_at >= reply.created_at:
+            return  # Replay cannot move the retained latest observation backwards.
+        payload = {**case.payload, "gmail_last_inbound_id": reply.id}
+        if payload.get("gmail_contact_state") in {"ready", "hold"}:
+            payload.update(gmail_contact_state="hold", gmail_contact_reason="incoming_reply_pending_review")
+        case.payload = payload  # A terminal/unknown state is never resumed by receiving.

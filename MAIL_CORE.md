@@ -1,7 +1,13 @@
 # Bendras nišinių svetainių paštas
 
+2026-10-18 [peržiūrėti Gmail atsakymai](docs/GMAIL_REVIEWED_CONVERSATIONS.md)
+pririšami prie konkretaus gauto laiško ir tos pačios gijos. Nauja žinutė
+nepanaikina kontaktavimo stabdymo; atsakymo siuntimas neatnaujina rinkodaros.
+Ribotas siuntimo sau režimas išlaiko bandymo kilmę ir nepatenka į numatytą
+tikrų kampanijų statistiką. Tikras naujo adapterio siuntimas tikrinamas atskirai.
+
 2026-10-18 atskiras numatytai išjungtas [peržiūrėtos Gmail kampanijos adapteris](docs/GMAIL_REVIEWED_CAMPAIGN.md)
-kuria tik naujus tikrus laiškus pagal konkretų operatoriaus patvirtintą planą.
+kampanijos režimu kuria naujus tikrus laiškus pagal operatoriaus patvirtintą planą.
 Ankstesni savitikros ir acquisition įrašai neperklasifikuojami. Vien kodo ar
 izoliuotų bandymų priėmimas neįjungia kampanijos ir nepakeičia gyvo siuntimo vartų.
 

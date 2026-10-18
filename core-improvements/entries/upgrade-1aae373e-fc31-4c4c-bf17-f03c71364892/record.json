@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Preserve approved price scope across translations instead of inferring unsupported trade terms from tax/delivery exclusions",
+  "category": "prompt",
+  "evidence": [
+    "docs/ACQUISITION_PRICE_PARAPHRASE.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/instructions/common.md",
+    "SKILLS/niche-client-acquisition/references/output.md",
+    "docs/ACQUISITION_PRICE_PARAPHRASE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this scoped common instruction with model runners held; keep the first rejected German copy, known29charges, earlier ledgers, original corpus/grader and Config2. Do not accept unsupported terms by lowering quality thresholds.",
+  "id": "upgrade-1aae373e-fc31-4c4c-bf17-f03c71364892",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "0ea96f3242a39c38ecd9c48da9a189bffedf3be6",
+  "createdAt": "2026-10-18T19:30:49.714Z"
+}

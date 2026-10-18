@@ -2326,3 +2326,11 @@ and own journal. Frozen Root six-role model batch remains unchanged source2e89.
 Reuse Treg CLI Google and existing discovery_urls/PublicResearch; finite exact
 query/read/cost/source/expiry pins, private intents/receipts, no auto retry.
 No second CRM/calibration system, recipient authorization or mail/scheduler.
+
+2026-10-18 Root pricing paraphrase scope, issue66 comment6254177700: existing
+acquisition/instructions/common.md, output skill reference and compact doc/journal.
+Actual German train quality rejected unsupported ab-Werk wording, coordinator
+human_handoff, no external mail.29known charges and all failures retained; six
+grants/module stopped before source integration. Add one common factual-scope
+rule; do not alter Config2, knowledge, original corpus/labels/grade or quality
+thresholds. Native model acceptance requires a new explicit source snapshot.

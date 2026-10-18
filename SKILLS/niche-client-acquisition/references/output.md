@@ -18,6 +18,13 @@ Return siteId, requested recipient / thread reference, factual offer and persona
 
 Read the complete final subject/body for every exported recipient, including manual drafts assembled outside the model runner. Record the version/content hash and concrete review result privately; list size, schema PASS, source fit and prompt instructions do not establish message quality. A usable letter connects a verified recipient fact to the current offer's practical purpose, uses natural language, asks one proportionate question and includes a simple way to decline. Do not make unknown price, current traffic, availability, qualification or planned functionality sound confirmed.
 
+Preserve the exact commercial scope when translating or paraphrasing prices.
+Excluding tax and delivery does not establish an agreed Incoterm, collection
+location or transfer of transport responsibility. Use EXW, “ab Werk” or a similar
+trade term only when an approved fact explicitly establishes it; otherwise state
+only the known inclusions/exclusions. Keep a rejected original and its exact
+quality review; do not lower that review to accept unsupported terms.
+
 Research notes and exclusions are operator metadata, not recipient text. Street/city corrections, missing-field observations and source-rights warnings must not be copied into prose. An unspecified provider stays in further research until its services are known; one multi-location organization is not several unrelated prospects. Keep exact failed originals and revised drafts separate with their original source expiry; copy correction does not renew evidence.
 
 Report content review by the operator and independent model separately from acquisition engine `draft_ready`, source/contact/transport authorization and delivery. Where the owner requires personal review, inspect every final initial letter and follow-up before the authorized batch; a model grade alone is insufficient. Refusal, wrong recipient, silence, duplicate organization, stale evidence, uncertain submission and changed offer belong in the applicable calibration/gate evidence. No finite case suite proves zero errors or that a campaign is welcome. Publish only redacted counts/failures/hashes; keep organization, correspondence and exact copy packets private.

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual2e89 smoke and English train PASS; German train completed all8nativeTasks but own quality rejected unsupported ab-Werk phrase, final coordinator human_handoff. Lab reply_rejected stops before grade; this is copy quality, not inferred provider failure.29known charges retained; all six grants/module stopped. Add one fact-preserving commercial scope paragraph to the common fragment shared by both sectors and all composing roles. Config2, facts, corpus, labels/evaluator and quality threshold unchanged. Full Lithuanian paragraph self-edited; this is instruction text, no UI change. Actual fresh source model rerun remains separate.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition.py offline_tests/test_acquisition_dialogue.py",
+      "result": "PASS",
+      "evidence": "39passed and8subtests in3.60s, inert preparation/reply scenarios across general/medical equipment; no provider calls"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Three-line common-rule insertion and matching output reference/documentation; no schema, runtime or business facts changed"
+    }
+  ],
+  "eventId": "aa8ab75c-9165-41e9-9c31-1a2b3f97cab3",
+  "sequence": 2,
+  "at": "2026-10-18T19:31:29.906Z"
+}

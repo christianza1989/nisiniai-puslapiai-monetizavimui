@@ -6,6 +6,7 @@ The current authenticated inbound/hash is rechecked before the one possible POST
 
 import re
 from datetime import UTC
+from pathlib import Path
 from typing import Literal
 from uuid import UUID, uuid4
 
@@ -36,11 +37,24 @@ class ConversationPlan(CampaignPlan):
 
 
 class ConversationGmail(CampaignGmail):
-    def __init__(self, vault, connection_id, token, business_id, *, plan_path, plan_sha256, transport=None):
+    def __init__(self, vault, connection_id, token, business_id, *, plan_path, plan_sha256, transport=None,
+                 _ancestors=()):
+        identity = str(Path(plan_path).resolve())
+        if len(_ancestors) >= 32 or identity in _ancestors:
+            raise GmailError("gmail_conversation_parent_limit")
         OwnerGmail.__init__(self, vault, connection_id, token, business_id, transport=transport)
         self.plan_path, self.plan_sha256 = plan_path, plan_sha256
         self.plan = read_plan(plan_path, plan_sha256, model=ConversationPlan)
-        self.parent = CampaignGmail(
+        try:
+            read_plan(self.plan.parent_plan_path, self.plan.parent_plan_sha256, model=ConversationPlan)
+        except GmailError:
+            # Only the two strict canonical plan schemas are eligible. The
+            # ordinary constructor rechecks its seal before accepting a root.
+            parent_type, extra = CampaignGmail, {}
+        else:
+            parent_type = ConversationGmail
+            extra = {"_ancestors": (*_ancestors, identity)}
+        self.parent = parent_type(
             vault,
             connection_id,
             token,
@@ -48,6 +62,7 @@ class ConversationGmail(CampaignGmail):
             plan_path=self.plan.parent_plan_path,
             plan_sha256=self.plan.parent_plan_sha256,
             transport=transport,
+            **extra,
         )
         if (
             str(self.plan.connection_id) != self.id
@@ -64,7 +79,8 @@ class ConversationGmail(CampaignGmail):
         return read_plan(self.plan_path, self.plan_sha256, model=ConversationPlan)
 
     async def context(self, tx, letter):
-        if read_plan(self.plan.parent_plan_path, self.plan.parent_plan_sha256) != self.parent.plan:
+        if read_plan(self.plan.parent_plan_path, self.plan.parent_plan_sha256,
+                     model=type(self.parent.plan)) != self.parent.plan:
             raise ControlError(409, "gmail_parent_plan_changed")
         parent = await self.parent.message(tx, str(letter.parent_mail_id))
         incoming = await tx.get(MailMessage, str(letter.inbound_mail_id), populate_existing=True)

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Resolve a sealed accepted requested-reply plan as the next Gmail conversation parent while retaining exact current-inbound and shared send fences",
+  "category": "code",
+  "evidence": [
+    "docs/GMAIL_REVIEWED_CONVERSATIONS.md",
+    "agent-business-core/runtime/tests/test_gmail_conversation_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_provider/conversation.py",
+    "agent-business-core/runtime/offline_tests/test_gmail_conversation.py",
+    "agent-business-core/runtime/tests/test_gmail_conversation_pg.py",
+    "docs/GMAIL_REVIEWED_CONVERSATIONS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Hold mail gateways and revert only parent-plan resolution; retain all accepted messages, inbound review pins, provider IDs, send/unknown intents and failed tests. Do not recreate or resend any message.",
+  "id": "upgrade-d1d9ecdf-a89e-43b1-b730-49cec6c1f6c2",
+  "branch": "codex/gmail-conversation-chain-20261018",
+  "baseSha": "2485b762db73474b9efce24b55f64c0b574c52c5",
+  "createdAt": "2026-10-18T20:35:34.570Z"
+}

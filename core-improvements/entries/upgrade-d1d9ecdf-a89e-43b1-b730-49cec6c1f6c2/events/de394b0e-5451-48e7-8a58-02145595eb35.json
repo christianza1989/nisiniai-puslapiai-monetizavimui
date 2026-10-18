@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "First retained-PG test reproduced actual constructor rejecting a ConversationPlan parent (red3c0482faa74ec31fc62561f3702f62ca3f275ae617f1ba0ad3805faaf4f8481b). After repair the fixture correctly hit its declared2send daily cap (86a525684a446400606f1d67d8924340648be5cdd061f58a4bc453ff3bd23195); declaring3before its first initial send yielded full positive continuation. Combined suite30PASS/1fixture misplaced assertion; inert fixture location corrected, offline10/10PASS. No actual provider, operatingDB, native model or frozen Root source changes. Original cap/unknown/current-inbound guards retained.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_gmail_conversation.py offline_tests/test_gmail_campaign.py tests/test_gmail_conversation_pg.py; python -m pytest -q offline_tests/test_gmail_conversation.py after inert fixture correction",
+      "result": "PASS",
+      "evidence": "31distinct checks:16restrictedPG+15offline. Combined73.00s had30PASS/1fixture issue, fixed offline10PASS2.57s SHA256cf4676c3e9ad8109b188e6b0466f4190513aaf1df0e18224201b3d446236bc75. RestrictedPG next customer question sends once in same Case/thread, parent root/reply/changed seal/32reply chain bound, existing singlePOST/stop/latest/replay/unknown/account caps passed."
+    },
+    {
+      "command": "ruff check exact conversation source/offline/PG; git diff --check",
+      "result": "PASS",
+      "evidence": "All exact changed Python checks and whitespace passed."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs .",
+      "result": "PASS",
+      "evidence": "No operating Gmail/corpus/OAuth values committed; scanner0findings."
+    }
+  ],
+  "eventId": "de394b0e-5451-48e7-8a58-02145595eb35",
+  "sequence": 2,
+  "at": "2026-10-18T20:37:55.965Z"
+}

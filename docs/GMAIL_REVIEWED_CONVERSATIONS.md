@@ -55,3 +55,19 @@ inert Gmail HTTP. It covers same-Case/thread headers, concurrent single POST,
 changed inbound/stop/quota fences, shared initial/reply quotas, unknown outcomes,
 no retry, parent plan pins, purpose isolation and post-send receipt preservation.
 Actual Gmail transport and UI acceptance of this new command remain separate.
+
+An accepted requested reply can be the next reviewed plan's parent. Parent
+resolution accepts only the sealed CampaignPlan or ConversationPlan schema,
+checks connection/business/sender/environment/purpose along the chain, and
+limits private resolution to32reply plans with cycle detection. It never reads
+the mailbox or sends during construction. Each new message still requires the
+latest authenticated inbound, its exact review hash/subject, a fresh bounded
+plan and one send intent; account/day quotas include all earlier sends. The
+parent's accepted receipt is retained history, not permission to send again.
+
+The first retained-PG continuation test reproduced the old constructor refusing
+a reply plan as parent. A separate fixture then correctly hit its two-send daily
+cap; a declared three-send fixture is used for the complete continuation check.
+No cap or unknown-outcome rule is relaxed by parent-plan support. The focused
+chain acceptance and prior request/stop/replay/quota/concurrency checks remain
+distinct from an actual multi-turn Gmail and LT display/UI acceptance.

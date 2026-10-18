@@ -2355,3 +2355,11 @@ crossed campaign/fact expiry20:00UTC before CLI launch. Keep41attempts including
 Require campaign/allfacts/allcase evidence beyond admitted team/session deadline
 before first Task. Independent custodian renews synthetic operational timestamps
 in a separate immutable source, without supplier-fact approval/unseen-case claim.
+
+2026-10-18 Root requested-Gmail continuation, issue66 comment6254783427;
+own secondary branch codex/gmail-conversation-chain-20261018 at2485. Scope
+conversation.py, focused offline/PG chain checks, conversation doc and journal.
+Root protected model batch stays unchanged2485. A requested-reply plan must be
+usable as next accepted parent with bounded sealed resolution; keep current
+inbound/tenant/source/owner/intent/thread/unknown/quota gates. No schema, send
+permissions, actor/corpus changes or autonomous follow-up/scheduler.

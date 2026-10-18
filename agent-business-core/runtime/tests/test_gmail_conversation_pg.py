@@ -143,6 +143,40 @@ async def test_exact_requested_reply_one_post_same_case_and_thread(campaign):  #
     assert len(p["provider"].posts) == 2
 
 
+async def test_next_authenticated_customer_reply_continues_accepted_reply_plan(campaign):  # noqa: F811
+    p = campaign
+    p["plan"]["maximum_daily_sends"] = 3
+    p["gateway"] = save_plan(p)
+    first, draft, original, _ = await reply_ready(p)
+    p["provider"].sent_id = "accepted-second-message"
+    assert (await first.send_letter(draft["id"]))["state"] == "accepted_by_gmail"
+    p["provider"].reply_id = "inbound-second-question"
+    p["provider"].reply_rfc = "<second-customer-question@example.com>"
+    received = await first.sync_letter(draft["id"])
+    assert len(received["inbound_mail_ids"]) == 1
+    async with db.transaction(p["bid"], p["environment"]) as tx:
+        incoming = await tx.get(MailMessage, received["inbound_mail_ids"][0])
+        incoming_id, incoming_hash, subject = incoming.id, mailbox.fingerprint(incoming.payload), incoming.payload["subject"]
+    plan = first.plan.model_dump(mode="json")
+    plan.update(id=str(uuid4()), parent_plan_path=str(first.plan_path), parent_plan_sha256=first.plan_sha256)
+    plan["letters"][0].update(id=str(uuid4()), parent_mail_id=draft["id"], inbound_mail_id=incoming_id,
+        inbound_sha256=incoming_hash, subject=subject, body="Thank you. The revised specification still needs confirmation; please provide the destination postcode.")
+    path = p["plan_path"].with_name("conversation-next.private.json")
+    path.write_text(json.dumps(plan), "utf-8")
+    following = ConversationGmail(p["vault"], p["owner"].id, p["owner"].token, p["bid"],
+        plan_path=path, plan_sha256=hashlib.sha256(path.read_bytes()).hexdigest(), transport=first.transport)
+    next_draft = await following.prepare_letter(plan["letters"][0]["id"])
+    assert next_draft["case_id"] == original["case_id"]
+    p["provider"].sent_id = "accepted-third-message"
+    sent = await following.send_letter(next_draft["id"])
+    assert sent["state"] == "accepted_by_gmail" and len(p["provider"].posts) == 3
+    posted = json.loads(p["provider"].posts[-1].content)
+    parsed = BytesParser(policy=policy.default).parsebytes(base64.urlsafe_b64decode(posted["raw"]))
+    assert posted["threadId"] == p["provider"].thread and str(parsed["In-Reply-To"]) == p["provider"].reply_rfc
+    assert (await following.send_letter(next_draft["id"]))["state"] == "accepted_by_gmail"
+    assert len(p["provider"].posts) == 3
+
+
 @pytest.mark.parametrize("change", ["stopped", "newer", "hash", "quota"])
 async def test_changed_current_reply_cannot_create_send_intent(campaign, change):  # noqa: F811
     p = campaign

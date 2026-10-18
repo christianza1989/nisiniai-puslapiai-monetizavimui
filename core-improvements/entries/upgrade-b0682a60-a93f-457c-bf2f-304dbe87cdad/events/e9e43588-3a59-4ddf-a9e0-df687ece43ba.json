@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual local code adoption and exactly two native data-only Config saves; not model execution/calibration/channel admission. Original source/readiness failures retained. Runtime receipts, full business/agent/config IDs, specifications, Session and DB snapshots stay private, outside Git. This is not a main merge or another-PC adoption.",
+  "checks": [
+    {
+      "command": "private-agent-adopt-bootstrap.py private-agent-adopt prepare/start/verify",
+      "result": "PASS",
+      "evidence": "Clean owned Serving76db483→97d8c756f01a172bf844464a03a0e6eda848b8eb/public255fea08, schema0047 unchanged. Backup1772634bytes SHA237e200103dd8f81aa5d48ca5debd1164a25f5f7a0bbe5d538eca1835e518ded. All95 table snapshots and794 native files exact across source-only adoption. Normal owner me/mail200, unauth401/foreign404; all paid/external flags held. API18871 new ownedPID47672."
+    },
+    {
+      "command": "private-agent-renew-intake-bootstrap.py private-agent-renew-intake renew-intake; prepare-private-business-agents-bootstrap.py private-agent-configs prepare-agents",
+      "result": "PASS",
+      "evidence": "Maintained current-source S37 renewal only+1request/+1receipt; same immutable Registration. Normal-owner additive readiness permits research/email only; POST2 distinct native Agent+Config revision1 drafts; same UUID replay, GET reopen and exact revision retrieval passed; conservative old-v1 global creation stays blocked. Only+2Agent/+2Config, all prior rows/original/native794 exact; no model/SMTP/IMAP calls. Both disabled, calibration/F1UNVERIFIED, activation not_performed. Private verified receipts in private-business-agent-configs-20261018."
+    },
+    {
+      "command": "private-agent-runtime-resume-bootstrap.py private-agent-runtime-resume prepare",
+      "result": "PASS",
+      "evidence": "New exact same-source97/schema47 baseline/back-up captured AFTER legitimate S37/two-Config writes. Prior76/adoption baselines are historical, cannot be used as current data snapshots or restored over new history."
+    }
+  ],
+  "eventId": "e9e43588-3a59-4ddf-a9e0-df687ece43ba",
+  "sequence": 5,
+  "at": "2026-10-18T03:08:07.300Z"
+}

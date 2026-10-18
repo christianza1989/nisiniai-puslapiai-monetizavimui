@@ -13,13 +13,28 @@ retained. Independent review found the race before repair and no remainingP1/P2
 afterward. Helper wire5392f658 integrated asa10f348 preserves old complete v1
 OpenAPI projection after removing only its new path and three schemas.
 
-Actual Serving remains76db483/schema0047 with0agents until separate backed-up,
-held source-only adoption and normal-owner Config saves are verified. Prepared
-business specifications target European accommodation owners and truthful
-research/email drafts; Maudis remains a candidate, no manufacturing/contact/
-photo/price promises. The historical174/180 budget stays CLOSED. Source tests
-do not prove model calibration, UI or inbox delivery. See
+Actual Serving now97d8c756f01a172bf844464a03a0e6eda848b8eb/schema0047,
+public255fea08; held source-only adoption preserved95 tables/native794 exactly,
+backup1772634bytes/SHA237e2001. Current-source S37 renewal added1request+1receipt;
+normal-owner API saved exactly two research/email native Agent/Config revision1
+drafts. Exact UUID replay, reopen and revision retrieval passed. Only2+2 agent
+rows added, all prior rows/original/native exact. Full IDs/specs/receipts remain
+private in private-business-agent-configs-20261018, not Git. Both disabled, no
+model authorization/calibration/channel admission. API18871 ownedPID47672;
+Root private-agent-runtime-resume bootstrap has a fresh97→97 baseline AFTER
+legitimate writes; old76 snapshots are historical, never restore over new rows.
+The specifications target European accommodation owners and truthful drafts;
+Maudis remains a candidate, no manufacturing/photo/price promises. Historical
+174/180 budget stays CLOSED. No UI/inbox/fullF1/launch proof is inferred. See
 [purpose contract](../PRIVATE_AGENT_PREPARATION.md).
+
+Native follow-up delegated to acquisition owner under issue66/comment6245021171
+from frozen97: one Config per phase authorization; research-only2-role no-mail
+result, trusted exact native research handoff to email-only writer/reviewer,
+same campaign/prospect, no duplicate qualification/capture, typed native reply
+with exact inbound uniqueness and atomic Correspondence/Task completion. Reuse
+current engine/Task/Run/accounting/persona/evaluator, all defaults OFF. Root owns
+UI/readiness and actual operating adoption; no overlapping source writes.
 
 ## Integrated headless mail and actual source adoption — 2026-10-18
 

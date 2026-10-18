@@ -6,7 +6,7 @@
 requested continuing platform/agent integration. Root owns UI/integration and
 the operating adapter; authorized helper chats own separately scoped schema and
 acquisition work in their own branches/worktrees. Current frozen local API18871
-is76db483/public255fea0 on0047, with the human-started reviewed frontend3030.
+is97d8c75/public255fea0 on0047, with the human-started reviewed frontend3030.
 Kubilų Creation85fb2b31 has current Registration014d46b4/Business917e1d81.
 Normal owner source renewal preserved the same identity and37/40 accounting.
 All original771 native files remain exact; a new Foundation observation added23
@@ -42,7 +42,12 @@ adoption retained89 prior data tables exactly plus5 empty new tables. Model/disp
 flags remain false, actors/policies/authorizations absent; original mail stays
 unchanged. [Display contract](../../docs/MAIL_DISPLAY_TASKS.md).
 
-Actual private business remains at0agents and Foundationcandidate/UNVERIFIED.
+Actual private business now has two research/email Agent/Config revision1 drafts,
+both disabled; normal-owner save/replay/reopen/exact revision checks passed.
+Only+2Agent/+2Config were added, all prior rows/original/native794 exact. No model,
+calibration or channel admission. Full IDs/specifications/receipts stay private.
+Foundation remains candidate/UNVERIFIED. The following observation predates those
+two Config saves and remains its own immutable evidence:
 After one legitimate current-source intake refresh, the same verify-local UUID
 returned200/local_evidence_missing, adding exactly1 Foundation receipt. Current
 Registration binding is true; Profile and fullF1 remain unadmitted/UNVERIFIED.
@@ -61,15 +66,21 @@ authority snapshot after all native/source waits. Old-path26 configuration and46
 provisioning/continuity/model/lab PG cases also passed serially; the exact final
 migration target passed separately after the local Operations cleanup. Old history
 traversal and membership self-wait harness failures remain in separate journals.
-Operating adoption and the two actual business configurations still follow;
-this paragraph does not claim them.
+Actual clean held source-only adoption76db483→97d8c75 passed on unchanged0047
+with95 exact tables/794 native files and a1.77MB backup. Then maintained source
+renewal added1request+1receipt, preserving Registration; the two actual Config
+saves above passed. A fresh same-source resume baseline was captured after those
+legitimate writes; earlier before-snapshots are historical. No paid authorization.
 [Contract](../../docs/PRIVATE_AGENT_PREPARATION.md).
 
 Remaining executable order:
 
-1. Adopt the tested private purpose-specific preparation/readiness code, then save
-   the requested internal research/email configurations. No new model budget or
-   live-mail authority is inferred from code/schema adoption.
+1. Complete the delegated native research→email→same-Case reply/calibration bridge
+   against the saved pair. Research must create no mail; email consumes its exact
+   approved Task/Run/attempt output and is the sole initial capture. Same campaign,
+   strict phase/inbound dedup, current two-Config authority, common accounting and
+   atomic Correspondence/Task completion. No second engine or site_chat waiver.
+   Source acceptance is inert/isolated PG; no paid/live-mail authority is inferred.
 2. Complete protected calibration and applicable Foundation/Profile/knowledge
    acceptance under their maintained contracts; configuration/model drafts are
    separate. Existing native S5 site_chat is not coerced into an email worker.

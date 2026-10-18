@@ -1846,3 +1846,17 @@ rollback; separately prove500ms membership contention, completed Config commit,
 then owner revocation and next-admission denial with immutable history retained.
 Original10PASS/1FAIL314.47s, exact blocker witness and scoped QA cancellation
 remain retained. No production permission, migration or lock change.
+
+## Native acquisition chain handoff — Root 2026-10-18
+
+Root private preparation frozen/pushed97d8c75, actual held Serving97/schema47
+adopted and two normal-owner research/email Config drafts saved with exact UUID
+replay/reopen/revision evidence. Runtime IDs/specifications stay private. Source
+QA17new/26oldConfig/46provisioning-continuity-model-lab and325pure PASS; original
+failures retained. Root releases future acquisition/common-worker/config/next
+migration scopes to authorized acquisition helper via issue66/comment6245021171;
+helper reserves exact final file list in its own fresh branch/worktree. Root
+retains customer_agents readiness, portal/UI and all operating data/adoption.
+No parallel edits of delegated acquisition paths. Native phase handoff/reply
+integration uses existing queue/engine/Case; old174 budget remains CLOSED and
+no model/transport activation is granted by code or this handoff.

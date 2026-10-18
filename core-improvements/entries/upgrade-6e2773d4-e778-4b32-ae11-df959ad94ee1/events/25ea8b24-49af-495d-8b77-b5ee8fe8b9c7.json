@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Schema-only frozen2tables/4typedhelpers fromRootd415c8727facc53ab14a34438f9bb2cce08e563a, companion255fea0813bf1aabeaeea2f2de0b29564118f2fc. No runtime/worker/runner/config/CLI/operating/provider/SMTP/closed174 edits. Root approved8arg reason settlement, preIOzerocharge completeness,10thmode usage_observed and verifiedAccount lastfence. All original red logs retained in separate fixing event. Source delivery/main merge/actual adoption remain distinct; Root owns runtime and stale4-handler assertion integration.",
+  "checks": [
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider tests/test_mail_display_schema_pg.py",
+      "result": "PASS",
+      "evidence": "31passed/1intentional0046baselineSKIP141.01s. RawUTF16SHA495391e285ad0650fcf8b68d3986992801af25d2412be06571a5569dc20a9bfc. ForcedRLS/ACL/exacttenantFKs,7revocations inclverifiedAccount,9failurecodes,preIO0calls,usage_observed all4states/onlyRunmetadata, exactreplayxmin/time/events, checkpointMAX withunknownStore, completionrollbackretainspriorcheckpoint, queue/lifetime reservation concurrencycaps, crossPolicy/GitSource dedup, bothfreshclocklockwaits,immutableScope/Record,priorTaskkind/nullBusiness rules. Inertsynthetic Mail only; no model/channel IO."
+    },
+    {
+      "command": "Prior combined isolatedPG: tests/test_mail_display_schema_pg.py tests/test_mail_view_pg.py tests/test_workspace_direct_pg.py",
+      "result": "PASS",
+      "evidence": "The10existing legacyMail/Direct cases allPASS in priorcombined34PASS/4newStoreFAIL/1SKIP173.74s run81dc0e87eae8a9b40f3ede5dc79da7893308dcb998a085b9868b25d14811fe6c. OnlynewStore function bodies were corrected subsequently; final31 new-schema cases above green. Full prior combined run is explicitly NOT claimed green."
+    },
+    {
+      "command": "Latest own freshDB: upgrade0046; snapshot; upgrade0047; emptydowngrade0046; exacthashcompare; reupgrade0047; unchanged bootstrap",
+      "result": "PASS",
+      "evidence": "Before/restored0046 boundarySHA5491f6428a45cb6b4955f1d3505fb39668f786e483bb572eda72bb303b9b7add andallTaskCHECKsSHAa1458e53141adb725ae32d371b38da61f4ea7eca6da54d1e59dfa2eeae2a52e2 identical. RestoredlogSHA2e00737ad4530af9cb156dff1ce2e91bc749ef69ad5015d7a3a1f9c80399a7df; current47metadata log2a443e3019b4120565f37aa65e9f5fe6236d76984473d92d00410025152bb380. Finalfunctionqualification included in this fresh migration; no shared old-schema source edits."
+    },
+    {
+      "command": "Own populatedQA: expected refuseddowngrade0046 plus before/after revision+7tablecounts",
+      "result": "PASS",
+      "evidence": "Expected RuntimeError retained displayhistory prevents downgrade, exit1. Counts/revisionunchanged57Policy/36Job/44Task/37Run/39Event/48Mail/48Case. RefusallogSHAc6a9fceafd5153c49a94b7b94a00d63c66eb5817486d49a276bb5345f8c1f8bc; aftersnapshotSHAe0ffce4e205356241a4010e7230d4c828f30d92f8ee7f9e99e8761374bfbb2e9. Own synthetic15551 only."
+    },
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_mail_display_schema.py offline_tests/test_mail_view.py offline_tests/test_acquisition_model_schema.py offline_tests/test_direct_schema.py",
+      "result": "PASS",
+      "evidence": "51passed1.55s; rawSHAb43cd3a89c16260e33c967324aa295314d2914bfbec6ccaa656583715f79c754. Includes10new predecessor/ABI/leastprivilege/ORM cases; no DB/provider calls."
+    },
+    {
+      "command": "python -m ruff check new schema/ORM/migration/tests plus migrations/env.py; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed. Existing runtime source edit only one models import in migrations/env.py."
+    }
+  ],
+  "eventId": "25ea8b24-49af-495d-8b77-b5ee8fe8b9c7",
+  "sequence": 3,
+  "at": "2026-10-18T01:15:46.220Z"
+}

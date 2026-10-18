@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Final expanded0047 schema-only packet:2tables,4existing execution/accounting helpers plus1guarded read-only business-mail projection; stable6field sourceconstraint name. Earlier31PG acceptance25ea8b24 and firstred evidence remain immutable. This event covers Root's last post-acceptance dependency. No SourceRunner/worker/service/config/CLI/adoption/operating/provider/channel/closed174 changes. Root owns runtime/integrated31mail/2owner behavior; source/main/adoption separate.",
+  "checks": [
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider tests/test_mail_display_schema_pg.py -k 'projection or schema_columns or global_queue_cap'",
+      "result": "PASS",
+      "evidence": "5passed30deselected30.67s; rawSHA8fc3dccdcfa3cd983ae549863a49a8e2c6b4ecd226a6688c08d82e64f0ca05b5. Actual secondregister/verify customer plus enabledowner membership sees ready LT/historical claim while own SELECT on foreignJob/Policy/Task remains0 and canonicalMailSELECT1. ProjectionusageNULL/noDBRecordmutation, no policy/source TTL for historicalread, unauthorized/wrongtenant/ins/digest hidden, failedJobunavailable/nolegacyfallback; strictcancelled/noRun legacy marker crosses owners and malformedmarkersignored. All9functionACL/leastprivilege, stableUQ/dedupcap checked. No IO."
+    },
+    {
+      "command": "Latest5-public-helper ABI: emptydowngrade0046; exacthashverify; reupgrade0047 withnewProjection/stableUQ; unchangedbootstrap",
+      "result": "PASS",
+      "evidence": "Separate fresh own DB remainedempty. Restored exact46boundary5491f6428a45cb6b4955f1d3505fb39668f786e483bb572eda72bb303b9b7add/checksa1458e53141adb725ae32d371b38da61f4ea7eca6da54d1e59dfa2eeae2a52e2, restoredlogSHA2e00737ad4530af9cb156dff1ce2e91bc749ef69ad5015d7a3a1f9c80399a7df; reup47log2a443e3019b4120565f37aa65e9f5fe6236d76984473d92d00410025152bb380. Existing31PG/1intentionalbaselineSKIP141.01s for four unchangedexecutionhelpers remains valid (495391e285ad0650fcf8b68d3986992801af25d2412be06571a5569dc20a9bfc)."
+    },
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_mail_display_schema.py offline_tests/test_mail_view.py offline_tests/test_acquisition_model_schema.py offline_tests/test_direct_schema.py; Ruff; git diff --check",
+      "result": "PASS",
+      "evidence": "51passed1.46s including expanded5function-grant ABI/namedUQ checks, rawSHAc6f93b893b796f7e0e10cb2033adc32f9e3346ed5c2fbef80a1297c0e9b3cf9e. Ruff/diff allpassed. Only existing source edit remains one migrations/env.py import."
+    }
+  ],
+  "eventId": "3b501225-bad2-4a53-aad0-25c3348b49fc",
+  "sequence": 5,
+  "at": "2026-10-18T01:24:15.879Z"
+}

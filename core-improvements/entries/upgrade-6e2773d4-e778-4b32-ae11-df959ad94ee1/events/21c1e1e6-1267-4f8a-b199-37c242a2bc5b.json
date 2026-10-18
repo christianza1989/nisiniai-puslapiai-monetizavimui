@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "After initial31PG/51pure schema acceptance, Root read-only review found materializer starvation on first30 legacy files withoutJob and secondOwner business-wide dedup conflicts hidden by owner JobRLS. Root explicitly authorized one guarded historical read-only projection helper and stable unique name, no new table/column or execution permission. Added mail_display_projection6VARCHAR: ambient u/e, enabledUser/currentOwnerMembership+Grant, canonicalownedMail/Case; no PolicyTTL/source requirement; claims across owners/strictlegacycancelled noRun metadata; exactsha pending/unavailable/ready or legacy_retained. Onlystate+Record, Recordusage projectedJSONnull; no Task/Job/Policyids, accounting or RLS expansion/IO. Added uq_mail_display_source name on same6columns inDDL+ORM. Root owns actual legacy-marker/candidate materializer/runtime/GET and31mail integration. Four execution/accounting signatures and8arg/mode10 behavior unchanged. No historical journal records/events or data altered; only own labelled15551 QA used.",
+  "eventId": "21c1e1e6-1267-4f8a-b199-37c242a2bc5b",
+  "sequence": 4,
+  "at": "2026-10-18T01:24:14.115Z"
+}

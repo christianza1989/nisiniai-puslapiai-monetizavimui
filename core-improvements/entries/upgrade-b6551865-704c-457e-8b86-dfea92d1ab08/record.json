@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Native acquisition requires genuine external business source authority rather than mandatory Creation identity, with immutable Config source epochs and unchanged legacy material.",
+  "category": "code",
+  "evidence": [
+    "Base653d1bcc66af0a3d77a01af650bd1fdbbb72672c: ModelAuthorization.creation_id/registration_id are mandatory; saved(), module admin and SQL current guard unconditionally require CreationRegistration.",
+    "Root approved existing-business attachment contract and delegated scope in issue66/comment6247060468."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_models.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_admin.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/module_admin.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/native_chain.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/external_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_reply.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert before0049 adoption; Root controls composed migration rollback and held operating adoption. Never rewrite retained authorization, Config, attempt or accounting history.",
+  "id": "upgrade-b6551865-704c-457e-8b86-dfea92d1ab08",
+  "branch": "codex/external-native-adapter-20261018",
+  "baseSha": "653d1bcc66af0a3d77a01af650bd1fdbbb72672c",
+  "createdAt": "2026-10-18T07:18:55.369Z"
+}

@@ -22,18 +22,25 @@ async def approve(tx, request):
     registry, _, session = await module_admin.authority(tx, value)
     if await tx.get(ModelAuthorization, str(value.authorization_id)):
         raise ControlError(409, "acquisition_model_authorization_exists")
-    _, agent, config, _ = await authority.saved(tx, session, registry.creation_id, str(value.agent_id))
+    saved_registry, agent, config, _ = await authority.saved(tx, session,
+        getattr(registry, "creation_id", None), str(value.agent_id))
+    if (saved_registry.id, saved_registry.fingerprint) != (registry.id, registry.fingerprint):
+        raise ControlError(409, "acquisition_model_registration_changed")
     if config.revision != value.expected_config_revision or config.config_sha256 != value.expected_config_sha256:
         raise ControlError(409, "acquisition_model_saved_purpose_changed")
     bound, _, registered_hash = await authority.module(tx, registry, value.expected_module_fingerprint)
     now = await tx.scalar(text("SELECT clock_timestamp()"))
     expiry = min(now+timedelta(seconds=value.duration_seconds), bound.expires_at, session.expires_at)
+    if value.external_binding_id is not None:
+        expiry = min(expiry, registry.expires_at)
     if expiry <= now:
         raise ControlError(409, "acquisition_model_authorization_expired")
     row = ModelAuthorization(id=str(value.authorization_id), environment_id=settings().environment,
         business_id=registry.business_id, organization_id=registry.organization_id, user_id=registry.user_id,
         portfolio_id=registry.portfolio_id, site_id=registry.site_id, adapter_id=bound.adapter_id,
-        creation_id=registry.creation_id, registration_id=registry.id, registration_fingerprint=registry.fingerprint,
+        creation_id=agent.creation_id, registration_id=agent.registration_id,
+        external_binding_id=getattr(agent, "external_binding_id", None),
+        registration_fingerprint=registry.fingerprint,
         agent_id=agent.id, config_id=config.id, config_revision=config.revision, config_sha256=config.config_sha256,
         purpose=agent.purpose, session_id=session.id, source_revision=value.execution_source_revision,
         module_fingerprint=value.expected_module_fingerprint, module_snapshot=module_admin.snapshot(bound),
@@ -53,7 +60,11 @@ async def contain(tx, action, request):
     registry, _, _ = await module_admin.authority(tx, value, containment=True)
     row = await tx.get(ModelAuthorization, str(value.authorization_id),
         with_for_update=action == "stop", populate_existing=True)
-    if (row is None or row.registration_id != registry.id or row.business_id != registry.business_id
+    expected_origin = ({"external_binding_id": registry.id, "creation_id": None, "registration_id": None}
+        if value.external_binding_id is not None else
+        {"external_binding_id": None, "creation_id": registry.creation_id, "registration_id": registry.id})
+    if (row is None or any(getattr(row, key, None) != expected for key, expected in expected_origin.items())
+            or row.registration_fingerprint != registry.fingerprint or row.business_id != registry.business_id
             or row.environment_id != registry.environment_id or row.user_id != registry.user_id
             or row.organization_id != registry.organization_id or row.portfolio_id != registry.portfolio_id):
         raise ControlError(404, "not_found")

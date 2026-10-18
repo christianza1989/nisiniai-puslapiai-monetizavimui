@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Source-only checkpoint for Root integration; genuine shared Binding authority/SourcePayload and composed0049 PG remain UNVERIFIED dependencies. No dealer agents, paid/provider/channel/Serving/operating or protected calibration actions. Existing Config/Auth fingerprints are not rewritten; stable Agent pointer requires current Config source epoch. Original disk hold cleared by Root after byte-preserving compression; first misdirected log command executed no tests.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;scripts existing qa-venv python -B -m pytest offline_tests/test_acquisition_module_admin.py offline_tests/test_acquisition_model_contract.py offline_tests/test_acquisition_model_adapter.py offline_tests/test_acquisition_model_schema.py offline_tests/test_acquisition_native_chain.py offline_tests/test_acquisition_model_observation.py offline_tests/test_acquisition_external_binding.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "Retained .local/external-native/offline-related.log:97 passed3.02s including first24 external cases."
+    },
+    {
+      "command": "PYTHONPATH=src;scripts existing qa-venv python -B -m pytest offline_tests/test_acquisition_external_binding.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "Retained .local/external-native/offline-epoch.log: current28 cases passed2.37s after Config epoch and distinct native pair regressions."
+    },
+    {
+      "command": "existing qa-venv python -B -m ruff check eight owned acquisition runtime files and new external offline test",
+      "result": "PASS",
+      "evidence": "All checks passed on current checkpoint source/test bytes. This is lint and offline contract evidence, not composed PG acceptance."
+    }
+  ],
+  "eventId": "b37ac2a3-0111-44c9-be25-4f9bd1e8a76f",
+  "sequence": 2,
+  "at": "2026-10-18T07:23:15.395Z"
+}

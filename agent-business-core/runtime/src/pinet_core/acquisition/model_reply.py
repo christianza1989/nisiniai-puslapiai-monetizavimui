@@ -9,6 +9,7 @@ from ..creation.service import digest
 from ..db import db
 from ..tasks.codex import RunnerError
 from ..tasks.models import Task
+from . import model_authority as authority
 from .contracts import Review
 from .correspondence import Correspondence
 from .dialogue import REPLY_INSTRUCTION, ReplyDecision, prepare_reply
@@ -80,6 +81,7 @@ class ReplyHandler(ModelHandler):
         context = await reply_context(tx, work, value)
         return {"_task_id": task.id, "_user_id": task.user_id, "_authorization_id": bound.authorization_id,
             "_stage": "reply", "request": value.model_dump(mode="json"), "specification": work.specification,
+            **authority.context_fields(work),
             "transcript": context["transcript"], "suppressed": context["suppressed"],
             "now": context["now"].isoformat(), "deadline": tx.info["acquisition_model_deadlines"][task.id].isoformat()}
 

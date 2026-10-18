@@ -96,7 +96,9 @@ async def recipients(tx, session, portfolio_id, topic_id, *, limit=20, cursor=No
     next_cursor = None
     if row.anchor_kind == "business":
         # Canonical native directory validates real Registration/Agent/Config ownership.
-        page = await directory.read(tx, session, row, limit=limit, cursor=cursor)
+        # This preview still requires a real Creation/Profile admission. The
+        # general team directory shows external configurations separately.
+        page = await directory.read(tx, session, row, limit=limit, cursor=cursor, include_external=False)
         next_cursor = page["next_cursor"]
         for item in page["items"]:
             from .direct_preview import contact_blockers

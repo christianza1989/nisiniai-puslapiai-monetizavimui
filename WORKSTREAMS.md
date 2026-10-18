@@ -1900,3 +1900,51 @@ passes acrossrun29 first5/run30 last2,9offline and scopedRuff/safety PASS; origi
 run29 E2setupFAIL preserved and specific guard cause not invented. Root recovered
 the existing Docker/PG host after pause; own two pending nodes passed146.84s.
 Window closes at source-local handoff; no paid/Serving/site/business changes.
+
+# Existing business / agent account attachment — Root2026-10-18
+
+Explicit owner request: finish business and agent attachment to account while a
+separate chat builds the dealer site. Base55c209e; Root owns new business_attachment/
+and customer_agents/business* modules, customer_agents/models.py/service.py,
+workspace_team/directory.py/directory_wire.py, api.py, migration0049 and scoped
+tests/docs/portal integration. Existing claim/grant and Agent/Config remain the
+engines; no fakeCreation, second core or calibration system. Native acquisition
+helper window is pending exact contract agreement; it must not edit Root migration
+or these paths. Independent reviewer remains read-only. All runtime flags held.
+
+## External native acquisition adapter — 2026-10-18, wellness helper
+
+Root delegated exact scope from653d1bcc66af0a3d77a01af650bd1fdbbb72672c to
+codex/external-native-adapter-20261018. Own acquisition/model_models.py,
+model_authority.py, model_admin.py, module_admin.py, native_chain.py,
+new external_schema.py, only TaskRole.ask/ModelHandler.context in model_handler.py
+and ReplyHandler.context in model_reply.py; focused new offline/PG tests,
+own upgrade journal and docs/ACQUISITION_EXTERNAL_BINDING.md. Root owns Agent/Config
+origin model, business wrappers,0049 composition and operating adoption; source
+author owns business_attachment. Reuse current Task/Run/Case/accounting engines.
+Genuine external source binding, immutable Config source epoch and current Agent
+pointer remain exact. Legacy bytes/hashes stay unchanged. Original disk hold
+lifted by Root after byte-preserving compression; require1.5GiB before each batch.
+No paid/old calibration/protected payload/site/Serving or operating DB work.
+
+## Business source backbone transfer — helper2026-10-18
+
+Root transferred only new `business_attachment/`, `scripts/business_attachment_admin.py`,
+new `test_business_attachment.py` / `test_business_attachment_pg.py`, this append,
+`docs/BUSINESS_ATTACHMENT_BACKBONE.md` and own upgrade journal under issue66
+comment6246884066. Branch `codex/business-attachment-backbone-20261018` starts at
+653d1bcc66af0a3d77a01af650bd1fdbbb72672c; companion255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Root keeps Agent/Config/API/directory/portal and composed0049 migration; native
+helper keeps acquisition. All three composite UNIQUE binding targets and narrow
+runtime SELECT/pin functions are shared API. No existing source/holdout packet,
+paid call, operating DB, actual business/site or runtime activation in this scope.
+Disk recovery was acknowledged before resumed writes; >=1.5GiB free guard applies.
+
+Helper backbone window closes at source299773f9c4aab80789616a1d3c6a5aa4ba41ce6b:
+19offline/11retainedPG cases, actual CLI4-operation durable receipts, Ruff,
+exact-staged safety and own-base upgrade coverage PASS. First SQL alias failure,
+QA setup misses and inherited single-batch temp-probe collision are preserved in
+the scoped backbone doc/journal. Root received two concrete adoption/readiness
+findings and reports fixes in its own scope. Root keeps review, full49/legacy
+regression, source/schema/actual-business adoption. Own15559 retained synthetic
+DB and private receipts remain preserved; no operating, paid or channel changes.

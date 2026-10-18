@@ -5,12 +5,12 @@ from pathlib import Path
 from typing import Annotated, Literal
 from uuid import UUID
 
-from pydantic import Field
+from pydantic import Field, model_validator
 from sqlalchemy import select, text
 
 from ..config import settings
 from ..contracts import Strict
-from ..control.models import BusinessGrant
+from ..control.models import BusinessGrant, Session
 from ..control.routes import ControlError
 from ..creation.service import binding, current_actor, digest
 from ..creation_registration import admin as registrations_admin
@@ -30,9 +30,16 @@ ROOT = Path(__file__).resolve().parents[5]
 
 
 class Authority(Strict):
-    registration_id: UUID
+    registration_id: UUID | None = Field(default=None, exclude_if=lambda value: value is None)
     authorizing_session_id: UUID
     execution_source_revision: Source
+    external_binding_id: UUID | None = Field(default=None, exclude_if=lambda value: value is None)
+
+    @model_validator(mode="after")
+    def exact_origin(self):
+        if (self.registration_id is None) == (self.external_binding_id is None):
+            raise ValueError("exact_acquisition_origin_required")
+        return self
 
 
 class Approve(Authority):
@@ -73,6 +80,8 @@ async def authority(tx, value, *, containment=False):
             or (not containment and (cfg.smtp_enabled or cfg.voice_enabled))):
         raise ValueError("local_synthetic_module_administration_only")
     await registrations_admin.guard(tx, cfg.environment)
+    if value.external_binding_id is not None:
+        return await external_authority(tx, value, containment=containment)
     await lifetime(tx, cfg.environment, str(value.registration_id))
     row = await tx.scalar(select(Registration).where(Registration.id == str(value.registration_id),
         Registration.environment_id == cfg.environment).execution_options(populate_existing=True))
@@ -104,6 +113,26 @@ async def authority(tx, value, *, containment=False):
     return row, creation, session
 
 
+async def external_authority(tx, value, *, containment=False):
+    """Use the common reviewed business source, never fabricate a Creation proof."""
+    from ..business_attachment import service as sources
+    from ..business_attachment.models import Binding
+
+    row = await tx.get(Binding, str(value.external_binding_id), populate_existing=True)
+    session = await tx.get(Session, str(value.authorizing_session_id), populate_existing=True)
+    if row is None or session is None:
+        raise ControlError(404, "not_found")
+    async with sources.transaction_authority(tx, session, row.business_id, row.id,
+            writing=not containment, lock=True) as current:
+        await execution_current(value)
+        return current, current, session
+
+
+def origin_reference(value, registry):
+    key = "external_binding_id" if value.external_binding_id is not None else "registration_id"
+    return {key: registry.id}
+
+
 async def operate(tx, action, request):
     models = {"approve": Approve, "stop": Stop, "inspect": Authority}
     if action not in models:
@@ -111,7 +140,7 @@ async def operate(tx, action, request):
     value = models[action].model_validate(request)
     if isinstance(value, Approve) and len(set(value.permissions)) != len(value.permissions):
         raise ValueError("duplicate_module_permission")
-    registry, _, _ = await authority(tx, value, containment=action != "approve")
+    registry, _, session = await authority(tx, value, containment=action != "approve")
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"),
         {"key": f"acquisition-module-admin:{registry.environment_id}:{registry.business_id}"})
     row = await tx.get(ModuleBinding, (registry.business_id, registry.environment_id),
@@ -139,8 +168,10 @@ async def operate(tx, action, request):
             row.enabled, row.permissions = True, sorted(value.permissions)
             row.source_revision, row.approved_at = value.execution_source_revision, now
             row.expires_at = now + timedelta(seconds=value.duration_seconds)
+            if value.external_binding_id is not None:
+                row.expires_at = min(row.expires_at, registry.expires_at, session.expires_at)
         await tx.flush()
-    result = {"action": action, "registration_id": registry.id, "before": before, "after": snapshot(row),
+    result = {"action": action, **origin_reference(value, registry), "before": before, "after": snapshot(row),
         "fingerprint": fingerprint(snapshot(row)), "environment_class": "test", "configuration_only": True,
         "model_dispatch_performed": False, "channel_activation": "not_performed"}
     await verify(tx, value, result)
@@ -151,7 +182,8 @@ async def verify(tx, value, result):
     """Repeat authority after source/fsync waits, immediately before the caller commits."""
     registry, _, _ = await authority(tx, value, containment=result["action"] != "approve")
     row = await tx.get(ModuleBinding, (registry.business_id, registry.environment_id), populate_existing=True)
-    if registry.id != result["registration_id"] or fingerprint(snapshot(row)) != result["fingerprint"]:
+    if (any(result.get(key) != identity for key, identity in origin_reference(value, registry).items())
+            or fingerprint(snapshot(row)) != result["fingerprint"]):
         raise ControlError(409, "acquisition_module_changed")
     if result["action"] == "approve":
         now = await tx.scalar(text("SELECT clock_timestamp()"))

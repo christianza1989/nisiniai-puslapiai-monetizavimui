@@ -1,0 +1,32 @@
+{
+  "siteId": "core",
+  "summary": "Attach genuine external business Agent/Config provenance to customer accounts without fabricated Creation identity or rewritten history",
+  "category": "code",
+  "evidence": [
+    "Owner2026-10-18 explicitly requests completed existing-business/agent account attachment while another chat builds the website. Source55c209e retains Creation-only Agent FK/routes and directory joins; reviewed claim/BusinessGrant exists but cannot admit genuine external Agent provenance. Contract653d1bc and issue66/comment6246830424 record the observed identity mismatch before source work."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/models.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/business.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/business_routes.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/business_wire.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/import_wire.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/directory.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/directory_wire.py",
+    "agent-business-core/runtime/src/pinet_core/api.py",
+    "agent-business-core/runtime/migrations/versions/0049_existing_business_agents.py",
+    "agent-business-core/runtime/tests/test_business_agent_attachment_pg.py",
+    "agent-business-core/runtime/offline_tests/test_business_agent_attachment.py",
+    "docs/VERSLOMATIKA_EXISTING_BUSINESS_AGENT_CONTRACT.md",
+    "docs/handoffs/VERSLOMATIKA_EXISTING_BUSINESS_ATTACHMENT_2026_10_18.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source rollback with paid/channel flags held; retain external source/config/Auth/attempt history. No destructive downgrade or manufactured Creation/Profile rows. Preserve legacy serialized fingerprints and pre-existing data columns.",
+  "id": "upgrade-62361053-e702-4aa6-8b0b-2bef8f7bccf1",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "653d1bcc66af0a3d77a01af650bd1fdbbb72672c",
+  "createdAt": "2026-10-18T07:21:21.814Z"
+}

@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Existing owned businesses need immutable reviewed source provenance without fabricating Creation or granting runtime source writes",
+  "category": "code",
+  "evidence": [
+    "docs/VERSLOMATIKA_EXISTING_BUSINESS_AGENT_CONTRACT.md at653d1bcc66af0a3d77a01af650bd1fdbbb72672c; issue66 scoped transfer comment6246884066"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_attachment",
+    "agent-business-core/runtime/scripts/business_attachment_admin.py",
+    "agent-business-core/runtime/tests/test_business_attachment.py",
+    "agent-business-core/runtime/tests/test_business_attachment_pg.py",
+    "docs/BUSINESS_ATTACHMENT_BACKBONE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert before adoption; preserve appended source history after any migration. Root owns composed0049 and operating rollback.",
+  "id": "upgrade-8dd16b7b-c86e-4560-a4f9-ebe81081d9ee",
+  "branch": "codex/business-attachment-backbone-20261018",
+  "baseSha": "653d1bcc66af0a3d77a01af650bd1fdbbb72672c",
+  "createdAt": "2026-10-18T07:24:41.401Z"
+}

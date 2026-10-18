@@ -46,6 +46,7 @@ from .creation.routes import router as creation_router
 from .creation_registration.routes import router as creation_registration_router
 from .customer.routes import router as customer_router
 from .customer_agents.routes import router as customer_agents_router
+from .customer_agents.business_routes import router as business_customer_agents_router
 from .customer_profile.routes import router as customer_profile_router
 from .customer_text.routes import router as customer_text_router
 from .db import db
@@ -127,6 +128,7 @@ app.include_router(creation_registration_router)
 app.include_router(customer_profile_router)
 app.include_router(customer_text_router)
 app.include_router(customer_agents_router)
+app.include_router(business_customer_agents_router)
 app.include_router(xbot_bridge_router)
 app.include_router(content_work_router)
 app.include_router(content_completion_router)

@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Expose business-agent account routes in the actual minimal API and keep Creation-only preview projections origin-safe",
+  "category": "code",
+  "evidence": [
+    "Root041f68e source/schema probe: full api.py registers business customer agents, actual minimal control_api.py does not. DirectSavedAgent rejects a genuine external origin with creation_id=None; blindly forwarding new directory rows would fail the existing direct-contact contract. Private first-proof report records these three booleans without private payload."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/control_api.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_projection.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/business_contract.py",
+    "docs/contracts/verslomatika-business-customer-agents.openapi.json",
+    "docs/contracts/verslomatika-workspace-directory.openapi.json",
+    "agent-business-core/runtime/offline_tests/test_business_agent_entrypoints.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped router/projection/contract revert; retain all source/configuration history and origin gates. Never manufacture Creation/Profile identity to make an external configuration speak.",
+  "id": "upgrade-b199367f-0ee7-4cb0-b0e4-c2a1e5e7f0cd",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "041f68eb4b270f49a08fc50467fc365e97800818",
+  "createdAt": "2026-10-18T07:28:40.596Z"
+}

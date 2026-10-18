@@ -3,6 +3,7 @@ from datetime import datetime
 
 from sqlalchemy import (
     Boolean,
+    CheckConstraint,
     DateTime,
     ForeignKey,
     ForeignKeyConstraint,
@@ -31,8 +32,11 @@ class ModelAuthorization(_Scope, Base):
     portfolio_id: Mapped[str] = mapped_column(String)
     site_id: Mapped[str] = mapped_column(String)
     adapter_id: Mapped[str] = mapped_column(String)
-    creation_id: Mapped[str] = mapped_column(String, ForeignKey("control_creations.id", ondelete="RESTRICT"))
-    registration_id: Mapped[str] = mapped_column(String, ForeignKey("control_creation_registrations.id", ondelete="RESTRICT"))
+    creation_id: Mapped[str | None] = mapped_column(String,
+        ForeignKey("control_creations.id", ondelete="RESTRICT"), nullable=True)
+    registration_id: Mapped[str | None] = mapped_column(String,
+        ForeignKey("control_creation_registrations.id", ondelete="RESTRICT"), nullable=True)
+    external_binding_id: Mapped[str | None] = mapped_column(String, nullable=True)
     registration_fingerprint: Mapped[str] = mapped_column(String)
     agent_id: Mapped[str] = mapped_column(String, ForeignKey("control_customer_agent_modules.id", ondelete="RESTRICT"))
     config_id: Mapped[str] = mapped_column(String, ForeignKey("control_customer_agent_configs.id", ondelete="RESTRICT"))
@@ -52,6 +56,14 @@ class ModelAuthorization(_Scope, Base):
     effort: Mapped[str] = mapped_column(String)
     fingerprint: Mapped[str] = mapped_column(String)
     __table_args__ = (
+        CheckConstraint("(external_binding_id IS NULL AND creation_id IS NOT NULL AND registration_id IS NOT NULL) "
+            "OR (external_binding_id IS NOT NULL AND creation_id IS NULL AND registration_id IS NULL)",
+            name="acquisition_model_origin_xor"),
+        ForeignKeyConstraint(["external_binding_id", "user_id", "organization_id", "portfolio_id", "environment_id",
+                "business_id", "site_id", "registration_fingerprint"],
+            ["control_business_source_bindings."+key for key in ("id", "user_id", "organization_id", "portfolio_id",
+                "environment_id", "business_id", "site_id", "fingerprint")],
+            name="fk_acquisition_model_external_binding", ondelete="RESTRICT"),
         UniqueConstraint("id", "business_id", "organization_id", "user_id", "environment_id"),
         ForeignKeyConstraint(["business_id", "environment_id"],
             ["control_business_grants.business_id", "control_business_grants.environment_id"], ondelete="RESTRICT"),

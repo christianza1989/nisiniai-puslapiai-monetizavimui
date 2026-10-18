@@ -11,6 +11,7 @@ from ..control.routes import ControlError
 from ..creation.service import current_actor, digest
 from ..creation_registration import service as registrations
 from ..customer_agents import service as agents
+from ..customer_agents.models import Agent
 from ..db import db
 from . import module_admin
 from .correspondence import Correspondence
@@ -39,6 +40,10 @@ def guard(*, execution=False):
 
 def material(row):
     result = {key: getattr(row, key) for key in AUTH_FIELDS}
+    # Omission is intentional: existing immutable authorizations keep their bytes.
+    external = getattr(row, "external_binding_id", None)
+    if external is not None:
+        result["external_binding_id"] = external
     for key in ("approved_at", "expires_at"):
         result[key] = result[key].isoformat()
     return result
@@ -67,19 +72,54 @@ class Work:
     session: Session
     scope: Scope
     specification: dict
+    business_source: dict | None = None
+
+
+def reviewed_source(registry):
+    """Approved source bytes are business data, separate from saved instructions."""
+    from ..business_attachment.wire import SourcePayload
+
+    payload = SourcePayload.model_validate(registry.payload).model_dump(mode="json")
+    keys = ("version", "external_revision", "artifact_ref", "artifact_sha256", "knowledge_sha256",
+        "profile_sha256", "review_evidence_refs", "facts")
+    return {"binding_id": registry.id, "binding_fingerprint": registry.fingerprint,
+        "business_id": registry.business_id, "site_id": registry.site_id,
+        "canonical_host": registry.canonical_host, "expires_at": registry.expires_at.isoformat(),
+        **{key: payload[key] for key in keys if key in payload and payload[key] is not None}}
+
+
+def context_fields(work):
+    return {} if work.business_source is None else {"reviewed_business_source": work.business_source}
 
 
 async def saved(tx, session, creation_id, agent_id):
     """Purpose-bound Config preparation; no Website/Profile/channel admission."""
-    async with agents.transaction_authority(tx, session, creation_id, agent_id, writing=True,
-            operation=agents.ConfigurationOperation.PURPOSE_PREPARATION) as context:
+    preliminary = await tx.get(Agent, str(UUID(str(agent_id))), populate_existing=True)
+    if preliminary is None:
+        raise ControlError(404, "not_found")
+    external = getattr(preliminary, "external_binding_id", None)
+    if external is not None:
+        if creation_id is not None:
+            raise ControlError(409, "acquisition_model_registration_changed")
+        manager = agents.business_transaction_authority(tx, session, preliminary.business_id,
+            agent_id, writing=True, lock=True)
+    else:
+        manager = agents.transaction_authority(tx, session, creation_id, agent_id, writing=True,
+            operation=agents.ConfigurationOperation.PURPOSE_PREPARATION)
+    async with manager as context:
         _, _, creation, registry, agent = context
-        proof = await registrations.accepted_proof(tx, creation)
-        if any(getattr(registry, key) != proof[key] for key in registrations.PROOF_KEYS):
+        if external is None:
+            proof = await registrations.accepted_proof(tx, creation)
+            if any(getattr(registry, key) != proof[key] for key in registrations.PROOF_KEYS):
+                raise ControlError(409, "acquisition_model_registration_changed")
+        elif agent.external_binding_id != external or registry.id != external:
             raise ControlError(409, "acquisition_model_registration_changed")
         if agent.purpose not in {"customer_research", "email"}:
             raise ControlError(409, "acquisition_model_purpose_unavailable")
         config = await agents.current_config(tx, agent)
+        if external is not None and (config.external_binding_id != external
+                or config.external_binding_fingerprint != registry.fingerprint):
+            raise ControlError(409, "acquisition_model_saved_purpose_changed")
         view = agents.config_view(agent, config)
         return registry, agent, config, view["specification"]
 
@@ -124,11 +164,13 @@ async def current(tx, authorization_id, session_id, *, execution=False):
         raise ControlError(401, "unauthenticated")
     await module_admin.execution_current(source_value(row.source_revision))
     registry, agent, config, specification = await saved(tx, session, row.creation_id, row.agent_id)
-    expected = {"registration_id": registry.id, "registration_fingerprint": registry.fingerprint,
+    expected = {"creation_id": agent.creation_id, "registration_id": agent.registration_id,
+        "external_binding_id": getattr(agent, "external_binding_id", None),
+        "registration_fingerprint": registry.fingerprint,
         "business_id": registry.business_id, "organization_id": registry.organization_id, "user_id": registry.user_id,
         "portfolio_id": registry.portfolio_id, "site_id": registry.site_id, "purpose": agent.purpose,
         "config_id": config.id, "config_revision": agent.current_revision, "config_sha256": config.config_sha256}
-    if any(getattr(row, key) != value for key, value in expected.items()):
+    if any(getattr(row, key, None) != value for key, value in expected.items()):
         raise ControlError(409, "acquisition_model_saved_purpose_changed")
     bound, scope, registered_hash = await module(tx, registry, row.module_fingerprint)
     if (bound.adapter_id != row.adapter_id or module_admin.snapshot(bound) != row.module_snapshot
@@ -138,7 +180,8 @@ async def current(tx, authorization_id, session_id, *, execution=False):
     now = await tx.scalar(text("SELECT clock_timestamp()"))
     if row.approved_at > now or row.expires_at <= now or session.expires_at <= now or session.revoked_at:
         raise ControlError(409, "acquisition_model_authorization_expired")
-    work = Work(row, session, scope, specification)
+    work = Work(row, session, scope, specification,
+        reviewed_source(registry) if row.external_binding_id is not None else None)
     yield work
     guard(execution=execution)
     await module_admin.execution_current(source_value(row.source_revision))
@@ -150,12 +193,23 @@ async def current(tx, authorization_id, session_id, *, execution=False):
     if (not row.enabled or row.expires_at <= now or session.expires_at <= now or session.revoked_at
             or module_admin.snapshot(bound) != row.module_snapshot or registered_hash != row.work_registration_sha256):
         raise ControlError(409, "acquisition_model_authorization_expired")
+    if row.external_binding_id is not None:
+        from ..business_attachment import service as sources
+        # Binding expiry can pass during the last Git/private-file observation.
+        if not await sources.is_current(tx, registry):
+            raise ControlError(409, "acquisition_model_saved_purpose_changed")
 
 
 async def target(tx, work, value):
     """Reuse maintained current campaign/recipient/Module gates before any model."""
     if value.campaign.site_id != work.scope.site_id:
         raise ControlError(403, "acquisition_model_foreign_site")
+    if work.business_source is not None:
+        approved = {fact["id"]: (fact["text"], fact["source_ref"]) for fact in work.business_source["facts"]}
+        supplied = value.campaign.facts
+        if (len({fact.id for fact in supplied}) != len(supplied)
+                or any(approved.get(fact.id) != (fact.text, fact.source) for fact in supplied)):
+            raise ControlError(409, "acquisition_model_campaign_facts_changed")
     # The maintained helper needs these trusted attributes, not a supplied reviewed body.
     target = type("Target", (), {"scope": work.scope, "adapter_id": work.authorization.adapter_id,
         "recipient": value.recipient, "campaign": value.campaign, "prospect": value.prospect})()

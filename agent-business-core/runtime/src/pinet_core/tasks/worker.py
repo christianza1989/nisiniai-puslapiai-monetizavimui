@@ -266,7 +266,8 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
                 await handler.authority_locks(tx, task_id)
             except (ControlError, LedgerError, codex.RunnerError, ValueError, SourceObservationError):
                 parent_admitted = False
-        task = await tx.scalar(select(Task).where(Task.id == task_id, Task.kind == kind).with_for_update())
+        task = await tx.scalar(select(Task).where(Task.id == task_id, Task.kind == kind).with_for_update()
+            .execution_options(populate_existing=True))
         if not task or task.status != "running" or task.run_id != run_id:
             return False
         admitted = parent_admitted and await handler.authority(tx, task)

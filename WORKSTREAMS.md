@@ -1911,3 +1911,16 @@ tests/docs/portal integration. Existing claim/grant and Agent/Config remain the
 engines; no fakeCreation, second core or calibration system. Native acquisition
 helper window is pending exact contract agreement; it must not edit Root migration
 or these paths. Independent reviewer remains read-only. All runtime flags held.
+
+## Business source backbone transfer — helper2026-10-18
+
+Root transferred only new `business_attachment/`, `scripts/business_attachment_admin.py`,
+new `test_business_attachment.py` / `test_business_attachment_pg.py`, this append,
+`docs/BUSINESS_ATTACHMENT_BACKBONE.md` and own upgrade journal under issue66
+comment6246884066. Branch `codex/business-attachment-backbone-20261018` starts at
+653d1bcc66af0a3d77a01af650bd1fdbbb72672c; companion255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Root keeps Agent/Config/API/directory/portal and composed0049 migration; native
+helper keeps acquisition. All three composite UNIQUE binding targets and narrow
+runtime SELECT/pin functions are shared API. No existing source/holdout packet,
+paid call, operating DB, actual business/site or runtime activation in this scope.
+Disk recovery was acknowledged before resumed writes; >=1.5GiB free guard applies.

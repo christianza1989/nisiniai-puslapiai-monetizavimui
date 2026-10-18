@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Root integrated reviewed lease repair PR206/d51 runtime plus metadata-only4a; actual held local Serving119ba749b1642c9ff18253fd0847af12818109a4/schema48 retains all current rows and818 native files exactly. Original first TRAIN remains STOPPED_INCOMPLETE_NO_RETRY, both old Auths disabled, unknown usage charged, four holdouts unexecuted; no paid retry/allowance renewal. Matching inert lease-gap class reproduced/corrected; historical unrecorded guard cause remains unknown. This event verifies local source regression and held API adoption only, not business calibration, populated LT mail acceptance, external-agent import, main merge or platform completion. Inherited main-wide coverage debt remains separately BLOCKED. Initial stale794-count QA precondition and first pre-readiness HTTP refusal preserved before successful corrected checks.",
+  "checks": [
+    {
+      "command": "Root-owned schema48 pytest tests/test_acquisition_role_lease_pg.py -q -x -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "ExactRoot20896574fda331130980d00075ea2567f9cb17f4,3PASS116.03s, rawSHA56717cdbe0a64cd3e5d1e12d54a5bbdf4a7bfb9f5f40028424fc6c8c10b7209f. FinalServing119 runtime bytes identical. Original/operating snapshots and all818 current native files exact; historical794 subset byte exact; provider/SMTP/IMAP0. Expired lease/revoked Auth negatives and unchanged15s real-time4/8/12/16s role-boundary positive."
+    },
+    {
+      "command": "Independent exact-source review PR206 at d51cb8e500f11324da22c4a82e384c85289f73b2",
+      "result": "PASS",
+      "evidence": "Authorized independent review2026-10-18: no actionable finding for live-old-lease renewal, parent-before-Task locks, known/unknown cancellation accounting or default-off metadata-only diagnostics. Review is source-only; actual PG proofs remain separately recorded."
+    },
+    {
+      "command": "native-role-operator-bootstrap.py native-role-adopt prepare/start/verify",
+      "result": "PASS",
+      "evidence": "Actual clean119/schema48 after fresh current snapshot and1832593byte backup SHAcd2d05637f6a39765d8ba911eccc338e82ecda241b91189a0da56580d753e8af. Exact same-schema/current-table and818-file comparison, owner200/unauth401/foreign404, empty owned mail lists, paid/channel flags held. VerificationSHAa948393cde86e30ccdfcca4af35a698a3c8256380134d08ddbe09121e885b0ea. First pre-readiness connection refusal preserved; no mutation/retry of a paid operation."
+    },
+    {
+      "command": "Reviewed helper canonical native/replay/cancellation/rollback PG regression evidence",
+      "result": "PASS",
+      "evidence": "Immutable e978 eventf899e070 records7PG item passes split across run29 first5 and unchangedd51 run30 remaining2/146.84s, plus9offline privacy/default-off cases and scopedRuffPASS. Original run29 invocation remainsFAILED; neither that command nor historical pilot is relabeled successful. Earlier681 local source evidence remains historical and is supplemented, not overwritten."
+    }
+  ],
+  "eventId": "0569e6a0-284e-4803-bb9e-d3a4de5efe4f",
+  "sequence": 7,
+  "at": "2026-10-18T06:44:47.161Z"
+}

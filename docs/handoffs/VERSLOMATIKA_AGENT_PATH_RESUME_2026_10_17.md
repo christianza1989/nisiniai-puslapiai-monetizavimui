@@ -6,9 +6,15 @@
 a new chat for the kubilų dealer site, product facts/localizations and new agents;
 that business is intended for later account attachment. Do not continue the
 rejected informational site or its business calibration as the commercial result.
-Preserve all historical data/receipts. The current next action is the existing
-helper's narrow lease/metadata diagnostic repair, followed by source review,
-same-schema adoption and platform mail/Lithuanian view acceptance. No second core,
+Preserve all historical data/receipts. The helper's narrow lease/metadata repair
+is now reviewed and locally adopted at119ba749b1642c9ff18253fd0847af12818109a4,
+schema48, all operating rows/818files exact. Root's3inert PG cases pass116.03s;
+helper's7PG item passes are split across retained run29/run30, with the original
+run29 setup failure preserved. Independent source review has no actionable finding.
+API18871 is running with paid/channel flags held;3030 was not relaunched. No old
+pilot, authorization or closed allowance was renewed. Next are generic platform
+mail/Lithuanian view acceptance and the documented existing-business agent import
+boundary. No second core,
 queue, catalog, calibration engine or unsolicited new chat is introduced.
 
 ## First native pilot stopped; both authorizations contained — 2026-10-18

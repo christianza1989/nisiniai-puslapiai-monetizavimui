@@ -41,6 +41,8 @@ The inspected backend is `1a751d0c12c128468f63fb22d7d4e75d57ef901b`;
 public companion `255fea0813bf1aabeaeea2f2de0b29564118f2fc`;
 portal `3f40081b8a10931728b7b0018a9f1b4008965943`.
 These are inspected feature versions, not a claim of merged-main delivery.
+The later local backend119ba749b1642c9ff18253fd0847af12818109a4 adds the reviewed
+role-lease repair; it does not add the missing external-agent import boundary.
 
 1. An approved explicit site/Profile mapping can register a Business through
    `agent-business-core/runtime/scripts/network_bootstrap.py`.

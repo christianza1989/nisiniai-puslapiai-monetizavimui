@@ -9,15 +9,34 @@ site design, translations or business agents in this lane. Preserve the previous
 Creation, content and failed calibration history; do not treat them as the new
 business's approved products or calibrated agents.
 
-Next platform milestone: finish the reproduced inter-role lease repair, review
-and integrate it, adopt the same-schema source with all operating history exact,
-then verify native agent/mail integration and Lithuanian correspondence display.
+The reproduced inter-role lease repair is reviewed and locally adopted at
+`119ba749b1642c9ff18253fd0847af12818109a4`, schema48, with all current operating
+rows and818 native files exact. Root's three inert PG regressions pass116.03s;
+independent source review has no actionable finding. All paid/channel flags remain
+held. This does not reopen the stopped first pilot or accept business calibration.
+Next platform milestones are generic native agent/mail integration and populated
+Lithuanian correspondence display, then the existing-business agent import adapter.
 A minimal explicitly bounded technical smoke is separate from the deferred
 business calibration. Existing common Task/Run, native Agent/Config, mail,
 knowledge and calibration contracts remain the only engines. Future attachment
 must preserve the new site's stable identity, current source and owner mapping.
 The inspected ownership/import boundary and independent builder handoff are
 recorded in [existing-business attachment](../../docs/handoffs/VERSLOMATIKA_EXISTING_BUSINESS_ATTACHMENT_2026_10_18.md).
+
+The host Docker startup failure was recovered by a bounded official stop and
+reversible preservation of the one zero-byte stale socket directory. Original
+PostgreSQL containers/data were retained. Root API18871 is running at the source
+above; portal3030 remains stopped after the host interruption and was not
+automatically launched. A first HTTP check before API readiness failed with
+connection-refused; the post-startup check passes owner200/unauth401/foreign404.
+The adoption backup1832593bytes SHA
+`cd2d05637f6a39765d8ba911eccc338e82ecda241b91189a0da56580d753e8af` and current
+verification SHA`a948393cde86e30ccdfcca4af35a698a3c8256380134d08ddbe09121e885b0ea`
+are private. The current818-file baseline includes24 files appended by the earlier
+ordinary private-preview preparation; all pre-preview794 files remain byte exact.
+An initial stale794-count precondition blocked Root QA before tests; it was
+corrected to retain the fresh818-file snapshot, with the first failure preserved.
+Main-wide inherited upgrade coverage remains separately BLOCKED. Platform OPEN.
 
 > 2026-10-18 native pilot: the first train case stopped on infrastructure failure,
 > not a behavioral score. Research2 attempts (1 known success/1 failed unknown),

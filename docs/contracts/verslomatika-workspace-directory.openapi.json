@@ -138,14 +138,43 @@
             "type": "string"
           },
           "creation_id": {
-            "format": "uuid",
-            "title": "Creation Id",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Creation Id"
           },
           "registration_id": {
-            "format": "uuid",
-            "title": "Registration Id",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Registration Id"
+          },
+          "external_binding_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "External Binding Id"
           },
           "business_id": {
             "format": "uuid",
@@ -231,8 +260,6 @@
         },
         "required": [
           "agent_id",
-          "creation_id",
-          "registration_id",
           "business_id",
           "revision_id",
           "revision",

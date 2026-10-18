@@ -19,7 +19,7 @@ def document():
     for path, methods in value["paths"].items():
         for method, operation in methods.items():
             operation["operationId"] = "businessAgent"+method.title()+"".join(part.title().replace("_", "")
-                for part in path.split("/") if part)
+                for part in path.replace("{", "").replace("}", "").split("/") if part)
             operation["security"] = [{"CoreSession": []}]
             operation["responses"].pop("422", None)
             for parameter in operation.get("parameters", []):

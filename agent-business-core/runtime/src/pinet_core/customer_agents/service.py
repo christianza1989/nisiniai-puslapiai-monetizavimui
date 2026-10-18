@@ -234,7 +234,8 @@ def config_material(agent, config):
     external = getattr(agent, "external_binding_id", None) is not None
     source_id = getattr(config, "external_binding_id", None)
     source_fingerprint = getattr(config, "external_binding_fingerprint", None)
-    if external != (source_id is not None and source_fingerprint is not None):
+    if (external and (source_id is None or source_fingerprint is None)
+            or not external and (source_id is not None or source_fingerprint is not None)):
         raise ValueError("Invalid configuration source provenance")
     value = {"agent_id": agent.id,
         "registration_fingerprint": source_fingerprint if external else agent.registration_fingerprint,

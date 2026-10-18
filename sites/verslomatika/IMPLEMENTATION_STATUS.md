@@ -1,5 +1,30 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Local business/agent account attachment accepted —2026-10-18
+
+This supersedes the earlier pending-adoption/current119 descriptions below.
+Owned API18871 now runs `5fdf94631fb6570f62b9df34a1ef52fc0f1d15e9`, schema49,
+with a retained backup, exact previous-column values and818 preserved native
+files. Paid/channel runners remain held. Source is still a reviewed feature
+branch; merged-main, another-PC and hosted adoption are not claimed.
+
+Human-started portal3030 build `1XuWAF-IuB2GQP7cxR4Bh` passed actual ordinary
+Chrome/BFF/core attachment:2 external descriptions imported into a separate
+clearly synthetic Business, research revised to2 with version1 exact, same
+packet replayed without duplicates, third custom description created through
+the ordinary form. Final3 Agents/4 Configs, revisions2/1/1, current source and
+original specifications/provenance verified. Every pre-fixture row unchanged;
+no Creation/Registration added;0 provider/SMTP/IMAP calls; calibrationUNVERIFIED,
+activationfalse. Legacy descriptions/history remain readable. Desktop/mobile/
+narrow form reflow inspected;20 focused portal tests/TypeScript/production build
+and targeted design scan pass. See the updated
+[attachment handoff](../../docs/handoffs/VERSLOMATIKA_EXISTING_BUSINESS_ATTACHMENT_2026_10_18.md).
+
+The independently rebuilt dealer business still needs its final reviewed
+site/source/agent artifacts for real adoption; this platform chat did not modify
+that website or accept its calibration. Existing claim/grant/source/import,
+native admission and channel gates remain the single supported path.
+
 ## Active account attachment implementation — 2026-10-18
 
 The owner explicitly requested completed business/agent attachment while building

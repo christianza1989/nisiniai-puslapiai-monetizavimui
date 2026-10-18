@@ -1976,3 +1976,13 @@ Migration boundary result: new retained15559 batch2PASS/16.89s. One canonical
 commits, failed second DDL/data/version rolls back, unchanged retry succeeds.
 Frozen installers byte-exact; one existing path_separator deprecation remains.
 Scope closes after separate correction commit/PR; Root owns review/adoption.
+
+Root local attachment acceptance2026-10-18: clean Serving5fdf946/schema49 adopted
+after retained backup; exact previous-column values and818nativefiles preserved.
+Human-started portal3030 final business-agent build passed real ordinary Chrome
+import/replay/revise/history/custom-create on one clearly synthetic Business.
+Final3Agents/4Configs, original rows/specs/source exact, calibrationUNVERIFIED and
+activationfalse. No dealer website changes or new paid/channel work. Both helper
+windows are closed; this Root source/adoption evidence stays under PR164 and
+portalPR67. Actual new dealer/source/calibration adoption awaits independent
+builder artifacts; current adapter result does not accept them in advance.

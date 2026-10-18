@@ -1,0 +1,21 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "commit": "5fdf94631fb6570f62b9df34a1ef52fc0f1d15e9",
+  "note": "Actual local adoption in owned wellness-direct-serving API18871, schema0049; feature source only, not merged-main/another-PC/hosted adoption. Pre-migration pg_dump retained; every previous column value and818 native files exact. Human-started portal3030 BUILD_ID1XuWAF-IuB2GQP7cxR4Bh used actual ordinary Chrome/BFF/core paths. Synthetic business only:2 external imports, research revision2 with version1 exact, exact import replay without duplicates, third custom Agent created in UI. Final3Agents/4Configs, source provenance verified, all pre-fixture rows unchanged. Malformed first fixture rejected before submission and retained. Protected corpus/old pilot untouched; calibrationUNVERIFIED, activationfalse, all paid/channel runners held;0provider/SMTP/IMAP. Native/helper source checks retain their separate receipts and original fixture failures.",
+  "checks": [
+    {
+      "command": "Owned backup/migrate/start/verify business-attachment adoption",
+      "result": "PASS",
+      "evidence": "Clean Serving5fdf/schema49,96tables, exact old column values and818 native files, owner200/unauth401/out-of-scope404. Private adoption receipts retained."
+    },
+    {
+      "command": "Chrome actual external import/replay/revision/history/custom-create and final core/database verification",
+      "result": "PASS",
+      "evidence": "3syntheticAgents/4Configs revisionsresearch2/email1/custom1; imported initial specs/source exact, old rows unchanged,818files exact.320/390/640 reflow has no document overflow; desktop1280 inspected.20focusedportal tests/TypeScript/final2worker build/source design scanPASS. Private browser receipts/screenshots retained; no real dealer facts imported."
+    }
+  ],
+  "eventId": "7fde1164-2e08-4844-ace4-09fd5e248601",
+  "sequence": 3,
+  "at": "2026-10-18T08:26:55.685Z"
+}

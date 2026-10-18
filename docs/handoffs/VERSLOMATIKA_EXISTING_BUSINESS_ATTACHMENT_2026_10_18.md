@@ -1,6 +1,38 @@
 # Independent business build and later Verslomatika attachment
 
-## Current assignment
+## Local account attachment accepted —2026-10-18
+
+Backend source `5fdf94631fb6570f62b9df34a1ef52fc0f1d15e9` is now actually adopted
+on Root's owned18871 API, schema0049. A retained pre-migration pg_dump and exact
+old-column comparison prove every previous row unchanged and818 native files
+exact. All paid/channel runners remain held. This is local adapter adoption,
+not merged-main or another-PC adoption.
+
+The human-started3030 production build `1XuWAF-IuB2GQP7cxR4Bh` passed actual
+ordinary-account Chrome/BFF/core acceptance: preserved legacy reads/history;
+two genuine external Agent descriptions imported into a clearly synthetic
+Business; research Config2 created while Config1 remained exact; exact packet
+replay without duplicates; third custom Agent created through the ordinary form.
+Final core verification confirms3 Agents/4 Configs, revisions2/1/1, exact initial
+specifications/source provenance, all pre-fixture rows unchanged and818 native
+files intact. No Creation/Registration was fabricated; no provider/SMTP/IMAP call.
+An initially malformed test packet was correctly refused before submission and
+retained, then its provenance key was corrected in a new private fixture file.
+
+Desktop1280, mobile390, narrow320 and640 form reflow were inspected in Chrome.
+The measured320/390/640 scroll widths equal their viewports. Twenty focused
+portal tests/TypeScript/final two-worker production build and targeted source
+design scan pass. History/current versions and draft versus calibration status
+are visible. Real imported-agent calibration and live channels remain unaccepted.
+
+The independent builder can attach its reviewed final business through the
+existing registration/claim/BusinessGrant path, then approve exact source facts
+and import its canonical agent packet. This chat did not rebuild or accept the
+new dealer website or import its unfinished business facts. The end-to-end local
+attachment boundary is accepted with synthetic evidence; real business adoption
+still needs that builder's final artifacts and existing calibration/admission.
+
+## Earlier implementation checkpoint before local adoption
 
 Current source checkpoint,2026-10-18: the external adapter is implemented on
 Root's feature branch. The same Agent/Config tables now accept genuine reviewed

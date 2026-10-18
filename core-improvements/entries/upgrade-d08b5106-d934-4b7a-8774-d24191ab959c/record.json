@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Native High reply reasoning was interrupted by the fixed 120-second upper configuration bound. Allow an explicit longer per-call ceiling while keeping the unchanged default, earlier absolute authority deadline, continuous revocation and zero retries.",
+  "category": "code",
+  "evidence": [
+    "docs/ACQUISITION_MODEL_EXECUTION_WINDOW.md records the known-smoke run_timeout, seven charged calls, one unknown and canonical stop of all six grants/module.",
+    "Focused inert regression first reproduces both rejected Settings=300 and runner readiness=300, then verifies longer ceiling, earlier absolute deadline and expiry during final preflight without any provider."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_model_adapter.py",
+    "docs/ACQUISITION_MODEL_EXECUTION_WINDOW.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop exact active model grants before reverting this scoped config/adapter bound together. Preserve timeout/unknown usage, all ledgers and original deadlines. Do not retry or refund the failed attempt.",
+  "id": "upgrade-d08b5106-d934-4b7a-8774-d24191ab959c",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "533f8f2d70b0c24ef5d718858afd3ad7bd3af5f7",
+  "createdAt": "2026-10-18T21:42:40.577Z"
+}

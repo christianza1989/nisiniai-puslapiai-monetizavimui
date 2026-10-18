@@ -9,7 +9,7 @@ from types import SimpleNamespace
 from pydantic import ValidationError
 
 from ..codex_lab import strict_schema
-from ..config import settings
+from ..config import ACQUISITION_MODEL_MAX_RUN_SECONDS, settings
 from ..file_hash import sha256_file
 from ..tasks import codex
 from . import module_admin
@@ -28,7 +28,7 @@ def runner_ready():
             and executable.is_absolute() and executable.is_file()
             and workspace.is_absolute() and workspace.is_dir()
             and not any(p.is_symlink() for p in (workspace, *workspace.parents))
-            and 10 <= cfg.acquisition_model_runner_seconds <= 120
+            and 10 <= cfg.acquisition_model_runner_seconds <= ACQUISITION_MODEL_MAX_RUN_SECONDS
             and re.fullmatch("[a-f0-9]{64}", cfg.chat_codex_sha256)
             and sha256_file(executable) == cfg.chat_codex_sha256)
     except OSError:

@@ -5,7 +5,7 @@ import pytest
 
 from pinet_core.acquisition import model_adapter as adapter
 from pinet_core.acquisition.contracts import Assessment, Review
-from pinet_core.config import settings
+from pinet_core.config import Settings, settings
 from pinet_core.tasks.codex import RunnerError
 
 
@@ -75,3 +75,69 @@ async def test_provider_failure_retains_usage_without_implicit_retry(inert, monk
     with pytest.raises(RunnerError) as error:
         await adapter.run_role("researcher", Assessment, "Fixed instruction", {}, yes, datetime.now(UTC)+timedelta(seconds=30))
     assert error.value.code == "provider_error" and error.value.receipt == {"input_tokens": 17} and len(calls) == 1
+
+
+def test_high_window_is_explicit_and_bounded_without_changing_default():
+    from pydantic import ValidationError
+
+    assert Settings.model_fields["acquisition_model_runner_seconds"].default == 90
+    assert Settings(_env_file=None, acquisition_model_runner_seconds=300).acquisition_model_runner_seconds == 300
+    for seconds in (9, 301):
+        with pytest.raises(ValidationError):
+            Settings(_env_file=None, acquisition_model_runner_seconds=seconds)
+
+
+@pytest.mark.parametrize("seconds,ready", [(120, True), (300, True), (301, False), (9, False)])
+def test_readiness_uses_the_same_operator_window_bound(monkeypatch, tmp_path, seconds, ready):
+    import hashlib
+
+    executable = tmp_path / "inert-never-executed.exe"
+    executable.write_bytes(b"inert-not-an-executable")
+    for key, value in {
+        "acquisition_model_enabled": True, "acquisition_model_runner_enabled": True,
+        "control_enabled": True, "control_mode": "local", "environment": "test-bounded-high-window",
+        "smtp_enabled": False, "voice_enabled": False, "chat_workspace": str(tmp_path),
+        "chat_codex_executable": str(executable), "chat_codex_sha256": hashlib.sha256(executable.read_bytes()).hexdigest(),
+        "acquisition_model_runner_seconds": seconds,
+    }.items():
+        monkeypatch.setattr(settings(), key, value)
+    assert adapter.runner_ready() is ready
+
+
+@pytest.mark.parametrize("remaining,ceiling", [(600, 300), (25, 25)])
+async def test_long_high_call_is_clipped_to_existing_absolute_deadline(inert, monkeypatch, remaining, ceiling):
+    monkeypatch.setattr(settings(), "acquisition_model_runner_seconds", 300)
+    calls = []
+
+    async def execute(*args, **kwargs):
+        calls.append(kwargs["seconds"])
+        assert 0 < kwargs["seconds"] <= ceiling
+        assert kwargs["still_authorized"] is yes
+        raise RunnerError("run_timeout")
+
+    monkeypatch.setattr(adapter.codex, "execute", execute)
+    with pytest.raises(RunnerError) as error:
+        await adapter.run_role("researcher", Assessment, "Fixed instruction", {}, yes,
+            datetime.now(UTC) + timedelta(seconds=remaining))
+    assert error.value.code == "run_timeout" and error.value.receipt == {} and len(calls) == 1
+
+
+async def test_second_preflight_cannot_replenish_elapsed_absolute_time(inert, monkeypatch):
+    monkeypatch.setattr(settings(), "acquisition_model_runner_seconds", 300)
+    now = datetime.now(UTC)
+    instants = iter((now, now + timedelta(seconds=11)))
+
+    class Clock:
+        @staticmethod
+        def now(zone):
+            assert zone is UTC
+            return next(instants)
+
+    async def never(*args, **kwargs):
+        pytest.fail("Elapsed authority must refuse before dispatch")
+
+    monkeypatch.setattr(adapter, "datetime", Clock)
+    monkeypatch.setattr(adapter.codex, "execute", never)
+    with pytest.raises(RunnerError) as error:
+        await adapter.run_role("researcher", Assessment, "Fixed instruction", {}, yes, now + timedelta(seconds=10))
+    assert error.value.code == "authorization_revoked"

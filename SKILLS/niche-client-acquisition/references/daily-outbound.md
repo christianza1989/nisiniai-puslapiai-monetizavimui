@@ -69,3 +69,11 @@ See [communication scope](../../../docs/REVIEWED_DRAFT_COMMUNICATION_SCOPE.md).
 Use the server's UTC temporal context for expiry interpretation when supplied;
 local midnight does not expire a still-valid UTC fact. This context never grants
 contact rights. See [runtime clock](../../../docs/AGENT_RUNTIME_UTC_CONTEXT.md).
+
+## Native model execution window
+
+For fixed High native roles, an explicitly configured execution ceiling can be
+10–300 seconds; the default remains 90. Always preserve the stricter existing
+absolute authority deadline, continuous revocation checks and zero automatic
+retries. A timed-out dispatch without a terminal usage receipt stays charged
+and unknown. See [bounded execution](../../../docs/ACQUISITION_MODEL_EXECUTION_WINDOW.md).

@@ -6,6 +6,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from . import pricing
 
+ACQUISITION_MODEL_MAX_RUN_SECONDS = 300
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_prefix="PINET_", extra="ignore")
@@ -53,7 +55,7 @@ class Settings(BaseSettings):
     acquisition_model_guard_observation_enabled: bool = False
     acquisition_model_runner_enabled: bool = False
     acquisition_model_actor_ids: list[str] = Field(default_factory=list, max_length=16)
-    acquisition_model_runner_seconds: int = Field(default=90, ge=10, le=120)
+    acquisition_model_runner_seconds: int = Field(default=90, ge=10, le=ACQUISITION_MODEL_MAX_RUN_SECONDS)
     public_projects_enabled: bool = False
     creation_enabled: bool = False
     business_discovery_enabled: bool = False

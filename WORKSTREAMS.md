@@ -2403,3 +2403,13 @@ the separately accepted three actual LT translations preserved.
 Local verification:43offline and8restricted0051PG PASS; independent new7-case
 offline/source review PASS. Upgradef61ae09b-c9a2-4335-8618-5d34fa98fa6a;
 fresh actual model admission remains separate from these inert checks.
+
+2026-10-19 Root bounded High call window, issue66 comment6255485956. Own runtime
+config.py/acquisition/model_adapter.py, focused offline adapter regression,
+execution-window docs/reference and unique journal. Known533f smoke passed
+research/qualification/writer/exact-quality, then reply run_timeout120s; all six
+grants/module canonically stopped. Preserve seven charges/one unknown and first
+incomplete case. Explicit operator ceiling10–300s, default90 unchanged, same
+absolute owner/team/task deadline and fresh heartbeat; no retries, fact/grader
+changes, schema, commercial send or new execution authority. Helper separately
+owns literal Git path checker fix. Actual model acceptance is a new bounded run.

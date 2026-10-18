@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Known533f smoke reached reply and stopped run_timeout at120s; seven charged calls including one unknown retained. All six exact grants and module canonically stopped. Original Settings/readiness regression2FAIL/12PASS preserved SHA45fbfc0fa386b49028c531bbe6baeded2af2d4d0636bd0d2912e56ee8b54a74b. Allow explicit10–300s ceiling only; default90, all earlier absolute deadlines, heartbeat and zero retries unchanged. No paid model run, DB or operating adoption in these checks.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_model_adapter.py offline_tests/test_acquisition_model_contract.py offline_tests/test_acquisition_lab_budget.py tests/test_codex_timeout_recovery.py tests/test_codex_lab.py",
+      "result": "PASS",
+      "evidence": "40passed0.57s, inert models/process seams only. LogSHA d6060237c26fa423755948f86f75f8106898731b6b365d1c7ae1482d2dec7e31. Covers configuration/readiness cap, earlier authority/expiry during preflight, single-dispatch timeout with unknown usage, fixedmodel/high/no tools and no hiddenretry."
+    },
+    {
+      "command": "ruff check src/pinet_core/config.py src/pinet_core/acquisition/model_adapter.py offline_tests/test_acquisition_model_adapter.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Exact changed Python and whitespace checks clean; no schema, role Config, corpus, grader, expiry or authorization change."
+    }
+  ],
+  "eventId": "fb2590c4-bdc2-4f81-8ace-c32d68dd4e8d",
+  "sequence": 2,
+  "at": "2026-10-18T21:42:56.946Z"
+}

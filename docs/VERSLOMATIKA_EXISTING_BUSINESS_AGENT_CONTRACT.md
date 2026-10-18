@@ -23,6 +23,15 @@ are protected by a SQL XOR and full composite external identity FK. No legacy
 row's identity, stored fingerprint, Config hash or attempt history is rewritten.
 Imported source revision/hash is distinct from local saved/execution Git pins.
 
+An external Agent keeps its UUID across approved source updates. Only its current
+source id/fingerprint pointer may change, atomically with exactly the next Config
+revision. Each external Config independently retains its own source id/fingerprint
+and hashes that snapshot, including its base registration fingerprint. Historical
+Config1 therefore stays valid after Source2/Config2. Source adoption names the
+exact target id/fingerprint and expected old revision; it never silently rebinds.
+Parent locks precede Agent locking. SQL validates the source's immutable business
+tuple for every Config, plus deferred current-Config/current-source coherence.
+
 Per-agent import provenance belongs to its immutable Config, not the common
 business binding. Optional provenance hashes are included in Config material only
 when present; legacy Config material remains identical. Historical external

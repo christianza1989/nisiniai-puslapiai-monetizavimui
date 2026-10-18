@@ -1,6 +1,62 @@
 # Verslomatika customer accounts, public projects and dashboard
 
-## Current local checkpoint —2026-10-18 13:55 UTC
+## Current local checkpoint — 2026-10-18 22:52 UTC
+
+**Whole local platform remains OPEN.** This checkpoint supersedes the historical
+checkpoint sections below. The common source is integrated and pushed on
+`codex/verslomatika-gmail-owner-20261018` at
+`64d926b62b5fda3aa1469c4d96fa4cf76f085670`; it is not reviewed main delivery.
+Companion source is `255fea0813bf1aabeaeea2f2de0b29564118f2fc`.
+Fetched main references remain `533597c10e290a2a09a522ad348e19c9968aa9d5`
+and `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`.
+
+- Actual owner-authorized Gmail self-send → same-thread incoming → reviewed reply
+  is verified, with three distinct messages. Their original/Lithuanian display
+  and thread view were verified in ordinary Chrome. These are excluded test
+  records, not commercial campaign traffic. Connector reauthentication in older
+  checkpoints does not describe the accepted local app OAuth connection.
+- Six saved Config revision2 roles execute through common Tasks/TaskRuns/attempts.
+  Known all-role smoke conversations passed. Whole six-role calibration remains
+  incomplete: auxiliary evaluators timed out after native work completed.
+  All historical failures, charged unknown usage and protected-case separation
+  remain retained; no full-suite or campaign-ready PASS is claimed.
+- [CLI diagnostics](../../docs/CALIBRATION_CLI_DIAGNOSTICS.md) now reuse the existing
+  bounded transport, fixed zero-provider-retry configuration, private live logs
+  and terminal usage retention on failed timeout/cancellation. Source checks:
+  75 relevant inert regressions, followed by 167 combined evidence/role/Lab checks.
+- [Recipient-less evidence admission](../../docs/ACQUISITION_EVIDENCE_ADMISSION.md)
+  connects pinned public discovery material to research → qualification only.
+  No Contact/Case/Mail, recipient permission, drafting or sending is created.
+  Reviewed feature PR218 is integrated; dedicated QA0052 migration rehearsal,
+  55 combined PG tests and three final PG checks passed, preserving all 9,219
+  baseline rows. This is not operating adoption or actual public-model acceptance.
+- The operating API18871 remains at `fddd5ea7f3448640dc1ff7b32e652082cd155ab4`,
+  schema0051. All paid/channel acquisition grants and runners are stopped.
+  Human-started frontend3030 remains unchanged. No external-customer campaign
+  was sent or activated. Applying source64d and migration0052 requires its own
+  backed-up, row-preserving adoption and normal-owner acceptance.
+
+The architecture has one maintained core. Business facts, products, contacts,
+approved source revisions, saved role configurations, market/campaign policy,
+mail accounts and calibration evidence remain business-scoped. A new business
+reuses the engine but needs its own factual/channel admission and calibration;
+a genuinely new capability is implemented as a shared module or adapter.
+
+The one-call known-transcript diagnostic on source64d also timed out at300s.
+Its new live observation proves stdin completed, the parent stayed alive without
+output/terminal usage, and owned cleanup completed. The one reserved attempt
+remains charged/unknown; the old request/run are unchanged. Diagnostics now work;
+evaluator execution has not been fixed by that evidence.
+
+Next executable steps: diagnose the known evaluator workload/CLI boundary from
+the retained observation without another blind whole-suite retry; apply and verify0052 in the
+owned serving workspace; test actual retained public evidence through the two
+saved research roles; finish the remaining protected six-role acceptance.
+Reviewed main assembly still needs the historical provenance blockers resolved
+without rewriting old journals. Source scope/coverage PASS does not establish
+main-wide coverage or another-PC/runtime adoption.
+
+## Historical checkpoint —2026-10-18 13:55 UTC
 
 **Preview/attachment source package is ready for review; whole platform OPEN.**
 PR164 atc684c1ad has both final-head GitHub CI checks PASS and is now ready for

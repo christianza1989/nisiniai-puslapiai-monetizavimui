@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original fixed-route presence regression before implementation:1FAIL/35deselected in2.76s; ignored baseline.log SHA25649985123f5d74dbd61ff83b7308e5865899765a779389e1a28fe77af212fe833. Added only the approved separate readiness DTO/GET/golden and new offline wire tests. Root additionally delegated exactly two legacy path/operation counts6/8 to7/9; all old semantic/security assertions remain. Service/private-proof/model-authority and actual PG/operating acceptance remain Root-owned. No DB, listening server, browser, model or paid call.",
+  "eventId": "4923b56d-3856-455e-8e42-5a3896793add",
+  "sequence": 2,
+  "at": "2026-10-18T02:09:00.181Z"
+}

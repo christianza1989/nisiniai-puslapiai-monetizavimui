@@ -11,6 +11,7 @@ from .wire import (
     Envelope,
     Error,
     ListingEnvelope,
+    PreparationReadinessEnvelope,
     Revise,
     RevisionsEnvelope,
     SavedEnvelope,
@@ -46,6 +47,15 @@ async def listing(creation_id: str, request: Request, limit: int = Query(20, ge=
 @router.post("/{creation_id}/agents", response_model=SavedEnvelope, status_code=201, response_model_exclude_none=True)
 async def create(creation_id: str, value: Create, request: Request):
     return envelope(request, await service.create(token(request), creation_id, value))
+
+
+@router.get("/{creation_id}/agents/preparation-readiness", response_model=PreparationReadinessEnvelope,
+    response_model_exclude_none=True)
+async def preparation_readiness(creation_id: str, request: Request):
+    """Observe configuration eligibility only; this GET performs no preparation or dispatch."""
+    result = core_envelope(request, await service.preparation_readiness(token(request), creation_id))
+    result["contract_version"] = "customer-agent-preparation-readiness.v1"
+    return result
 
 
 @router.get("/{creation_id}/agents/{agent_id}", response_model=Envelope, response_model_exclude_none=True)

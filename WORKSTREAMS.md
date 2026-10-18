@@ -1776,3 +1776,25 @@ alignment under upgrade-7fc8d6a3-7cbb-4d3d-aabd-5e49dbc4b1ad. Retain dated
 legacy adapter proof; current instructions route the old filename to durable
 Task/Run rather than a direct paid filesystem batch. No operating adoption is
 implied by a documentation update.
+
+## Private agent preparation readiness wire — helper01a13440 2026-10-18
+
+Issue66/comment6244541917; new codex/private-agent-preparation-wire-20261018
+from Root76db483db8213a5ec6eb8283e71ccd52e7b79c01. Paired start freshness
+02:03Z main533597c1/publicec8a9c03 PASS; companion255fea08. Frozen0047
+branch47a364e remains preserved. Own ONLY customer_agents/wire.py, routes.py,
+contract.py, generated docs/contracts/verslomatika-customer-agents.openapi.json,
+NEW offline_tests/test_private_agent_preparation_wire.py, own wire doc/journal,
+and the two old contract inventory assertions in offline_tests/test_customer_agents.py
+(6/8 to7/9, explicitly delegated by Root). Separate fixed GET readiness contract
+precedes dynamic agent ID; existing v1 fields/enums and semantics stay intact.
+Root owns service/helper/model authority, conceptual contracts and actual
+plan-linked S37/PG/operating evidence. No migration, SQL, DB/server/browser,
+model/paid call, old72audit mutation or operating admission in this packet.
+
+Frozen wire shape: PreparationPurposeReadiness/PreparationReadiness/
+PreparationReadinessEnvelope; new version customer-agent-preparation-readiness.v1.
+Original fixed-route regression1FAIL2.76s retained; targeted60PASS6.48s and
+related190PASS4.09s/Ruff5files PASS. Canonical legacy whole-document equivalence
+SHA93b1be9e is checked after removing only the new path/three new schemas.
+Root's service implementation and actual authority/PG acceptance remain separate.

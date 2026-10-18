@@ -70,8 +70,8 @@ def test_contract_is_exact_canonical_and_mounted_in_both_runtimes():
     root = Path(__file__).resolve().parents[3]
     value = contract.document()
     assert json.loads((root / "docs/contracts/verslomatika-customer-agents.openapi.json").read_text()) == value
-    assert len(value["paths"]) == 6
-    assert sum(len(methods) for methods in value["paths"].values()) == 8
+    assert len(value["paths"]) == 7
+    assert sum(len(methods) for methods in value["paths"].values()) == 9
     score_path = "/customer/v2/creations/{creation_id}/agents/{agent_id}/score-evidence"
     assert value["paths"][score_path]["get"]["operationId"] == "listCustomerAgentScoreEvidence"
     schemas = value["components"]["schemas"]

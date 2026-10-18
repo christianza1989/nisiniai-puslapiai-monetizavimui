@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Canonical pytest source/tests/scripts resolution repaired. PR164's clean CI source-only equivalent reproduced exactly11 collection errors; no-PYTHONPATH foreign-editable QA venv reproduced47. After repair collection succeeds; first no-env execution222PASS/1FAIL retained because its direct CLI child still imports the preserved older editable install (pytest sys.path is process-local). Same source-only baseline then passes223cases/67subtests without adding tests/scripts to PYTHONPATH. No dependency/lock/runtime/API/DB/provider/channel change; older live-preview upgrade fixing statuses remain unchanged and still block PR-base preflight.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests -q -k acquisition",
+      "result": "PASS",
+      "evidence": "223passed,2850deselected,67subtests passed in7.93s in the current Root checkout; only src in environment, shared helper paths come from canonical pytest config. First11collection-error source-only baseline and foreign-editable child failure retained in private logs."
+    },
+    {
+      "command": "git diff --check and review runtime pyproject pytest-only delta",
+      "result": "PASS",
+      "evidence": "Only pythonpath and two explanatory comments added to pytest.ini_options; dependency/build metadata and uv.lock unchanged. Existing CI command now has a canonical helper resolution path; no workflow gate weakened."
+    }
+  ],
+  "eventId": "22268b20-5cf2-4f6a-a809-c2c292874b3f",
+  "sequence": 2,
+  "at": "2026-10-18T08:35:32.346Z"
+}

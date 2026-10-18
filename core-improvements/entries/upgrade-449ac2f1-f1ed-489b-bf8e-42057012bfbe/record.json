@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "workflow",
+  "summary": "Offline-only pytest selection cannot resolve shared test helpers; an editable install from another worktree can also shadow the checkout being tested when callers omit ad-hoc PYTHONPATH.",
+  "paths": [
+    "agent-business-core/runtime/pyproject.toml",
+    "docs/RUNTIME_PYTEST_IMPORT_PATHS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "PR164 CI run39111649254 acquisition-capture fails offline_tests -k acquisition collection with11 shared helper ModuleNotFoundError errors after actual PostgreSQL ledger acceptance. https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/actions/runs/39111649254/job/117628889520",
+    "Root no-PYTHONPATH baseline exit2:47collection errors because the preserved QA venv's editable install points to an older separate checkout; private logSHA256caf415c111a322a6c8124e67461c2324d733a2a9d393a7a85f3ca262a1e27c62. No operating/runtime edits or providers."
+  ],
+  "rollback": "Revert the scoped pytest.ini_options pythonpath configuration and its note. Preserve original CI/local failures and all operating services/data; no dependency or lock changes.",
+  "id": "upgrade-449ac2f1-f1ed-489b-bf8e-42057012bfbe",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "67a4b55d71e5e015d81b3a8c240da06f6e06e264",
+  "createdAt": "2026-10-18T08:33:01.398Z"
+}

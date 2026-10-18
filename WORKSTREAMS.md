@@ -1986,3 +1986,18 @@ activationfalse. No dealer website changes or new paid/channel work. Both helper
 windows are closed; this Root source/adoption evidence stays under PR164 and
 portalPR67. Actual new dealer/source/calibration adoption awaits independent
 builder artifacts; current adapter result does not accept them in advance.
+
+Root CI followup2026-10-18 reserves only runtime/pyproject.toml pytest pythonpath,
+one new narrow CI regression doc and unique upgrade. PR164 run39111649254 shows
+11offline collection import failures for shared test helpers; ad-hoc local
+PYTHONPATH had masked missing canonical configuration. No dependency/runtime/
+schema/operating-service change. Exact acquisition selection will be repeated
+without PYTHONPATH. Separate older live-preview unverified journals are retained;
+this repair does not waive preflight or relabel their actual lifecycle status.
+
+Root import regression result: same source-only baseline11collection errors,
+then canonical pytest path configuration223PASS/2850deselected/67subtests7.93s.
+No-env shared foreign-editable venv collection now succeeds, but one direct CLI
+child still uses its old installed core (222PASS/1FAIL retained); do not label
+that environment a clean current installation. Upgrade449ac2f1 owns this narrow
+configuration/doc change. Operating5fdf/schema49 and portal3030 unchanged.

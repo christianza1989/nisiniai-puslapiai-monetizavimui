@@ -1,3 +1,28 @@
+## Explicit acquisition model preparation DB contract — helper 2026-10-18 source complete
+
+Issue66/comment6243287654; own codex/acquisition-model-schema-20261018 managed
+worktree from exact Root60c651895bc6a7a4233641121b5d44466469d000/public255fea0.
+Paired startPASS23:43:45/47UTC, fetched main533/publicmainec8. Root confirmed
+field/API sanity before code: immutable module snapshot/fingerprint; explicit
+execution-source GUC; exact bool settlement and bounded native usage accounting.
+Own NEW acquisition/model_schema.py, model_models.py,
+migrations/versions/0046_acquisition_model_prepare.py; migrations/env.py import
+only these models; NEW dedicated offline/isolated-PG schema tests/docs/journal.
+Common Task/Run/Event/leases reused; exact new model_prepare kind only, old0045
+checks and direct-task classifier branches preserved. No second queue.
+Root owns approval/authority/submission/call/handler/config/worker and its tests.
+No bootstrap.py/worker.py/config.py/other existing source changes, no operating
+DB/runtime/model/provider/channel calls. Operating remains0045; no adoption.
+Root additionally approved the newkind-only one-shot parent metadata fence and
+typed accounting-only SettleTask helper; old Director whitelist untouched.
+27 isolatedPG PASS/1 intentional0045 baseline SKIP214.83s, latest terminal-only
+4PG PASS33.33s including no-write replay xmin/finished_at;251 pure PASS plus67
+subtests8.28s. Fresh0045→0046→empty0045 preserves full predecessor function and
+all Task CHECK hashes, then latest0046 reupgradePASS. First failures retained in
+upgrade-ce94d07d-e681-4cb0-bf35-fd2e28a7ef77; final evidence in its new event.
+All DBs are this helper's NEW loopback15550 QA; retained data/profiles private.
+Only scoped source handed to Root for cherry-pick/review; no implicit adoption.
+
 ## Explicit synthetic acquisition module administration — Root 2026-10-18
 
 Issue66/comment6242709325, upgrade-d32f9944-8626-474b-bf0a-4d5a6065168f,

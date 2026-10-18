@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Scoped source only, base60c651895bc6a7a4233641121b5d44466469d000/companion255fea0813bf1aabeaeea2f2de0b29564118f2fc. Root reviewed SQL contract and requested terminal reconciliation; implemented monotonic MAX(existingknown,DBknown,observed) with DB-only counters, no terminal revival, exact replay no UPDATE. Broad27PG pass preceded only this no-write optimization; latest4PG on fresh full-migrated0046 covers final function and xmin/finished_at assertion. All three new DBs in own labelled loopback15550 container; baseline/final native synthetic history retained. No operating0045 migration, source adoption, model/provider/channel call or closed ledger rewrite. Earlier red runs remain in fixing event801014be-8fe0-4801-9ee4-fe43a57c94f3.",
+  "checks": [
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider tests/test_acquisition_model_schema_pg.py tests/test_workspace_direct_pg.py",
+      "result": "PASS",
+      "evidence": "27passed,1intentional0045-baselineSKIP214.83s. RuntimeforcedRLS/ACL/exacttenantFKs, roleordering/preIOcounts, capconcurrency, lockwaitclock, malformedusage/size, six revocations, accounting-only/nativeone-shot metadata and existingdirectprovider0 paths. RawUTF16logSHA256 c6c0560adf2877e75e7a505932f91a348db2fd909a4504439214b6b5ccde420b."
+    },
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider tests/test_acquisition_model_schema_pg.py -k 'terminal_task_reconciliation or old_director_refuses or unknown_interrupted'",
+      "result": "PASS",
+      "evidence": "4passed,17deselected33.33s on latest full-migrated0046, no manual function patch. Exactterminalreplay preserves Runxmin/finished_at; knownusage monotonic, caller counts replaced byDB, oldDirectorFALSE/newtypedsettlement true, unknownreservation retained. RawSHA256 c0e80700cf66507e4c07b37f6752432c662a38104babb101f121a29efdc835cf."
+    },
+    {
+      "command": "Owned freshQA: alembic upgrade0045; upgrade0046; downgrade0045; predecessor-byte/hash comparison; reupgrade0046; unchanged bootstrap",
+      "result": "PASS",
+      "evidence": "Actual before/restored functionSHA12ca771785df64d4dc69b1391aceca6d08a5ee5ba445cc39b19be4c51ecc6243 and allTaskCHECKsSHA7455582c22ab1afaa5c7323d7c2703d56532a74ec0db94360972f0bd3d940b06 identical. RestoredlogSHA2e3e3fc37ee4690825227d970a65dd7506cacc9250eb295cb7bc65f8a499c44e; latest0046logSHAe161a60641e0345083354030df3bd40215906bcebd2d229a9944d2b2c9830336."
+    },
+    {
+      "command": "Owned populatedQA: alembic downgrade0045 expected refusal plus exact before/after revision and six-table rowcount comparison",
+      "result": "PASS",
+      "evidence": "Expected RuntimeError retained modelhistory preventsdowngrade, exit1. Exactcounts/revisionunchanged:40Auth/38Bindings/38Attempts/44Tasks/48Runs/20Events; own synthetic QA only. RefusallogSHAabc784f06f7ac1dc166419950c81f12d2028b7bc07a7dde0570a17d781f81848, unchanged snapshotlogSHA5b70de7709633b47e87d3b4b39e7104082fd5e0e9cfd6b4110fe128bac1db12e."
+    },
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_acquisition*.py offline_tests/test_direct*.py offline_tests/test_director*.py",
+      "result": "PASS",
+      "evidence": "Actual rg-selected matching files:251passed+67subtests8.28s, rawSHA2816c1574b2781ea926da319010195fd0e501456e42088befde50de53e9325bb. New11 offline schema cases included; no DB/model/channel dispatch."
+    },
+    {
+      "command": "python -m ruff check new schema/ORM/migration/offline/PGtests and migrations/env.py; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; only existing source edit is the one model_models import in migrations/env.py."
+    }
+  ],
+  "eventId": "1e6c77d0-ee29-4bf9-b1d2-0424c9e8e8e1",
+  "sequence": 3,
+  "at": "2026-10-18T00:19:21.536Z"
+}

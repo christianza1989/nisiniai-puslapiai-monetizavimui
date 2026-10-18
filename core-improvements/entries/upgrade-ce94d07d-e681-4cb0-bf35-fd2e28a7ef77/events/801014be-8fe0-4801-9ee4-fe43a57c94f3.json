@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual isolated0045 baseline: CHECK relaxation alone still raises exact typed task boundary required,1FAIL10.80s,rawSHA256 cb570a5474405cc30de4fd68b5b60ec25e98e12ccd8127e693591b5aab520e38. Initial fixture Thread FK authoring failure321c6db9fdc774f3d041bd0f17d28108526242f57404da70754a9f3702c563fd retained. Actual newkind Grant-revoked legacyDirector returnsFALSE and leavesTask/Runrunning; missingtypedfunction1FAIL11.26s cbcb079cac1112a13d2595213e4176b857bcc906d2bf816733543a70cca9ffc8; first fixtureJSONwrappererror f21bb2e7c24d9d136d59c5ba75fa0f5e63523669f18f861ab09e3fc80eaae04d retained. First emptydowngrade refused recompiledpg_get_expr arraycoercion spelling ca945633a97e209d593be4ec719c83a936e9288d1e82e4d536c41aecdae25fc2; emit reviewed rawCHECKs instead. FirstPGsuite15PASS/1SKIP/1JSONnullguardFAIL131.99s481f064dbe33a8c5a42bedc1d6edca77be9ad1f7ee6cfd728677e38ee1a4311f preserved. Firstpure251case run lacked scripts importpath:250PASS/1FAIL8.41s55311054adcab7f7c9610a6451d53b614efdfbf5e64e9443821d9c63d95b0b97; corrected runner path without source edits. Root authorized typed SettleTask accounting-only and newkind-only parentimmutability; peerreview required terminalsameRun monotonicaggregate/MAX+DBonlycounts/no revival, now included. All failures and private synthetic nativehistory retained in own loopback15550 container; no operating0045/profile/provider/model/channel changes.",
+  "eventId": "801014be-8fe0-4801-9ee4-fe43a57c94f3",
+  "sequence": 2,
+  "at": "2026-10-18T00:16:37.943Z"
+}

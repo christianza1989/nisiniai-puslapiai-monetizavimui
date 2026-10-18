@@ -3,6 +3,7 @@ import asyncio
 from alembic import context
 from sqlalchemy.ext.asyncio import create_async_engine
 
+from pinet_core.acquisition import model_models as acquisition_model_models  # noqa: F401
 from pinet_core.acquisition import models as acquisition_models  # noqa: F401
 from pinet_core.acquisition import module_models as acquisition_module_models  # noqa: F401
 from pinet_core.acquisition import task_models as acquisition_task_models  # noqa: F401

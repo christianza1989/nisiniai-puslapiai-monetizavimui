@@ -58,3 +58,21 @@ Do not restart a capture because an old PID vanished. Check the current worker,
 global ownership, checkpoint and unknown-outcome receipts first. Do not edit
 live frozen builds or start the deliberately drained nonchair lane without a
 reviewed compatible second-slot implementation.
+
+## Source payload storage
+
+New frozen captures use `immutable_payloads.py` for large, immutable HTTP
+payloads and completed geometry downloads. Every distinct payload is stored by
+its complete SHA-256; ordinary source paths are hardlinks to those bytes.
+The original wire bodies, URLs, filenames, source JSON, geometry/PBR and
+verification inputs remain available. Checkpoints and receipts stay independent
+mutable files. Small payloads stay separate; large objects roll over before
+900 hardlinks, below the observed NTFS limit. Existing objects are fully hashed
+before reuse, and changed downloads or objects stop capture.
+
+This affects physical storage only. It does not remove requests, graph states,
+transitions, source evidence or quality gates. Existing frozen builds are not
+edited; adopt a new build only at a verified safe boundary with a finite pilot.
+Cold source directories may be moved to the owner's external archive only
+after full copy/hash and old-path junction readback verification. Markdown
+documents locate and explain the data; they do not replace 3D or wire bytes.

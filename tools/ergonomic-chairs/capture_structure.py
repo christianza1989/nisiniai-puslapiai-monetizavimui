@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from structure_policy import VERSION, state_key, frontier, require_transition, finish_changes, closure
+from immutable_payloads import ImmutablePayloadStore
 
 
 def now():return datetime.now(timezone.utc).isoformat()
@@ -26,9 +27,13 @@ class UnknownOutcome(Exception):pass
 
 
 class JournalHTTP:
-    def __init__(self,session,root,guard):
+    def __init__(self,session,root,guard,payload_store=None):
         self.session,self.root,self.guard=session,root,guard
+        self.payload_store=payload_store
         self.receipts=[]
+    def write_payload(self,path,raw):
+        if self.payload_store:self.payload_store.write(path,raw)
+        else:path.write_bytes(raw)
     def __getattr__(self,name):return getattr(self.session,name)
     def request(self,method,url,**kwargs):
         self.guard()
@@ -45,14 +50,14 @@ class JournalHTTP:
                 cls=body[0].findtext('propClass') or ''
                 if not cls.endswith(('_OPTIONS','_DIMENSIONS')):raise ValueError('FINISHES_SETTER_FORBIDDEN')
         ident=uuid.uuid4().hex;folder=self.root/'wire'/ident;folder.mkdir(parents=True)
-        (folder/'request.private').write_bytes(payload)
-        (folder/'url.private').write_text(url,encoding='utf8')
+        self.write_payload(folder/'request.private',payload)
+        self.write_payload(folder/'url.private',url.encode('utf8'))
         save(folder/'INTENT.json',{'at':now(),'method':method,'action':action,'requestSha256':sha(payload),'urlSha256':sha(url.encode()),'outcome':'PENDING','pid':os.getpid()})
         start=time.perf_counter()
         try:
             response=self.session.request(method,url,**kwargs)
             raw=response.content
-            (folder/'response.private').write_bytes(raw)
+            self.write_payload(folder/'response.private',raw)
             receipt={'at':now(),'action':action,'requestSha256':sha(payload),'responseSha256':sha(raw),'status':response.status_code,
                      'urlSha256':sha(url.encode()),'seconds':time.perf_counter()-start,'bytes':len(raw),'complete':True,'response':'wire/'+ident+'/response.private'}
             save(folder/'RECEIPT.json',receipt);self.receipts.append('wire/'+ident+'/RECEIPT.json')
@@ -93,7 +98,8 @@ def capture(job,root,grant,seconds=900,max_states=120,max_edges=800):
         if time.monotonic()>=deadline:raise Boundary('FINITE_TIME_BOUNDARY')
         if shutil.disk_usage(root).free<101000000000:raise Boundary('DISK_RESERVE')
     client=Capture(sid,item,output=root,allowed_articles={(job['series'],job['code'])})
-    wire=JournalHTTP(client.http,root,guard);client.http=wire
+    payload_store=ImmutablePayloadStore(root.parent.parent/'objects/sha256')
+    wire=JournalHTTP(client.http,root,guard,payload_store);client.http=wire
     def persist(phase):
         cp.update(at=now(),phase=phase,chunks=cp['chunks']+1 if phase=='RETURNED' else cp['chunks'])
         save(checkpoint,cp)
@@ -105,6 +111,7 @@ def capture(job,root,grant,seconds=900,max_states=120,max_edges=800):
         key=state_key(s)
         observation=uuid.uuid4().hex
         geometry=client.geometry('observations/'+observation)
+        payload_store.adopt_existing(root/geometry['file'],geometry['sha256'])
         observed={**s,'geometry':geometry,'capturedAt':now(),'stateKey':key,'policy':VERSION,'sourceWireProof':list(wire.receipts)}
         save(root/('observations/'+observation+'.json'),observed)
         if key not in states:

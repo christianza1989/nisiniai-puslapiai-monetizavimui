@@ -2038,3 +2038,23 @@ start pacing, every fresh check,3s heartbeat,149s bound and cleanup. This is a
 bounded contention hypothesis, not a proven cure: require actual normal-polling
 lifecycle evidence before claiming adoption or closing78/c3. No protected/paid,
 foreign checkout, operating schema, TTL relaxation or permission caching.
+
+Human steering2026-10-18 adds a complete professional email-system plan before
+implementation and a separate Hotube agent-preparation/calibration chat. Root
+reserves docs/VERSLOMATIKA_EMAIL_SYSTEM_PLAN.md and this planning append only;
+no new sender, campaign, schema, paid call or DNS change. Gmail API is the proposed
+first adapter, Hostinger SMTP/IMAP remains compatible; actual provider policy and
+mailbox/privacy evidence must remain explicit. Source40abff13 preserves the138
+offline monitor checks but has not been adopted into Serving5fdf. Agent-specific
+facts and supplier-contact policy are private; no dealer data is published here.
+
+Root worktree bootstrap repair2026-10-18 reserves only the Git tracking note in
+docs/MULTI_MACHINE.md and a unique workflow upgrade. Human supplied the exact new
+thread failure after100%checkout: origin/main exists but cannot be tracked. The
+parent clone's remote.origin.fetch contained only the old continuation branch.
+Root added only the canonical main refspec, retained the previous mapping and
+successfully fetched main; no checkout/reset/stash or foreign source change.
+A retained tiny Git-only fixture reproduces failure despite the fetched main ref,
+then proves additive mapping repairs tracking without changing detached HEAD or
+files. Retried managed thread01a14e56 is actually active. Record this clone versus
+tracking distinction canonically so a future agent does not repeatedly clone.

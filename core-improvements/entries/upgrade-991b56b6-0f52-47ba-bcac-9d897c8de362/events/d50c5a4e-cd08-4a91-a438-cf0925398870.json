@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual clone metadata repaired additively after exact human-supplied setup failure and observed narrow remote fetch mapping. The failed managed creation left no task/worktree; retry creates actual active Hotube chat01a14e56 with its own47be worktree/branch. No checkout/reset/stash, forced push, credential change, dependency installation or private data transfer. Canonical workflow note now distinguishes successful manual main fetch from tracking configuration.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/git-main-tracking-check.py",
+      "result": "PASS",
+      "evidence": "Retained tiny local Git fixture: baseline cannot track an existing fetched origin/main; additive main mapping preserves original refspec and enables exact upstream. Detached HEAD and files unchanged. Private fixture b24c74097963413e87359b906190fe9a/verified.json retained; no core source copied."
+    },
+    {
+      "command": "git config --get-all remote.origin.fetch; git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main; actual managed create_thread and wait_threads",
+      "result": "PASS",
+      "evidence": "Original continuation mapping retained plus exactly canonical main mapping. Fetch533597c1 succeeds. Actual new chat01a14e56-6069-7c81-ad3e-afed9c28bb5f reports active, own worktree47be, branchcodex/hotube-agent-spec-20261018, fetched main533597c1. Earlier failed creation is not reported as active."
+    },
+    {
+      "command": "git diff --check and inspect canonical Git troubleshooting commands",
+      "result": "PASS",
+      "evidence": "Documented conditional additive repair; preserves existing mapping, requires failed-outcome inspection before retry and retains normal freshness/ownership rules."
+    }
+  ],
+  "eventId": "d50c5a4e-cd08-4a91-a438-cf0925398870",
+  "sequence": 2,
+  "at": "2026-10-18T09:29:28.423Z"
+}

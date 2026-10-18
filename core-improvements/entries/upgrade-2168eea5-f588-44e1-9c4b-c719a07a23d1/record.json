@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "summary": "Existing v1 mail-record snapshot grouped Gmail acceptance and sending under outbound_other; add the two named zero-default counts without inferring provider delivery or changing snapshot/filter semantics.",
+  "category": "code",
+  "evidence": [
+    "Before actual restricted PG Gmailaccepted2+sending1 made outbound_other4 instead of1; retained mail-statistics-gmail-before-20261018 private log",
+    "Before offline named aggregate labels rejected as invalid_statistics_source",
+    "docs/MAIL_RECORD_STATISTICS.md defines additive fields, fixed33row bound and unchanged provider-unavailable/record-time semantics"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_view/statistics.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/statistics_wire.py",
+    "agent-business-core/runtime/offline_tests/test_mail_statistics.py",
+    "agent-business-core/runtime/tests/test_mail_statistics_pg.py",
+    "docs/MAIL_RECORD_STATISTICS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/214",
+  "rollback": "Scoped revert of named v1 count additions/tests/documentation; no provider, transport, mailbox, schema, original message, ledger or runtime activation changes.",
+  "id": "upgrade-2168eea5-f588-44e1-9c4b-c719a07a23d1",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "2831e5f813981c729fa12da10560e537ade6f110",
+  "createdAt": "2026-10-18T18:17:31.222Z"
+}

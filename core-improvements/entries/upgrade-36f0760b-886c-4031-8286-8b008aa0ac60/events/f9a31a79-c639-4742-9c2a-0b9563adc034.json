@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Workflow report visibility repair only. Actual ledger and canonical writer Run already retain complete known usage; no accounting repair/reconciliation/retry is claimed. Historical writer completion cause remains unproved. One bounded5s best-effort historical read preserves the same original dispatch exception/cancellation, never promotes output and never retries provider work. Current stage/harness/history remain frozen. No operating DB or provider calls by this lane.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_acquisition_failed_receipt.py offline_tests/test_acquisition_business_projection.py offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_six_grade_transport.py -q",
+      "result": "PASS",
+      "evidence": "65passed3.96s. Before new regression2FAIL/2PASS because failed metadata absent; after5focusedPASS including identical dispatch/cancellation propagation, failed reread isolation and no result promotion even when fallback sees succeeded Task."
+    },
+    {
+      "command": "qa_final.py test tests/test_acquisition_failed_receipts_pg.py tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade --label failed-receipts-final-pg-20261018",
+      "result": "PASS",
+      "evidence": "4PG passed87.48s on dedicated47be_final restricted runtime. Explicit injected commoncompletion denial after genuine inert ModelAttempt success/known usage retains failed Task/Run receipt without accepted result; dispatch failure identity, failed-status check and failed historical reread handled. Existing8-hook sealed workflow remains PASS. The injected denial is a test, not proof of historical cause."
+    },
+    {
+      "command": "ruff check touched workflow and focused offline/PG tests; git diff --check",
+      "result": "PASS",
+      "evidence": "No lint/whitespace errors. Shared source change only agent_role_calibration.py; worker/authority/lease/provider/DDL/GRADE/Config/corpus/ledger/privateharness untouched."
+    }
+  ],
+  "eventId": "f9a31a79-c639-4742-9c2a-0b9563adc034",
+  "sequence": 2,
+  "at": "2026-10-18T17:41:51.583Z"
+}

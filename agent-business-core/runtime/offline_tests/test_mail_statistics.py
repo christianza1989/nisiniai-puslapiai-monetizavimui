@@ -52,6 +52,21 @@ def test_snapshot_separates_test_provenance_and_does_not_infer_replies_from_inbo
         RecordCounts(total=1)  # A total cannot disagree with its component counts.
 
 
+def test_gmail_accepted_and_sending_have_named_counts_without_provider_inference():
+    value = statistics.projection(B, WINDOW, [
+        ("non_synthetic", "outbound_accepted_by_gmail", 2),
+        ("non_synthetic", "outbound_sending", 1),
+    ])
+    assert value.records.non_synthetic.outbound_accepted_by_gmail == 2
+    assert value.records.non_synthetic.outbound_sending == 1
+    assert value.records.non_synthetic.outbound_other == 0
+    assert value.records.non_synthetic.total == 3
+    assert value.records.synthetic.outbound_accepted_by_gmail == 0
+    assert value.records.unclassified.outbound_sending == 0
+    assert all(metric.value is None and metric.status == "unavailable"
+               for metric in value.provider_metrics.__dict__.values())
+
+
 @pytest.mark.parametrize("row", [
     ("invented", "outbound_draft", 1), ("synthetic", "invented", 1),
     ("synthetic", "total", 1), ("synthetic", "outbound_draft", -1),

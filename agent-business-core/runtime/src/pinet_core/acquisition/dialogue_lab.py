@@ -148,6 +148,8 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
         workflow.validate(campaign, case)
     if not 1 <= max_turns <= 6:
         raise ValueError('bounded_turns_required')
+    if workflow is not None and max_turns > getattr(workflow, 'maximum_turns', 6):
+        raise ValueError('workflow_turn_limit')
     root.mkdir(parents=True, exist_ok=False)
     row = {'id': case.id, 'split': case.split, 'state': 'running', 'passed': False,
            'events': [], 'transcript': [], 'external_sent': False, 'synthetic': True}
@@ -165,6 +167,8 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
             if not row['passed']:
                 row['failure'] = 'initial_expectation_mismatch'
             row['state'] = 'complete'
+            if workflow is not None and hasattr(workflow, 'finalize_initial'):
+                await workflow.finalize_initial(row, evaluator, campaign, case)
             return row
         if case.expected_initial != 'draft_ready':
             row['state'] = 'complete'
@@ -176,8 +180,9 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
         atomic(root / 'report.json', row)
         seen = []
         for turn in range(max_turns):
-            recipient = await persona.ask(RecipientTurn, PERSONA_INSTRUCTION,
+            recipient_instruction, recipient_data = workflow.recipient_input(case, row['transcript'], turn) if workflow is not None and hasattr(workflow, 'recipient_input') else (PERSONA_INSTRUCTION,
                 {'private_persona': case.persona, 'transcript': row['transcript'], 'turn': turn})
+            recipient = await persona.ask(RecipientTurn, recipient_instruction, recipient_data)
             row['events'].append({'kind': recipient.event, 'clock': (now + timedelta(days=turn)).isoformat(),
                                   'synthetic': True})
             if recipient.event == 'silence':
@@ -235,10 +240,10 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
         if workflow is not None:
             evaluation['native_receipts'] = list(workflow.receipts)
             evaluation['native_provenance'] = workflow.provenance
-        grade = await evaluator.ask(DialogueGrade, GRADE_INSTRUCTION, evaluation)
+        grade = await workflow.evaluate(evaluator, evaluation) if workflow is not None and hasattr(workflow, 'evaluate') else await evaluator.ask(DialogueGrade, GRADE_INSTRUCTION, evaluation)
         row['grade'] = grade.model_dump()
         labels_pass = bool(set(seen) & set(case.expected_classifications)) if case.expected_classifications else not seen
-        grade_pass = all(value for key, value in row['grade'].items() if key != 'reason')
+        grade_pass = workflow.grade_pass(row['grade']) if workflow is not None and hasattr(workflow, 'grade_pass') else all(value for key, value in row['grade'].items() if key != 'reason')
         row['labels_pass'], row['grade_pass'] = labels_pass, grade_pass
         row['passed'] = labels_pass and grade_pass
         row['state'] = 'complete'

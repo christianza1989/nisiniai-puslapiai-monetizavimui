@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual PostgreSQL wrong-peer-fingerprint final-fence test failed before repair (DID NOT RAISE), then the same negative plus genuine two-Config native chain and legacy sealed-lab positive paths passed. Read-only constant query proved JSONB string vs object representation. Earlier Python pair checks stay active; no DDL or authority expansion. Source is local feature work, not Root adoption/main delivery; zero provider/model/live calls.",
+  "checks": [
+    {
+      "command": "pytest tests/test_acquisition_native_json_fence_pg.py tests/test_acquisition_native_chain_pg.py::test_exact_two_config_native_chain_one_case_and_replay tests/test_acquisition_native_chain_pg.py::test_known_lab_workflow_uses_native_tasks_and_independent_auxiliaries -q",
+      "result": "PASS",
+      "evidence": "Dedicated final47be retained schema50 database, restricted pinet_runtime:3passed; private native_json_before01 failure and native_json_after_legacy01 success retained. Synthetic fixtures only; no paid calls."
+    },
+    {
+      "command": "ruff check owned Python files; focused acquisition offline regression",
+      "result": "PASS",
+      "evidence": "All lint checks passed;164 tests and8 subtests passed, including legacy native contracts."
+    }
+  ],
+  "eventId": "86f95287-6457-4808-8496-5da64094290a",
+  "sequence": 2,
+  "at": "2026-10-18T15:30:19.428Z"
+}

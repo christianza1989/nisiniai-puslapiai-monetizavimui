@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Source-only local owner self-test. No actual OAuth grant, Gmail token exchange/send, campaign, operating database migration or UI acceptance claimed here. First fixture address rejection SHAead634276f0317df13cdc45a1cbe3e3b2598f729699717b073068f36334272c2, reserved pytest parameter collection failure SHA18661875543c1cf85666d1462a8f3889e6d27ef9b06f6195327a3a326cd4b8c3 and missing isolated auth configuration regression failure SHA304376ffd978bf5ad0ce5dbff4568f53b5ab38f184684f9204f1c6117e17d4d4 retained. Fixes change fixtures/wrapper only, no weakened runtime authority. Two Ruff builtin TimeoutError findings and one import-order finding fixed. Google account setup is separate from source acceptance.",
+  "checks": [
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py offline-final-fixed",
+      "result": "PASS",
+      "evidence": "29PASS1.88s SHA256de67aac7aee677e66754f82b1ebf58f9beea47ac936eb1e92b7934f93cf1c9fd. MIME identity, bounded HTTP, state/PKCE/scope, owned Vault lock/binding/encryption/tamper and actual loopback HTTP callback wrong-state/single-use/no-secret reflection; zero external providers."
+    },
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py pg-oauth-final",
+      "result": "PASS",
+      "evidence": "7PASS46.53s SHA2562e566ccb002c91209afefc15da7c2b4d9bcbf8437ec702ee26bbdfa1542e859a. Restricted retained Root QA only; real owner/RLS/Case/MailMessage, committed intent before inert POST, concurrent one send, timeout/rejected no retries, current/foreign/revoked owner, known-thread/RFC participant dedupe and existing owner API read. OAuth exchange sees consumed flow committed before IO; owner revoke before token adoption prevents active credential persistence. All provider transport inert."
+    },
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py regression-configured",
+      "result": "PASS",
+      "evidence": "40PASS169.06s SHA25650445ece07a3f2845f8acccfaa772fe4b73728c8d3bdafe84e7fd26953c4e6fc. Gmail5+existing mail_view3, mailbox6 and conversation mail26 on separate retained QA, synthetic isolated legacy auth only; no SMTP/IMAP or external calls. Later Vault tightening and OAuth additions have separate new7PG PASS above."
+    },
+    {
+      "command": "uv lock --check --offline --project agent-business-core/runtime",
+      "result": "PASS",
+      "evidence": "108packages resolved offline3ms, existing cryptography50.0.1 declared directly in manifest+lock; real encrypt/tamper/provider import covered by29offline and7PG."
+    },
+    {
+      "command": "qa-python -m ruff check scoped mail_provider, config.py, mailbox.py, gmail_owner.py and Gmail provider/callback/PG tests",
+      "result": "PASS",
+      "evidence": "All checks passed on final scoped implementation and tests."
+    }
+  ],
+  "eventId": "69d8a87a-69c7-43bb-8287-1c037c868d34",
+  "sequence": 2,
+  "at": "2026-10-18T14:47:34.251Z"
+}

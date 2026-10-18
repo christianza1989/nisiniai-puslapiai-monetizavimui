@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Exact six-Config common Task/Run/attempt path and one-reply maintained runner verified with inert providers only. Expanded14PG plus5final-source supplements passed (17distinct role tests);164offline+8subtests passed. Two retained95-table migration comparisons preserve156/87priorrows. Original DDL-bind/import, harness ordering, missing-RLS-scope assertion and serialized-object finalfence failures remain, with corrected followups. Canonical CLI validates sealed known data with0DB/0models. No protected dialogue read, new grant/ledger/provider/live call, Root adoption/main/hosted/model-quality claim. Candidate paired isolation/adoption remains a distinct actual gate.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_model_adapter.py offline_tests/test_acquisition_model_contract.py offline_tests/test_acquisition_native_chain.py offline_tests/test_acquisition_external_binding.py offline_tests/test_acquisition_model_schema.py offline_tests/test_acquisition_model_observation.py offline_tests/test_acquisition_dialogue.py -q",
+      "result": "PASS",
+      "evidence": "164passed,8subtests; fixed6schemas/knowncompleteownConfig receipt grades, invalid corpus/error sanitization, late final-seal/stop/clock gates and legacy defaults."
+    },
+    {
+      "command": "dedicated retained PostgreSQL0049->0050 migration with canonical sorted-row SHA256 comparison",
+      "result": "PASS",
+      "evidence": "Only own47be and47be_final DBs;95tables156rows and95tables87rows unchanged excluding Alembic version and newNULLrole projection. Final migration03 includes manifest-retention fence."
+    },
+    {
+      "command": "pytest tests/test_acquisition_agent_roles_pg.py -q; final-source refusal/privacy/known-sealed-lab/atomic-rollback/native-feature-stop supplements",
+      "result": "PASS",
+      "evidence": "Expanded14passed(412.36s); final5supplements passed(323.85s). Genuine separate saved Agents, restricted pinet_runtime, real RLS/Task/Run/attempt/Case/Mail, inert model callbacks only."
+    },
+    {
+      "command": "python -B -m pinet_core.acquisition.agent_role_calibration validate-corpus --path KNOWN_RUNTIME_ARTIFACT --sha256 EXACT_SHA256; ruff check owned Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "Actual sealed known6-case CLI returned safe counts/hashes,0DB/0models/no private text; all lint/diff checks passed. No protected-case validation executed by this controller."
+    }
+  ],
+  "eventId": "a98fd6e5-9295-41c9-a8c3-62c45f1bd9a9",
+  "sequence": 3,
+  "at": "2026-10-18T15:36:25.697Z"
+}

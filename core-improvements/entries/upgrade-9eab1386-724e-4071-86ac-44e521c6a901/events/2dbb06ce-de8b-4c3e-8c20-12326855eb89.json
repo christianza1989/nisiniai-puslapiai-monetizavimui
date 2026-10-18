@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual sourcefa sent exactly one self-test; authenticated exact provider metadata observed SENT+INBOX and a different RFC Message-ID. Chrome independently showed the unique test and sent a German self-reply; initial known-thread sync returned0 imports. Original message, Gmail receipt and failure are retained. PG baseline1FAIL7PASS SHA2067c06e19d28d19bd8dc0d6dc7494f06466ed7b009662768a9d8d5860d2d39f reproduced the missing alias. This fix does not resend or mutate canonical Message-ID, source body or accepted receipt. No other mailbox-wide capture, automated reply or campaign is authorized by alias observation. Actual post-fix operating import and LT UI remain separately pending.",
+  "checks": [
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py rewrite-offline",
+      "result": "PASS",
+      "evidence": "46PASS1.85s SHA6b0c9312c71fe373059c00e74dfe2b98746e59f2dbc287a8408bb2f48b30473e. Real MIME exact rewritten-ID acceptance; wrong sender/recipient/subject/body, unreviewed attachment and missing/duplicate RFC ID rejected;38existing provider/state/issuer/vault/loopback cases included. No external provider."
+    },
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py rewrite-after",
+      "result": "PASS",
+      "evidence": "8PASS50.23s SHA39ba074ca832a2b5478593c6fcf217de498e796678bb0d7ae92de35e4dedb752. Dedicated restricted Root QA/inert Gmail only. Exact provider RFC alias imports one reply into same Case, replaydedupe, canonicalRFC retained and original inbound RFC headers preserved; includes7prior owner/OAuth/concurrency/unknown/revocation/gateway cases."
+    },
+    {
+      "command": "qa-python -m ruff check mail_provider and Gmail sent-identity/owner PG tests",
+      "result": "PASS",
+      "evidence": "All checks passed on final scoped implementation/tests."
+    }
+  ],
+  "eventId": "2dbb06ce-de8b-4c3e-8c20-12326855eb89",
+  "sequence": 2,
+  "at": "2026-10-18T15:17:23.498Z"
+}

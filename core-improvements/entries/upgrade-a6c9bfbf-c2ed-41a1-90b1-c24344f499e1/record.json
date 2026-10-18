@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Add current-owner local Gmail OAuth and bounded self-test transport on canonical Case/MailMessage with encrypted credentials and durable single-send intent",
+  "category": "code",
+  "evidence": [
+    "docs/GMAIL_LOCAL_OWNER_TEST.md",
+    "agent-business-core/runtime/offline_tests/test_gmail_provider.py",
+    "agent-business-core/runtime/offline_tests/test_gmail_callback.py",
+    "agent-business-core/runtime/tests/test_gmail_owner_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_provider",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/src/pinet_core/mailbox.py",
+    "agent-business-core/runtime/scripts/gmail_owner.py",
+    "agent-business-core/runtime/pyproject.toml",
+    "agent-business-core/runtime/uv.lock",
+    "MAIL_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable gmail_owner_enabled and stop only the owned callback/CLI. Scoped source revert; preserve Case/MailMessage, original failures and private encrypted connection receipts. No data migration or campaign activation.",
+  "id": "upgrade-a6c9bfbf-c2ed-41a1-90b1-c24344f499e1",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "be6d7d30d90e058a8e738b92a52759a72228c2f7",
+  "createdAt": "2026-10-18T14:46:12.923Z"
+}

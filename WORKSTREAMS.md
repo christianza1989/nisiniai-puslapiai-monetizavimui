@@ -1,3 +1,54 @@
+## Current-owner natural role context and stopped runtime checkpoint — Root2026-10-18
+
+Serving 0adf9fb3/schema 0050 adopted after backup: 96 old table projections and 1010
+native files exact, authenticated LT mail ready, unauthenticated 401/foreign 404.
+Root 111 offline + 6 restricted PG and both PR 213 CI checks PASS. Human-requested
+natural actor DTO/recipient context is delivered; original Config2, corpus,
+grading, first quality FAIL and all usage remain unchanged. Corrected actual
+smoke routes coordinator→research→qualification→writer. First 3 Tasks succeeded;
+writer ModelAttempt succeeded with output/known usage, then common Task failed
+authorization_revoked. Exact historical completion reason still UNVERIFIED.
+Aggregate 8 calls all known usage, 7 complete/1 failed; original 120/3600 ledger and
+wholewall retained, no automatic retry or new allowance. All6 new grants and
+module canonically stopped, protected0calls, externalcustomer/suppliermail0.
+Failed-receipt metadata and locked heartbeat refresh are integrated and adopted.
+Five real two-transaction tests and recorded-output replay prove only their
+specific contracts; neither attributes the historical writer failure. All source
+write windows are closed; Root owns integration/Gmail/UI. See docs/GMAIL_LOCAL_OWNER_TEST.md.
+Full six-role calibration and commercial campaign transport NOT accepted.
+
+## Earlier current-owner Gmail actual local checkpoint — Root2026-10-18
+
+Actual OAuth, owner self-send/Gmail SENT+INBOX/Chrome receipt, exact rewrittenRFC
+reply import, two successful one-attempt LT display Tasks and normal customer
+Chrome LT/original toggles verified. Sourceef/3d proofs retained; integrateda7
+operating API/schema50 adopted with all prior rows/files preserved. Portal615
+compiled build manually adopted by owner. See docs/GMAIL_LOCAL_OWNER_TEST.md;
+source/actual local adoption/main merge/public deployment remain separate.
+Six-role source integration is present but actual calibration NOT accepted.
+First private controller loop failure0calls retained; corrected-loop run then
+exposed missing customer_session before a protected binding read, also0provider
+calls/0budget reservations/onequeuedTask. Exact six grants/module canonically
+stopped; original120/3600 ledger and both failures unchanged. Windows/Git/
+PowerShell OOM observed separately. Helper owns scoped dispatch read-boundary
+repair/regression in its own branch; Root keeps Gmail/UI/integration ownership.
+No customer campaign sends or full-mailbox import were activated.
+
+## Current-owner Gmail local adapter — Root2026-10-18 implementation history
+
+Human explicitly requested all-six calibration, Gmail send/reply and Lithuanian
+UI. Own codex/verslomatika-gmail-owner-20261018 frombe6d7d30; paired freshness
+PASS14:33UTC main533/publicec8 companion255fea0. Issue66/comment6250917480
+reserves new mail_provider/, gmail_owner.py CLI, config flag, canonical mailbox
+sender/reply source seams, direct cryptography manifest/lock, focused offline/PG
+tests and separate journal. No helper-owned acquisition/0050/dialogue files.
+Defaultoff local current-owner self-test; encrypted private tokens, no second
+CRM/calibration/provider task engine, no personal inbox-wide import or campaign.
+Owner approved Google policy and Desktop OAuth client creation; access grant and
+actual send/reply/LT UI remain separate. Inert provider29offline+7PG PASS; existing
+mail regressions40PASS. First fixture errors retained. Source-only until clean
+commit, actual adoption and independent live acceptance; no main merge claim.
+
 ## Durable LT mail display schema — helper 2026-10-18 source complete
 
 Root-assigned issue66/comment6243877013; own NEW managed worktree/branch
@@ -2138,3 +2189,90 @@ No message bodies/addresses, guessed open/bounce/reply rates or parallel sender.
 Dedicated QA fixtures only; no paid/provider/operating/protected-case changes.
 PR164 remains frozen atc684c1ad with both final-head CI checks passed; source
 review readiness does not merge its coordination base or main.
+
+2026-10-18 Hotube six-role native implementation RESERVED: new own branch
+codex/hotube-six-role-native-20261018 in47be from Rootbe6d7d30, paired freshness
+PASS main533597c/companion255fea-main ec8a9c. Issue66 coordinates exact acquisition
+agent_role contract/authority/handler/tasks/schema/calibration additions and common
+model/native integration, worker registration/usage/settlement, migration0050,
+focused offline/retained-PG regressions, own unique upgrade and rules/acceptance doc.
+Each saved Agent/Config must own actual Task/Run/attempt/handoff receipts; old
+two-role behavior/artifacts unchanged. Root owns mail_provider/mailbox/mail_reader/
+mail_view/config/dependency locks/Gmail/UI/adoption, excluded from this window.
+Only source/inert QA now,0 paid/provider/live calls; future fresh120/3600 stage with
+smoke<=12 requires new genuine source/manifest/policy/grants and Root GO.
+
+2026-10-18 Hotube six-role native source QA: own migration0050 applied only to
+separate retained47be and47be_final PostgreSQL databases.95-table row comparisons
+before/after49->50 PASS (156 and87rows); original failure logs retained. Expanded
+14PG PASS,164offline+8subtests PASS; final refusal/rollback/feature-stop5supplements
+PASS. Custodian receives safe DTO/evaluator/knowncase seals only; no old
+protected dialogue read, no new paid/provider/live calls. Upgrade11c2e763 covers
+the exact six-agent path and optional single maintained runner hooks.
+
+During final native compatibility review, actual PG proved pre-serialized JSON
+in a JSONB-typed bind is a string. Existing native_chain.final_fence reached its
+legacy no-native branch; wrong-peer-fingerprint negative test FAILED before fix.
+Root confirmed exact native_chain.py repair/new native_json_fence_pg test scope.
+Upgradec8b44c68 binds an object; same negative+legacy native chain+legacy sealedlab
+3PG PASS. Earlier Python checks remain; no DDL/permission/budget expansion.
+
+2026-10-18 final controller transport preflight found actual strict_schema made
+SixRoleGrade's dynamic6map an impossible empty closed object. Root reserved only
+its fixed6property wire representation, actual-converter regression/docs and own
+upgrade; no evaluator instruction/hash, thresholds or protected cases changed.
+Before1FAIL/6nativeOUTPUTPASS retained; after54focusedPASS,0DB/provider calls.
+
+2026-10-18 Hotube private controller actor-context repair: Root reserved only
+acquisition/agent_role_tasks.py, focused read PG tests, this scope/acceptance doc
+and a unique upgrade. Actual restricted PG proves token-only binding hidden,
+customer_session binding visible, original canonical authenticated read PASS.
+Add read_request with owned Task/business/history/input integrity checks; adapt
+ignored controller to authenticate then call that helper before reservation.
+No RLS/business-GUC/schema/handler/evaluator/Config/paid authority change. The
+separate retained47be_final QA database is the only fixture write target. Root
+owns stopped operating grants and final source adoption; no automatic retry or
+new stage clock/allowance is authorized by this source repair.
+
+2026-10-18 Root source8bd06 smoke ended after4 completeknown calls with legitimate
+unknown qualification from explicit lab authoring cues; firstFAIL/old grants,
+corpus, Config2 and evaluator preserved. Human rejected announcing simulation.
+Root opened exact agent_role_handler/calibration, new business projection,
+optional dialogue_lab recipient hook, focused offline/PG tests/docs/journal.
+Natural business DTO omits runtime/capture metadata; only exact authored known
+prefix/wrapper is projected, cue-free natural persona remains verbatim and
+unknown lab wrapper fails closed. Ordinary citations retained. Receipts add
+canonical typed inputSHA/consumed parent hashes. No protected body read: custodian
+reported protectedpersona3/cue-present0 only. Own source/inert QA has0paid calls.
+Ignored controller explicit fixed4 continuation retains global120/native96/role
+use and original17:45:00.815856UTC wholewall; Root owns final merge/admission/GO.
+
+2026-10-18 failed-workflow receipt observability window: Root authorized only
+agent_role_calibration.py, focused offline/retainedPG tests and docs/journal.
+Actual knownwriter ModelAttempt/Run AND ledger usage are completeknown; report
+lost failedTask status/Runreceipt when dispatch raised. Preserve original error
+or cancellation, bounded best-effort canonical historical read, no result
+promotion/retry/authority or accounting change. Actual completion cause remains
+UNPROVED; guard observation was off. All frozen source6246/controller/stage and
+8charged calls stay history; no further paid admission. Dedicated47be_final QA
+only injects explicit post-settlement completion denial with inert provider.
+
+2026-10-18 distinct heartbeat snapshot window: Root authorized only post-lock
+refresh in tasks/worker.py, focused concurrency PG/doc/journal after redrepro.
+Actual2TX retained-identity seam3FAIL/1PASS: stale lease falsely refuses renewed
+DBlease, accepts actually expired DBlease, accepts terminal Task; authoritystop
+alreadydenies. Unretained normal six-role controlPASS/weakrefreleased, so actual
+writer cause remainsUNPROVED. One locked-select populate_existing only; unchanged
+15slease/noexpiredrevival/noauthoritycache. Own retained47be_final/inertQA0provider;
+all old8call stage/ledger/Serving6246/privateharness remain frozenhistory.
+
+2026-10-18 mail-statistics Gmail named-state scope: Root authorized exactly
+mail_view/statistics.py/statistics_wire.py and focused offline/PG tests, actual
+docs/MAIL_RECORD_STATISTICS.md clarification and own journal. Before actualPG
+Gmailaccepted2+sending1 incorrectly raised outbound_other from1to4; offline
+projection rejected both named labels. Add outbound_sending and
+outbound_accepted_by_gmail zero-default fields within mail-statistics.v1; fixed
+bound now33groups. Preserve boolean provenance, currentstate/created_at window,
+strictfilters, currentowner/nondisclosure and all7unavailable provider metrics.
+Focused11offline+3restrictedPG PASS,0paid/provider/live/protected/operatingDB.
+No mail_provider/config, engine/eventtable/campaign/UI or frozenstage changes.

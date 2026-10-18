@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "summary": "Six-role calibration exposed lab authoring/capture metadata to business actors and omitted consumed-parent input proof from grader receipts; add natural business projection and canonical provenance without changing cases, Configs or grading.",
+  "category": "code",
+  "evidence": [
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md: business context and calibration provenance contract",
+    "Root retained source8bd06 known smoke STOPPED quality/expectation FAIL after4 complete known-usage calls; no protected case used",
+    "Actual PG before receipt addition fails; exact authored known wrapper and cue-free natural persona have separate local fixtures; original corpus/evaluator/Config bytes remain unchanged"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_calibration.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_projection.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue_lab.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_business_projection.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/214",
+  "rollback": "Contain current authorities/module and scoped revert of projection/hook/receipt source adoption. Preserve immutable corpus, evaluator, Configs, original smoke failure, ledger prefix and charges; no automatic retry or time/budget reset.",
+  "id": "upgrade-7de462c3-c412-45f6-ba0b-9c83300813cb",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "eccc71ee61226e4791291dafc04c5a060d921c88",
+  "createdAt": "2026-10-18T17:08:46.794Z"
+}

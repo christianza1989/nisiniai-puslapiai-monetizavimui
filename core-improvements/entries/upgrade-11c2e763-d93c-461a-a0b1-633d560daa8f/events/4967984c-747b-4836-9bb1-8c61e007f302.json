@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Exact six saved-Agent work is implemented in the existing common worker/authority/attempt path. Initial dedicated schema50 nine-test PG and 153 offline tests plus8subtests passed; final current-source PostgreSQL suites still running. Retained95-table row comparisons passed for both49->50 trials. Preserve first DDL JSON-bind failure, harness bootstrap-before-migration failure and final dynamic-import failures; corrected canonical native_schema.FUNCTIONS import passed actual migration. Added manifest-retention fence and refusal containment without changing old GRADE_INSTRUCTION or reading old protected dialogue. No model/provider/live calls; Root integration, source freeze, fresh campaign/grants and actual quality/adoption remain separate.",
+  "eventId": "4967984c-747b-4836-9bb1-8c61e007f302",
+  "sequence": 2,
+  "at": "2026-10-18T15:14:03.780Z"
+}

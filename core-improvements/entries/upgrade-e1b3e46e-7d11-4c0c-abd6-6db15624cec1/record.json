@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Heartbeat FOR UPDATE reused a retained stale ORM Task, causing wrong lease/status admission after a concurrent commit; refresh that locked snapshot before existing checks.",
+  "category": "code",
+  "evidence": [
+    "docs/TASK_HEARTBEAT_LOCKED_SNAPSHOT.md: exact two-transaction retained-identity scope and historical-attribution limits",
+    "Before restricted PG3FAIL/1PASS44.41s: renewed live DB lease falsely rejected, actual expired DB lease accepted, terminal Task accepted; authority refusal already passed",
+    "Unretained real six-role handler control PASS14.84s with initial weakref released; strong retention is an explicit seam, not proof of historical writer cause"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/tests/test_task_heartbeat_concurrency_pg.py",
+    "docs/TASK_HEARTBEAT_LOCKED_SNAPSHOT.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/214",
+  "rollback": "Scoped revert of the locked snapshot refresh and its focused tests/docs. No lease-duration/authority/old ledger/unknown usage or stage clock changes; never retry the closed provider stage.",
+  "id": "upgrade-e1b3e46e-7d11-4c0c-abd6-6db15624cec1",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "b1325f47a7af4a2f6e550201b548c50fd1e1093b",
+  "createdAt": "2026-10-18T17:50:59.719Z"
+}

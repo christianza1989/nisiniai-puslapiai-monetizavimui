@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Real Google callback oneda99209 matched exact127loopback/path/state but contained RFC9207 iss. Both unconsumed encrypted attempts retained with no tokens or token exchange; only owned callback processes stopped at human-requested restart. Baseline1FAIL36PASS SHAe2d0471ab09060724bf14fd7852544fa9a977ca4d643c639df1a3715a9c8cb13 retained. Fix requires exactly one modern Google issuer before code consumption, retaining all other state/PKCE/current-owner/one-use gates. Actual live acceptance is separate and still pending after this source regression.",
+  "checks": [
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py issuer-after",
+      "result": "PASS",
+      "evidence": "38PASS1.68s SHAcce88eff353afea7b413bb88bc7bba6772f937707beb69c665a5244b1a49e7f6. Exact actual callback shape accepted once; missing/duplicate/HTTP/legacy/foreign/blank issuer denied before consumption, plus29existing MIME/Vault/token/loopback cases."
+    },
+    {
+      "command": "qa-python -X utf8 .local/sharp-policy/gmail-owner-tests.py issuer-pg",
+      "result": "PASS",
+      "evidence": "2PASS5deselected10.28s SHA0f8a694a4eed67a16e9da6ea551149fa9844fbc6f5051e740b43408fe0f98af4. Actual restricted-PG owner gateway with real accepted issuer validates durable consumed-before-token seam and grant revocation before adoption. Inert Google provider only; operating DB untouched."
+    },
+    {
+      "command": "qa-python -m ruff check scoped oauth.py and Gmail issuer/provider/PG tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed on exact scoped source/tests; no unrelated runtime changes or weakened issuer validation."
+    }
+  ],
+  "eventId": "ba11839c-ad76-4bb8-a00f-ff4bcd701613",
+  "sequence": 2,
+  "at": "2026-10-18T15:03:24.270Z"
+}

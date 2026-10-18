@@ -1,0 +1,41 @@
+{
+  "siteId": "core",
+  "summary": "Six saved business Agents lacked independent native Config/Task/Run execution: only two saved Agents owned generic qualification/reviewer/reply roles. Add exact six-role authority, typed lineage and one-reply calibration on the existing worker and durable attempt ledger.",
+  "category": "code",
+  "evidence": [
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_agent_roles.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_agent_role_calibration.py"
+  ],
+  "paths": [
+    "WORKSTREAMS.md",
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue_lab.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_adapter.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_admin.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_models.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_observation.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_tasks.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/migrations/versions/0050_acquisition_agent_roles.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_agent_role_calibration.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_agent_roles.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_calibration.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_tasks.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop exact role authorities and module; revert only this source adapter/Config adoption. Keep migration and retained Task/Run/attempt/correspondence history; never drop/downgrade or refund unknown usage. Old purpose-only two-agent path remains supported.",
+  "id": "upgrade-11c2e763-d93c-461a-a0b1-633d560daa8f",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "be6d7d30d90e058a8e738b92a52759a72228c2f7",
+  "createdAt": "2026-10-18T15:12:38.783Z"
+}

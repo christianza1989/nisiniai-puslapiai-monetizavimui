@@ -97,7 +97,10 @@ async def test_unpublished_expiry_retries_after_join_and_a_new_authority_observa
         assert diagnostic(f, lease, suffix).read_bytes() == raw
     f.finish.set()
     await lease.task
-    assert lease.view["state"] == "expired" and len(attempts) == 2
+    # The fake second producer returns an incomplete EOF before Ready expires;
+    # recovery does not turn that early finish into normal natural expiry.
+    assert lease.view["state"] == "failed" and len(attempts) == 2
+    assert lease.view["failure_code"] == "live_preview_process_finished"
 
 
 @pytest.mark.parametrize("change", ["no-closed", "no-guard", "nonce", "scope", "request", "proof",

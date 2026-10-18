@@ -345,6 +345,20 @@ class Service:
         except (ControlError, OSError, ValueError, TypeError, KeyError, AttributeError):
             return False
 
+    @staticmethod
+    def completed_expiry(lease, value):
+        # The transport joining successfully proves cleanup, not natural expiry.
+        # Only the exact producer receipt after an accepted Ready deadline does.
+        if (type(value) is not dict
+                or value != {"version": "customer-live-preview-completed.v1", "state": "expired"}
+                or lease.view["state"] != "ready"):
+            return False
+        try:
+            expiry = datetime.fromisoformat(lease.view["expires_at"].replace("Z", "+00:00"))
+            return expiry <= now()
+        except (ValueError, TypeError, AttributeError):
+            return False
+
     async def drive(self, lease):
         lease.entered = True
         runner = None
@@ -376,7 +390,10 @@ class Service:
                                 await self.ready(lease)
                             await asyncio.sleep(0.05)
                         try:
-                            await runner  # canonical transport has joined its process/callback cleanup
+                            completed = await runner  # canonical transport joined its process/callback cleanup
+                            clean = True
+                            if not self.completed_expiry(lease, completed):
+                                raise RunnerError("live_preview_process_finished")
                             break
                         except RunnerError as error:
                             if attempt or not self.startup_retryable(lease, error, began, hard_end_ms):

@@ -2001,3 +2001,28 @@ No-env shared foreign-editable venv collection now succeeds, but one direct CLI
 child still uses its old installed core (222PASS/1FAIL retained); do not label
 that environment a clean current installation. Upgrade449ac2f1 owns this narrow
 configuration/doc change. Operating5fdf/schema49 and portal3030 unchanged.
+
+Root preview acceptance continuation2026-10-18: human explicitly requests closing
+preview blockers and continuing toward main. Root reserves existing upgrades
+78c575e9/c3cf73e6 verification events plus the new merge-readiness handoff and
+status/this append; source repair window only if a concrete current failure is
+reproduced, then its exact paths/unique upgrade before edits. Actual owned18871/
+ordinary3030/native child lifecycle tests allowed; all paid/channel workers held.
+Helper01a13440 reopened read-only source review only; no helper process/DB/browser
+or code writes. Independent dealer site and protected pilot/corpus excluded.
+
+Root concrete EOF followup: helper read-only P2 identifies discarded successful
+serve result followed by unconditional natural-expiry classification. Root owns
+exact live_preview.py completion hunk, new test_live_preview_completion.py and
+LIVE_PREVIEW_COMPLETION.md under a unique upgrade; no heartbeat/TTL/deadline or
+runtime permission change. Separate actual5fdf before-Ready heartbeat refusal
+retained with margin-1906ms; its observed5.320/7.288s full verification is not
+attributed to this completion-classification defect. Diagnose that exact guard
+path separately, not a broad performance rewrite.
+
+EOF regression amendment reserves the existing startup-recovery test's final
+assertion only: its second fake producer returns incomplete EOF before expiry,
+so it must now finish failed/process_finished while retaining exactly2attempts.
+The first8FAIL baseline and intermediate124PASS/2FAIL remain retained. New test
+malformed-EOF cases keep a future expiry to avoid racing an independent valid
+expiry projection; exact elapsed-envelope success is tested separately.

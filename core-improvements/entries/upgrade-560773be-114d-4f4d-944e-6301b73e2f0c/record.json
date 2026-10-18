@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Owner mail has no bounded aggregate read; expose canonical MailMessage record snapshots with current owner/environment scope, strict synthetic provenance and unavailable provider metrics rather than invented campaign KPI zeros.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_view/statistics.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/statistics_wire.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/routes.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Owner endpoint baseline on dedicated restricted-PG returns404; first failure retained SHA256aa7f6c682389c577f0347da5bcd13ec6b74c497d803b1008ec6c09c1821964d3. Existing Mail/Case store and mail_view authority are reused.",
+    "Owned scope issue66comment6250688502; human's professional email-system/statistics request and docs/VERSLOMATIKA_EMAIL_SYSTEM_PLAN.md distinguish SMTP acceptance, delivery, replies, unavailable coverage and synthetic fixtures.",
+    "Exact current tests, source-only adoption limits and reproduction commands in docs/MAIL_RECORD_STATISTICS.md. No provider/model/operating/protected data operation."
+  ],
+  "rollback": "Scoped revert of the new statistics read/registration. Preserve existing MailMessage/Case originals, receipt states, translation identity and acquisition ledger; no schema migration, sender, provider feed or operating adoption is introduced.",
+  "id": "upgrade-560773be-114d-4f4d-944e-6301b73e2f0c",
+  "branch": "codex/verslomatika-mail-statistics-20261018",
+  "baseSha": "c684c1ad1e093a379f62d64e6c459f0a581c0f8b",
+  "createdAt": "2026-10-18T13:54:27.634Z"
+}

@@ -1,5 +1,20 @@
 # Platform merge readiness —2026-10-18
 
+## Current source checkpoint —13:55 UTC
+
+PR164 atc684c1ad passed both final-head GitHub CI checks and is ready for review,
+still stacked on its coordination branch; no main merge occurred. Actual API
+remains3245/schema49 and the unchanged3030 build. All paid/channel workers held.
+
+A separate mail-statistics follow-up branch fromc684 implements one bounded
+read-only canonical MailMessage snapshot, not a parallel mail store or provider
+event engine. Five restricted-PG regression cases and35offline cases pass.
+Explicit JSONtrue/false/unknown provenance, environment, foreign/revoked denial,
+half-open creation-time window, null provider metrics and original immutability
+are checked. [Contract and evidence](../MAIL_RECORD_STATISTICS.md). Operating/UI
+adoption, provider ingestion/cursor/transport, campaign semantics and real Gmail
+remain separate. The source182 calibrated baseline/closed ledgers are untouched.
+
 ## Current superseding checkpoint —13:41 UTC
 
 Owned API18871 is clean source3245a9aca13961a0fc814b6a4571052c298e1f5a,

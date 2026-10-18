@@ -2126,3 +2126,15 @@ supplemental evidence. New append-only events78/c3/8822 under issue66comment6250
 all previous records/failures/model182ledgers preserved, all paid/channelsheld.
 Current060ee0 PR-base coverage194shared/105verified/0errors passes; finalheadCI,
 reviewedmain/otherPC/hosted and remaining mail/provider/fullUI acceptance separate.
+
+Root mail-record statistics2026-10-18 owns separate branch
+codex/verslomatika-mail-statistics-20261018 fromc684c1ad under issue66/comment6250688502.
+Reserves new mail_view/statistics.py/statistics_wire.py, routes.py registration,
+focused offline and retained-PG tests, docs/MAIL_RECORD_STATISTICS.md and own
+journal. Read-only bounded grouped MailMessage projection with existing fresh
+owner/RLS and exact environment; explicit true/false/unknown synthetic provenance.
+Record creation window/current state is not send-event/cohort/provider coverage.
+No message bodies/addresses, guessed open/bounce/reply rates or parallel sender.
+Dedicated QA fixtures only; no paid/provider/operating/protected-case changes.
+PR164 remains frozen atc684c1ad with both final-head CI checks passed; source
+review readiness does not merge its coordination base or main.

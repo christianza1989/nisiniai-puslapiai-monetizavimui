@@ -1,5 +1,12 @@
 # Verslomatikos pašto, kampanijų ir agentų sistema
 
+**2026-10-18, 13:55 UTC papildymas.** Atskira source šaka turi pirmą tik skaitymui
+skirtą [laiškų įrašų statistikos API](MAIL_RECORD_STATISTICS.md):5 PostgreSQL ir
+35 offline patikros praėjo. Ji skaičiuoja esamų įrašų būsenas pagal sukūrimo datą,
+atskiria testinius bei neaiškios kilmės duomenis ir nežinomų tiekėjo metrikų
+nepaverčia nuliais. Tai dar nėra įdiegta veikiančioje API ar UI; tiekėjo įvykių,
+kampanijų, Gmail ir kitų šio plano etapų priėmimas lieka atviras.
+
 2026-10-18. Būsena: įgyvendinimo planas, ne jau veikiantis modulis.
 Audituotas platformos šaltinis:40abff139f2207f06fd2a2b74064bc9cd3934111;
 veikianti vietinė API tebėra5fdf946/schema0049. Naujo tiekėjo prijungimas,
@@ -288,6 +295,11 @@ testą, bet nėra serverio OAuth jungtis. Google leidimo patvirtinimas atliekama
 tik tiksliai paruoštai programai ir scope. Nereikia siųsti slaptažodžio į pokalbį.
 Tikras Workspace adreso sukūrimas, domeno nuosavybė ir DNS patikra lieka būsimi
 konkretūs prijungimo veiksmai; asmeninis Gmail testas jų nepakeičia.
+
+### Istorinė peržiūros būsena plano sudarymo metu
+
+Toliau išsaugota ankstesnė40abff13 būsena; aktuali3245 peržiūros patikra ir
+PR164 rezultatai yra [platformos perdavimo dokumente](handoffs/VERSLOMATIKA_PLATFORM_MERGE_READINESS_2026_10_18.md).
 
 Ankstesnis live-preview blokas tebėra atskiras: 40abff13 turi 138 susijusių
 offline PASS, bet naujas pacing dar neadoptuotas į Serving ir tikras ciklas

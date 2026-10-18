@@ -6,7 +6,8 @@
 requested continuing platform/agent integration. Root owns UI/integration and
 the operating adapter; authorized helper chats own separately scoped schema and
 acquisition work in their own branches/worktrees. Current frozen local API18871
-is97d8c75/public255fea0 on0047, with the human-started reviewed frontend3030.
+is1a751d0c/public255fea0 on0048, with human-started final frontend3030
+(portald1e15fe, BUILD_ID n_CYfl9NHwL5tW1Yh8ERl).
 Kubilų Creation85fb2b31 has current Registration014d46b4/Business917e1d81.
 Normal owner source renewal preserved the same identity and37/40 accounting.
 All original771 native files remain exact; a new Foundation observation added23
@@ -16,7 +17,8 @@ operating mail is empty. Current owner Registration/Business/mail reads200.
 Earlier completed source/adoption batch: native preparation and owner mail view,
 bounded explicit ModuleBinding writer, Registration continuity and headless
 reviewed same-Case capture/reply. Root345 pure+67 subtests and63 real PG/API/Node
-checks passed. Ordinary populated browser/200% proof is still unverified.
+checks passed. Ordinary two-agent Config browser read/edit/history and1280/390/320px
+reflow now pass; populated mail and actual200% browser zoom remain unverified.
 [Exact checkpoint](../../docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md).
 
 The new source packet provides separately typed acquisition.model_prepare over maintained

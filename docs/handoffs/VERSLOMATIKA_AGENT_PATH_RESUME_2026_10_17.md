@@ -1,5 +1,33 @@
 # Agent path: current continuation
 
+## Native chain integrated and held operating48 — 2026-10-18
+
+Current clean Serving1a751d0c12c128468f63fb22d7d4e75d57ef901b/public255fea08,
+schema48; API18871/PID11872, owned hidden launcher32292. Paid workers/native
+execution actors/channels held. PR202 is integrated into Root's branch, not main.
+Own17-path coverage passes; inherited main-wide coverage remains BLOCKED.
+
+Independent merged-source256offline+67subtests PASS5.97s. Fresh Root47→48 QA
+passed normal two-Config full-path/replay and atomic rollback:2PASS148.59s,
+20deselected; original/operating rows and794files exact. Runtime files match0ef;
+QA started on1cf and the1a751d0 followup changed delivery docs/journal only.
+
+Actual migration retained all95tables except Alembic version and all794files.
+Backup1793820bytes SHA7f874e8280f975da033753cb3aa54f5907618ff9136511c7027ede37fddc5d8f.
+Normal password login after old probe expiry added one Session/rate records only;
+canonical source-bound S37 renewal added one request/receipt only. Both immutable
+Agent/Config drafts remain. All historical baselines/old Session/first failures
+are retained: initial verify preceded listener readiness, next hit expired Session,
+and purpose readiness needed current-source S37. No gate/timeout was weakened.
+
+Current owner me/mail200, unauth401/foreign404. Human-adopted portald1e15fe final
+buildn_CYfl9NHwL5tW1Yh8ERl passes served BFF two exact drafts/purpose gates and
+ordinary Chrome1280/narrow/expanded/390/320px checks. Actual200% remains UNVERIFIED.
+No paid/provider/SMTP/IMAP call in this batch. Next is separate current bounded
+native-pair/auxiliary admission through maintained NativeWorkflow/run_case.
+Prepared six-case protected input/runner remain unbound/unexecuted; Root has not
+seen four holdout payloads. Old174/180 ledger CLOSED. Whole platform still OPEN.
+
 ## Private research/email configuration readiness — 2026-10-18
 
 Root b0682a60 and helper04708fb5 add an explicit purpose-bound private Config-only

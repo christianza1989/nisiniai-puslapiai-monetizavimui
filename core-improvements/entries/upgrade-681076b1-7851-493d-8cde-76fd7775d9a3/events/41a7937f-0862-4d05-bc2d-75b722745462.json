@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Root integrated PR202 and adopted held local1a751d0c/schema48; not main merge, calibration, delivery or another-PC adoption. Inherited main-wide coverage remains BLOCKED. Initial startup-not-ready, expired Session and stale S37 preconditions retained; normal login/source renewal repaired them without weakening gates. Protected inputs/runner unbound/unexecuted; old174 ledger untouched.",
+  "checks": [
+    {
+      "command": "Root merged-source acquisition/mail offline suite",
+      "result": "PASS",
+      "evidence": "256 passed plus67 subtests5.97s; raw SHAe048c2868ca86c0b6b597fa9d232e06de013c660d9894052a794ac63e3efb83e. Runtime unchanged between1cf and docs-only1a751d0."
+    },
+    {
+      "command": "native-chain-root-qa.py fresh47to48/full-path/replay/atomic rollback",
+      "result": "PASS",
+      "evidence": "Own pinet_native_root_20261018_001:2PASS/20deselected148.59s, raw SHA27219961b97bae6f665657889304eab741af526d68d76b0081eff5388eacf991. Original/operating snapshots and794files exact; inert providers only."
+    },
+    {
+      "command": "native-chain-operator-bootstrap.py prepare/migrate/start/verify plus normal login/S37 renewal",
+      "result": "PASS",
+      "evidence": "Actual clean Serving1a751d0c12c128468f63fb22d7d4e75d57ef901b/public255/schema48,95tables/794files retained except Alembic. Backup1793820bytes SHA7f874e8280f975da033753cb3aa54f5907618ff9136511c7027ede37fddc5d8f. Normal login adds Session/rate only; S37 adds1request/1receipt only. Owner200/unauth401/foreign404, all paid/channel flags held."
+    },
+    {
+      "command": "Actual served3030 BFF GET readiness/list/both immutable Configs",
+      "result": "PASS",
+      "evidence": "Current1a751d0c, same2Config hashes, research/email eligible only after canonical S37 renewal, old v1 conservative. Private SHA9f88583319dafd872d4ce93d0b440637da7aa540b28e9250b16f20c393cd0f59. Final portal build separately exercised through normal Chrome login/read/edit/history1280/390/320px; actual200% remains UNVERIFIED. No provider/SMTP/IMAP."
+    }
+  ],
+  "eventId": "41a7937f-0862-4d05-bc2d-75b722745462",
+  "sequence": 5,
+  "at": "2026-10-18T05:29:17.012Z"
+}

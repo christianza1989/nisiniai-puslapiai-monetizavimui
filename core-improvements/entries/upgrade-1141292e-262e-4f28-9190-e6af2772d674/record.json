@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Separate canonical public indexing readiness from blanket local preview noindex, with an explicit approved-package loopback review and HTTP regression",
+  "category": "code",
+  "evidence": [
+    "Owner requested indexable prepared public pages on 2026-10-18; previous V1 loopback response always noindex and root robots deny even for an approved real-domain public package",
+    "Companion base b8596cca7b9f473663abfa216664c5960d9ebd68: proxy.ts, niche robots route and tests/seo-core-smoke.mjs lacked a page-level noindex regression",
+    "Google primary robots and sitemap documentation checked 2026-10-18; https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag"
+  ],
+  "paths": [
+    "SEO_GEO_CORE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/205",
+  "rollback": "Revert the scoped indexing helper/integration/test commit and matching policy clarification; no package, publication approval or private admission migration",
+  "id": "upgrade-1141292e-262e-4f28-9190-e6af2772d674",
+  "branch": "codex/wildtubs-europe-20261018",
+  "baseSha": "28154124666f4f9c073b111a0d6588dc693ff221",
+  "createdAt": "2026-10-18T08:40:55.981Z"
+}

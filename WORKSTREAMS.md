@@ -1957,3 +1957,22 @@ the scoped backbone doc/journal. Root received two concrete adoption/readiness
 findings and reports fixes in its own scope. Root keeps review, full49/legacy
 regression, source/schema/actual-business adoption. Own15559 retained synthetic
 DB and private receipts remain preserved; no operating, paid or channel changes.
+
+## Migration transaction boundary repair — helper2026-10-18
+
+Root reopened only `agent-business-core/runtime/migrations/env.py`, new
+`tests/test_migration_transactions_pg.py`, `docs/MIGRATION_TRANSACTION_BOUNDARIES.md`,
+own new upgrade and this append under issue66. Branch
+`codex/migration-transaction-boundaries-20261018` starts911c6e611648584a33e960a082bffcf4ec9c275f;
+both-repo start freshness08:05Z PASS, companion255fea0813bf1aabeaeea2f2de0b29564118f2fc.
+Individual revision installers are frozen. Use only new retained empty databases
+on helper15559 to prove fresh one-command upgrade, head no-op and failed-revision
+rollback/retry. Disk guard >=1.5GiB applies; Root cleared it after human cleanup.
+No operating/native/paid/source corpus work or cleanup bypass.
+
+Migration boundary result: new retained15559 batch2PASS/16.89s. One canonical
+0→0049 command succeeds; repeatedhead preserves96table fingerprints/counts and
+5154catalog records. Exact canonicalenv failure fixture proves first revision
+commits, failed second DDL/data/version rolls back, unchanged retry succeeds.
+Frozen installers byte-exact; one existing path_separator deprecation remains.
+Scope closes after separate correction commit/PR; Root owns review/adoption.

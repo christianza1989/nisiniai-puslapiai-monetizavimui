@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Canonical env.py transaction_per_migration=True causally repairs the retained original fresh0-to-head duplicate temporary probe failure. Original baseline failure preserved in backbone handoff/tool receipts. Exactly one positive fresh/no-op + deliberate-failure atomicity batch, no repeated fresh baseline, frozen installer edits, operating/native/paid changes or cleanup bypass.",
+  "checks": [
+    {
+      "command": "PINET_MIGRATION_QA=retained-isolated python -m pytest tests/test_migration_transactions_pg.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "Own15559 PostgreSQL18.6, two new retained empty databases; 2 passed in16.89s. One canonical CLI0-to0049, repeatedhead exact96table full-row hashes/counts +5154catalog records +sequence state. Exactcanonicalenv two-revision fixture preserves first, rolls back failed second DDL/data/version, retries unchanged bytes successfully. Proofs under ignored content-studio/tmp/migration-transactions-proof; existing path_separator warning preserved."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/migrations/env.py agent-business-core/runtime/tests/test_migration_transactions_pg.py",
+      "result": "PASS",
+      "evidence": "2026-10-18 existing QA Ruff; owned paths only. Frozen revision installers hash-identical before/after actual tests."
+    }
+  ],
+  "eventId": "78f339f8-1820-489a-8abc-58eebcfee5fb",
+  "sequence": 2,
+  "at": "2026-10-18T08:10:00.304Z"
+}

@@ -195,3 +195,21 @@ def test_new_runtime_manifest_preserves_original_protected_source(tmp_path, monk
     else:
         with pytest.raises(RunnerError):
             native_calibration.manifest(ref)
+
+
+def test_invalid_protected_payload_never_enters_error_diagnostic(tmp_path, monkeypatch):
+    import traceback
+    value, path = known_manifest(tmp_path, monkeypatch)
+    marker = "known-private-label-must-not-print"
+    value["cases"][0]["persona"] = {"invalid_typed_persona": marker}
+    value["corpus_sha256"] = fingerprint(value["cases"])
+    source = tmp_path/"known-source.json"
+    source.write_text(json.dumps({"synthetic": True, "now": "2026-10-18T00:00:00Z",
+        "campaign": value["campaign"], "cases": value["cases"]}), encoding="utf-8")
+    value["protected_source"]["sha256"] = hashlib.sha256(source.read_bytes()).hexdigest()
+    path.write_text(json.dumps(value), encoding="utf-8")
+    ref = {"manifest_path": str(path), "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "case_id": "known-0"}
+    with pytest.raises(RunnerError) as failure:
+        native_calibration.manifest(ref)
+    assert failure.value.code == "native_manifest_invalid"
+    assert marker not in "".join(traceback.format_exception(failure.value))

@@ -11,6 +11,7 @@ from email.message import EmailMessage
 from pathlib import Path
 from uuid import UUID, uuid5
 
+from pydantic import ValidationError
 from sqlalchemy import select
 
 from ..control.routes import scope, token_hash
@@ -20,6 +21,7 @@ from ..models import MailMessage
 from ..tasks.codex import RunnerError
 from . import model_authority, model_tasks
 from .contracts import Campaign
+from .correspondence import recipient_hash
 from .dialogue_lab import GRADE_INSTRUCTION, LabCase, validate_synthetic_data
 from .engine import fingerprint
 from .headless_mail import HeadlessMail
@@ -45,6 +47,15 @@ def sealed_private_json(path, expected_sha256, *, changed):
 
 
 def manifest(reference):
+    try:
+        return _manifest(reference)
+    except (ValidationError, ValueError, TypeError, KeyError, OSError):
+        # A malformed protected case must never print its persona/labels in a
+        # CLI traceback or expose Pydantic's input_value to an implementation agent.
+        raise RunnerError("native_manifest_invalid") from None
+
+
+def _manifest(reference):
     ref = CalibrationReference.model_validate(reference)
     value = sealed_private_json(ref.manifest_path, ref.manifest_sha256, changed="native_manifest_changed")
     if (set(value) != {"version", "source_revision", "native", "bindings", "campaign", "cases", "corpus_sha256",
@@ -74,6 +85,7 @@ def manifest(reference):
         # alias. Exact current server bindings are verified by every admission.
         if case.prospect.site_id != campaign.site_id:
             raise RunnerError("native_protected_binding_changed")
+        recipient_hash(case.recipient)
         validate_synthetic_data(campaign, case)
     if (len({case.id for case in cases}) != len(cases)
             or len({fingerprint(case.persona) for case in cases}) != len(cases)

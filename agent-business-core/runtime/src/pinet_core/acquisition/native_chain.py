@@ -99,6 +99,9 @@ async def final_fence(tx, value, work):
     _, private_hash = authority.read_registration(settings())
     if private_hash != work.authorization.work_registration_sha256:
         raise RunnerError("acquisition_model_private_registration_changed")
+    if value.calibration is not None:
+        from .native_calibration import manifest
+        manifest(value.calibration)  # Fresh sealed private bytes after the last Git wait.
     values = scope_values(work.scope, work.authorization.adapter_id)
     if value.stage == "reply":
         applied = str(value.request_id) in tx.info.get("acquisition_reply_applied", set())

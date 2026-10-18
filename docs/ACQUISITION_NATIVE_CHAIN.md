@@ -156,6 +156,14 @@ No foreign processes, databases or original closed budget history were changed.
 
 ## Review and adoption
 
+Own committed coverage against base97d8→7acb2a7 is PASS for all17 shared paths,
+with no uncovered paths or journal errors. The default current-main533597c→7acb2a7
+check is BLOCKED on inherited uncovered paths and old journal validation errors
+outside this scoped diff. The first checker failure is retained in the task tool
+history and the concrete dependency was sent to Root. Historical journal records
+were not rewritten. Root's global integration must resolve that debt before
+claiming main delivery; this packet does not claim the default gate passed.
+
 This is a scoped source handoff to Root's integration branch, not main delivery
 or operating adoption. Root must review/integrate it and separately record any
 actual native Config/Auth allowance, protected-run execution, UI/provider proof

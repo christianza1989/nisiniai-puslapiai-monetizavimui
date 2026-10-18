@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Preserve already observed sanitized CLI usage on propagated cancellation after terminal usage but before process/pipe completion",
+  "category": "code",
+  "evidence": [
+    "Root review found tasks/codex_transport.py cancellation branch rethrows without observed_receipt, unlike timeout/RunnerError; a complete turn.completed usage line may already be buffered while stdout/process remain open.",
+    "Bounded scope issue66/comment6243723985, source2424268210776d623f58e4ea088e436b0ea868d6, companion255fea0813bf1aabeaeea2f2de0b29564118f2fc; only inert offline local Python child, no CLI/model/provider/DB/channel invocation."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/offline_tests/test_cli_cancelled_receipts.py",
+    "docs/CLI_CANCELLATION_ACCOUNTING.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert. Do not modify immutable model reservations/closed ledgers, classify cancellation as success, or introduce retries.",
+  "id": "upgrade-a3b0d819-b720-4a54-abb1-6d9064ec203c",
+  "branch": "codex/codex-cancelled-usage-20261018",
+  "baseSha": "2424268210776d623f58e4ea088e436b0ea868d6",
+  "createdAt": "2026-10-18T00:29:47.866Z"
+}

@@ -141,7 +141,10 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
         if observation:
             observation.value["outcome"] = error.code
         raise
-    except asyncio.CancelledError:
+    except asyncio.CancelledError as error:
+        # A terminal usage line can precede EOF/process exit. Preserve the same
+        # bounded adapter receipt as other failures without accepting output.
+        error.receipt = observed_receipt() or {}
         if observation:
             observation.value["outcome"] = "cancelled"
         raise

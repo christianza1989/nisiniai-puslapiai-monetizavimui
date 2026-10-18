@@ -2093,3 +2093,13 @@ real recipients, digest migration, grant refund or rerun of the paid failed case
 Root native completion SQL follow-up2026-10-18 reserves content_completion/service.py, new tests/test_content_node_authority_pg.py, the existing offline authority graph SQL leaf, preview stability doc and one new journal under issue66/comment6249420470. Reproduce transport callback3SQL versus1; reuse canonical actor_statement/actor_result plus nullable Creation revision, preserving fresh per-callback owner/session/RLS/source checks and401/404 priority. No callback/TTL removal, paid retry or whole-lifecycle PASS inferred from query reduction. Paired freshness5daa/main533 and companion255/main ec8 PASS11:26UTC; all newR6/E18 grants now stopped with0Task/0Attempt.
 
 Root observed read-lock follow-up2026-10-18 reserves content_completion/routes.py and existing test_content_completion_pg.py plus stability doc under issue66/comment6249524206 and separate upgrade91e54a8a. Existing final-after-Node membership revoke hung; dedicatedQA pg_stat_activity proved an admin UPDATE blocked by request row locks. Only that ownedQAquery cancelled, original177.63s FAIL retained. Bound admin lock_timeout2s and require mutation committed before typed401/404/503; first reproduce, then remove only read-only route owned(lock=True), preserving every fresh actor/proof/source/output fence. No operating data/role/TTL/mutation-lock change.
+
+Root native V6 result2026-10-18 under issue66/comment6249964230 reserves only
+sites/wildtubs-europe/AGENT-CALIBRATION-2026-10-18.md and existing platform status/
+merge-readiness docs for safe acceptance evidence. Frozen182 completed3/3protected
+native scenarios/33known-usage calls/12TaskRun receipts, no raw text exposed or
+source/knowledge/candidate change. Closed parent7 unchanged, aggregate40. Root
+stopped genuineR6/E18 grants and module, preserving3/9Tasks and6/18attempts.
+Helper47be owns its separate private harness/facts and own handoff. Source-only
+API182 adoption preserves96tables/890files; current preview expiry remainsFAIL,
+170fresh taskSQL/9.44984s pulse gap. No main, provider or unlimited learning claim.

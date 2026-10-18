@@ -1,6 +1,27 @@
 # Platform merge readiness —2026-10-18
 
-## Later owner steering and actual local state
+## Current superseding checkpoint —12:31 UTC
+
+Owned API18871 is clean source182e2936b2b021e092deb8a8f6c571a6874ba48f,
+schema49; unchanged human-started3030 frontend. Source-only adoption preserved
+all96 table-row snapshots and890 native files. The SQL callback/read-only GET
+repairs passed15 unique restricted-PG and132 offline cases. Actual natural
+expiry still failed before Ready, after_media/heartbeat_expired,−3956ms margin:
+fresh verification9.41167s /170 task SQL, heartbeat gap9.44984s. Main upgrade78/c3
+blockers remain open. No TTL, ownership or final-check waiver is accepted.
+
+The distinct reviewed V6 native research/email baseline completed3/3 protected
+scenarios with two client reply turns each:33 completed known-usage calls,
+12 native Task/Run receipts and0 infrastructure failures. The closed parent7
+remains byte-exact, aggregate40. Root canonical containment disabled research
+(3Tasks/6attempts), email(9Tasks/18attempts) and module after completion. No
+external send, new candidate, promotion, grant renewal or protected-text exposure.
+The [site-specific report](../../sites/wildtubs-europe/AGENT-CALIBRATION-2026-10-18.md)
+records original failures, exact pins and remaining channel/adoption boundaries.
+This is scoped local text acceptance, not six independent saved workers, Gmail
+provider adoption, a live campaign or reviewed-main readiness.
+
+## Earlier owner steering and operating checkpoint
 
 The owner subsequently authorized unattended testing/calibration and the existing
 signed-in Gmail. This supersedes the earlier assignment's no-new-calibration

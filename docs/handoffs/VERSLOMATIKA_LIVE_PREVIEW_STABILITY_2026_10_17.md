@@ -560,3 +560,19 @@ plus the existing real Node page mutation/read-only test and actual generated
 PNG→imported WebP bytes/hash/foreign-page/expiry test. Neither route-only inert
 output test is presented as a native document or renderer test. Upgrade 91e54a8a
 owns this separate repair. Actual operating adoption/lifecycle remains pending.
+
+### Operating182 adoption and retained lifecycle failure —2026-10-18
+
+Root subsequently adopted both repairs into its clean owned Serving checkout at
+182e2936b2b021e092deb8a8f6c571a6874ba48f, schema49. A fresh1,971,640-byte
+backup, all96 table-row snapshots and890 native files were preserved; ordinary
+account/source continuity passed without a frontend restart or runner activation.
+The new natural-expiry attempt failed before Ready. Its first native refusal is
+after_media/heartbeat_expired, elapsed6754ms and pulse margin−3956ms, not evidence
+of actual account/source revocation. Passive API timing later records a9.44984s
+pulse gap and9.41167s fresh Authority.verify with170 task SQL statements. The
+unchanged3s heartbeat remains authoritative; query fusion alone is insufficient.
+Retain lease798c9ee6-85a2-4f27-88c5-7cc1989837b9 and the existing private lifecycle/
+guard/timing artifacts. No repetition ran alongside the completed native model
+calibration. Upgrade78/c3 lifecycle acceptance remains open; all previous original
+failures, scope, deadlines and final authorization fences remain unchanged.

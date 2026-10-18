@@ -1,6 +1,32 @@
 # Verslomatika customer accounts, public projects and dashboard
 
-## Autonomous local business/email work —2026-10-18
+## Current local result —2026-10-18 12:31 UTC
+
+The first complete current-source Hotube native research/email baseline passed
+3/3 independently held scenarios, including two client replies per scenario:
+33 complete/known-usage model calls, 12 native Task receipts and 12 TaskRun
+receipts, zero infrastructure failures and zero external sends. The original
+closed seven-call ledger remains byte-exact; aggregate usage is 40, not a reset.
+Root stopped both V6 model grants and the module, retaining research3Tasks/6attempts
+and email9Tasks/18attempts. No candidate/promotion or adaptive release changed.
+See [the scoped calibration report](../wildtubs-europe/AGENT-CALIBRATION-2026-10-18.md).
+This accepts the bounded native text workflow; six saved descriptions, actual
+Gmail/voice/production channels and the full platform have separate acceptance.
+
+Owned API18871 now runs clean `182e2936b2b021e092deb8a8f6c571a6874ba48f`,
+schema49. Source-only adoption retained a fresh1,971,640-byte backup, all96
+table-row snapshots and890 native files. Ordinary account continuity passed;
+human-started3030 build remains unchanged. The callback SQL and read-only GET
+locking repairs passed15 unique restricted-PG cases and132 offline checks.
+
+Actual182 live-preview natural expiry still FAILED before Ready. The retained
+native first refusal is after_media/heartbeat_expired, pulse margin−3956ms;
+passive timing shows a9.44984s pulse gap and9.41167s fresh authority verification
+with170 task SQL statements against the unchanged3s TTL. SQL fusion did not
+complete lifecycle acceptance. The previous78/c3 main-preflight blockers remain
+open; draft feature source is not main or hosted adoption.
+
+## Earlier autonomous local business/email checkpoint —2026-10-18
 
 The owner explicitly authorized unattended calibration/testing using the already
 signed-in Gmail. The complete email plan is now

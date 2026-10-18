@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Human rejected telling actors they are in simulation; that temporary clause/test was cancelled and is not delivered. Natural business projection preserves semantic evidence, numbers, unknowns, refusal/injection text and ordinary citations; only exact authored known prefixes/wrappers and runtime bookkeeping are excluded from actor packets. Original Config2/corpus/GRADE/labels/backend .test fences unchanged. All6 saved Config2 hint scans returned0fieldpaths; custodian independently reported protectedpersona3/cue-present0, no protected bodies read. Root original4complete knownusage failure retained. Receipt before PG FAIL retained; corrected actual8-hook and legacy workflows PASS. Actual paid quality/adoption remains Root-owned and unclaimed; no calls by this source lane.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_acquisition_business_projection.py offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py offline_tests/test_acquisition_six_grade_transport.py -q",
+      "result": "PASS",
+      "evidence": "60passed3.00s. New local fixtures check immutable source objects, exact authored prefix extraction, cue-free persona verbatim, unknown wrapper refusal, injection text preservation, genuine public citations, normal Config boundaries and examples. Existing role/grader semantics preserved."
+    },
+    {
+      "command": "qa_final.py test tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade tests/test_acquisition_native_chain_pg.py::test_known_lab_workflow_uses_native_tasks_and_independent_auxiliaries --label natural-projection-final-pg-20261018",
+      "result": "PASS",
+      "evidence": "Final2PG passed137.99s restricted pinet_runtime on dedicated47be_final only: actual8native Task/Run/attempt completion and typed canonical inputSHA/consumed parent proof, optional natural recipient hook, unchanged legacy lab path. Earlier2PG passed96.68s also covers ordinary noncalibrated six-role chain. Providers inert. First provenance-before FAIL retained."
+    },
+    {
+      "command": "pytest ignored controller/loop/actor/stage_budget/source_correction tests -q --asyncio-mode=auto; check_correction_proof.py",
+      "result": "PASS",
+      "evidence": "34inert tests PASS1.05s. Fixed4 suffix phase counts retain all prefix use in global120/native96/rolecaps, prefix mutation/unknown/protected-phase/recovery and wholeclock extension denied. Required13source pins include new projection, optional runner and regression files. Read-only actual retained snapshot/STOP/GO/prefix proof validated with explicit inert source identity stand-in;0DB/provider/ledger writes. Initial toy-proof fixture path/GO-hash mistakes retained in tool evidence before corrected PASS."
+    },
+    {
+      "command": "ruff check touched Python and ignored controller files; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks pass. No schema, Config/campaign/corpus/evaluator, operating DB, transport or production authority changes."
+    }
+  ],
+  "eventId": "f4cc086b-8567-43e3-bde2-3e5d90f7c0d7",
+  "sequence": 2,
+  "at": "2026-10-18T17:09:37.988Z"
+}

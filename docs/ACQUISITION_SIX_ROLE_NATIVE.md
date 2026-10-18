@@ -201,3 +201,38 @@ first implementation's `NativeTeam` indexing error and rejected immutable SQL
 test rewrites are retained separately. Corrected tests never disable SQL fences.
 Fifty-four offline six-role/strict-grade checks and 22 private controller tests
 also pass. These checks authorize no paid retry or reset of the stopped stage.
+
+### Business context and calibration provenance
+
+Saved-role provider input now uses the maintained `agent_role_projection`
+business DTO. Runtime site/campaign/organization keys, contact authority flags,
+capture addresses, budgets and immutable source-file locators remain server
+context. Business need, quantities, uncertainty, approved facts, role boundaries
+and parent outputs remain actor context. Ordinary evidence URLs and genuine
+public citations remain available. Only technical calibration `.test` URLs are
+omitted; the exact authored `Synthetic buyer requirements in en/de/pl: ` prefix
+and exact authored display name are projected without changing stored data.
+Customer text, including quoted malicious instructions, is not broadly rewritten.
+
+The optional recipient-input hook changes only the six-role workflow. An exact
+known authored persona wrapper yields its original need verbatim; a cue-free
+natural persona passes through verbatim. An unrecognized wrapper with lab cues
+fails closed. The recipient receives natural customer context and conversation,
+without case/split/expected labels or instructions announcing a test. The legacy
+runner retains its original recipient path. The evaluator retains the complete
+original provenance and unchanged grading instruction/hash. No Config, campaign,
+corpus, hidden label, original mail or backend `.test` fence is modified.
+
+Each successful workflow receipt additionally exposes the canonical typed input
+SHA and consumed typed parent Task/Run/role/output hashes. These are re-read from
+the owned retained request; the grader can compare them with preceding native
+handoffs without raw input, capture addresses or hidden persona leaking to agents.
+
+The first actual source8bd06 smoke remains a quality/expectation FAIL with four
+complete known-usage calls. Source QA is not a claim that the corrected model
+quality passes. Any explicitly admitted source correction retains all four calls
+in the original aggregate/native/role ceilings and original whole-stage clock;
+fresh grants use remaining role caps. Only the new phase/SQL-grant comparison uses
+the sealed post-prefix suffix. A new source, exact parent STOP/GO/prefix proof,
+no-dispatch preflight and manual Root GO are required; unknown usage is never
+resumed or refunded. These private controller gates create no new budget.

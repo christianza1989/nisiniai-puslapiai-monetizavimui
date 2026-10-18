@@ -2182,3 +2182,16 @@ No RLS/business-GUC/schema/handler/evaluator/Config/paid authority change. The
 separate retained47be_final QA database is the only fixture write target. Root
 owns stopped operating grants and final source adoption; no automatic retry or
 new stage clock/allowance is authorized by this source repair.
+
+2026-10-18 Root source8bd06 smoke ended after4 completeknown calls with legitimate
+unknown qualification from explicit lab authoring cues; firstFAIL/old grants,
+corpus, Config2 and evaluator preserved. Human rejected announcing simulation.
+Root opened exact agent_role_handler/calibration, new business projection,
+optional dialogue_lab recipient hook, focused offline/PG tests/docs/journal.
+Natural business DTO omits runtime/capture metadata; only exact authored known
+prefix/wrapper is projected, cue-free natural persona remains verbatim and
+unknown lab wrapper fails closed. Ordinary citations retained. Receipts add
+canonical typed inputSHA/consumed parent hashes. No protected body read: custodian
+reported protectedpersona3/cue-present0 only. Own source/inert QA has0paid calls.
+Ignored controller explicit fixed4 continuation retains global120/native96/role
+use and original17:45:00.815856UTC wholewall; Root owns final merge/admission/GO.

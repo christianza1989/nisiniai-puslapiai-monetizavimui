@@ -13,6 +13,7 @@ from ..tasks.codex import RunnerError
 from . import model_adapter, model_observation
 from .agent_role_authority import accepted, preflight
 from .agent_role_contract import ADAPTER, KIND, OUTPUT, RoleRequest
+from .agent_role_projection import business_context, business_specification, reviewed_facts
 from .contracts import Review
 from .correspondence import Correspondence
 from .dialogue import REPLY_INSTRUCTION, ReplyDecision, reply_blocks
@@ -99,9 +100,9 @@ class SavedRole(TaskRole):
             raise RunnerError("agent_role_schema_invalid")
         packet = {
             **data,
-            "agent_specification": self.context["specification"],
+            "agent_specification": business_specification(self.context["specification"]),
             **(
-                {"reviewed_business_source": self.context["reviewed_business_source"]}
+                {"reviewed_business_source": reviewed_facts(self.context["reviewed_business_source"])}
                 if "reviewed_business_source" in self.context
                 else {}
             ),
@@ -169,18 +170,7 @@ class AgentRoleHandler(ModelHandler):
             raise RunnerError("runner_unavailable")
         bound, value, work = await preflight(tx, task)
         observation = tx.info["acquisition_agent_role_context"][task.id]
-        data = {
-            "campaign": value.campaign.model_dump(mode="json"),
-            "prospect": value.prospect.model_dump(mode="json"),
-            "job_text": value.job_text,
-            "parents": [{"role": p["request"].role, "output": p["output"]} for p in observation["parents"]],
-        }
-        if value.role == "quality":
-            data["artifact_sha256"] = value.parents[0].output_sha256
-        if observation["mail"] is not None:
-            data.update(
-                transcript=observation["mail"]["transcript"], suppressed=observation["mail"]["suppressed"]
-            )
+        data = business_context(value, parents=observation["parents"], mail=observation["mail"])
         return {
             "_task_id": task.id,
             "_user_id": task.user_id,

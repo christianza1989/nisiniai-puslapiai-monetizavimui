@@ -440,7 +440,16 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
     from pinet_core.config import settings
     from pinet_core.models import utcnow
 
-    p, fake = six, Roles()
+    class CalibratedRoles(Roles):
+        async def __call__(self, role, schema, instruction, data, heartbeat, deadline):
+            assert "CLOSED SIMULATION" not in instruction
+            assert not {"private_persona", "expected_initial", "expected_classifications", "calibration"} & data.keys()
+            assert not {"site_id", "campaign_id", "enabled", "max_model_calls"} & data["campaign"].keys()
+            assert not {"organization_key", "site_id", "contact_verified"} & data["prospect"].keys()
+            assert "sources" not in data["agent_specification"]
+            return await super().__call__(role, schema, instruction, data, heartbeat, deadline)
+
+    p, fake = six, CalibratedRoles()
     p["request"]["prospect"].update(
         contact_verified=True, contact_source_id="listing", contact_basis_verified=True, provider_allowed=True
     )
@@ -451,7 +460,10 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
             "archetype": "known-inert",
             "prospect": p["request"]["prospect"],
             "recipient": p["request"]["recipient"],
-            "persona": "Known synthetic six-agent infrastructure scenario " + str(n),
+            "persona": "You are a synthetic holiday-accommodation buyer speaking en. "
+            "Keep the initial requirements in the prospect evidence. "
+            "In the first and only reply, naturally express: Please clarify requirements for option " + str(n)
+            + ". This is one closed laboratory exchange; do not request a second turn.",
             "expected_classifications": ["question"],
             "expected_initial": "draft_ready",
         }
@@ -517,7 +529,9 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
 
         async def ask(self, schema, instruction, data):
             self.calls += 1
-            assert schema is RecipientTurn and data["private_persona"] == cases[0]["persona"]
+            assert schema is RecipientTurn
+            assert "private_persona" not in data and "synthetic" not in instruction
+            assert data["customer_context"]["current_need"] == "Please clarify requirements for option 0."
             return RecipientTurn(event="reply", body="Could you clarify the requirements?", finished=True)
 
     class Evaluator:
@@ -528,6 +542,25 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
             assert schema is agent_role_calibration.SixRoleGrade and len(data["native_receipts"]) == 8
             assert {row["role"] for row in data["native_receipts"]} == set(ROLES)
             assert all(row["execution"]["usage"]["usage_complete"] for row in data["native_receipts"])
+            # Input metadata comes from the canonical owned retained request,
+            # never the caller's raw input or private persona/expected labels.
+            from pinet_core.creation.service import digest
+
+            previous = None
+            for row in data["native_receipts"]:
+                async with scope(token=token_hash(p["token"])) as tx:
+                    actor = await customer_session(tx, p["token"])
+                    typed = await agent_role_tasks.read_request(tx, actor, row["task_id"])
+                    from pinet_core.acquisition.model_models import ModelTaskBinding
+
+                    bound = await tx.get(ModelTaskBinding, row["task_id"])
+                assert row["input_sha256"] == digest(typed.model_dump(mode="json")) == bound.input_sha256
+                assert row["consumed_parents"] == [parent.model_dump(mode="json") for parent in typed.parents]
+                assert row["consumed_parents"] == ([previous] if previous else [])
+                assert row["result"]["handoff"]["task_id"] == row["task_id"]
+                assert row["result"]["handoff"]["run_id"] == row["execution"]["run_id"]
+                assert not {"input", "request", "private_persona", "expected_initial"} & row.keys()
+                previous = row["result"]["handoff"]
             return schema(
                 factual=True,
                 appropriate=True,

@@ -15,8 +15,8 @@ from ..models import new_id
 from ..source_observation import SourceObservationError
 from ..tasks.codex import RunnerError
 from ..tasks.models import Task
-from ..tasks.service import append_event
-from . import model_adapter
+from ..tasks.service import append_event, lease_deadline
+from . import model_adapter, model_observation
 from . import model_authority as authority
 from .contracts import Assessment, Review
 from .correspondence import Correspondence
@@ -135,6 +135,25 @@ async def usage_for(tx, task_id, run_id, user_id, environment_id, source_revisio
         "model_calls", "settled_calls", "unknown_usage_calls", "usage_complete")}}
 
 
+async def renew_role_lease(tx, task, run_id, *, phase):
+    """Full preflight and canonical Task lock precede this ordinary heartbeat.
+
+    Native proofs between roles consume lease time too. Renew only a STILL live
+    exact run after those proofs; no expired lease or authority can be revived.
+    """
+    now = await tx.scalar(text("SELECT clock_timestamp()"))
+    deadline = tx.info.get("acquisition_model_deadlines", {}).get(task.id)
+    reason = ("task_not_running" if task.status != "running" else "run_changed" if task.run_id != run_id
+        else "lease_missing" if not task.lease_until else "lease_expired" if task.lease_until <= now
+        else "authority_deadline_missing" if deadline is None
+        else "authority_deadline_expired" if deadline <= now else None)
+    if reason:
+        model_observation.task_guard(tx, task, phase, reason, now=now)
+        raise RunnerError("authorization_revoked")
+    task.lease_until = min(lease_deadline(), deadline)
+    return now
+
+
 class TaskRole:
     def __init__(self, context, role, heartbeat, run):
         self.context, self.role, self.heartbeat, self.run = context, role, heartbeat, run
@@ -148,10 +167,7 @@ class TaskRole:
             # Parent actor/Creation/Agent locks precede Task/Run and then Auth trigger.
             _, value, _ = await preflight(tx, task)
             task = await tx.get(Task, task.id, with_for_update=True, populate_existing=True)
-            now = await tx.scalar(text("SELECT clock_timestamp()"))
-            if (task.status != "running" or task.run_id != context["_run_id"]
-                    or not task.lease_until or task.lease_until <= now):
-                raise RunnerError("authorization_revoked")
+            now = await renew_role_lease(tx, task, context["_run_id"], phase="role_reserve")
             prior = list(await tx.scalars(select(ModelAttempt).where(ModelAttempt.task_id == task.id)
                 .order_by(ModelAttempt.ordinal)))
             if not next_role([{"role": row.role, "state": row.state} for row in prior], self.role,
@@ -193,12 +209,12 @@ class TaskRole:
                     raise RunnerError("authorization_revoked", observed_usage(usage))
                 await preflight(tx, task)
                 task = await tx.get(Task, task.id, with_for_update=True, populate_existing=True)
-                if task.status != "running" or task.run_id != receipt["run_id"]:
-                    raise RunnerError("authorization_revoked", observed_usage(usage))
+                await renew_role_lease(tx, task, receipt["run_id"], phase="role_settle_before")
             if not await write(tx):
                 raise RunnerError("acquisition_model_accounting_failed", observed_usage(usage))
             if state == "succeeded":
                 await preflight(tx, task)
+                await renew_role_lease(tx, task, receipt["run_id"], phase="role_settle_after")
 
     async def ask(self, schema, instruction, data):
         from .dialogue import ReplyDecision
@@ -216,6 +232,9 @@ class TaskRole:
             return result
         except BaseException as error:
             usage = observed or getattr(error, "receipt", None)
+            model_observation.record(task_id=self.context["_task_id"], run_id=receipt["run_id"],
+                source_revision=receipt["source_revision"], phase="role_execution", role=self.role,
+                code=getattr(error, "code", None), usage_known=observed_usage(usage) is not None)
             observed = observed_usage(usage)
             try:
                 await asyncio.shield(self.settle(receipt, "failed", usage))
@@ -268,13 +287,21 @@ class ModelHandler:
         task = await tx.get(Task, task_id, populate_existing=True)
         if task is None:
             raise RunnerError("authorization_revoked")
-        await preflight(tx, task)
+        try:
+            await preflight(tx, task)
+        except DENIED as error:
+            self.observe_guard(tx, task, "authority_locks", getattr(error, "code", None))
+            raise
 
     async def completion_locks(self, tx, claimed):
         task = await tx.get(Task, claimed["task_id"], populate_existing=True)
         if task is None:
             raise RunnerError("authorization_revoked")
-        _, value, work = await preflight(tx, task)
+        try:
+            _, value, work = await preflight(tx, task)
+        except DENIED as error:
+            self.observe_guard(tx, task, "completion_locks", getattr(error, "code", None))
+            raise
         if value.native is not None:
             tx.info.setdefault("acquisition_native_completion", {})[task.id] = (
                 tx.sync_session.get_transaction(), work)
@@ -283,8 +310,12 @@ class ModelHandler:
         try:
             await preflight(tx, task)
             return True
-        except DENIED:
+        except DENIED as error:
+            self.observe_guard(tx, task, "authority", getattr(error, "code", None))
             return False
+
+    def observe_guard(self, tx, task, phase, code, *, now=None, prior_failure=None):
+        model_observation.task_guard(tx, task, phase, code, now=now, prior_failure=prior_failure)
 
     def deadline_valid(self, tx, task, now):
         expiry = tx.info.get("acquisition_model_deadlines", {}).get(task.id)

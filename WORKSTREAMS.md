@@ -1882,3 +1882,14 @@ First source_unavailable pre-admission failure preserved; see
 docs/ACQUISITION_NATIVE_CHAIN.md. Implementation window closes with scoped draft
 PR to Root's integration branch; review/integration and actual adoption remain
 Root-owned. No live/paid/protected run or operating migration was performed.
+
+## Native role lease diagnosis — 2026-10-18
+
+Issue66/comment6246342906; own branch codex/native-role-lease-20261018 from frozen
+Serving1a751d0c12c128468f63fb22d7d4e75d57ef901b. Root reopened acquisition/native
+worker scope after TRAIN-only known researcher / unknown reviewer failure. Own
+role-boundary lease checks/renewal and safe guard diagnostics only if reproduced;
+exact acquisition model handler/adapter/observation, worker/config, focused tests,
+this append and native-chain doc. Root retains UI/Serving/operating adoption.
+No paid retry, expiry/counter renewal, source/holdout/corpus edits or payload reads.
+Inert owned15549 PG only; default15s lease and authority checks stay intact.

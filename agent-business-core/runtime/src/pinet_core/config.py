@@ -50,6 +50,7 @@ class Settings(BaseSettings):
     # Separate privileged model authorization; capture/work rights do not enable it.
     acquisition_model_enabled: bool = False
     acquisition_native_chain_enabled: bool = False
+    acquisition_model_guard_observation_enabled: bool = False
     acquisition_model_runner_enabled: bool = False
     acquisition_model_actor_ids: list[str] = Field(default_factory=list, max_length=16)
     acquisition_model_runner_seconds: int = Field(default=90, ge=10, le=120)

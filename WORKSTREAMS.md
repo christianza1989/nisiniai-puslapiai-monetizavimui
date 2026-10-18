@@ -1,3 +1,35 @@
+## Durable LT mail display schema — helper 2026-10-18 source complete
+
+Root-assigned issue66/comment6243877013; own NEW managed worktree/branch
+mail-display-schema-20261018 / codex/mail-display-schema-20261018 from pushed
+d415c8727facc53ab14a34438f9bb2cce08e563a. Paired startPASS00:46:25/27UTC,
+private main533/publicec8; read-only companion255fea0 unchanged.
+Own NEW mail_view/task_schema.py, task_models.py,0047_mail_display_tasks.py;
+migrations/env.py import only; NEW offline/owned-isolatedPG schema tests/doc,
+this prefix and separate journal. Exactly2 control_ tables DisplayPolicy/Job,
+commonTask/Run sole queue/attempt,4 frozen typed functions, one-shot metadata,
+exact0046 checks/classifier extension. Existing Grant/Mail/Case unique anchors
+already present; no old migrations/acquisition schema/source edits.
+Root owns all runtime service/handler/admin/config/worker/runner/translations/CLI
+and integrated PG. No operating DB/adoption/provider/SMTP/closed174 changes.
+Only this helper's new labelled QA may be migrated/tested; retain history.
+Root extended frozen settlement to8args with9terminalreasons+usage_observed;
+pre-IO0calls/0unknown/complete true, reserved checkpointMAX with no state/event/
+Record mutations, verified Account finalSQL guard. No extra fn/table/column.
+Latest31PG PASS/1intentional46baselineSKIP141.01s,51pure PASS1.55s/RuffPASS;
+prior10legacyMail/Direct PASS. Latest fresh46→47→empty46 exactboundary/check
+hashrestore→47/bootstrapPASS; populateddowngradeREFUSED with7tablecounts/revision
+unchanged. First source/PG authoring failures retained under own upgrade
+6e2773d4-e778-4b32-ae11-df959ad94ee1; Root owns stale4-handler unit expectation.
+Only scoped source handed off; no operating adoption/main merge claimed.
+Last Root P2 extension: guarded read-only mail_display_projection for current
+Business owner across private Job owners and strict legacy noRun Task markers;
+no Job/Task/Policy ids or usage exposure, no RLS/IO widening. Stable source UQ
+name uq_mail_display_source.2tables/4execution helpers unchanged,1read helper.
+Additional5PG PASS30.67s (actual2owner text/claim/legacy/ACL/UQ cases), expanded
+51pure PASS1.46s and latest5-helper emptydown/up/bootstrapPASS. Original scope
+verification events remain immutable; added final verification event covers this.
+
 ## Cancelled CLI usage receipt — helper 2026-10-18 source complete
 
 Root-assigned dependency, issue66/comment6243723985. Own clean branch

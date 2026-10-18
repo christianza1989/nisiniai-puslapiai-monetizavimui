@@ -21,6 +21,7 @@ from pinet_core.customer_profile import models as customer_profile_models  # noq
 from pinet_core.customer_profile import refresh_models as customer_source_refresh_models  # noqa: F401
 from pinet_core.director import models as director_models  # noqa: F401
 from pinet_core.facebook import models as facebook_models  # noqa: F401
+from pinet_core.mail_view import task_models as mail_display_models  # noqa: F401
 from pinet_core.models import Base
 from pinet_core.public_projects import models as public_models  # noqa: F401
 from pinet_core.site_build import continuation_models as site_continuation_models  # noqa: F401

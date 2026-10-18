@@ -13,26 +13,26 @@ const put=async(file,data)=>{await mkdir(path.dirname(file),{recursive:true});co
 const note='Synthetic isolated review of this exact page; no live factual or browser acceptance is asserted.';
 const evidence=Object.fromEntries(workflow.REVIEW_AREAS.map(a=>[a,note]));
 const at=new Date().toISOString(),url='https://gemini.google.com/u/4/app/synthetic';
-function bodyBlocks(title){const source={url:'https://manufacturer.example/item',label:'Gamintojo aprašas',reason:'Konkretus sintetinis gaminio aprašas naudojamas tik izoliuotam programos bandymui.'};return[
+function bodyBlocks(title,sourceCount=1){const sources=Array.from({length:sourceCount},(_,i)=>({url:i?'https://manufacturer.example/item-'+i:'https://manufacturer.example/item',label:i?'Gamintojo dokumentas '+(i+1):'Gamintojo aprašas',reason:'Konkretus sintetinis gaminio aprašas naudojamas tik izoliuotam programos bandymui.'}));return[
  {tag:'H1',text:title,anchors:[]},{tag:'P',text:'Sintetinis palyginimo aprašymas.',anchors:[]},
- {tag:'P',text:'Pirmas sakinys. Gamintojo aprašas paaiškina bandymo ribas.',anchors:[{url:source.url,label:source.label}]},
+ {tag:'P',text:'Pirmas sakinys. '+sources.map(s=>s.label).join('; ')+' paaiškina bandymo ribas.',anchors:sources.map(({url,label})=>({url,label}))},
  {tag:'P',text:'Antra pastraipa skirta tik programos bandymui.',anchors:[]},
- {tag:'P',text:'PRIVATE_SOURCE_JSON: '+JSON.stringify([source]),anchors:[]}].map(b=>({...b,html:b.tag==='H1'?`<h1>${enc(b.text)}</h1>`:b.anchors.length?`<p>Pirmas sakinys. <a href="${source.url}">${source.label}</a> paaiškina bandymo ribas.</p>`:`<p>${enc(b.text)}</p>`}));}
-async function fixture(name='one'){
- const dir=path.join(root,name),ids=['page-a','page-b'];
+ {tag:'P',text:'PRIVATE_SOURCE_JSON: '+JSON.stringify(sources),anchors:[]}].map(b=>{let html=enc(b.text);for(const a of b.anchors)html=html.replace(enc(a.label),`<a href="${a.url}">${enc(a.label)}</a>`);const tag=b.tag.toLowerCase();return{...b,html:`<${tag}>${html}</${tag}>`};});}
+async function fixture(name='one',sourceCounts=[1,1]){
+ const dir=path.join(root,name),ids=sourceCounts.map((_,i)=>'page-'+String.fromCharCode(97+i));
  const pages=ids.map((id,i)=>({id,siteId:'promedical',type:'faq',slug:id,title:'Old '+i,description:'Old',intent:'Old reader',body:[{type:'paragraph',text:'Old original'}],publishAt:'2026-10-01T00:00:00Z',media:[],links:[],externalLinks:[],linkSuggestions:[],networkLinkSuggestions:[],status:'draft',approval:null,publishedRevision:null,factChecks:[],createdAt:at,updatedAt:at}));
  const site={id:'promedical',canonicalHost:'promedical.lt',name:'Synthetic',offer:'Isolated fixture',facts:'Synthetic',audience:'Synthetic',locale:'lt-LT',timezone:'Europe/Vilnius',brand:{},contact:{email:'info@promedical.lt'},assets:[],pages};
  const nativePath=path.join(process.env.STUDIO_DATA_DIR,'sites/promedical.json');await put(nativePath,site);
  const checkpoints=[path.join(dir,'CP.json'),path.join(dir,'TES.json')];for(const file of checkpoints)await put(file,{work:{},publishingPause:'paused_by_owner'});
- const specs=pages.map((p,i)=>({pageId:p.id,title:'Synthetic '+name+' title '+i,bodyParagraphCount:2,sourceReasonCount:1}));
- const blocks=specs.flatMap(s=>bodyBlocks(s.title));
+ const specs=pages.map((p,i)=>({pageId:p.id,title:'Synthetic '+name+' title '+i,bodyParagraphCount:2,sourceReasonCount:sourceCounts[i]}));
+ const blocks=specs.flatMap(s=>bodyBlocks(s.title,s.sourceReasonCount));
  const raw={at,url,queryCount:1,responseCount:1,responseIndex:0,responseId:'synthetic-r1',queries:[{text:'synthetic prompt'}],stopControls:[],text:blocks.map(b=>b.text).join('\n\n'),html:blocks.map(b=>b.html).join(''),blocks,orderedAnchors:blocks.flatMap(b=>b.anchors)};
  const captureRef=await put(path.join(dir,'raw.json'),raw),promptRef=await put(path.join(dir,'prompt.txt'),'synthetic prompt');
  const refs=await Promise.all(['ax','dom','png'].map(t=>put(path.join(dir,t+'.txt'),'Synthetic '+t+' fixture, not actual UI proof.')));
  const proof={mechanism:'ACTUAL_PLAYWRIGHT_UI',at,accountPath:'/u/4',accountIdentity:'synthetic@example.com',model:{label:'4 Argon',selected:true,enabled:true,expanded:true},thinking:{label:'Žema',selected:true,enabled:true,expanded:true},refs:Object.fromEntries(['ax','dom','png'].map((t,i)=>[t,refs[i].path])),artifacts:refs};
  const modelProofRef=await put(path.join(dir,'proof.json'),{proofs:[{...proof,stage:'PRE'},{...proof,stage:'POST'}]});
  const records=[];for(let i=0;i<pages.length;i++){
-  const own=bodyBlocks(specs[i].title),original={title:specs[i].title,description:own[1].text,body:own.slice(2,4).map(b=>b.text),sourceItems:JSON.parse(own[4].text.slice('PRIVATE_SOURCE_JSON:'.length))};
+  const own=bodyBlocks(specs[i].title,specs[i].sourceReasonCount),original={title:specs[i].title,description:own[1].text,body:own.slice(2,4).map(b=>b.text),sourceItems:JSON.parse(own[4].text.slice('PRIVATE_SOURCE_JSON:'.length))};
   const factsRef=await put(path.join(dir,pages[i].id+'-facts.json'),{pageId:pages[i].id,originalCanonical:model.revisionHash(pages[i]),sourceReview:{wholeDocumentsRead:true,reviewer:'synthetic-editor'}});
   records.push({pageId:pages[i].id,input:{key:'Synthetic'+i+'WrittenDraft',pageId:pages[i].id,originalCanonical:model.revisionHash(pages[i]),intent:'Sintetinis pasirinkimo klausimas',links:[],mediaPolicy:'KEEP_EXACT',factsRef,capturePage:specs[i]},candidates:[{candidateId:'candidate-'+i,captureRef,candidate:{original,orderedBodyLinks:own.flatMap(b=>b.anchors),captureSelection:{responseIndex:0,responseId:'synthetic-r1',pages:specs},promptRef,modelProofRef,authoredAt:at,conversationUrl:url,identity:{accountPath:'/u/4',email:'synthetic@example.com',name:'Synthetic',modelUi:'4 Argon',thinkingUi:'Žema',backendModelId:null}}}],reviews:[{candidateId:'candidate-'+i,decision:'accepted',reviewer:'synthetic-editor',allH1DescriptionBodyReasonsPersonallyRead:true,factsAndLanguageAccepted:true,evidence}]});
  }
@@ -46,6 +46,25 @@ test('one command imports real isolated Core pages, binds reviews and both check
  const site=await model.getSite('promedical');for(const p of site.pages)assert(workflow.reviewCurrent(site,p,model.revisionHash(p)));
  const cp=JSON.parse(await readFile(f.config.checkpoints[0])),tes=JSON.parse(await readFile(f.config.checkpoints[1]));assert.deepEqual(cp,tes);assert.equal(cp.work.newReviewedDrafts,2);assert.equal(cp.work.remainingFullRewrites,1905);
  assert.equal((await registry.verifyTextProvenance('promedical')).status,'PASS_REVISION_AND_ARTIFACT_INTEGRITY');await assert.rejects(access(f.config.sharedLockPath));
+});
+test('4/4/3 source pages roundtrip through real isolated Core, DOM and current provenance without truncation',async()=>{
+ const f=await fixture('four-source-mixed',[4,4,3]),originals=f.records.map(r=>clone(r.candidates[0].candidate.original.sourceItems));
+ const run=createPrivateImporter({model,workflow,registry,config:f.config,captureDom:r=>dom(r),guardEpoch:async()=>{},refreshReaders:async()=>{}});
+ const result=await run(f.records,{runId:'synthetic-four-sources'});assert.deepEqual(result.outcomes.map(o=>o.status),['complete','complete','complete']);
+ const site=await model.getSite('promedical');for(const[i,p]of site.pages.entries()){
+  assert.deepEqual(p.externalLinks.map(({url,label,reason})=>({url,label,reason})),originals[i]);
+  assert(workflow.reviewCurrent(site,p,model.revisionHash(p)));assert.equal(p.externalLinks.length,[4,4,3][i]);
+ }
+ const cp=JSON.parse(await readFile(f.config.checkpoints[0])),tes=JSON.parse(await readFile(f.config.checkpoints[1]));assert.deepEqual(cp,tes);assert.equal(cp.work.newReviewedDrafts,3);
+ assert.equal((await registry.verifyTextProvenance('promedical')).status,'PASS_REVISION_AND_ARTIFACT_INTEGRITY');
+});
+test('eleven sources fail before native writes and explicit count mismatch cannot drop a source',async()=>{
+ for(const[mode,counts]of[['above-bound',[11,11]],['manifest-mismatch',[4,4]]]){
+  const f=await fixture(mode,counts),before=await readFile(f.config.nativePath);
+  if(mode==='manifest-mismatch')for(const record of f.records){record.input.capturePage.sourceReasonCount=3;record.candidates[0].candidate.captureSelection.pages.forEach(p=>p.sourceReasonCount=3);}
+  const run=createPrivateImporter({model,workflow,registry,config:f.config,captureDom:()=>assert.fail('No DOM for failed preflight'),guardEpoch:async()=>{},refreshReaders:()=>assert.fail('No readers for failed preflight')});
+  const result=await run(f.records);assert(result.outcomes.every(o=>o.status==='failed'));assert.deepEqual(await readFile(f.config.nativePath),before);
+ }
 });
 test('bad DOM page remains pending while good sibling is finalized',async()=>{
  const f=await fixture('partial');const run=createPrivateImporter({model,workflow,registry,config:f.config,captureDom:r=>dom(r,'page-a'),guardEpoch:async()=>{},refreshReaders:async()=>{}});

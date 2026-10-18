@@ -1,5 +1,9 @@
 import { createHash } from 'node:crypto';
 
+// Core V1 retains up to 20 externalLinks. Keep this pipeline's explicit per-page
+// count bounded below that limit without dropping legitimate four-source briefs.
+export const MAX_SOURCE_REASONS = 10;
+
 const sha = text => createHash('sha256').update(text, 'utf8').digest('hex');
 const fail = message => { throw new Error(`Captured response: ${message}`); };
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -103,7 +107,7 @@ export function selectCapturedPages(raw, selection) {
     text(page.pageId, 'page ID', 120); text(page.title, 'expected title', 300);
     if (ids.has(page.pageId) || titles.has(page.title)) fail('duplicate expected page ID/title');
     if (!Number.isInteger(page.bodyParagraphCount) || page.bodyParagraphCount < 1 || page.bodyParagraphCount > 2 ||
-        !Number.isInteger(page.sourceReasonCount) || page.sourceReasonCount < 1 || page.sourceReasonCount > 3) fail('invalid expected page shape');
+        !Number.isInteger(page.sourceReasonCount) || page.sourceReasonCount < 1 || page.sourceReasonCount > MAX_SOURCE_REASONS) fail('invalid expected page shape');
     ids.add(page.pageId); titles.add(page.title);
   }
   const response = selectResponse(raw, selection), headings = response.blocks.filter(block => block.tag === 'H1');

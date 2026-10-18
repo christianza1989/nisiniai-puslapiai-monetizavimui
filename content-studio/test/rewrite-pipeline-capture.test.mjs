@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { selectCapturedPages } from '../src/rewrite-pipeline/capture.mjs';
+import { selectCapturedPages, MAX_SOURCE_REASONS } from '../src/rewrite-pipeline/capture.mjs';
 
 const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 function block(tag, text, anchors = []) {
@@ -41,6 +41,53 @@ const specs = [
 ];
 const selection = pages => ({ responseIndex: 0, responseId: 'actual-response-0', pages: pages ?? specs });
 const good = () => flat([...page(specs[0].title), ...page(specs[1].title)]);
+
+function multiSourcePage(title, count) {
+  const sources = Array.from({ length: count }, (_, i) => ({ url: `https://example.test/source-${i + 1}`, label: `Šaltinis ${i + 1}`, reason: `Šis sintetinis dokumentas aprašo atskirą dalį ${i + 1}.` }));
+  const split = Math.ceil(count / 2);
+  const first = sources.slice(0, split).map(({ url, label }) => ({ url, label }));
+  const second = sources.slice(split).map(({ url, label }) => ({ url, label }));
+  const p1 = first.map(s => s.label).join(', ') + ' pateikia pirmos dalies duomenis.';
+  const p2 = second.map(s => s.label).join(', ') + ' paaiškina likusią dalį.';
+  return [block('H1', title), block('P', 'Sintetinis kelių dokumentų aprašymas.'), block('P', p1, first), block('P', p2, second), block('P', 'PRIVATE_SOURCE_JSON: ' + JSON.stringify([...sources].reverse()))];
+}
+
+test('explicit 4/4/3 mixed batch preserves every source, exact original words and independent footer order', () => {
+  const pages = [4, 4, 3].map((count, i) => ({ pageId: `mixed-${i}`, title: `Mišrus puslapis ${i}`, bodyParagraphCount: 2, sourceReasonCount: count }));
+  const raw = flat(pages.flatMap(p => multiSourcePage(p.title, p.sourceReasonCount))), before = JSON.stringify(raw);
+  const result = selectCapturedPages(raw, selection(pages));
+  assert.deepEqual(result.outcomes.map(o => o.status), ['captured', 'captured', 'captured']);
+  assert.deepEqual(result.outcomes.map(o => o.candidate.original.sourceItems.length), [4, 4, 3]);
+  for (const [i, outcome] of result.outcomes.entries()) {
+    assert.deepEqual(outcome.candidate.original.sourceItems, JSON.parse(raw.blocks[i * 5 + 4].text.slice('PRIVATE_SOURCE_JSON:'.length)));
+    assert.deepEqual(outcome.candidate.orderedBodyLinks, raw.blocks.slice(i * 5 + 2, i * 5 + 4).flatMap(b => b.anchors));
+    const slice = outcome.candidate.slice;
+    assert.equal(slice.sha256, createHash('sha256').update(raw.text.slice(slice.startUtf16, slice.endUtf16Exclusive)).digest('hex'));
+  }
+  assert.equal(JSON.stringify(raw), before);
+});
+
+test('explicit upper bound ten is supported while invalid per-page counts fail before parsing', () => {
+  assert.equal(MAX_SOURCE_REASONS, 10);
+  const spec = { pageId: 'ten', title: 'Dešimt šaltinių', bodyParagraphCount: 2, sourceReasonCount: 10 };
+  const raw = flat(multiSourcePage(spec.title, 10));
+  assert.equal(selectCapturedPages(raw, selection([spec])).outcomes[0].candidate.original.sourceItems.length, 10);
+  for (const count of [0, -1, 1.5, 11, '4', null, undefined]) assert.throws(() => selectCapturedPages(raw, selection([{ ...spec, sourceReasonCount: count }])), /invalid expected page shape/);
+});
+
+test('four-source mismatch rejects only its page; extra URL and anchor tamper remain guarded', () => {
+  const four = { pageId: 'four', title: 'Keturi šaltiniai', bodyParagraphCount: 2, sourceReasonCount: 4 };
+  const raw = flat([...multiSourcePage(four.title, 4), ...page(specs[1].title)]);
+  const mismatched = selectCapturedPages(raw, selection([{ ...four, sourceReasonCount: 3 }, specs[1]]));
+  assert.deepEqual(mismatched.outcomes.map(o => o.status), ['rejected', 'captured']);
+  assert.match(mismatched.outcomes[0].reason, /source reason count mismatch/);
+  const extra = multiSourcePage(four.title, 4), sources = JSON.parse(extra.at(-1).text.slice('PRIVATE_SOURCE_JSON:'.length));
+  sources[3].url = 'https://example.test/unlinked';
+  extra[4] = block('P', 'PRIVATE_SOURCE_JSON: ' + JSON.stringify(sources));
+  assert.match(selectCapturedPages(flat(extra), selection([four])).outcomes[0].reason, /source URL sets mismatch/);
+  const tampered = structuredClone(raw); tampered.orderedAnchors[3].label = 'Changed label';
+  assert.throws(() => selectCapturedPages(tampered, selection([four, specs[1]])), /anchor pairs mismatch/);
+});
 
 test('flat capture preserves exact words, links and independent footer order, with immutable raw', () => {
   const raw = good(), before = JSON.stringify(raw);

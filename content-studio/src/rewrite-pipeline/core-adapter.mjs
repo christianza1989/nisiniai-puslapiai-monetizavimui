@@ -4,7 +4,7 @@ import { mkdir, open, readFile, rename, unlink, writeFile } from 'node:fs/promis
 import path from 'node:path';
 import { applyBodyEdits, sha256Body } from './bounded-edits.mjs';
 import { validateGeminiProof } from './gemini-ui.mjs';
-import { selectCapturedPages } from './capture.mjs';
+import { selectCapturedPages, MAX_SOURCE_REASONS } from './capture.mjs';
 
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const copy = value => structuredClone(value);
@@ -49,7 +49,7 @@ export function prepareReviewedPage(record, site, model) {
   });
   // Labels remain exactly Gemini's; their literal occurrences must survive edits.
   for (const link of links) assert(edited.body.some(p => p.includes(link.label)), 'An authored link label changed');
-  const sources = original.sourceItems; assert(Array.isArray(sources) && sources.length >= 1 && sources.length <= 3);
+  const sources = original.sourceItems; assert(Array.isArray(sources) && sources.length >= 1 && sources.length <= MAX_SOURCE_REASONS);
   for (const s of sources) { assert.deepEqual(Object.keys(s).sort(),['label','reason','url']);pairs([s]); exactString(s.url,2048,'source URL');exactString(s.reason, 500, 'source reason'); assert(s.reason.split(/\s+/u).length <= 60); }
   const external = links.filter(p => new URL(p.url).hostname !== site.canonicalHost);
   assert.equal(new Set(external.map(p => p.url)).size, external.length, 'Duplicate external body URL');

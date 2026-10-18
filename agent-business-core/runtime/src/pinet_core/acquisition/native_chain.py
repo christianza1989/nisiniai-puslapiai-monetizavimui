@@ -19,7 +19,7 @@ from .models import AcquisitionCampaign
 from .work_models import ContactPolicy, CorrespondenceThread
 
 SCOPE = ("business_id", "organization_id", "user_id", "environment_id", "portfolio_id", "site_id",
-    "creation_id", "registration_id", "registration_fingerprint", "session_id", "source_revision",
+    "creation_id", "registration_id", "external_binding_id", "registration_fingerprint", "session_id", "source_revision",
     "module_fingerprint", "module_snapshot", "adapter_id", "work_registration_sha256")
 REVIEW_FIELDS = ("factual", "relevant", "one_clear_next_step", "no_unverified_promises", "no_source_instructions")
 
@@ -41,7 +41,7 @@ async def check_pair(tx, value, work):
     identities = ((str(pair.research_authorization_id), pair.research_fingerprint, "customer_research"),
                   (str(pair.email_authorization_id), pair.email_fingerprint, "email"))
     rows = []
-    # current() already proves/locks the shared owner, Registration, Creation,
+    # current() already proves/locks the shared owner and genuine source parent,
     # Module and private registration. Re-observe each distinct peer Config,
     # without repeating that identical expensive parent proof.
     for identity, expected, purpose in identities:
@@ -55,12 +55,15 @@ async def check_pair(tx, value, work):
                 .execution_options(populate_existing=True))
             if (agent is None or agent.purpose != purpose or agent.current_revision != row.config_revision
                     or any(getattr(agent, key) != getattr(row, key) for key in (
-                        "creation_id", "registration_id", "registration_fingerprint", "business_id",
+                        "creation_id", "registration_id", "external_binding_id", "registration_fingerprint", "business_id",
                         "organization_id", "portfolio_id", "user_id", "environment_id"))):
                 raise RunnerError("acquisition_native_pair_changed")
             config = await agents.current_config(tx, agent)
             view = agents.config_view(agent, config)
-            if config.id != row.config_id or view["sha256"] != row.config_sha256:
+            if (config.id != row.config_id or view["sha256"] != row.config_sha256
+                    or row.external_binding_id is not None and (
+                        config.external_binding_id != row.external_binding_id
+                        or config.external_binding_fingerprint != row.registration_fingerprint)):
                 raise RunnerError("acquisition_native_pair_changed")
         rows.append(row)
     r, e = rows

@@ -1,3 +1,17 @@
+## Current-owner qualification and current reply delivery — Root2026-10-18
+
+Issue66/comment6253660998. Own agent_role_projection.py, agent_role_authority.py,
+agent_role_handler.py ROLE_RULES, targeted offline/retainedPG tests and context doc.
+Actualdca smoke completed8nativeTasks/all6Configs +persona/evaluator10knowncalls;
+qualityFAIL qualification/coordinator exposed omitted verified contact/validity
+and absent latest transcript at final coordinator. Two isolated regressions RED
+then8focused checks GREEN. Current source derives mail via verified quality→reply
+lineage, current inbound/hash/revision; preserves initial prospect, refusal and
+stale-decision rejection. No schema/Config/corpus/GRADE changes or new authority.
+All dca6grants/module canonically stopped. Original8calls and latest10 retained;
+no protected/providercampaign sends. Human renewed paid-call authorization; next
+source correction keeps the10charged calls and its original whole-stage deadline.
+
 ## Current-owner reviewed Gmail campaign increment — Root2026-10-18
 
 Issue66/comment6253324360, own Gmail branch from2831e5f8. Own mail_provider/campaign.py,

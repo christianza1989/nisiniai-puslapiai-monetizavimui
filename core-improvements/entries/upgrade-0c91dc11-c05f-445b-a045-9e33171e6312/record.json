@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Deliver verified qualification validity/contacting fields and the current verified reply transcript to the final coordinator instead of stale initial prospect evidence",
+  "category": "code",
+  "evidence": [
+    "docs/AGENT_BUSINESS_CONTEXT.md",
+    "agent-business-core/runtime/offline_tests/test_acquisition_context_delivery.py",
+    "agent-business-core/runtime/tests/test_acquisition_role_context_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_projection.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_handler.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_context_delivery.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_business_projection.py",
+    "agent-business-core/runtime/tests/test_acquisition_role_context_pg.py",
+    "docs/AGENT_BUSINESS_CONTEXT.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert with runners held; preserve Config2, the original protected corpus/evaluator, both closed ledgers and all actual failures. Never rewrite the initial prospect or customer correction.",
+  "id": "upgrade-0c91dc11-c05f-445b-a045-9e33171e6312",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "dca85f994d0ddcef98df68fbf13e555639211ae5",
+  "createdAt": "2026-10-18T18:42:11.874Z"
+}

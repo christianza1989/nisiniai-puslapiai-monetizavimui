@@ -42,13 +42,15 @@ def business_context(value, *, parents, mail=None):
     name = "Accommodation team" if calibrated and _NAME.fullmatch(prospect.name) else prospect.name
     evidence = []
     for source in prospect.evidence:
-        item = {"id": source.id, "fact": requirement(source.fact, calibration=calibrated)}
+        item = {"id": source.id, "fact": requirement(source.fact, calibration=calibrated),
+                "checked_at": source.checked_at.isoformat(), "expires_at": source.expires_at.isoformat(),
+                "use_allowed": source.use_allowed}
         if not calibrated or public_citation(source.url):
             item["url"] = str(source.url)
         evidence.append(item)
     facts = []
     for source in value.campaign.facts:
-        item = {"id": source.id, "text": source.text}
+        item = {"id": source.id, "text": source.text, "expires_at": source.expires_at.isoformat()}
         if not calibrated or public_citation(source.source):
             item["source"] = source.source
         facts.append(item)
@@ -57,11 +59,15 @@ def business_context(value, *, parents, mail=None):
                      ("sector", "objective", "mode", "segments", "countries")},
         "prospect": {"name": name, "role": prospect.role, "segment": prospect.segment,
                      "country": prospect.country, "status": prospect.status,
-                     "suppressed": prospect.suppressed, "evidence": evidence},
+                     "suppressed": prospect.suppressed, "evidence": evidence,
+                     **{key: getattr(prospect, key) for key in ("contact_source_id", "contact_verified",
+                         "contact_basis_verified", "provider_allowed")}},
         "job_text": value.job_text,
         "parents": [{"role": parent["request"].role, "output": deepcopy(parent["output"])} for parent in parents],
     }
     data["campaign"]["facts"] = facts
+    data["campaign"].update(enabled=value.campaign.enabled, paused=value.campaign.paused,
+                            expires_at=value.campaign.expires_at.isoformat())
     if value.role == "quality":
         data["artifact_sha256"] = value.parents[0].output_sha256
     if mail is not None:

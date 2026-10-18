@@ -218,6 +218,21 @@ async def observe(tx, value, work):
         if value.role == "quality" and parents[0]["request"].role == "reply"
         else None
     )
+    parent_effect = False
+    if value.role == "coordinator" and parents:
+        # Follow the already verified quality -> reply lineage. A coordinator
+        # cannot supply arbitrary mail IDs, and the original prospect stays
+        # immutable even when the customer corrects it later in the thread.
+        artifact = (await parent_context(tx, parents[0]["request"]))[0]
+        if artifact["request"].role == "reply":
+            expected_mail = artifact["request"].mail
+            receipt = parents[0]["task"].result.get("correspondence")
+            if receipt is not None:
+                if (not isinstance(receipt, dict)
+                        or receipt.get("thread_id") != str(expected_mail.thread_id)
+                        or receipt.get("revision") != expected_mail.revision + 1):
+                    raise RunnerError("agent_role_mail_context_changed")
+                parent_effect = True
     if expected_mail is not None:
         mail = await HeadlessMail(db).reply_context(
             tx,
@@ -229,7 +244,7 @@ async def observe(tx, value, work):
         applied = str(value.request_id) in tx.info.get("acquisition_agent_role_applied", set())
         if (
             mail["binding"].input_sha256 != expected_mail.input_sha256
-            or mail["thread"].revision != expected_mail.revision + int(applied)
+            or mail["thread"].revision != expected_mail.revision + int(applied or parent_effect)
             or mail["campaign"] != value.campaign
             or mail["prospect"] != value.prospect
             or value.role == "reply"

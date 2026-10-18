@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual complete six-role smoke retained 10 known charged calls with qualification/coordinator quality failure. Separate delivery regressions reproduced 2 FAIL on dca85f99, then 8 focused PASS after repair. Expanded run had 59 PASS and one test expecting RunnerError instead of canonical LedgerError for correct stale-inbound refusal. Fixed that fixture type only; targeted stale test then PASS, proving no further provider dispatch. No corpus, grader, Config2, schema, authority widening, operating model retry or historical ledger edits.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_context_delivery.py offline_tests/test_acquisition_business_projection.py tests/test_acquisition_role_context_pg.py (original focused positive case)",
+      "result": "PASS",
+      "evidence": "8 passed in36.01s after the 2-failure baseline; retained private QA, no provider"
+    },
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_context_delivery.py offline_tests/test_acquisition_business_projection.py offline_tests/test_acquisition_agent_roles.py offline_tests/test_acquisition_agent_role_calibration.py tests/test_acquisition_role_context_pg.py tests/test_acquisition_agent_roles_pg.py::test_parent_or_peer_tampering_rejected_before_task_dispatch; targeted corrected stale-inbound test",
+      "result": "PASS",
+      "evidence": "59 passed with one fixture exception-type mismatch in133.38s; the corrected sole test passed in33.76s, log SHA256fa0030c4c6e8249b26fdb69fff2c43ed36dda9200f5bb54e41f591b91aa758ca. All54offline/6restrictedPG cases now observed passing, across these runs."
+    },
+    {
+      "command": "ruff check exact changed acquisition source/tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed; source changes limited to projection, verified reply lineage and role guidance"
+    }
+  ],
+  "eventId": "ed73f12d-5923-422f-b426-a36f211a5b60",
+  "sequence": 2,
+  "at": "2026-10-18T18:48:47.446Z"
+}

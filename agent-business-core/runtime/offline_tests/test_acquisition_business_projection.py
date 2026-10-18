@@ -36,10 +36,12 @@ def test_calibration_projection_omits_only_runtime_markers_preserves_need_and_or
     before = original.model_dump(mode="json")
     projected = business_context(original, parents=[])
     expected = before["prospect"]["evidence"][0]["fact"].split(": ", 1)[1]
-    assert projected["prospect"]["evidence"] == [{"id": "listing", "fact": expected}]
+    evidence = projected["prospect"]["evidence"][0]
+    assert evidence["id"] == "listing" and evidence["fact"] == expected and "url" not in evidence
     assert projected["prospect"]["name"] == "Accommodation team"
-    assert not {"site_id", "campaign_id", "max_model_calls", "expires_at"} & projected["campaign"].keys()
-    assert not {"site_id", "organization_key", "contact_verified"} & projected["prospect"].keys()
+    assert not {"site_id", "campaign_id", "max_model_calls"} & projected["campaign"].keys()
+    assert not {"site_id", "organization_key"} & projected["prospect"].keys()
+    assert projected["prospect"]["contact_verified"] == original.prospect.contact_verified
     assert "recipient" not in projected and "calibration" not in projected
     assert original.model_dump(mode="json") == before
     assert "CLOSED SIMULATION" not in instruction(original)

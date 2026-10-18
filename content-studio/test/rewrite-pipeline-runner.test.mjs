@@ -394,14 +394,85 @@ test('CLI forwards importer coalescing config through the same bounded validatio
     assert.match(child.stderr, /importCoalesceMs must/);
   }
 });
-test('default runner idle lanes poll at one second without blocking later import', async () => {
-  const store=memoryStore(['a']),normal=ports();let generating=false,idleUpdates=0;
-  const update=store.update;store.update=async mutator=>{if(generating)idleUpdates++;return update(mutator);};
+test('idle polls use reads without whole-state updates or writes and still import later work', async t => {
+  const {store}=await fixture(t,['a']),normal=ports();let generating=false,idleUpdates=0,idleWrites=0,idleReads=0,idleSnapshots=0;
+  const update=store.update.bind(store),write=store.write.bind(store),read=store.read.bind(store),snapshot=store.snapshot.bind(store);
+  store.update=async mutator=>{if(generating)idleUpdates++;return update(mutator);};
+  store.write=async document=>{if(generating)idleWrites++;return write(document);};
+  store.read=async()=>{if(generating)idleReads++;return read();};
+  store.snapshot=async()=>{if(generating)idleSnapshots++;return snapshot();};
   const result=await runRewritePipeline({store,importCoalesceMs:1,ports:ports({generate:async request=>{
     generating=true;await delay(1100);generating=false;return normal.generate(request);
   }})});
-  assert.ok(idleUpdates<=4,`idle lanes performed ${idleUpdates} whole-state updates while generation waited`);
+  assert.equal(idleUpdates,0);assert.equal(idleWrites,0);assert.ok(idleReads>=2);assert.ok(idleSnapshots>=2);
   assert.equal(result.pages[0].status,'COMPLETE');
+});
+
+test('cheap disk snapshot waits for the existing writer lock and never invokes mutation validation',async t=>{
+  const {store}=await fixture(t,['a']),entered=deferred(),release=deferred();let read=false;
+  const held=store.locked(async()=>{entered.resolve();await release.promise;});await entered.promise;
+  store.update=()=>{throw Error('Snapshot must not mutate');};
+  const snapshot=store.snapshot().then(d=>{read=true;return d;});await delay(15);assert.equal(read,false);
+  release.resolve();await held;assert.equal((await snapshot).pipeline.pages[0].pageId,'a');
+});
+
+async function readyMemoryStore(status) {
+  const store=memoryStore(['a']);
+  if(status!=='QUEUED')await store.update(d=>{const p=d.pipeline.pages[0];p.status=status;
+    p.attempts=[{attemptId:'old-attempt',batchId:'old-batch'}];p.candidates=[{candidateId:'old-candidate',batchId:'old-batch',candidate:{originalBody:'Immutable original'}}];});
+  return store;
+}
+
+test('each lane rechecks current eligibility after its optimistic read before claiming',async()=>{
+  for(const status of ['QUEUED','GENERATED','ACCEPTED']){
+    const store=await readyMemoryStore(status),update=store.update;let started=false,raced=false,calls=0;
+    store.update=async mutator=>{
+      if(!started)started=true;
+      else if(!raced&&(await store.read()).pipeline.pages[0].status===status){raced=true;await update(d=>{d.pipeline.pages[0].status='HELD';});}
+      return update(mutator);
+    };
+    const unexpected=async()=>{calls++;throw Error('Stale read claimed externally');};
+    const result=await runRewritePipeline({store,pollMs:1,importCoalesceMs:1,ports:ports({generate:unexpected,review:unexpected,importPages:unexpected})});
+    assert.equal(raced,true,status);assert.equal(calls,0,status);assert.equal(result.pages[0].status,'HELD');
+    assert.equal(result.pages[0].attempts.length,status==='QUEUED'?0:1);
+  }
+});
+
+test('concurrent runner cannot claim the first runner work after read-only polling',async()=>{
+  const store=memoryStore(['a']),entered=deferred(),release=deferred(),normal=ports();let sends=0;
+  const first=runRewritePipeline({store,pollMs:1,importCoalesceMs:1,ports:ports({generate:async request=>{sends++;entered.resolve();await release.promise;return normal.generate(request);}})});
+  await entered.promise;
+  try{await assert.rejects(runRewritePipeline({store,pollMs:1,ports:ports()}),/Another pipeline runner/);}finally{release.resolve();}
+  const result=await first;assert.equal(sends,1);assert.equal(result.pages[0].attempts.length,1);assert.equal(result.pages[0].status,'COMPLETE');
+});
+
+test('pause and changed ownership between read and claim prevent external work',async()=>{
+  for(const kind of ['pause','ownership'])for(const status of ['QUEUED','GENERATED','ACCEPTED']){
+    const store=await readyMemoryStore(status),update=store.update;let started=false,raced=false,calls=0;
+    store.update=async mutator=>{
+      if(!started)started=true;
+      else if(!raced&&(await store.read()).pipeline.pages[0].status===status){raced=true;await update(d=>{
+        if(kind==='pause')d.pipeline.pauseRequested=true;else d.pipeline.runner.runId='another-owner';
+      });}
+      return update(mutator);
+    };
+    const unexpected=async()=>{calls++;throw Error('Claim after pause/owner change');};
+    const run=runRewritePipeline({store,pollMs:1,importCoalesceMs:1,ports:ports({generate:unexpected,review:unexpected,importPages:unexpected})});
+    if(kind==='ownership')await assert.rejects(run,/ownership changed/);else{const result=await run;assert.equal(result.status,'PAUSED');assert.equal(result.pages[0].status,status);}
+    assert.equal(raced,true);assert.equal(calls,0);
+  }
+});
+
+test('real claim mutations retain immutable history and publication guards',async t=>{
+  const {store,filename}=await fixture(t,['a']),normal=ports();let calls=0,changed=false;
+  const update=store.update.bind(store);
+  store.update=mutator=>update(document=>{
+    mutator(document);const page=document.pipeline.pages[0];
+    if(page.status==='REVIEWING'&&!changed){changed=true;page.candidates[0].candidate.originalBody='Silent replacement';}
+  });
+  await assert.rejects(runRewritePipeline({store,pollMs:1,ports:ports({review:async()=>{calls++;return normal.review();}})}),/Immutable pipeline candidates history changed/);
+  assert.equal(calls,0);assert.equal((await store.read()).pipeline.pages[0].candidates[0].candidate.originalBody,'Original a');
+  const before=await readFile(filename,'utf8');await assert.rejects(update(d=>{d.pipeline.publication='active';}),/Publication hold/);assert.equal(await readFile(filename,'utf8'),before);
 });
 test('CLI shares configured poll interval with host and rejects invalid intervals', async t => {
   const {filename,directory}=await fixture(t,[]),modulePath=path.join(directory,'poll-ports.mjs'),configPath=path.join(directory,'poll-config.json');

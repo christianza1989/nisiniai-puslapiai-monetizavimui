@@ -68,6 +68,9 @@ export class JsonPipelineStore {
     this.renameOperations = { rename, now: Date.now, sleep, ...renameOperations };
   }
   async read() { return JSON.parse(await readFile(this.stateFile, 'utf8')); }
+  // Serialize polling file handles with atomic writers on Windows, without the
+  // clone/immutable-history/stringify work required for a real mutation.
+  async snapshot() { return this.locked(() => this.read()); }
   async locked(work) {
     await mkdir(path.dirname(this.stateFile), { recursive: true });
     const started = Date.now(), token = randomUUID();
@@ -189,8 +192,16 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
     if (document.pipeline.runner.runId !== runId) throw new Error('Pipeline run ownership changed');
     work(document.pipeline);
   });
-  const read = async () => (await store.read()).pipeline;
   const cancelled = () => signal?.aborted === true;
+  const observePause = p => { if (p.pauseRequested && !cancelled()) internalStop.abort(new Error('Owner pause requested')); };
+  const read = async () => {
+    const p = (await (typeof store.snapshot === 'function' ? store.snapshot() : store.read())).pipeline;
+    if (p.runner.runId !== runId) throw new Error('Pipeline run ownership changed');
+    observePause(p); return p;
+  };
+  // A cheap read only decides whether a claim is worth attempting. The locked
+  // mutation rechecks ownership, pause and eligibility against current state.
+  const claim = work => mutate(p => { observePause(p); if (!cancelled()) work(p); });
   const cancellationError = () => Object.assign(new Error(message(signal?.reason??'Pipeline cancelled')+'; inspect external outcome'),{name:'AbortError',cause:signal?.reason});
   async function invoke(callback) {
     if (cancelled()) throw cancellationError();
@@ -207,7 +218,8 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
     try {
       while (!cancelled() && issued < maxBatches) {
         let batch;
-        await mutate(p => {
+        const snapshot = await read();
+        if (snapshot.pages.some(page => ['QUEUED', 'RETRY'].includes(page.status) && page.attempts.length < maxAttemptsPerPage)) await claim(p => {
           const pages = p.pages.filter(page => ['QUEUED', 'RETRY'].includes(page.status) && page.attempts.length < maxAttemptsPerPage).slice(0, batchSize);
           if (!pages.length) return;
           batch = { batchId: randomUUID(), pageIds: pages.map(page => page.pageId), status: 'GENERATING', startedAt: now() };
@@ -219,7 +231,8 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
         });
         if (!batch) {
           const p = await read();
-          if (factsDone && !p.pages.some(page => ['GENERATED', 'REVIEWING'].includes(page.status))) break;
+          if (factsDone && !p.pages.some(page => ['GENERATED', 'REVIEWING'].includes(page.status) ||
+            ['QUEUED', 'RETRY'].includes(page.status) && page.attempts.length < maxAttemptsPerPage)) break;
           await sleep(pollMs); continue;
         }
         issued++;
@@ -247,11 +260,15 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
     try {
       while (!cancelled()) {
         let record;
-        await mutate(p => {
+        const snapshot = await read();
+        if (snapshot.pages.some(page => page.status === 'GENERATED')) await claim(p => {
           const page = p.pages.find(item => item.status === 'GENERATED');
           if (page) { page.status = 'REVIEWING'; record = clone(page); }
         });
-        if (!record) { if (generationDone && factsDone) break; await sleep(pollMs); continue; }
+        if (!record) {
+          if (generationDone && factsDone && !(await read()).pages.some(page => page.status === 'GENERATED')) break;
+          await sleep(pollMs); continue;
+        }
         try {
           const review = await invoke(() => ports.review(record, ctx({ batchId: record.candidates.at(-1).batchId })));
           await mutate(p => {
@@ -273,16 +290,17 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
   }
   async function importLane() {
     while (!cancelled()) {
-      let available;
-      await mutate(p => { available = p.pages.filter(page => page.status === 'ACCEPTED').length; });
-      if (!available) { if (reviewDone && generationDone && factsDone) break; await sleep(pollMs); continue; }
+      const available = (await read()).pages.filter(page => page.status === 'ACCEPTED').length;
+      if (!available) {
+        if (reviewDone && generationDone && factsDone && !(await read()).pages.some(page => page.status === 'ACCEPTED')) break;
+        await sleep(pollMs); continue;
+      }
       // Briefly collect independently accepted pages to amortize one serial import
       // epoch. This is never a barrier waiting for rejected/held siblings or a batch.
       if (available < batchSize && !(reviewDone && generationDone && factsDone)) await sleep(importCoalesceMs);
       if (cancelled()) break;
       let records;
-      await mutate(p => {
-        if (cancelled()) return;
+      await claim(p => {
         const pages = p.pages.filter(page => page.status === 'ACCEPTED').slice(0, batchSize);
         if (pages.length) { pages.forEach(page => { page.status = 'IMPORTING'; }); records = clone(pages); }
       });

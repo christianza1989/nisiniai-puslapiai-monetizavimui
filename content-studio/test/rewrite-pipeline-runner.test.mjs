@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdir, mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, writeFile, rm, rename, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
@@ -414,9 +414,67 @@ test('CLI shares configured poll interval with host and rejects invalid interval
     else{assert.notEqual(child.status,0);assert.match(child.stderr,/pollMs must be a positive integer/);}
   }
 });
+test('atomic rename retries transient Windows sharing errors beyond five seconds without exposing partial state', async t => {
+  const { filename, directory } = await fixture(t, [], { legacy: { requests: [{ id: 'original', status: 'UNKNOWN' }] } });
+  const original = await readFile(filename), foreignTemporary = `${filename}.other-writer.tmp`;
+  await writeFile(foreignTemporary, 'other writer');
+  let elapsedMs = 0, calls = 0, temporary;
+  const waits = [], codes = ['EPERM', 'EACCES', 'EBUSY'];
+  const store = new JsonPipelineStore(filename, { renameOperations: {
+    now: () => elapsedMs,
+    sleep: async ms => { waits.push(ms); elapsedMs += ms; },
+    rename: async (from, to) => {
+      temporary = from; calls++;
+      assert.equal(to, filename); assert.deepEqual(await readFile(filename), original);
+      assert.equal(JSON.parse(await readFile(from, 'utf8')).pipeline.checked, true);
+      if (elapsedMs < 6000) throw Object.assign(new Error('Windows sharing conflict'), { code: codes[(calls - 1) % codes.length] });
+      await rename(from, to);
+    },
+  } });
+  await store.update(document => { document.pipeline.checked = true; });
+  assert.ok(elapsedMs >= 6000 && elapsedMs < 6250); assert.ok(calls > 3);
+  assert.deepEqual(waits.slice(0, 5), [25, 50, 100, 200, 250]); assert.ok(waits.every(ms => ms <= 250));
+  const document = await store.read();
+  assert.equal(document.pipeline.checked, true); assert.deepEqual(document.requests, [{ id: 'original', status: 'UNKNOWN' }]);
+  await assert.rejects(readFile(temporary), { code: 'ENOENT' });
+  assert.deepEqual((await readdir(directory)).sort(), [path.basename(filename), path.basename(foreignTemporary)].sort());
+  assert.equal(await readFile(foreignTemporary, 'utf8'), 'other writer');
+});
+
+test('permanent sharing denial reaches the rename deadline with original bytes and only its own temp removed', async t => {
+  const { filename, directory } = await fixture(t, []), original = await readFile(filename);
+  const foreignTemporary = `${filename}.other-writer.tmp`; await writeFile(foreignTemporary, 'untouched');
+  let elapsedMs = 0, temporary, calls = 0;
+  const denial = Object.assign(new Error('Still shared'), { code: 'EPERM' });
+  const store = new JsonPipelineStore(filename, { renameOperations: {
+    now: () => elapsedMs,
+    sleep: async ms => { assert.ok(ms > 0 && ms <= 250); elapsedMs += ms; },
+    rename: async from => { temporary = from; calls++; assert.deepEqual(await readFile(filename), original); throw denial; },
+  } });
+  await assert.rejects(store.update(document => { document.pipeline.checked = true; }), error => error === denial);
+  assert.equal(elapsedMs, 30000); assert.ok(calls > 100);
+  assert.deepEqual(await readFile(filename), original); await assert.rejects(readFile(temporary), { code: 'ENOENT' });
+  assert.deepEqual((await readdir(directory)).sort(), [path.basename(filename), path.basename(foreignTemporary)].sort());
+  assert.equal(await readFile(foreignTemporary, 'utf8'), 'untouched');
+});
+
+test('non-sharing rename errors fail immediately and explicit short retry bounds remain supported', async t => {
+  const { filename, directory } = await fixture(t, []), original = await readFile(filename);
+  let calls = 0, waits = 0, temporary;
+  const failure = Object.assign(new Error('I/O failure'), { code: 'EIO' });
+  const store = new JsonPipelineStore(filename, { lockTimeoutMs: 20, renameTimeoutMs: 80, renameOperations: {
+    now: () => 0, sleep: async () => { waits++; },
+    rename: async from => { temporary = from; calls++; throw failure; },
+  } });
+  assert.equal(store.lockTimeoutMs, 20); assert.equal(store.renameTimeoutMs, 80);
+  await assert.rejects(store.update(document => { document.pipeline.checked = true; }), error => error === failure);
+  assert.equal(calls, 1); assert.equal(waits, 0); assert.deepEqual(await readFile(filename), original);
+  await assert.rejects(readFile(temporary), { code: 'ENOENT' }); assert.deepEqual(await readdir(directory), [path.basename(filename)]);
+});
+
 test('default state lock tolerates a writer beyond five seconds without stealing its lock or history', {timeout:10000}, async t=>{
   const {store,filename}=await fixture(t,[],{legacy:{requests:[{id:'original',status:'UNKNOWN'}]}});
-  assert.equal(store.lockTimeoutMs,30000);await writeFile(store.lockFile,JSON.stringify({token:'slow-writer',pid:123}));
+  assert.equal(store.lockTimeoutMs,45000);assert.equal(store.renameTimeoutMs,30000);await writeFile(store.lockFile,JSON.stringify({token:'slow-writer',pid:123}));
   const work=store.update(doc=>{doc.pipeline.checked=true;});
   await delay(5200);assert.equal(JSON.parse(await readFile(store.lockFile,'utf8')).token,'slow-writer');
   await rm(store.lockFile);await work;

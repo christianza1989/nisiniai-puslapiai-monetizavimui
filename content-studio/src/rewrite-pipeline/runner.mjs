@@ -56,10 +56,14 @@ export function attachGenerationResult(p, batch, result, { maxAttemptsPerPage = 
  * ambiguous abandoned locks require inspection. Only document.pipeline may be mutated;
  * CURRENT_LEAN_BATCH legacy fields and other requests/responses remain untouched. */
 export class JsonPipelineStore {
-  constructor(stateFile, { lockTimeoutMs = 30000 } = {}) {
+  constructor(stateFile, { lockTimeoutMs = 45000, renameTimeoutMs = 30000, renameOperations = {} } = {}) {
+    if (!Number.isInteger(renameTimeoutMs) || renameTimeoutMs < 1) throw new Error('renameTimeoutMs must be a positive integer');
     this.stateFile = path.resolve(stateFile);
     this.lockFile = `${this.stateFile}.pipeline.lock`;
     this.lockTimeoutMs = lockTimeoutMs;
+    this.renameTimeoutMs = renameTimeoutMs;
+    // Inject only this filesystem boundary/clock for deterministic sharing-error tests.
+    this.renameOperations = { rename, now: Date.now, sleep, ...renameOperations };
   }
   async read() { return JSON.parse(await readFile(this.stateFile, 'utf8')); }
   async locked(work) {
@@ -87,14 +91,17 @@ export class JsonPipelineStore {
     const temporary = `${this.stateFile}.${randomUUID()}.tmp`;
     try {
       await writeFile(temporary, `${JSON.stringify(document, null, 2)}\n`, { flag: 'wx', flush: true });
-      const deadline = Date.now() + 5000;
+      const operations = this.renameOperations, deadline = operations.now() + this.renameTimeoutMs;
+      let backoffMs = 25;
       while (true) {
-        try { await rename(temporary, this.stateFile); break; }
+        try { await operations.rename(temporary, this.stateFile); break; }
         catch (error) {
-          if (!['EPERM', 'EACCES', 'EBUSY'].includes(error.code) || Date.now() >= deadline) throw error;
+          const remainingMs = deadline - operations.now();
+          if (!['EPERM', 'EACCES', 'EBUSY'].includes(error.code) || remainingMs <= 0) throw error;
           // Existing readers may temporarily deny replace on Windows. Keep the old
           // complete file; never unlink it or fall back to non-atomic overwrite.
-          await sleep(10);
+          await operations.sleep(Math.min(backoffMs, remainingMs));
+          backoffMs = Math.min(250, backoffMs * 2);
         }
       }
     } finally { await unlink(temporary).catch(error => { if (error.code !== 'ENOENT') throw error; }); }

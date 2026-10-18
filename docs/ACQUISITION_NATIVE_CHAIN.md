@@ -209,9 +209,22 @@ Do not represent that invocation as PASS or infer its unrecorded guard cause.
 After a user pause/resume the prior process was gone and this exact terminal
 result was recovered from its retained log. Docker's Linux-engine pipe was absent
 at06:26UTC; no uncertain operation was replayed and no shared engine restart was
-attempted. Focused unknown-cancel/rollback verification remains pending owned QA
-availability. This is a reviewable repair checkpoint, not full source/operating
-or paid calibration acceptance. Root owns shared-host recovery and later adoption.
+attempted by this implementation agent. Root recovered the official engine and
+started the original containers without data/volume replacement. The exact owned
+QA id/label/loopback15549 and pg_isready were verified before proceeding.
+
+On unchanged runtime source `d51cb8e500f11324da22c4a82e384c85289f73b2`, only the
+pending unknown-cancel and canonical rollback nodes were then run with private
+guard observations enabled. Run30 passed both in146.84s. All seven requested PG
+cases therefore have passing item evidence across run29 first5 and run30 last2;
+the original run29 invocation remains FAILED and its unrecorded E2 guard cause
+remains unknown. This is split evidence, not one clean seven-case invocation.
+Root's separate regression/source review is independent of these own checks.
+
+This is source-local repair verification; operating or paid calibration acceptance
+is not claimed. Root owns integration/adoption. The earlier fixing event and all
+first failure logs remain immutable. Later handoff commits add only documentation
+and journal verification after the named runtime source.
 
 ## Review and adoption
 

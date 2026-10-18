@@ -1893,3 +1893,10 @@ exact acquisition model handler/adapter/observation, worker/config, focused test
 this append and native-chain doc. Root retains UI/Serving/operating adoption.
 No paid retry, expiry/counter renewal, source/holdout/corpus edits or payload reads.
 Inert owned15549 PG only; default15s lease and authority checks stay intact.
+
+Source checkpoint d51cb8e500f11324da22c4a82e384c85289f73b2; draftPR206. Original
+lease-gap1FAIL/run27 and firstfix1PASS/run28 retained. Final source has7PG item
+passes acrossrun29 first5/run30 last2,9offline and scopedRuff/safety PASS; original
+run29 E2setupFAIL preserved and specific guard cause not invented. Root recovered
+the existing Docker/PG host after pause; own two pending nodes passed146.84s.
+Window closes at source-local handoff; no paid/Serving/site/business changes.

@@ -51,6 +51,10 @@ test('actual GEMINI_GENERATE payload prompt contains retained parser/review fixe
   assert.ok(payload.prompt.includes('Description is 161 UTF16; own description over 160 UTF16 or contains anchors'));
   assert.ok(payload.prompt.includes('Vieno komponento apkrovos nepriskirk visam vežimėliui.'));
   assert.ok(payload.prompt.includes('SKU01: 50 kg visam gaminiui.'));
+  assert.ok(payload.prompt.includes('tikras Markdown [label](URL)'));
+  assert.ok(payload.prompt.includes('Kontaktų ir kitų promedical.lt nuorodų į PRIVATE_SOURCE_JSON neįtrauk'));
+  const jobs = JSON.parse(payload.prompt.split('KONKREČIOS UŽDUOTYS:\n')[1].split('\n\nPrieš grąžindamas')[0]);
+  assert.equal(jobs[0].sourceReasonCount, authorTasks.piccolo.sources.length);
   assert.doesNotMatch(payload.prompt, /DO_NOT_SEND_OTHER_PAGE/);
   assert.equal(payload.prompt, buildAuthorPrompt({ batchId: batch.batchId, pages: [{ ...authorTasks.piccolo, id: 'piccolo', h1: 'PICCOLO vežimėliai' }], examples, commonMistakes, previousRejections: payload.previousRejections }), 'the exact returned bridge prompt includes the same selected correction records');
   assert.equal(JSON.stringify({ pipeline, authorTasks }), before, 'retained capture/review/original facts are immutable');

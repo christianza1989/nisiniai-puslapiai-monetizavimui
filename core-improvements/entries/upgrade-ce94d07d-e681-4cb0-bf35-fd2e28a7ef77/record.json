@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Explicit bounded acquisition.model_prepare authorization, immutable Task binding, pre-IO reservation and accounting-only settlement on common Task/Run",
+  "category": "code",
+  "evidence": [
+    "Root60c6518 has0045 common Task/Run but no model_prepare DB contract; new explicit operator-only model authority must never derive from capture/work permissions or create a second queue.",
+    "Root confirmed module_snapshot, source GUC, exact bool settlement, native usage shape and atomic cap/order before implementation; issue66/comment6243287654 owns only schema/ORM/0046/import/tests/docs. Operating0045 and all provider/channel/runtime state remain untouched."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_models.py",
+    "agent-business-core/runtime/migrations/versions/0046_acquisition_model_prepare.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_model_schema.py",
+    "agent-business-core/runtime/tests/test_acquisition_model_schema_pg.py",
+    "docs/ACQUISITION_MODEL_SCHEMA.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert;0046 downgrade only when all new tables and new-kind Task history are empty. Never delete retained reservations/usage/history or migrate operating0045 implicitly.",
+  "id": "upgrade-ce94d07d-e681-4cb0-bf35-fd2e28a7ef77",
+  "branch": "codex/acquisition-model-schema-20261018",
+  "baseSha": "60c651895bc6a7a4233641121b5d44466469d000",
+  "createdAt": "2026-10-17T23:48:19.615Z"
+}

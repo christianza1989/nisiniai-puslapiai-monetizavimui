@@ -98,7 +98,7 @@ export class JsonPipelineStore {
         }
         if (previous.attempts?.length && JSON.stringify(previous.input) !== JSON.stringify(current?.input)) throw new Error('Attempted page input is immutable');
       }
-      await this.write(document);
+      if (JSON.stringify(document) !== JSON.stringify(before)) await this.write(document);
       return clone(document);
     });
   }
@@ -113,7 +113,7 @@ export class JsonPipelineStore {
  * This runner creates no automation and never publishes. Existing in-flight send/import work
  * is held for inspection on restart instead of replayed. */
 export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatches = 2,
-  maxAttemptsPerPage = 2, signal, pollMs = 20 }) {
+  maxAttemptsPerPage = 2, signal, pollMs = 200 }) {
   for (const [name, value] of Object.entries({ batchSize, maxBatches, maxAttemptsPerPage, pollMs })) {
     if (!Number.isInteger(value) || value < 1) throw new Error(`${name} must be a positive integer`);
   }

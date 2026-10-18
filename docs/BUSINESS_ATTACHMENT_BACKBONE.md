@@ -27,6 +27,10 @@ current User/Session, exact Grant and Binding pins, then the consumer's Agent.
 Old/read + target/write adoption takes the target's locking authority first;
 nested old authority may use `lock=False`. Narrow fixed-search-path definer
 functions acquire Grant/Binding share pins without granting runtime UPDATE.
+`lock=False` omits the advisory/actor locking pass; its fresh SQL data check still
+pins Grant/Binding. Therefore the target business barrier must precede even that
+old-source context, otherwise a concurrent old-source revocation can form a lock
+cycle with adoption.
 RLS exposes current-owner history only. Runtime has SELECT on this table and
 EXECUTE on only the three owner-scoped pin/current functions. Internal canonical
 JSON/hash helpers have no runtime/public grant. `is_current(tx,binding)` performs
@@ -59,3 +63,22 @@ Source-local verification and Root's composed49/actual adoption are separate.
 `tests/test_business_attachment.py` is offline. The opt-in PG suite is retained
 synthetic owner/grant/source data only and must use an explicitly selected isolated
 0049 database. Operating database, paid/protected runs and channels remain held.
+
+2026-10-18 follow-up evidence: own retained PostgreSQL18.6 at15559, exact composed
+ad402cb2f8556218895b16a9334125e7a671691d plus scoped payload alias correction.
+Canonical incremental migrations0001..0049 committed successfully. A single
+0→head transaction first failed on the inherited `pinet_display_kind_old_probe`
+temporary-table collision before0049; reported to Root rather than changing a
+foreign installer. Fresh migration is not claimed to pass as one batch.
+
+First real source insert failed because `jsonb_path_query`'s result lacked the
+`value` column alias; fixed in this module's `payload_sql()`. Retained run2 had
+one PASS then the synthetic fixture's wrong identity issuer blocked User row
+locking; issuer corrected to the actual `pinet-customer` contract. Retained run3
+had one PASS then missing fresh-QA business SELECT rights; canonical bootstrap
+was applied unchanged. Run4 then passed all6 original PG cases in3.91s. These
+first failures remain in tool receipts/private synthetic logs, not rewritten.
+Final run5 passes11 PG cases in6.48s, adding raw SQL wrong hash, untyped payload,
+sequence gap, foreign grant rejection and consumer Session expiry after yield.
+Offline19 cases and scoped Ruff also pass. These are source-local checks under
+synthetic Git observation; Root still owns current source/0049/actual adoption.

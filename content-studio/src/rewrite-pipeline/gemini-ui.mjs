@@ -9,6 +9,12 @@ export function normalizeGeminiPrompt(value) {
   return String(value).replace(/\r\n?/g, '\n').replace(/\s+/gu, ' ').trim();
 }
 
+export async function hashGeminiText(value) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, '0')).join('');
+}
+
 export function validateGeminiProof(proof, request, liveUrl, now = Date.now()) {
   const fail = (message) => { throw new Error(`Gemini preflight: ${message}`); };
   if (proof?.mechanism !== 'ACTUAL_PLAYWRIGHT_UI') fail('actual UI proof required');
@@ -41,6 +47,8 @@ export async function readGeminiUi(page, selectors) {
     const style = editor ? getComputedStyle(editor) : null;
     const isInput = editor && /^(TEXTAREA|INPUT)$/.test(editor.tagName);
     const editorText = editor ? (isInput ? editor.value : editor.innerText) : null;
+    const accounts = s.accountControl ? [...document.querySelectorAll(s.accountControl)] : [];
+    const accountControl = accounts.length === 1 ? [accounts[0].getAttribute('aria-label'), accounts[0].getAttribute('title'), accounts[0].textContent].filter(Boolean).join('\n') : null;
     const queries = [...document.querySelectorAll(s.query)].map((node, index) => {
       const textNode = node.querySelector(s.queryText);
       return { index, id: node.id || node.getAttribute('data-query-id') || null, text: textNode?.innerText ?? null, html: node.outerHTML };
@@ -58,6 +66,7 @@ export async function readGeminiUi(page, selectors) {
     return {
       at: new Date().toISOString(), url: location.href, visibilityState: document.visibilityState,
       hasFocus: document.hasFocus(), innerWidth, innerHeight,
+      accountControl: { count: accounts.length, text: accountControl },
       editor: {
         count: editors.length, text: editorText,
         visible: !!editor && rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.right > 0 && rect.top < innerHeight && rect.left < innerWidth && style.display !== 'none' && style.visibility === 'visible' && Number(style.opacity) > 0,
@@ -66,6 +75,85 @@ export async function readGeminiUi(page, selectors) {
       queries, responses, stopCount: document.querySelectorAll(s.stop).length,
     };
   }, selectors);
+}
+
+/** Shared live-state validation used by the two-RPC host handshake. */
+export function verifyPreparedGeminiState(actual, prepared) {
+  if (actual.url !== prepared.before.url || actual.stopCount || actual.editor.count !== 1 || !actual.editor.visible || !actual.editor.enabled || actual.editor.text !== prepared.before.editor.text || normalizeGeminiPrompt(actual.editor.text ?? '') !== normalizeGeminiPrompt(prepared.prompt)) throw new Error('Prepared editor/context changed; no send');
+  if (actual.accountControl?.count !== 1 || !actual.accountControl.text?.includes(prepared.proof.accountIdentity)) throw new Error('Actual account control changed or unavailable; no send');
+  const history = (state) => ({ queries: state.queries.map((q) => ({ id: q.id, index: q.index, text: q.text })), responses: state.responses.map((r) => ({ id: r.id, index: r.index, text: r.text, html: r.html, completionMarker: r.completionMarker })) });
+  if (JSON.stringify(history(actual)) !== JSON.stringify(history(prepared.before))) throw new Error('Prepared conversation history changed; observe only');
+}
+
+/**
+ * Official MCP RPC 1: read/prove only. The host must durably store this exact
+ * returned preparation in its existing RESULT and mark ATTEMPTED before RPC 2.
+ * No journal callbacks or pretend persistence occur inside the browser function.
+ */
+export async function prepareGeminiSend(page, request) {
+  const { batchId, prompt, expectedAccount, selectors } = request ?? {};
+  if (!/^[A-Za-z0-9][A-Za-z0-9_.:-]{2,119}$/.test(batchId ?? '') || typeof prompt !== 'string' || !prompt.includes(`BATCH_ID: ${batchId}`)) throw new Error('Unique batchId and exact BATCH_ID prompt required');
+  if (!selectors?.accountControl) throw new Error('Freshly observed accountControl selector required for host handshake');
+  const capturedProof = request.capturePreflight ? await request.capturePreflight(page) : request.preflightProof;
+  const before = await readGeminiUi(page, selectors);
+  const proof = validateGeminiProof(capturedProof, request, before.url);
+  if (before.queries.length !== before.responses.length || before.responses.some((r) => !r.id || !r.text.trim() || !r.completionMarker)) throw new Error('Previous conversation is not fully retained/completed; observe only');
+  if (before.queries.some((q) => q.text?.includes(`BATCH_ID: ${batchId}`))) throw new Error('Batch already appears in actual history; observe, never resend');
+  const preparedId = globalThis.crypto.randomUUID();
+  const prepared = {
+    kind: 'PREPARED_GEMINI_SEND', version: 1, preparedId, batchId, preparedAt: new Date().toISOString(),
+    prompt, promptSha256: await hashGeminiText(prompt), normalizedPromptSha256: await hashGeminiText(normalizeGeminiPrompt(prompt)),
+    editorSha256: await hashGeminiText(before.editor.text ?? ''), expectedAccount, selectors, proof,
+    proofMaxAgeMs: request.proofMaxAgeMs ?? 120_000, before,
+    preQueryIds: before.queries.map((q) => q.id), preResponseIds: before.responses.map((r) => r.id),
+    intent: { kind: 'GEMINI_SEND_INTENT', preparedId, batchId, accountPath: proof.accountPath, transport: 'PLAYWRIGHT_LOCATOR_ENTER', retryAllowed: false },
+  };
+  verifyPreparedGeminiState(before, prepared);
+  prepared.preparedSha256 = await hashGeminiText(JSON.stringify(prepared));
+  return prepared;
+}
+
+/**
+ * Official MCP RPC 2. persistedIntent is the HOST's durable ATTEMPTED receipt,
+ * not proof manufactured here. The host must not redeliver any ATTEMPTED record,
+ * including after RPC timeout/page navigation/browser restart. A page-global guard
+ * additionally prevents repeated Enter on the same live document. This is no
+ * distributed exactly-once guarantee: uncertain delivery is retained as UNKNOWN.
+ */
+export async function dispatchPreparedGeminiSend(page, request) {
+  const { prepared, persistedIntent: receipt } = request ?? {};
+  if (prepared?.kind !== 'PREPARED_GEMINI_SEND' || prepared.version !== 1 || !prepared.preparedId || !prepared.expectedAccount) throw new Error('Exact verified preparation required');
+  const { preparedSha256, ...payload } = prepared;
+  if (await hashGeminiText(JSON.stringify(payload)) !== preparedSha256 || await hashGeminiText(prepared.prompt) !== prepared.promptSha256 || await hashGeminiText(normalizeGeminiPrompt(prepared.prompt)) !== prepared.normalizedPromptSha256 || await hashGeminiText(prepared.before.editor.text ?? '') !== prepared.editorSha256) throw new Error('Preparation hash binding mismatch; no send');
+  const attemptAge = Date.now() - Date.parse(receipt?.attemptedAt);
+  if (receipt?.durable !== true || receipt.state !== 'ATTEMPTED' || receipt.batchId !== prepared.batchId || receipt.preparedId !== prepared.preparedId || receipt.preparedSha256 !== preparedSha256 || receipt.promptSha256 !== prepared.promptSha256 || !receipt.attemptId || !receipt.recordRef || !Number.isFinite(attemptAge) || attemptAge < -5_000 || attemptAge > 120_000 || Date.parse(receipt.attemptedAt) < Date.parse(prepared.preparedAt) - 5_000) throw new Error('Host durable ATTEMPTED receipt binding missing/mismatched; no send');
+  const actual = await readGeminiUi(page, prepared.selectors);
+  validateGeminiProof(prepared.proof, { expectedAccount: prepared.expectedAccount, proofMaxAgeMs: prepared.proofMaxAgeMs }, actual.url);
+  verifyPreparedGeminiState(actual, prepared);
+  const claim = await page.evaluate(({ preparedId, attemptId, batchId }) => {
+    const key = Symbol.for('pinet.gemini.consumed.dispatches');
+    if (!globalThis[key]) Object.defineProperty(globalThis, key, { value: new Map(), configurable: false, enumerable: false });
+    if (globalThis[key].has(preparedId) || [...globalThis[key].values()].some((entry) => entry.batchId === batchId)) return { claimed: false };
+    globalThis[key].set(preparedId, { attemptId, batchId, consumedAt: new Date().toISOString() });
+    return { claimed: true };
+  }, { preparedId: prepared.preparedId, attemptId: receipt.attemptId, batchId: prepared.batchId });
+  if (claim?.claimed !== true) return { status: 'NO_SEND_CONSUMED_INTENT', batchId: prepared.batchId, retryAllowed: false, completedResponse: false };
+  let transportError = null;
+  try { await page.locator(prepared.selectors.editor).press('Enter', { timeout: Math.min(request.sendTimeoutMs ?? 5_000, 10_000) }); }
+  catch (error) { transportError = String(error.message ?? error); }
+  const deadline = Date.now() + Math.max(0, Math.min(request.ackTimeoutMs ?? 15_000, 30_000));
+  let observed = actual;
+  try {
+    do {
+      observed = await readGeminiUi(page, prepared.selectors);
+      const candidates = observed.queries.filter((q) => q.index >= prepared.before.queries.length && q.text?.includes(`BATCH_ID: ${prepared.batchId}`) && normalizeGeminiPrompt(q.text) === normalizeGeminiPrompt(prepared.prompt));
+      const url = new URL(observed.url);
+      if (candidates.length === 1 && url.origin === 'https://gemini.google.com' && url.pathname.startsWith(`${prepared.proof.accountPath}/app/`) && url.pathname.length > `${prepared.proof.accountPath}/app/`.length) return { status: 'QUERY_ACKNOWLEDGED', batchId: prepared.batchId, retryAllowed: false, completedResponse: false, intentId: receipt.attemptId, preparedId: prepared.preparedId, conversationUrl: observed.url, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: prepared.before.responses.length, baselineResponseIds: prepared.preResponseIds, at: observed.at, transportError, observed };
+      if (Date.now() >= deadline) break;
+      await page.waitForTimeout(Math.min(250, Math.max(1, deadline - Date.now())));
+    } while (Date.now() <= deadline);
+  } catch (error) { transportError = [transportError, String(error.message ?? error)].filter(Boolean).join('; '); }
+  return { status: 'SEND_OUTCOME_UNKNOWN', batchId: prepared.batchId, intentId: receipt.attemptId, preparedId: prepared.preparedId, retryAllowed: false, completedResponse: false, transportError, observed };
 }
 
 /**
@@ -227,5 +315,5 @@ export function buildChromeLaunchPlan({ existingSignedInProfile, nonMinimized, c
 
 /** Dependencies included so the two page-only operations can be pasted into MCP. */
 export function geminiBrowserFunctionsSource() {
-  return [normalizeGeminiPrompt, validateGeminiProof, readGeminiUi, sendGeminiOnce, observeGeminiResponse].map((fn) => fn.toString()).join('\n\n');
+  return [normalizeGeminiPrompt, hashGeminiText, validateGeminiProof, readGeminiUi, verifyPreparedGeminiState, prepareGeminiSend, dispatchPreparedGeminiSend, sendGeminiOnce, observeGeminiResponse].map((fn) => fn.toString()).join('\n\n');
 }

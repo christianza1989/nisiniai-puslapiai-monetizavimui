@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
-import { sendGeminiOnce, observeGeminiResponse, readGeminiUi, buildAuthorPrompt, buildChromeLaunchPlan, validateGeminiProof, geminiBrowserFunctionsSource } from '../src/rewrite-pipeline/gemini-ui.mjs';
+import { sendGeminiOnce, prepareGeminiSend, dispatchPreparedGeminiSend, hashGeminiText, observeGeminiResponse, readGeminiUi, buildAuthorPrompt, buildChromeLaunchPlan, validateGeminiProof, geminiBrowserFunctionsSource } from '../src/rewrite-pipeline/gemini-ui.mjs';
 
 const batchId = 'TEST-BATCH-001';
 const prompt = `BATCH_ID: ${batchId}\nParašyk tris tekstus.`;
-const selectors = { editor: '.editor', query: '.query', queryText: '.query-text', response: '.response', responseText: '.response-text', stop: '.stop', blocks: 'h1,p,pre', responseComplete: '.copy-response' };
+const selectors = { editor: '.editor', query: '.query', queryText: '.query-text', response: '.response', responseText: '.response-text', stop: '.stop', blocks: 'h1,p,pre', responseComplete: '.copy-response', accountControl: '.account' };
 const proof = () => ({ mechanism: 'ACTUAL_PLAYWRIGHT_UI', at: new Date().toISOString(), accountPath: '/u/4', accountIdentity: 'test-account', model: { label: '4 Argon', selected: true, enabled: true, expanded: true }, thinking: { label: 'Žema', selected: true, enabled: true, expanded: true }, refs: { ax: 'fixture/pre.ax', dom: 'fixture/pre.dom', png: 'fixture/pre.png' } });
-const start = () => ({ at: new Date().toISOString(), url: 'https://gemini.google.com/u/4/app', visibilityState: 'visible', hasFocus: true, editor: { count: 1, text: prompt, visible: true, enabled: true }, stopCount: 0, queries: [], responses: [] });
+const start = () => ({ at: new Date().toISOString(), url: 'https://gemini.google.com/u/4/app', visibilityState: 'visible', hasFocus: true, accountControl: { count: 1, text: 'Google account: test-account' }, editor: { count: 1, text: prompt, visible: true, enabled: true }, stopCount: 0, queries: [], responses: [] });
 function response(overrides = {}) {
   return { index: 0, id: 'actual-response-id', text: 'H1\nVisas tikras tekstas.', html: '<h1>H1</h1><p>Visas tikras tekstas.</p>', responseHtml: '<model-response>actual</model-response>', blocks: [{ tag: 'h1', text: 'H1', html: '<h1>H1</h1>' }, { tag: 'p', text: 'Visas tikras tekstas.', html: '<p>Visas tikras tekstas.</p>' }], orderedAnchors: [{ url: 'https://example.com/product', label: 'gaminio kortelė' }, { url: 'https://example.com/group', label: 'grupės sąrašas' }], completionMarker: true, ...overrides };
 }
@@ -17,6 +17,7 @@ function fixture({ initial = start(), onPress, proofOverride, durability = true,
   const events = [];
   const captured = [];
   const outcomes = [];
+  const claimContext = vm.createContext({ Date, Map, Symbol });
   const journal = {
     async read(id) { events.push('read'); return attempts.get(id) ?? null; },
     async writeIntent(intent) {
@@ -29,7 +30,13 @@ function fixture({ initial = start(), onPress, proofOverride, durability = true,
     async writeOutcome(outcome) { events.push('outcome'); if (outcomeError) throw new Error('Disk full'); outcomes.push(outcome); },
   };
   const page = {
-    evaluate: async (_fn, passedSelectors) => { assert.equal(passedSelectors, selectors); return structuredClone(state); },
+    evaluate: async (_fn, args) => {
+      if (args?.preparedId && args?.attemptId) {
+        claimContext.input = args;
+        return vm.runInContext(`(${_fn.toString()})(input)`, claimContext);
+      }
+      assert.deepEqual(args, selectors); return structuredClone(state);
+    },
     locator(selector) { assert.equal(selector, selectors.editor); return { async press(key, options) {
       events.push(`press:${key}`); assert.equal(key, 'Enter'); assert.ok(options.timeout <= 10_000);
       assert.ok(attempts.has(batchId), 'intent must exist before Enter');
@@ -240,7 +247,8 @@ test('DOM read executes the actual page-only collector and preserves exact body/
   const model = { id: '', outerHTML: '<model-response/>', querySelector: (s) => s === selectors.responseText ? content : {} };
   const query = { id: '', outerHTML: '<user-query/>', getAttribute: () => null, querySelector: () => ({ innerText: prompt }) };
   const editor = { tagName: 'DIV', innerText: prompt, disabled: false, isContentEditable: true, getAttribute: () => null, getBoundingClientRect: () => ({ width: 500, height: 100, left: 0, right: 500, top: 0, bottom: 100 }) };
-  const ctx = { document: { querySelectorAll: (s) => ({ [selectors.editor]: [editor], [selectors.query]: [query], [selectors.response]: [model], [selectors.stop]: [] })[s], visibilityState: 'hidden', hasFocus: () => false }, location: { href: 'https://gemini.google.com/u/4/app/actual' }, innerWidth: 1440, innerHeight: 1000, getComputedStyle: () => ({ display: 'block', visibility: 'visible', opacity: '1' }), Date, selectors };
+  const account = { getAttribute: () => 'Google Account: test-account', textContent: '' };
+  const ctx = { document: { querySelectorAll: (s) => ({ [selectors.editor]: [editor], [selectors.query]: [query], [selectors.response]: [model], [selectors.stop]: [], [selectors.accountControl]: [account] })[s], visibilityState: 'hidden', hasFocus: () => false }, location: { href: 'https://gemini.google.com/u/4/app/actual' }, innerWidth: 1440, innerHeight: 1000, getComputedStyle: () => ({ display: 'block', visibility: 'visible', opacity: '1' }), Date, selectors };
   const page = { evaluate: async (fn) => vm.runInNewContext(`(${fn.toString()})(selectors)`, ctx) };
   const actual = await readGeminiUi(page, selectors);
   assert.equal(actual.editor.visible, true);
@@ -280,4 +288,90 @@ test('Chrome flags are a plan, never falsely effective on an already running pro
   assert.deepEqual(plan.requestedFlags, ['--disable-background-timer-throttling', '--disable-backgrounding-occluded-windows', '--disable-renderer-backgrounding']);
   assert.match(plan.limitation, /does not prove/);
   assert.throws(() => buildChromeLaunchPlan({ existingSignedInProfile: false, nonMinimized: true, chromeAlreadyRunning: false }));
+});
+
+async function hostPrepared(f) {
+  const prepared = JSON.parse(JSON.stringify(await prepareGeminiSend(f.page, { ...f.request, capturePreflight: undefined, preflightProof: proof() })));
+  // Simulates the host's durable RESULT write/readback BEFORE the dispatch RPC.
+  // The browser adapter never creates or acknowledges a filesystem write itself.
+  const persistedIntent = { durable: true, state: 'ATTEMPTED', preparedId: prepared.preparedId, batchId, preparedSha256: prepared.preparedSha256, promptSha256: prepared.promptSha256, attemptId: 'host-attempt-001', attemptedAt: new Date().toISOString(), recordRef: 'fixture/RESULT.json#attempts/0' };
+  f.attempts.set(batchId, structuredClone(persistedIntent));
+  return { prepared, persistedIntent, ackTimeoutMs: 0 };
+}
+
+test('prepare RPC is read-only and SHA256 binds full editor/prompt/history before host persistence', async () => {
+  const f = fixture();
+  const prepared = await prepareGeminiSend(f.page, { ...f.request, capturePreflight: undefined, preflightProof: proof() });
+  assert.equal(prepared.kind, 'PREPARED_GEMINI_SEND');
+  assert.equal(prepared.promptSha256, await hashGeminiText(prompt));
+  assert.equal(await hashGeminiText('abc'), 'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
+  assert.equal(prepared.editorSha256, await hashGeminiText(f.get().editor.text));
+  assert.equal(prepared.preQueryIds.length, 0); assert.equal(prepared.preResponseIds.length, 0);
+  assert.deepEqual(f.events, [], 'no fake browser-side journal write or Enter');
+});
+
+test('two-RPC dispatch accepts only host ATTEMPTED receipt then one actual Enter', async () => {
+  const f = fixture(); const request = await hostPrepared(f);
+  const ack = await dispatchPreparedGeminiSend(f.page, request);
+  assert.equal(ack.status, 'QUERY_ACKNOWLEDGED'); assert.equal(ack.completedResponse, false);
+  assert.equal(ack.intentId, request.persistedIntent.attemptId);
+  assert.equal(ack.preparedId, request.prepared.preparedId);
+  assert.equal(f.events.filter((e) => e === 'press:Enter').length, 1);
+  assert.equal(f.events.includes('intent'), false, 'actual host receipt only; browser does not pretend to persist');
+});
+
+test('prepared dispatch changed editor or history fails before Enter', async () => {
+  for (const mutate of [
+    (s) => { s.editor.text += ' altered'; },
+    (s) => { s.editor.text = s.editor.text.replace('\n', ' '); },
+    (s) => { s.queries.push({ id: 'new-query', index: 0, text: 'other request' }); },
+    (s) => { s.responses.push(response()); },
+    (s) => { s.accountControl.text = 'Google Account: other'; },
+    (s) => { s.url = 'https://gemini.google.com/u/3/app'; },
+  ]) {
+    const f = fixture(); const request = await hostPrepared(f); mutate(f.get());
+    await assert.rejects(dispatchPreparedGeminiSend(f.page, request));
+    assert.equal(f.events.includes('press:Enter'), false);
+  }
+});
+
+test('mismatched durable host receipt or tampered preparation never dispatches', async () => {
+  for (const mutate of [
+    (r) => { r.persistedIntent.durable = false; },
+    (r) => { r.persistedIntent.state = 'PREPARED'; },
+    (r) => { r.persistedIntent.preparedId = 'wrong'; },
+    (r) => { r.persistedIntent.preparedSha256 = '0'.repeat(64); },
+    (r) => { r.persistedIntent.promptSha256 = '0'.repeat(64); },
+    (r) => { delete r.persistedIntent.recordRef; },
+    (r) => { r.persistedIntent.attemptedAt = '2020-01-01T00:00:00Z'; },
+    (r) => { r.prepared.prompt += ' tampered'; },
+    (r) => { r.prepared.before.queries.push({ id: 'invented', index: 0, text: 'bad' }); },
+  ]) {
+    const f = fixture(); const request = await hostPrepared(f); mutate(request);
+    await assert.rejects(dispatchPreparedGeminiSend(f.page, request), /binding/);
+    assert.equal(f.events.includes('press:Enter'), false);
+  }
+});
+
+test('two-RPC Enter timeout remains UNKNOWN and consumed live-page intent cannot be retried', async () => {
+  const f = fixture({ onPress() { throw new Error('Timeout during Enter'); } });
+  const request = await hostPrepared(f);
+  const first = await dispatchPreparedGeminiSend(f.page, request);
+  assert.equal(first.status, 'SEND_OUTCOME_UNKNOWN'); assert.equal(first.retryAllowed, false);
+  assert.equal((await dispatchPreparedGeminiSend(f.page, JSON.parse(JSON.stringify(request)))).status, 'NO_SEND_CONSUMED_INTENT');
+  assert.equal(f.events.filter((e) => e === 'press:Enter').length, 1);
+});
+
+test('concurrent prepared RPCs consume the actual page-global guard only once', async () => {
+  const f = fixture({ onPress() { throw new Error('Unknown Enter delivery'); } });
+  const request = await hostPrepared(f);
+  const results = await Promise.all([dispatchPreparedGeminiSend(f.page, request), dispatchPreparedGeminiSend(f.page, request)]);
+  assert.deepEqual(results.map((r) => r.status).sort(), ['NO_SEND_CONSUMED_INTENT', 'SEND_OUTCOME_UNKNOWN']);
+  assert.equal(f.events.filter((e) => e === 'press:Enter').length, 1);
+});
+
+test('two-RPC handshake preflight rejects missing live account-control evidence', async () => {
+  const f = fixture(); f.get().accountControl = { count: 0, text: null };
+  await assert.rejects(prepareGeminiSend(f.page, { ...f.request, capturePreflight: undefined, preflightProof: proof() }), /account control/);
+  assert.equal(f.events.length, 0);
 });

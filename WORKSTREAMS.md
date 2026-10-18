@@ -1787,3 +1787,14 @@ observation (1receipt,old771exact+23derived). SameRegistration remains current;
 Foundationcandidate/local_evidence_missing,0agents, no activation. New flags,
 actors/policies/authorizations and all external channels stay held. Source,
 actual code/schema adoption, model admission and overall acceptance are distinct.
+
+## Purpose-bound private preparation — Root 2026-10-18
+
+From3caa801, Root owns readiness helper/service +narrow model-authority call,
+real plan-linked private S37/Registration PG and distinct unit tests, conceptual
+contracts/status/handoff underb0682a60. Full Website remains the default authority;
+only immutable research/email purposes may select exact current private proof
+for Config metadata/independently bounded preparation. No migration or fakeF1,
+Profile, knowledge, calibration, budget or channel admission. Helper separately
+owns additive fixed readiness DTO/route/contract/golden/newwiretests and exactly
+two old offline contract counts in its own branch. Existing v1 fields stay intact.

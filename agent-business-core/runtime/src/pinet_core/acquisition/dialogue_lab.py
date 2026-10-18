@@ -180,8 +180,9 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
         atomic(root / 'report.json', row)
         seen = []
         for turn in range(max_turns):
-            recipient = await persona.ask(RecipientTurn, PERSONA_INSTRUCTION,
+            recipient_instruction, recipient_data = workflow.recipient_input(case, row['transcript'], turn) if workflow is not None and hasattr(workflow, 'recipient_input') else (PERSONA_INSTRUCTION,
                 {'private_persona': case.persona, 'transcript': row['transcript'], 'turn': turn})
+            recipient = await persona.ask(RecipientTurn, recipient_instruction, recipient_data)
             row['events'].append({'kind': recipient.event, 'clock': (now + timedelta(days=turn)).isoformat(),
                                   'synthetic': True})
             if recipient.event == 'silence':

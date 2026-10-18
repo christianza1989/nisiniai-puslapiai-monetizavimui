@@ -13,6 +13,7 @@ from pydantic import Field, ValidationError
 from sqlalchemy import select
 
 from ..control.routes import scope, token_hash
+from ..creation.service import digest
 from ..customer_text.service import customer_session
 from ..db import db
 from ..models import MailMessage
@@ -20,6 +21,7 @@ from ..tasks.codex import RunnerError
 from . import agent_role_tasks, model_authority
 from .agent_role_authority import REVIEW_FIELDS, accepted
 from .agent_role_contract import KIND, ROLES, NativeTeam, ObservedTeam, RoleCalibration, RoleName
+from .agent_role_projection import recipient_context
 from .contracts import Campaign
 from .dialogue import REPLY_INSTRUCTION
 from .dialogue_lab import GRADE_INSTRUCTION, DialogueGrade, LabCase, validate_synthetic_data
@@ -223,6 +225,9 @@ class SixRoleWorkflow:
         ):
             raise RunnerError("agent_role_manifest_binding_changed")
 
+    def recipient_input(self, case, transcript, turn):
+        return recipient_context(case, transcript, turn)
+
     async def _submit(self, role, campaign, case, parent=None, mail=None):
         self.sequence += 1
         request = {
@@ -249,10 +254,15 @@ class SixRoleWorkflow:
         async with scope(token=token_hash(self.token)) as tx:
             actor = await customer_session(tx, self.token)
             view = await agent_role_tasks.read(tx, actor, task_id)
+            retained = await agent_role_tasks.read_request(tx, actor, task_id)
         if view["task"]["status"] != "succeeded":
             raise RunnerError("agent_role_calibration_task_incomplete")
         result = view["task"]["result"]
-        self.receipts[-1].update(execution=view["execution"], result=result)
+        self.receipts[-1].update(
+            execution=view["execution"], result=result,
+            input_sha256=digest(retained.model_dump(mode="json")),
+            consumed_parents=[parent.model_dump(mode="json") for parent in retained.parents],
+        )
         return result
 
     async def prepare(self, campaign, case, now):

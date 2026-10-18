@@ -23,7 +23,7 @@ async def approve(tx, request):
     if await tx.get(ModelAuthorization, str(value.authorization_id)):
         raise ControlError(409, "acquisition_model_authorization_exists")
     saved_registry, agent, config, _ = await authority.saved(tx, session,
-        getattr(registry, "creation_id", None), str(value.agent_id))
+        getattr(registry, "creation_id", None), str(value.agent_id), execution_role=value.execution_role)
     if (saved_registry.id, saved_registry.fingerprint) != (registry.id, registry.fingerprint):
         raise ControlError(409, "acquisition_model_registration_changed")
     if config.revision != value.expected_config_revision or config.config_sha256 != value.expected_config_sha256:
@@ -42,7 +42,8 @@ async def approve(tx, request):
         external_binding_id=getattr(agent, "external_binding_id", None),
         registration_fingerprint=registry.fingerprint,
         agent_id=agent.id, config_id=config.id, config_revision=config.revision, config_sha256=config.config_sha256,
-        purpose=agent.purpose, session_id=session.id, source_revision=value.execution_source_revision,
+        purpose=agent.purpose, execution_role=value.execution_role,
+        session_id=session.id, source_revision=value.execution_source_revision,
         module_fingerprint=value.expected_module_fingerprint, module_snapshot=module_admin.snapshot(bound),
         work_registration_sha256=registered_hash, maximum_attempts=value.maximum_attempts,
         approved_at=now, expires_at=expiry, enabled=True, model=MODEL, effort=EFFORT)

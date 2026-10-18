@@ -44,6 +44,9 @@ def material(row):
     external = getattr(row, "external_binding_id", None)
     if external is not None:
         result["external_binding_id"] = external
+    role = getattr(row, 'execution_role', None)
+    if role is not None:
+        result['execution_role'] = role
     for key in ("approved_at", "expires_at"):
         result[key] = result[key].isoformat()
     return result
@@ -92,7 +95,7 @@ def context_fields(work):
     return {} if work.business_source is None else {"reviewed_business_source": work.business_source}
 
 
-async def saved(tx, session, creation_id, agent_id):
+async def saved(tx, session, creation_id, agent_id, *, execution_role=None):
     """Purpose-bound Config preparation; no Website/Profile/channel admission."""
     preliminary = await tx.get(Agent, str(UUID(str(agent_id))), populate_existing=True)
     if preliminary is None:
@@ -114,7 +117,9 @@ async def saved(tx, session, creation_id, agent_id):
                 raise ControlError(409, "acquisition_model_registration_changed")
         elif agent.external_binding_id != external or registry.id != external:
             raise ControlError(409, "acquisition_model_registration_changed")
-        if agent.purpose not in {"customer_research", "email"}:
+        from .agent_role_contract import PURPOSE
+        if ((execution_role is None and agent.purpose not in {"customer_research", "email"})
+                or execution_role is not None and PURPOSE.get(execution_role) != agent.purpose):
             raise ControlError(409, "acquisition_model_purpose_unavailable")
         config = await agents.current_config(tx, agent)
         if external is not None and (config.external_binding_id != external
@@ -163,7 +168,8 @@ async def current(tx, authorization_id, session_id, *, execution=False):
     if not session or session.user_id != row.user_id:
         raise ControlError(401, "unauthenticated")
     await module_admin.execution_current(source_value(row.source_revision))
-    registry, agent, config, specification = await saved(tx, session, row.creation_id, row.agent_id)
+    registry, agent, config, specification = await saved(tx, session, row.creation_id, row.agent_id,
+        execution_role=getattr(row, 'execution_role', None))
     expected = {"creation_id": agent.creation_id, "registration_id": agent.registration_id,
         "external_binding_id": getattr(agent, "external_binding_id", None),
         "registration_fingerprint": registry.fingerprint,

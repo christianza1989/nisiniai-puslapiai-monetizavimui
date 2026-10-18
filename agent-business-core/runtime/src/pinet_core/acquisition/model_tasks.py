@@ -19,6 +19,8 @@ async def submit(tx, session, request):
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"),
         {"key": "chat-admission:"+settings().environment+":"+session.user_id})
     policy = await authority.historical(tx, value.authorization_id, session)
+    if getattr(policy, 'execution_role', None) is not None:
+        raise ControlError(409, 'exact_agent_role_work_required')
     material = value.model_dump(mode="json")
     fingerprint = digest({"request": material, "authorization_fingerprint": policy.fingerprint})
     old = await tx.scalar(select(Task).where(Task.idempotency_key == str(value.request_id)))
@@ -102,6 +104,8 @@ async def submit_reply(tx, session, request):
     await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"),
         {"key": "chat-admission:"+settings().environment+":"+session.user_id})
     policy = await authority.historical(tx, value.authorization_id, session)
+    if getattr(policy, 'execution_role', None) is not None:
+        raise ControlError(409, 'exact_agent_role_work_required')
     old = await tx.scalar(select(Task).where(Task.idempotency_key == str(value.request_id)))
     if old is not None:
         bound = await tx.get(ModelTaskBinding, old.id)

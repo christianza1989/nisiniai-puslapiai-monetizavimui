@@ -82,68 +82,67 @@ def test_no_hidden_timeout_retry_under_one_reserved_attempt(tmp_path):
 
 
 @pytest.mark.asyncio
-async def test_absolute_deadline_uses_existing_cli_process_tree_cleanup(monkeypatch):
+async def test_absolute_deadline_uses_existing_cli_process_tree_cleanup(tmp_path, monkeypatch):
     import asyncio
-    from pathlib import Path
+    import json
+    import sys
 
     from pinet_core.codex_lab import CodexLab
     calls = []
-    class Process:
-        pid, returncode = 424242, None
-        async def communicate(self, _):
-            await asyncio.sleep(1)
-            return b'', b''
-        async def wait(self):
-            self.returncode = -9
-            return 0
-        def kill(self):
-            calls.append('kill')
+    actual_spawn = asyncio.create_subprocess_exec
     async def spawn(*args, **kwargs):
-        calls.append(args[0])
-        return Process()
+        calls.append(args)
+        return await actual_spawn(sys.executable, '-B', '-c',
+            'import sys,time;sys.stdin.read();time.sleep(30)', **kwargs)
     monkeypatch.setattr(asyncio, 'create_subprocess_exec', spawn)
-    monkeypatch.setattr(Path, 'is_file', lambda _: True)
-    monkeypatch.setattr('pinet_core.codex_lab.shutil.which', lambda _: 'node')
-    lab = CodexLab(max_calls=1, timeout=120, model='gpt-6.1-sol', reasoning_effort='high')
-    lab.deadline = datetime.now(UTC) + timedelta(milliseconds=20)
+    cli = tmp_path/'npm/node_modules/@openai/codex/bin/codex.js'
+    cli.parent.mkdir(parents=True)
+    cli.touch()
+    monkeypatch.setenv('APPDATA', str(tmp_path))
+    monkeypatch.setattr('pinet_core.codex_lab.shutil.which', lambda _: sys.executable)
+    lab = CodexLab(max_calls=1, timeout=120, model='gpt-6.1-sol', reasoning_effort='high',
+                   artifact_dir=tmp_path/'audit')
+    lab.deadline = datetime.now(UTC) + timedelta(milliseconds=350)
     with pytest.raises(RuntimeError, match='codex_lab_timeout'):
         await lab.ask(Review, 'inert timeout test', {})
-    assert 'taskkill' in calls or 'kill' in calls
-    assert lab.calls == 1 and len([x for x in calls if x == 'node']) == 1
+    state = json.loads((tmp_path/'audit/0001/observation.json').read_text())
+    assert state['cleanup_completed'] and state['cleanup_kill_requested']
+    assert 0 < state['timeout_seconds'] < 1 and state['exit_code'] is not None
+    assert lab.calls == len(calls) == 1 and not lab.usage
 
 
 @pytest.mark.asyncio
 async def test_cancellation_kills_owned_tree_and_keeps_charged_unknown_usage(tmp_path, monkeypatch):
     import asyncio
-    from pathlib import Path
+    import json
+    import sys
 
     from pinet_core.codex_lab import CodexLab
     entered = asyncio.Event()
     calls = []
-    class Process:
-        pid, returncode = 424242, None
-        async def communicate(self, _):
-            entered.set()
-            await asyncio.Event().wait()
-        async def wait(self):
-            self.returncode = -9
-            return 0
-        def kill(self):
-            calls.append('kill')
+    actual_spawn = asyncio.create_subprocess_exec
     async def spawn(*args, **kwargs):
-        calls.append(args[0])
-        return Process()
+        calls.append(args)
+        process = await actual_spawn(sys.executable, '-B', '-c',
+            'import sys,time;sys.stdin.read();time.sleep(30)', **kwargs)
+        entered.set()
+        return process
     monkeypatch.setattr(asyncio, 'create_subprocess_exec', spawn)
-    monkeypatch.setattr(Path, 'is_file', lambda _: True)
-    monkeypatch.setattr('pinet_core.codex_lab.shutil.which', lambda _: 'node')
+    cli = tmp_path/'npm/node_modules/@openai/codex/bin/codex.js'
+    cli.parent.mkdir(parents=True)
+    cli.touch()
+    monkeypatch.setenv('APPDATA', str(tmp_path))
+    monkeypatch.setattr('pinet_core.codex_lab.shutil.which', lambda _: sys.executable)
     budget = DurableBudget(tmp_path / 'budget.json', maximum=1)
-    lab = BudgetedLab(CodexLab(max_calls=1, model='gpt-6.1-sol', reasoning_effort='high'), budget, 'writer', 'cancel')
+    lab = BudgetedLab(CodexLab(max_calls=1, model='gpt-6.1-sol', reasoning_effort='high',
+        artifact_dir=tmp_path/'audit'), budget, 'writer', 'cancel')
     task = asyncio.create_task(lab.ask(Review, 'inert cancellation test', {}))
     await entered.wait()
     task.cancel()
     with pytest.raises(asyncio.CancelledError):
         await task
-    assert 'taskkill' in calls or 'kill' in calls
+    state = json.loads((tmp_path/'audit/0001/observation.json').read_text())
+    assert state['cleanup_completed'] and state['cleanup_kill_requested'] and len(calls) == 1
     attempt = budget.read()['attempts'][0]
     assert attempt['state'] == 'failed' and attempt['error_class'] == 'CancelledError'
     assert attempt['usage'] is None

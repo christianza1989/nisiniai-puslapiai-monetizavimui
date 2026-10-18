@@ -2413,3 +2413,13 @@ incomplete case. Explicit operator ceiling10–300s, default90 unchanged, same
 absolute owner/team/task deadline and fresh heartbeat; no retries, fact/grader
 changes, schema, commercial send or new execution authority. Helper separately
 owns literal Git path checker fix. Actual model acceptance is a new bounded run.
+
+2026-10-19 Root auxiliary CLI diagnostics, issue66 comment6255957101, fromfddd.
+Own codex_lab.py, its focused transport/budget/recovery tests, calibration
+reference/doc and unique upgrade. Known evaluator runs timed out at120/300s
+after native roles finished; old communicate buffering lost partial streams.
+Reuse the existing tasks.codex bounded executor/arguments, zero provider retries,
+private live diagnostics and terminal usage retention on failed timeout/cancel.
+No new runner, grade/corpus/business fact change or external send. All six grants
+and module stopped before source changes; historical failed/unknown charges stay.
+Helper separately owns recipient-less evidence admission PR218 and checker PR216.

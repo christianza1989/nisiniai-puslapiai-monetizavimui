@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Calibration evaluator timeouts discarded buffered partial CLI logs and terminal usage, while the auxiliary Lab lacked the native fixed zero-provider-retry configuration. Reuse the maintained bounded transport and private observation without accepting partial results or retrying a charged acquisition attempt.",
+  "category": "code",
+  "evidence": [
+    "docs/CALIBRATION_CLI_DIAGNOSTICS.md records private incomplete 120/300-second evaluator runs and the scoped infrastructure repair; native six-role work is separate from the auxiliary grader.",
+    "Inert regression against committed fddd5ea7 reproduces missing zero-provider-retry arguments and lost terminal token usage on EOF timeout. Final replacement regression preserves actual process/stream/cleanup evidence and controlled schema errors in both artifact modes."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/codex_lab.py",
+    "agent-business-core/runtime/offline_tests/test_codex_lab_transport.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_lab_budget.py",
+    "agent-business-core/runtime/tests/test_codex_timeout_recovery.py",
+    "agent-business-core/acquisition-plan/CALIBRATION.md",
+    "docs/CALIBRATION_CLI_DIAGNOSTICS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop exact active model grants before reverting this Lab transport increment. Preserve private attempt directories, all charged/unknown usage and original deadlines. No refund or automatic paid retry. Native Task and correspondence behavior are unchanged.",
+  "id": "upgrade-c9491957-cf63-4fd7-9d45-333a0ed23056",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "fddd5ea7f3448640dc1ff7b32e652082cd155ab4",
+  "createdAt": "2026-10-18T22:41:48.012Z"
+}

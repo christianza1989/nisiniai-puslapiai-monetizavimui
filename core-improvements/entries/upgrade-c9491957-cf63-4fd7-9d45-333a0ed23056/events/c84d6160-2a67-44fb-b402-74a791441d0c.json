@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Known native conversations finished but auxiliary graders timed out at120 and300 seconds; both stages canonically stopped with original failed/unknown charges retained. Committed predecessor regression has2 expected failures (logSHA87b97df7a1ecc9b1896fd170f755da2ef697ead882ad208a3de1ae4a0c0fdfd5). Initial new fixture shape failure2/20 and an interrupted baseline harness remain historical diagnostics, not product FAILs; fixture corrected to the unchanged Review schema and cleanup constrained to actual inert owned PIDs. Peer review found schema-error classification regression, fixed with six artifact/temporary-mode tests. No paid call, DB, operating adoption, evaluator/corpus/fact/Config change or external send is claimed by these checks.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_codex_lab_transport.py offline_tests/test_acquisition_lab_budget.py offline_tests/test_cli_execution_observation.py offline_tests/test_control_codex.py offline_tests/test_acquisition_six_grade_transport.py tests/test_codex_lab.py tests/test_codex_timeout_recovery.py",
+      "result": "PASS",
+      "evidence": "75passed33.06s; retained private logSHAb056c04225370c7b91940047b8b9d592a04daa5ec6ec19d3cb75c2fd39e238df. Inert actual Python children only: fixed model/high/zero provider retry/no tools/filtered environment; live streams; timeout/cancel usage; no partial acceptance; earlier absolute deadline; owned cleanup; schema refusals; diagnostic disk failures; exclusive artifacts; original budget/recovery/strict-grade compatibility."
+    },
+    {
+      "command": "ruff check src/pinet_core/codex_lab.py offline_tests/test_codex_lab_transport.py offline_tests/test_acquisition_lab_budget.py tests/test_codex_timeout_recovery.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Changed Python and whitespace checks clean. Helper read-only review found one controlled schema error regression and otherwise no actionable accounting/process cleanup defect; that regression has been repaired and tested."
+    }
+  ],
+  "eventId": "c84d6160-2a67-44fb-b402-74a791441d0c",
+  "sequence": 2,
+  "at": "2026-10-18T22:41:57.050Z"
+}

@@ -35,3 +35,17 @@ async def test_schema_failure_and_exhausted_retry_are_not_hidden(monkeypatch):
     with pytest.raises(RuntimeError, match='codex_lab_timeout'):
         await lab.ask(dict, 'instruction', {})
     assert len(calls) == 3  # one schema rejection, then at most two timeout attempts
+
+
+async def test_explicit_legacy_retry_retains_known_failed_attempt_usage(monkeypatch):
+    lab = CodexLab(max_timeout_retries=1)
+    async def request(*args):
+        lab.calls += 1
+        if lab.calls == 1:
+            lab.usage.append({'input_tokens': 17, 'output_tokens': 9})
+            raise RuntimeError('codex_lab_timeout')
+        return {'response': 'complete'}
+    monkeypatch.setattr(lab, '_ask_once', request)
+    assert await lab.ask(dict, 'instruction', {}) == {'response': 'complete'}
+    assert lab.timeout_recoveries[0]['failed_attempt_usage_verified'] is True
+    assert lab.usage == [{'input_tokens': 17, 'output_tokens': 9}]

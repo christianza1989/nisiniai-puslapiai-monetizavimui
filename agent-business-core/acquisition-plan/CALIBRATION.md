@@ -86,3 +86,10 @@ Source, schema/PG, actual synthetic model calls, owned controlled delivery,
 operating admission and customer outcomes stay distinct. The current wellness
 runbook/report records narrow applicability and unresolved sender/campaign facts;
 no conversation adaptive release is promoted into outbound.
+
+The auxiliary Codex lab now uses the existing bounded CLI transport and fixed
+zero-provider-retry configuration too. Inspect its private live stream, actual
+PID/timing and pre-cleanup observation before diagnosing a stalled evaluator.
+Terminal token usage survives EOF timeout/cancellation without accepting partial
+output; absent usage remains charged and unknown. Preserve the first incomplete
+run and original absolute budget. See [CLI diagnostics](../../docs/CALIBRATION_CLI_DIAGNOSTICS.md).

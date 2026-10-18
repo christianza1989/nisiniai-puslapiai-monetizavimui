@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Make the legacy membership-revocation PG regression honor canonical actor-lock serialization and bound its wait",
+  "category": "workflow",
+  "evidence": [
+    "Root actual old provisioning regression reached10PASS then waited over220s: own QA pid61520 held the Config writer transaction, pid61538 UPDATE control_memberships waited on it. Canonical migration0042 membership trigger explicitly shares the User lock with admission. The old test synchronously awaited that revocation inside append_config, producing a self-wait. Root cancelled only the exact blocked own-QA statement after inspecting its database/query/blocker, preserving1FAIL/10PASS314.47s SHA df1284696eccdf89d60b84bc5c4d53a0e10edb48c7ed43165552d6f82cb2f012 and exact original/operating/native evidence. Keep the real grant-loss rollback test. Membership test must prove actual500ms lock-timeout during the writer, then successful owner revocation after commit and subsequent denial with retained1Agent/1Config. No production lock/permission change."
+  ],
+  "paths": [
+    "agent-business-core/runtime/tests/test_customer_agent_provisioning_pg.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the test harness; preserve canonical actor locks, migration trigger and original failed run. Do not terminate or mutate operational transactions.",
+  "id": "upgrade-df96b8af-9e12-4b83-bf31-6330fc40d372",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "a10f348005623478f80a25fcb8656e711f3b0577",
+  "createdAt": "2026-10-18T02:50:15.947Z"
+}

@@ -1,5 +1,26 @@
 # Agent path: current continuation
 
+## Private research/email configuration readiness — 2026-10-18
+
+Root b0682a60 and helper04708fb5 add an explicit purpose-bound private Config-only
+operation plus separate additive readiness wire. Full Website is still canonical
+default; no F1/scorer/Profile/lab/channel gate changes. Exact current nativeS37,
+all twelve immutable Registration proof keys, current owner/Session/source/grant
+and final SQL-only authority closure are required. No native wait follows that
+final sink. Root17 actual PG PASS154.58s/rawSHA237f02ca and325 related pure
+PASS15.17s/rawSHA4f351443; original coupling409 and late-proof grant201 failures
+retained. Independent review found the race before repair and no remainingP1/P2
+afterward. Helper wire5392f658 integrated asa10f348 preserves old complete v1
+OpenAPI projection after removing only its new path and three schemas.
+
+Actual Serving remains76db483/schema0047 with0agents until separate backed-up,
+held source-only adoption and normal-owner Config saves are verified. Prepared
+business specifications target European accommodation owners and truthful
+research/email drafts; Maudis remains a candidate, no manufacturing/contact/
+photo/price promises. The historical174/180 budget stays CLOSED. Source tests
+do not prove model calibration, UI or inbox delivery. See
+[purpose contract](../PRIVATE_AGENT_PREPARATION.md).
+
 ## Integrated headless mail and actual source adoption — 2026-10-18
 
 This section supersedes the older source/runtime/missing-writer observations

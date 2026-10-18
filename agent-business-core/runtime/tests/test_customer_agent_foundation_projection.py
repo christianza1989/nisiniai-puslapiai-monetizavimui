@@ -17,7 +17,7 @@ def projection(monkeypatch):
     creation = SimpleNamespace(id=str(uuid4()))
     session = SimpleNamespace(id=str(uuid4()), user_id=str(uuid4()))
     registry = SimpleNamespace(id=str(uuid4()))
-    agent = SimpleNamespace(creation_id=creation.id, registration_id=registry.id)
+    agent = SimpleNamespace(creation_id=creation.id, registration_id=registry.id, purpose="site_chat")
     calls = []
     state = {"current": True, "failure": ControlError(409, "website_foundation_not_ready")}
 

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Only required immutable purpose=site_chat added to the old SimpleNamespace fixture. All original fullWebsite/auth/stale assertions and production strictness retained; original malformed-fixture1FAIL/1PASS0.57s rawSHA0fcceb2a0b25fd56271864513ed1aa06e743ec92e476c6f7cc89a637b33ffca1 retained. No operating adoption inferred.",
+  "checks": [
+    {
+      "command": "run-model-prepare-pg.py private-related-pure-02 (includes tests/test_customer_agent_foundation_projection.py)",
+      "result": "PASS",
+      "evidence": "325PASS15.17s rawSHA4f3514437fbe6f9f8336523134f14985bc89059dff5a6a7c3699647d12dd8e3d. Earlier focused96PASS3.88s SHA1cc8a1839be76d92dfc6c3f8302b75217e7013cb26c78d61d16cdf9ccd316b36; source assertions unchanged."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/tests/test_customer_agent_foundation_projection.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped Ruff/whitespace PASS."
+    }
+  ],
+  "eventId": "9196cb61-96a1-42c3-b87f-439fd2a62828",
+  "sequence": 2,
+  "at": "2026-10-18T02:51:29.930Z"
+}

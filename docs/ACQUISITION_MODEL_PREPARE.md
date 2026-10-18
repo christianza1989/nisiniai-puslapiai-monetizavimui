@@ -22,7 +22,10 @@ business/tenant/owner, executable, model, tools or an arbitrary purpose.
 Approval derives native business/site/tenant, saved customer_research or email
 purpose, immutable Config, full Module snapshot and combined private work/capture
 registration hash. Current canonical Agent writer readiness, including applicable
-Foundation, is retained; site_chat/Profile admission is not reused as email
+Foundation or the explicitly purpose-bound exact private Config-preparation
+operation, is retained; see PRIVATE_AGENT_PREPARATION.md. This narrow application
+contract correction permits internal configuration/model drafts without claiming
+full Website delivery; generic/site_chat/Profile admission is not reused as email
 execution. Expiry is capped by the existing Module and Session. Approval inserts
 new immutable metadata; a retained UUID/receipt cannot become another lease.
 Stop changes only enabled to false and can contain an expired/stale upstream

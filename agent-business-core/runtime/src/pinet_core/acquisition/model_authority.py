@@ -70,8 +70,9 @@ class Work:
 
 
 async def saved(tx, session, creation_id, agent_id):
-    """Use the maintained writer readiness; no Foundation/Profile workaround."""
-    async with agents.transaction_authority(tx, session, creation_id, agent_id, writing=True) as context:
+    """Purpose-bound Config preparation; no Website/Profile/channel admission."""
+    async with agents.transaction_authority(tx, session, creation_id, agent_id, writing=True,
+            operation=agents.ConfigurationOperation.PURPOSE_PREPARATION) as context:
         _, _, creation, registry, agent = context
         proof = await registrations.accepted_proof(tx, creation)
         if any(getattr(registry, key) != proof[key] for key in registrations.PROOF_KEYS):

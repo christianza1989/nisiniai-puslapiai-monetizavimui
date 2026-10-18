@@ -10,6 +10,13 @@ The server selects the business from its immutable Registration; clients cannot 
 
 The specification stores a name, goal, audience, inputs, outputs, boundaries, escalation, proposed autonomy, source references, examples and unknowns. These are private proposed data. A reference or desired action does not confirm a business fact, fetch a URL, authorize contact/send or grant runtime permissions. Connector secrets belong to protected setup, never this form/chat. Unknowns remain visible.
 
+The 2026-10-18 narrower internal-only mandate adds purpose-bound private
+configuration preparation for customer_research/email under exact current S37/
+Registration proof. Full Website remains the default for generic provisioning,
+site_chat/custom, lab and sessions. This explicitly corrects the previous all-
+purpose Foundation coupling; it does not mark Foundation/Profile/calibration or
+mail delivery ready. [Authority and boundaries](PRIVATE_AGENT_PREPARATION.md).
+
 ## Canonical routes
 
 Canonical generated contract: [verslomatika-customer-agents.openapi.json](contracts/verslomatika-customer-agents.openapi.json), from actual routes and strict Pydantic DTOs.
@@ -17,6 +24,7 @@ Canonical generated contract: [verslomatika-customer-agents.openapi.json](contra
 | Method and suffix after `/customer/v2/creations/{creation_id}` | Behavior |
 | --- | --- |
 | GET `/agents` | Current owner lists saved draft metadata and actual purpose capabilities; signed pages, limit20 default/1–50. Server `can_create_draft` and blockers distinguish a current business from a revoked/stale/pending registration. |
+| GET `/agents/preparation-readiness` | Separate version reports actual per-purpose Config-only private/full scope; v1 global listing stays conservative and strict old schemas remain unchanged. No execution or calibration admission. |
 | POST `/agents` | UUID request, purpose and specification; atomically saves draft + revision1. Response201 has explicit `created`/`replayed`; replay does not create another identity. |
 | GET `/agents/{agent_id}` | Reopens exact server identity/current specification/readiness. |
 | POST `/agents/{agent_id}/revisions` | UUID request, exact positive `expected_revision`, specification; optimistic conflict409. Purpose and business identity stay immutable. |
@@ -32,6 +40,11 @@ Cursors are HMAC signed and bound to current user/session/environment/creation/p
 Additive migration0022 creates forced-RLS `control_customer_agent_modules` and `control_customer_agent_configs`. Exact Registration and parent foreign keys bind ownership/business identities. Configs are immutable; only the module's next revision pointer/timestamp can change. A deferred exact current-config FK prevents a committed pointer without its matching configuration. Populated downgrade refuses history destruction. No old schema, admission, usage, creation, content or conversation history is rewritten.
 
 Registration lifetime is held before actor/creation/module locks, matching canonical admin order. Current owner/session/grant and exact Registration are revalidated after the final awaited Git check and before commit. Terminal registration history remains readable to the current permitted owner; new task writes require current unrevoked registration and no pending creation. Grant revocation denies reads and writes. Source/Session failure rolls back both new identity and configuration.
+
+The private branch also finishes the final native-proof wait before a new clean
+source observation and an atomic fresh SQL-only actor/Registration/Grant/
+Business/Creation/latest/archive snapshot. No native wait follows that final
+sink. Full/default authority behavior remains unchanged.
 
 Readiness reports `configuration_saved=true` plus actual edit eligibility; `enabled`, `provider_execution`, `can_calibrate`, `can_activate` remain false, `calibration_status=UNVERIFIED`, module `not_admitted`, channel `not_performed`. Its calibration/admission blockers are deliberate unfinished capabilities. The portal must render these server values and must not turn an empty browser state, a Profile, a website team result or an example into installed/calibrated status.
 

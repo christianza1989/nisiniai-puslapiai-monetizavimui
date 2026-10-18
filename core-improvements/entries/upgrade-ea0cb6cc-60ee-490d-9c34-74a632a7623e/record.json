@@ -1,0 +1,18 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Represent the required immutable Agent purpose in legacy Foundation projection unit fixture",
+  "category": "workflow",
+  "evidence": [
+    "New purpose-bound detail projection requires the canonical storedAgent.purpose. The old SimpleNamespace omitted that required model field, reproducing1FAIL/1PASS0.57s rawSHA0fcceb2a0b25fd56271864513ed1aa06e743ec92e476c6f7cc89a637b33ffca1. Set fixturepurpose tosite_chat so all old fullWebsite denial/stale/auth assertions remain unchanged; never add a production fallback for a malformedAgent."
+  ],
+  "paths": [
+    "agent-business-core/runtime/tests/test_customer_agent_foundation_projection.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert the fixture-only required field if storedpurpose is removed from the canonical model; preserve all original assertions and runtime strictness.",
+  "id": "upgrade-ea0cb6cc-60ee-490d-9c34-74a632a7623e",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "a10f348005623478f80a25fcb8656e711f3b0577",
+  "createdAt": "2026-10-18T02:25:59.699Z"
+}

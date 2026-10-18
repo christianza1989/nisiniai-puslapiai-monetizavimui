@@ -1820,3 +1820,29 @@ Original fixed-route regression1FAIL2.76s retained; targeted60PASS6.48s and
 related190PASS4.09s/Ruff5files PASS. Canonical legacy whole-document equivalence
 SHA93b1be9e is checked after removing only the new path/three new schemas.
 Root's service implementation and actual authority/PG acceptance remain separate.
+
+## Legacy PostgreSQL migration guard isolation — Root 2026-10-18
+
+Issue66/comment6244857622; upgrade-d905a3f7-8d8d-4f14-859e-301e1680bd2b.
+Own only tests/test_customer_agents.py's0022 rollback harness and this append.
+Current-head rollback correctly stopped on newer display/native retained history
+in two preserved21PASS/1FAIL runs, including a fresh owned0047 database. Execute
+the canonical0022 downgrade with real Alembic Operations in a rollback transaction;
+retain the exact customer-history rejection and all immutable Config assertions,
+and additionally verify unchanged alembic_version. No production migration change.
+
+Root fixture-only upgrade-ea0cb6cc represents the required immutable site_chat
+purpose in tests/test_customer_agent_foundation_projection.py; all prior full
+Website blockers/assertions remain. The similarly named offline path accidentally
+listed in b0682a60 does not exist and is not claimed as changed or tested.
+
+## Legacy membership race regression — Root 2026-10-18
+
+Issue66/comment6244895849; upgrade-df96b8af-9e12-4b83-bf31-6330fc40d372.
+Own only tests/test_customer_agent_provisioning_pg.py's race harness and this
+append. Actual own-QA UPDATE waited on its synchronously owned Config writer;
+canonical0042 intentionally shares the User lock. Preserve actual grant-loss
+rollback; separately prove500ms membership contention, completed Config commit,
+then owner revocation and next-admission denial with immutable history retained.
+Original10PASS/1FAIL314.47s, exact blocker witness and scoped QA cancellation
+remain retained. No production permission, migration or lock change.

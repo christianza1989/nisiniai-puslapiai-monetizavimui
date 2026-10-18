@@ -24,3 +24,15 @@ Registration, Profile, knowledge, exact configuration, lab and protected
 calibration/adoption gates remain separate. It does not establish domain
 ownership, real-world demand, a supplier agreement, public source admission,
 deployment, external channel permission or agent activation.
+
+## Separate Config-only preparation scope — 2026-10-18
+
+The exact preview-host exception above still requires every applicable local
+delivery check and remains the default full Website path. The owner's later
+narrower research/email internal-preparation mandate adds a distinct server-
+selected configuration operation, documented in PRIVATE_AGENT_PREPARATION.md.
+Its exact current accepted/S37/Registration proof can permit those two internal
+configuration purposes while this Foundation result remains UNVERIFIED. No
+receipt, audit criterion, Profile or site-chat/custom/generic/lab gate is waived.
+Independently authorized model drafts, protected calibration and actual channels
+retain their own controls; this is not a Website readiness shortcut.

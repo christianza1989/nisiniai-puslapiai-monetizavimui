@@ -49,14 +49,25 @@ Registration binding is true; Profile and fullF1 remain unadmitted/UNVERIFIED.
 The baseline has72 local,11 launch and2 operations items still UNVERIFIED.
 Read-only evidence mapping found reusable editorial/HTTP/inquiry proof and missing
 current native visual/enlargement/performance and site-specific mail proof.
-Keep the full delivery result honest; evaluate a separate purpose-specific
-private-preparation boundary for internal research/draft-only agents before
-requiring unrelated public-delivery capability. No such gate change is accepted
-or implemented by this status.
+Keep the full delivery result honest. A separate purpose-bound private Config-only
+operation is now implemented and tested: exact current selectedS37/Registration
+permits only immutable research/email drafts on a private Creation. Full Website
+authority stays the default for site_chat/custom/generic provisioning/lab/session.
+New additive preparation-readiness reports all four purposes without changing
+strict v1 fields or granting model/calibration/channel execution. Root17 real PG
+cases and325 related pure checks passed; original coupling and late-proof race
+failures are retained. The late-proof race closes with a final fresh SQL-only
+authority snapshot after all native/source waits. Old-path26 configuration and46
+provisioning/continuity/model/lab PG cases also passed serially; the exact final
+migration target passed separately after the local Operations cleanup. Old history
+traversal and membership self-wait harness failures remain in separate journals.
+Operating adoption and the two actual business configurations still follow;
+this paragraph does not claim them.
+[Contract](../../docs/PRIVATE_AGENT_PREPARATION.md).
 
 Remaining executable order:
 
-1. Resolve private purpose-specific preparation/readiness honestly, then save
+1. Adopt the tested private purpose-specific preparation/readiness code, then save
    the requested internal research/email configurations. No new model budget or
    live-mail authority is inferred from code/schema adoption.
 2. Complete protected calibration and applicable Foundation/Profile/knowledge

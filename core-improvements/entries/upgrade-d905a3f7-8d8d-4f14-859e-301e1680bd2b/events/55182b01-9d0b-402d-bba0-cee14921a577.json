@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Old head0047 downgrade traversal first stopped on newer correct display/native history guards, not0022; both original21PASS/1FAIL runs retained. Exact canonical0022 SQL now runs on a real local Operations instance in a real rollback transaction, preserving immutable Agent/Config and exact Customer agent history exists assertion and adding unchanged schema-version proof. Independent peer caught installed Operations.context's exception cleanup leak; final harness binds only the freshly imported module.op and leaves the global proxy untouched. Full26-case rerun preceded that final test-only cleanup; the exact final changed target was then rerun and passed. No production migration/guard/history edit.",
+  "checks": [
+    {
+      "command": "run-private-agent-legacy-pg.py legacy-config-canonical-boundary tests/test_customer_agents.py",
+      "result": "PASS",
+      "evidence": "26PASS197.28s rawSHAb655f58c5853b153a46dc5045b2b0f05ba420bd2e3d793058e241be2ada2342f; all original/operating/native exact and provider/SMTP/IMAP0. This full-suite run used the initial Operations.context version; the separately verified final target removes its global-proxy cleanup risk."
+    },
+    {
+      "command": "run-private-agent-legacy-pg.py legacy-config-local-op tests/test_customer_agents.py::test_database_identity_config_immutability_and_populated_downgrade_guard",
+      "result": "PASS",
+      "evidence": "Final local Operations binding:1PASS8.56s rawSHAb8bd26fa909ce20f9fb64ed7ba5f5cf43134ed14330a9ef4f33c1cf2e0d02450. Real PostgreSQL exact history denial, schema version unchanged,1Agent/1Config retained. All original/operating/native exact and provider/SMTP/IMAP0."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/tests/test_customer_agents.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Actual Ruff and whitespace PASS; no production migration diff."
+    }
+  ],
+  "eventId": "55182b01-9d0b-402d-bba0-cee14921a577",
+  "sequence": 2,
+  "at": "2026-10-18T02:54:17.753Z"
+}

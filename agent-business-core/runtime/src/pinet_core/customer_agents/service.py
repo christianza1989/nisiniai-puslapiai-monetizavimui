@@ -11,7 +11,7 @@ from ..control.models import BusinessGrant, User
 from ..control.routes import ControlError, identifier, open_cursor, scope, seal_cursor, token_hash
 from ..creation.models import Creation
 from ..creation.routes import owned
-from ..creation.service import ACTIVE, binding, current_actor, digest
+from ..creation.service import ACTIVE, actor_result, actor_statement, binding, current_actor, digest
 from ..creation_registration import service as registrations
 from ..creation_registration.locks import lifetime
 from ..creation_registration.models import Registration
@@ -21,6 +21,8 @@ from ..customer_text.adapter import source_current
 from ..customer_text.service import bearer_token, customer_session  # noqa: F401 - shared bearer validation
 from ..models import Business, new_id, utcnow
 from .models import Agent, Config
+from .preparation_readiness import ConfigurationOperation, operation_for, scope_for
+from .preparation_readiness import require as require_configuration
 from .wire import Specification
 
 PURPOSES = ("site_chat", "customer_research", "email", "custom")
@@ -50,13 +52,13 @@ async def configuration_current(tx, creation, registry):
         and creation.active_job_id is None and creation.status not in ACTIVE)
 
 
-async def configuration_blocker(tx, session, creation, registry):
+async def configuration_blocker(tx, session, creation, registry, *, purpose=None,
+        operation=ConfigurationOperation.FULL_WEBSITE):
     """Project the maintained write precondition without hiding retained history."""
     if not await configuration_current(tx, creation, registry):
         return "agent_business_not_current"
-    from ..business_discovery.service import require_agent_foundation
     try:
-        await require_agent_foundation(tx, creation, session=session)
+        await require_configuration(tx, session, creation, registry, purpose=purpose, operation=operation)
     except ControlError as error:
         if error.status not in {409, 503}:
             raise
@@ -67,7 +69,8 @@ async def configuration_blocker(tx, session, creation, registry):
     return None
 
 
-async def check_binding(tx, session, creation, registry, *, writing=False):
+async def check_binding(tx, session, creation, registry, *, writing=False, purpose=None,
+        operation=ConfigurationOperation.FULL_WEBSITE):
     if not await tx.scalar(select(User.id).where(User.id == session.user_id,
             User.environment_id == settings().environment, User.enabled)):
         raise ControlError(401, "unauthenticated")
@@ -87,14 +90,61 @@ async def check_binding(tx, session, creation, registry, *, writing=False):
     if writing:
         if not await configuration_current(tx, creation, registry):
             raise ControlError(409, "agent_business_not_current")
-        from ..business_discovery.service import require_agent_foundation
-        await require_agent_foundation(tx, creation, session=session)
+        source_pin = settings().control_source_revision
+        selected = await require_configuration(tx, session, creation, registry, purpose=purpose, operation=operation)
+        if selected == "private_preparation":
+            # No native-proof await may follow these final source/SQL fences.
+            if not await asyncio.to_thread(source_current) or settings().control_source_revision != source_pin:
+                raise ControlError(503, "source_unavailable")
+            return await private_final_binding(tx, session, creation, registry, source_pin)
     await current_actor(tx, session, creation.portfolio_id)
     return registry
 
 
+async def private_final_binding(tx, session, creation, registry, source_pin):
+    """One fresh SQL-only snapshot after all native/Git waits; no recursive proof."""
+    from ..business_discovery.models import CreationArchive
+
+    expected, expected_binding = registrations.stored_material(registry), binding(creation)
+    fingerprint, registry_id, creation_id = registry.fingerprint, registry.id, creation.id
+    latest_id = (select(Registration.id).where(Registration.creation_id == creation_id,
+        Registration.environment_id == settings().environment)
+        .order_by(Registration.accepted_revision.desc()).limit(1).correlate(None).scalar_subquery())
+    is_archived = select(CreationArchive.id).where(CreationArchive.creation_id == creation_id,
+        CreationArchive.environment_id == settings().environment).exists()
+    statement = (actor_statement(session, creation.portfolio_id)
+        .add_columns(Registration, BusinessGrant, Business, Creation, latest_id, is_archived)
+        .outerjoin(Registration, (Registration.id == registry_id)
+            & (Registration.creation_id == creation_id) & (Registration.environment_id == settings().environment))
+        .outerjoin(BusinessGrant, (BusinessGrant.id == Registration.grant_id)
+            & (BusinessGrant.business_id == Registration.business_id)
+            & (BusinessGrant.environment_id == settings().environment))
+        .outerjoin(Business, Business.id == Registration.business_id)
+        .outerjoin(Creation, (Creation.id == creation_id) & (Creation.environment_id == settings().environment)))
+    row = (await tx.execute(statement.execution_options(populate_existing=True))).one_or_none()
+    actor_result(row[:5] if row is not None else None, creation.portfolio_id)
+    current, grant, business, parent, latest, archived = row[5:]
+    if not current or not grant or not business or not parent or not grant.enabled:
+        raise ControlError(404, "not_found")
+    if (binding(parent) != expected_binding or registrations.stored_material(current) != expected
+            or current.fingerprint != fingerprint or digest(registrations.stored_material(current)) != fingerprint
+            or current.revoked_at or latest != current.id or current.accepted_revision != parent.current_revision
+            or parent.active_job_id is not None or parent.status in ACTIVE):
+        raise ControlError(409, "agent_business_not_current")
+    if (parent.canonical_host is not None or archived
+            or (grant.id, grant.business_id, grant.organization_id, grant.portfolio_id, grant.environment_id)
+            != (current.grant_id, current.business_id, current.organization_id, current.portfolio_id, current.environment_id)
+            or (business.site_id, business.canonical_host) != (current.site_id, current.canonical_host)):
+        raise ControlError(409, "private_preparation_not_ready")
+    guard()
+    if settings().control_source_revision != source_pin:
+        raise ControlError(503, "source_unavailable")
+    return current
+
+
 @asynccontextmanager
-async def transaction_authority(tx, session, creation_id, agent_id=None, *, writing=False, lock=True):
+async def transaction_authority(tx, session, creation_id, agent_id=None, *, writing=False, lock=True,
+        purpose=None, operation=ConfigurationOperation.FULL_WEBSITE):
     """Canonical authority in an existing transaction; no bearer or new permission."""
     guard()
     if not await asyncio.to_thread(source_current):
@@ -105,6 +155,11 @@ async def transaction_authority(tx, session, creation_id, agent_id=None, *, writ
     preliminary = await tx.get(Agent, identifier(agent_id)) if agent_id is not None else None
     if agent_id is not None and (not preliminary or preliminary.creation_id != creation_id):
         raise ControlError(404, "not_found")
+    if purpose is not None and purpose not in PURPOSES:
+        raise ControlError(400, "invalid_request")
+    if preliminary and purpose is not None and purpose != preliminary.purpose:
+        raise ControlError(409, "agent_purpose_changed")
+    bound_purpose = preliminary.purpose if preliminary else purpose
     registry = (await tx.get(Registration, preliminary.registration_id) if preliminary else
         await profiles.registry_row(tx, creation_id))
     if registry and lock:
@@ -115,7 +170,8 @@ async def transaction_authority(tx, session, creation_id, agent_id=None, *, writ
     await tx.refresh(creation)
     if not registry:
         raise ControlError(409, "agent_registration_required")
-    registry = await check_binding(tx, session, creation, registry, writing=writing)
+    registry = await check_binding(tx, session, creation, registry, writing=writing,
+        purpose=bound_purpose, operation=operation)
     agent = None
     if preliminary:
         statement = select(Agent).where(Agent.id == preliminary.id)
@@ -132,17 +188,20 @@ async def transaction_authority(tx, session, creation_id, agent_id=None, *, writ
         raise ControlError(503, "source_unavailable")
     # Source waits cannot hide a changed parent, session, owner or grant.
     await tx.refresh(creation)
-    await check_binding(tx, session, creation, registry, writing=writing)
+    await check_binding(tx, session, creation, registry, writing=writing,
+        purpose=bound_purpose, operation=operation)
 
 
 @asynccontextmanager
-async def authority(token, creation_id, agent_id=None, *, writing=False):
+async def authority(token, creation_id, agent_id=None, *, writing=False, purpose=None,
+        operation=ConfigurationOperation.FULL_WEBSITE):
     guard()
     if not await asyncio.to_thread(source_current):
         raise ControlError(503, "source_unavailable")
     async with scope(token=token_hash(token)) as tx:
         session = await customer_session(tx, token)
-        async with transaction_authority(tx, session, creation_id, agent_id, writing=writing) as context:
+        async with transaction_authority(tx, session, creation_id, agent_id, writing=writing,
+                purpose=purpose, operation=operation) as context:
             yield context
 
 
@@ -162,9 +221,10 @@ def write_conflict(error):
 
 
 @asynccontextmanager
-async def write_authority(token, creation_id, agent_id=None):
+async def write_authority(token, creation_id, agent_id=None, *, purpose=None,
+        operation=ConfigurationOperation.FULL_WEBSITE):
     try:
-        async with authority(token, creation_id, agent_id, writing=True) as context:
+        async with authority(token, creation_id, agent_id, writing=True, purpose=purpose, operation=operation) as context:
             yield context
     except IntegrityError as error:
         write_conflict(error)
@@ -206,7 +266,8 @@ async def detail(tx, agent, selected=None, *, session):
     current = await current_config(tx, agent)
     creation = await tx.get(Creation, agent.creation_id)
     registry = await tx.get(Registration, agent.registration_id)
-    blocker = await configuration_blocker(tx, session, creation, registry)
+    blocker = await configuration_blocker(tx, session, creation, registry,
+        purpose=agent.purpose, operation=operation_for(agent.purpose))
     return {"agent": agent_view(agent, current), "configuration": config_view(agent, selected or current),
         "readiness": {"configuration_saved": True, "can_edit_configuration": blocker is None, "calibration_status": "UNVERIFIED",
             "module_admission": "not_admitted", "can_calibrate": False, "can_activate": False,
@@ -233,7 +294,8 @@ async def append_config(tx, agent, value, fingerprint, session):
 
 
 async def create(token, creation_id, value):
-    async with write_authority(token, creation_id) as (tx, session, creation, registry, _):
+    async with write_authority(token, creation_id, purpose=value.purpose,
+            operation=operation_for(value.purpose)) as (tx, session, creation, registry, _):
         return await create_in_transaction(tx, session, creation, registry, value)
 
 
@@ -258,7 +320,8 @@ async def create_in_transaction(tx, session, creation, registry, value):
 
 
 async def revise(token, creation_id, agent_id, value):
-    async with write_authority(token, creation_id, agent_id) as (tx, session, creation, _, agent):
+    async with write_authority(token, creation_id, agent_id,
+            operation=ConfigurationOperation.PURPOSE_PREPARATION) as (tx, session, creation, _, agent):
         return await revise_in_transaction(tx, session, creation, agent, value)
 
 
@@ -329,6 +392,24 @@ async def listing(token, creation_id, *, limit=20, cursor=None):
             for item in PURPOSES], "has_more": len(rows) > limit,
             "next_cursor": cursor_value(session, creation.id, "list", rows[limit - 1].id, expires)
             if len(rows) > limit else None}
+
+
+async def preparation_readiness(token, creation_id):
+    """Purpose-specific Config-only capability; old v1 listing stays conservative."""
+    async with authority(token, creation_id) as (tx, session, creation, registry, _):
+        purposes = []
+        for purpose in PURPOSES:
+            operation = operation_for(purpose)
+            selected = scope_for(creation, purpose, operation)
+            blocker = await configuration_blocker(tx, session, creation, registry,
+                purpose=purpose, operation=operation)
+            if selected == "private_preparation" and blocker == "website_foundation_not_ready":
+                blocker = "private_preparation_not_ready"
+            purposes.append({"purpose": purpose, "readiness_scope": selected,
+                "can_create_draft": blocker is None, "configuration_blockers": [blocker] if blocker else []})
+        return {"creation_id": creation.id, "purposes": purposes, "operation": "agent_configuration_only",
+            "provider_execution": False, "can_calibrate": False, "can_activate": False,
+            "channel_activation": "not_performed"}
 
 
 async def revisions(token, creation_id, agent_id, *, limit=20, cursor=None):

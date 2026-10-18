@@ -3,8 +3,10 @@
 Issue66, source baseline f774485093a92b076575804749877928bfe6ae57.
 The existing `network_bootstrap.py` admits only the six static legacy voice
 Profiles. `customer.admin.decide` correctly requires a registered Business UUID;
-neither registers a newly built independent business. A source binding or saved
-Agent cannot fill that missing identity. Do not fabricate a CreationRegistration
+neither registers a newly built independent business through the customer claim.
+The existing privileged control bootstrap already has a general Business mapper;
+this change connects that mapper to the reviewed customer claim. A source binding
+or saved Agent cannot fill that missing customer step. Do not fabricate a CreationRegistration
 or add a voice Profile merely to attach acquisition agents.
 
 `customer.registration.register_intake` now supplies that narrow local admin
@@ -21,8 +23,9 @@ only local or explicit test environments are accepted. No HTTP endpoint is added
 Proof references and account data stay outside Git. Output contains the decision,
 Business UUID, stable site/host and whether a new mapping was registered.
 
-Site and host are globally unique identities. Transaction advisory locks on both
-keys serialize concurrent attempts across environments; exact existing mappings
+Site and host are globally unique identities. The maintained control bootstrap's
+global registration lock and `registered_business` mapper serialize concurrent
+writers across environments; exact existing mappings
 retain their UUID. A mismatched site or host is refused. Existing grants are never
 reassigned, including disabled grants. An already consumed intake is refused;
 inspect its stored decision before retrying after an ambiguous CLI termination.

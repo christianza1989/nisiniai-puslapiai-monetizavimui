@@ -6,9 +6,10 @@ the caller must commit both the mapping and that decision in one transaction.
 import re
 from uuid import UUID
 
-from sqlalchemy import or_, select, text
+from sqlalchemy import select
 
-from ..models import Business, new_id
+from ..control.bootstrap import registered_business, registration_lock
+from ..models import Business
 from ..public_projects.admin import administrative
 from .admin import decide
 from .models import Intake
@@ -34,21 +35,16 @@ async def register_intake(tx, *, environment, intake_id, site_id, note, evidence
     canonical_host = host(intake.canonical_host)
     if canonical_host != intake.canonical_host:
         raise ValueError("Exact normalized intake hostname required")
-    # Identity is global, unlike account grants. Lock both keys in stable order
-    # so concurrent environments cannot create ambiguous site/host mappings.
-    for key in sorted(("business-registration:site:" + site_id, "business-registration:host:" + canonical_host)):
-        await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"), {"key": key})
-    rows = list(await tx.scalars(select(Business).where(or_(Business.site_id == site_id,
-        Business.canonical_host == canonical_host)).with_for_update()))
-    if rows and (len(rows) != 1 or rows[0].site_id != site_id or rows[0].canonical_host != canonical_host):
+    # Share the maintained bootstrap writer's global identity barrier and mapper.
+    # The customer path adds reviewed Intake admission, not a second registry.
+    await registration_lock(tx)
+    existing = await tx.scalar(select(Business).where(Business.canonical_host == canonical_host))
+    by_site = await tx.scalar(select(Business).where(Business.site_id == site_id))
+    if ((existing is not None and existing.site_id != site_id)
+            or (by_site is not None and by_site.canonical_host != canonical_host)):
         raise ValueError("Existing site/host mapping conflict")
-    created = not rows
-    if created:
-        business = Business(id=new_id(), site_id=site_id, canonical_host=canonical_host)
-        tx.add(business)
-        await tx.flush()
-    else:
-        business = rows[0]
+    created = by_site is None
+    business = await registered_business(tx, site_id=site_id, canonical_host=canonical_host, allow_new=True)
     # Same transaction: an invalid owner/evidence or existing grant rolls back
     # the new mapping as well. Never copy the ownership checks into this layer.
     result = await decide(tx, environment=environment, intake_id=intake_id, approve=True,

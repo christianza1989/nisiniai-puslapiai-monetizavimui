@@ -1,4 +1,21 @@
-## Current-owner Gmail actual local checkpoint — Root2026-10-18
+## Current-owner natural role context and stopped runtime checkpoint — Root2026-10-18
+
+Serving6246/schema0050 adopted after backup:96 old table projections and1010
+native files exact, authenticated LT mail ready, unauth401/foreign404.
+Root106offline+2restrictedPG and both PR213 CI checks PASS. Human-requested
+natural actor DTO/recipient context is delivered; original Config2, corpus,
+grading, first quality FAIL and all usage remain unchanged. Corrected actual
+smoke routes coordinator→research→qualification→writer. First3 Tasks succeeded;
+writer ModelAttempt succeeded with output/knownusage, then common Task failed
+authorization_revoked. Exact historical completion reason still UNVERIFIED.
+Aggregate8calls all knownusage,7complete1failed; original120/3600 ledger and
+wholewall retained, no automatic retry or new allowance. All6 new grants and
+module canonically stopped, protected0calls, externalcustomer/suppliermail0.
+Helper owns bounded failed-workflow-receipt diagnostic improvement in own
+branch; Root owns integration/Gmail/UI. See docs/GMAIL_LOCAL_OWNER_TEST.md.
+Full six-role calibration and commercial campaign transport NOT accepted.
+
+## Earlier current-owner Gmail actual local checkpoint — Root2026-10-18
 
 Actual OAuth, owner self-send/Gmail SENT+INBOX/Chrome receipt, exact rewrittenRFC
 reply import, two successful one-attempt LT display Tasks and normal customer

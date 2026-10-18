@@ -147,6 +147,7 @@ export async function dispatchPreparedGeminiSend(page, request) {
   }, { preparedId: prepared.preparedId, attemptId: receipt.attemptId, batchId: prepared.batchId });
   if (claim?.claimed !== true) return { status: 'NO_SEND_CONSUMED_INTENT', batchId: prepared.batchId, retryAllowed: false, completedResponse: false };
   let transportError = null;
+  const enterAttemptedAt = new Date().toISOString();
   try { await page.locator(prepared.selectors.editor).press('Enter', { timeout: Math.min(request.sendTimeoutMs ?? 5_000, 10_000) }); }
   catch (error) { transportError = String(error.message ?? error); }
   const deadline = Date.now() + Math.max(0, Math.min(request.ackTimeoutMs ?? 15_000, 30_000));
@@ -157,12 +158,12 @@ export async function dispatchPreparedGeminiSend(page, request) {
       const candidates = observed.queries.filter((q) => q.index >= prepared.before.queries.length && q.text?.includes(`BATCH_ID: ${prepared.batchId}`) && normalizeGeminiPrompt(q.text) === normalizeGeminiPrompt(prepared.prompt));
       const url = new URL(observed.url);
       const appPath = `${prepared.proof.accountPath}/app`;
-      if (candidates.length === 1 && url.origin === 'https://gemini.google.com' && (url.pathname === appPath || url.pathname.startsWith(`${appPath}/`))) return { status: 'QUERY_ACKNOWLEDGED', batchId: prepared.batchId, retryAllowed: false, completedResponse: false, intentId: receipt.attemptId, preparedId: prepared.preparedId, conversationUrl: observed.url, retainedConversationUrl: url.pathname.length > appPath.length + 1 ? observed.url : null, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: prepared.before.responses.length, baselineResponseIds: prepared.preResponseIds, at: observed.at, transportError, observed };
+      if (candidates.length === 1 && url.origin === 'https://gemini.google.com' && (url.pathname === appPath || url.pathname.startsWith(`${appPath}/`))) return { status: 'QUERY_ACKNOWLEDGED', batchId: prepared.batchId, retryAllowed: false, completedResponse: false, intentId: receipt.attemptId, preparedId: prepared.preparedId, enterAttemptedAt, preparedToEnterMs: Date.parse(enterAttemptedAt)-Date.parse(prepared.preparedAt), conversationUrl: observed.url, retainedConversationUrl: url.pathname.length > appPath.length + 1 ? observed.url : null, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: prepared.before.responses.length, baselineResponseIds: prepared.preResponseIds, at: observed.at, transportError, observed };
       if (Date.now() >= deadline) break;
       await page.waitForTimeout(Math.min(250, Math.max(1, deadline - Date.now())));
     } while (Date.now() <= deadline);
   } catch (error) { transportError = [transportError, String(error.message ?? error)].filter(Boolean).join('; '); }
-  return { status: 'SEND_OUTCOME_UNKNOWN', batchId: prepared.batchId, intentId: receipt.attemptId, preparedId: prepared.preparedId, retryAllowed: false, completedResponse: false, transportError, observed };
+  return { status: 'SEND_OUTCOME_UNKNOWN', batchId: prepared.batchId, intentId: receipt.attemptId, preparedId: prepared.preparedId, enterAttemptedAt, preparedToEnterMs: Date.parse(enterAttemptedAt)-Date.parse(prepared.preparedAt), retryAllowed: false, completedResponse: false, transportError, observed };
 }
 
 /**

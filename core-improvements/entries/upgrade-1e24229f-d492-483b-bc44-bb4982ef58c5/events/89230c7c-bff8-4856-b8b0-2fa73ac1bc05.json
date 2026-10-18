@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Owner-authorized startup now binds existing own Gemini before closing Welcome, with no new page/window. Subsequent real commands retained sole active visible Gemini. Visible B080 pilot measured10.817s preflight-to-Enter and7.625s prepared-to-Enter; actual complete rendered response retained with model proof. Two pages passed whole review, bounded edits, real1440/390DOM, current Core review and exactCP/TES; one REGO factual correction rejected/held. Private counts134/134,0pending; publication/reminders unchanged. No50/h claim.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-*.test.mjs",
+      "result": "PASS",
+      "evidence": "186 tests passed; real session startup and two private DOM/finalize completions observed separately from isolated tests."
+    }
+  ],
+  "eventId": "89230c7c-bff8-4856-b8b0-2fa73ac1bc05",
+  "sequence": 5,
+  "at": "2026-10-18T08:12:14.571Z"
+}

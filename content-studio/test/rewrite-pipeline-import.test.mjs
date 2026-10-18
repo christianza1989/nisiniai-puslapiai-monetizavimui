@@ -53,6 +53,78 @@ async function keyFixture(name,{queued=false}={}){
  return{...f,store,filename,input:{pageId:f.records[0].pageId,candidateId:queued?undefined:f.records[0].candidates[0].candidateId,actor:'synthetic-operator',reason:'Repair only the invalid checkpoint key suffix; no authored word changes.'}};
 }
 
+// Synthetic known-completed/model-rejected evidence; never a live UI or prose acceptance.
+async function rejectedKeyFixture(name){
+ const f=await keyFixture('rejected-'+name,{queued:true}),batchId='synthetic-rejected-batch',prompt='BATCH_ID: '+batchId+'\nSynthetic prompt';
+ const spec=f.records[0].input.capturePage,blocks=bodyBlocks(spec.title),raw={at,url,batchId,responseIndex:0,responseId:'synthetic-rejected-response',queryCount:1,responseCount:1,queries:[{text:prompt}],stopControls:[],stopCount:0,completionMarker:true,text:blocks.map(b=>b.text).join('\n\n'),html:blocks.map(b=>b.html).join(''),blocks,orderedAnchors:blocks.flatMap(b=>b.anchors)};
+ const dir=path.join(f.config.outputDir,'rejected-proof'),captureRef=await put(path.join(dir,'raw.json'),raw),promptRef=await put(path.join(dir,'prompt.txt'),prompt);
+ const observedProofs=await Promise.all(['pre-ax','pre-dom','pre-image','post-ax','post-dom','post-image'].map(n=>put(path.join(dir,n+'.txt'),'Synthetic artifact '+n+'; not actual UI proof.')));
+ const payload={batchId,prompt,pages:[spec]},response={send:{status:'COMPLETED_RESPONSE_MODEL_UNACCEPTED',uncertain:false,at,attemptId:'host-attempt'},captureRef,promptRef,observedProofs,accepted:false};
+ const request={id:'synthetic-request',kind:'GEMINI_GENERATE',payload,payloadSha256:hash(JSON.stringify(payload)),status:'ANSWERED',actor:f.input.actor,claimedAt:at,answeredAt:at,attemptId:'host-attempt',sendIntent:{kind:'GEMINI_SEND_INTENT',preparedId:'prepared-one',batchId,accountPath:'/u/4',retryAllowed:false},response};
+ const document=await f.store.read(),p=document.pipeline.pages[0];p.status='UNKNOWN';p.attempts=[{attemptId:'page-attempt',batchId,startedAt:at}];p.generationResults=[{attemptId:'page-attempt',status:'UNKNOWN',at,error:'A query acknowledgement alone is not a retained response'}];
+ document.pipeline.batches=[{batchId,pageIds:[p.pageId],status:'UNKNOWN',startedAt:at,error:p.generationResults[0].error}];document.requests=[request];await writeFile(f.filename,JSON.stringify(document));
+ f.config.immutablePins=[await put(path.join(dir,'public.txt'),'Synthetic immutable public package')];return f;
+}
+
+test('known completed rejected-model key repair stays UNKNOWN and preserves input, request and every original history',async()=>{
+ const f=await rejectedKeyFixture('preserved'),before=await f.store.read(),files=[f.config.nativePath,...f.config.checkpoints,f.config.immutablePins[0].path],bytes=await Promise.all(files.map(file=>readFile(file)));
+ const receipt=await repairImportKey(f.store,f.input,{model,config:f.config}),after=await f.store.read(),record=after.pipeline.pages[0];
+ assert.equal(receipt.phase,'model_rejected');assert.equal(record.status,'UNKNOWN');assert.equal(record.imports.length,1);assert.equal(receipt.modelRejection.requestId,'synthetic-request');
+ assert.deepEqual(after.requests,before.requests);assert.deepEqual(after.pipeline.batches,before.pipeline.batches);
+ for(const field of ['input','attempts','generationResults','candidates','reviews'])assert.deepEqual(record[field],before.pipeline.pages[0][field]);
+ assert.deepEqual(await Promise.all(files.map(file=>readFile(file))),bytes);assert.equal(effectiveImportKey(record),'synthetic_snake_caseWrittenDraft');
+ const later=clone(record);later.attempts.push({attemptId:'separately-authorized-later-attempt',batchId:'new-batch'});assert.equal(effectiveImportKey(later),receipt.after,'Repair remains valid metadata, not a retry authorization');
+ for(const change of [r=>r.imports[0].modelRejection.uncertain=true,r=>r.imports[0].modelRejection.originalResultSha256='0'.repeat(64),r=>r.imports[0].modelRejection.attemptId='wrong',r=>r.imports.push(clone(r.imports[0]))]){
+  const tampered=clone(record);change(tampered);assert.throws(()=>effectiveImportKey(tampered));
+ }
+ await assert.rejects(repairImportKey(f.store,f.input,{model,config:f.config}),/already repaired/);
+});
+
+test('rejected-model metadata repair rejects ACK, uncertain, unclaimed, altered pins/query/completion and advanced histories',async()=>{
+ const scenarios={
+  ack:d=>{d.requests[0].response.send.status='QUERY_ACKNOWLEDGED';},
+  uncertain:d=>{d.requests[0].response.send.uncertain=true;},
+  trueUnknown:d=>{d.requests[0].status='UNKNOWN';},
+  noActor:d=>{delete d.requests[0].actor;},
+  noIntent:d=>{delete d.requests[0].sendIntent;},
+  wrongAttempt:d=>{d.requests[0].response.send.attemptId='other';},
+  payloadTamper:d=>{d.requests[0].payload.prompt+=' changed';},
+  captureHash:d=>{d.requests[0].response.captureRef.sha256='0'.repeat(64);},
+  promptHash:d=>{d.requests[0].response.promptRef.sha256='0'.repeat(64);},
+  extraAttempt:d=>{d.pipeline.pages[0].attempts.push({attemptId:'later',batchId:'later'});},
+  extraResult:d=>{d.pipeline.pages[0].generationResults.push(clone(d.pipeline.pages[0].generationResults[0]));},
+  extraBatch:d=>{d.pipeline.batches.push({...d.pipeline.batches[0],batchId:'later'});},
+  extraRequest:d=>{d.requests.push({...d.requests[0],id:'other'});},
+  candidate:d=>{d.pipeline.pages[0].candidates=[{candidateId:'already-captured'}];},
+  reviewed:d=>{d.pipeline.pages[0].reviews=[{decision:'accepted'}];},
+  imported:d=>{d.pipeline.pages[0].imports=[{status:'failed',error:'Already imported; do not repeat'}];},
+  collision:d=>{d.pipeline.pages.push({pageId:'other',input:{key:'synthetic_snake_caseWrittenDraft'}});},
+  complete:d=>{d.pipeline.pages[0].status='COMPLETE';},
+ };
+ for(const[name,change]of Object.entries(scenarios)){
+  const f=await rejectedKeyFixture(name),d=await f.store.read();change(d);await writeFile(f.filename,JSON.stringify(d));const before=await readFile(f.filename);
+  await assert.rejects(repairImportKey(f.store,f.input,{model,config:f.config}),undefined,name);assert.deepEqual(await readFile(f.filename),before,name);
+ }
+ for(const[name,change]of Object.entries({query:r=>{r.queries[0].text+=' wrong';},queryProjection:r=>{r.queryText='wrong';},multiple:r=>{r.queryCount=2;r.responseCount=2;r.queries.push({text:'another query'});},batch:r=>{r.batchId='wrong';},incomplete:r=>{r.completionMarker=false;},stop:r=>{r.stopControls=['Stop'];r.stopCount=1;},whole:r=>{r.text+=' unmatched';},account:r=>{r.url='https://gemini.google.com/u/5/app/synthetic';}})){
+  const f=await rejectedKeyFixture(name),d=await f.store.read(),pin=d.requests[0].response.captureRef,r=JSON.parse(await readFile(pin.path));change(r);d.requests[0].response.captureRef=await put(pin.path,r);await writeFile(f.filename,JSON.stringify(d));const before=await readFile(f.filename);
+  await assert.rejects(repairImportKey(f.store,f.input,{model,config:f.config}),undefined,name);assert.deepEqual(await readFile(f.filename),before,name);
+ }
+ for(const[name,change]of Object.entries({facts:async f=>writeFile(f.records[0].input.factsRef.path,'changed facts'),public:async f=>writeFile(f.config.immutablePins[0].path,'changed public'),native:async f=>{const s=JSON.parse(await readFile(f.config.nativePath));s.pages[0].title='Already changed';await writeFile(f.config.nativePath,JSON.stringify(s));},checkpoint:async f=>writeFile(f.config.checkpoints[0],JSON.stringify({work:{existing:{pageId:f.input.pageId}}})),actor:async f=>{f.input.actor='another-operator';}})){
+  const f=await rejectedKeyFixture(name);await change(f);const before=await readFile(f.filename);await assert.rejects(repairImportKey(f.store,f.input,{model,config:f.config}),undefined,name);assert.deepEqual(await readFile(f.filename),before,name);
+ }
+});
+
+test('rejected-model key repair atomically rechecks the request and keeps native/public guards after the metadata write',async()=>{
+ const race=await rejectedKeyFixture('request-race'),originalUpdate=race.store.update.bind(race.store);
+ race.store.update=async mutator=>{const d=await race.store.read();d.requests[0].actor='other-host';await writeFile(race.filename,JSON.stringify(d));return originalUpdate(mutator);};
+ await assert.rejects(repairImportKey(race.store,race.input,{model,config:race.config}),/changed during metadata repair/);
+ const unchanged=await race.store.read();assert.equal(unchanged.pipeline.pages[0].status,'UNKNOWN');assert.equal(unchanged.pipeline.pages[0].imports.length,0);
+ const changed=await rejectedKeyFixture('public-after'),update=changed.store.update.bind(changed.store),before=await changed.store.read();
+ changed.store.update=async mutator=>{const result=await update(mutator);await writeFile(changed.config.immutablePins[0].path,'Concurrent public change');return result;};
+ await assert.rejects(repairImportKey(changed.store,changed.input,{model,config:changed.config}),/Repair preimage changed/);
+ const after=await changed.store.read();assert.equal(after.pipeline.pages[0].status,'UNKNOWN');assert.deepEqual(after.pipeline.pages[0].attempts,before.pipeline.pages[0].attempts);assert.deepEqual(after.pipeline.pages[0].generationResults,before.pipeline.pages[0].generationResults);
+});
+
 test('invalid import keys fail enqueue before any author work and leave state bytes unchanged',async()=>{
  for(const key of ['snake_case','',null,'bad keyWrittenDraft'])assert.throws(()=>validateImportKey(key),/INVALID_IMPORT_KEY/);
  assert.equal(validateImportKey('snake_caseWrittenDraft'),'snake_caseWrittenDraft');

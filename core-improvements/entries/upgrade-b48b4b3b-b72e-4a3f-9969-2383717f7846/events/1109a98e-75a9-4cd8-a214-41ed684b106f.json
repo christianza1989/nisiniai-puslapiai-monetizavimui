@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root integrated frozen helper0047 and verified common Task/Run/Record/normal-owner HTTP with inert translator. Final21displayPGPASS162.79s, originals/operating/native exact. First17PASS94.19s; retained original baselines: legacy starvation1FAIL6.87s, second-owner duplicate1FAIL10.20s, poison-original1FAIL5.38s. All repaired; current4poisoncasesPASS23.10s and final21 includes unchanged31invalidpayloads. Original runner known-usage failures and legacy uncertainty retained. The first broader old-worker run produced1FAIL/39PASS422.98s under overlapping same-QA PG runs; its exact failed case passed alone25.80s; full57 serial rerun is still PENDING, so no broad worker adoption or current operating/platform acceptance is claimed. Source only, provider/SMTP/IMAP0, closed174unchanged.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/run-mail-display-pg.py final-integrated-21",
+      "result": "PASS",
+      "evidence": "21 PostgreSQL/ownerHTTP/common-worker cases162.79s SHA90b0bac8477b1641f46cba352f437956f14e63852f19b4ca2154827622e6ff5b. Real register/verify, current/stopped policy, known/unknown, cancellation, atomic commit, legacy progress, second-owner private RLS/cache/race, malformed originals; no real translator call."
+    },
+    {
+      "command": "python .local/sharp-policy/run-model-prepare-pg.py full-display-source-pure [18 explicit acquisition/native/authority/mail/display/direct offline files]",
+      "result": "PASS",
+      "evidence": "378cases/67subtests30.10s SHAd4c0fb966b53bed3f093152cc450ff8d26bd162c931c939303ffb21fb72e11f8 before the final eligible_source filter; that filter is covered by the later final21 PG run. Original/operating/native exact; provider/SMTP/IMAP0."
+    },
+    {
+      "command": "ruff check scoped Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped source/tests Ruff after exact first-party import sorting and whitespace checks pass. No execution/output claim from lint."
+    }
+  ],
+  "eventId": "1109a98e-75a9-4cd8-a214-41ed684b106f",
+  "sequence": 4,
+  "at": "2026-10-18T01:44:43.519Z"
+}

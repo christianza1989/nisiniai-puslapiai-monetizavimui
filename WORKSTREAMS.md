@@ -1763,3 +1763,16 @@ Common Task/Run remains the only queue/attempt; each explicit DisplayPolicy owns
 its one-call-per-Job lifetime cap. Atomically committed DB Record supplies display,
 GET never dispatches, original mail and all historical claims stay unchanged.
 All provider/channel/operating flags remain held during source implementation.
+
+Root integrated helper frozen29542b9/47a364e as882d183/52c067b. Additional
+Root-only dependency is the Direct unit's exact worker-kind expectation: original
+four-kind list fails against the six maintained handlers. Preserve all prompt,
+configuration and router checks; update only that exact list, with separate
+workflow journal upgrade-b02e9bad-0ba8-4d67-9a40-e90819bb32f7. Operating0045,
+closed174 acquisition ledger and provider/channel switches remain unchanged.
+
+Root also owns the current mail contract and append-only agent-path handoff
+alignment under upgrade-7fc8d6a3-7cbb-4d3d-aabd-5e49dbc4b1ad. Retain dated
+legacy adapter proof; current instructions route the old filename to durable
+Task/Run rather than a direct paid filesystem batch. No operating adoption is
+implied by a documentation update.

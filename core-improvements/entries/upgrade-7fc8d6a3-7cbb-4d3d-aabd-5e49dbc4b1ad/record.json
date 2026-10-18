@@ -1,0 +1,19 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Align owned mail contract and continuation with durable display task entry points",
+  "category": "workflow",
+  "evidence": [
+    "After0047 integration the old contract still described mail_display_translate.py as a direct one-mail paid filesystem batch and said automatic dispatch was not implemented. Runtime now routes this filename to common display Task and Run; historical sidecars remain read-only fallback. Preserve dated evidence while replacing current operational instructions."
+  ],
+  "paths": [
+    "docs/contracts/CUSTOMER_MAIL_VIEW.md",
+    "docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Restore prior instructions only with the matching explicit legacy CLI source; retain all dated proof and closed budget boundaries.",
+  "id": "upgrade-7fc8d6a3-7cbb-4d3d-aabd-5e49dbc4b1ad",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "52c067b8d3a29d64fe7ed01f2ebecb52f636507b",
+  "createdAt": "2026-10-18T01:33:23.933Z"
+}

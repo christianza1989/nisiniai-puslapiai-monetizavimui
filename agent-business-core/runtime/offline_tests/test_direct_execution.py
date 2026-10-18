@@ -110,7 +110,7 @@ def test_source_configuration_changes_with_capability_and_never_with_display_tex
         assert "no tools and perform no external actions" in prompt
         assert hashlib.sha256(prompt.encode()).hexdigest() != direct_policy.configuration_sha256(role)
     assert [handler.kind for handler in worker.handlers()] == ["chat.consult", "acquisition.reviewed_capture",
-        "workspace.team_turn", "workspace.direct_turn"]
+        "workspace.team_turn", "workspace.direct_turn", "acquisition.model_prepare", "mail.display_translate"]
 
 
 def test_actual_router_exposes_exact_wire_paths_and_keeps_every_legacy_team_operation():

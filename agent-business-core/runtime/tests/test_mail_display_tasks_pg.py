@@ -7,7 +7,6 @@ from types import SimpleNamespace
 from uuid import uuid4
 
 import pytest
-from pinet_core.mail_view.task_models import DisplayJob, DisplayPolicy
 from sqlalchemy import func, select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_customer_public import verified
@@ -20,6 +19,7 @@ from pinet_core.control.routes import scope, token_hash
 from pinet_core.customer_text.service import customer_session
 from pinet_core.mail_view import task_handler, task_policy, task_service
 from pinet_core.mail_view.task_contract import KIND
+from pinet_core.mail_view.task_models import DisplayJob, DisplayPolicy
 from pinet_core.mail_view.translations import POLICY_SHA, Record, TranslatedText, record_path, source_digest
 from pinet_core.models import Business, Case, MailMessage, new_id, utcnow
 from pinet_core.tasks import worker
@@ -358,3 +358,34 @@ async def test_two_owners_concurrently_enqueue_one_source_under_a_named_unique_f
     assert {row["state"] for row in results}=={"queued","existing_shared"}
     assert await worker.execute_once(fake,kind=KIND)
     assert not await worker.execute_once(fake,kind=KIND) and fake.calls==[p["mail_id"]]
+
+
+@pytest.mark.parametrize("invalid", [
+    {"body": "x"*16001}, {"body": {"unexpected": "object"}},
+    {"subject": "x"*257}, {"sender": ["unexpected@example.test"]},
+], ids=("oversized-body", "object-body", "oversized-subject", "array-sender"))
+async def test_more_than_one_page_of_invalid_originals_cannot_starve_valid_new_mail(display, invalid):
+    p, fake = display, Translator()
+    expected = {**deepcopy(p["payload"]), **invalid}
+    retained_ids = []
+    async with AsyncSession(p["admin"]) as tx, tx.begin():
+        await tx.execute(update(MailMessage).where(MailMessage.id == p["mail_id"])
+            .values(created_at=utcnow()+timedelta(seconds=60)))
+        for index in range(31):
+            mail_id = new_id()
+            retained_ids.append(mail_id)
+            tx.add(MailMessage(id=mail_id, business_id=p["business_id"], environment_id=p["environment"],
+                case_id=p["case_id"], message_id="<"+uuid4().hex+"@example.test>", direction="inbound",
+                state="captured", created_at=utcnow()-timedelta(seconds=40-index),
+                payload=deepcopy(expected)))
+    for _ in range(2):
+        await worker.execute_once(fake, kind=KIND)
+    assert fake.calls == [p["mail_id"]]
+    assert (await retained(p))[1].status == "succeeded"
+    async with AsyncSession(p["admin"]) as tx:
+        assert await tx.scalar(select(func.count()).select_from(DisplayJob)
+            .where(DisplayJob.business_id == p["business_id"])) == 1
+        assert await tx.scalar(select(func.count()).select_from(MailMessage)
+            .where(MailMessage.business_id == p["business_id"])) == 32
+        assert all(payload == expected for payload in await tx.scalars(
+            select(MailMessage.payload).where(MailMessage.id.in_(retained_ids))))

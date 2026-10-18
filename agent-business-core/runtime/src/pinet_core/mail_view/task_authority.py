@@ -4,7 +4,7 @@ from datetime import UTC, datetime
 from types import SimpleNamespace
 from uuid import UUID
 
-from sqlalchemy import select, text
+from sqlalchemy import and_, func, or_, select, text
 
 from ..acquisition.module_admin import execution_current
 from ..config import settings
@@ -16,6 +16,7 @@ from .service import summary
 from .task_contract import EFFORT, MODEL
 from .task_models import DisplayPolicy
 from .translations import POLICY_SHA, Record, source_digest, validate_text
+from .wire import MailDetail
 
 FIELDS = ("id", "environment_id", "business_id", "organization_id", "user_id", "portfolio_id", "grant_id",
     "session_id", "source_revision", "instruction_sha256", "target_language", "model", "effort",
@@ -116,6 +117,33 @@ async def original(tx, policy, mail_id, *, lock=True):
     if not isinstance(data["body"], str) or len(data["body"]) > 16000:
         raise ControlError(409, "mail_display_original_unavailable")
     return mail, data, source_digest(policy.business_id, policy.environment_id, data)
+
+
+def eligible_source():
+    """Apply existing original wire bounds BEFORE a bounded oldest-first scan.
+
+    Bad retained mail stays unchanged. It cannot monopolize every discovery page
+    or authorize a truncated/coerced model input. Explicit enqueue still performs
+    full fresh Python validation and parent locking.
+    """
+    def bounds(name, value):
+        rules = MailDetail.model_fields[name].metadata
+        low = next((rule.min_length for rule in rules if hasattr(rule, "min_length")), 0)
+        high = next(rule.max_length for rule in rules if hasattr(rule, "max_length"))
+        return func.char_length(value).between(low, high)
+
+    required = [func.jsonb_typeof(MailMessage.payload) == "object",
+        MailMessage.direction.in_(("inbound", "outbound")),
+        bounds("message_id", MailMessage.message_id), bounds("state", MailMessage.state),
+        select(Case.id).where(Case.id == MailMessage.case_id,
+            Case.business_id == MailMessage.business_id,
+            Case.environment_id == MailMessage.environment_id).exists()]
+    for name in ("sender", "recipient", "subject", "body"):
+        value = MailMessage.payload[name]
+        # Missing keys use the original adapter's empty-string default. JSON
+        # null, objects, arrays and numbers are rejected without coercion.
+        required.append(or_(value.is_(None), and_(func.jsonb_typeof(value) == "string", bounds(name, value.astext))))
+    return required
 
 
 def checked_record(record, original, *, business_id, environment_id, expected_sha256):

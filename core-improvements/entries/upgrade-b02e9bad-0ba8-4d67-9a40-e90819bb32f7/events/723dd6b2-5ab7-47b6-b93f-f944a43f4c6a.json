@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original exact registry assertion reproduced1FAIL4.01s; add only acquisition.model_prepare and mail.display_translate while retaining all Direct identity/prompt/router assertions. Related source test packet49PASS3.00s. No runtime behavior change.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_mail_display_tasks.py offline_tests/test_mail_display_schema.py offline_tests/test_mail_view.py offline_tests/test_direct_execution.py -q -x",
+      "result": "PASS",
+      "evidence": "Retained display-pure-01 log49PASS3.00s SHA c3e8a42d2bb85f44dbf1a2c50d3374c79efb8596c649caede172e1d4289cc34f; original/operating/native exact; provider/SMTP/IMAP0."
+    }
+  ],
+  "eventId": "723dd6b2-5ab7-47b6-b93f-f944a43f4c6a",
+  "sequence": 2,
+  "at": "2026-10-18T01:33:25.554Z"
+}

@@ -21,29 +21,38 @@ future or outdated-instruction records fall back to the usable original with an
 explicit unavailable label. GET never calls a provider. No translation HTML is
 executed and no remote email image is loaded.
 
-`mail_display_translate.py` is an explicit one-message operator batch using the
-normal authenticated read and existing bounded no-tools CLI transport, fixed
-gpt-6.1-sol/high and one call/120 seconds. A durable source claim precedes IO;
-an uncertain failure is not retried automatically. It rechecks source/current
-authorization before retaining a result. Number/URL/address preservation is a
-conservative check, not a full semantic-quality guarantee. Inspect actual model
-outputs before claiming translation quality. Model usage is retained separately
-from creation accounting; this does not reset or consume its old37/40 allowance.
+Schema0047 source adds the distinct `mail.display_translate` kind on the common
+Task/Run/Event worker. A separate explicitly bounded DisplayPolicy admits fixed
+gpt-6.1-sol/high, no-tools translation after canonical mail capture commits.
+The single source-bound Job reserves its sole Run before IO. Unknown or failed
+attempts cannot retry through a new policy. A validated DB Record and common
+terminal success commit atomically; GET remains read-only. Current business
+owners share the derived LT display without sharing private execution records.
+Original subject/body/headers stay unchanged. Number/URL/address preservation
+is a conservative check, not a full semantic-quality guarantee. Inspect actual
+model outputs before claiming translation quality. Display accounting is separate
+from creation and acquisition; it cannot reopen their retained closed allowances.
 
 Configure `PINET_MAIL_DISPLAY_DIRECTORY` as an absolute private operator-owned
-directory shared by API and explicit batch. Keep it outside Git/public artifacts.
-Pass the exact canonical environment ID using `--environment-id`; the envelope's
-public `environment: test` label is not the raw `test-*` tenant environment.
-The batch must reproduce the server's original-content digest with that explicit
-ID before creating an attempt claim or making a provider call. A wrong ID is
-rejected. Existing copies/attempts under the old normalized path require operator
-review; the repair never silently retries or deletes their unknown usage.
-Later authorized acquisition integration can call this same display adapter
-after durable mail capture. Automatic dispatch is not implemented by this read
-packet. Mail bodies, translations, contact data, Session and CLI traces stay
-private; the API returns only the selected owner's bounded projection.
+directory for historical sidecars/claims only. Keep it outside Git/public
+artifacts. The raw canonical environment, not the public `environment: test`
+label, binds source digests. Existing copies/attempts under both raw and old
+normalized paths are retained and block automatic new paid work; their unknown
+usage is never deleted or relabelled zero.
 
-## Current local evidence — 2026-10-18
+`mail_display_policy.py` manages the separate source/Session-bound policy and
+prepared/committed receipts. `mail_display_task.py` enqueues/reads under the
+normal owner Session or runs one common worker iteration. The old filename
+`mail_display_translate.py` delegates to this same entry point; its former
+direct paid filesystem batch arguments are retired. See
+[durable display](../MAIL_DISPLAY_TASKS.md) and
+[schema0047](../MAIL_DISPLAY_SCHEMA.md) for exact authority and accounting.
+Automatic materialization needs explicit policy, actor allowlist and default-off
+display flags. Source implementation is separate from operating adoption and
+actual provider/channel acceptance. Mail bodies, translations, contact data,
+Session and CLI traces stay private; the API returns an owned bounded projection.
+
+## Earlier read/explicit-batch evidence — 2026-10-18
 
 The related pure regression passed86 cases in13.41s. The two real PostgreSQL
 cases passed in3.23s with normal owner login, pagination/thread reads, exact

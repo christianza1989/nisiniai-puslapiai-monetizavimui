@@ -399,3 +399,39 @@ The old static learning controller is V1; do not pretend it already adopts
 dynamic V2 Configs. A single Quality score does not close full calibration.
 Maudis remains a candidate; agreements, photo rights, domain, public deployment,
 live customer channels and outbound are separate unconfirmed dependencies.
+
+## Durable mail display source continuation — 2026-10-18
+
+This section supersedes the earlier direct display CLI instructions, not their
+dated evidence. Root source after d415c8727facc53ab14a34438f9bb2cce08e563a
+integrates helper0047 commits29542b9/47a364e as882d183/52c067b. The common
+worker now supports source-bound `mail.display_translate` with a distinct
+explicit bounded DisplayPolicy, one immutable Job and one TaskRun reservation.
+The validated LT Record and common terminal success commit together. Owner GET
+never dispatches; the original remains unchanged and current owners share its
+derived display without sharing private Task/Run/policy data.
+
+`mail_display_policy.py` is the privileged prepared/committed policy entry;
+`mail_display_task.py` provides owner enqueue/read or one worker iteration.
+The former `mail_display_translate.py` filename now delegates to the same Task
+entry. Do not reuse old direct batch arguments or remove historical sidecars/
+one-call claims. Legacy claims retain uncertainty and block a new paid attempt.
+Durable no-attempt markers advance bounded scans, and malformed originals are
+filtered using the existing wire bounds before the candidate page limit.
+
+Root's new labelled PostgreSQL QA uses canonical migration/bootstrap and the
+real normal-owner register/verify/mail HTTP/common-worker path with inert
+translation. Initial17 integrated scenarios passed94.19s; related49 pure cases
+passed3.00s and the broader source packet378 cases/67 subtests passed30.10s.
+Original baseline failures are retained for legacy-page starvation, second-owner
+deduplication, malformed-original starvation and the stale four-handler fixture.
+Current final21-display and57-old-worker/model/mail regressions are separate
+pending evidence until their results are recorded. No provider/SMTP/IMAP IO.
+
+Operating adoption is still ba16e225/0045, not this source increment. Five paid
+workers and external channels remain held. The original/operating table hashes
+and771 native file witnesses were exact during the completed QA runs. The old
+174/180 acquisition ledger remains CLOSED with both unknown reservations; this
+feature cannot mint a continuation of it. Model replies, current owner UI actions,
+actual scoped model calibration and authenticated live mail/inbox remain distinct
+remaining links. See MAIL_DISPLAY_TASKS.md and MAIL_DISPLAY_SCHEMA.md.

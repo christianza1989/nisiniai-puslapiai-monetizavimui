@@ -50,6 +50,11 @@ private and exposing no private execution identifiers or usage. Concurrent owner
 inserts recover only the exact named source-key uniqueness conflict.
 Automatic discovery handles unseen immutable messages; a changed legacy original
 requires explicit source-bound enqueue and is never an automatic paid retry.
+The oldest-first candidate query applies the existing original wire's JSON
+string and character bounds before its page limit, plus exact Case ownership.
+More than one page of malformed historical originals cannot starve a later valid
+mail. Those originals remain unchanged, with no Job, truncation or paid attempt.
+Authority, expiry and budget errors still stop materialization.
 
 ## Current implementation scope
 
@@ -58,3 +63,6 @@ verified acquisition-model packet d415c87. They are not operating adoption,
 actual translation quality acceptance, populated browser proof or authenticated
 outbound/inbox admission. The operating API remains ba16/0045 with workers held.
 The earlier174/180 acquisition ledger remains closed and is not a display budget.
+This source increment implements the durable-display link listed as subsequent
+work in ACQUISITION_MODEL_PREPARE.md; its remaining model-reply, UI-action and
+authenticated transport/inbox links are still separate.

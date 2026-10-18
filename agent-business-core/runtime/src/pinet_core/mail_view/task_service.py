@@ -176,6 +176,7 @@ async def reconcile(user_id):
             candidates = list(await tx.scalars(select(MailMessage.id).where(
                 MailMessage.business_id == policy.business_id, MailMessage.environment_id == policy.environment_id,
                 MailMessage.created_at >= policy.mail_created_after,
+                *authority.eligible_source(),
                 func.mail_display_projection(policy.business_id, MailMessage.id, user_id,
                     policy.environment_id, None, POLICY_SHA).is_(None))
                 .order_by(MailMessage.created_at, MailMessage.id).limit(30)))

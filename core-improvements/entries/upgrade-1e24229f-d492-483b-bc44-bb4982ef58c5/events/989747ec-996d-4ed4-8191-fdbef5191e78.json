@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Actual nonstop run exposed retained parser/review corrections omitted from sent Gemini prompt, causing repeated161-character descriptions and repeated rejected wording. Source334a0ec now binds own retained corrections into the exact sent prompt, targets140 UTF16 with hard160, and preserves fact-correction freedom. Original captures, UNKNOWN sends, catalogue and publication hold unchanged. Full live throughput50/h is not achieved.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline*.test.mjs",
+      "result": "PASS",
+      "evidence": "191/191 pipeline tests pass on integrated root source334a0ec;50focused prompt/host checks also pass."
+    }
+  ],
+  "eventId": "989747ec-996d-4ed4-8191-fdbef5191e78",
+  "sequence": 6,
+  "at": "2026-10-18T09:38:22.227Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual live author runs exposed ambiguous body Markdown versus external-only source footer instructions. Source804891e now states both exact surfaces and own source count. No parser guards or original evidence changed. Serial importer coalescing9f2e457 is bounded500ms and never waits for held siblings. Live completed rate50/h remains not achieved; current measured142new/current reviewed, no public writes.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-runner.test.mjs",
+      "result": "PASS",
+      "evidence": "24/24 tests on integrated root coalescing source; cancellation, overlap and UNKNOWN import replay barriers pass."
+    },
+    {
+      "command": "node --test content-studio/test/rewrite-pipeline-host-prompt.test.mjs content-studio/test/rewrite-pipeline-gemini.test.mjs",
+      "result": "PASS",
+      "evidence": "50/50 tests on final root prompt804891e; actual exact-prompt feedback, source count and external-only contact exclusion are asserted."
+    }
+  ],
+  "eventId": "7c31855e-8703-472d-bb4e-87a187e46ae7",
+  "sequence": 7,
+  "at": "2026-10-18T10:01:20.880Z"
+}

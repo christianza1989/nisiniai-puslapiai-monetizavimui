@@ -11,9 +11,10 @@ from ..db import db
 from ..tasks.codex import RunnerError
 from ..tasks.models import Task, TaskRun
 from . import model_authority as authority
-from .agent_role_contract import KIND, OUTPUT, PURPOSE, ROLES, RoleRequest
+from .agent_role_contract import KIND, OUTPUT, PURPOSE, ROLES, parse_request
 from .correspondence import own_capture_condition, recipient_hash
 from .engine import gates
+from .evidence_contract import evidence_work
 from .headless_mail import HeadlessMail
 from .ledger import conditions, scope_values
 from .model_models import ModelAttempt, ModelAuthorization, ModelTaskBinding
@@ -134,6 +135,8 @@ async def check_team(tx, value, work):
         for item in retained
     ):
         raise RunnerError("agent_role_calibration_authorization_retained")
+    if any(item.get("version") != value.version for item in retained):
+        raise RunnerError("agent_role_request_version_retained")
     return bindings, min(*expiries, work.session.expires_at)
 
 
@@ -158,7 +161,7 @@ async def parent_context(tx, value):
             or digest(bound.input) != bound.input_sha256
         ):
             raise RunnerError("agent_role_parent_invalid")
-        previous = RoleRequest.model_validate(bound.input)
+        previous = parse_request(bound.input)
         attempts = list(
             await tx.scalars(
                 select(ModelAttempt).where(ModelAttempt.task_id == task.id, ModelAttempt.run_id == run.id)
@@ -166,12 +169,14 @@ async def parent_context(tx, value):
         )
         output = task.result.get("output")
         if (
-            previous.role != reference.role
+            previous.version != value.version
+            or previous.role != reference.role
             or previous.team != value.team
             or previous.calibration != value.calibration
             or previous.campaign != value.campaign
             or previous.prospect != value.prospect
-            or previous.recipient != value.recipient
+            or getattr(previous, "recipient", None) != getattr(value, "recipient", None)
+            or getattr(previous, "evidence", None) != getattr(value, "evidence", None)
             or len(attempts) != 1
             or attempts[0].state != "succeeded"
             or attempts[0].role != reference.role
@@ -189,7 +194,7 @@ async def parent_context(tx, value):
             raise RunnerError("agent_role_parent_invalid")
         OUTPUT[reference.role].model_validate(output)
         parents.append({"request": previous, "task": task, "run": run, "output": output})
-    if value.role == "research" and (
+    if not evidence_work(value) and value.role == "research" and (
         parents[0]["output"].get("action") != "route" or parents[0]["output"].get("next_role") != "research"
     ):
         raise RunnerError("agent_role_route_not_approved")
@@ -212,6 +217,15 @@ async def observe(tx, value, work):
         approved = {f["id"]: (f["text"], f["source_ref"]) for f in work.business_source["facts"]}
         if any(approved.get(f.id) != (f.text, f.source) for f in value.campaign.facts):
             raise RunnerError("agent_role_facts_changed")
+    if evidence_work(value):
+        from . import evidence_admission
+
+        evidence_admission.packet(value)
+        checked_at = await tx.scalar(text("SELECT clock_timestamp()"))
+        evidence_admission.time_current(value, checked_at)
+        return {"bindings": bindings, "parents": parents, "mail": None,
+                "deadline": evidence_admission.deadline(value, deadline),
+                "initial": False, "checked_at": checked_at}
     mail = None
     expected_mail = value.mail or (
         parents[0]["request"].mail
@@ -286,6 +300,10 @@ async def final_fence(tx, value, work, context):
         from .agent_role_calibration import manifest
 
         manifest(value.calibration)
+    if evidence_work(value):
+        from . import evidence_admission
+
+        evidence_admission.packet(value)
     values = scope_values(work.scope, work.authorization.adapter_id)
     target = (
         ~select(AcquisitionCampaign.campaign_id)
@@ -311,8 +329,13 @@ async def final_fence(tx, value, work, context):
         cast(value.model_dump(mode='json'), JSONB), work.authorization.id
     )
     allowed, now = (await tx.execute(select(current & target, func.clock_timestamp()))).one()
-    prospect = value.prospect if context["initial"] else value.prospect.model_copy(update={"status": "new"})
-    if not allowed or gates(value.campaign, prospect, now):
+    if evidence_work(value):
+        evidence_admission.time_current(value, now)
+        blocked = False
+    else:
+        prospect = value.prospect if context["initial"] else value.prospect.model_copy(update={"status": "new"})
+        blocked = bool(gates(value.campaign, prospect, now))
+    if not allowed or blocked:
         raise RunnerError("agent_role_team_changed")
 
 
@@ -326,7 +349,7 @@ async def preflight(tx, task):
         or digest(bound.input) != bound.input_sha256
     ):
         raise RunnerError("agent_role_task_invalid")
-    value = RoleRequest.model_validate(bound.input)
+    value = parse_request(bound.input)
     if str(value.authorization_id) != bound.authorization_id or str(value.request_id) != task.idempotency_key:
         raise RunnerError("agent_role_task_invalid")
     async with authority.current(tx, bound.authorization_id, task.session_id, execution=True) as work:

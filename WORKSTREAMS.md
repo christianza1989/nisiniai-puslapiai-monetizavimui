@@ -2413,3 +2413,15 @@ incomplete case. Explicit operator ceiling10–300s, default90 unchanged, same
 absolute owner/team/task deadline and fresh heartbeat; no retries, fact/grader
 changes, schema, commercial send or new execution authority. Helper separately
 owns literal Git path checker fix. Actual model acceptance is a new bounded run.
+
+2026-10-19 recipient-less evidence admission VERIFIED issue217: own
+codex/acquisition-evidence-admission-20261019 from fetched fddd5ea7. New
+acquisition/evidence_contract.py/evidence_admission.py/evidence_schema.py,
+agent_role contract/tasks/authority/handler/projection version dispatch,
+migration0052, thin owner CLI, focused tests/docs/reference and unique journal.
+Reuse common Task/Run/attempt/current Config/six-team fences. Only public-evidence
+research then qualification; no recipient, synthetic alias, capture/CRM/mail,
+new runner/scheduler or live calls. QA lease announced before dedicated PG use.
+Dedicated0052 QA: combined55PG and final3focused PASS, exact upgrade-body
+rehearsal rolled back, all9219prior rows unchanged; lease released. Final
+139offline checks PASS. Own branch/PR handoff only; no main/operating adoption.

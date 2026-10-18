@@ -43,8 +43,10 @@ and contactable prospect lists remain empty until actual evidence-based research
 and qualification. Public email visibility is not consent or a send permission.
 This stage neither imports contacts into CRM nor sends mail, enables a scheduler,
 resumes suppression or automatically activates a campaign. Native saved-agent
-research/qualification, current contact authority and reviewed transport are
-separate consumers to connect and verify.
+research/qualification has a separate strict recipient-less
+[evidence admission](ACQUISITION_EVIDENCE_ADMISSION.md) on the common Task/Run
+path. Its source/QA acceptance is separate from actual adoption. Current contact
+authority and reviewed transport remain separate consumers to connect and verify.
 
 Run from the runtime directory after normal paired Git freshness:
 

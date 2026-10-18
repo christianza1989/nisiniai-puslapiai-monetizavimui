@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Own fddd-based implementation only. Initial new positive PG failed at the strict binding fence before Run/provider: JSONB path subtraction needed explicit parentheses. Retained failure log SHA256 22e449f86ccc7ac7b6ac62c69ffbe80add4717b24f3c8ff90a46ef7baea8f822 and original0052 helper DDL; exact guarded correction passed the positive path (b8165243b7611ed4f3c0c0dbf9443369baf7bf9bb9119d5de536b90ed153bf06). First new batch20/21 PASS; its remaining test used the registration dict instead of the login token from an existing fixture, not a shared authorization defect. That failure is retained429dbd67929e34f0eafbb5d839e70ca8ce4217d2d7b869f1f13895dca76706e4. Offline additive-body assertion and formatting/import failures also retained. Country/query/campaign scope, actual DB UTC24h original-source age, lexical pre-IO path refusal, real junction refusal, and symmetric version isolation are explicit new boundaries. Dedicated leased QA baseline95tables/9219rows retained; operating/live systems untouched. Final combined PG/rehearsal/preservation checks still in progress.",
+  "eventId": "1d276b16-289b-499a-a9c4-ba11a7cd94c1",
+  "sequence": 2,
+  "at": "2026-10-18T22:27:44.883Z"
+}

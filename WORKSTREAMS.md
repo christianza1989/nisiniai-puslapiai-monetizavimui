@@ -2026,3 +2026,15 @@ so it must now finish failed/process_finished while retaining exactly2attempts.
 The first8FAIL baseline and intermediate124PASS/2FAIL remain retained. New test
 malformed-EOF cases keep a future expiry to avoid racing an independent valid
 expiry projection; exact elapsed-envelope success is tested separately.
+
+Root bounded monitor-headroom followup2026-10-18 reserves creation/studio.py,
+the fixed live_preview.py serve-call keyword, new test_studio_monitor_headroom.py,
+the shared live-preview protocol fixture keyword/assertions and
+docs/LIVE_PREVIEW_MONITOR_HEADROOM.md under a separate upgrade. The retained
+actual full check takes5.320/7.288s, quiet diagnostic1.452s/182SQL; current fast
+start pacing runs checks back-to-back whenever one exceeds0.2s. Add an explicit
+live-serve-only interruptible0.2s completion-relative idle, preserving unrelated
+start pacing, every fresh check,3s heartbeat,149s bound and cleanup. This is a
+bounded contention hypothesis, not a proven cure: require actual normal-polling
+lifecycle evidence before claiming adoption or closing78/c3. No protected/paid,
+foreign checkout, operating schema, TTL relaxation or permission caching.

@@ -384,7 +384,8 @@ class Service:
                     while True:
                         seconds = 149 if attempt == 0 else max(0., deadline - loop.time())
                         runner = asyncio.create_task(studio._execute([node, SCRIPT], payload | {"attempt_index": attempt},
-                            environment, lambda: self.permitted(lease), seconds, authorization_interval=.2))
+                            environment, lambda: self.permitted(lease), seconds, authorization_interval=.2,
+                            authorization_completion_paced=True))
                         while not runner.done():
                             if lease.view["state"] == "starting":
                                 await self.ready(lease)

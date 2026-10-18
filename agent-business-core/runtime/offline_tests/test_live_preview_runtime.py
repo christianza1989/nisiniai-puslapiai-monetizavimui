@@ -46,17 +46,20 @@ async def fixture(tmp_path, monkeypatch):
             raise ControlError(401, "unauthenticated")
         state.prepared += 1
         return SimpleNamespace(artifact_sha256="b"*64, model_dump=lambda **_: {"artifact_sha256": "b"*64})
-    async def execute(args, body, env, permitted, seconds, *, authorization_interval=1.0):
+    async def execute(args, body, env, permitted, seconds, *, authorization_interval=1.0,
+                      authorization_completion_paced=False):
         assert args[1] == live.SCRIPT and await permitted()
         if body["action"] == "inspect":
             state.inspected += 1
             assert seconds == 20
             assert authorization_interval == 1
+            assert authorization_completion_paced is False
             return {"version": "customer-live-preview-inspection.v1", "scope_sha256": state.pin.fingerprint(),
                 "site_context_sha256": state.pin.site_context_sha256, "can_start": not state.blocked,
                 "blocked_reasons": ["review_missing:page-one"] if state.blocked else []}
         state.served += 1
         assert authorization_interval == .2
+        assert authorization_completion_paced is True
         assert seconds == 149 and '"session"' not in json.dumps(body)
         assert set(body) == {"action", "scope", "creationId", "acceptedRevision", "sourceHash", "canonicalHost",
             "artifactsRoot", "dataDir", "outputDir", "prepared", "lease_id", "instance_id", "nonce", "request_sha256",

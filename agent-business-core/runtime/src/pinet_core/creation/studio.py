@@ -75,7 +75,7 @@ async def preflight_dependencies(still_authorized):
 
 
 async def _execute(arguments, payload, environment, still_authorized, seconds, *, output_limit=1048576,
-                   authorization_interval=1.0):
+                   authorization_interval=1.0, authorization_completion_paced=False):
     # Only fixed server-owned media reads opt into the larger bounded payload.
     # Model/intake/writer callers retain their existing one-MiB default.
     if type(output_limit) is not int or not 1048576 <= output_limit <= 20 * 1048576:
@@ -85,6 +85,8 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
     # independently of the fresh authorization callback.
     if type(authorization_interval) not in (int, float) or not .05 <= authorization_interval <= 1:
         raise RunnerError("studio_authorization_interval")
+    if type(authorization_completion_paced) is not bool:
+        raise RunnerError("studio_authorization_pacing")
     async def bounded(stream, limit):
         chunks, size = [], 0
         while chunk := await stream.read(8192):
@@ -98,10 +100,13 @@ async def _execute(arguments, payload, environment, still_authorized, seconds, *
 
     async def monitor():
         while not finishing.is_set():
-            started = monotonic() if authorization_interval < 1 else None
+            started = monotonic() if authorization_interval < 1 and not authorization_completion_paced else None
             if not await still_authorized():
                 raise RunnerError("authorization_revoked")
             delay = authorization_interval
+            # The long-lived preview explicitly leaves an interruptible gap
+            # after each full fresh graph. No pulse or permission is supplied
+            # by this wait; EOF wakes it and the final fresh check still runs.
             if started is not None:
                 # Fixed fast callers pace serial starts, not completion plus
                 # an idle gap. A slow check never queues catch-up work or

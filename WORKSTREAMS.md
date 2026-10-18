@@ -2203,3 +2203,14 @@ SixRoleGrade's dynamic6map an impossible empty closed object. Root reserved only
 its fixed6property wire representation, actual-converter regression/docs and own
 upgrade; no evaluator instruction/hash, thresholds or protected cases changed.
 Before1FAIL/6nativeOUTPUTPASS retained; after54focusedPASS,0DB/provider calls.
+
+2026-10-18 Hotube private controller actor-context repair: Root reserved only
+acquisition/agent_role_tasks.py, focused read PG tests, this scope/acceptance doc
+and a unique upgrade. Actual restricted PG proves token-only binding hidden,
+customer_session binding visible, original canonical authenticated read PASS.
+Add read_request with owned Task/business/history/input integrity checks; adapt
+ignored controller to authenticate then call that helper before reservation.
+No RLS/business-GUC/schema/handler/evaluator/Config/paid authority change. The
+separate retained47be_final QA database is the only fixture write target. Root
+owns stopped operating grants and final source adoption; no automatic retry or
+new stage clock/allowance is authorized by this source repair.

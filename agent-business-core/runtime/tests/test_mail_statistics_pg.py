@@ -92,6 +92,7 @@ async def test_current_records_are_windowed_and_provenance_separated(statistics_
     assert data["measure"] == "current_record_state_snapshot"
     assert data["records"]["non_synthetic"] == {
         "total": 10, "outbound_draft": 1, "outbound_accepted_by_smtp": 2,
+        "outbound_sending": 0, "outbound_accepted_by_gmail": 0,
         "outbound_rejected": 1, "outbound_delivery_unknown": 1, "outbound_other": 1,
         "inbound_received": 1, "inbound_captured": 1, "inbound_other": 1, "other_direction": 1}
     assert data["records"]["synthetic"]["total"] == 2
@@ -122,3 +123,47 @@ async def test_current_owner_grant_and_empty_scope(statistics_pilot):
         await tx.execute(update(BusinessGrant).where(BusinessGrant.business_id == p["business_id"],
             BusinessGrant.environment_id == settings().environment).values(enabled=False))
     assert (await p["client"].get(p["path"], params=PARAMS, headers=owner)).status_code == 404
+
+
+async def test_gmail_states_are_named_boolean_scoped_current_snapshots(statistics_pilot):
+    p = statistics_pilot
+    added = []
+    async with db.transaction(p["business_id"], settings().environment) as tx:
+        entries = [("accepted_by_gmail", False, 30), ("accepted_by_gmail", False, 31),
+                   ("sending", False, 32), ("accepted_by_gmail", True, 33), ("sending", True, 34),
+                   ("accepted_by_gmail", "false", 35), ("sending", "false", 36),
+                   ("accepted_by_gmail", False, -1), ("sending", False, 86400)]
+        for state, synthetic, seconds in entries:
+            row = MailMessage(id=str(uuid4()), business_id=p["business_id"], environment_id=settings().environment,
+                case_id=p["case_id"], message_id=f"<{uuid4()}@example.test>", direction="outbound", state=state,
+                created_at=START+timedelta(seconds=seconds), payload={"synthetic": synthetic,
+                    "subject": "PRIVATE_GMAIL_STATISTICS_CANARY", "body": "PRIVATE_GMAIL_BODY_CANARY",
+                    "recipient": "private-gmail-statistics@example.test"})
+            tx.add(row)
+            added.append(row)
+    headers = await login(p)
+    response = await p["client"].get(p["path"], params=PARAMS, headers=headers)
+    assert response.status_code == 200, response.text
+    data = response.json()["data"]
+    # Existing unknown state remains one; Gmail accepted/sending must not join it.
+    assert data["records"]["non_synthetic"]["outbound_other"] == 1
+    assert data["records"]["non_synthetic"]["outbound_accepted_by_gmail"] == 2
+    assert data["records"]["non_synthetic"]["outbound_sending"] == 1
+    assert data["records"]["non_synthetic"]["total"] == 13
+    for group, total in (("synthetic", 4), ("unclassified", 8)):
+        assert data["records"][group]["outbound_accepted_by_gmail"] == 1
+        assert data["records"][group]["outbound_sending"] == 1
+        assert data["records"][group]["total"] == total
+    assert all(metric["value"] is None and metric["status"] == "unavailable"
+               for metric in data["provider_metrics"].values())
+    assert all(marker not in response.text for marker in ("PRIVATE_", "@example.test", p["case_id"], added[0].id))
+    async with db.transaction(p["business_id"], settings().environment) as tx:
+        await tx.execute(update(MailMessage).where(MailMessage.id == added[2].id).values(state="accepted_by_gmail"))
+    changed = await p["client"].get(p["path"], params=PARAMS, headers=headers)
+    assert changed.status_code == 200, changed.text
+    current = changed.json()["data"]
+    assert current["records"]["non_synthetic"]["outbound_sending"] == 0
+    assert current["records"]["non_synthetic"]["outbound_accepted_by_gmail"] == 3
+    assert current["records"]["non_synthetic"]["total"] == 13
+    assert current["window"] == data["window"] and current["time_basis"] == "mail_message_created_at"
+    assert current["measure"] == "current_record_state_snapshot"

@@ -2265,3 +2265,14 @@ alreadydenies. Unretained normal six-role controlPASS/weakrefreleased, so actual
 writer cause remainsUNPROVED. One locked-select populate_existing only; unchanged
 15slease/noexpiredrevival/noauthoritycache. Own retained47be_final/inertQA0provider;
 all old8call stage/ledger/Serving6246/privateharness remain frozenhistory.
+
+2026-10-18 mail-statistics Gmail named-state scope: Root authorized exactly
+mail_view/statistics.py/statistics_wire.py and focused offline/PG tests, actual
+docs/MAIL_RECORD_STATISTICS.md clarification and own journal. Before actualPG
+Gmailaccepted2+sending1 incorrectly raised outbound_other from1to4; offline
+projection rejected both named labels. Add outbound_sending and
+outbound_accepted_by_gmail zero-default fields within mail-statistics.v1; fixed
+bound now33groups. Preserve boolean provenance, currentstate/created_at window,
+strictfilters, currentowner/nondisclosure and all7unavailable provider metrics.
+Focused11offline+3restrictedPG PASS,0paid/provider/live/protected/operatingDB.
+No mail_provider/config, engine/eventtable/campaign/UI or frozenstage changes.

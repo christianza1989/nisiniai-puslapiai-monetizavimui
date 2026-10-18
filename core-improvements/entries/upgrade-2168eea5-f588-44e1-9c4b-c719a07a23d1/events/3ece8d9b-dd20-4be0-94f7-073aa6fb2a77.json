@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Only named stored-state counts added to existing mail-statistics.v1. Gmail acceptance is not delivery; sending is not acceptance. Before actualPG1FAIL showed outbound_other4 instead of1, offline1FAIL rejected the named labels; both first failures retained. No engine/schema/event/campaign/UI/filter/provider/operating or protected changes. Historical snapshot evidence remains unchanged.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_mail_statistics.py -q",
+      "result": "PASS",
+      "evidence": "11passed1.27s, including named Gmail/sending totals/zero defaults, invalid totals/rows, fixed SQL/no body fields, bounded aware windows and unchanged strict route filter rejection. All7provider metrics remain unavailable/null."
+    },
+    {
+      "command": "qa_final.py test tests/test_mail_statistics_pg.py --label mail-statistics-gmail-after-20261018",
+      "result": "PASS",
+      "evidence": "3restrictedPG passed5.55s on dedicated47be_final only. Explicit JSONfalse/true/stringfalse separated, Gmail/sending correctly named, original unknown state retained, start/end edges excluded, committed sending->Gmailaccepted updates current state with same created_at window and total. Existing current owner/foreign denial/grant revocation, empty ownscope, anotherenvironment exclusion, body/address/ID nondisclosure and nonmutating snapshot replay pass."
+    },
+    {
+      "command": "ruff check two statistics sources and focused offline/PG tests; git diff --check",
+      "result": "PASS",
+      "evidence": "No lint/diff errors. Exact source scope two fixed labels/two zero-default DTO fields and fixed33aggregate bound; old exactdict includes the new0fields. No mail_provider/config or API filter changes."
+    }
+  ],
+  "eventId": "3ece8d9b-dd20-4be0-94f7-073aa6fb2a77",
+  "sequence": 2,
+  "at": "2026-10-18T18:18:12.146Z"
+}

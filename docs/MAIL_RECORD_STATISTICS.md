@@ -19,7 +19,7 @@ time. This is not a time series of send events or a campaign/cohort report.
 The source is the existing canonical MailMessage table. There is no second mail
 store, mutable recipient profile or fabricated Conversation. SQL selects only
 fixed aggregate labels and counts, not original bodies, subjects, addresses,
-Case IDs or arbitrary provider/state strings. At most27 grouped rows reach the
+Case IDs or arbitrary provider/state strings. At most33 grouped rows reach the
 projection, regardless of the number of unknown state names.
 
 Three independent groups are returned: explicit JSON `synthetic=false`
@@ -29,11 +29,12 @@ treated as the boolean false. `non_synthetic` describes the stored marker only;
 it is not independent proof of a real prospect, authorization or commercial KPI.
 Do not add the three groups together into a business-performance card.
 
-Each group counts stored outbound draft, accepted_by_smtp, rejected,
+Each group counts stored outbound draft, sending, accepted_by_smtp, accepted_by_gmail, rejected,
 delivery_unknown and other states; inbound received, captured and other states;
 and unknown directions separately. Unknowns are retained, not silently dropped.
-An empty group has measured zero stored records. SMTP acceptance is not confirmed
-delivery. `captured` is not a provider-verified human reply. Original messages,
+An empty group has measured zero stored records. SMTP/Gmail acceptance is not
+confirmed delivery; `sending` is a stored in-progress state, not acceptance.
+`captured` is not a provider-verified human reply. Original messages,
 receipt states and translation identities remain unchanged by the read.
 
 Delivered, bounced, opened and clicked metrics are unavailable/null with reason
@@ -42,6 +43,10 @@ unavailable/null with reason `not_derived_from_record_snapshot`. No percentage o
 denominator is invented. A downstream interface must show lack of data separately
 from a measured zero. These fields reserve honest semantics, not a connected
 Gmail/IMAP event feed.
+
+The additive v1 fields `outbound_sending` and `outbound_accepted_by_gmail` default
+to zero in each provenance group. They classify current records previously
+included in `outbound_other`; they add no provider event, campaign or UI filter.
 
 ## Acceptance
 

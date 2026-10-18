@@ -27,7 +27,9 @@ class Window(Strict):
 class RecordCounts(Strict):
     total: int = Field(default=0, ge=0)
     outbound_draft: int = Field(default=0, ge=0)
+    outbound_sending: int = Field(default=0, ge=0)
     outbound_accepted_by_smtp: int = Field(default=0, ge=0)
+    outbound_accepted_by_gmail: int = Field(default=0, ge=0)
     outbound_rejected: int = Field(default=0, ge=0)
     outbound_delivery_unknown: int = Field(default=0, ge=0)
     outbound_other: int = Field(default=0, ge=0)

@@ -11,6 +11,15 @@ When actual adapter or model work exposes a shared mismatch, complete the [core 
 1. Establish the objective and real recipient job: product_sale/buyer or provider_signup/provider. Separate supplier/referral roles, campaign version, segments/geography, evidence expiry, source policies, limits and pause. Platform providers are not product buyers; activation is not a sale. Unknown stock/certificates/capacity remain unknown.
 2. Discover organizations through authorized original sources. Confirm original organization/procurement pages and minimal contact provenance. Reuse bounded public retrieval for approved URLs. Record unavailable sources without inventing evidence.
 
+   For a finite operator-authorized Google search batch use the shared
+   `scripts/acquisition_discover.py` and its pinned `DiscoveryPlan`, documented
+   in [live discovery evidence](../../../docs/LIVE_ACQUISITION_DISCOVERY.md).
+   The adapter checks current Treg catalogue pricing, retains intents/actual
+   charges and applies local URL exclusions before existing primary retrieval.
+   Its evidence packet is not a qualified Prospect, CRM import, contacting
+   permission or scheduler activation. Preserve a failed/uncertain run directory;
+   do not rename it to retry the same paid request.
+
    Search HTTP200, row count and requested geography/excluded domains are not verified source facts. Provider filters can be ignored. Apply `review_discovery_urls()` locally to bounded URL-only discovery under caller-owned exclusions; it grants no read, source-use, recipient or send rights. Confirm first-party location rather than matching the query's city to a similarly named street. Record initial zero/foreign-activity results, source availability and actual spend separately from qualified/contactable/drafted outcomes; never silently fill a sparse region with another city's providers.
 3. Import private `Campaign`/`Prospect` evidence. Daily preparation qualifies/drafts within budgets, independently reviews and saves local-day receipts. Research/draft cannot send. Handle foreign-site data, stale facts, refusal/bounce/OOO/replies and uncertain attempts correctly.
 

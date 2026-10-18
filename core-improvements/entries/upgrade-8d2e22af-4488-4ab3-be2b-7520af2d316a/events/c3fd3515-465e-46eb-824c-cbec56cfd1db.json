@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Manual bounded live rehearsal retained2Google queries/18rows/8local exclusions/4retrieved primary pages at1000microUSD, no send/import. A separate CLI probe completed with known500microUSD but Windows CP1252 output broke UTF8 JSON parsing; original bytes/charge retained and no retry. New backend forces UTF8 and uses the observed {result,_treg.http_status/call_id/charged_micro} receipt. Inert36case regression passed. Initial new-test collection syntax error corrected before tests ran; no operating data/provider affected. Actual new-adapter live acceptance follows separately; Root2e89 saved-six-role batch remains frozen unchanged.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_discovery.py offline_tests/test_acquisition_discovery_treg.py offline_tests/test_acquisition_discovery_urls.py",
+      "result": "PASS",
+      "evidence": "36passed in1.90s; no provider/DB. Covers canonical exclusions, no permission inference, strict expiry/identity/query/read caps, retained above-ceiling/unknown charges and no replay; fixed price-before-call/endpoint/CLI args, SHA pin and UTF8 environment."
+    },
+    {
+      "command": "ruff check exact new acquisition discovery source/CLI/tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed after formatting/import sorting; no unrelated source changes"
+    },
+    {
+      "command": "node scripts/repository-safety.mjs .",
+      "result": "PASS",
+      "evidence": "5418candidatefiles,0findings; source queries/provider results remain private ignored artifacts"
+    }
+  ],
+  "eventId": "c3fd3515-465e-46eb-824c-cbec56cfd1db",
+  "sequence": 2,
+  "at": "2026-10-18T19:26:36.429Z"
+}

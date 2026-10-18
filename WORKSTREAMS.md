@@ -2317,3 +2317,12 @@ before any provider call. Keep old holds, threads, corpus, Config2, grader,
 for derived synthetic campaign/recipient only; Python compares the complete
 retained calibration reference excluding only case_id, matching existing SQL.
 No schema, real recipient aliasing, suppression reset or live campaign activation.
+
+2026-10-18 Root parallel owned discovery worktree at2e89e0bb, branch
+codex/acquisition-live-discovery-20261018; issue66 comment6254073426. Own new
+acquisition/discovery.py/discovery_treg.py, scripts/acquisition_discover.py,
+focused offline tests, docs/LIVE_ACQUISITION_DISCOVERY.md, daily-outbound reference
+and own journal. Frozen Root six-role model batch remains unchanged source2e89.
+Reuse Treg CLI Google and existing discovery_urls/PublicResearch; finite exact
+query/read/cost/source/expiry pins, private intents/receipts, no auto retry.
+No second CRM/calibration system, recipient authorization or mail/scheduler.

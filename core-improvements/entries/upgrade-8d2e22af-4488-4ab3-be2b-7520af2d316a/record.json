@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Connect finite Google discovery to canonical local URL review and primary source retrieval, retaining query intents/charges and enforcing Windows UTF-8 CLI JSON",
+  "category": "code",
+  "evidence": [
+    "docs/LIVE_ACQUISITION_DISCOVERY.md",
+    "agent-business-core/runtime/offline_tests/test_acquisition_discovery.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_discovery_treg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/discovery.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/discovery_treg.py",
+    "agent-business-core/runtime/scripts/acquisition_discover.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_discovery.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_discovery_treg.py",
+    "docs/LIVE_ACQUISITION_DISCOVERY.md",
+    "SKILLS/niche-client-acquisition/references/daily-outbound.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop this operator-only discovery source and scoped revert. Preserve every attempted query, actual provider charge, private public-source evidence and unknown result; never infer contact or send rights from a URL. Frozen2e89 calibration runtime remains unchanged.",
+  "id": "upgrade-8d2e22af-4488-4ab3-be2b-7520af2d316a",
+  "branch": "codex/acquisition-live-discovery-20261018",
+  "baseSha": "2e89e0bbf5da55a7b425f39dc7a3a93ad72a58d6",
+  "createdAt": "2026-10-18T19:25:44.816Z"
+}

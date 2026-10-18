@@ -108,3 +108,35 @@ Private DTO/projection receipts prove preparation only. Native registration,
 source admission, model calibration, adoption/rollback, live Gmail and production
 campaigns remain **UNVERIFIED / not performed**. The authorized platform chat has
 the exact private paths and these concrete integration dependencies.
+
+## Subsequent authorization and first native smoke harness
+
+After the preparation handoff, the human explicitly instructed the two chats to
+continue implementing/calibrating while away. The platform chat bounded a **new**
+Hotube allowance at 60 combined attempts/3,600 seconds, zero automatic retries,
+at most one candidate, with gpt-6.1-sol/high. The first batch is one known native
+smoke only: estimated 11 calls, strict 12-attempt/1,200-second sublimit, R2/E6
+native authorizations. The earlier 180-attempt plan was not activated. CLI cost
+remains unknown; no USD enforcement is inferred.
+
+Private `smoke_native.py` now composes the maintained NativeWorkflow/run_case
+with exact targeted `tasks.worker.execute_once(kind, task_id)` dispatch.
+The existing DurableBudget60/3600 covers native, recipient and grader calls;
+native SQL caps remain additional gates. A one-shot marker preserves interruption
+and prevents automatic resume. The script neither creates native authority nor
+modifies a foreign runtime/worker/configuration. Default invocation performs
+offline checks only; execution requires an authentic hashed operator binding,
+current genuine owner/source/Config/native grants, and independent custodian seal.
+
+Offline checks verified source/AST and actual canonical worker/native signatures,
+composite mail/thread scope keys, current authorization fields, binding-hash refusal
+and one-shot preservation. There were zero DB connections, model calls or protected
+inputs opened. Actual execution is pending the platform owner's binding. The
+independent custodian is preparing a new corpus; no known case is relabelled holdout.
+
+One further source dependency was reported to the platform owner: native submit
+retains campaign/organization/stage and rejects a different fingerprint with
+`acquisition_native_stage_retained`. Later baseline/candidate replay cannot simply
+change request or authorization IDs; the comparison identity/budget design remains
+unaccepted. The one-shot smoke does not need that replay, and campaigns are not
+changed to evade the limit.

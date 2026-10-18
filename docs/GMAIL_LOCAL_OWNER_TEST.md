@@ -2,12 +2,20 @@
 
 ## Naujausias vietinis šaltinis ir kalibravimo riba — 2026-10-18
 
-Vietinis API naudoja `6246c1932f8b41f7adf6c9ebdbcc7082bc9aa1a1`.
+Vietinis API naudoja `0adf9fb350d506b81947f663d4e0b6578765a236`.
 Pritaikant šį šaltinį atskirai patikrinta schema `0050`, visų 96 ankstesnių
 lentelių duomenų ir 1 010 privačių svetainės failų tapatumas. Autentifikuotas
 lietuviško laiško skaitymas tebėra `ready`; neprisijungęs klientas gauna 401,
-svetimo verslo užklausa — 404. 106 offline ir 2 izoliuotos PostgreSQL integracijos
+svetimo verslo užklausa — 404. 111 offline ir 6 izoliuotos PostgreSQL integracijos
 patikros praėjo. Tai nepakeičia toliau aprašytų tikro Gmail savitikros įrodymų.
+
+Į šį šaltinį įtraukta nepraėjusių užduočių kvitų pataisa ir užrakintos užduoties
+būsenos atnaujinimas per heartbeat. Pastaroji klaida atkurta dviem transakcijomis
+su aiškiai išlaikytu ORM objektu; įprastas kontrolinis kelias jau veikė.
+Šie bandymai neįrodo, kad būtent ši klaida sukėlė ankstesnį laiško rengėjo gedimą.
+Keturių išsaugotų modelio atsakymų atkūrimas izoliuotoje aplinkoje praėjo,
+tačiau tai nebuvo naujas kalibravimo bandymas su modeliais. Pirminis nepraėjęs
+rezultatas išlieka, o visos šešių agentų grandinės priėmimas dar neatliktas.
 
 Savininko nurodymu šešių rolių modeliams perduodamas įprastas verslo kontekstas.
 Techninės kalibravimo žymos, kilmės duomenys ir siuntimo kontrolė lieka serveryje;

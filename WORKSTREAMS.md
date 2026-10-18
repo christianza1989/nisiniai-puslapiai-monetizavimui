@@ -29,6 +29,9 @@ name uq_mail_display_source.2tables/4execution helpers unchanged,1read helper.
 Additional5PG PASS30.67s (actual2owner text/claim/legacy/ACL/UQ cases), expanded
 51pure PASS1.46s and latest5-helper emptydown/up/bootstrapPASS. Original scope
 verification events remain immutable; added final verification event covers this.
+Final self-review tightened strict legacy markers to no attached Job as well as
+noRun. Exact29542b9 readfunction reproduces wronglegacyfallback1FAIL4.74s; added
+guard target1PASS4.42s and expanded6PG PASS34.63s. No new fields/signatures/IO.
 
 ## Cancelled CLI usage receipt — helper 2026-10-18 source complete
 

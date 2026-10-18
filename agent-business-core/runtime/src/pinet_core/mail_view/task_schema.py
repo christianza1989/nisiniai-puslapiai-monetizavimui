@@ -342,6 +342,7 @@ def projection_sql():
     # only its derived LT display, never another owner's task/accounting ids.
     marker=f"""SELECT 1 FROM public.control_tasks mark WHERE mark.business_id=b AND mark.environment_id=e
       AND mark.kind='{KIND}' AND mark.status='cancelled' AND mark.run_id IS NULL
+      AND NOT EXISTS(SELECT 1 FROM public.{TABLE_JOB} attached WHERE attached.task_id=mark.id)
       AND mark.failure_code='mail_display_legacy_retained' AND jsonb_typeof(mark.result)='object'
       AND mark.result-ARRAY['state','mail_id','source_sha256','instruction_sha256','target_language']='{{}}'::jsonb
       AND mark.result->>'state'='legacy_retained' AND mark.result->>'mail_id'=m

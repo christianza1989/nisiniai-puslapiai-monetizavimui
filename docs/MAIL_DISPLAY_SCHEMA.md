@@ -116,7 +116,7 @@ without broadening owner-scoped Task/Policy/Job RLS or minting another call.
 
 With sha SQL NULL, any matching Business/environment/Mail/instruction/LT Job,
 from any owner, returns claimed/null. A strict common Task legacy marker also
-counts: same kind/Business/environment, cancelled, no Run, failure code
+counts: same kind/Business/environment, cancelled, no Run or attached Job, failure code
 mail_display_legacy_retained, and exactly state/mail_id/source_sha256/
 instruction_sha256/target_language in result. That result says legacy_retained
 and LT with a valid source SHA. Root validates file provenance and creates such

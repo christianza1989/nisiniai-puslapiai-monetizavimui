@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Composed Rootad402+backbone299773f after a33 source. Actual CLI GUC follow-up is server-derived only, retains canonical authority. Own retained15549 QA migrated48→49,94old tables/5518rows exact before seeding and after corrected payload helper. New5 PG item passes split: run34 first3 items passed (full external R2/E2/two replies oneCase/5mail, noCreation, replay/containment; factsdeny; stableAgent/oldhash/newsource/oldAuthdeny); run34 aggregate FAILED only the two final metadata observations lacking customer_session. Run35 reruns only those2 andPASS. Originalrun32wrongmode/run33wrongparent/run34observation errors retained; no guard weakened. No paid/model provider/protected corpus/dealer/site/Serving/operating/UI adoption.",
+  "checks": [
+    {
+      "command": "PINET_NATIVE_QA_CONFIG_NAME=config-fresh.private.json existing qa-venv python -B artifacts/native-chain-qa/run.py -B -m alembic upgrade0049_existing_business_agents; private read-only old-column snapshot comparison",
+      "result": "PASS",
+      "evidence": "run31 migration; private rows48 snapshotSHAe4a402f1c5e22d2e9b9797bf02f06b79b139b3ce9540cdb36fc58a4e5862a267; snapshot49.log and snapshot49-corrected.log both94tables/5518rows exact. Exact299 payload SQL corrected in place without rerunning49 or row writes."
+    },
+    {
+      "command": "PINET_NATIVE_QA_CONFIG_NAME=config-fresh.private.json existing qa-venv python -B artifacts/native-chain-qa/run.py -B -m pytest tests/test_acquisition_external_binding_pg.py::test_source_revoked_after_provider_retains_exact_charge_no_effect -q -s --tb=short",
+      "result": "PASS",
+      "evidence": "run35:2PASS17.41s known/unknown charges survive actual source revoke with zeroCase/mail; Auth/fingerprint unchanged. Final metadata read establishes actual consumer Session; earlierrun34aggregate failure retained."
+    },
+    {
+      "command": "PINET_NATIVE_QA_CONFIG_NAME=config-fresh.private.json existing qa-venv python -B artifacts/native-chain-qa/run.py -B -m pytest tests/test_acquisition_native_chain_pg.py::test_exact_two_config_native_chain_one_case_and_replay -q -s --tb=short",
+      "result": "PASS",
+      "evidence": "run36:1PASS47.72s, legacy Creation/Registration native full chain/replay on0049."
+    },
+    {
+      "command": "PYTHONPATH=src;scripts existing qa-venv python -B -m pytest six related offline acquisition files plus test_acquisition_external_binding.py and tests/test_business_attachment.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": ".local/external-native/offline-final.log:122PASS0.92s including30new external unit cases, actual typed SourcePayload and server-Session GUC regression."
+    },
+    {
+      "command": "existing qa-venv python -B -m ruff check eight owned acquisition runtime files and two new external tests",
+      "result": "PASS",
+      "evidence": "All checks passed on final source/test bytes after genuine external and legacy PG groups."
+    }
+  ],
+  "eventId": "36b01e37-49b8-4c08-b6d9-16ac221ea3ff",
+  "sequence": 4,
+  "at": "2026-10-18T07:50:54.493Z"
+}

@@ -78,6 +78,25 @@ def test_external_hash_pins_binding_separately_from_historical_review_git():
     assert digest(model_authority.material(row)) != digest(material)
 
 
+def test_real_typed_source_projection_is_detached_data_and_bounded():
+    payload = {"version": "external-business-source.v1", "external_revision": "reviewed-v1",
+        "artifact_ref": "private://synthetic/source-v1", "artifact_sha256": "a"*64,
+        "knowledge_sha256": "b"*64, "profile_sha256": None,
+        "review_evidence_refs": ["private://synthetic/review-v1"],
+        "facts": [{"id": "pilot", "text": "Source text stays data", "source_ref": "reviewed-owner"}]}
+    registry = Row(id=uid(11), fingerprint="c"*64, business_id=uid(2), site_id="external-buyer",
+        canonical_host="external.example.test", expires_at=NOW+timedelta(hours=1), payload=payload)
+    before = digest(payload)
+    result = model_authority.reviewed_source(registry)
+    assert result["binding_id"] == registry.id and result["binding_fingerprint"] == registry.fingerprint
+    assert result["facts"] == payload["facts"] and "profile_sha256" not in result
+    result["facts"][0]["text"] = "Changed detached packet"
+    assert digest(registry.payload) == before
+    registry.payload = payload | {"permissions": ["mail.send"]}
+    with pytest.raises(ValidationError):
+        model_authority.reviewed_source(registry)
+
+
 def test_additive_sql_retains_legacy_body_and_all_private_function_acls():
     old = model_schema.current_sql()
     new = external_schema.current_sql()
@@ -97,6 +116,26 @@ def test_unknown_sql_predecessor_refused(monkeypatch):
     monkeypatch.setattr(model_schema, "current_sql", lambda: "CREATE FUNCTION changed()")
     with pytest.raises(RuntimeError, match="predecessor"):
         external_schema.current_sql()
+
+
+async def test_privileged_external_approval_establishes_only_actual_session_scope(monkeypatch):
+    from pinet_core.business_attachment import service as sources
+    from pinet_core.config import settings
+
+    value = module_admin.Authority.model_validate(authority_request(external=True))
+    binding, session = Row(id=uid(11), business_id=uid(2)), Row(id=uid(10), user_id=uid(4))
+    tx = Row(get=AsyncMock(side_effect=[binding, session]), execute=AsyncMock())
+
+    @asynccontextmanager
+    async def canonical(actual_tx, actual_session, business_id, binding_id, **options):
+        assert actual_tx is tx and actual_session is session
+        assert (business_id, binding_id, options) == (binding.business_id, binding.id, {"writing": True, "lock": True})
+        assert tx.execute.await_args.args[1] == {"user": session.user_id, "environment": settings().environment}
+        yield binding
+
+    monkeypatch.setattr(sources, "transaction_authority", canonical)
+    monkeypatch.setattr(module_admin, "execution_current", AsyncMock())
+    assert await module_admin.external_authority(tx, value) == (binding, binding, session)
 
 
 @pytest.mark.parametrize("failure", [None, "site_chat", "parent", "config_epoch", "config_fingerprint"])

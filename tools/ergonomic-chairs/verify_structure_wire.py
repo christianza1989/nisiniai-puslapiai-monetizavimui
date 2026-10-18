@@ -6,6 +6,13 @@ from structure_policy import closure,state_key,VERSION,require_transition
 
 
 def sha(raw):return hashlib.sha256(raw).hexdigest()
+
+def file_sha(path):
+    digest=hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for block in iter(lambda:stream.read(1024*1024),b''):digest.update(block)
+    return digest.hexdigest()
+
 def read(p):return json.loads(Path(p).read_bytes())
 def require(value,message):
     if not value:raise ValueError(message)
@@ -47,8 +54,8 @@ def verify(root,job,session_path):
     receipts={};owned=set();finish_setters=0
     files=sorted((root/'wire').glob('*/RECEIPT.json'),key=lambda p:read(p)['at'])
     for file in files:
-        r=read(file);intent=read(file.with_name('INTENT.json'));body=file.with_name('request.private').read_bytes();reply=file.with_name('response.private').read_bytes();url=file.with_name('url.private').read_text(encoding='utf8')
-        require(sha(body)==r['requestSha256']==intent['requestSha256'] and sha(reply)==r['responseSha256'],'RAW_NATIVE_BYTES_CHANGED')
+        r=read(file);intent=read(file.with_name('INTENT.json'));body=file.with_name('request.private').read_bytes();reply=file.with_name('response.private');url=file.with_name('url.private').read_text(encoding='utf8')
+        require(sha(body)==r['requestSha256']==intent['requestSha256'] and file_sha(reply)==r['responseSha256'],'RAW_NATIVE_BYTES_CHANGED')
         require(sha(url.encode())==r['urlSha256']==intent['urlSha256'],'WIRE_URL_CHANGED')
         require(r['complete'] is True and r['status']==200,'INCOMPLETE_NATIVE_RESPONSE')
         if intent['method']=='POST':
@@ -59,14 +66,20 @@ def verify(root,job,session_path):
             if method=='insertOFMLArticle':
                 insert=b.find('insertInfo');require(insert.findtext('baseArticleNumber')==job['code'] and insert.findtext('seriesId')==job['series'],'ORIGINAL_ARTICLE_SERIES_BINDING')
                 verify_initial_variant(insert,job['originalVariant'])
-                item=ET.fromstring(reply).findtext('.//return');require(bool(item),'REAL_INSERT_ITEM_REQUIRED');owned.add(item)
+                item=ET.fromstring(reply.read_bytes()).findtext('.//return');require(bool(item),'REAL_INSERT_ITEM_REQUIRED');owned.add(item)
             else:
                 require(b.findtext('itemId') in owned,'UNOWNED_SOURCE_ITEM')
                 if method=='setPropertyValue':
                     require((b.findtext('propClass') or '').endswith(('_OPTIONS','_DIMENSIONS')),'FINISHES_SETTER_FOUND')
         else:require(url.startswith('https://s1.eaiws.pcon-solutions.com/4.19.1-002/session-cache/'+session+'/'),'EXACT_SESSION_GEOMETRY_URL')
         receipts[str(file.relative_to(root)).replace('\\','/')]=(r,reply,url)
-    states={k:read(inside(root,v['file'])) for k,v in cp['states'].items()}
+    # Retain receipt metadata and response paths, never the entire model's
+    # binary bodies. Graph policy needs these three snapshot fields only;
+    # every complete original snapshot is still independently hashed below.
+    states={}
+    for key,ref in cp['states'].items():
+        snapshot=read(inside(root,ref['file']))
+        states[key]={field:snapshot[field] for field in ('baseArticle','properties','choices')}
     observations=list((root/'observations').glob('*.json'))
     for file in observations:
         s=read(file);require(s['stateKey']==state_key(s) and s['baseArticle']==job['code'],'SOURCE_SNAPSHOT_IDENTITY')
@@ -75,10 +88,10 @@ def verify(root,job,session_path):
         end=len(chain);require(actions[-2:]==['getExportedGeometry','download'],'RAW_GEOMETRY_ORIGIN_REQUIRED')
         data=next(r for r in reversed(chain[:-2]) if r[0]['action']=='getArticleData')
         choices=next(r for r in reversed(chain[:-2]) if r[0]['action']=='getAllChoiceLists')
-        parsed=parsed_snapshot(data[1],choices[1])
+        parsed=parsed_snapshot(data[1].read_bytes(),choices[1].read_bytes())
         for key,value in parsed.items():require(s[key]==value,'NATIVE_SNAPSHOT_READBACK_'+key)
-        exported=ET.fromstring(chain[-2][1]).findtext('.//return');require(exported==chain[-1][2]==s['geometry']['sourceUrl'],'EXPORTED_GEOMETRY_URL_BINDING')
-        raw=inside(root,s['geometry']['file']).read_bytes();require(sha(raw)==s['geometry']['sha256']==sha(chain[-1][1]),'ORIGINAL_GEOMETRY_BYTES_CHANGED')
+        exported=ET.fromstring(chain[-2][1].read_bytes()).findtext('.//return');require(exported==chain[-1][2]==s['geometry']['sourceUrl'],'EXPORTED_GEOMETRY_URL_BINDING')
+        require(file_sha(inside(root,s['geometry']['file']))==s['geometry']['sha256']==file_sha(chain[-1][1]),'ORIGINAL_GEOMETRY_BYTES_CHANGED')
     for key,ref in cp['states'].items():require(sha(inside(root,ref['file']).read_bytes())==ref['sha256'] and state_key(states[key])==key,'SEALED_STATE_CHANGED')
     for edge in cp['edges']:
         require(edge.get('measured') is True and edge['from'] in states and edge['to'] in states,'REAL_EDGE_ENDPOINTS_REQUIRED')
@@ -88,7 +101,7 @@ def verify(root,job,session_path):
         b=ET.fromstring(inside(root,setters[-1]).with_name('request.private').read_bytes()).find('{http://schemas.xmlsoap.org/soap/envelope/}Body')[0]
         require(b.findtext('propClass')+'.'+b.findtext('propName')==edge['field'] and b.findtext('value')==edge['requested'],'EXACT_CONSTRUCTION_SETTER_BINDING')
         data=next(r for r in reversed(chain) if r[0]['action']=='getArticleData');choices=next(r for r in reversed(chain) if r[0]['action']=='getAllChoiceLists')
-        require(state_key(parsed_snapshot(data[1],choices[1]))==edge['to'],'ACTUAL_EDGE_TARGET_READBACK')
+        require(state_key(parsed_snapshot(data[1].read_bytes(),choices[1].read_bytes()))==edge['to'],'ACTUAL_EDGE_TARGET_READBACK')
     closed=closure(cp,states);require(closed['closed'],'INCOMPLETE_CONSTRUCTION_GRAPH')
     result={'at':datetime.now(timezone.utc).isoformat(),'result':'PASS','job':job['job'],'code':job['code'],'states':len(states),'measuredEdges':len(cp['edges']),
             'rawResponses':len(receipts),'observations':len(observations),'finishSetters':finish_setters,'nativeRequests':0,'geometryAndRuntimeAcceptanceImplied':False}

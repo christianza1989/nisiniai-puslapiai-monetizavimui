@@ -76,3 +76,12 @@ edited; adopt a new build only at a verified safe boundary with a finite pilot.
 Cold source directories may be moved to the owner's external archive only
 after full copy/hash and old-path junction readback verification. Markdown
 documents locate and explain the data; they do not replace 3D or wire bytes.
+
+The independent wire verifier streams complete response and geometry hashes.
+Its receipt index keeps metadata and response paths rather than retaining all
+binary replies in RAM. Graph state keeps only the original identity/domain
+fields; complete snapshots are still hashed and raw source descriptions,
+geometry origins, session/item ownership and construction setters are checked.
+This avoids model-sized memory growth without skipping any byte/readback gate.
+Adopt a new offline freeze only at a safe boundary, with tamper/memory tests,
+old/new real-source parity and a complete affected-model proof.

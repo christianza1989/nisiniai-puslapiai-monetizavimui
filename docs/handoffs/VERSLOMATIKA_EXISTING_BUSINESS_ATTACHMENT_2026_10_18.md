@@ -1,0 +1,85 @@
+# Independent business build and later Verslomatika attachment
+
+## Current assignment
+
+2026-10-18: the owner will start a separate chat to build the new kubilų dealer
+website/business, then new agents. This platform chat continues the shared
+integration. The independent builder can start now; attachment is not yet an
+end-to-end accepted one-button feature. Do not reuse the rejected informational
+site or its failed calibration as the new business's approved result.
+
+Use the existing Pinet core and its current, successfully fetched instructions.
+Each chat owns its branch/worktree and exact files. This handoff grants no new
+publication, paid call or live channel authorization.
+
+## What the builder preserves
+
+- One stable `siteId`, canonical host when selected, and the registered Business
+  UUID if registration already exists. An unregistered site must be registered
+  through the supported registry path; do not invent a Business UUID or Creation.
+- Approved business facts, product/source evidence and media rights separately
+  from assumptions. The selected manufacturer is not a confirmed partner merely
+  because its public website was used as research.
+- Shared public content/package, media, review/release, host isolation and SEO/GEO
+  contracts. A distinct frontend does not require another shared engine.
+- Public package/release identity and hashes, current source revision, knowledge
+  projection and Profile identity/hash. Private data stays outside Git/public
+  packages.
+- For each subsequently requested agent: purpose, typed Specification, immutable
+  configuration revision/hash, instructions, knowledge and runtime pins, plus
+  private calibration provenance and adoption/rollback evidence from the existing
+  calibration system. Historical results do not automatically admit a changed
+  runtime or configuration.
+
+The initial website request does not automatically enable paid agents, mail,
+voice or prospecting. A later explicit agent request follows the existing
+create-and-calibrate contract and actual channel/cost permissions.
+
+## Existing ownership path
+
+The inspected backend is `1a751d0c12c128468f63fb22d7d4e75d57ef901b`;
+public companion `255fea0813bf1aabeaeea2f2de0b29564118f2fc`;
+portal `3f40081b8a10931728b7b0018a9f1b4008965943`.
+These are inspected feature versions, not a claim of merged-main delivery.
+
+1. An approved explicit site/Profile mapping can register a Business through
+   `agent-business-core/runtime/scripts/network_bootstrap.py`.
+2. The account owner submits an existing-business claim in
+   `/dashboard/prijungti-versla`, through the BFF to
+   `POST /customer/v1/business-intakes` with `kind=claim`.
+3. The reviewed `customer_public_admin.py intake-decision` path requires the
+   verified current owner, an existing Business UUID, matching host and evidence.
+   It creates the existing `BusinessGrant`; it refuses automatic reassignment.
+4. Business-scoped dashboard/workspace reads then use that same Business and
+   portfolio. Ownership does not by itself activate runtime channels.
+
+Public portfolio approval and content-package import are separate operations.
+Publishing `/musu-verslai` content grants no account ownership.
+
+## Remaining platform adapter
+
+Saved customer `Agent`/`Config` objects currently require genuine
+`CreationRegistration` provenance. Their routes are Creation-scoped, their
+composite foreign key points to that registration, and the team directory and
+native acquisition authority use the same ownership chain. The business-scoped
+legacy `/agents` endpoint lists the fixed consultant; it is not a generic import
+of independently calibrated agents.
+
+Therefore attaching an existing Business is already supported, but importing its
+agents into the customer's saved-agent model still needs a compatible,
+versioned existing-project binding boundary. It must preserve the existing
+BusinessGrant/Agent/Config/authority/directory system with authentic external
+source provenance, current-owner/RLS/revocation checks and idempotency. Do not
+fabricate an accepted Creation, bypass the existing foreign key, or introduce a
+second calibration/runtime core.
+
+Configuration import, historical evidence import, current admission and live
+channel activation must remain distinguishable. A headless report alone is not
+current native admission. Account attachment and imported-agent acceptance need
+their own actual end-to-end checks before being called complete.
+
+Source pointers: `customer/admin.py`, `creation_registration/admin.py`,
+`creation_registration/service.py`, `customer_agents/models.py`,
+`customer_agents/service.py`, `customer_agents/evidence.py`,
+`workspace_team/directory.py` and `acquisition/model_authority.py`, all under
+`agent-business-core/runtime/src/pinet_core/`.

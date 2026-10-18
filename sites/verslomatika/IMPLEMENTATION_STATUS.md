@@ -16,6 +16,8 @@ A minimal explicitly bounded technical smoke is separate from the deferred
 business calibration. Existing common Task/Run, native Agent/Config, mail,
 knowledge and calibration contracts remain the only engines. Future attachment
 must preserve the new site's stable identity, current source and owner mapping.
+The inspected ownership/import boundary and independent builder handoff are
+recorded in [existing-business attachment](../../docs/handoffs/VERSLOMATIKA_EXISTING_BUSINESS_ATTACHMENT_2026_10_18.md).
 
 > 2026-10-18 native pilot: the first train case stopped on infrastructure failure,
 > not a behavioral score. Research2 attempts (1 known success/1 failed unknown),

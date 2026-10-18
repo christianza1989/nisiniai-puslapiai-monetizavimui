@@ -1,0 +1,39 @@
+{
+  "status": "local-verified",
+  "note": "Runtime source0ef135fa9c1e1d1716e951e41409e4ddbe8f6246; only later sustained-heartbeat test/docs/journal changes. All22 native cases have item-level PASS evidence split across run23 first12 and run25 remaining10. Run23 command FAILED on pre-admission source_unavailable; original log retained and not represented as a successful command. Three subsequent source observations passed without timeout/gate/source changes. Fresh0047-to0048 migration retained full-row hashes. Inert owned PG only, no paid/provider/protected corpus or operating adoption.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;scripts PINET_NATIVE_QA_CONFIG_NAME=config-fresh.private.json .venv/Scripts/python.exe artifacts/native-chain-qa/run.py -B -m pytest <all offline_tests/test_acquisition*.py and test_mail_*.py> -q --tb=short",
+      "result": "PASS",
+      "evidence": "Retained run22:256 passed plus67 subtests in10.46s on0ef; private artifacts/native-chain-qa/run-22.txt."
+    },
+    {
+      "command": "PYTHONPATH=src;scripts PINET_NATIVE_QA_CONFIG_NAME=config-fresh.private.json .venv/Scripts/python.exe artifacts/native-chain-qa/run.py -B -m pytest tests/test_acquisition_native_chain_pg.py -k 'failed_reply_review or rolls_back or queued_email or stop_and_privacy or campaign_limit or exact_dispatch or last_git or known_lab or outlives' -x -q --tb=short",
+      "result": "PASS",
+      "evidence": "Retained run25:10 passed,12 deselected in350.75s; includes real worker heartbeat >=18s with unchanged15s lease. Other12 item-level passes in failed run23 remain separately disclosed."
+    },
+    {
+      "command": "PYTHONPATH=src;scripts PINET_NATIVE_QA_CONFIG_NAME=config-fresh.private.json PINET_ACQ_WORK_QA_CONFIG=<owned fresh private config> PINET_ACQUISITION_MODEL_SCHEMA_QA=1 PINET_HEADLESS_MODEL_QA=0 PINET_MODEL_SCHEMA_PREFIX_BASELINE=0 .venv/Scripts/python.exe artifacts/native-chain-qa/run.py -B -m pytest tests/test_acquisition_model_prepare_pg.py tests/test_acquisition_model_schema_pg.py tests/test_control_tasks.py tests/test_mail_view_pg.py acceptance_tests/test_acquisition_correspondence.py acceptance_tests/test_acquisition_headless.py -x -q --tb=short -k 'not actual_wellness_roles'",
+      "result": "PASS",
+      "evidence": "Retained run26:99 passed,1 explicit0045 predecessor skip,1 paid provider test deselected in616.40s on fresh migrated0048. Existing test sources unchanged."
+    },
+    {
+      "command": ".venv/Scripts/python.exe artifacts/native-chain-qa/fresh.py upgrade",
+      "result": "PASS",
+      "evidence": "Fresh owned pinet_acq_work_20261018042000 migrated47-to48; before/after full-row counts/hash equal for15Authorizations,16Bindings,24Attempts,16Tasks,13Runs; no helper refresh. Snapshots retained in fresh-before.json/fresh-after.json."
+    },
+    {
+      "command": "agent-business-core/runtime/.venv/Scripts/python.exe -B -m ruff check <all changed Python files since97d8c756f01a172bf844464a03a0e6eda848b8eb>",
+      "result": "PASS",
+      "evidence": "All checks passed on final source and sustained-heartbeat test; unchanged0046/0047 migration/installers separately verified with empty git diff."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs . --secrets-root C:/Users/Lenovo/Documents/CORE_SHARED --report agent-business-core/runtime/artifacts/native-chain-qa/repository-candidates.json",
+      "result": "PASS",
+      "evidence": "5200 candidate files,4244 text files,243814441bytes,zero findings. Private artifacts excluded; exact-staged check additionally required before commit."
+    }
+  ],
+  "eventId": "766a518a-4a43-4bd4-a8bd-cfdc17fe92bd",
+  "sequence": 3,
+  "at": "2026-10-18T05:05:02.995Z"
+}

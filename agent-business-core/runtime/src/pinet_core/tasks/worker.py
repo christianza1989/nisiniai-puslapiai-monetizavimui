@@ -74,12 +74,13 @@ class ChatHandler:
 def handlers():
     # Source-fixed registry, never a browser-selected import/tool/executable.
     from ..acquisition.model_handler import ModelHandler
+    from ..acquisition.model_reply import ReplyHandler
     from ..acquisition.tasks import CaptureHandler
     from ..mail_view.task_handler import DisplayHandler
     from ..workspace_team.direct_handler import DirectHandler
     from ..workspace_team.handler import TeamHandler
 
-    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler(), ModelHandler(), DisplayHandler())
+    return (ChatHandler(), CaptureHandler(), TeamHandler(), DirectHandler(), ModelHandler(), ReplyHandler(), DisplayHandler())
 
 
 def handler_for(kind):
@@ -114,7 +115,7 @@ async def finish_run(tx, task, status, *, usage=None):
                 return
             # Provider usage is durably checkpointed before Handler.run returns.
             usage = await usage_for(tx, task.id, run.id, task.user_id, task.environment_id, task.source_revision)
-        elif task.kind == "acquisition.model_prepare":
+        elif task.kind in {"acquisition.model_prepare", "acquisition.model_reply"}:
             from ..acquisition.model_handler import usage_for
             from ..workspace_team.quota import merge_usage
             saved = await usage_for(tx, task.id, run.id, task.user_id,
@@ -158,7 +159,10 @@ async def reap_running(user_id):
                 await finish_run(tx, task, "failed")
 
 
-async def claim(*, kind=None):
+async def claim(*, kind=None, task_id=None):
+    if task_id is not None:
+        from ..control.routes import identifier
+        task_id = identifier(task_id)
     for handler in handlers():
         if kind is not None and handler.kind != kind:
             continue
@@ -191,7 +195,12 @@ async def claim(*, kind=None):
                     text("SELECT workspace_team_actor_busy(:u,:e)"), {"u": user_id, "e": settings().environment}
                 ):
                     continue
-                task = await handler.claim_task(tx) if hasattr(handler, "claim_task") else await tx.scalar(
+                if task_id is not None:
+                    if not hasattr(handler, "claim_exact_task"):
+                        continue
+                    task = await handler.claim_exact_task(tx, task_id)
+                else:
+                    task = await handler.claim_task(tx) if hasattr(handler, "claim_task") else await tx.scalar(
                     select(Task)
                     .where(Task.status == "queued", Task.kind == handler.kind)
                     .where(handler.queue_filter() if hasattr(handler, "queue_filter") else True)
@@ -284,7 +293,7 @@ async def settle_hidden_task(tx, claimed, usage):
         from ..mail_view.task_handler import settle_in_transaction
         await settle_in_transaction(tx, claimed, usage, "authorization_revoked")
         return
-    if claimed["kind"] == "acquisition.model_prepare":
+    if claimed["kind"] in {"acquisition.model_prepare", "acquisition.model_reply"}:
         # This kind has a separately typed sink. The legacy Director whitelist
         # deliberately remains unchanged and must never silently discard it.
         from ..acquisition.model_handler import usage_for
@@ -327,8 +336,8 @@ async def settle_hidden_task(tx, claimed, usage):
         "j": json.dumps(observed) if observed else None, "event": new_id()})
 
 
-async def execute_once(adapter=None, *, kind=None):
-    claimed = await claim(kind=kind)
+async def execute_once(adapter=None, *, kind=None, task_id=None):
+    claimed = await claim(kind=kind, task_id=task_id)
     if not claimed:
         return False
     task_id, run_id = claimed["task_id"], claimed["run_id"]
@@ -339,7 +348,7 @@ async def execute_once(adapter=None, *, kind=None):
             claimed["context"], lambda: heartbeat(task_id, run_id, user_id=actor, kind=handler.kind), adapter
         )
     except asyncio.CancelledError:
-        if handler.kind == "acquisition.model_prepare":
+        if handler.kind in {"acquisition.model_prepare", "acquisition.model_reply"}:
             from ..acquisition.model_handler import observed_total
 
             async def retain_cancelled():

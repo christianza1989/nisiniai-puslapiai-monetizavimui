@@ -1860,3 +1860,25 @@ retains customer_agents readiness, portal/UI and all operating data/adoption.
 No parallel edits of delegated acquisition paths. Native phase handoff/reply
 integration uses existing queue/engine/Case; old174 budget remains CLOSED and
 no model/transport activation is granted by code or this handoff.
+
+## Native acquisition chain — 2026-10-18, wellness headless agent
+
+Issue66/comment6245040472; branch codex/wellness-native-chain-20261018 from
+97d8c756f01a172bf844464a03a0e6eda848b8eb. Start freshness03:07:31Z main533597c
+PASS. Exact file scope in that comment and upgrade-681076b1-7851-493d-8cde-76fd7775d9a3.
+Own acquisition typed research/email handoff, native reply task and atomic canonical
+Correspondence completion, common-worker/config hooks, additive0048, one existing
+calibration engine's native hooks, tests/docs. Original0046/0047 installers retained.
+Root keeps customer_agents readiness/UI/operating adoption. All runtime flags default
+off; isolated inert PG only. No paid calls, source holdout authoring, old174ledger
+access/reset, live channels or operating DB writes. Historical fixtures are never
+reparented to the Root's actual Business or saved Configs.
+
+2026-10-18 handoff: runtime frozen at0ef135f; current22 native cases have split
+PASS evidence (first12 run23, remaining10 run25), including real-heartbeat18s
+under unchanged15s lease. Current256offline+67subtests and migrated0048 legacy
+99PASS/1explicit0045skip/1paidcase-deselected. Fresh47→48 retained full-row hashes.
+First source_unavailable pre-admission failure preserved; see
+docs/ACQUISITION_NATIVE_CHAIN.md. Implementation window closes with scoped draft
+PR to Root's integration branch; review/integration and actual adoption remain
+Root-owned. No live/paid/protected run or operating migration was performed.

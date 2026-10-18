@@ -1,0 +1,38 @@
+{
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_authority.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_tasks.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_handler.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_adapter.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/headless.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/headless_mail.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/correspondence.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/native_chain.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/native_schema.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_reply.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/native_calibration.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/dialogue_lab.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/scripts/acquisition_model_task.py",
+    "agent-business-core/runtime/scripts/acquisition_dialogue_lab.py",
+    "agent-business-core/runtime/migrations/versions/0048_native_acquisition_chain.py",
+    "agent-business-core/runtime/tests/test_acquisition_native_chain_pg.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_native_chain.py",
+    "docs/ACQUISITION_NATIVE_CHAIN.md",
+    "WORKSTREAMS.md"
+  ],
+  "rollback": "Scoped source revert; retained history blocks schema downgrade; no operating adoption or model authorization.",
+  "summary": "Bind staged research/email and replies to exact native configurations with retained accounting and atomic canonical Case effects",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "siteId": "core",
+  "evidence": [
+    "Frozen source97d8c756f01a172bf844464a03a0e6eda848b8eb has single-config preparation only; no writer-first native handoff or native reply role; issue66 reservation6245021171."
+  ],
+  "id": "upgrade-681076b1-7851-493d-8cde-76fd7775d9a3",
+  "branch": "codex/wellness-native-chain-20261018",
+  "baseSha": "97d8c756f01a172bf844464a03a0e6eda848b8eb",
+  "createdAt": "2026-10-18T03:08:58.024Z"
+}

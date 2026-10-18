@@ -122,8 +122,9 @@ class HeadlessRoles:
     Expected labels/personas/evaluation data never enter this composition.
     Research changes no approved facts, evidence permissions or transport gates.
     """
-    def __init__(self, roles):
+    def __init__(self, roles, *, qualification=None):
         self.roles = roles
+        self.qualification = qualification
 
     max_prepare_calls = 3
 
@@ -141,7 +142,7 @@ class HeadlessRoles:
         if schema is not Assessment:
             raise ValueError('unregistered_headless_role')
         research = {**data, 'campaign': {**data['campaign'], 'mode': 'research_only'}}
-        qualification = await self.roles['researcher'].ask(Assessment, instruction +
+        qualification = self.qualification or await self.roles['researcher'].ask(Assessment, instruction +
             '\nROLE: evidence researcher/qualifier only. Return empty subject/body, next_action research or '
             'exclude. Distinguish organization fit from current purchase intent. No permission or supply inference.',
             research)

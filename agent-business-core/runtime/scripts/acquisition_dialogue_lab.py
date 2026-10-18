@@ -39,9 +39,21 @@ async def main():
     parser.add_argument('--max-turns', type=int, default=3)
     parser.add_argument('--timeout', type=int, default=120)
     parser.add_argument('--list', action='store_true')
+    parser.add_argument('--native-binding', type=Path, help='Private frozen native manifest; metadata inspection only')
+    parser.add_argument('--native-binding-sha256')
+    parser.add_argument('--native-case-id')
     parser.add_argument('--patch-file', type=Path, help='Private candidate reply/research behavior supplement')
     parser.add_argument('--budget-ledger', type=Path, help='Existing cross-batch180-attempt/120min headless budget')
     args = parser.parse_args()
+    if args.native_binding:
+        from pinet_core.acquisition.native_calibration import manifest
+        frozen, _ = manifest({'manifest_path': str(args.native_binding),
+            'manifest_sha256': args.native_binding_sha256, 'case_id': args.native_case_id})
+        if not args.list:
+            raise ValueError('native_calibration_dispatch_not_admitted')
+        print(json.dumps({'version': frozen['version'], 'source_revision': frozen['source_revision'],
+            'cases': [case['id'] for case in frozen['cases']], 'model_dispatch_performed': False}))
+        return
     data = json.loads(args.corpus.read_text(encoding='utf-8')) if args.corpus else corpus()
     if data.get('synthetic') is not True:
         raise ValueError('synthetic_corpus_required')

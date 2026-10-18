@@ -62,6 +62,32 @@ class HeadlessMail:
     def __init__(self, database):
         self.correspondence = Correspondence(database)
 
+    async def reply_context(self, tx, *, scope, adapter_id, thread_id, inbound_id):
+        """Model-free canonical snapshot, within the caller's parent-lock transaction."""
+        service = self.correspondence
+        values = await service.locked(tx, scope, adapter_id)
+        thread = await tx.get(CorrespondenceThread, {**values, 'thread_id': str(thread_id)},
+                              with_for_update=True, populate_existing=True)
+        if not thread or thread.last_inbound_id != str(inbound_id):
+            raise LedgerError(409, 'correspondence_decision_stale')
+        now, source = await service.admission(tx, scope, adapter_id)
+        if thread.source_revision != source:
+            raise LedgerError(409, 'correspondence_instructions_changed')
+        inbound, binding = await service.bound_mail(tx, values, thread, str(inbound_id), 'inbound')
+        rows = list(await tx.scalars(select(MailBinding).where(*conditions(MailBinding, values),
+            MailBinding.thread_id == thread.thread_id).order_by(MailBinding.created_at, MailBinding.mail_id).limit(31)))
+        if len(rows) > 30:
+            raise LedgerError(409, 'headless_context_limit')
+        transcript = []
+        for row in rows:
+            mail, _ = await service.bound_mail(tx, values, thread, row.mail_id, row.direction)
+            transcript.append({'role': 'recipient' if row.direction == 'inbound' else 'agent',
+                               'subject': mail.payload['subject'], 'body': mail.payload['body']})
+        policy = await tx.get(ContactPolicy, {**values, 'recipient_hash': thread.recipient_hash})
+        return {'thread': thread, 'values': values, 'now': now, 'inbound': inbound, 'binding': binding,
+            'transcript': transcript, 'campaign': Campaign.model_validate(thread.campaign),
+            'prospect': Prospect.model_validate(thread.prospect), 'suppressed': policy.state == 'stopped'}
+
     async def _outbound(self, tx, scope, values, thread, request_id, inbound_id):
         record = await tx.get(WorkReceipt, {**values, 'operation': 'decision', 'request_id': str(request_id)})
         if not record:

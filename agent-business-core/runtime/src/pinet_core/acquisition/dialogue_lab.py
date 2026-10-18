@@ -72,6 +72,11 @@ Agentas neturi private persona ar expected labels. Vertink tekstą IR užfiksuot
 def validate_synthetic(campaign, case):
     if not campaign.site_id.startswith('synthetic-') or not case.prospect.site_id.startswith('synthetic-'):
         raise ValueError('synthetic_site_required')
+    validate_synthetic_data(campaign, case)
+
+
+def validate_synthetic_data(campaign, case):
+    """Data bounds also used by the separately server-admitted native workflow."""
     if '@' not in case.recipient or not case.recipient.rsplit('@', 1)[1].endswith('.test'):
         raise ValueError('test_recipient_required')
     for evidence in case.prospect.evidence:
@@ -136,8 +141,11 @@ def capture(root: Path, case, number, subject, body, purpose='marketing'):
             'content_hash': fingerprint({'subject': subject, 'body': body}), 'external_sent': False}
 
 
-async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator, root, now, max_turns=3):
-    validate_synthetic(campaign, case)
+async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator, root, now, max_turns=3, *, workflow=None):
+    if workflow is None:
+        validate_synthetic(campaign, case)
+    else:
+        workflow.validate(campaign, case)
     if not 1 <= max_turns <= 6:
         raise ValueError('bounded_turns_required')
     root.mkdir(parents=True, exist_ok=False)
@@ -145,7 +153,7 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
            'events': [], 'transcript': [], 'external_sent': False, 'synthetic': True}
     atomic(root / 'report.json', row)
     try:
-        result = await prepare(campaign, case.prospect, agent, now)
+        result = await workflow.prepare(campaign, case, now) if workflow is not None else await prepare(campaign, case.prospect, agent, now)
         row['initial'] = result
         atomic(root / 'report.json', row)
         initial_state = result['state']
@@ -183,7 +191,8 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
                 raise ValueError('empty_recipient_reply')
             row['transcript'].append({'role': 'recipient', 'body': recipient.body})
             atomic(root / 'report.json', row)
-            response = await prepare_reply(campaign, case.prospect, row['transcript'], agent, now)
+            response = await workflow.reply(campaign, case, row['transcript'], now) if workflow is not None else await prepare_reply(
+                campaign, case.prospect, row['transcript'], agent, now)
             row['events'].append({'kind': 'reply_decision', **response})
             if response.get('marketing_suppression_required'):
                 row['events'].append({'kind': 'suppressed'})
@@ -221,9 +230,12 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
             atomic(root / 'report.json', row)
             if recipient.finished:
                 break
-        grade = await evaluator.ask(DialogueGrade, GRADE_INSTRUCTION,
-            {'campaign': campaign.model_dump(mode='json'), 'case': case.model_dump(mode='json'),
-             'transcript': row['transcript'], 'events': row['events']})
+        evaluation = {'campaign': campaign.model_dump(mode='json'), 'case': case.model_dump(mode='json'),
+             'transcript': row['transcript'], 'events': row['events']}
+        if workflow is not None:
+            evaluation['native_receipts'] = list(workflow.receipts)
+            evaluation['native_provenance'] = workflow.provenance
+        grade = await evaluator.ask(DialogueGrade, GRADE_INSTRUCTION, evaluation)
         row['grade'] = grade.model_dump()
         labels_pass = bool(set(seen) & set(case.expected_classifications)) if case.expected_classifications else not seen
         grade_pass = all(value for key, value in row['grade'].items() if key != 'reason')
@@ -240,5 +252,8 @@ async def run_case(campaign: Campaign, case: LabCase, agent, persona, evaluator,
                           'reply_rejected', 'researcher_must_not_write_email', 'researcher_unknown_evidence'}:
             row['error_reason'] = str(error)
     finally:
+        if workflow is not None:
+            row['native_receipts'] = list(workflow.receipts)
+            row['native_provenance'] = workflow.provenance
         atomic(root / 'report.json', row)
     return row

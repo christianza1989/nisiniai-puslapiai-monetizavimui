@@ -423,6 +423,8 @@ class Correspondence:
         decision: ReplyDecision,
         instruction_hash,
         reviewed_reply=None,
+        transaction=None,
+        before_effect=None,
     ):
         """Trusted worker commit. Stale model results cannot replace newer inbound.
 
@@ -453,7 +455,7 @@ class Correspondence:
                 raise LedgerError(409, 'exact_reviewed_reply_required')
             input_value['reviewed_reply'] = reviewed_reply
         body_hash = seal(input_value)
-        async with self.database.transaction(scope.business_id, scope.environment_id) as tx:
+        async with self.capture_transaction(scope, transaction) as tx:
             campaign_id = None
             if decision.action in {"reply", "invite", "privacy_reply"}:
                 await apply_scope(tx, scope, adapter_id)
@@ -578,6 +580,8 @@ class Correspondence:
                 except LedgerError as exc:
                     reasons.append(exc.code)
                     state = "blocked"
+            if before_effect is not None:
+                await before_effect(tx)
             policy.revision += 1
             policy.updated_at = now
             thread.revision += 1

@@ -9,12 +9,13 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 
 from pinet_core.config import settings
 from pinet_core.customer.admin import decide
+from pinet_core.customer.registration import register_intake
 from pinet_core.public_projects.admin import approve, revoke, save
 
 
 async def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('action', choices=['draft', 'approve', 'revoke', 'intake-decision'])
+    parser.add_argument('action', choices=['draft', 'approve', 'revoke', 'intake-decision', 'register-intake'])
     parser.add_argument('--input', required=True, help='Private JSON input file; keep outside Git')
     args = parser.parse_args()
     value = json.loads(Path(args.input).read_text('utf-8'))
@@ -29,6 +30,8 @@ async def main():
                 result = await approve(tx, environment=cfg.environment, **value)
             elif args.action == 'revoke':
                 result = await revoke(tx, environment=cfg.environment, **value)
+            elif args.action == 'register-intake':
+                result = await register_intake(tx, environment=cfg.environment, **value)
             else:
                 result = await decide(tx, environment=cfg.environment, **value)
         print(json.dumps(result))

@@ -2058,3 +2058,14 @@ A retained tiny Git-only fixture reproduces failure despite the fetched main ref
 then proves additive mapping repairs tracking without changing detached HEAD or
 files. Retried managed thread01a14e56 is actually active. Record this clone versus
 tracking distinction canonically so a future agent does not repeatedly clone.
+
+Root external registration2026-10-18 reserves new customer/registration.py,
+scripts/customer_public_admin.py register-intake, focused retained PG tests and
+docs/EXTERNAL_BUSINESS_REGISTRATION.md under issue66/comment6248405413 and own
+upgrade. Human authorizes autonomous Hotube calibration/testing while away.
+Existing legacy bootstrap requires static Profile; existing reviewed Intake
+requires an already registered Business UUID. Supply only the missing atomic
+local-admin mapping plus existing decision; no fake Creation, copied ownership
+checks, static voice Profile or automatic channel activation. Helper owns new
+private facts/harness and independent custodian owns unseen cases. Root's new
+paid ledger60attempts/3600s, firstsmoke<=12,0retries is separate from closed pilots.

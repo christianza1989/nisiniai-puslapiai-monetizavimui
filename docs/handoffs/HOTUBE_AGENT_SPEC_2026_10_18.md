@@ -1,9 +1,11 @@
-# Hotube agent specification preparation — 2026-10-18
+# Hotube agent preparation and calibration handoff — 2026-10-18
 
-Status: **private source/specification prepared; not imported, calibrated or activated**.
-The human requested a separate Hotube agent chat supervised by the platform chat.
-Current scope is offline facts, customer-safe knowledge, typed Agent/Config drafts,
-and a new bounded native calibration protocol. No new model allowance is inferred.
+Current status: **knowledge v2 and six Config revisions locally adopted;
+distinct v6 native baseline completed with 3/3 protected quality checks passed**.
+The supervised human-authorized stage used 33 new calls, with 40 across the closed
+parent and child. Live channels and production acceptance remain unverified.
+Earlier sections retain preparation and failure checkpoints; the final v6 section
+records the latest bounded result. No further execution allowance is inferred.
 
 ## Source and file scope
 
@@ -21,7 +23,9 @@ and a new bounded native calibration protocol. No new model allowance is inferre
 - Private artifacts: `.local/hotube-agent-spec-20261018/` in this worktree.
   No private facts, correspondence, corpus or catalogue data are staged for Git.
 
-No runtime, UI, Serving, companion source, DB, account, DNS or process was changed.
+This branch changes no canonical runtime, UI, Serving, companion code, account or
+DNS. Authorized native test dispatch and its DB receipts are recorded below;
+the platform owner controls runtime source/adoption/grants/containment.
 No core upgrade is claimed from specification preparation.
 
 ## Concrete private outputs
@@ -284,3 +288,55 @@ byte-exact before/after. The corrected prefix exists only in a separately named
 audit-only proposal. No native launcher is wired to this proposal; it creates no
 authority and does not reopen the closed batch. DB/provider/model/native dispatch
 counts for this follow-up are all zero. The MemoryError location remains unknown.
+
+## Distinct reviewed v6 stage: completed local baseline
+
+After renewed human direction, Root separately reviewed a new stage capped at
+36 additional calls/1800 seconds, linked to the immutable seven-call parent and
+aggregate ceiling 60. The parent deadline was not extended; all seven original
+closed-stage files remain byte-exact. Same campaign cap40 retained six historical
+native attempts, with genuine new R6/E18 authority. The same three previously
+unexecuted opaque holdouts were retained without persona/label changes.
+
+Private preflight review corrected an incompatible forced READ ONLY transaction
+while retaining all canonical authority locks. The first genuine preflight then
+failed at `six_prior_campaign_native_attempts_required`: the private checker used
+raw ledger usage shape against SQL's `known`/`tokens` envelope. An authorized
+diagnostic confirmed exactly six succeeded attempts with known canonical usage.
+Root reviewed the cause; a distinct envelope validator and explicit environment
+predicate were added. Nineteen offline checks passed; first failure and diagnostic
+bytes remain preserved. No grant reset or paid retry occurred.
+
+Preflight02 passed with 148 SQL statements checked, zero data DML, canonical locks
+retained and no Task/model dispatch. Root reviewed it and supplied a separately
+hashed final GO. One exact-environment execute process then completed and exited 0.
+Only trusted canonical runtime/model roles read protected data; this chat inspected
+safe aggregate and ledger metadata only.
+
+- Frozen runtime source: `182e2936b2b021e092deb8a8f6c571a6874ba48f`.
+- Final sealed manifest: `e5f67b1cc0ac888de796f0384d7fc69dcc1dc42dfcdfdb6c1aab2d836804f670`.
+- Policy pin: `194dfbd5ba3fd2fb6a3d956e07d7e9ad3c05b538021286347e88230d4ccce758`.
+- Guard pin: `7dd8f22e0541e0d3ee18cbed8d00ebb78e90af636f1f191b83740a29eb84aa06`.
+- Runner pin: `655fd905b4856df37380fbd947bb6e13ce197b0b9d14cfd415bb8e01dd8d57e0`.
+- Binding: `4ddf90073c37335b693a2c44b8c26fd192ca5cba691968f87d689438db851795`.
+- Preflight02 receipt: `342c96ce523ca03cd915d37803feb937cfd32f4476a7b1ba72bc1ce1069b499c`.
+- Root final GO: `e5d43460a38e57fb7245925f326f8eefa1185f4099af92e3a9713d7601473bc5`.
+- Safe result: `9d6a237ed6400aa4b819446ea06578df6b384819316a883f493fa209f66475d8`.
+- Child ledger: `d4e1dbae8d6a10381df42b1bb7e8db5ae82bb10a5906d2609db404e3dab7316f`.
+
+Result: **3 completed / 3 quality PASS / 0 infrastructure failures**, with 12 native
+Task receipts and 12 Run receipts. All 33 new attempts completed with known token
+usage: 24 native, 6 persona, 3 evaluator. Including prior charges: **40 total model
+attempts; 30 native campaign attempts**. Stage start 12:15:47.181318 UTC to last
+model completion 12:31:28.591385 UTC: 941.41 seconds, within 1800 seconds. No retry,
+candidate, source/prompt/evaluator change, external send or protected-text exposure.
+Dollar cost remains unknown. Root's subsequent canonical stop receipt independently
+confirms research disabled with 3 Tasks/6 attempts, email disabled with 9 Tasks/18
+attempts, and module disabled. Its stop added zero calls. Independent custodian
+aggregate-linkage review remains separate; no further model work is permitted.
+
+This proves the bounded local native research/email/two-reply workflow for the
+three held-out cases. It does not prove six independently executed workers, live
+Gmail delivery/reply, voice, production account ownership, candidate promotion or
+production adoption. Original known03 FAIL, known07 INCOMPLETE and the closed
+first protected-stage failure remain unchanged historical results.

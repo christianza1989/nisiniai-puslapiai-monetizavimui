@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Bind provider-rewritten Gmail RFC Message-ID only after authenticated exact-receipt full-message verification, preserving original canonical mail and real reply headers",
+  "category": "code",
+  "evidence": [
+    "docs/GMAIL_LOCAL_OWNER_TEST.md",
+    "agent-business-core/runtime/offline_tests/test_gmail_sent_identity.py",
+    "agent-business-core/runtime/tests/test_gmail_owner_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_provider/gmail.py",
+    "agent-business-core/runtime/src/pinet_core/mail_provider/owner.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Disable Gmail owner actions, preserve canonical MailMessage, original acceptance receipt and observed identity proofs; scoped code revert leaves provider-rewritten replies unresolved, never resend the original or overwrite RFC IDs.",
+  "id": "upgrade-9eab1386-724e-4071-86ac-44e521c6a901",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "fa476a8e8149158542b6da7e3a1e30a7c81caf65",
+  "createdAt": "2026-10-18T15:16:46.432Z"
+}

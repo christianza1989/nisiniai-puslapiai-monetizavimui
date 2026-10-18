@@ -1,11 +1,13 @@
 """Bounded Gmail REST primitives, with no retries or mailbox-wide discovery."""
 import base64
+import hashlib
 import json
 import re
 from dataclasses import dataclass
 from email import policy
 from email.message import EmailMessage
-from email.utils import format_datetime
+from email.parser import BytesParser
+from email.utils import format_datetime, getaddresses
 
 import httpx
 from pydantic import EmailStr, TypeAdapter
@@ -69,6 +71,38 @@ def raw_message(payload, message_id, created_at):
         return raw
     except (KeyError, TypeError, ValueError):
         raise GmailError("gmail_payload_invalid") from None
+
+
+def sent_identity(raw, expected_raw):
+    """Gmail may replace RFC Message-ID. Verify the accepted message before aliasing.
+
+    This is authenticated exact-receipt content observation, not a subject-only
+    thread guess, and never changes the original canonical Message-ID/payload.
+    """
+    try:
+        if any(not isinstance(value, bytes) or not 1 <= len(value) <= 65536 for value in (raw, expected_raw)):
+            raise ValueError("bounded_message_required")
+        observed, expected = (BytesParser(policy=policy.default).parsebytes(value) for value in (raw, expected_raw))
+        ids = observed.get_all("Message-ID", [])
+        if observed.defects or len(ids) != 1 or not valid_message_id(str(ids[0])):
+            raise ValueError("unique_message_id_required")
+        for name in ("From", "To"):
+            actual, original = observed.get_all(name, []), expected.get_all(name, [])
+            addresses = [address.casefold() for _, address in getaddresses(actual)]
+            if len(actual) != 1 or len(addresses) != 1 or addresses != [address.casefold() for _, address in getaddresses(original)]:
+                raise ValueError("exact_participants_required")
+        if observed.get_all("Subject", []) != expected.get_all("Subject", []):
+            raise ValueError("exact_subject_required")
+        actual, original = observed.get_body(preferencelist=("plain",)), expected.get_body(preferencelist=("plain",))
+        if actual is None or original is None or any(p.get_content_disposition() == "attachment" for p in observed.walk()):
+            raise ValueError("reviewed_plain_message_required")
+        actual, original = actual.get_content(), original.get_content()
+        if (not isinstance(actual, str) or not isinstance(original, str)
+                or actual.replace("\r\n", "\n") != original.replace("\r\n", "\n")):
+            raise ValueError("exact_body_required")
+        return {"message_id": str(ids[0]), "raw_sha256": hashlib.sha256(raw).hexdigest()}
+    except (ValueError, TypeError, KeyError, AttributeError):
+        raise GmailError("gmail_sent_identity_unverified") from None
 
 
 class GmailClient:

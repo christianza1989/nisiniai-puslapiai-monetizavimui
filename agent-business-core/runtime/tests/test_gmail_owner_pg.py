@@ -35,6 +35,7 @@ class InertGmail:
         self.thread, self.sent_id, self.reply_id = "thread1", "sent1", "reply1"
         self.reply_rfc = "<"+uuid4().hex+"@example.com>"
         self.account = "owner@example.com"
+        self.sent_rfc = None
         self.business_id = None
 
     async def __call__(self, request):
@@ -59,6 +60,11 @@ class InertGmail:
                 {"id": self.sent_id, "threadId": self.thread}, {"id": self.reply_id, "threadId": self.thread}]})
         if "/messages/" in request.url.path:
             original = BytesParser(policy=policy.default).parsebytes(self.raw)
+            if self.sent_rfc:
+                original.replace_header("Message-ID", self.sent_rfc)
+            if request.url.path.endswith("/"+self.sent_id):
+                return httpx.Response(200, json={"id": self.sent_id,
+                    "raw": base64.urlsafe_b64encode(original.as_bytes()).decode()})
             message = EmailMessage(policy=policy.SMTP)
             message["Message-ID"], message["From"], message["To"] = self.reply_rfc, self.account, self.account
             if self.mode == "foreign-reply":
@@ -106,6 +112,25 @@ async def gmail_owner(customers, monkeypatch, tmp_path):  # noqa: F811
 
 async def prepared(p):
     return await p["owner"].prepare_self_test(str(uuid4()), "Gmail integration test", "Synthetic owner self-test. Not an order: 2 tubs.")
+
+
+async def test_provider_rewritten_message_id_preserves_canonical_and_imports_same_case(gmail_owner):
+    p = gmail_owner
+    value = await prepared(p)
+    await p["owner"].send_self_test(value["id"])
+    p["provider"].sent_rfc = "<google-rewritten@example.com>"
+    received = await p["owner"].sync_self_test(value["id"])
+    assert len(received["inbound_mail_ids"]) == 1
+    assert await p["owner"].sync_self_test(value["id"]) == received
+    async with db.transaction(p["bid"], p["environment"]) as tx:
+        original = await tx.get(MailMessage, value["id"])
+        reply = await tx.get(MailMessage, received["inbound_mail_ids"][0])
+        assert original.message_id == value["message_id"]
+        assert original.payload["gmail_sent_identity"]["message_id"] == p["provider"].sent_rfc
+        assert reply.case_id == original.case_id
+        assert reply.payload["in_reply_to"] == original.message_id
+        assert reply.payload["gmail_original_in_reply_to"] == p["provider"].sent_rfc
+        assert reply.payload["gmail_original_references"] == [p["provider"].sent_rfc]
 
 
 @pytest.mark.parametrize("revoke_before_adoption", [False, True])

@@ -23,7 +23,7 @@ from ..db import db
 from ..mail_view.task_authority import grant
 from ..models import Business, MailMessage, utcnow
 from . import oauth
-from .gmail import GmailClient, GmailError, raw_message
+from .gmail import GmailClient, GmailError, raw_message, sent_identity
 
 
 def guard():
@@ -183,6 +183,8 @@ class OwnerGmail:
                 raise GmailError("gmail_accepted_parent_required")
             saved = {"id": original.id, "case_id": original.case_id, "sender": original.payload["sender"],
                 "recipient": original.payload["recipient"], "message_id": original.message_id,
+                "expected_raw": raw_message(original.payload, original.message_id, original.created_at),
+                "payload_sha256": mailbox.fingerprint(original.payload),
                 "receipt": deepcopy(original.payload["gmail_result"])}
         known = {saved["message_id"]: {"id": saved["id"], "site": self.business_id, "case_id": saved["case_id"],
             "sender": saved["sender"], "recipient": saved["recipient"]}}
@@ -190,7 +192,24 @@ class OwnerGmail:
         async with self.client() as (client, account):
             if saved["sender"].casefold() != account or saved["recipient"].casefold() != account:
                 raise GmailError("gmail_self_test_only")
-            for provider_id in await client.thread_ids(saved["receipt"]["provider_thread_id"]):
+            provider_ids = await client.thread_ids(saved["receipt"]["provider_thread_id"])
+            if saved["receipt"]["provider_message_id"] not in provider_ids:
+                raise GmailError("gmail_accepted_message_missing_from_thread")
+            observed = sent_identity(await client.raw(saved["receipt"]["provider_message_id"]), saved["expected_raw"])
+            proof = {**observed, "provider_message_id": saved["receipt"]["provider_message_id"],
+                     "provider_thread_id": saved["receipt"]["provider_thread_id"], "payload_sha256": saved["payload_sha256"]}
+            async with owned(self.token, self.business_id) as (tx, _):
+                original = await self.message(tx, mail_id, lock=True)
+                if (original.state != "accepted_by_gmail" or original.payload.get("gmail_result") != saved["receipt"]
+                        or mailbox.fingerprint(original.payload) != saved["payload_sha256"]):
+                    raise GmailError("gmail_parent_changed")
+                previous = original.payload.get("gmail_sent_identity")
+                if previous is not None and (not isinstance(previous, dict) or any(previous.get(k) != v for k, v in proof.items())):
+                    raise GmailError("gmail_sent_identity_changed")
+                if previous is None:
+                    original.payload = {**original.payload, "gmail_sent_identity": {**proof, "observed_at": utcnow().isoformat()}}
+            known[observed["message_id"]] = known[saved["message_id"]]
+            for provider_id in provider_ids:
                 if provider_id == saved["receipt"]["provider_message_id"]:
                     continue
                 raw = await client.raw(provider_id)
@@ -207,8 +226,11 @@ class OwnerGmail:
                         source_ref="authenticated_gmail_reply")
                     if row.payload.get("gmail_provider_message_id", provider_id) != provider_id:
                         raise GmailError("gmail_reply_identity_conflict")
+                    headers = {"gmail_original_in_reply_to": reply["in_reply_to"], "gmail_original_references": reply["references"]}
+                    if any(k in row.payload and row.payload[k] != v for k, v in headers.items()):
+                        raise GmailError("gmail_reply_identity_conflict")
                     row.payload = {**row.payload, "gmail_provider_message_id": provider_id,
-                        "gmail_provider_thread_id": saved["receipt"]["provider_thread_id"]}
+                        "gmail_provider_thread_id": saved["receipt"]["provider_thread_id"], **headers}
                     imported.append(row.id)
         return {"case_id": saved["case_id"], "mail_id": saved["id"], "inbound_mail_ids": imported,
                 "mailbox_wide_import": False, "automated_reply_dispatched": False}

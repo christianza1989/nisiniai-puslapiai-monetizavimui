@@ -1,5 +1,18 @@
 # Vietinė Gmail jungtis ir tikro savininko bandymas
 
+**Tikro Gmail RFC identifikatoriaus susiejimas.** Gmail priėmė vieną platformos
+bandymo laišką ir grąžino tą patį message/thread ID; tikras API metadata bei
+Chrome patvirtino SENT ir INBOX. Gmail pakeitė jo RFC Message-ID. Pradinis
+sinchronizavimas dėl to neįrašė vokiško atsakymo;8 patikrų PG baseline1FAIL/7PASS
+išsaugotas. Dabar tiksliai iš priėmimo kvito paimtas sent pranešimas perskaitomas
+per autentifikuotą API, tikrinamas visas plain tekstas, tema ir vieninteliai
+From/To. Neperžiūrėtas priedas, trūkstamas/dubliuotas RFC ID ar pakeistas
+turinys neleidžia kurti alias. Tik patikrintas ID susiejamas su tuo pačiu
+kanoniniu laišku. Priėmimo kvitas, pirminis RFC ID ir tekstas neperrašomi;
+originalūs atsakymo RFC In-Reply-To/References saugomi atskirai. Pakartotinis
+gavimas nedubliuoja laiškų. Pataisa46 offline ir8 izoliuoto PG patikras praėjo;
+jos actual operating atsakymo importas bei lietuviškas UI tikrinami atskirai.
+
 **2026-10-18 pataisa po tikro Google callback.** Pradinis parser neteisingai
 atmetė RFC9207 `iss` lauką. Tikro bandymo adresas, kelias ir state sutapo, bet
 tokeno keitimas nebuvo pradėtas; šifruotas pending įrašas ir pirmas FAIL išliko.

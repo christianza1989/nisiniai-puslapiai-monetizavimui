@@ -1,14 +1,14 @@
 ## Current-owner natural role context and stopped runtime checkpoint — Root2026-10-18
 
-Serving6246/schema0050 adopted after backup:96 old table projections and1010
-native files exact, authenticated LT mail ready, unauth401/foreign404.
-Root106offline+2restrictedPG and both PR213 CI checks PASS. Human-requested
+Serving 6246/schema 0050 adopted after backup: 96 old table projections and 1010
+native files exact, authenticated LT mail ready, unauthenticated 401/foreign 404.
+Root 106 offline + 2 restricted PG and both PR 213 CI checks PASS. Human-requested
 natural actor DTO/recipient context is delivered; original Config2, corpus,
 grading, first quality FAIL and all usage remain unchanged. Corrected actual
-smoke routes coordinator→research→qualification→writer. First3 Tasks succeeded;
-writer ModelAttempt succeeded with output/knownusage, then common Task failed
+smoke routes coordinator→research→qualification→writer. First 3 Tasks succeeded;
+writer ModelAttempt succeeded with output/known usage, then common Task failed
 authorization_revoked. Exact historical completion reason still UNVERIFIED.
-Aggregate8calls all knownusage,7complete1failed; original120/3600 ledger and
+Aggregate 8 calls all known usage, 7 complete/1 failed; original 120/3600 ledger and
 wholewall retained, no automatic retry or new allowance. All6 new grants and
 module canonically stopped, protected0calls, externalcustomer/suppliermail0.
 Helper owns bounded failed-workflow-receipt diagnostic improvement in own

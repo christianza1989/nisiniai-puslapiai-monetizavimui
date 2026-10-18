@@ -3,10 +3,10 @@
 ## Naujausias vietinis šaltinis ir kalibravimo riba — 2026-10-18
 
 Vietinis API naudoja `6246c1932f8b41f7adf6c9ebdbcc7082bc9aa1a1`.
-Pritaikant šį šaltinį atskirai patikrinta schema0050, visų96 ankstesnių
-lentelių duomenų ir1010 privačių svetainės failų tapatumas. Autentifikuotas
-lietuviško laiško skaitymas tebėra `ready`; neprisijungęs klientas gauna401,
-svetimo verslo užklausa404.106 offline ir2 izoliuotos PostgreSQL integracijos
+Pritaikant šį šaltinį atskirai patikrinta schema `0050`, visų 96 ankstesnių
+lentelių duomenų ir 1 010 privačių svetainės failų tapatumas. Autentifikuotas
+lietuviško laiško skaitymas tebėra `ready`; neprisijungęs klientas gauna 401,
+svetimo verslo užklausa — 404. 106 offline ir 2 izoliuotos PostgreSQL integracijos
 patikros praėjo. Tai nepakeičia toliau aprašytų tikro Gmail savitikros įrodymų.
 
 Savininko nurodymu šešių rolių modeliams perduodamas įprastas verslo kontekstas.
@@ -22,8 +22,8 @@ sugeneravo ir išsaugojo rezultatą, tačiau vėlesnis bendros užduoties užbai
 grąžino `authorization_revoked`. Tiksli šio leidimų patikros gedimo priežastis
 dar nepatvirtinta; vien laikas neįrodo leidimo ar lease galiojimo pabaigos.
 
-Visi8 kvietimai turi žinomą žetonų apskaitą. Bendrame nekintamame žurnale yra
-7 užbaigti ir1 nepraėjęs bandymas; nepraėjęs bandymas nėra sėkmė ar grąžintas
+Visi 8 kvietimai turi žinomą žetonų apskaitą. Bendrame nekintamame žurnale yra
+7 užbaigti ir 1 nepraėjęs bandymas; nepraėjęs bandymas nėra sėkmė ar grąžintas
 limitas. Visos šešios naujos vykdymo teisės ir acquisition modulis išjungti.
 Automatinio pakartojimo, naujo biudžeto ar termino pratęsimo nebuvo.
 Nematytų scenarijų nevykdyta, klientams ir tiekėjams laiškų neišsiųsta.

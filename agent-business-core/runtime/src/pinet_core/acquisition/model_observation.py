@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[3]/"artifacts"/"acquisition-model-guards
 PHASES = frozenset(("authority", "authority_locks", "completion_locks", "heartbeat",
     "completion_authority", "completion_deadline", "completion_lease", "role_reserve",
     "role_settle_before", "role_settle_after", "role_execution"))
-ROLES = frozenset(("none", "researcher", "writer", "reviewer", "reply_coordinator"))
+ROLES = frozenset(("none", "researcher", "writer", "reviewer", "reply_coordinator",
+    "research", "qualification", "reply", "quality", "coordinator"))
 CODES = frozenset(("guard_error_unclassified", "authorization_revoked", "authority_denied",
     "authority_deadline_missing", "authority_deadline_expired", "task_not_running", "run_changed",
     "lease_missing", "lease_expired", "worker_interrupted", "source_unavailable", "unauthenticated",
@@ -68,7 +69,7 @@ def record(*, task_id, run_id, source_revision, phase, code, role="none", now=No
             "lease_until": stamp(lease_until), "authority_deadline": stamp(deadline),
             "prior_failure": safe_code(prior_failure) if prior_failure is not None else None,
             "usage_known": usage_known if type(usage_known) is bool else None}
-        # At most11 fixed phases *5 fixed role names per run. First evidence for
+        # Fixed PHASES * fixed ROLES bound files per run. First evidence for
         # each phase/role stays immutable, including an earlier execution error.
         with (folder/f"{run_id}-{phase}-{role}.json").open("x", encoding="utf-8") as output:
             output.write(json.dumps(value, sort_keys=True)+"\n")

@@ -73,6 +73,9 @@ async def binding(tx, task):
 
 
 async def preflight(tx, task):
+    if task.kind == 'acquisition.agent_role':
+        from .agent_role_authority import preflight as role_preflight
+        return await role_preflight(tx, task)
     bound, value = await binding(tx, task)
     # Completion already holds the canonical owner/Creation/Agent locks from a
     # full proof. Reuse only that immutable proof in this exact root transaction;
@@ -170,8 +173,10 @@ class TaskRole:
             now = await renew_role_lease(tx, task, context["_run_id"], phase="role_reserve")
             prior = list(await tx.scalars(select(ModelAttempt).where(ModelAttempt.task_id == task.id)
                 .order_by(ModelAttempt.ordinal)))
-            if not next_role([{"role": row.role, "state": row.state} for row in prior], self.role,
-                    context.get("_stage")):
+            role_work = task.kind == 'acquisition.agent_role'
+            valid = (not prior and self.role == value.role) if role_work else next_role(
+                [{"role": row.role, "state": row.state} for row in prior], self.role, context.get('_stage'))
+            if not valid:
                 raise RunnerError("acquisition_model_attempt_invalid")
             await tx.execute(text("SELECT pg_advisory_xact_lock(hashtextextended(:key,0))"), {
                 "key": "acquisition-model-campaign:"+task.environment_id+":"+task.business_id+":"+value.campaign.campaign_id})

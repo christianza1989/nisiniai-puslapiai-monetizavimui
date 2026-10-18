@@ -43,6 +43,7 @@ class ModelAuthorization(_Scope, Base):
     config_revision: Mapped[int] = mapped_column(Integer)
     config_sha256: Mapped[str] = mapped_column(String)
     purpose: Mapped[str] = mapped_column(String)
+    execution_role: Mapped[str | None] = mapped_column(String, nullable=True)
     session_id: Mapped[str] = mapped_column(String)
     source_revision: Mapped[str] = mapped_column(String)
     module_snapshot: Mapped[dict] = mapped_column(JSONB)

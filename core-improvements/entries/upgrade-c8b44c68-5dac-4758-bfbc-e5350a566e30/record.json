@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "The final native-pair SQL fence passed pre-serialized JSON to a JSONB-typed bind, producing a JSON string and entering the legacy missing-native branch. Actual PostgreSQL wrong-peer-fingerprint regression did not raise before the repair. Bind the native envelope as an object so this final SQL fence verifies the genuine pair.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/tests/test_acquisition_native_json_fence_pg.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/native_chain.py",
+    "agent-business-core/runtime/tests/test_acquisition_native_json_fence_pg.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of the source bind repair only after stopping affected model work; retain negative and positive regression evidence and all Task/Run/attempt history. No DDL, provider rights or budget changes. Earlier Python pair proofs remain in force.",
+  "id": "upgrade-c8b44c68-5dac-4758-bfbc-e5350a566e30",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "be6d7d30d90e058a8e738b92a52759a72228c2f7",
+  "createdAt": "2026-10-18T15:27:32.056Z"
+}

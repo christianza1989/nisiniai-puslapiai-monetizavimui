@@ -2138,3 +2138,30 @@ No message bodies/addresses, guessed open/bounce/reply rates or parallel sender.
 Dedicated QA fixtures only; no paid/provider/operating/protected-case changes.
 PR164 remains frozen atc684c1ad with both final-head CI checks passed; source
 review readiness does not merge its coordination base or main.
+
+2026-10-18 Hotube six-role native implementation RESERVED: new own branch
+codex/hotube-six-role-native-20261018 in47be from Rootbe6d7d30, paired freshness
+PASS main533597c/companion255fea-main ec8a9c. Issue66 coordinates exact acquisition
+agent_role contract/authority/handler/tasks/schema/calibration additions and common
+model/native integration, worker registration/usage/settlement, migration0050,
+focused offline/retained-PG regressions, own unique upgrade and rules/acceptance doc.
+Each saved Agent/Config must own actual Task/Run/attempt/handoff receipts; old
+two-role behavior/artifacts unchanged. Root owns mail_provider/mailbox/mail_reader/
+mail_view/config/dependency locks/Gmail/UI/adoption, excluded from this window.
+Only source/inert QA now,0 paid/provider/live calls; future fresh120/3600 stage with
+smoke<=12 requires new genuine source/manifest/policy/grants and Root GO.
+
+2026-10-18 Hotube six-role native source QA: own migration0050 applied only to
+separate retained47be and47be_final PostgreSQL databases.95-table row comparisons
+before/after49->50 PASS (156 and87rows); original failure logs retained. Expanded
+14PG PASS,164offline+8subtests PASS; final refusal/rollback/feature-stop5supplements
+PASS. Custodian receives safe DTO/evaluator/knowncase seals only; no old
+protected dialogue read, no new paid/provider/live calls. Upgrade11c2e763 covers
+the exact six-agent path and optional single maintained runner hooks.
+
+During final native compatibility review, actual PG proved pre-serialized JSON
+in a JSONB-typed bind is a string. Existing native_chain.final_fence reached its
+legacy no-native branch; wrong-peer-fingerprint negative test FAILED before fix.
+Root confirmed exact native_chain.py repair/new native_json_fence_pg test scope.
+Upgradec8b44c68 binds an object; same negative+legacy native chain+legacy sealedlab
+3PG PASS. Earlier Python checks remain; no DDL/permission/budget expansion.

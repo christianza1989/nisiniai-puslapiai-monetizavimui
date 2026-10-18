@@ -6,6 +6,7 @@ from pydantic import Field, model_validator
 
 from ..contracts import Strict
 from ..customer_agents.wire import Revision
+from .agent_role_contract import RoleName
 from .contracts import Campaign, Prospect
 from .correspondence import recipient_hash
 from .model_schema import ADAPTER as ADAPTER
@@ -56,6 +57,7 @@ class ApproveModel(Authority):
     model_execution_authorized: bool = Field(strict=True)
     maximum_attempts: int = Field(strict=True, ge=1, le=30)
     duration_seconds: int = Field(strict=True, ge=30, le=3600)
+    execution_role: RoleName | None = Field(default=None, exclude_if=lambda v: v is None)
 
     @model_validator(mode="after")
     def explicit_paid_authority(self):

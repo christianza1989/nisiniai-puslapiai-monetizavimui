@@ -1,6 +1,4 @@
 """Current two-Config lineage; private JSON is a reference, never authority."""
-import json
-
 from sqlalchemy import cast, func, select, text
 from sqlalchemy.dialects.postgresql import JSONB
 
@@ -118,8 +116,10 @@ async def final_fence(tx, value, work):
             AcquisitionCampaign.campaign_id == value.campaign.campaign_id, AcquisitionCampaign.stopped).exists()
         target &= ~select(ContactPolicy.recipient_hash).where(*conditions(ContactPolicy, values),
             ContactPolicy.recipient_hash == recipient_hash(value.recipient), ContactPolicy.state != "active").exists()
-    pair = func.acquisition_native_pair_current(cast(json.dumps({
-        "native": value.native.model_dump(mode="json"), "stage": value.stage}), JSONB),
+    # JSONB-typed binds serialize an object themselves. A pre-serialized string
+    # becomes a JSON string and would hit the function's legacy no-native branch.
+    pair = func.acquisition_native_pair_current(cast({
+        "native": value.native.model_dump(mode="json"), "stage": value.stage}, JSONB),
         work.authorization.id)
     accepted, now = (await tx.execute(select(pair & target, func.clock_timestamp()))).one()
     if not accepted or gates(value.campaign, value.prospect.model_copy(update={"status": "new"})

@@ -12,6 +12,7 @@ import httpx
 from .gmail import GmailError
 
 SCOPES = ("https://www.googleapis.com/auth/gmail.readonly", "https://www.googleapis.com/auth/gmail.send")
+ISSUER = "https://accounts.google.com"
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 
 
@@ -56,7 +57,8 @@ def consume_callback(flow, callback_url, expected_binding, *, now=None):
             or target.fragment):
         raise GmailError("gmail_oauth_state_invalid")
     query = parse_qs(target.query, keep_blank_values=True)
-    if (any(len(values) != 1 for values in query.values()) or set(query) - {"code", "state", "scope", "authuser", "prompt", "error"}
+    if (any(len(values) != 1 for values in query.values()) or set(query) - {"code", "state", "iss", "scope", "authuser", "prompt", "error"}
+            or query.get("iss") != [ISSUER]
             or not hmac.compare_digest(query.get("state", [""])[0], flow["state"])):
         raise GmailError("gmail_oauth_state_invalid")
     flow["consumed"] = True

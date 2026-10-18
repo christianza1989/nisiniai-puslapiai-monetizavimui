@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Accept and strictly validate Google's RFC9207 authorization issuer; initial Gmail callback allowlist rejected actual legitimate responses before token exchange",
+  "category": "code",
+  "evidence": [
+    "docs/GMAIL_LOCAL_OWNER_TEST.md",
+    "agent-business-core/runtime/offline_tests/test_gmail_oauth_issuer.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_provider/oauth.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Contain new Gmail OAuth by disabling gmail_owner_enabled. Preserve both original pending encrypted attempts and first failing test. Scoped revert requires retaining the known actual Google callback incompatibility as unresolved; no token/send retry or data migration.",
+  "id": "upgrade-5e578e26-3927-4640-907b-9a2e083feca9",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "eda9920910224f85a2854c78dd9567d414b152a2",
+  "createdAt": "2026-10-18T15:02:31.851Z"
+}

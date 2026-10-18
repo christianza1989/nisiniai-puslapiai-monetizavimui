@@ -1,5 +1,16 @@
 # Vietinė Gmail jungtis ir tikro savininko bandymas
 
+**2026-10-18 pataisa po tikro Google callback.** Pradinis parser neteisingai
+atmetė RFC9207 `iss` lauką. Tikro bandymo adresas, kelias ir state sutapo, bet
+tokeno keitimas nebuvo pradėtas; šifruotas pending įrašas ir pirmas FAIL išliko.
+Dabar priimamas ir reikalaujamas tik vienas tikslus `iss=https://accounts.google.com`.
+Trūkstamas, dubliuotas, HTTP, legacy ar kito teikėjo issuer atmetamas prieš kodo
+sunaudojimą; state/PKCE, vienkartinumas ir dabartinės savininko teisės išlieka.
+Pirmas atkūrimo testas1FAIL/36PASS išsaugotas; tai mūsų adapterio klaida,
+ne savininko Gmail prisijungimo problema. Po pataisos38 offline ir2 tikslinės
+OAuth PostgreSQL patikros praėjo; kitų ankstesnių bandymų apimtis išlieka žemiau.
+[Google authorization response sutartis](https://developers.google.com/identity/openid-connect/reference).
+
 2026-10-18. Šis paketas įgyvendina ribotą vietinį Gmail OAuth ir savininko
 bandymą bendrame pašto core. Tai nėra kampanijų ar visos asmeninės dėžutės
 importo įjungimas. Gyvo siuntimo, atsakymo ir lietuviško UI priėmimas turi

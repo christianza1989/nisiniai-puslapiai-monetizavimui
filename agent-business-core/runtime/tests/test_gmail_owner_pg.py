@@ -130,7 +130,7 @@ async def test_oauth_exchange_consumed_before_network_and_current_owner_before_a
         "client_secret": "synthetic-secret", "token_uri": oauth.TOKEN_URL,
         "auth_uri": "https://accounts.google.com/o/oauth2/auth"}}, "http://127.0.0.1:15555/oauth/callback")
     callback = "http://127.0.0.1:15555/oauth/callback?" + urlencode({
-        "state": parse_qs(urlsplit(url).query)["state"][0], "code": "synthetic-code"})
+        "state": parse_qs(urlsplit(url).query)["state"][0], "iss": oauth.ISSUER, "code": "synthetic-code"})
     if revoke_before_adoption:
         with pytest.raises(ControlError):
             await owner.complete(callback)

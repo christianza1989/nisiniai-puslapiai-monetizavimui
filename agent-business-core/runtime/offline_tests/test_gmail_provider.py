@@ -48,7 +48,7 @@ def test_pkce_and_callback_are_bound_one_use_and_expire():
     assert values["scope"][0].split() == list(oauth.SCOPES)
     assert values["code_challenge_method"] == ["S256"]
     assert values["code_challenge"] == [base64.urlsafe_b64encode(hashlib.sha256(flow["verifier"].encode()).digest()).decode().rstrip("=")]
-    callback = flow["redirect_uri"] + "?" + urlencode({"state": flow["state"], "code": "synthetic-code"})
+    callback = flow["redirect_uri"] + "?" + urlencode({"state": flow["state"], "iss": oauth.ISSUER, "code": "synthetic-code"})
     for wrong in (callback.replace("15555", "15556"), callback+"&state=another", callback.replace(flow["state"], "bad")):
         with pytest.raises(GmailError):
             oauth.consume_callback(flow, wrong, binding)

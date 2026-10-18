@@ -95,16 +95,26 @@ async def transaction_authority(tx, session, business_id, agent_id=None, *, writ
 
 
 @asynccontextmanager
-async def authority(token, business_id, agent_id=None, *, writing=False, lock=True, purpose=None, source_binding_id=None):
+async def authority(token, business_id, agent_id=None, *, writing=False, lock=True, purpose=None,
+        source_binding_id=None, adoption_source_id=None):
     service.guard()
     if not await asyncio.to_thread(service.source_current):
         raise ControlError(503, "source_unavailable")
     try:
         async with scope(token=token_hash(token)) as tx:
             session = await service.customer_session(tx, token)
-            async with transaction_authority(tx, session, business_id, agent_id, writing=writing,
-                    lock=lock, purpose=purpose, source_binding_id=source_binding_id) as context:
-                yield context
+            if adoption_source_id is not None:
+                # Even read-only old-source authority takes SQL row pins. The
+                # common business barrier must therefore precede BOTH sources.
+                async with sources.transaction_authority(tx, session, business_id, adoption_source_id,
+                        writing=True, lock=True):
+                    async with transaction_authority(tx, session, business_id, agent_id,
+                            writing=False, lock=False, purpose=purpose) as context:
+                        yield context
+            else:
+                async with transaction_authority(tx, session, business_id, agent_id, writing=writing,
+                        lock=lock, purpose=purpose, source_binding_id=source_binding_id) as context:
+                    yield context
     except IntegrityError as error:
         service.write_conflict(error)
 
@@ -177,7 +187,8 @@ async def revise(token, business_id, agent_id, value):
     # Explicit source adoption retains Agent UUID and old immutable Config source
     # pins. Ordinary edits still require their exact currently approved source.
     adopting = value.source_binding_id is not None
-    async with authority(token, business_id, agent_id, writing=not adopting, lock=not adopting) as context:
+    async with authority(token, business_id, agent_id, writing=not adopting, lock=not adopting,
+            adoption_source_id=str(value.source_binding_id) if adopting else None) as context:
         tx, session, parent, registry, agent = context
         if isinstance(registry, Registration):
             if adopting:
@@ -188,19 +199,18 @@ async def revise(token, business_id, agent_id, value):
             result["agent"] = view(agent, await service.current_config(tx, agent))
             return result
         if adopting:
-            async with sources.transaction_authority(tx, session, business_id, str(value.source_binding_id),
-                    writing=True, lock=True) as current:
-                if current.fingerprint != value.source_binding_fingerprint:
-                    raise ControlError(409, "agent_import_source_changed")
-                # Both source parents precede the mutable Agent lock. Re-observe
-                # the row after acquiring it; the version check below is the CAS.
-                agent = await tx.scalar(select(Agent).where(Agent.id == agent.id).with_for_update()
-                    .execution_options(populate_existing=True))
-                if agent is None or agent.external_binding_id is None:
-                    raise ControlError(404, "not_found")
-                if binding(current) != binding(agent) or any(getattr(current, name) != getattr(agent, name) for name in COMMON):
-                    raise ControlError(409, "agent_import_source_changed")
-                return await revise_external(tx, session, current, agent, value)
+            current = await tx.get(Binding, str(value.source_binding_id), populate_existing=True)
+            if current is None or current.fingerprint != value.source_binding_fingerprint:
+                raise ControlError(409, "agent_import_source_changed")
+            # Both source parents precede the mutable Agent lock. Re-observe
+            # the row after acquiring it; the version check below is the CAS.
+            agent = await tx.scalar(select(Agent).where(Agent.id == agent.id).with_for_update()
+                .execution_options(populate_existing=True))
+            if agent is None or agent.external_binding_id is None:
+                raise ControlError(404, "not_found")
+            if binding(current) != binding(agent) or any(getattr(current, name) != getattr(agent, name) for name in COMMON):
+                raise ControlError(409, "agent_import_source_changed")
+            return await revise_external(tx, session, current, agent, value)
         return await revise_external(tx, session, registry, agent, value)
 
 
@@ -263,11 +273,11 @@ async def listing(token, business_id, *, limit=20, cursor=None):
         rows = list(await tx.scalars(query.order_by(Agent.created_at.desc(), Agent.id.desc()).limit(limit+1)))
         result = [view(agent, await service.current_config(tx, agent)) for agent in rows[:limit]]
         registry = await latest_source(tx, session, business_id)
-        ready = registry is not None and await sources.is_current(tx, registry)
         blocker = "agent_business_not_current" if registry is not None else "business_source_required"
         if not await asyncio.to_thread(service.source_current):
             raise ControlError(503, "source_unavailable")
         await sources.owned_business(tx, session, business_id)
+        ready = registry is not None and await sources.is_current(tx, registry)
         return {"business_id": business_id, "items": result, "can_create_draft": ready,
             "source_binding_id": registry.id if registry else None,
             "source_binding_fingerprint": registry.fingerprint if registry else None,

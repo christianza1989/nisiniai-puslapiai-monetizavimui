@@ -173,9 +173,31 @@ for (const [name, mutate, pattern] of [
 });
 
 test('extra or duplicate actual H1 and unmapped prefix globally reject', () => {
-  assert.throws(() => selectCapturedPages(flat([...page(specs[0].title), ...page('Unmapped title')]), selection()), /unmapped/);
+  assert.throws(() => selectCapturedPages(flat([...page(specs[0].title), ...page(specs[1].title), ...page('Unmapped title')]), selection()), /unmapped.*count mismatch/);
+  assert.throws(() => selectCapturedPages(flat(page('Unmapped title')), selection()), /unmapped.*count mismatch/);
   assert.throws(() => selectCapturedPages(flat([...page(specs[0].title), ...page(specs[0].title)]), selection()), /duplicate actual H1/);
   assert.throws(() => selectCapturedPages(flat([block('P', 'Unexpected preface'), ...page(specs[0].title)]), selection()), /prefix/);
+});
+
+test('same-count unknown H1 rejects only its missing exact page, never assigning an unknown section', () => {
+  const three = [...specs, { ...specs[0], pageId: 'c', title: 'Trečias puslapis' }];
+  for (let missing = 0; missing < three.length; missing++) {
+    const actual = three.map((s, i) => page(i === missing ? 'Nežinomas puslapis' : s.title));
+    // Reorder sections as well: extraction is by exact H1, not expected position.
+    const blocks = [...actual[2], ...actual[0], ...actual[1]], raw = flat(blocks), before = JSON.stringify(raw);
+    const result = selectCapturedPages(raw, selection(three));
+    assert.deepEqual(result.outcomes.map(o => o.status), three.map((_, i) => i === missing ? 'rejected' : 'captured'));
+    assert.match(result.outcomes[missing].reason, /expected H1 missing/);
+    for (const outcome of result.outcomes.filter(o => o.status === 'captured')) {
+      const candidate = outcome.candidate, spec = three.find(s => s.pageId === outcome.pageId);
+      const start = blocks.findIndex(b => b.tag === 'H1' && b.text === spec.title);
+      assert.deepEqual(candidate.original.body, blocks.slice(start + 2, start + 4).map(b => b.text));
+      assert.equal(raw.text.slice(candidate.slice.startUtf16, candidate.slice.endUtf16Exclusive), blocks.slice(start, start + 5).map(b => b.text).join('\n\n'));
+      assert.equal(candidate.slice.sha256, createHash('sha256').update(raw.text.slice(candidate.slice.startUtf16, candidate.slice.endUtf16Exclusive)).digest('hex'));
+      assert.ok(!candidate.original.title.includes('Nežinomas'));
+    }
+    assert.equal(JSON.stringify(raw), before);
+  }
 });
 
 test('missing expected H1 rejects only missing page without ignoring extra actual content', () => {

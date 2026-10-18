@@ -6,7 +6,8 @@ import { attachGenerationResult } from './runner.mjs';
 const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
 function claimingRequest(document,{requestId,actor,payloadSha256,response}) {
   const request=document.requests?.find(r=>r.id===requestId);
-  assert(request?.kind==='GEMINI_GENERATE'&&request.status==='UNKNOWN','Only an explicit UNKNOWN Gemini request may be reconciled');
+  assert(request?.kind==='GEMINI_GENERATE'&&['UNKNOWN','ANSWERED'].includes(request.status),'Only an explicit retained Gemini request may be reconciled');
+  if(request.status==='ANSWERED')assert.deepEqual(response,request.response,'Reconciliation must use the exact stored answer');
   assert(actor&&request.actor===actor&&Number.isFinite(Date.parse(request.claimedAt)),'Original actual claiming actor required');
   assert(typeof request.attemptId==='string'&&request.attemptId,'Original host attempt ID required');
   assert.equal(request.payloadSha256,payloadSha256);assert.equal(hash(request.payload),payloadSha256,'Original request payload changed');

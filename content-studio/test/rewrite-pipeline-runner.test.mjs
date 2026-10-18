@@ -68,7 +68,7 @@ test('accepted page imports immediately while sibling review is pending; rejecte
   const { store } = await fixture(t, ['a', 'b', 'c']);
   const aImported = deferred(), requests = [], imports = [];
   const normal = ports();
-  const result = await runRewritePipeline({ store, pollMs: 1, maxBatches: 3, ports: ports({
+  const result = await runRewritePipeline({ store, pollMs: 1, importCoalesceMs: 50, maxBatches: 3, ports: ports({
     generate: async (request, ctx) => { requests.push(request.pages.map(page => page.pageId)); return normal.generate(request, ctx); },
     review: async record => {
       if (record.pageId === 'b' && record.attempts.length === 1) { await aImported.promise; return { decision: 'rejected', reviewer: 'fixture reviewer', reason: 'Wrong source attribution' }; }
@@ -82,12 +82,16 @@ test('accepted page imports immediately while sibling review is pending; rejecte
   assert.equal(result.pages.find(page => page.pageId === 'b').candidates.length, 2);
 });
 
-test('short coalescing window groups three independently accepted pages into one import epoch', { timeout: 5000 }, async t => {
+test('default window groups three independent acceptances spread over 2.5 seconds into one import epoch', { timeout: 5000 }, async t => {
   const store = memoryStore(['a', 'b', 'c']);
   const normal = ports(), imports = [];
   let active = 0, maximum = 0;
-  const result = await runRewritePipeline({ store, pollMs: 2, importCoalesceMs: 200, ports: ports({
-    review: async record => { await delay(15); return normal.review(record); },
+  const acceptedAt = [];
+  const result = await runRewritePipeline({ store, pollMs: 2, ports: ports({
+    review: async record => {
+      if (record.pageId !== 'a') await delay(1250);
+      acceptedAt.push(Date.now()); return normal.review(record);
+    },
     importPages: async records => {
       active++; maximum = Math.max(maximum, active);
       imports.push(records.map(record => record.pageId));
@@ -97,6 +101,7 @@ test('short coalescing window groups three independently accepted pages into one
   assert.equal(result.status, 'COMPLETE');
   assert.deepEqual(imports, [['a', 'b', 'c']]);
   assert.equal(maximum, 1);
+  assert.ok(acceptedAt[2] - acceptedAt[0] >= 2400, 'three decisions really span the measured serial-review interval');
 });
 
 test('default coalescing deadline imports one page without waiting for a subsequently held sibling', { timeout: 5000 }, async t => {
@@ -116,8 +121,8 @@ test('default coalescing deadline imports one page without waiting for a subsequ
   }) });
   assert.deepEqual(imports, [['a']]);
   assert.deepEqual(result.pages.map(page => page.status), ['COMPLETE', 'HELD']);
-  // The configured wait is 500ms; allow ordinary scheduler overhead.
-  assert.ok(importedAt - acceptedAt >= 400 && importedAt - acceptedAt < 1200, `elapsed ${importedAt - acceptedAt}ms`);
+  // The configured wait is 3000ms; the held sibling cannot extend that deadline.
+  assert.ok(importedAt - acceptedAt >= 2800 && importedAt - acceptedAt < 3800, `elapsed ${importedAt - acceptedAt}ms`);
 });
 
 test('owner pause during coalescing leaves accepted page unclaimed and performs no native import', { timeout: 5000 }, async t => {
@@ -371,7 +376,8 @@ test('publication cannot be activated and inputs/limits are explicit', async () 
   await assert.rejects(runRewritePipeline({ batchSize: 4, ports: ports() }), /limit is three/);
   for (const importCoalesceMs of [0, -1, 1.5, NaN])
     await assert.rejects(runRewritePipeline({ importCoalesceMs, ports: ports() }), /importCoalesceMs must be a positive integer/);
-  await assert.rejects(runRewritePipeline({ importCoalesceMs: 1001, ports: ports() }), /must not exceed 1000ms/);
+  await assert.rejects(runRewritePipeline({ importCoalesceMs: 5001, ports: ports() }), /must not exceed 5000ms/);
+  assert.equal((await runRewritePipeline({ store: memoryStore([]), importCoalesceMs: 5000, ports: ports() })).status, 'COMPLETE');
 });
 
 test('CLI forwards importer coalescing config through the same bounded validation', async t => {
@@ -379,7 +385,7 @@ test('CLI forwards importer coalescing config through the same bounded validatio
   const source = 'export function createPorts(){return {generate(){},review(){},importPages(){}};}';
   const modulePath = path.join(directory, 'fixture-ports.mjs'), configPath = path.join(directory, 'config.json');
   await writeFile(modulePath, source);
-  for (const importCoalesceMs of [0, 1001]) {
+  for (const importCoalesceMs of [0, 5001]) {
     await writeFile(configPath, JSON.stringify({ portsModule: { path: modulePath, sha256: createHash('sha256').update(source).digest('hex') }, importCoalesceMs }));
     const child = spawnSync(process.execPath, [fileURLToPath(new URL('../scripts/rewrite-pipeline.mjs', import.meta.url)),
       'run', '--state', filename, '--config', configPath], { encoding: 'utf8', timeout: 10000 });

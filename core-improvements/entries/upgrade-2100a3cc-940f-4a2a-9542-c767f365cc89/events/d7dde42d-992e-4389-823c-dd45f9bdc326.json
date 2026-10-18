@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final staging metadata receipt. Git normalizes the generated semantic-boundary JSON to LF. Previous event hash38ac02341ba5415ab58ca7b97e71f7e58fb5e1c8b3152e55a871cf4062ca5236 describes its original Windows CRLF worktree bytes; it is retained as historical evidence. Regenerated the identical semantic report with explicit LF before commit; the canonical Git artifact hash is now3ed42abe78284521539228d7502b44bbc30be9890811a550751a3a5e7652649e. No source, predicates or tests changed after final274PASS. First exact-staged safety14files592502bytes0findings; final scope will be rescanned after this added receipt. Paired precommit handoff fetched main533597c/publicec8 successfully19:55:54/56UTC. Actual PG/UI/adoption remains unperformed.",
+  "checks": [
+    {
+      "command": "AST/literal-predicate boundary check regenerated with explicit LF",
+      "result": "PASS",
+      "evidence": "Canonical checks/semantic-boundary.json SHA2563ed42abe78284521539228d7502b44bbc30be9890811a550751a3a5e7652649e; one production function only, exact original ready and broad absent predicates, all other production functions/imports and both validate_attempts checkpoint calls unchanged."
+    },
+    {
+      "command": "Final related pure pytest regression (unchanged source/tests since run)",
+      "result": "PASS",
+      "evidence": "274PASS17.31s SHA25616f16e721841e1fa2b2f559ef10dfe7e06a194b52d0d7e73a3fee633ad06b06c; no source or test mutation after that run."
+    }
+  ],
+  "eventId": "d7dde42d-992e-4389-823c-dd45f9bdc326",
+  "sequence": 5,
+  "at": "2026-10-17T19:57:09.608Z"
+}

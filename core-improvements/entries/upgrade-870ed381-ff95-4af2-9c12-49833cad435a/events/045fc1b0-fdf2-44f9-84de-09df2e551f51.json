@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual PG412 first failure1FAIL8PASS103.97s retainedSHA59335a79fde5f0091ed6dac2ec5a9cb5fa23223f39adf7375869564e7675a082. Focused baseline2FAIL17PASS1.54s SHA3755665a57446137236250780b25aba13bdaee385dce93ca75480c3f3fe5f2d8. Intermediate25PASS1FAIL6.28s was a fake transaction returning an unselected latestjob row; retainedSHAc9c1fd310569e30fde553d57f0a9624333645b78e4315e5a4a4cc64633debb0d. Exact SQL IN attempt-job set now asserted and fake returns only selected rows. Final26PASS3.48s SHA52e2f4dcabe40831abf5aea81f2097a509656e08d36b9156f1683c1e76352b33. No production clock or selection change. Actual isolated finalPG and serving still pending.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_execution_profile_batch.py offline_tests/test_creation_team_test_clock.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "26PASS3.48s: fresh batches, binding/source/schema/legacy, both selected-config changes, no-attempt latest source refusal, exact SQL IN IDs."
+    },
+    {
+      "command": "python -m pytest offline_tests/test_execution_profile_batch.py offline_tests/test_creation_team_test_clock.py offline_tests/test_creation_team_controller.py offline_tests/test_creation_team_wire.py offline_tests/test_pipeline_execution_profile.py offline_tests/test_creation_deadlines.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "72PASS7SKIP13.07s; seven existing controller cases require explicit no-provider CLI pin/catalogue and remain skipped, not runtime proof."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/creation/execution_profiles.py src/pinet_core/creation/team.py offline_tests/test_execution_profile_batch.py",
+      "result": "PASS",
+      "evidence": "All3exactfiles passed."
+    }
+  ],
+  "eventId": "045fc1b0-fdf2-44f9-84de-09df2e551f51",
+  "sequence": 2,
+  "at": "2026-10-17T09:03:12.194Z"
+}

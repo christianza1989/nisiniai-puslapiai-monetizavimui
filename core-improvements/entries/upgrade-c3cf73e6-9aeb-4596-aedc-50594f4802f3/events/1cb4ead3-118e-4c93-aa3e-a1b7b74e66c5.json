@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actualsource11f2/newcanonicalactor passes478/2excluded28.90s a50c7d4636b997b0472c0ecfa3c422f4883f4c60d59bfdd70c6030d7ed7890e8 and22realPG176.36s cb0daaed66157ebcc675851bb2622368c93b65739b5b8a0ba33ec1aa1c52a64a; original0032/88operational/nativeexact. SameDBcutover88/native413exact; API34020/supervisor29420 at11f2. Ownerprivate/S6CURRENT/site015exact. Measuredcapture238SQL1.7582, fullverify1.3154/1.4155/1.2822, inspect5.3321,1051SQL. BUT actuallease61ad29b0-96c5-4ca5-ba87-c8663ba1bf8d reachedready/nativeHTTP200 andthenFAILED: heartbeat_expired/after_media elapsed17042 margin-1153 at2026-10-17T10:57:20.971Z; Chrome laterconnectionrefused andcloseassertionfailed. Attemptlive-lifecycle-v2-close-0046d138e0ac442b9d90c27190ba5969 retained. No actualstable/browser/close/expiry/revocation/lifespan acceptance. NewRootupgrade16c3fde4 addressesreproducedactiveinspectionparallelverification withstrictpostoutputbarrier, source-only atthisevent; noTTL/deadlinerelaxation/paidcalls.37/40held.",
+  "eventId": "1cb4ead3-118e-4c93-aa3e-a1b7b74e66c5",
+  "sequence": 5,
+  "at": "2026-10-17T11:16:50.312Z"
+}

@@ -5,16 +5,13 @@ import json
 import re
 from uuid import UUID
 
-from sqlalchemy import select
-
 from ..config import settings
-from ..control.models import User
 from ..control.routes import ControlError
 from ..creation import language_mode, studio
 from ..creation.adapter import ROOT
 from ..creation.models import Creation
 from ..creation.review import canonical_sha256
-from ..creation.service import ACTIVE, current_actor
+from ..creation.service import ACTIVE, actor_result, actor_statement
 from ..creation_registration.service import accepted_proof
 from ..tasks.codex_transport import RunnerError
 from .page_wire import Document, Media, PageView
@@ -75,6 +72,10 @@ def parse_node(value, creation, proof):
 
 async def read_current_node(tx, session, creation, requested_revision=None, *, command="status", page_id=None,
                             asset_id=None, expected_revision=None):
+    from ..site_build.authority_observation import active
+    observed = active(tx, creation)
+    if observed and (command != "status" or page_id is not None or asset_id is not None or expected_revision is not None):
+        raise ControlError(503, "source_unavailable")
     enabled()
     if requested_revision is not None and requested_revision != creation.current_revision:
         raise ControlError(409, "stale_revision")
@@ -83,6 +84,8 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     if command not in {"status", "read-page", "read-media"}:
         raise ControlError(503, "content_completion_unavailable")
     proof = await accepted_proof(tx, creation)
+    if observed:
+        await observed.before_node(session, creation, proof)
     node, _, artifacts, environment = studio.configuration()
     script = ROOT / "content-studio/scripts/customer-content-workflow.mjs"
     if not script.is_file():
@@ -91,11 +94,7 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     revision = creation.current_revision
 
     async def authorized():
-        enabled()
-        await current_actor(tx, session, creation.portfolio_id)
-        user = await tx.scalar(select(User.id).where(User.id == session.user_id, User.enabled))
-        current = await tx.scalar(select(Creation.current_revision).where(Creation.id == creation.id))
-        return bool(user and current == revision and settings().control_source_revision == source_pin)
+        return await _node_authorized(tx, session, creation, revision=revision, source_pin=source_pin)
 
     directory = artifacts / "customer-content" / str(UUID(creation.id)) / f"revision-{revision}"
     payload = {"command": command, "creationId": creation.id, "acceptedRevision": revision,
@@ -105,6 +104,13 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
         payload["pageId"] = page_id
     if command == "read-media":
         payload.update(assetId=asset_id, expectedRevisionHash=expected_revision)
+    retained = observed.node_result(session, creation, proof) if observed else None
+    if retained is not None:
+        # This is native output from THIS invocation, not permission or SQL data.
+        # The final SQL graph and fresh post-output authorization still run.
+        if not await authorized():
+            raise ControlError(503, "content_completion_unavailable")
+        return proof, retained
     try:
         kwargs = {"output_limit": 20 * 1048576} if command == "read-media" else {}
         value = await studio._execute([node, script], payload, environment, authorized, 20, **kwargs)
@@ -117,7 +123,22 @@ async def read_current_node(tx, session, creation, requested_revision=None, *, c
     # Final ownership/session/source read, after subprocess output.
     if not await authorized():
         raise ControlError(503, "content_completion_unavailable")
+    if observed:
+        observed.record_node(session, creation, proof, value)
     return proof, value
+
+
+async def _node_authorized(tx, session, creation, *, revision, source_pin):
+    """One fresh actor/nullable-child observation at each transport fence."""
+    enabled()
+    statement = (actor_statement(session, creation.portfolio_id)
+        .add_columns(Creation.current_revision)
+        .outerjoin(Creation, Creation.id == creation.id)
+        .execution_options(populate_existing=True))
+    row = (await tx.execute(statement)).one_or_none()
+    # Preserve the canonical actor401/404 before a missing or RLS-hidden child.
+    actor_result(row[:5] if row is not None else None, creation.portfolio_id)
+    return bool(row[5] == revision and settings().control_source_revision == source_pin)
 
 
 async def projection(tx, session, creation, requested_revision=None):

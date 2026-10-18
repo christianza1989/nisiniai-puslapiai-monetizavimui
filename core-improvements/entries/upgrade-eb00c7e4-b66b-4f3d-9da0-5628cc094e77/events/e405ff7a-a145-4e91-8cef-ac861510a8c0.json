@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implemented new source-fixed direct consultant persistence and maintained-worker path after missing-helper baseline9FAIL1.13s. Static SQL roundtrip preserves old native/team body and recognizes exact phase constraint; new optional numeric parser leaves old default untouched. Self-review replaced heterogeneous trigger NEW field access with to_jsonb(NEW) and independently checks exact source-fixed member capabilities. No helper actual DB/provider/case operations.",
+  "eventId": "e405ff7a-a145-4e91-8cef-ac861510a8c0",
+  "sequence": 2,
+  "at": "2026-10-15T22:36:34.916Z"
+}

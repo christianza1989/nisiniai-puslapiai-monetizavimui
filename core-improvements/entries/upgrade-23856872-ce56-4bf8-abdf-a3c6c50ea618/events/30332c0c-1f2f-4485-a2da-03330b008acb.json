@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Metadata-only S31 scopecomplete. Final66PASS7SKIP70.20s across existingobservation,partialreceipts,controlCodex,teamcontroller suites; old2FAIL5PASS3.83s retained. Inertnatural0/7,quiet-running timeout,inheritedpipe0/7 withsameoldtimeout,cancellation,outputstat/no-content,metadataread failure anddiskwrite-error3outcomes tested. Ruff/diffcheckPASS; ASTprovesstop_process body, execute signature, subprocessspawn andtimeoutcalls identical48fe. Newv2 doesnotretrointerpret historicalrealS29/S30 no-terminal/no-output traces anddoesnotclaimtheirrootcause. No provider/Node/PG/DB/case/serving/model/quota/deadline/config/actualadoption/main changes; Root ownsaccountedno-toolsfulPlan diagnostic.",
+  "checks": [
+    {
+      "command": "python -B -m pytest -p no:cacheprovider offline_tests/test_cli_execution_observation.py offline_tests/test_partial_cli_receipts.py offline_tests/test_control_codex.py offline_tests/test_creation_team_controller.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "Actualfinal66PASS7SKIP70.20s, inertlocalchildren/loopback only, no providers. v2naturalexit/liveness/EOF/feed/output/cancel/inheritedpipe/diskfailure checks; skippedcasesnotPASS. RuntimeREADME documentsinterpretation."
+    },
+    {
+      "command": "python -B -m ruff check src/pinet_core/tasks/codex_transport.py src/pinet_core/tasks/execution_observation.py offline_tests/test_cli_execution_observation.py; git diff --check",
+      "result": "PASS",
+      "evidence": "ActualfinalRuff/diffcheckPASS, no changesoutside exactscope."
+    },
+    {
+      "command": "AST compare exact48fe codex_transport stop_process, execute args, create_subprocess_exec and asyncio.timeout calls againstownedsource",
+      "result": "PASS",
+      "evidence": "All4actualcomparisonsTrue; transportbehavior/kwargs/defaultcaps/stopbody/timeoutpreserved. Existing observer-free/partial usage receipts regressionincluded66PASS."
+    }
+  ],
+  "eventId": "30332c0c-1f2f-4485-a2da-03330b008acb",
+  "sequence": 3,
+  "at": "2026-10-15T13:15:26.806Z"
+}

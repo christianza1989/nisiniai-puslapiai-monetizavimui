@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual High GUIDE results now succeeded for all three initial articles. Original provider max_output_tokens failure sequence1 and daily-limit failure sequence4 remain. Root explicitly ran one bounded additional three-call trial, no hidden retry, quota history rewrite or model/profile change. Costs UNVERIFIED. This is article generation/native application, not final editorial/F1/site acceptance.",
+  "checks": [
+    {
+      "command": "Actual ordinary-owner GUIDE job receipts2/3/5 and read-only attempt ledger",
+      "result": "PASS",
+      "evidence": "Three succeeded immutable jobs with3High roles each; runtime charged32 plus5separate diagnostics. Configured35runtime+5diagnostic ceiling40; original accepted Job usage unchanged."
+    },
+    {
+      "command": "Canonical current native reader and guarded existing media inbox",
+      "result": "PASS",
+      "evidence": "Three nonempty articles persisted; four generated concept families20actualWebP variants imported. Generic illustrations not manufacturer photography; root acted as explicit asset worker, autonomous image dispatch not proven."
+    }
+  ],
+  "eventId": "4268f7d3-fe01-4e64-a6fa-62a57c971149",
+  "sequence": 4,
+  "at": "2026-10-15T22:34:15.335Z"
+}

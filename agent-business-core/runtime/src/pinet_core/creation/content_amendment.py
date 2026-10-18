@@ -84,6 +84,19 @@ class Amendment(Strict):
     expected_revision_sha256: Hash
     expected_planning_sha256: Hash
     patch: CopyPatch
+    # Opt-in v2: only named empty/unapproved guide targets can leave the graph.
+    # Native code verifies target readiness and preserves every other edge.
+    # Absent/None keeps the exact legacy v1 binding and stored receipt format.
+    defer_unready_page_ids: list[Annotated[str, Field(pattern=r"^page-[a-f0-9]{24}$")]] | None = Field(
+        default=None, min_length=1, max_length=20)
+
+    @model_validator(mode="after")
+    def explicit_deferred_graph(self):
+        if self.defer_unready_page_ids is not None:
+            if (len(set(self.defer_unready_page_ids)) != len(self.defer_unready_page_ids)
+                    or "body" not in self.patch.model_fields_set or self.patch.body is None):
+                raise ValueError("explicit body and unique deferred target IDs required")
+        return self
 
 
 async def amend(tx, session, creation_id, request, *, seconds=20, still_authorized=None):
@@ -119,6 +132,8 @@ async def amend(tx, session, creation_id, request, *, seconds=20, still_authoriz
         "expectedSiteHash": request.expected_site_sha256, "expectedRevisionHash": request.expected_revision_sha256,
         "expectedPlanningHash": request.expected_planning_sha256,
         "patch": request.patch.model_dump(mode="json", exclude_unset=True)}
+    if request.defer_unready_page_ids is not None:
+        binding["deferUnreadyPageIds"] = request.defer_unready_page_ids
     request_hash = digest(binding)
     payload = {"command": COMMAND, **binding, "artifactsRoot": str(artifacts),
         "dataDir": str(directory / "data"), "outputDir": str(directory / "output")}
@@ -140,7 +155,8 @@ async def amend(tx, session, creation_id, request, *, seconds=20, still_authoriz
         operation = value["operation"]
         result = operation["result"]
         page = next(p for p in completion["pages"] if p["page_id"] == request.page_id)
-        expected = {"version": "native-reviewed-copy-amendment.v1", "state": "applied",
+        expected = {"version": "native-reviewed-copy-amendment.v2" if request.defer_unready_page_ids is not None
+                    else "native-reviewed-copy-amendment.v1", "state": "applied",
             "operationId": request.operation_id, "creationId": identity,
             "acceptedRevision": request.accepted_revision, "sourceHash": request.candidate_sha256,
             "canonicalHost": request.canonical_host, "siteId": proof["site_id"], "pageId": request.page_id,

@@ -58,6 +58,44 @@ async def test_copy_uses_same_current_owner_guard_and_fixed_stable_artifact_path
     assert value["completion"] == a.completion
 
 
+async def test_explicit_deferred_links_are_bound_to_v2_without_claiming_approval(amendment, monkeypatch):
+    a = amendment
+    request = copy.Amendment.model_validate({**a.request.model_dump(),
+        "defer_unready_page_ids": ["page-" + "7" * 24],
+        "patch": {"body": [{"type": "paragraph", "text": "Savarankiškas išsaugotas paaiškinimas."}]}})
+
+    async def execute(*args, **kwargs):
+        payload = args[1]
+        assert payload["deferUnreadyPageIds"] == list(request.defer_unready_page_ids)
+        output = await a.execute(*args, **kwargs)
+        a.result["version"] = "native-reviewed-copy-amendment.v2"
+        return output
+
+    monkeypatch.setattr(copy.studio, "_execute", execute)
+    result = await copy.amend(a.f.tx, a.f.session, IDENTITY, request)
+    assert result["amendment"]["version"] == "native-reviewed-copy-amendment.v2"
+    assert all(result["amendment"][key] == "not-performed" for key in copy.AUTHORITY)
+
+
+async def test_explicit_deferred_request_rejects_legacy_v1_receipt(amendment):
+    a = amendment
+    request = copy.Amendment.model_validate({**a.request.model_dump(),
+        "defer_unready_page_ids": ["page-" + "7" * 24],
+        "patch": {"body": [{"type": "paragraph", "text": "Savarankiškas paaiškinimas."}]}})
+    with pytest.raises(ControlError) as error:
+        await copy.amend(a.f.tx, a.f.session, IDENTITY, request)
+    assert error.value.code == "invalid_content_amendment_source"
+
+
+@pytest.mark.parametrize("deferred", [[], ["foreign"], ["page-" + "7" * 24] * 2])
+async def test_explicit_deferred_links_require_nonempty_unique_native_ids(amendment, deferred):
+    a = amendment
+    with pytest.raises(ControlError) as error:
+        await copy.amend(a.f.tx, a.f.session, IDENTITY, {**a.request.model_dump(),
+            "defer_unready_page_ids": deferred, "patch": {"body": [{"type": "paragraph", "text": "Tekstas."}]}})
+    assert error.value.code == "invalid_content_amendment" and a.f.state.calls == 0
+
+
 @pytest.mark.parametrize("condition,code", [
     ("guide", "content_work_busy"), ("owner", "unauthenticated"),
     ("source", "source_unavailable"), ("revision", "content_revision_unavailable"),

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Explicit private Config-only scope correction, not Website/activation/calibration admission. Original coupling409 and final-native-proof late-grant201 failures remain retained. Independent reviewer found the late-proof P1; Root reproduced and closed it with one fresh SQL-only actor/Registration/grant/business/Creation/archive sink after all native/source waits. Reviewer reports no remaining actionableP1/P2. No actual operating adoption, paid lease or model/SMTP/IMAP call is inferred. Old regression harness incompatibilities are separately recorded under d905a3f7 and df96b8af; their original failures are not concealed.",
+  "checks": [
+    {
+      "command": "run-mail-display-pg.py private-purpose-full-17 tests/test_private_agent_preparation_pg.py",
+      "result": "PASS",
+      "evidence": "17 real restricted PostgreSQL/normal-owner HTTP/Node current-S37 cases PASS154.58s; raw SHA237f02ca10a7f05a79a5627ca792e2b09c3c87f136cfff22f31d7106f4acb427. Save/replay/revise both immutable purposes; old v1 conservative/new four-purpose projection; fullWebsite defaults; stale intake/archive/account/Session/grant/Git/SMTP/voice denial; late source and three final-native-proof mutations roll back. All original/operating/native data exact, provider/SMTP/IMAP0. Original intended save409 baseline1FAIL10.29s SHAc727808adacbd902b6656a0fa6c90b05b9db976009b8a3f7acd9a7bc67afa5b6; late-grant201 baseline1FAIL10.89s SHAed998f9f926b1dbb89f087427fda782f7c11195d1e20f205856c8f2c88477ec2; final-three repair3PASS27.78s SHA36bfb5ffe6fed9744f9cd64aa3e4fd93b2dd9dfebd4a2072cabf0114ec818d20."
+    },
+    {
+      "command": "run-model-prepare-pg.py private-related-pure-02 (325 related pure/in-process readiness/wire/config/evidence/lab/session/protection/model authority cases)",
+      "result": "PASS",
+      "evidence": "325PASS15.17s SHA4f3514437fbe6f9f8336523134f14985bc89059dff5a6a7c3699647d12dd8e3d. Old v1 complete golden projection exact after removing only additive path/three schemas; default fullWebsite authority, twelve private-proof mismatches and old projection security assertions retained. No DB/provider/channel mutation."
+    },
+    {
+      "command": "python -m ruff check (seven changed Root Python files); git diff --check",
+      "result": "PASS",
+      "evidence": "Actual scoped Ruff All checks passed; current diff whitespace clean. No schema, migration, scorer, Foundation receipt readiness, Profile, lab/controller or provider implementation changed."
+    }
+  ],
+  "eventId": "19960a37-bf61-474e-ab23-39c732328ed6",
+  "sequence": 3,
+  "at": "2026-10-18T02:51:28.195Z"
+}

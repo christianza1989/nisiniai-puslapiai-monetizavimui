@@ -1,6 +1,7 @@
 """Native output review with exact JSON pointers/receipts; no business-Draft conversion."""
 import json
 import re
+from typing import Literal
 
 from pydantic import TypeAdapter
 
@@ -11,6 +12,12 @@ from ..tasks.codex_transport import RunnerError
 from .wire import NativeOutput
 
 REFERENCE_PATTERN = TypeAdapter(shared.Reference).json_schema()["pattern"]
+CRITIC_OUTPUT_VERSION = "content-work.critic-output.v2"
+
+
+class NativeCriticOutput(shared.BusinessCriticOutput):
+    """Private prose projection; full stored CriticReview remains unchanged."""
+    schema_version: Literal["content-work.critic-output.v2"]
 
 POLICY = """Vertini vieną native V2 gido puslapį pagal jo visą tikrą planningBrief ir pateiktus svetainės
 duomenis. draft yra penkių laukų gido tekstas, ne verslo plano Draft. Vertink atsakymą į head_query,
@@ -114,6 +121,8 @@ def observations(output):
 def critic(value, *, output, round_number, receipts):
     try:
         output = candidate(output)
+        if isinstance(value, dict) and value.get("schema_version") == CRITIC_OUTPUT_VERSION:
+            value = _hydrate_critic(value, output, receipts)
         report = shared.CriticReview.model_validate(value)
         digest = shared.canonical_sha256(output)
         if report.draft_sha256 != digest or report.stage != "content" or report.round_number != round_number:
@@ -138,11 +147,37 @@ def critic(value, *, output, round_number, receipts):
         raise RunnerError("review_invalid") from None
 
 
+def provider_critic(value):
+    """The current provider must return its exact private version, not a legacy result."""
+    try:
+        return NativeCriticOutput.model_validate(value).model_dump(mode="json")
+    except (ValueError, TypeError):
+        raise RunnerError("review_invalid") from None
+
+
+def _hydrate_critic(value, output, receipts):
+    compact = provider_critic(value)
+    observed = shared._receipts(receipts, shared.canonical_sha256(output))
+    # Recompute the catalog from the original native candidate, never a model-supplied map.
+    references = [*projection(output)[1], *["receipt:"+identifier for identifier in observed]]
+    full = {key: value for key, value in compact.items() if key != "check_summaries"}
+    full["schema_version"] = "creation.critic.v1"
+    for finding in full["findings"]:
+        finding["evidence_refs"] = [references[index] for index in finding.pop("evidence_ref_indices")]
+    full["checks"] = []
+    for kind in shared.CHECK_KINDS:
+        matching = [receipt for receipt in observed.values() if receipt.kind == kind]
+        full["checks"].append({"kind": kind, "status": shared._receipt_status(matching),
+            "evidence_refs": [receipt.id for receipt in matching], "summary": compact["check_summaries"][kind]})
+    # The caller now runs every existing full native pointer/hash/status/coherence check.
+    return full
+
+
 def coordinator(value, *, output, critic_value, round_number, receipts):
     try:
         report = shared.CriticReview.model_validate(critic(critic_value, output=output,
             round_number=round_number, receipts=receipts))
-        decision = shared.CoordinatorDecision.model_validate(value)
+        decision = shared.CoordinatorDecision.model_validate(shared.coordinator_payload(value, report))
         if (decision.draft_sha256 != report.draft_sha256 or decision.critic_sha256 != shared.critic_sha256(report)
                 or decision.stage != "content" or decision.round_number != round_number
                 or decision.decision != report.verdict
@@ -173,24 +208,45 @@ def context(output, round_number, receipts, prepared, critic_value=None):
         value["critic"] = critic(critic_value, output=output, round_number=round_number, receipts=receipts)
         value["critic_sha256"] = shared.canonical_sha256(value["critic"])
         value["allowed_next_actions"] = shared.coordinator_actions(value["critic"])
+        value["verified_coordinator_sets"] = shared.coordinator_sets(value["critic"])
     return value
 
 
 def policy(role):
     base = {"critic": shared.CRITIC_POLICY, "coordinator": shared.COORDINATOR_POLICY}[role] + "\n" + POLICY
-    return language_mode.policy(base + ("\n" + CRITIC_CALIBRATION if role == "critic" else ""))
+    if role == "critic":
+        base = base.replace(
+            "Kiekvienai iš devynių schemos patikrų grąžink vieną būseną, visus tos rūšies kvitų ID ir tikrą jos apimtį.",
+            "check_summaries pateik visas devynias rūšis ir tikrą kiekvienos apimtį. Būsenas ir kvitų ID išsaugos "
+            "serveris pagal šios versijos patikrintus receipts; jų nekeisk ir nekartok.")
+        calibration = CRITIC_CALIBRATION.replace(
+            "Kiekviena checks patikra turi tik vieną pateiktą tos pačios kind kvito ID, be dubliavimo; statusą\n"
+            "perkelk tiksliai iš to kvito. Modelio vertinimas nepaverčia UNVERIFIED į PASS.",
+            "check_summaries pateik glaustai. Serveris išsaugos tikslų kvito statusą ir ID; modelio vertinimas "
+            "nepaverčia UNVERIFIED į PASS.")
+        base = (base + "\n" + calibration).replace("allowed_finding_refs", "finding_reference_table")
+        base += "\nKiekvienas finding_reference_table įrašas susieja index su tikslia reference nuoroda. " \
+            "evidence_ref_indices grąžink pasirinktų nuorodų sveikuosius indeksus, ne tekstą. " \
+            "Serveris atkurs būtent pasirinktas nuorodas. Išsaugok visus atskirus materialius radinius ir " \
+            "pataisas; tik tapačios priežasties radinius gali sujungti, išlaikydamas visas nuorodas. " \
+            "Rašyk kompaktišką JSON be įtraukų, nekartok juodraščio ar kvitų teksto."
+    return language_mode.policy(base)
+
+
+def critic_prompt(value):
+    prompt_data = dict(value)
+    prompt_data["finding_reference_table"] = [{"index": index, "reference": reference}
+        for index, reference in enumerate(prompt_data.pop("allowed_finding_refs"))]
+    return policy("critic") + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(prompt_data, ensure_ascii=False)
 
 
 def output_schema(role, value):
     if role == "critic":
-        schema = shared.model_output_schema("critic")
-        language_mode.constrain_findings(schema, "Finding")
-        schema["$defs"]["Finding"]["properties"]["evidence_refs"]["items"]["enum"] = value["allowed_finding_refs"]
-        refs = schema["$defs"]["ReviewCheck"]["properties"]["evidence_refs"]
-        refs.update(minItems=1, maxItems=1)
-        refs["items"]["enum"] = [receipt["id"] for receipt in value["receipts"]]
+        schema = NativeCriticOutput.model_json_schema()
+        language_mode.constrain_findings(schema, "BusinessFinding")
+        schema["$defs"]["BusinessFinding"]["properties"]["evidence_ref_indices"]["items"]["maximum"] = len(value["allowed_finding_refs"])-1
     else:
-        schema = shared.model_output_schema("coordinator")
+        schema = shared.coordinator_provider_schema()
         schema["properties"]["critic_sha256"]["const"] = value["critic_sha256"]
         schema["properties"]["decision"]["const"] = value["critic"]["verdict"]
         schema["properties"]["next_actions"]["items"]["enum"] = shared.coordinator_actions(value["critic"])

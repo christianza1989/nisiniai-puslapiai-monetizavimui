@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Own bounded source-only packet from2424268210776d623f58e4ea088e436b0ea868d6, companion255fea0813bf1aabeaeea2f2de0b29564118f2fc. Minimal cancellation branch attaches existing bounded observed receipt to original CancelledError; original args/cancellation/cleanup retained, never success/retry. No worker/model/schema/DB/operating/provider/SMTP/closed-ledger edits or calls. First RED and two unrelated authority FakeTx baseline failures preserved in fixing eventcea17a93-c2a9-4c34-b39c-5d278e9bba20. Root acknowledged the separate FakeTx ownership and is repairing/regressing it in its own branch; this packet does not copy it or claim that wider suite passed.",
+  "checks": [
+    {
+      "command": "python -m pytest -o 'pythonpath=tests scripts' -p pytest_asyncio.plugin -q -p no:cacheprovider offline_tests/test_cli_cancelled_receipts.py offline_tests/test_control_codex.py offline_tests/test_cli_execution_observation.py offline_tests/test_partial_cli_receipts.py offline_tests/test_creation_team_controller.py offline_tests/test_source_observation.py",
+      "result": "PASS",
+      "evidence": "94passed,7maintained unpinned/empty-home real-CLI probes skipped53.12s. Eight new real inert Python-child cases prove known usage→holdpipes→cancel, exact original CancelledError args, owned child/task cleanup, no success even with valid output file, sanitized usage/no raw canaries, unknown/no invented zero, explicit zero/max, known receipt on parse failure, opt-in pipeline format/hash. Related timeout/provider/observation/source behavior stays green. RawUTF16logSHA25676c5473b0884c47a41578dae4a1df3be712d7f710c4fc828e50ba85aa7f58748. No Codex executable/model/provider/DB/channel used."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/tasks/codex_transport.py offline_tests/test_cli_cancelled_receipts.py; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed. Only runtime diff is four added/one replaced lines in cancellation exception branch."
+    }
+  ],
+  "eventId": "bcf6d3b1-c7e7-464c-8e10-ab60e80d4809",
+  "sequence": 3,
+  "at": "2026-10-18T00:35:52.279Z"
+}

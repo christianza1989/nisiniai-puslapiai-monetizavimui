@@ -139,6 +139,82 @@ def test_coordinator_provider_selects_only_exact_corrections_and_remaining_check
     assert draft_sha256(draft) == schema["properties"]["draft_sha256"]["const"]
 
 
+@pytest.mark.parametrize("passed_kind", CHECK_KINDS)
+def test_provider_sets_match_strict_coordinator_when_one_receipt_passes(draft, passed_kind):
+    raw = report(draft)
+    evidence = receipt(draft, kind=passed_kind)
+    bind(raw, evidence)
+    critic = verify(raw, draft, [evidence])
+    context = {"draft": draft, "critic": critic, "stage": "private_draft", "round_number": 1,
+               "receipts": [evidence]}
+    schema = output_schema("coordinator", context)
+    value = decision(draft, critic)
+    value.pop("correction_ids")
+    value.pop("remaining_checks")
+    value["schema_version"] = schema["properties"]["schema_version"]["const"]
+    value["next_actions"] = coordinator_actions(critic)[:5]
+    assert "correction_ids" not in schema["properties"] and "remaining_checks" not in schema["properties"]
+    restored = verify_decision(value, draft, critic, [evidence])
+    assert restored["decision"] == "revise" and restored["correction_ids"] == ["f_1"]
+    assert passed_kind not in restored["remaining_checks"] and len(restored["remaining_checks"]) == 8
+    original = deepcopy(critic)
+    value["remaining_checks"] = [passed_kind]
+    with pytest.raises(RunnerError, match="review_invalid"):
+        verify_decision(value, draft, critic, [evidence])
+    assert critic == original  # Mutating a schema cannot mutate authoritative evidence.
+    assert 'verified_coordinator_sets' in coordinator_prompt(**context)
+
+
+def test_provider_exact_empty_sets_do_not_imply_launch_acceptance(draft):
+    raw = report(draft, "accept_draft")
+    receipts = [receipt(draft, kind=kind, status="NA", identifier="r_"+kind) for kind in CHECK_KINDS]
+    for item in receipts:
+        bind(raw, item)
+    critic = verify(raw, draft, receipts)
+    ctx = {"draft": draft, "critic": critic, "stage": "private_draft", "round_number": 1, "receipts": receipts}
+    schema = output_schema("coordinator", ctx)
+    value = decision(draft, critic)
+    value.pop("correction_ids")
+    value.pop("remaining_checks")
+    value["schema_version"] = schema["properties"]["schema_version"]["const"]
+    value["next_actions"] = coordinator_actions(critic)[:5]
+    final = verify_decision(value, draft, critic, receipts)
+    assert final["correction_ids"] == final["remaining_checks"] == []
+    assert final["full_f1_status"] == final["launch_status"] == "UNVERIFIED"
+
+
+def test_provider_prose_schema_avoids_rejected_composite_constants(draft):
+    critic = verify(report(draft), draft)
+    schema = output_schema("coordinator", {"draft": draft, "critic": critic, "stage": "private_draft",
+                                         "round_number": 1, "receipts": []})
+    def check(node):
+        if isinstance(node, dict):
+            assert not isinstance(node.get("const"), (list, dict))
+            for value in node.values():
+                check(value)
+        elif isinstance(node, list):
+            for value in node:
+                check(value)
+    check(schema)
+    assert set(schema["required"]) == set(CoordinatorDecision.model_fields) - {"correction_ids", "remaining_checks"}
+
+
+@pytest.mark.parametrize("field,value", [("critic_sha256", "0"*64), ("decision", "accept_draft"),
+    ("next_actions", ["Išsiųsti nepatvirtintą viešą pasiūlymą." ]), ("launch_status", "PASS")])
+def test_coordinator_prose_envelope_cannot_forge_bindings_actions_or_acceptance(draft, field, value):
+    critic = verify(report(draft), draft)
+    context = {"draft": draft, "critic": critic, "stage": "private_draft", "round_number": 1, "receipts": []}
+    schema = output_schema("coordinator", context)
+    prose = decision(draft, critic)
+    prose.pop("correction_ids")
+    prose.pop("remaining_checks")
+    prose["schema_version"] = schema["properties"]["schema_version"]["const"]
+    prose["next_actions"] = coordinator_actions(critic)[:5]
+    prose[field] = value
+    with pytest.raises(RunnerError, match="review_invalid"):
+        verify_decision(prose, draft, critic)
+
+
 def test_private_draft_acceptance_preserves_separate_real_world_gates(draft):
     critic = report(draft, "accept_draft")
     evidence = receipt(draft)

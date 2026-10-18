@@ -20,7 +20,7 @@ from . import selectors, service, worker
 
 def actors():
     cfg = settings()
-    service.enabled()
+    service.generation_enabled()
     if not cfg.control_enabled or not cfg.site_build_api_runner_enabled or not cfg.business_discovery_runner_enabled:
         raise RuntimeError("site_build_runner_disabled")
     try:

@@ -73,13 +73,24 @@ async def latest(tx, creation):
         .execution_options(populate_existing=True))
 
 
+def private_local_scope(expected, creation):
+    """Only S37's exact no-domain identity may satisfy local draft preparation."""
+    from ..creation.private_preview import private_host
+    cfg = settings()
+    return (cfg.control_mode == "local" and cfg.environment == "local"
+        and expected.environment_id == "local" and creation.canonical_host is None
+        and str(expected.creation_id) == creation.id
+        and expected.accepted.canonical_host == private_host(str(expected.creation_id)))
+
+
 async def current(tx, session, creation, row):
     """Current owner and bytes; no provider/HTTP verification or permission effect."""
     from . import foundation
     expected, observation = stored(row)
     if (observation.state != "verified-local" or expected.language_review_mode != "required"
             or row.accepted_revision != creation.current_revision
-            or observation.synthetic and not settings().environment.startswith("test-")):
+            or observation.synthetic and not settings().environment.startswith("test-")
+                and not private_local_scope(expected, creation)):
         return False
     actual = await foundation.capture(tx, session, creation.id)
     if material(expected) != material(actual):

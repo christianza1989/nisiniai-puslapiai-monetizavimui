@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "workflow",
+  "summary": "A single-branch continuation clone can have a freshly fetched origin/main ref but no main fetch mapping; managed worktree creation then fails when configuring main tracking after100%checkout.",
+  "paths": [
+    "docs/MULTI_MACHINE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Human supplied actual managed-worktree log: detached533597c1 checkout completes100%, then fatal cannot set up tracking information; starting point refs/remotes/origin/main is not a branch. Parent config actually had only the original continuation refspec, though show-ref verified current main.",
+    "Root repaired the additive main fetch mapping, preserved the prior mapping, fetched successfully, and retried the failed creation only after no failed worktree/thread remained. Actual new Hotube thread01a14e56-6069-7c81-ad3e-afed9c28bb5f is active.",
+    "Retained private tiny Git-only fixture git-main-tracking-b24c74097963413e87359b906190fe9a reproduces failure with an existing fetched main ref, then passes after exactly adding main mapping. Detached HEAD/files unchanged; no source checkout or private data copied."
+  ],
+  "rollback": "Remove the documentation note if it becomes obsolete; local repo metadata was only an additive canonical main mapping. Never remove pre-existing refspecs or reset/recreate foreign checkouts as rollback.",
+  "id": "upgrade-991b56b6-0f52-47ba-bcac-9d897c8de362",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "40abff139f2207f06fd2a2b74064bc9cd3934111",
+  "createdAt": "2026-10-18T09:29:00.867Z"
+}

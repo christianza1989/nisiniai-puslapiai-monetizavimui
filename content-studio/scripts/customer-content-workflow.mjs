@@ -6,9 +6,10 @@ import { pathToFileURL } from 'node:url';
 import { loadCustomerContentContext, assertArtifactDirectories, readArtifactBytes } from './customer-content-context.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import { stableV2, validateV2Editorial, normalizeV2Blocks, inlineNodes, bodyPlainText } from '../src/content-package-v2.mjs';
-import { workflowOverview, reviewCurrent } from '../src/content-workflow.mjs';
+import { workflowOverview, reviewCurrent, draftLinks } from '../src/content-workflow.mjs';
 import { IMAGE_POLICY } from '../src/image-pipeline.mjs';
 import { resolveInternalRichLinks } from '../src/internal-rich-links.mjs';
+import { reviewEditorial } from './customer-editorial-review.mjs';
 
 const VERSION = 'customer-content-workflow.v1';
 const object = value => value && typeof value === 'object' && !Array.isArray(value);
@@ -21,7 +22,9 @@ const baseKeys = ['command','creationId','acceptedRevision','sourceHash','canoni
 const commands = {
   status: [], prepare: [], 'read-page': [], 'read-media': ['assetId','expectedRevisionHash'],
   'amend-page': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
-  'amend-page-reviewed-copy': ['operationId','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch'],
+  'amend-page-reviewed-copy': ['operationId','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch','deferUnreadyPageIds'],
+  'prepare-editorial': ['operationId','action','expectedSiteHash','expectedRevisionHash','expectedPlanningHash','patch','pageIds'],
+  'review-editorial': ['operationId','action','expectedSiteHash','pages','evidence','actorId','authorizingSessionId','sourceRevision'],
   'resolve-internal-links': ['expectedSiteHash','expectedRevisionHash','expectedPlanningHash'],
   'amend-site': ['expectedSiteHash','patch'],
   'import-media': ['expectedSiteHash','sourcePath','metadata','expectedSourceSha256'],
@@ -104,7 +107,7 @@ const amendmentPatchKeys=['title','description','intent','body','factChecks','ex
 const uuid=value=>typeof value==='string'&&/^[a-f0-9]{8}-[a-f0-9]{4}-[1-5][a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(value);
 const withoutUpdated=page=>Object.fromEntries(Object.entries(page).filter(([key])=>key!=='updatedAt'));
 const same=(a,b)=>stableV2(a)===stableV2(b);
-function reviewedCopyPlan(patch,site,page) {
+function reviewedCopyPlan(patch,site,page,deferred=undefined) {
   keys(patch,amendmentPatchKeys);
   if(!Object.keys(patch).length||Buffer.byteLength(stableV2(patch))>200000)fail('workflow_invalid_amendment');
   const metadata=Object.fromEntries(Object.entries(patch).filter(([key])=>key!=='body'));
@@ -126,9 +129,25 @@ function reviewedCopyPlan(patch,site,page) {
     }else if(node.target.kind!=='external'||!external.has(node.target.url))fail('writer_unverified_external_link');
   }
   if(body.some(b=>b.type==='image'&&!page.media.some(m=>m.id===b.assetId)))fail('workflow_unknown_asset');
-  const graph=b=>[...new Set([...(page.links??[]).map(l=>l.targetPageId),...inlineNodes({body:b})
+  const graph=(b,links=page.links??[])=>[...new Set([...links.map(l=>l.targetPageId),...inlineNodes({body:b})
     .filter(n=>n.type==='link'&&n.target.kind==='page').map(n=>n.target.pageId)])].sort();
-  if(!same(graph(body),graph(page.body)))fail('workflow_amendment_graph_changed');
+  if(deferred!==undefined) {
+    if(!Array.isArray(deferred)||!deferred.length||deferred.length>20||new Set(deferred).size!==deferred.length
+        ||deferred.some(p=>typeof p!=='string'||!/^page-[a-f0-9]{24}$/.test(p))||!Object.hasOwn(patch,'body'))
+      fail('workflow_invalid_deferred_links');
+    const oldGraph=graph(page.body),removed=new Set(deferred);
+    for(const targetId of deferred) {
+      const target=site.pages.find(p=>p.id===targetId&&p.siteId===site.id);
+      if(!oldGraph.includes(targetId)||!target||target.id===page.id||!['guide','article'].includes(target.type)
+          ||target.status==='revoked'||target.status==='approved'||target.approval||target.publishedRevision
+          ||target.body?.length!==0)fail('workflow_deferred_target_not_unready');
+    }
+    normalized.links=(page.links??[]).filter(l=>!removed.has(l.targetPageId));
+    normalized.linkSuggestions=(page.linkSuggestions??[]).filter(l=>!removed.has(l.targetPageId));
+    normalized.editorial={...page.editorial,relatedPageIds:page.editorial.relatedPageIds.filter(p=>!removed.has(p))};
+    if(!same(graph(body,normalized.links),oldGraph.filter(p=>!removed.has(p)))
+        ||!same(graph(body,[]),graph(page.body,[]).filter(p=>!removed.has(p))))fail('workflow_amendment_graph_changed');
+  } else if(!same(graph(body),graph(page.body)))fail('workflow_amendment_graph_changed');
   if('body'in patch)normalized.body=body;
   // editPage owns the mutation. This frozen projection recognizes only its
   // exact transition after a lost response, never an unrelated current edit.
@@ -151,7 +170,7 @@ async function preserveBefore(file,value) {
 
 function amendmentResult(receipt,replayed,changed) {
   const b=receipt.binding;
-  return {version:amendmentVersion,state:'applied',operationId:b.operationId,creationId:b.creationId,
+  return {version:receipt.version,state:'applied',operationId:b.operationId,creationId:b.creationId,
     acceptedRevision:b.acceptedRevision,sourceHash:b.sourceHash,canonicalHost:b.canonicalHost,
     siteId:receipt.siteId,pageId:b.pageId,requestHash:receipt.requestHash,receiptSha256:digest(receipt),
     beforeSiteHash:b.expectedSiteHash,beforeRevisionHash:b.expectedRevisionHash,beforePlanningHash:b.expectedPlanningHash,
@@ -170,6 +189,8 @@ export async function amendReviewedCopy(context,input) {
   if(!Object.keys(input.patch).length||Buffer.byteLength(stableV2(input.patch))>200000)fail('workflow_invalid_amendment');
   const binding=Object.fromEntries(['operationId','creationId','acceptedRevision','sourceHash','canonicalHost','pageId',
     ...amendmentHashKeys,'patch'].map(k=>[k,input[k]]));
+  const version=Object.hasOwn(input,'deferUnreadyPageIds')?'native-reviewed-copy-amendment.v2':amendmentVersion;
+  if(Object.hasOwn(input,'deferUnreadyPageIds'))binding.deferUnreadyPageIds=input.deferUnreadyPageIds;
   const requestHash=digest(binding),{model}=context,directory=path.join(context.directory,'reviewed-copy-amendments');
   try{await mkdir(directory);}catch(error){if(error.code!=='EEXIST')throw error;}
   await assertArtifactDirectories(context.root,directory);
@@ -180,7 +201,7 @@ export async function amendReviewedCopy(context,input) {
     await lock.writeFile(token);
     let receipt=await readAmendment(file),before=await readAmendment(beforeFile);
     const replayed=Boolean(receipt||before);
-    if(receipt&&(receipt.version!==amendmentVersion||receipt.requestHash!==requestHash||!same(receipt.binding,binding)
+    if(receipt&&(receipt.version!==version||receipt.requestHash!==requestHash||!same(receipt.binding,binding)
         ||!['prepared','applied'].includes(receipt.state)))fail('workflow_amendment_receipt_conflict');
     if(receipt&&!before)fail('workflow_amendment_receipt_invalid');
     if(before&&(before.version!=='native-reviewed-copy-before.v1'||before.requestHash!==requestHash
@@ -193,14 +214,14 @@ export async function amendReviewedCopy(context,input) {
       &&model.planningContextHash(page)===input.expectedPlanningHash&&(!before||same(page,before.page));
     if(!before) {
       if(!exactBefore())fail('workflow_context_stale');
-      reviewedCopyPlan(input.patch,site,page);
+      reviewedCopyPlan(input.patch,site,page,input.deferUnreadyPageIds);
       before={version:'native-reviewed-copy-before.v1',binding,requestHash,siteId:site.id,
         beforePageSha256:digest(page),page:structuredClone(page)};
       await preserveBefore(beforeFile,before);
     }
     const beforeSite={...site,pages:site.pages.map(p=>p.id===input.pageId?before.page:p)};
     if(model.studioContextHash(beforeSite)!==input.expectedSiteHash)fail('workflow_context_stale');
-    const plan=reviewedCopyPlan(input.patch,beforeSite,before.page),plannedPageSha256=digest(withoutUpdated(plan.planned));
+    const plan=reviewedCopyPlan(input.patch,beforeSite,before.page,input.deferUnreadyPageIds),plannedPageSha256=digest(withoutUpdated(plan.planned));
     const changeRequired=!same(withoutUpdated(plan.planned),withoutUpdated(before.page));
     if(receipt&&(receipt.beforeEvidenceSha256!==digest(before)||receipt.beforePageSha256!==before.beforePageSha256
         ||receipt.siteId!==site.id||receipt.plannedPageSha256!==plannedPageSha256||receipt.changeRequired!==changeRequired))
@@ -208,7 +229,7 @@ export async function amendReviewedCopy(context,input) {
     if(!receipt) {
       // Evidence without prepared cannot have performed our mutation.
       if(!exactBefore())fail('workflow_amendment_uncertain');
-      receipt={version:amendmentVersion,binding,requestHash,siteId:site.id,state:'prepared',
+      receipt={version,binding,requestHash,siteId:site.id,state:'prepared',
         beforeEvidenceSha256:digest(before),beforePageSha256:before.beforePageSha256,plannedPageSha256,changeRequired};
       await persistReceipt(file,receipt);
     }
@@ -239,6 +260,156 @@ export async function amendReviewedCopy(context,input) {
   } finally {
     await lock.close();
     if((await readArtifactBytes(lockFile,100)).toString('utf8')!==token)fail('workflow_amendment_lock_changed');
+    await unlink(lockFile);
+  }
+}
+
+const preparationVersion='native-editorial-preparation.v1';
+const preparationActions=new Set(['amend-site','amend-page','resolve-internal-links','finalize-links']);
+const preparationAuthority=['generation','sourceVerification','mediaVerification','editorialReview','approval','release','deployment','channelActivation','moduleAdmission'];
+function preparationBinding(input){
+  if(!uuid(input.operationId)||!preparationActions.has(input.action)||!hash(input.expectedSiteHash))fail('workflow_invalid_preparation');
+  const fields=['operationId','creationId','acceptedRevision','sourceHash','canonicalHost','action','expectedSiteHash'];
+  const extra=input.action==='amend-site'?['patch']:input.action==='finalize-links'?['pageIds']:
+    ['pageId','expectedRevisionHash','expectedPlanningHash',...(input.action==='amend-page'?['patch']:[])];
+  const allowed=[...fields,...extra];
+  if(extra.some(k=>!Object.hasOwn(input,k))||Object.keys(input).some(k=>![...allowed,'command','artifactsRoot','dataDir','outputDir'].includes(k)))fail('workflow_invalid_preparation');
+  if(input.action==='finalize-links'&&(!Array.isArray(input.pageIds)||!input.pageIds.length||input.pageIds.length>200
+      ||new Set(input.pageIds).size!==input.pageIds.length||input.pageIds.some(v=>!id(v))))fail('workflow_invalid_pages');
+  if(['amend-page','resolve-internal-links'].includes(input.action)&&(!id(input.pageId)||!hash(input.expectedRevisionHash)||!hash(input.expectedPlanningHash)))fail('workflow_invalid_preparation');
+  if(Buffer.byteLength(stableV2(input.patch??{}))>200000)fail('workflow_invalid_preparation');
+  return Object.fromEntries(allowed.map(k=>[k,structuredClone(input[k])]));
+}
+function preparationPlan(site,input,model){
+  const planned=structuredClone(site),changedPageIds=[];let siteTimestamp=false,patch=null;
+  const selected=()=>{
+    const ids=input.action==='finalize-links'?input.pageIds:[input.pageId];
+    return ids.map(pageId=>{const p=site.pages.find(p=>p.id===pageId&&p.siteId===site.id&&p.status!=='revoked');if(!p)fail('workflow_unknown_link');return p;});
+  };
+  if(input.action==='amend-site'){
+    // Metadata only. Identity, renderer, stage, scheduling, paths and permissions are never writable here.
+    keys(input.patch,['name','offer','audience','facts','contact','operatorName','brand']);patch=sitePatch(input.patch);
+    for(const k of ['name','offer','audience','facts'])if(k in patch)planned[k]=patch[k].trim();
+    if('operatorName'in patch)planned.operatorName=patch.operatorName;
+    if(patch.contact)planned.contact={email:patch.contact.email.trim(),phone:patch.contact.phone.trim()};
+    if(patch.brand)planned.brand=structuredClone(patch.brand);
+    siteTimestamp=!same(planned,site);
+  }else{
+    const pages=selected();
+    if(input.action!=='finalize-links'&&(model.revisionHash(pages[0])!==input.expectedRevisionHash
+        ||model.planningContextHash(pages[0])!==input.expectedPlanningHash))fail('workflow_context_stale');
+    for(const page of pages){
+      const p=planned.pages.find(p=>p.id===page.id);
+      if(input.action==='finalize-links'){
+        const links=draftLinks(site,page);
+        if(!same(links,page.links)){p.links=links;p.status='review';p.approval=null;}
+      }else{
+        if(input.action==='amend-page'){
+          keys(input.patch,['type','publishAt','editorial','linkSuggestions']);patch=pagePatch(input.patch,site,page);
+          Object.assign(p,structuredClone(patch));
+          if('publishAt'in patch)p.publishAt=new Date(patch.publishAt).toISOString();
+          if(patch.linkSuggestions)p.linkSuggestions=patch.linkSuggestions.map(l=>({targetPageId:l.targetPageId.trim(),label:l.label.trim(),reason:l.reason.trim()}));
+        }else{
+          patch={body:resolveInternalRichLinks(page.body,site.pages,page.id)};
+          if(same(patch.body,page.body))continue;
+          p.body=patch.body;
+        }
+        // Recognize only the maintained editPage transition after a lost response.
+        // Canonical model primitives below remain the sole native writers.
+        p.siteSnapshot={id:site.id,name:site.name,canonicalHost:site.canonicalHost,locale:site.locale,timezone:site.timezone,
+          brand:structuredClone(site.brand),offer:site.offer,contact:structuredClone(site.contact),renderer:site.renderer,operatorName:site.operatorName};
+        p.status='review';p.approval=null;
+      }
+      if(!same(p,page))changedPageIds.push(page.id);
+    }
+  }
+  return {planned,patch,changedPageIds,siteTimestamp,changeRequired:!same(planned,site)};
+}
+function preparationState(site,plan){
+  const value=structuredClone(site);
+  if(plan.siteTimestamp)delete value.updatedAt;
+  for(const p of value.pages)if(plan.changedPageIds.includes(p.id))delete p.updatedAt;
+  return value;
+}
+async function preparationReceipt(file){
+  try{return JSON.parse((await readArtifactBytes(file,4500000)).toString('utf8'));}
+  catch(error){if(error.code==='ENOENT')return null;fail('workflow_preparation_receipt_invalid');}
+}
+function exactPreparationKeys(value,allowed){
+  if(!object(value)||Object.keys(value).length!==allowed.length||allowed.some(k=>!Object.hasOwn(value,k)))fail('workflow_preparation_receipt_invalid');
+}
+function preparationResult(before,after,replayed,changed,reconciled){
+  const b=before.binding;
+  return {version:preparationVersion,state:'applied',operationId:b.operationId,creationId:b.creationId,
+    acceptedRevision:b.acceptedRevision,sourceHash:b.sourceHash,canonicalHost:b.canonicalHost,siteId:before.siteId,action:b.action,
+    requestHash:before.requestHash,beforeSiteHash:b.expectedSiteHash,appliedSiteHash:after.siteHash,
+    beforeEvidenceSha256:digest(before),receiptSha256:digest(after),plannedSiteSha256:before.plannedSiteSha256,
+    pageRevisions:after.pageRevisions,changeRequired:before.changeRequired,replayed,changed,reconciled,
+    ...Object.fromEntries(preparationAuthority.map(k=>[k,'not-performed']))};
+}
+export async function prepareEditorial(context,input){
+  // Current Session/RLS/Creation/source/S6 and idle-GUIDE fencing belongs to the server caller.
+  const binding=preparationBinding(input),requestHash=digest(binding),{model}=context;
+  const directory=path.join(context.directory,'editorial-preparations');
+  try{await mkdir(directory);}catch(error){if(error.code!=='EEXIST')throw error;}
+  await assertArtifactDirectories(context.root,directory);
+  const lockFile=path.join(directory,binding.operationId+'.lock'),beforeFile=path.join(directory,binding.operationId+'.before.json'),afterFile=path.join(directory,binding.operationId+'.after.json');
+  let lock;try{lock=await open(lockFile,'wx',0o600);}catch(error){if(error.code==='EEXIST')fail('workflow_preparation_busy');throw error;}
+  const token=randomUUID();await lock.writeFile(stableV2({token,pid:process.pid,createdAt:new Date().toISOString()}));
+  try{
+    let before=await preparationReceipt(beforeFile),after=await preparationReceipt(afterFile),site=await model.getSite(context.siteId);
+    const replayed=Boolean(before||after);
+    if(after&&!before)fail('workflow_preparation_receipt_invalid');
+    if(before)exactPreparationKeys(before,['version','binding','requestHash','siteId','site','preparedAt','plannedSiteSha256','changeRequired','changedPageIds','siteTimestamp']);
+    if(before&&(before.version!=='native-editorial-preparation-before.v1'||before.requestHash!==requestHash||!same(before.binding,binding)
+        ||before.siteId!==context.siteId||before.site?.id!==context.siteId||model.studioContextHash(before.site)!==binding.expectedSiteHash
+        ||!Number.isFinite(Date.parse(before.preparedAt))||Date.parse(before.preparedAt)>Date.now()))fail('workflow_preparation_receipt_conflict');
+    if(!before&&model.studioContextHash(site)!==binding.expectedSiteHash)fail('workflow_context_stale');
+    const plan=preparationPlan(before?.site??site,input,model),plannedSiteSha256=digest(preparationState(plan.planned,plan));
+    if(before&&(before.plannedSiteSha256!==plannedSiteSha256||before.changeRequired!==plan.changeRequired
+        ||!same(before.changedPageIds,plan.changedPageIds)||before.siteTimestamp!==plan.siteTimestamp))fail('workflow_preparation_receipt_invalid');
+    if(!before){
+      before={version:'native-editorial-preparation-before.v1',binding,requestHash,siteId:site.id,site:structuredClone(site),
+        preparedAt:new Date().toISOString(),plannedSiteSha256,changeRequired:plan.changeRequired,changedPageIds:plan.changedPageIds,siteTimestamp:plan.siteTimestamp};
+      await preserveBefore(beforeFile,before);
+    }
+    const recognized=actual=>{
+      if(digest(preparationState(actual,plan))!==plannedSiteSha256)return false;
+      const times=[...(plan.siteTimestamp?[actual.updatedAt]:[]),...actual.pages.filter(p=>plan.changedPageIds.includes(p.id)).map(p=>p.updatedAt)];
+      return times.every(t=>typeof t==='string'&&Number.isFinite(Date.parse(t))&&new Date(t).toISOString()===t&&Date.parse(t)>=Date.parse(before.preparedAt)&&Date.parse(t)<=Date.now());
+    };
+    const pageRevisions=actual=>{
+      const ids=binding.pageIds??(binding.pageId?[binding.pageId]:[]);
+      return ids.map(pageId=>{const p=actual.pages.find(p=>p.id===pageId);return {pageId,revisionHash:model.revisionHash(p),planningHash:model.planningContextHash(p)};});
+    };
+    if(after){
+      exactPreparationKeys(after,['version','state','requestHash','beforeEvidenceSha256','siteHash','site','pageRevisions']);
+      if(after.version!==preparationVersion||after.state!=='applied'||after.beforeEvidenceSha256!==digest(before)
+          ||after.requestHash!==requestHash||after.siteHash!==model.studioContextHash(after.site)
+          ||!recognized(after.site)||!same(after.pageRevisions,pageRevisions(after.site)))fail('workflow_preparation_receipt_invalid');
+      if(!same(site,after.site))fail('workflow_context_stale');
+      return preparationResult(before,after,true,false,false);
+    }
+    let changed=false,reconciled=false;
+    if(same(site,before.site)){
+      if(plan.changeRequired){
+        const expected={expectedSiteHash:binding.expectedSiteHash};
+        if(binding.action==='amend-site')await model.editSite(site.id,plan.patch,expected);
+        else if(binding.action==='finalize-links')await model.finalizeInternalLinks(site.id,binding.pageIds,expected);
+        else await model.editPage(site.id,binding.pageId,plan.patch,{...expected,expectedRevisionHash:binding.expectedRevisionHash,expectedPlanningHash:binding.expectedPlanningHash});
+        changed=true;
+      }
+      site=await model.getSite(site.id);
+    }else reconciled=true;
+    if(!recognized(site))fail('workflow_preparation_uncertain');
+    after={version:preparationVersion,state:'applied',requestHash,beforeEvidenceSha256:digest(before),siteHash:model.studioContextHash(site),
+      site:structuredClone(site),pageRevisions:pageRevisions(site)};
+    await preserveBefore(afterFile,after);
+    return preparationResult(before,after,replayed,changed,reconciled);
+  }finally{
+    await lock.close();
+    const owner=JSON.parse((await readArtifactBytes(lockFile,1000)).toString('utf8'));
+    if(owner.token!==token||owner.pid!==process.pid)fail('workflow_preparation_lock_changed');
     await unlink(lockFile);
   }
 }
@@ -468,6 +639,14 @@ export async function customerContentWorkflow(input) {
     return value;
   }
   if (!hash(input.expectedSiteHash)) fail('workflow_expected_context_required');
+  if(input.command==='review-editorial'){
+    const result=await reviewEditorial(context,input);
+    return {...await current(context,input,await model.getSite(site.id)),operation:{command:input.command,result,deployment:'not-performed'}};
+  }
+  if(input.command==='prepare-editorial'){
+    const result=await prepareEditorial(context,input);
+    return {...await current(context,input,await model.getSite(site.id)),operation:{command:input.command,result,deployment:'not-performed'}};
+  }
   if(input.command==='amend-page-reviewed-copy') {
     const result=await amendReviewedCopy(context,input);
     return {...await current(context,input,await model.getSite(site.id)),

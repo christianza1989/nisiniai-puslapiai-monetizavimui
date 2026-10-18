@@ -30,7 +30,7 @@ async def admitted(c, monkeypatch, profile=profiles.SOL_HIGH):
     return row, me
 
 
-@pytest.mark.parametrize("profile,expected", [(profiles.DEFAULT, 360), (profiles.SOL_HIGH, 600)])
+@pytest.mark.parametrize("profile,expected", [(profiles.DEFAULT, 360), (profiles.SOL_HIGH, 900)])
 async def test_actual_claim_persists_default_or_high_budget_once(discovery, monkeypatch, profile, expected):
     c = discovery
     monkeypatch.setattr(settings(), "creation_runner_seconds", 180)
@@ -69,7 +69,7 @@ async def test_time_consumed_by_admission_lock_or_quota_cannot_pay_for_exhausted
     claimed = await worker.claim(row["discovery_id"])
     real_now = utcnow
     def slow_quota(own, total):
-        monkeypatch.setattr(worker, "utcnow", lambda: real_now()+timedelta(seconds=500))
+        monkeypatch.setattr(worker, "utcnow", lambda: real_now()+timedelta(seconds=800))
         return False
     monkeypatch.setattr(worker, "daily_limit_reached", slow_quota)
     with pytest.raises(RunnerError, match="run_timeout"):
@@ -87,9 +87,9 @@ async def test_current_roles_keep_one_deadline_and_exact_six_reservation_limit(d
     for round_number in (1, 2):
         for role in ("creator", "critic", "coordinator"):
             sequence, pin, remaining = await worker.reserve(claimed, role, round_number)
-            assert 0 < remaining <= 600 and pin == adapter.instructions(role)[1]
+            assert 0 < remaining <= 900 and pin == adapter.instructions(role)[1]
             assert adapter.deadlines.role_seconds(profiles.SOL_HIGH, role, remaining) <= {
-                "creator": 420, "critic": 90, "coordinator": 90}[role]
+                "creator": 660, "critic": 90, "coordinator": 90}[role]
     assert sequence == 6
     with pytest.raises(RunnerError, match="attempt_limit"):
         await worker.reserve(claimed, "creator", 2)

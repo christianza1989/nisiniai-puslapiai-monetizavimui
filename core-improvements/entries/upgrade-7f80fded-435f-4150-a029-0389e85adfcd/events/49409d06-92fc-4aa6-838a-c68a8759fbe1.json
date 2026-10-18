@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root reviewed and approved first30line diff and actualPG definitions/SQL fixture. Production current_actor(lock=False) uses one fresh Useranchored RLS LEFTJOIN/populate_existing statement; optional Account/Portfolio/member filters stayON, strict401 before404 and actualORMreturn preserved. lock=True originalbyteblock/order unchanged. Baseline5FAIL19PASS05f91fcf retained, joined-fixture1ERROR7d6aaf20 retained and only SQLleaf adapted, canonicalactor neverstubbed. Root actual priorcapture346SQL2.7351s/fullverify~2s remainsfailure, no helper speed/adoption claim. All prior journals frozen; actualDB/native/provider/process/browser/cutover Root-owned.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_current_actor_observation.py offline_tests/test_authority_observation.py offline_tests/test_accepted_proof_observation.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "140PASS10.09s(24newactor+85canonicalAuthority+31proof), related-first.log SHA256a69dd44390ac0177e986014b1cef12053eb1aa199c09aba16f2cf82f188ca65d. Existing QA Python, no dependency changes/actualDB."
+    },
+    {
+      "command": "python -m pytest tests/test_current_actor_pg.py --collect-only -q",
+      "result": "PASS",
+      "evidence": "11actualPGcases collected only0.22s, SHA256974e2e3b2adace22cd7491310a5c28b0e8f0c89aa4b42b7dfab570cf4e09a9a0; execution remainsRoot gate, not actualPGPASS."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/creation/service.py offline_tests/test_current_actor_observation.py offline_tests/test_authority_observation.py tests/test_current_actor_pg.py",
+      "result": "PASS",
+      "evidence": "4exactPython paths pass; git diff --checkPASS. docs/CURRENT_ACTOR_OBSERVATION.md states uniqueness/RLS proof, source baseline and evidence boundaries."
+    }
+  ],
+  "eventId": "49409d06-92fc-4aa6-838a-c68a8759fbe1",
+  "sequence": 3,
+  "at": "2026-10-17T10:47:34.358Z"
+}

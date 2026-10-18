@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_private_preview.py offline_tests/test_private_preview_wire.py -q -p no:cacheprovider",
+      "evidence": "52 passed1.79s including SQL grant regression; previous full1691PASS applies before isolated owner-lock deletion.",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m ruff check migrations/versions/0042_creation_private_preview.py offline_tests/test_private_preview.py; git diff --check",
+      "evidence": "All checks passed; source guard/acceptance/current-owner predicates unchanged.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Post-freeze SQL privilege correction: canonical0012 grants memberships/portfolios runtime INSERT+SELECT only, so added FOR SHARE OF m,p would require unavailable UPDATE. Removed only that extra lock; current-owner predicate still checked by deferred fence, session/user/account row locks retained, no new grants/definer. First static regression1FAIL49deselected2.19s retained SHA bcb87c7ac9242e42af5bb55cda74542a4b4930291cd92101dd85f346c186a85f. Root notified hold2465 before actualQA. Prior full1691 cohort not rewritten or repeated; nativePG still integrating Root responsibility.",
+  "status": "local-verified",
+  "eventId": "cbe5cb10-b137-4d8f-b7e3-26d194bc3b53",
+  "sequence": 5,
+  "at": "2026-10-15T16:48:05.173Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root executed isolated0045 workflow/native acceptance and checked same-operational-DB adoption; first failures and helper protocol/runtime snapshots remain preserved. All actual model transports in PG are inert; no live outreach or full calibration acceptance.",
+  "checks": [
+    {
+      "command": "pytest tests/test_workspace_agent_workflow_pg.py tests/test_workspace_agent_episode_pg.py -q",
+      "result": "PASS",
+      "evidence": "19PASS351.38s atb1feb30; SHA25661f2970b2c240ccf543c6d96c6c844760fdb5ee0e8f2b6fe2239f146df37313b; operating88/original0032/native preserved; provider0."
+    },
+    {
+      "command": "pytest test_workspace_agent_workflow_pg.py::test_running_workflow_route_cancel_after_native_reservation_keeps_usage_and_discards_reply",
+      "result": "PASS",
+      "evidence": "1PASS31.47s at9ca476b; SHA2566bd1b5d656912d9d4b564e83a552aa3f926519a769c5cb50048310f6c2396b43; actual native reservation/late reply discarded,9input5output retained,noQuality."
+    },
+    {
+      "command": "offline workflow/error/private-Foundation integration plus checked same-DB0045 and normal owner HTTP continuity",
+      "result": "PASS",
+      "evidence": "132PASS2.91s hash87b8de73b7600976034da0461227a67b444982ccefd7adee351a2fab8512a790. Backed-up0044→0045 preserved all88 prior tables except added-null event projection, newworkflowtableempty,748native exact. Owner login/private/S6 CURRENT/site015c unchanged."
+    }
+  ],
+  "eventId": "9ce26184-ab4c-441b-a14e-9863aca26099",
+  "sequence": 4,
+  "at": "2026-10-17T20:58:47.772Z"
+}

@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Two canonical preview monitors can repeat concurrent native context and media checks; share only the in-flight check and require fresh per-waiter signal fences",
+  "paths": [
+    "content-studio/scripts/customer-live-preview.mjs",
+    "content-studio/test/customer-live-preview.test.mjs",
+    "docs/LIVE_PREVIEW_CONCURRENT_GUARDS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Source219 actual canonical withCustomerSitePreview and authorizedInspection monitors share stillAuthorized but independently invoke full Node checks. This redundant-work finding is separate from the retained afterReady SQL11.44363s/pulsegap11.4774 failure; no causal attribution is claimed."
+  ],
+  "rollback": "Scoped source revert before adoption. Preserve original failures, current data and lease tombstones. Do not relax pulse/permission/cleanup/deadline/startup recovery gates.",
+  "id": "upgrade-778ba9ee-6326-4c4c-9870-c313287e30ed",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "2199266b2afc7456e012a67840170070ff068db8",
+  "createdAt": "2026-10-17T19:42:59.709Z"
+}

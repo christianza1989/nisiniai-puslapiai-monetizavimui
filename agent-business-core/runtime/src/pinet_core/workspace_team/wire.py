@@ -72,6 +72,7 @@ class PublicEvent(Strict):
     participant_id: UUID | None
     attempt_id: UUID | None
     native_episode_task_id: UUID | None = Field(default=None, exclude_if=lambda value: value is None)
+    native_workflow_intent_id: UUID | None = Field(default=None, exclude_if=lambda value: value is None)
     kind: Literal["owner_message", "assignment", "answer"]
     reply_to_event_id: UUID | None
     content: str = Field(min_length=1, max_length=8000)
@@ -84,10 +85,14 @@ class PublicEvent(Strict):
     def trusted_author(self):
         user = self.author_type == "user"
         native = self.native_episode_task_id is not None
-        provenance = (self.attempt_id is not None and not native or native and self.attempt_id is None
-            and self.author_type == "coordinator" and self.kind == "answer" and self.native_episode_task_id == self.task_id)
+        workflow = self.native_workflow_intent_id is not None
+        provenance = (self.attempt_id is not None and not native and not workflow
+            or native and not workflow and self.attempt_id is None
+                and self.author_type == "coordinator" and self.kind == "answer" and self.native_episode_task_id == self.task_id
+            or workflow and not native and self.attempt_id is None
+                and self.author_type == "coordinator" and self.kind == "assignment")
         if (user != (self.author_user_id is not None) or user == (self.participant_id is not None)
-                or user and (self.attempt_id is not None or native) or not user and not provenance
+                or user and (self.attempt_id is not None or native or workflow) or not user and not provenance
                 or user != (self.kind == "owner_message") or self.kind == "assignment" and self.author_type != "coordinator"
                 or hashlib.sha256(self.content.encode()).hexdigest() != self.content_sha256):
             raise ValueError("Wrong trusted event provenance")
@@ -175,3 +180,11 @@ class Envelope(Strict):
 class Error(Strict):
     code: str
     request_id: UUID
+    message: str | None = Field(default=None, max_length=80, exclude_if=lambda value: value is None,
+        description="Optional SafeRoute code echo. When present it must equal code; explicit null or arbitrary prose is invalid.")
+
+    @model_validator(mode="after")
+    def code_echo_only(self):
+        if "message" in self.model_fields_set and self.message != self.code:
+            raise ValueError("Error message must be the same public code")
+        return self

@@ -234,6 +234,102 @@
         ]
       }
     },
+    "/customer/v2/creations/{creation_id}/agents/preparation-readiness": {
+      "get": {
+        "summary": "Preparation Readiness",
+        "description": "Observe configuration eligibility only; this GET performs no preparation or dispatch.",
+        "operationId": "getCustomerAgentPreparationReadiness",
+        "parameters": [
+          {
+            "name": "creation_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Creation Id",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PreparationReadinessEnvelope"
+                }
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad Request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "CoreSession": []
+          }
+        ]
+      }
+    },
     "/customer/v2/creations/{creation_id}/agents/{agent_id}": {
       "get": {
         "summary": "Detail",
@@ -1605,6 +1701,156 @@
           "email_quality"
         ],
         "title": "NumericScores"
+      },
+      "PreparationPurposeReadiness": {
+        "properties": {
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "site_chat",
+              "customer_research",
+              "email",
+              "custom"
+            ],
+            "title": "Purpose"
+          },
+          "readiness_scope": {
+            "type": "string",
+            "enum": [
+              "full_website",
+              "private_preparation"
+            ],
+            "title": "Readiness Scope"
+          },
+          "can_create_draft": {
+            "type": "boolean",
+            "title": "Can Create Draft"
+          },
+          "configuration_blockers": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "agent_business_not_current",
+                "website_foundation_not_ready",
+                "private_preparation_not_ready"
+              ]
+            },
+            "type": "array",
+            "maxItems": 1,
+            "title": "Configuration Blockers"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "purpose",
+          "readiness_scope",
+          "can_create_draft",
+          "configuration_blockers"
+        ],
+        "title": "PreparationPurposeReadiness"
+      },
+      "PreparationReadiness": {
+        "properties": {
+          "creation_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Creation Id"
+          },
+          "purposes": {
+            "items": {
+              "$ref": "#/components/schemas/PreparationPurposeReadiness"
+            },
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 4,
+            "title": "Purposes"
+          },
+          "operation": {
+            "type": "string",
+            "const": "agent_configuration_only",
+            "title": "Operation",
+            "default": "agent_configuration_only"
+          },
+          "provider_execution": {
+            "type": "boolean",
+            "const": false,
+            "title": "Provider Execution",
+            "default": false
+          },
+          "can_calibrate": {
+            "type": "boolean",
+            "const": false,
+            "title": "Can Calibrate",
+            "default": false
+          },
+          "can_activate": {
+            "type": "boolean",
+            "const": false,
+            "title": "Can Activate",
+            "default": false
+          },
+          "channel_activation": {
+            "type": "string",
+            "const": "not_performed",
+            "title": "Channel Activation",
+            "default": "not_performed"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "creation_id",
+          "purposes"
+        ],
+        "title": "PreparationReadiness",
+        "description": "Current configuration eligibility, never Website or execution admission."
+      },
+      "PreparationReadinessEnvelope": {
+        "properties": {
+          "contract_version": {
+            "type": "string",
+            "const": "customer-agent-preparation-readiness.v1",
+            "title": "Contract Version"
+          },
+          "environment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "test"
+            ],
+            "title": "Environment"
+          },
+          "request_id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Request Id"
+          },
+          "observed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Observed At"
+          },
+          "source_revision": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$",
+            "title": "Source Revision"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PreparationReadiness"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_version",
+          "environment",
+          "request_id",
+          "observed_at",
+          "source_revision",
+          "data"
+        ],
+        "title": "PreparationReadinessEnvelope"
       },
       "PurposeCapability": {
         "properties": {

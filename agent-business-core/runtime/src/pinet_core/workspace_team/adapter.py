@@ -1,5 +1,4 @@
 """Typed domain adapter on the existing bounded CLI transport, no executable selection."""
-import hashlib
 import json
 import tempfile
 from pathlib import Path
@@ -10,6 +9,7 @@ from pydantic import Field, ValidationError, field_validator, model_validator
 from ..config import settings
 from ..creation.wire import Strict
 from ..customer_text.adapter import source_current
+from ..file_hash import sha256_file
 from ..tasks import codex
 from ..workspace_topics.wire import AppendMessage
 from .policy import EFFORT, MODEL
@@ -58,7 +58,7 @@ def plan_model(context):
 
 
 def prompt_for(role, context):
-    if role not in {"plan", "adviser", "synthesis"}:
+    if role not in {"plan", "adviser", "synthesis", "direct_coordinator", "direct_adviser"}:
         raise codex.RunnerError("task_kind_unavailable")
     instruction = (
         "You work in a Lithuanian business team. Reply in clear Lithuanian, concise plain text. "
@@ -85,6 +85,17 @@ def prompt_for(role, context):
             "revision_sha256. A review flag alone does not approve that current revision. "
             "This observation grants no tools or execution authority. "
         )
+    if role in {"direct_coordinator", "direct_adviser"}:
+        identity = "coordinator" if role == "direct_coordinator" else "business adviser"
+        return instruction + (
+            f"You are the source-fixed {identity} in one direct conversation with its signed-in owner. "
+            "Answer the owner's supplied question yourself. Do not delegate, impersonate a saved agent, "
+            "write an assignment or synthesize a fictional colleague's answer. "
+            "Only this exact chat's bounded history is supplied; do not imply access to other chats. "
+            "The workspace subject may be an unregistered private Creation, Discovery or portfolio. "
+            "It is not a registered business, operational service or admitted native agent merely because it has a name. "
+            "You have no tools, external actions or channel activation. Return answer/limitations JSON.\n"
+        ) + json.dumps(context, ensure_ascii=False, sort_keys=True)
     if role == "plan" and context.get("agent_preparation") is not None:
         instruction += (
             "The owner explicitly requested preparation of one native agent draft. "
@@ -121,7 +132,7 @@ def runner_ready():
         return bool(cfg.workspace_team_runner_enabled and executable.is_absolute()
             and executable.is_file() and workspace.is_absolute() and workspace.is_dir()
             and 10 <= cfg.chat_runner_seconds <= 180
-            and hashlib.sha256(executable.read_bytes()).hexdigest() == cfg.chat_codex_sha256)
+            and sha256_file(executable) == cfg.chat_codex_sha256)
     except OSError:
         return False
 

@@ -1,0 +1,20 @@
+{
+  "siteId": "verslomatika-workspace",
+  "summary": "Explicit reviewed-copy deferral of unready planned guide links without changing other graph edges or immutable snapshots.",
+  "category": "code",
+  "evidence": [
+    "Actual completed GUIDE page-4b0c38aed6fa8bf4879bf76c references two empty future guides; ordinary v1 amendment intentionally refuses a changed native graph. Native snapshot SHA774339dcdc0cef0acb4b327c07e119446aa9f1a27a16563d9d184c5b775400ee; no manual native edit performed."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/content_amendment.py",
+    "agent-business-core/runtime/offline_tests/test_creation_content_amendment.py",
+    "content-studio/scripts/customer-content-workflow.mjs",
+    "content-studio/test/customer-content-workflow.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert scoped source only; preserve original v1/v2 requests, charged history, private before/applied evidence and all current/published native content.",
+  "id": "upgrade-3102ec4d-afb8-4f81-8c08-527ffe06f63d",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "eb8fcd67fef7bcbce3f7dc47844556ad3d32ff18",
+  "createdAt": "2026-10-15T20:54:12.744Z"
+}

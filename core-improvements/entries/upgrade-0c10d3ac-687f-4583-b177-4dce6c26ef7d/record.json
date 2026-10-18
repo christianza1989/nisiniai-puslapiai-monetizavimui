@@ -1,0 +1,24 @@
+{
+  "siteId": "verslomatika.lt",
+  "summary": "Pure dynamic V2 learning target and diagnostic native-report adapters before execution integration",
+  "category": "code",
+  "evidence": [
+    "Read-only audit30071: V2 exact Config/Profile protected primitives exist but no pure target/replicate bridge to maintained learning_controller.protected_compare.",
+    "Root approved ONLY two new pure modules/offline tests/docs/journal; all runtime, readiness, admission, DTO, migration, budget, worker and provider paths remain frozen.",
+    "Supersedes uncommitted draft upgrade73df6d60 with invalid comment-fragment URL; original immutable bytes preserved privately under ignored .github-preparation, SHA256 8bdfadef0f6006d987ab4f1ecbc53c084836f4bfdbe85e0d31f39115af135260. No historical Git journal rewritten."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/learning_target.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/learning_adapter.py",
+    "agent-business-core/runtime/offline_tests/test_customer_learning_target.py",
+    "agent-business-core/runtime/offline_tests/test_customer_learning_adapter.py",
+    "docs/CUSTOMER_V2_LEARNING_ADAPTERS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only these new unused adapters/tests/docs before adoption; no current execution, permissions, schemas, static learning or prior workflow source changes exist in this increment.",
+  "id": "upgrade-0c10d3ac-687f-4583-b177-4dce6c26ef7d",
+  "branch": "codex/v2-learning-adapters-20261018",
+  "baseSha": "30071c65de2d5cf786a2a29c9c0ebb8f006ff351",
+  "createdAt": "2026-10-17T21:42:58.012Z"
+}

@@ -53,7 +53,48 @@ async def job_history_schema_ready(tx):
         AND old.conname=e.table_name||'_'||e.column_name||'_check')""")))
 
 
+def actor_statement(session, portfolio_id=None, *, session_environment=None):
+    # Optional failures remain NULL so children cannot mask the native actor401.
+    session_binding = ((Session.id == session.id) & (Session.user_id == User.id)
+        & (Session.environment_id == settings().environment))
+    if session_environment is not None:
+        session_binding &= Session.environment_id == session_environment
+    statement = (select(User, Session, Account).select_from(User)
+            .outerjoin(Session, session_binding)
+            .outerjoin(Account, (Account.user_id == User.id) & (Account.environment_id == User.environment_id)
+                & Account.verified_at.is_not(None))
+            .where(User.id == session.user_id))
+    if portfolio_id:
+        statement = (statement.add_columns(Portfolio, Membership.id)
+                .outerjoin(Portfolio, (Portfolio.id == portfolio_id) & (Portfolio.environment_id == User.environment_id))
+                .outerjoin(Membership, (Membership.user_id == User.id)
+                    & (Membership.organization_id == Portfolio.organization_id)
+                    & (Membership.environment_id == Portfolio.environment_id)
+                    & Membership.enabled & (Membership.role == "owner")))
+    return statement
+
+
+def actor_result(row, portfolio_id=None):
+    if row is None or not row[0].enabled:
+        raise ControlError(401, "unauthenticated")
+    _, current_session, account = row[:3]
+    if not current_session or current_session.revoked_at or current_session.expires_at <= utcnow():
+        raise ControlError(401, "unauthenticated")
+    if not account:
+        raise ControlError(404, "not_found")
+    if portfolio_id:
+        portfolio, member = row[3:5]
+        if not portfolio or not member:
+            raise ControlError(404, "not_found")
+        return portfolio
+    return account
+
+
 async def current_actor(tx, session, portfolio_id=None, *, lock=False):
+    if not lock:
+        statement = actor_statement(session, portfolio_id)
+        row = (await tx.execute(statement.execution_options(populate_existing=True))).one_or_none()
+        return actor_result(row, portfolio_id)
     statement = select(User).where(User.id == session.user_id)
     if lock:
         statement = statement.with_for_update()

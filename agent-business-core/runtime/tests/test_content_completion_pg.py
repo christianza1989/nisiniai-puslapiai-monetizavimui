@@ -1,7 +1,8 @@
 """Real restricted PG ownership and current native Node; synthetic inputs, zero provider."""
 import json
 
-from sqlalchemy import func, select, update
+import pytest
+from sqlalchemy import func, select, text, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_creation_registration import accepted
 from test_customer_creations import creation as creation_fixture
@@ -9,9 +10,9 @@ from test_customer_creations import start
 from test_customer_public import customers, verified  # noqa: F401
 
 from pinet_core.content_completion import service
-from pinet_core.control.models import Membership
+from pinet_core.control.models import Membership, Session
 from pinet_core.creation import studio
-from pinet_core.creation.models import Attempt, Job, Revision
+from pinet_core.creation.models import Attempt, Creation, Job, Revision
 
 creation = creation_fixture
 
@@ -105,18 +106,61 @@ async def test_current_completion_cannot_cross_customer_or_revoked_membership(cr
     assert (await read(c, request["creation_id"], auth)).status_code == 404
 
 
-async def test_revocation_after_real_node_output_is_rechecked_before_return(creation, monkeypatch):
+@pytest.mark.parametrize('target,status', [('membership', 404), ('session', 401), ('revision', 503)])
+async def test_revocation_after_real_node_output_is_rechecked_before_return(creation, monkeypatch, target, status):
     c = creation
     request, _, auth, me = await accepted(c)
     original = studio._execute
+    mutation_committed = False
     async def revoke_after(*args, **kwargs):
+        nonlocal mutation_committed
         value = await original(*args, **kwargs)
         async with AsyncSession(c["admin"]) as tx, tx.begin():
-            await tx.execute(update(Membership).where(Membership.user_id == me["user_id"],
-                Membership.environment_id == c["environment"]).values(enabled=False))
+            # A read-only request must not hold an authority/parent row lock
+            # across Node. Retain a bounded failure instead of hanging forever.
+            await tx.execute(text("SET LOCAL lock_timeout='2s'"))
+            if target == 'membership':
+                await tx.execute(update(Membership).where(Membership.user_id == me["user_id"],
+                    Membership.environment_id == c["environment"]).values(enabled=False))
+            elif target == 'session':
+                await tx.execute(update(Session).where(Session.id == request['authorizing_session_id'])
+                    .values(revoked_at=func.now()))
+            else:
+                await tx.execute(update(Creation).where(Creation.id == request['creation_id'])
+                    .values(current_revision=2))
+        mutation_committed = True
         return value
     monkeypatch.setattr(studio, "_execute", revoke_after)
-    assert (await read(c, request["creation_id"], auth)).status_code == 404
+    response = await read(c, request["creation_id"], auth)
+    assert mutation_committed, 'administrative update was blocked by a read-only request'
+    assert response.status_code == status, response.text
+
+
+@pytest.mark.parametrize('media', [False, True])
+async def test_page_media_routes_allow_revocation_then_refuse_output(creation, monkeypatch, media):
+    c = creation
+    request, _, auth, _ = await accepted(c)
+    mutation_committed = False
+    async def transport(arguments, payload, environment, authorized, seconds, **kwargs):
+        nonlocal mutation_committed
+        assert await authorized()
+        async with AsyncSession(c['admin']) as tx, tx.begin():
+            await tx.execute(text("SET LOCAL lock_timeout='2s'"))
+            await tx.execute(update(Session).where(Session.id == request['authorizing_session_id'])
+                .values(revoked_at=func.now()))
+        mutation_committed = True
+        # Native parsing is deliberately outside this route-authority test. The
+        # real final SQL fence must reject before any page/media bytes escape.
+        return {'must_never_be_returned': True}
+    monkeypatch.setattr(studio, '_execute', transport)
+    path = f"/customer/v2/creations/{request['creation_id']}/content-pages/page-"+'a'*24
+    params = {'accepted_revision': 1}
+    if media:
+        path += '/media/asset-'+'b'*24
+        params['expected_revision_sha256'] = '0'*64
+    response = await c['client'].get(path, headers=auth, params=params)
+    assert mutation_committed, 'subordinate read route held a writer lock'
+    assert response.status_code == 401 and 'must_never_be_returned' not in response.text
 
 
 async def test_missing_local_adapter_fails_without_historical_snapshot_fallback(creation, monkeypatch, tmp_path):

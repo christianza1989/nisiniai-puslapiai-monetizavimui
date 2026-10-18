@@ -3,6 +3,7 @@ import asyncio
 from alembic import context
 from sqlalchemy.ext.asyncio import create_async_engine
 
+from pinet_core.acquisition import model_models as acquisition_model_models  # noqa: F401
 from pinet_core.acquisition import models as acquisition_models  # noqa: F401
 from pinet_core.acquisition import module_models as acquisition_module_models  # noqa: F401
 from pinet_core.acquisition import task_models as acquisition_task_models  # noqa: F401
@@ -20,6 +21,7 @@ from pinet_core.customer_profile import models as customer_profile_models  # noq
 from pinet_core.customer_profile import refresh_models as customer_source_refresh_models  # noqa: F401
 from pinet_core.director import models as director_models  # noqa: F401
 from pinet_core.facebook import models as facebook_models  # noqa: F401
+from pinet_core.mail_view import task_models as mail_display_models  # noqa: F401
 from pinet_core.models import Base
 from pinet_core.public_projects import models as public_models  # noqa: F401
 from pinet_core.site_build import continuation_models as site_continuation_models  # noqa: F401
@@ -30,7 +32,9 @@ from pinet_core.workspace_topics import models as workspace_topic_models  # noqa
 
 
 def run(connection):
-    context.configure(connection=connection, target_metadata=Base.metadata)
+    # Revision-local ON COMMIT DROP probes must end before the next installer.
+    # A failed revision rolls back its own DDL/data; prior version commits remain.
+    context.configure(connection=connection, target_metadata=Base.metadata, transaction_per_migration=True)
     with context.begin_transaction():
         context.run_migrations()
 

@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "Recognize both exact PostgreSQL-compiled original and pg_dump/restore author enum predecessors during incremental native-preview migration, preserving unknown/ambiguous rejection.",
+  "category": "code",
+  "paths": [
+    "agent-business-core/runtime/migrations/versions/0044_direct_native_preview.py",
+    "agent-business-core/runtime/src/pinet_core/workspace_team/direct_preview_schema.py",
+    "agent-business-core/runtime/offline_tests/test_direct_preview_schema.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root clean7eb21e241625d46fb8a0770db94f12be4fd931d4: newly created staging database restored from full ordinary0042 dump with all86 table snapshots equal, then migration0044 FAILED Unknown/ambiguous old author enum or global Job unique constraint. Failed database/log/dump retained, serving3b7 and original0032 unchanged, provider0.",
+    "Read-only schema-only diagnostic confirms exactly one original jobs(conversation_id,kind) UNIQUE and original user/coordinator/adviser author enum with explicit per-literal VARCHAR-to-TEXT casts introduced in restored CHECK text. Existing one fresh-IN probe does not match that exact PostgreSQL expression. This is not an unknown role or weakened business predicate."
+  ],
+  "rollback": "Scoped source revert only before adoption; preserve all failed staging databases, snapshots, immutable conversations and previous QA. Never patch failed DB in-place or erase original FAIL. Repeat a fresh full restore/migration and compare every pre-existing row.",
+  "id": "upgrade-6fb6d1d1-3d85-48c4-8809-4d62da45766a",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "7eb21e241625d46fb8a0770db94f12be4fd931d4",
+  "createdAt": "2026-10-16T01:05:55.613Z"
+}

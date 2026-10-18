@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Added the previously missing explicit privileged local/test ModuleBinding writer. Approval derives exact current Registration/owner/Business/Grant, uses bounded DB-clock lease and CAS; stop/inspect preserve the same current owner and immutable binding while allowing containment after upstream revocation/native unavailability. Private prepared/committed receipts distinguish rollback from committed status failure. First fixture errors are retained (missing imported fixture; missing explicit QA public/artifact settings), then actual pending-row autoflush regression FAIL a4ac1bb0 was repaired by obtaining DB clock before adding an incomplete row. All provider/channel flags held; no operating admission or new schema/route/model worker. This is source verification, not actual adoption or complete calibration.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_acquisition_module_admin.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "11 passed in 1.37s, unified exec664c39. Malformed tenant/permission/TTL fields, dirty/changed source/config, duplicate permissions and retained receipt refusal covered."
+    },
+    {
+      "command": "Root isolated0045 QA: pytest tests/test_acquisition_module_admin_pg.py -q -x -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "12 passed in79.63s; private log SHA2562b80cfea77027b5c0ea2fd42d1ae8f6c9e3b50bfc19e36d91dcaf6d86248aea6. Actual canonical native intake/Registration, restricted-role denial, foreign owner, grant/registration revocation, late source drift rollback, adapter immutability, stop after grant/registration/native loss, prepared failure rollback and committed-marker failure preservation. Original and operating DB tables plus771 original native files exact, provider/SMTP/IMAP0."
+    },
+    {
+      "command": "ruff check module_admin.py acquisition_module_admin.py and dedicated offline/PG tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All four Python files passed Ruff; git whitespace check passed. No operating ModuleBinding or paid call performed."
+    }
+  ],
+  "eventId": "517a4b69-2bc5-4c6a-be46-0cc45430b5ba",
+  "sequence": 2,
+  "at": "2026-10-17T23:12:37.133Z"
+}

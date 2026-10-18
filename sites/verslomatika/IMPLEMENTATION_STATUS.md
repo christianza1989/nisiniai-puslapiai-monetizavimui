@@ -1,5 +1,324 @@
 # Verslomatika customer accounts, public projects and dashboard
 
+## Current local checkpoint —2026-10-18 13:41 UTC
+
+**Package accepted; whole local platform remains OPEN.** The owned API18871 is
+clean `3245a9aca13961a0fc814b6a4571052c298e1f5a`, schema49. Bounded actual native
+preview now passes natural expiry,65.368s continuousReady/manual close, normal
+own Session revocation and normal ASGI shutdown plus same-source restart replay.
+Chrome opened the real homepage and guide. No TTL, deadline, fresh actor/source
+or final-check fence changed. The original shutdown HTTP-only harness remains
+FAIL; separate ASGI/task/OS witnesses and restart replay establish its qualified
+shutdown PASS. All original failures remain in
+[the stability record](../../docs/handoffs/VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md).
+
+The approved-plan read now uses two fresh SQL statements instead of five. Five
+new restricted-PG and four existing source-context/real-Node cases pass, plus185
+related offline cases and Ruff. Earlier callback/GET repairs remain separately
+tested. Default API restoration preserves all96 table-row snapshots and1010
+existing native files, with a2,237,928-byte backup. Human-started3030 build remains
+unchanged; all paid/channel workers are held.
+
+Model evidence remains frozen on source182:3/3 protected native research/email
+scenarios, two client replies each,33 known-usage calls,12 Task/Run receipts,
+zero infrastructure failures/external sends. Parent7 plus child33 equals40,
+both ledgers byte-exact. Six saved Config revision2 descriptions are not six
+independently executable/calibrated workers. No candidate/promotion changed.
+[Calibration scope](../wildtubs-europe/AGENT-CALIBRATION-2026-10-18.md).
+
+Whole PR-base coverage at060ee0a7eadda5d8c465d61b02cea62c5e907bfd passes194
+shared paths/105 verified upgrades,0 uncovered paths/errors after append-only
+78/c3/8822 verification. That resolves the earlier provenance blockers; live
+[PR164 checks](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164/checks)
+remain authoritative for its final head. Reviewed main, another-PC and hosted
+adoption are separate and have not occurred here.
+
+Remaining executable local group: implement the email-plan provider/ingestion/
+event-statistics boundary on the existing Mail/Case/Task core and verify its local
+fixtures. Populated original/Lithuanian mail UI, actual Gmail OAuth/send/inbox and
+full platform acceptance remain open. Actual Gmail requires reauthentication and
+the platform adapter; the earlier browser self-email proves only that mailbox.
+No further paid calibration or live-channel action is part of this preview phase.
+
+## Earlier autonomous local business/email checkpoint —2026-10-18
+
+The owner explicitly authorized unattended calibration/testing using the already
+signed-in Gmail. The complete email plan is now
+[VERSLOMATIKA_EMAIL_SYSTEM_PLAN](../../docs/VERSLOMATIKA_EMAIL_SYSTEM_PLAN.md).
+One harmless browser self-email was sent/received by the same authenticated
+account; this is not platform Gmail OAuth/ingestion/delivery adoption. The Gmail
+connector requests reauthentication, and the platform OAuth adapter remains pending.
+
+An independently built business is attached through reviewed Intake/Business/
+Grant/source and six immutable Agent/Config descriptions, with34 admitted facts.
+Actual ordinary Chrome shows all six descriptions. This is the existing clearly
+local QA account, not verified production ownership. No fake Creation or legacy
+voice Profile was added. Only the native research/email modules were exercised;
+the other saved descriptions are not automatically six executable workers.
+
+First known-case execution stopped correctly at unqualified research, contrary
+to an underconstrained fixture oracle. A distinct reviewed inbound case reached
+research→email→Case/MailMessage, then stopped at a second synthetic-address DTO
+incompatibility before reply dispatch. Both originals remain FAIL/incomplete.
+The common paid ledger has seven charged attempts and its original 60-attempt /
+3600s boundary, now expired. All affected native grants are explicitly stopped.
+A new protected baseline did not reach dispatch: a noncanonical private
+snapshot assertion and a separate MemoryError with unknown frame were retained.
+Root's SQL audit confirms its research/email grants each have zero Tasks/Attempts;
+both and the module are disabled. No protected case or external customer/supplier
+send has run. The same original seven charged calls and deadline remain unchanged.
+
+Product-description coverage is now adopted as the second SourceBinding version:
+34 facts include 24 description-derived model summaries and six explicit wood-fired
+models. All six existing Agent IDs now have immutable Config revision 2, with the
+first revision hashes preserved. Chrome and account API show all six descriptions. The
+canonical MIME→inbound namespace repair passed a real restricted-PG two-reply path
+with inert roles; actual model dialogue/calibration and activation remain open.
+
+Owned API18871 runs cleanE839/schema49, human-started3030 build is unchanged.
+Actual live-preview close passed72.708s continuousReady, HTTP200, Chrome home/
+guide, closed child/listener and terminal same-UUID replay. A separate natural
+expiry run FAILED before observableReady: first native heartbeat_expired followed
+an8.25455s pulse gap/8.035s fresh authority graph (176SQL) against unchanged3s TTL.
+Its later generic content_completion_unavailable/revoked label is not proof of
+database/source revocation. Previous78/c3 main preflight blockers remain open.
+No permission/TTL waiver, automatic frontend launch or reviewed-main claim.
+After Desktop restart, Docker and the same existing PostgreSQL container were
+restarted. API e839 resumed with a fresh 1,971,640-byte backup and exact 96-table
+pre-start row snapshot; no schema migration, data restore or paid runner enabled.
+Account API verified 200 for owner, 401 unauthenticated and 404 foreign Business.
+The next narrow preview repair reduces each content-node callback from three SQL
+queries to one; four restricted-PG and 132 offline checks pass. A separate GET
+locking repair passes seven real-Node completion and four page/media cases. Neither
+repair is yet operating-source adoption or full lifecycle acceptance.
+
+## Local business/agent account attachment accepted —2026-10-18
+
+This supersedes the earlier pending-adoption/current119 descriptions below.
+Owned API18871 now runs `5fdf94631fb6570f62b9df34a1ef52fc0f1d15e9`, schema49,
+with a retained backup, exact previous-column values and818 preserved native
+files. Paid/channel runners remain held. Source is still a reviewed feature
+branch; merged-main, another-PC and hosted adoption are not claimed.
+
+Human-started portal3030 build `1XuWAF-IuB2GQP7cxR4Bh` passed actual ordinary
+Chrome/BFF/core attachment:2 external descriptions imported into a separate
+clearly synthetic Business, research revised to2 with version1 exact, same
+packet replayed without duplicates, third custom description created through
+the ordinary form. Final3 Agents/4 Configs, revisions2/1/1, current source and
+original specifications/provenance verified. Every pre-fixture row unchanged;
+no Creation/Registration added;0 provider/SMTP/IMAP calls; calibrationUNVERIFIED,
+activationfalse. Legacy descriptions/history remain readable. Desktop/mobile/
+narrow form reflow inspected;20 focused portal tests/TypeScript/production build
+and targeted design scan pass. See the updated
+[attachment handoff](../../docs/handoffs/VERSLOMATIKA_EXISTING_BUSINESS_ATTACHMENT_2026_10_18.md).
+
+The independently rebuilt dealer business still needs its final reviewed
+site/source/agent artifacts for real adoption; this platform chat did not modify
+that website or accept its calibration. Existing claim/grant/source/import,
+native admission and channel gates remain the single supported path.
+
+## Active account attachment implementation — 2026-10-18
+
+The owner explicitly requested completed business/agent attachment while building
+the new dealer website in a separate chat. Root now owns the account adapter,
+business-scoped Agent/Config API/import/history, stable Agent/source version
+adoption, directory and portal integration. Existing reviewed claim/BusinessGrant
+remains ownership; no fakeCreation/Profile or second core is introduced.
+
+Composed0049 passed retained migration and four actual account API PG cases;
+the external native research/email/reply adapter passed its separate inert QA.
+Portal typed BFF/forms/import/history and20 focused tests/TypeScript are implemented.
+Independent review fixes passed the final two-worker production build; browser
+confirmation is pending. Exact automatic old-build cleanup was rejected; the
+human executed the scoped script and removed12 obsolete builds with fallback
+and current builds preserved. Free space recovered to about3GB.
+These source checks are not operating adoption. Root's preserved local API
+remains119/schema48/paid+channels held.
+Old pilot and allowances stay closed. Current contract:
+[existing-business agent attachment](../../docs/VERSLOMATIKA_EXISTING_BUSINESS_AGENT_CONTRACT.md).
+
+## Current owner assignment — platform only, 2026-10-18
+
+The owner resumed this chat's platform work after the pause. A separate chat will
+rebuild the kubilų business/site and create its new agents, then attach that whole
+business to a Verslomatika account later. Root does not rebuild its Maudis catalog,
+site design, translations or business agents in this lane. Preserve the previous
+Creation, content and failed calibration history; do not treat them as the new
+business's approved products or calibrated agents.
+
+The reproduced inter-role lease repair is reviewed and locally adopted at
+`119ba749b1642c9ff18253fd0847af12818109a4`, schema48, with all current operating
+rows and818 native files exact. Root's three inert PG regressions pass116.03s;
+independent source review has no actionable finding. All paid/channel flags remain
+held. This does not reopen the stopped first pilot or accept business calibration.
+Next platform milestones are generic native agent/mail integration and populated
+Lithuanian correspondence display, then the existing-business agent import adapter.
+A minimal explicitly bounded technical smoke is separate from the deferred
+business calibration. Existing common Task/Run, native Agent/Config, mail,
+knowledge and calibration contracts remain the only engines. Future attachment
+must preserve the new site's stable identity, current source and owner mapping.
+The inspected ownership/import boundary and independent builder handoff are
+recorded in [existing-business attachment](../../docs/handoffs/VERSLOMATIKA_EXISTING_BUSINESS_ATTACHMENT_2026_10_18.md).
+
+The host Docker startup failure was recovered by a bounded official stop and
+reversible preservation of the one zero-byte stale socket directory. Original
+PostgreSQL containers/data were retained. Root API18871 is running at the source
+above; portal3030 remains stopped after the host interruption and was not
+automatically launched. A first HTTP check before API readiness failed with
+connection-refused; the post-startup check passes owner200/unauth401/foreign404.
+The adoption backup1832593bytes SHA
+`cd2d05637f6a39765d8ba911eccc338e82ecda241b91189a0da56580d753e8af` and current
+verification SHA`a948393cde86e30ccdfcca4af35a698a3c8256380134d08ddbe09121e885b0ea`
+are private. The current818-file baseline includes24 files appended by the earlier
+ordinary private-preview preparation; all pre-preview794 files remain byte exact.
+An initial stale794-count precondition blocked Root QA before tests; it was
+corrected to retain the fresh818-file snapshot, with the first failure preserved.
+Main-wide inherited upgrade coverage remains separately BLOCKED. Platform OPEN.
+
+> 2026-10-18 native pilot: the first train case stopped on infrastructure failure,
+> not a behavioral score. Research2 attempts (1 known success/1 failed unknown),
+> email0/auxiliary0/channels0; remaining cases and all4 holdouts unexecuted.
+> Both exact native Auths canonically stopped afterward; history/counters retained.
+> Focused common-worker lease/guard reproduction is in progress. Ordinary Chrome
+> S6 renewal restored the13-page expiring private site preview; homepage visibly
+> opened. Same Serving1a751d0/schema48 and portal final build; no main/public launch.
+> New finding also blocks current17-path upgrade coverage until a verified repair;
+> earlier scoped PASS is historical. Inherited main-wide debt remains separate.
+
+## Current executable continuation — 2026-10-18
+
+**Whole local platform OPEN.** The human accepted the workspace UI and explicitly
+requested continuing platform/agent integration. Root owns UI/integration and
+the operating adapter; authorized helper chats own separately scoped schema and
+acquisition work in their own branches/worktrees. Current frozen local API18871
+is1a751d0c/public255fea0 on0048, with human-started final frontend3030
+(portald1e15fe, BUILD_ID n_CYfl9NHwL5tW1Yh8ERl).
+Kubilų Creation85fb2b31 has current Registration014d46b4/Business917e1d81.
+Normal owner source renewal preserved the same identity and37/40 accounting.
+All original771 native files remain exact; a new Foundation observation added23
+derived candidate/release files (794 total). Paid workers/channels remain held;
+operating mail is empty. Current owner Registration/Business/mail reads200.
+
+Earlier completed source/adoption batch: native preparation and owner mail view,
+bounded explicit ModuleBinding writer, Registration continuity and headless
+reviewed same-Case capture/reply. Root345 pure+67 subtests and63 real PG/API/Node
+checks passed. Ordinary two-agent Config browser read/edit/history and1280/390/320px
+reflow now pass; populated mail and actual200% browser zoom remain unverified.
+[Exact checkpoint](../../docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md).
+
+The new source packet provides separately typed acquisition.model_prepare over maintained
+Task/Run/Event accounting, using the current saved acquisition purpose and an
+explicit privileged bounded model budget. Schema0046/helper is integrated as
+0a2b3a5; Root native handler/authority/CLI and accounting/lock-order corrections
+are9d2df5b, shared cancellation receipt repair ab0604b. These are now adopted as
+held code/schema in76db483; no model authorization or activation is inferred.
+Root final15 new-model PG tests PASS260.22s,40 existing common-worker/Direct/native
+workflow PG tests PASS410.54s,29 model-free capture/mail PG/API tests PASS44.24s,
+and combined363 pure/inert-child tests PASS71.23s with7 unpinned actual-CLI probes
+explicitly skipped. Original/operating data and771 case-native files remained
+exact. Real model calls, full Foundation, protected calibration, populated UI and
+authenticated channels remain separate acceptance gates.
+[Contract](../../docs/ACQUISITION_MODEL_PREPARE.md).
+
+Separately bounded durable Lithuanian display is implemented on common Task/Run
+and schema0047. Root final21 owner/API/worker PG cases passed162.79s,58 serial
+old-worker/Direct/native/model/mail cases passed575.41s and378 offline cases/
+67subtests passed30.10s. The first overlapping PG run's39PASS/1late-usage failure
+is retained; its isolated target and full serial rerun passed. Current code/schema
+adoption retained89 prior data tables exactly plus5 empty new tables. Model/display
+flags remain false, actors/policies/authorizations absent; original mail stays
+unchanged. [Display contract](../../docs/MAIL_DISPLAY_TASKS.md).
+
+Actual private business now has two research/email Agent/Config revision1 drafts,
+both disabled; normal-owner save/replay/reopen/exact revision checks passed.
+Only+2Agent/+2Config were added, all prior rows/original/native794 exact. No model,
+calibration or channel admission. Full IDs/specifications/receipts stay private.
+Foundation remains candidate/UNVERIFIED. The following observation predates those
+two Config saves and remains its own immutable evidence:
+After one legitimate current-source intake refresh, the same verify-local UUID
+returned200/local_evidence_missing, adding exactly1 Foundation receipt. Current
+Registration binding is true; Profile and fullF1 remain unadmitted/UNVERIFIED.
+The baseline has72 local,11 launch and2 operations items still UNVERIFIED.
+Read-only evidence mapping found reusable editorial/HTTP/inquiry proof and missing
+current native visual/enlargement/performance and site-specific mail proof.
+Keep the full delivery result honest. A separate purpose-bound private Config-only
+operation is now implemented and tested: exact current selectedS37/Registration
+permits only immutable research/email drafts on a private Creation. Full Website
+authority stays the default for site_chat/custom/generic provisioning/lab/session.
+New additive preparation-readiness reports all four purposes without changing
+strict v1 fields or granting model/calibration/channel execution. Root17 real PG
+cases and325 related pure checks passed; original coupling and late-proof race
+failures are retained. The late-proof race closes with a final fresh SQL-only
+authority snapshot after all native/source waits. Old-path26 configuration and46
+provisioning/continuity/model/lab PG cases also passed serially; the exact final
+migration target passed separately after the local Operations cleanup. Old history
+traversal and membership self-wait harness failures remain in separate journals.
+Actual clean held source-only adoption76db483→97d8c75 passed on unchanged0047
+with95 exact tables/794 native files and a1.77MB backup. Then maintained source
+renewal added1request+1receipt, preserving Registration; the two actual Config
+saves above passed. A fresh same-source resume baseline was captured after those
+legitimate writes; earlier before-snapshots are historical. No paid authorization.
+[Contract](../../docs/PRIVATE_AGENT_PREPARATION.md).
+
+Remaining executable order:
+
+1. Complete the delegated native research→email→same-Case reply/calibration bridge
+   against the saved pair. Research must create no mail; email consumes its exact
+   approved Task/Run/attempt output and is the sole initial capture. Same campaign,
+   strict phase/inbound dedup, current two-Config authority, common accounting and
+   atomic Correspondence/Task completion. No second engine or site_chat waiver.
+   Source acceptance is inert/isolated PG; no paid/live-mail authority is inferred.
+2. Complete protected calibration and applicable Foundation/Profile/knowledge
+   acceptance under their maintained contracts; configuration/model drafts are
+   separate. Existing native S5 site_chat is not coerced into an email worker.
+3. Connect model reply Task and current owner UI actions/read integration;
+   durable post-commit display is implemented but remains unadmitted.
+4. Admit an authenticated controlled outbound/inbox path and prove real delivery/
+   reply. SMTP credentials/controlled lab recipient and live contact/source/
+   provider permissions are not currently admitted; Maudis remains a candidate.
+5. Finish ordinary populated UI/responsive/200% checks once Chrome control focus
+   connection recovers. Its timeout does not block the independent source work.
+   Preserve the frontend launch rejection/AGENTS boundary; use no alternate start.
+
+No new human continue message is required between executable source packages.
+Older sections below retain their own source/date and do not override this state.
+
+## Latest bounded recovery — 2026-10-16
+
+**Whole local platform OPEN; normal-owner login and explicit private-source intake now work.** Same owned PostgreSQL recovered with original0032/old0042/current0044/163 native files verified exact. API18871 source1fb/public255 nowPID30932; all paid workers held. Historical3028/3029 previews retired, active3030 retained. Actual private-intake returned200/current1fb without native content changes. S6 GET503/site_build_unavailable occurs before any S6 POST because its feature guard requires the paused creation worker. Backend peer owns the narrow guard repair; generation/lifecycle and all S6/owner/source checks remain required. Root actual isolated PG/adoption, genuine11-page review/approval and rendered site/form checks follow. Native058c83/contextab170a still has reviews0/approvals0/release0. C free space fluctuates3–9.5GB due Windows virtual-memory allocation; no paid retry or new operational DB copy.
+
+## Latest disk-space maintenance — 2026-10-16
+
+**Whole local platform OPEN; API18871 deliberately stopped.** The first owned-PG recovery/integrity check passed, followed by another full-C event and PG exit139 at03:43:46Z. Root stopped only verified API36804. No backend health is claimed until the same container/current operational DB passes a new check.
+
+Owner-requested cleanup measured34 obsolete UI builds plus one cache:9.27GB logical. Automatic tool review blocked recursive removal before execution; no deletion bypass was attempted. A separate checked manual cleanup script is portal `web/.local/cleanup-obsolete-builds.ps1` (inspect by default, explicit manual `-Apply`). Reversible Windows NTFS compression completed instead on all35 targets:54,473 before/after file hashes unchanged, approximately5.45GB stored/about3.82GB saved against logical content. C now reports about13.4GB free; the whole observed free-space increase is not attributed to this operation. No code, DB, native history, evidence, active preview or prepared direct build was deleted. Native site058c83 and source1fb/public255 remain exact. Exact private receipt: portal `web/.local/ntfs-compression-20261016/`. Managed old-worktree archival was refused by pinned-task/workspace protection; no worktree was removed. Preserve the existing DBs and paused native-review plan; do not create another DB or restart paid work for cleanup.
+
+## Current local recovery — 2026-10-16
+
+**Whole local platform OPEN; database availability is down.** Strict paired native source upgrade3fe integrated asb328; one-line UTF8 fixture fix983e as1fb5496. Root46Python/9Node and10 distinct actual PG cases across5+5 commands PASS, original fixture error retained/original0032 preserved/provider0. Source1fb/public255 is prepared in Root's own serving checkout. A fresh ordinary copy/migration0044 preserved86old tables/2newempty and163native files, restricted preflight and cutover checks passed.
+
+API18871 now belongs to owned1fb/PID36804/exec10290, with paid workers/channels held. Its normal login500 occurred before any native POST: C disk had0free and Docker PostgreSQL exited139, filesystemread-only. Regenerable cache prune completed; C now3–3.6GBfree, original databases/backups/files retained. Official Docker Desktop recovery is stillstarting after a60s CLI timeout; owned-container health and post-crash integrity need verification. No actual v2/S6/customer review/approval/fullsite is claimed yet. UI3030 remains741/pBmC; its backend-dependent reads are unavailable until PG recovery.
+
+Native content remains11 nonempty pages/2future,20WebP,56editorial operations/reviews0/approvals0/release0. Eleven specific review-note sets are privately prepared against the exact current native baseline, not applied. Next: restore the existing owned PG and check the SAME current operational DB/source, then NEW ordinary-owner continuity/S6, genuine review/approval, actual NativeContentSite/form/interest/retention and the separately prepared messenger UI. Do not create another copy or repeat model work to bypass an infrastructure outage. No deployment/outreach/mail/provider operation.
+
+## Prior local integration checkpoint — 2026-10-16
+
+**Whole local platform OPEN.** User-facing entry is `http://127.0.0.1:3030/dashboard`; API18871 is safely restored to clean3b7ef1baa7d0b11984a7739651041f1c0738e997/PID7572 and original ordinary0042 DB; UI741d045/buildpBmCae9BzQOC9eld58MkO stays unchanged. Paid workers/external channels are held during current compatibility repair. Root owns integration/current native case. Authorized01a13440 delivered the editorial bridge and now owns explicit native-source-upgrade continuity;01a13d30 delivered candidate preparation and local D1 storage. Revoked01a133c2 is not contacted. Homepage work remains separate.
+
+The real Wellness case has an accepted Discovery report and Creation revision,11 nonempty native pages plus2 deferred future guides,20 WebP files from4 original concept families and56 guarded editorial operations. The latest22-operation batch records actual private selection time and retains24 stage deferrals in an immutable UNVERIFIED ledger; no review/approval/release was fabricated. Original failed jobs, accepted candidate/usage and supplier uncertainty remain. Root asset/editorial actions are not claimed as autonomous model execution. [Current handoff](../../docs/handoffs/VERSLOMATIKA_WELLNESS_RESUMED_2026_10_15.md) records exact pins and limits; the older active checkpoints below are historical.
+
+| Work | Current evidence / next action |
+| --- | --- |
+| Direct consultants and saved-agent continuation | Source-only native74 distinct PG cases PASS atcaeedef:7new saved-preview plus67regression. Real SQL/RLS/Conversation/Task/Quality/accounting, mocked provider0; no ordinary messenger UI/model acceptance. Portal49tests/isolated build prepared, defaultoff and not running. |
+| Stable guide URL and hub | Root integrated coree9dc4e9/public255fea;8focused/73public/TypeScript/build PASS. Actual SEO HTTP smoke passed for the existing approved7-page greitossvetaines package, not Wellness. Temporary owned32919 stopped. Wellness Foundation still pending. |
+| Current copy | Independent read of11bodies,3 exact guarded corrections, desktop draft-reader inspection and390px selection-guide proof. This is not full NativeContentSite acceptance. |
+| Native review + batch approval | Integrated source41d32e7; Root35Python/9Node PASS. Actual native six distinct PG cases passed across5+1 commands; the first source-fixture failure is retained and only the test was corrected in5605. Current owner/Session/S6 and canonical model guards remain. Operational customer reviews/approval are still pending. |
+| Full-site preview bootstrap | Integrated candidate preparationa5f4274; Root59Python/7inertNode/2actualPG auth cases PASS. Local D1 storage3b77 integrated asffb3; Root combined25storage/preparation/process cases PASS23546.592ms. Existing renderer, approved release and final certification gates remain. Actual full-site/form/measurement acceptance pending. |
+| Backed-up source adoption | Restored0042→0044 compatibility fix67181d0 passed31focused and prior full restore. A NEW current copy at136a preserved all86old tables/2newempty plus163native files, restricted lifecycle/direct preflightPASS. First normal current-source intake409private_intake_anchor_stale exposed old-public/importer continuity incompatibility. Root preserved this failed copy/receipt and safely restored3b7/oldDB; normal owner completion200/current13/site/context unchanged. Dedicated peer repairs the provenance contract before another fresh snapshot/adoption. |
+| Full result | Actual rendered desktop/mobile/enlargement, final review, private approved release/Foundation, inquiry persistence/measurement and new ordinary messenger journey remain executable work. SMTP inbox, supplier partnership/photo rights, deployment, outreach and launch remain separate unknown/disabled stages. |
+
+Next: repair and regress explicit native public/importer upgrade continuity, then take another NEW current operational snapshot before coordinated adoption. Preserve every ordinary Session, native content and original failed receipt. Current-source/S6, genuine editorial review/approval and actual full-site/form/measurement checks remain. Automatic portal starts remain prohibited by its existing project rule; prepare the concrete final build before a single manual start. Do not repeat original paid generation or silently treat a UTC quota reset as a new paid batch.
+
 ## Active headless pipeline instruction — 2026-10-14
 
 The owner explicitly requested direct end-to-end API testing and continuous stage/error logging instead of more UI-driven trials. Root owns S11: a thin loopback HTTP client using normal synthetic customer authentication, persisted exact idempotency keys and the maintained Discovery → reviewed approval → Creation → GUIDE → Foundation contracts. Existing workers remain the only executors. The client must stop on a real failure or missing gate, preserve the first failure and expose which stage/role failed; it must never fabricate a plan, quality approval or successful Foundation.

@@ -33,6 +33,9 @@ packages = ["src/pinet_core"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+# Offline-only selections reuse shared test/script helpers and must test this
+# checkout even when a caller's venv has another worktree installed editable.
+pythonpath = ["src", "tests", "scripts"]
 
 [tool.ruff]
 line-length = 110

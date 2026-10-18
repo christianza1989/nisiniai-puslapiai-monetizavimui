@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Complete the exact committed regression scope for rich inline HTML inspection, paired with source upgrade1014b905.",
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/rendered-site_test.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "evidence": [
+    "Commitfb423c67 source repair1014b905 includes existing rendered-site_test.py with independent inline-punctuation/split-word and changed/hidden-content negatives. Committed coverage classifies this SKILLS Python filename as shared; initial record covered the two implementation files only, so coverage failed on exactly this test path. Original BLOCKED retained; no classifier or historical record changed.",
+    "Tests reproduce2FAIL9PASS before source repair,11PASS after; Node12PASS and actual guarded11page0issue recheck independently support the paired implementation. This is supplemental exact-path coverage of the existing repair, not another runtime feature or model experiment."
+  ],
+  "rollback": "Revert this paired regression only with the associated source repair; preserve first failures and original upgrade1014b905 record/events. No guard or acceptance threshold change.",
+  "id": "upgrade-03db8a71-a007-4b8a-93b2-3fc41a880d94",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "fb423c67dcad038673800fd34a5416275c2cf6c3",
+  "createdAt": "2026-10-16T10:11:58.619Z"
+}

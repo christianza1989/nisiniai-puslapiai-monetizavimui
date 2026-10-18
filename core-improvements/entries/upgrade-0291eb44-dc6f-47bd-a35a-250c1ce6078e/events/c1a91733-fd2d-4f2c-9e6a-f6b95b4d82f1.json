@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Native owner observation/validation precedes one atomic context/hash/cutoff/deadline freeze. Existing SQL all-or-none CHECK and one-time mutation semantics unchanged. No schema/migration or frozen journal edits; no helper DB/model/provider calls.",
+  "checks": [
+    {
+      "command": "pytest focused direct/native/legacy Episode/High11files",
+      "result": "PASS",
+      "evidence": "147PASS4.05s. New6-case regression uses mapped TeamTurn with autoflush-aware query and flush boundaries; missing/foreign task/chat/wrong-author/invalid-clock cases fail before mutation, valid owner freezes once and a repeat is rejected. Original6FAIL10deselected3.30s baseline retained."
+    },
+    {
+      "command": "ruff check direct_preview.py test_direct_preview_fence.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Both changed Python files clean."
+    },
+    {
+      "command": "git diff HEAD -- schema/migrations/direct guards and all frozen Stage2/consultant/CASE journals",
+      "result": "PASS",
+      "evidence": "Empty diff for every protected path. No generic JSON acceptance or SQL/schema widening."
+    }
+  ],
+  "eventId": "c1a91733-fd2d-4f2c-9e6a-f6b95b4d82f1",
+  "sequence": 2,
+  "at": "2026-10-16T00:15:30.305Z"
+}

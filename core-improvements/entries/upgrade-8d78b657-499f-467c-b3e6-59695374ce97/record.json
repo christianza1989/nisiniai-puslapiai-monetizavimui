@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "A live preview's serial full authorization exceeds its0.2s start cadence, leaving no interruptible idle between expensive fresh graphs and no headroom for concurrent ordinary polling.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation/studio.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/offline_tests/test_studio_monitor_headroom.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_runtime.py",
+    "docs/LIVE_PREVIEW_MONITOR_HEADROOM.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Actual source5fdf lease aa3b46a7 retained before-Ready heartbeat_expired: at08:48:47.310Z margin-1906ms; full Authority.verify5.320s and7.288s with176directSQL. Quiet restricted-role full diagnostic182SQL/1.45242s. Current _execute monitor subtracts full check elapsed from0.2s and sleeps0 when over; no unrelated code is attributed as the cause.",
+    "Authorized read-only helper found no authorization correctness objection to a fixed live-only completion-relative0.2s idle after successful fresh authorization, but explicitly required representative actual polling proof and warned it cannot compensate for checks exceeding3s. No pulse during idle or completed permission reuse."
+  ],
+  "rollback": "Revert only explicit monitor pacing opt-in and tests/docs. Preserve strict heartbeat/deadlines, fresh graphs, cleanup, original failure receipts and all runtime data; do not claim actual acceptance from offline timing.",
+  "id": "upgrade-8d78b657-499f-467c-b3e6-59695374ce97",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "b9b685e81ad749be7f3e9131421ecc61f74e6dcb",
+  "createdAt": "2026-10-18T09:11:32.630Z"
+}

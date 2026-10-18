@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Final current-source old-path regression completed serially with all paid/external flags held. Preserve the separate first history-guard and self-wait harness failures, the independent Alembic proxy cleanup review and their scoped corrections; none is relabeled as a runtime readiness defect. Actual operating adoption/configuration saves still pending.",
+  "checks": [
+    {
+      "command": "run-mail-display-pg.py private-existing-final (four canonical provisioning/continuity/model/lab suites)",
+      "result": "PASS",
+      "evidence": "46PASS536.48s rawSHA56479521e2939c5ce1850e6acad2c3dd4febf11bdf70d053023c67d5b2d994b6. Exact original/operating/native preserved; model/SMTP/IMAP0."
+    },
+    {
+      "command": "run-private-agent-legacy-pg.py legacy-config-canonical-boundary tests/test_customer_agents.py; final local-Operations target rerun",
+      "result": "PASS",
+      "evidence": "26PASS197.28s rawSHAb655f58c5853b153a46dc5045b2b0f05ba420bd2e3d793058e241be2ada2342f, then final changed rollback target1PASS8.56s rawSHAb8bd26fa909ce20f9fb64ed7ba5f5cf43134ed14330a9ef4f33c1cf2e0d02450. Exact original/operating/native preserved. Initial context proxy review and final local binding distinguished under d905a3f7."
+    }
+  ],
+  "eventId": "58ff58bb-8d42-4c7d-939e-9536558d420f",
+  "sequence": 4,
+  "at": "2026-10-18T03:03:41.749Z"
+}

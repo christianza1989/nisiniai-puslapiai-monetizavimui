@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "The pre-registration fake SQL leaf now recognizes only the canonical exact creation/environment/accepted-revision Registration query, requires populate_existing and returns this graph's absent registration. The anchored helper asserts the lookup occurred. Production native/source validators and original native/final mutation assertions are unchanged. Both original failures and helper's unchanged-transport baseline remain retained. No DB/provider/operating adoption is implied by these pure checks.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/run-model-prepare-pg.py authority-fixture-fixed offline_tests/test_authority_observation.py offline_tests/test_registration_private_continuity.py offline_tests/test_acquisition_model_adapter.py offline_tests/test_acquisition_model_contract.py offline_tests/test_acquisition_model_schema.py offline_tests/test_acquisition_tasks.py offline_tests/test_acquisition_headless.py offline_tests/test_creation_registration.py offline_tests/test_workspace_agent_workflow.py",
+      "result": "PASS",
+      "evidence": "269PASS18.28s; raw SHA256f24cdf2d544a4f7f1bf75e25ee0c3f0afe09634e96ef015ac1e3389e1c1d56e8; original operating/native exact; provider/SMTP/IMAP0. This includes all84 maintained authority-observation cases and both retained-anchor mutation timings."
+    }
+  ],
+  "eventId": "48d5332b-bd30-4c95-80bf-cbd8a4dd3e95",
+  "sequence": 2,
+  "at": "2026-10-18T00:36:25.514Z"
+}

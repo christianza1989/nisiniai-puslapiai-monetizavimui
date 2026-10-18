@@ -28,6 +28,25 @@ def fixture(host='beauty.example', name='Beauty editorial', kind='Organization',
 
 
 class RenderedSiteTests(unittest.TestCase):
+    def test_inline_boundaries_preserve_visible_words_and_punctuation(self):
+        o, _, _ = fixture()
+        expected = 'Pasirinkite kubilą, tada aptarkite planą.'
+        o['expected']['bodyTexts'] = [expected]
+        rendered = '<p><span>Pasirinkite </span><a href="/contact">kubilą</a><span>, tada </span><strong>aptarkite</strong><span> planą.</span></p>'
+        o['html'] = o['html'].replace('<p>A specific useful answer.</p>', rendered)
+        self.assertEqual(inspect_page(o), [])
+        for before, after in [('kubilą</a>', 'pirtį</a>'), ('planą.</span>', '.</span>'),
+                              ('<strong>aptarkite</strong>', '<strong hidden>aptarkite</strong>')]:
+            changed = copy.deepcopy(o)
+            changed['html'] = changed['html'].replace(before, after)
+            self.assertIn('APPROVED_BODY_RENDERED', inspect_page(changed))
+
+    def test_inline_word_fragments_and_block_separators_are_distinct(self):
+        o, _, _ = fixture()
+        o['expected']['bodyTexts'] = ['Kubilas parinktas. Kitas žingsnis. Pabaiga.']
+        o['html'] = o['html'].replace('<p>A specific useful answer.</p>', '<p>Kubi<span>las</span> parinktas.</p><p>Kitas žingsnis.<br>Pabaiga.</p>')
+        self.assertEqual(inspect_page(o), [])
+
     def test_training_block_does_not_block_search_agents(self):
         text = 'User-agent: GPTBot\nDisallow: /\n\nUser-agent: *\nAllow: /\nDisallow: /api/\n'
         urls = ['https://beauty.example/guide']

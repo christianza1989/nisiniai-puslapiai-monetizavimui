@@ -1,0 +1,26 @@
+{
+  "category": "code",
+  "siteId": "core",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "summary": "Add explicit bounded same-Conversation native saved-agent preview turns and real per-transcript-revision Quality through maintained native Session/Task/usage lifecycle.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/workspace_team",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/preview.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/lab.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/quality.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/review.py",
+    "agent-business-core/runtime/src/pinet_core/customer_text/service.py",
+    "agent-business-core/runtime/src/pinet_core/jobs.py",
+    "agent-business-core/runtime/src/pinet_core/models.py",
+    "agent-business-core/runtime/migrations/versions/0044_direct_native_preview.py"
+  ],
+  "evidence": [
+    "Root explicitly authorizes narrow native/Quality dependencies; issue66 scope6203733744. Consultant clean checkpointea924493 remains available for actual empty-PG QA while this source work continues.",
+    "Missing explicit incremental binding/plan regression1FAIL baselineSHA256 13f2d93813bf952793be20884ad2e85ee1d14d7a687f7c97e372851c706ecf72. Existing Episode is fixed-script; Quality has global conversation-kind uniqueness. No oldEpisode mutation or helper actual DB/provider/case operations."
+  ],
+  "rollback": "Retain all native Conversation/Task/transcript/Quality/usage receipts; source rollback only. Additive0044 downgrade refuses retained preview artifacts. Preserve old Episode/config/v1 serialization and all non-preview job uniqueness.",
+  "id": "upgrade-adc83c2c-18ab-42b1-bb6b-80248cfa66e2",
+  "branch": "codex/verslomatika-direct-messenger-20261016",
+  "baseSha": "ea9244934b627c06158b5ff8f972b965bdda5010",
+  "createdAt": "2026-10-15T22:40:03.988Z"
+}

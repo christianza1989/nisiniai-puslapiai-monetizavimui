@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root draft implements business-scoped existing Agent/Config CRUD/import/history, exact source origin XOR/composite FK and immutable per-Config source pins. Explicit source adoption preserves Agent UUID and old configuration hashes; SQL current-pointer coherence and full source business tuple are planned in0049. Actual new schema/PG/browser acceptance UNVERIFIED; composition depends on separate author business_attachment and native external_schema pins. Scoped static Ruff on Root source files passes; migration import sorting awaits actual dependency module. No operating schema/source change, paid call, old allowance renewal or dealer-site write. Disk recovery used lossless NTFS compression only, all115027 selected file hashes exact; source work resumed after actual free space exceeded guard.",
+  "eventId": "399de646-720f-4d58-8fb2-a06c913c35fa",
+  "sequence": 2,
+  "at": "2026-10-18T07:24:52.744Z"
+}

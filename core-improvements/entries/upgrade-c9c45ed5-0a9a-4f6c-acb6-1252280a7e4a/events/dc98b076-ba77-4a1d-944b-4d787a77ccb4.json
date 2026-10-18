@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Implemented explicit private-only binding, one selected native intake resolver, accepted-material validator reuse and additive0042 history. Retained first synthetic state-machine run26FAIL10PASS2.90s SHA9e940d423b5331688ddb7470cd2c61d99c2555a0bf15a8b2c9c90bc307334d97: fixture omitted Session scalar lookup; corrected fixture then52PASS. Broad first28FAIL1663PASS8SKIP81.48s SHAedba5e42e99ac356faeb4935812a2ed26cfb4f055cbb4049d6580998d72a75c4:27 empty test source env dependencies (no baseline execution claim) plus1 S35 untyped synthetic full-creator fixture; profile-test fixture corrected to explicitv3 only. No original failure/output/history rewrite, no helper DB/provider/case/serving.",
+  "eventId": "dc98b076-ba77-4a1d-944b-4d787a77ccb4",
+  "sequence": 3,
+  "at": "2026-10-15T16:44:39.955Z"
+}

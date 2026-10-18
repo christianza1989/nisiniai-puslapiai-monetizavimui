@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "summary": "Isolate the populated customer-config rollback guard from newer retained-history guards in PostgreSQL regression",
+  "category": "workflow",
+  "evidence": [
+    "The unchanged old regression calls head0047 downgrade0021 after creating unrelated native Task history. Retained display history first blocked it (21PASS/1FAIL161.91s SHA b66af747c5d5fd056126aefb9cf8c74c36bedf0442fb4f10b5500411b0c0f5af); a fresh owned0047 DB still correctly stopped at the newer native-preview history guard (21PASS/1FAIL156.21s SHA06af719b56944237835bc70aa4492fdf214b908f861b2eb84622e7e814532269). Directly execute the canonical0022 downgrade under actual Alembic Operations and a real rollback transaction, retaining the exact Customer agent history exists assertion and adding unchanged schema-version evidence. No production migration or original history changes."
+  ],
+  "paths": [
+    "agent-business-core/runtime/tests/test_customer_agents.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only the regression harness; never alter or bypass production migration history guards. Original failed runs remain private evidence.",
+  "id": "upgrade-d905a3f7-8d8d-4f14-859e-301e1680bd2b",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "a10f348005623478f80a25fcb8656e711f3b0577",
+  "createdAt": "2026-10-18T02:45:07.453Z"
+}

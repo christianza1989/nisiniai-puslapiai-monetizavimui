@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/207",
+  "commit": "a33c705b0f6f27ca8ca16223044a5687e8e06c34",
+  "note": "Source checkpoint is pushed and Root merged exact runtime after06ec23f. Own scoped coveragePASS8 shared/no errors; final28 new cases+related73 legacy contract cases have split PASS evidence and final scoped Ruff/safety pass. Default-main check separatelyBLOCKED489shared/37uncovered/38errors inherited. Actual SourcePayload/backbone and composed0049/RLS/native external PG remain pending; source window frozen while new dedicated tests may be added. No paid/protected/dealer/Serving/operating adoption.",
+  "eventId": "ef255c56-27f2-4602-b069-7c27c76d9d22",
+  "sequence": 3,
+  "at": "2026-10-18T07:28:58.409Z"
+}

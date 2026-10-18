@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Composed external Business/Agent/Config source adapter verified locally; operating remains119/schema48 and paid/channel flags held. Initial entrypoint test counted6paths instead of5; corrected to5paths/7operations. Peer review found old-source row pin/advisory lock cycle and pre-Git readiness TTL race; canonical business authority now locks target business first, and final SQL readiness follows the last Git wait. Historical failures retained. No dealer facts, protected calibration inputs or live channels.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_business_agent_attachment.py offline_tests/test_business_agent_entrypoints.py tests/test_business_attachment.py -q",
+      "result": "PASS",
+      "evidence": "34PASS4.72s on composed source; Root config material legacy bytes and per-Config external source hashes protected; both actual API entrypoints expose5paths/7operations."
+    },
+    {
+      "command": "Retained Root QA migration0048→0049 then pytest tests/test_business_agent_attachment_pg.py",
+      "result": "PASS",
+      "evidence": "Migrationfe82183 preserves94oldtables326oldrows via exact old-column projection; original/operating and818nativefiles exact. Actual API51a08b3:4PASS32.19s, realGit/source fencing, verified owner/import/replay/foreign404, stableAgent/sourceadoption/historyCAS, concurrentrevoke/adoption no lockcycle, directory/external-origin separation. LogSHA256 eb8407db767e0ac85f59bc2ed49afccb78ccca58904a3cff1fe68aa9fe344695;0provider/SMTP/IMAP."
+    },
+    {
+      "command": "ruff check scoped customer_agents/business*/import_wire/models/service,directory*,direct_projection,0049 and attachment tests",
+      "result": "PASS",
+      "evidence": "All scoped checks passed before native helper final composition; native runtime followup separately verified in upgrade-b6551865-704c-457e-8b86-dfea92d1ab08."
+    }
+  ],
+  "eventId": "73f96b92-a76e-4d33-a6ad-26df0b7bd3b1",
+  "sequence": 3,
+  "at": "2026-10-18T08:03:36.596Z"
+}

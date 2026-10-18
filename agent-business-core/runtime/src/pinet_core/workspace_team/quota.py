@@ -23,6 +23,9 @@ async def release_queue(tx, user_id):
     cfg = settings()
     await tx.scalar(text("SELECT workspace_team_release_queue(:u,:e,:s)"),
         {"u": user_id, "e": cfg.environment, "s": cfg.control_source_revision})
+    if await tx.scalar(text("SELECT to_regprocedure('public.workspace_direct_release_queue(character varying,character varying,character varying)') IS NOT NULL")):
+        await tx.scalar(text("SELECT workspace_direct_release_queue(:u,:e,:s)"),
+            {"u": user_id, "e": cfg.environment, "s": cfg.control_source_revision})
 
 
 async def saved_usage(tx, *, task_id, run_id, user_id, environment_id, source_revision):

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Current documentation reflects actual held76db483/0047 adoption, same currentRegistration and exact current Foundation candidate result; all remaining scope/budget/UI/live gates remain explicit. Earlier failed/overlapped tests and old reports are retained. No actor or policy activation, no fullPlatform/calibration/website claim.",
+  "checks": [
+    {
+      "command": "run-mail-display-pg.py shared-worker-serial-57 tests/test_control_tasks.py tests/test_workspace_direct_pg.py tests/test_workspace_agent_workflow_pg.py tests/test_acquisition_model_prepare_pg.py tests/test_mail_view_pg.py",
+      "result": "PASS",
+      "evidence": "Actual58PASS575.41s, raw SHA362416fe205dc01bb99d623aa5173ab131768a1a378fd5ae7f1f966f8fa12cdc. Original/operating/native exact. Earlier39PASS/1FAIL retained, isolatedtargetPASS25.80s and thisserial fullPASS; no runtimefix invented for transient failure."
+    },
+    {
+      "command": "platform-mail0047-adopt-bootstrap.py platform-mail0047-adopt prepare/migrate/start/verify",
+      "result": "PASS",
+      "evidence": "Actual clean source76db483/public255/schema0047 on18871/PID11068. Source/sourceCLIhash gates,1.64MB pgdump backup,89prior data tables+771native exact,5new typed tables empty. Normal owner200/foreign404/unauth401. Newflagsfalse/actorlists empty/policies absent, provider/SMTP/IMAP0. Private receiptSHA ddb1adf6c3b25c849eef4ed9856e377123efdce5653361d30e2d08e1760d44d8"
+    },
+    {
+      "command": "platform47-renew-intake-bootstrap.py renew-intake; recheck-hot-tub-foundation47.py; owner registration/business/mail verification",
+      "result": "PASS",
+      "evidence": "Exactly1intake request+1receipt, then1Foundation receipt; sameRegistration014d46b4/Business917e1d81 current. Old771native hashes exact+23derived additions; other old rows exact. Foundation200candidate/local_evidence_missing, Profilefalse/F1UNVERIFIED/0agents; not a FoundationPASS. Private intake/foundation/owner receiptSHA 962f3ace1e255a6887bfd7e4deaca52c13675904f9371fb7826484d216bd9fbf / 581d4c65000172a5a3a5e7824ebb2d608ba1d56b99987bed7764ee8737f56cb7 / d20f3aa1f78d2e9fef6eb4f0525c1e091ad7427d392e6e202023bf152e1b974e"
+    },
+    {
+      "command": "compress-owned-previews.ps1; git diff --check",
+      "result": "PASS",
+      "evidence": "Reversible NTFScompression6obsolete Root-generated previews,13738files before/afterSHA exact,0deleted. Removal rejected before execution; no removal bypass. Private receiptSHA a24ed1c203c227cc1096e454d05725aee9c9588308ba76a7a4e861e35e153c38. Cfreefluctuations not all attributed to compression. Doc diff whitespace clean."
+    }
+  ],
+  "eventId": "46a201c4-7fc6-4a13-8008-c5bb0a1d8f00",
+  "sequence": 2,
+  "at": "2026-10-18T02:04:22.287Z"
+}

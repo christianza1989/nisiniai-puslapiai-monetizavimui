@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Exact inert baseline reproduced on1a751d0: known successful researcher then failed/unknown reviewer, lease2.984s at reservation to-1.022s first heartbeat, generic authorization_revoked; run27 firstFAIL retained SHA599033f3e31d02965158504a0e0326ffc0be7121d2b425af4745c75e7c3ff85a. Ordinary still-live15s role-boundary renewal passes identical run28. After metadata diagnostics and negative tests, scopedRuff/9offline PASS; run29 retains5PASS/1FAIL/18deselected283.91s (two new barrier negatives, latency, full native/replay,known cancel PASS; unknown cancel failed at initialE2 setup,rollback not reached). Docker engine unavailable after user pause/resume; no blind replay/restart/paid/Serving or Auth change. Pending two focused checks; no full acceptance/default-main gate PASS claim. Historical actual TRAIN guard cause remains unknown despite matching inert failure class.",
+  "eventId": "a3e8d071-616f-4a7c-af4c-aecc7c44ee56",
+  "sequence": 2,
+  "at": "2026-10-18T06:27:35.942Z"
+}

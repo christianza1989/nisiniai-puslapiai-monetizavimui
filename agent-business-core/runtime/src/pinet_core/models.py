@@ -1,7 +1,16 @@
 from datetime import UTC, datetime
 from uuid import uuid4
 
-from sqlalchemy import BigInteger, DateTime, ForeignKeyConstraint, Index, Integer, String, UniqueConstraint
+from sqlalchemy import (
+    BigInteger,
+    DateTime,
+    ForeignKeyConstraint,
+    Index,
+    Integer,
+    String,
+    UniqueConstraint,
+    text,
+)
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
@@ -172,7 +181,12 @@ class Job(ConversationChild, Base):
     lease_until: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
     owner: Mapped[str | None] = mapped_column(String, nullable=True)
     __table_args__ = (ConversationChild.conversation_fk(),
-                     UniqueConstraint("conversation_id", "kind"),
+                     Index("uq_jobs_legacy_conversation_kind", "conversation_id", "kind", unique=True,
+                           postgresql_where=text("payload->>'direct_preview_version' IS DISTINCT FROM 'customer-agent-direct-quality.v1'")),
+                     Index("uq_jobs_direct_preview_turn", "conversation_id", "kind", text("(payload->>'direct_preview_turn_id')"), unique=True,
+                           postgresql_where=text("payload->>'direct_preview_version'='customer-agent-direct-quality.v1'")),
+                     Index("uq_jobs_direct_preview_revision", "conversation_id", "kind", text("(payload->>'transcript_revision')"), unique=True,
+                           postgresql_where=text("payload->>'direct_preview_version'='customer-agent-direct-quality.v1'")),
                      Index("jobs_ready", "state", "run_after"))
 
 

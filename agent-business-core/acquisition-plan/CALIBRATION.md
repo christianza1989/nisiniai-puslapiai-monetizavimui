@@ -61,3 +61,28 @@ Ataskaita saugo call/usage per rolę, pasirinktos ir visos suite apimtį, pirmą
 ## Užbaigimo vartai
 
 Offline regresijos turi tikrinti tenant/role, unknown fact, stop, no consent, silence, ribas ir realaus adreso blokavimą. Modelio bandymas turi bent šešių archetipų įrodymus; didesnė suite vykdoma etapais ir coverage ataskaita rodo kas neįvykdyta. Release vartai lieka [roadmap M5](ROADMAP.md#kalibravimo-release-kriterijai): 0 kritinių pažeidimų, galiojantys faktų įrodymai, protected įvertinimas ir produkcinio adapterio priėmimas. Actual delivery / reply / hosted onboarding nepasidaro PASS iš capture testo.
+
+## Headless extension (2026-10-18)
+
+The maintained runner optionally accepts `--budget-ledger PATH`: explicit
+Codex gpt-6.1-sol/high, separate qualification/writer/reviewer/reply contexts,
+private raw attempts and one durable180-attempt/120minute ceiling for the
+wellness experiment. No automatic retries. The deadline bounds actual CLI IO
+through its existing process-tree cleanup; cleanup itself takes finite time.
+Interrupted reservations remain charged with unknown usage; do not restart a
+batch or replace its ledger. Old default runner behavior remains available.
+
+`acquisition_headless.py prepare|reply|capture|case-reply|budget` reuses canonical
+contracts and mail/Case services. Capture/Case reply require an actual admitted
+synthetic scope and current module authority. Independent exact-copy reply
+review precedes outbound capture. Optional trusted reviewed data in
+`Correspondence.apply_decision` creates the existing outbound MailMessage and
+MailBinding atomically, while the unchanged WorkReceipt still identifies the
+inbound. Exact decision-hash binding resolves the outbound; never select latest.
+Refusal/privacy containment and no-outbound review failure remain separate.
+No SMTP endpoint, second CRM, model evaluator, migration or scheduler is added.
+
+Source, schema/PG, actual synthetic model calls, owned controlled delivery,
+operating admission and customer outcomes stay distinct. The current wellness
+runbook/report records narrow applicability and unresolved sender/campaign facts;
+no conversation adaptive release is promoted into outbound.

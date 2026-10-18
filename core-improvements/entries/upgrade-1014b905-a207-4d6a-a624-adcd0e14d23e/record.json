@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Preserve actual inline text boundaries in HTML inspection and validate rich inline URLs in the reading channel without false body-loss failures.",
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "evidence": [
+    "Root reserved PR164/comment6213008506. Actual core95fbc8e/public255fea immutable package1b6f54e69f57e6763ca5117eaedf3704143ff9c9fa74aefbc9570b609002efa8: canonical HTML inspector reports body loss on3rich guides and full reading body loss on6pages.11HTTP pages20assets/hidden404 and form403/400/200+measurement204/retention1+1 independently passed; no content mutation or criterion waiver proposed.",
+    "Python parser inserts whitespace between every inline node, changing punctuation and split words. Reading expectations flatten link labels but full reading contract retains label plus parenthesized URL; plain contiguous comparison wrongly rejects this. Independent rich punctuation/word-fragment regressions reproduce2FAIL9PASS; new reading fixture includes literal full output with missing word/URL/foreign URL/text negatives."
+  ],
+  "rollback": "Scoped verifier/parser/tests revert; preserve old failed actual captures and package/source hashes. No rewriting customer approvals, content, historical audits, fingerprints or full Foundation receipts; runtime95 adoption remains separate.",
+  "id": "upgrade-1014b905-a207-4d6a-a624-adcd0e14d23e",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "95fbc8e5f32cfea0eb144d589bc65239d60c0871",
+  "createdAt": "2026-10-16T10:02:04.488Z"
+}

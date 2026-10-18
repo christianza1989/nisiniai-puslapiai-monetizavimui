@@ -1,0 +1,18 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Keep exact common worker registry regression aligned with maintained typed capabilities",
+  "category": "workflow",
+  "evidence": [
+    "Exact source52c067b registry has six maintained handlers; original Direct unit asserted only four. Reproduced1FAIL4.01s, raw SHA1ec2630cba62fffe6287a5bca8c0d7fb2d6e746aee554f6fde7abb08c1f2496c. Keep an exact ordered assertion, add only two already maintained typed kinds; no runtime policy changes."
+  ],
+  "paths": [
+    "agent-business-core/runtime/offline_tests/test_direct_execution.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert this exact test expectation if either typed capability is removed; preserve actual runtime handlers and original prompt/configuration assertions.",
+  "id": "upgrade-b02e9bad-0ba8-4d67-9a40-e90819bb32f7",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "52c067b8d3a29d64fe7ed01f2ebecb52f636507b",
+  "createdAt": "2026-10-18T01:32:01.079Z"
+}

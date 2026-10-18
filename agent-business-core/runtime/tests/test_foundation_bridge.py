@@ -214,12 +214,21 @@ async def test_retained_final_pin_and_authority_loss(monkeypatch, change, status
     assert error.value.status == status and error.value.code == code
 
 
-def test_public_dirty_source_unavailability_and_reserved_host_synthetic_marker(monkeypatch):
-    monkeypatch.setattr(foundation.studio, "configuration", lambda: (None, None, None, {"STUDIO_PUBLIC_CORE_DIR": "/public"}))
-    monkeypatch.setattr(foundation.subprocess, "check_output", lambda arguments, **kwargs:
-        "f"*40 if arguments[1] == "rev-parse" else " M config/niche-network.json")
+def test_public_dirty_source_unavailability_and_reserved_host_synthetic_marker(monkeypatch, tmp_path):
+    from pinet_core import source_observation
+    public = tmp_path / "public"
+    public.mkdir()
+    monkeypatch.setattr(foundation.studio, "configuration", lambda: (None, None, None, {"STUDIO_PUBLIC_CORE_DIR": str(public)}))
+    calls = []
+    def git(arguments, **kwargs):
+        calls.append(arguments)
+        return ("# branch.oid "+"f"*40+"\0# branch.head main\0"
+            +"1 .M N... 100644 100644 100644 "+"e"*40+" "+"e"*40+" config/niche-network.json\0")
+    monkeypatch.setattr(source_observation.subprocess, "check_output", git)
     with pytest.raises(ControlError) as error:
         foundation.source_pins()
+    assert calls == [["git", "-c", "status.showStash=false", "status", "--porcelain=v2",
+        "--branch", "-z", "--untracked-files=normal"]]
     assert error.value.status == 503 and error.value.code == "source_unavailable"
     pin = scope()
     pin = FoundationScope.model_validate_json(json.dumps(pin.model_dump(mode="json") | {

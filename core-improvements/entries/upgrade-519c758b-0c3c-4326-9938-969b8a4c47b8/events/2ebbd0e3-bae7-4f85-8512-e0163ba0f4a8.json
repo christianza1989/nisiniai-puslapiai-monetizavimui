@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Reproduced own batch defect: public envelope normalizes test-* to test, but exact sidecar source/path requires raw canonical environment. Preserve first2FAIL0c25217bc23208d62add8c3bbbdcb8e6d23d5cd50eb980212dcbfb3d446abbc4. Require explicit environment-id and server source-digest agreement before any claim/provider IO; cross-check Business ID and retain old normalized-path attempt/copy without silent replay. No wire/DTO/portal/migration/runtime adoption. Ruff initially exposed10 import/fixture/inline-statement findings in the owned tests; corrected within those files. Provider/SMTP/IMAP0; original0032/operating0045/native exact.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_mail_view.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "25PASS1.97s, logb0a7da4fd65dc217f4e6f177ba13808936922426dfbb896d38b0663d9eb6a901. Fake-provider raw-environment roundtrip, wrong environment before claim/model, preserved prior normalized attempt; original failures retained."
+    },
+    {
+      "command": "Owned run-mail-pg.py env-binding-final: pytest tests/test_mail_view_pg.py on existing Root isolated0045 QA only",
+      "result": "PASS",
+      "evidence": "3PASS13.19s, log9efdc60a9d609377185f6d85c455fb29df2a47662c6fd8888c1b6d19ee891e35. Normal owner API -> explicit batch with inert model -> exact private sidecar -> API ready Lithuanian plus unchanged original. Actual test-* environment differs from public test envelope. All original/operating table and native-file hashes exact; no provider/SMTP/IMAP. Earlier3PASS5.55s retained."
+    },
+    {
+      "command": "ruff check scripts/mail_display_translate.py offline_tests/test_mail_view.py tests/test_mail_view_pg.py",
+      "result": "PASS",
+      "evidence": "All three owned Python files pass after resolving observed findings; no foreign files changed."
+    }
+  ],
+  "eventId": "2ebbd0e3-bae7-4f85-8512-e0163ba0f4a8",
+  "sequence": 5,
+  "at": "2026-10-17T22:07:50.648Z"
+}

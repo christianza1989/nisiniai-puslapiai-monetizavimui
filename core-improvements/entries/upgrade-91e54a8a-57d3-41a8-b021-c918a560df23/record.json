@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Read-only content-completion/page/media routes acquire User/Session/Creation row locks across a native subprocess, blocking administrative revocation that their final fresh authorization is intended to observe.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/content_completion/routes.py",
+    "agent-business-core/runtime/tests/test_content_completion_pg.py",
+    "docs/handoffs/VERSLOMATIKA_LIVE_PREVIEW_STABILITY_2026_10_17.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Existing PostgreSQL final-after-real-Node membership revoke test hung after three cases passed. Dedicated-QA pg_stat_activity confirmed admin UPDATE control_memberships transactionid wait blocked by the request's idle transaction; metadata retained before cancelling only that exact owned QA query.",
+    "All three read-only content_completion/routes.py endpoints call owned(lock=True), whose canonical reader locks User, Session and Creation before waiting for the native transport."
+  ],
+  "rollback": "Revert only these read-only route lock selections and their focused regression/doc changes. Preserve first blocked/cancelled test and bounded lock failures. No operating database restore, authority/final-fence removal, change to mutation locking, RLS or heartbeat limits.",
+  "id": "upgrade-91e54a8a-57d3-41a8-b021-c918a560df23",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "5daa4fa5b00d311c63ad94cc4abecca23096c493",
+  "createdAt": "2026-10-18T11:45:39.098Z"
+}

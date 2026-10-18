@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Focused62PASS7.39s after the one-function fusion, log0722895f94c9176423dd35735e8567a00f7ec54aea1d196ef552b4be6462d40e. First broader run1FAIL273PASS17.23s, SHA256c38da5cdfa143060ef35511a4503f60b975a069371e6a0248979a3a7bf1f4c2e: existing historical-graph count still expected10 profile+catalog reads, while actual was2profile+4catalog=6 as intended. Updated only that expected bound, adding explicit2profile/4catalog assertions so both schema entry/final calls in both phases are required; all material/selector/native assertions retained. Full modeled graph132Tx,10private checkpoints; private-current remains3SQL. First Ruff run reported fixture-import F811 in the new test; added the same narrow noqa used by existing canonical fixture consumers. No production change beyond schema_state; no actual PG/UI/serving acceptance claimed.",
+  "eventId": "6b9495ae-70d0-4ebc-9ec8-2ff631d33d75",
+  "sequence": 3,
+  "at": "2026-10-17T19:53:20.889Z"
+}

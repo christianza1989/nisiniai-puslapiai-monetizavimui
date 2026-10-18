@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Native correspondence rejects valid reserved example.test subdomain recipients accepted by the dialogue lab and prepared known cases, blocking a sealed native calibration before model execution.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/correspondence.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_synthetic_recipient.py",
+    "docs/ACQUISITION_SYNTHETIC_RECIPIENT_NAMESPACE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Independent custodian source849: native_calibration._manifest invokes recipient_hash and raises LedgerError/synthetic_recipient_required on a known case under a valid example.test subdomain. Original source and manifest retained, protected payload not exposed. Root SQL verified0TaskBinding/0ModelAttempt for both unused grants and explicitly stopped them before edits.",
+    "New23boundary cases baseline5FAIL18PASS retained. Final maintained correspondence/native/dialogue selection80PASS39subtests3.63s; legacy exact-host hash unchanged, distinct reserved subdomains and real/malformed/oversized-domain refusals covered."
+  ],
+  "rollback": "Revert only synthetic address allowlist, tests and doc. Preserve all original corpus/manifest/grant/task/attempt/mail evidence; no digest or stored-address migration and no quota refund.",
+  "id": "upgrade-d801a24d-8948-4d86-a1cd-828a36ad75d2",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "84983aba4cdf5343f0cb3e8c231c6ad5309017e9",
+  "createdAt": "2026-10-18T10:14:06.012Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_authority_observation.py offline_tests/test_accepted_proof_observation.py offline_tests/test_creation_registration.py offline_tests/test_private_preview.py offline_tests/test_private_native_continuity.py tests/test_content_completion.py offline_tests/test_candidate_preview_preparation.py tests/test_foundation_bridge.py tests/test_build_continuation.py offline_tests/test_live_preview_runtime.py offline_tests/test_execution_profile_batch.py -k not_real_studio_monitor -q --tb=short",
+      "evidence": "Actual selector argv was -k \"not real_studio_monitor\", with PYTHONPATH src;tests;scripts and existing supplied qa-venv Python.389PASS24.35s,1actual-process test deselected,1existing UUID serializer warning. final-regression.log SHA2566cab486bcbf0600ad3d3c7b0c463c3c32b610298b61d2ca03f47b01d9f160957; docs/AUTHORITY_OBSERVATION.md. No actualDB/native producer/provider/serving.",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m pytest offline_tests/test_discovery_source_context.py -q --tb=short",
+      "evidence": "36PASS4.05s using same existing QA Python; logSHA256025e975efee978e89071496262ac1e68e4325aa29943dc738f5b506f3b0384e0.",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m ruff check exact10runtime and2offline-test paths; git diff --check",
+      "evidence": "12exactPython paths clean, no eleventh runtime file. No schema/wire/model/role/quota/deadline or cadence edit.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Separate canonical approved_build_context identity-map repair: same former false-success Discovery mutation now rejects503invalid_approved_plan; standalone changed Discovery linkage/Report revision refuse. Original1FAIL68deselected13.37s SHA1588c826cd67792a10d55d811b98c52bed167d873eb82f2cc87c6a506309a710 retained. Only existing BuildApproval select and Report/Discovery/DiscoveryJob get populate_existing flags changed; signatures/validators/RLS/error mapping/other functions unchanged. Modeled ORM proof is not actual PostgreSQL acceptance.",
+  "eventId": "d4e05e11-ac6d-409e-8ad8-8bc737084efb",
+  "sequence": 2,
+  "at": "2026-10-17T09:57:57.839Z"
+}

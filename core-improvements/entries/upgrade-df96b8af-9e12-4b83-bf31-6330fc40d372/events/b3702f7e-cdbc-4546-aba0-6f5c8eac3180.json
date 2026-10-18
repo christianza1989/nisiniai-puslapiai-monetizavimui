@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Legacy synchronously awaited membership revocation self-blocked on the canonical0042 User lock; original cancelled own-QA10PASS/1FAIL314.47s and exact blocker witness retained. Separate unchanged grant-loss rollback remains. Correct membership scenario proves actual500ms lock timeout inside the Config writer, successful1/1commit, real subsequent owner revocation and next-admission denial with immutable1/1retained. Independent read-only review confirms intended serialization semantics; no production lock/permission change.",
+  "checks": [
+    {
+      "command": "run-mail-display-pg.py private-existing-final tests/test_customer_agent_provisioning_pg.py tests/test_registration_private_continuity_pg.py tests/test_acquisition_model_prepare_pg.py tests/test_customer_agent_lab.py",
+      "result": "PASS",
+      "evidence": "Actual46PASS536.48s rawSHA56479521e2939c5ce1850e6acad2c3dd4febf11bdf70d053023c67d5b2d994b6. All original/operating/native exact, provider/SMTP/IMAP0; native provisioning, continuity, model accounting/cancellation/authority and old site_chat lab behavior retained."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/tests/test_customer_agent_provisioning_pg.py; git diff --check",
+      "result": "PASS",
+      "evidence": "Actual scoped Ruff/whitespace PASS."
+    }
+  ],
+  "eventId": "b3702f7e-cdbc-4546-aba0-6f5c8eac3180",
+  "sequence": 2,
+  "at": "2026-10-18T03:03:39.803Z"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Root independently reviewed3fe580b and integrated asb3286e2 overc617. Actual ten distinct PostgreSQL continuity cases passed across two pins/commands: first5legacyPASS plus fixture setup UnicodeDecodeError139.35s atb328; one-line UTF8 test-only983e944 integratedas1fb5496; five new physical paired-upgrade casesPASS100.92s at1fb. This is not one clean10-case run; original raw failureSHA43653a7ef7790c74490c69e34136888d45c8f83ef1c7937f146160166bef4055 retained. Original0032 snapshot equality/provider0 verified after each cohort. Root46focusedPython/9NodePASS. A fresh actual operational0042→0044 copy preserved86old tables/163native files and passed restrictedpreflight/cutover; but no new nativePOST was dispatched because local Docker PG exited139 while C disk was full. NewAPI1fb auth500 is retained as environment outage, not v2/S6 adoption. Cache prune freed stale regenerable entries; original databases/backups/native content remain retained. Desktop recovery still pending. No customer review/approval/release or provider call.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_private_native_continuity.py -q -p no:cacheprovider atb3286e2",
+      "result": "PASS",
+      "evidence": "Root46PASS4.34s, exact current/original pins, strict markers and negative authority/context cases."
+    },
+    {
+      "command": "node --test content-studio/test/private-native-continuity.test.mjs atb3286e2/public255fea",
+      "result": "PASS",
+      "evidence": "Root9PASS18528.7189ms: actual isolated synthetic physical importer/public fingerprints plus original artifact, native model and media integrity checks; no provider or operational data."
+    },
+    {
+      "command": "Dedicated native PostgreSQL full continuity suite atb328, then only -k paired_upgrade after UTF8 fixture correction at1fb5496",
+      "result": "PASS",
+      "evidence": "Five legacy casesPASS139.35s before one fixture setup error; five distinct new casesPASS100.92s/5deselected after test-only fix. Exact original receipt/importer/current source, stale S6, three original-artifact tampering cases and network drift covered. Original0032 preserved/provider0; earlier error retained, no production guard relaxation."
+    }
+  ],
+  "eventId": "af089763-4643-4cf1-a8f3-9678215538b5",
+  "sequence": 4,
+  "at": "2026-10-16T03:33:08.661Z"
+}

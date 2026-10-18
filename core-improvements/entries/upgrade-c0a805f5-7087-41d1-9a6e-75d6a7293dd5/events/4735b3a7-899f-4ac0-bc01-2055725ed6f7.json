@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial21 pure contract/native-adapter tests pass with inert transport; first test-authoring exception mismatch retained in toola9d18b and corrected without production predicate change. Separate schema helper identified existing0045 direct business-kind whitelist (actualPG CheckViolation cb570a5474405cc30de4fd68b5b60ec25e98e12ccd8127e693591b5aab520e38), and acquisition reviewer found legacy Director hidden-settlement whitelist excluding the newkind. Helper actual grant-revoked ModelTask/Run baseline returned oldDirectorFALSE and typedFunctionMissing; newtyped accounting sink and Root checked branch repair it without broadening legacy kinds. Root additionally requires monotonic late-known aggregate projection after visible lease failure then grant revoke, without task/event/state revival. Schema/helper remains separate ownsource; Root new handler is unadopted and waiting final schema integration/realPG tests. No provider/model/SMTP/IMAP call, operating migration, private budget reset or channel activation.",
+  "eventId": "4735b3a7-899f-4ac0-bc01-2055725ed6f7",
+  "sequence": 2,
+  "at": "2026-10-18T00:15:18.269Z"
+}

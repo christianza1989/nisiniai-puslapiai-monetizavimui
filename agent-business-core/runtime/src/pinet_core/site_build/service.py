@@ -25,11 +25,19 @@ NAMESPACE = UUID("8351b9d1-9456-46a7-b7c5-88204aed6c65")
 
 
 def enabled():
+    """Owner inspection/continuation feature; worker admission is separate."""
     cfg = settings()
     if (not cfg.site_build_enabled or not cfg.business_discovery_enabled
-            or not cfg.customer_enabled or not cfg.creation_enabled or not cfg.creation_runner_enabled
+            or not cfg.customer_enabled or not cfg.creation_enabled
             or cfg.control_mode != "local"
             or not (cfg.environment == "local" or cfg.environment.startswith("test-"))):
+        raise ControlError(503, "site_build_unavailable")
+
+
+def generation_enabled():
+    """Retain every generation gate before advancing or starting a supervisor."""
+    enabled()
+    if not settings().creation_runner_enabled:
         raise ControlError(503, "site_build_unavailable")
 
 
@@ -65,7 +73,7 @@ def observation(creation_id, phase, state, *, code=None, job_id=None, page_id=No
 
 async def advance(creation_id):
     """Admit at most one actual shared GUIDE; never invoke a provider or retry a failure."""
-    enabled()
+    generation_enabled()
     identity = str(UUID(creation_id))
     if not await asyncio.to_thread(source_current):
         raise ControlError(503, "source_unavailable")
@@ -129,7 +137,9 @@ async def advance(creation_id):
             return observation(identity, "source", "blocked", code="site_build_source_stale")
         revision = await guides.current_revision(tx, creation, creation.current_revision)
         import_job = await tx.get(Job, revision.job_id)
-        pages = initial_pages(revision.payload, import_job.usage["content_intake"])
+        from ..creation.private_preview import selected_intake
+        _, intake = await selected_intake(tx, creation, revision, import_job)
+        pages = initial_pages(revision.payload, intake)
         jobs = list(await tx.scalars(select(GuideJob).where(GuideJob.creation_id == identity,
             GuideJob.accepted_revision == creation.current_revision).order_by(GuideJob.sequence)))
         active = [job for job in jobs if job.status in ACTIVE]

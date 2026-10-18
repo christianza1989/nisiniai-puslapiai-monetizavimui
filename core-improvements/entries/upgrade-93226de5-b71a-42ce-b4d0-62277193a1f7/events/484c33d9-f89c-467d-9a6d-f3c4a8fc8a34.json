@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "evidence": "Executed with PYTHONPATH src;tests;scripts, PYTHONDONTWRITEBYTECODE1 and existing supplied qa-venv Python.428PASS67.15s; final-fresh-actors-regression.log SHA256b08aa6a62e62bbed66938ad49803c59291f3b5a71239842d87874b3528bf02f6. docs/AUTHORITY_OBSERVATION.md and docs/APPROVED_CONTEXT_FRESHNESS.md.",
+      "result": "PASS",
+      "command": "python -m pytest offline_tests/test_authority_observation.py offline_tests/test_accepted_proof_observation.py offline_tests/test_creation_registration.py offline_tests/test_private_preview.py offline_tests/test_private_native_continuity.py tests/test_content_completion.py offline_tests/test_candidate_preview_preparation.py tests/test_foundation_bridge.py tests/test_build_continuation.py offline_tests/test_live_preview_runtime.py offline_tests/test_execution_profile_batch.py offline_tests/test_discovery_source_context.py -k \"not real_studio_monitor\" -q --tb=short"
+    },
+    {
+      "evidence": "All12changedPython files pass after final actor source change. No generic permission cache, models/roles/quotas/wire/schemas/deadlines/cadence edit.",
+      "result": "PASS",
+      "command": "python -m ruff check exact10runtime+2offline-test paths"
+    },
+    {
+      "evidence": "Exact owned ten-runtime-source packet, focused tests/docs/WORKSTREAMS and only two new upgrade journals. No original journal changes.",
+      "result": "PASS",
+      "command": "git diff --check"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Final source after late-S review: Phase.actor ALWAYS calls canonical current_actor; actors fact set removed entirely. Gated canonical3FAIL baseline0f08a526c085f70c0f5f2e6d03a5bbbab560bcaf48bcf1df035110611da293b4 (revoke/expiry/clock-only between final S6 validation and last nativeguard) retained; same3PASS5.51s6a6757d5b0b259fbd11dbcdf61a0670dbacbbf8dfcbc2e6b7e48909c05a53917. Final428PASS67.15s,1actual-process test deselected,1existing deliberate UUID warning. Material8→2/selector5→2/native output1, full entryS6 graph before native, separate fresh final graph; U/P/S and native callbacks remain canonical/fresh. Three Root-approved late private503→409 classifications explicitly documented, source/approval503 remain. No Source11/DB/provider/native producer/serving/browser/adoption. Both journal records immutable, old FAIL/PASS preserved.",
+  "eventId": "484c33d9-f89c-467d-9a6d-f3c4a8fc8a34",
+  "sequence": 7,
+  "at": "2026-10-17T10:03:33.549Z"
+}

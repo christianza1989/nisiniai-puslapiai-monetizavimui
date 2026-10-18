@@ -9,7 +9,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from ..tasks.codex_transport import RunnerError
 from . import language_mode
-from .renderer import Draft
+from .renderer import parse_draft
 
 Stage = Literal[
     "private_draft", "discovery", "research", "business", "drafting", "content_plan", "content", "design",
@@ -180,7 +180,7 @@ def canonical_sha256(value):
 
 
 def draft_sha256(draft):
-    return canonical_sha256(Draft.model_validate(draft).model_dump(mode="json"))
+    return canonical_sha256(parse_draft(draft).model_dump(mode="json"))
 
 
 def critic_sha256(critic):
@@ -235,7 +235,7 @@ def _check_evidence(check, receipts):
 
 
 def _normalize_critic(value, draft, stage, round_number, receipts):
-    draft = Draft.model_validate(draft).model_dump(mode="json")
+    draft = parse_draft(draft).model_dump(mode="json")
     digest = canonical_sha256(draft)
     report = CriticReview.model_validate(value)
     if report.draft_sha256 != digest or report.stage != stage or report.round_number != round_number:
@@ -271,7 +271,7 @@ def normalize_critic(value, *, draft, expected_stage, expected_round, receipts=(
 def normalize_coordinator(value, *, draft, critic, expected_stage, expected_round, receipts=()):
     try:
         review = _normalize_critic(critic, draft, expected_stage, expected_round, receipts)
-        decision = CoordinatorDecision.model_validate(value)
+        decision = CoordinatorDecision.model_validate(coordinator_payload(value, review))
         if (decision.draft_sha256 != review.draft_sha256 or decision.stage != review.stage
                 or decision.round_number != review.round_number
                 or decision.critic_sha256 != canonical_sha256(review.model_dump(mode="json"))):
@@ -284,7 +284,7 @@ def normalize_coordinator(value, *, draft, critic, expected_stage, expected_roun
                 or set(decision.remaining_checks) != unresolved
                 or decision.decision != review.verdict):
             raise ValueError("Coordinator cannot conceal corrections or unverified checks")
-        validated = Draft.model_validate(draft)
+        validated = parse_draft(draft)
         names = [validated.business_name, *[item.title for item in validated.research],
                  *[item.tool for item in validated.tools]]
         language_mode.screen([decision.summary, *decision.next_actions], names=names)
@@ -355,7 +355,13 @@ Konkurento pasiūlymas neįrodo mokios paklausos ar mūsų pajėgumo. Pirmame ra
 kitame tikrink pataisas ir galutinį variantą. Nauji tikri trūkumai leidžiami, visos priėmimo patikros lieka.
 """
 
-COORDINATOR_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,
+COORDINATOR_SET_DIRECTIVE = """verified_coordinator_sets pateikia tikslius correction_ids ir remaining_checks sąrašus pagal patikrintą
+kritiko išvadą. Šiuos mechaninius sąrašus atkurs serveris; jų negrąžink modelio išvestyje.
+Grąžink tik schemoje nurodytus laukus. Privalomas teksto radinys liks correction_ids net kai ribota
+automatinė tos rūšies patikra turi PASS kvitą. Sprendimo tekstas ir next_actions turi išsaugoti pataisą.
+"""
+
+COORDINATOR_BASE_POLICY = """Esi Verslomatikos koordinatorius. Pagal pateiktą konkretų privatų juodraštį,
 jo kritiko išvadą ir tos versijos stebėjimų kvitus pateik trumpą klientui suprantamą sprendimą lietuviškai.
 Nerašyk vidinės minčių eigos ir nepratęsk tariamų derybų. Paaiškink, kas priimta, ką reikia pataisyti ir ką
 tikrinti toliau. Nenaudok įrankių, nekurk naujų įrodymų, neišgalvok kritiko pritarimo ir neslėpk nesutarimo.
@@ -374,6 +380,10 @@ jo nelaikyk originaliu tekstu, necituok ir neatkurk atmestų sakinių. Kontrolin
 summary iki 360 simbolių: glaustai paaiškink sprendimą, nekartodamas kritiko teksto. Visus privalomų
 pataisų ID ir likusias patikras išsaugok atskiruose laukuose; next_actions tekstų netrumpink ir neperrašyk.
 """
+COORDINATOR_POLICY = COORDINATOR_BASE_POLICY.replace(
+    "Visus privalomų\npataisų ID ir likusias patikras išsaugok atskiruose laukuose; ",
+    "Pataisų ID ir likusias\npatikras tiksliuose laukuose išsaugos serveris; ",
+) + COORDINATOR_SET_DIRECTIVE
 
 
 def coordinator_actions(verified_critic):
@@ -397,6 +407,43 @@ def coordinator_actions(verified_critic):
     return list(dict.fromkeys(choices)) or ["Tęsti faktines patikras prieš rengiant viešą leidimą."]
 
 
+def coordinator_sets(verified_critic):
+    """Mechanical reference sets from a caller-validated critic, never new evidence or approval."""
+    review = CriticReview.model_validate(verified_critic)
+    return {"correction_ids": [finding.id for finding in review.findings if finding.severity != "suggestion"],
+            "remaining_checks": [check.kind for check in review.checks if check.status in ("FAIL", "UNVERIFIED")]}
+
+
+COORDINATOR_PROSE_VERSION = "creation.coordinator-prose-output.v2"
+
+
+def coordinator_provider_schema():
+    """Project only derived arrays out of the maintained stored contract; no array consts."""
+    schema = model_output_schema("coordinator")
+    for field in ("correction_ids", "remaining_checks"):
+        del schema["properties"][field]
+        schema["required"].remove(field)
+    schema["properties"]["schema_version"]["const"] = COORDINATOR_PROSE_VERSION
+    return schema
+
+
+def coordinator_payload(value, verified_critic):
+    """Restore trusted mechanical fields only for the exact private provider envelope.
+
+    Legacy full results still go through the unchanged strict checks. A compact
+    result cannot supply replacement arrays, status evidence or extra fields.
+    """
+    if not isinstance(value, dict) or value.get("schema_version") != COORDINATOR_PROSE_VERSION:
+        return value
+    if set(value) != set(CoordinatorDecision.model_fields) - {"correction_ids", "remaining_checks"}:
+        raise ValueError("Exact coordinator prose envelope required")
+    restored = CoordinatorDecision.model_validate(
+        {**value, "schema_version": "creation.coordinator.v1", **coordinator_sets(verified_critic)}).model_dump(mode="json")
+    if any(action not in coordinator_actions(verified_critic) for action in restored["next_actions"]):
+        raise ValueError("Coordinator prose must select exact admitted actions")
+    return restored
+
+
 def role_instruction_hash(role):
     policies = {"critic": CRITIC_POLICY, "coordinator": COORDINATOR_POLICY}
     if role not in policies:
@@ -416,7 +463,7 @@ def _review_projection(normalized):
              *[t["tool"] for t in normalized["tools"]]]
     omitted, references = [], []
     excluded = {"business_name", "url", "tool", "path", "accent", "composition", "phase", "layout",
-                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority"}
+                "month", "pillar_path", "internal_links", "source_urls", "source_queries", "priority", "schema_version", "type"}
 
     def project(item, pointer="", prose=True):
         if pointer and item not in (None, "", [], {}):
@@ -444,7 +491,7 @@ def _review_projection(normalized):
 
 
 def _prompt_context(draft, stage, round_number, receipts):
-    normalized = Draft.model_validate(draft).model_dump(mode="json")
+    normalized = parse_draft(draft).model_dump(mode="json")
     digest = canonical_sha256(normalized)
     observations = _receipts(receipts, digest)
     # Validate authoritative context even before a provider is called.
@@ -480,7 +527,8 @@ def coordinator_prompt(*, draft, critic, stage, round_number, receipts=()):
         context = _prompt_context(draft, stage, round_number, receipts)
         review = _normalize_critic(critic, draft, stage, round_number, receipts).model_dump(mode="json")
         context.update(critic=review, critic_sha256=canonical_sha256(review),
-                       allowed_next_actions=coordinator_actions(review))
+                       allowed_next_actions=coordinator_actions(review),
+                       verified_coordinator_sets=coordinator_sets(review))
         context["language_review_mode"] = language_mode.mode()
         return language_mode.policy(COORDINATOR_POLICY) + "\nNEPATIKIMI_DUOMENYS_JSON\n" + json.dumps(context, ensure_ascii=False)
     except (ValueError, TypeError, KeyError, IndexError):
@@ -505,8 +553,10 @@ def model_output_schema(role):
 
 def output_schema(role, context):
     """Constrain provider references and hashes; authoritative post-check stays strict."""
+    if role not in {"critic", "coordinator"}:
+        raise RunnerError("review_invalid")
     bound = _prompt_context(context["draft"], context["stage"], context["round_number"], context["receipts"])
-    schema = BusinessCriticOutput.model_json_schema() if role == "critic" else model_output_schema(role)
+    schema = BusinessCriticOutput.model_json_schema() if role == "critic" else coordinator_provider_schema()
     if role == "critic":
         language_mode.constrain_findings(schema, "BusinessFinding")
         finding = schema["$defs"]["BusinessFinding"]["properties"]

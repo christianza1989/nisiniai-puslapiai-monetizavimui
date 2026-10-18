@@ -1,15 +1,16 @@
 """Actual restricted PostgreSQL customer configuration, synthetic identity, zero provider."""
 import asyncio
-import os
-import subprocess
-import sys
+import importlib.util
 from datetime import timedelta
+from pathlib import Path
 from uuid import uuid4
 
 import httpx
 import pytest
+from alembic.migration import MigrationContext
+from alembic.operations import Operations
 from fastapi.exceptions import ResponseValidationError
-from sqlalchemy import delete, func, select, update
+from sqlalchemy import delete, func, select, text, update
 from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_creation_registration import provision, session_id
@@ -419,10 +420,27 @@ async def test_database_identity_config_immutability_and_populated_downgrade_gua
         with pytest.raises(DBAPIError):
             async with AsyncSession(c["admin"]) as tx, tx.begin():
                 await tx.execute(update(model).where(model.id == key).values(**change))
-    result = await asyncio.to_thread(subprocess.run, [sys.executable, "-m", "alembic", "downgrade",
-        "0021_customer_profile_history"], capture_output=True, env=os.environ.copy())
-    assert result.returncode != 0
-    assert b"Customer agent history exists" in result.stderr + result.stdout
+    # Exercise this exact historical boundary. Traversing from the current head
+    # can correctly stop first at a newer retained Task/history guard instead.
+    migration_path = Path(__file__).resolve().parents[1] / "migrations/versions/0022_customer_agent_configs.py"
+    spec = importlib.util.spec_from_file_location("customer_config_rollback_guard", migration_path)
+    migration = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(migration)
+    assert migration.revision == "0022_customer_agent_configs"
+
+    def downgrade(connection):
+        # Bind this freshly loaded module locally: the expected DB exception
+        # must not leave Alembic's process-global op proxy on a closed connection.
+        migration.op = Operations(MigrationContext.configure(connection))
+        migration.downgrade()
+
+    async with c["admin"].connect() as connection:
+        version = await connection.scalar(text("SELECT version_num FROM alembic_version"))
+    with pytest.raises(DBAPIError, match="Customer agent history exists"):
+        async with c["admin"].begin() as connection:
+            await connection.run_sync(downgrade)
+    async with c["admin"].connect() as connection:
+        assert await connection.scalar(text("SELECT version_num FROM alembic_version")) == version
     assert await counts(c) == (1, 1)
 
 

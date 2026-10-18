@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Dedicated retained0049 QA; no operating or provider/model access. First11PASS retained; fixture import lint correction then final11PASS2.92s and scoped Ruff PASS.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/customer-registration-qa.py fixture-and-concurrency",
+      "result": "PASS",
+      "evidence": "Retained dedicated PostgreSQL11PASS2.92s; log SHA2560c4b1d54d9f57b22116bbf1f8fb8d5d9807ea694f4807475a5b2927c058cc542. Reproduction and outcomes in docs/EXTERNAL_BUSINESS_REGISTRATION.md."
+    },
+    {
+      "command": "python -m ruff check runtime/src/pinet_core/customer/registration.py runtime/scripts/customer_public_admin.py runtime/tests/test_customer_registration_pg.py",
+      "result": "PASS",
+      "evidence": "All checks passed on the three exact changed Python files."
+    }
+  ],
+  "eventId": "28cfec71-72cb-4b37-8767-568760981758",
+  "sequence": 2,
+  "at": "2026-10-18T09:51:47.618Z"
+}

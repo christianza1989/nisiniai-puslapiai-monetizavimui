@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/198",
+  "note": "Source1d8ea02bb19357d441c935297b678e6b97471d99 to main PR198. Exact7staged blob safety PASS179142bytes0findings; handoff fetch14:30:29UTC main9a ancestor. Autorizuotos helper sesijos nepriklausoma3source failų peržiūra beP0–P2; jo review nėra mano76link patikros pakartojimas. Main neturi core-upgrade-check: naudotas Root43524a78786911f45192af20ea3f926bd114f37d read-only įrankis --root į šį worktree --base9a --head1d8: PASS1shared,0uncovered,0errors; papildomai visų3declared source path scope peržiūra. Įrankio pristatymo main ar runtime adoption nėra. Šis įvykis ir WORKSTREAMS uždarymas tik metadata, ankstesni journal failai nepakeisti.",
+  "eventId": "37da0ec1-0f43-4efc-af28-be674dbc8912",
+  "sequence": 3,
+  "at": "2026-10-17T14:31:52.413Z"
+}

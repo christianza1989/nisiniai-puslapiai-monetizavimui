@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Root locally adopted S40 at3b7 after idle backup/preservation. First ebc cohort10PASS5FAIL147.19s retained; obsolete Sharp lib/index.js synthetic fixture repaired through package exports only. Ordinary owner continuity+separateS6 CURRENT; original intake_artifact_changed receipt preserved. Local adapter adoption, not main merge/other PC.",
+  "checks": [
+    {
+      "command": "Actual dedicated empty PostgreSQL HTTP/RLS/Node tests/test_private_preview_pg.py + test_private_native_continuity_pg.py on3b7",
+      "result": "PASS",
+      "evidence": "15PASS285.83s; original0032 unchanged; provider0; private preview40-exports-fixed cohort retained."
+    },
+    {
+      "command": "Ordinary authenticated customer continuity plus separate S6 and exact byte comparison",
+      "result": "PASS",
+      "evidence": "Both CURRENT; native site SHA774339dcdc0cef0acb4b327c07e119446aa9f1a27a16563d9d184c5b775400ee unchanged. Public canonicalNULL, accepted Job usage unchanged, no reimport/provider."
+    }
+  ],
+  "eventId": "1d6f8649-cbb4-449c-8614-2fb9d704cea9",
+  "sequence": 5,
+  "at": "2026-10-15T22:23:42.659Z"
+}

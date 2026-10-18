@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Scope97d8-to7acb2a7 committed coverage PASS for all17 shared paths. Default current-main533597c-to7acb2a7 coverage BLOCKED:487shared paths, inherited uncovered paths and old journal validation errors outside this scope. First full output retained in task tool history. Root notified with exact representative paths/record IDs and owns global integration remediation. No main-delivery/default-gate PASS is claimed; historical records remain immutable. This continuation only documents that dependency.",
+  "checks": [
+    {
+      "command": "node scripts/core-upgrade-check.mjs --base 97d8c756f01a172bf844464a03a0e6eda848b8eb --head 7acb2a7dd0de8162f43358a1323fc3c719f87ee8",
+      "result": "PASS",
+      "evidence": "17shared changes,upgrade681076b1-7851-493d-8cde-76fd7775d9a3 verified,no uncovered paths,no errors. Separate default-main command FAILED and is explicitly disclosed in note/docs/PR."
+    }
+  ],
+  "eventId": "4c69a95d-7163-4fdb-9700-f547c2bd1500",
+  "sequence": 4,
+  "at": "2026-10-18T05:09:10.738Z"
+}

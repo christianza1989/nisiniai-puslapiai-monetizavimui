@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "New explicit incremental-preview descriptor is excluded only from legacy fixed-script Episode evidence. Historical missing-version/native v1 payloads and serialization stay included and unchanged. No actual helper DB/provider operations.",
+  "checks": [
+    {
+      "command": "qa-venv python -m pytest -q agent-business-core/runtime/offline_tests",
+      "result": "PASS",
+      "evidence": "1908 passed,8 skipped,67 subtests passed in86.75s including explicit evidence-query predicate and legacy serialization tests. New actual two-message native QA case also asserts ordinary scripted test-run listing excludes that Conversation; collected only, not executed."
+    }
+  ],
+  "eventId": "de75f337-c0e7-44e3-8d39-a50e10b9fc72",
+  "sequence": 2,
+  "at": "2026-10-15T23:51:57.213Z"
+}

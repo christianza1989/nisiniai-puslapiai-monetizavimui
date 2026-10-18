@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Preserved new regression baseline12FAIL/83deselected3.17s for missing provider exact-set constraints. After source repair, first broad run240PASS/1FAIL/7SKIP16.29s exposed the intentionally changed coordinator policy hash in the historical compatibility test. Kept original hash constants, explicitly recover historical policy by removing the new directive, and test the intended new coordinator snapshot separately; critic and original model schemas unchanged. Added that existing test_creation_compact_review.py to owned test-only scope, no extra shared source. Original real Creation96dd and malformed coordinator list remain unchanged.",
+  "eventId": "1ef8c8c5-157f-41d8-a12c-3f408e7b1de9",
+  "sequence": 2,
+  "at": "2026-10-15T14:56:30.838Z"
+}

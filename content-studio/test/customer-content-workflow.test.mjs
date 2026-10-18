@@ -11,6 +11,61 @@ import {IMAGE_POLICY} from '../src/image-pipeline.mjs';
 
 const digest=v=>createHash('sha256').update(stableV2(v)).digest('hex');
 const rawHash=v=>createHash('sha256').update(v).digest('hex');
+async function deferredCopyFixture(t) {
+  const f=await sandbox(t);
+  const ids=f.mutate(`const s=await m.getSite(siteId),home=s.pages.find(p=>p.type==='home'),future=s.pages.find(p=>p.type==='guide'&&!p.body.length),hub=s.pages.find(p=>p.type==='index');
+    const link=p=>({type:'link',text:p.title,target:{kind:'page',pageId:p.id}});
+    await m.editPage(siteId,home.id,{body:[{type:'richParagraph',content:[link(future),{type:'text',text:' ir '},link(hub)]}],
+      links:[{targetPageId:future.id,label:'Būsimas gidas'},{targetPageId:hub.id,label:'Gidai'}],
+      linkSuggestions:[{targetPageId:future.id,label:'Būsimas gidas',reason:'Dar neparengtas'},{targetPageId:hub.id,label:'Gidai',reason:'Esamas indeksas'}],
+      editorial:{...home.editorial,relatedPageIds:[future.id,hub.id]}});
+    console.log(JSON.stringify({home:home.id,future:future.id,hub:hub.id}));`);
+  const s=f.status(),p=s.pages.find(p=>p.pageId===ids.home);
+  return {...f,ids,request:{command:'amend-page-reviewed-copy',operationId:randomUUID(),pageId:p.pageId,
+    expectedSiteHash:s.expectedSiteHash,expectedRevisionHash:p.revisionHash,expectedPlanningHash:p.planningHash,
+    deferUnreadyPageIds:[ids.future],patch:{body:[{type:'richParagraph',content:[{type:'text',text:'Skaitykite '},
+      {type:'link',text:'esamus gidus',target:{kind:'page',pageId:ids.hub}}]}]}}};
+}
+
+test('deferred-copy v2 removes only explicitly named empty future links and replays exact evidence',async t=>{
+  const f=await deferredCopyFixture(t),before=await f.read(),r=f.ok(f.request).operation.result;
+  assert.equal(r.version,'native-reviewed-copy-amendment.v2');
+  const after=await f.read(),page=after.pages.find(p=>p.id===f.ids.home);
+  assert.deepEqual(page.links.map(l=>l.targetPageId),[f.ids.hub]);
+  assert.deepEqual(page.linkSuggestions.map(l=>l.targetPageId),[f.ids.hub]);
+  assert.deepEqual(page.editorial.relatedPageIds,[f.ids.hub]);
+  assert.deepEqual(after.assets,before.assets);assert.deepEqual(page.publishedRevision,before.pages.find(p=>p.id===f.ids.home).publishedRevision);
+  const bytes=await readFile(f.file),replayed=f.ok(f.request).operation.result;
+  assert.equal(replayed.changed,false);assert.equal(replayed.replayed,true);assert.equal(replayed.receiptSha256,r.receiptSha256);
+  assert.equal(f.call({...f.request,deferUnreadyPageIds:[f.ids.hub]}).value.code,'workflow_amendment_receipt_conflict');
+  const legacy={...f.request};delete legacy.deferUnreadyPageIds;
+  assert.equal(f.call(legacy).value.code,'workflow_amendment_receipt_conflict');
+  assert.deepEqual(await readFile(f.file),bytes);await f.unchanged();
+});
+
+test('deferred-copy v2 reconciles a lost native write without rewriting or losing future drafts',async t=>{
+  const f=await deferredCopyFixture(t);
+  assert.equal(failAmendment(f,true).code,'inert_interruption');
+  const bytes=await readFile(f.file),r=f.ok(f.request).operation.result;
+  assert.equal(r.replayed,true);assert.equal(r.changed,false);
+  assert.deepEqual(await readFile(f.file),bytes);
+  assert.ok((await f.read()).pages.some(p=>p.id===f.ids.future&&!p.body.length));await f.unchanged();
+});
+
+test('deferred-copy refuses ready targets, extra graph changes and reused request identity',async t=>{
+  const f=await deferredCopyFixture(t),before=await readFile(f.file);
+  for(const change of [{deferUnreadyPageIds:[]},{deferUnreadyPageIds:[f.ids.future,f.ids.future]},
+    {deferUnreadyPageIds:[f.ids.hub]}, {deferUnreadyPageIds:['unknown-page']},
+    {patch:{body:[{type:'paragraph',text:'Taip pat pašalintas esamas indeksas.'}]}},
+    {patch:{title:'Nėra aiškios turinio pataisos'}}]) {
+    assert.equal(f.call({...f.request,...change}).status,1);assert.deepEqual(await readFile(f.file),before);
+  }
+  f.write(f.ids.future);
+  const s=f.status(),p=s.pages.find(p=>p.pageId===f.ids.home),bytes=await readFile(f.file);
+  assert.equal(f.call({...f.request,expectedSiteHash:s.expectedSiteHash,expectedRevisionHash:p.revisionHash,
+    expectedPlanningHash:p.planningHash}).value.code,'workflow_deferred_target_not_unready');
+  assert.deepEqual(await readFile(f.file),bytes);await f.unchanged();
+});
 async function reviewedCopyFixture(t,patch={title:'Patikslintas privatus bandomojo puslapio pavadinimas'}) {
   const f=await sandbox(t),s=f.status(),p=s.pages.find(p=>p.type==='home');
   return {...f,request:{command:'amend-page-reviewed-copy',operationId:randomUUID(),pageId:p.pageId,

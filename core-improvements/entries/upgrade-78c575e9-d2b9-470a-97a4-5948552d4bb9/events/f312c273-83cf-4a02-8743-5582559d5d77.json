@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "command": "PYTHONPATH=src;tests;scripts python -m pytest offline_tests/test_live_preview_runtime.py offline_tests/test_live_preview_wire.py offline_tests/test_candidate_preview_preparation.py offline_tests/test_site_build_inspection.py offline_tests/test_site_build_lifecycle.py tests/test_foundation_bridge.py tests/test_foundation_receipts.py -q -k \"not real_studio_monitor\" --tb=short",
+      "result": "PASS",
+      "evidence": "209PASS21.09s;1deselected actual child-monitor test;1existing deliberate invalidUUID warning; private SHA256dab6c10ab8134ed027cc9288c22110c3384d7827569eae66a1d95615a2eb7496."
+    },
+    {
+      "command": "node --test content-studio/test/customer-live-preview.test.mjs",
+      "result": "PASS",
+      "evidence": "19mock-onlyPASS329.94ms including callback wait timer cleanup; SHA2567fe9ef19a5daf070d6d789555eb3535e20f8b8159c4df036fab45c6200fd1991."
+    },
+    {
+      "command": "node scripts/repository-safety.mjs --staged; node --check content-studio/scripts/customer-live-preview.mjs; git diff --cached --check",
+      "result": "PASS",
+      "evidence": "Exact17staged blobs PASS before this metadata-only event; syntax/whitespace PASS; no secrets/artifacts/runtime databases or foreign paths."
+    }
+  ],
+  "note": "Final metadata uses exact test-selection predicate (prior event shorthand not_real_studio_monitor was a label, not executable selection). Frozen wire Git diff empty; exact scoped staged source plus journal/docs/tests only. No actual runtime adoption claim.",
+  "status": "local-verified",
+  "eventId": "f312c273-83cf-4a02-8743-5582559d5d77",
+  "sequence": 4,
+  "at": "2026-10-16T21:58:51.344Z"
+}

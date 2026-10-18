@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Define the authenticated customer live-preview lease and read-only availability contract before runtime/frontend integration; requests bind accepted revision and observed native context, never caller-selected origin or proof.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview_wire.py",
+    "agent-business-core/runtime/scripts/customer_live_preview_contract.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root explicit missing product capability and approved wire/lifecycle refinements from exact8cdf8d99c5e548fa27662f84a34c93d00809be38/public255fea0813bf1aabeaeea2f2de0b29564118f2fc. Issue66 reservation6224996410; API actual actions/codegen/portal owned by Root. Wire first; no runtime route/server start in this packet.",
+    "Pure missing-module baseline1FAIL0.31s SHA25603950912bd455a34a96b35394e6da84d1be8edbc313a0adda0e95c897ca29d29 retained privately. Strict request/response DTOs and standalone schema encode short current-ready-only derived127.0.0.1 URL, availability without starts, opaque proof separation and UNVERIFIED launch/full-site.",
+    "New files only; later runtime lease uses canonical foundation.capture/verify/prepare_preview, native/S6 guard, withPreparedCandidatePreview and studio guarded transport. No new renderer/migration/globalconfig/paidcalls/DB/current-case/process/browser or actual adoption in wire source."
+  ],
+  "rollback": "Remove only the new unused wire/contract files before runtime adoption; preserve original PreparedPreview proofs, expired-session refusals and all prior evidence. Runtime/consumer integration and actual guarded process acceptance require separate source/events.",
+  "id": "upgrade-db754a52-bcdf-41de-b3e9-3672c8f8a17a",
+  "branch": "codex/customer-live-preview-20261017",
+  "baseSha": "8cdf8d99c5e548fa27662f84a34c93d00809be38",
+  "createdAt": "2026-10-16T21:28:13.560Z"
+}

@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Actual source62abbed947a7653c938526ea35fdf804581cd3eb/public255fea adopted in own serving checkout: same0044 full backup/cutover88tables269native files exact, original0032 preserved, normal owner current-source intake/S6 passed, physical015c3074 unchanged. API18871PID3184/supervisor11676, all paid workers/channels held. New scope9202348f80680897948cc035105038d0da72b3f29f01016a9aad06d6ad8b8cc1 prepared from a fresh checkout on its FIRST attempt after child Git config repair; no same-scope retry required. Actual current maintained checker HTTP11pages/4articles and indexes/private404 returned0issues, packaged931bc66d5f4e246688b984b309cdd22e353b89a8a5cd974b443c8d76330c1f7. Earlier actual form/measurement/stop-reopen-stop1+1 evidence remains bound to old95f scope, preserved and read-only reconfirmed after new source; no form resent or old PASS relabelled. Chrome tool still kernel-assets OSerror3 at final retry; browser/full audit/Foundation/launch/agents remain UNVERIFIED. All guarded preview children closed; no provider calls.",
+  "checks": [
+    {
+      "command": "same operational0044 source-only adoption and normal owner continuity at62abbed/public255fea",
+      "result": "PASS",
+      "evidence": "Fresh paired fetched main808/ec8; current exact sourceclean; full backup,88tables/269native files unchanged, original0032 preserved; intake/S6HTTP200current and approved physical015c3074 exact."
+    },
+    {
+      "command": "wellness-complete-preview.private.py prepare",
+      "result": "PASS",
+      "evidence": "FRESH first-attempt native build/preparation11pages, exact source62abbed/public255fea, new scope920234/new packaged931bc66; no retry, forged proof, provider call or source/owner/storage guard waiver."
+    },
+    {
+      "command": "wellness-complete-technical.private.py inspect",
+      "result": "PASS",
+      "evidence": "Maintained current runtime checker under live owner/Session/native/source/package guards:11pages/4articles,0rendered/discovery/private-path issues; all temporary children closed; browser/full-site/launch UNVERIFIED."
+    },
+    {
+      "command": "read-only old-scope SQLite counts and approved native SHA after final source adoption",
+      "result": "PASS",
+      "evidence": "Saved synthetic1lead/1event retained after stop/reopen/stop and source-only upgrade; original approved physical015c3074 unchanged. No duplicate form, email, model or deployment."
+    },
+    {
+      "command": "node scripts/core-upgrade-check.mjs --base c6176563d42481bf1c1243ccaa3c2db814f8f9db --head 62abbed947a7653c938526ea35fdf804581cd3eb",
+      "result": "PASS",
+      "evidence": "Incremental9shared/0uncovered/0errors. Full-main inherited historical coverage debt remains separately unresolved; not a main merge readiness claim."
+    }
+  ],
+  "eventId": "fbc1d3c5-5413-4874-a366-35435f912e9b",
+  "sequence": 3,
+  "at": "2026-10-16T10:23:02.008Z"
+}

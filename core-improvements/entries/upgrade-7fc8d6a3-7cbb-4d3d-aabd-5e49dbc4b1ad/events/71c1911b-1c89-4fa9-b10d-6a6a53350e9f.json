@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Current owned mail contract now describes common durable Task/Run entry and marks the earlier direct-batch proof historical. Dated evidence is preserved; handoff explicitly separates source, operatingba16/0045, pending broader regression and closed174budget. No changed wire/version/owner permissions or deployment claim.",
+  "checks": [
+    {
+      "command": "Read current CLI/handler/service and compare updated docs against final21 display PG and49relatedpure results",
+      "result": "PASS",
+      "evidence": "Entry filename delegates to mail_display_task; commonTask owner_action enqueue/read tested in final21. Contract links resolve to existing MAIL_DISPLAY_TASKS/SCHEMA docs; exact original API unchanged, GET read-only. Dated proof preserved. Final21logSHA90b0bac8477b1641f46cba352f437956f14e63852f19b4ca2154827622e6ff5b; pending57explicit."
+    }
+  ],
+  "eventId": "71c1911b-1c89-4fa9-b10d-6a6a53350e9f",
+  "sequence": 2,
+  "at": "2026-10-18T01:44:45.116Z"
+}

@@ -32,6 +32,32 @@ Tai dar nepaleidžia DB, migracijų, modelių, voice/SMTP ar klientų worker. Ti
 
 ## Git darbo taisyklės abiem AI
 
+### Siauro klono `main` sekimas
+
+Po `--single-branch` klonavimo vien rankinis `origin/main` fetch dar nereiškia,
+kad Git gali nustatyti tos šakos sekimą. `remote.origin.fetch` gali apimti tik
+seną tęsinio šaką. Tuomet valdomo worktree failai išskleidžiami, bet jo kūrimas
+nutrūksta su `cannot set up tracking information` / `starting point ... is not
+a branch`, nors `show-ref` rodo aktualų `refs/remotes/origin/main`.
+
+Prieš kartojant patikrinti tikrą parent repo `remote.origin.fetch` ir main ref.
+Jei trūksta būtent main mapping, papildyti jį išsaugant esamus įrašus:
+
+```powershell
+git config --get-all remote.origin.fetch
+git show-ref --verify refs/remotes/origin/main
+git remote set-branches --add origin main
+git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+```
+
+Pridėjimo komandos nekartoti, jei tikslus mapping jau yra. Tai nepakeičia
+checkout, HEAD ar failų ir neatstoja įprasto porinio freshness gate. Prieš
+naują sesijos kūrimo bandymą patikrinti, ar pirmas bandymas nepaliko jau sukurto
+worktree ar užduoties; turimą rezultatą atkurti/prijungti pagal app taisykles,
+ne kurti dublius ir neperrašyti svetimos šakos. 2026-10-18 atvejis atskirame
+mažame Git bandyme atkurtas prieš papildymą ir patikrintas po jo; tikras naujas
+sesijos worktree po papildymo sėkmingai pradėjo darbą.
+
 1. Perskaityti AGENTS/WORKSTREAMS ir aktyvios nišos dokumentus. Naujas kompiuteris nepriskiriamas kitai nišai pagal seną absoliutų kelią.
 2. Nuo aktualaus `main` sukurti aiškią darbo šaką, pvz. `ai/madbeauty-homepage` arba `ai/core-email-routing`. Skirtinguose kompiuteriuose nenaudoti vienos darbo šakos.
 3. Prieš darbą `git fetch origin`, patikrinti `git status`; `git pull --ff-only` tik švariai savo šakai. Kitų vietinių pakeitimų neperrašyti ir neslėpti reset/stash.

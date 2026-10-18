@@ -1,0 +1,35 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Materialize source-bound post-commit Lithuanian mail display work through common durable Task and Run accounting",
+  "category": "code",
+  "evidence": [
+    "The explicit one-mail CLI retains a private one-call file claim, but canonical newly captured mail has no automatic common durable Task/Run display job. Filesystem publication after a DB commit would create a separate orphan/recovery gap. Existing runner post-execute validation/final-authority failures lose already observed usage and Record rejects unknown usage. Use a distinct explicitly bounded policy/one-call Job and atomically committed DB Record over existing helpers, not an acquisition fourth role or second queue."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_contract.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_authority.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_policy.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_service.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_handler.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/runner.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/translations.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/config.py",
+    "agent-business-core/runtime/scripts/mail_display_policy.py",
+    "agent-business-core/runtime/scripts/mail_display_task.py",
+    "agent-business-core/runtime/scripts/mail_display_translate.py",
+    "agent-business-core/runtime/offline_tests/test_mail_display_tasks.py",
+    "agent-business-core/runtime/offline_tests/test_mail_view.py",
+    "agent-business-core/runtime/tests/test_mail_display_tasks_pg.py",
+    "agent-business-core/runtime/tests/test_mail_view_pg.py",
+    "docs/MAIL_DISPLAY_TASKS.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Hold separate display flags/actor list and disable policy only; preserve common Task/Run and immutable charged Job history, original mail and legacy sidecars/claims. Revert new display handler/CLI/projection after idle verification. Helper0047 downgrade refuses populated history. No acquisition budget, transport or original MailMessage rewrite.",
+  "id": "upgrade-b48b4b3b-b72e-4a3f-9969-2383717f7846",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "d415c8727facc53ab14a34438f9bb2cce08e563a",
+  "createdAt": "2026-10-18T00:46:00.264Z"
+}

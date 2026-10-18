@@ -48,9 +48,10 @@ def coordinator(context):
 
 def runner(calls, *, first_bad=False, always_revise=False, current_graph=False):
     async def run(context, authorized, *, role, seconds):
-        # Callback receives the remaining overall two-round Job budget. The
-        # production adapter independently clamps each actual CLI to300s.
-        assert 0 < seconds <= 2 * settings().creation_runner_seconds and await authorized()
+        # Callback receives the remaining canonical profile's overall Job budget;
+        # the production adapter separately clamps each role's actual CLI time.
+        from pinet_core.creation import execution_profiles as profiles
+        assert 0 < seconds <= adapter.deadlines.job_seconds(profiles.selected()) and await authorized()
         calls.append(role)
         if role == "creator":
             if context.get("language_repair"):

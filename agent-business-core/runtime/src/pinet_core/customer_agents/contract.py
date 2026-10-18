@@ -18,6 +18,7 @@ def document():
     operations = {
         ("get", "/customer/v2/creations/{creation_id}/agents"): "listCustomerAgentDrafts",
         ("post", "/customer/v2/creations/{creation_id}/agents"): "createCustomerAgentDraft",
+        ("get", "/customer/v2/creations/{creation_id}/agents/preparation-readiness"): "getCustomerAgentPreparationReadiness",
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}"): "getCustomerAgentDraft",
         ("post", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions"): "reviseCustomerAgentDraft",
         ("get", "/customer/v2/creations/{creation_id}/agents/{agent_id}/revisions"): "listCustomerAgentDraftRevisions",

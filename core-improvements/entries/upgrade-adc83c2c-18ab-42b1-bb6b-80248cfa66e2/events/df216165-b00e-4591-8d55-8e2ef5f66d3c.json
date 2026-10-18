@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Root first actual new empty0044 migration at cleancef15af4a122d23bfb8c3b10bad724c242cc5ea6 (helperc610499) FAILS before bootstrap or native tests: PostgresSyntaxError syntax error at end of input while compiling patched public.workspace_direct_task_fence. Exact failed DDL retained separately, SHA256306fb7e4af3db08ce1a771a2a48926382d831d951bc554f97a64cd784981c735; no credentials/customer values. New unparenthesized CASE in a PL/pgSQL IF condition is the localized source cause, repair coordinated with owner; no final END/delimiter/fence removal. Failed QA database/log retained, no in-place repair. Original0032 read-only snapshot comparison remains PASS. Serving3b7/UI741 unchanged, provider0; all7new plus67regression native cases remain unexecuted at this source. Both Stage2 journals reserved with Root; no concurrent helper events.",
+  "eventId": "df216165-b00e-4591-8d55-8e2ef5f66d3c",
+  "sequence": 5,
+  "at": "2026-10-16T00:06:36.541Z"
+}

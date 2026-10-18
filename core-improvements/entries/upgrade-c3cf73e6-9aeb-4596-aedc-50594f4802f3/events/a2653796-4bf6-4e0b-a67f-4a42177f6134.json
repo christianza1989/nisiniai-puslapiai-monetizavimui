@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Meaningful current-code baseline executes actual Service.drive and studio._execute monitor with fake streams: serve selects1s instead of0.2s, unrelated default1s passes.1FAIL1PASS4.99s SHA0d5b554e1ee24cb4c437c2057131d01e3dbd7a899ca6ca319c9f7c7eafd0ae3c retained. This is not a missing-keyword/function surrogate. Helper still owns both runtime source paths; Root has not modified them, and the narrow interval correction waits for frozen packet handoff. Planned change only increases fresh-check frequency for serve, without heartbeat/time/permission changes. No new actual producer/DB/provider/serving operation.",
+  "eventId": "a2653796-4bf6-4e0b-a67f-4a42177f6134",
+  "sequence": 2,
+  "at": "2026-10-17T09:45:59.002Z"
+}

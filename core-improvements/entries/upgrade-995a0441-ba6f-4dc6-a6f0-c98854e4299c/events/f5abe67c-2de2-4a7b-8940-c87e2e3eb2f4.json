@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Original typed positive/hash baseline2FAIL7PASS2.26s SHA5888f700e83483322a3ceb4cc762256b654429ec1c628ed81b6c47e272ea1a2e retained. Intermediate1FAIL236PASS11.93s was the old private-v2 instruction assertion after genuine v3 versioning; updated to require v3. Intermediate1FAIL267PASS10.87s was a new rationale-response fixture missing its exact edit value; corrected fixture only. S36 exact design/rationale selector preserved. Current source uses new typed classes and strict provider v3; legacy five classes remain AST/schema exact. All logs/references private and immutable; no provider/DB/current-case action.",
+  "eventId": "f5abe67c-2de2-4a7b-8940-c87e2e3eb2f4",
+  "sequence": 2,
+  "at": "2026-10-15T16:05:57.147Z"
+}

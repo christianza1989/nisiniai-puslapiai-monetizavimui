@@ -1,0 +1,18 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Keep the authority-observation fake SQL graph compatible with the canonical exact-revision Registration lookup",
+  "category": "workflow",
+  "evidence": [
+    "Root independently reproduced native-anchor mutation setup failing on FakeTx.scalar's unknown Registration SELECT before either canonical mutation assertion,1FAIL3.62s raw SHA02a44aac44ebf3c4e8c36f4fac429ae313b5303388ab93048f292d34fe12c12a. The previously integrated Registration continuity production path is valid; this pre-registration fixture must explicitly model absence under exact creation/environment/revision/populate_existing predicates."
+  ],
+  "paths": [
+    "agent-business-core/runtime/offline_tests/test_authority_observation.py",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert only this fake SQL branch and Registration-lookup assertion if the canonical query changes again; preserve the retained native/final authority mutation cases and production validators. No runtime migration or operational data rollback is involved.",
+  "id": "upgrade-784f3aee-1de7-41b4-ab50-0bfd220c046d",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "0a2b3a58da8faa8ef195b6b9c730d91aafcd5982",
+  "createdAt": "2026-10-18T00:34:44.908Z"
+}

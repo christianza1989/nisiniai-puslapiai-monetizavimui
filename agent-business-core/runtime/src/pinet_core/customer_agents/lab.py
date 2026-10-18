@@ -136,6 +136,9 @@ async def _snapshot_body(tx, session, creation, registry, agent, expected_revisi
 
 async def observe(tx, session, creation, identity, frozen):
     """Before policy/index locks; canonical creation lock already serializes edits."""
+    if isinstance(frozen, dict) and frozen.get("version") == "customer-agent-direct-preview.v1":
+        from .preview import observe as preview_observe
+        return await preview_observe(tx, session, creation, identity, frozen)
     guard()
     value = Episode.model_validate(frozen)
     if value.execution_profile is not None:

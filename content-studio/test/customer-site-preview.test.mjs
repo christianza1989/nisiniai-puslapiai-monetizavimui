@@ -6,7 +6,7 @@ import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import os from 'node:os';
 import path from 'node:path';
-import {previewSource,previewEnvironment,previewDependencies,previewBuildDigest,previewProcess,previewAdmission,previewImportedRelease,previewRuntimeState} from '../scripts/customer-site-preview.mjs';
+import {previewSource,previewEnvironment,previewDependencies,previewBuildDigest,previewProcess,previewAdmission,previewImportedRelease,previewRuntimeState,createPreviewWorktree} from '../scripts/customer-site-preview.mjs';
 const site='creation-'+'a'.repeat(32);
 const git=(root,args)=>execFileSync('git',args,{cwd:root,encoding:'utf8',stdio:['ignore','pipe','ignore'],windowsHide:true}).trim();
 async function temporary(t){
@@ -32,6 +32,23 @@ test('actual source root/current main are required; a copied child cannot borrow
   await writeFile(path.join(checkout,'lib/source.mjs'),'export const fixture=true;');
   await mkdir(path.join(checkout,'content-packages'));await writeFile(path.join(checkout,'content-packages/test.json'),'{}');assert.equal(await previewSource(checkout,sha),sha);
   await writeFile(path.join(checkout,'foreign-execution.mjs'),'changed');await assert.rejects(previewSource(checkout,sha),/source_dirty/);
+});
+
+test('generated deep checkout works without the user Git profile or a global longpaths setting',async t=>{
+  const {root}=await repository(t),relative='migration/'+('nested-source-'.repeat(6))+'/retained-original-content.txt';
+  await mkdir(path.dirname(path.join(root,relative)),{recursive:true});await writeFile(path.join(root,relative),'synthetic retained source');
+  git(root,['add','.']);git(root,['-c','user.name=Isolated QA','-c','user.email=qa@example.invalid','commit','--quiet','-m','Deep synthetic source']);
+  const sha=git(root,['rev-parse','HEAD']);git(root,['update-ref','refs/remotes/origin/main',sha]);
+  git(root,['config','core.longpaths','false']);
+  const checkout=path.join(root,'output/foundation-preview','a'.repeat(64),'repo');
+  assert.ok(path.join(checkout,relative).length>260);
+  const saved=process.env.GIT_CONFIG_GLOBAL;process.env.GIT_CONFIG_GLOBAL=path.join(root,'absent-global-config');
+  try{
+    createPreviewWorktree(root,checkout,sha);
+    assert.equal(await readFile(path.join(checkout,relative),'utf8'),'synthetic retained source');
+    assert.equal(await previewSource(checkout,sha),sha);
+    assert.equal(git(root,['config','--local','--get','core.longpaths']),'false');
+  }finally{if(saved===undefined)delete process.env.GIT_CONFIG_GLOBAL;else process.env.GIT_CONFIG_GLOBAL=saved;}
 });
 
 test('preview environment allows OS paths and explicit local holds without model/account/provider settings',()=>{

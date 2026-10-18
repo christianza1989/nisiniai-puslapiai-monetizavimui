@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Primary integrating owner ran actual isolated PostgreSQL HTTP/RLS/native Node QA on clean source6b2b0220f9dc5dfbd35a1a55a1f8c4e374344260 and unchanged companion1a26f289092cecadc5799de898e809dc1769498a.10PASS121.19s, provider0. Original0032 database six critical counts preserved. New empty QA database retained; no ordinary customer recovery or serving adoption yet. First de40 native9PASS1FAIL82.49s retained SHA08cae4d5ed57b425880e72fbf354e21842ced9deca1584fe3ad47ac94f65a4ec; minimal SQLNULL fix then complete native rerun, no relaxed source/owner/review gates.",
+  "checks": [
+    {
+      "command": "PINET_PRIVATE_PREVIEW_QA=1 python -m pytest tests/test_private_preview_pg.py -q -p no:cacheprovider",
+      "result": "PASS",
+      "evidence": "10passed121.19s; actual owner/foreign/stale/source/session/membership guards, concurrent pending reconciliation, append-only failed200 and terminal UUID replay/new UUID recovery, real Node native content/completion, User-lock membership revoke ordering. Private preview37-fixed/test-0.raw.private.log SHA111b80e840b8cd0132c62b23b8e27c7a4cf3b28a21639d2257a3e5e27168c5eb. Two empty-database migrations/bootstrap and original0032 preservation PASS. No provider call."
+    }
+  ],
+  "eventId": "a6c5abe2-2235-4916-aec2-f14330d50627",
+  "sequence": 9,
+  "at": "2026-10-15T17:13:21.705Z"
+}

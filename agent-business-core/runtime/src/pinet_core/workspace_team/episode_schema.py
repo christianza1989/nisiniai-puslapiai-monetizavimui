@@ -46,14 +46,17 @@ def patch_fence(definition, *, downgrade=False):
     return definition.replace(before, after, 1)
 
 
-def normalized_check(expression):
+def normalized_check(expression, *, numeric=False):
     """Compare the known boolean tree; never erase grouping or literal bytes.
 
     This deliberately small grammar accepts only the predicates in this CHECK.
     PostgreSQL's operand parentheses/text casts and associative AND/OR grouping
     are harmless. Unknown SQL syntax cannot become an eligible migration anchor.
     """
-    matches = list(re.finditer(r"'(?:[^']|'')*'|::text\b|<>|=|[A-Za-z_][A-Za-z_0-9]*|[()]", expression))
+    pattern = r"'(?:[^']|'')*'|::text\b|<>|=|[A-Za-z_][A-Za-z_0-9]*|[()]"
+    if numeric:
+        pattern += r"|[0-9]+"
+    matches = list(re.finditer(pattern, expression))
     end, tokens = 0, []
     for match in matches:
         if expression[end:match.start()].strip():

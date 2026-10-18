@@ -7,7 +7,7 @@ from copy import deepcopy
 from types import SimpleNamespace
 
 import pytest
-from test_creation_content_plan import planned
+from test_creation_content_plan import planned, typed
 from test_creation_review import decision, receipt, report
 from test_creation_review import draft as draft_fixture
 
@@ -20,6 +20,59 @@ from pinet_core.tasks.codex_transport import RunnerError
 draft = draft_fixture
 FIELD = "draft:/research/6/finding"
 FIXED = "Dalis mokymų skirta įmonių komandoms; kainos ir mūsų vykdymo galimybės dar nepatvirtintos."
+
+
+def test_typed_prose_patch_uses_selected_schema_and_preserves_all_page_roles(candidate):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value)
+    bound = language_patch.context(value, verified)
+    assert bound['draft_schema_version'] == 'business-draft.v3'
+    assert language_patch.output_schema(bound)['properties']['candidate_sha256']['const'] == review.draft_sha256(value)
+    before = deepcopy(value)
+    updated = language_patch.apply(value, verified, response(bound))
+    assert updated['schema_version'] == before['schema_version']
+    assert [p['type'] for p in updated['pages']] == [p['type'] for p in before['pages']]
+    assert updated['research'][6]['finding'] == FIXED
+    expected = deepcopy(before)
+    expected['research'][6]['finding'] = FIXED
+    assert updated == expected and value == before
+
+
+@pytest.mark.parametrize('reference', ['draft:/schema_version', 'draft:/pages/1/type'])
+def test_typed_structural_metadata_cannot_be_changed_by_prose_patch(candidate, reference):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value, fields=(reference,))
+    assert language_patch.context(value, verified) is None
+
+
+def test_typed_design_rationale_patch_keeps_s36_exact_scope(candidate):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value, fields=('draft:/brand/rationale',))
+    verified['findings'][0]['area'] = 'design'
+    bound = language_patch.context(value, verified)
+    assert bound and bound['allowed_refs'] == ['draft:/brand/rationale']
+    result = response(bound, {'draft:/brand/rationale':
+        'Pasirinkta aiški redakcinė kryptis padeda skaitytojui suprasti pasiūlymą ir jo ribas.'})
+    updated = language_patch.apply(value, verified, result)
+    assert updated['brand']['accent'] == value['brand']['accent']
+    assert updated['brand']['composition'] == value['brand']['composition']
+    assert updated['pages'] == value['pages'] and updated['schema_version'] == value['schema_version']
+    verified['findings'][0]['evidence_refs'].append('draft:/pages/1/type')
+    assert language_patch.context(value, verified) is None
+
+
+def test_typed_patch_does_not_accept_unknown_schema_selection_or_changed_candidate_roles(candidate):
+    value = normalize_creator(typed(candidate))
+    verified = critic(value)
+    bound = language_patch.context(value, verified)
+    bad = deepcopy(bound)
+    bad['draft_schema_version'] = 'business-draft.v2'
+    with pytest.raises(RunnerError, match='output_invalid'):
+        language_patch.output_schema(bad)
+    value['pages'][1]['type'] = 'about'
+    assert language_patch.context(value, verified) is None
+    with pytest.raises(RunnerError, match='output_invalid'):
+        language_patch.apply(value, verified, response(bound))
 
 
 @pytest.fixture
@@ -154,10 +207,12 @@ def test_content_area_does_not_expand_allowed_fields_or_bypass_full_review(candi
 
 
 @pytest.mark.parametrize("nine_fields", [False, True])
-async def test_team_uses_exact_mixed_patch_then_independent_second_review(candidate, monkeypatch, nine_fields, inert_team_actor):
+@pytest.mark.parametrize("prose_area", ["content", "design"])
+async def test_team_uses_exact_mixed_patch_then_independent_second_review(
+        candidate, monkeypatch, nine_fields, prose_area, inert_team_actor):
     calls, reservations, completions = [], [], []
     original = deepcopy(candidate)
-    target = "draft:/content_plan/0/primary_topic"
+    target = "draft:/brand/rationale" if prose_area == "design" else "draft:/content_plan/0/primary_topic"
     fixed_topic = "Vienos darbo užduoties pasirinkimas ir saugus mokymo pavyzdžio paruošimas."
     extra_refs = [f"draft:/research/{i}/finding" for i in range(6)] + ["draft:/business/interest_test"]
     expected_refs = [FIELD, target] + (extra_refs if nine_fields else [])
@@ -196,7 +251,7 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
             if value["findings"]:
                 value["findings"][0].update(area="language", evidence_refs=[FIELD])
                 extra = deepcopy(value["findings"][0])
-                extra.update(id="f_2", area="content", evidence_refs=[target])
+                extra.update(id="f_2", area=prose_area, evidence_refs=[target])
                 value["findings"].append(extra)
                 if nine_fields:
                     for index, refs in enumerate((extra_refs[:6], extra_refs[6:]), start=3):
@@ -221,10 +276,43 @@ async def test_team_uses_exact_mixed_patch_then_independent_second_review(candid
     assert all(state == "succeeded" for _, state, _ in completions)
     assert reservations[3][2]["language_repair"] is True
     assert evidence["critic"]["verdict"] == "accept_draft" and evidence["coordinator"]["decision"] == "accept_draft"
-    assert result["research"][6]["finding"] == FIXED and result["content_plan"][0]["primary_topic"] == fixed_topic
+    assert result["research"][6]["finding"] == FIXED
+    assert language_patch._leaf(result, target)[2] == fixed_topic
     result["research"][6]["finding"] = original["research"][6]["finding"]
-    result["content_plan"][0]["primary_topic"] = original["content_plan"][0]["primary_topic"]
+    parent, key, _ = language_patch._leaf(result, target)
+    parent[key] = language_patch._leaf(original, target)[2]
     assert result == candidate == original
+
+
+def test_design_explanation_and_language_corrections_patch_only_exact_three_leaves(candidate):
+    heading = "draft:/pages/0/sections/0/heading"
+    rationale = "draft:/brand/rationale"
+    extra = deepcopy(report(candidate)["findings"][0])
+    extra.update(id="f_2", area="design", evidence_refs=[rationale, "receipt:r_language_quality"],
+                 explanation="Vaizdinės krypties paaiškinimo sakinys neužbaigtas.",
+                 correction="Užbaikite paaiškinimo sakinį, nekeisdami pasirinktų dizaino parametrų.")
+    verified = critic(candidate, (FIELD, heading), extra_findings=[extra])
+    original = deepcopy(candidate)
+    bound = language_patch.context(candidate, verified)
+    assert bound is not None and bound["scope"] == "private_prose_edits_only"
+    assert bound["allowed_refs"] == [FIELD, heading, rationale]
+    assert bound["targets"][-1]["value_constraints"]["maxLength"] == 600
+    values = {FIELD: FIXED, heading: "Ką pasirinkti pirmiausia",
+              rationale: "Esami paviršiai ir akcentas išlieka. Teksto eilutę sudaro iki 68 ženklų."}
+    repaired = language_patch.apply(candidate, verified, response(bound, values))
+    for reference in values:
+        parent, key, _ = language_patch._leaf(repaired, reference)
+        parent[key] = language_patch._leaf(original, reference)[2]
+    assert repaired == original == candidate
+    assert bound["semantic_acceptance"] == "UNVERIFIED"
+
+
+@pytest.mark.parametrize("reference", ["draft:/brand/accent", "draft:/brand/composition", "draft:/brand",
+    "draft:/pages/0/sections/0/heading", "draft:/pages/0/sections/0/body"])
+def test_design_findings_outside_explanation_keep_full_creator_path(candidate, reference):
+    extra = deepcopy(report(candidate)["findings"][0])
+    extra.update(id="f_2", area="design", evidence_refs=["draft:/brand/rationale", reference])
+    assert language_patch.context(candidate, critic(candidate, extra_findings=[extra])) is None
 
 
 def test_compact_exact_canonical_instruction_profile_and_schema(candidate):

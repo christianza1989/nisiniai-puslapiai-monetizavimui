@@ -72,11 +72,14 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
                     line, pending = pending.split(b"\n", 1)
                     if line.strip():
                         on_event(json.loads(line))
+        if observation:
+            observation.mark("stdout_eof_seconds" if inspect else "stderr_eof_seconds")
         if inspect and on_event and pending.strip():
             on_event(json.loads(pending))
         return b"".join(chunks).decode("utf-8", errors="replace")
 
     process, tasks, receipt = None, [], None
+    stdout = stderr = waited = feeding = None
     try:
         if stderr_file or observation_file:
             # Adapters supply fixed paths in their exclusive owned private run folder.
@@ -95,7 +98,13 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
                 await process.stdin.drain()
                 process.stdin.close()
                 if observation:
-                    observation.save(stage="stdin_closed")
+                    observation.mark("stdin_closed_seconds", stage="stdin_closed")
+
+            async def wait_for_process():
+                result = await process.wait()
+                if observation:
+                    observation.mark("process_wait_done_seconds", process_returncode_observed=result)
+                return result
 
             async def supervise():
                 while process.returncode is None:
@@ -106,7 +115,7 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             stdout = asyncio.create_task(bounded(process.stdout, stdout_limit, True))
             stderr = asyncio.create_task(bounded(process.stderr, 65536))
             watcher = asyncio.create_task(supervise())
-            waited, feeding = asyncio.create_task(process.wait()), asyncio.create_task(feed())
+            waited, feeding = asyncio.create_task(wait_for_process()), asyncio.create_task(feed())
             tasks = [stdout, stderr, watcher, waited, feeding]
             pending = set(tasks)
             while any(not task.done() for task in (waited, stdout, stderr, feeding)):
@@ -132,7 +141,10 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
         if observation:
             observation.value["outcome"] = error.code
         raise
-    except asyncio.CancelledError:
+    except asyncio.CancelledError as error:
+        # A terminal usage line can precede EOF/process exit. Preserve the same
+        # bounded adapter receipt as other failures without accepting output.
+        error.receipt = observed_receipt() or {}
         if observation:
             observation.value["outcome"] = "cancelled"
         raise
@@ -145,6 +157,8 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
             observation.value["outcome"] = "output_invalid"
         raise RunnerError("output_invalid", observed_receipt()) from None
     finally:
+        if observation:
+            observation.before_cleanup(process, output, waited=waited, stdout=stdout, stderr=stderr, feeding=feeding)
         if process:
             await stop_process(process)
         for task in tasks:

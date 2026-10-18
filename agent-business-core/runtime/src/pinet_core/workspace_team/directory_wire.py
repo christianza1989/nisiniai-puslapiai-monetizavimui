@@ -11,8 +11,9 @@ from ..customer_agents.wire import Digest, Purpose, Revision
 
 class DirectoryEntry(Strict):
     agent_id: UUID
-    creation_id: UUID
-    registration_id: UUID
+    creation_id: UUID | None = None
+    registration_id: UUID | None = None
+    external_binding_id: UUID | None = None
     business_id: UUID
     revision_id: UUID
     revision: Revision
@@ -26,6 +27,14 @@ class DirectoryEntry(Strict):
     calibration_status: Literal["UNVERIFIED"] = "UNVERIFIED"
     can_delegate: Literal[False] = False
     provider_execution: Literal[False] = False
+
+    @model_validator(mode="after")
+    def genuine_origin(self):
+        legacy = self.creation_id is not None and self.registration_id is not None
+        external = self.external_binding_id is not None
+        if legacy == external or external and (self.creation_id is not None or self.registration_id is not None):
+            raise ValueError("exact_agent_origin_required")
+        return self
 
 
 class DirectoryPage(Strict):

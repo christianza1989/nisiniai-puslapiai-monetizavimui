@@ -1,0 +1,18 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Accept Wrangler's strictly empty generated queues container while still rejecting actual queue bindings and unknown queue options in private preview storage.",
+  "paths": [
+    "content-studio/scripts/customer-site-preview.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/164",
+  "evidence": [
+    "Real core83d9de44560df32bfb0b49429fc171b1470c1602/public255fea compiled11approved pages. Retained trusted RunnerError foundation_preview_storage_binding_invalid: generated queues={producers:[],consumers:[]} rejected by Object.keys(container).length despite no bindings.",
+    "Root owns released preview window under PR164/comment6212554949. Preserve failures, package/source/session/owner/storage and paid/external holds. Only known empty queue keys admitted. Fixtures now reproduce real generated shape; negative queue content and unknown keys remain refused."
+  ],
+  "rollback": "Scoped validator/test revert; retain failed configs/build logs and approvals. No queue provisioning, live binding, publication or foreign data change.",
+  "id": "upgrade-adac5aa7-0a8f-44bc-a458-c1fcc6c23083",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "83d9de44560df32bfb0b49429fc171b1470c1602",
+  "createdAt": "2026-10-16T09:34:09.220Z"
+}

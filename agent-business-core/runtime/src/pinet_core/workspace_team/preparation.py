@@ -117,6 +117,8 @@ async def complete(tx, task, row, turn, result):
     event = await service.add_event(tx, row, thread, task.id, "coordinator", "answer", content,
         reply=turn.owner_event_id, attempt=attempt.id)
     service.event_view(event, row)
+    from .workflow import saved
+    await saved(tx, task, receipt, event.id)
     # Validate the existing deferred history fences while the Task still owns
     # its running lease. The worker's savepoint keeps this event and the native
     # Config atomic with final authority checks and its terminal transition.

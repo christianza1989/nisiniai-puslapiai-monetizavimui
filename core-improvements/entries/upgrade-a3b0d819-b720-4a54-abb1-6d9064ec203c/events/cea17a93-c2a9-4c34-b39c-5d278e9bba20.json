@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Actual first baseline inert child: complete usage11/5/4/2→held process/pipes→external cancellation. Cleanup and original CancelledError args already passed, but .receipt absent:1FAIL1.50s SHA256 d3ccb4e85a6a145e3df19e7b527055ba40ba71a92882bc69800937c31599b068, original transport blob ef52deb684be8eb5c70b8c066649e6d7c8454010. Minimal canonical fix attaches existing bounded observed_receipt to same CancelledError; unchanged raise/finally, no success/retry. Broad related regression177PASS/7SKIP/2preexistingFAIL73.56s rawSHA c3b11d78935ab179493f5618b5b66fb59b2a3611b3f145f442a9ac18643d79f8. Both old authority-observation native/final FakeTx tests do not handle already integrated Registration SELECT; same2FAIL4.62s with original2424268 execute loaded read-only in memory, rawSHA7856ceb1f730691b9fde1bbc9c03b72e94da332c00fdbe49e50fd86388020df4. No source checkout or worker/model/DB change used for baseline. Root acknowledged/reproduced fixture dependency and owns its separate FakeTx repair/regression; do not copy that fixture here. Source-only packet, no CLI/model/provider/DB/channel/closed-ledger operation.",
+  "eventId": "cea17a93-c2a9-4c34-b39c-5d278e9bba20",
+  "sequence": 2,
+  "at": "2026-10-18T00:35:23.214Z"
+}

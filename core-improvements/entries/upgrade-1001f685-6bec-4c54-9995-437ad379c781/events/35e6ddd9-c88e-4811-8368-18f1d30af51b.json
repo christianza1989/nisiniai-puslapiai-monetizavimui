@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "evidence": "238passed23.31s, including exact-three-leaf design/language and six-role independent second-review paths, structural design negatives, strict hashes and receipt/coordinator checks",
+      "command": "python -m pytest offline_tests/test_creation_language_patch.py offline_tests/test_creation_review.py offline_tests/test_creation_compact_review.py offline_tests/test_content_work_review.py -q",
+      "result": "PASS"
+    },
+    {
+      "evidence": "All checks passed; git diff --check passed",
+      "command": "python -m ruff check src/pinet_core/creation/language_patch.py offline_tests/test_creation_language_patch.py",
+      "result": "PASS"
+    }
+  ],
+  "status": "local-verified",
+  "note": "S36 baseline3FAIL86PASS7.02s retained; one preparation attempt failed before pytest because the new private artifacts directory did not yet exist. Final238PASS23.31s and RuffPASS. Only exact design brand/rationale prose joins language/content targets; full six-role second review and all other design/structural/receipt/hash constraints remain. No provider, DB, serving adoption or old candidate acceptance from these tests.",
+  "eventId": "35e6ddd9-c88e-4811-8368-18f1d30af51b",
+  "sequence": 2,
+  "at": "2026-10-15T15:47:34.807Z"
+}

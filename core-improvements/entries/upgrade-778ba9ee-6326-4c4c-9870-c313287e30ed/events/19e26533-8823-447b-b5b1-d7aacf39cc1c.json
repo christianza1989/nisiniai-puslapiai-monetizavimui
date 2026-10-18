@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "One currently executing exact-serve Node guard read is shared by overlapping canonical monitors and cleared in its own promise finally before consumers resume. Every successful consumer independently rereads current claim/pulse/deadline. Completed permissions are never reused; context/readiness/media and before_context/after_media fences remain. Different serve scopes cannot share, and an old finishing waiter cannot erase a newer cohort. Python SQL authority and all deadlines/thresholds/startup recovery fences are unchanged. This source packet is not actual adoption or a post-Ready stability guarantee.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/customer-live-preview.test.mjs",
+      "result": "PASS",
+      "evidence": "60 tests,0skipped,987.5581ms; logSHA2562c98f24efe17aa2542c1fcc8f773e5e388f03f9ff660ba8432cda82237c210a5. Covers success/failure, two canonical monitor-style overlap, new full read after settlement including changed review, mid-flight and per-waiter claim/pulse/deadline loss, cross-scope isolation, old/new cohort ownership and all original Ready/startup/diagnostic checks. Test-only publication observation separates slow best-effort filesystem writes from the unchanged100ms production refusal budget."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "evidence": "Scoped Node script/test/contract/journal and own checkpoint diff; no changes to Python, public source, operating data, provider runtime, thresholds or frontend."
+    }
+  ],
+  "eventId": "19e26533-8823-447b-b5b1-d7aacf39cc1c",
+  "sequence": 3,
+  "at": "2026-10-17T19:55:57.527Z"
+}

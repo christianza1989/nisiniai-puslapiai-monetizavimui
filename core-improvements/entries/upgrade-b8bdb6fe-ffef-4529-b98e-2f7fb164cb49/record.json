@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Keep explicit owner site inspection, source continuation and deterministic Foundation work available while paid workers are held, separating feature guards from generation/lifecycle admission.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/service.py",
+    "agent-business-core/runtime/src/pinet_core/site_build/lifecycle.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Root normal verifiedowner upgraded intake succeeded200; GET build-continuations returned503site_build_unavailable with creation_runner_enabled false. Exact retained s6-read-response.private.json inspected read-only; no S6/native POST performed by helper.",
+    "Isolated source baseline from exact1fb549619c7f1bc5d9b4f8b523e3f2af1329ae27/public255fea0813bf1aabeaeea2f2de0b29564118f2fc: feature guard with all6provider/supervisor flags held fails1case12.22s. LogSHA256a6e0e909033b5de74d1a414b2c63e0fe857ba4c52b1da23e7e75098998981356 retained privately. Issue66 reservation6211107441.",
+    "Canonical service.enabled is shared by router/Foundation/receipt checks and advance/lifecycle. Separate feature-only guard from exact prior generation gate; both advance and lifecycle actor admission must use strict generation guard. Owner/Session/source/S6/approval/importer/native pins and actual provider workers stay unchanged. Root owns operational DB/API/case/adoption; prior journals frozen."
+  ],
+  "rollback": "Revert only owned guard source changes before adoption; retain all original immutable failures, continuations, reviews/approvals, Foundation receipts and native bytes. Do not enable paid runners to restore inspection or bypass source/S6.",
+  "id": "upgrade-b8bdb6fe-ffef-4529-b98e-2f7fb164cb49",
+  "branch": "codex/site-inspection-guard-20261016",
+  "baseSha": "1fb549619c7f1bc5d9b4f8b523e3f2af1329ae27",
+  "createdAt": "2026-10-16T08:15:50.136Z"
+}

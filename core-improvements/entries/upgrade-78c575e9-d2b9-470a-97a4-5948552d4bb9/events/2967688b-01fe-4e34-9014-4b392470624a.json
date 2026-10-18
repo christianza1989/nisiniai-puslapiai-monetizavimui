@@ -1,0 +1,7 @@
+{
+  "note": "Implemented canonical bounded live preview Service/Store/router/Node bridge plus only Root-approved export/mount/shutdown hunks. Preserved initial3FAIL22PASS baseline SHA28b1e154fb0e241349c5269df0a56ca94eb9b93392ea9ab12b64e367e464cc7a; fixed in-flight admission shutdown, JSON-null claim and malformed owner ID root causes. Source/mock only, wire frozen; Root actual runtime acceptance separate.",
+  "status": "fixing",
+  "eventId": "2967688b-01fe-4e34-9014-4b392470624a",
+  "sequence": 2,
+  "at": "2026-10-16T21:58:07.308Z"
+}

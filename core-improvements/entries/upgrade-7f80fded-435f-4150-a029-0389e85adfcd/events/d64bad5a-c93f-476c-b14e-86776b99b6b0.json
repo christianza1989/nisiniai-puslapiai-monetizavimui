@@ -1,0 +1,19 @@
+{
+  "note": "Rootactual22PostgreSQLPASS176.36s includesall11actorcases, original0032/88operational/nativeunchanged. SameDBsource11f2adopted; profile/private/S6 andsite015exact. Quietmeasuredcapture346→238SQL, verify1.89–2.05→1.28–1.42s, total1518→1051SQL underdifferentquietmeasurements, noguaranteedlatencyclaim. Wholelivefeaturestillfailsandisfixing, asruntime/cadencejournalsrecord; actorreadandstalenessscopeverifiedindependently. NoProvider/sourceRole/TTL/deadlinechange.",
+  "status": "local-verified",
+  "checks": [
+    {
+      "evidence": "22PASS176.36s cb0daaed66157ebcc675851bb2622368c93b65739b5b8a0ba33ec1aa1c52a64a, including11actualcurrent_actor cases; exactbefore/afteroriginal0032+88+native.",
+      "result": "PASS",
+      "command": "isolated QA v3 all on exact11f2dcacb8af04e3afe078efbe7384b42487ad44"
+    },
+    {
+      "evidence": "timing-0eeb457a7b6646028b83491536e3879f: capture238/1.7582, fullverify1.3154/1.4155/1.2822, inspect5.3321s,total1051SQL; source/read provenance distinctfromstableleaseacceptance.",
+      "result": "PASS",
+      "command": "held read-only timing v2 exact11f2"
+    }
+  ],
+  "eventId": "d64bad5a-c93f-476c-b14e-86776b99b6b0",
+  "sequence": 4,
+  "at": "2026-10-17T11:16:51.691Z"
+}

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "External agent attachment has no supported registration step: legacy network bootstrap requires a static voice Profile while reviewed Intake approval requires an existing Business UUID.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer/registration.py",
+    "agent-business-core/runtime/scripts/customer_public_admin.py",
+    "agent-business-core/runtime/tests/test_customer_registration_pg.py",
+    "docs/EXTERNAL_BUSINESS_REGISTRATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Baseline f774485: network_bootstrap.py invokes profiles.get before registering; profiles.py contains six static mapped niches and refuses unknown site/host. customer.admin.decide requires an explicit matching registered Business UUID. Existing business_attachment backbone intentionally starts only after that mapping/grant.",
+    "New retained Root0049 QA11PASS/3.56s then final11PASS/2.92s including concurrency/conflict, owner/proof rollback and runtime-role rejection. Dedicated test database only, no operating/provider/model calls. Scoped Ruff PASS after fixture import correction."
+  ],
+  "rollback": "Revert only new admin registration entrypoint and tests/docs. Preserve registered Business/Intake/grant history and all actual source/model/mail evidence; do not auto-delete or reassign identities.",
+  "id": "upgrade-1a5895c7-db5a-4e19-9b0f-4242a0e51c08",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "f774485093a92b076575804749877928bfe6ae57",
+  "createdAt": "2026-10-18T09:51:18.456Z"
+}

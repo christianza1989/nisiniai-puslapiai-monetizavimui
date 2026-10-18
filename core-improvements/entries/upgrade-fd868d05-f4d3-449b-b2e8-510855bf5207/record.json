@@ -1,0 +1,18 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "summary": "Refresh the existing approved-build-context ORM reads so a final canonical observation cannot reuse a mutable Discovery parent from the same AsyncSession identity map.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py"
+  ],
+  "siteId": "core",
+  "rollback": "Scoped revert of only approved_build_context populate_existing flags; preserve modeled failure and source packet93226de5 separately. No state, migration, wire, validator or runtime operation.",
+  "category": "code",
+  "evidence": [
+    "Root approved tenth source path business_discovery/service.py only approved_build_context existing reads. Nine-path93226de5 source phase clearing does not clear SQLAlchemy identity map; no old journal record is expanded.",
+    "Executed fakeTx identity-map baseline on current own WIP: native-time Discovery cancelled but final Authority.capture incorrectly succeeds.1FAIL68deselected13.37s, discovery-identity-baseline.log SHA2561588c826cd67792a10d55d811b98c52bed167d873eb82f2cc87c6a506309a710. This models SQLAlchemy get semantics and is not actual DB acceptance."
+  ],
+  "id": "upgrade-fd868d05-f4d3-449b-b2e8-510855bf5207",
+  "branch": "codex/authority-observation-20261017",
+  "baseSha": "d904b08c6b2dcef5a4c83eadacb188063e2277a4",
+  "createdAt": "2026-10-17T09:52:41.976Z"
+}

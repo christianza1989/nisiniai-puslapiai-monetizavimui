@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Independent source review found unescaped dots in four metadata keys; Root reproduced4FAIL1.12s99510e37a872d0f8096415e37e5e0dd8921fecd0edb6a4ea10b3b637aa2c2f43 before changing source. Allfour nowliteral; no actualGitdirtybypass claim. Final332relatedPASS25.34se3b3a9307e8e8e47ebe377b349953a44122efdd1648154b272c763b47b6bf189 includesactualinertGitandallpreviousoperation/cancel/freshfinal/authoritytests. Original protectedSOURCEcheckpoint restoredexactf53bytes; currentdocGIT_OBSERVATION_FRAME, no checker/archive-rule change. Parent8df7actualPGPASS170.15s3b746715d2f612073ce4f5798a19138fa403649d7d00f6ca1980723b2dd288ba/all88originalnativeexact; this is parentSource evidence, not exactfinalpin SQL acceptance. Currentruntime/stability/adoptionOPEN; provider0.",
+  "checks": [
+    {
+      "command": "python -m pytest nine source/authority/actor/live-preview/customer-text modules with canonical runtime paths -q --tb=short",
+      "result": "PASS",
+      "evidence": "332PASS25.34s e3b3a9307e8e8e47ebe377b349953a44122efdd1648154b272c763b47b6bf189; four malformedkey regressions nowrefused; actualownedinertGitfixtures."
+    },
+    {
+      "command": "python -m ruff check source_observation.py test_source_status_frame.py; git diff --check; compare docs/SOURCE_OBSERVATION.md with f53 committed bytes",
+      "result": "PASS",
+      "evidence": "TwoPythonfilesclean; protectedcheckpointidenticaltof53; currentcontractnewdoc only; no safety/checker/TTL relaxation."
+    }
+  ],
+  "eventId": "657651f6-4cfc-474d-a0ba-4d5275a2e938",
+  "sequence": 3,
+  "at": "2026-10-17T12:28:11.842Z"
+}

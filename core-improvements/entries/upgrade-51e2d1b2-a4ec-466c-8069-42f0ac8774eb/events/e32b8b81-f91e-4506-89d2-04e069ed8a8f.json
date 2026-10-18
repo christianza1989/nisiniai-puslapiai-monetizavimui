@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Production files are still exact Source57. Original focused regression1FAIL1PASS5.72s confirms hot current6SQL versus new expected3; logSHA2f676670109f379107ae1f36bbca8b04b63900844b8977fe6e2a188b094dd937. Full canonical fixture166Txoperations/10private checkpoints/2material phases/1native status remains separate from Root actual188SQL trace. Existing four related suites141PASS18.31s, logSHA48411c63b6bd96505ed53e0432b9c89f2229f27bd7a668bdf9a63924a3abb630. Global Python initially lacked sqlalchemy, so only the supplied existing QA interpreter is used with own-source PYTHONPATH; no dependency install, DB or provider operation. Original failure and logs are preserved. Scope narrowed to active Observation private-current path; standalone/admission and S6 remain original.",
+  "eventId": "e32b8b81-f91e-4506-89d2-04e069ed8a8f",
+  "sequence": 2,
+  "at": "2026-10-17T15:32:35.001Z"
+}

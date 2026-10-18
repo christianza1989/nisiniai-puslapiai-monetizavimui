@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Supersedes earlier pending broad regression: final21displayPGPASS162.79s plus entire SERIAL existingworker/Direct/nativeworkflow/model/mail58PASS575.41s. Earlier same-QA overlapping39PASS/1lateusageFAIL retained; isolatedtarget and serialfull pass without unrelated runtime changes.",
+  "checks": [
+    {
+      "command": "run-mail-display-pg.py shared-worker-serial-57 [five fixed test files]",
+      "result": "PASS",
+      "evidence": "Actual58PASS575.41s rawSHA362416fe205dc01bb99d623aa5173ab131768a1a378fd5ae7f1f966f8fa12cdc; original/operating/native exact; provider/SMTP/IMAP0."
+    }
+  ],
+  "eventId": "b0556b1f-80a1-45d0-add6-bc54b46a02d3",
+  "sequence": 5,
+  "at": "2026-10-18T02:06:02.636Z"
+}

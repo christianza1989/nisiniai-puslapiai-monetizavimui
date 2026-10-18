@@ -20,7 +20,9 @@ async def completion(creation_id: str, request: Request,
     if len(pairs) > 1 or any(key != "accepted_revision" for key, _ in pairs):
         raise ControlError(400, "invalid_request")
     tx, session = context
-    creation = await owned(tx, session, creation_id, lock=True)
+    # Reads retain fresh native/final authority fences without blocking the
+    # administrative changes those fences must be able to observe.
+    creation = await owned(tx, session, creation_id)
     value = envelope(request, await projection(tx, session, creation, accepted_revision))
     value["contract_version"] = "content-completion.v1"
     return value
@@ -39,7 +41,7 @@ async def page_read(creation_id: str, page_id: str, request: Request,
     if not re.fullmatch(r"[a-z0-9][a-z0-9-]{1,79}", page_id):
         raise ControlError(400, "invalid_request")
     tx, session = context
-    creation = await owned(tx, session, creation_id, lock=True)
+    creation = await owned(tx, session, creation_id)
     value = envelope(request, await current_page(tx, session, creation, accepted_revision, page_id))
     value["contract_version"] = "content-page.v1"
     return value
@@ -54,7 +56,7 @@ async def media_read(creation_id: str, page_id: str, asset_id: str, request: Req
     if any(not re.fullmatch(r"[a-z0-9][a-z0-9-]{1,79}", key) for key in (page_id, asset_id)):
         raise ControlError(400, "invalid_request")
     tx, session = context
-    creation = await owned(tx, session, creation_id, lock=True)
+    creation = await owned(tx, session, creation_id)
     mime, raw = await current_media(tx, session, creation, accepted_revision, page_id, asset_id, expected_revision_sha256)
     return Response(raw, media_type=mime, headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff",
         "X-Robots-Tag": "noindex, nofollow", "Vary": "Authorization"})

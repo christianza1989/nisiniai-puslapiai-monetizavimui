@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Durable one-call mail display translation policy/job on common TaskRun, deduplicated immutable source and revoked-authority accounting",
+  "category": "code",
+  "evidence": [
+    "Rootd415c8727facc53ab14a34438f9bb2cce08e563a has bounded ad-hoc mail display runner/sidecars but no durable commonTask mail.display_translate kind, separate hardcap policy or typed source-bound job accounting.",
+    "Root froze2tables/4functions/one-shot commonRun API and owns all runtime integration. Own issue66/comment6243877013 scope only new schema/ORM/0047/import/tests/doc/WS. Existing exactGrant/Session/Mail/Case FK unique anchors checked."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_schema.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_models.py",
+    "agent-business-core/runtime/migrations/versions/0047_mail_display_tasks.py",
+    "agent-business-core/runtime/migrations/env.py",
+    "agent-business-core/runtime/offline_tests/test_mail_display_schema.py",
+    "agent-business-core/runtime/tests/test_mail_display_schema_pg.py",
+    "docs/MAIL_DISPLAY_SCHEMA.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert;0047 downgrade refuses any retained policy/job/new-kindTask. Never delete known/unknown reservations or change operating0045/closed ledgers.",
+  "id": "upgrade-6e2773d4-e778-4b32-ae11-df959ad94ee1",
+  "branch": "codex/mail-display-schema-20261018",
+  "baseSha": "d415c8727facc53ab14a34438f9bb2cce08e563a",
+  "createdAt": "2026-10-18T00:47:39.173Z"
+}

@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Preserve immutable Registration identity across validated S37 same-origin native intake source continuity",
+  "category": "code",
+  "evidence": [
+    "Static hypothesis on exactRoot2d429c1: current selected full intake includes a changing nativeContinuity observation; same accepted revision Registration material is immutable and unique. Real isolated PG reproduction required before source repair.",
+    "Issue66/comment6242540528 reserves narrow canonical registration scope; new dedicated loopback PostgreSQL18.6 QA only, maintained S37 fixtures, zero providers/channels/operating mutations."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/creation_registration/service.py",
+    "agent-business-core/runtime/src/pinet_core/creation_registration/admin.py",
+    "agent-business-core/runtime/tests/test_registration_private_continuity_pg.py",
+    "agent-business-core/runtime/offline_tests/test_registration_private_continuity.py",
+    "docs/REGISTRATION_PRIVATE_CONTINUITY.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert; no migration or old Registration/request/receipt/fingerprint rewrite. Preserve retained synthetic QA failure and runtime adoption as separate evidence.",
+  "id": "upgrade-cdce8ae3-618b-4277-8a2e-c3f90bc71259",
+  "branch": "codex/registration-intake-continuity-20261018",
+  "baseSha": "2d429c1fea873babe179223ddc13315374ae021d",
+  "createdAt": "2026-10-17T22:48:02.242Z"
+}

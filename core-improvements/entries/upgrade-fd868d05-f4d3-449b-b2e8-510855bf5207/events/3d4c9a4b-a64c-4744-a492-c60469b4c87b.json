@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "evidence": "Executed with PYTHONPATH src;tests;scripts, PYTHONDONTWRITEBYTECODE1 and existing supplied qa-venv Python.428PASS67.15s; final-fresh-actors-regression.log SHA256b08aa6a62e62bbed66938ad49803c59291f3b5a71239842d87874b3528bf02f6. docs/AUTHORITY_OBSERVATION.md and docs/APPROVED_CONTEXT_FRESHNESS.md.",
+      "result": "PASS",
+      "command": "python -m pytest offline_tests/test_authority_observation.py offline_tests/test_accepted_proof_observation.py offline_tests/test_creation_registration.py offline_tests/test_private_preview.py offline_tests/test_private_native_continuity.py tests/test_content_completion.py offline_tests/test_candidate_preview_preparation.py tests/test_foundation_bridge.py tests/test_build_continuation.py offline_tests/test_live_preview_runtime.py offline_tests/test_execution_profile_batch.py offline_tests/test_discovery_source_context.py -k \"not real_studio_monitor\" -q --tb=short"
+    },
+    {
+      "evidence": "All12changedPython files pass after final actor source change. No generic permission cache, models/roles/quotas/wire/schemas/deadlines/cadence edit.",
+      "result": "PASS",
+      "command": "python -m ruff check exact10runtime+2offline-test paths"
+    },
+    {
+      "evidence": "Exact owned ten-runtime-source packet, focused tests/docs/WORKSTREAMS and only two new upgrade journals. No original journal changes.",
+      "result": "PASS",
+      "command": "git diff --check"
+    }
+  ],
+  "status": "local-verified",
+  "note": "Final combined428PASS67.15s also verifies the separate canonical approved context populate_existing repair after late-S actor changes. Exact former Discovery identity-map false-success now refuses503invalid_approved_plan; standalone Discovery linkage/Report revision mutations refuse. Original1588c826 baseline retained. Only approved_build_context existing select/get freshness flags changed in this journal scope; no validators/signature/RLS/schema/error mappings/other functions change. Modeled ORM evidence only; actual PostgreSQL/adoption Root-owned.",
+  "eventId": "3d4c9a4b-a64c-4744-a492-c60469b4c87b",
+  "sequence": 3,
+  "at": "2026-10-17T10:03:39.140Z"
+}

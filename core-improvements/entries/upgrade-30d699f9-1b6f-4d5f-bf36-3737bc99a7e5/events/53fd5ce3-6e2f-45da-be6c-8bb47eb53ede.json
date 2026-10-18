@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Exact successful completion now requires the canonical envelope, accepted Ready and elapsed recorded expiry. Original8FAIL/1PASS and intermediate124PASS/2FAIL remain retained. One prior retry fake intentionally emits incomplete early EOF; corrected its final expectation without changing attempt count, recovery gates or actual runtime acceptance. Authorized read-only helper found no new actionable P0-P2. Separate actual Serving5fdf startup heartbeat refusal remains unresolved; no old preview upgrade is closed by this source-only classification repair.",
+  "checks": [
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_live_preview_completion.py offline_tests/test_live_preview_runtime.py offline_tests/test_live_preview_monitor_cadence.py offline_tests/test_live_preview_pulse_publication.py offline_tests/test_live_preview_startup_recovery.py offline_tests/test_live_preview_inspection_authority.py offline_tests/test_studio_start_cadence.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "126passed in13.67s. Retained private log SHA2566e86ee9252425dbc84b773b9ef66ba0c70aa8a108206f1fb835ff77b60537580. No DB, renderer, provider or channel executed."
+    },
+    {
+      "command": "PYTHONPATH=src python -m pytest offline_tests/test_live_preview_completion.py -q --tb=short",
+      "result": "PASS",
+      "evidence": "9passed in3.67s after explicit fixture binding removed a new lint warning; no semantic source change after the126case run."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/site_build/live_preview.py offline_tests/test_live_preview_completion.py",
+      "result": "PASS",
+      "evidence": "All checks passed under runtime canonical config. An earlier broad lint attempt exposed inherited startup-test style warnings; no unrelated test rewrite or lint waiver."
+    }
+  ],
+  "eventId": "53fd5ce3-6e2f-45da-be6c-8bb47eb53ede",
+  "sequence": 2,
+  "at": "2026-10-18T09:08:23.236Z"
+}

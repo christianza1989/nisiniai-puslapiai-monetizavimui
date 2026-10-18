@@ -5,6 +5,7 @@ from uuid import uuid4
 import httpx
 import pytest
 from sqlalchemy import func, select, text, update
+from sqlalchemy.exc import DBAPIError
 from sqlalchemy.ext.asyncio import AsyncSession
 from test_customer_agents import (  # noqa: F401 - maintained native fixture chain
     creation,
@@ -136,23 +137,48 @@ async def test_nonlocking_verify_rechecks_disabled_actor_without_holding_native_
     assert await counts(c) == (0, 0)
 
 
-@pytest.mark.parametrize("kind", ["grant", "membership"])
-async def test_late_authority_loss_rolls_back_both_records(provisioned, monkeypatch, kind):
+async def test_late_grant_loss_rolls_back_both_records(provisioned, monkeypatch):
     c, pin = provisioned
     original = service.append_config
     async def revoke(tx, agent, value, fingerprint, session):
         result = await original(tx, agent, value, fingerprint, session)
         async with AsyncSession(c["admin"]) as admin, admin.begin():
-            if kind == "grant":
-                await admin.execute(update(BusinessGrant).where(BusinessGrant.id == str(pin.grant_id)).values(enabled=False))
-            else:
-                await admin.execute(update(Membership).where(Membership.user_id == str(pin.user_id),
-                    Membership.environment_id == c["environment"]).values(enabled=False))
+            await admin.execute(update(BusinessGrant).where(BusinessGrant.id == str(pin.grant_id)).values(enabled=False))
         return result
     monkeypatch.setattr(service, "append_config", revoke)
     with pytest.raises(ControlError):
         await invoke(pin, create_value())
     assert await counts(c) == (0, 0)
+
+
+async def test_membership_revocation_serializes_with_config_write_and_then_denies(provisioned, monkeypatch):
+    c, pin = provisioned
+    original = service.append_config
+    observed = []
+
+    async def contend(tx, agent, value, fingerprint, session):
+        result = await original(tx, agent, value, fingerprint, session)
+        # Canonical0042 serializes membership changes on the writer's User row.
+        # Bound and prove that contention instead of synchronously self-waiting.
+        with pytest.raises(DBAPIError, match="lock timeout"):
+            async with AsyncSession(c["admin"]) as admin, admin.begin():
+                await admin.execute(text("SET LOCAL lock_timeout='500ms'"))
+                await admin.execute(update(Membership).where(Membership.user_id == str(pin.user_id),
+                    Membership.environment_id == c["environment"]).values(enabled=False))
+        observed.append(True)
+        return result
+
+    monkeypatch.setattr(service, "append_config", contend)
+    assert (await invoke(pin, create_value()))["action"] == "created"
+    assert observed == [True] and await counts(c) == (1, 1)
+    monkeypatch.setattr(service, "append_config", original)
+    async with AsyncSession(c["admin"]) as admin, admin.begin():
+        await admin.execute(text("SET LOCAL lock_timeout='500ms'"))
+        await admin.execute(update(Membership).where(Membership.user_id == str(pin.user_id),
+            Membership.environment_id == c["environment"]).values(enabled=False))
+    with pytest.raises(ControlError):
+        await invoke(pin, create_value())
+    assert await counts(c) == (1, 1)
 
 
 async def test_source_changes_during_final_wait_roll_back_effects(provisioned, monkeypatch):

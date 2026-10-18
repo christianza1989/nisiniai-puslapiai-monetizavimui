@@ -31,3 +31,22 @@ Measure investigated/fitting/contactable/drafted/reached/replied/qualified/fulfi
 Use the same [capture-ledger snapshot](../../../agent-business-core/contracts/acquisition-projection-v1/README.md) for dashboard and director read tools after actual owner/RBAC adoption. Report current versus historical conversion separately, explicit receipt watermark and missing sources; all-time ledger counters cannot answer an occurrence-period query. Prove a real concurrent mutation does not tear the snapshot, keep receipt activity bounded/redacted and leave unconnected discovery/send/reply/attempt/cost values null. The present internal read library does not register a generic agent, mount a route or authorize a reader.
 
 Re-run the actual complete control/task bootstrap with acquisition tables present. Legacy bulk grants must exclude acquisition and restore the module-owned exact grants if an older run broadened them; namespace exclusion alone leaves old privileges. Preserve first blocked startup and compare control rights before/after, successful repeated repair, and partial-schema rollback. Source proposal, actual isolated rehearsal, owner adoption and normal mounted migration acceptance stay separate.
+
+## Headless preparation and canonical correspondence (2026-10-18)
+
+The optional `--budget-ledger` path in the existing dialogue runner uses explicit
+gpt-6.1-sol/high and separate researcher, writer, exact-copy reviewer and reply
+coordinator processes. One durable cross-batch attempt/deadline ledger is retained;
+no retry/reset is inferred. The current deadline reaches the existing CLI process
+cleanup path, including remaining time after process creation. Preserve unknown
+reservations after interruption; inspect exact owned PID/schema metadata first.
+
+`acquisition_headless.py` supports preparation, draft reply, synthetic canonical
+capture and `case-reply`. The latter reads an admitted bound Case/thread, reviews
+the actual reply and uses the existing Correspondence transaction to capture a
+new MailMessage/MailBinding. The old decision receipt still identifies inbound;
+derive a separate display observation from the exact outbound binding. Replay
+must not call a model or create another mail, and stale inbound/current stop or
+delivery state must prevent capture. These are synthetic private records, not
+live transport, broad campaign rights or production admission. See maintained
+[calibration details](../../../agent-business-core/acquisition-plan/CALIBRATION.md).

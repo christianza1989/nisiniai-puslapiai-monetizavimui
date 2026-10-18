@@ -1,0 +1,16 @@
+{
+  "sourceBase": "07d8e577f9df78d7d5057cd625004a4d6d9f180a",
+  "result": "135 PASS, 7 explicit actual-child cases deselected, 5.19s",
+  "logSha256": "03c052d3adfaca1e19e0f281ec8c4075e385f97b7707b9b709edbe4a788291c2",
+  "focused": "28 PASS, 1.51s",
+  "focusedLogSha256": "c0e68d82e88b40ed5c1b805a1c84dbd45b84eb493f8f2a8c879062e59a908ea5",
+  "baseline": "4 MemoryError FAIL, 24 deselected, 1.82s on unmodified callers",
+  "baselineLogSha256": "1fd0088bdc26a8049894e6e49e196be62b12704f5737b3c49a0004badeb07dad",
+  "semanticBoundarySha256": "6dd7ba58fea9e621dad62cb1850abc50457434894322f95e38190f0dd67e9425",
+  "perReadBoundBytes": 1048576,
+  "virtualBinaryBytes": 341312816,
+  "installedBinaryDispatched": false,
+  "providerCalls": 0,
+  "operatingProcessOrDbChanges": false,
+  "actualRuntimeAdoption": "NOT_PERFORMED"
+}

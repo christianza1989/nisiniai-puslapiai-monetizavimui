@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Smallest two-source intake duplicate repair only. No actualSQL/DB/Nodeproducer/server/provider/browser/currentcase/adoption, private/S6/Foundation/Rootfiles/journal changes, globalcache or deadline/threshold/wire/history changes. Root owns full actual QA and integration after stablepin review.",
+  "checks": [
+    {
+      "result": "PASS",
+      "command": "PYTHONPATH=src;tests;scripts python -m pytest offline_tests/test_accepted_proof_observation.py offline_tests/test_creation_registration.py offline_tests/test_private_preview.py tests/test_content_completion.py offline_tests/test_candidate_preview_preparation.py tests/test_foundation_bridge.py tests/test_build_continuation.py -k \"not real_studio_monitor\" -q --tb=short",
+      "evidence": "197PASS1.93s,31newfocused;1actualprocess test explicitly deselected;1existing deliberate UUIDwarning. LogSHA2562a2b47dc8b7c3dca26fd92104d2a5fcec484890cc847b32303f9474b67dc552b. Actualproofreader2→1selector; modelednestedmaterial3→2, fresh standalone/no crosscallreuse, typedfailures/mutation/payload/native/workflow/manifest negatives and validproofbytes retained."
+    },
+    {
+      "result": "PASS",
+      "command": "ruff check creation_registration/service.py creation/studio.py offline_tests/test_accepted_proof_observation.py; git diff --check",
+      "evidence": "All3Pythonfiles and whitespace PASS. Studio validation body unchanged apart from internalreturn; publicshape/API retained; only2reserved source paths."
+    }
+  ],
+  "eventId": "9c7b7aee-0c76-4e15-81c3-b6576932d4fc",
+  "sequence": 3,
+  "at": "2026-10-17T09:08:07.541Z"
+}

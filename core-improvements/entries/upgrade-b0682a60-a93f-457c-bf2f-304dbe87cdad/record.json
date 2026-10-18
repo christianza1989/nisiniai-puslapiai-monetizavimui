@@ -1,0 +1,30 @@
+{
+  "siteId": "wellness-export",
+  "summary": "Separate exact private internal research/email configuration readiness from full website delivery without granting execution or channel rights",
+  "category": "code",
+  "evidence": [
+    "Actual owner currentRegistration/selectedS37/privateCreation85fb2b31 has0agents and candidateFoundation/local_evidence_missing. All72local website checks, includingSMTP/inbox, block any research/email Config despite explicitly narrower internal no-UI user mandate and no-tools synthetic research/draft-only model engine. Independent read-only review traced canonicalwrite/readiness/model callsites and confirms no DB necessity; existing contracts require an explicit narrow correction, not a fakeFullF1PASS. Keep fullWebsite readiness as default; typed purpose-bound current private proof can authorize only canonical Config metadata and independently authorized existing model preparation."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/customer_agents/preparation_readiness.py",
+    "agent-business-core/runtime/src/pinet_core/customer_agents/service.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_authority.py",
+    "agent-business-core/runtime/tests/test_private_agent_preparation_pg.py",
+    "agent-business-core/runtime/offline_tests/test_private_agent_preparation.py",
+    "agent-business-core/runtime/offline_tests/test_customer_agent_foundation_projection.py",
+    "agent-business-core/runtime/tests/test_customer_agents.py",
+    "docs/CUSTOMER_AGENTS.md",
+    "docs/PRIVATE_FOUNDATION_AGENT_ELIGIBILITY.md",
+    "docs/ACQUISITION_MODEL_PREPARE.md",
+    "docs/PRIVATE_AGENT_PREPARATION.md",
+    "WORKSTREAMS.md",
+    "sites/verslomatika/IMPLEMENTATION_STATUS.md",
+    "docs/handoffs/VERSLOMATIKA_AGENT_PATH_RESUME_2026_10_17.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Revert purpose-specific caller selection and new readiness helper/endpoint after holding independent model controls. Preserve immutable Config/Registration/task histories. Full Foundation/scorer/discovery/provisioning/lab/site_chat/custom/xbot/session defaults and all execution/calibration/channel gates remain unchanged; no migration, no new paid lease and no alternate agent/calibration core.",
+  "id": "upgrade-b0682a60-a93f-457c-bf2f-304dbe87cdad",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "3caa801d7d31c0da26e5ed454b67197bf82a88ee",
+  "createdAt": "2026-10-18T02:08:40.507Z"
+}

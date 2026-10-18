@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Authorized read-only acquisition peer found two Root service issues on6a34603: first30 retained filesystem claims were selected repeatedly without progress, starving later eligible mail; and a second legitimate owner could not see another producer's Job under unchanged RLS but collided with tenant-wide source uniqueness. Root now retains a cancelled common Task/Event-only legacy acknowledgement (no Job/Run/new call and no old-usage relabelling), filters shared claims through the separately guarded read-only business projection, projects only committed ready business cache, and catches only named uq_mail_display_source23505 inside a savepoint. Helper adds that fifth read-only projection while keeping the four execution functions and all existing Task/Run/policy RLS narrow. Real31mail/second-owner/concurrent-source regression authored; old6a service baseline will be injected read-only in test memory in own0047 QA after schema freezes. No original/operating/native/admitted budget/model/channel changes. Current standalone5 runner tests PASS0.84s raw SHA46ab37541177719373478cf4a9e0a9107c3cfa15f051afe7ea53b5cc38760f0e; whole-link PG still pending, not claimed.",
+  "eventId": "83eaa4c0-839a-485b-a53f-cc4a82b6e701",
+  "sequence": 3,
+  "at": "2026-10-18T01:25:32.187Z"
+}

@@ -1,8 +1,6 @@
 """Fixed Luna local text adapter through the existing bounded no-tools transport."""
 import asyncio
-import hashlib
 import json
-import subprocess
 import tempfile
 from pathlib import Path
 
@@ -12,6 +10,8 @@ from ..config import settings
 from ..contracts import NeedPatch, Strict
 from ..creation import adapter as canonical
 from ..customer_profile import instructions
+from ..file_hash import sha256_file
+from ..source_observation import SourceObservationError, git_source_observation
 from ..tasks.codex import arguments, check_trace_event, child_environment, parse_trace
 from ..tasks.codex_transport import RunnerError, execute
 from ..text_tools import core_arguments, need_call_schema
@@ -31,10 +31,8 @@ class RequestInterrupted(asyncio.CancelledError):
 
 def source_current():
     try:
-        head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
-        dirty = subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip()
-        return not dirty and head == settings().control_source_revision
-    except (OSError, subprocess.CalledProcessError):
+        return git_source_observation(ROOT).head == settings().control_source_revision
+    except (OSError, SourceObservationError):
         return False
 
 
@@ -45,7 +43,7 @@ def runner_ready():
         and binary.is_absolute() and binary.is_file()
         and workspace.is_absolute() and workspace.is_dir()
         and 10 <= cfg.chat_runner_seconds <= 180
-        and hashlib.sha256(binary.read_bytes()).hexdigest() == cfg.chat_codex_sha256)
+        and sha256_file(binary) == cfg.chat_codex_sha256)
 
 
 def runner_ready_high(pin):

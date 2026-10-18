@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Unified one maintained reserved sender/recipient address contract. Original actual known07 FAIL and7charged retained;4FAIL32PASS wire baseline,115PASS64subtests final, retained SQL MIME/native reply1PASS18.40s. Test helper/RLS-scope misses retained, no runtime RLS relaxation.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_acquisition_synthetic_recipient.py offline_tests/test_acquisition_correspondence.py offline_tests/test_acquisition_native_chain.py offline_tests/test_acquisition_dialogue.py offline_tests/test_acquisition_headless.py offline_tests/test_acquisition_interfaces.py -q",
+      "result": "PASS",
+      "evidence": "115PASS64subtests3.53s. Legacy hashes, real-domain denial and MIME→DTO bridge in docs/ACQUISITION_SYNTHETIC_RECIPIENT_NAMESPACE.md."
+    },
+    {
+      "command": "python .local/sharp-policy/inbound-address-pg.py exact-work-scope",
+      "result": "PASS",
+      "evidence": "Dedicated retained0049 PG1PASS18.40s: oneCase/fiveMailMessages, two inboundMIME/two nativeReplyTaskRuns with inert roles; SHA256d8306a99e20f821c4c5e7518f738e40d87d9c9d1eddd7c222cb2536a19b7527a, no operating/provider access."
+    },
+    {
+      "command": "python -m ruff check changed acquisition address source and tests",
+      "result": "PASS",
+      "evidence": "Four exact changed Python paths all checks passed."
+    }
+  ],
+  "eventId": "540f543c-d965-4664-a404-0b19b7ee83ae",
+  "sequence": 2,
+  "at": "2026-10-18T10:58:34.017Z"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Old219 two-real-monitor-style callback baseline failed1test (2 native reads instead of1), logSHAb7590c7f0bd54ce6742491b754cc52ac28722b8d899de4a674ca94d17fa16d13. The actual call graph is producer monitor plus bounded inspection monitor, not browser GET callbacks; no causal claim about the separate11.44363s SQL stall. Earlier full60 run had54PASS/6FAIL because 100ms bounded best-effort diagnostics left pending temp writes under host pressure (logSHAf0e4c98bdc55d0e08d11a899b3ab06cc8a38b93a4ade0d735c6bf74a9bb344b7). Tests now await eventual diagnostic publication separately; production100ms budget and stalled-publication refusal remain unchanged. All failures retained.",
+  "eventId": "4337a66c-6a7c-4a2e-86fe-f147f29e5a26",
+  "sequence": 2,
+  "at": "2026-10-17T19:55:55.084Z"
+}

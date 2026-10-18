@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Source review refinement: the privileged control bootstrap already has a general Business mapper; the missing step was the reviewed customer Intake path, not every admin registration path. Registration now reuses control.bootstrap.registration_lock and registered_business. Earlier record wording retained as history; docs corrected. Dedicated PG11PASS3.01s, scoped Ruff PASS.",
+  "checks": [
+    {
+      "command": "python .local/sharp-policy/customer-registration-qa.py shared-registry-lock",
+      "result": "PASS",
+      "evidence": "Retained dedicated0049 PostgreSQL11PASS3.01s, SHA256d9b197b4f1333797809fad95413026ebec53307ddee347bdb9111113f2e1270f; common writer lock/mapper used, no operating/provider calls."
+    },
+    {
+      "command": "python -m ruff check agent-business-core/runtime/src/pinet_core/customer/registration.py",
+      "result": "PASS",
+      "evidence": "All checks passed after common registry reuse."
+    }
+  ],
+  "eventId": "318adbbf-5dde-4f6f-acdc-ba60dbbe50d2",
+  "sequence": 3,
+  "at": "2026-10-18T09:56:13.717Z"
+}

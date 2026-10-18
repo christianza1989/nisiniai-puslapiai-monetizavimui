@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "A successful early or malformed serve completion is discarded and classified as normal live-preview expiry even while the accepted Ready expiry is still in the future.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/site_build/live_preview.py",
+    "agent-business-core/runtime/offline_tests/test_live_preview_completion.py",
+    "docs/LIVE_PREVIEW_COMPLETION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Independent authorized read-only review at f1c1b88 points to drive await runner then unconditional expired at live_preview.py:379-405. Node promises exact customer-live-preview-completed.v1/state expired only at its recorded timer. Root reproduces with valid current fake authority, accepted Ready and early successful EOF; no claim this caused the actual retained heartbeat refusal.",
+    "Separate current Serving5fdf actual close attempt aa3b46a7 failed before Ready: first heartbeat_expired/before_context at2026-10-18T08:48:47.310Z, margin-1906ms; later full Authority.verify5.320s and7.288s, unchanged3s TTL. Original private receipt retained. EOF classification repair is independent of the latency condition."
+  ],
+  "rollback": "Revert scoped completion validation and its tests; preserve original failures, exact expiry/heartbeat/deadlines, terminal UUIDs and all operating data. No channel/model permission or new renderer.",
+  "id": "upgrade-30d699f9-1b6f-4d5f-bf36-3737bc99a7e5",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "f1c1b88d4b3ed343516fbe0fd939a19630c9421d",
+  "createdAt": "2026-10-18T08:50:57.487Z"
+}

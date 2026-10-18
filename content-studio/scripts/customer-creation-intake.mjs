@@ -60,6 +60,8 @@ function validate(input) {
   if (!object(draft) || !object(draft.business) || !text(draft.business_name, 100) || !text(draft.tagline, 200)
       || !text(draft.business.customer, 800) || !object(draft.brand) || !accent[draft.brand.accent]
       || !Array.isArray(draft.pages) || draft.pages.length < 3 || draft.pages.length > 8) fail('invalid_server_draft');
+  const typed = Object.hasOwn(draft, 'schema_version');
+  if (typed && draft.schema_version !== 'business-draft.v3') fail('invalid_server_draft');
   const bytes = json(draft);
   if (bytes.length > 200000 || sha(bytes) !== input.sourceHash) fail('source_hash_mismatch');
   const paths = new Set();
@@ -67,6 +69,7 @@ function validate(input) {
     if (!object(page) || !pagePath(page.path) || (index === 0) !== (page.path === '/') || paths.has(page.path)
         || !text(page.title, 160) || !text(page.navigation_label, 50) || !text(page.meta_description, 220)
         || !text(page.intent, 300) || !Array.isArray(page.sections) || page.sections.length < 2 || page.sections.length > 7) fail('invalid_server_page');
+    if (typed && !Object.hasOwn(page, 'type')) fail('invalid_server_page_type');
     proposalPageType(page);
     paths.add(page.path);
     for (const section of page.sections) {
@@ -94,6 +97,8 @@ function validate(input) {
   if (path.resolve(input.dataDir) !== dataDir || path.resolve(input.outputDir) !== outputDir) fail('revision_directory_mismatch');
   const contentPlan = input.contentPlan ?? draft.content_plan ?? [];
   if (!Array.isArray(contentPlan) || contentPlan.length > 24) fail('invalid_content_plan');
+  if (typed && contentPlan.some(item => object(item) && draft.pages.some(page =>
+      page.path === item.path && !['guide','article'].includes(page.type)))) fail('typed_page_plan_mismatch');
   return { draft, bytes, artifactsRoot, revisionDir, dataDir, outputDir, contentPlan, verifiedFacts,
     ...(sourceContext===undefined?{}:{sourceContext}),
     contact: { email: knownContact.email ?? '', phone: knownContact.phone ?? '' }, operatorName: input.operatorName ?? '',

@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { createPipelineState, JsonPipelineStore, runRewritePipeline } from '../src/rewrite-pipeline/runner.mjs';
+import { HostBridge } from '../src/rewrite-pipeline/host-bridge.mjs';
+
+const [command,...args]=process.argv.slice(2);
+const option=name=>{const i=args.indexOf('--'+name);return i<0?undefined:args[i+1];};
+const state=option('state');assert(state,'--state existing CURRENT_LEAN_BATCH.json required');
+const store=new JsonPipelineStore(path.resolve(state)),bridge=new HostBridge(store);
+const stdin=async()=>{let text='';for await(const part of process.stdin)text+=part;return JSON.parse(text);};
+const output=value=>process.stdout.write(JSON.stringify(value,null,2)+'\n');
+if(command==='init'){
+  const input=JSON.parse(await readFile(option('input'),'utf8'));
+  output((await store.init(createPipelineState(input))).pipeline);
+}else if(command==='next')output(await bridge.pending());
+else if(command==='claim')output(await bridge.claim(option('request'),option('actor')));
+else if(command==='reply'){const value=await stdin();await bridge.reply(option('request'),option('actor'),value.payloadSha256,value.response);output({saved:true});}
+else if(command==='send-intent')output(await bridge.recordSendIntent(option('request'),option('actor'),await stdin()));
+else if(command==='status'){
+  const p=(await store.read()).pipeline;
+  output({status:p.status,publication:p.publication,counts:p.pages.reduce((c,p)=>(c[p.status]=(c[p.status]??0)+1,c),{}),pendingRequests:await bridge.pending(),runner:p.runner});
+}else if(command==='pause'){await store.update(doc=>{doc.pipeline.pauseRequested=true;});output({pauseRequested:true});}
+else if(command==='run'){
+  const config=JSON.parse(await readFile(option('config'),'utf8'));assert(config.portsModule,'Pinned real ports module required');
+  const {verifyPin}=await import('../src/rewrite-pipeline/core-adapter.mjs');await verifyPin(config.portsModule);
+  const {createPorts}=await import(pathToFileURL(config.portsModule.path));
+  const controller=new AbortController();for(const sig of ['SIGINT','SIGTERM'])process.once(sig,()=>controller.abort());
+  const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort();}catch{controller.abort();}},250);
+  try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3}));}
+  finally{clearInterval(timer);}
+}else throw new Error('Commands: init, run, next, claim, send-intent, reply, status, pause. Real host tools answer requests; no automated Gemini retry.');

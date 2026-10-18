@@ -23,6 +23,17 @@ async function review(siteId, id) { const site = await model.getSite(siteId); re
 async function site(domain) { const s = await model.createSite({ canonicalHost: domain, name: 'Izoliuotas testas', offer: 'Tik workflow testas' }); await model.editSite(s.id, { facts: 'Sintetiniai faktai, ne tikras pasiūlymas.' }); return s; }
 async function page(s, slug, type = 'service') { return model.addPage(s.id, { type, slug, title: 'Izoliuotas atsakymas', description: 'Testas be klientų ir išgalvotų viešų faktų.', intent: 'Bandymo klausimas', publishAt: new Date(Date.now()+86400000).toISOString(), body: [{ type: 'paragraph', text }] }); }
 
+test('optional expected review binding rejects changed context before writing review', async () => {
+  const s=await site('binding-pipeline.example'),p=await page(s,'binding');
+  const {reviewBinding}=await import('../src/content-workflow.mjs');
+  const before=await model.getSite(s.id),binding=reviewBinding(before,p,model.revisionHash(p));
+  await model.editSite(s.id,{facts:'Changed isolated facts require another actual factual review.'});
+  await assert.rejects(model.recordEditorialReview(s.id,p.id,{...reviewInput(p),expectedBinding:binding}),/context changed/);
+  assert.equal((await model.getSite(s.id)).pages.find(x=>x.id===p.id).editorialReview,undefined);
+  const current=await model.getSite(s.id);
+  assert.equal((await model.recordEditorialReview(s.id,p.id,{...reviewInput(p),expectedBinding:reviewBinding(current,p,model.revisionHash(p))})).revisionHash,model.revisionHash(p));
+});
+
 test('local schedule preserves wall time across DST, validates dates and bounded policy', () => {
   assert.equal(localPublishAt('2026-10-24','10:00','Europe/Vilnius'),'2026-10-24T07:00:00.000Z');
   assert.equal(localPublishAt('2026-10-25','10:00','Europe/Vilnius'),'2026-10-25T08:00:00.000Z');

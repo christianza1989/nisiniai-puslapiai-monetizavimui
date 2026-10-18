@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Serial per-batch approvals and repeated transfers dominate Gemini generation; implement overlapping private rewrite lanes and per-page completion.",
+  "category": "workflow",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/203"
+  ],
+  "paths": [
+    "content-studio/src/rewrite-pipeline/runner.mjs",
+    "content-studio/src/rewrite-pipeline/bounded-edits.mjs",
+    "content-studio/src/rewrite-pipeline/gemini-ui.mjs",
+    "content-studio/src/rewrite-pipeline/fact-preparation.mjs",
+    "content-studio/src/rewrite-pipeline/core-adapter.mjs",
+    "content-studio/scripts/rewrite-pipeline.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/203",
+  "rollback": "Revert only this feature branch; stop private worker and retain immutable author originals and partially completed journals.",
+  "id": "upgrade-1e24229f-d492-483b-bc44-bb4982ef58c5",
+  "branch": "codex/promedical-pipeline-20261018",
+  "baseSha": "533597c10e290a2a09a522ad348e19c9968aa9d5",
+  "createdAt": "2026-10-18T05:57:01.006Z"
+}

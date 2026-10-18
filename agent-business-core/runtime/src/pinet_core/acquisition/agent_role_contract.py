@@ -89,6 +89,7 @@ class RoleCalibration(Strict):
     manifest_path: str = Field(min_length=1, max_length=1024)
     manifest_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     case_id: str = Field(pattern=r"^[a-z0-9-]{1,120}$")
+    recipient_namespace: UUID | None = Field(default=None, exclude_if=lambda value: value is None)
 
 
 class RoleRequest(Strict):

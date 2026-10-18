@@ -126,6 +126,27 @@ def validate_corpus_file(path, sha256):
     }
 
 
+def isolated_runtime_scope(frozen, case, namespace):
+    """Project only synthetic transport identities; sealed cases stay original.
+
+    One namespace is pinned by the whole calibration reference across every
+    consumed grant. It is not a resumption path for ordinary marketing.
+    """
+    if namespace is None:
+        return frozen, case
+    from .correspondence import recipient_hash
+
+    recipient_hash(case.recipient)  # Must already be an explicit .test identity.
+    namespace = str(UUID(str(namespace)))
+    campaign = Campaign.model_validate(frozen["campaign"])
+    runtime_campaign = campaign.model_copy(update={
+        "campaign_id": "c-" + fingerprint([namespace, campaign.campaign_id])[:32]})
+    recipient = "e-" + fingerprint([namespace, case.recipient])[:32] + "@episodes.example.test"
+    recipient_hash(recipient)
+    return ({**frozen, "campaign": runtime_campaign.model_dump(mode="json")},
+            case.model_copy(update={"recipient": recipient}))
+
+
 def manifest(reference):
     try:
         ref = RoleCalibration.model_validate(reference)
@@ -173,7 +194,7 @@ def manifest(reference):
         if source.get("cases") != frozen["cases"] or source_campaign != campaign:
             raise ValueError()
         selected = next(c for c in cases if c.id == ref.case_id)
-        return frozen, selected
+        return isolated_runtime_scope(frozen, selected, ref.recipient_namespace)
     except (ValidationError, ValueError, TypeError, KeyError, StopIteration, OSError):
         raise RunnerError("agent_role_manifest_invalid") from None
 
@@ -216,6 +237,8 @@ class SixRoleWorkflow:
             self.frozen["protected_source"]["sha256"],
             changed="agent_role_protected_source_changed",
         )["now"]
+        if self.reference.recipient_namespace is not None:
+            self.provenance["recipient_namespace"] = str(self.reference.recipient_namespace)
 
     def validate(self, campaign, case):
         frozen, selected = manifest(self.reference)

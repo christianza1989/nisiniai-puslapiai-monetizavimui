@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Isolate admitted synthetic calibration identities while retaining old contact holds, and compare the complete pinned calibration reference consistently with SQL",
+  "category": "code",
+  "evidence": [
+    "docs/CALIBRATION_SCOPE_ISOLATION.md",
+    "agent-business-core/runtime/offline_tests/test_acquisition_calibration_namespace.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_contract.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_calibration.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_authority.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_calibration_namespace.py",
+    "agent-business-core/runtime/tests/test_acquisition_agent_roles_pg.py",
+    "SKILLS/business-agent-calibration/references/runbook.md",
+    "docs/CALIBRATION_SCOPE_ISOLATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Hold all model runners and revert this scoped source. Retain prior contact policies, threads, case corpus and evaluator bytes, grants and charged ledgers. Never clear a real marketing opt-out.",
+  "id": "upgrade-0dd707df-f72e-47e5-9485-627cd2c667d0",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "39dd0a7f990f3034e62682545a686e3f7b04e7e8",
+  "createdAt": "2026-10-18T19:06:20.431Z"
+}

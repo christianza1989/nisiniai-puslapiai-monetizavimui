@@ -429,7 +429,8 @@ async def test_queued_six_role_work_honors_shared_native_feature_stop(six, monke
     assert task.status == "failed" and run is None and not attempts and not fake.calls
 
 
-async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade(six):
+@pytest.mark.parametrize("recipient_namespace", [None, "265b8165-b293-4991-bace-65aa6d543f7c"])
+async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade(six, recipient_namespace):
     import hashlib
     import json
 
@@ -442,17 +443,45 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
 
     class CalibratedRoles(Roles):
         async def __call__(self, role, schema, instruction, data, heartbeat, deadline):
-            assert "CLOSED SIMULATION" not in instruction
-            assert not {"private_persona", "expected_initial", "expected_classifications", "calibration"} & data.keys()
-            assert not {"site_id", "campaign_id", "enabled", "max_model_calls"} & data["campaign"].keys()
-            assert not {"organization_key", "site_id", "contact_verified"} & data["prospect"].keys()
-            assert "sources" not in data["agent_specification"]
-            return await super().__call__(role, schema, instruction, data, heartbeat, deadline)
+            try:
+                assert "CLOSED SIMULATION" not in instruction
+                assert not {"private_persona", "expected_initial", "expected_classifications", "calibration"} & data.keys()
+                assert not {"site_id", "campaign_id", "max_model_calls"} & data["campaign"].keys()
+                assert not {"organization_key", "site_id"} & data["prospect"].keys()
+                assert data["prospect"]["contact_verified"] is True
+                assert "sources" not in data["agent_specification"]
+                return await super().__call__(role, schema, instruction, data, heartbeat, deadline)
+            except AssertionError:
+                import traceback
+                self.failure = traceback.format_exc()
+                raise
 
     p, fake = six, CalibratedRoles()
     p["request"]["prospect"].update(
         contact_verified=True, contact_source_id="listing", contact_basis_verified=True, provider_allowed=True
     )
+    old_contact = None
+    if recipient_namespace:
+        # A completed earlier trial leaves a real retained contact hold. New
+        # calibration scope must coexist with it, not clear or resume it.
+        old_quality = await initial(p, Roles())
+        standin = type("InitialMail", (), {"id": old_quality.id, "result": old_quality.result["correspondence"]})()
+        await incoming(p, standin, body="An earlier trial's reply; keep this contact held.")
+        from pinet_core.acquisition.correspondence import Correspondence, recipient_hash
+        from pinet_core.acquisition.work_models import ContactPolicy
+        async with db.transaction(p["scope"].business_id, p["scope"].environment_id) as tx:
+            await Correspondence(db).locked(tx, p["scope"], "synthetic-model-native")
+            old_contact = await tx.scalar(select(ContactPolicy).where(
+                ContactPolicy.recipient_hash == recipient_hash(p["request"]["recipient"])))
+            assert old_contact.state == "hold"
+            old_contact = (old_contact.recipient_hash, old_contact.revision, old_contact.reason)
+        for role in ROLES:
+            fresh = p["role_approvals"][role] | {"authorization_id": str(uuid4())}
+            async with AsyncSession(p["admin"], expire_on_commit=False) as tx, tx.begin():
+                previous = await tx.get(ModelAuthorization, p["team"][role]["authorization_id"])
+                previous.enabled = False
+                result = await model_admin.approve(tx, fresh)
+            p["team"][role] = {"authorization_id": result["after"]["id"], "fingerprint": result["after"]["fingerprint"]}
     cases = [
         {
             "id": "known-six-" + str(n),
@@ -516,6 +545,8 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
         "manifest_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "case_id": "known-six-0",
     }
+    if recipient_namespace:
+        ref["recipient_namespace"] = recipient_namespace
 
     async def dispatch(identity, kind):
         assert kind == KIND and await worker.execute_once(fake, kind=kind, task_id=identity)
@@ -574,7 +605,7 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
 
     persona, evaluator = Persona(), Evaluator()
     row = await run_case(
-        Campaign.model_validate(frozen["campaign"]),
+        Campaign.model_validate(workflow.frozen["campaign"]),
         workflow.case,
         None,
         persona,
@@ -584,8 +615,22 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
         max_turns=1,
         workflow=workflow,
     )
-    assert row["passed"] and row["grade_pass"] and len(row["native_receipts"]) == 8
+    assert row["passed"] and row["grade_pass"] and len(row["native_receipts"]) == 8, getattr(fake, "failure", row)
     assert len(fake.calls) == 8 and persona.calls == evaluator.calls == 1
+    if recipient_namespace:
+        assert workflow.case.recipient != cases[0]["recipient"]
+        assert workflow.frozen["campaign"]["campaign_id"] != frozen["campaign"]["campaign_id"]
+        async with db.transaction(p["scope"].business_id, p["scope"].environment_id) as tx:
+            await Correspondence(db).locked(tx, p["scope"], "synthetic-model-native")
+            retained = await tx.scalar(select(ContactPolicy).where(ContactPolicy.recipient_hash == old_contact[0]))
+            assert (retained.recipient_hash, retained.revision, retained.reason) == old_contact and retained.state == "hold"
+            assert await tx.scalar(select(func.count()).select_from(Case)) == 2
+        changed_namespace = ref | {"recipient_namespace": str(uuid4())}
+        rejected = agent_role_calibration.SixRoleWorkflow(token=p["token"], reference=changed_namespace,
+            episode_id=uuid4(), dispatch=dispatch)
+        with pytest.raises(RunnerError, match="agent_role_calibration_authorization_retained"):
+            await rejected.prepare(Campaign.model_validate(rejected.frozen["campaign"]), rejected.case, utcnow())
+        assert len(fake.calls) == 8
     # Sealed custody references cannot be renamed on the same consumed grants.
     alias_path = folder / "alias-manifest.json"
     alias_path.write_bytes(path.read_bytes())
@@ -594,5 +639,5 @@ async def test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade
         token=p["token"], reference=alias_ref, episode_id=uuid4(), dispatch=dispatch
     )
     with pytest.raises(RunnerError, match="agent_role_calibration_authorization_retained"):
-        await alias.prepare(Campaign.model_validate(frozen["campaign"]), alias.case, utcnow())
+        await alias.prepare(Campaign.model_validate(alias.frozen["campaign"]), alias.case, utcnow())
     assert len(fake.calls) == 8

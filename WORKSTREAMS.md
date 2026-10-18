@@ -2307,3 +2307,13 @@ bound now33groups. Preserve boolean provenance, currentstate/created_at window,
 strictfilters, currentowner/nondisclosure and all7unavailable provider metrics.
 Focused11offline+3restrictedPG PASS,0paid/provider/live/protected/operatingDB.
 No mail_provider/config, engine/eventtable/campaign/UI or frozenstage changes.
+
+2026-10-18 Root calibration scope isolation, issue66 comment6253818844: own
+agent_role_contract/calibration/authority, focused namespace offline/sealed-PG
+test, calibration runbook and docs/CALIBRATION_SCOPE_ISOLATION.md plus own journal.
+Actual source39dd repeated a held synthetic recipient and correctly refused
+before any provider call. Keep old holds, threads, corpus, Config2, grader,
+18 charged calls and all failed stages. Add optional admitted UUID namespace
+for derived synthetic campaign/recipient only; Python compares the complete
+retained calibration reference excluding only case_id, matching existing SQL.
+No schema, real recipient aliasing, suppression reset or live campaign activation.

@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual source39dd attempt refused a retained old recipient before any call. Offline baseline reproduced missing namespace support; initial PG fixture lacked required RLS adapter scope and was corrected without changing product RLS. Positive PG then reproduced the Python two-field versus SQL complete-reference mismatch, fixed in authority.py. Final legacy and namespaced sealed eight-task workflows both PASS; old hold/thread/revision retained, changed namespace and renamed manifest refused on consumed grants. Original corpus/evaluator/Config2 and18 historical charges remain unchanged. No actual new calibration or campaign acceptance claimed by fixture checks.",
+  "checks": [
+    {
+      "command": "python -m pytest -q offline_tests/test_acquisition_calibration_namespace.py tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade",
+      "result": "PASS",
+      "evidence": "4 passed in98.50s; inert restricted PG only; log SHA256 ed5085cf703fbf89dcdcec8b62dd0d93789912665e368c73795193738723f79a"
+    },
+    {
+      "command": "ruff check exact changed acquisition source/tests; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed"
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs; node scripts/repository-safety.mjs .",
+      "result": "PASS",
+      "evidence": "PASS_INPUTS without private knowledge/channel claims; candidate safety PASS5409files,0findings. Main SKILL entry unchanged; referenced runbook updated."
+    }
+  ],
+  "eventId": "48427b2f-4700-4618-84cf-61cea4650407",
+  "sequence": 2,
+  "at": "2026-10-18T19:07:42.272Z"
+}

@@ -126,7 +126,7 @@ async def check_team(tx, value, work):
     )
     if any(
         (
-            {key: item["calibration"].get(key) for key in ("manifest_path", "manifest_sha256")}
+            {key: field for key, field in item["calibration"].items() if key != "case_id"}
             if isinstance(item.get("calibration"), dict)
             else None
         )

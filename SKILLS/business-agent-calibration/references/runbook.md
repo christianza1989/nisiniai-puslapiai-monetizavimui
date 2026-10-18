@@ -17,6 +17,15 @@ Prieš DB darbą privačiai paruošk atskirą runtime admin ir ribotą app rolę
 
 Tekstiniam lab reikia `PINET_ENVIRONMENT=local`, `PINET_ALLOW_SIMULATION=true`, `PINET_VOICE_ENABLED=false`, `PINET_SMTP_ENABLED=false`. `PINET_LEARNING_ENABLED=false` pradiniam palyginimui; atskiram autonomijos stebėjimui jį įjunk savo privačiame profilyje. `PINET_LEARNING_NAMESPACE=local` leidžia vietinius release. Išjunk lab mail siuntimą ir žinių auto-refresh, kai lygini užšaldytas įvestis. Ribok Codex kvietimus bei laiką; `--max-calls` yra modelio kvietimų limitas, ne USD sąskaitos limitas. Jev / Gemini turi atskirus raktus ir rezervus.
 
+Šešių išsaugotų rolių pakartotiniam uždaros laboratorijos ratui naudok vieną
+`RoleCalibration.recipient_namespace` UUID visai naujai autorizuotai komandai.
+Core iš nekeisto apsaugoto korpuso išveda atskirus sintetinius kampanijos ir
+gavėjo identifikatorius; nekoreguok faktų, personų, lūkesčių ar ankstesnės
+kontaktų sulaikymo būsenos. Tas pats namespace ir manifestas lieka prisegti
+visoms rato užduotims; sunaudotų teisių negalima pervadinti naujam ratui.
+Tai netaikoma tikriems klientams ar rinkodaros atsisakymų apėjimui. Tikslūs
+vartai ir suderinamumas — [kalibravimo izoliacijos sutartyje](../../../docs/CALIBRATION_SCOPE_ISOLATION.md).
+
 ## 2. Naujos nišos modulio prijungimas
 
 Perskaityk actual `profiles.py`, `agent_instructions.py`, `onboarding.py`, `learning_controller.py` ir public registry. Tam pačiam siteId / canonical host pridėk:

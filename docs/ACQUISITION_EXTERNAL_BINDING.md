@@ -81,3 +81,11 @@ operating/UI adoption are **UNVERIFIED at this source checkpoint**. Root and the
 source author own those dependencies. No paid, protected-corpus, actual dealer,
 Serving or operating database action was performed. The initial disk hold and
 misdirected test-log command are retained in the chat; the latter ran no tests.
+
+Runtime frozen/pushed a33c705b0f6f27ca8ca16223044a5687e8e06c34; draft PR207.
+Root merged this exact runtime after its own06ec23f source checkpoint. Current
+28 new offline cases and final scoped Ruff pass;14 staged blobs passed safety.
+Scoped653d1→a33 coverage passes8 shared paths with zero errors/uncovered paths.
+The default origin/main audit is separately BLOCKED:489 inherited shared changes,
+37 uncovered paths and38 errors. Its debt is not this adapter's scoped PASS.
+No composed0049 or real external native acceptance is implied by the source PR.

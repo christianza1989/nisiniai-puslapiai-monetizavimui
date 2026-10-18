@@ -63,4 +63,4 @@ def test_no_second_attempt_queue_or_runtime_authorization_mutation_grant():
     assert len(funcs)==5 and any("JSONB,VARCHAR,VARCHAR)" in sql for sql in funcs)
     assert sum("mail_display_projection(" in sql for sql in funcs)==1
     unique=next(item for item in models.DisplayJob.__table__.constraints if getattr(item,"name",None)=="uq_mail_display_source")
-    assert tuple(column.name for column in unique.columns)==("business_id","environment_id","mail_id","source_sha256","instruction_sha256","target_language")
+    assert tuple(column.name for column in unique.columns)==("business_id","environment_id","mail_id","source_sha256","instruction_sha256","target_language","generation")

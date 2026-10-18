@@ -7,6 +7,7 @@ from pathlib import Path
 
 from sqlalchemy import select, text
 from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.orm import aliased
 
 from ..config import settings
 from ..control.routes import ControlError, scope
@@ -51,9 +52,10 @@ async def preflight(tx, task):
         raise RunnerError("authorization_revoked")
     async with authority.current(tx, job.policy_id, task.session_id, execution=True) as (policy, session):
         mail, original, sha = await authority.original(tx, policy, job.mail_id)
-        key = service.identity(policy.business_id, policy.environment_id, mail.id, sha)
+        key = service.execution_identity(job, service.identity(policy.business_id, policy.environment_id, mail.id, sha))
         if (job.source_sha256 != sha or job.case_id != mail.case_id or job.instruction_sha256 != POLICY_SHA
                 or job.target_language != "lt" or task.source_revision != policy.source_revision
+                or job.generation > 0 and service.legacy_claim(policy.business_id, policy.environment_id, original)
                 or task.fingerprint != digest({"source": key, "policy_fingerprint": policy.fingerprint})):
             raise RunnerError("authorization_revoked")
         expiry = min(policy.expires_at, session.expires_at)
@@ -113,7 +115,9 @@ class DisplayHandler:
             return
 
     async def claim_task(self, tx):
+        successor = aliased(DisplayJob)
         task = await tx.scalar(select(Task).where(Task.kind == KIND, Task.status == "queued")
+            .where(~select(successor.task_id).where(successor.previous_task_id == Task.id).exists())
             .order_by(Task.created_at, Task.id).limit(1))
         if task is None:
             return None
@@ -121,12 +125,21 @@ class DisplayHandler:
             await preflight(tx, task)
         except DENIED:
             task = await tx.get(Task, task.id, with_for_update=True, populate_existing=True)
-            if task and task.status == "queued":
+            if task and task.status == "queued" and not await tx.scalar(
+                select(successor.task_id).where(successor.previous_task_id == task.id).limit(1)
+            ):
                 task.status, task.failure_code = "failed", "authorization_revoked"
                 await append_event(tx, task)
             return None
-        return await tx.scalar(select(Task).where(Task.id == task.id, Task.status == "queued")
+        task = await tx.scalar(select(Task).where(Task.id == task.id, Task.status == "queued")
             .with_for_update().execution_options(populate_existing=True))
+        # Re-read after the Task lock wait: a committed successor must leave its
+        # retained ancestor untouched even if the first preflight was admitted.
+        if task is not None and await tx.scalar(
+            select(successor.task_id).where(successor.previous_task_id == task.id).limit(1)
+        ):
+            return None
+        return task
 
     async def authority_locks(self, tx, task_id):
         task = await tx.get(Task, task_id, populate_existing=True)

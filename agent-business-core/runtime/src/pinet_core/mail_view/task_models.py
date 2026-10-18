@@ -44,6 +44,8 @@ class DisplayJob(Scope,Base):
     __tablename__=TABLE_JOB
     task_id: Mapped[str]=mapped_column(String,primary_key=True)
     policy_id: Mapped[str]=mapped_column(String)
+    previous_task_id: Mapped[str | None]=mapped_column(String, nullable=True)
+    generation: Mapped[int]=mapped_column(Integer, server_default=text("0"))
     kind: Mapped[str]=mapped_column(String)
     mail_id: Mapped[str]=mapped_column(String)
     case_id: Mapped[str]=mapped_column(String)
@@ -54,7 +56,8 @@ class DisplayJob(Scope,Base):
     reserved_at: Mapped[datetime | None]=mapped_column(DateTime(timezone=True),nullable=True)
     record: Mapped[dict | None]=mapped_column(JSONB(none_as_null=True),nullable=True)
     created_at: Mapped[datetime]=mapped_column(DateTime(timezone=True),server_default=text("clock_timestamp()"))
-    __table_args__=(UniqueConstraint("business_id","environment_id","mail_id","source_sha256","instruction_sha256","target_language",name="uq_mail_display_source"),
+    __table_args__=(UniqueConstraint("business_id","environment_id","mail_id","source_sha256","instruction_sha256","target_language","generation",name="uq_mail_display_source"),
+        ForeignKeyConstraint(["previous_task_id"],[TABLE_JOB+".task_id"],ondelete="RESTRICT"),
         ForeignKeyConstraint(["task_id","business_id","organization_id","user_id","environment_id","kind"],
             ["control_tasks."+key for key in ("id","business_id","organization_id","user_id","environment_id","kind")],ondelete="RESTRICT"),
         ForeignKeyConstraint(["policy_id","business_id","organization_id","user_id","environment_id"],

@@ -1,0 +1,32 @@
+{
+  "siteId": "core",
+  "summary": "Add explicit owner reauthorization for named mail-display jobs with provably zero dispatch; preserve stopped policy and old Task/Job history. The triggering exact-task private operator invocation was unsupported, not a core worker defect.",
+  "category": "code",
+  "evidence": [
+    "docs/MAIL_DISPLAY_TASKS.md",
+    "agent-business-core/runtime/tests/test_mail_display_reauthorization_pg.py",
+    "Original fixed CLI rejects task-id; stopped-policy enqueue returns the retained existing source Job. First operator0-call failure and first offline generation-constraint assertion are retained privately."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_contract.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_models.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_service.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_handler.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_policy.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_reauthorization.py",
+    "agent-business-core/runtime/src/pinet_core/mail_view/task_reauthorization_schema.py",
+    "agent-business-core/runtime/migrations/versions/0051_mail_display_reauthorization.py",
+    "agent-business-core/runtime/scripts/mail_display_policy.py",
+    "agent-business-core/runtime/offline_tests/test_mail_display_schema.py",
+    "agent-business-core/runtime/offline_tests/test_mail_display_reauthorization.py",
+    "agent-business-core/runtime/tests/test_mail_display_reauthorization_pg.py",
+    "docs/MAIL_DISPLAY_TASKS.md",
+    "docs/MAIL_DISPLAY_SCHEMA.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop new display policies; retain predecessor/successor/Run history. Use a compatible source rollback; do not drop0051 or delete/reset rows.",
+  "id": "upgrade-f1d1b315-9a60-4d5d-8447-3bda7bac33af",
+  "branch": "codex/mail-display-zero-dispatch-reauth-20261018",
+  "baseSha": "2485b762db73474b9efce24b55f64c0b574c52c5",
+  "createdAt": "2026-10-18T20:43:28.141Z"
+}

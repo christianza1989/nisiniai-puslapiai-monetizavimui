@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Explicit owner product path only; original private exact-task misuse remains an operator finding. Existing queued and exact canonical failed/authorization_revoked zero-dispatch predecessors are preserved; all other failure/Run/reservation/unknown/legacy histories refuse. Migration is0051_mail_display_reauth (short enough for existing Alembic version column). Initial identifier-length rollback and three conservative draft-fence failures are retained in ignored artifacts; SQL alias, JSON-null absence and derived verified-owner SQL scope were corrected before acceptance. Dedicated QA lease returned to Root after serial tests. No real provider/model/Gmail/operating DB operation, main merge or adoption claim.",
+  "checks": [
+    {
+      "command": "Owned QA whitelist runner: alembic upgrade 0051_mail_display_reauth, retained table/row hash comparison",
+      "result": "PASS",
+      "evidence": "Dedicated pinet_native_root_20261018_001 on127.0.0.1:15440 only;95 prior tables and6599 prior rows unchanged excluding two additive Job fields. Final draft function replacement also preserved every current table/row hash. Migration receipt retained privately."
+    },
+    {
+      "command": "python -X utf8 -B -m pytest -q tests/test_mail_display_reauthorization_pg.py (15 lifecycle cases) and additional runtime successor-context forgery case",
+      "result": "PASS",
+      "evidence": "16 new PG cases: two positive3-source fixed-CLI batches preserve old Task/Job/Policy/Mail; other failure, existing Run, unknown usage, legacy claim, changed source, foreign owner, live policy, lease/result, competing batches, stale selection and unnamed policy expansion refuse.15-case log sha2562f48340d4454d2aed6dd0fab5a2800ae5a13b802a2f2e8bec1879c7ee3209be8; runtime forgery included in22-case serial log sha256cd4dcc53381c2885f5486284653f54cfc96ecc2c1ec288bcbfc1d08f7c797852. All adapters inert."
+    },
+    {
+      "command": "python -X utf8 -B -m pytest -q tests/test_mail_display_tasks_pg.py",
+      "result": "PASS",
+      "evidence": "21 existing PG/HTTP/common-worker display cases pass on0051; with new runtime forgery case22PASS/120.71s. Serial log sha256cd4dcc53381c2885f5486284653f54cfc96ecc2c1ec288bcbfc1d08f7c797852."
+    },
+    {
+      "command": "python -X utf8 -B -m pytest -q offline_tests/test_mail_display_schema.py offline_tests/test_mail_display_tasks.py offline_tests/test_mail_display_reauthorization.py",
+      "result": "PASS",
+      "evidence": "23 passed in1.82s. Existing six original unique-source dimensions preserved with generation added; exact versioned named budget validated."
+    },
+    {
+      "command": "ruff check new reauthorization modules/migration/tests; git diff --check; paired git-freshness --phase handoff",
+      "result": "PASS",
+      "evidence": "Ruff and whitespace checks passed. Successful fresh core main533597c10e290a2a09a522ad348e19c9968aa9d5 and companion main ec8a9c032fe926d1d9722802d8eb26fa8bd02937 are ancestors of own2485 and companion255fea08 bases."
+    }
+  ],
+  "eventId": "2527133d-6090-44f3-b2d7-d26dfc3929da",
+  "sequence": 3,
+  "at": "2026-10-18T20:59:56.486Z"
+}

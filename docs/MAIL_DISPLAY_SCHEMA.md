@@ -145,3 +145,23 @@ transactions in a NEW labelled isolated PostgreSQL QA. History is retained.
 it is excluded from post-migration acceptance. No provider/channel/operating
 database or closed ledger is part of this schema package. Source delivery,
 main merge and actual adoption remain separate.
+
+## 0051 zero-dispatch successor lineage
+
+0051 adds immutable `previous_task_id` and `generation` metadata to DisplayJob;
+existing rows retain generation0 and no predecessor. The source uniqueness key
+adds generation; a unique predecessor index permits only one successor. A private
+SECURITY DEFINER insert fence locks ancestor Tasks before Policies/Jobs, verifies
+that every ancestor policy is stopped and every ancestor has zero Run/reservation/
+result/lease/Record history, and repeats current new-policy slot checks. Successor
+inserts additionally require the explicit privileged reauthorization context;
+ordinary runtime INSERT cannot mint them. Root INSERT remains generation0 only.
+No runtime UPDATE/DELETE privilege or second attempt/queue/usage table is added.
+
+The original immutable-row and common Task/Run fences still apply. Source data
+is locked and hashed through the existing Mail/Case authority helper. The read-only
+projection selects the highest generation deterministically; ready still requires
+its exact Task+Run+Record success. Claimed-source scans remain claimed across all
+generations. Migration downgrade refuses to erase retained lineage. Use policy
+containment and a compatible source rollback, not row deletion or an old-policy
+reset. See MAIL_DISPLAY_TASKS.md for the versioned explicit input and limits.

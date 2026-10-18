@@ -2355,3 +2355,20 @@ crossed campaign/fact expiry20:00UTC before CLI launch. Keep41attempts including
 Require campaign/allfacts/allcase evidence beyond admitted team/session deadline
 before first Task. Independent custodian renews synthetic operational timestamps
 in a separate immutable source, without supplier-fact approval/unseen-case claim.
+
+2026-10-18 Root-authorized explicit LT zero-dispatch reauthorization: helper owns
+codex/mail-display-zero-dispatch-reauth-20261018 from2485b762, issue66. Scope
+mail_view/task_contract,task_models,task_service,task_handler,task_policy and new
+task_reauthorization/task_reauthorization_schema; migration0051; policy CLI,
+focused offline/retained-QA PG tests, display docs and unique upgrade. Original
+private operator invoked an unsupported exact-task mode; canonical fixed
+run-one is unchanged. New product path uses explicit fresh bounded owner policy
+and append-only named zero-dispatch successors; old rows/mail/stop receipts stay.
+No operating DB/provider/model/Gmail/acquisition/worker source changes. QA DB
+lease coordinated with Root; no migration while foreign QA lease is active.
+
+2026-10-18 LT helper scoped implementation complete on its own branch: 0051 QA
+migration preserves all 6,599 pre-existing rows across 95 tables; 16 new recovery
+PG, 21 existing display PG and 23 offline cases PASS using inert adapters. QA
+lease returned to Root after serial tests. Initial draft failures retained.
+Source/journal handoff only; no main merge or operating adoption is claimed.

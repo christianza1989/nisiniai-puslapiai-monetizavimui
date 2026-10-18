@@ -10,7 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 
 from pinet_core.config import settings
 from pinet_core.mail_view import task_policy
-from pinet_core.mail_view.task_contract import Approve, Stop
+from pinet_core.mail_view.task_contract import Approve, Reauthorize, Stop
 
 
 async def execute(action, request, output):
@@ -19,7 +19,7 @@ async def execute(action, request, output):
     if (not output.is_absolute() or any(p.is_symlink() for p in (output, *output.parents))
             or any(p.exists() or p.is_symlink() for p in (output, marker))):
         raise ValueError("new_private_display_receipt_required")
-    value = (Approve if action == "approve" else Stop).model_validate(request)
+    value = ({"approve":Approve,"reauthorize":Reauthorize}.get(action,Stop)).model_validate(request)
     engine = create_async_engine(settings().admin_database_url)
     committed = False
     try:
@@ -41,12 +41,13 @@ async def execute(action, request, output):
         await engine.dispose()
     return {"status": "complete", "policy_id": result["after"]["id"],
         "fingerprint": result["after"]["fingerprint"], "enabled": result["after"]["enabled"],
-        "model_dispatch_performed": False, "channel_activation": "not_performed"}
+        "model_dispatch_performed": False, "channel_activation": "not_performed",
+        **({"successor_task_ids":[row["task_id"] for row in result["successors"]]} if action == "reauthorize" else {})}
 
 
 async def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("approve", "stop", "inspect"))
+    parser.add_argument("action", choices=("approve", "stop", "inspect", "reauthorize"))
     parser.add_argument("--input", required=True, help="Private current-owner policy input")
     parser.add_argument("--receipt", required=True, help="New absolute private prepared/commit receipt")
     args = parser.parse_args()

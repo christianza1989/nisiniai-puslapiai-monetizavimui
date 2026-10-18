@@ -15,7 +15,7 @@ from test_private_preview_pg import preview  # noqa: F401 - retained normal-owne
 
 from pinet_core.acquisition import module_admin
 from pinet_core.config import settings
-from pinet_core.control.models import BusinessGrant, Portfolio
+from pinet_core.control.models import BusinessGrant, Membership, Portfolio
 from pinet_core.control.routes import scope, token_hash
 from pinet_core.customer_text.service import customer_session
 from pinet_core.mail_view import task_handler, task_policy, task_service
@@ -73,6 +73,22 @@ async def enqueue(p):
     async with scope(token=token_hash(p["token"])) as tx:
         session = await customer_session(tx, p["token"])
         return await task_service.enqueue(tx, session, {"policy_id": p["policy"]["id"], "mail_id": p["mail_id"]})
+
+
+async def second_owner(p):
+    _, auth, me = await verified(p)
+    token = auth["Authorization"][7:]
+    async with scope(token=token_hash(token)) as tx:
+        session = await customer_session(tx, token)
+        sid = session.id
+    async with AsyncSession(p["admin"]) as tx, tx.begin():
+        grant = await tx.scalar(select(BusinessGrant).where(BusinessGrant.business_id == p["business_id"],
+            BusinessGrant.environment_id == p["environment"]))
+        tx.add(Membership(id=new_id(), user_id=me["user_id"], organization_id=grant.organization_id,
+            environment_id=p["environment"], role="owner", enabled=True))
+        await tx.flush()
+        policy = await task_policy.approve(tx, {**p["request"], "policy_id": new_id(), "authorizing_session_id": sid})
+    return {"auth":auth,"token":token,"user_id":me["user_id"],"policy":policy["after"]}
 
 
 class Translator:
@@ -269,3 +285,76 @@ async def test_late_final_fence_rolls_back_record_but_preserves_precompletion_us
     job, task, run = await retained(p)
     assert job.record is None and task.result is None and task.status == run.status == "failed"
     assert run.usage["input_tokens"] == 9 and run.usage["model_calls"] == 1 and run.usage["unknown_usage_calls"] == 0
+
+
+async def test_thirty_retained_legacy_claims_do_not_starve_the_next_new_mail(display):
+    p, fake = display, Translator()
+    claims = []
+    async with AsyncSession(p["admin"]) as tx, tx.begin():
+        await tx.execute(update(MailMessage).where(MailMessage.id == p["mail_id"]).values(created_at=utcnow()+timedelta(seconds=60)))
+        for index in range(30):
+            mid, message = new_id(), "<"+uuid4().hex+"@example.test>"
+            tx.add(MailMessage(id=mid, business_id=p["business_id"], environment_id=p["environment"],
+                case_id=p["case_id"], message_id=message, direction="inbound", state="captured",
+                created_at=utcnow()-timedelta(seconds=30-index), payload=deepcopy(p["payload"])))
+            value = {"mail_id":mid,"case_id":p["case_id"],"message_id":message,"direction":"inbound",**p["payload"]}
+            sha = source_digest(p["business_id"],p["environment"],value)
+            path = record_path(p["root"],p["business_id"],p["environment"],mid,sha).with_suffix(".attempt.json")
+            path.parent.mkdir(parents=True)
+            path.write_text('{"max_calls":1,"usage":null}',encoding="utf-8")
+            claims.append(path)
+    # A bounded materialization pass may acknowledge30 old sources, but the
+    # durable no-attempt markers must advance the next pass across restart.
+    for _ in range(2):
+        await worker.execute_once(fake,kind=KIND)
+    assert fake.calls == [p["mail_id"]]
+    assert (await retained(p))[1].status == "succeeded"
+    assert all(path.read_text()== '{"max_calls":1,"usage":null}' for path in claims)
+    async with AsyncSession(p["admin"]) as tx:
+        assert await tx.scalar(select(func.count()).select_from(DisplayJob).where(DisplayJob.business_id==p["business_id"]))==1
+        assert await tx.scalar(select(func.count()).select_from(TaskRun).where(TaskRun.business_id==p["business_id"]))==1
+
+
+async def test_second_owner_reuses_business_cache_without_duplicate_job_or_private_task_read(display,monkeypatch):
+    p,fake=display,Translator()
+    assert await worker.execute_once(fake,kind=KIND)
+    _,task,_=await retained(p)
+    other=await second_owner(p)
+    auth=other["auth"]
+    monkeypatch.setattr(settings(),"mail_display_actor_ids",[p["user_id"],other["user_id"]])
+    assert not await worker.execute_once(fake,kind=KIND)
+    assert fake.calls==[p["mail_id"]]
+    response=await p["client"].get(f"/operator/v2/businesses/{p['business_id']}/mail/{p['mail_id']}",headers=auth)
+    assert response.status_code==200 and response.json()["data"]["translation"]["status"]=="ready",response.text
+    assert response.json()["data"]["translation"]["body"]=="Nepatvirtinta: 2 kubilai."
+    from pinet_core.control.routes import ControlError
+    async with scope(token=token_hash(auth["Authorization"][7:])) as tx:
+        session=await customer_session(tx,auth["Authorization"][7:])
+        with pytest.raises(ControlError):
+            await task_service.read(tx,session,task.id)
+    async with AsyncSession(p["admin"]) as tx:
+        assert await tx.scalar(select(func.count()).select_from(DisplayJob).where(DisplayJob.mail_id==p["mail_id"]))==1
+
+
+async def test_two_owners_concurrently_enqueue_one_source_under_a_named_unique_fence(display,monkeypatch):
+    p,fake=display,Translator()
+    other=await second_owner(p)
+    monkeypatch.setattr(settings(),"mail_display_actor_ids",[p["user_id"],other["user_id"]])
+    arrivals,ready=set(),asyncio.Event()
+    original=task_service.new_task
+    async def held(tx,policy,session,key,**kwargs):
+        arrivals.add(session.user_id)
+        if len(arrivals)==2:
+            ready.set()
+        await asyncio.wait_for(ready.wait(),15)
+        return await original(tx,policy,session,key,**kwargs)
+    monkeypatch.setattr(task_service,"new_task",held)
+    async def submit(token,policy_id):
+        async with scope(token=token_hash(token)) as tx:
+            session=await customer_session(tx,token)
+            return await task_service.enqueue(tx,session,{"policy_id":policy_id,"mail_id":p["mail_id"]})
+    results=await asyncio.wait_for(asyncio.gather(submit(p["token"],p["policy"]["id"]),
+        submit(other["token"],other["policy"]["id"])),30)
+    assert {row["state"] for row in results}=={"queued","existing_shared"}
+    assert await worker.execute_once(fake,kind=KIND)
+    assert not await worker.execute_once(fake,kind=KIND) and fake.calls==[p["mail_id"]]

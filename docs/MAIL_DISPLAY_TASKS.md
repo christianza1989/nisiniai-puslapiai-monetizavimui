@@ -41,6 +41,13 @@ filesystem publish/DB rollback gap. Failure cannot hide or undo the original mai
 Existing sidecars and one-call claim files remain historical evidence. Only an
 unclaimed source may fall back to its legacy sidecar. A queued/failed/new Job
 cannot be bypassed by a sidecar; legacy retained attempts block new model work.
+Acknowledging a legacy file creates only a cancelled common Task/Event marker,
+with no DisplayJob, TaskRun or new charged call. This durable metadata advances
+bounded scans beyond retained sources and does not relabel their old usage as0.
+The original file is preserved. A narrow business-owner read projection can see
+shared cache/claim state across producers while keeping Task/Run/policy RLS
+private and exposing no private execution identifiers or usage. Concurrent owner
+inserts recover only the exact named source-key uniqueness conflict.
 Automatic discovery handles unseen immutable messages; a changed legacy original
 requires explicit source-bound enqueue and is never an automatic paid retry.
 

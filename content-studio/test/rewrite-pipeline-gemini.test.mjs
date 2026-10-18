@@ -94,9 +94,14 @@ test('same ID with different text is not an acknowledgement', async () => {
   assert.equal((await sendGeminiOnce(f.page, f.request)).status, 'SEND_OUTCOME_UNKNOWN');
 });
 
-test('query without a retained conversation URL is not an acknowledgement', async () => {
+test('exact query history acknowledges UI delivery before conversation URL allocation, never completion', async () => {
   const f = fixture({ onPress({ get }) { get().queries.push({ index: 0, id: 'q', text: prompt, html: '<q/>' }); } });
-  assert.equal((await sendGeminiOnce(f.page, f.request)).status, 'SEND_OUTCOME_UNKNOWN');
+  const ack = await sendGeminiOnce(f.page, f.request);
+  assert.equal(ack.status, 'QUERY_ACKNOWLEDGED');
+  assert.equal(ack.retainedConversationUrl, null);
+  assert.equal(ack.completedResponse, false);
+  f.get().url += '/new-retained'; f.get().responses = [response()];
+  assert.equal((await observeGeminiResponse(f.page,{...f.request,acknowledgement:ack,responseTimeoutMs:100,pollMs:1})).status,'COMPLETE_RESPONSE_CAPTURED');
 });
 
 test('old matching history blocks dispatch, rather than claiming a new response', async () => {
@@ -166,11 +171,27 @@ test('editor mismatch, duplicate editor, hidden editor and active Stop block dis
   }
 });
 
-test('background document is recorded, not called a backend failure; CSS-visible editor still uses one Enter', async () => {
+test('hidden document blocks Enter even when editor is CSS-visible', async () => {
   const s = start(); s.visibilityState = 'hidden'; const f = fixture({ initial: s });
-  const ack = await sendGeminiOnce(f.page, f.request);
-  assert.equal(ack.status, 'QUERY_ACKNOWLEDGED');
-  assert.equal(ack.observed.visibilityState, 'hidden');
+  await assert.rejects(sendGeminiOnce(f.page, f.request), /document must be visible/);
+  assert.equal(f.events.includes('press:Enter'), false);
+  assert.equal(f.attempts.size, 0);
+});
+
+test('covered visible document may send without keyboard focus', async () => {
+  const s = start(); s.hasFocus = false;
+  const f = fixture({ initial: s });
+  assert.equal((await sendGeminiOnce(f.page, f.request)).status, 'QUERY_ACKNOWLEDGED');
+  assert.equal(f.events.filter(e => e === 'press:Enter').length, 1);
+});
+
+test('two-RPC flow blocks a hidden document both before and after preparation', async () => {
+  const hidden = fixture(); hidden.get().visibilityState = 'hidden';
+  await assert.rejects(prepareGeminiSend(hidden.page, {...hidden.request, capturePreflight:undefined, preflightProof:proof()}), /document must be visible/);
+  const f = fixture(); const request = await hostPrepared(f);
+  f.get().visibilityState = 'hidden';
+  await assert.rejects(dispatchPreparedGeminiSend(f.page, request), /document must be visible/);
+  assert.equal(f.events.includes('press:Enter'), false);
 });
 
 test('outcome write failure leaves durable intent replay barrier', async () => {
@@ -250,7 +271,7 @@ test('DOM read executes the actual page-only collector and preserves exact body/
   const block = { tagName: 'P', innerText: 'Visas tekstas.', outerHTML: '<p>Visas tekstas.</p>', querySelectorAll: () => anchors };
   const content = { id: 'actual-content-id', innerText: 'Visas tekstas.', innerHTML: '<p>Visas tekstas.</p>', querySelectorAll: (s) => s === 'a[href]' ? anchors : [block] };
   const model = { id: '', outerHTML: '<model-response/>', querySelector: (s) => s === selectors.responseText ? content : {} };
-  const query = { id: '', outerHTML: '<user-query/>', getAttribute: () => null, querySelector: () => ({ innerText: prompt }) };
+  const query = { id: '', outerHTML: '<user-query/>', getAttribute: () => null, querySelector: () => ({ innerText: 'You said truncated summary\n' + prompt, querySelectorAll: () => prompt.split('\n').map(innerText => ({innerText})) }) };
   const editor = { tagName: 'DIV', innerText: prompt, disabled: false, isContentEditable: true, getAttribute: () => null, getBoundingClientRect: () => ({ width: 500, height: 100, left: 0, right: 500, top: 0, bottom: 100 }) };
   const account = { getAttribute: () => 'Google Account: test-account', textContent: '' };
   const ctx = { document: { querySelectorAll: (s) => ({ [selectors.editor]: [editor], [selectors.query]: [query], [selectors.response]: [model], [selectors.stop]: [], [selectors.accountControl]: [account] })[s], visibilityState: 'hidden', hasFocus: () => false }, location: { href: 'https://gemini.google.com/u/4/app/actual' }, innerWidth: 1440, innerHeight: 1000, getComputedStyle: () => ({ display: 'block', visibility: 'visible', opacity: '1' }), Date, selectors };
@@ -259,6 +280,8 @@ test('DOM read executes the actual page-only collector and preserves exact body/
   assert.equal(actual.editor.visible, true);
   assert.equal(actual.responses[0].id, 'actual-content-id');
   assert.equal(actual.queries[0].id, null, 'do not invent query IDs when DOM has none');
+  assert.equal(actual.queries[0].text, prompt);
+  assert.equal(actual.queries[0].renderedText, 'You said truncated summary\n' + prompt);
   assert.deepEqual(JSON.parse(JSON.stringify(actual.responses[0].orderedAnchors)), [{ url: 'https://example.com/b', label: 'B' }, { url: 'https://example.com/a', label: 'A' }]);
   assert.deepEqual(JSON.parse(JSON.stringify(actual.responses[0].blocks[0].anchors)), [{ url: 'https://example.com/b', label: 'B' }, { url: 'https://example.com/a', label: 'A' }]);
   assert.deepEqual(JSON.parse(JSON.stringify(actual.stopControls)), []);

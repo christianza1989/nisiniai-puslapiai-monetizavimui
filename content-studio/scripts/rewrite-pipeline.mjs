@@ -1,15 +1,18 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, access } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createPipelineState, JsonPipelineStore, runRewritePipeline } from '../src/rewrite-pipeline/runner.mjs';
 import { HostBridge } from '../src/rewrite-pipeline/host-bridge.mjs';
+import { geminiBrowserFunctionsSource } from '../src/rewrite-pipeline/gemini-ui.mjs';
 
 const [command,...args]=process.argv.slice(2);
 const option=name=>{const i=args.indexOf('--'+name);return i<0?undefined:args[i+1];};
 const state=option('state');assert(state,'--state existing CURRENT_LEAN_BATCH.json required');
 const store=new JsonPipelineStore(path.resolve(state)),bridge=new HostBridge(store);
 const stdin=async()=>{let text='';for await(const part of process.stdin)text+=part;return JSON.parse(text);};
+// Large exact prompts/proofs belong in files, never shell arguments or a PTY.
+const payload=async()=>option('input')?JSON.parse(await readFile(option('input'),'utf8')):stdin();
 const output=value=>process.stdout.write(JSON.stringify(value,null,2)+'\n');
 if(command==='init'){
   const input=JSON.parse(await readFile(option('input'),'utf8'));
@@ -20,8 +23,19 @@ if(command==='init'){
   output({queued:input.pages.length});
 }else if(command==='next')output(await bridge.pending());
 else if(command==='claim')output(await bridge.claim(option('request'),option('actor')));
-else if(command==='reply'){const value=await stdin();await bridge.reply(option('request'),option('actor'),value.payloadSha256,value.response);output({saved:true});}
-else if(command==='send-intent')output(await bridge.recordSendIntent(option('request'),option('actor'),await stdin()));
+else if(command==='reply'){const value=await payload();await bridge.reply(option('request'),option('actor'),value.payloadSha256,value.response);output({saved:true});}
+else if(command==='send-intent'){
+  const prepared=await payload(),dispatchFile=option('dispatch-file');
+  if(dispatchFile){
+    let exists=false;try{await access(dispatchFile);exists=true;}catch(error){if(error.code!=='ENOENT')throw error;}
+    assert(!exists,'Dispatch file already exists; observe only, never overwrite/retry');
+  }
+  const receipt=await bridge.recordSendIntent(option('request'),option('actor'),prepared);
+  // A failure after persistence leaves the durable attempt blocking all replay.
+  // This creates source for the OFFICIAL MCP tool; it never executes a browser.
+  if(dispatchFile)await writeFile(dispatchFile,`async (page) => {\n${geminiBrowserFunctionsSource()}\nreturn dispatchPreparedGeminiSend(page, ${JSON.stringify({prepared,persistedIntent:receipt})});\n}\n`,{encoding:'utf8',flag:'wx'});
+  output({...receipt,...(dispatchFile?{dispatchFile:path.resolve(dispatchFile)}:{})});
+}
 else if(command==='status'){
   const p=(await store.read()).pipeline;
   output({status:p.status,publication:p.publication,counts:p.pages.reduce((c,p)=>(c[p.status]=(c[p.status]??0)+1,c),{}),pendingRequests:await bridge.pending(),runner:p.runner});

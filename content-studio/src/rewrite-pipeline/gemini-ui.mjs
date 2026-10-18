@@ -51,7 +51,12 @@ export async function readGeminiUi(page, selectors) {
     const accountControl = accounts.length === 1 ? [accounts[0].getAttribute('aria-label'), accounts[0].getAttribute('title'), accounts[0].textContent].filter(Boolean).join('\n') : null;
     const queries = [...document.querySelectorAll(s.query)].map((node, index) => {
       const textNode = node.querySelector(s.queryText);
-      return { index, id: node.id || node.getAttribute('data-query-id') || null, text: textNode?.innerText ?? null, html: node.outerHTML };
+      // Gemini's visually-hidden "You said" summary repeats a truncated prompt.
+      // Preserve it verbatim as renderedText/HTML, but compare the observed real
+      // paragraph lines when this UI shape is present. Never trim arbitrary prose.
+      const lines = textNode ? [...textNode.querySelectorAll('p.query-text-line')] : [];
+      const renderedText = textNode?.innerText ?? null;
+      return { index, id: node.id || node.getAttribute('data-query-id') || null, text: lines.length ? lines.map(line => line.innerText).join('\n') : renderedText, renderedText, html: node.outerHTML };
     });
     const responses = [...document.querySelectorAll(s.response)].map((node, index) => {
       const content = node.querySelector(s.responseText);
@@ -81,6 +86,7 @@ export async function readGeminiUi(page, selectors) {
 
 /** Shared live-state validation used by the two-RPC host handshake. */
 export function verifyPreparedGeminiState(actual, prepared) {
+  if (actual.visibilityState !== 'visible') throw new Error('Gemini document must be visible in its active, non-minimized window; no send');
   if (actual.url !== prepared.before.url || actual.stopCount || actual.editor.count !== 1 || !actual.editor.visible || !actual.editor.enabled || actual.editor.text !== prepared.before.editor.text || normalizeGeminiPrompt(actual.editor.text ?? '') !== normalizeGeminiPrompt(prepared.prompt)) throw new Error('Prepared editor/context changed; no send');
   if (actual.accountControl?.count !== 1 || !actual.accountControl.text?.includes(prepared.proof.accountIdentity)) throw new Error('Actual account control changed or unavailable; no send');
   const history = (state) => ({ queries: state.queries.map((q) => ({ id: q.id, index: q.index, text: q.text })), responses: state.responses.map((r) => ({ id: r.id, index: r.index, text: r.text, html: r.html, completionMarker: r.completionMarker })) });
@@ -150,7 +156,8 @@ export async function dispatchPreparedGeminiSend(page, request) {
       observed = await readGeminiUi(page, prepared.selectors);
       const candidates = observed.queries.filter((q) => q.index >= prepared.before.queries.length && q.text?.includes(`BATCH_ID: ${prepared.batchId}`) && normalizeGeminiPrompt(q.text) === normalizeGeminiPrompt(prepared.prompt));
       const url = new URL(observed.url);
-      if (candidates.length === 1 && url.origin === 'https://gemini.google.com' && url.pathname.startsWith(`${prepared.proof.accountPath}/app/`) && url.pathname.length > `${prepared.proof.accountPath}/app/`.length) return { status: 'QUERY_ACKNOWLEDGED', batchId: prepared.batchId, retryAllowed: false, completedResponse: false, intentId: receipt.attemptId, preparedId: prepared.preparedId, conversationUrl: observed.url, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: prepared.before.responses.length, baselineResponseIds: prepared.preResponseIds, at: observed.at, transportError, observed };
+      const appPath = `${prepared.proof.accountPath}/app`;
+      if (candidates.length === 1 && url.origin === 'https://gemini.google.com' && (url.pathname === appPath || url.pathname.startsWith(`${appPath}/`))) return { status: 'QUERY_ACKNOWLEDGED', batchId: prepared.batchId, retryAllowed: false, completedResponse: false, intentId: receipt.attemptId, preparedId: prepared.preparedId, conversationUrl: observed.url, retainedConversationUrl: url.pathname.length > appPath.length + 1 ? observed.url : null, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: prepared.before.responses.length, baselineResponseIds: prepared.preResponseIds, at: observed.at, transportError, observed };
       if (Date.now() >= deadline) break;
       await page.waitForTimeout(Math.min(250, Math.max(1, deadline - Date.now())));
     } while (Date.now() <= deadline);
@@ -181,6 +188,7 @@ export async function sendGeminiOnce(page, request) {
     const capturedProof = await request.capturePreflight(page);
     const before = await readGeminiUi(page, request.selectors);
     const proof = validateGeminiProof(capturedProof, request, before.url);
+    if (before.visibilityState !== 'visible') throw new Error('Gemini document must be visible in its active, non-minimized window; no send');
     if (before.stopCount || before.editor.count !== 1 || !before.editor.visible || !before.editor.enabled) throw new Error('Editor not uniquely visible/enabled or response still running');
     if (before.queries.length !== before.responses.length || before.responses.some((r) => !r.id || !r.text.trim() || !r.completionMarker)) throw new Error('Previous conversation is not fully retained/completed; observe only');
     const normalized = normalizeGeminiPrompt(prompt);
@@ -192,7 +200,7 @@ export async function sendGeminiOnce(page, request) {
     if (receipt?.durable !== true || !receipt.intentId || receipt.batchId !== batchId || receipt.promptNormalized !== normalized || persisted?.intentId !== receipt.intentId || persisted?.promptNormalized !== normalized) throw new Error('Intent durability/readback not confirmed; no dispatch');
     const latest = await readGeminiUi(page, request.selectors);
     validateGeminiProof(proof, request, latest.url);
-    if (latest.url !== before.url || latest.stopCount || latest.queries.length !== before.queries.length || latest.responses.length !== before.responses.length || latest.editor.count !== 1 || !latest.editor.visible || !latest.editor.enabled || normalizeGeminiPrompt(latest.editor.text ?? '') !== normalized) throw new Error('UI changed after intent; keep intent and do not dispatch/retry');
+    if (latest.visibilityState !== 'visible' || latest.url !== before.url || latest.stopCount || latest.queries.length !== before.queries.length || latest.responses.length !== before.responses.length || latest.editor.count !== 1 || !latest.editor.visible || !latest.editor.enabled || normalizeGeminiPrompt(latest.editor.text ?? '') !== normalized) throw new Error('UI changed after intent; keep intent and do not dispatch/retry');
     // Mark ambiguity BEFORE awaiting the transport. A timeout may follow delivery.
     dispatched = true;
     let transportError = null;
@@ -205,9 +213,10 @@ export async function sendGeminiOnce(page, request) {
       actual = await readGeminiUi(page, request.selectors);
       const candidates = actual.queries.filter((q) => q.index >= before.queries.length && q.text?.includes(`BATCH_ID: ${batchId}`) && normalizeGeminiPrompt(q.text) === normalized);
       const url = new URL(actual.url);
-      const hasConversation = url.origin === 'https://gemini.google.com' && url.pathname.startsWith(`${proof.accountPath}/app/`) && url.pathname.length > `${proof.accountPath}/app/`.length;
-      if (candidates.length === 1 && hasConversation) {
-        const outcome = { status: 'QUERY_ACKNOWLEDGED', batchId, retryAllowed: false, completedResponse: false, intentId: receipt.intentId, conversationUrl: actual.url, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: before.responses.length, baselineResponseIds: before.responses.map((r) => r.id), at: actual.at, transportError, observed: actual };
+      const appPath = `${proof.accountPath}/app`;
+      const correctApp = url.origin === 'https://gemini.google.com' && (url.pathname === appPath || url.pathname.startsWith(`${appPath}/`));
+      if (candidates.length === 1 && correctApp) {
+        const outcome = { status: 'QUERY_ACKNOWLEDGED', batchId, retryAllowed: false, completedResponse: false, intentId: receipt.intentId, conversationUrl: actual.url, retainedConversationUrl: url.pathname.length > appPath.length + 1 ? actual.url : null, queryId: candidates[0].id, queryIndex: candidates[0].index, query: candidates[0], baselineResponseCount: before.responses.length, baselineResponseIds: before.responses.map((r) => r.id), at: actual.at, transportError, observed: actual };
         try { await journal.writeOutcome(outcome); } catch (error) { outcome.journalError = String(error.message ?? error); }
         return outcome;
       }
@@ -237,10 +246,17 @@ export async function observeGeminiResponse(page, request) {
   let previous = null;
   let last = null;
   let lastCaptured = null;
+  let expectedUrl = ack.conversationUrl;
+  let awaitingConversationUrl = ack.retainedConversationUrl === null;
   do {
     const actual = await readGeminiUi(page, request.selectors);
     last = actual;
-    if (actual.url !== ack.conversationUrl) return { status: 'RESPONSE_CONTEXT_CHANGED', retryAllowed: false, observed: actual };
+    // The UI can acknowledge a query before allocating its conversation URL.
+    // Permit that initial transition only; the exact query is rechecked below.
+    const initialUrl = new URL(expectedUrl), currentUrl = new URL(actual.url);
+    const allocatedAfterAck = awaitingConversationUrl && /^\/u\/[2-6]\/app$/.test(initialUrl.pathname) && currentUrl.origin === initialUrl.origin && currentUrl.pathname.startsWith(initialUrl.pathname + '/');
+    if (actual.url !== expectedUrl && !allocatedAfterAck) return { status: 'RESPONSE_CONTEXT_CHANGED', retryAllowed: false, observed: actual };
+    if (allocatedAfterAck) { expectedUrl = actual.url; awaitingConversationUrl = false; }
     const query = actual.queries[ack.queryIndex];
     if (!query || normalizeGeminiPrompt(query.text ?? '') !== normalizeGeminiPrompt(ack.query.text)) return { status: 'QUERY_NOT_RETAINED', retryAllowed: false, observed: actual };
     const candidates = actual.responses.filter((r) => r.index >= ack.baselineResponseCount && !ack.baselineResponseIds.includes(r.id) && r.id && r.text.trim());

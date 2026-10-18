@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Actual strict_schema regression first failed because role_status properties were empty with additionalProperties false and minProperties6; six native OUTPUT schemas passed before. Fixed only fixed-map JSON Schema representation. Same regression/all6 OUTPUT checks and full acquisition offline suite pass afterward. GRADE fingerprint025acf0b6e6bbd9d4876afb2b25afd7b481bdd71e1bcf86a453491f10808acc7 unchanged; all grading/NA/ownConfig/knownusage gates preserved. No DB, protected input or paid probes; Root stopped source3d six authorities and module before integration. New actual source/grants/manifest required; no old allowance renewal.",
+  "checks": [
+    {
+      "command": "pytest offline_tests/test_acquisition_six_grade_transport.py -q",
+      "result": "PASS",
+      "evidence": "Before1FAIL/6PASS preserved in private strict-grade-before log; after7PASS through actual canonical codex_lab.strict_schema, including fixed6status/NA fields and every native OUTPUT."
+    },
+    {
+      "command": "focused acquisition offline regression including all strict-transport, six-role, legacy adapter/contract/native/external/schema/observation/dialogue tests",
+      "result": "PASS",
+      "evidence": "171passed and8subtests after repair; no model or DB invocation."
+    },
+    {
+      "command": "ruff check touched Python files; git diff --check",
+      "result": "PASS",
+      "evidence": "No lint/diff errors; source diff only JSON Schema representation plus regression/docs/journal."
+    }
+  ],
+  "eventId": "d7b5d1b8-92f9-4cb7-9326-e2a3bfc5ded5",
+  "sequence": 2,
+  "at": "2026-10-18T15:56:38.937Z"
+}

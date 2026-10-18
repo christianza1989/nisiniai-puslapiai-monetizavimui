@@ -86,6 +86,15 @@ after an observed workflow stop, silence or signup, with a precise reason. Early
 qualification/review stops still receive independent evaluation. Role labels,
 template wording or grade booleans alone cannot establish six-agent coverage.
 
+The grade's two role maps have fixed six-property JSON Schema representations.
+The actual `codex_lab.strict_schema` transport closes objects; a dynamic map with
+six required entries otherwise became an empty closed object and was impossible
+to emit. The first actual-converter regression failed before this correction
+(while all six native output schemas passed). Each role status and NA-reason slot
+can now be expressed. Pydantic map validation, grading thresholds, exact roles,
+NA logic and the evaluator instruction/hash are unchanged. No paid probe was
+used to discover or verify this representation repair.
+
 Private personas and expected labels enter only persona/evaluator contexts.
 Native Task inputs contain the sealed reference and selected public evidence;
 native model packets contain current saved specification, approved business

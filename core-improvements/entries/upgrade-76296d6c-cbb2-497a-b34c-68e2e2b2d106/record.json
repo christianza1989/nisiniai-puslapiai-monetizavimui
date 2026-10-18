@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Actual CodexLab strict_schema closed SixRoleGrade dynamic role maps with zero properties; role_status still required six entries and was impossible to emit. Express fixed six-property wire maps without changing the typed grading semantics or evaluator instruction.",
+  "category": "code",
+  "evidence": [
+    "agent-business-core/runtime/offline_tests/test_acquisition_six_grade_transport.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/acquisition/agent_role_calibration.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_six_grade_transport.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Stop source-bound role authorities/module and revert only this schema representation. Retain the impossible-schema failure and stage histories; do not dispatch the old impossible grader or reuse expired source grants. No database/schema/channel change.",
+  "id": "upgrade-76296d6c-cbb2-497a-b34c-68e2e2b2d106",
+  "branch": "codex/hotube-six-role-native-20261018",
+  "baseSha": "dc8bf82c0d33f87223e9ba11affae279981b5c63",
+  "createdAt": "2026-10-18T15:56:11.227Z"
+}

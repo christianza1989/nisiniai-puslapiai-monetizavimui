@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "One post-lock populate_existing refresh only; no15slease increase, expired lease revival, authority cache or provider/ledger/harness change. Before3wrong heartbeat booleans reproduced with an explicitly retained ORM identity across a real second transaction. Unretained normal six-role control already passed and released initial weakref, so historical writer attribution remains UNPROVED. Separate exact known4 recorded-output replay passed all4new Config2 Tasks/Runs/attempts normally; compatibility only, not historical cause. Zero paid/provider and operating DB access by this lane.",
+  "checks": [
+    {
+      "command": "qa_final.py test tests/test_task_heartbeat_concurrency_pg.py --label heartbeat-identity-before-20261018; unretained before control",
+      "result": "PASS",
+      "evidence": "Red regression was observed before patch:3FAIL/1PASS44.41s with precise incorrect booleans (renewedFalse/actualexpiredTrue/terminalTrue, authorityFalse). Separate unretained normal-handler controlPASS14.84s, weakref released. Logs retained; this check means reproduction verified, not prepatch regression passed."
+    },
+    {
+      "command": "qa_final.py test tests/test_task_heartbeat_concurrency_pg.py tests/test_acquisition_agent_roles_pg.py::test_known_sealed_six_role_lab_uses_common_tasks_and_independent_grade --label heartbeat-locked-refresh-after-20261018",
+      "result": "PASS",
+      "evidence": "After6PG passed100.48s on dedicated47be_final, restricted runtime:5concurrency/control cases plus actual8-hook native workflow. Live canonical renewal is admitted; actualexpired/terminal/refused authority deny; no model reservation in heartbeat cases, native workflow provider inert."
+    },
+    {
+      "command": "pytest focused failed-receipt/business-projection/six-role/calibration/strict-grade offline regressions -q",
+      "result": "PASS",
+      "evidence": "65passed3.40s with no models/DB; existing role and evaluator semantics preserved."
+    },
+    {
+      "command": "ruff check worker.py and heartbeat concurrency regression; git diff --check; verify frozen harness SHA",
+      "result": "PASS",
+      "evidence": "Lint/diff PASS; old controller SHA6f6a440c882c5dc79e947e18eac4e6b70cdd82601a4f8e336fbae9d19ed8277d and stage_budget SHA5d1ca7222e55c8de64e07155e5c596b0314eda057432cad5562efaa981cb7b76 unchanged."
+    }
+  ],
+  "eventId": "cdd427be-3072-41ee-8c9f-60cd0f4c270b",
+  "sequence": 2,
+  "at": "2026-10-18T17:52:55.029Z"
+}

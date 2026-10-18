@@ -2254,3 +2254,12 @@ promotion/retry/authority or accounting change. Actual completion cause remains
 UNPROVED; guard observation was off. All frozen source6246/controller/stage and
 8charged calls stay history; no further paid admission. Dedicated47be_final QA
 only injects explicit post-settlement completion denial with inert provider.
+
+2026-10-18 distinct heartbeat snapshot window: Root authorized only post-lock
+refresh in tasks/worker.py, focused concurrency PG/doc/journal after redrepro.
+Actual2TX retained-identity seam3FAIL/1PASS: stale lease falsely refuses renewed
+DBlease, accepts actually expired DBlease, accepts terminal Task; authoritystop
+alreadydenies. Unretained normal six-role controlPASS/weakrefreleased, so actual
+writer cause remainsUNPROVED. One locked-select populate_existing only; unchanged
+15slease/noexpiredrevival/noauthoritycache. Own retained47be_final/inertQA0provider;
+all old8call stage/ledger/Serving6246/privateharness remain frozenhistory.

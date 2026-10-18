@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Approved-plan same-checkpoint PK fusion only. Baseline realPG5SELECT expected2 FAIL retained SHA2ea743ab86fde2a873bf3d4c8acfd74fb998cdee7b44144a2396f01c0489cd5f; first offline101PASS84fixture setup errors retained and only joined SQL fake adapted. No permission/final fence/TTL change or actual lifecycle acceptance. Read-only peer found no blocking semantic issue.",
+  "checks": [
+    {
+      "command": "qa-python .local/sharp-policy/approved-plan-read-pg.py final",
+      "result": "PASS",
+      "evidence": "5 restricted-PG PASS31.74s; SHA25682bd9621f18efa59649de3a8e264c401ecac96dfef6beb3acbddb6e8f0325bfe; actual foreign RLS and explicitly labelled nullable visibility seam; no operating DB or provider"
+    },
+    {
+      "command": "qa-python .local/sharp-policy/approved-plan-read-pg.py source-regression",
+      "result": "PASS",
+      "evidence": "4 existing source-context/realNode PG PASS52.06s; SHA256e19a0008a195bb07cda6be783f3887ecbd375991b221d7038030d4550b961dae"
+    },
+    {
+      "command": "python -m pytest offline_tests/test_authority_observation.py offline_tests/test_discovery_source_context.py offline_tests/test_discovery_source_projection.py offline_tests/test_business_discovery.py -q",
+      "result": "PASS",
+      "evidence": "185PASS13.52s; SHA2561f2a0fe30305aa04f6b5c7161f895ebb484eac1988db0ff74a9d6df0d55bd33c"
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/business_discovery/service.py tests/test_approved_build_read_pg.py offline_tests/test_authority_observation.py",
+      "result": "PASS",
+      "evidence": "All checks passed; no unrelated sources scanned"
+    }
+  ],
+  "eventId": "22294a53-e46c-4a1f-974c-db1e54469aa4",
+  "sequence": 2,
+  "at": "2026-10-18T13:05:54.864Z"
+}

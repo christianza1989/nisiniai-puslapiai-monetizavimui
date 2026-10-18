@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Repeated fresh approved-build reads add four separate PK round trips to each authority phase; preserve nullable child/refusal semantics while reading the linked approval/report/discovery/job in one current RLS snapshot.",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/business_discovery/service.py",
+    "agent-business-core/runtime/tests/test_approved_build_read_pg.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "evidence": [
+    "Actual Serving182 live-preview lease798c retained before-Ready heartbeat_expired; one observed authority verification took9.41167s/170taskSQL and pulse gap9.44984s with unchanged3s TTL.",
+    "A separate read-only Serving182 caller trace has172SQL/1.63955s: approved_build_context reads approval, report, discovery and exact report.job_id separately in each of two fresh phases, in addition to schema readiness. This proves query inflation and load sensitivity, not an unconditional slow-query claim or lifecycle acceptance.",
+    "Owned issue66comment6250174262; the source-only reviewer rejected moving retained_anchor across native_sources I/O and proposed only this same-checkpoint PK fusion, preserving all canonical validation and missing/hidden-row semantics."
+  ],
+  "rollback": "Revert only the scoped approved_build_context query fusion; retain both Authority phases, fresh schema/actor/source checks, nullable-row refusal semantics, TTL/deadlines, original failures and all private paid evidence.",
+  "id": "upgrade-8822f0d8-3439-4135-900c-18fec2a585cb",
+  "branch": "codex/verslomatika-wellness-resume-20261015",
+  "baseSha": "e888d7f26c0cd9fc692a7fe0f43003c37a8d46f0",
+  "createdAt": "2026-10-18T12:56:55.661Z"
+}

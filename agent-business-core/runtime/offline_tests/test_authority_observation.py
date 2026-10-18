@@ -189,6 +189,28 @@ async def graph(monkeypatch):
         async def execute(self, statement, *args, **kwargs):
             f.sql["execute"] += 1
             columns = getattr(statement, "column_descriptions", ())
+            if columns and [column["entity"] for column in columns] == [BuildApproval, Report, Discovery, DiscoveryJob]:
+                # One new SQL leaf; retain all real plan/source validators and
+                # the fixture's populated-identity-map mutation semantics.
+                query = statement.compile().params
+                populate = statement.get_execution_options().get("populate_existing", False)
+                f.sql["approval_join"] += 1
+                result = None
+                proof = f.approval
+                if proof is not None and query.get("creation_id_1") == f.creation.id:
+                    report = f.report if f.report and f.report.id == proof.report_id else None
+                    parent = f.discovery if f.discovery and f.discovery.id == proof.discovery_id else None
+                    job = Row(id=report.job_id) if report else None
+                    result = [proof, report, parent, job]
+                    for index, model in enumerate((BuildApproval, Report, Discovery, DiscoveryJob)):
+                        f.sql[model.__name__] += 1  # Entity observations within the single join.
+                        value = result[index]
+                        if f.emulate_identitymap and value is not None and model in {Report, Discovery, DiscoveryJob}:
+                            key = model, value.id
+                            if key not in f.identity_cache or populate:
+                                f.identity_cache[key] = copy.deepcopy(value)
+                            result[index] = f.identity_cache[key]
+                return Row(one_or_none=lambda: tuple(result) if result is not None else None)
             if columns and columns[0]["entity"] is User:
                 # Execute the joined SQL leaf, not a stub of current_actor. Read
                 # literal IDs/env from its actual predicates and model fresh RLS.

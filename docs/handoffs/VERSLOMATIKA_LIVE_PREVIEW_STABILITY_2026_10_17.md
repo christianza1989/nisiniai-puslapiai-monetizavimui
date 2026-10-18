@@ -576,3 +576,15 @@ Retain lease798c9ee6-85a2-4f27-88c5-7cc1989837b9 and the existing private lifecy
 guard/timing artifacts. No repetition ran alongside the completed native model
 calibration. Upgrade78/c3 lifecycle acceptance remains open; all previous original
 failures, scope, deadlines and final authorization fences remain unchanged.
+
+### Next source-only approved-plan read repair —2026-10-18
+
+Upgrade8822f0d8 collapses only the four PK-linked approved-plan data reads into
+one nullable RLS snapshot, retaining the separate schema check and unchanged
+validators. Exact query baseline5→2,5newPG PASS31.74s,4existing source-context/
+real-Node PG PASS52.06s,185related offline PASS13.52s and scoped Ruff PASS.
+The first offline101PASS/84fake-leaf setup errors remain retained; only the fake
+joined-row leaf changed, with original fences and assertion gates intact.
+[Read semantics and evidence](../LIVE_PREVIEW_APPROVED_PLAN_READS.md).
+No operating adoption or expiry/close/revoke/shutdown acceptance follows from
+these source checks; the earlier78/c3 main blockers remain open.

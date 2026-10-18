@@ -242,12 +242,19 @@ async def archive(tx, row):
 async def approved_build_context(tx, creation):
     if not await schema_ready(tx):
         return None
-    proof = await tx.scalar(select(BuildApproval).where(BuildApproval.creation_id == creation.id)
-        .execution_options(populate_existing=True))
-    if not proof:
+    # Read the PK-linked inputs at this checkpoint in one fresh RLS snapshot.
+    # Nullable joins preserve the approval when a dependency is missing/hidden,
+    # so canonical validation below retains its original refusal semantics.
+    row = (await tx.execute(select(BuildApproval, Report, Discovery, DiscoveryJob)
+        .select_from(BuildApproval)
+        .outerjoin(Report, Report.id == BuildApproval.report_id)
+        .outerjoin(Discovery, Discovery.id == BuildApproval.discovery_id)
+        .outerjoin(DiscoveryJob, DiscoveryJob.id == Report.job_id)
+        .where(BuildApproval.creation_id == creation.id)
+        .execution_options(populate_existing=True))).one_or_none()
+    if row is None:
         return None
-    report = await tx.get(Report, proof.report_id, populate_existing=True)
-    parent = await tx.get(Discovery, proof.discovery_id, populate_existing=True)
+    proof, report, parent, source_job = row
     expected = digest({"discovery_id": proof.discovery_id, "report_revision": proof.report_revision,
                        "report_sha256": proof.report_sha256, "idempotency_key": proof.idempotency_key})
     if (not report or not parent or parent.status != "build_started"
@@ -263,7 +270,7 @@ async def approved_build_context(tx, creation):
             "report_sha256": report.material_hash, "source_revision": report.source_revision,
             "plan": value["reply"]["plan"]}
     from .source_context import build
-    context = build(creation, parent, report, await tx.get(DiscoveryJob, report.job_id, populate_existing=True), result["plan"])
+    context = build(creation, parent, report, source_job, result["plan"])
     if context is not None:
         result["sourceContext"] = context
     return result

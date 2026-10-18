@@ -2103,3 +2103,16 @@ stopped genuineR6/E18 grants and module, preserving3/9Tasks and6/18attempts.
 Helper47be owns its separate private harness/facts and own handoff. Source-only
 API182 adoption preserves96tables/890files; current preview expiry remainsFAIL,
 170fresh taskSQL/9.44984s pulse gap. No main, provider or unlimited learning claim.
+
+Root approved-plan SQL read2026-10-18 under issue66/comment6250174262 and new
+upgrade8822f0d8 reserves business_discovery/service.py approved_build_context,
+new tests/test_approved_build_read_pg.py and scoped stability documentation.
+Keep schema availability fresh/separate; fuse only four PK-linked data reads
+into one nullable current snapshot at the same checkpoint, preserve existing
+validation/refusal order and source_context.build missing-Job failure. New PG
+regression covers query count, real foreign-RLS absence, explicit nullable-child
+visibility seam and committed drift with populated ORM identities. No historical
+anchor moved across native_sources I/O, permission caching or TTL/paid change.
+The new joined leaf also requires an owned test-only adaptation in
+offline_tests/test_authority_observation.py; preserve every original mutation,
+source/actor/refusal assertion and the first101PASS/84setup-error evidence.

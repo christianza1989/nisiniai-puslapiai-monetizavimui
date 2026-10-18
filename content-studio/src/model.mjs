@@ -24,7 +24,7 @@ export const PAGE_TYPES = new Set(['home', 'service', 'product', 'guide', 'faq',
 const V2_PAGE_TYPES = new Set([...PAGE_TYPES,'article','index','author','policy','about','contact']);
 const publicSite = site => ({id:site.id,name:site.name,canonicalHost:site.canonicalHost,locale:site.locale,timezone:site.timezone,brand:site.brand,offer:site.offer,contact:site.contact,...(site.schemaVersion===2?{renderer:site.renderer,operatorName:site.operatorName}: {})});
 const emptyEditorial = () => ({category:'',readingMinutes:0,authors:[],sources:[],datePublished:null,dateModified:null,productRecommendation:false,featuredImageId:null,relatedPageIds:[],commerceTargets:[]});
-export const MAX_PAGE_MEDIA = 60;
+export const MAX_PAGE_MEDIA = 1024;
 let mutation = Promise.resolve();
 
 const seeds = [
@@ -229,6 +229,7 @@ export async function createSite(input) {
     const siteId = input.siteId === undefined ? siteIdFromDomain(domain) : input.siteId;
     if (input.siteId !== undefined && (typeof siteId !== 'string' || !/^[a-z0-9][a-z0-9-]{1,62}$/.test(siteId))) throw new Error('Netinkamas stabilus svetainės ID.');
     const site = makeSite(domain, plain(input.name, 120) || domain, plain(input.offer, 500), siteId);
+    if (input.locale !== undefined) site.locale = new Intl.Locale(input.locale).toString();
     if(input.schemaVersion===2){site.schemaVersion=2;site.renderer=input.renderer==='gift'?'gift':'niche';site.operatorName=JSON.parse(readFileSync(networkSettingsFile,'utf8')).contactsBySite?.[site.id]?.operatorName||JSON.parse(readFileSync(networkSettingsFile,'utf8')).operatorName;}
     if (all.some(item => item.id === site.id)) throw new Error('Svetainės ID jau naudojamas.');
     await writeJson(siteFile(site.id), site);
@@ -240,6 +241,7 @@ export async function editSite(id, input) {
     const site = await getSite(id);
     if (input.canonicalHost && normalizedHost(input.canonicalHost) !== site.canonicalHost) throw new Error('Pirminio domeno keitimui sukurkite naują svetainės įrašą.');
     for (const key of ['name', 'offer', 'audience', 'facts']) if (key in input) site[key] = plain(input[key], key === 'facts' ? 12000 : 1000);
+    if ('locale' in input) site.locale = new Intl.Locale(input.locale).toString();
     if(site.schemaVersion===2&&'operatorName'in input)site.operatorName=losslessString(input.operatorName,300);
     if (input.contact) site.contact = { email: plain(input.contact.email, 250), phone: plain(input.contact.phone, 80) };
     if (input.brand?.accent && /^#[a-f\d]{6}$/i.test(input.brand.accent)) site.brand = { accent: input.brand.accent };
@@ -367,7 +369,8 @@ export async function editPage(siteId, pageId, input) {
         const family=asset.groupId?site.assets.filter(a=>a.groupId===asset.groupId).sort((a,b)=>b.width-a.width):[asset];
         for(const member of family){if(seen.has(member.id))continue;seen.add(member.id);const {id,src,alt,width,height,credit,rights}=member;media.push({id,src,alt,width,height,credit,rights});}
       }
-      if(media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 60 medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.');
+      const mediaLimit=v2?60:MAX_PAGE_MEDIA;
+      if(media.length>mediaLimit)throw new Error(`Puslapyje telpa iki ${mediaLimit} medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.`);
       page.media=media;
     }
     page.status = 'review'; page.approval = null; page.updatedAt = new Date().toISOString();
@@ -406,7 +409,8 @@ async function approveDraft(site, page, actorId, batchIds = new Set()) {
       if ((block.type === 'paragraph' || block.type === 'heading') && !block.text) throw new Error('Puslapyje yra tuščias teksto blokas.');
       if (block.type === 'list' && (!block.items.length || block.items.some(item => !item))) throw new Error('Puslapyje yra tuščias sąrašas.');
     }
-    if(page.media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 60 medijos variantų.');
+    const mediaLimit=page.contentVersion===2?60:MAX_PAGE_MEDIA;
+    if(page.media.length>mediaLimit)throw new Error(`Puslapyje telpa iki ${mediaLimit} medijos variantų.`);
     for (const item of page.media) if (!item.alt || !item.rights || !item.width || !item.height) throw new Error('Vaizdams reikia alt teksto, matmenų ir naudojimo teisių.');
     for (const block of page.body) if (block.type === 'image' && !page.media.some(item => item.id === block.assetId)) throw new Error('Turinio vaizdas nėra priskirtas puslapio medijai.');
     for (const link of page.links) if (!link.label || !site.pages.some(item => item.id === link.targetPageId && (page.contentVersion===2||item.publishedRevision||batchIds.has(item.id)))) throw new Error('Vidinė nuoroda nurodo nepatvirtintą arba nežinomą puslapį.');

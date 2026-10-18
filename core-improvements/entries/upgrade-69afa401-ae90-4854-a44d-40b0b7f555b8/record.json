@@ -1,0 +1,20 @@
+{
+  "siteId": "wildtubs-europe",
+  "summary": "Shared V1 studio creates every new site as lt-LT and offers no supported locale input; shared public metadata/schema/LLM roles hard-code Lithuanian paths and cannot represent one site with en/de/pl pages. Add opt-in locale configuration without copying the publication engine.",
+  "category": "code",
+  "evidence": [
+    "content-studio/src/model.mjs makeSite/createSite/editSite at core533597c",
+    "paired publicec8a9c0 lib/niche-schema-core.mjs hard-coded gidai/redakcija and pkg.locale"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "docs/MULTILINGUAL_CATALOGUES.md",
+    "content-studio/test/site-locale.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/205",
+  "rollback": "Revert only the paired scoped locale/catalogue commits; existing site defaults and approvals remain unchanged.",
+  "id": "upgrade-69afa401-ae90-4854-a44d-40b0b7f555b8",
+  "branch": "codex/wildtubs-europe-20261018",
+  "baseSha": "533597c10e290a2a09a522ad348e19c9968aa9d5",
+  "createdAt": "2026-10-18T06:54:19.870Z"
+}

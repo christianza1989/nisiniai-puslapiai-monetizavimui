@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Common code only: paired draft PRs core #209 and public #44. Manufacturer images, actual business catalogue/package, renderer and private runtime state remain local. Neither PR is merged or adopted on another PC. core-upgrade-check.mjs was attempted and is absent from fetched main; no PASS claimed.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/209",
+  "eventId": "2db80c65-0564-4bd4-bc13-3b79803c17d1",
+  "sequence": 3,
+  "at": "2026-10-18T07:52:52.491Z"
+}

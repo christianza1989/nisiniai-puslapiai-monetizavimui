@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Companion common-only source e85d6989946c05049e76712a5255dd1d26a1cd83; actual dealer source is local-only and not pushed. Canonical indexing default is unconditional for an eligible real-host public page; explicit loopback review cannot admit foreign hosts/placeholders/drafts or bypass V2 admission. Current official Google robots/sitemap docs checked. Production deployment/indexing and owner GSC access are not claimed.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-indexability.test.mjs (companion)",
+      "result": "PASS",
+      "evidence": "3/3: canonical default indexable, loopback explicit only, foreign/preview/placeholder denial"
+    },
+    {
+      "command": "npm run test:core (local business companion)",
+      "result": "PASS",
+      "evidence": "78/78 including generic indexing rules and existing publication/isolation/configuration tests"
+    },
+    {
+      "command": "npm run build and tsc --noEmit (companion)",
+      "result": "PASS",
+      "evidence": "Production build complete; declared optional runtime flag; TypeScript passed"
+    },
+    {
+      "command": "SEO_SMOKE_BASE_URL=http://127.0.0.1:5198 node tests/seo-core-smoke.mjs, each current site",
+      "result": "PASS",
+      "evidence": "All ten niches pass canonical HTTP meta/header/robots indexability, sitemap, LLM/schema and unknown-host/private-path isolation"
+    },
+    {
+      "command": "bounded prepared-package HTTP indexability check",
+      "result": "PASS",
+      "evidence": "111 current page paths on canonical Host plus explicit loopback: 222 status200 responses, no noindex, matching canonical, 3 hreflang and x-default, canonical111 sitemap URLs, query canonical and technical/unknown404"
+    }
+  ],
+  "eventId": "0c062ed0-559a-4394-baa4-3e76c57b4bc1",
+  "sequence": 3,
+  "at": "2026-10-18T08:48:03.255Z"
+}

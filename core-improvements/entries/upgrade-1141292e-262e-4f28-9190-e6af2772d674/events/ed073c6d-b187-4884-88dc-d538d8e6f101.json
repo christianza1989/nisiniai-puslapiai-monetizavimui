@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/209",
+  "commit": "04a7596e52feba8b4db9449e83f629efca24a751",
+  "note": "Common policy/journal in core PR209; common-only companion e85d6989946c05049e76712a5255dd1d26a1cd83 pushed to existing PR44. Actual business package/media/source remain local; no merge-main or cross-PC adoption claimed.",
+  "eventId": "ed073c6d-b187-4884-88dc-d538d8e6f101",
+  "sequence": 4,
+  "at": "2026-10-18T08:48:39.951Z"
+}

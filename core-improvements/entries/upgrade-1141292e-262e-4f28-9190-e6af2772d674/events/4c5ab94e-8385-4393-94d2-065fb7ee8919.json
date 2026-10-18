@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Initial explicit loopback indexing test returned sitemap 404 despite indexable HTML/robots: an older independent preview-host guard remained in the sitemap route. Replaced that guard with the same nicheIndexingAllowedForHost policy; canonical and V2 private admission unchanged. Preserve this original failure separately from the final 222-response PASS.",
+  "eventId": "4c5ab94e-8385-4393-94d2-065fb7ee8919",
+  "sequence": 2,
+  "at": "2026-10-18T08:48:00.902Z"
+}

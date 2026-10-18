@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Pre-model native recipient mismatch reproduced independently and with5FAIL baseline; final80PASS39subtests, no protected output or model/provider calls.",
+  "checks": [
+    {
+      "command": "python -m pytest offline_tests/test_acquisition_synthetic_recipient.py offline_tests/test_acquisition_correspondence.py offline_tests/test_acquisition_native_chain.py offline_tests/test_acquisition_dialogue.py -q",
+      "result": "PASS",
+      "evidence": "80PASS39subtests3.63s; first5FAIL18PASS retained privately. Details in docs/ACQUISITION_SYNTHETIC_RECIPIENT_NAMESPACE.md."
+    }
+  ],
+  "eventId": "7945951d-589c-4ef8-94f1-d0484d75af79",
+  "sequence": 2,
+  "at": "2026-10-18T10:14:14.354Z"
+}

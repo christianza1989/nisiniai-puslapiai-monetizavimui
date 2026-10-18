@@ -35,7 +35,9 @@ def seal(value):
 def recipient_hash(value):
     # Private synthetic identity key, shared across campaigns in one exact scope.
     if (
-        not re.fullmatch(r"[a-z0-9][a-z0-9._+-]{0,63}@example\.test", value)
+        not isinstance(value, str) or len(value) > 254
+        or not re.fullmatch(r"[a-z0-9][a-z0-9._+-]{0,63}@"
+            r"(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)*example\.test", value)
         or ".." in value
         or value.split("@")[0].endswith(".")
     ):

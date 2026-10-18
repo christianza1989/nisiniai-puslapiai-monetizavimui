@@ -2069,3 +2069,14 @@ local-admin mapping plus existing decision; no fake Creation, copied ownership
 checks, static voice Profile or automatic channel activation. Helper owns new
 private facts/harness and independent custodian owns unseen cases. Root's new
 paid ledger60attempts/3600s, firstsmoke<=12,0retries is separate from closed pilots.
+
+Root synthetic recipient compatibility2026-10-18 reserves only
+acquisition/correspondence.py recipient_hash, new offline boundary regression,
+docs/ACQUISITION_SYNTHETIC_RECIPIENT_NAMESPACE.md and own upgrade under
+issue66/comment6248627452. Independent canonical manifest at849 rejects an
+otherwise valid reserved example.test subdomain from the known preparation.
+Do not rewrite frozen corpus: retain first seal failure. Root SQL proved both
+R2/E6 have0TaskBinding/0ModelAttempt and explicitly stopped them before source
+edits. New code permits only valid DNS subdomains of the existing reserved host,
+preserves legacy hashes, rejects real domains. Next source/admission is explicit;
+no old paid pilot, used/unknown allowance or protected payload is reopened.

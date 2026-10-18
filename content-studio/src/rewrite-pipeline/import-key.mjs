@@ -129,7 +129,9 @@ export async function repairImportKey(store, { pageId, candidateId, actor, reaso
       assert(raw.batchId === request.payload.batchId && raw.completionMarker === true && raw.stopCount === 0, 'Actual batch completion/Stop metadata required');
       assert(raw.queryCount === 1 && raw.responseCount === 1 && raw.responseIndex === 0, 'Only one retained query/response may explain this single historical attempt');
       assert.equal(raw.at, answer.send.at, 'Actual retained timestamp differs');
-      assert.equal(new URL(raw.url).pathname.split('/').slice(0, 3).join('/'), (request.sendIntent.prepared?.intent ?? request.sendIntent).accountPath, 'Retained account differs from send intent');
+      const rawUrl = new URL(raw.url);
+      assert(rawUrl.origin === 'https://gemini.google.com' && !rawUrl.username && !rawUrl.password, 'Retained Gemini origin required');
+      assert.equal(rawUrl.pathname.split('/').slice(0, 3).join('/'), (request.sendIntent.prepared?.intent ?? request.sendIntent).accountPath, 'Retained account differs from send intent');
       selectCapturedPages(raw, { responseIndex: raw.responseIndex, responseId: raw.responseId, pages: request.payload.pages });
       const query = raw.queries[raw.responseIndex];
       assert.equal(normalizeGeminiPrompt(typeof query === 'string' ? query : query?.text ?? ''), normalizeGeminiPrompt(prompt), 'Actual retained query differs');

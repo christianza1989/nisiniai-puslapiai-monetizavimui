@@ -1,3 +1,22 @@
+## Cancelled CLI usage receipt — helper 2026-10-18 source complete
+
+Root-assigned dependency, issue66/comment6243723985. Own clean branch
+codex/codex-cancelled-usage-20261018 from2424268210776d623f58e4ea088e436b0ea868d6;
+paired freshness PASS00:28:00/03UTC main533/publicec8, companion255fea0 unchanged.
+Own only tasks/codex_transport.py, NEW offline_tests/test_cli_cancelled_receipts.py,
+NEW docs/CLI_CANCELLATION_ACCOUNTING.md, this prefix and separate upgrade journal.
+Reproduce complete bounded usage line→held pipes→external cancellation with an
+inert local Python child, preserve original CancelledError/owned cleanup and
+sanitized adapter receipt. No success/retry, worker/model/schema/DB/operating/
+provider/SMTP/closed-ledger changes. Schema2424268 remains frozen, Root0a2b3a5.
+Minimal transport fix attaches bounded observed receipt to the same cancellation;
+existing raise/finally and diagnostics unchanged. Inert-child first1FAIL1.50s
+retained. Related six-file regression94PASS/7 unpinned real-CLI probesSKIP53.12s,
+including eight new cancellation cases; RuffPASS. Two wider authority FakeTx
+failures also reproduced with original2424268 transport; Root owns that separate
+fixture repair, not copied here. Upgrade-a3b0d819-b720-4a54-abb1-6d9064ec203c.
+Scoped source handoff only; no operating or provider adoption claimed.
+
 ## Explicit acquisition model preparation DB contract — helper 2026-10-18 source complete
 
 Issue66/comment6243287654; own codex/acquisition-model-schema-20261018 managed

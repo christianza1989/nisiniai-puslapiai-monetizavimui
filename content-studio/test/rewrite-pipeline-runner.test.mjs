@@ -20,7 +20,7 @@ async function fixture(t, pages, { legacy } = {}) {
 }
 function ports(overrides = {}) {
   return {
-    generate: async ({ batchId, pages }) => ({ captureRef: `fixture:${batchId}`, pages: pages.map(page => ({ pageId: page.pageId, originalBody: `Original ${page.pageId}` })) }),
+    generate: async ({ batchId, pages }) => ({ captureRef: { path: `fixture:${batchId}`, sha256: 'b'.repeat(64) }, pages: pages.map(page => ({ pageId: page.pageId, originalBody: `Original ${page.pageId}` })) }),
     review: async () => ({ decision: 'accepted', reviewer: 'fixture reviewer', allH1DescriptionBodyReasonsPersonallyRead: true, factsAndLanguageAccepted: true }),
     importPages: async records => ({ outcomes: records.map(record => ({ pageId: record.pageId, status: 'complete', receipt: {
       officialCurrentReview: true, cpTesExact: true, canonicalRevision: 'a'.repeat(64), domWidths: [1440, 390],
@@ -103,6 +103,78 @@ test('unknown send or thrown generation never automatically retries; independent
     assert.deepEqual(result.pages.map(page => page.status), ['UNKNOWN', 'COMPLETE']);
     assert.equal(result.pages[0].attempts.length, 1);
   }
+});
+
+test('retained parser rejection retries only that page while accepted sibling completes', async t => {
+  const { store } = await fixture(t, ['a', 'b']), normal = ports(), requests = [];
+  const result = await runRewritePipeline({ store, maxBatches: 3, pollMs: 1, ports: ports({ generate: async (request, ctx) => {
+    requests.push(request.pages.map(page => page.pageId));
+    const response = await normal.generate(request, ctx);
+    if (requests.length === 1) {
+      response.pages = response.pages.filter(page => page.pageId !== 'b');
+      response.rejections = [{ pageId: 'b', status: 'rejected', reason: 'Retained paragraph is present but malformed source footer' }];
+    }
+    return response;
+  } }) });
+  assert.equal(result.status, 'COMPLETE');
+  assert.deepEqual(requests, [['a', 'b'], ['b']]);
+  const rejected = result.pages[1];
+  assert.equal(rejected.generationResults[0].status, 'REJECTED');
+  assert.equal(rejected.generationResults[0].rejection.reason, 'Retained paragraph is present but malformed source footer');
+  assert.deepEqual(rejected.generationResults[0].rawRef, rejected.generationResults[0].captureRef);
+  assert.equal(rejected.attempts.length, 2);
+  assert.equal(result.pages[0].attempts.length, 1);
+});
+
+test('only explicit retained rejection can retry; missing candidate remains UNKNOWN and repeated rejection holds', async t => {
+  const { store } = await fixture(t, ['missing', 'rejected']);
+  const requests = [];
+  const result = await runRewritePipeline({ store, maxBatches: 4, pollMs: 1, ports: ports({ generate: async request => {
+    requests.push(request.pages.map(page => page.pageId));
+    return { captureRef: { path: 'fixture:retained-whole-raw', sha256: 'c'.repeat(64) }, pages: [],
+      rejections: request.pages.filter(page => page.pageId === 'rejected').map(page => ({ pageId: page.pageId, status: 'rejected', reason: 'Retained invalid page' })) };
+  } }) });
+  assert.deepEqual(requests, [['missing', 'rejected'], ['rejected']]);
+  assert.deepEqual(result.pages.map(page => page.status), ['UNKNOWN', 'HELD']);
+  assert.equal(result.pages[0].attempts.length, 1);
+  assert.equal(result.pages[1].attempts.length, 2);
+});
+
+test('duplicate, cross-batch or overlapping candidate/rejection IDs cannot authorize generation retry', async t => {
+  for (const corrupt of [
+    response => { response.rejections = [{ pageId: 'a', status: 'rejected', reason: 'Overlaps captured candidate' }]; },
+    response => { response.pages.push(cloneCandidate(response.pages[0])); },
+    response => { response.rejections = [{ pageId: 'other-batch', status: 'rejected', reason: 'Outside this batch' }]; },
+    response => { response.pages = []; response.rejections = [{ pageId: 'a', status: 'rejected', reason: 'one' }, { pageId: 'a', status: 'rejected', reason: 'two' }]; },
+    response => { response.pages = []; response.rejections = [{ pageId: 'a', status: 'failed', reason: 'Not a known retained parser rejection' }]; },
+  ]) {
+    const { store } = await fixture(t, ['a']), normal = ports();
+    let calls = 0;
+    const result = await runRewritePipeline({ store, maxBatches: 3, pollMs: 1, ports: ports({ generate: async (request, ctx) => {
+      calls++; const response = await normal.generate(request, ctx); corrupt(response); return response;
+    } }) });
+    assert.equal(calls, 1);
+    assert.equal(result.pages[0].status, 'UNKNOWN');
+  }
+});
+const cloneCandidate = candidate => structuredClone(candidate);
+
+test('missing retained capture pin or unknown dispatch overrides explicit parser rejection', async t => {
+  for (const captureRef of [undefined, {}, { path: 'fixture:raw', sha256: 'bad' }, 'fixture:unpinned-raw']) {
+    const { store } = await fixture(t, ['a']);
+    const result = await runRewritePipeline({ store, maxBatches: 3, pollMs: 1, ports: ports({ generate: async () => ({
+      captureRef, pages: [], rejections: [{ pageId: 'a', status: 'rejected', reason: 'Would otherwise retry' }],
+    }) }) });
+    assert.equal(result.pages[0].status, 'UNKNOWN');
+    assert.equal(result.pages[0].attempts.length, 1);
+  }
+  const { store } = await fixture(t, ['a']);
+  const result = await runRewritePipeline({ store, maxBatches: 3, pollMs: 1, ports: ports({ generate: async () => ({
+    captureRef: { path: 'fixture:raw', sha256: 'c'.repeat(64) }, send: { status: 'UNKNOWN_DISPATCH' }, pages: [],
+    rejections: [{ pageId: 'a', status: 'rejected', reason: 'Not evidence of known retained response' }],
+  }) }) });
+  assert.equal(result.pages[0].status, 'UNKNOWN');
+  assert.equal(result.pages[0].attempts.length, 1);
 });
 
 test('restart holds interrupted generation and import without replay, then works other queued pages', async t => {

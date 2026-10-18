@@ -7,6 +7,7 @@ const now = () => new Date().toISOString();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const message = error => error?.message ?? String(error);
 const populated = value => typeof value === 'string' && value.trim().length > 0;
+const retainedPin = value => value && populated(value.path) && /^[a-f0-9]{64}$/.test(value.sha256 ?? '');
 const activeRuns = new Set();
 
 export function createPipelineState({ siteId, pages, publication = 'paused_by_owner' }) {
@@ -54,7 +55,16 @@ export class JsonPipelineStore {
     const temporary = `${this.stateFile}.${randomUUID()}.tmp`;
     try {
       await writeFile(temporary, `${JSON.stringify(document, null, 2)}\n`, { flag: 'wx', flush: true });
-      await rename(temporary, this.stateFile);
+      const deadline = Date.now() + 5000;
+      while (true) {
+        try { await rename(temporary, this.stateFile); break; }
+        catch (error) {
+          if (!['EPERM', 'EACCES', 'EBUSY'].includes(error.code) || Date.now() >= deadline) throw error;
+          // Existing readers may temporarily deny replace on Windows. Keep the old
+          // complete file; never unlink it or fall back to non-atomic overwrite.
+          await sleep(10);
+        }
+      }
     } finally { await unlink(temporary).catch(error => { if (error.code !== 'ENOENT') throw error; }); }
   }
   async init(state) {
@@ -95,6 +105,8 @@ export class JsonPipelineStore {
 }
 
 /** Candidate records contain captureRef and candidate exactly as returned by generate.
+ * captureRef (and optional rawRef) is a retained {path,sha256} pin. Explicit retained
+ * rejections [{pageId,status:'rejected',reason}] retry that page; omissions stay UNKNOWN.
  * Read current input via record.input and latest original via record.candidates.at(-1).
  * Reviews/final edits are separate records; originals are never replaced. Ports perform real
  * browser/reviewer/import work. Only importPages may mutate native data, and calls are serial.
@@ -171,26 +183,32 @@ export async function runRewritePipeline({ store, ports, batchSize = 3, maxBatch
         const before = await read(), records = before.pages.filter(page => batch.pageIds.includes(page.pageId));
         try {
           const result = await invoke(() => ports.generate({ batchId: batch.batchId, pages: records.map(page => clone(page.input)) }, ctx({ batchId: batch.batchId })));
-          const responsePages = result?.pages;
-          const valid = result?.captureRef && Array.isArray(responsePages) &&
-            new Set(responsePages.map(page => page.pageId)).size === responsePages.length &&
-            responsePages.every(page => batch.pageIds.includes(page.pageId)) &&
-            !['unknown', 'uncertain', 'not_sent', 'failed'].includes(String(result.send?.status).toLowerCase()) && result.send?.uncertain !== true;
+          const responsePages = result?.pages ?? [], rejections = result?.rejections ?? [];
+          const ids = Array.isArray(responsePages) && Array.isArray(rejections)
+            ? [...responsePages, ...rejections].map(page => page?.pageId) : [];
+          const valid = retainedPin(result?.captureRef) && retainedPin(result?.rawRef ?? result?.captureRef) &&
+            Array.isArray(responsePages) && Array.isArray(rejections) &&
+            new Set(ids).size === ids.length && ids.every(id => batch.pageIds.includes(id)) &&
+            rejections.every(page => page.status === 'rejected' && populated(page.reason) && page.reason.length <= 4000) &&
+            !/unknown|uncertain|not.?sent|failed/i.test(String(result.send?.status)) && result.send?.uncertain !== true;
           await mutate(p => {
             const saved = p.batches.find(item => item.batchId === batch.batchId);
             saved.status = valid ? 'OBSERVED' : 'UNKNOWN'; saved.finishedAt = now();
             if (result?.captureRef) saved.captureRef = clone(result.captureRef);
             if (result?.send) saved.send = clone(result.send);
             for (const page of p.pages.filter(item => batch.pageIds.includes(item.pageId))) {
-              const matches = Array.isArray(responsePages) ? responsePages.filter(item => item.pageId === page.pageId) : [];
+              const matches = Array.isArray(responsePages) ? responsePages.filter(item => item?.pageId === page.pageId) : [];
               const candidate = matches.length === 1 ? matches[0] : undefined;
+              const rejection = valid && rejections.find(item => item.pageId === page.pageId);
               const attempt = page.attempts.at(-1);
-              page.generationResults.push({ attemptId: attempt.attemptId, at: now(), status: valid && candidate ? 'OBSERVED' : 'UNKNOWN', ...(result?.captureRef ? { captureRef: clone(result.captureRef) } : {}) });
+              page.generationResults.push({ attemptId: attempt.attemptId, at: now(), status: valid && candidate ? 'OBSERVED' : rejection ? 'REJECTED' : 'UNKNOWN',
+                ...(result?.captureRef ? { captureRef: clone(result.captureRef), rawRef: clone(result.rawRef ?? result.captureRef) } : {}),
+                ...(rejection ? { rejection: clone(rejection) } : {}) });
               if (candidate) {
                 page.candidates.push({ candidateId: randomUUID(), attemptId: attempt.attemptId, batchId: batch.batchId,
                   captureRef: result.captureRef ? clone(result.captureRef) : null, candidate: clone(candidate) });
                 page.status = valid ? 'GENERATED' : 'UNKNOWN';
-              } else page.status = 'UNKNOWN';
+              } else page.status = rejection ? page.attempts.length < maxAttemptsPerPage ? 'RETRY' : 'HELD' : 'UNKNOWN';
             }
           });
         } catch (error) {

@@ -10,3 +10,14 @@ test('durable host request, single claim, exact actor/hash and answer',async()=>
 test('timeout records unknown without redispatching',async()=>{
  const store=new JsonPipelineStore(path.join(root,'UNKNOWN.json'));await store.init(createPipelineState({siteId:'promedical',pages:[]}));const bridge=new HostBridge(store,{pollMs:5,timeoutMs:30});await assert.rejects(bridge.request('GEMINI_GENERATE',{batchId:'synthetic'}),/unknown/);assert.equal((await store.read()).requests[0].status,'UNKNOWN');assert.equal((await bridge.pending()).length,0);
 });
+test('default host wait avoids repeated whole-state polling while retaining exact reply',async()=>{
+ let document={requests:[]},reads=0;
+ const store={locked:async work=>work(),read:async()=>{reads++;return structuredClone(document);},write:async value=>{document=structuredClone(value);}};
+ const bridge=new HostBridge(store);assert.equal(bridge.pollMs,1000);assert.equal(bridge.timeoutMs,20*60_000);
+ const pending=bridge.request('REVIEW_PAGE',{pageId:'fixture'});
+ await new Promise(resolve=>setTimeout(resolve,300));
+ assert.equal(reads,2,'one durable request read plus one status read; no 200ms idle polling');
+ const request=document.requests[0];await bridge.claim(request.id,'fixture-editor');
+ await bridge.reply(request.id,'fixture-editor',request.payloadSha256,{decision:'accepted'});
+ assert.deepEqual(await pending,{decision:'accepted'});assert.equal(document.requests.length,1);
+});

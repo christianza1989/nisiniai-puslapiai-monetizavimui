@@ -296,6 +296,19 @@ test('browser bundle is pasteable without imports, fs, fetch, launch, CDP or hid
 });
 
 const promptInput = () => ({ batchId, pages: [{ id: 'page1', h1: 'Gipsavimo vežimėliai', readerJob: 'Palyginti du modelius', facts: ['SKU01 50 kg'], limits: ['Komponentas nėra visas gaminys'], paragraphCount: 2, sources: [{ url: 'https://example.com/product', label: 'Kortelė', documentRole: 'individual technical card' }], links: [{ url: 'https://example.com/contact', label: 'Susisiekite' }] }], examples: [{ accepted: true, text: 'Priimtas tekstas vienas.', reference: 'approved/page-a' }, { accepted: true, text: 'Priimtas tekstas du.', reference: 'approved/page-b' }], commonMistakes: ['Techninius duomenis priskirk produkto kortelei, ne kategorijos sąrašui.'] });
+test('prompt corrects public label spacing without changing private inputs or model tokens', () => {
+  const input=promptInput();
+  input.pages[0].facts=['00056B ir 11299NM1; originalūs 5l duomenys'];
+  input.pages[0].sources[0].label='11299NM1 indas5l';
+  input.pages[0].links[0].label='00010maišo atrama';
+  const before=JSON.stringify(input),result=buildAuthorPrompt(input);
+  assert.equal(JSON.stringify(input),before);
+  for(const example of ['„00010maišo atrama“ → „00010 maišo atrama“','„00037kutų atrama“ → „00037 kutų atrama“','„11299NM1 indas5l“ → „11299NM1 indas 5 l“'])assert.ok(result.includes(example));
+  assert.ok(result.includes('Modelio ar SKU kodo vidaus nekeisk (pvz., 00056B, 11299NM1, NEREZ2702), URL ir faktų nekeisk.'));
+  assert.ok(result.includes('Tą pačią galutinę etiketę naudok body nuorodoje ir jos PRIVATE_SOURCE_JSON įraše'));
+  const jobs=JSON.parse(result.split('KONKREČIOS UŽDUOTYS:\n')[1].split('\n\nPrieš grąžindamas')[0]);
+  assert.deepEqual(jobs[0].facts,input.pages[0].facts);assert.deepEqual(jobs[0].sources,input.pages[0].sources);assert.deepEqual(jobs[0].links,input.pages[0].links);
+});
 test('prompt includes unique batch, two referenced accepted examples, own facts and separate source footer', () => {
   const result = buildAuthorPrompt(promptInput());
   assert.match(result, /BATCH_ID: TEST-BATCH-001/);

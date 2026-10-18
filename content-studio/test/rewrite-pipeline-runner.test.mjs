@@ -393,3 +393,23 @@ test('CLI forwards importer coalescing config through the same bounded validatio
     assert.match(child.stderr, /importCoalesceMs must/);
   }
 });
+test('default runner idle lanes poll at one second without blocking later import', async () => {
+  const store=memoryStore(['a']),normal=ports();let generating=false,idleUpdates=0;
+  const update=store.update;store.update=async mutator=>{if(generating)idleUpdates++;return update(mutator);};
+  const result=await runRewritePipeline({store,importCoalesceMs:1,ports:ports({generate:async request=>{
+    generating=true;await delay(1100);generating=false;return normal.generate(request);
+  }})});
+  assert.ok(idleUpdates<=4,`idle lanes performed ${idleUpdates} whole-state updates while generation waited`);
+  assert.equal(result.pages[0].status,'COMPLETE');
+});
+test('CLI shares configured poll interval with host and rejects invalid intervals', async t => {
+  const {filename,directory}=await fixture(t,[]),modulePath=path.join(directory,'poll-ports.mjs'),configPath=path.join(directory,'poll-config.json');
+  const source="import assert from 'node:assert/strict';export function createPorts({bridge,config}){assert.equal(bridge.pollMs,config.pollMs??1000);return {generate(){},review(){},importPages(){}};}";
+  await writeFile(modulePath,source);
+  for(const pollMs of [undefined,13,0,-1,1.5]){
+    await writeFile(configPath,JSON.stringify({portsModule:{path:modulePath,sha256:createHash('sha256').update(source).digest('hex')},pollMs}));
+    const child=spawnSync(process.execPath,[fileURLToPath(new URL('../scripts/rewrite-pipeline.mjs',import.meta.url)),'run','--state',filename,'--config',configPath],{encoding:'utf8',timeout:10000});
+    if(pollMs===undefined||pollMs===13)assert.equal(child.status,0,child.stderr);
+    else{assert.notEqual(child.status,0);assert.match(child.stderr,/pollMs must be a positive integer/);}
+  }
+});

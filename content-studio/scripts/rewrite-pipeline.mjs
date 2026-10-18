@@ -43,10 +43,11 @@ else if(command==='status'){
 else if(command==='resume'){await store.update(doc=>{doc.pipeline.pauseRequested=false;});output({pauseRequested:false,runnerStarted:false});}
 else if(command==='run'){
   const config=JSON.parse(await readFile(option('config'),'utf8'));assert(config.portsModule,'Pinned real ports module required');
+  const pollMs=config.pollMs??1000;assert(Number.isInteger(pollMs)&&pollMs>0,'pollMs must be a positive integer');bridge.pollMs=pollMs;
   const {verifyPin}=await import('../src/rewrite-pipeline/core-adapter.mjs');await verifyPin(config.portsModule);
   const {createPorts}=await import(pathToFileURL(config.portsModule.path));
   const controller=new AbortController();for(const sig of ['SIGINT','SIGTERM'])process.once(sig,()=>controller.abort());
-  const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort();}catch{controller.abort();}},250);
-  try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3,importCoalesceMs:config.importCoalesceMs??3000}));}
+  const timer=setInterval(async()=>{try{if((await store.read()).pipeline.pauseRequested)controller.abort();}catch{controller.abort();}},pollMs);
+  try{const ports=await createPorts({store,bridge,config});output(await runRewritePipeline({store,ports,signal:controller.signal,maxBatches:config.maxBatches??2,maxAttemptsPerPage:config.maxAttemptsPerPage??2,batchSize:3,pollMs,importCoalesceMs:config.importCoalesceMs??3000}));}
   finally{clearInterval(timer);}
 }else throw new Error('Commands: init, enqueue, run, next, claim, send-intent, reply, status, pause, resume. Real host tools answer requests; no automated Gemini retry.');

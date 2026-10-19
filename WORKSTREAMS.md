@@ -2446,3 +2446,19 @@ new runner/scheduler or live calls. QA lease announced before dedicated PG use.
 Dedicated0052 QA: combined55PG and final3focused PASS, exact upgrade-body
 rehearsal rolled back, all9219prior rows unchanged; lease released. Final
 139offline checks PASS. Own branch/PR handoff only; no main/operating adoption.
+
+2026-10-19 Git upgrade foundation LOCAL VERIFIED, issue219: own fresh-main branch
+codex/main-upgrade-foundation-20261019 at533597c1; companion255fea08, paired
+freshness PASS. Scope strict committed checker/tests, existing journal literal
+test, bootstrap instruction/direct regression, CORE_IMPROVEMENT/README,
+AGENTS/PROJECT_CONTRACT/START_HERE pointers, existing CI preflight only, own QA
+report and unique journal. No old invalid active entries or archive payloads,
+runtime/API/DB/model/Gmail, Root/Serving changes or merge. Separate draft PR
+targets main; source delivery and actual adoption remain separate.
+All 25 relevant Node tests, existing zero-call calibration-input preflight,
+selected-source hashes and added local links passed. Original missing-checker
+failure retained. Scoped safety/committed coverage and draft PR handoff follow;
+the source edit window is released with that handoff, without merging.
+Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
+passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
+the own edit window is released. Remote CI/review/merge/adoption remain separate.

@@ -1,5 +1,25 @@
 # Six saved agents on the common native runtime
 
+## Configured CLI identity for the Lab
+
+The Lab honors the normal paired `chat_codex_executable`/`chat_codex_sha256`
+configuration for persona and evaluator calls. It validates the absolute file and
+hash before preparation and again immediately before dispatch. Partial, missing,
+changed or mismatched configured identities fail closed, without choosing a
+different npm installation. Only a Lab with neither configured field retains its
+historical Node/npm launcher. Private process metadata records the selected
+origin and pinned executable hash. Model, effort, fixed provider arguments,
+tool restrictions, timeout, accounting and zero-retry rules remain unchanged.
+
+The observed failure completed eight native role calls and one persona call,
+then its npm CLI0.159.3 evaluator emitted only thread/turn-start events until the
+300-second limit. Its failure and unknown usage remain retained. One separate
+same-input diagnostic through the existing bounded executor and normal pinned
+CLI0.163.0-alpha.10.2 completed in28.11458seconds with known usage and six PASS
+grades; no native role was repeated. This establishes the executable-selection
+defect and a working bounded alternative, not the internal upstream stall cause
+or acceptance of the original incomplete suite.
+
 The previous `NativePair` executes a research Config and an email Config. Its
 generic reviewer/reply labels do not prove execution of separately saved
 qualification, reply, quality or coordinator agents. Workspace Team/Direct

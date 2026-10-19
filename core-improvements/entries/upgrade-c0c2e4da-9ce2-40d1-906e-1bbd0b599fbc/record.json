@@ -1,0 +1,20 @@
+{
+  "siteId": "core",
+  "summary": "CodexLab ignored configured hash-pinned CLI and silently launched another npm version for persona/evaluator calls",
+  "category": "code",
+  "evidence": [
+    "Source965ce338 hardcodes APPDATA/npm CLI in CodexLab while native role adapter honors configured executable and SHA; bounded same-input diagnostic completed28.11458s with pinned native after npm call timed out300s; old failure retained"
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/codex_lab.py",
+    "agent-business-core/runtime/offline_tests/test_codex_lab_executable_pin.py",
+    "docs/ACQUISITION_SIX_ROLE_NATIVE.md",
+    "SKILLS/business-agent-calibration/references/runbook.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped source revert; retain old failed attempts, standalone diagnostic and their original source pins; do not replay a consumed grant or deadline",
+  "id": "upgrade-c0c2e4da-9ce2-40d1-906e-1bbd0b599fbc",
+  "branch": "codex/lab-pinned-executable-20261019",
+  "baseSha": "965ce3388ba3c250c1a9a74b21b038483c334ac9",
+  "createdAt": "2026-10-19T07:54:07.096Z"
+}

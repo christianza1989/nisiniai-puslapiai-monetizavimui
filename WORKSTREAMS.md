@@ -2495,3 +2495,12 @@ fences. No provider or operating DB writes; current schema must be0052 and
 artifacts remain Root-owned. Servingb5 is source-read-only for RED; no other
 agent uses this QA lease. Small batch requires200MB disk reserve. Preserve
 all existing rows and first failure; no schema reset or migration is planned.
+2026-10-19 Root LAB CLI IDENTITY repair RESERVED: issue66/comment6262422472,
+own branch codex/lab-pinned-executable-20261019 from965ce338/main d0d08be6;
+paired freshness PASS07:52UTC. Own codex_lab.py, new offline executable-pin tests,
+six-role doc/calibration runbook and upgradec0c2e4da. Configured native0.163 vs
+silently selected npm0.159.3 reproduced; exact retained evaluation completed
+28.11458s via pinned native, without native role replay. Preserve original
+300s timeout/unknown usage and all18closed ledgers. Honor configured hash before
+preparation/dispatch; no fallback on partial/mismatch, no model/GRADE/corpus/
+Config/budget/authority/timeout/retry change. Account/control issue223 is disjoint.

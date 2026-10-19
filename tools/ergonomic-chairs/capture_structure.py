@@ -9,6 +9,7 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 from structure_policy import VERSION, state_key, frontier, require_transition, finish_changes, closure
 from immutable_payloads import ImmutablePayloadStore
+from proven_routes import shortest_proven_path
 
 
 def now():return datetime.now(timezone.utc).isoformat()
@@ -120,12 +121,19 @@ def capture(job,root,grant,seconds=900,max_states=120,max_edges=800):
             cp['states'][key]={'file':file,'sha256':sha((root/file).read_bytes())};cp['paths'][key]=path;states[key]=s
         return key
     def restore(key):
+        route=shortest_proven_path(cp['initial'],key,cp['edges'],states)
+        if route is None or len(route)>=len(cp['paths'][key]):route=cp['paths'][key]
+        started=time.perf_counter()
         s=insert_initial()
-        for step in cp['paths'][key]:
+        for step in route:
             require_transition(s,step['field'],step['requested'])
             client.set(step['field'],step['requested']);s=client.state()
             if state_key(s)!=step['to']:raise ValueError('REPLAYED_CONSTRUCTION_CHANGED')
         if state_key(s)!=key:raise ValueError('ORIGINAL_PATH_RESTORE_CHANGED')
+        save(root/('route-proofs/'+uuid.uuid4().hex+'.json'),{'at':now(),'initial':cp['initial'],'target':key,
+             'originalSteps':len(cp['paths'][key]),'actualSteps':len(route),'shorter':len(route)<len(cp['paths'][key]),
+             'path':route,'stateIdentityVerified':True,'seconds':time.perf_counter()-started,
+             'historicalRpcReplayed':False,'newInvocation':True})
         return s
     stop=None
     try:

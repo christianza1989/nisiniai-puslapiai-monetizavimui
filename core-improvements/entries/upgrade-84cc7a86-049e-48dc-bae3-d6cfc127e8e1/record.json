@@ -1,0 +1,21 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Chair source capture restores via first-discovery paths despite already measured shorter routes; reduce only restoration overhead while retaining per-step identity and complete graph/raw/geometry evidence.",
+  "category": "code",
+  "evidence": [
+    "tools/ergonomic-chairs/test_proven_routes.py",
+    "tools/ergonomic-chairs/capture_structure.py"
+  ],
+  "paths": [
+    "tools/ergonomic-chairs/capture_structure.py",
+    "tools/ergonomic-chairs/proven_routes.py",
+    "tools/ergonomic-chairs/freeze_capture.py",
+    "tools/ergonomic-chairs/test_proven_routes.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "rollback": "Revert only the route integration source commit; retain accepted immutable runtime-v5. Any runtime adoption requires a separate actual finite pilot and full SHA/identity proof; no automatic production deployment.",
+  "id": "upgrade-84cc7a86-049e-48dc-bae3-d6cfc127e8e1",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "7e14a889a1ec16d68bb24ad94a59876553f54715",
+  "createdAt": "2026-10-19T11:55:15.394Z"
+}

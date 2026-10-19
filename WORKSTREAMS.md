@@ -398,3 +398,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-19 Ergonomic chair route optimization; own codex/ergonomic-chairs-structure-20261017 / PR187. Scope tools/ergonomic-chairs/capture_structure.py, proven_routes.py, freeze_capture.py, test_proven_routes.py and own core-upgrade journal. Strictly shorter measured restoration paths; preserve all graph/raw/geometry/identity gates. Separate finite pilot before adoption; accepted frozen runtime-v5 remains immutable.

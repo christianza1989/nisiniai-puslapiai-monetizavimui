@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Optional confirmed territory through existing factual configuration and shared schema; unconfigured output preserved. Local actual schema and other-niche regressions passed. No deployment or main/adoption claim.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-schema.test.mjs",
+      "result": "PASS",
+      "evidence": "Companion tests/niche-schema.test.mjs: configured/absent/invalid territory, Article positive control and no invented Offer/address."
+    },
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "Companion full65test suite passed after final shared changes."
+    },
+    {
+      "command": "SEO core smoke on9existing canonical niches",
+      "result": "PASS",
+      "evidence": "Actual local production runtime checked9unchanged niche packages; private example remains canonical-blocked."
+    }
+  ],
+  "eventId": "290aa6fd-276e-4bda-8545-51ed74f16605",
+  "sequence": 2,
+  "at": "2026-10-16T07:11:53.682Z"
+}

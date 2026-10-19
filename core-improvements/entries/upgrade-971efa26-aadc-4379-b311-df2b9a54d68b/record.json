@@ -1,0 +1,17 @@
+{
+  "siteId": "core",
+  "summary": "Rejected form content type leaves its body unread; current local Worker reproducibly responds400 then503 to next persistent-connection form request, then400.",
+  "category": "code",
+  "evidence": [
+    "Shared app/niche/[siteId]/lead/route.ts limitedForm returns before reading unsupported content-type; bounded normal body path already consumes modest rejected data. Reproduced with generic invalid JSON then invalid form fields on one HTTP agent."
+  ],
+  "paths": [
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/182",
+  "rollback": "Scoped revert of shared body reader extraction, route import and stream regressions; preserve original400/503/400 proof. No production or mail activation.",
+  "id": "upgrade-971efa26-aadc-4379-b311-df2b9a54d68b",
+  "branch": "codex/geraskvapas-market-20261015",
+  "baseSha": "dc920fc00d6208a89cd3dfbbd2b189944750c1b1",
+  "createdAt": "2026-10-16T07:04:30.179Z"
+}

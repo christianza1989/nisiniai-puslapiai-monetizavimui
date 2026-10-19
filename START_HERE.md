@@ -1,5 +1,7 @@
 # Sukurk svetainę pagal domeną
 
+Visiems su core dirbantiems agentams galioja [privalomas patirties ciklas](CORE_IMPROVEMENT.md#privalomas-visų-core-agentų-patirties-ciklas): rastą atkuriamą bendrą neatitikimą pataisyti canonical kode / taisyklėje / skill, patikrinti ir perduoti su savo upgrade įrašu. Šis svetainės entrypoint nesusiaurina pareigos tik builderiams; integrations/runtime/UI ir kiti core darbai taiko tą pačią eigą.
+
 Šis pradžios taškas skirtas naujai nišinei svetainei. Kitoms užduotims naudok [dokumentacijos žemėlapį](docs/DOCUMENTATION_MAP.md): jame atskirtos bendros sutartys, modulio instrukcijos, konkrečių projektų būsenos ir datuoti įrodymai. Didesnei savininko užsakytai platformai taikoma [PLATFORM_BUILD_CONTRACT](PLATFORM_BUILD_CONTRACT.md); jos aktualią apimtį nustato konkretaus projekto dokumentai ir savininko pavedimas.
 
 Prieš kuriant viešus tekstus privalomos [kalbos kokybės ir saviredakcijos taisyklės](SKILLS/niche-content-planner/references/language-quality.md): taisyklinga ir natūrali svetainės kalba, pilno teksto peržiūra paties autoriaus, ištaisytos klaidos prieš patvirtinimą. Tai apima pirmą svetainės versiją ir kiekvieną vėlesnį straipsnį, aprašą ar sąsajos tekstą; atskiros sesijos nereikia.

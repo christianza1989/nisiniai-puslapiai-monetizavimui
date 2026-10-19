@@ -1,0 +1,28 @@
+{
+  "siteId": "core",
+  "summary": "Deliver the missing committed Git upgrade coverage gate and consistent journal/bootstrap instructions on fresh main, preserving exact literal paths and strict provenance.",
+  "category": "workflow",
+  "evidence": [
+    "Fetched main533597c10e290a2a09a522ad348e19c9968aa9d5 contains the journal writer but no scripts/core-upgrade-check.mjs; the reviewed feature's scoped checker cannot enforce main PR delivery until isolated source is delivered.",
+    "Feature source20fc6992/3e9b9c7b/2657df11 supplies provenance for append-only records, real verification, canonical issue/repository boundaries, dependency manifests and exact bracketed Git paths. Its historical journals and runtime changes are outside this import."
+  ],
+  "paths": [
+    "AGENTS.md",
+    "CORE_IMPROVEMENT.md",
+    "SKILLS/PROJECT_CONTRACT.md",
+    "START_HERE.md",
+    "core-improvements/README.md",
+    "scripts/core-upgrade-check.mjs",
+    "scripts/core-upgrade-check.test.mjs",
+    "scripts/core-upgrade.test.mjs",
+    "scripts/install-agent-git-bootstrap.mjs",
+    "scripts/install-agent-git-bootstrap.test.mjs",
+    ".github/workflows/agent-workflow.yml"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/219",
+  "rollback": "Revert only the scoped foundation source and rule/CI additions while retaining this immutable new journal and all pre-existing journals/SOURCE bytes. No historical import, runtime adoption or global bootstrap installation occurs.",
+  "id": "upgrade-3b7fe624-43c7-43a4-9910-d323392e061a",
+  "branch": "codex/main-upgrade-foundation-20261019",
+  "baseSha": "533597c10e290a2a09a522ad348e19c9968aa9d5",
+  "createdAt": "2026-10-19T04:36:31.174Z"
+}

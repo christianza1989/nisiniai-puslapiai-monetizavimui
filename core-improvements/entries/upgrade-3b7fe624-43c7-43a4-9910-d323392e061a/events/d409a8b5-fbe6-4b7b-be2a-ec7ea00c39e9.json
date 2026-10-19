@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Fresh-main-only Git foundation. Nine selected source/rule/test files match reviewed feature da5f2e2c byte-for-byte; AGENTS and existing CI preflight receive only narrow additions. No historical active journal or archive payload/format imported, no pre-existing journal/SOURCE rewrite, no runtime/API/DB/model/Gmail/global-bootstrap operation. Original missing-checker entrypoint failure retained with SHA256 b15b5d44f0ba792484323d2cb10ce8392edffe69665ac7201039aaa84d36f969. This is source validation, not reviewed main delivery or operating adoption.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs",
+      "result": "PASS",
+      "evidence": "25 passed, zero failed/skipped. Retained log SHA256 063a952a27d33b32fab004a0dfde9d5d0e36a5f5cbd6df0482d12e9f3629ef02. Committed-only source, canonical URL/private-repo provenance, manifest/lock coverage, immutable history, real/fresh checks, exact bracket blob/tree/deletion and wildcard/working-only negatives, quarantine CRLF/clone restore, freshness failure/dirty preservation and bootstrap preference preservation."
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "Existing preflight PASS_INPUTS, issues empty, model_calls=0, private_data_read=false. Log SHA256 d46a29122b132372e7b7fb9e8f1c6cc35923bfbd1d7cb27fb6b27dd38870d2af. No calibration behavior, business knowledge or channel acceptance inferred."
+    },
+    {
+      "command": "node .local/foundation/review-checks.mjs; git diff --check; paired git-freshness start",
+      "result": "PASS",
+      "evidence": "Nine exact imported file hashes, four new local links/anchors, only existing CI preflight with full base/head SHA, old journal/SOURCE/runtime unchanged. Private base/main 533597c10e290a2a09a522ad348e19c9968aa9d5; companion 255fea0813bf1aabeaeea2f2de0b29564118f2fc contains fetched main ec8a9c032fe926d1d9722802d8eb26fa8bd02937. Canonical contracts and final Markdown meaning/links reviewed."
+    }
+  ],
+  "eventId": "d409a8b5-fbe6-4b7b-be2a-ec7ea00c39e9",
+  "sequence": 2,
+  "at": "2026-10-19T04:38:49.242Z"
+}

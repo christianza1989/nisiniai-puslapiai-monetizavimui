@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/220",
+  "commit": "b01b2a93b9aaf76253cb7babcd9bebb441c41ae6",
+  "note": "Verified draft OPEN PR220 targets main, with fresh-main implementation b01b2a93 pushed from base533597c1. All 25 relevant Node tests and existing zero-call calibration-input preflight passed; exact staged-blob safety passed for16files; full-SHA committed coverage passed for7sharedchanges with no uncovered paths/errors. Paired freshness passed and old journals/SOURCE/runtime remain unchanged. No historical archive format/payload is needed or imported. Remote preflight was queued at PR creation, not predeclared PASS. No merge or actual adoption performed; future feature delivery remains separate.",
+  "eventId": "cab4e885-63f3-41f4-910a-9bc7c2356840",
+  "sequence": 3,
+  "at": "2026-10-19T04:40:16.463Z"
+}

@@ -1,0 +1,24 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Provider reports ordered tracking CSV and may bundle several labels in one or more PDFs; counting files cannot prove parcel-to-printed-label binding and must preserve unverified bundles",
+  "evidence": [
+    "Authorized site-owner2026-10-19 actual provider reply confirms order CSV follows Stickers order; actual label content is needed to bind a printed number, and courier may return one multipage or several PDFs",
+    "Existing fact() leaves CSV-only multi-parcel tracking null; refresh() currently marks mapping verified solely when label-file count equals parcel tracking count, without checking printed contents",
+    "No content extraction/visual proof available in generic adapter: preserve provider candidates/order/raw PDFs as unverified instead of fabricating per-page/per-parcel identity"
+  ],
+  "paths": [
+    "commerce-core/src/sendparcel-booking.mjs",
+    "commerce-core/src/shipment-commands.mjs",
+    "commerce-core/test/shipment-commands.test.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert; original provider observations and files remain immutable. No new parser/OCR service, provider calls, secrets, runtime deployment or actual shipments.",
+  "id": "upgrade-a24a8c6a-f487-4447-bed1-783a2af86c76",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "7a25095b0c2a5f91d1a2b1c41c1415cad882875e",
+  "createdAt": "2026-10-19T05:15:09.526Z"
+}

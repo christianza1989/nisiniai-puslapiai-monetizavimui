@@ -7,6 +7,7 @@ import { build } from 'esbuild';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import Stripe from 'stripe';
 import { generateKeyPair, exportJWK, SignJWT } from 'jose';
+import { PDFDocument } from 'pdf-lib';
 import { CommerceService } from '../src/service.mjs';
 import { CommerceOperations } from '../src/operations.mjs';
 import { Backoffice } from '../src/backoffice.mjs';
@@ -1333,6 +1334,97 @@ try {
     ).n,
     1,
   );
+  // A separate two-parcel order gets one POST and one intact multipage bundle.
+  // CSV candidates do not prove printed parcel-to-page identity.
+  const nativeBundleInput = { ...dynamicInput, lines: [{ sku: 'couple', quantity: 2 }] };
+  const nativeBundleRate = await new BuyerDeliveryQuotes(automaticService()).create(
+    automaticStore,
+    'sandbox',
+    { ...nativeBundleInput, id: 'native_bundle_rate' },
+    automaticCarrier,
+  );
+  const nativeBundleOrder = (
+    await automaticService().createOrder(
+      automaticStore,
+      'sandbox',
+      { ...nativeBundleInput, deliveryQuoteId: nativeBundleRate.id },
+      key(201),
+    )
+  ).order;
+  await automaticService().checkout(
+    automaticStore,
+    'sandbox',
+    nativeBundleOrder.id,
+    foundationPayment('store-auto-native.example', automaticStore),
+  );
+  await automaticService().acceptPayment(
+    automaticStore,
+    'sandbox',
+    payment(
+      await automaticService().getOrder(automaticStore, 'sandbox', nativeBundleOrder.id),
+      automaticStore,
+      'evt_native_bundle',
+    ),
+  );
+  await automaticService().markPacked(
+    automaticStore,
+    'sandbox',
+    nativeBundleOrder.id,
+    'fixture_operator',
+  );
+  await runAutomaticJobs();
+  const nativeBundleCommand = await automaticService().one(
+    'SELECT id,provider_id FROM shipment_commands WHERE store_id=? AND order_id=?',
+    automaticStore,
+    nativeBundleOrder.id,
+  );
+  autoLedger[nativeBundleCommand.provider_id].tracking_number = 'NATIVE_TRACK_A,NATIVE_TRACK_B';
+  const nativeBundlePdf = await PDFDocument.create();
+  nativeBundlePdf.addPage().drawText('NATIVE_TRACK_A fixture printed label');
+  nativeBundlePdf.addPage().drawText('NATIVE_TRACK_B fixture printed label');
+  const nativeBundleBytes = await nativeBundlePdf.save();
+  automaticCarrier.documents = async (id) =>
+    id === nativeBundleCommand.provider_id
+      ? [
+          {
+            filename: 'native-stickers.pdf',
+            providerFilename: 'Stickers.pdf',
+            kind: 'label',
+            bytes: nativeBundleBytes,
+            contentType: 'application/pdf',
+            private: true,
+          },
+        ]
+      : availableAutomaticDocuments(id);
+  await runAutomaticJobs();
+  const nativeBundleVault = new R2PrivateStorage(await mf.getR2Bucket('COMMERCE_FILES'));
+  const nativeBundleReceipt = await new ShipmentCommands(
+    automaticService(),
+    nativeBundleVault,
+  ).refresh(
+    automaticStore,
+    'sandbox',
+    nativeBundleCommand.id,
+    automaticCarrier,
+    'fixture_operator',
+  );
+  assert.deepEqual(nativeBundleReceipt.trackingCandidates, ['NATIVE_TRACK_A', 'NATIVE_TRACK_B']);
+  assert.equal(nativeBundleReceipt.trackingCandidateSource, 'order_csv');
+  assert.equal(nativeBundleReceipt.files.length, 1);
+  assert.equal(nativeBundleReceipt.documents[0].unverifiedBundle, true);
+  assert.equal(nativeBundleReceipt.documents[0].parcelIndex, null);
+  assert.equal(nativeBundleReceipt.documents[0].trackingNumber, null);
+  assert.equal(nativeBundleReceipt.documents[0].labelMappingVerified, false);
+  const nativeBundleFile = await automaticService().one(
+    'SELECT storage_key FROM private_files WHERE store_id=? AND id=?',
+    automaticStore,
+    nativeBundleReceipt.files[0],
+  );
+  const nativeStoredBundle = await nativeBundleVault.get(nativeBundleFile.storage_key);
+  assert.deepEqual(nativeStoredBundle, nativeBundleBytes);
+  assert.equal((await PDFDocument.load(nativeStoredBundle)).getPageCount(), 2);
+  await runAutomaticJobs();
+  assert.equal(automaticPosts, 2, 'one POST each for two distinct fixture orders');
   // Explicit per-product simple balances use the same native reservation triggers.
   let simpleTime = Date.now();
   const simpleService = new CommerceService(db, { now: () => simpleTime }),

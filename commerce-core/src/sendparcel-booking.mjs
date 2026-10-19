@@ -16,6 +16,15 @@ const comparableStreet = (address) =>
   address.country === 'LT' && typeof address.line1 === 'string'
     ? address.line1.replace(/[ąčęėįšųūžĄČĘĖĮŠŲŪŽ]/g, (letter) => ltStreetLetters[letter])
     : address.line1;
+const trackingCandidates = (values, count) =>
+  Array.isArray(values) &&
+  values.length === count &&
+  values.every(
+    (value) => typeof value === 'string' && /^[A-Za-z0-9][A-Za-z0-9._/-]{2,199}$/.test(value),
+  ) &&
+  new Set(values).size === values.length
+    ? [...values]
+    : null;
 export class SendparcelBookingAdapter extends SendparcelAdapter {
   constructor(options) {
     super(options);
@@ -176,6 +185,22 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     );
     const trackingNumbers =
       numbers.every((n) => n !== null) && new Set(numbers).size === numbers.length ? numbers : null;
+    const parcelCandidates = trackingCandidates(
+      row.parcels.map((p) => p.tracking_number ?? null),
+      row.parcels.length,
+    );
+    const singleOrderCandidate =
+      row.parcels.length === 1 ? trackingCandidates([row.tracking_number], 1) : null;
+    const csvCandidates =
+      typeof row.tracking_number === 'string' &&
+      row.tracking_number.length <= 20100 &&
+      row.tracking_number.includes(',') &&
+      !/[\x00-\x1f\x7f]/.test(row.tracking_number)
+        ? trackingCandidates(
+            row.tracking_number.split(',').map((value) => value.trim()),
+            row.parcels.length,
+          )
+        : null;
     return {
       id: String(row.id),
       providerStatus: row.status,
@@ -187,6 +212,15 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       })),
       tracking: row.tracking_number || undefined,
       trackingNumbers,
+      // Ordered provider reports are candidates, never proof of printed pages.
+      trackingCandidates: parcelCandidates || singleOrderCandidate || csvCandidates,
+      trackingCandidateSource: parcelCandidates
+        ? 'parcel_fields'
+        : singleOrderCandidate
+          ? 'order_single'
+          : csvCandidates
+            ? 'order_csv'
+            : null,
       // Durable private observation stores the actual response for reconciliation.
       providerResponse: row,
       costVerifiedByResponse: false,

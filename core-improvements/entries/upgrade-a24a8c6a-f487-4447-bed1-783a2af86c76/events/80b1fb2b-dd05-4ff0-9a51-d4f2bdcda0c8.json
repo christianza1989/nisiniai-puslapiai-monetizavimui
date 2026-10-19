@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Three original functional failures retained in label-bundle-original-failure-20261019.log: file-count mapping incorrectly verified and CSV/bundle metadata absent. CSV candidates now have honest parcel_fields/order_single/order_csv provenance; all original PDFs and provider order remain intact; no printed mapping is claimed. Intermediate full162/native/build passed; subsequent final rerun failed at Prettier with host Node/V8 Zone Allocation OOM and is preserved in shipping-final-20261019.log. Final equivalent checks ran successfully with test-concurrency1 and process-local512MiB heap cap; no assertions/files skipped. Historical journal/default-main blocker and canonical guard unchanged; no provider/runtime/DB/credential writes.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/shipment-commands.test.mjs",
+      "result": "PASS",
+      "evidence": "10 focused tests: unique complete CSV only, duplicates/partial/control/oversize summaries unassigned, per-parcel vs order provenance, one real2-page PDF and multiple PDFs byte-preserved/provider ordered, deliberately reversed printed fixtures never automatically mapped, replay no file duplication or extra booking."
+    },
+    {
+      "command": "node --run check:format; node --test --test-concurrency=1 test/*.test.mjs; node --run test:worker; node --run build:worker (commerce-core cwd; sequential checked exit codes)",
+      "result": "PASS",
+      "evidence": "commerce-core/tmp/shipping-final-serial-20261019.log: final format,162 Node, native workerd/D1/R2/Queue with24 original migrations, actual pending-job workerd restart plus new2-parcel order/CSV/2-page privateR2 bundle/no printed mapping, one POST each for2 distinct fixture orders; dry-run3228.53KiB/gzip780.40KiB/21assets; final exit0."
+    },
+    {
+      "command": "git diff --exit-code 7a25095b0c2a5f91d1a2b1c41c1415cad882875e -- commerce-core/config commerce-core/migrations commerce-core/sdk commerce-core/src/runtime.mjs commerce-core/src/identity.mjs commerce-core/package.json commerce-core/package-lock.json",
+      "result": "PASS",
+      "evidence": "All original SQL, preparation config, SDK, runtime/identity and dependency manifests unchanged. Actual deployment-owner series/wallet/keys remain separate."
+    }
+  ],
+  "eventId": "80b1fb2b-dd05-4ff0-9a51-d4f2bdcda0c8",
+  "sequence": 2,
+  "at": "2026-10-19T05:58:17.085Z"
+}

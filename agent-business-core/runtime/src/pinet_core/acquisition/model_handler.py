@@ -153,7 +153,7 @@ async def renew_role_lease(tx, task, run_id, *, phase):
     if reason:
         model_observation.task_guard(tx, task, phase, reason, now=now)
         raise RunnerError("authorization_revoked")
-    task.lease_until = min(lease_deadline(), deadline)
+    task.lease_until = lease_deadline(task.kind, until=deadline)
     return now
 
 

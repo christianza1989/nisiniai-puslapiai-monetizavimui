@@ -1,0 +1,34 @@
+{
+  "status": "local-verified",
+  "note": "Actual15s sourceb5 lease failure is reproduced with a20s post-result proof in isolated retained0052 PG, then passes with the fixed source-selected60s model profile. Original provider failure,13 charged rows and a first test-wrapper artifact-root setup failure remain retained. All actors stopped; provider calls and operating DB writes0. This is source verification, not protected calibration completion or main delivery.",
+  "checks": [
+    {
+      "command": "python -X utf8 -m pytest offline_tests/test_acquisition_task_lease.py -q",
+      "result": "PASS",
+      "evidence": "48passed3.59s; helper exact predecessor35FAIL13PASS at cee429dbd12bcd1e494f93eab4a7efb597f34a41, RED SHA a0ea86634bbd4eca5e0603bf21539740d9a84d0b17360002b388be343c7a91e1. Fixed exact source kinds, lookalikes, admitted deadline clamps, expired/equal/run-changed/stopped authority, known-usage settlement and worker renewal checks."
+    },
+    {
+      "command": "python -X utf8 -m pytest offline_tests -k acquisition -q",
+      "result": "PASS",
+      "evidence": "446passed,2992deselected,67subtests in13.70s on the final source policy. No provider or database."
+    },
+    {
+      "command": "Owned retained0052 QA: test_acquisition_task_lease_pg.py unchanged inert20s proof, predecessorb5 then fixedRoot source",
+      "result": "PASS",
+      "evidence": "Expected predecessor RED:20.016863s proof, lease-5.610652s, worker_interrupted,1known charged attempt, no output/CRM/mail; log188907a761ab4b2c0bcb77e91841eb8f5ac88197eb9716c65582bd670877dad6. Fixed GREEN:1passed44.47s,20.016332s proof,39.286665s live lease,2successfully settled known attempts10input/4output, no unknownusage/CRM/mail; log41cd8bda0529bd59126dbd4b8f2e331fbd98b242abb4a3b5fe872c67b41acf92."
+    },
+    {
+      "command": "Owned retained0052 QA: python -m pytest tests/test_acquisition_role_lease_pg.py tests/test_task_heartbeat_concurrency_pg.py -q",
+      "result": "PASS",
+      "evidence": "8passed. Existing real expired-lease and revoked-authority still reject; four native proof returns at4/8/12/16s retain live ownership, two known attempts settle. Five concurrent retained-identity/live/expired/terminal/authority cases pass. LogSHA4ae41c108c264f045277a28a62a8491e96605a15392f9e8fae68f38d590f3a35. QAonly;0provider/operatingDBwrites."
+    },
+    {
+      "command": "ruff check six changed Python source/test files; git diff --check",
+      "result": "PASS",
+      "evidence": "Actual final checks passed. No schema/model/instruction/attempt cap or generic15s lease change."
+    }
+  ],
+  "eventId": "e5256c83-1206-4b1e-b25b-7d9eabdbc33c",
+  "sequence": 2,
+  "at": "2026-10-19T06:30:29.718Z"
+}

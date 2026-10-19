@@ -14,6 +14,7 @@ from ..models import Business, new_id, utcnow
 from .models import Task, TaskEvent, Thread
 
 TERMINAL = {"succeeded", "failed", "cancelled"}
+MODEL_LEASE_KINDS = frozenset({"acquisition.model_prepare", "acquisition.model_reply", "acquisition.agent_role"})
 
 
 def chat_guard():
@@ -205,5 +206,9 @@ async def expire_run(tx, task):
         await append_event(tx, task)
 
 
-def lease_deadline():
-    return utcnow() + timedelta(seconds=15)
+def lease_deadline(kind=None, *, until=None):
+    # Native source/team proofs can outlast the short interactive-task lease.
+    # Only source-fixed model handlers get this bounded ownership interval;
+    # it never extends their independently checked execution authority.
+    value = utcnow() + timedelta(seconds=60 if kind in MODEL_LEASE_KINDS else 15)
+    return min(value, until) if until is not None else value

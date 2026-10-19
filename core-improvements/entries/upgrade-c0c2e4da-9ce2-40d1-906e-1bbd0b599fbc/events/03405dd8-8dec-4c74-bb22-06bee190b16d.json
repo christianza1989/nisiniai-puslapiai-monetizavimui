@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Fix configured executable selection; internal upstream cause of the old npm stall remains unproved. Original10-row failed stage and unknown evaluator charge remain immutable. One distinct same-input pinned-native diagnostic completed28.11458s with known usage/all six grades PASS and no native role rerun; this is not whole-suite acceptance. Initial red log and two test-wrapper path mistakes (no tests executed in those commands) are retained. No schema/model/GRADE/corpus/Config/authority/budget/retry/timeout change.",
+  "checks": [
+    {
+      "command": "python -B -X utf8 -m pytest -q offline_tests/test_codex_lab_executable_pin.py offline_tests/test_codex_lab_transport.py offline_tests/test_codex_lab_deep_audit.py offline_tests/test_acquisition_lab_budget.py",
+      "result": "PASS",
+      "evidence": "40passed17.09s; prior exact965 executable-pin regression8failed/1passed. Fixed native selection with Node/npm absent, paired config rejection, mismatch/missing file/relative/directory checks, rehash before dispatch, legacy fallback preservation; existing timeout/cancel/known usage/private audit/zero retry guards pass."
+    },
+    {
+      "command": "python -B -X utf8 -m pytest -q offline_tests/test_codex_lab_executable_pin.py offline_tests/test_control_codex.py offline_tests/test_acquisition_model_adapter.py",
+      "result": "PASS",
+      "evidence": "51passed13.80s; final test formatting corrected, maintained consultation/native fixed args, authority, schema and output handling pass without provider calls. Nine new pin items overlap the first bundle;82unique items across both."
+    },
+    {
+      "command": "ruff check codex_lab.py and test_codex_lab_executable_pin.py; git diff --check; node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "Final Ruff/whitespace pass; six registered skill input fixtures pass. Only runbook reference changed; SKILL entry/catalog hash unchanged."
+    }
+  ],
+  "eventId": "03405dd8-8dec-4c74-bb22-06bee190b16d",
+  "sequence": 2,
+  "at": "2026-10-19T07:57:45.401Z"
+}

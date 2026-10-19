@@ -116,3 +116,13 @@ uv run python scripts/verify_learning_adoption.py --site traktoriupadangos --run
 Šis skriptas tikrina naują core claim su active hash, seno pokalbio snapshot išlikimą, kitų nišų nepakitimą, operatoriaus rollback ir exact pointer restore. Jis laikinai perjungia vietinį pointer: turi būti vienintelis tos nišos release rašytojas. Rollback įrodymas nėra autonominio online regresijos rollback trigger įrodymas. Kai kandidatas teisingai atmestas, acceptance gali turėti PASS atmetimui ir NA adoption, su konkrečia priežastimi; neišgalvok aktyvuoto mokymosi.
 
 Tikro HTTP + background jobs testą vykdyk atskirai be manual `jobs.run_one` ar runner postcall pakeitimo. Pagal aktualų audio / transporto runbook atlik realų browser/RTC tęsinį. Tekstinis local promotion neįjungia production/audio canary. Baigus pateik [matricą ir minimizuotą ataskaitą](acceptance.md), ne vien bendrą balų sumą.
+## Viena užfiksuota CLI tapatybė
+
+Kai runtime sukonfigūruoti `chat_codex_executable` ir `chat_codex_sha256`, Lab
+persona bei vertintojas turi naudoti tą patį vykdymo failą ir tikrinti jo hash
+prieš paleidimą. Atskirai įdiegtas npm CLI nėra tos užfiksuotos tapatybės įrodymas.
+Dalinė ar neatitinkanti pora stabdo vykdymą; nepasirinkti kitos versijos kaip
+atsarginio kelio. Privačiame process kvite patikrinti `cli_origin` ir executable
+hash. Nei CLI pakeitimas, nei atskiras sėkmingas vertinimas neperrašo ankstesnio
+timeout, nežinomų sąnaudų ar viso nepraėjusio bandymo būsenos. Istoriniam Lab be
+abiejų konfigūracijos laukų paliekamas ankstesnis paleidimo būdas.

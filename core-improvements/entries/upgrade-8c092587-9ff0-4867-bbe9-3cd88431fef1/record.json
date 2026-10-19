@@ -1,0 +1,25 @@
+{
+  "siteId": "core",
+  "summary": "Keep CLI execution in short exclusive paths while streaming deep durable calibration diagnostics; retain safe pre-spawn OS failure codes.",
+  "category": "code",
+  "evidence": [
+    "Source52275 known PL persona failed before spawn in a 319-character Windows cwd (errno20/winerror267), independently reproduced with inert Python; all six grants and module stopped.",
+    "Independent test-only commit b71d3b0869e216231336b278e322f048237984d6: predecessor52275 RED17FAIL/2PASS; RED log SHA256 d87e1ac17bae4d9675b273f355d73aa566c7c5e7b6a94b2af9f94cc31245cee9; repaired source new19PASS3.54s.",
+    "Initial own regression1FAIL/27PASS retained: final exit receipt still read obsolete temp path; corrected before final regressions. No protected case or external channel executed during repair."
+  ],
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/codex_lab.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/codex_transport.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/execution_observation.py",
+    "agent-business-core/runtime/offline_tests/test_codex_lab_deep_audit.py",
+    "agent-business-core/runtime/offline_tests/test_cli_spawn_diagnostics.py",
+    "docs/CALIBRATION_CLI_DIAGNOSTICS.md",
+    "SKILLS/business-agent-calibration/references/runbook.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "rollback": "Scoped revert of this source/docs/tests change with all runtime actors stopped; preserve prior failed evidence and conservative usage reservations. No DB schema or business facts changed.",
+  "id": "upgrade-8c092587-9ff0-4867-bbe9-3cd88431fef1",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "52275aba7a627d27a289a784aac09bcc30536a81",
+  "createdAt": "2026-10-19T05:31:57.514Z"
+}

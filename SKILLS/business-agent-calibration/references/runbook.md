@@ -82,6 +82,14 @@ Pasibaigusį sintetinį langą atnaujinti tik atskira užantspauduota versija,
 išsaugant originalą, visus kvietimus ir pirmą FAIL. Scenarijų, faktų tekstų ar
 vertinimo nekeisti; toks datos atnaujinimas nėra naujas tiekėjo faktų patvirtinimas.
 
+Windows aplinkoje ilgas audito kelias nėra tinkamas CLI darbinis katalogas.
+Kanoninis `CodexLab` naudoja trumpą laikiną vykdymo katalogą ir atskirą patvarų
+auditą pagal [CLI diagnostikos sutartį](../../../docs/CALIBRATION_CLI_DIAGNOSTICS.md).
+Nesutrumpinti ar neperrašyti seno bandymo įrodymų dėl paleidimo klaidos;
+patikrinti proceso paleidimo etapą ir saugius OS klaidos kodus, tada pataisytą
+vykdymą įtraukti į naują šaltinio bei biudžeto fiksaciją. Schemos, modelio,
+vertintojo ir apsaugotų scenarijų vien dėl infrastruktūros klaidos nekeisti.
+
 Užfiksuok prieš ratą bazinių MD ir adaptive pointer hash, tada atlik šviežią stebėjimo run:
 
 ```powershell

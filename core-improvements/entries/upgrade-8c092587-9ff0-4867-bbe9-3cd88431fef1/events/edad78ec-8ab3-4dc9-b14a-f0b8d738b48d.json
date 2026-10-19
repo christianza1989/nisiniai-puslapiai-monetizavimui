@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Short exclusive execution cwd separates Windows CreateProcess from deep durable audits. Same executor, no-tools model profile, per-call caps, conservative reservation and no retries retained. Helper committed RED tests accepted exactly; original pre-spawn failure and initial exit-receipt regression are retained. No model or channel call in this verification.",
+  "checks": [
+    {
+      "command": "python -X utf8 -m pytest offline_tests/test_codex_lab_deep_audit.py offline_tests/test_cli_spawn_diagnostics.py offline_tests/test_codex_lab_transport.py offline_tests/test_cli_execution_observation.py offline_tests/test_cli_pin_streaming.py offline_tests/test_cli_cancelled_receipts.py offline_tests/test_partial_cli_receipts.py offline_tests/test_control_codex.py -q",
+      "result": "PASS",
+      "evidence": "121 passed in52.29s; actual inert deep319+ Windows audits, live streams, timeout/cancellation cleanup/usage, safe spawn error fields and ownership boundaries."
+    },
+    {
+      "command": "python -X utf8 -m pytest offline_tests/test_creation_adapter.py offline_tests/test_content_work_review.py offline_tests/test_business_discovery.py -q",
+      "result": "PASS",
+      "evidence": "73 passed in3.41s; maintained non-lab adapter profiles, source fingerprints, artifact parents and native schema paths remain compatible."
+    },
+    {
+      "command": "ruff check five changed Python source/test files; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed, no whitespace errors; actual command output inspected."
+    }
+  ],
+  "eventId": "edad78ec-8ab3-4dc9-b14a-f0b8d738b48d",
+  "sequence": 2,
+  "at": "2026-10-19T05:32:26.011Z"
+}

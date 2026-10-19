@@ -3,6 +3,7 @@ import asyncio
 import json
 import os
 import subprocess
+from pathlib import Path
 
 from .execution_observation import Observation
 
@@ -26,7 +27,7 @@ async def stop_process(process):
 
 async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, parse_trace,
                   stdout_limit=131072, output_limit=32768, on_event=None, trace_file=None, partial_receipt=None,
-                  stderr_file=None, observation_file=None):
+                  stderr_file=None, observation_file=None, diagnostic_dir=None):
     observed_stdout = []
     observation = None
 
@@ -81,9 +82,20 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
     process, tasks, receipt = None, [], None
     stdout = stderr = waited = feeding = None
     try:
-        if stderr_file or observation_file:
+        if trace_file or stderr_file or observation_file or diagnostic_dir is not None:
             # Adapters supply fixed paths in their exclusive owned private run folder.
-            if any(file and file.resolve().parent != cwd.resolve() for file in (stderr_file, observation_file)):
+            diagnostic_root = cwd
+            checked_files = (trace_file, stderr_file, observation_file)
+            if diagnostic_dir is not None:
+                diagnostic_root = Path(diagnostic_dir)
+                if (not diagnostic_root.is_absolute() or not diagnostic_root.is_dir()
+                        or any(path.is_symlink() or path.is_junction()
+                               for path in (diagnostic_root, *diagnostic_root.parents))
+                        or output.resolve().parent != cwd.resolve()):
+                    raise RunnerError("output_invalid")
+                checked_files = (trace_file, stderr_file, observation_file)
+            if any(file and (file.resolve().parent != diagnostic_root.resolve()
+                    or (diagnostic_dir is not None and file.is_symlink())) for file in checked_files):
                 raise RunnerError("output_invalid")
             observation = Observation(observation_file, stderr_file, prompt, args, seconds)
         async with asyncio.timeout(seconds):
@@ -152,9 +164,13 @@ async def execute(args, *, prompt, cwd, env, output, seconds, still_authorized, 
         if observation:
             observation.value["outcome"] = "run_timeout"
         raise RunnerError("run_timeout", observed_receipt()) from None
-    except (OSError, ValueError):
+    except (OSError, ValueError) as error:
         if observation:
             observation.value["outcome"] = "output_invalid"
+            if process is None and isinstance(error, OSError):
+                observation.save(stage="spawn_failed", process_start_error_class=type(error).__name__,
+                    process_start_errno=error.errno if type(error.errno) is int else None,
+                    process_start_winerror=(value if type(value := getattr(error, "winerror", None)) is int else None))
         raise RunnerError("output_invalid", observed_receipt()) from None
     finally:
         if observation:

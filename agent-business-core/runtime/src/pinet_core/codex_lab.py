@@ -5,7 +5,7 @@ import os
 import re
 import shutil
 import tempfile
-from contextlib import nullcontext
+from contextlib import contextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -19,6 +19,39 @@ def private_diagnostic(path, value):
         path.write_text(json.dumps(value), encoding="utf-8")
     except OSError:
         pass
+
+
+def retain_private_output(output, audit, limit=65536):
+    """Bounded evidence only; copying can never turn a failed attempt into success."""
+    try:
+        if output.is_symlink() or not output.is_file():
+            return
+        with output.open('rb') as stream:
+            data = stream.read(limit + 1)
+        truncated = len(data) > limit
+        with (audit / ('result.partial.json' if truncated else 'result.json')).open('xb') as stream:
+            stream.write(data[:limit])
+        private_diagnostic(audit/'output-retention.json', {
+            'retained': True, 'truncated': truncated, 'retained_bytes': min(len(data), limit)})
+    except OSError as error:
+        private_diagnostic(audit/'output-retention.json', {
+            'retained': False, 'error_class': type(error).__name__})
+
+
+@contextmanager
+def execution_workspace(audit):
+    """A locked temporary file must not replace the actual CLI outcome."""
+    directory = tempfile.TemporaryDirectory(prefix="pinet-cli-")
+    try:
+        yield Path(directory.name)
+    finally:
+        state = {'completed': True}
+        try:
+            directory.cleanup()
+        except OSError as error:
+            state = {'completed': False, 'error_class': type(error).__name__}
+        if audit:
+            private_diagnostic(audit/'workspace-cleanup.json', state)
 
 
 def strict_schema(schema):
@@ -78,11 +111,15 @@ class CodexLab:
             if any(path.is_symlink() or path.is_junction() for path in (audit, *audit.parents)):
                 raise RuntimeError("invalid_lab_artifact_directory")
             audit.mkdir(parents=True, exist_ok=False)
-        directory_context = nullcontext(str(audit.resolve())) if audit else tempfile.TemporaryDirectory(prefix="pinet-cli-")
-        with directory_context as directory:
-            root = Path(directory)
+        # Windows CreateProcess rejects a valid but deeply nested audit cwd.
+        # Keep execution short and exclusive; stream diagnostics directly to the
+        # separately validated durable audit and retain bounded output on exit.
+        with execution_workspace(audit) as root:
+            logs = audit or root
             schema_path, output = root / "schema.json", root / "result.json"
             schema_path.write_text(json.dumps(strict_schema(schema.model_json_schema())), encoding="utf-8")
+            if audit:
+                (audit/'schema.json').write_bytes(schema_path.read_bytes())
             args = bounded.arguments(executable, root, schema_path, output)
             model_index = args.index("--model")
             if self.model is None:
@@ -106,7 +143,8 @@ class CodexLab:
                 }, ensure_ascii=False), encoding='utf-8')
             if audit:
                 (audit / 'process.json').write_text(json.dumps({'transport': 'shared-bounded-cli.v1',
-                    'schema_path': str(schema_path), 'started_at': datetime.now(UTC).isoformat()}), encoding='utf-8')
+                    'schema_path': str(schema_path), 'execution_directory': str(root),
+                    'started_at': datetime.now(UTC).isoformat()}), encoding='utf-8')
             remaining = self.timeout
             if self.deadline is not None:
                 remaining = max(0, min(remaining, (self.deadline - datetime.now(UTC)).total_seconds()))
@@ -131,8 +169,8 @@ class CodexLab:
                     env=bounded.child_environment(), output=output, seconds=remaining,
                     still_authorized=current, parse_trace=bounded.parse_trace,
                     on_event=bounded.check_trace_event, stdout_limit=262144, output_limit=65536,
-                    trace_file=root/'stdout.jsonl', stderr_file=root/'stderr.txt',
-                    observation_file=root/'observation.json' if audit else None)
+                    trace_file=logs/'stdout.jsonl', stderr_file=logs/'stderr.txt',
+                    observation_file=logs/'observation.json' if audit else None, diagnostic_dir=audit)
                 record_usage(receipt)
                 return schema.model_validate(result)
             except bounded.RunnerError as error:
@@ -142,7 +180,7 @@ class CodexLab:
                 if error.code in {'output_invalid', 'provider_error'}:
                     for filename in ('stdout.jsonl', 'stderr.txt'):
                         try:
-                            if 'schema' in (root/filename).read_text('utf-8', errors='replace').lower():
+                            if 'schema' in (logs/filename).read_text('utf-8', errors='replace').lower():
                                 reason = 'codex_lab_schema_rejected'
                         except OSError:
                             pass
@@ -153,8 +191,9 @@ class CodexLab:
                 raise
             finally:
                 if audit:
+                    retain_private_output(output, audit)
                     try:
-                        observation = json.loads((root/'observation.json').read_bytes())
+                        observation = json.loads((audit/'observation.json').read_bytes())
                         private_diagnostic(audit/'exit.json', {
                             'returncode': observation.get('process_returncode_observed'),
                             'outcome': observation.get('outcome'),

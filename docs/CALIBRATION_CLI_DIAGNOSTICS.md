@@ -15,9 +15,18 @@ acquisition budgets; their failed-attempt usage is retained accurately.
 
 Each artifact attempt has an exclusive numbered directory. Existing directories,
 symlink parents and Windows junction parents are refused before dispatch. Prompt,
-schema, output and raw logs stay in that private directory, outside Git. Without
-an artifact root, the same transport uses a temporary directory and removes it
-after the attempt.
+schema, output and raw logs stay in that private directory, outside Git. The CLI
+always runs in a short exclusive temporary workspace with owned cleanup. This
+avoids the reproduced Windows267 failure when a valid durable
+audit directory has a319-character path. No model was reached in that failure;
+the original failed reservation and unknown usage are retained.
+
+The same bounded executor explicitly validates the separate durable diagnostic
+directory: absolute, existing, no symlink/junction ancestors, every supplied log
+directly inside it, and output inside the execution workspace. Other adapters
+retain the default cwd-only diagnostic boundary. An opt-in audit never widens
+model tools, environment or file access. Without an artifact root, diagnostics
+remain temporary as before.
 
 - `request.json` records the requested model, effort and timeout, not a claim of
   provider-confirmed model identity.
@@ -27,6 +36,17 @@ after the attempt.
   process exit, pre-cleanup liveness, output-file metadata and cleanup outcome.
   It contains no prompt or output body. `process.json` identifies transport,
   schema path and start time; use the observation for the actual PID.
+- `process.json` also identifies the temporary execution directory. Durable
+  stdout, stderr and observation remain live while the child runs. Raw output is
+  retained before temporary cleanup, including on timeout or cancellation;
+  oversized output is kept only as a bounded `result.partial.json` prefix with
+  explicit retention metadata. It remains a failed result, never an answer.
+- A prelaunch OS failure records only its exception class and numeric errno /
+  winerror in the observation, never the exception message, argv or environment.
+- `workspace-cleanup.json` separately records temporary-directory cleanup. A
+  locked Windows file is recorded as `completed:false` with its error class;
+  it cannot overwrite the CLI timeout, cancellation, usage or validated result.
+  Process cleanup and storage cleanup are distinct outcomes.
 - `failure.json` and `exit.json` are optional diagnostic summaries. A failure
   writing them cannot replace the actual timeout, cancellation or tool refusal.
 

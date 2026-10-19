@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Fresh-main selected-file delivery in progress; no historical records imported. Actual new-owned-DB0009-to0012 upgrade PASS with all20legacy projections exact. First focused run retained78PASS/1FAIL/1intentional skip (log hash 6f7671dcfbcee9e5e5e892e7e24710460975390801b3010eb7967cc9ce434807). Sole inherited failure expected403 from a later Task API absent from the scoped foundation; adapt negative to exact404+zeroTask rows, preserve all53behavioral items, add no Task route. First offline route-test failures also retained: lazy router resolution and17unique paths/18operations; fixture assertions corrected, runtime unchanged. Current offline18PASS, canonicalNode25PASS. FinalPG/legacy and source delivery still pending.",
+  "eventId": "0789edf1-9ead-47aa-a59d-1c444fc580be",
+  "sequence": 2,
+  "at": "2026-10-19T07:50:34.381Z"
+}

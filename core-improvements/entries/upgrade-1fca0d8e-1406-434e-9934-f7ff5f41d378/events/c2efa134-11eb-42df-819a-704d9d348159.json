@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Original new CLI regression failed 0 versus 1 before the filename-rule repair. Intermediate fixture misuse of working mode after file removal corrected without weakening staged assertions. Final five CLI tests pass; no secrets/customer payload included.",
+  "checks": [
+    {
+      "command": "node --test scripts/repository-safety.test.mjs",
+      "result": "PASS",
+      "evidence": "research/repository-safety-20261019/REVIEW.md"
+    }
+  ],
+  "eventId": "c2efa134-11eb-42df-819a-704d9d348159",
+  "sequence": 2,
+  "at": "2026-10-19T08:05:56.860Z"
+}

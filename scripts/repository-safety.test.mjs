@@ -24,3 +24,18 @@ test('custom local secret exact match fails without credential disclosure',async
 test('blocked database filename fails; clean code and env template pass',async()=>{
  const root=await fixture();await fs.writeFile(path.join(root,'main.mjs'),'export const enabled=false;');await fs.writeFile(path.join(root,'.env.example'),'TOKEN=\n');assert.equal(scan(root).code,0);await fs.writeFile(path.join(root,'customers.sqlite'),'not a real database');assert.equal(scan(root).code,1);
 });
+test('SQLite auxiliary state and local secret files fail in working and exact staged scans',async()=>{
+ const root=await fixture();
+ try{
+  const names=['preview.sqlite-wal','preview.sqlite-shm','preview.sqlite.secret','backup.sqlite3-wal','cache.db-journal','runtime.secret'];
+  for(const name of names)await fs.writeFile(path.join(root,name),'local-only state');
+  await fs.writeFile(path.join(root,'README.md'),'safe source');
+  await fs.writeFile(path.join(root,'.env.example'),'TOKEN=\n');
+  git(root,'add','.');
+  const candidates=scan(root);assert.equal(candidates.code,1);
+  assert.deepEqual(candidates.report.findings.filter(x=>x.rule==='blocked-secret-or-database-file').map(x=>x.file).sort(),[...names].sort());
+  for(const name of names)await fs.unlink(path.join(root,name));
+  const staged=scan(root,'--staged');assert.equal(staged.code,1);
+  assert.deepEqual(staged.report.findings.filter(x=>x.rule==='blocked-secret-or-database-file').map(x=>x.file).sort(),[...names].sort());
+ }finally{await fs.rm(root,{recursive:true,force:true});}
+});

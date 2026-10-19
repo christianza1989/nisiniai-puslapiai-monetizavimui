@@ -1,0 +1,44 @@
+{
+  "status": "local-verified",
+  "note": "Selected-source fresh-main slice locally verified. Keep first failures: focused78PASS/1scope-statusFAIL/1skip 6f7671dcfbcee9e5e5e892e7e24710460975390801b3010eb7967cc9ce434807; legacy60PASS/29missing-companion-configFAIL 6217c1f4870ad7b471ff4b0e85bbd6f1a112c0736174aa011632a834aa3a6da8. Adapted absent Task negative to404+zeroTask, and explicit existing network-settings fixture; no runtime authorization weakening. Earlier lazy-router/count fixture failures also retained. New DB retained, serviceQA lease released; no operating/RootQA connection, role/password/service change, provider call, old journal import or main/adoption claim. Draft PR and actual CI pending.",
+  "checks": [
+    {
+      "command": "python -m pytest tests/test_account_foundation_scope.py::test_pg_upgrade_preserves_legacy_rows -q",
+      "result": "PASS",
+      "evidence": "Actual owned new0009 database upgraded through exact0010–0012:1PASS,20legacy projections exact; safe proof SHA256 dfb5717447302241e8c4ba1c7aa814d74f62f21647dc9c51da8f4dd1eab3380d"
+    },
+    {
+      "command": "python -m pytest tests/test_account_foundation_scope.py tests/test_control_portfolio.py tests/test_control_bridge.py tests/test_customer_public.py tests/test_customer_registration_pg.py -q",
+      "result": "PASS",
+      "evidence": "Via private single-owned-DB wrapper,80PASS/1intentional once-only-upgrade skip; all53retained items. Log SHA256 3a8e8fd8091823f2995faabe9184d3c9a71d07075be83326c90e0e167034129b"
+    },
+    {
+      "command": "python -m pytest tests/test_core.py tests/test_policy.py tests/test_budget.py tests/test_knowledge.py tests/test_facebook.py tests/test_facebook_page_api.py -q",
+      "result": "PASS",
+      "evidence": "89PASS,explicit private test network fixture via existing STUDIO_NETWORK_SETTINGS, inert providers. Log SHA256 ba8030f740d6ef99c4f0b0c79df976e64d1a5363eeb0bebac32b6d20e383cfa9"
+    },
+    {
+      "command": "node --test scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs scripts/core-upgrade.test.mjs scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "25PASS. Log SHA256 5ef1c382a7aa23507c82e591e6b8dde04f145e775b266e81707f15502b4d5cc2"
+    },
+    {
+      "command": "node SKILLS/business-agent-calibration/scripts/check-inputs.mjs",
+      "result": "PASS",
+      "evidence": "PASS_INPUTS six packaged sites,0issues,model0; behavior/knowledge/channels not claimed."
+    },
+    {
+      "command": "python -m ruff check src/pinet_core/control src/pinet_core/customer src/pinet_core/public_projects src/pinet_core/control_api.py src/pinet_core/config.py src/pinet_core/api.py scripts/bootstrap.py scripts/control_bootstrap.py scripts/customer_public_admin.py tests/test_control_portfolio.py tests/test_control_bridge.py tests/test_customer_public.py tests/test_customer_registration_pg.py tests/test_account_foundation_scope.py migrations/env.py migrations/versions/0010_control.py migrations/versions/0011_control_tasks.py migrations/versions/0012_customer_public.py",
+      "result": "PASS",
+      "evidence": "All checks passed. Log SHA256 82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": "python -X utf8 -B -",
+      "result": "PASS",
+      "evidence": "Actual read-only stdin Git/tomllib/importlib.metadata/YAML probe: 38functional paths only; main dependency set and uv.lock/models/db Git blobs unchanged;3immutable migrations exact source bytes;13installed direct versions match main lock; workflow parses."
+    }
+  ],
+  "eventId": "3f2b8bab-cf6a-4481-a789-dd23cf416ea8",
+  "sequence": 3,
+  "at": "2026-10-19T08:03:07.221Z"
+}

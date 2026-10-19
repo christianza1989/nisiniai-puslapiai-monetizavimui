@@ -1,0 +1,965 @@
+{
+  "siteId": "verslomatika",
+  "canonicalHost": "verslomatika.lt",
+  "phase": 1,
+  "evaluatedAt": "2026-10-19T07:31:24.936Z",
+  "evaluator": "Codex agent self-review; no claimed professional or independent human approval",
+  "environment": {
+    "origin": "http://127.0.0.1:3462",
+    "runtime": "Next.js16.3.6 production build",
+    "buildId": "6VQCEy4-TKwhdGCWHvsmc",
+    "browser": "Chrome155/IAB, simulated viewports",
+    "productionCandidateDeployed": false
+  },
+  "version": {
+    "sourceVersion": "677536b12690c9061f59a93af48a860fcd3344b6",
+    "portalBase": "6ef6c152428ec0dce8615cdbd820512788ca395a",
+    "coreBase": "d0d08be67033e29457367ddcc2ca5eeccdf0230c",
+    "companionBase": "ec8a9c032fe926d1d9722802d8eb26fa8bd02937",
+    "packageSha256": null,
+    "packageStatus": "Existing typed portal; canonical package adapter not adopted"
+  },
+  "verdict": {
+    "local": "NOT_READY_FOR_FULL_CANONICAL_ACCEPTANCE",
+    "launch": "NOT_DEPLOYED_UNVERIFIED_GATES",
+    "demand": "UNVALIDATED_SHORT_ZERO_GSC_BASELINE",
+    "visual": "Coherent existing black/blue story extended with readable process-led inner pages; qualitative self-review, no superiority claim."
+  },
+  "checks": [
+    {
+      "id": "A1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Phase 1 is explicit; inquiry is not an order, reservation or proven demand.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md; portal BRIEF.md and rendered contact/service journey distinguish a request from an order or validated demand."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "A2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "The primary action and visible offer are genuinely available and test the chosen concrete business outcome with a documented payer/revenue hypothesis; editorial interest does not substitute for product/service intent. No fake commerce, stock or supplier claim; prelaunch availability is disclosed.",
+      "status": "PASS",
+      "evidence": [
+        "BUSINESS.md; portal BRIEF.md and rendered contact/service journey distinguish a request from an order or validated demand."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "A3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "Expansion decision uses qualified real inquiries/value/capacity, not clicks or test records.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No real paid/qualified inquiry economics or expansion evidence; synthetic contact excluded."
+    },
+    {
+      "id": "B1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator/contact defaults and site exceptions agree across package, visible copy, schema and form recipient.",
+      "status": "PASS",
+      "evidence": [
+        "Portal base6ef6c15 authorized operator/config preserved; source config and rendered footer/contact/schema agree with MB Pinet and info@pinet.lt. No new person/review/certification."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "B2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No borrowed phones, addresses, identities, credentials, reviews or certifications.",
+      "status": "PASS",
+      "evidence": [
+        "Portal base6ef6c15 authorized operator/config preserved; source config and rendered footer/contact/schema agree with MB Pinet and info@pinet.lt. No new person/review/certification."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "B3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual operator identity, applicable legal identifiers/address and domain control are established.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Existing portal operator facts retained, but this batch did not establish full current legal identifiers/domain control for a new release."
+    },
+    {
+      "id": "C1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Bounded history evidence, retrieval limits and unavailable periods are recorded.",
+      "status": "PASS",
+      "evidence": [
+        "history/audit.json, REPORT.md, ASSESSMENT.md and url-decisions.json: bounded sample, timeouts retained, current root/audit preserved without speculative redirects."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "C2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Reviewed URL decisions distinguish same-intent restore/redirect from defer/404; no mass homepage redirects.",
+      "status": "PASS",
+      "evidence": [
+        "history/audit.json, REPORT.md, ASSESSMENT.md and url-decisions.json: bounded sample, timeouts retained, current root/audit preserved without speculative redirects."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "C3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Any implemented legacy redirect has a current same-host approved 200 target, no loop and a tested status.",
+      "status": "NA",
+      "evidence": [
+        "history/url-decisions.json"
+      ],
+      "notes": "No legacy redirect was implemented; no invented history redirects to test."
+    },
+    {
+      "id": "D1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Local/international comparisons and real desktop/mobile evidence support the chosen journey; adopted design decisions identify the actual final URL and useful screenshot region, with blocked/blank/overlaid evidence limitations recorded.",
+      "status": "PASS",
+      "evidence": [
+        "Portal SINTRA-AUDIT.md/RESEARCH.md and private actual Sintra desktop/390 screenshots; local/international comparisons, source dates and adopted process-led decisions."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "D2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Current facts and permissions support original copy/assets; old or competitor claims are not our facts.",
+      "status": "PASS",
+      "evidence": [
+        "Portal SINTRA-AUDIT.md/RESEARCH.md and private actual Sintra desktop/390 screenshots; local/international comparisons, source dates and adopted process-led decisions."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "D3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Search intents and niche advantages are hypotheses where no search/conversion data exists.",
+      "status": "PASS",
+      "evidence": [
+        "Portal SINTRA-AUDIT.md/RESEARCH.md and private actual Sintra desktop/390 screenshots; local/international comparisons, source dates and adopted process-led decisions."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "E1",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Full homepage, index and guide have a coherent niche-specific identity, rhythm and meaningful imagery; for a new identity, actual nearest-network comparison demonstrates substantive differences beyond noun, palette, font or photo-subject substitutions.",
+      "status": "PASS",
+      "evidence": [
+        "Portal DESIGN.md/BRIEF.md, MEDIA.json and screens/home-final.png, knowledge-final.png, guide-final-light.png; existing authored identity extended, not a new network skin. Canonical responsive importer20 variants."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "E2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "DESIGN describes actual tokens, composition, brand/section/asset plan, useful-tool decision and compromises; technical scores are separate from visual judgment.",
+      "status": "PASS",
+      "evidence": [
+        "Portal DESIGN.md/BRIEF.md, MEDIA.json and screens/home-final.png, knowledge-final.png, guide-final-light.png; existing authored identity extended, not a new network skin. Canonical responsive importer20 variants."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "E3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Image origin/rights are documented and presentation is truthful; no imaginary stock, client project, distorted teaching diagram or unwanted generator badge.",
+      "status": "PASS",
+      "evidence": [
+        "Portal DESIGN.md/BRIEF.md, MEDIA.json and screens/home-final.png, knowledge-final.png, guide-final-light.png; existing authored identity extended, not a new network skin. Canonical responsive importer20 variants."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "F1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "All public pages are reachable through useful navigation/context; no orphan initial guide.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json 68 pages/60 indexable/2052 internal links/0 errors/0 orphans. Final DUK footer link actually clicked at390; QA.md menu/CTA checks."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "F2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop/mobile header, index, footer and local inquiry actions work with actual destinations.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json 68 pages/60 indexable/2052 internal links/0 errors/0 orphans. Final DUK footer link actually clicked at390; QA.md menu/CTA checks."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "F3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each URL has a distinct job; no doorway city/synonym variants, duplicate intent or pointless index.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json 68 pages/60 indexable/2052 internal links/0 errors/0 orphans. Final DUK footer link actually clicked at390; QA.md menu/CTA checks."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "G1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "First screen identifies the topic, useful offer and honest next action.",
+      "status": "PASS",
+      "evidence": [
+        "Portal QA.md, real home/service/guide renders and synthetic contact success/validation CONTACT-QA.json. Primary process discussion and optional public-site audit have distinct meaning."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "G2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Middle/end answer new questions rather than repeating promotions or decorative cards.",
+      "status": "PASS",
+      "evidence": [
+        "Portal QA.md, real home/service/guide renders and synthetic contact success/validation CONTACT-QA.json. Primary process discussion and optional public-site audit have distinct meaning."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "G3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Primary/secondary actions, privacy route, empty/error/success states have real behavior.",
+      "status": "PASS",
+      "evidence": [
+        "Portal QA.md, real home/service/guide renders and synthetic contact success/validation CONTACT-QA.json. Primary process discussion and optional public-site audit have distinct meaning."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "H1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "At least three distinct prepared guides are individually read and useful for the site's intent; no word-count substitute.",
+      "status": "PASS",
+      "evidence": [
+        "All10 guide openings inspected at390 plus full source/body paragraphs, examples, limitations and source lists reviewed; QA.md/screens and HTTP-CHECK.json preserve exact paragraphs/images. Noindex professional-review caveat retained."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "H2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Claims, terminology, examples, limitations and sources are checked; unsafe universal technical advice is absent.",
+      "status": "PASS",
+      "evidence": [
+        "All10 guide openings inspected at390 plus full source/body paragraphs, examples, limitations and source lists reviewed; QA.md/screens and HTTP-CHECK.json preserve exact paragraphs/images. Noindex professional-review caveat retained."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "H3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Each guide gives a usable explanation/example/checklist, readable structure and next step without filler.",
+      "status": "PASS",
+      "evidence": [
+        "All10 guide openings inspected at390 plus full source/body paragraphs, examples, limitations and source lists reviewed; QA.md/screens and HTTP-CHECK.json preserve exact paragraphs/images. Noindex professional-review caveat retained."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "H4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Long article, lists, figures and source sections are actually rendered and mobile-tested, not silently discarded.",
+      "status": "PASS",
+      "evidence": [
+        "All10 guide openings inspected at390 plus full source/body paragraphs, examples, limitations and source lists reviewed; QA.md/screens and HTTP-CHECK.json preserve exact paragraphs/images. Noindex professional-review caveat retained."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "H5",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Each initial guide has an inspected topic-specific image; homepage/index and other pages have purposeful visual coverage, actual files and responsive crops, or a documented text-focused reason where imagery adds no value.",
+      "status": "PASS",
+      "evidence": [
+        "All10 guide openings inspected at390 plus full source/body paragraphs, examples, limitations and source lists reviewed; QA.md/screens and HTTP-CHECK.json preserve exact paragraphs/images. Noindex professional-review caveat retained."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "I1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible attribution identifies a real Person or Organization with a public profile or clear identity.",
+      "status": "PASS",
+      "evidence": [
+        "Portal article template/HTTP-CHECK.json and public /redakcija: real organizational author, linked identity, visible preparation/review dates matching dateCreated/dateModified; no fake datePublished."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "I2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Author/profile/schema identity agrees; no fictional expert or unverified experience.",
+      "status": "PASS",
+      "evidence": [
+        "Portal article template/HTTP-CHECK.json and public /redakcija: real organizational author, linked identity, visible preparation/review dates matching dateCreated/dateModified; no fake datePublished."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "I3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible publication/review dates and structured dates have the same meaning; dates are not refreshed per request.",
+      "status": "PASS",
+      "evidence": [
+        "Portal article template/HTTP-CHECK.json and public /redakcija: real organizational author, linked identity, visible preparation/review dates matching dateCreated/dateModified; no fake datePublished."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "I4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Initial production publication/deployment date is documented; planned dates are not evidence of past public availability.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "New candidate has no actual public deployment/first-publication event."
+    },
+    {
+      "id": "J1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "About/editorial information explains purpose, AI role, source method, limitations and corrections contact.",
+      "status": "PASS",
+      "evidence": [
+        "Rendered /redakcija and /redakcine-politika explain process/AI/corrections; QA.md attributes agent self-review and retains professional-review limits."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "J2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Review is attributed honestly to the agent/process; no claim of human/qualified approval without it.",
+      "status": "PASS",
+      "evidence": [
+        "Rendered /redakcija and /redakcine-politika explain process/AI/corrections; QA.md attributes agent self-review and retains professional-review limits."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "J3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Factual corrections propagate through studio approval and public/LLM projections; review evidence is retained.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Source projections update together, but canonical exact-revision studio approval/adoption is not implemented by this batch."
+    },
+    {
+      "id": "K1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Every public URL has one useful H1, title, description, correct language and canonical.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json all68 H1/title/description/canonical/schema rows; private/future/unknown404 probes; active black/blue icon.svg and semantic media/alt/source review."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "K2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Heading order, informative alt, sharing metadata and social image (when used) match actual content; new-site wordmark/mark and actual favicon belong to the active niche rather than an inherited unrelated brand.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json all68 H1/title/description/canonical/schema rows; private/future/unknown404 probes; active black/blue icon.svg and semantic media/alt/source review."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "K3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Unknown/future/private URLs return proper 404/noindex and do not canonicalize to the homepage.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json all68 H1/title/description/canonical/schema rows; private/future/unknown404 probes; active black/blue icon.svg and semantic media/alt/source review."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "L1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "JSON-LD parses and uses truthful appropriate WebSite/WebPage/Organization/Article entities and stable IDs.",
+      "status": "PASS",
+      "evidence": [
+        "Portal source templates and HTTP-CHECK.json Article media/date/profile and breadcrumbs; truthful Organization/WebSite/WebPage/Article, no invented product/review offer."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "L2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Visible breadcrumb and schema path/name/URL agree; profile and author relations point to eligible public pages.",
+      "status": "PASS",
+      "evidence": [
+        "Portal source templates and HTTP-CHECK.json Article media/date/profile and breadcrumbs; truthful Organization/WebSite/WebPage/Article, no invented product/review offer."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "L3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No invented Offer/Product/Review/AggregateRating/LocalBusiness or unsupported rich-result promise.",
+      "status": "PASS",
+      "evidence": [
+        "Portal source templates and HTTP-CHECK.json Article media/date/profile and breadcrumbs; truthful Organization/WebSite/WebPage/Article, no invented product/review offer."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "L4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Official rich-result/URL Inspection findings are recorded after actual crawlable deployment; local checks are labelled local.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No new live crawlable deployment or official Rich Results/URL Inspection result."
+    },
+    {
+      "id": "M1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contextual links use real same-site target IDs and informative anchors; fragments exist.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json actual links/fragments plus typed related/service/hub targets. Topic jobs are distinct; EDITORIAL.md merges synonyms and two duplicate proposals."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "M2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Future/unapproved/revoked targets disappear consistently from prose, related sections, indexes and schema.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Typed export exclusions pass, but canonical approval/date/revocation parity across the future writer remains unverified."
+    },
+    {
+      "id": "M3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Cluster/pillar/related routes help distinct questions; repetition/all-to-all links are not treated as authority.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json actual links/fragments plus typed related/service/hub targets. Topic jobs are distinct; EDITORIAL.md merges synonyms and two duplicate proposals."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "N1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sources have relevant primary evidence, actual target checks and retrieval dates; no partner implication.",
+      "status": "PASS",
+      "evidence": [
+        "Portal article source review, current official Google/n8n/Anthropic/OWASP reads2026-10-19; QA.md source lists and rendered links. Sources are references, not partners."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "N2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Owned editorial links obey target ID, host, approval/date/deployment eligibility and disclosed relevant reason.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No new cross-domain editorial programme. Existing dynamic owned-business destinations were not re-certified as deployed approved targets by this batch."
+    },
+    {
+      "id": "N3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Prose links and source/related panels render correctly; sponsored/UGC relation is applied only if applicable.",
+      "status": "PASS",
+      "evidence": [
+        "Portal article source review, current official Google/n8n/Anthropic/OWASP reads2026-10-19; QA.md source lists and rendered links. Sources are references, not partners."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "N4",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Brand/attribution and other external destinations work on the live launch; pending network domains stay unpublished.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "New release is not live; all external/live brand destinations must be checked at release."
+    },
+    {
+      "id": "O1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Canonical host/path, sitemap, robots, redirects and slash/query behavior are coherent and actually tested.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json actual sitemap/robots/308 slash/query canonical/404 checks. Typed eligibility excludes noindex content from sitemap; local only."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "O2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Sitemap contains only eligible URLs and meaningful lastmod; robots does not substitute for private access control.",
+      "status": "PASS",
+      "evidence": [
+        "Portal HTTP-CHECK.json actual sitemap/robots/308 slash/query canonical/404 checks. Typed eligibility excludes noindex content from sitemap; local only."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "O3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "DNS, TLS, real host, indexing directives and domain isolation work on production.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Existing domain responds, but new candidate real-host/DNS/TLS/isolation acceptance is not a localhost result."
+    },
+    {
+      "id": "P1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Same authoritative projection controls HTML, links, media, schema, sitemap and LLM output.",
+      "status": "PASS",
+      "evidence": [
+        "Portal public-content.ts reuses actual public typed registries/indexability helpers; tests preserve bodies/source/media/public identity and reject private/noindex reading. Existing portfolio release policy retained."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "P2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Hash/date/revocation/cross-host negative tests pass; draft preview is private and not indexed.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Private/noindex/unknown source tests pass; full hash/date/revocation/cross-host content-package acceptance is missing its real portal adapter."
+    },
+    {
+      "id": "P3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Studio approval, import validation and compile preserve unrelated packages and reject changed approved content.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No canonical content-package import/immutable revision workflow was adopted; no fake package/hash or SITE_COMPLETION was generated."
+    },
+    {
+      "id": "Q1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Public LLM exports match the active niche's useful facts, URLs, contacts and visible publication scope.",
+      "status": "PASS",
+      "evidence": [
+        "Portal /llms.txt /llms-full.txt /skaityti actual HTTP and six tests; public contacts/source/body scope agrees, definitions visible in HTML, no model-only claims or citation guarantee."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "Q2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Definitions, qualified answers and primary citations are accessible in semantic HTML; no hidden model-only claims.",
+      "status": "PASS",
+      "evidence": [
+        "Portal /llms.txt /llms-full.txt /skaityti actual HTTP and six tests; public contacts/source/body scope agrees, definitions visible in HTML, no model-only claims or citation guarantee."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "Q3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "llms.txt/AI visibility are supplementary; no special schema, traffic or ranking guarantee is asserted.",
+      "status": "PASS",
+      "evidence": [
+        "Portal /llms.txt /llms-full.txt /skaityti actual HTTP and six tests; public contacts/source/body scope agrees, definitions visible in HTML, no model-only claims or citation guarantee."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "R1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Keyboard, focus, skip link, labels, landmarks and details/menu interactions are exercised.",
+      "status": "PASS",
+      "evidence": [
+        "Portal QA.md/ACCESSIBILITY-VERIFICATION.json: keyboard menu/details/FAQ/TOC/CTA/skip anchor, visible requirements/native invalid fields,320px success and reduced-motion static story. Automated a11y100 is bounded evidence."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "R2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Contrast, zoom/reflow, readable utility text and touch targets are checked; score alone is not WCAG conformance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Narrow layout/labels and automated checks inspected. IAB zoom attempt left viewport/DPR unchanged; genuine200% enlargement and spacing override remain unsupported/unverified."
+    },
+    {
+      "id": "R3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Images, headings, disclosure state, form requirements/errors and reduced-motion behavior remain usable.",
+      "status": "PASS",
+      "evidence": [
+        "Portal QA.md/ACCESSIBILITY-VERIFICATION.json: keyboard menu/details/FAQ/TOC/CTA/skip anchor, visible requirements/native invalid fields,320px success and reduced-motion static story. Automated a11y100 is bounded evidence."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "S1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Desktop, narrow/mobile and tablet evidence shows no overflow or hidden defects.",
+      "status": "PASS",
+      "evidence": [
+        "Portal actual320/390/768/1440 viewport evidence, all10 guide openings and long body, no overflow. Screens distinguish viewport emulation from physical devices."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "S2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Article contents, byline, source lists, breadcrumb, form and footer work at narrow widths and enlarged text.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "All guide openings and long body/byline/source/breadcrumb/form/footer inspected at narrow widths; genuine enlargement not established."
+    },
+    {
+      "id": "S3",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Real viewport tests are distinguished from physical device and synthesized touch testing.",
+      "status": "PASS",
+      "evidence": [
+        "Portal actual320/390/768/1440 viewport evidence, all10 guide openings and long body, no overflow. Screens distinguish viewport emulation from physical devices."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "T1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Production mobile lab is measured with real media and saved version/date/environment; performance target >=90 is met or remains failed.",
+      "status": "PASS",
+      "evidence": [
+        "Portal LIGHTHOUSE.json final production build6VQCEy4-TKwhdGCWHvsmc:home94/100/100/100 and RAG94/100/100/100, measured LCP/CLS/TBT with real media. QA.md retains earlier font/image CLS repair and LCP limitation."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "T2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Measured LCP/CLS/TBT, image sizes, fonts, CSS and JS budgets have justified fixes; no dummy content score.",
+      "status": "PASS",
+      "evidence": [
+        "Portal LIGHTHOUSE.json final production build6VQCEy4-TKwhdGCWHvsmc:home94/100/100/100 and RAG94/100/100/100, measured LCP/CLS/TBT with real media. QA.md retains earlier font/image CLS repair and LCP limitation."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "T3",
+      "stage": "launch",
+      "gate": false,
+      "criterion": "Production field CWV/traffic evidence is monitored separately; local Lighthouse is not field performance.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No production field CWV or meaningful traffic history for undeployed candidate."
+    },
+    {
+      "id": "U1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Native/server validation, origin, size limits and honest errors pass; durable D1 record survives mail/core failure.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Native/server validation and restart-persistent local file record proved; hosted D1-equivalent acceptance/core-mail-failure recovery not proved."
+    },
+    {
+      "id": "U2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Operator notification recipient and SMTP acceptance are tested without client messages or exposed secrets.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No SMTP operator notification acceptance test in this scope; production has honest email fallback."
+    },
+    {
+      "id": "U3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Matching marked Message-ID INBOX evidence is distinct from SMTP authentication/acceptance; tests do not inflate demand.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No external message sent or matched INBOX receipt; local saved-local-not-sent is not email delivery."
+    },
+    {
+      "id": "U4",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Actual production D1/bindings, delivery, recovery/reconciliation and spam/rate controls are verified.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Hosted durable storage, binding, rate/spam, delivery/reconciliation remain release dependencies."
+    },
+    {
+      "id": "V1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Per-site counters exclude bots/DNT/GPC/tests as supported; clicks are separate from received inquiries.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No per-site analytics/counter adapter activated or real bot/DNT/GPC exclusion test."
+    },
+    {
+      "id": "V2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Measurement privacy statements match stored fields/cookies/identifiers and enabled providers.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Current production processor/cookie/storage facts and measurement policy were not re-established; no tracking activation."
+    },
+    {
+      "id": "V3",
+      "stage": "operations",
+      "gate": true,
+      "criterion": "GSC/analytics/qualified inquiries and testing interval support the niche decision; voice is off unless separately authorized and gated.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Short GSC baseline is zero/no query rows; no actual qualified demand or economic validation. No new voice admission."
+    },
+    {
+      "id": "W1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Notice and usage terms match an information/inquiry pilot, actual data inventory and current authoritative requirements.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Existing information/inquiry legal pages retained; no current full legal/data inventory review for new hosted capture."
+    },
+    {
+      "id": "W2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Purpose, contact, rights, processors/transfer scope and storage/deletion limits are stated truthfully; no invented policy or legal identity.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Exact production processors/transfers/retention/delete facts not confirmed; do not invent a complete policy."
+    },
+    {
+      "id": "W3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production legal basis, recipients/processors, transfers, retention and delete/recovery process are established and accurate in the public notice.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "Production legal basis/recipients/processors/transfers/delete/recovery acceptance still required."
+    },
+    {
+      "id": "W4",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Nonessential cookie/marketing consent is implemented only when actually needed; inquiry is not blanket marketing consent.",
+      "status": "PASS",
+      "evidence": [
+        "Existing inquiry checkbox is purpose-specific, no new marketing subscription, nonessential tracker or cookie admission; portal source/contact tests preserve consent requirement. Production inventory separately unverified."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "X1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "No secrets/private leads/drafts in Git, public bundle, media paths, logs or LLM output; tenant and payload boundaries tested.",
+      "status": "PASS",
+      "evidence": [
+        "Portal exact58-file staged safety PASS/no findings; negative public reading/exact-origin/schema tests and actual404s. QA.md records dependence/NoFallbackError/rate-recovery limitations rather than asserting full platform security."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "X2",
+      "stage": "local",
+      "gate": false,
+      "criterion": "Error behavior, dependence on optional voice/core, headers, spam vectors and recovery gaps are assessed with evidence.",
+      "status": "PASS",
+      "evidence": [
+        "Portal exact58-file staged safety PASS/no findings; negative public reading/exact-origin/schema tests and actual404s. QA.md records dependence/NoFallbackError/rate-recovery limitations rather than asserting full platform security."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "X3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Production access, abuse limits, backups/restore and incident controls are working; unresolved risk is not hidden by a score.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "No new production access/abuse/backup/restore/incident acceptance."
+    },
+    {
+      "id": "Y1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Shared fixes live in core; site-specific identity/content remain isolated; schema change updates both validators and integration tests.",
+      "status": "PASS",
+      "evidence": [
+        "CORE_FEEDBACK.md/CONTENT_READINESS.md, site journal and portal handoff identify canonical media/research reuse, source isolation and missing adapter. No shared schema/runtime changed."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "Y2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Core/SEO regressions pass all current niches after relevant changes, with actual commands/results.",
+      "status": "NA",
+      "evidence": [
+        "CORE_FEEDBACK.md; Git changed-path scope"
+      ],
+      "notes": "No shared renderer/schema/runtime code changed in either core; all-niche core regressions are not applicable to site documentation and isolated portal source. Portal tests/build/HTTP passed."
+    },
+    {
+      "id": "Y3",
+      "stage": "local",
+      "gate": true,
+      "criterion": "START_HERE, AGENTS, builder/planner and site journal link the current acceptance workflow for a fresh session.",
+      "status": "PASS",
+      "evidence": [
+        "CORE_FEEDBACK.md/CONTENT_READINESS.md, site journal and portal handoff identify canonical media/research reuse, source isolation and missing adapter. No shared schema/runtime changed."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "Z1",
+      "stage": "local",
+      "gate": true,
+      "criterion": "Checklist, baseline findings, repairs, screenshots, versions, remaining blockers and score evidence are stored per site.",
+      "status": "PASS",
+      "evidence": [
+        "This complete85-criterion audit, canonical score/strict-gate outcome, portal QA/screens/source/build/remaining release dependencies. No perfect/local-ready/domain-ready claim."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "Z2",
+      "stage": "local",
+      "gate": true,
+      "criterion": "10/10/local-ready/domain-ready claims obey the score contract; failed/unverified checks are visible.",
+      "status": "PASS",
+      "evidence": [
+        "This complete85-criterion audit, canonical score/strict-gate outcome, portal QA/screens/source/build/remaining release dependencies. No perfect/local-ready/domain-ready claim."
+      ],
+      "notes": "Scoped local source/rendered evidence; see portal QA.md and exact version below."
+    },
+    {
+      "id": "Z3",
+      "stage": "launch",
+      "gate": true,
+      "criterion": "Final domain-ready handover has all applicable launch gates proved; no unmeasured guarantee of demand or ranking.",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "Portal QA.md / handoff and CONTENT_READINESS.md record the observed limits."
+      ],
+      "notes": "New release not deployed and launch gates remain open; no domain-ready declaration."
+    }
+  ]
+}

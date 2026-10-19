@@ -1,0 +1,11 @@
+# Search and AI readiness
+
+2026-10-19. The owner authorized USD1 once; actual Treg settlement USD0.696904/96 calls. Portal RESEARCH.md, RESEARCH-RECEIPT.json, keyword-metrics.csv and serp-observations.csv preserve the scoped decisions and safe evidence. Full raw provider responses stay private.
+
+LT/lt:291 unique keyword queries,62 numeric estimates,229 unavailable;63 DataForSEO SERP attempts (60 valid,3 errors),4 successful Cloro Google samples; seven LT domain profiles and one Sintra US/en benchmark; four backlink summaries. Empty datasets, close variants, foreign geography and provider estimates are not zero demand, additive market size or verified visits. Broad head results include courses; branded tool searches are not qualified implementation requests.
+
+AI baseline: five unbranded Lithuanian prompts × ChatGPT/Gemini,0/10 Verslomatika mentions/citations; two branded diagnostics both mention it, one has validated official URLs. Four Google overview samples have0 mentions. Requested LT location was supplied; actual egress/model and repeatability are not independently verified. This is a dated provider UI cohort, not an API-generation test or market-wide share. No recurring monitor enabled.
+
+Local source now exposes semantic page bodies, matching truthful schemas, real profile/source links, eligible sitemap and supplementary no-store reading exports. Actual HTTP/tests prove the scoped local projection, not indexing or citations. Current production remains the older41-URL site. GSC native UI's available October11–16 window has0 clicks/impressions and no query rows; separate index view shows1 indexed URL. Neither describes this undeployed candidate.
+
+After an authorized release: verify real host/canonical/robots/media/reading responses and first publication dates, inspect crawl/index eligibility, then compare fixed AI prompts and GSC page/query/country/device cohorts. Separate visits from received qualified requests and paid results. Follow current Google AI-search guidance; no special schema or llms file guarantees inclusion. A new research decision requires fresh relevant evidence and its own applicable spending authorization, not automatic reuse of this budget.

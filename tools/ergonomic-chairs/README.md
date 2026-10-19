@@ -91,3 +91,30 @@ can preserve exact prior sealed rows under their original tool fingerprints.
 It lists complete row hashes and both exact tool sets. Changed rows, current
 compiler dependencies, checkpoints or prepared artifact hashes cannot use it;
 new/unlisted models must pass the current independent verification chain.
+
+## Offline scheduling boundary
+
+`watch_closed.py` is a separate outer scheduler around an explicitly pinned,
+immutable `prepare_closed.py` worker. It changes when that same finite worker
+runs, not its source/tool/artifact hashes, raw-wire verification, compiler,
+geometry/PBR or runtime checks. A startup full audit is mandatory. New closed
+jobs, missing/changed input metadata and unresolved rows wake another full
+invocation on the next poll (at most 20 seconds after the previous child).
+Unchanged inputs receive a full audit at most 900 seconds after the last child
+returned; a long child finishes before the next invocation. The periodic audit
+also covers content changes that preserve file metadata.
+
+Metadata polling never creates or revalidates a PASS. Idle status explicitly
+reports zero new proofs. The snapshot from before the child is retained so an
+input mutation during verification forces a confirming invocation. Pin drift
+and a failed subprocess stop the watcher; neither becomes a model failure or a
+successful audit. One renewal lock is held for the outer lifetime, preventing
+concurrent schedulers and the legacy renewal helper from duplicating work.
+An explicit stop request or owner STOP is honored between finite invocations.
+
+Adopt scheduling changes only after an isolated full affected-model proof,
+actual child/outer identities, successful idle polls, exact frozen worker and
+compiler parity, and the normal source/pins/session/reserve gates. Keep the
+prior accepted watcher for rollback, but never start it while a candidate
+watcher or its verifier/compiler children are alive. Scheduler efficiency is
+distinct from total Native throughput and completed configurator count.

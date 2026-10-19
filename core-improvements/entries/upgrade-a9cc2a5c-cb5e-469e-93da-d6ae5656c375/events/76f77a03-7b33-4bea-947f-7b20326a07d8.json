@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/230",
+  "commit": "21c211ca03c3d8bae037ee11affb50f39dc4f64a",
+  "note": "Draft source PR230 paired with niche-public-core PR46 (8a7416109c3885ebbdbc7f855664f7745192550e); neither merged. Studio53 and public56 tests passed. Owner-approved two-guide data replacement verified on actual Cloudflare version93fc910f-6216-4e68-9162-6ed7d3a090b3; exact frozen deployed renderer retained, other1907 revisions and55-guide pause preserved. Production use is this narrowly authorized artifact only, not general main adoption. Private content, credentials and runtime evidence remain outside Git.",
+  "eventId": "76f77a03-7b33-4bea-947f-7b20326a07d8",
+  "sequence": 3,
+  "at": "2026-10-19T17:56:08.397Z"
+}

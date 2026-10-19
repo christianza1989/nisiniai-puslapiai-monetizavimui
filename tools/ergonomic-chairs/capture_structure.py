@@ -15,11 +15,12 @@ from proven_routes import shortest_proven_path
 def now():return datetime.now(timezone.utc).isoformat()
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def read(path):return json.loads(Path(path).read_bytes())
-def save(path,value):
+def save(path,value,*,compact=False):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     temp=path.with_name(path.name+'.tmp-'+uuid.uuid4().hex)
     with temp.open('xb') as stream:
-        stream.write((json.dumps(value,sort_keys=True,ensure_ascii=False,indent=2)+'\n').encode());stream.flush();os.fsync(stream.fileno())
+        encoding={'separators':(',',':')} if compact else {'indent':2}
+        stream.write((json.dumps(value,sort_keys=True,ensure_ascii=False,**encoding)+'\n').encode());stream.flush();os.fsync(stream.fileno())
     temp.replace(path)
 
 
@@ -101,9 +102,14 @@ def capture(job,root,grant,seconds=900,max_states=120,max_edges=800):
     client=Capture(sid,item,output=root,allowed_articles={(job['series'],job['code'])})
     payload_store=ImmutablePayloadStore(root.parent.parent/'objects/sha256')
     wire=JournalHTTP(client.http,root,guard,payload_store);client.http=wire
+    checkpoint_persistence={'format':'compact-json-v1','writes':0,'bytes':0,'seconds':0.0,'atomicReplace':True,'fsyncEveryWrite':True}
     def persist(phase):
         cp.update(at=now(),phase=phase,chunks=cp['chunks']+1 if phase=='RETURNED' else cp['chunks'])
-        save(checkpoint,cp)
+        started=time.perf_counter()
+        save(checkpoint,cp,compact=True)
+        checkpoint_persistence['seconds']+=time.perf_counter()-started
+        checkpoint_persistence['writes']+=1
+        checkpoint_persistence['bytes']+=checkpoint.stat().st_size
     def insert_initial():
         guard();client.insert(job['code'],job['series'],job['originalVariant']);s=client.state()
         if s['baseArticle']!=job['code']:raise ValueError('ORIGINAL_ARTICLE_MISMATCH')
@@ -165,7 +171,8 @@ def capture(job,root,grant,seconds=900,max_states=120,max_edges=800):
         persist('RETURNED');status=closure(cp,states)
         result={'at':now(),'job':job['job'],'code':job['code'],'graph':status,'stopReason':stop,
                 'newStates':len(states)-before_states,'newEdges':len(cp['edges'])-before_edges,'states':len(states),'edges':len(cp['edges']),
-                'sourceDataPrepared':False,'acceptance':False,'createsSessions':False,'finishSetterCount':0,'pid':os.getpid()}
+                'sourceDataPrepared':False,'acceptance':False,'createsSessions':False,'finishSetterCount':0,'pid':os.getpid(),
+                'checkpointPersistence':checkpoint_persistence}
         save(root/'RESULT.json',result);wire.session.close()
     return result
 

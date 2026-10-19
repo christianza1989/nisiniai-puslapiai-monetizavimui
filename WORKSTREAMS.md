@@ -400,3 +400,5 @@ passed for all 7 shared changes and staged safety for 16 files. Freshness passed
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
 
 2026-10-19 Ergonomic chair route optimization; own codex/ergonomic-chairs-structure-20261017 / PR187. Scope tools/ergonomic-chairs/capture_structure.py, proven_routes.py, freeze_capture.py, test_proven_routes.py and own core-upgrade journal. Strictly shorter measured restoration paths; preserve all graph/raw/geometry/identity gates. Separate finite pilot before adoption; accepted frozen runtime-v5 remains immutable.
+
+2026-10-19 Ergonomic checkpoint encoding: same chair branch / PR187. Owned scope capture_structure.py, test_checkpoint_persistence.py, checkpoint encoding technical evidence document and upgrade-908fc6a1-7c5d-4faa-9835-faed64222855. Lossless checkpoint encoding only; per-edge atomic fsync, complete graph/geometry/source gates and immutable accepted runtimes preserved. Separate finite full-SHA/identity pilot before adoption.

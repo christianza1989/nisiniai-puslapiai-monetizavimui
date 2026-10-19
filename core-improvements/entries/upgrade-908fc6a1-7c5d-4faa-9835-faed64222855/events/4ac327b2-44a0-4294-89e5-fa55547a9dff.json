@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "evidence": "32 tests, including fsync failure and previous checkpoint preservation",
+      "command": "python -B -m unittest test_checkpoint_persistence test_proven_routes test_capture_structure test_structure_policy test_queue_policy test_immutable_payloads"
+    },
+    {
+      "result": "PASS",
+      "evidence": "docs/ERGONOMIC_CHECKPOINT_ENCODING_2026-10-19.md",
+      "command": "Matched same-checkpoint durable write comparison, 12 alternating repeats per encoding"
+    }
+  ],
+  "note": "32 affected tests PASS. Matched alternating twelve durable writes per encoding preserve complete input semantics; local write performance only, finite Native proof still required.",
+  "status": "local-verified",
+  "eventId": "4ac327b2-44a0-4294-89e5-fa55547a9dff",
+  "sequence": 2,
+  "at": "2026-10-19T18:28:42.137Z"
+}

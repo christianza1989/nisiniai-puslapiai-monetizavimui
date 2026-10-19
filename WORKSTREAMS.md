@@ -393,3 +393,6 @@ All 25 relevant Node tests, existing zero-call calibration-input preflight,
 selected-source hashes and added local links passed. Original missing-checker
 failure retained. Scoped safety/committed coverage and draft PR handoff follow;
 the source edit window is released with that handoff, without merging.
+Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
+passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
+the own edit window is released. Remote CI/review/merge/adoption remain separate.

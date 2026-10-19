@@ -1,0 +1,20 @@
+{
+  "siteId": "madbeauty",
+  "summary": "Repository safety accepted SQLite auxiliary state and local .secret keys; block these filenames in both candidate and exact staged checks",
+  "category": "code",
+  "evidence": [
+    "research/repository-safety-20261019/REVIEW.md"
+  ],
+  "paths": [
+    "scripts/repository-safety.mjs",
+    "scripts/repository-safety.test.mjs",
+    "docs/GITHUB.md",
+    "research/repository-safety-20261019/REVIEW.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/226",
+  "rollback": "Revert this scoped scanner, regression and documentation change; no runtime state changes",
+  "id": "upgrade-1fca0d8e-1406-434e-9934-f7ff5f41d378",
+  "branch": "codex/madbeauty-handoff-network-20261019",
+  "baseSha": "d0d08be67033e29457367ddcc2ca5eeccdf0230c",
+  "createdAt": "2026-10-19T08:05:10.861Z"
+}

@@ -382,3 +382,19 @@ Planning reference now separates protected plan reconciliation from concrete aut
 2026-10-14 owner-requested canonical Facebook setup skill: issue142 / PR135 / upgrade-283fc45b-2ea9-4cd2-9e53-a1d5235c065e. Scope: new SKILLS/facebook-bot-setup entry/Meta reference/UI metadata, catalog/PROJECT_CONTRACT/AGENTS/acquisition routing, FACEBOOK_SYSTEM entrypoint and current pointers in existing FB runbooks/PROJECT_STATUS. No new runtime activation, accounts, posts or global skill-copy overwrite. Install source through maintained junction helper; own worktree remains the exact local source until reviewed main delivery/adoption.
 
 2026-10-14 own Facebook scope completion: five actual tasks completed, all master/API/browser policies paused; final source125-test regression plus4 targeted checks/Ruff and115 local-link/skill hashes validated. New setup skill installed locally via own source junction; unrelated existing skill copies preserved. Scoped source/docs/journal are delivered through PR135; main merge/other-PC adoption remain separate. Own worktree/private volume/evidence retained; no foreign checkout/process changes or more public sends during documentation.
+
+2026-10-19 Git upgrade foundation LOCAL VERIFIED, issue219: own fresh-main branch
+codex/main-upgrade-foundation-20261019 at533597c1; companion255fea08, paired
+freshness PASS. Scope strict committed checker/tests, existing journal literal
+test, bootstrap instruction/direct regression, CORE_IMPROVEMENT/README,
+AGENTS/PROJECT_CONTRACT/START_HERE pointers, existing CI preflight only, own QA
+report and unique journal. No old invalid active entries or archive payloads,
+runtime/API/DB/model/Gmail, Root/Serving changes or merge. Separate draft PR
+targets main; source delivery and actual adoption remain separate.
+All 25 relevant Node tests, existing zero-call calibration-input preflight,
+selected-source hashes and added local links passed. Original missing-checker
+failure retained. Scoped safety/committed coverage and draft PR handoff follow;
+the source edit window is released with that handoff, without merging.
+Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
+passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
+the own edit window is released. Remote CI/review/merge/adoption remain separate.

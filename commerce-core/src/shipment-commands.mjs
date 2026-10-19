@@ -467,6 +467,13 @@ export class ShipmentCommands {
       409,
     );
     const labels = documents.filter((d) => d.kind === 'label');
+    const labelsAvailable = labels.length > 0;
+    await this.observe(command, 'document_collection', {
+      observedAt: this.s.now(),
+      documentCount: documents.length,
+      labelDocumentCount: labels.length,
+      labelsAvailable,
+    });
     const mapped =
       Array.isArray(fact.trackingNumbers) &&
       fact.trackingNumbers.length === command.payload.parcels.length &&
@@ -510,6 +517,6 @@ export class ShipmentCommands {
     const events = await adapter.tracking(command.provider_id);
     requireValue(Array.isArray(events) && events.length <= 1000, 'carrier_tracking_invalid', 502);
     for (const event of events) await this.observe(command, 'tracking', event);
-    return { files: stored, documents: documentFacts, tracking: events };
+    return { files: stored, documents: documentFacts, tracking: events, labelsAvailable };
   }
 }

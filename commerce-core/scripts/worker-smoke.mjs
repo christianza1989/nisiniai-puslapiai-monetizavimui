@@ -1225,6 +1225,12 @@ try {
     },
     loadPdf: async () => nativeBytes, // valid existing TEST invoice used only as generic provider-PDF fixture
   });
+  automaticCarrier.labelFileNames.add('fixture.pdf');
+  const availableAutomaticDocuments = automaticCarrier.documents.bind(automaticCarrier);
+  let automaticLabelsAvailable = false,
+    automaticTime = Date.now() + 1000;
+  automaticCarrier.documents = async (...args) =>
+    automaticLabelsAvailable ? availableAutomaticDocuments(...args) : [];
   const autoRate = await new BuyerDeliveryQuotes(newest).create(
     automaticStore,
     'sandbox',
@@ -1255,24 +1261,72 @@ try {
     ),
   );
   await newest.markPacked(automaticStore, 'sandbox', automaticOrder.id, 'fixture_operator');
-  const automaticJobs = new CommerceJobs(newest, {
-    privateStorage: new R2PrivateStorage(await mf.getR2Bucket('COMMERCE_FILES')),
-    loadDocumentFont: async () =>
-      new Uint8Array(readFileSync(join(root, 'public/fonts/NotoSans-Regular.ttf'))),
-    shippingReadAdapters: { [automaticStore]: automaticCarrier },
-    shippingAdapters: { [automaticStore]: automaticCarrier },
-  });
-  await automaticJobs.scheduled(automaticStore, 'sandbox');
-  await automaticJobs.scheduled(automaticStore, 'sandbox');
-  await automaticJobs.scheduled(automaticStore, 'sandbox');
+  const automaticService = () => new CommerceService(db, { now: () => automaticTime });
+  const runAutomaticJobs = async () =>
+    new CommerceJobs(automaticService(), {
+      privateStorage: new R2PrivateStorage(await mf.getR2Bucket('COMMERCE_FILES')),
+      loadDocumentFont: async () =>
+        new Uint8Array(readFileSync(join(root, 'public/fonts/NotoSans-Regular.ttf'))),
+      shippingReadAdapters: { [automaticStore]: automaticCarrier },
+      shippingAdapters: { [automaticStore]: automaticCarrier },
+    }).scheduled(automaticStore, 'sandbox');
+  await runAutomaticJobs();
+  await runAutomaticJobs();
+  const nativePendingDocumentEvent = await automaticService().one(
+    "SELECT id FROM outbox WHERE store_id=? AND kind='ShipmentRegistered'",
+    automaticStore,
+  );
+  assert.equal(
+    (
+      await automaticService().one(
+        'SELECT state FROM outbox_delivery WHERE store_id=? AND event_id=?',
+        automaticStore,
+        nativePendingDocumentEvent.id,
+      )
+    ).state,
+    'waiting',
+  );
+  // Dispose/recreate the actual workerd process; the waiting job lives in D1.
+  await mf.dispose();
+  mf = undefined;
+  db = await start('src/worker.mjs', { COMMERCE_AUTOMATION_ENABLED: '1' });
+  for (let i = 0; i < 7; i++) {
+    automaticTime += 60001;
+    await runAutomaticJobs();
+    assert.equal(
+      (
+        await automaticService().one(
+          'SELECT state,attempts FROM outbox WHERE store_id=? AND id=?',
+          automaticStore,
+          nativePendingDocumentEvent.id,
+        )
+      ).attempts,
+      0,
+    );
+  }
+  automaticLabelsAvailable = true;
+  automaticTime += 60001;
+  await runAutomaticJobs();
+  await runAutomaticJobs();
+  assert.equal(
+    (
+      await automaticService().one(
+        'SELECT state FROM outbox_delivery WHERE store_id=? AND event_id=?',
+        automaticStore,
+        nativePendingDocumentEvent.id,
+      )
+    ).state,
+    'done',
+  );
   assert.equal(automaticPosts, 1);
   assert.equal(
-    (await newest.getOrder(automaticStore, 'sandbox', automaticOrder.id)).fulfillment_state,
+    (await automaticService().getOrder(automaticStore, 'sandbox', automaticOrder.id))
+      .fulfillment_state,
     'labelled',
   );
   assert.equal(
     (
-      await newest.one(
+      await automaticService().one(
         "SELECT COUNT(*) n FROM private_files WHERE store_id=? AND kind='shipment_document'",
         automaticStore,
       )

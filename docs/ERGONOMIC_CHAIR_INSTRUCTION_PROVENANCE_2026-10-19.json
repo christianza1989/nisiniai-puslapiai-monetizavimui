@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-19T12:15:55.383017+00:00",
+  "result": "PASS_METADATA_PROVENANCE_REVIEW_ONLY",
+  "file": "sites/ergonomic-lt/web/AGENTS.md",
+  "originalCommit": "f233270c366bc547d465fc1026cec2d1807a9770",
+  "currentHead": "fea7f9bb51134d90e8f74311098012d6ce36389b",
+  "unchangedGitBlob": "e0997957ccc32a4de9cc58b269d0cab7338b8b53",
+  "localFileSha256": "6859fd4b8b736b77acabbd0e320297e6de03fc00ed8a55537ce2071d241004ec",
+  "sourceFileModified": false,
+  "checks": [
+    "Tracked instruction file is byte-identical Git blob to its original committed version.",
+    "Existing Next agent-rules markers are paired.",
+    "Dated site instructions remain historical; latest direct owner task authorization and current global text-system entrypoint take precedence.",
+    "This metadata review does not certify UI/text/model acceptance, change launch controls or adopt runtime code."
+  ],
+  "fullSiteAcceptance": false
+}

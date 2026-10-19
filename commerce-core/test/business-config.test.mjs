@@ -40,3 +40,43 @@ test('business preparation keeps unconfirmed packages and address explicit, pric
   assert.ok(prepared.store.markets.every((m) => m.currency === 'EUR' && !m.checkoutEnabled));
   assert.deepEqual(prepared.connections, {});
 });
+
+test('owner-confirmed document series survive preparation while all operation gates stay closed', () => {
+  const business = JSON.parse(
+    readFileSync(new URL('../config/memocasting-business.json', import.meta.url), 'utf8'),
+  );
+  business.documentSeries = { sale: 'WEB26', credit: 'WEB26K', packing: 'WEB26P' };
+  const prepared = prepareBusiness(business);
+  assert.deepEqual(prepared.store.documentPolicy.series, business.documentSeries);
+  assert.notEqual(prepared.store.documentPolicy.series, business.documentSeries);
+  assert.equal(prepared.store.documentPolicy.approved, false);
+  assert.equal(prepared.store.operationalAdmission.approved, false);
+  assert.equal(prepared.store.productionAdmission.approved, false);
+});
+
+test('malformed, colliding or incomplete explicit document series fail instead of silently falling back', () => {
+  const business = JSON.parse(
+    readFileSync(new URL('../config/memocasting-business.json', import.meta.url), 'utf8'),
+  );
+  for (const documentSeries of [
+    null,
+    [],
+    { sale: 'A', credit: 'A', packing: 'B' },
+    { sale: 'A', credit: 'B' },
+    { sale: 'A', credit: 'B', packing: 'C', other: 'D' },
+    { sale: 'A', credit: 'B', packing: 'bad/name' },
+    { sale: 'A'.repeat(17), credit: 'B', packing: 'C' },
+  ]) {
+    assert.throws(
+      () => prepareBusiness({ ...business, documentSeries }),
+      /business_document_series_invalid/,
+    );
+  }
+  const legacy = { ...business };
+  delete legacy.documentSeries;
+  assert.deepEqual(prepareBusiness(legacy).store.documentPolicy.series, {
+    sale: 'MC',
+    credit: 'MCK',
+    packing: 'MCP',
+  });
+});

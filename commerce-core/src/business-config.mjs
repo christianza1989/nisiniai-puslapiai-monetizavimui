@@ -12,6 +12,21 @@ export function prepareBusiness(
       ),
     'business_facts_invalid',
   );
+  const documentSeries =
+    business.documentSeries === undefined
+      ? { sale: 'MC', credit: 'MCK', packing: 'MCP' }
+      : business.documentSeries;
+  requireValue(
+    documentSeries &&
+      typeof documentSeries === 'object' &&
+      !Array.isArray(documentSeries) &&
+      Object.keys(documentSeries).length === 3 &&
+      ['sale', 'credit', 'packing'].every(
+        (k) => identifier(documentSeries[k]) && documentSeries[k].length <= 16,
+      ) &&
+      new Set(Object.values(documentSeries)).size === 3,
+    'business_document_series_invalid',
+  );
   const missing = [
     ...(!registeredAddress ? ['registered_address'] : []),
     ...business.products.filter((p) => !p.package).map((p) => p.sku + '_packed_measurements'),
@@ -84,7 +99,7 @@ export function prepareBusiness(
       approved: false,
       mode: 'invoice_non_vat',
       timeZone: 'Europe/Vilnius',
-      series: { sale: 'MC', credit: 'MCK', packing: 'MCP' },
+      series: { ...documentSeries },
     },
   };
   const products = [

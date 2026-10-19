@@ -58,3 +58,7 @@ bei current Sendparcel staging read adapterį. [Kvitas ir atkūrimas](docs/CONTI
 Vietiniam ekranui aiškus testinis pasiūlymas: npm run dev -- --shipping-fixture.
 Tikram staging read: --shipping-sandbox su privačiu konfigūracijos failu.
 Registravimas, tikri tarifai, PDF saugykla ir tracking dar neaktyvūs.
+
+### Savininko dokumentų serijos
+
+`prepareBusiness(business)` priima neprivalomą `business.documentSeries` su trimis skirtingomis `sale`, `credit` ir `packing` serijomis. Kiekviena turi būti 1–16 raidžių, skaitmenų, `_` arba `-` ženklų. Prieš tikrą dokumentų išrašymą savininkas patvirtina PVM statusą ir kad šios serijos nenaudojamos kitose jo apskaitos sistemose. Aiškiai pateikta netaisyklinga ar nepilna reikšmė atmetama; tik visai nenurodžius paliekamas ankstesnis MC/MCK/MCP elgesys. Patvirtinti faktai savaime neįjungia `documentPolicy`, operacijų, checkout ar automatikos. Esamos gamybinės konfigūracijos atnaujinamos tiksliniu palyginimu, ne nauju `provisionStore` ar numeracijos atkūrimu.

@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
   "amountUnit": "EUR_cents",
-  "source": "Owner messages, 2026-10-14/15: white paint included in both kits; registered address, packed measurements and temporary simple kit balances confirmed; registered postcode 02206 verified by official Lietuvos paštas search 2026-10-15",
+  "source": "Owner messages, 2026-10-14/15: white paint included in both kits; registered address, packed measurements and temporary simple kit balances confirmed; registered postcode 02206 verified by official Lietuvos paštas search 2026-10-15. Owner2026-10-19 explicitly confirms non-VAT status and unused dedicated document series MCWEB/MCWEBK/MCWEBP.",
+  "documentSeries": { "sale": "MCWEB", "credit": "MCWEBK", "packing": "MCWEBP" },
   "legal": {
     "name": "MB Memocasting",
     "companyCode": "306026827",

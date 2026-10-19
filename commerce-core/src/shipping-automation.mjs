@@ -1,4 +1,4 @@
-import { requireValue, integer, digest, canonical } from './validation.mjs';
+import { requireValue, integer, digest, canonical, CommerceError } from './validation.mjs';
 import { ShippingOperations } from './shipping.mjs';
 import { ShipmentCommands, completeSender } from './shipment-commands.mjs';
 export class ShippingAutomation {
@@ -111,12 +111,16 @@ export class ShippingAutomation {
     if (!command) return { skipped: true }; // Legacy or unmatched carrier fact requires operator review.
     const adapter = this.options.shippingAdapters?.[store];
     requireValue(adapter, 'shipping_not_connected', 503);
-    return new ShipmentCommands(this.s, this.options.privateStorage).refresh(
+    const result = await new ShipmentCommands(this.s, this.options.privateStorage).refresh(
       store,
       env,
       command.id,
       adapter,
       'commerce_automation',
     );
+    // Registration can precede labels by several provider processing cycles.
+    // Keep the durable event waiting; never submit a replacement shipment.
+    if (!result.labelsAvailable) throw new CommerceError('carrier_documents_pending', 409);
+    return result;
   }
 }

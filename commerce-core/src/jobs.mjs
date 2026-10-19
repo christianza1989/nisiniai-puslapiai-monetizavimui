@@ -12,6 +12,8 @@ const notifyKinds = [
   'ShipmentRegistered',
   'WithdrawalRequested',
 ];
+const documentPollDelayMs = 60_000;
+const documentPollWindowMs = 24 * 3600_000;
 export class CommerceJobs {
   constructor(service, options = {}) {
     this.s = service;
@@ -141,12 +143,20 @@ export class CommerceJobs {
         requireValue(acknowledged[1].meta.changes === 1, 'lease_conflict', 409);
         results.push({ id: event.id, state: 'done' });
       } catch (error) {
-        const code =
+        const errorCode =
             typeof error.code === 'string' && /^[a-z_]{1,80}$/.test(error.code)
               ? error.code
               : 'consumer_failed',
-          dead = event.attempts >= 5;
-        const next = this.s.now() + Math.min(3600000, 1000 * 2 ** Math.min(event.attempts, 12));
+          pendingDocuments =
+            event.kind === 'ShipmentRegistered' && errorCode === 'carrier_documents_pending',
+          deferred = pendingDocuments && this.s.now() - event.created_at < documentPollWindowMs,
+          code = pendingDocuments && !deferred ? 'carrier_documents_timeout' : errorCode,
+          dead = pendingDocuments ? !deferred : event.attempts >= 5;
+        const next =
+          this.s.now() +
+          (deferred
+            ? documentPollDelayMs
+            : Math.min(3600000, 1000 * 2 ** Math.min(event.attempts, 12)));
         await this.s.db.batch([
           this.s.stmt(
             "INSERT INTO outbox_delivery SELECT ?,?,?,?,?,? WHERE EXISTS(SELECT 1 FROM outbox WHERE store_id=? AND id=? AND lease_token=? AND state='leased' AND lease_until>?) ON CONFLICT(store_id,event_id) DO UPDATE SET state=excluded.state,next_attempt_at=excluded.next_attempt_at,last_error=excluded.last_error,updated_at=excluded.updated_at",
@@ -162,8 +172,9 @@ export class CommerceJobs {
             this.s.now(),
           ),
           this.s.stmt(
-            "UPDATE outbox SET state='pending',lease_until=? WHERE store_id=? AND id=? AND lease_token=? AND state='leased' AND lease_until>?",
+            "UPDATE outbox SET state='pending',lease_until=?,attempts=CASE WHEN ? THEN MAX(0,attempts-1) ELSE attempts END WHERE store_id=? AND id=? AND lease_token=? AND state='leased' AND lease_until>?",
             next,
+            deferred ? 1 : 0,
             store,
             event.id,
             event.lease_token,

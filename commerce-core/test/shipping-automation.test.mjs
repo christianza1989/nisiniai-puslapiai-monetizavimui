@@ -47,6 +47,7 @@ async function setup() {
     },
     loadPdf: async () => providerBytes,
   });
+  carrier.labelFileNames.add('fixture.pdf'); // Explicit fixture label contract.
   const options = {
     shippingAdapters: { store_a: carrier },
     shippingReadAdapters: { store_a: carrier },
@@ -144,5 +145,86 @@ test('automatic jobs never repeat a non-idempotent booking after a lost provider
   assert.equal(x.creates(), 1);
   assert.equal((await x.s.one('SELECT state FROM shipment_commands')).state, 'unknown');
   assert.equal((await x.s.one('SELECT COUNT(*) n FROM shipment_commands')).n, 1);
+  x.db.close();
+});
+
+test('delayed labels remain durable across job instances without spending failure retries or repeating create', async () => {
+  const x = await setup();
+  const documents = x.carrier.documents.bind(x.carrier);
+  let ready = false,
+    polls = 0;
+  x.carrier.documents = async (...args) => {
+    polls++;
+    if (ready) return documents(...args);
+    // A manifest can arrive before any label; it is not label readiness.
+    return polls % 2 ? [] : (await documents(...args)).map((d) => ({ ...d, kind: 'document' }));
+  };
+  await x.s.markPacked('store_a', 'sandbox', x.order.id, 'fixture_operator');
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  const event = await x.s.one("SELECT id FROM outbox WHERE kind='ShipmentRegistered'");
+  const receipt = () =>
+    x.s.one('SELECT state,last_error FROM outbox_delivery WHERE event_id=?', event.id);
+  assert.deepEqual(
+    { ...(await receipt()) },
+    { state: 'waiting', last_error: 'carrier_documents_pending' },
+  );
+  assert.equal(
+    (await x.s.one('SELECT state,attempts FROM outbox WHERE id=?', event.id)).attempts,
+    0,
+  );
+  for (let i = 0; i < 7; i++) {
+    const before = polls;
+    await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+    assert.equal(polls, before, 'a refresh before its persisted deadline cannot poll again');
+    x.tick(60001);
+    await new CommerceJobs(new CommerceService(x.db, { now: x.s.now }), x.options).scheduled(
+      'store_a',
+      'sandbox',
+    );
+    assert.equal((await receipt()).state, 'waiting');
+  }
+  x.carrier.documents = async () => {
+    throw Error('transient fixture failure');
+  };
+  x.tick(60001);
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  assert.equal(
+    (await receipt()).state,
+    'waiting',
+    'pending waits have not exhausted ordinary errors',
+  );
+  assert.equal((await x.s.one('SELECT attempts FROM outbox WHERE id=?', event.id)).attempts, 1);
+  ready = true;
+  x.carrier.documents = documents;
+  x.tick(60001);
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  assert.equal((await receipt()).state, 'done');
+  assert.equal((await x.s.one('SELECT state FROM outbox WHERE id=?', event.id)).state, 'done');
+  const count = (
+    await x.s.one("SELECT COUNT(*) n FROM private_files WHERE kind='shipment_document'")
+  ).n;
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  assert.equal(
+    (await x.s.one("SELECT COUNT(*) n FROM private_files WHERE kind='shipment_document'")).n,
+    count,
+  );
+  assert.equal(x.creates(), 1);
+  x.db.close();
+});
+
+test('a provider that never makes labels available reaches a bounded operator-visible timeout without another create', async () => {
+  const x = await setup();
+  x.carrier.documents = async () => [];
+  await x.s.markPacked('store_a', 'sandbox', x.order.id, 'fixture_operator');
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  x.tick(24 * 3600000 + 1);
+  await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+  const receipt = await x.s.one(
+    "SELECT d.state,d.last_error FROM outbox_delivery d JOIN outbox o ON o.id=d.event_id AND o.store_id=d.store_id WHERE o.kind='ShipmentRegistered'",
+  );
+  assert.deepEqual({ ...receipt }, { state: 'dead', last_error: 'carrier_documents_timeout' });
+  assert.equal(x.creates(), 1);
   x.db.close();
 });

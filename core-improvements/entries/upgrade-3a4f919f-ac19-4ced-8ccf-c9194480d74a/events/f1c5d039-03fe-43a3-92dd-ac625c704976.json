@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Real completed finite queue restart counter pilot; original graph prefix preserved, complete new-file SHA, source-wire and geometry identity PASS. Partial graph is not full model acceptance. Continuous adoption remains a separate operational gate.",
+  "checks": [
+    {
+      "command": "Independent full-byte finite Native proof: KTGU004WW002",
+      "result": "PASS",
+      "evidence": "docs/ERGONOMIC_PERFORMANCE_PROOFS_2026-10-19.json"
+    }
+  ],
+  "eventId": "f1c5d039-03fe-43a3-92dd-ac625c704976",
+  "sequence": 3,
+  "at": "2026-10-19T19:06:46.736Z"
+}

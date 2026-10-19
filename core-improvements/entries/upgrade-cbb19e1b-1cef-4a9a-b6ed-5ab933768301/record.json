@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "Redundant three-line pilot alias creates another root entrypoint without unique plan or evidence",
+  "category": "cleanup",
+  "evidence": [
+    "PIRMAS_PILOTAS_GREITOS_SVETAINES.md contains only a title and pointer to tracked sites/greitossvetaines.md; no unique domain facts, dates, approvals or test results",
+    "Tracked whole-repo name search finds only the first inventory's historical retention row; no incoming executable or active documentation caller. Root issue196 maps directly to sites documentation",
+    "Reviewed explicit editorial-skill loader, model JSON discovery, package/build and GitHub workflow registries; no root pilot Markdown discovery. Generic inventory/safety readers do not execute it",
+    "Original 264 worktree bytes SHA256 f1d916272fde48a591183a4851278549a23075dde242c27053fc6e36995dc293; exact plan/apply/restore preserves bytes; second-package inventory appends corrected candidate assessment"
+  ],
+  "paths": [
+    "PIRMAS_PILOTAS_GREITOS_SVETAINES.md",
+    "docs/CORE_DOCUMENTATION_INVENTORY_2026-10-17.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/197",
+  "rollback": "node scripts/core-upgrade.mjs restore --id <this upgrade ID>; never overwrite an existing path. Direct sites/greitossvetaines.md remains unchanged",
+  "id": "upgrade-cbb19e1b-1cef-4a9a-b6ed-5ab933768301",
+  "branch": "codex/core-docs-authority-20261017",
+  "baseSha": "9a46650a033d283dfb559d7b835a26384e3225fe",
+  "createdAt": "2026-10-17T14:31:52.633Z"
+}

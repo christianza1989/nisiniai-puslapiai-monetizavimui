@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "base": "8664e22da6bedd126d2a44e5c4ea1f80edcdce80",
+  "original_start_base": "9a46650a033d283dfb559d7b835a26384e3225fe",
+  "historical_body_checks": {
+    "BENDRA_30_SVETAINIU_SISTEMA.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "FABRIKO_IR_20_SVETAINIU_ARCHITEKTURA.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "20_SVETAINIU_MODULIAI_IR_TEMU_PLANAS.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "MONETIZAVIMO_PLANAS.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "TOP_20_DOMENU.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "agent-business-core/README.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "PROJECT_STATUS.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "agent-business-core/runtime/README.md": "original body preserved after removing declared annotations and reversing exact link edits",
+    "MAIL_CORE.md": "original body preserved after removing declared annotations and reversing exact link edits"
+  },
+  "inventory_append_only": true,
+  "root_navigation_and_site_file_unchanged": true,
+  "quarantine": {
+    "bytes": 264,
+    "sha256": "f1d916272fde48a591183a4851278549a23075dde242c27053fc6e36995dc293",
+    "normalized_git_blob_match": true,
+    "state": "quarantined"
+  },
+  "affected": {
+    "files": 11,
+    "relative_total": 99,
+    "missing": 0,
+    "machine_total": 0
+  },
+  "repository_relative_link_baseline": {
+    "targets": 2844,
+    "missing": 921,
+    "machine": 1398
+  },
+  "repository_relative_link_current": {
+    "targets": 2876,
+    "missing": 915,
+    "machine": 1397
+  },
+  "new_missing_targets": [],
+  "historical_receipts_labeled": 6,
+  "limits": "Structural Markdown source/link check only; no private receipt reads, runtime, DB, browser, model or migration execution; no actual restore attempted.",
+  "scope_check": {
+    "source_paths": 13,
+    "only_declared_source_and_own_two_journals": true,
+    "old_journals_and_runtime_code_unchanged": true
+  },
+  "mechanism": "Read-only Python stdlib: original text recovery comparison, Markdown target resolution against Git base/current tracked source, declared path scope and canonical plan/payload hash. The local checker is ignored administrative scratch, not a product module."
+}

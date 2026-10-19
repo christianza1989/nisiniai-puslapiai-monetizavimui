@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Committed functional documentation source ce0539462b71fe07026fce0abaf999c42e5bf8a1 verified against current main8664; first checker invocation used symbolic HEAD and correctly returned BLOCKED/full_commit_sha_required; rerun with full40hex source returned PASS. Saved report metadata now describes the read-only mechanism; final exact staged safety is run before committing these receipts. No actual runtime/adoption/restore is claimed.",
+  "checks": [
+    {
+      "command": "pinned8413 core-upgrade-check.mjs --root own worktree --base8664 --headce0539462b71fe07026fce0abaf999c42e5bf8a1",
+      "result": "PASS",
+      "evidence": "One classified shared change, both unique upgrades verified, uncovered_paths0/errors0; manual all13declared source paths plus only own2journals PASS."
+    },
+    {
+      "command": "source audit report + exact staged safety",
+      "result": "PASS",
+      "evidence": "Saved report checks/docs-source-audit.json SHA256 00697fdf7365ab2a93590313879d5d45d48ee1ddf51dbbb0311f96fc47fa03c8; 9 original bodies/prefix preservation,99affected links/0missing,6private receipts/newmissing0 and264bytepayload verified. Earlier exact staged scans:8 checkpoint blobs including payload;17 documentation/event blobs; final3receipt/report blobs checked separately before commit."
+    }
+  ],
+  "eventId": "41017356-bc46-4b60-a774-a940bb2183f4",
+  "sequence": 4,
+  "at": "2026-10-17T14:41:38.940Z"
+}

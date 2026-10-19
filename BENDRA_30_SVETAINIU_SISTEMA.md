@@ -1,5 +1,7 @@
 # Bendras maždaug 30 svetainių planas
 
+**Dokumento paskirtis, 2026-10-17:** išsaugotas 2026-09-29 architektūros ir tuometinių bandymų aprašas. Žemiau pateikti skaičiai, rekomendacijos ir būsenos priklauso tam etapui. Naują darbą pradėk nuo [AGENTS](AGENTS.md), [START_HERE](START_HERE.md) ir [CORE_BUILD_CONTRACT](CORE_BUILD_CONTRACT.md); konkrečios nišos sprendimus tikrink jos dokumentuose. Šis planas nepatvirtina dabartinio kodo, hostingo ar paleidimo būsenos.
+
 Data: 2026-09-29. Būsena: architektūros planas ir įgyvendinimo eiga. Vietinė turinio studija sukurta; viešos svetainės variklio darbai vyksta atskiroje Dovanos sesijoje. Produkcija, domenų DNS ir paskyrų planai nekeičiami.
 
 ## Įgyvendinta šiame etape
@@ -10,7 +12,7 @@ Data: 2026-09-29. Būsena: architektūros planas ir įgyvendinimo eiga. Vietinė
 - Viešame Dovanos projekte veikia patvirtinto paketo importas, domenų registras, nišiniai puslapiai, canonical, robots ir sitemap. Su izoliuotu bandomuoju paketu produkcijos režime patikrinta: pradinis puslapis, sitemap, robots ir WebP grąžino 200; nežinomas URL ir domenas grąžino 404. Cloudflare statiniams vaizdams pridėta Worker-first taisyklė: vaizdas kitame domene grąžina 404. Bandomasis paketas su netikrais kontaktais po patikros iškeltas, švarus build turi 0 paketų.
 - Viešo puslapio Lighthouse balas dar nepatvirtintas: šiame apkrautame kompiuteryje Chrome auditas neužsibaigė. Realių užklausų patvarus išsaugojimas, pristatymas ir lankytojų/kontaktų matavimas dar neprijungti; prieš pirmos tikros svetainės paleidimą tam reikia pasirinkti ir patikrinti tiekėją bei tikrus kontaktus. Šio dokumento žemiau esantys priėmimo kriterijai vis dar galioja; produkcija ir domenų DNS neįjungti.
 
-Šis planas sujungia 20 nišinių svetainių paklausos testą su esamu `dovanos-memorycasting` pagrindu. Ankstesnės rekomendacijos prijungti Fabriką kaip privalomą turinio šaltinį nebetaikomos. Pirmo etapo verslo apimtis lieka [20 svetainių SEO MVP](20_SVETAINIU_SEO_MVP.md).
+Šis planas sujungia 20 nišinių svetainių paklausos testą su esamu `dovanos-memorycasting` pagrindu. Ankstesnės rekomendacijos prijungti Fabriką kaip privalomą turinio šaltinį nebetaikomos. Dabartinę pirmos fazės apimtį apibrėžia [vykdymo sutartis](CORE_BUILD_CONTRACT.md).
 
 ## 1. Sprendimo kryptis
 

@@ -6,6 +6,7 @@ import { ShippingOperations } from '../src/shipping.mjs';
 import { ShipmentCommands } from '../src/shipment-commands.mjs';
 import { SendparcelBookingAdapter } from '../src/sendparcel-booking.mjs';
 import { FinishedStock } from '../src/finished-stock.mjs';
+import { PDFDocument } from 'pdf-lib';
 import { fixtureStore, fixtureProducts, cart, key, fakeCheckout, payment } from './fixtures.mjs';
 const origin = {
   id: 'origin',
@@ -73,7 +74,7 @@ test('booking reconciliation accepts provider LT street accent normalization but
     false,
   );
 });
-async function setup(tracked = false) {
+async function setup(tracked = false, quantity = 1) {
   let clock = Date.now(),
     creates = 0,
     lose = false,
@@ -112,6 +113,7 @@ async function setup(tracked = false) {
     'sandbox',
     {
       ...cart(),
+      lines: [{ sku: 'couple', quantity }],
       customer: {
         name: 'Test Pirkėjas',
         email: 'buyer@example.test',
@@ -464,7 +466,7 @@ test('admitted v1 fresh-quote protocol supports one booking without insurance or
   x.db.close();
 });
 
-test('private provider response and filename evidence bind labels to complete parcel tracking order; incomplete sequences stay unmapped', async () => {
+test('reported parcel tracking and known label filenames never prove the printed label-to-parcel binding', async () => {
   const x = await setup();
   await x.commands.execute('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
   const fact = x.adapter.fact({
@@ -496,15 +498,124 @@ test('private provider response and filename evidence bind labels to complete pa
   assert.equal(result.files.length, 2);
   assert.equal(result.documents[0].kind, 'document');
   assert.equal(result.documents[1].kind, 'label');
-  assert.equal(result.documents[1].trackingNumber, 'TEST1001');
+  assert.equal(result.documents[1].trackingNumber, null);
   const rows = await x.s.rows(
     "SELECT payload_json FROM shipment_observations WHERE kind='document' ORDER BY received_at,id",
   );
   const labels = rows.map((r) => JSON.parse(r.payload_json)).filter((r) => r.kind === 'label');
   assert.equal(labels.length, 1);
   assert.equal(labels[0].providerFilename, 'label.pdf');
-  assert.equal(labels[0].parcelIndex, 0);
-  assert.equal(labels[0].trackingNumber, 'TEST1001');
-  assert.equal(labels[0].labelMappingVerified, true);
+  assert.equal(labels[0].parcelIndex, null);
+  assert.equal(labels[0].trackingNumber, null);
+  assert.equal(labels[0].labelMappingVerified, false);
+  x.db.close();
+});
+
+test('complete unique tracking CSV is retained as ordered candidates while malformed or partial summaries remain unassigned', async () => {
+  const x = await setup();
+  const raw = {
+    id: '1001',
+    status: 2,
+    tracking_number: 'PACK_ONE, PACK_TWO',
+    shipper: {},
+    recipient: {},
+    parcels: [
+      { weight: 2, length: 20, width: 20, height: 17 },
+      { weight: 4, length: 25, width: 25, height: 20 },
+    ],
+  };
+  const fact = x.adapter.fact(raw);
+  assert.equal(fact.trackingNumbers, null, 'CSV is not per-parcel printed evidence');
+  assert.deepEqual(fact.trackingCandidates, ['PACK_ONE', 'PACK_TWO']);
+  assert.equal(fact.trackingCandidateSource, 'order_csv');
+  assert.equal(fact.providerResponse, raw);
+  for (const tracking_number of [
+    'PACK_ONE',
+    'PACK_ONE,PACK_ONE',
+    'PACK_ONE,,PACK_TWO',
+    'PACK_ONE,PACK_TWO,PACK_THREE',
+    'PACK ONE,PACK_TWO',
+    'PACK_ONE,PACK_TWO\nBAD',
+    42,
+    'A'.repeat(201) + ',PACK_TWO',
+  ])
+    assert.equal(x.adapter.fact({ ...raw, tracking_number }).trackingCandidates, null);
+  const reported = x.adapter.fact({
+    ...raw,
+    parcels: raw.parcels.map((p, i) => ({ ...p, tracking_number: 'PARCEL_' + i })),
+  });
+  assert.deepEqual(reported.trackingCandidates, ['PARCEL_0', 'PARCEL_1']);
+  assert.equal(reported.trackingCandidateSource, 'parcel_fields');
+  const single = x.adapter.fact({
+    ...raw,
+    tracking_number: 'SINGLE_ORDER',
+    parcels: raw.parcels.slice(0, 1),
+  });
+  assert.deepEqual(single.trackingCandidates, ['SINGLE_ORDER']);
+  assert.equal(single.trackingCandidateSource, 'order_single');
+  x.db.close();
+});
+
+test('one multipage or several label PDFs retain every byte and provider order without inferring mapping from file count', async () => {
+  const x = await setup(false, 2);
+  await x.commands.execute('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
+  x.bookings.get('1001').tracking_number = 'PACK_ONE,PACK_TWO';
+  const pdf = async (...texts) => {
+    const doc = await PDFDocument.create();
+    for (const text of texts) doc.addPage().drawText(text);
+    return doc.save();
+  };
+  const bundle = await pdf('PACK_ONE fixture printed label', 'PACK_TWO fixture printed label');
+  const first = await pdf('PACK_TWO fixture deliberately opposite to CSV order');
+  const second = await pdf('PACK_ONE fixture deliberately opposite to CSV order');
+  const manifest = await pdf('MANIFEST fixture');
+  const row = (file_name, bytes) => ({
+    file_name,
+    ftype: 'application/pdf',
+    file_data: Buffer.from(bytes).toString('base64'),
+  });
+  let providerRows = [row('Stickers.pdf', bundle)];
+  x.adapter.labelFileNames.add('Stickers.pdf');
+  x.adapter.labelFileNames.add('Stickers-extra.pdf');
+  const fetch = x.adapter.fetch;
+  x.adapter.fetch = async (url, options) =>
+    new URL(url).pathname.endsWith('/documents')
+      ? Response.json(providerRows)
+      : fetch(url, options);
+  const a = await x.commands.refresh('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
+  assert.deepEqual(a.trackingCandidates, ['PACK_ONE', 'PACK_TWO']);
+  assert.equal(a.files.length, 1);
+  assert.equal(a.documents[0].unverifiedBundle, true);
+  const saved = await x.s.one('SELECT storage_key FROM private_files WHERE id=?', a.files[0]);
+  assert.deepEqual(x.blobs.get(saved.storage_key), bundle);
+  assert.equal((await PDFDocument.load(x.blobs.get(saved.storage_key))).getPageCount(), 2);
+  providerRows = [
+    row('Stickers.pdf', first),
+    row('Manifest.pdf', manifest),
+    row('Stickers-extra.pdf', second),
+  ];
+  const b = await x.commands.refresh('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
+  assert.deepEqual(
+    b.documents.map((d) => d.providerFilename),
+    ['Stickers.pdf', 'Manifest.pdf', 'Stickers-extra.pdf'],
+  );
+  assert.deepEqual(
+    b.documents.map((d) => d.labelDocumentIndex),
+    [0, null, 1],
+  );
+  for (const d of [...a.documents, ...b.documents]) {
+    assert.equal(d.labelMappingVerified, false);
+    assert.equal(d.parcelIndex, null);
+    assert.equal(d.trackingNumber, null);
+  }
+  const count = (await x.s.one('SELECT COUNT(*) n FROM private_files')).n;
+  await x.commands.refresh('store_a', 'sandbox', x.input.id, x.adapter, 'operator');
+  assert.equal((await x.s.one('SELECT COUNT(*) n FROM private_files')).n, count);
+  assert.equal(x.creates(), 1);
+  assert.equal(
+    (await x.s.one("SELECT COUNT(*) n FROM shipment_observations WHERE kind='tracking_candidates'"))
+      .n,
+    1,
+  );
   x.db.close();
 });

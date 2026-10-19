@@ -458,8 +458,8 @@ export class ShipmentCommands {
       'carrier_document_invalid',
       502,
     );
-    // Preserve the provider filename and document order. Only a verified complete
-    // per-parcel sequence can bind labels to tracking numbers.
+    // Preserve provider order and whole PDF bundles. Reported numbers and a file
+    // count cannot prove what number is printed on which label/page.
     const fact = await adapter.bookingInformation(command.provider_id);
     requireValue(
       await adapter.verifyBooking(command.payload, fact),
@@ -474,10 +474,13 @@ export class ShipmentCommands {
       labelDocumentCount: labels.length,
       labelsAvailable,
     });
-    const mapped =
-      Array.isArray(fact.trackingNumbers) &&
-      fact.trackingNumbers.length === command.payload.parcels.length &&
-      labels.length === fact.trackingNumbers.length;
+    const trackingCandidates = fact.trackingCandidates || null;
+    if (trackingCandidates)
+      await this.observe(command, 'tracking_candidates', {
+        numbers: trackingCandidates,
+        source: fact.trackingCandidateSource,
+        printedMappingVerified: false,
+      });
     let labelIndex = 0;
     const stored = [];
     const documentFacts = [];
@@ -501,15 +504,17 @@ export class ShipmentCommands {
           )
         ).file.id,
       );
-      const parcelIndex = d.kind === 'label' ? labelIndex++ : null;
+      const labelDocumentIndex = d.kind === 'label' ? labelIndex++ : null;
       const documentFact = {
         fileId: stored.at(-1),
         providerFilename: d.providerFilename || null,
         kind: d.kind || 'document',
         providerDocumentIndex: stored.length - 1,
-        parcelIndex: mapped && parcelIndex !== null ? parcelIndex : null,
-        trackingNumber: mapped && parcelIndex !== null ? fact.trackingNumbers[parcelIndex] : null,
-        labelMappingVerified: mapped && parcelIndex !== null,
+        labelDocumentIndex,
+        unverifiedBundle: d.kind === 'label',
+        parcelIndex: null,
+        trackingNumber: null,
+        labelMappingVerified: false,
       };
       documentFacts.push(documentFact);
       await this.observe(command, 'document', documentFact);
@@ -517,6 +522,14 @@ export class ShipmentCommands {
     const events = await adapter.tracking(command.provider_id);
     requireValue(Array.isArray(events) && events.length <= 1000, 'carrier_tracking_invalid', 502);
     for (const event of events) await this.observe(command, 'tracking', event);
-    return { files: stored, documents: documentFacts, tracking: events, labelsAvailable };
+    return {
+      files: stored,
+      documents: documentFacts,
+      tracking: events,
+      labelsAvailable,
+      trackingCandidates,
+      trackingCandidateSource: fact.trackingCandidateSource || null,
+      printedMappingVerified: false,
+    };
   }
 }

@@ -7,7 +7,7 @@ function git(argv,input){const r=spawnSync('git',argv,{cwd:root,encoding:null,in
 const names=git(staged?['diff','--cached','--name-only','--diff-filter=ACM','-z']:['ls-files','-c','-o','--exclude-standard','-z']).toString().split('\0').filter(Boolean);
 const files=[...new Set(names)];
 const textExt=/\.(?:md|txt|json|jsonl|yaml|yml|toml|ini|cfg|conf|env|mjs|cjs|js|ts|tsx|jsx|py|ps1|cmd|sh|html|css|php|sql|csv|xml|svg)$/i;
-const sensitiveName=/(?:^|\/)(?:\.env(?:\..*)?|\.dev\.vars(?:\..*)?|[^/]*mail_login_and_password[^/]*|[^/]+\.(?:pem|key|db|sqlite3?))$/i;
+const sensitiveName=/(?:^|\/)(?:\.env(?:\..*)?|\.dev\.vars(?:\..*)?|[^/]*mail_login_and_password[^/]*|[^/]+\.(?:pem|key|secret|(?:db|sqlite3?)(?:-(?:wal|shm|journal))?))$/i;
 const allowedExample=/(?:^|\/)\.env\.(?:example|sample)$/;
 const patterns=[
   ['github-token',/\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,})\b/g],

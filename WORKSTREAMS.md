@@ -528,3 +528,5 @@ passed for all 7 shared changes and staged safety for 16 files. Freshness passed
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
 
 2026-10-19 Memocasting RETURNS RESERVED issue100/PR101 and PUBLICissue30/PR31: native one-page /grazinimas policy, maintained RETURNS-POLICY + OWNER-FACTS source, eligible Organization return link and regression only. Owner confirms buyer ordinary return postage. Preserve180otherpages/92dates, all actual bindings/backend/commerce gates. Local desktop/mobile then frontend-only authorized deployment and actual LT Merchant Center readback; no DB/DNS/mail/payment writes.
+
+2026-10-19 Memocasting RETURNS HOSTED: CORE7f16877e/PUBLIC6b3762bd pushed existingPR101/31, frontend675405c1 live, release6aed9952 exactonepage/180unchanged/92datespreserved.18tests/build/dryrun and actualHTTPSschema/sitemap/futuremedia/desktopmobilePASS. Bindings equal; commerce/backend/admissions unchanged. MC643437257 LTpolicy9386127644 saved/readback14days/customerpostage. Google review up to10days, no approval/indexing claim. Own source edit window released; runbook/private proof retained.

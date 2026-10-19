@@ -1,5 +1,42 @@
 # Hotube: native research and email calibration
 
+## Current continuation — 2026-10-19 04:49 UTC
+
+The original 3/3 baseline below remains a historical native-workflow result.
+It is not a completed calibration of the six saved independently executable
+roles. Their full acceptance is still OPEN; two protected cases remain unseen
+by Root. Corpus, hidden labels, grader and previous failures are preserved.
+
+The operating API now uses source `da5f2e2cc667eeedd9449e4152ae42774c4f3005`,
+schema0052, after a backed-up row/file-preserving adoption. A distinct public
+evidence batch ran saved research then qualification on one actual accommodation
+operator's retained source. Both completed on `gpt-6.1-sol/high`, one known-usage
+attempt each. Qualification distinguished segment fit from an unproven purchase
+need. No draft, contactability permission, CRM import or external send followed.
+All six grants and the module were stopped; ordinary-owner historical read and
+identical-request replay retained the same results and attempts. Case, Contact
+and Mail counts did not change. This tests public-source integration, not the
+protected calibration corpus or market demand.
+
+A one-call control of the unchanged known smoke evaluator completed with all
+six role grades passing. Its private operator serialization failed on Windows
+encoding after the model completed. The failure remains retained; a separate
+read-only recovery validated the existing UTF-8 result without calling a model
+again. The earlier English evaluator timeout remains unresolved; neither run
+is a whole-suite PASS. A new finite synthetic execution window is being prepared
+under independent custody because the prior operational timestamps expired.
+
+Platform Gmail has separately passed the owner-approved self-send, same-thread
+incoming and reviewed response, with all three original/Lithuanian mail views
+verified in ordinary Chrome. It supersedes the old Gmail/display UNVERIFIED
+entries only for that self-test; no commercial campaign has been activated.
+
+Reviewed foundation PR220 reached main `d0d08be67033e29457367ddcc2ca5eeccdf0230c`.
+The full feature branch, private calibration configuration and runtime adoption
+are separate. See the current [platform checkpoint](../verslomatika/IMPLEMENTATION_STATUS.md).
+
+## Historical baseline — 2026-10-18
+
 2026-10-18, completed 12:31 UTC. Site ID `wildtubs-europe`, host `hotube.eu`.
 This report concerns the attached local QA Business and its native acquisition
 workflow. It does not change the independently built dealer website.

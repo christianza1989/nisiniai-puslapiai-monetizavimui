@@ -1,6 +1,60 @@
 # Verslomatika customer accounts, public projects and dashboard
 
-## Current local checkpoint — 2026-10-18 22:52 UTC
+## Current local checkpoint — 2026-10-19 04:49 UTC
+
+**Whole local platform remains OPEN.** Owner-authorized scope is still the local
+business/account/agent platform, six saved acquisition roles and Gmail with
+Lithuanian mail display. Commercial campaigns and external-customer sends are
+not activated. The independently built Hotube website is not changed here.
+Root owns integration; the independent helper owns only explicitly delegated
+custody/source scopes. This checkpoint supersedes the historical sections below.
+
+- Operating API18871 was adopted to clean source
+  `da5f2e2cc667eeedd9449e4152ae42774c4f3005`, schema0052. A 3,167,113-byte private
+  backup preceded migration. The snapshot covered 96 tables; all 95 application
+  table projections and 1,010 native files were preserved while the migration
+  version advanced. Normal-owner Lithuanian mail reads passed;
+  unauthenticated and foreign-business reads remained denied. Human-started
+  frontend3030 is unchanged. The API keeps model/channel runners disabled.
+- Actual retained public discovery evidence now passes both saved roles:
+  research Task `5c89ad1c-8e7f-432a-a1f6-0b1b49c5be40`, followed by independent
+  qualification Task `3fb69243-c514-49ae-a51a-1fdb424c6097`. Both used
+  `gpt-6.1-sol/high`, one known-usage call each, original source dates and exact
+  public excerpts. The accommodation operator fits the target segment; purchase
+  intent remains only possible, geography is not independently verified, and
+  contactability is unverified. Neither role authorized a draft or send.
+- All six temporary role grants and their module were canonically stopped.
+  A subsequent normal-owner read and identical-request replay returned the same
+  two Tasks, runs and results, with no new attempts. Case/Contact/Mail counts
+  were unchanged. Private evidence is under
+  `runtime/artifacts/business-onboarding/wildtubs-europe/native-20261018/public-evidence-da5f2e2c-20261019`.
+- A separate one-call control using the unchanged previously successful smoke
+  evaluator request completed on the requested model/profile. All six role
+  grades passed for that known smoke only. Private operator output then hit a
+  Windows encoding error; the original failure was preserved and its already
+  completed UTF-8 model result was validated separately, with zero additional
+  calls. This does not complete the remaining protected calibration or explain
+  the earlier 300-second English-evaluator stall.
+- Reviewed [foundation PR220](https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/220)
+  reached main `d0d08be67033e29457367ddcc2ca5eeccdf0230c`; final-head CI passed.
+  Root integrated it at `4ff9017ab699f1258e64a152f63c2f386601a384` and repeated
+  all 25 relevant Node checks successfully. Runtime source is unchanged by that
+  merge. This narrow main delivery is not delivery of the full platform branch.
+  Historical provenance debt still prevents merging that entire branch.
+
+Companion source remains `255fea0813bf1aabeaeea2f2de0b29564118f2fc`, containing
+fetched main `ec8a9c032fe926d1d9722802d8eb26fa8bd02937`. Gmail's accepted
+self-send, incoming reply and reviewed response, with all three messages readable
+in Lithuanian in ordinary Chrome, remain valid separate channel evidence.
+
+Next executable work is a finite, independently held successor for expired
+synthetic calibration timestamps, then the remaining six-role acceptance. Keep
+the two still-unseen protected cases private and retain every previous failure
+and charge. Separately assemble reviewed source slices onto main; do not import
+or rewrite invalid historical active journals. These are current executable
+tasks, not reasons to mark the platform or campaigns ready.
+
+## Historical checkpoint — 2026-10-18 22:52 UTC
 
 **Whole local platform remains OPEN.** This checkpoint supersedes the historical
 checkpoint sections below. The common source is integrated and pushed on

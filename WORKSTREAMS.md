@@ -526,3 +526,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-19 Memocasting RETURNS RESERVED issue100/PR101 and PUBLICissue30/PR31: native one-page /grazinimas policy, maintained RETURNS-POLICY + OWNER-FACTS source, eligible Organization return link and regression only. Owner confirms buyer ordinary return postage. Preserve180otherpages/92dates, all actual bindings/backend/commerce gates. Local desktop/mobile then frontend-only authorized deployment and actual LT Merchant Center readback; no DB/DNS/mail/payment writes.

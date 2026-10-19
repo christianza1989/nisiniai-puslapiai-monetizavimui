@@ -1,3 +1,4 @@
+import {returnsPolicy} from './RETURNS-POLICY.mjs';
 export const ownerContact={email:'info@memorycasting.lt',phone:'+37069108251'};
 export const company={name:'MB Memocasting',code:'306026827',contactAddress:'Molynės g. 2C, Vilnius, LT-02211'};
 export function applyOwnerFacts(pages){
@@ -18,7 +19,7 @@ export function applyOwnerFacts(pages){
   if(page.slug==='kontaktai')page.body[0].text=`Klientų aptarnavimo kontaktai: ${ownerContact.email}, ${ownerContact.phone}. Kontaktinis ir grąžinimo adresas: ${company.contactAddress}. Šioje vietinėje peržiūroje formos duomenys saugomi testinėje aplinkoje, automatinis laiškų pristatymas išjungtas. Naudokite tik testinius kontaktus; tikras formos laiško gavimas bus priimtas atskiru bandymu.`;
   if(page.slug==='privatumas')page.body[0].text=`Duomenų valdytojas — ${company.name}, įmonės kodas ${company.code}. Dėl duomenų tvarkymo galima kreiptis ${ownerContact.email}. Ši peržiūra skirta vietiniam bandymui: naudokite tik testinius vardus, adresus ir kontaktus.`;
   if(page.slug==='pristatymas')page.body[2].text='Siuntėjo adresas — '+company.contactAddress+'. Bazinių rinkinių pakuotės duomenys pateikti savininko; siuntos su priedais vertinamos atskirai. Tikras vežėjo paslaugų sąrašas, terminai ir galutinės rinkų pristatymo kainos dar nepriimti. LT, PL, LV ir EE struktūra planuojama atskirai; dabartinis vietinis pirkimo bandymas dar nepatvirtina realaus siuntimo šiose šalyse.';
-  if(page.slug==='grazinimas')page.body[1].text=`Dėl grąžinimo ar galimo prekės trūkumo kreipkitės ${ownerContact.email} arba ${ownerContact.phone}. Savininko nurodytas grąžinimo adresas — ${company.contactAddress}. Ši vietinė peržiūra dar nėra tikra prekyba; pilnos vartotojui taikomos sąlygos ir grąžinimo procesas turi būti priimti prieš mokėjimų įjungimą. Jei klausimas susijęs su nepavykusiu liejimu, nurodykite rinkinio bei medžiagos duomenis ir proceso etapą; kliento kaltės nenustatome iš vieno sakinio.`;
+  if(page.slug==='grazinimas')Object.assign(page,returnsPolicy({company,ownerContact}));
  }
  return pages;
 }

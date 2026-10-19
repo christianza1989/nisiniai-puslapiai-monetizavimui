@@ -28,6 +28,13 @@ vartai ir suderinamumas — [kalibravimo izoliacijos sutartyje](../../../docs/CA
 
 ## 2. Naujos nišos modulio prijungimas
 
+Ilgos native modelio užduotys naudoja bendro Task workerio šaltinyje nustatytą
+60 sekundžių nuomą; įprastoms interaktyvioms užduotims lieka15sekundžių.
+Nuoma yra vykdytojo nuosavybė, ne modelio ar kampanijos leidimas. Vykdymo metu
+naudoti įprastą heartbeat ir aktualias SQL/šaltinio patikras; pasibaigusios
+nuomos neatnaujinti rankiniu DB pakeitimu ar pakartotiniu rezultato priėmimu.
+Naujas bandymas turi išsaugoti ankstesnį FAIL ir jo naudojimo apskaitą.
+
 Perskaityk actual `profiles.py`, `agent_instructions.py`, `onboarding.py`, `learning_controller.py` ir public registry. Tam pačiam siteId / canonical host pridėk:
 
 - patvirtintą BUSINESS / kontaktą ir faktų kilmę;

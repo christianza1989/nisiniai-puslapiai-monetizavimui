@@ -59,6 +59,15 @@ in both artifact and temporary modes.
 
 ## Recovery and applicability
 
+The generic Task ownership lease remains15seconds. Source-fixed acquisition
+model preparation, reply and six-role handlers use a60-second ownership lease
+at claim, heartbeat and role settlement, clamped to the current authority
+deadline. The same fresh source, owner, Config, module and SQL checks still run.
+An already expired lease or changed run is rejected before renewal. This bounded
+profile allows native proof/settlement waits that exceeded15seconds in an actual
+known-usage run; it does not extend a model timeout, authorization or Root GO.
+Crash recovery for those model kinds may consequently wait up to60seconds.
+
 Inspect the retained observation and exact owned process before any cleanup.
 Keep the original failed directory and durable budget. Do not rename the run,
 reset counters, extend an old absolute deadline or repeat a whole paid suite

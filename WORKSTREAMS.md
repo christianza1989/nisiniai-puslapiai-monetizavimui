@@ -2474,3 +2474,24 @@ Use a short exclusive execution workspace, explicit bounded durable diagnostics,
 unchanged executor/model/caps/retries/schema and safe numeric spawn diagnostics.
 All six grants/module are stopped; no protected case ran, two remain unseen.
 No API/frontend/DB/model activation while repairing source.
+
+2026-10-19 Root ACQUISITION OWNERSHIP LEASE repair reserved, issue66, source
+204baa2e/main d0d08be6/public255fea08. Current PL full chain passed10/10 known
+usage. First exposed protected regression's qualification returned known usage
+but fresh settlement rejected an expired15s ownership lease (30.27s since last
+committed heartbeat); original failed attempt/output disposition retained. All
+six grants and module stopped, two protected cases remain unseen. Root owns
+tasks/service.py, tasks/worker.py, acquisition/model_handler.py, diagnostics,
+runbook and unique journal. Helper owns only NEW inert lease-policy tests and
+independent review. Source-selected bounded lease profile for long model kinds;
+generic15s unchanged, no expired lease revival or authority/GO extension. No
+provider/operating DB mutation while repairing; isolated inert PostgreSQL QA
+will have an explicit separate lease. Previous13-row ledger stays immutable.
+
+2026-10-19T06:24Z Root reserves retained QA database
+pinet_native_root_20261018_001 on127.0.0.1:15440 for one bounded inert
+post-result20s RED/GREEN and existing expiry/revocation/concurrent-heartbeat
+fences. No provider or operating DB writes; current schema must be0052 and
+artifacts remain Root-owned. Servingb5 is source-read-only for RED; no other
+agent uses this QA lease. Small batch requires200MB disk reserve. Preserve
+all existing rows and first failure; no schema reset or migration is planned.

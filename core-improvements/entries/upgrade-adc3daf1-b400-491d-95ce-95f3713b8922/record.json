@@ -1,0 +1,26 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Use one bounded source-selected ownership lease for native acquisition model Tasks while retaining strict current lease/run/authority fences.",
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/66",
+  "paths": [
+    "agent-business-core/runtime/src/pinet_core/tasks/service.py",
+    "agent-business-core/runtime/src/pinet_core/tasks/worker.py",
+    "agent-business-core/runtime/src/pinet_core/acquisition/model_handler.py",
+    "agent-business-core/runtime/offline_tests/test_acquisition_task_lease.py",
+    "agent-business-core/runtime/tests/test_acquisition_task_lease_pg.py",
+    "agent-business-core/runtime/tests/test_acquisition_role_lease_pg.py",
+    "docs/CALIBRATION_CLI_DIAGNOSTICS.md",
+    "SKILLS/business-agent-calibration/references/runbook.md"
+  ],
+  "evidence": [
+    "Actual sourceb5 protected-regression qualification returned known usage but fresh role_settle_before rejected a15s ownership lease30.267708s after its last committed renewal; final worker check36.284418s after renewal. Actual authority stayed valid. First failed Task/Run and13-row charged ledger are retained.",
+    "Independent inert predecessor regression commit cee429dbd12bcd1e494f93eab4a7efb597f34a41:35FAIL13PASS onb5; rawREDlog SHAa0ea86634bbd4eca5e0603bf21539740d9a84d0b17360002b388be343c7a91e1. New48checksPASS3.59s; acquisition446checks+67subtestsPASS13.70s. Dedicated actual-PG20s proof barrier pending sufficient disk.",
+    "Six live grants/module canonically stopped after failure. Generic15s lease unchanged;60s applies only source-fixed model_prepare/model_reply/agent_role and is clamped to admitted deadline. Expired/equal lease, changed run, stopped task/authority still reject; no result accepted or unknown usage refunded."
+  ],
+  "rollback": "Scoped revert of this lease profile and three call sites; keep all actors stopped, original failed budgets/receipts and protected corpus unchanged. No DB schema, role specification, fact or campaign authorization changed.",
+  "id": "upgrade-adc3daf1-b400-491d-95ce-95f3713b8922",
+  "branch": "codex/verslomatika-gmail-owner-20261018",
+  "baseSha": "204baa2e10395ac6d04434dcf6f4aae8377405f6",
+  "createdAt": "2026-10-19T06:14:49.355Z"
+}

@@ -68,15 +68,16 @@ async def test_role_boundary_never_revives_late_lease_or_authority(native, monke
         assert await tx.scalar(select(func.count()).select_from(MailMessage)) == 0
 
 
-async def test_native_inter_role_proofs_preserve_live_fifteen_second_lease(native, monkeypatch):  # noqa: F811
+async def test_native_inter_role_proofs_preserve_live_kind_specific_lease(native, monkeypatch):  # noqa: F811
     p, roles, started, checkpoints = native, Roles(), None, []
     assert 14.5 < (lease_deadline()-utcnow()).total_seconds() <= 15
+    assert 59.5 < (lease_deadline(KIND)-utcnow()).total_seconds() <= 60
     original = model_handler.preflight
 
     async def paced(tx, task):
         result = await original(tx, task)
         if started is not None and len(checkpoints) < 4:
-            # Real database time, unchanged15s lease. Stand in for expensive
+            # Real database time and current source-selected model lease. Stand in for expensive
             # native/Git proof returns at4/8/12/16s after the last role heartbeat.
             position = len(checkpoints)+1
             await asyncio.sleep(max(0, started+4*position-monotonic()))
@@ -100,7 +101,8 @@ async def test_native_inter_role_proofs_preserve_live_fifteen_second_lease(nativ
     identity = await submit(p, request)
     assert await worker.execute_once(adapter, kind=KIND, task_id=identity)
     task, run, attempts = await stored(p, identity)
-    witness = {"default_lease_seconds": 15, "role_limit_seconds": settings().acquisition_model_runner_seconds,
+    witness = {"default_lease_seconds": 15, "model_lease_seconds": 60,
+        "role_limit_seconds": settings().acquisition_model_runner_seconds,
         "checkpoints": checkpoints, "task_status": task.status, "task_failure": task.failure_code,
         "attempts": [{"role": a.role, "state": a.state, "usage_known": a.usage is not None} for a in attempts],
         "usage": run.usage}

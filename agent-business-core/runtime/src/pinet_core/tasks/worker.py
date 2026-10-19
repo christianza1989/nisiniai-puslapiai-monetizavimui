@@ -223,7 +223,8 @@ async def claim(*, kind=None, task_id=None):
                     task.status, task.failure_code = "failed", "task_context_unavailable"
                     await append_event(tx, task)
                     continue
-                task.status, task.run_id, task.lease_until = "running", new_id(), lease_deadline()
+                task.status, task.run_id, task.lease_until = "running", new_id(), lease_deadline(
+                    task.kind, until=tx.info.get("acquisition_model_deadlines", {}).get(task.id))
                 tx.add(
                     TaskRun(
                         id=task.run_id,
@@ -289,7 +290,8 @@ async def heartbeat(task_id, run_id, *, user_id=None, kind="chat.consult"):
             await finish_run(tx, task, "failed")
             await append_event(tx, task)
             return False
-        task.lease_until = lease_deadline()
+        task.lease_until = lease_deadline(task.kind,
+            until=tx.info.get("acquisition_model_deadlines", {}).get(task.id))
         return True
 
 

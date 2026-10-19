@@ -1,10 +1,14 @@
 # Sukurk svetainę pagal domeną
 
+Visiems su core dirbantiems agentams galioja [privalomas patirties ciklas](CORE_IMPROVEMENT.md#privalomas-visų-core-agentų-patirties-ciklas): rastą atkuriamą bendrą neatitikimą pataisyti canonical kode / taisyklėje / skill, patikrinti ir perduoti su savo upgrade įrašu. Šis svetainės entrypoint nesusiaurina pareigos tik builderiams; integrations/runtime/UI ir kiti core darbai taiko tą pačią eigą.
+
+Šis pradžios taškas skirtas naujai nišinei svetainei. Kitoms užduotims naudok [dokumentacijos žemėlapį](docs/DOCUMENTATION_MAP.md): jame atskirtos bendros sutartys, modulio instrukcijos, konkrečių projektų būsenos ir datuoti įrodymai. Didesnei savininko užsakytai platformai taikoma [PLATFORM_BUILD_CONTRACT](PLATFORM_BUILD_CONTRACT.md); jos aktualią apimtį nustato konkretaus projekto dokumentai ir savininko pavedimas.
+
 Prieš kuriant viešus tekstus privalomos [kalbos kokybės ir saviredakcijos taisyklės](SKILLS/niche-content-planner/references/language-quality.md): taisyklinga ir natūrali svetainės kalba, pilno teksto peržiūra paties autoriaus, ištaisytos klaidos prieš patvirtinimą. Tai apima pirmą svetainės versiją ir kiekvieną vėlesnį straipsnį, aprašą ar sąsajos tekstą; atskiros sesijos nereikia.
 
 Po BUSINESS sprendimo taikyti [BUSINESS_TOOLS_CORE](BUSINESS_TOOLS_CORE.md) ir Git [niche-business-tools](SKILLS/niche-business-tools/SKILL.md): parengti nišos TOOLS.md dabartiniam mokamo rezultato keliui ir būsimai plėtrai. Kiekvieną įgyvendinamą shared pataisą registruoti [core upgrade žurnale](core-improvements/README.md); helperio karantinas saugo originalą ir priežastį, nepakeičia analizės / testų / Git scope.
 
-**Kitas kompiuteris / Madbeauty tęsinys 2026-10-06:** abiejų repo aktualūs pakeitimai sujungti į `main`. Pirmiausia skaityti [perdavimo instrukciją](docs/NEXT_CODEX_HANDOFF_2026-10-06.md): clone/atkūrimas, faktinės patikros ir dar įgyvendintinas Cloudflare runtime bei domeno priėmimas. Kodo perdavimas nėra viešas paleidimas.
+**Madbeauty perdavimo istorija, 2026-10-06:** [tos datos instrukcija](docs/NEXT_CODEX_HANDOFF_2026-10-06.md) saugo tuometinio main perdavimo ir bandymų ribas. Naujam kompiuteriui naudok prižiūrimą [MULTI_MACHINE](docs/MULTI_MACHINE.md) ir [Git aktualumo eigą](docs/CODEX_GIT_WORKFLOW.md), o projekto tęsimui perskaityk jo naujausią būseną. Ankstesnis kodo perdavimas nepatvirtina dabartinio runtime ar viešo paleidimo.
 
 Kūrimo metu rastas bendras spragas fiksuok ir pagrįstai taisyk pats pagal [CORE_IMPROVEMENT.md](CORE_IMPROVEMENT.md), laikydamasis bendrų failų rezervacijos. Prieš užbaigimą įrašyk CORE_FEEDBACK su radiniais / pataisymais arba pagrįstu įrašu, kad bendro pakeitimo nereikėjo.
 
@@ -32,9 +36,9 @@ Naujai svetainei nuo pradžių skaityti [pirmo pilno pristatymo checkpoint](SKIL
    Bendras skills suderinimas yra `SKILLS/PROJECT_CONTRACT.md`, pasirenkamų helpers paskirtys — `SKILLS/catalog.json`. Viso skills katalogo nereikia krauti į kiekvieną darbą; jų SOURCE_* archyvai nėra aktyvios instrukcijos.
 4. `content-studio/README.md`, realų savo svetainės studijos įrašą, viešo variklio README/package.json, paketo validatorius ir aktyvų nišų rendererį. Neatkurk infrastruktūros pagal nuojautą.
 
-Darbo katalogas: `C:/Users/lenovo/Documents/nisiniai_puslapiai_monetizavimui` (tyrimai, instrukcijos, dokumentai, vietinė studija).
+Darbo katalogas – tavo švarus šio repo checkout arba savo šakos worktree: tyrimai, instrukcijos, dokumentai ir vietinė studija. Konkretaus seno kompiuterio `C:/Users/...` kelio atkurti nereikia.
 
-Viešas bendras variklis: `C:/Users/lenovo/Documents/dovanos-memorycasting` (host-aware puslapiai, rendereriai, SEO/GEO, patvarios užklausos, matavimas). Tai yra bendras kelių domenų projektas, ne tik dovanos123.lt. Naujai nišai nekurk atskiro Next/Vercel projekto ir nenukopijuok techninio SEO.
+Viešas bendras variklis – gretimas `dovanos-memorycasting` checkout iš `christianza1989/niche-public-core`: host-aware puslapiai, rendereriai, SEO/GEO, patvarios užklausos ir matavimas. Clone, priklausomybių ir kelių konfigūracija aprašyta [MULTI_MACHINE](docs/MULTI_MACHINE.md). Tai bendras kelių domenų projektas, ne tik dovanos123.lt. Naujai nišai nekurk atskiro Next/Vercel projekto ir nenukopijuok techninio SEO.
 
 Prieš pakeitimus patikrink darbo medžio būseną. Netrink, neperrašyk ir neatšauk kitų sesijų darbo. `WORKSTREAMS.md` nurodo aktyvias failų ribas. Mažą savo domeno rendererio prijungimą gali atlikti jam paskirtame bendrame maršrute, išsaugodamas kitų domenų šakas. Schemos, bendro SEO ar duomenų modelio pakeitimus pirmiausia aprašyk kaip poreikį; nederink to tyliais lygiagrečiais perrašymais.
 

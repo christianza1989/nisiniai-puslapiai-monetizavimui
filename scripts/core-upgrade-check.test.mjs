@@ -1,22 +1,208 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtempSync,mkdirSync,writeFileSync} from 'node:fs';
-import {tmpdir} from 'node:os';
-import {join} from 'node:path';
-import {execFileSync} from 'node:child_process';
-import {checkCommittedCoverage} from './core-upgrade-check.mjs';
-test('committed coverage rejects missing scope and ignores uncommitted claims',()=>{
- const repo=mkdtempSync(join(tmpdir(),'pinet-coverage-')),entry='upgrade-11111111-1111-4111-8111-111111111111';
- const git=(...args)=>execFileSync('git',['-C',repo,...args],{encoding:'utf8',windowsHide:true});
- git('init','-q');git('config','user.name','Coverage fixture');git('config','user.email','coverage@example.test');
- writeFileSync(join(repo,'owned.mjs'),'old\n');git('add','.');git('commit','-qm','baseline');const base=git('rev-parse','HEAD').trim();
- const dir=join(repo,'core-improvements','entries',entry);mkdirSync(dir,{recursive:true});
- writeFileSync(join(dir,'record.json'),JSON.stringify({id:entry,paths:['owned.mjs']}));
- writeFileSync(join(repo,'owned.mjs'),'changed\n');git('add','.');git('commit','-qm','scoped fix');
- assert.equal(checkCommittedCoverage({repo,base,entry}).status,'PASS');
- writeFileSync(join(repo,'uncovered.mjs'),'new\n');git('add','.');git('commit','-qm','uncovered change');
- // Editing an uncommitted journal must never cover a committed change.
- writeFileSync(join(dir,'record.json'),JSON.stringify({id:entry,paths:['owned.mjs','uncovered.mjs']}));
- const failed=checkCommittedCoverage({repo,base,entry});assert.equal(failed.status,'FAIL_UNCOVERED');assert.deepEqual(failed.uncovered,['uncovered.mjs']);
- assert.throws(()=>checkCommittedCoverage({repo,base,entry:'../unsafe'}),/required/);
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import os from 'node:os';
+import { spawnSync } from 'node:child_process';
+import { createRecord, appendEvent } from './core-upgrade.mjs';
+import { checkUpgradeCoverage, requiresUpgrade } from './core-upgrade-check.mjs';
+
+async function fixture(t) {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'pinet-upgrade-gate-'));
+  t.after(async () => {
+    const target = path.resolve(root);
+    assert.equal(path.dirname(target), path.resolve(os.tmpdir()));
+    assert(path.basename(target).startsWith('pinet-upgrade-gate-'));
+    await fs.rm(target, { recursive: true, force: true });
+  });
+  const git = (...args) => {
+    const r = spawnSync('git', args, { cwd: root, encoding: 'utf8', windowsHide: true });
+    assert.equal(r.status, 0, r.stderr); return r.stdout.trim();
+  };
+  const write = async (file, value) => {
+    await fs.mkdir(path.dirname(path.join(root, file)), { recursive: true });
+    await fs.writeFile(path.join(root, file), value);
+  };
+  const commit = () => { git('add', '.'); git('commit', '-m', 'synthetic fixture'); return git('rev-parse', 'HEAD'); };
+  git('init', '-b', 'codex/fixture'); git('config', 'user.name', 'Fixture');
+  git('config', 'user.email', 'fixture@example.invalid');
+  await write('scripts/tool.mjs', 'export const v = 1;\n');
+  const base = commit();
+  const record = async (paths = ['scripts/tool.mjs'], issue = 'https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/1') => createRecord(root, {
+    siteId: 'core', summary: 'Synthetic shared defect with a regression', category: 'code',
+    evidence: ['isolated fixture only'], paths, issue, rollback: 'scoped fixture revert',
+  });
+  const verify = r => appendEvent(root, r.id, { status: 'local-verified', note: 'Fixture regression passed',
+    checks: [{ command: 'synthetic regression', result: 'PASS', evidence: 'fixture only' }] });
+  return { root, git, write, commit, base, record, verify };
+}
+
+test('shared source without a journal blocks; planning/site-only changes need no artificial upgrade', async t => {
+  const f = await fixture(t);
+  await f.write('docs/PLAN.md', 'Proposed roadmap only\n');
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'PASS');
+  await f.write('scripts/tool.mjs', 'export const v = 2;\n');
+  const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(result.status, 'BLOCKED'); assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+  assert.throws(() => checkUpgradeCoverage(f.root, '--bad-ref', result.head_sha), /full_commit_sha/);
+});
+
+test('finding and wrong scope cannot pass; a verified declared repair passes from committed blobs', async t => {
+  const f = await fixture(t), r = await f.record(['scripts/other.mjs']);
+  await f.write('scripts/tool.mjs', 'export const v = 2;\n');
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'BLOCKED');
+  await f.verify(r);
+  const wrong = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(wrong.status, 'BLOCKED'); assert.deepEqual(wrong.uncovered_paths, ['scripts/tool.mjs']);
+  const correct = await f.record(); await f.verify(correct);
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'PASS');
+  await f.write('scripts/tool.mjs', 'uncommitted work must not change the audited commit\n');
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.git('rev-parse', 'HEAD')).status, 'PASS');
+});
+
+test('a changed old entry needs fresh verification and cannot rewrite previous history', async t => {
+  const f = await fixture(t), r = await f.record(); await f.verify(r);
+  const baseline = f.commit();
+  await f.write('scripts/tool.mjs', 'export const v = 3;\n');
+  assert.equal(checkUpgradeCoverage(f.root, baseline, f.commit()).status, 'BLOCKED');
+  await appendEvent(f.root, r.id, { status: 'fixing', note: 'A new actual regression is being repaired' });
+  const fixing = checkUpgradeCoverage(f.root, baseline, f.commit());
+  assert(fixing.errors.some(e => e.reason === 'fresh_verification_event_required'));
+  await f.verify(r);
+  assert.equal(checkUpgradeCoverage(f.root, baseline, f.commit()).status, 'PASS');
+  const file = `core-improvements/entries/${r.id}/record.json`;
+  const old = JSON.parse(await fs.readFile(path.join(f.root, file), 'utf8'));
+  await f.write(file, JSON.stringify({ ...old, summary: 'rewritten history' }));
+  const corrupt = checkUpgradeCoverage(f.root, baseline, f.commit());
+  assert.equal(corrupt.status, 'BLOCKED');
+  assert(corrupt.errors.some(e => e.reason === 'journal_history_is_append_only'));
+});
+
+test('directory scope covers committed descendants; wildcard scope and fabricated checks block', async t => {
+  const f = await fixture(t), r = await f.record(['scripts']); await f.verify(r);
+  await f.write('scripts/tool.mjs', 'export const v = 2;\n');
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'PASS');
+  const bad = await f.record(['scripts/**']); await f.verify(bad);
+  const wildcard = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert(wildcard.errors.some(e => e.reason === 'scope_must_be_exact_path_or_directory'));
+  const folder = path.join(f.root, `core-improvements/entries/${r.id}/events`);
+  const files = await fs.readdir(folder);
+  for (const file of files) {
+    const event = JSON.parse(await fs.readFile(path.join(folder, file), 'utf8'));
+    if (event.status === 'local-verified') {
+      event.checks[0].result = 'FAIL'; await fs.writeFile(path.join(folder, file), JSON.stringify(event));
+    }
+  }
+  assert(checkUpgradeCoverage(f.root, f.base, f.commit()).errors.some(e => e.reason === 'verified_checks_required'));
+});
+
+test('deletion still needs provenance; immutable SOURCE archives and events cannot be rewritten', async t => {
+  const f = await fixture(t);
+  await f.write('SKILLS/fixture/SOURCE_SKILL.md', 'immutable imported bytes\n');
+  const base = f.commit();
+  await fs.unlink(path.join(f.root, 'scripts/tool.mjs'));
+  let result = checkUpgradeCoverage(f.root, base, f.commit());
+  assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+  const r = await f.record(); await f.verify(r);
+  assert.equal(checkUpgradeCoverage(f.root, base, f.commit()).status, 'PASS');
+  await f.write('SKILLS/fixture/SOURCE_SKILL.md', 'modified archive\n');
+  result = checkUpgradeCoverage(f.root, base, f.commit());
+  assert(result.errors.some(e => e.reason === 'source_archive_is_immutable'));
+});
+
+test('classification includes agent/core/skill/CI paths and excludes private site plans and test-only work', () => {
+  for (const file of ['AGENTS.md', 'CORE_IMPROVEMENT.md', 'SKILLS/PROJECT_CONTRACT.md',
+    'agent-business-core/runtime/src/pinet_core/control/router.py', '.github/workflows/agent-workflow.yml'])
+    assert.equal(requiresUpgrade(file), true, file);
+  for (const file of ['sites/fixture/BUSINESS.md', 'WORKSTREAMS.md', 'docs/PLAN.md',
+    'scripts/core-upgrade-check.test.mjs', 'agent-business-core/runtime/offline_tests/test_fixture.py'])
+    assert.equal(requiresUpgrade(file), false, file);
+});
+
+test('a companion record with identical filenames cannot attest a private core change', async t => {
+  const f = await fixture(t);
+  await f.write('scripts/tool.mjs', 'export const v = 2;\n');
+  const publicRecord = await f.record(['scripts/tool.mjs'], 'https://github.com/christianza1989/niche-public-core/issues/1');
+  await f.verify(publicRecord);
+  const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(result.status, 'BLOCKED');
+  assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+});
+
+test('shared dependency manifests need verified provenance in the actual committed diff', async t => {
+  const f = await fixture(t);
+  const files = ['package.json', 'content-studio/package-lock.json',
+    'agent-business-core/runtime/pyproject.toml', 'agent-business-core/runtime/uv.lock'];
+  for (const file of files) await f.write(file, 'synthetic changed dependency\n');
+  const uncovered = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(uncovered.status, 'BLOCKED');
+  assert.deepEqual(uncovered.uncovered_paths.sort(), [...files].sort());
+  const r = await f.record(files); await f.verify(r);
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'PASS');
+  assert.equal(requiresUpgrade('sites/fixture/package.json'), false);
+});
+
+test('noncanonical issue URLs fail closed instead of reclassifying public records as private', async t => {
+  for (const suffix of ['/', '?source=review', '#finding', '\n']) {
+    const f = await fixture(t);
+    await f.write('scripts/tool.mjs', 'export const v = 2;\n');
+    const r = await f.record(['scripts/tool.mjs'],
+      'https://github.com/christianza1989/niche-public-core/issues/1' + suffix);
+    await f.verify(r);
+    const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+    assert.equal(result.status, 'BLOCKED', suffix);
+    assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
+    assert(result.errors.some(e => e.reason === 'canonical_issue_url_required'), suffix);
+  }
+});
+
+test('literal bracketed committed blob and tree scopes pass without matching neighbouring paths', async t => {
+  const f = await fixture(t);
+  const file = 'scripts/app/[siteId]/[[...slug]]/page.tsx';
+  await f.write(file, 'export const route = 1;\n');
+  const r = await f.record([file]); await f.verify(r);
+  assert.deepEqual(JSON.parse(await fs.readFile(path.join(f.root,
+    `core-improvements/entries/${r.id}/record.json`), 'utf8')).paths, [file]);
+  const blobHead = f.commit();
+  assert.equal(checkUpgradeCoverage(f.root, f.base, blobHead).status, 'PASS');
+  const tree = await f.record(['scripts/app/[siteId]/[[...slug]]']); await f.verify(tree);
+  const outside = 'scripts/app/[siteId]/[[...slug]]-other/page.tsx';
+  await f.write(file, 'export const route = 2;\n');
+  await f.write(outside, 'export const unrelated = 1;\n');
+  const result = checkUpgradeCoverage(f.root, blobHead, f.commit());
+  assert.equal(result.status, 'BLOCKED');
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.uncovered_paths, [outside]);
+});
+
+test('literal bracketed deleted blob keeps exact committed deletion provenance', async t => {
+  const f = await fixture(t), file = 'scripts/[param]/obsolete.mjs';
+  await f.write(file, 'export const old = 1;\n');
+  const base = f.commit();
+  await fs.unlink(path.join(f.root, file));
+  const r = await f.record([file]); await f.verify(r);
+  assert.equal(checkUpgradeCoverage(f.root, base, f.commit()).status, 'PASS');
+});
+
+test('bracket patterns, wildcards and working-tree-only scope never broaden committed coverage', async t => {
+  for (const scope of ['scripts/**', 'scripts/app/*/page.mjs', 'scripts/tool?.mjs',
+    'scripts/app/[ab]/page.mjs', 'scripts/app/[missing]/page.mjs']) {
+    const f = await fixture(t);
+    const actual = 'scripts/app/a/page.mjs';
+    await f.write(actual, 'export const actual = 1;\n');
+    const r = await f.record([scope]); await f.verify(r);
+    const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+    assert.equal(result.status, 'BLOCKED', scope);
+    assert.deepEqual(result.uncovered_paths, [actual], scope);
+    assert(result.errors.some(e => e.reason === 'scope_must_be_exact_path_or_directory'), scope);
+  }
+  const f = await fixture(t), file = 'scripts/[uncommitted]/tool.mjs';
+  await f.write('scripts/tool.mjs', 'export const changed = 1;\n');
+  f.commit();
+  await f.write(file, 'working tree only\n');
+  const r = await f.record([file]); await f.verify(r);
+  f.git('add', 'core-improvements'); f.git('commit', '-m', 'journal only');
+  const result = checkUpgradeCoverage(f.root, f.base, f.git('rev-parse', 'HEAD'));
+  assert(result.errors.some(e => e.reason === 'scope_must_be_exact_path_or_directory'));
+  assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
 });

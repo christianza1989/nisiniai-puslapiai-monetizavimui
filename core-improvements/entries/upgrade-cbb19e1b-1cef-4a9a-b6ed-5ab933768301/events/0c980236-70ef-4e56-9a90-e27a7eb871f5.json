@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Second docs cleanup locally verified at main8664 plus own changes; bounded documentation evidence only. First-packet records and Root navigation bytes remain unchanged. New report in workflow entry checks/docs-source-audit.json; no actual restore/runtime/browser/DB/model execution. Git staged/committed handoff checks follow separately.",
+  "checks": [
+    {
+      "command": "python .github-preparation/docs-authority-audit.py (read-only source/link check)",
+      "result": "PASS",
+      "evidence": "Saved sanitized report checks/docs-source-audit.json: 9 original document bodies preserved, inventory append-only, 99 affected relative targets/0 missing, whole-repo structural targets missing921→915/new0; Root3navigation and site document unchanged; no private receipts read or runtime run."
+    },
+    {
+      "command": "canonical core-upgrade plan/apply plus payload/plan/source comparison",
+      "result": "PASS",
+      "evidence": "264 original CRLF bytes/SHA256 f1d916272fde48a591183a4851278549a23075dde242c27053fc6e36995dc293 preserved; LF normalized payload matches main8664 original Git blob; final quarantined state, direct sites document unchanged. Actual restore not run."
+    },
+    {
+      "command": "manual full new-prose self-edit and source/loader/CLI registry review",
+      "result": "PASS",
+      "evidence": "Seven manual CLI purposes retained, legacy bootstrap contacts/approval/path limits explicit; 6 historical receipts retain original paths/results; no runtime/code/model/DB changes."
+    }
+  ],
+  "eventId": "0c980236-70ef-4e56-9a90-e27a7eb871f5",
+  "sequence": 3,
+  "at": "2026-10-17T14:39:42.751Z"
+}

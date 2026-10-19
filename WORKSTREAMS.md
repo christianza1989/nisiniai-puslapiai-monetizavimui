@@ -396,3 +396,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-19 issue229 RESERVED: owner approved exact Promedical001/002 and narrowly authorized scoped release plus preserving the deployed55-guide pause. Own fresh-main codex/promedical-tekstai-v2-20261019, core e231fe49 / companion ec8a9c03. Scope model.mjs, dedicated scoped-content-release helper/test, content-release verifier, CONTENT_CORE, planner content-workflow reference and own journal; companion niche-links helper/test/docs only. Port inspected pieces only, no full PR138 branch, no foreign files or production resource changes.

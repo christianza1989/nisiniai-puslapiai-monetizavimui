@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "summary": "A narrowly approved V1 content replacement cannot use full-site release while unrelated legacy drafts differ or retired local IDs remain in historical snapshots. Add pinned reviewed overlays and exact-revision scoped approval without weakening full release checks.",
+  "category": "workflow",
+  "evidence": [
+    "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/229",
+    "content-studio/test/scoped-content-release.test.mjs"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/src/scoped-content-release.mjs",
+    "content-studio/src/content-release.mjs",
+    "CONTENT_CORE.md",
+    "SKILLS/niche-content-planner/references/content-workflow.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/229",
+  "rollback": "Revert only the scoped overlay API/helper/verifier extension and guidance; ordinary full release/approval remain unchanged. A production rollback is a separately authorized deployment of the prior Worker version and does not restore database data.",
+  "id": "upgrade-a9cc2a5c-cb5e-469e-93da-d6ae5656c375",
+  "branch": "codex/promedical-tekstai-v2-20261019",
+  "baseSha": "e231fe491e663949adbdda992286f5b8fb97513b",
+  "createdAt": "2026-10-19T17:36:02.182Z"
+}

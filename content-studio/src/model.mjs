@@ -1,3 +1,4 @@
+import { composeReviewedOverlay, releaseSha } from './scoped-content-release.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import { mkdir, readFile, readdir, rename, writeFile, copyFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -500,6 +501,79 @@ export async function releaseContent(siteId) {
   const manifestPath = path.join(path.dirname(result.path), 'release-manifest.json');
   await writeJson(manifestPath, manifest);
   return { ...result, manifestPath, packageSha256: manifest.packageSha256, state: manifest.state };
+}
+// Scoped approval validates the pinned complete public graph, rather than
+// unrelated mutable/retired local drafts. Ordinary full approval is unchanged.
+export async function approveReviewedOverlay(siteId, input, actorId) {
+  return locked(async () => {
+    if (!input || !/^[a-f0-9]{64}$/.test(input.expectedBasePackageSha256 ?? '') || !input.basePackagePath) throw new Error('Scoped approval requires exact baseline package/hash.');
+    const baseBytes = await readFile(path.resolve(input.basePackagePath));
+    if (releaseSha(baseBytes) !== input.expectedBasePackageSha256) throw new Error('Pinned baseline package bytes changed.');
+    const site = await getSite(siteId), pages = selectedPages(site, input.pageIds), ids = new Set(input.pageIds);
+    const expected = input.expectedRevisionHashes;
+    if (!expected || Object.keys(expected).length !== pages.length || pages.some(page => expected[page.id] !== revisionHash(page))) throw new Error('Scoped approval expected revisions changed.');
+    for (const page of pages) {
+      const ready = pageReadiness(site, page, revisionHash(page), ids);
+      if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
+      for (const item of page.media) await stat(path.join(MEDIA_DIR, site.id, path.basename(item.src)));
+    }
+    for (const page of pages) await approveDraft(site, page, actorId, ids);
+    const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
+    const { pathToFileURL } = await import('node:url');
+    const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
+    composeReviewedOverlay(site, JSON.parse(baseBytes), input.pageIds, revisionHash, validateContentPackage);
+    await writeJson(siteFile(siteId), site);
+    return { siteId, approved: input.pageIds, baselineSha256: input.expectedBasePackageSha256, deployment: 'not-performed' };
+  });
+}
+export async function releaseReviewedOverlay(siteId, input) {
+  return locked(async () => {
+    if (!input || !/^[a-f0-9]{64}$/.test(input.expectedBasePackageSha256 ?? '') || !input.basePackagePath || !input.baseAssetsDirectory) throw new Error('Scoped release requires exact baseline package/hash and asset directory.');
+    const source = input.baselineEvidence;
+    if (!source || typeof source.sourceVersion !== 'string' || !source.sourceVersion.trim() || typeof source.deploymentId !== 'string' || !source.deploymentId.trim() || !Number.isFinite(Date.parse(source.observedAt))) throw new Error('Scoped release requires explicitly observed deployed-baseline evidence.');
+    const baseBytes = await readFile(path.resolve(input.basePackagePath));
+    if (releaseSha(baseBytes) !== input.expectedBasePackageSha256) throw new Error('Pinned baseline package bytes changed.');
+    const base = JSON.parse(baseBytes), site = await getSite(siteId);
+    const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
+    const { pathToFileURL } = await import('node:url');
+    const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
+    const pkg = composeReviewedOverlay(site, base, input.pageIds, revisionHash, validateContentPackage);
+    const selected = new Set(input.pageIds), baselineNames = new Set(base.pages.flatMap(p => p.media.map(m => path.basename(m.src))));
+    const selectedNames = new Set(pkg.pages.filter(p => selected.has(p.id)).flatMap(p => p.media.map(m => path.basename(m.src))));
+    const expectedAssets = input.expectedBaseAssets;
+    if (!Array.isArray(expectedAssets) || expectedAssets.length !== baselineNames.size || new Set(expectedAssets.map(a => a.name)).size !== baselineNames.size || expectedAssets.some(a => !baselineNames.has(a.name) || !/^[a-zA-Z0-9._-]+\.(webp|avif)$/.test(a.name) || !/^[a-f0-9]{64}$/.test(a.sha256))) throw new Error('Scoped release requires the pinned baseline media inventory.');
+    if (!/^[a-f0-9]{64}$/.test(input.expectedBaseAssetsSha256 ?? '') || releaseSha(stable(expectedAssets)) !== input.expectedBaseAssetsSha256) throw new Error('Pinned baseline media inventory hash mismatch.');
+    const expectedAssetHashes = new Map(expectedAssets.map(a => [a.name, a.sha256]));
+    for (const name of baselineNames) {
+      const bytes = await readFile(path.join(path.resolve(input.baseAssetsDirectory), name));
+      if (releaseSha(bytes) !== expectedAssetHashes.get(name)) throw new Error('Pinned baseline media bytes changed.');
+      if (selectedNames.has(name)) {
+        const current = await readFile(path.join(MEDIA_DIR, siteId, name));
+        if (releaseSha(current) !== releaseSha(bytes)) throw new Error('Existing baseline media path changed in place.');
+      }
+    }
+    const target = path.join(OUTPUT, 'releases', siteId, randomUUID());
+    await mkdir(path.join(target, 'assets'), { recursive: true });
+    const assets = [];
+    for (const name of new Set(pkg.pages.flatMap(p => p.media.map(m => path.basename(m.src))))) {
+      const sourceFile = baselineNames.has(name) ? path.join(path.resolve(input.baseAssetsDirectory), name) : path.join(MEDIA_DIR, siteId, name);
+      const bytes = await readFile(sourceFile);
+      if (baselineNames.has(name) && releaseSha(bytes) !== expectedAssetHashes.get(name)) throw new Error('Pinned baseline media changed during release copy.');
+      await writeFile(path.join(target, 'assets', name), bytes, { flag: 'wx' });
+      assets.push({ name, sha256: releaseSha(bytes) });
+    }
+    await writeFile(path.join(target, 'baseline-content-package.json'), baseBytes, { flag: 'wx' });
+    await writeJson(path.join(target, 'content-package.json'), pkg);
+    const bytes = await readFile(path.join(target, 'content-package.json'));
+    const manifest = { version: 1, siteId, canonicalHost: pkg.canonicalHost, packageSha256: releaseSha(bytes), assets, createdAt: new Date().toISOString(),
+      scope: { kind: 'reviewed-overlay', pageIds: input.pageIds, baseline: { file: 'baseline-content-package.json', sha256: input.expectedBasePackageSha256, evidence: source, assets: expectedAssets, assetsSha256: input.expectedBaseAssetsSha256 } },
+      pages: pkg.pages.map(page => ({ pageId: page.id, revisionHash: page.revisionHash, publishAt: page.publishAt,
+        ...(selected.has(page.id) ? { review: site.pages.find(p => p.id === page.id).editorialReview } : { inheritedApproval: { kind: 'pinned-baseline', packageSha256: input.expectedBasePackageSha256 } }) })),
+      state: 'exported-not-deployed', next: 'Verify scoped unchanged-baseline invariants; import/build/deploy independently.' };
+    const manifestPath = path.join(target, 'release-manifest.json');
+    await writeJson(manifestPath, manifest);
+    return { path: path.join(target, 'content-package.json'), manifestPath, packageSha256: manifest.packageSha256, pages: pkg.pages.length, changedPageIds: input.pageIds, state: manifest.state };
+  });
 }
 function assertReviewedSnapshot(site) {
   const approved = site.pages.filter(p => p.publishedRevision);

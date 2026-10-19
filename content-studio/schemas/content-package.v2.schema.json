@@ -425,7 +425,7 @@
         },
         "media": {
           "type": "array",
-          "maxItems": 60,
+          "maxItems": 120,
           "items": {
             "$ref": "#/$defs/media"
           }

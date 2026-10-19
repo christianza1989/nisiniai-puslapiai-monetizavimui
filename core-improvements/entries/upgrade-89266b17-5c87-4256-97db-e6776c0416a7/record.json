@@ -1,0 +1,22 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Support a bounded22-image responsive gallery without truncating approved image families",
+  "evidence": [
+    "Owner selected22 images; native5variants perfamily plus5retained home variants requires115 media entries. Existing60 limit admits only12families.",
+    "Native model, schemas and public validator must share a bounded120 limit, preserve all variants and reject125 without altering approved revision."
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/schemas/content-package.schema.json",
+    "content-studio/schemas/content-package.v2.schema.json",
+    "content-studio/test/media-import.test.mjs",
+    "MEDIA_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/100",
+  "rollback": "Do not silently truncate115-entry releases; revert consumer release before lowering limit, preserve originals and approved history.",
+  "id": "upgrade-89266b17-5c87-4256-97db-e6776c0416a7",
+  "branch": "codex/memocasting-site-20261012",
+  "baseSha": "c4ef10b618224f32a5f06a8326b55cd958dd91da",
+  "createdAt": "2026-10-19T07:54:44.973Z"
+}

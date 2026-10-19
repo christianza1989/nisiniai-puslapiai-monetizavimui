@@ -67,7 +67,7 @@
             "approvedAt": { "type": "string", "format": "date-time" }, "actorId": { "type": "string" }
           }
         },
-        "media": { "type": "array", "maxItems": 60, "items": { "$ref": "#/$defs/media" } },
+        "media": { "type": "array", "maxItems": 120, "items": { "$ref": "#/$defs/media" } },
         "links": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["targetPageId", "label"], "properties": { "targetPageId": { "type": "string" }, "label": { "type": "string" } } } },
         "externalLinks": { "type": "array", "maxItems": 20, "items": { "type": "object", "additionalProperties": false, "required": ["url", "label", "reason"], "properties": { "url": { "type": "string", "format": "uri", "pattern": "^https://" }, "label": { "type": "string", "minLength": 1 }, "reason": { "type": "string", "minLength": 1 } } } }
       }

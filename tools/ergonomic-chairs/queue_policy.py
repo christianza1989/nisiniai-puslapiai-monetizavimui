@@ -25,3 +25,19 @@ def remaining_order(jobs, state):
     # saved order. Never throw away an incomplete checkpoint after a budget.
     lookup={j['job']:j for j in pending}
     return [j for j in pending if j['job'] not in deferred]+[lookup[k] for k in state.get('deferredQueue',[]) if k in lookup]
+
+
+def continuation_visits(state):
+    """Preserve a growing run across supervisor restarts, reset after deferral."""
+    if 'growingVisits' not in state:
+        excluded=set(state.get('completedSource',[]))|set(state.get('deferredQueue',[]))
+        state['growingVisits']={key:count for key,count in state.get('chunks',{}).items() if key not in excluded}
+    return state['growingVisits']
+
+
+def record_visit(state,job,result):
+    visits=continuation_visits(state)
+    visits[job]=visits.get(job,0)+1
+    outcome=disposition(result,visits[job])
+    if outcome in {'SOURCE_CLOSED','DEFER_GROWING'}:visits.pop(job,None)
+    return outcome

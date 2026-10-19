@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "command": "python -B -m unittest test_queue_restart test_checkpoint_persistence test_proven_routes test_capture_structure test_structure_policy test_queue_policy test_immutable_payloads",
+      "evidence": "37 tests; JSON restart 8->9->10/defer, migration exclusions, fresh deferred cycle, closed source, owner pause and checkpoint durability",
+      "result": "PASS"
+    }
+  ],
+  "note": "37 affected tests PASS after fixing a test-file copy command that used the wrong relative working directory; initial import failure was an execution setup error, not a policy criterion failure. Separate real Native finite counter handoff proof remains required before continuous adoption.",
+  "status": "local-verified",
+  "eventId": "e30f7cb7-fd39-489a-b8e9-16b3b387fce0",
+  "sequence": 2,
+  "at": "2026-10-19T18:46:01.569Z"
+}

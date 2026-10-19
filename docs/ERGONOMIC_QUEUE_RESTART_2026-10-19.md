@@ -1,0 +1,9 @@
+# Chair continuation count across restarts
+
+The chair supervisor previously initialized `visits={}` on each launch. The configured ten-growing-portion deferral limit consequently restarted after code adoption or an owner-authorized reboot. Saved checkpoints preserved graph data, but the in-memory scheduling allowance did not survive. Observed queue history showed 27 lifetime SERA portions and eight current Tigu portions; lifetime totals can include interrupted portions and are not themselves a wall-time comparison.
+
+The supervisor now stores `growingVisits` in the same atomic source queue ledger as completed jobs, chunk totals and deferrals. On its first migration it seeds the current non-deferred continuation from existing saved chunk totals, excluding completed and already-deferred jobs. A completed graph or actual deferral clears that job's continuation count so a later deferred cycle gets a new allowance. Original job priority, ten-portion limit, graph closure requirements, global slot ownership and Native limits remain unchanged.
+
+Regression tests serialize the queue between process launches: eight saved portions become nine, then ten and DEFER_GROWING. Separate cases cover migration exclusions, a fresh deferred cycle, source closure and owner pause. A real finite pilot must additionally recover the actual Tigu count of eight and persist nine before any continuous adoption. Checkpoint encoding has its own separate finite proof; neither partial graph is a completed configurator.
+
+Original frozen runtimes remain unchanged. A legacy fallback requires preserving this ledger and reconciling the counter with actual subsequent chunk/defer history because old supervisors ignore the new field. A Git source change or passing unit tests alone is not runtime adoption or full-model acceptance.

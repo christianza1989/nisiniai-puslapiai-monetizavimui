@@ -2,7 +2,7 @@
 import argparse, hashlib, json, os, shutil, subprocess, sys, time, uuid
 from pathlib import Path
 from capture_structure import read,save,now,sha
-from queue_policy import disposition,remaining_order
+from queue_policy import continuation_visits,record_visit,remaining_order
 
 HERE=Path(__file__).resolve().parent
 GLOBAL=Path('D:/Core/output/ergonomic-configurators-20261015/native-slot-coordination')
@@ -42,7 +42,7 @@ def main():
         if sha(Path(pin['path']).read_bytes())!=pin['sha256']:raise ValueError('FROZEN_CAPTURE_BUILD_CHANGED')
     inv=read(args.inventory);jobs=inv['queue'];assert all(j['modelKeys'] for j in jobs)
     state_path=root/'SOURCE-QUEUE.json';state=read(state_path) if state_path.exists() else {'policy':'chairs-original-default-finish-v1','completedSource':[],'tail':[],'chunks':{},'taskComplete':False}
-    count=0;queue=remaining_order(jobs,state);visits={};hold=False
+    count=0;queue=remaining_order(jobs,state);continuation_visits(state);hold=False
     metrics=state.setdefault('measuredNative',{'occupancySeconds':0,'idleSeconds':0,'newEdges':0,'newStates':0,'chunks':0})
     previous=time.monotonic()
     while queue:
@@ -94,8 +94,7 @@ def main():
                 metrics['idleFraction']=metrics['idleSeconds']/(metrics['idleSeconds']+metrics['occupancySeconds'])
                 metrics['definition']='Matching grant to actual worker return and identity disappearance; idle between these measured chunks. Historical v2 batches excluded.'
                 state['chunks'][job['job']]=state['chunks'].get(job['job'],0)+1
-                visits[job['job']]=visits.get(job['job'],0)+1
-                outcome=disposition(result,visits[job['job']])
+                outcome=record_visit(state,job['job'],result)
                 if outcome=='SOURCE_CLOSED':
                     state['completedSource'].append(job['job']);state['phase']='SOURCE_CLOSED_PENDING_FULL_QUALITY_AND_GEMINI'
                     state['deferredQueue']=[k for k in state.get('deferredQueue',[]) if k!=job['job']]

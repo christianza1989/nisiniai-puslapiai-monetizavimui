@@ -15,6 +15,7 @@ class Observation:
             "stdout_last_seconds": None, "stderr_first_seconds": None, "stderr_last_seconds": None,
             "stderr_truncated": False, "exit_code": None, "outcome": None, "cleanup_completed": False,
             "diagnostic_write_errors": 0, "diagnostic_read_errors": 0,
+            "process_start_error_class": None, "process_start_errno": None, "process_start_winerror": None,
             "stdin_closed_seconds": None, "stdout_eof_seconds": None, "stderr_eof_seconds": None,
             "process_wait_done_seconds": None, "process_returncode_observed": None,
             "cleanup_started_seconds": None, "parent_returncode_before_cleanup": None,

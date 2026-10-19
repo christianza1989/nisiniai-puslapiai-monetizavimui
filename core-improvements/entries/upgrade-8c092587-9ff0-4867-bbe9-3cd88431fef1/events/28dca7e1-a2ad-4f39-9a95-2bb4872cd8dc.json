@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Peer P2 resolved: explicit temporary-workspace cleanup records storage failure separately and preserves original timeout/cancellation and exact known usage. Two independent cleanup regressions are exact helper commit ca2767dfa2d15ef0a4fb94f63737d032aea8b5c5 blobs; baseline RED2/2 retained SHA35030c3bae148e428c57dd772891576eb4310d7c05f6d4fa1b26407865e9905b. Earlier121+73PASS retained; final changed Lab path retested after cleanup fix. No paid/provider/database call.",
+  "checks": [
+    {
+      "command": "python -X utf8 -m pytest offline_tests/test_codex_lab_deep_audit.py offline_tests/test_cli_spawn_diagnostics.py offline_tests/test_codex_lab_transport.py -q",
+      "result": "PASS",
+      "evidence": "Final source37PASS10.64s including two injected Windows cleanup denials. Actual inert processes use short exclusive cwd and deep live durable diagnostics; original timeout/cancellation, failed budget settlement and known usage survive."
+    },
+    {
+      "command": "ruff check codex_lab.py codex_transport.py execution_observation.py test_codex_lab_deep_audit.py test_cli_spawn_diagnostics.py; git diff --check",
+      "result": "PASS",
+      "evidence": "All checks passed after final cleanup fix and exact helper test adoption."
+    }
+  ],
+  "eventId": "28dca7e1-a2ad-4f39-9a95-2bb4872cd8dc",
+  "sequence": 4,
+  "at": "2026-10-19T05:35:31.889Z"
+}

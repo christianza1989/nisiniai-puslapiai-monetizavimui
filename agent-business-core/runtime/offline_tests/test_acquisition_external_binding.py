@@ -211,11 +211,16 @@ async def test_external_reviewed_subset_reuses_existing_target_gate(monkeypatch)
     fact = Row(id="offer", text="Known requirements only", source="reviewed-owner")
     work = Row(scope=Row(site_id="external-buyer"), authorization=Row(adapter_id="synthetic"),
         business_source={"facts": [{"id": fact.id, "text": fact.text, "source_ref": fact.source}]})
-    request = Row(campaign=Row(site_id="external-buyer", facts=[fact]), recipient="owner@example.test", prospect=Row())
+    request = Row(request_id=UUID(int=13), campaign=Row(site_id="external-buyer", facts=[fact]),
+        recipient="owner@example.test", prospect=Row())
     gate = AsyncMock(return_value="existing-gate")
     monkeypatch.setattr(model_authority, "available_target", gate)
     assert await model_authority.target(None, work, request) == "existing-gate"
     gate.assert_awaited_once()
+    passed_target = gate.await_args.args[2]
+    assert passed_target.request_id == request.request_id
+    assert passed_target.scope is work.scope and passed_target.campaign is request.campaign
+    assert passed_target.prospect is request.prospect and passed_target.recipient == request.recipient
     assert model_authority.context_fields(Row(business_source=None)) == {}
 
 

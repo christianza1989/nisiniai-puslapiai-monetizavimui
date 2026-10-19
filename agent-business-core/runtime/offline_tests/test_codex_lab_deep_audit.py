@@ -6,6 +6,7 @@ database, Codex executable, or customer material is used by these regressions.
 import asyncio
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -173,3 +174,52 @@ async def test_concurrent_deep_audits_use_distinct_exclusive_workspaces(tmp_path
     assert first.usage == second.usage == [USAGE]
     for name in ("first", "second"):
         assert json.loads((audit / name / "0001/result.json").read_text(encoding="utf-8")) == ANSWER
+
+
+@pytest.mark.parametrize("stop", ["timeout", "cancel"])
+async def test_workspace_cleanup_oserror_never_replaces_active_outcome_or_known_usage(tmp_path, inert_child, monkeypatch, stop):
+    invocations = inert_child(hang=True)
+    # This separate regression uses a short audit as well: a cleanup failure
+    # must preserve the active outcome independently of the deep-path defect.
+    audit = tmp_path / "cleanup-audit"
+    lab = lab_at(audit, timeout=1 if stop == "timeout" else 10)
+    budget = DurableBudget(tmp_path / "cleanup-budget.json", maximum=1)
+    actual_cleanup = tempfile.TemporaryDirectory.cleanup
+    cleanup_attempts = []
+
+    def denied_cleanup(directory):
+        cleanup_attempts.append(directory)
+        raise PermissionError(13, "PRIVATE_CLEANUP_MESSAGE_CANARY", "PRIVATE_CLEANUP_FILENAME_CANARY")
+    monkeypatch.setattr(tempfile.TemporaryDirectory, "cleanup", denied_cleanup)
+    request = asyncio.create_task(BudgetedLab(lab, budget, "persona", "inert-cleanup-case").ask(Review, "Inert", {}))
+    retained = audit / "0001"
+    try:
+        await wait_for_trace(retained / "stdout.jsonl", request)
+        if stop == "cancel":
+            request.cancel()
+        if stop == "cancel":
+            with pytest.raises(asyncio.CancelledError):
+                await request
+        else:
+            with pytest.raises(RuntimeError, match="^codex_lab_timeout$"):
+                await request
+        assert len(cleanup_attempts) == 1
+        assert lab.calls == len(invocations) == 1 and not lab.timeout_recoveries
+        assert lab.usage == [USAGE]
+        attempt = budget.read()["attempts"][0]
+        assert attempt["state"] == "failed" and attempt["usage"] == [USAGE]
+        serialized = (retained / "workspace-cleanup.json").read_text(encoding="utf-8")
+        cleanup = json.loads(serialized)
+        assert cleanup["completed"] is False and cleanup["error_class"] == "PermissionError"
+        assert "CANARY" not in serialized
+        state = json.loads((retained / "observation.json").read_text(encoding="utf-8"))
+        assert state["outcome"] == ("cancelled" if stop == "cancel" else "run_timeout")
+        assert state["cleanup_completed"] is True  # Process cleanup is distinct from workspace storage cleanup.
+    finally:
+        if not request.done():
+            request.cancel()
+        await asyncio.gather(request, return_exceptions=True)
+        # The injected denial leaves only this fixture's exclusive temp dirs.
+        # Restore/clean them directly; never strand a real process or directory.
+        for directory in cleanup_attempts:
+            actual_cleanup(directory)

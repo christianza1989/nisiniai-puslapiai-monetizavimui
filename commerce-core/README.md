@@ -66,3 +66,7 @@ Registravimas, tikri tarifai, PDF saugykla ir tracking dar neaktyvūs.
 ### Savininko dokumentų serijos
 
 `prepareBusiness(business)` priima neprivalomą `business.documentSeries` su trimis skirtingomis `sale`, `credit` ir `packing` serijomis. Kiekviena turi būti 1–16 raidžių, skaitmenų, `_` arba `-` ženklų. Prieš tikrą dokumentų išrašymą savininkas patvirtina PVM statusą ir kad šios serijos nenaudojamos kitose jo apskaitos sistemose. Aiškiai pateikta netaisyklinga ar nepilna reikšmė atmetama; tik visai nenurodžius paliekamas ankstesnis MC/MCK/MCP elgesys. Patvirtinti faktai savaime neįjungia `documentPolicy`, operacijų, checkout ar automatikos. Esamos gamybinės konfigūracijos atnaujinamos tiksliniu palyginimu, ne nauju `provisionStore` ar numeracijos atkūrimu.
+
+### One-page cart product placement
+
+`mountCheckout` accepts `productsPlacement: "summary"` with `layout: "one-page"` to render the single live product list before the totals in the summary. The default remains `"details"`; classic mode is unchanged. Quantity/removal listeners, cart persistence, quote locking and payment recovery retain their existing controls. Style the actual DOM placement responsively rather than cloning inputs or visually reordering focusable controls.

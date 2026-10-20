@@ -481,33 +481,43 @@ function fillOnePage(root) {
 }
 test('one-page checkout shows selected rows only; removal persists an empty cart and never invents a price', () =>
   withDom(async () => {
-    const root = new Element('div'),
-      client = onePageClient(),
-      changes = [];
-    await mountCheckout(root, {
-      client,
-      layout: 'one-page',
-      initialLines: [{ sku: 'couple', quantity: 1 }],
-      catalogueUrl: '/catalogue',
-      productImage: (p) =>
-        p.sku === 'couple' ? '/couple.webp' : 'https://foreign.example/image.webp',
-      onCartChange: (lines) => changes.push(lines),
-    });
-    const items = nodes(root).filter((n) => n.attrs.class === 'checkout-item');
-    assert.equal(items[0].hidden, false);
-    assert.equal(items[1].hidden, true);
-    assert.equal(nodes(root).filter((n) => n.tag === 'img').length, 1);
-    assert.equal(
-      nodes(root).find((n) => n.attrs.class === 'checkout-summary').children[0].children[0],
-      'Užsakymo suma',
-    );
-    assert.equal(changes.length, 0);
-    await nodes(root)
-      .find((n) => n.attrs.class === 'checkout-remove')
-      .fire('click');
-    assert.deepEqual(changes, [[]]);
-    assert.equal(nodes(root).find((n) => n.tag === 'form').hidden, true);
-    assert.equal(nodes(root).find((n) => n.attrs.class === 'checkout-empty').hidden, false);
+    for (const productsPlacement of ['details', 'summary']) {
+      const root = new Element('div'),
+        client = onePageClient(),
+        changes = [];
+      await mountCheckout(root, {
+        client,
+        layout: 'one-page',
+        productsPlacement,
+        initialLines: [{ sku: 'couple', quantity: 1 }],
+        catalogueUrl: '/catalogue',
+        productImage: (p) =>
+          p.sku === 'couple' ? '/couple.webp' : 'https://foreign.example/image.webp',
+        onCartChange: (lines) => changes.push(lines),
+      });
+      const items = nodes(root).filter((n) => n.attrs.class === 'checkout-item');
+      assert.equal(items[0].hidden, false);
+      assert.equal(items[1].hidden, true);
+      assert.equal(nodes(root).filter((n) => n.tag === 'img').length, 1);
+      const products = nodes(root).find((n) => n.attrs.class === 'checkout-products');
+      const summary = nodes(root).find((n) => n.attrs.class === 'checkout-summary');
+      assert.equal(
+        products.parentElement.attrs.class,
+        productsPlacement === 'summary' ? 'checkout-summary' : 'checkout-details',
+      );
+      assert.equal(nodes(root).filter((n) => n.attrs.class === 'checkout-products').length, 1);
+      assert.equal(
+        summary.children[productsPlacement === 'summary' ? 1 : 0].children[0],
+        'Užsakymo suma',
+      );
+      assert.equal(changes.length, 0);
+      await nodes(root)
+        .find((n) => n.attrs.class === 'checkout-remove')
+        .fire('click');
+      assert.deepEqual(changes, [[]]);
+      assert.equal(nodes(root).find((n) => n.tag === 'form').hidden, true);
+      assert.equal(nodes(root).find((n) => n.attrs.class === 'checkout-empty').hidden, false);
+    }
   }));
 test('one-page submit quotes once, locks fields before quote, creates once and mounts payment in place', () =>
   withDom(async () => {
@@ -536,6 +546,7 @@ test('one-page submit quotes once, locks fields before quote, creates once and m
       client,
       layout: 'one-page',
       signal: abort.signal,
+      productsPlacement: 'summary',
       initialLines: [{ sku: 'couple', quantity: 2 }],
       renderPayment: async ({ target, order }) => {
         paymentCount++;

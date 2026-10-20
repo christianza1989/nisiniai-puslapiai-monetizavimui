@@ -381,6 +381,7 @@ function onePageForm({
   catalogueUrl,
   productTitle,
   productImage,
+  productsPlacement,
   embeddedPayment,
   emitCart,
   finish,
@@ -499,10 +500,10 @@ function onePageForm({
   const intro = element('p', { class: 'checkout-intro' }, u.intro);
   const closed = element('p', { class: 'checkout-notice', role: 'status' }, u.closed);
   const heading = element('h2', {}, u.items);
-  details.insertBefore(
-    element('section', { class: 'checkout-products' }, heading, items),
-    details.children[0],
-  );
+  const products = element('section', { class: 'checkout-products' }, heading, items);
+  // Use one live set of controls in DOM order; never clone cart inputs for a sidebar.
+  if (productsPlacement === 'summary') summary.append(products);
+  else details.insertBefore(products, details.children[0]);
   summary.append(element('h2', {}, u.summary));
   const rows = catalog
     .filter((p) => p.enabled !== false)
@@ -869,7 +870,7 @@ function onePageForm({
 }
 /**
  * @param {HTMLElement} root
- * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),catalogueUrl?:string,initialLines?:Array<{sku:string,quantity:number}>,onCartChange?:(lines:Array<{sku:string,quantity:number}>)=>void,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string,layout?:'classic'|'one-page',productImage?:(product:any)=>string|null,renderPayment?:(context:{target:HTMLElement,client:CommerceClient,order:any,onComplete:()=>Promise<void>,signal?:AbortSignal})=>Promise<void|(()=>void)>,signal?:AbortSignal}} options
+ * @param {{language?:string,country?:string,client?:CommerceClient,termsUrl?:string|((context:{country:string,language:string,policyVersion:string})=>string|null),catalogueUrl?:string,initialLines?:Array<{sku:string,quantity:number}>,onCartChange?:(lines:Array<{sku:string,quantity:number}>)=>void,headingLevel?:number,title?:string,productTitle?:(product:any,language:string)=>string,layout?:'classic'|'one-page',productsPlacement?:'details'|'summary',productImage?:(product:any)=>string|null,renderPayment?:(context:{target:HTMLElement,client:CommerceClient,order:any,onComplete:()=>Promise<void>,signal?:AbortSignal})=>Promise<void|(()=>void)>,signal?:AbortSignal}} options
  */
 export async function mountCheckout(
   root,
@@ -886,6 +887,7 @@ export async function mountCheckout(
     productTitle = (product, language) =>
       product.titles?.[{ lt: 'LT', pl: 'PL', lv: 'LV', et: 'EE' }[language]] || product.title,
     layout = 'classic',
+    productsPlacement = 'details',
     productImage,
     renderPayment,
     signal,
@@ -1155,6 +1157,7 @@ export async function mountCheckout(
         catalogueUrl,
         productTitle,
         productImage,
+        productsPlacement,
         embeddedPayment: typeof renderPayment === 'function',
         emitCart,
         finish: (order) => orderView(order, true),

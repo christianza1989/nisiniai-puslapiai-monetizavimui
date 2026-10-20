@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "03f9532b7c6c4c2dfc4ebe6309e275aca4e6c131",
+  "note": "Source0.18.0 pushed and exact SHA handed to the human-authorized website task. PR96 draft/open head verified at this source; description updated for embedded Checkout and immutable Session recovery. Final local acceptance172Node/native24/real workerd restart/build PASS. Exact staged safety and fresh-task-base canonical coverage PASS, plus all changed source paths covered by this upgrade with no foreign UI/config/migration changes. Both repositories fetched current main successfully before source handoff and journal continuation. Historical default-main/whole-PR upgrade7afd canonical issue-URL blocker remains unchanged and separate; neither whole-PR acceptance, main merge nor actual deployment/adoption is claimed. Website task owns checkout UI/PUBLIC and existing publickey configuration/deployment. No live provider/key/payment/booking/productionDB/admission operations in this source window.",
+  "eventId": "07b4cd84-6a12-4002-aee1-0dfbf872664c",
+  "sequence": 3,
+  "at": "2026-10-20T13:15:13.255Z"
+}

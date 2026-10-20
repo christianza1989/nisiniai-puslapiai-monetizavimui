@@ -12,6 +12,11 @@ const status=await read(path.join(root,'prepared/OFFLINE-STATUS.json'));
 const queue=await read(path.join(root,'capture-v2/SOURCE-QUEUE.json'));
 const inventory=await read(path.join(root,'INVENTORY.json'));
 const jobs=new Map(inventory.queue.map(j=>[j.job,j]));
+const selectedJobs=arg('jobs')===undefined?null:new Set(arg('jobs').split(','));
+if(selectedJobs){
+ assert(selectedJobs.size>0&&[...selectedJobs].every(job=>job&&jobs.has(job)),'Unknown selected job');
+ for(const job of selectedJobs)assert(status.rows.some(row=>row.job===job&&row.result==='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY'),'Selected job lacks full offline PASS');
+}
 const snapshot=await read('content/admin-source-status.json'),models=new Map(snapshot.models.map(m=>[m.key,m]));
 await fs.mkdir(stage,{recursive:false});
 const assets=path.join(stage,'assets/models/configurator/structure');await fs.mkdir(assets,{recursive:true});
@@ -25,6 +30,7 @@ async function seal(source,target,sha,copy=false){
  return raw;
 }
 for(const row of status.rows){
+ if(selectedJobs&&!selectedJobs.has(row.job))continue;
  if(row.result!=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY')continue;
  const job=jobs.get(row.job);assert(job&&job.modelKeys.length===1);
  const key=job.modelKeys[0],model=models.get(key);

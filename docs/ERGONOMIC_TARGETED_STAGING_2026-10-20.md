@@ -1,0 +1,9 @@
+# Targeted technical-draft staging
+
+The owner-directed finishing mode closed Flesco KFLS001WW002 at 768 states and 8,832 measured transitions, zero missing transitions, on 2026-10-20T04:38:47Z. This is source collection, not offline quality acceptance or publication. The existing unchanged offline worker handles the complete raw/geometry/PBR/runtime proof.
+
+Existing published candidates have `TECHNICAL_DRAFT` acceptance, so the stager's old `DRAFT_READY` skip did not exclude them. A new publication batch could reread previously published prepared artifacts even when only a new sealed job needed staging. Use the optional `--jobs=job-id,job-id` argument with actual pending job IDs from status. The full prior candidate manifest is preserved; nonselected rows are skipped before reading their source or prepared files. Every selected job must exist in the original inventory and have full offline PASS. Its checkpoint, closure, full artifact hashes, runtime binding and size limits remain unchanged. Omitting the argument preserves the previous all-row path.
+
+Four offline fixture regressions passed: preserving an existing technical draft without reading missing old prepared data, rejecting a changed selected artifact, rejecting an unknown or unsealed selected job, and retaining legacy all-row behavior without the flag. The first test run had an incomplete old-model fixture and was corrected; no production quality gate was relaxed.
+
+Before preview deployment, separately bind the runtime's first anchor to the original initial state and GLB SHA, prove the prior manifest and ledger unchanged, preserve the original current dist, run the existing build/asset-preservation/dry-run chain, and verify HTTP/runtime/original-initial-GLB hashes only for actual new or changed entries. Preview deployment and full editorial/desktop/mobile acceptance remain separate.

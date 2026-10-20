@@ -1,0 +1,21 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Explicit pending-job staging preserves existing technical drafts without rereading unrelated prepared artifacts",
+  "category": "workflow",
+  "evidence": [
+    "sites/ergonomic-lt/web/scripts/stage-chair-technical-draft-scope.test.mjs",
+    "docs/ERGONOMIC_TARGETED_STAGING_2026-10-20.md"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/scripts/stage-chair-technical-draft.mjs",
+    "sites/ergonomic-lt/web/scripts/stage-chair-technical-draft-scope.test.mjs",
+    "docs/ERGONOMIC_TARGETED_STAGING_2026-10-20.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "rollback": "Revert scoped optional staging filter; keep all immutable captured/prepared/public artifacts and ledger; default all-row path remains supported.",
+  "id": "upgrade-4526ab5d-cb30-4426-886a-10273c2734fe",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "621f5f0168679640cc9a01d1ec9042f356af51a3",
+  "createdAt": "2026-10-20T04:42:40.857716+00:00"
+}

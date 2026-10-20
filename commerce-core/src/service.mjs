@@ -462,7 +462,8 @@ export class CommerceService {
     }
     return count;
   }
-  async checkout(store, environment, id, paymentAdapter) {
+  async checkout(store, environment, id, paymentAdapter, { uiMode = 'hosted' } = {}) {
+    requireValue(['hosted', 'embedded'].includes(uiMode), 'checkout_mode_invalid');
     const order = await this.getOrder(store, environment, id);
     requireValue(
       order.payment_state === 'pending' &&
@@ -478,9 +479,28 @@ export class CommerceService {
       409,
     );
     await new FinishedStock(this).requireOrder(store, environment, id);
-    const session = await paymentAdapter.createSession(order, config);
+    // Recover the actual provider mode when an earlier HTTP response was lost.
+    // A stable original idempotency key also fences an ambiguous initial create.
+    let session;
+    if (order.checkout_id && typeof paymentAdapter.retrieveSession === 'function')
+      session = await paymentAdapter.retrieveSession(order.checkout_id, order, config);
+    else {
+      if (!order.checkout_id && uiMode === 'embedded')
+        requireValue(
+          paymentAdapter.supportsEmbeddedCheckout === true,
+          'embedded_checkout_not_supported',
+          503,
+        );
+      session = await paymentAdapter.createSession(order, config, {
+        uiMode: order.checkout_id ? 'hosted' : uiMode,
+      });
+    }
+    const details =
+      typeof paymentAdapter.publicSession === 'function'
+        ? paymentAdapter.publicSession(session)
+        : { uiMode: 'hosted', url: session?.url };
     requireValue(
-      identifier(session?.id) && typeof session.url === 'string',
+      identifier(session?.id) && (details.uiMode === 'embedded' || typeof details.url === 'string'),
       'invalid_checkout_response',
       502,
     );
@@ -493,7 +513,7 @@ export class CommerceService {
     ).run();
     const current = await this.getOrder(store, environment, id);
     requireValue(current.checkout_id === session.id, 'checkout_conflict', 409);
-    return session;
+    return details;
   }
   // Internal adapter boundary: callers MUST have verified the Stripe signature/account.
   async acceptPayment(store, environment, event) {

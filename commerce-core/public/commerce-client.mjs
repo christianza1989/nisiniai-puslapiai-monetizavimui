@@ -149,28 +149,74 @@ export class CommerceClient {
     });
   }
   async checkout() {
+    const result = await this.checkoutDetails();
+    if (result.uiMode !== 'hosted') throw new Error('checkout_mode_conflict');
+    return result.url;
+  }
+  async checkoutDetails({ uiMode = 'hosted' } = {}) {
+    if (!['hosted', 'embedded'].includes(uiMode)) throw new Error('checkout_mode_invalid');
+    if (this.busy) throw new Error('checkout_busy');
     if (!this.attempt?.orderId) throw new Error('order_required');
     if (
-      !this.context.paymentConnected ||
+      !this.context?.paymentConnected ||
       !(this.context.productionReady || this.context.canCreateTestOrder)
     )
       throw new Error('stripe_not_connected');
-    const result = await this.request('/api/orders/' + this.attempt.orderId + '/checkout', {
-      body: {},
-      headers: { authorization: 'Bearer ' + this.attempt.token },
-    });
-    const url = new URL(result.url);
-    if (
-      !(url.protocol === 'https:' && url.hostname === 'checkout.stripe.com') &&
-      !(
-        this.context.environment === 'sandbox' &&
-        this.context.fixtureCheckout === true &&
-        url.origin === location.origin &&
-        url.pathname.startsWith('/qa/checkout/')
+    this.busy = true;
+    try {
+      const result = await this.request('/api/orders/' + this.attempt.orderId + '/checkout', {
+        body: { uiMode },
+        headers: { authorization: 'Bearer ' + this.attempt.token },
+      });
+      if (!result || typeof result !== 'object' || Array.isArray(result))
+        throw new Error('checkout_details_invalid');
+      const actualMode =
+        result.uiMode === undefined
+          ? typeof result.url === 'string'
+            ? 'hosted'
+            : null
+          : result.uiMode;
+      if (actualMode === 'embedded') {
+        const mode =
+          this.context.environment === 'production'
+            ? 'live'
+            : this.context.environment === 'sandbox'
+              ? 'test'
+              : null;
+        if (
+          !mode ||
+          (this.context.paymentEnvironment && this.context.paymentEnvironment !== mode) ||
+          typeof result.publishableKey !== 'string' ||
+          !new RegExp('^pk_' + mode + '_[A-Za-z0-9]{8,240}$').test(result.publishableKey) ||
+          typeof result.clientSecret !== 'string' ||
+          result.clientSecret.length > 1024 ||
+          !new RegExp('^cs_' + mode + '_[A-Za-z0-9]+_secret_[A-Za-z0-9_-]+$').test(
+            result.clientSecret,
+          )
+        )
+          throw new Error('checkout_details_invalid');
+        return {
+          uiMode: 'embedded',
+          clientSecret: result.clientSecret,
+          publishableKey: result.publishableKey,
+        };
+      }
+      if (actualMode !== 'hosted') throw new Error('checkout_details_invalid');
+      const url = new URL(result.url);
+      if (
+        !(url.protocol === 'https:' && url.hostname === 'checkout.stripe.com') &&
+        !(
+          this.context.environment === 'sandbox' &&
+          this.context.fixtureCheckout === true &&
+          url.origin === location.origin &&
+          url.pathname.startsWith('/qa/checkout/')
+        )
       )
-    )
-      throw new Error('checkout_url_invalid');
-    return url.href;
+        throw new Error('checkout_url_invalid');
+      return { uiMode: 'hosted', url: url.href };
+    } finally {
+      this.busy = false;
+    }
   }
   withdrawal() {
     if (!this.attempt?.orderId) throw new Error('order_required');

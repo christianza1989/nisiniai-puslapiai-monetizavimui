@@ -282,13 +282,89 @@ try {
   );
   assert.equal(checkout.status, 200);
   const session = await checkout.json();
+  assert.deepEqual(Object.keys(session).sort(), ['uiMode', 'url']);
+  assert.equal(session.uiMode, 'hosted');
+  const nativeEmbeddedCreated = await dispatch('store-b.example', '/api/orders', 'POST', cart(), {
+    'idempotency-key': key(909),
+  });
+  assert.equal(nativeEmbeddedCreated.status, 201);
+  const nativeEmbeddedOrder = (await nativeEmbeddedCreated.json()).order;
+  const embeddedPath = '/api/orders/' + nativeEmbeddedOrder.id + '/checkout';
+  const embeddedResponse = await dispatch(
+    'store-b.example',
+    embeddedPath,
+    'POST',
+    { uiMode: 'embedded' },
+    { authorization: 'Bearer ' + token },
+  );
+  assert.equal(embeddedResponse.status, 200);
+  const embeddedDetails = await embeddedResponse.json();
+  assert.deepEqual(Object.keys(embeddedDetails).sort(), [
+    'clientSecret',
+    'publishableKey',
+    'uiMode',
+  ]);
+  assert.equal(embeddedDetails.uiMode, 'embedded');
+  assert.match(embeddedDetails.clientSecret, /^cs_test_[a-z0-9]+_secret_/);
+  assert.equal(
+    (await service.getOrder('store_b', 'sandbox', nativeEmbeddedOrder.id)).payment_state,
+    'pending',
+  );
+  // Recreate the actual Worker; Session mode/identity is recovered from the
+  // fixture provider's immutable parameters, with no secret in the order row.
+  await mf.dispose();
+  mf = undefined;
+  db = await start('test/worker-harness.mjs');
+  service = new CommerceService(db);
+  const nativeEmbeddedRecovered = await dispatch(
+    'store-b.example',
+    embeddedPath,
+    'POST',
+    { uiMode: 'hosted' },
+    { authorization: 'Bearer ' + token },
+  );
+  assert.equal(nativeEmbeddedRecovered.status, 200);
+  assert.deepEqual(await nativeEmbeddedRecovered.json(), embeddedDetails);
+  assert.equal(
+    (
+      await dispatch(
+        'store-b.example',
+        embeddedPath,
+        'POST',
+        { uiMode: 'embedded' },
+        { authorization: 'Bearer wrong_token' },
+      )
+    ).status,
+    403,
+  );
+  const recoveredHosted = await dispatch(
+    'store-a.example',
+    '/api/orders/' + result.order.id + '/checkout',
+    'POST',
+    { uiMode: 'embedded' },
+    { authorization: 'Bearer ' + token },
+  );
+  assert.equal(recoveredHosted.status, 200);
+  assert.deepEqual(await recoveredHosted.json(), session);
+  const hostedCheckoutId = (await service.getOrder('store_a', 'sandbox', result.order.id))
+    .checkout_id;
+  assert.equal(
+    JSON.stringify(
+      await service.one(
+        'SELECT * FROM orders WHERE store_id=? AND id=?',
+        'store_b',
+        nativeEmbeddedOrder.id,
+      ),
+    ).includes('_secret_'),
+    false,
+  );
   const raw = JSON.stringify({
     id: 'evt_workerd',
     livemode: false,
     type: 'checkout.session.async_payment_succeeded',
     data: {
       object: {
-        id: session.id,
+        id: hostedCheckoutId,
         payment_status: 'paid',
         payment_intent: 'pi_workerd',
         currency: 'eur',

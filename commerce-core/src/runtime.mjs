@@ -59,6 +59,7 @@ export function runtimeOptions(env) {
         apiKey: connection.stripe.apiKey,
         accountRef: connection.stripe.accountRef,
         webhookSecret: connection.stripe.webhookSecret,
+        publishableKey: connection.stripe.publishableKey,
         environment,
       });
     if (connection.mail && env.COMMERCE_MAIL)

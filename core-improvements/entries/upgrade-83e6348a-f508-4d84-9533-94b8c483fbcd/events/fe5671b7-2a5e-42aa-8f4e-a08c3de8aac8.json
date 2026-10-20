@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "command": "node --test social-core/test/instagram.test.mjs",
+      "evidence": "8 tests pass including credential-bearing API and CDN redirect rejection.",
+      "result": "PASS"
+    },
+    {
+      "command": "node social-core/scripts/worker-smoke.mjs",
+      "evidence": "Native workerd2026-10-13: scheduledAPI connected1, JPEG200, video206bytes0-3, redirect502 not followed;4isolatedcalls0external.",
+      "result": "PASS"
+    }
+  ],
+  "note": "Original hosted media502 traced to workerd rejecting redirect:error before network. Both API and CDN now manual+explicit3xx rejection. Native workerd regression covers scheduled API fetch and JPEG/video Range, not only KV projection. No external provider calls in fixture; production date separate.",
+  "status": "local-verified",
+  "eventId": "fe5671b7-2a5e-42aa-8f4e-a08c3de8aac8",
+  "sequence": 2,
+  "at": "2026-10-20T06:43:54.652Z"
+}

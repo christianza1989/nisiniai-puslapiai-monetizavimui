@@ -19,10 +19,17 @@ test('public snapshot exposes only same-origin media IDs, never credentials, raw
 });
 test('only known CDN media stream, Range preserved, provider cookies stripped, MIME checked',async()=>{
  const env=environment();await env.INSTAGRAM_STATE.put('feed',JSON.stringify({username:'memocasting.lt',fetchedAt:at,items:normalizeInstagramMedia([photo('123456789',{media_type:'VIDEO',thumbnail_url:cdn})])}));
- let calls=0;const fetcher=async(url,options)=>{calls++;assert.equal(url,cdn);assert.equal(options.redirect,'error');assert.deepEqual(options.headers,{Range:'bytes=0-3'});return new Response('test',{status:206,headers:{'content-type':'video/mp4','content-range':'bytes 0-3/100','set-cookie':'private=fixture'}});};
+ let calls=0;const fetcher=async(url,options)=>{calls++;assert.equal(url,cdn);assert.equal(options.redirect,'manual');assert.deepEqual(options.headers,{Range:'bytes=0-3'});return new Response('test',{status:206,headers:{'content-type':'video/mp4','content-range':'bytes 0-3/100','set-cookie':'private=fixture'}});};
  const response=await instagramResponse(new Request('https://internal/media/123456789/video',{headers:{Range:'bytes=0-3'}}),env,{now:at,fetcher});assert.equal(response.status,206);assert.equal(response.headers.get('set-cookie'),null);assert.equal(await response.text(),'test');assert.equal(response.headers.get('content-range'),'bytes 0-3/100');
  assert.equal((await instagramResponse(new Request('https://internal/media/999999/video'),env,{now:at,fetcher})).status,404);assert.equal(calls,1);
  const bad=await instagramResponse(new Request('https://internal/media/123456789/poster'),env,{now:at,fetcher:async()=>new Response('<html>bad</html>',{headers:{'content-type':'text/html'}})});assert.equal(bad.status,502);
+});
+
+test('API and media redirects are rejected without following credential-bearing requests',async()=>{
+ let calls=0;const redirect=async(_url,options)=>{calls++;assert.equal(options.redirect,'manual');return new Response(null,{status:302,headers:{location:'https://untrusted.test/collect'}});};
+ await assert.rejects(instagramJson('https://graph.instagram.com/test',{token,fetcher:redirect}),/provider_redirect/);
+ const env=environment();await env.INSTAGRAM_STATE.put('feed',JSON.stringify({username:'memocasting.lt',fetchedAt:at,items:normalizeInstagramMedia([photo()])}));
+ assert.equal((await instagramResponse(new Request('https://internal/media/123456789/poster'),env,{now:at,fetcher:redirect})).status,502);assert.equal(calls,2);
 });
 test('seed verifies exact owned username; subsequent sync uses durable token and never seeds a rejected account',async()=>{
  const env=environment(),calls=[];const fetcher=async(url,options)=>{calls.push({url,options});assert.equal(options.headers.Authorization,'Bearer '+token);return url.includes('/me?')?json({user_id:'123450000',username:'memocasting.lt'}):json({data:[photo()]});};

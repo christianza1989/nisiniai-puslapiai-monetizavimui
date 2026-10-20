@@ -42,8 +42,11 @@ async function boundedJson(response) {
 }
 export async function instagramJson(url, {token, fetcher = fetch} = {}) {
   let response;
-  try { response = await fetcher(url, {headers: token ? {Authorization: `Bearer ${token}`} : {}, redirect: 'error', signal: AbortSignal.timeout(20000)}); }
+  // workerd supports manual/follow, not redirect:error. Reject redirects explicitly
+  // so bearer credentials and signed URLs never follow a different destination.
+  try { response = await fetcher(url, {headers: token ? {Authorization: `Bearer ${token}`} : {}, redirect: 'manual', signal: AbortSignal.timeout(20000)}); }
   catch { throw new InstagramFailure('provider_unavailable'); }
+  if (response.status >= 300 && response.status < 400) { await response.body?.cancel(); throw new InstagramFailure('provider_redirect'); }
   const data = await boundedJson(response);
   if (!response.ok || data.error) throw new InstagramFailure('provider_rejected', [190,102].includes(data?.error?.code) || [401,403].includes(response.status));
   return data;
@@ -104,9 +107,9 @@ export async function instagramResponse(request, env, {fetcher = fetch, now = Da
   if (!media || !instagramMediaUrl(media)) return new Response('Not found',{status:404,headers:{...headers,'cache-control':'no-store'}});
   const range = request.headers.get('range');
   if (range && (!/^bytes=\d*-\d*$/.test(range) || range === 'bytes=-')) return new Response(null,{status:416,headers:{...headers,'cache-control':'no-store'}});
-  let response; try { response = await fetcher(media,{method:request.method,headers:range?{Range:range}:{},redirect:'error',signal:AbortSignal.timeout(120000)}); } catch { return new Response(null,{status:502,headers:{...headers,'cache-control':'no-store'}}); }
+  let response; try { response = await fetcher(media,{method:request.method,headers:range?{Range:range}:{},redirect:'manual',signal:AbortSignal.timeout(120000)}); } catch { console.error(JSON.stringify({event:'instagram_media_failure',reason:'fetch',kind:match[2]})); return new Response(null,{status:502,headers:{...headers,'cache-control':'no-store'}}); }
   const type = response.headers.get('content-type') ?? '', expected = match[2] === 'video' ? /^video\/(mp4|webm)(;|$)/ : /^image\/(jpeg|png|webp|avif)(;|$)/;
-  if (![200,206].includes(response.status) || !expected.test(type)) { await response.body?.cancel(); return new Response(null,{status:502,headers:{...headers,'cache-control':'no-store'}}); }
+  if (![200,206].includes(response.status) || !expected.test(type)) { console.error(JSON.stringify({event:'instagram_media_failure',reason:'response',kind:match[2],status:response.status,mime:type.slice(0,80)})); await response.body?.cancel(); return new Response(null,{status:502,headers:{...headers,'cache-control':'no-store'}}); }
   const outgoing = new Headers({...headers,'content-type':type,'cache-control':'public, max-age=600'});
   for (const name of ['content-length','content-range','accept-ranges','etag','last-modified']) if (response.headers.has(name)) outgoing.set(name,response.headers.get(name));
   return new Response(request.method === 'HEAD' ? null : response.body,{status:response.status,headers:outgoing});

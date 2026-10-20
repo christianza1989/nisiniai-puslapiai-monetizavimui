@@ -11,4 +11,20 @@ Savininkas pakeitė Instagram collab prijungimą į vietinių video karuselę. �
 - [ ]Tikri desktop/mobile390/320, kelių klipų paleidimas, navigacija ir vienas aktyvus player; asset/range/admission regresija, lint/types/build ir vienas finaldetector. Tikro zoom/spacing negautam mechanizmui PASS nepriskirti.
 - [ ]Frontend-only productiondeploy, išsaugant actualbindings, native3367ef65/181pages/759media,22galerijosnuotraukas ir92straipsniųdatas. Commerce/DNS/paštas/DB nekeičiami. Ankstesnė frontend97678db4 versija lieka coderollback.
 
-Parengimas nėra hosted priėmimas. Įrodymai ir galutinis version/source pildomi po patikrų.
+## Priimtas gyvas rezultatas
+
+2026-10-20T08:12:03Z frontend versija `316f4de3-9d9a-4ea1-a99b-5642ba45e4aa` įjungta abiejuose esamuose custom domains. PUBLIC source `b5edd7cf9e635fa58a6c4eab684b475c74d7dd56` įkeltas į esamą PR31 šaką; main merge neatliktas. 24 unikalūs video ir 66 responsive WebP viršeliai (90 medijos failų, 215121584 baitai). Naujas atskirai pateiktas15sek. įrašas pirmas. Originalų vardai, failai ir hash žurnalas privatūs; svetainėje tik neutralūs nekintami pavadinimai, LT antraštės ir tikri kadrų alt tekstai.
+
+Visi24H264, AAC ten, kur originalas turi garsą; trukmė išsaugota0,3sek. tikslumu. Kiekvienas mažesnis nei24MiB, moov priešmdat. Viršeliai nepadidinti virš360/720px šaltinio ir importuoti per bendrą studijos pipeline. Native content package neperrašytas: SHA256 `5a0183d6618e1388ca76deb8410f2ac63018791b4f11ee17cc604b3edb3dd95c`, release3367ef65,181pages/759native media,22galerijosnuotraukos ir92straipsniųdatos išsaugoti.
+
+Viešas HTTP08:12:48Z: visi90HEAD200 su teisingu MIME/Content-Length; visi24video patikrinti pirmų ir paskutinių128baitų intervalais —48tikrų206 atsakymų, tikslūs vietiniai baitai. Neįtrauktas failas404, POST405, www308. Esami ASSETS/DB59b0f59f/MEMO_COMMERCE/MEMO_INSTAGRAM bindings bei observability prieš ir po sutapo. Commerce versija67d8fdd8, DB, DNS, paštas ir secrets nekeisti.
+
+Tikra naršyklė: desktop1280, mobile390/320 be dokumento horizontalios slinkties;24kortelės, prieš pasirinkimą0video elementų. Naujas15sek. ir poros80,386sek. video realiai paleisti, readyState4, error=null; telefono poros įrašas pasiekė23,4sek. be klaidos. Naršymas rodyklėmis ir Home/End, pelės tempimas, vienas aktyvus player, pause išėjus iš matomos srities, Escape/uždarymas ir grįžtantis fokusas patikrinti. Mobilus02/24 perjungimas tikrame domene priimtas. Visas galutinis LT tekstas perskaitytas; pilna200%text resize/spacing patikra atskirai nepatvirtinta.
+
+124Node testai, atnaujintos2media/admission regresijos,3Instagrambridge regresijos, scopedESLint, visasTypeScript, finalproductionbuild ir dry-run PASS. Detector finalscan[]; naršyklė aptiko per tamsų play ženklą dėl incumbent buttoncolor — pataisyta scoped specifika ir patvirtintas tikras baltas fill. Vietinis SEO smoke sustojo ties unknown-host/favicon: Wrangler HTTP peržiūra perrašo callerHost (canonical/unknown/akmenas užklausos visos atidavė tą pačią Memo svetainę). Tai užfiksuotas šio bandymo transporto apribojimas, ne tariamas naujas88puslapiųSEO PASS; proxy jau turi unknown404, contentpackage baitai nepakito. Privačios patikros `qa/memocasting-video-carousel-20261020/`.
+
+Upgrade2c4ff2e5 apima karuselę. Papildomas e90986c0 sutvarko retainedInstagram TypeScript tipus, nepakeisdamas teisių. Tiksliai99PUBLIC pakeistų Git kelių ir10scope blob/tree patikrinti pačiame PUBLIC b5edd7c. CORE checker aptikta atkuriama foreign bracketed route lookup spraga sutvarkyta atskiru upgradec8b7636a:13regresijų PASS; foreignscope nepriskiriamas privatecoverage. Ši CORE pataisa perduota šakoje, ne visųPC adoption.
+
+Ankstesnis Instagram backend/privatusKV ir30min.cron išsaugoti rollback; homepage jo nebekviečia. Facebook collab eiga netęsiama. Karuselė remiasi savininko failais, naujų Instagram įrašų automatiškai neimportuoja. Naujam video pakanka pateikti failą ir atlikti tokį patį scoped medijos atnaujinimą.
+
+Rollback: ankstesnė frontend97678db4 versija, išsaugant visas dabartines duomenų bazes, secrets, DNS ir užsakymus. Galutinės desktop/mobile ekrano nuotraukos išsaugotos privačiai; vartotojui paliktas originalus gyvos svetainės skirtukas.

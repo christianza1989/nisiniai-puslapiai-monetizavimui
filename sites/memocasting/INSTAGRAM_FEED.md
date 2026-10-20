@@ -63,6 +63,8 @@ Tikras cron priimtas: active af6558f5 įvykis */30 * * * * grąžino instagram_r
 
 ## Savininko pakeista kryptis: vietinių video karuselė
 
+Aktualu po2026-10-20T08:12Z: [24video karuselė paskelbta ir patikrinta](VIDEO_CAROUSEL_2026_10_20.md), frontend316f4de3. Toliau aprašyta Facebook eiga yra istorija; jos nebeatnaujinti savarankiškai. Homepage nebekviečia Instagramfeed API, o buvęs backend paliktas atkuriamam rollback.
+
 Savininkas paklausė apie kitų autorių collab. Oficialūs Meta IG User ir Collaboration dokumentai perskaityti2026-10-20: GET /IG_USER_ID/collaborative_media pasiekia accepted collaborator įrašus tik per Facebook Login, suinstagram_basic User token. Licencijuotas audio arba originalausautoriaus išjungtasdownloads gali panaikintimedia_url irjo negalima apeiti. Įprastas Instagram Login /media nėra visų profilyje matomų collab sąrašas.
 
 Savininkas patvirtino papildomą Facebook skaitymo prisijungimą: instagram_basic, pages_read_engagement, pages_show_list; tikMemocastingasset. Šios3funkcijos pridėtos programėlėje; daugiau nebuvo pridėta. Paruoštas oficialus GraphExplorer, pasirinkta tik Memocastingwebsitefeed (kitosprogramėlėstokenasnenaudotas). PopupInputCDPtimeouts apeiti teisėtu to paties viešo OAuthURL atvėrimu normaliame Chrome skirtuke, ne saugos išjungimu. Continuepatvirtintas, currentPagesOnly pasirinktas tikMemocasting.lt417454278128410; currentInstagramOnly parodė „You don't have any Instagram accounts“, procesas toliau neužbaigtas. Versloportfolio900173107610943 atskirai rodo NoPagesadded irNoInstagramaccountsadded; ownership/susiejimas nebuvo keistas. NaujasFacebooktokenas negautas irneįkeltas.

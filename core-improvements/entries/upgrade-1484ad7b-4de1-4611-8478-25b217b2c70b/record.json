@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Opt-in completion focus prevents saved growing chair graphs being starved by unknown jobs after ten finite portions",
+  "category": "workflow",
+  "evidence": [
+    "docs/ERGONOMIC_FINISH_STARTED_2026-10-20.md",
+    "tools/ergonomic-chairs/test_finish_started.py"
+  ],
+  "paths": [
+    "tools/ergonomic-chairs/queue_policy.py",
+    "tools/ergonomic-chairs/run_chairs.py",
+    "tools/ergonomic-chairs/test_finish_started.py",
+    "tools/ergonomic-chairs/README.md",
+    "docs/ERGONOMIC_FINISH_STARTED_2026-10-20.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "rollback": "Revert scoped source; rollback runtime only at actual released Native boundary to preserved immutable v8; keep all checkpoints and same OBX.",
+  "id": "upgrade-1484ad7b-4de1-4611-8478-25b217b2c70b",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "55b9a4378150e0bd0bb19082f1d572172b3bda0e",
+  "createdAt": "2026-10-20T04:01:38.692Z"
+}

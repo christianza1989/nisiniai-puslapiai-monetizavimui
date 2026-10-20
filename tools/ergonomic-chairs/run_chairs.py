@@ -34,7 +34,7 @@ def native_workers(rows):
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,required=True);ap.add_argument('--inventory',type=Path,required=True);ap.add_argument('--session',type=Path,required=True);ap.add_argument('--max-jobs',type=int,default=3);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,required=True);ap.add_argument('--inventory',type=Path,required=True);ap.add_argument('--session',type=Path,required=True);ap.add_argument('--max-jobs',type=int,default=3);ap.add_argument('--finish-started',action='store_true');args=ap.parse_args()
     assert 1<=args.max_jobs<=2590
     root=args.root.resolve();root.mkdir(parents=True,exist_ok=True)
     build=read(HERE/'BUILD.json')
@@ -42,7 +42,18 @@ def main():
         if sha(Path(pin['path']).read_bytes())!=pin['sha256']:raise ValueError('FROZEN_CAPTURE_BUILD_CHANGED')
     inv=read(args.inventory);jobs=inv['queue'];assert all(j['modelKeys'] for j in jobs)
     state_path=root/'SOURCE-QUEUE.json';state=read(state_path) if state_path.exists() else {'policy':'chairs-original-default-finish-v1','completedSource':[],'tail':[],'chunks':{},'taskComplete':False}
-    count=0;queue=remaining_order(jobs,state);continuation_visits(state);hold=False
+    progress={};priorities=[]
+    if args.finish_started:
+        priority_path=Path(inv['priorityFile'])
+        priorities=read(priority_path).get('order',[]) if priority_path.exists() else []
+        for job in jobs:
+            result_path=root/'source'/job['job']/'RESULT.json'
+            if result_path.exists():
+                result=read(result_path)
+                assert result['job']==job['job'],'WRONG_JOB_PROGRESS'
+                progress[job['job']]={'states':result.get('states',0),'pendingEdges':len(result['graph'].get('missingEdges',[]))}
+        state['schedulingMode']='finish-started-until-closed-v1'
+    count=0;queue=remaining_order(jobs,state,finish_started=args.finish_started,progress=progress,priorities=priorities);continuation_visits(state);hold=False
     metrics=state.setdefault('measuredNative',{'occupancySeconds':0,'idleSeconds':0,'newEdges':0,'newStates':0,'chunks':0})
     previous=time.monotonic()
     while queue:
@@ -50,6 +61,7 @@ def main():
         if count>=args.max_jobs:break
         if job['job'] in state['completedSource'] or any(r['job']==job['job'] for r in state['tail']):continue
         if (root/'PAUSE.json').exists():break
+        if args.finish_started:state['completionFocus']=job['job']
         if shutil.disk_usage(root).free<101000000000:raise ValueError('DISK_RESERVE')
         with Slot():
             ownership=GLOBAL/'GLOBAL-OWNERSHIP.json'
@@ -94,8 +106,9 @@ def main():
                 metrics['idleFraction']=metrics['idleSeconds']/(metrics['idleSeconds']+metrics['occupancySeconds'])
                 metrics['definition']='Matching grant to actual worker return and identity disappearance; idle between these measured chunks. Historical v2 batches excluded.'
                 state['chunks'][job['job']]=state['chunks'].get(job['job'],0)+1
-                outcome=record_visit(state,job['job'],result)
+                outcome=record_visit(state,job['job'],result,finish_started=args.finish_started)
                 if outcome=='SOURCE_CLOSED':
+                    if args.finish_started:state.pop('completionFocus',None)
                     state['completedSource'].append(job['job']);state['phase']='SOURCE_CLOSED_PENDING_FULL_QUALITY_AND_GEMINI'
                     state['deferredQueue']=[k for k in state.get('deferredQueue',[]) if k!=job['job']]
                 elif outcome=='CONTINUE_CURRENT':
@@ -107,6 +120,7 @@ def main():
                 elif outcome in {'GLOBAL_HOLD','TRANSPORT_REVIEW'}:
                     state['phase']=outcome;hold=True
                 else:
+                    if args.finish_started:state.pop('completionFocus',None)
                     state['tail'].append({'job':job['job'],'result':result,'modelPrepared':False});state['phase']='PROBLEM_PRESERVED_NEXT_CHAIR'
                 state.update(at=now(),lastResult=result);save(state_path,state);count+=1
                 if hold:break

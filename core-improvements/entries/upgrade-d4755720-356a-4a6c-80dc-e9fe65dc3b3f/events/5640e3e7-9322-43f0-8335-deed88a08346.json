@@ -1,0 +1,7 @@
+{
+  "status": "fixing",
+  "note": "Owner reports draft controls inaccessible at exact changed-text URL. Browser reproduction works but relies on new-tab preview. Explicit same-tab draft navigation and direct comparison actions remove that dependency; root cause of owner browser-specific behavior is not asserted.",
+  "eventId": "5640e3e7-9322-43f0-8335-deed88a08346",
+  "sequence": 4,
+  "at": "2026-10-20T07:11:01.171Z"
+}

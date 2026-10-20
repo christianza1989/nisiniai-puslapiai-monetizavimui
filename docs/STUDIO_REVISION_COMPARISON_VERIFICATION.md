@@ -45,3 +45,23 @@ Private QA screenshots, source hashes, baseline digest and local adoption/rollba
 receipts stay under the task output directory, outside Git. No old draft body,
 contact data, or full site backup is included here. Source delivery through a PR
 is separate from main merge, other-PC adoption and production publication.
+
+## Draft navigation follow-up
+
+The owner reported being unable to enter a draft from the changed-text URL.
+Read-only reproduction confirmed edit, comparison and new-tab preview in the test
+browser; the owner's browser-specific cause was not established. Preview links
+now navigate in the same tab and explicitly say **Atidaryti juodraštį**. The
+comparison has direct draft-edit and preview actions, alongside the return action.
+Status badges remain separate status labels.
+
+Actual QA with a private data copy confirmed list-to-preview, comparison-to-editor
+and editor-to-preview at 1280/390/320, browser Back, no additional tabs and no
+horizontal comparison overflow. Direct comparison-to-preview and calendar preview
+also passed. Desktop and 320px screenshots were inspected. JavaScript syntax
+validation passed; no model/server/gate code changed.
+
+Only static app.js was locally adopted; the standing 4317 server was not restarted.
+Real 4317 preview/editor navigation passed with zero browser console errors.
+Active site bytes, approvals and published snapshots were unchanged. The dedicated
+QA server and owned browser tabs were closed after verification.

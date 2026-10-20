@@ -94,7 +94,10 @@ export async function instagramResponse(request, env, {fetcher = fetch, now = Da
   if (!['GET','HEAD'].includes(request.method)) return new Response('Method not allowed',{status:405,headers:{...headers,Allow:'GET, HEAD','cache-control':'no-store'}});
   if (!env.INSTAGRAM_STATE || env.INSTAGRAM_ENABLED !== '1') return new Response(null,{status:503,headers:{...headers,'cache-control':'no-store'}});
   const snapshot = await env.INSTAGRAM_STATE.get('feed','json'), feed = publicInstagramFeed(snapshot,now);
-  if (url.pathname === '/feed') return Response.json(feed ?? {username:env.INSTAGRAM_USERNAME,items:[],unavailable:true},{status:feed?200:503,headers:{...headers,'cache-control':feed?'public, max-age=120':'no-store'}});
+  if (url.pathname === '/feed') {
+    const options={status:feed?200:503,headers:{...headers,'content-type':'application/json','cache-control':feed?'public, max-age=120':'no-store'}};
+    return request.method==='HEAD'?new Response(null,options):Response.json(feed ?? {username:env.INSTAGRAM_USERNAME,items:[],unavailable:true},options);
+  }
   const match = /^\/media\/(\d{5,40})\/(poster|video)$/.exec(url.pathname);
   const item = match && feed ? snapshot.items.find(item => item.id === match[1]) : null;
   const media = item && (match[2] === 'poster' ? item.poster : item.type === 'VIDEO' ? item.media : null);

@@ -14,6 +14,7 @@ test('image, reel and carousel are ordered, deduplicated and hostile provider li
 test('public snapshot exposes only same-origin media IDs, never credentials, raw CDN or cursors',async()=>{
  const env=environment();await env.INSTAGRAM_STATE.put('feed',JSON.stringify({username:'memocasting.lt',fetchedAt:at,token,items:normalizeInstagramMedia([photo()]),paging:{next:'secret'}}));
  const response=await instagramResponse(new Request('https://internal/feed'),env,{now:at});const body=await response.text();assert.equal(response.status,200);assert.ok(body.includes('/social/instagram/media/123456789/poster'));for(const secret of [token,cdn,'paging'])assert.ok(!body.includes(secret));
+ const head=await instagramResponse(new Request('https://internal/feed',{method:'HEAD'}),env,{now:at});assert.equal(head.status,200);assert.equal(await head.text(),'');
  assert.equal(publicInstagramFeed({fetchedAt:at,items:[]},at+7*3600000),null);
 });
 test('only known CDN media stream, Range preserved, provider cookies stripped, MIME checked',async()=>{

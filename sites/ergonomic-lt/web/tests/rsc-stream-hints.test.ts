@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import {normalizeReactFlightPreloadHints,createRscRenderer,createRscPrerenderer} from '../src/cloudflare/rsc-stream-hints';
 const encoder=new TextEncoder();
 const upstream=await import(new URL('server/rsc-stream-hints.js',import.meta.resolve('vinext')).href);
@@ -13,6 +14,14 @@ const fixture=Buffer.concat([
  bytes('4:o'+binary.length.toString(16)+','),binary,
  bytes('5:{"quote":"α中文\\n<stylesheet>","array":[1,null,true]}\n6:HL["/font.woff","font"]\n'),
 ]);
+test('Vite alias replaces the entire resolved Windows or POSIX dependency path',()=>{
+ const config=fs.readFileSync(new URL('../vite.config.ts',import.meta.url),'utf8');
+ const literal=config.match(/find:(\/\^\.\*.*rsc-stream-hints.*?\$\/),replacement:file\('\.\/src\/cloudflare\/rsc-stream-hints.ts'\)/)?.[1];
+ assert(literal,'Exact anchored adapter alias must be present');
+ const matcher=new RegExp(literal.slice(1,-1));
+ for(const id of ['D:/app/node_modules/vinext/dist/server/rsc-stream-hints.js','D:\\app\\node_modules\\vinext\\dist\\server\\rsc-stream-hints.js','/app/node_modules/vinext/dist/server/rsc-stream-hints.js'])assert.equal(id.replace(matcher,'ADAPTER'),'ADAPTER');
+ assert(!matcher.test('/app/node_modules/vinext/dist/server/html.js'));
+});
 test('all byte split positions retain exact upstream hint, JSON, Unicode and binary semantics',async()=>{
  const expected=await drain(upstream.normalizeReactFlightPreloadHints(stream([fixture])));
  for(let i=0;i<=fixture.length;i++)assert.deepEqual(await drain(normalizeReactFlightPreloadHints(stream(split(fixture,i)))),expected,'split '+i);

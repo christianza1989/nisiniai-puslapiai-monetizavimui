@@ -35,3 +35,6 @@ Preserve actual new orders, payments, document numbering, outbox, private bindin
 Private receipts, original failure logs, CAS snapshots and credentials remain only under ignored `qa/memocasting-launch-20261020/` and provider secret bindings. No secrets or customer payload are part of this handoff.
 
 Final local route-free production artifact SEO smoke passed:100 currently public pages, canonical/schema/robots/sitemap/LLM outputs/host isolation/404. Initial custom-domain preview Host rewriting failure preserved separately; the maintained route-free preview configuration resolves it without production config changes. Mobile390 cart and real quote37.24EUR reviewed; no horizontal overflow.
+## Subsequent compact checkout presentation
+
+PUBLICda24ab706ac29d844d6c229b93543d0ccf7aa8c7 changes only checkout CSS and checkout-scoped breadcrumb spacing. Active frontend62032b09-1605-4bb3-9f56-b60512758027 replaces0409e620; backend/mail/admissions/content release remain as recorded. Actual1280 form height529.45px versus1258.59px before; mobile390 reviewed without overflow. This presentation update does not change payment acceptance evidence. Rollback can use0409e620 after actual binding reconciliation; never restore DB/config snapshots. Source record upgrade-f02e3435-dc76-44d7-965a-56f03a893ab2.

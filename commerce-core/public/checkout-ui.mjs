@@ -1144,7 +1144,7 @@ export async function mountCheckout(
         client,
         context,
         catalog,
-        markets,
+        markets: markets.filter((market) => market.checkoutEnabled !== false),
         cartLines,
         country,
         language,

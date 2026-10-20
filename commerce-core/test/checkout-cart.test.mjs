@@ -637,3 +637,31 @@ test('one-page checkout rejects inconsistent server amounts and recovers a lost 
       } else assert.equal(client.created, undefined);
     }
   }));
+test('one-page country choices exclude closed markets and fall back to the admitted market', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      const lt = data.markets.find((m) => m.country === 'LT');
+      data.markets = [
+        { ...lt, country: 'PL', checkoutEnabled: false },
+        { ...lt, checkoutEnabled: true },
+        { ...lt, country: 'EE', checkoutEnabled: false },
+      ];
+      return data;
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      country: 'PL',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const country = field(root, 'country');
+    assert.deepEqual(
+      country.children.map((option) => option.attrs.value),
+      ['LT'],
+    );
+    assert.equal(country.value, 'LT');
+  }));

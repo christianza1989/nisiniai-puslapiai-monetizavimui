@@ -26,7 +26,10 @@ test('source-fixed arms cannot be described as adjustable, and supplier 1D is re
   if(/fixed/i.test(choice.sourceText)){assert.match(label,/fiksuoti/i);assert.doesNotMatch(label,/reguliuojami|[1-4]D/);fixed++;}
   if(/: 1D,/.test(choice.sourceText)){assert.match(label,/1D/);assert.doesNotMatch(label,/fiksuoti/i);oneD++;}
  }
- assert.equal(fixed,7);assert.equal(oneD,4);
+ assert.equal(fixed,7);assert.equal(oneD,5);
+ assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R20I')!,/1D/);
+ assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R32R')!,/3D/);
+ assert.equal(armrestChoiceLabel('KINT006WW002','CARMRESTS','NONE'),'Be porankių');
  // The supplier does not state fixed/adjustable for this chrome Sail option.
  assert.doesNotMatch(armrestChoiceLabel('KSAI004WW002','CARMRESTS','GTPSAILARMCRB')!,/fiksuoti|reguliuojami|[1-4]D/i);
 });

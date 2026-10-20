@@ -71,6 +71,23 @@
           "sourceText": "Fixed"
         }
       }
+    },
+    "KINT006WW002": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "NONE": {
+          "label": "Be porankių",
+          "sourceText": "None"
+        },
+        "R20I": {
+          "label": "R20I · 1D, juodas poliamidas, poliuretano atramos",
+          "sourceText": "R20I: 1D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R32R": {
+          "label": "R32R · 3D, chromuotas plienas ir juodas plastikas",
+          "sourceText": "R32R: 3D, arm: steel chromium plate, black polyamide, pad: black polyurethane"
+        }
+      }
     }
   }
 }

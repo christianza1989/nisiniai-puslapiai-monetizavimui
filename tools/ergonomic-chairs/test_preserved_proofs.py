@@ -34,5 +34,14 @@ class PreservedProofTests(unittest.TestCase):
     def test_no_certificate_means_no_legacy_compatibility(self):
         self.assertFalse(preserved_proof_matches(self.row,self.current,None))
 
+    def test_multi_generation_certificate_keeps_exact_original_tool_set(self):
+        cert={'schemaVersion':2,'currentTools':self.current,'sealedRows':{
+            'sealed':{'tools':copy.deepcopy(self.row['tools']),'rowSha256':proof_signature(self.row)}}}
+        self.assertTrue(preserved_proof_matches(self.row,self.current,cert))
+        altered=copy.deepcopy(self.row);altered['artifacts']['runtime.json']='changed'
+        self.assertFalse(preserved_proof_matches(altered,self.current,cert))
+        self.assertFalse(preserved_proof_matches(self.row,{**self.current,'compiler':'changed'},cert))
+        self.assertFalse(preserved_proof_matches({**self.row,'job':'unknown'},self.current,cert))
+
 
 if __name__=='__main__':unittest.main()

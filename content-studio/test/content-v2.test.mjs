@@ -52,7 +52,7 @@ test('studio v2 stable IDs, UTC dates, metadata round trip and site contact bind
 test('v2 normal importer refuses activation; explicit shadow does not touch compiled bytes',async()=>{
   // Run the actual scripts in a tiny isolated public-repo layout, no real staging mutation.
   const isolated=path.join(root,'public');await mkdir(path.join(isolated,'scripts'),{recursive:true});await mkdir(path.join(isolated,'schemas'),{recursive:true});
-  for(const file of ['content-package-core.mjs','content-package-v2.mjs','content-v2-admission.mjs','import-content-package.mjs','compile-content-packages.mjs'])await writeFile(path.join(isolated,'scripts',file),await readFile(path.join(publicRoot,'scripts',file)));
+  for(const file of ['content-package-core.mjs','content-package-v2.mjs','content-body.mjs','content-v2-admission.mjs','import-content-package.mjs','compile-content-packages.mjs'])await writeFile(path.join(isolated,'scripts',file),await readFile(path.join(publicRoot,'scripts',file)));
   await writeFile(path.join(isolated,'schemas/content-package.v2.schema.json'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json')));
   const source=path.join(root,'export');await mkdir(source,{recursive:true});await writeFile(path.join(source,'content-package.json'),JSON.stringify(v2Fixture()));
   const before=await readFile(path.join(publicRoot,'lib/generated/content-packages.json'));

@@ -1,0 +1,14 @@
+/node_modules/
+/core-dependency/
+/public/
+/.next*/
+/dist/
+/.wrangler/
+/.cloudflare-env/
+/.runtime/
+.env*
+.dev.vars*
+.cloudflare-secrets.json
+.cloudflare-admin.txt
+*.tsbuildinfo
+/.impeccable/review/

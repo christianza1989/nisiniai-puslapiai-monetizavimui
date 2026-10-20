@@ -1,0 +1,21 @@
+{
+  "siteId": "ergonomic-lt",
+  "category": "code",
+  "summary": "Unchanged sealed chair artifacts are fully rehashed after every 20-second offline watcher sleep. Add a separate bounded scheduler around the exact immutable accepted finite worker; metadata wakes full verification, periodic complete SHA audits remain mandatory.",
+  "paths": [
+    "tools/ergonomic-chairs/watch_closed.py",
+    "tools/ergonomic-chairs/offline_watch_policy.py",
+    "tools/ergonomic-chairs/test_offline_watch_policy.py",
+    "tools/ergonomic-chairs/README.md"
+  ],
+  "evidence": [
+    "docs/ERGONOMIC_OFFLINE_SCHEDULING_2026-10-19.md",
+    "tools/ergonomic-chairs/test_offline_watch_policy.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "rollback": "Scoped source revert; stop new scheduler cooperatively, confirm actual outer/verifier/compiler0 and all pins/session/reserve, then restart original immutable offline-v5. Never duplicate watchers.",
+  "id": "upgrade-bf3ad4b0-6fe0-4444-8e58-91e9aeafbe69",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "678d9ea1336b4eacc17281459b4d3deb30ef5909",
+  "createdAt": "2026-10-19T19:38:48.071Z"
+}

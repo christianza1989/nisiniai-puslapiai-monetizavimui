@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Four actual offline staging regressions PASS. Initial incomplete old-model fixture failure retained privately; corrected fixture exercises legacy missing-artifact access. All selected artifact/closure/quality guards preserved.",
+  "eventId": "d1ae3af0-f2d0-4fb2-8454-d07997a0a1b3",
+  "sequence": 2,
+  "at": "2026-10-20T04:42:40.857716+00:00",
+  "checks": [
+    {
+      "command": "node --test scripts/stage-chair-technical-draft-scope.test.mjs",
+      "result": "PASS",
+      "evidence": "4 tests passed; docs/ERGONOMIC_TARGETED_STAGING_2026-10-20.md"
+    }
+  ]
+}

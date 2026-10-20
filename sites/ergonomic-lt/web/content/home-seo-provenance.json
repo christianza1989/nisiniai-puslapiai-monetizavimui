@@ -1,0 +1,27 @@
+{
+  "ownerInstruction": "2026-10-13 final choice K01; B01; P01; S03",
+  "kind": "ai-office-visualization",
+  "preservedSupplierPixels": false,
+  "assets": [
+    {
+      "path": "/media/home-office/k01-50374bb66317/800.webp",
+      "alt": "Ergonominė darbo kėdė šviesiame biure su ąžuoliniu stalu ir augalais.",
+      "sha256": "67d4f7f54f280615b86c4590a61f3feffbf5216b7710b1518eb32de5556328ce"
+    },
+    {
+      "path": "/media/home-office/b01-59a6759ae837/800.webp",
+      "alt": "Balansinė taburetė prie reguliuojamo aukščio stalo šviesiame biure.",
+      "sha256": "d8e0f158388c9c376f78c8725c91dc428fc129343109bb3de94bb4265a869fd6"
+    },
+    {
+      "path": "/media/home-office/p01-954de2012efd/800.webp",
+      "alt": "Monitoriaus laikiklis ir akustinė stalo panelė jaukioje biuro darbo vietoje.",
+      "sha256": "aae0203da6573bbe6967e037104ccb7f7e6cf1f2d29075b7b1cff04e8e6d6fad"
+    },
+    {
+      "path": "/media/home-office/s03-42386639740a/1586.webp",
+      "alt": "Elektriniai stalai skirtingose aukščio padėtyse šviesiame biure.",
+      "sha256": "42d7ab481fdaffa95ef845304ffdde63e7324f93684cb84b579db39e9d7e060d"
+    }
+  ]
+}

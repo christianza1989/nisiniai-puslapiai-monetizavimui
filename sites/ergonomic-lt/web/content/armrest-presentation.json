@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "articles": {
+    "KSAI004WW002": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "GTPSAILARMBLB": {
+          "label": "Fiksuoti · juodi",
+          "sourceText": "ARM-BL/B: fixed, arm: steel powder-coated BL, pad: black polyamide"
+        },
+        "GTPSAILARMCRB": {
+          "label": "Chromuotas plienas ir plastikas",
+          "sourceText": "ARM-CR/B: arm: steel chromium plate, plastic, pad: black polyamide"
+        },
+        "GTPSAILARMWAB": {
+          "label": "Fiksuoti · balti",
+          "sourceText": "ARM-WA/B: fixed, arm: steel powder-coated WA, pad: black polyamide"
+        }
+      }
+    },
+    "KTGU001WW002": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "NONE": {
+          "label": "Be porankių",
+          "sourceText": "None"
+        },
+        "GTPTIGBLPU": {
+          "label": "Fiksuoti · juodi · poliuretanas",
+          "sourceText": "GTP-BL/PU: fixed, arm: steel powder-coated BL, pad: black polyurethane"
+        },
+        "GTPTIGBLUPH": {
+          "label": "Fiksuoti · juodi · oda",
+          "sourceText": "GTP-BL/LT: fixed, arm: steel powder-coated BL, pad: leather"
+        },
+        "GTPTIGCRPU": {
+          "label": "Fiksuoti · chromuoti · poliuretanas",
+          "sourceText": "GTP-CR/PU: fixed, arm: steel chromium plate, pad: black polyurethane"
+        },
+        "GTPTIGCRUPH": {
+          "label": "Fiksuoti · chromuoti · oda",
+          "sourceText": "GTP-CR/LT: fixed, arm: steel chromium plate, pad: leather"
+        },
+        "RTIGBLPU": {
+          "label": "1D · juodi · poliuretanas",
+          "sourceText": "R-BL/PU: 1D, arm: steel powder-coated BL, pad: black polyurethane"
+        },
+        "RTIGBLUPH": {
+          "label": "1D · juodi · oda",
+          "sourceText": "R-BL/LT: 1D, arm: steel powder-coated BL, pad: leather"
+        },
+        "RTIGCRPU": {
+          "label": "1D · chromuoti · poliuretanas",
+          "sourceText": "R-CR/PU: 1D, arm: steel chromium plate, pad: black polyurethane"
+        },
+        "RTIGCRUPH": {
+          "label": "1D · chromuoti · oda",
+          "sourceText": "R-CR/LT: 1D, arm: steel chromium plate, pad: leather"
+        }
+      }
+    },
+    "KWI2002WW001": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "NONE": {
+          "label": "Be porankių",
+          "sourceText": "None"
+        },
+        "GTPSTEEL": {
+          "label": "GTPSTEEL · fiksuoti",
+          "sourceText": "Fixed"
+        }
+      }
+    }
+  }
+}

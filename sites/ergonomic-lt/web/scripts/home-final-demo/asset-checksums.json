@@ -1,0 +1,62 @@
+{
+  "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF.glb": {
+    "bytes": 3981888,
+    "sha256": "7b715c7c3533f5677fe42303f10a89c083caf9ae7c37c3f8e3b2e47b173b6322"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CBASE=TS30W.glb": {
+    "bytes": 75340,
+    "sha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CARMRESTS=R53WBPU.glb": {
+    "bytes": 172560,
+    "sha256": "600167cabb39f679709709ee95de1a68046b21719443d9146813f9e7c352082b"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CARMRESTS=R54WWBPU.glb": {
+    "bytes": 1094316,
+    "sha256": "45111a0afe7d9d7355262a9b25826fab0a038c6e950dd41dbc460b4841f25fac"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-HRUA2DPLASTICSIDPROF-CARMRESTS=R55POLWBPU.glb": {
+    "bytes": 1524744,
+    "sha256": "3b276fca3dc994c100dd1f7f5bbcdba223681774f421554e85268e4e32c5be65"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-NONE.glb": {
+    "bytes": 3392364,
+    "sha256": "df15fe4cc9d97c31724d0e2c3d16def91ad8b78678a6dc6a6715b138735ba19a"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CBASE=TS30W.glb": {
+    "bytes": 75340,
+    "sha256": "4640c9e12d42d9ef2c44f0a97a04d3f54f3c528ce1d9c54462c135adb1ed2e85"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CARMRESTS=R53WBPU.glb": {
+    "bytes": 172560,
+    "sha256": "600167cabb39f679709709ee95de1a68046b21719443d9146813f9e7c352082b"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CARMRESTS=R54WWBPU.glb": {
+    "bytes": 1094316,
+    "sha256": "45111a0afe7d9d7355262a9b25826fab0a038c6e950dd41dbc460b4841f25fac"
+  },
+  "/models/configurator/expanded/xilium-WHITEEDITION-NONE-CARMRESTS=R55POLWBPU.glb": {
+    "bytes": 1524744,
+    "sha256": "3b276fca3dc994c100dd1f7f5bbcdba223681774f421554e85268e4e32c5be65"
+  },
+  "/media/configurator/materials/vl0034-e83c40901b06.jpg": {
+    "bytes": 240994,
+    "sha256": "d24c36b2c24aa5b19603a25272f2333d070b4749e8d824ab62221debcacec765"
+  },
+  "/media/configurator/catalog-materials/de607ecf0da7ccd6c21178ed.jpg": {
+    "bytes": 204771,
+    "sha256": "74fac9f6d68bfd2eac1eb68190b4d73ae221bbe2cb7e497a04852b359f74a8e3"
+  },
+  "/media/configurator/catalog-materials/395f3afd761bfad1eceec361.jpg": {
+    "bytes": 357963,
+    "sha256": "3ab21468dec6b70a7155d6f3d73074df4569c0741c334e8ea809534263e9118d"
+  },
+  "/media/configurator/materials/vl3067-0003fd265429.jpg": {
+    "bytes": 246914,
+    "sha256": "e22a2cdf03976ee50b7a871882eca707ef2a3b388fa734de78745ecf1d8fa396"
+  },
+  "/media/configurator/materials/vl4041-81abf02c17bc.jpg": {
+    "bytes": 268314,
+    "sha256": "eb977a06920dc0486437e20a7e43314f74507232735750189d1dff265fe90f6c"
+  }
+}

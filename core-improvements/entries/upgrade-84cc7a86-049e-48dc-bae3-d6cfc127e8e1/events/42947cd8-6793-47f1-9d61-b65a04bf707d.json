@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Offline route candidate only; 2846 historical restores analyzed using prior measured edges, 8360 source-state full SHA/identity checks; live finite pilot still required before runtime adoption.",
+  "checks": [
+    {
+      "command": "python -B -m unittest test_proven_routes test_capture_structure test_structure_policy test_queue_policy test_immutable_payloads",
+      "result": "PASS",
+      "evidence": "29 tests; tools/ergonomic-chairs/test_proven_routes.py covers directed measured paths, forbidden/unproven transitions, ambiguous outcomes, implicit finish target identity and original anchor."
+    }
+  ],
+  "eventId": "42947cd8-6793-47f1-9d61-b65a04bf707d",
+  "sequence": 2,
+  "at": "2026-10-19T11:55:33.665Z"
+}

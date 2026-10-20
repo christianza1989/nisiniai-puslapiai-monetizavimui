@@ -1,0 +1,20 @@
+{
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "summary": "The ten-growing-portion chair deferral counter is process-local and resets after every supervisor restart. Persist continuation visits and migrate the current non-deferred run from saved chunk counts, preserving the original deferral and completion policy.",
+  "siteId": "ergonomic-lt",
+  "paths": [
+    "tools/ergonomic-chairs/run_chairs.py",
+    "tools/ergonomic-chairs/queue_policy.py",
+    "tools/ergonomic-chairs/test_queue_restart.py"
+  ],
+  "rollback": "Scoped source revert and preserved immutable runtime-v6. Before any legacy fallback, preserve the new queue ledger and reconcile its counter with actual saved chunk/defer history; older frozen supervisors do not maintain this new field.",
+  "evidence": [
+    "tools/ergonomic-chairs/test_queue_restart.py",
+    "docs/ERGONOMIC_QUEUE_RESTART_2026-10-19.md"
+  ],
+  "category": "code",
+  "id": "upgrade-3a4f919f-ac19-4ced-8ccf-c9194480d74a",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "373f3144b1bd13b415a24b4a13d3fc8227d12ed7",
+  "createdAt": "2026-10-19T18:45:31.781Z"
+}

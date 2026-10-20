@@ -1,0 +1,7 @@
+{
+  "status": "finding",
+  "note": "Flesco full PASS compiler runtime8213466 exceeds existing8000000-byte loader. No limit increase or geometry change.",
+  "eventId": "7af49f09-8d7c-49ab-b387-e94891de6f6f",
+  "sequence": 1,
+  "at": "2026-10-20T05:13:46.936833+00:00"
+}

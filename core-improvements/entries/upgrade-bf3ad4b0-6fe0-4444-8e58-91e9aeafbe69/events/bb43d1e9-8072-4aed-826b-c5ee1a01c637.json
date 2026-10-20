@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "76 real chair unit tests passed. Exact immutable offline-v5 finite worker unchanged; real full AXO pilot is running separately and continuous adoption remains PENDING. Actual second watcher lock rejection passed. No total speedup or model acceptance inferred.",
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s tools/ergonomic-chairs -p test_*.py",
+      "result": "PASS",
+      "evidence": "tools/ergonomic-chairs/test_offline_watch_policy.py"
+    }
+  ],
+  "eventId": "bb43d1e9-8072-4aed-826b-c5ee1a01c637",
+  "sequence": 2,
+  "at": "2026-10-19T19:39:02.904Z"
+}

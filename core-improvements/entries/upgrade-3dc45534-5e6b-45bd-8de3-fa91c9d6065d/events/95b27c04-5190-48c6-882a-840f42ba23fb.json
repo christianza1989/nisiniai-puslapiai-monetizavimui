@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Review of unchanged historical instruction metadata only; not a retrospective claim of old UI/runtime QA and not a full acceptance.",
+  "checks": [
+    {
+      "command": "git diff f233270c366bc547d465fc1026cec2d1807a9770 HEAD -- sites/ergonomic-lt/web/AGENTS.md; git rev-parse HEAD:sites/ergonomic-lt/web/AGENTS.md",
+      "result": "PASS",
+      "evidence": "docs/ERGONOMIC_CHAIR_INSTRUCTION_PROVENANCE_2026-10-19.json records the unchanged original Git blob, paired Next markers, source-not-modified and current human-instruction precedence review."
+    }
+  ],
+  "eventId": "95b27c04-5190-48c6-882a-840f42ba23fb",
+  "sequence": 2,
+  "at": "2026-10-19T12:18:39.202Z"
+}

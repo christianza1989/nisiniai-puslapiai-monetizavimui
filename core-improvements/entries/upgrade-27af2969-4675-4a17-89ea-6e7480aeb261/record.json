@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Studio lists guides, category descriptions and products together and exposes category descriptions as FAQ. Separate semantic groups with counts and reloadable filters while preserving editorial controls.",
+  "category": "code",
+  "evidence": [
+    "docs/STUDIO_CONTENT_GROUPS_VERIFICATION.md"
+  ],
+  "paths": [
+    "content-studio/public/app.js",
+    "content-studio/public/style.css",
+    "content-studio/public/page-groups.js",
+    "content-studio/test/page-groups.test.mjs",
+    "content-studio/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/233",
+  "rollback": "Scoped revert of the grouping change; local static file backups restore the prior UI without touching active site data or restarting the server.",
+  "id": "upgrade-27af2969-4675-4a17-89ea-6e7480aeb261",
+  "branch": "codex/studio-revision-comparison-20261020",
+  "baseSha": "3f223ed0e028c631a379d68c221537be406b2f52",
+  "createdAt": "2026-10-20T09:32:12.183Z"
+}

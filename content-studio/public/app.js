@@ -1,3 +1,36 @@
+// Display groups do not change the stored page type or editorial state.
+const CONTENT_GROUPS = [
+  { id: 'guide', label: 'Gidai' },
+  { id: 'category', label: 'Kategorijų aprašai' },
+  { id: 'product', label: 'Produktų aprašai' },
+  { id: 'other', label: 'Kiti puslapiai' },
+];
+function contentGroup(page) {
+  if (page.type === 'product' || page.type === 'guide') return page.type;
+  return /^\/?kategorijos\//.test(page.slug || '') ? 'category' : 'other';
+}
+function normalizePageFilters(revision, kind) {
+  return {
+    revisionFilter: ['all', 'changed', 'reviewed'].includes(revision) ? revision : 'all',
+    contentFilter: CONTENT_GROUPS.some(group => group.id === kind) ? kind : 'all',
+  };
+}
+function groupedPages(pages, filters) {
+  const selected = pages.filter(page => filters.revisionFilter === 'changed' ? page.revisionState?.changed : filters.revisionFilter === 'reviewed' ? page.revisionState?.reviewed : true);
+  return CONTENT_GROUPS.map(group => ({ ...group, pages: selected.filter(page => contentGroup(page) === group.id).sort((a, b) => Date.parse(a.publishAt) - Date.parse(b.publishAt)) }));
+}
+function pageFilterUrl(href, siteId, filters) {
+  const url = new URL(href);
+  const normalized = normalizePageFilters(filters.revisionFilter, filters.contentFilter);
+  url.searchParams.set('site', siteId);
+  url.searchParams.set('view', 'pages');
+  url.searchParams.set('filter', normalized.revisionFilter);
+  if (normalized.contentFilter === 'all') url.searchParams.delete('kind');
+  else url.searchParams.set('kind', normalized.contentFilter);
+  url.hash = siteId;
+  return url;
+}
+
 const app = document.querySelector('#app');
 const siteList = document.querySelector('#site-list');
 const toastNode = document.querySelector('#toast');
@@ -6,7 +39,7 @@ const calendarClock = new Intl.DateTimeFormat('en-GB', { timeZone: SITE_TIMEZONE
 function calendarParts(value) { return Object.fromEntries(calendarClock.formatToParts(new Date(value)).filter(part => part.type !== 'literal').map(part => [part.type, part.value])); }
 const calendarDate = value => { const part = calendarParts(value); return `${part.year}-${part.month}-${part.day}`; };
 const calendarMonthNow = () => calendarDate(new Date()).slice(0, 7);
-const state = { sites: [], site: null, tab: 'overview', pageId: null, jobs: [], meta: null, search: '', revisionFilter: 'all', comparison: null, calendar: [], network: { sites: [], catalog: [], links: [] }, calendarMonth: calendarMonthNow(), calendarSiteId: 'all' };
+const state = { sites: [], site: null, tab: 'overview', pageId: null, jobs: [], meta: null, search: '', revisionFilter: 'all', contentFilter: 'all', comparison: null, calendar: [], network: { sites: [], catalog: [], links: [] }, calendarMonth: calendarMonthNow(), calendarSiteId: 'all' };
 
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const api = async (url, options = {}) => {
@@ -139,10 +172,13 @@ function comparisonView() {
   return '<section class="revision-comparison"><div class="revision-toolbar"><div><h2>Senas ir naujas tekstas</h2><p>/' + esc(c.slug) + '</p></div><div class="split-actions"><button type="button" class="btn" data-action="edit-page" data-id="' + esc(c.pageId) + '">Redaguoti juodraštį</button><a class="btn btn-primary" href="/preview/' + esc(state.site.id) + '/' + esc(c.pageId) + '">Atidaryti juodraštį</a><button type="button" class="btn" data-action="pages">Grįžti į puslapius</button></div></div><p class="hint">Sena kopija skirta tik palyginti. Ji negrąžinama į redaguojamą turinį. Patikra nėra Roko patvirtinimas ar publikavimas.</p><div class="revision-summary">' + revisionBadges({ body: c.after.body, revisionState: c }) + (c.checkedAt ? '<span>Patikrinta: ' + esc(fmt(c.checkedAt)) + '</span>' : '') + '</div><div class="revision-columns">' + column(c.before, 'Senas tekstas', 'revision-before') + column(c.after, 'Dabartinis juodraštis', 'revision-after') + '</div><p class="revision-provenance">Sena versija: ' + esc(c.beforeLabel || 'kopijos nėra') + (c.capturedAt ? ' · ' + esc(fmt(c.capturedAt)) : '') + '</p></section>';
 }
 function pagesView(site) {
-  const pages = [...site.pages].filter(page => state.revisionFilter === 'changed' ? page.revisionState?.changed : state.revisionFilter === 'reviewed' ? page.revisionState?.reviewed : true).sort((a, b) => Date.parse(a.publishAt) - Date.parse(b.publishAt));
-  const changedCount = site.pages.filter(page => page.revisionState?.changed).length;
-  const reviewedCount = site.pages.filter(page => page.revisionState?.reviewed).length;
-  return `<section class="card"><div class="card-head"><h2>Puslapių planas</h2><button class="btn btn-small btn-primary" data-action="add-page">＋ Naujas puslapis</button></div><div class="card-body"><div class="hint">Publikavimo laikas veikia tik jau įdiegtam patvirtintam paketui. Prieš tvirtinimą patikrinkite faktus, nuorodas ir šaltinius. Autopilotas suplanuoja temas ir parengia juodraščius. Faktų bei šaltinių išimtys tikrinamos prieš patvirtinimą; viešai jis pats nepublikuoja.</div><div class="split-actions" style="margin-bottom:18px"><button class="btn btn-primary" data-action="autopilot" ${site.schemaVersion === 2 ? 'disabled title="V2 generavimo sutartis dar nepritaikyta"' : ''}>✦ Automatiškai suplanuoti ir parengti</button><button class="btn" data-action="plan" ${site.schemaVersion === 2 ? 'disabled title="V2 generavimo sutartis dar nepritaikyta"' : ''}>Tik planuoti 6 mėn.</button><button class="btn" data-action="generate-drafts" ${site.schemaVersion === 2 ? 'disabled title="V2 generavimo sutartis dar nepritaikyta"' : ''}>Tik generuoti juodraščius</button><button class="btn" data-action="tab" data-tab="calendar">Kalendorius</button><button class="btn" data-action="jobs">Darbai</button></div><div class="revision-toolbar"><label class="field"><span>Rodyti tekstus</span><select id="revision-filter"><option value="all" ${state.revisionFilter === 'all' ? 'selected' : ''}>Visi puslapiai (${site.pages.length})</option><option value="changed" ${state.revisionFilter === 'changed' ? 'selected' : ''}>Pakeisti tekstai (${changedCount})</option><option value="reviewed" ${state.revisionFilter === 'reviewed' ? 'selected' : ''}>Patikrinti (${reviewedCount})</option></select></label><p>Rodoma ${pages.length}. „Patikrintas“ reiškia dabartinės versijos patikrą, ne leidimą publikuoti.</p></div><div class="page-list">${pages.length ? pages.map(page => `<div class="page-row revision-page-row"><span class="page-symbol">${icon(page.type)}</span><span class="page-name"><strong>${esc(page.title || 'Be pavadinimo')}</strong><small>/${esc(page.slug)} · ${label(page.type)} · ${fmt(page.publishAt)} (Lietuvos laiku)${page.cluster ? ` · ${esc(page.cluster)}` : ''}${page.seasonalHook ? ` · ${esc(page.seasonalHook)}` : ''}</small></span><span class="row-actions">${revisionBadges(page)}${pill(page)}${page.body?.length ? `<button type="button" class="btn btn-small" data-action="compare-page" data-id="${esc(page.id)}">Senas / naujas</button>` : ''}<button class="btn btn-small" data-action="edit-page" data-id="${esc(page.id)}">Redaguoti</button>${page.body?.length ? `<a class="btn btn-small" href="/preview/${esc(site.id)}/${esc(page.id)}">Atidaryti juodraštį</a>` : ''}</span></div>`).join('') : '<div class="empty"><strong>Pagal šį filtrą tekstų nėra.</strong>Pasirinkite kitą teksto būseną arba pridėkite puslapį.</div>'}</div></div></section>`;
+  const groups = groupedPages(site.pages, state);
+  const visibleGroups = groups.filter(group => state.contentFilter === 'all' || state.contentFilter === group.id);
+  const count = visibleGroups.reduce((sum, group) => sum + group.pages.length, 0);
+  const total = groups.reduce((sum, group) => sum + group.pages.length, 0);
+  const groupButton = (id, text, count) => `<button type="button" class="btn content-group-filter" data-action="content-group" data-kind="${id}" aria-pressed="${state.contentFilter === id}"><span>${text}</span> <span class="content-group-count">${count}</span></button>`;
+  const groupFilters = '<div class="content-group-filters" role="group" aria-label="Tekstų grupės">' + groupButton('all', 'Visos grupės', total) + groups.map(group => groupButton(group.id, group.label, group.pages.length)).join('') + '</div>';
+  return `<section class="card"><div class="card-head"><h2>Puslapių planas</h2><button class="btn btn-small btn-primary" data-action="add-page">＋ Naujas puslapis</button></div><div class="card-body"><div class="hint">Publikavimo laikas veikia tik jau įdiegtam patvirtintam paketui. Prieš tvirtinimą patikrinkite faktus, nuorodas ir šaltinius. Autopilotas suplanuoja temas ir parengia juodraščius. Faktų bei šaltinių išimtys tikrinamos prieš patvirtinimą; viešai jis pats nepublikuoja.</div><div class="split-actions" style="margin-bottom:18px"><button class="btn btn-primary" data-action="autopilot" ${site.schemaVersion === 2 ? 'disabled title="V2 generavimo sutartis dar nepritaikyta"' : ''}>✦ Automatiškai suplanuoti ir parengti</button><button class="btn" data-action="plan" ${site.schemaVersion === 2 ? 'disabled title="V2 generavimo sutartis dar nepritaikyta"' : ''}>Tik planuoti 6 mėn.</button><button class="btn" data-action="generate-drafts" ${site.schemaVersion === 2 ? 'disabled title="V2 generavimo sutartis dar nepritaikyta"' : ''}>Tik generuoti juodraščius</button><button class="btn" data-action="tab" data-tab="calendar">Kalendorius</button><button class="btn" data-action="jobs">Darbai</button></div><div class="revision-toolbar"><label class="field"><span>Rodyti tekstus</span><select id="revision-filter"><option value="all" ${state.revisionFilter === 'all' ? 'selected' : ''}>Visi puslapiai, įskaitant planus</option><option value="changed" ${state.revisionFilter === 'changed' ? 'selected' : ''}>Pakeisti tekstai</option><option value="reviewed" ${state.revisionFilter === 'reviewed' ? 'selected' : ''}>Patikrinti tekstai</option></select></label><p>„Patikrintas“ reiškia dabartinės versijos patikrą, ne leidimą publikuoti.</p></div>${groupFilters}<p class="content-group-summary" role="status">Rodoma ${count}. Grupių skaičiai atitinka pasirinktą teksto būseną.</p>${count ? visibleGroups.filter(group => group.pages.length).map(group => `<section class="content-group-section" aria-labelledby="group-${group.id}"><h3 id="group-${group.id}">${group.label} <span>(${group.pages.length})</span></h3><div class="page-list">${group.pages.map(page => `<div class="page-row revision-page-row"><span class="page-symbol">${icon(page.type)}</span><span class="page-name"><strong>${esc(page.title || 'Be pavadinimo')}</strong><small>/${esc(page.slug)} · ${contentGroup(page) === 'category' ? 'Kategorijos aprašas' : label(page.type)} · ${fmt(page.publishAt)} (Lietuvos laiku)${page.cluster ? ` · ${esc(page.cluster)}` : ''}${page.seasonalHook ? ` · ${esc(page.seasonalHook)}` : ''}</small></span><span class="row-actions">${revisionBadges(page)}${pill(page)}${page.body?.length ? `<button type="button" class="btn btn-small" data-action="compare-page" data-id="${esc(page.id)}">Senas / naujas</button>` : ''}<button class="btn btn-small" data-action="edit-page" data-id="${esc(page.id)}">Redaguoti</button>${page.body?.length ? `<a class="btn btn-small" href="/preview/${esc(site.id)}/${esc(page.id)}">Atidaryti juodraštį</a>` : ''}</span></div>`).join('')}</div></section>`).join('') : '<div class="empty"><strong>Šioje grupėje pagal pasirinktą būseną puslapių nėra.</strong>Pasirinkite kitą grupę arba teksto būseną.</div>'}</div></section>`;
 }
 function externalLinkRow(link = {}) {
   return `<div class="external-link-row" data-external-link-row><div class="form-grid"><label class="field"><span>Šaltinio URL</span><input type="url" data-external-url value="${esc(link.url || '')}" placeholder="https://..."></label><label class="field"><span>Nuorodos tekstas</span><input data-external-label value="${esc(link.label || '')}" placeholder="Šaltinio pavadinimas"></label></div><label class="field"><span>Ką šaltinis pagrindžia</span><input data-external-reason value="${esc(link.reason || '')}" placeholder="Konkretus teiginys arba nauda skaitytojui"></label><div class="external-link-actions"><label><input type="checkbox" data-external-verified ${link.verified ? 'checked' : ''}> Perskaičiau ir patikrinau</label><button type="button" class="btn btn-small" data-action="remove-external-link">Šalinti</button></div></div>`;
@@ -226,8 +262,11 @@ async function openSite(id) { state.site = await api(`/api/sites/${encodeURIComp
 document.querySelector('#site-search').addEventListener('input', event => { state.search = event.target.value.toLowerCase(); sidebar(); });
 document.querySelector('#add-site-button').addEventListener('click', () => { state.site = null; state.tab = 'new-site'; render(); });
 document.querySelector('#refresh-button').addEventListener('click', () => refresh().then(() => notice('Duomenys atnaujinti.')).catch(error => notice(error.message, true)));
+function savePageFilters() {
+  history.replaceState(null, '', pageFilterUrl(location.href, state.site.id, state));
+}
 document.addEventListener('change', event => {
-  if (event.target.id === 'revision-filter') { state.revisionFilter = event.target.value; render(); }
+  if (event.target.id === 'revision-filter') { state.revisionFilter = event.target.value; savePageFilters(); render(); document.querySelector('#revision-filter')?.focus(); }
   if (event.target.id === 'calendar-site-filter') { state.calendarSiteId = event.target.value; render(); }
 });
 
@@ -248,7 +287,8 @@ document.addEventListener('click', async event => {
     }
     else if (action === 'calendar-open') { await openSite(button.dataset.site); state.pageId = id; state.tab = 'page'; render(); }
     else if (action === 'new-site') { state.site = null; state.tab = 'new-site'; render(); }
-    else if (action === 'tab') { state.tab = button.dataset.tab; state.pageId = null; render(); }
+    else if (action === 'content-group') { state.contentFilter = normalizePageFilters(state.revisionFilter, button.dataset.kind).contentFilter; savePageFilters(); render(); document.querySelector('[data-action="content-group"][aria-pressed="true"]')?.focus(); }
+    else if (action === 'tab') { state.tab = button.dataset.tab; state.pageId = null; if (state.tab === 'pages') savePageFilters(); render(); }
     else if (action === 'compare-page') { state.comparison = await api(pageUrl(id, '/revisions')); state.pageId = id; state.tab = 'comparison'; render(); window.scrollTo(0, 0); }
     else if (action === 'pages') { state.tab = 'pages'; state.pageId = null; render(); }
     else if (action === 'jobs' || action === 'reload-jobs') { state.jobs = await api('/api/jobs'); state.tab = 'jobs'; render(); }
@@ -321,7 +361,7 @@ setInterval(async () => {
   catch { /* Keep the last known state and allow manual refresh. */ }
 }, 4000);
 
-try { await refresh(false); const query = new URLSearchParams(location.search), id = decodeURIComponent(location.hash.slice(1)) || query.get('site'); if (id && state.sites.some(site => site.id === id)) { await openSite(id); if (query.get('view') === 'pages') { state.tab = 'pages'; state.revisionFilter = ['all','changed','reviewed'].includes(query.get('filter')) ? query.get('filter') : 'all'; render(); } } }
+try { await refresh(false); const query = new URLSearchParams(location.search), id = decodeURIComponent(location.hash.slice(1)) || query.get('site'); if (id && state.sites.some(site => site.id === id)) { await openSite(id); if (query.get('view') === 'pages') { state.tab = 'pages'; Object.assign(state, normalizePageFilters(query.get('filter'), query.get('kind'))); render(); } } }
 catch (error) { app.innerHTML = `<div class="empty"><strong>Studijos paleisti nepavyko.</strong>${esc(error.message)}</div>`; }
 
 

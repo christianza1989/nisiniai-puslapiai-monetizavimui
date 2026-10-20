@@ -15,6 +15,8 @@ Atidarykite `http://127.0.0.1:4317`. Serveris klausosi tik `127.0.0.1`; duomenys
 
 ## Redaktoriaus eiga
 
+Puslapių sąrašas suskirstytas į „Gidai“, „Kategorijų aprašai“, „Produktų aprašai“ ir „Kiti puslapiai“. Grupių mygtukai filtruoja sąrašą; skaičiai atitinka pasirinktą teksto būseną. „Visi puslapiai, įskaitant planus“ rodo ir dar neparašytus įrašus. Grupė ir būsena išsaugomos nuorodoje (`kind` ir `filter`), todėl pasirinkimas išlieka perkrovus puslapį. Kategorijos atpažįstamos pagal `kategorijos/` kelią; tikri DUK ir informaciniai puslapiai lieka kitų puslapių grupėje. Saugojamas tipas, turinys ir tvirtinimo taisyklės nesikeičia.
+
 Bendra agento instrukcija yra [niche-content-planner](../SKILLS/niche-content-planner/SKILL.md). Ji apima nišos tyrimą, sezonų pritaikymą, savitus URL, klasterius, nuorodas, naudingą tekstą ir faktų patikrą. `src/editorial-skill.mjs` kiekvieno darbo pradžioje nuskaito skill ir reikalingus jo priedus, tiesiogiai įtraukia juos į Codex CLI užduotį ir į `jobs.json` įrašo instrukcijų SHA-256. Viena partija naudoja tą pačią instrukcijų versiją; pakeitimai taikomi kitam darbui. Trūkstant failo nėra tylaus perėjimo prie bendro prompto. Alternatyvų skill katalogą galima nurodyti `STUDIO_EDITORIAL_SKILL_DIR` (kataloge turi būti tie patys failai).
 
 Nuo 2026-10-01 abu CLI režimai taip pat tiesiogiai gauna [PROJECT_CONTRACT](../SKILLS/PROJECT_CONTRACT.md), jo tekstas įskaičiuojamas į tą patį SHA-256. Alternatyvus skill katalogas turi turėti `../PROJECT_CONTRACT.md` su realia projekto sutartimi; jos trūkstant darbas stabdomas iki CLI, nepublikuoja ir nekeičia svetainės turinio. Importuoti SOURCE_SKILL/SOURCE_PROMPT ir visi 52 helpers į generavimo promptą automatiškai nekraunami. Esamo darbo snapshot nekeičiamas.

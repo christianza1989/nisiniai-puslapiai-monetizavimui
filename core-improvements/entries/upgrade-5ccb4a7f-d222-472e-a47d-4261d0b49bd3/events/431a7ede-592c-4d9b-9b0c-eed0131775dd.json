@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual packed5354906-byte Flesco all768states/8832transitions original/transport selections, supplier codes, tokens and exact metadata reconstruction PASS; unchanged runtime checker PASS;7 staging/packing and14 candidate/workflow tests PASS; actual loader1/launchLoads0. Prior181 entries unchanged.",
+  "eventId": "431a7ede-592c-4d9b-9b0c-eed0131775dd",
+  "sequence": 2,
+  "at": "2026-10-20T05:13:46.936833+00:00",
+  "checks": [
+    {
+      "command": "node --test scripts/pack-chair-runtime.test.mjs scripts/stage-chair-technical-draft-scope.test.mjs",
+      "result": "PASS",
+      "evidence": "7 tests PASS; docs/ERGONOMIC_RUNTIME_TRANSPORT_2026-10-20.md"
+    },
+    {
+      "command": "node --import tsx scripts/verify-chair-runtime-transport.mjs; unchanged check-chair-structure-runtime.ts; candidate/workflow tests",
+      "result": "PASS",
+      "evidence": "Actual768states8832transitions and14 regressions; docs/ERGONOMIC_RUNTIME_TRANSPORT_2026-10-20.md"
+    }
+  ]
+}

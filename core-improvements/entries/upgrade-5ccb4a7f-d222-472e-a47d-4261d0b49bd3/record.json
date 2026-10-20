@@ -1,0 +1,24 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Reconstructible redundant runtime assignment packing preserves complete source semantics within the unchanged loader limit",
+  "category": "workflow",
+  "evidence": [
+    "sites/ergonomic-lt/web/scripts/pack-chair-runtime.test.mjs",
+    "docs/ERGONOMIC_RUNTIME_TRANSPORT_2026-10-20.md"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/scripts/pack-chair-runtime.mjs",
+    "sites/ergonomic-lt/web/scripts/pack-chair-runtime.test.mjs",
+    "sites/ergonomic-lt/web/scripts/verify-chair-runtime-transport.mjs",
+    "sites/ergonomic-lt/web/scripts/stage-chair-technical-draft.mjs",
+    "sites/ergonomic-lt/web/content/chair-structure-candidates.json",
+    "docs/ERGONOMIC_RUNTIME_TRANSPORT_2026-10-20.md",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/187",
+  "rollback": "Revert staging-only transport source/data; keep original prepared runtime and all raw/geometry evidence. Never replay Native pilots or reduce geometry.",
+  "id": "upgrade-5ccb4a7f-d222-472e-a47d-4261d0b49bd3",
+  "branch": "codex/ergonomic-chairs-structure-20261017",
+  "baseSha": "bd14436a07a7d7a6eb9b3ac900bfee13ca7bed92",
+  "createdAt": "2026-10-20T05:13:46.936833+00:00"
+}

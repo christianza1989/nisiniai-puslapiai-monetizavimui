@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
+import {packChairRuntime,restorePackedAssignments} from './pack-chair-runtime.mjs';
 const arg=n=>process.argv.find(v=>v.startsWith('--'+n+'='))?.slice(n.length+3);
 const root=path.resolve(arg('root')),stage=path.resolve(arg('stage'));
 assert(root.startsWith(path.resolve('D:/Core/output')+path.sep));
@@ -48,7 +49,7 @@ for(const row of status.rows){
   assert(/^(?:runtime\.json|GEOMETRY-PBR-PROOF\.json|RUNTIME-PROOF\.json|assets\/K[A-Z0-9]+-[a-f0-9]{20}\.glb)$/.test(name));
   assert.equal(hash(await fs.readFile(path.join(prepared,name))),sha,'Changed acceptance artifact '+name);
  }
- const bytes=await fs.readFile(path.join(prepared,'runtime.json')),runtime=JSON.parse(bytes),geometry=await read(path.join(prepared,'GEOMETRY-PBR-PROOF.json')),proof=await read(path.join(prepared,'RUNTIME-PROOF.json'));
+ let bytes=await fs.readFile(path.join(prepared,'runtime.json'));const runtime=JSON.parse(bytes),geometry=await read(path.join(prepared,'GEOMETRY-PBR-PROOF.json')),proof=await read(path.join(prepared,'RUNTIME-PROOF.json'));let runtimeTransport;
  assert(geometry.result==='PASS'&&proof.result==='PASS'&&proof.states===Object.keys(cp.states).length&&proof.transitions===cp.edges.length);
  assert(runtime.family.productId===model.productId&&runtime.family.sample===model.configurationId&&runtime.family.baseArticle===job.code&&runtime.family.collectionMode==='structure-only');
  const oversized=[];
@@ -57,13 +58,19 @@ for(const row of status.rows){
   assert.equal(artifacts['assets/'+file],anchor.geometry.assetSha256);
   if((await fs.stat(path.join(prepared,'assets',file))).size>25*1024*1024)oversized.push(file);
  }
+ if(!oversized.length&&bytes.length>8_000_000){
+  const originalSha256=hash(bytes),originalBytes=bytes.length,packed=packChairRuntime(runtime);
+  assert.deepEqual(restorePackedAssignments(packed.runtime),runtime,'Lossless assignment reconstruction required');
+  bytes=Buffer.from(JSON.stringify(packed.runtime));
+  runtimeTransport={kind:'unchanged-non-finish-assignments-v1',originalSha256,originalBytes,packedSha256:hash(bytes),packedBytes:bytes.length,removed:packed.removedUnchangedNonFinishAssignments,geometryUnchanged:true,compilerUnchanged:true,limitBytes:8_000_000,semanticVerificationRequired:true};
+ }
  if(oversized.length||bytes.length>8_000_000){report.deferred.push({key,code:job.code,reason:oversized.length?'CURRENT_STATIC_TRANSPORT_FILE_LIMIT':'RUNTIME_SIZE_LIMIT',files:[...new Set(oversized)],sourcePreserved:true});continue;}
  const runtimeSha=hash(bytes),runtimeFile=job.code+'-'+runtimeSha.slice(0,20)+'.json';
- await seal(path.join(prepared,'runtime.json'),path.join(assets,runtimeFile),runtimeSha,true);
+ if(runtimeTransport)await fs.writeFile(path.join(assets,runtimeFile),bytes,{flag:'wx'});else await seal(path.join(prepared,'runtime.json'),path.join(assets,runtimeFile),runtimeSha,true);
  for(const anchor of runtime.family.anchors){const file=path.basename(anchor.geometry.asset);await seal(path.join(prepared,'assets',file),path.join(assets,file),anchor.geometry.assetSha256);}
- const sourceGeometryRuntime=hash(JSON.stringify({job:row.job,checkpointSha256:row.checkpointSha256,tools:row.tools,artifacts:row.artifacts,wire:row.wire}));
+ const sourceGeometryRuntime=hash(JSON.stringify({job:row.job,checkpointSha256:row.checkpointSha256,tools:row.tools,artifacts:row.artifacts,wire:row.wire,...(runtimeTransport?{runtimeTransport}: {})}));
  manifest.models[key]={key,productId:model.productId,sample:model.configurationId,code:job.code,familyId:runtime.family.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:runtime.family.anchors.some(a=>Object.keys(a.choices).length>0),runtime:{asset:'/models/configurator/structure/'+runtimeFile,sha256:runtimeSha},proofs:{sourceGeometryRuntime}};
- report.models.push({key,job:row.job,code:job.code,path:model.path,states:proof.states,transitions:proof.transitions,proofSha256:sourceGeometryRuntime});
+ report.models.push({key,job:row.job,code:job.code,path:model.path,states:proof.states,transitions:proof.transitions,proofSha256:sourceGeometryRuntime,...(runtimeTransport?{runtimeTransport}: {})});
 }
 assert(report.models.length>0);
 await fs.writeFile(path.join(stage,'chair-structure-candidates.json'),JSON.stringify(manifest)+'\n');

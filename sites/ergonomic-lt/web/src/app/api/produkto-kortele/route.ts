@@ -8,7 +8,7 @@ import {createExpandedEngine,choiceLabel as baseChoiceLabel} from '@/lib/expande
 import {loadCatalogRuntime} from '@/lib/catalog-runtime-loader';
 import {modelProduct} from '@/lib/product-models';
 import {configurableArticle,articleChoiceLabel} from '@/lib/configuration-article';
-import {armrestChoiceLabel,armrestFieldLabel,safeArmrestFallback} from '@/presentation/armrest-labels';
+import {armrestChoiceLabel,armrestFieldLabel,safeArmrestFallback,presentArmrestConfiguration} from '@/presentation/armrest-labels';
 export const runtime='nodejs';
 export const dynamic='force-dynamic';
 export async function GET(request:Request){
@@ -22,7 +22,7 @@ export async function GET(request:Request){
       if(requested&&!configurableArticle(configured))throw Error('Model has no reviewed conditional article');
       const scoped=await loadCatalogRuntime(configured,query.get('konfig')),engine=createExpandedEngine(scoped),state=engine.parseStateToken(configured,query.get('konfig')!);
       const selection=engine.expandedSelection(configured,state),article=engine.selectionArticle(configured,state);
-      const bytes=await productCardPdf(configured,selection.configuration,selection.variant,true,article,(k,v)=>armrestChoiceLabel(selection.configuration.code,k,v)||articleChoiceLabel(configured,k,v)||safeArmrestFallback(k,v,baseChoiceLabel(k,v,scoped?.palettes,state.family)),{palettes:{...scoped?.palettes,...(armrestFieldLabel(selection.configuration.code)?{_fieldLabels:{...scoped?.palettes._fieldLabels,CARMRESTS:{text:armrestFieldLabel(selection.configuration.code)!}}}:{})},family:state.family});
+      const bytes=await productCardPdf(configured,presentArmrestConfiguration(selection.configuration,state.values,scoped?.palettes._fieldLabels?.CARMRESTS?.text),selection.variant,true,article,(k,v)=>armrestChoiceLabel(selection.configuration.code,k,v)||articleChoiceLabel(configured,k,v)||safeArmrestFallback(k,v,baseChoiceLabel(k,v,scoped?.palettes,state.family)),{palettes:{...scoped?.palettes,...(armrestFieldLabel(selection.configuration.code)?{_fieldLabels:{...scoped?.palettes._fieldLabels,CARMRESTS:{text:armrestFieldLabel(selection.configuration.code)!}}}:{})},family:state.family});
       return new Response(new Uint8Array(bytes),{headers:{'Content-Type':'application/pdf','Content-Disposition':`attachment; filename="ergonomic-${product.slug}-individuali.pdf"`,'Cache-Control':'private, no-store','X-Robots-Tag':'noindex, nofollow'}});
     }catch{return Response.json({error:copyText("ui.bf211cdf6122f80f3ec4","Komplektacija negalioja. Pasirinkite ją iš naujo.")},{status:400});}
   }

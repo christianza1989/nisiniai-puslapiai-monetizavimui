@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "choices": {
+    "CBASE=TS25": {
+      "label": "TS25 · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 710 mm, 5-star, black polyamide (TS25-BL)"
+      ]
+    },
+    "CBASE=TS25W": {
+      "label": "TS25W · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 710 mm, 5-star, white polyamide (TS25-W)"
+      ]
+    },
+    "CBASE=ST44POL": {
+      "label": "ST44POL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, polished aluminium (ST44-POL)"
+      ]
+    },
+    "CBASE=ST44WA": {
+      "label": "ST44WA · aliuminis",
+      "sourceFact": "aluminium",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, aluminium coated WA (ST44-WA)"
+      ]
+    },
+    "CCASTORS=ESH": {
+      "label": "ESH · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "ESH: diam. 65 mm, for soft floors, self-braking, black"
+      ]
+    },
+    "CCASTORS=ESHH": {
+      "label": "ESHH · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "ESHH: diam. 65 mm, for hard floors, self-braking, black"
+      ]
+    },
+    "CCASTORS=ESHHR": {
+      "label": "ESHHR · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "ESHHR: diam. 65 mm, for hard floors, self-braking, ring"
+      ]
+    },
+    "CCASTORS=ESHR": {
+      "label": "ESHR · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "ESHR: diam. 65 mm, for soft floors, self-braking, ring"
+      ]
+    },
+    "CCASTORS=CA": {
+      "label": "CA · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "For soft floors"
+      ]
+    },
+    "CCASTORS=CAH": {
+      "label": "CAH · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "For hard floors"
+      ]
+    },
+    "CCASTORS=RMH": {
+      "label": "RMH · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "RMH: diam. 37 mm, mini-rolls, for soft floors, self-braking"
+      ]
+    },
+    "CCASTORS=RMHH": {
+      "label": "RMHH · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "RMHH: diam. 37 mm, mini-rolls, for hard floors, self-braking"
+      ]
+    },
+    "CBASE=ST44ALU": {
+      "label": "ST44ALU · aliuminis",
+      "sourceFact": "aluminium",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, aluminium coated ALU (ST44-ALU)"
+      ]
+    },
+    "CCASTORS=SH": {
+      "label": "SH · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "SH: diam. 50 mm, for soft floors, self-braking"
+      ]
+    },
+    "CCASTORS=SHH": {
+      "label": "SHH · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "SHH: diam. 50 mm, for hard floors, self-braking"
+      ]
+    },
+    "CCASTORS=SHW": {
+      "label": "SHW · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "SHW: diam. 50 mm, for soft floors, white"
+      ]
+    },
+    "CCASTORS=SHHW": {
+      "label": "SHHW · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "SHHW: diam. 50 mm, for hard floors, white"
+      ]
+    },
+    "CBASE=ST33POL": {
+      "label": "ST33POL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 682 mm, 5-star, polished aluminium (ST33-POL)"
+      ]
+    },
+    "CCASTORS=ESH60": {
+      "label": "ESH60 · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "ESH60: diam. 60 mm, for soft floors"
+      ]
+    },
+    "CCASTORS=ESHH60": {
+      "label": "ESHH60 · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "ESHH60: diam. 60 mm, for hard floors"
+      ]
+    },
+    "CBASE=TSGO1": {
+      "label": "TSGO1 · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, black polyamide (TS)"
+      ]
+    },
+    "CBASE=STGO1BL": {
+      "label": "STGO1BL · aliuminis",
+      "sourceFact": "aluminium",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, aluminium coated BL (ST-BL)"
+      ]
+    },
+    "CBASE=STGO1WA": {
+      "label": "STGO1WA · aliuminis",
+      "sourceFact": "aluminium",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, aluminium coated WA (ST-WA)"
+      ]
+    },
+    "CBASE=STGO1POL": {
+      "label": "STGO1POL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 700 mm, 5-star, polished aluminium (ST-POL)"
+      ]
+    },
+    "CBASE=TSTIGUP": {
+      "label": "TSTIGUP · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 660 mm, 5-star, black polyamide (TS)"
+      ]
+    },
+    "CBASE=STTIGUPPOL": {
+      "label": "STTIGUPPOL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 660 mm, 5-star, polished aluminium (ST-POL)"
+      ]
+    },
+    "CBASE=ST64POL": {
+      "label": "ST64POL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 710 mm, 5-star, polished aluminium (ST64-POL)"
+      ]
+    },
+    "CBASE=TS36": {
+      "label": "TS36 · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 710 mm, 5-star, black polyamide (TS36)"
+      ]
+    },
+    "CCASTORS=ESHHB": {
+      "label": "ESHHB · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "ESHH60: diam. 60 mm, for hard floors, black"
+      ]
+    },
+    "CCASTORS=ESSHG": {
+      "label": "ESSHG · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "ESH60-G: diam. 60 mm, for soft floors, light grey"
+      ]
+    },
+    "CCASTORS=ESHHGG": {
+      "label": "ESHHGG · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "ESHH60-G: diam. 60 mm, for hard floors, light grey"
+      ]
+    },
+    "CCASTORS=ESH60B": {
+      "label": "ESH60B · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "ESH60: diam. 60 mm, for soft floors, black"
+      ]
+    },
+    "CBASE=TS34BL": {
+      "label": "TS34BL · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 711 mm, 5-star, black polyamide (TS34BL)"
+      ]
+    },
+    "CBASE=ST61POLBL": {
+      "label": "ST61POLBL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 711 mm, 5-star, polished aluminium (ST61-POL/BL)"
+      ]
+    },
+    "CBASE=TS36G": {
+      "label": "TS36G · poliamidas",
+      "sourceFact": "polyamide",
+      "originalSourceTexts": [
+        "diam. 710 mm, 5-star, light grey polyamide (TS36-G)"
+      ]
+    },
+    "CBASE=ST55BL": {
+      "label": "ST55BL · aliuminis",
+      "sourceFact": "aluminium",
+      "originalSourceTexts": [
+        "diam. 760 mm, 5-star, aluminium coated BL (ST55-BL)"
+      ]
+    },
+    "CBASE=ST55POL": {
+      "label": "ST55POL · poliruotas aliuminis",
+      "sourceFact": "polished-aluminium",
+      "originalSourceTexts": [
+        "diam. 760 mm, 5-star, polished aluminium (ST55-POL)"
+      ]
+    },
+    "CCASTORS=SHHB": {
+      "label": "SHHB · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "SHHB: diam. 50 mm, for hard floors, self-braking"
+      ]
+    },
+    "CCASTORS=ESSH": {
+      "label": "ESSH · minkštoms grindims",
+      "sourceFact": "soft",
+      "originalSourceTexts": [
+        "ESSH: diam. 60 mm, for soft floors, black"
+      ]
+    },
+    "CCASTORS=ESSHH": {
+      "label": "ESSHH · kietoms grindims",
+      "sourceFact": "hard",
+      "originalSourceTexts": [
+        "ESSHH: diam. 60 mm, for hard floors, black/grey"
+      ]
+    }
+  }
+}

@@ -1,5 +1,11 @@
 # Vietinio prekybos API sutartis
 
+0.18 pirkimo papildymas: tokenu apsaugotas `POST /api/orders/:id/checkout` priima tik pasirenkamą `{ "uiMode": "hosted" | "embedded" }`. Tuščias kūnas išsaugo ankstesnį hosted režimą. Naujo įterpto mokėjimo išvestis yra tik `{ uiMode: "embedded", clientSecret, publishableKey }`, hosted — `{ uiMode: "hosted", url }`; visas tiekėjo Session objektas ir jo ID nebegrąžinami. Esamo `checkout_id` Session atkuriamas iš tiekėjo ir grąžinamas tikras anksčiau sukurtas režimas, nepaisant naujo pageidavimo. Taip prarastas atsakymas nekuria kito mokėjimo ar kito režimo.
+
+`GET /api/storefront-context` papildytas `embeddedCheckoutConfigured`: tai mokėjimo ryšys su tinkamo test/live formato publishable raktu, ne leidimas pradėti produkcinį pirkimą. Nauja vieno puslapio forma šį lauką tikrina **prieš naujo užsakymo rezervavimą**; senesnio hosted užsakymo atkūrimas išlieka galimas ir kai laukas false. Visos ankstesnės `productionReady`, kainų, kliento, pristatymo, sąlygų, likučių ir užsakymo tokeno sąlygos lieka privalomos.
+
+Kanoninis browser SDK turi `checkoutDetails({ uiMode: "embedded" })`, kuris grąžina vieną iš šių siaurų formų ir tikrina režimą, publishable rakto bei client secret test/live atitiktį. Įterpto atsakymo secret saugomas tik kviečiančio kodo atmintyje, ne tab storage, DB, URL ar analitikoje. Ankstesnis `checkout()` grąžina hosted URL; jei jau sukurtas mokėjimas yra embedded, grąžinama `checkout_mode_conflict`, nekuriant pakaitinio hosted Session. [Konfigūracija ir priėmimas](PRODUCTION_CONNECTION.md#embedded-checkout--source-0180).
+
 0.17 savininko prisijungimo papildymas: `GET /api/operator/session` po patvirtintos `read` teisės grąžina metodą (`access` / `bearer`), operatoriaus ID, teises ir Access sesijos galiojimą; negrąžina JWT. `POST /api/operator/logout` skirtas patvirtintam Access vartotojui: tikrina tą patį store/įmonės/aplinkos membership ir privalomą tos pačios kilmės Origin, įrašo tik JWT hash revokaciją ir grąžina to paties admin host fiksuotą Access logout adresą. Visi Access autentifikuoti ne GET/HEAD veiksmai reikalauja tikslaus Origin; ankstesnė Bearer serverio komandų sutartis nekeičiama. [Konfigūracija ir aktyvavimo ribos](PRODUCTION_CONNECTION.md#access-owner-sessions--source-0170). Pirkėjo ir Stripe maršrutams savininko Access autentifikacija nepridedama.
 
 Versija 0.6. Tai įgyvendinti endpointai, ne visas roadmap. Visos JSON išvestys turi `no-store`, `noindex` ir `nosniff`. Nežinomas host — 404. Parduotuvę ir aplinką nustato serveris; kliento `storeId`, kainos ar įmonės laukai jų nekeičia. Pinigai yra sveiki mažiausi valiutos vienetai. POST Origin, kai pateiktas, turi sutapti su request origin. JSON/webhook body riba 64 KiB.
@@ -11,7 +17,7 @@ Versija 0.6. Tai įgyvendinti endpointai, ne visas roadmap. Visos JSON išvestys
 | POST /api/quote | lines[{sku,quantity}], country, currency, deliveryId | patvirtintos kainos ir pristatymo suma; likučio dar nerezervuoja |
 | POST /api/orders | quote įvestis; Idempotency-Key ir Order-Access-Token | 201 naujas, 200 pakartotas; order snapshot ir rezervacija |
 | GET /api/orders/:id | Authorization: Bearer token | tik to host parduotuvės užsakymas |
-| POST /api/orders/:id/checkout | tas pats token; prijungtas Stripe adapteris | Checkout ID/URL; neprijungtas adapteris — 503 |
+| POST /api/orders/:id/checkout | tas pats token; prijungtas Stripe adapteris; pasirenkamas uiMode | tik hosted URL arba embedded client detalės; neprijungtas adapteris — 503 |
 | POST /api/orders/:id/withdrawal | tas pats token | 202 patvarus atsisakymo prašymas; nėra automatinis pinigų grąžinimas |
 | POST /api/stripe/webhook | tikras raw body ir Stripe-Signature; paskyros adapteris | 200 priimtas/dubliuotas įvykis, 400 blogas parašas |
 | POST /api/operator/orders/:id/pack | verified operator identity adapteris su šios parduotuvės teise | apmokėtas/alokuotas užsakymas paruoštas |

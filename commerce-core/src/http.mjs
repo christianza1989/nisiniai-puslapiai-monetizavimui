@@ -167,6 +167,10 @@ export function createHandler({
             : 'live'
           : null,
       paymentAccountVerified: paymentConnected && verification?.verified === true,
+      embeddedCheckoutConfigured:
+        paymentConnected &&
+        typeof payment?.embeddedCheckoutConfigured === 'function' &&
+        payment.embeddedCheckoutConfigured() === true,
       shippingConnected,
       documentReady,
       shippingQuotesConnected: Boolean(shippingReadAdapters[store.id]),
@@ -207,9 +211,10 @@ export function createHandler({
       }
       if (request.method === 'GET' && path === '/api/storefront-context')
         return json(await context(store));
-      const read = async () => {
+      const read = async ({ allowEmpty = false } = {}) => {
         try {
-          return JSON.parse(await boundedBody(request));
+          const raw = await boundedBody(request);
+          return allowEmpty && raw.trim() === '' ? {} : JSON.parse(raw);
         } catch (error) {
           if (error instanceof CommerceError) throw error;
           throw new CommerceError('invalid_json');
@@ -865,8 +870,20 @@ export function createHandler({
           if (environment === 'production')
             requireValue((await context(store)).productionReady, 'checkout_not_admitted', 503);
           requireValue(paymentAdapters[store.id], 'stripe_not_connected', 503);
+          const input = await read({ allowEmpty: true });
+          requireValue(
+            input &&
+              typeof input === 'object' &&
+              !Array.isArray(input) &&
+              Object.keys(input).every((k) => k === 'uiMode'),
+            'invalid_checkout_options',
+          );
+          const uiMode = input.uiMode === undefined ? 'hosted' : input.uiMode;
+          requireValue(['hosted', 'embedded'].includes(uiMode), 'checkout_mode_invalid');
           return json(
-            await service.checkout(store.id, environment, order.id, paymentAdapters[store.id]),
+            await service.checkout(store.id, environment, order.id, paymentAdapters[store.id], {
+              uiMode,
+            }),
           );
         }
         if (request.method === 'POST' && match[2] === 'withdrawal')

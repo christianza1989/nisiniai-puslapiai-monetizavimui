@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 import { requireValue, CommerceError, integer, identifier } from './validation.mjs';
 export class StripeCheckoutAdapter {
-  constructor({ apiKey, webhookSecret, accountRef, environment, client }) {
+  constructor({ apiKey, webhookSecret, accountRef, environment, client, publishableKey }) {
     requireValue(
       ['sandbox', 'production'].includes(environment) && accountRef && webhookSecret,
       'stripe_config_missing',
@@ -9,6 +9,8 @@ export class StripeCheckoutAdapter {
     this.environment = environment;
     this.accountRef = accountRef;
     this.webhookSecret = webhookSecret;
+    this.publishableKey = publishableKey;
+    this.supportsEmbeddedCheckout = true;
     this.provider = 'stripe';
     this.fixture = !apiKey && Boolean(client) && !client.accounts?.retrieveCurrent;
     if (!client)
@@ -206,7 +208,108 @@ export class StripeCheckoutAdapter {
     }
     return { complete: false, refund: null };
   }
-  async createSession(order, config) {
+  embeddedPublicKey() {
+    requireValue(
+      typeof this.publishableKey === 'string' && this.publishableKey.length > 0,
+      'stripe_publishable_key_missing',
+      503,
+    );
+    const mode = this.environment === 'production' ? 'live' : 'test';
+    requireValue(
+      new RegExp('^pk_' + mode + '_[A-Za-z0-9]{8,240}$').test(this.publishableKey),
+      'stripe_publishable_key_invalid',
+      503,
+    );
+    return this.publishableKey;
+  }
+  embeddedCheckoutConfigured() {
+    try {
+      return Boolean(this.embeddedPublicKey());
+    } catch {
+      return false;
+    }
+  }
+  sessionMode(session) {
+    if (['embedded_page', 'embedded'].includes(session?.ui_mode)) return 'embedded';
+    if (
+      ['hosted_page', 'hosted'].includes(session?.ui_mode) ||
+      (session?.ui_mode == null && typeof session?.url === 'string')
+    )
+      return 'hosted';
+    throw new CommerceError('checkout_mode_unsupported', 502);
+  }
+  publicSession(session) {
+    const uiMode = this.sessionMode(session);
+    if (uiMode === 'hosted') {
+      requireValue(
+        typeof session.url === 'string' && session.url.length > 0 && session.url.length <= 4096,
+        'invalid_checkout_response',
+        502,
+      );
+      return { uiMode, url: session.url };
+    }
+    const mode = this.environment === 'production' ? 'live' : 'test';
+    requireValue(
+      typeof session.client_secret === 'string' &&
+        session.client_secret.length <= 1024 &&
+        new RegExp('^cs_' + mode + '_[A-Za-z0-9]+_secret_[A-Za-z0-9_-]+$').test(
+          session.client_secret,
+        ) &&
+        session.client_secret.startsWith(session.id + '_secret_'),
+      'checkout_client_secret_invalid',
+      502,
+    );
+    return {
+      uiMode,
+      clientSecret: session.client_secret,
+      publishableKey: this.embeddedPublicKey(),
+    };
+  }
+  validateSession(session, order, { allowLegacyFixture = false } = {}) {
+    requireValue(identifier(session?.id), 'invalid_checkout_response', 502);
+    const mode = this.sessionMode(session);
+    // Existing unverified hosted TEST fixtures predate full Session receipts.
+    // Production, embedded, and every retrieval require complete bound facts.
+    if (!(
+      allowLegacyFixture &&
+      this.fixture &&
+      this.environment === 'sandbox' &&
+      mode === 'hosted'
+    )) {
+      requireValue(
+        session.metadata?.store_id === order.store_id &&
+          session.metadata?.order_id === order.id &&
+          session.metadata?.environment === this.environment &&
+          session.client_reference_id === order.id &&
+          session.amount_total === order.amount &&
+          session.currency === order.currency.toLowerCase() &&
+          session.livemode === (this.environment === 'production') &&
+          session.expires_at === Math.floor(order.expires_at / 1000),
+        'stripe_checkout_session_invalid',
+        502,
+      );
+      requireValue(session.status === 'open', 'checkout_session_unavailable', 409);
+    }
+    this.publicSession(session);
+    return session;
+  }
+  async retrieveSession(id, order, config) {
+    requireValue(
+      order.snapshot.environment === this.environment &&
+        config.paymentAccountRef === this.accountRef &&
+        identifier(id) &&
+        id === order.checkout_id,
+      'stripe_context_mismatch',
+      403,
+    );
+    await this.verifyAccount();
+    const session = await this.client.checkout.sessions.retrieve(id);
+    requireValue(session?.id === id, 'stripe_checkout_session_invalid', 502);
+    return this.validateSession(session, order);
+  }
+  async createSession(order, config, { uiMode = 'hosted' } = {}) {
+    requireValue(['hosted', 'embedded'].includes(uiMode), 'checkout_mode_invalid');
+    if (uiMode === 'embedded') this.embeddedPublicKey();
     await this.verifyAccount();
     requireValue(
       order.snapshot.environment === this.environment &&
@@ -214,18 +317,31 @@ export class StripeCheckoutAdapter {
       'stripe_context_mismatch',
       403,
     );
+    const returnUrl =
+      uiMode === 'embedded'
+        ? config.checkout?.returnUrl || config.checkout?.successUrl
+        : config.checkout?.successUrl;
     requireValue(
-      config.checkout?.successUrl && config.checkout?.cancelUrl,
+      typeof returnUrl === 'string' &&
+        (uiMode === 'embedded' || typeof config.checkout?.cancelUrl === 'string'),
       'checkout_urls_missing',
     );
-    const base = new URL(config.checkout.successUrl);
+    const base = new URL(returnUrl);
     requireValue(
       config.hosts.includes(base.host) &&
-        (base.protocol === 'https:' || this.environment === 'sandbox'),
+        !base.username &&
+        !base.password &&
+        (base.protocol === 'https:' ||
+          (this.environment === 'sandbox' && base.protocol === 'http:')),
       'checkout_origin_invalid',
     );
-    const cancel = new URL(config.checkout.cancelUrl);
-    requireValue(cancel.origin === base.origin, 'checkout_origin_invalid');
+    if (uiMode === 'hosted') {
+      const cancel = new URL(config.checkout.cancelUrl);
+      requireValue(
+        cancel.origin === base.origin && !cancel.username && !cancel.password,
+        'checkout_origin_invalid',
+      );
+    }
     const items = order.snapshot.lines.map((l) => ({
       price_data: {
         currency: order.currency.toLowerCase(),
@@ -250,21 +366,35 @@ export class StripeCheckoutAdapter {
       .split('')
       .map((v) => String.fromCharCode(97 + parseInt(v, 16)))
       .join('');
-    return this.client.checkout.sessions.create(
-      {
-        mode: 'payment',
-        line_items: items,
-        client_reference_id: order.id,
-        metadata: { store_id: order.store_id, order_id: order.id, environment: this.environment },
-        success_url: config.checkout.successUrl,
-        cancel_url: config.checkout.cancelUrl,
-        expires_at: Math.floor(order.expires_at / 1000),
-        integration_identifier: 'pinet-commerce-' + suffix,
-        ...(order.snapshot.customer ? { customer_email: order.snapshot.customer.email } : {}),
-        // Dynamic payment methods: configured in Dashboard. automatic_tax requires separate validated admission.
-      },
-      { idempotencyKey: 'checkout-' + order.store_id + '-' + order.id },
-    );
+    let session;
+    try {
+      session = await this.client.checkout.sessions.create(
+        {
+          mode: 'payment',
+          line_items: items,
+          client_reference_id: order.id,
+          metadata: { store_id: order.store_id, order_id: order.id, environment: this.environment },
+          ...(uiMode === 'embedded'
+            ? {
+                ui_mode: 'embedded_page',
+                return_url: returnUrl,
+                redirect_on_completion: 'if_required',
+              }
+            : { success_url: config.checkout.successUrl, cancel_url: config.checkout.cancelUrl }),
+          expires_at: Math.floor(order.expires_at / 1000),
+          integration_identifier: 'pinet-commerce-' + suffix,
+          ...(order.snapshot.customer ? { customer_email: order.snapshot.customer.email } : {}),
+          // Dynamic payment methods: configured in Dashboard. automatic_tax requires separate validated admission.
+        },
+        { idempotencyKey: 'checkout-' + order.store_id + '-' + order.id },
+      );
+    } catch (error) {
+      if (error.type === 'StripeIdempotencyError' || error.code === 'idempotency_key_in_use')
+        throw new CommerceError('checkout_mode_conflict', 409);
+      throw error;
+    }
+    requireValue(this.sessionMode(session) === uiMode, 'stripe_checkout_session_invalid', 502);
+    return this.validateSession(session, order, { allowLegacyFixture: true });
   }
   async verifyEvent(body, signature, { checkoutInScope } = {}) {
     let event;

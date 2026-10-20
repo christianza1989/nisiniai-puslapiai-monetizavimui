@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Source0.18.0, pinned Stripe23/endive unchanged. Original missing-embedded regressions preserved in embedded-original-failure-20261020.log. Native first run reproduced legacy empty ReadableStream400; preserved embedded-native-first-20261020.log and fixed optional-empty parsing only for checkout, with explicit unit/native regression. No new migration, actual Stripe Session/payment/card/provider/secret/productionDB/admission/deployment change. Site owner confirmed inspected private config has no publishableKey; actual same-account publickey setup and UI/browser remain parent-owned. UI checkout/CSS/tests/PUBLIC untouched. Historical default-main provenance blocker retained separately.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/embedded-checkout.test.mjs",
+      "result": "PASS",
+      "evidence": "10 focused tests prove pinned embedded_page/if_required/owned return, narrow token-bound no-store response, authoritative amount, HTTP/provider response loss replay, original-mode recovery, forced cross-mode initial race one Session, missing/wrong publickey host recovery, foreign/wrong Session metadata/amount/currency/mode/secret rejection, duplicate mounts, closed admission, signed webhook-only paid state and optional runtime wiring."
+    },
+    {
+      "command": "node --run check:format; node --test --test-concurrency=1 test/*.test.mjs; node --run test:worker; node --run build:worker (commerce-core cwd, sequential exit checks)",
+      "result": "PASS",
+      "evidence": "commerce-core/tmp/embedded-acceptance-20261020.log final exit0: format,172Node, nativeworkerd/D1/R2/Queue24 with actual worker restart and embedded/hosted recovery across requested modes, strict3field response and token isolation, original fulfillment/refund/stock suites; dry-run3234.36KiB/gzip781.79KiB/21assets. Process-local512MiB heap cap, no skipped checks or provider transactions."
+    },
+    {
+      "command": "git diff --exit-code fa574aeba44ff80817b77d615890f68996e832ea -- commerce-core/migrations commerce-core/config commerce-core/public/checkout-ui.mjs commerce-core/public/checkout.css commerce-core/test/checkout-cart.test.mjs",
+      "result": "PASS",
+      "evidence": "All original24 migration files, owner preparation config, reserved frontend UI/CSS and UI tests unchanged. No actual private configuration or production binding touched. Manifest change is package version only; Stripe/other dependency pins unchanged."
+    }
+  ],
+  "eventId": "bccb2153-d34f-4725-99b4-e742952c6277",
+  "sequence": 2,
+  "at": "2026-10-20T13:10:40.037Z"
+}

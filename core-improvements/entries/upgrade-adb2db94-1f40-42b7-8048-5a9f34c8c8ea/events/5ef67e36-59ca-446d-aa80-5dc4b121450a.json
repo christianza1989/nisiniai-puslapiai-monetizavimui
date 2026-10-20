@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "commit": "77ec18cbcaee2451f5a3b05bf1fed5a309674d0b",
+  "note": "Active frontend559613fb at2026-10-20T08:51:03Z. Source pushedPR31, no mainmerge. Actual4assets hashes/alpha and desktop/mobile card accepted; earlier carousel position/hiddenmeaning retained. Bindings+observability unchanged, native3367ef65 unchanged. Previousee022a72 is code rollback.",
+  "eventId": "5ef67e36-59ca-446d-aa80-5dc4b121450a",
+  "sequence": 3,
+  "at": "2026-10-20T08:56:27.280Z"
+}

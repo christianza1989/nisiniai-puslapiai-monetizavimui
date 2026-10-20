@@ -28,3 +28,9 @@ Upgrade2c4ff2e5 apima karuselę. Papildomas e90986c0 sutvarko retainedInstagram 
 Ankstesnis Instagram backend/privatusKV ir30min.cron išsaugoti rollback; homepage jo nebekviečia. Facebook collab eiga netęsiama. Karuselė remiasi savininko failais, naujų Instagram įrašų automatiškai neimportuoja. Naujam video pakanka pateikti failą ir atlikti tokį patį scoped medijos atnaujinimą.
 
 Rollback: ankstesnė frontend97678db4 versija, išsaugant visas dabartines duomenų bazes, secrets, DNS ir užsakymus. Galutinės desktop/mobile ekrano nuotraukos išsaugotos privačiai; vartotojui paliktas originalus gyvos svetainės skirtukas.
+
+## Savininko sekcijų tvarkos pataisa
+
+2026-10-20: video karuselę perkelti iškart po #procesas scrollytelling. Ekrano nuotraukoje parodytą #akimirkos sekciją „Ką norite pasilikti?“ laikinai išjungti rendererio lygiu, originalų HTML/kodą palikti atkūrimui. Tekstų vaidmenys, šriftai ir dydžiai nekeičiami. Patikra: nauja sekcijų tvarka, nematoma išjungta sekcija, 24 video ir desktop/mobile; bendro puslapių audito nekartoti.
+
+Patikrinta ir įjungta: frontend ee022a72-4066-4be0-9976-6f3922771985, 2026-10-20T08:35:34Z, PUBLIC22cfe5d/PR31. Tikra DOM tvarka: pradzia → rinkiniai → procesas → instagram → skulpturos → sudetis → galerija → gidai → klausimai. #akimirkos nerenderinamas, originali sekcija lieka source. Desktop1280/mobile390 ir originalus596pane patikrinti,24video išsaugoti; bindings/observability nepakito. Privatus placement-desktop.png įrodo karuselę iškart po proceso timeline.

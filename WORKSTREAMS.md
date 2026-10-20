@@ -398,3 +398,5 @@ passed for all 7 shared changes and staged safety for 16 files. Freshness passed
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
 
 2026-10-20 issue231 RESERVED: codex/studio-preview-heading-wrap-20261020 from current main e231fe49. Rokas directly authorized only private V1 preview H1 emergency word wrapping and separate QA. Own server.mjs H1 CSS, content-studio README, sanitized verification doc and upgrade journal. Preserve existing studio4317, title/body/IDs/URLs, public renderer, approvals and published snapshots; no deployment.
+
+2026-10-20 issue231 VERIFIED / CLOSED: draft PR232, isolated V1 preview H1 CSS only; 47 studio tests and 12 paired actual desktop/mobile observations PASS, two CSS enlargement/spacing checks PASS. Long words fit without changing copy or font sizes. QA9431 and own browser closed; existing4317, all content approval/publication state and public renderer untouched. Source is branch-only until review/merge and controlled runtime adoption. Owned shared-file window released.

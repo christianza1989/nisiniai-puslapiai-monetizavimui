@@ -4,6 +4,8 @@ import { CommerceError, requireValue, integer, identifier, digest } from './vali
 // The v2 JWT and quote IDs do not belong to this integration.
 const STAGING = 'https://staging.sendparcel.com';
 export const SENDPARCEL_PRODUCTION = 'https://api.sendparcel.com';
+// Provider-confirmed v1 states. Gaps are not an invitation to accept new codes.
+export const sendparcelStatus = (value) => [0, 1, 2, 3, 4, 5, 6, 8].includes(value);
 const shortText = (v, max = 200) =>
   typeof v === 'string' && v.length > 0 && v.length <= max && !/[\x00-\x1f\x7f]/.test(v);
 const optionalText = (v, max = 200) => v === undefined || v === '' || shortText(v, max);
@@ -289,7 +291,7 @@ export class SendparcelAdapter {
       orderInfo: { id: this.providerId(id) },
     });
     requireValue(
-      String(row.id) === id && integer(row.status, 0, 4),
+      String(row.id) === id && sendparcelStatus(row.status),
       'carrier_response_invalid',
       502,
     );

@@ -104,7 +104,7 @@ export class ShippingAutomation {
     const config = await this.s.store(store, env);
     if (config.automationPolicy?.autoCollectShipmentDocuments !== true) return { skipped: true };
     const command = await this.s.one(
-      "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND state='registered'",
+      "SELECT id FROM shipment_commands WHERE store_id=? AND order_id=? AND provider_id IS NOT NULL AND state IN ('registered','unknown','review')",
       store,
       orderId,
     );
@@ -120,7 +120,9 @@ export class ShippingAutomation {
     );
     // Registration can precede labels by several provider processing cycles.
     // Keep the durable event waiting; never submit a replacement shipment.
-    if (!result.labelsAvailable) throw new CommerceError('carrier_documents_pending', 409);
+    if (result.requiresReview) throw new CommerceError('carrier_booking_requires_review', 409);
+    if (result.pending || !result.labelsAvailable)
+      throw new CommerceError('carrier_documents_pending', 409);
     return result;
   }
 }

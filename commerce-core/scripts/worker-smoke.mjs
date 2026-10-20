@@ -1501,6 +1501,144 @@ try {
   assert.equal((await PDFDocument.load(nativeStoredBundle)).getPageCount(), 2);
   await runAutomaticJobs();
   assert.equal(automaticPosts, 2, 'one POST each for two distinct fixture orders');
+  // Provider5 is a known unpaid original order, not a failed create to repeat.
+  const nativeHeldFetch = automaticCarrier.fetch;
+  automaticCarrier.fetch = async (url, options) => {
+    const response = await nativeHeldFetch(url, options);
+    if (!new URL(url).pathname.endsWith('/creates')) return response;
+    const fact = await response.json();
+    fact.status = 5;
+    autoLedger[String(fact.id)] = fact;
+    return Response.json(fact);
+  };
+  const nativeHeldRate = await new BuyerDeliveryQuotes(automaticService()).create(
+    automaticStore,
+    'sandbox',
+    { ...dynamicInput, id: 'native_held_rate' },
+    automaticCarrier,
+  );
+  const nativeHeldOrder = (
+    await automaticService().createOrder(
+      automaticStore,
+      'sandbox',
+      { ...dynamicInput, deliveryQuoteId: nativeHeldRate.id },
+      key(202),
+    )
+  ).order;
+  await automaticService().checkout(
+    automaticStore,
+    'sandbox',
+    nativeHeldOrder.id,
+    foundationPayment('store-auto-native.example', automaticStore),
+  );
+  await automaticService().acceptPayment(
+    automaticStore,
+    'sandbox',
+    payment(
+      await automaticService().getOrder(automaticStore, 'sandbox', nativeHeldOrder.id),
+      automaticStore,
+      'evt_native_held',
+    ),
+  );
+  await automaticService().markPacked(
+    automaticStore,
+    'sandbox',
+    nativeHeldOrder.id,
+    'fixture_operator',
+  );
+  await runAutomaticJobs();
+  const heldBeforeRestart = await automaticService().one(
+    'SELECT * FROM shipment_commands WHERE store_id=? AND order_id=?',
+    automaticStore,
+    nativeHeldOrder.id,
+  );
+  assert.equal(heldBeforeRestart.state, 'review');
+  assert.equal(heldBeforeRestart.review_reason, 'carrier_booking_unpaid');
+  assert.ok(heldBeforeRestart.provider_id);
+  assert.equal(
+    (await automaticService().getOrder(automaticStore, 'sandbox', nativeHeldOrder.id))
+      .fulfillment_state,
+    'ready',
+  );
+  assert.equal(
+    (
+      await automaticService().one(
+        'SELECT COUNT(*) n FROM shipments WHERE store_id=? AND order_id=?',
+        automaticStore,
+        nativeHeldOrder.id,
+      )
+    ).n,
+    0,
+  );
+  await mf.dispose();
+  mf = undefined;
+  db = await start('src/worker.mjs', { COMMERCE_AUTOMATION_ENABLED: '1' });
+  const restoredCommands = () =>
+    new ShipmentCommands(automaticService(), new R2PrivateStorage(nativeHeldBucket));
+  const nativeHeldBucket = await mf.getR2Bucket('COMMERCE_FILES');
+  autoLedger[heldBeforeRestart.provider_id].status = 6;
+  const waiting = await restoredCommands().refresh(
+    automaticStore,
+    'sandbox',
+    heldBeforeRestart.id,
+    automaticCarrier,
+    'fixture_operator',
+  );
+  assert.equal(waiting.pending, true);
+  assert.equal(waiting.labelsAvailable, false);
+  assert.equal(
+    (await restoredCommands().get(automaticStore, 'sandbox', heldBeforeRestart.id)).provider_id,
+    heldBeforeRestart.provider_id,
+  );
+  autoLedger[heldBeforeRestart.provider_id].status = 8;
+  const paymentCanceled = await restoredCommands().refresh(
+    automaticStore,
+    'sandbox',
+    heldBeforeRestart.id,
+    automaticCarrier,
+    'fixture_operator',
+  );
+  assert.equal(paymentCanceled.requiresReview, true);
+  assert.equal(paymentCanceled.providerState, 'payment_canceled');
+  assert.equal(paymentCanceled.labelsAvailable, false);
+  await assert.rejects(
+    restoredCommands().execute(
+      automaticStore,
+      'sandbox',
+      heldBeforeRestart.id,
+      automaticCarrier,
+      'fixture_operator',
+    ),
+    /shipment_execution_not_allowed/,
+  );
+  autoLedger[heldBeforeRestart.provider_id].status = 1;
+  const originalReady = await restoredCommands().refresh(
+    automaticStore,
+    'sandbox',
+    heldBeforeRestart.id,
+    automaticCarrier,
+    'fixture_operator',
+  );
+  assert.equal(originalReady.labelsAvailable, true);
+  assert.equal(
+    (await restoredCommands().get(automaticStore, 'sandbox', heldBeforeRestart.id)).provider_id,
+    heldBeforeRestart.provider_id,
+  );
+  assert.equal(
+    (
+      await automaticService().one(
+        "SELECT COUNT(*) n FROM outbox WHERE store_id=? AND aggregate_id=? AND kind='ShipmentRegistered'",
+        automaticStore,
+        nativeHeldOrder.id,
+      )
+    ).n,
+    1,
+  );
+  assert.equal(
+    automaticPosts,
+    3,
+    'one POST for each original fixture order even across unpaid/pending/canceled recovery and real restart',
+  );
   // Explicit per-product simple balances use the same native reservation triggers.
   let simpleTime = Date.now();
   const simpleService = new CommerceService(db, { now: () => simpleTime }),

@@ -229,6 +229,192 @@ async function setup(tracked = false, quantity = 1) {
     },
   };
 }
+
+function providerStateControl(x, initialStatus) {
+  x.adapter.labelFileNames.add('fixture.pdf');
+  const fetch = x.adapter.fetch;
+  let documents = 0,
+    tracking = 0;
+  x.adapter.fetch = async (url, options) => {
+    const path = new URL(url).pathname;
+    if (path.endsWith('/documents')) documents++;
+    if (path.endsWith('/tracks')) tracking++;
+    const response = await fetch(url, options);
+    if (!path.endsWith('/creates')) return response;
+    const row = await response.json();
+    row.status = initialStatus;
+    x.bookings.set(String(row.id), row);
+    return Response.json(row);
+  };
+  return {
+    set: (status) => {
+      x.bookings.get('1001').status = status;
+    },
+    documents: () => documents,
+    tracking: () => tracking,
+  };
+}
+
+for (const [status, state, reason] of [
+  [0, 'unknown', 'carrier_booking_pending'],
+  [3, 'review', 'carrier_booking_rejected'],
+  [4, 'review', 'carrier_booking_canceled'],
+  [5, 'review', 'carrier_booking_unpaid'],
+  [6, 'unknown', 'carrier_booking_pending'],
+  [8, 'review', 'carrier_booking_payment_canceled'],
+])
+  test(`provider status${status} retains one original order without registration or label readiness`, async () => {
+    const x = await setup(),
+      control = providerStateControl(x, status);
+    try {
+      const result = await x.commands.execute(
+        'store_a',
+        'sandbox',
+        'command',
+        x.adapter,
+        'operator',
+      );
+      assert.equal(result.command.state, state);
+      assert.equal(result.command.provider_id, '1001');
+      assert.equal(result.command.review_reason, reason);
+      assert.equal(result.requiresReview, state === 'review');
+      assert.equal(result.pending, state === 'unknown');
+      assert.equal(
+        (await x.s.getOrder('store_a', 'sandbox', x.order.id)).fulfillment_state,
+        'ready',
+      );
+      assert.equal((await x.s.one('SELECT COUNT(*) n FROM shipments')).n, 0);
+      assert.equal(
+        (await x.s.one("SELECT COUNT(*) n FROM outbox WHERE kind='ShipmentRegistered'")).n,
+        0,
+      );
+      await assert.rejects(
+        x.commands.execute('store_a', 'sandbox', 'command', x.adapter, 'operator'),
+        /shipment_execution_not_allowed|shipment_reconciliation_required/,
+      );
+      await assert.rejects(
+        x.commands.reconcile(
+          'store_a',
+          'sandbox',
+          'command',
+          { providerId: '1002', reason: 'Wrong original ID' },
+          x.adapter,
+          'operator',
+        ),
+        /shipment_facts_mismatch/,
+      );
+      const refreshed = await x.commands.refresh(
+        'store_a',
+        'sandbox',
+        'command',
+        x.adapter,
+        'operator',
+      );
+      assert.equal(refreshed.labelsAvailable, false);
+      assert.deepEqual(refreshed.files, []);
+      assert.equal(refreshed.requiresReview, state === 'review');
+      assert.equal(refreshed.pending, state === 'unknown');
+      assert.equal(control.documents(), 0);
+      assert.equal(control.tracking(), 0);
+      assert.equal(x.creates(), 1);
+    } finally {
+      x.db.close();
+    }
+  });
+
+test('unpaid then pending original provider order recovers after a new command instance with no replacement POST', async () => {
+  const x = await setup(),
+    control = providerStateControl(x, 5);
+  try {
+    await x.commands.execute('store_a', 'sandbox', 'command', x.adapter, 'operator');
+    const restarted = new ShipmentCommands(
+      new CommerceService(x.db, { now: x.s.now }),
+      x.commands.files.storage,
+    );
+    control.set(6);
+    const pending = await restarted.reconcile(
+      'store_a',
+      'sandbox',
+      'command',
+      { providerId: '1001', reason: 'Refresh original pending order' },
+      x.adapter,
+      'operator',
+    );
+    assert.equal(pending.command.state, 'unknown');
+    assert.equal(pending.command.provider_id, '1001');
+    assert.equal(pending.pending, true);
+    control.set(1);
+    const ready = await restarted.refresh('store_a', 'sandbox', 'command', x.adapter, 'operator');
+    assert.equal(ready.labelsAvailable, true);
+    assert.equal(ready.pending, false);
+    assert.equal(ready.requiresReview, false);
+    assert.equal(control.documents(), 1);
+    assert.equal(x.creates(), 1);
+    assert.equal((await restarted.get('store_a', 'sandbox', 'command')).state, 'registered');
+    assert.equal(
+      (await x.s.one("SELECT COUNT(*) n FROM outbox WHERE kind='ShipmentRegistered'")).n,
+      1,
+    );
+    const observations = await x.s.rows(
+      "SELECT payload_json FROM shipment_observations WHERE kind='booking'",
+    );
+    assert.deepEqual(
+      observations.map((r) => JSON.parse(r.payload_json).providerStatus).sort(),
+      [1, 5, 6],
+    );
+  } finally {
+    x.db.close();
+  }
+});
+
+test('a registered order becoming unpaid withholds labels before documents and recovers the same projection once', async () => {
+  const x = await setup(),
+    control = providerStateControl(x, 1);
+  try {
+    await x.commands.execute('store_a', 'sandbox', 'command', x.adapter, 'operator');
+    control.set(5);
+    const held = await x.commands.refresh('store_a', 'sandbox', 'command', x.adapter, 'operator');
+    assert.equal(held.requiresReview, true);
+    assert.equal(held.labelsAvailable, false);
+    assert.equal(control.documents(), 0);
+    assert.equal((await x.commands.get('store_a', 'sandbox', 'command')).state, 'review');
+    assert.equal((await x.s.one('SELECT state FROM shipments')).state, 'unknown');
+    assert.equal((await x.s.getOrder('store_a', 'sandbox', x.order.id)).fulfillment_state, 'ready');
+    control.set(2);
+    assert.equal(
+      (await x.commands.refresh('store_a', 'sandbox', 'command', x.adapter, 'operator'))
+        .labelsAvailable,
+      true,
+    );
+    assert.equal((await x.s.one('SELECT state FROM shipments')).state, 'registered');
+    assert.equal(
+      (await x.s.one("SELECT COUNT(*) n FROM outbox WHERE kind='ShipmentRegistered'")).n,
+      1,
+    );
+    assert.equal(x.creates(), 1);
+  } finally {
+    x.db.close();
+  }
+});
+
+test('undocumented provider status cannot register or permit a second non-idempotent create', async () => {
+  const x = await setup();
+  providerStateControl(x, 7);
+  try {
+    await assert.rejects(
+      x.commands.execute('store_a', 'sandbox', 'command', x.adapter, 'operator'),
+      /shipment_response_invalid/,
+    );
+    await assert.rejects(
+      x.commands.execute('store_a', 'sandbox', 'command', x.adapter, 'operator'),
+      /shipment_reconciliation_required/,
+    );
+    assert.equal((await x.s.one('SELECT COUNT(*) n FROM shipments')).n, 0);
+    assert.equal(x.creates(), 1);
+  } finally {
+    x.db.close();
+  }
+});
 test('a quarantine racing the final booking mark is rejected by SQL before any carrier POST', async () => {
   const x = await setup(true);
   try {

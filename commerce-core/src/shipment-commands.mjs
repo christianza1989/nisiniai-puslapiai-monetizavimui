@@ -206,6 +206,19 @@ export class ShipmentCommands {
       )
       .run();
   }
+  disposition(adapter, fact) {
+    const result = adapter.bookingDisposition
+      ? adapter.bookingDisposition(fact)
+      : { state: 'registered', reason: null, providerState: 'registered' };
+    requireValue(
+      ['registered', 'unknown', 'review'].includes(result?.state) &&
+        identifier(result.providerState) &&
+        (result.state === 'registered' ? result.reason === null : identifier(result.reason)),
+      'shipment_response_invalid',
+      502,
+    );
+    return result;
+  }
   async finish(command, fact, adapter, actor, lease) {
     requireValue(
       await adapter.verifyBooking(command.payload, fact),
@@ -221,8 +234,67 @@ export class ShipmentCommands {
       'shipment_response_invalid',
       502,
     );
+    requireValue(
+      command.provider_id === null || command.provider_id === fact.id,
+      'shipment_facts_mismatch',
+      409,
+    );
+    const disposition = this.disposition(adapter, fact);
     await this.observe(command, 'booking', { ...fact, actorRef: actor });
-    await this.s.db.batch([
+    if (disposition.state !== 'registered') {
+      const applied = await this.s.db.batch([
+        this.s.stmt(
+          'UPDATE shipment_commands SET state=?,provider_id=?,review_reason=? WHERE store_id=? AND id=? AND lease_token=? AND lease_until>?',
+          disposition.state,
+          fact.id,
+          disposition.reason,
+          command.store_id,
+          command.id,
+          lease,
+          this.s.now(),
+        ),
+        this.s.stmt(
+          "UPDATE shipments SET state='unknown' WHERE store_id=? AND order_id=? AND provider_id=? AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state=? AND provider_id=? AND lease_token=? AND lease_until>?)",
+          command.store_id,
+          command.order_id,
+          fact.id,
+          command.store_id,
+          command.id,
+          disposition.state,
+          fact.id,
+          lease,
+          this.s.now(),
+        ),
+        this.s.stmt(
+          "UPDATE orders SET fulfillment_state='ready' WHERE store_id=? AND id=? AND fulfillment_state='labelled' AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state=? AND provider_id=? AND lease_token=? AND lease_until>?)",
+          command.store_id,
+          command.order_id,
+          command.store_id,
+          command.id,
+          disposition.state,
+          fact.id,
+          lease,
+          this.s.now(),
+        ),
+      ]);
+      requireValue(applied[0].meta.changes === 1, 'shipment_execution_busy', 409);
+      const held = await this.get(command.store_id, command.environment, command.id);
+      requireValue(
+        held.state === disposition.state &&
+          held.provider_id === fact.id &&
+          held.lease_token === lease,
+        'shipment_execution_busy',
+        409,
+      );
+      return {
+        command: held,
+        replayed: false,
+        providerState: disposition.providerState,
+        requiresReview: disposition.state === 'review',
+        pending: disposition.state === 'unknown',
+      };
+    }
+    const applied = await this.s.db.batch([
       this.s.stmt(
         "UPDATE shipment_commands SET state='registered',provider_id=?,review_reason=NULL WHERE store_id=? AND id=? AND lease_token=? AND lease_until>?",
         fact.id,
@@ -232,7 +304,19 @@ export class ShipmentCommands {
         this.s.now(),
       ),
       this.s.stmt(
-        "INSERT OR IGNORE INTO shipments(store_id,order_id,reference,state,provider_id,tracking) SELECT ?,?,?,'registered',?,? WHERE EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND provider_id=? AND lease_token=?)",
+        "UPDATE shipments SET state='registered',tracking=? WHERE store_id=? AND order_id=? AND provider_id=? AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND provider_id=? AND lease_token=? AND lease_until>?)",
+        fact.tracking || null,
+        command.store_id,
+        command.order_id,
+        fact.id,
+        command.store_id,
+        command.id,
+        fact.id,
+        lease,
+        this.s.now(),
+      ),
+      this.s.stmt(
+        "INSERT OR IGNORE INTO shipments(store_id,order_id,reference,state,provider_id,tracking) SELECT ?,?,?,'registered',?,? WHERE EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND provider_id=? AND lease_token=? AND lease_until>?)",
         command.store_id,
         command.order_id,
         'command_' + command.id,
@@ -242,14 +326,16 @@ export class ShipmentCommands {
         command.id,
         fact.id,
         lease,
+        this.s.now(),
       ),
       this.s.stmt(
-        "UPDATE orders SET fulfillment_state='labelled' WHERE store_id=? AND id=? AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=?)",
+        "UPDATE orders SET fulfillment_state='labelled' WHERE store_id=? AND id=? AND EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=? AND lease_until>?)",
         command.store_id,
         command.order_id,
         command.store_id,
         command.id,
         lease,
+        this.s.now(),
       ),
       ...this.s.event(
         command.store_id,
@@ -257,14 +343,24 @@ export class ShipmentCommands {
         command.order_id,
         { providerId: fact.id },
         {
-          sql: "EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=?)",
-          args: [command.store_id, command.id, lease],
+          sql: "EXISTS(SELECT 1 FROM shipment_commands WHERE store_id=? AND id=? AND state='registered' AND lease_token=? AND lease_until>?) AND NOT EXISTS(SELECT 1 FROM outbox WHERE store_id=? AND kind='ShipmentRegistered' AND aggregate_id=?)",
+          args: [
+            command.store_id,
+            command.id,
+            lease,
+            this.s.now(),
+            command.store_id,
+            command.order_id,
+          ],
         },
       ),
     ]);
+    requireValue(applied[0].meta.changes === 1, 'shipment_execution_busy', 409);
     const finished = await this.get(command.store_id, command.environment, command.id);
     requireValue(
-      finished.state === 'registered' && finished.provider_id === fact.id,
+      finished.state === 'registered' &&
+        finished.provider_id === fact.id &&
+        finished.lease_token === lease,
       'shipment_execution_busy',
       409,
     );
@@ -274,7 +370,13 @@ export class ShipmentCommands {
       command.order_id,
     );
     requireValue(projection.provider_id === fact.id, 'shipment_projection_conflict', 409);
-    return { command: finished, replayed: false };
+    return {
+      command: finished,
+      replayed: false,
+      providerState: disposition.providerState,
+      requiresReview: false,
+      pending: false,
+    };
   }
   async execute(store, env, id, adapter, actor) {
     const config = await this.s.store(store, env);
@@ -290,7 +392,8 @@ export class ShipmentCommands {
     );
     // Non-idempotent APIs get at most one POST, even after timeout/restart.
     requireValue(
-      command.first_attempt_at === null || adapter.supportsIdempotentCreate === true,
+      command.provider_id === null &&
+        (command.first_attempt_at === null || adapter.supportsIdempotentCreate === true),
       'shipment_reconciliation_required',
       409,
     );
@@ -362,6 +465,15 @@ export class ShipmentCommands {
       if (String(error.message).includes('stock_quality_hold'))
         throw new CommerceError('stock_quality_hold', 409);
       throw new CommerceError('shipment_outcome_unknown', 503);
+    } finally {
+      await this.s
+        .stmt(
+          'UPDATE shipment_commands SET lease_until=0 WHERE store_id=? AND id=? AND lease_token=?',
+          store,
+          id,
+          lease,
+        )
+        .run();
     }
   }
   async reconcile(store, env, id, input, adapter, actor) {
@@ -377,6 +489,11 @@ export class ShipmentCommands {
     );
     const command = await this.get(store, env, id);
     this.binding(command, env, adapter);
+    requireValue(
+      command.provider_id === null || command.provider_id === input.providerId,
+      'shipment_facts_mismatch',
+      409,
+    );
     if (command.state === 'registered') {
       requireValue(command.provider_id === input.providerId, 'shipment_facts_mismatch', 409);
       return { command, replayed: true };
@@ -445,91 +562,154 @@ export class ShipmentCommands {
     return command;
   }
   async refresh(store, env, id, adapter, actor) {
-    const command = await this.get(store, env, id);
+    const config = await this.s.store(store, env);
+    requireOperation(config, env, 'shipping_not_admitted');
+    let command = await this.get(store, env, id);
     this.binding(command, env, adapter);
     requireValue(
-      command.state === 'registered' && identifier(actor),
+      ['registered', 'unknown', 'review'].includes(command.state) &&
+        identifier(command.provider_id) &&
+        identifier(actor),
       'shipment_execution_not_allowed',
       409,
     );
-    const documents = await adapter.documents(command.provider_id);
-    requireValue(
-      Array.isArray(documents) && documents.length <= 100,
-      'carrier_document_invalid',
-      502,
-    );
-    // Preserve provider order and whole PDF bundles. Reported numbers and a file
-    // count cannot prove what number is printed on which label/page.
-    const fact = await adapter.bookingInformation(command.provider_id);
-    requireValue(
-      await adapter.verifyBooking(command.payload, fact),
-      'shipment_facts_mismatch',
-      409,
-    );
-    const labels = documents.filter((d) => d.kind === 'label');
-    const labelsAvailable = labels.length > 0;
-    await this.observe(command, 'document_collection', {
-      observedAt: this.s.now(),
-      documentCount: documents.length,
-      labelDocumentCount: labels.length,
-      labelsAvailable,
-    });
-    const trackingCandidates = fact.trackingCandidates || null;
-    if (trackingCandidates)
-      await this.observe(command, 'tracking_candidates', {
-        numbers: trackingCandidates,
-        source: fact.trackingCandidateSource,
-        printedMappingVerified: false,
-      });
-    let labelIndex = 0;
-    const stored = [];
-    const documentFacts = [];
-    for (const d of documents) {
-      const hash = await hashBytes(d.bytes),
-        fileId = 'ship_' + command.id.slice(0, 35) + '_' + hash.slice(0, 32);
-      stored.push(
-        (
-          await this.files.put(
-            store,
-            env,
-            command.order_id,
-            {
-              id: fileId,
-              bytes: d.bytes,
-              filename: 'shipment-' + hash.slice(0, 16) + '.pdf',
-              kind: 'shipment_document',
-              sourceId: command.id,
-            },
-            actor,
-          )
-        ).file.id,
+    const lease = crypto.randomUUID(),
+      now = this.s.now();
+    const claim = await this.s
+      .stmt(
+        "UPDATE shipment_commands SET lease_token=?,lease_until=? WHERE store_id=? AND id=? AND state IN ('registered','unknown','review') AND provider_id=? AND lease_until<=?",
+        lease,
+        now + 60000,
+        store,
+        id,
+        command.provider_id,
+        now,
+      )
+      .run();
+    requireValue(claim.meta.changes === 1, 'shipment_execution_busy', 409);
+    try {
+      // Preserve provider order and whole PDF bundles. Reported numbers and a file
+      // count cannot prove what number is printed on which label/page.
+      const fact = await adapter.bookingInformation(command.provider_id);
+      requireValue(
+        fact.id === command.provider_id && (await adapter.verifyBooking(command.payload, fact)),
+        'shipment_facts_mismatch',
+        409,
       );
-      const labelDocumentIndex = d.kind === 'label' ? labelIndex++ : null;
-      const documentFact = {
-        fileId: stored.at(-1),
-        providerFilename: d.providerFilename || null,
-        kind: d.kind || 'document',
-        providerDocumentIndex: stored.length - 1,
-        labelDocumentIndex,
-        unverifiedBundle: d.kind === 'label',
-        parcelIndex: null,
-        trackingNumber: null,
-        labelMappingVerified: false,
+      const disposition = this.disposition(adapter, fact);
+      if (disposition.state !== 'registered' || command.state !== 'registered') {
+        const result = await this.finish(command, fact, adapter, actor, lease);
+        command = result.command;
+        if (command.state !== 'registered')
+          return {
+            files: [],
+            documents: [],
+            tracking: [],
+            labelsAvailable: false,
+            trackingCandidates: null,
+            trackingCandidateSource: null,
+            printedMappingVerified: false,
+            providerState: result.providerState,
+            requiresReview: result.requiresReview,
+            pending: result.pending,
+          };
+      } else await this.observe(command, 'booking', { ...fact, actorRef: actor });
+      const beforeDocuments = await this.get(store, env, id);
+      requireValue(
+        beforeDocuments.lease_token === lease && beforeDocuments.lease_until > this.s.now(),
+        'shipment_execution_busy',
+        409,
+      );
+      // Read status before any label request. Unpaid/held/pending is not a label.
+      const documents = await adapter.documents(command.provider_id);
+      requireValue(
+        Array.isArray(documents) && documents.length <= 100,
+        'carrier_document_invalid',
+        502,
+      );
+      const labels = documents.filter((d) => d.kind === 'label');
+      const labelsAvailable = labels.length > 0;
+      await this.observe(command, 'document_collection', {
+        observedAt: this.s.now(),
+        documentCount: documents.length,
+        labelDocumentCount: labels.length,
+        labelsAvailable,
+      });
+      const trackingCandidates = fact.trackingCandidates || null;
+      if (trackingCandidates)
+        await this.observe(command, 'tracking_candidates', {
+          numbers: trackingCandidates,
+          source: fact.trackingCandidateSource,
+          printedMappingVerified: false,
+        });
+      let labelIndex = 0;
+      const stored = [];
+      const documentFacts = [];
+      for (const d of documents) {
+        const hash = await hashBytes(d.bytes),
+          fileId = 'ship_' + command.id.slice(0, 35) + '_' + hash.slice(0, 32);
+        stored.push(
+          (
+            await this.files.put(
+              store,
+              env,
+              command.order_id,
+              {
+                id: fileId,
+                bytes: d.bytes,
+                filename: 'shipment-' + hash.slice(0, 16) + '.pdf',
+                kind: 'shipment_document',
+                sourceId: command.id,
+              },
+              actor,
+            )
+          ).file.id,
+        );
+        const labelDocumentIndex = d.kind === 'label' ? labelIndex++ : null;
+        const documentFact = {
+          fileId: stored.at(-1),
+          providerFilename: d.providerFilename || null,
+          kind: d.kind || 'document',
+          providerDocumentIndex: stored.length - 1,
+          labelDocumentIndex,
+          unverifiedBundle: d.kind === 'label',
+          parcelIndex: null,
+          trackingNumber: null,
+          labelMappingVerified: false,
+        };
+        documentFacts.push(documentFact);
+        await this.observe(command, 'document', documentFact);
+      }
+      const events = await adapter.tracking(command.provider_id);
+      requireValue(Array.isArray(events) && events.length <= 1000, 'carrier_tracking_invalid', 502);
+      for (const event of events) await this.observe(command, 'tracking', event);
+      const afterDocuments = await this.get(store, env, id);
+      requireValue(
+        afterDocuments.lease_token === lease && afterDocuments.lease_until > this.s.now(),
+        'shipment_execution_busy',
+        409,
+      );
+      return {
+        files: stored,
+        documents: documentFacts,
+        tracking: events,
+        labelsAvailable,
+        trackingCandidates,
+        trackingCandidateSource: fact.trackingCandidateSource || null,
+        printedMappingVerified: false,
+        providerState: disposition.providerState,
+        requiresReview: false,
+        pending: false,
       };
-      documentFacts.push(documentFact);
-      await this.observe(command, 'document', documentFact);
+    } finally {
+      await this.s
+        .stmt(
+          'UPDATE shipment_commands SET lease_until=0 WHERE store_id=? AND id=? AND lease_token=?',
+          store,
+          id,
+          lease,
+        )
+        .run();
     }
-    const events = await adapter.tracking(command.provider_id);
-    requireValue(Array.isArray(events) && events.length <= 1000, 'carrier_tracking_invalid', 502);
-    for (const event of events) await this.observe(command, 'tracking', event);
-    return {
-      files: stored,
-      documents: documentFacts,
-      tracking: events,
-      labelsAvailable,
-      trackingCandidates,
-      trackingCandidateSource: fact.trackingCandidateSource || null,
-      printedMappingVerified: false,
-    };
   }
 }

@@ -18,6 +18,12 @@ class Element {
   removeAttribute(key) {
     delete this.attrs[key];
   }
+  getAttribute(key) {
+    return this.attrs[key] ?? null;
+  }
+  checkValidity() {
+    return !this.attrs.required || Boolean(this.value);
+  }
   append(...nodes) {
     for (const node of nodes) {
       if (node instanceof Element) node.parentElement = this;
@@ -58,8 +64,8 @@ const field = (root, name) => nodes(root).find((n) => n.name === name);
 const button = (root, name) =>
   nodes(root).find((n) => n.tag === 'button' && n.children.includes(name));
 const catalog = [
-  { sku: 'couple', title: 'Couple', enabled: true, available: 10 },
-  { sku: 'family', title: 'Family', enabled: true, available: 10 },
+  { sku: 'couple', title: 'Couple', enabled: true, available: 10, prices: { LT: 3200 } },
+  { sku: 'family', title: 'Family', enabled: true, available: 10, prices: { LT: 4800 } },
   { sku: 'disabled', enabled: false },
 ];
 function clientFixture() {
@@ -435,4 +441,199 @@ test('create locks editable request fields until the server result and then clea
     await submitting;
     assert.deepEqual(calls, [[]]);
     assert.deepEqual(client.created.lines, [{ sku: 'couple', quantity: 2 }]);
+  }));
+
+function onePageClient() {
+  const client = clientFixture(),
+    initialize = client.initialize;
+  client.initialize = async () => {
+    const data = await initialize();
+    data.context.paymentConnected = true;
+    return data;
+  };
+  client.quote = async (input) => ({
+    amount:
+      input.lines.reduce(
+        (sum, l) => sum + catalog.find((p) => p.sku === l.sku).prices.LT * l.quantity,
+        0,
+      ) + 450,
+    currency: 'EUR',
+    quoteHash: 'verified',
+    delivery: { amount: 450 },
+    lines: input.lines.map((l) => ({
+      ...l,
+      unitAmount: catalog.find((p) => p.sku === l.sku).prices.LT,
+    })),
+  });
+  return client;
+}
+function fillOnePage(root) {
+  for (const [name, value] of Object.entries({
+    name: 'TEST Buyer',
+    email: 'buyer@example.test',
+    phone: '+37060000001',
+    line1: 'TEST Street 2',
+    city: 'Vilnius',
+    postalCode: '02211',
+  }))
+    field(root, name).value = value;
+  field(root, 'terms').checked = true;
+}
+test('one-page checkout shows selected rows only; removal persists an empty cart and never invents a price', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      changes = [];
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      catalogueUrl: '/catalogue',
+      productImage: (p) =>
+        p.sku === 'couple' ? '/couple.webp' : 'https://foreign.example/image.webp',
+      onCartChange: (lines) => changes.push(lines),
+    });
+    const items = nodes(root).filter((n) => n.attrs.class === 'checkout-item');
+    assert.equal(items[0].hidden, false);
+    assert.equal(items[1].hidden, true);
+    assert.equal(nodes(root).filter((n) => n.tag === 'img').length, 1);
+    assert.equal(
+      nodes(root).find((n) => n.attrs.class === 'checkout-summary').children[0].children[0],
+      'Užsakymo suma',
+    );
+    assert.equal(changes.length, 0);
+    await nodes(root)
+      .find((n) => n.attrs.class === 'checkout-remove')
+      .fire('click');
+    assert.deepEqual(changes, [[]]);
+    assert.equal(nodes(root).find((n) => n.tag === 'form').hidden, true);
+    assert.equal(nodes(root).find((n) => n.attrs.class === 'checkout-empty').hidden, false);
+  }));
+test('one-page submit quotes once, locks fields before quote, creates once and mounts payment in place', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      abort = new AbortController();
+    let quoteCount = 0,
+      createCount = 0,
+      paymentCount = 0,
+      disposeCount = 0,
+      resolveQuote;
+    const quote = client.quote,
+      create = client.create;
+    client.quote = async (input) => {
+      quoteCount++;
+      await new Promise((resolve) => {
+        resolveQuote = resolve;
+      });
+      return quote(input);
+    };
+    client.create = async (input) => {
+      createCount++;
+      return create.call(client, input);
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      signal: abort.signal,
+      initialLines: [{ sku: 'couple', quantity: 2 }],
+      renderPayment: async ({ target, order }) => {
+        paymentCount++;
+        assert.equal(order.id, client.order.id);
+        target.append('STRIPE FIXTURE');
+        return () => disposeCount++;
+      },
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form'),
+      submitting = form.fire('submit');
+    assert.equal(field(root, 'email').disabled, true);
+    assert.equal(field(root, 'country').disabled, true);
+    assert.equal(field(root, 'couple').disabled, true);
+    await form.fire('submit');
+    assert.equal(quoteCount, 1);
+    resolveQuote();
+    await submitting;
+    assert.equal(createCount, 1);
+    assert.equal(paymentCount, 1);
+    assert.equal(client.created.acceptedPolicyVersion, 'fixture');
+    assert.deepEqual(client.created.lines, [{ sku: 'couple', quantity: 2 }]);
+    assert.ok(textContent(root).includes('STRIPE FIXTURE'));
+    abort.abort();
+    assert.equal(disposeCount, 1);
+  }));
+test('one-page checkout cannot create while production is closed or terms/customer are incomplete', () =>
+  withDom(async () => {
+    for (const closed of [false, true]) {
+      const root = new Element('div'),
+        client = onePageClient(),
+        initialize = client.initialize;
+      if (closed)
+        client.initialize = async () => {
+          const d = await initialize();
+          d.context = { environment: 'production', paymentConnected: true, productionReady: false };
+          return d;
+        };
+      await mountCheckout(root, {
+        client,
+        layout: 'one-page',
+        initialLines: [{ sku: 'couple', quantity: 1 }],
+      });
+      const form = nodes(root).find((n) => n.tag === 'form');
+      await form.fire('submit');
+      assert.equal(client.created, undefined);
+      fillOnePage(root);
+      field(root, 'terms').checked = false;
+      await form.fire('submit');
+      assert.equal(client.created, undefined);
+      if (closed) {
+        field(root, 'terms').checked = true;
+        await form.fire('submit');
+        assert.equal(client.created, undefined);
+        assert.equal(button(root, 'Tęsti į apmokėjimą').disabled, true);
+      }
+    }
+  }));
+test('one-page checkout rejects inconsistent server amounts and recovers a lost create without another order', () =>
+  withDom(async () => {
+    for (const lost of [false, true]) {
+      const root = new Element('div'),
+        client = onePageClient(),
+        changes = [];
+      let payments = 0;
+      if (!lost)
+        client.quote = async () => ({
+          amount: 1,
+          currency: 'EUR',
+          quoteHash: 'bad',
+          lines: [{ sku: 'couple', quantity: 1, unitAmount: 3200 }],
+          delivery: { amount: 450 },
+        });
+      else
+        client.create = async function () {
+          this.attempt = { requestKey: 'same-attempt' };
+          throw Error('network');
+        };
+      await mountCheckout(root, {
+        client,
+        layout: 'one-page',
+        initialLines: [{ sku: 'couple', quantity: 1 }],
+        onCartChange: (lines) => changes.push(lines),
+        renderPayment: async () => {
+          payments++;
+        },
+      });
+      fillOnePage(root);
+      await nodes(root)
+        .find((n) => n.tag === 'form')
+        .fire('submit');
+      assert.deepEqual(changes, []);
+      assert.equal(payments, 0);
+      if (lost) {
+        await button(root, 'Atnaujinti būseną').fire('click');
+        assert.equal(client.attempt.orderId, client.order.id);
+        assert.deepEqual(changes, [[]]);
+        assert.equal(payments, 1);
+      } else assert.equal(client.created, undefined);
+    }
   }));

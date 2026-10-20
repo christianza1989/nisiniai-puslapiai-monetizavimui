@@ -7,6 +7,11 @@ export function memoPreviewBackendAllowed(context,{stripeTest=false}={}){
  if(!isolated)return false;
  return stripeTest?context.schemaVersion===1&&context.paymentConnected===true&&context.paymentProvider==='stripe'&&context.paymentEnvironment==='test'&&context.paymentAccountVerified===true:context.paymentConnected===false;
 }
+export function memoPreviewWorkerConfig(configuration){
+ // A custom-domain route makes Wrangler rewrite local requests to the first
+ // production hostname. The local buyer relay must see the actual loopback.
+ return {...configuration,routes:[],workers_dev:false,preview_urls:false};
+}
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
 const publicRoot=fileURLToPath(new URL('../../../dovanos-memorycasting/',import.meta.url));
 const response=await fetch('http://127.0.0.1:8827/api/storefront-context',{signal:AbortSignal.timeout(5000)});
@@ -24,7 +29,9 @@ for(const [key,value] of [['NICHE_DEV_SITE_ID','memocasting'],['MEMO_COMMERCE_OR
  local=expression.test(local)?local.replace(expression,line):local+(local&&!local.endsWith('\n')?'\n':'')+line+'\n';
 }
 await fs.writeFile(file,local);
-const child=spawn(process.execPath,['--import','./scripts/sites-env.mjs','./node_modules/wrangler/bin/wrangler.js','dev','--config','dist/server/wrangler.json','--local','--persist-to','.wrangler/state','--ip','127.0.0.1','--inspector-port','0','--port','8817'],{cwd:publicRoot,stdio:'inherit',windowsHide:true});
+const previewConfig=new URL('memo-preview.json',directory);
+await fs.writeFile(previewConfig,JSON.stringify(memoPreviewWorkerConfig(JSON.parse(await fs.readFile(new URL('wrangler.json',directory),'utf8')))));
+const child=spawn(process.execPath,['--import','./scripts/sites-env.mjs','./node_modules/wrangler/bin/wrangler.js','dev','--config','dist/server/memo-preview.json','--local','--persist-to','.wrangler/state','--ip','127.0.0.1','--inspector-port','0','--port','8817'],{cwd:publicRoot,stdio:'inherit',windowsHide:true});
 child.on('error',()=>{console.error('Local preview process could not start.');process.exitCode=1;});
 child.on('exit',code=>{process.exitCode=code??1;});
 process.on('SIGINT',()=>child.kill('SIGINT'));

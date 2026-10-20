@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../commerce-core/node_modules/wrangler/config-schema.json",
+  "name": "memocasting-instagram",
+  "account_id": "d102163f74a45ab6d33bca786ce281ec",
+  "main": "../../../social-core/worker.mjs",
+  "compatibility_date": "2026-10-20",
+  "workers_dev": false,
+  "preview_urls": false,
+  "vars": {"INSTAGRAM_ENABLED":"1","INSTAGRAM_USERNAME":"memocasting.lt","INSTAGRAM_API_VERSION":"v26.0"},
+  "kv_namespaces": [{"binding":"INSTAGRAM_STATE","id":"842d4dbb187f4b5097bf284545415e28"}],
+  "triggers": {"crons":["*/30 * * * *"]},
+  "observability": {"enabled":true,"head_sampling_rate":1,"redact_query_string":true,"logs":{"enabled":true,"invocation_logs":true},"traces":{"enabled":true,"head_sampling_rate":0.1}}
+}

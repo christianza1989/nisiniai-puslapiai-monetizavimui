@@ -77,3 +77,29 @@ Modelio mutacijos serializuojamos process-local ir atominiu tarp-procesiniu `.mo
 ## Bendras visų nišų review ir release (2026-10-05)
 
 CONTENT_CORE.md yra aktuali bendra eiga: policy/kadencija/timezone, kelių CLI partijų V1 generavimas, draft link finalizavimas, revision-bound agento review, atomic batch approval ir immutable release su paketo/media SHA. GUI turi Turinio eiga. V1 generavimo užduotis įjungia griežtus naujus review/export vartus; legacy įrašai migruoja su realia peržiūra. V2 review/release bendri, jo tekstinis generatorius vis dar OFF. Agentas turi faktiškai patikrinti turinį/asetus; receipt pildymas nėra patikra. Release lieka exported-not-deployed. Skaityti [CONTENT_CORE](../CONTENT_CORE.md); prieš importą naudoti scripts/verify-content-release.mjs. Ankstesnės instrukcijos apie tik planuojamą įrodymų žurnalą pakeistos šiuo inkrementu.
+# Changed drafts and private text comparisons
+
+The **Puslapiai** list derives **Perrašytas juodraštis**, **Naujas juodraštis** and
+**Patikrintas** independently of the previous published revision. The text-state
+filter supports all pages, changed texts, and current editorial reviews. An old
+published approval does not approve the changed draft. Review state uses the
+canonical revision hash and site-context binding and disappears after edits.
+
+**Senas / naujas** opens a read-only comparison: two columns on desktop, stacked
+sections on mobile. A missing baseline is explicitly labelled, never fabricated.
+The direct local link is `/?site=<siteId>&view=pages&filter=changed`.
+
+For a cleanup/rewrite migration, explicitly import the owner's saved pre-cleanup
+site copy **once** into private history:
+
+```powershell
+node scripts/import-revision-baseline.mjs --from <private-site-copy.json> --label "Before text cleanup" --captured-at <ISO-date>
+```
+
+The immutable archive is stored in `STUDIO_REVISION_HISTORY_DIR` or
+`STUDIO_DATA_DIR/revision-history`. It prefers the then-published body and falls
+back to the then-editable body. Keep that directory private and outside public
+packages and Git. The importer refuses an existing baseline; it never restores
+an old body into active drafts. Without an archive, comparison can use the
+page's previous published revision. The local HTTP/origin guards still apply.
+

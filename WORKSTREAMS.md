@@ -396,3 +396,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-20 issue233 RESERVED: codex/studio-revision-comparison-20261020 from main e231fe49; companion ec8a9c03. Direct Rokas approval for changed/reviewed badges, changed-text filter and private old/new comparison. Scope content-studio src/revision-history.mjs, server.mjs, public/app.js/style.css, scripts/import-revision-baseline.mjs, test/revision-history.test.mjs, README, docs/STUDIO_REVISION_COMPARISON_VERIFICATION.md and own journal. Archived text is read-only; no active draft restoration, approval, export or publication.

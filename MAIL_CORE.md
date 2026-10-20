@@ -1,5 +1,11 @@
 # Bendras nišinių svetainių paštas
 
+## Actual edge transport qualification — 2026-10-20
+
+Node TLS/SMTP authentication does not qualify a Cloudflare Worker transport. Memocasting's actual Worker could not connect to smtp.hostinger.com because its resolved IP was in Cloudflare's blocked TCP destination ranges; this is an observed endpoint/runtime incompatibility, not a claim that all SMTP fails. Do not bypass TLS, force an IP, replay an unknown send or introduce an automatic paid fallback. Qualify the actual deployed runtime, authenticated sender, durable one-shot ledger, provider acceptance and exact inbox receipt separately.
+
+For the owner-approved existing mailbox, companion `lib/hostinger-commerce-mail.mjs` provides explicit HTTPS API transport through a private commerce-mail service binding. Verify `/api/v1/me` resource ID and sender; keep key/resource bindings private. Send once to the official mailbox send endpoint, reject redirects and accept only204. Preserve unknown claims without retry or SMTP fallback. The API contract used here has no custom Message-ID/Reply-To fields: disclose a help address in text and retain internal acceptance references without inventing provider IDs or inbox delivery. Branding may use a validated per-site sender name while keeping the authenticated From address. New mailbox access requires the owner's actual approval; this capability grants no general access or sending authority. Actual Memocasting receipt and remaining limits: [sales activation](sites/memocasting/SALES_ACTIVATION_2026_10_20.md). Historical SMTP evidence below remains unchanged.
+
 2026-09-30 savininko patvirtintas bendras kontaktas **info@pinet.lt**, operatoriaus pavadinimas **MB Pinet**. Naudojama jau egzistuojanti Hostinger dėžutė; nauja pašto paskyra nesukurta ir papildoma mokama siuntimo paslauga neprijungta. Viešos užklausos nepaverčiamos pardavimo ar tiekimo pažadu.
 
 ## Įgyvendinta

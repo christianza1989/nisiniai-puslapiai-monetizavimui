@@ -43,3 +43,6 @@ Shopo2026-10-20 read-only peržiūra: papildomo savininko VAT/address/series fak
 Pašto gateway/actual SMTP gavimas ir reali automation/consumer eiga atskiri nuo productionReady formulės. Jokio fake LIVE receipt, testinio tarifo ar užsakymo vartų apėjimo. Tolimesnį pilną prekybos įjungimą vykdyti pagal DEPLOYMENT runbook, su tikru piniginės finansavimu, reviewed exact konfigūracija ir pasirašyto mokėjimo priėmimu.
 
 Rollback: prieš veiksmą vėl perskaityti actual settings. Frontend ankstesnis e5197461; backend ankstesnis67d8fdd8 arba9da50085 (0.18 iki publickeybinding), priklausomai nuo reikalingo kodo režimo. Vien UI rollback nekeičia naujo optional publickey lauko; neperrašyti paskyros/Sendparcel jungties senais vien Stripe bulk duomenimis, neatgaivinti anksčiau atšaukto rakto ir neatkurti senos DB. Privatūs original/next binding payload ir read-only D1 kvitai išsaugoti.
+# Activated LT checkout
+
+2026-10-20: the subsequent [sales activation](SALES_ACTIVATION_2026_10_20.md) records the current enabled production state, resolved native carrier/Stripe/mail defects and precise real-payment limits. Earlier pending dependencies below are historical checkpoints, not the current storefront admission.

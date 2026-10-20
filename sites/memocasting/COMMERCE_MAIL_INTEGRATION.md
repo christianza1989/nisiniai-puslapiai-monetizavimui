@@ -1,5 +1,9 @@
 # Privati bendro pašto jungtis prekybos pranešimams
 
+## 2026-10-20 production amendment
+
+Historical source-only/default-disabled statements below describe their original checkpoint. Actual private service is now deployed with explicit `COMMERCE_MAIL_TRANSPORT=hostinger_api`, approved existing info@pinet.lt mailbox and Memocasting sender name. SMTP failed before greeting in the actual edge runtime, despite Node authentication. HTTPS API uses the same one-shot durable claim, no automatic replay/fallback, exact204 acceptance and an internal receipt reference; custom Message-ID/Reply-To headers are not promised. API self-test was found in owner Gmail INBOX; real cron OrderPlaced notification was accepted separately. Dedicated D1, bindings, versions, exact source and unpaid-test limits are in [SALES_ACTIVATION](SALES_ACTIVATION_2026_10_20.md). No paid plan was added. Secrets are provider bindings only; unknown original SMTP claim remains unknown.
+
 Svetainės sesijos companion PR31 prideda `lib/commerce-mail-gateway.mjs` ir `workers/commerce-mail/`. Naudojamas jau esantis `lib/smtp-protocol.mjs` bei Hostinger TLS transportas pagal MAIL_CORE. Nėra naujo pašto tiekėjo, SMTP prisijungimo, tikro laiško ar viešo HTTP maršruto.
 
 Vienas privatus service binding atitinka vieną konfigūruotą parduotuvę, aplinką ir tikrą SMTP vartotoją. `From` privalo sutapti su autentifikuotu SMTP adresu; viešas parduotuvės aptarnavimo adresas gali būti `Reply-To`. Bandomojoje aplinkoje gavėjai papildomai ribojami aiškiu testinių adresų sąrašu. Joks šio įrašo adresas nėra nurodymas siųsti laišką.

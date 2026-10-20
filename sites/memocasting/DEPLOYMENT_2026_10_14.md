@@ -233,3 +233,6 @@ Rollback is frontend675405c1-16ec-47ad-ba48-ae620c1e9437 together with previous 
 ## 2026-10-20 owner video carousel hosted
 
 Homepage Instagram placement now uses24supplied local videos with66responsiveposter variants. Frontend316f4de3 active08:12:03Z, PUBLIC b5edd7c/PR31; CORE acceptance3a426d80/PR101. All90assetHEAD and48exactMP4ranges pass; realdesktop1280/mobile390/320 and two realplaybacks accepted. Native3367ef65 packageSHA5a0183d6618e1388ca76deb8410f2ac63018791b4f11ee17cc604b3edb3dd95c,22galleryphotos/92dates andactualbindings/observability unchanged; commerce67d8fdd8 retained. No DNS/mail/DB/secret/cron change. [Exact acceptance and rollback](VIDEO_CAROUSEL_2026_10_20.md). Former97678db4 frontend remains rollback; oldInstagram backend retained but homepage no longer fetches it. Mainmerge separate from actualdeployment.
+# 2026-10-20 active LT sales checkpoint
+
+See [SALES_ACTIVATION_2026_10_20](SALES_ACTIVATION_2026_10_20.md): LT orders enabled, actual LIVE embedded Session created/recovered unpaid, real carrier quote200, private mail accepted and exact self-test received in owner inbox, cron active. This supersedes earlier stopped-sales preparation states without rewriting historical receipts. Actual paid transaction and purchased carrier label are separate; prepaid wallet top-up remains owner-deferred before manual fulfillment.

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Read-only old/current comparison and independent current-review badges; owner authorized issue233 scope. Serial full regression50/50PASS after preserving original concurrent Windows EPERM.",
+  "checks": [
+    {
+      "command": "node --test --test-concurrency=1 content-studio/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_REVISION_COMPARISON_VERIFICATION.md"
+    },
+    {
+      "command": "Actual Playwright1280/390/320 filtered list, old/current columns and absent-history state",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_REVISION_COMPARISON_VERIFICATION.md"
+    }
+  ],
+  "eventId": "d2aa5e94-5c4c-4013-8716-f15e8909a4cb",
+  "sequence": 2,
+  "at": "2026-10-20T06:32:20.581Z"
+}

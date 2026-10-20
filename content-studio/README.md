@@ -15,6 +15,8 @@ Atidarykite `http://127.0.0.1:4317`. Serveris klausosi tik `127.0.0.1`; duomenys
 
 ## Redaktoriaus eiga
 
+Puslapių sąrašas suskirstytas į „Gidai“, „Kategorijų aprašai“, „Produktų aprašai“ ir „Kiti puslapiai“. Grupių mygtukai filtruoja sąrašą; skaičiai atitinka pasirinktą teksto būseną. „Visi puslapiai, įskaitant planus“ rodo ir dar neparašytus įrašus. Grupė ir būsena išsaugomos nuorodoje (`kind` ir `filter`), todėl pasirinkimas išlieka perkrovus puslapį. Kategorijos atpažįstamos pagal `kategorijos/` kelią; tikri DUK ir informaciniai puslapiai lieka kitų puslapių grupėje. Saugojamas tipas, turinys ir tvirtinimo taisyklės nesikeičia.
+
 Bendra agento instrukcija yra [niche-content-planner](../SKILLS/niche-content-planner/SKILL.md). Ji apima nišos tyrimą, sezonų pritaikymą, savitus URL, klasterius, nuorodas, naudingą tekstą ir faktų patikrą. `src/editorial-skill.mjs` kiekvieno darbo pradžioje nuskaito skill ir reikalingus jo priedus, tiesiogiai įtraukia juos į Codex CLI užduotį ir į `jobs.json` įrašo instrukcijų SHA-256. Viena partija naudoja tą pačią instrukcijų versiją; pakeitimai taikomi kitam darbui. Trūkstant failo nėra tylaus perėjimo prie bendro prompto. Alternatyvų skill katalogą galima nurodyti `STUDIO_EDITORIAL_SKILL_DIR` (kataloge turi būti tie patys failai).
 
 Nuo 2026-10-01 abu CLI režimai taip pat tiesiogiai gauna [PROJECT_CONTRACT](../SKILLS/PROJECT_CONTRACT.md), jo tekstas įskaičiuojamas į tą patį SHA-256. Alternatyvus skill katalogas turi turėti `../PROJECT_CONTRACT.md` su realia projekto sutartimi; jos trūkstant darbas stabdomas iki CLI, nepublikuoja ir nekeičia svetainės turinio. Importuoti SOURCE_SKILL/SOURCE_PROMPT ir visi 52 helpers į generavimo promptą automatiškai nekraunami. Esamo darbo snapshot nekeičiamas.
@@ -77,3 +79,29 @@ Modelio mutacijos serializuojamos process-local ir atominiu tarp-procesiniu `.mo
 ## Bendras visų nišų review ir release (2026-10-05)
 
 CONTENT_CORE.md yra aktuali bendra eiga: policy/kadencija/timezone, kelių CLI partijų V1 generavimas, draft link finalizavimas, revision-bound agento review, atomic batch approval ir immutable release su paketo/media SHA. GUI turi Turinio eiga. V1 generavimo užduotis įjungia griežtus naujus review/export vartus; legacy įrašai migruoja su realia peržiūra. V2 review/release bendri, jo tekstinis generatorius vis dar OFF. Agentas turi faktiškai patikrinti turinį/asetus; receipt pildymas nėra patikra. Release lieka exported-not-deployed. Skaityti [CONTENT_CORE](../CONTENT_CORE.md); prieš importą naudoti scripts/verify-content-release.mjs. Ankstesnės instrukcijos apie tik planuojamą įrodymų žurnalą pakeistos šiuo inkrementu.
+# Changed drafts and private text comparisons
+
+The **Puslapiai** list derives **Perrašytas juodraštis**, **Naujas juodraštis** and
+**Patikrintas** independently of the previous published revision. The text-state
+filter supports all pages, changed texts, and current editorial reviews. An old
+published approval does not approve the changed draft. Review state uses the
+canonical revision hash and site-context binding and disappears after edits.
+
+**Senas / naujas** opens a read-only comparison: two columns on desktop, stacked
+sections on mobile. A missing baseline is explicitly labelled, never fabricated.
+The direct local link is `/?site=<siteId>&view=pages&filter=changed`.
+
+For a cleanup/rewrite migration, explicitly import the owner's saved pre-cleanup
+site copy **once** into private history:
+
+```powershell
+node scripts/import-revision-baseline.mjs --from <private-site-copy.json> --label "Before text cleanup" --captured-at <ISO-date>
+```
+
+The immutable archive is stored in `STUDIO_REVISION_HISTORY_DIR` or
+`STUDIO_DATA_DIR/revision-history`. It prefers the then-published body and falls
+back to the then-editable body. Keep that directory private and outside public
+packages and Git. The importer refuses an existing baseline; it never restores
+an old body into active drafts. Without an archive, comparison can use the
+page's previous published revision. The local HTTP/origin guards still apply.
+

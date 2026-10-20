@@ -1,7 +1,9 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { initialize, ROOT, getSite, listSites, listCalendar, createSite, editSite, addPage, editPage, deleteDraftPage, approvePage, revokePage, exportPackage, listJobs, saveResponsiveAsset, getAssetFile } from './model.mjs';
+import { initialize, ROOT, DATA, revisionHash, getSite, listSites, listCalendar, createSite, editSite, addPage, editPage, deleteDraftPage, approvePage, revokePage, exportPackage, listJobs, saveResponsiveAsset, getAssetFile } from './model.mjs';
+import { reviewCurrent } from './content-workflow.mjs';
+import { readRevisionBaseline, revisionState, revisionComparison } from './revision-history.mjs';
 import { enqueue } from './generator.mjs';
 import { listNetworkLinks } from './model.mjs';
 import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
@@ -10,6 +12,7 @@ import { imageSrcSet, visibleImageCredit } from '../../../dovanos-memorycasting/
 const PORT = Number(process.env.STUDIO_PORT || 4317);
 const PUBLIC = path.join(ROOT, 'public');
 const MAX_BODY = 18 * 1024 * 1024;
+const HISTORY = process.env.STUDIO_REVISION_HISTORY_DIR || path.join(DATA, 'revision-history');
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
 const json = (response, status, body) => {
   response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' });
@@ -90,7 +93,10 @@ export async function createServer() {
         if (parts.length === 4 && parts[3] === 'finalize-links' && request.method === 'POST') return json(response, 200, await finalizeInternalLinks(siteId, (await readBody(request)).pageIds));
         if (parts.length === 4 && parts[3] === 'approve-reviewed' && request.method === 'POST') { const input = await readBody(request); return json(response, 200, await approveReviewedBatch(siteId, input.pageIds, input.actorId)); }
         if (parts.length === 4 && parts[3] === 'release' && request.method === 'POST') return json(response, 200, await releaseContent(siteId));
-        if (parts.length === 3 && request.method === 'GET') return json(response, 200, await getSite(siteId));
+        if (parts.length === 3 && request.method === 'GET') {
+          const site = await getSite(siteId), baseline = await readRevisionBaseline(HISTORY, siteId);
+          return json(response, 200, { ...site, pages: site.pages.map(page => ({ ...page, revisionState: revisionState(page, baseline, reviewCurrent(site, page, revisionHash(page))) })) });
+        }
         if (parts.length === 3 && request.method === 'PUT') return json(response, 200, await editSite(siteId, await readBody(request)));
         if (parts[3] === 'autopilot' && request.method === 'POST') { await getSite(siteId); return json(response, 202, await enqueue('autopilot', siteId)); }
         if (parts[3] === 'plan' && request.method === 'POST') { await getSite(siteId); return json(response, 202, await enqueue('plan', siteId, null, await readBody(request))); }
@@ -106,6 +112,12 @@ export async function createServer() {
           if (parts.length === 4 && request.method === 'POST') return json(response, 201, await addPage(siteId, await readBody(request)));
           if (parts[4]) {
             const pageId = parts[4];
+            if (parts.length === 6 && parts[5] === 'revisions' && request.method === 'GET') {
+              const site = await getSite(siteId), page = site.pages.find(item => item.id === pageId);
+              if (!page) throw Object.assign(new Error('Puslapis nerastas.'), { status: 404 });
+              const baseline = await readRevisionBaseline(HISTORY, siteId);
+              return json(response, 200, revisionComparison(page, baseline, reviewCurrent(site, page, revisionHash(page))));
+            }
             if (parts.length === 6 && parts[5] === 'review' && request.method === 'POST') return json(response, 200, await recordEditorialReview(siteId, pageId, await readBody(request)));
             if (parts.length === 5 && request.method === 'PUT') return json(response, 200, await editPage(siteId, pageId, await readBody(request)));
             if (parts.length === 5 && request.method === 'DELETE') return json(response, 200, await deleteDraftPage(siteId, pageId));

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Draft navigation follow-up: explicit same-tab preview and direct comparison edit/preview actions. Actual source QA and live4317 clicks passed, no browser errors. Static app.js adopted without restarting standing19444; active site bytes unchanged. No new full model regression is claimed for this frontend-only follow-up.",
+  "checks": [
+    {
+      "command": "node --check content-studio/public/app.js",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_REVISION_COMPARISON_VERIFICATION.md#draft-navigation-follow-up"
+    },
+    {
+      "command": "Actual Playwright same-tab list/comparison/editor/calendar navigation and browser Back;1280/390/320; actual4317 preview/editor",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_REVISION_COMPARISON_VERIFICATION.md#draft-navigation-follow-up"
+    }
+  ],
+  "eventId": "a1b1f32b-e4c5-4190-a685-f86d99861992",
+  "sequence": 5,
+  "at": "2026-10-20T07:14:57.435Z"
+}

@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Studio lists hide rewritten drafts behind previous published status and lack a read-only old/current comparison after cleanup",
+  "category": "code",
+  "evidence": [
+    "docs/STUDIO_REVISION_COMPARISON_VERIFICATION.md"
+  ],
+  "paths": [
+    "content-studio/src/revision-history.mjs",
+    "content-studio/src/server.mjs",
+    "content-studio/public/app.js",
+    "content-studio/public/style.css",
+    "content-studio/scripts/import-revision-baseline.mjs",
+    "content-studio/test/revision-history.test.mjs",
+    "content-studio/README.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/233",
+  "rollback": "Revert scoped UI/helper changes; retain immutable private history and active drafts; restart the previous local Studio build",
+  "id": "upgrade-d4755720-356a-4a6c-80dc-e9fe65dc3b3f",
+  "branch": "codex/studio-revision-comparison-20261020",
+  "baseSha": "e231fe491e663949adbdda992286f5b8fb97513b",
+  "createdAt": "2026-10-20T06:31:53.364Z"
+}

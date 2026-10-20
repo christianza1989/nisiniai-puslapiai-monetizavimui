@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Direct owner request; semantic guide/category/product/other groups, status-aware counts, reloadable filters, current UI actions retained. Browser bootstrap initially failed on a standalone static module; final implementation stays in app.js with a single maintained helper source. Specific enlarged text overflow repaired and verified. Static-only local4317 adoption preserves exact active-site bytes; no server restart, approval or publication.",
+  "checks": [
+    {
+      "command": "node --check content-studio/public/app.js",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_CONTENT_GROUPS_VERIFICATION.md"
+    },
+    {
+      "command": "node --test --test-concurrency=1 content-studio/test/page-groups.test.mjs content-studio/test/revision-history.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_CONTENT_GROUPS_VERIFICATION.md"
+    },
+    {
+      "command": "Actual Playwright QA9431 desktop1280/mobile390/320 plus explicit enlarged text; local4317 adoption/browser and exact-byte site preservation",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_CONTENT_GROUPS_VERIFICATION.md"
+    }
+  ],
+  "eventId": "e36c9361-405f-4746-9f2a-7ae308cb44e1",
+  "sequence": 2,
+  "at": "2026-10-20T09:40:17.104Z"
+}

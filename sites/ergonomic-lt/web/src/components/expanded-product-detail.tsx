@@ -25,14 +25,14 @@ import {ProductSelectedReading} from './product-selected-reading';
 import {productSpecificationRows} from '@/lib/product-specifications';
 import {expandedQuoteEntry} from '@/lib/expanded-quote-entry';
 import {expandedProductCardPath} from '@/lib/expanded-product-card-path';
-import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration} from '@/presentation/armrest-labels';
+import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration,safeArmrestFallback} from '@/presentation/armrest-labels';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string}){
  const engine=useMemo(()=>createExpandedEngine(catalogRuntime),[catalogRuntime]);
  const {expandedForProduct,initialStateForProduct,changeField,stateChoices,stateToken,parseStateToken,expandedSelection}=engine;
  const {catalogForProduct,catalogAnchor,catalogInitial}=engine.catalog;
  const palettes=useMemo(()=>{const result={...basePalettes};for(const [key,values] of Object.entries(catalogRuntime?.palettes||{}))result[key]={...result[key],...values};return result;},[catalogRuntime]);
- const choiceLabel=(field:string,value:string)=>armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id);
+ const choiceLabel=(field:string,value:string)=>armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||safeArmrestFallback(field,value,baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id));
 
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);

@@ -15,3 +15,5 @@ These are narrowly registered factual option-label corrections, with no new prod
 Validation: 19 focused presentation/candidate/workflow tests passed. The existing default-product-pdf test also fails on unchanged HEAD because this checkout lacks the released runtime assets under public/ and finds zero fixed-view cases; unchanged baseline log retained. Typecheck and rendered desktop/mobile evidence are recorded in the private batch. No full catalogue browser QA is claimed.
 
 Affected-role plan: preserve current Manrope/native select, control size, focus and builder steps; inspect the longest actual option labels, summary/PDF and saved identities on desktop/mobile. Publication and rendered acceptance remain pending until their actual receipts exist.
+
+Mobile confirmation found the longest initial label284px inside a295px native select. Removing redundant type codes reduces the longest label to246px while preserving fixed/1D, finish and pad. Original option values/codes remain exact. Unknown armrest fallback claims are removed in the UI/configured PDF; proven labels and reviewed article overrides remain.

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import data from '../content/armrest-presentation.json';
-import {armrestChoiceLabel,armrestFieldLabel,presentArmrestConfiguration} from '../src/presentation/armrest-labels';
+import {armrestChoiceLabel,armrestFieldLabel,presentArmrestConfiguration,safeArmrestFallback} from '../src/presentation/armrest-labels';
 import type {Configuration} from '../src/lib/types';
 import {expandedQuoteEntry} from '../src/lib/expanded-quote-entry';
 import {renderToStaticMarkup} from 'react-dom/server';
@@ -19,12 +19,12 @@ test('source-fixed arms cannot be described as adjustable, and supplier 1D is re
  let fixed=0,oneD=0;
  for(const [code,article] of Object.entries(data.articles))for(const [value,choice] of Object.entries(article.choices)){
   const label=armrestChoiceLabel(code,'CARMRESTS',value)!;
-  if(/fixed/i.test(choice.sourceText)){assert.match(label,/fiksuoti/);assert.doesNotMatch(label,/reguliuojami|[1-4]D/);fixed++;}
-  if(/: 1D,/.test(choice.sourceText)){assert.match(label,/1D/);assert.doesNotMatch(label,/fiksuoti/);oneD++;}
+  if(/fixed/i.test(choice.sourceText)){assert.match(label,/fiksuoti/i);assert.doesNotMatch(label,/reguliuojami|[1-4]D/);fixed++;}
+  if(/: 1D,/.test(choice.sourceText)){assert.match(label,/1D/);assert.doesNotMatch(label,/fiksuoti/i);oneD++;}
  }
  assert.equal(fixed,7);assert.equal(oneD,4);
  // The supplier does not state fixed/adjustable for this chrome Sail option.
- assert.doesNotMatch(armrestChoiceLabel('KSAI004WW002','CARMRESTS','GTPSAILARMCRB')!,/fiksuoti|reguliuojami|[1-4]D/);
+ assert.doesNotMatch(armrestChoiceLabel('KSAI004WW002','CARMRESTS','GTPSAILARMCRB')!,/fiksuoti|reguliuojami|[1-4]D/i);
 });
 test('Tigu choices distinguish type, finish and pad while retaining all nine identities',()=>{
  const choices=data.articles.KTGU001WW002.choices;
@@ -48,9 +48,9 @@ test('quote display correction preserves configuration identity, raw supplier op
  const displayed=presentArmrestConfiguration(c,state.values,'Armrests');
  assert.deepEqual(c,original);assert.equal(displayed.id,c.id);assert.equal(displayed.code,c.code);
  assert.equal(displayed.supplierOptions,c.supplierOptions);assert.equal(displayed.details![1],c.details![1]);
- assert.equal(displayed.details![0].label,'Porankiai');assert.match(displayed.details![0].value,/fiksuoti/);
+ assert.equal(displayed.details![0].label,'Porankiai');assert.match(displayed.details![0].value,/fiksuoti/i);
  const quote=expandedQuoteEntry({id:'product_test',name:'sample',brand:'',image:null} as any,displayed,state,{url:'/produktai/kedes/sample/',customized:true,quantity:1,choiceLabel:(k,v)=>armrestChoiceLabel(c.code,k,v)||v});
- assert.equal(quote.configurationState,state);assert.equal(quote.configurationId,c.id);assert.match(quote.configurationLabel,/fiksuoti/);
+ assert.equal(quote.configurationState,state);assert.equal(quote.configurationId,c.id);assert.match(quote.configurationLabel,/fiksuoti/i);
  assert.deepEqual(state.values,{CARMRESTS:'GTPTIGCRPU',CUPHGROUP:'PAROTEGA',CUPHCOLOR:'NF737'});
 });
 
@@ -63,6 +63,13 @@ test('Sail presentation fixture renders a translated field and preserves all sou
  const {document}=parseHTML(html);const select=Array.from(document.querySelectorAll('select')).find(s=>s.querySelector('option[value="GTPSAILARMBLB"]'));
  assert.ok(select,'Sail armrests are visible in its actual initial builder step');
  assert.deepEqual(Array.from(select.querySelectorAll('option')).map(o=>o.getAttribute('value')),engine.stateChoices(state).CARMRESTS);
- assert.match(select.textContent!,/fiksuoti/);assert.doesNotMatch(select.textContent!,/reguliuojami/);
+ assert.match(select.textContent!,/fiksuoti/i);assert.doesNotMatch(select.textContent!,/reguliuojami/);
  assert.match(select.parentElement!.textContent!,/Porankiai/);
+});
+
+test('unrecognized armrest codes cannot fall through to an unsupported adjustable claim',()=>{
+ assert.equal(safeArmrestFallback('CARMRESTS','UNKNOWN','UNKNOWN · reguliuojami'),'UNKNOWN');
+ assert.equal(safeArmrestFallback('CARMRESTS','R70','R70 · 2D'),'R70 · 2D');
+ assert.equal(safeArmrestFallback('CARMRESTS','GTP46','GTP46 · fiksuoti, juodi'),'GTP46 · fiksuoti, juodi');
+ assert.equal(safeArmrestFallback('CBASE','X','original label'),'original label');
 });

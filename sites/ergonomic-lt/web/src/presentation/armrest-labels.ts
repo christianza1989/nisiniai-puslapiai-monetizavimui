@@ -17,3 +17,8 @@ export function presentArmrestConfiguration(configuration:Configuration,values:R
  return {...configuration,details:configuration.details?.map(row=>
   row.label===(sourceFieldLabel||'Armrests')||row.label===label?{label,value}:row)};
 }
+
+/** An unknown code cannot acquire an adjustable claim merely by falling through. */
+export function safeArmrestFallback(field:string,value:string,label:string){
+ return field==='CARMRESTS'&&label.includes(' · reguliuojami')?value:label;
+}

@@ -35,6 +35,13 @@ dingęs katalogas ar vien working tree esantis kelias nesuteikia coverage.
 `*` ir `?` scope neleidžiami. Journal helper išsaugo literal kelią; pats įrašymas
 dar neįrodo committed scope ar patikros. Senų record ir event taisyti negalima.
 
+Companion PUBLIC įrašo literal kelias CORE Git medyje neegzistuoja. Checker
+tokiems įrašams tikrina žurnalo bei kelio sintaksę (be `*` ir `?`), pateikia
+juos atskirai `foreign_scope_ids` ir nesuteikia jokio private source coverage.
+Tikslius PUBLIC blob/tree ir source SHA tikrinti pačiame companion checkout;
+CORE PASS nėra foreign Git scope patikra. Private įrašams ankstesnė committed
+literal blob/tree ir tikslaus ištrinto failo taisyklė lieka visa apimtimi.
+
 `node scripts/core-upgrade.mjs event --id <ID> --input <event.json>` prideda įvykį. Statusai finding / fixing / local-verified / pr / merged / adopted. local-verified reikalauja `checks: [{command, result:"PASS", evidence}]`; ankstesnį FAIL palikti fixing įvykio note / atskirame kvite. PR ir vėlesniems įvykiams reikalingas tikras GitHub PR URL; merged/adopted ir tikslus40hex commit. Helperis nepatvirtina GitHub būsenos: prieš įrašant patikrinti faktinį merge, o adoption turi įvardyti konkretų checkout / adapterį ir bandymą. Nebūtinas „adopted“ visiems PC.
 
 ## Tikslus karantinas

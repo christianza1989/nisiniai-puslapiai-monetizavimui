@@ -86,7 +86,7 @@ export function checkUpgradeCoverage(root, base, head) {
     if (/(?:^|\/)SOURCE_[^/]+$/.test(item.file) && item.status !== 'A')
       errors.push({ path: item.file, reason: 'source_archive_is_immutable' });
   }
-  const records = [];
+  const records = [], foreignScopes = [];
   for (const id of [...touched].sort()) {
     const directory = `core-improvements/entries/${id}`;
     try {
@@ -98,7 +98,10 @@ export function checkUpgradeCoverage(root, base, head) {
       const repository = issueMatch[1];
       if (storedId !== id || !branch || branch === 'main' || !shaPattern.test(baseSha ?? '')
           || !Number.isFinite(Date.parse(createdAt))) throw new Error('invalid_record_identity');
-      if (record.paths.some(p => !literalScope(root, ancestor, head, modifications, p)))
+      // The companion's blobs do not exist in this repository. Never resolve
+      // its bracketed literal route against a private tree or grant it coverage.
+      const privateRecord = repository === 'christianza1989/nisiniai-puslapiai-monetizavimui';
+      if (record.paths.some(p => /[*?]/.test(p) || privateRecord && !literalScope(root, ancestor, head, modifications, p)))
         throw new Error('scope_must_be_exact_path_or_directory');
       const paths = git(root, ['ls-tree', '-r', '--name-only', head, '--', `${directory}/events`])
         .trim().split('\n').filter(Boolean);
@@ -120,14 +123,15 @@ export function checkUpgradeCoverage(root, base, head) {
         throw new Error('fresh_verification_event_required');
       if (['finding', 'fixing'].includes(events.at(-1).status)) throw new Error('upgrade_still_unverified');
       // A public renderer record with the same relative filenames cannot attest a private-core patch.
-      if (repository === 'christianza1989/nisiniai-puslapiai-monetizavimui') records.push(record);
+      if (privateRecord) records.push(record);
+      else foreignScopes.push(record.id);
     } catch (e) { errors.push({ path: directory, reason: e.message }); }
   }
   const uncovered = required.filter(file => !records.some(r => r.paths.some(scope => covers(root, head, scope, file))));
   return { status: errors.length || uncovered.length ? 'BLOCKED' : 'PASS',
     base_sha: base, merge_base_sha: ancestor, head_sha: head, shared_changes: required.length,
-    verified_upgrade_ids: records.map(r => r.id), uncovered_paths: uncovered, errors,
-    limitations: 'Checks provenance and declared PASS evidence in committed blobs; does not execute those commands, judge repair quality, merge code, or prove another PC/runtime adopted it.' };
+    verified_upgrade_ids: records.map(r => r.id), foreign_scope_ids: foreignScopes, uncovered_paths: uncovered, errors,
+    limitations: 'Checks private-repository provenance and declared PASS evidence in committed journal blobs. Foreign scopes require separate companion Git review and never cover private changes. Does not execute checks, judge repair quality, merge code, or prove runtime adoption.' };
 }
 
 if (process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url) {

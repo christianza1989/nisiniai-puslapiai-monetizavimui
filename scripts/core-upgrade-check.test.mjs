@@ -129,6 +129,21 @@ test('a companion record with identical filenames cannot attest a private core c
   assert.deepEqual(result.uncovered_paths, ['scripts/tool.mjs']);
 });
 
+test('companion literal routes are reported separately instead of being looked up in the private tree', async t => {
+  const f = await fixture(t);
+  const r = await f.record(['app/niche/memocasting/instagram/[...path]/route.ts'],
+    'https://github.com/christianza1989/niche-public-core/issues/30');
+  await f.verify(r);
+  const result = checkUpgradeCoverage(f.root, f.base, f.commit());
+  assert.equal(result.status, 'PASS');
+  assert.deepEqual(result.verified_upgrade_ids, []);
+  assert.deepEqual(result.foreign_scope_ids, [r.id]);
+  const bad = await f.record(['app/niche/*/route.ts'],
+    'https://github.com/christianza1989/niche-public-core/issues/30');
+  await f.verify(bad);
+  assert.equal(checkUpgradeCoverage(f.root, f.base, f.commit()).status, 'BLOCKED');
+});
+
 test('shared dependency manifests need verified provenance in the actual committed diff', async t => {
   const f = await fixture(t);
   const files = ['package.json', 'content-studio/package-lock.json',

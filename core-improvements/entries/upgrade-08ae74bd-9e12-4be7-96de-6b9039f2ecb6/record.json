@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "category": "code",
+  "summary": "Read-only Sendparcel information validator independently rejects documented provider5/6/8, preventing original-order unpaid/pending reconciliation even after booking parser repair",
+  "evidence": [
+    "Original sendparcel-status-original-failure-20261020.log preserves8failed regressions; registered-to-unpaid refresh throws carrier_response_invalid at sendparcel-adapter.mjs information integer(status,0,4)",
+    "Provider clarification read by authorized website owner: documented statuses0/1/2/3/4/5/6/8, with5unpaid,6pending,8paymentcanceled; undocumented7 must remain rejected",
+    "Supplemental exact scope announced to website owner before this source edit; primary upgrade1f548cac keeps its immutable paths unchanged"
+  ],
+  "paths": [
+    "commerce-core/src/sendparcel-adapter.mjs",
+    "commerce-core/test/shipment-commands.test.mjs",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Revert only this documented-status whitelist helper/information validation with proportional regressions. No request paths, credentials, pacing, production operations or historical SQL changes. Primary booking-disposition upgrade is separate.",
+  "id": "upgrade-08ae74bd-9e12-4be7-96de-6b9039f2ecb6",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "0f0e4ff864d8016702f42f66e6936a262ebff4fa",
+  "createdAt": "2026-10-20T15:41:20.325Z"
+}

@@ -228,3 +228,89 @@ test('a provider that never makes labels available reaches a bounded operator-vi
   assert.equal(x.creates(), 1);
   x.db.close();
 });
+
+test('manual packing workflow issues documents while every automatic shipment switch is off', async () => {
+  const x = await setup();
+  try {
+    const cfg = await x.s.store('store_a', 'sandbox');
+    Object.assign(cfg.automationPolicy, {
+      autoPrepareIndividualShipments: false,
+      autoExecutePreparedShipments: false,
+      autoCollectShipmentDocuments: false,
+    });
+    await x.s
+      .stmt('UPDATE stores SET config_json=? WHERE id=?', JSON.stringify(cfg), 'store_a')
+      .run();
+    await x.s.markPacked('store_a', 'sandbox', x.order.id, 'fixture_operator');
+    await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+    assert.equal(
+      (await x.s.one("SELECT COUNT(*) n FROM documents WHERE kind IN ('sale','packing')")).n,
+      2,
+    );
+    assert.equal((await x.s.one('SELECT COUNT(*) n FROM shipment_commands')).n, 0);
+    assert.equal((await x.s.getOrder('store_a', 'sandbox', x.order.id)).fulfillment_state, 'ready');
+    assert.equal(x.creates(), 0);
+  } finally {
+    x.db.close();
+  }
+});
+
+for (const [status, pending] of [
+  [6, true],
+  [5, false],
+  [8, false],
+])
+  test(`automatic label collection holds provider${status} without another POST and resumes original order`, async () => {
+    const x = await setup();
+    try {
+      await x.s.markPacked('store_a', 'sandbox', x.order.id, 'fixture_operator');
+      await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+      const information = x.carrier.bookingInformation.bind(x.carrier);
+      const documents = x.carrier.documents.bind(x.carrier);
+      let statusNow = status,
+        documentReads = 0;
+      x.carrier.bookingInformation = async (id) => ({
+        ...(await information(id)),
+        providerStatus: statusNow,
+      });
+      x.carrier.documents = async (id) => {
+        documentReads++;
+        return documents(id);
+      };
+      await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+      const receipt = await x.s.one(
+        "SELECT d.state,d.last_error,o.attempts FROM outbox_delivery d JOIN outbox o ON o.store_id=d.store_id AND o.id=d.event_id WHERE o.kind='ShipmentRegistered'",
+      );
+      assert.equal(receipt.state, 'waiting');
+      assert.equal(
+        receipt.last_error,
+        pending ? 'carrier_documents_pending' : 'carrier_booking_requires_review',
+      );
+      assert.equal(receipt.attempts, pending ? 0 : 1);
+      assert.equal(
+        (await x.s.getOrder('store_a', 'sandbox', x.order.id)).fulfillment_state,
+        'ready',
+      );
+      assert.equal(documentReads, 0);
+      assert.equal(x.creates(), 1);
+      statusNow = 1;
+      x.tick(60001);
+      await new CommerceJobs(x.s, x.options).scheduled('store_a', 'sandbox');
+      assert.equal(
+        (
+          await x.s.one(
+            "SELECT d.state FROM outbox_delivery d JOIN outbox o ON o.store_id=d.store_id AND o.id=d.event_id WHERE o.kind='ShipmentRegistered'",
+          )
+        ).state,
+        'done',
+      );
+      assert.equal(documentReads, 1);
+      assert.equal(
+        (await x.s.one("SELECT COUNT(*) n FROM outbox WHERE kind='ShipmentRegistered'")).n,
+        1,
+      );
+      assert.equal(x.creates(), 1);
+    } finally {
+      x.db.close();
+    }
+  });

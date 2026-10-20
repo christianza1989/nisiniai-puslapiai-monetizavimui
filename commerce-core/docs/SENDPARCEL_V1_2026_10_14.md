@@ -46,3 +46,28 @@ Automatinis PDF skaidymas, teksto atpažinimas ir patvirtintas puslapio–pakuot
 `ShipmentRegistered` įvykis nebaigiamas, kol tiekėjas dar negrąžino nė vieno žinomu failo vardu atpažinto lipduko. Tuščias dokumentų atsakymas arba vien manifestas palieka įvykį patvarioje laukimo būsenoje; kita patikra leidžiama po 60 s. Realią patikros minutę lemia įjungto užduočių vykdytojo dažnis. Laukimas išlieka po Worker paleidimo iš naujo ir neišnaudoja penkių įprastų klaidų bandymų. Jis niekada nekartoja siuntos kūrimo POST.
 
 Jei per 24 val. nuo registravimo įvykio lipdukų vis dar nėra, įvykis pereina į operatoriui matomą klaidos būseną `carrier_documents_timeout`. Operatorius turi patikrinti tiekėjo faktus ir prireikus pakartotinai paleisti esamą dokumentų gavimo užduotį, nekurdamas naujos siuntos. Kiekviena sėkminga dokumentų patikra palieka nekintamą `document_collection` stebėjimą. `labelsAvailable` reiškia, kad gautas bent vienas atpažintas lipdukų dokumentas; tai nepatvirtina visų pakuočių puslapių ar išspausdintų sekimo numerių susiejimo.
+
+### Neapmokėtas arba laukiantis tiekėjo užsakymas · 2026-10-20
+
+Svetainės sesija perskaitė pirminio susirašinėjimo Godos 2026-10-19 08:22 atsakymą: automatinis apmokėjimas jau įjungtas, o nepakankant piniginės lėšų pradinis užsakymas lieka neapmokėtas. Toks atsakymas nėra leidimas pakartoti `/orders/creates`. Patvirtinti kodai taikomi tiek kūrimo atsakymui, tiek to paties ID `/orders/infos`:
+
+| Kodas | Tiekėjo būsena | Prekybos komandos būsena | Dokumentų gavimas |
+| --- | --- | --- | --- |
+| 0 | Sukurtas, laukia automatinio bandymo | `unknown`, `carrier_booking_pending` | Dar neleidžiamas |
+| 1 | Vykdomas | `registered`, `processing` | Leidžiamas, bet lipduko buvimą patvirtina tik pats dokumentas |
+| 2 | Patvirtintas | `registered`, `confirmed` | Leidžiamas |
+| 3 | Atmestas | `review`, `carrier_booking_rejected` | Neleidžiamas |
+| 4 | Atšauktas | `review`, `carrier_booking_canceled` | Neleidžiamas |
+| 5 | Užregistruotas, neapmokėtas | `review`, `carrier_booking_unpaid` | Neleidžiamas |
+| 6 | Laukiantis | `unknown`, `carrier_booking_pending` | Dar neleidžiamas |
+| 8 | Apmokėjimas atšauktas | `review`, `carrier_booking_payment_canceled` | Neleidžiamas |
+
+Neaprašytas kodas7, tekstinis kodas ar netaisyklingas atsakymas atmetamas. `bookingState` yra tiekėjo būsenos projekcija; ji nekeičia pirkėjo `payment_state` ir pati nepatvirtina, kad vežėjui sumokėta. Naudojamos esamos SQL būsenos; naujos migracijos nereikia.
+
+`execute` išsaugo originalų `provider_id`, pirmąjį bandymą ir nekintamą atsakymo stebėjimą net tada, kai grąžinta neapmokėta ar laukianti būsena. Rezultatas turi `pending` arba `requiresReview`. Tokia komanda nesukuria siuntos registravimo projekcijos, nepažymi užsakymo kaip turinčio etiketę ir neleidžia antro kūrimo POST. `reconcile` ar `refresh` gali skaityti tik jau susietą originalų ID; kitą ID pateikusi užklausa atmetama. Prarasto kūrimo atsakymo atveju lieka ankstesnis operatoriaus faktų sutikrinimas — naujas kūrimo bandymas neatsiranda.
+
+`refresh` pirmiausia patikrina dabartinę tiekėjo būseną ir siuntos faktus. Neapmokėtai, atmestai, atšauktai ar laukiančiai siuntai negaunami dokumentai ir sekimo įvykiai, grąžinama `labelsAvailable:false`. Jei anksčiau registruotas užsakymas dabar sulaikytas, esama siuntos projekcija tampa `unknown`, o užsakymo `labelled` būsena grįžta į fiziškai supakuoto `ready` būseną. Istoriniai įvykiai ir failai nešalinami; senas lipdukas netampa dabartinės parengties įrodymu. Patvirtinus tą patį ID, atkuriama ta pati projekcija ir nekuriamas antras `ShipmentRegistered` įvykis. Būsenos pakeitimus bei dokumentų gavimą saugo komandos lease.
+
+Jeigu dokumentų surinkimas jau pradėtas po `ShipmentRegistered`, būsena6 išlaiko ankstesnį patvarų 60 s / 24 val. laukimą. Būsenos5 ir8 aiškiai perduodamos operatoriaus peržiūrai per `carrier_booking_requires_review`; jos nereiškia sėkmingai baigto dokumentų gavimo. Pradinė būsena0/6 pati nesukuria registravimo įvykio: originalaus ID parengtį operatorius tikrina per `refresh` arba `reconcile`. Automatinis periodinis visų pradinių neapmokėtų komandų nuskaitymas šia pataisa nepridedamas.
+
+Galimas LT paleidimas su `automationPolicy.approved:true` ir įjungtais sąskaitų, galiojimo bei pranešimų darbais, tačiau `autoPrepareIndividualShipments`, `autoExecutePreparedShipments`, `autoCollectShipmentDocuments` gali visi likti `false`. Tikras operatorius pirma fiziškai supakuoja apmokėtą užsakymą, tada patikrina piniginės lėšas ir vykdo originalią siuntimo komandą. Nulinis piniginės likutis nėra papildomas pirkėjo atsiskaitymo vartas; nei papildymas, nei mokamas bandymas šiuo šaltinio pakeitimu neatliekami. Tikras aktyvavimas, paštas ir tiekėjo operacijos lieka diegimo savininko atsakomybė.

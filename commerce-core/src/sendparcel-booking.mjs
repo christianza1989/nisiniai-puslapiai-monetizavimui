@@ -1,4 +1,4 @@
-import { SendparcelAdapter } from './sendparcel-adapter.mjs';
+import { SendparcelAdapter, sendparcelStatus } from './sendparcel-adapter.mjs';
 import { requireValue, integer, canonical } from './validation.mjs';
 import { completeSender } from './shipment-commands.mjs';
 const text = (value) =>
@@ -156,11 +156,30 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     );
     return this.fact(row);
   }
+  bookingDisposition(fact) {
+    requireValue(sendparcelStatus(fact.providerStatus), 'shipment_response_invalid', 502);
+    const providerState = {
+      0: 'pending',
+      1: 'processing',
+      2: 'confirmed',
+      3: 'rejected',
+      4: 'canceled',
+      5: 'unpaid',
+      6: 'pending',
+      8: 'payment_canceled',
+    }[fact.providerStatus];
+    const registered = [1, 2].includes(fact.providerStatus),
+      pending = [0, 6].includes(fact.providerStatus);
+    return {
+      state: registered ? 'registered' : pending ? 'unknown' : 'review',
+      reason: registered ? null : 'carrier_booking_' + providerState,
+      providerState,
+    };
+  }
   fact(row) {
     requireValue(
       /^\d{1,12}$/.test(String(row.id)) &&
-        integer(row.status, 0, 4) &&
-        row.status !== 4 &&
+        sendparcelStatus(row.status) &&
         Array.isArray(row.parcels) &&
         integer(row.parcels.length, 1, 100),
       'shipment_response_invalid',
@@ -204,6 +223,7 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
     return {
       id: String(row.id),
       providerStatus: row.status,
+      bookingState: this.bookingDisposition({ providerStatus: row.status }).providerState,
       sender: address(row.shipper),
       recipient: address(row.recipient),
       parcels: row.parcels.map((p) => ({

@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "3b40ca63e9786446e7d18f59a121f7a0e2b3af63",
+  "note": "Source0.17.0 pushed and exact SHA handed to authorized site-owner session; source scope released. PR96 remains open draft and unmerged. GitHub Agent workflow preflight SUCCESS for3b40ca63: https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/actions/runs/38736277300/job/116426268659 . Local156Node/native24/779.51KiBgzip and safety/coverage/freshness receipts remain distinct from actual provider setup and hosted adoption, which remain site-owned. Core fetchedmain808581d919d06cb4a2d151cc7f9ec1be1782aba2; companion fetchedmain ec8a9c032fe926d1d9722802d8eb26fa8bd02937. Parent reports owner completed actual Free organization activation, but root performs no provider operations or hosted login claim. Public/provider admissions are not bypassed.",
+  "eventId": "f2a183f4-52cf-40e7-bc8b-dbdf7fab0262",
+  "sequence": 3,
+  "at": "2026-10-15T12:40:11.077Z"
+}

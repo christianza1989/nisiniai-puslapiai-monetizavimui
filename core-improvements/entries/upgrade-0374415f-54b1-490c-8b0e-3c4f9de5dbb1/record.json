@@ -1,0 +1,30 @@
+{
+  "siteId": "core",
+  "summary": "Owner explicitly replaces Memocasting lot/BOM/expiry scope with temporary configured simple balances999 per kit; expose existing per-product simple stock path without false quality attestation or changing other tenant lot policies",
+  "category": "code",
+  "evidence": [
+    "Direct owner instruction relayed by authorized website session2026-10-15: temporary999couple/family, no physical count claim, no lots/expiry/BOM for this niche; other tenant lotmode retained",
+    "Current productDefinition permits lotTrackingRequired:false and canonical adjustStock already has optimistic/idempotent delta semantics",
+    "Business preparer hardcodes lotTrackingRequired:true and admin overview collapses explicitfalse/legacyundefined, causing irrelevant lot forms even for simple count products"
+  ],
+  "paths": [
+    "commerce-core/src/business-config.mjs",
+    "commerce-core/src/operations.mjs",
+    "commerce-core/public/admin.mjs",
+    "commerce-core/public/finished-stock-ui.mjs",
+    "commerce-core/test/simple-stock.test.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/PRODUCTION_CONNECTION.md",
+    "commerce-core/package.json",
+    "commerce-core/package-lock.json",
+    "commerce-core/README.md",
+    "WORKSTREAMS.md",
+    "commerce-core/src/service.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped source revert; canonical SQL/identity/admission guards unchanged. No remote stock mutation, fictional lot/quality record or historical stock-policy rewrite. Website owner controls actual business config/DB.",
+  "id": "upgrade-0374415f-54b1-490c-8b0e-3c4f9de5dbb1",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "689109367c78e579bba4d2d6e2684b4a8fc67de7",
+  "createdAt": "2026-10-15T11:44:16.568Z"
+}

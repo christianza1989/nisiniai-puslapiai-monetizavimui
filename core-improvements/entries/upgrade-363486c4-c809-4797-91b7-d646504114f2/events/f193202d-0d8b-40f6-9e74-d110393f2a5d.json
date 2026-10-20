@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Mandatory checker was absent on fetched main7af6b964 and current commerce branch; exact helper+regression from closed source window7d98088 imported with owner acknowledgement. Main adoption not claimed; committed coverage follows own commit.",
+  "checks": [
+    {
+      "command": "node --test scripts/core-upgrade-check.test.mjs",
+      "result": "PASS",
+      "evidence": "Scope rejection, ignored uncommitted claims, unsafeentry rejection; exact imported regression"
+    }
+  ],
+  "eventId": "f193202d-0d8b-40f6-9e74-d110393f2a5d",
+  "sequence": 2,
+  "at": "2026-10-13T21:53:15.916Z"
+}

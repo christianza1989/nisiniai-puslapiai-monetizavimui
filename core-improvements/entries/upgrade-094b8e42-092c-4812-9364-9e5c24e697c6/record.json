@@ -1,0 +1,42 @@
+{
+  "siteId": "memocasting",
+  "summary": "Sendparcel v1 adapter requires an unrelated JWT and misses per-key cross-worker throttling, locker parcel limits and private filename/tracking evidence; owner now includes white paint in both kits",
+  "category": "code",
+  "evidence": [
+    "commerce-core/src/sendparcel-adapter.mjs at 27927a7d5a74ed356e7c2f4c93863d53214d1a8b",
+    "https://api.sendparcel.com/rest-api/doc",
+    "Owner supplied provider IT clarification 2026-10-14"
+  ],
+  "paths": [
+    "commerce-core/src/sendparcel-adapter.mjs",
+    "commerce-core/src/sendparcel-booking.mjs",
+    "commerce-core/src/provider-pacing.mjs",
+    "commerce-core/src/runtime.mjs",
+    "commerce-core/src/local-shipping.mjs",
+    "commerce-core/src/shipment-commands.mjs",
+    "commerce-core/src/business-config.mjs",
+    "commerce-core/config/memocasting-business.json",
+    "commerce-core/migrations/0023_provider_pacing.sql",
+    "commerce-core/test/provider-pacing.test.mjs",
+    "commerce-core/test/shipping.test.mjs",
+    "commerce-core/test/shipment-commands.test.mjs",
+    "commerce-core/test/foundation-fixtures.mjs",
+    "commerce-core/test/fixtures.mjs",
+    "commerce-core/test/worker-harness.mjs",
+    "commerce-core/test/business-config.test.mjs",
+    "commerce-core/test/runtime.test.mjs",
+    "commerce-core/scripts/dev.mjs",
+    "commerce-core/scripts/worker-smoke.mjs",
+    "commerce-core/docs/SENDPARCEL_V1_2026_10_14.md",
+    "commerce-core/docs/ARCHITECTURE.md",
+    "commerce-core/README.md",
+    "commerce-core/package.json",
+    "commerce-core/package-lock.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped revert of new source and config; preserve applied migration and all order snapshots",
+  "id": "upgrade-094b8e42-092c-4812-9364-9e5c24e697c6",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "27927a7d5a74ed356e7c2f4c93863d53214d1a8b",
+  "createdAt": "2026-10-13T21:34:28.418Z"
+}

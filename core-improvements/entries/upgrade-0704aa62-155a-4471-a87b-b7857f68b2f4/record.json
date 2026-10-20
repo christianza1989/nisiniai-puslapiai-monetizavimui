@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Adopt reviewed deployment-owner test-fixture correction so actual new simple-stock/confirmed business facts do not break default-policy and unknown-data regression tests",
+  "category": "code",
+  "evidence": [
+    "Deployment owner5315cc1d8325551a59804fa8872a67180f4b619d reports147Node/native23PASS after two test-only fixture normalizations",
+    "Defaultlot-policy assertion accidentally read live ownerfalse flags; older unknown-business test assumed actual owner address/package stayednull",
+    "Only scoped two-file diff96bb376e..5315cc1d reviewed; no actual businessJSON/source/provider/DB adoption"
+  ],
+  "paths": [
+    "commerce-core/test/simple-stock.test.mjs",
+    "commerce-core/test/business-config.test.mjs",
+    "WORKSTREAMS.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Revert these test fixture normalizations only; do not revert actual owner business facts or simple-count runtime policy.",
+  "id": "upgrade-0704aa62-155a-4471-a87b-b7857f68b2f4",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "b090e2a70a8c984245fa4e00fb8723d1b177fc6a",
+  "createdAt": "2026-10-15T12:14:22.893Z"
+}

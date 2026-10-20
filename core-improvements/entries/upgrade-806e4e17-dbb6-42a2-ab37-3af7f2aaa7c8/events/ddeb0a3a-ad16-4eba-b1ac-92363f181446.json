@@ -1,0 +1,30 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "note": "Local shop code acceptance completed jointly: canonical0.12.1 be32c223b2e45168b52a5eeec2d111006fe98214, PUBLIC a82c6da55ff53df895a5c6600adba421b51fbe37, CORE integration0f1d8324a6825b76c23bb8df8e85f58a04b4f8fe. Exact SDK bytes independently match. 117Node/native22/build/clean restore and actual four-language cart/original delivery/withdrawal/expiry-unpaid/FEFO quarantine pass. Source is in draft PR96 https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96. LOCAL_SHOP_CODE_VERIFIED; PRODUCTION_NOT_READY. Whole-site audit incomplete; design/performance/agents deferred; actual providers, owner facts, mail and production runtime gates remain. This records local code acceptance, not main adoption or real business activity.",
+  "checks": [
+    {
+      "command": "cd commerce-core && npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/verify-0121.log:117Node, nativeD1/R2/Queue22migrations, dry-run766.20KiBgzip21assets."
+    },
+    {
+      "command": "exact be32c223 Git archive commerce-core; clean npm ci --ignore-scripts; npm run verify",
+      "result": "PASS",
+      "evidence": "tmp/source-restore-0121-be32c223/source.zip SHA6f8efb5331e0c6fb2b9e3b5b9cd2ae3e7f709fa80b7d2ca2bd32af18ec2693a3;117/native22/buildPASS; private runtime absent."
+    },
+    {
+      "command": "gh pr view96 --json headRefOid,statusCheckRollup",
+      "result": "PASS",
+      "evidence": "Exact be32c223 preflight SUCCESS, completed2026-10-12T18:30:10Z, run38291306561/job114951816670. This does not assert PUBLIC CI or a later docs-only head."
+    },
+    {
+      "command": "read caller source-manifest / SHA256 and site actual receipts",
+      "result": "PASS",
+      "evidence": "PUBLICa82c6da manifest pins be32c223. UI7c4e09a790d40ed5f287805584e789948ac44b2f59d370b48655008b1056e89c / client7c5f07e33eacc8c9b42b55060d9014a3497f7ddd8d916abe4bc992298b7c557e match root. Site SHOP_ACCEPTANCE plus private shop-buyer/migration/expiry/hold/final-snapshot0121 receipts and viewed LT expired/ET mobile images;80PUBLIC tests/TS/buildPASS and267HTTP with88pages24guides. Site full85criterion audit remains incomplete."
+    }
+  ],
+  "eventId": "ddeb0a3a-ad16-4eba-b1ac-92363f181446",
+  "sequence": 29,
+  "at": "2026-10-12T18:42:30.180Z"
+}

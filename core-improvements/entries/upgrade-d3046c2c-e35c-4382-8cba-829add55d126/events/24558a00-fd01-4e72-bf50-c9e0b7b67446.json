@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Original two failing async regressions retained in ignored async-label-original-failure-20261019.log (empty refresh incorrectly became done). Source now persists label-availability observations and defers ShipmentRegistered without another create; ordinary error budget remains unchanged, bounded24h timeout visible. labelsAvailable means at least one known label document, not proven complete per-parcel printed mapping. No new migration, actual provider call, secret, deployment or production data change. The broad legacy PR default-main provenance blocker remains separate and unchanged.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/shipping-automation.test.mjs commerce-core/test/jobs.test.mjs",
+      "result": "PASS",
+      "evidence": "8 focused tests: more than five pending polls survive recreated job instances, no early repoll, empty/manifest-only responses defer, one later transient failure still retries, labels finish idempotently, never another create;24h dead timeout and existing lease-fencing/general retry tests pass."
+    },
+    {
+      "command": "node --run verify (commerce-core cwd)",
+      "result": "PASS",
+      "evidence": "commerce-core/tmp/async-label-full-20261019.log: format,160 Node tests, native workerd/D1 original24 migrations, actual process disposal/recreation with pending job surviving in D1, seven further polls, one booking and one private label PDF; dry-run3227.13KiB/gzip780.07KiB/21assets, exit0. Native test uses fixture services only."
+    }
+  ],
+  "eventId": "24558a00-fd01-4e72-bf50-c9e0b7b67446",
+  "sequence": 2,
+  "at": "2026-10-19T05:19:02.209Z"
+}

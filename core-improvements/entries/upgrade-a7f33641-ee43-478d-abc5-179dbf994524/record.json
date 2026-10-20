@@ -1,0 +1,25 @@
+{
+  "siteId": "memocasting",
+  "summary": "Real test Stripe keys were treated as ready without verifying the actual merchant; prepare a loopback-only restricted-key connection and distinguish verified Stripe TEST from fixture checkout",
+  "category": "code",
+  "evidence": [
+    "commerce-core/src/stripe-adapter.mjs verifyAccount sandbox shortcut at27927a7",
+    "Owner authorized working payments; existing MB sandbox selected in Chrome 2026-10-14"
+  ],
+  "paths": [
+    "commerce-core/src/stripe-adapter.mjs",
+    "commerce-core/src/http.mjs",
+    "commerce-core/scripts/stripe-test-connect.mjs",
+    "commerce-core/src/stripe-test-connect.mjs",
+    "commerce-core/test/stripe-test-connect.test.mjs",
+    "commerce-core/test/commerce.test.mjs",
+    "commerce-core/test/runtime.test.mjs",
+    "commerce-core/docs/STRIPE_TEST_CONNECTION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "rollback": "Scoped revert; preserve private credentials, old test database and immutable order snapshots",
+  "id": "upgrade-a7f33641-ee43-478d-abc5-179dbf994524",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "27927a7d5a74ed356e7c2f4c93863d53214d1a8b",
+  "createdAt": "2026-10-13T21:42:42.094Z"
+}

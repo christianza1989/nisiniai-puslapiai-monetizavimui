@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/96",
+  "commit": "434b9a199d22170b0169603b893a97659a8ae6e0",
+  "note": "Reviewed root adoption pushed in PR96: all-path pacing dd7803e2, exact LT street reconciliation6f96089e, verified no-scan trackingff0ab69d, integration/config-provenance434b9a19. Each source commit's original unique upgrade record is retained and its committed coverage passes. Own root full158Node/native24/dry-run779.82KiBgzip PASS; worktree and source window released after final doc receipt. Local verification used exact command node ../scripts/git-freshness.mjs --phase continue --companion C:/Users/Lenovo/Documents/Nisiniai_puslapiai/memocasting-site-20261012/dovanos-memorycasting -- node --run verify from commerce-core cwd; the previous event abbreviates the executable path. Final protocol doc reconciles earlier pending-label wording with the actual completed staging receipt and remaining parcel-tracking/page-order question. No new source or runtime change follows the passed regression; production key and activation remain deployment-owner work. PR96 remains open draft and unmerged; actual provider receipt belongs to PR101/site-owner checkout, not this offline adoption. Coremain808581d919d06cb4a2d151cc7f9ec1be1782aba2 and companionmain ec8a9c032fe926d1d9722802d8eb26fa8bd02937 fetched for handoff.",
+  "eventId": "0aec0c1f-8696-4a70-a001-8cc4dd8c4b2d",
+  "sequence": 3,
+  "at": "2026-10-17T08:50:20.262Z"
+}

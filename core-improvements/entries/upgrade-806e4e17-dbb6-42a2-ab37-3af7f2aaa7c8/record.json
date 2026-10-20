@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "No admitted reusable commerce domain exists for server-authoritative orders, stock and payment/shipment/accounting boundaries; owner authorized Memocasting-first module.",
+  "category": "code",
+  "evidence": [
+    "commerce-core/docs/ARCHITECTURE.md",
+    "commerce-core/docs/ACCEPTANCE.md"
+  ],
+  "paths": [
+    "commerce-core",
+    "sites/memocasting"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/95",
+  "rollback": "Revert the scoped commerce PR; no existing tenant or production runtime is changed.",
+  "id": "upgrade-806e4e17-dbb6-42a2-ab37-3af7f2aaa7c8",
+  "branch": "codex/commerce-core-20261011",
+  "baseSha": "a3b1fee4f6fefe7dbe6982ac3173fbce27f58456",
+  "createdAt": "2026-10-11T20:20:47.305Z"
+}

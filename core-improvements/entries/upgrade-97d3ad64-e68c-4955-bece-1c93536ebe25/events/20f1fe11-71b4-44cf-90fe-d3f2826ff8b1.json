@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Original native redirect and actual opaque-secret failures retained. The existing enclosing Session identity/money/livemode/expiry checks, stable Session idempotency and signed paid truth remain. Actual production payment is still unpaid, not a paid acceptance.",
+  "checks": [
+    {
+      "command": "npm test (commerce-core)",
+      "result": "PASS",
+      "evidence": "195 tests, including native outbound200/302 one-request confinement, opaque encoded secret, Session isolation, lost replies and payment truth."
+    },
+    {
+      "command": "npm run test:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "Actual pinned workerd/D1/R2/restart suite, encoded secret passthrough; no real provider calls in this suite."
+    },
+    {
+      "command": "npm run build:worker (commerce-core)",
+      "result": "PASS",
+      "evidence": "Pinned Wrangler dryrun after source changes; actual deployment accepted separately."
+    }
+  ],
+  "eventId": "20f1fe11-71b4-44cf-90fe-d3f2826ff8b1",
+  "sequence": 2,
+  "at": "2026-10-20T17:01:57.188Z"
+}

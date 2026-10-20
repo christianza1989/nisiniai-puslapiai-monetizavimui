@@ -248,14 +248,12 @@ export class StripeCheckoutAdapter {
       );
       return { uiMode, url: session.url };
     }
-    const mode = this.environment === 'production' ? 'live' : 'test';
+    // Stripe SDK 23 declares this as string|null, not a parseable Session ID.
+    // The enclosing Session is verified below; keep this credential opaque.
     requireValue(
       typeof session.client_secret === 'string' &&
-        session.client_secret.length <= 1024 &&
-        new RegExp('^cs_' + mode + '_[A-Za-z0-9]+_secret_[A-Za-z0-9_-]+$').test(
-          session.client_secret,
-        ) &&
-        session.client_secret.startsWith(session.id + '_secret_'),
+        session.client_secret.trim().length > 0 &&
+        session.client_secret.length <= 16384,
       'checkout_client_secret_invalid',
       502,
     );

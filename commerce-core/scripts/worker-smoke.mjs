@@ -306,6 +306,7 @@ try {
   ]);
   assert.equal(embeddedDetails.uiMode, 'embedded');
   assert.match(embeddedDetails.clientSecret, /^cs_test_[a-z0-9]+_secret_/);
+  assert.ok(embeddedDetails.clientSecret.includes('%2F123%3D456'));
   assert.equal(
     (await service.getOrder('store_b', 'sandbox', nativeEmbeddedOrder.id)).payment_state,
     'pending',

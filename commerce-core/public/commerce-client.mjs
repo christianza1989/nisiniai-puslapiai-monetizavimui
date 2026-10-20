@@ -189,10 +189,8 @@ export class CommerceClient {
           typeof result.publishableKey !== 'string' ||
           !new RegExp('^pk_' + mode + '_[A-Za-z0-9]{8,240}$').test(result.publishableKey) ||
           typeof result.clientSecret !== 'string' ||
-          result.clientSecret.length > 1024 ||
-          !new RegExp('^cs_' + mode + '_[A-Za-z0-9]+_secret_[A-Za-z0-9_-]+$').test(
-            result.clientSecret,
-          )
+          result.clientSecret.trim().length === 0 ||
+          result.clientSecret.length > 16384
         )
           throw new Error('checkout_details_invalid');
         return {

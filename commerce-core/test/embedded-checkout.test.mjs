@@ -287,7 +287,9 @@ test('retrieval binds Session to exact order, amount, currency, environment and 
     [{ currency: 'usd' }, 502, 'stripe_checkout_session_invalid'],
     [{ livemode: true }, 502, 'stripe_checkout_session_invalid'],
     [{ expires_at: original.expires_at + 60 }, 502, 'stripe_checkout_session_invalid'],
-    [{ client_secret: 'cs_test_foreign_secret_1234567890' }, 502, 'checkout_client_secret_invalid'],
+    [{ client_secret: null }, 502, 'checkout_client_secret_invalid'],
+    [{ client_secret: '   ' }, 502, 'checkout_client_secret_invalid'],
+    [{ client_secret: 'x'.repeat(16385) }, 502, 'checkout_client_secret_invalid'],
     [{ ui_mode: 'elements' }, 502, 'checkout_mode_unsupported'],
     [{ status: 'expired' }, 409, 'checkout_session_unavailable'],
   ];
@@ -351,7 +353,7 @@ test('duplicate browser mounts retain one attempt and reset the busy guard after
   x.db.close();
 });
 
-test('browser validates modes and key/secret environment and keeps the existing admission gate', async () => {
+test('browser validates modes, public-key environment and bounded opaque secrets while keeping admission', async () => {
   const x = await setup();
   x.buyer.context.productionReady = false;
   x.buyer.context.canCreateTestOrder = false;
@@ -367,8 +369,9 @@ test('browser validates modes and key/secret environment and keeps the existing 
       publishableKey: 'pk_live_wrong12345',
       clientSecret: 'cs_test_fixture_secret_1234567890',
     },
-    { uiMode: 'embedded', publishableKey: pk, clientSecret: 'cs_live_fixture_secret_1234567890' },
-    { uiMode: 'embedded', publishableKey: pk, clientSecret: 'not-a-session-secret' },
+    { uiMode: 'embedded', publishableKey: pk, clientSecret: null },
+    { uiMode: 'embedded', publishableKey: pk, clientSecret: '   ' },
+    { uiMode: 'embedded', publishableKey: pk, clientSecret: 'x'.repeat(16385) },
     { uiMode: 'custom', publishableKey: pk, clientSecret: 'cs_test_fixture_secret_1234567890' },
     { uiMode: 'hosted', url: 'https://evil.example/payment' },
   ]) {
@@ -424,4 +427,25 @@ test('runtime passes only the optional configured publishable key without enabli
   const opts = runtimeOptions(env);
   assert.equal(opts.paymentAdapters.store_a.publishableKey, pk);
   assert.equal(opts.shippingAdapters.store_a, undefined);
+});
+test('SDK client secret is opaque, including encoded delimiters, and remains bound to the validated Session', async () => {
+  const x = await setup();
+  const create = x.p.client.checkout.sessions.create;
+  const opaque = 'fixture-opaque%2Fencoded%3Dvalue+with/slash=and.delimiters';
+  x.p.client.checkout.sessions.create = async (...args) => {
+    const row = await create(...args);
+    row.client_secret = opaque;
+    x.p.sessions.set(row.id, structuredClone(row));
+    return row;
+  };
+  try {
+    const details = await x.buyer.checkoutDetails({ uiMode: 'embedded' });
+    assert.equal(details.clientSecret, opaque);
+    const recovered = await x.buyer.checkoutDetails({ uiMode: 'embedded' });
+    assert.equal(recovered.clientSecret, opaque);
+    assert.equal(x.p.creates(), 1);
+    assert(![...x.values.values()].join('').includes(opaque));
+  } finally {
+    x.db.close();
+  }
 });

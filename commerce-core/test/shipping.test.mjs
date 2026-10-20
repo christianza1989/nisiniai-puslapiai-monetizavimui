@@ -189,7 +189,7 @@ test('current SP quote protocol converts grams/mm/cents and persists an estimate
   assert.deepEqual(calls[0].body.quote.parcels, [{ weight: 2, length: 20, width: 20, height: 17 }]);
   assert.equal(calls[0].body.quote.value, 32);
   assert.equal(calls[0].body.quote.shipper.postal_code, '02211');
-  assert.equal(calls[0].redirect, 'error');
+  assert.equal(calls[0].redirect, 'manual');
   assert.equal(calls[0].headers.authorization, undefined);
   assert.equal(calls[0].headers.password, 'fixture_api_password');
   assert.equal(

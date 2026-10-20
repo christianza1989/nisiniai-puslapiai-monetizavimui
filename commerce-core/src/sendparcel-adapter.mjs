@@ -84,7 +84,9 @@ export class SendparcelAdapter {
     try {
       response = await this.fetch(url, {
         method: paths[path],
-        redirect: 'error',
+        // workerd supports manual/follow only. Never forward the password on a
+        // redirect: manual leaves 3xx to the response.ok rejection below.
+        redirect: 'manual',
         signal: AbortSignal.timeout(timeoutMs),
         headers: {
           'content-type': 'application/json',

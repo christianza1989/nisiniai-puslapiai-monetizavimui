@@ -35,7 +35,7 @@ export default {
       url: receipt.data.ui_mode === 'embedded_page' ? null : 'https://checkout.stripe.test/fixture',
       client_secret:
         receipt.data.ui_mode === 'embedded_page'
-          ? receipt.id + '_secret_nativefixture123456'
+          ? receipt.id + '_secret_nativefixture%2F123%3D456'
           : null,
     });
     client.checkout.sessions.create = async (data) => {

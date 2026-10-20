@@ -25,14 +25,15 @@ import {ProductSelectedReading} from './product-selected-reading';
 import {productSpecificationRows} from '@/lib/product-specifications';
 import {expandedQuoteEntry} from '@/lib/expanded-quote-entry';
 import {expandedProductCardPath} from '@/lib/expanded-product-card-path';
+import {armrestChoiceLabel,armrestFieldLabel,armrestSourceText,presentArmrestConfiguration} from '@/presentation/armrest-labels';
 const Viewer3D=dynamic(()=>import('./viewer-3d'),{ssr:false,loading:()=> <div className="viewer-placeholder" role="status">{copyText("ui.19eac4a3b50b67b8f89d","Ruošiama 3D peržiūra…")}</div>});
 export default function ExpandedProductDetail({product,url,presets,catalogRuntime,initialConfiguration,initialCustomized=false,configurationMessage}:{product:Product;url:string;presets:ReactNode;catalogRuntime?:CatalogRuntime;initialConfiguration?:ExpandedState;initialCustomized?:boolean;configurationMessage?:string}){
  const engine=useMemo(()=>createExpandedEngine(catalogRuntime),[catalogRuntime]);
  const {expandedForProduct,initialStateForProduct,changeField,stateChoices,stateToken,parseStateToken,expandedSelection}=engine;
  const {catalogForProduct,catalogAnchor,catalogInitial}=engine.catalog;
  const palettes=useMemo(()=>{const result={...basePalettes};for(const [key,values] of Object.entries(catalogRuntime?.palettes||{}))result[key]={...result[key],...values};return result;},[catalogRuntime]);
- const choiceLabel=(field:string,value:string)=>articleChoiceLabel(product,field,value)||baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id);
- const fieldLabels={...baseFieldLabels,...Object.fromEntries(Object.entries(catalogRuntime?.palettes._fieldLabels||{}).map(([key,label])=>[key,label.text])),...articleFieldLabels(product)};
+ const choiceLabel=(field:string,value:string)=>armrestChoiceLabel(selected.configuration.code,field,value)||articleChoiceLabel(product,field,value)||baseChoiceLabel(field,value,catalogRuntime?.palettes,family.id);
+
  const family=expandedForProduct(product)!;
  const catalog=catalogForProduct(product);
  const structureOnly=catalog?.collectionMode==='structure-only'&&!product.id.toLowerCase().includes('xilium');
@@ -57,10 +58,12 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  },[fullscreen]);
  useEffect(()=>{if(initialConfiguration)return;const token=new URLSearchParams(window.location.search).get('konfig');if(token)try{setSelection(parseStateToken(product,token));setCustomized(true);}catch{setMessage(copyText("ui.ebb2987ef716971244b4","Nuorodos komplektacija negalioja. Rodoma pradinė komplektacija."));}},[product,initialConfiguration]);
  const selected=useMemo(()=>expandedSelection(product,selection),[product,selection,expandedSelection]);
+ const presentedConfiguration=presentArmrestConfiguration(selected.configuration,selection.values,catalogRuntime?.palettes._fieldLabels?.CARMRESTS?.text);
+ const fieldLabels:Record<string,string>={...baseFieldLabels,...Object.fromEntries(Object.entries(catalogRuntime?.palettes._fieldLabels||{}).map(([key,label])=>[key,label.text])),...articleFieldLabels(product),...(armrestFieldLabel(selected.configuration.code)?{CARMRESTS:armrestFieldLabel(selected.configuration.code)!}:{})};
  const choices=stateChoices(selection);
  const interactive=Object.keys(choices).length>0;
  const article=engine.selectionArticle(product,selected.state);
- const summaryDetails=product.id.includes('xilium-swivel')?selected.configuration.details?.filter(d=>['Mechanizmas','Galvos atrama','Porankiai','Pagrindas','Ratukai'].includes(d.label)):selected.configuration.details?.slice(0,4);
+ const summaryDetails=product.id.includes('xilium-swivel')?presentedConfiguration.details?.filter(d=>['Mechanizmas','Galvos atrama','Porankiai','Pagrindas','Ratukai'].includes(d.label)):presentedConfiguration.details?.slice(0,4);
  const activeMaterials=catalogAnchor(selection)?.materials;
  const missingFinish=!structureOnly&&catalog&&Object.entries(selection.values).some(([k,v])=>/COLOR|CHCOL/.test(k)&&!/PLASTIC|FRAME/.test(k)&&!hasSourceMaterial(v)&&!activeMaterials?.[k]?.[v]&&!palettes[k]?.[v]?.color);
  const assembly=useMemo(()=>{
@@ -72,13 +75,13 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  const variant={...selected.variant,...selected.assets.base} as PilotVariant;
  const token=stateToken(selection);
  const pdf=expandedProductCardPath(product,token,!!article);
- const quote=expandedQuoteEntry(product,selected.configuration,selection,{url,model,customized,quantity,choiceLabel});
+ const quote=expandedQuoteEntry(product,presentedConfiguration,selection,{url,model,customized,quantity,choiceLabel});
  function change(field:string,value:string){try{setSelection(changeField(selection,field,value));setCustomized(true);setAdded(false);setMessage('');setPhoto(false);}catch{setMessage(copyText("ui.9382165cbfa58b82bfc9","Šis pasirinkimas negalimas su dabartine konstrukcija. Rinkitės kitą variantą."));}}
  function field(k:string){const value=selection.values[k],color=/COLOR|CHCOL/.test(k);
   const label=fieldLabels[k]||k;
   if(color&&!k.startsWith('CPLASTIC'))return <FinishSelect key={k} label={label} value={value} onChange={v=>change(k,v)} options={choices[k].map(v=>({value:v,label:choiceLabel(k,v),image:activeMaterials?.[k]?.[v]?.image||palettes[k]?.[v]?.image||renderMaterial({code:v}).image,color:palettes[k]?.[v]?.color}))}/>;
   return <div key={k} className="configuration-field"><label className="field">{label}
-   <select value={value} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v}>{choiceLabel(k,v)}</option>)}</select></label>
+   <select value={value} onChange={e=>change(k,e.target.value)}>{choices[k].map(v=><option key={v} value={v} title={k==='CARMRESTS'?armrestSourceText(selected.configuration.code,v):undefined}>{choiceLabel(k,v)}</option>)}</select></label>
   </div>;
  }
  const actions=<>
@@ -96,7 +99,7 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
   {message&&<p className="configuration-status" role="status">{message}</p>}
   {article&&!builderFirstPreview&&!!summaryDetails?.length&&<div className="duo-live-summary"><p>Jūsų pasirinkimai</p><dl>{summaryDetails.map(d=><div key={d.label}><dt>{d.label}</dt><dd>{d.value}</dd></div>)}</dl></div>}
  </div>;
- const productInfo=<div key="product-info" className="product-info">{article||builderFirstPreview?<DuoBackBuilder preview={builderFirstPreview?gallery:undefined} studio={builderFirstPreview} heading={builderFirstPreview?'Susikomplektuokite savo norimą kėdę su 3D konfigūratoriumi':undefined} extraControls={catalog&&catalog.articles.length>1?<label className="field studio-model-picker">{copyText("ui.40ae815c6fd93bd1128a","Kėdės modelis")}<select value={catalogAnchor(selection)?.article} onChange={e=>{setSelection(catalogInitial(catalog,e.target.value));setAdded(false);setMessage(copyText("ui.ced1e103d19ade62c867","Pasirinktas kitas kėdės modelis."));}}>{catalog.articles.map(a=><option key={a.code} value={a.code}>{a.name} · {a.code}</option>)}</select></label>:undefined} product={product} state={selected.state} choices={choices} article={article} control={field} actions={actions} details={selected.configuration.details||[]}/>:<><h1>{product.publicHeading||product.name}</h1><p className="product-description">{product.description}</p><p className="price-note">{copyText("ui.7712573f04829fa4cead","Kaina pagal pasirinktą komplektaciją")}</p>
+ const productInfo=<div key="product-info" className="product-info">{article||builderFirstPreview?<DuoBackBuilder preview={builderFirstPreview?gallery:undefined} studio={builderFirstPreview} heading={builderFirstPreview?'Susikomplektuokite savo norimą kėdę su 3D konfigūratoriumi':undefined} extraControls={catalog&&catalog.articles.length>1?<label className="field studio-model-picker">{copyText("ui.40ae815c6fd93bd1128a","Kėdės modelis")}<select value={catalogAnchor(selection)?.article} onChange={e=>{setSelection(catalogInitial(catalog,e.target.value));setAdded(false);setMessage(copyText("ui.ced1e103d19ade62c867","Pasirinktas kitas kėdės modelis."));}}>{catalog.articles.map(a=><option key={a.code} value={a.code}>{a.name} · {a.code}</option>)}</select></label>:undefined} product={product} state={selected.state} choices={choices} article={article} control={field} actions={actions} details={presentedConfiguration.details||[]}/>:<><h1>{product.publicHeading||product.name}</h1><p className="product-description">{product.description}</p><p className="price-note">{copyText("ui.7712573f04829fa4cead","Kaina pagal pasirinktą komplektaciją")}</p>
   {catalog&&catalog.articles.length>1&&<label className="field">{copyText("ui.40ae815c6fd93bd1128a","Kėdės modelis")}<select value={catalogAnchor(selection)?.article} onChange={e=>{setSelection(catalogInitial(catalog,e.target.value));setAdded(false);setMessage(copyText("ui.ced1e103d19ade62c867","Pasirinktas kitas kėdės modelis."));}}>{catalog.articles.map(a=><option key={a.code} value={a.code}>{a.name} · {a.code}</option>)}</select></label>}
   {model&&<p className="configuration-model">{customized?copyText("ui.3dad75de298a208bae2c","Individuali šio modelio komplektacija"):copyText("ui.b549610f5be9e81ec852","Pasirinktas gamintojo pavyzdys")} · {model.code}</p>}<p className="configuration-model">{catalog?catalogAnchor(selection)?.name:family.id==='xilium'?copyText("ui.682d34e4afb5e79cfa12","Duo-Back atlošas"):copyText("ui.63098d690dc9fb73bce7","Tinklinis atlošas")} · {selected.configuration.code}</p>
   {!article&&<><details className="configuration-section" open><summary>{copyText("ui.00e28775dffa5860871b","Konstrukcija ir funkcijos")}</summary><div className="configuration-grid">{Object.keys(choices).filter(k=>!k.includes('GROUP')&&!/COLOR|CHCOL/.test(k)||k.startsWith('CPLASTIC')).map(field)}</div></details>
@@ -113,5 +116,5 @@ export default function ExpandedProductDetail({product,url,presets,catalogRuntim
  }}>
  <div className="configurator-fullscreen-header" hidden={!fullscreen}><span>{product.name} <span>{copyText("ui.f8e94106288faa882ee7","3D konfigūratorius")}</span></span><button ref={closeButton} type="button" aria-label={copyText("ui.dc7d204b244e9e406fcd","Uždaryti visą ekraną")} title={copyText("ui.efef796bbdbf76bdebb2","Uždaryti (Esc)")} onClick={()=>void closeFullscreen()}><X size={22}/><span>{copyText("ui.63fc471369e620d7d2d6","Uždaryti")}</span></button></div>
  {article&&!builderFirstPreview&&<header className="duo-product-heading"><h1>{product.publicHeading||product.name}</h1><p>{product.description}</p></header>}
- {interactive?(builderFirstPreview?productInfo:[gallery,productInfo]):<><header className="studio-basic-heading"><h2>3D produkto peržiūra</h2></header><div className="product-info"><h3>Pasirinkite kiekį ir pateikite užklausą</h3><p className="configuration-model">{selected.configuration.code}</p>{actions}</div>{gallery}</>}</div>{article?<DuoProductReading name={product.name} article={article} includeOverview={false}/>:!product.modelArticle&&<ProductSelectedReading rows={productSpecificationRows(selected.configuration.code,selected.configuration.details)}/>}</>;
+ {interactive?(builderFirstPreview?productInfo:[gallery,productInfo]):<><header className="studio-basic-heading"><h2>3D produkto peržiūra</h2></header><div className="product-info"><h3>Pasirinkite kiekį ir pateikite užklausą</h3><p className="configuration-model">{selected.configuration.code}</p>{actions}</div>{gallery}</>}</div>{article?<DuoProductReading name={product.name} article={article} includeOverview={false}/>:!product.modelArticle&&<ProductSelectedReading rows={productSpecificationRows(selected.configuration.code,presentedConfiguration.details)}/>}</>;
 }

@@ -1,0 +1,21 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Adopt exact optional canonical productsPlacement=summary in Memo: one live product list above totals in sidebar; left contact/address fields begin immediately.",
+  "evidence": [
+    "Owner screenshot explicitly moves selected product controls to the right summary. PUBLIC26867eda4f70a2cc1a65d5a047188ebb7e94bc83 adopts canonical SDK48ba3fc6e0fe0ec79ff6c001248f123e2e1564e3, no copied business logic.",
+    "Actual native desktop1280 and mobile390 reviewed. One list, live quantity increment persisted as2 across navigation; both kits visible in single mobile summary, document375px/viewport390, no overflow. Classic/default covered separately by canonical15 tests."
+  ],
+  "paths": [
+    "components/niche/memocasting-native-checkout.tsx",
+    "components/niche/memocasting-checkout.css",
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Revert these presentation/SDK adoption files or deploy prior frontend62032b09 after actual settings check. Preserve live provider bindings, all orders, admissions, article dates and backend/mail services.",
+  "id": "upgrade-b54bb851-6c5c-4559-9202-4843e84b3fbf",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "da24ab706ac29d844d6c229b93543d0ccf7aa8c7",
+  "createdAt": "2026-10-20T18:43:02.945Z"
+}

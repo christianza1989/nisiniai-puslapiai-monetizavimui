@@ -38,3 +38,5 @@ Final local route-free production artifact SEO smoke passed:100 currently public
 ## Subsequent compact checkout presentation
 
 PUBLICda24ab706ac29d844d6c229b93543d0ccf7aa8c7 changes only checkout CSS and checkout-scoped breadcrumb spacing. Active frontend62032b09-1605-4bb3-9f56-b60512758027 replaces0409e620; backend/mail/admissions/content release remain as recorded. Actual1280 form height529.45px versus1258.59px before; mobile390 reviewed without overflow. This presentation update does not change payment acceptance evidence. Rollback can use0409e620 after actual binding reconciliation; never restore DB/config snapshots. Source record upgrade-f02e3435-dc76-44d7-965a-56f03a893ab2.
+
+Latest presentation frontend: eec41153-3b79-41fd-bae9-40d8960c1390, PUBLIC26867eda4f70a2cc1a65d5a047188ebb7e94bc83. Exact browser SDK source48ba3fc6e0fe0ec79ff6c001248f123e2e1564e3 adds only optional products-in-summary placement; default and classic unchanged. Actual commerce backend remains bebb13b7 and maild06410b6; no provider/config/DB writes in this layout refinement. Prior frontend62032b09 remains scoped presentation rollback after fresh settings read.

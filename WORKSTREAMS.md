@@ -573,3 +573,6 @@ the own edit window is released. Remote CI/review/merge/adoption remain separate
 2026-10-20 compact cart RESERVED own issue100/PUBLIC30: only components/niche/memocasting-checkout.css and checkout-scoped breadcrumb rule in memocasting-site.module.css; existing payment/client/content/admissions untouched. Desktop grouped contact/address columns, compact product rows, mobile readable44px controls. No backend or provider writes.
 
 2026-10-20 compact cart COMPLETE: PUBLICda24ab7, frontend62032b09 actual form529.45px vs1258.59px before, native390 no overflow; build/detector/staged-safety PASS. Only two owned CSS files; no backend, provider, content or order writes. Root reservation released.
+2026-10-20 cart products-in-summary RESERVED issue100/PUBLIC30: canonical checkout-ui optional placement + focused checkout regression; exact SDK export into own PUBLIC, Memo adapter option and CSS. Preserve classic/default and payment/provider/config/content. No concurrent owner in these UI paths.
+
+2026-10-20 cart products-in-summary COMPLETE: canonical48ba3fc6 optional placement/default preserved; PUBLIC26867ed exactSDK and Memo option/CSS; actual frontend eec41153.15checkout/133PUBLIC/build/detector/safety PASS; native1280/390 two-kit quantity persistence/nooverflow. No backend/provider/config/content/order writes. Reservation released; main adoption separate.

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Responsive source integration verified; actual hosted version recorded in site handoff after deployment.",
+  "checks": [
+    {
+      "command": "PUBLIC npm run test:core and MEMO_DEPLOYMENT=production npm run build",
+      "result": "PASS",
+      "evidence": "133 tests PASS in sidebar-public-tests.log; sidebar-build.log complete; canonical exactSDK verified."
+    },
+    {
+      "command": "Actual native browser1280/390 plus detector and exact staged safety",
+      "result": "PASS",
+      "evidence": "Desktop summary ownership/count1, quantity2 persists, mobile2items have no overflow. sidebar-preview-mobile.png; detector[]; four staged source blobs safety PASS."
+    }
+  ],
+  "eventId": "e9c1a74b-7ceb-4f91-822d-a63aaa0229ab",
+  "sequence": 2,
+  "at": "2026-10-20T18:43:02.973Z"
+}

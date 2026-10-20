@@ -396,3 +396,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-20 issue231 RESERVED: codex/studio-preview-heading-wrap-20261020 from current main e231fe49. Rokas directly authorized only private V1 preview H1 emergency word wrapping and separate QA. Own server.mjs H1 CSS, content-studio README, sanitized verification doc and upgrade journal. Preserve existing studio4317, title/body/IDs/URLs, public renderer, approvals and published snapshots; no deployment.

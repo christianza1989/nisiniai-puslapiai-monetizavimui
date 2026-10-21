@@ -334,6 +334,7 @@ export function catalogEditor(root, ctx, products, markets) {
             maxlength: 100,
           }),
           gl = field('Pavadinimas', g.label, { required: true, maxlength: 100 });
+        gi.input.readOnly = true;
         gi.input.oninput = () => {
           g.id = gi.input.value;
         };
@@ -357,6 +358,7 @@ export function catalogEditor(root, ctx, products, markets) {
               maxlength: 100,
             }),
             vl = field('Pavadinimas', v.label, { required: true, maxlength: 100 });
+          vi.input.readOnly = true;
           vi.input.oninput = () => {
             if (g.defaultValue === v.id) g.defaultValue = vi.input.value;
             v.id = vi.input.value;
@@ -433,21 +435,39 @@ export function catalogEditor(root, ctx, products, markets) {
           );
           remove.onclick = () => {
             g.values = g.values.filter((x) => x !== v);
-            if (g.defaultValue === v.id) g.defaultValue = g.values[0]?.id;
+            if (g.defaultValue === v.id)
+              g.defaultValue = g.values.find((v) => v.enabled)?.id ?? g.values[0]?.id;
+            for (const m of p.content.images)
+              if (m.choices?.[g.id] === v.id) delete m.choices[g.id];
             mark();
+            drawImages();
             drawOptions();
           };
           values.append(
             n(
-              'div',
+              'details',
               { class: 'catalog-option-value' },
+              n(
+                'summary',
+                {},
+                v.label +
+                  ' · ' +
+                  money(v.prices[markets[0].country] ?? 0, markets[0].currency) +
+                  (v.enabled ? '' : ' · neaktyvus'),
+              ),
               n(
                 'div',
                 { class: 'fields' },
                 vi.element,
                 vl.element,
-                ...pf,
+                pf[0],
                 n('label', {}, 'Nuotrauka', image),
+              ),
+              n(
+                'details',
+                {},
+                n('summary', {}, 'Kitų šalių priemokos'),
+                n('div', { class: 'fields' }, ...pf.slice(1)),
               ),
               n('label', { class: 'check-field' }, enabled, 'Galima pasirinkti'),
               n(
@@ -597,16 +617,21 @@ export function catalogEditor(root, ctx, products, markets) {
         publish,
         async () => {
           const definition = await saveDraft();
-          if (!definition) return;
-          await api('/api/operator/catalog-revisions', {
-            id,
-            basisHash: basis,
-            draftHash: hash,
-            definition,
-          });
-          dirty = false;
-          root.replaceChildren();
-          await ctx.reload();
+          if (!definition) throw Error('invalid_product');
+          form.inert = true;
+          try {
+            await api('/api/operator/catalog-revisions', {
+              id,
+              basisHash: basis,
+              draftHash: hash,
+              definition,
+            });
+            dirty = false;
+            root.replaceChildren();
+            await ctx.reload();
+          } finally {
+            form.inert = false;
+          }
         },
         'Pakeitimai paskelbti.',
       );

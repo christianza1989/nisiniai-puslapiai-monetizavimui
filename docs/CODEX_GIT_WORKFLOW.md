@@ -51,13 +51,15 @@ Global bootstrap padeda aptikti net seną project AGENTS, executable gate blokuo
 
 ## Patikros
 
-Komitintų pakeitimų aprėptis pagal konkretų upgrade įrašą:
+Komitintų canonical CORE pakeitimų aprėptis pagal šiame diff esančius upgrade įrašus:
 
 ```powershell
-node scripts/core-upgrade-check.mjs --base <pradinio-commit-SHA> --entry <upgrade-id>
-node ../nisiniai_puslapiai_monetizavimui/scripts/core-upgrade-check.mjs --repo . --journal ../nisiniai_puslapiai_monetizavimui --base <public-pradinio-commit-SHA> --entry <tas-pats-upgrade-id>
+node scripts/core-upgrade-check.mjs --base <pradinio-core-commit-SHA>
+node scripts/core-upgrade-check.mjs --root <canonical-core-checkout> --base <pradinio-core-commit-SHA> --head <tikrinamo-core-commit-SHA>
 ```
 
-Įrašo paths turi aprėpti konkrečios poros sekamus pakeitimus. Įrankis skaito abu Git HEAD, ne nekomitintą record ar working tree; savo pasirinkto įrašo bookkeeping leidžiamas automatiškai. Tai tik deklaruotos failų aprėpties patikra, ne semantinis priėmimas, freshness, sauga ar main adoption. Trūkstamas paths duoda FAIL_UNCOVERED ir exit1. Regresija `node --test scripts/core-upgrade-check.test.mjs` patvirtina, kad nekomitintas žurnalo pakeitimas negali paslėpti neaprėpto committed failo.
+CLI priima `--root`, `--base` ir `--head`; `--entry`, `--repo` ir `--journal` nėra palaikomi. Įrankis skaito committed CORE blobus ir naujus append-only žurnalo įvykius. Necommitintas įrašas ar senas PASS nepadengia naujos pataisos. Kiekvieno naujo įrašo paths ir faktinis `local-verified` įvykis turi aprėpti pavedimo pakeitimus. Svetimo repo issue nurodantys įrašai pateikiami kaip `foreign_scope_ids` ir nepadengia privataus CORE pakeitimų. PUBLIC diff, jo tikslų source ir tests atskirai peržiūrėti companion šakoje/PR; ši CORE komanda neskaito dviejų Git HEAD ir nėra PUBLIC priėmimo pakaitalas.
+
+Tai deklaruotų failų bei žurnalo patikra, ne semantinis priėmimas, freshness, staged-blob sauga, main merge ar runtime adoption. Nepadengti failai ir įrašų klaidos pateikiami `uncovered_paths` / `errors`, status `BLOCKED`, exit1. Sutarties regresija: `node --test scripts/core-upgrade-check.test.mjs`.
 
 `node --test scripts/git-freshness.test.mjs scripts/install-agent-git-bootstrap.test.mjs` imituoja du PC su bare Git ir dviem clone: naujas remote main, dirty darbo išlikimas, feature commit, failed fetch, netinkamas origin, global override, asmeninių instrukcijų išsaugojimas ir idempotence. CI `Agent workflow` vykdo šiuos testus ir kalibravimo Git input gate PR bei manual režimu. Tai nėra visų PC įdiegimo ar actual naujos Codex sesijos paklusnumo įrodymas. GitHub privalomų checks / branch protection nustatymai yra atskira serverinė enforcement pakopa.

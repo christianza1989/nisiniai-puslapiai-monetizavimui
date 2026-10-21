@@ -493,15 +493,15 @@ pre {
   min-width: 0;
   margin: 0;
   padding: 1.25rem;
-  border: 1px solid var(--line, #d9dfdc);
-  border-radius: 12px;
+  border: 1px solid var(--line, var(--line));
+  border-radius: 6px;
   display: grid;
   gap: 1rem;
-  background: #fff;
+  background: var(--paper);
 }
 .catalog-form legend {
-  font-size: 1.15rem;
-  font-weight: 650;
+  font-size: 1.0625rem;
+  font-weight: 600;
   padding: 0 0.4rem;
 }
 .catalog-form label {
@@ -519,25 +519,25 @@ pre {
   font: inherit;
   line-height: 1.55;
   padding: 0.7rem;
-  border: 1px solid #b7c2bc;
-  border-radius: 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
 }
 .catalog-media-row {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
   gap: 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid #e1e5e2;
+  border-bottom: 1px solid var(--line);
 }
 .catalog-media-row img {
   max-width: 100%;
   object-fit: contain;
-  background: #f4f4f0;
+  background: var(--canvas);
 }
 .catalog-option-value {
   padding: 1rem;
-  border: 1px solid #d9dfdc;
-  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   display: grid;
   gap: 0.8rem;
   margin: 0.7rem 0;
@@ -546,22 +546,22 @@ pre {
   position: sticky;
   bottom: 0;
   padding: 1rem;
-  background: #f6f8f5;
-  border: 1px solid #d9dfdc;
-  border-radius: 10px;
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   z-index: 2;
 }
 .catalog-preview {
   max-width: min(45rem, 95vw);
   max-height: 90dvh;
   overflow: auto;
-  border: 1px solid #b7c2bc;
-  border-radius: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   padding: 1.5rem;
   font: inherit;
 }
 .catalog-preview::backdrop {
-  background: #0d211c99;
+  background: color-mix(in srgb, var(--ink) 60%, transparent);
 }
 .catalog-preview img {
   display: block;
@@ -606,4 +606,17 @@ pre {
   .catalog-form .fields {
     grid-template-columns: 1fr;
   }
+}
+
+.catalog-option-value:not([open]) > :not(summary) {
+  display: none;
+}
+.catalog-option-value > summary {
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 44px;
+  display: list-item;
+}
+.catalog-option-value[open] > :not(summary) {
+  margin-top: 0.8rem;
 }

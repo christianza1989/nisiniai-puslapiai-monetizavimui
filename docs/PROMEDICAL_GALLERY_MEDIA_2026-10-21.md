@@ -165,3 +165,36 @@ No real private site file, running importer or deployment was touched.
 The first committed upgrade check correctly blocked `48ff442` because the
 asynchronous journal-event command had not finished before staging; its actual
 local-verified event is committed in the follow-up before the check is repeated.
+
+## Complete Studio regression and fixture path portability
+
+Only four existing test files were changed to honor `STUDIO_PUBLIC_CORE_DIR`:
+`content-v2.test.mjs`, `content-workflow.test.mjs`, `core.test.mjs` and
+`external-content-export.test.mjs`. Each keeps the original sibling
+`../../../dovanos-memorycasting` default. No assertion was removed, relaxed or
+conditionally skipped, and no runtime source changed in this increment.
+
+The initial default-concurrency full-suite command was interrupted using
+Ctrl-C on its own exec session8355 after root observed combined import/test RAM
+pressure. Five V2 tests had passed; interruption was exit1, not an assertion
+failure. Its own test workers were verified stopped; no foreign processes were
+touched. The complete suite was then restarted with one test file at a time.
+
+From `content-studio`, using the exact paired public checkout
+`8cc9defa674fb8b3dc357395c8b7d9984a40c8d8`, its config path and a private TEMP
+directory under this D: worktree:
+
+```text
+STUDIO_PUBLIC_CORE_DIR=<paired public checkout>
+STUDIO_NETWORK_SETTINGS=<paired config/niche-network.json>
+node --test --test-concurrency=1 test/*.test.mjs
+```
+
+Result: **56/56 PASS, zero failures/skips/cancellations, 54.19 seconds**. This
+includes V1/V2 validation, private HTTP guards, immutable exports, scheduling,
+source/ownership gates, media batches, contextual descriptions, binary/pixel
+bounds, generator policy, private research transport and cross-process locks.
+The paired checkout has its own nine legacy content packages; this is a complete
+source regression, not an assertion that the root's live-gallery catalogue has
+been approved or deployed. No own test process remains running. Root separately
+owns actual catalogue/UI/performance acceptance and publication review.

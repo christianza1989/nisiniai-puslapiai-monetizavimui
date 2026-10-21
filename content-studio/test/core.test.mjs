@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
 
 const root = await mkdtemp(path.join(os.tmpdir(), 'niche-studio-test-'));
 process.env.STUDIO_DATA_DIR = path.join(root, 'data');
@@ -111,7 +113,7 @@ test('six-month calendar keeps drafts private and external sources require verif
   assert.equal(pkg.pages.length, 2);
   assert.equal(pkg.pages.find(page => page.slug === 'gidas/pirmas').externalLinks[0].url, 'https://example.com/gaires');
   assert.equal(pkg.pages.find(page => page.slug === 'gidas/pirmas').externalLinks[0].verified, undefined);
-  const { validateContentPackage } = await import('../../../dovanos-memorycasting/scripts/content-package-core.mjs');
+  const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
   assert.equal(validateContentPackage(pkg).pages.length, 2);
   assert.equal((await model.listCalendar()).find(item => item.pageId === first.id).status, 'scheduled');
   assert.equal(pkg.pages.find(page => page.slug === 'gidas/antras'), undefined);

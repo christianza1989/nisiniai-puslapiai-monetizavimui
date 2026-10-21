@@ -7,7 +7,7 @@ import {spawnSync} from 'node:child_process';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {v2Fixture} from './fixtures/v2.mjs';
 import {validateV2Package,v2RevisionHash,normalizeV2Blocks,bodyPlainText} from '../src/content-package-v2.mjs';
-const publicRoot=fileURLToPath(new URL('../../../dovanos-memorycasting/',import.meta.url));
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||fileURLToPath(new URL('../../../dovanos-memorycasting/',import.meta.url));
 const publicCore=await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
 const root=await mkdtemp(path.join(os.tmpdir(),'niche-v2-'));
 process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'output');

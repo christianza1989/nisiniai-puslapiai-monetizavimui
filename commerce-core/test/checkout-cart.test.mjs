@@ -659,12 +659,20 @@ test('one-page submit quotes once, locks fields before quote, creates once and m
       renderPayment: async ({ target, order }) => {
         paymentCount++;
         assert.equal(order.id, client.order.id);
+        assert.equal(
+          nodes(root).find((n) => n.tag === 'form'),
+          originalForm,
+        );
+        assert.equal(field(root, 'email').value, 'buyer@example.test');
+        assert.equal(field(root, 'email').disabled, true);
+        assert.equal(target.parentElement.attrs.class, 'checkout-details');
         target.append('STRIPE FIXTURE');
         return () => disposeCount++;
       },
     });
     fillOnePage(root);
     const form = nodes(root).find((n) => n.tag === 'form'),
+      originalForm = form,
       submitting = form.fire('submit');
     assert.equal(field(root, 'email').disabled, true);
     assert.equal(field(root, 'country').disabled, true);
@@ -678,9 +686,132 @@ test('one-page submit quotes once, locks fields before quote, creates once and m
     assert.equal(client.created.acceptedPolicyVersion, 'fixture');
     assert.deepEqual(client.created.lines, [{ sku: 'couple', quantity: 2 }]);
     assert.ok(textContent(root).includes('STRIPE FIXTURE'));
+    assert.equal(nodes(root).filter((n) => n.tag === 'form').length, 1);
+    assert.equal(field(root, 'terms').checked, true);
+    assert.equal(field(root, 'couple').disabled, true);
+    await form.fire('submit');
+    assert.equal(createCount, 1);
     abort.abort();
     assert.equal(disposeCount, 1);
   }));
+test('saved unpaid order resumes payment inside its filled form using original amount without another quote or create', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      changes = [];
+    client.attempt = { orderId: client.order.id };
+    client.order.snapshot = {
+      country: 'LT',
+      policyVersion: 'fixture',
+      customer: {
+        name: 'Original Buyer',
+        email: 'original@example.test',
+        phone: '+37060000001',
+        address: {
+          country: 'LT',
+          line1: 'Original Street 2',
+          city: 'Vilnius',
+          postalCode: '02211',
+        },
+      },
+      lines: [{ sku: 'couple', title: 'Original', quantity: 2, unitAmount: 3200 }],
+      delivery: { id: 'courier', amount: 450, label: 'Original delivery' },
+    };
+    let mounts = 0,
+      complete;
+    client.quote = async () => {
+      throw Error('must not reprice saved order');
+    };
+    client.create = async () => {
+      throw Error('must not create again');
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      productsPlacement: 'summary',
+      onCartChange: (lines) => changes.push(lines),
+      renderPayment: async (options) => {
+        mounts++;
+        complete = options.onComplete;
+        options.target.append('EXISTING PAYMENT');
+      },
+    });
+    const form = nodes(root).find((n) => n.tag === 'form');
+    assert.ok(form);
+    assert.equal(field(root, 'name').value, 'Original Buyer');
+    assert.equal(field(root, 'email').disabled, true);
+    assert.equal(field(root, 'couple').value, '2');
+    assert.ok(nodes(root).some((n) => n.textContent === '68,50 €'));
+    assert.ok(textContent(root).includes('EXISTING PAYMENT'));
+    assert.equal(mounts, 1);
+    await form.fire('submit');
+    assert.deepEqual(changes, []);
+    await complete();
+    assert.equal(
+      nodes(root).find((n) => n.tag === 'form'),
+      form,
+    );
+    client.order.payment_state = 'paid';
+    await complete();
+    assert.equal(
+      nodes(root).find((n) => n.tag === 'form'),
+      undefined,
+    );
+    assert.ok(textContent(root).includes('Apmokėta'));
+  }));
+test('inline payment mount failure retries the same order and late mounting after abort disposes it', () =>
+  withDom(async () => {
+    for (const late of [false, true]) {
+      const root = new Element('div'),
+        client = onePageClient(),
+        abort = new AbortController();
+      let calls = 0,
+        release,
+        disposed = 0;
+      await mountCheckout(root, {
+        client,
+        layout: 'one-page',
+        signal: abort.signal,
+        initialLines: [{ sku: 'couple', quantity: 1 }],
+        renderPayment: async ({ target }) => {
+          calls++;
+          if (late)
+            await new Promise((resolve) => {
+              release = resolve;
+            });
+          else if (calls === 1) throw Error('transient iframe error');
+          target.replaceChildren('SAME ORDER PAYMENT');
+          return () => disposed++;
+        },
+      });
+      fillOnePage(root);
+      const form = nodes(root).find((n) => n.tag === 'form'),
+        submitting = form.fire('submit');
+      if (late) {
+        await pause(0);
+        abort.abort();
+        release();
+        await submitting;
+        assert.equal(disposed, 1);
+      } else {
+        await submitting;
+        const created = client.created;
+        assert.equal(
+          nodes(root).find((n) => n.tag === 'form'),
+          form,
+        );
+        await button(root, 'Apmokėti').fire('click');
+        assert.equal(calls, 2);
+        assert.equal(client.created, created);
+        assert.ok(textContent(root).includes('SAME ORDER PAYMENT'));
+        await form.fire('submit');
+        assert.equal(calls, 2);
+        abort.abort();
+        assert.equal(disposed, 1);
+      }
+    }
+  }));
+
 test('one-page checkout cannot create while production is closed or terms/customer are incomplete', () =>
   withDom(async () => {
     for (const closed of [false, true]) {

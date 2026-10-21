@@ -390,6 +390,12 @@ function onePageForm({
   embeddedPayment,
   emitCart,
   finish,
+  renderPayment,
+  resumeOrder,
+  restart,
+  setPaymentCleanup,
+  isCurrent,
+  initialOrder,
   signal,
 }) {
   const u = onePageMessages[language] || onePageMessages.lt;
@@ -401,6 +407,7 @@ function onePageForm({
   let selectedCountry = country,
     quoted,
     pendingQuote,
+    lockedForOrder = Boolean(initialOrder),
     version = 0,
     timer,
     busy = false,
@@ -569,7 +576,7 @@ function onePageForm({
         u.remove,
       );
       const change = (value) => {
-        if (busy) return;
+        if (busy || lockedForOrder) return;
         q.value = String(value);
         if (value === 0) row.hidden = true;
         changed();
@@ -582,7 +589,7 @@ function onePageForm({
       row.append(body);
       items.append(row);
       row.hidden = !count;
-      return { p, q, row, price, minus, plus };
+      return { p, q, row, price, minus, plus, remove };
     });
   const line = (name) => {
     const row = element('div', {}, element('dt', {}, name), element('dd', {}));
@@ -606,6 +613,9 @@ function onePageForm({
   const submit = element('button', { type: 'submit', class: 'checkout-submit' }, u.continue);
   const security = element('p', { class: 'checkout-security' }, u.payment);
   summary.append(submit, security, element('p', { class: 'checkout-hint' }, u.guest));
+  const paymentPane = element('div', { class: 'checkout-payment checkout-payment-inline' });
+  paymentPane.hidden = true;
+  details.append(paymentPane);
   if (catalogueHref)
     summary.append(element('a', { class: 'checkout-continue', href: catalogueHref }, m.catalogue));
   form.append(details, summary);
@@ -656,11 +666,11 @@ function onePageForm({
     intro.hidden = isEmpty;
     closed.hidden = isEmpty || canOrder;
     let cents = 0,
-      valid = validQuantities() && Boolean(market());
-    for (const { p, q, row, price, minus, plus } of rows) {
+      valid = Boolean(lockedForOrder && quoted) || (validQuantities() && Boolean(market()));
+    for (const { p, q, row, price, minus, plus, remove } of rows) {
       const unit =
         quoted?.lines?.find((l) => l.sku === p.sku)?.unitAmount ?? p.prices?.[selectedCountry];
-      q.disabled = busy || row.hidden;
+      q.disabled = busy || lockedForOrder || row.hidden;
       price.textContent = Number.isSafeInteger(unit)
         ? money(unit, market()?.currency || 'EUR') + ' / ' + u.each
         : u.unknown;
@@ -668,8 +678,9 @@ function onePageForm({
         valid &&= Number.isSafeInteger(unit);
         cents += Number.isSafeInteger(unit) ? unit * Number(q.value) : 0;
       }
-      minus.disabled = busy || Number(q.value) <= 1;
-      plus.disabled = busy || Number(q.value) >= Math.min(100, p.available);
+      minus.disabled = busy || lockedForOrder || Number(q.value) <= 1;
+      plus.disabled = busy || lockedForOrder || Number(q.value) >= Math.min(100, p.available);
+      remove.disabled = busy || lockedForOrder;
     }
     sub.value.textContent = valid ? money(cents, market().currency) : u.unknown;
     ship.value.textContent = quoted ? money(quoted.delivery.amount, quoted.currency) : u.calculated;
@@ -680,12 +691,14 @@ function onePageForm({
         : u.unknown;
     submit.disabled =
       busy ||
+      lockedForOrder ||
       isEmpty ||
       !valid ||
       !canOrder ||
       !termsLink.getAttribute?.('href') ||
       !market()?.delivery.length;
     submit.textContent = busy ? u.checking : u.continue;
+    submit.hidden = lockedForOrder;
   };
   const invalidate = () => {
     version++;
@@ -753,7 +766,7 @@ function onePageForm({
       'carrier_rate_limited',
     ].includes(error.message);
   const changed = () => {
-    if (busy) return;
+    if (busy || lockedForOrder) return;
     invalidate();
     if (validQuantities()) {
       const next = lines(),
@@ -823,6 +836,84 @@ function onePageForm({
       ] || '.+';
     refreshLocker();
   };
+  let paymentMounting = false,
+    paymentMounted = false;
+  const active = () => !signal?.aborted && isCurrent();
+  const lockOrder = () => {
+    lockedForOrder = true;
+    clearTimeout(timer);
+    for (const field of Object.values(fields)) field.disabled = true;
+    paint();
+  };
+  const enterPayment = async (order) => {
+    if (!renderPayment) return finish(order);
+    lockOrder();
+    paymentPane.hidden = false;
+    if (paymentMounting || paymentMounted || !active()) return;
+    paymentMounting = true;
+    const controls = element('div', { class: 'checkout-inline-actions' });
+    const action = (label, task) => {
+      const button = element('button', { type: 'button' }, label);
+      button.addEventListener('click', async () => {
+        if (button.disabled || !active()) return;
+        button.disabled = true;
+        try {
+          await task();
+        } catch {
+          if (active()) {
+            status.textContent = t[30];
+            status.setAttribute('role', 'alert');
+          }
+        } finally {
+          button.disabled = false;
+        }
+      });
+      controls.append(button);
+      return button;
+    };
+    const complete = async () => {
+      const current = await resumeOrder();
+      if (!active()) return;
+      if (current.payment_state !== 'pending' || current.stock_state !== 'reserved')
+        await finish(current);
+      else {
+        status.textContent = t[22];
+        status.setAttribute('role', 'status');
+      }
+    };
+    try {
+      const clean = await renderPayment({
+        target: paymentPane,
+        client,
+        order,
+        onComplete: complete,
+        signal,
+      });
+      if (!active()) {
+        clean?.();
+        return;
+      }
+      setPaymentCleanup(typeof clean === 'function' ? clean : () => {});
+      paymentMounted = true;
+      status.textContent = '';
+      status.setAttribute('role', 'status');
+    } catch {
+      if (!active()) return;
+      status.textContent = t[30];
+      status.setAttribute('role', 'alert');
+      action(t[15], () => enterPayment(order));
+    } finally {
+      paymentMounting = false;
+    }
+    if (!active()) return;
+    action(t[16], complete);
+    action(t[17], async () => {
+      await client.withdrawal();
+      if (active()) status.textContent = t[28];
+    });
+    action(t[18], restart);
+    paymentPane.append(controls);
+  };
   form.addEventListener('input', (event) => {
     if (event.target !== terms) changed();
   });
@@ -830,7 +921,8 @@ function onePageForm({
   delivery.addEventListener('change', refreshLocker);
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    if (busy || !canOrder || !ready() || !terms.checked || !form.reportValidity()) return;
+    if (busy || lockedForOrder || !canOrder || !ready() || !terms.checked || !form.reportValidity())
+      return;
     const input = proposal(),
       policyVersion = market().policyVersion;
     const locked = Object.values(fields).map((f) => [f, f.disabled]);
@@ -851,8 +943,7 @@ function onePageForm({
       });
       if (signal?.aborted) return;
       emitCart([]);
-      await finish(order);
-      status.textContent = '';
+      await enterPayment(order);
     } catch (error) {
       if (!signal?.aborted) {
         status.textContent = deliveryFailed(error)
@@ -867,8 +958,10 @@ function onePageForm({
         status.setAttribute('role', 'alert');
         status.focus?.({ preventScroll: true });
       }
-      quoted = undefined;
+      if (!client.attempt && !lockedForOrder) quoted = undefined;
       if (client.attempt && !signal?.aborted) {
+        lockOrder();
+        paymentPane.hidden = false;
         const retry = element('button', { type: 'button', class: 'checkout-submit' }, t[16]);
         retry.addEventListener('click', async () => {
           retry.disabled = true;
@@ -876,7 +969,7 @@ function onePageForm({
             const order = await client.resume();
             if (order && !signal?.aborted) {
               emitCart([]);
-              await finish(order);
+              await enterPayment(order);
               status.textContent = '';
             }
           } catch {
@@ -886,16 +979,39 @@ function onePageForm({
             retry.disabled = false;
           }
         });
-        content.replaceChildren(element('p', {}, t[30]), retry);
+        paymentPane.replaceChildren(element('p', {}, t[30]), retry);
       }
     } finally {
-      for (const [f, disabled] of locked) f.disabled = disabled;
+      if (!lockedForOrder) for (const [f, disabled] of locked) f.disabled = disabled;
       busy = false;
       if (!signal?.aborted) paint();
     }
   });
   signal?.addEventListener('abort', () => clearTimeout(timer), { once: true });
   refresh();
+  if (initialOrder) {
+    const saved = initialOrder.snapshot.customer,
+      address = saved.address;
+    for (const [key, value] of Object.entries({
+      name: saved.contactName || saved.name,
+      email: saved.email,
+      phone: saved.phone,
+      line1: address.line1,
+      city: address.city,
+      postalCode: address.postalCode,
+    }))
+      fields[key].value = value || '';
+    delivery.value = initialOrder.snapshot.delivery.id;
+    if (saved.lockerId) locker.value = saved.lockerId;
+    terms.checked = true;
+    quoted = {
+      amount: initialOrder.amount,
+      currency: initialOrder.currency,
+      lines: initialOrder.snapshot.lines,
+      delivery: initialOrder.snapshot.delivery,
+    };
+    return enterPayment(initialOrder);
+  }
 }
 /**
  * @param {HTMLElement} root
@@ -1161,23 +1277,23 @@ export async function mountCheckout(
     )
       await startPayment();
   };
-  const formView = () => {
-    viewVersion++;
+  const formView = (initialOrder) => {
+    const currentView = ++viewVersion;
     disposePayment();
     disposePayment = () => {};
     content.replaceChildren();
     status.textContent = '';
     content.setAttribute('class', 'checkout-content');
     if (layout === 'one-page') {
-      onePageForm({
+      return onePageForm({
         content,
         status,
         client,
         context,
         catalog,
         markets: markets.filter((market) => market.checkoutEnabled !== false),
-        cartLines,
-        country,
+        cartLines: initialOrder ? initialOrder.snapshot.lines : cartLines,
+        country: initialOrder ? initialOrder.snapshot.country : country,
         language,
         t,
         m,
@@ -1190,6 +1306,19 @@ export async function mountCheckout(
         embeddedPayment: typeof renderPayment === 'function',
         emitCart,
         finish: (order) => orderView(order, true),
+        renderPayment,
+        resumeOrder,
+        restart: () => {
+          client.newOrder();
+          formView();
+          status.textContent = '';
+        },
+        setPaymentCleanup: (clean) => {
+          disposePayment();
+          disposePayment = clean;
+        },
+        isCurrent: () => currentView === viewVersion,
+        initialOrder,
         signal,
       });
       return;
@@ -1460,7 +1589,27 @@ export async function mountCheckout(
   };
   if (client.attempt) {
     try {
-      await orderView(await resumeOrder(), layout === 'one-page');
+      const order = await resumeOrder();
+      const sameView =
+        layout === 'one-page' &&
+        renderPayment &&
+        order.payment_state === 'pending' &&
+        order.stock_state === 'reserved' &&
+        order.snapshot.customer?.address &&
+        context.paymentConnected &&
+        (context.productionReady || context.canCreateTestOrder) &&
+        context.embeddedCheckoutConfigured !== false &&
+        markets.some(
+          (m) =>
+            m.country === order.snapshot.country &&
+            m.checkoutEnabled !== false &&
+            m.policyVersion === order.snapshot.policyVersion,
+        ) &&
+        order.snapshot.lines.every((l) =>
+          catalog.some((p) => p.sku === l.sku && p.enabled !== false),
+        );
+      if (sameView) await formView(order);
+      else await orderView(order, layout === 'one-page');
     } catch {
       if (!client.attempt) {
         formView();

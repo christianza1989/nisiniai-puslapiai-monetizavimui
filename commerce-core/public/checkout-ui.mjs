@@ -261,6 +261,7 @@ const onePageMessages = {
     guest: 'Paskyros kurti nereikia.',
     closed: 'Šiuo metu užsakymų priėmimas laikinai sustabdytas.',
     noDelivery: 'Pristatymo pasirinkimai šiuo metu nepasiekiami.',
+    deliveryUnavailable: 'Pristatymo kainos paslauga laikinai nepasiekiama. Bandykite dar kartą.',
     quoteError:
       'Nepavyko patikrinti pristatymo kainos. Patikrinkite duomenis ir bandykite dar kartą.',
     unavailable: 'Pasirinkta prekė arba jos kiekis šiuo metu nepasiekiami.',
@@ -294,6 +295,7 @@ const onePageMessages = {
     closed: 'Przyjmowanie zamówień jest tymczasowo wstrzymane.',
     noDelivery: 'Opcje dostawy są obecnie niedostępne.',
     quoteError: 'Nie udało się sprawdzić kosztu dostawy. Sprawdź dane i spróbuj ponownie.',
+    deliveryUnavailable: 'Usługa wyceny dostawy jest chwilowo niedostępna. Spróbuj ponownie.',
     unavailable: 'Wybrany produkt lub ilość są obecnie niedostępne.',
     unknown: 'Cena niedostępna',
     secure: 'Płatność',
@@ -325,6 +327,8 @@ const onePageMessages = {
     closed: 'Pasūtījumu pieņemšana uz laiku ir apturēta.',
     noDelivery: 'Piegādes iespējas pašlaik nav pieejamas.',
     quoteError: 'Neizdevās pārbaudīt piegādes cenu. Pārbaudiet datus un mēģiniet vēlreiz.',
+    deliveryUnavailable:
+      'Piegādes cenas aprēķināšanas pakalpojums īslaicīgi nav pieejams. Mēģiniet vēlreiz.',
     unavailable: 'Izvēlētā prece vai daudzums pašlaik nav pieejams.',
     unknown: 'Cena nav pieejama',
     secure: 'Apmaksa',
@@ -356,6 +360,7 @@ const onePageMessages = {
     closed: 'Tellimuste vastuvõtmine on ajutiselt peatatud.',
     noDelivery: 'Tarnevalikud pole praegu saadaval.',
     quoteError: 'Tarnehinna kontrollimine ebaõnnestus. Kontrollige andmeid ja proovige uuesti.',
+    deliveryUnavailable: 'Tarnehinna arvutamise teenus pole ajutiselt saadaval. Proovige uuesti.',
     unavailable: 'Valitud toode või kogus pole praegu saadaval.',
     unknown: 'Hind pole saadaval',
     secure: 'Maksmine',
@@ -395,6 +400,7 @@ function onePageForm({
   const fields = {};
   let selectedCountry = country,
     quoted,
+    pendingQuote,
     version = 0,
     timer,
     busy = false,
@@ -685,47 +691,67 @@ function onePageForm({
     version++;
     quoted = undefined;
     clearTimeout(timer);
+    status.textContent = '';
+    status.setAttribute('role', 'status');
     paint();
   };
-  const getQuote = async () => {
+  const getQuote = () => {
+    if (pendingQuote?.version === version) return pendingQuote.promise;
     const expected = version,
       input = proposal(),
       method = market()?.delivery.find((d) => d.id === delivery.value);
-    const deliveryQuote = method?.pricing === 'carrier' ? await client.deliveryQuote(input) : null;
-    if (signal?.aborted || version !== expected) throw new Error('quote_price_changed');
-    const result = await client.quote({
-      ...input,
-      ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}),
+    const pending = { version: expected };
+    pendingQuote = pending;
+    pending.promise = (async () => {
+      const deliveryQuote =
+        method?.pricing === 'carrier' ? await client.deliveryQuote(input) : null;
+      if (signal?.aborted || version !== expected) throw new Error('quote_price_changed');
+      const result = await client.quote({
+        ...input,
+        ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}),
+      });
+      if (signal?.aborted || version !== expected) throw new Error('quote_price_changed');
+      if (
+        !Number.isSafeInteger(result.amount) ||
+        result.amount < 0 ||
+        result.currency !== input.currency ||
+        !result.quoteHash ||
+        !Number.isSafeInteger(result.delivery?.amount) ||
+        result.delivery.amount < 0 ||
+        !Array.isArray(result.lines) ||
+        result.lines.length !== input.lines.length ||
+        input.lines.some(
+          (l) =>
+            !result.lines.some(
+              (r) =>
+                r.sku === l.sku &&
+                r.quantity === l.quantity &&
+                Number.isSafeInteger(r.unitAmount) &&
+                r.unitAmount >= 0,
+            ),
+        ) ||
+        result.lines.reduce((sum, l) => sum + l.unitAmount * l.quantity, 0) +
+          result.delivery.amount !==
+          result.amount
+      )
+        throw new Error('invalid_quote');
+      quoted = { ...result, ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}) };
+      paint();
+      return quoted;
+    })().finally(() => {
+      // A stale address response must not clear a newer address's pending quote.
+      if (pendingQuote === pending) pendingQuote = undefined;
     });
-    if (signal?.aborted || version !== expected) throw new Error('quote_price_changed');
-    if (
-      !Number.isSafeInteger(result.amount) ||
-      result.amount < 0 ||
-      result.currency !== input.currency ||
-      !result.quoteHash ||
-      !Number.isSafeInteger(result.delivery?.amount) ||
-      result.delivery.amount < 0 ||
-      !Array.isArray(result.lines) ||
-      result.lines.length !== input.lines.length ||
-      input.lines.some(
-        (l) =>
-          !result.lines.some(
-            (r) =>
-              r.sku === l.sku &&
-              r.quantity === l.quantity &&
-              Number.isSafeInteger(r.unitAmount) &&
-              r.unitAmount >= 0,
-          ),
-      ) ||
-      result.lines.reduce((sum, l) => sum + l.unitAmount * l.quantity, 0) +
-        result.delivery.amount !==
-        result.amount
-    )
-      throw new Error('invalid_quote');
-    quoted = { ...result, ...(deliveryQuote ? { deliveryQuoteId: deliveryQuote.id } : {}) };
-    paint();
-    return quoted;
+    return pending.promise;
   };
+  const deliveryFailed = (error) =>
+    [
+      'commerce_connection_failed',
+      'carrier_pacing_busy',
+      'carrier_transport_failed',
+      'carrier_request_failed',
+      'carrier_rate_limited',
+    ].includes(error.message);
   const changed = () => {
     if (busy) return;
     invalidate();
@@ -740,13 +766,15 @@ function onePageForm({
     if (ready()) {
       const expected = version;
       timer = setTimeout(() => {
+        status.textContent = u.checking;
+        status.setAttribute('role', 'status');
         getQuote()
           .then(() => {
             if (version === expected && !busy) status.textContent = '';
           })
-          .catch(() => {
+          .catch((error) => {
             if (!signal?.aborted && version === expected && !busy) {
-              status.textContent = u.quoteError;
+              status.textContent = deliveryFailed(error) ? u.deliveryUnavailable : u.quoteError;
               status.setAttribute('role', 'alert');
             }
           });
@@ -827,8 +855,9 @@ function onePageForm({
       status.textContent = '';
     } catch (error) {
       if (!signal?.aborted) {
-        status.textContent =
-          error.message === 'network'
+        status.textContent = deliveryFailed(error)
+          ? u.deliveryUnavailable
+          : error.message === 'network'
             ? t[30]
             : ['stock_unavailable', 'product_unavailable'].includes(error.message)
               ? u.unavailable

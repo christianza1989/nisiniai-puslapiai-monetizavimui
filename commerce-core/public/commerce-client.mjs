@@ -23,7 +23,8 @@ export class CommerceClient {
           ...headers,
         },
         body: body === undefined ? undefined : JSON.stringify(body),
-        signal: AbortSignal.timeout(20000),
+        // Include carrier pacing + provider time and the storefront relay margin.
+        signal: AbortSignal.timeout(path === '/api/delivery-quotes' ? 35000 : 20000),
       });
     } catch {
       throw new Error('network');

@@ -5,6 +5,17 @@ import { CommerceService } from '../src/service.mjs';
 import { createHandler } from '../src/http.mjs';
 import { CommerceClient } from '../public/commerce-client.mjs';
 import { fixtureStore, fixtureProducts, cart } from './fixtures.mjs';
+test('delivery request deadline includes the carrier pacing and provider budget without extending order writes', async (t) => {
+  const deadlines = [];
+  t.mock.method(AbortSignal, 'timeout', (ms) => {
+    deadlines.push(ms);
+    return new AbortController().signal;
+  });
+  const client = new CommerceClient({ storage: {}, fetchImpl: async () => Response.json({}) });
+  await client.deliveryQuote({ country: 'LT' });
+  await client.request('/api/orders', { body: {} });
+  assert.deepEqual(deadlines, [35000, 20000]);
+});
 const tabStorage = () => {
   const values = new Map();
   return {

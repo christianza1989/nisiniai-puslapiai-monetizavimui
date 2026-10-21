@@ -479,6 +479,114 @@ function fillOnePage(root) {
     field(root, name).value = value;
   field(root, 'terms').checked = true;
 }
+function carrierClient() {
+  const client = onePageClient(),
+    initialize = client.initialize;
+  client.initialize = async () => {
+    const data = await initialize();
+    data.markets[0].delivery[0].pricing = 'carrier';
+    return data;
+  };
+  return client;
+}
+const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+test('auto carrier quote and submit share one pending request and create once', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient();
+    let calls = 0,
+      creates = 0;
+    const releases = [];
+    client.deliveryQuote = async () => {
+      calls++;
+      await new Promise((resolve) => {
+        releases.push(resolve);
+      });
+      return { id: 'shared' };
+    };
+    const create = client.create;
+    client.create = async (input) => {
+      creates++;
+      return create.call(client, input);
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('input', field(root, 'postalCode'));
+    await pause(700);
+    assert.equal(calls, 1);
+    const submitting = form.fire('submit');
+    const actualCalls = calls;
+    for (const release of releases) release();
+    await submitting;
+    assert.equal(actualCalls, 1);
+    assert.equal(creates, 1);
+    assert.equal(client.created.deliveryQuoteId, 'shared');
+  }));
+test('failed carrier quote shows service feedback and explicit submit can retry', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient();
+    let calls = 0;
+    client.deliveryQuote = async () => {
+      if (++calls === 1) throw Error('commerce_connection_failed');
+      return { id: 'retried' };
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('submit');
+    const feedback = nodes(root).find((n) => n.attrs.role === 'alert');
+    assert.equal(
+      feedback?.textContent,
+      'Pristatymo kainos paslauga laikinai nepasiekiama. Bandykite dar kartą.',
+    );
+    assert.equal(client.created, undefined);
+    await form.fire('submit');
+    assert.equal(calls, 2);
+    assert.equal(client.created.deliveryQuoteId, 'retried');
+  }));
+test('changed address cannot reuse an older pending carrier quote or clear a newer one', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = carrierClient(),
+      pending = [];
+    client.deliveryQuote = (input) => new Promise((resolve) => pending.push({ input, resolve }));
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async () => {},
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('input', field(root, 'postalCode'));
+    await pause(700);
+    field(root, 'postalCode').value = '01100';
+    await form.fire('input', field(root, 'postalCode'));
+    await pause(700);
+    assert.equal(pending.length, 2);
+    pending[0].resolve({ id: 'stale' });
+    await pause(0);
+    assert.equal(client.created, undefined);
+    const submitting = form.fire('submit'),
+      actualCalls = pending.length;
+    for (const p of pending.slice(1)) p.resolve({ id: 'current' });
+    await submitting;
+    assert.equal(actualCalls, 2);
+    assert.equal(client.created.deliveryQuoteId, 'current');
+    assert.equal(client.created.customer.address.postalCode, '01100');
+  }));
 test('one-page checkout shows selected rows only; removal persists an empty cart and never invents a price', () =>
   withDom(async () => {
     for (const productsPlacement of ['details', 'summary']) {

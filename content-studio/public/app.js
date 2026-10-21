@@ -268,7 +268,11 @@ document.addEventListener('submit', async event => {
     }
     else if (type === 'attachments') {
       const pageId = state.pageId;
-      const media = data.getAll('asset').map(id => state.site.assets.find(asset => asset.id === id)).filter(Boolean).map(({ id, src, alt, width, height, credit, rights }) => ({ id, src, alt, width, height, credit, rights }));
+      const attachedMedia=state.site.pages.find(page=>page.id===pageId)?.media||[];
+      const media = data.getAll('asset').map(id => state.site.assets.find(asset => asset.id === id)).filter(Boolean).map(asset=>{
+        const attached=attachedMedia.find(item=>item.id===asset.id||asset.groupId&&item.familyId===asset.groupId);
+        return {id:asset.id,...(attached?{alt:attached.alt}:{})};
+      });
       const links = [...form.querySelectorAll('[data-internal-link-row]')].map(row => {
         const input = row.querySelector('[name="link"]');
         return input.checked ? { targetPageId: input.value, label: row.querySelector('[data-internal-link-label]').value.trim() } : null;

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Optional page-specific alt applies losslessly to family variants; assets/source metadata and immutable exports remain unchanged. GUI resave and global draft metadata correction preserve contextual descriptions. Initial new fixture missing offer correctly failed approval; fixed fixture only, existing gate preserved. No public prose/liveactions.",
+  "checks": [
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=<paired> STUDIO_NETWORK_SETTINGS=<paired> node --test content-studio/test/page-media-alt.test.mjs content-studio/test/draft-media-metadata.test.mjs content-studio/test/media-import.test.mjs content-studio/test/media-family-contract.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:Reviewed per-page attachment descriptions;5/5PASS V1/V2+legacyHTTP+immutability+pairedschema"
+    },
+    {
+      "command": "node --check content-studio/public/app.js; git diff --check",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:GUI syntax and scoped diff checked"
+    }
+  ],
+  "eventId": "bfe5406c-f503-4b7f-b956-ebcea1222a8d",
+  "sequence": 2,
+  "at": "2026-10-21T11:24:43.395Z"
+}

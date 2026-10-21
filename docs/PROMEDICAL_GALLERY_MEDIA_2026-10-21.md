@@ -107,3 +107,28 @@ Actual checks:
   IMAGE_POLICY, full16MiB valid input receives201, one extra decoded byte400,
   and rejected input does not append assets. JavaScript/server syntax checks PASS.
 - Private test roots and ephemeral servers were cleaned; no live studio changed.
+
+## Reviewed per-page attachment descriptions
+
+`editPage` now supports `{media:[{id,alt}]}` with optional per-page context.
+The exact nonempty string (at most300 characters) is attached to every variant
+in the selected family, without changing library metadata or image bytes.
+Different selections of one family with conflicting descriptions reject the
+whole assignment. With `alt` omitted, the legacy library-default behavior stays.
+Explicit undefined/null/nonstrings/empty/overlength strings are rejected.
+
+The GUI carries forward an existing page attachment description on resave;
+new selections use the library default until a caller supplies reviewed context.
+A deliberate draft library correction updates inherited default descriptions
+while preserving contextual descriptions that differ from the old library value.
+All existing ever-approved asset and immutable published-snapshot gates remain.
+
+Actual focused regression5/5 PASS: V1 andV2 attach one family to two pages with
+different descriptions and a third default page; all responsive sizes agree,
+source records remain unchanged by attachment, 300 accepted/301 rejected,
+malformed and conflicting duplicate requests fail without persistence, and later
+draft attachment/global-metadata actions cannot mutate old approved exports.
+Existing HTTP media export, draft metadata immutability and paired V2 contract
+tests passed in the same run. The first new fixture omitted its required offer
+and correctly failed the approval gate; the fixture was repaired, not the gate.
+This is metadata plumbing only: no public business descriptions were generated.

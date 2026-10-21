@@ -360,12 +360,18 @@ export async function editPage(siteId, pageId, input) {
     if ('links' in input) page.links = (Array.isArray(input.links) ? input.links : []).slice(0, 30).map(item => ({ targetPageId: plain(item.targetPageId, 80), label: plain(item.label, 160) }));
     if ('networkLinkSuggestions' in input) page.networkLinkSuggestions = normalizeNetworkSuggestions(input.networkLinkSuggestions);
     if ('media' in input) {
-      const media=[];const seen=new Set();
+      const media=[];const seen=new Set();const selectedAlts=new Map();
       for(const item of Array.isArray(input.media)?input.media:[]){
         const asset=site.assets.find(a=>a.id===item.id);
         if(!asset)throw new Error('Vaizdas nepriklauso šiai svetainei.');
+        const hasAlt=Object.hasOwn(item,'alt');
+        if(hasAlt&&(typeof item.alt!=='string'||!item.alt.trim()||item.alt.length>300))throw new Error('Puslapio vaizdo alt turi būti netuščias tekstas iki 300 ženklų; tekstas netrumpinamas.');
+        const selectedAlt=hasAlt?item.alt:asset.alt;
+        const familyKey=asset.groupId?`family:${asset.groupId}`:`asset:${asset.id}`;
+        if(selectedAlts.has(familyKey)&&selectedAlts.get(familyKey)!==selectedAlt)throw new Error('Tos pačios vaizdo šeimos alt aprašai negali skirtis viename priskyrime.');
+        selectedAlts.set(familyKey,selectedAlt);
         const family=asset.groupId?site.assets.filter(a=>a.groupId===asset.groupId).sort((a,b)=>b.width-a.width):[asset];
-        for(const member of family){if(seen.has(member.id))continue;seen.add(member.id);const {id,src,alt,width,height,credit,rights}=member;media.push({id,src,alt,width,height,credit,rights,...(member.groupId?{familyId:member.groupId}:{})});}
+        for(const member of family){if(seen.has(member.id))continue;seen.add(member.id);const {id,src,alt,width,height,credit,rights}=member;media.push({id,src,alt:hasAlt?item.alt:alt,width,height,credit,rights,...(member.groupId?{familyId:member.groupId}:{})});}
       }
       if(media.length>MAX_PAGE_MEDIA)throw new Error(`Puslapyje telpa iki ${MAX_PAGE_MEDIA} medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.`);
       page.media=media;
@@ -628,13 +634,18 @@ export async function editDraftAssetMetadata(siteId, assetId, input, actorId = '
       changes[key] = value;
     }
     const updatedAt = new Date().toISOString();
+    const previousAlts=new Map(family.map(member=>[member.id,member.alt]));
     for (const member of family) {
       member.metadataHistory = [...(member.metadataHistory || []), { updatedAt, actorId: plain(actorId, 120), before: { alt: member.alt, credit: member.credit || '' } }];
       Object.assign(member, changes);
     }
     const affectedPageIds = [];
     for (const page of site.pages) if (page.media.some(item => ids.has(item.id))) {
-      for (const member of page.media) if (ids.has(member.id)) Object.assign(member, changes);
+      for (const member of page.media) if (ids.has(member.id)) {
+        const contextualAlt=member.alt!==previousAlts.get(member.id)?member.alt:undefined;
+        Object.assign(member, changes);
+        if(contextualAlt!==undefined)member.alt=contextualAlt;
+      }
       page.status = 'review'; page.approval = null; page.updatedAt = updatedAt;
       page.revisionHash = revisionHash(page);
       affectedPageIds.push(page.id);

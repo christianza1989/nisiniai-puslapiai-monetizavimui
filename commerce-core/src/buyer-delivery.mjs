@@ -39,9 +39,9 @@ export class BuyerDeliveryQuotes {
   }
   async create(store, env, input, adapter, quoteOptions = {}) {
     const config = await this.s.store(store, env);
+    requireValue(identifier(input?.id), 'invalid_delivery_quote_id');
     requireValue(
-      identifier(input?.id) &&
-        adapter?.environment === env &&
+      adapter?.environment === env &&
         adapter.accountRef === config.shippingAccountRef &&
         adapter.quote,
       'carrier_quotes_not_connected',

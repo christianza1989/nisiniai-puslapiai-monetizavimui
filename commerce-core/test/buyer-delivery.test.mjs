@@ -100,5 +100,9 @@ test('buyer shipping price is provider-bound, address/cart/profile scoped and pe
     ),
     /carrier_quotes_not_connected/,
   );
+  await assert.rejects(
+    delivery.create('store_a', 'sandbox', { ...input, id: undefined }, adapter),
+    (error) => error.code === 'invalid_delivery_quote_id' && error.status === 400,
+  );
   db.close();
 });

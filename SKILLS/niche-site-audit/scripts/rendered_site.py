@@ -211,7 +211,20 @@ def inspect_page(observation):
     return sorted(set(errors))
 
 
+def page_resources(observation):
+    doc = Document(observation['html']).root
+    base = next((urljoin(observation['expected']['url'], e.attrs['href'])
+                 for e in doc.nodes('base') if e.attrs.get('href')), observation['expected']['url'])
+    resources = []
+    for e in doc.nodes():
+        if e.tag == 'link' and 'stylesheet' in e.attrs.get('rel', '').lower().split() and e.attrs.get('href'):
+            resources.append({'kind': 'STYLESHEET', 'url': urljoin(base, e.attrs['href'])})
+        if e.tag == 'script' and e.attrs.get('src'):
+            resources.append({'kind': 'SCRIPT', 'url': urljoin(base, e.attrs['src'])})
+    return resources
+
+
 if __name__ == '__main__':
     observations = json.load(sys.stdin)
-    result = inspect_robots(observations) if isinstance(observations, dict) and observations.get('mode') == 'robots' else [{'url': o['expected']['url'], 'errors': inspect_page(o)} for o in observations]
+    result = inspect_robots(observations) if isinstance(observations, dict) and observations.get('mode') == 'robots' else [{'url': o['expected']['url'], 'errors': inspect_page(o), 'resources': page_resources(o)} for o in observations]
     json.dump(result, sys.stdout, ensure_ascii=False)

@@ -4,6 +4,8 @@ import {spawn,execFileSync} from 'node:child_process';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {catalogFromMarkdown,scoreAudit} from './score-audit.mjs';
+import {request as requestHttp} from 'node:http';
+import {request as requestHttps} from 'node:https';
 
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const arg=(name,args)=>{const i=args.indexOf(name);return i<0?null:args[i+1];};
@@ -12,6 +14,13 @@ const isLoopback=u=>['127.0.0.1','localhost','[::1]'].includes(u.hostname);
 const urlFor=(pkg,p)=>new URL('/'+p.slug,'https://'+pkg.canonicalHost).href;
 const urlsIn=text=>new Set((text.match(/https?:\/\/[^\s<>\[\]()"']+/g)||[]).map(u=>u.replace(/&amp;/g,'&').split('#')[0]));
 const normalizeReading=text=>String(text).replace(/\\([\\[\]])/g,'$1').replace(/\s+/g,' ').trim();
+// Node fetch may replace a supplied Host header. Keep the canonical host,
+// manual redirects and response limit for isolated loopback observations.
+export function canonicalLoopbackGet(target,host){return new Promise((resolve,reject)=>{
+ const client=target.protocol==='https:'?requestHttps:requestHttp;
+ const req=client(target,{headers:{Host:host,'Cache-Control':'no-cache'}},res=>{const chunks=[];let size=0;res.on('data',chunk=>{size+=chunk.length;if(size>8*1024*1024){res.destroy(Error('Response exceeds bounded inspector size'));return;}chunks.push(chunk);});res.on('error',reject);res.on('end',()=>resolve({status:res.statusCode,headers:new Headers(Object.entries(res.headers).flatMap(([k,v])=>v===undefined?[]:[[k,Array.isArray(v)?v.join(', '):v]])),data:Buffer.concat(chunks)}));});
+ req.setTimeout(20000,()=>req.destroy(Error('Loopback audit timeout')));req.on('error',reject);req.end();
+});}
 export function verifyDiscoveryOutputs(pkg,pages,outputs){
   const issues=[],eligible=new Set(pages.map(p=>p.id));
   for(const [pathname,text] of Object.entries(outputs)){
@@ -82,8 +91,8 @@ export async function verifySiteCompletion(args){
   if(!pages.some(p=>p.slug===indexSlug))issues.push('NO_PUBLIC_ARTICLE_INDEX');
   if(!pages.some(p=>['guide','article'].includes(p.type)))issues.push('NO_PUBLIC_ARTICLE_TO_INSPECT');
   const get=async pathname=>{
-    const response=await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache',...(isLoopback(origin)?{Host:pkg.canonicalHost}:{})}});
-    const data=Buffer.from(await response.arrayBuffer());
+    const response=isLoopback(origin)?await canonicalLoopbackGet(new URL(pathname,origin),pkg.canonicalHost):await fetch(new URL(pathname,origin),{redirect:'manual',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}});
+    const data=response.data||Buffer.from(await response.arrayBuffer());
     if(data.length>8*1024*1024)throw Error('Response exceeds bounded inspector size: '+pathname);
     const receipt={path:pathname,status:response.status,contentType:response.headers.get('content-type')||'',sha256:sha(data)};
     const header=arg('--package-header',args);if(header&&response.headers.get(header)!==packageSha256)issues.push('HOSTED_PACKAGE_HEADER:'+pathname);
@@ -94,6 +103,20 @@ export async function verifySiteCompletion(args){
   await each(expected,async e=>observations.push({...await get(new URL(e.url).pathname),expected:e}));
   const rendered=await pythonInspect(observations,arg('--python',args)||'python');
   for(const row of rendered)for(const code of row.errors)issues.push(code+':'+row.url);
+  const resources=new Map(),sameOrigins=new Set(['https://'+pkg.canonicalHost,origin.origin]);
+  for(const row of rendered)for(const resource of row.resources||[]){
+    let url;try{url=new URL(resource.url);}catch{continue;}
+    if(!sameOrigins.has(url.origin))continue; // External embed policy is unchanged.
+    const pathname=url.pathname+url.search,kinds=resources.get(pathname)||new Set();
+    kinds.add(resource.kind);resources.set(pathname,kinds);
+  }
+  await each([...resources],async([pathname,kinds])=>{
+    const r=await get(pathname),mime=r.contentType.split(';')[0].trim().toLowerCase();
+    for(const kind of kinds){
+      if(r.status!==200)issues.push(kind+'_UNAVAILABLE:'+pathname);
+      else if(kind==='STYLESHEET'?mime!=='text/css':!['text/javascript','application/javascript','text/ecmascript','application/ecmascript'].includes(mime))issues.push(kind+'_MIME:'+pathname);
+    }
+  });
   await each(pkg.pages.filter(p=>!publicIds.has(p.id)),async p=>{const r=await get('/'+p.slug);if(r.status!==404)issues.push('HIDDEN_PAGE_NOT_404:'+p.id);});
   const publicAssets=new Set(pages.flatMap(p=>p.media.map(m=>m.src))),allAssets=[...new Set(pkg.pages.flatMap(p=>p.media.map(m=>m.src)))];
   await each(allAssets,async asset=>{const r=await get(asset);if(publicAssets.has(asset)){if(r.status!==200||!r.contentType.startsWith('image/'))issues.push('PUBLIC_IMAGE_UNAVAILABLE:'+asset);}else if(r.status!==404)issues.push('HIDDEN_ASSET_NOT_404:'+asset);});

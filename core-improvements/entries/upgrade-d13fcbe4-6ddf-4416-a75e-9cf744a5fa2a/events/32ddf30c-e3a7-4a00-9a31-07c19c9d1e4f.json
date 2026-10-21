@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Preserved first real fixture failure: old checker returned no resource errors for CSS/JS404. Fixed checker requests the actual resources, rejects404 and wrong MIME, and accepts correctly served responses. Actual browser acceptance remains separate. Global skills audit not claimed PASS because of existing missing PyYAML/archive working-copy findings.",
+  "checks": [
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/completion.test.mjs SKILLS/niche-site-audit/scripts/multilingual-verifier.test.mjs SKILLS/niche-site-audit/scripts/score-audit.test.mjs",
+      "result": "PASS",
+      "evidence": "12 tests passed, including actual HTTP404/wrong-MIME/correct resources, canonical Host and request deduplication."
+    },
+    {
+      "command": "python SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "Nine existing HTML-parser regressions passed."
+    },
+    {
+      "command": "node SKILLS/niche-site-audit/scripts/verify-site-completion.mjs --render-only against exact R8 local Pages candidate",
+      "result": "PASS",
+      "evidence": "111 public pages, nine guides,1593 HTTP requests including declared CSS/JS; zero issues. State remains RENDERED_CHECKS_PASS_NOT_SITE_ACCEPTANCE."
+    },
+    {
+      "command": "Exact changed skill entry SHA256 and local-link verification",
+      "result": "PASS",
+      "evidence": "niche-site-audit entry SHA d349dc5b7cb8c33baf1d0b64470174b6a314a25c8999b4eef30b49f2a3f5636b matches current catalog; applicable local links exist."
+    }
+  ],
+  "eventId": "32ddf30c-e3a7-4a00-9a31-07c19c9d1e4f",
+  "sequence": 2,
+  "at": "2026-10-21T13:46:11.134Z"
+}

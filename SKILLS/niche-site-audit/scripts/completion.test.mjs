@@ -4,8 +4,9 @@ import {readFile,mkdtemp,writeFile,rm} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
 import path from 'node:path';
 import os from 'node:os';
+import http from 'node:http';
 import {catalogFromMarkdown} from './score-audit.mjs';
-import {articleExpectations,verifySiteCompletion,verifyDiscoveryOutputs} from './verify-site-completion.mjs';
+import {articleExpectations,verifySiteCompletion,verifyDiscoveryOutputs,canonicalLoopbackGet} from './verify-site-completion.mjs';
 
 test('reading verification binds each body to its canonical section and uses exact hidden URLs',()=>{
   const base={type:'guide',contentVersion:2,title:'Useful answer',description:'Description',media:[],editorial:{authors:[],datePublished:'2026-10-07T07:00:00Z',dateModified:null},links:[],externalLinks:[]};
@@ -56,4 +57,47 @@ test('a live origin cannot use a synthetic future clock or a foreign host',async
     await assert.rejects(verifySiteCompletion(['--package',file,'--origin','https://other.example','--article-index','guides']),/exact package/);
     await assert.rejects(verifySiteCompletion(['--package',file,'--origin','https://beauty.example','--article-index','guides','--now','2030-01-01T00:00:00Z']),/only against an isolated/);
   }finally{await rm(tmp,{recursive:true,force:true});}
+});
+
+test('loopback transport preserves the canonical Host and does not follow redirects',async()=>{
+  let requests=0;
+  const server=http.createServer((req,res)=>{requests++;res.writeHead(302,{Location:'/must-not-follow','X-Observed-Host':req.headers.host});res.end('bounded receipt');});
+  await new Promise(r=>server.listen(0,'127.0.0.1',r));
+  try{
+    const response=await canonicalLoopbackGet(new URL(`http://127.0.0.1:${server.address().port}/`),'catalogue.example');
+    assert.equal(response.status,302);assert.equal(response.headers.get('x-observed-host'),'catalogue.example');
+    assert.equal(response.data.toString(),'bounded receipt');assert.equal(requests,1);
+  }finally{await new Promise(r=>server.close(r));}
+});
+
+test('actual completion requests deduplicated same-origin CSS/JS and rejects 404 or wrong MIME',async()=>{
+  const tmp=await mkdtemp(path.join(os.tmpdir(),'completion-resources-'));
+  const {pageRevisionHash}=await import('../../../../dovanos-memorycasting/scripts/content-package-core.mjs');
+  const page={id:'home',siteId:'resource-fixture',type:'home',slug:'',title:'Resource fixture',description:'Isolated resource regression fixture.',intent:'Test actual resource delivery',body:[{type:'paragraph',text:'Isolated resource regression fixture.'}],publishAt:'2026-01-01T00:00:00.000Z',media:[],links:[]};
+  page.revisionHash=pageRevisionHash(page);page.approval={status:'approved',revisionHash:page.revisionHash,approvedAt:'2026-01-01T00:00:00.000Z',actorId:'fixture-reviewer'};
+  const pkg={schemaVersion:1,siteId:'resource-fixture',canonicalHost:'resource-fixture.example',locale:'en-GB',generatedAt:'2026-01-01T00:00:00.000Z',site:{id:'resource-fixture',name:'Resource fixture',canonicalHost:'resource-fixture.example',locale:'en-GB',timezone:'Europe/Vilnius',brand:{accent:'#245b44'},offer:'Isolated fixture',contact:{email:'fixture@example.invalid'}},pages:[page]};
+  await writeFile(path.join(tmp,'package.json'),JSON.stringify(pkg));
+  let cssStatus=404,jsStatus=404,cssMime='text/plain',jsMime='text/plain';let counts={};
+  const server=http.createServer((req,res)=>{
+    assert.equal(req.headers.host,pkg.canonicalHost);
+    counts[req.url]=(counts[req.url]||0)+1;
+    if(req.url==='/style.css'){res.writeHead(cssStatus,{'content-type':cssMime});res.end('body{}');return;}
+    if(req.url==='/app.js'){res.writeHead(jsStatus,{'content-type':jsMime});res.end('void 0');return;}
+    if(req.url==='/'){res.writeHead(200,{'content-type':'text/html'});res.end('<!doctype html><html lang="en"><head><link rel="stylesheet" href="/style.css"><link href="/style.css" rel="stylesheet"><link rel="stylesheet" href="https://external.invalid/not-fetched.css"><script src="/app.js"></script><script src="/app.js"></script></head><body><h1>Resource fixture</h1></body></html>');return;}
+    if(['/sitemap.xml','/llms.txt','/llms-full.txt'].includes(req.url)){res.writeHead(200,{'content-type':'text/plain'});res.end('https://resource-fixture.example/');return;}
+    if(req.url==='/robots.txt'){res.writeHead(200,{'content-type':'text/plain'});res.end('User-agent: *\nAllow: /');return;}
+    res.writeHead(404);res.end('Not found');
+  });
+  await new Promise(r=>server.listen(0,'127.0.0.1',r));
+  try{
+    const args=['--package',path.join(tmp,'package.json'),'--origin',`http://127.0.0.1:${server.address().port}`,'--article-index','guides','--core',path.resolve(import.meta.dirname,'../../../../dovanos-memorycasting'),'--render-only'];
+    const check=async()=>{counts={};const report=await verifySiteCompletion(args);return report.issues.filter(i=>/^(?:STYLESHEET|SCRIPT)_/.test(i));};
+    assert.deepEqual(await check(),['STYLESHEET_UNAVAILABLE:/style.css','SCRIPT_UNAVAILABLE:/app.js']);
+    assert.equal(counts['/style.css'],1);assert.equal(counts['/app.js'],1);
+    cssStatus=200;jsStatus=200;
+    assert.deepEqual(await check(),['STYLESHEET_MIME:/style.css','SCRIPT_MIME:/app.js']);
+    cssMime='text/css; charset=utf-8';jsMime='application/javascript; charset=utf-8';
+    assert.deepEqual(await check(),[]);
+    assert.equal(counts['/style.css'],1);assert.equal(counts['/app.js'],1);
+  }finally{await new Promise(r=>server.close(r));await rm(tmp,{recursive:true,force:true});}
 });

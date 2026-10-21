@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Fresh sparse delivery from public mainbe12cd64. First four tests failed ENOENT because the fixture assumed an existing .local parent; added only fixture parent initialization. Standard process-local NODE_PATH references preserved installed pinned TypeScript/Wrangler without installs or copies. Full test:core and seo-smoke attempted but unavailable due unmaterialized historical fixtures/ESM dependencies and no local app server; previous103-test/build evidence remains historical. No source packages/assets/provider writes.",
+  "checks": [
+    {
+      "command": "NODE_PATH=<preserved pinned node_modules> node --test tests/content-package.test.mjs tests/pages-worker-package.test.mjs",
+      "result": "PASS",
+      "evidence": "13 tests pass, including all four executable packager/regression fixtures. No application build, download, remote resource or deployment."
+    }
+  ],
+  "eventId": "f9d878cf-1c75-4352-bba0-41bb70796aee",
+  "sequence": 3,
+  "at": "2026-10-21T15:08:17.948Z"
+}

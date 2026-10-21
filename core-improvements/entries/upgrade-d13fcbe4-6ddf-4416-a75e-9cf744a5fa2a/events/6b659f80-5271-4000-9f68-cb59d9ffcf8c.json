@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Scoped source delivery from fresh core3117b379/publicbe12cd64. Original checker CSS404 failure preserved. Fresh real-HTTP fixture first failed because Node24 fetch replaced canonical Host with loopback authority; ported only the bounded native transport and added independent Host/manual-redirect regression. Omitted the absent-on-main, business-specific multilingual fixture rather than importing its source history. No package/media/runtime/build/provider changes. Full public suites unavailable in the intentional sparse checkout, not claimed PASS.",
+  "checks": [
+    {
+      "command": "node --test SKILLS/niche-site-audit/scripts/completion.test.mjs SKILLS/niche-site-audit/scripts/score-audit.test.mjs",
+      "result": "PASS",
+      "evidence": "11 tests pass, including real CSS/JS404, wrong MIME, correct resources, deduplication and canonical Host/manual redirects."
+    },
+    {
+      "command": "python SKILLS/niche-site-audit/scripts/rendered-site_test.py",
+      "result": "PASS",
+      "evidence": "Nine HTML-parser tests pass."
+    },
+    {
+      "command": "Changed audit-skill SHA256/catalog/local-link verification",
+      "result": "PASS",
+      "evidence": "Reviewed SHA d349dc5b7cb8c33baf1d0b64470174b6a314a25c8999b4eef30b49f2a3f5636b matches catalog and all entry-relative local links exist."
+    }
+  ],
+  "eventId": "6b659f80-5271-4000-9f68-cb59d9ffcf8c",
+  "sequence": 3,
+  "at": "2026-10-21T15:08:16.291Z"
+}

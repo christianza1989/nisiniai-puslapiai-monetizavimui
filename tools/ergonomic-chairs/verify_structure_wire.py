@@ -52,6 +52,7 @@ def verify(root,job,session_path):
     cp=read(root/'CHECKPOINT.json');require(cp['job']==job['job'] and cp['policy']==VERSION,'EXACT_POLICY_AND_JOB_REQUIRED')
     session=ET.fromstring(session_path.read_bytes()).find('state').get('sessionId')
     receipts={};owned=set();finish_setters=0
+    insertions={};unordered={};causally_owned=set()
     files=sorted((root/'wire').glob('*/RECEIPT.json'),key=lambda p:read(p)['at'])
     for file in files:
         r=read(file);intent=read(file.with_name('INTENT.json'));body=file.with_name('request.private').read_bytes();reply=file.with_name('response.private');url=file.with_name('url.private').read_text(encoding='utf8')
@@ -67,8 +68,14 @@ def verify(root,job,session_path):
                 insert=b.find('insertInfo');require(insert.findtext('baseArticleNumber')==job['code'] and insert.findtext('seriesId')==job['series'],'ORIGINAL_ARTICLE_SERIES_BINDING')
                 verify_initial_variant(insert,job['originalVariant'])
                 item=ET.fromstring(reply.read_bytes()).findtext('.//return');require(bool(item),'REAL_INSERT_ITEM_REQUIRED');owned.add(item)
+                insertions[str(file.relative_to(root)).replace('\\','/')]=item
             else:
-                require(b.findtext('itemId') in owned,'UNOWNED_SOURCE_ITEM')
+                # Wall time can move backwards during an otherwise successful
+                # request. Keep the existing chronological ownership gate; an
+                # exception needs an independently checked original causal
+                # sourceWireProof with this exact item's insertion first.
+                if b.findtext('itemId') not in owned:
+                    unordered[str(file.relative_to(root)).replace('\\','/')]=b.findtext('itemId')
                 if method=='setPropertyValue':
                     require((b.findtext('propClass') or '').endswith(('_OPTIONS','_DIMENSIONS')),'FINISHES_SETTER_FOUND')
         else:require(url.startswith('https://s1.eaiws.pcon-solutions.com/4.19.1-002/session-cache/'+session+'/'),'EXACT_SESSION_GEOMETRY_URL')
@@ -84,6 +91,11 @@ def verify(root,job,session_path):
     for file in observations:
         s=read(file);require(s['stateKey']==state_key(s) and s['baseArticle']==job['code'],'SOURCE_SNAPSHOT_IDENTITY')
         chain=[receipts[p] for p in s['sourceWireProof']]
+        if unordered:
+            chain_owned=set()
+            for path in s['sourceWireProof']:
+                if path in insertions:chain_owned.add(insertions[path])
+                if path in unordered and unordered[path] in chain_owned:causally_owned.add(path)
         actions=[r[0]['action'] for r in chain]
         end=len(chain);require(actions[-2:]==['getExportedGeometry','download'],'RAW_GEOMETRY_ORIGIN_REQUIRED')
         data=next(r for r in reversed(chain[:-2]) if r[0]['action']=='getArticleData')
@@ -92,6 +104,7 @@ def verify(root,job,session_path):
         for key,value in parsed.items():require(s[key]==value,'NATIVE_SNAPSHOT_READBACK_'+key)
         exported=ET.fromstring(chain[-2][1].read_bytes()).findtext('.//return');require(exported==chain[-1][2]==s['geometry']['sourceUrl'],'EXPORTED_GEOMETRY_URL_BINDING')
         require(file_sha(inside(root,s['geometry']['file']))==s['geometry']['sha256']==file_sha(chain[-1][1]),'ORIGINAL_GEOMETRY_BYTES_CHANGED')
+    require(set(unordered)<=causally_owned,'UNOWNED_SOURCE_ITEM')
     for key,ref in cp['states'].items():require(sha(inside(root,ref['file']).read_bytes())==ref['sha256'] and state_key(states[key])==key,'SEALED_STATE_CHANGED')
     for edge in cp['edges']:
         require(edge.get('measured') is True and edge['from'] in states and edge['to'] in states,'REAL_EDGE_ENDPOINTS_REQUIRED')
@@ -104,7 +117,8 @@ def verify(root,job,session_path):
         require(state_key(parsed_snapshot(data[1].read_bytes(),choices[1].read_bytes()))==edge['to'],'ACTUAL_EDGE_TARGET_READBACK')
     closed=closure(cp,states);require(closed['closed'],'INCOMPLETE_CONSTRUCTION_GRAPH')
     result={'at':datetime.now(timezone.utc).isoformat(),'result':'PASS','job':job['job'],'code':job['code'],'states':len(states),'measuredEdges':len(cp['edges']),
-            'rawResponses':len(receipts),'observations':len(observations),'finishSetters':finish_setters,'nativeRequests':0,'geometryAndRuntimeAcceptanceImplied':False}
+            'rawResponses':len(receipts),'observations':len(observations),'finishSetters':finish_setters,'nativeRequests':0,'geometryAndRuntimeAcceptanceImplied':False,
+            'ownershipPolicy':'chronological-or-original-causal-insertion-v1','causalOwnershipReceipts':len(causally_owned)}
     return result
 
 

@@ -83,6 +83,12 @@ binary replies in RAM. Graph state keeps only the original identity/domain
 fields; complete snapshots are still hashed and raw source descriptions,
 geometry origins, session/item ownership and construction setters are checked.
 This avoids model-sized memory growth without skipping any byte/readback gate.
+Receipt wall timestamps are diagnostic values, not a reliable causal clock.
+If chronological sorting puts a request before its insertion, ownership may
+only be recovered from an original observation's ordered sourceWireProof:
+the exact same item's independently validated original insertion must precede
+that request. A missing/later insertion, foreign item, unobserved ambiguous
+tail or changed raw byte still fails. Never reorder or rewrite source receipts.
 Adopt a new offline freeze only at a safe boundary, with tamper/memory tests,
 old/new real-source parity and a complete affected-model proof.
 

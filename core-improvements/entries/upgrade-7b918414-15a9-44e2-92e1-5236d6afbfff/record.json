@@ -1,0 +1,21 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Independent wire verifier misorders original ownership after wall-clock rollback; require original causal insertion witness for chronological exceptions",
+  "category": "code",
+  "evidence": [
+    "docs/ERGONOMIC_WIRE_CHRONOLOGY_2026-10-21.md",
+    "tools/ergonomic-chairs/test_wire_chronology.py"
+  ],
+  "paths": [
+    "tools/ergonomic-chairs/verify_structure_wire.py",
+    "tools/ergonomic-chairs/test_wire_chronology.py",
+    "tools/ergonomic-chairs/README.md",
+    "docs/ERGONOMIC_WIRE_CHRONOLOGY_2026-10-21.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/235",
+  "rollback": "Scoped revert of source repair; all accepted immutable workers preserved. No live frozen edits or blind renewal.",
+  "id": "upgrade-7b918414-15a9-44e2-92e1-5236d6afbfff",
+  "branch": "codex/ergonomic-armrest-semantics-20261020",
+  "baseSha": "d716c0fc48a6a7efb6ee11d6ef2c88b2f6cb0b4b",
+  "createdAt": "2026-10-21T07:11:42.344Z"
+}

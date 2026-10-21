@@ -820,6 +820,49 @@ test('inline payment mount failure retries the same order and late mounting afte
     }
   }));
 
+test('summary payment keeps one form and mounts after goods, totals and consent in actual DOM order', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient();
+    let target,
+      mounts = 0;
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      productsPlacement: 'summary',
+      paymentPlacement: 'summary',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+      renderPayment: async (options) => {
+        target = options.target;
+        mounts++;
+        target.append('RIGHT PAYMENT');
+      },
+    });
+    fillOnePage(root);
+    const form = nodes(root).find((n) => n.tag === 'form');
+    await form.fire('submit');
+    const summary = nodes(root).find((n) => n.attrs.class === 'checkout-summary');
+    assert.equal(target.parentElement, summary);
+    for (const className of ['checkout-products', 'checkout-totals', 'checkout-consent'])
+      assert.ok(
+        summary.children.findIndex((n) => n.attrs?.class === className) <
+          summary.children.indexOf(target),
+      );
+    assert.equal(
+      nodes(root).filter((n) => n.attrs.class === 'checkout-payment checkout-payment-inline')
+        .length,
+      1,
+    );
+    assert.equal(
+      nodes(root).find((n) => n.tag === 'form'),
+      form,
+    );
+    assert.equal(field(root, 'email').value, 'buyer@example.test');
+    await form.fire('submit');
+    assert.equal(mounts, 1);
+    assert.equal(field(root, 'email').disabled, true);
+  }));
+
 test('one-page checkout cannot create while production is closed or terms/customer are incomplete', () =>
   withDom(async () => {
     for (const closed of [false, true]) {

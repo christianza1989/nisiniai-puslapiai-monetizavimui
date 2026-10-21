@@ -1,0 +1,14 @@
+{
+  "status": "local-verified",
+  "note": "Explicit layout extension, default/classic preserved; no provider or order API change.",
+  "checks": [
+    {
+      "command": "node --test commerce-core/test/checkout-cart.test.mjs commerce-core/test/buyer.test.mjs commerce-core/test/embedded-checkout.test.mjs",
+      "result": "PASS",
+      "evidence": "qa/memocasting-delivery-20261021/right-payment-core-tests.txt36pass0fail; actual parent and focusable DOM order asserted."
+    }
+  ],
+  "eventId": "bf607f84-0061-4a32-9e57-24fdc34e95e6",
+  "sequence": 2,
+  "at": "2026-10-21T06:28:26.428Z"
+}

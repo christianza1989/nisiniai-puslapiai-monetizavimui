@@ -228,3 +228,52 @@ candidate reports live under`D:/Core/output/promedical-gallery-execution-2026102
 They are not copied into Git or presented as public release evidence. The
 owner's latest boundary is complete private review before live publication;
 approval, release, deployment and indexing remain separate later actions.
+
+## Final root private review acceptance
+
+Complete inventory:1,408 products,7,752 anchors and7,454 per-product frames
+after298 proven duplicate anchors. All2,801 source families were imported
+through the unchanged canonical pipeline into8,352 WebP variants; maximum46
+per page, within the unchanged60-entry limit. Final source manifest SHA is
+`ef6c609338d328a3b8e5153496176c27529a08bf9fa578bad3728c23f9c19de8`.
+The one-shot coordinator recovered its running-to-completed race without
+rewriting completed progress or pins. All1,408 actual draft galleries and23,183
+contextual variant descriptions pass; alt equals the owner's authorized exact
+approved title. All1,909 publishedRevision objects and501 nonproduct pages
+remain unchanged. Candidate SHA:
+`b81a0f07cb0c7fddd5ce0c868a5f8f71ebd4f219430954f48920f1a02118874c`.
+
+Final native integrity passes at2026-10-21T14:57:08.345Z: all original/output
+hashes, canonical records, dimensions, alpha and order. Earlier false verifier
+rejections remain archived. Opaque-alpha omission is accepted only with actual
+fully opaque source or exact canonical uncompressed-resize pixel proof;
+12 strict checks pass. No near-opacity threshold, re-encode or pipeline/quality
+change occurred. One missing source original retains a genuine200x56 fallback.
+
+Tested Core source:d6d806788a2c34f1af8e564934135e6f02c1d1b9; public renderer:
+5fd20118327044fe8d0df6ee2280fa85f2a53194. Current-main F01 navigation and F02
+canonical behavior are preserved. Public94-test regression, TypeScript, focused
+lint and build pass. Actual local SEO smoke covers1,854 routes, plus306 actual
+pagination probes; all ten approved content packages remain the frozen baseline.
+Full private HTTP verifies1,408 routes,7,454 visible families and all8,352 unique
+WebP files with zero failures. Current390/320px UI checks cover selection,
+13 thumbnails, dialog, Escape/focus and200x56 bounds. Actual200% browser zoom
+is unverified;1280px geometry is checked but the IAB screenshot clips its left
+pane. The current private Vite lab pair scores51/52, LCP16.86/16.39s with roughly
+7MB development JavaScript; it is not production CWV or a causal gain claim.
+
+Read-only reconciliation preserves current F02 Worker
+4262d312-9ee9-4324-8344-24ef2e98bf54, deployment
+1a53d491-4995-4420-a733-70b6c10a3572. Version/ETag-bound snapshots preserve all ten
+content packages and operational settings. Initial a8c and intermediate F01
+snapshots remain historical. Fresh HTTPS verifies all1,854 sitemap/LLM entries,
+two public guides and55 held-guide404s. This task performed no runtime rollback.
+
+The final manifest under
+`D:/Core/output/promedical-gallery-execution-20261021/owner-review/manifest.json`
+is `READY_FOR_OWNER_REVIEW_NOT_APPROVED`. The plan has41/45 completed actions.
+Actual private review runs on127.0.0.1:8851 with noindex/no-store and inquiry
+transmission disabled. Remaining actions require the owner's later publication
+decision: approve/release/deploy, new production CDN/WAF checks and real indexing.
+No approved export was fabricated. Private evidence/media remain outside Git;
+documentation-only follow-ups preserve the tested source bytes and commit IDs.

@@ -1,4 +1,43 @@
 # Memocasting įrankiai ir aktyvavimo ribos
+
+## Europos kainodara, partneriai ir 3PL · 2026-10-21
+
+Pagal aktualų canonical niche-business-tools skill ir BUSINESS_TOOLS_CORE. [BUSINESS atnaujinimas](BUSINESS.md), [kainodaros tyrimas](PRICING_RESEARCH_2026_10_21.md), [3PL planas](EU_FULFILLMENT_2026_10_21.md). Pradiniai CORE / PUBLIC SHA 6c8dc91bd46fbb2310fdcc1303e80f56e2de4257 / 44d24ef6462aea98de04ee88881f84ed37ffdd19; porinė continue freshness PASS 2026-10-21, main e231fe49 / ec8a9c03. Dokumentas neaktyvuoja naujo pardavimų runtime.
+
+Mokamas rezultatas: apmokėta profesionalo partija arba įvykdytas vartotojo užsakymas. Kontaktų, laiškų, sekėjų ir sukurtų svetainių skaičiai nėra pajamos.
+
+| Sritis | Pasirinkta dabar / vėliau | Įrodymai ir riba |
+| --- | --- | --- |
+| Kainodara | Dabar pirminiai produktų puslapiai, ECB, formulėmis perskaičiuojamas XLSX | 23 pasiūlymai; stebėjimas nėra galutinis pristatytas pasiūlymas / paklausos tyrimas |
+| Partnerių paieška | Vėliau viešos profesionalų svetainės, Treg Local Places kandidatas | Dabar tik nemokamas katalogas; jokios mokamos užklausos ar kandidatų kontaktavimo |
+| Pokalbis / paštas | Vėliau MAIL_CORE ir acquisition peržiūra | Būtinas konkretus užduoties, kanalo ir siuntimo limito pavedimas; šio tyrimo metu nesiųsta |
+| 3PL atranka | Dabar pirminiai FLEX / StartFill / Quivo / Omnipack puslapiai | Vieši planai nėra mūsų dviejų SKU kainos, SLA, priėmimo ar API sutartis |
+| Vykdymas | Vėliau vienas serverinis fulfillment adapteris ir eilė | Tikras paid, vienas išsiuntimas, tracking, WMS likučiai; planas neprijungė provider |
+| Medija / lokalizacija | Vėliau sutartas partnerio turinys ir peržiūrėta instrukcija | Aiškios žmonių atvaizdų, muzikos bei reklamos teisės; profesionalo mokymas prieš renginį |
+| Matavimas | Vėliau partnerio QR / kodas ir įvykdytų užsakymų padengimas | Pakartotiniai mokami užsakymai, pristatymo p95 ir realios išlaidos, ne kontaktų kiekis |
+
+### Kandidatas: serper.google.serp.places
+
+- Paskirtis / statusas: būsima vietinių vedėjų / planuotojų verslo atranka; **candidate**, provider nevykdytas. Treg catalog_search → catalog_get 2026-10-21; [tiekėjo sutartis](https://serper.dev/playground).
+- Tikslus endpoint `serper.google.serp.places`, POST `/places`; privalomas `q`, pasirenkami `location`, `gl`, `hl`, `page`, `autocorrect`. Išvestis `places` su Google parodytais verslo laukais / CID; tinklalapis ir kontaktas nėra garantuoti. Pirmiausia LT / PL / DE / FR pagal pasirinktą pilotą; tikras nišos atitikimas neišmatuotas.
+- Katalogo 0,001 USD už sėkmingą atsakymą; prieš vykdymą perskaityti kainą iš naujo. 100 sėkmingų calls būtų 0,10 USD, tačiau **šiam būsimam darbui mokamas biudžetas neautorizuotas**. Ankstesnis turinio 1 USD limitas netaikomas. Katalogo 99,53 % HTTP sėkmė iš 217 554 bandymų nėra mūsų semantinio tikslumo matas.
+- Alternatyva: nemokama pirminių verslo puslapių paieška; kataloge DataForSEO Local Finder 0,002 USD, Litescrape Local 0,00015 USD, bet skirtingos įvestys ir patikimumas. Mokamas waterfall nepasirinktas.
+- Duomenys: verslo pavadinimas, regionas, veiklos / renginių nuoroda, viešas verslo kontaktavimo kelias, data ir vertinimas. Nerenkami svečių kontaktai. Katalogas žymi cache `forbidden`: nekurti neapdorotų SERP archyvo; leistiną saugojimą patikrinti prieš provider naudojimą. Viešas įrašas nėra leidimas automatinei reklamai.
+- Vykdytojas: Memocasting savininko pavestas operatorius. Būsimas mažas bandymas – 20 peržiūrėtų kandidatų vienoje rinkoje, vertinamas veiklos atitikimas, apmokėta partija ir pakartotinis pirkimas. Stop: klaidinga šalis / veikla, neaiškios teisės, atsisakymas, nepatvirtinta kaina ar semantinis netinkamumas. Fallback pirminiai puslapiai. Jokio runtime įjungimo.
+
+### Kandidatai: 3PL / integracija
+
+- Tikslūs tiekėjai ir pirminės kainų nuorodos: [FLEX](https://www.flexfulfillment.eu/de/), [StartFill](https://startfill.com/pricing/), [Quivo](https://quivo.co/faq/), [Omnipack](https://omnipack.com/pricing), peržiūrėta 2026-10-21. Statusas **candidate**, ne verified-active. Stripe Directory skill panaudotas pirmiausia; CLI 1.54.1 / directory 0.3.5 paiešką atmetė `Invalid user agent`, ribojimas neapeitas. Treg logistikos discovery grąžino tik netinkamą Shopping gretimumą; jis nevykdytas.
+- Įvestis: du SKU, 2,2 / 4,5 kg, 20×20×17 / 25×25×20 cm, instrukcijos kalba, pradinis 20 vnt. kiekis ir tikslinė šalis / pašto kodai. Išvestis, kurios reikia: pasirašomas kainų pasiūlymas, priėmimo / SLA taisyklės, dokumentuota API, vienas tikras užsakymas ir tracking. Pirkėjo duomenys tik pavedimui vykdyti, per duomenų sutartį, jokie raktai Git.
+- Aprėptis / ribos: sandėlio šalis nėra garantuota visos Europos 4 d. d. aprėptis; priimtinumas milteliams / dažams, įvežimas ir individualaus kodo integracija dar nežinomi. Provider rinkodaros patikimumas atskiras nuo mūsų bandymo.
+- Kaina / limitas: vieši planai dokumentuoti tyrime; tikros siuntimo, PVM / administravimo, minimumų ir parengimo sąnaudos nežinomos. Mokamos sutarties / siuntos limitas nesuteiktas; XLSX sumos aiškiai pažymėtos prielaidomis. Naujų sąskaitų ar sutarčių nesukurta.
+- Alternatyva: LT vykdymas per esamą sandėlio / carrier sistemą ten, kur patvirtintas 4 d. d. maršrutas. Nepereiti prie kito provider vien dėl API timeout ir nedubliuoti originalaus užsakymo.
+- Plėtros sąlyga / savininkas: savininko pasirinkta rinka, tikri pardavimai, priimta ekonomika ir mokesčių režimas. Mažas pilotas: rašytinai priimta 20 vnt. partija, tikras WMS likutis, patvirtintas mokėjimo įvykis → viena siunta → tracking / pristatymas. Stop: neaiški bendra kaina, nepriimamos prekės, netinkamas terminas, neatskirtas pardavėjas ar dubliuojama siunta.
+
+Peržiūra: BUSINESS ir fazės ribos išlaikytos. Įrankių planas nėra autonominio pardavimų / pašto / finansavimo įjungimas. Toliau esantys datuoti įrašai saugomi kaip istorija; jų senos būsenos neperrašytos.
+
+## Ankstesni pasirinkimai ir operacijų istorija
+
 Atranka 2026-10-11 pagal BUSINESS_TOOLS_CORE. Planas neįjungia tiekėjų.
 
 | Darbas / pasirinkimas | Įvestis → rezultatas / aprėptis | Kaina ir limitas | Statusas, fallback, aktyvavimas |

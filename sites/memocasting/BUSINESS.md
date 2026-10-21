@@ -1,4 +1,19 @@
 # Memocasting verslo faktai ir modelis
+
+## Nauji savininko faktai ir Europos modelis · 2026-10-21
+
+Poros pilna savikaina su darbu, medžiagomis ir pakavimu patvirtinta 10 EUR. Vieneto kainos: alginato pakelis 6 EUR, gipso pakelis 1 EUR; porai po vieną, šeimai po du. Kibiras 1 EUR, dėžė 0,30 EUR, įrankiai 0,10 EUR, instrukcija 0,10 EUR, dažai apie 0,10 EUR. Medžiagų / pakuotės suma porai 8,60 EUR, šeimai 15,60 EUR. Šeimos darbo savininkas kol kas neskaičiuoja. Tyrime atskirai naudojama 2 EUR darbo prielaida ir 17,60 EUR ekonominė šeimos savikaina; tai ne naujas savininko patvirtintas kaštas. Šie faktai papildo ankstesnius nežinomus šeimos komponentų ir dažų kaštus.
+
+Savininkas aprašė ankstesnį nemokamų rinkinių bandymą su Kauno vestuvių vedėju: jaunavedžių rankų liejimas gyvai prieš svečius. Atneštų pardavimų duomenų nepateikta. Pageidaujama kryptis: kitų šalių vedėjai / organizatoriai bei programą vedantys muzikantai perka rinkinius, kuria turinį, o stipriausi gali tapti vietiniais pardavėjais ir šalies atstovais su lokalizuota svetaine / sistema.
+
+Papildomai svarstomas savininko valdomas visos Europos DTC verslas: jo prekės laikomos išoriniuose 3PL sandėliuose, šie vykdo jo pardavimus. Tai nėra tas pats, kas platintojas, nuperkantis atsargas savo vardu. Savininko pristatymo tikslas ne daugiau kaip 4 darbo dienos; plane vertinamas visas laikas nuo apmokėto užsakymo pagal darbo dienų ribas. Konkrečių užsienio maršrutų SLA ar mokesčių režimas dar nepatvirtinti.
+
+[Kainų ir partnerių tyrimas](PRICING_RESEARCH_2026_10_21.md): 23 pasiūlymai / 14 produktų grupių, 9 ES šalys ir UK; siūlomos bandymo kainos, ne faktiniai parduotuvės pakeitimai. [3PL ir automatizavimo planas](EU_FULFILLMENT_2026_10_21.md): LT, vieno ES sandėlio ir kelių vietų palyginimas, pirminiai kandidatai, 20 vnt. ekonomika, 4 d. d. kriterijus ir serverinis vykdymas. [Įrankių atranka](TOOLS.md) papildyta be mokamų calls ar operacijų įjungimo.
+
+Toliau esantys senų datų įrašai yra istorija, ne dabartinio checkout / vežėjo / Stripe būsenos patikra. Šis kainodaros tyrimas neatnaujina visų operacinių sistemų priėmimo. Gyvos 32 / 48 EUR kainos nepakeistos; nei nauji sandėliai, nei teritorijos / siuntos neaktyvuoti.
+
+## Istoriniai verslo faktai
+
 Patvirtinta savininko 2026-10-11: MB Memocasting, ne PVM mokėtoja; Stripe turima, vežėjo sutarties nėra; seni produktų vaizdai bus pateikti vėliau.
 Porai: 32 €, alginato pakelis 6 €, 1200 g gipso 1 €, kibiras 1 €. Savininkas 2026-10-14 patvirtino, kad balti dažai įeina į rinkinį; atskiro 3 € dažų pasirinkimo nebėra. Savininko 2026-10-15 patvirtinta supakuota siunta su dažais: 2,2 kg, 20×20×17 cm.
 Šeimai: 48 €, 2 alginato ir 2 gipso pakeliai. Savininkas 2026-10-14 patvirtino, kad balti dažai taip pat įeina į šį rinkinį. Savininko 2026-10-15 patvirtinta supakuota siunta su dažais: 4,5 kg, 25×25×20 cm. Matmenys atskirai patikslinti iš pradinio vienetų apsirikimo. Gipso pakelio kaina/masė ir kibiras šeimai nepatvirtinti; dažų kiekis ir savikaina nežinomi. Rinkinių kainos nepakeistos.

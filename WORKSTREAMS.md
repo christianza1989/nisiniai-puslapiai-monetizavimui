@@ -398,3 +398,5 @@ passed for all 7 shared changes and staged safety for 16 files. Freshness passed
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
 
 2026-10-21 Promedical gallery media RESERVED, issue236: own branches codex/promedical-gallery-media-core-20261021 / codex/promedical-gallery-media-public-20261021, fresh core e231fe49 / public8a741610. Scope canonical model familyId export, server companion path override, V1/V2 schema capacity160, responsive family helper/type and targeted tests, MEDIA_CORE and own journal. Root owns product content/import/review/release/deployment; renderer agent owns gallery UI/SEO. No historical package or live studio mutations.
+
+2026-10-21 issue236 media source LOCAL VERIFIED / edit window released: core640e096, public168bb98+cbc3f8a. Family export/cap160 pairedHTTP2, pipeline+V2contract4, completepublic59 andpublication11 PASS;9legacypackages compile unchanged; safety andfreshness PASS. Root owns combinedrenderer/package actualHTTPSEO smoke (own default8787 hadnoserver), review/release/deploy; no live actions or historicalbytes rewritten.

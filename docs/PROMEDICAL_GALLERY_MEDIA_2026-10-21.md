@@ -50,5 +50,21 @@ worktrees and does not run or mutate a live studio.
 - First full public suite could not load missing TypeScript dependencies in the
   fresh checkout. Installation and complete suite status are recorded separately.
 
+Subsequent `npm run install:ci` completed (683 packages; six dependency install
+script warnings reported). The full paired public `npm run test:core` then
+passed **59/59**. `node scripts/compile-content-packages.mjs` validated all nine
+legacy approved packages without a generated-file diff. Separate publication,
+tenant and admission regression passed 11/11. The staged safety checker passed
+the two public commits and all 12 private files. Committed core upgrade coverage
+passed all five shared changed files; paired handoff freshness passed with clean
+worktrees at private 640e09656ad2e8a0450c00a9b8ea1e96f85de6a0 and public
+cbc3f8a0351c14727dac22a430db2a75533848ec.
+
+`npm run test:seo-smoke` reached no assertions because its default localhost
+127.0.0.1:8787 had no server (`ECONNREFUSED`). Actual rendered HTTP/SEO verification
+belongs to the root gallery integration's isolated server after combining the
+renderer and real gallery package. This is an explicit remaining integration
+check, not a passed source test or reason to activate any live process.
+
 No historical packages/assets, live data, runtime activation, external model
 calls or deployment are part of this agent's scoped source work.

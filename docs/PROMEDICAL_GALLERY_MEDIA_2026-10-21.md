@@ -277,3 +277,58 @@ transmission disabled. Remaining actions require the owner's later publication
 decision: approve/release/deploy, new production CDN/WAF checks and real indexing.
 No approved export was fabricated. Private evidence/media remain outside Git;
 documentation-only follow-ups preserve the tested source bytes and commit IDs.
+
+## Owner-authorized publication — 2026-10-21
+
+After reviewing the private preview, Rokas explicitly authorized publication:
+"atrodo gerai, kelk galerijas i gyva svetaine ir patikrink ar viskas veikia".
+The frozen private candidate and its earlier acceptance remain historical.
+The publication workspace is separate under
+`D:/Core/output/promedical-gallery-execution-20261021/live-publication-20261021`.
+
+Before export, the galleries were rebased onto the actual latest Worker
+`56e75e7d-f297-4782-aefc-4f09ecd6f8ca`, including the separate latest70 product
+corrections and F01/F02 behavior. Canonical scoped-overlay code from
+`d8abc334b4e8f4eaafc5f26ac8d1e9ccc832b1d3` performed real revision-bound review,
+approval and eight release batches for1408 products. All product nonmedia
+fields and501 nonproduct pages match that current production baseline;55 held
+guides remain held. No historical approval was fabricated or edited.
+
+Final package SHA256:
+`26907ad9a442f8327097a43f74a909b23ad768ec6664fa5152389ba1f2e51237`.
+Worker version `1351de1b-50a0-493d-986c-3e3ff275fcb7` was deployed at100% in
+deployment `22f961ec-b024-442b-bfd0-ee0750de1320`. Rollback must preserve the
+latest corrections: use the preceding56e75e7d version, not the earlier F02
+snapshot referenced by private acceptance.
+
+The normal public build runs **after** importing the final approved release.
+Copying media and changing only compiled package JSON is insufficient: the
+framework server asset index would omit new files. A local actual-Worker404
+caught that staging attempt before deployment. The final normal build indexes
+all9191 release assets and passes the ten-product/218-image local canary,
+55 held-page404s and208 held-media404s. Public94 tests and complete Studio62
+tests pass. The V2 fixture now copies actual compiler dependencies and compares
+the actual package directory inventory instead of a stale nine-package count.
+OAuth expiry during the long export was recovered by a routine refresh without
+repeating approvals or changing scopes. Failed staging/test logs remain private
+evidence; none is represented as a pass.
+
+The publication workspace holds the exact deployment receipt, final HTTPS
+report, browser proof and indexing observation. Private releases/media stay out
+of Git and shared Studio drafts remain untouched. Future publication must pin
+current production, including these galleries, before overlaying another draft.
+The source PR remains draft; production publication does not merge source main.
+
+Final production acceptance at2026-10-21:all1408 product routes,7454 visible
+families and8352 unique WebP files pass actual HTTPS/MIME/byte/SHA checks with
+zero failures. Schema and1854-URL sitemap agree with the galleries; existing
+301 controls pass. All55 held guides and208 exclusive held-media paths remain
+404. Live390/320px interaction checks pass, including13 thumbnails, enlargement,
+Escape/focus return and200x56 bounds. A final Cloudflare read confirms the
+expected active version100% and unchanged operational settings. Evidence:
+`live-gallery-verification.json`, `production-http.json`, `browser/live-ui.json`
+and `browser/live-mobile.jpg` in the publication workspace. Plan44/45 complete;
+actual new-image indexing is explicitly unverified. User-agent200 responses do
+not prove verified crawler visits, indexing or AI recommendations. No production
+CWV result is claimed. Actual200% browser zoom remains unverified. The owned
+8853 canary Worker was stopped after acceptance; user preview servers untouched.

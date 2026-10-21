@@ -1,0 +1,18 @@
+{
+  "siteId": "promedical",
+  "summary": "Actual full import exposed panoramic integer rounding: immutable family1280x60/1200x56/800x38/360x17 was split by redundant aspect-difference filter. Explicit familyId must be authoritative while unmarked legacy media retains alt/aspect fallback.",
+  "category": "code",
+  "evidence": [
+    "MEDIA_CORE.md",
+    "Companion public commit8cc9defa674fb8b3dc357395c8b7d9984a40c8d8:lib/niche-media.mjs andtests/niche-media.test.mjs;helper6/6 andfull61/61PASS"
+  ],
+  "paths": [
+    "MEDIA_CORE.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/236",
+  "rollback": "Revert paired public helper+regression commit and canonical instruction update together; preserve existing source packages/assets/approvals. Do not edit actual importer/renderer background job or substitute invented family IDs.",
+  "id": "upgrade-b52dabe6-116d-464f-a632-96b9cd8b0f4d",
+  "branch": "codex/promedical-gallery-media-core-20261021",
+  "baseSha": "6b28d50cd4544f463d3592efe7327a2cab32e1b0",
+  "createdAt": "2026-10-21T11:46:16.420Z"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "10 focused legacy parity/negative cache tests and all100 existing chair Python tests passed; exact3 original GLB proofs match. Full affected pilot/adoption still pending.",
+  "checks": [
+    {
+      "command": "node --test scripts/exact-face-cache.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/ERGONOMIC_COMPILER_PRIMITIVE_REUSE_2026-10-21.md"
+    },
+    {
+      "command": "python -B -m unittest discover -s tools/ergonomic-chairs -p test_*.py",
+      "result": "PASS",
+      "evidence": "docs/ERGONOMIC_COMPILER_PRIMITIVE_REUSE_2026-10-21.md"
+    }
+  ],
+  "eventId": "c3f6940b-cc64-41d1-a2be-2d2356b4734f",
+  "sequence": 2,
+  "at": "2026-10-21T16:22:07.252Z"
+}

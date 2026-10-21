@@ -8,6 +8,7 @@ import argparse, hashlib, json, os, subprocess, sys, time, shutil
 from pathlib import Path
 from capture_structure import read, save, now, sha
 from verify_structure_wire import verify
+from offline_command_budget import command_budget, run_checked_command, selected_closed_jobs
 
 
 def proof_signature(row):
@@ -15,6 +16,11 @@ def proof_signature(row):
 
 
 def preserved_proof_matches(row,current_tools,certificate):
+    if certificate and certificate.get('schemaVersion')==2:
+        entry=certificate.get('sealedRows',{}).get(row.get('job'))
+        return bool(certificate.get('currentTools')==current_tools and entry
+            and row.get('tools')==entry.get('tools')
+            and entry.get('rowSha256')==proof_signature(row))
     return bool(certificate and certificate.get('currentTools')==current_tools
         and row.get('tools')==certificate.get('previousTools')
         and certificate.get('rows',{}).get(row.get('job'))==proof_signature(row))
@@ -39,6 +45,9 @@ def main():
     p.add_argument('--web',type=Path,required=True)
     p.add_argument('--node',required=True)
     p.add_argument('--watch-seconds',type=int,default=0)
+    p.add_argument('--compiler-timeout-seconds',type=command_budget,default=1800)
+    p.add_argument('--runtime-timeout-seconds',type=command_budget,default=1800)
+    p.add_argument('--only-job',action='append',default=[])
     a=p.parse_args()
     if a.watch_seconds:
         # A finite watcher, with one offline worker at a time. The child keeps
@@ -52,6 +61,7 @@ def main():
         return
     jobs={j['job']:j for j in read(a.inventory)['queue']}
     queue=read(a.root/'SOURCE-QUEUE.json')
+    selected=selected_closed_jobs(queue['completedSource'],a.only_job,jobs)
     a.prepared.mkdir(parents=True,exist_ok=True)
     status={'at':now(),'phase':'OFFLINE_CHECKING','rows':[], 'modelAcceptanceImplied':False,'nativeRequests':0}
     statusfile=a.prepared/'OFFLINE-STATUS.json'
@@ -62,8 +72,8 @@ def main():
     status['rows']=[priorrows[key] for key in queue['completedSource'] if key in priorrows]
     compiler=a.web/'scripts/prepare-chair-structure-cached.mjs'
     runtime=a.web/'scripts/check-chair-structure-runtime.ts'
-    toolfiles=[Path(__file__),Path(__file__).with_name('verify_structure_wire.py'),compiler,runtime,
-        a.web/'scripts/verified-inspection-cache.mjs',a.web/'scripts/configurator-geometry.mjs',
+    toolfiles=[Path(__file__),Path(__file__).with_name('offline_command_budget.py'),Path(__file__).with_name('verify_structure_wire.py'),compiler,runtime,
+        a.web/'scripts/verified-inspection-cache.mjs',a.web/'scripts/configurator-geometry.mjs',a.web/'scripts/exact-face-cache.mjs',
         a.web/'content/seed.json',a.web/'package-lock.json',*sorted((a.web/'src/lib').glob('*.ts'))]
     sourcepins={str(f):sha(f.read_bytes()) for f in toolfiles}
     certificate=load_preserved_certificate()
@@ -72,13 +82,14 @@ def main():
         if all(r['checkpointSha256']==sha((a.root/'source'/r['job']/'CHECKPOINT.json').read_bytes()) and all((a.prepared/r['job']/f).is_file() and sha((a.prepared/r['job']/f).read_bytes())==digest for f,digest in r['artifacts'].items()) for r in prior['rows']):
             print(json.dumps({'phase':'UNCHANGED_SEALED_OFFLINE_PROOFS','rows':len(prior['rows']),'nativeRequests':0}));return
     if prior:save(a.prepared/('OFFLINE-HISTORY-'+now().replace(':','').replace('+','')+'.json'),prior)
-    for key in queue['completedSource']:
+    for key in selected:
         if shutil.disk_usage(a.root).free<101000000000:raise ValueError('DISK_RESERVE')
         if any(sha(f.read_bytes())!=sourcepins[str(f)] for f in toolfiles):raise ValueError('OFFLINE_TOOL_BYTES_CHANGED')
         source=a.root/'source'/key
         output=a.prepared/key
         output.mkdir(parents=True,exist_ok=True)
-        row={'job':key,'code':jobs[key]['code'],'at':now(),'result':'RUNNING','checkpointSha256':sha((source/'CHECKPOINT.json').read_bytes()),'tools':sourcepins,'modelPrepared':False}
+        row={'job':key,'code':jobs[key]['code'],'at':now(),'result':'RUNNING','checkpointSha256':sha((source/'CHECKPOINT.json').read_bytes()),'tools':sourcepins,'modelPrepared':False,
+            'commandBudgetSeconds':{'compiler':a.compiler_timeout_seconds,'runtime':a.runtime_timeout_seconds}}
         old=priorrows.get(key)
         if old and old['result']=='PASS_SOURCE_GEOMETRY_RUNTIME_ONLY' and old['checkpointSha256']==row['checkpointSha256'] and compatible(old) and old.get('artifacts'):
             if all((output/f).is_file() and sha((output/f).read_bytes())==digest for f,digest in old['artifacts'].items()):
@@ -97,8 +108,8 @@ def main():
             save(source/'WIRE-PROOF.json',proof)
             log=output/('OFFLINE-'+now().replace(':','').replace('+','')+'.log')
             with log.open('xb') as stream:
-                subprocess.run([a.node,str(compiler),'--source='+str(source),'--output='+str(output),'--inventory='+str(a.inventory)],cwd=a.web,stdout=stream,stderr=subprocess.STDOUT,check=True,timeout=1800)
-                subprocess.run([a.node,'--import','tsx',str(runtime),'--source='+str(source),'--prepared='+str(output)],cwd=a.web,stdout=stream,stderr=subprocess.STDOUT,check=True,timeout=1800)
+                run_checked_command([a.node,str(compiler),'--source='+str(source),'--output='+str(output),'--inventory='+str(a.inventory)],cwd=a.web,stream=stream,seconds=a.compiler_timeout_seconds,stage='geometry-pbr-compiler')
+                run_checked_command([a.node,'--import','tsx',str(runtime),'--source='+str(source),'--prepared='+str(output)],cwd=a.web,stream=stream,seconds=a.runtime_timeout_seconds,stage='runtime-verifier')
             for file in ['GEOMETRY-PBR-PROOF.json','RUNTIME-PROOF.json']:
                 if read(output/file)['result']!='PASS':raise ValueError('INDEPENDENT_PROOF_NOT_PASS:'+file)
             if row['checkpointSha256']!=sha((source/'CHECKPOINT.json').read_bytes()):raise ValueError('CLOSED_CHECKPOINT_CHANGED_DURING_OFFLINE')

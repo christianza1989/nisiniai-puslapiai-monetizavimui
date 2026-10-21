@@ -1,0 +1,20 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Carry the full affected-model proven execution budget into the unchanged offline watcher through an explicit finite worker adapter",
+  "category": "code",
+  "evidence": [
+    "docs/ERGONOMIC_OFFLINE_BUDGET_ADOPTION_2026-10-20.md"
+  ],
+  "paths": [
+    "tools/ergonomic-chairs/run_budgeted_offline.py",
+    "tools/ergonomic-chairs/test_budgeted_offline.py",
+    "tools/ergonomic-chairs/README.md",
+    "docs/ERGONOMIC_OFFLINE_BUDGET_ADOPTION_2026-10-20.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/235",
+  "rollback": "Revert only the new source adapter; never edit earlier frozen workers/watchers. Adopt only after full sealed-row preservation and explicit operational receipts.",
+  "id": "upgrade-046db213-d88f-484a-a5d8-bcd860a06513",
+  "branch": "codex/ergonomic-armrest-semantics-20261020",
+  "baseSha": "88b07e108ee7c7fffd5f06d67f30fd98ccccc838",
+  "createdAt": "2026-10-20T16:32:15.154Z"
+}

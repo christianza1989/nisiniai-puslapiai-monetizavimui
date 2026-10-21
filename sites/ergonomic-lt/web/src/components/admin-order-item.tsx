@@ -1,7 +1,9 @@
 import {supplierSourceUrl} from '@/lib/supplier-reference';
+import {correctedItemPresentation} from '@/lib/quote-presentation';
 import {ArrowUpRight} from 'lucide-react';
 
-export function AdminOrderItem({item:i}:{item:any}){
+export function AdminOrderItem({item}:{item:any}){
+ const i=correctedItemPresentation(item);
  const source=supplierSourceUrl(i.sourceUrl);
  return <li className="admin-order-item"><p><strong>{i.quantity} vnt. {i.productName}</strong>{i.configurationName?' · '+i.configurationName:''}{i.note?' · '+i.note:''}</p>
   <dl className="admin-order-identity"><div><dt>Gamintojas</dt><dd>{i.brand||'Nenurodytas'}</dd></div>

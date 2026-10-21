@@ -83,6 +83,12 @@ binary replies in RAM. Graph state keeps only the original identity/domain
 fields; complete snapshots are still hashed and raw source descriptions,
 geometry origins, session/item ownership and construction setters are checked.
 This avoids model-sized memory growth without skipping any byte/readback gate.
+Receipt wall timestamps are diagnostic values, not a reliable causal clock.
+If chronological sorting puts a request before its insertion, ownership may
+only be recovered from an original observation's ordered sourceWireProof:
+the exact same item's independently validated original insertion must precede
+that request. A missing/later insertion, foreign item, unobserved ambiguous
+tail or changed raw byte still fails. Never reorder or rewrite source receipts.
 Adopt a new offline freeze only at a safe boundary, with tamper/memory tests,
 old/new real-source parity and a complete affected-model proof.
 
@@ -119,6 +125,30 @@ prior accepted watcher for rollback, but never start it while a candidate
 watcher or its verifier/compiler children are alive. Scheduler efficiency is
 distinct from total Native throughput and completed configurator count.
 
+## Diagnosed offline command timeouts
+
+The default compiler and runtime execution limits remain 1800 seconds. After a
+recorded execution timeout, a new immutable finite worker may explicitly use
+`--compiler-timeout-seconds 7200` (bounded to 1800–7200 seconds). This permits the
+same complete compiler to finish; it is not a speed improvement or a change to
+geometry/PBR/runtime correctness criteria. Each command records a flushed start,
+real exit or timeout, elapsed time and its budget. Nonzero exit and timeout still
+produce REVIEW, and exit zero alone still cannot produce PASS.
+
+An isolated affected-model run can select `--only-job JOB`. The job must already
+be in the real completed-source queue; partial or unknown jobs are rejected.
+Other prior sealed rows remain in the ledger. A freeze-pinned schema-2
+preservation certificate can list exact row hashes and their individual original
+tool sets across earlier generations. Current tools, checkpoint and every
+prepared artifact are still checked before reuse; unlisted or modified rows
+cannot borrow a prior PASS. Adoption requires the actual full affected-model
+wire, geometry/PBR and runtime proof at an exclusive offline boundary, all pins,
+same session/inventory/reserve and preservation of prior published drafts.
+
 ## Owner-directed completion mode
 
 `run_chairs.py --finish-started` preserves explicit admin model priorities, then resumes saved unfinished graphs before unknown work, choosing the smallest currently observed missing-edge frontier within that tier. It persists `completionFocus` across restarts so discovery of more states does not redirect the lane. Finite 900 s / 120 new states / 800 new edges portions continue the same model even after ten portions; only a real closed graph with no stop reason enters completedSource. Owner pause, reserve, grant, unknown mutation and review gates retain their original outcomes. The legacy mode still defers after ten growing portions. Partial progress, frontier size and exit0 never imply offline/full acceptance or a whole-task ETA. Adopt only after an actual finite full-SHA/identity pilot and source/session/pin/reserve/poststart gates.
+
+## Proven finite budget adapter (2026-10-20)
+
+`run_budgeted_offline.py` is the explicit worker entrypoint for the full affected Tigu pilot-proven compiler7200/runtime1800 limits. Direct prepare_closed CLI defaults remain1800; overrides and nested watcher arguments are rejected. The unchanged watcher may use this separately frozen adapter only after full187-row SHA preservation, all current pin/session/inventory/reserve/source gates and actual prior-controller/worker/compiler absence. See docs/ERGONOMIC_OFFLINE_BUDGET_ADOPTION_2026-10-20.md; source, runtime adoption and publication remain separate.

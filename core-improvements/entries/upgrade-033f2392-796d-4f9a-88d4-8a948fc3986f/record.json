@@ -1,0 +1,20 @@
+{
+  "siteId": "ergonomic-lt",
+  "summary": "Repeated exact primitive canonicalization dominates KINT003 compiler CPU; reuse only complete semantic-byte/matrix/PBR keyed legacy fingerprints with stage receipts and unchanged full proof gates.",
+  "category": "code",
+  "evidence": [
+    "docs/ERGONOMIC_COMPILER_PRIMITIVE_REUSE_2026-10-21.md"
+  ],
+  "paths": [
+    "sites/ergonomic-lt/web/scripts/exact-face-cache.mjs",
+    "sites/ergonomic-lt/web/scripts/exact-face-cache.test.mjs",
+    "sites/ergonomic-lt/web/scripts/prepare-chair-structure-cached.mjs",
+    "tools/ergonomic-chairs/prepare_closed.py"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/235",
+  "rollback": "Scoped source revert; accepted frozen compiler and production sealed proofs remain immutable until independent pilot and guarded adoption.",
+  "id": "upgrade-033f2392-796d-4f9a-88d4-8a948fc3986f",
+  "branch": "codex/ergonomic-armrest-semantics-20261020",
+  "baseSha": "c2b295f275eb3fdd25e5bee80a88d08ed9e364dc",
+  "createdAt": "2026-10-21T16:21:47.637Z"
+}

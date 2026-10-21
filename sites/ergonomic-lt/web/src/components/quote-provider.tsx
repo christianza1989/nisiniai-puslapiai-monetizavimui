@@ -4,6 +4,7 @@
 import {copyText} from '@/lib/editorial-copy';
 import {createContext,useContext,useEffect,useState,type ReactNode} from 'react';
 import {validQuoteEntry,type QuoteEntry} from '@/lib/quote-entry';
+import {correctedItemPresentation} from '@/lib/quote-presentation';
 export type {QuoteEntry} from '@/lib/quote-entry';
 type QuoteState={items:QuoteEntry[];add:(p:QuoteEntry)=>void;remove:(key:string)=>void;update:(key:string,edit:Partial<QuoteEntry>)=>void;clear:()=>void;ready:boolean};
 const Context=createContext<QuoteState|null>(null);
@@ -19,4 +20,4 @@ export function QuoteProvider({children}:{children:ReactNode}){
     clear:()=>setItems([])};
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
-export function useQuote(){const ctx=useContext(Context);if(!ctx)throw new Error(copyText("ui.7391bd701c677b9d8753","QuoteProvider required"));return ctx;}
+export function useQuote(){const ctx=useContext(Context);if(!ctx)throw new Error(copyText("ui.7391bd701c677b9d8753","QuoteProvider required"));return {...ctx,items:ctx.items.map(correctedItemPresentation)};}

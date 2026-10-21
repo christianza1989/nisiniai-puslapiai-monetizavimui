@@ -1,4 +1,5 @@
 import type {Product} from './types';
+import {correctedItemPresentation} from './quote-presentation';
 import type {QuoteRecord} from './quotes';
 
 export function supplierSourceUrl(value:unknown):string|undefined{
@@ -19,7 +20,8 @@ export function withSupplierReferences(record:QuoteRecord,products:Product[]):Qu
  });
  return {...record,payload:JSON.stringify({...payload,items})};
 }
-export function quoteOrderText(i:any){
+export function quoteOrderText(item:any){
+ const i=correctedItemPresentation(item);
  return `${i.quantity} vnt. ${i.productName} (${i.brand})${i.configurationName?' / '+i.configurationName:''}`+
   `\nTiekėjo produkto ID: ${i.supplierProductId||i.productId}`+
   (i.configurationId?'\nKomplektacijos ID: '+i.configurationId:'')+

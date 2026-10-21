@@ -2,6 +2,8 @@
 // editorial-copy-wired
 import {copyText} from '@/lib/editorial-copy';
 import data from '../../content/configurator-expanded.json';
+import sourceChoiceData from '../../content/source-choice-presentation.json';
+import {verifiedArmrestValueLabel} from './armrest-presentation';
 import type {Product,Configuration} from './types';
 import type {PilotVariant} from './configurator';
 import {supplierOptions} from './configuration-labels';
@@ -23,6 +25,7 @@ const additionalLabels:Record<string,string>={ESP:'ESP · sinchroninis',ESPT:cop
 const valueLabels:Record<string,string>={NONE:copyText("ui.e7e438f3acc412890bfd","Be atramos / nėra"),BLACKEDITION:copyText("ui.63594342344560949914","Juoda"),WHITEEDITION:copyText("ui.6742b790540b4b73c71c","Balta"),LIGHTGREY:copyText("ui.50a43e53d58bcca71b1a","Šviesiai pilka"),XV:copyText("ui.4c880a2f9e758bc423ac","X-MOVE judėjimas trimis kryptimis"),WHITEPLASTIC:copyText("ui.41a3f9a6f7b18627c83a","Baltas plastikas"),BLACKPLASTIC:copyText("ui.16198ea219ab18cbe545","Juodas plastikas"),ALUPOLISHED:copyText("ui.b64e61c1d447c6cd3d5a","Poliruotas aliuminis"),HRUA2DPLASTICSIDPROF:copyText("ui.369595913ed9d84fb6b9","Reguliuojama 2D, apmušta su šoniniais profiliais"),HRUA3:copyText("ui.3f17e6e0ea31b84e108c","Reguliuojama 3D, apmušta"),LUH2MANUAL:copyText("ui.2c9bd50d6bec14129b51","LUH2 – reguliuojamas aukštis"),UPHCOVERPLASTIC:copyText("ui.5c51afa2e91569bfe063","Apmušta, su plastikiniu gaubtu"),UPHCPLASTICSPROFILES:copyText("ui.8035608d0347d34ef6b0","Apmušta, su šoniniais profiliais"),UPHSP:copyText("ui.5d19e07bd3559ccf2bec","Apmušta, su spyruoklėmis"),UPHSIDEPROFILESSP:copyText("ui.17910ae12d49a98f5d09","Su šoniniais profiliais ir spyruoklėmis"),GLSTDB:copyText("ui.c650fdf7ee7d195f7c61","Standartinė, juoda"),GLG:copyText("ui.4266a1656bb11a4ab51e","Standartinė, pilka")};
 export function choiceLabel(field:string,value:string,localPalettes?:CatalogRuntime['palettes'],family?:string){
  const local=localPalettes?._valueLabels?.[field+'='+value]?.text;if(local)return local;
+ const verified=(field==='CARMRESTS'?verifiedArmrestValueLabel(value):undefined)||(sourceChoiceData.choices as Record<string,{label:string}>)[field+'='+value]?.label;if(verified)return verified;
  if(value==='NONE')return field==='CARMRESTS'?copyText("ui.d5354ada1565435058e7","Be porankių"):field==='CHEADREST'?copyText("ui.4a2815f0377c3c896f28","Be galvos atramos"):field==='CLUMBARSUPPORT'?copyText("ui.7b6374a4fa6de44f21cd","Be juosmens atramos"):copyText("ui.e2a779c195a0ba9785bb","Nėra");
  if(valueLabels[value])return valueLabels[value];
  if(additionalLabels[value])return additionalLabels[value];
@@ -30,9 +33,9 @@ export function choiceLabel(field:string,value:string,localPalettes?:CatalogRunt
  if(field==='CMECHANISM')return ({ERST:copyText("ui.43664e50262310f9efde","ER-ST · sinchroninis, sėdynės gylio reguliavimas"),ERNST:copyText("ui.965697f30d9e11c4a1e3","ERN-ST · sinchroninis, neigiamas sėdynės posvyris"),SA3ST:copyText("ui.4af1de9a0759577e7306","SA3-ST · automatinis svorio pritaikymas"),ERNHST:copyText("ui.fd56dbcf7e2584d5ecab","ERNH-ST · neigiamas sėdynės posvyris, sustiprinta spyruoklė"),SA2ST:copyText("ui.4a8a399b488f8b63c3e3","SA2-ST · automatinis svorio pritaikymas")} as Record<string,string>)[value]||value;
  // Xilium Office technical description, physical PDF page 193 (printed 189).
  // R53/R54/R55 dimensions are article facts, not a global code heuristic.
- if(field==='CARMRESTS'){const model=value.match(/^R\d+/)?.[0]||value;const dimensions=(family==='xilium'?{R53:'3D',R54:'4D',R55:'X-D'} as Record<string,string>:{} as Record<string,string>)[model]||({R70:'2D',R71:'3D',R72:'4D'} as Record<string,string>)[model];return model+' · '+(dimensions||'reguliuojami')+(value.includes('POL')?' · poliruotas aliuminis':'');}
- if(field==='CBASE')return value+' · '+(value.includes('POL')?'poliruotas aliuminis':value.includes('W')?'baltas':value==='TS36G'?copyText("ui.fc3b134b07e36fc8a0d4","šviesiai pilkas"):value==='ST56BL'?'juodas aliuminis':'juodas poliamidas');
- if(field==='CCASTORS')return value+' · '+(/^ESHH|^SHH|^CAH/.test(value)?'kietoms grindims':copyText("ui.f38f3acf7304ad6ea70b","minkštoms grindims"));
+ if(field==='CARMRESTS'){const model=value.match(/^R\d+/)?.[0]||value;const dimensions=(family==='xilium'?{R53:'3D',R54:'4D',R55:'X-D'} as Record<string,string>:{} as Record<string,string>)[model]||({R70:'2D',R71:'3D',R72:'4D'} as Record<string,string>)[model];return value+(dimensions?' · '+dimensions:'');}
+ // Unknown source codes never acquire guessed material or floor compatibility.
+ if(field==='CBASE'||field==='CCASTORS')return localPalettes?.[field]?.[value]?.text?.replace(/ \(extended\)/g,'')||value;
  if(field==='CUPHSIDECOLORSEAT')return value;
  const text=(localPalettes?.[field]?.[value]?.text||palettes[field]?.[value]?.text)?.replace(/ \(extended\)/g,'');
  return text&&(/GROUP$/.test(field))?text:value;
@@ -117,7 +120,7 @@ function stateToken(s:ExpandedState){return JSON.stringify([s.family,s.anchor,Ob
 function parseStateToken(p:Product,token:string){if(token.length>5000)throw Error(copyText("ui.e1ba214296fcef9d4334","Per ilgas kodas."));const [family,anchor,entries]=JSON.parse(token);return validateState(p,{family,anchor,values:Object.fromEntries(entries)});}
 function assembledAssets(s:ExpandedState){if(catalogFamily(s))return catalogAssets(s);const a=anchorFor(s)!;const entries=Object.entries(s.values).sort(([k],[l])=>(k==='CMECHANISM'?-1:k==='CARMRESTS'?1:0)-(l==='CMECHANISM'?-1:l==='CARMRESTS'?1:0));
  return {base:a.geometry,patches:entries.map(([k,v])=>k==='CARMRESTS'&&a.conditionalPatches?.[s.values.CMECHANISM+'|'+v]||a.patches[k+'='+v]).filter((p):p is Patch=>!!p)};}
-function stateDetails(s:ExpandedState,product?:Product){return Object.entries(stateChoices(s)).map(([k])=>({label:(product&&articleFieldLabels(product)[k])||runtime?.palettes._fieldLabels?.[k]?.text||fieldLabels[k]||k,value:(product&&articleChoiceLabel(product,k,s.values[k]))||choiceLabel(k,s.values[k],runtime?.palettes,s.family)}));}
+function stateDetails(s:ExpandedState,product?:Product){return Object.entries(stateChoices(s)).map(([k])=>({label:(product&&articleFieldLabels(product)[k])||(['CARMRESTS','CBASE','CCASTORS'].includes(k)?fieldLabels[k]:runtime?.palettes._fieldLabels?.[k]?.text)||fieldLabels[k]||k,value:(product&&articleChoiceLabel(product,k,s.values[k]))||choiceLabel(k,s.values[k],runtime?.palettes,s.family)}));}
 function expandedSelection(product:Product,input:unknown){
  if(catalogForProduct(product)){
   const selected=catalogSelection(product,input,s=>stateDetails(s,product));

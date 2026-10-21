@@ -4,6 +4,10 @@ import data from '../content/armrest-presentation.json';
 import {armrestChoiceLabel,armrestFieldLabel,presentArmrestConfiguration,safeArmrestFallback} from '../src/presentation/armrest-labels';
 import type {Configuration} from '../src/lib/types';
 import {expandedQuoteEntry} from '../src/lib/expanded-quote-entry';
+import {choiceLabel} from '../src/lib/expanded-configurator';
+import {correctedItemPresentation} from '../src/lib/quote-presentation';
+import {quoteOrderText} from '../src/lib/supplier-reference';
+import extraLabels from '../content/source-choice-presentation.json';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {createElement} from 'react';
 import {parseHTML} from 'linkedom';
@@ -22,7 +26,10 @@ test('source-fixed arms cannot be described as adjustable, and supplier 1D is re
   if(/fixed/i.test(choice.sourceText)){assert.match(label,/fiksuoti/i);assert.doesNotMatch(label,/reguliuojami|[1-4]D/);fixed++;}
   if(/: 1D,/.test(choice.sourceText)){assert.match(label,/1D/);assert.doesNotMatch(label,/fiksuoti/i);oneD++;}
  }
- assert.equal(fixed,7);assert.equal(oneD,4);
+ assert.equal(fixed,7);assert.equal(oneD,5);
+ assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R20I')!,/1D/);
+ assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R32R')!,/3D/);
+ assert.equal(armrestChoiceLabel('KINT006WW002','CARMRESTS','NONE'),'Be porankių');
  // The supplier does not state fixed/adjustable for this chrome Sail option.
  assert.doesNotMatch(armrestChoiceLabel('KSAI004WW002','CARMRESTS','GTPSAILARMCRB')!,/fiksuoti|reguliuojami|[1-4]D/i);
 });
@@ -72,4 +79,28 @@ test('unrecognized armrest codes cannot fall through to an unsupported adjustabl
  assert.equal(safeArmrestFallback('CARMRESTS','R70','R70 · 2D'),'R70 · 2D');
  assert.equal(safeArmrestFallback('CARMRESTS','GTP46','GTP46 · fiksuoti, juodi'),'GTP46 · fiksuoti, juodi');
  assert.equal(safeArmrestFallback('CBASE','X','original label'),'original label');
+});
+
+test('canonical engine and order rendering use verified meanings, including old saved generic labels',()=>{
+ assert.match(choiceLabel('CARMRESTS','GTPTIGCRPU'),/Fiksuoti/);
+ assert.match(choiceLabel('CARMRESTS','RTIGCRPU'),/1D/);
+ assert.equal(choiceLabel('CARMRESTS','UNVERIFIEDGTP'),'UNVERIFIEDGTP');
+ assert.match(choiceLabel('CBASE','ST44ALU'),/aliuminis/);assert.doesNotMatch(choiceLabel('CBASE','ST44ALU'),/poliamid/);
+ assert.match(choiceLabel('CCASTORS','RMHH'),/kietoms/);assert.match(choiceLabel('CCASTORS','ESSHH'),/kietoms/);
+ assert.equal(choiceLabel('CBASE','UNKNOWN'),'UNKNOWN');assert.equal(choiceLabel('CCASTORS','UNKNOWN'),'UNKNOWN');
+ const raw={productName:'Tiger UP',brand:'INTERNAL',quantity:1,configurationId:'original',configurationState:{family:'cfg-original',anchor:'original',values:{CARMRESTS:'GTPTIGCRPU'}},configurationLabel:'sample · GTPTIGCRPU · reguliuojami',configurationDetails:[{label:'Armrests',value:'GTPTIGCRPU · reguliuojami'}],supplierOptions:['KTGU001WW002_OPTIONS.CARMRESTS=GTPTIGCRPU']};
+ const before=structuredClone(raw),view=correctedItemPresentation(raw),text=quoteOrderText(raw);
+ assert.deepEqual(raw,before,'Historical saved record is unchanged');assert.equal(view.configurationState,raw.configurationState);assert.equal(view.supplierOptions,raw.supplierOptions);
+ assert.match(view.configurationLabel,/Fiksuoti/);assert.doesNotMatch(view.configurationLabel,/reguliuojami/);
+ assert.equal(view.configurationDetails[0].label,'Porankiai');assert.match(view.configurationDetails[0].value,/Fiksuoti/);
+ assert.match(text,/Fiksuoti/);assert.doesNotMatch(text,/reguliuojami/);assert.match(text,/CARMRESTS=GTPTIGCRPU/);
+});
+test('every source-backed base/castor entry matches the captured material or floor fact',()=>{
+ for(const [key,entry] of Object.entries(extraLabels.choices)){
+  const [field,value]=key.split('='),label=choiceLabel(field,value);
+  if(entry.sourceFact.includes('aluminium')){assert.match(label,/aliuminis/);assert.doesNotMatch(label,/poliamidas/);}
+  if(entry.sourceFact==='polyamide')assert.match(label,/poliamidas/);
+  if(entry.sourceFact==='hard')assert.match(label,/kietoms grindims/);
+  if(entry.sourceFact==='soft')assert.match(label,/minkštoms grindims/);
+ }
 });

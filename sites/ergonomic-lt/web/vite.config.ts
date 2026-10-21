@@ -12,6 +12,9 @@ export default defineConfig({
   environments:{rsc:{build:{rolldownOptions:{output:{banner:"import { createRequire as __createRequire } from 'node:module'; const require = __createRequire('/bundle/worker.js');"}}}}},
   plugins:[vinext(),cloudflare({configPath:process.env.LAUNCH_SITE==='true'?'wrangler.launch.json':'wrangler.jsonc',viteEnvironment:{name:'rsc',childEnvironments:['ssr']}})],
   resolve:{alias:[
+    // Keep the installed dependency immutable; fix its measured large-row CPU
+    // defect in this application's reviewed adapter, with byte-parity tests.
+    {find:/^.*[\\/]vinext[\\/]dist[\\/]server[\\/]rsc-stream-hints\.js$/,replacement:file('./src/cloudflare/rsc-stream-hints.ts')},
     {find:/^(?:@\/lib\/publication-db|\.\/publication-db)$/,replacement:file('./src/cloudflare/publication-db.ts')},
     {find:/^(?:@\/lib\/db|\.\/db)$/,replacement:file('./src/cloudflare/db.ts')},
     {find:'./pdf-assets',replacement:file('./src/cloudflare/pdf-assets.ts')},

@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "F02 source review preserves exact previous listing/SKU behavior. Full80 tests, typecheck, lint, normal build and401 actual local HTTP checks PASS:296 genuine page2+,574 historic forms,26 controls. Initial TS inference and homepage trailing-slash issues corrected before final checks/build. Initial browser check incorrectly counted unscrolled lazy images; original failure retained, scroll-based image validation is separate. Full1402/F01/live acceptance remains separately gated before deployment.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-f02-preflight-20261021/core-tests-v2.log:80/80"
+    },
+    {
+      "command": "npx tsc --noEmit and focused eslint",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-f02-preflight-20261021/typecheck-v2.log and lint.log"
+    },
+    {
+      "command": "npm run build (independent runtime-v2, immutable package)",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-f02-preflight-20261021/build-v2.log; source-build-binding.json"
+    },
+    {
+      "command": "verify-pagination.py local",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-f02-preflight-20261021/local/F02-result.json:401 HTTP,574 forms,296 genuine pages,0 failures"
+    }
+  ],
+  "eventId": "5ec24ba4-ee13-4181-b9eb-8faec971d6aa",
+  "sequence": 2,
+  "at": "2026-10-21T14:41:35.762Z"
+}

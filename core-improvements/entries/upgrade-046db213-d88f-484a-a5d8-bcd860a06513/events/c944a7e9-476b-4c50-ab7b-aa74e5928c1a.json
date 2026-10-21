@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Actual isolated Tigu full proof passed 672 states/8976 edges/81573 raw/672 geometry checks, original108 GLBs; direct worker defaults1800 unchanged. Operational adoption/publication are still separately gated.",
+  "checks": [
+    {
+      "command": "python -B -m unittest discover -s tools/ergonomic-chairs -p test_*.py",
+      "result": "PASS",
+      "evidence": "94 tests; four adapter scenarios include unchanged source identities, exact7200/1800 forwarding, budget override rejection and nested watcher rejection."
+    },
+    {
+      "command": "node --import tsx --test tests/chair-structure-candidates.test.tsx tests/chair-local-qa.test.ts",
+      "result": "PASS",
+      "evidence": "5 tests; exact staged BeWise data adds one candidate, all183 prior entries unchanged."
+    }
+  ],
+  "eventId": "c944a7e9-476b-4c50-ab7b-aa74e5928c1a",
+  "sequence": 2,
+  "at": "2026-10-20T16:32:32.693Z"
+}

@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "category": "code",
+  "summary": "F02: page2+ catalog responses incorrectly canonicalize to page1. Share visible catalog slicing and canonical, preserve facets/base behavior and immutable product metadata/prose.",
+  "rollback": "Revert scoped F02 source; production rollback to retained F01 version5f4fcc9f-1856-4597-ac15-7bbb8cea8e06, preserving the same immutable content package.",
+  "evidence": [
+    "docs/PROMEDICAL_F02_20261021.md",
+    "https://github.com/christianza1989/niche-public-core/issues/51"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/51",
+  "paths": [
+    "app/layout.tsx",
+    "proxy.ts",
+    "lib/product-catalogue-query.mjs",
+    "components/niche/promedical-site.tsx",
+    "tests/product-catalogue-query.test.mjs"
+  ],
+  "id": "upgrade-abf523c9-a47f-4906-bc18-30b7e05600a1",
+  "branch": "codex/promedical-f02-pagination-20261021",
+  "baseSha": "72fec0b24138e2453b7e7153a9e918b07dd5a5bb",
+  "createdAt": "2026-10-21T14:30:25.387Z"
+}

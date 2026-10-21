@@ -25,7 +25,8 @@ does not bypass revision, site/path, publication, review or export gates.
 
 Public `uniqueImageFamilies` returns the largest variant per composition in
 first-family appearance order. `responsiveImageVariants` and `imageSrcSet`
-isolate explicit IDs and compatible aspect ratios; mixed marked/unmarked media
+isolate explicit IDs as authoritative identity, including integer-rounded
+panoramic variants; mixed marked/unmarked media
 never merge. Legacy unmarked approved packages retain alt/aspect behavior.
 Renderer code must supply only the authoritative eligible page media.
 

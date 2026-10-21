@@ -236,3 +236,6 @@ Homepage Instagram placement now uses24supplied local videos with66responsivepos
 # 2026-10-20 active LT sales checkpoint
 
 See [SALES_ACTIVATION_2026_10_20](SALES_ACTIVATION_2026_10_20.md): LT orders enabled, actual LIVE embedded Session created/recovered unpaid, real carrier quote200, private mail accepted and exact self-test received in owner inbox, cron active. This supersedes earlier stopped-sales preparation states without rewriting historical receipts. Actual paid transaction and purchased carrier label are separate; prepaid wallet top-up remains owner-deferred before manual fulfillment.
+
+## 2026-10-21 delivery quote503 repaired
+Actual frontend bb4d1e04-be77-494a-952c-db4416ae17b5 replaces eec41153. Public overlapping quote reads now200/200 including16.896seconds; actual desktop/mobile cart shows delivery5.24EUR/total37.24EUR. Backend, mail, bindings, admissions, content and DB unchanged. [Incident, source, checks and rollback](DELIVERY_QUOTE_503_2026_10_21.md). This is quote acceptance, not a new paid transaction.

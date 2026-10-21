@@ -46,7 +46,18 @@ body, unexpected404/5xx on positive pages, exposed paused guide or other-site
 regression. Retain prior active F01 version5f4fcc9f-1856-4597-ac15-7bbb8cea8e06.
 
 Private raw evidence and checkbox plan: D:/Core/output/promedical-f02-preflight-20261021.
-Deployment and local verification states are separate; this preparation record
-alone does not prove either. Final checked results are added before PR delivery.
+Deployment and local verification states are separate. Local normal build,
+80/80 core tests, TypeScript and focused lint PASS. Actual local HTTP checks:
+401/401 covering296 genuine later-page URLs, all574 historical forms and26
+controls; eight desktop/320px browser states PASS. All1402 exact title/meta/body
+comparisons PASS against the immutable package. Other9 tenant SEO smoke checks
+PASS against the same built Worker. The baseline96 URLs of those domains fail
+DNS on this PC; they are not described as healthy live endpoints. Registry
+parity preserves all10 packages and3780 release assets match byte hashes.
+Local F01/F19 also PASS1402/1402: all5557 related anchors resolve, visible and
+LLM links agree, maximum product href depth3. The2212-response crawl includes
+all55 held guides404 and a synthetic unknown404. Production activation still
+requires the same complete candidate gate; these source checks alone are not
+a live-deployment or search-indexing claim.
 
 Primary guidance opened2026-10-21: https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading

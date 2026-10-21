@@ -81,3 +81,29 @@ check, not a passed source test or reason to activate any live process.
 
 No historical packages/assets, live data, runtime activation, external model
 calls or deployment are part of this agent's scoped source work.
+
+## Genuine original encoded-byte allowance
+
+Final source collection identified exactly two originals above 12MiB:
+13,531,270-byte PNG at6000×6000 and14,732,331-byte PNG at5000×5000.
+Both fit the unchanged40MP/8192 input guards. The canonical binary limit is now
+16MiB (bounded headroom over the actual maximum); no per-site transcoding or
+invented upscale is introduced. JSON base64 transport permits24MiB because
+16MiB expands to about21.34MiB before small metadata fields. The studio GUI
+reads the byte policy from `/api/meta` for its label and pre-upload check.
+There is no second fixed GUI input limit. Public size candidates/maxedge1600,
+quality, alpha/EXIF treatment and legacy optimized saveAsset8MiB gate remain.
+
+Actual checks:
+
+- Pipeline and real HTTP fixture test5/5 PASS. Legal PNG chunks test exact
+  max−1/max/max+1 encoded bytes; 16MiB is accepted, one extra byte is rejected.
+  The40,960,000-pixel PNG remains rejected and8193px edge remains rejected.
+- Largest genuine14,732,331-byte source went through HTTP JSON/base64 import,
+  canonical optimization and private-original storage with exact original-byte
+  equality. All emitted variants stayed at or below1600px. Whole suite131.9s;
+  genuine source is read only from the private collector output, never committed.
+- Final HTTP/meta rerun1/1 PASS after GUI policy wiring: API exports exactly
+  IMAGE_POLICY, full16MiB valid input receives201, one extra decoded byte400,
+  and rejected input does not append assets. JavaScript/server syntax checks PASS.
+- Private test roots and ephemeral servers were cleaned; no live studio changed.

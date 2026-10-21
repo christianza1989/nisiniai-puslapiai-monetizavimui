@@ -1,6 +1,54 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mountCheckout, normalizeCheckoutCart } from '../public/checkout-ui.mjs';
+import { selectionKey } from '../public/commerce-client.mjs';
+
+test('mixed finishes stay separate in the mounted sidebar; removing white preserves gold and its price', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize,
+      changes = [];
+    client.initialize = async () => {
+      const data = await initialize();
+      data.catalog = structuredClone(data.catalog);
+      const p = data.catalog.find((p) => p.sku === 'couple');
+      p.optionGroups = [
+        {
+          id: 'finish',
+          label: 'Spalva',
+          defaultValue: 'white',
+          values: [
+            { id: 'white', label: 'Balta', enabled: true, prices: { LT: 0 } },
+            { id: 'gold', label: 'Auksinė', enabled: true, prices: { LT: 300 } },
+          ],
+        },
+      ];
+      return data;
+    };
+    const white = { sku: 'couple', quantity: 1, choices: { finish: 'white' } },
+      gold = { sku: 'couple', quantity: 1, choices: { finish: 'gold' } };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      productsPlacement: 'summary',
+      initialLines: [white, gold],
+      onCartChange: (lines) => changes.push(lines),
+    });
+    const rows = nodes(root).filter((n) => n.attrs.class === 'checkout-item' && !n.hidden);
+    assert.equal(rows.length, 2);
+    assert.match(textContent(rows[0]), /Balta/);
+    assert.match(textContent(rows[1]), /Auksinė/);
+    assert.equal(field(root, selectionKey(white)).value, '1');
+    assert.match(
+      nodes(rows[1]).find((n) => n.attrs.class === 'checkout-unit-price').textContent,
+      /35/,
+    );
+    await nodes(rows[0])
+      .find((n) => n.attrs.class === 'checkout-remove')
+      .fire('click');
+    assert.deepEqual(changes.at(-1), [gold]);
+  }));
 
 // Unit DOM double only: actual native-browser acceptance belongs to the site.
 class Element {

@@ -7,7 +7,9 @@ export function planParcels(order, input) {
     order?.snapshot?.lines && ['individual', 'measured'].includes(input?.mode),
     'invalid_parcel_plan',
   );
-  const wanted = normalizeCart(order.snapshot.lines);
+  const wanted = normalizeCart(
+    order.snapshot.lines.map(({ sku, quantity }) => ({ sku, quantity })),
+  );
   let parcels;
   if (input.mode === 'individual') {
     requireValue(wanted.reduce((sum, line) => sum + line.quantity, 0) <= 100, 'parcel_count_limit');

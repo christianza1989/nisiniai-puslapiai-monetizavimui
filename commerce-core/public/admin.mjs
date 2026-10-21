@@ -173,6 +173,12 @@ const errorNames = {
   document_order_unpaid: 'Dokumentą galima suformuoti tik patvirtinus mokėjimą.',
   original_document_required: 'Pirma suformuokite pradinį pardavimo įrašą, tada grąžinimo įrašą.',
   document_stock_exception: 'Komplektavimo lapui trūksta rezervuotų prekių. Patikrinkite likučius.',
+  catalog_draft_conflict: 'Juodraštį pakeitė kitas redaktorius. Atverkite prekę iš naujo.',
+  invalid_product_content: 'Patikrinkite aprašymų ilgį ir tekstą.',
+  invalid_product_images: 'Patikrinkite nuotraukų alt tekstus ir susiejimą su pasirinkimais.',
+  invalid_product_options: 'Patikrinkite pasirinkimų žymenis, numatytą reikšmę ir kainas.',
+  option_package_required: 'Fiziniam priedui įrašykite viso supakuoto derinio svorį ir matmenis.',
+  invalid_catalog_image: 'Įkelkite tinkamą PNG, JPEG arba WebP nuotrauką.',
   operation_failed: 'Veiksmas nepavyko. Atnaujinkite duomenis ir bandykite dar kartą.',
   network:
     'Nepavyko gauti serverio atsakymo. Atkurkite ryšį ir pakartokite tą patį veiksmą — jo identifikatorius išlaikytas.',
@@ -326,7 +332,7 @@ function render() {
   if (state.view === 'stock') renderStock(content);
   if (state.view === 'documents') renderDocuments(content);
   if (state.view === 'catalog')
-    renderCatalog(content, { node, table, cell, api, action, has, money }).catch(() =>
+    renderCatalog(content, { node, table, cell, api, binary, action, has, money }).catch(() =>
       status('Nepavyko įkelti prekių.', 'error'),
     );
   if (state.view === 'automation') {

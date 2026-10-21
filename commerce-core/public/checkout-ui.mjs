@@ -1,4 +1,9 @@
-import { CommerceClient } from './commerce-client.mjs';
+import {
+  CommerceClient,
+  normalizedChoices,
+  selectionKey,
+  resolveCatalogSelection,
+} from './commerce-client.mjs';
 const translations = {
   lt: [
     'Užsakymas',
@@ -219,7 +224,8 @@ export function resolveTermsLink(termsUrl, context, origin) {
 export function normalizeCheckoutCart(lines, catalog) {
   if (!Array.isArray(lines) || lines.length > 100 || !Array.isArray(catalog)) return [];
   const allowed = new Set(catalog.filter((p) => p.enabled !== false).map((p) => p.sku));
-  const quantities = new Map();
+  const quantities = new Map(),
+    totals = new Map();
   for (const line of lines) {
     if (
       !line ||
@@ -229,11 +235,23 @@ export function normalizeCheckoutCart(lines, catalog) {
       line.quantity > 100
     )
       continue;
-    quantities.set(line.sku, (quantities.get(line.sku) || 0) + line.quantity);
+    let choices;
+    try {
+      choices = normalizedChoices(line.choices);
+    } catch {
+      return [];
+    }
+    const key = selectionKey(line),
+      total = (totals.get(line.sku) || 0) + line.quantity;
+    if (total > 100) return [];
+    totals.set(line.sku, total);
+    quantities.set(key, {
+      sku: line.sku,
+      quantity: (quantities.get(key)?.quantity || 0) + line.quantity,
+      ...(Object.keys(choices).length ? { choices } : {}),
+    });
   }
-  return [...quantities]
-    .filter(([, quantity]) => quantity > 0 && quantity <= 100)
-    .map(([sku, quantity]) => ({ sku, quantity }));
+  return [...quantities.values()].filter((line) => line.quantity > 0);
 }
 const onePageMessages = {
   lt: {
@@ -519,79 +537,90 @@ function onePageForm({
   if (productsPlacement === 'summary') summary.append(products);
   else details.insertBefore(products, details.children[0]);
   summary.append(element('h2', {}, u.summary));
-  const rows = catalog
-    .filter((p) => p.enabled !== false)
-    .map((p) => {
-      const count = cartLines.find((l) => l.sku === p.sku)?.quantity || 0;
-      const row = element('div', { class: 'checkout-item' });
-      const image = typeof productImage === 'function' ? productImage(p) : null;
-      const src = image && resolveTermsLink(image, {}, location.origin);
-      if (src)
-        row.append(
-          element('img', {
-            src,
-            width: 96,
-            height: 112,
-            alt: '',
-            class: 'checkout-product-image',
-            loading: 'lazy',
-          }),
-        );
-      const body = element(
-        'div',
-        { class: 'checkout-item-body' },
-        element('h3', {}, productTitle(p, language)),
+  const selections = [
+    ...cartLines,
+    ...catalog
+      .filter((p) => p.enabled !== false && !cartLines.some((l) => l.sku === p.sku))
+      .map((p) => ({ sku: p.sku, quantity: 0 })),
+  ];
+  const rows = selections.map((selection) => {
+    const p = catalog.find((p) => p.sku === selection.sku);
+    const count = selection.quantity;
+    let configured;
+    try {
+      configured = resolveCatalogSelection(p, selectedCountry, selection.choices);
+    } catch {
+      configured = { labels: [] };
+    }
+    const displayTitle =
+      productTitle(p, language) +
+      (configured.labels.length ? ' — ' + configured.labels.join(' · ') : '');
+    const row = element('div', { class: 'checkout-item' });
+    const image =
+      configured.image?.src ?? (typeof productImage === 'function' ? productImage(p) : null);
+    const src = image && resolveTermsLink(image, {}, location.origin);
+    if (src)
+      row.append(
+        element('img', {
+          src,
+          width: 96,
+          height: 112,
+          alt: '',
+          class: 'checkout-product-image',
+          loading: 'lazy',
+        }),
       );
-      const price = element('p', { class: 'checkout-unit-price' });
-      body.append(price);
-      const controls = element('div', { class: 'checkout-quantity' });
-      const q = element('input', {
-        name: p.sku,
-        type: 'number',
-        min: 1,
-        max: Math.min(100, p.available),
-        step: 1,
-        value: count,
-        disabled: !count,
-        inputmode: 'numeric',
-        'aria-label': t[2] + ': ' + productTitle(p, language),
-      });
-      fields[p.sku] = q;
-      const minus = element(
-        'button',
-        { type: 'button', 'aria-label': u.decrease + ': ' + productTitle(p, language) },
-        '−',
-      );
-      const plus = element(
-        'button',
-        { type: 'button', 'aria-label': u.increase + ': ' + productTitle(p, language) },
-        '+',
-      );
-      const remove = element(
-        'button',
-        {
-          type: 'button',
-          class: 'checkout-remove',
-          'aria-label': u.remove + ': ' + productTitle(p, language),
-        },
-        u.remove,
-      );
-      const change = (value) => {
-        if (busy || lockedForOrder) return;
-        q.value = String(value);
-        if (value === 0) row.hidden = true;
-        changed();
-      };
-      minus.addEventListener('click', () => change(Math.max(1, Number(q.value) - 1)));
-      plus.addEventListener('click', () => change(Math.min(100, p.available, Number(q.value) + 1)));
-      remove.addEventListener('click', () => change(0));
-      controls.append(minus, q, plus);
-      body.append(controls, remove);
-      row.append(body);
-      items.append(row);
-      row.hidden = !count;
-      return { p, q, row, price, minus, plus, remove };
+    const body = element('div', { class: 'checkout-item-body' }, element('h3', {}, displayTitle));
+    const price = element('p', { class: 'checkout-unit-price' });
+    body.append(price);
+    const controls = element('div', { class: 'checkout-quantity' });
+    const q = element('input', {
+      name: Object.keys(selection.choices ?? {}).length ? selectionKey(selection) : selection.sku,
+      type: 'number',
+      min: 1,
+      max: Math.min(100, p.available),
+      step: 1,
+      value: count,
+      disabled: !count,
+      inputmode: 'numeric',
+      'aria-label': t[2] + ': ' + displayTitle,
     });
+    fields[selectionKey(selection)] = q;
+    const minus = element(
+      'button',
+      { type: 'button', 'aria-label': u.decrease + ': ' + displayTitle },
+      '−',
+    );
+    const plus = element(
+      'button',
+      { type: 'button', 'aria-label': u.increase + ': ' + displayTitle },
+      '+',
+    );
+    const remove = element(
+      'button',
+      {
+        type: 'button',
+        class: 'checkout-remove',
+        'aria-label': u.remove + ': ' + displayTitle,
+      },
+      u.remove,
+    );
+    const change = (value) => {
+      if (busy || lockedForOrder) return;
+      q.value = String(value);
+      if (value === 0) row.hidden = true;
+      changed();
+    };
+    minus.addEventListener('click', () => change(Math.max(1, Number(q.value) - 1)));
+    plus.addEventListener('click', () => change(Math.min(100, p.available, Number(q.value) + 1)));
+    remove.addEventListener('click', () => change(0));
+    controls.append(minus, q, plus);
+    body.append(controls, remove);
+    row.append(body);
+    items.append(row);
+    row.hidden = !count;
+    return { p, selection, q, row, price, minus, plus, remove };
+  });
   const line = (name) => {
     const row = element('div', {}, element('dt', {}, name), element('dd', {}));
     return { row, value: row.children[1] };
@@ -633,7 +662,7 @@ function onePageForm({
   const lines = () =>
     rows
       .filter((r) => !r.row.hidden && Number(r.q.value) > 0)
-      .map(({ p, q }) => ({ sku: p.sku, quantity: Number(q.value) }));
+      .map(({ selection, q }) => ({ ...selection, quantity: Number(q.value) }));
   const customer = () => ({
     name: fields.name.value.trim(),
     email: fields.email.value.trim(),
@@ -669,9 +698,14 @@ function onePageForm({
     closed.hidden = isEmpty || canOrder;
     let cents = 0,
       valid = Boolean(lockedForOrder && quoted) || (validQuantities() && Boolean(market()));
-    for (const { p, q, row, price, minus, plus, remove } of rows) {
+    for (const { p, selection, q, row, price, minus, plus, remove } of rows) {
+      let configuredAmount;
+      try {
+        configuredAmount = resolveCatalogSelection(p, selectedCountry, selection.choices).amount;
+      } catch {}
       const unit =
-        quoted?.lines?.find((l) => l.sku === p.sku)?.unitAmount ?? p.prices?.[selectedCountry];
+        quoted?.lines?.find((l) => selectionKey(l) === selectionKey(selection))?.unitAmount ??
+        configuredAmount;
       q.disabled = busy || lockedForOrder || row.hidden;
       price.textContent = Number.isSafeInteger(unit)
         ? money(unit, market()?.currency || 'EUR') + ' / ' + u.each
@@ -739,7 +773,7 @@ function onePageForm({
           (l) =>
             !result.lines.some(
               (r) =>
-                r.sku === l.sku &&
+                selectionKey(r) === selectionKey(l) &&
                 r.quantity === l.quantity &&
                 Number.isSafeInteger(r.unitAmount) &&
                 r.unitAmount >= 0,
@@ -1103,7 +1137,8 @@ export async function mountCheckout(
         cartLines.length === orderedLines.length &&
         cartLines.every((line) =>
           orderedLines.some(
-            (ordered) => ordered.sku === line.sku && ordered.quantity === line.quantity,
+            (ordered) =>
+              selectionKey(ordered) === selectionKey(line) && ordered.quantity === line.quantity,
           ),
         );
       if (clearCreatedCart || (pendingCreate && sameCart)) clearCart();

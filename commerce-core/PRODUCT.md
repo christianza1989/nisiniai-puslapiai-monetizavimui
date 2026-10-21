@@ -40,3 +40,6 @@ Modulio API, testai ir roadmap šiame kataloge; Memocasting verslo faktai sites/
 ## Accessibility & Inclusion
 
 Lietuviškas ekranas, klaviatūra valdomi formų laukai, matomas fokusas, prisitaikymas prie telefono.
+
+
+2026-10-21: the deployed Memocasting LT adapter accepts orders (see its sales checkpoint); older not-live statements are historical. Catalog editing now includes persistent drafts, plain-text descriptions, owned images and configured selections; same shared stock, private grants and immutable order snapshots. See docs/PRODUCT_EDITOR.md.

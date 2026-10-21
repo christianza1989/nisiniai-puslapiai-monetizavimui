@@ -1,3 +1,4 @@
+import { CatalogMedia } from './catalog-media.mjs';
 import { CommerceError, requireValue, identifier } from './validation.mjs';
 import { CommerceOperations } from './operations.mjs';
 import { Backoffice } from './backoffice.mjs';
@@ -81,6 +82,7 @@ export function createHandler({
   const notifications = new CustomerNotifications(service, notificationAdapters);
   const financeIO = new FinanceIO(service);
   const catalogOperations = new CatalogOperations(service);
+  const catalogMedia = new CatalogMedia(service, privateStorage);
   const buyerDeliveryQuotes = new BuyerDeliveryQuotes(service);
   const returns = new ReturnOperations(service);
   const disputes = new PaymentDisputes(service);
@@ -336,6 +338,47 @@ export function createHandler({
           const actor = await authorize('stock');
           return json(
             await returns.receive(store.id, environment, receiveReturn[1], await read(), actor.id),
+          );
+        }
+        const draftPath = path.match(/^\/api\/operator\/catalog-drafts\/([a-zA-Z0-9_-]+)$/);
+        if (draftPath && request.method === 'GET') {
+          await authorize('catalog');
+          return json(await catalogOperations.draft(store.id, environment, draftPath[1]));
+        }
+        if (path === '/api/operator/catalog-drafts' && request.method === 'POST') {
+          const actor = await authorize('catalog');
+          return json(
+            await catalogOperations.saveDraft(store.id, environment, await read(), actor.id),
+          );
+        }
+        if (path === '/api/operator/catalog-media' && request.method === 'POST') {
+          const actor = await authorize('catalog');
+          requireValue(
+            request.headers.get('content-type') === 'image/webp',
+            'invalid_catalog_image',
+          );
+          return json(
+            await catalogMedia.put(
+              store.id,
+              environment,
+              await limitedBytes(request.body),
+              actor.id,
+            ),
+          );
+        }
+        const privateImage = path.match(/^\/api\/operator\/catalog-media\/([a-zA-Z0-9_-]+)$/);
+        if (privateImage && request.method === 'GET') {
+          await authorize('catalog');
+          return new Response(
+            await catalogMedia.get(store.id, environment, privateImage[1], false),
+            {
+              headers: {
+                'content-type': 'image/webp',
+                'cache-control': 'no-store',
+                'x-content-type-options': 'nosniff',
+                'x-robots-tag': 'noindex',
+              },
+            },
           );
         }
         const reads = {
@@ -731,6 +774,15 @@ export function createHandler({
           return json(await refunds.cancel(store.id, environment, cancelRefund[1], principal.id));
         }
       }
+      const publicImage = path.match(/^\/api\/catalog-media\/([a-zA-Z0-9_-]+)$/);
+      if (publicImage && request.method === 'GET')
+        return new Response(await catalogMedia.get(store.id, environment, publicImage[1]), {
+          headers: {
+            'content-type': 'image/webp',
+            'cache-control': 'public, max-age=300',
+            'x-content-type-options': 'nosniff',
+          },
+        });
       if (request.method === 'GET' && path === '/api/catalog')
         return json(await service.catalog(store.id, environment));
       if (request.method === 'POST' && path === '/api/quote')

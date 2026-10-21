@@ -1,3 +1,4 @@
+import { configureProduct } from './product-config.mjs';
 import {
   CommerceError,
   requireValue,
@@ -163,6 +164,8 @@ export class CommerceService {
         prices: p.prices,
         available: p.enabled === false ? 0 : r.available,
         package: p.package,
+        ...(p.content ? { content: p.content } : {}),
+        ...(p.optionGroups ? { optionGroups: p.optionGroups } : {}),
       };
     });
   }
@@ -177,14 +180,19 @@ export class CommerceService {
     const catalog = await this.catalog(id, environment);
     const priced = lines.map((line) => {
       const p = catalog.find((p) => p.sku === line.sku);
-      const unitAmount = options.privatePrices?.[line.sku] ?? p?.prices[market.country];
+      const baseAmount = options.privatePrices?.[line.sku] ?? p?.prices[market.country];
+      const configured = p ? configureProduct(p, market.country, line.choices) : null;
+      const unitAmount = baseAmount + (configured?.extra ?? 0);
       requireValue(p && p.enabled !== false && integer(unitAmount, 1), 'product_unavailable', 409);
       return {
         ...line,
-        title: p.titles?.[market.country] || p.title,
+        title:
+          (p.titles?.[market.country] || p.title) +
+          (configured.labels.length ? ' — ' + configured.labels.join(' � ') : ''),
+        ...(configured.image ? { image: configured.image } : {}),
         unitAmount,
         lineAmount: unitAmount * line.quantity,
-        package: p.package,
+        package: configured.package,
       };
     });
     for (const line of lines) {
@@ -368,7 +376,7 @@ export class CommerceService {
         at,
         at,
       ),
-      ...snapshot.lines.map((l) =>
+      ...normalizeCart(snapshot.lines.map(({ sku, quantity }) => ({ sku, quantity }))).map((l) =>
         this.stmt(
           'INSERT INTO order_lines(store_id,order_id,sku,quantity) VALUES(?,?,?,?)',
           id,

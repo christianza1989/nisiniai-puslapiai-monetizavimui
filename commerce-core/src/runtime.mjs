@@ -132,6 +132,7 @@ export const adminAssets = {
   '/private-files-ui.mjs': '/private-files-ui.mjs',
   '/shipment-commands-ui.mjs': '/shipment-commands-ui.mjs',
   '/jobs-ui.mjs': '/jobs-ui.mjs',
+  '/catalog-editor.mjs': '/catalog-editor.mjs',
   '/catalog-ui.mjs': '/catalog-ui.mjs',
   '/finance-io-ui.mjs': '/finance-io-ui.mjs',
   '/returns-ui.mjs': '/returns-ui.mjs',
@@ -187,7 +188,7 @@ export function runtimeHandler(service, options, assets) {
         headers.set('x-content-type-options', 'nosniff');
         headers.set(
           'content-security-policy',
-          "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+          "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: https://memocasting.lt; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
         );
         return new Response(response.body, { status: response.status, headers });
       }

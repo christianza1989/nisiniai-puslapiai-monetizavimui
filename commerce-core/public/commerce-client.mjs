@@ -252,3 +252,53 @@ export class CommerceClient {
     this.attempt = undefined;
   }
 }
+
+// Shared selection identity used by storefront adapters and checkout. Money remains server-authoritative.
+export function normalizedChoices(value) {
+  if (value === undefined) return {};
+  if (
+    !value ||
+    typeof value !== 'object' ||
+    Array.isArray(value) ||
+    Object.keys(value).length > 8 ||
+    !Object.entries(value).every(
+      ([k, v]) =>
+        /^[a-zA-Z0-9_-]{1,100}$/.test(k) &&
+        typeof v === 'string' &&
+        /^[a-zA-Z0-9_-]{1,100}$/.test(v) &&
+        !['__proto__', 'prototype', 'constructor'].includes(k),
+    )
+  )
+    throw Error('invalid_product_choices');
+  return Object.fromEntries(Object.entries(value).sort(([a], [b]) => a.localeCompare(b)));
+}
+export const selectionKey = (line) =>
+  line.sku + ':' + JSON.stringify(normalizedChoices(line.choices));
+export function resolveCatalogSelection(product, country, choices) {
+  const selected = normalizedChoices(choices),
+    groups = (product.optionGroups ?? []).filter((g) =>
+      g.values.some((v) => v.id === g.defaultValue && Number.isSafeInteger(v.prices[country])),
+    );
+  if (Object.keys(selected).some((id) => !groups.some((g) => g.id === id)))
+    throw Error('product_option_unavailable');
+  let amount = product.prices?.[country],
+    image = product.content?.images?.[0],
+    labels = [];
+  for (const g of groups) {
+    const v = g.values.find((v) => v.id === (selected[g.id] ?? g.defaultValue));
+    if (!v?.enabled || !Number.isSafeInteger(v.prices[country]))
+      throw Error('product_option_unavailable');
+    amount += v.prices[country];
+    labels.push(g.label + ': ' + v.label);
+    if (v.imageId) image = product.content?.images?.find((m) => m.id === v.imageId) ?? image;
+  }
+  const complete = Object.fromEntries(groups.map((g) => [g.id, selected[g.id] ?? g.defaultValue]));
+  const combinations = (product.content?.images ?? [])
+    .filter(
+      (m) =>
+        Object.keys(m.choices ?? {}).length &&
+        Object.entries(m.choices).every(([id, v]) => complete[id] === v),
+    )
+    .sort((a, b) => Object.keys(b.choices).length - Object.keys(a.choices).length);
+  return { amount, image: combinations[0] ?? image, labels };
+}

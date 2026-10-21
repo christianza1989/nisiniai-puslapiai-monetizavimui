@@ -157,6 +157,7 @@ const assets = {
   '/private-files-ui.mjs': ['private-files-ui.mjs', 'text/javascript; charset=utf-8'],
   '/shipment-commands-ui.mjs': ['shipment-commands-ui.mjs', 'text/javascript; charset=utf-8'],
   '/jobs-ui.mjs': ['jobs-ui.mjs', 'text/javascript; charset=utf-8'],
+  '/catalog-editor.mjs': ['catalog-editor.mjs', 'text/javascript; charset=utf-8'],
   '/catalog-ui.mjs': ['catalog-ui.mjs', 'text/javascript; charset=utf-8'],
   '/finance-io-ui.mjs': ['finance-io-ui.mjs', 'text/javascript; charset=utf-8'],
   '/returns-ui.mjs': ['returns-ui.mjs', 'text/javascript; charset=utf-8'],
@@ -220,7 +221,7 @@ createServer(async (req, res) => {
       'x-robots-tag': 'noindex, nofollow',
       'x-content-type-options': 'nosniff',
       'content-security-policy':
-        "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+        "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: https://memocasting.lt; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
     });
     res.end(readFileSync(new URL('../public/' + asset[0], import.meta.url)));
     return;

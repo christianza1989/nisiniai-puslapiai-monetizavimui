@@ -30,18 +30,40 @@ export async function digest(value) {
   const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
   return Array.from(new Uint8Array(bytes), (b) => b.toString(16).padStart(2, '0')).join('');
 }
+export function normalizeChoices(value) {
+  if (value === undefined) return {};
+  requireValue(
+    value &&
+      typeof value === 'object' &&
+      !Array.isArray(value) &&
+      Object.keys(value).length <= 8 &&
+      Object.entries(value).every(
+        ([k, v]) =>
+          identifier(k) && identifier(v) && !['__proto__', 'constructor', 'prototype'].includes(k),
+      ),
+    'invalid_product_choices',
+  );
+  return Object.fromEntries(Object.entries(value).sort(([a], [b]) => a.localeCompare(b)));
+}
+export const cartLineKey = (line) => line.sku + ':' + canonical(normalizeChoices(line.choices));
 export function normalizeCart(lines) {
   requireValue(Array.isArray(lines) && lines.length > 0 && lines.length <= 20, 'invalid_cart');
-  const combined = new Map();
+  const combined = new Map(),
+    totals = new Map();
   for (const line of lines) {
     requireValue(identifier(line?.sku) && integer(line.quantity, 1, 100), 'invalid_cart_line');
-    const quantity = (combined.get(line.sku) || 0) + line.quantity;
-    requireValue(quantity <= 100, 'quantity_limit');
-    combined.set(line.sku, quantity);
+    const choices = normalizeChoices(line.choices),
+      key = cartLineKey(line);
+    const total = (totals.get(line.sku) || 0) + line.quantity;
+    requireValue(total <= 100, 'quantity_limit');
+    totals.set(line.sku, total);
+    combined.set(key, {
+      sku: line.sku,
+      quantity: (combined.get(key)?.quantity || 0) + line.quantity,
+      ...(Object.keys(choices).length ? { choices } : {}),
+    });
   }
-  return [...combined]
-    .sort(([a], [b]) => a.localeCompare(b))
-    .map(([sku, quantity]) => ({ sku, quantity }));
+  return [...combined.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([, line]) => line);
 }
 const text = (value, min, max) =>
   typeof value === 'string' &&

@@ -1,0 +1,23 @@
+{
+  "siteId": "core",
+  "summary": "Actual rendered completion inspected111pages/images but missed declared CSS/JS404 and wrong MIME, allowing an unstyled browser to receive a limited rendered PASS. Request deduplicated same-origin resources using canonical host transport.",
+  "category": "code",
+  "evidence": [
+    "SKILLS/niche-site-audit/scripts/completion.test.mjs real HTTP regression initially failed: no CSS/JS_UNAVAILABLE issues for404 responses; fixed checker rejects404 and wrongMIME and accepts exact served resources.",
+    "Actual local Pages/Chrome first failure retained privately; shared verifier receipt remains explicitly separate from actual browser typography acceptance."
+  ],
+  "paths": [
+    "SKILLS/niche-site-audit/scripts/verify-site-completion.mjs",
+    "SKILLS/niche-site-audit/scripts/rendered_site.py",
+    "SKILLS/niche-site-audit/scripts/completion.test.mjs",
+    "SKILLS/niche-site-audit/scripts/multilingual-verifier.test.mjs",
+    "SKILLS/niche-site-audit/SKILL.md",
+    "SKILLS/catalog.json"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/240",
+  "rollback": "Scoped revert of resource-verification changes and reviewed skill hash; historical receipts/failures and site package approvals remain immutable.",
+  "id": "upgrade-d13fcbe4-6ddf-4416-a75e-9cf744a5fa2a",
+  "branch": "codex/hotube-subdomain-deploy-20261021",
+  "baseSha": "e88d7620668912eb8996a1221af5aecf08aa8cdf",
+  "createdAt": "2026-10-21T13:37:13.030Z"
+}

@@ -1,0 +1,21 @@
+{
+  "siteId": "core",
+  "summary": "Vinext SSR circular dynamic imports fail when Pages relocates an unbundled entry; routing every request through Vinext also404s generated CSS/JS. Package the existing ESM graph before relocation and retain exact native asset-first exceptions.",
+  "category": "code",
+  "evidence": [
+    "Paired public-core scripts/package-pages-worker.mjs fixture reproduces circular backtick imports.",
+    "Public tests/pages-worker-package.test.mjs checks circular execution, private/reserved collisions, overwrite refusal and guarded route boundaries.",
+    "docs/CLOUDFLARE_PAGES_DEPLOY.md preserves original relocation/CSS404 findings and local proof requirements."
+  ],
+  "paths": [
+    "scripts/package-pages-worker.mjs",
+    "tests/pages-worker-package.test.mjs",
+    "docs/CLOUDFLARE_PAGES_DEPLOY.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/50",
+  "rollback": "Revert only the scoped public packaging commit; existing native Workers build and historical approvals are unchanged.",
+  "id": "upgrade-9ba2ca5e-b505-4cce-b521-aa16a3af9baa",
+  "branch": "codex/hotube-subdomain-deploy-20261021",
+  "baseSha": "e88d7620668912eb8996a1221af5aecf08aa8cdf",
+  "createdAt": "2026-10-21T13:37:11.412Z"
+}

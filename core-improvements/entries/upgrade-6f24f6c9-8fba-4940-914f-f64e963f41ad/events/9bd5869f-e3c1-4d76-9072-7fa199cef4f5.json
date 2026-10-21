@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Added only /.local/ to public .gitignore after fresh-main status exposed private packaging outputs. Synthetic fixtures and first failure logs remain local; no deletion or business source change.",
+  "checks": [
+    {
+      "command": "git check-ignore .local/delivery-full-core-tests.log .local/pages-release-r1.manifest.json",
+      "result": "PASS",
+      "evidence": "Both the preserved test log and proposed private release manifest are ignored."
+    },
+    {
+      "command": "node ../core/scripts/repository-safety.mjs . --staged",
+      "result": "PASS",
+      "evidence": "Exact staged public .gitignore blob only; no findings. Public follow-up commit 5f22a4c records the single ignore line."
+    }
+  ],
+  "eventId": "9bd5869f-e3c1-4d76-9072-7fa199cef4f5",
+  "sequence": 2,
+  "at": "2026-10-21T15:11:06.445Z"
+}

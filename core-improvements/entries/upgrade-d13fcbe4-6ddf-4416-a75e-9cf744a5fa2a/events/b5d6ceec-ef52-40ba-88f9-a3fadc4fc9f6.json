@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Scoped draft PR created and attached to the owner chat. Paired source-only validation and full-suite limitations are explicit in the description. No merge, runtime adoption or change to the older immutable live deployment pin.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/244",
+  "eventId": "b5d6ceec-ef52-40ba-88f9-a3fadc4fc9f6",
+  "sequence": 4,
+  "at": "2026-10-21T15:13:11.072Z"
+}

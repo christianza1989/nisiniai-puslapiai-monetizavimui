@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "First relocation failures and generated CSS404 remain preserved. The generic packager keeps the existing dynamic Worker and exactly two incumbent framework/font asset-first exceptions. Source remains on owned local branches; no upload, DNS or main adoption by this worker.",
+  "checks": [
+    {
+      "command": "node --test tests/pages-worker-package.test.mjs (paired public core)",
+      "result": "PASS",
+      "evidence": "Four fixtures execute a circular backtick SSR graph and check reserved/private collisions, exact guarded route boundaries and output overwrite refusal."
+    },
+    {
+      "command": "node --test tests/*.test.mjs (paired public core)",
+      "result": "PASS",
+      "evidence": "103 public tests passed after integrating fetched main63e93420037d95d59ed4ae4379a401596ac20055."
+    },
+    {
+      "command": "Actual local Pages HTTP and D1 probes against the prepared R8 artifact",
+      "result": "PASS",
+      "evidence": "28 CSS/JS responses200 with correct MIME and exact hashes; unknown content/media/forms404; structured configuration/atomic rollback and aggregate exclusions passed. See docs/PAGES_RESOURCE_VERIFICATION_20261021.md; private exact receipts retained."
+    }
+  ],
+  "eventId": "ef592113-37eb-4503-a478-64a034ec3990",
+  "sequence": 2,
+  "at": "2026-10-21T13:46:08.391Z"
+}

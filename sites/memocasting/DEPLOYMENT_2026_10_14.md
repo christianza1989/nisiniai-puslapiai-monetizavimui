@@ -242,3 +242,8 @@ Actual frontend bb4d1e04-be77-494a-952c-db4416ae17b5 replaces eec41153. Public o
 
 ## 2026-10-21 same-view payment
 Frontend190ee50b-90e7-4b19-bda4-ac5f0b964ef9/PUBLICfe26549 adopts exact canonical759c0cd8: retain entered details and original total while rendering payment below delivery. Existing pending orders recover into that same layout. All actual bindings/observability and backend remain unchanged. Hosted form retention confirmed; complete hosted iframe paint interrupted when owner closed Chrome, same original Stripe Session rendered in isolated native preview without a new order or charge. [Source, evidence and rollback](INLINE_PAYMENT_2026_10_21.md).
+
+
+## 2026-10-21 product editor and configurations
+
+[Product editor acceptance](PRODUCT_EDITOR_2026_10_21.md): persistent private drafts/media and editable LT product descriptions, SEO, photos, configured options; exact canonical SDK, server pricing, aggregated base inventory and original order snapshots. Frontend832ddd9f / PUBLICc34bf15, commerce schema25. Live configured gold+wood quote4700+524ct accepted without an order or charge. Actual provider bindings, original3orders and92article dates retained. Family extra-color imagery and a real combined wooden-base photograph remain owner-managed catalog assets; no invented montage.

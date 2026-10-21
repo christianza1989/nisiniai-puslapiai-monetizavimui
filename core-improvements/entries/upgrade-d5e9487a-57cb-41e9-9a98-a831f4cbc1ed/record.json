@@ -1,0 +1,25 @@
+{
+  "paths": [
+    "lib/product-navigation.mjs",
+    "lib/niche-schema-core.mjs",
+    "lib/niche-seo.ts",
+    "config/promedical-catalogue.json",
+    "components/niche/promedical-site.tsx",
+    "components/niche/promedical-site.module.css",
+    "scripts/compile-content-packages.mjs",
+    "tests/product-navigation.test.mjs"
+  ],
+  "siteId": "promedical",
+  "summary": "F01/F19: derive eligible category breadcrumbs and five related links from a stable public catalog sidecar; decouple catalog filtering from product editorial links and expose bounded pagination targets.",
+  "category": "code",
+  "rollback": "Revert only the F01 navigation commit on the pinned production adapter85e9575; no content/approval/deployment rollback needed.",
+  "evidence": [
+    "https://github.com/christianza1989/niche-public-core/issues/47",
+    "docs/PROMEDICAL_F01_F19_20261021.md"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/47",
+  "id": "upgrade-d5e9487a-57cb-41e9-9a98-a831f4cbc1ed",
+  "branch": "codex/promedical-f01-auto-related-20261021",
+  "baseSha": "e231fe491e663949adbdda992286f5b8fb97513b",
+  "createdAt": "2026-10-21T12:00:51.682Z"
+}

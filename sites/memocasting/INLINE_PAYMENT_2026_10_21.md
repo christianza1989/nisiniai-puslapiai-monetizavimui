@@ -25,3 +25,14 @@ Screenshots include original hosted layout and isolated same-Session desktop/mob
 ## Rollback and delivery
 
 Previous frontendbb4d1e04-be77-494a-952c-db4416ae17b5 after a fresh actual settings read. Revert only UI/SDK adoption/style if needed; preserve original live orders, Sessions, keys, provider pacing, admissions, mail, article dates and all data. Source branch PR101/31 and actual site adoption are separate from main merge and other PCs.
+
+## Right-summary correction — 2026-10-21 06:38Z
+
+Owner clarified Stripe must be in the right product/order summary, while delivery/contact remain left. CORE6c42878ec3ef807d57ac51a62ac22ff1c76e390b adds explicit paymentPlacement summary (default details retained) and asserts actual DOM placement after items/totals/consent in one original form. PUBLIC44d24ef6462aea98de04ee88881f84ed37ffdd19 adopts the exact SDK,460px summary, static positioning when payment is open, and single column at900px and below. No backend/provider/order API or key changes.
+
+36focused canonical tests,134PUBLICtests, production build and100page SEO smoke pass; scoped CSS detector empty. Native original existing LIVE Session preview renders Card and Pay at1280 and390, one form/iframe,375document at390. First mobile screenshot caught iframe repaint after resizing; confirmation screenshot and accessible Card/Pay show the resolved paint. No card input/payment/create/Session extension performed. Preview omits site chrome and uses fallback font; never presented as hosted checkout screenshot or payment receipt.
+
+Frontend1a027950-e006-46d0-ac40-5e9005f55e38 active100percent on apex/www. Upload4068.66KiB/gzip1060.58/startup38ms. Fresh actual bindings/observability before/after exact-equal; backend still bebb13b7-1e55-4dcc-85c1-b337c4f43396. Mail, content release, article dates, DNS and all DB/credential state preserved. HTTPS cart and exact built JS/CSS return200, source option and summary selector verified. Original HTTP evidence regex omitted minified backtick literals; retained failed scanner result and corrected read-only confirmation. Native actual public cart has one form,460px right summary and payment node in that summary, hidden before order preparation, no overflow at1280. Existing owner Chrome cart was empty; no attempt made to reconstruct owner state. Full right-side live Stripe paint validated with original Session in private preview, not a new hosted transaction. Previous frontend190ee50b-90e7-4b19-bda4-ac5f0b964ef9 remains rollback after rereading actual settings; preserve Sessions/orders/data.
+
+Evidence: ignored qa/memocasting-delivery-20261021/right-* files. Branch PR101/31 source delivery is separate from main merge and production activation.
+Public mobile390 confirmed document375, single-column summary334.67px and payment node in summary; screenshot right-hosted-mobile.png. Private original-Session QA tab and owned8828/8827/8817preview processes closed after acceptance.

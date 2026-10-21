@@ -1,0 +1,20 @@
+{
+  "siteId": "memocasting",
+  "category": "code",
+  "summary": "Adopt exact canonical same-view payment: retain form, selected items, delivery and totals while payment opens below delivery; use established typography and responsive placement.",
+  "evidence": [
+    "Owner asked to keep entered details and payment in the same checkout view instead of receipt replacement. Canonical759c0cd84218628ab1c5a106d66b957fc754d926 provides inline state and original-order recovery.",
+    "PUBLIC134tests and production build pass. Existing iframe/hosted Session compatibility retained; no Stripe mode, credential, backend, admission or content change."
+  ],
+  "paths": [
+    "vendor/commerce-core/checkout-ui.mjs",
+    "vendor/commerce-core/source-manifest.json",
+    "components/niche/memocasting-checkout.css"
+  ],
+  "issue": "https://github.com/christianza1989/niche-public-core/issues/30",
+  "rollback": "Deploy previous frontendbb4d1e04 after fresh settings comparison; preserve same orders/provider Sessions and all bindings, keys, policies, dates, DNS, mail and backend.",
+  "id": "upgrade-01d39dbb-dc12-4b53-a3a7-08fa8bf40039",
+  "branch": "codex/memocasting-public-20261012",
+  "baseSha": "a866123af97070dbd237b4aa65feaff8f87ee1ad",
+  "createdAt": "2026-10-21T05:53:24.543Z"
+}

@@ -70,3 +70,7 @@ Registravimas, tikri tarifai, PDF saugykla ir tracking dar neaktyvūs.
 ### One-page cart product placement
 
 `mountCheckout` accepts `productsPlacement: "summary"` with `layout: "one-page"` to render the single live product list before the totals in the summary. The default remains `"details"`; classic mode is unchanged. Quantity/removal listeners, cart persistence, quote locking and payment recovery retain their existing controls. Style the actual DOM placement responsively rather than cloning inputs or visually reordering focusable controls.
+
+### One-page inline payment state
+
+With layout one-page and renderPayment, creation keeps the same form DOM, entered contact/address fields, selected products and authoritative totals in place. The payment pane belongs below delivery inside checkout-details. Confirmed fields and product controls lock to the original order snapshot; the initial submit hides, preventing another create. Payment load errors retry that original order/Session. A compatible saved pending order restores its fields and totals without repricing or repopulating the cart. Await server payment state before replacing this form with the final receipt; an iframe callback alone does not mark payment paid. Cleanup runs on navigation, stale views and late initialization. Classic mode and existing hosted Sessions retain their supported recovery path. Site adapters style this actual DOM rather than replacing or cloning the form.

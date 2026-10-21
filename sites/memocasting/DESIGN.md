@@ -93,3 +93,6 @@ Owner screenshot requested the selected kit above totals on the right. Memo now 
 
 ### Delivery calculation feedback — 2026-10-21
 Scoped plan and confirmation: retain existing Manrope status/alert text roles and all current layout; show calculation status while awaiting the provider and distinguish a service failure from invalid buyer data. Four localized service messages self-edited. Actual hosted1280/390 checked after source65964f9b adoption: successful quote clears status, final5.24EUR/37.24EUR fits, document1265/375 and no clipping or horizontal overflow. No style/token changes or new enlargement certification; screenshots and exact release in DELIVERY_QUOTE_503_2026_10_21.md.
+
+### Same-view payment — 2026-10-21
+Scoped plan: retain existing Manrope form/sidebar roles and compact contact/address columns; stop replacing them with a receipt before payment. Canonical same form and original totals remain; payment is a full-width row below delivery with the existing19px heading, white surface/separator and44px secondary controls. Read-only values remain legible. Actual hosted1280 layout and same-Session isolated1280/390 payment rendering checked; no horizontal overflow at390, no font/style redesign or new enlargement certification. Exact evidence and interrupted hosted iframe-paint boundary: INLINE_PAYMENT_2026_10_21.md.

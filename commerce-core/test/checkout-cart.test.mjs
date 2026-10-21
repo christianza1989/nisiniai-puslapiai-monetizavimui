@@ -691,6 +691,14 @@ test('one-page submit quotes once, locks fields before quote, creates once and m
     assert.equal(field(root, 'couple').disabled, true);
     await form.fire('submit');
     assert.equal(createCount, 1);
+    await nodes(root)
+      .find((n) => n.attrs['aria-label'] === 'Padidinti kiekį: Couple')
+      .fire('click');
+    await nodes(root)
+      .find((n) => n.attrs.class === 'checkout-remove')
+      .fire('click');
+    assert.equal(field(root, 'couple').value, '2');
+    assert.equal(nodes(root).find((n) => n.attrs.class === 'checkout-item').hidden, false);
     abort.abort();
     assert.equal(disposeCount, 1);
   }));

@@ -239,3 +239,6 @@ See [SALES_ACTIVATION_2026_10_20](SALES_ACTIVATION_2026_10_20.md): LT orders ena
 
 ## 2026-10-21 delivery quote503 repaired
 Actual frontend bb4d1e04-be77-494a-952c-db4416ae17b5 replaces eec41153. Public overlapping quote reads now200/200 including16.896seconds; actual desktop/mobile cart shows delivery5.24EUR/total37.24EUR. Backend, mail, bindings, admissions, content and DB unchanged. [Incident, source, checks and rollback](DELIVERY_QUOTE_503_2026_10_21.md). This is quote acceptance, not a new paid transaction.
+
+## 2026-10-21 same-view payment
+Frontend190ee50b-90e7-4b19-bda4-ac5f0b964ef9/PUBLICfe26549 adopts exact canonical759c0cd8: retain entered details and original total while rendering payment below delivery. Existing pending orders recover into that same layout. All actual bindings/observability and backend remain unchanged. Hosted form retention confirmed; complete hosted iframe paint interrupted when owner closed Chrome, same original Stripe Session rendered in isolated native preview without a new order or charge. [Source, evidence and rollback](INLINE_PAYMENT_2026_10_21.md).

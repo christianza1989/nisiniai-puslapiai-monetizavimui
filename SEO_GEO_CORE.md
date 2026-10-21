@@ -1,5 +1,25 @@
 # Bendras SEO ir GEO pagrindas nišinėms svetainėms
 
+## Tikro katalogo puslapiavimo canonical
+
+Promedical katalogo ir kategorijų tikri rezultatų puslapiai su vieninteliu
+`p=N` parametru (`N >= 2`) turi savo canonical, atitinkantį tą patį serverio
+rodomą produktų pjūvį. Naudoti vieną katalogo užklausos projekciją sąrašui ir
+canonical, o ne atskirai spėti puslapių skaičių. `p=1` lieka bazinis URL;
+už ribų esantis numeris negali sukurti naujos to paties rodomo pjūvio kopijos.
+Paieškos, filtrų, rūšiavimo ir kitų parametrų kombinacijos lieka baziniame
+kategorijos canonical. Proxy turi perrašyti kliento siunčiamą užklausos konteksto
+antraštę tikru `nextUrl.search`; nepasitikėti kliento nurodytu canonical.
+
+Puslapiavimas išlaiko tikras ankstesnio/kito ir katalogo puslapių `<a href>`
+nuorodas. Vien numeris nekeičia title ar description; query URL papildomai
+neįtraukiami į sitemap. Audito URL vardiklyje atskirti HTTP adresą ir `#` inkarą:
+`?p=2` ir `?p=2#turinys` nėra du skirtingi rezultatų rinkiniai. Tikrinti visas
+įvesties formas, canonical be fragmento ir skirtingus tikrų puslapių produktus.
+
+Pirminė gairė: [Google puslapiavimas](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading).
+Šio nišos pakeitimo netaikyti kitų renderer'ių canonical ar filtrams savaime.
+
 ## Katalogo navigacija nepriklauso nuo produkto prozos
 
 Promedical produkto kategorijų narystes ir modelių tapatybes laikyti atskirame

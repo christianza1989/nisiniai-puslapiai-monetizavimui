@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/52",
+  "commit": "6a438fa034fb5ca3f84491940a48e0d25fa58461",
+  "note": "Scoped F02 public PR,5 files. Local80 tests/build/401HTTP and8 browser views PASS; full production acceptance remains separate.",
+  "eventId": "c7ae113c-ecb2-46fe-98cd-60d2bf938234",
+  "sequence": 3,
+  "at": "2026-10-21T14:45:03.798Z"
+}

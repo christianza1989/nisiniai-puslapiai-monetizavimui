@@ -133,3 +133,32 @@ Existing HTTP media export, draft metadata immutability and paired V2 contract
 tests passed in the same run. The first new fixture omitted its required offer
 and correctly failed the approval gate; the fixture was repaired, not the gate.
 This is metadata plumbing only: no public business descriptions were generated.
+
+## Bounded catalogue media assignment
+
+Integration reported that a32MB site with1408 product pages was being rewritten
+for each serial `editPage` attachment (~2.6s/page with high RSS). This is the
+integration's measured finding, not a local claim that the new batch has been
+benchmarked on or adopted by the actual private catalogue.
+
+New `editPageMediaBatch(siteId, [{pageId,media:[{id,alt?}]}])` accepts1..100
+distinct pages and returns only those page objects in request order. It takes
+one existing write lock, reads the site once, builds site-local asset/family
+indexes once, prepares every normalized gallery, and only then updates review
+state and writes once atomically. Existing `editPage` uses that exact same
+extracted attachment normalizer. No second media engine, per-site batch script,
+changed family semantics or approval bypass was introduced.
+
+Only draft media/status/approval=null/updatedAt change. Body, title, URL, dates,
+V2siteSnapshot and every historical publishedRevision remain untouched. An
+unknown or foreign page/asset, duplicate page ID, non-media field, malformed alt,
+conflicting family alt, >60 variants or >100 pages rejects without partial writes.
+
+Focused regression **9/9 PASS**: new V1/V2 two-page contexts and exact single/batch
+media parity; all nonmedia fields and approved exports preserved; later invalid
+entry leaves site JSON byte-for-byte unchanged; legacy ungrouped asset parity;
+100-page acceptance/101 rejection; concurrent50+50 batches retain both updates;
+all existing HTTP export, metadata immutability, per-page alt and paired V2 media
+contract tests pass. The first fixture incorrectly tried to approve unresolved
+fact checks and was rejected; the fixture was fixed, not the approval gate.
+No real private site file, running importer or deployment was touched.

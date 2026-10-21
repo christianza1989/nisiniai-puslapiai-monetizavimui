@@ -25,6 +25,7 @@ const V2_PAGE_TYPES = new Set([...PAGE_TYPES,'article','index','author','policy'
 const publicSite = site => ({id:site.id,name:site.name,canonicalHost:site.canonicalHost,locale:site.locale,timezone:site.timezone,brand:site.brand,offer:site.offer,contact:site.contact,...(site.schemaVersion===2?{renderer:site.renderer,operatorName:site.operatorName}: {})});
 const emptyEditorial = () => ({category:'',readingMinutes:0,authors:[],sources:[],datePublished:null,dateModified:null,productRecommendation:false,featuredImageId:null,relatedPageIds:[],commerceTargets:[]});
 export const MAX_PAGE_MEDIA = 60;
+export const MAX_MEDIA_BATCH_PAGES = 100;
 let mutation = Promise.resolve();
 
 const seeds = [
@@ -328,6 +329,42 @@ export async function mergePlan(siteId, proposals, months = 0) {
     return { added, total: site.pages.length };
   });
 }
+// One canonical attachment normalizer for single-page editing and bounded
+// catalogue batches. The index is site-local and built once per operation.
+function mediaAttachmentIndex(site) {
+  const assets=new Map(),families=new Map();
+  for(const asset of site.assets) {
+    if(!assets.has(asset.id))assets.set(asset.id,asset);
+    if(asset.groupId) {
+      if(!families.has(asset.groupId))families.set(asset.groupId,[]);
+      families.get(asset.groupId).push(asset);
+    }
+  }
+  for(const family of families.values())family.sort((a,b)=>b.width-a.width);
+  return {assets,families};
+}
+function normalizePageMedia(input,index) {
+  const media=[],seen=new Set(),selectedAlts=new Map();
+  for(const item of Array.isArray(input)?input:[]) {
+    const asset=index.assets.get(item?.id);
+    if(!asset)throw new Error('Vaizdas nepriklauso šiai svetainei.');
+    const hasAlt=Object.hasOwn(item,'alt');
+    if(hasAlt&&(typeof item.alt!=='string'||!item.alt.trim()||item.alt.length>300))throw new Error('Puslapio vaizdo alt turi būti netuščias tekstas iki 300 ženklų; tekstas netrumpinamas.');
+    const selectedAlt=hasAlt?item.alt:asset.alt;
+    const familyKey=asset.groupId?`family:${asset.groupId}`:`asset:${asset.id}`;
+    if(selectedAlts.has(familyKey)&&selectedAlts.get(familyKey)!==selectedAlt)throw new Error('Tos pačios vaizdo šeimos alt aprašai negali skirtis viename priskyrime.');
+    selectedAlts.set(familyKey,selectedAlt);
+    const family=asset.groupId?index.families.get(asset.groupId):[asset];
+    for(const member of family) {
+      if(seen.has(member.id))continue;
+      seen.add(member.id);
+      const {id,src,alt,width,height,credit,rights}=member;
+      media.push({id,src,alt:hasAlt?item.alt:alt,width,height,credit,rights,...(member.groupId?{familyId:member.groupId}:{})});
+    }
+  }
+  if(media.length>MAX_PAGE_MEDIA)throw new Error(`Puslapyje telpa iki ${MAX_PAGE_MEDIA} medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.`);
+  return media;
+}
 export async function editPage(siteId, pageId, input) {
   return locked(async () => {
     const site = await getSite(siteId);
@@ -359,26 +396,31 @@ export async function editPage(siteId, pageId, input) {
     })).filter(item => item.targetPageId !== page.id && site.pages.some(target => target.id === item.targetPageId));
     if ('links' in input) page.links = (Array.isArray(input.links) ? input.links : []).slice(0, 30).map(item => ({ targetPageId: plain(item.targetPageId, 80), label: plain(item.label, 160) }));
     if ('networkLinkSuggestions' in input) page.networkLinkSuggestions = normalizeNetworkSuggestions(input.networkLinkSuggestions);
-    if ('media' in input) {
-      const media=[];const seen=new Set();const selectedAlts=new Map();
-      for(const item of Array.isArray(input.media)?input.media:[]){
-        const asset=site.assets.find(a=>a.id===item.id);
-        if(!asset)throw new Error('Vaizdas nepriklauso šiai svetainei.');
-        const hasAlt=Object.hasOwn(item,'alt');
-        if(hasAlt&&(typeof item.alt!=='string'||!item.alt.trim()||item.alt.length>300))throw new Error('Puslapio vaizdo alt turi būti netuščias tekstas iki 300 ženklų; tekstas netrumpinamas.');
-        const selectedAlt=hasAlt?item.alt:asset.alt;
-        const familyKey=asset.groupId?`family:${asset.groupId}`:`asset:${asset.id}`;
-        if(selectedAlts.has(familyKey)&&selectedAlts.get(familyKey)!==selectedAlt)throw new Error('Tos pačios vaizdo šeimos alt aprašai negali skirtis viename priskyrime.');
-        selectedAlts.set(familyKey,selectedAlt);
-        const family=asset.groupId?site.assets.filter(a=>a.groupId===asset.groupId).sort((a,b)=>b.width-a.width):[asset];
-        for(const member of family){if(seen.has(member.id))continue;seen.add(member.id);const {id,src,alt,width,height,credit,rights}=member;media.push({id,src,alt:hasAlt?item.alt:alt,width,height,credit,rights,...(member.groupId?{familyId:member.groupId}:{})});}
-      }
-      if(media.length>MAX_PAGE_MEDIA)throw new Error(`Puslapyje telpa iki ${MAX_PAGE_MEDIA} medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.`);
-      page.media=media;
-    }
+    if ('media' in input) page.media=normalizePageMedia(input.media,mediaAttachmentIndex(site));
     page.status = 'review'; page.approval = null; page.updatedAt = new Date().toISOString();
     await writeJson(siteFile(siteId), site);
     return page;
+  });
+}
+// Media-only: no hidden title/body/date/siteSnapshot changes, no approval and no
+// publication. Every candidate is validated before the single site write.
+export async function editPageMediaBatch(siteId,entries) {
+  return locked(async()=>{
+    if(!Array.isArray(entries)||entries.length<1||entries.length>MAX_MEDIA_BATCH_PAGES)throw new Error(`Medijos partijoje turi būti nuo 1 iki ${MAX_MEDIA_BATCH_PAGES} puslapių.`);
+    const site=await getSite(siteId),pages=new Map(site.pages.map(page=>[page.id,page]));
+    const index=mediaAttachmentIndex(site),selected=new Set(),prepared=[];
+    for(const entry of entries) {
+      if(!entry||typeof entry!=='object'||Array.isArray(entry)||Object.keys(entry).some(key=>!['pageId','media'].includes(key))||typeof entry.pageId!=='string'||!entry.pageId.trim()||!Array.isArray(entry.media))throw new Error('Medijos partijos įrašui reikia tik pageId ir media masyvo.');
+      if(selected.has(entry.pageId))throw new Error('Medijos partijoje puslapio ID negali kartotis.');
+      selected.add(entry.pageId);
+      const page=pages.get(entry.pageId);
+      if(!page)throw Object.assign(new Error('Puslapis nerastas šioje svetainėje.'),{status:404});
+      prepared.push({page,media:normalizePageMedia(entry.media,index)});
+    }
+    const updatedAt=new Date().toISOString();
+    for(const {page,media} of prepared)Object.assign(page,{media,status:'review',approval:null,updatedAt});
+    await writeJson(siteFile(siteId),site);
+    return prepared.map(({page})=>page);
   });
 }
 export async function deleteDraftPage(siteId, pageId) {

@@ -198,3 +198,33 @@ The paired checkout has its own nine legacy content packages; this is a complete
 source regression, not an assertion that the root's live-gallery catalogue has
 been approved or deployed. No own test process remains running. Root separately
 owns actual catalogue/UI/performance acceptance and publication review.
+
+## Root catalogue integration checkpoint
+
+The root integration uses an isolated copy of the actual current live package,
+not the older local content registry. Baseline packageSHA
+`e84a27e204e9303258f7fa5e042993170537d745342ba71a6181d1191da98a8c`
+contains1909 pages/1408 catalogue products and the already-live1402 rewrites.
+Worker baseline is`a8c1f6c5-604f-4ad3-ab4e-85931d4192cd`. Shared live Studio,
+immutable approvals, public package and production remain untouched.
+
+An actual81-page canonical `editPageMediaBatch` completed without approvals;
+the subsequent interim checker verified196 attached product drafts against the
+manufacturer SHA/family order, exact-title contextual descriptions, shared
+public srcset/Product/image-sitemap helpers and unchanged nonmedia fields.
+All1909 publishedRevision objects and501 nonproduct pages equal the baseline.
+The other1212 products are explicitly pending import/assignment at this
+checkpoint; this is not final catalogue acceptance.
+
+Root private browser evidence covers desktop1280 and mobile390/320, keyboard
+selection/dialog/focus/error recovery,13-frame layout, exact native200x56
+fallback dimensions, and320px user text-spacing overrides. Actual200% browser
+zoom remains unverified because this IAB surface exposes viewport emulation
+without verified zoom control. A contended Lighthouse attempt was aborted and
+its owned Chrome stopped; no score or Core Web Vitals pass is claimed.
+
+Detailed private checkpoints, source limitations, browser screenshots and
+candidate reports live under`D:/Core/output/promedical-gallery-execution-20261021`.
+They are not copied into Git or presented as public release evidence. The
+owner's latest boundary is complete private review before live publication;
+approval, release, deployment and indexing remain separate later actions.

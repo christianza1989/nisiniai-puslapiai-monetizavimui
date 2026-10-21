@@ -73,7 +73,7 @@ def main():
     compiler=a.web/'scripts/prepare-chair-structure-cached.mjs'
     runtime=a.web/'scripts/check-chair-structure-runtime.ts'
     toolfiles=[Path(__file__),Path(__file__).with_name('offline_command_budget.py'),Path(__file__).with_name('verify_structure_wire.py'),compiler,runtime,
-        a.web/'scripts/verified-inspection-cache.mjs',a.web/'scripts/configurator-geometry.mjs',
+        a.web/'scripts/verified-inspection-cache.mjs',a.web/'scripts/configurator-geometry.mjs',a.web/'scripts/exact-face-cache.mjs',
         a.web/'content/seed.json',a.web/'package-lock.json',*sorted((a.web/'src/lib').glob('*.ts'))]
     sourcepins={str(f):sha(f.read_bytes()) for f in toolfiles}
     certificate=load_preserved_certificate()

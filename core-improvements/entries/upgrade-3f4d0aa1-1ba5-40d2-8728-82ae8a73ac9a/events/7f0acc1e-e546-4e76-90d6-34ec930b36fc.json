@@ -1,0 +1,29 @@
+{
+  "status": "local-verified",
+  "note": "Completed current immutable-package acceptance; no product text, approval, release, deployment or main state changed. Actual results and limits are in paired private QA.",
+  "checks": [
+    {
+      "command": "npm run test:core",
+      "result": "PASS",
+      "evidence": "75/75; local tests-final.log; summarized in docs/PROMEDICAL_F01_F19_20261021.md"
+    },
+    {
+      "command": "TypeScript --noEmit, focused ESLint, npm run build",
+      "result": "PASS",
+      "evidence": "typecheck-final.log, lint-final.log, build-final-accepted.log; source/build SHA binding in local build-final-manifest.json"
+    },
+    {
+      "command": "npm run test:seo-smoke against isolated Worker and full pagination/held-guide probes",
+      "result": "PASS",
+      "evidence": "1854/1854 Promedical; 9/9 other tenants; 296 pagination requests; 55 held guides404; local http-final corpus"
+    },
+    {
+      "command": "verify-f01-final.py; browser-review-final.mjs; visual inspection",
+      "result": "PASS",
+      "evidence": "1402/1402 actual HTML/schema/LLM/targets and category membership; graph maximum8→3; 8/8 desktop/320px; private QA and local F01-F19-results.json"
+    }
+  ],
+  "eventId": "7f0acc1e-e546-4e76-90d6-34ec930b36fc",
+  "sequence": 2,
+  "at": "2026-10-21T12:51:58.505Z"
+}

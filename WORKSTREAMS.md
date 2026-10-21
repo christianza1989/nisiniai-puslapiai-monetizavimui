@@ -406,3 +406,14 @@ the own edit window is released. Remote CI/review/merge/adoption remain separate
 2026-10-21 issue236 byte-limit LOCAL VERIFIED: authorizedsourcewindow image-pipeline/server/app.js,focusedtests/MEDIA_CORE/ownjournal. Exact2genuinePNGs >12MiB,max14,732,331B below16MiB and40MP/8192. Canonical16MiB+HTTP24MiB+GUI/metapolicy;largestactualHTTPbytepreservation andpipeline5/5,finalmetaHTTP1/1 PASS. Outputpolicy/cap60 unchanged; no liveprocess. Rootownscombinedintegration/release.
 
 2026-10-21 issue236 per-pagealt LOCAL VERIFIED: rootauthorizedmodel/focusedtests plusGUIcontextpreservation. Optionalmedia{id,alt} lossless<=300 sameallfamilysizes,duplicateconflictsatomic,libraryunchanged, V1/V2approvedexportsimmutable. Globaldraftmetadatacorrectionpreservescontextualalts. Focused5/5PASS; initialfixturemissingofferFAILpreserved,gateunchanged. OwnsourcewindowreleasedafterGitchecks; rootownsmetadatareview/import/release.
+
+2026-10-21 issue236 root SOURCE DRAFT DELIVERY: Core PR238 to main and public
+PR48 stacked on the existing Promedical PR28. Canonical source checks: complete
+Studio56/56, public78/78, paired freshness, safety and upgrade coverage PASS.
+Private integration preserves the actual already-live1402 product rewrites,
+all1909 published revisions, Lithuanian URLs and the existing guide pause.
+Ten pilot pages/89 families/218 image files pass actual loopback HTTP/hash checks.
+Full catalogue import and final private coverage remain in progress. The owner
+requires completed private review before any live publication. No approval,
+release, deployment, main merge or runtime adoption is authorized by these PRs.
+Shared source edit window is released; root retains its isolated candidate/data.

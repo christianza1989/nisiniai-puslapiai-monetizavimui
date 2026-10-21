@@ -61,3 +61,21 @@ requires the same complete candidate gate; these source checks alone are not
 a live-deployment or search-indexing claim.
 
 Primary guidance opened2026-10-21: https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading
+
+## Actual production acceptance
+
+2026-10-21: source PR52(public) and242(Core) merged; actual promedical Worker
+4262d312-9ee9-4324-8344-24ef2e98bf54 deployed at0% then100%. At both stages all1402
+exact product title/meta/body and F01 checks PASS,296 genuine pagination and574
+historic forms PASS,55 held guides404 and8 browser states PASS. 130 uploaded
+module byte hashes match the built source. Immutable package and3780 assets
+preserved; no rollback trigger. Retain prior F01 version5f4fcc9f-1856-4597-ac15-7bbb8cea8e06.
+
+The final authenticated API control initially returned401 after an OAuth token
+captured before upload expired. Standard Wrangler refresh and a separate
+control-only confirmation resumed after all site checks passed; no deployment
+was repeated. Original failure receipts retained. Long acceptance clients must
+reload refreshed credentials rather than reusing a captured expired token.
+Raw private receipts: success.json, auth-resume.json, final-confirmation.json
+under the existing output directory. No claim about other PCs, Google indexing
+or healthy live DNS of the9 baseline-unavailable domains.

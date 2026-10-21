@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Canonical image family export and bounded capacity implemented with backward compatibility. Original isolated-server missing companion import and missing TypeScript dependency failures retained in QA report; targeted regressions below passed. No live package changes or deployment.",
+  "checks": [
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=<paired public> STUDIO_NETWORK_SETTINGS=<paired config> node --test content-studio/test/media-import.test.mjs content-studio/test/draft-media-metadata.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md: real HTTP import/export, 160 accepted, 165 atomically rejected; 2/2 PASS"
+    },
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=<paired public> node --test content-studio/test/media-family-contract.test.mjs content-studio/test/image-pipeline.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md: paired V2 validator/schema, identity/hash/cap, raster privacy; 4/4 PASS"
+    },
+    {
+      "command": "node --test tests/content-package.test.mjs tests/niche-media.test.mjs (paired public)",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md: 14/14 PASS"
+    }
+  ],
+  "eventId": "55e4c01c-409e-42b3-b06e-d9a7e4a0dbdc",
+  "sequence": 2,
+  "at": "2026-10-21T11:08:22.527Z"
+}

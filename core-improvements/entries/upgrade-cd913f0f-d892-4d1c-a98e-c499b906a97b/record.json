@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Catalog-scale attachment used one full site JSON parse/rewrite per page, with observed32MB site and about2.6s/page reported by integration. Add bounded media-only1..100page atomic batch using the exact shared single-page normalizer, one site-local index/read/write and no text/publication changes.",
+  "category": "code",
+  "evidence": [
+    "MEDIA_CORE.md",
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md",
+    "content-studio/test/media-batch.test.mjs"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/test/media-batch.test.mjs",
+    "MEDIA_CORE.md",
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/236",
+  "rollback": "Scoped revert batchAPI/helper extraction and canonical docs together before a new import process starts. Preserve site JSON, private originals, current jobs and historical approved snapshots; do not alter running source snapshots or reset other worktrees.",
+  "id": "upgrade-cd913f0f-d892-4d1c-a98e-c499b906a97b",
+  "branch": "codex/promedical-gallery-media-core-20261021",
+  "baseSha": "0233a875ddc6a1b898525b1f62a8f0d0169c2ce6",
+  "createdAt": "2026-10-21T11:57:24.078Z"
+}

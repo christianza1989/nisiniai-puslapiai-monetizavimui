@@ -1,15 +1,20 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { IMAGE_POLICY } from './image-pipeline.mjs';
 import { initialize, ROOT, getSite, listSites, listCalendar, createSite, editSite, addPage, editPage, deleteDraftPage, approvePage, revokePage, exportPackage, listJobs, saveResponsiveAsset, getAssetFile } from './model.mjs';
 import { enqueue } from './generator.mjs';
 import { listNetworkLinks } from './model.mjs';
 import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
-import { imageSrcSet, visibleImageCredit } from '../../../dovanos-memorycasting/lib/niche-media.mjs';
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
+const { imageSrcSet, visibleImageCredit } = await import(pathToFileURL(path.join(publicRoot,'lib/niche-media.mjs')));
 
 const PORT = Number(process.env.STUDIO_PORT || 4317);
 const PUBLIC = path.join(ROOT, 'public');
-const MAX_BODY = 18 * 1024 * 1024;
+// A 16 MiB binary import becomes ~21.34 MiB in JSON base64; keep bounded room
+// for metadata without raising the canonical decoded-image or output limits.
+const MAX_BODY = 24 * 1024 * 1024;
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
 const json = (response, status, body) => {
   response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' });
@@ -78,7 +83,7 @@ export async function createServer() {
       if (request.method !== 'GET' && request.headers['x-studio-request'] !== '1') return json(response, 403, { error: 'Trūksta studijos užklausos žymos.' });
       const url = new URL(request.url, `http://${host}`);
       const parts = url.pathname.split('/').filter(Boolean);
-      if (request.method === 'GET' && url.pathname === '/api/meta') return json(response, 200, { imagegenConfigured: Boolean(process.env.OPENAI_API_KEY), port: PORT });
+      if (request.method === 'GET' && url.pathname === '/api/meta') return json(response, 200, { imagegenConfigured: Boolean(process.env.OPENAI_API_KEY), port: PORT, imagePolicy: IMAGE_POLICY });
       if (request.method === 'GET' && url.pathname === '/api/sites') return json(response, 200, await listSites());
       if (request.method === 'GET' && url.pathname === '/api/calendar') return json(response, 200, await listCalendar());
       if (request.method === 'GET' && url.pathname === '/api/network-links') return json(response, 200, await listNetworkLinks());

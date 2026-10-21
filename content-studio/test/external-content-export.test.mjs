@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 import { exportExternalContent } from '../src/external-content-export.mjs';
 
 const fixture = path.resolve(import.meta.dirname, '../../sites/madbeauty/content/initial-release');
-const core = path.resolve(import.meta.dirname, '../../../dovanos-memorycasting');
+const core = process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname, '../../../dovanos-memorycasting');
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 async function sandbox(t) {
   const root = await mkdtemp(path.join(os.tmpdir(), 'external-content-test-'));

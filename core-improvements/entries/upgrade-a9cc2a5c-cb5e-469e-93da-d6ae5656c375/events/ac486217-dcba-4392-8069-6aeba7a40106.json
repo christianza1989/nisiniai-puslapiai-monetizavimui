@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "checks": [
+    {
+      "command": "npm test --prefix content-studio",
+      "result": "PASS",
+      "evidence": "docs/SCOPED_CONTENT_REPLACEMENTS_2026-10-19.md; all53 studio tests, including six scoped approval/release regressions"
+    },
+    {
+      "command": "npm run test:core (companion)",
+      "result": "PASS",
+      "evidence": "docs/SCOPED_CONTENT_REPLACEMENTS_2026-10-19.md; all56 companion tests including two pause/projection regressions"
+    },
+    {
+      "command": "canonical tests/seo-core-smoke.mjs with exact frozen local renderer and actual registry/settings",
+      "result": "PASS",
+      "evidence": "docs/SCOPED_CONTENT_REPLACEMENTS_2026-10-19.md;1854 public pages plus schemas/canonical/sitemap/robots/LLM/host/404 checks and six actual guide viewport views"
+    }
+  ],
+  "note": "No full-release or medical-review gate weakened. Initial local companion dependency failure was preserved and resolved with matching existing lockfiles. Production deployment is separate from these local checks.",
+  "eventId": "ac486217-dcba-4392-8069-6aeba7a40106",
+  "sequence": 2,
+  "at": "2026-10-19T17:46:32.325Z"
+}

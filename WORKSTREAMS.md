@@ -396,3 +396,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-21 Promedical F01/F19 LOCAL-VERIFIED — issue237 / publicPR49; branch codex/promedical-f01-auto-related-20261021. Scope: SEO_GEO_CORE.md automatic catalog navigation contract, own journal and docs/PROMEDICAL_F01_F19_20261021.md; public lib/product-navigation.mjs, niche-schema-core.mjs, niche-seo.ts, Promedical template/CSS and focused tests. Public patch stacked on pinned production adapter85e9575 (mainec8a9c03 already ancestor); prior content/assets excluded from patch. Full 1402 category ledger and 8 preview captures private output. Source edits complete; own edit window released for PR review. No product text, approval, release or deployment changes. Other sessions preserved.

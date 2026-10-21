@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "Narrow stacked source PR against pinned production adapter85e9575; existing adapter main-integration chain is a separate dependency. No deployment.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/49",
+  "commit": "eb06cd91694ddeae70cde94ad3e36be4a9f37604",
+  "eventId": "73b76b8e-9297-4c83-8d2e-aaa0edf4513b",
+  "sequence": 3,
+  "at": "2026-10-21T12:52:02.745Z"
+}

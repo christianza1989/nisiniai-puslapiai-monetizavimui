@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Paired public helper8cc9defa674fb8b3dc357395c8b7d9984a40c8d8 now treats explicit immutable family identity as authoritative, preserving unmarked legacy aspect fallback and ID isolation. Root owns actual Product/sitemap/8851 UI verification. No approved package, import job, live studio or deployment changes.",
+  "checks": [
+    {
+      "command": "node --test tests/niche-media.test.mjs (paired public)",
+      "result": "PASS",
+      "evidence": "MEDIA_CORE.md:6/6 including real panoramic integer-rounded dimensions, tall frame, fullsrcset, representativeorder, legacyandmarked/unmarkedisolation"
+    },
+    {
+      "command": "npm run test:core (paired public)",
+      "result": "PASS",
+      "evidence": "MEDIA_CORE.md:61/61PASS atcompanion8cc9def"
+    },
+    {
+      "command": "node <canonical core>/scripts/repository-safety.mjs . --staged (paired public)",
+      "result": "PASS",
+      "evidence": "MEDIA_CORE.md:onlyhelperandtests staged;2filesPASS,no findings"
+    }
+  ],
+  "eventId": "55c7a903-71d8-4f4a-9f7f-db13ffa2416a",
+  "sequence": 2,
+  "at": "2026-10-21T11:46:48.489Z"
+}

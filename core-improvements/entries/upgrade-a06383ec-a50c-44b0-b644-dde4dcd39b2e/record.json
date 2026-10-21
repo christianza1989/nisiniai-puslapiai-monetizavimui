@@ -1,0 +1,22 @@
+{
+  "siteId": "promedical",
+  "summary": "Shared image bytes need reviewed page-specific alt, but editPage discarded attachment alt and copied only library metadata. GUI resave and draft global correction could overwrite page context. Add lossless bounded per-page family alt without source metadata or approved snapshot mutation.",
+  "category": "code",
+  "evidence": [
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md",
+    "content-studio/test/page-media-alt.test.mjs"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/public/app.js",
+    "content-studio/test/page-media-alt.test.mjs",
+    "MEDIA_CORE.md",
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/236",
+  "rollback": "Scoped revert per-page attachment handling and GUI preservation together before import. Keep immutable snapshots/releases/source metadata; do not replace reviewed per-product descriptions with technical library labels or rewrite approvals.",
+  "id": "upgrade-a06383ec-a50c-44b0-b644-dde4dcd39b2e",
+  "branch": "codex/promedical-gallery-media-core-20261021",
+  "baseSha": "a07fb4dc953184b2028422eed39c146d309a2838",
+  "createdAt": "2026-10-21T11:24:18.293Z"
+}

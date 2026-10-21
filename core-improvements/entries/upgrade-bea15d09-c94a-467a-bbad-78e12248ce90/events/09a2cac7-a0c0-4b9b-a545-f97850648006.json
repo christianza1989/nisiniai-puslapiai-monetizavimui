@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Finalcollectorexactly2 genuinePNG originals above12MiB,max14,732,331B,within40MP/8192. Canonical16MiB,HTTP24MiBbase64,andGUIsingle/meta policy aligned. Largest genuineHTTPimport and exactprivateoriginalpreservation passed; no per-site preprocessor/upscale/liveactions.",
+  "checks": [
+    {
+      "command": "MEDIA_REAL_SOURCE_FIXTURE=<largest genuine private PNG> STUDIO_PUBLIC_CORE_DIR=<paired> STUDIO_NETWORK_SETTINGS=<paired> node --test content-studio/test/media-byte-limit.test.mjs content-studio/test/image-pipeline.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:Genuine original encoded-byte allowance;5/5PASS131.9s"
+    },
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=<paired> STUDIO_NETWORK_SETTINGS=<paired> node --test content-studio/test/media-byte-limit.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:finalHTTP/meta1/1PASS"
+    },
+    {
+      "command": "node --check content-studio/public/app.js; node --check content-studio/src/server.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:GUI/server syntaxchecked"
+    }
+  ],
+  "eventId": "09a2cac7-a0c0-4b9b-a545-f97850648006",
+  "sequence": 2,
+  "at": "2026-10-21T11:21:15.297Z"
+}

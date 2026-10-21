@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,readFile,rm,writeFile,mkdir} from 'node:fs/promises';
+import {mkdtemp,readFile,readdir,rm,writeFile,mkdir} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {v2Fixture} from './fixtures/v2.mjs';
 import {validateV2Package,v2RevisionHash,normalizeV2Blocks,bodyPlainText} from '../src/content-package-v2.mjs';
-const publicRoot=fileURLToPath(new URL('../../../dovanos-memorycasting/',import.meta.url));
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||fileURLToPath(new URL('../../../dovanos-memorycasting/',import.meta.url));
 const publicCore=await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
 const root=await mkdtemp(path.join(os.tmpdir(),'niche-v2-'));
 process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'output');
@@ -19,7 +19,8 @@ test('v2 validator/hash/schema copies match; v1 packages remain readable unchang
   assert.equal(await readFile(new URL('../src/content-package-v2.mjs',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'scripts/content-package-v2.mjs'),'utf8'));
   assert.equal(await readFile(new URL('../schemas/content-package.v2.schema.json',import.meta.url),'utf8'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json'),'utf8'));
   const packages=JSON.parse(await readFile(path.join(publicRoot,'lib/generated/content-packages.json'),'utf8'));
-  assert.equal(packages.length,9);
+  const packageNames=(await readdir(path.join(publicRoot,'content-packages'),{withFileTypes:true})).filter(entry=>entry.isDirectory()).map(entry=>entry.name).sort();
+  assert.deepEqual(packages.map(pkg=>pkg.siteId).sort(),packageNames);
   for(const p of packages){assert.equal(p.schemaVersion,1);assert.equal(publicCore.validateContentPackage(p),p);for(const page of p.pages)assert.equal(model.revisionHash(page),publicCore.pageRevisionHash(page));}
   const pkg=v2Fixture();assert.equal(validateV2Package(pkg),pkg);assert.equal(publicCore.validateContentPackage(pkg),pkg);
 });
@@ -53,6 +54,8 @@ test('v2 normal importer refuses activation; explicit shadow does not touch comp
   // Run the actual scripts in a tiny isolated public-repo layout, no real staging mutation.
   const isolated=path.join(root,'public');await mkdir(path.join(isolated,'scripts'),{recursive:true});await mkdir(path.join(isolated,'schemas'),{recursive:true});
   for(const file of ['content-package-core.mjs','content-package-v2.mjs','content-body.mjs','content-v2-admission.mjs','import-content-package.mjs','compile-content-packages.mjs'])await writeFile(path.join(isolated,'scripts',file),await readFile(path.join(publicRoot,'scripts',file)));
+  for(const directory of ['lib','config'])await mkdir(path.join(isolated,directory),{recursive:true});
+  for(const file of ['lib/niche-path-aliases.mjs','lib/niche-links.mjs','lib/product-navigation.mjs','config/promedical-catalogue.json'])await writeFile(path.join(isolated,file),await readFile(path.join(publicRoot,file)));
   await writeFile(path.join(isolated,'schemas/content-package.v2.schema.json'),await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json')));
   const source=path.join(root,'export');await mkdir(source,{recursive:true});await writeFile(path.join(source,'content-package.json'),JSON.stringify(v2Fixture()));
   const before=await readFile(path.join(publicRoot,'lib/generated/content-packages.json'));

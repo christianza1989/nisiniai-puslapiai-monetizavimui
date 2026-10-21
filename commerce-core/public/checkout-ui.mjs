@@ -651,13 +651,17 @@ function onePageForm({
     summary.append(element('a', { class: 'checkout-continue', href: catalogueHref }, m.catalogue));
   form.append(details, summary);
   content.append(intro, closed, empty, form);
+  const selectedQuantity = (sku, excluded) =>
+    rows
+      .filter((r) => r.p.sku === sku && r !== excluded && !r.row.hidden)
+      .reduce((n, r) => n + Number(r.q.value), 0);
   const validQuantities = () =>
     rows.every(
-      ({ q, row, p }) =>
-        row.hidden ||
-        (Number.isInteger(Number(q.value)) &&
-          Number(q.value) >= 1 &&
-          Number(q.value) <= Math.min(100, p.available)),
+      (r) =>
+        r.row.hidden ||
+        (Number.isInteger(Number(r.q.value)) &&
+          Number(r.q.value) >= 1 &&
+          selectedQuantity(r.p.sku) <= Math.min(100, r.p.available)),
     );
   const lines = () =>
     rows
@@ -698,7 +702,8 @@ function onePageForm({
     closed.hidden = isEmpty || canOrder;
     let cents = 0,
       valid = Boolean(lockedForOrder && quoted) || (validQuantities() && Boolean(market()));
-    for (const { p, selection, q, row, price, minus, plus, remove } of rows) {
+    for (const currentRow of rows) {
+      const { p, selection, q, row, price, minus, plus, remove } = currentRow;
       let configuredAmount;
       try {
         configuredAmount = resolveCatalogSelection(p, selectedCountry, selection.choices).amount;
@@ -715,7 +720,12 @@ function onePageForm({
         cents += Number.isSafeInteger(unit) ? unit * Number(q.value) : 0;
       }
       minus.disabled = busy || lockedForOrder || Number(q.value) <= 1;
-      plus.disabled = busy || lockedForOrder || Number(q.value) >= Math.min(100, p.available);
+      const maxQuantity = Math.max(
+        0,
+        Math.min(100, p.available) - selectedQuantity(p.sku, currentRow),
+      );
+      q.max = String(maxQuantity);
+      plus.disabled = busy || lockedForOrder || Number(q.value) >= maxQuantity;
       remove.disabled = busy || lockedForOrder;
     }
     sub.value.textContent = valid ? money(cents, market().currency) : u.unknown;

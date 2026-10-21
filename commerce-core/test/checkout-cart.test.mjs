@@ -13,6 +13,7 @@ test('mixed finishes stay separate in the mounted sidebar; removing white preser
       const data = await initialize();
       data.catalog = structuredClone(data.catalog);
       const p = data.catalog.find((p) => p.sku === 'couple');
+      p.available = 200;
       p.optionGroups = [
         {
           id: 'finish',
@@ -43,6 +44,18 @@ test('mixed finishes stay separate in the mounted sidebar; removing white preser
     assert.match(
       nodes(rows[1]).find((n) => n.attrs.class === 'checkout-unit-price').textContent,
       /35/,
+    );
+    const quantity = field(root, selectionKey(white)),
+      form = nodes(root).find((n) => n.tag === 'form');
+    quantity.value = '99';
+    await form.fire('input', quantity);
+    assert.equal(changes.at(-1)[0].quantity, 99);
+    quantity.value = '100';
+    await form.fire('input', quantity);
+    assert.equal(
+      changes.at(-1)[0]?.quantity,
+      99,
+      'aggregate overflow must not persist an empty cart',
     );
     await nodes(rows[0])
       .find((n) => n.attrs.class === 'checkout-remove')

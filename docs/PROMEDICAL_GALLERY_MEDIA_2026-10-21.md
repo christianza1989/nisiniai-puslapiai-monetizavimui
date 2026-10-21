@@ -162,3 +162,6 @@ all existing HTTP export, metadata immutability, per-page alt and paired V2 medi
 contract tests pass. The first fixture incorrectly tried to approve unresolved
 fact checks and was rejected; the fixture was fixed, not the approval gate.
 No real private site file, running importer or deployment was touched.
+The first committed upgrade check correctly blocked `48ff442` because the
+asynchronous journal-event command had not finished before staging; its actual
+local-verified event is committed in the follow-up before the check is repeated.

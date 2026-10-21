@@ -7,6 +7,9 @@ katalogo ryšių registre. Redakcinės `links` yra skaitymo rekomendacijos, tod�
 pakeitimas negali pašalinti produkto iš kategorijos filtro. Katalogo importas
 tikrina visų produktų ir kategorijų ID; šaltinio numeris nėra teksto eilės numeris.
 Kelias, `BreadcrumbList` ir LLM išvestis naudoja tą pačią viešą kategoriją.
+Kelių tinkamų narystės kategorijų pirmenybę sprendžia savininko patvirtinta
+katalogo tvarka. Spinta ant ratukų pirmiausia lieka spinta; mobilumas savaime
+nepakeičia produkto paskirties. Galima antrinė transportavimo narystė išlieka.
 
 Automatinis „Susiję“ blokas iš tos pačios eligible projekcijos pateikia kategoriją,
 2–3 artimiausius būtent rodomos katalogo kategorijos produktus (pirmiausia to paties

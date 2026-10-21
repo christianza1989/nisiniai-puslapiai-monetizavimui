@@ -1,0 +1,8 @@
+{
+  "status": "pr",
+  "note": "Scoped draft PR created and attached to the owner chat. Paired source-only validation and full-suite limitations are explicit in the description. No merge, runtime adoption or change to the older immutable live deployment pin.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/53",
+  "eventId": "2a8b8bd0-ea3c-4db2-9644-7986559e0425",
+  "sequence": 4,
+  "at": "2026-10-21T15:13:13.338Z"
+}

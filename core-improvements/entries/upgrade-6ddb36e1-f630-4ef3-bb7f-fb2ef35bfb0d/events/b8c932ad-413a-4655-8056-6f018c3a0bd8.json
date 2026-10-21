@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Root actual collector reports approximately46 responsive variants/product, below existing60. Initial13frames-times5 estimate overcounted small-source families. Restored60 consistently in model, both schemas, publicvalidator andtests; retained optionalfamilyId. Earlier160-boundary test history is preserved, not currentpolicy. No packages/live changes.",
+  "checks": [
+    {
+      "command": "STUDIO_PUBLIC_CORE_DIR=<paired> STUDIO_NETWORK_SETTINGS=<paired> node --test content-studio/test/media-import.test.mjs content-studio/test/draft-media-metadata.test.mjs content-studio/test/media-family-contract.test.mjs",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:3/3 real HTTP+immutability+pairedV2;60 accepted/65 rejected andV2 61 rejected"
+    },
+    {
+      "command": "npm run test:core (paired public)",
+      "result": "PASS",
+      "evidence": "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md:59/59 repeated at restored60 capacity"
+    }
+  ],
+  "eventId": "b8c932ad-413a-4655-8056-6f018c3a0bd8",
+  "sequence": 4,
+  "at": "2026-10-21T11:14:40.728Z"
+}

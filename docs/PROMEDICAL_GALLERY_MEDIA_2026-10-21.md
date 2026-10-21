@@ -10,14 +10,16 @@ not a live gallery import, editorial approval, main merge or deployment.
 `editPage` expanded private `groupId` families but stripped identity from public
 media. The public helper then identified composition by equal alt/aspect alone.
 Different product views with the same descriptive text could share srcset.
-The 60-variant cap could not fit 13 frames at five responsive widths (65 files).
+The initial capacity estimate assumed 13 frames at five responsive widths
+(65 files). Actual collection subsequently reported a maximum of about 46
+responsive files per product, so the unchanged 60-variant limit is sufficient.
 The importer/root owns current source inventory, rights and actual completeness;
 this source increment cannot prove every manufacturer image has been imported.
 
 New assignments carry optional immutable `familyId` copied from the stored
 `groupId`. Existing published snapshots are untouched. Prompt, original file
-path and source metadata remain private. Both V1/V2 contracts accept a bounded
-160 variants (32 complete five-size families), reject overflow without truncation,
+path and source metadata remain private. Both V1/V2 contracts keep the existing
+60-variant bound, reject overflow without truncation,
 and require opaque family IDs of at most 128 characters. Reusing a family ID
 does not bypass revision, site/path, publication, review or export gates.
 
@@ -31,7 +33,18 @@ The existing studio server and HTTP test now honor `STUDIO_PUBLIC_CORE_DIR`;
 their default sibling companion path is unchanged. This is needed for isolated
 worktrees and does not run or mutate a live studio.
 
-## Actual verification
+## Verification history
+
+The initial source increment temporarily raised capacity to 160. Its successful
+boundary checks below are preserved as history. After actual source collection
+showed the smaller maximum, the follow-up restores 60 everywhere and repeats
+the relevant real HTTP, paired V2, public package/helper and full public tests.
+Current model/schema/validators use 60; `familyId` support remains unchanged.
+The restored limit passed real HTTP import/export plus immutable metadata and
+paired V2 contract tests **3/3** (60 actual variants accepted, 65 rejected
+atomically; V2 60 accepted/61 rejected). Full paired public regression repeated
+at 60 and passed **59/59**. The renderer/integration agent owns the actual
+product inventory, so about46 is its reported maximum, not a new Core quota.
 
 - Public targeted package/helper tests: 14/14 PASS (new family isolation,
   legacy aspect rounding, primary order, hash binding, invalid IDs, cap boundary).

@@ -8,13 +8,13 @@ import {validateV2Package,v2RevisionHash} from '../src/content-package-v2.mjs';
 const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
 const publicCore=await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
 
-test('paired V2 media contracts accept 160 variants and opaque family identity without changing legacy packages',async()=>{
+test('paired V2 media contracts accept 60 variants and opaque family identity without changing legacy packages',async()=>{
  const studio=JSON.parse(await readFile(new URL('../schemas/content-package.v2.schema.json',import.meta.url),'utf8'));
  const renderer=JSON.parse(await readFile(path.join(publicRoot,'schemas/content-package.v2.schema.json'),'utf8'));
  assert.deepEqual(studio,renderer);
  const pkg=v2Fixture(),page=pkg.pages[0];
  assert.equal(validateV2Package(pkg),pkg);assert.equal(publicCore.validateContentPackage(pkg),pkg);
- page.media=Array.from({length:160},(_,i)=>({id:`image-${i}`,familyId:`frame-${Math.floor(i/5)}`,src:`/content-assets/${pkg.siteId}/image-${i}.webp`,alt:'Same descriptive product text',width:800,height:600,rights:'Synthetic test only'}));
+ page.media=Array.from({length:60},(_,i)=>({id:`image-${i}`,familyId:`frame-${Math.floor(i/5)}`,src:`/content-assets/${pkg.siteId}/image-${i}.webp`,alt:'Same descriptive product text',width:800,height:600,rights:'Synthetic test only'}));
  page.revisionHash=v2RevisionHash(page);page.approval.revisionHash=page.revisionHash;
  validateV2Package(pkg);publicCore.validateContentPackage(pkg);
  page.media[0].familyId='new-frame';

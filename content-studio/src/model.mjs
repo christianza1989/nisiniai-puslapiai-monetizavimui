@@ -24,7 +24,7 @@ export const PAGE_TYPES = new Set(['home', 'service', 'product', 'guide', 'faq',
 const V2_PAGE_TYPES = new Set([...PAGE_TYPES,'article','index','author','policy','about','contact']);
 const publicSite = site => ({id:site.id,name:site.name,canonicalHost:site.canonicalHost,locale:site.locale,timezone:site.timezone,brand:site.brand,offer:site.offer,contact:site.contact,...(site.schemaVersion===2?{renderer:site.renderer,operatorName:site.operatorName}: {})});
 const emptyEditorial = () => ({category:'',readingMinutes:0,authors:[],sources:[],datePublished:null,dateModified:null,productRecommendation:false,featuredImageId:null,relatedPageIds:[],commerceTargets:[]});
-export const MAX_PAGE_MEDIA = 160;
+export const MAX_PAGE_MEDIA = 60;
 let mutation = Promise.resolve();
 
 const seeds = [

@@ -1,11 +1,13 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { initialize, ROOT, getSite, listSites, listCalendar, createSite, editSite, addPage, editPage, deleteDraftPage, approvePage, revokePage, exportPackage, listJobs, saveResponsiveAsset, getAssetFile } from './model.mjs';
 import { enqueue } from './generator.mjs';
 import { listNetworkLinks } from './model.mjs';
 import { getContentWorkflow, finalizeInternalLinks, recordEditorialReview, approveReviewedBatch, releaseContent } from './model.mjs';
-import { imageSrcSet, visibleImageCredit } from '../../../dovanos-memorycasting/lib/niche-media.mjs';
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
+const { imageSrcSet, visibleImageCredit } = await import(pathToFileURL(path.join(publicRoot,'lib/niche-media.mjs')));
 
 const PORT = Number(process.env.STUDIO_PORT || 4317);
 const PUBLIC = path.join(ROOT, 'public');

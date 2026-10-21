@@ -396,3 +396,5 @@ the source edit window is released with that handoff, without merging.
 Issue219 HANDOFF: draft PR220 to main, implementation b01b2a93; scoped coverage
 passed for all 7 shared changes and staged safety for 16 files. Freshness passed;
 the own edit window is released. Remote CI/review/merge/adoption remain separate.
+
+2026-10-21 Promedical gallery media RESERVED, issue236: own branches codex/promedical-gallery-media-core-20261021 / codex/promedical-gallery-media-public-20261021, fresh core e231fe49 / public8a741610. Scope canonical model familyId export, server companion path override, V1/V2 schema capacity160, responsive family helper/type and targeted tests, MEDIA_CORE and own journal. Root owns product content/import/review/release/deployment; renderer agent owns gallery UI/SEO. No historical package or live studio mutations.

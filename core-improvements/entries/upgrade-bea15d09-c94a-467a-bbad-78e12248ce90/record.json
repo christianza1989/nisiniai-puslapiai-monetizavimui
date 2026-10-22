@@ -1,0 +1,26 @@
+{
+  "siteId": "promedical",
+  "summary": "Two genuine manufacturer PNG originals fit existing40MP/8192 guards but exceed12MiB encoded input; HTTP18MiB base64 and GUI12MiB guards also block them. Align one16MiB binary policy and bounded24MiB JSON route without source preprocessing/upscale.",
+  "category": "code",
+  "evidence": [
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md",
+    "content-studio/test/media-byte-limit.test.mjs",
+    "content-studio/test/image-pipeline.test.mjs"
+  ],
+  "paths": [
+    "content-studio/src/image-pipeline.mjs",
+    "content-studio/src/server.mjs",
+    "content-studio/public/app.js",
+    "content-studio/test/media-byte-limit.test.mjs",
+    "content-studio/test/image-pipeline.test.mjs",
+    "content-studio/test/fixtures/png-bytes.mjs",
+    "MEDIA_CORE.md",
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/236",
+  "rollback": "Scoped revert input byte policy, HTTP allowance and GUI metadata consumption together. Preserve original/output bytes, historical packages and approvals; do not substitute lower-resolution images silently.",
+  "id": "upgrade-bea15d09-c94a-467a-bbad-78e12248ce90",
+  "branch": "codex/promedical-gallery-media-core-20261021",
+  "baseSha": "70e61f99a9d0634cf6f19d7cb0ff7442bf91c395",
+  "createdAt": "2026-10-21T11:19:48.980Z"
+}

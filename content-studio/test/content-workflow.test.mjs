@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
 import sharp from 'sharp';
 import { contentPolicy, localPublishAt, planningWindow, scheduledPlan } from '../src/content-schedule.mjs';
 import { v2Fixture } from './fixtures/v2.mjs';
-import { projectPublicPages } from '../../../dovanos-memorycasting/lib/niche-links.mjs';
-import { validateContentPackage } from '../../../dovanos-memorycasting/scripts/content-package-core.mjs';
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
+const { projectPublicPages } = await import(pathToFileURL(path.join(publicRoot,'lib/niche-links.mjs')));
+const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
 import { verifyContentRelease } from '../src/content-release.mjs';
 
 const root = await mkdtemp(path.join(os.tmpdir(), 'content-workflow-'));

@@ -1,0 +1,16 @@
+{
+  "status": "adopted",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/242",
+  "commit": "beb7031954d46a58e451cc96caf76e7501696023",
+  "note": "Actual promedical Worker 4262d312-9ee9-4324-8344-24ef2e98bf54 deployed0% full acceptance then100% full unforced acceptance.1402 exact title/meta/body and F01 PASS;296 pagination/574 historical forms,55 held404,8 browser states PASS. All130 uploaded module bytes match built source; all10 registries unchanged. Local9-site regression PASS;96 external endpoints preexisting DNS unavailable. Final OAuth401 retained and confirmed with refreshed authentication; no repeat deployment. Other PCs not claimed adopted.",
+  "checks": [
+    {
+      "command": "Actual candidate0% and unforced production100% acceptance",
+      "result": "PASS",
+      "evidence": "D:/Core/output/promedical-f02-preflight-20261021/success.json; final-confirmation.json; auth-resume.json"
+    }
+  ],
+  "eventId": "abd1bd9b-a9f0-4782-b784-acc95f3f2a58",
+  "sequence": 7,
+  "at": "2026-10-21T14:57:27.093Z"
+}

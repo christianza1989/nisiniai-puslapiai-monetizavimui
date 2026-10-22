@@ -1,0 +1,19 @@
+{
+  "evidence": [
+    "docs/PROMEDICAL_F01_F19_20261021.md",
+    "https://github.com/christianza1989/niche-public-core/issues/47"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/237",
+  "category": "code",
+  "rollback": "Revert only this scoped PR; retain immutable audit evidence. No production state changed.",
+  "summary": "Catalog membership depended on product editorial links, losing78 classifications and omitting category breadcrumbs and contextual HTML links. Use a separate ID catalog and one eligible navigation projection; expose distant catalog pages.",
+  "siteId": "promedical",
+  "paths": [
+    "SEO_GEO_CORE.md",
+    "docs/PROMEDICAL_F01_F19_20261021.md"
+  ],
+  "id": "upgrade-3f4d0aa1-1ba5-40d2-8728-82ae8a73ac9a",
+  "branch": "codex/promedical-f01-auto-related-20261021",
+  "baseSha": "e231fe491e663949adbdda992286f5b8fb97513b",
+  "createdAt": "2026-10-21T11:58:51.756Z"
+}

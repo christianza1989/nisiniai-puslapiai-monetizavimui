@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 import {mkdtemp,readFile,readdir,rm} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
 import sharp from 'sharp';
 const root=await mkdtemp(path.join(os.tmpdir(),'niche-media-test-'));
 process.env.STUDIO_DATA_DIR=path.join(root,'data');process.env.STUDIO_OUTPUT_DIR=path.join(root,'output');process.env.STUDIO_PORT='4326';
 const model=await import('../src/model.mjs');const {createServer}=await import('../src/server.mjs');
-const {validateContentPackage}=await import('../../../dovanos-memorycasting/scripts/content-package-core.mjs');
+const publicRoot=process.env.STUDIO_PUBLIC_CORE_DIR||path.resolve(import.meta.dirname,'../../../dovanos-memorycasting');
+const {validateContentPackage}=await import(pathToFileURL(path.join(publicRoot,'scripts/content-package-core.mjs')));
 await model.initialize();
 test('HTTP upload optimizes once, attaching one image includes all variants, and approval/export stay isolated',async()=>{
  const site=await model.createSite({canonicalHost:'media-test.invalid',name:'Privatus media bandymas',offer:'Izoliuotas failų importo testas'});
@@ -30,6 +32,7 @@ test('HTTP upload optimizes once, attaching one image includes all variants, and
   for(let i=0;i<3;i++)extra.push(await model.saveResponsiveAsset(site.id,{mime:'image/png',alt:`Limitų kompozicija ${i}`,rights:'Synthetic test only'},bytes));
   const exported=await model.exportPackage(site.id),pkg=JSON.parse(await readFile(exported.path,'utf8'));validateContentPackage(pkg);
   assert.equal(exported.assets,5);assert.equal(pkg.pages[0].media.length,5);assert.equal(JSON.stringify(pkg).includes('groupId'),false);assert.equal(JSON.stringify(pkg).includes('Exact test generation'),false);
+  assert.ok(pkg.pages[0].media.every(item=>item.familyId===imported.groupId));
   const files=await readdir(path.join(root,'output',site.id,'assets'));assert.ok(files.every(f=>f.endsWith('.webp')));assert.equal(files.length,5);
   assert.ok((await readdir(path.join(root,'data','media-originals',site.id))).some(f=>f.endsWith('.png')));
   const original=await fetch(`http://127.0.0.1:4326/api/media/${site.id}/${imported.groupId}.png`);assert.notEqual(original.status,200);

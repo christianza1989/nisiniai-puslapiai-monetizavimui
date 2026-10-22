@@ -1,0 +1,19 @@
+{
+  "siteId": "core",
+  "summary": "Private V1 preview H1 clips long Lithuanian words at narrow Windows viewports; emergency word wrapping preserves the copy and type scale.",
+  "category": "code",
+  "evidence": [
+    "docs/STUDIO_PREVIEW_HEADING_WRAP_VERIFICATION.md"
+  ],
+  "paths": [
+    "content-studio/src/server.mjs",
+    "content-studio/README.md",
+    "docs/STUDIO_PREVIEW_HEADING_WRAP_VERIFICATION.md"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/231",
+  "rollback": "Revert the scoped H1 wrapping rule and associated documentation; no data migration.",
+  "id": "upgrade-abfee00d-42fc-4b85-945e-e1b57cc39bd5",
+  "branch": "codex/studio-preview-heading-wrap-20261020",
+  "baseSha": "e231fe491e663949adbdda992286f5b8fb97513b",
+  "createdAt": "2026-10-20T05:40:19.192Z"
+}

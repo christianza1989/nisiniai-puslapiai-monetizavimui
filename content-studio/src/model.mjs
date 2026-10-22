@@ -1,3 +1,4 @@
+import { composeReviewedOverlay, releaseSha } from './scoped-content-release.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import { mkdir, readFile, readdir, rename, writeFile, copyFile, stat } from 'node:fs/promises';
 import path from 'node:path';
@@ -25,6 +26,7 @@ const V2_PAGE_TYPES = new Set([...PAGE_TYPES,'article','index','author','policy'
 const publicSite = site => ({id:site.id,name:site.name,canonicalHost:site.canonicalHost,locale:site.locale,timezone:site.timezone,brand:site.brand,offer:site.offer,contact:site.contact,...(site.schemaVersion===2?{renderer:site.renderer,operatorName:site.operatorName}: {})});
 const emptyEditorial = () => ({category:'',readingMinutes:0,authors:[],sources:[],datePublished:null,dateModified:null,productRecommendation:false,featuredImageId:null,relatedPageIds:[],commerceTargets:[]});
 export const MAX_PAGE_MEDIA = 120;
+export const MAX_MEDIA_BATCH_PAGES = 100;
 let mutation = Promise.resolve();
 
 const seeds = [
@@ -328,6 +330,42 @@ export async function mergePlan(siteId, proposals, months = 0) {
     return { added, total: site.pages.length };
   });
 }
+// One canonical attachment normalizer for single-page editing and bounded
+// catalogue batches. The index is site-local and built once per operation.
+function mediaAttachmentIndex(site) {
+  const assets=new Map(),families=new Map();
+  for(const asset of site.assets) {
+    if(!assets.has(asset.id))assets.set(asset.id,asset);
+    if(asset.groupId) {
+      if(!families.has(asset.groupId))families.set(asset.groupId,[]);
+      families.get(asset.groupId).push(asset);
+    }
+  }
+  for(const family of families.values())family.sort((a,b)=>b.width-a.width);
+  return {assets,families};
+}
+function normalizePageMedia(input,index) {
+  const media=[],seen=new Set(),selectedAlts=new Map();
+  for(const item of Array.isArray(input)?input:[]) {
+    const asset=index.assets.get(item?.id);
+    if(!asset)throw new Error('Vaizdas nepriklauso šiai svetainei.');
+    const hasAlt=Object.hasOwn(item,'alt');
+    if(hasAlt&&(typeof item.alt!=='string'||!item.alt.trim()||item.alt.length>300))throw new Error('Puslapio vaizdo alt turi būti netuščias tekstas iki 300 ženklų; tekstas netrumpinamas.');
+    const selectedAlt=hasAlt?item.alt:asset.alt;
+    const familyKey=asset.groupId?`family:${asset.groupId}`:`asset:${asset.id}`;
+    if(selectedAlts.has(familyKey)&&selectedAlts.get(familyKey)!==selectedAlt)throw new Error('Tos pačios vaizdo šeimos alt aprašai negali skirtis viename priskyrime.');
+    selectedAlts.set(familyKey,selectedAlt);
+    const family=asset.groupId?index.families.get(asset.groupId):[asset];
+    for(const member of family) {
+      if(seen.has(member.id))continue;
+      seen.add(member.id);
+      const {id,src,alt,width,height,credit,rights}=member;
+      media.push({id,src,alt:hasAlt?item.alt:alt,width,height,credit,rights,...(member.groupId?{familyId:member.groupId}:{})});
+    }
+  }
+  if(media.length>MAX_PAGE_MEDIA)throw new Error(`Puslapyje telpa iki ${MAX_PAGE_MEDIA} medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.`);
+  return media;
+}
 export async function editPage(siteId, pageId, input) {
   return locked(async () => {
     const site = await getSite(siteId);
@@ -359,20 +397,31 @@ export async function editPage(siteId, pageId, input) {
     })).filter(item => item.targetPageId !== page.id && site.pages.some(target => target.id === item.targetPageId));
     if ('links' in input) page.links = (Array.isArray(input.links) ? input.links : []).slice(0, 30).map(item => ({ targetPageId: plain(item.targetPageId, 80), label: plain(item.label, 160) }));
     if ('networkLinkSuggestions' in input) page.networkLinkSuggestions = normalizeNetworkSuggestions(input.networkLinkSuggestions);
-    if ('media' in input) {
-      const media=[];const seen=new Set();
-      for(const item of Array.isArray(input.media)?input.media:[]){
-        const asset=site.assets.find(a=>a.id===item.id);
-        if(!asset)throw new Error('Vaizdas nepriklauso šiai svetainei.');
-        const family=asset.groupId?site.assets.filter(a=>a.groupId===asset.groupId).sort((a,b)=>b.width-a.width):[asset];
-        for(const member of family){if(seen.has(member.id))continue;seen.add(member.id);const {id,src,alt,width,height,credit,rights}=member;media.push({id,src,alt,width,height,credit,rights});}
-      }
-      if(media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 120 medijos variantų. Priskirkite mažiau atskirų vaizdų; variantai netrumpinami tyliai.');
-      page.media=media;
-    }
+    if ('media' in input) page.media=normalizePageMedia(input.media,mediaAttachmentIndex(site));
     page.status = 'review'; page.approval = null; page.updatedAt = new Date().toISOString();
     await writeJson(siteFile(siteId), site);
     return page;
+  });
+}
+// Media-only: no hidden title/body/date/siteSnapshot changes, no approval and no
+// publication. Every candidate is validated before the single site write.
+export async function editPageMediaBatch(siteId,entries) {
+  return locked(async()=>{
+    if(!Array.isArray(entries)||entries.length<1||entries.length>MAX_MEDIA_BATCH_PAGES)throw new Error(`Medijos partijoje turi būti nuo 1 iki ${MAX_MEDIA_BATCH_PAGES} puslapių.`);
+    const site=await getSite(siteId),pages=new Map(site.pages.map(page=>[page.id,page]));
+    const index=mediaAttachmentIndex(site),selected=new Set(),prepared=[];
+    for(const entry of entries) {
+      if(!entry||typeof entry!=='object'||Array.isArray(entry)||Object.keys(entry).some(key=>!['pageId','media'].includes(key))||typeof entry.pageId!=='string'||!entry.pageId.trim()||!Array.isArray(entry.media))throw new Error('Medijos partijos įrašui reikia tik pageId ir media masyvo.');
+      if(selected.has(entry.pageId))throw new Error('Medijos partijoje puslapio ID negali kartotis.');
+      selected.add(entry.pageId);
+      const page=pages.get(entry.pageId);
+      if(!page)throw Object.assign(new Error('Puslapis nerastas šioje svetainėje.'),{status:404});
+      prepared.push({page,media:normalizePageMedia(entry.media,index)});
+    }
+    const updatedAt=new Date().toISOString();
+    for(const {page,media} of prepared)Object.assign(page,{media,status:'review',approval:null,updatedAt});
+    await writeJson(siteFile(siteId),site);
+    return prepared.map(({page})=>page);
   });
 }
 export async function deleteDraftPage(siteId, pageId) {
@@ -406,7 +455,7 @@ async function approveDraft(site, page, actorId, batchIds = new Set()) {
       if ((block.type === 'paragraph' || block.type === 'heading') && !block.text) throw new Error('Puslapyje yra tuščias teksto blokas.');
       if (block.type === 'list' && (!block.items.length || block.items.some(item => !item))) throw new Error('Puslapyje yra tuščias sąrašas.');
     }
-    if(page.media.length>MAX_PAGE_MEDIA)throw new Error('Puslapyje telpa iki 120 medijos variantų.');
+    if(page.media.length>MAX_PAGE_MEDIA)throw new Error(`Puslapyje telpa iki ${MAX_PAGE_MEDIA} medijos variantų.`);
     for (const item of page.media) if (!item.alt || !item.rights || !item.width || !item.height) throw new Error('Vaizdams reikia alt teksto, matmenų ir naudojimo teisių.');
     for (const block of page.body) if (block.type === 'image' && !page.media.some(item => item.id === block.assetId)) throw new Error('Turinio vaizdas nėra priskirtas puslapio medijai.');
     for (const link of page.links) if (!link.label || !site.pages.some(item => item.id === link.targetPageId && (page.contentVersion===2||item.publishedRevision||batchIds.has(item.id)))) throw new Error('Vidinė nuoroda nurodo nepatvirtintą arba nežinomą puslapį.');
@@ -500,6 +549,79 @@ export async function releaseContent(siteId) {
   const manifestPath = path.join(path.dirname(result.path), 'release-manifest.json');
   await writeJson(manifestPath, manifest);
   return { ...result, manifestPath, packageSha256: manifest.packageSha256, state: manifest.state };
+}
+// Scoped approval validates the pinned complete public graph, rather than
+// unrelated mutable/retired local drafts. Ordinary full approval is unchanged.
+export async function approveReviewedOverlay(siteId, input, actorId) {
+  return locked(async () => {
+    if (!input || !/^[a-f0-9]{64}$/.test(input.expectedBasePackageSha256 ?? '') || !input.basePackagePath) throw new Error('Scoped approval requires exact baseline package/hash.');
+    const baseBytes = await readFile(path.resolve(input.basePackagePath));
+    if (releaseSha(baseBytes) !== input.expectedBasePackageSha256) throw new Error('Pinned baseline package bytes changed.');
+    const site = await getSite(siteId), pages = selectedPages(site, input.pageIds), ids = new Set(input.pageIds);
+    const expected = input.expectedRevisionHashes;
+    if (!expected || Object.keys(expected).length !== pages.length || pages.some(page => expected[page.id] !== revisionHash(page))) throw new Error('Scoped approval expected revisions changed.');
+    for (const page of pages) {
+      const ready = pageReadiness(site, page, revisionHash(page), ids);
+      if (ready.blockers.length) throw new Error(`${page.slug || '/'}: ${ready.blockers.join(' ')}`);
+      for (const item of page.media) await stat(path.join(MEDIA_DIR, site.id, path.basename(item.src)));
+    }
+    for (const page of pages) await approveDraft(site, page, actorId, ids);
+    const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
+    const { pathToFileURL } = await import('node:url');
+    const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
+    composeReviewedOverlay(site, JSON.parse(baseBytes), input.pageIds, revisionHash, validateContentPackage);
+    await writeJson(siteFile(siteId), site);
+    return { siteId, approved: input.pageIds, baselineSha256: input.expectedBasePackageSha256, deployment: 'not-performed' };
+  });
+}
+export async function releaseReviewedOverlay(siteId, input) {
+  return locked(async () => {
+    if (!input || !/^[a-f0-9]{64}$/.test(input.expectedBasePackageSha256 ?? '') || !input.basePackagePath || !input.baseAssetsDirectory) throw new Error('Scoped release requires exact baseline package/hash and asset directory.');
+    const source = input.baselineEvidence;
+    if (!source || typeof source.sourceVersion !== 'string' || !source.sourceVersion.trim() || typeof source.deploymentId !== 'string' || !source.deploymentId.trim() || !Number.isFinite(Date.parse(source.observedAt))) throw new Error('Scoped release requires explicitly observed deployed-baseline evidence.');
+    const baseBytes = await readFile(path.resolve(input.basePackagePath));
+    if (releaseSha(baseBytes) !== input.expectedBasePackageSha256) throw new Error('Pinned baseline package bytes changed.');
+    const base = JSON.parse(baseBytes), site = await getSite(siteId);
+    const publicRoot = process.env.STUDIO_PUBLIC_CORE_DIR || path.resolve(ROOT, '../../dovanos-memorycasting');
+    const { pathToFileURL } = await import('node:url');
+    const { validateContentPackage } = await import(pathToFileURL(path.join(publicRoot, 'scripts/content-package-core.mjs')));
+    const pkg = composeReviewedOverlay(site, base, input.pageIds, revisionHash, validateContentPackage);
+    const selected = new Set(input.pageIds), baselineNames = new Set(base.pages.flatMap(p => p.media.map(m => path.basename(m.src))));
+    const selectedNames = new Set(pkg.pages.filter(p => selected.has(p.id)).flatMap(p => p.media.map(m => path.basename(m.src))));
+    const expectedAssets = input.expectedBaseAssets;
+    if (!Array.isArray(expectedAssets) || expectedAssets.length !== baselineNames.size || new Set(expectedAssets.map(a => a.name)).size !== baselineNames.size || expectedAssets.some(a => !baselineNames.has(a.name) || !/^[a-zA-Z0-9._-]+\.(webp|avif)$/.test(a.name) || !/^[a-f0-9]{64}$/.test(a.sha256))) throw new Error('Scoped release requires the pinned baseline media inventory.');
+    if (!/^[a-f0-9]{64}$/.test(input.expectedBaseAssetsSha256 ?? '') || releaseSha(stable(expectedAssets)) !== input.expectedBaseAssetsSha256) throw new Error('Pinned baseline media inventory hash mismatch.');
+    const expectedAssetHashes = new Map(expectedAssets.map(a => [a.name, a.sha256]));
+    for (const name of baselineNames) {
+      const bytes = await readFile(path.join(path.resolve(input.baseAssetsDirectory), name));
+      if (releaseSha(bytes) !== expectedAssetHashes.get(name)) throw new Error('Pinned baseline media bytes changed.');
+      if (selectedNames.has(name)) {
+        const current = await readFile(path.join(MEDIA_DIR, siteId, name));
+        if (releaseSha(current) !== releaseSha(bytes)) throw new Error('Existing baseline media path changed in place.');
+      }
+    }
+    const target = path.join(OUTPUT, 'releases', siteId, randomUUID());
+    await mkdir(path.join(target, 'assets'), { recursive: true });
+    const assets = [];
+    for (const name of new Set(pkg.pages.flatMap(p => p.media.map(m => path.basename(m.src))))) {
+      const sourceFile = baselineNames.has(name) ? path.join(path.resolve(input.baseAssetsDirectory), name) : path.join(MEDIA_DIR, siteId, name);
+      const bytes = await readFile(sourceFile);
+      if (baselineNames.has(name) && releaseSha(bytes) !== expectedAssetHashes.get(name)) throw new Error('Pinned baseline media changed during release copy.');
+      await writeFile(path.join(target, 'assets', name), bytes, { flag: 'wx' });
+      assets.push({ name, sha256: releaseSha(bytes) });
+    }
+    await writeFile(path.join(target, 'baseline-content-package.json'), baseBytes, { flag: 'wx' });
+    await writeJson(path.join(target, 'content-package.json'), pkg);
+    const bytes = await readFile(path.join(target, 'content-package.json'));
+    const manifest = { version: 1, siteId, canonicalHost: pkg.canonicalHost, packageSha256: releaseSha(bytes), assets, createdAt: new Date().toISOString(),
+      scope: { kind: 'reviewed-overlay', pageIds: input.pageIds, baseline: { file: 'baseline-content-package.json', sha256: input.expectedBasePackageSha256, evidence: source, assets: expectedAssets, assetsSha256: input.expectedBaseAssetsSha256 } },
+      pages: pkg.pages.map(page => ({ pageId: page.id, revisionHash: page.revisionHash, publishAt: page.publishAt,
+        ...(selected.has(page.id) ? { review: site.pages.find(p => p.id === page.id).editorialReview } : { inheritedApproval: { kind: 'pinned-baseline', packageSha256: input.expectedBasePackageSha256 } }) })),
+      state: 'exported-not-deployed', next: 'Verify scoped unchanged-baseline invariants; import/build/deploy independently.' };
+    const manifestPath = path.join(target, 'release-manifest.json');
+    await writeJson(manifestPath, manifest);
+    return { path: path.join(target, 'content-package.json'), manifestPath, packageSha256: manifest.packageSha256, pages: pkg.pages.length, changedPageIds: input.pageIds, state: manifest.state };
+  });
 }
 function assertReviewedSnapshot(site) {
   const approved = site.pages.filter(p => p.publishedRevision);
@@ -628,13 +750,18 @@ export async function editDraftAssetMetadata(siteId, assetId, input, actorId = '
       changes[key] = value;
     }
     const updatedAt = new Date().toISOString();
+    const previousAlts=new Map(family.map(member=>[member.id,member.alt]));
     for (const member of family) {
       member.metadataHistory = [...(member.metadataHistory || []), { updatedAt, actorId: plain(actorId, 120), before: { alt: member.alt, credit: member.credit || '' } }];
       Object.assign(member, changes);
     }
     const affectedPageIds = [];
     for (const page of site.pages) if (page.media.some(item => ids.has(item.id))) {
-      for (const member of page.media) if (ids.has(member.id)) Object.assign(member, changes);
+      for (const member of page.media) if (ids.has(member.id)) {
+        const contextualAlt=member.alt!==previousAlts.get(member.id)?member.alt:undefined;
+        Object.assign(member, changes);
+        if(contextualAlt!==undefined)member.alt=contextualAlt;
+      }
       page.status = 'review'; page.approval = null; page.updatedAt = updatedAt;
       page.revisionHash = revisionHash(page);
       affectedPageIds.push(page.id);

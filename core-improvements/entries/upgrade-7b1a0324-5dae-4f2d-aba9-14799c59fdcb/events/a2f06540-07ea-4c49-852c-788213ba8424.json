@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Scoped source81af8ea6 verified and frontend3d1b197f-002a-4f76-9b77-6b276bd00665 active; main merge is separate.",
+  "checks": [
+    {
+      "command": "npm run test:core; node node_modules/typescript/bin/tsc --noEmit; scoped ESLint; npm run build",
+      "result": "PASS",
+      "evidence": "qa/footer-20261022/tests-final.private.log; types.private.log; lint-final.private.log; build-final.private.log"
+    },
+    {
+      "command": "Batched Chrome desktop/mobile/font-spacing review; hosted route/media/discovery audit",
+      "result": "PASS",
+      "evidence": "sites/memocasting/FOOTER_2026_10_22.md"
+    }
+  ],
+  "eventId": "a2f06540-07ea-4c49-852c-788213ba8424",
+  "sequence": 2,
+  "at": "2026-10-22T21:09:22.851Z"
+}

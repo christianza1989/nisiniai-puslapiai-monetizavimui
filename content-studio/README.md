@@ -77,3 +77,7 @@ Modelio mutacijos serializuojamos process-local ir atominiu tarp-procesiniu `.mo
 ## Bendras visų nišų review ir release (2026-10-05)
 
 CONTENT_CORE.md yra aktuali bendra eiga: policy/kadencija/timezone, kelių CLI partijų V1 generavimas, draft link finalizavimas, revision-bound agento review, atomic batch approval ir immutable release su paketo/media SHA. GUI turi Turinio eiga. V1 generavimo užduotis įjungia griežtus naujus review/export vartus; legacy įrašai migruoja su realia peržiūra. V2 review/release bendri, jo tekstinis generatorius vis dar OFF. Agentas turi faktiškai patikrinti turinį/asetus; receipt pildymas nėra patikra. Release lieka exported-not-deployed. Skaityti [CONTENT_CORE](../CONTENT_CORE.md); prieš importą naudoti scripts/verify-content-release.mjs. Ankstesnės instrukcijos apie tik planuojamą įrodymų žurnalą pakeistos šiuo inkrementu.
+
+## Ilgos peržiūros antraštės
+
+V1 privačios peržiūros H1 naudoja avarinį ilgo žodžio laužymą, kai žodis netelpa ekrane. Tekstas, šrifto dydžio skalė ir įprastas laužymas tarp žodžių išsaugomi. Tikrinant siaurą ekraną lyginamas dokumento clientWidth (be slankjuostės) ir tikros teksto ribos; vien innerWidth gali paslėpti apkirpimą. Ši taisyklė nekeičia viešo rendererio ar turinio patvirtinimų.

@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Both original 320px H1 clipping failures reproduced and fixed in an isolated QA server. Original studio4317 remains unchanged; publication and runtime adoption are separate.",
+  "checks": [
+    {
+      "command": "npm test (content-studio)",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_PREVIEW_HEADING_WRAP_VERIFICATION.md:47 tests passed,0 failed."
+    },
+    {
+      "command": "Playwright paired V1 preview checks at1280/390/320, plus CSS font200percent and text spacing overrides",
+      "result": "PASS",
+      "evidence": "docs/STUDIO_PREVIEW_HEADING_WRAP_VERIFICATION.md:12 paired observations with identical visible copy and computed font sizes; fixed H1 glyphs within document.clientWidth."
+    }
+  ],
+  "eventId": "1626886c-7bf6-4782-b703-3f4dad38ec46",
+  "sequence": 2,
+  "at": "2026-10-20T05:40:53.090Z"
+}

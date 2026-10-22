@@ -1,0 +1,19 @@
+{
+  "status": "local-verified",
+  "note": "Only the V2 test fixture changed: exact package-directory identity replaces a stale nine-package count; isolated compiler dependencies are copied from the actual companion. The first full run exposed these two fixture failures. A later large HTTP upload fixture transiently reset its local connection; unchanged isolated retry and final full serial62-test run passed. Original failure logs remain private and are not relabelled PASS. Runtime, validation assertions, approval rules and caps are unchanged.",
+  "checks": [
+    {
+      "command": "node --test content-studio/test/content-v2.test.mjs",
+      "result": "PASS",
+      "evidence": "Current ten-package companion, exact schema/hash equality, genuine shadow import and ordinary V2 compile rejection at the intended admission gate all pass."
+    },
+    {
+      "command": "node --test --test-concurrency=1 content-studio/test/*.test.mjs",
+      "result": "PASS",
+      "evidence": "All62 tests pass, zero skips/cancellations; actual paired companion with gallery family support and scoped overlay dependency."
+    }
+  ],
+  "eventId": "b0c87dd7-5ddb-40af-a507-7c4961d20a96",
+  "sequence": 2,
+  "at": "2026-10-21T17:25:05.107Z"
+}

@@ -1,0 +1,25 @@
+{
+  "siteId": "promedical",
+  "summary": "Responsive media lost immutable family identity at export, so equal descriptive alt could merge different product frames; 60 variants also rejected complete galleries above 12 five-size families.",
+  "category": "code",
+  "evidence": [
+    "docs/PROMEDICAL_GALLERY_MEDIA_2026-10-21.md",
+    "content-studio/test/media-import.test.mjs",
+    "content-studio/test/media-family-contract.test.mjs"
+  ],
+  "paths": [
+    "content-studio/src/model.mjs",
+    "content-studio/src/server.mjs",
+    "content-studio/schemas/content-package.schema.json",
+    "content-studio/schemas/content-package.v2.schema.json",
+    "MEDIA_CORE.md",
+    "content-studio/test/media-import.test.mjs",
+    "content-studio/test/media-family-contract.test.mjs"
+  ],
+  "issue": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/issues/236",
+  "rollback": "Revert scoped source commits in both repositories before any new package import. Preserve all historical approved snapshots/releases and private originals; do not silently discard variants or rewrite approval hashes.",
+  "id": "upgrade-6ddb36e1-f630-4ef3-bb7f-fb2ef35bfb0d",
+  "branch": "codex/promedical-gallery-media-core-20261021",
+  "baseSha": "e231fe491e663949adbdda992286f5b8fb97513b",
+  "createdAt": "2026-10-21T11:07:43.715Z"
+}

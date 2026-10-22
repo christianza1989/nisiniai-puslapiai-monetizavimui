@@ -1,0 +1,9 @@
+{
+  "status": "pr",
+  "note": "PUBLIC c6810dbe pushed to existing PR31 and adopted by this site's frontend74bbe063. 88 active301 and all23 distinct200 targets verified,90 future guards retained; source/main merge and other-machine adoption remain unclaimed. Original local Workerd failures are retained separately from actual edge PASS.",
+  "pr": "https://github.com/christianza1989/niche-public-core/pull/31",
+  "commit": "c6810dbed52621fe564e6363d51214921e710215",
+  "eventId": "188369bf-2f6d-4309-86f8-a6cd2600811a",
+  "sequence": 3,
+  "at": "2026-10-22T22:34:33.859Z"
+}

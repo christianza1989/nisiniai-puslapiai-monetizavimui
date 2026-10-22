@@ -32,6 +32,8 @@ For each worthwhile old URL, inspect what it actually answered and compare it to
 
 Do not make hundreds of legacy product pages to satisfy an archive count. In phase one review a small useful subset; product stock and purchase intent cannot automatically redirect to a general technical guide. Query-string identities such as `product.php?id=42` are distinct until deliberately mapped, not silently collapsed to one path. If an old path already serves our approved page, reconcile with that revision rather than overwriting it.
 
+For an alias that may later be replaced by a restored native page, test both publication boundaries: before restoration the approved successor may receive the redirect; once the original path is itself publicly eligible, its native page must take precedence. Do not let an older alias hide a different restored SKU. Retired storefront-password GET/HEAD aliases can lead to the owner's explicitly chosen public landing page, but must not forward credential or return-destination query values; authentication writes and nested recovery paths stay outside SEO migration rules.
+
 Domain control alone does not establish rights to the old text, images, trademarks, reviews or business identity. Default to new writing and new lawful visuals. Prior operator contacts, experience and backlinks are not our confirmed facts. Do not recreate someone else's live business impression.
 
 ## SEO evidence and handoff

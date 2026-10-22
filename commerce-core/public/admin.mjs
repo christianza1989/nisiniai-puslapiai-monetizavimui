@@ -108,6 +108,9 @@ const errorNames = {
   private_storage_missing: 'Privati failų saugykla neprijungta.',
   private_file_integrity_failed: 'Failo kontrolinė suma nesutampa. Patikrinkite saugyklą.',
   invalid_shipping_plan: 'Pasirinkite siuntėjo vietą ir patikrinkite gavėjo bei pakuotės duomenis.',
+  carrier_locker_parcel_limit:
+    'Šiai paštomato paslaugai galima siųsti vieną pakuotę. Keliems atskiriems rinkiniams rinkitės kurjerį.',
+  shipment_sender_locker_mismatch: 'Pasirinkite užsakyme nurodytą siuntėjo paštomatą.',
   invalid_shipping_origin:
     'Įrašykite miestą, penkių skaitmenų Lietuvos pašto kodą ir vietos patvirtinimo paaiškinimą.',
   invalid_parcel_dimensions: 'Įrašykite teigiamą svorį ir visus tris tikrus dėžės matmenis.',

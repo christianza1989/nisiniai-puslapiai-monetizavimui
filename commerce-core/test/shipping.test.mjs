@@ -245,6 +245,7 @@ test('SP locker pagination filters country and rejects changing or duplicate pag
   assert.equal((await adapter.lockers('LT', 'dpd')).length, 1);
   assert.equal(new URL(calls[0].url).searchParams.get('filter[type][]'), 'dpd');
   assert.equal(calls[0].method, 'POST');
+  assert.equal(new URL(calls[0].url).searchParams.get('filter[country][]'), 'LT');
   await assert.rejects(
     connector((_u, _o, n) => ({
       page: n,

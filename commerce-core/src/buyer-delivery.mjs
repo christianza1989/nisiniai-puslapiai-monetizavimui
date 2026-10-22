@@ -6,9 +6,13 @@ import {
   digest,
   integer,
 } from './validation.mjs';
+import { configuredDispatch, selectedLocker, lockerLocation } from './delivery-lockers.mjs';
 import { planParcels } from './parcels.mjs';
-export function deliveryFingerprint(input) {
-  const address = input.customer?.address;
+export function deliveryFingerprint(input, method) {
+  const address =
+    method?.kind === 'locker' && method.senderMode === 'locker'
+      ? lockerLocation(selectedLocker(method, input.customer?.lockerId))
+      : input.customer?.address;
   requireValue(
     address &&
       address.country === input.country &&
@@ -27,6 +31,7 @@ export function deliveryFingerprint(input) {
       country: input.country,
       currency: input.currency,
       deliveryId: input.deliveryId,
+      ...(input.customer?.lockerId ? { lockerId: input.customer.lockerId } : {}),
       city: address.city.trim(),
       postalCode: address.postalCode.trim(),
       isCompany: input.customer.isCompany === true,
@@ -47,7 +52,11 @@ export class BuyerDeliveryQuotes {
       'carrier_quotes_not_connected',
       503,
     );
-    const requestHash = await deliveryFingerprint(input);
+    const method = config.markets
+      .find((m) => m.country === input.country && m.currency === input.currency)
+      ?.delivery.find((d) => d.id === input.deliveryId);
+    const dispatch = configuredDispatch(config, method);
+    const requestHash = await deliveryFingerprint(input, method);
     const old = await this.s.one(
       'SELECT * FROM buyer_delivery_quotes WHERE store_id=? AND id=?',
       store,
@@ -63,9 +72,6 @@ export class BuyerDeliveryQuotes {
       );
       return { id: old.id, ...JSON.parse(old.payload_json).public, replayed: true };
     }
-    const method = config.markets
-      .find((m) => m.country === input.country && m.currency === input.currency)
-      ?.delivery.find((d) => d.id === input.deliveryId);
     requireValue(
       method?.pricing === 'carrier' &&
         method.enabled !== false &&
@@ -84,12 +90,22 @@ export class BuyerDeliveryQuotes {
       'shipping_origin_not_found',
       503,
     );
+    if (method.kind === 'locker' || dispatch?.locker)
+      requireValue(
+        packages.parcels.length <= (method.maxParcels ?? 1),
+        'carrier_locker_parcel_limit',
+        409,
+      );
+    const target =
+      method.senderMode === 'locker'
+        ? lockerLocation(selectedLocker(method, input.customer?.lockerId))
+        : input.customer.address;
     const offers = await adapter.quote({
-      sender: { ...config.dispatch, isCompany: config.dispatch.isCompany !== false },
+      sender: { ...dispatch, isCompany: dispatch.isCompany !== false },
       recipient: {
         country: input.country,
-        city: input.customer.address.city.trim(),
-        postalCode: input.customer.address.postalCode.trim(),
+        city: target.city.trim(),
+        postalCode: target.postalCode.trim(),
         isCompany: input.customer.isCompany === true,
       },
       parcels: packages.parcels,
@@ -100,6 +116,9 @@ export class BuyerDeliveryQuotes {
       .filter(
         (o) =>
           method.serviceIds.includes(o.serviceId) &&
+          (method.senderMode !== 'locker' ||
+            (o.senderAddressType === method.courier.toUpperCase() &&
+              o.recipientAddressType === method.courier.toUpperCase())) &&
           o.currency === base.currency &&
           integer(o.amount, 1),
       )
@@ -119,7 +138,8 @@ export class BuyerDeliveryQuotes {
       accountRef: adapter.accountRef,
       packageMode: 'individual',
       itemsHash: await digest(canonical(base.lines)),
-      dispatchHash: await digest(canonical(config.dispatch)),
+      dispatchHash: await digest(canonical(dispatch)),
+      ...(method.senderMode === 'locker' ? { dispatch } : {}),
       providerExpiresAt: null,
     };
     await this.s

@@ -126,6 +126,12 @@ export class ShipmentCommands {
       'shipping_not_allowed',
       409,
     );
+    if (order.snapshot.customer?.locker)
+      requireValue(
+        input.serviceId === order.snapshot.delivery.providerServiceId,
+        'shipment_quote_mismatch',
+        409,
+      );
     const sender = plan.payload.origin,
       customer = order.snapshot.customer;
     requireValue(completeSender(sender) && customer?.address, 'shipment_sender_incomplete', 409);

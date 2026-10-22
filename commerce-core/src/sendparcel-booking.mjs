@@ -260,18 +260,31 @@ export class SendparcelBookingAdapter extends SendparcelAdapter {
       phone: a.phone,
     });
     try {
-      let recipient = payload.recipient;
-      if (recipient.locker) {
-        const field = this.admission.lockerBindings?.[recipient.locker.courier];
-        if (this.admission.lockerVerificationFields?.[recipient.locker.courier] !== field)
-          return false;
-        if (field === 'terminalid' && fact.recipient.terminalId !== recipient.locker.providerId)
-          return false;
-        if (field === 'address2') recipient = { ...recipient, line2: recipient.locker.providerId };
-      }
+      const expectedAddress = (original, actual) => {
+        let recipient = original;
+        if (recipient.locker) {
+          const field = this.admission.lockerBindings?.[recipient.locker.courier];
+          if (this.admission.lockerVerificationFields?.[recipient.locker.courier] !== field)
+            return false;
+          if (field === 'terminalid') {
+            const id = recipient.locker.providerId;
+            // Omniva v1 terminalid is the directory zip. Later infos omits the
+            // field; retain exact zip, street, city and contacts verification.
+            const omitted =
+              actual.terminalId === null &&
+              recipient.locker.courier === 'omniva' &&
+              recipient.postalCode === id &&
+              actual.postalCode === id;
+            if (actual.terminalId !== id && !omitted) return false;
+          }
+          if (field === 'address2')
+            recipient = { ...recipient, line2: recipient.locker.providerId };
+        }
+        return canonical(comparable(recipient)) === canonical(comparable(actual));
+      };
       return (
-        canonical(comparable(payload.sender)) === canonical(comparable(fact.sender)) &&
-        canonical(comparable(recipient)) === canonical(comparable(fact.recipient)) &&
+        expectedAddress(payload.sender, fact.sender) &&
+        expectedAddress(payload.recipient, fact.recipient) &&
         canonical(
           payload.parcels.map((p) => ({
             weightGrams: p.weightGrams,

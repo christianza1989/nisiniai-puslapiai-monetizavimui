@@ -107,6 +107,23 @@ export class ShippingOperations {
         ...(input.companyCode ? { companyCode: input.companyCode } : {}),
       });
     }
+    if (input.locker) {
+      requireValue(
+        identifier(input.locker.id) &&
+          identifier(input.locker.courier) &&
+          text(input.locker.providerId, 1, 100) &&
+          input.locker.country === input.country &&
+          text(input.locker.label, 1, 200),
+        'invalid_shipping_origin',
+      );
+      p.locker = {
+        id: input.locker.id,
+        country: input.locker.country,
+        courier: input.locker.courier,
+        providerId: input.locker.providerId,
+        label: input.locker.label,
+      };
+    }
     return this.insert(
       store,
       'shipping_origins',
@@ -133,7 +150,15 @@ export class ShippingOperations {
       ),
     );
     requireValue(origin, 'shipping_origin_not_found', 404);
+    if (order.snapshot.delivery.dispatch)
+      requireValue(
+        canonical(origin.payload.locker) === canonical(order.snapshot.delivery.dispatch.locker),
+        'shipment_sender_locker_mismatch',
+        409,
+      );
     const packages = planParcels(order, input);
+    if (order.snapshot.customer?.locker || origin.payload.locker)
+      requireValue(packages.parcels.length <= 1, 'carrier_locker_parcel_limit', 409);
     const request = {
       orderId,
       originId: input.originId,
@@ -152,7 +177,11 @@ export class ShippingOperations {
         payload: {
           ...request,
           origin: origin.payload,
-          recipient: { ...order.snapshot.customer.address, isCompany: input.recipientIsCompany },
+          recipient: {
+            ...order.snapshot.customer.address,
+            isCompany: input.recipientIsCompany,
+            ...(order.snapshot.customer.locker ? { locker: order.snapshot.customer.locker } : {}),
+          },
           value: order.snapshot.lines.reduce((sum, l) => sum + l.unitAmount * l.quantity, 0),
           currency: order.currency,
         },
@@ -213,6 +242,11 @@ export class ShippingOperations {
       'carrier_offer_invalid',
       502,
     );
+    const order = await this.s.getOrder(store, env, plan.order_id);
+    if (order.snapshot.customer?.locker) {
+      const expected = order.snapshot.delivery.providerServiceId;
+      offers.splice(0, offers.length, ...offers.filter((o) => o.serviceId === expected));
+    }
     const payload = {
       ...request,
       offers,

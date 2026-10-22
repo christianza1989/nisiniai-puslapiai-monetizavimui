@@ -1,3 +1,4 @@
+import { configuredDispatch } from './delivery-lockers.mjs';
 import { configureProduct } from './product-config.mjs';
 import {
   CommerceError,
@@ -232,7 +233,7 @@ export class CommerceService {
           row &&
             row.environment === environment &&
             row.expires_at > this.now() &&
-            row.request_hash === (await deliveryFingerprint(input)),
+            row.request_hash === (await deliveryFingerprint(input, delivery)),
           'delivery_quote_conflict',
           409,
         );
@@ -240,7 +241,7 @@ export class CommerceService {
         requireValue(
           q.accountRef === store.shippingAccountRef &&
             delivery.serviceIds?.includes(q.providerServiceId) &&
-            q.dispatchHash === (await digest(canonical(store.dispatch))) &&
+            q.dispatchHash === (await digest(canonical(configuredDispatch(store, delivery)))) &&
             q.public.currency === market.currency &&
             q.itemsHash === (await digest(canonical(priced))),
           'delivery_quote_conflict',
@@ -269,6 +270,9 @@ export class CommerceService {
         label: deliveryLabel,
         ...(providerServiceId ? { providerServiceId, quoteId: input.deliveryQuoteId } : {}),
         kind: delivery.kind || 'door',
+        ...(delivery.senderMode === 'locker'
+          ? { dispatch: configuredDispatch(store, delivery) }
+          : {}),
       },
       amount,
     };

@@ -228,6 +228,7 @@ export class SendparcelAdapter {
           page,
           perPage: 100,
           'filter[type][]': courier,
+          'filter[country][]': country,
         },
         5 * 1024 * 1024,
         Math.min(remaining, 15000),

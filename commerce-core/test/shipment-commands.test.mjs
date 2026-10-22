@@ -805,3 +805,53 @@ test('one multipage or several label PDFs retain every byte and provider order w
   );
   x.db.close();
 });
+
+test('Omniva later infos may omit terminalid only when the exact terminal zip and full address still match', () => {
+  const a = new SendparcelBookingAdapter({
+    environment: 'sandbox',
+    accountRef: 'fixture',
+    apiPassword: 'fixture_key',
+    rateLimiter: { run: (_s, f) => f() },
+    bookingAdmission: {
+      approved: true,
+      protocol: 'legacy_single_attempt',
+      contractReference: 'TEST official zip mapping and actual staging infos20261022',
+      pricingProtocol: 'v1_fresh_quote_no_insurance',
+      serviceIds: ['228'],
+      lockerBindings: { omniva: 'terminalid' },
+      lockerVerificationFields: { omniva: 'terminalid' },
+    },
+  });
+  const sender = {
+      ...origin,
+      line1: 'Salininkų g. 129A',
+      postalCode: '77759',
+      locker: { courier: 'omniva', providerId: '77759' },
+    },
+    recipient = {
+      ...origin,
+      line1: 'Gabijos g. 36',
+      postalCode: '77776',
+      locker: { courier: 'omniva', providerId: '77776' },
+    };
+  const p = { sender, recipient, parcels: [{ weightGrams: 2200, dimensionsMm: [200, 200, 170] }] };
+  const fact = {
+    sender: { ...sender, terminalId: null, line1: 'Salininku g. 129A' },
+    recipient: { ...recipient, terminalId: null },
+    parcels: p.parcels,
+  };
+  assert.equal(a.verifyBooking(p, fact), true);
+  for (const change of [
+    { postalCode: '77777' },
+    { terminalId: '77777' },
+    { line1: 'Gabijos g. 37' },
+  ])
+    assert.equal(
+      a.verifyBooking(p, { ...fact, recipient: { ...fact.recipient, ...change } }),
+      false,
+    );
+  assert.equal(
+    a.verifyBooking(p, { ...fact, sender: { ...fact.sender, postalCode: '77777' } }),
+    false,
+  );
+});

@@ -1027,3 +1027,73 @@ test('one-page country choices exclude closed markets and fall back to the admit
     );
     assert.equal(country.value, 'LT');
   }));
+
+test('one-page locker search uses terminal address, restores courier address and falls back for two parcels', () =>
+  withDom(async () => {
+    const root = new Element('div'),
+      client = onePageClient(),
+      initialize = client.initialize;
+    client.initialize = async () => {
+      const data = await initialize();
+      data.markets = structuredClone(data.markets);
+      data.markets[0].delivery.push({
+        id: 'omniva',
+        label: 'Omniva paštomatas',
+        kind: 'locker',
+        maxParcels: 1,
+        amount: 472,
+        lockers: [
+          {
+            id: 'vilnius',
+            label: 'Vilnius NORFA',
+            address: 'Salininkų g. 129A',
+            city: 'Vilnius',
+            postalCode: '77759',
+          },
+          {
+            id: 'kaunas',
+            label: 'Kaunas RIMI',
+            address: 'Testinė g. 1',
+            city: 'Kaunas',
+            postalCode: '99911',
+          },
+        ],
+      });
+      return data;
+    };
+    await mountCheckout(root, {
+      client,
+      layout: 'one-page',
+      initialLines: [{ sku: 'couple', quantity: 1 }],
+    });
+    const delivery = field(root, 'delivery'),
+      locker = field(root, 'locker'),
+      search = field(root, 'lockerSearch'),
+      form = nodes(root).find((n) => n.tag === 'form');
+    field(root, 'line1').value = 'Home g. 5';
+    field(root, 'city').value = 'Vilnius';
+    field(root, 'postalCode').value = '01111';
+    delivery.value = 'omniva';
+    await delivery.fire('change');
+    assert.equal(search.parentElement.hidden, false);
+    search.value = 'kaun';
+    await search.fire('input');
+    assert.equal(locker.options.length, 2);
+    assert.equal(locker.options[1].value, 'kaunas');
+    locker.value = 'kaunas';
+    await locker.fire('change');
+    assert.equal(field(root, 'line1').value, 'Testinė g. 1');
+    assert.equal(field(root, 'city').value, 'Kaunas');
+    assert.equal(field(root, 'line1').parentElement.hidden, true);
+    delivery.value = 'courier';
+    await delivery.fire('change');
+    assert.equal(field(root, 'line1').value, 'Home g. 5');
+    assert.equal(field(root, 'city').value, 'Vilnius');
+    delivery.value = 'omniva';
+    await delivery.fire('change');
+    const quantity = field(root, 'couple');
+    quantity.value = '2';
+    await form.fire('input', quantity);
+    assert.equal(delivery.value, 'courier');
+    assert.equal(delivery.options.find((o) => o.value === 'omniva').disabled, true);
+  }));

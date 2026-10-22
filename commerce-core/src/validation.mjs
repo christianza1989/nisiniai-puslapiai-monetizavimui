@@ -81,7 +81,19 @@ export function customerSnapshot(input, country, delivery) {
     typeof input.phone === 'string' && /^\+[1-9][0-9]{6,14}$/.test(input.phone),
     'invalid_customer_phone',
   );
-  const address = input.address;
+  const selected =
+    delivery.kind === 'locker'
+      ? delivery.lockers?.find((l) => l.id === input.lockerId && l.country === country)
+      : null;
+  if (delivery.kind === 'locker') requireValue(selected, 'locker_not_enabled');
+  const address = selected?.address
+    ? {
+        country: selected.country,
+        line1: selected.address,
+        city: selected.city,
+        postalCode: selected.postalCode,
+      }
+    : input.address;
   requireValue(
     address &&
       address.country === country &&
@@ -129,7 +141,14 @@ export function customerSnapshot(input, country, delivery) {
   if (delivery.kind === 'locker') {
     const locker = delivery.lockers?.find((l) => l.id === input.lockerId && l.country === country);
     requireValue(locker, 'locker_not_enabled');
-    result.locker = { id: locker.id, label: locker.label, country: locker.country };
+    result.locker = {
+      id: locker.id,
+      label: locker.label,
+      country: locker.country,
+      ...(locker.address
+        ? { address: locker.address, city: locker.city, postalCode: locker.postalCode }
+        : {}),
+    };
     if (locker.courier !== undefined || locker.providerId !== undefined) {
       requireValue(
         identifier(locker.courier) && text(locker.providerId, 1, 100),
@@ -183,6 +202,30 @@ export function validateStore(store) {
       ),
     'invalid_markets',
   );
+  for (const market of store.markets)
+    for (const d of market.delivery) {
+      if (d.senderMode !== undefined) {
+        const origin = store.dispatchLockers?.[d.courier];
+        requireValue(
+          d.senderMode === 'locker' &&
+            d.kind === 'locker' &&
+            d.maxParcels === 1 &&
+            identifier(d.courier) &&
+            origin?.courier === d.courier &&
+            origin.country === 'LT' &&
+            d.lockers.every(
+              (l) =>
+                l.courier === d.courier &&
+                identifier(l.id) &&
+                text(l.providerId, 1, 100) &&
+                text(l.address, 2, 150) &&
+                text(l.city, 1, 100) &&
+                text(l.postalCode, 2, 20),
+            ),
+          'invalid_markets',
+        );
+      }
+    }
   requireValue(
     new Set(store.markets.map((m) => m.country)).size === store.markets.length,
     'duplicate_market',

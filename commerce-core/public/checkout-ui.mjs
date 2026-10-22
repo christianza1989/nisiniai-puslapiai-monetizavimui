@@ -517,7 +517,27 @@ function onePageForm({
   });
   const shipping = group(u.method);
   const delivery = field(shipping, 'delivery', t[4], { required: true }, 'select');
+  const lockerSearch = field(
+    shipping,
+    'lockerSearch',
+    language === 'lt' ? 'Ieškoti paštomato pagal miestą ar adresą' : 'Search parcel lockers',
+    {
+      type: 'search',
+      maxlength: 120,
+      autocomplete: 'off',
+      placeholder: language === 'lt' ? 'Pvz., Vilnius, Gabijos' : 'City or street',
+    },
+  );
   const locker = field(shipping, 'locker', t[11], {}, 'select');
+  const lockerHint = element(
+    'p',
+    { class: 'checkout-hint', role: 'status' },
+    language === 'lt'
+      ? 'Keliems rinkiniams rinkitės pristatymą kurjeriu.'
+      : 'Choose courier delivery for multiple kits.',
+  );
+  shipping.append(lockerHint);
+  let savedDoorAddress = null;
   const noDelivery = element('p', { class: 'checkout-hint', role: 'status' }, u.noDelivery);
   shipping.append(noDelivery);
   const empty = element(
@@ -812,6 +832,17 @@ function onePageForm({
       'carrier_rate_limited',
     ].includes(error.message);
   const changed = () => {
+    const count = lines().reduce((sum, l) => sum + l.quantity, 0);
+    for (const option of delivery.options) {
+      const method = market()?.delivery.find((d) => d.id === option.value);
+      option.disabled = Boolean(method?.maxParcels && count > method.maxParcels);
+    }
+    lockerHint.hidden = count <= 1 || !market()?.delivery.some((d) => d.kind === 'locker');
+    if (Array.from(delivery.options).find((o) => o.value === delivery.value)?.disabled) {
+      delivery.value = Array.from(delivery.options).find((o) => !o.disabled)?.value || '';
+      refreshLocker();
+      return;
+    }
     if (busy || lockedForOrder) return;
     invalidate();
     if (validQuantities()) {
@@ -841,14 +872,61 @@ function onePageForm({
     }
     timer?.unref?.();
   };
-  const refreshLocker = () => {
-    const method = market()?.delivery.find((d) => d.id === delivery.value);
+  const updateLockerAddress = () => {
+    const method = market()?.delivery.find((d) => d.id === delivery.value),
+      isLocker = method?.kind === 'locker';
+    if (isLocker && !savedDoorAddress)
+      savedDoorAddress = Object.fromEntries(
+        ['line1', 'city', 'postalCode'].map((k) => [k, fields[k].value]),
+      );
+    const point = method?.lockers?.find((l) => l.id === locker.value);
+    for (const key of ['line1', 'city', 'postalCode']) {
+      fields[key].required = !isLocker;
+      fields[key].parentElement.hidden = isLocker;
+      if (isLocker) fields[key].value = point?.[key === 'line1' ? 'address' : key] || '';
+      else if (savedDoorAddress) fields[key].value = savedDoorAddress[key];
+    }
+    if (!isLocker) savedDoorAddress = null;
+  };
+  const fillLockers = (keep = true) => {
+    const method = market()?.delivery.find((d) => d.id === delivery.value),
+      prior = keep ? locker.value : '';
+    const query = lockerSearch.value
+      .trim()
+      .toLocaleLowerCase(language)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
     locker.replaceChildren();
     locker.append(element('option', { value: '' }, '— ' + t[11] + ' —'));
-    for (const item of method?.lockers || [])
-      locker.append(element('option', { value: item.id }, item.label));
+    for (const item of method?.lockers || []) {
+      const hay = (item.label + ' ' + (item.city || '') + ' ' + (item.address || ''))
+        .toLocaleLowerCase(language)
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+      if (!query || hay.includes(query))
+        locker.append(element('option', { value: item.id }, item.label));
+    }
+    if (Array.from(locker.options).some((o) => o.value === prior)) locker.value = prior;
+    else locker.value = '';
+    updateLockerAddress();
+  };
+  lockerSearch.addEventListener('input', () => {
+    fillLockers();
+    changed();
+  });
+  locker.addEventListener('change', () => {
+    updateLockerAddress();
+    changed();
+  });
+  const refreshLocker = () => {
+    const method = market()?.delivery.find((d) => d.id === delivery.value);
+    lockerSearch.value = '';
+    fillLockers(false);
     locker.required = method?.kind === 'locker';
     locker.parentElement.hidden = !locker.required;
+    lockerSearch.parentElement.hidden = !locker.required;
+    lockerSearch.disabled = !locker.required;
+    updateLockerAddress();
     changed();
   };
   const refresh = () => {
@@ -1048,7 +1126,10 @@ function onePageForm({
     }))
       fields[key].value = value || '';
     delivery.value = initialOrder.snapshot.delivery.id;
-    if (saved.lockerId) locker.value = saved.lockerId;
+    if (saved.lockerId) {
+      locker.value = saved.lockerId;
+      updateLockerAddress();
+    }
     terms.checked = true;
     quoted = {
       amount: initialOrder.amount,

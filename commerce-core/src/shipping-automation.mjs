@@ -60,14 +60,15 @@ export class ShippingAutomation {
       'shipping_quotes_not_connected',
       503,
     );
+    const dispatch = order.snapshot.delivery.dispatch || config.dispatch;
     const actor = 'commerce_automation',
-      originId = 'dispatch_' + (await digest(canonical(config.dispatch))).slice(0, 64);
+      originId = 'dispatch_' + (await digest(canonical(dispatch))).slice(0, 64);
     const ops = new ShippingOperations(this.s);
     await ops.origin(
       store,
       env,
       {
-        ...config.dispatch,
+        ...dispatch,
         id: originId,
         reason: 'Configured dispatch for automatic individual parcels',
       },

@@ -10,6 +10,17 @@ export function renderShipping(content, detail, ctx) {
       'Pakuotės planas ir vežėjo kainos padeda paruošti siuntą. Jie nekeičia pirkėjo sumokėtos sumos.',
     ),
   );
+  if (o.snapshot.customer?.locker)
+    content.append(
+      node('p', { class: 'hint' }, 'Gavėjo paštomatas: ' + o.snapshot.customer.locker.label),
+      node(
+        'p',
+        { class: 'hint' },
+        'Siuntėjo paštomatas: ' +
+          (o.snapshot.delivery.dispatch?.locker?.label || 'Pasirinkite siuntėjo vietą') +
+          '. Užregistravę siuntą atsisiųskite lipduką ir įdėkite siuntą į paštomatą.',
+      ),
+    );
   if (!data.plans.length) content.append(node('p', { class: 'empty' }, 'Pakuotės planų dar nėra.'));
   for (const plan of data.plans) {
     const p = plan.payload;
@@ -242,6 +253,15 @@ export function renderShipping(content, detail, ctx) {
       ),
     ),
   );
+  const preferred = o.snapshot.delivery.dispatch?.locker;
+  if (preferred) {
+    const match = data.origins.find(
+      (r) =>
+        r.payload.locker?.providerId === preferred.providerId &&
+        r.payload.locker?.courier === preferred.courier,
+    );
+    if (match) location.value = match.id;
+  }
   const mode = node(
     'select',
     { id: 'shipping-mode' },

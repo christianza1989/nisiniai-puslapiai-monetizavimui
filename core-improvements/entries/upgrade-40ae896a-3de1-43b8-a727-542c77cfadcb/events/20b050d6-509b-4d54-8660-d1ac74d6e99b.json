@@ -1,0 +1,9 @@
+{
+  "status": "adopted",
+  "note": "Actual production frontend b46c7cd0 and backend380e46b2 accepted, CAS new Omniva562points/origin; retained all actual bindings/vars/observability/dates. Hosted real quotes couple448/family472/base472, Stripe live ready, private Access302. Desktop1280/mobile390 reviewed, no overflow, search and restored courier address and multi-kit courier fallback verified. Paid label proof is staging only; no production order/payment/paid booking created. Source remains own PR, not merged main.",
+  "pr": "https://github.com/christianza1989/nisiniai-puslapiai-monetizavimui/pull/101",
+  "commit": "8dae1e5e4d77f2e47c6ec80e60bef019ab2e1473",
+  "eventId": "20b050d6-509b-4d54-8660-d1ac74d6e99b",
+  "sequence": 4,
+  "at": "2026-10-22T09:57:37.304Z"
+}

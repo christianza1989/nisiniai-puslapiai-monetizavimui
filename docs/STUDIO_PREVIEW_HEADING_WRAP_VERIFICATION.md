@@ -20,3 +20,19 @@ Private screenshot/DOM receipts remain under the operator's local task output. T
 
 Revert the H1 property and this scoped change. No content or database migration is required.
 
+## Current-main revalidation — 2026-10-22
+
+Rokas directly requested repair, verification and merge of PR232. Integrated fetched main `960a7a2aae6451034921554ea2a7d9bae8969ab7` into the existing PR branch; the sole conflict was the appended WORKSTREAMS log, resolved by retaining both histories. The source diff against current main remains the single H1 wrapping property. Companion source was checked at `d44128b10233fca0760416a9251fabdfd19a119a` with fetched main `705688622563e75b1ab044f416b75cdf5cf4fbf7` already included.
+
+Verification plan and result:
+
+- [x] Preserve the existing system-ui H1 family/weight, clamp scale and 1.16 line height; inspect H1 against unaffected body, H2, list, link and footer roles. No copy or semantic changes.
+- [x] Full current content-studio suite: 62/62 PASS. The initial run was 61/62 with a fetch ECONNRESET in the existing media-byte-limit test. That test passed alone, then the entire unchanged suite passed; the initial interruption is retained in the private receipt. No media test or HTTP implementation was changed to obtain a pass.
+- [x] Isolated loopback server9432 with synthetic fixture bodies and four existing title strings: 12 actual HTTP/Playwright views at 1280/390/320 CSS px. Every fixed H1 Range rectangle stayed inside document.clientWidth, and title/main copy plus computed H1 family/size matched its paired baseline.
+- [x] Baseline in this new run is an explicit `overflow-wrap:normal` override on the same current HTTP preview, not the original live4317 renderer. One 320px title clipped in this synthetic layout; the other historical failure did not reproduce here. This does not replace the original snapshot-based observations above.
+- [x] Both historically affected titles retained all H1 text at 320px with CSS root font200%, H1 line-height1.5, letter-spacing.12em and word-spacing.16em overrides, plus paragraph margin2em. This is a CSS text-resize/spacing check; native browser zoom remains unverified in this refresh.
+- [x] Visually reviewed current desktop, narrow before/after and enlarged screenshots. The long word now breaks across lines without changing its characters or reducing type. Impeccable type detector returned no findings; visual evidence is assessed separately.
+- [x] Own headless browser and isolated server closed. Existing studio4317 and its data were not opened for mutation or restarted. Public renderer, approval, release and publication remain outside this change.
+
+Fresh receipts, synthetic fixtures and screenshots are local under the operator's `pr232-refresh-20261022` output directory; no customer data or browser profile is committed. Source merge and adoption by an already-running studio remain separate operations.
+

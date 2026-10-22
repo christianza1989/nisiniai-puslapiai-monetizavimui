@@ -1,0 +1,24 @@
+{
+  "status": "local-verified",
+  "note": "Scoped PUBLIC source reviewed and deployed to frontend25712c28. COREmain delivery is separate; no merge/adoption by another PC claimed. All171unrelated pages,10other site registry entries and actual shop bindings/backend preserved. Local full seo-smoke unknown-host negative is explicitly not PASS; see retained runbook limit.",
+  "checks": [
+    {
+      "command": "PUBLIC node --test tests/*.test.mjs",
+      "result": "PASS",
+      "evidence": "180tests/0fail; qa/seo-refresh-20261022/public-tests.txt and committed focused fixtures."
+    },
+    {
+      "command": "PUBLIC tsc --noEmit; npm run build; Wrangler4.92.0 deploy --dry-run",
+      "result": "PASS",
+      "evidence": "qa/seo-refresh-20261022/types.txt, build.txt, dry-run.txt; no new tool versions or migrations."
+    },
+    {
+      "command": "node qa/seo-refresh-20261022/verify-hosted.private.mjs; verify-discovery.private.mjs; postflight.private.mjs",
+      "result": "PASS",
+      "evidence": "sites/memocasting/SEO_REFRESH_2026_10_22.md; actual10guides/13aliases/20exactassets/2liveOffers/103indexable URLs; future and cross-site media404; bindings unchanged."
+    }
+  ],
+  "eventId": "5b64cb7b-0a4d-471e-9db9-5212bf4bce00",
+  "sequence": 2,
+  "at": "2026-10-22T19:46:50.050Z"
+}

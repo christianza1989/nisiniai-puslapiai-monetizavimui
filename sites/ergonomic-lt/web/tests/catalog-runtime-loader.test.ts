@@ -53,10 +53,21 @@ test('two sample IDs sharing one article keep their exact identity in server quo
 test('immutable model payload rejects tampering, oversized data, path escapes and mismatched source articles',async()=>{
  const {index,product,bytes}=fixture();
  await assert.rejects(createCatalogRuntimeLoader(index,async()=>Buffer.concat([bytes,Buffer.from(' ')]))(product),/source mismatch/);
- await assert.rejects(createCatalogRuntimeLoader(index,async()=>new Uint8Array(8_000_001))(product),/source mismatch/);
+ await assert.rejects(createCatalogRuntimeLoader(index,async()=>new Uint8Array(15_000_001))(product),/source mismatch/);
  const unsafe=structuredClone(index);Object.values(unsafe.articles)[0].asset='/models/configurator/runtime/../../secret.json';
  await assert.rejects(createCatalogRuntimeLoader(unsafe,async()=>{throw Error('must not read');})(product),/release binding/);
  const wrong=Buffer.from(JSON.stringify({article:{code:'KWRONG'},anchors:[{article:'KWRONG'}],palettes:{}}));
  const mismatched=structuredClone(index);Object.values(mismatched.articles)[0].sha256=hash(wrong);
  await assert.rejects(createCatalogRuntimeLoader(mismatched,async()=>wrong)(product),/article mismatch/);
+});
+
+test('legacy runtime accepts the exact 15 MB boundary and rejects one additional byte even with a valid SHA',async()=>{
+ const {index,product,bytes}=fixture();
+ for(const size of [8_000_001,15_000_000,15_000_001]){
+  const padded=Buffer.concat([bytes,Buffer.alloc(size-bytes.length,32)]),copy=structuredClone(index);
+  Object.values(copy.articles)[0].sha256=hash(padded);
+  const loader=createCatalogRuntimeLoader(copy,async()=>padded);
+  if(size<=15_000_000)assert(await loader(product));
+  else await assert.rejects(loader(product),/source mismatch/);
+ }
 });

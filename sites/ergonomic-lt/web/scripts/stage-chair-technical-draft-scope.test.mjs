@@ -46,3 +46,23 @@ test('unknown job and selected job without full offline PASS are rejected before
 test('omitting the filter retains the legacy all-rows validation path',async()=>{
  const f=await fixture(),v=run(f);assert.notEqual(v.status,0);assert.match(v.stderr,/existing-job/);
 });
+
+test('runtime publication accepts 15000000 bytes and defers 15000001 after accepted v1 packing',async()=>{
+ for(const size of [15_000_000,15_000_001]){
+  const f=await fixture(),file=path.join(f.root,'prepared',f.job,'runtime.json');
+  const runtime=JSON.parse(await fs.readFile(file,'utf8'));
+  Object.assign(runtime.family.anchors[0],{components:[],profiles:[],defaults:{},classes:{}});
+  runtime.padding='';runtime.padding='x'.repeat(size-Buffer.byteLength(JSON.stringify(runtime)));
+  const sha=await save(file,runtime);assert.equal((await fs.stat(file)).size,size);
+  f.rows[1].artifacts['runtime.json']=sha;await save(path.join(f.root,'prepared/OFFLINE-STATUS.json'),{rows:f.rows});
+  const v=run(f,f.job);
+  if(size===15_000_000){
+   assert.equal(v.status,0,v.stderr);
+   const report=JSON.parse(await fs.readFile(path.join(f.stage,'REPORT.json'),'utf8'));
+   assert.equal(report.models[0].runtimeTransport.packedBytes,size);
+   assert.equal(report.models[0].runtimeTransport.limitBytes,15_000_000);
+  }else{
+   assert.notEqual(v.status,0);await assert.rejects(fs.access(path.join(f.stage,'chair-structure-candidates.json')));
+  }
+ }
+});

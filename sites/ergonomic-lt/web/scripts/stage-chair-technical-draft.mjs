@@ -4,6 +4,7 @@ import path from 'node:path';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {packChairRuntime,restorePackedAssignments} from './pack-chair-runtime.mjs';
+import {RUNTIME_TRANSPORT_MAX_BYTES,CHAIR_RUNTIME_PACK_ABOVE_BYTES} from '../src/lib/runtime-transport-limits.mjs';
 const arg=n=>process.argv.find(v=>v.startsWith('--'+n+'='))?.slice(n.length+3);
 const root=path.resolve(arg('root')),stage=path.resolve(arg('stage'));
 assert(root.startsWith(path.resolve('D:/Core/output')+path.sep));
@@ -58,13 +59,13 @@ for(const row of status.rows){
   assert.equal(artifacts['assets/'+file],anchor.geometry.assetSha256);
   if((await fs.stat(path.join(prepared,'assets',file))).size>25*1024*1024)oversized.push(file);
  }
- if(!oversized.length&&bytes.length>8_000_000){
+ if(!oversized.length&&bytes.length>CHAIR_RUNTIME_PACK_ABOVE_BYTES){
   const originalSha256=hash(bytes),originalBytes=bytes.length,packed=packChairRuntime(runtime);
   assert.deepEqual(restorePackedAssignments(packed.runtime),runtime,'Lossless assignment reconstruction required');
   bytes=Buffer.from(JSON.stringify(packed.runtime));
-  runtimeTransport={kind:'unchanged-non-finish-assignments-v1',originalSha256,originalBytes,packedSha256:hash(bytes),packedBytes:bytes.length,removed:packed.removedUnchangedNonFinishAssignments,geometryUnchanged:true,compilerUnchanged:true,limitBytes:8_000_000,semanticVerificationRequired:true};
+  runtimeTransport={kind:'unchanged-non-finish-assignments-v1',originalSha256,originalBytes,packedSha256:hash(bytes),packedBytes:bytes.length,removed:packed.removedUnchangedNonFinishAssignments,geometryUnchanged:true,compilerUnchanged:true,limitBytes:RUNTIME_TRANSPORT_MAX_BYTES,semanticVerificationRequired:true};
  }
- if(oversized.length||bytes.length>8_000_000){report.deferred.push({key,code:job.code,reason:oversized.length?'CURRENT_STATIC_TRANSPORT_FILE_LIMIT':'RUNTIME_SIZE_LIMIT',files:[...new Set(oversized)],sourcePreserved:true});continue;}
+ if(oversized.length||bytes.length>RUNTIME_TRANSPORT_MAX_BYTES){report.deferred.push({key,code:job.code,reason:oversized.length?'CURRENT_STATIC_TRANSPORT_FILE_LIMIT':'RUNTIME_SIZE_LIMIT',files:[...new Set(oversized)],sourcePreserved:true});continue;}
  const runtimeSha=hash(bytes),runtimeFile=job.code+'-'+runtimeSha.slice(0,20)+'.json';
  if(runtimeTransport)await fs.writeFile(path.join(assets,runtimeFile),bytes,{flag:'wx'});else await seal(path.join(prepared,'runtime.json'),path.join(assets,runtimeFile),runtimeSha,true);
  for(const anchor of runtime.family.anchors){const file=path.basename(anchor.geometry.asset);await seal(path.join(prepared,'assets',file),path.join(assets,file),anchor.geometry.assetSha256);}

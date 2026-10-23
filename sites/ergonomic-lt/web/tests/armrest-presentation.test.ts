@@ -26,7 +26,9 @@ test('source-fixed arms cannot be described as adjustable, and supplier 1D is re
   if(/fixed/i.test(choice.sourceText)){assert.match(label,/fiksuoti/i);assert.doesNotMatch(label,/reguliuojami|[1-4]D/);fixed++;}
   if(/: 1D,/.test(choice.sourceText)){assert.match(label,/1D/);assert.doesNotMatch(label,/fiksuoti/i);oneD++;}
  }
- assert.equal(fixed,7);assert.equal(oneD,5);
+ assert.equal(fixed,7);assert.equal(oneD,9);
+ assert.equal(armrestChoiceLabel('KUTI002WW001','CARMRESTS','R69BBBPU'),'R69BBBPU · 1D');
+ assert.equal(armrestChoiceLabel('KUTI002WW001','CARMRESTS','R69BGBPU'),'R69BGBPU · 1D');
  assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R20I')!,/1D/);
  assert.match(armrestChoiceLabel('KINT006WW002','CARMRESTS','R32R')!,/3D/);
  assert.equal(armrestChoiceLabel('KINT006WW002','CARMRESTS','NONE'),'Be porankių');
@@ -103,4 +105,10 @@ test('every source-backed base/castor entry matches the captured material or flo
   if(entry.sourceFact==='hard')assert.match(label,/kietoms grindims/);
   if(entry.sourceFact==='soft')assert.match(label,/minkštoms grindims/);
  }
+});
+
+// Explicit captured dimensions retain the exact technical code for new drafts.
+test('new preview source-backed arm dimensions retain 1D through4D',()=>{
+ const expected=[['KVID008WW001','R42U3SB2','4D'],['KNAV002WW004','R35K2WB','1D'],['KNAV002WW004','R35K3SB2WB','4D'],['KSEG003WW001','R35K3SB2','4D']];
+ for(const [code,value,dimension] of expected){const label=armrestChoiceLabel(code,'CARMRESTS',value)!;assert.match(label,new RegExp(dimension));assert.ok(label.includes(value));}
 });

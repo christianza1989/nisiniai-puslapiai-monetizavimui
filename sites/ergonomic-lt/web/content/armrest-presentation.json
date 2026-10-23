@@ -88,6 +88,106 @@
           "sourceText": "R32R: 3D, arm: steel chromium plate, black polyamide, pad: black polyurethane"
         }
       }
+    },
+    "KUTI002WW001": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "R69BBBPU": {
+          "label": "R69BBBPU · 1D",
+          "sourceText": "R69-B/B/BPU: 1D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R69BGBPU": {
+          "label": "R69BGBPU · 1D",
+          "sourceText": "R69-B/G/BPU: 1D, arm: light grey polyamide, pad: black polyurethane"
+        },
+        "R70BBBPU": {
+          "label": "R70BBBPU · 2D",
+          "sourceText": "R70-B/B/BPU: 2D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R70BGBPU": {
+          "label": "R70BGBPU · 2D",
+          "sourceText": "R70-B/G/BPU: 2D, arm: light grey polyamide, pad: black polyurethane"
+        },
+        "R71BBBPU": {
+          "label": "R71BBBPU · 3D",
+          "sourceText": "R71-B/B/BPU: 3D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R71BGBPU": {
+          "label": "R71BGBPU · 3D",
+          "sourceText": "R71-B/G/BPU: 3D, arm: light grey polyamide, pad: black polyurethane"
+        }
+      }
+    },
+    "KVID008WW001": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "R41": {
+          "label": "R41 · 3D",
+          "sourceText": "R41: 3D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R42U1SB2": {
+          "label": "R42U1SB2 · 2D",
+          "sourceText": "R42U1-SB2: 2D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R42U3SB2": {
+          "label": "R42U3SB2 · 4D",
+          "sourceText": "R42U3-SB2: 4D, arm: black polyamide, pad: black polyurethane"
+        }
+      }
+    },
+    "KNAV002WW004": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "R35K2WB": {
+          "label": "R35K2WB · 1D",
+          "sourceText": "R35K2-W/B: 1D, arm: white and black polyamide, pad: black polyurethane"
+        },
+        "R35K2SB2WB": {
+          "label": "R35K2SB2WB · 2D",
+          "sourceText": "R35K2-SB2-W/B: 2D, arm: steel, white and black polyamide, pad: black polyurethane"
+        },
+        "R35K3WB": {
+          "label": "R35K3WB · 3D",
+          "sourceText": "R35K3-W/B: 3D, arm: white and black polyamide, pad: black polyurethane"
+        },
+        "R35K3SB2WB": {
+          "label": "R35K3SB2WB · 4D",
+          "sourceText": "R35K3-SB2-W/B: 4D, arm: steel, white and black polyamide, pad: black polyurethane"
+        },
+        "R35K2": {
+          "label": "R35K2 · 1D",
+          "sourceText": "R35K2: 1D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R35K2SB2": {
+          "label": "R35K2SB2 · 2D",
+          "sourceText": "R35K2-SB2: 2D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R35K3": {
+          "label": "R35K3 · 3D",
+          "sourceText": "R35K3: 3D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R35K3SB2": {
+          "label": "R35K3SB2 · 4D",
+          "sourceText": "R35K3-SB2: 4D, arm: black polyamide, pad: black polyurethane"
+        }
+      }
+    },
+    "KSEG003WW001": {
+      "fieldLabel": "Porankiai",
+      "choices": {
+        "R35K3": {
+          "label": "R35K3 · 3D",
+          "sourceText": "R35K3: 3D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R35K3SB2": {
+          "label": "R35K3SB2 · 4D",
+          "sourceText": "R35K3-SB2: 4D, arm: black polyamide, pad: black polyurethane"
+        },
+        "R74": {
+          "label": "R74 · 2D",
+          "sourceText": "R74: 2D, arm: black polyamide, pad: black polyamide"
+        }
+      }
     }
   }
 }

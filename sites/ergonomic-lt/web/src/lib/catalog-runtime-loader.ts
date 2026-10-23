@@ -4,6 +4,7 @@ import {configuratorRuntimeAsset} from './configurator-runtime-assets';
 import type {CatalogRuntime,CatalogAnchor} from './catalog-configurator';
 import type {Product} from './types';
 import {shareCatalogRuntimeData} from './catalog-runtime-sharing';
+import {RUNTIME_TRANSPORT_MAX_BYTES} from './runtime-transport-limits.mjs';
 import {chairCandidates,createChairCandidateLoader} from './chair-structure-candidates';
 
 export type CatalogRuntimeIndex={schemaVersion:number;articles:Record<string,{asset:string;sha256:string}>;products:Record<string,{id:string;articles:{code:string;sample:string;name:string;id?:string}[]}>};
@@ -29,7 +30,7 @@ return async function loadCatalogRuntime(product:Product,input?:unknown):Promise
  const familyId=article.id||binding.id;
  if(!/^\/models\/configurator\/runtime\/K[A-Z0-9]+-[a-f0-9]{20}\.json$/.test(receipt.asset)||!/^cfg-[a-f0-9]{12}$/.test(familyId))throw Error('Invalid configurator release binding');
  const bytes=await readAsset(receipt.asset);
- if(bytes.byteLength>8_000_000||createHash('sha256').update(bytes).digest('hex')!==receipt.sha256)throw Error('Configurator runtime source mismatch');
+ if(bytes.byteLength>RUNTIME_TRANSPORT_MAX_BYTES||createHash('sha256').update(bytes).digest('hex')!==receipt.sha256)throw Error('Configurator runtime source mismatch');
  const shard=JSON.parse(Buffer.from(bytes).toString('utf8')) as Shard;
  if(shard.article.code!==code||!shard.anchors.length||shard.anchors.some(a=>a.article!==code))throw Error('Configurator article mismatch');
  const sample=model?.id||article.sample;

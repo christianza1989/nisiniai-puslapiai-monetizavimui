@@ -11,7 +11,7 @@ export type ChairCandidates={schemaVersion:1;models:Record<string,ChairCandidate
 export const chairCandidates=data as ChairCandidates;
 const digest=(value:Uint8Array|string)=>createHash('sha256').update(value).digest('hex');
 export function candidateForModel(product:Product,entries=chairCandidates):ChairCandidate|undefined{
- if(product.categorySlug!=='kedes'||product.id.toLowerCase().includes('xilium')||!product.modelConfigurationId)return;
+ if(!['kedes','rasomieji-stalai-ir-darbo-vietos'].includes(product.categorySlug)||product.id.toLowerCase().includes('xilium')||!product.modelConfigurationId)return;
  const c=product.configurations.find(c=>c.id===product.modelConfigurationId);
  const entry=entries.models[product.id+':'+product.modelConfigurationId];if(!entry)return;
  if(!c||!catalogModelVisible(product.id,c)||entry.key!==product.id+':'+c.id||entry.productId!==product.id||entry.sample!==c.id||entry.code!==c.code)throw Error('Chair candidate identity mismatch');

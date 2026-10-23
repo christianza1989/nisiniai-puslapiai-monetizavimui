@@ -14,7 +14,7 @@ import type {Asset,Patch} from '@/lib/expanded-configurator';
 import {renderMaterial,type FinishPreview} from '@/lib/render-materials';
 import {contactShadow} from '@/lib/contact-shadow';
 import {isolateFinishMaterials} from '@/lib/finish-materials';
-import {visibleMeshes,visibleBounds,cameraFrame,cameraNear} from '@/lib/viewer-camera';
+import {visibleMeshes,visibleBounds,cameraFrame,cameraNear,unobstructedCameraViewport} from '@/lib/viewer-camera';
 import {finishField,physicalUpholstery,setFabricSheen,copyTexturePlacement} from '@/lib/viewer-materials';
 import {lightingPresets,productSceneSettings,type SceneSettings} from '@/lib/viewer-scene';
 import {roomEnvironment,productShowroom} from '@/lib/showroom';
@@ -25,7 +25,7 @@ function disposeObject(root:Object3D){
 }
 type Action='left'|'right'|'in'|'out'|'reset'|'surface';
 export type Assembly={base:Asset;patches:Patch[];finishes:Record<string,FinishPreview>};
-export default function Viewer3D({variant,name,assembly,fullscreen=false,onFullscreen}:{variant:PilotVariant;name:string;assembly?:Assembly;fullscreen?:boolean;onFullscreen?:()=>void}){
+export default function Viewer3D({variant,name,assembly,fullscreen=false,onFullscreen,avoidToolbarOverlap=false}:{variant:PilotVariant;name:string;assembly?:Assembly;fullscreen?:boolean;onFullscreen?:()=>void;avoidToolbarOverlap?:boolean}){
   const stage=useRef<HTMLDivElement>(null),canvas=useRef<HTMLCanvasElement>(null),action=useRef<(a:Action)=>void>(()=>{});
   const [state,setState]=useState<'loading'|'ready'|'error'>('loading'),[attempt,setAttempt]=useState(0);
   const finishes=useRef(assembly?.finishes),applyFinishes=useRef<()=>void>(()=>{});finishes.current=assembly?.finishes;
@@ -44,6 +44,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     const pmrem=new PMREMGenerator(renderer),environments=new Map<SceneSettings['lighting'],WebGLRenderTarget>();
     let roomSurfaces:ReturnType<typeof productShowroom>|undefined;
     const camera=new PerspectiveCamera(35,1,.002,50),controls=new OrbitControls(camera,element);
+    let framingAspect=1;
     controls.enablePan=true;controls.screenSpacePanning=true;controls.zoomToCursor=true;controls.zoomSpeed=.75;
     controls.enableDamping=false;controls.autoRotate=false;
     controls.minPolarAngle=.15;controls.maxPolarAngle=Math.PI*.49;controls.enabled=false;
@@ -93,7 +94,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     };
     function fit(){
       const box=object?visibleBounds(object):new Box3(new Vector3(-1,0,-1),new Vector3(1,2,1));
-      const {center,distance,near,minimum,maximum}=cameraFrame(box,camera.aspect,camera.fov);
+      const {center,distance,near,minimum,maximum}=cameraFrame(box,framingAspect,camera.fov);
       controls.target.copy(center);camera.position.copy(center).add(new Vector3(2.6,1.25,3.7).normalize().multiplyScalar(distance));
       camera.near=near;camera.updateProjectionMatrix();controls.minDistance=minimum;controls.maxDistance=maximum;
       controls.cursor.copy(center);controls.maxTargetRadius=box.getSize(new Vector3()).length();controls.update();controls.saveState();render();
@@ -110,10 +111,15 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     };
     element.addEventListener('dblclick',inspectPointer);
     const resize=()=>{const {width,height}=host.getBoundingClientRect();if(width<=0||height<=0)return;
-      const previousAspect=camera.aspect;renderer!.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();
+      const previousAspect=framingAspect;renderer!.setSize(width,height,false);camera.aspect=width/height;
+      const rect=host.getBoundingClientRect(),toolbar=host.parentElement?.querySelector('.viewer-toolbar')?.getBoundingClientRect();
+      const rightInset=avoidToolbarOverlap&&toolbar&&toolbar.left>rect.left+width/2&&toolbar.bottom>rect.top&&toolbar.top<rect.bottom?rect.right-toolbar.left+8:0;
+      const viewport=unobstructedCameraViewport(width,height,rightInset);framingAspect=viewport.aspect;
+      if(viewport.inset)camera.setViewOffset(width,height,viewport.offsetX,0,width,height);else camera.clearViewOffset();
+      camera.updateProjectionMatrix();
       if(controls.enabled&&object){
         const box=visibleBounds(object),offset=camera.position.clone().sub(controls.target);
-        const previous=cameraFrame(box,previousAspect,camera.fov,offset).distance,next=cameraFrame(box,camera.aspect,camera.fov,offset).distance;
+        const previous=cameraFrame(box,previousAspect,camera.fov,offset).distance,next=cameraFrame(box,framingAspect,camera.fov,offset).distance;
         // Preserve the visitor's angle, pan and relative zoom on viewport
         // resize while adapting the framing to the changed aspect ratio.
         if(previous>0)camera.position.copy(controls.target).add(offset.multiplyScalar(next/previous));
@@ -165,7 +171,7 @@ export default function Viewer3D({variant,name,assembly,fullscreen=false,onFulls
     })();
     return()=>{disposed=true;abort.abort();observer.disconnect();element.removeEventListener('webglcontextlost',contextLost);element.removeEventListener('dblclick',inspectPointer);
       controls.removeEventListener('change',render);controls.dispose();disposeShadow?.();disposeObject(scene);if(object&&!object.parent)disposeObject(object);textures.forEach(t=>t.dispose());originals.forEach(t=>{t.map?.dispose();t.normal?.dispose();});environments.forEach(environment=>environment.dispose());pmrem.dispose();light.shadow.dispose();renderer?.dispose();action.current=()=>{};applyFinishes.current=()=>{};};
-  },[geometryKey,attempt]);
+  },[geometryKey,attempt,avoidToolbarOverlap]);
   return <div className="viewer-3d" data-state={state} data-variant={variant.id}>
     <div className="viewer-toolbar" role="group" aria-label="3D vaizdo valdymas">
       <button type="button" aria-label={copyText("ui.3931f10cc38ef591b0c7","Apžiūrėti apmušalą")} title={copyText("ui.3931f10cc38ef591b0c7","Apžiūrėti apmušalą")} disabled={state!=='ready'} onClick={()=>action.current('surface')}><Focus size={19}/></button>

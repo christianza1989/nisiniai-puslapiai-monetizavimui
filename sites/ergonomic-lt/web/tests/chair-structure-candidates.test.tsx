@@ -44,6 +44,26 @@ test('chair runtime accepts the exact 15 MB boundary and rejects 15000001 bytes 
   else await assert.rejects(loader(product),/runtime changed/);
  }
 });
+test('desk construction drafts retain exact model identity and the launch exclusion',async()=>{
+ const desk=productModels(baseSeed().products).find(p=>p.configurations.some(c=>c.code==='KERG020WW001')&&p.modelConfigurationId==='25302337')!;
+ assert(desk);
+ const {runtime}=fixture(),sample=desk.configurations.find(c=>c.id===desk.modelConfigurationId)!;
+ runtime.family.productId=desk.id;runtime.family.sample=sample.id;runtime.family.baseArticle=sample.code!;
+ runtime.family.articles=[{code:sample.code!,sample:sample.id,name:sample.code!}];
+ const a=runtime.family.anchors[0];a.id=sample.code+':structure-'+'c'.repeat(64);a.article=sample.code!;a.sample=sample.id;
+ a.axes=['GDWIDTH'];a.defaults={GDWIDTH:'_2000'};a.choices={GDWIDTH:['_1800','_2000']};a.classes={GDWIDTH:'DESK_DIMENSIONS'};
+ a.geometry.asset='/models/configurator/structure/'+sample.code+'-'+'a'.repeat(20)+'.glb';
+ const bytes=JSON.stringify(runtime),sha=hash(bytes),key=desk.id+':'+sample.id;
+ const entries:ChairCandidates={schemaVersion:1,models:{[key]:{key,productId:desk.id,sample:sample.id,code:sample.code!,familyId:runtime.family.id,collectionMode:'structure-only',acceptance:'TECHNICAL_DRAFT',optionsRequired:true,runtime:{asset:'/models/configurator/structure/'+sample.code+'-'+sha.slice(0,20)+'.json',sha256:sha},proofs:{sourceGeometryRuntime:hash('TEST DESK SOURCE')}}}};
+ const loader=createChairCandidateLoader(entries,async()=>Buffer.from(bytes));
+ assert(await loader(desk));
+ const html=renderToStaticMarkup(<QuoteProvider><ExpandedProductDetail product={publicProductView(desk)} url="/test-only/" presets={null} catalogRuntime={runtime}/></QuoteProvider>);
+ assert(!html.includes('kėdę')&&!html.includes('kėdės')&&!html.includes('Kėdės'));
+ assert(html.includes('Jūsų komplektacija'));
+ assert.equal(await loader({...desk,modelConfigurationId:'25302338'}),undefined);
+ assert.equal(await loader({...desk,categorySlug:'nepatikrinta'}),undefined);
+ const prior=process.env.LAUNCH_SITE;try{process.env.LAUNCH_SITE='true';assert.equal(await loader(desk),undefined);}finally{if(prior===undefined)delete process.env.LAUNCH_SITE;else process.env.LAUNCH_SITE=prior;}
+});
 test('tampered bytes, finish selectors and cross-model saved tokens fail closed',async()=>{
  const {product,entries,bytes,key,runtime}=fixture();
  await assert.rejects(createChairCandidateLoader(entries,async()=>Buffer.from(bytes+' '))(product),/runtime changed/);

@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {Group,Mesh,BoxGeometry,MeshStandardMaterial,MeshPhysicalMaterial,Texture,RepeatWrapping,MirroredRepeatWrapping,Vector2,Vector3,Box3,PerspectiveCamera} from 'three';
-import {visibleBounds,cameraFrame} from '../src/lib/viewer-camera';
+import {visibleBounds,cameraFrame,unobstructedCameraViewport} from '../src/lib/viewer-camera';
 import {physicalUpholstery,setFabricSheen,copyTexturePlacement} from '../src/lib/viewer-materials';
 import {isolateFinishMaterials} from '../src/lib/finish-materials';
 
@@ -21,6 +21,19 @@ test('Oblique perspective fits all chair corners on desktop, phone and fullscree
   }
  }
 });
+test('wide desks fit beside the floating toolbar on phone and desktop',()=>{
+ const box=new Box3(new Vector3(0,0,0),new Vector3(2,.75,1.0078443)),direction=new Vector3(2.6,1.25,3.7);
+ for(const [width,height,inset]of [[295,374,64],[713,414,64],[360,600,64]]){
+  const viewport=unobstructedCameraViewport(width,height,inset),frame=cameraFrame(box,viewport.aspect,35),camera=new PerspectiveCamera(35,width/height,frame.near,50);
+  camera.setViewOffset(width,height,viewport.offsetX,0,width,height);camera.position.copy(frame.center).add(direction.clone().normalize().multiplyScalar(frame.distance));camera.lookAt(frame.center);camera.updateMatrixWorld(true);
+  for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z]){
+   const p=new Vector3(x,y,z).project(camera);
+   assert(p.x>=-1&&p.x<=1-2*inset/width,'the complete desk stays left of the controls');assert(Math.abs(p.y)<=1);
+  }
+ }
+ assert.deepEqual(unobstructedCameraViewport(713,414,0),{aspect:713/414,offsetX:0,inset:0},'chair framing is unchanged');
+});
+
 test('Physical upholstery preserves the source glTF material and independent hardware',()=>{
  const root=new Group(),texture=new Texture(),source=new MeshStandardMaterial({map:texture,color:'#8e7a65',roughness:.83,metalness:0});
  const cloth=new Mesh(new BoxGeometry(),source),hardware=new Mesh(new BoxGeometry(),source);cloth.userData.finishField='CUPHCOLOR';root.add(cloth,hardware);
